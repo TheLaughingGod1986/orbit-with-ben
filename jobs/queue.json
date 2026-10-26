@@ -1,5 +1,5 @@
 {
-  "next_id": 978,
+  "next_id": 979,
   "jobs": [
     {
       "id": "J0001",
@@ -22096,7 +22096,7 @@
       "title": "HOS Related fixes ×4 after longs public (from J0245)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) PFj6172YU4Q → wwcjcFfC-5M (J0973: v05 is the scheduled copy. mTY67qet7cM is Private and unscheduled. Source Related was None. Set Related on PFj6172YU4Q after wwcjcFfC-5M is public, before 8 Nov.)\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) pWySvZsneZg → GHZDsiH7L7A (J0970: v03 is the scheduled copy. JyRjM-9Yc8g is Private and unscheduled. Related was read back on the old id; Studio CDP 9460 did not answer for the new id, so set it on pWySvZsneZg before 1 Nov.)\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n5) qW2OsD4mujc → AL_-qlWko_g (J0971: v03 is the scheduled copy. Pp5LmjsduI4 is Private and unscheduled. Long AL_-qlWko_g is already public. Studio CDP 9460 did not answer, so set Related on qW2OsD4mujc before 3 Nov. Do not wait on the long.)\n",
+      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) PFj6172YU4Q → wwcjcFfC-5M (J0973: v05 is the scheduled copy. mTY67qet7cM is Private and unscheduled. Source Related was None. Set Related on PFj6172YU4Q after wwcjcFfC-5M is public, before 8 Nov.)\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) pWySvZsneZg → GHZDsiH7L7A (J0970: v03 is the scheduled copy. JyRjM-9Yc8g is Private and unscheduled. Related was read back on the old id; Studio CDP 9460 did not answer for the new id, so set it on pWySvZsneZg before 1 Nov.)\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `xHnIi9GqOsM` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. J0972: v03 is the scheduled copy. `PlihWC5uA2E` is Private and unscheduled. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n5) qW2OsD4mujc → AL_-qlWko_g (J0971: v03 is the scheduled copy. Pp5LmjsduI4 is Private and unscheduled. Long AL_-qlWko_g is already public. Studio CDP 9460 did not answer, so set Related on qW2OsD4mujc before 3 Nov. Do not wait on the long.)\n6) xHnIi9GqOsM → wwcjcFfC-5M (J0972: v03 is the scheduled copy. PlihWC5uA2E is Private and unscheduled. Source Related was None. Set Related on xHnIi9GqOsM after wwcjcFfC-5M is public, before 5 Nov.)\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -81411,10 +81411,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-26T09:42Z",
+      "eta": "2026-10-26T10:42Z",
       "created_by": "chief",
       "created_at": "2026-10-25T19:44Z",
       "result": "",
@@ -81453,6 +81453,11 @@
           "at": "2026-10-26T08:21Z",
           "by": "grok",
           "what": "Chief ruling note: no Related/long link on standalone Short"
+        },
+        {
+          "at": "2026-10-26T09:42Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -82815,13 +82820,13 @@
       "stage": "",
       "after": "J0965",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-26T09:32Z",
-      "eta": "2026-10-26T10:32Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-26T03:23Z",
-      "result": "",
+      "result": "Swapped. New Private xHnIi9GqOsM publishAt 2026-11-05T11:30:00Z, thumbnail set, en-GB captions serving (AUieDaa0W0k3L0ofhc3lsYS9xSTbB6c76Qq79cOYVQQ5FQ36). v01 PlihWC5uA2E Private and unscheduled. sha e3aa2c6c. HOS a18939ac. J0280 item 6 repointed. Related not set (source was None). Buffer held until the short is public. GBP0. Nothing deleted.",
       "history": [
         {
           "at": "2026-10-26T03:23Z",
@@ -82862,6 +82867,26 @@
           "at": "2026-10-26T09:33Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Ben OK 6411226902. Starting valves v03 swap: read back PlihWC5uA2E and verify sha."
+        },
+        {
+          "at": "2026-10-26T09:35Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: PlihWC5uA2E Private publishAt 2026-11-05T11:30:00Z. Master sha e3aa2c6c matches UAT and the manifest. Gate PASS 22.17s. Related was None on the 25 Oct audit."
+        },
+        {
+          "at": "2026-10-26T09:39Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: xHnIi9GqOsM Private publishAt 2026-11-05T11:30:00Z. PlihWC5uA2E private unscheduled. en-GB captions serving. HOS a18939ac."
+        },
+        {
+          "at": "2026-10-26T09:40Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Posted HOS #180 6412876537 and OWB #264 6412875472. J0280 item 6 points at xHnIi9GqOsM."
+        },
+        {
+          "at": "2026-10-26T09:41Z",
+          "by": "cursor",
+          "what": "done: Swapped. New Private xHnIi9GqOsM publishAt 2026-11-05T11:30:00Z, thumbnail set, en-GB captions serving (AUieDaa0W0k3L0ofhc3lsYS9xSTbB6c76Qq79cOYVQQ5FQ36). v01 PlihWC5uA2E Private and unscheduled. sha e3aa2c6c. HOS a18939ac. J0280 item 6 repointed. Related not set (source was None). Buffer held until the short is public. GBP0. Nothing deleted."
         }
       ],
       "kind": "studio",
@@ -82894,12 +82919,13 @@
         "type": "short"
       },
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-26T09:33Z",
+        "at": "2026-10-26T09:40Z",
         "by": "cursor",
-        "note": "Ben OK 6411226902. Starting valves v03 swap: read back PlihWC5uA2E and verify sha."
-      }
+        "note": "Posted HOS #180 6412876537 and OWB #264 6412875472. J0280 item 6 points at xHnIi9GqOsM."
+      },
+      "done_ref": "6412876537"
     },
     {
       "id": "J0973",
@@ -83331,6 +83357,33 @@
         "by": "gemini",
         "note": "All 3 Venus lifts checked & gate60.txt committed (07db14bed): all 3 FAIL gate60 + Keeper line-1 question rule; no awaits"
       }
+    },
+    {
+      "id": "J0978",
+      "title": "Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Studio Test B start: HOS Atom `GHZDsiH7L7A` (Monday test loop, Ben pt4241u, 26 Oct). Not before Fri 30 Oct, the day after J0280's Title Test & Compare ends.**\n\nPlan, originals, baselines and pass rule: OWB `05_Analytics/tests/STUDIO_TESTS.md` > *Test B* (PR #289). Originals also in `05_Analytics/tests/studio_tests_2026-10-26/originals.json`.\n\n1. **HOS channel in Studio (check the channel name first):** open `GHZDsiH7L7A` > Test & Compare. If the title test still reads *Running*, change nothing: `jobs.py block <this id> --reason \"waits for: J0280 Title Test & Compare on GHZDsiH7L7A still running\"` and stop. Never press anything that ends or deletes a running test.\n2. When it has ended, record the result (winning title, watch-time share per title) in Test B's section. If the live title is no longer *What's Really Inside an Atom?*, log the new live title as the original and check the planned title still makes sense before going on; if unsure, block \"parked for Chief: Test B title vs J0280 winner\".\n3. Apply only the planned change from STUDIO_TESTS.md: title `What's Inside an Atom? Mostly Empty Space`, description **line 1 only**, and the planned tags. Data API, dry run first (`07_Content-Ops/scripts/retitle-videos.ts` / `redescribe-videos.ts`), send the snippet without `status`. No privacy, schedule, thumbnail, Related or end-screen change. Nothing deleted, £0.\n4. Read back title, line 1, tags, privacy; save `05_Analytics/tests/studio_tests_<date>/test_b_apply_readback.json`.\n5. Update Test B in STUDIO_TESTS.md to **Running** with the real start date (end stays 9 Nov; the readout also checks 14 days from start), by PR to OWB `main`. Post the one-line AGENTS note on #99.\n\nIf the Data API refuses again (`Precondition check failed`), revert any field that did change from the originals, read back, and block with the error.\n",
+      "ref": "PR #289",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T09:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T09:43Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
