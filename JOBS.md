@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0984 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0985 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0986 | any | blocked | codex-dashboard | – | for codex-dashboard · assembly · Studio board: truthful active jobs, remaining work, recent completions and blocker reasons (Ben 26 Oct) |  |
-| J0987 | any | open | – | – | for codex-relay · assembly · Chief succession: Grok then Claude then Codex then Gemini, full acting-Chief handoff (Ben 26 Oct) |  |
+| J0987 | any | claimed | codex-relay | 2026-10-26T19:40Z | for codex-relay · assembly · Chief succession: Grok then Claude then Codex then Gemini, full acting-Chief handoff (Ben 26 Oct) |  |
 
 Recently finished:
 
