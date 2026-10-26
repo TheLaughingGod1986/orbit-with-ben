@@ -22096,7 +22096,7 @@
       "title": "HOS Related fixes ×4 after longs public (from J0245)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) pWySvZsneZg → GHZDsiH7L7A (J0970: v03 is the scheduled copy. JyRjM-9Yc8g is Private and unscheduled. Related was read back on the old id; Studio CDP 9460 did not answer for the new id, so set it on pWySvZsneZg before 1 Nov.)\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n",
+      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) mTY67qet7cM → wwcjcFfC-5M\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) pWySvZsneZg → GHZDsiH7L7A (J0970: v03 is the scheduled copy. JyRjM-9Yc8g is Private and unscheduled. Related was read back on the old id; Studio CDP 9460 did not answer for the new id, so set it on pWySvZsneZg before 1 Nov.)\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n5) qW2OsD4mujc → AL_-qlWko_g (J0971: v03 is the scheduled copy. Pp5LmjsduI4 is Private and unscheduled. Long AL_-qlWko_g is already public. Studio CDP 9460 did not answer, so set Related on qW2OsD4mujc before 3 Nov. Do not wait on the long.)\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -22189,6 +22189,11 @@
           "at": "2026-10-26T08:47:15Z",
           "agent": "cursor",
           "what": "J0970 repoint: gold foil Related target is pWySvZsneZg (v03). JyRjM-9Yc8g is Private and unscheduled."
+        },
+        {
+          "at": "2026-10-26T08:59Z",
+          "by": "cursor",
+          "what": "J0971: Related follow-up is qW2OsD4mujc → AL_-qlWko_g (long already public)"
         }
       ],
       "kind": "studio",
