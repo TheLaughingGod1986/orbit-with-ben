@@ -234,12 +234,23 @@
   }
 
   // "Approved, on its way": what Ben OK'd, the job carrying it, and that job's live state.
+  function approvalSummary(a) {
+    const status = String(a.status || "").replace(/\s+/g, " ").trim();
+    const dependency = /^Waiting for (J\d+):/.exec(status);
+    if (dependency) return `Waiting for ${dependency[1]}.`;
+    if (status.length <= 150) return status;
+    return status.slice(0, 147).replace(/\s+\S*$/, "") + "…";
+  }
   function approvedHtml(a) {
     const label = { waiting: "Waiting on Chief", queued: "Queued", working: "Working", blocked: "Blocked", uploaded: "Uploaded", cancelled: "Cancelled" }[a.state] || a.state || "";
     const pct = a.state === "working" && a.of ? Math.max(0, Math.min(100, Math.round(100 * (a.step || 0) / a.of))) : 0;
+    const summary = approvalSummary(a);
+    const extraWarning = a.warn && a.warn !== a.status ? a.warn : "";
+    const details = summary !== (a.status || "") || extraWarning;
     return `<div class="appr ${esc(a.state || "")}${a.warn ? " warn" : ""}">
       <div class="appr-top"><span class="appr-state">${esc(label)}</span>${a.job ? `<span class="mono">${esc(a.job)}</span>` : ""}${a.version ? `<span>· OK'd ${esc(a.version)}</span>` : ""}</div>
-      <div class="appr-line">${esc(a.status || "")}</div>
+      <div class="appr-line">${esc(summary)}</div>
+      ${details ? `<details id="approval-${esc(a.job || a.askJob || "details")}"><summary>Decision & details</summary><p class="decision-text">${esc(a.status || "")}</p>${extraWarning ? `<p class="decision-text">${esc(extraWarning)}</p>` : ""}</details>` : ""}
       ${a.state === "working" && a.of ? `<div class="appr-bar" role="progressbar" aria-label="Approval task progress" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div><span class="meta">${pct}%</span>` : ""}
       ${a.airsText ? `<div class="appr-line">Airs ${esc(a.airsText)} London</div>` : ""}
     </div>`;
@@ -258,7 +269,7 @@
     const notes = (v.notes || []).map(n =>
       `<li class="${n.done ? "done" : ""}"><span class="box" aria-hidden="true"></span><span>${n.t ? `<span class="t">${esc(n.t)}</span>` : ""}${esc(n.text)}</span></li>`
     ).join("");
-    const flagHtml = (v.flags || []).map(f => `<div class="flag">${esc(f.text)}</div>`).join("");
+    const flagHtml = (v.flags || []).filter(f => !(v.lane === "approved" && v.approved && f.kind === "approved")).map(f => `<div class="flag">${esc(f.text)}</div>`).join("");
     const showActions = v.lane === "ready" && v.readyFor === "Ben" && (v.type === "long" || !!v.ask);
     // Big Play button for UAT (Ben, 25 Oct 00:03): the exact cut under review via the board's /api/watch link (plays in
     // the browser), YouTube for Done. Review lanes without a link say so instead of hiding the button.
@@ -280,10 +291,10 @@
       </div>
       <h3 class="title"><span class="num">${esc(v.number)}</span>${esc(v.title)}</h3>
       ${v.airText ? `<p class="meta">${v.lane === "done" ? esc(v.airText) : "Airs " + esc(v.airText)}</p>` : ""}
-      <p class="line">${esc(reviewJob && !activeJob ? `Chief reviewing ${reviewJob.id}: ${taskOf(reviewJob)}` : cardHeadline(v))}</p>
+      <p class="line">${esc(v.lane === "approved" && v.approved ? `You OK'd ${v.approved.version || v.version || "it"}${v.approved.okAtText ? ` on ${v.approved.okAtText}` : ""}.` : reviewJob && !activeJob ? `Chief reviewing ${reviewJob.id}: ${taskOf(reviewJob)}` : cardHeadline(v))}</p>
       ${cardWorkHtml(v)}
       ${v.ask && v.ask.dueText && v.lane === "ready" && v.readyFor === "Ben" ? `<p class="meta"><b>OK by ${esc(v.ask.dueText)} London</b> · ${esc(v.ask.job)}</p>` : ""}
-      <p class="meta">Waiting on: ${esc(cardWaiting(v))}</p>
+      ${v.lane === "approved" && v.approved ? "" : `<p class="meta">Waiting on: ${esc(cardWaiting(v))}</p>`}
       ${flagHtml ? `<div class="flags">${flagHtml}</div>` : ""}
       ${v.okNote ? `<div class="okline">✓ ${esc(v.okNote)}</div>` : ""}
       ${v.lane === "approved" && v.approved ? approvedHtml(v.approved) : ""}
