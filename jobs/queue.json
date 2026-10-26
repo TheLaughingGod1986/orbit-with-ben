@@ -82632,6 +82632,11 @@
           "at": "2026-10-26T03:48Z",
           "by": "chief",
           "what": "reopened: Chief c56 FIX (HOS #180 6407764884): 9e23d71a not pushed (HOS ahead 1); even_layout splits VO evenly -> 14 back-to-back same-plate runs in 11 Shorts (real holds 5.9-9.6 s; 008 C and 009 B first cut really 6.25/5.94 s); 010 C S06 plate 2.78 s < 3.45 s row; S7 mint/candle plates exist on NAS (hos-worktrees/2026-10-22/hos-006-trees); --rebuild-v01 breaks argparse. End card/banner/loop/datelines/no-render OK. Notes at top of body. GBP0."
+        },
+        {
+          "at": "2026-10-26T13:20Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "kind": "assembly",
@@ -82641,7 +82646,16 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J0968",
