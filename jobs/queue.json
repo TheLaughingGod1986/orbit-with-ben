@@ -1,5 +1,5 @@
 {
-  "next_id": 968,
+  "next_id": 969,
   "jobs": [
     {
       "id": "J0001",
@@ -81540,7 +81540,7 @@
     },
     {
       "id": "J0964",
-      "title": "028 Oort marbles Short v03 (c52 FIX, local only, park by Wed 28 Oct 20:00 London): s05 La Silla un-wash, s04 NEOWISE comet framing, GLIESE 710 ~1.3 Myr call-out, limiter TP <= -1.6; slot Wed 16 Dec 11:30 kept; park for Chief",
+      "title": "028 Oort marbles Short v03 c53 PASS -> held Private upload J0968 (Ben OK on the board)",
       "needs": "mini",
       "repo": "owb",
       "body": "Chief (Grok) 26 Oct 01:10 London, ruling c52 on J0964 (OWB #264 6405969705) (028 Oort marbles Short v02): FIX, picture + one call-out + a hair of limiter. Build v03 beside v02 with _assemble_028_oort_marbles_short_v02.py copied to _v03.py. Leave v01 (3f04c01c) and v02 (d66954ab) and their UAT/NAS folders untouched. Keep exactly as in v02: the VO words and timing (22.37 s, last word 20.92, loop tail 1.44 s), frame 0 and the MONTHS OF / SUNLIGHT hook, every cut time and plate hold (max 3.98 s), the 9.0-14.0 s long-title banner, the end card (long title + yellow \"Full film on the channel\", no id), the reversed-SDO loop tail whose last frame matches frame 0, the cover and the Wed 16 Dec 2026 11:30 London slot. GBP0: no new TTS, Veo, Flow, Vertex or paid API; code graphics and on-disk plates only.\n\n1. s05 La Silla (11.93-14.19 s) is washed out, not lifted. The grade's floor=(56,66,98) lutrgb clamp turns every dark pixel into the same grey-blue: on the master the plate measures p1 47 / p5 65 / p50 66 / p95 70 (v01 was 21 / 33 / 34 / 59), and the NTT dome and telescope silhouette are gone, so the phone shows a flat grey fog with a few star patches. Remove the floor clamp (or go back to the default 24,34,54) and lift with gamma (about 0.70-0.78), brightness <= 0.06 and contrast 1.15-1.25, so the silhouette stays dark and the star field in the slit gets brighter. Target outside the caption/banner rows: p5 <= 35, p95 >= 90, the dome silhouette readable at 720x1280. If it can't get there, swap to another already-on-disk 028 comet or Oort plate under the same VO and the same in/out.\n2. s04 NEOWISE (9.61-11.93 s) has the exposure right now (p50 79), but the higher crop dropped the horizon and left the comet as a tiny streak in the upper left (about 3% of frame width). The plate reads as an empty gradient, and that's why polish_gate warns about low detail (edge 0.0422 < p5 0.0442). Either punch in on the comet, so nucleus + tail run at least about 25% of frame height in the top third and stay clear of the banner rows (y 800-1120) and the caption row, or go back to the v01 framing with the city horizon plus the v02 lift. Target: polish_gate shows no low-detail look-at on s04.\n3. Educational (Ben, 11 Oct: date/timeline call-outs). Add one timeline call-out on s03 Gaia (6.94-9.00 s, out before the banner starts at 9.0): \"GLIESE 710\" with \"in about 1.3 million years\" on the second line. Use the house code-graphic style (as the 8 MIN -> MONTHS label), animated in, clear of the caption row. The number matches the long's script (\"in about one point three million years\"). No person is named in this lift, so no person card is needed.\n4. Level: the AAC measures -14.43 LUFS with true peak -1.49 dBTP (ebur128 shows -1.5, but it rounds), right on the ceiling. Re-run only the limiter on the existing mix with the ceiling set for TP <= -1.6 dBTP measured on the final AAC, integrated -14.0 +/-0.5 LUFS. The words and timing don't change.\n\nThen on v03: run gate_shorts_open check --air-date 2026-12-16 (J0918 ship gate fields in the line), polish_gate, picture_qa, music_gate and sfx_kit level, and all must PASS. Run tesseract OCR on every frame with 0 hits for ids/codes/file names/job tags, recorded in _v03_ocr.txt. Write the measured AAC lufs/true_peak_dbtp and the s04/s05 p5/p50/p95 into the meta. Write SHA256.txt. Copy the master, _PHONE and sheets to OWB UAT/028_short_lift_oort_marbles_v03/ and the NAS OWB UAT, with sha matching. Commit the meta, gates and sheets only (no media) and push.\n\nPark by Wed 28 Oct 20:00 London. Do NOT set awaits_ben yourself. End with: jobs.py block J0964 --reason \"parked for Chief: 028 Oort Short v03 gates PASS\" --git. Chief raises Ben's Ready for OK card after a PASS. No upload, no Studio change, never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.\n\n--- earlier brief (still applies) ---\nChief (Grok) 25 Oct 23:25 London, J0911 fix notes on 028_short_lift_oort_marbles_v01 (pack 91dfe201e). Build v02 beside v01 (v01 untouched) with _assemble_028_oort_marbles_short_v01.py copied to _v02.py:\n1. End card: drop the 'F-jImX5h7ws' row. Keep the long title 'What Happens When a Star Passes Through Our Solar System?' and put 'Full film on the channel' in the yellow row, as 029 v03 (J0944). No ids, codes, file names or job tags on any frame: OCR every frame (tesseract) and record 0 hits in _v02_ocr.txt.\n2. Air slot: not Wed 9 Dec (029 Short holds it; one Short a day). Pick the first free OWB Short weekday 11:30 London slot after Mon 7 Dec in 00_Brand/Channel-Setup/social/UPLOADS.json that no queued job (J0961 holds 9/11/14 Dec) claims, and write it in README/meta.\n3. s04 NEOWISE (9.6-11.9 s) and s05 La Silla (11.9-14.2 s) read near-black on the phone: lift exposure/contrast within the polish_gate limits, or swap to another already-on-disk 028 plate (comet or Oort graphic) under the same VO; keep every plate hold <= 4.0 s and the 9-14 s long-title banner.\n4. Keep VO, timing (22.37 s), hook, payoff, loop tail <= 1.5 s and matched loop to frame 0. Make the last loop frame match frame 0 (same SDO clip time) so the loop is seamless.\n5. Gates on v02: gate_shorts_open check --air-date <slot> (the J0918 ship gate: f0diff, cut1 <= 3.0 s, vo_onset, tail_gap all in the gate line), polish_gate, picture_qa, music_gate, sfx_kit level: all PASS. _PHONE copy to OWB UAT/028_short_lift_oort_marbles_v02/ and the NAS OWB UAT, sha256 checked, SHA256.txt. Commit meta/gates/sheets only (no media).\nNo upload, no Studio change. End: jobs.py block <id> --reason \"parked for Chief: 028 Oort Short v02 PASS\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
@@ -81549,13 +81549,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-26T01:17Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: 028 Oort Short v03 gates PASS",
+      "result": "Chief PASS c53 (Grok, 26 Oct 02:27 London, OWB #264 6406845498): 028 Oort marbles Short v03 PASS - s05 La Silla un-washed (p5 0 / p50 25 / p95 103, dome + Milky Way readable; v02 64/66/69), s04 back to v01 horizon framing + lift, no s04 look-at; GLIESE 710 / in about 1.3 million years call-out 7.1-8.95 s; AAC -14.5 LUFS, TP -1.9 dBTP (was -1.49); audio = v02 through the limiter (corr 0.999, +5 ms limiter delay, env within 0.7 dB); frames 671 / 22.37 s, cuts = v02, only 6.7-15.97 s changed, end card + loop bit-identical to v02; OCR 0 hits; gates PASS; sha 344bd0d0 on repo/iCloud/NAS; v01/v02 untouched -> held upload J0968 (Ben OK on the board). GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -81621,6 +81621,11 @@
           "at": "2026-10-26T01:35Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: 028 Oort Short v03 gates PASS"
+        },
+        {
+          "at": "2026-10-26T02:25Z",
+          "by": "chief",
+          "what": "done: Chief PASS c53 (Grok, 26 Oct 02:27 London, OWB #264 6406845498): 028 Oort marbles Short v03 PASS - s05 La Silla un-washed (p5 0 / p50 25 / p95 103, dome + Milky Way readable; v02 64/66/69), s04 back to v01 horizon framing + lift, no s04 look-at; GLIESE 710 / in about 1.3 million years call-out 7.1-8.95 s; AAC -14.5 LUFS, TP -1.9 dBTP (was -1.49); audio = v02 through the limiter (corr 0.999, +5 ms limiter delay, env within 0.7 dB); frames 671 / 22.37 s, cuts = v02, only 6.7-15.97 s changed, end card + loop bit-identical to v02; OCR 0 hits; gates PASS; sha 344bd0d0 on repo/iCloud/NAS; v01/v02 untouched -> held upload J0968 (Ben OK on the board). GBP0, no upload."
         }
       ],
       "kind": "assembly",
@@ -81634,7 +81639,8 @@
         "at": "2026-10-26T01:35Z",
         "by": "cursor",
         "note": "v03 gates PASS, sha 344bd0d0, UAT and NAS copied, parked for Chief"
-      }
+      },
+      "done_ref": "6406845498"
     },
     {
       "id": "J0965",
@@ -81909,6 +81915,56 @@
         }
       ],
       "kind": "assembly"
+    },
+    {
+      "id": "J0968",
+      "title": "028 Gliese 710: Private upload of the Oort marbles Short v03 (Wed 16 Dec 11:30 London) after Ben's OK",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 26 Oct 02:27 London, J0964 028 Oort marbles Short v03 PASS (ruling c53, OWB #264 6406845498).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the 028 Oort marbles Short v03 (OWB UAT: 028_short_lift_oort_marbles_v03/028_short_lift_oort_marbles_v03_PHONE.mp4) on the board or the thread. If Ben sends notes instead, this job is cancelled and a v04 fix job is queued.\n\nAfter Ben's OK:\n1. Verify the master sha256 344bd0d0ab044a95335e78e5769f292079d514c6297f35f7e448fa9857e80a6a (02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_oort_marbles/06_Final-Exports/028_short_lift_oort_marbles_v03.mp4, = 028_short_lift_oort_marbles_v03_SHA256.txt), check Wed 16 Dec 2026 11:30 London (2026-12-16T11:30:00Z) is still free in 00_Brand/Channel-Setup/social/UPLOADS.json, then upload it to OWB as Private with publishAt 2026-12-16T11:30:00Z, title 'What Happens When Gliese 710 Passes Through the Oort Cloud?'.\n2. Cover 028_short_lift_oort_marbles_v03_cover.jpg (THROUGH THE / OORT CLOUD; no Orbit). Description carries the long's title 'What Happens When a Star Passes Through Our Solar System?' + link to F-jImX5h7ws. Related video F-jImX5h7ws (it goes public Sun 29 Nov 18:00 London, before this runs or else block that step until 29 Nov 18:05 London).\n3. Read back privacy, publishAt, title, cover and Related; record in UPLOADS.json and post the read-back on the OWB thread. Buffer cross-posts stay deferred per house rules.\nNever Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6406845498",
+      "film": "",
+      "stage": "",
+      "after": "J0964",
+      "eta_min": 30,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-26T02:25Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T02:25Z",
+      "result": "waits on Ben's OK of the 028 Oort marbles Short v03 (_PHONE in OWB UAT). Chief PASS c53 6406845498.",
+      "history": [
+        {
+          "at": "2026-10-26T02:25Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-26T02:25Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the 028 Oort marbles Short v03 (_PHONE in OWB UAT). Chief PASS c53 6406845498."
+        },
+        {
+          "at": "2026-10-26T02:25Z",
+          "by": "chief",
+          "what": "waits on Ben: upload 028 Short \"What Happens When Gliese 710 Passes Through the Oort Cloud?\" v03 Private for Wed 16 Dec 11:30"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "OWB:028"
+      ],
+      "awaits_ben": {
+        "what": "upload 028 Short \"What Happens When Gliese 710 Passes Through the Oort Cloud?\" v03 Private for Wed 16 Dec 11:30",
+        "file": "OWB UAT/028_short_lift_oort_marbles_v03/028_short_lift_oort_marbles_v03_PHONE.mp4",
+        "version": "v03",
+        "airs": "2026-12-16T11:30Z",
+        "ifNot": "Nothing is uploaded until you OK it",
+        "title": "Gliese 710 Short: Oort Marbles v03",
+        "number": "028",
+        "type": "short"
+      }
     }
   ],
   "focus": [],
