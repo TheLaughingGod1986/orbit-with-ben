@@ -1,5 +1,5 @@
 {
-  "next_id": 988,
+  "next_id": 989,
   "jobs": [
     {
       "id": "J0001",
@@ -81578,11 +81578,11 @@
       "title": "OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief (Grok) 25 Oct 19:50 London, J0943 Neptune S2 v07 PASS (ruling c48, OWB #264 6402300872).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB standalone Short oyRcrFTYyDY (\"The Wind on Neptune Is Supersonic\", airs Tue 27 Oct 11:30 London) to re-cut v07 (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4, sha256 of master 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d) on the board or the thread. Deadline for that OK: Tue 27 Oct 10:30 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Tue 27 Oct 11:30 London as is. Hard stop: do not start the upload after 10:45 London on Tue 27 Oct; if both videos are not read back by 11:15 London, set the NEW v07 upload to private/unscheduled (not v01) so only v01 airs.\n\nAfter Ben's OK:\n1. Read back oyRcrFTYyDY (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Tue 27 Oct 11:30 London (2026-10-27T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07.mp4; repo copy 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from oyRcrFTYyDY. Captions en-GB from the v07 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set oyRcrFTYyDY (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names oyRcrFTYyDY to the new id); post the read-back as a [Chief] pointer on OWB #264.\nNever Public, no Replace, no delete, no force-push. GBP0.\n\nCHIEF RULING 26 Oct 08:21 London: Neptune oyRcrFTYyDY is marked standalone:true (J0216 test, to 20 Nov). Do NOT copy or set a Related video, and do NOT add a long link to the description, on the old or the new copy. If the swap copies Related from the old copy, skip that step and leave Related empty.",
+      "body": "Chief (Grok) 25 Oct 19:50 London, J0943 Neptune S2 v07 PASS (ruling c48, OWB #264 6402300872).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB standalone Short oyRcrFTYyDY (\"The Wind on Neptune Is Supersonic\", airs Tue 27 Oct 11:30 London) to re-cut v07 (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4, sha256 of master 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d) on the board or the thread. Deadline for that OK: Tue 27 Oct 10:30 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Tue 27 Oct 11:30 London as is. Hard stop: do not start the upload after 10:45 London on Tue 27 Oct; if both videos are not read back by 11:15 London, set the NEW v07 upload to private/unscheduled (not v01) so only v01 airs.\n\nAfter Ben's OK:\n1. Read back oyRcrFTYyDY (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Tue 27 Oct 11:30 London (2026-10-27T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07.mp4; repo copy 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from oyRcrFTYyDY. Captions en-GB from the v07 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set oyRcrFTYyDY (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names oyRcrFTYyDY to the new id); post the read-back as a [Chief] pointer on OWB #264.\nNever Public, no Replace, no delete, no force-push. GBP0.\n\nCHIEF RULING 26 Oct 08:21 London: Neptune oyRcrFTYyDY is marked standalone:true (J0216 test, to 20 Nov). Do NOT copy or set a Related video, and do NOT add a long link to the description, on the old or the new copy. If the swap copies Related from the old copy, skip that step and leave Related empty.\n\nACTING CHIEF RULING 26 Oct 2026 (Codex): Acting Chief Codex: FIX, no c61 waiver. Independently verified v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d, -14.1 LUFS / -1.4 dBTP. Ben OK 6411201182 confirmed. Authorized audio-only v07a correction in J0988; J0956 remains blocked until that job has fresh passing gates and elected Chief sign-off naming the new hash. Existing approval is not silently transferred to changed bytes. Review due 2026-10-27 10:30 London; if not ready cancel swap and retain scheduled v01. No upload after 10:45; read-backs by 11:15. No Related/long link. No YouTube changes or spend in this review.\nOriginal v07 Ben approval already received; the earlier waiting-for-Ben wording is historical. The active hold is technical correction plus new-hash Chief acceptance. Keep original swap progress 1/4; review completion does not mean delivery completed.",
       "ref": "6402300872",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J0988",
       "eta_min": 60,
       "status": "blocked",
       "by": "cursor",
@@ -81590,7 +81590,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T19:44Z",
-      "result": "parked for Chief: v07 sha 0919db03 matches Ben's OK (6411201182), but gate_shorts_open now FAILs true peak -1.4 dBTP above -1.6 (c61, after the PASS). Upload path has no override. Waive the 0.2 dB for this already-OK'd swap, or OK a limiter-only re-encode. oyRcrFTYyDY stays Private, publishAt 2026-10-27T11:30:00Z. Nothing uploaded.",
+      "result": "Acting Chief Codex: FIX, no c61 waiver. Independently verified v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d, -14.1 LUFS / -1.4 dBTP. Ben OK 6411201182 confirmed. Authorized audio-only v07a correction in J0988; J0956 remains blocked until that job has fresh passing gates and elected Chief sign-off naming the new hash. Existing approval is not silently transferred to changed bytes. Review due 2026-10-27 10:30 London; if not ready cancel swap and retain scheduled v01. No upload after 10:45; read-backs by 11:15. No Related/long link. No YouTube changes or spend in this review.",
       "history": [
         {
           "at": "2026-10-25T19:44Z",
@@ -81646,6 +81646,11 @@
           "at": "2026-10-26T12:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T21:41Z",
+          "by": "codex",
+          "what": "Chief review resolved: Acting Chief Codex: FIX, no c61 waiver. Independently verified v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d, -14.1 LUFS / -1.4 dBTP. Ben OK 6411201182 confirmed. Authorized audio-only v07a correction in J0988; J0956 remains blocked until that job has fresh passing gates and elected Chief sign-off naming the new hash. Existing approval is not silently transferred to changed bytes. Review due 2026-10-27 10:30 London; if not ready cancel swap and retain scheduled v01. No upload after 10:45; read-backs by 11:15. No Related/long link. No YouTube changes or spend in this review."
         }
       ],
       "kind": "studio",
@@ -85035,6 +85040,34 @@
         "by": "codex-relay",
         "note": "Installed and live-verified requested Chief order; real relay and published board both show Codex with Gemini next. Both"
       }
+    },
+    {
+      "id": "J0988",
+      "title": "Neptune S2 J0956: audio-only v07a correction and fresh gate evidence (review by 27 Oct 10:30)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex, 26 Oct 2026: authorized technical correction for J0956. Ben approved v07 in OWB #264 comment 6411201182; Chief c48 PASS 6402300872. Current decoded master independently measured -14.1 LUFS / -1.4 dBTP; c61 requires -14.0 +/-0.5 LUFS and TP <= -1.6. No gate waiver.\n\nCreate owb_sa_s2_neptune_v07a.mp4 and matching _PHONE, preserving v07 and all older files. Input repo master: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4, SHA256 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d. Shared Mini checkout contains media; use a clean worktree for commits.\n\nFour steps, report progress 0/4 then each step:\n1. Verify source hash, preserve approved picture, 618 frames / 30fps / 20.6s, captions, VO take, timing, bed and SFX. Standalone S2 has no numbered long film: do not associate it with an unrelated film.\n2. Audio-only mix-bus level/true-peak correction, no new generation or credit. Stream-copy video. Prefer the smallest correction that passes both loudness and peak; provide AAC headroom, measure the encoded file rather than trust limiter settings. Correct latency and retain A/V duration and synchronization. Never edit words, VO stems or creative picture. _PHONE must carry the same corrected audio.\n3. Fresh gate_shorts_open --air-date 2026-10-27, polish, music, SFX and loop reports, plus ebur128 peak=true on BOTH encoded master and PHONE; all FAILs block. Compare decoded video hashes frame-by-frame with v07 (must be identical on master), frame count, timestamps, audio alignment and a listening check. Record new SHA256 values, before/after I and TP, exact filter/encode command and results. No scope expansion if another gate fails: report it. Existing c48 accepted warnings and J0216 test-only duration exception remain; never bypass a FAIL.\n4. Copy versioned master, PHONE, meta, sheets and SHA256 manifests to iCloud OWB UAT/standalone_shorts_v07a and NAS UAT; verify copies. Keep originals. Commit reports/meta only, not media. Block this child for elected Chief review with exact paths/hashes and evidence. Do not mark done yourself: final technical approval must name the new hash. Aim to deliver immediately, review no later than Tue 27 Oct 10:30 London.\n\nApproval handling: Ben's 6411201182 remains evidence for the creative v07 swap, NOT approval of new bytes. Elected Chief must check the technical-only delta and explicitly authorize the new hash as that correction before marking this child done and reopening J0956; update the delivery file/version provenance without inventing a new Ben OK. If any creative change, audible defect or other failed gate remains, no swap approval: return for correction; any required new Ben watch must use awaits and the original 10:30 deadline. No need to ask Ben to repeat his already-recorded v07 OK.\n\nJ0956 stays blocked and depends on this child through its Chief sign-off. Existing v01 oyRcrFTYyDY stays scheduled. No upload, Studio, YouTube, Buffer or privacy change in this job. GBP0. If not technically signed off by Tue 27 Oct 10:30 London, Chief cancels the swap and v01 airs unchanged. Upload never starts after 10:45; both read-backs by 11:15 or NEW copy private/unscheduled, old v01 retained. Standalone: no Related video or long description link. Follow-up uploader must reread live old/new state and all current gates.\n",
+      "ref": "6411201182",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T21:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T21:41Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly",
+      "urgent": 6
     }
   ],
   "focus": [],
