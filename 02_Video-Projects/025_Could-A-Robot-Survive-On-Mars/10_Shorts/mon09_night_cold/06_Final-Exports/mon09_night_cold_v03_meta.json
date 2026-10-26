@@ -1,0 +1,51 @@
+{
+  "job": "J0935",
+  "version": "v03",
+  "air": "2026-11-09",
+  "related": "Js6EQJ8qDi8",
+  "planned_title": "Could a Robot Survive a Night on Mars?",
+  "replaces_for_review": "mon09_night_cold_v01 (scheduled iyvWYFP_ETA). v01 and v02 not overwritten.",
+  "file": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v03.mp4",
+  "sha256": "cfff04cdddcd3922729b32c6cb60ed1ec0a90acc39fbca8e3f545b7285ca049c",
+  "duration_s": 18.066667,
+  "spoken": "On Mars, the night can fall to minus 90 degrees. Batteries hate deep cold, like your phone on a frozen day, so rovers burn power just to keep their insides warm. In 2009, Spirit got stuck and couldn't catch the winter sun.",
+  "spend": "none",
+  "orbit": "none on screen",
+  "brief": {
+    "frame_0": "PIA26673.gif moving dusk clouds, 9:16 crop, no Orbit",
+    "first_word_s": 0.056,
+    "surprise_s": 2.126,
+    "first_cut_s": 2.55,
+    "last_word_to_loop_s": 1.0,
+    "meta_promise": false,
+    "payoff_number_s": 15.287,
+    "surprise_note": "90 at 2.126s after atempo 1.08. Recorded sentence cannot reach 1.5 s inside the cap.",
+    "couldnt_s": 15.287,
+    "body_gap_s": 0.44,
+    "payoff_vs_70pct": 12.64,
+    "loop_diff_whole": 7.05,
+    "loop_diff_masked": 0.9,
+    "loop_diff": 0.9,
+    "lufs": -14.2,
+    "true_peak_dbtp": -2.1,
+    "probe_lufs": -14.2,
+    "probe_true_peak_dbtp": -2.1
+  },
+  "long_title_on_screen": {
+    "title": "Could a Robot Survive on Mars?",
+    "from_s": 9.0,
+    "to_s": 14.0
+  },
+  "hook": "MINUS / 90 (yellow 90), 0-2.0 s",
+  "checks": {
+    "dark_run_frames_over_85pct": 0,
+    "black_edge_run_over_30pct": 0,
+    "max_black_frac": 0.181,
+    "ocr_every_3rd_frame": 181,
+    "ocr_url_logo_id_hits": 0,
+    "whisper": "not installed on the mini. Splice read-through is grammatical: On Mars, the night can fall to minus 90 degrees. Batteries hate deep cold, like your phone on a frozen day, so rovers burn power just to keep their insides warm. In 2009, Spirit got stuck and couldn't catch the winter sun.",
+    "spirit_plate": "plain-ground Gale dunes, source 42s, crop x=1200. Not the deck mosaic.",
+    "ninety_s": 2.126,
+    "ninety_note": "atempo 1.08 is the Chief cap. The recorded words run longer than 1.5s even with the 0.16s and 0.40s pauses closed."
+  }
+}

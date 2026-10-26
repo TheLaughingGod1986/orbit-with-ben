@@ -26,6 +26,9 @@ Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
   7. spoken text contains a meta-promise               (24 Oct 2026 — "stay, and i'll show you",
                                                         "stay and i'll show you", "did you know",
                                                         "wait for it")
+  8. integrated loudness outside −14.0 ±0.5 LUFS, or   (26 Oct 2026, Chief c61 — ebur128 peak=true
+     true peak above −1.6 dBTP                          on the AAC; loudnorm's −1.5 target was
+                                                        landing at −1.4 dBTP)
 
 Warnings:
 
@@ -126,6 +129,11 @@ VO_ONSET_WARN_S = 0.15
 # (d) WARN when the gap from the last word to the end is over 1.5 s.
 VO_TAIL_WARN_S = 1.5
 # (e) Text lint: FAIL if the script or meta "spoken" field contains a meta-promise.
+# (f) Level (Chief c61, 26 Oct 2026): ebur128 peak=true on the AAC. Integrated −14.0 ±0.5 LUFS,
+#     true peak ≤ −1.6 dBTP. The old loudnorm TP=−1.5 target was measuring about −1.4 on the file.
+LUFS_TARGET = -14.0
+LUFS_TOL = 0.5
+TP_FAIL_DBTP = -1.6
 META_PROMISES = (
     "stay, and i'll show you",
     "stay and i'll show you",
@@ -654,6 +662,38 @@ def contact_sheet(path: Path, out: Path) -> None:
         run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"hstack=inputs={len(tiles)}", str(out)])
 
 
+def aac_loudness(path: Path) -> tuple[float | None, float | None]:
+    """Integrated LUFS and true peak (dBTP) via ebur128=peak=true. None if ffmpeg cannot read them."""
+    p = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", str(path), "-af", "ebur128=peak=true", "-f", "null", "-"],
+        capture_output=True, text=True)
+    integrated = peak = None
+    for ln in p.stderr.splitlines():
+        if "I:" in ln and "LUFS" in ln:
+            integrated = float(ln.split("I:")[1].split("LUFS")[0].strip())
+        if "Peak:" in ln and "dBFS" in ln:
+            peak = float(ln.split("Peak:")[1].split("dBFS")[0].strip())
+    return integrated, peak
+
+
+def level_verdict(path: Path) -> tuple[list[str], dict]:
+    integrated, peak = aac_loudness(path)
+    info = {"lufs": integrated, "true_peak_dbtp": peak}
+    fails: list[str] = []
+    if integrated is None or peak is None:
+        fails.append("could not read integrated loudness / true peak (ebur128 peak=true)")
+        return fails, info
+    lo, hi = LUFS_TARGET - LUFS_TOL, LUFS_TARGET + LUFS_TOL
+    if not (lo <= integrated <= hi):
+        fails.append(
+            f"integrated loudness {integrated:.1f} LUFS outside {lo:.1f}..{hi:.1f} "
+            "(target -14.0)"
+        )
+    if peak > TP_FAIL_DBTP:
+        fails.append(f"true peak {peak:.1f} dBTP above {TP_FAIL_DBTP:.1f}")
+    return fails, info
+
+
 def duration_verdict(dur: float, length_test: bool = False) -> tuple[list[str], list[str]]:
     """(fails, warns) for the duration. length_test: the one Chief-OK'd 50–60 s test Short (11 Oct 2026)."""
     fail_at, band = (TEST_DUR_FAIL, TEST_DUR_BAND) if length_test else (DUR_FAIL, DUR_BAND)
@@ -699,6 +739,12 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
             res["last_word_end_s"] = last_end_s
             res["tail_gap_s"] = tail_gap_s
             res["warns"] += vo_warns
+            # Level is a ship fail (Chief c61). report_only keeps it out of fails so the
+            # upcoming-shorts report and the stayed-gate tests still separate hard fails.
+            if not report_only:
+                lvl_fails, lvl = level_verdict(path)
+                res["level"] = lvl
+                res["fails"] += lvl_fails
 
     motion = motion_first_second(path)
     res["motion_0_1s"] = motion
