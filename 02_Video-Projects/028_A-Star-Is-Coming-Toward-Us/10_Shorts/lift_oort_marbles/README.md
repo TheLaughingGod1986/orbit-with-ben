@@ -1,4 +1,15 @@
-# Shorts brief — 028 `lift_oort_marbles` (`028_short_lift_oort_marbles_v01`)
+# Shorts brief — 028 `lift_oort_marbles`
+
+## v02 (`J0964`, fix of v01)
+
+v01 is untouched. v02 keeps the same VO, 22.37 s timing, hook and payoff.
+
+- **End card:** long title plus yellow row `Full film on the channel`. No YouTube id on any frame.
+- **Air date:** Wed 16 Dec 2026, 11:30 London. Mon 7 Dec is held by `X768qs8sNQs`. J0961 holds Wed 9, Fri 11 and Mon 14 Dec. Wed 16 Dec is the first free OWB Short weekday after that.
+- **Picture:** s04 NEOWISE is a higher crop (comet and dusk horizon) with a modest exposure lift, so the phone is brighter and polish_gate has no gutter. s05 La Silla is exposure-lifted. The loop tail is the opening SDO clip reversed so the last frame is frame 0 (source time 34.00 s).
+- **Spend:** £0.
+
+## v01 (`028_short_lift_oort_marbles_v01`)
 
 - **Job:** `J0911` (`Backlog OWB: next Short cut from a locked long (existing VO + picture only)`)
 - **Parent long:** `028_A-Star-Is-Coming-Toward-Us` — *"What Happens When a Star Passes Through Our Solar System?"* (`F-jImX5h7ws`)
