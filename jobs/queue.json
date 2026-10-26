@@ -22096,7 +22096,7 @@
       "title": "HOS Related fixes ×4 after longs public (from J0245)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) PFj6172YU4Q → wwcjcFfC-5M (J0973: v05 is the scheduled copy. mTY67qet7cM is Private and unscheduled. Source Related was None. Set Related on PFj6172YU4Q after wwcjcFfC-5M is public, before 8 Nov.)\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) pWySvZsneZg → GHZDsiH7L7A (J0970: v03 is the scheduled copy. JyRjM-9Yc8g is Private and unscheduled. Related was read back on the old id; Studio CDP 9460 did not answer for the new id, so set it on pWySvZsneZg before 1 Nov.)\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `PlihWC5uA2E` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n5) qW2OsD4mujc → AL_-qlWko_g (J0971: v03 is the scheduled copy. Pp5LmjsduI4 is Private and unscheduled. Long AL_-qlWko_g is already public. Studio CDP 9460 did not answer, so set Related on qW2OsD4mujc before 3 Nov. Do not wait on the long.)\n",
+      "body": "Chief J0245: when each long is public and before its Short airs, set Related:\n1) Rl2uZ-KOTl8 → wwcjcFfC-5M (J0941: v04 airs Fri 30 Oct; 1lszTrYRp-8 is Private and unscheduled)\n2) PFj6172YU4Q → wwcjcFfC-5M (J0973: v05 is the scheduled copy. mTY67qet7cM is Private and unscheduled. Source Related was None. Set Related on PFj6172YU4Q after wwcjcFfC-5M is public, before 8 Nov.)\n3) x_3L_IdYgEc → wwcjcFfC-5M\n4) pWySvZsneZg → GHZDsiH7L7A (J0970: v03 is the scheduled copy. JyRjM-9Yc8g is Private and unscheduled. Related was read back on the old id; Studio CDP 9460 did not answer for the new id, so set it on pWySvZsneZg before 1 Nov.)\nWait until long is public. No other Studio writes.\n\n**Added by Chief, 22 Oct (J0837 PASS):** the post-29 Oct pass also covers Blood Short `xHnIi9GqOsM` ('Why Do Veins Have Valves?', airs Thu 5 Nov 11:30Z, Related currently None) -> `wwcjcFfC-5M`. J0972: v03 is the scheduled copy. `PlihWC5uA2E` is Private and unscheduled. No other job holds it. `BW_CFAX-mxc` stays with J0241 (J0948: v04 airs Sat 31 Oct; `5n7xFQRBUvI` is Private and unscheduled). Same rules: only after wwcjcFfC-5M reads Public, change only the Related field, read it back. Report: HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-22.md (6da204e6), fix 1.\n5) qW2OsD4mujc → AL_-qlWko_g (J0971: v03 is the scheduled copy. Pp5LmjsduI4 is Private and unscheduled. Long AL_-qlWko_g is already public. Studio CDP 9460 did not answer, so set Related on qW2OsD4mujc before 3 Nov. Do not wait on the long.)\n6) xHnIi9GqOsM → wwcjcFfC-5M (J0972: v03 is the scheduled copy. PlihWC5uA2E is Private and unscheduled. Source Related was None. Set Related on xHnIi9GqOsM after wwcjcFfC-5M is public, before 5 Nov.)\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -82867,6 +82867,11 @@
           "at": "2026-10-26T09:35Z",
           "by": "cursor",
           "what": "step 1 of 4 done: PlihWC5uA2E Private publishAt 2026-11-05T11:30:00Z. Master sha e3aa2c6c matches UAT and the manifest. Gate PASS 22.17s. Related was None on the 25 Oct audit."
+        },
+        {
+          "at": "2026-10-26T09:39Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: xHnIi9GqOsM Private publishAt 2026-11-05T11:30:00Z. PlihWC5uA2E private unscheduled. en-GB captions serving. HOS a18939ac."
         }
       ],
       "kind": "studio",
@@ -82899,11 +82904,11 @@
         "type": "short"
       },
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-26T09:35Z",
+        "at": "2026-10-26T09:39Z",
         "by": "cursor",
-        "note": "PlihWC5uA2E Private publishAt 2026-11-05T11:30:00Z. Master sha e3aa2c6c matches UAT and the manifest. Gate PASS 22.17s. "
+        "note": "xHnIi9GqOsM Private publishAt 2026-11-05T11:30:00Z. PlihWC5uA2E private unscheduled. en-GB captions serving. HOS a18939a"
       }
     },
     {
