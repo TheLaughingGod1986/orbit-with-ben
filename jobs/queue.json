@@ -1,5 +1,5 @@
 {
-  "next_id": 978,
+  "next_id": 979,
   "jobs": [
     {
       "id": "J0001",
@@ -83357,6 +83357,33 @@
         "by": "gemini",
         "note": "All 3 Venus lifts checked & gate60.txt committed (07db14bed): all 3 FAIL gate60 + Keeper line-1 question rule; no awaits"
       }
+    },
+    {
+      "id": "J0978",
+      "title": "Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Studio Test B start: HOS Atom `GHZDsiH7L7A` (Monday test loop, Ben pt4241u, 26 Oct). Not before Fri 30 Oct, the day after J0280's Title Test & Compare ends.**\n\nPlan, originals, baselines and pass rule: OWB `05_Analytics/tests/STUDIO_TESTS.md` > *Test B* (PR #289). Originals also in `05_Analytics/tests/studio_tests_2026-10-26/originals.json`.\n\n1. **HOS channel in Studio (check the channel name first):** open `GHZDsiH7L7A` > Test & Compare. If the title test still reads *Running*, change nothing: `jobs.py block <this id> --reason \"waits for: J0280 Title Test & Compare on GHZDsiH7L7A still running\"` and stop. Never press anything that ends or deletes a running test.\n2. When it has ended, record the result (winning title, watch-time share per title) in Test B's section. If the live title is no longer *What's Really Inside an Atom?*, log the new live title as the original and check the planned title still makes sense before going on; if unsure, block \"parked for Chief: Test B title vs J0280 winner\".\n3. Apply only the planned change from STUDIO_TESTS.md: title `What's Inside an Atom? Mostly Empty Space`, description **line 1 only**, and the planned tags. Data API, dry run first (`07_Content-Ops/scripts/retitle-videos.ts` / `redescribe-videos.ts`), send the snippet without `status`. No privacy, schedule, thumbnail, Related or end-screen change. Nothing deleted, £0.\n4. Read back title, line 1, tags, privacy; save `05_Analytics/tests/studio_tests_<date>/test_b_apply_readback.json`.\n5. Update Test B in STUDIO_TESTS.md to **Running** with the real start date (end stays 9 Nov; the readout also checks 14 days from start), by PR to OWB `main`. Post the one-line AGENTS note on #99.\n\nIf the Data API refuses again (`Precondition check failed`), revert any field that did change from the originals, read back, and block with the error.\n",
+      "ref": "PR #289",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T09:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T09:43Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "kind": "listing"
     }
   ],
   "focus": [],
