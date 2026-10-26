@@ -79075,10 +79075,10 @@
       "stage": "",
       "after": "",
       "eta_min": 600,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-26T07:04Z",
-      "eta": "2026-10-26T17:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
       "result": "",
@@ -79262,6 +79262,11 @@
           "at": "2026-10-26T07:23Z",
           "by": "cursor",
           "what": "step 1 of 6 done: mon09 v03 gates PASS. 18.07s, -14.2 LUFS / -2.1 dBTP, 90 at 2.13s (atempo 1.08 cap), plain-ground Spirit plate, PHONE.mp4 + manifest on UAT and NAS. Commit d9ccb8bc6. Next is wed11 v04."
+        },
+        {
+          "at": "2026-10-26T07:23Z",
+          "by": "cursor",
+          "what": "released: mon09 v03 is on origin/main (d9ccb8bc6) and on UAT/NAS. Five Shorts still to build, next is wed11 v04 (drop the welded middle, keep 2018 at >=70%). No swap, no upload."
         }
       ],
       "kind": "video",
