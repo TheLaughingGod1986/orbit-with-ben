@@ -83386,13 +83386,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-26T09:46Z",
-      "eta": "2026-10-26T11:16Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-26T09:43Z",
-      "result": "",
+      "result": "waits for: J0280 Title Test & Compare on GHZDsiH7L7A still running",
       "history": [
         {
           "at": "2026-10-26T09:43Z",
@@ -83418,6 +83418,11 @@
           "at": "2026-10-26T09:48Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Checked HOS Studio (CDP 9460, UCXp7HkBIl1LgaznXuZHJyRg) on GHZDsiH7L7A: A/B testing titles reads Running… (also before Fri 30 Oct date gate); nothing changed"
+        },
+        {
+          "at": "2026-10-26T09:48Z",
+          "by": "gemini",
+          "what": "blocked: waits for: J0280 Title Test & Compare on GHZDsiH7L7A still running"
         }
       ],
       "kind": "listing",
