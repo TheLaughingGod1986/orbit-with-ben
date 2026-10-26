@@ -218,10 +218,10 @@ class Relay(unittest.TestCase):
         os.environ["PATH"] = str(self.tmp / "empty")
         self.assertEqual(self.chief(), "codex")
 
-    def test_an_ordinary_failure_does_not_wake_the_next_agent(self):
+    def test_a_failed_elected_chief_yields_to_the_next_agent(self):
         self.fake("cursor", 'echo "Traceback: KeyError"; exit 1')
         cr.cmd_run(T0)
-        self.assertFalse(self.ran("codex"))
+        self.assertTrue(self.ran("codex"))
         self.assertIn("run failed (exit 1)", self.posts.read_text())
 
     def test_a_long_job_that_mentions_quota_is_not_out_of_credit(self):
@@ -408,8 +408,8 @@ class Relay(unittest.TestCase):
             cr.queue_has_work = old_q
 
     def test_stand_ins_are_told_to_park_protected_calls(self):
-        self.assertIn("parked for Chief", cr.PROMPT)
-        self.assertIn("No final OK or PASS, no merge", cr.PROMPT)
+        self.assertIn("parked for Chief", cr.authority_prompt("cursor", "codex"))
+        self.assertIn("No final OK or PASS, no merge", cr.authority_prompt("cursor", "codex"))
 
     def test_a_stale_codex_flags_env_is_ignored(self):
         os.environ["CODEX_FLAGS"] = "exec -s workspace-write --approve-for-me"
@@ -719,7 +719,7 @@ class Relay(unittest.TestCase):
 
     def test_the_default_chain_puts_claude_second(self):
         del os.environ["CHIEF_CHAIN"]
-        self.assertEqual(cr.chain(), ["chief", "claude", "cursor", "codex"])
+        self.assertEqual(cr.chain(), ["chief", "claude", "codex", "gemini"])
 
     def test_claude_is_chief_after_grok_while_its_heartbeat_is_fresh_and_hands_on_and_back(self):
         os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"

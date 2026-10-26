@@ -19,7 +19,7 @@ class Routing(unittest.TestCase):
     def test_every_kind_and_its_models_are_in_agents_md(self):
         sec = agents_section()
         for kind, (what, primary, backup, _) in routing.KINDS.items():
-            row = next((l for l in sec.splitlines() if f"`{kind}`" in l), None)
+            row = next((l for l in sec.splitlines() if l.lstrip().startswith("|") and f"`{kind}`" in l), None)
             self.assertIsNotNone(row, f"AGENTS.md 'Who does what' has no row for kind {kind}")
             self.assertIn(f"`{primary[1]}`", row, kind)
             for _, model in routing.fallbacks(kind):
@@ -72,7 +72,7 @@ class Routing(unittest.TestCase):
         for kind in routing.CHAINS:
             minis = [a for a, _ in routing.chain(kind) if a in routing.MINI_WORKERS]
             if kind == "chief":
-                self.assertEqual(minis, [])
+                self.assertEqual(minis, ["codex", "gemini"])
             else:
                 self.assertGreaterEqual(len(minis), 2, kind)  # one worker out never parks the job
 
@@ -100,8 +100,8 @@ class Routing(unittest.TestCase):
         with self.assertRaises(ValueError):
             jobs.do_reroute(c, "relay", "cursor", "", "", T0)
 
-    def test_protected_calls_have_no_stand_in(self):
-        self.assertIsNone(routing.KINDS["chief"][2])
+    def test_chief_kind_follows_the_elected_succession_chain(self):
+        self.assertEqual([a for a, _ in routing.chain("chief")], ["chief", "claude", "codex", "gemini"])
 
     def test_jobs_add_carries_kind_and_model_and_refuses_invented_ones(self):
         d = {"next_id": 1, "jobs": []}

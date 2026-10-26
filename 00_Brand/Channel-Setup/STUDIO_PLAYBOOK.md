@@ -432,7 +432,7 @@ Every sign-off goes to Chief on the thread first (Claude until 9 Oct 2026). This
 3. **What only Ben can do:** his voice, his logins and accounts, and his devices (waking the Mac mini).
 4. **Any change to the channel's direction** (a new series, a new format, a change of voice).
 
-**Chief owns `AGENTS.md` and the Never list** (Ben to Claude, 5 Oct 2026; handed to Chief 9 Oct, confirmed 10 Oct). Chief changes them and OKs one-off Never-list exceptions for reversible studio actions (e.g. re-uploading a fixed copy of a broken Short, a video going private), recording each with its date and reason on the thread and in the commit, and telling Ben. Workers (Cursor, Codex, acting Chief) don't relax the Never list themselves. **Real money stays with Ben** (item 1), and no OK covers deleting a video.
+**Chief owns `AGENTS.md` and the Never list** (Ben to Claude, 5 Oct 2026; handed to Chief 9 Oct, confirmed 10 Oct). Chief changes them and OKs one-off Never-list exceptions for reversible studio actions (e.g. re-uploading a fixed copy of a broken Short, a video going private), recording each with its date and reason on the thread and in the commit, and telling Ben. Ordinary workers outside the elected Chief role do not relax the Never list themselves. **Real money stays with Ben** (item 1), and no OK covers deleting a video.
 
 **Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
 

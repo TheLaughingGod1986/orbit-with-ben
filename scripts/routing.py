@@ -20,7 +20,7 @@ graphics go to Codex first. When a worker is out of usage or rate-limited, chief
 worker that is up (`jobs.py reroute` for a job already addressed to the worker that ran out), instead of parking the
 job; the next job of that kind goes back to the primary once it's up again. Which worker ran each job is logged
 (~/_desk/state/chief/runs.jsonl).
-A stand-in never makes a protected call (PROTECTED): it parks the job for Chief with
+An ordinary worker never makes a protected call (PROTECTED); the elected acting Chief holds the role. Workers park it with
 `jobs.py block --reason "parked for Chief: ..."`.
 """
 from __future__ import annotations
@@ -136,8 +136,8 @@ CHAINS = {
                  "Gemini checks any fact in it; Chief OKs; applied by the upload or Studio job"),
     "studio":   ("Studio browser tasks", [("chief", "grok"), CURSOR_GROK, CURSOR_AUTO, SOL],
                  "OWB Studio CDP 9223, HOS Flow 9222; never Replace, never delete"),
-    "chief":    ("Merges, final OK, PASS, AGENTS.md", [("chief", "grok")],
-                 "no stand-in: parked for Chief; money and the irreversible go to Ben"),
+    "chief":    ("Merges, final OK, PASS, AGENTS.md", [("chief", "grok"), ("claude", "claude-opus-5-5"), ASTRA, ARGON],
+                 "only the elected Chief may claim; Grok -> Claude -> Codex -> Gemini; money and the irreversible stay with Ben"),
 }
 
 # Older view kept for callers: kind -> (job type, primary, first fallback or None, how).

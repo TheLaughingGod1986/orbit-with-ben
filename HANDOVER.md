@@ -2,6 +2,10 @@
 
 Written 12 Oct 2026 ~15:00 London by Chief of Staff (Grok Bot). Ben's ask: any other LLM (Claude, Codex, Cursor, Gemini…) must be able to pick up **all** work from the GitHub repos alone. Start here.
 
+## Chief succession — 26 Oct 2026
+
+**Chief succession (Ben, 26 Oct 2026): Grok Bot (`chief`) → Claude (`claude`) → Codex/GPT (`codex`) → Gemini (`gemini`).** The first available agent is the elected Chief for both channels; a higher-priority agent takes the role back automatically when it returns. Cursor remains a specialist worker, outside this Chief chain. The elected Claude, Codex or Gemini holds the ordinary Chief authority to review, PASS, merge and give final OKs under the existing channel rules. An ordinary worker or model fallback has no such authority. Before a protected call, re-read `chief_relay.py status`; use your own agent id, never impersonate `chief`. Required Ben approvals, money, irreversible actions and existing gates remain unchanged. Evidence: Ben's direct request on 26 Oct 2026 to use Grok, then Claude, then Codex, then Gemini as Chief.
+
 ## Repos
 | Repo | What | Read first | Visibility |
 |---|---|---|---|
@@ -18,7 +22,7 @@ Other repos exist (e.g. oppti-internal-linking, Channel Scout); they follow the 
 - **Who decides:** Chief of Staff (Grok Bot) owns reviews, PASS, merges, final OKs, `AGENTS.md` and the Never list. Ben gets only real money (past £0), irreversible actions, his own voice/logins/devices, and channel-direction changes. Updates to Ben are results only and say plainly when nothing is needed.
 - **Credit floors are zero (Ben, 12 Oct 2026 14:46) — NEW, supersedes the "Credit holds until 30 Oct" ElevenLabs gating:** use all subscription credit down to 0 — ElevenLabs (~11,935 credits left on 12 Oct, resets 30 Oct), Google Flow (52 credits on AI Ultra), Vertex free trial (£4.93; stop at the £0.10 billing-lag margin because billing account is a Paid account). **Never** buy credits, top up, upgrade, enable overage or let anything spill onto the card. HOS PR #287 records this in HOS.
 - **Mini runs 24/7 (Ben, 12 Oct):** never idles; reviews done the moment they land; no fixed start times (jobs start when inputs are ready, `--after`); when work runs out the queue refills (`scripts/refill.py`, `jobs/backlog.json`) with: new video ideas, weekly per-channel audits with competitor analysis, and polish on finished films. **The aim is to improve the numbers every month.**
-- **Model routing + fallback chain:** `AGENTS.md` → "Who does what" and `scripts/routing.py` (`CHAINS`). Claude jobs: Claude Code → Cursor on `claude-opus-5-5` → Gemini `agy` → Codex `gpt-6-astra`. Chief chain: Grok Bot → Cursor → Codex (`scripts/chief_relay.py`).
+- **Model routing + fallback chain:** `AGENTS.md` → "Who does what" and `scripts/routing.py` (`CHAINS`). Claude jobs: Claude Code → Cursor on `claude-opus-5-5` → Gemini `agy` → Codex `gpt-6-astra`. Chief chain: Grok Bot → Claude → Codex → Gemini (`scripts/chief_relay.py`).
 - **Four a month per channel** (`scripts/channel_balance.py`), one focus film at a time, Ben's watch before upload with a watch-by date.
 - **Buffer is the only social route;** posts scheduled at the YouTube go-public time only; TikTok paused; no pinned comment on Shorts.
 - **Takedowns = make private, never delete** (Chief's call, Ben told). Never delete anything on either Mac or the NAS; never reset or stash.
@@ -52,5 +56,5 @@ Full rules, release state and the Auditor param compatibility are in each Oppti 
 1. Read this file, then the repo's `AGENTS.md` (docs-in-force order, Never list).
 2. Studio: `python3 scripts/studio.py board` and `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. Read PR #99 / HOS #180 for decisions only.
 3. Oppti: read `oppti-website-auditor/HANDOVER.md`, then `gh pr list` in the four Oppti repos.
-4. Recreate the server-side routines listed above as your own scheduled tasks; ask Ben for the logins you need. A stand-in never makes a protected call (merge/PASS/final OK/AGENTS.md) unless Ben names it the new Chief.
+4. Recreate the server-side routines listed above as your own scheduled tasks; ask Ben for the logins you need. Ordinary workers park protected calls; Claude, Codex or Gemini elected by the Chief chain holds the Chief role under Ben's 26 Oct order.
 5. Keep this file current: when a standing rule changes, update `AGENTS.md` and this file in the same PR.

@@ -69,7 +69,7 @@ OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_
 HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # each HOS long's YouTube read-back (Private + publishAt)
 SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
-NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude"}
+NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude", "gemini": "Gemini"}
 CHIEF_STATE = pathlib.Path(os.environ.get("CHIEF_STATE", str(HOME / "_desk" / "state" / "chief")))
 # The board's Models row (Ben, 24 Oct 2026 23:40): a traffic light per worker plus voice and picture services.
 MODEL_ROWS = (("claude", "Claude"), ("codex", "Codex"), ("cursor", "Cursor"), ("gemini", "Gemini"),
@@ -165,10 +165,12 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
             row.update(status="red", why=down.get("reason") or "marked down", until=iso(down_until) if down_until else "")
         elif key in rows and not rows[key].get("up"):
             row.update(status="red" if fresh else "amber", why=str(rows[key].get("why") or "down"))
+        elif key in rows and rows[key].get("up") and fresh:
+            row.update(status="green", why=str(rows[key].get("why") or "ready"))
         elif last.get("out_of_usage") and last_at and at - last_at < dt.timedelta(hours=12):
             row.update(status="red", why=f"last run out of usage ({last.get('job', '')})")
         elif key in rows and rows[key].get("up"):
-            row.update(status="green" if fresh else "amber", why=str(rows[key].get("why") or "ready"))
+            row.update(status="amber", why=str(rows[key].get("why") or "ready"))
         elif last_at and at - last_at < dt.timedelta(hours=24) and last.get("exit") == 0:
             row.update(status="green", why=f"ran {last.get('job', '')} on {last.get('model') or key}")
         elif seen and at - seen < dt.timedelta(hours=6):
@@ -192,7 +194,10 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
     agent = cur.get("agent") or ""
     chief = {"agent": agent, "name": NAMES.get(agent, agent.capitalize() if agent else ""), "acting": bool(agent and agent != "chief"),
              "since": cur.get("since") or ""}
-    return {"checkedAt": iso(checked) if checked else "", "fresh": fresh, "chief": chief, "models": out}
+    return {"checkedAt": iso(checked) if checked else "", "fresh": fresh, "chief": chief, "models": out,
+            "chiefChain": [{"agent": r.get("agent"), "name": NAMES.get(r.get("agent"), r.get("agent")),
+                            "up": bool(r.get("up")), "why": str(r.get("why") or "")[:120]}
+                           for r in chain.get("rows") or [] if isinstance(r, dict)]}
 
 
 def stable(section: str, doc: dict) -> dict:
