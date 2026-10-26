@@ -1,5 +1,15 @@
 # Shorts brief — 028 `lift_oort_marbles`
 
+## v03 (`J0964` c52, fix of v02)
+
+v01 and v02 are untouched. Same VO, 22.37 s, hook, banner, end card, loop and Wed 16 Dec 2026 11:30 London slot.
+
+- **s05 La Silla:** floor clamp removed. Gamma 0.74, brightness 0.04, contrast 1.20. Crop slid onto the Milky Way so the dome stays dark (p5 2.3, p95 109.7 outside the banner and caption).
+- **s04 NEOWISE:** comet punched into the top third, city horizon kept below the title. No low-detail look-at.
+- **Call-out:** `GLIESE 710` / `in about 1.3 million years` on the Gaia shot, 7.10–8.95 s, out before the banner.
+- **Level:** AAC −14.48 LUFS, true peak −1.89 dBTP.
+- **Spend:** £0.
+
 ## v02 (`J0964`, fix of v01)
 
 v01 is untouched. v02 keeps the same VO, 22.37 s timing, hook and payoff.
