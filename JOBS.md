@@ -52,6 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0993 | any | open (after J0992) | – | – | chief · J0936 Chief: lock no-spend v04 corrections and dispatch assembly after preparation | 82959ad1f |
 | J0995 | mini | open (after J0994) | – | – | 023 upload · studio · OWB 023: verified Venus end screen and Sun card (J0980 ruling) |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
+| J0997 | mini | open (after J0981) | – | – | studio · HOS 007: correct scheduled Shorts description watch URLs | 6428572814 |
 
 Recently finished:
 
