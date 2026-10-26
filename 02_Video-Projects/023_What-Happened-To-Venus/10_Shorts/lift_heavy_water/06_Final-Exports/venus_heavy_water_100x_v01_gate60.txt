@@ -1,0 +1,31 @@
+FAIL  venus_heavy_water_100x_v01.mp4  dur=26.9s  audio=-18.2dB  motion=19.73  f0diff=1.81  cut1=4.47s  vo_onset=0.05s  tail_gap=2.25s  vo_src=mix  dhash=3f1f2f2e7fdf3efe  visor=0.0
+   FAIL  integrated loudness -14.6 LUFS outside -14.5..-13.5 (target -14.0)
+   FAIL  true peak -1.4 dBTP above -1.6
+   FAIL  first cut at 4.47s > 3.0s (scene-change detect)
+   warn  gap from last word to end is 2.25s > 1.5s (last word 24.65s, duration 26.90s)
+   sheet /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/venus_heavy_water_100x_v01_open_sheet.jpg
+
+=== 60% Stayed-to-Watch & 26 Oct Keeper-Score Check (J0977, 26 Oct 2026) ===
+Overall verdict: FAIL (not ready for Ben's Ready for OK board)
+Source file checked: /Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owbshorts.tar :: 02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_heavy_water/06_Final-Exports/venus_heavy_water_100x_v01.mp4 (sha256 621a869effc4835f302ba8c5a470abcf27ce666a796dac001efd601cc44ccd9b)
+Provisional air-date checked: 2026-11-04 (Venus-week candidate)
+
+1. gate_shorts_open.py (including 60% stayed-to-watch & level checks): FAIL
+   - PASS: frame 0 moving video (Parker Solar Probe WISPR night-side glow of Venus, f0diff=1.81 >= 1.50, motion=19.73 >= 10.0)
+   - PASS: VO onset 0.05s <= 0.15s; no meta-promise; no Orbit at frame 0 (visor=0.0); open plate unique vs ±14d and last 10 Shorts
+   - FAIL: first cut at 4.47s > 3.0s max (span 0 holds 0.00-4.45s)
+   - FAIL: integrated loudness -14.6 LUFS outside -14.5..-13.5 LUFS target
+   - FAIL: true peak -1.4 dBTP above -1.6 dBTP ceiling
+   - WARN: tail gap from last word to end is 2.25s > 1.5s max (24.65s -> 26.90s end card hold)
+
+2. Keeper Score Rules (.cursor/rules/orbit-build-shorts.mdc > Keeper score, 26 Oct 2026): FAIL
+   - Title ("Where Did Venus's Water Go?"): PASS (one question naming Venus)
+   - Line 1 VO ("In 1978, a NASA probe fell through the clouds of Venus and tasted the air on the way down."): FAIL — mid-film narrative statement, not a one-question opener asking the title question (and not a Test A opening Short). Also misses 60% stayed rule #2 (surprise by 1.5s; opening 2.6s is date/setup "In 1978, a NASA probe").
+   - Duration (26.90s): PASS (>= 22s floor, within 22-27s band)
+   - Related video & description link to VBaYRPp85Sw: PARTIAL — _meta.json and end card reference VBaYRPp85Sw ("What Happened to Venus?"), but 11_Upload-Package/PACKAGE_MANIFEST.json is not yet created with relatedVideo=VBaYRPp85Sw and description link.
+
+Fixes required for v02:
+1. Cut span 0 by <= 3.0s (e.g. cut from WISPR plate to second moving plate at ~2.63s after "a NASA probe").
+2. Trim post-VO tail / loop seam from 2.25s to <= 1.5s (with loop cut to frame-0 plate instead of >1.5s end-card hold).
+3. Re-normalize audio mix to -14.0 +- 0.5 LUFS and true peak <= -1.6 dBTP.
+4. For Keeper score rule 1: either prepend/record a 1-question line-1 VO pickup ("Where did Venus's water go?") after the 30 Oct ElevenLabs reset, or re-cut around a question opener, and add 11_Upload-Package linking VBaYRPp85Sw in Related video and description.
