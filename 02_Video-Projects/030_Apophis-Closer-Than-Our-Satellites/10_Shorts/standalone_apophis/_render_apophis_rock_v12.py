@@ -19,18 +19,22 @@ W, H = 1080, 1920
 FPS = 24
 NFRAMES = 192  # 8.0 s, covers src times through 7.60
 # Half-length of the peanut in source pixels, and a constant right shift.
-# Worst composite is the loop start: dx ≈ -364, scale 1.20. These two
-# numbers leave about 40 px on the near edge. v10 dx / scale / timing stay.
-HALF_PX = 178
+# Worst composite is the loop start: dx ≈ -364, scale 1.20.
+# A smooth silhouette's scanline cap is what straight_run measures. At the
+# old 178 px half-length that cap is longer than 40 px once the open scales
+# by 1.20, so the rock stays this size: the placed edge stays inside the
+# gate, with about 190 px of frame margin. v10 dx / scale / timing stay.
+HALF_PX = 56
 SHIFT_X = 78
 AA_PX = 1.5
 
-# Two lobes of a contact binary. Smooth-min fuses them into one peanut.
-LOBE_A = np.array([-0.28, 0.015, 0.0])
-LOBE_B = np.array([0.30, -0.01, 0.02])
-RAD_A = np.array([0.46, 0.38, 0.36])
-RAD_B = np.array([0.34, 0.29, 0.27])
-SMIN_K = 0.26
+# Two lobes, overlapped into a short peanut. A longer capsule grows a flat
+# flank, and that flank is a straight run well past 40 px.
+LOBE_A = np.array([-0.10, 0.02, 0.0])
+LOBE_B = np.array([0.085, -0.015, 0.012])
+RAD_A = np.array([0.36, 0.33, 0.31])
+RAD_B = np.array([0.28, 0.26, 0.25])
+SMIN_K = 0.18
 
 # Key is off-axis so a terminator crosses the lit face. Rim lights the dark side.
 KEY = np.array([-0.62, 0.38, 0.48], dtype=np.float64)
