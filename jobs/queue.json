@@ -81512,13 +81512,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-26T01:17Z",
-      "eta": "2026-10-26T02:17Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "",
+      "result": "parked for Chief: 028 Oort Short v03 gates PASS",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -81579,6 +81579,11 @@
           "at": "2026-10-26T01:35Z",
           "by": "cursor",
           "what": "step 5 of 5 done: v03 gates PASS, sha 344bd0d0, UAT and NAS copied, parked for Chief"
+        },
+        {
+          "at": "2026-10-26T01:35Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: 028 Oort Short v03 gates PASS"
         }
       ],
       "kind": "assembly",
