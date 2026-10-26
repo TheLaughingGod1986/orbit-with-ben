@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 030 | edit | cursor | 2026-10-25T22:40Z | 2026-10-25T23:20Z | - |
+| 030 | edit | cursor | 2026-10-26T05:16Z | 2026-10-26T08:16Z | J0954 v12 solid Apophis rock |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
