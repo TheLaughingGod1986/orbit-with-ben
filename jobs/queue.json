@@ -83125,6 +83125,11 @@
           "at": "2026-10-26T08:22Z",
           "by": "grok",
           "what": "Chief re-confirm: removed 'no Related' note (Apophis not in J0216 test)"
+        },
+        {
+          "at": "2026-10-26T09:49Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "studio",
@@ -83155,7 +83160,16 @@
         "title": "Apophis Short re-cut v13 (swap)",
         "number": "030",
         "type": "short"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J0975",
