@@ -1,5 +1,5 @@
 {
-  "next_id": 970,
+  "next_id": 974,
   "jobs": [
     {
       "id": "J0001",
@@ -81705,7 +81705,7 @@
     },
     {
       "id": "J0965",
-      "title": "HOS 60% re-cut batch HB c51 FIX (local only): gold foil v03 by Sat 31 Oct 20:00, four elements v03 by Mon 2 Nov 20:00, valves v03 by Wed 4 Nov 20:00, tied arm v05 by Sat 7 Nov 20:00 (level + person cards)",
+      "title": "HOS 60% re-cut batch HB c55 PASS x4 -> held Private swaps J0970, J0971, J0972, J0973 (Ben OK on the board)",
       "needs": "mini",
       "repo": "hos",
       "body": "Chief (Grok) 26 Oct 00:25 London, ruling c51 on J0965 (HOS #180 6405428090) (HOS batch HB): all four FIX. Build one new local version of each, next to the current one, and leave JyRjM v02, Pp5L v02, Plih v02 and mTY v04 (and every v01/v03) untouched. Keep the VO words and timing, frame 0, the plates, the cuts and the loop span exactly as they are. The only changes are the audio master and the code-graphic cards below. GBP0: cards are code graphics in the FABRICIUS-card style (name in gold caps, place and date on a second line, animated in, clear of the hook and the caption row). No new TTS, Veo, Flow, Vertex or paid API.\n\nLevel target for all four, measured on the final AAC master with ffmpeg ebur128=peak=true (not the wav): -14.0 +/-0.5 LUFS integrated, true peak <= -1.5 dBTP. Use a gain plus true-peak limiter on the existing mix.\n\n1. JyRjM-9Yc8g gold foil -> v03 (park by Sat 31 Oct 20:00 London). Add ERNEST RUTHERFORD / Manchester, 1909 on 2.75-5.54 (03_fire_at_gold, \"Rutherford's team fired\"). Add a \"1 in 8,000\" call-out over 07_green_flash_count on 10.95-13.65 (\"About one in eight thousand bounced back\"). Level: v02 is -14.3 LUFS / TP -1.4, so lower the limiter ceiling to reach TP <= -1.5.\n2. Pp5LmjsduI4 four elements -> v03 (park by Mon 2 Nov 20:00 London). Level: v02 is -17.9 LUFS / TP -3.0 because the master gain pass never ran (gold foil got \"+3.8 dB then a limiter\"; this one didn't). Bring it to -14.0 +/-0.5, TP <= -1.5. Add ANTOINE LAVOISIER / Paris, 1789 on 12.24-14.91 (lavoisier_list_t1, \"Antoine Lavoisier threw out the four\"). Add a \"33\" count-up call-out on 17.87-20.10 (\"His list had thirty-three\"), with \"LIGHT + HEAT\" on 20.10-22.54. Keep the 1.40x open, \"aren't\" at 1.47 s.\n3. PlihWC5uA2E valves -> v03 (park by Wed 4 Nov 20:00 London). Level: v02 is -14.7 / TP -0.9; take it to TP <= -1.5. The FABRICIUS / Padua, c. 1600 card runs to about 9.5 s, which puts it over Harvey's hand while the VO says \"Harvey presses a finger\". End it at the 7.82 cut, and add WILLIAM HARVEY / London, 1628 on 7.82-10.84. Keep the 'Along the swollen veins' open, because the one-way-doors line isn't on disk.\n4. mTY67qet7cM tied arm -> v05 (park by Sat 7 Nov 20:00 London). Level: v04 is -14.7 / TP -0.9; take it to TP <= -1.5. Add WILLIAM HARVEY / London, 1628 on 2.67-5.24 (02_linen_tie_t2, \"William Harvey tied it tight\"). The v04 picture re-cut is otherwise accepted.\n\nFor each one: run gate_shorts_open check --air-date plus the J0918 ship gate, picture_qa, polish_gate, music_gate and sfx level, and all must PASS. Write the six brief fields and the measured AAC lufs/true_peak_dbfs into the meta. Write sha256_manifest.json. Copy the master, _PHONE and 2 fps sheet to HOS UAT and the NAS, with sha256 matching. Commit the meta, gate text and frame sheets, then push HOS main (64c4bf9f and dba6604d are still local only: main is ahead of origin by 3).\n\nDo NOT set awaits_ben yourself. Park for Chief with: jobs.py block J0965 --reason \"parked for Chief: <ids> vNN gates passed\" --git (release and continue for the rest). Chief sets Ben's Ready for OK card after a PASS. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd its swap by 10:30 on its air day, the scheduled v01/v03 airs as it is; don't slip the slot. No upload, no Studio change, never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.\n\n--- earlier brief (still applies) ---\nChief (Grok) 25 Oct 23:25 London. J0917 batch HB (never queued before; HA was J0933 + J0934). Audit: HOS 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md fixes #6-#9.\n- JyRjM-9Yc8g airs Sun 1 Nov 11:30: park it first, by Sat 31 Oct 20:00 London; bring it in at 22-25 s.\n- Pp5LmjsduI4 (Tue 3 Nov), PlihWC5uA2E (Thu 5 Nov: 'Inside your veins are tiny one-way doors - valves' only if those exact words are on disk, else open on 'Along the swollen veins...' with the pause trimmed), mTY67qet7cM (Sun 8 Nov).\nSame rules for every HOS re-cut (Chief ruling OWB #264 6389730716 / HOS #180 6389732009): local v02 next to v01, v01 untouched. GBP0: VO trims, reorders and splices from existing audio only (only words already on disk), no new TTS, Veo, Flow, Vertex or paid API. Frame 0 moving and full-bleed at 30% black or less (no zoom/pan on a still), subject named in 0-1.5 s, first word by 0.15 s, first cut by 3.0 s, later plates 4.0 s max. Drop 'watch the full film' overlays, spoken CTAs and agenda questions; no video ID or code anywhere on screen (Ben 25 Oct). Last word to a matched loop back to frame 0 in 1.5 s or less; no answer-and-done line before 70% of runtime. Write the six brief fields into each v02 meta. Gates: gate_shorts_open check --air-date (incl. the J0918 ship gate, now merged), picture_qa, polish_gate, music_gate, sfx level, all PASS. _PHONE copies to HOS UAT + NAS, sha256 checked. Commit meta, gate text and frame sheets only. No upload, no Studio change. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd the swap by 10:30 on its air day, v01 airs as scheduled; don't slip the slot.\nPark each as it's ready: jobs.py block <id> --reason \"parked for Chief: <ids> v02 PASS; Ben to OK swap\" --git (release and continue for the rest). Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
@@ -81714,13 +81714,13 @@
       "stage": "",
       "after": "J0934",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-26T00:40Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: JyRjM-9Yc8g v03, Pp5LmjsduI4 v03, PlihWC5uA2E v03, mTY67qet7cM v05 gates passed",
+      "result": "Chief PASS c55 (Grok, 26 Oct 03:30 London, HOS #180 6407490572): HB x4 PASS - AAC gold -14.4/-1.7, four -14.0/-1.7, valves -14.0/-1.9, tied -14.0/-1.8 (LUFS/dBTP); RUTHERFORD 1909 + 1 in 8,000, LAVOISIER 1789 + 33 + LIGHT + HEAT, valves FABRICIUS ends 7.73 + WILLIAM HARVEY 1628, tied WILLIAM HARVEY 1628, all FABRICIUS style clear of hook/captions; VO = previous mix (corr >= 0.990), cuts/frame 0/loop unchanged (only card spans < 40 dB PSNR; valves 2 frames shorter at tail, accepted); OCR 0 hits; gates PASS; sha f1cb7ec0/9340cae9/e3aa2c6c/c31fbb5c on repo/UAT/NAS; previous versions untouched; HOS main pushed b8880cbf -> held swaps J0970, J0971, J0972, J0973 (Ben OK by 10:30 on air day). GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -81871,6 +81871,11 @@
           "at": "2026-10-26T00:52Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: JyRjM-9Yc8g v03, Pp5LmjsduI4 v03, PlihWC5uA2E v03, mTY67qet7cM v05 gates passed"
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "done: Chief PASS c55 (Grok, 26 Oct 03:30 London, HOS #180 6407490572): HB x4 PASS - AAC gold -14.4/-1.7, four -14.0/-1.7, valves -14.0/-1.9, tied -14.0/-1.8 (LUFS/dBTP); RUTHERFORD 1909 + 1 in 8,000, LAVOISIER 1789 + 33 + LIGHT + HEAT, valves FABRICIUS ends 7.73 + WILLIAM HARVEY 1628, tied WILLIAM HARVEY 1628, all FABRICIUS style clear of hook/captions; VO = previous mix (corr >= 0.990), cuts/frame 0/loop unchanged (only card spans < 40 dB PSNR; valves 2 frames shorter at tail, accepted); OCR 0 hits; gates PASS; sha f1cb7ec0/9340cae9/e3aa2c6c/c31fbb5c on repo/UAT/NAS; previous versions untouched; HOS main pushed b8880cbf -> held swaps J0970, J0971, J0972, J0973 (Ben OK by 10:30 on air day). GBP0, no upload."
         }
       ],
       "kind": "video",
@@ -81921,7 +81926,8 @@
         "at": "2026-10-26T00:52Z",
         "by": "cursor",
         "note": "all four local masters gated: JyRjM v03 -14.4/-1.7, Pp5L v03 -14.0/-1.7, Plih v03 -14.0/-1.9, mTY v05 -14.0/-1.8"
-      }
+      },
+      "done_ref": "6407490572"
     },
     {
       "id": "J0966",
@@ -82085,6 +82091,210 @@
       "taskKeys": [
         "OWB:022"
       ]
+    },
+    {
+      "id": "J0970",
+      "title": "HOS Short JyRjM-9Yc8g: swap to gold foil v03 (Private, Sun 1 Nov 11:30 London) after Ben's OK by Sun 1 Nov 10:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 26 Oct 03:30 London, J0965 batch HB gold foil v03 PASS (ruling c55, HOS #180 6407490572).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the HOS Short JyRjM-9Yc8g (\"Why Gold Foil Bounced Rutherford's Particles Back\", airs Sun 1 Nov 11:30 London) to re-cut v03 (HOS UAT/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v03_PHONE.mp4, sha256 f1cb7ec072c7148ab84d9049cb01976045564aea0e5214b9d2d8c6fa949a762e) on the board or the thread. Deadline for that OK: Sun 1 Nov 10:30 London (c51 rule). If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Sun 1 Nov 11:30 London as is.\n\nAfter Ben's OK:\n1. Read back JyRjM-9Yc8g (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Sun 1 Nov 11:30 London (2026-11-01T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (HOS UAT/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v03.mp4, = qa sha256_manifest.json), then upload it to HOS as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from JyRjM-9Yc8g. Captions en-GB from the v03 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set JyRjM-9Yc8g (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in HOS UPLOADS.json (and repoint any job that names JyRjM-9Yc8g, e.g. J0280 Related / Buffer follow-ups, to the new id); post the read-back on HOS #180 and a pointer on OWB #264. Buffer cross-posts per HOS house rules (Short -> full film link, TikTok/IG 'Full film on YouTube, link in bio'), deferred until the long is public.\nIf step 2 has not read back Private + publishAt by 11:15 London on the air day, or any step fails after 10:30 that day, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6407490572",
+      "film": "",
+      "stage": "",
+      "after": "J0965",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-26T03:23Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T03:23Z",
+      "result": "waits on Ben's OK of the gold foil v03 swap (_PHONE in HOS UAT) by Sun 1 Nov 10:30. Chief PASS c55 6407490572.",
+      "history": [
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the gold foil v03 swap (_PHONE in HOS UAT) by Sun 1 Nov 10:30. Chief PASS c55 6407490572."
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the HOS Short \"Why Gold Foil Bounced Rutherford's Particles Back\" (JyRjM-9Yc8g, airs Sun 1 Nov 11:30) to re-cut v03 (by 2026-11-01 10:30 London)"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "HOS:004"
+      ],
+      "awaits_ben": {
+        "what": "swap the HOS Short \"Why Gold Foil Bounced Rutherford's Particles Back\" (JyRjM-9Yc8g, airs Sun 1 Nov 11:30) to re-cut v03",
+        "file": "HOS UAT/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v03_PHONE.mp4",
+        "version": "v03",
+        "due": "2026-11-01T10:30Z",
+        "airs": "2026-11-01T11:30Z",
+        "ifNot": "No OK by then: v01 airs as scheduled",
+        "title": "Gold foil Short re-cut v03 (swap)",
+        "number": "004",
+        "type": "short"
+      }
+    },
+    {
+      "id": "J0971",
+      "title": "HOS Short Pp5LmjsduI4: swap to four elements v03 (Private, Tue 3 Nov 11:30 London) after Ben's OK by Tue 3 Nov 10:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 26 Oct 03:30 London, J0965 batch HB four elements v03 PASS (ruling c55, HOS #180 6407490572).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the HOS Short Pp5LmjsduI4 (\"The Four Elements Were Wrong\", airs Tue 3 Nov 11:30 London) to re-cut v03 (HOS UAT/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/hos_002_backcat_four_elements_v03_PHONE.mp4, sha256 9340cae9cd5b71e4cd3ddea2f87123b5e6891a1d236a6ca17775d9d6daf4f5ef) on the board or the thread. Deadline for that OK: Tue 3 Nov 10:30 London (c51 rule). If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Tue 3 Nov 11:30 London as is.\n\nAfter Ben's OK:\n1. Read back Pp5LmjsduI4 (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Tue 3 Nov 11:30 London (2026-11-03T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (HOS UAT/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/hos_002_backcat_four_elements_v03.mp4, = qa sha256_manifest.json), then upload it to HOS as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from Pp5LmjsduI4. Captions en-GB from the v03 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set Pp5LmjsduI4 (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in HOS UPLOADS.json (and repoint any job that names Pp5LmjsduI4, e.g. J0280 Related / Buffer follow-ups, to the new id); post the read-back on HOS #180 and a pointer on OWB #264. Buffer cross-posts per HOS house rules (Short -> full film link, TikTok/IG 'Full film on YouTube, link in bio'), deferred until the long is public.\nIf step 2 has not read back Private + publishAt by 11:15 London on the air day, or any step fails after 10:30 that day, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6407490572",
+      "film": "",
+      "stage": "",
+      "after": "J0965",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-26T03:23Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T03:23Z",
+      "result": "waits on Ben's OK of the four elements v03 swap (_PHONE in HOS UAT) by Tue 3 Nov 10:30. Chief PASS c55 6407490572.",
+      "history": [
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the four elements v03 swap (_PHONE in HOS UAT) by Tue 3 Nov 10:30. Chief PASS c55 6407490572."
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the HOS Short \"The Four Elements Were Wrong\" (Pp5LmjsduI4, airs Tue 3 Nov 11:30) to re-cut v03 (by 2026-11-03 10:30 London)"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "HOS:002"
+      ],
+      "awaits_ben": {
+        "what": "swap the HOS Short \"The Four Elements Were Wrong\" (Pp5LmjsduI4, airs Tue 3 Nov 11:30) to re-cut v03",
+        "file": "HOS UAT/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/hos_002_backcat_four_elements_v03_PHONE.mp4",
+        "version": "v03",
+        "due": "2026-11-03T10:30Z",
+        "airs": "2026-11-03T11:30Z",
+        "ifNot": "No OK by then: v01 airs as scheduled",
+        "title": "Four elements Short re-cut v03 (swap)",
+        "number": "002",
+        "type": "short"
+      }
+    },
+    {
+      "id": "J0972",
+      "title": "HOS Short PlihWC5uA2E: swap to valves v03 (Private, Thu 5 Nov 11:30 London) after Ben's OK by Thu 5 Nov 10:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 26 Oct 03:30 London, J0965 batch HB valves v03 PASS (ruling c55, HOS #180 6407490572).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the HOS Short PlihWC5uA2E (\"Why Do Veins Have Valves?\", airs Thu 5 Nov 11:30 London) to re-cut v03 (HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s05_valves_v03_PHONE.mp4, sha256 e3aa2c6cfc56d56b888aa244d1a708d7008c18f5a982f6dd5f74a3746140b580) on the board or the thread. Deadline for that OK: Thu 5 Nov 10:30 London (c51 rule). If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Thu 5 Nov 11:30 London as is.\n\nAfter Ben's OK:\n1. Read back PlihWC5uA2E (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Thu 5 Nov 11:30 London (2026-11-05T11:30:00Z); if not, park for Chief. Studio and the live_fixes audits say 5 Nov 11:30Z; HOS UPLOADS.json still says 2026-11-02T11:30:00Z, so trust the Studio read-back, and if it is not 5 Nov park for Chief.\n2. Verify the master sha256 above (HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s05_valves_v03.mp4, = qa sha256_manifest.json), then upload it to HOS as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from PlihWC5uA2E. Captions en-GB from the v03 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set PlihWC5uA2E (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in HOS UPLOADS.json (and repoint any job that names PlihWC5uA2E, e.g. J0280 Related / Buffer follow-ups, to the new id); post the read-back on HOS #180 and a pointer on OWB #264. Buffer cross-posts per HOS house rules (Short -> full film link, TikTok/IG 'Full film on YouTube, link in bio'), deferred until the long is public.\nIf step 2 has not read back Private + publishAt by 11:15 London on the air day, or any step fails after 10:30 that day, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6407490572",
+      "film": "",
+      "stage": "",
+      "after": "J0965",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-26T03:23Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T03:23Z",
+      "result": "waits on Ben's OK of the valves v03 swap (_PHONE in HOS UAT) by Thu 5 Nov 10:30. Chief PASS c55 6407490572.",
+      "history": [
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the valves v03 swap (_PHONE in HOS UAT) by Thu 5 Nov 10:30. Chief PASS c55 6407490572."
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the HOS Short \"Why Do Veins Have Valves?\" (PlihWC5uA2E, airs Thu 5 Nov 11:30) to re-cut v03 (by 2026-11-05 10:30 London)"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "HOS:005"
+      ],
+      "awaits_ben": {
+        "what": "swap the HOS Short \"Why Do Veins Have Valves?\" (PlihWC5uA2E, airs Thu 5 Nov 11:30) to re-cut v03",
+        "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s05_valves_v03_PHONE.mp4",
+        "version": "v03",
+        "due": "2026-11-05T10:30Z",
+        "airs": "2026-11-05T11:30Z",
+        "ifNot": "No OK by then: v01 airs as scheduled",
+        "title": "Valves Short re-cut v03 (swap)",
+        "number": "005",
+        "type": "short"
+      }
+    },
+    {
+      "id": "J0973",
+      "title": "HOS Short mTY67qet7cM: swap to tied arm v05 (Private, Sun 8 Nov 11:30 London) after Ben's OK by Sun 8 Nov 10:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) 26 Oct 03:30 London, J0965 batch HB tied arm v05 PASS (ruling c55, HOS #180 6407490572).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the HOS Short mTY67qet7cM (\"One Tight Band Proved Your Blood Goes Round\", airs Sun 8 Nov 11:30 London) to re-cut v05 (HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s02_the_tied_arm_v05_PHONE.mp4, sha256 c31fbb5c88f61b9bc2bbfae8b7a059b84b99575c5876066167ae22021ace70df) on the board or the thread. Deadline for that OK: Sun 8 Nov 10:30 London (c51 rule). If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v03 airs Sun 8 Nov 11:30 London as is.\n\nAfter Ben's OK:\n1. Read back mTY67qet7cM (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Sun 8 Nov 11:30 London (2026-11-08T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s02_the_tied_arm_v05.mp4, = qa sha256_manifest.json), then upload it to HOS as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from mTY67qet7cM. Captions en-GB from the v05 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set mTY67qet7cM (v03) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in HOS UPLOADS.json (and repoint any job that names mTY67qet7cM, e.g. J0280 Related / Buffer follow-ups, to the new id); post the read-back on HOS #180 and a pointer on OWB #264. Buffer cross-posts per HOS house rules (Short -> full film link, TikTok/IG 'Full film on YouTube, link in bio'), deferred until the long is public.\nIf step 2 has not read back Private + publishAt by 11:15 London on the air day, or any step fails after 10:30 that day, leave v03 scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6407490572",
+      "film": "",
+      "stage": "",
+      "after": "J0965",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-26T03:23Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T03:23Z",
+      "result": "waits on Ben's OK of the tied arm v05 swap (_PHONE in HOS UAT) by Sun 8 Nov 10:30. Chief PASS c55 6407490572.",
+      "history": [
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the tied arm v05 swap (_PHONE in HOS UAT) by Sun 8 Nov 10:30. Chief PASS c55 6407490572."
+        },
+        {
+          "at": "2026-10-26T03:23Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the HOS Short \"One Tight Band Proved Your Blood Goes Round\" (mTY67qet7cM, airs Sun 8 Nov 11:30) to re-cut v05 (by 2026-11-08 10:30 London)"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "HOS:005"
+      ],
+      "awaits_ben": {
+        "what": "swap the HOS Short \"One Tight Band Proved Your Blood Goes Round\" (mTY67qet7cM, airs Sun 8 Nov 11:30) to re-cut v05",
+        "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s02_the_tied_arm_v05_PHONE.mp4",
+        "version": "v05",
+        "due": "2026-11-08T10:30Z",
+        "airs": "2026-11-08T11:30Z",
+        "ifNot": "No OK by then: v03 airs as scheduled",
+        "title": "Tied arm Short re-cut v05 (swap)",
+        "number": "005",
+        "type": "short"
+      }
     }
   ],
   "focus": [],
