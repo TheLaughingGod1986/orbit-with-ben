@@ -82538,13 +82538,13 @@
       "stage": "",
       "after": "J0965",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T12:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: -I_GHK-GcFs, x_3L_IdYgEc, -sa2t7dAtCk, 4WUs0beKn0A v02 PASS; Ben to OK swap",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -82630,6 +82630,11 @@
           "at": "2026-10-26T16:26Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T18:48Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief FIX: Jenner v02 atempo 1.08 and vaccine-name v03 1.07 exceed HOS 1.06 cap; new v03/v04 at <=1.06, onset <=0.15s, verify delivered SFX and proper VO-check PASS. Keep other masters; return all four for full review. Full ruling HOS desk; no Ben cards or swap approval. Preserve denominator 5."
         }
       ],
       "kind": "video",
@@ -82638,13 +82643,6 @@
         "HOS:005",
         "HOS:004"
       ],
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-26T13:27Z",
-        "by": "gemini",
-        "note": "All 4 HC Shorts (-I_GHK-GcFs v02, x_3L_IdYgEc v03, -sa2t7dAtCk v03, 4WUs0beKn0A v03) PASS all 5 gates, UAT+NAS sha256 ve"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
