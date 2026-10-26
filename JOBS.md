@@ -25,7 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts -I_GHK-GcFs & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
-| J0915 | mini | open (after J0914) | – | – | video · 60% re-cut v02 batch 2 (local only): standalone S4 Uranus, S5 Shooting stars, S7 Pluto, S8 Voyager (+ check S6 Titan RLSJm59OSzI) |  |
+| J0915 | mini | blocked | – | – | video · 60% re-cut v02 batch 2 (local only): standalone S4 Uranus, S5 Shooting stars, S7 Pluto, S8 Voyager (+ check S6 Titan RLSJm59OSzI) |  |
 | J0923 | mini | blocked | cursor | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0935 | mini | open | – | – | assembly · 60% re-cut batch B c61 FIX -> next version (local only): 025 iyvWYFP_ETA, TtgHNLXfDSs, N42gKBbD7tE, bSjWiCbB7pY + 026 HZGTovJu_TQ, cwU_0WWeNZ4 - level -14 LUFS/TP<=-1.6, _PHONE.mp4, sha256_manifest + broken-VO/per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6410141575 |
 | J0936 | mini | blocked | gemini | – | for gemini · video · 60% re-cut batch C c59 FIX -> v03 (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - level -14 LUFS/TP<=-1.6, _PHONE.mp4, NAS copies + per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6409202315 |
@@ -58,6 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1003 | mini | blocked | – | – | review · Earth Short OVLv9dxTcpE: mature 48-hour measurement (J0985 follow-up) |  |
 | J1004 | mini | open (after J0967) | – | – | for gemini · review · `gemini-argon` · HOS J0967 follow-up: resolve remaining hook and duration proposals on paper, preserve production holds |  |
 | J1005 | mini | open | – | – | for gemini · qa · `gemini-argon` · J0966 HC: audition four finished masters and resolve vaccine pronunciation warnings (GBP0) |  |
+| J1006 | any | open | – | – | chief · Chief: resolve cancelled:J0914 |  |
 
 Recently finished:
 
