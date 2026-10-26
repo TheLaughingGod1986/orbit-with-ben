@@ -12,12 +12,18 @@ Read-only investigation of the Mac mini queue, board-data, page code, relay stat
 
 ## Presentation changes
 
-- Label lane badges explicitly as videos, with a separate count of videos actively being worked on versus queued/waiting.
-- Show studio-wide running, queued, waiting/review and completed-today **job** counts, a completion log with worker, date and result, and all waiting reasons. This section explicitly covers both channels, independent of video filters.
-- Put each video's remaining tasks, current worker, confirmed steps, latest step note, wait reason and recent completions on its card. Broad backlog/audit jobs stay in studio activity, rather than inflating every film's task count.
-- Preserve the server's actionable-work lane for uploaded videos. Once the server returns the video to Done, the browser does too.
-- Only confirmed steps yield a completion percentage. No report means “Progress not reported”. Remaining time is labelled an estimate. Overdue claims are labelled stalled, rather than presented as live work.
-- Keep expanded task/completion lists open across refreshes. Existing approve/change/watch actions remain in place.
+The home page now has four explicit views, rather than treating a video card as the unit of every task:
+
+- **Work & blockers:** every current raw queue job, including shared audits and administration. All current / Working / To do / Blocked / Waiting filters show exact primary-status counts. Raw blocked jobs remain in Blocked even if approved or awaiting Chief. Each row shows its id, full title, last worker, last update, confirmed steps, blocker and next action. Search and channel filters show the resulting row count.
+- **Your approvals:** Needs your OK, You approved (all recorded delivery approvals, including completed deliveries), and Changes requested. Zero pending approvals is explicit. Chief reviews never become requests for Ben by inference. Approved but blocked deliveries retain both labels.
+- **Video pipeline:** Planned/in production, Scheduled, Live, and uploaded with no schedule. Current work and publication are separate: an already-live film can still have a follow-up job. Real video ids are deduplicated. Synthetic `:OK:` / `:ASK:` placeholders never inflate video totals. A scheduled entry past its recorded air time is flagged for a fresh YouTube check, not silently declared live.
+- **Completed:** today's job completions and retained recent results, including worker, timestamp and recorded result. Work submitted for review stays blocked until accepted.
+
+The process is labelled: To do → Working → Review / your OK → Approved → Scheduled → Live. Agents/service telemetry is collapsed so it does not displace the work list on a phone. Percentages use confirmed steps only; remaining time is explicitly estimated. Search drafts and expanded details survive refreshes. Existing approval/watch actions remain in place.
+
+The published fixture reconciled to **39 current jobs = 1 working + 0 ready to do + 35 blocked + 3 waiting on dependencies**, with **19 recorded delivery approvals**. These counts change as agents work. Browser checks found all 35 blocked rows, all 35 visible blocker reasons and all 35 next actions.
+
+A second count bug was found: **14 historic approval placeholders** had `youtube.state=scheduled` but an empty video id. Counting them as films inflated Scheduled from 27 real-id videos to 41 and also polluted Planned. They remain in approval history and are excluded from publication totals.
 
 ## Blocker findings
 
