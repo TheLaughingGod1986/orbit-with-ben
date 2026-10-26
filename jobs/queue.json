@@ -79500,6 +79500,11 @@
           "at": "2026-10-26T07:47Z",
           "by": "cursor",
           "what": "released: Short 1 of 6 v03 done (026 fri20 grapefruit, a4024c86904c, commit 7b0a3eb78). Gates pass. v01/v02 untouched. Next: emwQsPxnRGM 027 lift_equator_weight. No render running."
+        },
+        {
+          "at": "2026-10-26T10:50Z",
+          "by": "relay",
+          "what": "rerouted to gemini: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "kind": "video",
@@ -79514,7 +79519,15 @@
         "at": "2026-10-26T07:47Z",
         "by": "cursor",
         "note": "A6TW fri20 grapefruit v03 gates PASS. 19.93s, four at 14.03s (70% is 13.94), -14.4 LUFS / -2.0 dBTP, loop_diff 0.71, mot"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini"
     },
     {
       "id": "J0937",
