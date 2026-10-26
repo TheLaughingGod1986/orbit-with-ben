@@ -82838,6 +82838,11 @@
           "at": "2026-10-26T19:37Z",
           "by": "gemini",
           "what": "step 2 of 8 done: Updated lookup_plate_duration to resolve and ffprobe real local/NAS .mp4 files only (never board JSON), validate in_s/out_s windows, and mark missing 008-010 clips blocked_missing_plate"
+        },
+        {
+          "at": "2026-10-26T19:37Z",
+          "by": "gemini",
+          "what": "step 3 of 8 done: Enforced S01 hook completion by 2.85s (S7 sentence-1 pause trim completes hook at 2.80s; Shorts with VO hook >2.85s like 008 C 4.84s flagged with hook_conflict and blocked)"
         }
       ],
       "kind": "assembly",
@@ -82859,11 +82864,11 @@
       "model": "gemini-agy",
       "escalated_at": "2026-10-26T17:20Z",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 8,
         "at": "2026-10-26T19:37Z",
         "by": "gemini",
-        "note": "Updated lookup_plate_duration to resolve and ffprobe real local/NAS .mp4 files only (never board JSON), validate in_s/ou"
+        "note": "Enforced S01 hook completion by 2.85s (S7 sentence-1 pause trim completes hook at 2.80s; Shorts with VO hook >2.85s like"
       }
     },
     {
