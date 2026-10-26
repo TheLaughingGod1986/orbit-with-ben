@@ -84545,9 +84545,9 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-26T22:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T13:29Z",
@@ -84627,6 +84627,11 @@
           "at": "2026-10-26T22:18Z",
           "by": "codex",
           "what": "blocked: Acting-Chief Codex ruling 26 Oct: FIX audit completeness; no blanket PASS and no media FAIL inferred from missing evidence. Read full body/result/history. Sampled raw reports confirm automated PASS: OWB Apophis v13 picture 0/7 (6 WARN), polish 0/7 (1 WARN), music PASS with pace/comparison WARN; HOS 006 master_v06 picture/polish 0/96 (5 WARN), music PASS; HOS 007 vacca_jesty_v03 picture 0/10 (1 WARN), music PASS with pace/comparison WARN. Original 15:09Z report omitted HOS standalone Curie v07, committed d0c0ee0a at 25 Oct 13:40Z (picture 0/11 PASS). OWB standalone Neptune v07 and ISS v04 have polish/music reports but matching picture_qa reports were not located in cited pack folders; cited 447a06234 is Neptune v06, not v07. Gate-output commit dates alone do not prove reports postdate current media. Follow-up on THIS job, no duplicate: Gemini QA specialist must (2/4) commit a per-export inventory, including standalone packs, with exact media version/path/hash, render time, all three report paths and gate times or recorded hash identity; distinguish original sweep through 26 Oct 15:09Z from later revisions (029 lift_die_young v01; HOS 005 never_saw v04 and 007 vaccine revisions). (3/4) locate or run missing/stale picture_qa, polish_gate and music_gate against exact media; preserve outputs/commands/exit codes and label unreadable media NOT CHECKED; no full renders or credit. (4/4) post corrected bounded report with counts, WARNs and existing review-job links; create/deduplicate repair jobs only for actual FAILs. Keep all existing film approvals, Ben/date/credit holds and J0966/J0979 reviews unchanged. No external wait or Ben action: ready for immediate QA rework. Existing four-step total retained, now 1/4."
+        },
+        {
+          "at": "2026-10-26T22:18Z",
+          "by": "codex",
+          "what": "rerouted to gemini on gemini-argon: Chief decision recorded in result and preceding history: FIX audit completeness. Immediate no-spend QA rework, follow steps 2-4 in ruling; retain --of 4 and film links. This is an actionable worker handoff, not a wait for absent Chief. Do not mark films approved. No external dependency/reset is needed."
         }
       ],
       "kind": "qa",
@@ -84638,8 +84643,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
-      "model": "gpt-6-astra",
+      "for": "gemini",
+      "model": "gemini-argon",
       "taskKeys": [
         "OWB:021",
         "OWB:023",
