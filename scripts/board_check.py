@@ -146,9 +146,16 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of) -> dict:
         st = ((f.get("stages") or {}).get("scheduled") or {}).get("status")
         key = f"HOS:{f.get('id')}"
         v = by_key.get(key)
-        if st == "done" and v and v.get("lane") not in ("done", "approved"):
+        working = v and v.get("lane") == "progress" and (v.get("youtube") or {}).get("videoId") and any(j.get("status") in vt.ACTIVE_STATUSES for j in v.get("jobs") or [])
+        if st == "done" and v and v.get("lane") not in ("done", "approved") and not working:
             problems.append(f"{key}: scheduled in PIPELINE but the card is in {v.get('lane')}; "
                             "no YouTube read-back (add the long to HOS UPLOADS.json)")
+    # A film on YouTube with a job claimed or open shows in In progress, not Done (Ben, 26 Oct 2026 00:15: "Can't see
+    # these jobs in the in progress lane"); blocked jobs don't count.
+    for v in vids:
+        live = [j.get("id") for j in v.get("jobs") or [] if j.get("status") == "claimed"]
+        if v.get("lane") == "done" and live:
+            problems.append(f"{v.get('key')}: {', '.join(live)} claimed but the card is in Done, not In progress")
     code = site_status(SITE + "/", follow=True)
     if code != 200:
         problems.append(f"live site {SITE}/ answers {code or 'no response'}, not 200")

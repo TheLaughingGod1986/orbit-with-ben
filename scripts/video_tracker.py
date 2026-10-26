@@ -324,14 +324,23 @@ def job_is_channel_wide(job: dict, keys: list[str]) -> bool:
     return bool(re.match(r"^Backlog\b", title, re.I)) and len(keys) > 1
 
 
-def job_index(jobs: list[dict], overrides: dict) -> dict[str, list[dict]]:
-    """film key → live jobs (open/claimed/blocked), film-specific first."""
+VIDEO_ID_RE = re.compile(r"(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{11}(?![A-Za-z0-9_-])")
+
+
+def keys_by_video_id(jobs_text: str, vid_keys: dict) -> list[str]:
+    """Film keys for the YouTube ids a job names (Ben, 26 Oct 2026 00:15: new jobs must land on their film card)."""
+    return sorted({vid_keys[m] for m in VIDEO_ID_RE.findall(jobs_text or "") if m in vid_keys})
+
+
+def job_index(jobs: list[dict], overrides: dict, vid_keys: dict | None = None) -> dict[str, list[dict]]:
+    """film key → live jobs (open/claimed/blocked), film-specific first. A job with no film number, film field or
+    taskKeys still attaches when its title names a video id the board knows (`vid_keys`: id → long's film key)."""
     force = (overrides.get("jobFilms") or {}) if overrides else {}
     out: dict[str, list] = {}
     for j in jobs:
         if j.get("status") not in LIVE_STATUSES:
             continue
-        keys = list(force.get(j["id"], [])) or job_targets(j)
+        keys = list(force.get(j["id"], [])) or job_targets(j) or keys_by_video_id(j.get("title") or "", vid_keys or {})
         if job_is_channel_wide(j, keys):
             continue
         for k in keys:
@@ -390,6 +399,48 @@ def waiting_on(lane: str, check: dict | None, jobs: list[dict], brief: dict, you
     if air:
         return "queue", f"Planned — {air}"
     return "queue", "Planned; no work started yet."
+
+
+# ---- In progress while work is open on a film already on YouTube (Ben, 26 Oct 2026 00:15: "Can't see these jobs in
+# the in progress lane"). A Done card with a job claimed now or next in the queue (open) shows in In progress with what
+# is being done, and goes back to Done when those jobs finish. Blocked jobs (waiting for a date, an input, an OK or a
+# blocked job) never pull a card back: HOS 005's go-public job J0241 keeps it in Done (#281).
+ACTIVE_STATUSES = frozenset({"open", "claimed"})
+
+
+def active_jobs(jobs: list[dict], held: frozenset | set = frozenset()) -> list[dict]:
+    """Claimed jobs first, then open ones not queued `after` a blocked job (`held` = ids of blocked jobs)."""
+    act = [j for j in jobs if j.get("status") == "claimed"
+           or (j.get("status") == "open" and (j.get("after") or "") not in held)]
+    return sorted(act, key=lambda j: (0 if j.get("status") == "claimed" else 1, str(j.get("id") or "")))
+
+
+def job_what(j: dict) -> str:
+    """'023 Venus VBaYRPp85Sw: arm thumbnail-only Test & Compare A (live ...) vs B, read back' → the work in a few words."""
+    t = str(j.get("title") or "")
+    t = re.sub(r"^\s*(?:(?:HOS|OWB)\s*[:·-]?\s*)?\d{3}\b\s*", "", t)
+    t = re.sub(r"^[^:]{0,40}?(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{11}\s*:\s*", "", t)  # "Venus VBaYRPp85Sw: "
+    t = re.sub(r"\s*\([^)]*\)", "", t)
+    t = re.split(r",\s", t)[0]
+    t = re.sub(r"\s+", " ", t).strip(" .:;-")
+    return (t[:77] + "…") if len(t) > 78 else (t or "work")
+
+
+def on_youtube_text(youtube: dict) -> str:
+    if youtube.get("state") == "live":
+        return "Live on YouTube"
+    if youtube.get("publishAtLondon"):
+        return f"Private, scheduled {youtube['publishAtLondon']}"
+    return "On YouTube"
+
+
+def working_line(youtube: dict, working: list[dict]) -> tuple[str, str]:
+    j = working[0]
+    claimed = j.get("status") == "claimed"
+    who = (j.get("by") or "worker") if claimed else "queue"
+    what = job_what(j) + (f" ({j.get('by')})" if claimed and j.get("by") else "")
+    more = f" (+{len(working) - 1} more job{'s' if len(working) > 2 else ''})" if len(working) > 1 else ""
+    return who, f"{on_youtube_text(youtube)} · {'now' if claimed else 'next'}: {what}{more}."
 
 
 def derive_lane(
@@ -722,7 +773,7 @@ def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now:
                 card = approved_card(e)
                 videos.append(card)
                 by_key[card["key"]] = card
-            if card.get("lane") != "done":
+            if card.get("lane") != "done" and not card.get("working"):
                 card.update(lane="done", readyFor="", waitingOn="YouTube", flags=[], okNote="", collapsed=False,
                             line=f"Private, scheduled {london_slot(e.get('airs'))}." if e.get("airs") else "On YouTube.")
                 card["youtube"] = card.get("youtube") or {"state": "scheduled", "videoId": "", "publishAt": e.get("airs") or "",
@@ -818,7 +869,23 @@ def build_videos(
     overrides = overrides if overrides is not None else load_overrides()
     watch = watch or {}
     uploads = uploads if uploads is not None else uploads_index()
-    by_jobs = job_index(jobs, overrides)
+    vid_keys: dict = {}
+    for key, rows in uploads.items():
+        for r in rows:
+            if r.get("videoId"):
+                vid_keys[r["videoId"]] = key.split(":S:")[0]
+    for f in owb:
+        rel = f.get("release") or {}
+        if rel.get("videoId") and re.fullmatch(r"\d{3}", str(f.get("film") or "")):
+            vid_keys.setdefault(rel["videoId"], f"OWB:{f['film']}")
+    for f in hos.get("films") or []:
+        up = f.get("upload") if isinstance(f.get("upload"), dict) else {}
+        if up.get("videoId") and re.fullmatch(r"\d{3}", str(f.get("id") or "")):
+            vid_keys.setdefault(up["videoId"], f"HOS:{f['id']}")
+    for key, vid in ((overrides.get("youtube") or {}) if overrides else {}).items():
+        vid_keys.setdefault(vid, key)
+    by_jobs = job_index(jobs, overrides, vid_keys)
+    held = frozenset(j.get("id") for j in (alljobs or jobs) if j.get("status") == "blocked")
     film_lanes = (overrides.get("lanes") or {}) if overrides else {}
     if public is None:
         public, public_at = public_index()
@@ -863,7 +930,7 @@ def build_videos(
             release=None, upload_rows=rows,
             jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
             watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
-            public_vid=hit, public=public, public_at=public_at,
+            public_vid=hit, public=public, public_at=public_at, held=held,
         ))
 
     # --- Longs: OWB ---
@@ -882,7 +949,7 @@ def build_videos(
             release=f.get("release"), upload_rows=uploads.get(key) or [],
             jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
             watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
-            public_vid=hit, public=public, public_at=public_at,
+            public_vid=hit, public=public, public_at=public_at, held=held,
         ))
 
     # --- Shorts from UPLOADS (each Short its own card) ---
@@ -909,7 +976,7 @@ def build_videos(
             release=None, upload_rows=[meta],
             jobs=sjobs, check=None,  # Ben's OK/changes attach to the long, not each Short
             watch=None, override_lane=film_lanes.get(skey), now=now,
-            short_id=vid, parent=parent, public=public, public_at=public_at,
+            short_id=vid, parent=parent, public=public, public_at=public_at, held=held,
         ))
 
     # --- Standalone / extraWatch Shorts (HOS S1…) ---
@@ -971,7 +1038,7 @@ def build_videos(
 def _card(
     *,
     key, channel, number, title, vtype, air, brief, release, upload_rows, jobs, check,
-    watch, override_lane, now, short_id="", parent="", public_vid="", public=None, public_at="",
+    watch, override_lane, now, short_id="", parent="", public_vid="", public=None, public_at="", held=frozenset(),
 ) -> dict:
     upload_meta = None
     if upload_rows:
@@ -996,6 +1063,10 @@ def _card(
     if youtube and youtube.get("state") == "scheduled":
         when, read = _parse_iso(youtube.get("publishAt")), _parse_iso(public_at)
         stale_schedule = bool(when and read and when < read)
+        if when and when <= now and not stale_schedule:
+            # Its publish time has passed and no YouTube read since says otherwise (the Channel Tracker's last read is
+            # older): YouTube made it Public on schedule (023 VBaYRPp85Sw read "scheduled 25 Oct 18:00" on 26 Oct).
+            youtube = {**youtube, "state": "live", "privacy": "public", "bySchedule": True}
     # Older longs may lack a local receipt/UPLOADS row; trust the brief only when it says the film is public.
     if not youtube:
         blob = " ".join(str(brief.get(k) or "") for k in ("holdup", "line", "done"))
@@ -1032,7 +1103,12 @@ def _card(
     if not version and youtube:
         version = version_of(str((upload_rows or [{}])[0].get("file") or ""))
 
+    working = active_jobs(jobs, held) if lane == "done" and youtube and override_lane not in LANES else []
+    if working:
+        lane = "progress"
     who, line = waiting_on(lane, check, jobs, brief, youtube)
+    if working:
+        who, line = working_line(youtube, working)
     if no_cut:
         # Outside Ready for OK / Changes the card never asks Ben for anything (Ben, 25 Oct 01:00).
         due = brief.get("youShort") or brief.get("you") or ""
@@ -1094,6 +1170,7 @@ def _card(
         "shortId": short_id,
         "parent": parent,
         "collapsed": False,
+        "working": bool(working),
     }
 
 
