@@ -81740,13 +81740,13 @@
       "stage": "",
       "after": "J0944",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-26T09:58Z",
-      "eta": "2026-10-26T10:58Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:02Z",
-      "result": "",
+      "result": "parked for Chief: gate_shorts_open now fails the 3 Ben-OK'd 029 v03 masters under c61 (true peak -1.5 dBTP > -1.6 on all 3; wed09 also -15.0 LUFS and 44% opening bg match vs newly scheduled f17XCtUmN-g 2026-12-16). Need Chief call: audio/frame-0 v04 pass vs gate allowance",
       "history": [
         {
           "at": "2026-10-25T23:02Z",
@@ -81822,6 +81822,11 @@
           "at": "2026-10-26T10:04Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified 3 v03 master SHA256s + free slots in UPLOADS.json + committed 3 PACKAGE_MANIFEST.json files; gate_shorts_open fails under c61 (-1.5 dBTP on all 3, -15.0 LUFS + 44% bg_sim vs f17XCtUmN-g on wed09)"
+        },
+        {
+          "at": "2026-10-26T10:04Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: gate_shorts_open now fails the 3 Ben-OK'd 029 v03 masters under c61 (true peak -1.5 dBTP > -1.6 on all 3; wed09 also -15.0 LUFS and 44% opening bg match vs newly scheduled f17XCtUmN-g 2026-12-16). Need Chief call: audio/frame-0 v04 pass vs gate allowance"
         }
       ],
       "kind": "studio",
