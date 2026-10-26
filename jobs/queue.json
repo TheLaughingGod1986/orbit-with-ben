@@ -84551,13 +84551,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T19:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T15:58Z",
-      "result": "parked for Chief: review Acting-Chief 6425865953 FIX pass on HOS_2026-10-26.md (f2a376d1) + LEARNINGS.md (bc6db08e3)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T15:58Z",
@@ -84663,6 +84663,11 @@
           "at": "2026-10-26T20:17Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review Acting-Chief 6425865953 FIX pass on HOS_2026-10-26.md (f2a376d1) + LEARNINGS.md (bc6db08e3)"
+        },
+        {
+          "at": "2026-10-26T21:02Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief FIX 6427253270, claim 6427242332: two reconciled rows mismatch saved raw API responses. Align 18-24 Oct 7d and 27Sep-24Oct 28d average-viewed and traffic values/percentages to exact saved query, or save timestamped later response. Verify remaining rows mechanically. Add as-of J0966 v04 FIX/v05 pending and J0967 3ecc2575 FIX/e1bbcfb9 pending. Preserve bounded scope, small-sample caveats, worker 5/5 and HOS:006-010. No production or YouTube changes; same audit returns for review."
         }
       ],
       "kind": "review",
@@ -84683,14 +84688,7 @@
         "HOS:009",
         "HOS:010"
       ],
-      "escalated_at": "2026-10-26T19:16Z",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-26T20:16Z",
-        "by": "gemini",
-        "note": "Committed HOS f2a376d1 + OWB bc6db08e3 addressing all 5 Acting-Chief 6425865953 items; check_all.sh PASS"
-      }
+      "escalated_at": "2026-10-26T19:16Z"
     },
     {
       "id": "J0985",
