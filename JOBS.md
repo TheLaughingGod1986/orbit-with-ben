@@ -30,7 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0935 | mini | open | – | – | video · 60% re-cut batch B c61 FIX -> next version (local only): 025 iyvWYFP_ETA, TtgHNLXfDSs, N42gKBbD7tE, bSjWiCbB7pY + 026 HZGTovJu_TQ, cwU_0WWeNZ4 - level -14 LUFS/TP<=-1.6, _PHONE.mp4, sha256_manifest + broken-VO/per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6410141575 |
 | J0936 | mini | open | – | – | video · 60% re-cut batch C c59 FIX -> v03 (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - level -14 LUFS/TP<=-1.6, _PHONE.mp4, NAS copies + per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6409202315 |
 | J0938 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J0956 | mini | claimed | cursor | 2026-10-26T10:42Z | studio · OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30 | 6402300872 |
+| J0956 | mini | blocked | cursor | – | studio · OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30 | 6402300872 |
 | J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
 | J0961 | mini | open (after J0944) | – | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v03 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Ben's OK | 6404618803 |

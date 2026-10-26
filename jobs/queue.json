@@ -81411,13 +81411,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-26T09:42Z",
-      "eta": "2026-10-26T10:42Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T19:44Z",
-      "result": "",
+      "result": "parked for Chief: v07 sha 0919db03 matches Ben's OK (6411201182), but gate_shorts_open now FAILs true peak -1.4 dBTP above -1.6 (c61, after the PASS). Upload path has no override. Waive the 0.2 dB for this already-OK'd swap, or OK a limiter-only re-encode. oyRcrFTYyDY stays Private, publishAt 2026-10-27T11:30:00Z. Nothing uploaded.",
       "history": [
         {
           "at": "2026-10-25T19:44Z",
@@ -81463,6 +81463,11 @@
           "at": "2026-10-26T09:45Z",
           "by": "cursor",
           "what": "step 1 of 4 done: sha 0919db03 matches. oyRcrFTYyDY private, publishAt 2026-10-27T11:30:00Z. Gate FAIL true peak -1.4 dBTP."
+        },
+        {
+          "at": "2026-10-26T09:45Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: v07 sha 0919db03 matches Ben's OK (6411201182), but gate_shorts_open now FAILs true peak -1.4 dBTP above -1.6 (c61, after the PASS). Upload path has no override. Waive the 0.2 dB for this already-OK'd swap, or OK a limiter-only re-encode. oyRcrFTYyDY stays Private, publishAt 2026-10-27T11:30:00Z. Nothing uploaded."
         }
       ],
       "kind": "studio",
