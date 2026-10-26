@@ -79424,7 +79424,7 @@
       "ref": "6409202315",
       "film": "",
       "stage": "",
-      "after": "J0993",
+      "after": "J1010",
       "eta_min": 600,
       "status": "blocked",
       "by": "gemini",
@@ -79432,7 +79432,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
-      "result": "Codex acting-Chief FIX x6 v03 (82959ad1f): picture/source provenance defects plus current Keeper question/length failures. Audio and master/PHONE local-UAT-NAS hashes PASS. No swap or Ben watch cards. Held on J0992 (recorded-VO/shot preparation) -> J0993 (Chief lock and dispatch assembly); re-review after corrected v04 evidence. Target 2026-11-01 20:00 London. Existing v01 schedules untouched; no external wait or Ben action now.",
+      "result": "J0993 preparation FIX (fded21428): extra questions, inconsistent splice arithmetic, early answers, opening reuse and shot limits. Held on J1009 revision -> J1010 Chief lock/assembly dispatch; no approved replacement or Ben card. Target 1 Nov 20:00; original deadlines/v01 fallback unchanged.",
       "history": [
         {
           "at": "2026-10-25T06:33Z",
@@ -79663,6 +79663,11 @@
           "at": "2026-10-26T22:04Z",
           "by": "codex",
           "what": "Chief review complete: six of six checked; 6-step production history preserved. Full ruling jobs/reviews/J0936_2026-10-26.md."
+        },
+        {
+          "at": "2026-10-26T23:58Z",
+          "by": "codex",
+          "what": "J0993 preparation FIX (fded21428): extra questions, inconsistent splice arithmetic, early answers, opening reuse and shot limits. Held on J1009 revision -> J1010 Chief lock/assembly dispatch; no approved replacement or Ben card. Target 1 Nov 20:00; original deadlines/v01 fallback unchanged."
         }
       ],
       "kind": "video",
@@ -79687,7 +79692,7 @@
       },
       "for": "gemini",
       "escalated_at": "2026-10-26T16:26Z",
-      "review_ref": "82959ad1f",
+      "review_ref": "fded21428",
       "review_by": "codex",
       "review_verdict": "FIX"
     },
@@ -86270,7 +86275,12 @@
         }
       ],
       "due": "2026-11-01T20:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1010",
@@ -86298,7 +86308,12 @@
         }
       ],
       "due": "2026-11-01T20:00:00Z",
-      "kind": "chief"
+      "kind": "chief",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
