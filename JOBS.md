@@ -59,6 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1005 | mini | open | – | – | for gemini · qa · `gemini-argon` · J0966 HC: audition four finished masters and resolve vaccine pronunciation warnings (GBP0) |  |
 | J1007 | mini | open | – | – | for gemini · review · `gemini-argon` · J0915 preparation: recorded question openings, motion plan, corrected Titan identity |  |
 | J1008 | any | open (after J1007) | – | – | chief · J0915 Chief: lock recorded-VO plans and dispatch eligible local recuts |  |
+| J1009 | mini | open (after J0993) | – | – | review · J0936 v04 preparation FIX: reconcile scripts, splice arithmetic and six shot plans |  |
 
 Recently finished:
 
