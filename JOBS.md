@@ -40,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0975 | mini | open (after J0974) | – | – | studio · URGENT OWB Shorts Related -> Venus long VBaYRPp85Sw: Earth OVLv9dxTcpE FIRST (airs today 11:30), then Neptune, Apophis, ISS; read back Saturn |  |
 | J0978 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 | J0979 | mini | blocked | gemini | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0980 | mini | open | – | – | for codex · listing · `gpt-6-astra` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J0980 | mini | claimed | codex | 2026-10-26T23:10Z | for codex · listing · `gpt-6-astra` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J0981 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J0982 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0984 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
