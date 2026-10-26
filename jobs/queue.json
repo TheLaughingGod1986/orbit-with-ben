@@ -83352,13 +83352,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-26T10:05Z",
-      "eta": "2026-10-26T10:35Z",
+      "eta": "",
       "created_by": "grok",
       "created_at": "2026-10-26T08:20Z",
-      "result": "",
+      "result": "Read-only Studio check complete (b041e8547, jobs/readbacks/J0976.json + J0976_*.png): (1) CDP 9223 account switcher confirmed on Orbit With Ben (@OrbitWithBen, UC_esArsDKd3GJvOkeO0DUog). (2) Analytics Overview & Audience cards on m09jUdwC5hk (4 views) and VBaYRPp85Sw (2 views) are labelled plain 'Subscribers' (never 'Subscribers (OpptiAI)') with identical DOM (#SUBSCRIBERS_NET_CHANGE-tab) to known-good n_4XskX0yZk (883 views, '+1'); YouTube Studio displays '—' whenever net subscriber change is 0. (3) 'Oppti' does not appear in the Analytics DOM, shadow DOM, tooltips, vidIQ bar, or Studio JS bundles; 'OpptiAI' (@OpptiAI, UCXRVwrCxXpN_o9gvuHPKAPQ, 3 subscribers) is the first channel listed under Benjamin Oats (benoats86@gmail.com) in the top-right Studio 'Switch account' popup (which visually overlays the right side of the Subscribers card when open) and is the active Studio channel on CDP 9222 (/tmp/chrome-oppti-profile).",
       "history": [
         {
           "at": "2026-10-26T08:20Z",
@@ -83384,6 +83384,11 @@
           "at": "2026-10-26T10:23Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Saved J0976.json + 11 read-only Studio screenshots in jobs/readbacks/ (b041e8547): CDP 9223 is on Orbit With Ben; all 3 videos show plain 'Subscribers' card ('—' for 0 net change on m09jUdwC5hk/VBaYRPp85Sw vs '+1' on n_4XskX0yZk); 'OpptiAI' comes from the first channel listed in the Studio Switch Account dropdown under benoats86@gmail.com (and CDP 9222's active Studio channel)"
+        },
+        {
+          "at": "2026-10-26T10:23Z",
+          "by": "gemini",
+          "what": "done: Read-only Studio check complete (b041e8547, jobs/readbacks/J0976.json + J0976_*.png): (1) CDP 9223 account switcher confirmed on Orbit With Ben (@OrbitWithBen, UC_esArsDKd3GJvOkeO0DUog). (2) Analytics Overview & Audience cards on m09jUdwC5hk (4 views) and VBaYRPp85Sw (2 views) are labelled plain 'Subscribers' (never 'Subscribers (OpptiAI)') with identical DOM (#SUBSCRIBERS_NET_CHANGE-tab) to known-good n_4XskX0yZk (883 views, '+1'); YouTube Studio displays '—' whenever net subscriber change is 0. (3) 'Oppti' does not appear in the Analytics DOM, shadow DOM, tooltips, vidIQ bar, or Studio JS bundles; 'OpptiAI' (@OpptiAI, UCXRVwrCxXpN_o9gvuHPKAPQ, 3 subscribers) is the first channel listed under Benjamin Oats (benoats86@gmail.com) in the top-right Studio 'Switch account' popup (which visually overlays the right side of the Subscribers card when open) and is the active Studio channel on CDP 9222 (/tmp/chrome-oppti-profile)."
         }
       ],
       "kind": "studio",
@@ -83396,7 +83401,8 @@
         "at": "2026-10-26T10:23Z",
         "by": "gemini",
         "note": "Saved J0976.json + 11 read-only Studio screenshots in jobs/readbacks/ (b041e8547): CDP 9223 is on Orbit With Ben; all 3 "
-      }
+      },
+      "done_ref": "b041e8547"
     },
     {
       "id": "J0977",
