@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0972 | mini | open (after J0965) | – | – | studio · HOS Short PlihWC5uA2E: swap to valves v03 (Private, Thu 5 Nov 11:30 London) after Ben's OK by Thu 5 Nov 10:30 | 6407490572 |
 | J0973 | mini | open (after J0965) | – | – | studio · HOS Short mTY67qet7cM: swap to tied arm v05 (Private, Sun 8 Nov 11:30 London) after Ben's OK by Sun 8 Nov 10:30 | 6407490572 |
 | J0974 | mini | open (after J0954) | – | – | studio · OWB Apophis Short BbsyFrV8kCY: swap to v13 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Wed 28 Oct 10:30 | 6410661010 |
-| J0975 | mini | claimed | cursor | 2026-10-26T09:58Z | studio · URGENT OWB Shorts Related -> Venus long VBaYRPp85Sw: Earth OVLv9dxTcpE FIRST (airs today 11:30), then Neptune, Apophis, ISS; read back Saturn |  |
+| J0975 | mini | open (after J0974) | – | – | studio · URGENT OWB Shorts Related -> Venus long VBaYRPp85Sw: Earth OVLv9dxTcpE FIRST (airs today 11:30), then Neptune, Apophis, ISS; read back Saturn |  |
 | J0976 | mini | open | – | – | studio · READ-ONLY Studio: why m09jUdwC5hk + VBaYRPp85Sw analytics show 'Subscribers (OpptiAI)' with a dash |  |
 
 Recently finished:
