@@ -44,6 +44,7 @@ import fcntl
 import hashlib
 import json
 import os
+import workflow_state as workflow
 import re
 import pathlib
 import subprocess
@@ -60,7 +61,7 @@ SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstr
 CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: a full re-read (one Blob list call) at least hourly, as a safety net
 CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minute (the stamp can lag a write by 60 s)
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
-FULL_EVERY_S = 5 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
+FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
 OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",  # actual schedules, excluding dry runs
@@ -454,6 +455,25 @@ def skip_quick(prev: dict, key: str | None, at: dt.datetime, checks_wanted: bool
     return bool(key) and key == prev.get("key") and _age(prev.get("built") or "", at) < FULL_EVERY_S and not checks_wanted
 
 
+def dispatch_snapshot(board: dict, at: dt.datetime, queue_path: pathlib.Path | None = None) -> dict:
+    """The same pure selector used by the relay; publish a projection of the exact queue revision."""
+    import chief_relay as relay
+    import routing
+    path = queue_path or WT / "owb" / "jobs" / "queue.json"
+    data = _read_json(path) or {"jobs": (board.get("owb") or {}).get("jobs") or []}
+    rows = (board.get("models") or {}).get("chiefChain") or []
+    up = {r.get("agent") for r in rows if r.get("up") and r.get("agent") in routing.MINI_WORKERS}
+    # Cursor is a specialist, not in the Chief chain.
+    model_rows = (board.get("models") or {}).get("models") or []
+    up.update(m.get("id") for m in model_rows if m.get("status") == "green" and m.get("id") in routing.MINI_WORKERS)
+    chief = ((board.get("models") or {}).get("chief") or {}).get("agent") or ""
+    pending = [j for j in data.get("jobs", []) if workflow.is_review(j)]
+    due = relay.due_chief_reviews(pending, chief, at)
+    active = ((board.get("models") or {}).get("chiefWork") or {}).get("active")
+    chooser = lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), "")
+    return workflow.snapshot(data, at, chief, up, chooser, active, {j["id"] for j in due})
+
+
 def run_once(a) -> int:
     at = now()
     prev_path = STATE / "last.json"
@@ -475,6 +495,7 @@ def run_once(a) -> int:
         board["models"] = models_status(at, (docs.get("owb") or {}).get("jobs") or [])
     except Exception as e:  # noqa: BLE001
         log(f"models not read: {e}")
+    board["workflow"] = dispatch_snapshot(board, at)
     tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)

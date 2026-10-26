@@ -77,6 +77,7 @@ HOME = pathlib.Path.home()
 STATE = pathlib.Path(os.environ.get("DESK_STATE", HOME / "_desk" / "state"))
 OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import workflow_state as workflow
 import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and model)
 
 
@@ -418,28 +419,12 @@ def chief_order(job: dict) -> tuple:
 def pending_chief_reviews(at: dt.datetime) -> list:
     """All actionable role work, not just reviews. Never release a hold here."""
     data = read_json(OWB / "jobs" / "queue.json") or {}
-    states = {j["id"]: j for j in data.get("jobs", [])}
-    out = []
-    for j in states.values():
-        reason = j.get("result") or ""
-        role_job = j.get("kind") == "chief" or j.get("for") == "chief"
-        parked = j.get("status") == "blocked" and re.search(
-            r"(?:parked for (?:the )?chief|await(?:s|ing)? (?:the )?chief|needs? (?:the )?chief)", reason, re.I)
-        if not parked and not (role_job and j.get("status") == "open"):
-            continue
-        if j.get("needs") == "ben" or j.get("awaits_ben"):
-            continue
-        # Explicit external holds remain held; a failed gate needing a decision is actionable.
-        if re.search(r"wait(?:s|ing)? .*?(?:public|reset|renewal)|date gate|reopen (?:when|on|after)|test.*(?:running|ends?)", reason, re.I):
-            continue
-        if role_job and j.get("status") == "open":
-            import jobs
-            if jobs.waiting_to_start(j, at):
-                continue
-            if j.get("after") and states.get(j["after"], {}).get("status") != "done":
-                continue
-        out.append(j)
-    return sorted(out, key=chief_order)
+    by_id = {j["id"]: j for j in data.get("jobs", [])}
+    due = workflow.deadlines(data.get("jobs", []))
+    return sorted((j for j in data.get("jobs", [])
+                   if not workflow.external_hold(j, at) and not workflow.dependency_problem(j, by_id)
+                   and (workflow.state(j, by_id, at) == "review" or (workflow.role_job(j) and workflow.state(j, by_id, at) == "queued"))),
+                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at))
 
 
 def due_chief_reviews(items: list, agent: str, at: dt.datetime) -> list:
@@ -555,7 +540,7 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    "Chief relay"). Run: python3 scripts/owb_thread.py read   and   python3 scripts/studio.py board
 2. History of Science ({hos}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:
      python3 00_Brand/Channel-Setup/tools/hos_desk.py inbox --as {agent}   (run in the HOS checkout; there is no scripts/hos_desk.py)
-3. Follow the Chief review priority below first, if one is supplied; otherwise, which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
+3. Follow the DISPATCH PRIORITY or CHIEF REVIEW PRIORITY below first, if supplied; otherwise, which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
      python3 scripts/channel_balance.py --hos "{hos}"
    If it says History of Science first: take the single oldest HOS desk task you can do now, and go to step 4. Only if
    there is none, fall through to the OWB queue below.
@@ -838,7 +823,7 @@ def next_job(agent: str):
         held = next((j for j in data["jobs"] if j.get("by") == agent and j.get("status") == "claimed"), None)
         if held:
             return held
-        return next((j for j in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", jobs.order(j, data.get("focus") or ())))
+        return next((j for j in jobs.ordered(data, at)
                      if jobs.claimable(data, j, jobs.MINI_NEEDS, at, agent)), None)
     except Exception as e:  # an unreadable queue never stops a run: the worker just gets its default model
         log(f"routing: queue not readable ({e.__class__.__name__}); default worker and model")
@@ -1227,6 +1212,15 @@ def run_locked(at: dt.datetime) -> int:
     if not self_heal(at):
         log("disk still too full to run a worker: waiting for the next repair")
         return 0
+    queue = read_json(OWB / "jobs" / "queue.json") or {}
+    by_id = {j["id"]: j for j in queue.get("jobs", [])}
+    if (OWB / "scripts" / "jobs.py").exists() and any(
+            j.get("status") in ("open", "blocked") and workflow.dependency_problem(j, by_id)
+            and not j.get("dependency_problem") for j in queue.get("jobs", [])):
+        result = subprocess.run([sys.executable, str(OWB / "scripts" / "jobs.py"), "reconcile", "--agent", "relay", "--git"],
+                                capture_output=True, text=True, timeout=180)
+        if result.returncode:
+            log("dependency reconciliation failed: " + (result.stderr or result.stdout)[-250:])
     if (OWB / "scripts" / "refill.py").exists():
         escalate_stale()
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
@@ -1263,8 +1257,7 @@ def run_locked(at: dt.datetime) -> int:
         # Fallback chains (Ben, 11 Oct 23:40 / 23:47): Claude's jobs when it's out of usage, and jobs whose worker ran
         # out, go to the next worker up in their chain, addressed to it, so the loop below wakes it in this same run.
         rerouted = reroute_work(at)
-        # A job addressed to one agent wakes that agent if it's up, ahead of the acting Chief: otherwise only the first
-        # agent in the chain ever runs, and a second opinion from Codex would never happen.
+        # One deadline-first selector ranks Chief duties and production together; named workers retain eligibility.
         chief_inbox = pending_chief_reviews(at)
         publish_chief_inbox(chief_inbox, leader, at)
         if chief_delivery_overdue(leader, at):
@@ -1274,14 +1267,15 @@ def run_locked(at: dt.datetime) -> int:
             continue
         chief_reviews = [j for j in due_chief_reviews(chief_inbox, leader, at)
                          if j["id"] not in reviewed] if leader in routing.MINI_WORKERS else []
-        review_due = bool(chief_reviews)
-        addressed = False
-        for a in (() if review_due else routing.MINI_WORKERS):
-            if a in up and a != who and addressed_to(a):
-                addressed = True
-                log(f"{a} has a job addressed to it ({', '.join(addressed_to(a))}): waking it first")
-                who = a
-                break
+        data = read_json(OWB / "jobs" / "queue.json") or {}
+        selection = workflow.select_dispatch(data, at, leader, up, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
+                                             review_ids={j["id"] for j in chief_reviews})
+        review_due = bool(selection and selection["mode"] == "review")
+        if selection:
+            who = selection["worker"]
+            if review_due:
+                chief_reviews = [selection["job"]] + [j for j in chief_reviews if j["id"] != selection["job"]["id"]]
+        addressed = bool(selection and who != leader)
         chief_name = NAMES.get(who, who) if cloud_chief(who) else ""
         if cloud_chief(who):
             # Grok Bot (9 Oct 2026, studio owner), or Claude under Ben's override (14 Oct): the Chief does reviews,
@@ -1315,25 +1309,23 @@ def run_locked(at: dt.datetime) -> int:
             return 0
         names = [r[0] for r in rows]
         above = [f"{NAMES.get(a, a)} is {why}" for a, ok, why in rows[:names.index(who)]] if who in names else []
-        why = "Claude addressed a job to you by name" if addressed else ("; ".join(above) or "it is first in line")
+        why = "The shared queue selected your eligible task" if addressed else ("; ".join(above) or "it is first in line")
         if addressed and rerouted:
             why = (f"the job's earlier worker is out of usage, so the relay walked its fallback chain and handed it to "
                    f"you ({', '.join(rerouted)}; Ben, 11 Oct 2026). Take it with jobs.py next; do it as the primary "
                    f"would, and stop at the same protected calls")
         elif worker_only:
-            why = (f"{chief_name or 'Grok Bot'} is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
+            why = (f"{NAMES.get(leader, leader) or 'No agent'} is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
                    "job queue. In step 3 skip the channel check and the HOS desk inbox: do only the job "
                    "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
                    "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
         model, job = "", None
-        if review_work:
-            # A Chief review must not be redirected to a specialist worker by the next ordinary queue job.
-            model = routing.model_for({"kind": "chief"}, who)
+        if selection:
+            who = selection["worker"]
+            job = None if review_work else selection["job"]
+            model = routing.model_for({"kind": "chief"} if review_work else job, who)
         elif not addressed and who in routing.MINI_WORKERS:
             who, model, job = route_worker(who, up)
-        elif addressed:
-            job = next_job(who)  # the addressed job comes first in jobs.order: run it on its own model
-            model = routing.model_for(job, who) if job else ""
         if chained and not review_work and (job is None or (last_ran and job.get("id") == last_ran)):
             log(f"chain: stop after {chained} job(s): " + ("next job is the one just run (released to retry later)"
                                                          if job else "no next job identified"))
@@ -1349,6 +1341,10 @@ def run_locked(at: dt.datetime) -> int:
                     f"For an open Chief job, use jobs.py next --id {reviews[0]['id']} --agent {who} --can mini,gemini,any --git to claim that exact job. "
                     "do not reopen unrelated date, credit or Ben-approval holds. Do this one review, then stop. "
                     "Other reviews waiting: " + ", ".join(j["id"] for j in reviews[1:])) if review_work else ""
+        if selection and not review_work:
+            priority = (f"DISPATCH PRIORITY: claim only {job['id']} with python3 scripts/jobs.py next --id {job['id']} --agent {who} --can mini,gemini,any --git. "
+                        "This is the shared deadline-first selection. Do not substitute an inbox, audit or ordinary jobs.py next choice. "
+                        "If it is no longer claimable, stop; the relay will replan from the current queue.")
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                owb=OWB, hos=HOS, authority=authority_prompt(who, leader), priority=priority,
                                role="the elected acting Chief" if who == leader else "a specialist worker")

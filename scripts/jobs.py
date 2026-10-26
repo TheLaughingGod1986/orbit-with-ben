@@ -54,6 +54,7 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import chief_relay  # noqa: E402
 import routing  # noqa: E402
+import workflow_state as workflow
 import studio  # noqa: E402
 
 ROOT = studio.ROOT
@@ -141,7 +142,7 @@ def do_schedule(job: dict, agent: str, not_before: str, at: dt.datetime, reset: 
 # ----------------------------------------------------------------------------- pure operations
 def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
            stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "",
-           kind: str = "", model: str = "", not_before: str = "", reset: str = "") -> dict:
+           kind: str = "", model: str = "", not_before: str = "", reset: str = "", due: str = "") -> dict:
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
     if kind and kind not in routing.KINDS:
@@ -156,10 +157,13 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
         raise ValueError(f"--after {after}: no such job")
     need_reset(not_before, reset)
     nb = parse_not_before(not_before)
+    due = workflow.normalize_due(due)
     job = {"id": f"J{data['next_id']:04d}", "title": title, "needs": needs, "repo": repo, "body": body, "ref": ref,
            "film": film, "stage": stage, "after": after.upper() if after else "", "eta_min": eta_min,
            "status": "open", "by": "", "since": "", "eta": "", "created_by": by, "created_at": studio.iso(at),
            "result": "", "history": []}
+    if due:
+        job["due"] = due
     if for_agent:
         job["for"] = for_agent
     if kind:
@@ -181,22 +185,36 @@ def film_named(title: str) -> bool:
 
 
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
-    if job.get("kind") == "chief" or job.get("for") == "chief":
-        if job["needs"] == "ben" or job.get("awaits_ben") or not chief_relay.is_elected_chief(agent, at):
-            return False  # Chief is a live role; a generic worker never inherits a protected call.
-        if job.get("after") and not any(j.get("id") == job["after"] and j.get("status") == "done" for j in data["jobs"]):
-            return False
-    else:
-        if job["needs"] not in can:
-            return False
-        if job.get("for") and job["for"] != agent:
-            return False  # independent opinions and ordinary addressed jobs keep their owner
-    if waiting_to_start(job, at):
-        return False  # not before its start time (the relay and `next --peek` use this too)
-    if job["status"] == "open" or stalled(job, at):
-        dep = find(data, job["after"]) if job.get("after") else None
-        return dep is None or dep["status"] == "done"
-    return False
+    chief = agent if workflow.role_job(job) and chief_relay.is_elected_chief(agent, at) else ""
+    return workflow.claimable(job, data["jobs"], at, agent, chief, can)
+
+
+def ordered(data: dict, at: dt.datetime | None = None) -> list:
+    due = workflow.deadlines(data["jobs"])
+    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at))
+
+
+def reconcile_dependencies(data: dict, at: dt.datetime) -> list:
+    by_id = {j["id"]: j for j in data["jobs"]}
+    changed = []
+    for j in list(data["jobs"]):
+        if j.get("status") not in ("open", "blocked") or j.get("dependency_resolution"):
+            continue
+        problem = workflow.dependency_problem(j, by_id)
+        if not problem:
+            continue
+        key = problem["kind"] + ":" + ",".join(problem["ids"])
+        explanation = workflow.reason(j, by_id, at)
+        if j.get("dependency_problem") != problem:
+            j.update(status="blocked", result=explanation, dependency_problem=problem, eta="")
+            log(j, at, "relay", "blocked: " + explanation)
+            changed.append(j["id"])
+        if not any(x.get("dependency_resolution") == key for x in data["jobs"]):
+            task = do_add(data, title="Chief: resolve " + key, needs="any", kind="chief", by="relay", at=at,
+                          body="Resolve dependency problem " + key + ". Inspect affected jobs and their existing approvals. Record an explicit replacement dependency, repair or cancellation decision; never bypass a hold. Do not upload or change media as part of this task.")
+            task["dependency_resolution"] = key
+            changed.append(task["id"])
+    return changed
 
 
 MINI_NEEDS = {"mini", "gemini", "any"}
@@ -253,36 +271,20 @@ RETRY_COOL_MIN = 30
 def recently_released(job: dict, at: dt.datetime | None = None) -> bool:
     """Its last event is a release less than RETRY_COOL_MIN ago (a poll like the Flow balance read): it goes behind
     every other ready job so it isn't re-run back to back, but it is still claimable if nothing else is ready."""
-    h = (job.get("history") or [])[-1:] 
-    if not h or not str(h[0].get("what", "")).startswith("released"):
-        return False
-    try:
-        return ((at or now()) - studio.parse(h[0]["at"])) < dt.timedelta(minutes=RETRY_COOL_MIN)
-    except (KeyError, ValueError):
-        return False
+    return workflow.recently_released(job, at or now())
 
 
 def order(job: dict, focus=()) -> tuple:
-    """An urgent job first (Claude's call: e.g. the Mini's disk at 99% would break every render after it), then the focus film's jobs (Ben, 8 Oct: one film at a time, finished in a day or two for his UAT), then other
-    films' jobs before admin jobs, then quick jobs (ETA an hour or less), then the rest, oldest first within each. Otherwise one multi-day job that is released at
-    every stopping point (a first cut) would come back first every time and starve the quick ones."""
-    return (0 if job.get("for") else 1,  # a job addressed to this agent (only it can see it) first: it was woken for it
-            0 if job.get("urgent") else 1,
-            1 if job.get("backlog") else 0,  # refill/growth tier only when no pipeline job is ready (Ben, 12 Oct)
-            1 if recently_released(job) else 0,  # released to retry: other ready work first, never a time hold
-            urgent_rank(job) if job.get("urgent") else 0,
-            0 if job.get("film") and job["film"] in focus else 1,
-            0 if job.get("film") else 1,  # any film's job before admin jobs (readings, installs, disk)
-            0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
+    return workflow.order(job, workflow.deadlines([job]), focus)
 
 
 def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None, job_id: str = "") -> dict | None:
-    """Claim the next job this agent can do (open, or stalled past its ETA): quick jobs first, then oldest first.
+    """Claim the next job this agent can do (open, or stalled past its ETA): deadline first, then urgency, production and existing queue tie breakers.
     None when nothing is waiting."""
     for job in sorted(data["jobs"], key=lambda j: j["id"]):
         if job.get("by") == agent and job["status"] == "claimed":
             return job if not job_id or job["id"] == job_id else None  # finish the current claim first
-    for job in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", order(j, data.get("focus") or ()))):
+    for job in ordered(data, at):
         if (not job_id or job["id"] == job_id) and claimable(data, job, can, at, agent):
             took = stalled(job, at)
             prev = job.get("by", "")
@@ -677,11 +679,18 @@ def main(argv=None) -> int:
     a.add_argument("--for", dest="for_agent", default="", help="only this agent may claim it, e.g. codex; the relay wakes it")
     a.add_argument("--kind", default="", choices=[""] + list(routing.KINDS), help="job type; routes it (AGENTS.md 'Who does what')")
     a.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="override the kind's model")
+    a.add_argument("--due", default="", help="deadline, ISO or YYYY-MM-DD HH:MM London; does not defer start")
     a.add_argument("--not-before", default="", help='"YYYY-MM-DD HH:MM" London time: nobody is handed it before then')
     a.add_argument("--reset", default="", help="the real window --not-before waits for (quota/credit reset, air date)")
     a.add_argument("--approved-from", dest="approved_from", default="",
                    help="this job delivers a cut Ben OK'd that job asked about (awaits_ben), e.g. J0924; see `approved`")
     a.add_argument("--entry", type=int, default=0, help="with --approved-from: which cut, when it asked about several")
+    rc = sub.add_parser("reconcile", help="block broken dependencies and queue deduplicated Chief resolutions")
+    rc.add_argument("--agent", default="relay")
+    due = sub.add_parser("due", help="set or clear a deadline without changing eligibility")
+    due.add_argument("id")
+    due.add_argument("--due", required=True)
+    due.add_argument("--agent", required=True)
     sc = sub.add_parser("schedule", help="set or clear a job's not-before time")
     sc.add_argument("id")
     sc.add_argument("--agent", default="")
@@ -776,6 +785,9 @@ def main(argv=None) -> int:
     def apply(data):
         touched = []
         try:
+            if args.cmd == "reconcile":
+                changes = reconcile_dependencies(data, at)
+                return {"id": "reconcile", "title": "Dependency reconciliation", "needs": "any", "status": "done", "result": ", ".join(changes), "history": []}, None, touched
             if args.cmd == "add":
                 body = args.body_file.read_text() if args.body_file else args.body
                 if not args.film and film_named(args.title):
@@ -783,7 +795,7 @@ def main(argv=None) -> int:
                           "won't move that film's stage when it's done (J0814)", file=sys.stderr)
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
-                             for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset)
+                             for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset, due=args.due)
                 if args.approved_from:
                     src = find(data, args.approved_from)
                     if not src:
@@ -801,7 +813,7 @@ def main(argv=None) -> int:
             if args.cmd == "next":
                 can = {c.strip() for c in args.can.split(",") if c.strip()}
                 if args.peek:
-                    job = next((j for j in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", order(j, data.get("focus") or ()))) if (not args.id or j["id"] == args.id) and claimable(data, j, can, at, args.agent)), None)
+                    job = next((j for j in ordered(data, at) if (not args.id or j["id"] == args.id) and claimable(data, j, can, at, args.agent)), None)
                     return job, None, touched
                 job = do_next(data, args.agent, can, at, args.eta, args.id)
                 if job and on_board(job) and job["history"][-1]["what"].startswith("claimed"):
@@ -814,7 +826,10 @@ def main(argv=None) -> int:
             job = find(data, args.id)
             if not job:
                 return None, f"no {args.id}", touched
-            if args.cmd == "done":
+            if args.cmd == "due":
+                job["due"] = workflow.normalize_due(args.due)
+                log(job, at, args.agent, "deadline: " + (job["due"] or "cleared"))
+            elif args.cmd == "done":
                 do_done(job, args.agent, args.result or "done", at, args.ref)
                 board_release(job, args.agent, "review", args.ref)
             elif args.cmd == "block":
@@ -895,7 +910,7 @@ def main(argv=None) -> int:
     if args.cmd == "urgent":
         print("urgent: " + (", ".join(job["urgent"]) or "none"))
         return 0
-    print(show(job) if job else "ok")
+    print(job.get("result") or "no dependency changes" if args.cmd == "reconcile" else show(job) if job else "ok")
     return 0
 
 

@@ -48,7 +48,7 @@ class Next(unittest.TestCase):
                   ("mini", "022 covers", {"film": "022", "stage": "thumbs", "eta_min": 30}))
         d["focus"] = ["025"]
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "025 rough v02")  # long, but the focus film
-        self.assertEqual(jobs.order({"id": "J9", "film": "022", "eta_min": 30}, ["025"])[0], 1)
+        self.assertLess(jobs.order({"id": "J8", "film": "025"}, ["025"]), jobs.order({"id": "J9", "film": "022"}, ["025"]))
         jobs.do_done(d["jobs"][1], "cursor", "ok", T0)
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["title"], "022 covers")  # a film's job before admin
 
@@ -58,7 +58,7 @@ class Next(unittest.TestCase):
         self.assertEqual(jobs.do_next(d, "cursor", {"mini", "any"}, T0)["id"], "J0002")
         jobs.find(d, "J0002")["status"] = "open"; jobs.find(d, "J0002")["by"] = ""
         jobs.find(d, "J0002")["urgent"] = True
-        self.assertEqual(jobs.do_next(d, "codex", {"mini", "any"}, T0)["id"], "J0001")  # its own job before an urgent one
+        self.assertEqual(jobs.do_next(d, "codex", {"mini", "any"}, T0)["id"], "J0002")  # named ownership no longer jumps urgency
 
     def test_urgent_jobs_run_in_the_order_named(self):
         d = queue(*[("mini", f"j{i}", {"film": "026", "stage": "edit"} if i == 2 else {}) for i in range(1, 6)])
@@ -239,11 +239,11 @@ class NotBefore(unittest.TestCase):
         with self.assertRaises(ValueError):
             jobs.parse_not_before("12 Oct 09:00")
 
-    def test_no_fixed_start_times(self):
-        """Ben, 12 Oct 2026 14:37: a stored not_before is ignored and none can be set."""
+    def test_explicit_date_hold_is_preserved(self):
+        """Deadline-first dispatch preserves recorded external date holds; it does not create start schedules."""
         d = queue(("mini", "flow balance", {}), ("mini", "later job", {}))
         d["jobs"][0]["not_before"] = "2099-01-01T09:00Z"  # an old field left on a job
-        self.assertTrue(jobs.claimable(d, d["jobs"][0], jobs.MINI_NEEDS, T0, "cursor"))
+        self.assertFalse(jobs.claimable(d, d["jobs"][0], jobs.MINI_NEEDS, T0, "cursor"))
         with self.assertRaises(ValueError):
             jobs.do_schedule(d["jobs"][1], "chief", "2026-10-07 14:00", T0, "credit window")
         jobs.do_schedule(d["jobs"][1], "chief", "", T0)  # clearing is still fine
@@ -251,7 +251,7 @@ class NotBefore(unittest.TestCase):
 
     def test_released_job_goes_behind_other_ready_work(self):
         d = queue(("mini", "poll", {}), ("mini", "real work", {}))
-        jobs.log(d["jobs"][0], jobs.now(), "cursor", "released: retry later")
+        jobs.log(d["jobs"][0], T0, "cursor", "released: retry later")
         self.assertEqual(jobs.do_next(d, "cursor", {"mini"}, T0)["id"], "J0002")
 
     def test_backlog_tier_runs_last(self):

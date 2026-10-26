@@ -104,6 +104,22 @@ class LaneRules(unittest.TestCase):
             self.assertNotIn("your OK", f["text"])
 
 
+class CurrentApprovalBlocker(unittest.TestCase):
+    def test_current_ruling_and_correction_replace_historical_failure(self):
+        source={'id':'J0956','status':'blocked','after':'J0988',
+                'approved_from':{'version':'v07','card':'OWB:S:Neptune'},
+                'result':'Chief ruled: preserve v07 approval; correction queued as J0988.',
+                'history':[{'at':'2026-10-26T18:00Z','what':'blocked: parked for Chief: old audio failure'}]}
+        entry=vt.approved_entries([source])[0]
+        self.assertNotIn('old audio failure',entry['blockedWhy'])
+        state,line,warn=vt.approved_state(entry,{'J0988':{'id':'J0988','status':'open','title':'Neptune technical correction'}},datetime(2026,10,26,tzinfo=timezone.utc))
+        self.assertEqual(state,'blocked')
+        self.assertIn('J0988: Neptune technical correction',line)
+        self.assertIn('Chief ruled',line)
+        self.assertNotIn('old audio failure',warn)
+        self.assertEqual(source['approved_from']['version'],'v07')
+
+
 class RealYouTubeState(unittest.TestCase):
     """Board must match YouTube (Ben, 24 Oct 23:23): public read wins, old films and Shorts get real titles."""
     NOW = datetime(2026, 10, 24, 22, 0, tzinfo=timezone.utc)
@@ -131,6 +147,11 @@ class RealYouTubeState(unittest.TestCase):
         v = self.build()["OWB:022"]
         self.assertEqual((v["lane"], v["youtube"]["state"]), ("done", "live"))
         self.assertTrue(v["line"].startswith("Public on YouTube since"))
+
+    def test_past_schedule_without_public_read_is_still_scheduled(self):
+        v=self.build(public={})["OWB:022"]
+        self.assertEqual((v["youtube"]["state"],v["youtube"]["privacy"]),("scheduled","private"))
+        self.assertNotIn("bySchedule",v["youtube"])
 
     def test_title_match_moves_aired_hos_long_to_done(self):
         v = self.build()["HOS:004"]

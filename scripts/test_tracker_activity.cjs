@@ -1,12 +1,12 @@
 const fs = require('fs'), vm = require('vm'), assert = require('assert');
 const path = require('path');
 const source = fs.readFileSync(path.join(__dirname, '../05_Analytics/kanban/board_site/tracker_app.js'), 'utf8');
-const elements = {strip: {innerHTML:''},activity: {innerHTML:'',querySelectorAll:()=>[]}};
+const elements = {strip: {innerHTML:''},activity: {innerHTML:'',querySelectorAll:()=>[]},asof:{textContent:''}};
 const context = {Date, console, localStorage:{getItem:()=>null},location:{hash:''},
   document:{getElementById:id=>elements[id]||null}, window:{}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf('  // Boot with any baked tracker')) + `
-  globalThis.test = {deriveLane, jobProgress, jobState, matchesVideo, cardWorkHtml, cardHeadline, cardWaiting, renderActivity, renderStrip, cardHtml, jobHtml,
+  globalThis.test = {deriveLane, jobProgress, jobState, matchesVideo, cardWorkHtml, cardHeadline, cardWaiting, renderActivity, renderStrip, cardHtml, jobHtml, approvedHtml, updateAsOf,
     setBoard:b=>{board=b;}};
 })();`, context);
 const t=context.test;
@@ -67,3 +67,34 @@ const reviewProgress={...chiefReview,progress:{step:2,of:3,note:'Evidence checke
 t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:reviewProgress,next:[]}}});
 t.renderStrip();html=elements.strip.innerHTML;
 assert(html.includes('aria-valuenow="67"')&&html.includes('67%'),'Chief review uses its own confirmed steps');
+
+// All dashboard surfaces consume the shared Chief-review activity without borrowing worker completion.
+const blockedReview={id:'J0956',title:'Neptune technical check',status:'blocked',by:'cursor',
+  result:'Chief decision: correction J0988',progress:{step:5,of:5}};
+const snap={counts:{running:1,queued:1,review:0,waiting:0,stalled:0},
+  states:{J0956:{state:'running',reason:''},J0988:{state:'queued',reason:''}},
+  active:[{id:'J0956',worker:'codex',mode:'review',startedAt:new Date().toISOString(),progress:{step:1,of:3}}],
+  next:{id:'J0988',status:'open',title:'Neptune correction',worker:'gemini',mode:'job'}};
+t.setBoard({workflow:snap,owb:{jobs:[blockedReview,{id:'J0988',status:'open',needs:'mini'}]},
+  models:{chief:{name:'Codex'},models:[],chiefWork:{active:reviewProgress,next:[{id:'WRONG',title:'Old independent next'}]}}});
+t.renderActivity();html=elements.activity.innerHTML;
+assert(html.includes('<b>1</b> running')&&html.includes('Waiting and blockers · 0'));
+t.renderStrip();html=elements.strip.innerHTML;
+assert(html.includes('J0988')&&!html.includes('WRONG'));
+assert(html.includes('33%')&&!html.includes('100%')&&html.includes('Codex'));
+const reviewVideo={...activeVideo,jobs:[{id:'J0956'}]};
+html=t.cardHtml(reviewVideo);
+assert(html.includes('Reviewing · J0956')&&html.includes('live-dot')&&html.includes('1 running'));
+assert(html.includes('33%')&&!html.includes('100%'));
+assert(!html.includes('Awaiting Chief review'),'active review is not also a waiting task');
+html=t.approvedHtml({state:'working',step:0,of:4});
+assert(html.includes('aria-valuenow="0"')&&html.includes('width:0%')&&!html.includes('width:5%'));
+for(const [state,privacy,label] of [['live','public','Live'],['scheduled','private','Scheduled'],['uploaded','private','Private']]) {
+  html=t.cardHtml({...activeVideo,youtube:{videoId:'abcdefghijk',state,privacy},lane:'done'});
+  assert(html.includes('class="badge publication">'+label+'</span>'));
+}
+t.setBoard({publishedAt:new Date(Date.now()-4*60000).toISOString()});
+t.updateAsOf();assert(elements.asof.textContent.startsWith('Stale data'));
+t.setBoard({publishedAt:new Date().toISOString()});
+t.updateAsOf();assert(elements.asof.textContent.startsWith('Updated'));
+console.log('Shared workflow, publication and progress regression checks passed');

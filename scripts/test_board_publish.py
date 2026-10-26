@@ -298,11 +298,11 @@ class QuickNoOp(unittest.TestCase):
     """Every-minute runs (Ben, 11 Oct 22:09) stop early when nothing moved."""
 
     def test_same_refs_recent_build_and_no_ticks_skip(self):
-        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(minutes=2))}
+        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(seconds=bp.FULL_EVERY_S - 1))}
         self.assertTrue(bp.skip_quick(prev, "k1", T0, False))
 
     def test_a_moved_ref_a_tap_an_old_build_or_no_key_rebuild(self):
-        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(minutes=2))}
+        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(seconds=bp.FULL_EVERY_S - 1))}
         self.assertFalse(bp.skip_quick(prev, "k2", T0, False))
         self.assertFalse(bp.skip_quick(prev, "k1", T0, True))
         self.assertFalse(bp.skip_quick(dict(prev, built=bp.iso(T0 - dt.timedelta(seconds=bp.FULL_EVERY_S))), "k1", T0, False))

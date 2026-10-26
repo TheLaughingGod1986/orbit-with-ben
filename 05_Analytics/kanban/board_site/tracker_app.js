@@ -12,7 +12,7 @@
     ["changes", "Changes requested"],
     ["ready", "Ready for OK"],
     ["approved", "Approved, on its way"],   // Ben, 25 Oct 14:13: what he OK'd, until YouTube has it (video_tracker.py)
-    ["done", "Done on YouTube"],
+    ["done", "On YouTube"],
   ];
 
   let key = null;
@@ -236,11 +236,11 @@
   // "Approved, on its way": what Ben OK'd, the job carrying it, and that job's live state.
   function approvedHtml(a) {
     const label = { waiting: "Waiting on Chief", queued: "Queued", working: "Working", blocked: "Blocked", uploaded: "Uploaded", cancelled: "Cancelled" }[a.state] || a.state || "";
-    const pct = a.state === "working" && a.of ? Math.max(5, Math.min(100, Math.round(100 * (a.step || 0) / a.of))) : 0;
+    const pct = a.state === "working" && a.of ? Math.max(0, Math.min(100, Math.round(100 * (a.step || 0) / a.of))) : 0;
     return `<div class="appr ${esc(a.state || "")}${a.warn ? " warn" : ""}">
       <div class="appr-top"><span class="appr-state">${esc(label)}</span>${a.job ? `<span class="mono">${esc(a.job)}</span>` : ""}${a.version ? `<span>· OK'd ${esc(a.version)}</span>` : ""}</div>
       <div class="appr-line">${esc(a.status || "")}</div>
-      ${pct ? `<div class="appr-bar"><span style="width:${pct}%"></span></div>` : ""}
+      ${a.state === "working" && a.of ? `<div class="appr-bar" role="progressbar" aria-label="Approval task progress" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div><span class="meta">${pct}%</span>` : ""}
       ${a.airsText ? `<div class="appr-line">Airs ${esc(a.airsText)} London</div>` : ""}
     </div>`;
   }
@@ -252,7 +252,7 @@
     const reviewJob = chiefReview && tsOf(chiefReview.expiresAt) > Date.now()
       ? (board?.owb?.jobs || []).find(j => j.id === chiefReview.job && matchesVideo(j, v)) : null;
     const active = activeJob || reviewJob;
-    const activeLabel = active ? `${activeJob ? "Working" : "Reviewing"} · ${active.id}` : "";
+    const activeLabel = active ? `${activeJob && !activeJob._chiefReview ? "Working" : "Reviewing"} · ${active.id}` : "";
     const chClass = v.channel === "HOS" ? "hos" : "orbit";
     const chLabel = v.channel === "HOS" ? "HOS" : "Orbit";
     const notes = (v.notes || []).map(n =>
@@ -274,6 +274,7 @@
         ${active ? `<span class="active-task" title="${esc(taskOf(active))}"><span class="live-dot" aria-hidden="true"></span>${esc(activeLabel)}</span>` : ""}
         <span class="badge ${chClass}">${chLabel}</span>
         <span class="badge type">${esc(v.type === "short" ? "Short" : "Long")}</span>
+        ${v.youtube?.videoId ? `<span class="badge publication">${esc(v.youtube.state === "live" && v.youtube.privacy === "public" ? "Live" : v.youtube.state === "scheduled" ? "Scheduled" : "Private")}</span>` : ""}
         ${v.version ? `<span class="badge ver">${esc(v.version)}</span>` : ""}
         ${v.lane === "ready" && v.readyFor ? `<span class="ready-tag">Waits on ${esc(v.readyFor)}</span>` : ""}
       </div>
@@ -311,7 +312,8 @@
   };
   // Percent is confirmed steps, never elapsed time presented as completed work.
   function jobProgress(j) {
-    const p = j.progress || {}, s = tsOf(j.workStart || j.claimedAt);
+    const activity = (board?.workflow?.active || []).find(a => a.id === j.id && a.mode === "review");
+    const p = activity?.progress || j.progress || {}, s = tsOf(activity?.startedAt || j.workStart || j.claimedAt);
     const est = (+j.estMin || +j.typMin || 25) * MIN;
     const elapsed = isNaN(s) ? 0 : Math.max(0, Date.now() - s);
     const reported = Number.isInteger(p.step) && Number.isInteger(p.of) && p.of > 0 && p.step >= 0 && p.step <= p.of;
@@ -319,6 +321,8 @@
       left: Math.max(0, est - elapsed), over: elapsed > est, start: s, total: est };
   }
   function jobState(j) {
+    const status = board?.workflow?.states?.[j.id]?.state;
+    if (status) return status;
     if (j.status === "claimed") return j.eta && tsOf(j.eta) < Date.now() - 45 * MIN ? "stalled" : "running";
     if (j.status === "blocked" && /reset|renewal|waits? (?:for |until ).*public|date gate|test.*(?:running|ends?)/i.test(j.result || "")) return "waiting";
     if (j.status === "blocked") return /parked for (?:the )?chief|chief (?:review|pass|ruling)/i.test(j.result || "") ? "review" : "waiting";
@@ -327,6 +331,8 @@
     return "queued";
   }
   function blockReason(j) {
+    const reason = board?.workflow?.states?.[j.id]?.reason;
+    if (reason) return reason;
     if (j.status === "blocked") return j.result || j.last?.what || "No blocker reason recorded.";
     if (j.after) return `Waiting for ${j.after}.`;
     if (j.notBefore) return `Starts after ${new Date(j.notBefore).toLocaleString("en-GB", { timeZone: "Europe/London" })} London.`;
@@ -346,13 +352,18 @@
     const f = filmOf(j);
     return f.key === v.key;
   }
+  function activityJob(j) {
+    const activity = (board?.workflow?.active || []).find(a => a.id === j.id && a.mode === "review");
+    return activity ? {...j, status:"claimed", by:activity.worker, claimedAt:activity.startedAt,
+      progress:activity.progress || {step:0,of:3}, _chiefReview:true} : j;
+  }
   function cardWork(v) {
     const owb = (board || {}).owb || {};
     const live = (owb.jobs || []).filter(j => matchesVideo(j, v));
     // Baked data still supplies live ids before the full queue arrives.
     for (const j of v.jobs || []) if (!supportingJob(j) && !live.some(x => x.id === j.id)) live.push(j);
     const done = (owb.done || []).filter(j => matchesVideo(j, v)).sort((a,b) => tsOf(b.at)-tsOf(a.at));
-    return { live, done };
+    return { live:live.map(activityJob), done };
   }
   function cardWaiting(v) {
     if (!["progress","changes"].includes(v.lane)) return v.waitingOn || "—";
@@ -402,7 +413,7 @@
     const el=document.getElementById("activity"), owb=(board||{}).owb;
     if (!el || !owb) return;
     const opened=[...el.querySelectorAll("details[open]")].map(x=>x.id);
-    const jobs=owb.jobs||[], counts=jobs.reduce((a,j)=>{const k=jobState(j);a[k]=(a[k]||0)+1;return a;},{});
+    const jobs=owb.jobs||[], counts=board?.workflow?.counts || jobs.reduce((a,j)=>{const k=jobState(j);a[k]=(a[k]||0)+1;return a;},{});
     const today=new Date().toLocaleDateString("en-CA",{timeZone:"Europe/London"});
     const done=(owb.done||[]).filter(j=>new Date(j.at).toLocaleDateString("en-CA",{timeZone:"Europe/London"})===today).sort((a,b)=>tsOf(b.at)-tsOf(a.at));
     const waiting=jobs.filter(j=>["waiting","review","stalled"].includes(jobState(j)));
@@ -431,6 +442,7 @@
     return t.length > 150 ? t.slice(0, 148) + "…" : t;
   }
   function jobHtml(j, kind) {
+    j = activityJob(j);
     const f = filmOf(j);
     let who = j.status === "claimed" ? agentName(j.by) : (j.routedTo || agentName(j.by) || (j.needs === "mini" ? "Mac mini worker" : j.needs || ""));
     // The queue's planned worker may be out of usage: say the relay will fall back rather than show a red worker as next.
@@ -488,20 +500,28 @@
     if (owb) {
       const now = (owb.jobs || []).filter(j => jobState(j) === "running")
         .sort((a, b) => (b.urgent ? 1 : 0) - (a.urgent ? 1 : 0) || tsOf(a.claimedAt) - tsOf(b.claimedAt));
-      const next = nextJobs(owb);
+      const selected = board?.workflow?.next;
+      const next = board?.workflow ? (selected ? [{...selected, by:selected.worker, routedTo:agentName(selected.worker)}] : []) : nextJobs(owb);
       const chiefWork = M?.chiefWork || {}, review = chiefWork.active;
       const reviewLive = review && tsOf(review.expiresAt) > Date.now();
       const reviewHtml = reviewLive ? jobHtml({id:review.job,title:review.title,by:review.agent,status:"claimed",claimedAt:review.startedAt,progress:review.progress || {step:0,of:3,note:"No review steps completed yet"}}, "now") : "";
-      const chiefNext = (chiefWork.next || []).filter(j => !reviewLive || j.id !== review.job);
+      const chiefNext = board?.workflow ? [] : (chiefWork.next || []).filter(j => !reviewLive || j.id !== review.job);
       const chiefNextHtml = chiefNext.slice(0, 1).map(j => jobHtml({id:j.id,title:j.title,by:M?.chief?.agent,status:"open"}, "next")).join("");
       jobsHtml = `<div class="row jobs">
-        <div class="row"><h2>Now working</h2>${now.length ? jobHtml(now[0], "now") : reviewLive ? reviewHtml : '<p class="mmeta">No job is currently claimed. See queued work and waiting reasons below.</p>'}</div>
+        <div class="row"><h2>Now working</h2>${now.length ? jobHtml({...now[0], progress:(board?.workflow?.active || []).find(a=>a.id===now[0].id && a.mode==="review")?.progress || now[0].progress}, "now") : reviewLive ? reviewHtml : '<p class="mmeta">No job is currently claimed. See queued work and waiting reasons below.</p>'}</div>
         <div class="row"><h2>Next</h2><div class="nextlist">${chiefNext.length ? chiefNextHtml : next.length ? jobHtml(next[0], "next") : '<p class="mmeta">Nothing else queued.</p>'}</div></div>
       </div>`;
     }
     el.innerHTML = jobsHtml + models;
   }
 
+  function updateAsOf() {
+    const asof = document.getElementById("asof");
+    if (!asof) return;
+    const when = window.__boardData?.publishedAt || board?.publishedAt || board?.tracker?.updatedAt;
+    const stale = when && Date.now() - tsOf(when) > 3 * MIN;
+    asof.textContent = when ? `${stale ? "Stale data · last update" : "Updated"} ${new Date(when).toLocaleString("en-GB", {timeZone:"Europe/London"})} London` : "Live";
+  }
   function render() {
     renderStrip();
     renderActivity();
@@ -511,9 +531,7 @@
       return;
     }
     const videos = applyChecks(root.videos).filter(passFilter);
-    const asof = document.getElementById("asof");
-    const when = (window.__boardData && window.__boardData.dataChangedAt) || root.updatedAt || "";
-    asof.textContent = when ? `Updated ${new Date(when).toLocaleString("en-GB", { timeZone: "Europe/London" })} London` : "Live";
+    updateAsOf();
 
     const fil = document.getElementById("filters");
     const chips = [
@@ -625,6 +643,6 @@
   pollData();
   pollChecks();
   setInterval(() => { pollData(); pollChecks(); }, 60 * 1000);
-  setInterval(() => { renderStrip(); renderActivity(); }, 30 * 1000);  // progress bar and 'so far' times move between data refreshes
+  setInterval(() => { renderStrip(); renderActivity(); updateAsOf(); }, 30 * 1000);  // progress bar and 'so far' times move between data refreshes
   document.addEventListener("visibilitychange", () => { if (!document.hidden) { pollData(); pollChecks(); } });
 })();

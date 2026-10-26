@@ -1118,7 +1118,7 @@ def main(argv: list[str] | None = None) -> int:
         ro = run_order(alljobs, focus)
         gate = gates(alljobs)
         typ = typical_minutes(alljobs)
-        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "repo", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model")},
+        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "repo", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model", "due", "created_at", "backlog", "awaits_ben", "approved_from", "dependency_problem")},
                      taskKeys=j.get("taskKeys", []),
                      line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
                      waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""), notBefore=gate.get(j["id"], ""),

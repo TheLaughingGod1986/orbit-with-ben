@@ -33,7 +33,7 @@ LANE_LABELS = {
     "changes": "Changes requested",
     "ready": "Ready for OK",
     "approved": "Approved, on its way",
-    "done": "Done on YouTube",
+    "done": "On YouTube",
 }
 LIVE_STATUSES = frozenset({"open", "claimed", "blocked"})
 DONE_PUBLIC_DAYS = 14
@@ -669,7 +669,7 @@ def approved_entries(alljobs: list[dict]) -> list[dict]:
         e["progress"] = j.get("progress") if isinstance(j.get("progress"), dict) else {}
         e["result"] = str(j.get("result") or "")[:600]
         hist = [h for h in (j.get("history") or []) if isinstance(h, dict)]
-        e["blockedWhy"] = next((str(h.get("what") or "")[9:160] for h in reversed(hist) if str(h.get("what") or "").startswith("blocked:")), "")
+        e["blockedWhy"] = e["result"] or next((str(h.get("what") or "")[9:160] for h in reversed(hist) if str(h.get("what") or "").startswith("blocked:")), "")
         e["doneAt"] = next((str(h.get("at") or "") for h in reversed(hist) if str(h.get("what") or "").startswith("done")), "")
         e["cancelledAt"] = next((str(h.get("at") or "") for h in reversed(hist) if str(h.get("what") or "").startswith("cancelled")), "")
         out.append(e)
@@ -710,7 +710,13 @@ def approved_state(e: dict, jobs_by_id: dict, now: datetime) -> tuple[str, str, 
         else:
             state, line = "queued", "Queued; the next free worker picks it up."
     elif st == "blocked":
-        state, line = "blocked", "Blocked" + (f": {e['blockedWhy']}" if e.get("blockedWhy") else ".")
+        dep = jobs_by_id.get(e.get("after") or "")
+        if dep and dep.get("status") != "done":
+            state, line = "blocked", f"Waiting for {dep['id']}: {dep.get('title') or 'required correction'}."
+            if e.get("result"):
+                line += " " + e["result"]
+        else:
+            state, line = "blocked", "Blocked" + (f": {e['result'] or e.get('blockedWhy')}" if e.get("result") or e.get("blockedWhy") else ".")
         warn = line
     elif st == "cancelled":
         state, line = "cancelled", "Cancelled after your OK."
@@ -1075,10 +1081,6 @@ def _card(
     if youtube and youtube.get("state") == "scheduled":
         when, read = _parse_iso(youtube.get("publishAt")), _parse_iso(public_at)
         stale_schedule = bool(when and read and when < read)
-        if when and when <= now and not stale_schedule:
-            # Its publish time has passed and no YouTube read since says otherwise (the Channel Tracker's last read is
-            # older): YouTube made it Public on schedule (023 VBaYRPp85Sw read "scheduled 25 Oct 18:00" on 26 Oct).
-            youtube = {**youtube, "state": "live", "privacy": "public", "bySchedule": True}
     # Older longs may lack a local receipt/UPLOADS row; trust the brief only when it says the film is public.
     if not youtube:
         blob = " ".join(str(brief.get(k) or "") for k in ("holdup", "line", "done"))
