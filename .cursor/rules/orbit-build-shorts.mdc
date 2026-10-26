@@ -1,5 +1,5 @@
 ---
-description: Building an Orbit Short — 60% stayed-to-watch + 70% average viewed, the first two seconds, 22–27 s, the ship gate, Related link
+description: Building an Orbit Short — one-question title and line 1, 60% stayed-to-watch + 70% average viewed, the first two seconds, 22–27 s, the ship gate, Related + description link
 globs:
   - 02_Video-Projects/**/10_Shorts/**
   - 00_Brand/Channel-Setup/could-orbit-survive/**
@@ -12,13 +12,13 @@ Load the Shorts brief template at `02_Video-Projects/_template_NNN_Episode-Slug/
 
 Full rules: `FAMILIAR_DANGER_STRATEGY.md` → *Short hook* and *The first two seconds*. `STUDIO_PLAYBOOK.md` §3 and §7.
 
-- **Two lines, then one hard fact.** Line 1 (5–7 words) is the danger, said in the first second. Line 2 bridges into a concrete number or mechanism, without a meta-promise. About 55–65 words.
+- **Two lines, then one hard fact.** Line 1 asks the title's one question (*Keeper score* below), said in the first second. Line 2 bridges into a concrete number or mechanism, without a meta-promise. About 55–65 words.
 - **Planet/star named in spoken sentence 1 (`0–2.5 s`) on moving video (Chief, J0900/J0907, 24 Oct 2026):** spoken sentence 1 (`0–2.5 s`) must name the planet, moon or star directly over moving picture — never start a lifted Short mid-paragraph on pronoun/anaphoric phrasing ("The rings look like…", "The mass is…") or over a pushed still (`82Ao0v5XiQI` 13.8% stayed vs `buaOI3QGm7U` 80.0% stayed).
 - **No `0.5 s` pauses or static zooms in `4–8 s` (Chief, J0900/J0907, 24 Oct 2026):** keep the sentence-1 VO breath at `4–5 s` under `0.25 s` (never a `0.5 s` pause) and cut at `2.8–4.5 s` to a fresh moving plate (`≤5 s` max hold, never a 10 s static crop-zoom hold across `4–8 s` as in `n_4XskX0yZk` `−43.8 pp`).
 - **The first two seconds:**
   1. start mid-action (trim the clip's ease-in);
   2. the named thing is at frame 0, moving, and spoken sentence 1 names the planet/star within `0–2.5 s`;
-  3. the claim is the first words;
+  3. the title's question is the first words;
   4. a visible change by about 1 s, with a sound effect on frame 0;
   5. a hook caption on frame 0 (2–4 words, cap height about 8–10%);
   6. Orbit only from about 1 s, caught in the danger. **Never Orbit at frame 0.**
@@ -27,9 +27,9 @@ Full rules: `FAMILIAR_DANGER_STRATEGY.md` → *Short hook* and *The first two se
 - **Polish pass (Astrum ref, 11 Oct 2026):** keep the frame-0 whoosh/impact; ticks may mark the one overlay. House SFX kit only (`scripts/sfx_kit.py make`), `sfx_kit.py level` PASS; fine grain on dark space. One bed, no corner credits, no extra overlay. AGENTS.md → *Polish pass*.
 - **Opening plate:** different from every Short within 14 days. One Short a day at most.
 - **Ship gate:** `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` must PASS. A motion warning means re-cut the opening. After upload, run `gate_shorts_open.py add …`.
-- **Studio:** desktop Related video → the long this Short promotes. No new pin, zero `/go/`, a custom cover (THUMBNAIL_AND_TITLE_RULES §4), altered content: yes.
+- **Studio:** desktop Studio Related video and the description link → the matching long (J0216 test Shorts excepted; *Keeper score* rule 4). No new pin, zero `/go/`, a custom cover (THUMBNAIL_AND_TITLE_RULES §4), altered content: yes.
 - **Reference lessons (HOTU + SEA, 11 Oct 2026):** a myth-bust opener is allowed (line 1 states a belief people hold, then "No" or the reversal by about 0:15, inside 22–27 s and the six opening rules). **Never a straight trailer trimmed from the long:** every Short has its own open, frame 0, hook caption, title and loop, and stands alone. AGENTS.md → *Reference lessons*.
-- **Length test (Chief OK, 11 Oct 2026, one-off):** one 50–60 s Mars Short, lifted from the locked 025 long, airs Thu 12 Nov 11:30 London; gate with `--length-test`. Every other Short stays 22–27 s and under 40 s. AGENTS.md → *Packaging*.
+- **Length test (Chief OK, 11 Oct 2026, one-off):** one 50–60 s Mars Short, lifted from the locked 025 long, airs Thu 12 Nov 11:30 London; gate with `--length-test`. Every other Short stays 22–27 s and under 40 s (the compilation is exempt). AGENTS.md → *Packaging*.
 - **Measure:** stayed-to-watch at 48 h goes into `could-orbit-survive/TEST_LOG.md`. A weak Short is a result, never a re-upload.
 
 ## 60% stayed-to-watch (Ben's target, 24 Oct 2026 · Chief ruling)
@@ -41,9 +41,9 @@ Full rules: `FAMILIAR_DANGER_STRATEGY.md` → *Short hook* and *The first two se
 **Why:** the swipe happens before line 2, so stayed-to-watch is set by **0–1.5 s**. Length and payoff timing move average % viewed, not the swipe.
 
 1. **Frame 0 is moving footage of the payoff: full-bleed and bright.** Use real motion: SDO, SVS or JPL animation, mission footage, or a rendered move. **A NASA still with a slow push (zoom ≤1.10 over the first 4–6 s) counts as a still and fails.** The subject fills at least 60% of the frame, with no more than about 30% black or empty sky. If only a still exists, it needs a fast move (≥15% scale or a clear pan inside 1.0 s) *and* a visible event by 0.5 s (light sweeping, a shadow moving, particles). Evidence: `y-SPHQ0-VjQ` opened on full-frame SDO prominence video and got 56.0%. Mercury opened on a grey PIA11351 limb still with the top ~45% black and a 1.00→1.04 push held for 5.5 s, and got 32.1%.
-2. **Hook by 0.5 s, surprise by 1.5 s.** The hook caption is on frame 0, and the first spoken word starts at 0.15 s or earlier. The surprising half of the claim must be said by 1.5 s, with no pause over 0.15 s inside sentence 1. Put the surprise first ("One day on Mercury lasts two years."), not the setting first. Mercury's "On Mercury, [0.33 s pause] one day lasts two years" left the payoff words until about 2.0 s.
+2. **Hook by 0.5 s, surprise by 1.5 s.** The hook caption is on frame 0, and the first spoken word starts at 0.15 s or earlier. The surprising half of the claim must be said by 1.5 s, with no pause over 0.15 s inside sentence 1. Put the surprise first ("Why does one day on Mercury last two years?"), not the setting first. Mercury's "On Mercury, [0.33 s pause] one day lasts two years" left the payoff words until about 2.0 s.
 3. **No intro, no logo, no meta-promise.** Cut "Stay, and I'll show you…" (it is in all 8 standalone scripts, at about 2–3 s), "Did you know…", the channel name, an Orbit wave or reaction, a title card, and any fade from black. **The first cut lands by 3.0 s** (Mercury's came at 5.5 s), and every later plate is held 4 s at most.
-4. **Tighter length.** Standalone fact Shorts run 18–24 s and at most 50 spoken words. Shorts lifted from a long keep 22–27 s. Leave **≤1.5 s** between the last spoken word and the loop point (Mercury left 3.0 s, 17.44→20.44 s, on a still). Never pad to reach a length.
+4. **Tighter length.** Standalone fact Shorts run 22–24 s (22 s floor, *Keeper score* rule 3) and at most 50 spoken words. Shorts lifted from a long keep 22–27 s. Leave **≤1.5 s** between the last spoken word and the loop point (Mercury left 3.0 s, 17.44→20.44 s, on a still). Never pad to reach a length.
 5. **Loop ending.** The last line runs straight back into line 1 ("…before it's morning again." → "One day on Mercury lasts two years."). The last frame is the frame-0 picture as a matched cut (crossfade 0.3 s at most), with no end card or CTA in the last 2 s.
 6. **Brief fields (fill them in, every Short):** frame-0 source (video or still, and its zoom), first-word onset (s), surprise-word time (s), first cut (s), gap from last word to loop (s), and whether a meta-promise is present (must be no).
 7. **Measure:** the daily `REPORT.md` and the weekly audit mark every Short with a 48 h read as PASS (≥60%), WATCH (45–59.9%) or MISS (<45%). A miss is a result to learn from, never a re-upload or Replace. Any swap of a scheduled private Short for a re-cut goes to Ben first.
@@ -59,18 +59,29 @@ Full rules: `FAMILIAR_DANGER_STRATEGY.md` → *Short hook* and *The first two se
 
 **The two numbers move separately.** `_8L9jYbDVmQ` got 18.6% stayed but 75.4% viewed; `29bpGAI0wb8` got 40.6% stayed but 44.0% viewed. The first second wins the stay (see *60% stayed-to-watch*). Length, pacing and the loop win the % viewed.
 
-1. **Length:** the shortest cut that carries the fact. Standalone fact Shorts run 18–24 s; lifted Shorts 22–27 s, cut toward 23 s where the script allows. Both of our 100%+ Shorts are 23 s, while every 27 s Short sits under 83%. No padding, no outro, and **no more than 1.5 s from the last word to the loop point**. Mercury left 3.0 s on a still.
+1. **Length:** the shortest cut that carries the fact. Standalone fact Shorts run 22–24 s; lifted Shorts 22–27 s, cut toward 23 s where the script allows. Both of our 100%+ Shorts are 23 s, while every 27 s Short sits under 83%. No padding, no outro, and **no more than 1.5 s from the last word to the loop point**. Mercury left 3.0 s on a still.
 2. **Pacing:** a fresh moving plate or visible change every 2.5–4 s, with no plate held over 4 s and no static crop-zoom. The curves show the cliff at **3–8 s** on the misses: `keXe1GNxWSU` fell 1.03→0.38 between 3 and 8 s, and `n2WbOfJhOwc` 1.05→0.50. Keep VO breaths under 0.25 s.
 3. **No false finish:** hold the answer to 70% of runtime or later (Learnings #6). `29bpGAI0wb8` held 0.76 at 8 s, then fell to 0.28 at 12 s once the answer landed. `n_4XskX0yZk` lost viewers at 15 s on "room temperature", before the twist.
 4. **Loop ending (to aim above 100%):** the last spoken line runs straight back into line 1 as one sentence. Test it by reading the last line followed by the first line aloud. The last frame is the frame-0 picture as a matched cut (crossfade 0.3 s at most), and the music bed runs through the seam. No end card, CTA or "the full film" line in the last 2 s; the promo title stays at 9–14 s, and HOS R7's last card sits before the loop seam. `y-SPHQ0-VjQ` returns to the opening SDO footage and averaged 147.4% on the Shorts feed.
 5. **Brief fields:** runtime (s), longest plate hold (s), payoff time against 0.70 × runtime, last word → loop (s), and the last-line → line-1 sentence written out.
 6. **Measure:** the daily `REPORT.md` and the weekly audit (4d) grade average viewed LOOP (≥100%), PASS (≥70%), WATCH (50–69.9%) or MISS (<50%), next to the stayed-to-watch grade.
 
+## Keeper score (Ben, 26 Oct 2026 · Mon 19–Sat 24 Oct Studio data)
+
+Evidence: the weekly keeper score. The two single-question Shorts were the first to reach the 400–600 view target; the statement title got 12 views.
+
+1. **One question per Short.** The title and the first VO line ask one question, and the Short answers it. Copy the two winners: *Could a Robot Survive Touching the Sun?* (883 views; "could X survive Y") and *Why Does a Day on Mercury Last Two of Its Years?* (849 views; "why does" plus a surprising fact).
+2. **No statement or teaser titles.** *Saturn's Rings Are on a Clock* got 12 views. No "X is on a clock" and no vague statements. Off-week Saturn Shorts are cut.
+3. **22 s or longer.** The compilation is the only exception to the length window.
+4. **Every new Short links to its long:** Studio Related video and the description link both point at the matching long film. Exception: the J0216 standalone test Shorts (24 Oct–20 Nov: Mercury `vlkj8RQKmH8`, Neptune `oyRcrFTYyDY`, ISS `VfDm3E2bUgU`, and any others in `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md`) stay unlinked until the test ends.
+5. **Targets stay:** 60%+ stayed-to-watch and 70%+ average viewed (sections above).
+6. **Hold the Sun Shorts** until the thumbnail test on *Is the Sun Getting Brighter?* (`h8HGfyShEHI`) ends on Sun 1 Nov (`05_Analytics/tests/THUMB_LEDGER.json`).
+
 ## Approved Learnings checklist — Chief, J0871 / J0874 / J0900 / J0907 (23–24 Oct 2026)
 
 Fill this in for each new Short brief. The numbers refer to the studio Learnings; #4 and #5 remain tests.
 
-- [ ] **#1 · Title:** a positive question naming the subject.
+- [ ] **#1 · Title:** a positive question naming the subject, in a keeper shape ("Could X survive Y?" or "Why does…" plus a surprising fact). The first VO line asks it. Never a statement or teaser title.
 - [ ] **#2 · Frame 0 + spoken subject in 0–2.5 s:** open close on the moving payoff object, already in action, with a concrete hook caption, AND name the planet/star in spoken sentence 1 within `0–2.5 s` on moving video (never a mid-chapter lift starting on pronoun/anaphoric phrasing over a pushed still).
 - [ ] **#3 · Motion (no static zoom in 4–8 s):** a visible or audible change every 3–4 s; no freeze-frame under VO and no static crop-zoom holds in `4–8 s` (`≤5 s` max plate hold). Record the beat times: ___.
 - [ ] **#6 · Payoff:** hold the answer until at least 70% of runtime. Runtime: ___ s; earliest payoff (0.70 × runtime): ___ s; actual payoff: ___ s. Never answer the title question or give a false finish during the 9–14 s promo banner or as it clears.

@@ -81,6 +81,7 @@ Read **`docs/ORBIT_PLAYBOOK_LESSONS.md`** in full before topic lock, assembly, o
    - Stop a topic after 2 not-fed Shorts in a row, and run at most 6 in a row on one topic; then give it a 2-week break.
    - Every Short gets its own open, with frame 0 showing the titled subject and no opening background reused from the last 10 Shorts.
    - **Test A, the opening Short (Ben, 9 Oct: yes), from 025 on:** one of each long's three Shorts is the long's own opening (the first 30–38 s of the master, reframed to 9:16, cut on a sentence end, gates as usual, Related video = the long). The weekday rotates by film. Plan, measures and readout dates: `05_Analytics/tests/SHORTS_TESTS.md`.
+   - **Keeper score (Ben, 26 Oct 2026):** one question per Short, in the title and line 1 (*Could a Robot Survive Touching the Sun?* 883, *Why Does a Day on Mercury Last Two of Its Years?* 849); no statement or teaser titles (*Saturn's Rings Are on a Clock* 12) and no off-week Saturn Shorts; 22 s or longer (compilation exempt); Related video and description link to the matching long (J0216 test Shorts unlinked until 20 Nov); Sun Shorts wait for the `h8HGfyShEHI` thumbnail test to end on 1 Nov. Rule: `.cursor/rules/orbit-build-shorts.mdc` → *Keeper score*.
    - Aim for 60% or more average viewed on day 1.
    - End on the long's exact listing title and its video id, with a music bed for the full length.
    - Details: lessons doc §6.

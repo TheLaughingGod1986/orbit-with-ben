@@ -30,6 +30,8 @@ SCAN = [
 ]
 # (pattern, why it is stale)
 STALE = [
+    (r"[Ss]tandalone fact Shorts (run )?18–24", "Shorts are 22 s or longer (Keeper score, 26 Oct 2026)"),
+    (r"only Short → long link", "Shorts link the long by Related video and description link (Keeper score, 26 Oct 2026)"),
     (r"Stop (and wait )?for Ben's OK", "sign-offs go to Claude first (3 Oct 2026)"),
     (r"Stop for Ben at the sign-off points", "sign-offs go to Claude first (3 Oct 2026)"),
     (r"NEEDS BEN\*\* → Chief of Staff", "NEEDS BEN goes to Claude first (3 Oct 2026)"),
