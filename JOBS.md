@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0936 | mini | open | – | – | video · 60% re-cut v02 batch C (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - start by Sat 14 Nov, each parked by 20:00 London the day before it airs (from Fri 20 Nov) | 6389353471 |
 | J0938 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J0954 | mini | open | – | – | video · Apophis Short BbsyFrV8kCY v11 (Ben 25 Oct 16:35: asteroid not fully rendered): whole lit rock, re-park for Chief by Tue 27 Oct 12:00 | 6400248794 |
-| J0955 | mini | open | – | – | studio · HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload) | 6399390568 |
+| J0955 | mini | claimed | cursor | 2026-10-26T00:26Z | studio · HOS Short AMSriTQ-lcQ: set Related video to GHZDsiH7L7A (no upload) | 6399390568 |
 | J0956 | mini | blocked | chief | – | studio · OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30 | 6402300872 |
 | J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |

@@ -80915,10 +80915,10 @@
       "stage": "",
       "after": "",
       "eta_min": 25,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-26T00:01Z",
+      "eta": "2026-10-26T00:26Z",
       "created_by": "cursor",
       "created_at": "2026-10-25T17:08Z",
       "result": "",
@@ -80952,6 +80952,11 @@
           "at": "2026-10-25T23:02Z",
           "by": "chief",
           "what": "reopened: Chief c50 (6404618803): CDP 9460 was up and signed in; 4 frozen background tabs hung Playwright. Chief un-froze them with /json/activate (nothing closed); Playwright connect_over_cdp now attaches in 0.2 s. Retry: set Related on AMSriTQ-lcQ to GHZDsiH7L7A and read back after reload. If connect hangs again, /json/activate each tab, then ~/_desk/bin/cdp_browsers.sh restart 9460 (same profile, no sign-out). No upload, no privacy/publishAt change. Done by Tue 27 Oct 20:00 London (hard stop before 10:30 Wed 28 Oct)."
+        },
+        {
+          "at": "2026-10-26T00:01Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
