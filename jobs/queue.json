@@ -84668,6 +84668,11 @@
           "at": "2026-10-26T21:02Z",
           "by": "codex",
           "what": "reopened: Acting-Chief FIX 6427253270, claim 6427242332: two reconciled rows mismatch saved raw API responses. Align 18-24 Oct 7d and 27Sep-24Oct 28d average-viewed and traffic values/percentages to exact saved query, or save timestamped later response. Verify remaining rows mechanically. Add as-of J0966 v04 FIX/v05 pending and J0967 3ecc2575 FIX/e1bbcfb9 pending. Preserve bounded scope, small-sample caveats, worker 5/5 and HOS:006-010. No production or YouTube changes; same audit returns for review."
+        },
+        {
+          "at": "2026-10-26T21:03Z",
+          "by": "codex",
+          "what": "step 5 of 5 done: Worker submission 5/5 retained; Chief FIX 6427253270: exact raw-response reconciliation required; no audit or film approval."
         }
       ],
       "kind": "review",
@@ -84688,7 +84693,14 @@
         "HOS:009",
         "HOS:010"
       ],
-      "escalated_at": "2026-10-26T19:16Z"
+      "escalated_at": "2026-10-26T19:16Z",
+      "progress": {
+        "step": 5,
+        "of": 5,
+        "at": "2026-10-26T21:03Z",
+        "by": "codex",
+        "note": "Worker submission 5/5 retained; Chief FIX 6427253270: exact raw-response reconciliation required; no audit or film appro"
+      }
     },
     {
       "id": "J0985",
