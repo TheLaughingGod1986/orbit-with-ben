@@ -84545,9 +84545,9 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T14:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T13:29Z",
@@ -84602,6 +84602,11 @@
           "at": "2026-10-26T17:20Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T22:17Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Acting-Chief ruling: FIX audit completeness, not a media FAIL. Existing sampled automated PASS results are credible, but blanket newest-pack/freshness claim lacks per-export evidence; standalone Neptune v07 and ISS v04 picture_qa reports were not found in cited pack folders; HOS Curie v07 (d0c0ee0a, 25 Oct 13:40Z) omitted. Taking exact job solely to record review and actionable QA handoff; no film approval or publishing hold lifted."
         }
       ],
       "kind": "qa",
@@ -84613,8 +84618,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "OWB:021",
         "OWB:022",
