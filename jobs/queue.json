@@ -86150,10 +86150,24 @@
           "at": "2026-10-26T23:40Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-26T23:41Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4489 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "due": "2026-10-29T20:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1008",
