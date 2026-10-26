@@ -84207,13 +84207,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T15:34Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T12:14Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T12:14Z",
@@ -84254,6 +84254,11 @@
           "at": "2026-10-26T18:37Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T22:22Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling recorded at 2cbadfe1a: CHANGES REQUIRED; taking queue bookkeeping only, v01 remains held; follow-up J1000"
         }
       ],
       "kind": "assembly",
@@ -84261,13 +84266,6 @@
       "taskKeys": [
         "OWB:029"
       ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-26T16:37Z",
-        "by": "gemini",
-        "note": "Committed 029_short_lift_die_young_10my_v01 pack (72672cebe) and staged MP4 + contact sheet + cover to OWB UAT and NAS; "
-      },
       "escalated_at": "2026-10-26T18:37Z"
     },
     {
