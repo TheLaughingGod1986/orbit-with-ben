@@ -85999,6 +85999,11 @@
           "at": "2026-10-26T22:43Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-26T22:44Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4432 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "qa",
@@ -86006,7 +86011,16 @@
         "HOS:004",
         "HOS:005",
         "HOS:007"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
