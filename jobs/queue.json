@@ -84403,7 +84403,7 @@
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
+      "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.\n\n## Acting-Chief ruling, Codex, 26 Oct 2026\nCodex covering as elected acting Chief — J0981 review ruling (26 Oct 2026).\n\nAudit accepted as read-only evidence, not a channel gate PASS or film approval. Reviewed HOS 5fd444c6, J0981 body/result/history, existing queue follow-ups, J0958 and J0875 Studio readbacks, and channel-audit.ts pagination. Correction: pWySvZsneZg and qW2OsD4mujc are scheduled SHORTS whose target longs are public; no missing Related field is alleged on a long. J0958 records the Trees title/thumbnail test as saved but Ineligible, not running. Do not restart that test.\n\nRuling: retain J0280 for both links (pWySvZsneZg -> GHZDsiH7L7A; qW2OsD4mujc -> AL_-qlWko_g) in its 29 Oct 18:05 London pass, before 1 Nov 11:30. Retain Blood links in J0280/J0241 after wwcjcFfC-5M reads public; no hold reopened. Retain J0875 until 12 Nov 18:05 for vaccine Related, J0958 until 5 Nov 18:05 for Trees pin, and J0960 until 12 Nov 18:05 for Vaccine pin. J0966 and its Ben approval remain untouched.\n\nDelegate three narrowly scoped follow-ups: (1) replace only the channel placeholder URL in the two currently scheduled vaccine Short descriptions with https://www.youtube.com/watch?v=ETynHpIYLeY, preserving all other text and fields, checking current IDs against any approved swap; (2) reproduce the pagination duplicate and prepare a separate draft PR that deduplicates identical IDs without hiding genuinely duplicated titles; no gate override or merge without the required check-fix approval; (3) finish compilation uAomPaOBrM8 end screen and Altered content confirmation, with package lint before writes and channel audit/checklist afterwards. Any failed gate stays blocking.\n\nNo upload, retitle, schedule, privacy change, spend or Studio write in this review. Public-listing audit findings are accepted as reported, not independently re-fetched. The actual channel:audit failure remains unresolved until its dedicated fix passes. Close J0981 only after the concrete follow-up jobs have been recorded. Nothing requires Ben now; a proposed check change must be presented for his approval before merge under HOS AGENTS.md.\n\nConcrete follow-ups: J0997 description URL corrections; J0998 checker reproduction and draft PR; J0999 compilation Studio finish. Existing J0280/J0241/J0875/J0958/J0960 holds retain the retry dates above. No other review reopened.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -84476,6 +84476,11 @@
           "at": "2026-10-26T22:14Z",
           "by": "codex",
           "what": "step 0 of 3 done: Chief review: ruling recorded; recording evidence assessment, delegated jobs and closure."
+        },
+        {
+          "at": "2026-10-26T22:14Z",
+          "by": "codex",
+          "what": "Chief ruling recorded with J0997/J0998/J0999 follow-ups and existing dated dependencies; HOS desk 6428572814"
         }
       ],
       "kind": "listing",
@@ -85479,7 +85484,7 @@
       "title": "HOS 007: correct scheduled Shorts description watch URLs",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting-Chief Codex ruling HOS #180 comment 6428572814 (J0981). After lint:package PASS, read the current scheduled copies for -I_GHK-GcFs and 4WUs0beKn0A and any approved J0966 successor. Replace only https://www.youtube.com/@HistoryOfScienceYT in description line 2 with https://www.youtube.com/watch?v=ETynHpIYLeY. Preserve all other description text, disclosures, tags, titles, privacy and publishAt. Do not blindly replace the whole description with the audit excerpt. Read back exact descriptions, channel U CXp7HkBIl1LgaznXuZHJyRg (remove the space), audience Not Made for Kids and unchanged schedules. Record evidence in HOS PR and desk. No swap, upload, retitle or approval of J0966. Related stays in J0875 until 12 Nov 18:05 London/public-long readback. If a gate fails, stop and name the dependency; channel:audit duplicate fix is separately queued from J0981. GBP0.",
+      "body": "Acting-Chief Codex ruling HOS #180 comment 6428572814 (J0981). After lint:package PASS, read the current scheduled copies for -I_GHK-GcFs and 4WUs0beKn0A and any approved J0966 successor. Replace only https://www.youtube.com/@HistoryOfScienceYT in description line 2 with https://www.youtube.com/watch?v=ETynHpIYLeY. Preserve all other description text, disclosures, tags, titles, privacy and publishAt. Do not blindly replace the whole description with the audit excerpt. Read back exact descriptions, channel UCXp7HkBIl1LgaznXuZHJyRg, audience Not Made for Kids and unchanged schedules. Record evidence in HOS PR and desk. No swap, upload, retitle or approval of J0966. Related stays in J0875 until 12 Nov 18:05 London/public-long readback. If a gate fails, stop and name the dependency; channel:audit duplicate fix is separately queued from J0981. GBP0.",
       "ref": "6428572814",
       "film": "",
       "stage": "",
@@ -85499,7 +85504,10 @@
           "what": "added"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "taskKeys": [
+        "HOS:007"
+      ]
     },
     {
       "id": "J0998",
@@ -85533,7 +85541,7 @@
       "title": "HOS 099: compilation end screen and altered-content readback",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting-Chief Codex ruling J0981 / HOS #180 6428572814, following J0896. On uAomPaOBrM8 only, before 10 Dec 18:00 London: lint:package must PASS before writes; verify HOS channel UCXp7HkBIl1LgaznXuZHJyRg, scheduled active compilation not stub Hmw4iMDfWFE. Confirm Altered content Yes; set final-20-second end screen 48:58-49:18 with a relevant public long from the approved package, the full HOS playlist ID resolved from package (audit prefix is not enough), and Subscribe. Read back after reload, Not Made for Kids, unchanged title/privacy/publishAt and test. Complete channel:audit and Studio checklist; failed gates remain blocking. Save evidence via HOS PR and desk. No upload, schedule, retitle, privacy change, reset of tests or spend. If duplicate-id audit error persists, depend on J0987 approval/fix rather than waive it.",
+      "body": "Acting-Chief Codex ruling J0981 / HOS #180 6428572814, following J0896. On uAomPaOBrM8 only, before 10 Dec 18:00 London: lint:package must PASS before writes; verify HOS channel UCXp7HkBIl1LgaznXuZHJyRg, scheduled active compilation not stub Hmw4iMDfWFE. Confirm Altered content Yes; set final-20-second end screen 48:58-49:18 with a relevant public long from the approved package, the full HOS playlist ID resolved from package (audit prefix is not enough), and Subscribe. Read back after reload, Not Made for Kids, unchanged title/privacy/publishAt and test. Complete channel:audit and Studio checklist; failed gates remain blocking. Save evidence via HOS PR and desk. No upload, schedule, retitle, privacy change, reset of tests or spend. If duplicate-id audit error persists, depend on J0998 approval/fix rather than waive it.",
       "ref": "6428572814",
       "film": "",
       "stage": "",
@@ -85551,9 +85559,17 @@
           "at": "2026-10-26T22:14Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-26T22:14Z",
+          "by": "codex",
+          "what": "Correct checker dependency reference to J0998 before dispatch"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "taskKeys": [
+        "HOS:099"
+      ]
     }
   ],
   "focus": [],
