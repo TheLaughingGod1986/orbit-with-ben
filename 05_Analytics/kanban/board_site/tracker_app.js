@@ -478,6 +478,7 @@
         <div class="mmeta">${chief} · ${stale ? '<b style="color:var(--ready)">stale</b> — ' : ""}checked ${isNaN(chk) ? "—" : hm(chk) + " London"}</div>
         ${why ? `<details class="mmeta"><summary>Why</summary><ul style="margin:4px 0 0;padding-left:18px">${why}</ul></details>` : ""}</div>`;
     }
+    if(M?.chiefChain?.length) models += `<p class="mmeta">Chief order: ${M.chiefChain.map(c=>esc(c.name)).join(" → ")}. The first available takes the role.</p>`;
     let jobsHtml = "";
     if (owb) {
       const now = (owb.jobs || []).filter(j => jobState(j) === "running")
@@ -508,6 +509,7 @@
     if(state==="running") return j.progress?.note ? `Continue from: ${j.progress.note}` : "Worker to report the next completed step.";
     if(state==="stalled") return "Relay to check the overdue claim and reassign or renew it.";
     if(j.after && (((board||{}).owb||{}).jobStates||{})[j.after]?.status!=="done") return `Finish ${j.after}, then resume this job.`;
+    if(j.kind==="chief" && j.status==="open" && state==="queued") return `${board?.models?.chief?.name || "The elected Chief"} to claim and review this job.`;
     if(j.status==="open" && state==="queued") return `${j.routedTo || "Next eligible worker"} to claim and start this job.`;
     if(/ElevenLabs|Flow.*credit|credit.*renewal/i.test(reason)) return "Verify the recorded credit reset or renewal, then resume within the available balance.";
     if(/public|publishAt|date gate|Test & Compare|test.*(?:running|end)/i.test(reason) && !/gate.*fail/i.test(reason)) return "Check the recorded release or test date; resume the unfinished step when its input is ready.";

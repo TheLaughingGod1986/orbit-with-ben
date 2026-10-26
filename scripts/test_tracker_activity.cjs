@@ -74,4 +74,6 @@ if(process.env.BOARD_FIXTURE){
  for(const j of b.owb.jobs)assert(t.workflowJobHtml(j).includes(`data-job="${j.id}"`));
  console.log(`Published fixture reconciled: ${count.all} current jobs, ${count.blocked} blocked, ${count.approved} approvals`);
 }
+t.setBoard({models:{chief:{name:'Gemini'}},owb:{jobStates:{}}});
+assert(t.nextAction({kind:'chief',status:'open'}).startsWith('Gemini to claim'));
 console.log('Tracker workflow regression checks passed');
