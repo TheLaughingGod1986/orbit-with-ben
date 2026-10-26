@@ -79075,13 +79075,13 @@
       "stage": "",
       "after": "",
       "eta_min": 600,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-26T06:03Z",
-      "eta": "2026-10-26T16:03Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
-      "result": "",
+      "result": "parked for Chief: iyvWYFP_ETA v02, TtgHNLXfDSs v03, N42gKBbD7tE v02, bSjWiCbB7pY v03, HZGTovJu_TQ v02, cwU_0WWeNZ4 v02 PASS; Ben to OK each swap",
       "history": [
         {
           "at": "2026-10-25T06:33Z",
@@ -79237,6 +79237,11 @@
           "at": "2026-10-26T06:38Z",
           "by": "cursor",
           "what": "step 6 of 6 done: cwU_0WWeNZ4 wed18 v02 gates PASS. 19.33s, -14.3 LUFS, loop_diff 8.41, first cut 2.73s. sha 5af000f0. UAT + NAS. Commit c05cd84f0. Batch of six ready to park."
+        },
+        {
+          "at": "2026-10-26T06:38Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: iyvWYFP_ETA v02, TtgHNLXfDSs v03, N42gKBbD7tE v02, bSjWiCbB7pY v03, HZGTovJu_TQ v02, cwU_0WWeNZ4 v02 PASS; Ben to OK each swap"
         }
       ],
       "kind": "video",
