@@ -1,5 +1,5 @@
 {
-  "next_id": 977,
+  "next_id": 978,
   "jobs": [
     {
       "id": "J0001",
@@ -83151,6 +83151,33 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0977",
+      "title": "023 Venus lifts (heavy_water, 90x_air, less_sunlight): run 60% stayed gate; PASS -> jobs.py awaits as Venus-week candidates (no schedule)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief, 26 Oct 2026. Normal priority, not urgent. Local only: no upload, no Studio change, no schedule change. Fri 30 Oct stays Saturn 6dcL5rBmHPM.\n\nRun the current open gate, including the 60% stayed-to-watch checks (not --report-only), on the three built Venus lifts from 023 (long VBaYRPp85Sw):\n1. lift_heavy_water: 02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_heavy_water (venus_heavy_water_100x_v01, 26.9 s; planned title \"Where Did Venus's Water Go?\")\n2. lift_90x_air: .../10_Shorts/lift_90x_air (venus_90x_thicker_air_v01, 26.3 s)\n3. lift_less_sunlight: .../10_Shorts/lift_less_sunlight (venus_less_sunlight_465c_v01, 26.8 s; gate warned \"possible Orbit at 0 s\", so eyeball the sheet)\n\nFor each one:\n- Find the mp4. It isn't in the checkout, so look on the NAS archive, OWB UAT or youtube-staging. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <mp4> --air-date <a future Venus-week date>`.\n- Also check it against the 26 Oct keeper-score rules (.cursor/rules/orbit-build-shorts.mdc > Keeper score): one-question title and line 1, 22 s or longer, Related video and description link to VBaYRPp85Sw.\n- Record PASS or FAIL and the reasons in 10_Shorts/<lift>/06_Final-Exports/<stem>_gate60.txt.\n- PASS: put it on Ben's Ready for OK board as a candidate for a future Venus-week slot: `python3 scripts/jobs.py awaits <this job id> --agent <you> --add --type short --title \"<title>\" --what \"Venus-week Short candidate: <title>\" --file <playable path> --version v01 --git`. Give no air date and don't schedule it.\n- FAIL: no board card. List the fixes in the job result.\n\nFinish with `jobs.py done` and a one-line result per lift. Never delete. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-10-26T08:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T08:57Z",
+          "by": "grok",
+          "what": "added"
+        }
+      ],
+      "kind": "qa"
     }
   ],
   "focus": [],
