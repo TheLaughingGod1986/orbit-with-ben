@@ -1,5 +1,5 @@
 {
-  "next_id": 1004,
+  "next_id": 1005,
   "jobs": [
     {
       "id": "J0001",
@@ -85886,6 +85886,33 @@
       "taskKeys": [
         "OWB:027"
       ]
+    },
+    {
+      "id": "J1004",
+      "title": "HOS J0967 follow-up: resolve remaining hook and duration proposals on paper, preserve production holds",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Acting Chief Codex follow-up to J0967 / HOS e1bbcfb9. Plans-only acceptance does not approve any film or proposed VO edit.\n\nOne no-spend review task: produce a decision-ready disposition for remaining J0967 hook/duration conflicts, using existing signed-off word timings and current channel rules. Read J0967 history and HOS desk rulings 6425168160 and 6426967421 first. Cover 006 Short_A (20.92 s), 006 s04/s05/s06 unfinished hooks (s07/s08 superseded inventory, do not revive), 007 Short_B, 008 Short_C, 009 Short_B and 010 Short_A. Preserve the existing two-Short selection for 007 onward; do not promote inventory into extra releases. S7 remains planned only; S5/S6/S8 remain unbuilt.\n\nFor each active candidate give the complete proposed spoken opening, exact existing-audio word ranges and pause removals, computed hook end <=2.85 s, full duration, retained meaning and source/locked-script reference. atempo <=1.06; no new VO, no approved-wording changes. Proposals in e1bbcfb9 remain unapproved, including quantitative feasibility claims: calculate from timing data, do not copy their prose as proof. Preserve both one minute and one second in the Moon comparison. If no lawful edit fits, explicitly recommend retaining the block or retiring that candidate, with reason; do not fabricate a workable cut. Do not approve milkmaid wording or any other scientific claim without the source/claims process.\n\nMissing 008-010 media remains a separate existing production dependency; do not wait for it to finish this paper review. Name the exact producing job/input for each missing-media hold if it exists; otherwise report the missing producer as a concrete planning gap. Do not reopen J0862/J0863 or any date, credit or Ben hold. No render, generation, spend, media/NAS changes, upload or YouTube changes. Submit a review-note PR from a clean HOS worktree, leave all production states held, then park for the elected Chief to decide. This task starts after J0967 is done; no external wait or arbitrary retry date is needed for the review itself. Link progress to HOS:006,HOS:007,HOS:008,HOS:009,HOS:010.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0967",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T22:33Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "review"
     }
   ],
   "focus": [],
