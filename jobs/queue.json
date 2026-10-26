@@ -85575,13 +85575,13 @@
       "stage": "",
       "after": "J0992",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-26T23:54Z",
-      "eta": "2026-10-27T00:24Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T22:04Z",
-      "result": "",
+      "result": "Preparation FIX, ruling fded21428 jobs/reviews/J0993_2026-10-26.md. Queued J1009 review-kind revision -> J1010 Chief lock/assembly dispatch. J0936 stays blocked on J1010; no assembly lock, replacement PASS or Ben card. Concrete defects: extra questions, wrong counts, split arithmetic, early answers, reused openings and shot limits. GBP0; schedules/v01 fallback unchanged; nothing needed from Ben.",
       "history": [
         {
           "at": "2026-10-26T22:04Z",
@@ -85612,6 +85612,11 @@
           "at": "2026-10-26T23:58Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling fded21428 recorded; J1009 preparation revision and J1010 Chief lock queued; J0936 held"
+        },
+        {
+          "at": "2026-10-26T23:58Z",
+          "by": "codex",
+          "what": "done: Preparation FIX, ruling fded21428 jobs/reviews/J0993_2026-10-26.md. Queued J1009 review-kind revision -> J1010 Chief lock/assembly dispatch. J0936 stays blocked on J1010; no assembly lock, replacement PASS or Ben card. Concrete defects: extra questions, wrong counts, split arithmetic, early answers, reused openings and shot limits. GBP0; schedules/v01 fallback unchanged; nothing needed from Ben."
         }
       ],
       "kind": "chief",
@@ -85626,7 +85631,8 @@
         "at": "2026-10-26T23:58Z",
         "by": "codex",
         "note": "Ruling fded21428 recorded; J1009 preparation revision and J1010 Chief lock queued; J0936 held"
-      }
+      },
+      "done_ref": "fded21428"
     },
     {
       "id": "J0994",
