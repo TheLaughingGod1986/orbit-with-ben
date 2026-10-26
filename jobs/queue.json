@@ -82719,13 +82719,37 @@
           "at": "2026-10-26T08:09Z",
           "by": "chief",
           "what": "reopened: Ben OK'd v05 swap via Studio Kanban button Mon 26 Oct 08:09 London (HOS #180 6411238734); go"
+        },
+        {
+          "at": "2026-10-26T08:09Z",
+          "by": "chief",
+          "what": "no longer waits on Ben: OK'd, delivered by J0973"
+        },
+        {
+          "at": "2026-10-26T08:09Z",
+          "by": "chief",
+          "what": "approved by Ben: swap the HOS Short \"One Tight Band Proved Your Blood Goes Round\" (mTY67qet7cM, airs Sun 8 Nov 11:30) to re-cut v05 v05"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:005"
       ],
-      "awaits_ben": {
+      "urgent": 5,
+      "approved_from": {
+        "what": "swap the HOS Short \"One Tight Band Proved Your Blood Goes Round\" (mTY67qet7cM, airs Sun 8 Nov 11:30) to re-cut v05",
+        "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s02_the_tied_arm_v05_PHONE.mp4",
+        "version": "v05",
+        "airs": "2026-11-08T11:30Z",
+        "title": "Tied arm Short re-cut v05 (swap)",
+        "number": "005",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0973",
+        "okAt": "2026-10-26T08:09Z",
+        "okRef": "6411238734"
+      },
+      "awaits_was": {
         "what": "swap the HOS Short \"One Tight Band Proved Your Blood Goes Round\" (mTY67qet7cM, airs Sun 8 Nov 11:30) to re-cut v05",
         "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s02_the_tied_arm_v05_PHONE.mp4",
         "version": "v05",
@@ -82735,8 +82759,7 @@
         "title": "Tied arm Short re-cut v05 (swap)",
         "number": "005",
         "type": "short"
-      },
-      "urgent": 5
+      }
     },
     {
       "id": "J0974",
