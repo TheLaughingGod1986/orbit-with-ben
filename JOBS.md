@@ -51,7 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0991 | mini | open | – | – | assembly · 029 Shorts v04: fix J0961 AAC levels and Wednesday opening; gates and Chief review | 0d132cd27 |
 | J0992 | mini | open | – | – | for gemini · review · `gemini-argon` · OWB 026/027/028 J0936 FIX: map five Keeper question openings to existing VO; v04 shot corrections | 82959ad1f |
 | J0993 | any | open (after J0992) | – | – | chief · J0936 Chief: lock no-spend v04 corrections and dispatch assembly after preparation | 82959ad1f |
-| J0994 | any | open | – | – | chief · Chief review J0980: live listing fixes ruling |  |
+| J0994 | any | claimed | codex | 2026-10-26T22:27Z | chief · Chief review J0980: live listing fixes ruling |  |
 
 Recently finished:
 
