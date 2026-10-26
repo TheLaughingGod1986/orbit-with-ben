@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0978 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 | J0979 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0980 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
-| J0981 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J0981 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
