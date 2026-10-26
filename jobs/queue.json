@@ -1,5 +1,5 @@
 {
-  "next_id": 1005,
+  "next_id": 1006,
   "jobs": [
     {
       "id": "J0001",
@@ -85963,6 +85963,33 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J1005",
+      "title": "J0966 HC: audition four finished masters and resolve vaccine pronunciation warnings (GBP0)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief Codex J0966 review, 26 Oct 2026. Targeted QA only; no rebuild by default, no spend, no YouTube/Studio/Buffer changes.\n\nCheck these exact HOS masters in the shared HOS checkout (02_Video-Projects/<film>/10_Shorts/), plus their _PHONE copies:\n- 007_The-First-Vaccine/hos_007_s04_smallpox_test_v03.mp4: SHA256 858495ea7dcb28788f1277367dbd4d1d30e4c95ca95ffd230f1c1a82a0513ea5, 22.400s.\n- 005_How-Harvey-Proved-Blood-Circulates/hos_005_s03_never_saw_v04.mp4: e1f862ba737acc4276dd676fc93181b41e729fce029fed57318bf43add3e9f63, 25.259s.\n- 004_Whats-Really-Inside-An-Atom/hos_004_s05_dalton_v03.mp4: f93745e955586097293b7e37cad73c025ec99d79b0ee3b8e34bd955df6380edc, 24.533s.\n- 007_The-First-Vaccine/hos_007_s05_vacca_jesty_v05.mp4: e5ea76f012fb94c54c4a7224140d2d8ca342ea8c02a2fbdb30df17661f94f1ad, 24.533s.\n\nHOS STUDIO_PLAYBOOK section 4 says sounds-alike warnings must be listened to, and section 7 requires VO hygiene by vo_check plus a listen. The v05 vaccine VO report still flags variolae vaccinae (~12.10s) and vacca (~17.56s). No explicit final-master listening evidence was found in the submitted packs. Codex has inspected every 2fps sheet and the four warning sheets; it does not claim to have heard these files.\n\nUse an available audio-capable reviewer on the existing subscription/local route at GBP0. Audition the actual exported audio end to end (about 97 seconds total), not only its transcript. Record the reviewer/tool, exact hashes, pronunciation rulings with timestamps, intelligibility, splice around Jenner at 5.536s, repeated/stumbled/clipped words, full bed/SFX fit and opening/end-to-start loop joins. Inspect moving picture at the same time if the reviewer supports it. The 143 wpm Harvey warning is not itself a failure at 25.259s. Do not regenerate or infer listening from afplay launching or a transcription PASS. If no audio-capable route exists, report the exact capability blocker; do not assert PASS.\n\nCommit a concise QA report from a clean HOS worktree/PR and post to HOS desk. Technical PASS records, earlier attribution and single-overlay fixes, hashes and copies are already reviewed; preserve all four masters unless an actual defect is found. Report any actual defect with timestamp and a GBP0 repair recommendation; no paid TTS or generation authorised.\n\nWhen evidence is complete mark this QA task done with its report reference, and reopen J0966 for the elected Chief to make the final decision. J0966 remains held; this job is independent (do not depend on J0966 and create a cycle). Preserve J0966 worker denominator 5 and its HOS:004,HOS:005,HOS:007 links. No Ben cards until final Chief review passes. Originals remain scheduled: 13/15/16/17 Nov; respective pack cutoffs 20:00 the day before, Ben swap OK by 10:30 air day, otherwise originals air without slipping the slot.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T22:43Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "qa"
     }
   ],
   "focus": [],
