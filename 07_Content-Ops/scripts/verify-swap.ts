@@ -10,7 +10,10 @@ import fs from "fs";
 import path from "path";
 import { getYouTubeAccessToken } from "../src/lib/youtube/data-api";
 
-const ORBIT_CHANNEL_ID = "UC_esArsDKd3GJvOkeO0DUog";
+const ALLOWED_CHANNELS = new Set([
+  "UC_esArsDKd3GJvOkeO0DUog", // Orbit With Ben
+  "UCXp7HkBIl1LgaznXuZHJyRg", // History of Science
+]);
 
 function arg(name: string): string | undefined {
   const idx = process.argv.indexOf(`--${name}`);
@@ -44,7 +47,12 @@ export function verdict(old: CopyState, neu: CopyState): string[] {
   const problems: string[] = [];
   for (const v of [old, neu]) {
     if (!v.found) problems.push(`${v.id}: not found`);
-    else if (v.channelId !== ORBIT_CHANNEL_ID) problems.push(`${v.id}: not on the Orbit channel`);
+    else if (!v.channelId || !ALLOWED_CHANNELS.has(v.channelId)) {
+      problems.push(`${v.id}: not on Orbit or History of Science`);
+    }
+  }
+  if (old.found && neu.found && old.channelId && neu.channelId && old.channelId !== neu.channelId) {
+    problems.push("old and new are on different channels");
   }
   if (old.privacyStatus !== "private" || old.publishAt) {
     problems.push(`old ${old.id}: ${old.privacyStatus} publishAt ${old.publishAt}; must be private and unscheduled`);
