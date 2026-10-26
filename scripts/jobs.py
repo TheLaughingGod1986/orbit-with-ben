@@ -181,10 +181,14 @@ def film_named(title: str) -> bool:
 
 
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
-    if job["needs"] not in can:
-        return False
-    if job.get("for") and job["for"] != agent:
-        return False  # addressed to one agent (e.g. Claude asking Codex for its own view)
+    if job.get("kind") == "chief":
+        if job["needs"] == "ben" or not chief_relay.is_elected_chief(agent, at):
+            return False  # Chief is a live role; a generic worker never inherits a protected call.
+    else:
+        if job["needs"] not in can:
+            return False
+        if job.get("for") and job["for"] != agent:
+            return False  # independent opinions and ordinary addressed jobs keep their owner
     if waiting_to_start(job, at):
         return False  # not before its start time (the relay and `next --peek` use this too)
     if job["status"] == "open" or stalled(job, at):
@@ -276,7 +280,7 @@ def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int
     for job in sorted(data["jobs"], key=lambda j: j["id"]):
         if job.get("by") == agent and job["status"] == "claimed":
             return job  # finish what you hold before taking more
-    for job in sorted(data["jobs"], key=lambda j: order(j, data.get("focus") or ())):
+    for job in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", order(j, data.get("focus") or ()))):
         if claimable(data, job, can, at, agent):
             took = stalled(job, at)
             prev = job.get("by", "")
@@ -405,8 +409,8 @@ def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.dat
         raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
     if model and routing.RUNS_ON.get(model) != to:
         raise ValueError(f"{model} doesn't run on {to}")
-    if job.get("kind") == "chief":
-        raise ValueError(f"{job['id']} is a Chief call; it has no stand-in")
+    if job.get("kind") == "chief" and not chief_relay.is_elected_chief(to, at):
+        raise ValueError(f"{job['id']} is a Chief call; only the elected Chief may take it")
     job.setdefault("rerouted_from", {"needs": job["needs"], "for": job.get("for", ""), "model": job.get("model", ""),
                                      "status": job["status"], "by": job.get("by", "")})
     job.update(status="open", by="", since="", eta="", needs="mini", **{"for": to})
@@ -794,7 +798,7 @@ def main(argv=None) -> int:
             if args.cmd == "next":
                 can = {c.strip() for c in args.can.split(",") if c.strip()}
                 if args.peek:
-                    job = next((j for j in sorted(data["jobs"], key=lambda j: order(j, data.get("focus") or ())) if claimable(data, j, can, at, args.agent)), None)
+                    job = next((j for j in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", order(j, data.get("focus") or ()))) if claimable(data, j, can, at, args.agent)), None)
                     return job, None, touched
                 job = do_next(data, args.agent, can, at, args.eta)
                 if job and on_board(job) and job["history"][-1]["what"].startswith("claimed"):

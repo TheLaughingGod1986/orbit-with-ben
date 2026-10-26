@@ -4,7 +4,7 @@
 Ben: "If Grok Bot is down and out of credit, Cursor takes over. If Cursor and Grok Bot are down, Codex takes over,
 and so on down a chain. The Chief of Staff is ultimately in charge." So the chain is, by default:
 
-  chief (Grok Bot)  ->  cursor (Cursor `agent` CLI)  ->  codex (Codex CLI)
+  chief (Grok Bot) -> claude -> codex (GPT) -> gemini (Antigravity `agy`)
 
 The first agent in the chain that is up is the Chief. Nobody flips a switch by hand: Grok takes back over by itself
 when it is active again, and a CLI that runs out of credit is skipped until its retry time, so the next one in line
@@ -16,7 +16,7 @@ How "up" is decided:
           are tagged, and the relay's own lines are skipped), or has run `jobs.py ... --agent chief` in that time.
           Its app files are no use: they are a heartbeat written every minute while the app is open, credit or not.
           A `down` mark on Grok is cleared by either signal seen after the mark: Grok working again is proof it is back.
-  cursor, codex
+  codex, gemini (Cursor remains a specialist worker)
           up unless their CLI is missing or they are marked down. A run whose output says out of credit, over the
           usage limit, or signed out marks that agent down for --retry hours (default 3), and the same run falls
           through to the next agent in line.
@@ -50,7 +50,7 @@ Mini heartbeat (Ben, 8 Oct): every `run` also pushes one small file, heartbeat.j
 branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's history stays clean). The Kanban reads
 it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
-Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,claude,cursor,codex"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
+Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,claude,codex,gemini"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
 CHIEF_RETRY_H (1), CHIEF_CLAUDE_OUT_H (5), CURSOR_CLAUDE_MODEL (routing.py), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
@@ -86,8 +86,8 @@ HOS = pathlib.Path(os.environ.get("HOS_REPO") or first_dir(HOME / "YouTube" / "H
                                                             HOME / "YouTube" / "history-of-science"))
 # Ben, 21 Oct 2026: "build in a method where we identify dynamically if the acting chief is out and delegate a chief
 # until the main one or next in command is back". Claude is a standing link (up while its hourly heartbeat is fresh),
-# not only a dated override, so Grok going quiet hands Chief to Claude before the Mini CLIs.
-DEFAULT_CHAIN = "chief,claude,cursor,codex"
+# not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Cursor stays a worker.
+DEFAULT_CHAIN = "chief,claude,codex,gemini"
 NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude"}
 
 # What an out-of-credit, over-limit or signed-out CLI says. Only read when the run failed or printed almost nothing,
@@ -316,6 +316,8 @@ def grok_post_age(at: dt.datetime, after=None):
 
 def state_of(agent: str, at: dt.datetime) -> tuple:
     """(up, why) for one agent in the chain."""
+    if agent == "claude":
+        claude_beat_state(at)  # a newer heartbeat clears its old down mark before election
     mark = read_json(d("down", agent + ".json"))
     if mark:
         until = parse(mark["until"]) if mark.get("until") else None
@@ -385,6 +387,41 @@ def acting(at: dt.datetime):
     return rows, first
 
 
+def is_elected_chief(agent: str, at: dt.datetime) -> bool:
+    """Authority belongs to the elected role, never to a worker merely running a Chief's model."""
+    return bool(agent and acting(at)[1] == agent)
+
+
+def pending_chief_reviews(at: dt.datetime) -> list:
+    """Protected review handoffs, excluding explicit Ben, release-date and credit waits. Read only."""
+    data = read_json(OWB / "jobs" / "queue.json") or {}
+    out = []
+    for j in data.get("jobs", []):
+        reason = j.get("result") or ""
+        if j.get("status") != "blocked" or not re.search(r"parked for (?:the )?chief", reason, re.I):
+            continue
+        if j.get("needs") == "ben" or j.get("awaits_ben"):
+            continue
+        if re.search(r"wait(?:s|ing)? .*?(?:public|reset|renewal)|date gate|reopen (?:when|on|after)|test.*(?:running|ends?)", reason, re.I):
+            continue
+        out.append(j)
+    return sorted(out, key=lambda j: j.get("id", ""))
+
+
+WORKER_AUTHORITY = """You are a WORKER, not the elected Chief. No final OK or PASS, no merge, no change to AGENTS.md
+or the Never list. Park protected calls with jobs.py block <id> --agent {agent} --reason "parked for Chief: ..." --git.
+A model or task fallback does not grant Chief authority. Money, irreversible actions and Ben's required watch stay with Ben."""
+CHIEF_AUTHORITY = """You are the ELECTED ACTING CHIEF under Ben's 26 Oct 2026 order: Grok -> Claude -> Codex -> Gemini.
+You may make the ordinary Chief decisions (reviews, PASS, merges and final OKs) within the existing channel rules.
+Do not park a decision merely because Grok or Claude is unavailable. Check chief_relay.py status again before a
+protected call; if a higher-priority Chief has returned, hand the decision back. Use your own agent id, never chief.
+Money, irreversible actions, required Ben approvals, failed gates and the Never list remain subject to their existing rules."""
+
+
+def authority_prompt(agent: str, leader: str | None) -> str:
+    return (CHIEF_AUTHORITY if agent == leader else WORKER_AUTHORITY).format(agent=agent)
+
+
 def cloud_chief(who) -> bool:
     """A Chief that isn't a Mini CLI (Grok Bot, or Claude under Ben's override): the Mini CLIs are its workers."""
     return who is not None and who not in routing.MINI_WORKERS
@@ -392,7 +429,7 @@ def cloud_chief(who) -> bool:
 
 # ---- the run ----
 
-PROMPT = """You are {name}, acting as Chief of Staff on the Mac mini because {why}. You run unattended: do ONE job, then stop.
+PROMPT = """You are {name}, {role} on the Mac mini because {why}. You run unattended: do ONE job, then stop.
 Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk.py --as/--from).
 
 0. If a git pull fails (no space left, or local files in the way), run  python3 scripts/mini_repair.py --apply
@@ -403,7 +440,7 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    "Chief relay"). Run: python3 scripts/owb_thread.py read   and   python3 scripts/studio.py board
 2. History of Science ({hos}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:
      python3 00_Brand/Channel-Setup/tools/hos_desk.py inbox --as {agent}   (run in the HOS checkout; there is no scripts/hos_desk.py)
-3. Which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
+3. Follow the Chief review priority below first, if one is supplied; otherwise, which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
      python3 scripts/channel_balance.py --hos "{hos}"
    If it says History of Science first: take the single oldest HOS desk task you can do now, and go to step 4. Only if
    there is none, fall through to the OWB queue below.
@@ -433,12 +470,10 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    you don't rewrite its findings or any spoken line.
 5. Report: OWB with  python3 scripts/owb_thread.py post "..."  (start with "{name} covering"); HOS with
    hos_desk.py post --from {agent} --to claude ...  Say what you did, what's next, and what blocks you.
-You are a stand-in for Grok Bot (the Chief): never make a protected call yourself. No final OK or PASS, no merge, no
-   change to AGENTS.md or the Never list, no spend past the written rules, nothing irreversible. Park it for Chief with
-   jobs.py block <id> --agent {agent} --reason "parked for Chief: <what needs deciding>" --git  and say so in your report.
-   Each job's `kind` says which model does it best (AGENTS.md "Who does what"); do your part and leave the rest as a job.
-   A job rerouted to you while Claude Code is out of usage (model cursor-claude-opus-5-5: you are running on Claude) is
-   yours to do in full, as Claude would; Claude's own protected calls (final OK, PASS, merge) still park for Chief.
+{authority}
+{priority}
+   Each job's kind selects its specialist worker. Acting-Chief authority is a separate role; a worker fallback does
+   not inherit it merely because it runs Claude or GPT.
 Your run is killed at 25 minutes. Anything that takes longer (a full render, a big download, a batch of picture jobs):
 start it detached so it outlives you, e.g.
    tmux new -d -s <job>-render "cd <dir> && <command> > ~/_desk/logs/<job>-render.log 2>&1; echo $? > ~/_desk/logs/<job>-render.done"
@@ -530,7 +565,7 @@ def handover(new, rows, at: dt.datetime) -> None:
         ok = notify(f"Chief relay: **nobody can act as Chief** ({states}). Mini jobs wait until one is back. "
                     f"Ben: top-ups stay your call.")
     elif new == "chief":
-        ok = notify(f"Chief relay: **Grok Bot is Chief again** ({states}). Cursor and Codex keep running the job queue as workers; Chief owns reviews/decisions.")
+        ok = notify(f"Chief relay: **Grok Bot is Chief again** ({states}). Cursor, Codex and Gemini keep running the job queue as workers; Chief owns reviews/decisions.")
     elif new not in chain():
         o = override(at) or {}
         ok = notify(f"Chief relay: **{NAMES.get(new, new)} is acting Chief** until {o.get('until', '?')} "
@@ -670,7 +705,13 @@ def queue_has_work(agent: str) -> bool:
 def addressed_to(agent: str) -> list:
     """Open jobs only this agent may claim (`jobs.py add --for <agent>`), e.g. Claude asking Codex for its own view."""
     q = read_json(OWB / "jobs" / "queue.json") or {}
-    return [j["id"] for j in q.get("jobs", []) if j.get("for") == agent and j.get("status") == "open"]
+    by_id = {j["id"]: j for j in q.get("jobs", [])}
+    import jobs
+    at = now()
+    return [j["id"] for j in q.get("jobs", []) if j.get("for") == agent and j.get("status") == "open"
+            and not jobs.waiting_to_start(j, at)
+            and (not j.get("after") or by_id.get(j["after"], {}).get("status") == "done")
+            and (j.get("kind") != "chief" or is_elected_chief(agent, at))]
 
 
 def next_job(agent: str):
@@ -682,7 +723,7 @@ def next_job(agent: str):
         held = next((j for j in data["jobs"] if j.get("by") == agent and j.get("status") == "claimed"), None)
         if held:
             return held
-        return next((j for j in sorted(data["jobs"], key=lambda j: jobs.order(j, data.get("focus") or ()))
+        return next((j for j in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", jobs.order(j, data.get("focus") or ())))
                      if jobs.claimable(data, j, jobs.MINI_NEEDS, at, agent)), None)
     except Exception as e:  # an unreadable queue never stops a run: the worker just gets its default model
         log(f"routing: queue not readable ({e.__class__.__name__}); default worker and model")
@@ -1088,6 +1129,7 @@ def run_locked(at: dt.datetime) -> int:
         # hours, and on 15 Oct 2026 it kept reading the 04:04 beat until 06:03 after fresh beats at 05:49 and 05:51.
         fetch_claude_beat(now())
         rows, who = acting(at)
+        leader = who
         handover(who, rows, at)
         alert_no_chief(who, rows, at)
         # The board shows who is Chief and who is out, and why (Ben, 21 Oct 2026).
@@ -1107,8 +1149,12 @@ def run_locked(at: dt.datetime) -> int:
         rerouted = reroute_work(at)
         # A job addressed to one agent wakes that agent if it's up, ahead of the acting Chief: otherwise only the first
         # agent in the chain ever runs, and a second opinion from Codex would never happen.
+        chief_reviews = pending_chief_reviews(at) if leader in routing.MINI_WORKERS else []
+        chief_last = last_seen(leader) if leader else None
+        review_due = bool(chief_reviews and (not chief_last or at - chief_last >= dt.timedelta(
+            minutes=int(os.environ.get("CHIEF_REVIEW_MIN", "10")))))
         addressed = False
-        for a in routing.MINI_WORKERS:
+        for a in (() if review_due else routing.MINI_WORKERS):
             if a in up and a != who and addressed_to(a):
                 addressed = True
                 log(f"{a} has a job addressed to it ({', '.join(addressed_to(a))}): waking it first")
@@ -1125,8 +1171,8 @@ def run_locked(at: dt.datetime) -> int:
                 push_heartbeat(at, "no-worker", note=f"{chief_name} is Chief; no Mini worker has credit")
                 return 0
             worker_only = True
-        if who == "gemini":
-            worker_only = True  # Gemini is never acting Chief: it only takes queued jobs
+        if who != leader:
+            worker_only = True
         last_wake = last_seen(who)
         # Overnight (Ben, 7 Oct: carry on overnight) agents are woken for queued jobs only; the 2-hourly sweep for
         # thread/desk tasks runs in the day, so an empty night costs no credit.
@@ -1138,7 +1184,9 @@ def run_locked(at: dt.datetime) -> int:
         added = keep_busy()  # every pass, not only when dry: keeps >=3 Mini jobs ready (Ben, 12 Oct 14:36)
         if added:
             log(f"refill: added {' '.join(added)} from jobs/backlog.json")
-        if not queue_has_work(who) and not sweep:
+        reviews = chief_reviews if who == leader and not worker_only else []
+        review_work = bool(reviews and review_due)
+        if not queue_has_work(who) and not sweep and not review_work:
             ago = f"{int((at - last_wake).total_seconds() // 60)} min ago" if last_wake else "never"
             log(f"nothing queued for {who}; last woken {ago}: not waking it")
             push_heartbeat(at, "idle", who, "nothing queued")
@@ -1156,7 +1204,10 @@ def run_locked(at: dt.datetime) -> int:
                    "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
                    "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
         model, job = "", None
-        if not addressed and who in routing.MINI_WORKERS:
+        if review_work:
+            # A Chief review must not be redirected to a specialist worker by the next ordinary queue job.
+            model = routing.model_for({"kind": "chief"}, who)
+        elif not addressed and who in routing.MINI_WORKERS:
             who, model, job = route_worker(who, up)
         elif addressed:
             job = next_job(who)  # the addressed job comes first in jobs.order: run it on its own model
@@ -1165,8 +1216,14 @@ def run_locked(at: dt.datetime) -> int:
             log(f"chain: stop after {chained} job(s): " + ("next job is the one just run (released to retry later)"
                                                          if job else "no next job identified"))
             return 0
+        priority = ("CHIEF REVIEW PRIORITY: before taking an ordinary job, review " + reviews[0]["id"] + ": "
+                    + str(reviews[0].get("title") or "") + ". Read its body, result and history plus the evidence. "
+                    "Keep the original work held until the decision is recorded. Resolve or delegate the next step; "
+                    "do not reopen unrelated date, credit or Ben-approval holds. Do this one review, then stop. "
+                    "Other reviews waiting: " + ", ".join(j["id"] for j in reviews[1:])) if review_work else ""
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
-                               owb=OWB, hos=HOS)
+                               owb=OWB, hos=HOS, authority=authority_prompt(who, leader), priority=priority,
+                               role="the elected acting Chief" if who == leader else "a specialist worker")
         log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
         seen(who, at)
@@ -1218,6 +1275,9 @@ def run_locked(at: dt.datetime) -> int:
             fail_h = retry_h if addressed else float(os.environ.get("CHIEF_FAIL_RETRY_H", "1"))
             mark_down(who, f"its {'run for an addressed job' if addressed else 'last run'} failed (exit {code})",
                       now() + dt.timedelta(hours=fail_h), now())
+            if who == leader:
+                at = now()  # a failed elected Chief yields to the next available Chief in this run
+                continue
             return 0
         chained += 1
         last_ran = job.get("id") if job else None
@@ -1248,8 +1308,10 @@ def cmd_status(at: dt.datetime) -> int:
     for a, up, why in rows:
         print(f"{'>' if a == who else ' '} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
     print(f"Chief: {NAMES.get(who, who) if who else 'nobody'}")
-    g_up, g_why = state_of("gemini", at)
-    print(f"  {'gemini':<7} {'Gemini':<9} {'UP  ' if g_up else 'down'}  {g_why} (worker only, never Chief)")
+    for worker in routing.MINI_WORKERS:
+        if worker not in [a for a, _, _ in rows]:
+            up, why = state_of(worker, at)
+            print(f"  {worker:<7} {NAMES[worker]:<9} {'UP  ' if up else 'down'}  {why} (specialist worker)")
     out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
     print(f"Claude: {'OUT of usage (' + why + '); its jobs walk their chain: Cursor on ' + routing.CURSOR_CLAUDE_MODEL + ', Gemini, Codex' if out else 'up (' + why + ')'}")
     print(gemini_line())
@@ -1263,8 +1325,7 @@ def cmd_status(at: dt.datetime) -> int:
 
 
 def gemini_line() -> str:
-    """Gemini is the facts-and-numbers checker, not in the Chief chain: it can't run the Mini, so the acting Chief runs
-    it (`agy`) for every job that needs gemini. Show whether it's installed and how much is waiting for it."""
+    """Gemini is both the facts checker and the last Chief fallback. Show CLI presence and queued fact work."""
     b = find_bin("AGY_BIN", "agy")
     try:
         q = json.loads((OWB / "jobs" / "queue.json").read_text())["jobs"]
@@ -1272,7 +1333,7 @@ def gemini_line() -> str:
         jobs = f"{waiting} gemini job{'s' if waiting != 1 else ''} waiting"
     except (OSError, ValueError, KeyError):
         jobs = "queue not found"
-    return (f"Checker: Gemini ({'agy found' if b else 'agy NOT found on PATH'}); run by the acting Chief; {jobs}")
+    return (f"Checker: Gemini ({'agy found' if b else 'agy NOT found on PATH'}); Chief fallback and facts checker; {jobs}")
 
 
 def main(argv=None) -> int:
