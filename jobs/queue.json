@@ -85712,13 +85712,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-26T22:26Z",
-      "eta": "2026-10-26T22:46Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T22:26Z",
-      "result": "",
+      "result": "J0985 review complete: FIX. PR294 merged, CI PASS. J0985 remains blocked after correction J1002; J1003 holds 48-hour Earth read for 28 Oct 11:35 London, retry 29 Oct 16:00. Verified Studio readings and three cache master hashes; no publishing, spend or unrelated hold changes. Report posted on studio thread.",
       "history": [
         {
           "at": "2026-10-26T22:26Z",
@@ -85759,6 +85759,11 @@
           "at": "2026-10-26T22:31Z",
           "by": "codex",
           "what": "step 5 of 5 done: Ruling posted on studio thread; original hold, correction dependency and readout retry recorded"
+        },
+        {
+          "at": "2026-10-26T22:31Z",
+          "by": "codex",
+          "what": "done: J0985 review complete: FIX. PR294 merged, CI PASS. J0985 remains blocked after correction J1002; J1003 holds 48-hour Earth read for 28 Oct 11:35 London, retry 29 Oct 16:00. Verified Studio readings and three cache master hashes; no publishing, spend or unrelated hold changes. Report posted on studio thread."
         }
       ],
       "kind": "chief",
@@ -85782,7 +85787,8 @@
         "at": "2026-10-26T22:31Z",
         "by": "codex",
         "note": "Ruling posted on studio thread; original hold, correction dependency and readout retry recorded"
-      }
+      },
+      "done_ref": "267fb0772"
     },
     {
       "id": "J1002",
