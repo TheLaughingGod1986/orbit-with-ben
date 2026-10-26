@@ -36,7 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0966 | mini | open (after J0965) | – | – | video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
 | J0967 | mini | blocked | cursor | – | assembly · HOS build-rule fix for unbuilt Shorts (006 A-C + s04-s08, 007-010 SHORTS_PICTURE_PLAN, S5-S8): audit fixes #14-#16, plans and assemblers only |  |
 | J0968 | mini | blocked | chief | – | studio · 028 Gliese 710: Private upload of the Oort marbles Short v03 (Wed 16 Dec 11:30 London) after Ben's OK | 6406845498 |
-| J0969 | mini | open (after J0963) | – | – | studio · 022 Sun h8HGfyShEHI: arm thumbnail-only Test & Compare A (live BURNING HARDER) vs B v02 10% BRIGHTER (J0963 PASS), read back, ledger | 6407490330 |
+| J0969 | mini | claimed | cursor | 2026-10-26T04:12Z | studio · 022 Sun h8HGfyShEHI: arm thumbnail-only Test & Compare A (live BURNING HARDER) vs B v02 10% BRIGHTER (J0963 PASS), read back, ledger | 6407490330 |
 | J0970 | mini | blocked | chief | – | studio · HOS Short JyRjM-9Yc8g: swap to gold foil v03 (Private, Sun 1 Nov 11:30 London) after Ben's OK by Sun 1 Nov 10:30 | 6407490572 |
 | J0971 | mini | blocked | chief | – | studio · HOS Short Pp5LmjsduI4: swap to four elements v03 (Private, Tue 3 Nov 11:30 London) after Ben's OK by Tue 3 Nov 10:30 | 6407490572 |
 | J0972 | mini | blocked | chief | – | studio · HOS Short PlihWC5uA2E: swap to valves v03 (Private, Thu 5 Nov 11:30 London) after Ben's OK by Thu 5 Nov 10:30 | 6407490572 |
