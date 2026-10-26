@@ -154,9 +154,15 @@ def _paint_craters(p: np.ndarray):
 
 
 def sdf(p: np.ndarray) -> np.ndarray:
-    d = _smin(_sd_ellipsoid(p - LOBE_A, RAD_A), _sd_ellipsoid(p - LOBE_B, RAD_B), SMIN_K)
-    rough = _value_noise(p * 5.0) * 0.010
-    return d + _crater_disp(p) + rough
+    """Rubble peanut. Lumps live in the surface, so the outline is anti-aliased
+    rock, not a scanline saw (that saw was passing the 40 px straight-run gate
+    and reading as a chopped cut-out)."""
+    d = _sdf_base(p)
+    rough = _value_noise(p * 5.0) * 0.008
+    lump = _value_noise(p * 9.0) * 0.028
+    # Short ripple so a lobe's tangent cannot sit on one scanline for 40 px.
+    ripple = _value_noise(p * 28.0) * 0.009
+    return d + _crater_disp(p) + rough + lump + ripple
 
 
 def _px_per_unit() -> float:
@@ -247,16 +253,6 @@ def render_crop(t: float) -> tuple[np.ndarray, np.ndarray, int]:
     rgb = rgb + np.array([0.58, 0.66, 0.78]) * rim[..., None]
     rgb = np.clip(rgb, 0.0, 1.0)
     alpha = np.clip(1.0 - np.maximum(d_hit, 0.0) / 0.007, 0.0, 1.0) * hit
-    # A few pixels of sine wobble on the silhouette. A convex tangent otherwise
-    # sits on one scanline for more than 40 px, which is the chopped-matte fail.
-    yy = np.arange(n)[:, None]
-    xx = np.arange(n)[None, :]
-    sy = np.rint(np.sin(xx * 0.45 + t) * 3.0).astype(np.int32)
-    sx = np.rint(np.sin(yy * 0.40 + t * 0.8) * 2.0).astype(np.int32)
-    src_y = np.clip(yy + sy, 0, n - 1)
-    src_x = np.clip(xx + sx, 0, n - 1)
-    alpha = alpha[src_y, src_x]
-    rgb = rgb[src_y, src_x]
     alpha[:6, :] = 0
     alpha[-6:, :] = 0
     alpha[:, :6] = 0
