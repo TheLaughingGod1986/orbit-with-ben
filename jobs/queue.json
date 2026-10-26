@@ -82023,10 +82023,10 @@
       "stage": "",
       "after": "J0965",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-26T04:40Z",
-      "eta": "2026-10-26T06:40Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
       "result": "",
@@ -82050,6 +82050,11 @@
           "at": "2026-10-26T04:56Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Vacca v03 open+picture+polish PASS (sha 863d21dd5dac). Smallpox and dalton re-rendering for a moving frame 0 (tmux j0966-smallpox, j0966-dalton). Never-saw not started. GBP0."
+        },
+        {
+          "at": "2026-10-26T04:56Z",
+          "by": "cursor",
+          "what": "released: Encodes still running. Do not start a second copy. tmux j0966-smallpox log ~/_desk/logs/j0966-smallpox.log done ~/_desk/logs/j0966-smallpox.done (frame-0 in-point now 6.00s; the 3.40s cut was a still). tmux j0966-dalton log ~/_desk/logs/j0966-dalton.log done ~/_desk/logs/j0966-dalton.done (frame-0 in-point now 2.80s; 1.20s scored 1.44 under the 1.50 still line, and the NAS vo path crashed the json write — fixed). Vacca v03 is DONE for picture: hos_007_s05_vacca_jesty_v03.mp4 sha 863d21dd5dac, open gate PASS, picture_qa PASS, polish PASS. Do not rebuild it. Still needs music_gate, sfx level, _PHONE to HOS UAT+NAS, six brief fields. vo_onset warn 0.44s. x_3L_IdYgEc never-saw not started (plates on NAS hos-worktrees/2026-10-22/hos-005-blood; 05_frog_lung_t1 is not on disk). v01/v02 files were not overwritten. GBP0. No upload."
         }
       ],
       "kind": "video",
