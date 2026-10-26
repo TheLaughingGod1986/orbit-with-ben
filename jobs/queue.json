@@ -81740,6 +81740,16 @@
           "at": "2026-10-26T08:14Z",
           "by": "chief",
           "what": "reopened: Ben OK'd all three v03 Shorts via Kanban buttons 26 Oct 08:09-08:10 London (OWB #264 6411247951, 6411249334, 6411258896)"
+        },
+        {
+          "at": "2026-10-26T08:14Z",
+          "by": "chief",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J0961"
+        },
+        {
+          "at": "2026-10-26T08:14Z",
+          "by": "chief",
+          "what": "approved by Ben: upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v03 Private for Wed 9 Dec 11:30 v03"
         }
       ],
       "kind": "studio",
@@ -81747,16 +81757,6 @@
         "OWB:029"
       ],
       "awaits_ben": [
-        {
-          "what": "upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v03 Private for Wed 9 Dec 11:30",
-          "file": "OWB UAT/029_short_wed09_great_dimming_v03_PHONE.mp4",
-          "version": "v03",
-          "airs": "2026-12-09T11:30Z",
-          "ifNot": "Nothing is uploaded until you OK it",
-          "title": "Betelgeuse Short: Great Dimming v03",
-          "number": "029",
-          "type": "short"
-        },
         {
           "what": "upload 029 Short \"Is Betelgeuse Really About to Explode?\" v03 Private for Fri 11 Dec 11:30",
           "file": "OWB UAT/029_short_fri11_opening_testA_v03_PHONE.mp4",
@@ -81778,7 +81778,21 @@
           "type": "short"
         }
       ],
-      "urgent": 9
+      "urgent": 9,
+      "approved_from": {
+        "what": "upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v03 Private for Wed 9 Dec 11:30",
+        "file": "OWB UAT/029_short_wed09_great_dimming_v03_PHONE.mp4",
+        "version": "v03",
+        "airs": "2026-12-09T11:30Z",
+        "title": "Betelgeuse Short: Great Dimming v03",
+        "number": "029",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J0961",
+        "askId": "J0961.1",
+        "okAt": "2026-10-26T08:09Z",
+        "okRef": "6411247951"
+      }
     },
     {
       "id": "J0962",
