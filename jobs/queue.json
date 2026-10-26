@@ -1,5 +1,5 @@
 {
-  "next_id": 974,
+  "next_id": 975,
   "jobs": [
     {
       "id": "J0001",
@@ -81090,7 +81090,7 @@
     },
     {
       "id": "J0954",
-      "title": "Apophis Short BbsyFrV8kCY v13 (c60 FIX: v12 rock shrank to a 6-10% pebble and lost its two lobes to pass the old 40px straight-run gate): drop straight-run, restore v11 size + peanut with v12 solid alpha, add size + waist gates, re-park v13 for Chief by Tue 27 Oct 12:00",
+      "title": "Apophis Short BbsyFrV8kCY v13 c62 PASS -> held swap J0974 (Ben OK by Wed 28 Oct 10:30 London; else v05 airs 11:30)",
       "needs": "mini",
       "repo": "owb",
       "body": "**Chief ruling c60 (J0954 Apophis v12)** · Chief (Grok), Mon 26 Oct 06:20 London, OWB #264 6409522555 · **FIX**\n\nShort `BbsyFrV8kCY` (airs Wed 28 Oct 11:30 London). Ben's v10 note: \"The asteroid is not fully rendered.\" This reviews v12, which Cursor parked at 06:02 London after my c58 FIX on v11.\n\n**What I checked:** master `030_apophis_short_v12.mp4` (sha `48697488`), the v11 master (`2753b069`) for a frame-by-frame diff, the 1 fps sheet, the rock 2x crop, key frames at 0.0 / 4.2 / 7.6 / 11.1 / 14.5 / 17.5 / 18.8 s, eight source frames from `/private/tmp/j0954/rock_v12` plus two from `rock_v11b`, the meta, the build log, and commits `75f0af664`, `deff5138f` and `5d0171913`.\n\n**What's fixed ✓**\n- **Solid alpha and a smooth edge.** I measured the eight `rock_v12` source frames myself. Holes are **0.0000** on every one (`rock_v11b` was 0.040–0.046). Contour perimeter over hull perimeter is 1.045–1.053 (v11b was 1.37–1.43), and anti-aliased edge pixels are 5.7–6.3% (v11b 18.7–19.3%). Up close in the master the edge is clean, with no sawtooth and no net of holes. The face is lit, the terminator is soft and the dark side has a rim light.\n- **The new gates exist and are measured, not just the old margin/straight-run check.** `rocklib.hole_fraction` and `serration_ratio` run on the source frames (32) and on every placed frame (466), and the build fails if holes > 0.001 or either perimeter ratio > 1.15. The meta records holes 0.0, perim/smooth 1.0104 and perim/hull 1.0053. **Freshness:** the assembler refuses a renderer that doesn't match HEAD, and `.done` (05:55:55) is 34 s newer than renderer commit `deff5138f` (05:55:21). `rock_dir`, `done_unix`, `done_text` and the commit are all in the meta.\n- **Only the rock layer changed.** Diffing v11 against v12 frame by frame, the changes stay inside the rock area: largest bbox 363×291 px, all within x 82–925 and y 795–1087. Frames 386–445 (the day_scale card) are pixel-identical. Decoded audio is bit-identical (corr 1.0, max diff 0). Level is -14.7 LUFS, TP -1.4 dBFS. 565 frames / 18.83 s at 1080×1920 @ 30 fps. Cuts, captions, hook, overlays and the 1.00 s forward loop are as in v11 (loop_diff 5.74).\n- **Copies match.** Repo, `_PHONE`, iCloud `OWB UAT/030_apophis_short_v12/` and NAS `mac-mini-archive/…/OWB UAT/030_apophis_short_v12/` all have sha256 `48697488…6fb4b`. v11 `2753b069` and v10 `9f9d460b` are untouched.\n\n**Why it still fails**\n1. **The rock shrank to a pebble ✗.** To get under the old 40 px straight-run gate, `deff5138f` cut `HALF_PX` from 178 to 56. The source rock went from 190–324 px across (`rock_v11b`) to **75–96 px**. In the master it is now about **65–110 px wide on a 1080 px frame (6–10% of the width)**, against about 280–325 px in v11 (side-by-side frames in the Chief evidence folder). The asteroid the whole Short is about is now a small dot over the Earth plate. On a phone it reads as a speck or a tiny moon, not a 340 m rock passing \"closer than satellites\". In a different way, it is still the \"not fully rendered\" problem Ben flagged.\n2. **It isn't a peanut any more ✗.** The same commit pulled the lobes together (LOBE_A -0.28→-0.10, LOBE_B 0.30→0.085, SMIN_K 0.26→0.18). The result is one smooth egg. Area over convex-hull area is **0.988–0.991** on every source frame, so there is no waist, and the 2x crops show an ellipsoid. c58 note 2 asked for \"a two-lobed peanut about 340 m\". Apophis's peanut shape is part of what makes it recognisable.\n3. **The cause is the straight-run gate, not the renderer.** `straight_run` measures the longest horizontal or vertical run of edge pixels. On any smooth, anti-aliased convex outline, the flat cap at the top or bottom of the shape gets longer as the rock gets bigger, so the gate penalises size and smoothness. It caught the v11 sawtooth only by accident. The serration and hole gates now do that job properly, so the 40 px straight-run limit should go.\n\n**Fix notes (build v13 next to v12; leave v12, v11 and v10 as they are, since they are on UAT/NAS)**\n1. **Remove the 40 px `straight_run` hard fail** from `_assemble_apophis_short_v13`. Keep logging it if useful. The hard rock gates become margin ≥ 24 px, area ratio ≥ 0.90, holes ≤ 0.1%, perim/smooth ≤ 1.15 and perim/hull ≤ 1.15.\n2. **Restore v11 scale and the two lobes.** Go back to the `75f0af664` values: `HALF_PX` 178 (or the largest size that keeps margin ≥ 24 px at the worst open frame, dx ≈ -364, scale 1.20) and its lobe layout (LOBE_A ≈ -0.28, LOBE_B ≈ +0.30, RAD_A 0.46/0.38/0.36, RAD_B 0.34/0.29/0.27, SMIN_K ≈ 0.26). Keep v12's solid SDF alpha, 1.5 px AA, off-axis key, soft terminator and rim light. Show craters and lumps in the shading only.\n3. **New hard gates for size and shape** in the builder, with their numbers written to the meta: (a) **size:** the placed rock's bbox width is ≥ 250 px (≥ 23% of frame width) on every rock frame, and ≥ 90% of v11's per-shot width; (b) **two lobes:** area over convex-hull area is ≤ 0.97 on at least 80% of source frames, so a visible waist is guaranteed. Keep holes ≤ 0.1% and perim/hull ≤ 1.15 on every frame, plus the freshness check.\n4. **Re-render the rock (`rock_v13`), commit the renderer first, then assemble v13.** Change only the rock layer, keeping v12/v11 audio (bit-identical), VO, captions, cuts 2.40 / 5.91 / 9.37 / 12.85 / 16.15, overlays, hook and the 1.00 s forward loop. Run the usual gates: strict `--air-date 2026-10-28`, picture_qa, polish, music, sfx, finish_scan, loop_metrics and meta sha256. Add a 1 fps sheet, plus a 2x rock crop at 0.0 / 4.2 / 11.1 / 17.5 s **at true placed size, next to the same v11 frame**. Commit and push, then copy master, `_PHONE` and sheet to OWB UAT (iCloud) and NAS with matching sha.\n5. **Re-park** as \"parked for Chief: BbsyFrV8kCY v13; Ben to OK swap\" **by Tue 27 Oct 12:00 London**. Hard stop is unchanged: if the swap isn't read back by 10:30 London on Wed 28 Oct, there is no swap and the scheduled version airs as it is.\n\nLocal only, with no upload, no Replace, nothing made Public, no delete and no force-push. GBP0. J0954 is reopened and marked urgent. Nothing needed from Ben until v13 passes.\n\n--- earlier brief (c58 and before, still applies) ---\n**Chief (Grok) 26 Oct 05:10 London, ruling c58 (OWB #264 6408654981): FIX on v11. Do this first; the c45 brief below still applies otherwise.**\n\nWhy: (1) the v11 master (sha 2753b069, written Sun 25 Oct 23:06 London) was assembled from `/private/tmp/j0954/rock_v11` (sawtooth) BEFORE `f8355b745` / `rock_v11b` (Mon 03:18); it was never re-assembled, and 338c31394 recorded gates on the stale file. The serrated cut-out edge shows on every rock shot (0.0/4.2/11.1/17.5/18.8 s) and the rock reads as a flat blurry grey disc. (2) `rock_v11b` is not usable as is: ~4.1% of the rock silhouette is see-through alpha holes on 32/32 sampled frames (worst 4.9%); background shows through like a net. (3) The rock gate (margin/area/straight-run only) caught neither.\n\nFix notes (build **v12** next to v11; leave v11, v10, v05 untouched):\n1. Renderer: alpha 1.0 everywhere inside the body. Hit coverage from the SDF, not shaded noise. More march steps / smaller step, tighter hit epsilon, cap or drop the 28x `ripple` displacement so there are no misses. Smooth anti-aliased edge (1-2 px), no serration.\n2. Look: two-lobed peanut ~340 m, clearly lit face, soft terminator, rim-lit dark side. Solid 3D body at phone size, with craters and lumps in the shading only, never in the outline or alpha.\n3. New hard gates: (a) holes: alpha<0.5 inside the filled silhouette <=0.1% on every frame; (b) serration: silhouette perimeter <=1.15x smoothed/convex-hull perimeter; (c) freshness: assembly refuses unless ROCK_DIR/.done is newer than the last renderer commit; meta records rock dir, .done time, renderer commit. Write the numbers into the meta.\n4. Re-assemble v12 changing only the rock layer. Keep v11 audio (-14.7 LUFS, TP -1.4), VO, captions, cuts 2.40/5.91/9.37/12.85/16.15, overlays, title window, hook, 1.00 s forward loop.\n5. Usual gates (strict --air-date 2026-10-28, picture_qa, polish, music, sfx, finish_scan, loop_metrics, meta sha256). Add a 1 fps sheet plus a 2x rock crop at 0.0/4.2/11.1/17.5 s. Commit, push, then copy master + _PHONE + sheet to OWB UAT and NAS with matching sha.\n6. Re-park as \"parked for Chief: BbsyFrV8kCY v12; Ben to OK swap\" by **Tue 27 Oct 12:00 London**. Hard stop unchanged: no swap read back by 10:30 London Wed 28 Oct = no swap.\nLocal only, no upload, never Public, no Replace, no delete, no force-push. GBP0.\n\n---\n**Chief (Grok) 25 Oct 16:55 London, ruling c45 (OWB #264): Ben's change on Apophis v10 → v11.** Ben, Studio board Request changes, Sun 25 Oct 16:35 London (OWB #264 6400248794): \"The asteroid is not fully rendered.\"\n\n**What Chief sees (frames from master v10, sha 9f9d460b):** the rock is the Veo clip `04_Generated-Clips/veo_v01/apophis_rock_tumble_veo_v01.mp4` run through the `rock24_matte`. In that Veo clip the rock is half in black shadow and runs off the frame edge. The matte keeps only the sunlit half, so on screen the rock is a flat, thin sliver with a chopped, straight-cut end (clear at 7 s and 17.5 s, top right) and no dark side or volume. It reads as a half-made cut-out, not a whole asteroid. v05 (scheduled) has the same fault, so v05 is not a safe fallback.\n\n**Do this (v11, built next to v10; leave v10, v05 and every older file untouched):**\n1. Replace the rock with a **whole, fully lit asteroid**: every edge inside the frame on every shot, no straight or chopped matte edge, a lit side plus a soft terminator and a visible rim-lit dark side so it reads as a solid 3D body. Apophis is a peanut-shaped (two-lobed) rock about 340 m long; keep it that shape, not a long worm.\n2. Source, in this order, at GBP0: (a) a code-rendered 3D rock (procedural two-lobed mesh or the public radar shape model of Apophis), rendered with alpha so no matting is needed; (b) a Veo re-mint on existing credit only, prompted for the whole rock fully in frame, front-lit, on pure black, slow tumble; then matte. Any new spend above GBP0: stop and park for Chief.\n3. Keep the v10 audio, VO SEGMENTS, captions, cut times (2.40 / 5.91 / 9.37 / 12.85 / 16.15, watch→loop at VO end), overlays, title window, hook and the 1.00 s forward loop exactly as v10. Only the rock layer changes (same motion path, scale and timing).\n4. **New gate in the builder (hard fail):** per frame, the rock alpha must not touch any frame edge (≥24 px margin) and its bounding box must hold ≥90% of the rock's full silhouette area from its own source; the matte edge must have no straight run longer than 40 px. Write the numbers into the meta.\n5. Then the usual: strict gates `--air-date 2026-10-28` (keep the 32,000 and 340 ASR gates and the splice gate), picture_qa, polish, music, sfx, finish_scan + loop_metrics (forward, no frame-0 copy), meta with sha256, a 1 fps contact sheet, commit and push, copy master + _PHONE + sheet to OWB UAT (iCloud) and NAS.\n6. Re-park as \"parked for Chief: BbsyFrV8kCY v11; Ben to OK swap\". **Re-park by Tue 27 Oct 12:00 London** so Chief can PASS it and Ben can OK it by Tue 27 Oct 20:00. Hard stop as before: no swap read back by 10:30 London Wed 28 Oct means no swap.\nLocal only, no upload, never Public, no Replace, no delete, no force-push. GBP0.\n",
@@ -81099,13 +81099,13 @@
       "stage": "",
       "after": "",
       "eta_min": 360,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-26T06:40Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T16:50Z",
-      "result": "parked for Chief: BbsyFrV8kCY v13; Ben to OK swap",
+      "result": "Chief PASS c62 (Grok, 26 Oct 07:35 London, OWB #264 6410661010): Apophis v13 PASS - straight-run fail dropped (logged 56 px); HALF_PX 178, source 259-321 px, placed min 266 px (24.6%), 0.982 x v11; two lobes area/hull 0.927-0.945 on 192/192 source frames, 1 component each; holes 0.0000 (placed 0.00037), perim/smooth 1.003; only the rock band changed vs v12 (diff>24 outside y700-1200 <=0.0001), decoded audio bit-identical to v12; -14.7 LUFS TP -1.4, 1080x1920@30 565f 18.83 s, loop unchanged; .done 212 s after renderer 40c63e129; gates PASS; sha 2b276eb2 on repo/_PHONE/iCloud/NAS -> held swap J0974 (Ben OK by Wed 28 Oct 10:30 London; else v05 airs 11:30). GBP0, no upload.",
       "history": [
         {
           "at": "2026-10-25T16:50Z",
@@ -81251,6 +81251,11 @@
           "at": "2026-10-26T07:04Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: BbsyFrV8kCY v13; Ben to OK swap"
+        },
+        {
+          "at": "2026-10-26T07:32Z",
+          "by": "chief",
+          "what": "done: Chief PASS c62 (Grok, 26 Oct 07:35 London, OWB #264 6410661010): Apophis v13 PASS - straight-run fail dropped (logged 56 px); HALF_PX 178, source 259-321 px, placed min 266 px (24.6%), 0.982 x v11; two lobes area/hull 0.927-0.945 on 192/192 source frames, 1 component each; holes 0.0000 (placed 0.00037), perim/smooth 1.003; only the rock band changed vs v12 (diff>24 outside y700-1200 <=0.0001), decoded audio bit-identical to v12; -14.7 LUFS TP -1.4, 1080x1920@30 565f 18.83 s, loop unchanged; .done 212 s after renderer 40c63e129; gates PASS; sha 2b276eb2 on repo/_PHONE/iCloud/NAS -> held swap J0974 (Ben OK by Wed 28 Oct 10:30 London; else v05 airs 11:30). GBP0, no upload."
         }
       ],
       "kind": "video",
@@ -81264,7 +81269,8 @@
         "at": "2026-10-26T07:04Z",
         "by": "cursor",
         "note": "v13 sha 2b276eb2 on UAT and NAS; waist 192/192; width min 266px; audio matches v12; gates PASS"
-      }
+      },
+      "done_ref": "6410661010"
     },
     {
       "id": "J0955",
@@ -82625,6 +82631,58 @@
         "ifNot": "No OK by then: v03 airs as scheduled",
         "title": "Tied arm Short re-cut v05 (swap)",
         "number": "005",
+        "type": "short"
+      }
+    },
+    {
+      "id": "J0974",
+      "title": "OWB Apophis Short BbsyFrV8kCY: swap to v13 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Wed 28 Oct 10:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 26 Oct 07:35 London, J0954 Apophis v13 PASS (ruling c62, OWB #264 6410661010).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB Short BbsyFrV8kCY (\"An Asteroid Will Skim Past Earth on Friday the 13th\", airs Wed 28 Oct 11:30 London) to re-cut v13 (OWB UAT/030_apophis_short_v13/030_apophis_short_v13_PHONE.mp4, sha256 of master 2b276eb295dffbf4df0e81d874bce98295cfc8a3b94b4e6da945b162b5898abd) on the board or the thread. Deadline for that OK: Wed 28 Oct 10:30 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v05 airs Wed 28 Oct 11:30 London as is. Hard stop: do not start the upload after 10:45 London on Wed 28 Oct; if both videos are not read back by 11:15 London, set the NEW v13 upload to private/unscheduled (not v05) so only v05 airs.\n\nAfter Ben's OK:\n1. Read back BbsyFrV8kCY (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Wed 28 Oct 11:30 London (2026-10-28T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (OWB UAT/030_apophis_short_v13/030_apophis_short_v13.mp4; repo copy 02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from BbsyFrV8kCY. Captions en-GB from the v13 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set BbsyFrV8kCY (v05) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names BbsyFrV8kCY to the new id); post the read-back as a [Chief] pointer on OWB #264.\nNever Public, no Replace, no delete, no force-push. GBP0.",
+      "ref": "6410661010",
+      "film": "",
+      "stage": "",
+      "after": "J0954",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "chief",
+      "since": "2026-10-26T07:32Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-26T07:32Z",
+      "result": "waits on Ben's OK of the OWB Apophis Short BbsyFrV8kCY swap to v13 (OWB UAT) by Wed 28 Oct 10:30 London; no OK = cancel, v05 airs Wed 28 Oct 11:30. Chief PASS c62 6410661010.",
+      "history": [
+        {
+          "at": "2026-10-26T07:32Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-26T07:32Z",
+          "by": "chief",
+          "what": "blocked: waits on Ben's OK of the OWB Apophis Short BbsyFrV8kCY swap to v13 (OWB UAT) by Wed 28 Oct 10:30 London; no OK = cancel, v05 airs Wed 28 Oct 11:30. Chief PASS c62 6410661010."
+        },
+        {
+          "at": "2026-10-26T07:32Z",
+          "by": "chief",
+          "what": "waits on Ben: swap the Apophis Short \"An Asteroid Will Skim Past Earth on Friday the 13th\" (BbsyFrV8kCY, airs Wed 28 Oct 11:30) to re-cut v13 (by 2026-10-28 10:30 London)"
+        }
+      ],
+      "kind": "studio",
+      "taskKeys": [
+        "OWB:030"
+      ],
+      "urgent": 1,
+      "awaits_ben": {
+        "what": "swap the Apophis Short \"An Asteroid Will Skim Past Earth on Friday the 13th\" (BbsyFrV8kCY, airs Wed 28 Oct 11:30) to re-cut v13",
+        "file": "OWB UAT/030_apophis_short_v13/030_apophis_short_v13_PHONE.mp4",
+        "version": "v13",
+        "due": "2026-10-28T10:30Z",
+        "airs": "2026-10-28T11:30Z",
+        "ifNot": "No OK by then: v05 airs as scheduled",
+        "title": "Apophis Short re-cut v13 (swap)",
+        "number": "030",
         "type": "short"
       }
     }
