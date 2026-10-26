@@ -1,0 +1,153 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v03.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 5,
+      "row": "s06_sdo_solar_flare",
+      "source": "sdo_solar_flare.mp4",
+      "title": "NASA SDO sun, bright solar surface",
+      "t": 19.11,
+      "at": "0:19",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.013 < film p5 0.0185"
+      ],
+      "offset": 58.0
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_lasilla_milky_way",
+      "source": "eso_lasilla_ntt.mp4",
+      "title": "ESO La Silla night sky, Milky Way over the telescope roof",
+      "t": 1.27,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.3
+    },
+    {
+      "cut": 1,
+      "row": "s02_sdo_solar_flare",
+      "source": "sdo_solar_flare.mp4",
+      "title": "NASA SDO sun, bright solar surface",
+      "t": 4.39,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 22.0
+    },
+    {
+      "cut": 2,
+      "row": "s03_gaia_motion_1_6my",
+      "source": "gaia_motion_1_6my.mp4",
+      "title": "ESA Gaia star field in motion",
+      "t": 8.07,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 3,
+      "row": "s04_sdo_solar_flare",
+      "source": "sdo_solar_flare.mp4",
+      "title": "NASA SDO sun, bright solar surface",
+      "t": 11.75,
+      "at": "0:12",
+      "fail": [],
+      "warn": [],
+      "offset": 33.0
+    },
+    {
+      "cut": 4,
+      "row": "s05_eso_lasilla_ntt",
+      "source": "eso_lasilla_ntt.mp4",
+      "title": "ESO La Silla night sky, Milky Way over the telescope roof",
+      "t": 15.43,
+      "at": "0:15",
+      "fail": [],
+      "warn": [],
+      "offset": 13.0
+    },
+    {
+      "cut": 5,
+      "row": "s06_sdo_solar_flare",
+      "source": "sdo_solar_flare.mp4",
+      "title": "NASA SDO sun, bright solar surface",
+      "t": 19.11,
+      "at": "0:19",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.013 < film p5 0.0185"
+      ],
+      "offset": 58.0
+    },
+    {
+      "cut": 6,
+      "row": "s07_gaia_motion_1_6my",
+      "source": "gaia_motion_1_6my.mp4",
+      "title": "ESA Gaia star field in motion",
+      "t": 22.79,
+      "at": "0:23",
+      "fail": [],
+      "warn": [],
+      "offset": 20.0
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "loop_eso_lasilla_ntt.mp4",
+      "title": "Loop back to the ESO La Silla Milky Way",
+      "t": 25.13,
+      "at": "0:25",
+      "fail": [],
+      "warn": [],
+      "offset": 0.3
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0185,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
