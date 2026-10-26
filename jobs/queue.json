@@ -1,5 +1,5 @@
 {
-  "next_id": 998,
+  "next_id": 999,
   "jobs": [
     {
       "id": "J0001",
@@ -85485,6 +85485,33 @@
         }
       ],
       "kind": "studio"
+    },
+    {
+      "id": "J0998",
+      "title": "HOS audit: reproduce playlist boundary duplicate and draft narrow dedup fix",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief Codex J0981 ruling HOS #180 6428572814. Evidence HOS 5fd444c6 audit 2026-10-26 section 6: uU12JA5rMWg returned across playlist page boundary, causing a self duplicate-title error. Inspect channel-audit.ts; capture sanitized reproduction. Prepare a separate draft HOS PR deduplicating repeated identical video IDs before videos.list; regression test must still detect equal titles on distinct IDs. Never suppress findings or use an edited checker to approve other work before approval. HOS AGENTS.md Definition of done requires Ben OK for fixing a wrong check: present concrete diff and tests for that approval, leave PR unmerged pending it. Do not claim 0 errors based on a manually deduplicated report alone. Check core membership before editing; if core, edit OWB and sync properly. GBP0, read-only YouTube, no Studio writes.",
+      "ref": "6428572814",
+      "film": "",
+      "stage": "",
+      "after": "J0981",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T22:13Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "assembly"
     }
   ],
   "focus": [],
