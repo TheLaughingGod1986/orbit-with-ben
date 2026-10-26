@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/wed18_robot_reach_nearest_star_v02.mp4",
+  "edge_floor": 0.0465,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02",
+      "cut": 2,
+      "t": 8.36,
+      "source": "vltfromvistatimelapse.mp4",
+      "why": [
+        "low detail: edge density 0.0427 < film p5 0.0465"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s00",
+      "source": "uhd_yb_paranal_02.mp4",
+      "t": 1.37,
+      "std": 46.43,
+      "mean": 73.66,
+      "p95": 144.0,
+      "edge": 0.0813,
+      "hf": 14.27,
+      "lf": 38.24,
+      "std8": 40.34,
+      "edge8": 0.1767,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "uhd_bt_paranal_06.mp4",
+      "t": 4.55,
+      "std": 32.39,
+      "mean": 47.2,
+      "p95": 90.0,
+      "edge": 0.0645,
+      "hf": 12.12,
+      "lf": 24.17,
+      "std8": 26.45,
+      "edge8": 0.1054,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "vltfromvistatimelapse.mp4",
+      "t": 8.36,
+      "std": 32.44,
+      "mean": 98.4,
+      "p95": 163.0,
+      "edge": 0.0427,
+      "hf": 10.28,
+      "lf": 27.26,
+      "std8": 28.65,
+      "edge8": 0.0843,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0427 < film p5 0.0465"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 12.34,
+      "std": 62.1,
+      "mean": 102.51,
+      "p95": 218.0,
+      "edge": 0.0941,
+      "hf": 19.47,
+      "lf": 51.81,
+      "std8": 54.61,
+      "edge8": 0.2515,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s04",
+      "source": "bt_lasilla_crux.mp4",
+      "t": 16.33,
+      "std": 27.96,
+      "mean": 61.5,
+      "p95": 101.0,
+      "edge": 0.0817,
+      "hf": 11.45,
+      "lf": 18.39,
+      "std8": 21.45,
+      "edge8": 0.1394,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s_loop",
+      "source": "loop_uhd_yb_paranal_02.mp4",
+      "t": 18.83,
+      "std": 39.94,
+      "mean": 71.32,
+      "p95": 135.0,
+      "edge": 0.0579,
+      "hf": 7.73,
+      "lf": 37.91,
+      "std8": 38.38,
+      "edge8": 0.1053,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
