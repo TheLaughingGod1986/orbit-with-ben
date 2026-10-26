@@ -82843,6 +82843,11 @@
           "at": "2026-10-26T19:37Z",
           "by": "gemini",
           "what": "step 3 of 8 done: Enforced S01 hook completion by 2.85s (S7 sentence-1 pause trim completes hook at 2.80s; Shorts with VO hook >2.85s like 008 C 4.84s flagged with hook_conflict and blocked)"
+        },
+        {
+          "at": "2026-10-26T19:37Z",
+          "by": "gemini",
+          "what": "step 4 of 8 done: Added 5 negative self-checks (21.60s vs 23.20s v03b VO mismatch, board-only 008 clip, unfinished 008 C hook, invalid S7 in_s/out_s window) to hos_build_rule_v02.py"
         }
       ],
       "kind": "assembly",
@@ -82864,11 +82869,11 @@
       "model": "gemini-agy",
       "escalated_at": "2026-10-26T17:20Z",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 8,
         "at": "2026-10-26T19:37Z",
         "by": "gemini",
-        "note": "Enforced S01 hook completion by 2.85s (S7 sentence-1 pause trim completes hook at 2.80s; Shorts with VO hook >2.85s like"
+        "note": "Added 5 negative self-checks (21.60s vs 23.20s v03b VO mismatch, board-only 008 clip, unfinished 008 C hook, invalid S7 "
       }
     },
     {
