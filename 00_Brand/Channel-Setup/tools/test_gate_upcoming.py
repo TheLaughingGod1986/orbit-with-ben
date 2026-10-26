@@ -108,5 +108,36 @@ class Waivers(unittest.TestCase):
             self.assertIsNone(g.waived(Path(d) / "other.mp4", [fail]))            # no sidecar, no waiver
 
 
+
+class NasStage(unittest.TestCase):
+    """NAS files the 06:40 launchd job can't read (macOS privacy, 26 Oct 2026)."""
+
+    def test_stage_copies_nas_export_and_rewrites_meta_refs(self):
+        with tempfile.TemporaryDirectory() as t:
+            t = Path(t)
+            nas = t / "nas"; nas.mkdir()
+            export = nas / "s_v01.mp4"; export.write_bytes(b"video")
+            vo = nas / "stem_vo.wav"; vo.write_bytes(b"vo")
+            (nas / "s_v01_meta.json").write_text(json.dumps({"audio": {"stems": {"vo": str(vo)}}}))
+            old = g.NAS
+            g.NAS = str(nas) + "/"
+            try:
+                print(g.stage_one("abc", export, t / "cache"))
+                hit = g.staged("abc", export, t / "cache", g.sha256(export))
+                self.assertIsNotNone(hit)
+                self.assertEqual(hit[0].read_bytes(), b"video")
+                meta = json.loads(hit[1].read_text())
+                self.assertTrue(meta["audio"]["stems"]["vo"].startswith(str(t / "cache")))
+                # a stage of another cut never counts
+                self.assertIsNone(g.staged("abc", export, t / "cache", "0" * 64))
+                self.assertIsNone(g.staged("abc", nas / "other.mp4", t / "cache", None))
+            finally:
+                g.NAS = old
+
+    def test_nas_refs_finds_nested_paths_only(self):
+        self.assertEqual(g.nas_refs({"a": ["/Volumes/data/x.wav", "rel.wav"], "b": {"c": "/Volumes/data/y"}}),
+                         ["/Volumes/data/x.wav", "/Volumes/data/y"])
+
+
 if __name__ == "__main__":
     unittest.main()
