@@ -84522,13 +84522,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "codex-dashboard",
-      "since": "2026-10-26T17:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T17:43Z",
-      "result": "parked for Chief: review and merge PR #292, then publish the dashboard page. Preview READY at studio-kanban-89v9jjk61-bens-projects-11c93b15.vercel.app; no production release, gate waiver or media/schedule change. Blocker investigation is docs/STUDIO_PROGRESS_REVIEW_2026-10-26.md. Direct Ben request implemented; repository reserves merge/page release for Chief after review.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T17:43Z",
@@ -84554,17 +84554,15 @@
           "at": "2026-10-26T17:53Z",
           "by": "codex-dashboard",
           "what": "blocked: parked for Chief: review and merge PR #292, then publish the dashboard page. Preview READY at studio-kanban-89v9jjk61-bens-projects-11c93b15.vercel.app; no production release, gate waiver or media/schedule change. Blocker investigation is docs/STUDIO_PROGRESS_REVIEW_2026-10-26.md. Direct Ben request implemented; repository reserves merge/page release for Chief after review."
+        },
+        {
+          "at": "2026-10-26T17:55Z",
+          "by": "codex-dashboard",
+          "what": "reopened: Ben requested a fuller job-first dashboard: all current jobs, blockers, approvals, next steps, scheduled and live"
         }
       ],
       "for": "codex-dashboard",
-      "kind": "assembly",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-10-26T17:53Z",
-        "by": "codex-dashboard",
-        "note": "PR 292 ready; preview READY and authenticated HTTP 200; 80 tests passed, one external integration skipped; phone layout "
-      }
+      "kind": "assembly"
     }
   ],
   "focus": [],
