@@ -81978,22 +81978,22 @@
     },
     {
       "id": "J0967",
-      "title": "HOS build-rule fix for unbuilt Shorts (006 A-C + s04-s08, 007-010 SHORTS_PICTURE_PLAN, S5-S8): audit fixes #14-#16, plans and assemblers only",
+      "title": "HOS build-rule fix v2 (c56 FIX, low priority, plans only, park by Thu 29 Oct 20:00 London): cuts on word ends, no back-to-back same plate (11 Shorts), plate length, S7 on NAS mint/candle plates, checker + push 9e23d71a",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief (Grok) 25 Oct 23:25 London. J0917 item 4, low priority. Apply HOS STAYED60 audit fixes #14-#16 to plans and assemblers only (no renders beyond gate checks): 006 Short A-C and s04-s08, SHORTS_PICTURE_PLAN_v01.json for 007-010, standalone S5-S8. S01 ends by 2.85 s; rows unbundled to 2.5-3.8 s cuts; loop tail 1.0 s or less; no full-film banner; datelines trimmed; no video ID or code text on any end card (Ben 25 Oct). S5-S8 still-opens get existing moving plates or stay unbuilt (no generation). Commit, then jobs.py block <id> --reason \"parked for Chief: HOS build-rule fix\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
-      "ref": "",
+      "body": "Chief (Grok) 26 Oct 03:50 London, ruling c56 on J0967 (HOS #180 6407764884): FIX. Plans/assemblers/checker only, no render, no generation, GBP0.\n\n**What I checked (`git show 9e23d71a`, all 13 files pulled from the mini)**\n- **Not pushed ✗.** HOS main on the mini is **ahead 1**: origin/main is still `b8880cbf`, so `9e23d71a` exists only on the mini.\n- **Scope ✓.** 13 files, +3192/-0. There's a new checker `hos_build_rule_v02.py`, a 006 `BUILD_RULE_v02.json`, `SHORTS_PICTURE_PLAN_v02.json` for 007-010 (v01 kept), `BUILD_RULE_S5_S8_v02.json`, and a retire guard in the five 006 s04-s08 v01 assemblers and the standalone assembler. No media is committed, nothing is rendered or generated, and every plan has flow/vertex expected 0. GBP0 ✓.\n- **End card / banner / loop ✓.** On every Short, `end_card` text/video_id/code_text are null and `full_film_banner` is false. The loop tail is 1.00 s, starts at the VO end and returns to the frame-0 plate. The v01 assemblers that still lay the banner and the 3 s loop now refuse to run.\n- **S01 ✓ on paper.** It ends at 1.85-2.85 s everywhere. 010 C is 1.85 s (the checker allows it explicitly), which is fine since it's under 2.85.\n- **Datelines ✓.** S5/S6/S7 drop \"In 1964,\" / \"In 1928,\" / \"In 1771,\" and the claim starts at 0.06 s. S8's onset moves to 0.05 s. 009 B trims a 0.41 s pause to 0.10 s on the existing take. 006 A trims the spoken title. No new VO.\n- **Rows unbundled ✗.** Every body row is 2.5-3.8 s on paper, but they're equal slices of the VO (e.g. s04 is 6 × 3.73 s), so cuts fall mid-word and each row's `spoken` repeats whole sentences from its neighbours (010 C S06 carries 4 sentences). Same plate back to back means no cut, so the real holds are:\n  - 007 B S04-S05 shuttered_street **6.57 s**, S06-S07 jenner_window **6.58 s**. 007 C S03-S04 boy_garden **7.43 s**\n  - 008 C **S01-S02 rod_fitting 0-6.25 s** (the first cut really comes at 6.25 s)\n  - 009 A S02-S03 km_a_second **7.16 s**. 009 B **S01-S02 minute_second 0-5.94 s**, S03-S04 sixty_earths **6.87 s**, S05-S06 dots_square **6.88 s**\n  - 010 A S05-S06 iridium_spike **6.64 s**\n  - 006 A S05-S06 tree_vs_pinch **6.97 s**. 006 B S05-S07 candle_tall **9.55 s**. 006 C S06-S07 bubbles_macro **7.17 s**. s05 S03-S04 shimmer_coals **6.53 s**. s06 S03-S04 candle_tall **7.37 s**\n  - The plans carry no in/out points, so nothing shows these are meant to be different moments of the plate.\n- **Plate too short ✗.** 010 C S06 names `P1:04_long_reign (2.78 s)` for a 3.45 s row. S07 has `P5:09_robin (4.00 s loop window)`. Those notes sit inside `source_long_plate`, which breaks any lookup by name.\n- **S5-S8 ✗ (S7 only).** S5 (still horn), S6 (no petri plate) and S8 (still tube) staying unbuilt is right. **S7** says \"10_mint_jar_t1 / 11_candle_tall_t1 not in this checkout\", but both are on the NAS: `mac-mini-archive/hos-worktrees/2026-10-22/hos-006-trees/02_Video-Projects/006_Trees-Are-Made-Of-Air/04_Generated-Clips/part03/raw/v01/` (4.07 MB / 6.34 MB, 10 Oct). The brief was \"existing moving plates or stay unbuilt\", so S7 gets them.\n- **Plate root ✗.** None of the 006 plates are on the mini (`04_Generated-Clips` holds only `01_Raw/.gitkeep`). The v01 assemblers' `MEDIA_PROJ` (`~/YouTube/hos-006-trees`) is gone, and the plates are on the NAS path above. The v02 plans need to record a media root that resolves.\n- **Escape hatch broken (minor).** `--rebuild-v01` reaches `ap.parse_args()` and argparse rejects it (exit 2). The standalone assembler has the same problem.\n\n**FIX notes (J0967 reopened, low priority, Cursor, plans/assemblers/checker only, no render, no generation, GBP0, park by Thu 29 Oct 20:00 London)**\n1. **Push first.** Push `9e23d71a` and the fix commit to HOS origin/main as normal pushes. No force, no --no-verify.\n2. **Cut on the words.** Replace `even_layout` with cuts on word boundaries from the existing STT/word timings. Each row 2.5-3.8 s, ending on a word end (gap ≤ 0.10 s), with S01 ending by 2.85 s on the end of the hook line. Each row's `spoken` = only the words inside it.\n3. **No back-to-back plate.** No two adjacent body rows use the same plate. For each run above, swap in another existing on-disk/NAS plate from the same film. If a second moment of one plate is truly wanted, add `in_s`/`out_s` at least 2.0 s apart with a scene-change score that reads as a cut. Loop tail = the frame-0 plate stays allowed.\n4. **Plate length.** Give each row `plate_dur_s` and require `plate_dur_s ≥ use_s` (010 C S06 long_reign 2.78 < 3.45: pick another plate or move the cut). Move the notes out of `source_long_plate` into `note`.\n5. **S7 Priestley mint.** Plan it on `10_mint_jar_t1` (frame 0) + `11_candle_tall_t1` from the NAS path above. Keep the rows plan-only and the status `planned` (not built). S5/S6/S8 stay unbuilt.\n6. **Media root.** Record `media_root` in the 006 BUILD_RULE (and in S7), pointing at the NAS archive path, and have the checker resolve every plate under it. Read only, with nothing moved or copied back onto the mini.\n7. **Checker.** Add to `check_short`: adjacent-same-plate (in/out aware), plate exists + duration, cut on a word end, S01 effective end ≤ 2.85 after merging same-plate runs, and `spoken` not overlapping. It has to FAIL on today's `9e23d71a`; put that output in the commit message.\n8. **Hatch.** Pop `--rebuild-v01` from sys.argv before `parse_args` (or add it as an argument) in all six assemblers.\nThen `jobs.py block J0967 --reason \"parked for Chief: HOS build-rule fix v2\" --git`.\n\n--- earlier brief (still applies) ---\nChief (Grok) 25 Oct 23:25 London. J0917 item 4, low priority. Apply HOS STAYED60 audit fixes #14-#16 to plans and assemblers only (no renders beyond gate checks): 006 Short A-C and s04-s08, SHORTS_PICTURE_PLAN_v01.json for 007-010, standalone S5-S8. S01 ends by 2.85 s; rows unbundled to 2.5-3.8 s cuts; loop tail 1.0 s or less; no full-film banner; datelines trimmed; no video ID or code text on any end card (Ben 25 Oct). S5-S8 still-opens get existing moving plates or stay unbuilt (no generation). Commit, then jobs.py block <id> --reason \"parked for Chief: HOS build-rule fix\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "ref": "6407764884",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-26T03:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: HOS build-rule fix",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -82024,6 +82024,11 @@
           "at": "2026-10-26T03:26Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS build-rule fix"
+        },
+        {
+          "at": "2026-10-26T03:48Z",
+          "by": "chief",
+          "what": "reopened: Chief c56 FIX (HOS #180 6407764884): 9e23d71a not pushed (HOS ahead 1); even_layout splits VO evenly -> 14 back-to-back same-plate runs in 11 Shorts (real holds 5.9-9.6 s; 008 C and 009 B first cut really 6.25/5.94 s); 010 C S06 plate 2.78 s < 3.45 s row; S7 mint/candle plates exist on NAS (hos-worktrees/2026-10-22/hos-006-trees); --rebuild-v01 breaks argparse. End card/banner/loop/datelines/no-render OK. Notes at top of body. GBP0."
         }
       ],
       "kind": "assembly",
@@ -82033,14 +82038,7 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ],
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-26T03:26Z",
-        "by": "cursor",
-        "note": "Checker PASS. HOS main 9e23d71a. S5-S8 stay unbuilt. No render."
-      }
+      ]
     },
     {
       "id": "J0968",
@@ -82094,22 +82092,22 @@
     },
     {
       "id": "J0969",
-      "title": "022 Sun h8HGfyShEHI: arm thumbnail-only Test & Compare A (live BURNING HARDER) vs B v02 10% BRIGHTER (J0963 PASS), read back, ledger",
+      "title": "022 date gate: on/after Sun 1 Nov 18:00 London, read the running A/B/C thumb test (T012), then arm B v02 10% BRIGHTER vs the winner on h8HGfyShEHI",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief (Grok) 26 Oct 03:25 London, J0963 022 Sun T&C B v02 '10% BRIGHTER' PASS (ruling c54, OWB #264 6407490330).\n1. Check h8HGfyShEHI 'Is the Sun Getting Brighter?' reads back Public (public since 18 Oct). If not, block naming that.\n2. Copy ~/_desk/j0908/sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg (sha256 e7247c5232a3ec78b7413722e184bfdfc15a1e9ee6070dd63a3acbf6981021bf) into 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/tc_B_j0963/ with a SHA256.txt beside it, verify the sha, and commit.\n3. Orbit Studio (CDP 9223) -> A/B testing -> Thumbnail only: A = the live thumbnail (BURNING HARDER), B = that file. If Studio shows 'Run a new test? Your current test will be deleted', press Cancel and block 'parked for Chief: test already running on 022'. No title test.\n4. Read back the test as set; thumb_ledger.py add --video h8HGfyShEHI --channel owb --title \"Is the Sun Getting Brighter?\" --a-maker house --b-maker codex --b-file <repo path> --job J0963, then thumb_ledger.py start <T id>.\n5. done with the read-back. If Studio needs a sign-in, block for Ben.\nNo privacy, schedule, title or description change. B tests need no Ben OK (AGENTS.md thumb row; J0962 precedent). PR #283 (builder + json) is not a dependency. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.\n",
-      "ref": "6407490330",
+      "body": "Chief (Grok) 26 Oct 03:55 London, ruling c57 on J0969 (OWB #264 6407771727). DATE GATE. Do not claim before Sun 1 Nov 18:00 London.\nThe 022 thumbnail-only A/B/C test (BURNING HARDER / IT'S CLIMBING / RUNNING DOWN?, THUMB_LEDGER T012) is running and stays: about 6d 13h left at 26 Oct 03:31 London = ends about Sun 1 Nov 16:30 London. Never delete or replace it.\n1. On/after Sun 1 Nov 18:00 London: Orbit Studio (CDP 9223) -> h8HGfyShEHI -> A/B testing, READ ONLY. If it still shows running, re-block until it ends (at most Mon 2 Nov 12:00 London) and press nothing.\n2. Read the result (watch-time share A/B/C, the winner, which thumbnail is now live). thumb_ledger.py result T012 --wt-a .. --wt-b .. --winner draw (house vs house, not a maker comparison), and write the real winner and C's share into T012's note.\n3. Arm a thumbnail-only Test & Compare: A = the live thumbnail (the winner), B = 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/tc_B_j0963/sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg (verify sha256 e7247c5232a3ec78b7413722e184bfdfc15a1e9ee6070dd63a3acbf6981021bf; committed 392ff18ac). If Studio says 'Run a new test? Your current test will be deleted', press Cancel and park for Chief. No title test. Read the armed test back.\n4. thumb_ledger.py add --video h8HGfyShEHI --channel owb --title \"Is the Sun Getting Brighter?\" --a-maker house --b-maker codex --b-file 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/tc_B_j0963/sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg --job J0963, then thumb_ledger.py start <T id>. Done with the read-back. If Studio needs a sign-in, block for Ben.\nNo privacy, schedule, title or description change. B tests need no Ben OK (AGENTS.md thumb row; J0962 precedent). Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.\n\n--- earlier brief (c54; steps 1-2 already done: Public read back, B committed 392ff18ac) ---\nChief (Grok) 26 Oct 03:25 London, J0963 022 Sun T&C B v02 '10% BRIGHTER' PASS (ruling c54, OWB #264 6407490330).\n1. Check h8HGfyShEHI 'Is the Sun Getting Brighter?' reads back Public (public since 18 Oct). If not, block naming that.\n2. Copy ~/_desk/j0908/sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg (sha256 e7247c5232a3ec78b7413722e184bfdfc15a1e9ee6070dd63a3acbf6981021bf) into 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/tc_B_j0963/ with a SHA256.txt beside it, verify the sha, and commit.\n3. Orbit Studio (CDP 9223) -> A/B testing -> Thumbnail only: A = the live thumbnail (BURNING HARDER), B = that file. If Studio shows 'Run a new test? Your current test will be deleted', press Cancel and block 'parked for Chief: test already running on 022'. No title test.\n4. Read back the test as set; thumb_ledger.py add --video h8HGfyShEHI --channel owb --title \"Is the Sun Getting Brighter?\" --a-maker house --b-maker codex --b-file <repo path> --job J0963, then thumb_ledger.py start <T id>.\n5. done with the read-back. If Studio needs a sign-in, block for Ben.\nNo privacy, schedule, title or description change. B tests need no Ben OK (AGENTS.md thumb row; J0962 precedent). PR #283 (builder + json) is not a dependency. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.\n",
+      "ref": "6407771727",
       "film": "",
       "stage": "",
       "after": "J0963",
       "eta_min": 45,
       "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-26T03:27Z",
+      "by": "chief",
+      "since": "2026-10-26T03:48Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-26T03:23Z",
-      "result": "parked for Chief: test already running on 022 (thumbnail-only, BURNING HARDER / IT'S CLIMBING / RUNNING DOWN?, about 6d 13h left). B v02 10% BRIGHTER committed 392ff18ac and not armed.",
+      "result": "date gate: waits until 2026-11-01T18:00Z (Sun 1 Nov 18:00 London). The running 022 thumbnail-only A/B/C test (T012, ends about Sun 1 Nov 16:30 London) stays; then read the result and arm B v02 (392ff18ac, sha e7247c52) vs the winner. Chief c57 (OWB #264 6407771727). GBP0.",
       "history": [
         {
           "at": "2026-10-26T03:23Z",
@@ -82145,19 +82143,17 @@
           "at": "2026-10-26T03:31Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: test already running on 022 (thumbnail-only, BURNING HARDER / IT'S CLIMBING / RUNNING DOWN?, about 6d 13h left). B v02 10% BRIGHTER committed 392ff18ac and not armed."
+        },
+        {
+          "at": "2026-10-26T03:48Z",
+          "by": "chief",
+          "what": "blocked: date gate: waits until 2026-11-01T18:00Z (Sun 1 Nov 18:00 London). The running 022 thumbnail-only A/B/C test (T012, ends about Sun 1 Nov 16:30 London) stays; then read the result and arm B v02 (392ff18ac, sha e7247c52) vs the winner. Chief c57 (OWB #264 6407771727). GBP0."
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "OWB:022"
-      ],
-      "progress": {
-        "step": 3,
-        "of": 5,
-        "at": "2026-10-26T03:31Z",
-        "by": "cursor",
-        "note": "Studio already has a thumbnail-only test running: BURNING HARDER / IT'S CLIMBING / RUNNING DOWN?, about 6d 13h left. Clo"
-      }
+      ]
     },
     {
       "id": "J0970",
