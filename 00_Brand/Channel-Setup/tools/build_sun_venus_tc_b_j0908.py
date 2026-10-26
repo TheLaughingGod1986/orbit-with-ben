@@ -33,6 +33,8 @@ Does not upload or touch YouTube Studio.
 """
 from __future__ import annotations
 
+import argparse
+import hashlib
 import json
 import os
 import random
@@ -41,7 +43,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 Image.MAX_IMAGE_PIXELS = None
 REPO = Path(__file__).resolve().parents[3]
@@ -54,13 +56,14 @@ sys.path.insert(0, str(REPO / "02_Video-Projects/023_What-Happened-To-Venus/08_T
 import _build_venus_thumbs_v03 as venus_v03  # noqa: E402
 
 W, H = 1280, 720
+MEDIA_ROOT = Path(os.environ.get("J0908_MEDIA_ROOT", str(REPO)))
 OUT = Path(os.environ.get("J0908_OUT", str(Path.home() / "_desk/j0908")))
 
 # 022 Sun paths
 SUN_VID = "h8HGfyShEHI"
 SUN_TITLE = "Is the Sun Getting Brighter?"
-SUN_LIVE_A = REPO / "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_A_burning-harder.png"
-SUN_SVS_LOCAL = REPO / "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/04_Generated-Clips/svs/svs11517.mov"
+SUN_LIVE_A = MEDIA_ROOT / "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_A_burning-harder.png"
+SUN_SVS_LOCAL = MEDIA_ROOT / "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/04_Generated-Clips/svs/svs11517.mov"
 SUN_SVS_NAS = Path("/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/04_Generated-Clips/svs/svs11517.mov")
 SUN_PLATE_CACHE = OUT / "_plate_svs11517_56s.png"
 SUN_WORDS = ["10%", "HOTTER"]
@@ -69,11 +72,11 @@ SUN_YELLOW = "10%"
 # 023 Venus paths
 VENUS_VID = "VBaYRPp85Sw"
 VENUS_TITLE = "What Happened to Venus?"
-VENUS_LIVE_A = REPO / "02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/abc_v03/venus_thumb_A_melts-lead.png"
+VENUS_LIVE_A = MEDIA_ROOT / "02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/abc_v03/venus_thumb_A_melts-lead.png"
 VENUS_WORDS = ["EARTH'S", "TWIN"]
 VENUS_YELLOW = "TWIN"
 
-EARTH_PATH = REPO / "02_Video-Projects/023_What-Happened-To-Venus/07_Edit-Project/nasa_pool_v01/earth/as17-148-22727.jpg"
+EARTH_PATH = Path(os.environ.get("J0908_EARTH_PATH", str(MEDIA_ROOT / "02_Video-Projects/023_What-Happened-To-Venus/07_Edit-Project/nasa_pool_v01/earth/as17-148-22727.jpg")))
 
 
 def grab_sun_plate() -> Image.Image:
@@ -102,7 +105,7 @@ def grab_sun_plate() -> Image.Image:
     return Image.open(SUN_PLATE_CACHE).convert("RGB")
 
 
-def build_sun_b() -> tuple[Image.Image, dict]:
+def build_sun_b(version: str = "v01") -> tuple[Image.Image, dict]:
     """Build 022 Sun B ('10% HOTTER') with top band, whole solar disc below band, and Blue Marble Earth scale ref."""
     plate = grab_sun_plate()
     a = np.asarray(plate.convert("L"), dtype=np.float32)
@@ -166,7 +169,7 @@ def build_sun_b() -> tuple[Image.Image, dict]:
     im = pack.grade(im, 145, lift=False)
 
     # Add NASA Apollo 17 Blue Marble Earth in the lower-left as the scale reference (§2.A.5)
-    e_d = 78
+    e_d = 156 if version == "v02" else 78
     e_sq, e_m = disk(Image.open(EARTH_PATH).convert("RGB"))
     ex, ey = 176, 548
     halo = Image.new("L", (W, H), 0)
@@ -175,7 +178,7 @@ def build_sun_b() -> tuple[Image.Image, dict]:
     e_scale = paste_disk(im, e_sq, e_m, ex, ey, e_d)
 
     # Draw top-band hook text: 10% HOTTER (10% yellow, HOTTER white)
-    pack.band(im, SUN_WORDS, SUN_YELLOW)
+    pack.band(im, ["10%", "BRIGHTER"] if version == "v02" else SUN_WORDS, SUN_YELLOW)
 
     geo = {
         "sun_center": [sun_cx, sun_cy],
@@ -261,7 +264,7 @@ def run_one(
         "video": vid,
         "title": title,
         "A_live": a_path.name,
-        "A_source_repo": str(live_a_src.relative_to(REPO)),
+        "A_source_repo": str(live_a_src.relative_to(MEDIA_ROOT)),
         "A_text": a_text,
         "B_new": b_path.name,
         "B_text": " ".join(b_words),
@@ -285,7 +288,45 @@ def run_one(
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--sun-version", choices=("v01", "v02"), default="v01",
+                        help="v02 builds only the J0963 Sun revision; default preserves J0908")
+    args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
+    if args.sun_version == "v02":
+        meta = run_one(
+            vid=SUN_VID, title=SUN_TITLE, live_a_src=SUN_LIVE_A,
+            a_text="BURNING HARDER", b_slug="sun_tc_B_v02_10pct-brighter",
+            b_words=["10%", "BRIGHTER"], b_yellow=SUN_YELLOW,
+            plates=["NASA SVS 11517 (SDO AIA 304 at t=56.0s)",
+                    "NASA Apollo 17 Blue Marble (as17-148-22727)"],
+            builder=lambda: build_sun_b("v02"),
+            test_state="Not armed; Chief review required",
+        )
+        meta.update(job="J0963", version="v02", status="parked for Chief: 022 T&C B v02",
+                    files_local=str(OUT), earth_size_vs_v01=2.0,
+                    scale_note="Earth is a visual reference, not a literal diameter ratio.")
+        # Keep the preview tiles intact and put the measured scores on the sheet.
+        sheet_path = OUT / meta["sheet"]
+        sheet = Image.open(sheet_path).convert("RGB")
+        scored = Image.new("RGB", (sheet.width, sheet.height + 96), "white")
+        scored.paste(sheet, (0, 0))
+        draw = ImageDraw.Draw(scored)
+        font = ImageFont.truetype(pack.FONT, 20)
+        draw.text((24, sheet.height + 8),
+                  f"A: saturation {meta['saturation_live']} | near-black {meta['near_black_live']:.1%}",
+                  font=font, fill="black")
+        draw.text((24, sheet.height + 40),
+                  f"B v02: saturation {meta['saturation']} | near-black {meta['near_black']:.1%} | Earth 156 px",
+                  font=font, fill="black")
+        scored.save(sheet_path, quality=94)
+        meta["sha256"] = {name: hashlib.sha256((OUT / name).read_bytes()).hexdigest()
+                          for name in (meta["A_live"], meta["B_new"], meta["sheet"])}
+        data = json.dumps(meta, indent=2) + "\n"
+        (OUT / "META_sun_v02.json").write_text(data)
+        (REPO / "00_Brand/Channel-Setup/audits/THUMB_AUDIT_2026-10-09/j0963_sun_tc_b_v02.json").write_text(data)
+        print(data)
+        return 0 if not meta["fails"] and meta["kb"] <= 2000 else 1
     sun_meta = run_one(
         vid=SUN_VID,
         title=SUN_TITLE,
