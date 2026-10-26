@@ -82538,13 +82538,13 @@
       "stage": "",
       "after": "J0965",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T20:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: -I_GHK-GcFs v03, x_3L_IdYgEc v03, -sa2t7dAtCk v03, 4WUs0beKn0A v05 PASS; full Chief review before Ben swap OK",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -82730,6 +82730,11 @@
           "at": "2026-10-26T20:43Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: -I_GHK-GcFs v03, x_3L_IdYgEc v03, -sa2t7dAtCk v03, 4WUs0beKn0A v05 PASS; full Chief review before Ben swap OK"
+        },
+        {
+          "at": "2026-10-26T21:26Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief FIX HOS desk 6427725484: Harvey v03 has two WHO cards; new version removes Harvey card, keeps Malpighi, existing words/pace/plates/timing unchanged; no spend. Re-run gates and copy checks, reconcile actual duration 25.259s, return all four for full review. Other masters untouched; no swap/Ben card. Preserve denominator 5."
         }
       ],
       "kind": "video",
@@ -82746,14 +82751,7 @@
         "by": ""
       },
       "for": "gemini",
-      "escalated_at": "2026-10-26T16:26Z",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-26T20:43Z",
-        "by": "gemini",
-        "note": "Completed Chief FIX 6426432872: 4WUs0beKn0A v05 (sha e5ea76f012fb) + untouched -I_GHK-GcFs v03, x_3L_IdYgEc v03, -sa2t7d"
-      }
+      "escalated_at": "2026-10-26T16:26Z"
     },
     {
       "id": "J0967",
