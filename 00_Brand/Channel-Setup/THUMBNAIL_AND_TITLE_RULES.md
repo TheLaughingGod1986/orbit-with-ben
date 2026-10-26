@@ -28,6 +28,7 @@ Evidence strength: **[views]** means a pattern across 48 Shorts. **[CTR]** means
 9. **Wonder, not threat.** No "destroy", "coming for us" or "we're doomed". This is the channel's lane rule Andromeda week, 6 Oct read: *Is Andromeda Coming to Destroy Us?* got 89 views; *Why Stars Don't Crash When Galaxies Meet*, the same topic answered with a surprising "no", got 249. [views, likes]
 10. **News framing is allowed when there is a real new result** (Packaging, 11 Oct 2026): "We Found…", "We Just Saw…", or the mission name ("JWST Found…"). Astrum's top longs open this way. It needs a dated result in `SOURCES.md` from the last year or so; on an old or settled fact it is clickbait, so use the six shapes. Rules 3 and 9 still apply: no "We may have…", no threat.
 11. **Big subject plus one hook** (HOTU + SEA study, 11 Oct 2026). Every title names a big subject and carries one hook: one of the six shapes above, or one of three more. These are a famous nickname (*Higgs Boson: The God Particle*, SEA's fastest), the viewer inside the subject (*You Live in a Supervoid*), or a journey to the edge (*Journey to the Edge of the Solar System*). **Catalogue labels fail** (*Planetary Ring Systems*, *A Glimpse of the Sun*: SEA's bottom six). A question mark is optional. SEA wins with statements and HOTU with questions, so scope plus a hook is the lever. [reference channels]
+12. **Shorts ask one question** (Keeper score, 26 Oct 2026, Mon 19–Sat 24 Oct data). Copy the two winners: *Could a Robot Survive Touching the Sun?* (883; "could X survive Y") and *Why Does a Day on Mercury Last Two of Its Years?* (849; "why does" plus a surprising fact). The first VO line asks the same question. **No statement or teaser titles:** *Saturn's Rings Are on a Clock* got 12. No "X is on a clock". [views]
 
 ## 2. Long thumbnails (16:9)
 
@@ -100,7 +101,7 @@ Search was 17% of Shorts views, and one Short got 477 thumbnail impressions, so 
 
 ## 5. Checklist before upload
 
-- [ ] The title is one of the six shapes, starts with a familiar noun, and has no hedge, hashtag or repeat.
+- [ ] The title is one of the six shapes, starts with a familiar noun, and has no hedge, hashtag or repeat. A Short's title is one question (rule 12), never a statement or teaser.
 - [ ] Thumb text is 2–4 words, adds to the title, and doesn't repeat it.
 - [ ] Long thumb: hook names the subject or dares (no vague question); 2–3 words in a top band, off the subject; `thumb_preview.py --score` PASS (§2.B).
 - [ ] `thumb_preview.py` sheet checked: every word is readable at the smallest tile, and nothing is clipped in the centre crop.
