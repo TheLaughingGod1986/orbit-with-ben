@@ -45,11 +45,13 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 - **4–6 acts,** told as cause and effect (this happened, but, therefore), not a list of facts. Each act: entry, show, one teach, turn, exit.
 - **The world does the science.** Orbit appears in 1–2 inquisitive or story beats only.
 - **Picture changes about every 4–6 s:** a new view, the named thing on screen, or a sound cue with a graphic.
+- **Each beat gets its own plate (Audit rules, 26 Oct 2026).** No plate is used in two beats unless it's a deliberate callback marked `callback: <time of the first use>` in the shot list, and the end plate is never the opening plate.
 - **Every number is sourced.** Sources go in the description.
 - **One subscribe beat, mid-film** (added 25 Sep 2026). Put a `[SUBSCRIBE BEAT]` marker right after the first payoff, 25–50% of the way through the spoken words, followed by one line of 20 words or fewer from `templates/SUBSCRIBE_BEAT_LINES.md`:
   - no numbers, no stock phrases ("like and subscribe", "hit the bell");
   - rotate the lines;
-  - the picture keeps moving under it.
+  - the picture keeps moving under it;
+  - spoken only: never a SUBSCRIBE button, cue or card in the picture; end screens do that (*Audit rules*, 26 Oct 2026).
 
   `gate:episode` fails a script without exactly one valid beat.
 - **No goodbye and no second ask** ("in conclusion", "thanks for watching", "like and subscribe"). The last spoken line hands off to the next film ("Next, Orbit falls into Jupiter.") and the end screen shows it.
@@ -73,11 +75,11 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
   3. the first words are the title's question;
   4. a visible change by about 1 s, with a sound effect on frame 0;
   5. a hook caption on frame 0 (2–4 words, cap height about 8–10% of frame);
-  6. Orbit arrives about a second later, caught in the danger.
+  6. Orbit arrives about a second later, small and caught in the danger. **Orbit is never the hero** (*Audit rules*, 26 Oct 2026): never big on screen in the hook, never filling the frame.
 - **The promoted film's exact live title** is on screen at 9–14 s.
-- **The last 4 s** return to the opening picture so the Short loops.
+- **The last ~4 s are the end card, burned in (Audit rules, 26 Oct 2026):** the linked long's exact live title and its YouTube id in house yellow, over the picture returning to the opening plate so the Short still loops. An ending that's only spoken fails.
 - **The spoken end line depends on the test week** (the week-2 test drops "Watch the full film"). When the film is named, use its exact live title.
-- **Captions** run the whole way.
+- **Captions** run the whole way, from frame 0 through the end card.
 - **One overlay at most** (fact card, date call-out or one-number scale bar), only where it helps; never in the first 2 s or over the 9–14 s title, inside the 16:9 centre band, with no added words or seconds (§5, *Teach on screen*).
 - The long-form script reviewer caps Shorts below 90. **Don't pad a Short to chase it.**
 
@@ -203,7 +205,7 @@ Ben, 11 Oct 2026 22:17, sent Astrum's *What Is It Like on the Surface of a Black
 - **Crossfades** of 0.5–1.5 s between scenes, where the move suits (a change of place or time, an awe section). Hard cuts elsewhere; they're not required on every cut. A crossfade never stretches a shot past the 4 s hold or the 4–6 s picture change, and chapter cards keep their ~0.4 s xfade.
 - **Fine film grain** over dark space backgrounds, to stop banding (for example ffmpeg `noise=alls=4:allf=t` before the final encode). It must not trip polish_gate's noise check, and it never rescues a near-black or empty frame.
 - **Depth-of-field blur** for scale where it helps (soft foreground debris, a sharp far body). It's never on the subject the line names, and never heavy.
-- **Corner credit labels** ("CGI", "NASA", "NASA/JPL", "ESO", "Artist's impression") on CGI, agency or artist's-concept picture. They sit bottom-left in small type (about 2.5–3% of frame height), off the subject and clear of the subscribe cue. They're the one exception to the large-type label rule (credit lines stay small), and they don't count as a *Teach on screen* overlay. Shorts carry none.
+- **Corner credit labels** ("CGI", "NASA", "NASA/JPL", "ESO", "Artist's impression") on CGI, agency or artist's-concept picture. They sit bottom-left in small type (about 2.5–3% of frame height), off the subject and clear of the end-screen area. They're the one exception to the large-type label rule (credit lines stay small), and they don't count as a *Teach on screen* overlay. Shorts carry none.
 
 **Review gate.** Chief adds six items to the frame review and stills check, each scored PASS or FAIL in the pack's review note:
 1. **SFX:** `sfx_kit.py level` PASSes, and the rumbles, whooshes and ticks sit on shots that call for them.
@@ -251,7 +253,7 @@ Standing edit locks (Ben v03b / 1 Oct 2026) are also in `docs/ORBIT_PLAYBOOK_LES
 - **Remint = picture only.** Take video from the remint and audio from the original part (`-map 0:v:0 -map 1:a:0`). Never `-c copy` a remint's own audio.
 - **Chapter cards:** wait for the VO sentence to finish → **0.5–0.8 s** breathing room → cross-fade the card in about **0.4 s**. Soft starfield/gradient (never a flat black box); music continuing underneath. **No line is ever clipped** by a row or card boundary.
 - **Music:** every film has its own score bed, written by Claude with the shot list (mood and arc from the script, `Pace: NN-NN BPM` matched to the narration, NOT every earlier bed), generated once, and `scripts/music_gate.py` must PASS (own, not a reused track, whole runtime). Never a shared file like `jupiter-music.mp3`. Rules: AGENTS.md lesson 7.
-- **End hold:** picture and music run past the last VO word, hold **2–3 s**, then fade. Keep a longer slow end plate (about 15–20 s total after the last line) with music over the full runtime. Music fades over about 10 s, picture fades to black over the last 2 s. **A silent hold fails.**
+- **End hold:** picture and music run past the last VO word, hold **2–3 s**, then fade. Keep a longer slow end plate (about 15–20 s total after the last line) with music over the full runtime. Music fades over about 10 s, picture fades to black over the last 2 s. **A silent hold fails.** The end plate is never the opening plate (*Audit rules*, 26 Oct 2026; Sun and Venus both ended on theirs).
 - **Mix:** about **−14 LUFS** integrated with clear VO. Check for repeated or stumbled VO phrases before delivery.
 - **Bed parity** across parts: about −20 dB mean under VO.
 - **Pre-delivery clip check** (blocking before Ben review):
@@ -260,7 +262,12 @@ Standing edit locks (Ben v03b / 1 Oct 2026) are also in `docs/ORBIT_PLAYBOOK_LES
   ```
   Project assemblers may wrap this (e.g. Saturn `check_shot_list.py --words …`). Exit 0 only on pass.
 - **Large file transfers:** chunk ≤500 KB and verify the sha256.
-- **Subscribe cue:** under the `[SUBSCRIBE BEAT]` line, a 4-second subscribe cue in the lower-right corner (small button, no sound louder than the VO) over the moving picture. Orbit may nod or point toward it in-scene. Never a full-screen card.
+- **No subscribe graphic (Audit rules, 26 Oct 2026):** the `[SUBSCRIBE BEAT]` is spoken only. Never burn a SUBSCRIBE button, cue or card into the picture; the end screen does that job.
+- **Plate check (Audit rules, 26 Oct 2026), blocking before review:**
+  ```bash
+  python3 00_Brand/Channel-Setup/tools/plate_check.py long 09_Final-Export/<slug>_broadcast_v0N.mp4 [--callback SEC ...]
+  ```
+  It fails a plate repeated across beats, an end hold that matches the opening plate, and SUBSCRIBE in the picture.
 - **Export** to `09_Final-Export/<slug>_broadcast_v0N.mp4`.
 - **Shorts gate on every export:**
   ```bash
@@ -269,8 +276,32 @@ Standing edit locks (Ben v03b / 1 Oct 2026) are also in `docs/ORBIT_PLAYBOOK_LES
   - It fails on: no narration or near-silence; Orbit at 0 s; an opening within 10 dHash bits of any Short within 14 days of the air date; 40 s or longer.
   - It warns on: a still-looking first second.
   - Treat a warning as a re-cut of the opening.
+  - Then the audit check (Audit rules, 26 Oct 2026): `python3 00_Brand/Channel-Setup/tools/plate_check.py short <short.mp4> --long-id <id> --long-title "<exact live title>"`. It fails outside 22–27 s or without the end card's title and id; read its caption and Orbit warnings on the contact sheet.
   - After upload, register the Short: `gate_shorts_open.py add --id … --date … --title … --file <mp4> --status scheduled`.
 - **Watch it once on a phone with the sound on** before it goes anywhere.
+
+### Audit rules (Orbit Auditor, 26 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
+
+<!-- SYNC: AGENTS.md#Audit rules (Orbit Auditor, 26 Oct 2026) -->
+Ben, 26 Oct 2026: audit and scoreboard findings are written into the studio rules, not just reported. Source: the Orbit Auditor's 26 Oct audit of the live Sun long `h8HGfyShEHI`, the Venus long `VBaYRPp85Sw` and the 12–24 Oct Shorts (notes and frames on the box at `/workspace/audit26/f`). Where an older line differs, these win.
+
+**Long films**
+1. **Each beat gets its own plate.** A plate (the same image or clip, at any crop or push) is never repeated in another beat unless it's a deliberate callback, and a callback is written in the shot list as `callback: <time of the first use>`. The Sun film reused its grey-disk plate about 6 times and its sunspot inset 3 times.
+2. **The end hold is never the opening plate.** The slow end plate is its own picture. Sun and Venus both ended on their opening plate (SSIM 0.98).
+3. **Never burn SUBSCRIBE into the video.** No subscribe button, cue or card in the picture; end screens do that job. The one spoken `[SUBSCRIBE BEAT]` line stays. The 4-second subscribe cue graphic is retired (it sat in Sun at about 4:00 and Venus at about 3:30).
+4. **Check before review:** `python3 00_Brand/Channel-Setup/tools/plate_check.py long <broadcast.mp4> [--callback SEC ...]` must PASS. It FAILs on a plate seen again 20 s or more later (SSIM ≥ 0.90 on 1 fps samples, black and flat card frames skipped), an end hold matching the opening (SSIM ≥ 0.90), or SUBSCRIBE read by OCR (full frame plus the lower-right corner).
+
+**Shorts**
+5. **Captions run the whole way through,** from frame 0 to the last frame, under the end card too.
+6. **22–27 s.** Exceptions are only the named ones: the compilation, the J0216 test Shorts until 20 Nov, Test A opening Shorts until Test A's final readout, and the one 50–60 s length-test Short (*Packaging*).
+7. **The last ~4 s show the end card, burned in:** the linked long's exact live title and that long's YouTube id in house yellow (`#FFD600`), as in 026's `end_card` (`02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/_assemble_026_weekday_shorts_v01.py`). An ending that's only spoken fails. The card sits over the loop-back picture, the music bed runs through the seam, and nothing is spoken about it (no CTA, no "watch the full film").
+8. **Orbit is never the hero.** The planet, moon or star the title names is the subject of every plate. Orbit is a small figure caught in the danger: never big on screen in the hook (the audit caught Orbit large at 2.5 s), never filling the frame, never on the cover or the end card, and never at frame 0.
+9. **Check next to `gate_shorts_open.py`:** `python3 00_Brand/Channel-Setup/tools/plate_check.py short <mp4> --long-id <id> --long-title "<exact live title>" [--exempt <named exception>]`. It FAILs outside 22–27 s or when OCR can't find the title and the id in the last ~4 s. It WARNs when captions are missing from more than 20% of 1 s samples, when there's no house yellow in the last ~4 s, and when Orbit looks big in the first 5 s or appears in most of the Short (heuristic: check those by eye on the contact sheet).
+
+**What this doesn't change**
+10. **Already approved ships as is** (*Keeper score* rule 7, PR #287): anything Ben OK'd and scheduled before 26 Oct keeps its cut and slot. These rules apply to scripts, shot lists and cuts made from 26 Oct on.
+11. **Live videos aren't re-cut by this rule.** The live fails are re-cut candidates only, logged in `05_Analytics/live_fixes/AUDIT_2026-10-26_CANDIDATES.md`; any fix is its own job with Chief's OK, and the Never list still applies (no file swap on an existing id).
+<!-- /SYNC -->
 
 ## 8. Titles and thumbnails
 

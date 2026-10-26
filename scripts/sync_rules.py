@@ -20,13 +20,27 @@ SOURCE = ROOT / "AGENTS.md"
 TARGETS = [
     ".cursor/rules/orbit-studio.mdc",
     "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md",
+    ".cursor/rules/orbit-build-long.mdc",    # Audit rules (Orbit Auditor, 26 Oct 2026)
+    ".cursor/rules/orbit-build-shorts.mdc",  # Audit rules (Orbit Auditor, 26 Oct 2026)
 ]
+# Sections that must exist in AGENTS.md and be mirrored in every listed copy (Ben, 26 Oct 2026: audit findings are
+# written into the rules where workers read them, not just reported).
+REQUIRED = {
+    "Audit rules (Orbit Auditor, 26 Oct 2026)": [
+        ".cursor/rules/orbit-build-long.mdc",
+        ".cursor/rules/orbit-build-shorts.mdc",
+        "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md",
+    ],
+}
 SCAN = [
     "AGENTS.md",
     "docs/ORBIT_PLAYBOOK_LESSONS.md",
     "docs/PRODUCTION_THREAD.md",
     "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md",
     ".cursor/rules/*.mdc",
+    "02_Video-Projects/_template_NNN_Episode-Slug/10_Shorts/README.md",
+    "02_Video-Projects/_template_NNN_Episode-Slug/11_Upload-Package/PRODUCTION_CHECKLIST_V2.md",
+    "00_Brand/Channel-Setup/templates/PRODUCTION_CHECKLIST_V2.md",
 ]
 # (pattern, why it is stale)
 STALE = [
@@ -49,6 +63,10 @@ STALE = [
     (r"Claude\*\* \| Cloud sessions \| .*Can't reach the Mini", "Claude Code is on the Mini; routing by job kind (11 Oct 2026)"),
     (r"Standing order \(Ben, 2–3 Oct 2026\): ask Claude first", "ask Chief first; Chief holds Claude's old role (9 Oct 2026)"),
     (r"Otherwise code jobs when Ben starts it", "Codex is a routed worker (gpt-6-astra for charts), 11 Oct 2026"),
+    (r"lower-right (subscribe )?cue|subscribe cue in the lower-right|clear of the subscribe cue",
+     "never burn SUBSCRIBE into a video; end screens do that (Audit rules, Orbit Auditor 26 Oct 2026)"),
+    (r"no end card(,| or) CTA", "Shorts end on a burned-in end card: exact long title + yellow long id (Audit rules, 26 Oct 2026)"),
+    (r"Last 4 s loop to the opening\.$", "the last ~4 s also carry the burned-in end card (Audit rules, 26 Oct 2026)"),
 ]
 BLOCK = re.compile(r"(<!-- SYNC: AGENTS\.md#(?P<head>[^>]+?) -->\n)(?P<body>.*?)(<!-- /SYNC -->)", re.S)
 
@@ -94,6 +112,11 @@ def main():
             else:
                 path.write_text(new)
                 print(f"synced {rel}")
+    for head, copies in REQUIRED.items():
+        section(source, head)  # exits if AGENTS.md lost the section
+        for rel in copies:
+            if f"<!-- SYNC: AGENTS.md#{head} -->" not in (ROOT / rel).read_text():
+                problems.append(f"{rel}: missing the SYNC block for AGENTS.md#{head}")
     problems += stale_hits()
     for p in problems:
         print(p)

@@ -192,7 +192,7 @@ Ben, 11 Oct 2026 22:17, sent Astrum's *What Is It Like on the Surface of a Black
 - **Crossfades** of 0.5–1.5 s between scenes, where the move suits (a change of place or time, an awe section). Hard cuts elsewhere; they're not required on every cut. A crossfade never stretches a shot past the 4 s hold or the 4–6 s picture change, and chapter cards keep their ~0.4 s xfade.
 - **Fine film grain** over dark space backgrounds, to stop banding (for example ffmpeg `noise=alls=4:allf=t` before the final encode). It must not trip polish_gate's noise check, and it never rescues a near-black or empty frame.
 - **Depth-of-field blur** for scale where it helps (soft foreground debris, a sharp far body). It's never on the subject the line names, and never heavy.
-- **Corner credit labels** ("CGI", "NASA", "NASA/JPL", "ESO", "Artist's impression") on CGI, agency or artist's-concept picture. They sit bottom-left in small type (about 2.5–3% of frame height), off the subject and clear of the subscribe cue. They're the one exception to the large-type label rule (credit lines stay small), and they don't count as a *Teach on screen* overlay. Shorts carry none.
+- **Corner credit labels** ("CGI", "NASA", "NASA/JPL", "ESO", "Artist's impression") on CGI, agency or artist's-concept picture. They sit bottom-left in small type (about 2.5–3% of frame height), off the subject and clear of the end-screen area. They're the one exception to the large-type label rule (credit lines stay small), and they don't count as a *Teach on screen* overlay. Shorts carry none.
 
 **Review gate.** Chief adds six items to the frame review and stills check, each scored PASS or FAIL in the pack's review note:
 1. **SFX:** `sfx_kit.py level` PASSes, and the rumbles, whooshes and ticks sit on shots that call for them.
@@ -311,6 +311,27 @@ Any FAIL goes back to the builder before the thumb is set. Live thumbs aren't re
 - **The gate:** `gate_shorts_open.py check … --length-test` (band 50–60 s, FAIL at 61 s). Every other Short rule applies.
 - **The read:** the Orbit Auditor logs it against that week's Mon/Wed/Fri Shorts (`iyvWYFP_ETA`, `TtgHNLXfDSs`, `bSjWiCbB7pY`) in its next numbers report, in `00_Brand/Channel-Setup/audits/SHORT_LENGTH_TEST_2026-11/TEST_LOG.md`.
 - **What it doesn't change:** every other Short stays 22–27 s and 55–65 words, and the 40 s Never line holds for everything else. One Short is a signal, not a verdict. Chief decides whether to run a second test; the lock changes only by a new entry here.
+
+## Audit rules (Orbit Auditor, 26 Oct 2026)
+
+Ben, 26 Oct 2026: audit and scoreboard findings are written into the studio rules, not just reported. Source: the Orbit Auditor's 26 Oct audit of the live Sun long `h8HGfyShEHI`, the Venus long `VBaYRPp85Sw` and the 12–24 Oct Shorts (notes and frames on the box at `/workspace/audit26/f`). Where an older line differs, these win.
+
+**Long films**
+1. **Each beat gets its own plate.** A plate (the same image or clip, at any crop or push) is never repeated in another beat unless it's a deliberate callback, and a callback is written in the shot list as `callback: <time of the first use>`. The Sun film reused its grey-disk plate about 6 times and its sunspot inset 3 times.
+2. **The end hold is never the opening plate.** The slow end plate is its own picture. Sun and Venus both ended on their opening plate (SSIM 0.98).
+3. **Never burn SUBSCRIBE into the video.** No subscribe button, cue or card in the picture; end screens do that job. The one spoken `[SUBSCRIBE BEAT]` line stays. The 4-second subscribe cue graphic is retired (it sat in Sun at about 4:00 and Venus at about 3:30).
+4. **Check before review:** `python3 00_Brand/Channel-Setup/tools/plate_check.py long <broadcast.mp4> [--callback SEC ...]` must PASS. It FAILs on a plate seen again 20 s or more later (SSIM ≥ 0.90 on 1 fps samples, black and flat card frames skipped), an end hold matching the opening (SSIM ≥ 0.90), or SUBSCRIBE read by OCR (full frame plus the lower-right corner).
+
+**Shorts**
+5. **Captions run the whole way through,** from frame 0 to the last frame, under the end card too.
+6. **22–27 s.** Exceptions are only the named ones: the compilation, the J0216 test Shorts until 20 Nov, Test A opening Shorts until Test A's final readout, and the one 50–60 s length-test Short (*Packaging*).
+7. **The last ~4 s show the end card, burned in:** the linked long's exact live title and that long's YouTube id in house yellow (`#FFD600`), as in 026's `end_card` (`02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/_assemble_026_weekday_shorts_v01.py`). An ending that's only spoken fails. The card sits over the loop-back picture, the music bed runs through the seam, and nothing is spoken about it (no CTA, no "watch the full film").
+8. **Orbit is never the hero.** The planet, moon or star the title names is the subject of every plate. Orbit is a small figure caught in the danger: never big on screen in the hook (the audit caught Orbit large at 2.5 s), never filling the frame, never on the cover or the end card, and never at frame 0.
+9. **Check next to `gate_shorts_open.py`:** `python3 00_Brand/Channel-Setup/tools/plate_check.py short <mp4> --long-id <id> --long-title "<exact live title>" [--exempt <named exception>]`. It FAILs outside 22–27 s or when OCR can't find the title and the id in the last ~4 s. It WARNs when captions are missing from more than 20% of 1 s samples, when there's no house yellow in the last ~4 s, and when Orbit looks big in the first 5 s or appears in most of the Short (heuristic: check those by eye on the contact sheet).
+
+**What this doesn't change**
+10. **Already approved ships as is** (*Keeper score* rule 7, PR #287): anything Ben OK'd and scheduled before 26 Oct keeps its cut and slot. These rules apply to scripts, shot lists and cuts made from 26 Oct on.
+11. **Live videos aren't re-cut by this rule.** The live fails are re-cut candidates only, logged in `05_Analytics/live_fixes/AUDIT_2026-10-26_CANDIDATES.md`; any fix is its own job with Chief's OK, and the Never list still applies (no file swap on an existing id).
 
 ## Topic pick — neighbour pass (blocking · 1 Oct 2026)
 
@@ -499,6 +520,7 @@ Once the final OK is given (Chief's since 9 Oct), the upload goes up under the s
   - Ship a silent or near-silent file.
   - Put Orbit at frame 0 of a Short or on any thumbnail.
 - **Subscribe asks:** at the end of a film, or with a subscriber number in the film. One mid-film beat only, and the count goes in the pinned comment.
+- **Burned-in subscribe:** a SUBSCRIBE button, cue or card in the picture of any video. End screens do that job (*Audit rules*, 26 Oct 2026).
 - **Titles:** hashtags, series suffixes, hedged claims ("We may have…"), fear framing, or a title that copies an existing public video.
 - **Studio:** add a pinned comment to a Short. Add a `/go/` link anywhere: its redirect app is retired, and affiliate links are paused (`STUDIO_PLAYBOOK.md` §11). Press **Continue** on "Run a new test? Your current test will be deleted" when a Test & Compare is already set: Cancel and leave it (Cursor, 9 Oct).
 - **Generation:**

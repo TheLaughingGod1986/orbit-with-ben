@@ -160,7 +160,7 @@ Ben, 11 Oct 2026 22:17, sent Astrum's *What Is It Like on the Surface of a Black
 - **Crossfades** of 0.5–1.5 s between scenes, where the move suits (a change of place or time, an awe section). Hard cuts elsewhere; they're not required on every cut. A crossfade never stretches a shot past the 4 s hold or the 4–6 s picture change, and chapter cards keep their ~0.4 s xfade.
 - **Fine film grain** over dark space backgrounds, to stop banding (for example ffmpeg `noise=alls=4:allf=t` before the final encode). It must not trip polish_gate's noise check, and it never rescues a near-black or empty frame.
 - **Depth-of-field blur** for scale where it helps (soft foreground debris, a sharp far body). It's never on the subject the line names, and never heavy.
-- **Corner credit labels** ("CGI", "NASA", "NASA/JPL", "ESO", "Artist's impression") on CGI, agency or artist's-concept picture. They sit bottom-left in small type (about 2.5–3% of frame height), off the subject and clear of the subscribe cue. They're the one exception to the large-type label rule (credit lines stay small), and they don't count as a *Teach on screen* overlay. Shorts carry none.
+- **Corner credit labels** ("CGI", "NASA", "NASA/JPL", "ESO", "Artist's impression") on CGI, agency or artist's-concept picture. They sit bottom-left in small type (about 2.5–3% of frame height), off the subject and clear of the end-screen area. They're the one exception to the large-type label rule (credit lines stay small), and they don't count as a *Teach on screen* overlay. Shorts carry none.
 
 **Review gate.** Chief adds six items to the frame review and stills check, each scored PASS or FAIL in the pack's review note:
 1. **SFX:** `sfx_kit.py level` PASSes, and the rumbles, whooshes and ticks sit on shots that call for them.
@@ -239,6 +239,7 @@ Once the final OK is given (Chief's since 9 Oct), the upload goes up under the s
   - Ship a silent or near-silent file.
   - Put Orbit at frame 0 of a Short or on any thumbnail.
 - **Subscribe asks:** at the end of a film, or with a subscriber number in the film. One mid-film beat only, and the count goes in the pinned comment.
+- **Burned-in subscribe:** a SUBSCRIBE button, cue or card in the picture of any video. End screens do that job (*Audit rules*, 26 Oct 2026).
 - **Titles:** hashtags, series suffixes, hedged claims ("We may have…"), fear framing, or a title that copies an existing public video.
 - **Studio:** add a pinned comment to a Short. Add a `/go/` link anywhere: its redirect app is retired, and affiliate links are paused (`STUDIO_PLAYBOOK.md` §11). Press **Continue** on "Run a new test? Your current test will be deleted" when a Test & Compare is already set: Cancel and leave it (Cursor, 9 Oct).
 - **Generation:**

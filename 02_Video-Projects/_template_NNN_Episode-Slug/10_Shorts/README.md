@@ -9,7 +9,8 @@ Rules: `00_Brand/Channel-Setup/FAMILIAR_DANGER_STRATEGY.md`, `STUDIO_PLAYBOOK.md
 - **Planet/star named in spoken sentence 1 (`0–2.5 s`) on moving video (Chief, J0900/J0907, 24 Oct 2026):** Frame 0 shows the named subject in motion with the hook caption (never Orbit, never a pushed still). Spoken sentence 1 (`0–2.5 s`) must name the planet, moon or star directly — never open a lifted Short mid-paragraph on pronoun/anaphoric phrasing ("The rings look like…", "The mass is…").
 - **No `0.5 s` pauses or static zooms in `4–8 s` (Chief, J0900/J0907, 24 Oct 2026):** Trim the sentence-1 VO pause at `4–5 s` to `<0.25 s` and cut at `2.8–4.5 s` to a fresh moving plate (`≤5 s` max hold) — never a `0.5 s` pause into a static crop-zoom hold in `4–8 s`.
 - The promoted long’s exact listing title appears at 9–14 s; captions and music cover the full Short, and the last 4 s loop to the opening picture.
-- Gate every export with `gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD`; Related video and the description link point to the parent long (J0216 standalone test Shorts stay unlinked until 20 Nov).
+- **Audit rules (Orbit Auditor, Ben's rule, 26 Oct 2026):** captions run the whole way through, from frame 0 to the last frame. Runtime 22–27 s (named exceptions only). The last ~4 s are the end card, burned in: the linked long's exact live title and its YouTube id in house yellow (`#FFD600`), over the picture looping back to the opening plate; an ending that's only spoken fails. Orbit is never the hero: small, caught in the danger, never big on screen in the hook (the audit caught it large at 2.5 s), never at frame 0. Check: `python3 00_Brand/Channel-Setup/tools/plate_check.py short <mp4> --long-id <id> --long-title "<exact live title>"`. Anything Ben OK'd and scheduled before 26 Oct ships as is. See `.cursor/rules/orbit-build-shorts.mdc` → *Audit rules*.
+- Gate every export with `gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD` and `plate_check.py short <mp4> --long-id <id> --long-title "<title>"`; Related video and the description link point to the parent long (J0216 standalone test Shorts stay unlinked until 20 Nov).
 - One Short a day; social goes through Buffer at the YouTube go-public time.
 
 ## Approved Learnings checklist — Chief, J0871 / J0874 / J0900 / J0907 (23–24 Oct 2026)
@@ -23,6 +24,8 @@ Fill this in for each new Short brief. The numbers refer to the studio Learnings
 - [ ] **#7 · Seam (no 0.5 s pause in 4–8 s):** bridge the 4–5 s sentence boundary (`<0.25 s` VO breath, never a `0.5 s` pause) straight into a concrete number or mechanism on a fresh moving plate at `2.8–4.5 s`, with no Orbit reaction or meta-promise (such as “Stay and I’ll show you”). Bridge line and cut time: ___.
 - [ ] **#8 · 60% stayed-to-watch (Ben, 24 Oct 2026; rule file → *60% stayed-to-watch*):** frame-0 source and zoom (moving video; a still pushed ≤1.10 fails): ___; first word ≤0.15 s: ___; surprise word ≤1.5 s: ___; first cut ≤3.0 s: ___; no meta-promise, logo or intro (y/n): ___; last word → loop ≤1.5 s: ___; last line runs into line 1 (y/n): ___.
 - [ ] **#9 · 70% average viewed, aim 100%+ (Ben, 24 Oct 2026; rule file → *70% average viewed*):** runtime ___ s (standalone 22–24, lifted toward 23); longest plate hold ≤4 s: ___; payoff ≥0.70 × runtime: ___; last word → loop ≤1.5 s: ___; last line + line 1 read as one sentence: "___"; matched-cut loop to frame 0 (y/n): ___.
+
+- [ ] **#10 · Audit rules (26 Oct 2026):** runtime 22–27 s: ___ s; captions from frame 0 to the end (y/n): ___; end card from ___ s with the exact title "___" and yellow id `___`; Orbit small, never big in the hook (largest Orbit at ___ s): ___; `plate_check.py short` PASS (y/n): ___.
 
 **Tests only — record the comparison, do not apply as general rules:**
 
