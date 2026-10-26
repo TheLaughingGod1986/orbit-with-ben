@@ -1,0 +1,206 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v03.mp4",
+  "edge_floor": 0.0122,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s01",
+      "cut": 1,
+      "t": 4.08,
+      "source": "JPL-20210419-TECHf-0001.mp4",
+      "why": [
+        "low detail: luma std 17.51 < 18.0"
+      ]
+    },
+    {
+      "row": "s02",
+      "cut": 2,
+      "t": 7.23,
+      "source": "JPL-20210425-TECHf-0001.mp4",
+      "why": [
+        "low detail: luma std 17.81 < 18.0"
+      ]
+    },
+    {
+      "row": "s_loop",
+      "cut": 6,
+      "t": 18.71,
+      "source": "end_card_loop_PIA24644.gif",
+      "why": [
+        "low detail: edge density 0.0075 < film p5 0.0122"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s00",
+      "source": "PIA24644.gif",
+      "t": 1.25,
+      "std": 58.27,
+      "mean": 126.95,
+      "p95": 213.0,
+      "edge": 0.0409,
+      "hf": 15.86,
+      "lf": 50.88,
+      "std8": 52.99,
+      "edge8": 0.1693,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "JPL-20210419-TECHf-0001.mp4",
+      "t": 4.08,
+      "std": 17.51,
+      "mean": 159.49,
+      "p95": 174.0,
+      "edge": 0.0282,
+      "hf": 9.69,
+      "lf": 9.19,
+      "std8": 11.33,
+      "edge8": 0.0369,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.51 < 18.0"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "JPL-20210425-TECHf-0001.mp4",
+      "t": 7.23,
+      "std": 17.81,
+      "mean": 166.24,
+      "p95": 181.0,
+      "edge": 0.0232,
+      "hf": 8.83,
+      "lf": 11.74,
+      "std8": 13.05,
+      "edge8": 0.0331,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.81 < 18.0"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "JPL-20210419-TECHf-0001.mp4",
+      "t": 10.38,
+      "std": 26.58,
+      "mean": 159.26,
+      "p95": 175.0,
+      "edge": 0.0491,
+      "hf": 16.64,
+      "lf": 9.17,
+      "std8": 14.04,
+      "edge8": 0.0936,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s04",
+      "source": "JPL-20210425-TECHf-0001.mp4",
+      "t": 13.53,
+      "std": 25.79,
+      "mean": 166.46,
+      "p95": 204.0,
+      "edge": 0.0415,
+      "hf": 15.14,
+      "lf": 12.94,
+      "std8": 16.02,
+      "edge8": 0.0801,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s05",
+      "source": "JPL-20210419-TECHf-0001.mp4",
+      "t": 16.68,
+      "std": 18.52,
+      "mean": 159.18,
+      "p95": 175.0,
+      "edge": 0.0294,
+      "hf": 10.58,
+      "lf": 9.18,
+      "std8": 11.3,
+      "edge8": 0.04,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s_loop",
+      "source": "end_card_loop_PIA24644.gif",
+      "t": 18.71,
+      "std": 53.84,
+      "mean": 123.42,
+      "p95": 209.0,
+      "edge": 0.0075,
+      "hf": 3.12,
+      "lf": 53.15,
+      "std8": 53.44,
+      "edge8": 0.0764,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0075 < film p5 0.0122"
+      ]
+    }
+  ]
+}
