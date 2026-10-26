@@ -81967,13 +81967,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-26T03:11Z",
-      "eta": "2026-10-26T04:41Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "",
+      "result": "parked for Chief: HOS build-rule fix",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -81999,6 +81999,11 @@
           "at": "2026-10-26T03:26Z",
           "by": "cursor",
           "what": "step 5 of 5 done: Checker PASS. HOS main 9e23d71a. S5-S8 stay unbuilt. No render."
+        },
+        {
+          "at": "2026-10-26T03:26Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: HOS build-rule fix"
         }
       ],
       "kind": "assembly",
