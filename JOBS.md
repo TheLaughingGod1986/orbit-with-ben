@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0982 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0984 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0985 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0986 | any | claimed | codex-dashboard | 2026-10-26T19:13Z | for codex-dashboard · assembly · Studio board: truthful active jobs, remaining work, recent completions and blocker reasons (Ben 26 Oct) |  |
+| J0986 | any | blocked | codex-dashboard | – | for codex-dashboard · assembly · Studio board: truthful active jobs, remaining work, recent completions and blocker reasons (Ben 26 Oct) |  |
 
 Recently finished:
 
