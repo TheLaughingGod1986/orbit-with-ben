@@ -79075,10 +79075,10 @@
       "stage": "",
       "after": "",
       "eta_min": 600,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-26T06:03Z",
+      "eta": "2026-10-26T16:03Z",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
       "result": "",
@@ -79212,6 +79212,11 @@
           "at": "2026-10-26T04:38Z",
           "by": "cursor",
           "what": "released: mon16 HZGTovJu_TQ v02 gates PASS (sha 3b1e2a5f, 19.77s, can't 1.45s, star 0.48s, first cut 2.53s, four years 16.87s vs 70% at 13.84s, loop_diff 4.32, -15.1 LUFS). Commit b36431748. Master: iCloud OWB UAT/026_mon16_cant_see_nearest_star_v02 and NAS youtube-staging/026/mon16_cant_see_nearest_star_v02 (sha256 checked). v01 untouched. No upload. Gate warns only: duration 19.8s outside 22-27 (inside the 18-24 band), motion 9.2 with f0diff 2.35. SDO low-detail WARN at 0:07. No render running. Next Short: cwU_0WWeNZ4 wed18."
+        },
+        {
+          "at": "2026-10-26T06:03Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "video",
