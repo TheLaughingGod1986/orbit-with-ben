@@ -41,9 +41,11 @@ code and graphics start at Codex. Every `run` walks them:
   - Each run is logged with the worker and model that actually ran it: "ran: J0300 by cursor on claude-opus-5-5
     (lane 2 of 4)" here, and a line in ~/_desk/state/chief/runs.jsonl.
 
-`run` does nothing while Grok is Chief (Grok drives itself), outside CHIEF_HOURS (default: never), while
-~/_desk/state/chief-relay.pause exists, or while a previous run holds the lock. Otherwise it wakes the acting
-CLI Chief for ONE job (25-minute cap), then exits. Every change of Chief is posted to the studio thread once.
+`run` checks the Chief inbox every pass, ahead of ordinary jobs, round the clock. CLI Chiefs process up to
+CHIEF_CHAIN_MAX duties/jobs (25-minute cap each); app/cloud Chiefs receive a durable inbox and yield if a delivered
+duty makes no progress for CHIEF_DUTY_ACK_MIN (30 minutes) with no live claim. Per-job retries use CHIEF_REVIEW_MIN
+(10 minutes), never the Chief heartbeat. A pause file or an existing run lock still prevents overlapping runs.
+Every change of Chief is posted to the studio thread once.
 
 State (on the Mini, never in git): ~/_desk/state/chief/  (heartbeat/<agent>, down/<agent>.json, current.json).
 Mini heartbeat (Ben, 8 Oct): every `run` also pushes one small file, heartbeat.json {at, state, agent, note}, to the
@@ -57,6 +59,7 @@ OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default
 from __future__ import annotations
 
 import argparse
+import hashlib
 import datetime as dt
 import fcntl
 import json
@@ -392,20 +395,120 @@ def is_elected_chief(agent: str, at: dt.datetime) -> bool:
     return bool(agent and acting(at)[1] == agent)
 
 
+def chief_fingerprint(job: dict) -> str:
+    # Exclude relay escalation/heartbeats: those are not new work or a decision.
+    fields = {k: job.get(k) for k in ("status", "result", "body", "progress", "after", "awaits_ben")}
+    return hashlib.sha256(json.dumps(fields, sort_keys=True).encode()).hexdigest()
+
+
+def chief_order(job: dict) -> tuple:
+    def stamp(value, default=float("inf")):
+        try:
+            return parse(value).timestamp() if value else default
+        except (TypeError, ValueError):
+            return default
+    approval = job.get("approved_from") or {}
+    deadlines = [job.get("due"), approval.get("airs"), (job.get("awaits_was") or {}).get("due")]
+    deadline = min(stamp(v) for v in deadlines)
+    blocked = next((h.get("at") for h in reversed(job.get("history", []))
+                    if str(h.get("what", "")).startswith("blocked")), job.get("created_at"))
+    return (deadline, 0 if job.get("urgent") else 1, stamp(blocked), job.get("id", ""))
+
+
 def pending_chief_reviews(at: dt.datetime) -> list:
-    """Protected review handoffs, excluding explicit Ben, release-date and credit waits. Read only."""
+    """All actionable role work, not just reviews. Never release a hold here."""
     data = read_json(OWB / "jobs" / "queue.json") or {}
+    states = {j["id"]: j for j in data.get("jobs", [])}
     out = []
-    for j in data.get("jobs", []):
+    for j in states.values():
         reason = j.get("result") or ""
-        if j.get("status") != "blocked" or not re.search(r"parked for (?:the )?chief", reason, re.I):
+        role_job = j.get("kind") == "chief" or j.get("for") == "chief"
+        parked = j.get("status") == "blocked" and re.search(
+            r"(?:parked for (?:the )?chief|await(?:s|ing)? (?:the )?chief|needs? (?:the )?chief)", reason, re.I)
+        if not parked and not (role_job and j.get("status") == "open"):
             continue
         if j.get("needs") == "ben" or j.get("awaits_ben"):
             continue
+        # Explicit external holds remain held; a failed gate needing a decision is actionable.
         if re.search(r"wait(?:s|ing)? .*?(?:public|reset|renewal)|date gate|reopen (?:when|on|after)|test.*(?:running|ends?)", reason, re.I):
             continue
+        if role_job and j.get("status") == "open":
+            import jobs
+            if jobs.waiting_to_start(j, at):
+                continue
+            if j.get("after") and states.get(j["after"], {}).get("status") != "done":
+                continue
         out.append(j)
-    return sorted(out, key=lambda j: j.get("id", ""))
+    return sorted(out, key=chief_order)
+
+
+def due_chief_reviews(items: list, agent: str, at: dt.datetime) -> list:
+    attempts = (read_json(d("duties.json")) or {}).get("attempts", {})
+    out = []
+    for job in items:
+        previous = attempts.get(job["id"], {})
+        try:
+            recent = at - parse(previous["at"]) < dt.timedelta(minutes=int(os.environ.get("CHIEF_REVIEW_MIN", "10")))
+        except (KeyError, TypeError, ValueError):
+            recent = False
+        if recent and previous.get("agent") == agent and previous.get("fingerprint") == chief_fingerprint(job):
+            continue
+        out.append(job)
+    return out
+
+
+def record_chief_attempt(job: dict, agent: str, at: dt.datetime) -> None:
+    state = read_json(d("duties.json")) or {}
+    state.setdefault("attempts", {})[job["id"]] = {
+        "at": iso(at), "agent": agent, "fingerprint": chief_fingerprint(job)}
+    write_json(d("duties.json"), state)
+
+
+def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime) -> None:
+    """A durable inbox for app/cloud Chiefs too, with bounded repeated delivery."""
+    previous = read_json(d("inbox.json")) or {}
+    rows = [{"id": j["id"], "title": j.get("title", ""), "fingerprint": chief_fingerprint(j)} for j in items]
+    same = previous.get("agent") == leader and previous.get("jobs") == rows
+    since = previous.get("since") if same else iso(at)
+    old_waits = previous.get("waiting", {}) if previous.get("agent") == leader else {}
+    waiting = {row["id"]: {"fingerprint": row["fingerprint"],
+                "since": old_waits.get(row["id"], {}).get("since", iso(at))
+                if old_waits.get(row["id"], {}).get("fingerprint") == row["fingerprint"] else iso(at)}
+               for row in rows}
+    sent = previous.get("notified_at", "") if same else ""
+    if items and cloud_chief(leader):
+        try:
+            due = not sent or at - parse(sent) >= dt.timedelta(minutes=10)
+        except ValueError:
+            due = True
+        if due and notify("Chief duties for " + NAMES.get(leader, leader) + ": " +
+                          "; ".join(j["id"] + " " + j.get("title", "")[:120] for j in items) +
+                          ". Resolve or delegate these before ordinary work; record each decision on its job."):
+            sent = iso(at)
+    write_json(d("inbox.json"), {"at": iso(at), "agent": leader, "since": since,
+                                 "notified_at": sent, "jobs": rows, "waiting": waiting})
+
+
+def chief_delivery_overdue(agent: str | None, at: dt.datetime) -> bool:
+    """An app/cloud Chief that leaves delivered duties untouched yields to the next Chief."""
+    if not cloud_chief(agent):
+        return False
+    inbox = read_json(d("inbox.json")) or {}
+    if inbox.get("agent") != agent or not inbox.get("notified_at"):
+        return False
+    data = read_json(OWB / "jobs" / "queue.json") or {}
+    # Never preempt a live Chief claim. Normal credit/error failover still applies.
+    if any(j.get("status") == "claimed" and j.get("by") == agent
+           and (not j.get("eta") or parse(j["eta"]) > at) for j in data.get("jobs", [])):
+        return False
+    limit = dt.timedelta(minutes=int(os.environ.get("CHIEF_DUTY_ACK_MIN", "30")))
+    for item in inbox.get("waiting", {}).values():
+        try:
+            if at - parse(item["since"]) >= limit:
+                return True
+        except (KeyError, TypeError, ValueError):
+            pass
+    return False
 
 
 WORKER_AUTHORITY = """You are a WORKER, not the elected Chief. No final OK or PASS, no merge, no change to AGENTS.md
@@ -1124,6 +1227,7 @@ def run_locked(at: dt.datetime) -> int:
     # open (released to retry later) ends the chain so it isn't re-run in a tight loop.
     chain_max = int(os.environ.get("CHIEF_CHAIN_MAX", "12"))
     chained, last_ran = 0, None
+    reviewed = set()
     while True:
         # Re-read Claude's heartbeat each pass (at most every 5 min): a chain of worker jobs can hold this run for
         # hours, and on 15 Oct 2026 it kept reading the 04:04 beat until 06:03 after fresh beats at 05:49 and 05:51.
@@ -1149,10 +1253,16 @@ def run_locked(at: dt.datetime) -> int:
         rerouted = reroute_work(at)
         # A job addressed to one agent wakes that agent if it's up, ahead of the acting Chief: otherwise only the first
         # agent in the chain ever runs, and a second opinion from Codex would never happen.
-        chief_reviews = pending_chief_reviews(at) if leader in routing.MINI_WORKERS else []
-        chief_last = last_seen(leader) if leader else None
-        review_due = bool(chief_reviews and (not chief_last or at - chief_last >= dt.timedelta(
-            minutes=int(os.environ.get("CHIEF_REVIEW_MIN", "10")))))
+        chief_inbox = pending_chief_reviews(at)
+        publish_chief_inbox(chief_inbox, leader, at)
+        if chief_delivery_overdue(leader, at):
+            mark_down(leader, "Chief inbox delivered but not progressed within the acknowledgement window",
+                      at + dt.timedelta(minutes=30), at)
+            log(f"Chief duties: {leader} did not progress its inbox; electing the next available Chief")
+            continue
+        chief_reviews = [j for j in due_chief_reviews(chief_inbox, leader, at)
+                         if j["id"] not in reviewed] if leader in routing.MINI_WORKERS else []
+        review_due = bool(chief_reviews)
         addressed = False
         for a in (() if review_due else routing.MINI_WORKERS):
             if a in up and a != who and addressed_to(a):
@@ -1212,13 +1322,16 @@ def run_locked(at: dt.datetime) -> int:
         elif addressed:
             job = next_job(who)  # the addressed job comes first in jobs.order: run it on its own model
             model = routing.model_for(job, who) if job else ""
-        if chained and (job is None or (last_ran and job.get("id") == last_ran)):
+        if chained and not review_work and (job is None or (last_ran and job.get("id") == last_ran)):
             log(f"chain: stop after {chained} job(s): " + ("next job is the one just run (released to retry later)"
                                                          if job else "no next job identified"))
             return 0
         priority = ("CHIEF REVIEW PRIORITY: before taking an ordinary job, review " + reviews[0]["id"] + ": "
                     + str(reviews[0].get("title") or "") + ". Read its body, result and history plus the evidence. "
                     "Keep the original work held until the decision is recorded. Resolve or delegate the next step; "
+                    "record the ruling and concrete follow-up on the queue job, including a dependency or retry date "
+                    "for a real external wait. Do not just repeat parked-for-Chief or ask an absent Chief. "
+                    f"For an open Chief job, use jobs.py next --id {reviews[0]['id']} --agent {who} --can mini,gemini,any --git to claim that exact job. "
                     "do not reopen unrelated date, credit or Ben-approval holds. Do this one review, then stop. "
                     "Other reviews waiting: " + ", ".join(j["id"] for j in reviews[1:])) if review_work else ""
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
@@ -1231,7 +1344,10 @@ def run_locked(at: dt.datetime) -> int:
         code, tail = run_cli(who, prompt, cap, model)
         said = credit_phrase(code, tail)
         usage = bool(said)
-        log_run(at, job, who, model, code, usage)
+        log_run(at, reviews[0] if review_work else job, who, model, code, usage)
+        if review_work and code in (0, 124) and not usage:
+            record_chief_attempt(reviews[0], who, now())
+            reviewed.add(reviews[0]["id"])
         if usage:
             until = now() + dt.timedelta(hours=retry_h)
             on_auto = who == "cursor" and model not in routing.SEPARATE_POOLS and bool(cursor_default_out(now()))
@@ -1281,9 +1397,9 @@ def run_locked(at: dt.datetime) -> int:
             return 0
         chained += 1
         last_ran = job.get("id") if job else None
-        if chained >= chain_max or not job:
+        if chained >= chain_max or (not job and not review_work):
             return 0
-        log(f"chain: {last_ran} ended; starting the next ready job now ({chained}/{chain_max})")
+        log(f"chain: {reviews[0]['id'] if review_work else last_ran} ended; checking remaining Chief duties and ready jobs ({chained}/{chain_max})")
         at = at + (now() - started)  # the run's own clock moved on by the job's length
 
 
@@ -1308,6 +1424,8 @@ def cmd_status(at: dt.datetime) -> int:
     for a, up, why in rows:
         print(f"{'>' if a == who else ' '} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
     print(f"Chief: {NAMES.get(who, who) if who else 'nobody'}")
+    duties = pending_chief_reviews(at)
+    print("Chief duties (deadline, urgency, age): " + (", ".join(j["id"] for j in duties) or "none"))
     for worker in routing.MINI_WORKERS:
         if worker not in [a for a, _, _ in rows]:
             up, why = state_of(worker, at)

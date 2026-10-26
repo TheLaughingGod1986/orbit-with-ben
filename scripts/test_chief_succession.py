@@ -167,3 +167,81 @@ class ChiefSuccession(unittest.TestCase):
         self.assertEqual(next(m for m in result['models'] if m['id']=='codex')['status'],'green')
         self.assertEqual(result['chief']['name'],'Gemini')
         self.assertEqual(result['chiefChain'][0]['name'],'Codex')
+
+
+class AutomaticChiefDuties(ChiefSuccession):
+    def test_recent_worker_activity_cannot_postpone_chief_work(self):
+        cr.seen('codex', T0)
+        self.queue([{'id':'J1','status':'blocked','needs':'any','title':'Approved upload',
+                     'result':'parked for Chief: audio gate FAIL; decide correction'}])
+        calls=[]
+        with mock.patch.object(cr,'run_cli',side_effect=lambda a,p,c,m:(calls.append(p) or (0,'done'))), mock.patch.object(cr,'reroute_work',return_value=[]):
+            cr.cmd_run(T0)
+        self.assertIn('review J1',calls[0])
+        run=json.loads(cr.d('runs.jsonl').read_text().splitlines()[0])
+        self.assertEqual(run['job'],'J1')
+
+    def test_deadline_then_age_not_job_id_and_process_all_in_one_run(self):
+        self.queue([{'id':'J1','status':'blocked','needs':'any','title':'Later',
+                     'result':'parked for Chief: review','approved_from':{'airs':'2026-12-01T11:30Z'}},
+                    {'id':'J9','status':'blocked','needs':'any','title':'Soon',
+                     'result':'parked for Chief: review','approved_from':{'airs':'2026-10-08T11:30Z'}}])
+        self.assertEqual([j['id'] for j in cr.pending_chief_reviews(T0)],['J9','J1'])
+        calls=[]
+        with mock.patch.object(cr,'run_cli',side_effect=lambda a,p,c,m:(calls.append(p) or (0,'done'))), mock.patch.object(cr,'reroute_work',return_value=[]):
+            cr.cmd_run(T0)
+        self.assertEqual(len(calls),2)
+        self.assertIn('review J9',calls[0]);self.assertIn('review J1',calls[1])
+
+    def test_per_job_retry_changed_evidence_and_successor(self):
+        j={'id':'J1','status':'blocked','result':'parked for Chief: gate FAIL'}
+        cr.record_chief_attempt(j,'codex',T0)
+        self.assertEqual(cr.due_chief_reviews([j],'codex',T0+MIN),[])
+        self.assertEqual(cr.due_chief_reviews([j],'codex',T0+11*MIN),[j])
+        self.assertEqual(cr.due_chief_reviews([j],'gemini',T0+MIN),[j])
+        changed={**j,'result':'parked for Chief: corrected evidence ready'}
+        self.assertEqual(cr.due_chief_reviews([changed],'codex',T0+MIN),[changed])
+
+    def test_open_role_work_respects_dependencies_ben_and_targeted_claim(self):
+        rows=[{'id':'J1','status':'blocked','needs':'any','result':'input missing'},
+              {'id':'J2','status':'open','needs':'cloud','kind':'chief','after':'J1'},
+              {'id':'J3','status':'open','needs':'ben','kind':'chief'},
+              {'id':'J4','status':'open','needs':'cloud','kind':'chief','history':[]},
+              {'id':'J5','status':'open','needs':'any','for':'chief','history':[]}]
+        self.queue(rows)
+        self.assertEqual([j['id'] for j in cr.pending_chief_reviews(T0)],['J4','J5'])
+        data={'jobs':rows}
+        self.assertEqual(jobs.do_next(data,'codex',jobs.MINI_NEEDS,T0,job_id='J4')['id'],'J4')
+        self.assertIsNone(jobs.do_next(data,'codex',jobs.MINI_NEEDS,T0,job_id='J5'))
+        self.assertIsNone(jobs.do_next(data,'cursor',jobs.MINI_NEEDS,T0,job_id='J3'))
+        rows[3].update(status='done')
+        self.assertEqual(jobs.do_next(data,'codex',jobs.MINI_NEEDS,T0,job_id='J5')['id'],'J5')
+        rows[3].update(status='open',awaits_ben={'version':'v1'})
+        self.assertFalse(jobs.claimable(data,rows[3],jobs.MINI_NEEDS,T0,'codex'))
+        rows[3].pop('awaits_ben');rows[3]['after']='MISSING'
+        self.assertFalse(jobs.claimable(data,rows[3],jobs.MINI_NEEDS,T0,'codex'))
+
+    def test_cloud_delivery_retries_without_spam_and_detects_no_progress(self):
+        j={'id':'J1','status':'blocked','result':'parked for Chief: review'}
+        with mock.patch.object(cr,'notify',return_value=True) as send:
+            cr.publish_chief_inbox([j],'chief',T0)
+            cr.publish_chief_inbox([j],'chief',T0+MIN)
+            self.assertEqual(send.call_count,1)
+            cr.publish_chief_inbox([j],'chief',T0+11*MIN)
+            self.assertEqual(send.call_count,2)
+        self.assertTrue(cr.chief_delivery_overdue('chief',T0+31*MIN))
+        self.queue([{'id':'J2','status':'claimed','needs':'cloud','by':'chief','eta':cr.iso(T0+60*MIN)}])
+        self.assertFalse(cr.chief_delivery_overdue('chief',T0+31*MIN))
+        changed={**j,'result':'parked for Chief: new evidence'}
+        with mock.patch.object(cr,'notify',return_value=True):cr.publish_chief_inbox([changed],'chief',T0+32*MIN)
+        self.assertFalse(cr.chief_delivery_overdue('chief',T0+33*MIN))
+
+    def test_cloud_chief_with_ignored_inbox_yields_to_available_successor(self):
+        j={'id':'J1','status':'blocked','needs':'any','result':'parked for Chief: decision'}
+        self.queue([j]);cr.seen('chief',T0)
+        with mock.patch.object(cr,'notify',return_value=True):cr.publish_chief_inbox([j],'chief',T0-31*MIN)
+        calls=[]
+        with mock.patch.object(cr,'run_cli',side_effect=lambda a,p,c,m:(calls.append((a,p)) or (0,'done'))), mock.patch.object(cr,'reroute_work',return_value=[]):
+            cr.cmd_run(T0)
+        self.assertEqual(calls[0][0],'codex')
+        self.assertIn('review J1',calls[0][1])

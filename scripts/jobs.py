@@ -181,9 +181,11 @@ def film_named(title: str) -> bool:
 
 
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
-    if job.get("kind") == "chief":
-        if job["needs"] == "ben" or not chief_relay.is_elected_chief(agent, at):
+    if job.get("kind") == "chief" or job.get("for") == "chief":
+        if job["needs"] == "ben" or job.get("awaits_ben") or not chief_relay.is_elected_chief(agent, at):
             return False  # Chief is a live role; a generic worker never inherits a protected call.
+        if job.get("after") and not any(j.get("id") == job["after"] and j.get("status") == "done" for j in data["jobs"]):
+            return False
     else:
         if job["needs"] not in can:
             return False
@@ -274,14 +276,14 @@ def order(job: dict, focus=()) -> tuple:
             0 if (job.get("eta_min") or DEFAULT_ETA) <= QUICK_MIN else 1, job["id"])
 
 
-def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None) -> dict | None:
+def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None, job_id: str = "") -> dict | None:
     """Claim the next job this agent can do (open, or stalled past its ETA): quick jobs first, then oldest first.
     None when nothing is waiting."""
     for job in sorted(data["jobs"], key=lambda j: j["id"]):
         if job.get("by") == agent and job["status"] == "claimed":
-            return job  # finish what you hold before taking more
+            return job if not job_id or job["id"] == job_id else None  # finish the current claim first
     for job in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", order(j, data.get("focus") or ()))):
-        if claimable(data, job, can, at, agent):
+        if (not job_id or job["id"] == job_id) and claimable(data, job, can, at, agent):
             took = stalled(job, at)
             prev = job.get("by", "")
             job.update(status="claimed", by=agent, since=studio.iso(at),
@@ -689,6 +691,7 @@ def main(argv=None) -> int:
     n.add_argument("--agent", required=True)
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
     n.add_argument("--eta", type=int, default=None)
+    n.add_argument("--id", default="", help="claim only this actionable job; preserve role, hold and existing-claim checks")
     n.add_argument("--peek", action="store_true", help="show what you would get, claim nothing")
     for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute", "handback"):
         p = sub.add_parser(name)
@@ -798,9 +801,9 @@ def main(argv=None) -> int:
             if args.cmd == "next":
                 can = {c.strip() for c in args.can.split(",") if c.strip()}
                 if args.peek:
-                    job = next((j for j in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", order(j, data.get("focus") or ()))) if claimable(data, j, can, at, args.agent)), None)
+                    job = next((j for j in sorted(data["jobs"], key=lambda j: (j.get("for") != agent, j.get("kind") != "chief", order(j, data.get("focus") or ()))) if (not args.id or j["id"] == args.id) and claimable(data, j, can, at, args.agent)), None)
                     return job, None, touched
-                job = do_next(data, args.agent, can, at, args.eta)
+                job = do_next(data, args.agent, can, at, args.eta, args.id)
                 if job and on_board(job) and job["history"][-1]["what"].startswith("claimed"):
                     err = board_claim(job, args.agent, at)
                     if err:
