@@ -1,5 +1,5 @@
 {
-  "next_id": 996,
+  "next_id": 997,
   "jobs": [
     {
       "id": "J0001",
@@ -85364,6 +85364,33 @@
       "stage": "upload",
       "after": "J0994",
       "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-26T22:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-26T22:08Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "kind": "studio"
+    },
+    {
+      "id": "J0996",
+      "title": "OWB 027: matching Earth long description after J0317 (J0980 ruling)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex ruling, J0980 review (26 Oct 2026). GBP0. This is ONLY the matching-long description repair for OVLv9dxTcpE (What If Earth Stopped Spinning?). Depends on J0317, which remains held until 027 long 6bbbvfCx6zY is public on 22 Nov 2026 at 18:00 London. Earliest recheck 22 Nov 18:05 London; target before 23 Nov 11:30 London. No early execution or change to that hold.\nJ0980's proposed Venus description prepend is NOT authorised. Preserve the existing J0975 temporary Related=VBaYRPp85Sw exception and unchanged description until the matching Earth long is public. Once J0317 has completed, verify 6bbbvfCx6zY is Public on OWB and OVLv9dxTcpE Related points to it. Then prepend exactly the long's live listing title followed by https://www.youtube.com/watch?v=6bbbvfCx6zY and a blank line to the current Short description. Fetch the live long title; do not infer its exact wording from a folder. Preserve every existing description byte after that prefix, including sources/credits. If already correct, verify only; no duplicate prefix. Save before/after descriptions and API/Studio readback, sync the Short's local package description/manifest and report on thread.\nNo retitle, privacy/schedule change, media change, upload, Test & Compare change, pinned comment or spend. Do not touch old dM1OgGPAYvw or standalone test S1. Claim stage before writes; verify Orbit account. If parent not public, keep dependency held and record next retry 23 Nov 09:00 London, before the 11:30 Short; do not alter its schedule. J0317 owns Related on both Earth Shorts; this job adds only the missing description on OVLv9dxTcpE.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J0317",
+      "eta_min": 20,
       "status": "open",
       "by": "",
       "since": "",
