@@ -80943,10 +80943,10 @@
       "stage": "",
       "after": "",
       "eta_min": 360,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-26T03:02Z",
-      "eta": "2026-10-26T09:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T16:50Z",
       "result": "",
@@ -80990,6 +80990,11 @@
           "at": "2026-10-26T03:10Z",
           "by": "cursor",
           "what": "step 2 of 6 done: smooth rock render running: tmux j0954-rock, frames in /private/tmp/j0954/rock_v11b"
+        },
+        {
+          "at": "2026-10-26T03:10Z",
+          "by": "cursor",
+          "what": "released: Smooth rock render still running. tmux j0954-rock. Log ~/_desk/logs/j0954-rock.log. Done file ~/_desk/logs/j0954-rock.done (missing = still running, do not start a second render). Frames /private/tmp/j0954/rock_v11b. Sawtooth outline removed (commit f8355b745); assembly ROCK_DIR is rock_v11b. Next: when .done is 0, run _assemble_apophis_short_v11.py, then gates, copy master+_PHONE+sheet to OWB UAT and NAS, and park for Chief: BbsyFrV8kCY v11; Ben to OK swap. GBP0. No upload."
         }
       ],
       "kind": "video",
