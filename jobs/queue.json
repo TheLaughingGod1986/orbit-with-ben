@@ -81546,6 +81546,11 @@
           "at": "2026-10-26T09:45Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: v07 sha 0919db03 matches Ben's OK (6411201182), but gate_shorts_open now FAILs true peak -1.4 dBTP above -1.6 (c61, after the PASS). Upload path has no override. Waive the 0.2 dB for this already-OK'd swap, or OK a limiter-only re-encode. oyRcrFTYyDY stays Private, publishAt 2026-10-27T11:30:00Z. Nothing uploaded."
+        },
+        {
+          "at": "2026-10-26T12:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "studio",
@@ -81580,7 +81585,8 @@
         "at": "2026-10-26T09:45Z",
         "by": "cursor",
         "note": "sha 0919db03 matches. oyRcrFTYyDY private, publishAt 2026-10-27T11:30:00Z. Gate FAIL true peak -1.4 dBTP."
-      }
+      },
+      "escalated_at": "2026-10-26T12:15Z"
     },
     {
       "id": "J0957",
@@ -81905,6 +81911,11 @@
           "at": "2026-10-26T10:04Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: gate_shorts_open now fails the 3 Ben-OK'd 029 v03 masters under c61 (true peak -1.5 dBTP > -1.6 on all 3; wed09 also -15.0 LUFS and 44% opening bg match vs newly scheduled f17XCtUmN-g 2026-12-16). Need Chief call: audio/frame-0 v04 pass vs gate allowance"
+        },
+        {
+          "at": "2026-10-26T12:15Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "studio",
@@ -81941,7 +81952,8 @@
         "at": "2026-10-26T10:04Z",
         "by": "gemini",
         "note": "Verified 3 v03 master SHA256s + free slots in UPLOADS.json + committed 3 PACKAGE_MANIFEST.json files; gate_shorts_open f"
-      }
+      },
+      "escalated_at": "2026-10-26T12:15Z"
     },
     {
       "id": "J0962",
