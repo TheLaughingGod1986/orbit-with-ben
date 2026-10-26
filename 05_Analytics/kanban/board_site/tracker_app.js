@@ -247,6 +247,12 @@
 
   function cardHtml(v) {
     const flagged = (v.flags || []).length;
+    const activeJob = cardWork(v).live.find(j => jobState(j) === "running");
+    const chiefReview = board?.models?.chiefWork?.active;
+    const reviewJob = chiefReview && tsOf(chiefReview.expiresAt) > Date.now()
+      ? (board?.owb?.jobs || []).find(j => j.id === chiefReview.job && matchesVideo(j, v)) : null;
+    const active = activeJob || reviewJob;
+    const activeLabel = active ? `${activeJob ? "Working" : "Reviewing"} · ${active.id}` : "";
     const chClass = v.channel === "HOS" ? "hos" : "orbit";
     const chLabel = v.channel === "HOS" ? "HOS" : "Orbit";
     const notes = (v.notes || []).map(n =>
@@ -265,6 +271,7 @@
       : "";
     return `<article class="card${flagged ? " flagged" : ""}" data-key="${esc(v.key)}">
       <div class="top">
+        ${active ? `<span class="active-task" title="${esc(taskOf(active))}"><span class="live-dot" aria-hidden="true"></span>${esc(activeLabel)}</span>` : ""}
         <span class="badge ${chClass}">${chLabel}</span>
         <span class="badge type">${esc(v.type === "short" ? "Short" : "Long")}</span>
         ${v.version ? `<span class="badge ver">${esc(v.version)}</span>` : ""}
@@ -272,7 +279,7 @@
       </div>
       <h3 class="title"><span class="num">${esc(v.number)}</span>${esc(v.title)}</h3>
       ${v.airText ? `<p class="meta">${v.lane === "done" ? esc(v.airText) : "Airs " + esc(v.airText)}</p>` : ""}
-      <p class="line">${esc(cardHeadline(v))}</p>
+      <p class="line">${esc(reviewJob && !activeJob ? `Chief reviewing ${reviewJob.id}: ${taskOf(reviewJob)}` : cardHeadline(v))}</p>
       ${cardWorkHtml(v)}
       ${v.ask && v.ask.dueText && v.lane === "ready" && v.readyFor === "Ben" ? `<p class="meta"><b>OK by ${esc(v.ask.dueText)} London</b> · ${esc(v.ask.job)}</p>` : ""}
       <p class="meta">Waiting on: ${esc(cardWaiting(v))}</p>
@@ -437,9 +444,9 @@
       const tail = pr.over ? "running over" : `~${dur(pr.left)} left`;
       // Colour moves with progress (Ben, 25 Oct 00:03): red-orange < 34, amber 34-66, green > 66; running over is purple.
       const band = pr.over ? "over" : pr.pct < 34 ? "low" : pr.pct <= 66 ? "mid" : "high";
-      bar = pr.pct === null ? "" : `<div class="bar ${band}" role="progressbar" aria-label="Confirmed job steps" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
-      note = `<b style="color:var(--ink)">${pr.pct === null ? "Progress not reported" : `${pr.pct}% confirmed`} · ${tail} (estimate)</b> · ${[step, since, `usually ~${dur(pr.total)}`].filter(Boolean).join(" · ")}`;
-      if (p.note) note += `<br>Latest update${p.at ? ` at ${hm(tsOf(p.at))}` : ""}: ${esc(String(p.note).slice(0, 240))}`;
+      bar = pr.pct === null ? `<div class="bar indeterminate" role="progressbar" aria-label="Job in progress; completion not yet reported"><i></i></div>` : `<div class="bar ${band}" role="progressbar" aria-label="Confirmed job steps" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
+      note = pr.pct === null ? "In progress · awaiting a step update" : `${pr.pct}% · ${step}${!isNaN(pr.start) ? ` · ${dur(Date.now() - pr.start)}` : ""}`;
+      if (p.note) note += `<details class="job-detail"><summary>Latest update${p.at ? ` · ${hm(tsOf(p.at))}` : ""}</summary>${esc(String(p.note).slice(0, 240))}</details>`;
     } else {
       note = j.urgent ? "Urgent — goes first" : (j.after ? `after ${esc(j.after)}` : "");
     }
@@ -473,9 +480,9 @@
       const chief = ch.name ? `Chief: <b>${esc(ch.name)}${ch.acting ? " (acting)" : ""}</b>` : `<b style="color:var(--flag)">No Chief</b>`;
       const why = (M.models || []).filter(m => m.status !== "green").map(m =>
         `<li><b>${esc(m.name)}</b>: ${esc(String(m.why).slice(0, 140))}${m.until ? ` (back ${esc(new Date(m.until).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/London" }))})` : ""}</li>`).join("");
-      models = `<div class="row"><h2>Models</h2><div class="models">${chips}</div>
+      models = `<details class="services"><summary>${chief} <span>Agents & services</span></summary><div class="models">${chips}</div>
         <div class="mmeta">${chief} · ${stale ? '<b style="color:var(--ready)">stale</b> — ' : ""}checked ${isNaN(chk) ? "—" : hm(chk) + " London"}</div>
-        ${why ? `<details class="mmeta"><summary>Why</summary><ul style="margin:4px 0 0;padding-left:18px">${why}</ul></details>` : ""}</div>`;
+        ${why ? `<details class="mmeta"><summary>Why</summary><ul style="margin:4px 0 0;padding-left:18px">${why}</ul></details>` : ""}</details>`;
     }
     let jobsHtml = "";
     if (owb) {
@@ -484,16 +491,15 @@
       const next = nextJobs(owb);
       const chiefWork = M?.chiefWork || {}, review = chiefWork.active;
       const reviewLive = review && tsOf(review.expiresAt) > Date.now();
-      const reviewHtml = reviewLive ? `<div class="job now"><b>${esc(review.job)} · Chief review</b>
-        <p>${esc(review.title)}</p><p class="mmeta">${esc(agentName(review.agent))} reviewing · started ${esc(hm(tsOf(review.startedAt)))} London. Production remains held until the decision is recorded.</p></div>` : "";
+      const reviewHtml = reviewLive ? jobHtml({id:review.job,title:review.title,by:review.agent,status:"claimed",claimedAt:review.startedAt}, "now") : "";
       const chiefNext = (chiefWork.next || []).filter(j => !reviewLive || j.id !== review.job);
-      const chiefNextHtml = chiefNext.slice(0, 1).map(j => `<div class="job"><b>${esc(j.id)} · Next Chief task</b><p>${esc(j.title)}</p><p class="mmeta">Awaiting ${esc(M?.chief?.name || "the elected Chief")}</p></div>`).join("");
+      const chiefNextHtml = chiefNext.slice(0, 1).map(j => jobHtml({id:j.id,title:j.title,by:M?.chief?.agent,status:"open"}, "next")).join("");
       jobsHtml = `<div class="row jobs">
         <div class="row"><h2>Now working</h2>${now.length ? jobHtml(now[0], "now") : reviewLive ? reviewHtml : '<p class="mmeta">No job is currently claimed. See queued work and waiting reasons below.</p>'}</div>
         <div class="row"><h2>Next</h2><div class="nextlist">${chiefNext.length ? chiefNextHtml : next.length ? jobHtml(next[0], "next") : '<p class="mmeta">Nothing else queued.</p>'}</div></div>
       </div>`;
     }
-    el.innerHTML = models + jobsHtml;
+    el.innerHTML = jobsHtml + models;
   }
 
   function render() {

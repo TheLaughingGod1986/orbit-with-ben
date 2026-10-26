@@ -186,6 +186,25 @@ footer a { color: inherit; }
   .board { display: grid; grid-template-columns: repeat(6, 1fr); overflow: visible; }
   .lane { flex: none; max-height: calc(100vh - 140px); min-width: 0; }
 }
+/* Compact activity header; expand services and detailed updates only when needed. */
+.strip .row.jobs { gap: 12px; }
+.strip .job { background: transparent; border: 0; padding: 0; gap: 7px; }
+.strip .job .jfilm { display: none; }
+.strip .job .jtask { font-size: .9rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.strip .bar { height: 6px; }
+.strip .jnote { font-size: .75rem; }
+.services { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 10px; font-size: .75rem; color: var(--muted); }
+.services > summary { cursor: pointer; }
+.services > summary span { margin-left: 8px; }
+.services .models { margin-top: 10px; }
+.job-detail { margin-top: 5px; line-height: 1.4; }
+.job-detail summary { cursor: pointer; color: var(--muted); }
+.live-dot { display: inline-block; width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--ok); animation: live-pulse 1.8s ease-in-out infinite; }
+.active-task { display: inline-flex; align-items: center; gap: 6px; color: var(--ok); font-size: .72rem; width: 100%; }
+.bar.indeterminate > i { width: 28%; animation: progress-sweep 1.8s ease-in-out infinite; }
+@keyframes live-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(62,207,142,.3); opacity: 1; } 50% { box-shadow: 0 0 0 5px rgba(62,207,142,0); opacity: .55; } }
+@keyframes progress-sweep { 0% { transform: translateX(-100%); } 100% { transform: translateX(460%); } }
+@media (prefers-reduced-motion: reduce) { .live-dot, .bar.indeterminate > i { animation: none; } }
 </style>
 </head>
 <body>
