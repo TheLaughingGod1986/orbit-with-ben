@@ -461,24 +461,18 @@ def fit_mix(vo_path: Path, bed_path: Path, sfx_path: Path, total: float, out_wav
          "-i", str(sfx_path), "-filter_complex",
          "[0:a][1:a][2:a]amix=inputs=3:normalize=0,loudnorm=I=-14.0:TP=-2.2:LRA=11[o]",
          "-map", "[o]", "-ar", str(SR), "-t", f"{total:.3f}", str(raw_mix)])
-    gain_db = 0.0
-    lim_db = -2.1
-    for _ in range(8):
-        lin_lim = 10 ** (lim_db / 20.0)
+    lim_lin = 10 ** (-2.0 / 20.0)
+    for gain_db in (0.6, 0.8, 1.0, 1.2, 1.4, 1.5, 1.6, 1.8):
         run(["ffmpeg", "-y", "-v", "error", "-i", str(raw_mix),
-             "-af", f"volume={gain_db:.2f}dB,alimiter=limit={lin_lim:.6f}:level=disabled:attack=5:release=50:latency=1,aresample={SR}",
+             "-af", f"volume={gain_db:.2f}dB,aresample=192000,alimiter=limit={lim_lin:.6f}:level=disabled:attack=1:release=50:latency=1,aresample={SR}",
              "-ar", str(SR), "-t", f"{total:.3f}", str(out_wav)])
         probe_aac = WORK / "mix_probe.m4a"
         run(["ffmpeg", "-y", "-v", "error", "-i", str(out_wav),
              "-c:a", "aac", "-b:a", "192k", "-ar", str(SR), str(probe_aac)])
         i_val, tp_val = ebur128_stats(probe_aac)
-        print(f"fit_mix probe: gain={gain_db:.2f}dB lim={lim_db:.2f}dB -> I={i_val:.2f} LUFS, TP={tp_val:.2f} dBTP", flush=True)
-        if -14.5 <= i_val <= -13.5 and tp_val <= -1.6:
+        print(f"fit_mix probe: gain={gain_db:.2f}dB -> I={i_val:.2f} LUFS, TP={tp_val:.2f} dBTP", flush=True)
+        if -14.2 <= i_val <= -13.8 and tp_val <= -1.6:
             return i_val, tp_val
-        if tp_val > -1.6:
-            lim_db -= (tp_val - (-1.75))
-        if i_val < -14.5 or i_val > -13.5:
-            gain_db += (-14.0 - i_val) * 0.85
     raise SystemExit(f"could not converge mix to -14.0±0.5 LUFS & TP<=-1.6 dBTP (got {i_val:.2f} LUFS, {tp_val:.2f} dBTP)")
 
 
