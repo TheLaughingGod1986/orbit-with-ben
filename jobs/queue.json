@@ -84158,13 +84158,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-26T15:27Z",
-      "eta": "2026-10-26T16:12Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T15:26Z",
-      "result": "",
+      "result": "14 OWB + 4 HOS longs (+ 71 OWB + 19 HOS Shorts = 90 Shorts) in 075045b8c; CTR hits vs 4%: OWB 2/14 (-jmMROGoZCM 5.2%, h8HGfyShEHI 4.1%), HOS 1/4 (_C92tIJCk8A 7.1%; AL_-qlWko_g 3.2% on 1,070 imp)",
       "history": [
         {
           "at": "2026-10-26T15:26Z",
@@ -84195,6 +84195,11 @@
           "at": "2026-10-26T15:32Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed 075045b8c to main (14 OWB + 4 HOS longs, 90 Shorts)"
+        },
+        {
+          "at": "2026-10-26T15:32Z",
+          "by": "gemini",
+          "what": "done: 14 OWB + 4 HOS longs (+ 71 OWB + 19 HOS Shorts = 90 Shorts) in 075045b8c; CTR hits vs 4%: OWB 2/14 (-jmMROGoZCM 5.2%, h8HGfyShEHI 4.1%), HOS 1/4 (_C92tIJCk8A 7.1%; AL_-qlWko_g 3.2% on 1,070 imp)"
         }
       ],
       "kind": "studio",
@@ -84206,7 +84211,8 @@
         "at": "2026-10-26T15:32Z",
         "by": "gemini",
         "note": "Committed 075045b8c to main (14 OWB + 4 HOS longs, 90 Shorts)"
-      }
+      },
+      "done_ref": "075045b8c"
     }
   ],
   "focus": [],
