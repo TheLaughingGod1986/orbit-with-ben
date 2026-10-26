@@ -84281,9 +84281,9 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T14:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T13:20Z",
@@ -84333,6 +84333,11 @@
           "at": "2026-10-26T17:20Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T22:09Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Acting-Chief ruling already recorded at 9efc342c8 via J0994; taking original audit only to record resolved review and delegated follow-ups, not rerun listing work."
         }
       ],
       "kind": "listing",
@@ -84344,8 +84349,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "OWB:020",
         "OWB:021",
