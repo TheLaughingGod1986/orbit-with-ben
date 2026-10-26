@@ -84409,9 +84409,9 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T14:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T13:21Z",
@@ -84461,6 +84461,11 @@
           "at": "2026-10-26T17:20Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T22:14Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Acting-Chief ruling recorded HOS #180 6428572814 while original held; resume solely to record decision and delegated follow-ups, not to rerun audit."
         }
       ],
       "kind": "listing",
@@ -84472,8 +84477,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:001",
         "HOS:002",
