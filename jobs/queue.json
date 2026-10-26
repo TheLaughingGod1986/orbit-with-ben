@@ -84205,7 +84205,7 @@
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J1000",
       "eta_min": 120,
       "status": "blocked",
       "by": "codex",
@@ -84294,6 +84294,11 @@
           "at": "2026-10-26T22:23Z",
           "by": "codex",
           "what": "blocked: CHANGES REQUIRED (codex acting Chief, 2cbadfe1a): v01 first VO line is a statement, not title question; not Test A. Opening subject too small. Held pending J1000 existing-VO EDL feasibility, then Chief plan decision and separately assigned assembly. No spend/upload approval; Dec 18 provisional. Review 4/4 is not film approval."
+        },
+        {
+          "at": "2026-10-26T22:23Z",
+          "by": "codex",
+          "what": "Chief review dependency: J1000; v01 remains held; no external wait"
         }
       ],
       "kind": "assembly",
@@ -85679,9 +85684,17 @@
           "at": "2026-10-26T22:22Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-26T22:23Z",
+          "by": "codex",
+          "what": "Linked to OWB:029; feasibility only, no approved film stage"
         }
       ],
-      "kind": "review"
+      "kind": "review",
+      "taskKeys": [
+        "OWB:029"
+      ]
     }
   ],
   "focus": [],
