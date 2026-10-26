@@ -82508,13 +82508,37 @@
           "at": "2026-10-26T08:08Z",
           "by": "chief",
           "what": "reopened: Ben OK'd the gold foil v03 swap via Studio Kanban button, Mon 26 Oct 08:08 London (HOS #180 6411226467). Go: steps 1-4 as written; Private publishAt 2026-11-01T11:30:00Z; never Public, no Replace, no delete. GBP0."
+        },
+        {
+          "at": "2026-10-26T08:08Z",
+          "by": "chief",
+          "what": "no longer waits on Ben: OK'd, delivered by J0970"
+        },
+        {
+          "at": "2026-10-26T08:08Z",
+          "by": "chief",
+          "what": "approved by Ben: swap the HOS Short \"Why Gold Foil Bounced Rutherford's Particles Back\" (JyRjM-9Yc8g, airs Sun 1 Nov 11:30) to re-cut v03 v03"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:004"
       ],
-      "awaits_ben": {
+      "urgent": 3,
+      "approved_from": {
+        "what": "swap the HOS Short \"Why Gold Foil Bounced Rutherford's Particles Back\" (JyRjM-9Yc8g, airs Sun 1 Nov 11:30) to re-cut v03",
+        "file": "HOS UAT/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v03_PHONE.mp4",
+        "version": "v03",
+        "airs": "2026-11-01T11:30Z",
+        "title": "Gold foil Short re-cut v03 (swap)",
+        "number": "004",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0970",
+        "okAt": "2026-10-26T08:08Z",
+        "okRef": "6411226467"
+      },
+      "awaits_was": {
         "what": "swap the HOS Short \"Why Gold Foil Bounced Rutherford's Particles Back\" (JyRjM-9Yc8g, airs Sun 1 Nov 11:30) to re-cut v03",
         "file": "HOS UAT/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v03_PHONE.mp4",
         "version": "v03",
@@ -82524,8 +82548,7 @@
         "title": "Gold foil Short re-cut v03 (swap)",
         "number": "004",
         "type": "short"
-      },
-      "urgent": 3
+      }
     },
     {
       "id": "J0971",
