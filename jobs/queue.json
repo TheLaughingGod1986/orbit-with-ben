@@ -82716,13 +82716,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T13:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: HOS build-rule fix v2",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -82808,6 +82808,11 @@
           "at": "2026-10-26T17:20Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-26T19:19Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief FIX, HOS desk 6425168160 (claim 6425142957): c91a3633 checker PASS insufficient. Correct 006 Short_B 21.60s v03 alignment vs locked 23.20s v03b; resolve/probe actual 007-010 clips rather than treating board JSON as existence; enforce S01 completed hook (008 C currently cuts after tall at 2.40s, hook ends 4.90s). Add negative checks for these. Preserve denominator 8 and HOS:006-010 links. Plans/checker only, GBP0, no render/generation/VO word changes. Keep 006 A 20.92s unresolved, S5/S6/S8 unbuilt, S7 planned. Full ruling: https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6425168160"
         }
       ],
       "kind": "assembly",
@@ -82827,13 +82832,6 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "progress": {
-        "step": 8,
-        "of": 8,
-        "at": "2026-10-26T14:29Z",
-        "by": "gemini",
-        "note": "Committed and pushed c91a3633 to HOS origin/main; hos_build_rule_v02.py --check PASS and check_all.sh PASS"
-      },
       "escalated_at": "2026-10-26T17:20Z"
     },
     {
