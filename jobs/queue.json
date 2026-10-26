@@ -81531,22 +81531,22 @@
     },
     {
       "id": "J0965",
-      "title": "HOS 60% re-cut batch HB (local only): JyRjM-9Yc8g (Sun 1 Nov), Pp5LmjsduI4 (3 Nov), PlihWC5uA2E (5 Nov), mTY67qet7cM (8 Nov) - each parked by 20:00 London the day before it airs",
+      "title": "HOS 60% re-cut batch HB c51 FIX (local only): gold foil v03 by Sat 31 Oct 20:00, four elements v03 by Mon 2 Nov 20:00, valves v03 by Wed 4 Nov 20:00, tied arm v05 by Sat 7 Nov 20:00 (level + person cards)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief (Grok) 25 Oct 23:25 London. J0917 batch HB (never queued before; HA was J0933 + J0934). Audit: HOS 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md fixes #6-#9.\n- JyRjM-9Yc8g airs Sun 1 Nov 11:30: park it first, by Sat 31 Oct 20:00 London; bring it in at 22-25 s.\n- Pp5LmjsduI4 (Tue 3 Nov), PlihWC5uA2E (Thu 5 Nov: 'Inside your veins are tiny one-way doors - valves' only if those exact words are on disk, else open on 'Along the swollen veins...' with the pause trimmed), mTY67qet7cM (Sun 8 Nov).\nSame rules for every HOS re-cut (Chief ruling OWB #264 6389730716 / HOS #180 6389732009): local v02 next to v01, v01 untouched. GBP0: VO trims, reorders and splices from existing audio only (only words already on disk), no new TTS, Veo, Flow, Vertex or paid API. Frame 0 moving and full-bleed at 30% black or less (no zoom/pan on a still), subject named in 0-1.5 s, first word by 0.15 s, first cut by 3.0 s, later plates 4.0 s max. Drop 'watch the full film' overlays, spoken CTAs and agenda questions; no video ID or code anywhere on screen (Ben 25 Oct). Last word to a matched loop back to frame 0 in 1.5 s or less; no answer-and-done line before 70% of runtime. Write the six brief fields into each v02 meta. Gates: gate_shorts_open check --air-date (incl. the J0918 ship gate, now merged), picture_qa, polish_gate, music_gate, sfx level, all PASS. _PHONE copies to HOS UAT + NAS, sha256 checked. Commit meta, gate text and frame sheets only. No upload, no Studio change. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd the swap by 10:30 on its air day, v01 airs as scheduled; don't slip the slot.\nPark each as it's ready: jobs.py block <id> --reason \"parked for Chief: <ids> v02 PASS; Ben to OK swap\" --git (release and continue for the rest). Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
-      "ref": "",
+      "body": "Chief (Grok) 26 Oct 00:25 London, ruling c51 on J0965 (HOS #180 6405428090) (HOS batch HB): all four FIX. Build one new local version of each, next to the current one, and leave JyRjM v02, Pp5L v02, Plih v02 and mTY v04 (and every v01/v03) untouched. Keep the VO words and timing, frame 0, the plates, the cuts and the loop span exactly as they are. The only changes are the audio master and the code-graphic cards below. GBP0: cards are code graphics in the FABRICIUS-card style (name in gold caps, place and date on a second line, animated in, clear of the hook and the caption row). No new TTS, Veo, Flow, Vertex or paid API.\n\nLevel target for all four, measured on the final AAC master with ffmpeg ebur128=peak=true (not the wav): -14.0 +/-0.5 LUFS integrated, true peak <= -1.5 dBTP. Use a gain plus true-peak limiter on the existing mix.\n\n1. JyRjM-9Yc8g gold foil -> v03 (park by Sat 31 Oct 20:00 London). Add ERNEST RUTHERFORD / Manchester, 1909 on 2.75-5.54 (03_fire_at_gold, \"Rutherford's team fired\"). Add a \"1 in 8,000\" call-out over 07_green_flash_count on 10.95-13.65 (\"About one in eight thousand bounced back\"). Level: v02 is -14.3 LUFS / TP -1.4, so lower the limiter ceiling to reach TP <= -1.5.\n2. Pp5LmjsduI4 four elements -> v03 (park by Mon 2 Nov 20:00 London). Level: v02 is -17.9 LUFS / TP -3.0 because the master gain pass never ran (gold foil got \"+3.8 dB then a limiter\"; this one didn't). Bring it to -14.0 +/-0.5, TP <= -1.5. Add ANTOINE LAVOISIER / Paris, 1789 on 12.24-14.91 (lavoisier_list_t1, \"Antoine Lavoisier threw out the four\"). Add a \"33\" count-up call-out on 17.87-20.10 (\"His list had thirty-three\"), with \"LIGHT + HEAT\" on 20.10-22.54. Keep the 1.40x open, \"aren't\" at 1.47 s.\n3. PlihWC5uA2E valves -> v03 (park by Wed 4 Nov 20:00 London). Level: v02 is -14.7 / TP -0.9; take it to TP <= -1.5. The FABRICIUS / Padua, c. 1600 card runs to about 9.5 s, which puts it over Harvey's hand while the VO says \"Harvey presses a finger\". End it at the 7.82 cut, and add WILLIAM HARVEY / London, 1628 on 7.82-10.84. Keep the 'Along the swollen veins' open, because the one-way-doors line isn't on disk.\n4. mTY67qet7cM tied arm -> v05 (park by Sat 7 Nov 20:00 London). Level: v04 is -14.7 / TP -0.9; take it to TP <= -1.5. Add WILLIAM HARVEY / London, 1628 on 2.67-5.24 (02_linen_tie_t2, \"William Harvey tied it tight\"). The v04 picture re-cut is otherwise accepted.\n\nFor each one: run gate_shorts_open check --air-date plus the J0918 ship gate, picture_qa, polish_gate, music_gate and sfx level, and all must PASS. Write the six brief fields and the measured AAC lufs/true_peak_dbfs into the meta. Write sha256_manifest.json. Copy the master, _PHONE and 2 fps sheet to HOS UAT and the NAS, with sha256 matching. Commit the meta, gate text and frame sheets, then push HOS main (64c4bf9f and dba6604d are still local only: main is ahead of origin by 3).\n\nDo NOT set awaits_ben yourself. Park for Chief with: jobs.py block J0965 --reason \"parked for Chief: <ids> vNN gates passed\" --git (release and continue for the rest). Chief sets Ben's Ready for OK card after a PASS. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd its swap by 10:30 on its air day, the scheduled v01/v03 airs as it is; don't slip the slot. No upload, no Studio change, never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.\n\n--- earlier brief (still applies) ---\nChief (Grok) 25 Oct 23:25 London. J0917 batch HB (never queued before; HA was J0933 + J0934). Audit: HOS 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md fixes #6-#9.\n- JyRjM-9Yc8g airs Sun 1 Nov 11:30: park it first, by Sat 31 Oct 20:00 London; bring it in at 22-25 s.\n- Pp5LmjsduI4 (Tue 3 Nov), PlihWC5uA2E (Thu 5 Nov: 'Inside your veins are tiny one-way doors - valves' only if those exact words are on disk, else open on 'Along the swollen veins...' with the pause trimmed), mTY67qet7cM (Sun 8 Nov).\nSame rules for every HOS re-cut (Chief ruling OWB #264 6389730716 / HOS #180 6389732009): local v02 next to v01, v01 untouched. GBP0: VO trims, reorders and splices from existing audio only (only words already on disk), no new TTS, Veo, Flow, Vertex or paid API. Frame 0 moving and full-bleed at 30% black or less (no zoom/pan on a still), subject named in 0-1.5 s, first word by 0.15 s, first cut by 3.0 s, later plates 4.0 s max. Drop 'watch the full film' overlays, spoken CTAs and agenda questions; no video ID or code anywhere on screen (Ben 25 Oct). Last word to a matched loop back to frame 0 in 1.5 s or less; no answer-and-done line before 70% of runtime. Write the six brief fields into each v02 meta. Gates: gate_shorts_open check --air-date (incl. the J0918 ship gate, now merged), picture_qa, polish_gate, music_gate, sfx level, all PASS. _PHONE copies to HOS UAT + NAS, sha256 checked. Commit meta, gate text and frame sheets only. No upload, no Studio change. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd the swap by 10:30 on its air day, v01 airs as scheduled; don't slip the slot.\nPark each as it's ready: jobs.py block <id> --reason \"parked for Chief: <ids> v02 PASS; Ben to OK swap\" --git (release and continue for the rest). Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "ref": "6405428090",
       "film": "",
       "stage": "",
       "after": "J0934",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-25T23:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: JyRjM-9Yc8g v02, Pp5LmjsduI4 v02, PlihWC5uA2E v02, mTY67qet7cM v04 gates passed; Ben to OK swap",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -81657,6 +81657,21 @@
           "at": "2026-10-26T00:00Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: JyRjM-9Yc8g v02, Pp5LmjsduI4 v02, PlihWC5uA2E v02, mTY67qet7cM v04 gates passed; Ben to OK swap"
+        },
+        {
+          "at": "2026-10-26T00:20Z",
+          "by": "chief",
+          "what": "no longer waits on Ben"
+        },
+        {
+          "at": "2026-10-26T00:20Z",
+          "by": "chief",
+          "what": "Ready for OK cards J0965.1-.3 withdrawn by Chief c51 (6405428090): dropped before Chief review, not OK'd by Ben"
+        },
+        {
+          "at": "2026-10-26T00:20Z",
+          "by": "chief",
+          "what": "reopened: Chief c51 FIX x4 (HOS #180 6405428090): levels -14.0 +/-0.5 LUFS, TP <= -1.5 on the AAC (four -17.9; valves/tied TP -0.9; gold TP -1.4); add RUTHERFORD 1909 + 1 in 8,000, LAVOISIER 1789 + 33, valves FABRICIUS ends 7.82 + WILLIAM HARVEY 1628, tied WILLIAM HARVEY 1628. Keep VO/plates/cuts/loop. Park for Chief; no awaits. GBP0."
         }
       ],
       "kind": "video",
@@ -81666,14 +81681,7 @@
         "HOS:002",
         "HOS:005"
       ],
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-26T00:00Z",
-        "by": "cursor",
-        "note": "All four local re-cuts gated. Gold foil, four elements and valves are v02. Tied arm is v04 beside untouched v03. Parked "
-      },
-      "awaits_ben": [
+      "awaits_was": [
         {
           "what": "swap the HOS Short Why Gold Foil Bounced Rutherford's Particles Back (JyRjM-9Yc8g, airs Sun 1 Nov 11:30) to re-cut v02. Tissue plate stays the KEEP v02: v01 is the rejected projector shot, not a sharper shell. Low-detail warning at 0:16 for Ben to see. 05_flash_in_dark is missing; thin gold foil covers that split.",
           "file": "HOS UAT/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v02_PHONE.mp4",
