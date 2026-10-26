@@ -1,14 +1,11 @@
 # Studio Kanban
 
-**Studio workflow (Ben, 26 Oct 2026):** https://studio-kanban.vercel.app has four views:
-Work & blockers (every current queue job), Your approvals (pending decisions, recorded delivery approvals and changes),
-Video pipeline (planned, scheduled, live and uploaded without a schedule), and Completed (today / retained results).
-The page lives in `board_site/tracker_app.js` and `video_tracker.html`; video/approval derivation lives in
-`scripts/video_tracker.py`. The work list reads `board.json` → `owb.jobs` directly so shared jobs do not disappear
-because they lack a video card. Raw blocked counts are distinct from open jobs waiting on dependencies. Approval
-history comes from `briefs.approved`, reconciled against `owb.jobStates`; an approved job can still be blocked.
-Publication counts exclude synthetic approval placeholders and deduplicate real YouTube ids. Video status is the
-tracker's recorded state; past-due schedules are flagged for a fresh check. The prior board remains at `/classic`.
+**Studio videos (Ben, 26 Oct 2026):** https://studio-kanban.vercel.app uses the per-video column design:
+Upcoming, In progress, Changes requested, Ready for OK, Approved on its way, and Done on YouTube.
+Channel and Longs/Shorts filters sit above the models and live work panel. One card represents each video,
+with play links and the existing approval controls. Restored at Ben's request from the screenshots of this layout.
+The page lives in `board_site/tracker_app.js` and `video_tracker.html`; live data still comes from `board.json`.
+The earlier swim-lane board remains at `/classic`.
 
 Approve / Request changes still post `[Ben] OK/changes …` via `/api/checks` (OWB desk issue **#264**, HOS **#180**).
 

@@ -25,7 +25,6 @@
   let board = null, checks = {}, local = {}, showOldDone = false;
   let filterCh = "all", filterType = "all";
   let lastSha = "";
-  let view = "work", workFilter = "all", approvalFilter = "needs", youtubeFilter = "scheduled", completedFilter = "today", search = "";
 
   const checksMerged = () => {
     const m = Object.assign({}, checks);
@@ -478,7 +477,6 @@
         <div class="mmeta">${chief} · ${stale ? '<b style="color:var(--ready)">stale</b> — ' : ""}checked ${isNaN(chk) ? "—" : hm(chk) + " London"}</div>
         ${why ? `<details class="mmeta"><summary>Why</summary><ul style="margin:4px 0 0;padding-left:18px">${why}</ul></details>` : ""}</div>`;
     }
-    if(M?.chiefChain?.length) models += `<p class="mmeta">Chief order: ${M.chiefChain.map(c=>esc(c.name)).join(" → ")}. The first available takes the role.</p>`;
     let jobsHtml = "";
     if (owb) {
       const now = (owb.jobs || []).filter(j => jobState(j) === "running")
@@ -489,155 +487,75 @@
         <div class="row"><h2>Next</h2><div class="nextlist">${next.length ? next.map(j => jobHtml(j, "next")).join("") : '<p class="mmeta">Nothing else queued.</p>'}</div></div>
       </div>`;
     }
-    const opened=el.querySelector("details")?.open;
-    el.innerHTML = `<details ${opened?"open":""}><summary>Agents & services · ${esc((M?.chief?.name)||"Chief unknown")}${M?.chief?.acting?" acting Chief":""}</summary>${models}</details>`;
+    el.innerHTML = models + jobsHtml;
   }
 
-  function jobChannel(j) {
-    const title=String(j.title||"");
-    if(/both channels|OWB.*HOS|HOS.*OWB/i.test(title)) return "both";
-    return j.repo==="hos" || /\bHOS\b/.test(title) ? "HOS" : "OWB";
-  }
-  function jobBucket(j) {
-    // Raw blocked jobs stay countable even when the cut is approved or awaits Chief.
-    if(j.status==="blocked") return "blocked";
-    const state=jobState(j);
-    return state==="running"?"working":state==="stalled"?"stalled":state==="waiting"?"waiting":"todo";
-  }
-  function nextAction(j) {
-    const state=jobState(j), reason=blockReason(j);
-    if(state==="running") return j.progress?.note ? `Continue from: ${j.progress.note}` : "Worker to report the next completed step.";
-    if(state==="stalled") return "Relay to check the overdue claim and reassign or renew it.";
-    if(j.after && (((board||{}).owb||{}).jobStates||{})[j.after]?.status!=="done") return `Finish ${j.after}, then resume this job.`;
-    if(j.kind==="chief" && j.status==="open" && state==="queued") return `${board?.models?.chief?.name || "The elected Chief"} to claim and review this job.`;
-    if(j.status==="open" && state==="queued") return `${j.routedTo || "Next eligible worker"} to claim and start this job.`;
-    if(/ElevenLabs|Flow.*credit|credit.*renewal/i.test(reason)) return "Verify the recorded credit reset or renewal, then resume within the available balance.";
-    if(/public|publishAt|date gate|Test & Compare|test.*(?:running|end)/i.test(reason) && !/gate.*fail/i.test(reason)) return "Check the recorded release or test date; resume the unfinished step when its input is ready.";
-    if(state==="review") return /FAIL|fails|gate|limiter/i.test(reason) ? "Chief to decide the correction and approval path; the upload remains held." : "Chief to review the recorded result and release, revise or close the job.";
-    return "Resolve the recorded blocker, then return this job to the queue.";
-  }
-  function fmtDate(at) {
-    return Number.isFinite(tsOf(at)) ? new Date(at).toLocaleString("en-GB",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"})+" London" : "Not recorded";
-  }
-  function approvedRecords(videos) {
-    const rows=new Map();
-    for(const e of (board?.briefs?.approved || [])) {
-      const state=board?.owb?.jobStates?.[e.job]?.status || e.jobStatus || "unknown";
-      rows.set(e.job+":"+e.version,{...e,jobStatus:state,at:e.okAt,title:e.title||e.what||e.job});
-    }
-    for(const v of videos.filter(v=>v.lane==="approved")) {
-      const e=v.approved||{}, id=e.job||v.ask?.job||v.key, k=id+":"+(e.version||v.version||"");
-      if(!rows.has(k)) rows.set(k,{...e,job:id,version:e.version||v.version,at:e.okAt||v.check?.at,title:v.title,channel:v.channel,jobStatus:e.state||"waiting"});
-    }
-    return [...rows.values()].sort((a,b)=>(tsOf(b.at)||0)-(tsOf(a.at)||0));
-  }
-  function pipelineVideos(videos) {
-    const seen=new Set();
-    return videos.filter(v=>{
-      // Delivery receipts also create approval placeholders with no YouTube id.
-      // They are approval history, not additional planned or scheduled videos.
-      if(/:(?:OK|ASK):/.test(v.key||"")) return false;
-      const key=v.youtube?.videoId || v.key;
-      if(seen.has(key))return false;
-      seen.add(key);return true;
-    });
-  }
-  function workflowCounts(videos, channel="all") {
-    const pass=ch=>channel==="all"||ch===channel||ch==="both";
-    const pipeline=pipelineVideos(videos).filter(v=>pass(v.channel));
-    const jobs=(board?.owb?.jobs||[]).filter(j=>pass(jobChannel(j))), counts={all:jobs.length,working:0,todo:0,blocked:0,waiting:0,stalled:0};
-    jobs.forEach(j=>counts[jobBucket(j)]++);
-    return {...counts,needs:videos.filter(v=>pass(v.channel)&&v.lane==="ready"&&v.readyFor==="Ben").length,
-      approved:approvedRecords(videos).filter(e=>pass(e.channel)).length,changes:videos.filter(v=>pass(v.channel)&&v.lane==="changes").length,
-      scheduled:pipeline.filter(v=>v.youtube?.videoId&&v.youtube.state==="scheduled").length,
-      live:pipeline.filter(v=>v.youtube?.videoId&&v.youtube.state==="live").length,
-      planned:pipeline.filter(v=>!v.youtube?.videoId).length,
-      uploaded:pipeline.filter(v=>v.youtube?.videoId && !["live","scheduled"].includes(v.youtube.state)).length};
-  }
-  function workflowJobHtml(j) {
-    const bucket=jobBucket(j), labels={working:"Working now",todo:"To do",blocked:"Blocked",waiting:"Waiting on dependency",stalled:"Stalled claim"};
-    const approvals=board?.briefs?.approved||[], approval=approvals.find(e=>e.job===j.id);
-    const who=agentName(j.by || j.last?.by), updated=j.last?.at||j.progress?.at||j.claimedAt;
-    const p=j.progress, pr=jobProgress(j);
-    const liveProgress=`<div class="step-count"><b>${pr.pct===null?"Progress not reported":`${pr.pct}% confirmed · ${p.step} of ${p.of} steps complete`}</b>${pr.pct===null?"":`<div class="bar" role="progressbar" aria-label="Confirmed job steps" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`}<p class="meta">${pr.over?"Running past estimate":`About ${dur(pr.left)} left (estimate)`}${p?.note?` · ${esc(p.note)}`:""}</p></div>`;
-    return `<article class="work-card" data-job="${esc(j.id)}"><div class="top"><span class="badge ${jobChannel(j)==="HOS"?"hos":"orbit"}">${esc(jobChannel(j)==="OWB"?"Orbit":jobChannel(j))}</span>
-      <span class="status-chip ${bucket}">${labels[bucket]}</span>${approval?'<span class="status-chip approved">You approved</span>':""}${jobState(j)==="review"?'<span class="status-chip review">Chief decision</span>':""}<b class="job-id">${esc(j.id)}</b></div>
-      <h3>${esc(j.title||j.id)}</h3>
-      <p class="meta">${bucket==="working"?"Working":"Last worked"} by ${esc(who||"not recorded")} · Updated ${esc(fmtDate(updated))}</p>
-      ${bucket==="working"?liveProgress:(p?.of?`<p class="step-count"><b>${p.step} of ${p.of} steps complete</b>${p.note?` · ${esc(p.note)}`:""}</p>`:"")}
-      ${["blocked","waiting","stalled"].includes(bucket)?`<div class="why"><b>${bucket==="blocked"?"Blocked because":"Waiting because"}</b><p>${esc(blockReason(j))}</p></div>`:""}
-      <div class="next-action"><b>Next step</b><p>${esc(nextAction(j))}</p></div>
-      ${j.last?.what?`<details id="history-${esc(j.id)}"><summary>Latest recorded activity</summary><p>${esc(j.last.what)}</p></details>`:""}
-    </article>`;
-  }
-  function approvalRecordHtml(e) {
-    const labels={done:"Delivery job complete",blocked:"Approved, but blocked",claimed:"Delivery in progress",open:"Approved, queued",cancelled:"Cancelled after approval",waiting:"Approved, awaiting delivery"};
-    const j=(board?.owb?.jobs||[]).find(j=>j.id===e.job);
-    return `<article class="work-card"><div class="top"><span class="status-chip approved">You approved ${esc(e.version||"")}</span><b>${esc(e.job)}</b><span class="status-chip ${e.jobStatus==="blocked"?"blocked":""}">${esc(labels[e.jobStatus]||e.jobStatus)}</span></div>
-      <h3>${esc(e.title)}</h3><p>${esc(e.what||"")}</p><p class="meta">Approved ${esc(fmtDate(e.at))}${e.doneAt?` · Job completed ${esc(fmtDate(e.doneAt))}`:""}</p>
-      ${j?`${["blocked","waiting","stalled"].includes(jobBucket(j))?`<div class="why"><p>${esc(blockReason(j))}</p></div>`:""}<div class="next-action"><b>Next step</b><p>${esc(nextAction(j))}</p></div>`:e.result?`<p class="meta">Result: ${esc(e.result)}</p>`:""}
-      ${e.watch?.url?`<a class="record-link" href="${esc(e.watch.url)}" target="_blank" rel="noopener">▶ Play approved cut</a>`:""}</article>`;
-  }
   function render() {
-    const searchFocused=document.activeElement?.id==="work-search", searchPosition=searchFocused?document.activeElement.selectionStart:null;
     renderStrip();
-    const root=board?.tracker, boardEl=document.getElementById("board");
-    if(!root || !Array.isArray(root.videos) || !board.owb) {boardEl.innerHTML='<p class="empty">Loading the current studio queue…</p>';return;}
-    const videos=applyChecks(root.videos), c=workflowCounts(videos,filterCh);
-    const when=window.__boardData?.dataChangedAt||root.updatedAt;
-    document.getElementById("asof").textContent=when?`Updated ${fmtDate(when)} · refreshes every minute`:"Waiting for a current snapshot";
-    document.getElementById("activity").innerHTML=`<nav class="view-tabs" aria-label="Studio views">${[["work","Work & blockers",c.all],["approvals","Your approvals",c.needs+c.approved+c.changes],["youtube","Video pipeline",c.planned+c.scheduled+c.live+c.uploaded],["completed","Completed today",filterCh==="all"?(board.owb?.day?.doneToday||0):(board.owb?.done||[]).filter(j=>jobChannel(j)===filterCh&&tsOf(j.at)>=tsOf(board.owb?.day?.since)).length]].map(([id,label,n])=>`<button type="button" class="${view===id?"on":""}" data-view="${id}">${label} <b>${n}</b></button>`).join("")}</nav>
-      <p class="process">To do → Working → Review / your OK → Approved → Scheduled → Live</p>`;
-    document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{view=b.dataset.view;search="";render();});
-    const chips=[["all","All channels"],["OWB","Orbit"],["HOS","HOS"]];
-    document.getElementById("filters").innerHTML=chips.map(([id,label])=>`<button type="button" class="${filterCh===id?"on":""}" data-channel="${id}">${label}</button>`).join("");
-    document.querySelectorAll("[data-channel]").forEach(b=>b.onclick=()=>{filterCh=b.dataset.channel;render();});
-    const opened=[...boardEl.querySelectorAll("details[open]")].map(x=>x.id);
-    const channelPass=ch=>filterCh==="all"||ch===filterCh||ch==="both";
-    let heading="",intro="", tabs=[],body="", matches=0, total=0;
-    if(view==="work") {
-      heading=({all:"All current jobs",working:"Working now",todo:"To do",blocked:"Blocked jobs",waiting:"Waiting on dependencies",stalled:"Stalled claims"})[workFilter];
-      intro=`${c.all} current jobs · ${c.working} working · ${c.todo} to do · ${c.blocked} blocked · ${c.waiting} waiting${c.stalled?` · ${c.stalled} stalled`:""}.`;
-      tabs=[["all",`All current ${c.all}`],["working",`Working ${c.working}`],["todo",`To do ${c.todo}`],["blocked",`Blocked ${c.blocked}`],["waiting",`Waiting ${c.waiting}`],...(c.stalled?[["stalled",`Stalled ${c.stalled}`]]:[])];
-      let jobs=(board.owb?.jobs||[]).filter(j=>(workFilter==="all"||jobBucket(j)===workFilter)&&channelPass(jobChannel(j)));
-      total=jobs.length;jobs=jobs.filter(j=>(j.id+" "+j.title+" "+(j.result||"")).toLowerCase().includes(search.toLowerCase()));
-      const rank={working:0,stalled:1,todo:2,blocked:3,waiting:4};jobs.sort((a,b)=>rank[jobBucket(a)]-rank[jobBucket(b)]||Number(!!b.urgent)-Number(!!a.urgent)||(tsOf(b.last?.at)||0)-(tsOf(a.last?.at)||0));
-      matches=jobs.length;body=jobs.map(workflowJobHtml).join("");
-    } else if(view==="approvals") {
-      heading="Your approvals";intro="Your decisions are separate from Chief reviews. An approved cut can still be blocked; its approval stays visible here.";
-      tabs=[["needs",`Needs your OK ${c.needs}`],["approved",`You approved ${c.approved}`],["changes",`Changes requested ${c.changes}`]];
-      if(approvalFilter==="approved") {
-        let rows=approvedRecords(videos).filter(e=>channelPass(e.channel));total=rows.length;rows=rows.filter(e=>(e.job+" "+e.title+" "+e.what).toLowerCase().includes(search.toLowerCase()));matches=rows.length;body=rows.map(approvalRecordHtml).join("");
-      } else {
-        let rows=videos.filter(v=>channelPass(v.channel)&&(approvalFilter==="needs"?v.lane==="ready"&&v.readyFor==="Ben":v.lane==="changes"));total=rows.length;rows=rows.filter(v=>(v.title+" "+v.key).toLowerCase().includes(search.toLowerCase()));matches=rows.length;body=rows.map(cardHtml).join("");
-      }
-    } else if(view==="youtube") {
-      heading="Video pipeline";intro="Scheduled means uploaded and waiting for its air time. Live means recorded as public by the tracker. Video publication is separate from unfinished follow-up jobs.";
-      tabs=[["planned",`Planned / in production ${c.planned}`],["scheduled",`Scheduled ${c.scheduled}`],["live",`Live ${c.live}`],["uploaded",`Uploaded, no schedule ${c.uploaded}`]];
-      let rows=pipelineVideos(videos).filter(v=>channelPass(v.channel)&&(youtubeFilter==="planned"?!v.youtube?.videoId:v.youtube?.videoId&&(youtubeFilter==="uploaded"?!["live","scheduled"].includes(v.youtube.state):v.youtube.state===youtubeFilter)));
-      total=rows.length;rows=rows.filter(v=>(v.title+" "+v.key+" "+(v.youtube?.videoId||"")).toLowerCase().includes(search.toLowerCase()));rows.sort((a,b)=>(youtubeFilter==="live"?-1:1)*((tsOf(a.youtube?.publishAt)||0)-(tsOf(b.youtube?.publishAt)||0)));matches=rows.length;
-      body=rows.map(v=>`<div class="publication"><div class="publication-state ${youtubeFilter}">${youtubeFilter==="live"?"● Live on YouTube":youtubeFilter==="scheduled"?"◷ Scheduled":youtubeFilter==="planned"?"Planned / in production":"Uploaded · no schedule recorded"}${v.youtube?.publishAt?` · ${esc(fmtDate(v.youtube.publishAt))}`:""}</div>${youtubeFilter==="scheduled"&&tsOf(v.youtube?.publishAt)<Date.now()-15*MIN?`<p class="flag">Past the recorded air time — YouTube status needs a fresh check.</p>`:""}${cardHtml(v)}</div>`).join("");
-    } else {
-      heading="Completed jobs";intro="Completed jobs have a recorded result. Completing one job does not necessarily finish its video. Review handoffs remain in the blocked queue until accepted.";
-      const history=board.owb?.done||[], since=tsOf(board.owb?.day?.since);
-      const today=history.filter(j=>Number.isFinite(since)&&tsOf(j.at)>=since);
-      tabs=[["today",`Today ${board.owb?.day?.doneToday ?? today.length}`],["history",`Recent results ${history.length}`]];
-      const rows=(completedFilter==="today"?today:history).filter(j=>channelPass(jobChannel(j))&&(j.id+" "+j.title+" "+j.result).toLowerCase().includes(search.toLowerCase()));total=matches=rows.length;
-      if(completedFilter==="today" && today.length<(board.owb?.day?.doneToday||0)) intro+=` Showing ${today.length} retained records of ${board.owb.day.doneToday} completions today.`;
-      body=rows.map(j=>`<article class="work-card">${doneJobHtml(j)}</article>`).join("");
+    renderActivity();
+    const root = board && board.tracker;
+    if (!root || !Array.isArray(root.videos)) {
+      document.getElementById("board").innerHTML = `<p class="empty">No tracker data yet. The Mini publishes it on the next board-data push.</p>`;
+      return;
     }
-    boardEl.className="workflow";
-    const selected=view==="work"?workFilter:view==="approvals"?approvalFilter:view==="completed"?completedFilter:youtubeFilter;
-    const empty=view==="approvals"&&approvalFilter==="needs"?"Nothing needs your approval right now. Chief review items are in Work & blockers.":"No items match this view.";
-    boardEl.innerHTML=`<div class="workflow-heading"><h2>${heading}</h2><p>${esc(intro)}</p></div><div class="status-tabs">${tabs.map(([id,label])=>`<button type="button" class="${selected===id?"on":""}" data-status="${id}">${label}</button>`).join("")}</div>
-      <label class="search-label">Find a job or video<input id="work-search" type="search" placeholder="Search title, job ID or blocker" value="${esc(search)}"></label><p class="result-count">Showing ${matches}${total!==matches?` of ${total}`:""} ${view==="youtube"?"videos":view==="approvals"?"approval items":"jobs"}${filterCh!=="all"?` · ${filterCh}`:""}${view==="completed"?" · recent retained history":""}</p>
-      <div class="work-grid">${body||`<p class="empty">${empty}</p>`}</div>`;
-    document.querySelectorAll("[data-status]").forEach(b=>b.onclick=()=>{if(view==="work")workFilter=b.dataset.status;else if(view==="approvals")approvalFilter=b.dataset.status;else if(view==="completed")completedFilter=b.dataset.status;else youtubeFilter=b.dataset.status;search="";render();});
-    document.getElementById("work-search").oninput=e=>{const value=e.target.value,pos=e.target.selectionStart;search=value;render();const input=document.getElementById("work-search");input.focus();try{input.setSelectionRange(pos,pos);}catch{}};
+    const videos = applyChecks(root.videos).filter(passFilter);
+    const asof = document.getElementById("asof");
+    const when = (window.__boardData && window.__boardData.dataChangedAt) || root.updatedAt || "";
+    asof.textContent = when ? `Updated ${new Date(when).toLocaleString("en-GB", { timeZone: "Europe/London" })} London` : "Live";
+
+    const fil = document.getElementById("filters");
+    const chips = [
+      ["ch", "all", "All"], ["ch", "OWB", "Orbit"], ["ch", "HOS", "HOS"],
+      ["ty", "all", "Long + Shorts"], ["ty", "long", "Longs"], ["ty", "short", "Shorts"],
+    ];
+    fil.innerHTML = chips.map(([kind, val, label]) => {
+      const on = kind === "ch" ? filterCh === val : filterType === val;
+      return `<button type="button" class="${on ? "on" : ""}" data-f="${kind}" data-v="${val}">${label}</button>`;
+    }).join("");
+    fil.querySelectorAll("button").forEach(b => b.onclick = () => {
+      if (b.dataset.f === "ch") filterCh = b.dataset.v;
+      else filterType = b.dataset.v;
+      render();
+    });
+
+    const boardEl = document.getElementById("board");
+    const opened=[...boardEl.querySelectorAll("details[open]")].map(x=>x.id);
+    boardEl.innerHTML = LANES.map(([id, label]) => {
+      const all = videos.filter(v => v.lane === id);
+      const shown = id === "done" && !showOldDone ? all.filter(v => !v.collapsed) : all;
+      const hidden = id === "done" ? all.filter(v => v.collapsed).length : 0;
+      const body = shown.length ? shown.map(cardHtml).join("") : `<p class="empty">Nothing here</p>`;
+      const more = hidden
+        ? `<button type="button" class="collapsed-toggle" data-old="1">Show ${hidden} older public</button>`
+        : (id === "done" && showOldDone
+          ? `<button type="button" class="collapsed-toggle" data-old="0">Hide older public</button>` : "");
+      const running=all.filter(v=>cardWork(v).live.some(j=>jobState(j)==="running")).length;
+      const sub=id==="progress"?`<p class="lane-summary">${running} being worked on · ${all.length-running} queued / waiting</p>`:"";
+      return `<section class="lane" data-lane="${id}"><h2>${label}<span class="n">${shown.length} videos</span></h2>${sub}<div class="cards">${body}${more}</div></section>`;
+    }).join("");
+
     opened.forEach(id=>{const d=document.getElementById(id);if(d)d.open=true;});
-    if(searchFocused){const input=document.getElementById("work-search");input.focus();try{input.setSelectionRange(searchPosition,searchPosition);}catch{}}
-    boardEl.querySelectorAll("[data-ok]").forEach(b=>b.onclick=()=>{const v=videos.find(v=>v.key===b.dataset.ok);if(v)approve(v);});
-    boardEl.querySelectorAll("[data-chg]").forEach(b=>b.onclick=()=>{const v=videos.find(v=>v.key===b.dataset.chg);if(v)openChangesModal(v);});
+    boardEl.querySelectorAll("[data-ok]").forEach(b => b.onclick = () => {
+      const v = videos.find(x => x.key === b.dataset.ok);
+      if (v) approve(v);
+    });
+    boardEl.querySelectorAll("[data-chg]").forEach(b => b.onclick = () => {
+      const v = videos.find(x => x.key === b.dataset.chg);
+      if (v) openChangesModal(v);
+    });
+    boardEl.querySelectorAll("[data-old]").forEach(b => b.onclick = () => {
+      showOldDone = b.dataset.old === "1";
+      render();
+    });
+
+    // Play opens the signed link as is: no code prompt (Ben, 25 Oct). Older unsigned links get the code if the phone has it.
+    document.querySelectorAll("a[href*='/api/watch?']").forEach(a => {
+      a.addEventListener("click", () => {
+        const u = new URL(a.href, location.href);
+        if (u.searchParams.get("s") || !key) return;
+        u.searchParams.set("k", key); a.href = u.toString();
+      }, true);
+    });
   }
 
   async function pollChecks() {
@@ -695,6 +613,6 @@
   pollData();
   pollChecks();
   setInterval(() => { pollData(); pollChecks(); }, 60 * 1000);
-  setInterval(() => { if(!document.querySelector("#work-search:focus")) render(); }, 30 * 1000);  // progress bar and 'so far' times move between data refreshes
+  setInterval(() => { renderStrip(); renderActivity(); }, 30 * 1000);  // progress bar and 'so far' times move between data refreshes
   document.addEventListener("visibilitychange", () => { if (!document.hidden) { pollData(); pollChecks(); } });
 })();
