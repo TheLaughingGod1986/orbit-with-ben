@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0974 | mini | open (after J0954) | – | – | studio · OWB Apophis Short BbsyFrV8kCY: swap to v13 (Private, Wed 28 Oct 11:30 London) after Ben's OK by Wed 28 Oct 10:30 | 6410661010 |
 | J0975 | mini | open (after J0974) | – | – | studio · URGENT OWB Shorts Related -> Venus long VBaYRPp85Sw: Earth OVLv9dxTcpE FIRST (airs today 11:30), then Neptune, Apophis, ISS; read back Saturn |  |
 | J0976 | mini | open | – | – | studio · READ-ONLY Studio: why m09jUdwC5hk + VBaYRPp85Sw analytics show 'Subscribers (OpptiAI)' with a dash |  |
-| J0978 | mini | open | – | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
+| J0978 | mini | claimed | gemini | 2026-10-26T11:16Z | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 
 Recently finished:
 
