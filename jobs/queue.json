@@ -87644,13 +87644,13 @@
       "stage": "",
       "after": "J1010",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T04:07Z",
-      "eta": "2026-10-27T05:07Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T04:04Z",
-      "result": "",
+      "result": "Delivered J0936_v04_PREP_v03.md (b9e82a1f1), J0936_v04_PREP_v03_maps.json, verify_j0936_prep_v03.py, and J1015_2026-10-27_verification.json (all_passed=true, 390 source words verified). Ordinary Shorts trimmed into 55-65 spoken-word target (S1 65/65 23.41s, S2 64/65 22.18s, S3 62/64 22.24s, S5 61/65 22.14s, S6 62/65 22.18s; S4 Test A unchanged 76/77 24.516s); all 5 ordinary questions match local_title token-for-token with named subjects <=2.50s (Sun 2.38s, Earth's 1.75s, 710 2.42s, star 0.90s, 710 1.42s, 710 2.48s) and earliest answers >=70% (70.44%, 73.31%, 73.11%, 73.86%, 71.18%, 75.83%); 100% moving video across 4-8s on all 6 Shorts (S1 s01 Blue Marble replaced with SDO+EPIC; S2 Foucault replaced with Gerst ISS orbital pass; S5 Neptune moved to 9.04-12.64s); local VO-only WAV auditions, 129-frame start/mid/end source-window sheet, and Frame-0 previews/uniqueness matrix saved in _desk/reviews/J1015/. Ready for J1016 Chief lock.",
       "history": [
         {
           "at": "2026-10-27T04:04Z",
@@ -87696,6 +87696,11 @@
           "at": "2026-10-27T05:07Z",
           "by": "gemini",
           "what": "step 6 of 6 done: All 6 steps done: J0936_v04_PREP_v03.md, J0936_v04_PREP_v03_maps.json, verify_j0936_prep_v03.py, and J1015_2026-10-27_verification.json verified PASS with local WAV auditions, 129-frame source-window sheet, and Frame-0 previews in _desk/reviews/J1015"
+        },
+        {
+          "at": "2026-10-27T05:08Z",
+          "by": "gemini",
+          "what": "done: Delivered J0936_v04_PREP_v03.md (b9e82a1f1), J0936_v04_PREP_v03_maps.json, verify_j0936_prep_v03.py, and J1015_2026-10-27_verification.json (all_passed=true, 390 source words verified). Ordinary Shorts trimmed into 55-65 spoken-word target (S1 65/65 23.41s, S2 64/65 22.18s, S3 62/64 22.24s, S5 61/65 22.14s, S6 62/65 22.18s; S4 Test A unchanged 76/77 24.516s); all 5 ordinary questions match local_title token-for-token with named subjects <=2.50s (Sun 2.38s, Earth's 1.75s, 710 2.42s, star 0.90s, 710 1.42s, 710 2.48s) and earliest answers >=70% (70.44%, 73.31%, 73.11%, 73.86%, 71.18%, 75.83%); 100% moving video across 4-8s on all 6 Shorts (S1 s01 Blue Marble replaced with SDO+EPIC; S2 Foucault replaced with Gerst ISS orbital pass; S5 Neptune moved to 9.04-12.64s); local VO-only WAV auditions, 129-frame start/mid/end source-window sheet, and Frame-0 previews/uniqueness matrix saved in _desk/reviews/J1015/. Ready for J1016 Chief lock."
         }
       ],
       "remaining_action": "Commit preparation v03 files and mark J1015 done for J1016 Chief lock",
@@ -87721,7 +87726,8 @@
         "at": "2026-10-27T05:07Z",
         "by": "gemini",
         "note": "All 6 steps done: J0936_v04_PREP_v03.md, J0936_v04_PREP_v03_maps.json, verify_j0936_prep_v03.py, and J1015_2026-10-27_ve"
-      }
+      },
+      "done_ref": "b9e82a1f1"
     },
     {
       "id": "J1016",
