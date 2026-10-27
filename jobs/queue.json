@@ -89413,19 +89413,29 @@
           "at": "2026-10-27T10:31Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-27T10:32Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J0275 approvals and J1031 evidence; preserved 21 Oct order; J0189 remains open."
         }
       ],
-      "remaining_action": "Verify live test completion and the Saturn prerequisite",
+      "remaining_action": "Record live verification and retain the unmet hold",
       "kind": "chief",
       "recheck_of": "J0275",
       "due": "2026-10-27T11:30:30+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-27T10:31Z",
-        "by": "codex"
-      }
+        "at": "2026-10-27T10:32Z",
+        "by": "codex",
+        "note": "Read J0275 approvals and J1031 evidence; preserved 21 Oct order; J0189 remains open."
+      },
+      "taskKeys": [
+        "OWB:020",
+        "OWB:021"
+      ]
     }
   ],
   "focus": [],
