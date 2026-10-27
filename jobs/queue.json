@@ -1,5 +1,5 @@
 {
-  "next_id": 1017,
+  "next_id": 1018,
   "jobs": [
     {
       "id": "J0001",
@@ -87794,6 +87794,35 @@
         "by": "codex",
         "note": "Chief FIX committed 4d95c81e7, published for review in PR 298; no assembly lock"
       }
+    },
+    {
+      "id": "J1017",
+      "title": "J0936 preparation: reconcile exact opening evidence and scale-card timing after J1016 FIX",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1016 elected-Chief FIX, ruling commit 4d95c81e7 on branch codex/j1016-review, PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/298. Fetch/read that branch's jobs/reviews/J1016_2026-10-27.md and verification JSON (not yet merged). Produce preparation v04, not a final video. Preserve the verified VO maps/counts/timing, especially Test A unchanged VO and its explicit exemptions.\n\n1. Replace stale captioned opening previews with preparation-only previews generated from each exact proposed source/window/crop/grade/speed. S1 currently compares a gold Sun preview against mapped teal center_087.mp4 (0.250-2.630s): reconcile the actual choice and recompute its gate metrics. Save executable generation/comparison code, clip/frame hashes, library snapshot and actual house-gate results for all six. Validate the titled subject visually; do not equate nonblack area to subject coverage. S4/S6 saved clips independently reproduce their metrics; preserve good work.\n2. S5 single card is fixed by Chief choice: 1-CM SCALE / OVER 100 METERS, animated within 16.180-19.160s. Remove 1/5 LIGHT-YEAR from that card: its spoken words land only at 20.080/20.560s, after the old card ended. Keep all VO and the final real-distance sentence. No second overlay.\n3. Supply inspection evidence covering complete proposed source windows, rather than calling three samples per shot complete inspection. Correct verifier overclaims: recompute what is machine-checked and label manual/unverified checks honestly. Give an actual auditory judgement of existing spliced question/full-VO auditions if the reviewer can hear them; no prosody PASS based only on file existence. Preserve exact questions unless an actual join defect is found. Fix stale section-6 S1 count (65/65).\n\nDeliver exact JSON+prose, source/crop/measurement provenance and finite corrections, no alternatives for assembler. No spend, full final render, deletion, upload, retitle, privacy change, Buffer or swap; no failed-cut watch cards. Keep J0936 blocked until next Chief lock. Original J0936/c59 acceptance remains in full for eventual assembly and replacement review. Batch due 1 Nov 20:00 London; individual day-before-air deadlines (19 Nov,22 Nov,29 Nov,1 Dec,3 Dec,6 Dec 20:00) and v01 fallback unchanged. Ben swap OK only after replacement PASS. Link progress to OWB:026,OWB:027,OWB:028. Do not reopen unrelated holds. Read PR evidence directly if not merged; do not treat this job as permission to merge PR 298.\n",
+      "ref": "4d95c81e7",
+      "film": "",
+      "stage": "",
+      "after": "J1016",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-27T05:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T05:14Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct six-opening evidence and the model-distance card before lock",
+      "due": "2026-11-01T20:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [],
