@@ -1,0 +1,29 @@
+{
+  "job": "J1031",
+  "recheck_of": "J0275",
+  "by": "codex",
+  "checked_at": "2026-10-27T09:30:02.054644+00:00",
+  "films": [
+    "OWB:020",
+    "OWB:021"
+  ],
+  "live_check": {
+    "endpoint": "http://127.0.0.1:9223",
+    "probes": [
+      "/json/version",
+      "/json/list"
+    ],
+    "result": "Both read-only probes outside sandbox timed out (curl exit 28), after 5115ms and 5110ms. No Studio content available."
+  },
+  "prior_evidence": {
+    "commit": "2e52d5596",
+    "file": "jobs/readbacks/J1027.json",
+    "saturn_title_test": "Historical Results ready evidence in J1011 does not establish completion of J0189."
+  },
+  "prerequisite": "J0189 remains open; RINGS ARE FALLING has not been recorded completed.",
+  "approval_sequence": "21 Oct approval preserved: Saturn RINGS ARE FALLING before RINGS VANISHING; Jupiter NO SOLID GROUND after NO FLOOR ends.",
+  "decision": "Keep J0275 blocked: Jupiter completion unknown and Saturn prerequisite unfinished.",
+  "next_check_at": "2026-10-27T10:27:01Z",
+  "retry_basis": "Retain existing recorded check_at, still in the future.",
+  "changes": "No YouTube, Studio, ledger or schedule changes; no spend."
+}
