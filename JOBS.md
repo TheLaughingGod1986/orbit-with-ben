@@ -61,6 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1011 | any | open | – | – | chief · Chief: verify condition for J0189 |  |
 | J1012 | any | open | – | – | chief · Chief: verify condition for J0275 |  |
 | J1013 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J1014 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
