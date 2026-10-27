@@ -58,6 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1028 | mini | open (after J1025) | – | – | review · J0936 preparation: remove remaining early brightening answer and reconcile S6 card | eb5858e98 |
 | J1029 | any | open (after J1028) | – | – | chief · J0936: exact preparation lock after final S6 timing and card reconciliation | eb5858e98 |
+| J1030 | any | open | – | – | chief · Chief: verify condition for J0989 |  |
 
 Recently finished:
 
