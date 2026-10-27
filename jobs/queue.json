@@ -91617,13 +91617,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T22:49Z",
-      "eta": "2026-10-28T00:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T22:48Z",
-      "result": "",
+      "result": "Verified J1005 predecessor (PR #367 fc890aec) and J0966 5/5 HC delivery (commit 8df16983) across all 4 Shorts (-I_GHK-GcFs v04 3ef3fa773750, x_3L_IdYgEc v04 e1f862ba737a, -sa2t7dAtCk v04 8ce07a605697, 4WUs0beKn0A v05 e5ea76f012fb): 36/36 repo/UAT/NAS master+PHONE+sheet SHA256 match, 4/4 sha256_manifest.json verified, all 5 gates + vo_check PASS, -14.0..-14.3 LUFS / -1.6..-1.8 dBTP, -120.0 dBFS opening VO start-mute on Jenner v04 (0.000-0.075s, vo_onset 0.10s) and Dalton v04 (0.000-0.060s, vo_onset 0.08s), multimodal audio+video audition PASS, v01-v03 untouched. Kept J0966 blocked (wait --recheck J1047, check-at 2026-10-28T04:57:00Z) so completed 5/5 build is not re-queued; parked for independent non-author Chief replacement PASS and Ben swap approval (first air-eve deadline Thu 12 Nov 2026 20:00Z). GBP0, no publishing changes.",
       "history": [
         {
           "at": "2026-10-27T22:48Z",
@@ -91659,6 +91659,11 @@
           "at": "2026-10-27T22:58Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Completed J1047 condition verification for J0966; all 4 HC Shorts verified intact across repo/UAT/NAS"
+        },
+        {
+          "at": "2026-10-27T22:58Z",
+          "by": "gemini",
+          "what": "done: Verified J1005 predecessor (PR #367 fc890aec) and J0966 5/5 HC delivery (commit 8df16983) across all 4 Shorts (-I_GHK-GcFs v04 3ef3fa773750, x_3L_IdYgEc v04 e1f862ba737a, -sa2t7dAtCk v04 8ce07a605697, 4WUs0beKn0A v05 e5ea76f012fb): 36/36 repo/UAT/NAS master+PHONE+sheet SHA256 match, 4/4 sha256_manifest.json verified, all 5 gates + vo_check PASS, -14.0..-14.3 LUFS / -1.6..-1.8 dBTP, -120.0 dBFS opening VO start-mute on Jenner v04 (0.000-0.075s, vo_onset 0.10s) and Dalton v04 (0.000-0.060s, vo_onset 0.08s), multimodal audio+video audition PASS, v01-v03 untouched. Kept J0966 blocked (wait --recheck J1047, check-at 2026-10-28T04:57:00Z) so completed 5/5 build is not re-queued; parked for independent non-author Chief replacement PASS and Ben swap approval (first air-eve deadline Thu 12 Nov 2026 20:00Z). GBP0, no publishing changes."
         }
       ],
       "remaining_action": "Post J1047 completion report on studio thread and HOS desk",
@@ -91686,7 +91691,8 @@
         "HOS:004",
         "HOS:005",
         "HOS:007"
-      ]
+      ],
+      "done_ref": "8df16983"
     }
   ],
   "focus": [],
