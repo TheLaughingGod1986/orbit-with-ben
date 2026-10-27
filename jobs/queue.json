@@ -21767,6 +21767,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "condition verification queued: J1012"
+        },
+        {
+          "at": "2026-10-27T01:03Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-27T07:02:25Z"
         }
       ],
       "kind": "studio",
@@ -21777,12 +21782,14 @@
         "by": "cursor",
         "note": "left both videos unchanged"
       },
-      "remaining_action": "Start the approved Saturn and Jupiter thumbnail comparisons",
+      "remaining_action": "Restore Studio readback and verify ended tests before approved comparisons",
       "hold": {
-        "type": "test",
-        "condition": "Verify Saturn title test and Jupiter thumbnail test have ended; recorded expected ends were 25 Oct 17:00Z and 26 Oct 18:52Z",
-        "check_at": "2026-10-27T01:44:16+00:00",
-        "recheck_task": "J1012"
+        "type": "input",
+        "condition": "Live Studio proof that Saturn 55AEQwvs36g title test and Jupiter -jmMROGoZCM thumbnail test have ended; CDP 9223 timed out on 27 Oct 01:02Z, completion unknown. Preserve 21 Oct approval order: Saturn J0189 RINGS ARE FALLING first, RINGS VANISHING second; Jupiter NO SOLID GROUND next.",
+        "check_at": "2026-10-27T07:02:25Z",
+        "last_recheck": "J1012",
+        "checked_at": "2026-10-27T01:03:14+00:00",
+        "checked_by": "codex"
       }
     },
     {
