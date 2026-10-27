@@ -109,6 +109,7 @@ html=t.cardWorkHtml(atom);
 const visible=html.replace(/<details[\s\S]*?<\/details>/g,'');
 assert(visible.includes('Check sound and pronunciation in the related Shorts'));
 assert(visible.includes('Sign off the related Shorts'));
+assert(visible.includes('After the sound check'));
 assert(visible.includes('Start the next title test'));
 assert(visible.includes('After the current title test finishes'));
 assert(!/J\d{4}|GBP0|last completed|60% re-cut/i.test(visible));

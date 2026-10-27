@@ -399,7 +399,7 @@
     const title = String(j.title || ""), reason = String(j.result || "");
     const subject = relatedShorts(j,v) ? "the related Shorts" : "the finished videos";
     if (/audition.*master|pronunciation/i.test(title)) return `Check sound and pronunciation in ${subject}`;
-    if (/audio-only.*correction|loudness|AAC levels/i.test(title)) return "Fix the audio levels";
+    if (/audio-only.*correction|loudness|AAC levels/i.test(title)) return /opening/i.test(title) ? "Fix the audio levels and opening" : "Fix the audio levels";
     if (/technical release review|exact.hash.*review/i.test(title)) return "Review the corrected video for release";
     if (/full PASS withheld|technical.*accepted.*pending.*audio/i.test(reason)) return `Sign off ${subject}`;
     if (/Test B start|title\/line 1\/tags/i.test(title)) return "Start the next title test";
@@ -426,7 +426,11 @@
     if (state === "stalled") return "Needs a worker to resume it";
     if (state === "queued") return "Ready to start";
     const dep = (board?.owb?.jobs || []).find(x => x.id === j.after);
-    if (dep && jobState(dep) !== "done") return `After: ${plainTask(dep,v).replace(/^./,c=>c.toLowerCase())}`;
+    if (dep && jobState(dep) !== "done") {
+      if (/audition|pronunciation/i.test(dep.title || "")) return "After the sound check";
+      if (/audio-only.*correction|loudness|AAC levels/i.test(dep.title || "")) return "After the audio fix";
+      return `After: ${plainTask(dep,v).replace(/^./,c=>c.toLowerCase())}`;
+    }
     if (/test.*(?:running|ends?)|T&C.*running/i.test(reason)) return "After the current title test finishes";
     if (/credit|reset|renewal|ElevenLabs/i.test(reason)) return "Waiting for credits to reset";
     if (j.notBefore && tsOf(j.notBefore) > Date.now()) return `Waiting until ${new Date(j.notBefore).toLocaleDateString("en-GB",{day:"numeric",month:"short",timeZone:"Europe/London"})}`;
