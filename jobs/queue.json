@@ -21777,6 +21777,11 @@
           "at": "2026-10-27T07:14Z",
           "by": "relay",
           "what": "condition verification queued: J1022"
+        },
+        {
+          "at": "2026-10-27T07:22Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-27T08:14:34Z"
         }
       ],
       "kind": "studio",
@@ -21787,15 +21792,14 @@
         "by": "cursor",
         "note": "left both videos unchanged"
       },
-      "remaining_action": "Restore Studio readback and verify ended tests before approved comparisons",
+      "remaining_action": "Verify Jupiter test completion and Saturn J0189 prerequisite before approved comparisons",
       "hold": {
         "type": "input",
-        "condition": "Live Studio proof that Saturn 55AEQwvs36g title test and Jupiter -jmMROGoZCM thumbnail test have ended; CDP 9223 timed out on 27 Oct 01:02Z, completion unknown. Preserve 21 Oct approval order: Saturn J0189 RINGS ARE FALLING first, RINGS VANISHING second; Jupiter NO SOLID GROUND next.",
-        "check_at": "2026-10-27T08:14:34+00:00",
-        "last_recheck": "J1012",
-        "checked_at": "2026-10-27T01:03:14+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1022"
+        "condition": "Live Studio proof required: Jupiter -jmMROGoZCM NO FLOOR test has ended; Saturn 55AEQwvs36g must first complete J0189 RINGS ARE FALLING before RINGS VANISHING. Saturn title test was Results ready in J1011, but J0189 remains open. CDP 9223 unreachable at J1022 check; Jupiter completion unknown. Evidence jobs/readbacks/J1022.json. Preserve 21 Oct approvals.",
+        "check_at": "2026-10-27T08:14:34Z",
+        "last_recheck": "J1022",
+        "checked_at": "2026-10-27T07:22:39+00:00",
+        "checked_by": "codex"
       }
     },
     {
