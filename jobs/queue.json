@@ -79771,7 +79771,7 @@
       "ref": "6409202315",
       "film": "",
       "stage": "",
-      "after": "J1020",
+      "after": "J1025",
       "eta_min": 600,
       "status": "blocked",
       "by": "gemini",
@@ -80040,6 +80040,11 @@
           "at": "2026-10-27T06:24Z",
           "by": "codex",
           "what": "J1018 FIX b8c75920b / PR299: dependency J1018 -> J1020; remains blocked, 6/6 worker history preserved; J1019 repairs audio bridge timing"
+        },
+        {
+          "at": "2026-10-27T07:31Z",
+          "by": "codex",
+          "what": "J1020 FIX e82eae17d / PR300: dependency -> J1025; J1024 finite correction; preserve blocked state and 6/6 production history"
         }
       ],
       "kind": "video",
@@ -80064,13 +80069,13 @@
       },
       "for": "gemini",
       "escalated_at": "2026-10-26T16:26Z",
-      "review_ref": "b8c75920b",
+      "review_ref": "e82eae17d",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "Correct reported VO bridges in J1019, then J1020 Chief lock before assembly and replacement review",
+      "remaining_action": "Correct S6 payoff and apply approved Test A repair in J1024; J1025 lock before assembly and replacement review",
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor J1020 must finish; exact preparation lock, assembly and replacement review required before approval",
+        "condition": "Required predecessor J1025 must finish; exact preparation lock, assembly and replacement review before approval",
         "check_at": "2026-10-27T00:00:00Z"
       }
     },
@@ -88378,11 +88383,21 @@
           "at": "2026-10-27T07:30Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T07:31Z",
+          "by": "codex",
+          "what": "Linked finite J1020 handoff to OWB:026,OWB:027,OWB:028"
         }
       ],
       "remaining_action": "Correct S6 payoff timing and apply authorised Test A syllable repair",
       "due": "2026-11-01T20:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1025",
@@ -88407,11 +88422,21 @@
           "at": "2026-10-27T07:30Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T07:31Z",
+          "by": "codex",
+          "what": "Linked finite J1020 handoff to OWB:026,OWB:027,OWB:028"
         }
       ],
       "remaining_action": "Review S6 payoff correction and Test A exact map, then dispatch assembly",
       "due": "2026-11-01T20:00:00Z",
-      "kind": "chief"
+      "kind": "chief",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
