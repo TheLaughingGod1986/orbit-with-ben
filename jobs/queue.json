@@ -89104,10 +89104,10 @@
       "stage": "",
       "after": "J1029",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-27T11:05Z",
-      "eta": "2026-10-27T13:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T09:36Z",
       "result": "",
@@ -89441,6 +89441,11 @@
           "at": "2026-10-27T11:13Z",
           "by": "codex",
           "what": "step 1 of 3 done: b4483550d pushed on PR305. Targeted correction code and scoped full-size seam review committed; two 026 masters hash-verified on NAS. One J1032-run12 waits for scratch archive then unchanged disk guard; no batch PASS."
+        },
+        {
+          "at": "2026-10-27T11:13Z",
+          "by": "codex",
+          "what": "released: Detached J1032-run12; /Users/benjaminoats/_desk/logs/J1032-run12.log and .done. Waits hash-verified archive-run12, enforces 20GB guard, then exposure corrections and final QA. Output /Users/benjaminoats/_desk/renders/J1032-finish12. Do not duplicate active session. PR305 b4483550d. Remains 1/3; S1 cut gate unresolved, full review/listening/UAT-NAS delivery outstanding."
         }
       ],
       "remaining_action": "Inspect detached exposure-correction QA, resolve S1 first-cut gate, finish review and durable delivery",
