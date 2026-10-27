@@ -6642,8 +6642,24 @@
           "at": "2026-10-12T13:41Z",
           "by": "chief",
           "what": "blocked: waits for input: 025 long Js6EQJ8qDi8 public (its YouTube publishAt Sun 8 Nov 18:00Z is a release date, not a job start); reopen when public"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Verify that the Mars long video is public"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-08T18:05:00Z"
         }
-      ]
+      ],
+      "remaining_action": "Verify that the Mars long video is public",
+      "hold": {
+        "type": "public",
+        "condition": "Mars long Js6EQJ8qDi8 must read back Public",
+        "check_at": "2026-11-08T18:05:00Z"
+      }
     },
     {
       "id": "J0124",
@@ -6673,8 +6689,24 @@
           "at": "2026-10-12T13:41Z",
           "by": "chief",
           "what": "blocked: waits for input: 025 long Js6EQJ8qDi8 public (its YouTube publishAt Sun 8 Nov 18:00Z is a release date, not a job start); reopen when public"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Add the Related links, pin the comment and check the social schedule"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-08T18:05:00Z"
         }
-      ]
+      ],
+      "remaining_action": "Add the Related links, pin the comment and check the social schedule",
+      "hold": {
+        "type": "public",
+        "condition": "Mars long Js6EQJ8qDi8 must read back Public and J0123 must be complete",
+        "check_at": "2026-11-08T18:05:00Z"
+      }
     },
     {
       "id": "J0125",
@@ -7477,10 +7509,26 @@
           "at": "2026-10-12T13:41Z",
           "by": "chief",
           "what": "blocked: waits for input: 025 long Js6EQJ8qDi8 public (its YouTube publishAt Sun 8 Nov 18:00Z is a release date, not a job start); reopen when public"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Add the Related link to the Mars long video"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-08T18:05:00Z"
         }
       ],
       "kind": "studio",
-      "model": "cursor-auto"
+      "model": "cursor-auto",
+      "remaining_action": "Add the Related link to the Mars long video",
+      "hold": {
+        "type": "public",
+        "condition": "Mars long Js6EQJ8qDi8 must read back Public and J0123 must be complete",
+        "check_at": "2026-11-08T18:05:00Z"
+      }
     },
     {
       "id": "J0136",
@@ -14492,6 +14540,16 @@
           "at": "2026-10-15T23:29Z",
           "by": "chief",
           "what": "left parked: ruling (a) stands — wait for TITLE A/B on 55AEQwvs36g to end; then thumbnail-only A=live vs B RINGS ARE FALLING. Do not press Continue / delete the running title test. No Studio recheck this sweep."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Start the approved Saturn thumbnail comparison"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "studio",
@@ -14502,7 +14560,13 @@
         "by": "cursor",
         "note": "Studio rechecked 22:2xZ: title A/B still Running"
       },
-      "escalated_at": "2026-10-13T00:31Z"
+      "escalated_at": "2026-10-13T00:31Z",
+      "remaining_action": "Start the approved Saturn thumbnail comparison",
+      "hold": {
+        "type": "test",
+        "condition": "Saturn title test on 55AEQwvs36g must have finished; verify in Studio before starting an approved comparison",
+        "check_at": "2026-10-27T00:00:00Z"
+      }
     },
     {
       "id": "J0190",
@@ -18787,9 +18851,25 @@
           "at": "2026-10-25T18:41Z",
           "by": "cursor",
           "what": "note: J0948: Galen v04 airs as BW_CFAX-mxc (Private, 2026-10-31T11:30:00Z). 5n7xFQRBUvI is Private and unscheduled. Related and Buffer stay on this job, now for BW_CFAX-mxc, after wwcjcFfC-5M is public."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Link the Blood Short to its long video"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-29T18:05:00Z"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "remaining_action": "Link the Blood Short to its long video",
+      "hold": {
+        "type": "public",
+        "condition": "Blood long wwcjcFfC-5M must read back Public",
+        "check_at": "2026-10-29T18:05:00Z"
+      }
     },
     {
       "id": "J0242",
@@ -21674,6 +21754,16 @@
           "at": "2026-10-21T22:10Z",
           "by": "claude",
           "what": "Ben 21 Oct: 'I'll let you decide' on Saturn order. Claude: keep J0189 RINGS ARE FALLING first on 55AEQwvs36g (stronger read at 168 px: falling rings + worried face; RINGS VANISHING? has a calm face and the planet reads like Jupiter), Ben's design second. Jupiter NO SOLID GROUND? unchanged: first after NO FLOOR? ends 26 Oct."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Start the approved Saturn and Jupiter thumbnail comparisons"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "studio",
@@ -21683,6 +21773,12 @@
         "at": "2026-10-15T13:52Z",
         "by": "cursor",
         "note": "left both videos unchanged"
+      },
+      "remaining_action": "Start the approved Saturn and Jupiter thumbnail comparisons",
+      "hold": {
+        "type": "test",
+        "condition": "Verify Saturn title test and Jupiter thumbnail test have ended; recorded expected ends were 25 Oct 17:00Z and 26 Oct 18:52Z",
+        "check_at": "2026-10-27T00:00:00Z"
       }
     },
     {
@@ -22194,6 +22290,16 @@
           "at": "2026-10-26T08:59Z",
           "by": "cursor",
           "what": "J0971: Related follow-up is qW2OsD4mujc → AL_-qlWko_g (long already public)"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Add the remaining Related links to the Blood Shorts"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-29T18:05:00Z"
         }
       ],
       "kind": "studio",
@@ -22212,6 +22318,12 @@
         "at": "2026-10-15T17:39Z",
         "by": "cursor",
         "note": "Related set on six Shorts; blood three still wait"
+      },
+      "remaining_action": "Add the remaining Related links to the Blood Shorts",
+      "hold": {
+        "type": "public",
+        "condition": "Blood long wwcjcFfC-5M must read back Public before the remaining Related links are set",
+        "check_at": "2026-10-29T18:05:00Z"
       }
     },
     {
@@ -23775,6 +23887,16 @@
           "at": "2026-10-15T16:43Z",
           "by": "cursor",
           "what": "blocked: ElevenLabs: 119 characters left, this take needs 8139; nothing spent; wait for the 30 Oct reset"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Record the Titan voiceover"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-30T00:05:00Z"
         }
       ],
       "kind": "vo",
@@ -23785,6 +23907,12 @@
         "at": "2026-10-15T16:43Z",
         "by": "cursor",
         "note": "dry-run 8139 chars; 119 left"
+      },
+      "remaining_action": "Record the Titan voiceover",
+      "hold": {
+        "type": "credits",
+        "condition": "ElevenLabs must have sufficient renewed characters for the locked Titan take",
+        "check_at": "2026-10-30T00:05:00Z"
       }
     },
     {
@@ -24900,6 +25028,16 @@
           "at": "2026-10-22T15:13Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Add the Related links to the Earth long video"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-22T18:05:00Z"
         }
       ],
       "kind": "studio",
@@ -24913,7 +25051,13 @@
         "by": "cursor",
         "note": "direct set rejected success false; privacy and schedule unchanged"
       },
-      "escalated_at": "2026-10-22T15:13Z"
+      "escalated_at": "2026-10-22T15:13Z",
+      "remaining_action": "Add the Related links to the Earth long video",
+      "hold": {
+        "type": "public",
+        "condition": "Earth long 6bbbvfCx6zY must read back Public",
+        "check_at": "2026-11-22T18:05:00Z"
+      }
     },
     {
       "id": "J0318",
@@ -27141,6 +27285,16 @@
           "at": "2026-10-16T02:21Z",
           "by": "cursor",
           "what": "blocked: ElevenLabs: 119 characters left, this take needs 7765; Titan J0302 (8139) stays ahead; nothing spent; wait for the 30 Oct reset"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Record the Magnetic Field Flip voiceover"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-30T00:05:00Z"
         }
       ],
       "kind": "vo",
@@ -27151,6 +27305,12 @@
         "at": "2026-10-16T02:21Z",
         "by": "cursor",
         "note": "dry-run 7765 chars; 119 left"
+      },
+      "remaining_action": "Record the Magnetic Field Flip voiceover",
+      "hold": {
+        "type": "credits",
+        "condition": "ElevenLabs must have sufficient renewed characters; Titan J0302 remains ahead",
+        "check_at": "2026-10-30T00:05:00Z"
       }
     },
     {
@@ -67344,9 +67504,15 @@
           "at": "2026-10-21T15:34Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Record the Darwin and Wallace voiceover"
         }
       ],
-      "kind": "vo"
+      "kind": "vo",
+      "remaining_action": "Record the Darwin and Wallace voiceover"
     },
     {
       "id": "J0808",
@@ -68437,9 +68603,25 @@
           "at": "2026-10-22T21:52Z",
           "by": "claude",
           "what": "blocked: waits for input: two Mini agents able to work for a whole week (Cursor back 29 Oct, Codex not steady yet); reopen after ~5 Nov"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Review whether a second worker lane is ready"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-05T00:05:00Z"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "remaining_action": "Review whether a second worker lane is ready",
+      "hold": {
+        "type": "input",
+        "condition": "Two Mini agents must have been available with usable credit for a whole week before reviewing a second lane",
+        "check_at": "2026-11-05T00:05:00Z"
+      }
     },
     {
       "id": "J0822",
@@ -71883,9 +72065,25 @@
           "at": "2026-10-22T20:57Z",
           "by": "gemini",
           "what": "blocked: waits for input: 026 long c5AdqQsnnys public (its YouTube publishAt Sun 15 Nov 2026 18:00Z is a release date, not a job start); reopen when public; must finish before Mon 16 Nov 11:30Z when Short HZGTovJu_TQ airs"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Add Related links and pin the Nearest Star comment"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-15T18:05:00Z"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "remaining_action": "Add Related links and pin the Nearest Star comment",
+      "hold": {
+        "type": "public",
+        "condition": "Nearest Star long c5AdqQsnnys must read back Public",
+        "check_at": "2026-11-15T18:05:00Z"
+      }
     },
     {
       "id": "J0862",
@@ -71915,9 +72113,25 @@
           "at": "2026-10-22T20:56Z",
           "by": "claude",
           "what": "blocked: waits for input: ElevenLabs characters (reset 30 Oct); reopen after the reset"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Record voiceovers for the Moon and Dinosaur Shorts"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-30T00:05:00Z"
         }
       ],
-      "kind": "vo"
+      "kind": "vo",
+      "remaining_action": "Record voiceovers for the Moon and Dinosaur Shorts",
+      "hold": {
+        "type": "credits",
+        "condition": "ElevenLabs must have sufficient renewed characters for the approved Shorts voiceovers",
+        "check_at": "2026-10-30T00:05:00Z"
+      }
     },
     {
       "id": "J0863",
@@ -71947,9 +72161,25 @@
           "at": "2026-10-22T20:56Z",
           "by": "claude",
           "what": "blocked: waits for input: Google Flow credit renewal (~12 Nov); reopen once renewed"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Review the picture-generation plan and cost after credits renew"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-12T00:05:00Z"
         }
       ],
-      "kind": "chief"
+      "kind": "chief",
+      "remaining_action": "Review the picture-generation plan and cost after credits renew",
+      "hold": {
+        "type": "credits",
+        "condition": "Verify actual Flow credit renewal before the Chief price review; do not infer it from the expected renewal date",
+        "check_at": "2026-11-12T00:05:00Z"
+      }
     },
     {
       "id": "J0864",
@@ -72929,6 +73159,16 @@
           "at": "2026-10-25T21:07Z",
           "by": "gemini",
           "what": "blocked: waits for input: HOS 007 long ETynHpIYLeY public (publishAt Thu 12 Nov 2026 18:00Z; Studio picker lists 23 public videos only, 0 matches while Private). HOS Buffer mirror registered for -I_GHK-GcFs & 4WUs0beKn0A with long=ETynHpIYLeY (OWB b8507a906) and HOS records updated (HOS 9b715232). Reopen on/after Thu 12 Nov 18:05Z (before Fri 13 Nov 11:30Z)."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Add the Related links to the Vaccine long video"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-12T18:05:00Z"
         }
       ],
       "kind": "listing",
@@ -72950,6 +73190,12 @@
         "at": "2026-10-25T21:06Z",
         "by": "gemini",
         "note": "Updated HOS 007 records with long=ETynHpIYLeY and Studio readbacks; lint:package + channel:audit (54 videos, 0 errors) P"
+      },
+      "remaining_action": "Add the Related links to the Vaccine long video",
+      "hold": {
+        "type": "public",
+        "condition": "Vaccine long ETynHpIYLeY must read back Public",
+        "check_at": "2026-11-12T18:05:00Z"
       }
     },
     {
@@ -76268,12 +76514,28 @@
           "at": "2026-10-25T23:08Z",
           "by": "chief",
           "what": "blocked: waits for 028 long F-jImX5h7ws to go public Sun 29 Nov 2026 18:00 London (Studio picker only lists public videos); run from 18:05 London. Carries J0894's pinned comment: post + pin Pinned-Comments/gliese_pinned_v01.txt on F-jImX5h7ws and read back, then Related on the 4 Shorts (bizlhspnVvY first, before Mon 30 Nov 11:30). Chief 25 Oct 23:25 (reopen at 23:13 was a slip; nothing claimed it)."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Add Related links and pin the Gliese comment"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-29T18:05:00Z"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "OWB:028"
-      ]
+      ],
+      "remaining_action": "Add Related links and pin the Gliese comment",
+      "hold": {
+        "type": "public",
+        "condition": "Gliese long F-jImX5h7ws must read back Public",
+        "check_at": "2026-11-29T18:05:00Z"
+      }
     },
     {
       "id": "J0911",
@@ -76427,6 +76689,16 @@
           "at": "2026-10-26T18:33Z",
           "by": "codex",
           "what": "acting-Chief review complete: waits for input: HOS 008 completed approved picture/edit and fewer than two built Test B Shorts. Acting-Chief codex ruling: no extra 007 Short; scope resolved, no Short PASS. Re-inventory 008 locked pair before assembly; cancel as redundant if both already built. Elected Chief reopens only when inputs ready; assembly specialist chain then builds/gates existing VO + picture only. J0863 and other holds unchanged. Decision: https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754 Original assembly progress retained at 1/3; no production stage approved."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Check the Franklin Short inputs before deciding whether another cut is needed"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-28T00:30:00Z"
         }
       ],
       "kind": "assembly",
@@ -76443,7 +76715,13 @@
         "HOS:008"
       ],
       "escalated_at": "2026-10-25T03:43Z",
-      "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754"
+      "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
+      "remaining_action": "Check the Franklin Short inputs before deciding whether another cut is needed",
+      "hold": {
+        "type": "input",
+        "condition": "HOS 008 picture/edit must be approved and the inventory must show a genuine need for another Short",
+        "check_at": "2026-10-28T00:30:00Z"
+      }
     },
     {
       "id": "J0913",
@@ -76751,12 +77029,28 @@
           "at": "2026-10-26T23:40Z",
           "by": "codex",
           "what": "Acting-Chief Codex: PREPARATION REQUIRED, no submitted recut to PASS. J0914 was superseded by J0942/J0943 (thread 6398693151). Replace cancelled dependency with J1007 recorded-VO/motion/Titan preparation (due 29 Oct 20:00 London) -> J1008 elected-Chief lock (due 30 Oct 20:00). J0915 stays held on J1008, then eligible local assembly only; first target 2 Nov 20:00. No external wait. Keeper question-first applies; J0216 length/link exceptions remain. No media PASS, swap approval, Ready for OK or change to scheduled copies. Ruling: PR #295, commit 6d0ffc7a5. Separate Neptune/Ben holds unchanged."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Build the approved standalone Short recuts"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "assembly",
       "review_by": "codex",
       "review_verdict": "PREPARATION REQUIRED",
-      "review_ref": "6d0ffc7a5"
+      "review_ref": "6d0ffc7a5",
+      "remaining_action": "Build the approved standalone Short recuts",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor J1008 must finish, then the elected Chief verifies the existing release conditions",
+        "check_at": "2026-10-27T00:00:00Z"
+      }
     },
     {
       "id": "J0916",
@@ -77524,6 +77818,16 @@
           "at": "2026-10-25T04:16Z",
           "by": "cursor",
           "what": "blocked: Pinned comment cannot be posted on this scheduled private video. Block that step until Sun 6 Dec 2026 18:05 London. Captions (en-GB, 174 cues, serving), thumbnail-only A/B/C, end screen (Subscribe Orbit With Ben + Best for viewer, 8:42:07-9:02:07) and the 028 card at 1:30 are saved and read back (70066e92d). For Chief: the language dialog's 'make this the default for my channel' box was already ticked when English (UK) was confirmed, and Studio then showed 20 auto-dub audio tracks as Processing. Privacy and publishAt unchanged. No PASS."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Post and pin the Betelgeuse comment"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-12-06T18:05:00Z"
         }
       ],
       "kind": "studio",
@@ -77536,6 +77840,12 @@
         "at": "2026-10-25T04:16Z",
         "by": "cursor",
         "note": "Captions, thumbnail-only A/B/C, end screen and 1:30 card saved and read back. Record 70066e92d. Pinned comment still blo"
+      },
+      "remaining_action": "Post and pin the Betelgeuse comment",
+      "hold": {
+        "type": "public",
+        "condition": "Betelgeuse long vP1BbqZ_dnM must read back Public before posting its pinned comment; completed steps remain complete",
+        "check_at": "2026-12-06T18:05:00Z"
       }
     },
     {
@@ -79391,6 +79701,11 @@
           "at": "2026-10-26T21:58Z",
           "by": "codex",
           "what": "released: Chief FIX, review complete. Assembly next: follow jobs/reviews/J0935/RULING_2026-10-26_CODEX.md; per-Short evidence/fixes in air-date order, six steps, target Sun 1 Nov 20:00 London. Technical level/PHONE/hash checks accepted. No external wait. No new spend, upload or swap. Earlier files stay untouched."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Fix the audio and remaining issues in the Mars and Nearest Star Shorts"
         }
       ],
       "kind": "assembly",
@@ -79413,7 +79728,8 @@
         "at": "2026-10-26T21:58Z",
         "by": "codex",
         "note": "Chief review finished: FIX all six pending specific corrections/evidence; fresh assembly pass begins at 0/6."
-      }
+      },
+      "remaining_action": "Fix the audio and remaining issues in the Mars and Nearest Star Shorts"
     },
     {
       "id": "J0936",
@@ -79668,6 +79984,16 @@
           "at": "2026-10-26T23:58Z",
           "by": "codex",
           "what": "J0993 preparation FIX (fded21428): extra questions, inconsistent splice arithmetic, early answers, opening reuse and shot limits. Held on J1009 revision -> J1010 Chief lock/assembly dispatch; no approved replacement or Ben card. Target 1 Nov 20:00; original deadlines/v01 fallback unchanged."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Build the corrected Short recuts after the plan is approved"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "video",
@@ -79694,7 +80020,13 @@
       "escalated_at": "2026-10-26T16:26Z",
       "review_ref": "fded21428",
       "review_by": "codex",
-      "review_verdict": "FIX"
+      "review_verdict": "FIX",
+      "remaining_action": "Build the corrected Short recuts after the plan is approved",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor J1010 must finish, then the elected Chief verifies the existing release conditions",
+        "check_at": "2026-10-27T00:00:00Z"
+      }
     },
     {
       "id": "J0937",
@@ -81943,6 +82275,16 @@
           "at": "2026-10-25T20:55Z",
           "by": "chief",
           "what": "Chief ruling c49 (25 Oct 20:55 London, J0923 precedent): steps 1, 3, 4 PASS (end screen Subscribe + GHZDsiH7L7A 8:31-8:51; title/thumb Test & Compare saved; recorded HOS 47de9a4e). The comment refusal is expected on a scheduled private video, not a sign-in problem. Only step 2 remains: post and pin 'So where does a tree's weight really come from?' once VbPubYd6Fbs is public (publishAt Thu 5 Nov 18:00 London). Blocked on that go-public; reopen on/after Thu 5 Nov 18:05 London. Do not redo steps 1/3, no new test, never change privacy/publishAt. GBP0."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Post and pin the Trees comment"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-05T18:05:00Z"
         }
       ],
       "kind": "studio",
@@ -81955,6 +82297,12 @@
         "at": "2026-10-25T20:41Z",
         "by": "cursor",
         "note": "End screen and title test saved. Comment refused: Studio account cannot create comments. Recorded in HOS 47de9a4e."
+      },
+      "remaining_action": "Post and pin the Trees comment",
+      "hold": {
+        "type": "public",
+        "condition": "Trees long VbPubYd6Fbs must read back Public before posting its pinned comment; do not repeat completed end-screen or test steps",
+        "check_at": "2026-11-05T18:05:00Z"
       }
     },
     {
@@ -82053,9 +82401,25 @@
           "at": "2026-10-25T21:16Z",
           "by": "cursor",
           "what": "blocked: waits for input: HOS 007 long ETynHpIYLeY public (publishAt Thu 12 Nov 2026 18:00 London). Reopen on/after Thu 12 Nov 18:05 London, post the pinned comment, pin it, and read it back. Do not change the schedule."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Post and pin the Vaccine comment"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-12T18:05:00Z"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "remaining_action": "Post and pin the Vaccine comment",
+      "hold": {
+        "type": "public",
+        "condition": "Vaccine long ETynHpIYLeY must read back Public before posting its pinned comment",
+        "check_at": "2026-11-12T18:05:00Z"
+      }
     },
     {
       "id": "J0961",
@@ -82165,6 +82529,16 @@
           "at": "2026-10-26T21:51Z",
           "by": "codex",
           "what": "Chief ruling recorded; remains blocked: Chief ruling FIX by elected Codex (26 Oct): no gate allowance. Fresh checks reproduce c61 failures on all three approved v03 masters; hashes and Ben approvals verified. Upload remains blocked on J0991: no-spend v04 AAC finishing on all three and distinct Wednesday opening, current gates plus elected-Chief review and applicable changed-picture watch. Then amend this brief to exact accepted v04 hashes before release. Existing Ben v03 approvals preserved; no new approval requested now. Evidence jobs/reviews/J0961/RULING.md (0d132cd27). No upload; GBP0."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Upload the approved Betelgeuse Shorts after their checks pass"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "studio",
@@ -82202,7 +82576,13 @@
         "by": "gemini",
         "note": "Verified 3 v03 master SHA256s + free slots in UPLOADS.json + committed 3 PACKAGE_MANIFEST.json files; gate_shorts_open f"
       },
-      "escalated_at": "2026-10-26T12:15Z"
+      "escalated_at": "2026-10-26T12:15Z",
+      "remaining_action": "Upload the approved Betelgeuse Shorts after their checks pass",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor J0991 must finish, then the elected Chief verifies the existing release conditions",
+        "check_at": "2026-10-27T00:00:00Z"
+      }
     },
     {
       "id": "J0962",
@@ -82924,6 +83304,16 @@
           "at": "2026-10-26T22:44Z",
           "by": "codex",
           "what": "Chief review recorded; prior dependency J0965 replaced by targeted QA J1005; original work remains blocked. Worker 5/5 unchanged."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Sign off the finished related Shorts after the sound check"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "video",
@@ -82954,6 +83344,12 @@
         "ruling": "targeted QA required",
         "dependency": "J1005",
         "evidence": "Codex covering as elected acting Chief — J0966 ruling, 26 Oct 2026.\n\nRuling: technical evidence and still-review checks accepted; full film PASS and swap approval withheld pending targeted finished-audio QA J1005. This is an evidence-completion hold, not a finding that the audio is defective. J0966 remains blocked with dependency J1005. No rebuild is requested without a timestamped defect. Worker progress remains 5/5; this review has its own 1/3–3/3 progress.\n\nReviewed J0966 body, result and full history, including fixes 6424556451, 6426432872 and 6427725484. Current submitted versions:\n- -I_GHK-GcFs: Jenner v03, 22.400s, SHA 858495ea7dcb; atempo 1.05, onset 0.094s, tail 0.42s.\n- x_3L_IdYgEc: Harvey v04, 25.259s, SHA e1f862ba737a; onset 0.062s, tail 1.00s. One Malpighi card remains; Harvey card removed.\n- -sa2t7dAtCk: Dalton v03, 24.533s, SHA f93745e95558; atempo 1.03, onset 0.00s, tail 0.64s.\n- 4WUs0beKn0A: vaccine-name v05, 24.533s, SHA e5ea76f012fb; atempo 1.03, onset 0.083s, tail 0.42s. Jenner restored explicitly at 5.536s after the Jesty sentence/card.\n\nIndependently rehashed all four local masters and all 24 recorded UAT/NAS copies (masters, PHONE files and sheets): every hash matches. ffprobe durations agree. Read current open/J0918, picture, polish, music, SFX and VO-check outputs: machine checks PASS. Inspected all four 2fps sheets and four warning sheets. The low-detail frames retain recognisable subjects (illness bed at 0:08, artery/vein gap at 0:06, atom pieces at 0:07, quill at 0:14); no re-render ordered for those WARNs. The earlier speed, attribution and two-card corrections are present. Single-overlay placement and caption/title separation are visible in the sheets; motion metrics and cut timing pass in the supplied gates. This is still-based review, not a claim of real-time playback or listening.\n\nRemaining evidence: HOS STUDIO_PLAYBOOK sections 4 and 7 require an actual listen, including sounds-alike warnings. Vaccine v05 vo_check explicitly flags variolae vaccinae (~12.10s) and vacca (~17.56s). No recorded finished-master audition ruling was found. This Codex session cannot certify listening. J1005 (kind qa, specialist fallback routing) now owns the GBP0 end-to-end audition of the exact four masters, pronunciation and Jenner splice, stumbles/clipping, music/SFX fit and loop joins. It must record reviewer/tool, hashes and timestamps; a transcript or playback command launch alone is not a listen. No new TTS/generation or paid API.\n\nNext: J1005 completes its evidence report and reopens J0966 for the elected Chief. No need to repeat accepted hashes/visual fixes if masters are unchanged. No Ben cards yet; no final PASS, upload, Studio swap, privacy change or schedule change authorised. Ben is not being asked to perform routine QA. Existing originals remain scheduled for 13, 15, 16 and 17 Nov. Cut packs must be parked by 20:00 London the prior day and Ben swap OK received by 10:30 on air day, otherwise the originals air unchanged. No unrelated date, credit or Ben-approval hold changed. GBP0 spent.\n"
+      },
+      "remaining_action": "Sign off the finished related Shorts after the sound check",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor J1005 must finish, then the elected Chief verifies the existing release conditions",
+        "check_at": "2026-10-27T00:00:00Z"
       }
     },
     {
@@ -83393,12 +83789,28 @@
           "at": "2026-10-26T03:48Z",
           "by": "chief",
           "what": "blocked: date gate: waits until 2026-11-01T18:00Z (Sun 1 Nov 18:00 London). The running 022 thumbnail-only A/B/C test (T012, ends about Sun 1 Nov 16:30 London) stays; then read the result and arm B v02 (392ff18ac, sha e7247c52) vs the winner. Chief c57 (OWB #264 6407771727). GBP0."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Read the thumbnail-test result and start the approved comparison"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-11-01T18:00:00Z"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "OWB:022"
-      ]
+      ],
+      "remaining_action": "Read the thumbnail-test result and start the approved comparison",
+      "hold": {
+        "type": "date",
+        "condition": "Read the completed running thumbnail test T012 after the recorded 1 Nov 18:00 London gate before arming the approved comparison",
+        "check_at": "2026-11-01T18:00:00Z"
+      }
     },
     {
       "id": "J0970",
@@ -83958,6 +84370,16 @@
           "at": "2026-10-26T21:46Z",
           "by": "codex",
           "what": "Acting-Chief FIX recorded 26 Oct: exact approved v13 fails current loudness/true-peak gate. Local audio-only v13a delegated to J0989 (assembly), then J0990 (Chief exact-hash/gates review). Swap remains blocked on J0990; Ben's v13 content OK 6411210906 retained. No upload or gate override. Review target 27 Oct 12:00 London; hard cutoff 28 Oct 10:30, upload start <=10:45, both readbacks <=11:15; original fallback unchanged."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Upload the corrected Apophis Short after Chief approval"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "studio",
@@ -84005,7 +84427,13 @@
         "by": "codex",
         "note": "Verified Ben OK, current Private schedule, Studio Related=None, and exact v13 SHA256. Pre-upload Shorts gate FAIL: -14.7"
       },
-      "escalated_at": "2026-10-26T18:45Z"
+      "escalated_at": "2026-10-26T18:45Z",
+      "remaining_action": "Upload the corrected Apophis Short after Chief approval",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor J0990 must finish, then the elected Chief verifies the existing release conditions",
+        "check_at": "2026-10-27T00:00:00Z"
+      }
     },
     {
       "id": "J0975",
@@ -84095,6 +84523,11 @@
           "at": "2026-10-26T09:17Z",
           "by": "cursor",
           "what": "released: Earth OVLv9dxTcpE re-read: Related What Happened to Venus? (VBaYRPp85Sw on the page), title What If Earth Stopped Spinning?, Visibility Scheduled, Save disabled. Neptune oyRcrFTYyDY and ISS VfDm3E2bUgU Related None. Old Apophis BbsyFrV8kCY Related None. Saturn 6dcL5rBmHPM still How Long Do Saturn's Rings Have Left?. Item 3 still open on the NEW v13 id only, so this job now waits after J0974. GBP0."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Add the approved Related links and verify the Saturn link"
         }
       ],
       "kind": "studio",
@@ -84110,7 +84543,8 @@
         "at": "2026-10-26T09:17Z",
         "by": "cursor",
         "note": "Earth Related re-read Venus. Neptune, ISS, old Apophis None. Saturn unchanged. Waits on J0974."
-      }
+      },
+      "remaining_action": "Add the approved Related links and verify the Saturn link"
     },
     {
       "id": "J0976",
@@ -84309,6 +84743,16 @@
           "at": "2026-10-26T09:48Z",
           "by": "gemini",
           "what": "blocked: waits for: J0280 Title Test & Compare on GHZDsiH7L7A still running"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Start the next Atom title test"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-30T00:05:00Z"
         }
       ],
       "kind": "listing",
@@ -84330,6 +84774,12 @@
         "at": "2026-10-26T09:48Z",
         "by": "gemini",
         "note": "Checked HOS Studio (CDP 9460, UCXp7HkBIl1LgaznXuZHJyRg) on GHZDsiH7L7A: A/B testing titles reads Running… (also before F"
+      },
+      "remaining_action": "Start the next Atom title test",
+      "hold": {
+        "type": "test",
+        "condition": "Verify the Atom title test on GHZDsiH7L7A has ended before starting the approved next test",
+        "check_at": "2026-10-30T00:05:00Z"
       }
     },
     {
@@ -84435,6 +84885,16 @@
           "at": "2026-10-26T22:23Z",
           "by": "codex",
           "what": "Chief review dependency: J1000; v01 remains held; no external wait"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Build the next Short after its opening and plan are approved"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "assembly",
@@ -84449,6 +84909,12 @@
         "at": "2026-10-26T22:23Z",
         "by": "codex",
         "note": "J1000 queued: no-spend existing-VO question EDL or cancellation recommendation; review complete"
+      },
+      "remaining_action": "Build the next Short after its opening and plan are approved",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor J1000 must finish, then the elected Chief verifies the existing release conditions",
+        "check_at": "2026-10-27T00:00:00Z"
       }
     },
     {
@@ -84813,6 +85279,11 @@
           "at": "2026-10-26T22:18Z",
           "by": "codex",
           "what": "rerouted to gemini on gemini-argon: Chief decision recorded in result and preceding history: FIX audit completeness. Immediate no-spend QA rework, follow steps 2-4 in ruling; retain --of 4 and film links. This is an actionable worker handoff, not a wait for absent Chief. Do not mark films approved. No external dependency/reset is needed."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Complete the quality-check inventory and run missing checks"
         }
       ],
       "kind": "qa",
@@ -84849,7 +85320,8 @@
         "by": "codex",
         "note": "Chief evidence review complete: FIX completeness. Remaining: version/freshness inventory, missing gate runs, corrected r"
       },
-      "escalated_at": "2026-10-26T17:20Z"
+      "escalated_at": "2026-10-26T17:20Z",
+      "remaining_action": "Complete the quality-check inventory and run missing checks"
     },
     {
       "id": "J0983",
@@ -85091,6 +85563,11 @@
           "at": "2026-10-26T22:38Z",
           "by": "codex",
           "what": "step 5 of 5 done: Prior worker submission 5/5 retained; Chief FIX 6428994070: numbers verified, bounded evidence/summary corrections pending."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Review HOS performance and identify improvements"
         }
       ],
       "kind": "review",
@@ -85118,7 +85595,8 @@
         "at": "2026-10-26T22:38Z",
         "by": "codex",
         "note": "Prior worker submission 5/5 retained; Chief FIX 6428994070: numbers verified, bounded evidence/summary corrections pendi"
-      }
+      },
+      "remaining_action": "Review HOS performance and identify improvements"
     },
     {
       "id": "J0985",
@@ -85198,6 +85676,16 @@
           "at": "2026-10-26T22:30Z",
           "by": "codex",
           "what": "Acting Chief Codex FIX (26 Oct 2026), review J1001 / PR #294: verified Studio readings retained; unsupported causal, AVD-exit and payoff-threshold claims require correction. J1002 owns audit/OWB LEARNINGS correction and reproducible evidence; J0985 remains blocked after J1002, then elected-Chief re-review. No blanket recut, rename, topic lock or swap authorized. J0956->J0988 and J0974->J0990/J0989 gates, Ben approvals and deadlines remain unchanged. All three proposed media-path fixes are obsolete: existing staged caches resolve and master SHA256 matches. See 05_Analytics/weekly_audit/OWB_2026-10-26_CHIEF_REVIEW.md. Mature data follow-up J1003 has external-data retry 28 Oct 11:35 London (29 Oct 16:00 fallback)."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Review the corrected Orbit performance audit"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
         }
       ],
       "kind": "review",
@@ -85232,7 +85720,13 @@
         "OWB:031",
         "OWB:032"
       ],
-      "escalated_at": "2026-10-26T19:20Z"
+      "escalated_at": "2026-10-26T19:20Z",
+      "remaining_action": "Review the corrected Orbit performance audit",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor J1002 must finish, then the elected Chief verifies the existing release conditions",
+        "check_at": "2026-10-27T00:00:00Z"
+      }
     },
     {
       "id": "J0986",
@@ -85542,6 +86036,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "codex",
           "what": "step 3 of 4 done: Automated QA complete; UAT verified; NAS copy running detached; aural artefact check remains open"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Fix the Apophis Short audio levels"
         }
       ],
       "kind": "assembly",
@@ -85565,7 +86064,8 @@
         "at": "2026-10-27T00:44Z",
         "by": "codex",
         "note": "Automated QA complete; UAT verified; NAS copy running detached; aural artefact check remains open"
-      }
+      },
+      "remaining_action": "Fix the Apophis Short audio levels"
     },
     {
       "id": "J0990",
@@ -85590,13 +86090,19 @@
           "at": "2026-10-26T21:46Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Review the corrected Apophis Short for release"
         }
       ],
       "kind": "chief",
       "taskKeys": [
         "OWB:030"
       ],
-      "urgent": 7
+      "urgent": 7,
+      "remaining_action": "Review the corrected Apophis Short for release"
     },
     {
       "id": "J0991",
@@ -85626,12 +86132,18 @@
           "at": "2026-10-26T21:51Z",
           "by": "codex",
           "what": "linked OWB:029; repair dependency for held upload J0961"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Fix the Betelgeuse Shorts audio levels and Wednesday opening"
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:029"
-      ]
+      ],
+      "remaining_action": "Fix the Betelgeuse Shorts audio levels and Wednesday opening"
     },
     {
       "id": "J0992",
@@ -85908,9 +86420,15 @@
           "at": "2026-10-26T22:08Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Update the Venus end screen and Sun card"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "remaining_action": "Update the Venus end screen and Sun card"
     },
     {
       "id": "J0996",
@@ -85935,9 +86453,15 @@
           "at": "2026-10-26T22:08Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Correct the Earth long-video description"
         }
       ],
-      "kind": "studio"
+      "kind": "studio",
+      "remaining_action": "Correct the Earth long-video description"
     },
     {
       "id": "J0997",
@@ -85962,12 +86486,18 @@
           "at": "2026-10-26T22:13Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Correct the Vaccine Shorts video links"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:007"
-      ]
+      ],
+      "remaining_action": "Correct the Vaccine Shorts video links"
     },
     {
       "id": "J0998",
@@ -85992,9 +86522,15 @@
           "at": "2026-10-26T22:13Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Investigate and prepare a fix for duplicate playlist entries"
         }
       ],
-      "kind": "assembly"
+      "kind": "assembly",
+      "remaining_action": "Investigate and prepare a fix for duplicate playlist entries"
     },
     {
       "id": "J0999",
@@ -86024,12 +86560,18 @@
           "at": "2026-10-26T22:14Z",
           "by": "codex",
           "what": "Correct checker dependency reference to J0998 before dispatch"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Verify the compilation end screen and disclosure setting"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:099"
-      ]
+      ],
+      "remaining_action": "Verify the compilation end screen and disclosure setting"
     },
     {
       "id": "J1000",
@@ -86064,6 +86606,11 @@
           "at": "2026-10-26T22:31Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4419 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Find a suitable question opening in the existing voiceover"
         }
       ],
       "kind": "review",
@@ -86078,7 +86625,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "remaining_action": "Find a suitable question opening in the existing voiceover"
     },
     {
       "id": "J1001",
@@ -86197,6 +86745,11 @@
           "at": "2026-10-26T22:30Z",
           "by": "codex",
           "what": "Linked audit films; original J0985 remains held until corrections and Chief review; mature-read job J1003 is independent."
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Correct the Orbit audit and record supporting evidence"
         }
       ],
       "for": "gemini",
@@ -86215,7 +86768,8 @@
         "OWB:030",
         "OWB:031",
         "OWB:032"
-      ]
+      ],
+      "remaining_action": "Correct the Orbit audit and record supporting evidence"
     },
     {
       "id": "J1003",
@@ -86245,12 +86799,28 @@
           "at": "2026-10-26T22:30Z",
           "by": "codex",
           "what": "blocked on 48-hour Studio data; retry 2026-10-28 11:35 London, then 2026-10-29 16:00 London"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Measure the Earth Short once 48 hours of data are available"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "condition recorded; next verification 2026-10-28T11:35:00Z"
         }
       ],
       "kind": "review",
       "taskKeys": [
         "OWB:027"
-      ]
+      ],
+      "remaining_action": "Measure the Earth Short once 48 hours of data are available",
+      "hold": {
+        "type": "date",
+        "condition": "Studio data readAt must be at or after 28 Oct 11:30Z; retain the recorded 29 Oct 16:00 London fallback if data is unavailable",
+        "check_at": "2026-10-28T11:35:00Z"
+      }
     },
     {
       "id": "J1004",
@@ -86280,6 +86850,11 @@
           "at": "2026-10-26T22:39Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4428 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Resolve the remaining opening and duration proposals"
         }
       ],
       "kind": "review",
@@ -86291,7 +86866,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "remaining_action": "Resolve the remaining opening and duration proposals"
     },
     {
       "id": "J1005",
@@ -86321,6 +86897,11 @@
           "at": "2026-10-26T22:44Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4432 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Check sound and pronunciation in the related Shorts"
         }
       ],
       "kind": "qa",
@@ -86337,7 +86918,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "remaining_action": "Check sound and pronunciation in the related Shorts"
     },
     {
       "id": "J1006",
@@ -86400,6 +86982,11 @@
           "at": "2026-10-26T23:41Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4489 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Prepare the standalone Shorts opening and motion plans"
         }
       ],
       "due": "2026-10-29T20:00:00Z",
@@ -86412,7 +86999,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "remaining_action": "Prepare the standalone Shorts opening and motion plans"
     },
     {
       "id": "J1008",
@@ -86437,10 +87025,16 @@
           "at": "2026-10-26T23:40Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Approve the standalone Shorts plans before assembly"
         }
       ],
       "due": "2026-10-30T20:00:00Z",
-      "kind": "chief"
+      "kind": "chief",
+      "remaining_action": "Approve the standalone Shorts plans before assembly"
     },
     {
       "id": "J1009",
@@ -86470,6 +87064,11 @@
           "at": "2026-10-27T00:18Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4526 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Correct the Short scripts, timing and shot plans"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -86487,7 +87086,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "remaining_action": "Correct the Short scripts, timing and shot plans"
     },
     {
       "id": "J1010",
@@ -86512,6 +87112,11 @@
           "at": "2026-10-26T23:57Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T00:44Z",
+          "by": "relay",
+          "what": "remaining action: Approve the corrected Short plans before assembly"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -86520,7 +87125,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "remaining_action": "Approve the corrected Short plans before assembly"
     }
   ],
   "focus": [],
