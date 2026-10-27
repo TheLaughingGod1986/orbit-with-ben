@@ -86244,6 +86244,11 @@
           "at": "2026-10-27T16:03Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Listening PASS verified and recorded in J1039 (PR #296 #6446905753, commit e87fcf1d7)"
+        },
+        {
+          "at": "2026-10-27T16:04Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex is down too; next in its chain: gemini on its default"
         }
       ],
       "kind": "assembly",
@@ -86259,8 +86264,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
-      "model": "gpt-6.1-sol",
+      "for": "gemini",
+      "model": "gemini-agy",
       "remaining_action": "Close J0989 with recorded listening PASS (PR #296 #6446905753) to unblock J0990",
       "progress": {
         "step": 3,
