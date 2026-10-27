@@ -87038,16 +87038,21 @@
           "at": "2026-10-27T17:28Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Implemented dedupeVideoIds/dedupeVideosById in rules.ts and channel-audit.ts + regression test in hos-contract.test.ts (21/21 pass, check_all.sh PASS, core_sync check PASS)"
+        },
+        {
+          "at": "2026-10-27T17:32Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Opened draft HOS PR #365 (a87cd56a, branch gemini/j0998-channel-audit-dedup) with sanitized reproduction, narrow ID dedup, and regression test; left HOS main unedited at 2a1a6e8b pending Ben OK"
         }
       ],
       "kind": "assembly",
-      "remaining_action": "Commit, push branch, and open unmerged draft HOS PR for Ben OK",
+      "remaining_action": "Await Ben's OK to merge draft HOS PR #365 (a87cd56a), then merge to HOS main and run npm run channel:audit",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-27T17:28Z",
+        "at": "2026-10-27T17:32Z",
         "by": "gemini",
-        "note": "Implemented dedupeVideoIds/dedupeVideosById in rules.ts and channel-audit.ts + regression test in hos-contract.test.ts ("
+        "note": "Opened draft HOS PR #365 (a87cd56a, branch gemini/j0998-channel-audit-dedup) with sanitized reproduction, narrow ID dedu"
       }
     },
     {
