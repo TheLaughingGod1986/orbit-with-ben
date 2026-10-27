@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1013 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1020 | any | open (after J1019) | – | – | chief · J0936: Chief lock after executable VO-bridge corrections | b8c75920b |
-| J1021 | any | open | – | – | chief · Chief: verify condition for J0989 |  |
+| J1021 | any | claimed | codex | 2026-10-27T09:15Z | chief · Chief: verify condition for J0989 |  |
 | J1022 | any | open | – | – | chief · Chief: verify condition for J0275 |  |
 
 Recently finished:
