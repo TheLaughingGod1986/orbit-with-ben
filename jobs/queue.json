@@ -91237,9 +91237,14 @@
           "at": "2026-10-27T20:46Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified J0967 predecessor done (e1bbcfb9) and audited HOS PR #366 (00b1e653), CI checks (3/3 PASS), and hos_build_rule_v02.py --check PASS"
+        },
+        {
+          "at": "2026-10-27T20:46Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified all 8 hook/duration calculations, 12 on-disk code_graphics, 42 unminted flow_veo rows, and preserved holds in HOS PR #366 (00b1e653)"
         }
       ],
-      "remaining_action": "Verify timing calculations, media map, and production holds in HOS PR #366 (00b1e653)",
+      "remaining_action": "Record condition verification on J1004 via jobs.py wait --recheck J1045",
       "kind": "chief",
       "recheck_of": "J1004",
       "due": "2026-10-27T21:41:37+00:00",
@@ -91254,11 +91259,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-10-27T20:46Z",
         "by": "gemini",
-        "note": "Verified J0967 predecessor done (e1bbcfb9) and audited HOS PR #366 (00b1e653), CI checks (3/3 PASS), and hos_build_rule_"
+        "note": "Verified all 8 hook/duration calculations, 12 on-disk code_graphics, 42 unminted flow_veo rows, and preserved holds in H"
       },
       "taskKeys": [
         "HOS:006",
