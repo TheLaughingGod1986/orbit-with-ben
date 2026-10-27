@@ -88162,13 +88162,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-27T07:15Z",
-      "eta": "2026-10-27T09:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T06:51Z",
-      "result": "",
+      "result": "Verified condition remains unmet: PR 296 REVIEW explicitly leaves aural pumping/artefact check OPEN; no follow-up PR review/comment or thread PASS. No audio-listening input in this session. J0989 retained blocked with exact-hash listening condition and original retry 2026-10-27T07:51:10+00:00, recheck J1021. Ben v13 OK retained; J0990 exact-hash technical decision still required. No rebuild, spend or YouTube/Buffer changes.",
       "history": [
         {
           "at": "2026-10-27T06:51Z",
@@ -88199,6 +88199,11 @@
           "at": "2026-10-27T07:18Z",
           "by": "codex",
           "what": "step 3 of 3 done: Decision recorded on studio thread; existing retry preserved and no release approval inferred."
+        },
+        {
+          "at": "2026-10-27T07:18Z",
+          "by": "codex",
+          "what": "done: Verified condition remains unmet: PR 296 REVIEW explicitly leaves aural pumping/artefact check OPEN; no follow-up PR review/comment or thread PASS. No audio-listening input in this session. J0989 retained blocked with exact-hash listening condition and original retry 2026-10-27T07:51:10+00:00, recheck J1021. Ben v13 OK retained; J0990 exact-hash technical decision still required. No rebuild, spend or YouTube/Buffer changes."
         }
       ],
       "remaining_action": "Verification complete; J0989 still requires the recorded listening check",
