@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0984 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0985 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
-| J0998 | mini | open (after J0981) | – | – | assembly · HOS audit: reproduce playlist boundary duplicate and draft narrow dedup fix | 6428572814 |
+| J0998 | mini | claimed | gemini | 2026-10-27T18:06Z | assembly · HOS audit: reproduce playlist boundary duplicate and draft narrow dedup fix | 6428572814 |
 | J0999 | mini | open (after J0981) | – | – | studio · HOS 099: compilation end screen and altered-content readback | 6428572814 |
 | J1000 | mini | open | – | – | for gemini · review · `gemini-argon` · J0979 follow-up: find Keeper-compliant opening in existing locked VO | 2cbadfe1a |
 | J1002 | mini | open | – | – | for gemini · review · `gemini-argon` · J0985 FIX: correct OWB audit inferences and persist reproducible evidence |  |
