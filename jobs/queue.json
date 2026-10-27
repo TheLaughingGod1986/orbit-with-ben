@@ -90940,7 +90940,7 @@
     {
       "id": "J1043",
       "title": "Chief: verify condition for J1032",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J1032: J1029 predecessor and J1032 3/3 v04 assembly/delivery (PR305 61d031f35) verified PASS across all 6 Shorts (S1 228cb06dfd37, S2 d35efd737ed0, S3 65e58aea2a20, S4 0eb18596d2d6, S5 37fbe8b9ed33, S6 91b297a262c1: 6-way repo/UAT/NAS SHA256 match, 21/21 UAT+NAS manifests, 7 gates PASS, decoded AAC -14.2..-14.4 LUFS / -1.8..-2.0 dBTP, loop 0.41..0.84, multimodal audio/visual inspection PASS, v01-v03 untouched). Kept blocked so completed 3/3 assembly is not re-queued; parked for independent Chief replacement PASS and Ben swap approval on J0936.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1032 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -90960,13 +90960,27 @@
           "at": "2026-10-27T19:32Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T19:38Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Verify readiness: Complete independent Chief replacement review and Ben swap approval for the six v04 Shorts",
       "kind": "chief",
       "recheck_of": "J1032",
       "due": "2026-10-27T20:32:01+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1044",
