@@ -21807,6 +21807,11 @@
           "at": "2026-10-27T10:30Z",
           "by": "relay",
           "what": "condition verification queued: J1034"
+        },
+        {
+          "at": "2026-10-27T10:33Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-27T11:30:30Z"
         }
       ],
       "kind": "studio",
@@ -21820,12 +21825,11 @@
       "remaining_action": "Verify Jupiter test completion and Saturn J0189 prerequisite before approved comparisons",
       "hold": {
         "type": "input",
-        "condition": "Jupiter -jmMROGoZCM NO FLOOR completion needs live Studio proof; both J1031 CDP 9223 probes timed out (curl 28). Saturn 55AEQwvs36g must finish J0189 RINGS ARE FALLING before RINGS VANISHING; J0189 still open. Preserve 21 Oct approvals; J1031 readback records evidence.",
-        "check_at": "2026-10-27T11:30:30+00:00",
-        "last_recheck": "J1031",
-        "checked_at": "2026-10-27T09:29:39+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1034"
+        "condition": "Jupiter NO FLOOR completion unverified: J1034 CDP 9223 probes timed out (curl 28), including outside sandbox. Saturn requires J0189 RINGS ARE FALLING completion before RINGS VANISHING; J0189 remains open. Preserve 21 Oct approvals. Evidence codex-j1034:jobs/readbacks/J1034.json.",
+        "check_at": "2026-10-27T11:30:30Z",
+        "last_recheck": "J1034",
+        "checked_at": "2026-10-27T10:33:10+00:00",
+        "checked_by": "codex"
       }
     },
     {
