@@ -86133,6 +86133,11 @@
           "at": "2026-10-27T07:57Z",
           "by": "relay",
           "what": "condition verification queued: J1026"
+        },
+        {
+          "at": "2026-10-27T08:50Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-27T08:57:12Z"
         }
       ],
       "kind": "assembly",
@@ -86160,12 +86165,11 @@
       "remaining_action": "Listen to exact v13a for pumping and audible artefacts and record the result",
       "hold": {
         "type": "input",
-        "condition": "A recorded listening PASS is still required for exact v13a SHA256 898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3: intelligibility, pumping and audible artefacts. J1021 checked PR 296 review, comments/reviews and current thread; no aural PASS exists. This session has no audio-listening input. Automated gates and ASR do not satisfy this check. After it, J0990 must decide exact-hash release; Ben approval 6411210906 covers v13.",
-        "check_at": "2026-10-27T08:57:12+00:00",
-        "last_recheck": "J1021",
-        "checked_at": "2026-10-27T07:17:21+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1026"
+        "condition": "Recorded listening PASS required for exact v13a SHA256 898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3: intelligibility, pumping and audible artefacts. J1026 reread PR296 REVIEW, empty PR comments/reviews and latest thread: no listening PASS. Automated gates and ASR do not substitute. After listening, J0990 must decide exact-hash release; Ben 6411210906 approved v13 only.",
+        "check_at": "2026-10-27T08:57:12Z",
+        "last_recheck": "J1026",
+        "checked_at": "2026-10-27T08:50:10+00:00",
+        "checked_by": "codex"
       }
     },
     {
