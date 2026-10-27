@@ -1,5 +1,10 @@
 # Shorts brief — 029 `lift_die_young_10my`
 
+> **Status (27 Oct 2026 — `CHIEF_REVIEW_2026-10-26.md` `2cbadfe1a` & `J1000` audit):**
+> - **v01 HELD / RECOMMENDED FOR CANCELLATION (no Short PASS, no upload or schedule approval).**
+> - Acting-Chief review (`2cbadfe1a`) rejected v01 because line 1 (*"Betelgeuse is only about ten million years old, and it is already near the end of its life."*) is a declarative statement rather than the title question (*"Why Is Betelgeuse Already Dying at Just 10 Million Years Old?"*), and frame 0 (`code_graphic_029_lift_r01_scale.mp4`) did not meet the close, subject-filling opening requirement.
+> - Follow-up existing-VO audit [`J1000_EXISTING_VO_AUDIT_2026-10-27.md`](J1000_EXISTING_VO_AUDIT_2026-10-27.md) inspected all 108 sentences (`12` questions) of `029` locked VO and all other locked OWB longs (`021`–`028`) under the fewest-Shorts brief and active Sun/Saturn/date/credit holds: zero unused, non-anaphoric, subject-naming question openings exist in pre-26-Oct locked VO. `J0979` is recommended for cancellation (`029` already has its 3-Short week in `wed09_great_dimming`, `fri11_opening_testA`, and `mon14_half_moon_daylight`).
+
 ## v01 (`029_short_lift_die_young_10my_v01`)
 
 - **Job:** `J0979` (`Backlog OWB: next Short cut from a locked long (existing VO + picture only)`)
