@@ -89491,9 +89491,14 @@
           "at": "2026-10-27T11:38Z",
           "by": "gemini",
           "what": "step 1 of 3 done: J1032-run12 finished (S2/S3/S4/S5 all gates PASS; diagnosed S1 frame-70 flash cut and S6 frame-74 exposure boundary); completed multimodal listening of S1-S6; archiving J1032-finish05 to NAS"
+        },
+        {
+          "at": "2026-10-27T11:43Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Finish NAS archive of J1032-finish05/v02 scratch (>=20GB free), apply S1 frame-70 flash fix and S6 frame-75 exposure start, re-run QA and deliver",
+      "remaining_action": "Finishing NAS scratch archive to clear >=20GB free disk and applying S1/S6 first_cut_s fixes in J1032-finish12",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -89513,9 +89518,8 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-10-27T11:38Z",
-        "by": "gemini",
-        "note": "J1032-run12 finished (S2/S3/S4/S5 all gates PASS; diagnosed S1 frame-70 flash cut and S6 frame-74 exposure boundary); co"
+        "at": "2026-10-27T11:43Z",
+        "by": "gemini"
       }
     },
     {
