@@ -88784,9 +88784,14 @@
           "at": "2026-10-27T09:16Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Identified exact recorded-word replacement for S6 pre-70% brightening clause (words 133..134 'the serpent,' + words 172..179 'You would need binoculars just to find it.' before retained 'Imagine the night of the closest pass.'), preserving 63 WS / 65 spoken words, Span 20 at 16.400s, vo_end_s=21.180s, and total_duration_s=22.180s"
+        },
+        {
+          "at": "2026-10-27T09:24Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Built J0936_v04_PREP_v07_maps.json (sha256: e76ca28f...), J0936_v04_PREP_v07.md, and S6 full_vo_audition WAV (sha256: ae4a60d9...); listened directly to S6 question and full-VO WAVs and passed verify_j0936_prep_v07.py across all 391 source words"
         }
       ],
-      "remaining_action": "Write build_j0936_prep_v07.py and verify_j0936_prep_v07.py to generate v07 maps, markdown, and S6 audition",
+      "remaining_action": "Commit v07 preparation artifacts from a clean worktree and queue Chief exact-lock review",
       "due": "2026-11-01T20:00:00Z",
       "kind": "review",
       "taskKeys": [
@@ -88804,11 +88809,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-27T09:16Z",
+        "at": "2026-10-27T09:24Z",
         "by": "gemini",
-        "note": "Identified exact recorded-word replacement for S6 pre-70% brightening clause (words 133..134 'the serpent,' + words 172."
+        "note": "Built J0936_v04_PREP_v07_maps.json (sha256: e76ca28f...), J0936_v04_PREP_v07.md, and S6 full_vo_audition WAV (sha256: ae"
       }
     },
     {
