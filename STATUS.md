@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 023 | upload | gemini | 2026-10-27T16:29Z | 2026-10-27T16:58Z | J0995 OWB 023: verified Venus end screen and Sun card (J0980 ruling) |
+| 023 | upload | gemini | 2026-10-27T16:29Z | 2026-10-27T17:29Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
