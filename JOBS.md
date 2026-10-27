@@ -57,11 +57,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1032 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · J0936: assemble all six replacements from J1029 locked preparation v07 | dc4b9da01 |
-| J1037 | any | claimed | gemini | 2026-10-27T14:42Z | chief · Chief: verify condition for J0989 |  |
 | J1038 | any | open | – | – | chief · Chief: verify condition for J1032 |  |
 
 Recently finished:
 
+- J1037 done: Chief: verify condition for J0989 (Checked PR296 REVIEW at 84c3867, empty PR comments/reviews, v13 approvals and thread through 6442146604. No recorded exact-v13a listening PASS and no audio-listening input in this session; J0989 remains blocked, retry retained 2026-10-27T13:36:13Z. J0990 release decision still required. No spend or publishing changes.)
 - J1036 done: Chief: verify condition for J0275 (done)
 - J1035 done: Chief: verify condition for J0989 (Checked PR296 REVIEW at 84c3867, empty PR comments/reviews, v13 approvals and thread through 6440507970. No recorded exact-v13a listening PASS; J0989 remains blocked, retry retained 2026-10-27T12:15:06Z. J0990 release decision still required. Report 6440557381. No spend or publishing changes.)
 - J1034 done: Chief: verify condition for J0275 (Verification complete: J0275 remains blocked. Studio CDP 9223 connection timed out inside and outside sandbox; Jupiter completion unknown, Saturn J0189 open. Preserved 27 Oct 11:30:30 UTC retry and 21 Oct approvals. Evidence d5aafe29a, codex-j1034:jobs/readbacks/J1034.json. No YouTube changes or spend.)
@@ -71,4 +71,3 @@ Recently finished:
 - J1029 done: J0936: exact preparation lock after final S6 timing and card reconciliation (Preparation v07 PASS: PR304 dc4b9da01. J1032 is the sole assembly handoff; J0936 stays blocked for replacement review, 6/6 history preserved.)
 - J1028 done: J0936 preparation: remove remaining early brightening answer and reconcile S6 card (done)
 - J1027 done: Chief: verify condition for J0275 (done)
-- J1026 done: Chief: verify condition for J0989 (done)
