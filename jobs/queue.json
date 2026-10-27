@@ -87636,6 +87636,11 @@
           "at": "2026-10-27T20:13Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T20:14Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Started J1004: read J0967 history and rulings 6425168160, 6426967421, 6428936303"
         }
       ],
       "kind": "review",
@@ -87648,15 +87653,21 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "remaining_action": "Resolve the remaining opening and duration proposals",
+      "remaining_action": "Compute exact word-timing arithmetic and missing-media dependency map for HOS 006-010 Shorts",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-27T20:13Z",
+        "of": 5,
+        "at": "2026-10-27T20:14Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J1004: read J0967 history and rulings 6425168160, 6426967421, 6428936303"
+      },
+      "taskKeys": [
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1005",
