@@ -89116,9 +89116,14 @@
           "at": "2026-10-27T09:40Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed exact assembly brief; checking disk and existing render state before work"
+        },
+        {
+          "at": "2026-10-27T09:45Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Locked map, six accepted WAVs and all source media hash-check PASS; Mini repair recovered about 7 GB; superseded Apophis v09/v10 scratch copied and hash-verified on NAS, preserving v12/v13"
         }
       ],
-      "remaining_action": "Resolve disk pressure, build six locked v04 replacements, and verify finished media",
+      "remaining_action": "Render the six v04 replacements, then verify finished media",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -89136,11 +89141,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-27T09:40Z",
+        "at": "2026-10-27T09:45Z",
         "by": "codex",
-        "note": "Claimed exact assembly brief; checking disk and existing render state before work"
+        "note": "Locked map, six accepted WAVs and all source media hash-check PASS; Mini repair recovered about 7 GB; superseded Apophis"
       }
     }
   ],
