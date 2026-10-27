@@ -90791,19 +90791,24 @@
           "at": "2026-10-27T18:51Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1042; inspecting J0979 and J1000 evidence"
+        },
+        {
+          "at": "2026-10-27T18:53Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J1000 audit (92a775ee8) and 021-029 VO transcripts: 0 unused subject-naming line-1 questions in locked longs"
         }
       ],
-      "remaining_action": "Verify J1000 outcome and rule on J0979",
+      "remaining_action": "Record Chief verification ruling on J0979 and update hold with --recheck J1042",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-10-27T19:40:30+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-27T18:51Z",
+        "at": "2026-10-27T18:53Z",
         "by": "gemini",
-        "note": "Claimed J1042; inspecting J0979 and J1000 evidence"
+        "note": "Verified J1000 audit (92a775ee8) and 021-029 VO transcripts: 0 unused subject-naming line-1 questions in locked longs"
       },
       "taskKeys": [
         "OWB:029"
