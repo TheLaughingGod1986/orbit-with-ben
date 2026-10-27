@@ -40,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0982 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J0984 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0985 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J0990 | any | open (after J0989) | – | – | chief · OWB 030 J0974 audio-only v13a: Chief technical release review |  |
+| J0990 | any | claimed | gemini | 2026-10-27T16:41Z | chief · OWB 030 J0974 audio-only v13a: Chief technical release review |  |
 | J0991 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · 029 Shorts v04: fix J0961 AAC levels and Wednesday opening; gates and Chief review | 0d132cd27 |
 | J0995 | mini | open (after J0994) | – | – | 023 upload · studio · OWB 023: verified Venus end screen and Sun card (J0980 ruling) |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
