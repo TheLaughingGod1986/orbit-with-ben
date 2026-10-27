@@ -88517,13 +88517,13 @@
       "stage": "",
       "after": "J1024",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-27T08:56Z",
-      "eta": "2026-10-27T10:56Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T07:30Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-27T07:30Z",
@@ -88559,6 +88559,11 @@
           "at": "2026-10-27T09:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR302 eb5858e98; J1028 correction -> J1029 lock; J0936 blocked, 6/6 history retained; no assembly/watch cards"
+        },
+        {
+          "at": "2026-10-27T09:01Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Review complete; finite corrections continue in J1028 then J1029",
@@ -88575,7 +88580,8 @@
         "at": "2026-10-27T09:01Z",
         "by": "codex",
         "note": "PR302 eb5858e98; J1028 correction -> J1029 lock; J0936 blocked, 6/6 history retained; no assembly/watch cards"
-      }
+      },
+      "done_ref": "eb5858e98"
     },
     {
       "id": "J1026",

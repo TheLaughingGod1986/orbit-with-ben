@@ -56,7 +56,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1013 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J1025 | any | claimed | codex | 2026-10-27T10:56Z | chief · J0936: Chief lock after S6 payoff and approved Test A repair | e82eae17d |
 | J1028 | mini | open (after J1025) | – | – | review · J0936 preparation: remove remaining early brightening answer and reconcile S6 card | eb5858e98 |
 | J1029 | any | open (after J1028) | – | – | chief · J0936: exact preparation lock after final S6 timing and card reconciliation | eb5858e98 |
 
@@ -64,6 +63,7 @@ Recently finished:
 
 - J1027 done: Chief: verify condition for J0275 (done)
 - J1026 done: Chief: verify condition for J0989 (done)
+- J1025 done: J0936: Chief lock after S6 payoff and approved Test A repair (done)
 - J1024 done: J0936 preparation: fix S6 early answer and apply approved Test A repair (Committed 8a2d5ac39: Preparation v06 (J0936_v04_PREP_v06.md, J0936_v04_PREP_v06_maps.json sha256 2bc6dc11c139abb8..., J1024_2026-10-27_verification.json, build/verify scripts) + desk auditions/source_windows in /Users/benjaminoats/_desk/reviews/J1024/. S6 early answer/35 replaced with present-day invisibility setup so earliest answer 'brightest' lands at 16.820s (75.83%), 63/65 words, 22.180s, s05_alma_orion_set video=True; Test A Option A applied to S4 (sha256 d0bd657e7d9269df...). Ready for Chief lock J1025.)
 - J1022 done: Chief: verify condition for J0275 (Verification complete: CDP 9223 unreachable; Jupiter completion unknown. Prior J1011 shows Saturn title Results ready, but J0189 RINGS ARE FALLING remains open and must precede RINGS VANISHING. J0275 kept blocked with retry 2026-10-27T08:14:34Z. Evidence jobs/readbacks/J1022.json, commit 2094e1c07. No YouTube changes or spend.)
 - J1021 done: Chief: verify condition for J0989 (Verified condition remains unmet: PR 296 REVIEW explicitly leaves aural pumping/artefact check OPEN; no follow-up PR review/comment or thread PASS. No audio-listening input in this session. J0989 retained blocked with exact-hash listening condition and original retry 2026-10-27T07:51:10+00:00, recheck J1021. Ben v13 OK retained; J0990 exact-hash technical decision still required. No rebuild, spend or YouTube/Buffer changes.)
@@ -71,4 +71,3 @@ Recently finished:
 - J1019 done: J0936 preparation: repair reported VO bridges and reconcile exact timing (done)
 - J1018 done: J0936: Chief lock after J1017 exact-opening and scale-card corrections (Preparation FIX; PR299 b8c75920b. Opening metrics and S5 card correction verified; reported omitted Gliese seven syllables need executable corrected maps and auditions, not same-slot assembly repair. J1019 focused corrections -> J1020 Chief lock; J0936 remains blocked with worker history preserved. No assembly or watch cards; original deadlines and v01 schedules unchanged. GBP0, nothing needed from Ben.)
 - J1017 done: J0936 preparation: reconcile exact opening evidence and scale-card timing after J1016 FIX (done)
-- J1016 done: J0936: Chief lock and assembly dispatch after J1015 preparation fixes (Preparation FIX; ruling and verification in PR 298. Exact source/preview mismatch, S5 card ahead of spoken quantity, and incomplete inspection/prosody evidence prevent lock. J1017 focused corrections -> J1018 Chief lock; J0936 remains blocked after J1018, worker history preserved. No assembly, replacement PASS or watch cards. Original deadlines and v01 schedules unchanged; GBP0, nothing needed from Ben.)
