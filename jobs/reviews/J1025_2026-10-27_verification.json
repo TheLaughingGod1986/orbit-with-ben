@@ -1,0 +1,96 @@
+{
+  "input_commit": "8a2d5ac398896ecb77ec5756a7fafc29ed10f13f",
+  "input_map_sha256": "2bc6dc11c139abb8af3fcba07438728d06edf27900a767c5aa538346024bf4eb",
+  "runtime_s": 22.18,
+  "threshold_70_s": 15.526,
+  "early_appearance_span": {
+    "span_index": 19,
+    "word_idx_range": "872..876",
+    "source_in": 342.14,
+    "source_out": 344.1,
+    "raw_dur": 1.96,
+    "tempo": 1.0,
+    "scaled_dur": 1.96,
+    "gap_after": 0.18,
+    "xfade_s": 0.0,
+    "timeline_start": 14.26,
+    "timeline_end": 16.22,
+    "max_internal_pause": 0.18,
+    "max_scribe_token_gap": 0.18,
+    "text": "brightening for thousands of years.",
+    "words": [
+      {
+        "word_idx": 872,
+        "word": "brightening",
+        "start": 14.26,
+        "end": 14.76,
+        "src_start": 342.14,
+        "src_end": 342.64
+      },
+      {
+        "word_idx": 873,
+        "word": "for",
+        "start": 14.78,
+        "end": 14.86,
+        "src_start": 342.66,
+        "src_end": 342.74
+      },
+      {
+        "word_idx": 874,
+        "word": "thousands",
+        "start": 15.04,
+        "end": 15.54,
+        "src_start": 342.92,
+        "src_end": 343.42
+      },
+      {
+        "word_idx": 875,
+        "word": "of",
+        "start": 15.58,
+        "end": 15.68,
+        "src_start": 343.46,
+        "src_end": 343.56
+      },
+      {
+        "word_idx": 876,
+        "word": "years.",
+        "start": 15.74,
+        "end": 16.22,
+        "src_start": 343.62,
+        "src_end": 344.1
+      }
+    ]
+  },
+  "actual_card": {
+    "baked_in_labels_count": 0,
+    "code_graphics_count": 0,
+    "added_edit_cards_count": 1,
+    "total_teaching_overlays": 1,
+    "card_text": [
+      "3\u00d7 BRIGHTER",
+      "THAN SIRIUS"
+    ],
+    "timeline_in": 16.6,
+    "timeline_out": 20.4,
+    "duration_s": 3.8,
+    "pct_range": [
+      74.84,
+      91.97
+    ],
+    "animation_spec": {
+      "entry": "0.350s cubic-bezier ease-out alpha 0->1 + 18px upward slide (16.600\u201316.950s)",
+      "steady_hold": "3.100s hold over moving video plate (16.950\u201320.050s, <= 4.000s)",
+      "exit": "0.350s cubic-bezier ease-in alpha 1->0 (20.050\u201320.400s)",
+      "ken_burns_on_card": false,
+      "typography": "House large bold sans-serif, <= 4 words per line, 11.5% of 16:9 centre band height, over moving graded plate (no black slab)"
+    },
+    "y_band": [
+      656,
+      1264
+    ],
+    "clear_of_hook_0_2s": true,
+    "clear_of_title_9_14s": true,
+    "selection_rationale": "Explicit choice of '3\u00d7 BRIGHTER / THAN SIRIUS' (16.600\u201320.400s, 74.84%\u201391.97%) over the retired moon-width/35-year card: the brightness card directly answers the title question 'What Will the Night Sky Look Like When Gliese 710 Arrives?' at the >=70% payoff, while the 35-year moon-width motion beat remains in spoken VO over s05_full_moon (12.800\u201316.200s, overlapping the 9\u201314s banner where an edit card is forbidden)."
+  },
+  "reviewer": "codex; execution, decoded/rebuilt audio, arithmetic and text semantics; auditory judgement attributed to Gemini, no independent listening claimed"
+}
