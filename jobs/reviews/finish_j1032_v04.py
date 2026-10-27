@@ -26,7 +26,7 @@ def main():
   final=out/src.name
   # Grain before splitting gives the loop exactly the same grain texture as the opening.
   # Ease through opening frames 2,2,1,0: the sampled check and true seam both match.
-  vf=f'[0:v]noise=alls=4:allf=t:all_seed=1032,split=3[body][rev][endpoint];[body]trim=end_frame={end},setpts=PTS-STARTPTS[b];[rev]trim=end_frame=30,setpts=PTS-STARTPTS,reverse,trim=end_frame=26,setpts=PTS-STARTPTS[r];[endpoint]trim=end_frame=3,setpts=PTS-STARTPTS,reverse,tpad=start_mode=clone:start=1,trim=end_frame=4[e];[b][r][e]concat=n=3:v=1:a=0,fps=30,setpts=N/(30*TB),format=yuv420p[v]'
+  vf=f'[0:v]noise=alls=4:allf=t:all_seed=1032,split=3[body][rev][endpoint];[body]trim=end_frame={end},setpts=PTS-STARTPTS[b];[rev]trim=end_frame=30,setpts=PTS-STARTPTS,reverse,trim=end_frame=26,setpts=PTS-STARTPTS[r];[endpoint]trim=end_frame=3,setpts=PTS-STARTPTS,reverse,tpad=start_mode=clone:start=1,trim=end_frame=4[e];[b][r][e]concat=n=3:v=1:a=0,fps=30,tpad=stop_mode=clone:stop=2,trim=end_frame={frames},setpts=N/(30*TB),format=yuv420p[v]'
   print('FINISH',key,flush=True)
   ff(['-i',src,'-filter_complex',vf,'-map','[v]','-map','0:a','-frames:v',frames,'-c:v','libx264','-preset','fast','-crf','18','-c:a','copy','-movflags','+faststart',final])
   ff(['-i',final,'-vf','scale=720:1280:flags=lanczos','-c:v','libx264','-preset','fast','-crf','20','-c:a','copy',out/(src.stem+'_PHONE.mp4')])
