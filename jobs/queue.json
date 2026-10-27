@@ -85609,6 +85609,11 @@
           "at": "2026-10-27T23:00Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J0982; starting survey of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-27T23:01Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Reviewed Acting-Chief Codex ruling on J0982; starting step 2/4 per-export QA inventory across OWB and HOS"
         }
       ],
       "kind": "qa",
@@ -85639,14 +85644,14 @@
         "HOS:007"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-27T23:00Z",
+        "at": "2026-10-27T23:01Z",
         "by": "gemini",
-        "note": "Claimed J0982; starting survey of newest OWB and HOS packs"
+        "note": "Reviewed Acting-Chief Codex ruling on J0982; starting step 2/4 per-export QA inventory across OWB and HOS"
       },
       "escalated_at": "2026-10-26T17:20Z",
-      "remaining_action": "Survey newest OWB and HOS video renders and packs for missing/stale picture_qa, polish_gate, and music_gate outputs"
+      "remaining_action": "Build and commit per-export QA inventory (including standalone packs and post-26 Oct 15:09Z revisions) with exact media paths, hashes, mtimes, and gate report paths/times"
     },
     {
       "id": "J0983",
