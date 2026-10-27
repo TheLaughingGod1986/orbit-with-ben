@@ -89356,9 +89356,14 @@
           "at": "2026-10-27T10:51Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T10:51Z",
+          "by": "codex",
+          "what": "step 0 of 5 done: Claimed J1032; v07 lock selected; disk 18 GiB free, scratch archive required before render."
         }
       ],
-      "remaining_action": "Inspect detached finish08, resolve final gates, listen and verify delivery",
+      "remaining_action": "Archive eligible older scratch, then build and verify six locked v04 replacements",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -89376,11 +89381,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-10-27T10:49Z",
+        "step": 0,
+        "of": 5,
+        "at": "2026-10-27T10:51Z",
         "by": "codex",
-        "note": "2cf66bc02 PR305: obsolete diagnostic scratch hash-verified on NAS, free space exceeds 20GB; single tmux J1032-run08 now "
+        "note": "Claimed J1032; v07 lock selected; disk 18 GiB free, scratch archive required before render."
       }
     },
     {
