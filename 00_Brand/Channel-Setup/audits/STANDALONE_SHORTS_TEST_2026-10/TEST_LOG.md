@@ -11,7 +11,7 @@ Four weeks: 24 October–20 November 2026 (UK). Readout from 21 November. Compar
 | Short | YouTube id | PublishAt (UTC) | Cover | Buffer |
 |---|---|---|---|---|
 | Why Does a Day on Mercury Last Two of Its Years? (`s1_mercury`) | vlkj8RQKmH8 | 2026-10-24T10:30:22.000Z (Live) | Set in Studio | IG/FB/Threads scheduled |
-| Why Is the Wind on Neptune Faster Than Sound? (`s2_neptune`) | oyRcrFTYyDY | 2026-10-27T11:30:00.000Z | Set in Studio | IG/FB/Threads scheduled |
+| Why Are the Winds on Neptune Faster Than Sound? (`s2_neptune` v07a) | 1OCNzhkiBuc | 2026-10-27T11:30:00Z | Set via API (2,000 KM/H / WINDS) | deferred. v01 `oyRcrFTYyDY` is private and unscheduled |
 | Why Do Astronauts See 16 Sunrises a Day? (`s3_iss` v04) | VfDm3E2bUgU | 2026-10-31T11:30:00Z | Set via API (DAWN EACH / 90 MINUTES) | deferred. v01 `XKlq0TK1OVA` is private and unscheduled |
 | This Planet Has 21-Year Winters | ZpEA8stoSPA | 2026-11-03T11:30:00.000Z | Set in Studio | IG/FB/Threads scheduled |
 | Shooting Stars Aren't Stars | T9fVlG3CCzU | 2026-11-07T11:30:00.000Z | Set in Studio | IG/FB/Threads scheduled |
