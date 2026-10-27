@@ -25,19 +25,22 @@ def main():
   started=time.monotonic()
   while not (d/'FINISH_COMPLETE.json').exists():
    done=Path('/Users/benjaminoats/_desk/logs/J1032-finish04.done')
-   if done.exists() and done.read_text().strip()!='0':raise RuntimeError('Finishing failed; inspect finish03 log')
+   if done.exists() and done.read_text().strip()!='0':raise RuntimeError('Finishing failed; inspect finish04 log')
    if time.monotonic()-started>1800:raise RuntimeError('Finishing checkpoint timed out')
    time.sleep(5)
   if (d/'FINAL_MEASUREMENTS.json').exists():continue
   video=d/source.name;prep=json.loads((source.parent/'locked_preparation.json').read_text());rows=[];pool=[]
   for r in prep['shot_plan']:
-   name=Path(r['source_path']).name if r['row']!='s_loop' else 'loop_'+key+'.mp4'
-   title=pools.get(name) or r['underlying_id']
-   rows.append({'row':r['row'],'timeline_in':round(r['timeline_in']*30)/30,'timeline_out':round(r['timeline_out']*30)/30,'source':name,'video':r['video'],'upscale':r['upscale'],'framing':{'offset':r['source_in']},'source_path':r['source_path'],'source_sha256':r['source_sha256']})
+   # Reuse follows the underlying plate, not the intermediate film container.
+   # Preserve container path/hash/offset separately for exact extraction provenance.
+   container_name=Path(r['source_path']).name
+   name=r['underlying_id']
+   title=pools.get(name) or name
+   rows.append({'row':r['row'],'timeline_in':round(r['timeline_in']*30)/30,'timeline_out':round(r['timeline_out']*30)/30,'source':name,'video':r['video'],'upscale':r['upscale'],'framing':{'offset':r['source_in']},'source_path':r['source_path'],'source_container':container_name,'source_sha256':r['source_sha256'],'underlying_id':r['underlying_id']})
    pool.append({'file_id':name,'title':title})
   dump(d/'cuts.json',rows);dump(d/'pool.json',pool)
   words=[w for sp in prep['vo_splice_map']['subspans'] for w in sp['words']]
-  meta={'job':'J1032','version':'v04-finish02','file':str(video),'planned_title':prep['local_title'],'spoken':' '.join(w['word'] for w in words),'words':words,'last_word_end_s':words[-1]['end'],'vo_stem':str(source.parent/'stem_vo.wav'),'status':'UNREVIEWED','preparation_sha256':'e76ca28f2b959fb344b2ce1c86ae2ce283d99c1a892048d6fc65c577ba63a5e2'}
+  meta={'job':'J1032','version':a.out.name,'file':str(video),'planned_title':prep['local_title'],'spoken':' '.join(w['word'] for w in words),'words':words,'last_word_end_s':words[-1]['end'],'vo_stem':str(source.parent/'stem_vo.wav'),'status':'UNREVIEWED','preparation_sha256':'e76ca28f2b959fb344b2ce1c86ae2ce283d99c1a892048d6fc65c577ba63a5e2'}
   dump(d/(video.stem+'_meta.json'),meta)
   results={}
   cmds={
