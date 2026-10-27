@@ -90691,10 +90691,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T18:41Z",
+      "eta": "2026-10-27T20:41Z",
       "created_by": "relay",
       "created_at": "2026-10-27T18:40Z",
       "result": "",
@@ -90703,13 +90703,26 @@
           "at": "2026-10-27T18:40Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T18:41Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Verify Jupiter test completion in Studio (CDP 9223) and Saturn J0189 prerequisite before approved comparisons",
       "kind": "chief",
       "recheck_of": "J0275",
       "due": "2026-10-27T19:40:30+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T18:41Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1042",
