@@ -1,5 +1,5 @@
 {
-  "next_id": 1028,
+  "next_id": 1029,
   "jobs": [
     {
       "id": "J0001",
@@ -88709,6 +88709,35 @@
         "by": "codex",
         "note": "J0275 remains blocked; retained 27 Oct 09:23:22 UTC check. Evidence PR #301; no YouTube changes or spend."
       }
+    },
+    {
+      "id": "J1028",
+      "title": "J0936 preparation: remove remaining early brightening answer and reconcile S6 card",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# J1025 — preparation review, 27 October 2026\n\n**FIX: S6 still describes appearance before 70%, and its card records disagree.** Codex rechecked `chief_relay.py status` and remains elected acting Chief. This completes J1025 review, not J0936 production. No assembly or replacement PASS, watch cards or swaps.\n\n## Accepted — preserve without repeating unchanged audits\n\nReviewed J1020 e82eae17d directly and J1024 v06 at 8a2d5ac39. Exact input map SHA-256: `2bc6dc11c139abb8af3fcba07438728d06edf27900a767c5aa538346024bf4eb`.\n\nThe submitted verifier passes on rerun (saved separately). Its numeric checks establish map arithmetic, 391 words, exact ordinary questions, subject completion by 2.5s, ordinary 55–65 counts and 22–27s runtimes, <=1.06x speech, preserved openings and S5 card 16.180–19.160s. Its semantic reviewer assertions are not machine proof of the first answer.\n\nCodex decoded the real source and rebuilt the complete S4 and S6 auditions through the submitted generator into `/Users/benjaminoats/_desk/reviews/J1025/`. Both match the submitted WAV bytes. S4 matches authorised Option A diagnostic `d0bd657e7d9269df32965f299b4fac799d51dac05095d4069f7b5a1ac207f10a`; S6 matches `fe7597d28f7d649887d6d6cfcfb140795db070d6301da4564e7b141294c43ca3`. This tests actual execution, not merely stored hashes. Gemini's named direct listening findings support intelligibility; Codex does not claim independent listening.\n\nAccept the Test A Option A exact repair, unchanged downstream timing and exemptions. Preserve S1/S2/S3/S5, all accepted v04 openings, S6 exact question and continuous Gliese bridge, present-day invisibility setup, and the new S6 s05 moving-plate source-window evidence. S3 short-span buffer trimming is now honestly documented. No unchanged source-window rescan is requested.\n\n## Finite remaining S6 correction\n\nThe question remains “What will the night sky look like when Gliese 710 arrives?” Runtime is 22.180s, so 70% is 15.526s. The removed creep/moon-width answer is gone, and no new appearance answer occurs inside the 9–14s banner. However, output 14.260–16.220s says **“brightening for thousands of years.”** “Brightening” itself starts at 14.260s (64.29%). It describes the changing appearance of the arriving star before 70%; selecting the later “brightest” token at 16.820s does not remove that earlier answer. The preceding “A new star has been” is at 13.180–14.240s.\n\nRetain the future closest-pass transition (“Imagine the night of the closest pass”), but replace/reorder the brightening clause using existing recorded words so no appearance/motion description starts before 15.526s (or the recomputed 70% threshold). Preserve an intelligible complete explanation, exact question, subject by 2.5s, 55–65 spoken words, 22–27s without padding, <=1.06x and one overlay. Reconcile affected word/shot/card coordinates and regenerate only affected auditions, with actual listening attributed. If this cannot be done, report the precise recorded-word conflict rather than hiding it behind a selected payoff index. Prior acceptance of future-pass context was not a waiver of the no-early-answer requirement; this identifies the exact clause still to fix.\n\n## Reconcile card and evidence text\n\nThe executable map, summary matrix and shot table specify **3× BRIGHTER / THAN SIRIUS, 16.600–20.400s**. But section 1.1 item 5 and the auditory judgement claim **3× SIRIUS / BRIGHTEST STAR, 16.820–20.820s**. The map's `single_teaching_overlay.selection_rationale` still says the removed moon-width/35-year beat remains spoken over `s05_full_moon`. Correct these stale statements to the single chosen executable card; the existing executable card may be preserved if still aligned after the finite VO correction. Do not invent an extra card or assert all prose is map-generated while these literals disagree. Update generator and verifier so regenerated evidence cannot restore the mismatch.\n\nThe “no appearance answer before 70%” assertions must reflect semantic inspection of every preceding clause, not just the selected token. Preserve accurate machine/saved-log/Gemini-listening attribution.\n\n## Handoff\n\nOne finite preparation correction, then one exact-lock Chief review. J0936 remains blocked with its 6/6 worker history preserved. On eventual preparation PASS, queue one assembly-kind job for all six, carrying the complete original J0936/c59 brief. Do not merge PR298, PR299 or J1020's evidence PR here.\n\nAll original acceptance survives: complete Shorts/picture/polish/music/SFX gates; final AAC -14.0 +/-0.5 LUFS, TP <=-1.6 dBTP; final transformed-video OCR and dark-run logs (OCR every third frame, no URLs/logos/copyright/IDs/filenames; no >=3-frame run with >85% below luma20); matched loop; whole-runtime and flagged-frame sheets; 720x1280 PHONE videos; UAT/NAS master/PHONE/meta/sheet copies and matching SHA-256 manifests. Replacement PASS precedes Ben swap approval; no failed-cut watch cards.\n\nBatch target 1 Nov 20:00 London; individual deadlines 19 Nov / 22 Nov / 29 Nov / 1 Dec / 3 Dec / 6 Dec at 20:00 London. Existing v01 slots, titles and fallback unchanged. GBP0, no generation, deletion, upload, retitle, privacy change, Buffer write or swap. Nothing needed from Ben. Disk was about 14 GiB free: no render was started; render scratch must be archived under the standing rule before final rendering.\n",
+      "ref": "eb5858e98",
+      "film": "",
+      "stage": "",
+      "after": "J1025",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-27T09:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T09:00Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct only S6 early brightening clause and card evidence inconsistencies",
+      "due": "2026-11-01T20:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [],

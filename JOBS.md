@@ -57,6 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1025 | any | claimed | codex | 2026-10-27T10:56Z | chief · J0936: Chief lock after S6 payoff and approved Test A repair | e82eae17d |
+| J1028 | mini | open (after J1025) | – | – | review · J0936 preparation: remove remaining early brightening answer and reconcile S6 card | eb5858e98 |
 
 Recently finished:
 
