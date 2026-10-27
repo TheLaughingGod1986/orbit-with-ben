@@ -90583,9 +90583,14 @@
           "at": "2026-10-27T18:28Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified J0999/J0998 history, HOS PR #358 (c26a79bd) and draft PR #365 (a87cd56a, still unmerged pending Ben OK); HOS main (2a1a6e8b) channel:audit still fails with 58 videos, 4 errors on uU12JA5rMWg boundary duplicate"
+        },
+        {
+          "at": "2026-10-27T18:28Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Recorded J0999 wait condition (--recheck J1040, next verification 2026-10-28T09:15:00Z after J0998 09:00Z check)"
         }
       ],
-      "remaining_action": "Update J0999 wait condition with --recheck J1040",
+      "remaining_action": "Finish J1040 verification task and report on OWB #99 and HOS #180",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-27T19:25:01+00:00",
@@ -90600,11 +90605,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-27T18:28Z",
         "by": "gemini",
-        "note": "Verified J0999/J0998 history, HOS PR #358 (c26a79bd) and draft PR #365 (a87cd56a, still unmerged pending Ben OK); HOS ma"
+        "note": "Recorded J0999 wait condition (--recheck J1040, next verification 2026-10-28T09:15:00Z after J0998 09:00Z check)"
       },
       "taskKeys": [
         "HOS:099"
