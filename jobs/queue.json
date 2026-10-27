@@ -89094,10 +89094,10 @@
       "stage": "",
       "after": "J1029",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-27T10:19Z",
+      "eta": "2026-10-27T12:19Z",
       "created_by": "codex",
       "created_at": "2026-10-27T09:36Z",
       "result": "",
@@ -89211,6 +89211,11 @@
           "at": "2026-10-27T10:17Z",
           "by": "codex",
           "what": "released: Existing detached J1032-run03 remains active; do not duplicate. Wrapper/log /Users/benjaminoats/_desk/logs/J1032-run03.sh and J1032-run03.log; completion /Users/benjaminoats/_desk/logs/J1032-run03.done. Sequential archive-initial, finish04, finalqa04 stage logs and done markers in same directory. Outputs /Users/benjaminoats/_desk/renders/J1032-finish04. Progress preserved 1/3; PR305 and jobs/reviews/J1032_2026-10-27_run02.md contain handoff. Earlier S1 first-cut/picture/polish failures, finished listening, final gates and verified delivery remain outstanding. No duplicate render, spend, PASS, watch cards or channel changes."
+        },
+        {
+          "at": "2026-10-27T10:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish existing detached archive, finishing pass and final QA; resolve failed gates",
