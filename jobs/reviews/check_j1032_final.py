@@ -11,7 +11,7 @@ def command(a,log):
  return r.returncode
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,required=True);ap.add_argument('--source',type=Path,required=True);ap.add_argument('--media-root',type=Path,required=True);a=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,required=True);ap.add_argument('--source',type=Path,required=True);ap.add_argument('--media-root',type=Path,required=True);ap.add_argument('--reviewed-ok',type=Path);a=ap.parse_args()
  pools={}
  for p in a.media_root.glob('02_Video-Projects/*/10_Shorts/**/pool_v03.json'):
   try:
@@ -49,6 +49,8 @@ def main():
    'polish':['python3',a.media_root/'scripts/polish_gate.py',video,'--cuts',d/'cuts.json','--out',d/'polish_gate.json'],
    'sfx':['python3',a.media_root/'scripts/sfx_kit.py','level','--vo',source.parent/'stem_vo.wav','--sfx',source.parent/'stem_sfx.wav','--bed',source.parent/'stem_bed.wav','--minutes',prep['vo_splice_map']['total_duration_s']/60],
   }
+  if a.reviewed_ok:
+   for gate in ('picture','polish'):cmds[gate] += ['--reviewed-ok',a.reviewed_ok]
   for gate,cmd in cmds.items():
    print(key,gate,flush=True);results[gate]={'exit_code':command(cmd,d/(gate+'.log'))}
   inputs=json.loads((source.parent/'input_hashes.json').read_text())
