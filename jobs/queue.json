@@ -14448,13 +14448,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T18:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
-      "result": "parked for Chief: waiting (Chief ruling a). TITLE A/B on 55AEQwvs36g still expected Running; re-claim when title test has ended; then thumbnail-only A=live vs B=~/_desk/j0189/saturn_tc_B_rings-are-falling_55AEQwvs36g.jpg. No Continue on delete dialogs.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-12T17:38Z",
@@ -14555,24 +14555,16 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "condition verification queued: J1011"
+        },
+        {
+          "at": "2026-10-27T00:56Z",
+          "by": "codex",
+          "what": "reopened: J1011 verified 27 Oct in Studio CDP 9223: A/B testing titles shows Results ready (no longer Running). Evidence jobs/readbacks/J1011.json and /Users/benjaminoats/_desk/j1011/studio-details.png. J0152 Chief PASS and ruling (a) remain valid; live A HOW LONG? and approved B file present. Reopen original thumbnail-only scope; recheck no active test before setup, never accept deletion warning. No YouTube state changed."
         }
       ],
       "kind": "studio",
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-10-12T22:16Z",
-        "by": "cursor",
-        "note": "Studio rechecked 22:2xZ: title A/B still Running"
-      },
       "escalated_at": "2026-10-13T00:31Z",
-      "remaining_action": "Start the approved Saturn thumbnail comparison",
-      "hold": {
-        "type": "test",
-        "condition": "Saturn title test on 55AEQwvs36g must have finished; verify in Studio before starting an approved comparison",
-        "check_at": "2026-10-27T01:44:16+00:00",
-        "recheck_task": "J1011"
-      }
+      "remaining_action": "Start the approved Saturn thumbnail comparison"
     },
     {
       "id": "J0190",
