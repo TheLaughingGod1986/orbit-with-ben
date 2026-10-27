@@ -57,10 +57,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1032 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · J0936: assemble all six replacements from J1029 locked preparation v07 | dc4b9da01 |
-| J1038 | any | claimed | gemini | 2026-10-27T14:51Z | chief · Chief: verify condition for J1032 |  |
 
 Recently finished:
 
+- J1038 done: Chief: verify condition for J1032 (Verified J1029 predecessor (PR304 dc4b9da01) and J1032 3/3 v04 assembly/delivery (PR305 61d031f35) across all 6 Shorts (S1 A6TW_6CXhcs 228cb06dfd37, S2 emwQsPxnRGM d35efd737ed0, S3 bizlhspnVvY 65e58aea2a20, S4 DETI0HV2jlI 0eb18596d2d6, S5 jJ5LkFGyzLI 37fbe8b9ed33, S6 X768qs8sNQs 91b297a262c1): 6-way repo/UAT/NAS SHA256 match, 21/21 UAT+NAS manifests, all 7 gates PASS, decoded AAC -14.2..-14.4 LUFS / -1.8..-2.0 dBTP, loop 0.41..0.84, multimodal audio/visual inspection PASS, v01-v03 untouched. J1032 kept blocked (check-at 2026-10-27T19:15:00Z, recheck J1038) so completed assembly is not re-queued; parked for independent Chief replacement PASS and Ben swap approval on J0936. GBP0, no publishing changes.)
 - J1037 done: Chief: verify condition for J0989 (Checked PR296 REVIEW at 84c3867, empty PR comments/reviews, v13 approvals and thread through 6442146604. No recorded exact-v13a listening PASS and no audio-listening input in this session; J0989 remains blocked, retry retained 2026-10-27T13:36:13Z. J0990 release decision still required. No spend or publishing changes.)
 - J1036 done: Chief: verify condition for J0275 (done)
 - J1035 done: Chief: verify condition for J0989 (Checked PR296 REVIEW at 84c3867, empty PR comments/reviews, v13 approvals and thread through 6440507970. No recorded exact-v13a listening PASS; J0989 remains blocked, retry retained 2026-10-27T12:15:06Z. J0990 release decision still required. Report 6440557381. No spend or publishing changes.)
@@ -70,4 +70,3 @@ Recently finished:
 - J1030 done: Chief: verify condition for J0989 (Verified PR296 REVIEW at 84c3867, empty comments/reviews, original v13 approvals and latest thread: no exact-v13a listening PASS. J0989 remains blocked; retry 2026-10-27T10:02:30Z retained, recheck J1030. J0990 technical release remains required. Reported on thread; no media or publishing changes.)
 - J1029 done: J0936: exact preparation lock after final S6 timing and card reconciliation (Preparation v07 PASS: PR304 dc4b9da01. J1032 is the sole assembly handoff; J0936 stays blocked for replacement review, 6/6 history preserved.)
 - J1028 done: J0936 preparation: remove remaining early brightening answer and reconcile S6 card (done)
-- J1027 done: Chief: verify condition for J0275 (done)

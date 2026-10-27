@@ -89968,13 +89968,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T12:51Z",
-      "eta": "2026-10-27T14:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T12:36Z",
-      "result": "",
+      "result": "Verified J1029 predecessor (PR304 dc4b9da01) and J1032 3/3 v04 assembly/delivery (PR305 61d031f35) across all 6 Shorts (S1 A6TW_6CXhcs 228cb06dfd37, S2 emwQsPxnRGM d35efd737ed0, S3 bizlhspnVvY 65e58aea2a20, S4 DETI0HV2jlI 0eb18596d2d6, S5 jJ5LkFGyzLI 37fbe8b9ed33, S6 X768qs8sNQs 91b297a262c1): 6-way repo/UAT/NAS SHA256 match, 21/21 UAT+NAS manifests, all 7 gates PASS, decoded AAC -14.2..-14.4 LUFS / -1.8..-2.0 dBTP, loop 0.41..0.84, multimodal audio/visual inspection PASS, v01-v03 untouched. J1032 kept blocked (check-at 2026-10-27T19:15:00Z, recheck J1038) so completed assembly is not re-queued; parked for independent Chief replacement PASS and Ben swap approval on J0936. GBP0, no publishing changes.",
       "history": [
         {
           "at": "2026-10-27T12:36Z",
@@ -90010,6 +90010,11 @@
           "at": "2026-10-27T13:15Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Completed J1038 verification of all 6 v04 replacements; no upload, schedule change or spend"
+        },
+        {
+          "at": "2026-10-27T13:15Z",
+          "by": "gemini",
+          "what": "done: Verified J1029 predecessor (PR304 dc4b9da01) and J1032 3/3 v04 assembly/delivery (PR305 61d031f35) across all 6 Shorts (S1 A6TW_6CXhcs 228cb06dfd37, S2 emwQsPxnRGM d35efd737ed0, S3 bizlhspnVvY 65e58aea2a20, S4 DETI0HV2jlI 0eb18596d2d6, S5 jJ5LkFGyzLI 37fbe8b9ed33, S6 X768qs8sNQs 91b297a262c1): 6-way repo/UAT/NAS SHA256 match, 21/21 UAT+NAS manifests, all 7 gates PASS, decoded AAC -14.2..-14.4 LUFS / -1.8..-2.0 dBTP, loop 0.41..0.84, multimodal audio/visual inspection PASS, v01-v03 untouched. J1032 kept blocked (check-at 2026-10-27T19:15:00Z, recheck J1038) so completed assembly is not re-queued; parked for independent Chief replacement PASS and Ben swap approval on J0936. GBP0, no publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1032 remains parked for independent Chief replacement PASS and Ben swap approval",
@@ -90028,7 +90033,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "61d031f35"
     }
   ],
   "focus": [],
