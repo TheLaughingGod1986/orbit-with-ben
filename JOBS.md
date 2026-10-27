@@ -54,7 +54,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1003 | mini | blocked | – | – | review · Earth Short OVLv9dxTcpE: mature 48-hour measurement (J0985 follow-up) |  |
 | J1004 | mini | open (after J0967) | – | – | for gemini · review · `gemini-argon` · HOS J0967 follow-up: resolve remaining hook and duration proposals on paper, preserve production holds |  |
 | J1005 | mini | open | – | – | for gemini · qa · `gemini-argon` · J0966 HC: audition four finished masters and resolve vaccine pronunciation warnings (GBP0) |  |
-| J1007 | mini | open | – | – | for gemini · review · `gemini-argon` · J0915 preparation: recorded question openings, motion plan, corrected Titan identity |  |
+| J1007 | mini | claimed | gemini | 2026-10-27T02:04Z | for gemini · review · `gemini-argon` · J0915 preparation: recorded question openings, motion plan, corrected Titan identity |  |
 | J1008 | any | open (after J1007) | – | – | chief · J0915 Chief: lock recorded-VO plans and dispatch eligible local recuts |  |
 | J1009 | mini | open (after J0993) | – | – | for gemini · review · `gemini-argon` · J0936 v04 preparation FIX: reconcile scripts, splice arithmetic and six shot plans |  |
 | J1010 | any | open (after J1009) | – | – | chief · J0936: lock corrected v04 preparation after J1009 and dispatch assembly | fded21428 |
