@@ -87681,9 +87681,14 @@
           "at": "2026-10-27T04:36Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J1015; read J1010 ruling and J1009 prep v02; starting step 1 VO splice verification"
+        },
+        {
+          "at": "2026-10-27T04:46Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Step 1 done: solved and verified 55-65 spoken-word splice maps for all ordinary Shorts (S1 62/62 22.84s, S2 64/65 22.18s, S3 62/64 22.24s, S5 61/65 22.14s, S6 62/65 22.18s; S4 Test A unchanged 76/77 24.516s) with <=2.50s subject completion and >=70% earliest answer"
         }
       ],
-      "remaining_action": "Finalize 55-65 spoken-word splice maps and compliant 4-8s moving shot plans for all 6 Shorts",
+      "remaining_action": "Generate local VO-only WAV auditions for assembled questions and full spliced VOs in _desk/reviews/J1015/auditions",
       "due": "2026-11-01T20:00:00Z",
       "kind": "review",
       "taskKeys": [
@@ -87701,11 +87706,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-27T04:36Z",
+        "at": "2026-10-27T04:46Z",
         "by": "gemini",
-        "note": "Claimed J1015; read J1010 ruling and J1009 prep v02; starting step 1 VO splice verification"
+        "note": "Step 1 done: solved and verified 55-65 spoken-word splice maps for all ordinary Shorts (S1 62/62 22.84s, S2 64/65 22.18s"
       }
     },
     {
