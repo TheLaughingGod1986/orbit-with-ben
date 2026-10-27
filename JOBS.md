@@ -57,10 +57,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1032 | mini | open (after J1029) | – | – | for codex · assembly · `gpt-6.1-sol` · J0936: assemble all six replacements from J1029 locked preparation v07 | dc4b9da01 |
-| J1035 | any | claimed | codex | 2026-10-27T13:15Z | chief · Chief: verify condition for J0989 |  |
 
 Recently finished:
 
+- J1035 done: Chief: verify condition for J0989 (Checked PR296 REVIEW at 84c3867, empty PR comments/reviews, v13 approvals and thread through 6440507970. No recorded exact-v13a listening PASS; J0989 remains blocked, retry retained 2026-10-27T12:15:06Z. J0990 release decision still required. Report 6440557381. No spend or publishing changes.)
 - J1034 done: Chief: verify condition for J0275 (Verification complete: J0275 remains blocked. Studio CDP 9223 connection timed out inside and outside sandbox; Jupiter completion unknown, Saturn J0189 open. Preserved 27 Oct 11:30:30 UTC retry and 21 Oct approvals. Evidence d5aafe29a, codex-j1034:jobs/readbacks/J1034.json. No YouTube changes or spend.)
 - J1033 done: Chief: verify condition for J0989 (Verified PR296 REVIEW at 84c3867, empty PR comments/reviews, original v13 approvals and thread through 6439046012: exact-v13a listening PASS remains absent. J0989 stays blocked; retained retry 2026-10-27T11:09:03Z with recheck J1033. J0990 exact-hash technical release still required. Report posted; no spend or publishing changes.)
 - J1031 done: Chief: verify condition for J0275 (Verified hold remains unmet: CDP 9223 timed out on both probes; Jupiter unknown and Saturn J0189 open. J0275 wait refreshed with existing 2026-10-27T10:27:01Z retry. Evidence jobs/readbacks/J1031.json on codex-j1031. No YouTube changes or spend.)
@@ -70,4 +70,3 @@ Recently finished:
 - J1027 done: Chief: verify condition for J0275 (done)
 - J1026 done: Chief: verify condition for J0989 (done)
 - J1025 done: J0936: Chief lock after S6 payoff and approved Test A repair (done)
-- J1024 done: J0936 preparation: fix S6 early answer and apply approved Test A repair (Committed 8a2d5ac39: Preparation v06 (J0936_v04_PREP_v06.md, J0936_v04_PREP_v06_maps.json sha256 2bc6dc11c139abb8..., J1024_2026-10-27_verification.json, build/verify scripts) + desk auditions/source_windows in /Users/benjaminoats/_desk/reviews/J1024/. S6 early answer/35 replaced with present-day invisibility setup so earliest answer 'brightest' lands at 16.820s (75.83%), 63/65 words, 22.180s, s05_alma_orion_set video=True; Test A Option A applied to S4 (sha256 d0bd657e7d9269df...). Ready for Chief lock J1025.)
