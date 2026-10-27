@@ -89094,10 +89094,10 @@
       "stage": "",
       "after": "J1029",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-27T10:13Z",
+      "eta": "2026-10-27T12:13Z",
       "created_by": "codex",
       "created_at": "2026-10-27T09:36Z",
       "result": "",
@@ -89176,6 +89176,11 @@
           "at": "2026-10-27T10:07Z",
           "by": "codex",
           "what": "released: Detached J1032-run03: log /Users/benjaminoats/_desk/logs/J1032-run03.log; exit /Users/benjaminoats/_desk/logs/J1032-run03.done. Stage logs/markers J1032-archive-initial, J1032-finish04, J1032-finalqa04. Missing done plus live tmux means active: do not duplicate. Outputs /Users/benjaminoats/_desk/renders/J1032-finish04. Extra hash-verified older scratch archive J1032-archive-finish01. PR305, handoff jobs/reviews/J1032_2026-10-27_run02.md. Progress remains 1/3; resolve final gate failures, listen to finished audio, inspect frames, then verified UAT/NAS delivery. No PASS or watch cards; J0936 and v01 slots unchanged."
+        },
+        {
+          "at": "2026-10-27T10:13Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish detached endpoint correction, resolve final gate failures, and complete verified delivery",
