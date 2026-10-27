@@ -86001,13 +86001,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-27T00:47Z",
-      "eta": "2026-10-27T01:47Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T21:46Z",
-      "result": "",
+      "result": "Required aural pumping/artefact check remains OPEN: this session has no audio-listening input. Existing v13a preserved; automated gates recorded PASS in PR #296; freshly verified 34-file manifests in both UAT and NAS. Needs audio-capable reviewer, then dependent Chief exact-hash decision. No rebuild or duplicate archive; not complete or upload-approved.",
       "history": [
         {
           "at": "2026-10-26T21:46Z",
@@ -86068,6 +86068,11 @@
           "at": "2026-10-27T00:47Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resumed existing build without changes; freshly verified all 34 manifest entries in UAT and NAS; archive done=0. Automated evidence in PR #296; required aural check still open."
+        },
+        {
+          "at": "2026-10-27T00:48Z",
+          "by": "codex",
+          "what": "blocked: Required aural pumping/artefact check remains OPEN: this session has no audio-listening input. Existing v13a preserved; automated gates recorded PASS in PR #296; freshly verified 34-file manifests in both UAT and NAS. Needs audio-capable reviewer, then dependent Chief exact-hash decision. No rebuild or duplicate archive; not complete or upload-approved."
         }
       ],
       "kind": "assembly",
@@ -86092,7 +86097,12 @@
         "by": "codex",
         "note": "Resumed existing build without changes; freshly verified all 34 manifest entries in UAT and NAS; archive done=0. Automat"
       },
-      "remaining_action": "Listen to v13a for pumping and audible artefacts before completion"
+      "remaining_action": "Listen to v13a for pumping and audible artefacts before completion",
+      "hold": {
+        "type": "input",
+        "condition": "Required aural pumping/artefact check remains OPEN: this session has no audio-listening input. Existing v13a preserved; automated gates recorded PASS in PR #296; freshly verified 34-file manifests in both UAT and NAS. Needs audio-capable reviewer, then dependent Chief exact-hash decision. No rebuild or duplicate archive; not complete or upload-approved.",
+        "check_at": "2026-10-27T06:48:37+00:00"
+      }
     },
     {
       "id": "J0990",
