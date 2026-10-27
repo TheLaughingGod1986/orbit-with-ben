@@ -89988,19 +89988,24 @@
           "at": "2026-10-27T13:01Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected J1032/J0936/J1029 history: J1032 completed 3/3 assembly steps and parked for elected-Chief replacement review (PR305 61d031f35)"
+        },
+        {
+          "at": "2026-10-27T13:15Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified all 6 v04 masters/PHONE (6-way sha256 match), 21/21 UAT+NAS manifests, 7 gates PASS, sheets and decoded AAC audio"
         }
       ],
-      "remaining_action": "Independently verify J1032 v04 masters, PHONE exports, gates, audio, OCR/dark logs, sheets and UAT/NAS manifests",
+      "remaining_action": "Record condition verification result on J1032 and close J1038",
       "kind": "chief",
       "recheck_of": "J1032",
       "due": "2026-10-27T13:36:13+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-27T13:01Z",
+        "at": "2026-10-27T13:15Z",
         "by": "gemini",
-        "note": "Inspected J1032/J0936/J1029 history: J1032 completed 3/3 assembly steps and parked for elected-Chief replacement review "
+        "note": "Verified all 6 v04 masters/PHONE (6-way sha256 match), 21/21 UAT+NAS manifests, 7 gates PASS, sheets and decoded AAC aud"
       },
       "taskKeys": [
         "OWB:026",
