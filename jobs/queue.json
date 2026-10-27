@@ -87081,13 +87081,13 @@
       "stage": "",
       "after": "J0981",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-27T17:34Z",
-      "eta": "2026-10-27T18:04Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T22:14Z",
-      "result": "",
+      "result": "Depends on J0998 (awaiting Ben OK to merge draft HOS PR #365 a87cd56a for playlist boundary ID dedup in channel-audit.ts) so npm run channel:audit exits 0 on HOS main; all Studio/API work on uAomPaOBrM8 is complete and pushed to HOS PR #358 (c26a79bd)",
       "history": [
         {
           "at": "2026-10-26T22:14Z",
@@ -87143,6 +87143,11 @@
           "at": "2026-10-27T18:24Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Completed Studio reload read-back (End Screen 48:58:06-49:18:06, Altered content=Yes, Not Made for Kids, playlist PLEbpfUzWzcXU, unchanged title/privacy/publishAt/test) and committed/pushed evidence to HOS PR #358 (c26a79bd)"
+        },
+        {
+          "at": "2026-10-27T18:24Z",
+          "by": "gemini",
+          "what": "blocked: Depends on J0998 (awaiting Ben OK to merge draft HOS PR #365 a87cd56a for playlist boundary ID dedup in channel-audit.ts) so npm run channel:audit exits 0 on HOS main; all Studio/API work on uAomPaOBrM8 is complete and pushed to HOS PR #358 (c26a79bd)"
         }
       ],
       "kind": "studio",
@@ -87156,6 +87161,11 @@
         "at": "2026-10-27T18:24Z",
         "by": "gemini",
         "note": "Completed Studio reload read-back (End Screen 48:58:06-49:18:06, Altered content=Yes, Not Made for Kids, playlist PLEbpf"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Depends on J0998 (awaiting Ben OK to merge draft HOS PR #365 a87cd56a for playlist boundary ID dedup in channel-audit.ts) so npm run channel:audit exits 0 on HOS main; all Studio/API work on uAomPaOBrM8 is complete and pushed to HOS PR #358 (c26a79bd)",
+        "check_at": "2026-10-28T00:24:55+00:00"
       }
     },
     {
