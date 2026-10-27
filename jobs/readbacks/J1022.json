@@ -1,0 +1,29 @@
+{
+  "job": "J1022",
+  "recheck_of": "J0275",
+  "by": "codex",
+  "checked_at": "2026-10-27T07:22:10.974730+00:00",
+  "films": [
+    "OWB:021",
+    "OWB:020"
+  ],
+  "live_check": {
+    "endpoint": "http://127.0.0.1:9223",
+    "probes": [
+      "/json/list",
+      "/json/version"
+    ],
+    "result": "Both bounded curl probes exited 28. Version probe retried outside sandbox: failed to connect after 7793 ms. No live Studio content available."
+  },
+  "prior_evidence": {
+    "file": "jobs/readbacks/J1011.json",
+    "checked_at": "2026-10-27T00:56:03.533169+00:00",
+    "saturn_title_test": "Results ready",
+    "limitation": "Historical Saturn evidence only; no current Jupiter result or completed J0189 thumbnail test."
+  },
+  "approval_sequence": "21 Oct approval remains: Saturn J0189 RINGS ARE FALLING before J0275 RINGS VANISHING; Jupiter NO SOLID GROUND after NO FLOOR test ends.",
+  "decision": "Keep J0275 blocked. J0189 is open, so Saturn second test is not ready even though its earlier title test had results. Jupiter completion remains unknown.",
+  "next_check_at": "2026-10-27T08:14:34+00:00",
+  "retry_basis": "Preserve original recorded hold check_at (still in future), rather than infer completion from elapsed test dates.",
+  "changes": "No Studio, YouTube, ledger, schedule, title or privacy changes; no spend."
+}
