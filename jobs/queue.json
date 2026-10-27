@@ -88779,9 +88779,14 @@
           "at": "2026-10-27T09:07Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1028; read J1025 review and located v06 preparation scripts/maps at 8a2d5ac39"
+        },
+        {
+          "at": "2026-10-27T09:16Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified exact recorded-word replacement for S6 pre-70% brightening clause (words 133..134 'the serpent,' + words 172..179 'You would need binoculars just to find it.' before retained 'Imagine the night of the closest pass.'), preserving 63 WS / 65 spoken words, Span 20 at 16.400s, vo_end_s=21.180s, and total_duration_s=22.180s"
         }
       ],
-      "remaining_action": "Inspect J1025 review and recorded words for S6 Gliese 710 to remove pre-70% brightening clause",
+      "remaining_action": "Write build_j0936_prep_v07.py and verify_j0936_prep_v07.py to generate v07 maps, markdown, and S6 audition",
       "due": "2026-11-01T20:00:00Z",
       "kind": "review",
       "taskKeys": [
@@ -88799,11 +88804,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-27T09:07Z",
+        "at": "2026-10-27T09:16Z",
         "by": "gemini",
-        "note": "Claimed J1028; read J1025 review and located v06 preparation scripts/maps at 8a2d5ac39"
+        "note": "Identified exact recorded-word replacement for S6 pre-70% brightening clause (words 133..134 'the serpent,' + words 172."
       }
     },
     {
