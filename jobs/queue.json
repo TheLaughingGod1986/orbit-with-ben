@@ -21605,13 +21605,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:51Z",
-      "result": "waits for input: Saturn 55AEQwvs36g title test ends 25 Oct 17:00Z; Jupiter -jmMROGoZCM thumbnail test ends 26 Oct 18:52Z. Then set Ben's B (RINGS VANISHING? / NO SOLID GROUND?) on each video once its test has ended. Do not re-check before then.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T07:51Z",
@@ -21827,26 +21827,15 @@
           "at": "2026-10-27T18:40Z",
           "by": "relay",
           "what": "condition verification queued: J1041"
+        },
+        {
+          "at": "2026-10-27T18:48Z",
+          "by": "gemini",
+          "what": "reopened: J1041 verified 27 Oct 18:43Z in Studio CDP 9223: Jupiter -jmMROGoZCM NO FLOOR? thumbnail Test & Compare shows Results ready (no longer Running). Evidence a32a3d3d2, jobs/readbacks/J1041.json, /Users/benjaminoats/_desk/j1041/-jmMROGoZCM_edit.png. Reopen J0275 for Jupiter -jmMROGoZCM ONLY: arm approved B NO SOLID GROUND? (00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/jupiter_B_no_solid_ground.jpg, THUMB_LEDGER.json T003) against live A, without Replace or delete. DO NOT touch Saturn 55AEQwvs36g: preserve 21 Oct approval order (J0189 RINGS ARE FALLING must be armed and complete its 14-day test on 55AEQwvs36g before J0275 RINGS VANISHING?). After arming Jupiter, run jobs.py wait J0275 for Saturn 55AEQwvs36g until J0189 RINGS ARE FALLING completes."
         }
       ],
       "kind": "studio",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-15T13:52Z",
-        "by": "cursor",
-        "note": "left both videos unchanged"
-      },
-      "remaining_action": "Verify Jupiter test completion in Studio (CDP 9223) and Saturn J0189 prerequisite before approved comparisons",
-      "hold": {
-        "type": "input",
-        "condition": "Jupiter -jmMROGoZCM NO FLOOR completion unverified: J1036 CDP 9223 probes (/json/version, /json/list) timed out (curl 28). Saturn 55AEQwvs36g requires J0189 RINGS ARE FALLING completion before RINGS VANISHING; J0189 remains open. Preserve 21 Oct approvals. Evidence jobs/readbacks/J1036.json.",
-        "check_at": "2026-10-27T19:40:30+00:00",
-        "last_recheck": "J1036",
-        "checked_at": "2026-10-27T12:40:45+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1041"
-      }
+      "remaining_action": "Verify Jupiter test completion in Studio (CDP 9223) and Saturn J0189 prerequisite before approved comparisons"
     },
     {
       "id": "J0276",
