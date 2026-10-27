@@ -47,7 +47,7 @@ def load_backlog(path: pathlib.Path = BACKLOG) -> list:
 
 def ready(data: dict, at: dt.datetime) -> list:
     """Jobs a Mini worker could claim right now."""
-    return [j for j in data["jobs"] if not j.get("for") and jobs.claimable(data, j, jobs.MINI_NEEDS, at)]
+    return [j for j in data["jobs"] if not j.get("for") and jobs.can_any_mini_claim(data, j, at)]
 
 
 def parked_for_chief(job: dict) -> bool:
@@ -70,7 +70,7 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
     def add(it):
         nonlocal have
         j = jobs.do_add(data, title=it["title"], needs=it["needs"], body=it["body"], by="refill", at=at,
-                        repo=it.get("repo", "owb"), eta_min=it.get("eta", jobs.DEFAULT_ETA), kind=it.get("kind", ""))
+                        repo=it.get("repo", "owb"), eta_min=it.get("eta", jobs.DEFAULT_ETA), kind=it.get("kind", ""), action=it.get("remaining_action") or it["title"][:180])
         j["backlog"] = it["key"]
         last[it["key"]] = studio.iso(at)
         added.append(j["id"])

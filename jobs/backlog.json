@@ -9,7 +9,8 @@
       "eta": 45,
       "daily_at": "07:00",
       "title": "Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker",
-      "body": "Free, read-only. Runs daily after the 06:40 snapshot and must finish before 09:00 London (Ben, 12 Oct 22:19). 1) In YouTube Studio, read only, change nothing: Orbit With Ben in the Orbit Studio browser (CDP 9223); History of Science in its own signed-in Studio session (never the 9222 Flow browser for Orbit pages). 2) For every long film (format long in 05_Analytics/dashboard/data.json, both channels), open Analytics > Reach for the video, period Lifetime, and read Impressions and Impressions click-through rate (%), and on Overview/Engagement the lifetime Views, Average view duration (seconds) and Average percentage viewed (%; if Studio shows only duration, compute duration / video length x 100). 2b) For every Short (both channels), read lifetime Views, Average percentage viewed (%) and 'Stayed to watch' (%, Studio's Shorts engagement figure, viewed vs swiped away); write them under the same videos map as \"views\", \"avgViewPct\" and \"stayedToWatch\" (Ben, 12 Oct 22:50). 3) Write 05_Analytics/<owb|hos>/studio_ctr.json: {\"readAt\": <ISO UTC>, \"period\": \"lifetime\", \"videos\": {\"<videoId>\": {\"impressions\": <int>, \"impressionsCtr\": <number, % e.g. 3.8>, \"views\": <int>, \"avgViewSeconds\": <int>, \"avgViewPct\": <number, %>}}}. A film Studio can't show yet: leave it out. 4) Rebuild: cd 07_Content-Ops && npx tsx scripts/analytics-report.ts (it merges studio_ctr.json into data.json; Studio values take priority on the tracker), then python3 scripts/board_publish.py so /tracker's 'Long films vs targets' panel fills in. 5) Commit only those files to main with a message naming the counts, then jobs.py done <id> --result \"<n> OWB + <m> HOS longs; CTR hits vs 4%: ...\" --git. Never: edit any video, title, thumbnail or setting; spend anything; paid API."
+      "body": "Free, read-only. Runs daily after the 06:40 snapshot and must finish before 09:00 London (Ben, 12 Oct 22:19). 1) In YouTube Studio, read only, change nothing: Orbit With Ben in the Orbit Studio browser (CDP 9223); History of Science in its own signed-in Studio session (never the 9222 Flow browser for Orbit pages). 2) For every long film (format long in 05_Analytics/dashboard/data.json, both channels), open Analytics > Reach for the video, period Lifetime, and read Impressions and Impressions click-through rate (%), and on Overview/Engagement the lifetime Views, Average view duration (seconds) and Average percentage viewed (%; if Studio shows only duration, compute duration / video length x 100). 2b) For every Short (both channels), read lifetime Views, Average percentage viewed (%) and 'Stayed to watch' (%, Studio's Shorts engagement figure, viewed vs swiped away); write them under the same videos map as \"views\", \"avgViewPct\" and \"stayedToWatch\" (Ben, 12 Oct 22:50). 3) Write 05_Analytics/<owb|hos>/studio_ctr.json: {\"readAt\": <ISO UTC>, \"period\": \"lifetime\", \"videos\": {\"<videoId>\": {\"impressions\": <int>, \"impressionsCtr\": <number, % e.g. 3.8>, \"views\": <int>, \"avgViewSeconds\": <int>, \"avgViewPct\": <number, %>}}}. A film Studio can't show yet: leave it out. 4) Rebuild: cd 07_Content-Ops && npx tsx scripts/analytics-report.ts (it merges studio_ctr.json into data.json; Studio values take priority on the tracker), then python3 scripts/board_publish.py so /tracker's 'Long films vs targets' panel fills in. 5) Commit only those files to main with a message naming the counts, then jobs.py done <id> --result \"<n> OWB + <m> HOS longs; CTR hits vs 4%: ...\" --git. Never: edit any video, title, thumbnail or setting; spend anything; paid API.",
+      "remaining_action": "Read the latest Studio performance figures"
     },
     {
       "key": "owb-weekly-audit",
@@ -19,7 +20,8 @@
       "eta": 120,
       "every_h": 168,
       "title": "Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements",
-      "body": "Weekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git."
+      "body": "Weekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "remaining_action": "Review Orbit performance and identify improvements"
     },
     {
       "key": "hos-weekly-audit",
@@ -29,7 +31,8 @@
       "eta": 120,
       "every_h": 168,
       "title": "Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements",
-      "body": "Weekly growth audit for History of Science (aim: numbers up month on month). 1) Last 28 and 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_HOS): views, CTR, AVD/retention, subs per video, Shorts vs longs, search terms, Test & Compare results. 2) What's working and what isn't, with evidence. 3) Competitors: 5 history/science-history channels (e.g. Kings and Generals style explainers, Veritasium history pieces, SciShow, Big Think history, Real Engineering) last 30 days via public metadata only. 4) Write the audit into the HOS repo analytics folder as HOS_<YYYY-MM-DD>.md: findings, 3-5 concrete changes for 006-010 tied to a film, and 3 ranked new ideas. Compare with last week. Post a summary on desk #180. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git."
+      "body": "Weekly growth audit for History of Science (aim: numbers up month on month). 1) Last 28 and 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_HOS): views, CTR, AVD/retention, subs per video, Shorts vs longs, search terms, Test & Compare results. 2) What's working and what isn't, with evidence. 3) Competitors: 5 history/science-history channels (e.g. Kings and Generals style explainers, Veritasium history pieces, SciShow, Big Think history, Real Engineering) last 30 days via public metadata only. 4) Write the audit into the HOS repo analytics folder as HOS_<YYYY-MM-DD>.md: findings, 3-5 concrete changes for 006-010 tied to a film, and 3 ranked new ideas. Compare with last week. Post a summary on desk #180. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "remaining_action": "Review HOS performance and identify improvements"
     },
     {
       "key": "owb-ideas",
@@ -40,7 +43,8 @@
       "every_h": 48,
       "title": "OWB ideas + script draft: next film beyond the pipeline",
       "body": "Brainstorm 5 Orbit With Ben long ideas from the latest weekly audit and VIDEO_BACKLOG.json (search demand, competitor gaps, our best retention topics), score each, then draft the top one's script v00 per the playbook (house opening, FACT beats, SOURCES.md started). Save under 00_Brand/Channel-Setup/ideas/ and the next free 02_Video-Projects slot from the template. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
-      "paused": "pipeline full: OWB scripts drafted to 042, VO held until the 30 Oct ElevenLabs reset (Claude, 21 Oct)"
+      "paused": "pipeline full: OWB scripts drafted to 042, VO held until the 30 Oct ElevenLabs reset (Claude, 21 Oct)",
+      "remaining_action": "Prepare the next Orbit video idea and script draft"
     },
     {
       "key": "hos-ideas",
@@ -51,7 +55,8 @@
       "every_h": 48,
       "title": "HOS ideas + script draft: next film beyond the pipeline",
       "body": "Brainstorm 5 History of Science long ideas (discovery stories with a person, a date and a twist) from the weekly audit and search demand, score each, then draft the top one's opening and outline with SOURCES. Save in the HOS ideas folder. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
-      "paused": "pipeline full: HOS scripts drafted to 038 (Claude, 21 Oct)"
+      "paused": "pipeline full: HOS scripts drafted to 038 (Claude, 21 Oct)",
+      "remaining_action": "Prepare the next HOS video idea and script draft"
     },
     {
       "key": "owb-short-from-locked",
@@ -61,7 +66,8 @@
       "eta": 120,
       "every_h": 12,
       "title": "Backlog OWB: next Short cut from a locked long (existing VO + picture only)",
-      "body": "Pick the locked or live OWB long with the fewest Shorts built (STATUS.md, 10_Shorts/). Lift one self-contained 22-27 s stretch of its own VO and picture, reframe 9:16 the house way, house SFX kit only. Every Short rule applies (frame-0 named thing, hook caption, exact long title at 9-14 s, captions, loop, custom cover). Teach on screen: a number object or timeline call-out in frame. gate_shorts_open.py check must PASS. Spend nothing. Post the cut, contact sheet and gate output on #99, then block 'parked for Chief: Short PASS'. Never upload."
+      "body": "Pick the locked or live OWB long with the fewest Shorts built (STATUS.md, 10_Shorts/). Lift one self-contained 22-27 s stretch of its own VO and picture, reframe 9:16 the house way, house SFX kit only. Every Short rule applies (frame-0 named thing, hook caption, exact long title at 9-14 s, captions, loop, custom cover). Teach on screen: a number object or timeline call-out in frame. gate_shorts_open.py check must PASS. Spend nothing. Post the cut, contact sheet and gate output on #99, then block 'parked for Chief: Short PASS'. Never upload.",
+      "remaining_action": "Prepare the next Orbit Short from approved existing material"
     },
     {
       "key": "hos-short-from-locked",
@@ -71,7 +77,8 @@
       "eta": 120,
       "every_h": 12,
       "title": "Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only)",
-      "body": "Test B rule (HOS PR #261): two search-titled Shorts per film. Pick the locked HOS long (004, 005, then the next locked) with the fewest built Shorts. Lift one stretch of its own VO and picture, 9:16, person card or date call-out on screen, captions throughout, search-shaped title draft. Spend nothing. Post on desk #180, then block 'parked for Chief: Short PASS'. Never upload."
+      "body": "Test B rule (HOS PR #261): two search-titled Shorts per film. Pick the locked HOS long (004, 005, then the next locked) with the fewest built Shorts. Lift one stretch of its own VO and picture, 9:16, person card or date call-out on screen, captions throughout, search-shaped title draft. Spend nothing. Post on desk #180, then block 'parked for Chief: Short PASS'. Never upload.",
+      "remaining_action": "Prepare the next HOS Short from approved existing material"
     },
     {
       "key": "owb-thumb-b",
@@ -82,7 +89,8 @@
       "every_h": 24,
       "title": "Backlog OWB: thumbnail B variant for one live long with no Test & Compare on record",
       "body": "From 00_Brand/Channel-Setup/audits/ and the *_test_compare.json files, pick a live long with no test running or on record. Build B from existing plates only (no image-model spend, never inpaint), Packaging section 2.B. thumb_preview.py long <A> <B> --out <sheet> --score must PASS. Post the sheet on #99, block 'parked for Chief: thumb B review'. Never touch an armed test.",
-      "paused": "every live OWB long has a test running or a B on record until the 25-26 Oct tests end (J0293; Claude, 21 Oct)"
+      "paused": "every live OWB long has a test running or a B on record until the 25-26 Oct tests end (J0293; Claude, 21 Oct)",
+      "remaining_action": "Prepare an Orbit thumbnail alternative for review"
     },
     {
       "key": "hos-thumb-b",
@@ -93,7 +101,8 @@
       "every_h": 24,
       "title": "Backlog HOS: thumbnail B variant for one live or scheduled film with no test",
       "body": "Pick a HOS film with no Test & Compare on record (never 004's armed test). Build B from existing plates only, no spend, score it, post the sheet on desk #180, block 'parked for Chief: thumb B review'.",
-      "paused": "HOS 001/002/005 already have post-11-Oct B variants waiting to arm (Claude, 21 Oct)"
+      "paused": "HOS 001/002/005 already have post-11-Oct B variants waiting to arm (Claude, 21 Oct)",
+      "remaining_action": "Prepare a HOS thumbnail alternative for review"
     },
     {
       "key": "owb-teach-overlays",
@@ -104,7 +113,8 @@
       "every_h": 12,
       "title": "Backlog OWB: teaching overlays for the newest unlocked long (number objects, timeline call-outs, person cards)",
       "body": "AGENTS.md Reference lessons item 6 (Chief ruling 12 Oct: a to-scale graphic with no numeral does NOT count as NUMBER). For the newest long not yet uploaded, take the next chapter with no numeral-bearing object and render overlay rows: the VO's own words, 4 words or fewer, numbers checked against 01_Script/SOURCES.md. Overlays only on VO-locked films. picture_qa must PASS. Post the before/after stills on #99, block 'parked for Chief: overlay PASS'.",
-      "paused": "028/029 overlays done; 030+ wait for VO (Claude, 21 Oct)"
+      "paused": "028/029 overlays done; 030+ wait for VO (Claude, 21 Oct)",
+      "remaining_action": "Prepare teaching graphics for the next Orbit video"
     },
     {
       "key": "owb-live-listing-fixes",
@@ -114,7 +124,8 @@
       "eta": 60,
       "every_h": 24,
       "title": "Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related)",
-      "body": "Read-only audit: chapter timestamps against the cut, source links in descriptions, end screen present, Shorts' Related pill set to their long. Write the fix list to 05_Analytics/live_fixes/<date>.md with exact proposed text. Block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio."
+      "body": "Read-only audit: chapter timestamps against the cut, source links in descriptions, end screen present, Shorts' Related pill set to their long. Write the fix list to 05_Analytics/live_fixes/<date>.md with exact proposed text. Block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
+      "remaining_action": "Check the chapters, sources and links on recent Orbit videos"
     },
     {
       "key": "hos-live-listing-fixes",
@@ -124,7 +135,8 @@
       "eta": 60,
       "every_h": 24,
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
-      "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio."
+      "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
+      "remaining_action": "Check the chapters, sources and links on HOS videos"
     },
     {
       "key": "owb-next-script",
@@ -135,7 +147,8 @@
       "every_h": 24,
       "title": "Backlog OWB: next script draft for the earliest film without a locked script",
       "body": "From STATUS.md pick the earliest OWB film whose script isn't locked (else the top idea in the ideas sort). Draft or revise the script with SOURCES.md, marking for each chapter its number object and any timeline or person-card call-out. Spend nothing. Post on #99, block 'parked for Chief: script review'.",
-      "paused": "pipeline full: 033-042 v01 drafts wait for topic lock (Claude, 21 Oct)"
+      "paused": "pipeline full: 033-042 v01 drafts wait for topic lock (Claude, 21 Oct)",
+      "remaining_action": "Draft the earliest Orbit script still needed"
     },
     {
       "key": "hos-next-script",
@@ -146,7 +159,8 @@
       "every_h": 24,
       "title": "Backlog HOS: next script or opening draft (009/010 first)",
       "body": "Advance the earliest HOS film whose script or opening isn't passed (009 and 010 openings first, then the next idea). Person cards, dates and timeline call-outs marked per beat, SOURCES.md filled. Spend nothing. Post on desk #180, block 'parked for Chief: script review'.",
-      "paused": "pipeline full: 015-038 drafts wait for topic lock (Claude, 21 Oct)"
+      "paused": "pipeline full: 015-038 drafts wait for topic lock (Claude, 21 Oct)",
+      "remaining_action": "Draft the next HOS script or opening"
     },
     {
       "key": "hos-plate-prep",
@@ -157,7 +171,8 @@
       "every_h": 24,
       "title": "Backlog HOS: picture plan prep for the next film (boards and prompts only, no mint)",
       "body": "For the next HOS film whose picture plan isn't done, write the plate board rows (prompt, reference, Flow quality, price) from the locked VO. Mint nothing. Commit in a HOS PR and block 'parked for Chief: price pass'.",
-      "paused": "boards exist through 038 on HOS PR #348; nothing to mint until a price pass (Claude, 21 Oct)"
+      "paused": "boards exist through 038 on HOS PR #348; nothing to mint until a price pass (Claude, 21 Oct)",
+      "remaining_action": "Prepare the next HOS picture plan for review"
     },
     {
       "key": "both-qa-sweep",
@@ -167,7 +182,8 @@
       "eta": 60,
       "every_h": 8,
       "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
-      "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise."
+      "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
+      "remaining_action": "Check the newest video packs and record any missing checks"
     }
   ]
 }

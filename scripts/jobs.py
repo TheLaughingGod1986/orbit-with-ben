@@ -140,8 +140,7 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
            "film": film, "stage": stage, "after": after.upper() if after else "", "eta_min": eta_min,
            "status": "open", "by": "", "since": "", "eta": "", "created_by": by, "created_at": studio.iso(at),
            "result": "", "history": []}
-    if action.strip():
-        job["remaining_action"] = action.strip()
+    job["remaining_action"] = action.strip() or title.strip()[:180]
     if due:
         job["due"] = due
     if for_agent:
@@ -282,14 +281,19 @@ def reconcile_dependencies(data: dict, at: dt.datetime) -> list:
 MINI_NEEDS = {"mini", "gemini", "any"}
 
 
+def can_any_mini_claim(data, job, at):
+    chief = chief_relay.acting(at)[1] if workflow.role_job(job) else ""
+    actors = [chief] if workflow.role_job(job) else [job["for"]] if job.get("for") else routing.MINI_WORKERS
+    return any(actor and workflow.claimable(job,data["jobs"],at,actor,chief,MINI_NEEDS,chief_relay.current_execution(at)) for actor in actors)
+
+
 def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
     """What Claude's 2-hourly check alerts Ben about (read only):
     quiet  Mini work is waiting or stalled, nothing holds a live Mini claim, and no agent but Claude has touched the
            queue for quiet_h hours: the Mini, the relay or every Chief in the chain is down.
     ben    jobs only Ben can do (needs ben, open) and jobs blocked on him, with when each started waiting."""
     def mini_able(j):
-        agent = chief_relay.acting(at)[1] if workflow.role_job(j) else j.get("for") or "watch"
-        return claimable(data, j, MINI_NEEDS, at, agent or "")
+        return can_any_mini_claim(data,j,at)
     waiting = [j["id"] for j in data["jobs"] if j["needs"] in MINI_NEEDS and mini_able(j)]
     live = [j["id"] for j in data["jobs"] if j["status"] == "claimed" and not stalled(j, at) and j["needs"] in MINI_NEEDS]
     stamps = [studio.parse(h["at"]) for j in data["jobs"] for h in j.get("history", []) if h.get("by") not in ("claude", "")]

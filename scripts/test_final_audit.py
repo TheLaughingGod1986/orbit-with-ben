@@ -124,3 +124,11 @@ class FinalAudit(unittest.TestCase):
         self.assertFalse(w.hold_due(j,{'C':child,'P':j},AT))
         child['status']='done'
         self.assertTrue(w.hold_due(j,{'C':child,'P':j},AT))
+
+    def test_new_jobs_have_initial_action_and_progress_can_replace_it(self):
+        data={'jobs':[],'next_id':1}
+        j=jobs.do_add(data,title='Check the chapter links',needs='mini',body='',by='relay',at=AT)
+        self.assertEqual(j['remaining_action'],'Check the chapter links')
+        jobs.do_next(data,'gemini',{'mini'},AT)
+        jobs.do_progress(j,'gemini',1,2,AT,action='Verify the last corrected chapter link')
+        self.assertEqual(j['remaining_action'],'Verify the last corrected chapter link')

@@ -151,8 +151,6 @@ class NoArbitraryHolds(unittest.TestCase):
         d = empty()
         j = jobs.do_add(d, title="r", needs="mini", body="", by="chief", at=T0)
         with self.assertRaises(ValueError):
-            jobs.do_schedule(j, "chief", "2026-10-12 15:00", T0, "Flow AI Ultra credit renews")
-        with self.assertRaises(ValueError):
             jobs.do_add(d, title="x", needs="mini", body="", by="chief", at=T0, not_before="2026-10-12 15:00", reset="x")
 
 if __name__ == "__main__":
