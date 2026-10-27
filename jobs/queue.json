@@ -14448,10 +14448,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T21:49Z",
+      "eta": "2026-10-27T23:49Z",
       "created_by": "chief",
       "created_at": "2026-10-12T17:38Z",
       "result": "",
@@ -14560,11 +14560,24 @@
           "at": "2026-10-27T00:56Z",
           "by": "codex",
           "what": "reopened: J1011 verified 27 Oct in Studio CDP 9223: A/B testing titles shows Results ready (no longer Running). Evidence jobs/readbacks/J1011.json and /Users/benjaminoats/_desk/j1011/studio-details.png. J0152 Chief PASS and ruling (a) remain valid; live A HOW LONG? and approved B file present. Reopen original thumbnail-only scope; recheck no active test before setup, never accept deletion warning. No YouTube state changed."
+        },
+        {
+          "at": "2026-10-27T21:49Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
       "escalated_at": "2026-10-13T00:31Z",
-      "remaining_action": "Start the approved Saturn thumbnail comparison"
+      "remaining_action": "Start the approved Saturn thumbnail comparison",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T21:49Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0190",
