@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1013 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J1029 | any | open (after J1028) | – | – | chief · J0936: exact preparation lock after final S6 timing and card reconciliation | eb5858e98 |
+| J1029 | any | claimed | codex | 2026-10-27T11:32Z | chief · J0936: exact preparation lock after final S6 timing and card reconciliation | eb5858e98 |
 
 Recently finished:
 
