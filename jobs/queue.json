@@ -87023,15 +87023,21 @@
           "at": "2026-10-27T17:21Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-27T17:23Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected channel-audit.ts, rules.ts, 5fd444c6, and CORE_FILES.json (not core); reproduced 58-row uU12JA5rMWg boundary duplicate via read-only channel:audit"
         }
       ],
       "kind": "assembly",
-      "remaining_action": "Inspect channel-audit.ts, HOS commit 5fd444c6, and core membership",
+      "remaining_action": "Capture sanitized reproduction details and design narrow dedup + regression tests",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-27T17:21Z",
-        "by": "gemini"
+        "at": "2026-10-27T17:23Z",
+        "by": "gemini",
+        "note": "Inspected channel-audit.ts, rules.ts, 5fd444c6, and CORE_FILES.json (not core); reproduced 58-row uU12JA5rMWg boundary d"
       }
     },
     {
