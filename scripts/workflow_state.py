@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 
 LIVE = {"open", "claimed", "blocked"}
 MINI = {"mini", "gemini", "any"}
+STALL_GRACE = dt.timedelta(minutes=45)
 
 def timestamp(value):
     if not value:
@@ -51,6 +52,9 @@ def is_review(j):
 def external_hold(j, at):
     if j.get("needs") == "ben" or j.get("awaits_ben"):
         return "Waiting for Ben"
+    hold = j.get("hold") or {}
+    if hold:
+        return hold.get("condition") or "Waiting for condition verification"
     nb = timestamp(j.get("not_before") or j.get("notBefore"))
     if nb and nb > at:
         return "Waiting for recorded date/reset: " + nb.isoformat()
@@ -60,14 +64,38 @@ def external_hold(j, at):
         return j.get("result") or "Waiting for external input"
     return ""
 
-def state(j, by_id, at, active_review=None):
+def claim_is_stalled(j, at, execution=None):
+    if j.get("status") != "claimed":
+        return False
+    if execution and execution.get("job") == j.get("id"):
+        until = timestamp(execution.get("expiresAt"))
+        if until and until > at:
+            return False
+    stamps = [timestamp(j.get("eta")), timestamp((j.get("progress") or {}).get("at"))]
+    latest = max((t for t in stamps if t), default=None)
+    return bool(latest and at > latest + STALL_GRACE)
+
+def hold_due(j, by_id, at):
+    """A due hold requests verification; it never grants permission to release the work."""
+    if j.get("status") != "blocked" or j.get("needs") == "ben" or j.get("awaits_ben") or (j.get("hold") or {}).get("type") == "ben":
+        return False
+    hold = j.get("hold") or {}
+    check = timestamp(hold.get("check_at"))
+    if hold.get("type") == "dependency" and not hold.get("last_recheck"):
+        return bool(j.get("after") and by_id.get(j["after"],{}).get("status") == "done")
+    if check:
+        return check <= at
+    return bool(j.get("after") and by_id.get(j["after"], {}).get("status") == "done" and not external_hold(j, at))
+
+def state(j, by_id, at, active_review=None, execution=None):
     if j.get("status") not in LIVE:
         return j.get("status") or "unknown"
     if active_review and active_review.get("job") == j.get("id") and timestamp(active_review.get("expiresAt")) and timestamp(active_review["expiresAt"]) > at:
         return "running"
+    if external_hold(j,at) or dependency_problem(j,by_id):
+        return "waiting"
     if j.get("status") == "claimed":
-        eta = timestamp(j.get("eta"))
-        return "stalled" if eta and eta < at else "running"
+        return "stalled" if claim_is_stalled(j, at, execution) else "running"
     if external_hold(j, at) or dependency_problem(j, by_id):
         return "waiting"
     if is_review(j):
@@ -141,28 +169,31 @@ def order(j, due, focus=(), at=None):
             0 if j.get("film") else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
             created.timestamp() if created else inf, j["id"])
 
-def claimable(j, rows, at, agent, chief, can=MINI):
+def claimable(j, rows, at, agent, chief, can=MINI, execution=None):
+    if not str(agent or "").strip():
+        return False
     by_id = {r["id"]: r for r in rows}
     if external_hold(j, at) or dependency_problem(j, by_id):
         return False
     if role_job(j):
-        if agent != chief:
+        if not chief or agent != chief:
             return False
     elif j.get("needs") not in can or (j.get("for") and j.get("for") != agent):
         return False
     if j.get("status") not in ("open", "claimed"):
         return False
-    if j.get("status") == "claimed" and state(j, by_id, at) != "stalled":
+    if j.get("status") == "claimed" and state(j, by_id, at, execution=execution) != "stalled":
         return False
     return not j.get("after") or by_id.get(j["after"], {}).get("status") == "done"
 
-def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, exclude=()):
+def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, exclude=(), execution=None, include_chief=False):
+    actors = set(workers) | ({chief} if chief and include_chief else set())
     rows = data.get("jobs", [])
     by_id, due = {j["id"]: j for j in rows}, deadlines(rows)
     candidates = []
     # Resume existing ownership before selecting new work, matching jobs.py next (including overdue claims).
     for j in rows:
-        if j["id"] not in exclude and j.get("by") in workers and j.get("status") == "claimed" and state(j, by_id, at) in {"running", "stalled"}:
+        if j["id"] not in exclude and j.get("by") in actors and j.get("status") == "claimed" and state(j, by_id, at, execution=execution) in {"running","stalled"} and (not role_job(j) or j.get("by") == chief) and not external_hold(j,at) and not dependency_problem(j,by_id):
             return {"job": j, "worker": j["by"], "mode": "job"}
     for j in rows:
         if j["id"] in exclude or external_hold(j, at) or dependency_problem(j, by_id):
@@ -171,36 +202,37 @@ def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, ex
         if review and state(j, by_id, at) != "review":
             continue
         if review:
-            if chief not in workers or (review_ids is not None and j["id"] not in review_ids):
+            if chief not in actors or (review_ids is not None and j["id"] not in review_ids):
                 continue
             worker = chief
         else:
             if role_job(j):
-                worker = chief if chief in workers else None
+                worker = chief if chief in actors else None
             elif j.get("for"):
                 worker = j["for"] if j["for"] in workers else None
             else:
                 worker = choose_worker(j, workers)
-            if not worker or not claimable(j, rows, at, worker, chief):
+            if not worker or not claimable(j, rows, at, worker, chief, execution=execution):
                 continue
-        candidates.append((order(j, due, data.get("focus") or (), at), {"job": j, "worker": worker, "mode": "review" if review else "job"}))
+        candidates.append((order(j, due, data.get("focus") or (), at), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
     return min(candidates, key=lambda p: p[0])[1] if candidates else None
 
-def snapshot(data, at, chief, workers, choose_worker, active_review=None, review_ids=None):
+def snapshot(data, at, chief, workers, choose_worker, active_review=None, review_ids=None, execution=None, include_chief=False):
+    actors = set(workers) | ({chief} if chief and include_chief else set())
     rows = data.get("jobs", [])
     by_id = {j["id"]: j for j in rows}
-    states = {j["id"]: {"state": state(j, by_id, at, active_review), "reason": reason(j, by_id, at)} for j in rows if j.get("status") in LIVE}
+    states = {j["id"]: {"state": state(j, by_id, at, active_review, execution), "reason": reason(j, by_id, at)} for j in rows if j.get("status") in LIVE}
     active = [{"id": j["id"], "title": j.get("title", ""), "worker": j.get("by"), "mode": "job", "progress": j.get("progress")} for j in rows if j.get("status") == "claimed" and states.get(j["id"], {}).get("state") == "running"]
     if active_review and states.get(active_review.get("job"), {}).get("state") == "running":
         active = [a for a in active if a["id"] != active_review["job"]]
         active.append({**active_review, "id": active_review["job"], "worker": active_review.get("agent"), "mode": "review"})
-    pick = select_dispatch(data, at, chief, workers, choose_worker, review_ids, exclude=[a["id"] for a in active])
+    pick = select_dispatch(data, at, chief, workers, choose_worker, review_ids, exclude=[a["id"] for a in active], execution=execution, include_chief=include_chief)
     counts = {k: sum(s["state"] == k for s in states.values()) for k in ("running", "queued", "review", "waiting", "stalled")}
     # Unavailable workers are waiting, not ready to run.
     for j in rows:
         if states.get(j["id"], {}).get("state") == "queued":
             worker = chief if role_job(j) else j.get("for") or choose_worker(j, workers)
-            if worker not in workers:
+            if worker not in actors or not claimable(j, rows, at, worker or "", chief, execution=execution):
                 states[j["id"]] = {"state": "waiting", "reason": "Waiting for an available eligible worker"}
                 counts["queued"] -= 1
                 counts["waiting"] += 1

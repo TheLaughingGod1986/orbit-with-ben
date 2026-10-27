@@ -241,6 +241,7 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
              "since": cur.get("since") or ""}
     return {"checkedAt": iso(checked) if checked else "", "fresh": fresh, "chief": chief, "models": out,
             "chiefWork": chief_work(at, state, agent, jobs or []),
+            "runner": _read_json(state / "runner.json") or {},
             "chiefChain": [{"agent": r.get("agent"), "name": NAMES.get(r.get("agent"), r.get("agent")),
                             "up": bool(r.get("up")), "why": str(r.get("why") or "")[:120]}
                            for r in chain.get("rows") or [] if isinstance(r, dict)]}
@@ -471,7 +472,8 @@ def dispatch_snapshot(board: dict, at: dt.datetime, queue_path: pathlib.Path | N
     due = relay.due_chief_reviews(pending, chief, at)
     active = ((board.get("models") or {}).get("chiefWork") or {}).get("active")
     chooser = lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), "")
-    return workflow.snapshot(data, at, chief, up, chooser, active, {j["id"] for j in due})
+    return workflow.snapshot(data, at, chief, up, chooser, active, {j["id"] for j in due}, execution=relay.current_execution(at),
+                             include_chief=any(r.get("agent") == chief and r.get("up") for r in rows))
 
 
 def run_once(a) -> int:

@@ -1,0 +1,360 @@
+[
+  {
+    "id": "J0123",
+    "remaining_action": "Verify that the Mars long video is public",
+    "hold": {
+      "type": "public",
+      "condition": "Mars long Js6EQJ8qDi8 must read back Public",
+      "check_at": "2026-11-08T18:05Z"
+    }
+  },
+  {
+    "id": "J0124",
+    "remaining_action": "Add the Related links, pin the comment and check the social schedule",
+    "hold": {
+      "type": "public",
+      "condition": "Mars long Js6EQJ8qDi8 must read back Public and J0123 must be complete",
+      "check_at": "2026-11-08T18:05Z"
+    }
+  },
+  {
+    "id": "J0135",
+    "remaining_action": "Add the Related link to the Mars long video",
+    "hold": {
+      "type": "public",
+      "condition": "Mars long Js6EQJ8qDi8 must read back Public and J0123 must be complete",
+      "check_at": "2026-11-08T18:05Z"
+    }
+  },
+  {
+    "id": "J0189",
+    "remaining_action": "Start the approved Saturn thumbnail comparison",
+    "hold": {
+      "type": "test",
+      "condition": "Saturn title test on 55AEQwvs36g must have finished; verify in Studio before starting an approved comparison",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0241",
+    "remaining_action": "Link the Blood Short to its long video",
+    "hold": {
+      "type": "public",
+      "condition": "Blood long wwcjcFfC-5M must read back Public",
+      "check_at": "2026-10-29T18:05Z"
+    }
+  },
+  {
+    "id": "J0275",
+    "remaining_action": "Start the approved Saturn and Jupiter thumbnail comparisons",
+    "hold": {
+      "type": "test",
+      "condition": "Verify Saturn title test and Jupiter thumbnail test have ended; recorded expected ends were 25 Oct 17:00Z and 26 Oct 18:52Z",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0280",
+    "remaining_action": "Add the remaining Related links to the Blood Shorts",
+    "hold": {
+      "type": "public",
+      "condition": "Blood long wwcjcFfC-5M must read back Public before the remaining Related links are set",
+      "check_at": "2026-10-29T18:05Z"
+    }
+  },
+  {
+    "id": "J0302",
+    "remaining_action": "Record the Titan voiceover",
+    "hold": {
+      "type": "credits",
+      "condition": "ElevenLabs must have sufficient renewed characters for the locked Titan take",
+      "check_at": "2026-10-30T00:05Z"
+    }
+  },
+  {
+    "id": "J0317",
+    "remaining_action": "Add the Related links to the Earth long video",
+    "hold": {
+      "type": "public",
+      "condition": "Earth long 6bbbvfCx6zY must read back Public",
+      "check_at": "2026-11-22T18:05Z"
+    }
+  },
+  {
+    "id": "J0345",
+    "remaining_action": "Record the Magnetic Field Flip voiceover",
+    "hold": {
+      "type": "credits",
+      "condition": "ElevenLabs must have sufficient renewed characters; Titan J0302 remains ahead",
+      "check_at": "2026-10-30T00:05Z"
+    }
+  },
+  {
+    "id": "J0807",
+    "remaining_action": "Record the Darwin and Wallace voiceover"
+  },
+  {
+    "id": "J0821",
+    "remaining_action": "Review whether a second worker lane is ready",
+    "hold": {
+      "type": "input",
+      "condition": "Two Mini agents must have been available with usable credit for a whole week before reviewing a second lane",
+      "check_at": "2026-11-05T00:05Z"
+    }
+  },
+  {
+    "id": "J0861",
+    "remaining_action": "Add Related links and pin the Nearest Star comment",
+    "hold": {
+      "type": "public",
+      "condition": "Nearest Star long c5AdqQsnnys must read back Public",
+      "check_at": "2026-11-15T18:05Z"
+    }
+  },
+  {
+    "id": "J0862",
+    "remaining_action": "Record voiceovers for the Moon and Dinosaur Shorts",
+    "hold": {
+      "type": "credits",
+      "condition": "ElevenLabs must have sufficient renewed characters for the approved Shorts voiceovers",
+      "check_at": "2026-10-30T00:05Z"
+    }
+  },
+  {
+    "id": "J0863",
+    "remaining_action": "Review the picture-generation plan and cost after credits renew",
+    "hold": {
+      "type": "credits",
+      "condition": "Verify actual Flow credit renewal before the Chief price review; do not infer it from the expected renewal date",
+      "check_at": "2026-11-12T00:05Z"
+    }
+  },
+  {
+    "id": "J0875",
+    "remaining_action": "Add the Related links to the Vaccine long video",
+    "hold": {
+      "type": "public",
+      "condition": "Vaccine long ETynHpIYLeY must read back Public",
+      "check_at": "2026-11-12T18:05Z"
+    }
+  },
+  {
+    "id": "J0910",
+    "remaining_action": "Add Related links and pin the Gliese comment",
+    "hold": {
+      "type": "public",
+      "condition": "Gliese long F-jImX5h7ws must read back Public",
+      "check_at": "2026-11-29T18:05Z"
+    }
+  },
+  {
+    "id": "J0912",
+    "remaining_action": "Check the Franklin Short inputs before deciding whether another cut is needed",
+    "hold": {
+      "type": "input",
+      "condition": "HOS 008 picture/edit must be approved and the inventory must show a genuine need for another Short",
+      "check_at": "2026-10-28T00:30Z"
+    }
+  },
+  {
+    "id": "J0915",
+    "remaining_action": "Build the approved standalone Short recuts",
+    "hold": {
+      "type": "dependency",
+      "condition": "Required predecessor J1008 must finish, then the elected Chief verifies the existing release conditions",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0923",
+    "remaining_action": "Post and pin the Betelgeuse comment",
+    "hold": {
+      "type": "public",
+      "condition": "Betelgeuse long vP1BbqZ_dnM must read back Public before posting its pinned comment; completed steps remain complete",
+      "check_at": "2026-12-06T18:05Z"
+    }
+  },
+  {
+    "id": "J0935",
+    "remaining_action": "Fix the audio and remaining issues in the Mars and Nearest Star Shorts"
+  },
+  {
+    "id": "J0936",
+    "remaining_action": "Build the corrected Short recuts after the plan is approved",
+    "hold": {
+      "type": "dependency",
+      "condition": "Required predecessor J1010 must finish, then the elected Chief verifies the existing release conditions",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0956",
+    "remaining_action": "Upload the approved corrected Neptune Short and verify both copies"
+  },
+  {
+    "id": "J0958",
+    "remaining_action": "Post and pin the Trees comment",
+    "hold": {
+      "type": "public",
+      "condition": "Trees long VbPubYd6Fbs must read back Public before posting its pinned comment; do not repeat completed end-screen or test steps",
+      "check_at": "2026-11-05T18:05Z"
+    }
+  },
+  {
+    "id": "J0960",
+    "remaining_action": "Post and pin the Vaccine comment",
+    "hold": {
+      "type": "public",
+      "condition": "Vaccine long ETynHpIYLeY must read back Public before posting its pinned comment",
+      "check_at": "2026-11-12T18:05Z"
+    }
+  },
+  {
+    "id": "J0961",
+    "remaining_action": "Upload the approved Betelgeuse Shorts after their checks pass",
+    "hold": {
+      "type": "dependency",
+      "condition": "Required predecessor J0991 must finish, then the elected Chief verifies the existing release conditions",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0966",
+    "remaining_action": "Sign off the finished related Shorts after the sound check",
+    "hold": {
+      "type": "dependency",
+      "condition": "Required predecessor J1005 must finish, then the elected Chief verifies the existing release conditions",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0969",
+    "remaining_action": "Read the thumbnail-test result and start the approved comparison",
+    "hold": {
+      "type": "date",
+      "condition": "Read the completed running thumbnail test T012 after the recorded 1 Nov 18:00 London gate before arming the approved comparison",
+      "check_at": "2026-11-01T18:00Z"
+    }
+  },
+  {
+    "id": "J0974",
+    "remaining_action": "Upload the corrected Apophis Short after Chief approval",
+    "hold": {
+      "type": "dependency",
+      "condition": "Required predecessor J0990 must finish, then the elected Chief verifies the existing release conditions",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0975",
+    "remaining_action": "Add the approved Related links and verify the Saturn link"
+  },
+  {
+    "id": "J0978",
+    "remaining_action": "Start the next Atom title test",
+    "hold": {
+      "type": "test",
+      "condition": "Verify the Atom title test on GHZDsiH7L7A has ended before starting the approved next test",
+      "check_at": "2026-10-30T00:05Z"
+    }
+  },
+  {
+    "id": "J0979",
+    "remaining_action": "Build the next Short after its opening and plan are approved",
+    "hold": {
+      "type": "dependency",
+      "condition": "Required predecessor J1000 must finish, then the elected Chief verifies the existing release conditions",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0982",
+    "remaining_action": "Complete the quality-check inventory and run missing checks"
+  },
+  {
+    "id": "J0984",
+    "remaining_action": "Review HOS performance and identify improvements"
+  },
+  {
+    "id": "J0985",
+    "remaining_action": "Review the corrected Orbit performance audit",
+    "hold": {
+      "type": "dependency",
+      "condition": "Required predecessor J1002 must finish, then the elected Chief verifies the existing release conditions",
+      "check_at": "2026-10-27T00:00Z"
+    }
+  },
+  {
+    "id": "J0989",
+    "remaining_action": "Fix the Apophis Short audio levels"
+  },
+  {
+    "id": "J0990",
+    "remaining_action": "Review the corrected Apophis Short for release"
+  },
+  {
+    "id": "J0991",
+    "remaining_action": "Fix the Betelgeuse Shorts audio levels and Wednesday opening"
+  },
+  {
+    "id": "J0995",
+    "remaining_action": "Update the Venus end screen and Sun card"
+  },
+  {
+    "id": "J0996",
+    "remaining_action": "Correct the Earth long-video description"
+  },
+  {
+    "id": "J0997",
+    "remaining_action": "Correct the Vaccine Shorts video links"
+  },
+  {
+    "id": "J0998",
+    "remaining_action": "Investigate and prepare a fix for duplicate playlist entries"
+  },
+  {
+    "id": "J0999",
+    "remaining_action": "Verify the compilation end screen and disclosure setting"
+  },
+  {
+    "id": "J1000",
+    "remaining_action": "Find a suitable question opening in the existing voiceover"
+  },
+  {
+    "id": "J1002",
+    "remaining_action": "Correct the Orbit audit and record supporting evidence"
+  },
+  {
+    "id": "J1003",
+    "remaining_action": "Measure the Earth Short once 48 hours of data are available",
+    "hold": {
+      "type": "date",
+      "condition": "Studio data readAt must be at or after 28 Oct 11:30Z; retain the recorded 29 Oct 16:00 London fallback if data is unavailable",
+      "check_at": "2026-10-28T11:35Z"
+    }
+  },
+  {
+    "id": "J1004",
+    "remaining_action": "Resolve the remaining opening and duration proposals"
+  },
+  {
+    "id": "J1005",
+    "remaining_action": "Check sound and pronunciation in the related Shorts"
+  },
+  {
+    "id": "J1007",
+    "remaining_action": "Prepare the standalone Shorts opening and motion plans"
+  },
+  {
+    "id": "J1008",
+    "remaining_action": "Approve the standalone Shorts plans before assembly"
+  },
+  {
+    "id": "J1009",
+    "remaining_action": "Correct the Short scripts, timing and shot plans"
+  },
+  {
+    "id": "J1010",
+    "remaining_action": "Approve the corrected Short plans before assembly"
+  }
+]

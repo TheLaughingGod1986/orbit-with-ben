@@ -18,11 +18,11 @@ How "up" is decided:
           A `down` mark on Grok is cleared by either signal seen after the mark: Grok working again is proof it is back.
   codex, gemini (Cursor remains a specialist worker)
           up unless their CLI is missing or they are marked down. A run whose output says out of credit, over the
-          usage limit, or signed out marks that agent down for --retry hours (default 3), and the same run falls
+          usage limit, or signed out marks that agent down for CHIEF_RETRY_H hours (default 1), and the same run falls
           through to the next agent in line.
 
   python3 scripts/chief_relay.py status                         # the chain, who is Chief, and why
-  python3 scripts/chief_relay.py run                            # launchd, every 10 min: one job by the acting Chief, when one is queued
+  python3 scripts/chief_relay.py run                            # launchd, every minute: one job by the acting Chief, when one is queued
   python3 scripts/chief_relay.py seen chief                     # heartbeat (jobs.py does this for you)
   python3 scripts/chief_relay.py down chief --reason "out of credit" [--until 2026-10-12T09:00]
   python3 scripts/chief_relay.py up cursor                      # clear a down mark
@@ -41,7 +41,7 @@ code and graphics start at Codex. Every `run` walks them:
   - Each run is logged with the worker and model that actually ran it: "ran: J0300 by cursor on claude-opus-5-5
     (lane 2 of 4)" here, and a line in ~/_desk/state/chief/runs.jsonl.
 
-`run` checks the Chief inbox every pass, ahead of ordinary jobs, round the clock. CLI Chiefs process up to
+`run` checks the Chief inbox every pass, alongside production in shared deadline order, round the clock. CLI Chiefs process up to
 CHIEF_CHAIN_MAX duties/jobs (25-minute cap each); app/cloud Chiefs receive a durable inbox and yield if a delivered
 duty makes no progress for CHIEF_DUTY_ACK_MIN (30 minutes) with no live claim. Per-job retries use CHIEF_REVIEW_MIN
 (10 minutes), never the Chief heartbeat. A pause file or an existing run lock still prevents overlapping runs.
@@ -79,6 +79,28 @@ OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import workflow_state as workflow
 import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and model)
+
+
+def code_version():
+    root = pathlib.Path(__file__).resolve().parent
+    return hashlib.sha256(b"\0".join((root/name).read_bytes() for name in ("chief_relay.py","workflow_state.py","jobs.py","routing.py"))).hexdigest()[:16]
+
+LOADED_VERSION = code_version()
+
+
+def current_execution(at):
+    value = read_json(d("execution.json")) or {}
+    expires = workflow.timestamp(value.get("expiresAt"))
+    if not expires or expires <= at:
+        return None
+    try:
+        pid = int(value.get("pid") or 0)
+        if pid <= 0:
+            return None
+        os.kill(pid,0)
+    except (ValueError, TypeError, OSError):
+        return None
+    return value
 
 
 def first_dir(*cands) -> pathlib.Path:
@@ -551,7 +573,7 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
    Ben watches % done on the board: split the job into n steps (keep n from any earlier `progress` on it) and run
      python3 scripts/jobs.py progress <id> --agent {agent} --step <k> --of <n> --git
-   with k=0 when you start and again after each finished step (k = steps done), before you release or finish.
+   with --action "<plain-English action still unfinished>"; update that action as the remaining work changes. Use k=0 when you start and again after each finished step (k = steps done), before you release or finish.
    As soon as you choose the video(s), include --films HOS:006 (or OWB:028,OWB:029 for a shared job) on that progress
    command, and --note with the concrete outcome of each finished step. Keep the links on later progress updates.
    This connects the live job to the video's swim lane. A job parked for review is not an approved film stage.
@@ -809,7 +831,7 @@ def addressed_to(agent: str) -> list:
     import jobs
     at = now()
     return [j["id"] for j in q.get("jobs", []) if j.get("for") == agent and j.get("status") == "open"
-            and not jobs.waiting_to_start(j, at)
+            and not workflow.external_hold(j, at)
             and (not j.get("after") or by_id.get(j["after"], {}).get("status") == "done")
             and (j.get("kind") != "chief" or is_elected_chief(agent, at))]
 
@@ -985,21 +1007,10 @@ def stranded_jobs(data: dict, up: set) -> list:
 
 
 def stalled_claims(data: dict, at: dt.datetime) -> list:
-    """Jobs a Mini worker claimed and then went quiet on (15 Oct 2026: Gemini held J0258 for 3 h past its ETA, so the
-    board showed it running and nobody took it over). A claim over CHIEF_STALL_MIN (45) min past its ETA is dead: a
-    worker run is capped at 25 min. Chief-kind jobs and jobs held by Claude or Chief are left alone."""
-    lim = dt.timedelta(minutes=float(os.environ.get("CHIEF_STALL_MIN", "45")))
-    out = []
-    for j in data.get("jobs", []):
-        if j.get("status") != "claimed" or j.get("by") not in routing.MINI_WORKERS or j.get("kind") == "chief":
-            continue
-        try:
-            eta = dt.datetime.strptime(j.get("eta", ""), "%Y-%m-%dT%H:%MZ").replace(tzinfo=dt.timezone.utc)
-        except ValueError:
-            continue
-        if at - eta > lim:
-            out.append(j)
-    return out
+    """One 45-minute inactivity/ETA grace plus a validated active-run lease, shared with claims and the board."""
+    execution = current_execution(at)
+    return [j for j in data.get("jobs", []) if j.get("by") in routing.MINI_WORKERS
+            and workflow.claim_is_stalled(j,at,execution)]
 
 
 def reroute(job: dict, to: str, model: str, note: str) -> bool:
@@ -1212,15 +1223,6 @@ def run_locked(at: dt.datetime) -> int:
     if not self_heal(at):
         log("disk still too full to run a worker: waiting for the next repair")
         return 0
-    queue = read_json(OWB / "jobs" / "queue.json") or {}
-    by_id = {j["id"]: j for j in queue.get("jobs", [])}
-    if (OWB / "scripts" / "jobs.py").exists() and any(
-            j.get("status") in ("open", "blocked") and workflow.dependency_problem(j, by_id)
-            and not j.get("dependency_problem") for j in queue.get("jobs", [])):
-        result = subprocess.run([sys.executable, str(OWB / "scripts" / "jobs.py"), "reconcile", "--agent", "relay", "--git"],
-                                capture_output=True, text=True, timeout=180)
-        if result.returncode:
-            log("dependency reconciliation failed: " + (result.stderr or result.stdout)[-250:])
     if (OWB / "scripts" / "refill.py").exists():
         escalate_stale()
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
@@ -1235,6 +1237,21 @@ def run_locked(at: dt.datetime) -> int:
     chained, last_ran = 0, None
     reviewed = set()
     while True:
+        desired = code_version()
+        write_json(d("runner.json"), {"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":desired,"at":iso(now()),
+                                     "state":"restarting" if desired != LOADED_VERSION else "ready"})
+        if desired != LOADED_VERSION:
+            log("runner update: safe boundary reached; yielding to a fresh launchd run")
+            return 0
+        queue = read_json(OWB / "jobs" / "queue.json") or {}
+        by_id = {j["id"]:j for j in queue.get("jobs", [])}
+        broken = any(j.get("status") in ("open","blocked") and workflow.dependency_problem(j,by_id)
+                     and j.get("dependency_problem") != workflow.dependency_problem(j,by_id) for j in queue.get("jobs", []))
+        check_due = any(workflow.hold_due(j,by_id,at) and not any(x.get("recheck_of") == j["id"] and x.get("status") in workflow.LIVE for x in queue.get("jobs", [])) for j in queue.get("jobs", []))
+        if (broken or check_due) and (OWB / "scripts" / "jobs.py").exists():
+            result = subprocess.run([sys.executable,str(OWB / "scripts/jobs.py"),"reconcile","--agent","relay","--git"],capture_output=True,text=True,timeout=180)
+            if result.returncode:
+                log("queue reconciliation failed: " + (result.stderr or result.stdout)[-250:])
         # Re-read Claude's heartbeat each pass (at most every 5 min): a chain of worker jobs can hold this run for
         # hours, and on 15 Oct 2026 it kept reading the 04:04 beat until 06:03 after fresh beats at 05:49 and 05:51.
         fetch_claude_beat(now())
@@ -1269,7 +1286,7 @@ def run_locked(at: dt.datetime) -> int:
                          if j["id"] not in reviewed] if leader in routing.MINI_WORKERS else []
         data = read_json(OWB / "jobs" / "queue.json") or {}
         selection = workflow.select_dispatch(data, at, leader, up, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
-                                             review_ids={j["id"] for j in chief_reviews})
+                                             review_ids={j["id"] for j in chief_reviews}, execution=current_execution(at))
         review_due = bool(selection and selection["mode"] == "review")
         if selection:
             who = selection["worker"]
@@ -1357,9 +1374,14 @@ def run_locked(at: dt.datetime) -> int:
                        "agent": who, "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(seconds=cap + 60)),
                        "pid": os.getpid(), "kind": "chief-review",
                        "progress": {"step": 0, "of": 3, "at": iso(started), "note": "Review started"}})
+        execution = {"job":reviews[0]["id"] if review_work else job.get("id") if job else "", "worker":who,
+                     "pid":os.getpid(),"startedAt":iso(started),"expiresAt":iso(started + dt.timedelta(seconds=cap+60)),"version":LOADED_VERSION}
+        write_json(d("execution.json"),execution)
+        write_json(d("runner.json"),{"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"]})
         try:
             code, tail = run_cli(who, prompt, cap, model)
         finally:
+            d("execution.json").unlink(missing_ok=True)
             if review_work:
                 d("active.json").unlink(missing_ok=True)
         said = credit_phrase(code, tail)
@@ -1444,6 +1466,8 @@ def cmd_status(at: dt.datetime) -> int:
     for a, up, why in rows:
         print(f"{'>' if a == who else ' '} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
     print(f"Chief: {NAMES.get(who, who) if who else 'nobody'}")
+    runner = read_json(d("runner.json")) or {}
+    print(f"Runner: {runner.get('version', 'not reported')} / installed {code_version()} ({runner.get('state', 'unknown')})")
     duties = pending_chief_reviews(at)
     print("Chief duties (deadline, urgency, age): " + (", ".join(j["id"] for j in duties) or "none"))
     for worker in routing.MINI_WORKERS:

@@ -857,11 +857,11 @@ class Relay(unittest.TestCase):
         data = {"jobs": [
             {"id": "J1", "status": "claimed", "by": "gemini", "eta": "2026-10-07T10:00Z", "kind": "listing"},   # 2 h past
             {"id": "J2", "status": "claimed", "by": "cursor", "eta": "2026-10-07T11:40Z", "kind": "listing"},   # 20 min past: still live
-            {"id": "J3", "status": "claimed", "by": "cursor", "eta": "2026-10-07T09:00Z", "kind": "chief"},     # Chief calls have no stand-in
+            {"id": "J3", "status": "claimed", "by": "cursor", "eta": "2026-10-07T09:00Z", "kind": "chief"},     # expired role claims use the same recovery policy; elected-role claim guards still apply
             {"id": "J4", "status": "claimed", "by": "claude", "eta": "2026-10-07T09:00Z", "kind": "listing"},   # not a Mini worker
             {"id": "J5", "status": "claimed", "by": "codex", "eta": "", "kind": "listing"},                     # no ETA: unknown, left alone
         ]}
-        self.assertEqual([j["id"] for j in cr.stalled_claims(data, T0)], ["J1"])
+        self.assertEqual([j["id"] for j in cr.stalled_claims(data, T0)], ["J1", "J3"])
 
 
 if __name__ == "__main__":

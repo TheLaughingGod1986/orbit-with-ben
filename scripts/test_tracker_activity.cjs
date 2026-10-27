@@ -100,9 +100,9 @@ t.updateAsOf();assert(elements.asof.textContent.startsWith('Updated'));
 console.log('Shared workflow, publication and progress regression checks passed');
 
 // A live long video must describe its follow-up Shorts and title test in plain language.
-const audio={id:'J1005',status:'open',kind:'qa',title:'J0966 HC: audition four finished masters and resolve vaccine pronunciation warnings (GBP0)'};
-const signoff={id:'J0966',status:'blocked',after:'J1005',kind:'video',title:'HOS 60% re-cut batch HC (local only): -I_GHK-GcFs, x_3L_IdYgEc',result:'Acting-Chief evidence ruling: technical/still checks accepted; full PASS withheld pending finished-audio QA J1005.'};
-const titleTest={id:'J0978',status:'blocked',kind:'listing',title:'Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags',result:'waits for: J0280 Title Test & Compare still running'};
+const audio={id:'J1005',status:'open',kind:'qa',remaining_action:"Check sound and pronunciation in the related Shorts",title:'J0966 HC: audition four finished masters and resolve vaccine pronunciation warnings (GBP0)'};
+const signoff={id:'J0966',status:'blocked',after:'J1005',remaining_action:'Sign off the related Shorts',kind:'video',title:'HOS 60% re-cut batch HC (local only): -I_GHK-GcFs, x_3L_IdYgEc',result:'Acting-Chief evidence ruling: technical/still checks accepted; full PASS withheld pending finished-audio QA J1005.'};
+const titleTest={id:'J0978',status:'blocked',kind:'listing',remaining_action:'Start the next title test',title:'Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags',result:'waits for: J0280 Title Test & Compare still running'};
 const atom={key:'HOS:004',type:'long',lane:'progress',jobs:[signoff,audio,titleTest],flags:[],youtube:{state:'live',privacy:'public'}};
 t.setBoard({owb:{jobs:[signoff,audio,titleTest]},workflow:{states:{J0966:{state:'waiting'},J1005:{state:'queued'},J0978:{state:'waiting'}}}});
 html=t.cardWorkHtml(atom);
@@ -116,3 +116,10 @@ assert(!/J\d{4}|GBP0|last completed|60% re-cut/i.test(visible));
 assert(html.includes('Job details'),'original job records remain available');
 assert(t.cardHeadline(atom).startsWith('Live on YouTube'));
 console.log('Plain remaining-work labels verified against the Atom workflow');
+
+const tree={id:'TREE',status:'blocked',title:'Studio finish: end screen, pinned comment, Test & Compare',remaining_action:'Post and pin the comment',hold:{type:'public',condition:'Video must be public',check_at:'2026-11-05T18:05Z'}};
+t.setBoard({owb:{jobs:[tree]},workflow:{states:{TREE:{state:'waiting'}}}});
+html=t.cardWorkHtml({key:'HOS:006',type:'long',jobs:[tree]});
+const treeVisible=html.replace(/<details[\s\S]*?<\/details>/g,'');
+assert(treeVisible.includes('Post and pin the comment')&&!treeVisible.includes('Update the end screen'));
+assert(treeVisible.includes('After the video is public'));

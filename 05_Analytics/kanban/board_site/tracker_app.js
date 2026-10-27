@@ -337,7 +337,10 @@
   function jobState(j) {
     const status = board?.workflow?.states?.[j.id]?.state;
     if (status) return status;
-    if (j.status === "claimed") return j.eta && tsOf(j.eta) < Date.now() - 45 * MIN ? "stalled" : "running";
+    if (j.status === "claimed") {
+      const last = Math.max(tsOf(j.eta) || 0,tsOf(j.progress?.at) || 0);
+      return last && last < Date.now() - 45 * MIN ? "stalled" : "running";
+    }
     if (j.status === "blocked" && /reset|renewal|waits? (?:for |until ).*public|date gate|test.*(?:running|ends?)/i.test(j.result || "")) return "waiting";
     if (j.status === "blocked") return /parked for (?:the )?chief|chief (?:review|pass|ruling)/i.test(j.result || "") ? "review" : "waiting";
     const states = ((board || {}).owb || {}).jobStates || {};
@@ -389,39 +392,14 @@
     return v.waitingOn || "—";
   }
   // Plain task labels are display-only; queue titles, dependencies and decisions remain in Job details.
-  function relatedShorts(j, v) {
-    if (!v || v.type !== "long") return false;
-    const shortTitle = t => /short|60% re-cut batch/i.test(t || "");
-    return shortTitle(j.title) || ((board?.owb?.jobs || []).some(parent => parent.after === j.id && matchesVideo(parent,v) && shortTitle(parent.title)));
-  }
   function plainTask(j, v) {
     if (j._chiefReview) return "Review the finished work";
-    const title = String(j.title || ""), reason = String(j.result || "");
-    const subject = relatedShorts(j,v) ? "the related Shorts" : "the finished videos";
-    if (/audition.*master|pronunciation/i.test(title)) return `Check sound and pronunciation in ${subject}`;
-    if (/audio-only.*correction|loudness|AAC levels/i.test(title)) return /opening/i.test(title) ? "Fix the audio levels and opening" : "Fix the audio levels";
-    if (/technical release review|exact.hash.*review/i.test(title)) return "Review the corrected video for release";
-    if (/full PASS withheld|technical.*accepted.*pending.*audio/i.test(reason)) return `Sign off ${subject}`;
-    if (/Test B start|title\/line 1\/tags/i.test(title)) return "Start the next title test";
-    if (/description.*(?:URL|link)|watch URL|listing.*link/i.test(title)) return "Correct the video links";
-    if (/end screen/i.test(title)) return "Update the end screen";
-    if (/Sun card/i.test(title)) return "Update the video cards";
-    if (/60% re-cut batch/i.test(title)) return `Improve ${relatedShorts(j,v) ? "the related Shorts" : "the Shorts"}`;
-    if (/map .*question openings|Keeper.compliant opening/i.test(title)) return "Improve the opening using the existing voiceover";
-    if (/caption/i.test(title)) return "Fix the captions";
-    if (/thumbnail/i.test(title) && !/upload|package/i.test(title)) return "Prepare the thumbnails";
-    if (/swap to|Private upload|upload.*(?:Short|video)|package.*upload/i.test(title)) return "Upload the approved version";
-    if (/resolve (?:cancelled|missing|cycle):/i.test(title)) return "Decide how to unblock the remaining work";
-    let text = taskOf(j).replace(/\bJ\d+\b\s*[:·-]?\s*/g, "")
-      .replace(/\((?:GBP|£)\s*0\)|\(local only\)|\bc\d+\s+(?:FIX|PASS)\b|\bv\d+[a-z]?\b/gi, "")
-      .replace(/\bVO\b/g, "voiceover").replace(/\bQA\b/g, "quality check")
-      .replace(/\s+/g, " ").replace(/^[:·,\s-]+|[:·,\s-]+$/g, "");
-    return text.length > 110 ? text.slice(0,107).replace(/\s+\S*$/, "") + "…" : text || "Complete the remaining work";
+    return j.remaining_action ? String(j.remaining_action) : "Remaining action needs an update";
   }
   function plainStatus(j, v) {
     const state = jobState(j), reason = blockReason(j);
     if (state === "running") return "Working now";
-    if (j.needs === "ben" || j.awaits_ben) return "Waiting for your approval";
+    if (j.needs === "ben" || j.awaits_ben || j.hold?.type === "ben") return "Waiting for your approval";
     if (state === "review") return "Waiting for Chief approval";
     if (state === "stalled") return "Needs a worker to resume it";
     if (state === "queued") return "Ready to start";
@@ -430,6 +408,11 @@
       if (/audition|pronunciation/i.test(dep.title || "")) return "After the sound check";
       if (/audio-only.*correction|loudness|AAC levels/i.test(dep.title || "")) return "After the audio fix";
       return `After: ${plainTask(dep,v).replace(/^./,c=>c.toLowerCase())}`;
+    }
+    if (j.hold) {
+      const until = tsOf(j.hold.check_at), date = !isNaN(until) ? new Date(until).toLocaleDateString("en-GB",{day:"numeric",month:"short",timeZone:"Europe/London"}) : "";
+      const held = {public:"After the video is public",credits:"After credits have renewed",test:"After the current test finishes",dependency:"After the required check",date:"Waiting for the recorded date"}[j.hold.type] || j.hold.condition;
+      return `${held}${date ? ` · ${until <= Date.now() ? "recheck due" : "check"} ${date}` : ""}`;
     }
     if (/test.*(?:running|ends?)|T&C.*running/i.test(reason)) return "After the current title test finishes";
     if (/credit|reset|renewal|ElevenLabs/i.test(reason)) return "Waiting for credits to reset";
@@ -524,7 +507,7 @@
     const subject = f.title || (prefix.length < 55 && !/^(?:HC|Chief|Backlog)$/i.test(prefix) && String(j.title || "").includes(":") ? prefix : "");
     return `<div class="job ${kind}">
       <div class="jtop"><span>${esc(who)}</span></div>
-      <div class="jtask">${esc(!video && subject ? `${subject}: ${plainTask(j)}` : plainTask(j,video))}</div>
+      <div class="jtask">${esc(!video && subject ? `${plainTask(j)} · ${subject}` : plainTask(j,video))}</div>
       ${bar}${note ? `<div class="jnote">${note}</div>` : ""}
       ${!video ? `<details class="job-detail"><summary>Job details</summary><span class="jid">${esc(j.id)}</span>${model}<div>${esc(j.title || "")}</div></details>` : ""}
     </div>`;

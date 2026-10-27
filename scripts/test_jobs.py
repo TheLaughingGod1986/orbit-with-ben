@@ -2,6 +2,7 @@
 import datetime as dt, json, pathlib, sys, tempfile, unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from unittest.mock import patch
 import jobs  # noqa: E402
 import studio  # noqa: E402
 
@@ -32,7 +33,7 @@ class Next(unittest.TestCase):
         d = queue(("mini", "cut", {"eta_min": 30}))
         jobs.do_next(d, "chief", {"mini"}, T0)
         self.assertIsNone(jobs.do_next(d, "cursor", {"mini"}, T0 + 10 * MIN))
-        j = jobs.do_next(d, "cursor", {"mini"}, T0 + 31 * MIN)
+        j = jobs.do_next(d, "cursor", {"mini"}, T0 + 76 * MIN)
         self.assertEqual(j["by"], "cursor")
         self.assertIn("took over a stalled claim by chief", j["history"][-1]["what"])
 
@@ -118,7 +119,8 @@ class Lifecycle(unittest.TestCase):
         j = jobs.do_next(d, "cursor", {"mini"}, T0)
         jobs.do_block(j, "cursor", "needs Ben: credit", T0)
         self.assertIsNone(jobs.do_next(d, "chief", {"mini"}, T0 + MIN))
-        jobs.do_reopen(j, "claude", "credit topped by Ben", T0 + 2 * MIN)
+        with patch.object(jobs.chief_relay,"is_elected_chief",return_value=True):
+            jobs.do_reopen(j, "claude", "credit topped by Ben", T0 + 2 * MIN)
         self.assertEqual(jobs.do_next(d, "chief", {"mini"}, T0 + 3 * MIN)["id"], "J0001")
 
     def test_bad_input_is_refused(self):
@@ -132,7 +134,7 @@ class Lifecycle(unittest.TestCase):
         d = queue(("mini", "cut", {"eta_min": 10}), ("cloud", "old", {}))
         jobs.do_next(d, "cursor", {"mini"}, T0)
         jobs.do_cancel(jobs.find(d, "J0002"), "claude", "", T0)
-        md = jobs.render(d, T0 + 20 * MIN)
+        md = jobs.render(d, T0 + 56 * MIN)
         self.assertIn("| J0001 | mini | **stalled** | cursor |", md)
         self.assertNotIn("| J0002 |", md)
 
@@ -245,9 +247,8 @@ class NotBefore(unittest.TestCase):
         d["jobs"][0]["not_before"] = "2099-01-01T09:00Z"  # an old field left on a job
         self.assertFalse(jobs.claimable(d, d["jobs"][0], jobs.MINI_NEEDS, T0, "cursor"))
         with self.assertRaises(ValueError):
-            jobs.do_schedule(d["jobs"][1], "chief", "2026-10-07 14:00", T0, "credit window")
-        jobs.do_schedule(d["jobs"][1], "chief", "", T0)  # clearing is still fine
-        self.assertNotIn("starts", jobs.render(d, T0))
+            jobs.do_add(d,title="bad",needs="mini",body="",by="chief",at=T0,not_before="2026-10-07 14:00")
+        self.assertNotIn("starts",jobs.render(d,T0))
 
     def test_released_job_goes_behind_other_ready_work(self):
         d = queue(("mini", "poll", {}), ("mini", "real work", {}))
