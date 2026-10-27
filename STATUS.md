@@ -58,5 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 026 | edit | codex | 2026-10-27T10:38Z | 2026-10-27T11:03Z | J1032 continuation: inspect final loop failures; no duplicate of active QA |
 | 027 | edit | codex | 2026-10-27T10:38Z | 2026-10-27T11:03Z | J1032 continuation |
+| 028 | edit | codex | 2026-10-27T10:38Z | 2026-10-27T11:03Z | J1032 continuation |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
