@@ -87738,13 +87738,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T20:49Z",
-      "eta": "2026-10-27T21:38Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T22:43Z",
-      "result": "",
+      "result": "Auditioned all 4 J0966 HOS masters + _PHONE copies end-to-end (96.7s total) via gemini-argon native multimodal audio+video at GBP0 (report: HOS 00_Brand/Channel-Setup/audits/J1005_J0966_HC_SHORTS_AUDIO_QA_2026-10-27.md, PR #367 commit fb87779e, HOS desk #180 comment 6454017365). Vaccine v05 pronunciation warnings (variolae vaccinae ~12.10s, vacca ~17.56s) and Harvey v04 143 wpm pace warning RESOLVED PASS. x_3L_IdYgEc v04 is FULL PASS; 4WUs0beKn0A v05 PASSes pronunciation/open/loop with a minor prosodic tightness note at the 5.536s Jenner splice; -I_GHK-GcFs v03 (0.000-0.085s 'a-' bleed from 'July,') and -sa2t7dAtCk v03 (0.000-0.060s 'z-/t-' bleed from 'says') have timestamped frame-0 VO start-trim bleeds with exact GBP0 60-75ms trim/fade repair specs.",
       "history": [
         {
           "at": "2026-10-26T22:43Z",
@@ -87825,6 +87825,11 @@
           "at": "2026-10-27T21:32Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed J1005 QA report (HOS PR #367, commit fb87779e) and posted HOS desk #180 comment 6454017365; closing J1005 and returning J0966 to Chief review"
+        },
+        {
+          "at": "2026-10-27T21:32Z",
+          "by": "gemini",
+          "what": "done: Auditioned all 4 J0966 HOS masters + _PHONE copies end-to-end (96.7s total) via gemini-argon native multimodal audio+video at GBP0 (report: HOS 00_Brand/Channel-Setup/audits/J1005_J0966_HC_SHORTS_AUDIO_QA_2026-10-27.md, PR #367 commit fb87779e, HOS desk #180 comment 6454017365). Vaccine v05 pronunciation warnings (variolae vaccinae ~12.10s, vacca ~17.56s) and Harvey v04 143 wpm pace warning RESOLVED PASS. x_3L_IdYgEc v04 is FULL PASS; 4WUs0beKn0A v05 PASSes pronunciation/open/loop with a minor prosodic tightness note at the 5.536s Jenner splice; -I_GHK-GcFs v03 (0.000-0.085s 'a-' bleed from 'July,') and -sa2t7dAtCk v03 (0.000-0.060s 'z-/t-' bleed from 'says') have timestamped frame-0 VO start-trim bleeds with exact GBP0 60-75ms trim/fade repair specs."
         }
       ],
       "kind": "qa",
@@ -87849,7 +87854,8 @@
         "at": "2026-10-27T21:32Z",
         "by": "gemini",
         "note": "Committed J1005 QA report (HOS PR #367, commit fb87779e) and posted HOS desk #180 comment 6454017365; closing J1005 and "
-      }
+      },
+      "done_ref": "fb87779e"
     },
     {
       "id": "J1006",
