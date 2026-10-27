@@ -88579,9 +88579,14 @@
           "at": "2026-10-27T08:50Z",
           "by": "codex",
           "what": "step 2 of 3 done: J0989 remains blocked; original 08:57:12 UTC retry retained with recheck J1026; J0990 still required."
+        },
+        {
+          "at": "2026-10-27T08:50Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verification reported on studio thread; listening hold and original retry preserved."
         }
       ],
-      "remaining_action": "Post the verification result and close J1026",
+      "remaining_action": "Verification complete; exact-file listening PASS remains required on J0989",
       "kind": "chief",
       "recheck_of": "J0989",
       "due": "2026-10-27T08:57:12+00:00",
@@ -88590,11 +88595,11 @@
         "OWB:030"
       ],
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-27T08:50Z",
         "by": "codex",
-        "note": "J0989 remains blocked; original 08:57:12 UTC retry retained with recheck J1026; J0990 still required."
+        "note": "Verification reported on studio thread; listening hold and original retry preserved."
       }
     },
     {
