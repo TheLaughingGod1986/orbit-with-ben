@@ -1,0 +1,118 @@
+{
+  "maps_sha256": "9f5d6eaeaabc3e0fec32b74a9cc3cc77ed885d6b282dc2548f173660f706a888",
+  "inspection_log_sha256": "b8e995f64132a8e9116ff47fa4e349d23f8788436e5c3d9631be46b54e18374b",
+  "source_window_mismatches": [],
+  "vo_subspans_unchanged": {
+    "S1_026_A6TW_6CXhcs": true,
+    "S2_027_emwQsPxnRGM": true,
+    "S3_028_bizlhspnVvY": true,
+    "S4_028_DETI0HV2jlI": true,
+    "S5_028_jJ5LkFGyzLI": true,
+    "S6_028_X768qs8sNQs": true
+  },
+  "reported_missing_syllable_bridge_arithmetic": [
+    {
+      "short": "S3_028_bizlhspnVvY",
+      "spans": [
+        6,
+        7
+      ],
+      "source_interval": [
+        43.5,
+        44.54
+      ],
+      "omitted_source_interval": [
+        43.74,
+        44.1
+      ],
+      "continuous_source_duration": 1.04,
+      "current_output_slot": 0.7,
+      "extra_time_at_1x": 0.34,
+      "required_tempo_to_keep_slot": 1.485714,
+      "subject_end_if_only_bridge_added": 2.76
+    },
+    {
+      "short": "S5_028_jJ5LkFGyzLI",
+      "spans": [
+        3,
+        4
+      ],
+      "source_interval": [
+        43.5,
+        44.54
+      ],
+      "omitted_source_interval": [
+        43.74,
+        44.1
+      ],
+      "continuous_source_duration": 1.04,
+      "current_output_slot": 0.72,
+      "extra_time_at_1x": 0.32,
+      "required_tempo_to_keep_slot": 1.444444,
+      "subject_end_if_only_bridge_added": 1.74
+    },
+    {
+      "short": "S6_028_X768qs8sNQs",
+      "spans": [
+        6,
+        7
+      ],
+      "source_interval": [
+        43.5,
+        44.54
+      ],
+      "omitted_source_interval": [
+        43.74,
+        44.1
+      ],
+      "continuous_source_duration": 1.04,
+      "current_output_slot": 0.7,
+      "extra_time_at_1x": 0.34,
+      "required_tempo_to_keep_slot": 1.485714,
+      "subject_end_if_only_bridge_added": 2.82
+    }
+  ],
+  "scope": "Arithmetic and stored-log provenance only. Missing syllable is reported by Gemini; Codex has not independently listened.",
+  "s5_overlay": {
+    "baked_in_labels_count": 0,
+    "code_graphics_count": 0,
+    "added_edit_cards_count": 1,
+    "total_teaching_overlays": 1,
+    "card_text": [
+      "1-CM SCALE",
+      "OVER 100 METERS"
+    ],
+    "timeline_in": 16.18,
+    "timeline_out": 19.16,
+    "duration_s": 2.98,
+    "pct_range": [
+      73.08,
+      86.54
+    ],
+    "animation_spec": {
+      "entry": "0.350s cubic-bezier ease-out alpha 0->1 + 18px upward slide (16.180\u201316.530s)",
+      "steady_hold": "2.280s hold over moving video plate (16.530\u201318.810s, <= 4.000s)",
+      "exit": "0.350s cubic-bezier ease-in alpha 1->0 (18.810\u201319.160s)",
+      "ken_burns_on_card": false,
+      "typography": "House large bold sans-serif, <= 4 words per line, 11.5% of 16:9 centre band height, over moving graded plate (no black slab)"
+    },
+    "y_band": [
+      656,
+      1264
+    ],
+    "clear_of_hook_0_2s": true,
+    "clear_of_title_9_14s": true,
+    "selection_rationale": "Chief J1016 ruling: keep the single card on the model-distance line only with '1-CM SCALE' / 'OVER 100 METERS', starting at the recorded '100' at 16.180s and ending at 'pitch.' by 19.160s (2.980s <= 4.000s). '1/5 LIGHT-YEAR' is removed from the card because 'fifth' (20.080s) and 'light-year.' (20.560-21.140s) are spoken after the card ends; the spoken final sentence ('That is about a fifth of a light-year.') supplies the real-distance distinction with no second overlay."
+  },
+  "inspection_counts": {
+    "total_body_shots": 43,
+    "total_30fps_frames_decoded": 4046,
+    "total_2fps_ocr_frames_scanned": 306
+  },
+  "verifier_scope_findings": [
+    "earliest_spoken_answer is a supplied word index; verifier checks its coordinates, not semantic earliest-answer choice.",
+    "Source-window decode and OCR are read from a saved log, not rerun by verify_j0936_prep_v04.py.",
+    "2fps OCR/contact sheets are samples for textual content; 30fps luma/scdet does not inspect every frame for text.",
+    "Multimodal reviewer statements and numeric subject occupancy are supplied assertions, not computed by the verifier."
+  ]
+}
