@@ -87320,13 +87320,13 @@
       "stage": "",
       "after": "J1009",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-27T03:59Z",
-      "eta": "2026-10-27T04:29Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T23:57Z",
-      "result": "",
+      "result": "Preparation FIX: arithmetic and 408 source-word records verified, but question delivery, early-motion windows, word target and source evidence need correction. Ruling jobs/reviews/J1010_2026-10-27.md (d63dc5898). Queued J1015 review revision -> J1016 Chief lock; J0936 blocked after J1016, worker 6/6 preserved. No assembly, replacement PASS or watch card. GBP0; schedules and v01 fallback unchanged; nothing needed from Ben.",
       "history": [
         {
           "at": "2026-10-26T23:57Z",
@@ -87362,6 +87362,11 @@
           "at": "2026-10-27T04:05Z",
           "by": "codex",
           "what": "step 3 of 3 done: FIX ruling d63dc5898 published; J1015 and J1016 queued; J0936 remains blocked with original 6/6 history"
+        },
+        {
+          "at": "2026-10-27T04:05Z",
+          "by": "codex",
+          "what": "done: Preparation FIX: arithmetic and 408 source-word records verified, but question delivery, early-motion windows, word target and source evidence need correction. Ruling jobs/reviews/J1010_2026-10-27.md (d63dc5898). Queued J1015 review revision -> J1016 Chief lock; J0936 blocked after J1016, worker 6/6 preserved. No assembly, replacement PASS or watch card. GBP0; schedules and v01 fallback unchanged; nothing needed from Ben."
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -87378,7 +87383,8 @@
         "at": "2026-10-27T04:05Z",
         "by": "codex",
         "note": "FIX ruling d63dc5898 published; J1015 and J1016 queued; J0936 remains blocked with original 6/6 history"
-      }
+      },
+      "done_ref": "d63dc5898"
     },
     {
       "id": "J1011",
