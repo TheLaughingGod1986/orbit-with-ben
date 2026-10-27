@@ -1,5 +1,5 @@
 {
-  "next_id": 1045,
+  "next_id": 1046,
   "jobs": [
     {
       "id": "J0001",
@@ -87681,6 +87681,11 @@
           "at": "2026-10-27T20:40Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS J1004 hook/duration paper disposition PR #366 (00b1e653)"
+        },
+        {
+          "at": "2026-10-27T20:41Z",
+          "by": "relay",
+          "what": "condition verification queued: J1045"
         }
       ],
       "kind": "review",
@@ -87707,7 +87712,13 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-27T21:41:37+00:00",
+        "recheck_task": "J1045"
+      }
     },
     {
       "id": "J1005",
@@ -91182,6 +91193,37 @@
         "OWB:032"
       ],
       "done_ref": "254d04071"
+    },
+    {
+      "id": "J1045",
+      "title": "Chief: verify condition for J1004",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1004: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1004 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-27T20:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T20:41Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for elected Chief decision on HOS PR #366 (00b1e653)",
+      "kind": "chief",
+      "recheck_of": "J1004",
+      "due": "2026-10-27T21:41:37+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
