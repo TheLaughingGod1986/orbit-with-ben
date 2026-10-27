@@ -87033,16 +87033,21 @@
           "at": "2026-10-27T17:24Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Captured sanitized 2-page playlistItems reproduction (page 0 count=50 lastId=uU12JA5rMWg at idx 49, page 1 count=8 firstId=uU12JA5rMWg at idx 50; raw=58, unique=57)"
+        },
+        {
+          "at": "2026-10-27T17:28Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Implemented dedupeVideoIds/dedupeVideosById in rules.ts and channel-audit.ts + regression test in hos-contract.test.ts (21/21 pass, check_all.sh PASS, core_sync check PASS)"
         }
       ],
       "kind": "assembly",
-      "remaining_action": "Create separate HOS branch and draft PR with narrow ID deduplication and regression tests",
+      "remaining_action": "Commit, push branch, and open unmerged draft HOS PR for Ben OK",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-27T17:24Z",
+        "at": "2026-10-27T17:28Z",
         "by": "gemini",
-        "note": "Captured sanitized 2-page playlistItems reproduction (page 0 count=50 lastId=uU12JA5rMWg at idx 49, page 1 count=8 first"
+        "note": "Implemented dedupeVideoIds/dedupeVideosById in rules.ts and channel-audit.ts + regression test in hos-contract.test.ts ("
       }
     },
     {
