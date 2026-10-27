@@ -87939,11 +87939,27 @@
           "at": "2026-10-27T06:18Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T06:18Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Review corrected exact-source preparation before assembly lock",
+      "remaining_action": "Verify v04 preparation and exact-source evidence before lock",
       "due": "2026-11-01T20:00:00Z",
-      "kind": "chief"
+      "kind": "chief",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T06:18Z",
+        "by": "codex"
+      }
     }
   ],
   "focus": [],
