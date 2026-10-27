@@ -58,10 +58,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1028 | mini | open (after J1025) | – | – | for gemini · review · `gemini-argon` · J0936 preparation: remove remaining early brightening answer and reconcile S6 card | eb5858e98 |
 | J1029 | any | open (after J1028) | – | – | chief · J0936: exact preparation lock after final S6 timing and card reconciliation | eb5858e98 |
-| J1030 | any | claimed | codex | 2026-10-27T11:03Z | chief · Chief: verify condition for J0989 |  |
 
 Recently finished:
 
+- J1030 done: Chief: verify condition for J0989 (Verified PR296 REVIEW at 84c3867, empty comments/reviews, original v13 approvals and latest thread: no exact-v13a listening PASS. J0989 remains blocked; retry 2026-10-27T10:02:30Z retained, recheck J1030. J0990 technical release remains required. Reported on thread; no media or publishing changes.)
 - J1027 done: Chief: verify condition for J0275 (done)
 - J1026 done: Chief: verify condition for J0989 (done)
 - J1025 done: J0936: Chief lock after S6 payoff and approved Test A repair (done)
@@ -71,4 +71,3 @@ Recently finished:
 - J1020 done: J0936: Chief lock after executable VO-bridge corrections (Preparation FIX in PR300. Rebuilt S3/S5/S6 auditions match; accepted bridge repairs preserved. S6 motion answer at 11.820s and 35 at 15.220s precede 15.526s threshold. Test A Option A specifically authorised. J1024 finite revision -> J1025 exact lock; J0936 stays blocked, no watch cards or assembly. GBP0, schedules and v01 fallback unchanged; nothing needed from Ben.)
 - J1019 done: J0936 preparation: repair reported VO bridges and reconcile exact timing (done)
 - J1018 done: J0936: Chief lock after J1017 exact-opening and scale-card corrections (Preparation FIX; PR299 b8c75920b. Opening metrics and S5 card correction verified; reported omitted Gliese seven syllables need executable corrected maps and auditions, not same-slot assembly repair. J1019 focused corrections -> J1020 Chief lock; J0936 remains blocked with worker history preserved. No assembly or watch cards; original deadlines and v01 schedules unchanged. GBP0, nothing needed from Ben.)
-- J1017 done: J0936 preparation: reconcile exact opening evidence and scale-card timing after J1016 FIX (done)
