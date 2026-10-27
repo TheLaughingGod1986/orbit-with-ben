@@ -91411,10 +91411,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T21:34Z",
+      "eta": "2026-10-27T23:34Z",
       "created_by": "relay",
       "created_at": "2026-10-27T21:33Z",
       "result": "",
@@ -91423,13 +91423,26 @@
           "at": "2026-10-27T21:33Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T21:34Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Review J1005 audio QA findings and make final Chief decision on the four HC Shorts",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-27T22:33:17+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T21:34Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
