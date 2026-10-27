@@ -1,5 +1,5 @@
 {
-  "next_id": 1031,
+  "next_id": 1032,
   "jobs": [
     {
       "id": "J0001",
@@ -21792,6 +21792,11 @@
           "at": "2026-10-27T08:55Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-27T09:23:22Z"
+        },
+        {
+          "at": "2026-10-27T09:27Z",
+          "by": "relay",
+          "what": "condition verification queued: J1031"
         }
       ],
       "kind": "studio",
@@ -21806,10 +21811,11 @@
       "hold": {
         "type": "input",
         "condition": "Jupiter -jmMROGoZCM NO FLOOR test completion needs live Studio proof; CDP 9223 timed out on both J1027 probes. Saturn 55AEQwvs36g must complete J0189 RINGS ARE FALLING before RINGS VANISHING; J0189 remains open. Preserve 21 Oct approvals. Evidence commit 2e52d5596 on codex-j1027, jobs/readbacks/J1027.json.",
-        "check_at": "2026-10-27T09:23:22Z",
+        "check_at": "2026-10-27T10:27:01+00:00",
         "last_recheck": "J1027",
         "checked_at": "2026-10-27T08:55:02+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1031"
       }
     },
     {
@@ -88940,6 +88946,37 @@
         "by": "codex",
         "note": "Reported evidence and retained 10:02:30 UTC retry on studio thread; only J1030 handled."
       }
+    },
+    {
+      "id": "J1031",
+      "title": "Chief: verify condition for J0275",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0275: Jupiter -jmMROGoZCM NO FLOOR test completion needs live Studio proof; CDP 9223 timed out on both J1027 probes. Saturn 55AEQwvs36g must complete J0189 RINGS ARE FALLING before RINGS VANISHING; J0189 remains open. Preserve 21 Oct approvals. Evidence commit 2e52d5596 on codex-j1027, jobs/readbacks/J1027.json.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0275 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-27T09:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T09:27Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify Jupiter test completion and Saturn J0189 prerequisite before approved comparisons",
+      "kind": "chief",
+      "recheck_of": "J0275",
+      "due": "2026-10-27T10:27:01+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
