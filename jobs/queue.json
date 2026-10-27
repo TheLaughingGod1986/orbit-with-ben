@@ -85033,6 +85033,11 @@
           "at": "2026-10-27T18:40Z",
           "by": "relay",
           "what": "condition verification queued: J1042"
+        },
+        {
+          "at": "2026-10-27T18:55Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-10-31T09:00:00Z"
         }
       ],
       "kind": "assembly",
@@ -85048,12 +85053,14 @@
         "by": "codex",
         "note": "J1000 queued: no-spend existing-VO question EDL or cancellation recommendation; review complete"
       },
-      "remaining_action": "Build the next Short after its opening and plan are approved",
+      "remaining_action": "Wait for a post-30-Oct-reset OWB long (031+) to lock VO and picture with an unused Keeper-compliant question opening",
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor J1000 must finish, then the elected Chief verifies the existing release conditions",
-        "check_at": "2026-10-27T19:40:30+00:00",
-        "recheck_task": "J1042"
+        "type": "input",
+        "condition": "J1000 audit (92a775ee8) and J1042 Chief check (3782768ab) verified 0 unused non-anaphoric subject-naming line-1 questions across pre-26-Oct locked OWB longs (021-029) under fewest-Shorts and Keeper/Sun/Saturn/date/credit holds; 029_short_lift_die_young_10my_v01 remains shelved. Wait until a post-30-Oct-reset OWB long (031+) locks VO and picture with an unused Keeper-compliant question opening.",
+        "check_at": "2026-10-31T09:00:00Z",
+        "last_recheck": "J1042",
+        "checked_at": "2026-10-27T18:55:12+00:00",
+        "checked_by": "gemini"
       }
     },
     {
