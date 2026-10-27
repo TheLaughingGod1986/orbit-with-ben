@@ -88871,9 +88871,14 @@
           "at": "2026-10-27T09:04Z",
           "by": "codex",
           "what": "step 2 of 3 done: J0989 remains blocked; recorded retry 27 Oct 10:02:30 UTC retained; exact-hash Chief review J0990 still required."
+        },
+        {
+          "at": "2026-10-27T09:05Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Reported evidence and retained 10:02:30 UTC retry on studio thread; only J1030 handled."
         }
       ],
-      "remaining_action": "Report the verification result and close J1030",
+      "remaining_action": "Verification complete; J0989 still requires exact-file listening PASS",
       "kind": "chief",
       "recheck_of": "J0989",
       "due": "2026-10-27T10:02:30+00:00",
@@ -88882,11 +88887,11 @@
         "OWB:030"
       ],
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-27T09:04Z",
+        "at": "2026-10-27T09:05Z",
         "by": "codex",
-        "note": "J0989 remains blocked; recorded retry 27 Oct 10:02:30 UTC retained; exact-hash Chief review J0990 still required."
+        "note": "Reported evidence and retained 10:02:30 UTC retry on studio thread; only J1030 handled."
       }
     }
   ],
