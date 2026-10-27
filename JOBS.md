@@ -57,6 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1029 | any | claimed | codex | 2026-10-27T11:32Z | chief · J0936: exact preparation lock after final S6 timing and card reconciliation | eb5858e98 |
+| J1032 | mini | open (after J1029) | – | – | assembly · J0936: assemble all six replacements from J1029 locked preparation v07 | dc4b9da01 |
 
 Recently finished:
 
