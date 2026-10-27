@@ -57,10 +57,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1029 | any | open (after J1028) | – | – | chief · J0936: exact preparation lock after final S6 timing and card reconciliation | eb5858e98 |
-| J1031 | any | claimed | codex | 2026-10-27T11:27Z | chief · Chief: verify condition for J0275 |  |
 
 Recently finished:
 
+- J1031 done: Chief: verify condition for J0275 (Verified hold remains unmet: CDP 9223 timed out on both probes; Jupiter unknown and Saturn J0189 open. J0275 wait refreshed with existing 2026-10-27T10:27:01Z retry. Evidence jobs/readbacks/J1031.json on codex-j1031. No YouTube changes or spend.)
 - J1030 done: Chief: verify condition for J0989 (Verified PR296 REVIEW at 84c3867, empty comments/reviews, original v13 approvals and latest thread: no exact-v13a listening PASS. J0989 remains blocked; retry 2026-10-27T10:02:30Z retained, recheck J1030. J0990 technical release remains required. Reported on thread; no media or publishing changes.)
 - J1028 done: J0936 preparation: remove remaining early brightening answer and reconcile S6 card (done)
 - J1027 done: Chief: verify condition for J0275 (done)
@@ -70,4 +70,3 @@ Recently finished:
 - J1022 done: Chief: verify condition for J0275 (Verification complete: CDP 9223 unreachable; Jupiter completion unknown. Prior J1011 shows Saturn title Results ready, but J0189 RINGS ARE FALLING remains open and must precede RINGS VANISHING. J0275 kept blocked with retry 2026-10-27T08:14:34Z. Evidence jobs/readbacks/J1022.json, commit 2094e1c07. No YouTube changes or spend.)
 - J1021 done: Chief: verify condition for J0989 (Verified condition remains unmet: PR 296 REVIEW explicitly leaves aural pumping/artefact check OPEN; no follow-up PR review/comment or thread PASS. No audio-listening input in this session. J0989 retained blocked with exact-hash listening condition and original retry 2026-10-27T07:51:10+00:00, recheck J1021. Ben v13 OK retained; J0990 exact-hash technical decision still required. No rebuild, spend or YouTube/Buffer changes.)
 - J1020 done: J0936: Chief lock after executable VO-bridge corrections (Preparation FIX in PR300. Rebuilt S3/S5/S6 auditions match; accepted bridge repairs preserved. S6 motion answer at 11.820s and 35 at 15.220s precede 15.526s threshold. Test A Option A specifically authorised. J1024 finite revision -> J1025 exact lock; J0936 stays blocked, no watch cards or assembly. GBP0, schedules and v01 fallback unchanged; nothing needed from Ben.)
-- J1019 done: J0936 preparation: repair reported VO bridges and reconcile exact timing (done)

@@ -88962,13 +88962,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-27T09:27Z",
-      "eta": "2026-10-27T11:27Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T09:27Z",
-      "result": "",
+      "result": "Verified hold remains unmet: CDP 9223 timed out on both probes; Jupiter unknown and Saturn J0189 open. J0275 wait refreshed with existing 2026-10-27T10:27:01Z retry. Evidence jobs/readbacks/J1031.json on codex-j1031. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-10-27T09:27Z",
@@ -88999,6 +88999,11 @@
           "at": "2026-10-27T09:29Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0275 remains blocked; preserved recorded 27 Oct 10:27:01 UTC retry and original approvals. No YouTube changes or spend."
+        },
+        {
+          "at": "2026-10-27T09:29Z",
+          "by": "codex",
+          "what": "done: Verified hold remains unmet: CDP 9223 timed out on both probes; Jupiter unknown and Saturn J0189 open. J0275 wait refreshed with existing 2026-10-27T10:27:01Z retry. Evidence jobs/readbacks/J1031.json on codex-j1031. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Verification complete; J0275 remains held for live evidence",
