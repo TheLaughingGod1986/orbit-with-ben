@@ -89094,10 +89094,10 @@
       "stage": "",
       "after": "J1029",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-27T10:29Z",
-      "eta": "2026-10-27T12:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T09:36Z",
       "result": "",
@@ -89271,6 +89271,11 @@
           "at": "2026-10-27T10:30Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR305 ffb388b1f: run04 S1 audio/loops pass, S2 was one frame short. Added exact-frame pad/trim; run05 detached with separate outputs. Archive finish02 hash-verifies obsolete scratch. Acceptance outstanding."
+        },
+        {
+          "at": "2026-10-27T10:30Z",
+          "by": "codex",
+          "what": "released: Active single render tmux J1032-run05; wrapper/log /Users/benjaminoats/_desk/logs/J1032-run05.sh and J1032-run05.log; completion J1032-run05.done. Stage logs J1032-finish05-resume.log / J1032-finalqa05.log and corresponding .done; output /Users/benjaminoats/_desk/renders/J1032-finish05. run04 exited 1 on S2 one-frame shortage; exact-frame correction ffb388b1f on PR305, all finish04 evidence preserved. Separate J1032-archive-finish02 log/.done hash-verifies obsolete finish02 then local removal, no NAS deletion. Do not duplicate active workers. Handoff jobs/reviews/J1032_2026-10-27_run04.md. Existing 1/3, final gates/listening/delivery unresolved; no approval/watch cards/channel changes."
         }
       ],
       "remaining_action": "Finish preserved run05 batch, resolve final gate findings, listen and verify delivery",
