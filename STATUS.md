@@ -56,7 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 026 | edit | codex | 2026-10-27T09:42Z | 2026-10-27T11:42Z | J1032 six-Short replacement assembly; original approved long unchanged |
 | 027 | edit | codex | 2026-10-27T09:43Z | 2026-10-27T11:43Z | J1032 replacement assembly |
 | 028 | edit | codex | 2026-10-27T09:43Z | 2026-10-27T11:43Z | J1032 replacement assembly |
 
