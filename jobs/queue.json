@@ -87686,6 +87686,11 @@
           "at": "2026-10-27T20:41Z",
           "by": "relay",
           "what": "condition verification queued: J1045"
+        },
+        {
+          "at": "2026-10-27T20:47Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-10-28T02:47:00Z"
         }
       ],
       "kind": "review",
@@ -87698,7 +87703,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "remaining_action": "Parked for elected Chief decision on HOS PR #366 (00b1e653)",
+      "remaining_action": "Await non-author Chief merge of HOS PR #366 (00b1e653) and post-reset J0862/J0863 holds",
       "progress": {
         "step": 5,
         "of": 5,
@@ -87714,10 +87719,12 @@
         "HOS:010"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-27T21:41:37+00:00",
-        "recheck_task": "J1045"
+        "type": "input",
+        "condition": "J0967 predecessor (e1bbcfb9) and J1004 5/5 paper disposition in HOS PR #366 (00b1e653) verified complete (all 8 candidates timed from raw alignments at atempo <=1.06 with 0 word changes; e1bbcfb9 word-deletion splices rejected; 006 s04/s05/s06 and 007 Short_B shelved; 010 Short_A Option A1 2.849s/23.289s or Option A2 J0862 documented; 54 008-010 Shorts rows mapped: 12 code_graphics on disk, 42 flow_veo rows gated on J0863). Kept blocked so completed 5/5 review is not re-queued as an open worker job and for non-author Chief (chief/claude/codex) PR #366 merge and post-reset J0862 (2026-10-30T00:05:00Z) / J0863 (2026-11-12T00:05:00Z) execution.",
+        "check_at": "2026-10-28T02:47:00Z",
+        "last_recheck": "J1045",
+        "checked_at": "2026-10-27T20:47:00+00:00",
+        "checked_by": "gemini"
       }
     },
     {
