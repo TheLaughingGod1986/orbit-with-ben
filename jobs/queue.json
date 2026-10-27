@@ -85325,13 +85325,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-26T23:59Z",
-      "eta": "2026-10-27T00:44Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T21:41Z",
-      "result": "",
+      "result": "parked for Chief: Neptune S2 v07a audio-only c61 correction ready for elected Chief technical sign-off (before Tue 27 Oct 10:30 London). Master owb_sa_s2_neptune_v07a.mp4 sha256 de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12 (-14.1 LUFS / -1.8 dBTP); PHONE owb_sa_s2_neptune_v07a_PHONE.mp4 sha256 f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69 (-14.1 LUFS / -1.8 dBTP). Video stream-copied (618/618 framemd5 identical to v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d). All fresh gates PASS (commit 91019833c); UAT iCloud & NAS standalone_shorts_v07a verified.",
       "history": [
         {
           "at": "2026-10-26T21:41Z",
@@ -85372,6 +85372,11 @@
           "at": "2026-10-27T00:17Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 done: copied and verified v07a master, PHONE, sheets, meta, gate reports and MANIFEST.sha256 to iCloud OWB UAT/standalone_shorts_v07a and NAS UAT; committed reports/meta in 91019833c"
+        },
+        {
+          "at": "2026-10-27T00:17Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Neptune S2 v07a audio-only c61 correction ready for elected Chief technical sign-off (before Tue 27 Oct 10:30 London). Master owb_sa_s2_neptune_v07a.mp4 sha256 de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12 (-14.1 LUFS / -1.8 dBTP); PHONE owb_sa_s2_neptune_v07a_PHONE.mp4 sha256 f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69 (-14.1 LUFS / -1.8 dBTP). Video stream-copied (618/618 framemd5 identical to v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d). All fresh gates PASS (commit 91019833c); UAT iCloud & NAS standalone_shorts_v07a verified."
         }
       ],
       "kind": "assembly",
