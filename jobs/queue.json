@@ -88132,13 +88132,13 @@
       "stage": "",
       "after": "J1019",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-27T07:24Z",
-      "eta": "2026-10-27T09:24Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T06:23Z",
-      "result": "",
+      "result": "Preparation FIX in PR300. Rebuilt S3/S5/S6 auditions match; accepted bridge repairs preserved. S6 motion answer at 11.820s and 35 at 15.220s precede 15.526s threshold. Test A Option A specifically authorised. J1024 finite revision -> J1025 exact lock; J0936 stays blocked, no watch cards or assembly. GBP0, schedules and v01 fallback unchanged; nothing needed from Ben.",
       "history": [
         {
           "at": "2026-10-27T06:23Z",
@@ -88174,6 +88174,11 @@
           "at": "2026-10-27T07:31Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR300 e82eae17d; J1024 correction -> J1025 Chief lock. J0936 blocked with 6/6 history preserved; no assembly or watch cards."
+        },
+        {
+          "at": "2026-10-27T07:31Z",
+          "by": "codex",
+          "what": "done: Preparation FIX in PR300. Rebuilt S3/S5/S6 auditions match; accepted bridge repairs preserved. S6 motion answer at 11.820s and 35 at 15.220s precede 15.526s threshold. Test A Option A specifically authorised. J1024 finite revision -> J1025 exact lock; J0936 stays blocked, no watch cards or assembly. GBP0, schedules and v01 fallback unchanged; nothing needed from Ben."
         }
       ],
       "remaining_action": "Review complete; preparation correction continues in J1024 then J1025",
@@ -88190,7 +88195,8 @@
         "at": "2026-10-27T07:31Z",
         "by": "codex",
         "note": "PR300 e82eae17d; J1024 correction -> J1025 Chief lock. J0936 blocked with 6/6 history preserved; no assembly or watch ca"
-      }
+      },
+      "done_ref": "e82eae17d"
     },
     {
       "id": "J1021",
