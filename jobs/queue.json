@@ -86097,13 +86097,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T16:05Z",
-      "eta": "2026-10-27T17:05Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T21:46Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-26T21:46Z",
@@ -86264,6 +86264,11 @@
           "at": "2026-10-27T16:09Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 45 v13a conformity evidence and gate sidecars committed on main (ec39e43c4); 34/34 UAT and NAS manifests verified; listening PASS recorded (e87fcf1d7)"
+        },
+        {
+          "at": "2026-10-27T16:09Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "kind": "assembly",
@@ -86288,7 +86293,8 @@
         "at": "2026-10-27T16:09Z",
         "by": "gemini",
         "note": "All 45 v13a conformity evidence and gate sidecars committed on main (ec39e43c4); 34/34 UAT and NAS manifests verified; l"
-      }
+      },
+      "done_ref": "ec39e43c4"
     },
     {
       "id": "J0990",
