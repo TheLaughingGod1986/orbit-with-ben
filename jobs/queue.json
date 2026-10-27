@@ -90156,13 +90156,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T15:53Z",
-      "eta": "2026-10-27T17:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T13:41Z",
-      "result": "",
+      "result": "Recorded multimodal listening PASS for exact v13a SHA256 898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3 (PR #296 comment 6446905753, commit e87fcf1d7, jobs/reviews/J0989_listening_pass_2026-10-27.md): 100% intelligible VO, zero pumping/artefacts, exact sync (-14.4 LUFS, -2.3 dBTP). Verified 34/34 UAT+NAS manifests, all 6 gates PASS, and v13 approvals (6411210906, 6410661010). Reopened J0989 to finish and unblock J0990. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-10-27T13:41Z",
@@ -90198,6 +90198,11 @@
           "at": "2026-10-27T16:04Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Posted report to studio thread; closing J1039."
+        },
+        {
+          "at": "2026-10-27T16:04Z",
+          "by": "gemini",
+          "what": "done: Recorded multimodal listening PASS for exact v13a SHA256 898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3 (PR #296 comment 6446905753, commit e87fcf1d7, jobs/reviews/J0989_listening_pass_2026-10-27.md): 100% intelligible VO, zero pumping/artefacts, exact sync (-14.4 LUFS, -2.3 dBTP). Verified 34/34 UAT+NAS manifests, all 6 gates PASS, and v13 approvals (6411210906, 6410661010). Reopened J0989 to finish and unblock J0990. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0989 reopened with recorded listening PASS",
@@ -90223,7 +90228,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "e87fcf1d7"
     }
   ],
   "focus": [],
