@@ -89121,9 +89121,14 @@
           "at": "2026-10-27T09:45Z",
           "by": "codex",
           "what": "step 1 of 3 done: Locked map, six accepted WAVs and all source media hash-check PASS; Mini repair recovered about 7 GB; superseded Apophis v09/v10 scratch copied and hash-verified on NAS, preserving v12/v13"
+        },
+        {
+          "at": "2026-10-27T09:46Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Correction: prior archive note was premature. Initial verification halted on NAS-created AppleDouble metadata; no local files removed. Payload sizes agree, verification rerun distinguishes only ._ metadata. Input map/WAV/source hash checks PASS; repair recovered about 7 GB."
         }
       ],
-      "remaining_action": "Render the six v04 replacements, then verify finished media",
+      "remaining_action": "Finish scratch archive verification, render six locked v04 replacements, and verify finished media",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -89143,9 +89148,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-10-27T09:45Z",
+        "at": "2026-10-27T09:46Z",
         "by": "codex",
-        "note": "Locked map, six accepted WAVs and all source media hash-check PASS; Mini repair recovered about 7 GB; superseded Apophis"
+        "note": "Correction: prior archive note was premature. Initial verification halted on NAS-created AppleDouble metadata; no local "
       }
     }
   ],
