@@ -89104,10 +89104,10 @@
       "stage": "",
       "after": "J1029",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-27T10:44Z",
-      "eta": "2026-10-27T12:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T09:36Z",
       "result": "",
@@ -89346,6 +89346,11 @@
           "at": "2026-10-27T10:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: 2cf66bc02 PR305: obsolete diagnostic scratch hash-verified on NAS, free space exceeds 20GB; single tmux J1032-run08 now rendering S1. No approval; existing gates remain outstanding."
+        },
+        {
+          "at": "2026-10-27T10:49Z",
+          "by": "codex",
+          "what": "released: Single detached tmux J1032-run08 active rendering finish08 after successful hash-verified archive and >20GB disk guard. Do not duplicate. Wrapper/log/done /Users/benjaminoats/_desk/logs/J1032-run08.sh/.log/.done; stages J1032-finish08 and J1032-finalqa08 log/done; output /Users/benjaminoats/_desk/renders/J1032-finish08. PR305 2cf66bc02 handoff jobs/reviews/J1032_2026-10-27_run08.md. Preserve 1/3 linked three films. Inspect all gate/loop results, listen and verify UAT/NAS delivery. No PASS/watch cards/channel changes; J0936 untouched."
         }
       ],
       "remaining_action": "Inspect detached finish08, resolve final gates, listen and verify delivery",
