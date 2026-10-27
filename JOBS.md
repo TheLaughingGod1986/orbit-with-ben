@@ -55,7 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1005 | mini | open | – | – | for gemini · qa · `gemini-argon` · J0966 HC: audition four finished masters and resolve vaccine pronunciation warnings (GBP0) |  |
 | J1013 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1016 | any | open (after J1015) | – | – | chief · J0936: Chief lock and assembly dispatch after J1015 preparation fixes | d63dc5898 |
+| J1016 | any | claimed | codex | 2026-10-27T05:39Z | chief · J0936: Chief lock and assembly dispatch after J1015 preparation fixes | d63dc5898 |
 
 Recently finished:
 
