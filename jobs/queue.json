@@ -89156,9 +89156,14 @@
           "at": "2026-10-27T09:59Z",
           "by": "codex",
           "what": "step 1 of 3 done: All initial renders completed; all six loop checks fail <2.0. Detached finish02 corrects endpoint sampling and adds grain. Superseded v02 scratch archive is hash-verifying; no media approved."
+        },
+        {
+          "at": "2026-10-27T10:07Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR305 b4854a6ee: six finish03 sampled loops/AAC pass but true S3 seam still fails; finish04 fixes exact tpad frame count. J1032-run03 detached archive/render/QA. S1 Shorts first-cut and picture/polish horizon failures retained; nothing approved."
         }
       ],
-      "remaining_action": "Correct all six loop endpoints and grain, then run final-media gates and delivery",
+      "remaining_action": "Finish detached endpoint correction, resolve final gate failures, and complete verified delivery",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -89178,9 +89183,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-10-27T09:59Z",
+        "at": "2026-10-27T10:07Z",
         "by": "codex",
-        "note": "All initial renders completed; all six loop checks fail <2.0. Detached finish02 corrects endpoint sampling and adds grai"
+        "note": "PR305 b4854a6ee: six finish03 sampled loops/AAC pass but true S3 seam still fails; finish04 fixes exact tpad frame count"
       }
     }
   ],
