@@ -85614,6 +85614,11 @@
           "at": "2026-10-27T23:01Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Reviewed Acting-Chief Codex ruling on J0982; starting step 2/4 per-export QA inventory across OWB and HOS"
+        },
+        {
+          "at": "2026-10-27T23:28Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Resuming J0982 step 2/4: assembling complete OWB + HOS per-export QA inventory and checking stale/missing gates"
         }
       ],
       "kind": "qa",
@@ -85646,12 +85651,12 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-27T23:01Z",
+        "at": "2026-10-27T23:28Z",
         "by": "gemini",
-        "note": "Reviewed Acting-Chief Codex ruling on J0982; starting step 2/4 per-export QA inventory across OWB and HOS"
+        "note": "Resuming J0982 step 2/4: assembling complete OWB + HOS per-export QA inventory and checking stale/missing gates"
       },
       "escalated_at": "2026-10-26T17:20Z",
-      "remaining_action": "Build and commit per-export QA inventory (including standalone packs and post-26 Oct 15:09Z revisions) with exact media paths, hashes, mtimes, and gate report paths/times"
+      "remaining_action": "Build and commit per-export QA inventory (including standalone packs and post-26 Oct 15:09Z revisions), run any stale/missing gates, and post bounded report"
     },
     {
       "id": "J0983",
