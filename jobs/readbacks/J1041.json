@@ -1,0 +1,67 @@
+{
+  "job": "J1041",
+  "recheck_of": "J0275",
+  "by": "gemini",
+  "checked_at": "2026-10-27T18:43:25+00:00",
+  "films": [
+    "OWB:020",
+    "OWB:021"
+  ],
+  "cdp_port": 9223,
+  "live_check": {
+    "endpoint": "http://127.0.0.1:9223",
+    "probes": [
+      "/json/version",
+      "/json/list"
+    ],
+    "jupiter_-jmMROGoZCM": {
+      "url": "https://studio.youtube.com/video/-jmMROGoZCM/edit",
+      "video_title": "Why You Can't Stand On Jupiter",
+      "thumbnail_experiment_editor": "Results ready",
+      "creator_experiment_status": "Results ready",
+      "condition_satisfied": true,
+      "approved_b_file": "00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/jupiter_B_no_solid_ground.jpg",
+      "approved_b_sha256": "e49d0d8147583b05f71b436d67619696395d83d3cf60665f4de6f8e2523384da",
+      "ledger_id": "T003"
+    },
+    "saturn_55AEQwvs36g": {
+      "url": "https://studio.youtube.com/video/55AEQwvs36g/edit",
+      "video_title": "How Long Do Saturn's Rings Have Left?",
+      "title_experiment_status": "A/B testing titles Results ready",
+      "thumbnail_experiment_editor_hidden": true,
+      "prerequisite_job": "J0189",
+      "prerequisite_status": "open",
+      "condition_satisfied": false,
+      "reason": "21 Oct approval order requires J0189 (RINGS ARE FALLING) to be armed and complete its 14-day test on 55AEQwvs36g before J0275 arms RINGS VANISHING?."
+    }
+  },
+  "approval_sequence": "21 Oct approvals preserved: Jupiter -jmMROGoZCM NO SOLID GROUND? runs immediately after NO FLOOR? ends (now verified Results ready in Studio CDP 9223); Saturn 55AEQwvs36g must first complete J0189 RINGS ARE FALLING before J0275 RINGS VANISHING?.",
+  "decision": "Reopen J0275 for Jupiter -jmMROGoZCM ONLY: arm approved B 'NO SOLID GROUND?' (00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/jupiter_B_no_solid_ground.jpg, THUMB_LEDGER.json T003) against live A, without Replace or delete. Do NOT touch Saturn 55AEQwvs36g; after arming Jupiter, the worker must place J0275 back on jobs.py wait for Saturn 55AEQwvs36g until J0189 RINGS ARE FALLING completes.",
+  "evidence": [
+    {
+      "path": "/Users/benjaminoats/_desk/j1041/-jmMROGoZCM_edit.png",
+      "sha256": "f8f8af798c4a1699e8932e8b10e1d33d0ae21c1a4cec1caf56eb76218a17e6be"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/j1041/-jmMROGoZCM_edit.txt",
+      "sha256": "f31d9a27e90fcd50f0f8f1926f7ba8bcaf44b293f9f770b484cbd3422750fd78"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/j1041/55AEQwvs36g_edit.png",
+      "sha256": "18f2b93b5a3aac5565c701d6a019decea1f42968bd7475af4fe77b6af87eb149"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/j1041/55AEQwvs36g_edit.txt",
+      "sha256": "73714147169b24928a09aebd47870858d83ddcbf77665a8a087f91ca85a49eab"
+    },
+    {
+      "path": "00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/jupiter_B_no_solid_ground.jpg",
+      "sha256": "e49d0d8147583b05f71b436d67619696395d83d3cf60665f4de6f8e2523384da"
+    },
+    {
+      "path": "00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/saturn_B_rings_vanishing.jpg",
+      "sha256": "9a1a83174cbee21a468f916c054fad890f1b79bddfd882c52ddc0cf7e6d61081"
+    }
+  ],
+  "changes": "Read-only Studio inspection on CDP 9223; no save, test setup, title, privacy, thumbnail ledger or schedule change; no spend."
+}
