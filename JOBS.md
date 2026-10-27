@@ -59,6 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1024 | mini | claimed | gemini | 2026-10-27T09:32Z | for gemini · review · `gemini-argon` · J0936 preparation: fix S6 early answer and apply approved Test A repair | e82eae17d |
 | J1025 | any | open (after J1024) | – | – | chief · J0936: Chief lock after S6 payoff and approved Test A repair | e82eae17d |
 | J1026 | any | open | – | – | chief · Chief: verify condition for J0989 |  |
+| J1027 | any | open | – | – | chief · Chief: verify condition for J0275 |  |
 
 Recently finished:
 
