@@ -1,0 +1,198 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v04.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "title": "Mars descent aerial view, moving",
+      "t": 4.14,
+      "at": "0:04",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.18x, may look soft"
+      ],
+      "offset": 74.0
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "JPL-20200303-MSLf-0001.mp4",
+      "title": "Mars Gale Crater desert terrain, moving (neutral ground crops)",
+      "t": 7.32,
+      "at": "0:07",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0070"
+      ],
+      "offset": 42.0
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "title": "Mars descent aerial view, moving",
+      "t": 10.5,
+      "at": "0:11",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.18x, may look soft"
+      ],
+      "offset": 96.0
+    },
+    {
+      "cut": 5,
+      "row": "s05",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "title": "Mars descent aerial view, moving",
+      "t": 16.87,
+      "at": "0:17",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.18x, may look soft"
+      ],
+      "offset": 154.0
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s00",
+      "source": "PIA26673.gif",
+      "title": "Curiosity dusk clouds, moving GIF",
+      "t": 1.27,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "title": "Mars descent aerial view, moving",
+      "t": 4.14,
+      "at": "0:04",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.18x, may look soft"
+      ],
+      "offset": 74.0
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "JPL-20200303-MSLf-0001.mp4",
+      "title": "Mars Gale Crater desert terrain, moving (neutral ground crops)",
+      "t": 7.32,
+      "at": "0:07",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0070"
+      ],
+      "offset": 42.0
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "title": "Mars descent aerial view, moving",
+      "t": 10.5,
+      "at": "0:11",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.18x, may look soft"
+      ],
+      "offset": 96.0
+    },
+    {
+      "cut": 4,
+      "row": "s04",
+      "source": "JPL-20200303-MSLf-0001.mp4",
+      "title": "Mars Gale Crater desert terrain, moving (neutral ground crops)",
+      "t": 13.69,
+      "at": "0:14",
+      "fail": [],
+      "warn": [],
+      "offset": 58.0
+    },
+    {
+      "cut": 5,
+      "row": "s05",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "title": "Mars descent aerial view, moving",
+      "t": 16.87,
+      "at": "0:17",
+      "fail": [],
+      "warn": [
+        "sharpness: upscaled 2.18x, may look soft"
+      ],
+      "offset": 154.0
+    },
+    {
+      "cut": 6,
+      "row": "s06",
+      "source": "JPL-20200303-MSLf-0001.mp4",
+      "title": "Mars Gale Crater desert terrain, moving (neutral ground crops)",
+      "t": 20.05,
+      "at": "0:20",
+      "fail": [],
+      "warn": [],
+      "offset": 72.0
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "end_card_loop_PIA26673.gif",
+      "title": "Loop back to the frame-0 dusk clouds",
+      "t": 22.14,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.007,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

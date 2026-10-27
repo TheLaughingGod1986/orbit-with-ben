@@ -1,0 +1,49 @@
+{
+  "short_id": "iyvWYFP_ETA",
+  "slug": "mon09_night_cold",
+  "status": "INFEASIBLE_OPENING_UNDER_COMBINED_CONSTRAINTS",
+  "scheduled_version_retained": "mon09_night_cold_v01 (scheduled iyvWYFP_ETA)",
+  "conflict_summary": "No grammatical slice of the recorded stems on disk (wed11_night_cold_vo_v01.wav or 025 long.wav) can place the numeric surprise '90' at <= 1.50 s inside the atempo <= 1.08 cap, nor combine Ben's 26 Oct Keeper line-1 question with a <= 1.50 s surprise without new TTS spend (\u00a30 lock).",
+  "available_recorded_candidates": [
+    {
+      "source": "wed11_night_cold_vo_v01.wav (0.04-3.92s)",
+      "text": "On Mars, the night can fall to minus 90 degrees.",
+      "raw_durations_s": {
+        "On Mars,": 0.6,
+        "the night can": 0.64,
+        "fall to": 0.44,
+        "minus": 0.44,
+        "90": 0.18,
+        "degrees.": 0.56
+      },
+      "atempo_1_08_onset_s": {
+        "On": 0.019,
+        "Mars": 0.204,
+        "minus": 1.544,
+        "90": 1.97
+      },
+      "why_fails_strict_1_5s": "Even with internal pauses closed (0.16s and 0.40s removed) and atempo=1.08 (the Chief cap), the spoken syllables 'On Mars, the night can fall to' take 1.544 s before 'minus' and 1.970 s before '90'. Dropping 'the night can fall to' was rejected by Chief c61 as ungrammatical ('On Mars, minus 90 degrees.')."
+    },
+    {
+      "source": "wed11_night_cold_vo_v01.wav (21.06-23.00s + 0.86-3.92s)",
+      "text": "Could a Robot Survive on Mars? The night can fall to minus 90 degrees.",
+      "atempo_1_08_onset_s": {
+        "Could": 0.0,
+        "Mars": 1.41,
+        "minus": 2.98,
+        "90": 3.41
+      },
+      "why_fails_strict_1_5s": "Satisfies Ben's 26 Oct Keeper question-first rule, but the question itself occupies 1.80 s at 1.08x before the temperature clause can begin, pushing 'minus 90' to 2.98-3.41 s."
+    },
+    {
+      "source": "025 long.wav (61.34-66.00s)",
+      "text": "At the first Viking landing site, nights fell to nearly minus ninety.",
+      "atempo_1_08_onset_s": {
+        "At": 0.0,
+        "minus": 3.12,
+        "ninety": 3.5
+      },
+      "why_fails_strict_1_5s": "Does not name Mars in sentence 1 and places 'minus ninety' after 3.1 s."
+    }
+  ]
+}
