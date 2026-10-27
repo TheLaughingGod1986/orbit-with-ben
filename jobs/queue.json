@@ -91415,13 +91415,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T21:44Z",
-      "eta": "2026-10-27T23:44Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T21:33Z",
-      "result": "",
+      "result": "Verified J1005 complete and HOS PR #367 merged (fc890aec). Posted Acting-Chief FIX on HOS desk #180 (6454289043) and reopened J0966 (worker 5/5 retained): x_3L_IdYgEc v04 (e1f862ba737a) and 4WUs0beKn0A v05 (e5ea76f012fb) are FULL PASS (do not rebuild); build -I_GHK-GcFs v04 and -sa2t7dAtCk v04 with GBP0 60-75ms opening VO fade-in.",
       "history": [
         {
           "at": "2026-10-27T21:33Z",
@@ -91467,6 +91467,11 @@
           "at": "2026-10-27T21:46Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Verified J1005 done, HOS PR #367 merged (fc890aec), HOS desk #180 6454289043 posted, and J0966 reopened (5/5 retained)"
+        },
+        {
+          "at": "2026-10-27T21:46Z",
+          "by": "gemini",
+          "what": "done: Verified J1005 complete and HOS PR #367 merged (fc890aec). Posted Acting-Chief FIX on HOS desk #180 (6454289043) and reopened J0966 (worker 5/5 retained): x_3L_IdYgEc v04 (e1f862ba737a) and 4WUs0beKn0A v05 (e5ea76f012fb) are FULL PASS (do not rebuild); build -I_GHK-GcFs v04 and -sa2t7dAtCk v04 with GBP0 60-75ms opening VO fade-in."
         }
       ],
       "remaining_action": "Close J1046 verification and post Acting-Chief report",
@@ -91494,7 +91499,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "done_ref": "6454289043"
     }
   ],
   "focus": [],
