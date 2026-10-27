@@ -85512,6 +85512,11 @@
           "at": "2026-10-26T23:15Z",
           "by": "codex",
           "what": "deadline: 2026-10-28T10:30:00Z"
+        },
+        {
+          "at": "2026-10-27T00:39Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "assembly",
@@ -85519,7 +85524,16 @@
         "OWB:030"
       ],
       "urgent": 7,
-      "due": "2026-10-28T10:30:00Z"
+      "due": "2026-10-28T10:30:00Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J0990",
