@@ -90970,9 +90970,14 @@
           "at": "2026-10-27T19:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T19:40Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J1043 condition verification for J1032 (OWB:026,OWB:027,OWB:028)"
         }
       ],
-      "remaining_action": "Verify readiness: Complete independent Chief replacement review and Ben swap approval for the six v04 Shorts",
+      "remaining_action": "Verify J1032 waiting condition, PR305 v04 delivery evidence, and independent Chief replacement review status",
       "kind": "chief",
       "recheck_of": "J1032",
       "due": "2026-10-27T20:32:01+00:00",
@@ -90989,11 +90994,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-27T19:39Z",
+        "at": "2026-10-27T19:40Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J1043 condition verification for J1032 (OWB:026,OWB:027,OWB:028)"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1044",
