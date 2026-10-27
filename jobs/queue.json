@@ -86848,16 +86848,21 @@
           "at": "2026-10-27T17:03Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Video card to h8HGfyShEHI saved at 6:13:00 (373.03 s); reloading Studio for full readback verification"
+        },
+        {
+          "at": "2026-10-27T17:09Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Verified Studio readback after reload on VBaYRPp85Sw (End screen 8:13:00-8:33:00 + Card 6:13:00 / 373.03 s to h8HGfyShEHI); committed jobs/readbacks/J0995.json (8d7926600)"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Reload Studio on CDP 9223 and verify End screen, Cards, and unchanged metadata readback",
+      "remaining_action": "Complete J0995 and report readback on thread",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-27T17:03Z",
+        "at": "2026-10-27T17:09Z",
         "by": "gemini",
-        "note": "Video card to h8HGfyShEHI saved at 6:13:00 (373.03 s); reloading Studio for full readback verification"
+        "note": "Verified Studio readback after reload on VBaYRPp85Sw (End screen 8:13:00-8:33:00 + Card 6:13:00 / 373.03 s to h8HGfyShEH"
       },
       "taskKeys": [
         "OWB:023"
