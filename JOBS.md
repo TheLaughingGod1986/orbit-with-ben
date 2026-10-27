@@ -58,13 +58,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1008 | any | open (after J1007) | – | – | chief · J0915 Chief: lock recorded-VO plans and dispatch eligible local recuts |  |
 | J1009 | mini | open (after J0993) | – | – | for gemini · review · `gemini-argon` · J0936 v04 preparation FIX: reconcile scripts, splice arithmetic and six shot plans |  |
 | J1010 | any | open (after J1009) | – | – | chief · J0936: lock corrected v04 preparation after J1009 and dispatch assembly | fded21428 |
-| J1011 | any | claimed | codex | 2026-10-27T02:52Z | chief · Chief: verify condition for J0189 |  |
 | J1012 | any | open | – | – | chief · Chief: verify condition for J0275 |  |
 | J1013 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1014 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1011 done: Chief: verify condition for J0189 (Verified Saturn 55AEQwvs36g title test Results ready in Studio CDP 9223. Evidence jobs/readbacks/J1011.json. Original J0152 PASS and J0189 ruling (a) remain valid; reopened J0189. No test started and no YouTube changes.)
 - J1006 cancelled: Chief: resolve cancelled:J0914 ()
 - J1001 done: Chief review of held J0985 weekly OWB audit (J0985 review complete: FIX. PR294 merged, CI PASS. J0985 remains blocked after correction J1002; J1003 holds 48-hour Earth read for 28 Oct 11:35 London, retry 29 Oct 16:00. Verified Studio readings and three cache master hashes; no publishing, spend or unrelated hold changes. Report posted on studio thread.)
 - J0994 done: Chief review J0980: live listing fixes ruling (J0980 review resolved: authorise J0995 Venus Studio verification/repair; reject interim Venus description on Earth; J0996 after held J0317, recheck 22 Nov 18:05 London. No Studio writes or spend.)
@@ -74,4 +74,3 @@ Recently finished:
 - J0987 done: Chief succession: Grok then Claude then Codex then Gemini, full acting-Chief handoff (Ben 26 Oct) (Live Chief succession Grok > Claude > Codex > Gemini, automatic failover/handback and elected-Chief authority. OWB #293 / HOS #363 merged; 189 tests and HOS check_all pass. Runtime current.json recorded Codex; board chiefChain matches.)
 - J0986 done: Studio board: truthful active jobs, remaining work, recent completions and blocker reasons (Ben 26 Oct) (Dashboard live at https://studio-kanban.vercel.app. PR #292 merged, production dpl_28pVtiraXzLa5KmNk7sVfa6jxH4z READY at 2e80e5129. Public phone browser verified complete job/approval/publication views, matching counts, search, channel filters and Chief order.)
 - J0983 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 4 HOS longs (+ 71 OWB + 19 HOS Shorts = 90 Shorts) in 075045b8c; CTR hits vs 4%: OWB 2/14 (-jmMROGoZCM 5.2%, h8HGfyShEHI 4.1%), HOS 1/4 (_C92tIJCk8A 7.1%; AL_-qlWko_g 3.2% on 1,070 imp))
-- J0981 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Acting-Chief Codex: audit review ACCEPTED with corrections; not a channel gate PASS. Full ruling in job body and HOS #180 6428572814. Follow-ups J0997 description-only vaccine links, J0998 separate checker reproduction/draft PR (Ben approval before merge), J0999 compilation end screen/disclosure. Existing J0280/J0241 retry 29 Oct 18:05; J0875 and J0960 12 Nov 18:05; J0958 5 Nov 18:05, each conditional on long Public. J0966 Ben hold unchanged. No Studio writes, spend or other reviews. Trees test saved/Ineligible, not running; retain test. All follow-ups require normal gates and fresh readbacks.)
