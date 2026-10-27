@@ -58,5 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 026 | edit | codex | 2026-10-27T10:21Z | 2026-10-27T10:41Z | - |
 | 027 | edit | codex | 2026-10-27T10:21Z | 2026-10-27T10:41Z | - |
+| 028 | edit | codex | 2026-10-27T10:21Z | 2026-10-27T10:41Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
