@@ -89114,10 +89114,10 @@
       "stage": "",
       "after": "J1029",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T11:20Z",
+      "eta": "2026-10-27T13:20Z",
       "created_by": "codex",
       "created_at": "2026-10-27T09:36Z",
       "result": "",
@@ -89476,6 +89476,11 @@
           "at": "2026-10-27T11:19Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-27T11:20Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish active archive, exposure correction and final QA; resolve remaining gates and verify delivery",
