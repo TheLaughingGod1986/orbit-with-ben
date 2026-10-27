@@ -89903,9 +89903,14 @@
           "at": "2026-10-27T12:42Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T12:44Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1037; starting verification of J0989 waiting condition for OWB 030 v13a"
         }
       ],
-      "remaining_action": "Verify readiness: Listen to exact v13a for intelligibility, pumping and audible artefacts and record the result",
+      "remaining_action": "Read J0989/J1035 history, PR296, thread, and v13a evidence",
       "kind": "chief",
       "recheck_of": "J0989",
       "due": "2026-10-27T13:36:13+00:00",
@@ -89913,11 +89918,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-27T12:42Z",
+        "at": "2026-10-27T12:44Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1037; starting verification of J0989 waiting condition for OWB 030 v13a"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1038",
