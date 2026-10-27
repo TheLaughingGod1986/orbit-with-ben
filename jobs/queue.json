@@ -86334,6 +86334,11 @@
           "at": "2026-10-27T16:11Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-27T16:13Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Checked chief_relay status (Gemini is elected Chief) and inspected J0974 and J0989 evidence"
         }
       ],
       "kind": "chief",
@@ -86341,12 +86346,13 @@
         "OWB:030"
       ],
       "urgent": 7,
-      "remaining_action": "Checking chief_relay status and inspecting J0974 and v13a assembly outputs",
+      "remaining_action": "Verifying SHA256 hashes, decoded video/timestamps, audio sync, intelligibility, and AAC loudness/peak",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-27T16:11Z",
-        "by": "gemini"
+        "at": "2026-10-27T16:13Z",
+        "by": "gemini",
+        "note": "Checked chief_relay status (Gemini is elected Chief) and inspected J0974 and J0989 evidence"
       }
     },
     {
