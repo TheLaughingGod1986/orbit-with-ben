@@ -1,0 +1,25 @@
+{
+  "job": "J1036",
+  "recheck_of": "J0275",
+  "by": "gemini",
+  "checked_at": "2026-10-27T12:39:50+00:00",
+  "films": [
+    "OWB:020",
+    "OWB:021"
+  ],
+  "live_check": {
+    "endpoint": "http://127.0.0.1:9223",
+    "probes": [
+      "/json/version",
+      "/json/list"
+    ],
+    "result": "Both bounded 5s read-only connection probes to 127.0.0.1:9223 timed out (curl exit 28). No live Studio test state could be read for Jupiter (-jmMROGoZCM)."
+  },
+  "prior_evidence": "origin/codex-j1034:jobs/readbacks/J1034.json, jobs/readbacks/J1022.json, jobs/readbacks/J1011.json, and 05_Analytics/tests/THUMB_LEDGER.json reviewed; J0275 full approval history verified.",
+  "prerequisite": "J0189 (Saturn 55AEQwvs36g A live vs B RINGS ARE FALLING) remains open; Saturn's prerequisite thumbnail comparison has not been armed or completed.",
+  "approval_sequence": "21 Oct approvals preserved: Saturn J0189 RINGS ARE FALLING must complete before J0275 RINGS VANISHING; Jupiter NO SOLID GROUND after NO FLOOR test ends.",
+  "decision": "Keep J0275 blocked; Jupiter NO FLOOR completion remains unverified (CDP 9223 unreachable) and Saturn prerequisite J0189 remains open.",
+  "next_check_at": "2026-10-27T18:40:00Z",
+  "retry_basis": "Original 26 Oct 18:52Z expected end date is in the past and live CDP 9223 could not be verified; retry in six hours per verification protocol.",
+  "changes": "Read-only check; no YouTube, Studio, thumbnail ledger or schedule changes; no spend."
+}
