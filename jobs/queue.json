@@ -89114,10 +89114,10 @@
       "stage": "",
       "after": "J1029",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-27T11:18Z",
-      "eta": "2026-10-27T13:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T09:36Z",
       "result": "",
@@ -89466,6 +89466,11 @@
           "at": "2026-10-27T11:18Z",
           "by": "codex",
           "what": "step 1 of 3 done: Existing J1032-archive-run12 and J1032-run12 tmux sessions alive; archive completion and overall done markers absent. No duplicate render started; prior 1/3 plan preserved."
+        },
+        {
+          "at": "2026-10-27T11:19Z",
+          "by": "codex",
+          "what": "released: Existing detached J1032-run12 and archive-run12 sessions active; no duplicate. Logs /Users/benjaminoats/_desk/logs/J1032-run12.log and J1032-archive-run12.log; markers same stems .done. Outputs /Users/benjaminoats/_desk/renders/J1032-finish12. Preserve PR305 b4483550d and 1/3 plan. Remaining final gates, S1 cut gate, listening and verified UAT/NAS delivery; no PASS or channel changes."
         }
       ],
       "remaining_action": "Finish active archive, exposure correction and final QA; resolve remaining gates and verify delivery",
