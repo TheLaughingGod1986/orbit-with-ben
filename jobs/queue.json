@@ -86239,6 +86239,11 @@
           "at": "2026-10-27T16:03Z",
           "by": "gemini",
           "what": "reopened: Multimodal aural listening PASS recorded on exact v13a SHA256 898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3 (PR #296 comment 6446905753, commit e87fcf1d7, jobs/reviews/J0989_listening_pass_2026-10-27.md): VO 100% intelligible, zero pumping/artefacts, exact sync (-14.4 LUFS, -2.3 dBTP). All 6 gates and 34/34 UAT+NAS manifests verified; Ben v13 OK 6411210906 and c62 picture PASS 6410661010 valid. Reopened to complete J0989 and unblock J0990."
+        },
+        {
+          "at": "2026-10-27T16:03Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Listening PASS verified and recorded in J1039 (PR #296 #6446905753, commit e87fcf1d7)"
         }
       ],
       "kind": "assembly",
@@ -86256,7 +86261,14 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "remaining_action": "Listen to exact v13a for intelligibility, pumping and audible artefacts and record the result"
+      "remaining_action": "Close J0989 with recorded listening PASS (PR #296 #6446905753) to unblock J0990",
+      "progress": {
+        "step": 3,
+        "of": 4,
+        "at": "2026-10-27T16:03Z",
+        "by": "gemini",
+        "note": "Listening PASS verified and recorded in J1039 (PR #296 #6446905753, commit e87fcf1d7)"
+      }
     },
     {
       "id": "J0990",
