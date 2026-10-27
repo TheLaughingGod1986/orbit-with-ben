@@ -89418,19 +89418,24 @@
           "at": "2026-10-27T10:32Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J0275 approvals and J1031 evidence; preserved 21 Oct order; J0189 remains open."
+        },
+        {
+          "at": "2026-10-27T10:32Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: CDP 9223 connection timed out both inside and outside sandbox (curl 28); no live test state could be read."
         }
       ],
-      "remaining_action": "Record live verification and retain the unmet hold",
+      "remaining_action": "Record evidence and refresh J0275 hold",
       "kind": "chief",
       "recheck_of": "J0275",
       "due": "2026-10-27T11:30:30+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-27T10:32Z",
         "by": "codex",
-        "note": "Read J0275 approvals and J1031 evidence; preserved 21 Oct order; J0189 remains open."
+        "note": "CDP 9223 connection timed out both inside and outside sandbox (curl 28); no live test state could be read."
       },
       "taskKeys": [
         "OWB:020",
