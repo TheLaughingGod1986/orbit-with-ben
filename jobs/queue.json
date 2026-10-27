@@ -88864,13 +88864,13 @@
       "stage": "",
       "after": "J1028",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-27T09:32Z",
-      "eta": "2026-10-27T11:32Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T09:00Z",
-      "result": "",
+      "result": "Preparation v07 PASS: PR304 dc4b9da01. J1032 is the sole assembly handoff; J0936 stays blocked for replacement review, 6/6 history preserved.",
       "history": [
         {
           "at": "2026-10-27T09:00Z",
@@ -88906,6 +88906,11 @@
           "at": "2026-10-27T09:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR304 dc4b9da01; preparation PASS; one assembly job J1032; J0936 remains blocked with 6/6 history"
+        },
+        {
+          "at": "2026-10-27T09:37Z",
+          "by": "codex",
+          "what": "done: Preparation v07 PASS: PR304 dc4b9da01. J1032 is the sole assembly handoff; J0936 stays blocked for replacement review, 6/6 history preserved."
         }
       ],
       "remaining_action": "Review complete; J1032 assembles six replacements for Chief review",
@@ -88922,7 +88927,8 @@
         "at": "2026-10-27T09:37Z",
         "by": "codex",
         "note": "PR304 dc4b9da01; preparation PASS; one assembly job J1032; J0936 remains blocked with 6/6 history"
-      }
+      },
+      "done_ref": "dc4b9da01"
     },
     {
       "id": "J1030",
