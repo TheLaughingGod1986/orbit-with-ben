@@ -86339,6 +86339,11 @@
           "at": "2026-10-27T16:13Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Checked chief_relay status (Gemini is elected Chief) and inspected J0974 and J0989 evidence"
+        },
+        {
+          "at": "2026-10-27T16:15Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified original v13 and new v13a SHA256 across repo/UAT/NAS, exact 565-frame framemd5 equality, zero-lag audio sync, 100% VO intelligibility, and AAC -14.4 LUFS / -2.3 dBTP"
         }
       ],
       "kind": "chief",
@@ -86346,13 +86351,13 @@
         "OWB:030"
       ],
       "urgent": 7,
-      "remaining_action": "Verifying SHA256 hashes, decoded video/timestamps, audio sync, intelligibility, and AAC loudness/peak",
+      "remaining_action": "Running live gate verification and checking UAT/NAS 34-file SHA256 manifests",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-27T16:13Z",
+        "at": "2026-10-27T16:15Z",
         "by": "gemini",
-        "note": "Checked chief_relay status (Gemini is elected Chief) and inspected J0974 and J0989 evidence"
+        "note": "Verified original v13 and new v13a SHA256 across repo/UAT/NAS, exact 565-frame framemd5 equality, zero-lag audio sync, 1"
       }
     },
     {
