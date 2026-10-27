@@ -89546,9 +89546,14 @@
           "at": "2026-10-27T12:36Z",
           "by": "relay",
           "what": "condition verification queued: J1038"
+        },
+        {
+          "at": "2026-10-27T13:15Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-10-27T19:15:00Z"
         }
       ],
-      "remaining_action": "Parked for elected-Chief replacement review",
+      "remaining_action": "Complete independent Chief replacement review and Ben swap approval for the six v04 Shorts",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -89573,10 +89578,12 @@
         "note": "All 6 v04 Shorts (S1-S6) passed all gates, multimodal audio/visual review, and UAT/NAS delivery (PR305 61d031f35)"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-27T13:36:13+00:00",
-        "recheck_task": "J1038"
+        "type": "input",
+        "condition": "J1029 predecessor and J1032 3/3 v04 assembly/delivery (PR305 61d031f35) verified PASS across all 6 Shorts (S1 228cb06dfd37, S2 d35efd737ed0, S3 65e58aea2a20, S4 0eb18596d2d6, S5 37fbe8b9ed33, S6 91b297a262c1: 6-way repo/UAT/NAS SHA256 match, 21/21 UAT+NAS manifests, 7 gates PASS, decoded AAC -14.2..-14.4 LUFS / -1.8..-2.0 dBTP, loop 0.41..0.84, multimodal audio/visual inspection PASS, v01-v03 untouched). Kept blocked so completed 3/3 assembly is not re-queued; parked for independent Chief replacement PASS and Ben swap approval on J0936.",
+        "check_at": "2026-10-27T19:15:00Z",
+        "last_recheck": "J1038",
+        "checked_at": "2026-10-27T13:15:22+00:00",
+        "checked_by": "gemini"
       }
     },
     {
