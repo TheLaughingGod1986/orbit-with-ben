@@ -89084,10 +89084,10 @@
       "stage": "",
       "after": "J1029",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-27T09:52Z",
-      "eta": "2026-10-27T11:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T09:36Z",
       "result": "",
@@ -89161,6 +89161,11 @@
           "at": "2026-10-27T10:07Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR305 b4854a6ee: six finish03 sampled loops/AAC pass but true S3 seam still fails; finish04 fixes exact tpad frame count. J1032-run03 detached archive/render/QA. S1 Shorts first-cut and picture/polish horizon failures retained; nothing approved."
+        },
+        {
+          "at": "2026-10-27T10:07Z",
+          "by": "codex",
+          "what": "released: Detached J1032-run03: log /Users/benjaminoats/_desk/logs/J1032-run03.log; exit /Users/benjaminoats/_desk/logs/J1032-run03.done. Stage logs/markers J1032-archive-initial, J1032-finish04, J1032-finalqa04. Missing done plus live tmux means active: do not duplicate. Outputs /Users/benjaminoats/_desk/renders/J1032-finish04. Extra hash-verified older scratch archive J1032-archive-finish01. PR305, handoff jobs/reviews/J1032_2026-10-27_run02.md. Progress remains 1/3; resolve final gate failures, listen to finished audio, inspect frames, then verified UAT/NAS delivery. No PASS or watch cards; J0936 and v01 slots unchanged."
         }
       ],
       "remaining_action": "Finish detached endpoint correction, resolve final gate failures, and complete verified delivery",
