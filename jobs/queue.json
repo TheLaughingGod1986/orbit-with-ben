@@ -87081,10 +87081,10 @@
       "stage": "",
       "after": "J0981",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T17:34Z",
+      "eta": "2026-10-27T18:04Z",
       "created_by": "codex",
       "created_at": "2026-10-26T22:14Z",
       "result": "",
@@ -87103,13 +87103,26 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "remaining action: Verify the compilation end screen and disclosure setting"
+        },
+        {
+          "at": "2026-10-27T17:34Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:099"
       ],
-      "remaining_action": "Verify the compilation end screen and disclosure setting"
+      "remaining_action": "Verify the compilation end screen and disclosure setting",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T17:34Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1000",
