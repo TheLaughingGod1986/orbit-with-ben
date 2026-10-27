@@ -86379,13 +86379,18 @@
           "at": "2026-10-27T14:21Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified Wednesday opening candidate (19.4% max bg match, 0 seams) and AAC calibration; rendering v04 cuts"
+        },
+        {
+          "at": "2026-10-27T14:36Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Resumed J0991 at step 2/4; building and rendering _assemble_029_shorts_v04.py"
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:029"
       ],
-      "remaining_action": "Write _assemble_029_shorts_v04.py and render all three v04 Shorts",
+      "remaining_action": "Write _assemble_029_shorts_v04.py, render all three v04 Shorts, run gates and deliver to UAT/NAS",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -86398,9 +86403,9 @@
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-10-27T14:21Z",
+        "at": "2026-10-27T14:36Z",
         "by": "gemini",
-        "note": "Verified Wednesday opening candidate (19.4% max bg match, 0 seams) and AAC calibration; rendering v04 cuts"
+        "note": "Resumed J0991 at step 2/4; building and rendering _assemble_029_shorts_v04.py"
       }
     },
     {
