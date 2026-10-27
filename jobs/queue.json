@@ -86409,13 +86409,18 @@
           "at": "2026-10-27T15:47Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Rendered all three 029 Shorts v04 with approved gemini_night.jpg + ESO SPHERE Wednesday opening (0.675x downscale, max bg match 12.5%, motion 15.95, f0diff 4.62, cut1 2.7s) and calibrated AAC (-14.1 LUFS, -2.0/-2.1 dBTP); all gates PASS"
+        },
+        {
+          "at": "2026-10-27T15:51Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: All three 029 Shorts v04 masters, PHONE copies, frame sheets, versioned manifests and J0991 repair report (a7568e1d4) verified across 5 durable paths and youtube:package dry-runs"
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:029"
       ],
-      "remaining_action": "Write versioned v04 upload manifests, verify durable UAT/NAS SHA256s and youtube:package dry-runs, write J0991 repair report and park for Chief review",
+      "remaining_action": "Elected-Chief review of 029 Shorts v04 changed audio and Wednesday opening, applicable watch card, and J0961 hash amendment",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -86426,11 +86431,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-27T15:47Z",
+        "at": "2026-10-27T15:51Z",
         "by": "gemini",
-        "note": "Rendered all three 029 Shorts v04 with approved gemini_night.jpg + ESO SPHERE Wednesday opening (0.675x downscale, max b"
+        "note": "All three 029 Shorts v04 masters, PHONE copies, frame sheets, versioned manifests and J0991 repair report (a7568e1d4) ve"
       }
     },
     {
