@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0985 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0989 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · OWB 030 J0974 audio-only v13a correction: current loudness gate |  |
 | J0990 | any | open (after J0989) | – | – | chief · OWB 030 J0974 audio-only v13a: Chief technical release review |  |
-| J0991 | mini | open | – | – | for gemini · assembly · `gemini-agy` · 029 Shorts v04: fix J0961 AAC levels and Wednesday opening; gates and Chief review | 0d132cd27 |
+| J0991 | mini | claimed | gemini | 2026-10-27T14:47Z | for gemini · assembly · `gemini-agy` · 029 Shorts v04: fix J0961 AAC levels and Wednesday opening; gates and Chief review | 0d132cd27 |
 | J0995 | mini | open (after J0994) | – | – | 023 upload · studio · OWB 023: verified Venus end screen and Sun card (J0980 ruling) |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J0997 | mini | open (after J0981) | – | – | studio · HOS 007: correct scheduled Shorts description watch URLs | 6428572814 |

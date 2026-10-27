@@ -86311,10 +86311,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T13:17Z",
+      "eta": "2026-10-27T14:47Z",
       "created_by": "codex",
       "created_at": "2026-10-26T21:51Z",
       "result": "",
@@ -86338,6 +86338,11 @@
           "at": "2026-10-27T13:16Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-27T13:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
@@ -86353,7 +86358,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T13:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0992",
