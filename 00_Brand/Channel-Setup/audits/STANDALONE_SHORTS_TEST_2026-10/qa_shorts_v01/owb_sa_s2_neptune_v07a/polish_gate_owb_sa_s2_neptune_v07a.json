@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07a.mp4",
+  "edge_floor": 0.0106,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": 7,
+      "cut": 6,
+      "t": 20.03,
+      "source": "PIA01492 same forward cycle as the frames just before frame 0",
+      "why": [
+        "low detail: edge density 0.0056 < film p5 0.0106"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": 1,
+      "source": "PIA01492 full Voyager disc, methane wisps mid-travel, dark space, frame-0 payoff",
+      "t": 1.35,
+      "std": 49.98,
+      "mean": 63.45,
+      "p95": 155.0,
+      "edge": 0.0332,
+      "hf": 13.37,
+      "lf": 39.88,
+      "std8": 43.75,
+      "edge8": 0.1842,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": 2,
+      "source": "PIA01492 Great Dark Spot, whole disc, call-out Voyager 2 Aug 1989",
+      "t": 4.5,
+      "std": 39.94,
+      "mean": 34.56,
+      "p95": 119.0,
+      "edge": 0.0221,
+      "hf": 10.96,
+      "lf": 33.87,
+      "std8": 35.47,
+      "edge8": 0.0992,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": 3,
+      "source": "code graphic: Neptune wind bar grows to 2,000 km/h",
+      "t": 7.62,
+      "std": 47.83,
+      "mean": 63.19,
+      "p95": 201.0,
+      "edge": 0.0261,
+      "hf": 12.39,
+      "lf": 41.47,
+      "std8": 43.82,
+      "edge8": 0.0853,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": 4,
+      "source": "code graphic: Neptune 2,000 km/h held, Earth bar grows to 400 km/h",
+      "t": 10.67,
+      "std": 53.86,
+      "mean": 64.92,
+      "p95": 202.0,
+      "edge": 0.0533,
+      "hf": 17.94,
+      "lf": 41.1,
+      "std8": 45.38,
+      "edge8": 0.1738,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": 5,
+      "source": "code graphic: Earth 1 AU, Neptune moves out to 30 AU once",
+      "t": 14.25,
+      "std": 29.73,
+      "mean": 52.52,
+      "p95": 57.0,
+      "edge": 0.0337,
+      "hf": 13.69,
+      "lf": 16.7,
+      "std8": 20.49,
+      "edge8": 0.1064,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": 6,
+      "source": "PIA01492 full disc dimmed, hardly any sunlight",
+      "t": 17.78,
+      "std": 44.91,
+      "mean": 60.16,
+      "p95": 131.0,
+      "edge": 0.0297,
+      "hf": 12.81,
+      "lf": 37.81,
+      "std8": 39.83,
+      "edge8": 0.1331,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": 7,
+      "source": "PIA01492 same forward cycle as the frames just before frame 0",
+      "t": 20.03,
+      "std": 34.81,
+      "mean": 54.78,
+      "p95": 123.0,
+      "edge": 0.0056,
+      "hf": 2.08,
+      "lf": 34.19,
+      "std8": 34.62,
+      "edge8": 0.0619,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0056 < film p5 0.0106"
+      ]
+    }
+  ]
+}

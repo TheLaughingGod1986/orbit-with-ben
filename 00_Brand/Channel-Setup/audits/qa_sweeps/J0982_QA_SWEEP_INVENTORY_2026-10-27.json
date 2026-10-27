@@ -1,0 +1,3565 @@
+{
+  "job": "J0982",
+  "generated_at_utc": "2026-10-27T23:39:48Z",
+  "agent": "gemini",
+  "model": "gemini-argon",
+  "total_exports_inventoried": 62,
+  "owb_exports_count": 42,
+  "hos_exports_count": 20,
+  "original_window_count": 37,
+  "post_window_revision_count": 19,
+  "standalone_baseline_count": 6,
+  "unaddressed_fails": 0,
+  "new_repair_jobs_created": [],
+  "entries": [
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:021",
+      "export_id": "saturn_ten_metres_thin_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/06_Final-Exports/saturn_ten_metres_thin_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "6de9961ac45d70f244be5acdb8a261416752ad046cf91481673f310632842f03",
+      "media_mtime_utc": "2026-10-25T14:10:46Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/06_Final-Exports/picture_qa_saturn/picture_qa.json",
+        "mtime_utc": "2026-10-25T14:15:08Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0078 < film p5 0.0093']"
+        ],
+        "mtime_diff_vs_media_s": 262.5,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/06_Final-Exports/polish_gate_saturn.json",
+        "mtime_utc": "2026-10-25T14:27:05Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's06', 'cut': 5, 't': 16.93, 'source': 'cassini_rings_120.mp4', 'why': ['low detail: edge density 0.0078 < film p5 0.0093']}"
+        ],
+        "mtime_diff_vs_media_s": 978.9,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/10_Shorts/lift_ten_metres_thin/06_Final-Exports/saturn_ten_metres_thin_v04_music.txt",
+        "mtime_utc": "2026-10-25T14:27:05Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: saturn_ten_metres_thin_short_bed_v01.mp3, 30.0 s, about 133.3 BPM, brief Pace: 60-80 BPM",
+        "mtime_diff_vs_media_s": 978.9,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 447a06234; 0 FAIL"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:023",
+      "export_id": "venus_95pct_wide_v05",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v05.mp4",
+      "media_exists": true,
+      "media_sha256": "09e5e66332fea5ac22f07143a41a79beb6ca2b47b653276d33499946c34a2745",
+      "media_mtime_utc": "2026-10-25T14:09:22Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/picture_qa_size/picture_qa.json",
+        "mtime_utc": "2026-10-25T14:15:17Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0094 < film p5 0.0111']"
+        ],
+        "mtime_diff_vs_media_s": 354.9,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/polish_gate_size.json",
+        "mtime_utc": "2026-10-25T14:27:05Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's03', 'cut': 2, 't': 7.14, 'source': '13887_DAVINCI_PEVAA.mp4', 'why': ['low detail: edge density 0.0094 < film p5 0.0111']}"
+        ],
+        "mtime_diff_vs_media_s": 1062.6,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_95pct_wide/06_Final-Exports/venus_95pct_wide_v05_music.txt",
+        "mtime_utc": "2026-10-25T14:27:05Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: venus_score_bed_v01_full.mp3, 530.0 s, about 52.2 BPM, brief Pace: 60-72 BPM",
+        "mtime_diff_vs_media_s": 1062.6,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 447a06234; 0 FAIL"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:023",
+      "export_id": "venus_two_hours_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_two_hours/06_Final-Exports/venus_two_hours_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "20efc0c80d1cddcad901d5e7135bbb6853f74a80fae3590446d3243edbf7c861",
+      "media_mtime_utc": "2026-10-25T14:14:56Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_two_hours/06_Final-Exports/picture_qa_venus_lead/picture_qa.json",
+        "mtime_utc": "2026-10-25T14:27:05Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 6,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0011 < film p5 0.0027']"
+        ],
+        "mtime_diff_vs_media_s": 728.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_two_hours/06_Final-Exports/polish_gate_venus_lead.json",
+        "mtime_utc": "2026-10-25T14:27:05Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 6,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's_loop', 'cut': 5, 't': 16.81, 'source': 'davinci_atmosphere_loop_v04.mp4', 'why': ['low detail: edge density 0.0011 < film p5 0.0027']}"
+        ],
+        "mtime_diff_vs_media_s": 728.4,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_two_hours/06_Final-Exports/venus_two_hours_v04_music.txt",
+        "mtime_utc": "2026-10-25T14:27:05Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: venus_score_bed_v01_full.mp3, 530.0 s, about 52.2 BPM, brief Pace: 60-72 BPM",
+        "mtime_diff_vs_media_s": 728.4,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 447a06234; 0 FAIL (same_build_batch)"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:025",
+      "export_id": "mon09_night_cold_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "cfff04cdddcd3922729b32c6cb60ed1ec0a90acc39fbca8e3f545b7285ca049c",
+      "media_mtime_utc": "2026-10-26T07:21:16Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T11:45:12Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 2,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.18x, may look soft', 'low detail: luma std 15.27 < 18.0', 'low detail: edge density 0.0087 < film p5 0.0103']",
+          "?:['sharpness: upscaled 2.18x, may look soft']"
+        ],
+        "mtime_diff_vs_media_s": 15835.3,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T11:45:12Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's02', 'cut': 2, 't': 6.9, 'source': 'JPL-20210222-M2020f-0001.mp4', 'why': ['low detail: luma std 15.27 < 18.0', 'low detail: edge density 0.0087 < film p5 0.0103']}"
+        ],
+        "mtime_diff_vs_media_s": 15835.3,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v03_music.txt",
+        "mtime_utc": "2026-10-26T11:39:08Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: mars-robot_score_bed_v02_full.mp3, 492.0 s, about 120.0 BPM, brief Pace: 60-72 BPM",
+        "mtime_diff_vs_media_s": 15471.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0935"
+      ],
+      "notes": "Committed b5abd1fc6; superseded by v04 in J0935"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:025",
+      "export_id": "wed11_opening_testA_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "788ae0e891d6b649054e06b3b6d58cf483318722b6203ba0e26ebcfd1968e62c",
+      "media_mtime_utc": "2026-10-26T11:46:00Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-26T11:46:15Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 3,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.18x, may look soft', 'low detail: luma std 16.2 < 18.0', 'low detail: edge density 0.01 < film p5 0.0103']",
+          "?:['sharpness: upscaled 2.18x, may look soft']",
+          "?:['sharpness: upscaled 2.18x, may look soft']"
+        ],
+        "mtime_diff_vs_media_s": 15.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-26T11:46:14Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's02', 'cut': 2, 't': 7.59, 'source': 'JPL-20210222-M2020f-0001.mp4', 'why': ['low detail: luma std 16.2 < 18.0', 'low detail: edge density 0.01 < film p5 0.0103']}"
+        ],
+        "mtime_diff_vs_media_s": 14.4,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v04_music.txt",
+        "mtime_utc": "2026-10-26T11:46:13Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: mars-robot_score_bed_v02_full.mp3, 492.0 s, about 120.0 BPM, brief Pace: 60-72 BPM",
+        "mtime_diff_vs_media_s": 13.4,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0935"
+      ],
+      "notes": "Committed ff2ef19c0; active in J0935"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:025",
+      "export_id": "thu12_length_test_dust_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "f9c4fba6550a15ceb2e068ec5c0428b08ed4bfda765025afa45c018d1a2650c3",
+      "media_mtime_utc": "2026-10-26T10:39:53Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T10:40:24Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 16,
+        "warn_count": 5,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.18x, may look soft']",
+          "?:['sharpness: upscaled 2.18x, may look soft']",
+          "?:['sharpness: upscaled 2.18x, may look soft']",
+          "?:['low detail: edge density 0.0083 < film p5 0.0105']",
+          "?:['sharpness: upscaled 2.18x, may look soft', 'low detail: luma std 17.56 < 18.0']"
+        ],
+        "mtime_diff_vs_media_s": 31.5,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T10:40:18Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 16,
+        "warn_count": 2,
+        "warn_items": [
+          "?:{'row': 's13', 'cut': 13, 't': 49.53, 'source': 'JPL-20200303-MSLf-0001.mp4', 'why': ['low detail: edge density 0.0083 < film p5 0.0105']}",
+          "?:{'row': 's_loop', 'cut': 15, 't': 55.63, 'source': 'end_card_loop_JPL-20210222-M2020f-0001.mp4', 'why': ['low detail: luma std 17.56 < 18.0']}"
+        ],
+        "mtime_diff_vs_media_s": 25.9,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v03_music.txt",
+        "mtime_utc": "2026-10-26T10:40:13Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: mars-robot_score_bed_v02_full.mp3, 492.0 s, about 120.0 BPM, brief Pace: 60-72 BPM",
+        "mtime_diff_vs_media_s": 20.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0935"
+      ],
+      "notes": "Committed 2aeb0a4fd; active in J0935"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:025",
+      "export_id": "fri13_ingenuity_72_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "d589d39d02d8c8a20ec78022b3cc663f1bde23263fcdfbb6a8c853b58f98b593",
+      "media_mtime_utc": "2026-10-26T11:06:07Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-26T11:06:23Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0053 < film p5 0.0162']"
+        ],
+        "mtime_diff_vs_media_s": 16.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-26T11:06:21Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's_loop', 'cut': 7, 't': 19.45, 'source': 'end_card_loop_PIA24644.gif', 'why': ['low detail: edge density 0.0053 < film p5 0.0162']}"
+        ],
+        "mtime_diff_vs_media_s": 13.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v04_music.txt",
+        "mtime_utc": "2026-10-26T11:06:18Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: mars-robot_score_bed_v02_full.mp3, 492.0 s, about 120.0 BPM, brief Pace: 60-72 BPM",
+        "mtime_diff_vs_media_s": 11.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0935"
+      ],
+      "notes": "Committed adef924b9; active in J0935"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:026",
+      "export_id": "mon16_cant_see_nearest_star_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/mon16_cant_see_nearest_star_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "cddcfb96556771eea226cfd90ef991cbfa26daadd00ae055da31ab6b3cb229c1",
+      "media_mtime_utc": "2026-10-26T11:32:08Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T11:32:36Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0194 < film p5 0.0266']"
+        ],
+        "mtime_diff_vs_media_s": 28.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T11:32:35Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's02', 'cut': 2, 't': 7.58, 'source': 'GSFC_20160426_SDO_m12224_SolarFlare.mp4', 'why': ['low detail: edge density 0.0194 < film p5 0.0266']}"
+        ],
+        "mtime_diff_vs_media_s": 27.3,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/mon16_cant_see_nearest_star_v03_music.txt",
+        "mtime_utc": "2026-10-26T11:32:34Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: nearest-star_score_bed_v01_full.wav, 494.5 s, about 66.7 BPM, brief Pace: 66-80 BPM",
+        "mtime_diff_vs_media_s": 26.2,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0935"
+      ],
+      "notes": "Committed 7b0a3eb78; active in J0935"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:026",
+      "export_id": "wed18_robot_reach_nearest_star_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/wed18_robot_reach_nearest_star_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "8a264ecba447e5b6987b73e529bef4c8c1d0e4e2431078d213867905ea75f368",
+      "media_mtime_utc": "2026-10-26T11:34:56Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T11:35:18Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0221 < film p5 0.0295']"
+        ],
+        "mtime_diff_vs_media_s": 21.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T11:35:17Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's06', 'cut': 6, 't': 19.99, 'source': 'GSFC_20160426_SDO_m12224_SolarFlare.mp4', 'why': ['low detail: edge density 0.0221 < film p5 0.0295']}"
+        ],
+        "mtime_diff_vs_media_s": 20.5,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/wed18_robot_reach_nearest_star_v03_music.txt",
+        "mtime_utc": "2026-10-26T11:35:16Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: nearest-star_score_bed_v01_full.wav, 494.5 s, about 66.7 BPM, brief Pace: 66-80 BPM",
+        "mtime_diff_vs_media_s": 19.6,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0935"
+      ],
+      "notes": "Committed 7b0a3eb78; active in J0935"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:026",
+      "export_id": "fri20_grapefruit_cherry_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "a4024c86904c62a3e1a62e4bdbf3f3f139b207045c06cb77cda40a5209c547ca",
+      "media_mtime_utc": "2026-10-26T07:46:07Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T07:47:37Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0132 < film p5 0.0196']"
+        ],
+        "mtime_diff_vs_media_s": 90.0,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T07:47:37Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's_loop', 'cut': 6, 't': 19.42, 'source': 'loop_GSFC_20160426_SDO_m12224_SolarFlare.mp4', 'why': ['low detail: edge density 0.0132 < film p5 0.0196']}"
+        ],
+        "mtime_diff_vs_media_s": 90.0,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v03_music.txt",
+        "mtime_utc": "2026-10-26T07:47:37Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: nearest-star_score_bed_v01_full.wav, 494.5 s, about 66.7 BPM, brief Pace: 66-80 BPM",
+        "mtime_diff_vs_media_s": 90.0,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Committed 071826b53; superseded by v04 in J1032"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:027",
+      "export_id": "earth_sudden_air_v05",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/earth_sudden_air_v05.mp4",
+      "media_exists": true,
+      "media_sha256": "666ab5b1b16db297c501c044be281435b5a9a269c1850fa6349eb5139bbb6903",
+      "media_mtime_utc": "2026-10-25T08:04:55Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/picture_qa_v05/picture_qa.json",
+        "mtime_utc": "2026-10-25T08:07:08Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0158 < film p5 0.0205']"
+        ],
+        "mtime_diff_vs_media_s": 133.5,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/polish_gate_v05.json",
+        "mtime_utc": "2026-10-25T08:07:08Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's08_loop_epic', 'cut': 7, 't': 20.83, 'source': 'end_card_loop_epic_earth.mp4', 'why': ['low detail: edge density 0.0158 < film p5 0.0205']}"
+        ],
+        "mtime_diff_vs_media_s": 133.5,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/06_Final-Exports/earth_sudden_air_v05_music.txt",
+        "mtime_utc": "2026-10-25T08:07:08Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: earth-spin_score_take2_straight_v01j.wav, 26.0 s, about 80.0 BPM, brief Pace: 76-88 BPM",
+        "mtime_diff_vs_media_s": 133.5,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 30e12e129; live OVLv9dxTcpE"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:027",
+      "export_id": "earth_equator_weight_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "e7220c124e4d1c80ee29e32705a6e5a554c778bc42a86879588d7eeb21b759c7",
+      "media_mtime_utc": "2026-10-26T12:03:39Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T12:03:56Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0423 < film p5 0.0439']"
+        ],
+        "mtime_diff_vs_media_s": 17.7,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T12:03:55Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's_loop', 'cut': 7, 't': 22.53, 'source': 'loop_ISS_sunrise_to_sunset.ogv', 'why': ['low detail: edge density 0.0423 < film p5 0.0439']}"
+        ],
+        "mtime_diff_vs_media_s": 16.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v03_music.txt",
+        "mtime_utc": "2026-10-26T12:03:55Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: earth-spin_score_take2_straight_v01j.wav, 26.0 s, about 80.0 BPM, brief Pace: 76-88 BPM",
+        "mtime_diff_vs_media_s": 16.0,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Committed d9ccb8bc6; superseded by v04 in J1032"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:028",
+      "export_id": "028_short_mon30_comets_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "01bbd942ee939590cda70c7a2b96a3a9481ce17de1718620b5627e5fe888cbc5",
+      "media_mtime_utc": "2026-10-26T12:20:40Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T12:21:46Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.013 < film p5 0.0185']"
+        ],
+        "mtime_diff_vs_media_s": 65.5,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T12:21:45Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's06_sdo_solar_flare', 'cut': 5, 't': 19.11, 'source': 'sdo_solar_flare.mp4', 'why': ['low detail: edge density 0.013 < film p5 0.0185']}"
+        ],
+        "mtime_diff_vs_media_s": 64.4,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v03_music.txt",
+        "mtime_utc": "2026-10-26T12:21:44Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: gliese_score_bed_v03.mp3, 497.8 s, about 70.6 BPM, brief Pace: 64-74 BPM",
+        "mtime_diff_vs_media_s": 63.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Committed 3c708b863; superseded by v04 in J1032"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:028",
+      "export_id": "028_short_wed02_opening_testA_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/06_Final-Exports/028_short_wed02_opening_testA_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "8abcd2cadd22e39b3620b23ccc392068edcfb47a632409583b86ebd45e2e1bc3",
+      "media_mtime_utc": "2026-10-26T12:38:43Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T12:39:44Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0123 < film p5 0.0134']"
+        ],
+        "mtime_diff_vs_media_s": 61.1,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T12:39:43Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's_loop', 'cut': 7, 't': 24.02, 'source': 'loop_sdo_solar_flare.mp4', 'why': ['low detail: edge density 0.0123 < film p5 0.0134']}"
+        ],
+        "mtime_diff_vs_media_s": 60.0,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/06_Final-Exports/028_short_wed02_opening_testA_v03_music.txt",
+        "mtime_utc": "2026-10-26T12:39:42Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: gliese_score_bed_v03.mp3, 497.8 s, about 70.6 BPM, brief Pace: 64-74 BPM",
+        "mtime_diff_vs_media_s": 58.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Committed 94e4e69fb; superseded by v04 in J1032"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:028",
+      "export_id": "028_short_fri04_scale_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/028_short_fri04_scale_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "bb935379881a48423faf14d511f6c7e9601f26af806ad1d2d1b76954f33088e2",
+      "media_mtime_utc": "2026-10-26T12:46:32Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T12:47:23Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0092 < film p5 0.0105']"
+        ],
+        "mtime_diff_vs_media_s": 50.2,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T12:47:21Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's_loop', 'cut': 7, 't': 19.64, 'source': 'loop_sdo_surface.mp4', 'why': ['low detail: edge density 0.0092 < film p5 0.0105']}"
+        ],
+        "mtime_diff_vs_media_s": 49.0,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/028_short_fri04_scale_v03_music.txt",
+        "mtime_utc": "2026-10-26T12:47:20Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: gliese_score_bed_v03.mp3, 497.8 s, about 70.6 BPM, brief Pace: 64-74 BPM",
+        "mtime_diff_vs_media_s": 47.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Committed 83cb31c8d; superseded by v04 in J1032"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:028",
+      "export_id": "028_short_lift_night_sky_35yr_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "55c08d2ebfe911771c73c1cfd55ac993b60457b058edc08b4921826b8482b1c1",
+      "media_mtime_utc": "2026-10-26T12:36:11Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/picture_qa_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T12:37:00Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0166 < film p5 0.0225']"
+        ],
+        "mtime_diff_vs_media_s": 49.6,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/polish_gate_v03.json",
+        "mtime_utc": "2026-10-26T12:36:59Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's02_sdo_solar_flare', 'cut': 1, 't': 4.22, 'source': 'sdo_solar_flare.mp4', 'why': ['low detail: edge density 0.0166 < film p5 0.0225']}"
+        ],
+        "mtime_diff_vs_media_s": 48.6,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v03_music.txt",
+        "mtime_utc": "2026-10-26T12:36:58Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: gliese_score_bed_v03.mp3, 497.8 s, about 70.6 BPM, brief Pace: 64-74 BPM",
+        "mtime_diff_vs_media_s": 47.5,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Committed 83cb31c8d; superseded by v04 in J1032"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:028",
+      "export_id": "028_short_lift_oort_marbles_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_oort_marbles/06_Final-Exports/028_short_lift_oort_marbles_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "344bd0d0ab044a95335e78e5769f292079d514c6297f35f7e448fa9857e80a6a",
+      "media_mtime_utc": "2026-10-26T01:32:12Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_oort_marbles/06_Final-Exports/028_short_lift_oort_marbles_v03_picture_qa/picture_qa.json",
+        "mtime_utc": "2026-10-26T01:32:30Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0479 < film p5 0.0502']"
+        ],
+        "mtime_diff_vs_media_s": 18.3,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_oort_marbles/06_Final-Exports/028_short_lift_oort_marbles_v03_polish_gate.json",
+        "mtime_utc": "2026-10-26T01:32:27Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's01_sdo_flare_open', 'cut': 0, 't': 1.48, 'source': 'sdo_solar_flare.mp4', 'why': ['low detail: edge density 0.0479 < film p5 0.0502']}"
+        ],
+        "mtime_diff_vs_media_s": 15.4,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_oort_marbles/06_Final-Exports/028_short_lift_oort_marbles_v03_music_gate.json",
+        "mtime_utc": "2026-10-26T01:32:32Z",
+        "verdict": "PASS",
+        "bed": "gliese_score_bed_v03.mp3",
+        "bpm": 70.6,
+        "brief_pace": "Pace: 64-74 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 20.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 83cb31c8d; 0 FAIL"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:029",
+      "export_id": "029_short_wed09_great_dimming_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "fc3c1b30be442e9a8853ba9f99c632f8e9fe3c1a23fa0860df6b24f6b0e9e5a4",
+      "media_mtime_utc": "2026-10-25T22:23:45Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v03_picture_qa/picture_qa.json",
+        "mtime_utc": "2026-10-25T22:24:32Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 4,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.32x, may look soft']",
+          "?:['low detail: edge density 0.0046 < film p5 0.0052']",
+          "?:[\"kind of picture: 'ESO artist's concept of a dust cloud dimming a red star' (artist), look at it full size\"]",
+          "?:[\"kind of picture: 'ESO artist's concept of a dust cloud dimming a red star' (artist), look at it full size\"]"
+        ],
+        "mtime_diff_vs_media_s": 47.3,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v03_polish_gate.json",
+        "mtime_utc": "2026-10-25T22:24:28Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's03_sphere_dec', 'cut': 2, 't': 6.93, 'source': 'sphere_dec.jpg', 'why': ['low detail: edge density 0.0046 < film p5 0.0052']}"
+        ],
+        "mtime_diff_vs_media_s": 43.5,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v03_music_gate.json",
+        "mtime_utc": "2026-10-25T22:23:52Z",
+        "verdict": "PASS",
+        "bed": "betelgeuse_score_bed_v01.mp3",
+        "bpm": 75.0,
+        "brief_pace": "Pace: 68-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 7.5,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0961"
+      ],
+      "notes": "Committed 8e3542898; superseded by v04"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:029",
+      "export_id": "029_short_fri11_opening_testA_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "c12dc1774e689b17f757f1b6c0e9ad58516f8dd4add4075e7316970196860939",
+      "media_mtime_utc": "2026-10-25T22:26:06Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v03_picture_qa/picture_qa.json",
+        "mtime_utc": "2026-10-25T22:27:00Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 12,
+        "warn_count": 3,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.06x, may look soft']",
+          "?:['low detail: edge density 0.0163 < film p5 0.0178']",
+          "?:['sharpness: upscaled 2.30x, may look soft', 'low detail: luma std 14.51 < 18.0']"
+        ],
+        "mtime_diff_vs_media_s": 54.3,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v03_polish_gate.json",
+        "mtime_utc": "2026-10-25T22:26:59Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 12,
+        "warn_count": 2,
+        "warn_items": [
+          "?:{'row': 's04_sphere', 'cut': 3, 't': 10.35, 'source': 'sphere_jan.jpg', 'why': ['low detail: edge density 0.0163 < film p5 0.0178']}",
+          "?:{'row': 's07_alma', 'cut': 6, 't': 19.94, 'source': 'alma_orion_set.mp4', 'why': ['low detail: luma std 14.51 < 18.0']}"
+        ],
+        "mtime_diff_vs_media_s": 52.7,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v03_music_gate.json",
+        "mtime_utc": "2026-10-25T22:26:16Z",
+        "verdict": "PASS",
+        "bed": "betelgeuse_score_bed_v01.mp3",
+        "bpm": 75.0,
+        "brief_pace": "Pace: 68-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 10.2,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0961"
+      ],
+      "notes": "Committed 8e3542898; superseded by v04"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:029",
+      "export_id": "029_short_mon14_half_moon_daylight_v03",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "1e3d9ba6830b4e28991216b1404b66cce4e4401f075bae06a7d7ee5624c63a4e",
+      "media_mtime_utc": "2026-10-25T22:27:39Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v03_picture_qa/picture_qa.json",
+        "mtime_utc": "2026-10-25T22:28:24Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0149 < film p5 0.0166']"
+        ],
+        "mtime_diff_vs_media_s": 45.7,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v03_polish_gate.json",
+        "mtime_utc": "2026-10-25T22:28:22Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's05_orion_flare', 'cut': 4, 't': 14.26, 'source': 'code_graphic_029_r25_orion_v01.mp4', 'why': ['low detail: edge density 0.0149 < film p5 0.0166']}"
+        ],
+        "mtime_diff_vs_media_s": 43.1,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v03_music_gate.json",
+        "mtime_utc": "2026-10-25T22:27:49Z",
+        "verdict": "PASS",
+        "bed": "betelgeuse_score_bed_v01.mp3",
+        "bpm": 75.0,
+        "brief_pace": "Pace: 68-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 10.6,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0961"
+      ],
+      "notes": "Committed 8e3542898; superseded by v04"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:030",
+      "export_id": "030_apophis_short_v13",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13.mp4",
+      "media_exists": true,
+      "media_sha256": "2b276eb295dffbf4df0e81d874bce98295cfc8a3b94b4e6da945b162b5898abd",
+      "media_mtime_utc": "2026-10-26T07:01:55Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/picture_qa_v13/picture_qa.json",
+        "mtime_utc": "2026-10-26T07:02:53Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 6,
+        "failed_items": [],
+        "warn_items": [
+          "?:[\"kind of picture: 'NASA ISS aurora Earth limb (iss023e058455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS day-side Earth (iss034e048455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS aurora Earth limb (iss023e058455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS day-side Earth (iss034e048455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS aurora Earth limb (iss023e058455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS aurora Earth limb (iss023e058455) with code-rendered asteroid Apophis' (render), look at it full size\", 'low detail: edge density 0.0034 < film p5 0.0041']"
+        ],
+        "mtime_diff_vs_media_s": 58.2,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/polish_gate_v13.json",
+        "mtime_utc": "2026-10-26T07:02:55Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 'aurora_rock_loop', 'cut': 6, 't': 18.32, 'source': 'aurora_rock_loop.mp4', 'why': ['low detail: edge density 0.0034 < film p5 0.0041']}"
+        ],
+        "mtime_diff_vs_media_s": 60.4,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13_music.json",
+        "mtime_utc": "2026-10-26T07:02:57Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 14,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 62.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0974"
+      ],
+      "notes": "Committed e3bec67c5; 0/7 FAIL (6 WARN), polish 0/7 (1 WARN), music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s2_neptune_v07",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4",
+      "media_exists": true,
+      "media_sha256": "0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d",
+      "media_mtime_utc": "2026-10-25T19:30:17Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s2_neptune_v07/picture_qa_owb_sa_s2_neptune_v07/picture_qa.json",
+        "mtime_utc": "2026-10-27T23:14:06Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0056 < film p5 0.0106']"
+        ],
+        "mtime_diff_vs_media_s": 186229.3,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s2_neptune_v07/polish_gate_owb_sa_s2_neptune_v07.json",
+        "mtime_utc": "2026-10-25T19:30:39Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 7, 'cut': 6, 't': 20.03, 'source': 'PIA01492 same forward cycle as the frames just before frame 0', 'why': ['low detail: edge density 0.0056 < film p5 0.0106']}"
+        ],
+        "mtime_diff_vs_media_s": 21.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s2_neptune_v07/music_gate_owb_sa_s2_neptune_v07.json",
+        "mtime_utc": "2026-10-25T19:30:40Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 1,
+        "warn_items": [
+          "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+        ],
+        "mtime_diff_vs_media_s": 22.9,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "447a06234 was v06; v07 built in J0943. picture_qa ran in J0982 (0/7 FAIL, 1 WARN) & polish/music sidecars committed in qa_shorts_v01"
+    },
+    {
+      "channel": "OWB",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s3_iss_sunrises_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s3_iss_sunrises_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "433ce60e09d4e6c31f7f44e501cc5de9baf710dc162186ca745f041d4ad48f77",
+      "media_mtime_utc": "2026-10-25T05:02:45Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s3_iss_sunrises_v04/picture_qa_owb_sa_s3_iss_sunrises_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T23:14:10Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 6,
+        "warn_count": 6,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscale not recorded in the cut list', 'low detail: edge density 0.0442 < film p5 0.0458']",
+          "?:['sharpness: upscale not recorded in the cut list']",
+          "?:['sharpness: upscale not recorded in the cut list']",
+          "?:['sharpness: upscale not recorded in the cut list']",
+          "?:['sharpness: upscale not recorded in the cut list']",
+          "?:['sharpness: upscale not recorded in the cut list']"
+        ],
+        "mtime_diff_vs_media_s": 238284.9,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s3_iss_sunrises_v04/polish_gate_owb_sa_s3_iss_sunrises_v04.json",
+        "mtime_utc": "2026-10-25T05:03:00Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 6,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 1, 'cut': 0, 't': 1.2, 'source': 'Sunrise To Sunset Aboard The ISS.ogv t=3.00s earth-limb crop', 'why': ['low detail: edge density 0.0442 < film p5 0.0458']}"
+        ],
+        "mtime_diff_vs_media_s": 15.0,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s3_iss_sunrises_v04/music_gate_owb_sa_s3_iss_sunrises_v04.json",
+        "mtime_utc": "2026-10-25T05:03:01Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 14,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 16.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 30e12e129; picture_qa ran in J0982: raw 0/6 FAIL (1 WARN low-detail); mapped upscale=2.96x flags 01_iss_16_1062s & 06_loop_tail (known NASA JSC 640x480 4:3->9:16 crop limit documented in meta, already uploaded/reviewed in J0916)"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s2_neptune_v07a",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07a.mp4",
+      "media_exists": true,
+      "media_sha256": "de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12",
+      "media_mtime_utc": "2026-10-27T00:13:08Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s2_neptune_v07a/picture_qa_owb_sa_s2_neptune_v07a/picture_qa.json",
+        "mtime_utc": "2026-10-27T23:14:08Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0056 < film p5 0.0106']"
+        ],
+        "mtime_diff_vs_media_s": 82860.1,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s2_neptune_v07a/polish_gate_owb_sa_s2_neptune_v07a.json",
+        "mtime_utc": "2026-10-27T00:15:35Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 7, 'cut': 6, 't': 20.03, 'source': 'PIA01492 same forward cycle as the frames just before frame 0', 'why': ['low detail: edge density 0.0056 < film p5 0.0106']}"
+        ],
+        "mtime_diff_vs_media_s": 147.6,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s2_neptune_v07a/music_gate_owb_sa_s2_neptune_v07a.json",
+        "mtime_utc": "2026-10-27T00:15:38Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 1,
+        "warn_items": [
+          "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+        ],
+        "mtime_diff_vs_media_s": 149.6,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 48c7a9ef8 (J0972); picture_qa ran in J0982 (0/7 FAIL, 1 WARN)"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:030",
+      "export_id": "030_apophis_short_v13a",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13a.mp4",
+      "media_exists": true,
+      "media_sha256": "898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3",
+      "media_mtime_utc": "2026-10-27T00:42:50Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/picture_qa_v13a/picture_qa.json",
+        "mtime_utc": "2026-10-27T00:43:04Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 6,
+        "failed_items": [],
+        "warn_items": [
+          "?:[\"kind of picture: 'NASA ISS aurora Earth limb (iss023e058455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS day-side Earth (iss034e048455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS aurora Earth limb (iss023e058455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS day-side Earth (iss034e048455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS aurora Earth limb (iss023e058455) with code-rendered asteroid Apophis' (render), look at it full size\"]",
+          "?:[\"kind of picture: 'NASA ISS aurora Earth limb (iss023e058455) with code-rendered asteroid Apophis' (render), look at it full size\", 'low detail: edge density 0.0034 < film p5 0.0041']"
+        ],
+        "mtime_diff_vs_media_s": 14.7,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13a_polish.json",
+        "mtime_utc": "2026-10-27T00:43:07Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 7,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 'aurora_rock_loop', 'cut': 6, 't': 18.32, 'source': 'aurora_rock_loop.mp4', 'why': ['low detail: edge density 0.0034 < film p5 0.0041']}"
+        ],
+        "mtime_diff_vs_media_s": 16.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13a_music.json",
+        "mtime_utc": "2026-10-27T00:43:09Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 14,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 18.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0974"
+      ],
+      "notes": "Committed 708b83ec9 (J0973); 0/7 FAIL (6 WARN), polish 0/7 (1 WARN), music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:029",
+      "export_id": "029_short_lift_die_young_10my_v01",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/lift_die_young_10my/06_Final-Exports/029_short_lift_die_young_10my_v01.mp4",
+      "media_exists": true,
+      "media_sha256": "dc6bd3ccf387ecfdcc4bfa8483dec5f94026662a50ac1717b1bb3fee85c532fc",
+      "media_mtime_utc": "2026-10-26T16:22:05Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/lift_die_young_10my/06_Final-Exports/029_short_lift_die_young_10my_v01_picture_qa/picture_qa.json",
+        "mtime_utc": "2026-10-26T16:22:28Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0075 < film p5 0.0139']"
+        ],
+        "mtime_diff_vs_media_s": 23.1,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/lift_die_young_10my/06_Final-Exports/029_short_lift_die_young_10my_v01_polish_gate.json",
+        "mtime_utc": "2026-10-26T16:22:24Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's02_sphere_jan', 'cut': 1, 't': 4.07, 'source': 'sphere_jan.jpg', 'why': ['low detail: edge density 0.0075 < film p5 0.0139']}"
+        ],
+        "mtime_diff_vs_media_s": 19.1,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/lift_die_young_10my/06_Final-Exports/029_short_lift_die_young_10my_v01_music_gate.json",
+        "mtime_utc": "2026-10-26T16:22:30Z",
+        "verdict": "PASS",
+        "bed": "betelgeuse_score_bed_v01.mp3",
+        "bpm": 75.0,
+        "brief_pace": "Pace: 68-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 25.7,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0979",
+        "J1042"
+      ],
+      "notes": "Committed b959bc2ff (J0979); 0/8 FAIL (4 WARN), polish 0/8, music PASS; J0979/J1042 review state preserved"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:029",
+      "export_id": "029_short_wed09_great_dimming_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "e0459b017ddafdf84229784c170285d4c5694507140523e92043ab2109b8f3c3",
+      "media_mtime_utc": "2026-10-27T15:42:14Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v04_picture_qa/picture_qa.json",
+        "mtime_utc": "2026-10-27T15:43:16Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 3,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0046 < film p5 0.0052']",
+          "?:[\"kind of picture: 'ESO artist's concept of a dust cloud dimming a red star' (artist), look at it full size\"]",
+          "?:[\"kind of picture: 'ESO artist's concept of a dust cloud dimming a red star' (artist), look at it full size\"]"
+        ],
+        "mtime_diff_vs_media_s": 62.3,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v04_polish_gate.json",
+        "mtime_utc": "2026-10-27T15:43:10Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's03_sphere_dec', 'cut': 2, 't': 6.93, 'source': 'sphere_dec.jpg', 'why': ['low detail: edge density 0.0046 < film p5 0.0052']}"
+        ],
+        "mtime_diff_vs_media_s": 56.7,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T15:42:34Z",
+        "verdict": "PASS",
+        "bed": "betelgeuse_score_bed_v01.mp3",
+        "bpm": 75.0,
+        "brief_pace": "Pace: 68-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 19.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0961"
+      ],
+      "notes": "Committed 70ba7f53c (J0993); 0/8 FAIL, polish 0/8, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:029",
+      "export_id": "029_short_fri11_opening_testA_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "ff4194857a027cfc5f93551ef398125276e6bcfb9cd3ce2fd18d8ee1134e2405",
+      "media_mtime_utc": "2026-10-27T15:43:27Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v04_picture_qa/picture_qa.json",
+        "mtime_utc": "2026-10-27T15:44:44Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 12,
+        "warn_count": 3,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.06x, may look soft']",
+          "?:['low detail: edge density 0.0163 < film p5 0.0178']",
+          "?:['sharpness: upscaled 2.30x, may look soft', 'low detail: luma std 14.51 < 18.0']"
+        ],
+        "mtime_diff_vs_media_s": 77.3,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v04_polish_gate.json",
+        "mtime_utc": "2026-10-27T15:44:42Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 12,
+        "warn_count": 2,
+        "warn_items": [
+          "?:{'row': 's04_sphere', 'cut': 3, 't': 10.35, 'source': 'sphere_jan.jpg', 'why': ['low detail: edge density 0.0163 < film p5 0.0178']}",
+          "?:{'row': 's07_alma', 'cut': 6, 't': 19.94, 'source': 'alma_orion_set.mp4', 'why': ['low detail: luma std 14.51 < 18.0']}"
+        ],
+        "mtime_diff_vs_media_s": 75.2,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T15:43:50Z",
+        "verdict": "PASS",
+        "bed": "betelgeuse_score_bed_v01.mp3",
+        "bpm": 75.0,
+        "brief_pace": "Pace: 68-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 23.1,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0961"
+      ],
+      "notes": "Committed 70ba7f53c (J0993); 0/7 FAIL, polish 0/7, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:029",
+      "export_id": "029_short_mon14_half_moon_daylight_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "31f362f4437b4ca56ec16b8abef1dce4c65fb5a5c6c7b5b4e2ba39229a33efd5",
+      "media_mtime_utc": "2026-10-27T15:44:56Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v04_picture_qa/picture_qa.json",
+        "mtime_utc": "2026-10-27T15:45:58Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0149 < film p5 0.0166']"
+        ],
+        "mtime_diff_vs_media_s": 61.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v04_polish_gate.json",
+        "mtime_utc": "2026-10-27T15:45:54Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's05_orion_flare', 'cut': 4, 't': 14.26, 'source': 'code_graphic_029_r25_orion_v01.mp4', 'why': ['low detail: edge density 0.0149 < film p5 0.0166']}"
+        ],
+        "mtime_diff_vs_media_s": 58.0,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T15:45:15Z",
+        "verdict": "PASS",
+        "bed": "betelgeuse_score_bed_v01.mp3",
+        "bpm": 75.0,
+        "brief_pace": "Pace: 68-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 18.7,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0961"
+      ],
+      "notes": "Committed 70ba7f53c (J0993); 0/8 FAIL, polish 0/8, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:025",
+      "export_id": "mon09_night_cold_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "ad52d7b9d65c264c6e458d6e216f07b5926f95cf6df4ed7c3d175dd47418f09f",
+      "media_mtime_utc": "2026-10-27T22:27:37Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T22:28:12Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 4,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.18x, may look soft']",
+          "?:['low detail: edge density 0.0029 < film p5 0.0070']",
+          "?:['sharpness: upscaled 2.18x, may look soft']",
+          "?:['sharpness: upscaled 2.18x, may look soft']"
+        ],
+        "mtime_diff_vs_media_s": 34.5,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-27T22:28:11Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's02', 'cut': 2, 't': 7.32, 'source': 'JPL-20200303-MSLf-0001.mp4', 'why': ['low detail: edge density 0.0029 < film p5 0.0070']}"
+        ],
+        "mtime_diff_vs_media_s": 33.3,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v04_music.txt",
+        "mtime_utc": "2026-10-27T22:28:09Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 13,
+        "raw_tail": "music gate PASS: mars-robot_score_bed_v02_full.mp3, 492.0 s, about 120.0 BPM, brief Pace: 60-72 BPM",
+        "mtime_diff_vs_media_s": 31.9,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0935"
+      ],
+      "notes": "Committed 58eb3dc78 (J0935); 0/12 FAIL, polish 0/12, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:026",
+      "export_id": "fri20_grapefruit_cherry_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "228cb06dfd37e3913d5957810dfefd928658885af70842b8cb6e624ebc22cc0b",
+      "media_mtime_utc": "2026-10-27T11:53:47Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T11:55:29Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 3,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.08x, may look soft']",
+          "?:['low detail: edge density 0.0128 < film p5 0.0246']",
+          "?:['sharpness: upscaled 2.08x, may look soft']"
+        ],
+        "mtime_diff_vs_media_s": 101.8,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-27T11:55:32Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's01_sdo_flare_limb', 'cut': 1, 't': 3.33, 'source': 'sdo_solar_flare.mp4', 'why': ['low detail: edge density 0.0128 < film p5 0.0246']}"
+        ],
+        "mtime_diff_vs_media_s": 104.7,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T11:55:35Z",
+        "verdict": "PASS",
+        "bed": "nearest-star_score_bed_v01_full.wav",
+        "bpm": 66.7,
+        "brief_pace": "Pace: 66-80 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 107.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Built on codex/j1032-assembly (61d031f35); 0/9 FAIL, polish 0/9, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:027",
+      "export_id": "earth_equator_weight_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "d35efd737ed081f8fbecb11abd16df66df21f1988e65d00d52dda27e6406e451",
+      "media_mtime_utc": "2026-10-27T10:49:19Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T11:22:38Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0446 < film p5 0.0532']"
+        ],
+        "mtime_diff_vs_media_s": 1998.7,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-27T11:22:41Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's04_gerst_iss_airliner', 'cut': 3, 't': 10.35, 'source': 'Gerst_Earth_timelapses_2017.webm', 'why': ['low detail: edge density 0.0446 < film p5 0.0532']}"
+        ],
+        "mtime_diff_vs_media_s": 2001.2,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T11:22:43Z",
+        "verdict": "PASS",
+        "bed": "earth-spin_score_take2_straight_v01j.wav",
+        "bpm": 80.0,
+        "brief_pace": "Pace: 76-88 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 2003.9,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Built on codex/j1032-assembly (61d031f35); 0/10 FAIL, polish 0/10, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:028",
+      "export_id": "028_short_mon30_comets_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "65e58aea2a202ef3c2d6235bf93049a0d207cb7896b5d5e52479e269b1d9bcad",
+      "media_mtime_utc": "2026-10-27T11:20:08Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T11:23:43Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 2,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: luma std 17.63 < 18.0']",
+          "?:['low detail: edge density 0.0246 < film p5 0.0249']"
+        ],
+        "mtime_diff_vs_media_s": 214.2,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-27T11:23:47Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 2,
+        "warn_items": [
+          "?:{'row': 's03_orion_paranal', 'cut': 2, 't': 7.47, 'source': 'orion_over_paranal.mp4', 'why': ['low detail: luma std 17.63 < 18.0']}",
+          "?:{'row': 's05_orion_vlt', 'cut': 4, 't': 14.0, 'source': 'orion_rise_vlt.mp4', 'why': ['low detail: edge density 0.0246 < film p5 0.0249']}"
+        ],
+        "mtime_diff_vs_media_s": 218.1,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/06_Final-Exports/028_short_mon30_comets_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T11:23:52Z",
+        "verdict": "PASS",
+        "bed": "gliese_score_bed_v03.mp3",
+        "bpm": 70.6,
+        "brief_pace": "Pace: 64-74 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 223.2,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Built on codex/j1032-assembly (61d031f35); 0/9 FAIL, polish 0/9, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:028",
+      "export_id": "028_short_wed02_opening_testA_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/06_Final-Exports/028_short_wed02_opening_testA_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "0eb18596d2d6fb0edb8e885782fa9bd94bfe4965fc882c9f70b6f3317de2de97",
+      "media_mtime_utc": "2026-10-27T11:20:36Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T11:24:41Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0228 < film p5 0.0243']"
+        ],
+        "mtime_diff_vs_media_s": 245.2,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-27T11:24:43Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's02_sdo_sun', 'cut': 1, 't': 3.98, 'source': 'sdo_solar_flare.mp4', 'why': ['low detail: edge density 0.0228 < film p5 0.0243']}"
+        ],
+        "mtime_diff_vs_media_s": 247.6,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/06_Final-Exports/028_short_wed02_opening_testA_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T11:24:47Z",
+        "verdict": "PASS",
+        "bed": "gliese_score_bed_v03.mp3",
+        "bpm": 70.6,
+        "brief_pace": "Pace: 64-74 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 250.9,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Built on codex/j1032-assembly (61d031f35); 0/8 FAIL, polish 0/8, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:028",
+      "export_id": "028_short_fri04_scale_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/028_short_fri04_scale_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "37fbe8b9ed33e0872aaac88db61dd5aeb989662bd9eb8a4fa2c7b7fc8740a97a",
+      "media_mtime_utc": "2026-10-27T11:21:02Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T11:25:41Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0264 < film p5 0.0289']"
+        ],
+        "mtime_diff_vs_media_s": 279.6,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-27T11:25:44Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's05_orion_paranal', 'cut': 4, 't': 14.13, 'source': 'orion_over_paranal.mp4', 'why': ['low detail: edge density 0.0264 < film p5 0.0289']}"
+        ],
+        "mtime_diff_vs_media_s": 282.1,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/028_short_fri04_scale_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T11:25:47Z",
+        "verdict": "PASS",
+        "bed": "gliese_score_bed_v03.mp3",
+        "bpm": 70.6,
+        "brief_pace": "Pace: 64-74 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 285.5,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Built on codex/j1032-assembly (61d031f35); 0/9 FAIL, polish 0/9, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "OWB:028",
+      "export_id": "028_short_lift_night_sky_35yr_v04",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "91b297a262c13af082b2cabea3b6e63ceee5686dd45d1ac7bed593e61fcfe412",
+      "media_mtime_utc": "2026-10-27T11:54:12Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/picture_qa_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T11:56:32Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0167 < film p5 0.0198']"
+        ],
+        "mtime_diff_vs_media_s": 139.2,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/polish_gate_v04.json",
+        "mtime_utc": "2026-10-27T11:56:35Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 8,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's05_alma_orion_set', 'cut': 4, 't': 14.5, 'source': 'alma_orion_set.mp4', 'why': ['low detail: edge density 0.0167 < film p5 0.0198']}"
+        ],
+        "mtime_diff_vs_media_s": 142.1,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v04_music_gate.json",
+        "mtime_utc": "2026-10-27T11:56:38Z",
+        "verdict": "PASS",
+        "bed": "gliese_score_bed_v03.mp3",
+        "bpm": 70.6,
+        "brief_pace": "Pace: 64-74 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 146.0,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0936",
+        "J1032"
+      ],
+      "notes": "Built on codex/j1032-assembly (61d031f35); 0/8 FAIL, polish 0/8, music PASS"
+    },
+    {
+      "channel": "OWB",
+      "window": "standalone_baseline_pack",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s1_mercury_v01",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01.mp4",
+      "media_exists": true,
+      "media_sha256": "590f4e693d5cbb170b95827363ceefd57640329a237b84600665b0d77a4180c7",
+      "media_mtime_utc": "2026-10-17T04:40:33Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s1_mercury_v01/picture_qa_owb_sa_s1_mercury_v01/picture_qa.json",
+        "mtime_utc": "2026-10-17T04:44:59Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 5,
+        "warn_count": 4,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.23x, may look soft']",
+          "?:['sharpness: upscaled 2.16x, may look soft']",
+          "?:['sharpness: upscaled 2.06x, may look soft']",
+          "?:['low detail: edge density 0.0831 < film p5 0.0833']"
+        ],
+        "mtime_diff_vs_media_s": 265.8,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s1_mercury_v01/polish_gate_owb_sa_s1_mercury_v01.json",
+        "mtime_utc": "2026-10-17T04:44:58Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 5,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's05_PIA11351', 'cut': 4, 't': 18.94, 'source': 'end_card_loop_PIA11351.jpg', 'why': ['low detail: edge density 0.0831 < film p5 0.0833']}"
+        ],
+        "mtime_diff_vs_media_s": 264.9,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s1_mercury_v01/music_gate_owb_sa_s1_mercury_v01.json",
+        "mtime_utc": "2026-10-27T23:14:46Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 1,
+        "warn_items": [
+          "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+        ],
+        "mtime_diff_vs_media_s": 930852.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Standalone baseline S1; music_gate added in J0982"
+    },
+    {
+      "channel": "OWB",
+      "window": "standalone_baseline_pack",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s4_uranus_v01",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4",
+      "media_exists": true,
+      "media_sha256": "0aec6e86525d26aefca9aebf687b33dc5b6e80cd65a4b8adea806b5d4e5bfaa5",
+      "media_mtime_utc": "2026-10-17T04:48:23Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s4_uranus_v01/picture_qa_owb_sa_s4_uranus_v01/picture_qa.json",
+        "mtime_utc": "2026-10-17T04:48:32Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 6,
+        "warn_count": 4,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0143 < film p5 0.0145']",
+          "?:['sharpness: upscaled 2.16x, may look soft']",
+          "?:['sharpness: upscaled 2.07x, may look soft']",
+          "?:['sharpness: upscaled 2.16x, may look soft']"
+        ],
+        "mtime_diff_vs_media_s": 9.0,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s4_uranus_v01/polish_gate_owb_sa_s4_uranus_v01.json",
+        "mtime_utc": "2026-10-17T04:48:31Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 6,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's01_webb_weic2310a', 'cut': 0, 't': 2.95, 'source': 'webb_weic2310a.jpg', 'why': ['low detail: edge density 0.0143 < film p5 0.0145']}"
+        ],
+        "mtime_diff_vs_media_s": 7.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s4_uranus_v01/music_gate_owb_sa_s4_uranus_v01.json",
+        "mtime_utc": "2026-10-27T23:14:53Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 1,
+        "warn_items": [
+          "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+        ],
+        "mtime_diff_vs_media_s": 930390.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J1007",
+        "J1008"
+      ],
+      "notes": "Standalone baseline S4; music_gate added in J0982"
+    },
+    {
+      "channel": "OWB",
+      "window": "standalone_baseline_pack",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s5_shooting_stars_v01",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s5_shooting_stars_v01.mp4",
+      "media_exists": true,
+      "media_sha256": "f21070efa7264706fc5bed8f058768da597f1686bf0dc5863cc5b673db60ead5",
+      "media_mtime_utc": "2026-10-12T22:54:37Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s5_shooting_stars_v01/picture_qa_owb_sa_s5_shooting_stars_v01/picture_qa.json",
+        "mtime_utc": "2026-10-17T03:57:38Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 5,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0903 < film p5 0.0905']"
+        ],
+        "mtime_diff_vs_media_s": 363781.1,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s5_shooting_stars_v01/polish_gate_owb_sa_s5_shooting_stars_v01.json",
+        "mtime_utc": "2026-10-17T03:57:39Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 5,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's01_NHQ202108110001', 'cut': 0, 't': 2.35, 'source': 'NHQ202108110001.jpg', 'why': ['low detail: edge density 0.0903 < film p5 0.0905']}"
+        ],
+        "mtime_diff_vs_media_s": 363782.5,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s5_shooting_stars_v01/music_gate_owb_sa_s5_shooting_stars_v01.json",
+        "mtime_utc": "2026-10-27T23:14:55Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 1,
+        "warn_items": [
+          "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+        ],
+        "mtime_diff_vs_media_s": 1297218.6,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J1007",
+        "J1008"
+      ],
+      "notes": "Standalone baseline S5; music_gate added in J0982"
+    },
+    {
+      "channel": "OWB",
+      "window": "standalone_baseline_pack",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s6_titan_v01",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v01.mp4",
+      "media_exists": true,
+      "media_sha256": "3f2f51d4f8ffd1adfc0e9c0e91c25839198860e49c3085367ea876f341d606a2",
+      "media_mtime_utc": "2026-10-17T04:43:45Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s6_titan_v01/picture_qa_owb_sa_s6_titan_v01/picture_qa.json",
+        "mtime_utc": "2026-10-17T04:45:08Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 5,
+        "warn_count": 4,
+        "failed_items": [],
+        "warn_items": [
+          "?:['sharpness: upscaled 2.25x, may look soft']",
+          "?:[\"kind of picture: 'Cassini View of Titan: Natural Color Composite' (composite), look at it full size\"]",
+          "?:['sharpness: upscaled 2.02x, may look soft']",
+          "?:['low detail: edge density 0.0002 < film p5 0.0010']"
+        ],
+        "mtime_diff_vs_media_s": 83.6,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s6_titan_v01/polish_gate_owb_sa_s6_titan_v01.json",
+        "mtime_utc": "2026-10-17T04:45:07Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 5,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's05_PIA14925', 'cut': 4, 't': 20.46, 'source': 'end_card_loop_PIA14925.jpg', 'why': ['low detail: edge density 0.0002 < film p5 0.0010']}"
+        ],
+        "mtime_diff_vs_media_s": 82.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s6_titan_v01/music_gate_owb_sa_s6_titan_v01.json",
+        "mtime_utc": "2026-10-27T23:14:58Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 1,
+        "warn_items": [
+          "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+        ],
+        "mtime_diff_vs_media_s": 930673.1,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J1007",
+        "J1008"
+      ],
+      "notes": "Standalone baseline S6; music_gate added in J0982"
+    },
+    {
+      "channel": "OWB",
+      "window": "standalone_baseline_pack",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s7_pluto_heart_v01",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v01.mp4",
+      "media_exists": true,
+      "media_sha256": "a3572604f0daa5cac6b82511f5fb4bb17ff551c85d0ff8d4365d0e4da5e0e36b",
+      "media_mtime_utc": "2026-10-12T23:01:19Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s7_pluto_heart_v01/picture_qa_owb_sa_s7_pluto_heart_v01/picture_qa.json",
+        "mtime_utc": "2026-10-17T03:57:43Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 5,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0252 < film p5 0.0522']"
+        ],
+        "mtime_diff_vs_media_s": 363384.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s7_pluto_heart_v01/polish_gate_owb_sa_s7_pluto_heart_v01.json",
+        "mtime_utc": "2026-10-17T03:57:45Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 5,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's04_PIA19708', 'cut': 3, 't': 16.52, 'source': 'PIA19708.jpg', 'why': ['low detail: edge density 0.0252 < film p5 0.0522']}"
+        ],
+        "mtime_diff_vs_media_s": 363385.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s7_pluto_heart_v01/music_gate_owb_sa_s7_pluto_heart_v01.json",
+        "mtime_utc": "2026-10-27T23:15:00Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 1,
+        "warn_items": [
+          "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+        ],
+        "mtime_diff_vs_media_s": 1296821.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J1007",
+        "J1008"
+      ],
+      "notes": "Standalone baseline S7; music_gate added in J0982"
+    },
+    {
+      "channel": "OWB",
+      "window": "standalone_baseline_pack",
+      "film": "OWB:SA",
+      "export_id": "owb_sa_s8_voyager1_v01",
+      "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s8_voyager1_v01.mp4",
+      "media_exists": true,
+      "media_sha256": "b8bb56f7ef664798bbf9115fa0ac1bbdd3d13f3ccb5c5fe44dd3c40e70064b66",
+      "media_mtime_utc": "2026-10-17T04:44:42Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s8_voyager1_v01/picture_qa_owb_sa_s8_voyager1_v01/picture_qa.json",
+        "mtime_utc": "2026-10-17T04:45:12Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 6,
+        "warn_count": 4,
+        "failed_items": [],
+        "warn_items": [
+          "?:[\"kind of picture: 'Artist Concept of Voyager' (artist), look at it full size\"]",
+          "?:[\"kind of picture: 'Voyager in Space Artist Concept' (artist), look at it full size\"]",
+          "?:['low detail: edge density 0.0211 < film p5 0.0211']",
+          "?:[\"kind of picture: 'End-card loop: Artist Concept of Voyager' (artist), look at it full size\"]"
+        ],
+        "mtime_diff_vs_media_s": 29.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s8_voyager1_v01/polish_gate_owb_sa_s8_voyager1_v01.json",
+        "mtime_utc": "2026-10-17T04:45:10Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 6,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's05_PIA17464', 'cut': 4, 't': 15.93, 'source': 'PIA17464.jpg', 'why': ['low detail: edge density 0.0211 < film p5 0.0211']}"
+        ],
+        "mtime_diff_vs_media_s": 28.1,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/owb_sa_s8_voyager1_v01/music_gate_owb_sa_s8_voyager1_v01.json",
+        "mtime_utc": "2026-10-27T23:15:02Z",
+        "verdict": "PASS",
+        "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+        "bpm": 120.0,
+        "brief_pace": "Pace: 84-96 BPM",
+        "failed_count": 0,
+        "warn_count": 1,
+        "warn_items": [
+          "pace: measured about 120.0 BPM against the brief's 84-96; Claude listens"
+        ],
+        "mtime_diff_vs_media_s": 930620.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J1007",
+        "J1008"
+      ],
+      "notes": "Standalone baseline S8; music_gate added in J0982"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:006",
+      "export_id": "hos_006_master_v06",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/master_v06/hos_006_master_v06.mp4",
+      "media_exists": true,
+      "media_sha256": "36c54e684b8a947c65298231268f9f031899df5a0d72ec38506f5e17b3d215ef",
+      "media_mtime_utc": "2026-10-24T23:29:39Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/master_v06/picture_qa.json",
+        "mtime_utc": "2026-10-24T23:30:51Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 96,
+        "warn_count": 5,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0269 < film p5 0.0270']",
+          "?:['low detail: edge density 0.0219 < film p5 0.0270']",
+          "?:['low detail: edge density 0.0244 < film p5 0.0270']",
+          "?:['low detail: edge density 0.0246 < film p5 0.0270']",
+          "?:['low detail: edge density 0.0237 < film p5 0.0270']"
+        ],
+        "mtime_diff_vs_media_s": 71.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/master_v06/polish_gate.json",
+        "mtime_utc": "2026-10-24T23:31:06Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 96,
+        "warn_count": 5,
+        "warn_items": [
+          "?:{'row': '15_desk_candle', 'cut': 25, 't': 137.98, 'source': '15_desk_candle_t1_above_desk_v03.mp4', 'why': ['low detail: edge density 0.0269 < film p5 0.0270']}",
+          "?:{'row': '01_soil_to_sky', 'cut': 33, 't': 181.19, 'source': '01_soil_to_sky_t1.mp4', 'why': ['low detail: edge density 0.0219 < film p5 0.0270']}",
+          "?:{'row': '09_bubbles_again', 'cut': 59, 't': 324.17, 'source': '05_bubbles_macro_t1_from4.500.mp4', 'why': ['low detail: edge density 0.0244 < film p5 0.0270']}",
+          "?:{'row': '05_sums_add_up', 'cut': 71, 't': 392.38, 'source': '05_sums_add_up_t1.mp4', 'why': ['low detail: edge density 0.0246 < film p5 0.0270']}",
+          "?:{'row': '23_carbon_atom', 'cut': 89, 't': 497.46, 'source': '23_carbon_atom_t1.mp4', 'why': ['low detail: edge density 0.0237 < film p5 0.0270']}"
+        ],
+        "mtime_diff_vs_media_s": 86.7,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/master_v06/music_gate.json",
+        "mtime_utc": "2026-10-24T23:30:36Z",
+        "verdict": "PASS",
+        "bed": "trees006_score_bed_v01.mp3",
+        "bpm": 66.7,
+        "brief_pace": "Pace: 60-72 BPM",
+        "failed_count": 0,
+        "warn_count": 0,
+        "warn_items": [],
+        "mtime_diff_vs_media_s": 56.5,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0958"
+      ],
+      "notes": "Committed 2c8cf194 (J0924); sha256 verified in SHA256_v06.json (hash_verified_in_pack)"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:007",
+      "export_id": "hos_007_master_v04",
+      "media_path": "/Volumes/data/mac-mini-archive/hos-007-vaccine/master_v04_J0925/hos_007_master_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "c7f62adbb241bf3fbfaa3a17929f05768eedcf89044cb2cc5ebd2971c163e810",
+      "media_mtime_utc": "2026-10-24T23:45:35Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/07_Edit-Project/master_v04_pack/picture_qa.json",
+        "mtime_utc": "2026-10-27T23:12:09Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 102,
+        "warn_count": 6,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0154 < film p5 0.0234']",
+          "?:['low detail: edge density 0.0233 < film p5 0.0234']",
+          "?:['low detail: edge density 0.0175 < film p5 0.0234']",
+          "?:['low detail: edge density 0.0224 < film p5 0.0234']",
+          "?:['low detail: edge density 0.0153 < film p5 0.0234']",
+          "?:['low detail: edge density 0.0186 < film p5 0.0234']"
+        ],
+        "mtime_diff_vs_media_s": 257193.9,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/07_Edit-Project/master_v04_pack/polish_gate.json",
+        "mtime_utc": "2026-10-27T23:12:09Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 102,
+        "warn_count": 6,
+        "warn_items": [
+          "?:{'row': '03_table_three', 'cut': 2, 't': 15.35, 'source': '03_table_three_t1.mp4', 'why': ['low detail: edge density 0.0154 < film p5 0.0234']}",
+          "?:{'row': '02b_well_again', 'cut': 22, 't': 117.6, 'source': '02b_well_again_t1.mp4', 'why': ['low detail: edge density 0.0233 < film p5 0.0234']}",
+          "?:{'row': '05_quill_writes', 'cut': 48, 't': 266.1, 'source': '05_quill_writes_t1.mp4', 'why': ['low detail: edge density 0.0175 < film p5 0.0234']}",
+          "?:{'row': '08b_uneasy_hand', 'cut': 53, 't': 290.77, 'source': '08b_uneasy_hand_t1.mp4', 'why': ['low detail: edge density 0.0224 < film p5 0.0234']}",
+          "?:{'row': '01_page_turns', 'cut': 57, 't': 310.65, 'source': '05_quill_writes_t1.mp4', 'why': ['low detail: edge density 0.0153 < film p5 0.0234']}",
+          "?:{'row': '07b_quill_again', 'cut': 65, 't': 346.65, 'source': '05_quill_writes_t1.mp4', 'why': ['low detail: edge density 0.0186 < film p5 0.0234']}"
+        ],
+        "mtime_diff_vs_media_s": 257193.9,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/07_Edit-Project/master_v04_pack/music_gate.json",
+        "mtime_utc": "2026-10-27T23:12:09Z",
+        "verdict": "PASS",
+        "bed": "vaccine_score_bed_v01.mp3",
+        "bpm": 60.0,
+        "brief_pace": "Pace: 58-64 BPM",
+        "failed_count": 0,
+        "warn_count": 0,
+        "warn_items": [],
+        "mtime_diff_vs_media_s": 257193.9,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0960"
+      ],
+      "notes": "Checked out from 8eafbbde onto main in J0982; sha256 c7f62adb... matches MASTER_META_v04.json (hash_verified_in_pack)"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:SA",
+      "export_id": "hos_sa_s4_curie_notebooks_v07",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/shorts_v01/hos_sa_s4_curie_notebooks_v07.mp4",
+      "media_exists": true,
+      "media_sha256": "38d643470b2d96210c55a5a9a43bdab6424ab403933f90bab54215e715958c64",
+      "media_mtime_utc": "2026-10-25T13:39:07Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/hos_sa_s4_curie_notebooks_v07/picture_qa_s4_curie_notebooks_v07/picture_qa.json",
+        "mtime_utc": "2026-10-25T13:40:56Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 11,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0163 < film p5 0.0167']"
+        ],
+        "mtime_diff_vs_media_s": 108.3,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/hos_sa_s4_curie_notebooks_v07/polish_gate_s4_curie_notebooks_v07.json",
+        "mtime_utc": "2026-10-25T13:40:56Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 11,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's11_loop', 'cut': 10, 't': 20.63, 'source': 'loop_span_02_wurzburg_lab_establishing_v03.mp4', 'why': ['low detail: edge density 0.0163 < film p5 0.0167']}"
+        ],
+        "mtime_diff_vs_media_s": 108.3,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/hos_sa_s4_curie_notebooks_v07/music_gate_s4_curie_notebooks_v07.json",
+        "mtime_utc": "2026-10-25T13:40:56Z",
+        "verdict": "PASS",
+        "bed": "hos_sa_s4_curie_notebooks_v07_bed.wav",
+        "bpm": 60.0,
+        "brief_pace": "Pace: 58-66 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 108.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed d0c0ee0a (J0934) at 25 Oct 13:40Z; 0/11 FAIL (1 WARN), polish 0/11 (1 WARN), music PASS"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:001",
+      "export_id": "hos_001_s11_curved_flask_v07",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/hos_001_s11_curved_flask_v07.mp4",
+      "media_exists": true,
+      "media_sha256": "5de76a824e885785909d3327f9230e9eef2a42b1943441e41546e97525adaaf5",
+      "media_mtime_utc": "2026-10-25T15:16:21Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/qa_s11_curved_flask_v07/picture_qa_s11_curved_flask_v07/picture_qa.json",
+        "mtime_utc": "2026-10-25T15:16:31Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0232 < film p5 0.0359']"
+        ],
+        "mtime_diff_vs_media_s": 9.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/qa_s11_curved_flask_v07/polish_gate_s11_curved_flask_v07.json",
+        "mtime_utc": "2026-10-25T15:16:30Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's05_passengers', 'cut': 4, 't': 7.8, 'source': '08_passengers_v20.mp4', 'why': ['low detail: edge density 0.0232 < film p5 0.0359']}"
+        ],
+        "mtime_diff_vs_media_s": 8.2,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/qa_s11_curved_flask_v07/music_gate_s11_curved_flask_v07.json",
+        "mtime_utc": "2026-10-25T15:16:32Z",
+        "verdict": "PASS",
+        "bed": "hos_001_s11_curved_flask_v07_bed.wav",
+        "bpm": 75.0,
+        "brief_pace": "Pace: 68-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 10.7,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed f3ca1918 (J0934); 0/10 FAIL"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:002",
+      "export_id": "hos_002_backcat_four_elements_v03",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/hos_002_backcat_four_elements_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "9340cae9cd5b71e4cd3ddea2f87123b5e6891a1d236a6ca17775d9d6daf4f5ef",
+      "media_mtime_utc": "2026-10-26T00:47:56Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/qa_four_elements_v03/picture_qa_four_elements_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T00:48:01Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0433 < film p5 0.0487']"
+        ],
+        "mtime_diff_vs_media_s": 5.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/qa_four_elements_v03/polish_gate_four_elements_v03.json",
+        "mtime_utc": "2026-10-26T00:48:00Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's02_For', 'cut': 1, 't': 3.54, 'source': '04_iron_salt_flame_air_v01.mp4', 'why': ['low detail: edge density 0.0433 < film p5 0.0487']}"
+        ],
+        "mtime_diff_vs_media_s": 4.2,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/qa_four_elements_v03/music_gate_four_elements_v03.json",
+        "mtime_utc": "2026-10-26T00:48:03Z",
+        "verdict": "PASS",
+        "bed": "hos_002_backcat_four_elements_v02_bed.wav",
+        "bpm": 63.2,
+        "brief_pace": "Pace: 60-68 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 7.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 5be95a4c (J0965); 0/10 FAIL"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:004",
+      "export_id": "hos_004_backcat_gold_foil_v03",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_backcat_gold_foil_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "f1cb7ec072c7148ab84d9049cb01976045564aea0e5214b9d2d8c6fa949a762e",
+      "media_mtime_utc": "2026-10-26T00:45:03Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_gold_foil_v03/picture_qa_gold_foil_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T00:45:07Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: luma std 15.28 < 18.0', 'low detail: edge density 0.007 < film p5 0.0140']"
+        ],
+        "mtime_diff_vs_media_s": 4.7,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_gold_foil_v03/polish_gate_gold_foil_v03.json",
+        "mtime_utc": "2026-10-26T00:45:06Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's06_Rutherford', 'cut': 5, 't': 15.53, 'source': '11_shell_tissue_v02.mp4', 'why': ['low detail: luma std 15.28 < 18.0', 'low detail: edge density 0.007 < film p5 0.0140']}"
+        ],
+        "mtime_diff_vs_media_s": 3.6,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_gold_foil_v03/music_gate_gold_foil_v03.json",
+        "mtime_utc": "2026-10-26T00:45:09Z",
+        "verdict": "PASS",
+        "bed": "hos_004_backcat_gold_foil_v02_bed.wav",
+        "bpm": 70.6,
+        "brief_pace": "Pace: 68-76 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 6.7,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 1ef65196 (J0965); 0/10 FAIL"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:004",
+      "export_id": "hos_004_s05_dalton_v03",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_s05_dalton_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "f93745e955586097293b7e37cad73c025ec99d79b0ee3b8e34bd955df6380edc",
+      "media_mtime_utc": "2026-10-26T13:14:18Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_s05_dalton_v03/picture_qa_s05_dalton_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T13:14:39Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0245 < film p5 0.0339']"
+        ],
+        "mtime_diff_vs_media_s": 21.6,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_s05_dalton_v03/polish_gate_s05_dalton_v03.json",
+        "mtime_utc": "2026-10-26T13:14:38Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's03_Hydrogen', 'cut': 2, 't': 6.56, 'source': '05_fixed_amounts_v01.mp4', 'why': ['low detail: edge density 0.0245 < film p5 0.0339']}"
+        ],
+        "mtime_diff_vs_media_s": 20.4,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_s05_dalton_v03/music_gate_s05_dalton_v03.json",
+        "mtime_utc": "2026-10-26T13:14:41Z",
+        "verdict": "PASS",
+        "bed": "hos_004_s05_dalton_v03_bed.wav",
+        "bpm": 66.7,
+        "brief_pace": "Pace: 62-70 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 23.6,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966"
+      ],
+      "notes": "Committed 2289aa16; superseded by v04 in J0966"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:005",
+      "export_id": "hos_005_s01_the_sum_v04",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s01_the_sum_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "e98ce5602b63e476ad630ada7821ed596e33b9f0f747e260c914448dbd3c7918",
+      "media_mtime_utc": "2026-10-25T11:58:02Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s01_the_sum_v04/picture_qa_s01_the_sum_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T23:30:18Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0234 < film p5 0.0237']"
+        ],
+        "mtime_diff_vs_media_s": 214336.1,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s01_the_sum_v04/polish_gate_s01_the_sum_v04.json",
+        "mtime_utc": "2026-10-27T23:30:17Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's10_loop', 'cut': 9, 't': 23.52, 'source': 'loop_span_01_pulse_wrist_t1.mp4', 'why': ['low detail: edge density 0.0234 < film p5 0.0237']}"
+        ],
+        "mtime_diff_vs_media_s": 214334.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s01_the_sum_v04/music_gate_s01_the_sum_v04.json",
+        "mtime_utc": "2026-10-27T23:30:21Z",
+        "verdict": "PASS",
+        "bed": "hos_005_s01_the_sum_v04_bed.wav",
+        "bpm": 70.6,
+        "brief_pace": "Pace: 60-68 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 214338.7,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 58eb2b01 (J0934); gates re-run in J0982 so all 3 gate timestamps postdate remuxed MP4; 0/10 FAIL"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:005",
+      "export_id": "hos_005_s02_the_tied_arm_v05",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s02_the_tied_arm_v05.mp4",
+      "media_exists": true,
+      "media_sha256": "c31fbb5c88f61b9bc2bbfae8b7a059b84b99575c5876066167ae22021ace70df",
+      "media_mtime_utc": "2026-10-26T00:50:45Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s02_tied_arm_v05/picture_qa_s02_tied_arm_v05/picture_qa.json",
+        "mtime_utc": "2026-10-26T00:50:50Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 12,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0133 < film p5 0.0141']"
+        ],
+        "mtime_diff_vs_media_s": 5.6,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s02_tied_arm_v05/polish_gate_s02_tied_arm_v05.json",
+        "mtime_utc": "2026-10-26T00:50:49Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 12,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's04_hand', 'cut': 3, 't': 7.38, 'source': '03_hand_pale_t4_graded_v04.mp4', 'why': ['low detail: edge density 0.0133 < film p5 0.0141']}"
+        ],
+        "mtime_diff_vs_media_s": 4.2,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s02_tied_arm_v05/music_gate_s02_tied_arm_v05.json",
+        "mtime_utc": "2026-10-26T00:50:54Z",
+        "verdict": "PASS",
+        "bed": "hos_005_s02_tied_arm_v04_bed.wav",
+        "bpm": 57.1,
+        "brief_pace": "Pace: 54-62 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 9.4,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 48c7a9ef (J0934); 0/12 FAIL"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:005",
+      "export_id": "hos_005_s03_never_saw_v03",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s03_never_saw_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "3646009fc65189e1c39ce457ca6e955e7de664b7b2773005b8d3855e27e96fde",
+      "media_mtime_utc": "2026-10-26T13:13:27Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s03_never_saw_v03/picture_qa_s03_never_saw_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T13:13:36Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0194 < film p5 0.0331']"
+        ],
+        "mtime_diff_vs_media_s": 8.6,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s03_never_saw_v03/polish_gate_s03_never_saw_v03.json",
+        "mtime_utc": "2026-10-26T13:13:34Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's03_but', 'cut': 2, 't': 5.85, 'source': '02_tiny_gaps_t1.mp4', 'why': ['low detail: edge density 0.0194 < film p5 0.0331']}"
+        ],
+        "mtime_diff_vs_media_s": 7.0,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s03_never_saw_v03/music_gate_s03_never_saw_v03.json",
+        "mtime_utc": "2026-10-26T13:13:39Z",
+        "verdict": "PASS",
+        "bed": "hos_005_s03_never_saw_v03_bed.wav",
+        "bpm": 63.2,
+        "brief_pace": "Pace: 58-66 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 11.3,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966"
+      ],
+      "notes": "Committed 8a7cb0ef; superseded by v04 in J0966"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:005",
+      "export_id": "hos_005_s04_galen_stove_v04",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s04_galen_stove_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "f15fb5ba050b8842c30fec4fde51a83eda7055bd8d5e39b018cf7aba9e769a8f",
+      "media_mtime_utc": "2026-10-25T14:42:10Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s04_galen_stove_v04/picture_qa_s04_galen_stove_v04/picture_qa.json",
+        "mtime_utc": "2026-10-25T14:42:20Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0407 < film p5 0.0410']"
+        ],
+        "mtime_diff_vs_media_s": 9.7,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s04_galen_stove_v04/polish_gate_s04_galen_stove_v04.json",
+        "mtime_utc": "2026-10-25T14:42:19Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's09_loop', 'cut': 8, 't': 20.98, 'source': 'loop_span_05_heart_stove_t1.mp4', 'why': ['low detail: edge density 0.0407 < film p5 0.0410']}"
+        ],
+        "mtime_diff_vs_media_s": 8.7,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s04_galen_stove_v04/music_gate_s04_galen_stove_v04.json",
+        "mtime_utc": "2026-10-25T14:42:21Z",
+        "verdict": "PASS",
+        "bed": "hos_005_s04_galen_stove_v04_bed.wav",
+        "bpm": null,
+        "brief_pace": "Pace: 62-78 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 11.0,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 8e3145ba (J0934); 0/10 FAIL"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:005",
+      "export_id": "hos_005_s05_valves_v03",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s05_valves_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "e3aa2c6cfc56d56b888aa244d1a708d7008c18f5a982f6dd5f74a3746140b580",
+      "media_mtime_utc": "2026-10-26T00:51:47Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s05_valves_v03/picture_qa_s05_valves_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T00:51:52Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0161 < film p5 0.0225']"
+        ],
+        "mtime_diff_vs_media_s": 5.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s05_valves_v03/polish_gate_s05_valves_v03.json",
+        "mtime_utc": "2026-10-26T00:51:51Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's08_towards', 'cut': 7, 't': 19.24, 'source': '10_slides_heart_t2.mp4', 'why': ['low detail: edge density 0.0161 < film p5 0.0225']}"
+        ],
+        "mtime_diff_vs_media_s": 4.3,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s05_valves_v03/music_gate_s05_valves_v03.json",
+        "mtime_utc": "2026-10-26T00:51:54Z",
+        "verdict": "PASS",
+        "bed": "hos_005_s05_valves_v02_bed.wav",
+        "bpm": 63.2,
+        "brief_pace": "Pace: 60-68 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 7.4,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [],
+      "notes": "Committed 4a08190b (J0965); 0/10 FAIL"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:007",
+      "export_id": "hos_007_s04_smallpox_test_v02",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s04_smallpox_test_v02.mp4",
+      "media_exists": true,
+      "media_sha256": "745de3f56a11b8e05cd3e046011079e3358578afdcad46b15e1d21a2e0c2baff",
+      "media_mtime_utc": "2026-10-26T07:57:45Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v02/picture_qa_s04_smallpox_test_v02/picture_qa.json",
+        "mtime_utc": "2026-10-26T07:58:07Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0162 < film p5 0.0228']"
+        ],
+        "mtime_diff_vs_media_s": 21.7,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v02/polish_gate_s04_smallpox_test_v02.json",
+        "mtime_utc": "2026-10-26T07:58:06Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's04_which', 'cut': 3, 't': 8.12, 'source': '06_mild_fever_t1.mp4', 'why': ['low detail: edge density 0.0162 < film p5 0.0228']}"
+        ],
+        "mtime_diff_vs_media_s": 20.5,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v02/music_gate_s04_smallpox_test_v02.json",
+        "mtime_utc": "2026-10-26T08:00:53Z",
+        "verdict": "PASS",
+        "bed": "hos_007_s04_smallpox_test_v02_bed.wav",
+        "bpm": 200.0,
+        "brief_pace": "Pace: 60-72 BPM",
+        "failed_count": 0,
+        "warn_count": 14,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 188.2,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966"
+      ],
+      "notes": "Committed a2b1f4c0; superseded by v03/v04 in J0966"
+    },
+    {
+      "channel": "HOS",
+      "window": "original_sweep_to_2026-10-26T15:09Z",
+      "film": "HOS:007",
+      "export_id": "hos_007_s05_vacca_jesty_v03",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s05_vacca_jesty_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "c94af4f919a47823d6de105092d4c910673572182ce70ef7d24b68149dd34263",
+      "media_mtime_utc": "2026-10-26T07:59:04Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v03/picture_qa_s05_vacca_jesty_v03/picture_qa.json",
+        "mtime_utc": "2026-10-27T23:30:24Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0256 < film p5 0.0268']"
+        ],
+        "mtime_diff_vs_media_s": 142280.0,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v03/polish_gate_s05_vacca_jesty_v03.json",
+        "mtime_utc": "2026-10-27T23:30:22Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's06_Latin', 'cut': 5, 't': 13.31, 'source': '05_quill_writes_t1.mp4', 'why': ['low detail: edge density 0.0256 < film p5 0.0268']}"
+        ],
+        "mtime_diff_vs_media_s": 142278.6,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v03/music_gate_s05_vacca_jesty_v03.json",
+        "mtime_utc": "2026-10-27T23:30:26Z",
+        "verdict": "PASS",
+        "bed": "hos_007_s05_vacca_jesty_v03_bed.wav",
+        "bpm": 200.0,
+        "brief_pace": "Pace: 60-72 BPM",
+        "failed_count": 0,
+        "warn_count": 14,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 142282.5,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966"
+      ],
+      "notes": "Gates re-run in J0982 so all 3 gate timestamps postdate MP4; superseded by v04/v05 in J0966"
+    },
+    {
+      "channel": "HOS",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "HOS:005",
+      "export_id": "hos_005_s03_never_saw_v04",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s03_never_saw_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "e1f862ba737acc4276dd676fc93181b41e729fce029fed57318bf43add3e9f63",
+      "media_mtime_utc": "2026-10-26T21:33:48Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s03_never_saw_v04/picture_qa_s03_never_saw_v04/picture_qa.json",
+        "mtime_utc": "2026-10-26T21:33:59Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0194 < film p5 0.0331']"
+        ],
+        "mtime_diff_vs_media_s": 10.8,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s03_never_saw_v04/polish_gate_s03_never_saw_v04.json",
+        "mtime_utc": "2026-10-26T21:33:58Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's03_but', 'cut': 2, 't': 5.85, 'source': '02_tiny_gaps_t1.mp4', 'why': ['low detail: edge density 0.0194 < film p5 0.0331']}"
+        ],
+        "mtime_diff_vs_media_s": 9.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/qa_s03_never_saw_v04/music_gate_s03_never_saw_v04.json",
+        "mtime_utc": "2026-10-26T21:34:01Z",
+        "verdict": "PASS",
+        "bed": "hos_005_s03_never_saw_v04_bed.wav",
+        "bpm": 63.2,
+        "brief_pace": "Pace: 58-66 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 12.9,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966",
+        "J1005"
+      ],
+      "notes": "Committed 70ba7f5 (J0966); 0/10 FAIL (1 WARN), polish 0/10 (1 WARN), music PASS"
+    },
+    {
+      "channel": "HOS",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "HOS:007",
+      "export_id": "hos_007_s04_smallpox_test_v03",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s04_smallpox_test_v03.mp4",
+      "media_exists": true,
+      "media_sha256": "858495ea7dcb28788f1277367dbd4d1d30e4c95ca95ffd230f1c1a82a0513ea5",
+      "media_mtime_utc": "2026-10-26T19:08:19Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v03/picture_qa_s04_smallpox_test_v03/picture_qa.json",
+        "mtime_utc": "2026-10-26T19:08:37Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0161 < film p5 0.0237']"
+        ],
+        "mtime_diff_vs_media_s": 18.4,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v03/polish_gate_s04_smallpox_test_v03.json",
+        "mtime_utc": "2026-10-26T19:08:36Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's04_which', 'cut': 3, 't': 8.19, 'source': '06_mild_fever_t1.mp4', 'why': ['low detail: edge density 0.0161 < film p5 0.0237']}"
+        ],
+        "mtime_diff_vs_media_s": 17.3,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v03/music_gate_s04_smallpox_test_v03.json",
+        "mtime_utc": "2026-10-26T19:08:39Z",
+        "verdict": "PASS",
+        "bed": "hos_007_s04_smallpox_test_v03_bed.wav",
+        "bpm": 63.2,
+        "brief_pace": "Pace: 60-72 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 20.4,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966",
+        "J1005"
+      ],
+      "notes": "Committed in J0966; superseded by v04"
+    },
+    {
+      "channel": "HOS",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "HOS:007",
+      "export_id": "hos_007_s04_smallpox_test_v04",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s04_smallpox_test_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "3ef3fa77375083622e8f8d6dee99f009cf60cbc27fc01f9d21857ba6b5b0c4e7",
+      "media_mtime_utc": "2026-10-27T22:42:13Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v04/picture_qa_s04_smallpox_test_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T22:43:01Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0161 < film p5 0.0237']"
+        ],
+        "mtime_diff_vs_media_s": 47.7,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v04/polish_gate_s04_smallpox_test_v04.json",
+        "mtime_utc": "2026-10-27T22:42:59Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's04_which', 'cut': 3, 't': 8.19, 'source': '06_mild_fever_t1.mp4', 'why': ['low detail: edge density 0.0161 < film p5 0.0237']}"
+        ],
+        "mtime_diff_vs_media_s": 45.8,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s04_smallpox_test_v04/music_gate_s04_smallpox_test_v04.json",
+        "mtime_utc": "2026-10-27T22:43:06Z",
+        "verdict": "PASS",
+        "bed": "hos_007_s04_smallpox_test_v04_bed.wav",
+        "bpm": 63.2,
+        "brief_pace": "Pace: 60-72 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 52.9,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966",
+        "J1005"
+      ],
+      "notes": "Committed in J0966/J1005; 0/10 FAIL (1 WARN), polish 0/10 (1 WARN), music PASS"
+    },
+    {
+      "channel": "HOS",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "HOS:007",
+      "export_id": "hos_007_s05_vacca_jesty_v04",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s05_vacca_jesty_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "7a3a736069e22450807e7d81976ebf99ffe4461aced9b83e0b0e4d3940b57080",
+      "media_mtime_utc": "2026-10-26T19:11:04Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v04/picture_qa_s05_vacca_jesty_v04/picture_qa.json",
+        "mtime_utc": "2026-10-26T19:11:24Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0255 < film p5 0.0278']"
+        ],
+        "mtime_diff_vs_media_s": 19.9,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v04/polish_gate_s05_vacca_jesty_v04.json",
+        "mtime_utc": "2026-10-26T19:11:23Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's06_Latin', 'cut': 5, 't': 13.61, 'source': '05_quill_writes_t1.mp4', 'why': ['low detail: edge density 0.0255 < film p5 0.0278']}"
+        ],
+        "mtime_diff_vs_media_s": 18.7,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v04/music_gate_s05_vacca_jesty_v04.json",
+        "mtime_utc": "2026-10-26T19:11:26Z",
+        "verdict": "PASS",
+        "bed": "hos_007_s05_vacca_jesty_v04_bed.wav",
+        "bpm": 66.7,
+        "brief_pace": "Pace: 60-72 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 22.1,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966",
+        "J1005"
+      ],
+      "notes": "Committed in J0966; superseded by v05"
+    },
+    {
+      "channel": "HOS",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "HOS:007",
+      "export_id": "hos_007_s05_vacca_jesty_v05",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s05_vacca_jesty_v05.mp4",
+      "media_exists": true,
+      "media_sha256": "e5ea76f012fb94c54c4a7224140d2d8ca342ea8c02a2fbdb30df17661f94f1ad",
+      "media_mtime_utc": "2026-10-26T20:38:29Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v05/picture_qa_s05_vacca_jesty_v05/picture_qa.json",
+        "mtime_utc": "2026-10-26T20:38:49Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.024 < film p5 0.0266']"
+        ],
+        "mtime_diff_vs_media_s": 19.8,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v05/polish_gate_s05_vacca_jesty_v05.json",
+        "mtime_utc": "2026-10-26T20:38:48Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 10,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's06_variolae', 'cut': 5, 't': 13.94, 'source': '05_quill_writes_t1.mp4', 'why': ['low detail: edge density 0.024 < film p5 0.0266']}"
+        ],
+        "mtime_diff_vs_media_s": 18.6,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/qa_s05_vacca_jesty_v05/music_gate_s05_vacca_jesty_v05.json",
+        "mtime_utc": "2026-10-26T20:38:51Z",
+        "verdict": "PASS",
+        "bed": "hos_007_s05_vacca_jesty_v05_bed.wav",
+        "bpm": 66.7,
+        "brief_pace": "Pace: 60-72 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 21.8,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966",
+        "J1005"
+      ],
+      "notes": "Committed in J0966/J1005; 0/10 FAIL (1 WARN), polish 0/10 (1 WARN), music PASS"
+    },
+    {
+      "channel": "HOS",
+      "window": "post_2026-10-26T15:09Z_revision",
+      "film": "HOS:004",
+      "export_id": "hos_004_s05_dalton_v04",
+      "media_path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_s05_dalton_v04.mp4",
+      "media_exists": true,
+      "media_sha256": "8ce07a60569707f689c7d90e06826493bf7a40e5c3c3a4a05216d6a48dbb082c",
+      "media_mtime_utc": "2026-10-27T22:42:47Z",
+      "picture_qa": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_s05_dalton_v04/picture_qa_s05_dalton_v04/picture_qa.json",
+        "mtime_utc": "2026-10-27T22:43:22Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "failed_items": [],
+        "warn_items": [
+          "?:['low detail: edge density 0.0245 < film p5 0.0339']"
+        ],
+        "mtime_diff_vs_media_s": 34.6,
+        "fresh_vs_media": true
+      },
+      "polish_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_s05_dalton_v04/polish_gate_s05_dalton_v04.json",
+        "mtime_utc": "2026-10-27T22:43:20Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "cuts_total": 9,
+        "warn_count": 1,
+        "warn_items": [
+          "?:{'row': 's03_Hydrogen', 'cut': 2, 't': 6.56, 'source': '05_fixed_amounts_v01.mp4', 'why': ['low detail: edge density 0.0245 < film p5 0.0339']}"
+        ],
+        "mtime_diff_vs_media_s": 33.2,
+        "fresh_vs_media": true
+      },
+      "music_gate": {
+        "path": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/qa_s05_dalton_v04/music_gate_s05_dalton_v04.json",
+        "mtime_utc": "2026-10-27T22:43:24Z",
+        "verdict": "PASS",
+        "bed": "hos_004_s05_dalton_v04_bed.wav",
+        "bpm": 66.7,
+        "brief_pace": "Pace: 62-70 BPM",
+        "failed_count": 0,
+        "warn_count": 13,
+        "warn_items": [
+          "reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others",
+          "reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others"
+        ],
+        "mtime_diff_vs_media_s": 37.1,
+        "fresh_vs_media": true
+      },
+      "review_or_fix_jobs": [
+        "J0966",
+        "J1005"
+      ],
+      "notes": "Committed in J0966/J1005; 0/9 FAIL (1 WARN), polish 0/9 (1 WARN), music PASS"
+    }
+  ]
+}
