@@ -86374,13 +86374,18 @@
           "at": "2026-10-27T14:10Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Resumed J0991 at step 1/4; building _assemble_029_shorts_v04.py from _assemble_029_shorts_v03.py"
+        },
+        {
+          "at": "2026-10-27T14:21Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified Wednesday opening candidate (19.4% max bg match, 0 seams) and AAC calibration; rendering v04 cuts"
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:029"
       ],
-      "remaining_action": "Build 029 Shorts v04 with distinct moving Wednesday opening and calibrated AAC loudness/true-peak on all three cuts",
+      "remaining_action": "Write _assemble_029_shorts_v04.py and render all three v04 Shorts",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -86391,11 +86396,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-27T14:10Z",
+        "at": "2026-10-27T14:21Z",
         "by": "gemini",
-        "note": "Resumed J0991 at step 1/4; building _assemble_029_shorts_v04.py from _assemble_029_shorts_v03.py"
+        "note": "Verified Wednesday opening candidate (19.4% max bg match, 0 seams) and AAC calibration; rendering v04 cuts"
       }
     },
     {
