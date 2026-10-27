@@ -88760,6 +88760,11 @@
           "at": "2026-10-27T09:01Z",
           "by": "codex",
           "what": "Linked finite J1025 handoff to OWB:026,OWB:027,OWB:028"
+        },
+        {
+          "at": "2026-10-27T09:02Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 5050 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Correct only S6 early brightening clause and card evidence inconsistencies",
@@ -88769,7 +88774,16 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1029",
