@@ -56,6 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1013 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1018 | any | claimed | codex | 2026-10-27T06:48Z | chief · J0936: Chief lock after J1017 exact-opening and scale-card corrections | 4d95c81e7 |
+| J1019 | mini | open (after J1018) | – | – | review · J0936 preparation: repair reported VO bridges and reconcile exact timing | b8c75920b |
 
 Recently finished:
 

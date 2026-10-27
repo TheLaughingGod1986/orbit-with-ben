@@ -1,5 +1,5 @@
 {
-  "next_id": 1019,
+  "next_id": 1020,
   "jobs": [
     {
       "id": "J0001",
@@ -87971,6 +87971,35 @@
         "by": "codex",
         "note": "FIX ruling committed b8c75920b; S5 card accepted, audio bridge arithmetic blocks assembly lock; verifier limitations doc"
       }
+    },
+    {
+      "id": "J1019",
+      "title": "J0936 preparation: repair reported VO bridges and reconcile exact timing",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read J1018 Chief FIX ruling b8c75920b on codex/j1018-review, PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/299 (read evidence directly; no merge authorisation). Produce preparation v05 only. Preserve v04 opening choices/evidence and S5 model-only card 1-CM SCALE / OVER 100 METERS at 16.180-19.160s. No final assembly before Chief lock.\n\n1. Resolve the actual audio defect identified by J1017: Gliese/710 source split 43.500-43.740 + 44.100-44.540 omits the reported spoken seven. Continuous 43.500-44.540 is 1.040s but current S3/S6 slots are 0.700s and S5 0.720s. It cannot fit unchanged at allowed tempo. Repair ordinary-Short source boundaries using existing recorded same words; preserve exact question text. Reclaim genuine pauses or use another complete recording of the same words, no speech above 1.06x. Update output word coordinates, shots/runtime/payoff maths, hashes, and regenerate affected question/full auditions. Named subject by 2.5s, ordinary 22-27s and 55-65 words, answer >=70%, all original gates. Keep S5 card 16.180-19.160 aligned to spoken model quantity by reconciling upstream edit; if impossible provide exact conflict for Chief, do not silently move it.\n2. Check reported body bridges near 15.220-17.200s (S3 and references in S5/S6). Resolve all identified defects, not only question WAVs. Supply real auditory judgement on the corrected auditions; hash/token validity is not prosody. Do not defer an unimplemented repair to final assembly.\n3. Preserve Test A unchanged VO/map and question/length exemptions. Diagnose J1017 reported bridge at 14.980-17.280s against source/audio. If defective, present a minimal separate repair proposal with timing consequences for next Chief; do not apply a Test A change in this job.\n4. Correct verifier scope labels: earliest-answer check verifies a supplied index/time, not semantics; source pixel/OCR logs are saved evidence, not freshly decoded by verifier; 2fps OCR is sampled text inspection, not every-frame OCR; source inspector default crops/grades/speeds are not always final transforms. State exact coverage and manual/unverified checks honestly. No need to redo unchanged clean evidence solely for wording.\n\nDeliver executable exact maps, preparation-only auditions and finite remaining decisions; do not redesign accepted openings or rewrite unaffected lines. Preserve every original J0936/c59 acceptance for eventual assembly: full gates, final AAC -14.0 +/-0.5 LUFS TP <=-1.6, full OCR/dark-run, matched loop, PHONE MP4, runtime sheets, UAT/NAS hashes. Keep J0936 blocked. GBP0; no full final render, spend, deletion, upload, retitle, privacy, Buffer or swap; no failed-cut watch cards. Ben swap OK after replacement PASS only. Target 1 Nov 20:00 London and individual 19 Nov/22 Nov/29 Nov/1 Dec/3 Dec/6 Dec 20:00 deadlines and v01 schedules/fallback unchanged. Link OWB:026,OWB:027,OWB:028. Do not reopen unrelated holds. PR298 remains unmerged.\n",
+      "ref": "b8c75920b",
+      "film": "",
+      "stage": "",
+      "after": "J1018",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-27T06:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T06:23Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair missing-syllable splices in preparation and regenerate exact auditions",
+      "due": "2026-11-01T20:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [],
