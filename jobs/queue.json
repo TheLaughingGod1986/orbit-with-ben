@@ -87192,10 +87192,10 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T18:29Z",
+      "eta": "2026-10-27T19:09Z",
       "created_by": "codex",
       "created_at": "2026-10-26T22:22Z",
       "result": "",
@@ -87219,6 +87219,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "remaining action: Find a suitable question opening in the existing voiceover"
+        },
+        {
+          "at": "2026-10-27T18:29Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "review",
@@ -87234,7 +87239,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "remaining_action": "Find a suitable question opening in the existing voiceover"
+      "remaining_action": "Find a suitable question opening in the existing voiceover",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T18:29Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1001",
