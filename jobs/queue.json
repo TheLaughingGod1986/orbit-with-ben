@@ -90696,13 +90696,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T18:41Z",
-      "eta": "2026-10-27T20:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T18:40Z",
-      "result": "",
+      "result": "Verified Jupiter -jmMROGoZCM NO FLOOR test Results ready in Studio CDP 9223 (evidence a32a3d3d2, jobs/readbacks/J1041.json, /Users/benjaminoats/_desk/j1041/-jmMROGoZCM_edit.png). Reopened J0275 for Jupiter -jmMROGoZCM ONLY (arm B NO SOLID GROUND? / T003 against live A; no Replace/delete). Preserved 21 Oct Saturn order: worker must leave 55AEQwvs36g untouched and re-hold J0275 via jobs.py wait until J0189 RINGS ARE FALLING completes. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-10-27T18:40Z",
@@ -90733,6 +90733,11 @@
           "at": "2026-10-27T18:48Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Reopened J0275 for Jupiter -jmMROGoZCM (NO FLOOR Results ready on CDP 9223); preserved 21 Oct Saturn J0189 order"
+        },
+        {
+          "at": "2026-10-27T18:48Z",
+          "by": "gemini",
+          "what": "done: Verified Jupiter -jmMROGoZCM NO FLOOR test Results ready in Studio CDP 9223 (evidence a32a3d3d2, jobs/readbacks/J1041.json, /Users/benjaminoats/_desk/j1041/-jmMROGoZCM_edit.png). Reopened J0275 for Jupiter -jmMROGoZCM ONLY (arm B NO SOLID GROUND? / T003 against live A; no Replace/delete). Preserved 21 Oct Saturn order: worker must leave 55AEQwvs36g untouched and re-hold J0275 via jobs.py wait until J0189 RINGS ARE FALLING completes. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Verification complete; J0275 reopened for Jupiter -jmMROGoZCM ONLY, Saturn waits on J0189",
@@ -90750,7 +90755,8 @@
       "taskKeys": [
         "OWB:020",
         "OWB:021"
-      ]
+      ],
+      "done_ref": "a32a3d3d2"
     },
     {
       "id": "J1042",
