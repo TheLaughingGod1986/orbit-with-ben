@@ -58,6 +58,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1008 | any | open (after J1007) | – | – | chief · J0915 Chief: lock recorded-VO plans and dispatch eligible local recuts |  |
 | J1009 | mini | open (after J0993) | – | – | for gemini · review · `gemini-argon` · J0936 v04 preparation FIX: reconcile scripts, splice arithmetic and six shot plans |  |
 | J1010 | any | open (after J1009) | – | – | chief · J0936: lock corrected v04 preparation after J1009 and dispatch assembly | fded21428 |
+| J1011 | any | open | – | – | chief · Chief: verify condition for J0189 |  |
+| J1012 | any | open | – | – | chief · Chief: verify condition for J0275 |  |
 
 Recently finished:
 
