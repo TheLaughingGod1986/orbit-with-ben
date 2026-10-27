@@ -79761,7 +79761,7 @@
       "ref": "6409202315",
       "film": "",
       "stage": "",
-      "after": "J1016",
+      "after": "J1018",
       "eta_min": 600,
       "status": "blocked",
       "by": "gemini",
@@ -79769,7 +79769,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
-      "result": "J0993 preparation FIX (fded21428): extra questions, inconsistent splice arithmetic, early answers, opening reuse and shot limits. Held on J1009 revision -> J1010 Chief lock/assembly dispatch; no approved replacement or Ben card. Target 1 Nov 20:00; original deadlines/v01 fallback unchanged.",
+      "result": "J1016 preparation FIX (4d95c81e7, PR 298): exact opening evidence, S5 scale-card timing and evidence coverage require corrections. J1017 correction -> J1018 Chief lock. No assembly or replacement PASS; v01 fallback and deadlines unchanged.",
       "history": [
         {
           "at": "2026-10-25T06:33Z",
@@ -80020,6 +80020,11 @@
           "at": "2026-10-27T04:05Z",
           "by": "codex",
           "what": "J1010 preparation FIX d63dc5898; dependency J1015 -> J1016; keep blocked, preserve worker 6/6, no replacement approval"
+        },
+        {
+          "at": "2026-10-27T05:27Z",
+          "by": "codex",
+          "what": "J1016 FIX: dependency J1016 -> J1018; remains blocked; existing worker progress preserved"
         }
       ],
       "kind": "video",
@@ -80047,7 +80052,7 @@
       "review_ref": "fded21428",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "Complete J1015 preparation corrections, then J1016 Chief lock before assembly and replacement review",
+      "remaining_action": "Correct preparation in J1017, then J1018 Chief lock before assembly and replacement review",
       "hold": {
         "type": "dependency",
         "condition": "Required predecessor J1016 must finish; exact preparation lock, assembly and replacement review remain required before any approval",
