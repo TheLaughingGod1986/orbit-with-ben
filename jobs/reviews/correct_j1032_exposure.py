@@ -39,11 +39,24 @@ def main():
         if rows:
             assert len(rows) == 1 and key.startswith(('S3_', 'S4_', 'S5_', 'S6_'))
             r = rows[0]
-            start = round(r['timeline_in'] * 30) / 30
+            start_frame = round(r['timeline_in'] * 30)
             end = round(r['timeline_out'] * 30) / 30
-            vf = f"eq=gamma=1.25:brightness=0.015:enable='gte(t,{start})*lt(t,{end})'"
+            if key == 'S6_028_X768qs8sNQs':
+                # Preserve exact first-cut transition at frame 74 (2.467s, scdet=10.757) by lifting frames 60..73 (2.000..2.433s, after 0..1.5s opening metrics) and starting s02_orion_paranal lift at frame 75 (2.500s).
+                start_frame += 1
+                start = start_frame / 30
+                vf = f"eq=brightness=0.03:enable='between(n,60,73)',eq=gamma=1.25:brightness=0.015:enable='gte(t,{start})*lt(t,{end})'"
+            else:
+                start = start_frame / 30
+                vf = f"eq=gamma=1.25:brightness=0.015:enable='gte(t,{start})*lt(t,{end})'"
             mod.ff(['-i', src, '-vf', vf, '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-c:a', 'copy', '-movflags', '+faststart', dest])
             changes.append({'row': r['row'], 'start': start, 'end': end, 'filter': vf})
+            mod.ff(['-i', dest, '-vf', 'scale=720:1280:flags=lanczos', '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-c:a', 'copy', d / (src.stem + '_PHONE.mp4')])
+        elif key == 'S1_026_A6TW_6CXhcs':
+            # Replace single stray internal flash at frame 70 (2.333s) of s00_sdo_gold_sun before s01 cut at frame 71 (2.367s).
+            fc = '[0:v]split[a][b];[a][b]freezeframes=first=70:last=70:replace=69[v]'
+            mod.ff(['-i', src, '-filter_complex', fc, '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-c:a', 'copy', '-movflags', '+faststart', dest])
+            changes.append({'row': 's00_sdo_gold_sun', 'frame': 70, 'replace': 69, 'filter_complex': fc})
             mod.ff(['-i', dest, '-vf', 'scale=720:1280:flags=lanczos', '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-c:a', 'copy', d / (src.stem + '_PHONE.mp4')])
         else:
             shutil.copy2(src, dest)

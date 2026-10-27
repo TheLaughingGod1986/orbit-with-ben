@@ -28,7 +28,8 @@ def main():
    if done.exists() and done.read_text().strip()!='0':raise RuntimeError('Finishing failed; inspect finish04 log')
    if time.monotonic()-started>1800:raise RuntimeError('Finishing checkpoint timed out')
    time.sleep(5)
-  if (d/'FINAL_MEASUREMENTS.json').exists():continue
+  if (d/'FINAL_MEASUREMENTS.json').exists():
+   summary[key]=json.loads((d/'FINAL_MEASUREMENTS.json').read_text());continue
   video=d/source.name;prep=json.loads((source.parent/'locked_preparation.json').read_text());rows=[];pool=[]
   for r in prep['shot_plan']:
    # Reuse follows the underlying plate, not the intermediate film container.
