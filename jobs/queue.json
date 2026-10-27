@@ -90566,9 +90566,14 @@
           "at": "2026-10-27T18:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T18:26Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J1040 verification of J0999 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Await J0998 (Ben OK on draft HOS PR #365) so npm run channel:audit exits 0 on HOS main",
+      "remaining_action": "Inspect J0999/J0998 history, HOS PR #365/#358, and Ben approval status",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-27T19:25:01+00:00",
@@ -90585,11 +90590,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-27T18:25Z",
+        "at": "2026-10-27T18:26Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J1040 verification of J0999 waiting condition"
+      },
+      "taskKeys": [
+        "HOS:099"
+      ]
     }
   ],
   "focus": [],
