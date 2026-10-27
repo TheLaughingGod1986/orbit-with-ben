@@ -87644,10 +87644,10 @@
       "stage": "",
       "after": "J1010",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T04:07Z",
+      "eta": "2026-10-27T05:07Z",
       "created_by": "codex",
       "created_at": "2026-10-27T04:04Z",
       "result": "",
@@ -87666,6 +87666,11 @@
           "at": "2026-10-27T04:07Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4755 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-27T04:07Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Correct six Short plans and supply reproducible opening and VO evidence",
