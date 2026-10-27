@@ -87179,13 +87179,13 @@
       "stage": "",
       "after": "J0993",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T01:54Z",
-      "eta": "2026-10-27T04:22Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T23:57Z",
-      "result": "",
+      "result": "Delivered J0936_v04_PREP_v02.md and J0936_v04_PREP_v02_maps.json (c5d4f61fa). Reconciled all 6 Short scripts, exact whitespace/spoken word counts, 1.00x subspan splice arithmetic (all internal pauses <=0.20s, gaps <=0.18s, payoffs >=70%), 6 distinct Frame-0 openings verified against library.json and batch pairwise (hamming>=16, bg<=0.157, mot>=10.94, f0d>=2.24, black<=11.95%), single teaching overlay plans (0 code graphics + 1 edit card each), and duration-matched clean source shot plans with midpoint pixel inspection. Ready for Chief lock in J1010. £0 spend, no renders or YouTube changes.",
       "history": [
         {
           "at": "2026-10-26T23:57Z",
@@ -87271,6 +87271,11 @@
           "at": "2026-10-27T03:57Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed J0936_v04_PREP_v02.md and J0936_v04_PREP_v02_maps.json (c5d4f61fa)"
+        },
+        {
+          "at": "2026-10-27T03:57Z",
+          "by": "gemini",
+          "what": "done: Delivered J0936_v04_PREP_v02.md and J0936_v04_PREP_v02_maps.json (c5d4f61fa). Reconciled all 6 Short scripts, exact whitespace/spoken word counts, 1.00x subspan splice arithmetic (all internal pauses <=0.20s, gaps <=0.18s, payoffs >=70%), 6 distinct Frame-0 openings verified against library.json and batch pairwise (hamming>=16, bg<=0.157, mot>=10.94, f0d>=2.24, black<=11.95%), single teaching overlay plans (0 code graphics + 1 edit card each), and duration-matched clean source shot plans with midpoint pixel inspection. Ready for Chief lock in J1010. £0 spend, no renders or YouTube changes."
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -87296,7 +87301,8 @@
         "at": "2026-10-27T03:57Z",
         "by": "gemini",
         "note": "Committed J0936_v04_PREP_v02.md and J0936_v04_PREP_v02_maps.json (c5d4f61fa)"
-      }
+      },
+      "done_ref": "c5d4f61fa"
     },
     {
       "id": "J1010",
