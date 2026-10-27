@@ -90551,13 +90551,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T18:25Z",
-      "eta": "2026-10-27T20:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T18:25Z",
-      "result": "",
+      "result": "Verified J0999 waiting condition: Studio/API work on uAomPaOBrM8 is complete and committed on HOS PR #358 (c26a79bd), but J0998 (draft HOS PR #365, commit a87cd56a) remains unmerged awaiting Ben's OK, and npm run channel:audit on HOS main (2a1a6e8b) still exits 1 (58 videos, 4 errors on uU12JA5rMWg pagination duplicate). Kept J0999 blocked via jobs.py wait --recheck J1040 with next verification at 2026-10-28T09:15:00Z.",
       "history": [
         {
           "at": "2026-10-27T18:25Z",
@@ -90593,6 +90593,11 @@
           "at": "2026-10-27T18:28Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Completed J1040 verification; J0999 remains blocked awaiting J0998 / Ben OK on draft HOS PR #365 (a87cd56a)"
+        },
+        {
+          "at": "2026-10-27T18:28Z",
+          "by": "gemini",
+          "what": "done: Verified J0999 waiting condition: Studio/API work on uAomPaOBrM8 is complete and committed on HOS PR #358 (c26a79bd), but J0998 (draft HOS PR #365, commit a87cd56a) remains unmerged awaiting Ben's OK, and npm run channel:audit on HOS main (2a1a6e8b) still exits 1 (58 videos, 4 errors on uU12JA5rMWg pagination duplicate). Kept J0999 blocked via jobs.py wait --recheck J1040 with next verification at 2026-10-28T09:15:00Z."
         }
       ],
       "remaining_action": "Verification complete; J0999 remains blocked on J0998 (Ben OK on draft HOS PR #365)",
