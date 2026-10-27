@@ -87651,6 +87651,11 @@
           "at": "2026-10-27T20:29Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Computed exact word-level timings, pause removals, atempo <=1.06 limits, and 22-27s duration checks for all 8 active candidates (006 Short_A, s04, s05, s06, 007 Short_B, 008 Short_C, 009 Short_B, 010 Short_A)"
+        },
+        {
+          "at": "2026-10-27T20:29Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Mapped all 54 Shorts rows across 008-010 (12 rows already on disk in code_graphics_v01 from J0329/J0342/J0348/J0383; 42 rows / 32 unique Flow Veo plates gated on J0863 and missing downstream mint/tranche-2/010-mint jobs)"
         }
       ],
       "kind": "review",
@@ -87663,13 +87668,13 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "remaining_action": "Complete 008-010 missing-media dependency map and prepare clean HOS worktree for J1004 review note",
+      "remaining_action": "Write J1004 disposition review note in a clean HOS worktree, run check_all.sh, and open PR",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
         "at": "2026-10-27T20:29Z",
         "by": "gemini",
-        "note": "Computed exact word-level timings, pause removals, atempo <=1.06 limits, and 22-27s duration checks for all 8 active can"
+        "note": "Mapped all 54 Shorts rows across 008-010 (12 rows already on disk in code_graphics_v01 from J0329/J0342/J0348/J0383; 42 "
       },
       "taskKeys": [
         "HOS:006",
