@@ -87745,13 +87745,13 @@
       "stage": "",
       "after": "J1015",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-27T05:09Z",
-      "eta": "2026-10-27T05:39Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-27T04:05Z",
-      "result": "",
+      "result": "Preparation FIX; ruling and verification in PR 298. Exact source/preview mismatch, S5 card ahead of spoken quantity, and incomplete inspection/prosody evidence prevent lock. J1017 focused corrections -> J1018 Chief lock; J0936 remains blocked after J1018, worker history preserved. No assembly, replacement PASS or watch cards. Original deadlines and v01 schedules unchanged; GBP0, nothing needed from Ben.",
       "history": [
         {
           "at": "2026-10-27T04:05Z",
@@ -87787,6 +87787,11 @@
           "at": "2026-10-27T05:27Z",
           "by": "codex",
           "what": "step 3 of 3 done: Existing ruling PR 298 retained; J1017 corrections and J1018 Chief lock confirmed; J0936 blocked after J1018 with worker history preserved"
+        },
+        {
+          "at": "2026-10-27T05:27Z",
+          "by": "codex",
+          "what": "done: Preparation FIX; ruling and verification in PR 298. Exact source/preview mismatch, S5 card ahead of spoken quantity, and incomplete inspection/prosody evidence prevent lock. J1017 focused corrections -> J1018 Chief lock; J0936 remains blocked after J1018, worker history preserved. No assembly, replacement PASS or watch cards. Original deadlines and v01 schedules unchanged; GBP0, nothing needed from Ben."
         }
       ],
       "remaining_action": "Report completed FIX review and correction handoff",
@@ -87803,7 +87808,8 @@
         "at": "2026-10-27T05:27Z",
         "by": "codex",
         "note": "Existing ruling PR 298 retained; J1017 corrections and J1018 Chief lock confirmed; J0936 blocked after J1018 with worker"
-      }
+      },
+      "done_ref": "4d95c81e7"
     },
     {
       "id": "J1017",
