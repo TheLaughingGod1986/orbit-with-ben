@@ -79761,7 +79761,7 @@
       "ref": "6409202315",
       "film": "",
       "stage": "",
-      "after": "J1010",
+      "after": "J1016",
       "eta_min": 600,
       "status": "blocked",
       "by": "gemini",
@@ -80015,6 +80015,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "condition recorded; next verification 2026-10-27T00:00:00Z"
+        },
+        {
+          "at": "2026-10-27T04:05Z",
+          "by": "codex",
+          "what": "J1010 preparation FIX d63dc5898; dependency J1015 -> J1016; keep blocked, preserve worker 6/6, no replacement approval"
         }
       ],
       "kind": "video",
@@ -80042,10 +80047,10 @@
       "review_ref": "fded21428",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "Build the corrected Short recuts after the plan is approved",
+      "remaining_action": "Complete J1015 preparation corrections, then J1016 Chief lock before assembly and replacement review",
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor J1010 must finish, then the elected Chief verifies the existing release conditions",
+        "condition": "Required predecessor J1016 must finish; exact preparation lock, assembly and replacement review remain required before any approval",
         "check_at": "2026-10-27T00:00:00Z"
       }
     },
@@ -87640,11 +87645,21 @@
           "at": "2026-10-27T04:04Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T04:05Z",
+          "by": "codex",
+          "what": "linked shared six-Short preparation to OWB:026,OWB:027,OWB:028"
         }
       ],
       "remaining_action": "Correct six Short plans and supply reproducible opening and VO evidence",
       "due": "2026-11-01T20:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1016",
@@ -87669,11 +87684,21 @@
           "at": "2026-10-27T04:05Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T04:05Z",
+          "by": "codex",
+          "what": "linked shared six-Short preparation to OWB:026,OWB:027,OWB:028"
         }
       ],
       "remaining_action": "Review corrected preparation and lock exact choices before assembly",
       "due": "2026-11-01T20:00:00Z",
-      "kind": "chief"
+      "kind": "chief",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
