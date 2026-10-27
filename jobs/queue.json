@@ -21605,13 +21605,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-27T18:57Z",
-      "eta": "2026-10-27T19:37Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:51Z",
-      "result": "",
+      "result": "Waiting for: J0189 (Saturn 55AEQwvs36g thumbnail-only Test & Compare A live vs B RINGS ARE FALLING) has been armed and completed its 14-day test in Studio; Jupiter -jmMROGoZCM T003 NO SOLID GROUND? is already armed and running (52e6ed35b)",
       "history": [
         {
           "at": "2026-10-15T07:51Z",
@@ -21857,10 +21857,20 @@
           "at": "2026-10-27T19:05Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Recorded T003 running on Jupiter -jmMROGoZCM in THUMB_LEDGER.json and jobs/readbacks/J0275.json (commit 52e6ed35b); placing J0275 on wait for Saturn 55AEQwvs36g until J0189 completes"
+        },
+        {
+          "at": "2026-10-27T19:06Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: J0189 (Saturn 55AEQwvs36g thumbnail-only Test & Compare A live vs B RINGS ARE FALLING) has been armed and completed its 14-day test in Studio; Jupiter -jmMROGoZCM T003 NO SOLID GROUND? is already armed and running (52e6ed35b)"
+        },
+        {
+          "at": "2026-10-27T19:06Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-10T19:05:00Z"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Arm Saturn 55AEQwvs36g Test & Compare B RINGS VANISHING? once J0189 RINGS ARE FALLING completes its 14-day test",
+      "remaining_action": "Arm approved Saturn 55AEQwvs36g Test & Compare B RINGS VANISHING? once J0189 RINGS ARE FALLING completes its 14-day test",
       "taskKeys": [
         "OWB:020",
         "OWB:021"
@@ -21871,6 +21881,11 @@
         "at": "2026-10-27T19:05Z",
         "by": "gemini",
         "note": "Recorded T003 running on Jupiter -jmMROGoZCM in THUMB_LEDGER.json and jobs/readbacks/J0275.json (commit 52e6ed35b); plac"
+      },
+      "hold": {
+        "type": "test",
+        "condition": "J0189 (Saturn 55AEQwvs36g thumbnail-only Test & Compare A live vs B RINGS ARE FALLING) has been armed and completed its 14-day test in Studio; Jupiter -jmMROGoZCM T003 NO SOLID GROUND? is already armed and running (52e6ed35b)",
+        "check_at": "2026-11-10T19:05:00Z"
       }
     },
     {
