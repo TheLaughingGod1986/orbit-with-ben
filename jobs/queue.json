@@ -86389,13 +86389,18 @@
           "at": "2026-10-27T14:49Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified real NOIRLab Orion + ESO SPHERE Betelgeuse Wednesday opening (23.2% max bg match, 21.7% on f17XCtUmN-g, 0.0 visor_frac, 0 seams); writing _assemble_029_shorts_v04.py and rendering v04 cuts"
+        },
+        {
+          "at": "2026-10-27T14:59Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Rendered all three v04 Shorts; all shipping gates PASS (-14.1 LUFS, -2.0/-2.1 dBTP, Wed09 max bg match 23.2%)"
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:029"
       ],
-      "remaining_action": "Write _assemble_029_shorts_v04.py, render all three v04 Shorts, run gates and deliver to UAT/NAS",
+      "remaining_action": "Update versioned v04 upload manifests, verify durable UAT/NAS SHA256s, write J0991 repair report and park for Chief review",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -86406,11 +86411,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-27T14:49Z",
+        "at": "2026-10-27T14:59Z",
         "by": "gemini",
-        "note": "Verified real NOIRLab Orion + ESO SPHERE Betelgeuse Wednesday opening (23.2% max bg match, 21.7% on f17XCtUmN-g, 0.0 vis"
+        "note": "Rendered all three v04 Shorts; all shipping gates PASS (-14.1 LUFS, -2.0/-2.1 dBTP, Wed09 max bg match 23.2%)"
       }
     },
     {
