@@ -1,5 +1,5 @@
 {
-  "next_id": 1046,
+  "next_id": 1047,
   "jobs": [
     {
       "id": "J0001",
@@ -83509,6 +83509,11 @@
           "at": "2026-10-27T21:32Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1005 multimodal audio+video QA complete (HOS PR #367 fb87779e, desk #180 6454017365). x_3L_IdYgEc v04 FULL PASS; 4WUs0beKn0A v05 pronunciation warnings RESOLVED PASS (minor prosodic note at 5.536s Jenner splice); -I_GHK-GcFs v03 (0.000-0.085s) and -sa2t7dAtCk v03 (0.000-0.060s) have pre-word VO start-trim bleeds with exact GBP0 60-75ms fade-in repair specs. Ready for elected Chief final decision."
+        },
+        {
+          "at": "2026-10-27T21:33Z",
+          "by": "relay",
+          "what": "condition verification queued: J1046"
         }
       ],
       "kind": "video",
@@ -83540,6 +83545,12 @@
         "at": "2026-10-27T21:32Z",
         "by": "gemini",
         "note": "Worker 5/5 preserved; J1005 audio+video QA complete (PR #367 fb87779e)"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-27T22:33:17+00:00",
+        "recheck_task": "J1046"
       }
     },
     {
@@ -91388,6 +91399,37 @@
         "HOS:010"
       ],
       "done_ref": "00b1e653"
+    },
+    {
+      "id": "J1046",
+      "title": "Chief: verify condition for J0966",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0966: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0966 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-27T21:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T21:33Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Review J1005 audio QA findings and make final Chief decision on the four HC Shorts",
+      "kind": "chief",
+      "recheck_of": "J0966",
+      "due": "2026-10-27T22:33:17+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
