@@ -79791,7 +79791,7 @@
       "ref": "6409202315",
       "film": "",
       "stage": "",
-      "after": "J1029",
+      "after": "J1032",
       "eta_min": 600,
       "status": "blocked",
       "by": "gemini",
@@ -80070,6 +80070,11 @@
           "at": "2026-10-27T09:01Z",
           "by": "codex",
           "what": "J1025 FIX eb5858e98 / PR302: dependency -> J1029; retain blocked state and 6/6 history; J1028 finite S6 correction"
+        },
+        {
+          "at": "2026-10-27T09:37Z",
+          "by": "codex",
+          "what": "J1029 preparation PASS dc4b9da01 / PR304; dependency -> J1032 assembly; replacement FIX/blocked and 6/6 history retained"
         }
       ],
       "kind": "video",
@@ -80094,14 +80099,21 @@
       },
       "for": "gemini",
       "escalated_at": "2026-10-26T16:26Z",
-      "review_ref": "eb5858e98",
+      "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "J1028 corrects S6 early brightening and card records; J1029 exact lock before assembly and replacement review",
+      "remaining_action": "J1032 assembles all six locked v07 replacements; then Chief replacement review before Ben swap approval",
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor J1029 must finish; exact preparation lock, assembly and replacement review before approval",
+        "condition": "J1032 assembly and all final-media gates must complete, then elected-Chief replacement review; no swap or watch cards before replacement PASS",
         "check_at": "2026-10-27T00:00:00Z"
+      },
+      "preparation_review": {
+        "by": "codex",
+        "verdict": "PASS",
+        "ref": "dc4b9da01",
+        "job": "J1029",
+        "assembly_job": "J1032"
       }
     },
     {
@@ -89073,11 +89085,21 @@
           "at": "2026-10-27T09:36Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T09:37Z",
+          "by": "codex",
+          "what": "J1029 preparation PASS dc4b9da01 / PR304; linked three films; one six-Short assembly job"
         }
       ],
       "remaining_action": "Assemble and gate six local replacements from locked v07 preparation",
       "due": "2026-11-01T20:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
