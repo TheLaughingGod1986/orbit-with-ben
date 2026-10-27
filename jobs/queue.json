@@ -87609,10 +87609,10 @@
       "stage": "",
       "after": "J0967",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T20:13Z",
+      "eta": "2026-10-27T21:13Z",
       "created_by": "codex",
       "created_at": "2026-10-26T22:33Z",
       "result": "",
@@ -87631,6 +87631,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "remaining action: Resolve the remaining opening and duration proposals"
+        },
+        {
+          "at": "2026-10-27T20:13Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "review",
@@ -87643,7 +87648,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "remaining_action": "Resolve the remaining opening and duration proposals"
+      "remaining_action": "Resolve the remaining opening and duration proposals",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T20:13Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1005",
