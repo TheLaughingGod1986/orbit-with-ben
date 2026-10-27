@@ -91212,13 +91212,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T20:42Z",
-      "eta": "2026-10-27T22:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-27T20:41Z",
-      "result": "",
+      "result": "Verified J0967 predecessor (e1bbcfb9) and J1004 5/5 paper disposition in HOS PR #366 (00b1e653): all 8 hook/duration candidates verified from raw word alignments at atempo <=1.06 with 0 word changes; e1bbcfb9 word-deletion splices rejected; 006 s04/s05/s06 and 007 Short_B shelved; 010 Short_A Option A1 (-0.260s pause trim + 1.06x S1 -> 2.849s <= 2.85s, 23.289s total, 0 words changed) or Option A2 (J0862) documented; all 54 008-010 Shorts rows mapped (12 code_graphics verified on disk from J0329/J0342/J0348/J0383; 42 flow_veo rows / 32 unique plates gated on J0863 and 3 downstream planning gaps). Kept J1004 blocked (wait --recheck J1045, check-at 2026-10-28T02:47:00Z) so completed 5/5 review is not re-queued as an open worker job and for non-author Chief merge of HOS PR #366 and post-reset J0862 (2026-10-30T00:05:00Z) / J0863 (2026-11-12T00:05:00Z) holds. GBP0.",
       "history": [
         {
           "at": "2026-10-27T20:41Z",
@@ -91259,6 +91259,11 @@
           "at": "2026-10-27T20:47Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Completed J1045 condition verification for J1004"
+        },
+        {
+          "at": "2026-10-27T20:47Z",
+          "by": "gemini",
+          "what": "done: Verified J0967 predecessor (e1bbcfb9) and J1004 5/5 paper disposition in HOS PR #366 (00b1e653): all 8 hook/duration candidates verified from raw word alignments at atempo <=1.06 with 0 word changes; e1bbcfb9 word-deletion splices rejected; 006 s04/s05/s06 and 007 Short_B shelved; 010 Short_A Option A1 (-0.260s pause trim + 1.06x S1 -> 2.849s <= 2.85s, 23.289s total, 0 words changed) or Option A2 (J0862) documented; all 54 008-010 Shorts rows mapped (12 code_graphics verified on disk from J0329/J0342/J0348/J0383; 42 flow_veo rows / 32 unique plates gated on J0863 and 3 downstream planning gaps). Kept J1004 blocked (wait --recheck J1045, check-at 2026-10-28T02:47:00Z) so completed 5/5 review is not re-queued as an open worker job and for non-author Chief merge of HOS PR #366 and post-reset J0862 (2026-10-30T00:05:00Z) / J0863 (2026-11-12T00:05:00Z) holds. GBP0."
         }
       ],
       "remaining_action": "Post J1045 completion report on studio thread",
@@ -91288,7 +91293,8 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "done_ref": "00b1e653"
     }
   ],
   "focus": [],
