@@ -89241,9 +89241,14 @@
           "at": "2026-10-27T10:24Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T10:25Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Read existing run03 exit markers; complete finish04 gates and fix remaining failures",
+      "remaining_action": "Verify locked inputs and disk space, build six replacements, then run final media gates",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -89261,11 +89266,10 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-10-27T10:22Z",
-        "by": "codex",
-        "note": "3a31dc241 corrects underlying-plate provenance; compile and S2 reuse checker pass. Existing J1032-run03 archive alive, n"
+        "step": 0,
+        "of": 4,
+        "at": "2026-10-27T10:25Z",
+        "by": "codex"
       }
     },
     {
