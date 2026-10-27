@@ -91610,10 +91610,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T22:49Z",
+      "eta": "2026-10-28T00:49Z",
       "created_by": "relay",
       "created_at": "2026-10-27T22:48Z",
       "result": "",
@@ -91627,6 +91627,11 @@
           "at": "2026-10-27T22:48Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-27T22:49Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Chief final review of all four HC masters before Ben swap OK",
@@ -91642,7 +91647,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T22:49Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
