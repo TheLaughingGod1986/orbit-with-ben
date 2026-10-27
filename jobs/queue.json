@@ -89908,19 +89908,24 @@
           "at": "2026-10-27T12:44Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1037; starting verification of J0989 waiting condition for OWB 030 v13a"
+        },
+        {
+          "at": "2026-10-27T12:49Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: PR296 at 84c3867 (no comments/reviews) and thread through 6442146604 have no exact-v13a listening PASS; Ben OK covers v13"
         }
       ],
-      "remaining_action": "Read J0989/J1035 history, PR296, thread, and v13a evidence",
+      "remaining_action": "Record wait condition on J0989 with recheck J1037 and report on studio thread",
       "kind": "chief",
       "recheck_of": "J0989",
       "due": "2026-10-27T13:36:13+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-27T12:44Z",
+        "at": "2026-10-27T12:49Z",
         "by": "gemini",
-        "note": "Claimed J1037; starting verification of J0989 waiting condition for OWB 030 v13a"
+        "note": "PR296 at 84c3867 (no comments/reviews) and thread through 6442146604 have no exact-v13a listening PASS; Ben OK covers v1"
       },
       "taskKeys": [
         "OWB:030"
