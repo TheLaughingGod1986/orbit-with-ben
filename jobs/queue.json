@@ -88884,9 +88884,14 @@
           "at": "2026-10-27T09:34Z",
           "by": "codex",
           "what": "step 1 of 3 done: S6 reconstructed from actual source; bytes match ae4a60d9; clause inspection and card reconciliation accepted"
+        },
+        {
+          "at": "2026-10-27T09:36Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Verifier PASS; preparation v07 exact lock accepted; full original brief copied into assembly handoff"
         }
       ],
-      "remaining_action": "Finish exact-lock checks and write assembly handoff",
+      "remaining_action": "Queue one assembly job and retain replacement review hold",
       "due": "2026-11-01T20:00:00Z",
       "kind": "chief",
       "taskKeys": [
@@ -88895,11 +88900,11 @@
         "OWB:028"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-27T09:34Z",
+        "at": "2026-10-27T09:36Z",
         "by": "codex",
-        "note": "S6 reconstructed from actual source; bytes match ae4a60d9; clause inspection and card reconciliation accepted"
+        "note": "Verifier PASS; preparation v07 exact lock accepted; full original brief copied into assembly handoff"
       }
     },
     {
