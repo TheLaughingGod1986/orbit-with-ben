@@ -89232,19 +89232,24 @@
           "at": "2026-10-27T10:10Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking original approvals, PR296 and current thread; this is verification only."
+        },
+        {
+          "at": "2026-10-27T10:10Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR296 at 84c3867 still leaves listening OPEN; comments/reviews empty; thread through 6439046012 has no v13a listening PASS. Ben approved v13 only."
         }
       ],
-      "remaining_action": "Verify whether exact v13a listening PASS has been recorded",
+      "remaining_action": "Record the unmet listening condition and retained retry for J0989",
       "kind": "chief",
       "recheck_of": "J0989",
       "due": "2026-10-27T11:09:03+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-27T10:10Z",
         "by": "codex",
-        "note": "Checking original approvals, PR296 and current thread; this is verification only."
+        "note": "PR296 at 84c3867 still leaves listening OPEN; comments/reviews empty; thread through 6439046012 has no v13a listening PA"
       },
       "taskKeys": [
         "OWB:030"
