@@ -87251,6 +87251,11 @@
           "at": "2026-10-27T03:25Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Verified 1.00x subspan splice arithmetic, whitespace/spoken word counts, <=0.20s pauses/gaps, and >=70% late payoffs across all 6 Shorts"
+        },
+        {
+          "at": "2026-10-27T03:30Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Verified 6 distinct Frame-0 openings across all 6 Shorts and library.json (all mot>=10.9, f0d>=2.2, visor<=0.0001, black<=12%, pairwise hamming>=20, bg_match<=0.157)"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -87269,13 +87274,13 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "remaining_action": "Verify pairwise Frame-0 opening uniqueness and complete shot plans for all 6 Shorts",
+      "remaining_action": "Run source-window pixel inspection and generate J0936_v04_PREP_v02_maps.json and J0936_v04_PREP_v02.md",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-10-27T03:25Z",
+        "at": "2026-10-27T03:30Z",
         "by": "gemini",
-        "note": "Verified 1.00x subspan splice arithmetic, whitespace/spoken word counts, <=0.20s pauses/gaps, and >=70% late payoffs acr"
+        "note": "Verified 6 distinct Frame-0 openings across all 6 Shorts and library.json (all mot>=10.9, f0d>=2.2, visor<=0.0001, black"
       }
     },
     {
