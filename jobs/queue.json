@@ -90786,9 +90786,14 @@
           "at": "2026-10-27T18:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T18:51Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1042; inspecting J0979 and J1000 evidence"
         }
       ],
-      "remaining_action": "Verify readiness: Build the next Short after its opening and plan are approved",
+      "remaining_action": "Verify J1000 outcome and rule on J0979",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-10-27T19:40:30+00:00",
@@ -90796,11 +90801,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-27T18:50Z",
+        "at": "2026-10-27T18:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1042; inspecting J0979 and J1000 evidence"
+      },
+      "taskKeys": [
+        "OWB:029"
+      ]
     }
   ],
   "focus": [],
