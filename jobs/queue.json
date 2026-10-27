@@ -81639,22 +81639,22 @@
     },
     {
       "id": "J0956",
-      "title": "OWB Neptune Short S2 oyRcrFTYyDY: swap to v07 (Private, Tue 27 Oct 11:30 London) after Ben's OK by Tue 27 Oct 10:30",
+      "title": "OWB Neptune Short S2 oyRcrFTYyDY: swap to v07a (Private, Tue 27 Oct 11:30 London) technical PASS; Ben v07 OK recorded",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief (Grok) 25 Oct 19:50 London, J0943 Neptune S2 v07 PASS (ruling c48, OWB #264 6402300872).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB standalone Short oyRcrFTYyDY (\"The Wind on Neptune Is Supersonic\", airs Tue 27 Oct 11:30 London) to re-cut v07 (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4, sha256 of master 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d) on the board or the thread. Deadline for that OK: Tue 27 Oct 10:30 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Tue 27 Oct 11:30 London as is. Hard stop: do not start the upload after 10:45 London on Tue 27 Oct; if both videos are not read back by 11:15 London, set the NEW v07 upload to private/unscheduled (not v01) so only v01 airs.\n\nAfter Ben's OK:\n1. Read back oyRcrFTYyDY (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Tue 27 Oct 11:30 London (2026-10-27T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07.mp4; repo copy 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from oyRcrFTYyDY. Captions en-GB from the v07 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set oyRcrFTYyDY (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names oyRcrFTYyDY to the new id); post the read-back as a [Chief] pointer on OWB #264.\nNever Public, no Replace, no delete, no force-push. GBP0.\n\nCHIEF RULING 26 Oct 08:21 London: Neptune oyRcrFTYyDY is marked standalone:true (J0216 test, to 20 Nov). Do NOT copy or set a Related video, and do NOT add a long link to the description, on the old or the new copy. If the swap copies Related from the old copy, skip that step and leave Related empty.\n\nACTING CHIEF RULING 26 Oct 2026 (Codex): Acting Chief Codex: FIX, no c61 waiver. Independently verified v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d, -14.1 LUFS / -1.4 dBTP. Ben OK 6411201182 confirmed. Authorized audio-only v07a correction in J0988; J0956 remains blocked until that job has fresh passing gates and elected Chief sign-off naming the new hash. Existing approval is not silently transferred to changed bytes. Review due 2026-10-27 10:30 London; if not ready cancel swap and retain scheduled v01. No upload after 10:45; read-backs by 11:15. No Related/long link. No YouTube changes or spend in this review.\nOriginal v07 Ben approval already received; the earlier waiting-for-Ben wording is historical. The active hold is technical correction plus new-hash Chief acceptance. Keep original swap progress 1/4; review completion does not mean delivery completed.",
+      "body": "ACTIVE DELIVERY RULING — 27 Oct 2026, acting Chief Codex: J0988 technical PASS; execute the authorized swap using v07a, not the historical v07 bytes below. Master OWB UAT/standalone_shorts_v07a/owb_sa_s2_neptune_v07a.mp4 SHA256 de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12; PHONE SHA256 f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69. iCloud and NAS verified. Ben approval 6411201182 applies to creative v07; Codex separately accepts this audio-only technical correction. All current gates still required. J0956 progress remains 1/4, dependency J0988 is now satisfied, and no new Ben approval is required. No Related/long link. Do not start upload after 27 Oct 10:45 London; both read-backs by 11:15 or new copy private/unscheduled and original v01 retained for 11:30. Report: jobs/reviews/J0988_CODEX_TECHNICAL_PASS_2026-10-27.md.\n\nHISTORICAL BRIEF AND PRIOR RULINGS (superseded only as to active file/hash/version and resolved technical hold):\n\nChief (Grok) 25 Oct 19:50 London, J0943 Neptune S2 v07 PASS (ruling c48, OWB #264 6402300872).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB standalone Short oyRcrFTYyDY (\"The Wind on Neptune Is Supersonic\", airs Tue 27 Oct 11:30 London) to re-cut v07 (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4, sha256 of master 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d) on the board or the thread. Deadline for that OK: Tue 27 Oct 10:30 London. If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v01 airs Tue 27 Oct 11:30 London as is. Hard stop: do not start the upload after 10:45 London on Tue 27 Oct; if both videos are not read back by 11:15 London, set the NEW v07 upload to private/unscheduled (not v01) so only v01 airs.\n\nAfter Ben's OK:\n1. Read back oyRcrFTYyDY (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Tue 27 Oct 11:30 London (2026-10-27T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07.mp4; repo copy 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4), then upload it to OWB as a new Private video with the same publishAt. Copy title, description, tags, cover and Related video from oyRcrFTYyDY. Captions en-GB from the v07 meta spoken line.\n3. Only after step 2 reads back Private + correct publishAt: set oyRcrFTYyDY (v01) to private and unscheduled. Nothing deleted, no Replace.\n4. Read back both videos; record in OWB UPLOADS.json (and repoint any job, end screen, Related link or Buffer follow-up that names oyRcrFTYyDY to the new id); post the read-back as a [Chief] pointer on OWB #264.\nNever Public, no Replace, no delete, no force-push. GBP0.\n\nCHIEF RULING 26 Oct 08:21 London: Neptune oyRcrFTYyDY is marked standalone:true (J0216 test, to 20 Nov). Do NOT copy or set a Related video, and do NOT add a long link to the description, on the old or the new copy. If the swap copies Related from the old copy, skip that step and leave Related empty.\n\nACTING CHIEF RULING 26 Oct 2026 (Codex): Acting Chief Codex: FIX, no c61 waiver. Independently verified v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d, -14.1 LUFS / -1.4 dBTP. Ben OK 6411201182 confirmed. Authorized audio-only v07a correction in J0988; J0956 remains blocked until that job has fresh passing gates and elected Chief sign-off naming the new hash. Existing approval is not silently transferred to changed bytes. Review due 2026-10-27 10:30 London; if not ready cancel swap and retain scheduled v01. No upload after 10:45; read-backs by 11:15. No Related/long link. No YouTube changes or spend in this review.\nOriginal v07 Ben approval already received; the earlier waiting-for-Ben wording is historical. The active hold is technical correction plus new-hash Chief acceptance. Keep original swap progress 1/4; review completion does not mean delivery completed.",
       "ref": "6402300872",
       "film": "",
       "stage": "",
       "after": "J0988",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-26T09:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T19:44Z",
-      "result": "Acting Chief Codex: FIX, no c61 waiver. Independently verified v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d, -14.1 LUFS / -1.4 dBTP. Ben OK 6411201182 confirmed. Authorized audio-only v07a correction in J0988; J0956 remains blocked until that job has fresh passing gates and elected Chief sign-off naming the new hash. Existing approval is not silently transferred to changed bytes. Review due 2026-10-27 10:30 London; if not ready cancel swap and retain scheduled v01. No upload after 10:45; read-backs by 11:15. No Related/long link. No YouTube changes or spend in this review.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T19:44Z",
@@ -81715,14 +81715,24 @@
           "at": "2026-10-26T21:41Z",
           "by": "codex",
           "what": "Chief review resolved: Acting Chief Codex: FIX, no c61 waiver. Independently verified v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d, -14.1 LUFS / -1.4 dBTP. Ben OK 6411201182 confirmed. Authorized audio-only v07a correction in J0988; J0956 remains blocked until that job has fresh passing gates and elected Chief sign-off naming the new hash. Existing approval is not silently transferred to changed bytes. Review due 2026-10-27 10:30 London; if not ready cancel swap and retain scheduled v01. No upload after 10:45; read-backs by 11:15. No Related/long link. No YouTube changes or spend in this review."
+        },
+        {
+          "at": "2026-10-27T00:23Z",
+          "by": "codex",
+          "what": "reopened: J0988 technical PASS: v07a bytes authorized; proceed with the existing swap and all original hard stops. jobs/reviews/J0988_CODEX_TECHNICAL_PASS_2026-10-27.md"
+        },
+        {
+          "at": "2026-10-27T00:23Z",
+          "by": "codex",
+          "what": "Delivery provenance updated to v07a technical acceptance; original Ben v07 approval retained in creative_approval_v07. Original swap progress 1/4 retained."
         }
       ],
       "kind": "studio",
       "urgent": 6,
       "approved_from": {
-        "what": "swap the Neptune Short \"The Wind on Neptune Is Supersonic\" (oyRcrFTYyDY, airs Tue 27 Oct 11:30) to re-cut v07",
-        "file": "OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4",
-        "version": "v07",
+        "what": "deliver the Ben-approved Neptune S2 v07 swap using the audio-only v07a correction accepted by acting Chief Codex",
+        "file": "OWB UAT/standalone_shorts_v07a/owb_sa_s2_neptune_v07a_PHONE.mp4",
+        "version": "v07a",
         "airs": "2026-10-27T11:30Z",
         "title": "Neptune Short S2 re-cut v07 (swap)",
         "number": "S2",
@@ -81730,7 +81740,21 @@
         "channel": "OWB",
         "job": "J0956",
         "okAt": "2026-10-26T08:06Z",
-        "okRef": "6411201182"
+        "okRef": "6411201182",
+        "creative_approval_version": "v07",
+        "creative_approval_file": "OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4",
+        "technical_acceptance": {
+          "version": "v07a",
+          "file": "OWB UAT/standalone_shorts_v07a/owb_sa_s2_neptune_v07a_PHONE.mp4",
+          "master_file": "OWB UAT/standalone_shorts_v07a/owb_sa_s2_neptune_v07a.mp4",
+          "master_sha256": "de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12",
+          "phone_sha256": "f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69",
+          "accepted_by": "codex",
+          "accepted_at": "2026-10-27T00:23Z",
+          "report": "jobs/reviews/J0988_CODEX_TECHNICAL_PASS_2026-10-27.md",
+          "creative_approval_ref": "6411201182",
+          "creative_approval_version": "v07"
+        }
       },
       "awaits_was": {
         "what": "swap the Neptune Short \"The Wind on Neptune Is Supersonic\" (oyRcrFTYyDY, airs Tue 27 Oct 11:30) to re-cut v07",
@@ -81743,6 +81767,7 @@
         "number": "S2",
         "type": "short"
       },
+      "escalated_at": "2026-10-26T12:15Z",
       "progress": {
         "step": 1,
         "of": 4,
@@ -81750,7 +81775,31 @@
         "by": "cursor",
         "note": "sha 0919db03 matches. oyRcrFTYyDY private, publishAt 2026-10-27T11:30:00Z. Gate FAIL true peak -1.4 dBTP."
       },
-      "escalated_at": "2026-10-26T12:15Z"
+      "creative_approval_v07": {
+        "what": "swap the Neptune Short \"The Wind on Neptune Is Supersonic\" (oyRcrFTYyDY, airs Tue 27 Oct 11:30) to re-cut v07",
+        "file": "OWB UAT/standalone_shorts_v07/owb_sa_s2_neptune_v07_PHONE.mp4",
+        "version": "v07",
+        "airs": "2026-10-27T11:30Z",
+        "title": "Neptune Short S2 re-cut v07 (swap)",
+        "number": "S2",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J0956",
+        "okAt": "2026-10-26T08:06Z",
+        "okRef": "6411201182"
+      },
+      "technical_delivery": {
+        "version": "v07a",
+        "file": "OWB UAT/standalone_shorts_v07a/owb_sa_s2_neptune_v07a_PHONE.mp4",
+        "master_file": "OWB UAT/standalone_shorts_v07a/owb_sa_s2_neptune_v07a.mp4",
+        "master_sha256": "de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12",
+        "phone_sha256": "f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69",
+        "accepted_by": "codex",
+        "accepted_at": "2026-10-27T00:23Z",
+        "report": "jobs/reviews/J0988_CODEX_TECHNICAL_PASS_2026-10-27.md",
+        "creative_approval_ref": "6411201182",
+        "creative_approval_version": "v07"
+      }
     },
     {
       "id": "J0957",
@@ -85325,13 +85374,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-26T23:59Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T21:41Z",
-      "result": "parked for Chief: Neptune S2 v07a audio-only c61 correction ready for elected Chief technical sign-off (before Tue 27 Oct 10:30 London). Master owb_sa_s2_neptune_v07a.mp4 sha256 de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12 (-14.1 LUFS / -1.8 dBTP); PHONE owb_sa_s2_neptune_v07a_PHONE.mp4 sha256 f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69 (-14.1 LUFS / -1.8 dBTP). Video stream-copied (618/618 framemd5 identical to v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d). All fresh gates PASS (commit 91019833c); UAT iCloud & NAS standalone_shorts_v07a verified.",
+      "result": "Acting Chief Codex technical PASS: v07a master de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12; PHONE f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69. Independent 618/618 identical picture frames, -14.1 LUFS/-1.8 dBTP both, zero premix lag, fresh open gate PASS and 11/11 manifest entries verified on iCloud and NAS. Ben 6411201182 remains creative v07 approval; Codex accepts new technical-only bytes. Evidence: jobs/reviews/J0988_CODEX_TECHNICAL_PASS_2026-10-27.md. J0956 reopened for immediate Studio worker delivery, progress 1/4 retained, dependency J0988 satisfied; no upload after 27 Oct 10:45 London, read-backs by 11:15 or retain v01. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-10-26T21:41Z",
@@ -85377,6 +85426,11 @@
           "at": "2026-10-27T00:17Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Neptune S2 v07a audio-only c61 correction ready for elected Chief technical sign-off (before Tue 27 Oct 10:30 London). Master owb_sa_s2_neptune_v07a.mp4 sha256 de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12 (-14.1 LUFS / -1.8 dBTP); PHONE owb_sa_s2_neptune_v07a_PHONE.mp4 sha256 f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69 (-14.1 LUFS / -1.8 dBTP). Video stream-copied (618/618 framemd5 identical to v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d). All fresh gates PASS (commit 91019833c); UAT iCloud & NAS standalone_shorts_v07a verified."
+        },
+        {
+          "at": "2026-10-27T00:23Z",
+          "by": "codex",
+          "what": "Chief review resolved: Acting Chief Codex technical PASS: v07a master de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12; PHONE f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69. Independent 618/618 identical picture frames, -14.1 LUFS/-1.8 dBTP both, zero premix lag, fresh open gate PASS and 11/11 manifest entries verified on iCloud and NAS. Ben 6411201182 remains creative v07 approval; Codex accepts new technical-only bytes. Evidence: jobs/reviews/J0988_CODEX_TECHNICAL_PASS_2026-10-27.md. J0956 reopened for immediate Studio worker delivery, progress 1/4 retained, dependency J0988 satisfied; no upload after 27 Oct 10:45 London, read-backs by 11:15 or retain v01. No YouTube changes or spend."
         }
       ],
       "kind": "assembly",
@@ -85388,6 +85442,15 @@
         "at": "2026-10-27T00:17Z",
         "by": "gemini",
         "note": "Step 4 done: copied and verified v07a master, PHONE, sheets, meta, gate reports and MANIFEST.sha256 to iCloud OWB UAT/st"
+      },
+      "worker_result": "parked for Chief: Neptune S2 v07a audio-only c61 correction ready for elected Chief technical sign-off (before Tue 27 Oct 10:30 London). Master owb_sa_s2_neptune_v07a.mp4 sha256 de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12 (-14.1 LUFS / -1.8 dBTP); PHONE owb_sa_s2_neptune_v07a_PHONE.mp4 sha256 f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69 (-14.1 LUFS / -1.8 dBTP). Video stream-copied (618/618 framemd5 identical to v07 sha 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d). All fresh gates PASS (commit 91019833c); UAT iCloud & NAS standalone_shorts_v07a verified.",
+      "chief_review": {
+        "by": "codex",
+        "at": "2026-10-27T00:23Z",
+        "verdict": "PASS",
+        "report": "jobs/reviews/J0988_CODEX_TECHNICAL_PASS_2026-10-27.md",
+        "master_sha256": "de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12",
+        "phone_sha256": "f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69"
       }
     },
     {
