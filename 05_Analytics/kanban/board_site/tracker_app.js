@@ -360,6 +360,10 @@
   }
   function matchesVideo(j, v) {
     if (supportingJob(j)) return false;
+    if (j.recheck_of) {
+      const original = (board?.owb?.jobs || []).find(x=>x.id===j.recheck_of && !x.recheck_of);
+      return original ? matchesVideo(original,v) : false;
+    }
     if ((v.jobs || []).some(x => x.id === j.id)) return true;
     const vid = v.shortId || v.youtube?.videoId;
     if (vid && String(j.title || "").includes(vid)) return true;

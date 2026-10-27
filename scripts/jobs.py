@@ -231,7 +231,8 @@ def reconcile_holds(data, at):
     for parent in list(data["jobs"]):
         if parent.get("recheck_of") or not workflow.hold_due(parent,by_id,at):
             continue
-        if any(j.get("recheck_of") == parent["id"] and j.get("status") in workflow.LIVE for j in data["jobs"]):
+        pending = next((j for j in data["jobs"] if j.get("recheck_of") == parent["id"] and j.get("status") in workflow.LIVE),None)
+        if pending:
             continue
         condition = (parent.get("hold") or {}).get("condition") or "Required predecessor is complete; verify remaining gates and approvals"
         task = do_add(data,title="Chief: verify condition for " + parent["id"],needs="any",kind="chief",by="relay",at=at,
@@ -243,8 +244,11 @@ def reconcile_holds(data, at):
             "If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.")
         task["recheck_of"] = parent["id"]
         task["remaining_action"] = ("Verify readiness: " + (parent.get("remaining_action") or parent["title"]))[:180]
+        target = at + dt.timedelta(hours=1)
         if parent["id"] in due:
-            task["due"] = due[parent["id"]].isoformat()
+            target = min(target,due[parent["id"]])
+        task["due"] = target.isoformat()
+        task["due_kind"] = "condition-verification"
         parent.setdefault("hold",{"type":"dependency","condition":condition})["check_at"] = (at+dt.timedelta(hours=1)).isoformat()
         parent["hold"]["recheck_task"] = task["id"]
         log(parent,at,"relay","condition verification queued: " + task["id"])

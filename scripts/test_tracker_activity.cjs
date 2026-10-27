@@ -123,3 +123,10 @@ html=t.cardWorkHtml({key:'HOS:006',type:'long',jobs:[tree]});
 const treeVisible=html.replace(/<details[\s\S]*?<\/details>/g,'');
 assert(treeVisible.includes('Post and pin the comment')&&!treeVisible.includes('Update the end screen'));
 assert(treeVisible.includes('After the video is public'));
+
+const sourceTask={id:'SOURCE',status:'blocked',remaining_action:'Post and pin the comment'};
+const verifier={id:'CHECK',status:'claimed',by:'codex',recheck_of:'SOURCE',eta:new Date(Date.now()+60000).toISOString(),remaining_action:'Verify readiness: Post and pin the comment'};
+t.setBoard({owb:{jobs:[sourceTask,verifier]}});
+const checkedCard={...activeVideo,jobs:[{id:'SOURCE'}]};
+assert(t.matchesVideo(verifier,checkedCard),'a condition check belongs on its original video card');
+assert(t.cardHtml(checkedCard).includes('live-dot'),'active condition checks keep the original card live');

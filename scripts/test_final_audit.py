@@ -54,7 +54,7 @@ class FinalAudit(unittest.TestCase):
         data={'jobs':[j],'next_id':1};jobs.set_wait(j,'relay',AT,{'type':'test','condition':'Current title test has ended','check_at':(AT-dt.timedelta(hours=1)).isoformat()},'Start the next title test')
         jobs.reconcile_holds(data,AT)
         check=next(x for x in data['jobs'] if x.get('recheck_of'))
-        self.assertEqual(check['kind'],'chief');self.assertEqual(j['status'],'blocked')
+        self.assertEqual(check['due'],(AT+dt.timedelta(hours=1)).isoformat());self.assertEqual(check['kind'],'chief');self.assertEqual(j['status'],'blocked')
         self.assertEqual(j['result'],'date gate; original approval retained')
         before=copy.deepcopy(data);jobs.reconcile_holds(data,AT+dt.timedelta(minutes=2));self.assertEqual(data,before)
         self.assertFalse(jobs.claimable(data,j,{'mini'},AT,'codex'))
