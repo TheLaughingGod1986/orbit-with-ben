@@ -57,12 +57,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1023 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1032 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · J0936: assemble all six replacements from J1029 locked preparation v07 | dc4b9da01 |
-| J1036 | mini | claimed | gemini | 2026-10-27T14:37Z | for gemini · chief · `gemini-argon` · Chief: verify condition for J0275 |  |
 | J1037 | any | open | – | – | chief · Chief: verify condition for J0989 |  |
 | J1038 | any | open | – | – | chief · Chief: verify condition for J1032 |  |
 
 Recently finished:
 
+- J1036 done: Chief: verify condition for J0275 (done)
 - J1035 done: Chief: verify condition for J0989 (Checked PR296 REVIEW at 84c3867, empty PR comments/reviews, v13 approvals and thread through 6440507970. No recorded exact-v13a listening PASS; J0989 remains blocked, retry retained 2026-10-27T12:15:06Z. J0990 release decision still required. Report 6440557381. No spend or publishing changes.)
 - J1034 done: Chief: verify condition for J0275 (Verification complete: J0275 remains blocked. Studio CDP 9223 connection timed out inside and outside sandbox; Jupiter completion unknown, Saturn J0189 open. Preserved 27 Oct 11:30:30 UTC retry and 21 Oct approvals. Evidence d5aafe29a, codex-j1034:jobs/readbacks/J1034.json. No YouTube changes or spend.)
 - J1033 done: Chief: verify condition for J0989 (Verified PR296 REVIEW at 84c3867, empty PR comments/reviews, original v13 approvals and thread through 6439046012: exact-v13a listening PASS remains absent. J0989 stays blocked; retained retry 2026-10-27T11:09:03Z with recheck J1033. J0990 exact-hash technical release still required. Report posted; no spend or publishing changes.)
@@ -72,4 +72,3 @@ Recently finished:
 - J1028 done: J0936 preparation: remove remaining early brightening answer and reconcile S6 card (done)
 - J1027 done: Chief: verify condition for J0275 (done)
 - J1026 done: Chief: verify condition for J0989 (done)
-- J1025 done: J0936: Chief lock after S6 payoff and approved Test A repair (done)
