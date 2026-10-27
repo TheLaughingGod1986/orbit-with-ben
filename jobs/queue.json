@@ -87438,10 +87438,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-27T19:07Z",
+      "eta": "2026-10-27T20:07Z",
       "created_by": "codex",
       "created_at": "2026-10-26T22:28Z",
       "result": "",
@@ -87460,6 +87460,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "remaining action: Correct the Orbit audit and record supporting evidence"
+        },
+        {
+          "at": "2026-10-27T19:07Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "for": "gemini",
@@ -87479,7 +87484,15 @@
         "OWB:031",
         "OWB:032"
       ],
-      "remaining_action": "Correct the Orbit audit and record supporting evidence"
+      "remaining_action": "Correct the Orbit audit and record supporting evidence",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-27T19:07Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1003",
