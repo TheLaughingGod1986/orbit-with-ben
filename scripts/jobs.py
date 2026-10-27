@@ -366,7 +366,14 @@ def choose_next(data, agent, can, at, job_id=""):
 
 def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None, job_id: str = "") -> dict | None:
     job = choose_next(data,agent,can,at,job_id)
-    if not job or (job.get("by") == agent and job["status"] == "claimed"):
+    if not job:
+        return job
+    # A claim always has an explicit baseline. This records no completed work;
+    # workers replace the default plan before reporting their first milestone.
+    if not job.get("progress"):
+        job["progress"] = {"step": 0, "of": 3, "at": studio.iso(at), "by": agent,
+                           "default_plan": True, "note": "Starting: check the brief, complete the work, verify the result"}
+    if job.get("by") == agent and job["status"] == "claimed":
         return job
     took, prev = stalled(job, at), job.get("by", "")
     job.update(status="claimed", by=agent, since=studio.iso(at), eta=studio.iso(at + dt.timedelta(minutes=eta_min or job.get("eta_min") or DEFAULT_ETA)))

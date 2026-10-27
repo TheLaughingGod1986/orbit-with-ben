@@ -61,7 +61,10 @@ html=t.cardHtml(activeVideo);assert(html.includes('live-dot')&&html.includes('Wo
 t.setBoard({owb:{jobs:[{...liveJob,status:'blocked',result:'waiting for inputs'}]}});
 assert(!t.cardHtml(activeVideo).includes('live-dot'),'blocked cards must not pulse');
 assert(t.jobHtml(liveJob,'now').includes('aria-valuenow="25"'),'keep confirmed-step progress');
-assert(!t.jobHtml({...liveJob,progress:null},'now').includes('aria-valuenow='),'unknown progress must never imply a percentage');
+assert(t.jobHtml({...liveJob,progress:null},'now').includes('0% recorded · waiting for the first update'));
+assert(t.jobHtml({...liveJob,progress:null},'now').includes('aria-valuenow="0"'));
+assert(t.jobHtml({...liveJob,progress:{step:1,of:4,at:new Date(Date.now()-6*60000).toISOString()}},'now').includes('No progress update for 6 min'));
+assert(!t.jobHtml({...liveJob,progress:{step:1,of:4,at:new Date().toISOString()}},'now').includes('No progress update'));
 
 const reviewProgress={...chiefReview,progress:{step:2,of:3,note:'Evidence checked'}};
 t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:reviewProgress,next:[]}}});

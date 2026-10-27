@@ -18,6 +18,23 @@ def queue(*specs):
 
 
 class Next(unittest.TestCase):
+    def test_claim_starts_with_zero_progress_and_preserves_resume(self):
+        d = queue(("mini", "cut", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        self.assertEqual((j["progress"]["step"], j["progress"]["of"]), (0, 3))
+        self.assertTrue(j["progress"]["default_plan"])
+        jobs.do_progress(j, "cursor", 1, 5, T0 + MIN, "Brief checked")
+        jobs.do_next(d, "cursor", {"mini"}, T0 + 2 * MIN)
+        self.assertEqual((j["progress"]["step"], j["progress"]["of"]), (1, 5))
+        self.assertNotIn("default_plan", j["progress"])
+
+    def test_legacy_claim_gets_baseline_when_resumed(self):
+        d = queue(("mini", "cut", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        del j["progress"]
+        jobs.do_next(d, "cursor", {"mini"}, T0 + MIN)
+        self.assertEqual(j["progress"]["step"], 0)
+
     def test_takes_the_oldest_job_it_can_do(self):
         d = queue(("cloud", "review", {}), ("mini", "cut", {}), ("mini", "thumbs", {}))
         j = jobs.do_next(d, "cursor", {"mini", "any"}, T0)
@@ -184,10 +201,11 @@ class Progress(unittest.TestCase):
     def test_bad_film_link_does_not_modify_recorded_progress(self):
         d = queue(("mini", "Teaching overlays", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        baseline = dict(j["progress"])
         with self.assertRaises(ValueError):
             jobs.do_progress(j, "cursor", 1, 4, T0 + MIN, films="006")
         self.assertNotIn("taskKeys", j)
-        self.assertNotIn("progress", j)
+        self.assertEqual(j["progress"], baseline)
 
     def test_kept_across_a_release_and_cleared_on_reopen(self):
         d = queue(("mini", "027 fixes", {}))

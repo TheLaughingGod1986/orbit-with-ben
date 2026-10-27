@@ -571,9 +571,10 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    means only desk #180 messages that are not in the queue.
    The OWB job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
-   Ben watches % done on the board: split the job into n steps (keep n from any earlier `progress` on it) and run
+   Ben watches % done on the board: split the job into n steps (replace a default_plan at step 0; otherwise keep its earlier n) and run
      python3 scripts/jobs.py progress <id> --agent {agent} --step <k> --of <n> --git
    with --action "<plain-English action still unfinished>"; update that action as the remaining work changes. Use k=0 when you start and again after each finished step (k = steps done), before you release or finish.
+   During a long step, repeat the current k with an honest --note at least every 5 minutes; never increase k for elapsed time.
    As soon as you choose the video(s), include --films HOS:006 (or OWB:028,OWB:029 for a shared job) on that progress
    command, and --note with the concrete outcome of each finished step. Keep the links on later progress updates.
    This connects the live job to the video's swim lane. A job parked for review is not an approved film stage.

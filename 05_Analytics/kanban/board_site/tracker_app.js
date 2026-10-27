@@ -501,8 +501,11 @@
       const tail = pr.over ? "running over" : `~${dur(pr.left)} left`;
       // Colour moves with progress (Ben, 25 Oct 00:03): red-orange < 34, amber 34-66, green > 66; running over is purple.
       const band = pr.over ? "over" : pr.pct < 34 ? "low" : pr.pct <= 66 ? "mid" : "high";
-      bar = pr.pct === null ? `<div class="bar indeterminate" role="progressbar" aria-label="Job in progress; completion not yet reported"><i></i></div>` : `<div class="bar ${band}" role="progressbar" aria-label="Confirmed job steps" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
-      note = pr.pct === null ? "In progress · awaiting a step update" : `${pr.pct}% · ${step}${!isNaN(pr.start) ? ` · ${dur(Date.now() - pr.start)}` : ""}`;
+      const pct = pr.pct ?? 0;
+      bar = `<div class="bar ${band}" role="progressbar" aria-label="${pr.pct === null ? "Recorded completion; no steps reported yet" : "Confirmed job steps"}" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>`;
+      note = pr.pct === null ? "0% recorded · waiting for the first update" : `${pr.pct}% · ${step}${!isNaN(pr.start) ? ` · ${dur(Date.now() - pr.start)}` : ""}`;
+      const updated = tsOf(p.at), last = isNaN(updated) ? pr.start : updated;
+      if (!isNaN(last) && Date.now() - last >= 5 * MIN) note += ` · No progress update for ${dur(Date.now() - last)}`;
       if (p.note) note += `<details class="job-detail"><summary>Latest update${p.at ? ` · ${hm(tsOf(p.at))}` : ""}</summary>${esc(String(p.note).slice(0, 240))}</details>`;
     } else {
       note = j.due ? `Due ${esc(new Date(j.due).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}))} London` : "";
