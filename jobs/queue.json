@@ -1,5 +1,5 @@
 {
-  "next_id": 1037,
+  "next_id": 1039,
   "jobs": [
     {
       "id": "J0001",
@@ -86215,6 +86215,11 @@
           "at": "2026-10-27T11:16Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-27T12:15:06Z"
+        },
+        {
+          "at": "2026-10-27T12:36Z",
+          "by": "relay",
+          "what": "condition verification queued: J1037"
         }
       ],
       "kind": "assembly",
@@ -86243,10 +86248,11 @@
       "hold": {
         "type": "input",
         "condition": "Recorded listening PASS required for exact v13a SHA256 898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3: intelligibility, pumping and audible artefacts. J1035 checked PR296 REVIEW at 84c3867, empty comments/reviews, original approvals and thread through 6440507970: no listening PASS. Automated gates and ASR do not substitute. After listening, J0990 must decide exact-hash release; Ben 6411210906 approved v13 only.",
-        "check_at": "2026-10-27T12:15:06Z",
+        "check_at": "2026-10-27T13:36:13+00:00",
         "last_recheck": "J1035",
         "checked_at": "2026-10-27T11:16:53+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1037"
       }
     },
     {
@@ -89527,6 +89533,11 @@
           "at": "2026-10-27T12:33Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: all 6 v04 replacements (S1 A6TW_6CXhcs 228cb06dfd37, S2 emwQsPxnRGM d35efd737ed0, S3 bizlhspnVvY 65e58aea2a20, S4 DETI0HV2jlI 0eb18596d2d6, S5 jJ5LkFGyzLI 37fbe8b9ed33, S6 X768qs8sNQs 91b297a262c1) passed all gates, multimodal audio/visual inspection, and UAT/NAS delivery (PR305 61d031f35, J1032_v04_delivery_verification.json); ready for elected-Chief replacement review before Ben swap approval"
+        },
+        {
+          "at": "2026-10-27T12:36Z",
+          "by": "relay",
+          "what": "condition verification queued: J1038"
         }
       ],
       "remaining_action": "Parked for elected-Chief replacement review",
@@ -89552,6 +89563,12 @@
         "at": "2026-10-27T12:33Z",
         "by": "gemini",
         "note": "All 6 v04 Shorts (S1-S6) passed all gates, multimodal audio/visual review, and UAT/NAS delivery (PR305 61d031f35)"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-27T13:36:13+00:00",
+        "recheck_task": "J1038"
       }
     },
     {
@@ -89797,6 +89814,68 @@
       "kind": "chief",
       "recheck_of": "J0275",
       "due": "2026-10-27T12:44:27+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1037",
+      "title": "Chief: verify condition for J0989",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0989: Recorded listening PASS required for exact v13a SHA256 898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3: intelligibility, pumping and audible artefacts. J1035 checked PR296 REVIEW at 84c3867, empty comments/reviews, original approvals and thread through 6440507970: no listening PASS. Automated gates and ASR do not substitute. After listening, J0990 must decide exact-hash release; Ben 6411210906 approved v13 only.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0989 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-27T12:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T12:36Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Listen to exact v13a for intelligibility, pumping and audible artefacts and record the result",
+      "kind": "chief",
+      "recheck_of": "J0989",
+      "due": "2026-10-27T13:36:13+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1038",
+      "title": "Chief: verify condition for J1032",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1032: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1032 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-27T12:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T12:36Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for elected-Chief replacement review",
+      "kind": "chief",
+      "recheck_of": "J1032",
+      "due": "2026-10-27T13:36:13+00:00",
       "due_kind": "condition-verification"
     }
   ],
