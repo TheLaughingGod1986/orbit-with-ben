@@ -90708,9 +90708,14 @@
           "at": "2026-10-27T18:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-27T18:41Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting verification of J0275 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Verify Jupiter test completion in Studio (CDP 9223) and Saturn J0189 prerequisite before approved comparisons",
+      "remaining_action": "Read J0275, J0189, J1036 and THUMB_LEDGER.json, then probe live Studio CDP 9223",
       "kind": "chief",
       "recheck_of": "J0275",
       "due": "2026-10-27T19:40:30+00:00",
@@ -90720,9 +90725,12 @@
         "of": 3,
         "at": "2026-10-27T18:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting verification of J0275 waiting condition"
+      },
+      "taskKeys": [
+        "OWB:020",
+        "OWB:021"
+      ]
     },
     {
       "id": "J1042",
