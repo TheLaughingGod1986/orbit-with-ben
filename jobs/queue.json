@@ -89101,6 +89101,11 @@
           "at": "2026-10-27T09:37Z",
           "by": "codex",
           "what": "J1029 preparation PASS dc4b9da01 / PR304; linked three films; one six-Short assembly job"
+        },
+        {
+          "at": "2026-10-27T09:39Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Assemble and gate six local replacements from locked v07 preparation",
@@ -89110,7 +89115,16 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],
