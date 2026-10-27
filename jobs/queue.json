@@ -89201,9 +89201,14 @@
           "at": "2026-10-27T10:16Z",
           "by": "codex",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-10-27T10:17Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Restored existing 1/3 plan after mistaken reset. J1032-run03 remains live without completion marker; no duplicate started. Earlier S1 gate failures remain unresolved."
         }
       ],
-      "remaining_action": "Resolve disk pressure and verify locked assembly inputs",
+      "remaining_action": "Finish existing detached archive, finishing pass and final QA; resolve failed gates",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -89221,10 +89226,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-10-27T10:16Z",
-        "by": "codex"
+        "step": 1,
+        "of": 3,
+        "at": "2026-10-27T10:17Z",
+        "by": "codex",
+        "note": "Restored existing 1/3 plan after mistaken reset. J1032-run03 remains live without completion marker; no duplicate starte"
       }
     },
     {
