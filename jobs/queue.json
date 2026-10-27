@@ -91602,7 +91602,7 @@
     {
       "id": "J1047",
       "title": "Chief: verify condition for J0966",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J0966: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0966 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -91622,13 +91622,27 @@
           "at": "2026-10-27T22:48Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-27T22:48Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Verify readiness: Chief final review of all four HC masters before Ben swap OK",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-27T23:48:14+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
