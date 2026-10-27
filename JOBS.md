@@ -56,6 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1010 | any | claimed | codex | 2026-10-27T04:29Z | chief · J0936: lock corrected v04 preparation after J1009 and dispatch assembly | fded21428 |
 | J1013 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1014 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J1015 | mini | open (after J1010) | – | – | review · J0936 v04 preparation v03: fix question delivery, early motion and source evidence | d63dc5898 |
 
 Recently finished:
 
