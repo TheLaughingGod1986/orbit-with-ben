@@ -57,6 +57,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 029 | edit | gemini | 2026-10-27T14:10Z | 2026-10-27T15:10Z | - |
-| 030 | edit | gemini | 2026-10-27T16:05Z | 2026-10-27T17:04Z | J0989 OWB 030 J0974 audio-only v13a correction: current loudness gate |
+| 030 | edit | gemini | 2026-10-27T16:06Z | 2026-10-27T17:06Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
