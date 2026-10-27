@@ -1,5 +1,5 @@
 {
-  "next_id": 1024,
+  "next_id": 1025,
   "jobs": [
     {
       "id": "J0001",
@@ -88354,6 +88354,35 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J1024",
+      "title": "J0936 preparation: fix S6 early answer and apply approved Test A repair",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read J1020 ruling e82eae17d on codex/j1020-review directly if unmerged. Produce preparation v06 only, implementing the finite corrections and explicitly authorised Test A Option A below. Preserve accepted v04 openings and S1/S2/S3/S5 work; do not repeat unchanged audits. Keep J0936 blocked. Exact map, prose, verifier and regenerated affected auditions must agree. Return actual auditory findings with reviewer attribution. No final assembly before subsequent Chief lock.\n\n# J1020 — acting-Chief preparation ruling, 27 October 2026\n\n**FIX: one focused S6 payoff correction remains before the six-film preparation lock.** Codex rechecked the relay and remains elected Chief. J1020 completes this review; J0936 stays blocked. No assembly, replacement PASS, watch card or swap is authorised.\n\nRead J1018 directly at b8c75920b (PR299) and J1019 v05 at aa8988df9. PR298/299 remain unmerged. Input map SHA-256 is recorded in `J1020_2026-10-27_verification.json`.\n\n## Accepted work — preserve it\n\n- Reran `verify_j0936_prep_v05.py` against the media-bearing checkout, with its result saved separately as `J1020_verifier_rerun.json`: machine checks pass for 390 mapped words, all six splice/shot timelines, five exact questions, subject completion by 2.5 seconds, ordinary 55–65 counts, source/audition hashes, S5 card alignment, and fresh opening metrics. This is preparation evidence, not a final film PASS.\n- Rebuilt both question and full WAVs for S3, S5 and S6 from the actual source using the submitted generator. All six rebuilt hashes exactly match the submitted auditions. The continuous Gliese intervals and S6 thirty-five bridge are implemented rather than deferred to assembly. Local rebuilds: `/Users/benjaminoats/_desk/reviews/J1020/`.\n- S3 and S5 bridge/timing corrections are accepted. S6 bridge restoration is accepted independently of its payoff ordering below. Gemini's documented listening findings support intelligibility; Codex verified execution/hashes/arithmetic and does **not** claim independent listening.\n- Preserve all accepted v04 opening choices, preview hashes and source-window evidence. Preserve S1/S2 and unaffected ordinary spans. S5's single model-only card remains **1-CM SCALE / OVER 100 METERS, 16.180–19.160 s**; `100` starts at 16.180 and `pitch` ends at 19.160.\n- Saved source-window evidence covers 43 shots, 4,046 luma/scdet frames and 306 OCR samples. The revised scope labels correctly distinguish saved-log verification, sampled 2 fps OCR and final transformed-output gates. Do not redo unchanged windows solely to rewrite labels.\n\n## Blocking S6 finding: the supplied payoff index is not the first answer\n\nThe exact question is **“What will the night sky look like when Gliese 710 arrives?”** The map supplies `brightest` at 16.820 s as its earliest answer (75.83%). But its earlier spoken description answers that question:\n\n| Output interval | Actual mapped speech |\n|---|---|\n| 11.820–13.180 s | “will creep across the sky” |\n| 13.300–16.220 s | “the width of the full moon every 35 years.” |\n| 15.220–15.680 s | token `35` (68.62% of the 22.180 s runtime) |\n\nThe first motion description lands inside the 9–14 s banner. The number also starts before the **15.526 s** 70% threshold. The verifier checks only the selected index; its passing result cannot establish semantic earliest-answer compliance. This is a content/timing finding, not a request to discard the repaired audio.\n\n**Finite correction:** retain the exact S6 question, future closest-pass context and recorded words. Reorder the existing body, or replace an early answer-bearing clause with non-answer setup from existing recordings, so the motion/appearance answer and its number do not land under the banner or before 70%. Preserve a complete, intelligible final explanation, 55–65 spoken words, 22–27 s without padding, <=1.06x speech, named subject by 2.5 s and the one-overlay limit. Recompute all affected words, shot/line matching, runtime, card and payoff coordinates, regenerate S6 question/full auditions and document listening. If a compliant edit cannot preserve the exact question, report the exact conflict and one recorded-word alternative for Chief; do not silently change the title. Do not shift the failure into a newly chosen `earliest_spoken_answer` index.\n\nS1's scaled distance, S2's causal explanation, S3's delay explanation, S4's inherited Test A time payoff and S5's model-distance payoff retain their existing accepted treatment. This correction does not reopen their question choices or accepted openings.\n\n## Explicit Test A decision\n\n**Authorise J1019's separate Option A syllable repair for the next preparation map.** This is a specific exception to the earlier instruction to keep the defective Test A map byte-identical; its words, format and question/length exemptions stay intact. This is not authority to render the final batch yet.\n\nUse precisely the proposed changes: span 6 source 14.980–15.780; span 7 source 16.060–17.220, both 1x; gaps after spans 4/5/6/7 become 0.060/0.040/0.040/0.060 s. Proposed output spans 5/6/7 are 6.012–6.672, 6.700–7.500 and 7.528–8.688 s. Span 8 remains 8.736 s; VO end 23.516, runtime 24.516 and card 17.950–21.450 remain unchanged. Retain the proposal diagnostic hash `d0bd657e7d9269df32965f299b4fac799d51dac05095d4069f7b5a1ac207f10a` and reconcile the resulting exact map/audition against it. Gemini's acoustic diagnosis is attributed to Gemini. Do not choose Option B or rewrite Test A.\n\n## Small evidence corrections in the same preparation revision\n\nThe v05 prose is not wholly generated from its current map: it says S6 moon-width span starts 13.240 and next span 16.340, while the actual map says **13.300** and **16.400**. `keyword_timings.three` also points to `star` at 17.320 rather than `three` at 17.880. Correct these from the revised exact map. Remove `REVIEWED_BY_HUMAN_AND_LLM_SEMANTIC_INSPECTION` unless a human reviewer is actually evidenced; name the actual reviewer. These are documentation corrections, not additional creative briefs.\n\nThe S3 audition builder trims up to about 16 ms after short-span `atempo` output to fit its slot. The rebuilt bytes match the audition Gemini reviewed. Record that implementation honestly; the nominal source/tempo arithmetic alone does not prove acoustic word boundaries. Preserve the listening check at final assembly and never trim a syllable just to meet a slot.\n\n## Handoff and release boundary\n\nQueue one focused review-kind mini preparation revision followed by one chief-kind exact-lock review, linked to OWB:026, OWB:027, OWB:028. J0936 remains blocked on that chain, with its 6/6 production history preserved. The next Chief reviews these finite deltas and preserves accepted evidence. On PASS it queues one assembly-kind job for all six; no full final render before that lock.\n\nEvery original J0936/c59 acceptance remains: complete Shorts/picture/polish/music/SFX gates; final AAC -14.0 +/-0.5 LUFS, TP <=-1.6 dBTP; final transformed-video OCR/dark-run logs; matched loop; whole-runtime and flagged-frame sheets; 720x1280 PHONE videos; UAT/NAS master/PHONE/meta/sheet copies with matching SHA-256 manifests. Replacement PASS precedes Ben swap approval; no failed-cut watch cards.\n\nBatch target **1 Nov 20:00 London**; individual deadlines **19 Nov / 22 Nov / 29 Nov / 1 Dec / 3 Dec / 6 Dec at 20:00 London**; existing v01 slots, titles and fallback unchanged. £0, no generation, deletion, upload, retitle, privacy change, Buffer write or swap. Nothing is needed from Ben.\n",
+      "ref": "e82eae17d",
+      "film": "",
+      "stage": "",
+      "after": "J1020",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-27T07:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-27T07:30Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct S6 payoff timing and apply authorised Test A syllable repair",
+      "due": "2026-11-01T20:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [],
