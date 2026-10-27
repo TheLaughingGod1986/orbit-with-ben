@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 029 | edit | gemini | 2026-10-27T13:43Z | 2026-10-27T14:43Z | - |
+| 029 | edit | gemini | 2026-10-27T14:10Z | 2026-10-27T15:10Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
