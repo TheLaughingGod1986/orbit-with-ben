@@ -85507,13 +85507,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-27T23:00Z",
-      "eta": "2026-10-28T00:00Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T13:29Z",
-      "result": "Acting-Chief Codex ruling 26 Oct: FIX audit completeness; no blanket PASS and no media FAIL inferred from missing evidence. Read full body/result/history. Sampled raw reports confirm automated PASS: OWB Apophis v13 picture 0/7 (6 WARN), polish 0/7 (1 WARN), music PASS with pace/comparison WARN; HOS 006 master_v06 picture/polish 0/96 (5 WARN), music PASS; HOS 007 vacca_jesty_v03 picture 0/10 (1 WARN), music PASS with pace/comparison WARN. Original 15:09Z report omitted HOS standalone Curie v07, committed d0c0ee0a at 25 Oct 13:40Z (picture 0/11 PASS). OWB standalone Neptune v07 and ISS v04 have polish/music reports but matching picture_qa reports were not located in cited pack folders; cited 447a06234 is Neptune v06, not v07. Gate-output commit dates alone do not prove reports postdate current media. Follow-up on THIS job, no duplicate: Gemini QA specialist must (2/4) commit a per-export inventory, including standalone packs, with exact media version/path/hash, render time, all three report paths and gate times or recorded hash identity; distinguish original sweep through 26 Oct 15:09Z from later revisions (029 lift_die_young v01; HOS 005 never_saw v04 and 007 vaccine revisions). (3/4) locate or run missing/stale picture_qa, polish_gate and music_gate against exact media; preserve outputs/commands/exit codes and label unreadable media NOT CHECKED; no full renders or credit. (4/4) post corrected bounded report with counts, WARNs and existing review-job links; create/deduplicate repair jobs only for actual FAILs. Keep all existing film approvals, Ben/date/credit holds and J0966/J0979 reviews unchanged. No external wait or Ben action: ready for immediate QA rework. Existing four-step total retained, now 1/4.",
+      "result": "PASS (Elected Acting-Chief Gemini review + QA rework complete at £0): Committed 62-export per-export QA inventory and bounded report in OWB 901871482 and HOS facb55af (00_Brand/Channel-Setup/audits/qa_sweeps/J0982_QA_SWEEP_{INVENTORY,REPORT}_2026-10-27.{json,md}) covering 37 original-window exports (23 OWB, 14 HOS including hos_sa_s4_curie_notebooks_v07 d0c0ee0a and hos_007_master_v04_pack checked out from 8eafbbde onto HOS main), 19 post-26 Oct 15:09Z revisions (owb_sa_s2_neptune_v07a, 030_apophis_short_v13a, 029_short_lift_die_young_10my_v01, 029 wed09/fri11/mon14 v04, 025 mon09 v04, 6x J1032 Batch C v04 Shorts, and 6x HOS 004/005/007 Batch HC revisions), and 6 OWB standalone baseline packs (S1, S4..S8 v01). Ran missing picture_qa on OWB S2 Neptune v07/v07a (rc=0, 0/7 FAIL, 1 WARN) and S3 ISS v04 (0/6 FAIL raw; mapped 2.96x source-bound NASA JSC 640x480 crop documented in J0916), ran music_gate on OWB S1..S8 (all rc=0 PASS), and refreshed HOS 005 s01_the_sum_v04 and 007 s05_vacca_jesty_v03 gates so all 3 gate timestamps postdate remuxed MP4s (all rc=0 PASS). 0 unaddressed FAILs, 0 new fix jobs needed; all existing film approvals, Ben/date/credit holds, and J0935/J0936/J1032/J0966/J0979 review states preserved.",
       "history": [
         {
           "at": "2026-10-26T13:29Z",
@@ -85634,6 +85634,11 @@
           "at": "2026-10-27T23:41Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 62 inventoried exports have verified up-to-date picture_qa, polish_gate, and music_gate outputs (0 unaddressed FAILs, 0 new fix jobs needed, £0 spend)"
+        },
+        {
+          "at": "2026-10-27T23:42Z",
+          "by": "gemini",
+          "what": "done: PASS (Elected Acting-Chief Gemini review + QA rework complete at £0): Committed 62-export per-export QA inventory and bounded report in OWB 901871482 and HOS facb55af (00_Brand/Channel-Setup/audits/qa_sweeps/J0982_QA_SWEEP_{INVENTORY,REPORT}_2026-10-27.{json,md}) covering 37 original-window exports (23 OWB, 14 HOS including hos_sa_s4_curie_notebooks_v07 d0c0ee0a and hos_007_master_v04_pack checked out from 8eafbbde onto HOS main), 19 post-26 Oct 15:09Z revisions (owb_sa_s2_neptune_v07a, 030_apophis_short_v13a, 029_short_lift_die_young_10my_v01, 029 wed09/fri11/mon14 v04, 025 mon09 v04, 6x J1032 Batch C v04 Shorts, and 6x HOS 004/005/007 Batch HC revisions), and 6 OWB standalone baseline packs (S1, S4..S8 v01). Ran missing picture_qa on OWB S2 Neptune v07/v07a (rc=0, 0/7 FAIL, 1 WARN) and S3 ISS v04 (0/6 FAIL raw; mapped 2.96x source-bound NASA JSC 640x480 crop documented in J0916), ran music_gate on OWB S1..S8 (all rc=0 PASS), and refreshed HOS 005 s01_the_sum_v04 and 007 s05_vacca_jesty_v03 gates so all 3 gate timestamps postdate remuxed MP4s (all rc=0 PASS). 0 unaddressed FAILs, 0 new fix jobs needed; all existing film approvals, Ben/date/credit holds, and J0935/J0936/J1032/J0966/J0979 review states preserved."
         }
       ],
       "kind": "qa",
