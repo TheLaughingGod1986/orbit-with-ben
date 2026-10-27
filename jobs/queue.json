@@ -86394,13 +86394,18 @@
           "at": "2026-10-27T14:59Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Rendered all three v04 Shorts; all shipping gates PASS (-14.1 LUFS, -2.0/-2.1 dBTP, Wed09 max bg match 23.2%)"
+        },
+        {
+          "at": "2026-10-27T15:37Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Resumed J0991; replacing quarantined companion_orion.jpg with approved gemini_night.jpg on Wed09 opening while passing motion, f0diff, first_cut and bg_match gates"
         }
       ],
       "kind": "assembly",
       "taskKeys": [
         "OWB:029"
       ],
-      "remaining_action": "Update versioned v04 upload manifests, verify durable UAT/NAS SHA256s, write J0991 repair report and park for Chief review",
+      "remaining_action": "Calibrate Wednesday gemini_night.jpg + ESO SPHERE Betelgeuse opening motion/cut gates, re-render wed09 v04 and verify all gates/manifests",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -86411,11 +86416,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 3,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-27T14:59Z",
+        "at": "2026-10-27T15:37Z",
         "by": "gemini",
-        "note": "Rendered all three v04 Shorts; all shipping gates PASS (-14.1 LUFS, -2.0/-2.1 dBTP, Wed09 max bg match 23.2%)"
+        "note": "Resumed J0991; replacing quarantined companion_orion.jpg with approved gemini_night.jpg on Wed09 opening while passing m"
       }
     },
     {
