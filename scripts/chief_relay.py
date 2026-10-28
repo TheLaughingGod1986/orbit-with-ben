@@ -189,8 +189,35 @@ def last_seen(agent: str):
         return None
 
 
-def mark_down(agent: str, reason: str, until, at: dt.datetime) -> None:
-    write_json(d("down", agent + ".json"), {"since": iso(at), "until": iso(until) if until else None, "reason": reason})
+def mark_down(agent: str, reason: str, until, at: dt.datetime, kind: str = "") -> None:
+    mark = {"since": iso(at), "until": iso(until) if until else None, "reason": reason}
+    if kind:
+        mark["kind"] = kind
+    write_json(d("down", agent + ".json"), mark)
+
+
+STALL_BASE_MIN, STALL_MAX_MIN = 30, 720
+
+
+def stall_window(agent: str, at: dt.datetime) -> dt.timedelta:
+    """How long a Chief that took its inbox but did not progress it stays down. Ben, 28 Oct 2026: "We know grok is
+    down so why is the acting chief not taking over" - a flat 30 min let Grok be re-elected all evening without clearing
+    a single decision. Each repeat within 24 h doubles it: 30 min, 1 h, 2 h ... up to 12 h."""
+    log_path = d("stalls", agent + ".json")
+    recent = [t for t in (read_json(log_path) or []) if at - parse(t) < dt.timedelta(hours=24)]
+    minutes = min(STALL_BASE_MIN * 2 ** len(recent), STALL_MAX_MIN)
+    write_json(log_path, recent + [iso(at)])
+    return dt.timedelta(minutes=minutes)
+
+
+def hard_flag(agent: str, at: dt.datetime) -> bool:
+    """A credit_flags.json entry with "hard": true is Ben's own call that an agent is out (28 Oct 2026). Unlike a
+    credit flag, a thread post does not clear it; only its out_until does."""
+    flag = ((read_json(OWB / "scripts" / "credit_flags.json") or {}).get("flags") or {}).get(agent) or {}
+    try:
+        return bool(flag.get("hard")) and parse(flag["out_until"]) > at
+    except (KeyError, ValueError, TypeError):
+        return False
 
 
 def mark_model_down(model: str, reason: str, until: dt.datetime, at: dt.datetime) -> None:
@@ -351,13 +378,16 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
         beat = last_seen(agent)
         if until and at >= until:
             mark_up(agent)
-        elif agent == "chief" and ((beat and beat > since) or grok_post_age(at, after=since) is not None):
-            mark_up(agent)  # Grok has worked since it was marked down: it's back
+        elif agent == "chief" and ((beat and beat > since) or (mark.get("kind") != "stalled"
+                                                              and grok_post_age(at, after=since) is not None)):
+            # Grok has worked since it was marked down: it's back. A stall (inbox taken, not progressed) clears only
+            # when Grok runs jobs.py again; a post on the thread is talk, not progress.
+            mark_up(agent)
         else:
             return False, f"marked down: {mark.get('reason') or 'no reason given'}" + (f" (retry after {mark['until']})" if until else "")
     flag = routing.read_flags(at, str(OWB / "scripts" / "credit_flags.json")).get(agent)
-    if flag and not (agent == "chief" and grok_post_age(at) is not None
-                     and grok_post_age(at) <= int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180"))):
+    if flag and (hard_flag(agent, at) or not (agent == "chief" and grok_post_age(at) is not None
+                                             and grok_post_age(at) <= int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180")))):
         return False, f"flagged out of credit: {flag}"   # Grok posting again proves it's back, flag or not
     if agent == "chief":
         fresh = int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180"))
@@ -1320,7 +1350,7 @@ def run_locked(at: dt.datetime) -> int:
         publish_chief_inbox(chief_inbox, leader, at)
         if chief_delivery_overdue(leader, at):
             mark_down(leader, "Chief inbox delivered but not progressed within the acknowledgement window",
-                      at + dt.timedelta(minutes=30), at)
+                      at + stall_window(leader, at), at, kind="stalled")
             log(f"Chief duties: {leader} did not progress its inbox; electing the next available Chief")
             continue
         chief_reviews = [j for j in due_chief_reviews(chief_inbox, leader, at)
