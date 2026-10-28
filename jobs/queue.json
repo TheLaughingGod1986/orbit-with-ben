@@ -1,5 +1,5 @@
 {
-  "next_id": 1090,
+  "next_id": 1091,
   "jobs": [
     {
       "id": "J0001",
@@ -95529,7 +95529,7 @@
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J1090",
       "eta_min": 120,
       "status": "blocked",
       "by": "codex",
@@ -95537,7 +95537,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T11:16Z",
-      "result": "parked for Chief: v06 and verified delivery evidence ready on codex/J1084 at 8379c457f; review changed reveal/wind timing and QA warnings, then point J1059 at v06 for Ben watch",
+      "result": "Chief FIX 6da30d624: v06 final shot at 24.8s shows rover hardware and black wedge. Follow-up J1090 corrects picture, auditions opening and reruns gates. J1059 remains held for Ben; v02 fallback unchanged.",
       "history": [
         {
           "at": "2026-10-28T11:16Z",
@@ -95633,9 +95633,19 @@
           "at": "2026-10-28T11:39Z",
           "by": "codex",
           "what": "blocked: parked for Chief: v06 and verified delivery evidence ready on codex/J1084 at 8379c457f; review changed reveal/wind timing and QA warnings, then point J1059 at v06 for Ben watch"
+        },
+        {
+          "at": "2026-10-28T13:07Z",
+          "by": "codex",
+          "what": "Chief FIX 6da30d624: v06 final shot at 24.8s shows rover hardware and black wedge. Follow-up J1090 corrects picture, auditions opening and reruns gates. J1059 remains held for Ben; v02 fallback unchanged."
+        },
+        {
+          "at": "2026-10-28T13:07Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T13:00:00Z"
         }
       ],
-      "remaining_action": "Chief review v06 timing and warnings, then refer J1059 to Ben for watch",
+      "remaining_action": "Review corrected v07 after J1090; v06 rejected, J1059 remains held",
       "due": "2026-11-06T20:00:00Z",
       "kind": "video",
       "progress": {
@@ -95647,7 +95657,12 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J1090 delivers corrected v07 with gates and audible opening check for elected-Chief review",
+        "check_at": "2026-10-29T13:00:00Z"
+      }
     },
     {
       "id": "J1085",
@@ -95940,6 +95955,39 @@
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes"
+    },
+    {
+      "id": "J1090",
+      "title": "OWB 025 Mars Opening v07: remove final-shot rover hardware, audition opening, rerun gates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex FIX: jobs/reviews/J1084/RULING_2026-10-28_CODEX.md (6da30d624).\nCreate v07 from codex/J1084 at 8379c457f in a clean worktree. Fix only s07: at 24.8s of v06 the JPL-20200303-MSLf-0001 source 8s crop shows rover wheel/hardware at right/bottom and a black wedge at top. Re-crop or use an existing verified neutral moving Mars plate; inspect the entire shot and transition. No MSL hardware may illustrate the Opportunity story. Preserve v01-v06, the full locked-long opening sentence and all remaining accepted VO. Chief accepts the later 5.16s reveal and wind at 9.224-11.304s for this complete opening; do not restore fragments or cut speech to meet earlier targets.\nActually audition the opening and joins: resolve Whisper 'from more' versus source 'for more' with a documented listening check, not ASR alone. No speech rewrite or TTS authorised.\nRerun gate_shorts_open, picture_qa, polish_gate, music_gate, SFX level, caption/title-safe check, 22-27s duration, AAC -14.0 +/-0.5 LUFS / TP <= -1.6 dBTP. Full-size review of every warning and full-runtime sheet; no false claim of listening if unavailable. Deliver 720x1280 PHONE, NAS/UAT copies and matching SHA256 manifest. No paid generation, credit, upload, swap or scheduling. Return for elected-Chief review by 6 Nov 20:00 London.\nUse taskKeys OWB:025 on every progress update. J1084 remains held for corrected evidence; J1059 remains held for Ben and must not be released. Only after Chief PASS update J1059 to the approved revision for Ben's watch, due 11 Nov 10:30 London; no OK means scheduled TtgHNLXfDSs v02 airs 11:30 as is. This is a local picture correction, kind assembly, not video generation.",
+      "ref": "6da30d624",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-28T13:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T13:07Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct final-shot crop, audition opening and deliver gated v07 for Chief review",
+      "due": "2026-11-06T20:00:00Z",
+      "kind": "assembly",
+      "review_followup_of": "J1084",
+      "taskKeys": [
+        "OWB:025"
+      ]
     }
   ],
   "focus": [],
