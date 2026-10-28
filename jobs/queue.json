@@ -96097,7 +96097,7 @@
       "ref": "6da30d624",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J1093",
       "eta_min": 90,
       "status": "blocked",
       "by": "codex",
@@ -96105,7 +96105,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T13:07Z",
-      "result": "parked for Chief: v07 evidence c370f1058 on codex/J1090; five automated gates PASS, sampled picture correction verified, local/NAS hashes match. Actual opening/join audition unavailable in this session (for more vs from more unresolved); iCloud master/support reads Errno 11 although UAT PHONE matches. Arrange audible review and recheck UAT before acceptance; J1084/J1059 holds unchanged.",
+      "result": "Acting-Chief Codex FIX / acceptance incomplete: ruling 590881704. Automated gates pass; sampled final-shot correction supported. Actual audition absent; UAT master and seven support files still unreadable (Errno 11). Follow-up J1093: direct-audio QA and readable delivery verification. J1084/J1059 held; scheduled v02 unchanged.",
       "history": [
         {
           "at": "2026-10-28T13:07Z",
@@ -96171,6 +96171,11 @@
           "at": "2026-10-28T13:53Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-28T18:00:00Z"
+        },
+        {
+          "at": "2026-10-28T13:55Z",
+          "by": "codex",
+          "what": "Chief FIX recorded: 590881704; dependency J1093; verification 2026-10-28T18:00Z. No approval or publishing change."
         }
       ],
       "remaining_action": "Review J1093 audio and delivery evidence before accepting v07; J1059 stays held for Ben",
@@ -96200,6 +96205,13 @@
         "type": "dependency",
         "condition": "J1093 supplies actual audio audition, full-shot QA and readable matching UAT hashes for elected-Chief acceptance",
         "check_at": "2026-10-28T18:00:00Z"
+      },
+      "review_ruling": {
+        "by": "codex",
+        "at": "2026-10-28T13:55:26+00:00",
+        "decision": "FIX",
+        "ref": "590881704",
+        "followup": "J1093"
       }
     },
     {
@@ -96303,7 +96315,11 @@
       "due": "2026-11-06T20:00:00Z",
       "for": "gemini",
       "kind": "qa",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "OWB:025"
+      ],
+      "review_followup_of": "J1090"
     }
   ],
   "focus": [],
