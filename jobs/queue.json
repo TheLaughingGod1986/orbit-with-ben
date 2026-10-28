@@ -86109,13 +86109,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-28T15:01Z",
-      "eta": "2026-10-28T17:01Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T15:58Z",
-      "result": "parked for Chief: review Acting-Chief 6428994070 FIX pass on HOS_2026-10-26.md (599w) + HOS_2026-10-26_EVIDENCE.md (0d2bea8c) and LEARNINGS.md (e51af19de)",
+      "result": "Acting-Chief PASS audit only, HOS 0d2bea8c / OWB e51af19de; ruling HOS desk 6472484257. FIX 6428994070 resolved: raw sums/8 appendix rows, six unmeasured-curve labels, unverified discrepancy causes, dated 2096 baseline and bounded summary verified. Original worker 5/5 preserved; separate Chief review steps. Follow-up J1098 depends on J0984 for mature Snow read now; if input unavailable, explicit input hold/recheck 29 Oct 12:00Z. J1004 owns hook/duration proposals; J0966 separate cut review/Ben swap OK. No production approval, no new rule/topic lock, no YouTube change, GBP0; all other holds retained.",
       "history": [
         {
           "at": "2026-10-26T15:58Z",
@@ -86336,6 +86336,11 @@
           "at": "2026-10-28T15:01Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T15:01Z",
+          "by": "codex",
+          "what": "done: Acting-Chief PASS audit only, HOS 0d2bea8c / OWB e51af19de; ruling HOS desk 6472484257. FIX 6428994070 resolved: raw sums/8 appendix rows, six unmeasured-curve labels, unverified discrepancy causes, dated 2096 baseline and bounded summary verified. Original worker 5/5 preserved; separate Chief review steps. Follow-up J1098 depends on J0984 for mature Snow read now; if input unavailable, explicit input hold/recheck 29 Oct 12:00Z. J1004 owns hook/duration proposals; J0966 separate cut review/Ben swap OK. No production approval, no new rule/topic lock, no YouTube change, GBP0; all other holds retained."
         }
       ],
       "kind": "review",
@@ -86364,7 +86369,8 @@
         "by": "gemini",
         "note": "Posted J0984 FIX 6428994070 completion report to HOS desk #180; parking for Chief review"
       },
-      "remaining_action": "Awaiting Chief review of Acting-Chief 6428994070 FIX pass (HOS 0d2bea8c, OWB e51af19de)"
+      "remaining_action": "Awaiting Chief review of Acting-Chief 6428994070 FIX pass (HOS 0d2bea8c, OWB e51af19de)",
+      "done_ref": "6472484257"
     },
     {
       "id": "J0985",
