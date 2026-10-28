@@ -92572,9 +92572,14 @@
           "at": "2026-10-28T03:08Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J1054 QA sweep across OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-28T03:16Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified 37 packs with missing or stale gate outputs beyond the 73 J1048 exports: 8 HOS 005/006 v01 lift Shorts (missing music_gate), 27 OWB 020-027 v01 lift Shorts (missing music_gate), and 2 OWB long masters (024 v06 UAT copy + 026 v06_cfr18 with gate mtime older than MP4)"
         }
       ],
-      "remaining_action": "Scan newest OWB and HOS packs since J1048 for missing or stale picture_qa, polish_gate, and music_gate outputs",
+      "remaining_action": "Run missing music_gate on 8 HOS 005/006 lift Shorts and 27 OWB 020-027 lift Shorts, and refresh stale gates on OWB 024 v06 and 026 v06_cfr18",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -92587,12 +92592,24 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T03:08Z",
+        "at": "2026-10-28T03:16Z",
         "by": "gemini",
-        "note": "Starting J1054 QA sweep across OWB and HOS packs"
-      }
+        "note": "Identified 37 packs with missing or stale gate outputs beyond the 73 J1048 exports: 8 HOS 005/006 v01 lift Shorts (missi"
+      },
+      "taskKeys": [
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "HOS:005",
+        "HOS:006"
+      ]
     },
     {
       "id": "J1055",
