@@ -1,0 +1,81 @@
+{
+  "job": "J0935",
+  "version": "v04",
+  "status": "PASS_WITH_KEEPER_RECONCILIATION_NOTE",
+  "air": "2026-11-18",
+  "youtube_id": "cwU_0WWeNZ4",
+  "related": "c5AdqQsnnys",
+  "planned_title": "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?",
+  "replaces_for_review": "wed18_robot_reach_nearest_star_v01/v02/v03 (scheduled cwU_0WWeNZ4). Earlier versions not overwritten.",
+  "file": "02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/wed18_robot_reach_nearest_star_v04.mp4",
+  "phone_file": "02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/wed18_robot_reach_nearest_star_v04_PHONE.mp4",
+  "sha256": "f7ccc2f5232a997d6eed2bd601c5215c333d39dbbda044cd9121b6fd99558119",
+  "phone_sha256": "8a499b6f41823186295707b524e998d935179daf3ec3f183b49ffe2cbcd0c938",
+  "duration_s": 22.6,
+  "spoken": "Voyager 1. moves 17 kilometers every second. At that speed, the trip would take about 75,000 years, Put that beside the light you know. Moonlight reaches you in just over a second. Sunlight takes about eight minutes. So when you look towards Proxima, you are seeing light that left it more than four years ago. and Voyager isn't even heading that way.",
+  "whisper_transcript": "Voyager 1 moves 17 kilometers every second. At that speed, the trip would take about 75,000 years. Put that beside the light you know. Moonlight reaches you in just over a second. Sunlight takes about eight minutes. So when you look towards Proxima, you are seeing light that left it more than four years ago. And Voyager isn't even heading that way.",
+  "whisper_file": "wed18_robot_reach_nearest_star_v04_whisper.json",
+  "checks_file": "wed18_robot_reach_nearest_star_v04_checks.json",
+  "infeasibility_file": "wed18_robot_reach_nearest_star_v04_infeasibility.json",
+  "spend": "none",
+  "orbit": "none on screen",
+  "bed": "nearest-star_score_bed_v01_full.wav from 40s",
+  "brief": {
+    "frame_0": "ESO Paranal Milky Way time-lapse at v06 488.15 s (uhd_yb_paranal_02). The audit's SDO disc at 408.25 s scores f0diff 0.20, so it is not frame 0.",
+    "frame_0_black": 0.133,
+    "first_word_s": 0.008,
+    "surprise_s": 1.016,
+    "subject_proxima_s": 15.334,
+    "first_cut_s": 2.63,
+    "last_word_to_loop_s": 1.0,
+    "meta_promise": false,
+    "payoff_number_s": 18.086,
+    "seventy_five_thousand_s": 4.934,
+    "payoff_vs_70pct": 15.8,
+    "keeper_line1_question_compliant": false,
+    "loop_diff_whole": 9.33,
+    "loop_diff_masked": 8.41,
+    "loop_diff": 8.41,
+    "lufs": -14.1,
+    "true_peak_dbtp": -2.0,
+    "runtime_s": 22.572,
+    "longest_plate_s": 3.157,
+    "dark_run": {
+      "verdict": "PASS",
+      "frames": 678,
+      "worst_run": 0,
+      "hits": []
+    },
+    "black_edge": {
+      "verdict": "PASS",
+      "frames": 678,
+      "worst_run": 0,
+      "hits": []
+    },
+    "ocr": {
+      "verdict": "PASS",
+      "frames": 226,
+      "hits": 0
+    },
+    "loop_sentence": "\u2026and Voyager isn't even heading that way. Voyager 1 moves 17 kilometers every second."
+  },
+  "checks": {
+    "dark_run_frames_over_85pct": 0,
+    "black_edge_run_over_30pct": 0,
+    "max_black_frac": 0.1587,
+    "ocr_every_3rd_frame": 226,
+    "ocr_url_logo_id_hits": 0,
+    "sheet_2fps_coverage": "8x6 tile (48 frames = 24.0s) covering full 22.57s + loop",
+    "picture_qa_warn_reviewed": "0:20 row s06 GSFC_20160426_SDO_m12224_SolarFlare.mp4 reviewed full-size: clean NASA SDO 171A stellar disc under closing Proxima/Voyager line, lower edge density due to smooth solar corona plasma vs point-star fields."
+  },
+  "long_title_on_screen": {
+    "title": "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?",
+    "from_s": 9.0,
+    "to_s": 14.0
+  },
+  "long_in_description": {
+    "title": "How Far Is the Nearest Star?",
+    "id": "c5AdqQsnnys"
+  },
+  "hook": "17 / KM/S (yellow KM/S), 0-2.0 s"
+}

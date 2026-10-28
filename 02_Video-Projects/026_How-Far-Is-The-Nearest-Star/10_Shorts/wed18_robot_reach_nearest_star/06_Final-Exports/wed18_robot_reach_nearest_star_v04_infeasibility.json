@@ -1,0 +1,47 @@
+{
+  "short_id": "cwU_0WWeNZ4",
+  "slug": "wed18_robot_reach_nearest_star",
+  "status": "KEEPER_FIRST_LINE_QUESTION_NOT_RECORDED_ON_DISK",
+  "scheduled_version_retained_unless_waived": "wed18_robot_reach_nearest_star_v01 (scheduled cwU_0WWeNZ4)",
+  "conflict_summary": "The planned title question ('If Voyager Needs 75,000 Years, How Far Is the Nearest Star?') is not recorded on either wed18 Short VO (wed18_robot_reach_nearest_star_vo_v01_LOCK.mp3) or 026 locked long VO (nearest_star_vo_v01.wav). On wed18 Short VO, the recorded setup question is 'Could a robot like it reach the nearest star?' (4.42-6.96 s, 2.54 s raw / 2.35 s at 1.08x), which Audit #11 and Chief c61 explicitly ordered cut ('cut the 0.14-8.02 s setup/question, lead with the 17 km/s / 75,000 years clause by 1.5 s from this Short\\'s own VO') and which occupies > 2.3 s before '17 km/s' can begin, preventing '17' from landing by <= 1.50 s.",
+  "available_recorded_candidates": [
+    {
+      "source": "wed18_robot_reach_nearest_star_vo_v01_LOCK.mp3 (2.812-3.460s + 8.40-10.98s)",
+      "text": "Voyager 1 moves 17 kilometers every second.",
+      "surprise_17_s": 1.016,
+      "why_used_in_v04": "Exact opening sentence mandated by Chief c61 ('Rebuild it from whole sentences: \"Voyager 1 moves 17 kilometres every second. At that speed, the trip would take about 75,000 years.\"'), with unbroken 2.812-3.460 s 'Voyager 1.' slice so faster-whisper transcribes 'Voyager 1' cleanly and '17' lands at 1.016 s (<= 1.50 s)."
+    },
+    {
+      "source": "wed18_robot_reach_nearest_star_vo_v01_LOCK.mp3 (4.42-6.96s) + (8.02-10.98s)",
+      "text": "Could a robot like it reach the nearest star? Voyager moves 17 kilometers every second.",
+      "atempo_1_08_onset_s": {
+        "Could": 0.0,
+        "star": 2.02,
+        "17": 3.12
+      },
+      "why_fails_strict_1_5s": "Explicitly cut by Audit #11 / Chief c61, does not match the title question, and pushes '17' to 3.12 s (> 1.50 s)."
+    },
+    {
+      "source": "026 nearest_star_vo_v01.wav (312.28-314.40s) + wed18 Short VO (8.02-10.98s)",
+      "text": "So how long would the journey take? Voyager moves 17 kilometers every second.",
+      "atempo_1_08_onset_s": {
+        "So": 0.0,
+        "take": 1.65,
+        "17": 2.75
+      },
+      "why_fails_strict_1_5s": "Does not match the title question ('How Far Is the Nearest Star?') and pushes '17' to 2.75 s (> 1.50 s)."
+    }
+  ],
+  "all_other_fixes_satisfied": {
+    "runtime_s": 22.572,
+    "clears_22s_floor": true,
+    "surprise_17_s": 1.016,
+    "first_cut_s": 2.63,
+    "longest_plate_s": 3.157,
+    "payoff_four_s": 18.086,
+    "payoff_pct": 80.1,
+    "voyager_1_audible_in_whisper": true,
+    "aac_lufs": -14.1,
+    "aac_tp_dbtp": -2.0
+  }
+}
