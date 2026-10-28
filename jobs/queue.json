@@ -98847,10 +98847,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-28T19:56Z",
+      "eta": "2026-10-28T20:26Z",
       "created_by": "codex",
       "created_at": "2026-10-28T19:38Z",
       "result": "",
@@ -98864,6 +98864,11 @@
           "at": "2026-10-28T19:53Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Cursor out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-10-28T19:56Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel (cursor): HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777",
@@ -98876,7 +98881,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T19:56Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1126",
