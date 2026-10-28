@@ -95501,16 +95501,22 @@
           "at": "2026-10-28T11:25Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T11:26Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resumed prior v06: complete opening from locked long, no spend; fixed first-cut gate failure at 3.53s to 2.50s; added copy checksum verification."
         }
       ],
-      "remaining_action": "Check accepted VO for a complete opening sentence, build v06 if possible, and verify gates",
+      "remaining_action": "Rebuild v06 with earlier first cut, then verify all gates and delivery copies",
       "due": "2026-11-06T20:00:00Z",
       "kind": "video",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T11:25Z",
-        "by": "codex"
+        "at": "2026-10-28T11:26Z",
+        "by": "codex",
+        "note": "Resumed prior v06: complete opening from locked long, no spend; fixed first-cut gate failure at 3.53s to 2.50s; added co"
       },
       "taskKeys": [
         "OWB:025"
