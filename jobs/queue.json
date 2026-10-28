@@ -95457,22 +95457,28 @@
           "at": "2026-10-28T12:44Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed the dispatched verification only; reviewing original job and approval history."
+        },
+        {
+          "at": "2026-10-28T12:45Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original brief, full history, J1005 report and delivery 8df16983; corrected film links to 004/005/007."
         }
       ],
-      "remaining_action": "Verify J0966 replacement review and Ben swap approval evidence",
+      "remaining_action": "Verify latest approval evidence and record the remaining J0966 hold",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-28T12:11:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T12:44Z",
+        "at": "2026-10-28T12:45Z",
         "by": "codex",
-        "note": "Claimed the dispatched verification only; reviewing original job and approval history."
+        "note": "Read original brief, full history, J1005 report and delivery 8df16983; corrected film links to 004/005/007."
       },
       "taskKeys": [
-        "HOS:006",
+        "HOS:004",
+        "HOS:005",
         "HOS:007"
       ]
     },
