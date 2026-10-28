@@ -99269,9 +99269,14 @@
           "at": "2026-10-28T21:53Z",
           "by": "codex",
           "what": "step 1 of 4 done: Resumed PR 329 and existing J1128 recovery sessions; research JSON compaction already complete; preserving four-step plan."
+        },
+        {
+          "at": "2026-10-28T21:55Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Existing safety regressions pass; free 19.71 GB, swap 11 GiB allocated. Original recovery PID 67893 alive, resume PID 4944 waiting; no copies duplicated."
         }
       ],
-      "remaining_action": "Finish existing verified NAS recovery and account for remaining disk growth",
+      "remaining_action": "Verify pending NAS archive and investigate anomalous macOS temp allocation",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99286,9 +99291,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-28T21:53Z",
+        "at": "2026-10-28T21:55Z",
         "by": "codex",
-        "note": "Resumed PR 329 and existing J1128 recovery sessions; research JSON compaction already complete; preserving four-step pla"
+        "note": "Existing safety regressions pass; free 19.71 GB, swap 11 GiB allocated. Original recovery PID 67893 alive, resume PID 49"
       },
       "taskKeys": [
         "OWB:027",
