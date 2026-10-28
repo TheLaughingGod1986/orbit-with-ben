@@ -106,12 +106,12 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 3 d | 48 | 30.4% | too few to judge | 50.0% | too few to judge |
-| [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 5 d | 167 | 39.2% | MISS | 88.0% | PASS |
-| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 6 d | 144 | 22.5% | MISS | 53.2% | WATCH |
-| [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | 7 d | 134 | 43.4% | MISS | 105.6% | LOOP |
-| [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | 8 d | 57 | 24.0% | too few to judge | 117.7% | too few to judge |
-| [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | 10 d | 1223 | 40.7% | MISS | 44.1% | MISS |
-| [Invisible life is still everywhere](https://youtu.be/qOZgess30h0) | 13 d | 168 | 25.2% | MISS | 39.8% | MISS |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 37 h (early) | 204 | 28.0% | MISS | 66.6% | WATCH |
+| [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 4 d | 49 | 30.4% | too few to judge | 50.0% | too few to judge |
+| [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 6 d | 167 | 39.5% | MISS | 88.2% | PASS |
+| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 7 d | 145 | 23.1% | MISS | 51.9% | WATCH |
+| [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | 8 d | 134 | 43.4% | MISS | 105.6% | LOOP |
+| [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | 9 d | 57 | 24.0% | too few to judge | 117.7% | too few to judge |
+| [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | 11 d | 1223 | 40.7% | MISS | 44.1% | MISS |
 
 Stayed to watch: 0 of 5 judged Shorts at 60%+. Average viewed: 2 of 5 at 70%+.
