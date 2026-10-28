@@ -98869,9 +98869,14 @@
           "at": "2026-10-28T19:56Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T19:56Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1125; starting packaging panel review"
         }
       ],
-      "remaining_action": "Packaging panel (cursor): HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777",
+      "remaining_action": "Read HOS weekly audit and Periodic Table v12 packaging inputs",
       "for": "gemini",
       "kind": "review",
       "rerouted_from": {
@@ -98887,9 +98892,11 @@
         "of": 3,
         "at": "2026-10-28T19:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1125; starting packaging panel review"
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     },
     {
       "id": "J1126",
