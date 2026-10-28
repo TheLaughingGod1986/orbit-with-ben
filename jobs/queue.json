@@ -97237,9 +97237,14 @@
           "at": "2026-10-28T16:06Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T16:06Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Upload S4 v04 as a Private replacement in its slot, then unschedule the old one",
+      "remaining_action": "Read old video state and verify approved v04 master",
       "due": "2026-12-01T20:00Z",
       "kind": "studio",
       "approved_from": {
@@ -97256,12 +97261,13 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-28T16:06Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:028"
+      ]
     },
     {
       "id": "J1104",
