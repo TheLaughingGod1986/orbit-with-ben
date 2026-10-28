@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1130 | mini | open (after J1129) | – | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
 | J1132 | mini | blocked | codex | – | studio · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
+| J1133 | mini | open | – | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 
 Recently finished:
 
