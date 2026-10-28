@@ -94219,9 +94219,14 @@
           "at": "2026-10-28T08:25Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1071; starting read-only listing check on last 10 live videos"
+        },
+        {
+          "at": "2026-10-28T08:27Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified top 10 public videos from 2026-10-28 snapshot (1OCNzhkiBuc through y-SPHQ0-VjQ)"
         }
       ],
-      "remaining_action": "Identify last 10 live OWB videos from snapshots and prior live_fixes reports",
+      "remaining_action": "Verify chapters, sources, and end screens on live public longs",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -94234,12 +94239,18 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T08:25Z",
+        "at": "2026-10-28T08:27Z",
         "by": "gemini",
-        "note": "Claimed J1071; starting read-only listing check on last 10 live videos"
-      }
+        "note": "Identified top 10 public videos from 2026-10-28 snapshot (1OCNzhkiBuc through y-SPHQ0-VjQ)"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027"
+      ]
     },
     {
       "id": "J1072",
