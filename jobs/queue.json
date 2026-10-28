@@ -1,5 +1,5 @@
 {
-  "next_id": 1108,
+  "next_id": 1110,
   "jobs": [
     {
       "id": "J0001",
@@ -87859,6 +87859,11 @@
           "at": "2026-10-28T09:27Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-28T15:30:00Z"
+        },
+        {
+          "at": "2026-10-28T15:47Z",
+          "by": "relay",
+          "what": "condition verification queued: J1108"
         }
       ],
       "kind": "studio",
@@ -87876,10 +87881,11 @@
       "hold": {
         "type": "input",
         "condition": "J0998 remains blocked: HOS PR #365 a87cd56a is draft OPEN with no Ben approval found on PR or HOS desk; requires Ben OK, merge to HOS main, then unmodified npm run channel:audit exit 0. Studio work evidence remains PR #358 c26a79bd.",
-        "check_at": "2026-10-28T15:30:00Z",
+        "check_at": "2026-10-28T16:47:44+00:00",
         "last_recheck": "J1078",
         "checked_at": "2026-10-28T09:27:17+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1108"
       }
     },
     {
@@ -96876,6 +96882,11 @@
           "at": "2026-10-28T15:47Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review mature >=48h Snow Short (OnJ8MFu0Mi0) Studio/retention read and 28 Oct audit addendum in HOS PR #368 (97179222)"
+        },
+        {
+          "at": "2026-10-28T15:47Z",
+          "by": "relay",
+          "what": "condition verification queued: J1109"
         }
       ],
       "remaining_action": "None (parked for Chief review of HOS PR #368)",
@@ -96895,6 +96906,12 @@
         "at": "2026-10-28T15:47Z",
         "by": "gemini",
         "note": "Step 4 of 4 done: Opened clean-worktree PR #368 (97179222) in history-of-science and reported to HOS desk #180"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-28T16:47:44+00:00",
+        "recheck_task": "J1109"
       }
     },
     {
@@ -97217,6 +97234,68 @@
       "remaining_action": "Audit every thumbnail vs style and CTR, then design and test Bs for the weakest",
       "kind": "thumb",
       "backlog": "hos-weekly-thumb-audit"
+    },
+    {
+      "id": "J1108",
+      "title": "Chief: verify condition for J0999",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0999: J0998 remains blocked: HOS PR #365 a87cd56a is draft OPEN with no Ben approval found on PR or HOS desk; requires Ben OK, merge to HOS main, then unmodified npm run channel:audit exit 0. Studio work evidence remains PR #358 c26a79bd.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0999 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-28T15:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T15:47Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await Ben approval and merge of HOS PR #365, then pass channel:audit on HOS main",
+      "kind": "chief",
+      "recheck_of": "J0999",
+      "due": "2026-10-28T16:47:44+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1109",
+      "title": "Chief: verify condition for J1098",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1098: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1098 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-28T15:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T15:47Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: None (parked for Chief review of HOS PR #368)",
+      "kind": "chief",
+      "recheck_of": "J1098",
+      "due": "2026-10-28T16:47:44+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],

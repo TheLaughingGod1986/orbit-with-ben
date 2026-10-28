@@ -56,6 +56,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
 | J1106 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
 | J1107 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
+| J1108 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
+| J1109 | any | open | – | – | chief · Chief: verify condition for J1098 |  |
 
 Recently finished:
 
