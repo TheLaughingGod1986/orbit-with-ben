@@ -96981,9 +96981,14 @@
           "at": "2026-10-28T15:48Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T15:50Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Input inspection complete; required NAS offload found no eligible scratch; 17,215 MB free remains below 20 GB. Caption and fragmented-opening diagnoses recorded."
         }
       ],
-      "remaining_action": "Inspect accepted audio and builders for S2, S5 and S6 v05 fixes",
+      "remaining_action": "Restore disk headroom, then assemble and verify three v05 fixes",
       "due": "2026-11-04T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -96995,10 +97000,11 @@
       },
       "for": "codex",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T15:48Z",
-        "by": "codex"
+        "at": "2026-10-28T15:50Z",
+        "by": "codex",
+        "note": "Input inspection complete; required NAS offload found no eligible scratch; 17,215 MB free remains below 20 GB. Caption a"
       },
       "taskKeys": [
         "OWB:027",
