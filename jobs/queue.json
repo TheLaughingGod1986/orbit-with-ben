@@ -97242,9 +97242,14 @@
           "at": "2026-10-28T16:06Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-28T16:07Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Old Private schedule confirmed; Related None; NAS master SHA256 matches approved file"
         }
       ],
-      "remaining_action": "Read old video state and verify approved v04 master",
+      "remaining_action": "Upload verified v04 and copy metadata, cover and captions",
       "due": "2026-12-01T20:00Z",
       "kind": "studio",
       "approved_from": {
@@ -97260,10 +97265,11 @@
         "okAt": "2026-10-28T11:33Z"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T16:06Z",
-        "by": "codex"
+        "at": "2026-10-28T16:07Z",
+        "by": "codex",
+        "note": "Old Private schedule confirmed; Related None; NAS master SHA256 matches approved file"
       },
       "taskKeys": [
         "OWB:028"
