@@ -94532,10 +94532,24 @@
           "at": "2026-10-28T08:38Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T08:46Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 6474 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Correct QA inventory paths, hashes and newest-version coverage; rerun only missing or stale gates",
-      "kind": "qa"
+      "kind": "qa",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
