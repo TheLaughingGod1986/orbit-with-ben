@@ -99294,9 +99294,14 @@
           "at": "2026-10-28T22:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T22:00Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Finish NAS verification and recover remaining space to 30 GB before reopening J1100",
+      "remaining_action": "Find disk growth, recover 30 GB free, prevent recurrence, then reopen J1100",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99309,11 +99314,10 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-10-28T21:58Z",
-        "by": "codex",
-        "note": "PR 329 updated: 413 unused Chrome clones and five clean pushed old worktrees removed; free 22.42 GB. Three safety regres"
+        "at": "2026-10-28T22:00Z",
+        "by": "codex"
       },
       "taskKeys": [
         "OWB:027",
