@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, setBoard: b => { board = b; }};
+  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, jobGroups, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -116,4 +116,14 @@ assert.equal(t.macbookState(null, NOW)[1], 'No report');
 assert.deepEqual([...t.macbookState({at: new Date(NOW - 5 * 6e4).toISOString(), state: 'waiting', why: ['on battery']}, NOW)], ['amber', 'Waiting', 'on battery']);
 assert.equal(t.macbookState({at: new Date(NOW - 5 * 6e4).toISOString(), state: 'working', job: 'J1122'}, NOW)[2], 'on J1122');
 assert(t.macbookState({at: new Date(NOW - 90 * 6e4).toISOString(), state: 'idle'}, NOW)[2].includes('asleep, lid closed or off'));
+// Credits: Grok, Claude and Gemini have no meter; the tile says up or out, and when a flagged one is back.
+assert.deepEqual([...t.meterless({agent: 'chief', up: false, until: '2026-10-30T07:00:00Z'}, null, NOW)], ['red', 'Out', 'back Fri 07:00']);
+assert.deepEqual([...t.meterless({agent: 'claude', up: true}, null, NOW)], ['green', 'Up', 'no meter published']);
+assert(t.renderTab('agents', board, NOW).includes('Grok'));
+// One job over several videos is one card on Overview, counted once.
+const batch = {status: 'claimed', id: 'J1100', by: 'codex', title: 'batch C'};
+const ovb = t.renderTab('overview', {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]}),
+  v({key: 'c', number: '027', type: 'short', jobs: [batch]})]}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [batch]}}, NOW);
+assert(ovb.includes('Same job also covers 2 more: 028, 027 Short') && !ovb.includes('studio job not tied'));
+assert.equal(t.jobGroups([v({key: 'a', jobs: [batch]}), v({key: 'b', jobs: [batch]})]).length, 1);
 console.log('studio app OK');
