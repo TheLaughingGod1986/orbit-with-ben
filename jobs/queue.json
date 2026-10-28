@@ -84715,10 +84715,10 @@
       "stage": "",
       "after": "J0990",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T06:36Z",
+      "eta": "2026-10-28T07:36Z",
       "created_by": "chief",
       "created_at": "2026-10-26T07:32Z",
       "result": "",
@@ -84812,6 +84812,11 @@
           "at": "2026-10-27T16:19Z",
           "by": "gemini",
           "what": "reopened: J0990 Chief technical release PASS (6d284765d, jobs/reviews/J0990_chief_release_review_2026-10-27.md): v13a master OWB UAT/030_apophis_short_v13a/030_apophis_short_v13a.mp4 (repo: 02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13a.mp4) SHA256 898d26f526da708c3b400126a829c3d352855087808c658cfabbce8a5f5b19e3 signed off for upload, superseding only v13 path/hash 2b276eb295dffbf4df0e81d874bce98295cfc8a3b94b4e6da945b162b5898abd. Ben v13 content OK 6411210906 and c62 picture PASS 6410661010 retained. Reopened for existing studio worker (hard stop: upload start <=10:45 London, both readbacks <=11:15 London Wed 28 Oct)."
+        },
+        {
+          "at": "2026-10-28T06:36Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -84853,7 +84858,15 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "escalated_at": "2026-10-26T18:45Z",
-      "remaining_action": "Upload Chief-signed-off v13a Apophis Short (898d26f5...) and verify swap before Wed 28 Oct 10:45/11:15 London"
+      "remaining_action": "Upload Chief-signed-off v13a Apophis Short (898d26f5...) and verify swap before Wed 28 Oct 10:45/11:15 London",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T06:36Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0975",
