@@ -88770,11 +88770,16 @@
           "at": "2026-10-28T00:20Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting read-only listing check on HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-28T00:24Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Fetched Data API metadata (57 unique videos: 25 public, 15 scheduled, 17 private), verified all 4 public long end screens, all 21 public Short Related pills (including newly public -3L6HzJ_d_4), J0997 007 Short watch URLs, and J0999 099 playlist/end screen"
         }
       ],
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
-      "remaining_action": "Fetch live and scheduled HOS YouTube metadata and verify chapters, Sources, end screens and Related links",
+      "remaining_action": "Write 00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md in HOS repo and review as Acting Chief",
       "rerouted_from": {
         "needs": "any",
         "for": "",
@@ -88785,11 +88790,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T00:20Z",
+        "at": "2026-10-28T00:24Z",
         "by": "gemini",
-        "note": "Starting read-only listing check on HOS live and scheduled videos"
+        "note": "Fetched Data API metadata (57 unique videos: 25 public, 15 scheduled, 17 private), verified all 4 public long end screen"
       },
       "taskKeys": [
         "HOS:001",
