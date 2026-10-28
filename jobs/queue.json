@@ -93292,10 +93292,24 @@
           "at": "2026-10-28T04:53Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T04:57Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 6245 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "HOS 001-004 v01 lift Shorts music_gate fix (£0, no spend): persist 05_Music beds and plan sidecars for 16 lift Shorts",
-      "kind": "qa"
+      "kind": "qa",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
