@@ -94682,10 +94682,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T09:20Z",
+      "eta": "2026-10-28T11:20Z",
       "created_by": "relay",
       "created_at": "2026-10-28T09:11Z",
       "result": "",
@@ -94694,13 +94694,26 @@
           "at": "2026-10-28T09:11Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T09:20Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await non-author Chief merge of HOS PR #366 (00b1e653) and post-reset J0862/J0863 holds",
       "kind": "chief",
       "recheck_of": "J1004",
       "due": "2026-10-28T10:11:12+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T09:20Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1078",
