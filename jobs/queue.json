@@ -93363,9 +93363,14 @@
           "at": "2026-10-28T06:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T06:56Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J1062: inspecting HOS live and scheduled videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Run read-only YouTube Data API, public end-screen, and Shorts Related-pill checks on HOS live and scheduled videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -93379,12 +93384,21 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-28T06:55Z",
+        "of": 4,
+        "at": "2026-10-28T06:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J1062: inspecting HOS live and scheduled videos"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     },
     {
       "id": "J1063",
