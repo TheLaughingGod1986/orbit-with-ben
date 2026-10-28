@@ -93987,19 +93987,33 @@
           "at": "2026-10-28T07:48Z",
           "by": "codex",
           "what": "step 0 of 3 done: HOS read complete: 4 longs and 20 Shorts with metrics; OWB collection ongoing; exact tooltip and retention values captured"
+        },
+        {
+          "at": "2026-10-28T07:49Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: All 18 listed longs checked on Engagement; missing duration-based averages recovered. HOS complete; remaining OWB Shorts reads in progress."
         }
       ],
-      "remaining_action": "Finish OWB reads and verify long Engagement metrics",
+      "remaining_action": "Complete remaining OWB Shorts and validate both channel sidecars",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-28T07:48Z",
+        "at": "2026-10-28T07:49Z",
         "by": "codex",
-        "note": "HOS read complete: 4 longs and 20 Shorts with metrics; OWB collection ongoing; exact tooltip and retention values captur"
-      }
+        "note": "All 18 listed longs checked on Engagement; missing duration-based averages recovered. HOS complete; remaining OWB Shorts"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "HOS:001",
+        "HOS:002",
+        "HOS:004",
+        "HOS:005"
+      ]
     }
   ],
   "focus": [],
