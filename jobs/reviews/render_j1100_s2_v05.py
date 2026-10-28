@@ -7,7 +7,7 @@ import argparse, hashlib, importlib.util, json, math, shutil, subprocess
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-LOCK = '7a1cf1409813cbeeaf77e938b7747d59c429c30f38d53612e6844f79ea33fe2d'
+LOCK = 'a5b0843eb9c0026f5e917361b317a5f6d88b97662829029f58b54a532e6a78d1'
 ROOT = Path(__file__).resolve().parents[2]
 FONT = '/System/Library/Fonts/Supplemental/Arial Black.ttf'
 W,H,FPS = 1080,1920,30

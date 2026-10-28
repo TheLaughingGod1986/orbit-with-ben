@@ -11,6 +11,8 @@ v['subspans']=c['subspans'];
 for sp in v['subspans']:
  for w in sp['words']:
   w['start']=round(sp['timeline_start']+w['src_start']-sp['source_in'],3);w['end']=round(sp['timeline_start']+w['src_end']-sp['source_in'],3)
+v['subspans'][6]['words'][-1]['word']='equator?'
+v['subspans'][9]['words'][-1]['word']='there.'
 v['vo_end_s']=c['duration_with_1s_loop_s']-1;v['total_duration_s']=c['duration_with_1s_loop_s'];v['seventy_pct_mark_s']=v['total_duration_s']*.7
 v['auditions']['full_vo_audition']={'wav_path':c['file'],'sha256':c['sha256']}
 def shift(t):return round(t+(.47 if t>=2.54 else 0)+(.32 if t>=4.98 else 0),3)
