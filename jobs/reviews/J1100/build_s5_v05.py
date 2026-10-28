@@ -6,7 +6,7 @@ import hashlib, importlib.util, json, shutil, subprocess
 from pathlib import Path
 from PIL import Image
 ROOT=Path('/Users/benjaminoats/YouTube/orbit-with-ben')
-OUT=Path('/Users/benjaminoats/_desk/renders/J1100/S5_028_jJ5LkFGyzLI')
+OUT=Path('/Users/benjaminoats/_desk/renders/J1100-attempt02/S5_028_jJ5LkFGyzLI')
 SOURCE=Path('/Users/benjaminoats/_desk/renders/J1032/S5_028_jJ5LkFGyzLI')
 SRC=Path('/Users/benjaminoats/_desk/renders/J1032-finish12/S5_028_jJ5LkFGyzLI/S5_028_jJ5LkFGyzLI_v04.mp4')
 KEY='S5_028_jJ5LkFGyzLI'
@@ -37,12 +37,15 @@ def main():
     m.text(im,[' '.join(w['word'] for w in g).upper()],1498,54);break
   im.save(layers/f'{n:05d}.png')
  final=OUT/(KEY+'_v05.mp4')
- ff(['-i',SRC,'-framerate','30','-i',layers/'%05d.png','-filter_complex',"[0:v][1:v]overlay=0:0:eof_action=pass:enable='lt(t,2)',format=yuv420p[v]",'-map','[v]','-map','0:a','-c:v','libx264','-preset','fast','-crf','18','-c:a','copy','-movflags','+faststart',final])
+ end=round(prep['vo_splice_map']['vo_end_s']*30)
+ total=round(prep['vo_splice_map']['total_duration_s']*30)
+ loop_filter=f"[captioned]split=4[body][rev][sample][endpoint];[body]trim=end_frame={end},setpts=N/(30*TB)[b];[rev]trim=end_frame=30,reverse,trim=end_frame=25,setpts=N/(30*TB)[r];[sample]trim=start_frame=2:end_frame=3,loop=loop=3:size=1:start=0,trim=end_frame=4,setpts=N/(30*TB)[s];[endpoint]trim=end_frame=1,setpts=N/(30*TB)[e];[b][r][s][e]concat=n=4:v=1:a=0,setpts=N/(30*TB),format=yuv420p[v]"
+ ff(['-i',SRC,'-framerate','30','-i',layers/'%05d.png','-filter_complex',"[0:v][1:v]overlay=0:0:eof_action=pass:enable='lt(t,2)',format=yuv420p[captioned];"+loop_filter,'-frames:v',total,'-map','[v]','-map','0:a','-c:v','libx264','-preset','fast','-crf','18','-c:a','copy','-movflags','+faststart',final])
  assert ah(SRC)==ah(final),'AAC changed'
  ff(['-i',final,'-vf','scale=720:1280:flags=lanczos','-c:v','libx264','-preset','fast','-crf','20','-c:a','copy',OUT/(KEY+'_v05_PHONE.mp4')])
  for p in ['locked_preparation.json','locked_shots.json','input_hashes.json','stem_vo.wav','stem_bed.wav','stem_sfx.wav']:shutil.copy2(SOURCE/p,OUT/p)
  level=legacy.ebur128_stats(final);loop=legacy.loop_measures(final)
- record={'status':'UNREVIEWED; final gates and actual AAC listening/transcript comparison required','input_sha256':sha(SRC),'output_sha256':sha(final),'I_LUFS':level[0],'TP_dBTP':level[1],'audio_pass':-14.5<=level[0]<=-13.5 and level[1]<=-1.6,'loop':loop,'loop_pass':max(loop.values())<2,'AAC_packet_hash_unchanged':True,'change':'Added missing opening bottom captions at original word timestamps before 2s only. v04 preserved. No change to VO, hook, plates, title banner, card or timing.','caption_groups':groups}
+ record={'status':'UNREVIEWED; final gates and actual AAC listening/transcript comparison required','input_sha256':sha(SRC),'output_sha256':sha(final),'I_LUFS':level[0],'TP_dBTP':level[1],'audio_pass':-14.5<=level[0]<=-13.5 and level[1]<=-1.6,'loop':loop,'loop_pass':max(loop.values())<2,'AAC_packet_hash_unchanged':True,'change':'Added missing opening bottom captions at original word timestamps before 2s only. v04 preserved. Rebuilt the existing 1s reverse loop from the corrected captioned opening. No change to VO, hook, plates, title banner, card or timing.','caption_groups':groups}
  (OUT/'FINISH_COMPLETE.json').write_text(json.dumps(record,indent=2)+'\n')
  print(json.dumps(record),flush=True)
  assert record['audio_pass'] and record['loop_pass']
