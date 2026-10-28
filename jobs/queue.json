@@ -82969,6 +82969,11 @@
           "at": "2026-10-28T11:16Z",
           "by": "claude",
           "what": "reopened: [Claude] acting Chief: hold met. Ben OK'd Wed09 v04 (OWB UAT/029_short_wed09_great_dimming_v04_PHONE.mp4) on the board at 2026-10-28 11:13:22Z (/api/checks OWB-J0961 verdict ok, version v04). Fri11/Mon14 keep Ben's v03 OKs (unchanged picture). Released for the Private upload of the three 029 Shorts exactly as the brief says, v04 hashes as recorded on this job; read back Private + scheduled."
+        },
+        {
+          "at": "2026-10-28T11:17Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "studio",
@@ -83000,7 +83005,16 @@
         "type": "short"
       },
       "escalated_at": "2026-10-26T12:15Z",
-      "remaining_action": "Await Ben's watch of Betelgeuse Wednesday Short v04 (changed opening), then upload the 3 v04 Shorts Private"
+      "remaining_action": "Await Ben's watch of Betelgeuse Wednesday Short v04 (changed opening), then upload the 3 v04 Shorts Private",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J0962",
