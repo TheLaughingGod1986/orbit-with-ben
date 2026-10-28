@@ -96990,13 +96990,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-10-28T17:51Z",
-      "eta": "2026-10-28T19:51Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T15:02Z",
-      "result": "",
+      "result": "Not due: the weekly HOS audit ran 26 Oct (J0984, HOS_2026-10-26.md, Chief PASS); next one due on/after 2 Nov. This copy came from the refill never-empty fallback, which waived the 168 h cadence (fix: PR #322). Nothing spent.",
       "history": [
         {
           "at": "2026-10-28T15:02Z",
@@ -97007,6 +97007,11 @@
           "at": "2026-10-28T17:51Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T17:54Z",
+          "by": "claude",
+          "what": "done: Not due: the weekly HOS audit ran 26 Oct (J0984, HOS_2026-10-26.md, Chief PASS); next one due on/after 2 Nov. This copy came from the refill never-empty fallback, which waived the 168 h cadence (fix: PR #322). Nothing spent."
         }
       ],
       "remaining_action": "Review HOS performance and identify improvements",
