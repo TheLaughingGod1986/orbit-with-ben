@@ -1,5 +1,5 @@
 {
-  "next_id": 1134,
+  "next_id": 1135,
   "jobs": [
     {
       "id": "J0001",
@@ -99723,6 +99723,34 @@
         "condition": "Live Studio T018 on m09jUdwC5hk still shows Thumbnail Running (28 Oct 2026); title-only test may start only the day after its verified actual end. Re-read Studio; do not infer completion from the estimate. Evidence: /Users/benjaminoats/_desk/j1133/studio_readback.txt and studio_readback.png.",
         "check_at": "2026-10-29T21:45:00Z"
       }
+    },
+    {
+      "id": "J1134",
+      "title": "Update evidence PRs #314, #315, #317 with main (merge commit, resolve record conflicts) so the Chief can merge",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Evidence PRs #314 (J1102, codex/J1102), #315 (J1103, codex/J1103) and #317 (J1111, codex/J1111-shorts-covers) are approved but conflict with main after tonight's merges. For each: merge origin/main into the branch (a merge commit, never rebase or force-push), resolve the conflicts keeping both sides' records (registries/ledgers: union of rows; reports: keep the branch's file), run python3 -m unittest discover -s scripts -p \"test_*.py\", push, and say in the result which files conflicted. Do not merge the PRs; the Chief merges once green. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T23:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T23:38Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "merge main into 3 PR branches, resolve, push",
+      "kind": "review"
     }
   ],
   "focus": [],
