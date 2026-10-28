@@ -1,5 +1,5 @@
 {
-  "next_id": 1119,
+  "next_id": 1120,
   "jobs": [
     {
       "id": "J0001",
@@ -98417,6 +98417,34 @@
       ],
       "remaining_action": "build 3 B v02 covers + phone sheet, park for Chief",
       "kind": "thumb"
+    },
+    {
+      "id": "J1119",
+      "title": "J1106 Studio: arm 3 thumbnail Test & Compare (B v02) + 005/019 description fixes, ledger rows",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Studio, after J1118's B v02 covers are built and the Chief has passed the phone sheet. Follow 05_Analytics/tests/panels/owb-j1106-weekly-2026-10-28/DECISION.md section 3 step 2:\n1. For each of REXYxuLOBoI, ojk-dfOpAmw, m09jUdwC5hk: open the Studio edit page and check whether a Test & Compare is already running. Never replace a running test; if one is running, skip that video and say so.\n2. Arm a thumbnail-only Test & Compare: live A vs the J1118 B v02 file. Titles stay unchanged.\n3. Only once Studio shows the test armed: python3 scripts/thumb_ledger.py add --video <id> --channel owb --a-maker house --b-maker codex --b-file <B v02 path> --job <this id>, then thumb_ledger.py start <T id>.\n4. Description edits (DECISION.md section 2), then read them back:\n   - 005 REXYxuLOBoI: line 1 -> \"What happens when the last red dwarf dies? Follow the longest-lived stars to the end of their light.\" and remove the internal words \"dreadbait\"/\"fearbait\" from paragraph 3. Chapters unchanged.\n   - 019 ojk-dfOpAmw: chapter \"0:47 The Second Spiral\" -> \"0:47 Meet Andromeda\"; \"Thursday films\" -> \"weekly films\". Leave the 4-billion-year forecast line as it is.\n   Update the matching description files in the repo to match.\n5. Queue the follow-up: a title-only Test & Compare on m09jUdwC5hk (live title vs \"How Long Do Moons, Rings and Stars Last?\"), to start the day after its thumbnail test ends, with the thumbnail fixed.\nNo upload, no schedule change, no spend. Done with the Studio read-back in the result.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J1118",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T18:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T18:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "arm 3 thumb tests, description edits, ledger",
+      "kind": "studio"
     }
   ],
   "focus": [],
