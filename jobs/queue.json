@@ -97489,13 +97489,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T16:12Z",
-      "eta": "2026-10-28T18:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:52Z",
-      "result": "",
+      "result": "parked for Chief: verified archive complete (26 files, 0.990 GB); only 16.78 GB free, below J1100 20 GB minimum and J1110 30 GB target. Need broader safe cleanup scope. J1100 remains blocked. Evidence jobs/reviews/J1110/REPORT.md; logs ~/_desk/logs/J1110/.",
       "history": [
         {
           "at": "2026-10-28T15:52Z",
@@ -97526,6 +97526,11 @@
           "at": "2026-10-28T16:19Z",
           "by": "codex",
           "what": "step 2 of 3 done: 26 superseded MP4s (0.990 GB) archived to identical NAS paths, SHA-256 checked both sides, manifests and move markers verified; exit 0. Only 16.78 GB free, target 30 GB unmet."
+        },
+        {
+          "at": "2026-10-28T16:19Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: verified archive complete (26 files, 0.990 GB); only 16.78 GB free, below J1100 20 GB minimum and J1110 30 GB target. Need broader safe cleanup scope. J1100 remains blocked. Evidence jobs/reviews/J1110/REPORT.md; logs ~/_desk/logs/J1110/."
         }
       ],
       "remaining_action": "Chief to resolve remaining disk shortfall before J1100 resumes",
