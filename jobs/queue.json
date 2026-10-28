@@ -93764,9 +93764,14 @@
           "at": "2026-10-28T07:13Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Scanned 138 J1060 exports + 13 additional packs: found OWB 029 code_graphics_v01 (10/16 renders newer than Oct 16 gates) and HOS 003 s06_how_xrays_work_v01 (re-rendered in J1064 after picture_qa/polish_gate) needing gate runs"
+        },
+        {
+          "at": "2026-10-28T07:19Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Ran picture_qa and polish_gate on OWB 029 code_graphics_v01 (16/16 PASS) and rebuilt/re-gated HOS 003 s06_how_xrays_work_v01 (picture_qa 0/8, polish_gate 0/8, music_gate PASS); verified 11 additional OWB 028 / HOS 007 / HOS COMP packs"
         }
       ],
-      "remaining_action": "Run missing/stale picture_qa and polish_gate on OWB 029 code_graphics_v01 (16 renders) and HOS 003 s06_how_xrays_work_v01, and verify 12 additional code_graphics/part01 packs",
+      "remaining_action": "Build and commit 151-export J1066 QA sweep inventory and report in both OWB and HOS",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -93779,11 +93784,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T07:13Z",
+        "at": "2026-10-28T07:19Z",
         "by": "gemini",
-        "note": "Scanned 138 J1060 exports + 13 additional packs: found OWB 029 code_graphics_v01 (10/16 renders newer than Oct 16 gates)"
+        "note": "Ran picture_qa and polish_gate on OWB 029 code_graphics_v01 (16/16 PASS) and rebuilt/re-gated HOS 003 s06_how_xrays_work"
       },
       "taskKeys": [
         "OWB:020",
