@@ -96333,9 +96333,14 @@
           "at": "2026-10-28T13:58Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J1093: inspecting c370f1058 evidence and testing direct audio/video ingestion via agy read_file"
+        },
+        {
+          "at": "2026-10-28T14:04Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 complete: Direct audio ingestion via agy read_file confirmed on wed11_opening_testA_v07.mp4, stem_vo.wav, long.wav, and opp.wav; resolved 'for more' vs Whisper 'from more' and audited all 9 VO joins."
         }
       ],
-      "remaining_action": "Capability-check direct audio input and audition v07 master, stem_vo.wav, and locked source",
+      "remaining_action": "Inspect full-runtime sheet, final-shot motion/transitions, picture warnings at 7.3/13.8/20.2s, and caption/title safety",
       "due": "2026-11-06T20:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -96345,11 +96350,11 @@
       ],
       "review_followup_of": "J1090",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T13:58Z",
+        "at": "2026-10-28T14:04Z",
         "by": "gemini",
-        "note": "Started J1093: inspecting c370f1058 evidence and testing direct audio/video ingestion via agy read_file"
+        "note": "Step 1 complete: Direct audio ingestion via agy read_file confirmed on wed11_opening_testA_v07.mp4, stem_vo.wav, long.wa"
       }
     }
   ],
