@@ -95981,10 +95981,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-28T13:09Z",
-      "eta": "2026-10-28T14:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T13:07Z",
       "result": "",
@@ -96018,6 +96018,11 @@
           "at": "2026-10-28T13:14Z",
           "by": "codex",
           "what": "step 1 of 3 done: 87faa2780 on codex/J1090: s07 left crop prepared; J1090-render running. /Users/benjaminoats/_desk/logs/J1090-render.log and .done; no duplicate. First probe -14.4 LUFS/-2.0 dBTP. Listening unavailable here; not claimed."
+        },
+        {
+          "at": "2026-10-28T13:14Z",
+          "by": "codex",
+          "what": "released: Detached tmux J1090-render; log /Users/benjaminoats/_desk/logs/J1090-render.log; exit marker /Users/benjaminoats/_desk/logs/J1090-render.done (missing means running; never duplicate). Resume /private/tmp/J1090-wt branch codex/J1090 at 87faa2780; jobs/reviews/J1090/RESUME.md. Steps 1/3. Await gates, rendered full-shot/warnings review, verified delivery and actual audition; no listening claim. J1084/J1059 held; no publishing changes."
         }
       ],
       "remaining_action": "Finish detached v07 render/gates, review all frames and obtain actual listening evidence",
