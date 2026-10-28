@@ -95454,10 +95454,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-28T11:25Z",
-      "eta": "2026-10-28T13:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T11:16Z",
       "result": "",
@@ -95506,6 +95506,11 @@
           "at": "2026-10-28T11:26Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed prior v06: complete opening from locked long, no spend; fixed first-cut gate failure at 3.53s to 2.50s; added copy checksum verification."
+        },
+        {
+          "at": "2026-10-28T11:26Z",
+          "by": "codex",
+          "what": "released: Step 1/3. Detached rebuild running in tmux J1084-render from /private/tmp/J1084-wt, commit 2b05e39a6. Log /Users/benjaminoats/_desk/logs/J1084-render-retry.log; completion /Users/benjaminoats/_desk/logs/J1084-render-retry.done. Missing done means still running: do not duplicate. Earlier render failed first-cut gate (3.53s); fixed to 2.50s, added delivery checksum checks. Next: read exit/log, verify complete opening and caption/title safety, record artifacts from clean worktree and park for Chief. No spend or YouTube changes."
         }
       ],
       "remaining_action": "Rebuild v06 with earlier first cut, then verify all gates and delivery copies",
