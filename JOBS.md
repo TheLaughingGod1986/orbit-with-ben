@@ -54,6 +54,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1103 | mini | open | – | – | studio · Swap S4 DETI0HV2jlI (028) to Ben-OK'd v04 (Private, same slot Wed 2 Dec 11:30) |  |
 | J1104 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
+| J1106 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
+| J1107 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
 
 Recently finished:
 
