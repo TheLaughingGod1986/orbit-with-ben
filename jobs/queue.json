@@ -94861,13 +94861,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-28T09:40Z",
-      "eta": "2026-10-28T11:40Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T09:32Z",
-      "result": "",
+      "result": "parked for Chief: J1079 narrow evidence correction committed and pushed with byte-identical inventory (83215976f8e0) and report (52e630f4b590) in OWB 0ec7b7fd4 and HOS d61620db: (1) OWB 026 (026_NearestStar_v06) media_sha256 corrected to direct CFR18 hash 6e587bb5ac33552cef55ac897d89f5516a90acef9473155254dd313fc73e09d3 matching PACKAGE_MANIFEST.json and PACKAGE_UPLOAD_RESULT_2026-10-22T10-03-47-020Z.json while retaining distinct historical VFR provenance 624562255a58... (no rerender); (2) 15 HOS 001-004 v01 lift Shorts resolved from unhydrated iCloud CloudDocs stubs (Errno 11, st_blocks=0, never labeled verified_local_file_sha256) to readable NAS hos001-004.tar members (15/15 tar-stream SHA-256 verified) plus committed SHORT_*.json and MOVES_2026-10-24.log manifests; (3) gate_to_media_binding added on all 151 entries (6 J1032 scratch aliases bound by identical SHA-256, 6 code-graphic concat reels bound 1-to-1 by cuts/member manifests, 2 teaching-overlay packs qualified as 20 and 17 composite video cut rows covering 44 PNG assets, pre-archive/temp paths bound by pack/archive manifests); (4) truthful provenance totals across 262 enumerated files: 220 directly hashed unwrapped files (101 single-file MP4s [95 local + 6 NAS] + 119 pack members), 41 NAS tar + manifest verified lift Shorts (26 OWB + 15 HOS with unhydrated iCloud stubs), 1 manifest-only Venus stub, 0 NOT VERIFIED. J1075 and J1066 remain held pending elected-Chief review; £0 spend, no media rebuilds, no metadata/hold changes",
       "history": [
         {
           "at": "2026-10-28T09:32Z",
@@ -94918,6 +94918,11 @@
           "at": "2026-10-28T10:15Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 done: committed and pushed byte-identical J1066_QA_SWEEP_INVENTORY_2026-10-28.json (83215976f8e0) and J1066_QA_SWEEP_REPORT_2026-10-28.md (52e630f4b590) in HOS d61620db and OWB 0ec7b7fd4"
+        },
+        {
+          "at": "2026-10-28T10:15Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J1079 narrow evidence correction committed and pushed with byte-identical inventory (83215976f8e0) and report (52e630f4b590) in OWB 0ec7b7fd4 and HOS d61620db: (1) OWB 026 (026_NearestStar_v06) media_sha256 corrected to direct CFR18 hash 6e587bb5ac33552cef55ac897d89f5516a90acef9473155254dd313fc73e09d3 matching PACKAGE_MANIFEST.json and PACKAGE_UPLOAD_RESULT_2026-10-22T10-03-47-020Z.json while retaining distinct historical VFR provenance 624562255a58... (no rerender); (2) 15 HOS 001-004 v01 lift Shorts resolved from unhydrated iCloud CloudDocs stubs (Errno 11, st_blocks=0, never labeled verified_local_file_sha256) to readable NAS hos001-004.tar members (15/15 tar-stream SHA-256 verified) plus committed SHORT_*.json and MOVES_2026-10-24.log manifests; (3) gate_to_media_binding added on all 151 entries (6 J1032 scratch aliases bound by identical SHA-256, 6 code-graphic concat reels bound 1-to-1 by cuts/member manifests, 2 teaching-overlay packs qualified as 20 and 17 composite video cut rows covering 44 PNG assets, pre-archive/temp paths bound by pack/archive manifests); (4) truthful provenance totals across 262 enumerated files: 220 directly hashed unwrapped files (101 single-file MP4s [95 local + 6 NAS] + 119 pack members), 41 NAS tar + manifest verified lift Shorts (26 OWB + 15 HOS with unhydrated iCloud stubs), 1 manifest-only Venus stub, 0 NOT VERIFIED. J1075 and J1066 remain held pending elected-Chief review; £0 spend, no media rebuilds, no metadata/hold changes"
         }
       ],
       "remaining_action": "Parked for elected-Chief review of reconciled J1066/J1075/J1079 QA sweep inventory and report",
