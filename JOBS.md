@@ -31,7 +31,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0961 | mini | blocked | gemini | – | studio · 029 Betelgeuse: Private upload of the 3 Shorts v04 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Wed09 v04 watch | 6404618803 |
 | J0966 | mini | blocked | gemini | – | for gemini · video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
 | J0969 | mini | blocked | chief | – | studio · 022 date gate: on/after Sun 1 Nov 18:00 London, read the running A/B/C thumb test (T012), then arm B v02 10% BRIGHTER vs the winner on h8HGfyShEHI | 6407771727 |
-| J0975 | mini | open (after J0974) | – | – | studio · URGENT OWB Shorts Related -> Venus long VBaYRPp85Sw: Earth OVLv9dxTcpE FIRST (airs today 11:30), then Neptune, Apophis, ISS; read back Saturn |  |
+| J0975 | mini | open (after J0974) | – | – | for codex · studio · `gpt-6.1-sol` · URGENT OWB Shorts Related -> Venus long VBaYRPp85Sw: Earth OVLv9dxTcpE FIRST (airs today 11:30), then Neptune, Apophis, ISS; read back Saturn |  |
 | J0978 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 | J0979 | mini | blocked | codex | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0984 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
