@@ -56,6 +56,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 025 | edit | codex | 2026-10-28T11:21Z | 2026-10-28T11:41Z | - |
+| 025 | edit | codex | 2026-10-28T11:37Z | 2026-10-28T11:57Z | J1084 complete-sentence v06 Short |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
