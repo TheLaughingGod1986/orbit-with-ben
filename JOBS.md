@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1084 | mini | blocked | codex | – | video · 025 Mars Opening Short: v06 starting on a whole sentence (Ben's change on v05: '00:01 starts mid sentence'), gates, park for Chief |  |
 | J1088 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1090 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · OWB 025 Mars Opening v07: remove final-shot rover hardware, audition opening, rerun gates | 6da30d624 |
-| J1091 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J1091 | mini | claimed | gemini | 2026-10-28T15:22Z | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1092 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1093 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · OWB 025 v07: direct-audio audition and readable UAT verification for J1090 | c370f1058 |
 
