@@ -86469,6 +86469,11 @@
           "at": "2026-10-28T11:35Z",
           "by": "relay",
           "what": "condition verification queued: J1086"
+        },
+        {
+          "at": "2026-10-28T12:54Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T16:00:00Z"
         }
       ],
       "kind": "review",
@@ -86504,15 +86509,14 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T19:20Z",
-      "remaining_action": "Close J0985 by non-author Chief after J1002 verification (J1003 Earth 48h readout at 28 Oct 11:35Z)",
+      "remaining_action": "Await mature Earth Short readout in J1003, then non-author Chief audit closure",
       "hold": {
         "type": "input",
-        "condition": "J1002 correction commit 45ef75589 verified complete across all 6 Chief FIX items in OWB_2026-10-26_CHIEF_REVIEW.md (254d04071); kept blocked so completed 5/5 audit is not re-queued as an open worker job and because J1002 forbids self-approving J0985 by its author (gemini). Non-author Chiefs (chief/claude/codex) remain down as of 2026-10-28T02:20Z, and latest studio_ctr.json readAt 2026-10-28T00:33:34Z (887 views, 30.7% stayed, 75.3% avg viewed) is at 37.1h (<48h maturity floor); awaits non-author Chief closure and mature 48h Earth Short OVLv9dxTcpE readout in J1003 at >=2026-10-28T11:35:00Z.",
-        "check_at": "2026-10-28T12:35:36+00:00",
-        "last_recheck": "J1052",
-        "checked_at": "2026-10-28T02:20:31+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1086"
+        "condition": "Mature Earth Short evidence is still absent: latest studio_ctr.json lifetime capture is 2026-10-28T07:51:04.461913Z, only 44h21m after OVLv9dxTcpE release, with 887 views, 30.7% stayed and 75.3% average viewed. Require a capture at or after 2026-10-28T11:30:00Z and J1003 readout, then non-author Chief final audit closure. J1002 correction remains complete; no author-availability blocker now, but no final audit PASS issued. J1003 verification remains separately owned by J1087.",
+        "check_at": "2026-10-29T16:00:00Z",
+        "last_recheck": "J1086",
+        "checked_at": "2026-10-28T12:54:49+00:00",
+        "checked_by": "codex"
       }
     },
     {
