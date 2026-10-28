@@ -87664,13 +87664,18 @@
           "at": "2026-10-28T09:19Z",
           "by": "relay",
           "what": "condition verification queued: J1078"
+        },
+        {
+          "at": "2026-10-28T09:27Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-28T15:30:00Z"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:099"
       ],
-      "remaining_action": "Await J0998 (Ben OK on draft HOS PR #365) so npm run channel:audit exits 0 on HOS main",
+      "remaining_action": "Await Ben approval and merge of HOS PR #365, then pass channel:audit on HOS main",
       "progress": {
         "step": 5,
         "of": 5,
@@ -87680,12 +87685,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Depends on J0998 (awaiting Ben OK to merge draft HOS PR #365 a87cd56a for playlist boundary ID dedup in channel-audit.ts) so npm run channel:audit exits 0 on HOS main; all Studio/API work on uAomPaOBrM8 is complete and pushed to HOS PR #358 (c26a79bd)",
-        "check_at": "2026-10-28T10:19:01+00:00",
-        "last_recheck": "J1040",
-        "checked_at": "2026-10-27T18:28:48+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1078"
+        "condition": "J0998 remains blocked: HOS PR #365 a87cd56a is draft OPEN with no Ben approval found on PR or HOS desk; requires Ben OK, merge to HOS main, then unmodified npm run channel:audit exit 0. Studio work evidence remains PR #358 c26a79bd.",
+        "check_at": "2026-10-28T15:30:00Z",
+        "last_recheck": "J1078",
+        "checked_at": "2026-10-28T09:27:17+00:00",
+        "checked_by": "codex"
       }
     },
     {
