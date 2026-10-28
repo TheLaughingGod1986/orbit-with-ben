@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+"""Restore S5 opening captions over accepted v04; preserve AAC and all existing timing.
+Produces unreviewed media only. Does not publish, deliver, or waive any gate.
+"""
+import hashlib, importlib.util, json, shutil, subprocess
+from pathlib import Path
+from PIL import Image
+ROOT=Path('/Users/benjaminoats/YouTube/orbit-with-ben')
+OUT=Path('/Users/benjaminoats/_desk/renders/J1100/S5_028_jJ5LkFGyzLI')
+SOURCE=Path('/Users/benjaminoats/_desk/renders/J1032/S5_028_jJ5LkFGyzLI')
+SRC=Path('/Users/benjaminoats/_desk/renders/J1032-finish12/S5_028_jJ5LkFGyzLI/S5_028_jJ5LkFGyzLI_v04.mp4')
+KEY='S5_028_jJ5LkFGyzLI'
+def load(name,p):
+ s=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def ff(a):subprocess.run(['ffmpeg','-nostdin','-v','error','-y',*map(str,a)],check=True)
+def ah(p):return subprocess.check_output(['ffmpeg','-v','error','-i',str(p),'-map','0:a:0','-c','copy','-f','hash','-hash','sha256','-']).decode().strip()
+def main():
+ assert shutil.disk_usage(ROOT).free>=20_000_000_000,'Disk below 20GB'
+ OUT.mkdir(parents=True,exist_ok=True)
+ assert not (OUT/'FINISH_COMPLETE.json').exists(),'Already complete; inspect rather than duplicate'
+ m=load('drawing',ROOT/'jobs/reviews/render_j1032_v04.py')
+ legacy=load('legacy',ROOT/'02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/mon30_comets/_assemble_mon30_comets_v03.py')
+ prep=json.loads((SOURCE/'locked_preparation.json').read_text())
+ words=[w for sp in prep['vo_splice_map']['subspans'] for w in sp['words']]
+ groups=[];g=[]
+ for w in words:
+  g.append(w)
+  if len(g)==3 or w['word'][-1:] in '.,?!':groups.append(g);g=[]
+ if g:groups.append(g)
+ layers=OUT/'opening_caption_layers';layers.mkdir(exist_ok=True)
+ for n in range(60):
+  t=n/30;im=Image.new('RGBA',(1080,1920))
+  for i,g in enumerate(groups):
+   stop=groups[i+1][0]['start'] if i+1<len(groups) else g[-1]['end']+.05
+   if g[0]['start']<=t<stop:
+    m.text(im,[' '.join(w['word'] for w in g).upper()],1498,54);break
+  im.save(layers/f'{n:05d}.png')
+ final=OUT/(KEY+'_v05.mp4')
+ ff(['-i',SRC,'-framerate','30','-i',layers/'%05d.png','-filter_complex',"[0:v][1:v]overlay=0:0:eof_action=pass:enable='lt(t,2)',format=yuv420p[v]",'-map','[v]','-map','0:a','-c:v','libx264','-preset','fast','-crf','18','-c:a','copy','-movflags','+faststart',final])
+ assert ah(SRC)==ah(final),'AAC changed'
+ ff(['-i',final,'-vf','scale=720:1280:flags=lanczos','-c:v','libx264','-preset','fast','-crf','20','-c:a','copy',OUT/(KEY+'_v05_PHONE.mp4')])
+ for p in ['locked_preparation.json','locked_shots.json','input_hashes.json','stem_vo.wav','stem_bed.wav','stem_sfx.wav']:shutil.copy2(SOURCE/p,OUT/p)
+ level=legacy.ebur128_stats(final);loop=legacy.loop_measures(final)
+ record={'status':'UNREVIEWED; final gates and actual AAC listening/transcript comparison required','input_sha256':sha(SRC),'output_sha256':sha(final),'I_LUFS':level[0],'TP_dBTP':level[1],'audio_pass':-14.5<=level[0]<=-13.5 and level[1]<=-1.6,'loop':loop,'loop_pass':max(loop.values())<2,'AAC_packet_hash_unchanged':True,'change':'Added missing opening bottom captions at original word timestamps before 2s only. v04 preserved. No change to VO, hook, plates, title banner, card or timing.','caption_groups':groups}
+ (OUT/'FINISH_COMPLETE.json').write_text(json.dumps(record,indent=2)+'\n')
+ print(json.dumps(record),flush=True)
+ assert record['audio_pass'] and record['loop_pass']
+if __name__=='__main__':main()
