@@ -95720,13 +95720,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-28T12:52Z",
-      "eta": "2026-10-28T14:52Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T11:35Z",
-      "result": "",
+      "result": "Verified J0985 hold against original job, J1001 FIX, J1002 correction 45ef75589, approval history and current Studio source. Mature data condition NOT met: readAt 2026-10-28T07:51:04.461913Z is 44h21m after release; OVLv9dxTcpE 887 lifetime views, 30.7% stayed, 75.3% average viewed. J1003 has no completed mature readout. Kept J0985 blocked via wait --recheck J1086; preserved 2026-10-29T16:00:00Z fallback. Non-author Codex is available; no final audit PASS, publishing, credit spend or rule change. J1087 separately owns J1003 verification.",
       "history": [
         {
           "at": "2026-10-28T11:35Z",
@@ -95757,6 +95757,11 @@
           "at": "2026-10-28T12:55Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet capture-maturity condition, removed stale unavailable-Chief explanation, preserved original 29 Oct 16:00Z fallback and all production gates."
+        },
+        {
+          "at": "2026-10-28T12:55Z",
+          "by": "codex",
+          "what": "done: Verified J0985 hold against original job, J1001 FIX, J1002 correction 45ef75589, approval history and current Studio source. Mature data condition NOT met: readAt 2026-10-28T07:51:04.461913Z is 44h21m after release; OVLv9dxTcpE 887 lifetime views, 30.7% stayed, 75.3% average viewed. J1003 has no completed mature readout. Kept J0985 blocked via wait --recheck J1086; preserved 2026-10-29T16:00:00Z fallback. Non-author Codex is available; no final audit PASS, publishing, credit spend or rule change. J1087 separately owns J1003 verification."
         }
       ],
       "remaining_action": "Verification complete: J0985 remains held for mature J1003 evidence",
