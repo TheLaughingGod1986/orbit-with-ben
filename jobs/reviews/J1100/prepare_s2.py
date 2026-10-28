@@ -7,7 +7,11 @@ key='S2_027_emwQsPxnRGM'
 old=json.loads((R/'jobs/reviews/J0936_v04_PREP_v07_maps.json').read_text())
 s=copy.deepcopy(old['shorts'][key]);v=s['vo_splice_map']
 c=json.loads(Path('/Users/benjaminoats/_desk/reviews/J1100/audio_candidates/CANDIDATES.json').read_text())[key]
-v['subspans']=c['subspans'];v['vo_end_s']=c['duration_with_1s_loop_s']-1;v['total_duration_s']=c['duration_with_1s_loop_s'];v['seventy_pct_mark_s']=v['total_duration_s']*.7
+v['subspans']=c['subspans'];
+for sp in v['subspans']:
+ for w in sp['words']:
+  w['start']=round(sp['timeline_start']+w['src_start']-sp['source_in'],3);w['end']=round(sp['timeline_start']+w['src_end']-sp['source_in'],3)
+v['vo_end_s']=c['duration_with_1s_loop_s']-1;v['total_duration_s']=c['duration_with_1s_loop_s'];v['seventy_pct_mark_s']=v['total_duration_s']*.7
 v['auditions']['full_vo_audition']={'wav_path':c['file'],'sha256':c['sha256']}
 def shift(t):return round(t+(.47 if t>=2.54 else 0)+(.32 if t>=4.98 else 0),3)
 for row in s['shot_plan']:

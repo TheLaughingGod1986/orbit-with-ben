@@ -7,7 +7,7 @@ import argparse, hashlib, importlib.util, json, math, shutil, subprocess
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-LOCK = '51df8a7cc95959cb895121a2cd007e20352f910dd5ac40f0600b1b9120f058dc'
+LOCK = '7a1cf1409813cbeeaf77e938b7747d59c429c30f38d53612e6844f79ea33fe2d'
 ROOT = Path(__file__).resolve().parents[2]
 FONT = '/System/Library/Fonts/Supplemental/Arial Black.ttf'
 W,H,FPS = 1080,1920,30
@@ -97,7 +97,7 @@ def main():
     for key,s in data['shorts'].items():
         out=args.out/key;out.mkdir(exist_ok=True)
         if (out/'RENDER_COMPLETE.json').exists():print('already rendered',key,flush=True);continue
-        work=Path('/private/tmp')/('j1100_'+key)
+        work=Path('/private/tmp')/('j1100_s2_02_'+key)
         work.mkdir(exist_ok=True);legacy.WORK=work
         total=s['vo_splice_map']['total_duration_s'];plan=s['shot_plan'];parts=[]
         print('START',key,flush=True)
