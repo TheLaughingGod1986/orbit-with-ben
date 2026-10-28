@@ -37,7 +37,25 @@
   }
   // Percent of the steps the agent reported done (Ben, 28 Oct: "add percentages"), never an estimate.
   const pct = p => Math.round(Math.min(1, Math.max(0, p.step / p.of)) * 100);
-  const bar = p => p ? `<div class="prog"><div class="bar"><i style="width:${pct(p)}%"></i></div><span><b>${pct(p)}%</b> · ${p.step} of ${p.of}</span></div>` : "";
+  const bar = (p, left) => p ? `<div class="prog"><div class="bar"><i style="width:${pct(p)}%"></i></div><span><b>${pct(p)}%</b> · ${p.step} of ${p.of}${left ? " · " + left : ""}</span></div>` : "";
+
+  // ETA (Ben, 28 Oct): from when the job started and the steps it reported, else the typical time for that kind of
+  // job (board owb estMin, from past runs). Always "about"; a job past its estimate says so instead of inventing one.
+  const MIN = 6e4;
+  function etaOf(j, now) {
+    const full = ((((board || {}).owb || {}).jobs) || []).find(x => x.id === j.id) || {};
+    const start = Date.parse(full.claimedAt || j.claimedAt || ""), est = +(full.estMin || j.estMin) || 0;
+    if (!start || isNaN(start)) return null;
+    const p = j.progress || full.progress || {}, done = +p.step || 0, of = +p.of || 0, spent = Math.max(0, now - start);
+    let left = null;
+    if (done > 0 && of > done) left = spent / done * (of - done);
+    else if (est) left = est * MIN - spent;
+    if (left == null) return null;
+    if (left <= 0) return { over: true };
+    return { min: Math.max(1, Math.round(left / MIN)), at: now + left };
+  }
+  const etaText = e => !e ? "" : e.over ? "taking longer than usual"
+    : `about ${e.min < 60 ? e.min + " min" : Math.round(e.min / 6) / 10 + " h"} left (done ~${new Date(e.at).toLocaleTimeString("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit" })})`;
   const clip = (s, n) => { s = String(s || ""); return s.length > n ? s.slice(0, n - 1) + "…" : s; };
   const activeJob = v => (v.jobs || []).find(j => j.status === "claimed");
   // One meaning of "working" everywhere (Ben, 28 Oct: 11 / 1 / 0 read as a contradiction): an agent has claimed a job
@@ -48,7 +66,9 @@
   function doing(v) {
     const j = activeJob(v);
     if (!j) return "";
-    return `<span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(clip(j.remaining_action || j.title, 70))}</span>${bar(progressOf(v))}`;
+    const left = etaText(etaOf(j, Date.now()));
+    return `<span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(clip(j.remaining_action || j.title, 70))}</span>`
+      + (progressOf(v) ? bar(progressOf(v), left) : left ? `<span class="meta">${esc(left)}</span>` : "");
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
 
@@ -168,7 +188,8 @@
   function miniLine(s, b) {
     const jobs = ((b.owb || {}).jobs) || [], r = s.runner || {};
     const live = jobs.find(j => j.status === "claimed");
-    const text = live ? `Mac mini working: ${AGENTS[live.by] || live.by} on ${live.id} · ${clip(live.remaining_action || live.title, 60)}`
+    const left = live ? etaText(etaOf(live, Date.now())) : "";
+    const text = live ? `Mac mini working: ${AGENTS[live.by] || live.by} on ${live.id} · ${clip(live.remaining_action || live.title, 60)}${left ? " · " + left : ""}`
       : s.jobs.queued ? `Mac mini between jobs · ${s.jobs.queued} queued, the next starts within minutes`
       : r.state ? "Mac mini idle · nothing queued" : "";
     return text ? `<p class="mini ${live ? "on" : ""}"><i></i>${esc(text)}</p>` : "";
@@ -239,7 +260,7 @@
       const why = j.status === "blocked" ? (j.hold && j.hold.condition) || j.result : j.remaining_action;
       return `<div class="job"><div class="job-top"><span class="tag ${tone}">${word}</span><b>${esc(clip(j.title || j.id, 90))}</b></div>
         <span class="meta">${esc(j.id)}${j.by ? " · " + esc(AGENTS[j.by] || j.by) : ""}${why ? " · " + esc(clip(why, 160)) : ""}</span>
-        ${j.status === "claimed" ? bar(j.progress && j.progress.of > 0 ? j.progress : null) : ""}</div>`; }).join("");
+        ${j.status === "claimed" ? (j.progress && j.progress.of > 0 ? bar(j.progress, etaText(etaOf(j, Date.now()))) : `<span class="meta">${esc(etaText(etaOf(j, Date.now())))}</span>`) : ""}</div>`; }).join("");
     const notes = (v.notes || []).map(n => `<li class="${n.done ? "done" : ""}">${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("");
     const flags = (v.flags || []).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
     return `${back}<div class="hero">${thumb(v)}</div>
