@@ -88765,11 +88765,16 @@
           "at": "2026-10-28T00:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T00:20Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting read-only listing check on HOS live and scheduled videos"
         }
       ],
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
-      "remaining_action": "Check HOS video listings and record any fixes needed",
+      "remaining_action": "Fetch live and scheduled HOS YouTube metadata and verify chapters, Sources, end screens and Related links",
       "rerouted_from": {
         "needs": "any",
         "for": "",
@@ -88782,11 +88787,20 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-28T00:17Z",
+        "at": "2026-10-28T00:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting read-only listing check on HOS live and scheduled videos"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     },
     {
       "id": "J1015",
