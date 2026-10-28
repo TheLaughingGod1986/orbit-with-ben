@@ -99308,13 +99308,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T21:18Z",
-      "eta": "2026-10-28T23:18Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "",
+      "result": "Waiting for: HOS frP_YrNShsU Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, calendar day is now 29 October or later, and no newer conflicting test is running; hold live thumbnail fixed",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -99340,9 +99340,19 @@
           "at": "2026-10-28T21:20Z",
           "by": "codex",
           "what": "step 2 of 3 done: Eligibility checked: thumbnail test ended today at 21:17; required following-day gap prevents setup tonight. Evidence recorded in HOS branch codex/j1132-test-wait. Final setup/read-back remains unfinished."
+        },
+        {
+          "at": "2026-10-28T21:20Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: HOS frP_YrNShsU Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, calendar day is now 29 October or later, and no newer conflicting test is running; hold live thumbnail fixed"
+        },
+        {
+          "at": "2026-10-28T21:20Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T00:30:00Z"
         }
       ],
-      "remaining_action": "On 29 October reverify Studio and arm approved title-only test with live thumbnail fixed",
+      "remaining_action": "Reverify next-day eligibility, then arm and read back approved X-rays title-only test",
       "kind": "studio",
       "progress": {
         "step": 2,
@@ -99353,7 +99363,12 @@
       },
       "taskKeys": [
         "HOS:001"
-      ]
+      ],
+      "hold": {
+        "type": "test",
+        "condition": "HOS frP_YrNShsU Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, calendar day is now 29 October or later, and no newer conflicting test is running; hold live thumbnail fixed",
+        "check_at": "2026-10-29T00:30:00Z"
+      }
     }
   ],
   "focus": [],
