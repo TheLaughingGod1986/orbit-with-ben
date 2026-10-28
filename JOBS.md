@@ -44,11 +44,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1059 | mini | blocked | gemini | – | studio · OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30 | ab4ad3de4 |
 | J1066 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
-| J1071 | mini | claimed | gemini | 2026-10-28T09:25Z | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1072 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1071 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1070 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done (HOS d68d8d93: 57 unique videos verified via Data API — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T08:22Z; 0 new fixes needed, no Studio writes or spend))
 - J1069 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 4 HOS longs; 72 OWB + 20 HOS Shorts. CTR hits vs 4%: OWB 2/11 available (Sun 4.0%, Jupiter 5.2%); HOS 1/3 (Germs 7.1%). All 388 metrics match published tracker. b0d784c2f; newest Short per channel omitted: no processed lifetime data.)
 - J1068 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -58,4 +58,3 @@ Recently finished:
 - J1062 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done (HOS a97d735c: 57 unique videos verified via Data API — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T06:59Z; 0 new fixes needed, no Studio writes or spend))
 - J1061 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1060 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (138-export QA sweep inventory and report committed in OWB eaddab7bc (sidecars c203c223e) and HOS 820885bf (sidecars 62b23d3f) at 00_Brand/Channel-Setup/audits/qa_sweeps/J1060_QA_SWEEP_{INVENTORY,REPORT}_2026-10-28.{json,md}: 83 OWB + 55 HOS exports checked (£0 spend); 105 J1054 base exports PASS (including HOS 005 s06-s08 v01 resolved in J1058), 6 OWB long/compilation masters + 6 overlay/code_graphic packs PASS, and 21 v01 lift Shorts (5 OWB 020/022 + 16 HOS 001-004) had music_gate run with no-spend fix jobs J1063 and J1064 queued (0 unaddressed FAILs).)
-- J1058 done: HOS 005 Shorts s06/s07/s08 v01: fix music_gate brief/bed FAIL (£0, no spend) (done)
