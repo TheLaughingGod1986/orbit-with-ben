@@ -1,0 +1,45 @@
+{
+  "short_id": "HZGTovJu_TQ",
+  "slug": "mon16_cant_see_nearest_star",
+  "status": "KEEPER_FIRST_LINE_QUESTION_NOT_RECORDED_ON_DISK",
+  "scheduled_version_retained_unless_waived": "mon16_cant_see_nearest_star_v01 (scheduled HZGTovJu_TQ)",
+  "conflict_summary": "The planned title question ('If You Can\\'t See the Nearest Star, How Far Away Is It?') is not recorded on either mon16 Short VO (mon16_cant_see_nearest_star_vo_v01_LOCK.mp3) or 026 locked long VO (nearest_star_vo_v01.wav). On mon16 Short VO, the only recorded question is the closing CTA 'The full film, How Far Is The Nearest Star?' (20.94-24.44 s), which Audit #10 and Chief c61 explicitly cut; even its question half 'How Far Is The Nearest Star?' (22.44-24.44 s, 2.00 s raw / 1.85 s at 1.08x) or 026 long VO\\'s 'So how far away is the nearest one?' (5.62-7.44 s, 1.82 s raw / 1.69 s at 1.08x) occupies > 1.50 s before the surprise clause can begin, preventing 'can\\'t see it' from landing by <= 1.50 s as required by Audit #10 and Chief c61.",
+  "available_recorded_candidates": [
+    {
+      "source": "mon16_cant_see_nearest_star_vo_v01_LOCK.mp3 (0.06-1.84s + 4.22-5.30s)",
+      "text": "The nearest star to the Sun \u2014 you can't see it.",
+      "surprise_cant_s": 1.445,
+      "why_used_in_v03": "Matches Audit #10 and Chief c61 ('star' at 0.48 s, 'can\\'t' at 1.445 s <= 1.50 s), verified clean by faster-whisper on the v03 master."
+    },
+    {
+      "source": "mon16_cant_see_nearest_star_vo_v01_LOCK.mp3 (22.44-24.44s) + (0.06-1.84s + 4.22-5.30s)",
+      "text": "How Far Is The Nearest Star? The nearest star to the Sun \u2014 you can't see it.",
+      "atempo_1_08_onset_s": {
+        "How": 0.0,
+        "Star": 1.54,
+        "can't": 3.3
+      },
+      "why_fails_strict_1_5s": "Extracted from the forbidden closing CTA and pushes 'can\\'t see it' to ~3.30 s, violating Audit #10 / Chief c61 (<= 1.50 s)."
+    },
+    {
+      "source": "026 nearest_star_vo_v01.wav (5.62-7.44s) + (15.88-19.34s)",
+      "text": "So how far away is the nearest one? You cannot see that star at all, not without a telescope.",
+      "atempo_1_08_onset_s": {
+        "So": 0.0,
+        "nearest": 1.09,
+        "cannot": 1.84
+      },
+      "why_fails_strict_1_5s": "Does not match the title question and places 'cannot see' at 1.84 s (> 1.50 s)."
+    }
+  ],
+  "all_other_fixes_satisfied": {
+    "runtime_s": 23.678,
+    "clears_22s_floor": true,
+    "surprise_cant_s": 1.445,
+    "parallax_thumb_setup_complete": true,
+    "payoff_four_s": 20.71,
+    "payoff_pct": 87.5,
+    "aac_lufs": -14.3,
+    "aac_tp_dbtp": -2.0
+  }
+}
