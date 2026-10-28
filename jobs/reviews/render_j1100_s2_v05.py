@@ -55,7 +55,7 @@ def overlays(s,work,total,key):
     card=s['single_teaching_overlay'];a,b=card['timeline_in'],card['timeline_out']
     folder=work/'overlays';folder.mkdir()
     # Match hook text/style to accepted preparation; repeat at loop for pixel continuity.
-    accepted_overlay=Image.open(Path('/Users/benjaminoats/_desk/reviews/J1017/openings')/(key+'_v05_overlay.png')).convert('RGBA')
+    accepted_overlay=Image.open(Path('/Users/benjaminoats/_desk/reviews/J1017/openings')/(key+'_v04_overlay.png')).convert('RGBA')
     accepted_overlay.paste((0,0,0,0),(0,1400,1080,1920))
     for n in range(math.ceil(total*FPS)):
         t=n/FPS;im=Image.new('RGBA',(W,H))
@@ -98,13 +98,14 @@ def main():
         out=args.out/key;out.mkdir(exist_ok=True)
         if (out/'RENDER_COMPLETE.json').exists():print('already rendered',key,flush=True);continue
         work=Path('/private/tmp')/('j1100_'+key)
-        if work.exists():raise RuntimeError(f'Existing scratch {work}: inspect before resume')
-        work.mkdir();legacy.WORK=work
+        work.mkdir(exist_ok=True);legacy.WORK=work
         total=s['vo_splice_map']['total_duration_s'];plan=s['shot_plan'];parts=[]
         print('START',key,flush=True)
         for i,r in enumerate(plan):
             print('shot',key,r['row'],flush=True)
             dest=work/f's{i:02d}.mp4'
+            if dest.exists():
+                parts.append(dest);continue
             # Cumulative frame boundaries prevent per-shot rounding drift.
             frames=round(r['timeline_out']*FPS)-round(r['timeline_in']*FPS)
             if i==len(plan)-1:
