@@ -95895,13 +95895,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-28T13:21Z",
-      "eta": "2026-10-28T14:21Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T13:00Z",
-      "result": "",
+      "result": "parked for Chief: J1088 QA sweep committed with byte-identical inventory (652beb308501) and report (19b3e906556d) in OWB 246eace22 and HOS b9d6e936 across 153 entries (87 OWB, 66 HOS; 145 single-file exports + 8 silent visual packs [119 members] = 264 enumerated files; 129 current newest candidates + 24 historical superseded versions). Adds OWB 025 wed11_opening_testA v06 (J1084, superseded by v07) and v07 (J1090, current_newest, parked for Chief review in J1090) and tracks their v06/v07 gate sidecars in main; updates J0936/J1032 (6 v04 Shorts Chief PASS cd8f28c40 / PR #305 merged 719fdf02d -> HELD_ON_BEN_OK) and J0961 (Ben v04 watch OK fac609eb7 -> HELD_ON_EPISODE_GATE subscribe_beat). 440/440 applicable gate sidecars fresh and PASS (0 FAIL, 142 entries with warnings already tracked in film jobs, 0 new fix jobs needed, £0 spend).",
       "history": [
         {
           "at": "2026-10-28T13:00Z",
@@ -95942,6 +95942,11 @@
           "at": "2026-10-28T13:39Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed byte-identical J1088_QA_SWEEP_INVENTORY_2026-10-28.json (652beb308501) and J1088_QA_SWEEP_REPORT_2026-10-28.md (19b3e906556d) in HOS b9d6e936 and OWB 246eace22 (153 entries / 264 files / 440 fresh PASS sidecars, 0 FAIL, 0 new repair jobs)"
+        },
+        {
+          "at": "2026-10-28T13:39Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J1088 QA sweep committed with byte-identical inventory (652beb308501) and report (19b3e906556d) in OWB 246eace22 and HOS b9d6e936 across 153 entries (87 OWB, 66 HOS; 145 single-file exports + 8 silent visual packs [119 members] = 264 enumerated files; 129 current newest candidates + 24 historical superseded versions). Adds OWB 025 wed11_opening_testA v06 (J1084, superseded by v07) and v07 (J1090, current_newest, parked for Chief review in J1090) and tracks their v06/v07 gate sidecars in main; updates J0936/J1032 (6 v04 Shorts Chief PASS cd8f28c40 / PR #305 merged 719fdf02d -> HELD_ON_BEN_OK) and J0961 (Ben v04 watch OK fac609eb7 -> HELD_ON_EPISODE_GATE subscribe_beat). 440/440 applicable gate sidecars fresh and PASS (0 FAIL, 142 entries with warnings already tracked in film jobs, 0 new fix jobs needed, £0 spend)."
         }
       ],
       "remaining_action": "Await Chief review of J1088 QA sweep report; no film approval granted",
