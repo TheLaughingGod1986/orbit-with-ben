@@ -99463,13 +99463,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T21:37Z",
-      "eta": "2026-10-28T23:37Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:34Z",
-      "result": "",
+      "result": "Waiting for: Live Studio T018 on m09jUdwC5hk still shows Thumbnail Running (28 Oct 2026); title-only test may start only the day after its verified actual end. Re-read Studio; do not infer completion from the estimate. Evidence: /Users/benjaminoats/_desk/j1133/studio_readback.txt and studio_readback.png.",
       "history": [
         {
           "at": "2026-10-28T21:34Z",
@@ -99495,9 +99495,19 @@
           "at": "2026-10-28T21:39Z",
           "by": "codex",
           "what": "step 2 of 3 done: Live Studio read-back: Thumbnail Running; title How Long Will Anything in Space Last?; Public and not Made for Kids; no result/end date yet. Evidence: ~/_desk/j1133/studio_readback.txt and .png. No Studio writes."
+        },
+        {
+          "at": "2026-10-28T21:39Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Live Studio T018 on m09jUdwC5hk still shows Thumbnail Running (28 Oct 2026); title-only test may start only the day after its verified actual end. Re-read Studio; do not infer completion from the estimate. Evidence: /Users/benjaminoats/_desk/j1133/studio_readback.txt and studio_readback.png."
+        },
+        {
+          "at": "2026-10-28T21:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T21:45:00Z"
         }
       ],
-      "remaining_action": "Record Studio evidence and hold until T018 ends plus one day",
+      "remaining_action": "Recheck T018; after verified end plus one day, arm the approved title-only test with thumbnail fixed",
       "kind": "studio",
       "progress": {
         "step": 2,
@@ -99505,6 +99515,11 @@
         "at": "2026-10-28T21:39Z",
         "by": "codex",
         "note": "Live Studio read-back: Thumbnail Running; title How Long Will Anything in Space Last?; Public and not Made for Kids; no "
+      },
+      "hold": {
+        "type": "test",
+        "condition": "Live Studio T018 on m09jUdwC5hk still shows Thumbnail Running (28 Oct 2026); title-only test may start only the day after its verified actual end. Re-read Studio; do not infer completion from the estimate. Evidence: /Users/benjaminoats/_desk/j1133/studio_readback.txt and studio_readback.png.",
+        "check_at": "2026-10-29T21:45:00Z"
       }
     }
   ],
