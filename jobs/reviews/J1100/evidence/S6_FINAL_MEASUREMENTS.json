@@ -1,0 +1,46 @@
+{
+  "shorts": {
+    "exit_code": 0
+  },
+  "picture": {
+    "exit_code": 0
+  },
+  "polish": {
+    "exit_code": 0
+  },
+  "sfx": {
+    "exit_code": 0
+  },
+  "music": {
+    "exit_code": 0
+  },
+  "dark_pass": true,
+  "ocr_pass": true,
+  "audio_and_loop": {
+    "status": "UNREVIEWED; final gates, audio listening and durable delivery outstanding",
+    "input_sha256": "38b0b162543e288dd697aac23657abba74908912b11b281647f066e89ace58c7",
+    "I_LUFS": -14.4,
+    "TP_dBTP": -1.7,
+    "audio_pass": true,
+    "loop": {
+      "whole": 0.84,
+      "masked": 0.87
+    },
+    "loop_pass": true,
+    "grain": "noise alls=4 allf=t seed=1032 before loop split",
+    "endpoint": "last 5 frames are opening frames 2, 2, 2, 2, 0; each segment PTS reset by frame index",
+    "files": {
+      "S6_028_X768qs8sNQs_v05.mp4": "5c5961e978d18184da7814c59fb7a9b3682c98481de36a38f6e3f67d852a3779",
+      "S6_028_X768qs8sNQs_v05_PHONE.mp4": "55e1ca4ff1e5eb6bee24b5680d098453b6e769d35df9b3784e0f474473a74f76"
+    },
+    "corrections": [
+      {
+        "row": "s02_orion_paranal",
+        "start": 2.5,
+        "end": 6.833333333333333,
+        "filter": "eq=brightness=0.03:enable='between(n,60,73)',eq=gamma=1.25:brightness=0.015:enable='gte(t,2.5)*lt(t,6.833333333333333)'"
+      }
+    ]
+  },
+  "status": "UNREVIEWED; music gate, visual flags, finished audio listening and verified delivery still required"
+}
