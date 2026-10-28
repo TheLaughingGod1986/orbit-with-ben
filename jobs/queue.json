@@ -97122,6 +97122,11 @@
           "at": "2026-10-28T19:55Z",
           "by": "codex",
           "what": "blocked: parked for Chief: disk prerequisite has regressed since J1112; live 10,471 MiB, required offload exit 0 with no eligible scratch. Resume step 2 only after live headroom restored above 20 GB. Evidence codex/J1100-preflight."
+        },
+        {
+          "at": "2026-10-28T22:00Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Restore 20 GB free, then assemble and verify three v05 fixes",
@@ -97139,7 +97144,7 @@
         "OWB:027",
         "OWB:028"
       ],
-      "escalated_at": "2026-10-28T18:46Z",
+      "escalated_at": "2026-10-28T22:00Z",
       "urgent": 7,
       "progress": {
         "step": 1,
