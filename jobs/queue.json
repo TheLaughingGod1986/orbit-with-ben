@@ -94709,19 +94709,24 @@
           "at": "2026-10-28T09:21Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J1004/J0967 history and prior desk rulings; PR 366 remains OPEN at 00b1e653 with no reviews, CI successful."
+        },
+        {
+          "at": "2026-10-28T09:22Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR 366 not merged; summary claims >=40ms every boundary although detailed table has 20ms gaps; obsolete 9-14s title banner reference conflicts with J0967. Production holds remain separate."
         }
       ],
-      "remaining_action": "Record whether J1004 approval and merge condition is satisfied",
+      "remaining_action": "Record unmet J1004 condition and report verification result",
       "kind": "chief",
       "recheck_of": "J1004",
       "due": "2026-10-28T10:11:12+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-28T09:21Z",
+        "at": "2026-10-28T09:22Z",
         "by": "codex",
-        "note": "Read J1004/J0967 history and prior desk rulings; PR 366 remains OPEN at 00b1e653 with no reviews, CI successful."
+        "note": "PR 366 not merged; summary claims >=40ms every boundary although detailed table has 20ms gaps; obsolete 9-14s title bann"
       },
       "taskKeys": [
         "HOS:006",
