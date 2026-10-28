@@ -3,7 +3,7 @@
 import json,subprocess,sys
 from pathlib import Path
 ROOT=Path('/Users/benjaminoats/YouTube/orbit-with-ben')
-D=Path('/Users/benjaminoats/_desk/renders/J1100-attempt02/S5_028_jJ5LkFGyzLI')
+D=Path('/Users/benjaminoats/_desk/renders/J1100-attempt03/S5_028_jJ5LkFGyzLI')
 V=D/'S5_028_jJ5LkFGyzLI_v05.mp4'
 def main():
  summary=json.loads((D/'FINAL_MEASUREMENTS.json').read_text())
@@ -20,7 +20,9 @@ def main():
  # A transcript of the delivered AAC, independent of the script or timing map. No cloud API.
  from faster_whisper import WhisperModel
  model=WhisperModel('base.en',device='cpu',compute_type='int8',download_root='/Users/benjaminoats/_desk/cache/whisper')
- segments,info=model.transcribe(str(V),language='en',beam_size=5,temperature=0,condition_on_previous_text=False,word_timestamps=True)
+ import numpy as np
+ audio=np.frombuffer(subprocess.check_output(['ffmpeg','-v','error','-i',str(V),'-ar','16000','-ac','1','-f','f32le','-']),dtype=np.float32)
+ segments,info=model.transcribe(audio,language='en',beam_size=5,temperature=0,condition_on_previous_text=False,word_timestamps=True)
  segments=list(segments)
  out={'status':'ASR evidence only; human listening and caption comparison still required','model':'base.en','input':str(V),'text':' '.join(s.text.strip() for s in segments),'segments':[{'start':s.start,'end':s.end,'text':s.text,'words':[{'word':w.word,'start':w.start,'end':w.end,'probability':w.probability} for w in s.words]} for s in segments]}
  (D/'final_AAC_ASR.json').write_text(json.dumps(out,indent=2)+'\n');print(out['text'],flush=True)
