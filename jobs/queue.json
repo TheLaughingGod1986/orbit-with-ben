@@ -82984,6 +82984,11 @@
           "at": "2026-10-28T11:18Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T11:19Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: All three approved hashes match; all three package dry runs and Shorts gates pass. Required episode gate exits 1: subscribe beat at 54%, outside 25-50%. No upload."
         }
       ],
       "kind": "studio",
@@ -83015,7 +83020,7 @@
         "type": "short"
       },
       "escalated_at": "2026-10-26T12:15Z",
-      "remaining_action": "Verify approved v04 masters and upload gates, upload three Shorts, read back Studio state",
+      "remaining_action": "Chief to resolve episode-gate blocker before approved v04 Shorts upload",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -83026,10 +83031,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T11:18Z",
-        "by": "codex"
+        "at": "2026-10-28T11:19Z",
+        "by": "codex",
+        "note": "All three approved hashes match; all three package dry runs and Shorts gates pass. Required episode gate exits 1: subscr"
       }
     },
     {
