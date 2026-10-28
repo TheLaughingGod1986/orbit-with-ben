@@ -99264,9 +99264,14 @@
           "at": "2026-10-28T21:52Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-28T21:53Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Resumed PR 329 and existing J1128 recovery sessions; research JSON compaction already complete; preserving four-step plan."
         }
       ],
-      "remaining_action": "Find disk growth since J1112 and recover safe working space",
+      "remaining_action": "Finish existing verified NAS recovery and account for remaining disk growth",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99279,10 +99284,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T21:52Z",
-        "by": "codex"
+        "at": "2026-10-28T21:53Z",
+        "by": "codex",
+        "note": "Resumed PR 329 and existing J1128 recovery sessions; research JSON compaction already complete; preserving four-step pla"
       },
       "taskKeys": [
         "OWB:027",
