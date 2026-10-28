@@ -96345,9 +96345,14 @@
           "at": "2026-10-28T14:33Z",
           "by": "gemini",
           "what": "step 1 of 4 done: channel:audit verified 57 unique videos at 2026-10-28T14:33:42Z (26 public + 14 scheduled + 17 unscheduled private duplicates/stubs); 0 errors on deduplicated auditChannel"
+        },
+        {
+          "at": "2026-10-28T14:35Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: 4/4 public long end screens (14:34:17Z) and 22/22 public Short Related pills (14:34:17Z-14:35:12Z, including newly public AMSriTQ-lcQ at 11:30:38Z -> GHZDsiH7L7A) verified live"
         }
       ],
-      "remaining_action": "Verify public end screens on all 4 public longs and Related video pills on all 22 public Shorts",
+      "remaining_action": "Update 00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md and run check_all.sh in HOS",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -96360,11 +96365,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T14:33Z",
+        "at": "2026-10-28T14:35Z",
         "by": "gemini",
-        "note": "channel:audit verified 57 unique videos at 2026-10-28T14:33:42Z (26 public + 14 scheduled + 17 unscheduled private dupli"
+        "note": "4/4 public long end screens (14:34:17Z) and 22/22 public Short Related pills (14:34:17Z-14:35:12Z, including newly publi"
       },
       "taskKeys": [
         "HOS:001",
