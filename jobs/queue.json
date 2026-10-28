@@ -96328,9 +96328,14 @@
           "at": "2026-10-28T13:57Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T13:58Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J1093: inspecting c370f1058 evidence and testing direct audio/video ingestion via agy read_file"
         }
       ],
-      "remaining_action": "Audition v07 audio directly, finish visual QA and verify readable UAT hashes",
+      "remaining_action": "Capability-check direct audio input and audition v07 master, stem_vo.wav, and locked source",
       "due": "2026-11-06T20:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -96341,11 +96346,10 @@
       "review_followup_of": "J1090",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-28T13:57Z",
+        "of": 4,
+        "at": "2026-10-28T13:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Started J1093: inspecting c370f1058 evidence and testing direct audio/video ingestion via agy read_file"
       }
     }
   ],
