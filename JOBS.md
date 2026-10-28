@@ -44,6 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
 | J1083 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1084 | mini | open | – | – | video · 025 Mars Opening Short: v06 starting on a whole sentence (Ben's change on v05: '00:01 starts mid sentence'), gates, park for Chief |  |
+| J1085 | any | open | – | – | chief · Chief: verify condition for J0961 |  |
 
 Recently finished:
 
