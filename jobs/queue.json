@@ -99087,9 +99087,14 @@
           "at": "2026-10-28T21:03Z",
           "by": "codex",
           "what": "step 1 of 4 done: Measured 4.09 GB recent bulk research JSON; patched actual collectors to omit unused caption/format trees. Full 20 GB historical change remains unproven. Slow NAS recovery is detached."
+        },
+        {
+          "at": "2026-10-28T21:06Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Draft PR 329, a16efc293. Free 12.89 -> 14.68 GB. Collector fix tested. Two slow checked NAS copies active; .done absent. Full historical loss not yet explained."
         }
       ],
-      "remaining_action": "Finish verified NAS copies, recover disk headroom, and verify collector changes",
+      "remaining_action": "Read detached NAS results, reach 30 GB, finish attribution, then reopen J1100",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99104,9 +99109,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-28T21:03Z",
+        "at": "2026-10-28T21:06Z",
         "by": "codex",
-        "note": "Measured 4.09 GB recent bulk research JSON; patched actual collectors to omit unused caption/format trees. Full 20 GB hi"
+        "note": "Draft PR 329, a16efc293. Free 12.89 -> 14.68 GB. Collector fix tested. Two slow checked NAS copies active; .done absent."
       },
       "taskKeys": [
         "OWB:027",
