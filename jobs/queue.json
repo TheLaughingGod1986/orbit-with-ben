@@ -1,5 +1,5 @@
 {
-  "next_id": 1075,
+  "next_id": 1076,
   "jobs": [
     {
       "id": "J0001",
@@ -94440,6 +94440,34 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J1075",
+      "title": "J1066 FIX: reconcile QA media identities and newest-pack coverage on both channels",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief codex FIX on J1066. Read jobs/reviews/J1066/RULING_2026-10-28_CODEX.md and EVIDENCE_2026-10-28_CODEX.json. Correct both-channel QA inventory/report: resolve 26 nonexistent listed media paths via actual archive manifests; use verified SHA-256 or exact manifest references for seven placeholder file hashes and per-member identities for eight visual packs; reconcile newest candidates (wed11 v05 predates sweep but v04 was listed) against current delivery/review records. Reuse valid fresh gates; run missing/stale picture_qa, polish_gate, music_gate. Distinguish automated technical PASS, warnings requiring review, historical versions, and current approval. No media rebuilds, spend, uploads, metadata changes, file deletions or changes to Ben/credit/date holds. Preserve J0935 rulings and J1059 hold. Add separate no-spend repair jobs for genuine FAILs. Commit corrected inventories/reports in both repos and park for Chief; report back to J1066. Claim this queue job before work, use film links for affected entries. No external start wait; ready now.",
+      "ref": "J1066",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-28T08:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T08:38Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct QA inventory paths, hashes and newest-version coverage; rerun only missing or stale gates",
+      "kind": "qa"
     }
   ],
   "focus": [],
