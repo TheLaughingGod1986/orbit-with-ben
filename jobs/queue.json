@@ -94542,9 +94542,14 @@
           "at": "2026-10-28T08:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T08:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1075; read RULING_2026-10-28_CODEX.md, EVIDENCE_2026-10-28_CODEX.json, and J1066 inventory"
         }
       ],
-      "remaining_action": "Correct QA inventory paths, hashes and newest-version coverage; rerun only missing or stale gates",
+      "remaining_action": "Resolve 26 missing media paths via manifests, add exact hashes/pack members, reconcile newest candidates, and regenerate both QA reports",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -94557,12 +94562,34 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-28T08:46Z",
+        "of": 4,
+        "at": "2026-10-28T08:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1075; read RULING_2026-10-28_CODEX.md, EVIDENCE_2026-10-28_CODEX.json, and J1066 inventory"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010",
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030"
+      ]
     },
     {
       "id": "J1076",
