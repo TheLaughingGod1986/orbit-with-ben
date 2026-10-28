@@ -351,12 +351,27 @@
       const fig = share != null ? Math.round(share * 100) + "%" : unit === "GBP" ? "£" + Number(lt.left).toFixed(0) : Number(lt.left || 0).toLocaleString("en-GB");
       return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${tone}">${fig}</b>${share != null ? `<div class="bar"><i class="${tone}" style="width:${Math.max(3, share * 100).toFixed(0)}%"></i></div>` : `<small>${stale ? "reading stale" : "left"}</small>`}</a>`;
     }).join("");
+    // Claude, Gemini and Grok publish no meter: their tile says whether they are up, and when a flagged one is back.
+    const chain = Object.fromEntries((m.chiefChain || []).map(r => [r.agent, r]));
+    const noMeter = [["chief", "Grok"], ["claude", "Claude"], ["gemini", "Gemini"]].map(([id, name]) => {
+      const [tone, word, note] = meterless(chain[id], status[id], now);
+      return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${tone}">${word}</b><small>${esc(note)}</small></a>`;
+    }).join("");
     return `<header class="top"><h1>Agents</h1><a class="more" href="/ai">Details ›</a></header>
       <div class="chief-card"><span class="dot ${c.agent ? "green" : "red"}"></span><div><b>Chief: ${esc(c.name || "nobody")}</b>
         <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
       ${jobTiles(s.jobs)}
       ${section("Agent team", null, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
-      ${section("Credits", null, `<div class="credits">${credit}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
+      ${section("Credits", null, `<div class="credits">${credit}${noMeter}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
+  }
+
+  function meterless(row, st, now) {
+    row = row || {}; st = st || {};
+    const until = Date.parse(row.until || st.until || "");
+    const back = until > now ? "back " + new Date(until).toLocaleString("en-GB", {weekday: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/London"}) : "";
+    const up = row.agent ? row.up : st.status === "green";
+    if (!row.agent && !st.id) return ["amber", "—", "no reading"];
+    return up ? ["green", "Up", "no meter published"] : ["red", "Out", back || "out of usage"];
   }
 
   // A scheduled video we can't vouch for gets one small warning; everything verified stays quiet.
