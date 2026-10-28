@@ -1,0 +1,224 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/_desk/renders/J1032-finish12/S6_028_X768qs8sNQs/S6_028_X768qs8sNQs_v04.mp4",
+  "edge_floor": 0.0198,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s05_alma_orion_set",
+      "cut": 4,
+      "t": 14.5,
+      "source": "alma_orion_set.mp4",
+      "why": [
+        "low detail: edge density 0.0167 < film p5 0.0198"
+      ]
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "s07_twilight",
+      "cut": 6,
+      "t": 20.08,
+      "source": "conjunction.tif",
+      "note": "Codex acting Chief, election rechecked 2026-10-27 11:09Z. Full-resolution frame inspected: one continuous image; detector line is the natural horizon, cloud/land texture, road horizon, stadium boundary or tree silhouette. No composited panel or gutter. This ruling applies only to split-panel detection for this exact source stretch; all other failures remain.",
+      "why": [
+        "split panel: horizontal gutter at 0.828"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_lasilla_mw_open",
+      "source": "eso_mw_lasilla.mp4",
+      "t": 1.23,
+      "std": 44.94,
+      "mean": 57.9,
+      "p95": 140.0,
+      "edge": 0.1273,
+      "hf": 17.12,
+      "lf": 31.7,
+      "std8": 37.09,
+      "edge8": 0.1715,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_orion_paranal",
+      "source": "orion_over_paranal.mp4",
+      "t": 4.18,
+      "std": 18.1,
+      "mean": 47.73,
+      "p95": 60.0,
+      "edge": 0.0256,
+      "hf": 8.72,
+      "lf": 11.88,
+      "std8": 13.9,
+      "edge8": 0.0423,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_lasilla_ntt",
+      "source": "eso_lasilla_ntt.mp4",
+      "t": 7.62,
+      "std": 27.21,
+      "mean": 42.2,
+      "p95": 84.0,
+      "edge": 0.0544,
+      "hf": 9.98,
+      "lf": 21.38,
+      "std8": 23.35,
+      "edge8": 0.0988,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_star_trails",
+      "source": "eso_startrails.mp4",
+      "t": 11.07,
+      "std": 59.29,
+      "mean": 95.47,
+      "p95": 216.0,
+      "edge": 0.1016,
+      "hf": 19.82,
+      "lf": 50.03,
+      "std8": 51.98,
+      "edge8": 0.2665,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_alma_orion_set",
+      "source": "alma_orion_set.mp4",
+      "t": 14.5,
+      "std": 22.65,
+      "mean": 42.03,
+      "p95": 59.0,
+      "edge": 0.0167,
+      "hf": 8.33,
+      "lf": 17.29,
+      "std8": 19.16,
+      "edge8": 0.0493,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0167 < film p5 0.0198"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "s06_orion_vlt",
+      "source": "orion_rise_vlt.mp4",
+      "t": 17.6,
+      "std": 31.74,
+      "mean": 37.23,
+      "p95": 60.0,
+      "edge": 0.0386,
+      "hf": 12.87,
+      "lf": 21.7,
+      "std8": 24.98,
+      "edge8": 0.0994,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_twilight",
+      "source": "conjunction.tif",
+      "t": 20.08,
+      "std": 49.31,
+      "mean": 81.89,
+      "p95": 161.0,
+      "edge": 0.0296,
+      "hf": 12.08,
+      "lf": 44.96,
+      "std8": 45.8,
+      "edge8": 0.0859,
+      "seams": [
+        {
+          "kind": "horizontal gutter",
+          "at": 0.828
+        }
+      ],
+      "video": true,
+      "reviewed_ok": {
+        "note": "Codex acting Chief, election rechecked 2026-10-27 11:09Z. Full-resolution frame inspected: one continuous image; detector line is the natural horizon, cloud/land texture, road horizon, stadium boundary or tree silhouette. No composited panel or gutter. This ruling applies only to split-panel detection for this exact source stretch; all other failures remain.",
+        "why": [
+          "split panel: horizontal gutter at 0.828"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "loop_eso_mw_lasilla.mp4",
+      "t": 21.67,
+      "std": 44.63,
+      "mean": 55.97,
+      "p95": 138.0,
+      "edge": 0.119,
+      "hf": 16.89,
+      "lf": 31.26,
+      "std8": 36.86,
+      "edge8": 0.1667,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

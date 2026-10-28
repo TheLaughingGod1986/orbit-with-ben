@@ -1,0 +1,213 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/_desk/renders/J1032-finish12/S3_028_bizlhspnVvY/S3_028_bizlhspnVvY_v04.mp4",
+  "edge_floor": 0.0249,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s03_orion_paranal",
+      "cut": 2,
+      "t": 7.47,
+      "source": "orion_over_paranal.mp4",
+      "why": [
+        "low detail: luma std 17.63 < 18.0"
+      ]
+    },
+    {
+      "row": "s05_orion_vlt",
+      "cut": 4,
+      "t": 14.0,
+      "source": "orion_rise_vlt.mp4",
+      "why": [
+        "low detail: edge density 0.0246 < film p5 0.0249"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_lasilla_ntt",
+      "source": "eso_lasilla_ntt.mp4",
+      "t": 1.27,
+      "std": 50.7,
+      "mean": 75.44,
+      "p95": 181.0,
+      "edge": 0.1071,
+      "hf": 14.74,
+      "lf": 42.21,
+      "std8": 44.99,
+      "edge8": 0.3279,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_lasilla_mw",
+      "source": "eso_mw_lasilla.mp4",
+      "t": 4.23,
+      "std": 30.83,
+      "mean": 49.57,
+      "p95": 87.0,
+      "edge": 0.1118,
+      "hf": 15.0,
+      "lf": 21.09,
+      "std8": 23.11,
+      "edge8": 0.098,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_orion_paranal",
+      "source": "orion_over_paranal.mp4",
+      "t": 7.47,
+      "std": 17.63,
+      "mean": 47.79,
+      "p95": 60.0,
+      "edge": 0.0254,
+      "hf": 8.56,
+      "lf": 11.76,
+      "std8": 13.68,
+      "edge8": 0.0395,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.63 < 18.0"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s04_hale_bopp",
+      "source": "sts083_hale_bopp.jpg",
+      "t": 10.7,
+      "std": 43.0,
+      "mean": 65.87,
+      "p95": 142.0,
+      "edge": 0.047,
+      "hf": 16.26,
+      "lf": 34.9,
+      "std8": 37.16,
+      "edge8": 0.137,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_orion_vlt",
+      "source": "orion_rise_vlt.mp4",
+      "t": 14.0,
+      "std": 26.86,
+      "mean": 36.24,
+      "p95": 57.0,
+      "edge": 0.0246,
+      "hf": 9.77,
+      "lf": 18.62,
+      "std8": 22.14,
+      "edge8": 0.0633,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0246 < film p5 0.0249"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "s06_comet_a3",
+      "source": "comet_a3.jpg",
+      "t": 17.1,
+      "std": 36.22,
+      "mean": 68.59,
+      "p95": 131.0,
+      "edge": 0.0555,
+      "hf": 9.0,
+      "lf": 33.53,
+      "std8": 34.37,
+      "edge8": 0.0605,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_star_trails",
+      "source": "eso_startrails.mp4",
+      "t": 19.92,
+      "std": 57.86,
+      "mean": 96.77,
+      "p95": 207.0,
+      "edge": 0.0707,
+      "hf": 12.37,
+      "lf": 53.06,
+      "std8": 54.24,
+      "edge8": 0.1951,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "loop_eso_lasilla_ntt.mp4",
+      "t": 21.73,
+      "std": 48.95,
+      "mean": 72.83,
+      "p95": 169.0,
+      "edge": 0.1074,
+      "hf": 14.74,
+      "lf": 40.07,
+      "std8": 43.0,
+      "edge8": 0.3175,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
