@@ -95981,6 +95981,11 @@
           "at": "2026-10-28T13:39Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1088 QA sweep committed with byte-identical inventory (652beb308501) and report (19b3e906556d) in OWB 246eace22 and HOS b9d6e936 across 153 entries (87 OWB, 66 HOS; 145 single-file exports + 8 silent visual packs [119 members] = 264 enumerated files; 129 current newest candidates + 24 historical superseded versions). Adds OWB 025 wed11_opening_testA v06 (J1084, superseded by v07) and v07 (J1090, current_newest, parked for Chief review in J1090) and tracks their v06/v07 gate sidecars in main; updates J0936/J1032 (6 v04 Shorts Chief PASS cd8f28c40 / PR #305 merged 719fdf02d -> HELD_ON_BEN_OK) and J0961 (Ben v04 watch OK fac609eb7 -> HELD_ON_EPISODE_GATE subscribe_beat). 440/440 applicable gate sidecars fresh and PASS (0 FAIL, 142 entries with warnings already tracked in film jobs, 0 new fix jobs needed, £0 spend)."
+        },
+        {
+          "at": "2026-10-28T16:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Await Chief review of J1088 QA sweep report; no film approval granted",
@@ -96024,7 +96029,8 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "escalated_at": "2026-10-28T16:21Z"
     },
     {
       "id": "J1089",
@@ -96490,6 +96496,11 @@
           "at": "2026-10-28T14:21Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1093 direct-audio audition, full-shot/warnings/text-safety QA, and readable UAT SHA256 verification complete (1295111c0 on main, 4e441775a on codex/J1090). (1) Direct audio ingestion via subscription agy read_file verified on wed11_opening_testA_v07.mp4 (e9f848d99db9...), PHONE (ce9d0befcdef...), stem_vo.wav (c2d824f06a07...), long.wav (a81c6088a04c...), and opp.wav (1087432444a6...); source 'for more' vs Whisper 'from more' resolved by ear (natural unstressed British weak-form /fə/ in unedited single take long.wav 0.08-5.30s coarticulating into /m/ of 'more', zero internal splice); all 9 VO joins and bed/SFX mix clean. (2) Full s07 motion (21.814-25.032s), transitions, 2fps sheet, 3 picture warnings (7.3/13.8/20.2s), and caption/title safety verified; zero MSL hardware or black wedge; accepted 5.16s reveal, 9.224-11.304s wind, and v01-v07 preserved. (3) Re-copied 8 dataless iCloud UAT files from verified local originals (67,808 blocks resident) and read back 27/27 manifest hashes across Local, NAS, and iCloud UAT (all match=True, 0 Errno 11). J1090/J1084 stay held pending Chief acceptance; J1059 held for Ben (11 Nov 10:30 London); scheduled TtgHNLXfDSs v02 unchanged; zero spend/upload/NAS deletion."
+        },
+        {
+          "at": "2026-10-28T16:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for elected-Chief review of J1093 direct-audio audition, full-shot QA, and readable UAT SHA256 evidence for J1090 v07",
@@ -96507,7 +96518,8 @@
         "at": "2026-10-28T14:21Z",
         "by": "gemini",
         "note": "Step 4 complete: Committed and pushed J1093 verification report and JSON evidence on main (1295111c0) and codex/J1090 (4"
-      }
+      },
+      "escalated_at": "2026-10-28T16:21Z"
     },
     {
       "id": "J1094",
