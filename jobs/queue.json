@@ -1,5 +1,5 @@
 {
-  "next_id": 1122,
+  "next_id": 1123,
   "jobs": [
     {
       "id": "J0001",
@@ -98560,6 +98560,34 @@
       "recheck_of": "J0966",
       "due": "2026-10-28T20:02:35+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1122",
+      "title": "Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "MacBook lane first job (repo text only, no media, no Studio, no spend).\nToday's packaging panel (05_Analytics/tests/panels/owb-j1106-weekly-2026-10-28/DECISION.md) found internal studio wording (\"dreadbait\", \"fearbait\") in the live 005 description. Sweep for the same problem everywhere:\n1. In both checkouts (Orbit With Ben and History of Science), find every upload description file (11_Upload-Package/Descriptions/*.txt, PACKAGE_MANIFEST.json descriptions, and the HOS equivalents).\n2. Flag any line a viewer would find odd: internal jargon (dreadbait, fearbait, gate, Chief, job ids like J0123, version tags like v03, file names, \"Thursday films\" where the schedule is no longer Thursday-only), first lines that give away the film's ending, and broken chapter timestamps (not starting 0:00, not ascending, under 10 s apart).\n3. Write the findings to 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28.md: one row per issue with video id, file, the line, and the exact replacement text. Change no description file and nothing on YouTube.\n4. Commit that one file to main (git pull --rebase first), then jobs.py done <id> --agent macbook --result \"<n issues, file path>\" --git.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T19:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T19:05Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "sweep descriptions, write fix list",
+      "kind": "review"
     }
   ],
   "focus": [],

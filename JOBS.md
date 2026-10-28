@@ -61,6 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1119 | mini | open (after J1118) | – | – | studio · J1106 Studio: arm 3 thumbnail Test & Compare (B v02) + 005/019 description fixes, ledger rows |  |
 | J1120 | any | open | – | – | chief · Chief: verify condition for J0961 |  |
 | J1121 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
+| J1122 | macbook | open | – | – | review · Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only) |  |
 
 Recently finished:
 
