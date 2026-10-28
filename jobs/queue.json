@@ -92198,13 +92198,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T02:14Z",
-      "eta": "2026-10-28T04:14Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T02:14Z",
-      "result": "",
+      "result": "Verified J1002 predecessor (45ef75589) and J1044 Acting-Chief verification (254d04071) across all 6 Chief FIX items in OWB_2026-10-26_CHIEF_REVIEW.md (including live gate_upcoming.staged() SHA256 resolution for 6dcL5rBmHPM 6de9961ac45d, VfDm3E2bUgU 433ce60e09d4, hZH0C7fpCk4 09e5e66332fe). Non-author Chiefs (chief/claude/codex) remain down as of 2026-10-28T02:20Z, and latest studio_ctr.json readAt 2026-10-28T00:33:34Z for OVLv9dxTcpE (887 views, 30.7% stayed, 75.3% avg viewed) is at 37.1h (<48h maturity floor). Kept J0985 blocked (wait --recheck J1052, check-at 2026-10-28T11:35:00Z aligned with recorded J1003 retry) so completed 5/5 audit is not re-queued and per J1002 non-self-approval rule. GBP0.",
       "history": [
         {
           "at": "2026-10-28T02:14Z",
@@ -92235,6 +92235,11 @@
           "at": "2026-10-28T02:21Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Completed J1052 condition verification for J0985"
+        },
+        {
+          "at": "2026-10-28T02:21Z",
+          "by": "gemini",
+          "what": "done: Verified J1002 predecessor (45ef75589) and J1044 Acting-Chief verification (254d04071) across all 6 Chief FIX items in OWB_2026-10-26_CHIEF_REVIEW.md (including live gate_upcoming.staged() SHA256 resolution for 6dcL5rBmHPM 6de9961ac45d, VfDm3E2bUgU 433ce60e09d4, hZH0C7fpCk4 09e5e66332fe). Non-author Chiefs (chief/claude/codex) remain down as of 2026-10-28T02:20Z, and latest studio_ctr.json readAt 2026-10-28T00:33:34Z for OVLv9dxTcpE (887 views, 30.7% stayed, 75.3% avg viewed) is at 37.1h (<48h maturity floor). Kept J0985 blocked (wait --recheck J1052, check-at 2026-10-28T11:35:00Z aligned with recorded J1003 retry) so completed 5/5 audit is not re-queued and per J1002 non-self-approval rule. GBP0."
         }
       ],
       "remaining_action": "Post J1052 completion report on studio thread",
@@ -92262,7 +92267,8 @@
         "OWB:030",
         "OWB:031",
         "OWB:032"
-      ]
+      ],
+      "done_ref": "254d04071"
     },
     {
       "id": "J1053",
