@@ -105,7 +105,7 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 43 h (early) | 204 | 28.0% | MISS | 66.6% | WATCH |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 44 h (early) | 204 | 28.0% | MISS | 66.6% | WATCH |
 | [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 4 d | 49 | 30.4% | too few to judge | 50.0% | too few to judge |
 | [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 6 d | 167 | 39.5% | MISS | 88.2% | PASS |
 | [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 7 d | 145 | 23.1% | MISS | 51.9% | WATCH |

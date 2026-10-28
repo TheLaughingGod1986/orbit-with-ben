@@ -183,15 +183,12 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 43 h (early) | 887 | 30.7% | MISS | 75.3% | PASS |
+| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 44 h (early) | 887 | 30.7% | MISS | 75.3% | PASS |
 | [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 3 d | 850 | 32.1% | MISS | 76.1% | PASS |
 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 4 d | 81 | 34.3% | too few to judge | 58.3% | too few to judge |
 | [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 5 d | 90 | 14.1% | too few to judge | 53.3% | too few to judge |
 | [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 6 d | 886 | 31.7% | MISS | 62.1% | WATCH |
-| [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 7 d | 12 | 25.0% | too few to judge | 30.9% | too few to judge |
 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | 8 d | 109 | 56.8% | WATCH | 78.6% | PASS |
-| [Jupiter Has No Ground](https://youtu.be/23KZK7OjsEE) | 10 d | 8 | 33.3% | too few to judge | 34.2% | too few to judge |
 | [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) | 11 d | 161 | 25.3% | MISS | 60.8% | WATCH |
-| [Could a Robot Survive Falling Into Jupiter?](https://youtu.be/buaOI3QGm7U) | 13 d | 17 | 81.8% | too few to judge | 68.1% | too few to judge |
 
 Stayed to watch: 0 of 5 judged Shorts at 60%+. Average viewed: 3 of 5 at 70%+.
