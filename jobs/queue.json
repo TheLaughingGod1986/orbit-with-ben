@@ -94336,13 +94336,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-28T08:31Z",
-      "eta": "2026-10-28T10:31Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T08:30Z",
-      "result": "",
+      "result": "Condition not satisfied. Reviewed J1032 brief and 3/3 result, J1029 preparation PASS dc4b9da01, PR305 61d031f35 run13/delivery records, prior J1053 verification and current thread through 6464327187. PR304/305 remain OPEN with no comments/reviews; no independent replacement-media PASS or Ben swap approval found. Gate/manifest/listening results are submitted Gemini evidence, not a fresh Codex media review. J1048 QA sweep preserves holds. Kept J1032 blocked via wait --recheck J1073, retained recorded retry 2026-10-28T09:30:29Z; 3/3 assembly, J0936 6/6 history, v01 fallback and 1 Nov 20:00 UTC batch deadline preserved. GBP0; no publishing changes.",
       "history": [
         {
           "at": "2026-10-28T08:30Z",
@@ -94373,6 +94373,11 @@
           "at": "2026-10-28T08:33Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1032 remains blocked; actual missing independent replacement PASS and Ben swap approval recorded with recheck J1073; retained recorded 28 Oct 09:30:29 UTC retry. Assembly progress preserved at 3/3."
+        },
+        {
+          "at": "2026-10-28T08:34Z",
+          "by": "codex",
+          "what": "done: Condition not satisfied. Reviewed J1032 brief and 3/3 result, J1029 preparation PASS dc4b9da01, PR305 61d031f35 run13/delivery records, prior J1053 verification and current thread through 6464327187. PR304/305 remain OPEN with no comments/reviews; no independent replacement-media PASS or Ben swap approval found. Gate/manifest/listening results are submitted Gemini evidence, not a fresh Codex media review. J1048 QA sweep preserves holds. Kept J1032 blocked via wait --recheck J1073, retained recorded retry 2026-10-28T09:30:29Z; 3/3 assembly, J0936 6/6 history, v01 fallback and 1 Nov 20:00 UTC batch deadline preserved. GBP0; no publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1032 awaits independent replacement review then Ben swap approval",
