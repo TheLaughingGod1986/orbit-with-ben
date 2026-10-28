@@ -99134,13 +99134,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T21:08Z",
-      "eta": "2026-10-28T23:08Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T20:56Z",
-      "result": "",
+      "result": "parked for Chief: HOS PR 372 (535f060f) records verified description/chapters and checks; 3/4 done. Prior test finished 11 Oct, but New test says it deletes current experiment. Cancelled per Never; Chief must resolve that confirmation before arming MISSING ELEMENT v02 and starting ledger. Later title jobs J1130-J1132 queued. Channel audit has four unrelated duplicate-self errors for uU12JA5rMWg.",
       "history": [
         {
           "at": "2026-10-28T20:56Z",
@@ -99176,6 +99176,11 @@
           "at": "2026-10-28T21:13Z",
           "by": "codex",
           "what": "step 3 of 4 done: Evidence committed on HOS PR 372 (535f060f); check_all.sh ALL CHECKS PASS; description and chapters verified in Studio. Remaining fourth step cannot complete under worker Never rule."
+        },
+        {
+          "at": "2026-10-28T21:13Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: HOS PR 372 (535f060f) records verified description/chapters and checks; 3/4 done. Prior test finished 11 Oct, but New test says it deletes current experiment. Cancelled per Never; Chief must resolve that confirmation before arming MISSING ELEMENT v02 and starting ledger. Later title jobs J1130-J1132 queued. Channel audit has four unrelated duplicate-self errors for uU12JA5rMWg."
         }
       ],
       "remaining_action": "Chief must resolve delete-current-experiment confirmation before thumbnail test can be armed and ledger started",
