@@ -92002,19 +92002,24 @@
           "at": "2026-10-28T00:39Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified HOS 008 picture is blocked (11/112 rows; 101 Flow Veo rows gated on J0863 at 2026-11-12T00:05:00Z) and edit is todo; 008 has 0 built Shorts (14/18 Shorts rows missing long/Flow plates)"
+        },
+        {
+          "at": "2026-10-28T00:39Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded unmet condition on J0912 via jobs.py wait --recheck J1049 (next check 2026-11-12T09:00:00Z after J0863 Flow renewal gate)"
         }
       ],
-      "remaining_action": "Record unmet condition on J0912 via jobs.py wait --recheck J1049 and close J1049",
+      "remaining_action": "Finish J1049 verification task",
       "kind": "chief",
       "recheck_of": "J0912",
       "due": "2026-10-28T01:35:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-28T00:39Z",
         "by": "gemini",
-        "note": "Verified HOS 008 picture is blocked (11/112 rows; 101 Flow Veo rows gated on J0863 at 2026-11-12T00:05:00Z) and edit is "
+        "note": "Recorded unmet condition on J0912 via jobs.py wait --recheck J1049 (next check 2026-11-12T09:00:00Z after J0863 Flow ren"
       },
       "taskKeys": [
         "HOS:008"
