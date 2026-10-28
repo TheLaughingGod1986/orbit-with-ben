@@ -98924,10 +98924,10 @@
       "stage": "",
       "after": "J1125",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-10-28T20:53Z",
+      "eta": "2026-10-28T21:23Z",
       "created_by": "codex",
       "created_at": "2026-10-28T19:38Z",
       "result": "",
@@ -98936,10 +98936,23 @@
           "at": "2026-10-28T19:38Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T20:53Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel decision: HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T20:53Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1127",
