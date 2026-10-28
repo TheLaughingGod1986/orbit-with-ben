@@ -1,5 +1,5 @@
 {
-  "next_id": 1063,
+  "next_id": 1064,
   "jobs": [
     {
       "id": "J0001",
@@ -93212,6 +93212,34 @@
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes"
+    },
+    {
+      "id": "J1063",
+      "title": "OWB 020/022 v01 lift Shorts music_gate fix (£0, no spend): 022 plan Pace line + 020 lift_no_crust own bed/plan",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1060 QA sweep ran scripts/music_gate.py on the 5 OWB 020 and 022 v01 lift Shorts (jupiter_no_crust_v01, sun_century_warming_v01, sun_eight_minute_light_v01, sun_faint_young_sun_70pct_v01, sun_moist_greenhouse_v01), all of which already PASS picture_qa (0 FAILs) and polish_gate (0 FAILs).\n\n1. **OWB 022 (4 lift Shorts: sun_century_warming_v01, sun_eight_minute_light_v01, sun_faint_young_sun_70pct_v01, sun_moist_greenhouse_v01):**\n   - sun-brighter_score_bed_v01.mp3 (525.0 s) has 0 similarity matches and 0 gaps, and its pre-8-Oct 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/05_Music/sun-brighter_score_bed_v01_plan.json already carries NOT Saturn ring chimes, NOT Moon Leaving lunar piano, failing only brief: the prompt has no Pace: NN-NN BPM line.\n   - Fix (£0, no spend): add Pace: 60-80 BPM. to 02_Video-Projects/022_Is-the-Sun-Getting-Brighter/05_Music/sun-brighter_score_bed_v01_plan.json (like J1058 on HOS 005) and re-run scripts/music_gate.py on all 4 022 lift Shorts to PASS (rc=0).\n2. **OWB 020 (1 lift Short: jupiter_no_crust_v01):**\n   - _assemble_jupiter_no_crust_short_v01.py mixed the master tail (579.6 s of jupiter_film_v04.mp4) without a 05_Music/ bed or plan (own: not in this film 05_Music, own: no plan next to the bed).\n   - Fix (£0, no spend): synthesise an own 0-credit harmonic pad + _plan.json (Pace: 60-80 BPM, NOT ...) in 02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/05_Music/, update _assemble_jupiter_no_crust_short_v01.py to use it at -14 LUFS, and re-run music_gate.py, picture_qa.py, polish_gate.py, and gate_shorts_open.py to PASS.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-28T04:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T04:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "OWB 020/022 v01 lift Shorts music_gate fix (£0, no spend): 022 plan Pace line + 020 lift_no_crust own bed/plan",
+      "kind": "qa"
     }
   ],
   "focus": [],

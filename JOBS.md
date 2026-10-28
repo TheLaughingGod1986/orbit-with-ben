@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1060 | mini | claimed | gemini | 2026-10-28T05:33Z | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1061 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1062 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J1063 | mini | open | – | – | qa · OWB 020/022 v01 lift Shorts music_gate fix (£0, no spend): 022 plan Pace line + 020 lift_no_crust own bed/plan |  |
 
 Recently finished:
 
