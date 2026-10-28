@@ -44,7 +44,8 @@ class ProgressWhileJobsOpen(unittest.TestCase):
         ])
         v23, v22, v28 = cards["OWB:023"], cards["OWB:022"], cards["OWB:028"]
         self.assertEqual([v["lane"] for v in (v22, v23, v28)], ["progress"] * 3)
-        self.assertEqual(v23["line"], "Live on YouTube · now: arm thumbnail-only Test & Compare A vs B EARTH'S TWIN (cursor).")
+        # A passed publish time alone no longer reads as Public (2c991748, 26 Oct): only a YouTube read does.
+        self.assertEqual(v23["line"], "Private, scheduled Sun 25 Oct 2026 18:00 GMT · now: arm thumbnail-only Test & Compare A vs B EARTH'S TWIN (cursor).")
         self.assertEqual(v23["waitingOn"], "cursor")
         self.assertEqual(v22["line"], "Live on YouTube · next: Test & Compare B v02 '10% BRIGHTER'.")
         self.assertTrue(v28["line"].startswith("Private, scheduled Sun 29 Nov 2026 18:00 GMT · next: Oort marbles Short v02"))
@@ -59,10 +60,10 @@ class ProgressWhileJobsOpen(unittest.TestCase):
         self.assertEqual((cards["OWB:023"]["lane"], cards["OWB:028"]["lane"]), ("done", "done"))
         self.assertIn("Private, scheduled Sun 29 Nov", cards["OWB:028"]["line"])
 
-    def test_past_publish_time_reads_public(self):
+    def test_past_publish_time_stays_scheduled_until_youtube_reads_it_public(self):
+        # 2c991748 (26 Oct): a passed publish time is not proof it aired; the Channel Tracker's public read is.
         v = build([])["OWB:023"]
-        self.assertEqual((v["lane"], v["youtube"]["state"], v["youtube"]["privacy"]), ("done", "live", "public"))
-        self.assertTrue(v["line"].startswith("Public on YouTube since Sun 25 Oct 2026"))
+        self.assertEqual((v["lane"], v["youtube"]["state"], v["youtube"]["privacy"]), ("done", "scheduled", "private"))
 
     def test_board_check_flags_a_claimed_job_on_a_done_card(self):
         v = build([job("J0962", "claimed", "023 Venus VBaYRPp85Sw: thumbnail test", by="cursor")])["OWB:023"]

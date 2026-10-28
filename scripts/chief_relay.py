@@ -1215,13 +1215,53 @@ def self_heal(at: dt.datetime) -> bool:
     return True
 
 
+def offload_scratch(at: dt.datetime) -> None:
+    """Ben, 28 Oct 2026: "The external storage we can use our NAS for now". Under CHIEF_OFFLOAD_GB free (default 20),
+    move render scratch untouched for 48 h from /private/tmp to the NAS with scripts/nas_offload.py (rsync, sha256 on
+    both sides, the Mini copy goes only on a full match, never deletes on the NAS), at most every CHIEF_OFFLOAD_H
+    hours, and say what moved on the thread. Never stops the relay."""
+    if sys.platform != "darwin" and not os.environ.get("CHIEF_OFFLOAD_ANY_OS"):
+        return  # the Mini's /private/tmp and /Volumes/data only exist on macOS
+    target = float(os.environ.get("CHIEF_OFFLOAD_GB", "20"))
+    try:
+        free = shutil.disk_usage(str(HOME)).free // (1024 * 1024)
+    except OSError:
+        return
+    if free >= target * 1024:
+        return
+    last = read_json(d("offload.json")) or {}
+    if last.get("at") and at - parse(last["at"]) < dt.timedelta(hours=float(os.environ.get("CHIEF_OFFLOAD_H", "3"))):
+        return
+    try:
+        import importlib.util
+        path = OWB / "scripts" / "nas_offload.py"
+        if not path.exists():
+            path = pathlib.Path(__file__).with_name("nas_offload.py")
+        spec = importlib.util.spec_from_file_location("nas_offload", path)
+        no = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(no)
+        rep = no.offload(apply=True, target_gb=target)
+        line = no.summary(rep)
+    except Exception as e:  # never let the offload stop the relay
+        log(f"offload failed: {e.__class__.__name__}: {e}")
+        write_json(d("offload.json"), {"at": iso(at), "error": str(e)[:300]})
+        return
+    write_json(d("offload.json"), {"at": iso(at), "before_mb": rep["before_mb"], "after_mb": rep["after_mb"],
+                                   "moved": len(rep["moved"]), "kept": len(rep["kept"]), "nas": rep["nas"]})
+    log(line)
+    if rep["moved"] or rep["kept"] or rep["nas"] != "ok":
+        notify(f"Chief relay: {line}")
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
     fetch_claude_beat(at)
     flags = load_out(at)
     if flags:
         log("out of credit: " + "; ".join(f"{k} ({v})" for k, v in sorted(flags.items())))
-    if not self_heal(at):
+    healthy = self_heal(at)
+    offload_scratch(at)  # also when the disk is too full to wake anyone: that is when the NAS helps most
+    if not healthy:
         log("disk still too full to run a worker: waiting for the next repair")
         return 0
     if (OWB / "scripts" / "refill.py").exists():

@@ -358,8 +358,13 @@
   function supportingJob(j) {
     return /\bBacklog\b|Weekly .*audit|Daily Studio read|QA sweep|listing check.*(?:live videos|last \d+)/i.test(j.title || "");
   }
+  // Mirror of scripts/video_tracker.py job_is_channel_wide: a job tagging 4+ videos is studio-wide, not one card's work.
+  function channelWide(j) {
+    const keys = j.taskKeys || [];
+    return keys.length >= 4 || (/^Backlog\b/i.test(j.title || "") && keys.length > 1);
+  }
   function matchesVideo(j, v) {
-    if (supportingJob(j)) return false;
+    if (supportingJob(j) || channelWide(j)) return false;
     if (j.recheck_of) {
       const original = (board?.owb?.jobs || []).find(x=>x.id===j.recheck_of && !x.recheck_of);
       return original ? matchesVideo(original,v) : false;

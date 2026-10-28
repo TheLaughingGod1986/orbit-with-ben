@@ -215,11 +215,11 @@ class Page(unittest.TestCase):
         js = (site / "board_site/tracker_app.js").read_text()
         self.assertIn('["approved", "Approved, on its way"]', js)
         self.assertLess(js.index('["ready", "Ready for OK"]'), js.index('["approved", "Approved, on its way"]'))
-        self.assertLess(js.index('["approved", "Approved, on its way"]'), js.index('["done", "Done on YouTube"]'))
+        self.assertLess(js.index('["approved", "Approved, on its way"]'), js.index('["done", "On YouTube"]'))
         self.assertIn("function approvedHtml", js)
         html = (site / "video_tracker.html").read_text()
         self.assertIn('.lane[data-lane="approved"]', html)
-        self.assertIn("repeat(6, 1fr)", html)
+        self.assertIn("repeat(6, minmax(0, 1fr))", html)  # six lanes; minmax since the 27 Oct layout pass
 
 
 if __name__ == "__main__":

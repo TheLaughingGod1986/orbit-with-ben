@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  MacBook worker (scripts/macbook_worker.py), every 15 minutes. It does nothing unless the MacBook is on mains power,
+  idle for 10 minutes and has 15 GB free, and it only takes `needs macbook` jobs (Ben, 28 Oct 2026).
+  Installed by scripts/macbook/setup_macbook.sh, which fills in __HOME__.
+  Check now:          python3 ~/YouTube/orbit-with-ben/scripts/macbook_worker.py check
+  Pause for a while:  touch ~/_desk/state/macbook-worker.pause   (rm it to resume)
+  Remove:             launchctl bootout gui/$(id -u)/com.owb.macbook-worker
+  Log: ~/Library/Logs/owb-macbook-worker.log
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.owb.macbook-worker</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>python3 "__OWB__/scripts/macbook_worker.py" run</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <!-- launchd's zsh -lc has no Homebrew or npm bins on PATH: full paths only -->
+    <key>PATH</key>
+    <string>__HOME__/.local/bin:__HOME__/.npm-global/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>OWB_REPO</key>
+    <string>__OWB__</string>
+    <key>HOS_REPO</key>
+    <string>__HOS__</string>
+    <key>OLLAMA_MODEL</key>
+    <string>__MODEL__</string>
+  </dict>
+  <key>StartInterval</key>
+  <integer>900</integer>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/owb-macbook-worker.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/owb-macbook-worker.log</string>
+</dict>
+</plist>

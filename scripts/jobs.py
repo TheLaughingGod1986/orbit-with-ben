@@ -10,6 +10,8 @@ is alive and able claims it. The thread stays for discussion and reports; this q
           cloud   a Claude cloud session: reviews, scripts, shot lists, code, the tracker
           ben     only Ben: money, a sign-in, a decision
           any     whoever is free
+          macbook Ben's MacBook Pro when he isn't using it (scripts/macbook_worker.py): local renders, ffmpeg batches,
+                  low-stakes text on its local Ollama model. Only the MacBook worker takes these (Ben, 28 Oct 2026)
   kind    what sort of job it is (scripts/routing.py, AGENTS.md "Who does what", Ben 11 Oct 2026): script, facts,
           review, vo, image, chart, thumb, video, assembly, qa, listing, studio, chief. The relay wakes the worker whose
           model does that kind best (chart -> Codex on gpt-6-astra) and passes the model; --model overrides it.
@@ -62,7 +64,7 @@ import studio  # noqa: E402
 ROOT = studio.ROOT
 QUEUE = ROOT / "jobs" / "queue.json"
 JOBS_MD = ROOT / "JOBS.md"
-NEEDS = ["mini", "gemini", "cloud", "ben", "any"]
+NEEDS = ["mini", "gemini", "cloud", "ben", "any", "macbook"]
 EX_NONE = 10
 DEFAULT_ETA = 120
 QUICK_MIN = 60
