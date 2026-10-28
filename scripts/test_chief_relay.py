@@ -177,6 +177,28 @@ class Relay(unittest.TestCase):
         self.assertEqual(self.chief(T0), "codex")
         self.assertEqual(self.chief(T0 + 61 * MIN), "cursor")
 
+    def test_a_stalled_grok_is_not_brought_back_by_a_thread_post(self):
+        # Ben, 28 Oct 2026: Grok kept posting but never cleared its inbox, and each post made it Chief again.
+        cr.mark_down("chief", "Chief inbox delivered but not progressed", T0 + 30 * MIN, T0, kind="stalled")
+        self.post(T0 + 10 * MIN, "[Chief] looking at it")
+        cr.note_grok_posts(T0 + 12 * MIN)
+        self.assertEqual(self.chief(T0 + 12 * MIN), "cursor")
+        cr.seen("chief", T0 + 15 * MIN)  # Grok actually ran jobs.py: it's back
+        self.assertEqual(self.chief(T0 + 16 * MIN), "chief")
+
+    def test_repeat_stalls_keep_grok_down_longer(self):
+        windows = [cr.stall_window("chief", T0 + i * MIN) for i in range(6)]
+        self.assertEqual([int(w.total_seconds() // 60) for w in windows], [30, 60, 120, 240, 480, 720])
+        self.assertEqual(int(cr.stall_window("chief", T0 + 25 * 60 * MIN).total_seconds() // 60), 30)  # a day later
+
+    def test_a_hard_flag_from_ben_is_not_cleared_by_a_post(self):
+        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "scripts" / "credit_flags.json").write_text(
+            '{"flags": {"chief": {"out_until": "2099-01-01T00:00:00Z", "reason": "Ben: Grok is down", "hard": true}}}')
+        self.post(T0 + 5 * MIN, "[Chief] back")
+        cr.note_grok_posts(T0 + 6 * MIN)
+        self.assertEqual(self.chief(T0 + 6 * MIN), "cursor")
+
     def test_grok_takes_back_over_when_it_runs_jobs_again(self):
         cr.mark_down("chief", "out of credit", None, T0)
         cr.seen("chief", T0 - 10 * MIN)  # before the mark: still down

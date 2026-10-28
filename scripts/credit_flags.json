@@ -1,11 +1,16 @@
 {
   "about": "Out-of-credit flags (Ben, 14 Oct 2026: 'add a flag onto the system to run out of credits and switch it then to Codex or to Cursor or to Gemini'). Keys are a model id from scripts/routing.py MODELS (one lane) or an agent id (all its lanes). scripts/chief_relay.py skips flagged lanes until out_until (UTC), so each job goes to the next worker and model in its chain that has credit. Claude or Chief keeps this current from the credit readings (scripts/ai_spend.py); the relay adds its own short marks when a run says it is out. Remove a flag early when the pool is topped up.",
-  "updated": "2026-10-25T00:22:00Z",
-  "by": "chief",
+  "updated": "2026-10-28T23:05:00Z",
+  "by": "claude",
   "flags": {
     "cursor-claude-opus-5-5": {
       "out_until": "2026-11-06T00:00:00Z",
       "reason": "Cursor's Other Models pool 100% used (cursor.com spending page, read 13 Oct 07:30Z); its own models (Auto) still have credit; limits reset 6 Nov"
+    },
+    "chief": {
+      "out_until": "2026-10-30T07:00:00Z",
+      "hard": true,
+      "reason": "Ben, 28 Oct 22:5x: 'We know grok is down so why is the acting chief not taking over'. Grok kept posting but did not clear its Chief inbox (marked stalled 21:17Z); Claude acts as Chief. Hard: a thread post does not end it, only out_until or Ben."
     }
   }
 }
