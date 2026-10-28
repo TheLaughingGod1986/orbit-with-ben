@@ -93997,18 +93997,23 @@
           "at": "2026-10-28T07:51Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read all 112 listed videos; retries recovered 3 older Shorts. Both newest Shorts have no processed lifetime metrics. Exact sidecars validated."
+        },
+        {
+          "at": "2026-10-28T07:51Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Tracker rebuild passed; all Studio sidecar values verified against merged dashboard data."
         }
       ],
-      "remaining_action": "Rebuild tracker and verify metric merge",
+      "remaining_action": "Commit metrics to main, publish tracker and report counts",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-28T07:51Z",
         "by": "codex",
-        "note": "Read all 112 listed videos; retries recovered 3 older Shorts. Both newest Shorts have no processed lifetime metrics. Exa"
+        "note": "Tracker rebuild passed; all Studio sidecar values verified against merged dashboard data."
       },
       "taskKeys": [
         "OWB:021",
