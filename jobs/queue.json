@@ -1,5 +1,5 @@
 {
-  "next_id": 1129,
+  "next_id": 1130,
   "jobs": [
     {
       "id": "J0001",
@@ -99090,6 +99090,34 @@
       "taskKeys": [
         "OWB:027"
       ]
+    },
+    {
+      "id": "J1129",
+      "title": "HOS 002 Periodic Table: arm thumb test (live A vs existing MISSING ELEMENT v02), description + chapter fixes, ledger (J1126 decision)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS Studio, from the J1107 packaging panel: 05_Analytics/tests/panels/hos-weekly-2026-10-28-j1107/DECISION.md (orbit-with-ben). Work in the HOS checkout; the HOS Studio browser profile is reopened by you (AGENTS \"Stop and ask Ben\": only a real password/2FA prompt is Ben's).\n1. Periodic Table (002, AL_-qlWko_g): if no Test & Compare is running on it and the Chief's test order allows, arm a thumbnail-only test: live A vs the existing approved 02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/08_Thumbnail/Selected/hos_002_thumb_B_missing_element_v02.jpg (fallback hos_002_thumb_B_empty_on_purpose_v06.jpg; say which). Title unchanged. No new builds (J0777).\n2. Only once Studio shows it armed: python3 scripts/thumb_ledger.py add --video AL_-qlWko_g --channel hos --a-maker house --b-maker <maker of v02> --b-file <path> --job <this id>, then thumb_ledger.py start <T id>.\n3. Description and chapters exactly as DECISION.md section 3, after checking Lavoisier / Newlands / 1869 / gallium 1875 against periodic_table_script_master_v01.md; update the repo description and chapter files to match; read back from Studio.\n4. Queue the later title-only tests (DECISION.md section 2) to start the day after each video's current thumbnail test ends.\nNever replace a running test; leave J1113 covers and the compilation alone. No spend. Done with the Studio read-back.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T20:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T20:56Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "arm 002 thumb test, description fixes",
+      "kind": "studio"
     }
   ],
   "focus": [],
