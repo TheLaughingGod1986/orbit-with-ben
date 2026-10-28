@@ -1,5 +1,5 @@
 {
-  "next_id": 1104,
+  "next_id": 1106,
   "jobs": [
     {
       "id": "J0001",
@@ -80355,6 +80355,11 @@
           "at": "2026-10-28T15:05Z",
           "by": "claude",
           "what": "no longer waits on Ben"
+        },
+        {
+          "at": "2026-10-28T15:29Z",
+          "by": "relay",
+          "what": "condition verification queued: J1104"
         }
       ],
       "kind": "video",
@@ -80386,7 +80391,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J1032 assembly and all final-media gates must complete, then elected-Chief replacement review; no swap or watch cards before replacement PASS",
-        "check_at": "2026-10-27T00:00:00Z"
+        "check_at": "2026-10-28T16:29:25+00:00",
+        "recheck_task": "J1104"
       },
       "preparation_review": {
         "by": "codex",
@@ -88352,6 +88358,11 @@
           "at": "2026-10-28T09:22Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-28T15:22:00Z"
+        },
+        {
+          "at": "2026-10-28T15:29Z",
+          "by": "relay",
+          "what": "condition verification queued: J1105"
         }
       ],
       "kind": "review",
@@ -88382,10 +88393,11 @@
       "hold": {
         "type": "input",
         "condition": "HOS PR 366 at 00b1e653 remains OPEN and unapproved. Before paper acceptance/merge, reconcile Option A1 summary with its detailed table (five trimmed inter-word gaps plus onset; unchanged 20ms boundaries mean the >=40ms claim applies only to trimmed gaps), and remove the obsolete 9-14s promoted-title-banner assumption prohibited by J0967. Then obtain non-author Chief paper review and merge. J0862/J0863 credit and production holds are separate and unchanged; they do not block this paper correction.",
-        "check_at": "2026-10-28T15:22:00Z",
+        "check_at": "2026-10-28T16:29:25+00:00",
         "last_recheck": "J1077",
         "checked_at": "2026-10-28T09:22:43+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1105"
       },
       "escalated_at": "2026-10-27T23:26Z"
     },
@@ -97060,6 +97072,68 @@
         "askId": "J0936.4",
         "okAt": "2026-10-28T11:33Z"
       }
+    },
+    {
+      "id": "J1104",
+      "title": "Chief: verify condition for J0936",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0936: J1032 assembly and all final-media gates must complete, then elected-Chief replacement review; no swap or watch cards before replacement PASS. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0936 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-28T15:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T15:29Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: J1032 assembles all six locked v07 replacements; then Chief replacement review before Ben swap approval",
+      "kind": "chief",
+      "recheck_of": "J0936",
+      "due": "2026-10-28T16:29:25+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1105",
+      "title": "Chief: verify condition for J1004",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1004: HOS PR 366 at 00b1e653 remains OPEN and unapproved. Before paper acceptance/merge, reconcile Option A1 summary with its detailed table (five trimmed inter-word gaps plus onset; unchanged 20ms boundaries mean the >=40ms claim applies only to trimmed gaps), and remove the obsolete 9-14s promoted-title-banner assumption prohibited by J0967. Then obtain non-author Chief paper review and merge. J0862/J0863 credit and production holds are separate and unchanged; they do not block this paper correction.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1004 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-28T15:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T15:29Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Correct PR 366 timing summary and obsolete banner reference, then complete Chief paper review and merge",
+      "kind": "chief",
+      "recheck_of": "J1004",
+      "due": "2026-10-28T16:29:25+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
