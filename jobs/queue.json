@@ -83733,6 +83733,11 @@
           "at": "2026-10-28T04:58Z",
           "by": "relay",
           "what": "condition verification queued: J1065"
+        },
+        {
+          "at": "2026-10-28T05:11Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-10-28T11:11:00Z"
         }
       ],
       "kind": "video",
@@ -83768,11 +83773,10 @@
       "hold": {
         "type": "input",
         "condition": "J1005 predecessor (PR #367 fc890aec) and J0966 5/5 HC delivery (8df16983) verified PASS across all 4 Shorts (-I_GHK-GcFs v04 3ef3fa773750, x_3L_IdYgEc v04 e1f862ba737a, -sa2t7dAtCk v04 8ce07a605697, 4WUs0beKn0A v05 e5ea76f012fb: 36/36 repo/UAT/NAS master+PHONE+sheet SHA256 match, 5 gates + vo_check PASS, -14.0..-14.3 LUFS / -1.6..-1.8 dBTP, -120.0 dBFS opening VO start-mute on Jenner/Dalton v04, multimodal audio+video audition PASS, v01-v03 untouched). Kept blocked so completed 5/5 build is not re-queued; parked for independent non-author Chief replacement PASS and Ben swap approval (first air-eve deadline Thu 12 Nov 2026 20:00Z).",
-        "check_at": "2026-10-28T05:58:44+00:00",
-        "last_recheck": "J1047",
-        "checked_at": "2026-10-27T22:57:49+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1065"
+        "check_at": "2026-10-28T11:11:00Z",
+        "last_recheck": "J1065",
+        "checked_at": "2026-10-28T05:11:44+00:00",
+        "checked_by": "gemini"
       }
     },
     {
