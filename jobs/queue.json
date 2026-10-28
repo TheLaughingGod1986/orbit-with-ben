@@ -99134,10 +99134,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T21:08Z",
+      "eta": "2026-10-28T23:08Z",
       "created_by": "claude",
       "created_at": "2026-10-28T20:56Z",
       "result": "",
@@ -99146,10 +99146,23 @@
           "at": "2026-10-28T20:56Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T21:08Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "arm 002 thumb test, description fixes",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T21:08Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
