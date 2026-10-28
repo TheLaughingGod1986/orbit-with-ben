@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1088 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1090 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · OWB 025 Mars Opening v07: remove final-shot rover hardware, audition opening, rerun gates | 6da30d624 |
 | J1093 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · OWB 025 v07: direct-audio audition and readable UAT verification for J1090 | c370f1058 |
-| J1097 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J1097 | mini | claimed | gemini | 2026-10-28T17:22Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1098 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS Snow Short: mature 48-hour Studio and retention read | 6472484257 |
 | J1099 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
