@@ -205,8 +205,16 @@ def parse_cursor(text: str) -> dict:
 
 def _cursor_settle(page, text: str) -> str:
     """Wait for the client-side redirect from cursor.com/dashboard/spending to grok.com/dashboard/billing to render."""
-    if not re.search(r"\d{1,3}%\s+used", text, re.I):
-        page.wait_for_timeout(5000)
+    for _ in range(2):
+        if re.search(r"\d{1,3}%\s+used", text, re.I):
+            return text
+        if "grok.com" not in page.url:
+            page.goto("https://grok.com/dashboard/billing", wait_until="domcontentloaded", timeout=30000)
+        try:
+            page.get_by_text("Weekly included usage").first.wait_for(timeout=12000)
+        except Exception:  # noqa: BLE001
+            pass
+        page.wait_for_timeout(2000)
         text = page.inner_text("body")
     return text
 
