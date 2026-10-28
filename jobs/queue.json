@@ -96601,9 +96601,14 @@
           "at": "2026-10-28T14:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only audit of HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-28T14:47Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: channel:audit verified 57 unique videos at 2026-10-28T14:46:43Z (26 public + 14 scheduled + 17 unscheduled private duplicates/stubs); 0 errors on deduplicated auditChannel"
         }
       ],
-      "remaining_action": "Audit HOS live and scheduled video listings (chapters, sources, end screens, Related)",
+      "remaining_action": "Verify public watch-page end screens and Shorts Related pills",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -96616,12 +96621,22 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T14:45Z",
+        "at": "2026-10-28T14:47Z",
         "by": "gemini",
-        "note": "Starting read-only audit of HOS live and scheduled videos"
-      }
+        "note": "channel:audit verified 57 unique videos at 2026-10-28T14:46:43Z (26 public + 14 scheduled + 17 unscheduled private dupli"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     }
   ],
   "focus": [],
