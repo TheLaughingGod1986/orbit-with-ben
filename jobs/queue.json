@@ -93896,9 +93896,14 @@
           "at": "2026-10-28T07:31Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J1068 read-only listing check on last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-28T07:32Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1 done: Verified 2026-10-28 snapshot (2026-10-28T06:40:10.382Z) for the last 10 public videos"
         }
       ],
-      "remaining_action": "Inspect latest 2026-10-28 snapshot and verify last 10 live public OWB videos",
+      "remaining_action": "Verify live YouTube watch and Shorts pages for chapters, sources, end screens, and Related pills on the last 10 public videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -93911,11 +93916,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T07:31Z",
+        "at": "2026-10-28T07:32Z",
         "by": "gemini",
-        "note": "Started J1068 read-only listing check on last 10 live OWB videos"
+        "note": "Step 1 done: Verified 2026-10-28 snapshot (2026-10-28T06:40:10.382Z) for the last 10 public videos"
       },
       "taskKeys": [
         "OWB:021",
