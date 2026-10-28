@@ -95809,13 +95809,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-28T12:57Z",
-      "eta": "2026-10-28T14:57Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T11:35Z",
-      "result": "",
+      "result": "Verified saved Studio source: readAt 2026-10-28T07:51:04.461913Z is before required 11:30Z (887 views, 30.7% stayed, 75.3% avg viewed; preliminary only). J1003 remains blocked via wait --recheck J1087, next check 2026-10-29T16:00:00Z per original fallback. Readback verified. No spend, Studio write or publishing change.",
       "history": [
         {
           "at": "2026-10-28T11:35Z",
@@ -95846,6 +95846,11 @@
           "at": "2026-10-28T12:59Z",
           "by": "codex",
           "what": "step 3 of 3 done: Read back queue: J1003 blocked, input hold, check_at 2026-10-29T16:00:00Z, last_recheck J1087. No mature grade or publishing changes."
+        },
+        {
+          "at": "2026-10-28T12:59Z",
+          "by": "codex",
+          "what": "done: Verified saved Studio source: readAt 2026-10-28T07:51:04.461913Z is before required 11:30Z (887 views, 30.7% stayed, 75.3% avg viewed; preliminary only). J1003 remains blocked via wait --recheck J1087, next check 2026-10-29T16:00:00Z per original fallback. Readback verified. No spend, Studio write or publishing change."
         }
       ],
       "remaining_action": "Verification complete; J1003 awaits mature Studio evidence",
