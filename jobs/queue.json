@@ -95476,16 +95476,22 @@
           "at": "2026-10-28T11:21Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T11:22Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Found full original opening at long VO 0.08-5.30s; retains all other v05 lines, estimated 26s; no TTS needed"
         }
       ],
-      "remaining_action": "Check existing VO for a complete opening sentence, then build and verify v06",
+      "remaining_action": "Render v06 from the complete original long opening and run all gates",
       "due": "2026-11-06T20:00:00Z",
       "kind": "video",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T11:21Z",
-        "by": "codex"
+        "at": "2026-10-28T11:22Z",
+        "by": "codex",
+        "note": "Found full original opening at long VO 0.08-5.30s; retains all other v05 lines, estimated 26s; no TTS needed"
       },
       "taskKeys": [
         "OWB:025"
