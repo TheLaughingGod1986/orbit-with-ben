@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, setBoard: b => { board = b; }};
+  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -111,4 +111,9 @@ assert(t.etaText(t.etaOf({id: 'J7', progress: {step: 3, of: 4}}, NOW)).startsWit
 t.setBoard({owb: {jobs: [{id: 'J7', claimedAt: new Date(NOW - 200 * 6e4).toISOString(), estMin: 85}]}});
 assert.equal(t.etaText(t.etaOf({id: 'J7'}, NOW)), 'taking longer than usual');
 assert.equal(t.etaOf({id: 'J8'}, NOW), null, 'no start time, no ETA');
+// MacBook: its own report says why it waits; silence reads as asleep, never as fine.
+assert.equal(t.macbookState(null, NOW)[1], 'No report');
+assert.deepEqual([...t.macbookState({at: new Date(NOW - 5 * 6e4).toISOString(), state: 'waiting', why: ['on battery']}, NOW)], ['amber', 'Waiting', 'on battery']);
+assert.equal(t.macbookState({at: new Date(NOW - 5 * 6e4).toISOString(), state: 'working', job: 'J1122'}, NOW)[2], 'on J1122');
+assert(t.macbookState({at: new Date(NOW - 90 * 6e4).toISOString(), state: 'idle'}, NOW)[2].includes('asleep, lid closed or off'));
 console.log('studio app OK');

@@ -11,6 +11,8 @@
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
   let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all";
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
+  const MACBOOK = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/macbook-heartbeat/heartbeat.json";
+  let macbook = null;  // the MacBook worker's own report (scripts/macbook_worker.py push_heartbeat), every 15 min
   // Ben's board links carry his tick key (/#k=...); that page lives at /board now, so hand them over untouched.
   if (/(?:^#|&)k=/.test(location.hash)) { location.replace("/board" + location.hash); return; }
 
@@ -308,6 +310,18 @@
 
   // Green only for real work (a claimed job, or the Chief coordinating on a fresh relay check); amber for online but
   // idle, or a stale check-in; red for out of usage or failing (Ben, 28 Oct: a green light must mean something).
+  // The MacBook says why it is or isn't working; silence for 40 min means asleep, lid closed, off or not set up.
+  function macbookState(mb, now) {
+    if (!mb || !mb.at) return ["amber", "No report", "no status from the MacBook yet: asleep, lid closed, off, or its worker not running"];
+    const age = Math.round((now - Date.parse(mb.at)) / 6e4);
+    if (age > 40) return ["amber", "Silent", `no report for ${age < 120 ? age + " min" : Math.round(age / 60) + " h"}: asleep, lid closed or off`];
+    const why = (mb.why || []).join("; ");
+    if (mb.state === "working") return ["green", "Working", `on ${mb.job}`];
+    if (mb.state === "error") return ["red", "Error", why];
+    if (mb.state === "idle") return ["amber", "Idle", why || "no MacBook job waiting"];
+    return ["amber", "Waiting", why];
+  }
+
   function agentLight(id, working, status, chiefNow) {
     if (status === "red") return ["red", "Out"];
     if (working) return ["green", "Working"];
@@ -321,9 +335,10 @@
     const team = Object.entries(AGENTS).map(([id, name]) => {
       const mine = jobs.filter(j => j.by === id && j.status === "claimed");
       const chain = (m.chiefChain || []).find(r => r.agent === id) || {};
-      const why = mine.length ? "Working on " + mine.map(j => `${j.id}: ${j.title}`).join(" · ")
+      let why = mine.length ? "Working on " + mine.map(j => `${j.id}: ${j.title}`).join(" · ")
         : (status[id] || {}).why || chain.why || (id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now");
-      const [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
+      let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
+      if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
       return `<div class="row agent"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
         <span class="meta">${esc(clip(why, 110))}</span></div></div>`;
     }).join("");
@@ -435,6 +450,7 @@
       if (!r.ok) return;
       board = await r.json();
       if (sha) lastSha = sha;
+      try { const mb = await fetch(MACBOOK + "?t=" + Date.now(), { cache: "no-store" }); macbook = mb.ok ? await mb.json() : null; } catch (e) {}
       if (!uatKey() || !document.getElementById("uat-notes")) render();  // never wipe notes or the player mid-review
     } catch (e) {
       document.getElementById("view").innerHTML = '<p class="empty">Could not load the studio data.</p>';

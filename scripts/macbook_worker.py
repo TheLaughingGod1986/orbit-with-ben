@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import fcntl
+import json
 import os
 import pathlib
 import re
@@ -185,6 +186,44 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
     return r.returncode == 0
 
 
+def heartbeat_doc(state: str, why: list, job: str = "", now: dt.datetime | None = None) -> dict:
+    now = now or dt.datetime.now(dt.timezone.utc)
+    return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "state": state, "why": why, "job": job}
+
+
+def push_heartbeat(state: str, why: list, job: str = "") -> None:
+    """One parentless commit holding heartbeat.json, force-pushed to refs/heads/macbook-heartbeat, every run (as the
+    Mini's relay does on mini-heartbeat). Ben, 28 Oct 2026, after five hours with no MacBook job and no way to see
+    why: the hub's Agents tab reads it ("waiting: on battery", "working on J1122"). Never raises."""
+    body = json.dumps(heartbeat_doc(state, why, job)) + "\n"
+    git = ["git", "-C", str(OWB)]
+    try:
+        blob = subprocess.run(git + ["hash-object", "-w", "--stdin"], input=body, capture_output=True, text=True,
+                              timeout=30, check=True).stdout.strip()
+        tree = subprocess.run(git + ["mktree"], input=f"100644 blob {blob}\theartbeat.json\n", capture_output=True,
+                              text=True, timeout=30, check=True).stdout.strip()
+        commit = subprocess.run(git + ["commit-tree", tree, "-m", f"macbook heartbeat {state}"], capture_output=True,
+                                text=True, timeout=30, check=True).stdout.strip()
+        subprocess.run(git + ["push", "-q", "-f", "origin", f"{commit}:refs/heads/macbook-heartbeat"],
+                       capture_output=True, timeout=60)
+    except (OSError, subprocess.SubprocessError) as e:
+        log(f"heartbeat not pushed: {e}")
+
+
+def pull_main() -> str:
+    """Pull both checkouts; '' when fine, else why not. Runs before the guards so fixes reach a MacBook that keeps
+    waiting (it used to pull only after the guards passed, so one stuck guard kept it on old code)."""
+    for repo in (OWB, HOS):
+        if (repo / ".git").exists():
+            branch = sh(["git", "-C", str(repo), "branch", "--show-current"]).stdout.strip()
+            if branch != "main":
+                return f"{repo} is on '{branch or 'detached'}', not main (re-run setup_macbook.sh)"
+            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
+            if r.returncode:
+                return f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}"
+    return ""
+
+
 def run() -> int:
     STATE.mkdir(parents=True, exist_ok=True)
     lock = open(STATE / "macbook-worker.lock", "w")
@@ -193,28 +232,27 @@ def run() -> int:
     except OSError:
         log("another run is still going")
         return 0
+    problem = pull_main()
+    if problem:
+        log(problem)
+        push_heartbeat("error", [problem])
+        return 1
     why = guards()
     if why:
         log("not now: " + "; ".join(why))
+        push_heartbeat("waiting", why)
         return 0
-    for repo in (OWB, HOS):
-        if (repo / ".git").exists():
-            branch = sh(["git", "-C", str(repo), "branch", "--show-current"]).stdout.strip()
-            if branch != "main":
-                log(f"{repo} is on '{branch or 'detached'}', not main: not working from it (re-run setup_macbook.sh)")
-                return 1
-            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
-            if r.returncode:
-                log(f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}")
-                return 1
     r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook", "--git"], cwd=OWB)
     if r.returncode == 10:
         log("no macbook job waiting")
+        push_heartbeat("idle", ["no MacBook job waiting"])
         return 0
     job = claimed_job(r.stdout)
     if r.returncode or not job:
         log(f"claim failed: {(r.stderr or r.stdout).strip()[-300:]}")
+        push_heartbeat("error", [f"claim failed: {(r.stderr or r.stdout).strip()[-120:]}"])
         return 1
+    push_heartbeat("working", [], job)
     agent = os.environ.get("MACBOOK_AGENT", "codex")
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
     prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),

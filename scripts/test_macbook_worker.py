@@ -93,6 +93,17 @@ class Guards(unittest.TestCase):
         self.assertTrue(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=4)))
         self.assertEqual(len(calls), 2)
 
+    def test_heartbeat_says_why_it_is_waiting(self):
+        doc = mw.heartbeat_doc("waiting", ["on battery", "in use (2 min idle, needs 10)"], now=WED_NIGHT)
+        self.assertEqual((doc["host"], doc["state"], doc["at"]), ("macbook", "waiting", "2026-10-28T22:00:00Z"))
+        self.assertIn("on battery", doc["why"])
+
+    def test_it_pulls_before_the_guards(self):
+        # A stuck guard must not keep the MacBook on old code: pull_main runs first in run().
+        src = pathlib.Path(mw.__file__).read_text()
+        body = src[src.index("def run() -> int:"):]
+        self.assertLess(body.index("pull_main()"), body.index("guards()"))
+
 
 class Lane(unittest.TestCase):
     def job(self, needs):
