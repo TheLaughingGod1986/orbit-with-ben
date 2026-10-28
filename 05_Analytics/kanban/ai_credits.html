@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>Studio · AI & credits</title>
+<style>
+:root {
+  --bg: #0f1419;
+  --panel: #1a222c;
+  --ink: #f2f5f8;
+  --muted: #9aa7b5;
+  --line: #2c3846;
+  --green: #3ecf8e;
+  --amber: #f5b84d;
+  --red: #ff6b6b;
+  --radius: 14px;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+a { color: #6eb5ff; }
+header { margin-bottom: 14px; }
+header h1 { font-size: 1.35rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+header .sub { color: var(--muted); font-size: 0.85rem; }
+.tabs { display: flex; gap: 8px; margin: 10px 0 2px; }
+.tabs a { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 8px 14px; font-size: 0.9rem; text-decoration: none; }
+.tabs a.on { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 600; }
+#ai { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); align-items: start; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; min-width: 0; }
+.card h2 { margin: 0 0 10px; font-size: 1rem; }
+.card h3 { margin: 12px 0 6px; font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+.big { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.tag { font-size: 0.75rem; font-weight: 600; border: 1px solid var(--amber); color: var(--amber); border-radius: 999px; padding: 2px 8px; }
+.muted { color: var(--muted); font-size: 0.85rem; }
+.small { font-size: 0.78rem; margin-top: 3px; overflow-wrap: anywhere; }
+.warn { color: var(--amber); font-size: 0.85rem; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex: 0 0 12px; background: var(--muted); }
+.dot.green { background: var(--green); box-shadow: 0 0 6px rgba(62,207,142,.6); }
+.dot.amber { background: var(--amber); }
+.dot.red { background: var(--red); }
+.greent { color: var(--green); } .ambert { color: var(--amber); } .redt { color: var(--red); }
+ul.rows, ol.chain, ul.hbars { list-style: none; margin: 0; padding: 0; }
+.rows li, .chain li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid var(--line); }
+.rows li:first-child, .chain li:first-child { border-top: 0; }
+.rows li .dot, .chain li .dot { margin-top: 4px; }
+.rows li > .why, .chain li > .why { color: var(--muted); font-size: 0.85rem; margin-left: auto; text-align: right; }
+.rows li.pool > div { flex: 1; min-width: 0; }
+.chain li.on b { color: var(--green); }
+.figure { font-size: 1.05rem; font-weight: 600; margin-top: 2px; }
+.bar { height: 8px; background: #0b1016; border-radius: 99px; overflow: hidden; margin-top: 6px; flex: 1; }
+.bar i { display: block; height: 100%; background: var(--green); border-radius: 99px; }
+.bar i.amber { background: var(--amber); } .bar i.red { background: var(--red); }
+.hbars li { display: grid; grid-template-columns: 70px 1fr 44px; gap: 8px; align-items: center; padding: 4px 0; font-size: 0.85rem; }
+.hbars li .bar { margin: 0; }
+.hbars li span { color: var(--muted); text-align: right; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+td { padding: 6px 4px; border-top: 1px solid var(--line); vertical-align: top; }
+tr:first-child td { border-top: 0; }
+td.r { text-align: right; white-space: nowrap; }
+tfoot td { border-top: 1px solid var(--muted); }
+footer { margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI & credits</h1>
+  <div class="sub" id="asof">Loading…</div>
+  <nav class="tabs"><a href="/">Videos</a><a class="on" href="/ai">AI & credits</a></nav>
+</header>
+<main id="ai"></main>
+<footer>
+  From the Mac mini's relay (who is up, who is Chief) and the credit ledger (05_Analytics/ai_spend). Plans and prices:
+  05_Analytics/ai_spend/plans.json. <a href="/tracker">Channel Tracker</a> · <a href="/classic">Classic board</a>
+</footer>
+<script>
+/* AI_APP_BOOT */
+</script>
+</body>
+</html>

@@ -7,6 +7,7 @@ Outputs:
   dist/index.html     — five-lane per-video tracker (Ben's phone-first board)
   dist/classic.html   — the previous swim-lane / job board (kept at /classic)
   dist/tracker.html   — Channel Tracker web app (/tracker)
+  dist/ai.html        — AI & credits: who is up, who is Chief, credit left per plan, where it went (/ai)
   dist/version.json, updater.js, static/, tracker.webmanifest
 
 Data still comes from board.json on the `board-data` branch (scripts/board_publish.py). Page changes need a
@@ -25,6 +26,7 @@ import sys
 HERE = pathlib.Path(__file__).resolve().parent
 PAGE = HERE.parent / "studio_kanban.html"
 SIMPLE = HERE.parent / "video_tracker.html"
+AI_PAGE = HERE.parent / "ai_credits.html"
 TRACKER = HERE.parent.parent / "dashboard" / "template.html"
 TRACKER_DATA = HERE.parent.parent / "dashboard" / "data.json"
 ROOT = HERE.parents[2]
@@ -85,8 +87,8 @@ TRACKER_PATCHES = [
 
 
 def app_version() -> str:
-    files = [SIMPLE, PAGE, TRACKER, HERE / "build.py", HERE / "shim.js", HERE / "live.js",
-             HERE / "tracker_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js"]
+    files = [SIMPLE, PAGE, TRACKER, AI_PAGE, HERE / "build.py", HERE / "shim.js", HERE / "live.js",
+             HERE / "tracker_app.js", HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js"]
     return hashlib.sha256(b"\0".join(f.read_bytes() for f in files if f.exists())).hexdigest()[:16]
 
 
@@ -149,6 +151,16 @@ def build_simple(out: pathlib.Path) -> None:
     print(f"built {out / 'index.html'} ({len(html):,} bytes)")
 
 
+def build_ai(out: pathlib.Path) -> None:
+    html = AI_PAGE.read_text()
+    marker = "<script>\n/* AI_APP_BOOT */\n</script>"
+    if html.count(marker) != 1:
+        sys.exit("build: expected one AI_APP_BOOT script block in ai_credits.html")
+    html = html.replace(marker, "<script>\n" + (HERE / "ai_app.js").read_text() + "\n</script>")
+    (out / "ai.html").write_text(versioned_page(html))
+    print(f"built {out / 'ai.html'} ({len(html):,} bytes)")
+
+
 def build_classic(out: pathlib.Path) -> None:
     html = PAGE.read_text()
     for old, new in PATCHES:
@@ -203,6 +215,7 @@ def build(out: pathlib.Path) -> None:
     build_simple(out)
     build_classic(out)
     build_tracker(out)
+    build_ai(out)
     (out / "version.json").write_text(json.dumps({"version": app_version()}))
     shutil.copy(HERE / "updater.js", out / "updater.js")
     print(f"built {out}")
