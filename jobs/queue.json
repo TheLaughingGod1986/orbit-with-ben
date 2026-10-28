@@ -90732,6 +90732,11 @@
           "at": "2026-10-28T02:14Z",
           "by": "relay",
           "what": "condition verification queued: J1053"
+        },
+        {
+          "at": "2026-10-28T02:28Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-10-28T08:28:00Z"
         }
       ],
       "remaining_action": "Complete independent Chief replacement review and Ben swap approval for the six v04 Shorts",
@@ -90761,11 +90766,10 @@
       "hold": {
         "type": "input",
         "condition": "J1029 predecessor (PR304 dc4b9da01) and J1032 3/3 v04 assembly/delivery (PR305 61d031f35) verified PASS across all 6 Shorts (S1 228cb06dfd37, S2 d35efd737ed0, S3 65e58aea2a20, S4 0eb18596d2d6, S5 37fbe8b9ed33, S6 91b297a262c1: 6-way repo/UAT/NAS SHA256 match, 21/21 UAT+NAS manifests, 7 gates PASS, decoded AAC -14.2..-14.4 LUFS / -1.8..-2.0 dBTP, loop 0.41..0.84, multimodal audio/visual inspection PASS, v01-v03 untouched). Kept blocked so completed 3/3 assembly is not re-queued; parked for independent Chief replacement PASS and Ben swap approval on J0936 (batch deadline 2026-11-01T20:00:00Z).",
-        "check_at": "2026-10-28T03:14:17+00:00",
-        "last_recheck": "J1043",
-        "checked_at": "2026-10-27T19:55:14+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1053"
+        "check_at": "2026-10-28T08:28:00Z",
+        "last_recheck": "J1053",
+        "checked_at": "2026-10-28T02:28:03+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-10-27T14:34Z"
     },
