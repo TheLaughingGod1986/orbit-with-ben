@@ -96856,9 +96856,14 @@
           "at": "2026-10-28T15:32Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Resumed J1098 at step 1 of 4 after 25m run limit; loading captured Studio/YTA evidence from /tmp"
+        },
+        {
+          "at": "2026-10-28T15:40Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 of 4 done: Saved timestamped Studio/YTA/100-bucket retention evidence in evidence_2026-10-28_snow_48h_j1098.json and mapped bucket drops (b07->b08 -8.93pp at 1.55-1.77s, b28->b29 -7.14pp at 6.20-6.42s, b21->b32 -37.50pp across 4.65-7.08s) to cut list and VO words"
         }
       ],
-      "remaining_action": "Derive largest retention drop from actual buckets, map to cut list and VO words, grade 60% stayed and 70% viewed, and compare to standalone cohort",
+      "remaining_action": "Append lab row and dated 28 Oct addendum to HOS_2026-10-26.md and HOS_2026-10-26_EVIDENCE.md, preserving historical 26 Oct figures",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -96870,11 +96875,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T15:32Z",
+        "at": "2026-10-28T15:40Z",
         "by": "gemini",
-        "note": "Resumed J1098 at step 1 of 4 after 25m run limit; loading captured Studio/YTA evidence from /tmp"
+        "note": "Step 2 of 4 done: Saved timestamped Studio/YTA/100-bucket retention evidence in evidence_2026-10-28_snow_48h_j1098.json "
       }
     },
     {
