@@ -92679,9 +92679,14 @@
           "at": "2026-10-28T04:21Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started listing audit"
+        },
+        {
+          "at": "2026-10-28T04:22Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified 10 live public videos (1OCNzhkiBuc..y-SPHQ0-VjQ): chapters, sources, end screens and Related all pass; BbsyFrV8kCY still private until 11:30Z"
         }
       ],
-      "remaining_action": "Read-only listing audit on last 10 live OWB videos (chapters, sources, end screens, Related)",
+      "remaining_action": "Write 05_Analytics/live_fixes/2026-10-28.md and complete Acting-Chief review",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -92694,12 +92699,18 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T04:21Z",
+        "at": "2026-10-28T04:22Z",
         "by": "gemini",
-        "note": "Started listing audit"
-      }
+        "note": "Verified 10 live public videos (1OCNzhkiBuc..y-SPHQ0-VjQ): chapters, sources, end screens and Related all pass; BbsyFrV8"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027"
+      ]
     },
     {
       "id": "J1056",
