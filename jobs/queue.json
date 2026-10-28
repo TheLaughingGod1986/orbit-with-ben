@@ -88738,13 +88738,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T00:17Z",
-      "eta": "2026-10-28T01:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-27T00:51Z",
-      "result": "",
+      "result": "Acting-Chief Gemini PASS on 2026-10-28 HOS live and scheduled listing check (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md, HOS 6bf01aeb): 25/25 public videos (4 longs + 21 Shorts, including newly public -3L6HzJ_d_4) pass chapters, Sources, end screens and Related checks (0 errors on deduplicated auditChannel). All 3 J0981 follow-ups verified: J0997 updated -I_GHK-GcFs & 4WUs0beKn0A line 2 to watch?v=ETynHpIYLeY (live on Data API); J0999 added uAomPaOBrM8 to PLEbpfUzWzcXU and confirmed Studio End Screen + Altered content = Yes (PR #358); J0998 draft PR #365 (a87cd56a) awaits Ben OK. Remaining post-launch steps (J0280, J0241, J0958, J0875, J0960) stay on their date-gated holds. 0 new fixes needed, no Studio writes or spend.",
       "history": [
         {
           "at": "2026-10-27T00:51Z",
@@ -88785,6 +88785,11 @@
           "at": "2026-10-28T00:27Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Acting-Chief PASS (0 new fixes needed; 25/25 public videos pass chapters, Sources, end screens and Related; J0997, J0998, J0999 verified)"
+        },
+        {
+          "at": "2026-10-28T00:27Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief Gemini PASS on 2026-10-28 HOS live and scheduled listing check (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md, HOS 6bf01aeb): 25/25 public videos (4 longs + 21 Shorts, including newly public -3L6HzJ_d_4) pass chapters, Sources, end screens and Related checks (0 errors on deduplicated auditChannel). All 3 J0981 follow-ups verified: J0997 updated -I_GHK-GcFs & 4WUs0beKn0A line 2 to watch?v=ETynHpIYLeY (live on Data API); J0999 added uAomPaOBrM8 to PLEbpfUzWzcXU and confirmed Studio End Screen + Altered content = Yes (PR #358); J0998 draft PR #365 (a87cd56a) awaits Ben OK. Remaining post-launch steps (J0280, J0241, J0958, J0875, J0960) stay on their date-gated holds. 0 new fixes needed, no Studio writes or spend."
         }
       ],
       "kind": "listing",
@@ -88815,7 +88820,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "done_ref": "6bf01aeb"
     },
     {
       "id": "J1015",
