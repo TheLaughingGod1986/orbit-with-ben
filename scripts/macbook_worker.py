@@ -158,6 +158,10 @@ def run() -> int:
         return 0
     for repo in (OWB, HOS):
         if (repo / ".git").exists():
+            branch = sh(["git", "-C", str(repo), "branch", "--show-current"]).stdout.strip()
+            if branch != "main":
+                log(f"{repo} is on '{branch or 'detached'}', not main: not working from it (re-run setup_macbook.sh)")
+                return 1
             r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
             if r.returncode:
                 log(f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}")
