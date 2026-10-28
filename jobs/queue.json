@@ -99108,10 +99108,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T21:41Z",
+      "eta": "2026-10-28T23:41Z",
       "created_by": "claude",
       "created_at": "2026-10-28T20:54Z",
       "result": "",
@@ -99185,6 +99185,11 @@
           "at": "2026-10-28T21:26Z",
           "by": "codex",
           "what": "released: Detached tmux J1128-resume; log ~/_desk/logs/J1128-resume.log; done ~/_desk/logs/J1128-resume.done; results ~/_desk/logs/J1128/resumed.json. Also check original J1128-recover completion. Never duplicate active copies. PR 329 commit 5ca713b9f; tests pass. Still needs 30 GB and complete diagnosis before J1100 reopen."
+        },
+        {
+          "at": "2026-10-28T21:41Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read detached recovery results, reach 30 GB free, finish diagnosis, then reopen J1100",
