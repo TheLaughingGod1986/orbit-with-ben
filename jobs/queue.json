@@ -1,5 +1,5 @@
 {
-  "next_id": 1110,
+  "next_id": 1111,
   "jobs": [
     {
       "id": "J0001",
@@ -97359,6 +97359,34 @@
       "recheck_of": "J1098",
       "due": "2026-10-28T16:47:44+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1110",
+      "title": "Mini disk: move superseded film exports to the NAS (verified sha256) until 30 GB free, so J1100 can render",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# Mini disk: move superseded film exports to the NAS (back over 20 GB free)\n\nJ1100 (Ben's S2/S5/S6 fixes) parked at 28 Oct ~15:40: the Mini is under 20 GB free and `scripts/nas_offload.py` found\nnothing eligible (it only moves /private/tmp render scratch untouched for 48 h). The space is elsewhere.\n\n1. `python3 scripts/mini_repair.py` (dry run) for the biggest folders, then `du -sh` inside the biggest film folders\n   (`~/YouTube/orbit-with-ben/02_Video-Projects/*/06_Final-Exports`, `07_Edit-Project`, `10_Shorts/*/06_Final-Exports`,\n   and the HOS checkout) to list the largest files.\n2. Move only **superseded** media: a version older than the newest TWO of that cut (e.g. v01/v02 when v04 exists), and\n   render scratch for films already live. Never the newest two versions, never anything a scheduled/pending upload,\n   swap job (J1101-J1103, J0961, J1059), Test & Compare or open job names, never git-tracked files.\n3. NAS archive rule (AGENTS.md \"NAS archive\"): rsync to `/Volumes/data/mac-mini-archive/<repo>/<same relative path>`,\n   SHA-256 manifest on both sides, delete the Mini copy only on a full match, leave `MOVED_TO_NAS.txt`. Never delete\n   anything on the NAS. If the share isn't mounted, stop and park.\n4. Stop at 30 GB free. Post what moved (paths, GB, manifest location) on #264, then release J1100's disk prerequisite\n   (comment on J1100) so it can resume.\nGBP0. No uploads, no deletions anywhere except the verified Mini copies in step 3.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T15:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T15:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Move old superseded video versions to the NAS until the Mini has 30 GB free",
+      "kind": "assembly"
     }
   ],
   "focus": [],
