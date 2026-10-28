@@ -15,7 +15,7 @@ Then it pulls both checkouts, claims the oldest `macbook` job with
 and wakes the agent CLI (MACBOOK_AGENT, default codex) on it under `caffeinate -i`, which keeps the Mac awake for
 that one run only (nothing global changes; sleep settings are untouched). The run is killed at MACBOOK_CAP_S seconds
 (default 1500); a job still claimed afterwards is released with a note so the next run (or another worker) picks
-it up. After a Codex run it records that account's usage limits (pool codex-macbook, at most every 3 h) for the board.
+it up. After a Codex run it records the Codex usage limits (pool codex: the same account as the Mini) for the board.
 
 The `macbook` lane is separate: the Mini's workers never take these jobs and this worker never takes Mini jobs
 (Studio sign-ins, the NAS rules and the HOS desk all live on the Mini). The Chief routes a job here with
@@ -167,7 +167,7 @@ def still_mine(job: str) -> bool:
 
 
 def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
-    """After a run, record this account's Codex usage limits for the board's AI & credits page (pool codex-macbook),
+    """After a run, record the Codex usage limits for the board's AI & credits page (pool codex, shared with the Mini),
     at most every few hours so the ledger isn't one line per job. A failed read records nothing."""
     now = now or dt.datetime.now(dt.timezone.utc)
     stamp = STATE / "macbook-usage.last"
@@ -176,7 +176,8 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
             return False
     except (OSError, ValueError):
         pass
-    r = sh([sys.executable, "scripts/ai_spend_daily.py", "--pools", "codex", "--codex-pool", "codex-macbook",
+    # Same ChatGPT account as the Mini (benoats@gmail.com, one shared weekly limit): one pool, read from either machine.
+    r = sh([sys.executable, "scripts/ai_spend_daily.py", "--pools", "codex", "--codex-pool", "codex",
             "--by", AGENT_ID, "--git"], cwd=OWB, timeout=180)
     log(f"usage reading: {(r.stdout or r.stderr).strip()[-200:]}")
     if r.returncode == 0:

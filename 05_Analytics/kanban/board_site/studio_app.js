@@ -8,7 +8,7 @@
   const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
   const QUIET_MIN = 75;  // the relay checks in every 10-20 min; this long without it, the Mac mini is quiet
   const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook" };
-  const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex · mini", "codex-macbook": "Codex · MacBook" };
+  const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
   let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all";
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
   // Ben's board links carry his tick key (/#k=...); that page lives at /board now, so hand them over untouched.
