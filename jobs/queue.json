@@ -92595,13 +92595,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T02:53Z",
-      "eta": "2026-10-28T04:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T02:52Z",
-      "result": "",
+      "result": "Verified J0967 predecessor (e1bbcfb9, hos_build_rule_v02.py --check --test-negatives PASS) and J1004 5/5 paper disposition in HOS PR #366 (00b1e653, 3/3 CI checks PASS): all 8 hook/duration candidates verified from raw word alignments at atempo <=1.06 with 0 word changes; e1bbcfb9 word-deletion splices rejected; 006 s04/s05/s06 and 007 Short_B shelved; 010 Short_A Option A1 (-0.260s pause trim + 1.06x S1 -> 2.849s <= 2.85s, 23.289s total, 0 words changed) or Option A2 (J0862) documented; all 54 008-010 Shorts rows mapped (12 code_graphics verified on disk across 36 rendered files; 42 flow_veo rows / 32 unique plates gated on J0863 and 3 downstream planning gaps). Non-author Chiefs (chief, claude, codex) remain down and J0862 (2026-10-30T00:05:00Z) / J0863 (2026-11-12T00:05:00Z) credit holds remain in force. Kept J1004 blocked (wait --recheck J1056, check-at 2026-10-28T08:58:00Z) so completed 5/5 review is not re-queued as an open worker job. GBP0.",
       "history": [
         {
           "at": "2026-10-28T02:52Z",
@@ -92637,6 +92637,11 @@
           "at": "2026-10-28T02:58Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded J1056 condition verification on J1004 (check-at 2026-10-28T08:58:00Z) and completing J1056"
+        },
+        {
+          "at": "2026-10-28T02:58Z",
+          "by": "gemini",
+          "what": "done: Verified J0967 predecessor (e1bbcfb9, hos_build_rule_v02.py --check --test-negatives PASS) and J1004 5/5 paper disposition in HOS PR #366 (00b1e653, 3/3 CI checks PASS): all 8 hook/duration candidates verified from raw word alignments at atempo <=1.06 with 0 word changes; e1bbcfb9 word-deletion splices rejected; 006 s04/s05/s06 and 007 Short_B shelved; 010 Short_A Option A1 (-0.260s pause trim + 1.06x S1 -> 2.849s <= 2.85s, 23.289s total, 0 words changed) or Option A2 (J0862) documented; all 54 008-010 Shorts rows mapped (12 code_graphics verified on disk across 36 rendered files; 42 flow_veo rows / 32 unique plates gated on J0863 and 3 downstream planning gaps). Non-author Chiefs (chief, claude, codex) remain down and J0862 (2026-10-30T00:05:00Z) / J0863 (2026-11-12T00:05:00Z) credit holds remain in force. Kept J1004 blocked (wait --recheck J1056, check-at 2026-10-28T08:58:00Z) so completed 5/5 review is not re-queued as an open worker job. GBP0."
         }
       ],
       "remaining_action": "Post J1056 completion report on studio thread",
@@ -92666,7 +92671,8 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "done_ref": "00b1e653"
     }
   ],
   "focus": [],
