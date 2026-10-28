@@ -95993,6 +95993,11 @@
           "at": "2026-10-28T13:07Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T13:08Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Correct final-shot crop, audition opening and deliver gated v07 for Chief review",
@@ -96001,7 +96006,16 @@
       "review_followup_of": "J1084",
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],
