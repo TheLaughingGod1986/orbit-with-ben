@@ -65,6 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1128 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · URGENT Mini disk: 20 GB lost in 3.5 h after J1112 (30.4 -> 10.5 GB); find the cause, free to 30 GB, stop it recurring, reopen J1100 |  |
 | J1129 | mini | claimed | codex | 2026-10-28T23:08Z | studio · HOS 002 Periodic Table: arm thumb test (live A vs existing MISSING ELEMENT v02), description + chapter fixes, ledger (J1126 decision) |  |
 | J1130 | mini | open (after J1129) | – | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
+| J1131 | mini | open | – | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
 
 Recently finished:
 
