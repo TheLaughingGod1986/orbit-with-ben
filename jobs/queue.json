@@ -94761,10 +94761,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T09:25Z",
+      "eta": "2026-10-28T11:25Z",
       "created_by": "relay",
       "created_at": "2026-10-28T09:19Z",
       "result": "",
@@ -94773,13 +94773,26 @@
           "at": "2026-10-28T09:19Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T09:25Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await J0998 (Ben OK on draft HOS PR #365) so npm run channel:audit exits 0 on HOS main",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-28T10:19:01+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T09:25Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
