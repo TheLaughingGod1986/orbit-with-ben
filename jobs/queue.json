@@ -96952,6 +96952,11 @@
           "at": "2026-10-28T15:47Z",
           "by": "relay",
           "what": "condition verification queued: J1109"
+        },
+        {
+          "at": "2026-10-28T18:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "None (parked for Chief review of HOS PR #368)",
@@ -96977,7 +96982,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-10-28T16:47:44+00:00",
         "recheck_task": "J1109"
-      }
+      },
+      "escalated_at": "2026-10-28T18:46Z"
     },
     {
       "id": "J1099",
@@ -97074,6 +97080,11 @@
           "at": "2026-10-28T15:50Z",
           "by": "codex",
           "what": "blocked: parked for Chief: required NAS offload found no eligible scratch; disk remains below 20 GB render prerequisite. Preflight complete (1/3); v05 assembly and gates not started. Local evidence branch codex/J1100-preflight; report publication rejected by automatic approval review."
+        },
+        {
+          "at": "2026-10-28T18:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Restore disk headroom, then assemble and verify three v05 fixes",
@@ -97097,7 +97108,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "escalated_at": "2026-10-28T18:46Z"
     },
     {
       "id": "J1101",
@@ -97177,6 +97189,11 @@
           "at": "2026-10-28T15:57Z",
           "by": "codex",
           "what": "blocked: parked for Chief: swap complete and verified; review and merge PR313 (61248b47d). New aAUgIGEuPwQ Private 20 Nov 11:30Z; old A6TW_6CXhcs Private unscheduled. Update J0861 post-public Related target to new id. Registry records also applied locally pending merge."
+        },
+        {
+          "at": "2026-10-28T18:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief to review and merge the verified swap record in PR313",
@@ -97203,7 +97220,8 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "escalated_at": "2026-10-28T18:46Z"
     },
     {
       "id": "J1102",
@@ -97793,6 +97811,11 @@
           "at": "2026-10-28T16:19Z",
           "by": "codex",
           "what": "blocked: parked for Chief: verified archive complete (26 files, 0.990 GB); only 16.78 GB free, below J1100 20 GB minimum and J1110 30 GB target. Need broader safe cleanup scope. J1100 remains blocked. Evidence jobs/reviews/J1110/REPORT.md; logs ~/_desk/logs/J1110/."
+        },
+        {
+          "at": "2026-10-28T18:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief to resolve remaining disk shortfall before J1100 resumes",
@@ -97811,7 +97834,8 @@
         "OWB:027",
         "OWB:028",
         "OWB:030"
-      ]
+      ],
+      "escalated_at": "2026-10-28T18:46Z"
     },
     {
       "id": "J1111",
@@ -97881,6 +97905,11 @@
           "at": "2026-10-28T16:41Z",
           "by": "codex",
           "what": "blocked: parked for Chief: HOS Studio profile has no accessible CDP endpoint; Orbit session denies HOS permission. Restore HOS session, finish its scheduled-cover inventory/fixes/read-back, then review Orbit evidence PR #317 (12 fixed, 22 checked)."
+        },
+        {
+          "at": "2026-10-28T18:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief: restore HOS Studio access, finish HOS scheduled covers and review Orbit read-back",
@@ -97901,7 +97930,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "escalated_at": "2026-10-28T18:46Z"
     },
     {
       "id": "J1112",
