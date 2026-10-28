@@ -57,5 +57,5 @@ for item,line in zip(order,lines):
  title=e['title'];shape='What happens if' if title.lower().startswith(('what if','what happens if')) else 'question' if title.endswith('?') else 'number' if re.search(r'\d',title) else 'statement'
  rows.append({'id':e['id'],'channel_format':item['group'],'title':title,'published':e['published'],'views':e['views'],'views_per_day':round(e['views_per_day'],2),'title_shape':shape,'title_chars':len(title),'title_hook':hook,'thumbnail_words':text,'text_size_relative_to_thumb':size,'text_colour':colour,'subject_type':subject,'composition':comp,'curiosity_gap':gap,'luma_std_whole_rendition':round(float(luma.std()),1),'near_black_pct_luma_lt20_whole_rendition':round(float((luma<20).mean()*100),1),'mean_saturation_whole_rendition':round(float(sat.mean()),1),'source':e['url']})
 with (O/'visual_coding.csv').open('w') as f:
- w=csv.DictWriter(f,fieldnames=rows[0]);w.writeheader();w.writerows(rows)
+ w=csv.DictWriter(f,fieldnames=rows[0],lineterminator='\n');w.writeheader();w.writerows(rows)
 print('Coded',len(rows))
