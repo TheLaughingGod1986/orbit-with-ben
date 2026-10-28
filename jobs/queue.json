@@ -79567,10 +79567,10 @@
       "stage": "",
       "after": "",
       "eta_min": 600,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-27T23:44Z",
-      "eta": "2026-10-28T09:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
       "result": "",
@@ -79899,6 +79899,11 @@
           "at": "2026-10-27T23:58Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Step 2/6 done: wed11 TtgHNLXfDSs v05 PASS (23.05s, wind 6.22s/clean 8.30s before 9s banner, 2018 17.02s >=70%, neutral Mars terrain, 8x6 2fps sheet, Whisper+OCR, UAT+NAS)"
+        },
+        {
+          "at": "2026-10-28T00:05Z",
+          "by": "gemini",
+          "what": "released: Step 1/6 (025 mon09 iyvWYFP_ETA v04, 629a1d1d8) and Step 2/6 (025 wed11 TtgHNLXfDSs v05, fc355cca5) completed, verified, committed, and copied to UAT+NAS. Step 3/6 (025 thu12 N42gKBbD7tE v04) assembler ready and running detached in tmux session J0935-render (log: ~/_desk/logs/J0935-render.log, done: ~/_desk/logs/J0935-render.done). Next run: check ~/_desk/logs/J0935-render.done, inspect thu12 v04 sheets and commit Step 3/6, then execute Steps 4-6/6 (fri13 bSjWiCbB7pY v05, mon16 HZGTovJu_TQ v04/checks, wed18 cwU_0WWeNZ4 v04/checks)."
         }
       ],
       "kind": "assembly",
