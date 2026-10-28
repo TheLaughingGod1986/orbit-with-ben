@@ -93336,7 +93336,7 @@
     {
       "id": "J1065",
       "title": "Chief: verify condition for J0966",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J0966: J1005 predecessor (PR #367 fc890aec) and J0966 5/5 HC delivery (8df16983) verified PASS across all 4 Shorts (-I_GHK-GcFs v04 3ef3fa773750, x_3L_IdYgEc v04 e1f862ba737a, -sa2t7dAtCk v04 8ce07a605697, 4WUs0beKn0A v05 e5ea76f012fb: 36/36 repo/UAT/NAS master+PHONE+sheet SHA256 match, 5 gates + vo_check PASS, -14.0..-14.3 LUFS / -1.6..-1.8 dBTP, -120.0 dBFS opening VO start-mute on Jenner/Dalton v04, multimodal audio+video audition PASS, v01-v03 untouched). Kept blocked so completed 5/5 build is not re-queued; parked for independent non-author Chief replacement PASS and Ben swap approval (first air-eve deadline Thu 12 Nov 2026 20:00Z).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0966 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -93356,13 +93356,27 @@
           "at": "2026-10-28T04:58Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T05:03Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Verify readiness: Independent Chief replacement PASS and Ben swap approval for the 4 HC Shorts (first air-eve deadline Thu 12 Nov 2026 20:00Z)",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-28T05:58:44+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
