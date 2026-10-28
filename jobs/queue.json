@@ -90925,6 +90925,11 @@
           "at": "2026-10-28T09:35Z",
           "by": "relay",
           "what": "condition verification queued: J1080"
+        },
+        {
+          "at": "2026-10-28T09:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-28T10:35:48Z"
         }
       ],
       "remaining_action": "Independent Chief replacement review of six delivered v04 Shorts, then Ben swap approval",
@@ -90953,12 +90958,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Independent elected-Chief replacement-media PASS for the exact six v04 masters in PR305 61d031f35 is still absent, followed by explicit Ben swap approval on J0936. PR305 has no reviews/comments; thread through 6464327187 contains only assembly and condition-verification reports. J1048 QA sweep preserves holds. Completed 3/3 assembly must not be requeued; v01 fallback and 1 Nov 20:00 UTC batch deadline unchanged.",
-        "check_at": "2026-10-28T10:35:48+00:00",
-        "last_recheck": "J1073",
-        "checked_at": "2026-10-28T08:33:18+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1080"
+        "condition": "Independent elected-Chief replacement-media PASS for six exact v04 masters in PR305 61d031f35 remains absent, then explicit Ben swap approval on J0936. PR305 OPEN with zero reviews/comments; run13 parks for review; thread through 6465542232 and J1075 preserve the hold. Submitted assembly gate/listening evidence is not independent replacement approval. Preserve completed 3/3 assembly, J0936 historical 6/6, v01 fallbacks and 1 Nov 20:00 UTC deadline.",
+        "check_at": "2026-10-28T10:35:48Z",
+        "last_recheck": "J1080",
+        "checked_at": "2026-10-28T09:38:29+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-10-27T14:34Z"
     },
