@@ -1,5 +1,5 @@
 {
-  "next_id": 1118,
+  "next_id": 1119,
   "jobs": [
     {
       "id": "J0001",
@@ -98389,6 +98389,34 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J1118",
+      "title": "J1106 thumbs: build B v02 for 005 / 019 / compilation per panel DECISION.md (no pasted Earth, new hooks)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build three thumbnail Test & Compare B v02 covers exactly as 05_Analytics/tests/panels/owb-j1106-weekly-2026-10-28/DECISION.md section 1 says (Chief PASS stands on that file):\n- REXYxuLOBoI (005): text 10 TRILLION YEARS (TRILLION yellow); existing last-star plate only, circular mask rind on the left limb fixed, flaring toned down to a dim long-lived red dwarf; NO Earth.\n- ojk-dfOpAmw (019): text STARS DON'T CRASH (CRASH yellow); PIA15416 Andromeda full-bleed and feathered (no rectangular border, no notch), fewer bright foreground pinpoints; NO Earth. If it fails the 168 px read, fall back to MOST STARS MISS and say so.\n- m09jUdwC5hk (compilation): text FIVE COSMIC CLOCKS (CLOCKS yellow); Saturn PIA06193 hero graded --pale (saturation ~95-110); NO Earth speck. Optional small separate last-star vignette top-left only if it reads at 168 px.\nHouse rules: THUMBNAIL_AND_TITLE_RULES.md (2-3 words, yellow hook, top band off subject, nothing in the bottom-right badge zone), 1280x720, under 2 MB, house grade gate PASS. Existing plates only, spend nothing, no picture generation. Update 00_Brand/Channel-Setup/tools/build_weekly_thumbs_j1106.py (on codex/j1106-weekly-thumbnails, merge that work to main), write the files under ~/_desk/j1106/designs/*_B_v02.jpg plus a NAS copy, and a PHONE_SHEET_v02.jpg with each live A beside its B v02 at 168x94. Record sha256s in the OWB 2026-10-28 audit. No Studio change and no ledger row in this job.\nEnd with jobs.py block <id> --reason \"parked for Chief: J1106 B v02 phone sheet <path>\" --git.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T18:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T18:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "build 3 B v02 covers + phone sheet, park for Chief",
+      "kind": "thumb"
     }
   ],
   "focus": [],

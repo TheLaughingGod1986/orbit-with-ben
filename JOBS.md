@@ -58,6 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1111 | mini | blocked | codex | – | studio · URGENT: set every scheduled Short's thumbnail to its frame-0 hook (OWB + HOS), Venus Melt Lead first (airs 29 Oct 11:30) |  |
 | J1113 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · HOS Shorts thumbnails: open the HOS Studio browser yourself (CDP 9222), then set every scheduled HOS Short to its frame-0 hook |  |
 | J1117 | cloud | claimed | claude | 2026-10-28T19:22Z | review · Packaging panel decision: J1106 three draft thumbnail Bs and separate title alternatives; advisory only, Chief decides |  |
+| J1118 | mini | open | – | – | thumb · J1106 thumbs: build B v02 for 005 / 019 / compilation per panel DECISION.md (no pasted Earth, new hooks) |  |
 
 Recently finished:
 
