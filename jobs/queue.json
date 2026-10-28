@@ -1,5 +1,5 @@
 {
-  "next_id": 1084,
+  "next_id": 1085,
   "jobs": [
     {
       "id": "J0001",
@@ -95385,6 +95385,35 @@
       "recheck_of": "J0966",
       "due": "2026-10-28T12:11:43+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1084",
+      "title": "025 Mars Opening Short: v06 starting on a whole sentence (Ben's change on v05: '00:01 starts mid sentence'), gates, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# 025 Mars Opening Short: v06 that starts on a whole sentence (Ben's change on v05)\n\nBen, board tick 28 Oct 2026 11:14 on J1059 (v05): \"00:01 starts mid sentence\".\n\nv05 (`wed11_opening_testA_v05`, sha256 efe446a4…) opens on \"14 years. On Mars.\" That fragment is the loop half of\n\"…and the sky went dark. Fourteen years on Mars.\" Heard first, it sounds like the middle of a sentence.\n\nMake v06 in `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/`, keeping v01-v05:\n1. The first spoken words are one complete, plain sentence that states the question or the fact, for example\n   \"A rover built to last 90 days kept driving on Mars for 14 years.\" (the planned title is\n   \"Why Did a 90-Day Mars Rover Last 14 Years?\"). No fragment, no loop half, at frame 0.\n2. If the existing VO can't give that, record only the new opening line with `04_Audio/tools/vo_take.py --text`\n   (same voice and settings as v05's VO) once ElevenLabs resets (30 Oct): inside the monthly plan, never overage\n   or top-up. Keep every other accepted line as is.\n3. The ending may still loop back to the opening if it reads as a natural sentence both times; never at the cost of\n   (1).\n4. All v05 gates again on v06: gate_shorts_open, picture_qa, polish_gate, music_gate, sfx_kit level, AAC I -14.0 +/-0.5\n   LUFS, TP <= -1.6 dBTP, 22-27 s, caption and title-safe checks; _PHONE.mp4 720x1280 and NAS/UAT copies with sha256.\n5. Park for Chief. After the Chief PASS, the Chief points J1059's swap ask at v06 for Ben's OK.\nDeadline: parked by Fri 6 Nov 20:00 London (Ben's OK is needed by Wed 11 Nov 10:30). No upload, swap, or spend beyond the plan.\nIf there is no v06 OK in time, the scheduled v02 (TtgHNLXfDSs) airs as is.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T11:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T11:16Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Re-cut the opening so it starts on a complete sentence, then gates",
+      "due": "2026-11-06T20:00:00Z",
+      "kind": "video"
     }
   ],
   "focus": [],
