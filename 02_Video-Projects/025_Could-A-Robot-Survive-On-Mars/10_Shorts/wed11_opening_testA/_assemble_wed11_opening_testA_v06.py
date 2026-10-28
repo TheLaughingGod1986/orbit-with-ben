@@ -86,7 +86,7 @@ BODY = [
     (EDL, 124.0, "crop=495:880:712:0", EDL_NAME, 2.18),
     (GALE, 58.0, "crop=608:1080:80:0", GALE_NAME, 1.78),
     (EDL, 154.0, "crop=495:880:712:0", EDL_NAME, 2.18),
-    (GALE, 64.0, "crop=608:1080:1200:0", GALE_NAME, 1.78),
+    (GALE, 8.0, "crop=608:1080:1200:0", GALE_NAME, 1.78),
 ]
 
 
