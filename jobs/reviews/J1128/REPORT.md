@@ -53,3 +53,15 @@ Thread read to #6480506360.
 Check `J1128-resume.done` and `J1128-recover.done` plus their logs and structured results; missing means leave running, never duplicate. Verify free space after recovery; target remains **30 decimal GB**. If incomplete, inspect the exact failure and retain local data. The NAS helper workaround is job-local, not a change to shared core. Ensure collector patches are preserved by J1106/J1107. Reopen J1100 only once the required recovery and cause/fix evidence are complete. No PASS, merge, spend, upload or schedule change.
 
 Thread read to #6480842882.
+
+## Continuation 21:43Z, Codex worker
+
+- Resumed the existing worktree/PR 329 and preserved the four-step plan at step 1. No second copy started.
+- `J1128-resume` has now completed checksum-verified moves of chief_tmp and OWB worker artifacts, and verified archive plus local compaction of all three research detail directories (1,106 + 287 + 711 files). Structured evidence remains in `~/_desk/logs/J1128/resumed.json`. J1107 now totals 76 MiB, j1106 586 MiB including its 489 MiB review worktree.
+- Live free space: 19,484,168,192 bytes (19.48 decimal GB), versus this continuation's initial ~17.6 GB. Still below 20 GB render floor and 30 GB target; J1100 stays blocked. Free bytes fluctuate with live work.
+- Read-only process check confirms original rsync PID 1804 is still copying HOS worker artifacts to `artifacts__2` on NAS. `J1128-recover.done` and `J1128-resume.done` are both absent. Resume waits for original recovery, as designed. Leave both tmux sessions alone.
+- Live swap now 11 GiB allocated, 10,034.50 MiB used (previous checkpoint 10 GiB allocated). No swap files touched, no browser stopped, and no unsupported attribution. The full historical drop remains partly unaccounted for. Time Machine still has no local snapshots. Ordinary caches remain about 199 MiB; standard Chrome profile about 1.1 GiB.
+- Archive verifier and research metadata regression tests both pass. Existing collector compaction fix remains the evidenced recurrence mitigation; no new code change was necessary this continuation.
+- Required `nas_offload.py --apply` completed with no eligible old /private/tmp scratch; no NAS data deleted. No media masters or UAT files touched. GBP0.
+
+Next: check both completion files/logs and the final archive verification; continue diagnosis and safe recovery to 30 GB, then reopen J1100 only with measured headroom and truthful cause/fix evidence. Do not duplicate the active copies.
