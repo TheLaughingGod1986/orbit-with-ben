@@ -1,5 +1,5 @@
 {
-  "next_id": 1111,
+  "next_id": 1112,
   "jobs": [
     {
       "id": "J0001",
@@ -97596,6 +97596,35 @@
         "OWB:028",
         "OWB:030"
       ]
+    },
+    {
+      "id": "J1111",
+      "title": "URGENT: set every scheduled Short's thumbnail to its frame-0 hook (OWB + HOS), Venus Melt Lead first (airs 29 Oct 11:30)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# URGENT: every scheduled Short's thumbnail = its frame-0 hook (OWB + HOS)\n\nBen, 28 Oct 2026 16:14 (Studio Scheduled list): \"some of these shorts thumbnails on OWB and HOS look awful\". The good\nones show the frame-0 hook card (COMET CRUMBS, TIPPED ON ITS SIDE). The bad ones show a mid-Short frame: tiny caption\nwords, half-words (\"SIT\", \"TIME\"), small long-title banner. Seen on OWB:\n- Why Is Venus Hot Enough to Melt Lead? (airs Thu 29 Oct 11:30) - \"NEARLY 1 KM DEEP\" tiny\n- How Thin Are Saturn's Rings? (Fri 30 Oct) - tiny banner + \"SIT\"\n- Why Do Astronauts See 16 Sunrises a Day? (Sat 31 Oct) - \"EVERY 90 MINUTES\" tiny\n- How Big Is Venus Compared to Earth? (Mon 2 Nov) - tiny banner + \"TIME\"\nAGENTS.md / THUMBNAIL_AND_TITLE_RULES.md: frame 0 is the Shorts thumbnail.\n\n1. List every Scheduled and Private-scheduled Short on BOTH channels (OWB Studio CDP 9223; HOS in its Studio\n   session), earliest air time first. Read back each Short's current thumbnail.\n2. For each one whose thumbnail is not the frame-0 hook card: set it in Studio to the frame-0 hook (the Short's\n   `*_frame0.jpg` / cover from its pack if Studio takes a custom image for Shorts; otherwise pick the frame at 0.0-0.5 s\n   in Studio's frame chooser). The hook text must be big and whole, nothing cut mid-word.\n3. Read back each change (Studio list thumbnail) and record id, old/new thumb and time in\n   05_Analytics/weekly_thumb_audit/SHORTS_THUMB_FIX_2026-10-28.md; post one line per channel on #264.\nOrder: Venus Melt Lead first (airs tomorrow 11:30), then by air date. Done for everything airing before Sun 1 Nov by\ntonight. Thumbnail only: no title, privacy, schedule, Replace or delete. GBP0. Chief (any elected) PASSes from the\nread-back; Ben does not need to OK.\nAlso tell J1106/J1107 (weekly thumbnail audits): every new Short's upload must set the frame-0 hook as its thumbnail.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T16:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T16:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set each scheduled Short's thumbnail to its opening hook frame, soonest first",
+      "due": "2026-10-29T10:30:00Z",
+      "kind": "studio"
     }
   ],
   "focus": [],
