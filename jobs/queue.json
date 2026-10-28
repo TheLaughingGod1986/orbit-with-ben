@@ -96814,10 +96814,24 @@
           "at": "2026-10-28T15:00Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T15:02Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 248 min (heartbeat 2026-10-28T10:52:23Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Read mature Snow Short metrics and append timestamped lab evidence",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
