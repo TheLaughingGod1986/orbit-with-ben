@@ -1,7 +1,7 @@
 (function () {
   // Studio app, the board's front page (Ben, 28 Oct 2026 mock-up): Overview, Videos, Review, Agents, Schedule.
-  // Reads the same board.json as the video board (/board) and the AI page (/ai); it never writes. Ben's OK / changes
-  // ticks stay on /board (one way to tick): Review opens that card there.
+  // Reads the same board.json as the video board (/board) and the AI page (/ai). Its only write is Ben's OK / changes
+  // tick on the Review tab, sent to /api/checks exactly as /board sends it (same document, same key, no confirmation).
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
@@ -10,6 +10,7 @@
   const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook" };
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex · mini", "codex-macbook": "Codex · MacBook" };
   let board = null, lastSha = "", filterCh = "all", filterType = "all";
+  const sent = {};  // checkId -> the tick just sent, until board.json shows it
   // Ben's board links carry his tick key (/#k=...); that page lives at /board now, so hand them over untouched.
   if (/(?:^#|&)k=/.test(location.hash)) { location.replace("/board" + location.hash); return; }
 
@@ -47,7 +48,63 @@
     return v.lane === "upcoming" ? "Planned" : "In progress";
   }
 
-  const forBen = vs => vs.filter(v => v.lane === "ready" && v.readyFor === "Ben");
+  const forBen = vs => vs.filter(v => v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId]);
+  // /board shows Approve / Changes for a long, or a Short with an ask (tracker_app.js showActions); the same here.
+  const canTick = v => v.type === "long" || !!v.ask;
+
+  // Ben's tick, as /board sends it (tracker_app.js approve / openChangesModal and postCheck).
+  function boardKey() { try { return localStorage.getItem("studio-board-key") || ""; } catch (e) { return ""; } }
+  function tickDoc(v, verdict, raw) {
+    const fixes = verdict === "ok" ? [] : String(raw || "").split(/\n+/).map(line => {
+      const m = line.match(/^\s*(\d{1,2}:\d{2})\s*[:\-]?\s*(.+)$/);
+      return m ? { t: m[1], text: m[2].trim() } : { t: "", text: line.trim() };
+    }).filter(f => f.text);
+    const doc = { film: v.key.split(":S:")[0], version: v.version || "", verdict, fixes, note: verdict === "ok" ? "" : raw, at: new Date().toISOString() };
+    if (v.ask) Object.assign(doc, { job: v.ask.job, what: v.ask.what });
+    return doc;
+  }
+  function toast(msg, bad) {
+    let t = document.getElementById("toast");
+    if (!t) { t = document.createElement("div"); t.id = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+    t.className = bad ? "bad on" : "on"; t.textContent = msg;
+    clearTimeout(t._h); t._h = setTimeout(() => { t.className = bad ? "bad" : ""; }, bad ? 6000 : 1800);
+  }
+  async function sendTick(v, verdict, raw) {
+    const doc = tickDoc(v, verdict, raw), key = boardKey();
+    sent[v.checkId] = Object.assign({ key: v.key }, doc);  // Shorts share their long's checkId: mark only this card
+    render();
+    try {
+      const r = await fetch("/api/checks", { method: "POST", credentials: "same-origin",
+        headers: Object.assign({ "content-type": "application/json" }, key ? { "x-board-key": key } : {}),
+        body: JSON.stringify({ id: v.checkId, doc }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error((j && j.error) || "save failed " + r.status);
+      if (/^not posted/.test(j.chief || "")) toast("Saved, but it didn't reach the Chief's thread. Tell the Chief in chat too.", true);
+      else toast(verdict === "ok" ? "OK sent ✓" : "Changes sent ✓");
+    } catch (e) {
+      delete sent[v.checkId];
+      render();
+      toast("Not sent: " + String(e.message || e), true);
+    }
+  }
+  function openChanges(v) {
+    const bg = document.createElement("div");
+    bg.className = "sheet-bg";
+    bg.innerHTML = `<div class="sheet" role="dialog" aria-label="Changes"><h3>Changes for ${esc(v.title)}</h3>
+      <p class="meta">One note per line. Start with a time when you can, e.g. 0:38 text doesn't match the voice.</p>
+      <textarea id="chg" rows="5" placeholder="0:38 text doesn't match the voice&#10;2:40 shot too dark"></textarea>
+      <div class="btns"><button type="button" class="btn" data-x>Cancel</button><button type="button" class="btn primary" data-send>Send changes</button></div></div>`;
+    document.body.appendChild(bg);
+    bg.querySelector("[data-x]").onclick = () => bg.remove();
+    bg.onclick = e => { if (e.target === bg) bg.remove(); };
+    bg.querySelector("[data-send]").onclick = () => {
+      const raw = bg.querySelector("#chg").value.trim();
+      if (!raw) return;
+      bg.remove();
+      sendTick(v, "change", raw);
+    };
+    bg.querySelector("#chg").focus();
+  }
   const inProgress = vs => vs.filter(v => ["progress", "changes", "ready", "approved"].includes(v.lane) && !forBen([v]).length);
 
   // Publications from now on: YouTube's own schedule first, else the planned air date; one row per YouTube video.
@@ -126,9 +183,12 @@
   function review(b) {
     const vs = ((b.tracker || {}).videos) || [];
     const need = forBen(vs).map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`)}
-      <div class="btns">${v.watch && v.watch.url ? `<a class="btn" href="${esc(v.watch.url)}" target="_blank" rel="noopener">▶ Watch ${esc(v.watch.version || "")}</a>` : `<span class="btn off">No file link yet</span>`}
-      <a class="btn primary" href="${boardLink(v)}">OK or changes</a></div></div>`).join("");
-    const done = vs.filter(v => v.check && v.check.at).sort((a, b) => Date.parse(b.check.at) - Date.parse(a.check.at)).slice(0, 8)
+      ${v.watch && v.watch.url ? `<a class="btn watch" href="${esc(v.watch.url)}" target="_blank" rel="noopener">▶ Watch ${esc(v.watch.version || "")}</a>` : `<span class="btn watch off">No file link yet</span>`}
+      <div class="btns">${canTick(v) ? `<button type="button" class="btn ok" data-ok="${esc(v.key)}">✓ OK</button>
+        <button type="button" class="btn chg" data-chg="${esc(v.key)}">Changes</button>`
+        : `<a class="btn" href="${boardLink(v)}">Open on the board</a>`}</div></div>`).join("");
+    const checked = vs.map(v => (sent[v.checkId] || {}).key === v.key ? Object.assign({}, v, { check: sent[v.checkId] }) : v);
+    const done = checked.filter(v => v.check && v.check.at).sort((a, b) => Date.parse(b.check.at) - Date.parse(a.check.at)).slice(0, 8)
       .map(v => row(v, `<span class="tag ${v.check.verdict === "ok" ? "green" : "amber"}">${v.check.verdict === "ok" ? "You OK'd" : "You asked for changes"} ${esc(v.check.version || "")}</span>`)).join("");
     return `<header class="top"><h1>Review</h1></header><p class="meta">Finished videos only. Everything else is the agents' job.</p>
       ${section("Needs your review", forBen(vs).length, need || empty("Nothing to watch right now. You'll get a message when there is."))}
@@ -193,6 +253,9 @@
     const ready = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
     document.getElementById("nav").innerHTML = TABS.map(([id, label, icon]) =>
       `<a href="#${id}" class="${id === tab ? "on" : ""}"><span class="ic">${icon}</span>${label}${id === "review" && ready ? `<em>${ready}</em>` : ""}</a>`).join("");
+    const byKey = k => (((board || {}).tracker || {}).videos || []).find(v => v.key === k);
+    document.querySelectorAll("[data-ok]").forEach(btn => btn.onclick = () => { const v = byKey(btn.dataset.ok); if (v) sendTick(v, "ok"); });
+    document.querySelectorAll("[data-chg]").forEach(btn => btn.onclick = () => { const v = byKey(btn.dataset.chg); if (v) openChanges(v); });
     document.querySelectorAll(".chips button").forEach(btn => btn.onclick = () => {
       if (btn.dataset.f === "ch") filterCh = btn.dataset.v;
       else filterType = filterType === btn.dataset.v ? "all" : btn.dataset.v;

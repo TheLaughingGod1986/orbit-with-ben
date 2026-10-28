@@ -95,20 +95,16 @@ class SiteBuild(unittest.TestCase):
             mod.build(Path(d) / "dist")
             simple = (Path(d) / "dist" / "board.html").read_text()
             home = (Path(d) / "dist" / "index.html").read_text()
-            classic = (Path(d) / "dist" / "classic.html").read_text()
             # Home page is the studio app (Ben, 28 Oct 2026); the per-video column board moved to /board
             self.assertIn("STUDIO_APP_TEST_HOOK", home)
             self.assertIn('location.replace("/board" + location.hash)', home)  # Ben's /#k= links still reach his board
             self.assertIn("Studio videos", simple)
             self.assertIn("Changes requested", simple)
             self.assertIn("board-data/board.json", simple)
-            self.assertIn("/classic", simple)
-            # Classic board kept at /classic
-            self.assertIn("window.claude = { use:", classic)
-            self.assertIn("dbApi = db.canWrite===false ? null : db;", classic)
-            self.assertIn("board-data/board.json", classic)
+            # The October swim-lane board (/classic) is retired (Ben, 28 Oct 2026): not built, not linked
+            self.assertFalse((Path(d) / "dist" / "classic.html").exists())
+            self.assertNotIn('href="/classic"', simple + home)
             self.assertTrue((HERE.parent / "05_Analytics/kanban/board_site/api/checks.js").exists())
-            self.assertIn('href="/tracker"', classic)
             version=json.loads((Path(d)/"dist/version.json").read_text())["version"]
             self.assertIn(f'<meta name="studio-version" content="{version}">', simple)
             self.assertIn('src="/updater.js"', simple)
@@ -137,7 +133,7 @@ class SiteBuild(unittest.TestCase):
             self.assertTrue((dist / "static/tracker-180.png").exists())
         vercel = json.loads((HERE.parent / "05_Analytics/kanban/board_site/vercel.json").read_text())
         self.assertIn({"source": "/tracker", "destination": "/tracker.html"}, vercel["rewrites"])
-        self.assertIn({"source": "/classic", "destination": "/classic.html"}, vercel["rewrites"])
+        self.assertIn({"source": "/classic", "destination": "/", "permanent": False}, vercel["redirects"])
 
     def test_daily_data_changes_do_not_trigger_code_update_loops(self):
         spec=importlib.util.spec_from_file_location("board_version_build",HERE.parent/"05_Analytics/kanban/board_site/build.py")
