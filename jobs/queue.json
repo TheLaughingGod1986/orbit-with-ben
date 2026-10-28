@@ -96829,9 +96829,14 @@
           "at": "2026-10-28T15:19Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Queried YTA v2 API at 15:09Z (settled through 2026-10-25, 0 rows for OnJ8MFu0Mi0); reading live 51.8h Studio Overview/Engagement/Reach metrics on CDP 9460"
+        },
+        {
+          "at": "2026-10-28T15:24Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Captured mature >=48h Studio read (15:19:49Z-15:23:27Z, 51.8h age: 213 lifetime table/retention-card views, 28.0% [27.96%] stayed, 65.3% [0.6529] avg viewed, 0:15 [15.017s] AVD; 220 Since-published views, 28.3% [28.31%] stayed, 92.7% Shorts feed), Studio 100-bucket lifetime retentionValues curve, Data API v3 (214 live views, 8 likes at 15:09:05Z), and YTA v2 REST API status (settled through 2026-10-25, 0 rows for 2026-10-26..2026-10-28)"
         }
       ],
-      "remaining_action": "Collect mature 48-hour Studio and YTA retention evidence for OnJ8MFu0Mi0 and inspect Snow Short cut list/VO words",
+      "remaining_action": "Derive largest retention drop from actual buckets, map to cut list and VO words, grade 60% stayed and 70% viewed, and compare to standalone cohort",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -96843,11 +96848,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T15:19Z",
+        "at": "2026-10-28T15:24Z",
         "by": "gemini",
-        "note": "Queried YTA v2 API at 15:09Z (settled through 2026-10-25, 0 rows for OnJ8MFu0Mi0); reading live 51.8h Studio Overview/En"
+        "note": "Captured mature >=48h Studio read (15:19:49Z-15:23:27Z, 51.8h age: 213 lifetime table/retention-card views, 28.0% [27.96"
       }
     },
     {
