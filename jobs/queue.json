@@ -86109,9 +86109,9 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-28T07:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T15:58Z",
@@ -86326,6 +86326,11 @@
           "at": "2026-10-28T10:37Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-28T15:01Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Acting-Chief audit-only PASS recorded at HOS desk 6472484257; releasing review hold solely to record completion. J1098 after J0984 owns mature Snow read; J1004 and J0966 remain separate. Preserve original worker 5/5; Chief review progress separate."
         }
       ],
       "kind": "review",
@@ -86337,8 +86342,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:006",
         "HOS:007",
