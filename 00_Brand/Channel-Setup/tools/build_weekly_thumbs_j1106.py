@@ -76,7 +76,7 @@ def compilation():
 
 rows=[]
 for vid,fn,hook,title in [('REXYxuLOBoI',last_star,'RED DWARF END',"What Happens When the Universe's Last Star Dies?"),('ojk-dfOpAmw',andromeda,'MOST STARS MISS',"What Would Andromeda Look Like from Earth?"),('m09jUdwC5hk',compilation,'FIVE COSMIC CLOCKS','How Long Do Moons, Rings and Stars Last?')]:
- im=fn();p=OUT/f'{vid}_B_v02.jpg';im.save(p,quality=94,subsampling=0,optimize=True);assert im.size==(1280,720) and p.stat().st_size<2000000
+ im=fn();p=OUT/f'{vid}_B_v02_worker.jpg';im.save(p,quality=94,subsampling=0,optimize=True);assert im.size==(1280,720) and p.stat().st_size<2000000
  rows.append({'video':vid,'file':str(p),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'hook':hook,'title_B_proposal':title,'status':'draft; no test armed; Chief and panel required'})
-(OUT/'MANIFEST_v02.json').write_text(json.dumps({'job':'J1106','designs':rows,'source_notes':{'last_star':'Existing film master frame t243, illustrative star','andromeda':'NASA/JPL-Caltech PIA15416 existing plate','saturn':'NASA/JPL/Space Science Institute PIA06193, https://svs.gsfc.nasa.gov/30348/','reference_rule':'Earth removed on unanimous panel advice. Main-character/scale-reference requirement remains unresolved; Chief decision required, no PASS claimed.'}},indent=2)+'\n')
+(OUT/'MANIFEST_v02_worker.json').write_text(json.dumps({'job':'J1106','designs':rows,'source_notes':{'last_star':'Existing film master frame t243, illustrative star','andromeda':'NASA/JPL-Caltech PIA15416 existing plate','saturn':'NASA/JPL/Space Science Institute PIA06193, https://svs.gsfc.nasa.gov/30348/','reference_rule':'Earth removed on unanimous panel advice. Main-character/scale-reference requirement remains unresolved; Chief decision required, no PASS claimed.'}},indent=2)+'\n')
 print(json.dumps(rows,indent=2))
