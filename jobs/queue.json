@@ -97055,13 +97055,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T19:53Z",
-      "eta": "2026-10-28T21:53Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "",
+      "result": "parked for Chief: disk prerequisite has regressed since J1112; live 10,471 MiB, required offload exit 0 with no eligible scratch. Resume step 2 only after live headroom restored above 20 GB. Evidence codex/J1100-preflight.",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -97117,6 +97117,11 @@
           "at": "2026-10-28T19:55Z",
           "by": "codex",
           "what": "step 1 of 3 done: Preserved prior input inspection; live disk recheck 10,471 MiB after successful offload with no eligible scratch. No render started."
+        },
+        {
+          "at": "2026-10-28T19:55Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: disk prerequisite has regressed since J1112; live 10,471 MiB, required offload exit 0 with no eligible scratch. Resume step 2 only after live headroom restored above 20 GB. Evidence codex/J1100-preflight."
         }
       ],
       "remaining_action": "Restore 20 GB free, then assemble and verify three v05 fixes",
