@@ -1,5 +1,5 @@
 {
-  "next_id": 1127,
+  "next_id": 1128,
   "jobs": [
     {
       "id": "J0001",
@@ -98940,6 +98940,34 @@
       ],
       "remaining_action": "Packaging panel decision: HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777",
       "kind": "review"
+    },
+    {
+      "id": "J1127",
+      "title": "Credit readings: fix stale Vertex / Cursor / Flow daily reads, confirm Codex pool, true up plans.json",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "The board's new AI & credits page (/ai, PR #325) shows three daily credit readings going stale: Vertex last read 22 Oct, Cursor 15 Oct, Flow 26 Oct (scripts/ai_spend_daily.py, Mini launchd 08:30 London). ElevenLabs reads fine.\n1. Run `python3 scripts/ai_spend_daily.py --dry-run` and the Mini's log (~/Library/Logs/owb-ai-spend.log) to see why vertex, cursor and flow fail.\n2. If a CDP Chrome tab (:9222) is closed or logged out of an already-signed-in profile, reopen the profile and page yourself (AGENTS.md \"Stop and ask Ben\": only a real Google/Cursor password or 2FA prompt is Ben's, and then record it and move on). If a page layout changed, fix the parser with a test in scripts/test_ai_spend.py.\n3. Once PR #325 is merged, also confirm the new `codex` pool records (Mini's Codex account).\n4. Then run `python3 scripts/ai_spend_daily.py --git` once so the page is current.\n5. Check 05_Analytics/ai_spend/plans.json subscriptions against what is actually billed now (e.g. Codex: the Mini's plan and the MacBook's ChatGPT Pro account benoats@gmail.com; Claude's plan), from the billing pages the Mini's Chrome is already signed in to. Correct names and prices only where a billing page shows them; never guess. Commit with a one-line source per change.\nSpend nothing. Done with what was fixed and the new readings.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T20:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T20:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "fix 3 stale credit reads, update plans",
+      "kind": "listing"
     }
   ],
   "focus": [],
