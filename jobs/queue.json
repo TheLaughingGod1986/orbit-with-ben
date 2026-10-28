@@ -88197,18 +88197,25 @@
           "at": "2026-10-28T11:35Z",
           "by": "relay",
           "what": "condition verification queued: J1087"
+        },
+        {
+          "at": "2026-10-28T12:59Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T16:00:00Z"
         }
       ],
       "kind": "review",
       "taskKeys": [
         "OWB:027"
       ],
-      "remaining_action": "Measure the Earth Short once 48 hours of data are available",
+      "remaining_action": "Obtain a mature Earth Short Studio reading, then measure retention and update the audit",
       "hold": {
-        "type": "date",
-        "condition": "Studio data readAt must be at or after 28 Oct 11:30Z; retain the recorded 29 Oct 16:00 London fallback if data is unavailable",
-        "check_at": "2026-10-28T12:35:36+00:00",
-        "recheck_task": "J1087"
+        "type": "input",
+        "condition": "Latest saved lifetime Studio evidence in 05_Analytics/owb/studio_ctr.json has readAt 2026-10-28T07:51:04.461913Z: OVLv9dxTcpE 887 Studio views, 30.7% stayedToWatch, 75.3% avgViewPct. Capture is only 44h21m after release and precedes required 2026-10-28T11:30:00Z; no mature capture verified. Preserve original read-only measurement scope and 29 Oct 16:00 London fallback.",
+        "check_at": "2026-10-29T16:00:00Z",
+        "last_recheck": "J1087",
+        "checked_at": "2026-10-28T12:59:19+00:00",
+        "checked_by": "codex"
       }
     },
     {
