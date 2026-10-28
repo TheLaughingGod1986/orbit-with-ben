@@ -96338,9 +96338,14 @@
           "at": "2026-10-28T14:04Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: Direct audio ingestion via agy read_file confirmed on wed11_opening_testA_v07.mp4, stem_vo.wav, long.wav, and opp.wav; resolved 'for more' vs Whisper 'from more' and audited all 9 VO joins."
+        },
+        {
+          "at": "2026-10-28T14:07Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: Full-runtime 2fps sheet, 6fps final-shot/transition sheet, s07/s_loop video clips, and full-size warning frames (7.3s, 13.8s, 20.2s) inspected via agy read_file. Zero MSL hardware/black wedge in s07; captions and title safe."
         }
       ],
-      "remaining_action": "Inspect full-runtime sheet, final-shot motion/transitions, picture warnings at 7.3/13.8/20.2s, and caption/title safety",
+      "remaining_action": "Recheck and hydrate/re-copy all 9 v07 files across Local, NAS, and iCloud OWB UAT and verify readable SHA256 hashes",
       "due": "2026-11-06T20:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -96350,11 +96355,11 @@
       ],
       "review_followup_of": "J1090",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T14:04Z",
+        "at": "2026-10-28T14:07Z",
         "by": "gemini",
-        "note": "Step 1 complete: Direct audio ingestion via agy read_file confirmed on wed11_opening_testA_v07.mp4, stem_vo.wav, long.wa"
+        "note": "Step 2 complete: Full-runtime 2fps sheet, 6fps final-shot/transition sheet, s07/s_loop video clips, and full-size warnin"
       }
     }
   ],
