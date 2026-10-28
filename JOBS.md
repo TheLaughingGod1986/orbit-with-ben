@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1074 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1075 | mini | claimed | gemini | 2026-10-28T10:46Z | for gemini · qa · `gemini-argon` · J1066 FIX: reconcile QA media identities and newest-pack coverage on both channels | J1066 |
 | J1076 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J1077 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
 
 Recently finished:
 
