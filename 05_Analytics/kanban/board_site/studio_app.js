@@ -19,7 +19,7 @@
   }
   const ch = v => v.channel === "HOS" ? "HOS" : "Orbit";
   const kind = v => v.type === "short" ? "Short" : "Long";
-  const boardLink = v => `/board#v=${encodeURIComponent(v.key)}`;
+  const detailLink = v => `#v=${encodeURIComponent(v.key)}`;  // every video opens in the hub (Ben, 28 Oct: not the old board)
   const LIVE = j => j && (j.status === "claimed" || j.status === "open" || j.status === "blocked");
 
   // A real picture only: the YouTube thumbnail when the video has an id, otherwise a channel tile with its number.
@@ -148,20 +148,30 @@
     const week = schedule(vs, now).filter(r => r.at - now < 7 * 864e5);
     return {
       health, ready: forBen(vs), working: vs.filter(isWorking),
-      progress: inProgress(vs), week, chief: m.chief || {},
+      progress: inProgress(vs), week, chief: m.chief || {}, runner: m.runner || {},
       jobs: { working: jobs.filter(j => j.status === "claimed").length, queued: jobs.filter(j => j.status === "open").length,
               held: jobs.filter(j => j.status === "blocked").length, doneToday: ((b.owb || {}).day || {}).doneToday || 0 },
     };
   }
 
   function row(v, extra, href) {
-    return `<a class="row" href="${href || boardLink(v)}">${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
+    return `<a class="row" href="${href || detailLink(v)}">${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
       <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || bar(progressOf(v))}</div><span class="chev">›</span></a>`;
   }
   const jobTiles = j => `<div class="tiles three"><div class="tile-stat"><b class="blue">${j.working}</b><span>Jobs running</span></div>
       <div class="tile-stat"><b>${j.queued}</b><span>Jobs queued</span></div><div class="tile-stat"><b>${j.held}</b><span>Jobs on hold</span></div></div>`;
   const section = (title, n, body, more) => `<section><h2>${esc(title)}${n != null ? ` <span class="n">${n}</span>` : ""}${more || ""}</h2>${body}</section>`;
   const empty = text => `<p class="empty">${esc(text)}</p>`;
+
+  // The Mac mini works one job at a time, round the clock: say so, so a gap between two jobs never reads as "stopped".
+  function miniLine(s, b) {
+    const jobs = ((b.owb || {}).jobs) || [], r = s.runner || {};
+    const live = jobs.find(j => j.status === "claimed");
+    const text = live ? `Mac mini working: ${AGENTS[live.by] || live.by} on ${live.id} · ${clip(live.remaining_action || live.title, 60)}`
+      : s.jobs.queued ? `Mac mini between jobs · ${s.jobs.queued} queued, the next starts within minutes`
+      : r.state ? "Mac mini idle · nothing queued" : "";
+    return text ? `<p class="mini ${live ? "on" : ""}"><i></i>${esc(text)}</p>` : "";
+  }
 
   function overview(b, now) {
     const s = summary(b, now);
@@ -176,7 +186,7 @@
     const ready = s.ready.map(v => row(v, `<span class="meta">${esc(v.line || "")}</span>`, uatLink(v))).join("") || empty("Nothing waiting for you.");
     const pipe = `${jobTiles(s.jobs)}<p class="meta">Jobs are the agents' tasks across both channels. ${s.jobs.doneToday} finished today.</p>`;
     return `<header class="top"><div><h1>Studio</h1><p class="meta">Orbit With Ben · History of Science</p></div>
-      <span class="pill ${s.health[0]}"><i></i>${esc(s.health[1])}</span></header>${tiles}
+      <span class="pill ${s.health[0]}"><i></i>${esc(s.health[1])}</span></header>${miniLine(s, b)}${tiles}
       ${section("Ready for your review", s.ready.length, ready)}
       ${section("Videos an agent is on now", s.working.length, working, ' <a class="more" href="#videos">See all</a>')}
       ${section("Agent jobs", null, pipe, ' <a class="more" href="#agents">Agents</a>')}`;
@@ -202,14 +212,43 @@
     const chips = [["ch", "all", "Both"], ["ch", "OWB", "Orbit"], ["ch", "HOS", "HOS"], ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
     const list = (items, limit) => items.slice(0, limit).map(v => row(v, isWorking(v) ? doing(v) : "")).join("")
-      + (items.length > limit ? `<a class="more block" href="/board">${items.length - limit} more on the full board</a>` : "");
+      + (items.length > limit ? `<p class="meta">${items.length - limit} more: pick Orbit or HOS, Longs or Shorts to narrow the list.</p>` : "");
     const show = id => seg === "all" || seg === id;
-    return `<header class="top"><h1>Videos</h1><a class="more" href="/board">Full board ›</a></header>
+    return `<header class="top"><h1>Videos</h1></header>
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
       ${show("working") ? section("An agent is on it now", g.working.length, list(g.working, 30) || empty("No agent is on a video this minute.")) : ""}
       ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
       ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
       ${seg === "all" ? section("On YouTube", g.done.length, list(g.done, 10)) : ""}`;
+  }
+
+  // One video, in the hub: where it is, who is on it, what is left, your notes, and its links.
+  const JOB_WORD = { claimed: ["green", "Working"], open: ["", "Queued"], blocked: ["amber", "On hold"], done: ["", "Done"] };
+  function detail(b, key) {
+    const v = ((((b.tracker || {}).videos) || []).find(x => x.key === key));
+    const back = `<header class="top"><a class="more back" href="javascript:history.back()">‹ Back</a></header>`;
+    if (!v) return back + empty("That video isn't on the board any more.");
+    const yt = v.youtube || {}, w = v.watch || {};
+    const links = [
+      forBen([v]).length ? `<a class="btn primary" href="${uatLink(v)}">▶ Watch & review</a>` : w.url ? `<a class="btn" href="${esc(w.url)}" target="_blank" rel="noopener">▶ Watch ${esc(w.version || v.version || "")}</a>` : "",
+      yt.url ? `<a class="btn" href="${esc(yt.url)}" target="_blank" rel="noopener">Open on YouTube</a>` : "",
+    ].filter(Boolean);
+    const jobs = (v.jobs || []).slice().sort((a, b) => ["claimed", "open", "blocked", "done"].indexOf(a.status) - ["claimed", "open", "blocked", "done"].indexOf(b.status));
+    const jobRows = jobs.map(j => { const [tone, word] = JOB_WORD[j.status] || ["", j.status];
+      const why = j.status === "blocked" ? (j.hold && j.hold.condition) || j.result : j.remaining_action;
+      return `<div class="job"><div class="job-top"><span class="tag ${tone}">${word}</span><b>${esc(clip(j.title || j.id, 90))}</b></div>
+        <span class="meta">${esc(j.id)}${j.by ? " · " + esc(AGENTS[j.by] || j.by) : ""}${why ? " · " + esc(clip(why, 160)) : ""}</span>
+        ${j.status === "claimed" ? bar(j.progress && j.progress.of > 0 ? j.progress : null) : ""}</div>`; }).join("");
+    const notes = (v.notes || []).map(n => `<li class="${n.done ? "done" : ""}">${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("");
+    const flags = (v.flags || []).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
+    return `${back}<div class="hero">${thumb(v)}</div>
+      <h1 class="uat-title">${esc(v.title)}</h1>
+      <p class="meta">${ch(v)} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
+      ${flags ? `<div class="flags">${flags}</div>` : ""}
+      ${v.line ? `<p class="line">${esc(v.line)}</p>` : ""}
+      ${links.length ? `<div class="btns">${links.join("")}</div>` : ""}
+      ${section("Agent work on this video", jobs.length, jobRows || empty("No agent jobs on this video right now."))}
+      ${notes ? section("Your notes", null, `<ul class="notes">${notes}</ul>`) : ""}`;
   }
 
   function review(b) {
@@ -239,7 +278,7 @@
         <div class="btns"><button type="button" class="btn ok" data-ok="${esc(v.key)}">✓ Approve</button>
         <button type="button" class="btn chg" data-chg="${esc(v.key)}">Request changes</button></div>
         <p class="meta">Approve sends your OK; Request changes sends the notes above. The agents make the next version and it comes back here.</p>`
-      : `<a class="btn" href="${boardLink(v)}">Open on the board to OK or change</a>`;
+      : `<p class="line">This Short is reviewed with its long film: your OK or changes there cover it.</p>`;
     return `<header class="top"><a class="more back" href="#review">‹ Review</a></header>
       <h1 class="uat-title">${esc(v.title)}</h1><p class="meta">${ch(v)} · ${kind(v)} · ${esc(w.version || v.version || "")}${v.airText ? " · airs " + esc(v.airText) : ""}</p>
       <div class="player">${player}</div>${actions}`;
@@ -319,17 +358,20 @@
   function current() {
     const t = (location.hash || "").replace("#", "");
     if (t.startsWith("uat=")) return "review";
+    if (t.startsWith("v=")) return "videos";
     return TABS.some(([id]) => id === t) ? t : "overview";
   }
   const uatKey = () => { const m = (location.hash || "").match(/^#uat=(.+)$/); return m ? decodeURIComponent(m[1]) : ""; };
+  const videoKey = () => { const m = (location.hash || "").match(/^#v=(.+)$/); return m ? decodeURIComponent(m[1]) : ""; };
 
   function render() {
     const tab = current(), now = Date.now();
     const key = uatKey();
-    document.getElementById("view").innerHTML = key && board && board.tracker ? uat(board, key) : renderTab(tab, board, now);
-    const ready = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
+    const vk = videoKey(), ready = board && board.tracker;
+    document.getElementById("view").innerHTML = key && ready ? uat(board, key) : vk && ready ? detail(board, vk) : renderTab(tab, board, now);
+    const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
     document.getElementById("nav").innerHTML = TABS.map(([id, label, icon]) =>
-      `<a href="#${id}" class="${id === tab ? "on" : ""}"><span class="ic">${icon}</span>${label}${id === "review" && ready ? `<em>${ready}</em>` : ""}</a>`).join("");
+      `<a href="#${id}" class="${id === tab ? "on" : ""}"><span class="ic">${icon}</span>${label}${id === "review" && waiting ? `<em>${waiting}</em>` : ""}</a>`).join("");
     const byKey = k => (((board || {}).tracker || {}).videos || []).find(v => v.key === k);
     const notes = document.getElementById("uat-notes");
     document.querySelectorAll("[data-ok]").forEach(btn => btn.onclick = () => {
