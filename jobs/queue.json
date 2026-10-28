@@ -99235,13 +99235,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T21:14Z",
-      "eta": "2026-10-28T23:14Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "",
+      "result": "Waiting for: Studio report for GHZDsiH7L7A confirms the existing combined title-and-thumbnail test has ended, with its completion date verified directly; the next London calendar day has arrived. Recheck observed Running status, never infer completion from the 19h44m estimate.",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -99267,9 +99267,19 @@
           "at": "2026-10-28T21:16Z",
           "by": "codex",
           "what": "step 2 of 3 done: Studio A/B test report: Title and thumbnail; Test running; estimated 19h44m remaining. No test or metadata changed."
+        },
+        {
+          "at": "2026-10-28T21:16Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Studio report for GHZDsiH7L7A confirms the existing combined title-and-thumbnail test has ended, with its completion date verified directly; the next London calendar day has arrived. Recheck observed Running status, never infer completion from the 19h44m estimate."
+        },
+        {
+          "at": "2026-10-28T21:16Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T21:30:00Z"
         }
       ],
-      "remaining_action": "Record a structured wait until the existing experiment has ended and the following day arrives",
+      "remaining_action": "After verified test completion and the next-day gap, arm the authorized title-only B while holding the live thumbnail fixed",
       "kind": "studio",
       "progress": {
         "step": 2,
@@ -99280,7 +99290,12 @@
       },
       "taskKeys": [
         "HOS:004"
-      ]
+      ],
+      "hold": {
+        "type": "test",
+        "condition": "Studio report for GHZDsiH7L7A confirms the existing combined title-and-thumbnail test has ended, with its completion date verified directly; the next London calendar day has arrived. Recheck observed Running status, never infer completion from the 19h44m estimate.",
+        "check_at": "2026-10-29T21:30:00Z"
+      }
     },
     {
       "id": "J1132",
