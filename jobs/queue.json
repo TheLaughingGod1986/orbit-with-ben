@@ -88738,10 +88738,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-28T00:17Z",
+      "eta": "2026-10-28T01:17Z",
       "created_by": "refill",
       "created_at": "2026-10-27T00:51Z",
       "result": "",
@@ -88760,6 +88760,11 @@
           "at": "2026-10-27T00:58Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4566 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-28T00:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "listing",
@@ -88773,7 +88778,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T00:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1015",
