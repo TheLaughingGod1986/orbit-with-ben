@@ -97250,9 +97250,14 @@
           "at": "2026-10-28T23:51Z",
           "by": "codex",
           "what": "step 2 of 3 done: S6 final02 all five gates exit 0, dense OCR/dark pass; -14.4 LUFS/-1.7 dBTP; loop max 0.87. Delivered 24 verified payload copies to repo/UAT/NAS. Gemini reviews running; no acceptance claimed."
+        },
+        {
+          "at": "2026-10-28T23:56Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: S6 Gemini actual AAC review completed and saved verbatim on PR333 (49230a5c0); all spoken captions match, minor splice and silent-loop-caption caveats retained for Chief. All 72 delivery hashes match. S2/S5 Gemini still running in J1100-gemini-listen02; no duplicate."
         }
       ],
-      "remaining_action": "Complete Gemini listening and caption reconciliation, then hand all three v05s to Chief",
+      "remaining_action": "Finish detached Gemini S2/S5 AAC listening and caption reconciliation, then park for Chief",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -97272,9 +97277,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-10-28T23:51Z",
+        "at": "2026-10-28T23:56Z",
         "by": "codex",
-        "note": "S6 final02 all five gates exit 0, dense OCR/dark pass; -14.4 LUFS/-1.7 dBTP; loop max 0.87. Delivered 24 verified payloa"
+        "note": "S6 Gemini actual AAC review completed and saved verbatim on PR333 (49230a5c0); all spoken captions match, minor splice a"
       }
     },
     {
