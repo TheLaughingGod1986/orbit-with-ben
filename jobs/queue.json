@@ -96166,9 +96166,14 @@
           "at": "2026-10-28T13:19Z",
           "by": "codex",
           "what": "blocked: parked for Chief: v07 evidence c370f1058 on codex/J1090; five automated gates PASS, sampled picture correction verified, local/NAS hashes match. Actual opening/join audition unavailable in this session (for more vs from more unresolved); iCloud master/support reads Errno 11 although UAT PHONE matches. Arrange audible review and recheck UAT before acceptance; J1084/J1059 holds unchanged."
+        },
+        {
+          "at": "2026-10-28T13:53Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-28T18:00:00Z"
         }
       ],
-      "remaining_action": "Obtain actual opening/join audition and Chief review; recheck iCloud master availability",
+      "remaining_action": "Review J1093 audio and delivery evidence before accepting v07; J1059 stays held for Ben",
       "due": "2026-11-06T20:00:00Z",
       "kind": "assembly",
       "review_followup_of": "J1084",
@@ -96190,6 +96195,11 @@
         "at": "2026-10-28T13:19Z",
         "by": "codex",
         "note": "Reviewed 2fps runtime sheet, 5fps final-shot sheet and full-size warnings; local/NAS hashes match; v06/v07 VO hashes ide"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J1093 supplies actual audio audition, full-shot QA and readable matching UAT hashes for elected-Chief acceptance",
+        "check_at": "2026-10-28T18:00:00Z"
       }
     },
     {
