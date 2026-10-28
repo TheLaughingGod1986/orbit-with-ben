@@ -99082,9 +99082,14 @@
           "at": "2026-10-28T21:02Z",
           "by": "codex",
           "what": "step 0 of 4 done: Archive copies running; raw yt-dlp captions dominate new research JSON; swap grew, but full historical 20 GB loss not yet attributable"
+        },
+        {
+          "at": "2026-10-28T21:03Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Measured 4.09 GB recent bulk research JSON; patched actual collectors to omit unused caption/format trees. Full 20 GB historical change remains unproven. Slow NAS recovery is detached."
         }
       ],
-      "remaining_action": "Complete checked NAS recovery and diagnose unaccounted disk growth",
+      "remaining_action": "Finish verified NAS copies, recover disk headroom, and verify collector changes",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99097,11 +99102,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T21:02Z",
+        "at": "2026-10-28T21:03Z",
         "by": "codex",
-        "note": "Archive copies running; raw yt-dlp captions dominate new research JSON; swap grew, but full historical 20 GB loss not ye"
+        "note": "Measured 4.09 GB recent bulk research JSON; patched actual collectors to omit unused caption/format trees. Full 20 GB hi"
       },
       "taskKeys": [
         "OWB:027",
