@@ -79947,6 +79947,11 @@
           "at": "2026-10-28T01:10Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Resuming J0935 at step 4/6 (mon09 v04, wed11 v05, thu12 v04, fri13 v05 done; next: mon16 HZGTovJu_TQ and wed18 cwU_0WWeNZ4)"
+        },
+        {
+          "at": "2026-10-28T01:22Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Step 5/6 done: mon16 HZGTovJu_TQ v03 evidence complete (23.68s, -14.3 LUFS/-2.0 dBTP, identical master sha256 cddcfb96, Whisper transcript+join review+checks+Keeper infeasibility, UAT+NAS)"
         }
       ],
       "kind": "assembly",
@@ -79964,13 +79969,13 @@
         "external_wait": false
       },
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-10-28T01:10Z",
+        "at": "2026-10-28T01:22Z",
         "by": "gemini",
-        "note": "Resuming J0935 at step 4/6 (mon09 v04, wed11 v05, thu12 v04, fri13 v05 done; next: mon16 HZGTovJu_TQ and wed18 cwU_0WWeN"
+        "note": "Step 5/6 done: mon16 HZGTovJu_TQ v03 evidence complete (23.68s, -14.3 LUFS/-2.0 dBTP, identical master sha256 cddcfb96, "
       },
-      "remaining_action": "Complete mon16 v03 and wed18 v03 master Whisper transcripts + Keeper reconciliation",
+      "remaining_action": "Complete Step 6/6: wed18 cwU_0WWeNZ4 v04 Voyager 1 join fix + Whisper + Keeper reconciliation",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
