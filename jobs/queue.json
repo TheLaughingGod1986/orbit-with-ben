@@ -86158,6 +86158,11 @@
           "at": "2026-10-28T02:14Z",
           "by": "relay",
           "what": "condition verification queued: J1052"
+        },
+        {
+          "at": "2026-10-28T02:20Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-10-28T11:35:00Z"
         }
       ],
       "kind": "review",
@@ -86196,12 +86201,11 @@
       "remaining_action": "Close J0985 by non-author Chief after J1002 verification (J1003 Earth 48h readout at 28 Oct 11:35Z)",
       "hold": {
         "type": "input",
-        "condition": "J1002 correction commit 45ef75589 verified complete across all 6 Chief FIX items in OWB_2026-10-26_CHIEF_REVIEW.md (254d04071); kept blocked so completed 5/5 audit is not re-queued as an open worker job and because J1002 forbids self-approving J0985 by its author (gemini). Awaits non-author Chief (chief/claude/codex) closure; mature 48h Earth Short OVLv9dxTcpE readout tracked separately in J1003 at >=28 Oct 11:35Z.",
-        "check_at": "2026-10-28T03:14:17+00:00",
-        "last_recheck": "J1044",
-        "checked_at": "2026-10-27T20:08:56+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1052"
+        "condition": "J1002 correction commit 45ef75589 verified complete across all 6 Chief FIX items in OWB_2026-10-26_CHIEF_REVIEW.md (254d04071); kept blocked so completed 5/5 audit is not re-queued as an open worker job and because J1002 forbids self-approving J0985 by its author (gemini). Non-author Chiefs (chief/claude/codex) remain down as of 2026-10-28T02:20Z, and latest studio_ctr.json readAt 2026-10-28T00:33:34Z (887 views, 30.7% stayed, 75.3% avg viewed) is at 37.1h (<48h maturity floor); awaits non-author Chief closure and mature 48h Earth Short OVLv9dxTcpE readout in J1003 at >=2026-10-28T11:35:00Z.",
+        "check_at": "2026-10-28T11:35:00Z",
+        "last_recheck": "J1052",
+        "checked_at": "2026-10-28T02:20:31+00:00",
+        "checked_by": "gemini"
       }
     },
     {
