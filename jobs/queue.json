@@ -94096,13 +94096,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T08:19Z",
-      "eta": "2026-10-28T09:19Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T07:54Z",
-      "result": "",
+      "result": "done (HOS d68d8d93: 57 unique videos verified via Data API — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T08:22Z; 0 new fixes needed, no Studio writes or spend)",
       "history": [
         {
           "at": "2026-10-28T07:54Z",
@@ -94143,6 +94143,11 @@
           "at": "2026-10-28T08:23Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 steps complete: 57 HOS videos verified (25 public, 15 scheduled, 17 private), 0 new fixes needed (HOS d68d8d93)"
+        },
+        {
+          "at": "2026-10-28T08:24Z",
+          "by": "gemini",
+          "what": "done: done (HOS d68d8d93: 57 unique videos verified via Data API — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T08:22Z; 0 new fixes needed, no Studio writes or spend)"
         }
       ],
       "remaining_action": "Post report for J1070",
@@ -94173,7 +94178,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "done_ref": "d68d8d93"
     },
     {
       "id": "J1071",
