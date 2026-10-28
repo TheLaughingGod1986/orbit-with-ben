@@ -176,6 +176,9 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 .remaining-list .job { padding: 0; border: 0; background: transparent; }
 .card-work > .job { margin: 8px 0; }
 .last-result { margin-top: 8px; color: #bff0d8; font-size: .8rem; }
+.tabs { display: flex; gap: 8px; margin: 10px 0 2px; }
+.tabs a { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 8px 14px; font-size: 0.9rem; text-decoration: none; }
+.tabs a.on { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 600; }
 footer { margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
 footer a { color: inherit; }
 .modal-bg {
@@ -221,6 +224,7 @@ footer a { color: inherit; }
 <header>
   <h1>Studio videos</h1>
   <div class="sub" id="asof">Loading…</div>
+  <nav class="tabs"><a class="on" href="/">Videos</a><a href="/ai">AI & credits</a></nav>
   <div class="filters" id="filters"></div>
 </header>
 <section class="strip" id="strip" aria-label="Now working"></section>

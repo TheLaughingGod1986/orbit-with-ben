@@ -4,7 +4,8 @@
 
 launchd runs this every 15 minutes (scripts/macbook/com.owb.macbook-worker.plist, installed by
 scripts/macbook/setup_macbook.sh). Each run does at most one job, and only when ALL of these hold:
-  - it is inside Ben's hours: weeknights 21:00-09:00 and all weekend, London (the run must also end by 09:00);
+  - it is inside its hours: round the clock by default (Ben, 28 Oct 2026: "let's use the MacBook Pro 24 seven");
+    MACBOOK_HOURS=night limits it to weeknights 21:00-09:00 and all weekend, London (the run must also end by 09:00);
   - no pause file (~/_desk/state/macbook-worker.pause), and no other run of this script in progress;
   - the MacBook is on mains power (never drains the battery);
   - nobody has touched the keyboard or trackpad for MACBOOK_IDLE_MIN minutes (default 10);
@@ -14,7 +15,7 @@ Then it pulls both checkouts, claims the oldest `macbook` job with
 and wakes the agent CLI (MACBOOK_AGENT, default codex) on it under `caffeinate -i`, which keeps the Mac awake for
 that one run only (nothing global changes; sleep settings are untouched). The run is killed at MACBOOK_CAP_S seconds
 (default 1500); a job still claimed afterwards is released with a note so the next run (or another worker) picks
-it up.
+it up. After a Codex run it records that account's usage limits (pool codex-macbook, at most every 3 h) for the board.
 
 The `macbook` lane is separate: the Mini's workers never take these jobs and this worker never takes Mini jobs
 (Studio sign-ins, the NAS rules and the HOS desk all live on the Mini). The Chief routes a job here with
@@ -88,9 +89,12 @@ def idle_minutes(ioreg_out: str | None = None) -> float:
 
 
 def in_hours(t: dt.datetime) -> bool:
-    """Ben, 28 Oct 2026: "work at night time from say 9 PM till 9 AM, and also ... the weekend, Saturday and Sunday.
-    ... during the week, outside of hours, I'll be using it for work." London time: all of Sat and Sun, and 21:00-09:00
-    on weekday nights. MACBOOK_START_H / MACBOOK_END_H change the night window."""
+    """Round the clock unless MACBOOK_HOURS=night (Ben, 28 Oct 2026, evening: "let's use the MacBook Pro 24 seven";
+    the idle and mains-power guards still keep it off while he is using it). The night window is his earlier rule:
+    "work at night time from say 9 PM till 9 AM, and also ... the weekend, Saturday and Sunday": London time, all of
+    Sat and Sun and 21:00-09:00 on weekday nights. MACBOOK_START_H / MACBOOK_END_H change that window."""
+    if os.environ.get("MACBOOK_HOURS", "always") != "night":
+        return True
     from zoneinfo import ZoneInfo
     lt = t.astimezone(ZoneInfo("Europe/London"))
     if lt.weekday() >= 5:
@@ -106,7 +110,7 @@ def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None) -> list[str]:
     cap = dt.timedelta(seconds=int(os.environ.get("MACBOOK_CAP_S", "1500")))
     if not (in_hours(now) and in_hours(now + cap)):
         # A run must also finish inside the window, so nothing is still going at 9 AM on a workday.
-        why.append("outside its hours (weeknights 21:00-09:00 and weekends, London)")
+        why.append("outside its hours (MACBOOK_HOURS=night: weeknights 21:00-09:00 and weekends, London)")
     if (STATE / "macbook-worker.pause").exists():
         why.append("paused (rm ~/_desk/state/macbook-worker.pause to resume)")
     if not on_ac_power(pmset_out):
@@ -162,6 +166,24 @@ def still_mine(job: str) -> bool:
     return "claimed" in first and AGENT_ID in first
 
 
+def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
+    """After a run, record this account's Codex usage limits for the board's AI & credits page (pool codex-macbook),
+    at most every few hours so the ledger isn't one line per job. A failed read records nothing."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    stamp = STATE / "macbook-usage.last"
+    try:
+        if now.timestamp() - float(stamp.read_text().strip()) < every_h * 3600:
+            return False
+    except (OSError, ValueError):
+        pass
+    r = sh([sys.executable, "scripts/ai_spend_daily.py", "--pools", "codex", "--codex-pool", "codex-macbook",
+            "--by", AGENT_ID, "--git"], cwd=OWB, timeout=180)
+    log(f"usage reading: {(r.stdout or r.stderr).strip()[-200:]}")
+    if r.returncode == 0:
+        stamp.write_text(str(now.timestamp()))
+    return r.returncode == 0
+
+
 def run() -> int:
     STATE.mkdir(parents=True, exist_ok=True)
     lock = open(STATE / "macbook-worker.lock", "w")
@@ -212,6 +234,8 @@ def run() -> int:
         log(f"{job}: released after exit {code}")
     else:
         log(f"{job}: finished (exit {code})")
+    if agent == "codex":
+        record_usage()
     return 0
 
 

@@ -2,6 +2,7 @@
 """Tests for scripts/macbook_worker.py: it only runs on mains power while the MacBook is idle, the `macbook` lane is
 kept apart from the Mini's, and a run never outlives its cap (Ben, 28 Oct 2026)."""
 import datetime as dt
+import os
 import pathlib
 import sys
 import tempfile
@@ -33,7 +34,14 @@ class Guards(unittest.TestCase):
     def test_idle_on_mains_with_space_runs(self):
         self.assertEqual(mw.guards(AC, IDLE_20, free_gb=100, now=WED_NIGHT), [])
 
+    def test_round_the_clock_by_default(self):
+        self.assertTrue(mw.in_hours(dt.datetime.fromisoformat("2026-10-29T14:00:00+00:00")))  # Thu afternoon
+        self.assertEqual(mw.guards(AC, IDLE_20, free_gb=100, now=T0), [])  # Wed noon
+        self.assertTrue(any("in use" in w for w in mw.guards(AC, IDLE_1, free_gb=100, now=T0)))  # Ben at the keys
+
     def test_hours_are_weeknights_and_weekends_london(self):
+        os.environ["MACBOOK_HOURS"] = "night"
+        self.addCleanup(os.environ.pop, "MACBOOK_HOURS", None)
         at = lambda s: dt.datetime.fromisoformat(s)  # noqa: E731
         self.assertTrue(mw.in_hours(at("2026-10-28T21:30:00+00:00")))   # Wed 21:30 London
         self.assertTrue(mw.in_hours(at("2026-10-29T08:00:00+00:00")))   # Thu 08:00
@@ -44,6 +52,8 @@ class Guards(unittest.TestCase):
         self.assertTrue(mw.in_hours(at("2026-06-03T20:30:00+00:00")))   # BST: 21:30 London in summer
 
     def test_no_run_that_would_end_after_nine(self):
+        os.environ["MACBOOK_HOURS"] = "night"
+        self.addCleanup(os.environ.pop, "MACBOOK_HOURS", None)
         why = mw.guards(AC, IDLE_20, free_gb=100, now=dt.datetime.fromisoformat("2026-10-29T08:50:00+00:00"))
         self.assertTrue(any("outside its hours" in w for w in why))
         why = mw.guards(AC, IDLE_20, free_gb=100, now=dt.datetime.fromisoformat("2026-10-29T14:00:00+00:00"))
@@ -71,6 +81,17 @@ class Guards(unittest.TestCase):
         self.assertIn("jobs.py show J1102", p)
         self.assertIn("127.0.0.1:11434", p)
         self.assertIn("Never scripts, facts or anything spoken", p)
+
+    def test_usage_is_recorded_at_most_every_few_hours(self):
+        calls = []
+        real = mw.sh
+        mw.sh = lambda cmd, **kw: calls.append(cmd) or mw.subprocess.CompletedProcess(cmd, 0, "READ codex", "")
+        self.addCleanup(setattr, mw, "sh", real)
+        self.assertTrue(mw.record_usage(now=WED_NIGHT))
+        self.assertIn("codex-macbook", calls[0])
+        self.assertFalse(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=1)))
+        self.assertTrue(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=4)))
+        self.assertEqual(len(calls), 2)
 
 
 class Lane(unittest.TestCase):
