@@ -35,7 +35,9 @@
       .sort((a, b) => b.step / b.of - a.step / a.of)[0];
     return p ? { step: p.step, of: p.of } : null;
   }
-  const bar = p => p ? `<div class="prog"><div class="bar"><i style="width:${Math.round(p.step / p.of * 100)}%"></i></div><span>${p.step} of ${p.of}</span></div>` : "";
+  // Percent of the steps the agent reported done (Ben, 28 Oct: "add percentages"), never an estimate.
+  const pct = p => Math.round(Math.min(1, Math.max(0, p.step / p.of)) * 100);
+  const bar = p => p ? `<div class="prog"><div class="bar"><i style="width:${pct(p)}%"></i></div><span><b>${pct(p)}%</b> · ${p.step} of ${p.of}</span></div>` : "";
   const clip = (s, n) => { s = String(s || ""); return s.length > n ? s.slice(0, n - 1) + "…" : s; };
   const activeJob = v => (v.jobs || []).find(j => j.status === "claimed");
   // One meaning of "working" everywhere (Ben, 28 Oct: 11 / 1 / 0 read as a contradiction): an agent has claimed a job
@@ -46,8 +48,7 @@
   function doing(v) {
     const j = activeJob(v);
     if (!j) return "";
-    const p = j.progress && j.progress.of > 0 ? ` · Step ${j.progress.step} of ${j.progress.of}` : "";
-    return `<span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(clip(j.remaining_action || j.title, 70))}${p}</span>${bar(progressOf(v))}`;
+    return `<span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(clip(j.remaining_action || j.title, 70))}</span>${bar(progressOf(v))}`;
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
 

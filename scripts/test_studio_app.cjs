@@ -76,7 +76,7 @@ assert.deepEqual([...t.agentLight('cursor', 1, 'red', false)], ['red', 'Out']);
 // Videos: Working / Queued / Backlog.
 const g = t.videoGroups([v({key: 'w', jobs: [{status: 'claimed', by: 'codex', title: 'cut', progress: {step: 3, of: 5}}]}), v({key: 'q'}), v({key: 'b', lane: 'upcoming'})]);
 assert.deepEqual([g.working[0].key, g.queued[0].key, g.backlog[0].key], ['w', 'q', 'b']);
-assert(t.doing(g.working[0]).includes('Codex · cut · Step 3 of 5'), 'the working card says who, what and which step');
+assert(t.doing(g.working[0]).includes('Codex · cut') && t.doing(g.working[0]).includes('<b>60%</b> · 3 of 5'), 'the working card says who, what, and the reported step as a percentage');
 
 // Schedule: a warning only when readiness can't be verified.
 assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'}}), NOW + 864e5, NOW), '');
