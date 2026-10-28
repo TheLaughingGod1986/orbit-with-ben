@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1059 | mini | blocked | gemini | – | studio · OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30 | ab4ad3de4 |
 | J1061 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1062 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1064 | mini | open | – | – | for gemini · qa · `gemini-argon` · HOS 001-004 v01 lift Shorts music_gate fix (£0, no spend): persist 05_Music beds and plan sidecars for 16 lift Shorts |  |
+| J1064 | mini | claimed | gemini | 2026-10-28T07:56Z | for gemini · qa · `gemini-argon` · HOS 001-004 v01 lift Shorts music_gate fix (£0, no spend): persist 05_Music beds and plan sidecars for 16 lift Shorts |  |
 | J1066 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
