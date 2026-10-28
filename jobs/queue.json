@@ -92263,13 +92263,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-28T02:47Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T01:07Z",
-      "result": "parked for Chief: PASS sign-off on 2026-10-28 HOS live and scheduled listing check (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md, HOS 1b51b4eb): 57 unique videos verified via Data API (25 public, 15 scheduled, 17 private stubs), 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T02:49Z, J0997/J0998/J0999 verified, 0 new fixes needed (handed back to Chief as Codex retry timer expired at 02:49:12Z)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T01:07Z",
@@ -92310,6 +92310,11 @@
           "at": "2026-10-28T02:51Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PASS sign-off on 2026-10-28 HOS live and scheduled listing check (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md, HOS 1b51b4eb): 57 unique videos verified via Data API (25 public, 15 scheduled, 17 private stubs), 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T02:49Z, J0997/J0998/J0999 verified, 0 new fixes needed (handed back to Chief as Codex retry timer expired at 02:49:12Z)"
+        },
+        {
+          "at": "2026-10-28T03:05Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief Gemini ruling recorded on HOS #180 6459546192 while original held; reopen solely to record Chief PASS decision and close J1051, not to rerun audit"
         }
       ],
       "remaining_action": "Chief review: PASS 2026-10-28 HOS live listing check (0 new fixes needed, HOS 1b51b4eb)",
@@ -92324,13 +92329,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-28T02:51Z",
-        "by": "gemini",
-        "note": "All 25 public + 15 scheduled HOS videos verified clean at 2026-10-28T02:49Z (HOS 1b51b4eb); handing Chief PASS sign-off "
-      },
       "taskKeys": [
         "HOS:001",
         "HOS:002",
