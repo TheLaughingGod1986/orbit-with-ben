@@ -72,6 +72,13 @@
     return `<span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(clip(j.remaining_action || j.title, 70))}</span>`
       + (progressOf(v) ? bar(progressOf(v), left) : left ? `<span class="meta">${esc(left)}</span>` : "");
   }
+  function jobGroups(vs) {
+    const groups = new Map();
+    for (const v of vs) { const id = activeJob(v).id || v.key; groups.set(id, (groups.get(id) || []).concat([v])); }
+    return [...groups.values()];
+  }
+  const alsoOn = rest => !rest.length ? "" : `<span class="meta">Same job also covers ${rest.length} more: ${esc(rest.map(v =>
+    `${v.number}${v.type === "short" ? " Short" : ""}`).join(", "))}</span>`;
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
 
   function stage(v) {
@@ -204,15 +211,18 @@
       <a class="tile-stat" href="#videos"><b class="blue">${s.progress.length}</b><span>Videos in production</span></a>
       <a class="tile-stat" href="#schedule"><b>${s.week.length}</b><span>Going live this week</span></a>
       <a class="tile-stat" href="#agents"><b class="${s.chief.agent ? "green" : "red"}">${esc(s.chief.name || "None")}</b><span>Chief · ${s.chief.agent ? "online" : "nobody up"}</span></a></div>`;
-    const other = s.jobs.working - s.working.length;
-    const working = (s.working.slice(0, 3).map(v => row(v, doing(v))).join("") || empty("No agent is on a video this minute."))
+    // One card per running job (Ben, 28 Oct: "1 job running but seeing 3"): a batch job that covers several videos
+    // shows once, on its first video, and names the others.
+    const byJob = jobGroups(s.working);
+    const other = s.jobs.working - byJob.length;
+    const working = (byJob.slice(0, 3).map(([v, ...rest]) => row(v, doing(v) + alsoOn(rest))).join("") || empty("No agent is on a video this minute."))
       + (other > 0 ? `<p class="meta">Plus ${other} studio job${other > 1 ? "s" : ""} not tied to one video (audits, credit readings, fixes). <a class="more" href="#agents">See Agents</a></p>` : "");
     const ready = s.ready.map(v => row(v, `<span class="meta">${esc(v.line || "")}</span>`, uatLink(v))).join("") || empty("Nothing waiting for you.");
     const pipe = `${jobTiles(s.jobs)}<p class="meta">Jobs are the agents' tasks across both channels. ${s.jobs.doneToday} finished today.</p>`;
     return `<header class="top"><div><h1>Studio</h1><p class="meta">Orbit With Ben · History of Science</p></div>
       <span class="pill ${s.health[0]}"><i></i>${esc(s.health[1])}</span></header>${miniLine(s, b)}${tiles}
       ${section("Ready for your review", s.ready.length, ready)}
-      ${section("Videos an agent is on now", s.working.length, working, ' <a class="more" href="#videos">See all</a>')}
+      ${section("Agents working now", byJob.length, working, ' <a class="more" href="#videos">See all</a>')}
       ${section("Agent jobs", null, pipe, ' <a class="more" href="#agents">Agents</a>')}`;
   }
 
