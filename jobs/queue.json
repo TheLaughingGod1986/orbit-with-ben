@@ -91990,19 +91990,24 @@
           "at": "2026-10-28T00:38Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J0912, commit 39997889 inventory, HOS PIPELINE.json, and 008_Lightning-Franklin status"
+        },
+        {
+          "at": "2026-10-28T00:39Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified HOS 008 picture is blocked (11/112 rows; 101 Flow Veo rows gated on J0863 at 2026-11-12T00:05:00Z) and edit is todo; 008 has 0 built Shorts (14/18 Shorts rows missing long/Flow plates)"
         }
       ],
-      "remaining_action": "Verify HOS 008 picture/edit and Shorts inventory against J0912 condition and check chief_relay.py status",
+      "remaining_action": "Record unmet condition on J0912 via jobs.py wait --recheck J1049 and close J1049",
       "kind": "chief",
       "recheck_of": "J0912",
       "due": "2026-10-28T01:35:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-28T00:38Z",
+        "at": "2026-10-28T00:39Z",
         "by": "gemini",
-        "note": "Read J0912, commit 39997889 inventory, HOS PIPELINE.json, and 008_Lightning-Franklin status"
+        "note": "Verified HOS 008 picture is blocked (11/112 rows; 101 Flow Veo rows gated on J0863 at 2026-11-12T00:05:00Z) and edit is "
       },
       "taskKeys": [
         "HOS:008"
