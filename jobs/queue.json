@@ -99274,9 +99274,14 @@
           "at": "2026-10-28T21:55Z",
           "by": "codex",
           "what": "step 1 of 4 done: Existing safety regressions pass; free 19.71 GB, swap 11 GiB allocated. Original recovery PID 67893 alive, resume PID 4944 waiting; no copies duplicated."
+        },
+        {
+          "at": "2026-10-28T21:58Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: PR 329 updated: 413 unused Chrome clones and five clean pushed old worktrees removed; free 22.42 GB. Three safety regressions pass. J1128-resume still running; full historical cause and 30 GB target remain incomplete."
         }
       ],
-      "remaining_action": "Verify pending NAS archive and investigate anomalous macOS temp allocation",
+      "remaining_action": "Finish NAS verification and recover remaining space to 30 GB before reopening J1100",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99291,9 +99296,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-28T21:55Z",
+        "at": "2026-10-28T21:58Z",
         "by": "codex",
-        "note": "Existing safety regressions pass; free 19.71 GB, swap 11 GiB allocated. Original recovery PID 67893 alive, resume PID 49"
+        "note": "PR 329 updated: 413 unused Chrome clones and five clean pushed old worktrees removed; free 22.42 GB. Three safety regres"
       },
       "taskKeys": [
         "OWB:027",
