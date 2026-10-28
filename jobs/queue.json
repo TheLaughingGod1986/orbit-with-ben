@@ -93075,13 +93075,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T04:33Z",
-      "eta": "2026-10-28T05:33Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T04:12Z",
-      "result": "",
+      "result": "138-export QA sweep inventory and report committed in OWB eaddab7bc (sidecars c203c223e) and HOS 820885bf (sidecars 62b23d3f) at 00_Brand/Channel-Setup/audits/qa_sweeps/J1060_QA_SWEEP_{INVENTORY,REPORT}_2026-10-28.{json,md}: 83 OWB + 55 HOS exports checked (£0 spend); 105 J1054 base exports PASS (including HOS 005 s06-s08 v01 resolved in J1058), 6 OWB long/compilation masters + 6 overlay/code_graphic packs PASS, and 21 v01 lift Shorts (5 OWB 020/022 + 16 HOS 001-004) had music_gate run with no-spend fix jobs J1063 and J1064 queued (0 unaddressed FAILs).",
       "history": [
         {
           "at": "2026-10-28T04:12Z",
@@ -93122,6 +93122,11 @@
           "at": "2026-10-28T05:02Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Verified 138-export QA sweep (83 OWB, 55 HOS): 117 PASS, 21 lift Short music_gate FAILs covered by no-spend fix jobs J1063 and J1064, 0 unaddressed FAILs"
+        },
+        {
+          "at": "2026-10-28T05:02Z",
+          "by": "gemini",
+          "what": "done: 138-export QA sweep inventory and report committed in OWB eaddab7bc (sidecars c203c223e) and HOS 820885bf (sidecars 62b23d3f) at 00_Brand/Channel-Setup/audits/qa_sweeps/J1060_QA_SWEEP_{INVENTORY,REPORT}_2026-10-28.{json,md}: 83 OWB + 55 HOS exports checked (£0 spend); 105 J1054 base exports PASS (including HOS 005 s06-s08 v01 resolved in J1058), 6 OWB long/compilation masters + 6 overlay/code_graphic packs PASS, and 21 v01 lift Shorts (5 OWB 020/022 + 16 HOS 001-004) had music_gate run with no-spend fix jobs J1063 and J1064 queued (0 unaddressed FAILs)."
         }
       ],
       "remaining_action": "Done",
@@ -93155,7 +93160,8 @@
         "HOS:002",
         "HOS:003",
         "HOS:004"
-      ]
+      ],
+      "done_ref": "eaddab7bc"
     },
     {
       "id": "J1061",
