@@ -97806,11 +97806,25 @@
           "at": "2026-10-28T16:58Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T17:00Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Open the HOS Studio browser and set each scheduled HOS Short's thumbnail to its hook frame",
       "kind": "studio",
-      "urgent": 2
+      "urgent": 2,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],
