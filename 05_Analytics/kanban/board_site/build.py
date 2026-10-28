@@ -6,7 +6,7 @@
 Outputs:
   dist/index.html     — Studio app (Ben, 28 Oct 2026): Overview, Videos, Review, Agents, Schedule (/)
   dist/board.html     — five-lane per-video tracker, where Ben ticks OK / changes (/board)
-  dist/classic.html   — the previous swim-lane / job board (kept at /classic)
+  (/classic, the October swim-lane board, is retired: vercel.json redirects it to /; build_classic stays for reference)
   dist/tracker.html   — Channel Tracker web app (/tracker)
   dist/ai.html        — AI & credits: who is up, who is Chief, credit left per plan, where it went (/ai)
   dist/version.json, updater.js, static/, tracker.webmanifest
@@ -225,7 +225,6 @@ def build(out: pathlib.Path) -> None:
         shutil.rmtree(out)
     out.mkdir(parents=True)
     build_simple(out)
-    build_classic(out)
     build_tracker(out)
     build_ai(out)
     build_studio(out)
