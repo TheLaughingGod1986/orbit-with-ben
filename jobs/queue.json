@@ -76847,6 +76847,11 @@
           "at": "2026-10-28T00:35Z",
           "by": "relay",
           "what": "condition verification queued: J1049"
+        },
+        {
+          "at": "2026-10-28T00:39Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
         }
       ],
       "kind": "assembly",
@@ -76864,12 +76869,14 @@
       ],
       "escalated_at": "2026-10-25T03:43Z",
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
-      "remaining_action": "Check the Franklin Short inputs before deciding whether another cut is needed",
+      "remaining_action": "Wait for HOS 008 picture (J0863 Flow renewal) and edit approval, then re-inventory 008 Test B Shorts before assembly",
       "hold": {
         "type": "input",
-        "condition": "HOS 008 picture/edit must be approved and the inventory must show a genuine need for another Short",
-        "check_at": "2026-10-28T01:35:43+00:00",
-        "recheck_task": "J1049"
+        "condition": "HOS 008 picture and edit must be completed and approved (currently picture is blocked at 11/112 rows with 101 Flow Veo rows gated on J0863 after the ~12 Nov Flow renewal, 5 moving-plate composites pending, and edit is todo) and 008 inventory must still have fewer than two built Test B Shorts (currently 0 built; 14/18 rows in SHORTS_PICTURE_PLAN_v02.json are blocked_missing_plate)",
+        "check_at": "2026-11-12T09:00:00Z",
+        "last_recheck": "J1049",
+        "checked_at": "2026-10-28T00:39:38+00:00",
+        "checked_by": "gemini"
       }
     },
     {
