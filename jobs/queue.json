@@ -94926,19 +94926,24 @@
           "at": "2026-10-28T09:37Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original brief/result, PR305 exact head and current thread: no reviews/comments or independent replacement PASS; latest QA reconciliation explicitly preserves J1032/J0936 holds."
+        },
+        {
+          "at": "2026-10-28T09:38Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR305 remains OPEN at 61d031f35 with zero reviews/comments; run13 explicitly parks for replacement review. Thread through 6465542232 has no independent replacement PASS or Ben swap OK; J1075 reports preserve holds. Submitted gate/listening evidence is not a fresh media review."
         }
       ],
-      "remaining_action": "Record current approval evidence and preserve J1032 hold",
+      "remaining_action": "Preserve unmet hold and close verification",
       "kind": "chief",
       "recheck_of": "J1032",
       "due": "2026-10-28T10:35:48+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-28T09:37Z",
+        "at": "2026-10-28T09:38Z",
         "by": "codex",
-        "note": "Read original brief/result, PR305 exact head and current thread: no reviews/comments or independent replacement PASS; la"
+        "note": "PR305 remains OPEN at 61d031f35 with zero reviews/comments; run13 explicitly parks for replacement review. Thread throug"
       },
       "taskKeys": [
         "OWB:026",
