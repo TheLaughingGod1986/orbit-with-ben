@@ -99108,10 +99108,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-28T21:41Z",
-      "eta": "2026-10-28T23:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T20:54Z",
       "result": "",
@@ -99205,6 +99205,11 @@
           "at": "2026-10-28T21:43Z",
           "by": "codex",
           "what": "step 1 of 4 done: PR 329 updated 30573e466; verified research compaction complete; live 19.48 GB, swap 11 GiB allocated; original final rsync still active, both completion files absent"
+        },
+        {
+          "at": "2026-10-28T21:44Z",
+          "by": "codex",
+          "what": "released: PR 329 checkpoint 30573e466, step 1/4. Live 19.48 GB; J1100 remains blocked. Existing tmux J1128-recover and J1128-resume still active; logs ~/_desk/logs/J1128-recover.log and J1128-resume.log, completion same stems .done absent. Never duplicate. Three research caches verified/compacted, tests pass. Finish final copy then recovery/diagnosis to 30 GB. GBP0."
         }
       ],
       "remaining_action": "Finish active NAS recovery and restore 30 GB before reopening J1100",
