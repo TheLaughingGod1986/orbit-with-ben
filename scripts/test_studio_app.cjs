@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick};
+  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -46,7 +46,7 @@ for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) {
   assert(html.length > 200, `${tab} renders`);
 }
 const review = t.renderTab('review', board, NOW);
-assert(review.includes('Watch v06') && review.includes('/board#v=OWB%3A019'), 'Watch plays the file; OK or changes opens the card on /board');
+assert(review.includes('#uat=OWB%3A019') && review.includes('Watch &amp; review v06') || review.includes('Watch & review v06'), 'a review card opens the UAT screen');
 assert(t.renderTab('agents', board, NOW).includes('Working on J1: Credit readings'));
 assert(t.renderTab('overview', null, NOW).includes('Loading'));
 // Ben's tick from the hub is the same document /board sends (tracker_app.js approve / openChangesModal).
@@ -57,5 +57,31 @@ assert.deepEqual(JSON.parse(JSON.stringify(chg.fixes)), [{t: '0:38', text: 'text
 assert.equal(chg.note, '0:38 text does not match the VO\nending too quiet');
 // Buttons where /board shows them: a long, or a Short with an ask; other Shorts open on the board.
 assert(t.canTick(v({})) && t.canTick(v({type: 'short', ask: {job: 'J1'}})) && !t.canTick(v({type: 'short'})));
-assert(review.includes('data-ok="OWB:019"') && review.includes('data-chg="OWB:019"'), 'OK and Changes are on the review card');
+// UAT screen: a streamable cut plays in the page with a timestamp button; Approve and Request changes are there.
+const stream = t.uat(board, 'OWB:019');
+assert(!stream.includes('<video'), 'an https link that is not a stream opens outside the page');
+board.tracker.videos[0].watch = {url: 'https://studio-kanban.vercel.app/api/watch?v=x', version: 'v06', kind: 'stream'};
+const play = t.uat(board, 'OWB:019');
+assert(play.includes('<video id="uat-video"') && play.includes('data-stamp') && play.includes('data-ok="OWB:019"') && play.includes('data-chg="OWB:019"'));
+board.tracker.videos[0].watch = {url: 'shareddocuments:///x.mp4', version: 'v06', kind: 'files', source: 'iCloud Drive'};
+assert(t.uat(board, 'OWB:019').includes('Open v06 in iCloud Drive'), 'an iCloud file opens in Files');
+assert(t.uat(board, 'nope').includes('waiting for review any more'));
+
+// Agents: green means working (or the Chief coordinating), amber idle, red out.
+assert.deepEqual([...t.agentLight('codex', 1, 'green', false)], ['green', 'Working']);
+assert.deepEqual([...t.agentLight('claude', 0, 'green', false)], ['amber', 'Idle'], 'a ready agent with no job is not green');
+assert.deepEqual([...t.agentLight('chief', 0, 'green', true)], ['green', 'Coordinating']);
+assert.deepEqual([...t.agentLight('cursor', 1, 'red', false)], ['red', 'Out']);
+
+// Videos: Working / Queued / Backlog.
+const g = t.videoGroups([v({key: 'w', jobs: [{status: 'claimed', by: 'codex', title: 'cut', progress: {step: 3, of: 5}}]}), v({key: 'q'}), v({key: 'b', lane: 'upcoming'})]);
+assert.deepEqual([g.working[0].key, g.queued[0].key, g.backlog[0].key], ['w', 'q', 'b']);
+assert(t.doing(g.working[0]).includes('Codex · cut · Step 3 of 5'), 'the working card says who, what and which step');
+
+// Schedule: a warning only when readiness can't be verified.
+assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'}}), NOW + 864e5, NOW), '');
+assert.equal(t.readiness(v({}), NOW + 2 * 864e5, NOW), 'Not uploaded to YouTube yet');
+assert.equal(t.readiness(v({youtube: {state: 'scheduled', publishAt: 'x'}}), NOW + 864e5, NOW), '', 'a swap YouTube already has scheduled is not flagged');
+assert.equal(t.readiness(v({flags: [{kind: 'approved', text: 'no read-back'}]}), NOW + 864e5, NOW), 'no read-back');
+assert(t.renderTab('schedule', board, NOW).length > 100);
 console.log('studio app OK');
