@@ -99137,10 +99137,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T22:00Z",
+      "eta": "2026-10-29T00:00Z",
       "created_by": "claude",
       "created_at": "2026-10-28T20:54Z",
       "result": "",
@@ -99289,6 +99289,11 @@
           "at": "2026-10-28T21:58Z",
           "by": "codex",
           "what": "released: Continuation committed in PR 329 at dccf7ad90. Free 22.42 GB, target 30 GB unmet; J1100 remains blocked. Existing tmux J1128-resume still verifying last HOS archive; log ~/_desk/logs/J1128-resume.log and completion ~/_desk/logs/J1128-resume.done (missing means running, do not duplicate). J1128-chrome-clones completed exit 0; 413 unused clones removed plus five verified clean pushed worktrees. Resume four-step plan at 1/4; read REPORT.md and result JSONs."
+        },
+        {
+          "at": "2026-10-28T22:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish NAS verification and recover remaining space to 30 GB before reopening J1100",
