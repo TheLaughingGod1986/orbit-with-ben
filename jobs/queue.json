@@ -82999,6 +82999,11 @@
           "at": "2026-10-28T11:20Z",
           "by": "relay",
           "what": "condition verification queued: J1085"
+        },
+        {
+          "at": "2026-10-28T12:51Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-28T18:52:00Z"
         }
       ],
       "kind": "studio",
@@ -83030,7 +83035,7 @@
         "type": "short"
       },
       "escalated_at": "2026-10-26T12:15Z",
-      "remaining_action": "Chief to resolve episode-gate blocker before approved v04 Shorts upload",
+      "remaining_action": "Resolve episode-gate failure before approved v04 Shorts upload",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -83048,10 +83053,12 @@
         "note": "All three approved hashes match; all three package dry runs and Shorts gates pass. Required episode gate exits 1: subscr"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-28T12:20:26+00:00",
-        "recheck_task": "J1085"
+        "type": "input",
+        "condition": "Required gate:episode must PASS following a separately authorised correction; fresh 28 Oct check fails subscribe_beat at 54% versus 25-50%. v04 approvals preserved. Evidence 666bea72b.",
+        "check_at": "2026-10-28T18:52:00Z",
+        "last_recheck": "J1085",
+        "checked_at": "2026-10-28T12:51:24+00:00",
+        "checked_by": "codex"
       }
     },
     {
