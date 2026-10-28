@@ -40,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1003 | mini | blocked | – | – | review · Earth Short OVLv9dxTcpE: mature 48-hour measurement (J0985 follow-up) |  |
 | J1059 | mini | blocked | gemini | – | studio · OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30 | ab4ad3de4 |
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
-| J1100 | mini | claimed | codex | 2026-10-29T01:44Z | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
+| J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1104 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
 | J1108 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
