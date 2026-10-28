@@ -1,5 +1,5 @@
 {
-  "next_id": 1113,
+  "next_id": 1114,
   "jobs": [
     {
       "id": "J0001",
@@ -97741,10 +97741,10 @@
     },
     {
       "id": "J1112",
-      "title": "Mini disk round 2: mini_repair safe clean-up + whole-disk survey (top 15 space users, safe actions) so J1100 can render",
+      "title": "Mini disk round 2: safe clean-up and act on it (snapshots, caches, studio media to NAS) until 30 GB free, so J1100 can render",
       "needs": "mini",
       "repo": "owb",
-      "body": "# Mini disk, round 2: safe clean-up + whole-disk survey (J1100 needs 20 GB free)\n\nJ1110 archived 26 superseded exports (1 GB) and found only ~6.6 GB in all OWB film projects; the Mini still has\n~16.8 GB free (J1110 report, branch codex/J1110). The space is outside the film folders.\n\n1. `python3 scripts/mini_repair.py --apply` (its safe steps only: package caches, clean pushed temp worktrees such as\n   /private/tmp/codex-J1085-verify, J0961-wt, j0984-chief-review, j1066-review-complete, j1075-chief-revi*; blocking\n   files are kept in ~/_desk/rescue, never deleted). Record free space before and after.\n2. Survey: `du -sh` (one level, sorted) of `~/*`, `~/Library/*`, `~/Library/Caches/*`, `~/Library/Application Support/*`,\n   `~/Library/Containers/*`, `~/Downloads`, `~/Movies`, `/private/tmp/*`, `/Users/Shared`, and both repo checkouts\n   (incl. `.git` size and any git-lfs cache). Also `tmutil listlocalsnapshots /` (local Time Machine snapshots can hold\n   tens of GB) and the size of any Ollama/model, Docker or simulator folders.\n3. Report the top 15 consumers with what each is and a SAFE action for each (move to NAS by the AGENTS rule, clear a\n   cache, thin snapshots, or leave). Do not delete anything outside step 1; anything needing Ben (his own files,\n   Photos/iCloud, app data, snapshots) goes in the report for the Chief to put to him in one line.\n4. If step 1 alone brings free space to 20 GB+, comment on J1100 so it resumes. GBP0. Post the summary on #264.\n",
+      "body": "# Mini disk round 2: act, don't ask (J1100 needs 20 GB free)\n\nBen, 28 Oct 2026: \"you shouldn't be waiting on me ... make your own decisions.\" Supersedes J1112's report-only scope.\nJ1110 moved 26 superseded exports (1 GB); the Mini has ~16.8 GB free; all OWB film projects total only ~6.6 GB.\n\n1. `python3 scripts/mini_repair.py --apply` (package caches, clean pushed temp worktrees; blocking files kept in\n   ~/_desk/rescue). Record free space before/after.\n2. Survey `du -sh` one level of ~/*, ~/Library/{Caches,Application Support,Containers}/*, ~/Downloads, ~/Movies,\n   /private/tmp/*, both checkouts (.git, git-lfs cache), and `tmutil listlocalsnapshots /`.\n3. Act on what is safe, without asking anyone:\n   - local Time Machine snapshots: `tmutil thinlocalsnapshots / 999999999999 4` (macOS recreates them; nothing lost);\n   - app/package caches (`~/Library/Caches/*` of Homebrew, pip, npm, yarn, Chrome *Code Cache/GPU/Service Worker\n     caches*, ms-playwright old browsers, Xcode DerivedData, CoreSimulator caches), `git gc --prune=now` and\n     `git lfs prune` in both checkouts;\n   - studio media outside git (old exports, renders, downloaded source footage in the repos, ~/_desk, /private/tmp)\n     to the NAS by the AGENTS.md NAS rule (rsync, sha256 both sides, delete local only on a full match,\n     MOVED_TO_NAS.txt; never the newest two versions of a cut or anything a pending job/upload/test names).\n   Leave Ben's personal files (Photos, Documents, Desktop, Mail, Messages, app data) alone; don't ask about them.\n4. Stop at 30 GB free. If 20 GB+ free, comment on J1100 so it resumes. Report in jobs/reviews/<this job>/REPORT.md and one\n   line on #264. GBP0. Never delete on the NAS.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -97762,11 +97762,44 @@
           "at": "2026-10-28T16:53Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T16:58Z",
+          "by": "claude",
+          "what": "brief updated: act, don't ask (Ben 28 Oct)"
         }
       ],
-      "remaining_action": "Run the safe clean-up and list what is filling the Mini's disk",
+      "remaining_action": "Clean caches and snapshots and move studio media to the NAS until 30 GB free",
       "kind": "assembly",
       "urgent": 5
+    },
+    {
+      "id": "J1113",
+      "title": "HOS Shorts thumbnails: open the HOS Studio browser yourself (CDP 9222), then set every scheduled HOS Short to its frame-0 hook",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# HOS Shorts thumbnails: open the HOS Studio browser yourself, then set frame-0 hooks (follow-on to J1111)\n\nJ1111 fixed 12 of 22 OWB scheduled Shorts (evidence PR #317) and stopped on HOS: \"HOS Studio profile has no\naccessible CDP endpoint\". Ben, 28 Oct 2026: \"you shouldn't be waiting on me. Nothing apart from actually watching and\ncommenting on the finished videos should be reliant on me.\" So do not park this for Ben.\n\n1. Find the HOS Chrome profile already signed in to the History of Science channel (the Flow/HOS browser that used CDP\n   9222: look for its --user-data-dir in `ps`, launchd plists, ~/_desk, the HOS checkout's tools and docs, e.g.\n   docs/PLAYBACK_LAG_FIX.md's clone pattern). Launch it detached with\n   `--remote-debugging-port=9222 --remote-allow-origins='*' --user-data-dir=<that dir>` on https://studio.youtube.com/\n   and confirm http://127.0.0.1:9222/json/list shows studio.youtube.com for the HOS channel (not accounts.google.com).\n   Keep Orbit on 9223 untouched.\n2. Do J1111's steps for every scheduled HOS Short: thumbnail = its frame-0 hook (pack cover / *_frame0.jpg, or the\n   0.0-0.5 s frame), earliest air first; read back; add the HOS section to\n   05_Analytics/weekly_thumb_audit/SHORTS_THUMB_FIX_2026-10-28.md; one line on #264.\n3. Only if Google demands a password or 2FA (a real sign-in, Ben's): say so in one line on #264 and finish this job\n   with what was possible; never wait. Thumbnail only; no title/privacy/schedule/Replace/delete; GBP0. Chief PASSes from\n   the read-back.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T16:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T16:58Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Open the HOS Studio browser and set each scheduled HOS Short's thumbnail to its hook frame",
+      "kind": "studio"
     }
   ],
   "focus": [],
