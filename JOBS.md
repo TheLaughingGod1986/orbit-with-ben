@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1098 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS Snow Short: mature 48-hour Studio and retention read | 6472484257 |
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1101 | mini | blocked | codex | – | studio · Swap S1 A6TW_6CXhcs (026) to Ben-OK'd v04 (Private, same slot Fri 20 Nov 11:30) |  |
-| J1104 | any | claimed | claude | 2026-10-28T23:52Z | chief · Chief: verify condition for J0936 |  |
+| J1104 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
 | J1106 | mini | blocked | codex | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
 | J1107 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
