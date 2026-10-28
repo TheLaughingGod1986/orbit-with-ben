@@ -31,31 +31,52 @@ def soft_rect(im,plate,box):
  x,y,w,h=box;fg=plate.resize((w,h),Image.Resampling.LANCZOS);m=Image.new('L',(w,h),0)
  ImageDraw.Draw(m).rectangle((24,24,w-24,h-24),fill=255);m=m.filter(ImageFilter.GaussianBlur(18));im.paste(fg,(x,y),m)
 
+def stellar_disc(size):
+ # Stay inside the actual stellar limb: the old crop included blue background.
+ p=Image.open(SRC/'laststar_master_t243.png').convert('RGB').crop((400,125,868,593))
+ p=ImageEnhance.Contrast(p).enhance(0.70)
+ p=ImageEnhance.Color(p).enhance(1.15)
+ p=p.resize((size,size),Image.Resampling.LANCZOS)
+ m=Image.new('L',(size,size),0);ImageDraw.Draw(m).ellipse((4,4,size-5,size-5),fill=255)
+ return p,m.filter(ImageFilter.GaussianBlur(2))
+
 def last_star():
- im=background(5,(47,13,37));p=Image.open(SRC/'laststar_master_t243.png').convert('RGB')
- # Whole stellar disc from the film's own frame; it is concept art, not a new NASA claim.
- p=p.crop((375,103,893,622));m=Image.new('L',p.size,0);ImageDraw.Draw(m).ellipse((3,3,515,515),fill=255)
- p=ImageEnhance.Color(p).enhance(1.5);im.paste(p.resize((470,470)),(570,180),m.resize((470,470)).filter(ImageFilter.GaussianBlur(1)))
- # Earth is a foreground story reference, not a dimensional ratio or a claim it survives until then.
- earth(im,225,530,140)
- im=pack.grade(im,125,False);pack.band(im,['RED','DWARFS','WIN'],'WIN');return im
+ im=background(5,(47,13,37));p,m=stellar_disc(490)
+ im.paste(p,(450,180),m)
+ im=pack.grade(im,120,False);pack.band(im,['RED','DWARF','END'],'END');return im
 
 def andromeda():
- im=background(19,(9,26,53));p=Image.open(SRC/'andromeda_PIA15416.jpg').convert('RGB').crop((1000,1300,8500,6000))
- p=pack.grade(p,135,True);soft_rect(im,p,(225,165,1020,525));earth(im,140,575,125)
- im=pack.grade(im,125,False);pack.band(im,['STARS','MISS','STARS'],'MISS');return im
+ # Full-width plate, with its own blurred sky behind the title; no inset rectangle.
+ p=Image.open(SRC/'andromeda_PIA15416.jpg').convert('RGB').crop((1000,1300,8500,6000))
+ p=pack.grade(p,120,True)
+ im=background(19,(9,26,53))
+ fg=p.resize((W,535),Image.Resampling.LANCZOS)
+ mask=np.ones((535,W),dtype=np.uint8)*255
+ mask[:75,:]=np.linspace(0,255,75).astype('uint8')[:,None]
+ im.paste(fg,(0,185),Image.fromarray(mask))
+ im=pack.grade(im,115,True);pack.band(im,['MOST','STARS','MISS'],'MISS');return im
 
 def compilation():
- im=background(21,(0,0,0));im=Image.fromarray((np.asarray(im).astype('uint16')+np.array([4,5,7])).clip(0,255).astype('uint8'));p=Image.open(OUT/'PIA06193.png').convert('RGB')
- # Preserve the complete natural shadow geometry; feather the plate sky, not the rings.
- p=p.crop((100,300,4000,1980));p=pack.grade(p,120,True)
- soft_rect(im,p,(55,165,1170,504))
- earth(im,180,635,52)
- im=pack.grade(im,120,True);pack.band(im,['SATURN','TO','STARLIGHT'],'STARLIGHT');return im
+ im=background(21,(5,8,10));p=Image.open(OUT/'PIA06193.png').convert('RGB')
+ p=p.crop((100,300,4000,1980))
+ # Preserve cloud-band detail; no whole-plate blur/glow or repeated colour boosts.
+ p=ImageEnhance.Color(p).enhance(1.15)
+ p=p.resize((980,422),Image.Resampling.LANCZOS)
+ # Key only the near-black plate sky into the house background; no rectangular slab.
+ lum=np.asarray(p).max(axis=2).astype(float)
+ alpha=Image.fromarray(np.clip((lum-5)/24*255,0,255).astype('uint8')).filter(ImageFilter.GaussianBlur(0.6))
+ im.paste(p,(275,255),alpha)
+ # A separate endpoint vignette indicates the second story scale, not orbital geometry.
+ star,mask=stellar_disc(175);im.paste(star,(65,205),mask)
+ im=ImageEnhance.Color(im).enhance(1.15)
+ # Lift deep shadows without a blur pass; retain the original band texture.
+ im=im.point(lambda v: round(28+227*v/255))
+ im=ImageEnhance.Color(im).enhance(1.35)
+ pack.band(im,['FIVE','COSMIC','CLOCKS'],'CLOCKS');return im
 
 rows=[]
-for vid,fn,hook,title in [('REXYxuLOBoI',last_star,'RED DWARFS WIN','Why Will Red Dwarfs Be the Last Stars?'),('ojk-dfOpAmw',andromeda,'STARS MISS STARS',"Why Do Stars Usually Miss When Galaxies Collide?"),('m09jUdwC5hk',compilation,'SATURN TO STARLIGHT','How Long Do Moons, Rings and Stars Last?')]:
- im=fn();p=OUT/f'{vid}_B_v01.jpg';im.save(p,quality=94,subsampling=0,optimize=True);assert im.size==(1280,720) and p.stat().st_size<2000000
+for vid,fn,hook,title in [('REXYxuLOBoI',last_star,'RED DWARF END',"What Happens When the Universe's Last Star Dies?"),('ojk-dfOpAmw',andromeda,'MOST STARS MISS',"What Would Andromeda Look Like from Earth?"),('m09jUdwC5hk',compilation,'FIVE COSMIC CLOCKS','How Long Do Moons, Rings and Stars Last?')]:
+ im=fn();p=OUT/f'{vid}_B_v02.jpg';im.save(p,quality=94,subsampling=0,optimize=True);assert im.size==(1280,720) and p.stat().st_size<2000000
  rows.append({'video':vid,'file':str(p),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'hook':hook,'title_B_proposal':title,'status':'draft; no test armed; Chief and panel required'})
-(OUT/'MANIFEST.json').write_text(json.dumps({'job':'J1106','designs':rows,'source_notes':{'last_star':'Existing film master frame t243, illustrative star','andromeda':'NASA/JPL-Caltech PIA15416 existing plate','saturn':'NASA/JPL/Space Science Institute PIA06193, https://svs.gsfc.nasa.gov/30348/','earth':'NASA Apollo 17 as17-148-22727 existing plate; foreground story reference, not orbital geometry'}},indent=2)+'\n')
+(OUT/'MANIFEST_v02.json').write_text(json.dumps({'job':'J1106','designs':rows,'source_notes':{'last_star':'Existing film master frame t243, illustrative star','andromeda':'NASA/JPL-Caltech PIA15416 existing plate','saturn':'NASA/JPL/Space Science Institute PIA06193, https://svs.gsfc.nasa.gov/30348/','reference_rule':'Earth removed on unanimous panel advice. Main-character/scale-reference requirement remains unresolved; Chief decision required, no PASS claimed.'}},indent=2)+'\n')
 print(json.dumps(rows,indent=2))
