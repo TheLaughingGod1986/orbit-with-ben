@@ -95738,19 +95738,39 @@
           "at": "2026-10-28T12:53Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T12:54Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original audit, FIX ruling, correction result and approval history; J1003 remains blocked and independently tracked by J1087."
         }
       ],
-      "remaining_action": "Verify J0985 correction and mature Earth Short evidence, then record the hold decision",
+      "remaining_action": "Check capture maturity and record the actual remaining J0985 hold",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-28T12:35:36+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T12:53Z",
-        "by": "codex"
-      }
+        "at": "2026-10-28T12:54Z",
+        "by": "codex",
+        "note": "Read original audit, FIX ruling, correction result and approval history; J1003 remains blocked and independently tracked"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032"
+      ]
     },
     {
       "id": "J1087",
