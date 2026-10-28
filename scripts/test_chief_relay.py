@@ -834,6 +834,29 @@ class Relay(unittest.TestCase):
         self.assertIn("moved 7 untracked file(s)", post)
         self.assertEqual(json.loads((cr.STATE / "chief" / "heal.json").read_text())["after_mb"], 25000)
 
+    def test_a_low_disk_moves_old_scratch_to_the_nas_and_says_so(self):
+        import json
+        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        calls = self.tmp / "offload.calls"
+        (cr.OWB / "scripts" / "nas_offload.py").write_text(
+            "def offload(apply, target_gb=20):\n"
+            f"    open({str(calls)!r}, 'a').write('x')\n"
+            "    return {'before_mb': 7000, 'after_mb': 31000, 'target_mb': 20480, 'nas': 'ok', 'would': [], 'kept': [],\n"
+            "            'moved': [{'path': '/private/tmp/r', 'nas': '/Volumes/data/x', 'ok': True, 'mb': 24000, 'files': 9}]}\n"
+            "def summary(rep):\n"
+            "    return 'NAS offload: moved 1 scratch folder(s), 24,000 MB, to the NAS (sha256 checked). 7,000 -> 31,000 MB free.'\n")
+        os.environ["CHIEF_OFFLOAD_ANY_OS"] = "1"
+        os.environ["CHIEF_OFFLOAD_GB"] = str(10 ** 9)  # the disk counts as under target
+        try:
+            cr.offload_scratch(T0)
+            cr.offload_scratch(T0 + 30 * MIN)  # throttled: once per 3 h
+        finally:
+            os.environ.pop("CHIEF_OFFLOAD_ANY_OS")
+            os.environ.pop("CHIEF_OFFLOAD_GB")
+        self.assertEqual(calls.read_text(), "x")
+        self.assertIn("moved 1 scratch folder(s)", self.posts.read_text())
+        self.assertEqual(json.loads((cr.STATE / "chief" / "offload.json").read_text())["moved"], 1)
+
     def test_a_disk_still_full_after_repair_wakes_nobody(self):
         self.routed_queue('{"jobs": [{"id": "J0404", "kind": "assembly", "status": "open", "needs": "mini"}]}')
         (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
