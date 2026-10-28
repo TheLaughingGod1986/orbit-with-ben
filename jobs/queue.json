@@ -94526,13 +94526,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-28T08:46Z",
-      "eta": "2026-10-28T10:46Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T08:38Z",
-      "result": "",
+      "result": "parked for Chief: J1066/J1075 QA inventory (e15f7c161cf9) and report (e2ab04c94b08) reconciled and committed in OWB e862e8ba5 and HOS 05c8581e: all 26 archived OWB v01 lift Shorts resolved to NAS tarballs (/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/{owbold,owbshorts,owbextra}.tar + MOVES_2026-10-24.log) with verified 64-hex SHA-256s; all 7 verified_in_pack file rows replaced with 64-hex SHA-256s and exact manifest paths; all 8 silent_visual_pack directories enumerated with 119 member file paths/SHA-256s (143 single-file exports + 8 packs [119 members] = 151 entries / 262 verified files); 129 newest candidates separated from 22 historical superseded versions (including wed11_opening_testA_v05 superseding v04); 434/434 fresh gate sidecars verified (0 FAIL, 370 with WARNs across 140 entries, 0 new fix jobs needed); all J0935/J1059/J0936/J1032/J0961/J0966/J1005/J0977/J0979/J1008 rulings and holds explicitly preserved",
       "history": [
         {
           "at": "2026-10-28T08:38Z",
@@ -94573,6 +94573,11 @@
           "at": "2026-10-28T09:17Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 done: committed and pushed byte-identical reconciled QA inventory (e15f7c161cf9) and report (e2ab04c94b08) in HOS 05c8581e and OWB e862e8ba5"
+        },
+        {
+          "at": "2026-10-28T09:17Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J1066/J1075 QA inventory (e15f7c161cf9) and report (e2ab04c94b08) reconciled and committed in OWB e862e8ba5 and HOS 05c8581e: all 26 archived OWB v01 lift Shorts resolved to NAS tarballs (/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/{owbold,owbshorts,owbextra}.tar + MOVES_2026-10-24.log) with verified 64-hex SHA-256s; all 7 verified_in_pack file rows replaced with 64-hex SHA-256s and exact manifest paths; all 8 silent_visual_pack directories enumerated with 119 member file paths/SHA-256s (143 single-file exports + 8 packs [119 members] = 151 entries / 262 verified files); 129 newest candidates separated from 22 historical superseded versions (including wed11_opening_testA_v05 superseding v04); 434/434 fresh gate sidecars verified (0 FAIL, 370 with WARNs across 140 entries, 0 new fix jobs needed); all J0935/J1059/J0936/J1032/J0961/J0966/J1005/J0977/J0979/J1008 rulings and holds explicitly preserved"
         }
       ],
       "remaining_action": "Await Chief review of reconciled J1066/J1075 QA sweep inventory and report",
