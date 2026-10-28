@@ -14,7 +14,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0275 | mini | blocked | gemini | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0280 | mini | blocked | cursor | – | for cursor · studio · `cursor-auto` · HOS Related fixes ×4 after longs public (from J0245) |  |
 | J0302 | mini | blocked | cursor | – | 032 vo · vo · `eleven_v3` · 032 Titan: VO from locked script v01 (J0301 PASS) | 97b7af4e |
-| J0317 | mini | blocked | cursor | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
+| J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0345 | mini | blocked | cursor | – | 031 vo · vo · `eleven_v3` · 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) | 9334d38a |
 | J0807 | mini | open (after J0345) | – | – | vo · HOS 013 Darwin–Wallace: VO from locked script v02 (J0307 PASS) |  |
 | J0821 | cloud | blocked | claude | – | studio · Relay: second 'light' Mini lane alongside the heavy one (build once 2 Mini agents have credit) |  |
@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0936 | mini | blocked | gemini | – | for gemini · video · 60% re-cut batch C c59 FIX -> v03 (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - level -14 LUFS/TP<=-1.6, _PHONE.mp4, NAS copies + per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6409202315 |
 | J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
-| J0961 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · 029 Betelgeuse: Private upload of the 3 Shorts v04 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Wed09 v04 watch | 6404618803 |
+| J0961 | mini | open (after J0991) | – | – | for gemini · studio · `gpt-6.1-sol` · 029 Betelgeuse: Private upload of the 3 Shorts v04 (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London) after Wed09 v04 watch | 6404618803 |
 | J0966 | mini | open (after J1005) | – | – | for gemini · video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
 | J0969 | mini | blocked | chief | – | studio · 022 date gate: on/after Sun 1 Nov 18:00 London, read the running A/B/C thumb test (T012), then arm B v02 10% BRIGHTER vs the winner on h8HGfyShEHI | 6407771727 |
 | J0978 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
@@ -38,14 +38,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0998 | mini | blocked | gemini | – | assembly · HOS audit: reproduce playlist boundary duplicate and draft narrow dedup fix | 6428572814 |
 | J0999 | mini | blocked | gemini | – | studio · HOS 099: compilation end screen and altered-content readback | 6428572814 |
 | J1003 | mini | blocked | – | – | review · Earth Short OVLv9dxTcpE: mature 48-hour measurement (J0985 follow-up) |  |
-| J1004 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS J0967 follow-up: resolve remaining hook and duration proposals on paper, preserve production holds |  |
 | J1059 | mini | blocked | gemini | – | studio · OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30 | ab4ad3de4 |
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
-| J1084 | mini | blocked | codex | – | video · 025 Mars Opening Short: v06 starting on a whole sentence (Ben's change on v05: '00:01 starts mid sentence'), gates, park for Chief |  |
-| J1088 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J1090 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · OWB 025 Mars Opening v07: remove final-shot rover hardware, audition opening, rerun gates | 6da30d624 |
-| J1093 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · OWB 025 v07: direct-audio audition and readable UAT verification for J1090 | c370f1058 |
-| J1098 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS Snow Short: mature 48-hour Studio and retention read | 6472484257 |
 | J1100 | mini | claimed | codex | 2026-10-29T01:44Z | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1104 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
