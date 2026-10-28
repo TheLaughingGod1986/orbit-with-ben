@@ -25,7 +25,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | codex | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0935 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · 60% re-cut batch B c61 FIX -> next version (local only): 025 iyvWYFP_ETA, TtgHNLXfDSs, N42gKBbD7tE, bSjWiCbB7pY + 026 HZGTovJu_TQ, cwU_0WWeNZ4 - level -14 LUFS/TP<=-1.6, _PHONE.mp4, sha256_manifest + broken-VO/per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6410141575 |
 | J0936 | mini | blocked | gemini | – | for gemini · video · 60% re-cut batch C c59 FIX -> v03 (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - level -14 LUFS/TP<=-1.6, _PHONE.mp4, NAS copies + per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6409202315 |
 | J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
@@ -47,6 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1055 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1057 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1058 | mini | open | – | – | assembly · HOS 005 Shorts s06/s07/s08 v01: fix music_gate brief/bed FAIL (£0, no spend) |  |
+| J1059 | mini | blocked | gemini | – | studio · OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30 | ab4ad3de4 |
 
 Recently finished:
 

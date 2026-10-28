@@ -1,5 +1,5 @@
 {
-  "next_id": 1059,
+  "next_id": 1060,
   "jobs": [
     {
       "id": "J0001",
@@ -79580,13 +79580,13 @@
       "stage": "",
       "after": "",
       "eta_min": 600,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T00:42Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
-      "result": "parked for Chief: Batch B RULING_2026-10-26_CODEX.md fixes & evidence complete (wed11 TtgHNLXfDSs v05 PASS; thu12 N42gKBbD7tE v04, fri13 bSjWiCbB7pY v05, mon16 HZGTovJu_TQ v03, wed18 cwU_0WWeNZ4 v04 PASS_WITH_KEEPER_RECONCILIATION_NOTE; mon09 iyvWYFP_ETA v04 INFEASIBLE_OPENING_RETAIN_V01; strict checklist jobs/reviews/J0935/STRICT_BATCH_CHECKLIST_2026-10-28.md 0 errors; no swap jobs or Ready for OK cards)",
+      "result": "PASS (wed11 TtgHNLXfDSs v05 -> held swap J1059 with Ready for OK card) / NO RECUT (mon09 iyvWYFP_ETA, thu12 N42gKBbD7tE, fri13 bSjWiCbB7pY, mon16 HZGTovJu_TQ, wed18 cwU_0WWeNZ4 retain scheduled copies under Keeper + c61). Ruling: ab4ad3de4 (jobs/reviews/J0935/RULING_2026-10-28_GEMINI.md).",
       "history": [
         {
           "at": "2026-10-25T06:33Z",
@@ -79967,6 +79967,11 @@
           "at": "2026-10-28T01:48Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Batch B RULING_2026-10-26_CODEX.md fixes & evidence complete (wed11 TtgHNLXfDSs v05 PASS; thu12 N42gKBbD7tE v04, fri13 bSjWiCbB7pY v05, mon16 HZGTovJu_TQ v03, wed18 cwU_0WWeNZ4 v04 PASS_WITH_KEEPER_RECONCILIATION_NOTE; mon09 iyvWYFP_ETA v04 INFEASIBLE_OPENING_RETAIN_V01; strict checklist jobs/reviews/J0935/STRICT_BATCH_CHECKLIST_2026-10-28.md 0 errors; no swap jobs or Ready for OK cards)"
+        },
+        {
+          "at": "2026-10-28T04:11Z",
+          "by": "gemini",
+          "what": "done: PASS (wed11 TtgHNLXfDSs v05 -> held swap J1059 with Ready for OK card) / NO RECUT (mon09 iyvWYFP_ETA, thu12 N42gKBbD7tE, fri13 bSjWiCbB7pY, mon16 HZGTovJu_TQ, wed18 cwU_0WWeNZ4 retain scheduled copies under Keeper + c61). Ruling: ab4ad3de4 (jobs/reviews/J0935/RULING_2026-10-28_GEMINI.md)."
         }
       ],
       "kind": "assembly",
@@ -79976,12 +79981,12 @@
       ],
       "escalated_at": "2026-10-26T13:55Z",
       "chief_review": {
-        "by": "codex",
-        "at": "2026-10-26T21:57Z",
-        "verdict": "FIX",
-        "evidence": "jobs/reviews/J0935/RULING_2026-10-26_CODEX.md",
-        "next": "Reopen J0935 for assembly, six per-Short fixes/evidence steps; return for Chief review by 2026-11-01 20:00 Europe/London",
-        "external_wait": false
+        "by": "gemini",
+        "at": "2026-10-28T04:11Z",
+        "verdict": "PASS (wed11 TtgHNLXfDSs v05) / NO RECUT (mon09, thu12, fri13, mon16, wed18 retain scheduled copies)",
+        "evidence": "jobs/reviews/J0935/RULING_2026-10-28_GEMINI.md",
+        "next": "J1059 held on Ben's OK for TtgHNLXfDSs v05 swap by 2026-11-11 10:30 London; mon09, thu12, fri13, mon16, wed18 retain scheduled uploads",
+        "external_wait": true
       },
       "progress": {
         "step": 6,
@@ -79999,7 +80004,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "done_ref": "ab4ad3de4"
     },
     {
       "id": "J0936",
@@ -92838,6 +92844,64 @@
       ],
       "remaining_action": "Give HOS 005 Shorts s06_blood_pressure_cuff_v01, s07_heart_pulse_v01, and s08_capillaries_v01 own-synthesis or Pace/NOT-documented beds in 05_Music and re-run music_gate.py to PASS",
       "kind": "assembly"
+    },
+    {
+      "id": "J1059",
+      "title": "OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief (Gemini) 28 Oct 2026, J0935 batch B wed11_opening_testA_v05 PASS (ruling ab4ad3de4, jobs/reviews/J0935/RULING_2026-10-28_GEMINI.md).\n\nHELD ON BEN'S OK. Do not claim or start until Ben has OK'd the swap of the OWB 025 Mars Opening Short TtgHNLXfDSs (\"Why Did a 90-Day Mars Rover Last 14 Years?\", airs Wed 11 Nov 11:30 London) to re-cut v05 (OWB UAT/025_wed11_opening_testA_v05/wed11_opening_testA_v05_PHONE.mp4, sha256 ed578e9ed15ed31138cc3af95525cb81b6cedad535dd33e4cb7cd51a0ceb76d3; master sha256 efe446a4dd6fe4c61e60d53938a17feb19270204210825dd8044731c47c18009) on the board or the thread. Deadline for that OK: Wed 11 Nov 10:30 London (c51 rule). If Ben sends notes, or there is no OK by then, this job is cancelled and the scheduled v02 (TtgHNLXfDSs) airs Wed 11 Nov 11:30 London as is.\n\nAfter Ben's OK:\n1. Read back TtgHNLXfDSs (privacy, publishAt, title, description, tags, cover, Related video). It should be Private with publishAt Wed 11 Nov 11:30 London (2026-11-11T11:30:00Z); if not, park for Chief.\n2. Verify the master sha256 above (02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v05.mp4 / OWB UAT/025_wed11_opening_testA_v05/wed11_opening_testA_v05.mp4, = sha256_manifest.json: efe446a4dd6fe4c61e60d53938a17feb19270204210825dd8044731c47c18009), then upload it to OWB as a new Private video with the same publishAt (2026-11-11T11:30:00Z). Copy title, description, tags, frame-0 cover (wed11_opening_testA_v05_frame0.jpg) and Related video (Js6EQJ8qDi8) from TtgHNLXfDSs. Captions en-GB from wed11_opening_testA_v05_meta.json spoken_text.\n3. Only after step 2 reads back Private + correct publishAt: set TtgHNLXfDSs (v02) to private and unscheduled. Nothing deleted, no Replace.\n4. Run `cd 07_Content-Ops && npx tsx --env-file=.env scripts/verify-swap.ts --job J1059 --old TtgHNLXfDSs --new <new id>` so `jobs/readbacks/J1059.json` records both copies; update `00_Brand/Channel-Setup/social/UPLOADS.json` and `gate_shorts_open.py status`; post the read-back on the OWB thread.\nIf step 2 has not read back Private + publishAt by 11:15 London on the air day, or any step fails after 10:30 that day, leave TtgHNLXfDSs (v02) scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "ab4ad3de4",
+      "film": "",
+      "stage": "",
+      "after": "J0935",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "gemini",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-10-28T04:11Z",
+      "result": "waits on Ben's OK of the OWB 025 Mars Opening Short TtgHNLXfDSs swap to v05 (_PHONE in OWB UAT) by Wed 11 Nov 10:30 London. Acting-Chief PASS ab4ad3de4.",
+      "history": [
+        {
+          "at": "2026-10-28T04:11Z",
+          "by": "gemini",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-28T04:11Z",
+          "by": "gemini",
+          "what": "blocked: waits on Ben's OK of the OWB 025 Mars Opening Short TtgHNLXfDSs swap to v05 (_PHONE in OWB UAT) by Wed 11 Nov 10:30 London. Acting-Chief PASS ab4ad3de4."
+        },
+        {
+          "at": "2026-10-28T04:11Z",
+          "by": "gemini",
+          "what": "waits on Ben: swap the 025 Mars Opening Short \"Why Did a 90-Day Mars Rover Last 14 Years?\" (TtgHNLXfDSs, airs Wed 11 Nov 11:30) to re-cut v05 (by 2026-11-11 10:30 London)"
+        }
+      ],
+      "remaining_action": "Swap OWB 025 Mars Opening Short TtgHNLXfDSs to wed11_opening_testA_v05 after Ben's OK",
+      "due": "2026-11-11T10:30:00Z",
+      "kind": "studio",
+      "taskKeys": [
+        "OWB:025"
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "waits on Ben's OK of the OWB 025 Mars Opening Short TtgHNLXfDSs swap to v05 (_PHONE in OWB UAT) by Wed 11 Nov 10:30 London. Acting-Chief PASS ab4ad3de4.",
+        "check_at": "2026-11-11T10:30:00Z"
+      },
+      "awaits_ben": {
+        "what": "swap the 025 Mars Opening Short \"Why Did a 90-Day Mars Rover Last 14 Years?\" (TtgHNLXfDSs, airs Wed 11 Nov 11:30) to re-cut v05",
+        "file": "OWB UAT/025_wed11_opening_testA_v05/wed11_opening_testA_v05_PHONE.mp4",
+        "version": "v05",
+        "due": "2026-11-11T10:30Z",
+        "airs": "2026-11-11T11:30Z",
+        "ifNot": "No OK by then: scheduled v02 airs Wed 11 Nov 11:30 as is",
+        "title": "025 Mars 14-Year Rover Short re-cut v05 (swap)",
+        "number": "025",
+        "type": "short"
+      }
     }
   ],
   "focus": [],
