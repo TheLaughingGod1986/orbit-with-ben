@@ -97055,13 +97055,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T22:09Z",
-      "eta": "2026-10-29T00:09Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "",
+      "result": "parked for Chief: S6 natural phrase trial completes Gliese 710 at 3.215s against J1029 lock <=2.500s. Decide timing exception, authorize complete-question pickup, or supply another accepted phrase plan. S2/S5 unreviewed v05 delivered with automated gates and 48 hash-verified payload copies; actual AAC listening/full caption reconciliation remains outstanding for an audio-capable worker. PR333 2037a5a6f; preserve 1/3 plan. No approval, watch card, upload, swap or credit spend.",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -97162,6 +97162,11 @@
           "at": "2026-10-28T22:27Z",
           "by": "codex",
           "what": "step 1 of 3 done: S2 and S5 v05 worker evidence delivered repo/UAT/NAS: 48 verified payload copies. Automated gates pass with retained J1032 scoped seam rulings; dense OCR/dark/audio/loop checked. PR333 at 2037a5a6f. S6 native-phrase trial completes subject 3.215s versus locked 2.500s; no exception taken. Actual AAC listening is explicitly not done; ASR is evidence only. All renders exited; existing 1/3 retained because third assembly incomplete."
+        },
+        {
+          "at": "2026-10-28T22:27Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: S6 natural phrase trial completes Gliese 710 at 3.215s against J1029 lock <=2.500s. Decide timing exception, authorize complete-question pickup, or supply another accepted phrase plan. S2/S5 unreviewed v05 delivered with automated gates and 48 hash-verified payload copies; actual AAC listening/full caption reconciliation remains outstanding for an audio-capable worker. PR333 2037a5a6f; preserve 1/3 plan. No approval, watch card, upload, swap or credit spend."
         }
       ],
       "remaining_action": "Chief must resolve S6's 2.5s subject lock; finish S6 and actual AAC listening before replacement review",
