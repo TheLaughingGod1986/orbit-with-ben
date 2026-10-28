@@ -96954,10 +96954,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T15:48Z",
+      "eta": "2026-10-28T17:48Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
       "result": "",
@@ -96971,6 +96971,11 @@
           "at": "2026-10-28T15:48Z",
           "by": "relay",
           "what": "rerouted to codex: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-10-28T15:48Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix the three openings Ben flagged, then gates and park for Chief",
@@ -96983,7 +96988,15 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex"
+      "for": "codex",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T15:48Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1101",
