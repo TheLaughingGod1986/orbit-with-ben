@@ -1,5 +1,5 @@
 {
-  "next_id": 1093,
+  "next_id": 1094,
   "jobs": [
     {
       "id": "J0001",
@@ -96263,6 +96263,37 @@
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes"
+    },
+    {
+      "id": "J1093",
+      "title": "OWB 025 v07: direct-audio audition and readable UAT verification for J1090",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief Codex ruling on J1090: FIX / acceptance incomplete, not final OK. Evidence c370f1058 on codex/J1090 (/private/tmp/J1090-wt/jobs/reviews/J1090). Existing media under /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports. No new render is needed unless a real defect is found.\n1. Capability-check direct audio ingestion first. Use Gemini Argon through the existing subscription agy route if it supports actual audio input; do not use a paid API or buy credit. Actually audition the full 26.033s v07 master and its opening/joins, comparing the locked source and unchanged stem_vo.wav. Explicitly resolve source 'for more' vs Whisper 'from more'; record exact media SHA256, audio-input method, timestamps and audible findings. ASR, waveform checks or local afplay without reviewer audio perception do not count. If audio input is unsupported, record the exact capability failure and return for Chief to assign a genuinely audio-capable reviewer, not a false listening PASS.\n2. Review complete final-shot motion and transitions, full-runtime sheet, all three picture warnings (7.3/13.8/20.2s) and caption/title safety. Existing samples show no MSL hardware at 24.8s. No speech rewrite, new TTS, generation or credit spend authorised. Preserve accepted 5.16s reveal, 9.224-11.304s wind and v01-v07.\n3. Recheck all nine files against evidence/sha256_manifest_v07.json at local, NAS youtube-staging/025/wed11_opening_testA_v07 and iCloud OWB UAT/025_wed11_opening_testA_v07. PHONE currently matches; master and seven support files return Errno 11. Hydrate/re-copy versioned UAT files from verified local/NAS originals if needed, preserve originals; no NAS deletion. Record readable hashes after delivery, not copy success alone.\nReturn exact listening and delivery evidence to elected Chief. J1090/J1084 stay held pending acceptance; J1059 remains held for Ben. Only after explicit Chief PASS may J1059 reference v07 for Ben's watch (11 Nov 10:30 London); otherwise scheduled TtgHNLXfDSs v02 airs 11:30 as is. No upload, swap, scheduling or privacy changes. Use OWB:025 taskKeys on every progress update. Review deadline 6 Nov 20:00 London; start when available, not on the deadline.\n",
+      "ref": "c370f1058",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-28T13:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T13:53Z",
+          "by": "codex",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Audition v07 audio directly, finish visual QA and verify readable UAT hashes",
+      "due": "2026-11-06T20:00:00Z",
+      "for": "gemini",
+      "kind": "qa",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
