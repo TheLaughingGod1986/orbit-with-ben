@@ -93384,9 +93384,14 @@
           "at": "2026-10-28T05:56Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T05:57Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J1064; starting inspection of 16 HOS 001-004 v01 lift Shorts"
         }
       ],
-      "remaining_action": "HOS 001-004 v01 lift Shorts music_gate fix (£0, no spend): persist 05_Music beds and plan sidecars for 16 lift Shorts",
+      "remaining_action": "Inspect music_gate.py and HOS 001-004 lift Shorts setup",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -93399,12 +93404,17 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-28T05:56Z",
+        "of": 5,
+        "at": "2026-10-28T05:57Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1064; starting inspection of 16 HOS 001-004 v01 lift Shorts"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004"
+      ]
     },
     {
       "id": "J1065",
