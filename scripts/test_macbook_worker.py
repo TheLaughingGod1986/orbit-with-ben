@@ -17,6 +17,7 @@ BATT = "Now drawing from 'Battery Power'\n -InternalBattery-0 (id=1)\t80%; disch
 IDLE_20 = '    |   "HIDIdleTime" = 1200000000000\n'
 IDLE_1 = '    |   "HIDIdleTime" = 60000000000\n'
 T0 = dt.datetime(2026, 10, 28, 12, 0, tzinfo=dt.timezone.utc)
+WED_NIGHT = dt.datetime(2026, 10, 28, 22, 0, tzinfo=dt.timezone.utc)
 
 
 class Guards(unittest.TestCase):
@@ -30,17 +31,33 @@ class Guards(unittest.TestCase):
         self.tmp.cleanup()
 
     def test_idle_on_mains_with_space_runs(self):
-        self.assertEqual(mw.guards(AC, IDLE_20, free_gb=100), [])
+        self.assertEqual(mw.guards(AC, IDLE_20, free_gb=100, now=WED_NIGHT), [])
+
+    def test_hours_are_weeknights_and_weekends_london(self):
+        at = lambda s: dt.datetime.fromisoformat(s)  # noqa: E731
+        self.assertTrue(mw.in_hours(at("2026-10-28T21:30:00+00:00")))   # Wed 21:30 London
+        self.assertTrue(mw.in_hours(at("2026-10-29T08:00:00+00:00")))   # Thu 08:00
+        self.assertFalse(mw.in_hours(at("2026-10-29T09:00:00+00:00")))  # Thu 09:00: Ben's working day
+        self.assertFalse(mw.in_hours(at("2026-10-29T14:00:00+00:00")))  # Thu afternoon
+        self.assertTrue(mw.in_hours(at("2026-10-31T14:00:00+00:00")))   # Sat afternoon
+        self.assertTrue(mw.in_hours(at("2026-11-01T14:00:00+00:00")))   # Sun afternoon
+        self.assertTrue(mw.in_hours(at("2026-06-03T20:30:00+00:00")))   # BST: 21:30 London in summer
+
+    def test_no_run_that_would_end_after_nine(self):
+        why = mw.guards(AC, IDLE_20, free_gb=100, now=dt.datetime.fromisoformat("2026-10-29T08:50:00+00:00"))
+        self.assertTrue(any("outside its hours" in w for w in why))
+        why = mw.guards(AC, IDLE_20, free_gb=100, now=dt.datetime.fromisoformat("2026-10-29T14:00:00+00:00"))
+        self.assertTrue(any("outside its hours" in w for w in why))
 
     def test_battery_in_use_and_low_disk_each_stop_it(self):
-        why = mw.guards(BATT, IDLE_1, free_gb=3)
+        why = mw.guards(BATT, IDLE_1, free_gb=3, now=WED_NIGHT)
         self.assertTrue(any("battery" in w for w in why))
         self.assertTrue(any("in use" in w for w in why))
         self.assertTrue(any("disk low" in w for w in why))
 
     def test_pause_file_stops_it(self):
         (mw.STATE / "macbook-worker.pause").write_text("")
-        self.assertTrue(any("paused" in w for w in mw.guards(AC, IDLE_20, free_gb=100)))
+        self.assertTrue(any("paused" in w for w in mw.guards(AC, IDLE_20, free_gb=100, now=WED_NIGHT)))
 
     def test_unreadable_idle_counts_as_in_use(self):
         self.assertEqual(mw.idle_minutes("no such key"), 0.0)
