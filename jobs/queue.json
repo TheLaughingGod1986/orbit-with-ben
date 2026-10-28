@@ -99117,9 +99117,14 @@
           "at": "2026-10-28T21:24Z",
           "by": "codex",
           "what": "step 1 of 4 done: Resumed PR 329 checkpoint. Confirmed NAS-generated AppleDouble files caused false manifest mismatch; no payload missing in chief_tmp. Swap now 10 GiB allocated; full historical drop remains unproven."
+        },
+        {
+          "at": "2026-10-28T21:25Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: PR 329 updated with tested AppleDouble-aware archive verification (5ca713b9f). J1128-resume running; checks every payload hash before local reclaim. Target not yet achieved; J1100 stays blocked."
         }
       ],
-      "remaining_action": "Verify retained NAS archives, recover local space, and finish the recurrence fix",
+      "remaining_action": "Read detached recovery results, reach 30 GB free, finish diagnosis, then reopen J1100",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99134,9 +99139,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-28T21:24Z",
+        "at": "2026-10-28T21:25Z",
         "by": "codex",
-        "note": "Resumed PR 329 checkpoint. Confirmed NAS-generated AppleDouble files caused false manifest mismatch; no payload missing "
+        "note": "PR 329 updated with tested AppleDouble-aware archive verification (5ca713b9f). J1128-resume running; checks every payloa"
       },
       "taskKeys": [
         "OWB:027",
