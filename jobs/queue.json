@@ -97220,13 +97220,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-28T16:06Z",
-      "eta": "2026-10-28T18:06Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "",
+      "result": "New v6euXX2omz4 Private scheduled 2026-12-02 11:30Z; DETI0HV2jlI Private unscheduled; exact listing, cover and en-GB captions copied; verify-swap confirmed. PR 315 for Chief review.",
       "history": [
         {
           "at": "2026-10-28T15:04Z",
@@ -97262,6 +97262,11 @@
           "at": "2026-10-28T16:11Z",
           "by": "codex",
           "what": "step 4 of 4 done: Delivery records committed cd9b0a711, PR 315; dual API verification and exact metadata checks complete"
+        },
+        {
+          "at": "2026-10-28T16:11Z",
+          "by": "codex",
+          "what": "done: New v6euXX2omz4 Private scheduled 2026-12-02 11:30Z; DETI0HV2jlI Private unscheduled; exact listing, cover and en-GB captions copied; verify-swap confirmed. PR 315 for Chief review."
         }
       ],
       "remaining_action": "Chief reviews delivery PR 315; J0910 sets Related after long airs",
@@ -97288,7 +97293,8 @@
       },
       "taskKeys": [
         "OWB:028"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/315"
     },
     {
       "id": "J1104",
