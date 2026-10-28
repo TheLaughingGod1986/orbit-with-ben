@@ -1,5 +1,5 @@
 {
-  "next_id": 1102,
+  "next_id": 1104,
   "jobs": [
     {
       "id": "J0001",
@@ -80345,6 +80345,11 @@
           "at": "2026-10-28T15:04Z",
           "by": "claude",
           "what": "no longer waits on Ben (entry 4): OK'd, delivered by J1101"
+        },
+        {
+          "at": "2026-10-28T15:04Z",
+          "by": "claude",
+          "what": "OKs S1/S3/S4 -> swap jobs J1101/J1102, J1103; changes S2/S5/S6 -> J1100 (Ben's notes)"
         }
       ],
       "kind": "video",
@@ -80398,22 +80403,22 @@
         },
         {
           "what": "swap this Short to v04 (Chief PASS on J1032)",
-          "file": "OWB UAT/028_short_mon30_comets_v04/028_short_mon30_comets_v04_PHONE.mp4",
-          "version": "v04",
-          "due": "2026-11-29T20:00Z",
-          "ifNot": "the current v01 stays scheduled in its slot",
-          "title": "Why Do the Comets Not Arrive While Gliese 710 Is Passing?",
-          "number": "S3",
-          "type": "short"
-        },
-        {
-          "what": "swap this Short to v04 (Chief PASS on J1032)",
           "file": "OWB UAT/028_short_fri04_scale_v04/028_short_fri04_scale_v04_PHONE.mp4",
           "version": "v04",
           "due": "2026-12-03T20:00Z",
           "ifNot": "the current v01 stays scheduled in its slot",
           "title": "How Close Will Gliese 710 Come to the Sun?",
           "number": "S5",
+          "type": "short"
+        },
+        {
+          "what": "swap this Short to v04 (Chief PASS on J1032)",
+          "file": "OWB UAT/028_short_lift_night_sky_35yr_v04/028_short_lift_night_sky_35yr_v04_PHONE.mp4",
+          "version": "v04",
+          "due": "2026-12-06T20:00Z",
+          "ifNot": "the current v01 stays scheduled in its slot",
+          "title": "What Will the Night Sky Look Like When Gliese 710 Arrives?",
+          "number": "S6",
           "type": "short"
         }
       ]
@@ -96895,10 +96900,10 @@
     },
     {
       "id": "J1101",
-      "title": "Swap S1 A6TW_6CXhcs, S3 bizlhspnVvY, S4 DETI0HV2jlI to Ben-OK'd v04 (Private, same slots)",
+      "title": "Swap S1 A6TW_6CXhcs (026) to Ben-OK'd v04 (Private, same slot Fri 20 Nov 11:30)",
       "needs": "mini",
       "repo": "owb",
-      "body": "# Swap three Shorts to Ben-OK'd v04 (J0936 batch C: S1, S3, S4)\n\nBen OK'd on the board, 28 Oct 2026 11:30-11:33. Chief replacement PASS on J1032 (claude, 28 Oct). Exact masters\n(sha256 as recorded on J1032 / jobs/reviews/J1032_v04_delivery_verification.json):\n- **S1** 026 A6TW_6CXhcs (airs Fri 20 Nov 11:30 London): `fri20_grapefruit_cherry_v04.mp4` 228cb06dfd37e3913d5957810dfefd928658885af70842b8cb6e624ebc22cc0b\n- **S3** 028 bizlhspnVvY (airs Mon 30 Nov 11:30 London): `028_short_mon30_comets_v04.mp4` 65e58aea2a202ef3c2d6235bf93049a0d207cb7896b5d5e52479e269b1d9bcad\n- **S4** 028 DETI0HV2jlI (airs Wed 2 Dec 11:30 London, Test A): `028_short_wed02_opening_testA_v04.mp4` 0eb18596d2d6fb0edb8e885782fa9bd94bfe4965fc882c9f70b6f3317de2de97\n\nFor each Short, the same steps as J1059:\n1. Read back the old id (privacy, publishAt, title, description, tags, cover, Related). It should be Private and\n   scheduled for its slot; otherwise park for Chief.\n2. Verify the master sha256 above, then upload it as a NEW Private video with the same publishAt. Copy title,\n   description, tags, frame-0 cover and Related video from the old id. Captions en-GB from the v04 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing\n   deleted, no Replace.\n4. `cd 07_Content-Ops && npx tsx --env-file=.env scripts/verify-swap.ts --job <this job> --old <old> --new <new>`;\n   update UPLOADS.json and `gate_shorts_open.py status`; post the read-back on the OWB thread (#264).\nDo them in air order. Each must be done by 20:00 London the day before it airs; if one fails after that, leave its v01\nscheduled and park for Chief. Never Public, no Replace, no delete. £0.\n",
+      "body": "# Swap S1 026 A6TW_6CXhcs to Ben-OK'd v04 (Private, same slot)\n\nBen OK'd S1 v04 on the board at 2026-10-28T11:30:51Z (J0936). Chief replacement PASS on J1032 (claude, 28 Oct).\nMaster `fri20_grapefruit_cherry_v04.mp4` sha256 228cb06dfd37e3913d5957810dfefd928658885af70842b8cb6e624ebc22cc0b (OWB UAT/fri20_grapefruit_cherry_v04/, NAS copy; jobs/reviews/J1032_v04_delivery_verification.json).\nAirs Fri 20 Nov 11:30 London.\n\n1. Read back the old id (privacy, publishAt, title, description, tags, cover, Related). It should be Private and scheduled for its slot; otherwise park for Chief.\n2. Verify the master sha256, then upload it as a NEW Private video with the same publishAt. Copy title, description, tags, frame-0 cover and Related from the old id. Captions en-GB from the v04 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing deleted, no Replace.\n4. `cd 07_Content-Ops && npx tsx --env-file=.env scripts/verify-swap.ts --job <this job> --old <old> --new <new>`; update UPLOADS.json and `gate_shorts_open.py status`; post the read-back on the OWB thread (#264).\nDone by 20:00 London the day before it airs; if it fails after that, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete. £0.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -96931,22 +96936,109 @@
           "at": "2026-10-28T15:04Z",
           "by": "claude",
           "what": "approved by Ben: swap this Short to v04 (Chief PASS on J1032) v04 (asked in J0936)"
+        },
+        {
+          "at": "2026-10-28T15:04Z",
+          "by": "claude",
+          "what": "approved by Ben: S1 v04 swap (asked in J0936, OK 2026-10-28T11:30:51Z)"
         }
       ],
-      "remaining_action": "Upload the three OK'd v04 Shorts as Private replacements in their slots, then unschedule the old ones",
-      "due": "2026-11-19T20:00:00Z",
+      "remaining_action": "Upload S1 v04 as a Private replacement in its slot, then unschedule the old one",
+      "due": "2026-11-19T20:00Z",
       "kind": "studio",
       "approved_from": {
         "what": "swap this Short to v04 (Chief PASS on J1032)",
-        "file": "OWB UAT/028_short_lift_night_sky_35yr_v04/028_short_lift_night_sky_35yr_v04_PHONE.mp4",
+        "file": "OWB UAT/fri20_grapefruit_cherry_v04/fri20_grapefruit_cherry_v04_PHONE.mp4",
         "version": "v04",
-        "title": "What Will the Night Sky Look Like When Gliese 710 Arrives?",
-        "number": "S6",
+        "title": "Where Is the Nearest Star If You Shrink the Sun to a Grapefruit?",
+        "number": "S1",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J0936",
+        "askId": "J0936.1",
+        "okAt": "2026-10-28T11:30Z"
+      }
+    },
+    {
+      "id": "J1102",
+      "title": "Swap S3 bizlhspnVvY (028) to Ben-OK'd v04 (Private, same slot Mon 30 Nov 11:30)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# Swap S3 028 bizlhspnVvY to Ben-OK'd v04 (Private, same slot)\n\nBen OK'd S3 v04 on the board at 2026-10-28T11:32:25Z (J0936). Chief replacement PASS on J1032 (claude, 28 Oct).\nMaster `028_short_mon30_comets_v04.mp4` sha256 65e58aea2a202ef3c2d6235bf93049a0d207cb7896b5d5e52479e269b1d9bcad (OWB UAT/028_short_mon30_comets_v04/, NAS copy; jobs/reviews/J1032_v04_delivery_verification.json).\nAirs Mon 30 Nov 11:30 London.\n\n1. Read back the old id (privacy, publishAt, title, description, tags, cover, Related). It should be Private and scheduled for its slot; otherwise park for Chief.\n2. Verify the master sha256, then upload it as a NEW Private video with the same publishAt. Copy title, description, tags, frame-0 cover and Related from the old id. Captions en-GB from the v04 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing deleted, no Replace.\n4. `cd 07_Content-Ops && npx tsx --env-file=.env scripts/verify-swap.ts --job <this job> --old <old> --new <new>`; update UPLOADS.json and `gate_shorts_open.py status`; post the read-back on the OWB thread (#264).\nDone by 20:00 London the day before it airs; if it fails after that, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T15:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T15:04Z",
+          "by": "claude",
+          "what": "approved by Ben: S3 v04 swap (asked in J0936, OK 2026-10-28T11:32:25Z)"
+        }
+      ],
+      "remaining_action": "Upload S3 v04 as a Private replacement in its slot, then unschedule the old one",
+      "due": "2026-11-29T20:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap this Short to v04 (Chief PASS on J1032)",
+        "file": "OWB UAT/028_short_mon30_comets_v04/028_short_mon30_comets_v04_PHONE.mp4",
+        "version": "v04",
+        "title": "Why Do the Comets Not Arrive While Gliese 710 Is Passing?",
+        "number": "S3",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J0936",
+        "askId": "J0936.3",
+        "okAt": "2026-10-28T11:32Z"
+      }
+    },
+    {
+      "id": "J1103",
+      "title": "Swap S4 DETI0HV2jlI (028) to Ben-OK'd v04 (Private, same slot Wed 2 Dec 11:30)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# Swap S4 028 DETI0HV2jlI to Ben-OK'd v04 (Private, same slot)\n\nBen OK'd S4 v04 on the board at 2026-10-28T11:33:01Z (J0936). Chief replacement PASS on J1032 (claude, 28 Oct).\nMaster `028_short_wed02_opening_testA_v04.mp4` sha256 0eb18596d2d6fb0edb8e885782fa9bd94bfe4965fc882c9f70b6f3317de2de97 (OWB UAT/028_short_wed02_opening_testA_v04/, NAS copy; jobs/reviews/J1032_v04_delivery_verification.json).\nAirs Wed 2 Dec 11:30 London.\n\n1. Read back the old id (privacy, publishAt, title, description, tags, cover, Related). It should be Private and scheduled for its slot; otherwise park for Chief.\n2. Verify the master sha256, then upload it as a NEW Private video with the same publishAt. Copy title, description, tags, frame-0 cover and Related from the old id. Captions en-GB from the v04 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing deleted, no Replace.\n4. `cd 07_Content-Ops && npx tsx --env-file=.env scripts/verify-swap.ts --job <this job> --old <old> --new <new>`; update UPLOADS.json and `gate_shorts_open.py status`; post the read-back on the OWB thread (#264).\nDone by 20:00 London the day before it airs; if it fails after that, leave v01 scheduled and park for Chief. Never Public, no Replace, no delete. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T15:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T15:04Z",
+          "by": "claude",
+          "what": "approved by Ben: S4 v04 swap (asked in J0936, OK 2026-10-28T11:33:01Z)"
+        }
+      ],
+      "remaining_action": "Upload S4 v04 as a Private replacement in its slot, then unschedule the old one",
+      "due": "2026-12-01T20:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap this Short to v04 (Chief PASS on J1032)",
+        "file": "OWB UAT/028_short_wed02_opening_testA_v04/028_short_wed02_opening_testA_v04_PHONE.mp4",
+        "version": "v04",
+        "title": "Is a Star Really Coming Towards Us?",
+        "number": "S4",
         "type": "short",
         "channel": "OWB",
         "job": "J0936",
         "askId": "J0936.4",
-        "okAt": "2026-10-28T15:04Z"
+        "okAt": "2026-10-28T11:33Z"
       }
     }
   ],
