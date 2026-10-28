@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1061 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1062 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1063 | mini | open | – | – | qa · OWB 020/022 v01 lift Shorts music_gate fix (£0, no spend): 022 plan Pace line + 020 lift_no_crust own bed/plan |  |
+| J1064 | mini | open | – | – | qa · HOS 001-004 v01 lift Shorts music_gate fix (£0, no spend): persist 05_Music beds and plan sidecars for 16 lift Shorts |  |
 
 Recently finished:
 
