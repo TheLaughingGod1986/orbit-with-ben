@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1121 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1122 | macbook | open | – | – | review · Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only) |  |
 | J1126 | cloud | open (after J1125) | – | – | review · Packaging panel decision: HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777 |  |
-| J1127 | mini | open | – | – | listing · Credit readings: fix stale Vertex / Cursor / Flow daily reads, confirm Codex pool, true up plans.json |  |
+| J1127 | mini | claimed | gemini | 2026-10-28T22:13Z | listing · Credit readings: fix stale Vertex / Cursor / Flow daily reads, confirm Codex pool, true up plans.json |  |
 
 Recently finished:
 
