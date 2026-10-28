@@ -93759,9 +93759,14 @@
           "at": "2026-10-28T07:04Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J1066 QA sweep across OWB and HOS packs"
+        },
+        {
+          "at": "2026-10-28T07:13Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Scanned 138 J1060 exports + 13 additional packs: found OWB 029 code_graphics_v01 (10/16 renders newer than Oct 16 gates) and HOS 003 s06_how_xrays_work_v01 (re-rendered in J1064 after picture_qa/polish_gate) needing gate runs"
         }
       ],
-      "remaining_action": "Scan newest OWB and HOS packs since J1060 and run any missing picture_qa, polish_gate or music_gate checks",
+      "remaining_action": "Run missing/stale picture_qa and polish_gate on OWB 029 code_graphics_v01 (16 renders) and HOS 003 s06_how_xrays_work_v01, and verify 12 additional code_graphics/part01 packs",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -93774,12 +93779,35 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T07:04Z",
+        "at": "2026-10-28T07:13Z",
         "by": "gemini",
-        "note": "Starting J1066 QA sweep across OWB and HOS packs"
-      }
+        "note": "Scanned 138 J1060 exports + 13 additional packs: found OWB 029 code_graphics_v01 (10/16 renders newer than Oct 16 gates)"
+      },
+      "taskKeys": [
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1067",
