@@ -94552,9 +94552,14 @@
           "at": "2026-10-28T08:58Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1/4 done: verified all 26 archived files in NAS tarballs/MOVES_2026-10-24.log, 7 file SHA-256s, and 119 member hashes across 8 visual packs"
+        },
+        {
+          "at": "2026-10-28T09:03Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2/4 done: reconciled 129 newest candidates vs 22 historical versions, verified 434/434 fresh gate sidecars (0 FAIL, 370 with WARNs), mapped J0935/J1059/J0936/J0961/J0966 holds"
         }
       ],
-      "remaining_action": "Reconcile newest candidates vs historical versions and delivery/review records; check/run any missing or stale QA gates",
+      "remaining_action": "Regenerate and verify corrected J1066 QA inventory JSON and markdown report in both repos, then commit and park for Chief",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -94566,11 +94571,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T08:58Z",
+        "at": "2026-10-28T09:03Z",
         "by": "gemini",
-        "note": "Step 1/4 done: verified all 26 archived files in NAS tarballs/MOVES_2026-10-24.log, 7 file SHA-256s, and 119 member hash"
+        "note": "Step 2/4 done: reconciled 129 newest candidates vs 22 historical versions, verified 434/434 fresh gate sidecars (0 FAIL,"
       },
       "taskKeys": [
         "HOS:001",
