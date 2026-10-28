@@ -48,7 +48,7 @@ WHITE = (255, 255, 255, 255)
 HOOK = ("14", "YEARS")
 HOOK_END = 2.0
 TITLE_IN, TITLE_OUT = 9.0, 14.0
-FIRST_CUT = 3.55
+FIRST_CUT = 2.50
 MAX_PLATE = 3.55
 LOOP = 1.00
 XFADE = 0.012
@@ -729,6 +729,8 @@ def main() -> None:
         dst.mkdir(parents=True, exist_ok=True)
         for fn in manifest_files + ["sha256_manifest.json"]:
             shutil.copy2(OUT / fn, dst / fn)
+            if sha256(OUT / fn) != sha256(dst / fn):
+                raise RuntimeError(f"Copy checksum mismatch: {dst / fn}")
 
     print("gate", gate.returncode, "sfx", sfx.returncode, "music", music.returncode,
           "polish", polish.returncode, "picture_qa", pqa.returncode, flush=True)
