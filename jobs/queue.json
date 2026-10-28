@@ -99171,16 +99171,21 @@
           "at": "2026-10-28T21:12Z",
           "by": "codex",
           "what": "step 3 of 4 done: Studio reload confirms exact description and five chapters; title unchanged, Public and not Made for Kids. Later title tests queued J1130/J1131/J1132. Audit passes 002 but channel has 4 duplicate-self errors for unrelated Short uU12JA5rMWg."
+        },
+        {
+          "at": "2026-10-28T21:13Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Evidence committed on HOS PR 372 (535f060f); check_all.sh ALL CHECKS PASS; description and chapters verified in Studio. Remaining fourth step cannot complete under worker Never rule."
         }
       ],
-      "remaining_action": "Commit verified listing records and report blocked thumbnail confirmation to Chief",
+      "remaining_action": "Chief must resolve delete-current-experiment confirmation before thumbnail test can be armed and ledger started",
       "kind": "studio",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-10-28T21:12Z",
+        "at": "2026-10-28T21:13Z",
         "by": "codex",
-        "note": "Studio reload confirms exact description and five chapters; title unchanged, Public and not Made for Kids. Later title t"
+        "note": "Evidence committed on HOS PR 372 (535f060f); check_all.sh ALL CHECKS PASS; description and chapters verified in Studio. "
       },
       "taskKeys": [
         "HOS:002"
