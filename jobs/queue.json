@@ -98428,10 +98428,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T19:03Z",
+      "eta": "2026-10-28T20:33Z",
       "created_by": "claude",
       "created_at": "2026-10-28T18:54Z",
       "result": "",
@@ -98440,10 +98440,23 @@
           "at": "2026-10-28T18:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T19:03Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "build 3 B v02 covers + phone sheet, park for Chief",
-      "kind": "thumb"
+      "kind": "thumb",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T19:03Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1119",
