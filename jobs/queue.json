@@ -94893,9 +94893,14 @@
           "at": "2026-10-28T09:42Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Reviewed J1075 ruling and evidence; located J1066_QA_SWEEP_INVENTORY_2026-10-28.json and J1066_QA_SWEEP_REPORT_2026-10-28.md in both repos"
+        },
+        {
+          "at": "2026-10-28T09:54Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Independently verified OWB 026 CFR18 SHA-256 (6e587bb5ac33...) and verified all 15 HOS 001-004 lift Shorts via NAS hos001-004.tar stream, MOVES_2026-10-24.log, and SHORT_*.json manifests while recording unhydrated iCloud CloudDocs stub status"
         }
       ],
-      "remaining_action": "Independently verify OWB 026 CFR18 SHA-256 and HOS 001-004 iCloud/local/NAS/manifest status",
+      "remaining_action": "Update inventory JSON and report markdown in OWB to fix OWB 026 hash, qualify 15 HOS items, explain gate-to-media binding, and update counts",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -94907,11 +94912,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T09:42Z",
+        "at": "2026-10-28T09:54Z",
         "by": "gemini",
-        "note": "Reviewed J1075 ruling and evidence; located J1066_QA_SWEEP_INVENTORY_2026-10-28.json and J1066_QA_SWEEP_REPORT_2026-10-2"
+        "note": "Independently verified OWB 026 CFR18 SHA-256 (6e587bb5ac33...) and verified all 15 HOS 001-004 lift Shorts via NAS hos00"
       },
       "taskKeys": [
         "OWB:026",
