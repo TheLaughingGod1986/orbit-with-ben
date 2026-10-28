@@ -90895,9 +90895,14 @@
           "at": "2026-10-28T08:30Z",
           "by": "relay",
           "what": "condition verification queued: J1073"
+        },
+        {
+          "at": "2026-10-28T08:33Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-28T09:30:29Z"
         }
       ],
-      "remaining_action": "Complete independent Chief replacement review and Ben swap approval for the six v04 Shorts",
+      "remaining_action": "Independent Chief replacement review of six delivered v04 Shorts, then Ben swap approval",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -90923,12 +90928,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1029 predecessor (PR304 dc4b9da01) and J1032 3/3 v04 assembly/delivery (PR305 61d031f35) verified PASS across all 6 Shorts (S1 228cb06dfd37, S2 d35efd737ed0, S3 65e58aea2a20, S4 0eb18596d2d6, S5 37fbe8b9ed33, S6 91b297a262c1: 6-way repo/UAT/NAS SHA256 match, 21/21 UAT+NAS manifests, 7 gates PASS, decoded AAC -14.2..-14.4 LUFS / -1.8..-2.0 dBTP, loop 0.41..0.84, multimodal audio/visual inspection PASS, v01-v03 untouched). Kept blocked so completed 3/3 assembly is not re-queued; parked for independent Chief replacement PASS and Ben swap approval on J0936 (batch deadline 2026-11-01T20:00:00Z).",
-        "check_at": "2026-10-28T09:30:29+00:00",
-        "last_recheck": "J1053",
-        "checked_at": "2026-10-28T02:28:03+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1073"
+        "condition": "Independent elected-Chief replacement-media PASS for the exact six v04 masters in PR305 61d031f35 is still absent, followed by explicit Ben swap approval on J0936. PR305 has no reviews/comments; thread through 6464327187 contains only assembly and condition-verification reports. J1048 QA sweep preserves holds. Completed 3/3 assembly must not be requeued; v01 fallback and 1 Nov 20:00 UTC batch deadline unchanged.",
+        "check_at": "2026-10-28T09:30:29Z",
+        "last_recheck": "J1073",
+        "checked_at": "2026-10-28T08:33:18+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-10-27T14:34Z"
     },
