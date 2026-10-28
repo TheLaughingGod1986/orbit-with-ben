@@ -98832,11 +98832,24 @@
           "at": "2026-10-28T19:38Z",
           "by": "codex",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-10-28T19:53Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Packaging panel (cursor): HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777",
-      "for": "cursor",
-      "kind": "review"
+      "for": "gemini",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "cursor",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J1126",
