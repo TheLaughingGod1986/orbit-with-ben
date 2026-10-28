@@ -97220,10 +97220,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T16:06Z",
+      "eta": "2026-10-28T18:06Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
       "result": "",
@@ -97232,6 +97232,11 @@
           "at": "2026-10-28T15:04Z",
           "by": "claude",
           "what": "approved by Ben: S4 v04 swap (asked in J0936, OK 2026-10-28T11:33:01Z)"
+        },
+        {
+          "at": "2026-10-28T16:06Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload S4 v04 as a Private replacement in its slot, then unschedule the old one",
@@ -97248,6 +97253,14 @@
         "job": "J0936",
         "askId": "J0936.4",
         "okAt": "2026-10-28T11:33Z"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T16:06Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {

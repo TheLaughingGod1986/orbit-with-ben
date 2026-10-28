@@ -50,7 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1099 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1101 | mini | blocked | codex | – | studio · Swap S1 A6TW_6CXhcs (026) to Ben-OK'd v04 (Private, same slot Fri 20 Nov 11:30) |  |
-| J1103 | mini | open | – | – | studio · Swap S4 DETI0HV2jlI (028) to Ben-OK'd v04 (Private, same slot Wed 2 Dec 11:30) |  |
+| J1103 | mini | claimed | codex | 2026-10-28T18:06Z | studio · Swap S4 DETI0HV2jlI (028) to Ben-OK'd v04 (Private, same slot Wed 2 Dec 11:30) |  |
 | J1104 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
 | J1106 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
