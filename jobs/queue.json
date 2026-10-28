@@ -98594,10 +98594,10 @@
       "stage": "",
       "after": "J1118",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T21:27Z",
+      "eta": "2026-10-28T23:27Z",
       "created_by": "claude",
       "created_at": "2026-10-28T18:54Z",
       "result": "",
@@ -98606,10 +98606,23 @@
           "at": "2026-10-28T18:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T21:27Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "arm 3 thumb tests, description edits, ledger",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T21:27Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1120",

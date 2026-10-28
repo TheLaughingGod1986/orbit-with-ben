@@ -57,7 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1110 | mini | blocked | codex | – | assembly · Mini disk: move superseded film exports to the NAS (verified sha256) until 30 GB free, so J1100 can render |  |
 | J1111 | mini | blocked | codex | – | studio · URGENT: set every scheduled Short's thumbnail to its frame-0 hook (OWB + HOS), Venus Melt Lead first (airs 29 Oct 11:30) |  |
 | J1113 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · HOS Shorts thumbnails: open the HOS Studio browser yourself (CDP 9222), then set every scheduled HOS Short to its frame-0 hook |  |
-| J1119 | mini | open (after J1118) | – | – | studio · J1106 Studio: arm 3 thumbnail Test & Compare (B v02) + 005/019 description fixes, ledger rows |  |
+| J1119 | mini | claimed | codex | 2026-10-28T23:27Z | studio · J1106 Studio: arm 3 thumbnail Test & Compare (B v02) + 005/019 description fixes, ledger rows |  |
 | J1120 | any | open | – | – | chief · Chief: verify condition for J0961 |  |
 | J1121 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1122 | macbook | open | – | – | review · Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only) |  |
