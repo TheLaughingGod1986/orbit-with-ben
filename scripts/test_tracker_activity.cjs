@@ -36,6 +36,9 @@ const paused={key:'OWB:032',type:'long',lane:'progress',jobs:[{id:'J4',status:'b
 assert(t.cardHeadline(paused).startsWith('Work is paused'));
 assert.equal(t.cardWaiting(paused),'credit reset');
 assert(!t.matchesVideo({id:'AUDIT',title:'Weekly OWB audit',taskKeys:['OWB:032']},paused));
+const wide={id:'J1079',title:'J1075 FIX: correct CFR18 hash and qualify inaccessible QA media evidence',status:'claimed',taskKeys:['OWB:026','OWB:028','HOS:007','HOS:008']};
+assert(!t.matchesVideo(wide,{key:'HOS:008',type:'long',jobs:[]}),'a studio-wide job (4+ videos) is not shown as one card\'s work');
+assert(t.matchesVideo({id:'PAIR',title:'HOS 009 + 010 Shorts VO',taskKeys:['HOS:009','HOS:010']},{key:'HOS:010',type:'long',jobs:[]}),'a two-video job still shows on both cards');
 console.log('Tracker activity regression checks passed');
 
 const chiefReview={job:'J0956',title:'Neptune <review>',agent:'codex',startedAt:new Date().toISOString(),expiresAt:new Date(Date.now()+60000).toISOString()};
