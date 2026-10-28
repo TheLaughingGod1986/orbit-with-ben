@@ -92189,9 +92189,14 @@
           "at": "2026-10-28T02:42Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T02:43Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1050; starting read-only audit of the 10 latest public OWB videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Audit chapters, sources, end screens and Related pills on the last 10 live OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -92206,11 +92211,16 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-28T02:42Z",
+        "at": "2026-10-28T02:43Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1050; starting read-only audit of the 10 latest public OWB videos"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027"
+      ]
     },
     {
       "id": "J1051",
