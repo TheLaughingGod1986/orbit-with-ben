@@ -99309,9 +99309,14 @@
           "at": "2026-10-28T22:04Z",
           "by": "codex",
           "what": "step 1 of 4 done: Removed 19 inactive >48h clean pushed worktrees after clearing only caches/symlinks; 23.46 -> 29.42 GB. Collector regression and three actual collector checks succeed. Detached final scratch transfer running."
+        },
+        {
+          "at": "2026-10-28T22:06Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Live free 30.55 GB after three additional clean pushed inactive temp worktrees were reclaimed. Final checked scratch archive still running; no NAS deletion."
         }
       ],
-      "remaining_action": "Finish verified old-scratch transfer to reach 30 GB, then reopen J1100",
+      "remaining_action": "Verify recurrence mitigation and reopen J1100 with measured disk headroom",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99324,11 +99329,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T22:04Z",
+        "at": "2026-10-28T22:06Z",
         "by": "codex",
-        "note": "Removed 19 inactive >48h clean pushed worktrees after clearing only caches/symlinks; 23.46 -> 29.42 GB. Collector regres"
+        "note": "Live free 30.55 GB after three additional clean pushed inactive temp worktrees were reclaimed. Final checked scratch arc"
       },
       "taskKeys": [
         "OWB:027",
