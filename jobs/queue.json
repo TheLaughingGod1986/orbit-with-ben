@@ -93839,9 +93839,14 @@
           "at": "2026-10-28T07:23Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: 151-export QA sweep inventory and report committed in OWB a4e7cdddb and HOS 9556a0db (00_Brand/Channel-Setup/audits/qa_sweeps/J1066_QA_SWEEP_{INVENTORY,REPORT}_2026-10-28.{json,md}); 85 OWB + 66 HOS exports verified at £0 spend (138 J1060 base exports PASS including J1063/J1064 fixes and HOS 003 s06_how_xrays_work_v01 rebuilt/re-gated in J1066 + 13 additional packs: OWB 029 code_graphics_v01 re-gated across all 16 renders 0/16 FAIL, OWB 028 code_graphics_v02 0/20 FAIL, HOS 007 part01 0/1 FAIL, and 10 HOS compilation code graphics 0/1 FAIL); 0 unaddressed FAILs, 0 new fix jobs needed"
+        },
+        {
+          "at": "2026-10-28T08:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-28T10:00:00Z"
         }
       ],
-      "remaining_action": "Park J1066 for Chief review of 151-export QA sweep",
+      "remaining_action": "Await J1075 corrected QA inventory, then review evidence; no film approval granted",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -93882,7 +93887,12 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J1075 correction job complete with verified paths/hashes, current-pack coverage and fresh applicable gates in both reports; elected Chief reviews corrections before releasing J1066.",
+        "check_at": "2026-10-28T10:00:00Z"
+      }
     },
     {
       "id": "J1067",
