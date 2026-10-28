@@ -51,7 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1101 | mini | blocked | codex | – | studio · Swap S1 A6TW_6CXhcs (026) to Ben-OK'd v04 (Private, same slot Fri 20 Nov 11:30) |  |
 | J1104 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
-| J1106 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
+| J1106 | mini | claimed | codex | 2026-10-28T20:21Z | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
 | J1107 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
 | J1108 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 | J1109 | any | open | – | – | chief · Chief: verify condition for J1098 |  |
