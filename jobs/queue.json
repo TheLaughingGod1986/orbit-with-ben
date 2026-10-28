@@ -92216,20 +92216,39 @@
           "at": "2026-10-28T02:15Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1052; inspecting J0985 and J1002 history"
+        },
+        {
+          "at": "2026-10-28T02:20Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J1002 (45ef75589) & J1044 (254d04071) intact; non-author Chiefs down; studio_ctr readAt 00:33:34Z (37.1h < 48h)"
         }
       ],
-      "remaining_action": "Inspect J0985, J1002 and audit artefacts to verify waiting condition",
+      "remaining_action": "Record condition check on J0985 with wait --recheck J1052",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-28T03:14:17+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T02:15Z",
+        "at": "2026-10-28T02:20Z",
         "by": "gemini",
-        "note": "Claimed J1052; inspecting J0985 and J1002 history"
-      }
+        "note": "Verified J1002 (45ef75589) & J1044 (254d04071) intact; non-author Chiefs down; studio_ctr readAt 00:33:34Z (37.1h < 48h)"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032"
+      ]
     },
     {
       "id": "J1053",
