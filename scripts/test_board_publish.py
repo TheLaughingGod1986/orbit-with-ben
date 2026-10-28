@@ -93,9 +93,12 @@ class SiteBuild(unittest.TestCase):
         spec.loader.exec_module(mod)
         with tempfile.TemporaryDirectory() as d:
             mod.build(Path(d) / "dist")
-            simple = (Path(d) / "dist" / "index.html").read_text()
+            simple = (Path(d) / "dist" / "board.html").read_text()
+            home = (Path(d) / "dist" / "index.html").read_text()
             classic = (Path(d) / "dist" / "classic.html").read_text()
-            # Home page is the per-video column board (Ben, 26 Oct 2026)
+            # Home page is the studio app (Ben, 28 Oct 2026); the per-video column board moved to /board
+            self.assertIn("STUDIO_APP_TEST_HOOK", home)
+            self.assertIn('location.replace("/board" + location.hash)', home)  # Ben's /#k= links still reach his board
             self.assertIn("Studio videos", simple)
             self.assertIn("Changes requested", simple)
             self.assertIn("board-data/board.json", simple)
