@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1097 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1098 | mini | claimed | gemini | 2026-10-28T17:02Z | for gemini · review · `gemini-argon` · HOS Snow Short: mature 48-hour Studio and retention read | 6472484257 |
 | J1099 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J1100 | mini | open | – | – | video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 
 Recently finished:
 
