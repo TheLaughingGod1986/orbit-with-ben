@@ -98984,16 +98984,21 @@
           "at": "2026-10-28T20:25Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Reopened CDP :9222 (Flow 20870 credits and Vertex £69.48 now read OK); traced Cursor redirect to grok.com/dashboard/billing Weekly included usage layout"
+        },
+        {
+          "at": "2026-10-28T20:32Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Updated Cursor parser for unified Weekly included usage layout + unit test (16/16 OK); trued up plans.json with CDP :9222 billing sources"
         }
       ],
-      "remaining_action": "Update Cursor spending parser + tests in ai_spend_daily.py / test_ai_spend.py and check billing pages for plans.json",
+      "remaining_action": "Commit parser + plans.json updates and run ai_spend_daily.py --git",
       "kind": "listing",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-10-28T20:25Z",
+        "at": "2026-10-28T20:32Z",
         "by": "gemini",
-        "note": "Reopened CDP :9222 (Flow 20870 credits and Vertex £69.48 now read OK); traced Cursor redirect to grok.com/dashboard/bill"
+        "note": "Updated Cursor parser for unified Weekly included usage layout + unit test (16/16 OK); trued up plans.json with CDP :922"
       }
     }
   ],
