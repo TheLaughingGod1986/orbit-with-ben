@@ -1,5 +1,5 @@
 {
-  "next_id": 1128,
+  "next_id": 1129,
   "jobs": [
     {
       "id": "J0001",
@@ -99028,6 +99028,34 @@
         "by": "gemini",
         "note": "All 5 pools (elevenlabs, flow, vertex, cursor, codex) recorded and pushed; plans.json trued up"
       }
+    },
+    {
+      "id": "J1128",
+      "title": "URGENT Mini disk: 20 GB lost in 3.5 h after J1112 (30.4 -> 10.5 GB); find the cause, free to 30 GB, stop it recurring, reopen J1100",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "URGENT. The Mini's free disk fell from 30.4 GB (J1112, 17:20Z, PR 321) to 10.5 GB by about 20:50Z: about 20 GB in 3.5 hours. J1100 (Ben's S2/S5/S6 changes, batch due Sun 1 Nov 20:00 London) is blocked on the 20 GB render floor again, and nas_offload found no eligible scratch.\n1. Find what grew since 17:20Z: `sudo du -xh -d 2 / 2>/dev/null | sort -h | tail -40` style sweeps of ~/, ~/Library/Caches, ~/Library/Application Support (Chrome profiles incl. the CDP :9222 session J1127 reopened, Ollama models), /private/tmp, /private/var/folders, ~/.codex/sessions, ~/_desk, both checkouts (git objects, LFS), Time Machine local snapshots (`tmutil listlocalsnapshots /`). Compare with J1112's report (PR 321) to name the cause.\n2. Free it safely, the J1112 way: thin local snapshots, clear caches that rebuild themselves, move studio media/renders to the NAS with sha256 checks (scripts/nas_offload.py rules; never delete on the NAS), git gc / lfs prune. Never delete a video master, a UAT file, or anything not proven copied. Target 30 GB free.\n3. Stop it recurring: fix the cause (e.g. a job writing renders outside /private/tmp so the relay's auto-offload can't see them, a cache that refills, a runaway log), with a test where it's code.\n4. Then reopen J1100 (jobs.py reopen J1100 --note \"<free GB, cause fixed>\") so it resumes at step 2.\nSpend nothing. Done with: GB before/after, the cause, the fix.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T20:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T20:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "find disk growth cause, free to 30 GB, reopen J1100",
+      "kind": "assembly"
     }
   ],
   "focus": [],
