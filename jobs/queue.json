@@ -95454,10 +95454,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T11:21Z",
+      "eta": "2026-10-28T13:21Z",
       "created_by": "claude",
       "created_at": "2026-10-28T11:16Z",
       "result": "",
@@ -95466,11 +95466,24 @@
           "at": "2026-10-28T11:16Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T11:21Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Re-cut the opening so it starts on a complete sentence, then gates",
       "due": "2026-11-06T20:00:00Z",
-      "kind": "video"
+      "kind": "video",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T11:21Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1085",
