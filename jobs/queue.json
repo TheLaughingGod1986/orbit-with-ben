@@ -97112,9 +97112,14 @@
           "at": "2026-10-28T19:53Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T19:55Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Preserved prior input inspection; live disk recheck 10,471 MiB after successful offload with no eligible scratch. No render started."
         }
       ],
-      "remaining_action": "Inspect accepted VO and builders for S2, S5 and S6; prepare v05 fixes",
+      "remaining_action": "Restore 20 GB free, then assemble and verify three v05 fixes",
       "due": "2026-11-04T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -97132,10 +97137,11 @@
       "escalated_at": "2026-10-28T18:46Z",
       "urgent": 6,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T19:53Z",
-        "by": "codex"
+        "at": "2026-10-28T19:55Z",
+        "by": "codex",
+        "note": "Preserved prior input inspection; live disk recheck 10,471 MiB after successful offload with no eligible scratch. No ren"
       }
     },
     {
