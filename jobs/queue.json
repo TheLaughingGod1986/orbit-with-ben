@@ -82837,13 +82837,13 @@
       "stage": "",
       "after": "J0991",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T09:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:02Z",
-      "result": "HELD ON BEN'S WATCH (changed Wednesday v04 opening): J0991 v04 repair PASS by elected Chief Gemini (ea4f1e956, jobs/reviews/J0991/RULING.md). Exact v04 hashes recorded on J0961 (Wed09 e0459b017ddafdf84229784c170285d4c5694507140523e92043ab2109b8f3c3, Fri11 ff4194857a027cfc5f93551ef398125276e6bcfb9cd3ce2fd18d8ee1134e2405, Mon14 31f362f4437b4ca56ec16b8abef1dce4c65fb5a5c6c7b5b4e2ba39229a33efd5). Ben v03 approvals (6411247951, 6411249334, 6411258896) preserved for unchanged Fri11/Mon14 picture; awaits Ben's watch of OWB UAT/029_short_wed09_great_dimming_v04_PHONE.mp4 before Private upload.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T23:02Z",
@@ -82954,6 +82954,21 @@
           "at": "2026-10-27T16:27Z",
           "by": "gemini",
           "what": "Chief ruling recorded; amended to v04 hashes and awaits Ben watch on Wed09 v04 changed opening (ea4f1e956)"
+        },
+        {
+          "at": "2026-10-28T11:16Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J0961"
+        },
+        {
+          "at": "2026-10-28T11:16Z",
+          "by": "claude",
+          "what": "approved by Ben: upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v04 (repaired NOIRLab/ESO opening + AAC levels) Private for Wed 9 Dec 11:30 v04"
+        },
+        {
+          "at": "2026-10-28T11:16Z",
+          "by": "claude",
+          "what": "reopened: [Claude] acting Chief: hold met. Ben OK'd Wed09 v04 (OWB UAT/029_short_wed09_great_dimming_v04_PHONE.mp4) on the board at 2026-10-28 11:13:22Z (/api/checks OWB-J0961 verdict ok, version v04). Fri11/Mon14 keep Ben's v03 OKs (unchanged picture). Released for the Private upload of the three 029 Shorts exactly as the brief says, v04 hashes as recorded on this job; read back Private + scheduled."
         }
       ],
       "kind": "studio",
@@ -82962,43 +82977,18 @@
       ],
       "urgent": 9,
       "approved_from": {
-        "what": "upload 029 Short \"Is Betelgeuse Really About to Explode?\" v03 Private for Fri 11 Dec 11:30",
-        "file": "OWB UAT/029_short_fri11_opening_testA_v03_PHONE.mp4",
-        "version": "v03",
-        "airs": "2026-12-11T11:30Z",
-        "title": "Betelgeuse Short: Opening Test A v03",
+        "what": "upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v04 (repaired NOIRLab/ESO opening + AAC levels) Private for Wed 9 Dec 11:30",
+        "file": "OWB UAT/029_short_wed09_great_dimming_v04_PHONE.mp4",
+        "version": "v04",
+        "airs": "2026-12-09T11:30Z",
+        "title": "Betelgeuse Short: Great Dimming v04 (changed opening)",
         "number": "029",
         "type": "short",
         "channel": "OWB",
         "job": "J0961",
-        "okAt": "2026-10-26T08:09Z",
-        "okRef": "6411249334"
+        "okAt": "2026-10-28T11:16Z"
       },
       "awaits_was": {
-        "what": "upload 029 Short \"Is Betelgeuse Really About to Explode?\" v03 Private for Fri 11 Dec 11:30",
-        "file": "OWB UAT/029_short_fri11_opening_testA_v03_PHONE.mp4",
-        "version": "v03",
-        "airs": "2026-12-11T11:30Z",
-        "ifNot": "Nothing is uploaded until you OK it",
-        "title": "Betelgeuse Short: Opening Test A v03",
-        "number": "029",
-        "type": "short"
-      },
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-26T10:04Z",
-        "by": "gemini",
-        "note": "Verified 3 v03 master SHA256s + free slots in UPLOADS.json + committed 3 PACKAGE_MANIFEST.json files; gate_shorts_open f"
-      },
-      "escalated_at": "2026-10-26T12:15Z",
-      "remaining_action": "Await Ben's watch of Betelgeuse Wednesday Short v04 (changed opening), then upload the 3 v04 Shorts Private",
-      "hold": {
-        "type": "ben",
-        "condition": "Await Ben's watch/OK on changed-picture Wednesday Short v04 (OWB UAT/029_short_wed09_great_dimming_v04_PHONE.mp4) before releasing J0961 Private upload",
-        "check_at": "2026-11-03T18:00:00Z"
-      },
-      "awaits_ben": {
         "what": "upload 029 Short \"Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?\" v04 (repaired NOIRLab/ESO opening + AAC levels) Private for Wed 9 Dec 11:30",
         "file": "OWB UAT/029_short_wed09_great_dimming_v04_PHONE.mp4",
         "version": "v04",
@@ -83008,7 +82998,9 @@
         "title": "Betelgeuse Short: Great Dimming v04 (changed opening)",
         "number": "029",
         "type": "short"
-      }
+      },
+      "escalated_at": "2026-10-26T12:15Z",
+      "remaining_action": "Await Ben's watch of Betelgeuse Wednesday Short v04 (changed opening), then upload the 3 v04 Shorts Private"
     },
     {
       "id": "J0962",
