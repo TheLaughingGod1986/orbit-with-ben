@@ -132,6 +132,23 @@ class CursorSpending(unittest.TestCase):
         self.assertIn("weekly resets 16 Oct", r["note"])
         self.assertEqual(ai_spend.POOLS["cursor"], "%")
 
+    def test_unified_weekly_included_usage_layout(self):
+        import ai_spend_daily
+        page = (
+            "Billing & invoices\nOverview\nInvoices\nCurrent plan\nUltra\n100%\nused\nx\n"
+            "Weekly included usage\n· Resets Oct 29\n"
+            "Included usage with your subscription. Used before your credits.\n"
+            "Account balance\nBuy credits\nAuto top-up\n$17.14\nused this month\nResets Nov 1\n"
+            "Monthly additional usage limit\nNot set\n· Edit\nCredits available\n$0.00\n"
+        )
+        r = ai_spend_daily.parse_cursor(page)
+        self.assertEqual((r["left"], r["total"]), (0, 100))
+        self.assertEqual(r["used"], {"weekly included usage": 100})
+        self.assertIn("Weekly included usage 100% used", r["note"])
+        self.assertIn("weekly resets Oct 29", r["note"])
+        self.assertIn("$17.14 used this month (resets Nov 1)", r["note"])
+        self.assertIn("credits available $0.00", r["note"])
+
     def test_billing_expiring_row_is_available(self):
         import ai_spend_daily
         page = ("Free Trial\n Expiring in 30 days\nDanger\n2%\n£4.93\n£225.63 One-time\nFreeTrialUpgrade:x\n"

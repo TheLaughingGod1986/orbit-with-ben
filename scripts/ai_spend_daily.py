@@ -172,7 +172,26 @@ def parse_cursor(text: str) -> dict:
             used[label] = int(m.group(1))
             label = None
     if "other models" not in used and "cursor models" not in used:
-        raise RuntimeError("no 'Cursor Models' or 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
+        m_wk = re.search(
+            r"(?:(\d{1,3})%\s+used(?:\s+\S)?\s+Weekly included usage|Weekly included usage\s+(\d{1,3})%\s+used)"
+            r"(?:\s*(?:x\s+)?[·•]?\s*Resets\s+([^\n(]+))?",
+            text,
+            re.I,
+        )
+        if not m_wk:
+            raise RuntimeError("no 'Cursor Models' or 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
+        pct = int(m_wk.group(1) or m_wk.group(2))
+        used["weekly included usage"] = pct
+        bits = [f"Weekly included usage {pct}% used"]
+        if m_wk.group(3):
+            bits.append(f"weekly resets {m_wk.group(3).strip()}")
+        m_mo = re.search(r"(\$[\d,]+(?:\.\d\d)?)\s+used this month(?:\s+Resets\s+([^\n(]+))?", text, re.I)
+        if m_mo:
+            bits.append(f"{m_mo.group(1)} used this month" + (f" (resets {m_mo.group(2).strip()})" if m_mo.group(2) else ""))
+        m_cr = re.search(r"Credits available\s+(\$[\d,]+(?:\.\d\d)?)", text, re.I)
+        if m_cr:
+            bits.append(f"credits available {m_cr.group(1)}")
+        return {"left": max(0, 100 - pct), "total": 100, "used": used, "note": "; ".join(bits)}
     reset = re.search(r"Usage limits reset on ([^\n(]+?)\s*(?:\(|\n|$)", text)
     weekly = re.search(r"Weekly usage\s+\d{1,3}%\s+used\s+Resets ([^\n(]+?)\s*(?:\(|\n|$)", text)
     bits = [f"{CURSOR_POOLS[k]} {used[k]}% used" for k in CURSOR_POOLS if k in used]
@@ -184,9 +203,17 @@ def parse_cursor(text: str) -> dict:
             "note": "; ".join(bits)}
 
 
+def _cursor_settle(page, text: str) -> str:
+    """Wait for the client-side redirect from cursor.com/dashboard/spending to grok.com/dashboard/billing to render."""
+    if not re.search(r"\d{1,3}%\s+used", text, re.I):
+        page.wait_for_timeout(5000)
+        text = page.inner_text("body")
+    return text
+
+
 def read_cursor() -> dict:
-    text = _page_text(CURSOR_URL, None, settle_ms=8000)
-    if re.search(r"\bsign in\b|\blog in\b", text[:2000], re.I) and "% used" not in text:
+    text = _page_text(CURSOR_URL, None, settle_ms=8000, then=_cursor_settle)
+    if re.search(r"\bsign in\b|\blog in\b", text[:2000], re.I) and not re.search(r"\d{1,3}%\s+used", text, re.I):
         raise RuntimeError("Cursor dashboard is signed out in the CDP Chrome")
     r = parse_cursor(text)
     return {"left": r["left"], "total": r["total"],
