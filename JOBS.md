@@ -44,13 +44,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1059 | mini | blocked | gemini | – | studio · OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30 | ab4ad3de4 |
 | J1066 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
-| J1072 | mini | claimed | gemini | 2026-10-28T09:40Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1074 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1075 | mini | open | – | – | qa · J1066 FIX: reconcile QA media identities and newest-pack coverage on both channels | J1066 |
 
 Recently finished:
 
 - J1073 done: Chief: verify condition for J1032 (Condition not satisfied. Reviewed J1032 brief and 3/3 result, J1029 preparation PASS dc4b9da01, PR305 61d031f35 run13/delivery records, prior J1053 verification and current thread through 6464327187. PR304/305 remain OPEN with no comments/reviews; no independent replacement-media PASS or Ben swap approval found. Gate/manifest/listening results are submitted Gemini evidence, not a fresh Codex media review. J1048 QA sweep preserves holds. Kept J1032 blocked via wait --recheck J1073, retained recorded retry 2026-10-28T09:30:29Z; 3/3 assembly, J0936 6/6 history, v01 fallback and 1 Nov 20:00 UTC batch deadline preserved. GBP0; no publishing changes.)
+- J1072 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1071 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1070 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done (HOS d68d8d93: 57 unique videos verified via Data API — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T08:22Z; 0 new fixes needed, no Studio writes or spend))
 - J1069 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 4 HOS longs; 72 OWB + 20 HOS Shorts. CTR hits vs 4%: OWB 2/11 available (Sun 4.0%, Jupiter 5.2%); HOS 1/3 (Germs 7.1%). All 388 metrics match published tracker. b0d784c2f; newest Short per channel omitted: no processed lifetime data.)
@@ -59,4 +59,3 @@ Recently finished:
 - J1064 done: HOS 001-004 v01 lift Shorts music_gate fix (£0, no spend): persist 05_Music beds and plan sidecars for 16 lift Shorts (done)
 - J1063 done: OWB 020/022 v01 lift Shorts music_gate fix (£0, no spend): 022 plan Pace line + 020 lift_no_crust own bed/plan (done)
 - J1062 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done (HOS a97d735c: 57 unique videos verified via Data API — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T06:59Z; 0 new fixes needed, no Studio writes or spend))
-- J1061 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
