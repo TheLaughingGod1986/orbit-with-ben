@@ -62,7 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1120 | any | open | – | – | chief · Chief: verify condition for J0961 |  |
 | J1121 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1122 | macbook | open | – | – | review · Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only) |  |
-| J1123 | mini | open | – | – | for codex · review · Packaging panel (codex): HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777 |  |
+| J1123 | mini | claimed | codex | 2026-10-28T20:13Z | for codex · review · Packaging panel (codex): HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777 |  |
 | J1124 | mini | open | – | – | for gemini · review · Packaging panel (gemini): HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777 |  |
 | J1125 | mini | open | – | – | for cursor · review · Packaging panel (cursor): HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777 |  |
 | J1126 | cloud | open (after J1125) | – | – | review · Packaging panel decision: HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777 |  |
