@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine};
+  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -76,7 +76,7 @@ assert.deepEqual([...t.agentLight('cursor', 1, 'red', false)], ['red', 'Out']);
 // Videos: Working / Queued / Backlog.
 const g = t.videoGroups([v({key: 'w', jobs: [{status: 'claimed', by: 'codex', title: 'cut', progress: {step: 3, of: 5}}]}), v({key: 'q'}), v({key: 'b', lane: 'upcoming'})]);
 assert.deepEqual([g.working[0].key, g.queued[0].key, g.backlog[0].key], ['w', 'q', 'b']);
-assert(t.doing(g.working[0]).includes('Codex · cut · Step 3 of 5'), 'the working card says who, what and which step');
+assert(t.doing(g.working[0]).includes('Codex · cut') && t.doing(g.working[0]).includes('<b>60%</b> · 3 of 5'), 'the working card says who, what, and the reported step as a percentage');
 
 // Schedule: a warning only when readiness can't be verified.
 assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'}}), NOW + 864e5, NOW), '');
@@ -102,4 +102,13 @@ assert(t.detail({tracker: {videos: []}}, 'x').includes('on the board any more'))
 const s1 = t.summary({tracker: {videos: []}, models: {checkedAt: new Date(NOW).toISOString(), runner: {state: 'ready'}}, owb: {jobs: [{id: 'J9', status: 'open'}]}}, NOW);
 assert(t.miniLine(s1, {owb: {jobs: [{id: 'J9', status: 'open'}]}}).includes('between jobs · 1 queued'));
 assert(t.miniLine(s1, {owb: {jobs: [{id: 'J8', status: 'claimed', by: 'codex', title: 'disk'}]}}).includes('Mac mini working: Codex on J8'));
+// ETA: the pace of reported steps, else the typical time for the kind; overruns say so.
+const start = new Date(NOW - 30 * 6e4).toISOString();
+t.setBoard({owb: {jobs: [{id: 'J7', claimedAt: start, estMin: 85}]}});
+assert.equal(t.etaOf({id: 'J7', progress: {step: 1, of: 4}}, NOW).min, 90, '30 min for 1 of 4 steps -> about 90 min left');
+assert.equal(t.etaOf({id: 'J7', progress: {step: 0, of: 4}}, NOW).min, 55, 'no step yet -> typical 85 min less 30 spent');
+assert(t.etaText(t.etaOf({id: 'J7', progress: {step: 3, of: 4}}, NOW)).startsWith('about 10 min left (done ~'));
+t.setBoard({owb: {jobs: [{id: 'J7', claimedAt: new Date(NOW - 200 * 6e4).toISOString(), estMin: 85}]}});
+assert.equal(t.etaText(t.etaOf({id: 'J7'}, NOW)), 'taking longer than usual');
+assert.equal(t.etaOf({id: 'J8'}, NOW), null, 'no start time, no ETA');
 console.log('studio app OK');

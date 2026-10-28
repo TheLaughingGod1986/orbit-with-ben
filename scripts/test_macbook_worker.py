@@ -88,7 +88,7 @@ class Guards(unittest.TestCase):
         mw.sh = lambda cmd, **kw: calls.append(cmd) or mw.subprocess.CompletedProcess(cmd, 0, "READ codex", "")
         self.addCleanup(setattr, mw, "sh", real)
         self.assertTrue(mw.record_usage(now=WED_NIGHT))
-        self.assertIn("codex-macbook", calls[0])
+        self.assertEqual(calls[0][calls[0].index("--codex-pool") + 1], "codex")  # one account on both machines
         self.assertFalse(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=1)))
         self.assertTrue(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=4)))
         self.assertEqual(len(calls), 2)

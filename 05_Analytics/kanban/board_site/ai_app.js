@@ -12,8 +12,7 @@
     flow: ["Google Flow", "picture credits (AI Ultra)"],
     vertex: ["Google Cloud / Vertex", "£ of Cloud credit"],
     cursor: ["Cursor", "% of Cursor models left (Grok Bot runs here)"],
-    codex: ["Codex · Mac mini", "% of the weekly limit left"],
-    "codex-macbook": ["Codex · MacBook", "% of the weekly limit left"],
+    codex: ["Codex", "% of the weekly limit left (one ChatGPT Pro account: Mac mini + MacBook)"],
   };
   let board = null, lastSha = "";
 
@@ -104,7 +103,7 @@
         <div class="muted small">Read ${esc(ago(s.at, now))}${pace}${s.note ? " · " + esc(clip(s.note, 160)) : ""}</div></div></li>`;
     }).join("");
     return `<section class="card"><h2>Credit left</h2><ul class="rows">${rows || '<li class="muted">No readings yet.</li>'}</ul>
-      <p class="muted">The Mac mini reads these every morning (scripts/ai_spend_daily.py), and the MacBook records its own Codex account after its runs. Claude and Gemini don't publish a meter: their status above comes from what their runs report.</p></section>`;
+      <p class="muted">The Mac mini reads these every morning (scripts/ai_spend_daily.py), and the MacBook updates the shared Codex reading after its runs. Claude and Gemini don't publish a meter: their status above comes from what their runs report.</p></section>`;
   }
 
   function plansHtml(credits) {
