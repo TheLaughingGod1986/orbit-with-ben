@@ -97434,10 +97434,10 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T16:43Z",
+      "eta": "2026-10-28T19:43Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:44Z",
       "result": "",
@@ -97446,12 +97446,25 @@
           "at": "2026-10-28T15:44Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T16:43Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Audit every thumbnail vs style and CTR, then design and test Bs for the weakest",
       "kind": "thumb",
       "backlog": "owb-weekly-thumb-audit",
-      "urgent": 3
+      "urgent": 3,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T16:43Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1107",
