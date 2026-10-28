@@ -97489,10 +97489,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T16:12Z",
+      "eta": "2026-10-28T18:12Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:52Z",
       "result": "",
@@ -97501,10 +97501,23 @@
           "at": "2026-10-28T15:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T16:12Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Move old superseded video versions to the NAS until the Mini has 30 GB free",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T16:12Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],

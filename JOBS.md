@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1107 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style and CTR -> new Test & Compare Bs for the weakest |  |
 | J1108 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 | J1109 | any | open | – | – | chief · Chief: verify condition for J1098 |  |
-| J1110 | mini | open | – | – | assembly · Mini disk: move superseded film exports to the NAS (verified sha256) until 30 GB free, so J1100 can render |  |
+| J1110 | mini | claimed | codex | 2026-10-28T18:12Z | assembly · Mini disk: move superseded film exports to the NAS (verified sha256) until 30 GB free, so J1100 can render |  |
 
 Recently finished:
 
