@@ -93448,11 +93448,25 @@
           "at": "2026-10-28T05:03Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T05:13Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 6261 min (heartbeat 2026-10-23T20:51:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Check the newest video packs and record any missing checks",
       "kind": "qa",
-      "backlog": "both-qa-sweep"
+      "backlog": "both-qa-sweep",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
