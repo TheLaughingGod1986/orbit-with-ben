@@ -93828,13 +93828,13 @@
       "stage": "",
       "after": "J1075",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-28T07:03Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-28T10:54Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T05:03Z",
-      "result": "Acting-Chief codex FIX: reject blanket 151/151 verified PASS pending J1075 evidence corrections. 26 listed files absent, seven placeholder file hashes, eight packs need member identities, newer wed11 v05 omitted. Ruling and evidence: jobs/reviews/J1066/. All unrelated holds preserved.",
+      "result": "[Claude] acting Chief PASS: QA sweep of the newest packs complete after J1075/J1079 fixes. 151 exports (85 OWB, 66 HOS) incl. wed11_opening_testA_v05; picture_qa and polish_gate PASS on all 151, music_gate PASS on 132 (19 silent visual packs N/A); 140 carry warnings already reviewed in their own film jobs; 0 unaddressed FAILs, no new repair jobs. Inventory/report in 00_Brand/Channel-Setup/audits/qa_sweeps/ on both repos. No film approval.",
       "history": [
         {
           "at": "2026-10-28T05:03Z",
@@ -93895,6 +93895,11 @@
           "at": "2026-10-28T09:34Z",
           "by": "codex",
           "what": "J1075 review FIX: J1079 corrects remaining CFR18/iCloud provenance. Original hold and 10:00 UTC check preserved."
+        },
+        {
+          "at": "2026-10-28T10:54Z",
+          "by": "claude",
+          "what": "done: [Claude] acting Chief PASS: QA sweep of the newest packs complete after J1075/J1079 fixes. 151 exports (85 OWB, 66 HOS) incl. wed11_opening_testA_v05; picture_qa and polish_gate PASS on all 151, music_gate PASS on 132 (19 silent visual packs N/A); 140 carry warnings already reviewed in their own film jobs; 0 unaddressed FAILs, no new repair jobs. Inventory/report in 00_Brand/Channel-Setup/audits/qa_sweeps/ on both repos. No film approval."
         }
       ],
       "remaining_action": "Await J1075 corrected QA inventory, then review evidence; no film approval granted",
@@ -94609,13 +94614,13 @@
       "stage": "",
       "after": "J1079",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-28T08:46Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-28T10:54Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T08:38Z",
-      "result": "Acting-Chief codex FIX: 219 direct hashes match, OWB026 CFR18 row carries VFR hash, 15 HOS iCloud reads unavailable. Accepted version/hold distinctions and 119 pack hashes. Follow-up J1079; ruling/evidence jobs/reviews/J1075/. No film approval.",
+      "result": "[Claude] acting Chief PASS: closed with J1079 (corrected identities verified, see J1079). No film approval or hold change.",
       "history": [
         {
           "at": "2026-10-28T08:38Z",
@@ -94666,6 +94671,11 @@
           "at": "2026-10-28T09:34Z",
           "by": "codex",
           "what": "Chief FIX recorded: J1079 dependency; review verification 2026-10-28T11:00Z; worker 4/4 retained."
+        },
+        {
+          "at": "2026-10-28T10:54Z",
+          "by": "claude",
+          "what": "done: [Claude] acting Chief PASS: closed with J1079 (corrected identities verified, see J1079). No film approval or hold change."
         }
       ],
       "remaining_action": "Await J1079 evidence corrections, then elected-Chief review",
@@ -94968,13 +94978,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-28T09:40Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-28T10:54Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T09:32Z",
-      "result": "parked for Chief: J1079 narrow evidence correction committed and pushed with byte-identical inventory (83215976f8e0) and report (52e630f4b590) in OWB 0ec7b7fd4 and HOS d61620db: (1) OWB 026 (026_NearestStar_v06) media_sha256 corrected to direct CFR18 hash 6e587bb5ac33552cef55ac897d89f5516a90acef9473155254dd313fc73e09d3 matching PACKAGE_MANIFEST.json and PACKAGE_UPLOAD_RESULT_2026-10-22T10-03-47-020Z.json while retaining distinct historical VFR provenance 624562255a58... (no rerender); (2) 15 HOS 001-004 v01 lift Shorts resolved from unhydrated iCloud CloudDocs stubs (Errno 11, st_blocks=0, never labeled verified_local_file_sha256) to readable NAS hos001-004.tar members (15/15 tar-stream SHA-256 verified) plus committed SHORT_*.json and MOVES_2026-10-24.log manifests; (3) gate_to_media_binding added on all 151 entries (6 J1032 scratch aliases bound by identical SHA-256, 6 code-graphic concat reels bound 1-to-1 by cuts/member manifests, 2 teaching-overlay packs qualified as 20 and 17 composite video cut rows covering 44 PNG assets, pre-archive/temp paths bound by pack/archive manifests); (4) truthful provenance totals across 262 enumerated files: 220 directly hashed unwrapped files (101 single-file MP4s [95 local + 6 NAS] + 119 pack members), 41 NAS tar + manifest verified lift Shorts (26 OWB + 15 HOS with unhydrated iCloud stubs), 1 manifest-only Venus stub, 0 NOT VERIFIED. J1075 and J1066 remain held pending elected-Chief review; £0 spend, no media rebuilds, no metadata/hold changes",
+      "result": "[Claude] acting Chief PASS: checked independently. Inventory 83215976f8e0 and report 52e630f4b590 are byte-identical in OWB and HOS main; OWB 026 CFR18 hash 6e587bb5ac33... matches its PACKAGE_MANIFEST and PACKAGE_UPLOAD_RESULT_2026-10-22T10-03-47-020Z; the 15 HOS 001-004 iCloud stubs are labelled NAS-tar-verified, none as verified_local_file_sha256; 1 manifest-only stub labelled honestly; gate_to_media_binding on all 151 entries; no missing files or placeholder hashes. No film approval.",
       "history": [
         {
           "at": "2026-10-28T09:32Z",
@@ -95030,6 +95040,11 @@
           "at": "2026-10-28T10:15Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1079 narrow evidence correction committed and pushed with byte-identical inventory (83215976f8e0) and report (52e630f4b590) in OWB 0ec7b7fd4 and HOS d61620db: (1) OWB 026 (026_NearestStar_v06) media_sha256 corrected to direct CFR18 hash 6e587bb5ac33552cef55ac897d89f5516a90acef9473155254dd313fc73e09d3 matching PACKAGE_MANIFEST.json and PACKAGE_UPLOAD_RESULT_2026-10-22T10-03-47-020Z.json while retaining distinct historical VFR provenance 624562255a58... (no rerender); (2) 15 HOS 001-004 v01 lift Shorts resolved from unhydrated iCloud CloudDocs stubs (Errno 11, st_blocks=0, never labeled verified_local_file_sha256) to readable NAS hos001-004.tar members (15/15 tar-stream SHA-256 verified) plus committed SHORT_*.json and MOVES_2026-10-24.log manifests; (3) gate_to_media_binding added on all 151 entries (6 J1032 scratch aliases bound by identical SHA-256, 6 code-graphic concat reels bound 1-to-1 by cuts/member manifests, 2 teaching-overlay packs qualified as 20 and 17 composite video cut rows covering 44 PNG assets, pre-archive/temp paths bound by pack/archive manifests); (4) truthful provenance totals across 262 enumerated files: 220 directly hashed unwrapped files (101 single-file MP4s [95 local + 6 NAS] + 119 pack members), 41 NAS tar + manifest verified lift Shorts (26 OWB + 15 HOS with unhydrated iCloud stubs), 1 manifest-only Venus stub, 0 NOT VERIFIED. J1075 and J1066 remain held pending elected-Chief review; £0 spend, no media rebuilds, no metadata/hold changes"
+        },
+        {
+          "at": "2026-10-28T10:54Z",
+          "by": "claude",
+          "what": "done: [Claude] acting Chief PASS: checked independently. Inventory 83215976f8e0 and report 52e630f4b590 are byte-identical in OWB and HOS main; OWB 026 CFR18 hash 6e587bb5ac33... matches its PACKAGE_MANIFEST and PACKAGE_UPLOAD_RESULT_2026-10-22T10-03-47-020Z; the 15 HOS 001-004 iCloud stubs are labelled NAS-tar-verified, none as verified_local_file_sha256; 1 manifest-only stub labelled honestly; gate_to_media_binding on all 151 entries; no missing files or placeholder hashes. No film approval."
         }
       ],
       "remaining_action": "Parked for elected-Chief review of reconciled J1066/J1075/J1079 QA sweep inventory and report",
