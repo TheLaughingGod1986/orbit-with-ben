@@ -93306,9 +93306,14 @@
           "at": "2026-10-28T05:43Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 done: added Pace: 60-80 BPM to 022 sun-brighter_score_bed_v01_plan.json; all 4 OWB 022 lift Shorts now PASS music_gate.py (rc=0)"
+        },
+        {
+          "at": "2026-10-28T05:48Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 done: synthesised 020/05_Music/jupiter_no_crust_short_bed_v01.mp3 (+ _plan.json at 68.6 BPM, £0) and updated _assemble_jupiter_no_crust_short_v01.py"
         }
       ],
-      "remaining_action": "Synthesise 0-credit harmonic pad and plan in OWB 020 05_Music/ for jupiter_no_crust_v01",
+      "remaining_action": "Run music_gate, picture_qa, polish_gate, and gate_shorts_open on OWB 020 jupiter_no_crust_v01",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -93320,11 +93325,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T05:43Z",
+        "at": "2026-10-28T05:48Z",
         "by": "gemini",
-        "note": "Step 1 done: added Pace: 60-80 BPM to 022 sun-brighter_score_bed_v01_plan.json; all 4 OWB 022 lift Shorts now PASS music"
+        "note": "Step 2 done: synthesised 020/05_Music/jupiter_no_crust_short_bed_v01.mp3 (+ _plan.json at 68.6 BPM, £0) and updated _ass"
       },
       "taskKeys": [
         "OWB:020",
