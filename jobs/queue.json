@@ -96311,10 +96311,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-28T13:57Z",
+      "eta": "2026-10-28T15:57Z",
       "created_by": "codex",
       "created_at": "2026-10-28T13:53Z",
       "result": "",
@@ -96323,6 +96323,11 @@
           "at": "2026-10-28T13:53Z",
           "by": "codex",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-10-28T13:57Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Audition v07 audio directly, finish visual QA and verify readable UAT hashes",
@@ -96333,7 +96338,15 @@
       "taskKeys": [
         "OWB:025"
       ],
-      "review_followup_of": "J1090"
+      "review_followup_of": "J1090",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T13:57Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],

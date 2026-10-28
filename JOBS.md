@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1090 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · OWB 025 Mars Opening v07: remove final-shot rover hardware, audition opening, rerun gates | 6da30d624 |
 | J1091 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1092 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1093 | mini | open | – | – | for gemini · qa · `gemini-argon` · OWB 025 v07: direct-audio audition and readable UAT verification for J1090 | c370f1058 |
+| J1093 | mini | claimed | gemini | 2026-10-28T15:57Z | for gemini · qa · `gemini-argon` · OWB 025 v07: direct-audio audition and readable UAT verification for J1090 | c370f1058 |
 
 Recently finished:
 
