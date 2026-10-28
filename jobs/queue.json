@@ -1,5 +1,5 @@
 {
-  "next_id": 1101,
+  "next_id": 1102,
   "jobs": [
     {
       "id": "J0001",
@@ -96903,6 +96903,35 @@
       "remaining_action": "Fix the three openings Ben flagged, then gates and park for Chief",
       "due": "2026-11-04T20:00:00Z",
       "kind": "video"
+    },
+    {
+      "id": "J1101",
+      "title": "Swap S1 A6TW_6CXhcs, S3 bizlhspnVvY, S4 DETI0HV2jlI to Ben-OK'd v04 (Private, same slots)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# Swap three Shorts to Ben-OK'd v04 (J0936 batch C: S1, S3, S4)\n\nBen OK'd on the board, 28 Oct 2026 11:30-11:33. Chief replacement PASS on J1032 (claude, 28 Oct). Exact masters\n(sha256 as recorded on J1032 / jobs/reviews/J1032_v04_delivery_verification.json):\n- **S1** 026 A6TW_6CXhcs (airs Fri 20 Nov 11:30 London): `fri20_grapefruit_cherry_v04.mp4` 228cb06dfd37e3913d5957810dfefd928658885af70842b8cb6e624ebc22cc0b\n- **S3** 028 bizlhspnVvY (airs Mon 30 Nov 11:30 London): `028_short_mon30_comets_v04.mp4` 65e58aea2a202ef3c2d6235bf93049a0d207cb7896b5d5e52479e269b1d9bcad\n- **S4** 028 DETI0HV2jlI (airs Wed 2 Dec 11:30 London, Test A): `028_short_wed02_opening_testA_v04.mp4` 0eb18596d2d6fb0edb8e885782fa9bd94bfe4965fc882c9f70b6f3317de2de97\n\nFor each Short, the same steps as J1059:\n1. Read back the old id (privacy, publishAt, title, description, tags, cover, Related). It should be Private and\n   scheduled for its slot; otherwise park for Chief.\n2. Verify the master sha256 above, then upload it as a NEW Private video with the same publishAt. Copy title,\n   description, tags, frame-0 cover and Related video from the old id. Captions en-GB from the v04 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing\n   deleted, no Replace.\n4. `cd 07_Content-Ops && npx tsx --env-file=.env scripts/verify-swap.ts --job <this job> --old <old> --new <new>`;\n   update UPLOADS.json and `gate_shorts_open.py status`; post the read-back on the OWB thread (#264).\nDo them in air order. Each must be done by 20:00 London the day before it airs; if one fails after that, leave its v01\nscheduled and park for Chief. Never Public, no Replace, no delete. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T15:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T15:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Upload the three OK'd v04 Shorts as Private replacements in their slots, then unschedule the old ones",
+      "due": "2026-11-19T20:00:00Z",
+      "kind": "studio"
     }
   ],
   "focus": [],
