@@ -92263,10 +92263,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-28T03:05Z",
+      "eta": "2026-10-28T04:05Z",
       "created_by": "refill",
       "created_at": "2026-10-28T01:07Z",
       "result": "",
@@ -92315,6 +92315,11 @@
           "at": "2026-10-28T03:05Z",
           "by": "gemini",
           "what": "reopened: Acting-Chief Gemini ruling recorded on HOS #180 6459546192 while original held; reopen solely to record Chief PASS decision and close J1051, not to rerun audit"
+        },
+        {
+          "at": "2026-10-28T03:05Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief review: PASS 2026-10-28 HOS live listing check (0 new fixes needed, HOS 1b51b4eb)",
@@ -92338,7 +92343,15 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T03:05Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1052",
