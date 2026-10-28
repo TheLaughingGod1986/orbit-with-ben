@@ -92325,9 +92325,14 @@
           "at": "2026-10-28T03:05Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Chief review started: checking inputs/approval, reviewing HOS 1b51b4eb evidence, recording ruling"
+        },
+        {
+          "at": "2026-10-28T03:05Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Checked chief_relay.py status (Gemini elected Chief), J1051 history, and existing holds (J0997..J0999, J0241, J0280, J0958, J0875, J0960, J0966)"
         }
       ],
-      "remaining_action": "Chief review: record PASS ruling and existing hold verification on J1051",
+      "remaining_action": "Chief review: review HOS 1b51b4eb evidence and choose ruling",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -92350,11 +92355,11 @@
         "HOS:099"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-28T03:05Z",
         "by": "gemini",
-        "note": "Chief review started: checking inputs/approval, reviewing HOS 1b51b4eb evidence, recording ruling"
+        "note": "Checked chief_relay.py status (Gemini elected Chief), J1051 history, and existing holds (J0997..J0999, J0241, J0280, J09"
       }
     },
     {
