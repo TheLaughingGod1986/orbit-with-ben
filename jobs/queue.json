@@ -82838,10 +82838,10 @@
       "stage": "",
       "after": "J0991",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T23:39Z",
+      "eta": "2026-10-29T00:39Z",
       "created_by": "chief",
       "created_at": "2026-10-25T23:02Z",
       "result": "",
@@ -83020,6 +83020,11 @@
           "at": "2026-10-28T23:38Z",
           "by": "claude",
           "what": "reopened: [Claude] acting Chief (Ben, 28 Oct ~23:00: Grok is down, the acting Chief takes over): Gate EXCEPTION granted: Ben OK'd these exact v04 cuts; the subscribe beat at 54% is 4 points past the 25-50% house window and not worth a re-cut. Upload the three v04 Shorts Private with their scheduled slots (Wed 9 / Fri 11 / Mon 14 Dec 11:30 London), read back, record. Private uploads only; no public change."
+        },
+        {
+          "at": "2026-10-28T23:39Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -83060,7 +83065,15 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "urgent": 3
+      "urgent": 3,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T23:39Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0962",
