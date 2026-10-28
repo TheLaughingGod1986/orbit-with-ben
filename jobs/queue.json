@@ -93992,18 +93992,23 @@
           "at": "2026-10-28T07:49Z",
           "by": "codex",
           "what": "step 0 of 3 done: All 18 listed longs checked on Engagement; missing duration-based averages recovered. HOS complete; remaining OWB Shorts reads in progress."
+        },
+        {
+          "at": "2026-10-28T07:51Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read all 112 listed videos; retries recovered 3 older Shorts. Both newest Shorts have no processed lifetime metrics. Exact sidecars validated."
         }
       ],
-      "remaining_action": "Complete remaining OWB Shorts and validate both channel sidecars",
+      "remaining_action": "Rebuild tracker and verify metric merge",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T07:49Z",
+        "at": "2026-10-28T07:51Z",
         "by": "codex",
-        "note": "All 18 listed longs checked on Engagement; missing duration-based averages recovered. HOS complete; remaining OWB Shorts"
+        "note": "Read all 112 listed videos; retries recovered 3 older Shorts. Both newest Shorts have no processed lifetime metrics. Exa"
       },
       "taskKeys": [
         "OWB:021",
@@ -94011,8 +94016,8 @@
         "OWB:023",
         "HOS:001",
         "HOS:002",
-        "HOS:004",
-        "HOS:005"
+        "HOS:003",
+        "HOS:004"
       ]
     }
   ],
