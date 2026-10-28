@@ -94547,9 +94547,14 @@
           "at": "2026-10-28T08:48Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1075; read RULING_2026-10-28_CODEX.md, EVIDENCE_2026-10-28_CODEX.json, and J1066 inventory"
+        },
+        {
+          "at": "2026-10-28T08:58Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 done: verified all 26 archived files in NAS tarballs/MOVES_2026-10-24.log, 7 file SHA-256s, and 119 member hashes across 8 visual packs"
         }
       ],
-      "remaining_action": "Resolve 26 missing media paths via manifests, add exact hashes/pack members, reconcile newest candidates, and regenerate both QA reports",
+      "remaining_action": "Reconcile newest candidates vs historical versions and delivery/review records; check/run any missing or stale QA gates",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -94561,11 +94566,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T08:48Z",
+        "at": "2026-10-28T08:58Z",
         "by": "gemini",
-        "note": "Claimed J1075; read RULING_2026-10-28_CODEX.md, EVIDENCE_2026-10-28_CODEX.json, and J1066 inventory"
+        "note": "Step 1/4 done: verified all 26 archived files in NAS tarballs/MOVES_2026-10-24.log, 7 file SHA-256s, and 119 member hash"
       },
       "taskKeys": [
         "HOS:001",
