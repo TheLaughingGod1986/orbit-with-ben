@@ -96343,9 +96343,14 @@
           "at": "2026-10-28T14:07Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Step 2 complete: Full-runtime 2fps sheet, 6fps final-shot/transition sheet, s07/s_loop video clips, and full-size warning frames (7.3s, 13.8s, 20.2s) inspected via agy read_file. Zero MSL hardware/black wedge in s07; captions and title safe."
+        },
+        {
+          "at": "2026-10-28T14:21Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3 complete: Re-copied 8 evicted iCloud UAT files from verified local originals (total 67,808 blocks resident) and independently read back all 27/27 manifest entries + 3/3 manifests across Local, NAS, and iCloud UAT (all match=True, 0 Errno 11)."
         }
       ],
-      "remaining_action": "Recheck and hydrate/re-copy all 9 v07 files across Local, NAS, and iCloud OWB UAT and verify readable SHA256 hashes",
+      "remaining_action": "Commit and hand off J1093 direct-audio and UAT SHA256 verification evidence for elected-Chief review",
       "due": "2026-11-06T20:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -96355,11 +96360,11 @@
       ],
       "review_followup_of": "J1090",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-28T14:07Z",
+        "at": "2026-10-28T14:21Z",
         "by": "gemini",
-        "note": "Step 2 complete: Full-runtime 2fps sheet, 6fps final-shot/transition sheet, s07/s_loop video clips, and full-size warnin"
+        "note": "Step 3 complete: Re-copied 8 evicted iCloud UAT files from verified local originals (total 67,808 blocks resident) and i"
       }
     }
   ],
