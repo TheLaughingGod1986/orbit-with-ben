@@ -99299,9 +99299,14 @@
           "at": "2026-10-28T22:00Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-28T22:02Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Prior detached recovery completed exit 0 with verified archives and JSON compaction; current free 23.47 GB. Full historical drop remains partly unexplained."
         }
       ],
-      "remaining_action": "Find disk growth, recover 30 GB free, prevent recurrence, then reopen J1100",
+      "remaining_action": "Recover remaining headroom to 30 GB and verify the existing recurrence fix",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99314,10 +99319,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T22:00Z",
-        "by": "codex"
+        "at": "2026-10-28T22:02Z",
+        "by": "codex",
+        "note": "Prior detached recovery completed exit 0 with verified archives and JSON compaction; current free 23.47 GB. Full histori"
       },
       "taskKeys": [
         "OWB:027",
