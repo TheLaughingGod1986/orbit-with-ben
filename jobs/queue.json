@@ -97629,10 +97629,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T16:28Z",
+      "eta": "2026-10-28T18:28Z",
       "created_by": "claude",
       "created_at": "2026-10-28T16:24Z",
       "result": "",
@@ -97641,12 +97641,25 @@
           "at": "2026-10-28T16:24Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T16:28Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Set each scheduled Short's thumbnail to its opening hook frame, soonest first",
       "due": "2026-10-29T10:30:00Z",
       "kind": "studio",
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T16:28Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
