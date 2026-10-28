@@ -98979,16 +98979,21 @@
           "at": "2026-10-28T20:14Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Dry-run and log read: :9222 is closed (ECONNREFUSED); earlier vertex timed out on goto and cursor was signed out; codex and elevenlabs read OK"
+        },
+        {
+          "at": "2026-10-28T20:25Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Reopened CDP :9222 (Flow 20870 credits and Vertex £69.48 now read OK); traced Cursor redirect to grok.com/dashboard/billing Weekly included usage layout"
         }
       ],
-      "remaining_action": "Reopen CDP Chrome :9222 and inspect Vertex, Flow, and Cursor pages",
+      "remaining_action": "Update Cursor spending parser + tests in ai_spend_daily.py / test_ai_spend.py and check billing pages for plans.json",
       "kind": "listing",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-28T20:14Z",
+        "at": "2026-10-28T20:25Z",
         "by": "gemini",
-        "note": "Dry-run and log read: :9222 is closed (ECONNREFUSED); earlier vertex timed out on goto and cursor was signed out; codex "
+        "note": "Reopened CDP :9222 (Flow 20870 credits and Vertex £69.48 now read OK); traced Cursor redirect to grok.com/dashboard/bill"
       }
     }
   ],
