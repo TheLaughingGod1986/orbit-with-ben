@@ -38,3 +38,18 @@ Launcher copies are in this pack. The running processes already loaded their scr
 4. Only after adequate recovery and the cause/fix are evidenced, reopen J1100 with measured free GB and a truthful note, preserving its step 1/3. It remains blocked in this checkpoint. Do not claim/render J1100 in this run.
 
 Thread read to #6480506360.
+
+## Resume 28 Oct 2026, Codex worker
+
+- Resumed the existing PR #329 worktree and detached jobs; did not duplicate their copies. Current free space is 12.38 decimal GB. No target claim and J1100 remains blocked.
+- Original `J1128-compact` exited 1 at the destination manifest comparison, before compaction. `J1128-recover` is still running on its third archive; its first two comparisons failed safely and retained local sources.
+- Root cause of these comparison failures: NAS-generated AppleDouble `._` files. chief_tmp has 730 source files and 1,514 destination files; all 784 extras have `._` names. No source filename is missing. Sample metadata header is AppleDouble v2 (`0005160700020000`). This filename survey alone is not checksum approval.
+- Added `verify_archive.py`: all original size/hash pairs must match, and extra files are accepted only if they have AppleDouble v2 headers and a corresponding source file/directory. Missing files, changed payloads, unrelated extras and invalid metadata fail closed. Regression test passes. Existing research-metadata regression also passes.
+- Started **tmux J1128-resume**, log `~/_desk/logs/J1128-resume.log`, completion `~/_desk/logs/J1128-resume.done`, structured result `~/_desk/logs/J1128/resumed.json`. It reuses the existing first two archives, checks all SHA-256s and source stability, then reclaims local old scratch. It reuses the J1107 original JSON archive and verifies/compacts the remaining research directories. It waits for the original recover `.done` before touching that worker's final archive. No NAS deletions or overwrites of media. Launcher is `resume_recovery.py` in this pack.
+- Live swap has grown from the prior checkpoint's 9 GiB allocation to **10 GiB allocated / 9,133.81 MiB used**. No swap files touched, browser stopped, or attribution to a particular process claimed. Historical 20 GB growth is still only partly explained by research JSON plus swap activity.
+
+### Next continuation
+
+Check `J1128-resume.done` and `J1128-recover.done` plus their logs and structured results; missing means leave running, never duplicate. Verify free space after recovery; target remains **30 decimal GB**. If incomplete, inspect the exact failure and retain local data. The NAS helper workaround is job-local, not a change to shared core. Ensure collector patches are preserved by J1106/J1107. Reopen J1100 only once the required recovery and cause/fix evidence are complete. No PASS, merge, spend, upload or schedule change.
+
+Thread read to #6480842882.
