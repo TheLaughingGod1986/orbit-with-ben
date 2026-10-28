@@ -97055,10 +97055,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T19:53Z",
+      "eta": "2026-10-28T21:53Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
       "result": "",
@@ -97102,6 +97102,11 @@
           "at": "2026-10-28T19:52Z",
           "by": "claude",
           "what": "reopened: prerequisite cleared: J1112 freed the Mini to 30.43 GB (17:20Z, PR 321), over the 20 GB render floor. Resume at step 2 (v05 assembly + gates); preflight notes are on codex/J1100-preflight. Due: batch parked by Sun 1 Nov 20:00 London."
+        },
+        {
+          "at": "2026-10-28T19:53Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Restore disk headroom, then assemble and verify three v05 fixes",
@@ -97120,7 +97125,15 @@
         "OWB:028"
       ],
       "escalated_at": "2026-10-28T18:46Z",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T19:53Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1101",

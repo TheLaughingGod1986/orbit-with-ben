@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1090 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · OWB 025 Mars Opening v07: remove final-shot rover hardware, audition opening, rerun gates | 6da30d624 |
 | J1093 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · OWB 025 v07: direct-audio audition and readable UAT verification for J1090 | c370f1058 |
 | J1098 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS Snow Short: mature 48-hour Studio and retention read | 6472484257 |
-| J1100 | mini | open | – | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
+| J1100 | mini | claimed | codex | 2026-10-28T21:53Z | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1101 | mini | blocked | codex | – | studio · Swap S1 A6TW_6CXhcs (026) to Ben-OK'd v04 (Private, same slot Fri 20 Nov 11:30) |  |
 | J1104 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
