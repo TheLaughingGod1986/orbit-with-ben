@@ -53,7 +53,7 @@ def overlays(s,work,total,key):
         else: line=(line+' '+word).strip()
     if line:title.append(line)
     card=s['single_teaching_overlay'];a,b=card['timeline_in'],card['timeline_out']
-    folder=work/'overlays';folder.mkdir()
+    folder=work/'overlays';folder.mkdir(exist_ok=True)
     # Match hook text/style to accepted preparation; repeat at loop for pixel continuity.
     accepted_overlay=Image.open(Path('/Users/benjaminoats/_desk/reviews/J1017/openings')/(key+'_v04_overlay.png')).convert('RGBA')
     accepted_overlay.paste((0,0,0,0),(0,1400,1080,1920))
