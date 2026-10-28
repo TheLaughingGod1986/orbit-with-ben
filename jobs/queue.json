@@ -92613,9 +92613,14 @@
           "at": "2026-10-28T02:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T02:53Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J1056: reading J1004 history, HOS PR #366 state, and Chief relay status"
         }
       ],
-      "remaining_action": "Verify readiness: Await non-author Chief merge of HOS PR #366 (00b1e653) and post-reset J0862/J0863 holds",
+      "remaining_action": "Verify waiting condition for J1004 (HOS PR #366 non-author Chief merge and J0862/J0863 holds)",
       "kind": "chief",
       "recheck_of": "J1004",
       "due": "2026-10-28T03:52:18+00:00",
@@ -92634,9 +92639,15 @@
         "of": 3,
         "at": "2026-10-28T02:53Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J1056: reading J1004 history, HOS PR #366 state, and Chief relay status"
+      },
+      "taskKeys": [
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
     }
   ],
   "focus": [],
