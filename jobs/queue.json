@@ -93311,9 +93311,14 @@
           "at": "2026-10-28T05:48Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Step 2 done: synthesised 020/05_Music/jupiter_no_crust_short_bed_v01.mp3 (+ _plan.json at 68.6 BPM, £0) and updated _assemble_jupiter_no_crust_short_v01.py"
+        },
+        {
+          "at": "2026-10-28T05:54Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3 done: jupiter_no_crust_v01.mp4 PASSes music_gate (66.7 BPM), polish_gate (0/5 FAIL), picture_qa (0/5 FAIL), and gate_shorts_open (-14.0 LUFS, cut1=2.03s)"
         }
       ],
-      "remaining_action": "Run music_gate, picture_qa, polish_gate, and gate_shorts_open on OWB 020 jupiter_no_crust_v01",
+      "remaining_action": "Update J1060 QA sweep inventory/report and commit OWB 020 and 022 music_gate PASS artifacts",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -93325,11 +93330,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-28T05:48Z",
+        "at": "2026-10-28T05:54Z",
         "by": "gemini",
-        "note": "Step 2 done: synthesised 020/05_Music/jupiter_no_crust_short_bed_v01.mp3 (+ _plan.json at 68.6 BPM, £0) and updated _ass"
+        "note": "Step 3 done: jupiter_no_crust_v01.mp4 PASSes music_gate (66.7 BPM), polish_gate (0/5 FAIL), picture_qa (0/5 FAIL), and g"
       },
       "taskKeys": [
         "OWB:020",
