@@ -99195,9 +99195,14 @@
           "at": "2026-10-28T21:41Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-28T21:42Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Resumed prior 1/4 checkpoint; research JSON compaction completed in detached recovery; final old-artifact archive still active, no duplicate started"
         }
       ],
-      "remaining_action": "Find the disk growth, recover 30 GB, prevent recurrence and reopen J1100",
+      "remaining_action": "Finish existing verified NAS recovery, reach 30 GB and reopen J1100",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99210,10 +99215,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-28T21:41Z",
-        "by": "codex"
+        "at": "2026-10-28T21:42Z",
+        "by": "codex",
+        "note": "Resumed prior 1/4 checkpoint; research JSON compaction completed in detached recovery; final old-artifact archive still "
       },
       "taskKeys": [
         "OWB:027",
