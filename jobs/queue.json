@@ -91970,13 +91970,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T00:36Z",
-      "eta": "2026-10-28T02:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T00:35Z",
-      "result": "",
+      "result": "Verified J0912 waiting condition remains unmet: finished HOS longs 004–007 already have >=2 Test B Shorts (007 pair -I_GHK-GcFs and 4WUs0beKn0A scheduled; Acting-Chief ruling #180 6424215754 forbids extra 007 Short), and while HOS 008 has 0 built Test B Shorts (14/18 rows in SHORTS_PICTURE_PLAN_v02.json blocked_missing_plate), HOS 008 picture (11/112 rows; 101 Flow Veo rows gated on J0863 at 2026-11-12T00:05:00Z) and edit (todo) are not yet completed or approved. Kept J0912 blocked via jobs.py wait --recheck J1049 (check-at 2026-11-12T09:00:00Z).",
       "history": [
         {
           "at": "2026-10-28T00:35Z",
@@ -92007,6 +92007,11 @@
           "at": "2026-10-28T00:39Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded unmet condition on J0912 via jobs.py wait --recheck J1049 (next check 2026-11-12T09:00:00Z after J0863 Flow renewal gate)"
+        },
+        {
+          "at": "2026-10-28T00:39Z",
+          "by": "gemini",
+          "what": "done: Verified J0912 waiting condition remains unmet: finished HOS longs 004–007 already have >=2 Test B Shorts (007 pair -I_GHK-GcFs and 4WUs0beKn0A scheduled; Acting-Chief ruling #180 6424215754 forbids extra 007 Short), and while HOS 008 has 0 built Test B Shorts (14/18 rows in SHORTS_PICTURE_PLAN_v02.json blocked_missing_plate), HOS 008 picture (11/112 rows; 101 Flow Veo rows gated on J0863 at 2026-11-12T00:05:00Z) and edit (todo) are not yet completed or approved. Kept J0912 blocked via jobs.py wait --recheck J1049 (check-at 2026-11-12T09:00:00Z)."
         }
       ],
       "remaining_action": "Finish J1049 verification task",
