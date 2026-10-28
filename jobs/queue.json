@@ -94778,9 +94778,14 @@
           "at": "2026-10-28T09:25Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T09:26Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await J0998 (Ben OK on draft HOS PR #365) so npm run channel:audit exits 0 on HOS main",
+      "remaining_action": "Verify J0998 approval and audit evidence before reopening J0999",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-28T10:19:01+00:00",
@@ -94788,11 +94793,12 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-28T09:25Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-10-28T09:26Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:099"
+      ]
     }
   ],
   "focus": [],
