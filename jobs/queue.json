@@ -99132,10 +99132,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-28T21:52Z",
-      "eta": "2026-10-28T23:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T20:54Z",
       "result": "",
@@ -99279,6 +99279,11 @@
           "at": "2026-10-28T21:58Z",
           "by": "codex",
           "what": "step 1 of 4 done: PR 329 updated: 413 unused Chrome clones and five clean pushed old worktrees removed; free 22.42 GB. Three safety regressions pass. J1128-resume still running; full historical cause and 30 GB target remain incomplete."
+        },
+        {
+          "at": "2026-10-28T21:58Z",
+          "by": "codex",
+          "what": "released: Continuation committed in PR 329 at dccf7ad90. Free 22.42 GB, target 30 GB unmet; J1100 remains blocked. Existing tmux J1128-resume still verifying last HOS archive; log ~/_desk/logs/J1128-resume.log and completion ~/_desk/logs/J1128-resume.done (missing means running, do not duplicate). J1128-chrome-clones completed exit 0; 413 unused clones removed plus five verified clean pushed worktrees. Resume four-step plan at 1/4; read REPORT.md and result JSONs."
         }
       ],
       "remaining_action": "Finish NAS verification and recover remaining space to 30 GB before reopening J1100",
