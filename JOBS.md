@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1121 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1122 | macbook | open | – | – | review · Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only) |  |
 | J1126 | cloud | claimed | claude | 2026-10-28T21:23Z | review · Packaging panel decision: HOS weekly audit: advise on existing approved Periodic Table v12 and later title drafts; Chief owns test order; no new builds under J0777 |  |
-| J1128 | mini | open | – | – | assembly · URGENT Mini disk: 20 GB lost in 3.5 h after J1112 (30.4 -> 10.5 GB); find the cause, free to 30 GB, stop it recurring, reopen J1100 |  |
+| J1128 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · URGENT Mini disk: 20 GB lost in 3.5 h after J1112 (30.4 -> 10.5 GB); find the cause, free to 30 GB, stop it recurring, reopen J1100 |  |
 
 Recently finished:
 
