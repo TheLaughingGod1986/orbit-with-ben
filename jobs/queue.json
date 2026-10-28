@@ -97802,17 +97802,22 @@
           "at": "2026-10-28T17:13Z",
           "by": "codex",
           "what": "step 1 of 4 done: Free space now 21547 MiB; no Time Machine snapshots; no eligible old scratch folders from nas_offload dry run"
+        },
+        {
+          "at": "2026-10-28T17:18Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Repair reclaimed 7730 MiB; app/browser caches cleared 4666 MiB; free 26205 MiB. Git object race repaired by exact original-hash reconstruction."
         }
       ],
-      "remaining_action": "Finish cache survey and safe reclamation toward 30 GB; J1100 threshold cleared",
+      "remaining_action": "Check remaining safe caches and document measured space",
       "kind": "assembly",
       "urgent": 3,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-28T17:13Z",
+        "at": "2026-10-28T17:18Z",
         "by": "codex",
-        "note": "Free space now 21547 MiB; no Time Machine snapshots; no eligible old scratch folders from nas_offload dry run"
+        "note": "Repair reclaimed 7730 MiB; app/browser caches cleared 4666 MiB; free 26205 MiB. Git object race repaired by exact origin"
       },
       "taskKeys": [
         "OWB:027",
