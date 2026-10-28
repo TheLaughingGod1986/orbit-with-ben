@@ -93869,6 +93869,11 @@
           "at": "2026-10-28T08:39Z",
           "by": "codex",
           "what": "Chief FIX recorded; dependency J1075, verification 2026-10-28T10:00:00Z. No film PASS or publishing authorization."
+        },
+        {
+          "at": "2026-10-28T09:34Z",
+          "by": "codex",
+          "what": "J1075 review FIX: J1079 corrects remaining CFR18/iCloud provenance. Original hold and 10:00 UTC check preserved."
         }
       ],
       "remaining_action": "Await J1075 corrected QA inventory, then review evidence; no film approval granted",
@@ -94538,7 +94543,7 @@
       "ref": "J1066",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J1079",
       "eta_min": 120,
       "status": "blocked",
       "by": "gemini",
@@ -94546,7 +94551,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T08:38Z",
-      "result": "parked for Chief: J1066/J1075 QA inventory (e15f7c161cf9) and report (e2ab04c94b08) reconciled and committed in OWB e862e8ba5 and HOS 05c8581e: all 26 archived OWB v01 lift Shorts resolved to NAS tarballs (/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/{owbold,owbshorts,owbextra}.tar + MOVES_2026-10-24.log) with verified 64-hex SHA-256s; all 7 verified_in_pack file rows replaced with 64-hex SHA-256s and exact manifest paths; all 8 silent_visual_pack directories enumerated with 119 member file paths/SHA-256s (143 single-file exports + 8 packs [119 members] = 151 entries / 262 verified files); 129 newest candidates separated from 22 historical superseded versions (including wed11_opening_testA_v05 superseding v04); 434/434 fresh gate sidecars verified (0 FAIL, 370 with WARNs across 140 entries, 0 new fix jobs needed); all J0935/J1059/J0936/J1032/J0961/J0966/J1005/J0977/J0979/J1008 rulings and holds explicitly preserved",
+      "result": "Acting-Chief codex FIX: 219 direct hashes match, OWB026 CFR18 row carries VFR hash, 15 HOS iCloud reads unavailable. Accepted version/hold distinctions and 119 pack hashes. Follow-up J1079; ruling/evidence jobs/reviews/J1075/. No film approval.",
       "history": [
         {
           "at": "2026-10-28T08:38Z",
@@ -94592,9 +94597,14 @@
           "at": "2026-10-28T09:17Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1066/J1075 QA inventory (e15f7c161cf9) and report (e2ab04c94b08) reconciled and committed in OWB e862e8ba5 and HOS 05c8581e: all 26 archived OWB v01 lift Shorts resolved to NAS tarballs (/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/{owbold,owbshorts,owbextra}.tar + MOVES_2026-10-24.log) with verified 64-hex SHA-256s; all 7 verified_in_pack file rows replaced with 64-hex SHA-256s and exact manifest paths; all 8 silent_visual_pack directories enumerated with 119 member file paths/SHA-256s (143 single-file exports + 8 packs [119 members] = 151 entries / 262 verified files); 129 newest candidates separated from 22 historical superseded versions (including wed11_opening_testA_v05 superseding v04); 434/434 fresh gate sidecars verified (0 FAIL, 370 with WARNs across 140 entries, 0 new fix jobs needed); all J0935/J1059/J0936/J1032/J0961/J0966/J1005/J0977/J0979/J1008 rulings and holds explicitly preserved"
+        },
+        {
+          "at": "2026-10-28T09:34Z",
+          "by": "codex",
+          "what": "Chief FIX recorded: J1079 dependency; review verification 2026-10-28T11:00Z; worker 4/4 retained."
         }
       ],
-      "remaining_action": "Await Chief review of reconciled J1066/J1075 QA sweep inventory and report",
+      "remaining_action": "Await J1079 evidence corrections, then elected-Chief review",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -94634,7 +94644,12 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J1079 corrects CFR18 identity and qualifies iCloud/gate provenance in both reports; elected Chief reviews evidence before releasing J1075.",
+        "check_at": "2026-10-28T11:00:00Z"
+      }
     },
     {
       "id": "J1076",
