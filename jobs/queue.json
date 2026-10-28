@@ -88146,6 +88146,11 @@
           "at": "2026-10-28T09:11Z",
           "by": "relay",
           "what": "condition verification queued: J1077"
+        },
+        {
+          "at": "2026-10-28T09:22Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-28T15:22:00Z"
         }
       ],
       "kind": "review",
@@ -88158,7 +88163,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "remaining_action": "Await non-author Chief merge of HOS PR #366 (00b1e653) and post-reset J0862/J0863 holds",
+      "remaining_action": "Correct PR 366 timing summary and obsolete banner reference, then complete Chief paper review and merge",
       "progress": {
         "step": 5,
         "of": 5,
@@ -88175,12 +88180,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J0967 predecessor (e1bbcfb9) and J1004 5/5 paper disposition in HOS PR #366 (00b1e653) verified complete (all 8 candidates timed from raw alignments at atempo <=1.06 with 0 word changes; e1bbcfb9 word-deletion splices rejected; 006 s04/s05/s06 and 007 Short_B shelved; 010 Short_A Option A1 2.849s/23.289s or Option A2 J0862 documented; 54 008-010 Shorts rows mapped: 12 code_graphics on disk, 42 flow_veo rows gated on J0863). Kept blocked so completed 5/5 review is not re-queued as an open worker job and for non-author Chief (chief/claude/codex) PR #366 merge and post-reset J0862 (2026-10-30T00:05:00Z) / J0863 (2026-11-12T00:05:00Z) execution.",
-        "check_at": "2026-10-28T10:11:12+00:00",
-        "last_recheck": "J1056",
-        "checked_at": "2026-10-28T02:58:43+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1077"
+        "condition": "HOS PR 366 at 00b1e653 remains OPEN and unapproved. Before paper acceptance/merge, reconcile Option A1 summary with its detailed table (five trimmed inter-word gaps plus onset; unchanged 20ms boundaries mean the >=40ms claim applies only to trimmed gaps), and remove the obsolete 9-14s promoted-title-banner assumption prohibited by J0967. Then obtain non-author Chief paper review and merge. J0862/J0863 credit and production holds are separate and unchanged; they do not block this paper correction.",
+        "check_at": "2026-10-28T15:22:00Z",
+        "last_recheck": "J1077",
+        "checked_at": "2026-10-28T09:22:43+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-10-27T23:26Z"
     },
