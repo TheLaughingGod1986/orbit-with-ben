@@ -1,0 +1,117 @@
+{
+  "job": "J1093",
+  "review_followup_of": "J1090",
+  "reviewer_agent": "gemini",
+  "reviewer_model": "Gemini 4 Argon (High)",
+  "audio_input_capability": {
+    "supported": true,
+    "method": "Direct multimodal binary audio/video ingestion via subscription agy read_file tool (native audio/wav, audio/mpeg, and video/mp4 stream ingestion into model context; zero paid API or credit spend)",
+    "files_ingested": [
+      {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v07.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 25238529,
+        "sha256": "e9f848d99db9f8e73eb70aee635ee3dcd9d4a50bdda906a54a74c10e83d12e83",
+        "duration_s": 26.033333
+      },
+      {
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v07_PHONE.mp4",
+        "mime_type": "video/mp4",
+        "bytes": 9022873,
+        "sha256": "ce9d0befcdef2493fba49230b0ae9ae9e4cc4c5423de5b59ae4c1f8572eb4857",
+        "duration_s": 26.033333
+      },
+      {
+        "path": "/private/tmp/j1090_wed11_v07/stem_vo.wav",
+        "mime_type": "audio/wav",
+        "bytes": 4998188,
+        "sha256": "c2d824f06a070bd9edad46d4e0cb7d4879716e4a0a14111b0d9f7817be33a171",
+        "note": "Identical SHA256 to v06 stem_vo.wav"
+      },
+      {
+        "path": "/private/tmp/j0935_wed11_v03/long.wav",
+        "mime_type": "audio/wav",
+        "bytes": 93461838,
+        "sha256": "a81c6088a04c7c4d862c63aa352aa6abbacc8eb13de3d06fb77321139ae4f871",
+        "ingested_windows": [
+          "0.00s-6.00s",
+          "2.80s-5.30s",
+          "263.00s-272.50s"
+        ]
+      },
+      {
+        "path": "/private/tmp/j0935_wed11_v03/opp.wav",
+        "mime_type": "audio/wav",
+        "bytes": 4785294,
+        "sha256": "1087432444a60c9a505e28e8e3f5608f3cd2e91f5397d5831708b4cd37b6686f",
+        "ingested_windows": [
+          "0.00s-24.92s (full file)"
+        ]
+      }
+    ]
+  },
+  "for_more_vs_from_more_resolution": {
+    "source_clip": "long.wav 0.08s-5.30s -> stem_vo.wav 0.000s-5.220s (single contiguous unedited take from locked 025 long VO; zero internal splice)",
+    "word_timestamps_in_master": {
+      "kept": "2.94s-3.10s",
+      "going": "3.10s-3.42s",
+      "for_weak_form": "3.42s-3.64s (source long.wav 3.68s-3.76s)",
+      "more": "3.64s-3.84s (source long.wav 3.80s-3.92s)",
+      "than": "3.84s-3.94s",
+      "14": "3.94s-4.44s",
+      "years": "4.44s-4.94s (tail to 5.16s)"
+    },
+    "audible_finding": "Audibly, Ben speaks the natural British weak-form preposition \"for\" (/f\u0259/) linking directly from \"going\" (/\u02c8\u0261\u0259\u028a\u026a\u014b/) into the bilabial nasal onset /m/ of \"more\" (/f\u0259 m\u0254\u02d0/). Because the unstressed schwa (~80 ms) coarticulates into the /m/ of \"more\", faster-whisper ASR mis-tokenized the /f\u0259 m/ transition as \"from more\". Direct audition of both long.wav (0.08-5.30s) and stem_vo.wav / wed11_opening_testA_v07.mp4 confirms they are identical, unedited within the sentence, and clearly heard in sentence context as \"kept going for more than fourteen years\" with no stumble, clipping, or splice artifact."
+  },
+  "segments_and_joins_audition": [
+    {
+      "seg": 0,
+      "source": "long.wav [0.08s-5.30s]",
+      "timeline_s": "0.000s-5.220s",
+      "text": "A robot built to last ninety days on Mars kept going for more than fourteen years.",
+      "audible_finding": "Clean onset at 0.04s; natural cadence; \"Mars\" at 2.22s; \"14\" at 4.12s and \"years\" ending at 5.16s (accepted 5.16s reveal preserved)."
+    },
+    {
+      "join": "0->1",
+      "at_s": "5.220s-5.288s (0.08s room-tone gap, 12ms xfade)",
+      "source_transition": "long.wav -> opp.wav [7.12s-10.44s]",
+      "text_across_join": "...fourteen years. | Dust should have choked its solar panels within months.",
+      "audible_finding": "Seamless loudness and timbre match between gain-matched long.wav and opp.wav; natural sentence breath; zero click or pop."
+    },
+    {
+      "join": "1->2",
+      "at_s": "8.596s-8.644s (0.06s room-tone gap, 12ms xfade)",
+      "source_transition": "opp.wav [7.12s-10.44s] -> opp.wav [11.74s-14.48s]",
+      "text_across_join": "...within months. | Martian wind kept sweeping them clean.",
+      "audible_finding": "Clean removal of \"Instead,\"; \"Martian\" enters cleanly at 8.74s and \"wind\" at 9.224s through \"clean\" at 11.304s (accepted 9.224-11.304s wind timing preserved)."
+    },
+    {
+      "join": "2->3",
+      "at_s": "11.372s-11.600s (0.24s room-tone gap, 12ms xfade)",
+      "source_transition": "opp.wav -> long.wav [263.68s-265.70s]",
+      "text_across_join": "...sweeping them clean. | The team called them cleaning events.",
+      "audible_finding": "Smooth transition back to gain-matched long.wav; \"events\" lands cleanly at 13.02s; no room-tone step or click."
+    },
+    {
+      "join": "3->4",
+      "at_s": "13.608s-13.756s (0.16s room-tone gap, 12ms xfade)",
+      "source_transition": "long.wav [263.68s-265.70s] -> long.wav [266.04s-269.42s]",
+      "text_across_join": "...cleaning events. | Each one gave the rover back its power, and it kept driving.",
+      "audible_finding": "Natural inter-sentence pause; \"driving\" completes cleanly at 17.056s."
+    },
+    {
+      "join": "4->5",
+      "at_s": "17.124s-17.332s (0.22s room-tone gap, 12ms xfade)",
+      "source_transition": "long.wav [266.04s-269.42s] -> long.wav [269.96s-271.74s]",
+      "text_across_join": "...kept driving. | Ninety days became years.",
+      "audible_finding": "Clean pause and articulation; \"Ninety\" at 17.372s, \"years\" completes cleanly before 19.10s without bleeding into the next source word."
+    },
+    {
+      "join": "5->6->7->8->9",
+      "at_s": "19.100s-24.924s (opp.wav 14.82s-21.30s with micro-tightened pauses)",
+      "source_transition": "long.wav -> opp.wav [14.82s-15.16s, 15.46s-16.64s, 16.96s-19.40s, 19.70s-21.30s]",
+      "text_across_join": "...became years. | Then, in 2018, a storm wrapped the whole planet and the sky went dark.",
+      "audible_finding": "Smooth transition from long.wav to opp.wav on \"Then, in 2018\" (20.024s); tightened micro-pauses between clauses sound completely natural with zero clipped consonants; final word \"dark\" ends cleanly at 24.896s followed by 1.136s of clean score bed and loop tail to 26.033s."
+    }
+  ]
+}
