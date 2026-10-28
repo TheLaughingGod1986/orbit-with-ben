@@ -97629,13 +97629,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T16:28Z",
-      "eta": "2026-10-28T18:28Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T16:24Z",
-      "result": "",
+      "result": "parked for Chief: HOS Studio profile has no accessible CDP endpoint; Orbit session denies HOS permission. Restore HOS session, finish its scheduled-cover inventory/fixes/read-back, then review Orbit evidence PR #317 (12 fixed, 22 checked).",
       "history": [
         {
           "at": "2026-10-28T16:24Z",
@@ -97681,6 +97681,11 @@
           "at": "2026-10-28T16:41Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR #317 / 7ac927982: 12 Orbit covers fixed; final Studio list images verify all 22 scheduled Shorts. HOS blocked before any change. Required channel reports posted; thumbnail-stage claims released to review. No PASS or merge by worker."
+        },
+        {
+          "at": "2026-10-28T16:41Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: HOS Studio profile has no accessible CDP endpoint; Orbit session denies HOS permission. Restore HOS session, finish its scheduled-cover inventory/fixes/read-back, then review Orbit evidence PR #317 (12 fixed, 22 checked)."
         }
       ],
       "remaining_action": "Chief: restore HOS Studio access, finish HOS scheduled covers and review Orbit read-back",

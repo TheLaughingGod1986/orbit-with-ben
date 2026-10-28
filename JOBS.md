@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1108 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 | J1109 | any | open | – | – | chief · Chief: verify condition for J1098 |  |
 | J1110 | mini | blocked | codex | – | assembly · Mini disk: move superseded film exports to the NAS (verified sha256) until 30 GB free, so J1100 can render |  |
-| J1111 | mini | claimed | codex | 2026-10-28T18:28Z | studio · URGENT: set every scheduled Short's thumbnail to its frame-0 hook (OWB + HOS), Venus Melt Lead first (airs 29 Oct 11:30) |  |
+| J1111 | mini | blocked | codex | – | studio · URGENT: set every scheduled Short's thumbnail to its frame-0 hook (OWB + HOS), Venus Melt Lead first (airs 29 Oct 11:30) |  |
 
 Recently finished:
 
