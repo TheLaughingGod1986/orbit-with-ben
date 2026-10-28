@@ -86,6 +86,7 @@ BODY = [
     (EDL, 124.0, "crop=495:880:712:0", EDL_NAME, 2.18),
     (GALE, 58.0, "crop=608:1080:80:0", GALE_NAME, 1.78),
     (EDL, 154.0, "crop=495:880:712:0", EDL_NAME, 2.18),
+    (GALE, 84.0, "crop=608:1080:656:0", GALE_NAME, 1.78),
 ]
 
 
@@ -452,7 +453,7 @@ def main() -> None:
     write_wav(vo_path, np.concatenate([audio, tail], axis=0))
 
     body = vo_end - FIRST_CUT
-    n = 6
+    n = len(BODY)
     hold = body / n
     if hold > 3.60:
         raise SystemExit(f"plate hold {hold:.2f}s over 3.60")
