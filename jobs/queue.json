@@ -99200,9 +99200,14 @@
           "at": "2026-10-28T21:42Z",
           "by": "codex",
           "what": "step 1 of 4 done: Resumed prior 1/4 checkpoint; research JSON compaction completed in detached recovery; final old-artifact archive still active, no duplicate started"
+        },
+        {
+          "at": "2026-10-28T21:43Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: PR 329 updated 30573e466; verified research compaction complete; live 19.48 GB, swap 11 GiB allocated; original final rsync still active, both completion files absent"
         }
       ],
-      "remaining_action": "Finish existing verified NAS recovery, reach 30 GB and reopen J1100",
+      "remaining_action": "Finish active NAS recovery and restore 30 GB before reopening J1100",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99217,9 +99222,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-28T21:42Z",
+        "at": "2026-10-28T21:43Z",
         "by": "codex",
-        "note": "Resumed prior 1/4 checkpoint; research JSON compaction completed in detached recovery; final old-artifact archive still "
+        "note": "PR 329 updated 30573e466; verified research compaction complete; live 19.48 GB, swap 11 GiB allocated; original final rs"
       },
       "taskKeys": [
         "OWB:027",
