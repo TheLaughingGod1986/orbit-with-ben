@@ -13,6 +13,7 @@ def main():
  'polish':[ROOT/'scripts/polish_gate.py',V,'--cuts',D/'cuts.json','--out',D/'polish_gate.json'],
  'music':[ROOT/'scripts/music_gate.py',ROOT/'02_Video-Projects/028_A-Star-Is-Coming-Toward-Us','--bed',ROOT/'02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/05_Music/gliese_score_bed_v03.mp3','--video',V,'--out',D/'music_gate.json']}
  for name,args in cmds.items():
+  if summary.get(name,{}).get('exit_code')==0:continue
   print(name,flush=True)
   with (D/(name+'_py314.log')).open('w') as f:r=subprocess.run([sys.executable,*map(str,args)],stdout=f,stderr=subprocess.STDOUT)
   summary[name]={'exit_code':r.returncode,'log':str(D/(name+'_py314.log'))}

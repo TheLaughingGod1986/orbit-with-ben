@@ -1,0 +1,1786 @@
+{
+  "shorts": {
+    "S2_027_emwQsPxnRGM": {
+      "film": "OWB:027",
+      "slug": "lift_equator_weight",
+      "youtube_id": "emwQsPxnRGM",
+      "air_date": "2026-11-23",
+      "local_title": "Why Do You Weigh Less at Earth's Equator?",
+      "first_cut_limit_s": 3.0,
+      "max_hold_limit_s": 3.7,
+      "single_teaching_overlay": {
+        "baked_in_labels_count": 0,
+        "code_graphics_count": 0,
+        "added_edit_cards_count": 1,
+        "total_teaching_overlays": 1,
+        "card_text": [
+          "0.5% LESS WEIGHT",
+          "AT EARTH'S EQUATOR"
+        ],
+        "timeline_in": 2.46,
+        "timeline_out": 6.09,
+        "duration_s": 2.84,
+        "pct_range": [
+          11.09,
+          23.9
+        ],
+        "animation_spec": {
+          "entry": "0.350s cubic-bezier ease-out alpha 0->1 + 18px upward slide (2.460\u20132.810s)",
+          "steady_hold": "2.140s hold over moving video plate (2.810\u20134.950s, <= 4.000s)",
+          "exit": "0.350s cubic-bezier ease-in alpha 1->0 (4.950\u20135.300s)",
+          "ken_burns_on_card": false,
+          "typography": "House large bold sans-serif, <= 4 words per line, 11.5% of 16:9 centre band height, over moving graded plate (no black slab)"
+        },
+        "y_band": [
+          656,
+          1264
+        ],
+        "clear_of_hook_0_2s": true,
+        "clear_of_title_9_14s": true,
+        "selection_rationale": "Single edit card reinforcing the 0.5% weight-drop hook over NOAA rotating Earth while the causal centrifugal/bulge explanation is held until >=73.31%."
+      },
+      "frame0_gate_verification": {
+        "air_date": "2026-11-23",
+        "video_id": "emwQsPxnRGM",
+        "titled_subject": "Earth (sunlit rotating planetary globe, ocean, and equatorial cloud deck from ISS low-Earth orbit)",
+        "library_path": "00_Brand/Channel-Setup/audits/shorts_open_library/library.json",
+        "library_sha256": "b89044767a2f5d58cc2d3e70f159f1d175322e3582239e6a4bff7c5bb715556e",
+        "generator_script": "jobs/reviews/generate_j0936_prep_v04_openings.py",
+        "reproducible_command": "ffmpeg -y -ss 28.30 -t 2.45 -i /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4 -vf 'crop=608:1080:656:0,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p' -t 2.30 -an S2_027_emwQsPxnRGM_open.mp4",
+        "vf": "crop=608:1080:656:0,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p",
+        "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4",
+        "source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+        "underlying_id": "ISS_sunrise_to_sunset.ogv",
+        "source_in": 28.3,
+        "source_out": 30.6,
+        "source_speed": 1.0,
+        "first_cut_s": 2.3,
+        "open_clip_path": "/Users/benjaminoats/_desk/reviews/J1015/openings/S2_027_emwQsPxnRGM_open.mp4",
+        "open_clip_sha256": "5703aa724ad25793f1669ad0d4f6eee71853f8e72cf9662496af5bfc2ebaee92",
+        "preview_jpg_path": "/Users/benjaminoats/_desk/reviews/J1015/openings/S2_027_emwQsPxnRGM_frame_0_30s.jpg",
+        "preview_frame_sha256": "2a6d3e438899bb059f6cb5d6fda93c9c13978e611528858fcb13dca7d2117401",
+        "captioned_open_clip_path": "/Users/benjaminoats/_desk/reviews/J1015/openings/S2_027_emwQsPxnRGM_open_captioned.mp4",
+        "captioned_open_clip_sha256": "279ded76e33d45800dc43b99c0e89c6fa2c6920034fa16284a4da37fd8d3b31b",
+        "captioned_preview_jpg_path": "/Users/benjaminoats/_desk/reviews/J1015/openings/S2_027_emwQsPxnRGM_captioned_0_30s.jpg",
+        "captioned_preview_frame_sha256": "7dd50c0c8bace1adf993a21bf88e8c732cdac722dc4c263c52d06630c6836e42",
+        "hook_caption_rows": [
+          "0.5% LIGHTER",
+          "AT THE EQUATOR"
+        ],
+        "line1_caption_0_30s": "WHY DO YOU",
+        "dhash_0_3s": "0001072b6e121038",
+        "captioned_dhash_0_3s": "2100072a2e120c38",
+        "motion_0_1s": 21.12,
+        "captioned_motion_0_1s": 20.58,
+        "frame0_diff_0_1_5s": 6.05,
+        "captioned_frame0_diff_0_1_5s": 6.06,
+        "internal_first_cut_s": null,
+        "visor_frac": 0.0,
+        "captioned_visor_frac": 0.0,
+        "black_frac": 0.1352,
+        "black30_frac": 0.1369,
+        "subject_body_only_frac": 0.859,
+        "moving_subject_frac": 0.859,
+        "subject_occupancy_method": "Visual and geometric horizon-contour measurement on cropped 1080x1920 frame (@0.30s): the curved sunlit Earth atmospheric limb crosses from (x=0, y=358) to (x=1080, y=184), with space above the limb occupying 14.1% of the frame and the sunlit Earth globe/cloud deck below the limb occupying 85.9% of the 1080x1920 frame (0% spacecraft structure inside the center crop x=656..1264).",
+        "min_library_hamming_bits": 21,
+        "max_library_bg_match": 0.142,
+        "min_non_batch_library_hamming_bits": 21,
+        "max_non_batch_library_bg_match": 0.119,
+        "min_captioned_library_hamming_bits": 21,
+        "max_captioned_library_bg_match": 0.125,
+        "compared_library_entries": [
+          {
+            "id": "iyvWYFP_ETA",
+            "date": "2026-11-09",
+            "air_date": "2026-11-09",
+            "title": "Could a Robot Survive a Night on Mars?",
+            "dhash": "8f06db3870c787fe",
+            "hamming_bits": 34,
+            "bg_match": 0.062,
+            "captioned_hamming_bits": 32,
+            "captioned_bg_match": 0.069
+          },
+          {
+            "id": "RLSJm59OSzI",
+            "date": "2026-11-10",
+            "air_date": "2026-11-10",
+            "title": "What Would Standing on Saturn's Moon Titan Feel Like?",
+            "dhash": "f4fdfefffffe7d70",
+            "hamming_bits": 36,
+            "bg_match": 0.119,
+            "captioned_hamming_bits": 38,
+            "captioned_bg_match": 0.125
+          },
+          {
+            "id": "TtgHNLXfDSs",
+            "date": "2026-11-11",
+            "air_date": "2026-11-11",
+            "title": "Why Did a 90-Day Mars Rover Last 14 Years?",
+            "dhash": "4d3bdba5a7303068",
+            "hamming_bits": 26,
+            "bg_match": 0.112,
+            "captioned_hamming_bits": 30,
+            "captioned_bg_match": 0.103
+          },
+          {
+            "id": "N42gKBbD7tE",
+            "date": "2026-11-12",
+            "air_date": "2026-11-12",
+            "title": "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?",
+            "dhash": "2357880d59b10537",
+            "hamming_bits": 31,
+            "bg_match": 0.043,
+            "captioned_hamming_bits": 31,
+            "captioned_bg_match": 0.042
+          },
+          {
+            "id": "bSjWiCbB7pY",
+            "date": "2026-11-13",
+            "air_date": "2026-11-13",
+            "title": "How Did a Helicopter Fly 72 Times on Mars?",
+            "dhash": "0b02000301020000",
+            "hamming_bits": 21,
+            "bg_match": 0.097,
+            "captioned_hamming_bits": 21,
+            "captioned_bg_match": 0.09
+          },
+          {
+            "id": "gmzaCfJF1gA",
+            "date": "2026-11-14",
+            "air_date": "2026-11-14",
+            "title": "Why Does Pluto's Giant Ice Heart Have Zero Craters?",
+            "dhash": "ffff3f3f1f0f1f70",
+            "hamming_bits": 34,
+            "bg_match": 0.076,
+            "captioned_hamming_bits": 32,
+            "captioned_bg_match": 0.076
+          },
+          {
+            "id": "HZGTovJu_TQ",
+            "date": "2026-11-16",
+            "air_date": "2026-11-16",
+            "title": "If You Can't See the Nearest Star, How Far Away Is It?",
+            "dhash": "400e0616020c3978",
+            "hamming_bits": 23,
+            "bg_match": 0.0,
+            "captioned_hamming_bits": 23,
+            "captioned_bg_match": 0.0
+          },
+          {
+            "id": "kKN8Ale42sE",
+            "date": "2026-11-17",
+            "air_date": "2026-11-17",
+            "title": "How Far From Earth Is Voyager 1 Right Now?",
+            "dhash": "638e8c8933076de0",
+            "hamming_bits": 34,
+            "bg_match": 0.0,
+            "captioned_hamming_bits": 28,
+            "captioned_bg_match": 0.0
+          },
+          {
+            "id": "cwU_0WWeNZ4",
+            "date": "2026-11-18",
+            "air_date": "2026-11-18",
+            "title": "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?",
+            "dhash": "30330f3f3f1f4a23",
+            "hamming_bits": 22,
+            "bg_match": 0.019,
+            "captioned_hamming_bits": 22,
+            "captioned_bg_match": 0.008
+          },
+          {
+            "id": "A6TW_6CXhcs",
+            "date": "2026-11-20",
+            "air_date": "2026-11-20",
+            "title": "The Nearest Star Is a Cherry Past Cairo. How Do We Know?",
+            "dhash": "102b1b5bf816bba7",
+            "hamming_bits": 26,
+            "bg_match": 0.009,
+            "captioned_hamming_bits": 32,
+            "captioned_bg_match": 0.008
+          },
+          {
+            "id": "bizlhspnVvY",
+            "date": "2026-11-30",
+            "air_date": "2026-11-30",
+            "title": "Why Will Gliese 710's Comets Arrive After It Has Gone?",
+            "dhash": "29450b1dbb0b0c00",
+            "hamming_bits": 25,
+            "bg_match": 0.053,
+            "captioned_hamming_bits": 21,
+            "captioned_bg_match": 0.038
+          },
+          {
+            "id": "DETI0HV2jlI",
+            "date": "2026-12-02",
+            "air_date": "2026-12-02",
+            "title": "Is a Star Really Coming Towards Us?",
+            "dhash": "2955166685968122",
+            "hamming_bits": 26,
+            "bg_match": 0.056,
+            "captioned_hamming_bits": 24,
+            "captioned_bg_match": 0.035
+          },
+          {
+            "id": "jJ5LkFGyzLI",
+            "date": "2026-12-04",
+            "air_date": "2026-12-04",
+            "title": "How Close Will Gliese 710 Come to the Sun?",
+            "dhash": "1f2b170f070f0f07",
+            "hamming_bits": 30,
+            "bg_match": 0.142,
+            "captioned_hamming_bits": 28,
+            "captioned_bg_match": 0.102
+          },
+          {
+            "id": "X768qs8sNQs",
+            "date": "2026-12-07",
+            "air_date": "2026-12-07",
+            "title": "What Will the Night Sky Look Like When Gliese 710 Arrives?",
+            "dhash": "0055110040479b00",
+            "hamming_bits": 25,
+            "bg_match": 0.067,
+            "captioned_hamming_bits": 29,
+            "captioned_bg_match": 0.025
+          }
+        ],
+        "min_batch_pairwise_hamming_bits": 25,
+        "max_batch_pairwise_bg_match": 0.087,
+        "min_captioned_batch_pairwise_hamming_bits": 27,
+        "max_captioned_batch_pairwise_bg_match": 0.083,
+        "batch_pairwise": {
+          "S1_026_A6TW_6CXhcs": {
+            "hamming_bits": 30,
+            "bg_match": 0.0
+          },
+          "S3_028_bizlhspnVvY": {
+            "hamming_bits": 31,
+            "bg_match": 0.0
+          },
+          "S4_028_DETI0HV2jlI": {
+            "hamming_bits": 27,
+            "bg_match": 0.087
+          },
+          "S5_028_jJ5LkFGyzLI": {
+            "hamming_bits": 30,
+            "bg_match": 0.0
+          },
+          "S6_028_X768qs8sNQs": {
+            "hamming_bits": 25,
+            "bg_match": 0.0
+          }
+        },
+        "captioned_batch_pairwise": {
+          "S1_026_A6TW_6CXhcs": {
+            "hamming_bits": 30,
+            "bg_match": 0.0
+          },
+          "S3_028_bizlhspnVvY": {
+            "hamming_bits": 28,
+            "bg_match": 0.0
+          },
+          "S4_028_DETI0HV2jlI": {
+            "hamming_bits": 27,
+            "bg_match": 0.083
+          },
+          "S5_028_jJ5LkFGyzLI": {
+            "hamming_bits": 27,
+            "bg_match": 0.042
+          },
+          "S6_028_X768qs8sNQs": {
+            "hamming_bits": 30,
+            "bg_match": 0.038
+          }
+        }
+      },
+      "vo_splice_map": {
+        "vo_source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4",
+        "vo_source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+        "onset_s": 0.08,
+        "whitespace_words": 64,
+        "spoken_words": 65,
+        "vo_end_s": 21.97,
+        "loop_tail_s": 1.0,
+        "total_duration_s": 22.97,
+        "seventy_pct_mark_s": 16.078999999999997,
+        "opening_question_span_count": 7,
+        "opening_question_end_s": 2.54,
+        "opening_question_punctuated": "Why Do You Weigh Less at Earth's Equator?",
+        "first_named_subject": {
+          "word": "Earth's",
+          "word_idx": 752,
+          "start": 1.31,
+          "end": 1.75
+        },
+        "earliest_spoken_answer": {
+          "word": "Because",
+          "word_idx": 351,
+          "start": 16.26,
+          "end": 16.5,
+          "pct_of_total": 73.31
+        },
+        "keyword_timings": {
+          "Earth's": {
+            "word": "Earth's",
+            "start": 1.31,
+            "end": 1.75,
+            "pct_of_total": 5.91
+          },
+          "half": {
+            "word": "half",
+            "start": 8.4,
+            "end": 8.66,
+            "pct_of_total": 37.87
+          },
+          "forty-three": {
+            "word": "forty-three",
+            "start": 13.32,
+            "end": 13.88,
+            "pct_of_total": 60.05
+          },
+          "Because": {
+            "word": "Because",
+            "start": 16.26,
+            "end": 16.5,
+            "pct_of_total": 73.31
+          },
+          "swings": {
+            "word": "swings",
+            "start": 18.0,
+            "end": 18.3,
+            "pct_of_total": 81.15
+          },
+          "bulges": {
+            "word": "bulges.",
+            "start": 20.48,
+            "end": 21.18,
+            "pct_of_total": 92.34
+          }
+        },
+        "transcript": "Why do you weigh less at Earth's equator? You weigh about half a percent less there. The ground under you is carrying you east at about one and a half thousand kilometers an hour. It is faster than a jet airliner. Earth is about forty-three kilometers wider across the equator. Because the ground at the equator swings round so fast, the whole planet bulges.",
+        "raw_source_token_transcript": "Why do you weigh less at Earth's equator, you weigh about half a percent less there the ground under you is carrying you east at about one and a half thousand kilometers an hour. it is faster than a jet airliner, Earth is about forty-three kilometers wider across the equator. Because the ground at the equator swings round so fast, the whole planet bulges.",
+        "auditions": {
+          "question_audition": {
+            "wav_path": "/Users/benjaminoats/_desk/reviews/J1028/auditions/S2_027_emwQsPxnRGM_question_audition.wav",
+            "sha256": "5352c822e374b8bb0bc326eb8bd0cc91010d723a9e1b472f74a370748b65e56b",
+            "sample_rate_hz": 48000,
+            "duration_s": 2.59,
+            "rms_dbfs": -15.73,
+            "peak_dbfs": -1.49,
+            "max_sample_step": 0.20837
+          },
+          "full_vo_audition": {
+            "wav_path": "/Users/benjaminoats/_desk/reviews/J1100/audio_candidates/S2_027_emwQsPxnRGM_candidate.wav",
+            "sha256": "4d655c54ece20567f5c158d7da5dfc1878bfeb0f7036e936bbfa358c30f36b54"
+          }
+        },
+        "subspans": [
+          {
+            "span_index": 1,
+            "word_idx_range": "129..129",
+            "source_in": 50.2,
+            "source_out": 50.38,
+            "raw_dur": 0.18,
+            "tempo": 1.0,
+            "scaled_dur": 0.18,
+            "gap_after": 0.05,
+            "xfade_s": 0.0,
+            "timeline_start": 0.08,
+            "timeline_end": 0.25999999999999973,
+            "max_internal_pause": 0.0,
+            "text": "Why",
+            "words": [
+              {
+                "word_idx": 129,
+                "word": "Why",
+                "start": 0.08,
+                "end": 0.26,
+                "src_start": 50.2,
+                "src_end": 50.38
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 2,
+            "word_idx_range": "919..919",
+            "source_in": 365.64,
+            "source_out": 365.74,
+            "raw_dur": 0.1,
+            "tempo": 1.0,
+            "scaled_dur": 0.1,
+            "gap_after": 0.05,
+            "xfade_s": 0.0,
+            "timeline_start": 0.3099999999999997,
+            "timeline_end": 0.41000000000002246,
+            "max_internal_pause": 0.0,
+            "text": "do",
+            "words": [
+              {
+                "word_idx": 919,
+                "word": "do",
+                "start": 0.31,
+                "end": 0.41,
+                "src_start": 365.64,
+                "src_end": 365.74
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 3,
+            "word_idx_range": "361..362",
+            "source_in": 131.54,
+            "source_out": 131.8,
+            "raw_dur": 0.26,
+            "tempo": 1.0,
+            "scaled_dur": 0.26,
+            "gap_after": 0.05,
+            "xfade_s": 0.0,
+            "timeline_start": 0.46000000000002245,
+            "timeline_end": 0.7200000000000417,
+            "max_internal_pause": 0.04,
+            "text": "you weigh",
+            "words": [
+              {
+                "word_idx": 361,
+                "word": "you",
+                "start": 0.46,
+                "end": 0.56,
+                "src_start": 131.54,
+                "src_end": 131.64
+              },
+              {
+                "word_idx": 362,
+                "word": "weigh",
+                "start": 0.6,
+                "end": 0.72,
+                "src_start": 131.68,
+                "src_end": 131.8
+              }
+            ],
+            "max_scribe_token_gap": 0.04
+          },
+          {
+            "span_index": 4,
+            "word_idx_range": "368..368",
+            "source_in": 133.36,
+            "source_out": 133.64,
+            "raw_dur": 0.28,
+            "tempo": 1.0,
+            "scaled_dur": 0.28,
+            "gap_after": 0.05,
+            "xfade_s": 0.0,
+            "timeline_start": 0.7700000000000418,
+            "timeline_end": 1.0500000000000145,
+            "max_internal_pause": 0.0,
+            "text": "less",
+            "words": [
+              {
+                "word_idx": 368,
+                "word": "less",
+                "start": 0.77,
+                "end": 1.05,
+                "src_start": 133.36,
+                "src_end": 133.64
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 5,
+            "word_idx_range": "344..344",
+            "source_in": 124.7,
+            "source_out": 124.86,
+            "raw_dur": 0.16,
+            "tempo": 1.0,
+            "scaled_dur": 0.16,
+            "gap_after": 0.05,
+            "xfade_s": 0.0,
+            "timeline_start": 1.1000000000000145,
+            "timeline_end": 1.2600000000000111,
+            "max_internal_pause": 0.0,
+            "text": "at",
+            "words": [
+              {
+                "word_idx": 344,
+                "word": "at",
+                "start": 1.1,
+                "end": 1.26,
+                "src_start": 124.7,
+                "src_end": 124.86
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 6,
+            "word_idx_range": "752..752",
+            "source_in": 291.14,
+            "source_out": 291.58,
+            "raw_dur": 0.44,
+            "tempo": 1.0,
+            "scaled_dur": 0.44,
+            "gap_after": 0.05,
+            "xfade_s": 0.0,
+            "timeline_start": 1.3100000000000112,
+            "timeline_end": 1.7500000000000089,
+            "max_internal_pause": 0.0,
+            "text": "Earth's",
+            "words": [
+              {
+                "word_idx": 752,
+                "word": "Earth's",
+                "start": 1.31,
+                "end": 1.75,
+                "src_start": 291.14,
+                "src_end": 291.58
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 7,
+            "word_idx_range": "27..27",
+            "source_in": 9.96,
+            "source_out": 10.7,
+            "raw_dur": 0.74,
+            "tempo": 1.0,
+            "scaled_dur": 0.74,
+            "gap_after": 0.65,
+            "xfade_s": 0.0,
+            "timeline_start": 1.800000000000009,
+            "timeline_end": 2.540000000000007,
+            "max_internal_pause": 0.0,
+            "text": "equator,",
+            "words": [
+              {
+                "word_idx": 27,
+                "word": "equator,",
+                "start": 1.8,
+                "end": 2.54,
+                "src_start": 9.96,
+                "src_end": 10.7
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 8,
+            "word_idx_range": "361..364",
+            "source_in": 131.54,
+            "source_out": 132.48,
+            "raw_dur": 0.94,
+            "tempo": 1.0,
+            "scaled_dur": 0.94,
+            "gap_after": 0.08,
+            "xfade_s": 0.0,
+            "timeline_start": 3.1900000000000075,
+            "timeline_end": 4.130000000000005,
+            "max_internal_pause": 0.08,
+            "text": "you weigh about half",
+            "words": [
+              {
+                "word_idx": 361,
+                "word": "you",
+                "start": 2.72,
+                "end": 2.82,
+                "src_start": 131.54,
+                "src_end": 131.64
+              },
+              {
+                "word_idx": 362,
+                "word": "weigh",
+                "start": 2.86,
+                "end": 2.98,
+                "src_start": 131.68,
+                "src_end": 131.8
+              },
+              {
+                "word_idx": 363,
+                "word": "about",
+                "start": 3.06,
+                "end": 3.32,
+                "src_start": 131.88,
+                "src_end": 132.14
+              },
+              {
+                "word_idx": 364,
+                "word": "half",
+                "start": 3.38,
+                "end": 3.66,
+                "src_start": 132.2,
+                "src_end": 132.48
+              }
+            ],
+            "max_scribe_token_gap": 0.08
+          },
+          {
+            "span_index": 9,
+            "word_idx_range": "20..20",
+            "source_in": 7.14,
+            "source_out": 7.24,
+            "raw_dur": 0.1,
+            "tempo": 1.0,
+            "scaled_dur": 0.1,
+            "gap_after": 0.08,
+            "xfade_s": 0.0,
+            "timeline_start": 4.210000000000005,
+            "timeline_end": 4.310000000000006,
+            "max_internal_pause": 0.0,
+            "text": "a",
+            "words": [
+              {
+                "word_idx": 20,
+                "word": "a",
+                "start": 3.74,
+                "end": 3.84,
+                "src_start": 7.14,
+                "src_end": 7.24
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 10,
+            "word_idx_range": "367..369",
+            "source_in": 132.9,
+            "source_out": 133.96,
+            "raw_dur": 1.06,
+            "tempo": 1.0,
+            "scaled_dur": 1.06,
+            "gap_after": 0.5,
+            "xfade_s": 0.0,
+            "timeline_start": 4.390000000000006,
+            "timeline_end": 5.450000000000008,
+            "max_internal_pause": 0.12,
+            "text": "percent less there",
+            "words": [
+              {
+                "word_idx": 367,
+                "word": "percent",
+                "start": 3.92,
+                "end": 4.26,
+                "src_start": 132.9,
+                "src_end": 133.24
+              },
+              {
+                "word_idx": 368,
+                "word": "less",
+                "start": 4.38,
+                "end": 4.66,
+                "src_start": 133.36,
+                "src_end": 133.64
+              },
+              {
+                "word_idx": 369,
+                "word": "there",
+                "start": 4.74,
+                "end": 4.98,
+                "src_start": 133.72,
+                "src_end": 133.96
+              }
+            ],
+            "max_scribe_token_gap": 0.12
+          },
+          {
+            "span_index": 11,
+            "word_idx_range": "10..13",
+            "source_in": 4.04,
+            "source_out": 4.98,
+            "raw_dur": 0.94,
+            "tempo": 1.0,
+            "scaled_dur": 0.94,
+            "gap_after": 0.1,
+            "xfade_s": 0.0,
+            "timeline_start": 5.950000000000008,
+            "timeline_end": 6.890000000000009,
+            "max_internal_pause": 0.1,
+            "text": "the ground under you",
+            "words": [
+              {
+                "word_idx": 10,
+                "word": "the",
+                "start": 5.16,
+                "end": 5.24,
+                "src_start": 4.04,
+                "src_end": 4.12
+              },
+              {
+                "word_idx": 11,
+                "word": "ground",
+                "start": 5.28,
+                "end": 5.58,
+                "src_start": 4.16,
+                "src_end": 4.46
+              },
+              {
+                "word_idx": 12,
+                "word": "under",
+                "start": 5.64,
+                "end": 5.88,
+                "src_start": 4.52,
+                "src_end": 4.76
+              },
+              {
+                "word_idx": 13,
+                "word": "you",
+                "start": 5.98,
+                "end": 6.1,
+                "src_start": 4.86,
+                "src_end": 4.98
+              }
+            ],
+            "max_scribe_token_gap": 0.1
+          },
+          {
+            "span_index": 12,
+            "word_idx_range": "14..17",
+            "source_in": 5.1,
+            "source_out": 6.38,
+            "raw_dur": 1.28,
+            "tempo": 1.0,
+            "scaled_dur": 1.28,
+            "gap_after": 0.1,
+            "xfade_s": 0.0,
+            "timeline_start": 6.990000000000009,
+            "timeline_end": 8.27000000000001,
+            "max_internal_pause": 0.08,
+            "text": "is carrying you east",
+            "words": [
+              {
+                "word_idx": 14,
+                "word": "is",
+                "start": 6.2,
+                "end": 6.32,
+                "src_start": 5.1,
+                "src_end": 5.22
+              },
+              {
+                "word_idx": 15,
+                "word": "carrying",
+                "start": 6.4,
+                "end": 6.78,
+                "src_start": 5.3,
+                "src_end": 5.68
+              },
+              {
+                "word_idx": 16,
+                "word": "you",
+                "start": 6.84,
+                "end": 7.04,
+                "src_start": 5.74,
+                "src_end": 5.94
+              },
+              {
+                "word_idx": 17,
+                "word": "east",
+                "start": 7.12,
+                "end": 7.48,
+                "src_start": 6.02,
+                "src_end": 6.38
+              }
+            ],
+            "max_scribe_token_gap": 0.08
+          },
+          {
+            "span_index": 13,
+            "word_idx_range": "18..19",
+            "source_in": 6.74,
+            "source_out": 7.08,
+            "raw_dur": 0.34,
+            "tempo": 1.0,
+            "scaled_dur": 0.34,
+            "gap_after": 0.1,
+            "xfade_s": 0.0,
+            "timeline_start": 8.37000000000001,
+            "timeline_end": 8.71000000000001,
+            "max_internal_pause": 0.06,
+            "text": "at about",
+            "words": [
+              {
+                "word_idx": 18,
+                "word": "at",
+                "start": 7.58,
+                "end": 7.66,
+                "src_start": 6.74,
+                "src_end": 6.82
+              },
+              {
+                "word_idx": 19,
+                "word": "about",
+                "start": 7.72,
+                "end": 7.92,
+                "src_start": 6.88,
+                "src_end": 7.08
+              }
+            ],
+            "max_scribe_token_gap": 0.06
+          },
+          {
+            "span_index": 14,
+            "word_idx_range": "88..92",
+            "source_in": 35.48,
+            "source_out": 36.64,
+            "raw_dur": 1.16,
+            "tempo": 1.0,
+            "scaled_dur": 1.16,
+            "gap_after": 0.1,
+            "xfade_s": 0.0,
+            "timeline_start": 8.81000000000001,
+            "timeline_end": 9.970000000000013,
+            "max_internal_pause": 0.08,
+            "text": "one and a half thousand",
+            "words": [
+              {
+                "word_idx": 88,
+                "word": "one",
+                "start": 8.02,
+                "end": 8.14,
+                "src_start": 35.48,
+                "src_end": 35.6
+              },
+              {
+                "word_idx": 89,
+                "word": "and",
+                "start": 8.18,
+                "end": 8.26,
+                "src_start": 35.64,
+                "src_end": 35.72
+              },
+              {
+                "word_idx": 90,
+                "word": "a",
+                "start": 8.3,
+                "end": 8.34,
+                "src_start": 35.76,
+                "src_end": 35.8
+              },
+              {
+                "word_idx": 91,
+                "word": "half",
+                "start": 8.4,
+                "end": 8.66,
+                "src_start": 35.86,
+                "src_end": 36.12
+              },
+              {
+                "word_idx": 92,
+                "word": "thousand",
+                "start": 8.74,
+                "end": 9.18,
+                "src_start": 36.2,
+                "src_end": 36.64
+              }
+            ],
+            "max_scribe_token_gap": 0.08
+          },
+          {
+            "span_index": 15,
+            "word_idx_range": "93..95",
+            "source_in": 36.72,
+            "source_out": 37.68,
+            "raw_dur": 0.96,
+            "tempo": 1.0,
+            "scaled_dur": 0.96,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 10.070000000000013,
+            "timeline_end": 11.030000000000014,
+            "max_internal_pause": 0.08,
+            "text": "kilometers an hour.",
+            "words": [
+              {
+                "word_idx": 93,
+                "word": "kilometers",
+                "start": 9.28,
+                "end": 9.78,
+                "src_start": 36.72,
+                "src_end": 37.22
+              },
+              {
+                "word_idx": 94,
+                "word": "an",
+                "start": 9.8,
+                "end": 9.88,
+                "src_start": 37.24,
+                "src_end": 37.32
+              },
+              {
+                "word_idx": 95,
+                "word": "hour.",
+                "start": 9.96,
+                "end": 10.24,
+                "src_start": 37.4,
+                "src_end": 37.68
+              }
+            ],
+            "max_scribe_token_gap": 0.08
+          },
+          {
+            "span_index": 16,
+            "word_idx_range": "28..30",
+            "source_in": 10.92,
+            "source_out": 11.64,
+            "raw_dur": 0.72,
+            "tempo": 1.0,
+            "scaled_dur": 0.72,
+            "gap_after": 0.08,
+            "xfade_s": 0.0,
+            "timeline_start": 11.210000000000013,
+            "timeline_end": 11.930000000000014,
+            "max_internal_pause": 0.06,
+            "text": "it is faster",
+            "words": [
+              {
+                "word_idx": 28,
+                "word": "it",
+                "start": 10.42,
+                "end": 10.48,
+                "src_start": 10.92,
+                "src_end": 10.98
+              },
+              {
+                "word_idx": 29,
+                "word": "is",
+                "start": 10.54,
+                "end": 10.68,
+                "src_start": 11.04,
+                "src_end": 11.18
+              },
+              {
+                "word_idx": 30,
+                "word": "faster",
+                "start": 10.74,
+                "end": 11.14,
+                "src_start": 11.24,
+                "src_end": 11.64
+              }
+            ],
+            "max_scribe_token_gap": 0.06
+          },
+          {
+            "span_index": 17,
+            "word_idx_range": "31..34",
+            "source_in": 11.68,
+            "source_out": 12.84,
+            "raw_dur": 1.16,
+            "tempo": 1.0,
+            "scaled_dur": 1.16,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 12.010000000000014,
+            "timeline_end": 13.170000000000014,
+            "max_internal_pause": 0.08,
+            "text": "than a jet airliner,",
+            "words": [
+              {
+                "word_idx": 31,
+                "word": "than",
+                "start": 11.22,
+                "end": 11.32,
+                "src_start": 11.68,
+                "src_end": 11.78
+              },
+              {
+                "word_idx": 32,
+                "word": "a",
+                "start": 11.38,
+                "end": 11.44,
+                "src_start": 11.84,
+                "src_end": 11.9
+              },
+              {
+                "word_idx": 33,
+                "word": "jet",
+                "start": 11.52,
+                "end": 11.74,
+                "src_start": 11.98,
+                "src_end": 12.2
+              },
+              {
+                "word_idx": 34,
+                "word": "airliner,",
+                "start": 11.82,
+                "end": 12.38,
+                "src_start": 12.28,
+                "src_end": 12.84
+              }
+            ],
+            "max_scribe_token_gap": 0.08
+          },
+          {
+            "span_index": 18,
+            "word_idx_range": "379..386",
+            "source_in": 138.0,
+            "source_out": 140.84,
+            "raw_dur": 2.84,
+            "tempo": 1.0,
+            "scaled_dur": 2.84,
+            "gap_after": 0.08,
+            "xfade_s": 0.0,
+            "timeline_start": 13.350000000000014,
+            "timeline_end": 16.19000000000002,
+            "max_internal_pause": 0.12,
+            "text": "Earth is about forty-three kilometers wider across the",
+            "words": [
+              {
+                "word_idx": 379,
+                "word": "Earth",
+                "start": 12.56,
+                "end": 12.72,
+                "src_start": 138.0,
+                "src_end": 138.16
+              },
+              {
+                "word_idx": 380,
+                "word": "is",
+                "start": 12.78,
+                "end": 12.86,
+                "src_start": 138.22,
+                "src_end": 138.3
+              },
+              {
+                "word_idx": 381,
+                "word": "about",
+                "start": 12.92,
+                "end": 13.26,
+                "src_start": 138.36,
+                "src_end": 138.7
+              },
+              {
+                "word_idx": 382,
+                "word": "forty-three",
+                "start": 13.32,
+                "end": 13.88,
+                "src_start": 138.76,
+                "src_end": 139.32
+              },
+              {
+                "word_idx": 383,
+                "word": "kilometers",
+                "start": 13.98,
+                "end": 14.48,
+                "src_start": 139.42,
+                "src_end": 139.92
+              },
+              {
+                "word_idx": 384,
+                "word": "wider",
+                "start": 14.6,
+                "end": 14.96,
+                "src_start": 140.04,
+                "src_end": 140.4
+              },
+              {
+                "word_idx": 385,
+                "word": "across",
+                "start": 15.02,
+                "end": 15.3,
+                "src_start": 140.46,
+                "src_end": 140.74
+              },
+              {
+                "word_idx": 386,
+                "word": "the",
+                "start": 15.32,
+                "end": 15.4,
+                "src_start": 140.76,
+                "src_end": 140.84
+              }
+            ],
+            "max_scribe_token_gap": 0.12
+          },
+          {
+            "span_index": 19,
+            "word_idx_range": "495..495",
+            "source_in": 184.04,
+            "source_out": 184.64,
+            "raw_dur": 0.6,
+            "tempo": 1.0,
+            "scaled_dur": 0.6,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 16.270000000000017,
+            "timeline_end": 16.87000000000001,
+            "max_internal_pause": 0.0,
+            "text": "equator.",
+            "words": [
+              {
+                "word_idx": 495,
+                "word": "equator.",
+                "start": 15.48,
+                "end": 16.08,
+                "src_start": 184.04,
+                "src_end": 184.64
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 20,
+            "word_idx_range": "351..352",
+            "source_in": 128.22,
+            "source_out": 128.56,
+            "raw_dur": 0.34,
+            "tempo": 1.0,
+            "scaled_dur": 0.34,
+            "gap_after": 0.08,
+            "xfade_s": 0.0,
+            "timeline_start": 17.05000000000001,
+            "timeline_end": 17.390000000000015,
+            "max_internal_pause": 0.02,
+            "text": "Because the",
+            "words": [
+              {
+                "word_idx": 351,
+                "word": "Because",
+                "start": 16.26,
+                "end": 16.5,
+                "src_start": 128.22,
+                "src_end": 128.46
+              },
+              {
+                "word_idx": 352,
+                "word": "the",
+                "start": 16.52,
+                "end": 16.6,
+                "src_start": 128.48,
+                "src_end": 128.56
+              }
+            ],
+            "max_scribe_token_gap": 0.02
+          },
+          {
+            "span_index": 21,
+            "word_idx_range": "146..146",
+            "source_in": 55.6,
+            "source_out": 56.04,
+            "raw_dur": 0.44,
+            "tempo": 1.0,
+            "scaled_dur": 0.44,
+            "gap_after": 0.08,
+            "xfade_s": 0.0,
+            "timeline_start": 17.470000000000013,
+            "timeline_end": 17.91000000000001,
+            "max_internal_pause": 0.0,
+            "text": "ground",
+            "words": [
+              {
+                "word_idx": 146,
+                "word": "ground",
+                "start": 16.68,
+                "end": 17.12,
+                "src_start": 55.6,
+                "src_end": 56.04
+              }
+            ],
+            "max_scribe_token_gap": 0.0
+          },
+          {
+            "span_index": 22,
+            "word_idx_range": "354..356",
+            "source_in": 128.92,
+            "source_out": 129.62,
+            "raw_dur": 0.7,
+            "tempo": 1.0,
+            "scaled_dur": 0.7,
+            "gap_after": 0.1,
+            "xfade_s": 0.0,
+            "timeline_start": 17.99000000000001,
+            "timeline_end": 18.690000000000026,
+            "max_internal_pause": 0.04,
+            "text": "at the equator",
+            "words": [
+              {
+                "word_idx": 354,
+                "word": "at",
+                "start": 17.2,
+                "end": 17.26,
+                "src_start": 128.92,
+                "src_end": 128.98
+              },
+              {
+                "word_idx": 355,
+                "word": "the",
+                "start": 17.3,
+                "end": 17.36,
+                "src_start": 129.02,
+                "src_end": 129.08
+              },
+              {
+                "word_idx": 356,
+                "word": "equator",
+                "start": 17.4,
+                "end": 17.9,
+                "src_start": 129.12,
+                "src_end": 129.62
+              }
+            ],
+            "max_scribe_token_gap": 0.04
+          },
+          {
+            "span_index": 23,
+            "word_idx_range": "357..360",
+            "source_in": 129.74,
+            "source_out": 131.14,
+            "raw_dur": 1.4,
+            "tempo": 1.0,
+            "scaled_dur": 1.4,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 18.790000000000028,
+            "timeline_end": 20.190000000000005,
+            "max_internal_pause": 0.1,
+            "text": "swings round so fast,",
+            "words": [
+              {
+                "word_idx": 357,
+                "word": "swings",
+                "start": 18.0,
+                "end": 18.3,
+                "src_start": 129.74,
+                "src_end": 130.04
+              },
+              {
+                "word_idx": 358,
+                "word": "round",
+                "start": 18.34,
+                "end": 18.56,
+                "src_start": 130.08,
+                "src_end": 130.3
+              },
+              {
+                "word_idx": 359,
+                "word": "so",
+                "start": 18.66,
+                "end": 18.86,
+                "src_start": 130.4,
+                "src_end": 130.6
+              },
+              {
+                "word_idx": 360,
+                "word": "fast,",
+                "start": 18.92,
+                "end": 19.4,
+                "src_start": 130.66,
+                "src_end": 131.14
+              }
+            ],
+            "max_scribe_token_gap": 0.1
+          },
+          {
+            "span_index": 24,
+            "word_idx_range": "375..378",
+            "source_in": 135.8,
+            "source_out": 137.4,
+            "raw_dur": 1.6,
+            "tempo": 1.0,
+            "scaled_dur": 1.6,
+            "gap_after": 0.0,
+            "xfade_s": 0.0,
+            "timeline_start": 20.370000000000005,
+            "timeline_end": 21.97,
+            "max_internal_pause": 0.14,
+            "text": "the whole planet bulges.",
+            "words": [
+              {
+                "word_idx": 375,
+                "word": "the",
+                "start": 19.58,
+                "end": 19.66,
+                "src_start": 135.8,
+                "src_end": 135.88
+              },
+              {
+                "word_idx": 376,
+                "word": "whole",
+                "start": 19.72,
+                "end": 19.9,
+                "src_start": 135.94,
+                "src_end": 136.12
+              },
+              {
+                "word_idx": 377,
+                "word": "planet",
+                "start": 20.04,
+                "end": 20.44,
+                "src_start": 136.26,
+                "src_end": 136.66
+              },
+              {
+                "word_idx": 378,
+                "word": "bulges.",
+                "start": 20.48,
+                "end": 21.18,
+                "src_start": 136.7,
+                "src_end": 137.4
+              }
+            ],
+            "max_scribe_token_gap": 0.14
+          }
+        ],
+        "auditory_judgement": {
+          "reviewer": "gemini (Gemini 4 Argon multimodal audio input)",
+          "method": "Direct multimodal playback and auditory inspection of /Users/benjaminoats/_desk/reviews/J1028/auditions/S2_027_emwQsPxnRGM_question_audition.wav (2.590s) and S2_027_emwQsPxnRGM_full_vo_audition.wav (21.230s).",
+          "question_prosody_and_joins": "All 7 subspans ('Why' + 'do' + 'you weigh' + 'less' + 'at' + \"Earth's\" + 'equator,') form a natural, well-paced question with clear stress on 'less' and \"Earth's equator\" and zero splice clicks.",
+          "full_vo_prosody_and_joins": "All 24 subspans deliver a natural narrative arc through the 0.5% weight reduction, 1,500 km/h eastward rotation ('faster than a jet airliner'), 43 km equatorial width, and causal centrifugal bulge payoff ('Because the ground at the equator swings round so fast, the whole planet bulges.'). Unchanged from v04.",
+          "preserve_exact_question_and_map": true
+        }
+      },
+      "shot_plan": [
+        {
+          "row": "s01_iss_sunrise_limb",
+          "timeline_in": 0.0,
+          "timeline_out": 2.3,
+          "timeline_dur": 2.3,
+          "asset_key": "027_rough_v01i",
+          "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4",
+          "underlying_id": "ISS_sunrise_to_sunset.ogv",
+          "source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+          "source_file_duration": 446.339,
+          "source_in": 28.3,
+          "source_out": 30.6,
+          "source_dur": 2.3,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.0,
+          "framing_note": "ISS_sunrise_to_sunset.ogv ([06] 27.93-33.43s, upscale=1.50)",
+          "spoken_match": "Why do you weigh less at Earth's equator?",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 69,
+            "start_s": 28.3,
+            "start_mean_luma": 129.25,
+            "start_black_frac": 0.135,
+            "midpoint_s": 29.45,
+            "midpoint_mean_luma": 145.25,
+            "midpoint_black_frac": 0.1352,
+            "end_s": 30.6,
+            "end_mean_luma": 123.85,
+            "end_black_frac": 0.135,
+            "window_min_luma": 123.85,
+            "window_max_luma": 145.25,
+            "window_mean_luma": 134.49,
+            "window_min_black_frac": 0.1349,
+            "window_max_black_frac": 0.1354,
+            "window_mean_black_frac": 0.1352,
+            "window_max_black30_frac": 0.137,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 5,
+            "ocr_2fps_timestamps_s": [
+              28.35,
+              28.85,
+              29.35,
+              29.85,
+              30.35
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S2_027_emwQsPxnRGM_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s02_noaa_earth",
+          "timeline_in": 2.3,
+          "timeline_out": 6.09,
+          "timeline_dur": 3.79,
+          "asset_key": "027_rough_v01i",
+          "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4",
+          "underlying_id": "NOAA_sat_eclipse_2024_notext.webm",
+          "source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+          "source_file_duration": 446.339,
+          "source_in": 322.8,
+          "source_out": 326.59000000000003,
+          "source_dur": 3.79,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.0,
+          "framing_note": "NOAA_sat_eclipse_2024_notext.webm ([67] 322.40-327.60s, upscale=0.60)",
+          "spoken_match": "You weigh about half a percent less there.",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 90,
+            "start_s": 322.8,
+            "start_mean_luma": 96.03,
+            "start_black_frac": 0.1572,
+            "midpoint_s": 324.3,
+            "midpoint_mean_luma": 74.33,
+            "midpoint_black_frac": 0.2502,
+            "end_s": 325.8,
+            "end_mean_luma": 76.83,
+            "end_black_frac": 0.2472,
+            "window_min_luma": 72.43,
+            "window_max_luma": 96.33,
+            "window_mean_luma": 79.39,
+            "window_min_black_frac": 0.1564,
+            "window_max_black_frac": 0.2707,
+            "window_mean_black_frac": 0.234,
+            "window_max_black30_frac": 0.3174,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 7,
+            "ocr_2fps_timestamps_s": [
+              322.85,
+              323.35,
+              323.85,
+              324.35,
+              324.85,
+              325.35,
+              325.72
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S2_027_emwQsPxnRGM_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s03_eso_lasilla_east",
+          "timeline_in": 6.09,
+          "timeline_out": 9.39,
+          "timeline_dur": 3.3,
+          "asset_key": "027_rough_v01i",
+          "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4",
+          "underlying_id": "ESO_timelapse_La_Silla.webm",
+          "source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+          "source_file_duration": 446.339,
+          "source_in": 120.8,
+          "source_out": 124.1,
+          "source_dur": 3.3,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.0,
+          "framing_note": "ESO_timelapse_La_Silla.webm ([25] 120.40-125.70s, Earth horizon turning east under stars)",
+          "spoken_match": "The ground under you is carrying you east at about",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 99,
+            "start_s": 120.8,
+            "start_mean_luma": 100.49,
+            "start_black_frac": 0.0494,
+            "midpoint_s": 122.45,
+            "midpoint_mean_luma": 102.93,
+            "midpoint_black_frac": 0.0314,
+            "end_s": 124.1,
+            "end_mean_luma": 104.77,
+            "end_black_frac": 0.0203,
+            "window_min_luma": 100.49,
+            "window_max_luma": 104.83,
+            "window_mean_luma": 102.81,
+            "window_min_black_frac": 0.0203,
+            "window_max_black_frac": 0.0494,
+            "window_mean_black_frac": 0.0327,
+            "window_max_black30_frac": 0.0603,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 7,
+            "ocr_2fps_timestamps_s": [
+              120.85,
+              121.35,
+              121.85,
+              122.35,
+              122.85,
+              123.35,
+              123.85
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S2_027_emwQsPxnRGM_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s04_gerst_iss_airliner",
+          "timeline_in": 9.39,
+          "timeline_out": 12.89,
+          "timeline_dur": 3.5,
+          "asset_key": "027_rough_v01i",
+          "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4",
+          "underlying_id": "Gerst_Earth_timelapses_2017.webm",
+          "source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+          "source_file_duration": 446.339,
+          "source_in": 226.3,
+          "source_out": 229.8,
+          "source_dur": 3.5,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.0,
+          "framing_note": "Gerst_Earth_timelapses_2017.webm ([47] 225.80-231.20s, high-speed orbital pass racing eastward over cloud tops above airliner altitude; replaces Foucault pendulum)",
+          "spoken_match": "one and a half thousand kilometers an hour. It is faster than a jet airliner.",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 105,
+            "start_s": 226.3,
+            "start_mean_luma": 44.32,
+            "start_black_frac": 0.1141,
+            "midpoint_s": 228.05,
+            "midpoint_mean_luma": 49.52,
+            "midpoint_black_frac": 0.1604,
+            "end_s": 229.8,
+            "end_mean_luma": 70.15,
+            "end_black_frac": 0.0515,
+            "window_min_luma": 44.13,
+            "window_max_luma": 70.15,
+            "window_mean_luma": 51.58,
+            "window_min_black_frac": 0.0515,
+            "window_max_black_frac": 0.2057,
+            "window_mean_black_frac": 0.1344,
+            "window_max_black30_frac": 0.3699,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 8,
+            "ocr_2fps_timestamps_s": [
+              226.35,
+              226.85,
+              227.35,
+              227.85,
+              228.35,
+              228.85,
+              229.35,
+              229.72
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S2_027_emwQsPxnRGM_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s05_blue_marble_equator",
+          "timeline_in": 12.89,
+          "timeline_out": 16.19,
+          "timeline_dur": 3.3,
+          "asset_key": "027_rough_v01i",
+          "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4",
+          "underlying_id": "GSFC_20171208_Archive_e002130.jpg",
+          "source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+          "source_file_duration": 446.339,
+          "source_in": 138.2,
+          "source_out": 141.5,
+          "source_dur": 3.3,
+          "source_speed": 1.0,
+          "kind": "still_push_mp4",
+          "video": false,
+          "upscale": 1.0,
+          "framing_note": "GSFC_20171208_Archive_e002130.jpg ([28] 137.80-143.67s, full-globe Blue Marble Earth still push-in, video=false, directly on 'forty-three kilometers wider across the equator')",
+          "spoken_match": "Earth is about forty-three kilometers wider across the equator.",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 99,
+            "start_s": 138.2,
+            "start_mean_luma": 99.91,
+            "start_black_frac": 0.0,
+            "midpoint_s": 139.85,
+            "midpoint_mean_luma": 99.91,
+            "midpoint_black_frac": 0.0,
+            "end_s": 141.5,
+            "end_mean_luma": 99.88,
+            "end_black_frac": 0.0,
+            "window_min_luma": 99.51,
+            "window_max_luma": 100.45,
+            "window_mean_luma": 100.1,
+            "window_min_black_frac": 0.0,
+            "window_max_black_frac": 0.0,
+            "window_mean_black_frac": 0.0,
+            "window_max_black30_frac": 0.0101,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 7,
+            "ocr_2fps_timestamps_s": [
+              138.25,
+              138.75,
+              139.25,
+              139.75,
+              140.25,
+              140.75,
+              141.25
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S2_027_emwQsPxnRGM_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s06_paranal_earth_spin",
+          "timeline_in": 16.19,
+          "timeline_out": 19.19,
+          "timeline_dur": 3.0,
+          "asset_key": "026_center_022",
+          "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-10/nearest026_rough_work_v05b/center_022.mp4",
+          "underlying_id": "uhd_bt_paranal_07.mp4",
+          "source_sha256": "72ea3b870be94ddb3ee206d829136d4805670b8db7df051288a0f4513aa9ce85",
+          "source_file_duration": 5.3,
+          "source_in": 0.3,
+          "source_out": 3.3,
+          "source_dur": 3.0,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.93,
+          "framing_note": "uhd_bt_paranal_07.mp4 (ESO Paranal horizon spinning under stars, video=true)",
+          "spoken_match": "Because the ground at the equator swings round so fast,",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 90,
+            "start_s": 0.3,
+            "start_mean_luma": 46.65,
+            "start_black_frac": 0.1646,
+            "midpoint_s": 1.8,
+            "midpoint_mean_luma": 44.75,
+            "midpoint_black_frac": 0.186,
+            "end_s": 3.3,
+            "end_mean_luma": 44.45,
+            "end_black_frac": 0.2023,
+            "window_min_luma": 44.28,
+            "window_max_luma": 47.17,
+            "window_mean_luma": 45.68,
+            "window_min_black_frac": 0.1645,
+            "window_max_black_frac": 0.2023,
+            "window_mean_black_frac": 0.1841,
+            "window_max_black30_frac": 0.2535,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 7,
+            "ocr_2fps_timestamps_s": [
+              0.35,
+              0.85,
+              1.35,
+              1.85,
+              2.35,
+              2.85,
+              3.22
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S2_027_emwQsPxnRGM_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s07_epic_spin",
+          "timeline_in": 19.19,
+          "timeline_out": 21.97,
+          "timeline_dur": 2.78,
+          "asset_key": "027_rough_v01i",
+          "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4",
+          "underlying_id": "epic_spin_v01.mp4",
+          "source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+          "source_file_duration": 446.339,
+          "source_in": 438.0,
+          "source_out": 440.78,
+          "source_dur": 2.78,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.0,
+          "framing_note": "epic_spin_v01.mp4 ([91] 437.50-444.00s, NASA DSCOVR EPIC rotating Earth globe)",
+          "spoken_match": "the whole planet bulges.",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 84,
+            "start_s": 438.0,
+            "start_mean_luma": 96.12,
+            "start_black_frac": 0.1342,
+            "midpoint_s": 439.39,
+            "midpoint_mean_luma": 90.95,
+            "midpoint_black_frac": 0.1342,
+            "end_s": 440.78,
+            "end_mean_luma": 91.39,
+            "end_black_frac": 0.1341,
+            "window_min_luma": 89.55,
+            "window_max_luma": 96.36,
+            "window_mean_luma": 92.02,
+            "window_min_black_frac": 0.134,
+            "window_max_black_frac": 0.1343,
+            "window_mean_black_frac": 0.1342,
+            "window_max_black30_frac": 0.135,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 6,
+            "ocr_2fps_timestamps_s": [
+              438.05,
+              438.55,
+              439.05,
+              439.55,
+              440.05,
+              440.55
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S2_027_emwQsPxnRGM_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s_loop",
+          "timeline_in": 21.97,
+          "timeline_out": 22.97,
+          "timeline_dur": 1.0,
+          "asset_key": "027_rough_v01i",
+          "source_path": "reversed first 1.000s of s00 (/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-027/027_EarthSpin_rough_v01i.mp4)",
+          "underlying_id": "loop_ISS_sunrise_to_sunset.ogv",
+          "source_sha256": "f74ca3e8a27b3897fd4942ebcd6f70462aee039146ccce1780216c42802be38b",
+          "source_in": 29.3,
+          "source_out": 28.3,
+          "source_dur": 1.0,
+          "source_speed": 1.0,
+          "kind": "loop_video",
+          "video": true,
+          "upscale": 1.0,
+          "framing_note": "Reversed first 1.000 s of s00 so final frame == frame 0 (loop_diff < 2.0)",
+          "spoken_match": "Loop back to frame 0",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 69,
+            "start_s": 28.3,
+            "start_mean_luma": 129.25,
+            "start_black_frac": 0.135,
+            "midpoint_s": 29.45,
+            "midpoint_mean_luma": 145.25,
+            "midpoint_black_frac": 0.1352,
+            "end_s": 30.6,
+            "end_mean_luma": 123.85,
+            "end_black_frac": 0.135,
+            "window_min_luma": 123.85,
+            "window_max_luma": 145.25,
+            "window_mean_luma": 134.49,
+            "window_min_black_frac": 0.1349,
+            "window_max_black_frac": 0.1354,
+            "window_mean_black_frac": 0.1352,
+            "window_max_black30_frac": 0.137,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 5,
+            "ocr_2fps_timestamps_s": [
+              28.35,
+              28.85,
+              29.35,
+              29.85,
+              30.35
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S2_027_emwQsPxnRGM_full_window_2fps.jpg"
+          }
+        }
+      ],
+      "J1100_change": "Question-end pause 0.65s and answer-end pause 0.50s. Exact words and other audio unchanged; full final AAC listening outstanding."
+    }
+  }
+}
