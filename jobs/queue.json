@@ -94908,9 +94908,14 @@
           "at": "2026-10-28T10:07Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1079; splitting into 4 steps matching the 4 brief items"
+        },
+        {
+          "at": "2026-10-28T10:14Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Verified all 220 direct file hashes (including OWB 026 CFR18 6e587bb5ac33...), 41 NAS tar + manifest lift Shorts (26 OWB + 15 HOS 001-004 with unhydrated iCloud stubs qualified), 1 manifest-only Venus stub, 0 unverified, and gate_to_media_binding across all 151 entries; synced byte-identical inventory (83215976f8e0) and report (52e630f4b590) in both repos"
         }
       ],
-      "remaining_action": "Read J1075 ruling and evidence files and verify OWB 026 CFR18 hash",
+      "remaining_action": "Commit and push matching corrected inventory/report copies in both repositories and park J1079 for elected-Chief review",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -94922,11 +94927,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-28T10:07Z",
+        "at": "2026-10-28T10:14Z",
         "by": "gemini",
-        "note": "Claimed J1079; splitting into 4 steps matching the 4 brief items"
+        "note": "Verified all 220 direct file hashes (including OWB 026 CFR18 6e587bb5ac33...), 41 NAS tar + manifest lift Shorts (26 OWB"
       },
       "taskKeys": [
         "OWB:026",
