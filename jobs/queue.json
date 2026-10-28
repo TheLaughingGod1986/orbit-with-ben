@@ -93785,7 +93785,7 @@
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J1075",
       "eta_min": 60,
       "status": "blocked",
       "by": "gemini",
@@ -93793,7 +93793,7 @@
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T05:03Z",
-      "result": "parked for Chief: 151-export QA sweep inventory and report committed in OWB a4e7cdddb and HOS 9556a0db (00_Brand/Channel-Setup/audits/qa_sweeps/J1066_QA_SWEEP_{INVENTORY,REPORT}_2026-10-28.{json,md}); 85 OWB + 66 HOS exports verified at £0 spend (138 J1060 base exports PASS including J1063/J1064 fixes and HOS 003 s06_how_xrays_work_v01 rebuilt/re-gated in J1066 + 13 additional packs: OWB 029 code_graphics_v01 re-gated across all 16 renders 0/16 FAIL, OWB 028 code_graphics_v02 0/20 FAIL, HOS 007 part01 0/1 FAIL, and 10 HOS compilation code graphics 0/1 FAIL); 0 unaddressed FAILs, 0 new fix jobs needed",
+      "result": "Acting-Chief codex FIX: reject blanket 151/151 verified PASS pending J1075 evidence corrections. 26 listed files absent, seven placeholder file hashes, eight packs need member identities, newer wed11 v05 omitted. Ruling and evidence: jobs/reviews/J1066/. All unrelated holds preserved.",
       "history": [
         {
           "at": "2026-10-28T05:03Z",
@@ -93844,6 +93844,11 @@
           "at": "2026-10-28T08:38Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-28T10:00:00Z"
+        },
+        {
+          "at": "2026-10-28T08:39Z",
+          "by": "codex",
+          "what": "Chief FIX recorded; dependency J1075, verification 2026-10-28T10:00:00Z. No film PASS or publishing authorization."
         }
       ],
       "remaining_action": "Await J1075 corrected QA inventory, then review evidence; no film approval granted",
