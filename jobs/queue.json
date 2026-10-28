@@ -1,5 +1,5 @@
 {
-  "next_id": 1112,
+  "next_id": 1113,
   "jobs": [
     {
       "id": "J0001",
@@ -97729,6 +97729,34 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J1112",
+      "title": "Mini disk round 2: mini_repair safe clean-up + whole-disk survey (top 15 space users, safe actions) so J1100 can render",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# Mini disk, round 2: safe clean-up + whole-disk survey (J1100 needs 20 GB free)\n\nJ1110 archived 26 superseded exports (1 GB) and found only ~6.6 GB in all OWB film projects; the Mini still has\n~16.8 GB free (J1110 report, branch codex/J1110). The space is outside the film folders.\n\n1. `python3 scripts/mini_repair.py --apply` (its safe steps only: package caches, clean pushed temp worktrees such as\n   /private/tmp/codex-J1085-verify, J0961-wt, j0984-chief-review, j1066-review-complete, j1075-chief-revi*; blocking\n   files are kept in ~/_desk/rescue, never deleted). Record free space before and after.\n2. Survey: `du -sh` (one level, sorted) of `~/*`, `~/Library/*`, `~/Library/Caches/*`, `~/Library/Application Support/*`,\n   `~/Library/Containers/*`, `~/Downloads`, `~/Movies`, `/private/tmp/*`, `/Users/Shared`, and both repo checkouts\n   (incl. `.git` size and any git-lfs cache). Also `tmutil listlocalsnapshots /` (local Time Machine snapshots can hold\n   tens of GB) and the size of any Ollama/model, Docker or simulator folders.\n3. Report the top 15 consumers with what each is and a SAFE action for each (move to NAS by the AGENTS rule, clear a\n   cache, thin snapshots, or leave). Do not delete anything outside step 1; anything needing Ben (his own files,\n   Photos/iCloud, app data, snapshots) goes in the report for the Chief to put to him in one line.\n4. If step 1 alone brings free space to 20 GB+, comment on J1100 so it resumes. GBP0. Post the summary on #264.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-28T16:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-28T16:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run the safe clean-up and list what is filling the Mini's disk",
+      "kind": "assembly"
     }
   ],
   "focus": [],
