@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1004 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS J0967 follow-up: resolve remaining hook and duration proposals on paper, preserve production holds |  |
 | J1059 | mini | blocked | gemini | – | studio · OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30 | ab4ad3de4 |
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
-| J1083 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
+| J1083 | any | claimed | codex | 2026-10-28T14:44Z | chief · Chief: verify condition for J0966 |  |
 | J1084 | mini | blocked | codex | – | video · 025 Mars Opening Short: v06 starting on a whole sentence (Ben's change on v05: '00:01 starts mid sentence'), gates, park for Chief |  |
 | J1085 | any | open | – | – | chief · Chief: verify condition for J0961 |  |
 | J1086 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
