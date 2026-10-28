@@ -99304,9 +99304,14 @@
           "at": "2026-10-28T22:02Z",
           "by": "codex",
           "what": "step 1 of 4 done: Prior detached recovery completed exit 0 with verified archives and JSON compaction; current free 23.47 GB. Full historical drop remains partly unexplained."
+        },
+        {
+          "at": "2026-10-28T22:04Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Removed 19 inactive >48h clean pushed worktrees after clearing only caches/symlinks; 23.46 -> 29.42 GB. Collector regression and three actual collector checks succeed. Detached final scratch transfer running."
         }
       ],
-      "remaining_action": "Recover remaining headroom to 30 GB and verify the existing recurrence fix",
+      "remaining_action": "Finish verified old-scratch transfer to reach 30 GB, then reopen J1100",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -99321,9 +99326,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-28T22:02Z",
+        "at": "2026-10-28T22:04Z",
         "by": "codex",
-        "note": "Prior detached recovery completed exit 0 with verified archives and JSON compaction; current free 23.47 GB. Full histori"
+        "note": "Removed 19 inactive >48h clean pushed worktrees after clearing only caches/symlinks; 23.46 -> 29.42 GB. Collector regres"
       },
       "taskKeys": [
         "OWB:027",
