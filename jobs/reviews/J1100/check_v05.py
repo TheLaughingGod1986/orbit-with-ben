@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Final-media measurements for J1032; logs real failures, grants no waivers or PASS."""
+import sys
 import argparse,hashlib,importlib.util,json,math,re,subprocess,time
 from pathlib import Path
 import numpy as np
@@ -45,10 +46,10 @@ def main():
   dump(d/(video.stem+'_meta.json'),meta)
   results={}
   cmds={
-   'shorts':['python3',a.media_root/'00_Brand/Channel-Setup/tools/gate_shorts_open.py','check',video,'--air-date',prep['air_date'],'--id',prep['youtube_id'],'--meta',d/(video.stem+'_meta.json'),'--vo',source.parent/'stem_vo.wav','--sheet-dir',d/'shorts_gate','--json'],
-   'picture':['python3',a.media_root/'scripts/picture_qa.py',video,'--cuts',d/'cuts.json','--pool',d/'pool.json','--out-dir',d/'picture_qa'],
-   'polish':['python3',a.media_root/'scripts/polish_gate.py',video,'--cuts',d/'cuts.json','--out',d/'polish_gate.json'],
-   'sfx':['python3',a.media_root/'scripts/sfx_kit.py','level','--vo',source.parent/'stem_vo.wav','--sfx',source.parent/'stem_sfx.wav','--bed',source.parent/'stem_bed.wav','--minutes',prep['vo_splice_map']['total_duration_s']/60],
+   'shorts':[sys.executable,a.media_root/'00_Brand/Channel-Setup/tools/gate_shorts_open.py','check',video,'--air-date',prep['air_date'],'--id',prep['youtube_id'],'--meta',d/(video.stem+'_meta.json'),'--vo',source.parent/'stem_vo.wav','--sheet-dir',d/'shorts_gate','--json'],
+   'picture':[sys.executable,a.media_root/'scripts/picture_qa.py',video,'--cuts',d/'cuts.json','--pool',d/'pool.json','--out-dir',d/'picture_qa'],
+   'polish':[sys.executable,a.media_root/'scripts/polish_gate.py',video,'--cuts',d/'cuts.json','--out',d/'polish_gate.json'],
+   'sfx':[sys.executable,a.media_root/'scripts/sfx_kit.py','level','--vo',source.parent/'stem_vo.wav','--sfx',source.parent/'stem_sfx.wav','--bed',source.parent/'stem_bed.wav','--minutes',prep['vo_splice_map']['total_duration_s']/60],
   }
   if a.reviewed_ok:
    for gate in ('picture','polish'):cmds[gate] += ['--reviewed-ok',a.reviewed_ok]
@@ -56,7 +57,7 @@ def main():
    print(key,gate,flush=True);results[gate]={'exit_code':command(cmd,d/(gate+'.log'))}
   inputs=json.loads((source.parent/'input_hashes.json').read_text())
   film=next((a.media_root/'02_Video-Projects').glob(prep['film'].split(':')[1]+'_*'))
-  results['music']={'exit_code':command(['python3',a.media_root/'scripts/music_gate.py',film,'--bed',inputs['bed_path'],'--video',video,'--out',d/'music_gate.json'],d/'music.log')}
+  results['music']={'exit_code':command([sys.executable,a.media_root/'scripts/music_gate.py',film,'--bed',inputs['bed_path'],'--video',video,'--out',d/'music_gate.json'],d/'music.log')}
   # Decode all output frames for dark-run measurement, every third frame for OCR.
   raw=subprocess.check_output(['ffmpeg','-v','error','-i',str(video),'-vf','scale=180:320,format=gray','-f','rawvideo','-'])
   frames=np.frombuffer(raw,dtype=np.uint8).reshape(-1,320,180);dump(d/'actual_seam.json',{'first_frame_to_last_diff':float(np.abs(frames[0].astype(float)-frames[-1].astype(float)).mean()),'frames':len(frames)});black=(frames<20).mean(axis=(1,2));run=worst=0
