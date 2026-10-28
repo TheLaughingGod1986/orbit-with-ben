@@ -94359,19 +94359,24 @@
           "at": "2026-10-28T08:33Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J1032 original brief, J1029 lock, PR305 run13 delivery record and J1053 prior verification; assembly already 3/3"
+        },
+        {
+          "at": "2026-10-28T08:33Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR304/305 remain OPEN at dc4b9da01/61d031f35 with no comments or reviews; thread through 6464327187 and queue contain no independent replacement PASS or Ben swap approval. J1048 sweep does not release this hold."
         }
       ],
-      "remaining_action": "Check replacement PASS and Ben approval records",
+      "remaining_action": "Record unmet approval condition and next check; close verification",
       "kind": "chief",
       "recheck_of": "J1032",
       "due": "2026-10-28T09:30:29+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-28T08:33Z",
         "by": "codex",
-        "note": "Read J1032 original brief, J1029 lock, PR305 run13 delivery record and J1053 prior verification; assembly already 3/3"
+        "note": "PR304/305 remain OPEN at dc4b9da01/61d031f35 with no comments or reviews; thread through 6464327187 and queue contain no"
       },
       "taskKeys": [
         "OWB:026",
