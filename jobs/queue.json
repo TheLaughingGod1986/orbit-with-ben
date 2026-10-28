@@ -97770,13 +97770,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-28T17:11Z",
-      "eta": "2026-10-28T19:11Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T16:53Z",
-      "result": "",
+      "result": "Safe cleanup complete: 30.43 GB free (28.34 GiB), GBP0, evidence PR 321 commit 1619252a5; Chief/relay can resume J1100. No media or NAS deletion.",
       "history": [
         {
           "at": "2026-10-28T16:53Z",
@@ -97817,6 +97817,11 @@
           "at": "2026-10-28T17:20Z",
           "by": "codex",
           "what": "step 4 of 4 done: Report committed 1619252a5, PR 321; temporary report worktree removed; final free 30428962816 bytes / 30.43 GB. J1100 20 GB threshold clear."
+        },
+        {
+          "at": "2026-10-28T17:20Z",
+          "by": "codex",
+          "what": "done: Safe cleanup complete: 30.43 GB free (28.34 GiB), GBP0, evidence PR 321 commit 1619252a5; Chief/relay can resume J1100. No media or NAS deletion."
         }
       ],
       "remaining_action": "Cleanup complete; Chief review of evidence PR 321 and relay resumption of J1100",
@@ -97832,7 +97837,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "1619252a5"
     },
     {
       "id": "J1113",
