@@ -96990,10 +96990,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-10-28T17:51Z",
+      "eta": "2026-10-28T19:51Z",
       "created_by": "refill",
       "created_at": "2026-10-28T15:02Z",
       "result": "",
@@ -97002,11 +97002,24 @@
           "at": "2026-10-28T15:02Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T17:51Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review HOS performance and identify improvements",
       "kind": "review",
-      "backlog": "hos-weekly-audit"
+      "backlog": "hos-weekly-audit",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T17:51Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1100",
