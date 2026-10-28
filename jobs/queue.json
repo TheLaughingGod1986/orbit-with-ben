@@ -92840,10 +92840,24 @@
           "at": "2026-10-28T03:48Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T04:12Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Give HOS 005 Shorts s06_blood_pressure_cuff_v01, s07_heart_pulse_v01, and s08_capillaries_v01 own-synthesis or Pace/NOT-documented beds in 05_Music and re-run music_gate.py to PASS",
-      "kind": "assembly"
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J1059",
