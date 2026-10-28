@@ -38,12 +38,14 @@
   const bar = p => p ? `<div class="prog"><div class="bar"><i style="width:${Math.round(p.step / p.of * 100)}%"></i></div><span>${p.step} of ${p.of}</span></div>` : "";
   const clip = (s, n) => { s = String(s || ""); return s.length > n ? s.slice(0, n - 1) + "…" : s; };
   const activeJob = v => (v.jobs || []).find(j => j.status === "claimed");
-  const isWorking = v => !!activeJob(v) || !!v.working;
+  // One meaning of "working" everywhere (Ben, 28 Oct: 11 / 1 / 0 read as a contradiction): an agent has claimed a job
+  // on it right now. The tracker's looser v.working flag is not used here.
+  const isWorking = v => !!activeJob(v);
 
   // What the agents are doing on a video, in one line: who, the task, and the step they reported.
   function doing(v) {
     const j = activeJob(v);
-    if (!j) return `<span class="doing">${esc(clip(v.line || "Being worked on", 90))}</span>`;
+    if (!j) return "";
     const p = j.progress && j.progress.of > 0 ? ` · Step ${j.progress.step} of ${j.progress.of}` : "";
     return `<span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(clip(j.remaining_action || j.title, 70))}${p}</span>${bar(progressOf(v))}`;
   }
@@ -156,6 +158,8 @@
     return `<a class="row" href="${href || boardLink(v)}">${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
       <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || bar(progressOf(v))}</div><span class="chev">›</span></a>`;
   }
+  const jobTiles = j => `<div class="tiles three"><div class="tile-stat"><b class="blue">${j.working}</b><span>Jobs running</span></div>
+      <div class="tile-stat"><b>${j.queued}</b><span>Jobs queued</span></div><div class="tile-stat"><b>${j.held}</b><span>Jobs on hold</span></div></div>`;
   const section = (title, n, body, more) => `<section><h2>${esc(title)}${n != null ? ` <span class="n">${n}</span>` : ""}${more || ""}</h2>${body}</section>`;
   const empty = text => `<p class="empty">${esc(text)}</p>`;
 
@@ -163,19 +167,19 @@
     const s = summary(b, now);
     const tiles = `<div class="tiles">
       <a class="tile-stat" href="#review"><b class="${s.ready.length ? "amber" : ""}">${s.ready.length}</b><span>Ready for you</span></a>
-      <a class="tile-stat" href="#videos"><b class="blue">${s.progress.length}</b><span>In progress</span></a>
+      <a class="tile-stat" href="#videos"><b class="blue">${s.progress.length}</b><span>Videos in production</span></a>
       <a class="tile-stat" href="#schedule"><b>${s.week.length}</b><span>Going live this week</span></a>
       <a class="tile-stat" href="#agents"><b class="${s.chief.agent ? "green" : "red"}">${esc(s.chief.name || "None")}</b><span>Chief · ${s.chief.agent ? "online" : "nobody up"}</span></a></div>`;
-    const working = s.working.slice(0, 3).map(v => row(v, doing(v))).join("") || empty("Nothing running this minute.");
+    const other = s.jobs.working - s.working.length;
+    const working = (s.working.slice(0, 3).map(v => row(v, doing(v))).join("") || empty("No agent is on a video this minute."))
+      + (other > 0 ? `<p class="meta">Plus ${other} studio job${other > 1 ? "s" : ""} not tied to one video (audits, credit readings, fixes). <a class="more" href="#agents">See Agents</a></p>` : "");
     const ready = s.ready.map(v => row(v, `<span class="meta">${esc(v.line || "")}</span>`, uatLink(v))).join("") || empty("Nothing waiting for you.");
-    const pipe = `<div class="tiles three"><div class="tile-stat"><b class="blue">${s.jobs.working}</b><span>Working</span></div>
-      <div class="tile-stat"><b>${s.jobs.queued}</b><span>Queued</span></div><div class="tile-stat"><b>${s.jobs.held}</b><span>On hold</span></div></div>
-      <p class="meta">${s.jobs.doneToday} jobs finished today.</p>`;
+    const pipe = `${jobTiles(s.jobs)}<p class="meta">Jobs are the agents' tasks across both channels. ${s.jobs.doneToday} finished today.</p>`;
     return `<header class="top"><div><h1>Studio</h1><p class="meta">Orbit With Ben · History of Science</p></div>
       <span class="pill ${s.health[0]}"><i></i>${esc(s.health[1])}</span></header>${tiles}
       ${section("Ready for your review", s.ready.length, ready)}
-      ${section("Working now", s.working.length, working, ' <a class="more" href="#videos">See all</a>')}
-      ${section("Production pipeline", null, pipe, ' <a class="more" href="#agents">Agents</a>')}`;
+      ${section("Videos an agent is on now", s.working.length, working, ' <a class="more" href="#videos">See all</a>')}
+      ${section("Agent jobs", null, pipe, ' <a class="more" href="#agents">Agents</a>')}`;
   }
 
   // Working / Queued / Backlog (Ben, 28 Oct): active work is one tap away; All keeps everything with On YouTube.
@@ -193,7 +197,7 @@
     const vs = (((b.tracker || {}).videos) || []).filter(v =>
       (filterCh === "all" || v.channel === filterCh) && (filterType === "all" || v.type === filterType));
     const g = videoGroups(vs);
-    const segs = [["all", "All"], ["working", "Working"], ["queued", "Queued"], ["backlog", "Backlog"]]
+    const segs = [["all", "All"], ["working", "Working"], ["queued", "Waiting"], ["backlog", "Backlog"]]
       .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length}</small>`}</button>`).join("");
     const chips = [["ch", "all", "Both"], ["ch", "OWB", "Orbit"], ["ch", "HOS", "HOS"], ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
@@ -202,8 +206,8 @@
     const show = id => seg === "all" || seg === id;
     return `<header class="top"><h1>Videos</h1><a class="more" href="/board">Full board ›</a></header>
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
-      ${show("working") ? section("Working", g.working.length, list(g.working, 30) || empty("No agent is on a video this minute.")) : ""}
-      ${show("queued") ? section("Queued", g.queued.length, list(g.queued, 30) || empty("Nothing queued.")) : ""}
+      ${show("working") ? section("An agent is on it now", g.working.length, list(g.working, 30) || empty("No agent is on a video this minute.")) : ""}
+      ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
       ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
       ${seg === "all" ? section("On YouTube", g.done.length, list(g.done, 10)) : ""}`;
   }
@@ -274,8 +278,7 @@
     return `<header class="top"><h1>Agents</h1><a class="more" href="/ai">Details ›</a></header>
       <div class="chief-card"><span class="dot ${c.agent ? "green" : "red"}"></span><div><b>Chief: ${esc(c.name || "nobody")}</b>
         <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
-      <div class="tiles three"><div class="tile-stat"><b class="blue">${s.jobs.working}</b><span>Working</span></div>
-        <div class="tile-stat"><b>${s.jobs.queued}</b><span>Queued</span></div><div class="tile-stat"><b>${s.jobs.held}</b><span>On hold</span></div></div>
+      ${jobTiles(s.jobs)}
       ${section("Agent team", null, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
       ${section("Credits", null, `<div class="credits">${credit}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
   }

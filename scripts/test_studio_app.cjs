@@ -84,4 +84,10 @@ assert.equal(t.readiness(v({}), NOW + 2 * 864e5, NOW), 'Not uploaded to YouTube 
 assert.equal(t.readiness(v({youtube: {state: 'scheduled', publishAt: 'x'}}), NOW + 864e5, NOW), '', 'a swap YouTube already has scheduled is not flagged');
 assert.equal(t.readiness(v({flags: [{kind: 'approved', text: 'no read-back'}]}), NOW + 864e5, NOW), 'no read-back');
 assert(t.renderTab('schedule', board, NOW).length > 100);
+// One meaning of working: the video flag alone is not an agent working (11 / 1 / 0 no longer disagree).
+const flagOnly = t.summary({tracker: {videos: [v({key: 'f', working: true})]}, models: {checkedAt: new Date(NOW).toISOString(), models: []}, owb: {jobs: []}}, NOW);
+assert.equal(flagOnly.working.length, 0);
+assert.equal(flagOnly.jobs.working, 0);
+const ov = t.renderTab('overview', {tracker: {videos: []}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [{id: 'J1', status: 'claimed', by: 'gemini', title: 'x'}]}}, NOW);
+assert(ov.includes('Plus 1 studio job not tied to one video') && ov.includes('Jobs running'));
 console.log('studio app OK');
