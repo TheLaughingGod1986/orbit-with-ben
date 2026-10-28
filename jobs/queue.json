@@ -99151,18 +99151,24 @@
           "at": "2026-10-28T21:08Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T21:08Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "arm 002 thumb test, description fixes",
+      "remaining_action": "Check decision, script facts and current HOS Studio test before applying approved packaging",
       "kind": "studio",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-28T21:08Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     }
   ],
   "focus": [],
