@@ -1,6 +1,6 @@
 # Competitor thumbnail and title study — 28 October 2026
 
-J1106 worker evidence, not Chief approval. Five named channels collected; search-neighbour extension is still running. No thumbnails, titles, tests or YouTube state changed.
+J1106 worker evidence, not Chief approval. Five named channels collected; search-neighbour extension is now complete in [the companion study](2026-10-28_COMPETITORS_EXTRA.md). No thumbnails, titles, tests or YouTube state changed.
 
 ## Method and limits
 
@@ -91,3 +91,7 @@ Three provisional OWB candidate titles were searched through nonpersonalized pub
 Andromeda’s result set adds What If, PBS Space Time, The Secrets of the Universe, NASA Video, Science Time, VideoFromSpace, Calm Space, Dr. Becky and Khan Academy. The last is a broad educational channel included because it outranked this space title; Chief may keep it as a topic neighbour rather than a channel-wide comparator. Both tabs were catalogued where exposed. Exact 90-day ranking and thumbnail downloads are running in `j1106-extra-study`; no extra-channel design pattern has been inferred yet.
 
 Next: read the detached completion marker and errors; review its chronological stopping boundaries and any 1,000-entry cap; code the extension’s selected thumbnails; complete the remaining Short crop/frame checks; then build the three Bs and title alternatives, run independent panels and hand off to Chief. Do not arm a title and thumbnail test simultaneously or replace an existing test. No new test exists yet.
+
+## Extension completion update
+
+The detached collection exited 0; all 206 selected extra-channel thumbnails have now been inspected and coded, with ranked tables and limits in [the extension](2026-10-28_COMPETITORS_EXTRA.md). The earlier running-task paragraphs above describe the prior checkpoint, not current process state. No detached collector remains active.
