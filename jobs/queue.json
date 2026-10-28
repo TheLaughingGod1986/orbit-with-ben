@@ -99330,16 +99330,21 @@
           "at": "2026-10-28T21:18Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed J1132; inspect test, establish next-day eligibility, then arm/read back or record hold."
+        },
+        {
+          "at": "2026-10-28T21:20Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Studio report: Thumbnail only; test finished 28 October 2026 at 21:17, started 14 October 21:40; insufficient impressions. Next-day eligibility is 29 October; no test armed."
         }
       ],
-      "remaining_action": "Read current Studio thumbnail-test status and verified completion date",
+      "remaining_action": "Wait until the day after verified thumbnail-test completion before arming title-only test",
       "kind": "studio",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T21:18Z",
+        "at": "2026-10-28T21:20Z",
         "by": "codex",
-        "note": "Claimed J1132; inspect test, establish next-day eligibility, then arm/read back or record hold."
+        "note": "Studio report: Thumbnail only; test finished 28 October 2026 at 21:17, started 14 October 21:40; insufficient impression"
       },
       "taskKeys": [
         "HOS:001"
