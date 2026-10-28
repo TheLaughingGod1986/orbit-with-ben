@@ -97064,9 +97064,14 @@
           "at": "2026-10-28T15:51Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T15:51Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Upload S1 v04 as a Private replacement in its slot, then unschedule the old one",
+      "remaining_action": "Verify old schedule and approved master before Private replacement upload",
       "due": "2026-11-19T20:00Z",
       "kind": "studio",
       "approved_from": {
@@ -97083,12 +97088,13 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-28T15:51Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:026"
+      ]
     },
     {
       "id": "J1102",
