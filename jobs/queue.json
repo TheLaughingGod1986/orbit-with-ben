@@ -97027,13 +97027,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-28T15:51Z",
-      "eta": "2026-10-28T17:51Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "",
+      "result": "parked for Chief: swap complete and verified; review and merge PR313 (61248b47d). New aAUgIGEuPwQ Private 20 Nov 11:30Z; old A6TW_6CXhcs Private unscheduled. Update J0861 post-public Related target to new id. Registry records also applied locally pending merge.",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -97089,6 +97089,11 @@
           "at": "2026-10-28T15:57Z",
           "by": "codex",
           "what": "step 4 of 4 done: Swap verified; evidence and UPLOADS/open-library updates committed as 61248b47d, PR313; no worker merge or final approval."
+        },
+        {
+          "at": "2026-10-28T15:57Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: swap complete and verified; review and merge PR313 (61248b47d). New aAUgIGEuPwQ Private 20 Nov 11:30Z; old A6TW_6CXhcs Private unscheduled. Update J0861 post-public Related target to new id. Registry records also applied locally pending merge."
         }
       ],
       "remaining_action": "Chief to review and merge the verified swap record in PR313",
