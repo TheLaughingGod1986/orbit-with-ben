@@ -57,11 +57,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1110 | mini | blocked | codex | – | assembly · Mini disk: move superseded film exports to the NAS (verified sha256) until 30 GB free, so J1100 can render |  |
 | J1111 | mini | blocked | codex | – | studio · URGENT: set every scheduled Short's thumbnail to its frame-0 hook (OWB + HOS), Venus Melt Lead first (airs 29 Oct 11:30) |  |
 | J1113 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · HOS Shorts thumbnails: open the HOS Studio browser yourself (CDP 9222), then set every scheduled HOS Short to its frame-0 hook |  |
-| J1116 | mini | claimed | gemini | 2026-10-28T19:09Z | for gemini · review · `gemini-argon` · Packaging panel (cursor): J1106 three draft thumbnail Bs and separate title alternatives; advisory only, Chief decides |  |
 | J1117 | cloud | open (after J1116) | – | – | review · Packaging panel decision: J1106 three draft thumbnail Bs and separate title alternatives; advisory only, Chief decides |  |
 
 Recently finished:
 
+- J1116 done: Packaging panel (cursor): J1106 three draft thumbnail Bs and separate title alternatives; advisory only, Chief decides (done)
 - J1115 done: Packaging panel (gemini): J1106 three draft thumbnail Bs and separate title alternatives; advisory only, Chief decides (done)
 - J1114 done: Packaging panel (codex): J1106 three draft thumbnail Bs and separate title alternatives; advisory only, Chief decides (Strongest CTR test hypothesis: rebuild compilation B around FIVE COSMIC CLOCKS, with Saturn as hero and a separate last-star endpoint, to convey the five-story countdown.)
 - J1112 done: Mini disk round 2: safe clean-up and act on it (snapshots, caches, studio media to NAS) until 30 GB free, so J1100 can render (Safe cleanup complete: 30.43 GB free (28.34 GiB), GBP0, evidence PR 321 commit 1619252a5; Chief/relay can resume J1100. No media or NAS deletion.)
@@ -71,4 +71,3 @@ Recently finished:
 - J1097 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md: 57 unique HOS videos verified — 26 public (including AMSriTQ-lcQ -> GHZDsiH7L7A), 14 scheduled, 17 private; 4/4 public long end screens and 22/22 public Short Related pills verified live at 2026-10-28T16:26Z; 0 new fixes needed)
 - J1096 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done (05_Analytics/live_fixes/2026-10-28.md, commit 0c08d7fc8: 10/10 live public videos pass chapters, sources, end screens and Related video checks at 2026-10-28T14:54Z, including 030 Apophis v13a gJwNJN_yMKU; 0 new fixes needed))
 - J1095 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md: 57 unique HOS videos verified — 26 public (including AMSriTQ-lcQ -> GHZDsiH7L7A), 14 scheduled, 17 private; 4/4 public long end screens and 22/22 public Short Related pills verified live at 2026-10-28T14:47Z; 0 new fixes needed)
-- J1094 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done (05_Analytics/live_fixes/2026-10-28.md, commit e6ac85fc5: 10/10 live public videos pass chapters, sources, end screens and Related video checks at 2026-10-28T14:41Z, including 030 Apophis v13a gJwNJN_yMKU; 0 new fixes needed))
