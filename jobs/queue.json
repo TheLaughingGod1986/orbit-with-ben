@@ -98952,13 +98952,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T20:13Z",
-      "eta": "2026-10-28T22:13Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T20:12Z",
-      "result": "",
+      "result": "Reopened CDP :9222 in persistent session cdp-9222; fixed Cursor spending parser + settle wait for unified grok.com/dashboard/billing Weekly included usage layout (932be57dc, 0dd93468e, unit test added, 16/16 tests pass); trued up plans.json with CDP :9222 billing sources (Google AI Ultra 30 TB £189.99/mo, Cursor Ultra £180/mo renewing 24 Nov, ElevenLabs Creator +VAT due 30 Oct); recorded live readings via ai_spend_daily.py --git (elevenlabs 119/209536, flow 20870, vertex £69.48, cursor 0%/100% weekly resets 29 Oct + .14 monthly, codex 61.0%/100% weekly resets 4 Nov)",
       "history": [
         {
           "at": "2026-10-28T20:12Z",
@@ -98999,6 +98999,11 @@
           "at": "2026-10-28T20:36Z",
           "by": "gemini",
           "what": "step 5 of 5 done: All 5 pools (elevenlabs, flow, vertex, cursor, codex) recorded and pushed; plans.json trued up"
+        },
+        {
+          "at": "2026-10-28T20:36Z",
+          "by": "gemini",
+          "what": "done: Reopened CDP :9222 in persistent session cdp-9222; fixed Cursor spending parser + settle wait for unified grok.com/dashboard/billing Weekly included usage layout (932be57dc, 0dd93468e, unit test added, 16/16 tests pass); trued up plans.json with CDP :9222 billing sources (Google AI Ultra 30 TB £189.99/mo, Cursor Ultra £180/mo renewing 24 Nov, ElevenLabs Creator +VAT due 30 Oct); recorded live readings via ai_spend_daily.py --git (elevenlabs 119/209536, flow 20870, vertex £69.48, cursor 0%/100% weekly resets 29 Oct + .14 monthly, codex 61.0%/100% weekly resets 4 Nov)"
         }
       ],
       "remaining_action": "Complete J1127 and report readings",
