@@ -97511,16 +97511,30 @@
           "at": "2026-10-28T16:12Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T16:15Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Survey found 26 eligible exports, 0.990 GB; protected newest two numeric versions, active fixes, pending Betelgeuse upload and all named open-job/upload files."
         }
       ],
-      "remaining_action": "Identify superseded media safe to archive",
+      "remaining_action": "Archive eligible superseded exports and verify SHA-256 on both sides",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T16:12Z",
-        "by": "codex"
-      }
+        "at": "2026-10-28T16:15Z",
+        "by": "codex",
+        "note": "Survey found 26 eligible exports, 0.990 GB; protected newest two numeric versions, active fixes, pending Betelgeuse uplo"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
