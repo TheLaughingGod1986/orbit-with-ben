@@ -95981,10 +95981,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-28T13:09Z",
+      "eta": "2026-10-28T14:39Z",
       "created_by": "codex",
       "created_at": "2026-10-28T13:07Z",
       "result": "",
@@ -95998,6 +95998,11 @@
           "at": "2026-10-28T13:08Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-10-28T13:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Correct final-shot crop, audition opening and deliver gated v07 for Chief review",
@@ -96015,7 +96020,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T13:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1091",
