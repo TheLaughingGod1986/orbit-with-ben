@@ -91963,10 +91963,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-28T00:36Z",
+      "eta": "2026-10-28T02:36Z",
       "created_by": "relay",
       "created_at": "2026-10-28T00:35Z",
       "result": "",
@@ -91975,13 +91975,26 @@
           "at": "2026-10-28T00:35Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T00:36Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Check the Franklin Short inputs before deciding whether another cut is needed",
       "kind": "chief",
       "recheck_of": "J0912",
       "due": "2026-10-28T01:35:43+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-28T00:36Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],

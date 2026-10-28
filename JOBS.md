@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1004 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · HOS J0967 follow-up: resolve remaining hook and duration proposals on paper, preserve production holds |  |
 | J1032 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · J0936: assemble all six replacements from J1029 locked preparation v07 | dc4b9da01 |
 | J1048 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J1049 | any | open | – | – | chief · Chief: verify condition for J0912 |  |
+| J1049 | any | claimed | gemini | 2026-10-28T02:36Z | chief · Chief: verify condition for J0912 |  |
 
 Recently finished:
 
