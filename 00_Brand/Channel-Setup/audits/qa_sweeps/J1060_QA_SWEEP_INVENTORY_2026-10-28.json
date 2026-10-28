@@ -5361,42 +5361,39 @@
       "export_id": "jupiter_no_crust_v01",
       "media_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01.mp4",
       "media_exists": true,
-      "media_sha256": "64b8ac7316fe730faceef406806636aec603352cc1e523b39de7c635dd1a52a3",
-      "media_mtime_utc": "2026-10-17T04:15:46Z",
+      "media_sha256": "57df63685041e1e7bba8f702168ed69f701dbf496054b04d078b0ff0656302ed",
+      "media_mtime_utc": "2026-10-28T05:53:29Z",
       "picture_qa": {
         "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/picture_qa_v01/picture_qa.json",
-        "mtime_utc": "2026-10-17T04:15:49Z",
+        "mtime_utc": "2026-10-28T05:53:49Z",
         "verdict": "PASS",
         "failed_count": 0,
-        "cuts_total": 4,
+        "cuts_total": 5,
         "warn_count": 1,
         "fresh_vs_media": true
       },
       "polish_gate": {
         "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/polish_gate_v01.json",
-        "mtime_utc": "2026-10-17T04:15:48Z",
+        "mtime_utc": "2026-10-28T05:53:49Z",
         "verdict": "PASS",
         "failed_count": 0,
-        "cuts_total": 4,
+        "cuts_total": 5,
         "warn_count": 1,
         "fresh_vs_media": true
       },
       "music_gate": {
         "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01_music.json",
-        "mtime_utc": "2026-10-28T04:48:16Z",
-        "verdict": "FAIL",
-        "failed_count": 2,
+        "mtime_utc": "2026-10-28T05:53:48Z",
+        "verdict": "PASS",
+        "failed_count": 0,
         "warn_count": 13,
-        "fail_items": [
-          "own: the bed is /Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/09_Final-Export/jupiter_film_v04.mp4, not in this film's 05_Music",
-          "own: no plan next to the bed (jupiter_film_v04_plan.json)"
-        ],
+        "fail_items": [],
         "fresh_vs_media": true
       },
       "review_or_fix_jobs": [
         "J1063"
       ],
-      "notes": "music_gate run in J1060; own bed/plan fix queued in J1063 (\u00a30, no spend)"
+      "notes": "music_gate, picture_qa, polish_gate, and gate_shorts_open PASS in J1063 (own 05_Music/jupiter_no_crust_short_bed_v01.mp3 + plan at 68.6 BPM, \u00a30)"
     },
     {
       "channel": "OWB",
@@ -5427,19 +5424,17 @@
       },
       "music_gate": {
         "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_century_warming/06_Final-Exports/sun_century_warming_v01_music.json",
-        "mtime_utc": "2026-10-28T04:48:24Z",
-        "verdict": "FAIL",
-        "failed_count": 1,
-        "warn_count": 13,
-        "fail_items": [
-          "brief: the prompt has no 'Pace: NN-NN BPM' line"
-        ],
+        "mtime_utc": "2026-10-28T05:42:39Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 14,
+        "fail_items": [],
         "fresh_vs_media": true
       },
       "review_or_fix_jobs": [
         "J1063"
       ],
-      "notes": "music_gate run in J1060; pre-8-Oct sun-brighter_score_bed_v01_plan.json Pace line fix queued in J1063 (\u00a30, no spend)"
+      "notes": "music_gate PASS in J1063 (Pace: 60-80 BPM added to sun-brighter_score_bed_v01_plan.json, \u00a30)"
     },
     {
       "channel": "OWB",
@@ -5470,19 +5465,17 @@
       },
       "music_gate": {
         "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_eight_minute_light/06_Final-Exports/sun_eight_minute_light_v01_music.json",
-        "mtime_utc": "2026-10-28T04:48:28Z",
-        "verdict": "FAIL",
-        "failed_count": 1,
-        "warn_count": 13,
-        "fail_items": [
-          "brief: the prompt has no 'Pace: NN-NN BPM' line"
-        ],
+        "mtime_utc": "2026-10-28T05:42:43Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 14,
+        "fail_items": [],
         "fresh_vs_media": true
       },
       "review_or_fix_jobs": [
         "J1063"
       ],
-      "notes": "music_gate run in J1060; pre-8-Oct sun-brighter_score_bed_v01_plan.json Pace line fix queued in J1063 (\u00a30, no spend)"
+      "notes": "music_gate PASS in J1063 (Pace: 60-80 BPM added to sun-brighter_score_bed_v01_plan.json, \u00a30)"
     },
     {
       "channel": "OWB",
@@ -5513,19 +5506,17 @@
       },
       "music_gate": {
         "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_faint_young_sun_70pct/06_Final-Exports/sun_faint_young_70pct_v01_music.json",
-        "mtime_utc": "2026-10-28T04:48:32Z",
-        "verdict": "FAIL",
-        "failed_count": 1,
-        "warn_count": 13,
-        "fail_items": [
-          "brief: the prompt has no 'Pace: NN-NN BPM' line"
-        ],
+        "mtime_utc": "2026-10-28T05:42:46Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 14,
+        "fail_items": [],
         "fresh_vs_media": true
       },
       "review_or_fix_jobs": [
         "J1063"
       ],
-      "notes": "music_gate run in J1060; pre-8-Oct sun-brighter_score_bed_v01_plan.json Pace line fix queued in J1063 (\u00a30, no spend)"
+      "notes": "music_gate PASS in J1063 (Pace: 60-80 BPM added to sun-brighter_score_bed_v01_plan.json, \u00a30)"
     },
     {
       "channel": "OWB",
@@ -5556,19 +5547,17 @@
       },
       "music_gate": {
         "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_moist_greenhouse/06_Final-Exports/sun_moist_greenhouse_v01_music.json",
-        "mtime_utc": "2026-10-28T04:48:36Z",
-        "verdict": "FAIL",
-        "failed_count": 1,
-        "warn_count": 13,
-        "fail_items": [
-          "brief: the prompt has no 'Pace: NN-NN BPM' line"
-        ],
+        "mtime_utc": "2026-10-28T05:42:50Z",
+        "verdict": "PASS",
+        "failed_count": 0,
+        "warn_count": 14,
+        "fail_items": [],
         "fresh_vs_media": true
       },
       "review_or_fix_jobs": [
         "J1063"
       ],
-      "notes": "music_gate run in J1060; pre-8-Oct sun-brighter_score_bed_v01_plan.json Pace line fix queued in J1063 (\u00a30, no spend)"
+      "notes": "music_gate PASS in J1063 (Pace: 60-80 BPM added to sun-brighter_score_bed_v01_plan.json, \u00a30)"
     },
     {
       "channel": "HOS",

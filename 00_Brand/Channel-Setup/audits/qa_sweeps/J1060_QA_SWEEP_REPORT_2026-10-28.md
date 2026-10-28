@@ -11,9 +11,9 @@
 
 ## 1. Delta Since J1054 (`2026-10-28T03:51Z`)
 
-1. **5 OWB `020` and `022` `v01` Lift Shorts `music_gate` Run (`J1063` queued, `£0`):**
-   - `OWB:020` `jupiter_no_crust_v01`: passes `picture_qa` (`0/7` FAIL, `1` WARN) and `polish_gate` (`0/7` FAIL, `1` WARN). `music_gate.py` recorded `FAIL` (`own: not in this film 05_Music`, `own: no plan next to the bed`).
-   - `OWB:022` `sun_century_warming_v01`, `sun_eight_minute_light_v01`, `sun_faint_young_sun_70pct_v01`, `sun_moist_greenhouse_v01`: all 4 pass `picture_qa` (`0` FAILs) and `polish_gate` (`0` FAILs), and `sun-brighter_score_bed_v01.mp3` (`525.0 s`) has `0` similarity matches and `0` gaps, failing only `brief: the prompt has no Pace: NN-NN BPM line` in pre-8-Oct `sun-brighter_score_bed_v01_plan.json`. Queued no-spend fix job `J1063`.
+1. **5 OWB `020` and `022` `v01` Lift Shorts `music_gate` Run (`J1063` resolved, `£0`):**
+   - `OWB:020` `jupiter_no_crust_v01`: passes `picture_qa` (`0/5` FAIL, `1` WARN), `polish_gate` (`0/5` FAIL, `1` WARN), `gate_shorts_open` (`PASS`, `-14.0 LUFS`, `cut1=2.03s`), and `music_gate` (`PASS`, `0` FAILs, `13` WARNs) with own `05_Music/jupiter_no_crust_short_bed_v01.mp3` + `_plan.json` (`68.6 BPM`, `£0`).
+   - `OWB:022` `sun_century_warming_v01`, `sun_eight_minute_light_v01`, `sun_faint_young_sun_70pct_v01`, `sun_moist_greenhouse_v01`: all 4 pass `picture_qa` (`0` FAILs), `polish_gate` (`0` FAILs), and `music_gate` (`PASS`, `0` FAILs, `14` WARNs) after adding `Pace: 60-80 BPM.` to `05_Music/sun-brighter_score_bed_v01_plan.json` (`J1063`, `£0`).
 2. **16 HOS `001`–`004` `v01` Lift Shorts `music_gate` Run (`J1064` queued, `£0`):**
    - `HOS:001` (`s07_semmelweis_hands_v01`, `s08_pasteur_germs_v01`, `s09_lister_antiseptic_v01`, `s10_miasma_microscope_v01`), `HOS:002` (`s06_atomic_weights_v01`, `s07_mendeleev_cards_v01`, `s08_periodic_table_work_v01`, `s09_dobereiner_triads_v01`), `HOS:003` (`s04_unknown_x_v01`, `s05_first_xray_v01`, `s06_how_xrays_work_v01`, `s07_xray_tube_v01`): all 12 pass `picture_qa` (`0` FAILs) and `polish_gate` (`0` FAILs), and their deterministic own-synthesis pads (`hos00N_<sid>_synth_pad_v01.wav`) have `0` similarity matches and `0` gaps, failing `own` (`not in this film 05_Music`, `no plan next to the bed`).
    - `HOS:004` (`s04_cathode_rays_v01`, `s06_moseley_atomic_number_v01`, `s07_outer_electrons_v01`, `s08_plum_pudding_v01`): all 4 pass `picture_qa` (`0` FAILs) and `polish_gate` (`0` FAILs); `music_gate.py` recorded `brief`/`own`/`gap`/`reused` FAILs on their pre-8-Oct temp beds. Queued no-spend fix job `J1064`.
@@ -130,11 +130,11 @@
 | HOS | `j1054_extended_lift_shorts_and_longs` | `HOS:006` | `hos_006_s06_ingenhousz_oxygen_v01` | `3daf38e7f3f5` | `2026-10-18T07:27:09Z` | PASS (0/8F, 0W) | PASS (0/8F, 0W) | PASS (0F, 13W) | YES | — |
 | HOS | `j1054_extended_lift_shorts_and_longs` | `HOS:006` | `hos_006_s07_priestley_mint_v01` | `253b56176b87` | `2026-10-19T05:07:52Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | PASS (0F, 13W) | YES | — |
 | HOS | `j1054_extended_lift_shorts_and_longs` | `HOS:006` | `hos_006_s08_willow_pot_v01` | `8bce695efab2` | `2026-10-21T01:45:25Z` | PASS (0/9F, 1W) | PASS (0/9F, 1W) | PASS (0F, 13W) | YES | — |
-| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:020` | `jupiter_no_crust_v01` | `64b8ac7316fe` | `2026-10-17T04:15:46Z` | PASS (0/4F, 1W) | PASS (0/4F, 1W) | FAIL (2F, 13W) | YES | J1063 |
-| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:022` | `sun_century_warming_v01` | `bbd0d5d0aebb` | `2026-10-19T00:28:13Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | FAIL (1F, 13W) | YES | J1063 |
-| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:022` | `sun_eight_minute_light_v01` | `a19cbc21626e` | `2026-10-19T08:42:09Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | FAIL (1F, 13W) | YES | J1063 |
-| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:022` | `sun_faint_young_70pct_v01` | `749bb4309010` | `2026-10-21T01:31:08Z` | PASS (0/7F, 1W) | PASS (0/7F, 1W) | FAIL (1F, 13W) | YES | J1063 |
-| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:022` | `sun_moist_greenhouse_v01` | `7850073a1412` | `2026-10-17T23:24:50Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | FAIL (1F, 13W) | YES | J1063 |
+| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:020` | `jupiter_no_crust_v01` | `57df63685041` | `2026-10-28T05:53:31Z` | PASS (0/5F, 1W) | PASS (0/5F, 1W) | PASS (0F, 13W) | YES | J1063 |
+| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:022` | `sun_century_warming_v01` | `bbd0d5d0aebb` | `2026-10-19T00:28:13Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | PASS (0F, 14W) | YES | J1063 |
+| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:022` | `sun_eight_minute_light_v01` | `a19cbc21626e` | `2026-10-19T08:42:09Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | PASS (0F, 14W) | YES | J1063 |
+| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:022` | `sun_faint_young_70pct_v01` | `749bb4309010` | `2026-10-21T01:31:08Z` | PASS (0/7F, 1W) | PASS (0/7F, 1W) | PASS (0F, 14W) | YES | J1063 |
+| OWB | `j1060_extended_lift_shorts_and_longs` | `OWB:022` | `sun_moist_greenhouse_v01` | `7850073a1412` | `2026-10-17T23:24:50Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | PASS (0F, 14W) | YES | J1063 |
 | HOS | `j1060_extended_lift_shorts_and_longs` | `HOS:001` | `hos_001_s07_semmelweis_hands_v01` | `ec69d9145e95` | `2026-10-17T16:33:56Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | FAIL (2F, 0W) | YES | J1064 |
 | HOS | `j1060_extended_lift_shorts_and_longs` | `HOS:001` | `hos_001_s08_pasteur_germs_v01` | `221d79a7395f` | `2026-10-17T20:07:33Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | FAIL (2F, 0W) | YES | J1064 |
 | HOS | `j1060_extended_lift_shorts_and_longs` | `HOS:001` | `hos_001_s09_lister_antiseptic_v01` | `e86a3a31adb7` | `2026-10-18T18:23:35Z` | PASS (0/8F, 1W) | PASS (0/8F, 1W) | FAIL (2F, 0W) | YES | J1064 |

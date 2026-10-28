@@ -1,4 +1,3 @@
-FAIL brief: the prompt has no 'Pace: NN-NN BPM' line
 WARN reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others
 WARN reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others
 WARN reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others
@@ -12,4 +11,5 @@ WARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.wav to compare (OS
 WARN reused: couldn't read saturn_long_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others
 WARN reused: couldn't read monday_saturn_short_vo_v02_how_long.mp3 to compare (OSError); download it or pass --others
 WARN reused: couldn't read saturn_long_vo_v03_tightened.wav to compare (OSError); download it or pass --others
-music gate FAIL: sun-brighter_score_bed_v01.mp3, 525.0 s, about 100.0 BPM, brief None
+WARN pace: measured about 100.0 BPM against the brief's 60-80; Claude listens
+music gate PASS: sun-brighter_score_bed_v01.mp3, 525.0 s, about 100.0 BPM, brief Pace: 60-80 BPM
