@@ -80330,6 +80330,11 @@
           "at": "2026-10-28T11:13Z",
           "by": "claude",
           "what": "waits on Ben: swap this Short to v04 (Chief PASS on J1032) (by 2026-12-06 20:00 London)"
+        },
+        {
+          "at": "2026-10-28T15:03Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J1101"
         }
       ],
       "kind": "video",
@@ -80371,16 +80376,6 @@
         "assembly_job": "J1032"
       },
       "awaits_ben": [
-        {
-          "what": "swap this Short to v04 (Chief PASS on J1032)",
-          "file": "OWB UAT/fri20_grapefruit_cherry_v04/fri20_grapefruit_cherry_v04_PHONE.mp4",
-          "version": "v04",
-          "due": "2026-11-19T20:00Z",
-          "ifNot": "the current v01 stays scheduled in its slot",
-          "title": "Where Is the Nearest Star If You Shrink the Sun to a Grapefruit?",
-          "number": "S1",
-          "type": "short"
-        },
         {
           "what": "swap this Short to v04 (Chief PASS on J1032)",
           "file": "OWB UAT/earth_equator_weight_v04/earth_equator_weight_v04_PHONE.mp4",
@@ -96931,11 +96926,28 @@
           "at": "2026-10-28T15:03Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T15:03Z",
+          "by": "claude",
+          "what": "approved by Ben: swap this Short to v04 (Chief PASS on J1032) v04 (asked in J0936)"
         }
       ],
       "remaining_action": "Upload the three OK'd v04 Shorts as Private replacements in their slots, then unschedule the old ones",
       "due": "2026-11-19T20:00:00Z",
-      "kind": "studio"
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap this Short to v04 (Chief PASS on J1032)",
+        "file": "OWB UAT/fri20_grapefruit_cherry_v04/fri20_grapefruit_cherry_v04_PHONE.mp4",
+        "version": "v04",
+        "title": "Where Is the Nearest Star If You Shrink the Sun to a Grapefruit?",
+        "number": "S1",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J0936",
+        "askId": "J0936.1",
+        "okAt": "2026-10-28T15:03Z"
+      }
     }
   ],
   "focus": [],
