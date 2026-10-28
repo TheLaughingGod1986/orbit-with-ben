@@ -94715,13 +94715,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-28T10:22Z",
-      "eta": "2026-10-28T11:22Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T08:46Z",
-      "result": "",
+      "result": "done (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md: 57 unique HOS videos verified — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T10:26Z; 0 new fixes needed)",
       "history": [
         {
           "at": "2026-10-28T08:46Z",
@@ -94752,9 +94752,24 @@
           "at": "2026-10-28T10:27Z",
           "by": "gemini",
           "what": "step 2 of 4 done: 4/4 public long end screens (10:25:33Z) and 21/21 public Short Related pills (10:26:56Z) verified live"
+        },
+        {
+          "at": "2026-10-28T10:29Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed HOS 09fbd1c0 (check_all.sh PASS)"
+        },
+        {
+          "at": "2026-10-28T10:29Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: All 4 steps complete: 57 HOS videos verified (25 public, 15 scheduled, 17 private), 0 new fixes needed (HOS 09fbd1c0)"
+        },
+        {
+          "at": "2026-10-28T10:29Z",
+          "by": "gemini",
+          "what": "done: done (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md: 57 unique HOS videos verified — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T10:26Z; 0 new fixes needed)"
         }
       ],
-      "remaining_action": "Update and commit 00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md in HOS",
+      "remaining_action": "Post report for J1076",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -94767,11 +94782,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-28T10:27Z",
+        "at": "2026-10-28T10:29Z",
         "by": "gemini",
-        "note": "4/4 public long end screens (10:25:33Z) and 21/21 public Short Related pills (10:26:56Z) verified live"
+        "note": "All 4 steps complete: 57 HOS videos verified (25 public, 15 scheduled, 17 private), 0 new fixes needed (HOS 09fbd1c0)"
       },
       "taskKeys": [
         "HOS:001",
@@ -94782,7 +94797,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "done_ref": "09fbd1c0"
     },
     {
       "id": "J1077",
@@ -95121,23 +95137,66 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-10-28T10:33Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-28T10:21Z",
-      "result": "",
+      "result": "done (05_Analytics/live_fixes/2026-10-28.md: 10/10 live public videos pass chapters, sources, end screens and Related video checks at 2026-10-28T10:35Z; 0 new fixes needed)",
       "history": [
         {
           "at": "2026-10-28T10:21Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-28T10:33Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T10:33Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T10:35Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified 2026-10-28 snapshot and live YouTube watch/Shorts responses for all 10 public videos at 2026-10-28T10:35Z"
+        },
+        {
+          "at": "2026-10-28T10:35Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Updated and committed 05_Analytics/live_fixes/2026-10-28.md (10/10 public videos pass)"
+        },
+        {
+          "at": "2026-10-28T10:35Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verified 10/10 live public videos pass chapters, sources, end screens and Related checks; 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-28T10:36Z",
+          "by": "gemini",
+          "what": "done: done (05_Analytics/live_fixes/2026-10-28.md: 10/10 live public videos pass chapters, sources, end screens and Related video checks at 2026-10-28T10:35Z; 0 new fixes needed)"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Complete J1081",
       "kind": "listing",
-      "backlog": "owb-live-listing-fixes"
+      "backlog": "owb-live-listing-fixes",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-10-28T10:35Z",
+        "by": "gemini",
+        "note": "Verified 10/10 live public videos pass chapters, sources, end screens and Related checks; 0 new fixes needed"
+      },
+      "taskKeys": [
+        "OWB:023",
+        "OWB:022",
+        "OWB:021",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
