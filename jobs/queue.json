@@ -98594,13 +98594,13 @@
       "stage": "",
       "after": "J1118",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-28T21:27Z",
-      "eta": "2026-10-28T23:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T18:54Z",
-      "result": "",
+      "result": "Three thumbnail-only tests saved and reloaded: REXYxuLOBoI T016, ojk-dfOpAmw T017, m09jUdwC5hk T018; Studio reports Test running (13d23h remaining). Both description fixes read back; titles unchanged. Ledger/evidence/local descriptions PR #332 commit 8a68f1022 for Chief review/merge. Follow-up J1133 queued, requires day after actual T018 end; Chief must set structured hold (wait CLI refuses new open jobs). No upload/privacy/schedule changes; £0.",
       "history": [
         {
           "at": "2026-10-28T18:54Z",
@@ -98641,6 +98641,11 @@
           "at": "2026-10-28T21:36Z",
           "by": "codex",
           "what": "step 4 of 4 done: Verified all Studio read-backs, exact description diffs, B hashes and clean diff check; evidence commit 8a68f1022 pushed; title-only follow-up J1133 queued with actual-test-end prerequisite"
+        },
+        {
+          "at": "2026-10-28T21:36Z",
+          "by": "codex",
+          "what": "done: Three thumbnail-only tests saved and reloaded: REXYxuLOBoI T016, ojk-dfOpAmw T017, m09jUdwC5hk T018; Studio reports Test running (13d23h remaining). Both description fixes read back; titles unchanged. Ledger/evidence/local descriptions PR #332 commit 8a68f1022 for Chief review/merge. Follow-up J1133 queued, requires day after actual T018 end; Chief must set structured hold (wait CLI refuses new open jobs). No upload/privacy/schedule changes; £0."
         }
       ],
       "remaining_action": "Chief reviews and merges evidence; monitor T016-T018 and hold J1133 until day after T018 ends",
@@ -98655,7 +98660,8 @@
       "taskKeys": [
         "OWB:005",
         "OWB:019"
-      ]
+      ],
+      "done_ref": "8a68f1022"
     },
     {
       "id": "J1120",
