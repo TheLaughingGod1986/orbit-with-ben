@@ -98239,11 +98239,24 @@
           "at": "2026-10-28T18:14Z",
           "by": "codex",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-10-28T18:38Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Packaging panel (cursor): J1106 three draft thumbnail Bs and separate title alternatives; advisory only, Chief decides",
-      "for": "cursor",
-      "kind": "review"
+      "for": "gemini",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "cursor",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J1117",
