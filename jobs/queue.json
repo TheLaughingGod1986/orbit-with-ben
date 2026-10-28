@@ -97831,9 +97831,14 @@
           "at": "2026-10-28T17:01Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-28T17:03Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Authenticated HOS Studio located on existing port 9460; 10 scheduled Shorts inventoried live. NAS offload found no eligible scratch."
         }
       ],
-      "remaining_action": "Open HOS Studio, set scheduled Shorts frame-0 covers, and record read-back evidence",
+      "remaining_action": "Set and verify the 10 scheduled HOS Shorts frame-0 covers",
       "kind": "studio",
       "urgent": 2,
       "rerouted_from": {
@@ -97846,14 +97851,16 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-28T17:01Z",
-        "by": "codex"
+        "at": "2026-10-28T17:03Z",
+        "by": "codex",
+        "note": "Authenticated HOS Studio located on existing port 9460; 10 scheduled Shorts inventoried live. NAS offload found no eligi"
       },
       "taskKeys": [
+        "HOS:002",
+        "HOS:004",
         "HOS:005",
-        "HOS:006",
         "HOS:007"
       ]
     }
