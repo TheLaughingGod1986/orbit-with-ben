@@ -50,7 +50,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1099 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1101 | mini | blocked | codex | – | studio · Swap S1 A6TW_6CXhcs (026) to Ben-OK'd v04 (Private, same slot Fri 20 Nov 11:30) |  |
-| J1102 | mini | claimed | codex | 2026-10-28T17:58Z | studio · Swap S3 bizlhspnVvY (028) to Ben-OK'd v04 (Private, same slot Mon 30 Nov 11:30) |  |
 | J1103 | mini | open | – | – | studio · Swap S4 DETI0HV2jlI (028) to Ben-OK'd v04 (Private, same slot Wed 2 Dec 11:30) |  |
 | J1104 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1105 | any | open | – | – | chief · Chief: verify condition for J1004 |  |
@@ -62,6 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J1102 done: Swap S3 bizlhspnVvY (028) to Ben-OK'd v04 (Private, same slot Mon 30 Nov 11:30) (Delivered xvarZP2aYyE Private 2026-11-30T11:30Z; old bizlhspnVvY Private unscheduled. Readback verified; cover saved, captions serving; Buffer deferred. Evidence PR 314 for Chief review; J0910 repointed for Related after long public.)
 - J1096 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done (05_Analytics/live_fixes/2026-10-28.md, commit 0c08d7fc8: 10/10 live public videos pass chapters, sources, end screens and Related video checks at 2026-10-28T14:54Z, including 030 Apophis v13a gJwNJN_yMKU; 0 new fixes needed))
 - J1095 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md: 57 unique HOS videos verified — 26 public (including AMSriTQ-lcQ -> GHZDsiH7L7A), 14 scheduled, 17 private; 4/4 public long end screens and 22/22 public Short Related pills verified live at 2026-10-28T14:47Z; 0 new fixes needed)
 - J1094 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done (05_Analytics/live_fixes/2026-10-28.md, commit e6ac85fc5: 10/10 live public videos pass chapters, sources, end screens and Related video checks at 2026-10-28T14:41Z, including 030 Apophis v13a gJwNJN_yMKU; 0 new fixes needed))
@@ -71,4 +71,3 @@ Recently finished:
 - J1087 done: Chief: verify condition for J1003 (Verified saved Studio source: readAt 2026-10-28T07:51:04.461913Z is before required 11:30Z (887 views, 30.7% stayed, 75.3% avg viewed; preliminary only). J1003 remains blocked via wait --recheck J1087, next check 2026-10-29T16:00:00Z per original fallback. Readback verified. No spend, Studio write or publishing change.)
 - J1086 done: Chief: verify condition for J0985 (Verified J0985 hold against original job, J1001 FIX, J1002 correction 45ef75589, approval history and current Studio source. Mature data condition NOT met: readAt 2026-10-28T07:51:04.461913Z is 44h21m after release; OVLv9dxTcpE 887 lifetime views, 30.7% stayed, 75.3% average viewed. J1003 has no completed mature readout. Kept J0985 blocked via wait --recheck J1086; preserved 2026-10-29T16:00:00Z fallback. Non-author Codex is available; no final audit PASS, publishing, credit spend or rule change. J1087 separately owns J1003 verification.)
 - J1085 done: Chief: verify condition for J0961 (Verified J0991 done and v04 watch approval recorded, but fresh episode gate fails subscribe_beat at 54% (25-50% required). J0961 kept blocked with corrected input condition, recheck 28 Oct 18:52Z. Evidence 666bea72b on codex/J1085-verify. No upload, schedule change or spend.)
-- J1083 done: Chief: verify condition for J0966 (Verified original brief/history, J1005 merged fc890aec, HC delivery 8df16983 and subsequent desk approval history. J0966 stays blocked at 5/5 pending independent final replacement sign-off and Ben swap OK; next check 2026-10-28T18:50:00Z recorded with recheck J1083. No media or YouTube changes or spend.)
