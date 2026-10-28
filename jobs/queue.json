@@ -80300,6 +80300,11 @@
           "at": "2026-10-27T09:37Z",
           "by": "codex",
           "what": "J1029 preparation PASS dc4b9da01 / PR304; dependency -> J1032 assembly; replacement FIX/blocked and 6/6 history retained"
+        },
+        {
+          "at": "2026-10-28T11:12Z",
+          "by": "claude",
+          "what": "waits on Ben: swap this Short to v04 (Chief PASS on J1032) (by 2026-11-19 20:00 London)"
         }
       ],
       "kind": "video",
@@ -80339,6 +80344,16 @@
         "ref": "dc4b9da01",
         "job": "J1029",
         "assembly_job": "J1032"
+      },
+      "awaits_ben": {
+        "what": "swap this Short to v04 (Chief PASS on J1032)",
+        "file": "OWB UAT/fri20_grapefruit_cherry_v04/fri20_grapefruit_cherry_v04_PHONE.mp4",
+        "version": "v04",
+        "due": "2026-11-19T20:00Z",
+        "ifNot": "the current v01 stays scheduled in its slot",
+        "title": "Where Is the Nearest Star If You Shrink the Sun to a Grapefruit?",
+        "number": "S1",
+        "type": "short"
       }
     },
     {
