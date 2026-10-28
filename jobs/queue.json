@@ -95649,13 +95649,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-28T12:48Z",
-      "eta": "2026-10-28T14:48Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T11:20Z",
-      "result": "",
+      "result": "Verified J0991 done and v04 watch approval recorded, but fresh episode gate fails subscribe_beat at 54% (25-50% required). J0961 kept blocked with corrected input condition, recheck 28 Oct 18:52Z. Evidence 666bea72b on codex/J1085-verify. No upload, schedule change or spend.",
       "history": [
         {
           "at": "2026-10-28T11:20Z",
@@ -95681,6 +95681,11 @@
           "at": "2026-10-28T12:50Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh episode gate exits 1 at 54%; evidence committed and pushed as 666bea72b"
+        },
+        {
+          "at": "2026-10-28T12:51Z",
+          "by": "codex",
+          "what": "done: Verified J0991 done and v04 watch approval recorded, but fresh episode gate fails subscribe_beat at 54% (25-50% required). J0961 kept blocked with corrected input condition, recheck 28 Oct 18:52Z. Evidence 666bea72b on codex/J1085-verify. No upload, schedule change or spend."
         }
       ],
       "remaining_action": "Record corrected hold condition and finish verification report",
@@ -95697,7 +95702,8 @@
       },
       "taskKeys": [
         "OWB:029"
-      ]
+      ],
+      "done_ref": "666bea72b"
     },
     {
       "id": "J1086",

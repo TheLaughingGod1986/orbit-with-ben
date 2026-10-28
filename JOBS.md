@@ -43,12 +43,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1059 | mini | blocked | gemini | – | studio · OWB 025 Mars Opening Short TtgHNLXfDSs: swap to wed11_opening_testA_v05 (Private, Wed 11 Nov 11:30 London) after Ben's OK by Wed 11 Nov 10:30 | ab4ad3de4 |
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
 | J1084 | mini | blocked | codex | – | video · 025 Mars Opening Short: v06 starting on a whole sentence (Ben's change on v05: '00:01 starts mid sentence'), gates, park for Chief |  |
-| J1085 | any | claimed | codex | 2026-10-28T14:48Z | chief · Chief: verify condition for J0961 |  |
 | J1086 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 | J1087 | any | open | – | – | chief · Chief: verify condition for J1003 |  |
 
 Recently finished:
 
+- J1085 done: Chief: verify condition for J0961 (Verified J0991 done and v04 watch approval recorded, but fresh episode gate fails subscribe_beat at 54% (25-50% required). J0961 kept blocked with corrected input condition, recheck 28 Oct 18:52Z. Evidence 666bea72b on codex/J1085-verify. No upload, schedule change or spend.)
 - J1083 done: Chief: verify condition for J0966 (Verified original brief/history, J1005 merged fc890aec, HC delivery 8df16983 and subsequent desk approval history. J0966 stays blocked at 5/5 pending independent final replacement sign-off and Ben swap OK; next check 2026-10-28T18:50:00Z recorded with recheck J1083. No media or YouTube changes or spend.)
 - J1082 done: Chief: verify condition for J1032 (Condition met: elected-Chief replacement PASS recorded on J1032 by claude; J0936 now waits only on Ben's swap approval (awaits cards).)
 - J1081 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done (05_Analytics/live_fixes/2026-10-28.md: 10/10 live public videos pass chapters, sources, end screens and Related video checks at 2026-10-28T10:35Z; 0 new fixes needed))
@@ -58,4 +58,3 @@ Recently finished:
 - J1077 done: Chief: verify condition for J1004 (Verified condition NOT satisfied: PR 366 OPEN at 00b1e653, requires timing-summary and obsolete-banner corrections before Chief paper acceptance/merge. J1004 remains blocked at 5/5, recheck 2026-10-28T15:22Z via J1077. HOS desk report https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6465297260. Production, credit and Ben holds unchanged; GBP0.)
 - J1076 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done (00_Brand/Channel-Setup/audits/live_fixes/2026-10-28.md: 57 unique HOS videos verified — 25 public, 15 scheduled, 17 private; 4/4 public long end screens and 21/21 public Short Related pills verified live at 2026-10-28T10:26Z; 0 new fixes needed))
 - J1075 done: J1066 FIX: reconcile QA media identities and newest-pack coverage on both channels ([Claude] acting Chief PASS: closed with J1079 (corrected identities verified, see J1079). No film approval or hold change.)
-- J1074 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done (05_Analytics/live_fixes/2026-10-28.md: 10/10 live public videos pass chapters, sources, end screens and Related video checks at 2026-10-28T10:20Z; 0 new fixes needed))
