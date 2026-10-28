@@ -95917,9 +95917,14 @@
           "at": "2026-10-28T13:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-28T13:22Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J1088 4-step QA sweep of newest OWB and HOS packs"
         }
       ],
-      "remaining_action": "Check the newest video packs and record any missing checks",
+      "remaining_action": "Scan OWB and HOS for any new or modified renders since J1066/J1079 and verify gate coverage",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -95933,12 +95938,34 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-28T13:21Z",
+        "of": 4,
+        "at": "2026-10-28T13:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J1088 4-step QA sweep of newest OWB and HOS packs"
+      },
+      "taskKeys": [
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1089",
