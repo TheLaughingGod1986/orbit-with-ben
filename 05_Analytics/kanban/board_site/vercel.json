@@ -5,6 +5,8 @@
     { "source": "/tracker", "destination": "/tracker.html" },
     { "source": "/tracker/", "destination": "/tracker.html" },
     { "source": "/ai", "destination": "/ai.html" },
+    { "source": "/board", "destination": "/board.html" },
+    { "source": "/board/", "destination": "/board.html" },
     { "source": "/ai/", "destination": "/ai.html" }
   ],
   "headers": [
@@ -14,6 +16,8 @@
     { "source": "/classic.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
     { "source": "/tracker", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
     { "source": "/tracker.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/board", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/board.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
     { "source": "/ai", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
     { "source": "/ai.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
     { "source": "/tracker.webmanifest", "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }, { "key": "Cache-Control", "value": "no-cache" }] },

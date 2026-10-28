@@ -4,7 +4,8 @@
   python3 05_Analytics/kanban/board_site/build.py [--out DIR]    # default: …/board_site/dist
 
 Outputs:
-  dist/index.html     — five-lane per-video tracker (Ben's phone-first board)
+  dist/index.html     — Studio app (Ben, 28 Oct 2026): Overview, Videos, Review, Agents, Schedule (/)
+  dist/board.html     — five-lane per-video tracker, where Ben ticks OK / changes (/board)
   dist/classic.html   — the previous swim-lane / job board (kept at /classic)
   dist/tracker.html   — Channel Tracker web app (/tracker)
   dist/ai.html        — AI & credits: who is up, who is Chief, credit left per plan, where it went (/ai)
@@ -27,6 +28,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 PAGE = HERE.parent / "studio_kanban.html"
 SIMPLE = HERE.parent / "video_tracker.html"
 AI_PAGE = HERE.parent / "ai_credits.html"
+STUDIO = HERE.parent / "studio_app.html"
 TRACKER = HERE.parent.parent / "dashboard" / "template.html"
 TRACKER_DATA = HERE.parent.parent / "dashboard" / "data.json"
 ROOT = HERE.parents[2]
@@ -39,7 +41,7 @@ FOOTER = ('<footer><details><summary>Data sources and refresh</summary>This boar
           '<span class="mono">02_Video-Projects/&lt;film&gt;/status.json</span>, the job queue and '
           '<span class="mono">05_Analytics/kanban/film_briefs.json</span> in orbit-with-ben ("chief" is shown as Grok). '
           'Your ticks are saved straight away with your board link; the Mac mini picks them up within about a minute. '
-          'YouTube numbers: <a href="/tracker">Channel Tracker</a>. New simple board: <a href="/">/</a>.</details></footer>')
+          'YouTube numbers: <a href="/tracker">Channel Tracker</a>. Studio app: <a href="/">/</a> · video board: <a href="/board">/board</a>.</details></footer>')
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from kanban_snapshot import release_record
@@ -54,7 +56,7 @@ for status_file in (ROOT / "02_Video-Projects").glob("*/status.json"):
 PATCHES = [
     ("const RELEASE_RECORDS = {};", "const RELEASE_RECORDS = " + json.dumps(RELEASE_RECORDS).replace("</", "<\\/") + ";"),
     ('<div class="sub" id="asof">Loading…</div>',
-     '<div class="sub" id="asof">Loading…</div><div class="sub"><a href="/" style="color:inherit">Simple board →</a> · <a href="/tracker" style="color:inherit">Channel Tracker →</a></div>'),
+     '<div class="sub" id="asof">Loading…</div><div class="sub"><a href="/board" style="color:inherit">Video board →</a> · <a href="/tracker" style="color:inherit">Channel Tracker →</a></div>'),
     ("dbApi = db;", "dbApi = db.canWrite===false ? null : db;"),
     ('t.textContent = `Updated by the studio agent · ${fw(fromDb.hosAt || fromDb.owbAt)}`;',
      't.textContent = `Last change ${fw((window.__boardData||{}).dataChangedAt || fromDb.hosAt || fromDb.owbAt)} · checks every minute`;'),
@@ -87,7 +89,7 @@ TRACKER_PATCHES = [
 
 
 def app_version() -> str:
-    files = [SIMPLE, PAGE, TRACKER, AI_PAGE, HERE / "build.py", HERE / "shim.js", HERE / "live.js",
+    files = [SIMPLE, PAGE, TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py", HERE / "shim.js", HERE / "live.js",
              HERE / "tracker_app.js", HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js"]
     return hashlib.sha256(b"\0".join(f.read_bytes() for f in files if f.exists())).hexdigest()[:16]
 
@@ -147,6 +149,16 @@ def build_simple(out: pathlib.Path) -> None:
     baked = json.dumps(baked_tracker(), ensure_ascii=False).replace("</", "<\\/")
     inject = f'<script type="application/json" id="baked-tracker">{baked}</script>\n<script>\n{boot}\n</script>'
     html = html.replace(marker, inject)
+    (out / "board.html").write_text(versioned_page(html))
+    print(f"built {out / 'board.html'} ({len(html):,} bytes)")
+
+
+def build_studio(out: pathlib.Path) -> None:
+    html = STUDIO.read_text()
+    marker = "<script>\n/* STUDIO_APP_BOOT */\n</script>"
+    if html.count(marker) != 1:
+        sys.exit("build: expected one STUDIO_APP_BOOT script block in studio_app.html")
+    html = html.replace(marker, "<script>\n" + (HERE / "studio_app.js").read_text() + "\n</script>")
     (out / "index.html").write_text(versioned_page(html))
     print(f"built {out / 'index.html'} ({len(html):,} bytes)")
 
@@ -216,6 +228,7 @@ def build(out: pathlib.Path) -> None:
     build_classic(out)
     build_tracker(out)
     build_ai(out)
+    build_studio(out)
     (out / "version.json").write_text(json.dumps({"version": app_version()}))
     shutil.copy(HERE / "updater.js", out / "updater.js")
     print(f"built {out}")
