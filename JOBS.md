@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
 | J1075 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · J1066 FIX: reconcile QA media identities and newest-pack coverage on both channels | J1066 |
 | J1079 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · J1075 FIX: correct CFR18 hash and qualify inaccessible QA media evidence | J1075 |
-| J1081 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J1081 | any | claimed | gemini | 2026-10-28T11:33Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
