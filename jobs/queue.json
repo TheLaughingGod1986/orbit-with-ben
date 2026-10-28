@@ -92225,19 +92225,24 @@
           "at": "2026-10-28T02:20Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified J1002 (45ef75589) & J1044 (254d04071) intact; non-author Chiefs down; studio_ctr readAt 00:33:34Z (37.1h < 48h)"
+        },
+        {
+          "at": "2026-10-28T02:20Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Recorded J0985 hold with --recheck J1052 and check-at 2026-10-28T11:35:00Z (aligned with recorded J1003 retry)"
         }
       ],
-      "remaining_action": "Record condition check on J0985 with wait --recheck J1052",
+      "remaining_action": "Finish J1052 and post Acting-Chief verification report on studio thread",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-28T03:14:17+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-28T02:20Z",
         "by": "gemini",
-        "note": "Verified J1002 (45ef75589) & J1044 (254d04071) intact; non-author Chiefs down; studio_ctr readAt 00:33:34Z (37.1h < 48h)"
+        "note": "Recorded J0985 hold with --recheck J1052 and check-at 2026-10-28T11:35:00Z (aligned with recorded J1003 retry)"
       },
       "taskKeys": [
         "OWB:021",
