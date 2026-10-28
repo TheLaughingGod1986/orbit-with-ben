@@ -99045,10 +99045,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-28T20:56Z",
-      "eta": "2026-10-28T22:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T20:54Z",
       "result": "",
@@ -99092,6 +99092,11 @@
           "at": "2026-10-28T21:06Z",
           "by": "codex",
           "what": "step 1 of 4 done: Draft PR 329, a16efc293. Free 12.89 -> 14.68 GB. Collector fix tested. Two slow checked NAS copies active; .done absent. Full historical loss not yet explained."
+        },
+        {
+          "at": "2026-10-28T21:06Z",
+          "by": "codex",
+          "what": "released: Checkpoint PR 329 (a16efc293), step 1/4. Live 14.68 GB; 30 GB target not met, J1100 remains blocked. DO NOT DUPLICATE: tmux J1128-recover and J1128-compact active; logs ~/_desk/logs/J1128-recover.log and J1128-compact.log; completion ~/_desk/logs/J1128-recover.done and J1128-compact.done. Missing .done means running. Read structured results ~/_desk/logs/J1128/recovery.json and compact.json when done. Actual collectors patched and tested to omit unused caption/format trees. See jobs/reviews/J1128/REPORT.md on branch codex/J1128-disk. Finish recovery/attribution and only then reopen J1100."
         }
       ],
       "remaining_action": "Read detached NAS results, reach 30 GB, finish attribution, then reopen J1100",
