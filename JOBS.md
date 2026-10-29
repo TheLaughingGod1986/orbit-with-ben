@@ -43,10 +43,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
 | J1132 | mini | blocked | claude | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
-| J1188 | any | claimed | gemini | 2026-10-29T09:22Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1188 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-29T08:26Z across 57 unique videos (26 public, 14 scheduled, 17 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, HOS 80e16e4a, 0 new fixes needed))
 - J1187 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T08:18Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, e472e5712, 0 fixes needed))
 - J1186 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1185 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -56,4 +56,3 @@ Recently finished:
 - J1181 done: 025 Short iyvWYFP_ETA (airs Mon 9 Nov 11:30): restore its v01 master so the upcoming-Shorts gate can read it (acting Chief (Claude): the YouTube copy of iyvWYFP_ETA (sha 48466c33..., v01 gate PASS at upload) airs as is, as the J0935 ruling already kept it (NO RECUT under Keeper + c61). Its local master was overwritten in place by J0432's seam fix (0195a5fb..., archived in owbshorts.tar), so no local file matches what YouTube has. The gate's NO FILE row for it is expected and known; no swap.)
 - J1180 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1179 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 4 HOS longs; CTR hits vs 4%: OWB Jupiter -jmMROGoZCM 5.1% (1/11 reported), HOS Germs _C92tIJCk8A 7.1% (1/3 reported). 73 OWB + 21 HOS Shorts: stayed-to-watch 94/94, average percentage 72/94; 2 newest Shorts have no lifetime totals yet. Main 022575da5; tracker published ef66caf7 and byte-verified. HOS audit: 4 duplicate-live errors on repeated uU12JA5rMWg records; no Studio settings changed.)
-- J1178 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (acting Chief (Claude) PASS: QA sweep recorded (OWB e223dcbcc, HOS cb62fbaa), 0 new renders since J1170, 0 FAIL. The sweep now runs every 72 h (backlog both-qa-sweep).)
