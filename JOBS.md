@@ -44,10 +44,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1132 | mini | blocked | claude | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 | J1149 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J1155 | any | claimed | gemini | 2026-10-29T05:22Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1155 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T04:25Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 28861836; 0 new fixes needed))
 - J1154 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T04:19Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
 - J1153 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1152 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T04:09Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
@@ -57,4 +57,3 @@ Recently finished:
 - J1147 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1146 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T03:39Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors, 4/4 public long end screens, 22/22 public Shorts Related pills, 0 new fixes; HOS 0f47ff1a))
 - J1145 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1144 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
