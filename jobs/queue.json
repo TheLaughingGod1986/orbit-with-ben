@@ -106320,17 +106320,22 @@
           "at": "2026-10-29T17:48Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed; starting path/SHA recovery from J0966/J1083/J1005"
+        },
+        {
+          "at": "2026-10-29T17:49Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: all 4 masters local SHA MATCH + ffprobe OK; PHONE derivatives present beside masters"
         }
       ],
-      "remaining_action": "Locate verified masters for four J0966 Shorts (SHA + paths)",
+      "remaining_action": "Copy verified masters+PHONE into HOS UAT and NAS; verify playability",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-29T17:48Z",
+        "at": "2026-10-29T17:49Z",
         "by": "cursor",
-        "note": "claimed; starting path/SHA recovery from J0966/J1083/J1005"
+        "note": "all 4 masters local SHA MATCH + ffprobe OK; PHONE derivatives present beside masters"
       },
       "taskKeys": [
         "HOS:007",
