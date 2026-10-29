@@ -1,5 +1,5 @@
 {
-  "next_id": 1194,
+  "next_id": 1195,
   "jobs": [
     {
       "id": "J0001",
@@ -105354,6 +105354,34 @@
       "remaining_action": "HOS 008: review the 11 J0329 code graphics in motion against the locked VO, park for Chief",
       "for": "gemini",
       "kind": "review"
+    },
+    {
+      "id": "J1194",
+      "title": "Apply the 28 Oct description sweep fixes to the repo description files (text only)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "MacBook lane. Fix list: 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28.md (29 rows). Rows 1-4 were already applied in J1119: skip them. For every other row on the Orbit With Ben side, replace the offending line with the row's exact replacement text in the repo file it names (11_Upload-Package description/chapter/Shorts metadata files). HOS rows: same in the History of Science checkout, one commit there. Do not touch YouTube or Studio and no media. Write 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28_APPLIED.md listing each row as applied or skipped with why, plus the video ids whose live listing now differs from the repo. Commit (git pull --rebase first), then jobs.py done <id> --agent macbook --result '<n applied, file>' --git. A Mini job will push the live listings after the Chief checks this. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T08:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T08:49Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply the 28 Oct description sweep fixes to the repo description files (text only)",
+      "kind": "listing"
     }
   ],
   "focus": [],
