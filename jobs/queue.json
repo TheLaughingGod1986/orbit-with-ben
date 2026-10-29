@@ -108508,17 +108508,22 @@
           "at": "2026-10-29T22:12Z",
           "by": "cursor",
           "what": "step 0 of 6 done: claimed; reading ruling and existing v08 work"
+        },
+        {
+          "at": "2026-10-29T22:12Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: prior assemble still running: loudness tweak final_fix2; leave tmux; no second copy"
         }
       ],
-      "remaining_action": "Read ruling + locate v07 sources and measure opening shake",
+      "remaining_action": "Wait for tmux J1225-render to finish, then run gates + UAT delivery",
       "due": "2026-11-01T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 6,
         "at": "2026-10-29T22:12Z",
         "by": "cursor",
-        "note": "claimed; reading ruling and existing v08 work"
+        "note": "prior assemble still running: loudness tweak final_fix2; leave tmux; no second copy"
       }
     },
     {
