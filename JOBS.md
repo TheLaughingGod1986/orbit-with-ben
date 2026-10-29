@@ -52,11 +52,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1201 | mini | open | – | – | for gemini · qa · `gemini-argon` · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
 | J1202 | mini | open | – | – | assembly · HOS Buffer: register every HOS Short at upload and mirror it to Buffer when it goes public (replaces 'Buffer held until public'); dry-run only, no HOS posting |  |
 | J1204 | mini | blocked | cursor | – | assembly · J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence |  |
-| J1206 | mini | claimed | cursor | 2026-10-29T14:19Z | assembly · J1204 follow-up: verify moving sources and Uranus whole-sentence edit feasibility |  |
 | J1207 | mini | open | – | – | review · HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8) |  |
 
 Recently finished:
 
+- J1206 done: J1204 follow-up: verify moving sources and Uranus whole-sentence edit feasibility (J1206 return: jobs/reviews/J1206/SOURCE_FEASIBILITY_2026-10-29.md (+ CANDIDATES.json). Archive empty of moving opens. Uranus sentence-reorder FEASIBLE (lead with complete S2 from vo_v02.wav). S4 candidate SVS 20390 Shot4 Beauty Pass CGI 1920x1080 sha 32370afa… upscale 1.778 PASS but picture_qa CGI risk. S5 NEGATIVE (no meteor video). S6 PIA17656 radar flyover motion OK but 2.667x FAIL unless blur-fill; Dragonfly TakingOff 2024 artist CGI subject match. No v03. Awaiting Chief source/edit plan.)
 - J1205 done: Chief: verify condition for J0999 (Verified PR365 remains draft OPEN a87cd56a without matching approval; J0999 remains blocked on J0998 approval/merge and unmodified channel:audit exit 0. Hold verified, recheck 29 Oct 18:50Z. No spend or YouTube changes.)
 - J1203 cancelled: HOS back-post the 3 held Shorts (Herschel, Snow, cathode rays) from Studio Download of the live cut (Superseded 29 Oct by chief: Ben OK'd posting the 17 Oct local re-renders (Herschel, Snow) and the iCloud HOS UAT cathode rays copy instead of Studio downloads. All three are already scheduled in Buffer (Wed 4, Fri 6, Sat 7 Nov 11:30 London). Do NOT mirror them again.)
 - J1196 done: Chief: verify condition for J0966 (Verified no Ben HC swap OK in fresh threads and live board at 09:51Z. J0966 held at worker 5/5; next check 29 Oct 15:55Z. Queued delivery J1200 per Claude 6491001837 to restore exact verified media and playable cards; no second job claimed or media work performed. Reports HOS 6493503463 and OWB 6493508168. No spend or YouTube changes.)
@@ -66,4 +66,3 @@ Recently finished:
 - J1187 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T08:18Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, e472e5712, 0 fixes needed))
 - J1186 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1185 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1184 done: Chief: verify condition for J0966 (Verified current thread and board evidence: no Ben HC swap OK. J0966 remains blocked at worker 5/5; retry 29 Oct 08:41:58Z with recheck J1184. HOS-007 approval is long master J0925 only. Playable UAT/cards remain unverified; next is delivery verification then swap approval. HOS desk 6490991603 and OWB 6490993996 posted. No rebuild, spend or YouTube changes.)
