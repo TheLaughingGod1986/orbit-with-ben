@@ -38,6 +38,9 @@ STALE_H = 2.0
 # the workers parked freed it, and 16-21 Oct added 28-30 copies of each of 15 keys (406 jobs). A parked job still
 # holds only itself among the other keys' work (Ben, 12 Oct); it holds the next copy of its own key until it is done.
 ESCALATE_EVERY_H = 24
+# The never-empty fallback skips items on a weekly-ish cadence: it picked the key added longest ago, which was always a
+# weekly audit, so the "weekly" OWB/HOS audits ran every 1-2 days (40+ HOS copies 15-28 Oct, J1099 two days after J0984).
+STRICT_EVERY_H = 72
 LIVE = ("open", "claimed", "blocked")
 
 
@@ -57,7 +60,8 @@ def parked_for_chief(job: dict) -> bool:
 def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY) -> list:
     """Top up to min_ready claimable Mini jobs. A key is skipped while a job from it is open, claimed or blocked
     (whatever the reason), while the item is "paused", and for every_h hours after its last one. Never empty: if after
-    that nothing at all is ready, the key whose last job is oldest is added anyway (still not a busy or paused one)."""
+    that nothing at all is ready, the key whose last job is oldest is added anyway (still not a busy or paused one, and
+    never one with every_h of STRICT_EVERY_H or more: weekly audits keep their week)."""
     added = []
     have = len(ready(data, at))
     last = data.setdefault("backlog_last", {})
@@ -100,7 +104,8 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
             continue
         add(it)
     if have == 0:
-        free = [it for it in items if not busy(it["key"]) and not it.get("daily_at")]
+        free = [it for it in items if not busy(it["key"]) and not it.get("daily_at")
+                and it.get("every_h", 24) < STRICT_EVERY_H]
         if free:
             add(min(free, key=lambda it: last.get(it["key"], "")))
     return added

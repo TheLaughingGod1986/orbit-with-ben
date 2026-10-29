@@ -73,6 +73,19 @@ class NeverEmpty(unittest.TestCase):
         d["jobs"][0]["status"] = "done"
         self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + H)), 1)  # cooldown waived: queue was empty
 
+    def test_nothing_ready_never_rushes_a_weekly_item(self):
+        weekly = [dict(ITEMS[0], key="audit", title="audit", every_h=168)]
+        d = empty()
+        refill.do_refill(d, weekly + ITEMS[1:2], T0)
+        for j in d["jobs"]:
+            j["status"] = "done"
+        refill.do_refill(d, weekly + ITEMS[1:2], T0 + H)
+        self.assertEqual(d["jobs"][-1]["backlog"], "b")  # the 12 h item's cooldown is waived, the weekly audit's is not
+        for j in d["jobs"]:
+            j["status"] = "done"
+        self.assertEqual(refill.do_refill(d, weekly, T0 + 48 * H), [])  # only weekly items left: wait for the week
+        self.assertEqual(len(refill.do_refill(d, weekly, T0 + 169 * H)), 1)
+
     def test_nothing_ready_and_every_key_busy_adds_nothing(self):
         d = empty()
         refill.do_refill(d, ITEMS[:2], T0)

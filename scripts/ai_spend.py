@@ -14,7 +14,8 @@ AI Ultra credits refill on Mon 12 Oct. Every agent that reads a balance or spend
 
 Pools and units: cursor (% of Cursor's own Cursor Models pool left, of 100, from its spending page; it shows no $ since
 12 Oct), flow (Flow credits), vertex (GBP of
-Google Cloud credit), elevenlabs (credits), claude (notes only, e.g. "hit the 5-hour limit"). Each pool counts from its
+Google Cloud credit), elevenlabs (credits), claude (notes only, e.g. "hit the 5-hour limit"), codex and codex-macbook (% of the Codex
+weekly limit left on the Mini's and the MacBook's accounts, from the CLI's own logs). Each pool counts from its
 plan's reset date (plans.json poolStarts): Cursor from 8 Oct, Flow from 12 Oct. `record` is a balance reading; `spend` is one use. Add --git to
 commit the ledger line and push to main. Subscriptions and their prices live in 05_Analytics/ai_spend/plans.json.
 """
@@ -32,7 +33,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DIR = ROOT / "05_Analytics" / "ai_spend"
 LEDGER = DIR / "ledger.jsonl"
 PLANS = DIR / "plans.json"
-POOLS = {"cursor": "%", "flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "note"}
+POOLS = {"cursor": "%", "flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "note",
+         "codex": "%", "codex-macbook": "%"}
 
 
 def now() -> str:
