@@ -56,11 +56,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1221 | mini | open | – | – | studio · Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30) | 6507810925 |
 | J1222 | mini | open | – | – | studio · Swap HOS Short 4WUs0beKn0A (007 vaccine-name) to Ben-OK'd v05 (Private, same slot Tue 17 Nov 11:30) | 6507831644 |
 | J1223 | mini | open | – | – | studio · Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30) | 6508107852 |
-| J1227 | any | claimed | codex | 2026-10-30T01:31Z | chief · Chief: verify condition for J0985 |  |
 | J1228 | any | open | – | – | chief · Chief: verify condition for J1192 |  |
 
 Recently finished:
 
+- J1227 done: Chief: verify condition for J0985 (done)
 - J1226 done: Chief: verify condition for J0966 (Verified J1200 delivery and four exact-cut Ben approvals in live checks/HOS 6507268470,6507810925,6507831644,6508107852. Released J0966 stale hold; preserved worker 5/5 and no-rebuild instruction. Existing swap owners J1219 done, J1221/J1222/J1223 open. Report HOS 6510415243. No spend or publishing changes; one dispatched verification.)
 - J1225 done: Uranus v08: correct opening shake and verify playable UAT delivery (J1220 FIX) (Uranus v08 delivered for Chief review (no worker PASS). sha256 9888a2398282c2384290a09eb59a418f36c9960cf6d80036f2cad1cfb634bcf7. Method: path-vs-smooth open HF cancel + seam anchor (corr[open_start]=0) so loop PASS 8.45. Gates: open/level/polish/music/picture/loop/hitch all PASS. I=-14.30 LUFS TP=-1.80. measured_upscale 1.854. Motion accel_rms_y: v06 0.64 / v07 3.90 / v08 0.68. UAT playable NAS+iCloud same sha (Errno 11 fixed for this cut). Evidence jobs/reviews/J1225/. Do NOT repoint J1212 until Chief PASS. No upload/Buffer/privacy. Fallback ZpEA8stoSPA v01 11:30 unchanged.)
 - J1224 done: Chief: verify condition for J1131 (Verified Studio: combined test finished 29 Oct 2026 17:54 London; insufficient impressions. J1131 remains blocked until next London day, recheck 30 Oct 00:05Z. Evidence /Users/benjaminoats/_desk/reports/J1224/studio_readback.json; HOS desk report posted. No YouTube changes or spend.)
@@ -70,4 +70,3 @@ Recently finished:
 - J1216 cancelled: HOS 008: a 'rough_v01' file in HOS UAT put 008 on Ben's board before any Chief review - identify it and move it out of the review path ()
 - J1215 done: Chief: verify condition for J0280 (Verified live YouTube API 2026-10-29T19:05:22.410Z: Blood wwcjcFfC-5M public/processed, HOS channel confirmed. Existing authorisation and replacement records reviewed; J0280 reopened for Related-only work. No YouTube changes or spend. Reported on HOS desk.)
 - J1214 done: Chief: verify condition for J0241 (Verified HOS Blood wwcjcFfC-5M Public via authenticated videos.list 2026-10-29T19:01:53Z. BW_CFAX-mxc Private scheduled 31 Oct 11:30Z; old 5n7xFQRBUvI Private unscheduled. Chief PASS 6399338457 and Ben OK 6399423733 verified. J0241 reopened with evidence for original Related/Buffer scope. HOS desk 6505805896, OWB thread 6505801209. No YouTube/social changes, no spend, no blocker.)
-- J1211 done: Chief: verify condition for J1003 (Verified mature Studio evidence from J1179 / 022575da5: capture 2026-10-29T07:13:31.819902Z, 67h43m after release; OVLv9dxTcpE 887 Studio views, 30.7% stayed, 75.3% average viewed. Reopened J1003 with source hash and original read-only GBP0 restrictions. Readback: open, hold cleared. Retention curve and audit/lab update remain for J1003. No spend or publishing change.)
