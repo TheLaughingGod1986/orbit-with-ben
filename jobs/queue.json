@@ -108518,17 +108518,22 @@
           "at": "2026-10-29T22:15Z",
           "by": "cursor",
           "what": "step 3 of 6 done: v08 first cut FINAL_SHA 46499227…; gates open/level/polish/music/picture PASS; loop FAIL 14.14>12; hitch_ok; motion HF improved; UAT copied but not clean"
+        },
+        {
+          "at": "2026-10-29T22:16Z",
+          "by": "cursor",
+          "what": "step 3 of 6 done: loop FAIL root cause: Gaussian corr at open_start !=0 vs tail shift 0; patched seam anchor; tmux J1225-render restarted"
         }
       ],
-      "remaining_action": "Fix open↔tail loop seam after path-vs-smooth stab; re-render and re-gate",
+      "remaining_action": "Re-render v08 with seam-anchored path-vs-smooth; then verify gates + UAT",
       "due": "2026-11-01T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 3,
         "of": 6,
-        "at": "2026-10-29T22:15Z",
+        "at": "2026-10-29T22:16Z",
         "by": "cursor",
-        "note": "v08 first cut FINAL_SHA 46499227…; gates open/level/polish/music/picture PASS; loop FAIL 14.14>12; hitch_ok; motion HF i"
+        "note": "loop FAIL root cause: Gaussian corr at open_start !=0 vs tail shift 0; patched seam anchor; tmux J1225-render restarted"
       }
     },
     {
