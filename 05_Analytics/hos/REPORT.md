@@ -112,12 +112,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 2 d | 204 | 28.0% | MISS | 66.6% | WATCH |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 44 h (early) | 43 | 58.6% | too few to judge | 71.6% | too few to judge |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 2 d | 213 | 28.0% | MISS | 65.3% | WATCH |
 | [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 5 d | 49 | 30.4% | too few to judge | 50.0% | too few to judge |
-| [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 7 d | 167 | 39.5% | MISS | 88.2% | PASS |
-| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 8 d | 145 | 23.1% | MISS | 51.9% | WATCH |
+| [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 7 d | 171 | 40.0% | MISS | 86.6% | PASS |
+| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 8 d | 150 | 23.1% | MISS | 55.9% | WATCH |
 | [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | 9 d | 134 | 43.4% | MISS | 105.6% | LOOP |
 | [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | 10 d | 57 | 24.0% | too few to judge | 117.7% | too few to judge |
-| [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | 12 d | 1223 | 40.7% | MISS | 44.1% | MISS |
+| [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | 12 d | 1224 | 40.8% | MISS | 44.0% | MISS |
 
 Stayed to watch: 0 of 5 judged Shorts at 60%+. Average viewed: 2 of 5 at 70%+.
