@@ -54,7 +54,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1213 | mini | open | – | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1214 | any | open | – | – | chief · Chief: verify condition for J0241 |  |
 | J1215 | any | open | – | – | chief · Chief: verify condition for J0280 |  |
-| J1216 | mini | open | – | – | qa · HOS 008: a 'rough_v01' file in HOS UAT put 008 on Ben's board before any Chief review - identify it and move it out of the review path |  |
+| J1216 | mini | open | – | – | for gemini · qa · `gemini-argon` · HOS 008: a 'rough_v01' file in HOS UAT put 008 on Ben's board before any Chief review - identify it and move it out of the review path |  |
 | J1217 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 
 Recently finished:

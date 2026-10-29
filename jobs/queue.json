@@ -107592,10 +107592,24 @@
           "at": "2026-10-29T18:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T18:59Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "HOS 008: a 'rough_v01' file in HOS UAT put 008 on Ben's board before any Chief review - identify it and move it out of the review path",
-      "kind": "qa"
+      "kind": "qa",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1217",
