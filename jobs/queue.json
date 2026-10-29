@@ -107971,17 +107971,22 @@
           "at": "2026-10-29T21:39Z",
           "by": "cursor",
           "what": "step 0 of 7 done: claimed; starting inspect"
+        },
+        {
+          "at": "2026-10-29T21:40Z",
+          "by": "cursor",
+          "what": "step 1 of 7 done: prior join exited 1 on contact_sheet seek past 540.32s; mp4 exists"
         }
       ],
-      "remaining_action": "Inspect HOS 008 rough v01 failures and plan v02 assembler repairs",
+      "remaining_action": "Fix contact_sheet clamp + tighten pause trim under 540s; resume join gates",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 7,
-        "at": "2026-10-29T21:39Z",
+        "at": "2026-10-29T21:40Z",
         "by": "cursor",
-        "note": "claimed; starting inspect"
+        "note": "prior join exited 1 on contact_sheet seek past 540.32s; mp4 exists"
       },
       "taskKeys": [
         "HOS:008"
