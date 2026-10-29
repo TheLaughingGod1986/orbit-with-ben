@@ -99132,19 +99132,24 @@
           "at": "2026-10-29T00:29Z",
           "by": "codex",
           "what": "step 2 of 3 done: PASS: saved API readback, UPLOADS and gate library contain all three uploaded IDs; evidence commit 328fd220a. This is record reconciliation, not a new gate PASS or live API check."
+        },
+        {
+          "at": "2026-10-29T00:30Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Resolved as superseded by completed J0961; preserve its done state and approvals. No new gate PASS claimed, no YouTube changes, no spend."
         }
       ],
-      "remaining_action": "Close stale J1120 and report the superseding completion",
+      "remaining_action": "Verification resolved; no further work under J1120",
       "kind": "chief",
       "recheck_of": "J0961",
       "due": "2026-10-28T20:02:35+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-29T00:29Z",
+        "at": "2026-10-29T00:30Z",
         "by": "codex",
-        "note": "PASS: saved API readback, UPLOADS and gate library contain all three uploaded IDs; evidence commit 328fd220a. This is re"
+        "note": "Resolved as superseded by completed J0961; preserve its done state and approvals. No new gate PASS claimed, no YouTube c"
       },
       "taskKeys": [
         "OWB:029"
