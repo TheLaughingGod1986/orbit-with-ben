@@ -101804,13 +101804,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T04:30Z",
-      "eta": "2026-10-29T05:30Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T03:52Z",
-      "result": "",
+      "result": "Acting-Chief audit PASS: independently verified matching cross-repo report/inventory hashes, 157 entries, 452/452 actual sidecars PASS/fresh, and four recent media hashes. Technical audit only; warnings, manifest-only identity limits and delivery holds remain. Follow-up J1100 remains blocked: verify reset/live credits 2026-10-30T10:50:00Z, authorized S2/S5 pickups, instrumental S2 bed, caption-free tails and S6 whole-loop repair (9.26 FAIL vs required below 2), then gates/direct listening/Chief review. No duplicate repair, spend, publishing or film-stage approval. OWB #6487983868; HOS #6487988777.",
       "history": [
         {
           "at": "2026-10-29T03:52Z",
@@ -101876,6 +101876,11 @@
           "at": "2026-10-29T04:31Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling and concrete follow-up recorded on queue and OWB #6487983868 / HOS #6487988777; no new repair needed; J1100 loop FAIL and 2026-10-30T10:50:00Z credit verification preserved."
+        },
+        {
+          "at": "2026-10-29T04:31Z",
+          "by": "codex",
+          "what": "done: Acting-Chief audit PASS: independently verified matching cross-repo report/inventory hashes, 157 entries, 452/452 actual sidecars PASS/fresh, and four recent media hashes. Technical audit only; warnings, manifest-only identity limits and delivery holds remain. Follow-up J1100 remains blocked: verify reset/live credits 2026-10-30T10:50:00Z, authorized S2/S5 pickups, instrumental S2 bed, caption-free tails and S6 whole-loop repair (9.26 FAIL vs required below 2), then gates/direct listening/Chief review. No duplicate repair, spend, publishing or film-stage approval. OWB #6487983868; HOS #6487988777."
         }
       ],
       "remaining_action": "Close accepted QA audit; J1100 retains repair follow-up and 30 Oct credit verification",
@@ -101891,7 +101896,8 @@
         "at": "2026-10-29T04:31Z",
         "by": "codex",
         "note": "Ruling and concrete follow-up recorded on queue and OWB #6487983868 / HOS #6487988777; no new repair needed; J1100 loop "
-      }
+      },
+      "done_ref": "6487983868"
     },
     {
       "id": "J1150",

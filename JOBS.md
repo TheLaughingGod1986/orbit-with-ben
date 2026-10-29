@@ -43,7 +43,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
 | J1132 | mini | blocked | claude | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
-| J1149 | mini | claimed | codex | 2026-10-29T05:30Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1156 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
@@ -54,7 +53,7 @@ Recently finished:
 - J1152 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T04:09Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
 - J1151 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1150 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
+- J1149 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (Acting-Chief audit PASS: independently verified matching cross-repo report/inventory hashes, 157 entries, 452/452 actual sidecars PASS/fresh, and four recent media hashes. Technical audit only; warnings, manifest-only identity limits and delivery holds remain. Follow-up J1100 remains blocked: verify reset/live credits 2026-10-30T10:50:00Z, authorized S2/S5 pickups, instrumental S2 bed, caption-free tails and S6 whole-loop repair (9.26 FAIL vs required below 2), then gates/direct listening/Chief review. No duplicate repair, spend, publishing or film-stage approval. OWB #6487983868; HOS #6487988777.)
 - J1148 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T03:49Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors, 4/4 public long end screens, 22/22 public Shorts Related pills, 0 new fixes; HOS 751914b1))
 - J1147 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1146 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T03:39Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors, 4/4 public long end screens, 22/22 public Shorts Related pills, 0 new fixes; HOS 0f47ff1a))
-- J1145 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
