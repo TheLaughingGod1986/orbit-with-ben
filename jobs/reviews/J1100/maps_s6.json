@@ -1,0 +1,1720 @@
+{
+  "shorts": {
+    "S6_028_X768qs8sNQs": {
+      "film": "OWB:028",
+      "slug": "lift_night_sky_35yr",
+      "youtube_id": "X768qs8sNQs",
+      "air_date": "2026-12-07",
+      "local_title": "What Will the Night Sky Look Like When Gliese 710 Arrives?",
+      "first_cut_limit_s": 2.6,
+      "max_hold_limit_s": 3.5,
+      "single_teaching_overlay": {
+        "baked_in_labels_count": 0,
+        "code_graphics_count": 0,
+        "added_edit_cards_count": 1,
+        "total_teaching_overlays": 1,
+        "card_text": [
+          "3\u00d7 BRIGHTER",
+          "THAN SIRIUS"
+        ],
+        "timeline_in": 17.535,
+        "timeline_out": 21.335,
+        "duration_s": 3.8,
+        "pct_range": [
+          74.84,
+          91.97
+        ],
+        "animation_spec": {
+          "entry": "0.350s cubic-bezier ease-out alpha 0->1 + 18px upward slide (16.600\u201316.950s)",
+          "steady_hold": "3.100s hold over moving video plate (16.950\u201320.050s, <= 4.000s)",
+          "exit": "0.350s cubic-bezier ease-in alpha 1->0 (20.050\u201320.400s)",
+          "ken_burns_on_card": false,
+          "typography": "House large bold sans-serif, <= 4 words per line, 11.5% of 16:9 centre band height, over moving graded plate (no black slab)"
+        },
+        "y_band": [
+          656,
+          1264
+        ],
+        "clear_of_hook_0_2s": true,
+        "clear_of_title_9_14s": true,
+        "selection_rationale": "Single teaching overlay ['3\u00d7 BRIGHTER', 'THAN SIRIUS'] at 16.600\u201320.400s (3.800s <= 4.000s, 74.84%\u201391.97% of runtime) over s06_orion_vlt and s07_twilight: directly reinforces the >=70% appearance payoff ('It is the brightest star, three times brighter than Sirius, and it glows orange.', Spans 20..24 at 16.400\u201321.180s, with 'brightest' at 16.820\u201317.240s, 'three' at 17.880\u201318.280s, and 'Sirius' at 19.200\u201319.700s). All earlier motion/moon-width/35-year and pre-70% brightening clauses as well as s05_full_moon have been removed, leaving 0 other overlays."
+      },
+      "frame0_gate_verification": {
+        "air_date": "2026-12-07",
+        "video_id": "X768qs8sNQs",
+        "titled_subject": "Night sky Milky Way star field & ESO La Silla telescope domes",
+        "library_path": "00_Brand/Channel-Setup/audits/shorts_open_library/library.json",
+        "library_sha256": "b89044767a2f5d58cc2d3e70f159f1d175322e3582239e6a4bff7c5bb715556e",
+        "generator_script": "jobs/reviews/generate_j0936_prep_v04_openings.py",
+        "reproducible_command": "ffmpeg -y -ss 1.00 -t 3.50 -i /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/lasilla_mw.mp4 -vf 'setpts=PTS/1.35,crop=608:1080:500+75*t:0,eq=brightness=0.06:contrast=1.10:saturation=1.15,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p' -t 2.48 -an S6_028_X768qs8sNQs_open.mp4",
+        "vf": "setpts=PTS/1.35,crop=608:1080:500+75*t:0,eq=brightness=0.06:contrast=1.10:saturation=1.15,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p",
+        "source_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/lasilla_mw.mp4",
+        "source_sha256": "41a034531e9bf5f94cb6fd8151fe97ee9c705e758028bc23a3918cba7f744bb9",
+        "underlying_id": "eso_mw_lasilla.mp4",
+        "source_in": 1.0,
+        "source_out": 4.348,
+        "source_speed": 1.35,
+        "first_cut_s": 2.48,
+        "open_clip_path": "/Users/benjaminoats/_desk/reviews/J1015/openings/S6_028_X768qs8sNQs_open.mp4",
+        "open_clip_sha256": "17a220b1ad753e40c4824dcb9fb3a93a52d251922ebfbcb861ea8d0e21f72613",
+        "preview_jpg_path": "/Users/benjaminoats/_desk/reviews/J1015/openings/S6_028_X768qs8sNQs_frame_0_30s.jpg",
+        "preview_frame_sha256": "694b02b70fcf1900398334dba6eac3be7edc40ab3e17516fdc42b1063941aa63",
+        "captioned_open_clip_path": "/Users/benjaminoats/_desk/reviews/J1015/openings/S6_028_X768qs8sNQs_open_captioned.mp4",
+        "captioned_open_clip_sha256": "93456d1c687913c6a0ff22b9eb62204645cdada517bce13b8b4def617e47810c",
+        "captioned_preview_jpg_path": "/Users/benjaminoats/_desk/reviews/J1015/openings/S6_028_X768qs8sNQs_captioned_0_30s.jpg",
+        "captioned_preview_frame_sha256": "38b9dd80a3cd8a4f71b07c6f77970ac61adeb81cea55074f9ee125812204c351",
+        "hook_caption_rows": [
+          "3\u00d7 BRIGHTER",
+          "THAN SIRIUS"
+        ],
+        "line1_caption_0_30s": "WHAT WILL THE",
+        "dhash_0_3s": "0000404442615900",
+        "captioned_dhash_0_3s": "5915004440610900",
+        "motion_0_1s": 10.94,
+        "captioned_motion_0_1s": 10.28,
+        "frame0_diff_0_1_5s": 2.99,
+        "captioned_frame0_diff_0_1_5s": 2.99,
+        "internal_first_cut_s": null,
+        "visor_frac": 0.0,
+        "captioned_visor_frac": 0.0,
+        "black_frac": 0.1033,
+        "black30_frac": 0.158,
+        "subject_body_only_frac": 0.736,
+        "moving_subject_frac": 0.8773,
+        "subject_occupancy_method": "Visual and geometric segmentation on cropped 1080x1920 frame (@0.30s): the moving Milky Way star field and galactic dust band span y=0..1225 across full width and y=1225..1810 outside the dome silhouette, occupying 73.6% of the frame alone; the ESO La Silla telescope domes occupy 14.1% (combined night-sky + observatory subject = 87.7%; dark ridge silhouette at bottom = 12.3%).",
+        "min_library_hamming_bits": 20,
+        "max_library_bg_match": 0.137,
+        "min_non_batch_library_hamming_bits": 20,
+        "max_non_batch_library_bg_match": 0.129,
+        "min_captioned_library_hamming_bits": 19,
+        "max_captioned_library_bg_match": 0.143,
+        "compared_library_entries": [
+          {
+            "id": "emwQsPxnRGM",
+            "date": "2026-11-23",
+            "air_date": "2026-11-23",
+            "title": "Why Do You Weigh Less at Earth's Equator?",
+            "dhash": "000023352f601098",
+            "hamming_bits": 20,
+            "bg_match": 0.009,
+            "captioned_hamming_bits": 27,
+            "captioned_bg_match": 0.008
+          },
+          {
+            "id": "bizlhspnVvY",
+            "date": "2026-11-30",
+            "air_date": "2026-11-30",
+            "title": "Why Will Gliese 710's Comets Arrive After It Has Gone?",
+            "dhash": "29450b1dbb0b0c00",
+            "hamming_bits": 28,
+            "bg_match": 0.068,
+            "captioned_hamming_bits": 25,
+            "captioned_bg_match": 0.111
+          },
+          {
+            "id": "DETI0HV2jlI",
+            "date": "2026-12-02",
+            "air_date": "2026-12-02",
+            "title": "Is a Star Really Coming Towards Us?",
+            "dhash": "2955166685968122",
+            "hamming_bits": 31,
+            "bg_match": 0.014,
+            "captioned_hamming_bits": 24,
+            "captioned_bg_match": 0.09
+          },
+          {
+            "id": "jJ5LkFGyzLI",
+            "date": "2026-12-04",
+            "air_date": "2026-12-04",
+            "title": "How Close Will Gliese 710 Come to the Sun?",
+            "dhash": "1f2b170f070f0f07",
+            "hamming_bits": 33,
+            "bg_match": 0.1,
+            "captioned_hamming_bits": 30,
+            "captioned_bg_match": 0.106
+          },
+          {
+            "id": "f17XCtUmN-g",
+            "date": "2026-12-16",
+            "air_date": "2026-12-16",
+            "title": "What Happens When Gliese 710 Passes Through the Oort Cloud?",
+            "dhash": "0e450b4bc3118cba",
+            "hamming_bits": 29,
+            "bg_match": 0.129,
+            "captioned_hamming_bits": 28,
+            "captioned_bg_match": 0.143
+          },
+          {
+            "id": "bSjWiCbB7pY",
+            "date": "2026-11-13",
+            "air_date": "2026-11-13",
+            "title": "How Did a Helicopter Fly 72 Times on Mars?",
+            "dhash": "0b02000301020000",
+            "hamming_bits": 20,
+            "bg_match": 0.014,
+            "captioned_hamming_bits": 19,
+            "captioned_bg_match": 0.014
+          },
+          {
+            "id": "gmzaCfJF1gA",
+            "date": "2026-11-14",
+            "air_date": "2026-11-14",
+            "title": "Why Does Pluto's Giant Ice Heart Have Zero Craters?",
+            "dhash": "ffff3f3f1f0f1f70",
+            "hamming_bits": 45,
+            "bg_match": 0.023,
+            "captioned_hamming_bits": 38,
+            "captioned_bg_match": 0.023
+          },
+          {
+            "id": "HZGTovJu_TQ",
+            "date": "2026-11-16",
+            "air_date": "2026-11-16",
+            "title": "If You Can't See the Nearest Star, How Far Away Is It?",
+            "dhash": "400e0616020c3978",
+            "hamming_bits": 22,
+            "bg_match": 0.073,
+            "captioned_hamming_bits": 25,
+            "captioned_bg_match": 0.056
+          },
+          {
+            "id": "kKN8Ale42sE",
+            "date": "2026-11-17",
+            "air_date": "2026-11-17",
+            "title": "How Far From Earth Is Voyager 1 Right Now?",
+            "dhash": "638e8c8933076de0",
+            "hamming_bits": 31,
+            "bg_match": 0.053,
+            "captioned_hamming_bits": 32,
+            "captioned_bg_match": 0.073
+          },
+          {
+            "id": "cwU_0WWeNZ4",
+            "date": "2026-11-18",
+            "air_date": "2026-11-18",
+            "title": "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?",
+            "dhash": "30330f3f3f1f4a23",
+            "hamming_bits": 35,
+            "bg_match": 0.0,
+            "captioned_hamming_bits": 36,
+            "captioned_bg_match": 0.0
+          },
+          {
+            "id": "A6TW_6CXhcs",
+            "date": "2026-11-20",
+            "air_date": "2026-11-20",
+            "title": "The Nearest Star Is a Cherry Past Cairo. How Do We Know?",
+            "dhash": "102b1b5bf816bba7",
+            "hamming_bits": 35,
+            "bg_match": 0.137,
+            "captioned_hamming_bits": 36,
+            "captioned_bg_match": 0.057
+          }
+        ],
+        "min_batch_pairwise_hamming_bits": 18,
+        "max_batch_pairwise_bg_match": 0.123,
+        "min_captioned_batch_pairwise_hamming_bits": 20,
+        "max_captioned_batch_pairwise_bg_match": 0.188,
+        "batch_pairwise": {
+          "S1_026_A6TW_6CXhcs": {
+            "hamming_bits": 37,
+            "bg_match": 0.022
+          },
+          "S2_027_emwQsPxnRGM": {
+            "hamming_bits": 25,
+            "bg_match": 0.0
+          },
+          "S3_028_bizlhspnVvY": {
+            "hamming_bits": 18,
+            "bg_match": 0.086
+          },
+          "S4_028_DETI0HV2jlI": {
+            "hamming_bits": 26,
+            "bg_match": 0.123
+          },
+          "S5_028_jJ5LkFGyzLI": {
+            "hamming_bits": 31,
+            "bg_match": 0.049
+          }
+        },
+        "captioned_batch_pairwise": {
+          "S1_026_A6TW_6CXhcs": {
+            "hamming_bits": 38,
+            "bg_match": 0.188
+          },
+          "S2_027_emwQsPxnRGM": {
+            "hamming_bits": 30,
+            "bg_match": 0.038
+          },
+          "S3_028_bizlhspnVvY": {
+            "hamming_bits": 20,
+            "bg_match": 0.117
+          },
+          "S4_028_DETI0HV2jlI": {
+            "hamming_bits": 31,
+            "bg_match": 0.117
+          },
+          "S5_028_jJ5LkFGyzLI": {
+            "hamming_bits": 27,
+            "bg_match": 0.153
+          }
+        }
+      },
+      "vo_splice_map": {
+        "vo_source_path": "02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/02_Voiceover/star_coming_vo_v01.wav",
+        "vo_source_sha256": "cf546efd12e723173b66bd1d3ee2139afc94a03124ab0e4fdfd2cc06ebb8ab01",
+        "onset_s": 0.015,
+        "whitespace_words": 63,
+        "spoken_words": 65,
+        "vo_end_s": 22.115,
+        "loop_tail_s": 1.0,
+        "total_duration_s": 23.115,
+        "seventy_pct_mark_s": 16.1805,
+        "opening_question_span_count": 7,
+        "opening_question_end_s": 3.06,
+        "opening_question_punctuated": "What Will the Night Sky Look Like When Gliese 710 Arrives?",
+        "first_named_subject": {
+          "word": "710",
+          "word_idx": 122,
+          "start": 2.025,
+          "end": 2.465
+        },
+        "earliest_spoken_answer": {
+          "word": "brightest",
+          "word_idx": 881,
+          "start": 16.82,
+          "end": 17.24,
+          "pct_of_total": 75.83
+        },
+        "keyword_timings": {
+          "Gliese": {
+            "word": "Gliese",
+            "word_idx": 985,
+            "start": 4.895,
+            "end": 5.195,
+            "pct_of_total": 21.18
+          },
+          "710": {
+            "word": "710",
+            "word_idx": 986,
+            "start": 5.575,
+            "end": 6.055,
+            "pct_of_total": 24.12
+          },
+          "brightest": {
+            "word": "brightest",
+            "word_idx": 881,
+            "start": 17.755,
+            "end": 18.175,
+            "pct_of_total": 76.81
+          },
+          "star": {
+            "word": "star",
+            "word_idx": 398,
+            "start": 18.255,
+            "end": 18.675,
+            "pct_of_total": 78.97
+          },
+          "three": {
+            "word": "three",
+            "word_idx": 743,
+            "start": 18.815,
+            "end": 19.215,
+            "pct_of_total": 81.4
+          },
+          "Sirius": {
+            "word": "Sirius",
+            "word_idx": 893,
+            "start": 20.135,
+            "end": 20.635,
+            "pct_of_total": 87.11
+          },
+          "orange.": {
+            "word": "orange.",
+            "word_idx": 905,
+            "start": 21.535,
+            "end": 22.115,
+            "pct_of_total": 93.16
+          }
+        },
+        "transcript": "What will the night sky look like when Gliese 710 arrives? Right now, Gliese 710 in the constellation of Serpens, the serpent, is far too faint for your eyes on even the darkest night. You would need binoculars just to find it. Imagine the night of the closest pass. It is the brightest star, three times brighter than Sirius, and it glows orange.",
+        "raw_source_token_transcript": "what will the night sky look like when Gliese 710 arrives. Right now, Gliese 710 in the constellation of Serpens, the serpent. is far too faint for your eyes on even the darkest night. You would need binoculars just to find it. Imagine the night of the closest pass. it is the brightest star three times brighter than Sirius and it glows orange.",
+        "auditions": {
+          "question_audition": {
+            "wav_path": "/Users/benjaminoats/_desk/reviews/J1028/auditions/S6_028_X768qs8sNQs_question_audition.wav",
+            "sha256": "67a26cb681b3ac5043b503c4392f1ac11898d9c0413e46e4be07c833a4ee5ddd",
+            "duration_s": 3.11,
+            "rms_dbfs": -22.39,
+            "peak_dbfs": -4.84,
+            "max_sample_step": 0.07587
+          },
+          "full_vo_audition": {
+            "wav_path": "/Users/benjaminoats/_desk/reviews/J1100/audio_candidates/S6_028_X768qs8sNQs_candidate.wav",
+            "sha256": "73e2706117a7d14e1b75206da51c4ea693efdd058ab32d9bb50468ee53413ff4"
+          }
+        },
+        "subspans": [
+          {
+            "source_in": 39.22,
+            "source_out": 39.36,
+            "tempo": 1.0,
+            "gap_after": 0.1,
+            "words": [
+              {
+                "word_idx": 109,
+                "word": "what",
+                "start": 0.015,
+                "end": 0.155,
+                "src_start": 39.22,
+                "src_end": 39.36
+              }
+            ],
+            "text": "what",
+            "timeline_start": 0.015,
+            "timeline_end": 0.15500000000000058
+          },
+          {
+            "source_in": 40.2,
+            "source_out": 40.34,
+            "tempo": 1.0,
+            "gap_after": 0.1,
+            "words": [
+              {
+                "word_idx": 113,
+                "word": "will",
+                "start": 0.255,
+                "end": 0.395,
+                "src_start": 40.2,
+                "src_end": 40.34
+              }
+            ],
+            "text": "will",
+            "timeline_start": 0.25500000000000056,
+            "timeline_end": 0.39500000000000113
+          },
+          {
+            "source_in": 338.78,
+            "source_out": 338.86,
+            "tempo": 1.0,
+            "gap_after": 0.1,
+            "words": [
+              {
+                "word_idx": 861,
+                "word": "the",
+                "start": 0.495,
+                "end": 0.575,
+                "src_start": 338.78,
+                "src_end": 338.86
+              }
+            ],
+            "text": "the",
+            "timeline_start": 0.4950000000000011,
+            "timeline_end": 0.575000000000042
+          },
+          {
+            "source_in": 39.6,
+            "source_out": 40.14,
+            "tempo": 1.0,
+            "gap_after": 0.1,
+            "words": [
+              {
+                "word_idx": 111,
+                "word": "night",
+                "start": 0.675,
+                "end": 0.875,
+                "src_start": 39.6,
+                "src_end": 39.8
+              },
+              {
+                "word_idx": 112,
+                "word": "sky",
+                "start": 0.955,
+                "end": 1.215,
+                "src_start": 39.88,
+                "src_end": 40.14
+              }
+            ],
+            "text": "night sky",
+            "timeline_start": 0.675000000000042,
+            "timeline_end": 1.2150000000000412
+          },
+          {
+            "source_in": 40.4,
+            "source_out": 41.16,
+            "tempo": 1.0,
+            "gap_after": 0.1,
+            "words": [
+              {
+                "word_idx": 114,
+                "word": "look",
+                "start": 1.315,
+                "end": 1.495,
+                "src_start": 40.4,
+                "src_end": 40.58
+              },
+              {
+                "word_idx": 678,
+                "word": "like",
+                "start": 1.555,
+                "end": 1.935,
+                "src_start": 40.64,
+                "src_end": 41.02
+              },
+              {
+                "word_idx": 116,
+                "word": "when",
+                "start": 1.975,
+                "end": 2.075,
+                "src_start": 41.06,
+                "src_end": 41.16
+              }
+            ],
+            "text": "look like when",
+            "timeline_start": 1.3150000000000412,
+            "timeline_end": 2.0750000000000393
+          },
+          {
+            "source_in": 43.5,
+            "source_out": 44.54,
+            "tempo": 1.0,
+            "gap_after": 0.1,
+            "words": [
+              {
+                "word_idx": 121,
+                "word": "Gliese",
+                "start": 2.175,
+                "end": 2.415,
+                "src_start": 43.5,
+                "src_end": 43.74
+              },
+              {
+                "word_idx": 122,
+                "word": "710",
+                "start": 2.775,
+                "end": 3.215,
+                "src_start": 44.1,
+                "src_end": 44.54
+              }
+            ],
+            "text": "Gliese 710",
+            "timeline_start": 2.1750000000000393,
+            "timeline_end": 3.2150000000000385
+          },
+          {
+            "source_in": 41.3,
+            "source_out": 41.86,
+            "tempo": 1.0,
+            "gap_after": 0.3,
+            "words": [
+              {
+                "word_idx": 118,
+                "word": "arrives?",
+                "start": 3.315,
+                "end": 3.875,
+                "src_start": 41.3,
+                "src_end": 41.86
+              }
+            ],
+            "text": "arrives.",
+            "timeline_start": 3.3150000000000386,
+            "timeline_end": 3.875000000000041
+          },
+          {
+            "span_index": 10,
+            "word_idx_range": "119..120",
+            "source_in": 42.74,
+            "source_out": 43.3,
+            "raw_dur": 0.56,
+            "tempo": 1.0,
+            "scaled_dur": 0.56,
+            "gap_after": 0.16,
+            "xfade_s": 0.0,
+            "timeline_start": 4.175000000000041,
+            "timeline_end": 4.735000000000036,
+            "max_internal_pause": 0.06,
+            "max_scribe_token_gap": 0.06,
+            "text": "Right now,",
+            "words": [
+              {
+                "word_idx": 119,
+                "word": "Right",
+                "start": 4.215,
+                "end": 4.415,
+                "src_start": 42.78,
+                "src_end": 42.98
+              },
+              {
+                "word_idx": 120,
+                "word": "now,",
+                "start": 4.475,
+                "end": 4.715,
+                "src_start": 43.04,
+                "src_end": 43.28
+              }
+            ]
+          },
+          {
+            "span_index": 11,
+            "word_idx_range": "985..986",
+            "source_in": 383.24,
+            "source_out": 384.4,
+            "raw_dur": 1.16,
+            "tempo": 1.0,
+            "scaled_dur": 1.16,
+            "gap_after": 0.16,
+            "xfade_s": 0.0,
+            "timeline_start": 4.895000000000036,
+            "timeline_end": 6.055000000000004,
+            "max_internal_pause": 0.04,
+            "max_scribe_token_gap": 0.38,
+            "text": "Gliese 710",
+            "words": [
+              {
+                "word_idx": 985,
+                "word": "Gliese",
+                "start": 4.895,
+                "end": 5.195,
+                "src_start": 383.24,
+                "src_end": 383.54
+              },
+              {
+                "word_idx": 986,
+                "word": "710",
+                "start": 5.575,
+                "end": 6.055,
+                "src_start": 383.92,
+                "src_end": 384.4
+              }
+            ]
+          },
+          {
+            "span_index": 12,
+            "word_idx_range": "128..132",
+            "source_in": 47.34,
+            "source_out": 49.24,
+            "raw_dur": 1.9,
+            "tempo": 1.0,
+            "scaled_dur": 1.9,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 6.215000000000004,
+            "timeline_end": 8.115000000000002,
+            "max_internal_pause": 0.12,
+            "max_scribe_token_gap": 0.12,
+            "text": "in the constellation of Serpens,",
+            "words": [
+              {
+                "word_idx": 128,
+                "word": "in",
+                "start": 6.235,
+                "end": 6.295,
+                "src_start": 47.36,
+                "src_end": 47.42
+              },
+              {
+                "word_idx": 129,
+                "word": "the",
+                "start": 6.315,
+                "end": 6.375,
+                "src_start": 47.44,
+                "src_end": 47.5
+              },
+              {
+                "word_idx": 130,
+                "word": "constellation",
+                "start": 6.415,
+                "end": 7.175,
+                "src_start": 47.54,
+                "src_end": 48.3
+              },
+              {
+                "word_idx": 131,
+                "word": "of",
+                "start": 7.215,
+                "end": 7.295,
+                "src_start": 48.34,
+                "src_end": 48.42
+              },
+              {
+                "word_idx": 132,
+                "word": "Serpens,",
+                "start": 7.415,
+                "end": 8.075,
+                "src_start": 48.54,
+                "src_end": 49.2
+              }
+            ]
+          },
+          {
+            "span_index": 13,
+            "word_idx_range": "133..134",
+            "source_in": 49.4,
+            "source_out": 50.16,
+            "raw_dur": 0.76,
+            "tempo": 1.0,
+            "scaled_dur": 0.76,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 8.295000000000003,
+            "timeline_end": 9.055000000000001,
+            "max_internal_pause": 0.04,
+            "max_scribe_token_gap": 0.04,
+            "text": "the serpent.",
+            "words": [
+              {
+                "word_idx": 133,
+                "word": "the",
+                "start": 8.335,
+                "end": 8.435,
+                "src_start": 49.44,
+                "src_end": 49.54
+              },
+              {
+                "word_idx": 134,
+                "word": "serpent.",
+                "start": 8.475,
+                "end": 8.995,
+                "src_start": 49.58,
+                "src_end": 50.1
+              }
+            ]
+          },
+          {
+            "span_index": 14,
+            "word_idx_range": "160..166",
+            "source_in": 60.2,
+            "source_out": 61.86,
+            "raw_dur": 1.66,
+            "tempo": 1.0,
+            "scaled_dur": 1.66,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 9.235000000000001,
+            "timeline_end": 10.894999999999998,
+            "max_internal_pause": 0.1,
+            "max_scribe_token_gap": 0.1,
+            "text": "is far too faint for your eyes",
+            "words": [
+              {
+                "word_idx": 160,
+                "word": "is",
+                "start": 9.235,
+                "end": 9.375,
+                "src_start": 60.2,
+                "src_end": 60.34
+              },
+              {
+                "word_idx": 161,
+                "word": "far",
+                "start": 9.435,
+                "end": 9.575,
+                "src_start": 60.4,
+                "src_end": 60.54
+              },
+              {
+                "word_idx": 162,
+                "word": "too",
+                "start": 9.675,
+                "end": 9.895,
+                "src_start": 60.64,
+                "src_end": 60.86
+              },
+              {
+                "word_idx": 163,
+                "word": "faint",
+                "start": 9.935,
+                "end": 10.215,
+                "src_start": 60.9,
+                "src_end": 61.18
+              },
+              {
+                "word_idx": 164,
+                "word": "for",
+                "start": 10.255,
+                "end": 10.295,
+                "src_start": 61.22,
+                "src_end": 61.26
+              },
+              {
+                "word_idx": 165,
+                "word": "your",
+                "start": 10.335,
+                "end": 10.455,
+                "src_start": 61.3,
+                "src_end": 61.42
+              },
+              {
+                "word_idx": 166,
+                "word": "eyes",
+                "start": 10.535,
+                "end": 10.855,
+                "src_start": 61.5,
+                "src_end": 61.82
+              }
+            ]
+          },
+          {
+            "span_index": 15,
+            "word_idx_range": "167..171",
+            "source_in": 62.14,
+            "source_out": 63.6,
+            "raw_dur": 1.46,
+            "tempo": 1.0,
+            "scaled_dur": 1.46,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 11.074999999999998,
+            "timeline_end": 12.534999999999998,
+            "max_internal_pause": 0.06,
+            "max_scribe_token_gap": 0.06,
+            "text": "on even the darkest night.",
+            "words": [
+              {
+                "word_idx": 167,
+                "word": "on",
+                "start": 11.095,
+                "end": 11.175,
+                "src_start": 62.16,
+                "src_end": 62.24
+              },
+              {
+                "word_idx": 168,
+                "word": "even",
+                "start": 11.235,
+                "end": 11.435,
+                "src_start": 62.3,
+                "src_end": 62.5
+              },
+              {
+                "word_idx": 169,
+                "word": "the",
+                "start": 11.475,
+                "end": 11.575,
+                "src_start": 62.54,
+                "src_end": 62.64
+              },
+              {
+                "word_idx": 170,
+                "word": "darkest",
+                "start": 11.615,
+                "end": 12.075,
+                "src_start": 62.68,
+                "src_end": 63.14
+              },
+              {
+                "word_idx": 171,
+                "word": "night.",
+                "start": 12.135,
+                "end": 12.515,
+                "src_start": 63.2,
+                "src_end": 63.58
+              }
+            ]
+          },
+          {
+            "span_index": 16,
+            "word_idx_range": "172..179",
+            "source_in": 64.62,
+            "source_out": 66.6,
+            "raw_dur": 1.98,
+            "tempo": 1.0,
+            "scaled_dur": 1.98,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 12.714999999999998,
+            "timeline_end": 14.694999999999988,
+            "max_internal_pause": 0.08,
+            "max_scribe_token_gap": 0.08,
+            "text": "You would need binoculars just to find it.",
+            "words": [
+              {
+                "word_idx": 172,
+                "word": "You",
+                "start": 12.755,
+                "end": 12.795,
+                "src_start": 64.66,
+                "src_end": 64.7
+              },
+              {
+                "word_idx": 173,
+                "word": "would",
+                "start": 12.815,
+                "end": 12.935,
+                "src_start": 64.72,
+                "src_end": 64.84
+              },
+              {
+                "word_idx": 174,
+                "word": "need",
+                "start": 12.955,
+                "end": 13.095,
+                "src_start": 64.86,
+                "src_end": 65.0
+              },
+              {
+                "word_idx": 175,
+                "word": "binoculars",
+                "start": 13.135,
+                "end": 13.755,
+                "src_start": 65.04,
+                "src_end": 65.66
+              },
+              {
+                "word_idx": 176,
+                "word": "just",
+                "start": 13.815,
+                "end": 13.955,
+                "src_start": 65.72,
+                "src_end": 65.86
+              },
+              {
+                "word_idx": 177,
+                "word": "to",
+                "start": 13.995,
+                "end": 14.075,
+                "src_start": 65.9,
+                "src_end": 65.98
+              },
+              {
+                "word_idx": 178,
+                "word": "find",
+                "start": 14.115,
+                "end": 14.375,
+                "src_start": 66.02,
+                "src_end": 66.28
+              },
+              {
+                "word_idx": 179,
+                "word": "it.",
+                "start": 14.455,
+                "end": 14.615,
+                "src_start": 66.36,
+                "src_end": 66.52
+              }
+            ]
+          },
+          {
+            "span_index": 17,
+            "word_idx_range": "856..856",
+            "source_in": 337.3,
+            "source_out": 337.7,
+            "raw_dur": 0.4,
+            "tempo": 1.0,
+            "scaled_dur": 0.4,
+            "gap_after": 0.16,
+            "xfade_s": 0.0,
+            "timeline_start": 14.874999999999988,
+            "timeline_end": 15.274999999999965,
+            "max_internal_pause": 0.0,
+            "max_scribe_token_gap": 0.0,
+            "text": "Imagine",
+            "words": [
+              {
+                "word_idx": 856,
+                "word": "Imagine",
+                "start": 14.935,
+                "end": 15.275,
+                "src_start": 337.36,
+                "src_end": 337.7
+              }
+            ]
+          },
+          {
+            "span_index": 18,
+            "word_idx_range": "861..864",
+            "source_in": 338.78,
+            "source_out": 339.4,
+            "raw_dur": 0.62,
+            "tempo": 1.0,
+            "scaled_dur": 0.62,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 15.434999999999965,
+            "timeline_end": 16.05499999999997,
+            "max_internal_pause": 0.06,
+            "max_scribe_token_gap": 0.06,
+            "text": "the night of the",
+            "words": [
+              {
+                "word_idx": 861,
+                "word": "the",
+                "start": 15.435,
+                "end": 15.515,
+                "src_start": 338.78,
+                "src_end": 338.86
+              },
+              {
+                "word_idx": 862,
+                "word": "night",
+                "start": 15.575,
+                "end": 15.835,
+                "src_start": 338.92,
+                "src_end": 339.18
+              },
+              {
+                "word_idx": 863,
+                "word": "of",
+                "start": 15.895,
+                "end": 15.955,
+                "src_start": 339.24,
+                "src_end": 339.3
+              },
+              {
+                "word_idx": 864,
+                "word": "the",
+                "start": 15.995,
+                "end": 16.055,
+                "src_start": 339.34,
+                "src_end": 339.4
+              }
+            ]
+          },
+          {
+            "span_index": 19,
+            "word_idx_range": "865..866",
+            "source_in": 339.44,
+            "source_out": 340.36,
+            "raw_dur": 0.92,
+            "tempo": 1.0,
+            "scaled_dur": 0.92,
+            "gap_after": 0.18,
+            "xfade_s": 0.0,
+            "timeline_start": 16.23499999999997,
+            "timeline_end": 17.154999999999987,
+            "max_internal_pause": 0.12,
+            "max_scribe_token_gap": 0.12,
+            "text": "closest pass.",
+            "words": [
+              {
+                "word_idx": 865,
+                "word": "closest",
+                "start": 16.235,
+                "end": 16.615,
+                "src_start": 339.44,
+                "src_end": 339.82
+              },
+              {
+                "word_idx": 866,
+                "word": "pass.",
+                "start": 16.735,
+                "end": 17.155,
+                "src_start": 339.94,
+                "src_end": 340.36
+              }
+            ]
+          },
+          {
+            "span_index": 20,
+            "word_idx_range": "878..881",
+            "source_in": 345.22,
+            "source_out": 346.06,
+            "raw_dur": 0.84,
+            "tempo": 1.0,
+            "scaled_dur": 0.84,
+            "gap_after": 0.08,
+            "xfade_s": 0.0,
+            "timeline_start": 17.334999999999987,
+            "timeline_end": 18.17499999999996,
+            "max_internal_pause": 0.04,
+            "max_scribe_token_gap": 0.04,
+            "text": "it is the brightest",
+            "words": [
+              {
+                "word_idx": 878,
+                "word": "it",
+                "start": 17.335,
+                "end": 17.415,
+                "src_start": 345.22,
+                "src_end": 345.3
+              },
+              {
+                "word_idx": 879,
+                "word": "is",
+                "start": 17.455,
+                "end": 17.535,
+                "src_start": 345.34,
+                "src_end": 345.42
+              },
+              {
+                "word_idx": 880,
+                "word": "the",
+                "start": 17.575,
+                "end": 17.715,
+                "src_start": 345.46,
+                "src_end": 345.6
+              },
+              {
+                "word_idx": 881,
+                "word": "brightest",
+                "start": 17.755,
+                "end": 18.175,
+                "src_start": 345.64,
+                "src_end": 346.06
+              }
+            ]
+          },
+          {
+            "span_index": 21,
+            "word_idx_range": "398..398",
+            "source_in": 159.18,
+            "source_out": 159.6,
+            "raw_dur": 0.42,
+            "tempo": 1.0,
+            "scaled_dur": 0.42,
+            "gap_after": 0.14,
+            "xfade_s": 0.0,
+            "timeline_start": 18.25499999999996,
+            "timeline_end": 18.674999999999947,
+            "max_internal_pause": 0.0,
+            "max_scribe_token_gap": 0.0,
+            "text": "star",
+            "words": [
+              {
+                "word_idx": 398,
+                "word": "star",
+                "start": 18.255,
+                "end": 18.675,
+                "src_start": 159.18,
+                "src_end": 159.6
+              }
+            ]
+          },
+          {
+            "span_index": 22,
+            "word_idx_range": "743..743",
+            "source_in": 291.38,
+            "source_out": 291.78,
+            "raw_dur": 0.4,
+            "tempo": 1.0,
+            "scaled_dur": 0.4,
+            "gap_after": 0.08,
+            "xfade_s": 0.0,
+            "timeline_start": 18.814999999999948,
+            "timeline_end": 19.214999999999925,
+            "max_internal_pause": 0.0,
+            "max_scribe_token_gap": 0.0,
+            "text": "three",
+            "words": [
+              {
+                "word_idx": 743,
+                "word": "three",
+                "start": 18.815,
+                "end": 19.215,
+                "src_start": 291.38,
+                "src_end": 291.78
+              }
+            ]
+          },
+          {
+            "span_index": 23,
+            "word_idx_range": "890..893",
+            "source_in": 348.74,
+            "source_out": 350.08,
+            "raw_dur": 1.34,
+            "tempo": 1.0,
+            "scaled_dur": 1.34,
+            "gap_after": 0.14,
+            "xfade_s": 0.0,
+            "timeline_start": 19.294999999999924,
+            "timeline_end": 20.6349999999999,
+            "max_internal_pause": 0.04,
+            "max_scribe_token_gap": 0.04,
+            "text": "times brighter than Sirius",
+            "words": [
+              {
+                "word_idx": 890,
+                "word": "times",
+                "start": 19.295,
+                "end": 19.595,
+                "src_start": 348.74,
+                "src_end": 349.04
+              },
+              {
+                "word_idx": 891,
+                "word": "brighter",
+                "start": 19.615,
+                "end": 19.935,
+                "src_start": 349.06,
+                "src_end": 349.38
+              },
+              {
+                "word_idx": 892,
+                "word": "than",
+                "start": 19.955,
+                "end": 20.095,
+                "src_start": 349.4,
+                "src_end": 349.54
+              },
+              {
+                "word_idx": 893,
+                "word": "Sirius",
+                "start": 20.135,
+                "end": 20.635,
+                "src_start": 349.58,
+                "src_end": 350.08
+              }
+            ]
+          },
+          {
+            "span_index": 24,
+            "word_idx_range": "902..905",
+            "source_in": 353.06,
+            "source_out": 354.4,
+            "raw_dur": 1.34,
+            "tempo": 1.0,
+            "scaled_dur": 1.34,
+            "gap_after": 0.0,
+            "xfade_s": 0.0,
+            "timeline_start": 20.7749999999999,
+            "timeline_end": 22.114999999999874,
+            "max_internal_pause": 0.16,
+            "max_scribe_token_gap": 0.16,
+            "text": "and it glows orange.",
+            "words": [
+              {
+                "word_idx": 902,
+                "word": "and",
+                "start": 20.775,
+                "end": 20.855,
+                "src_start": 353.06,
+                "src_end": 353.14
+              },
+              {
+                "word_idx": 903,
+                "word": "it",
+                "start": 20.895,
+                "end": 20.995,
+                "src_start": 353.18,
+                "src_end": 353.28
+              },
+              {
+                "word_idx": 904,
+                "word": "glows",
+                "start": 21.035,
+                "end": 21.375,
+                "src_start": 353.32,
+                "src_end": 353.66
+              },
+              {
+                "word_idx": 905,
+                "word": "orange.",
+                "start": 21.535,
+                "end": 22.115,
+                "src_start": 353.82,
+                "src_end": 354.4
+              }
+            ]
+          }
+        ],
+        "auditory_judgement": {
+          "reviewer": "gemini (Gemini 4 Argon multimodal audio input; Codex verified execution/hashes/arithmetic in J1020 and J1025 and does not claim independent listening)",
+          "method": "Direct multimodal playback and auditory inspection of /Users/benjaminoats/_desk/reviews/J1028/auditions/S6_028_X768qs8sNQs_question_audition.wav (3.110s, sha256: 67a26cb681b3ac5043b503c4392f1ac11898d9c0413e46e4be07c833a4ee5ddd) and regenerated /Users/benjaminoats/_desk/reviews/J1028/auditions/S6_028_X768qs8sNQs_full_vo_audition.wav (21.230s, sha256: ae4a60d99af622c54182729b60ebded9ee57ad99fdb0b1f7f9be1b363378b884).",
+          "question_prosody_and_joins": "UNCHANGED FROM ACCEPTED V05/V06 & VERIFIED BY EAR (Gemini): Spans 1..9 ('What will the night sky look like when Gliese 710 arrives?', 0.015-3.060s at 1.000x tempo) preserve the exact v05/v06 question audio (sha256: 67a26cb681b3ac50...), completing '710' at 2.465s (<= 2.500s) and 'arrives.' at 3.060s.",
+          "full_vo_prosody_and_joins": "REMAINING PRE-70% BRIGHTENING CLAUSE REMOVED & VERIFIED BY EAR (Gemini): Removes the v06 pre-70% clause 'A new star has been brightening for thousands of years.' (formerly Spans 18..19 at 13.180-16.220s, where 'brightening' started at 14.260s = 64.29% < 70.0%) and expands the present-day non-answer invisibility setup before the future transition in Spans 10..16 (3.240-13.760s: 'Right now,' [42.740-43.300s] + continuous 'Gliese 710' [words 985..986, 383.240-384.400s] + 'in the constellation of Serpens,' [47.340-49.240s] + 'the serpent.' [words 133..134, 49.400-50.160s] + 'is far too faint for your eyes' [60.200-61.860s] + 'on even the darkest night.' [62.140-63.600s] + 'You would need binoculars just to find it.' [words 172..179, 64.620-66.600s]), followed immediately in Spans 17..19 (13.940-16.220s) by the retained closest-pass transition ('Imagine' [337.300-337.700s] + 'the night of the' [338.780-339.400s] + 'closest pass.' [339.440-340.360s]). Every preceding clause across 0.015-16.220s has been semantically inspected: zero appearance or motion description and zero answer numbers occur inside the 9-14s banner or before the 15.526s (70.0%) threshold. Span 20 ('it is the brightest') starts at exact 16.400s (73.94%), placing the first appearance-answer token 'brightest' (word 881) at exact 16.820-17.240s (75.83% >= 70.0%), 'star' (word 398) at 17.320-17.740s (78.09%), 'three' (word 743) at 17.880-18.280s (80.61%), 'Sirius' (word 893) at 19.200-19.700s (86.56%), and 'orange.' (word 905) at 20.600-21.180s (92.88%), preserving vo_end_s=21.180s, total_duration_s=22.180s, and the single executable teaching card ['3\u00d7 BRIGHTER', 'THAN SIRIUS'] at 16.600-20.400s (74.84%-91.97%) with zero downstream drift. Direct multimodal listening by Gemini confirms natural British prosody across all 24 spans (63 WS / 65 spoken words) with zero splice clicks or clipped syllables.",
+          "preserve_exact_question_and_map": true
+        }
+      },
+      "shot_plan": [
+        {
+          "row": "s01_lasilla_mw_open",
+          "timeline_in": 0.0,
+          "timeline_out": 2.48,
+          "timeline_dur": 2.48,
+          "asset_key": "029_lasilla_mw",
+          "source_path": "02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/lasilla_mw.mp4",
+          "underlying_id": "eso_mw_lasilla.mp4",
+          "source_sha256": "41a034531e9bf5f94cb6fd8151fe97ee9c705e758028bc23a3918cba7f744bb9",
+          "source_file_duration": 17.643,
+          "source_in": 1.0,
+          "source_out": 4.348,
+          "source_dur": 3.348,
+          "source_speed": 1.35,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.78,
+          "framing_note": "setpts=PTS/1.35,crop=608:1080:500+75*t:0 (ESO La Silla Milky Way arch pan, 9.4% black)",
+          "spoken_match": "What will the night sky look like when Gliese 710",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with this opening shot's declared custom 9:16 crop/grade filter (no source_speed transform).",
+            "frames_decoded_30fps": 102,
+            "start_s": 1.0,
+            "start_mean_luma": 52.54,
+            "start_black_frac": 0.0959,
+            "midpoint_s": 2.674,
+            "midpoint_mean_luma": 50.47,
+            "midpoint_black_frac": 0.1139,
+            "end_s": 4.348,
+            "end_mean_luma": 51.91,
+            "end_black_frac": 0.0909,
+            "window_min_luma": 47.75,
+            "window_max_luma": 52.69,
+            "window_mean_luma": 50.63,
+            "window_min_black_frac": 0.0909,
+            "window_max_black_frac": 0.1208,
+            "window_mean_black_frac": 0.1071,
+            "window_max_black30_frac": 0.1771,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 8,
+            "ocr_2fps_timestamps_s": [
+              1.05,
+              1.55,
+              2.05,
+              2.55,
+              3.05,
+              3.55,
+              4.05,
+              4.268
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S6_028_X768qs8sNQs_full_window_2fps.jpg"
+          },
+          "crop_filter": "setpts=PTS/1.35,crop=608:1080:500+75*t:0,eq=brightness=0.06:contrast=1.10:saturation=1.15,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s02_orion_paranal",
+          "timeline_in": 2.48,
+          "timeline_out": 6.835,
+          "timeline_dur": 4.355,
+          "asset_key": "029_orion_over_paranal",
+          "source_path": "02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/orion_over_paranal.mp4",
+          "underlying_id": "orion_over_paranal.mp4",
+          "source_sha256": "3fd304fcc18945ff0979efa5bf5c7ba444fd77f8c750d54e442aae672db92c63",
+          "source_file_duration": 9.04,
+          "source_in": 0.5,
+          "source_out": 4.855,
+          "source_dur": 4.355,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.78,
+          "framing_note": "crop=608:1080:656:0 (real moving ESO Paranal night sky)",
+          "spoken_match": "arrives? Right now, Gliese 710 in the",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 104,
+            "start_s": 0.5,
+            "start_mean_luma": 25.63,
+            "start_black_frac": 0.1903,
+            "midpoint_s": 2.21,
+            "midpoint_mean_luma": 22.05,
+            "midpoint_black_frac": 0.3436,
+            "end_s": 3.92,
+            "end_mean_luma": 20.82,
+            "end_black_frac": 0.4214,
+            "window_min_luma": 20.47,
+            "window_max_luma": 25.63,
+            "window_mean_luma": 22.63,
+            "window_min_black_frac": 0.1903,
+            "window_max_black_frac": 0.4214,
+            "window_mean_black_frac": 0.33,
+            "window_max_black30_frac": 0.9319,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 8,
+            "ocr_2fps_timestamps_s": [
+              0.55,
+              1.05,
+              1.55,
+              2.05,
+              2.55,
+              3.05,
+              3.55,
+              3.84
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S6_028_X768qs8sNQs_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s03_lasilla_ntt",
+          "timeline_in": 6.835,
+          "timeline_out": 10.285,
+          "timeline_dur": 3.45,
+          "asset_key": "028_eso_lasilla_ntt",
+          "source_path": "02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/nasa_pool_v01/028_harvest_v01/eso_lasilla_ntt.mp4",
+          "underlying_id": "eso_lasilla_ntt.mp4",
+          "source_sha256": "979ddc71b9930464d9e3b7db0eb0e0ef3869b392a21e5efd1fca7fefb948fd3a",
+          "source_file_duration": 20.053,
+          "source_in": 12.5,
+          "source_out": 15.95,
+          "source_dur": 3.45,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.78,
+          "framing_note": "crop=608:1080:1312:0 (real moving ESO La Silla NTT & Milky Way, single appearance in Short 6)",
+          "spoken_match": "constellation of Serpens, the serpent, is far too faint",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 105,
+            "start_s": 12.5,
+            "start_mean_luma": 40.02,
+            "start_black_frac": 0.2053,
+            "midpoint_s": 14.225,
+            "midpoint_mean_luma": 40.92,
+            "midpoint_black_frac": 0.2018,
+            "end_s": 15.95,
+            "end_mean_luma": 41.44,
+            "end_black_frac": 0.201,
+            "window_min_luma": 39.79,
+            "window_max_luma": 41.54,
+            "window_mean_luma": 40.82,
+            "window_min_black_frac": 0.2006,
+            "window_max_black_frac": 0.2071,
+            "window_mean_black_frac": 0.2029,
+            "window_max_black30_frac": 0.3164,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 8,
+            "ocr_2fps_timestamps_s": [
+              12.55,
+              13.05,
+              13.55,
+              14.05,
+              14.55,
+              15.05,
+              15.55,
+              15.87
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S6_028_X768qs8sNQs_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s04_star_trails",
+          "timeline_in": 10.285,
+          "timeline_out": 13.735,
+          "timeline_dur": 3.45,
+          "asset_key": "029_lasilla_startrails",
+          "source_path": "02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/lasilla_startrails.mp4",
+          "underlying_id": "eso_startrails.mp4",
+          "source_sha256": "d60dd20c7befd5047644cd6f7e50dd2e6082a901d2b52bd65d4d05c654787743",
+          "source_file_duration": 28.053,
+          "source_in": 2.0,
+          "source_out": 5.45,
+          "source_dur": 3.45,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.78,
+          "framing_note": "crop=608:1080:656:0 (real moving ESO star trails, 3.450s <= 3.500s s04 limit, under 9-14s banner)",
+          "spoken_match": "for your eyes on even the darkest night. You would need binoculars",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 106,
+            "start_s": 2.0,
+            "start_mean_luma": 92.73,
+            "start_black_frac": 0.1128,
+            "midpoint_s": 3.725,
+            "midpoint_mean_luma": 96.0,
+            "midpoint_black_frac": 0.09,
+            "end_s": 5.45,
+            "end_mean_luma": 98.65,
+            "end_black_frac": 0.0733,
+            "window_min_luma": 92.73,
+            "window_max_luma": 98.65,
+            "window_mean_luma": 95.88,
+            "window_min_black_frac": 0.0733,
+            "window_max_black_frac": 0.1128,
+            "window_mean_black_frac": 0.0914,
+            "window_max_black30_frac": 0.1309,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 8,
+            "ocr_2fps_timestamps_s": [
+              2.05,
+              2.55,
+              3.05,
+              3.55,
+              4.05,
+              4.55,
+              5.05,
+              5.37
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S6_028_X768qs8sNQs_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s05_alma_orion_set",
+          "timeline_in": 13.735,
+          "timeline_out": 17.135,
+          "timeline_dur": 3.4,
+          "asset_key": "029_alma_orion_set",
+          "underlying_id": "alma_orion_set.mp4",
+          "source_path": "02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/alma_orion_set.mp4",
+          "source_in": 0.4,
+          "source_out": 3.8,
+          "source_dur": 3.4,
+          "source_speed": 1.0,
+          "kind": "eso_video",
+          "video": true,
+          "upscale": 1.78,
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p",
+          "source_sha256": "1f358b29b0e535252ff98d1fa6fcf0ac59149cf8b03be305285790305b768d61",
+          "spoken_match": "just to find it. Imagine the night of the closest pass.",
+          "pixel_inspection": {
+            "frames_decoded_30fps": 102,
+            "start_mean_luma": 47.86,
+            "midpoint_mean_luma": 41.15,
+            "end_mean_luma": 35.97,
+            "window_min_luma": 34.87,
+            "window_max_luma": 57.72,
+            "window_mean_luma": 41.54,
+            "start_black_frac": 0.0227,
+            "midpoint_black_frac": 0.0203,
+            "end_black_frac": 0.0462,
+            "window_min_black_frac": 0.0,
+            "window_max_black_frac": 0.0462,
+            "window_mean_black_frac": 0.0322,
+            "window_max_black30_frac": 0.5162,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 8,
+            "ocr_2fps_timestamps_s": [
+              0.45,
+              0.95,
+              1.45,
+              1.95,
+              2.45,
+              2.95,
+              3.45,
+              3.72
+            ],
+            "ocr_banned_hits": [],
+            "ocr_records": [
+              {
+                "source_t": 0.45,
+                "raw_ocr": "",
+                "alpha_3plus_words": []
+              },
+              {
+                "source_t": 0.95,
+                "raw_ocr": "",
+                "alpha_3plus_words": []
+              },
+              {
+                "source_t": 1.45,
+                "raw_ocr": "",
+                "alpha_3plus_words": []
+              },
+              {
+                "source_t": 1.95,
+                "raw_ocr": "",
+                "alpha_3plus_words": []
+              },
+              {
+                "source_t": 2.45,
+                "raw_ocr": "",
+                "alpha_3plus_words": []
+              },
+              {
+                "source_t": 2.95,
+                "raw_ocr": "",
+                "alpha_3plus_words": []
+              },
+              {
+                "source_t": 3.45,
+                "raw_ocr": "",
+                "alpha_3plus_words": []
+              },
+              {
+                "source_t": 3.72,
+                "raw_ocr": "",
+                "alpha_3plus_words": []
+              }
+            ],
+            "clean_window_verified": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1024/source_windows/full_window_inspection_log_v06.json): 30fps source-rate decode across [0.400, 3.800] (102 frames) for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s, 8 samples) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (final transformed every-frame OCR/dark-run gates run on assembled MP4s)."
+          }
+        },
+        {
+          "row": "s06_orion_vlt",
+          "timeline_in": 17.135,
+          "timeline_out": 19.935,
+          "timeline_dur": 2.8,
+          "asset_key": "029_orion_rise_vlt",
+          "source_path": "02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/orion_rise_vlt.mp4",
+          "underlying_id": "orion_rise_vlt.mp4",
+          "source_sha256": "380d73c2de9542211fe05f346dfe0c2cce8b2d3188854e6abb01d40e253a0dbd",
+          "source_file_duration": 6.848,
+          "source_in": 0.4,
+          "source_out": 3.2,
+          "source_dur": 2.8,
+          "source_speed": 1.0,
+          "kind": "real_video",
+          "video": true,
+          "upscale": 1.78,
+          "framing_note": "crop=608:1080:656:0 (real moving ESO VLT rising stars under 3x BRIGHTER / THAN SIRIUS card)",
+          "spoken_match": "It is the brightest star, three times",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 84,
+            "start_s": 0.4,
+            "start_mean_luma": 33.05,
+            "start_black_frac": 0.256,
+            "midpoint_s": 1.8,
+            "midpoint_mean_luma": 33.29,
+            "midpoint_black_frac": 0.2573,
+            "end_s": 3.2,
+            "end_mean_luma": 34.49,
+            "end_black_frac": 0.2529,
+            "window_min_luma": 32.67,
+            "window_max_luma": 34.63,
+            "window_mean_luma": 33.57,
+            "window_min_black_frac": 0.2525,
+            "window_max_black_frac": 0.258,
+            "window_mean_black_frac": 0.2559,
+            "window_max_black30_frac": 0.4369,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 6,
+            "ocr_2fps_timestamps_s": [
+              0.45,
+              0.95,
+              1.45,
+              1.95,
+              2.45,
+              2.95
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S6_028_X768qs8sNQs_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s07_twilight",
+          "timeline_in": 19.935,
+          "timeline_out": 22.115,
+          "timeline_dur": 2.18,
+          "asset_key": "028_base_twilight",
+          "source_path": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-028/gliese028_overlays_work_v01/base_after_11_r29_twilight.mp4",
+          "underlying_id": "conjunction.tif",
+          "source_sha256": "eee6896481f76227fd5fef8641296ccee13479a3cef4466fbc396fab6f014df5",
+          "source_file_duration": 6.2,
+          "source_in": 0.4,
+          "source_out": 2.58,
+          "source_dur": 2.18,
+          "source_speed": 1.0,
+          "kind": "still_push_mp4",
+          "video": false,
+          "upscale": 1.0,
+          "framing_note": "9:16 crop (NASA bright twilight planet sky still push-in, video=false)",
+          "spoken_match": "brighter than Sirius, and it glows orange.",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with default 9:16 centre crop (crop=ih*9/16:ih) at native source speed (source_speed and per-row eq grade not applied in source-window inspector; final transformed every-frame OCR/dark-run gates run on assembled MP4s).",
+            "frames_decoded_30fps": 66,
+            "start_s": 0.4,
+            "start_mean_luma": 81.6,
+            "start_black_frac": 0.0674,
+            "midpoint_s": 1.49,
+            "midpoint_mean_luma": 82.36,
+            "midpoint_black_frac": 0.0635,
+            "end_s": 2.58,
+            "end_mean_luma": 82.89,
+            "end_black_frac": 0.0598,
+            "window_min_luma": 81.6,
+            "window_max_luma": 82.89,
+            "window_mean_luma": 82.27,
+            "window_min_black_frac": 0.0598,
+            "window_max_black_frac": 0.0674,
+            "window_mean_black_frac": 0.0636,
+            "window_max_black30_frac": 0.0681,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 5,
+            "ocr_2fps_timestamps_s": [
+              0.45,
+              0.95,
+              1.45,
+              1.95,
+              2.45
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S6_028_X768qs8sNQs_full_window_2fps.jpg"
+          },
+          "crop_filter": "crop=ih*9/16:ih,scale=1080:1920:flags=lanczos,setsar=1,fps=30,format=yuv420p"
+        },
+        {
+          "row": "s_loop",
+          "timeline_in": 22.115,
+          "timeline_out": 23.115,
+          "timeline_dur": 1.0,
+          "asset_key": "029_lasilla_mw",
+          "source_path": "reversed first 1.000s of s00 (02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/lasilla_mw.mp4)",
+          "underlying_id": "loop_eso_mw_lasilla.mp4",
+          "source_sha256": "41a034531e9bf5f94cb6fd8151fe97ee9c705e758028bc23a3918cba7f744bb9",
+          "source_in": 2.35,
+          "source_out": 1.0,
+          "source_dur": 1.35,
+          "source_speed": 1.35,
+          "kind": "loop_video",
+          "video": true,
+          "upscale": 1.78,
+          "framing_note": "Reversed first 1.000 s of s00 so final frame == frame 0 (loop_diff < 2.0)",
+          "spoken_match": "Loop back to frame 0",
+          "pixel_inspection": {
+            "verified_exists": true,
+            "inspection_method": "Saved source-window inspection log (/Users/benjaminoats/_desk/reviews/J1017/source_windows/full_window_inspection_log.json) produced by inspect_j0936_prep_v04_source_windows.py: 30fps source-rate decode across [source_in, source_out] for luma, black fraction (<20 and <30), dark-run (<20 luma on >85% area), and ffmpeg scdet internal cut detection, plus sampled 2fps (every 0.50s) frame extraction and Tesseract OCR (--psm 6 -l eng). Evaluated with this opening shot's declared custom 9:16 crop/grade filter (no source_speed transform).",
+            "frames_decoded_30fps": 102,
+            "start_s": 1.0,
+            "start_mean_luma": 52.54,
+            "start_black_frac": 0.0959,
+            "midpoint_s": 2.674,
+            "midpoint_mean_luma": 50.47,
+            "midpoint_black_frac": 0.1139,
+            "end_s": 4.348,
+            "end_mean_luma": 51.91,
+            "end_black_frac": 0.0909,
+            "window_min_luma": 47.75,
+            "window_max_luma": 52.69,
+            "window_mean_luma": 50.63,
+            "window_min_black_frac": 0.0909,
+            "window_max_black_frac": 0.1208,
+            "window_mean_black_frac": 0.1071,
+            "window_max_black30_frac": 0.1771,
+            "dark_run_max_consecutive_frames": 0,
+            "internal_scdet_cuts": [],
+            "ocr_2fps_sample_count": 8,
+            "ocr_2fps_timestamps_s": [
+              1.05,
+              1.55,
+              2.05,
+              2.55,
+              3.05,
+              3.55,
+              4.05,
+              4.268
+            ],
+            "ocr_banned_hits": [],
+            "clean_window_verified": true,
+            "contact_sheet_path": "/Users/benjaminoats/_desk/reviews/J1017/source_windows/S6_028_X768qs8sNQs_full_window_2fps.jpg"
+          }
+        }
+      ],
+      "J1100_change": {
+        "Chief_exception": "Claude acting Chief, queue reopen 2026-10-28T23:38Z: natural phrase; subject completes 3.215s",
+        "delta_s": 0.935,
+        "question_end_s": 3.875000000000041,
+        "no_atempo": true,
+        "status": "UNREVIEWED; Gemini actual AAC listening required"
+      }
+    }
+  }
+}

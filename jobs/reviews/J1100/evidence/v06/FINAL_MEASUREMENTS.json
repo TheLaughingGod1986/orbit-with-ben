@@ -1,0 +1,49 @@
+{
+  "shorts": {
+    "exit_code": 0
+  },
+  "picture": {
+    "exit_code": 0
+  },
+  "polish": {
+    "exit_code": 0
+  },
+  "sfx": {
+    "exit_code": 0
+  },
+  "music": {
+    "exit_code": 0
+  },
+  "dark_pass": true,
+  "ocr_pass": true,
+  "audio_and_loop": {
+    "status": "UNREVIEWED v06; caption-free tail; gates and Gemini listening outstanding",
+    "input_sha256": "5c5961e978d18184da7814c59fb7a9b3682c98481de36a38f6e3f67d852a3779",
+    "I_LUFS": -14.4,
+    "TP_dBTP": -1.7,
+    "audio_pass": true,
+    "loop": {
+      "whole": 9.26,
+      "masked": 0.95
+    },
+    "loop_pass": false,
+    "grain": "noise alls=4 allf=t seed=1032 before loop split",
+    "endpoint": "caption-free original picture frames, reversed; no hook or spoken captions in tail",
+    "files": {
+      "S6_028_X768qs8sNQs_v06.mp4": "4aae4063ddaff8371bfbef9c075bf7d6b16b4a4c38f4b8258cc1c4b155f2cb6a",
+      "S6_028_X768qs8sNQs_v06_PHONE.mp4": "34d538a31b02b51190b78245aba7cd703b2644b39c17998dbbeac1221d1025b7"
+    },
+    "tail_source_sha256": "ebaa6c740b80cd03380361555a39b4f10d55eedf92dcf9648789c2de4378403d",
+    "tail_start_frame": 663,
+    "aac_packets_unchanged": true,
+    "inherited_v05_corrections": [
+      {
+        "row": "s02_orion_paranal",
+        "start": 2.5,
+        "end": 6.833333333333333,
+        "filter": "eq=brightness=0.03:enable='between(n,60,73)',eq=gamma=1.25:brightness=0.015:enable='gte(t,2.5)*lt(t,6.833333333333333)'"
+      }
+    ]
+  },
+  "status": "UNREVIEWED; music gate, visual flags, finished audio listening and verified delivery still required"
+}
