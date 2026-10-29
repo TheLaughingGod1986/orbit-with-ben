@@ -107966,17 +107966,22 @@
           "at": "2026-10-29T21:39Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T21:39Z",
+          "by": "cursor",
+          "what": "step 0 of 7 done: claimed; starting inspect"
         }
       ],
-      "remaining_action": "Wait for resume-join encode+gates+deliver; then PR evidence and park for Chief (J1193 still open)",
+      "remaining_action": "Inspect HOS 008 rough v01 failures and plan v02 assembler repairs",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 7,
-        "at": "2026-10-29T20:17Z",
+        "at": "2026-10-29T21:39Z",
         "by": "cursor",
-        "note": "filter_complex trim encoding on NAS (~147MB building.mp4 growing); prior 618s bug fixed; parts 1-5 reused"
+        "note": "claimed; starting inspect"
       },
       "taskKeys": [
         "HOS:008"
