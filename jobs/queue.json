@@ -105703,10 +105703,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T09:53Z",
+      "eta": "2026-10-29T11:53Z",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
       "result": "",
@@ -105715,11 +105715,24 @@
           "at": "2026-10-29T09:36Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T09:53Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief",
       "due": "2026-11-02T12:00:00Z",
-      "kind": "video"
+      "kind": "video",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T09:53Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1200",
