@@ -44,11 +44,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1132 | mini | blocked | claude | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 | J1170 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J1174 | any | claimed | codex | 2026-10-29T08:38Z | chief · Chief: verify condition for J0936 |  |
 | J1175 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 
 Recently finished:
 
+- J1174 done: Chief: verify condition for J0936 (Verified unmet condition: J0936 remains blocked, next check 2026-10-30T10:50Z aligned with J1100 reset/live-balance hold. PR333 0a7fcb6a and completed Gemini S6 review checked: S2/S5 pickups and clean S2 bed unfinished, S6 recorded loop FAIL unresolved, full verified delivery and Chief replacement PASS absent, then Ben corrected-swap approvals required. J1032 PASS and S1/S3/S4 swaps satisfied; historical 6/6, deadlines and fallbacks preserved. No spend or publishing changes.)
 - J1173 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T06:23Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, fe2f53ca; 0 new fixes needed))
 - J1172 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1171 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T06:12Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 2f50421c; 0 new fixes needed))
@@ -58,4 +58,3 @@ Recently finished:
 - J1166 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T05:38Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
 - J1165 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T05:30Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 50d93d06; 0 new fixes needed))
 - J1164 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T05:25Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
-- J1163 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T05:19Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, bd780c38; 0 new fixes needed))

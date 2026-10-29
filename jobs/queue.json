@@ -103861,13 +103861,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T06:38Z",
-      "eta": "2026-10-29T08:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-29T06:27Z",
-      "result": "",
+      "result": "Verified unmet condition: J0936 remains blocked, next check 2026-10-30T10:50Z aligned with J1100 reset/live-balance hold. PR333 0a7fcb6a and completed Gemini S6 review checked: S2/S5 pickups and clean S2 bed unfinished, S6 recorded loop FAIL unresolved, full verified delivery and Chief replacement PASS absent, then Ben corrected-swap approvals required. J1032 PASS and S1/S3/S4 swaps satisfied; historical 6/6, deadlines and fallbacks preserved. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-10-29T06:27Z",
@@ -103898,6 +103898,11 @@
           "at": "2026-10-29T06:40Z",
           "by": "codex",
           "what": "step 3 of 3 done: PASS: saved hold recheck J1174 and 30 Oct 10:50Z verified; J0936 6/6 and completed swap statuses unchanged."
+        },
+        {
+          "at": "2026-10-29T06:40Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition: J0936 remains blocked, next check 2026-10-30T10:50Z aligned with J1100 reset/live-balance hold. PR333 0a7fcb6a and completed Gemini S6 review checked: S2/S5 pickups and clean S2 bed unfinished, S6 recorded loop FAIL unresolved, full verified delivery and Chief replacement PASS absent, then Ben corrected-swap approvals required. J1032 PASS and S1/S3/S4 swaps satisfied; historical 6/6, deadlines and fallbacks preserved. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 remains held for corrected replacements",
