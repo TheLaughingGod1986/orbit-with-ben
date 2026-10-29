@@ -101804,13 +101804,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-29T03:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T03:52Z",
-      "result": "parked for Chief: J1149 QA sweep complete across OWB (9ef9480af) and HOS (7db7eaaa) with byte-identical J1149_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 3e414d2a1067cfbfa547be935407df18d77cda526526b7e8bd330bed99e0cfde) and J1149_QA_SWEEP_REPORT_2026-10-29.md (sha256 01bf02cef28a3ca9b321d638db53216fa4652bd0cd7d7980940d1e0f0f4cb341). 0 new OWB or HOS renders since J1142; all 157 entries (91 OWB + 66 HOS; 268 media files) and 452/452 applicable picture_qa/polish_gate/music_gate sidecars verified fresh with 0 FAIL (distinct from separate J1100 whole-loop FAIL 9.26 >= 2 on S6 v06; J1100 credit/loop hold at 2026-10-30T10:50:00Z and HELD_CHANGES_REQUIRED preserved; top-level JSON summary counters synchronized 1-to-1; 0 duplicate repair jobs; £0 spend).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T03:52Z",
@@ -101851,18 +101851,16 @@
           "at": "2026-10-29T03:57Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1149 QA sweep complete across OWB (9ef9480af) and HOS (7db7eaaa) with byte-identical J1149_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 3e414d2a1067cfbfa547be935407df18d77cda526526b7e8bd330bed99e0cfde) and J1149_QA_SWEEP_REPORT_2026-10-29.md (sha256 01bf02cef28a3ca9b321d638db53216fa4652bd0cd7d7980940d1e0f0f4cb341). 0 new OWB or HOS renders since J1142; all 157 entries (91 OWB + 66 HOS; 268 media files) and 452/452 applicable picture_qa/polish_gate/music_gate sidecars verified fresh with 0 FAIL (distinct from separate J1100 whole-loop FAIL 9.26 >= 2 on S6 v06; J1100 credit/loop hold at 2026-10-30T10:50:00Z and HELD_CHANGES_REQUIRED preserved; top-level JSON summary counters synchronized 1-to-1; 0 duplicate repair jobs; £0 spend)."
+        },
+        {
+          "at": "2026-10-29T04:29Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief ruling: PASS for technical QA sweep evidence only. Independently checked matching OWB/HOS inventory/report SHA256s (3e414d2a1067 / 01bf02cef28a), 157 entries (91 OWB, 66 HOS), actual 452/452 sidecars PASS and fresh, and four newest media SHA256s. No film/frame/audio/upload approval is granted: 146 entries retain warning-review requirements; Venus identity remains manifest-only. Concrete follow-up remains J1100: verify subscription reset/live credit at 2026-10-30T10:50:00Z, authorized S2/S5 pickups and clean instrumental S2 bed, caption-free tails and S6 whole-loop below 2 (current 9.26 FAIL), gates plus direct listening then Chief replacement review. Existing J1100 hold unchanged; no duplicate fix job. Reopening only to claim and close this accepted audit."
         }
       ],
       "remaining_action": "Await Chief verification of J1149 QA sweep inventory and report",
       "kind": "qa",
       "backlog": "both-qa-sweep",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-29T03:57Z",
-        "by": "gemini",
-        "note": "Step 4/4 done: Committed and pushed byte-identical J1149_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 3e414d2a1067) and J1"
-      },
       "taskKeys": [
         "OWB:027",
         "OWB:028"
