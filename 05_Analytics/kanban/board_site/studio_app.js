@@ -247,10 +247,13 @@
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
     const list = (items, limit) => items.slice(0, limit).map(v => row(v, isWorking(v) ? doing(v) : "")).join("")
       + (items.length > limit ? `<p class="meta">${items.length - limit} more: pick Orbit or HOS, Longs or Shorts to narrow the list.</p>` : "");
+    // A batch job on several videos: the first card carries the job, the others say whose job they share.
+    const jobList = items => jobGroups(items).map(([first, ...rest]) => row(first, doing(first) + alsoOn(rest))
+      + rest.map(v => row(v, `<span class="meta">In the same job as ${esc(first.number)}${first.type === "short" ? " Short" : ""} above</span>`)).join("")).join("");
     const show = id => seg === "all" || seg === id;
     return `<header class="top"><h1>Videos</h1></header>
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
-      ${show("working") ? section("An agent is on it now", g.working.length, list(g.working, 30) || empty("No agent is on a video this minute.")) : ""}
+      ${show("working") ? section("An agent is on it now", g.working.length, jobList(g.working) || empty("No agent is on a video this minute.")) : ""}
       ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
       ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
       ${seg === "all" ? section("On YouTube", g.done.length, list(g.done, 10)) : ""}`;
