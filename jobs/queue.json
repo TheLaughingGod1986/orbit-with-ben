@@ -104505,17 +104505,22 @@
           "at": "2026-10-29T07:28Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Traced mon09_night_cold_v01.mp4: Oct 10 upload (48466c33...) was overwritten in place by J0432 on Oct 17 (0195a5fb...) and archived in NAS 2026-10-24/YouTube/orbit-with-ben/owbshorts.tar"
+        },
+        {
+          "at": "2026-10-29T07:32Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified NAS owbshorts.tar copy has J0432 sha256 0195a5fb... (gate_shorts_open PASS report-only); original Oct 10 upload 48466c33... was overwritten on Oct 17 before NAS archive"
         }
       ],
-      "remaining_action": "Inspect gate_upcoming.py and owbshorts.tar copy vs UPLOADS.json sha256",
+      "remaining_action": "Park J1181 for Chief and post findings on #99",
       "due": "2026-11-06T20:00:00Z",
       "kind": "qa",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-29T07:28Z",
+        "at": "2026-10-29T07:32Z",
         "by": "gemini",
-        "note": "Traced mon09_night_cold_v01.mp4: Oct 10 upload (48466c33...) was overwritten in place by J0432 on Oct 17 (0195a5fb...) a"
+        "note": "Verified NAS owbshorts.tar copy has J0432 sha256 0195a5fb... (gate_shorts_open PASS report-only); original Oct 10 upload"
       },
       "taskKeys": [
         "OWB:025"
