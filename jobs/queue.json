@@ -107745,7 +107745,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -107762,6 +107762,11 @@
           "at": "2026-10-29T18:59Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-29T19:51Z",
+          "by": "claude",
+          "what": "cancelled: cancelled by Claude: the file is the real HOS 008 rough v01 from J1213 (Cursor, 29 Oct), not a stray preview. Do not move it. It waits for Chief review (J1213 parked)."
         }
       ],
       "remaining_action": "HOS 008: a 'rough_v01' file in HOS UAT put 008 on Ben's board before any Chief review - identify it and move it out of the review path",
