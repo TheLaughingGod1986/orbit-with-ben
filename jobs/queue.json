@@ -1,5 +1,5 @@
 {
-  "next_id": 1192,
+  "next_id": 1193,
   "jobs": [
     {
       "id": "J0001",
@@ -105266,6 +105266,37 @@
       ],
       "remaining_action": "HOS 008 picture: mint the Flow rows of PICTURE_PLAN_v03 (live read first, keep >=3,000 after; cap 5,605 expected)",
       "due": "2026-11-08T20:00:00Z",
+      "for": "gemini",
+      "kind": "video",
+      "model": "flow-veo-3.1"
+    },
+    {
+      "id": "J1192",
+      "title": "HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude) price pass, 29 Oct (J0863 PASS). Starts after J1191 (008). Shared Flow order 008 (5,605) then 009 tranche 1 (7,354, PRICE_REVIEW_v04.md section Tranches; cap 7,585 on the old reading). On the 29 Oct live read (20,870), 008 + tranche 1 leave about 7,900, above the 3,000 buffer. Tranche 2 (5,180) waits for the ~12 Nov renewal.\nGate, every session: read Flow live, log it (ai_spend.py); proceed only if live read minus remaining tranche-1 expected is >= 3,000; re-read before each batch; stop and park for Chief if a batch would cross it. Never buy, top up or upgrade. Same KEEP/REDO rules as 007 (J0352) and the 009 v04 boards (J0336/J0333). Record KEEPs, update PIPELINE.json, copy to the NAS (copy only), park for Chief: tranche 1 PASS. No upload, no ElevenLabs. GBP0.",
+      "ref": "",
+      "film": "009",
+      "stage": "picture",
+      "after": "J1191",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T08:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T08:36Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354)",
+      "due": "2026-11-12T20:00:00Z",
       "for": "gemini",
       "kind": "video",
       "model": "flow-veo-3.1"
