@@ -126,4 +126,9 @@ const ovb = t.renderTab('overview', {tracker: {videos: [v({key: 'a', number: '02
   v({key: 'c', number: '027', type: 'short', jobs: [batch]})]}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [batch]}}, NOW);
 assert(ovb.includes('Same job also covers 2 more: 028, 027 Short') && !ovb.includes('studio job not tied'));
 assert.equal(t.jobGroups([v({key: 'a', jobs: [batch]}), v({key: 'b', jobs: [batch]})]).length, 1);
+// Videos: a batch job shows its progress once; the other videos say they share it.
+const vb = {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]})]}};
+const vt = t.renderTab('videos', vb, NOW);
+assert.equal((vt.match(/class="doing"/g) || []).length, 1, 'one progress line per job');
+assert(vt.includes('In the same job as 027 above'));
 console.log('studio app OK');
