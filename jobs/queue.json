@@ -108491,10 +108491,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T23:44Z",
+      "eta": "2026-10-30T01:44Z",
       "created_by": "chief",
       "created_at": "2026-10-29T20:56Z",
       "result": "",
@@ -108508,6 +108508,11 @@
           "at": "2026-10-29T20:56Z",
           "by": "chief",
           "what": "approved by Ben: swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE v04 (asked in J0966)"
+        },
+        {
+          "at": "2026-10-29T23:44Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30)",
@@ -108525,6 +108530,14 @@
         "job": "J0966",
         "okAt": "2026-10-29T20:56Z",
         "okRef": "6508107852"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T23:44Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
