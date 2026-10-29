@@ -100804,9 +100804,14 @@
           "at": "2026-10-29T01:53Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1137 QA sweep complete across OWB (7cc5664f3) and HOS (ce1bd47b) — 157 entries (91 OWB + 66 HOS; 149 single-file exports + 8 visual packs [119 members] = 268 files; 129 current_newest + 28 historical_superseded). Gated 4 post-J1088 J1100 OWB Short renders (earth_equator_weight_v05, 028_short_fri04_scale_v05, 028_short_lift_night_sky_35yr_v05, S6_028_X768qs8sNQs_v06): all 12 new sidecars PASS with 0 FAIL. 452/452 applicable sidecars fresh with 0 FAIL; 0 duplicate repair jobs created (J1100 already tracks v06 audio/loop fixes after 30 Oct 10:50 UTC reset). Read-only (£0 spend)."
+        },
+        {
+          "at": "2026-10-29T02:10Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T08:00:00Z"
         }
       ],
-      "remaining_action": "Await Chief review of J1137 QA sweep report; no film approval granted",
+      "remaining_action": "FIX: verify J1140 evidence corrections before accepting QA sweep; J1100 repair and credit hold remain",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -100847,7 +100852,12 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Acting-Chief FIX (Codex): J1140 must correct the mirrored report/inventory false S6 9.26 <= 12.0 assertion to whole-loop FAIL (<2 required), then Chief verifies. Four new hashes and all 452 raw technical sidecars checked; no media PASS or gate waiver. J1100 remains responsible for audio/loop repair with original 2026-10-30T10:50:00Z credit verification.",
+        "check_at": "2026-10-29T08:00:00Z"
+      }
     },
     {
       "id": "J1138",
