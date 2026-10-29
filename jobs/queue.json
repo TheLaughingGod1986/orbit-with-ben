@@ -101029,10 +101029,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T02:31Z",
+      "eta": "2026-10-29T04:31Z",
       "created_by": "codex",
       "created_at": "2026-10-29T02:10Z",
       "result": "parked for Chief: J1140 S6 v05/v06 loop-failure evidence corrections committed and pushed with byte-identical inventory (e8dac78d21f86246a6fe0d61b513f73ac85f88bb8c719529dded3211aa1b2310) and report (e31f07de7212f8e723c87bdbdcb7bf90efdaa0f8b6f0d4f93efde7c83d699db7) in OWB e78557f56 and HOS 7447cc61: (1) S6 v06 (028_short_lift_night_sky_35yr_v06, 4aae4063ddaf) corrected to record separate whole-loop check FAIL (loop_pass=false, whole=9.26, masked=0.95 vs required whole difference <2, no waiver) citing /Users/benjaminoats/_desk/renders/J1100-v06-preserved/S6_028_X768qs8sNQs/FINAL_MEASUREMENTS.json (sha256 5295b0f3d645) and J1100 history (2026-10-29T00:13Z-00:40Z, bce5915f1); (2) S6 v05 (028_short_lift_night_sky_35yr_v05, 5c5961e978d1) corrected to cite /Users/benjaminoats/_desk/renders/J1100-S6-final02/S6_028_X768qs8sNQs/FINAL_MEASUREMENTS.json (loop_pass=true, whole=0.84, masked=0.87 <2) and Acting Chief FIX ruling 12364118e (2026-10-29T00:02Z) rejecting reversed captions in the 1s silent loop tail; (3) explicitly distinguished 0 FAIL in picture_qa/polish_gate/music_gate across all 452 sidecars from the separate J1100 whole-loop FAIL; (4) preserved HELD_CHANGES_REQUIRED, all original hashes, raw gate outputs, scope limitations, and J1100 credit hold at 2026-10-30T10:50:00Z (0 new repair jobs; £0 spend).",
@@ -101081,6 +101081,11 @@
           "at": "2026-10-29T02:31Z",
           "by": "codex",
           "what": "rerouted to codex: Acting-Chief evidence review PASS: OWB e78557f56 and HOS 7447cc61 mirrors verified identical (inventory e8dac78d21f8, report e31f07de7212); source measurements match v05 whole0.84 masked0.87 and v06 whole9.26 FAIL <2 masked0.95. Only explanatory fields changed, hashes/gates/HELD_CHANGES_REQUIRED preserved. Taking review closure only; J1100 credit hold unchanged."
+        },
+        {
+          "at": "2026-10-29T02:31Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await Chief verification of J1140 evidence corrections and J1137 QA sweep",
