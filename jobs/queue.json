@@ -105289,10 +105289,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-29T12:21Z",
+      "eta": "2026-10-29T14:21Z",
       "created_by": "claude",
       "created_at": "2026-10-29T08:35Z",
       "result": "",
@@ -105406,6 +105406,11 @@
           "at": "2026-10-29T12:18Z",
           "by": "gemini",
           "what": "released: 16/101 Flow rows KEEP (6/6 priority overlay plates + 10 Part 01 rows through 07_hot_night UAT verified; added child-filter start-frame guard + auto-retry; spent 440 / 6,500 cap, live Flow 20,430, rem_expected 4,568, buffer 15,862 >= 3,000; checkpoint gemini/j1191-008-flow-mint @ 2a4d8163). Detached Flow v03 batch (--until-part 05) running in tmux session j1191-render; log: /Users/benjaminoats/_desk/logs/j1191-render.log; done file: /Users/benjaminoats/_desk/logs/j1191-render.done"
+        },
+        {
+          "at": "2026-10-29T12:21Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Continue detached Flow v03 batch in tmux j1191-render (16/101 KEEP; Part 01 10/22 KEEP, 08_sky_flash in progress, then Parts 02-05)",
