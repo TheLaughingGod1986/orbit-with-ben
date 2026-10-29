@@ -103893,19 +103893,24 @@
           "at": "2026-10-29T06:39Z",
           "by": "codex",
           "what": "step 2 of 3 done: J0936 remains blocked; next check 30 Oct 10:50Z aligned with J1100 credit hold. Completed swaps, historical progress and fallback deadlines preserved."
+        },
+        {
+          "at": "2026-10-29T06:40Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PASS: saved hold recheck J1174 and 30 Oct 10:50Z verified; J0936 6/6 and completed swap statuses unchanged."
         }
       ],
-      "remaining_action": "Verify saved hold and report the J1174 result",
+      "remaining_action": "Verification complete; J0936 remains held for corrected replacements",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-10-29T07:27:28+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-29T06:39Z",
+        "at": "2026-10-29T06:40Z",
         "by": "codex",
-        "note": "J0936 remains blocked; next check 30 Oct 10:50Z aligned with J1100 credit hold. Completed swaps, historical progress and"
+        "note": "PASS: saved hold recheck J1174 and 30 Oct 10:50Z verified; J0936 6/6 and completed swap statuses unchanged."
       },
       "taskKeys": [
         "OWB:026",
