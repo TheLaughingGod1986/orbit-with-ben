@@ -104693,9 +104693,14 @@
           "at": "2026-10-29T07:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T07:54Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting step 1 of 3: run read-only HOS channel:audit and lint:package"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Run read-only HOS channel:audit and lint:package",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -104710,11 +104715,20 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-29T07:53Z",
+        "at": "2026-10-29T07:54Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting step 1 of 3: run read-only HOS channel:audit and lint:package"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008"
+      ]
     },
     {
       "id": "J1184",
