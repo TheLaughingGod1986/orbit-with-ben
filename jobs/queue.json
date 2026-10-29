@@ -105475,13 +105475,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-10-29T11:02Z",
-      "eta": "2026-10-29T13:02Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:49Z",
-      "result": "",
+      "result": "16 issue rows applied across 24 text files; 13 skipped with reasons. Report: 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28_APPLIED.md. OWB 934d92aa0; HOS d56a80c8 on macbook/j1194-description-sweep. JSON scope and diff checks pass. Row 25 target files absent; 8 rows live-only. No live changes; GBP0.",
       "history": [
         {
           "at": "2026-10-29T08:49Z",
@@ -105512,6 +105512,11 @@
           "at": "2026-10-29T11:05Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-10-29T11:05Z",
+          "by": "macbook",
+          "what": "done: 16 issue rows applied across 24 text files; 13 skipped with reasons. Report: 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28_APPLIED.md. OWB 934d92aa0; HOS d56a80c8 on macbook/j1194-description-sweep. JSON scope and diff checks pass. Row 25 target files absent; 8 rows live-only. No live changes; GBP0."
         }
       ],
       "remaining_action": "Commit validated description edits and applied/skipped report; record handoff",
