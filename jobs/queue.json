@@ -105928,9 +105928,14 @@
           "at": "2026-10-29T21:33Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Freed disk space (10.1 GiB -> 16+ GiB via clean worktree prune + SHA256-verified NAS scratch offload); Part 04 4/13 KEEP committed @ 4b95ee04 and NAS-copied; detached tmux j1192-render resumed on P04:06_pretty_nearly (live Flow 16,680, rem_expected 2,631, buffer 14,049 >= 3,000)"
+        },
+        {
+          "at": "2026-10-29T21:37Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Part 04 5/13 KEEP (34/57 cumulative across Parts 01-04: +P04:02_spray_paint, +P04:02_spray_paint_c1, +P04:02_spray_paint_c2, +P04:05_minute_second, +P04:06_pretty_nearly), NAS-copied, committed @ 339729d5; freed 5.7 GiB disk space (now 15.7 GiB free); detached tmux j1192-render running P04:06_pretty_nearly_c1..P05:12_clay_handoff_c1 (live Flow 16,670, spent 1,880 / 7,585 cap, rem_expected 2,611, buffer 14,059 >= 3,000)"
         }
       ],
-      "remaining_action": "Mint remaining HOS 009 v04 tranche-1 Flow plates: Part 04 (9 rows: P04:06..P04:12) + Part 05 (15 rows: P05:01..P05:12_c1) in detached tmux j1192-render",
+      "remaining_action": "Mint remaining HOS 009 v04 tranche-1 Flow plates: Part 04 (8 rows) + Part 05 (15 rows) in detached tmux j1192-render, then Fast retakes",
       "due": "2026-11-12T20:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -105938,9 +105943,9 @@
       "progress": {
         "step": 3,
         "of": 6,
-        "at": "2026-10-29T21:33Z",
+        "at": "2026-10-29T21:37Z",
         "by": "gemini",
-        "note": "Freed disk space (10.1 GiB -> 16+ GiB via clean worktree prune + SHA256-verified NAS scratch offload); Part 04 4/13 KEEP"
+        "note": "Part 04 5/13 KEEP (34/57 cumulative across Parts 01-04: +P04:02_spray_paint, +P04:02_spray_paint_c1, +P04:02_spray_paint"
       },
       "taskKeys": [
         "HOS:009"
