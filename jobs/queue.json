@@ -100545,13 +100545,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-29T01:25Z",
-      "eta": "2026-10-29T03:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T23:53Z",
-      "result": "",
+      "result": "Verified CI green (no-desk-close, no-media, Studio core check = SUCCESS) and MERGEABLE/CLEAN on both HOS records PRs after acting Chief (Claude) PASS (28 Oct): merged PR #366 (00b1e653 -> merge commit bb93be5c, J1004 006-010 Shorts hook/duration paper disposition) and PR #368 (97179222 -> merge commit e82d206f, J1098 Snow Short OnJ8MFu0Mi0 mature 48h Studio and retention read) into history-of-science main, deleted both feature branches, pulled main, and verified 00_Brand/Channel-Setup/tools/check_all.sh ALL CHECKS PASS. Records only; no media, upload, or YouTube changes. GBP0.",
       "history": [
         {
           "at": "2026-10-28T23:53Z",
@@ -100587,6 +100587,11 @@
           "at": "2026-10-29T01:30Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Pulled history-of-science main (e82d206f) and verified 00_Brand/Channel-Setup/tools/check_all.sh ALL CHECKS PASS"
+        },
+        {
+          "at": "2026-10-29T01:30Z",
+          "by": "gemini",
+          "what": "done: Verified CI green (no-desk-close, no-media, Studio core check = SUCCESS) and MERGEABLE/CLEAN on both HOS records PRs after acting Chief (Claude) PASS (28 Oct): merged PR #366 (00b1e653 -> merge commit bb93be5c, J1004 006-010 Shorts hook/duration paper disposition) and PR #368 (97179222 -> merge commit e82d206f, J1098 Snow Short OnJ8MFu0Mi0 mature 48h Studio and retention read) into history-of-science main, deleted both feature branches, pulled main, and verified 00_Brand/Channel-Setup/tools/check_all.sh ALL CHECKS PASS. Records only; no media, upload, or YouTube changes. GBP0."
         }
       ],
       "remaining_action": "Complete: HOS PRs #366 and #368 merged into main and check_all.sh PASS",
@@ -100613,7 +100618,8 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "done_ref": "e82d206f"
     },
     {
       "id": "J1136",
