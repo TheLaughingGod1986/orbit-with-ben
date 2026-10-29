@@ -105812,13 +105812,13 @@
       "stage": "picture",
       "after": "J1191",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-29T23:21Z",
-      "eta": "2026-10-30T01:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:36Z",
-      "result": "",
+      "result": "parked for Chief: tranche 1 PASS (57/57 Flow v04 tranche-1 rows KEEP = 26 Quality + 31 Fast across Parts 01-05 incl. 8 UAT retakes; 3,170 cr used vs 7,354 expected / 7,585 cap; live Flow 18,550 -> 15,380 >= 3,000 buffer; 57/57 local + NAS sha256 verified; PIPELINE.json + production-status.md updated on HOS PR #377 @ bd45df1f; check_all.sh ALL CHECKS PASS)",
       "history": [
         {
           "at": "2026-10-29T08:36Z",
@@ -106014,6 +106014,11 @@
           "at": "2026-10-29T23:28Z",
           "by": "gemini",
           "what": "step 6 of 6 done: All 57/57 Flow v04 tranche-1 rows + 7 UAT retakes KEEP (3,170 cr used vs 7,354 expected / 7,585 cap; live Flow 15,380 >= 3,000 buffer), NAS-copied, PIPELINE.json + production-status.md updated on HOS PR #377 (bd45df1f); check_all.sh ALL CHECKS PASS"
+        },
+        {
+          "at": "2026-10-29T23:28Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: tranche 1 PASS (57/57 Flow v04 tranche-1 rows KEEP = 26 Quality + 31 Fast across Parts 01-05 incl. 8 UAT retakes; 3,170 cr used vs 7,354 expected / 7,585 cap; live Flow 18,550 -> 15,380 >= 3,000 buffer; 57/57 local + NAS sha256 verified; PIPELINE.json + production-status.md updated on HOS PR #377 @ bd45df1f; check_all.sh ALL CHECKS PASS)"
         }
       ],
       "remaining_action": "Park J1192 for Chief tranche 1 PASS",
