@@ -108062,17 +108062,22 @@
           "at": "2026-10-29T22:56Z",
           "by": "cursor",
           "what": "step 0 of 8 done: claimed; surveying rough_v01 pack"
+        },
+        {
+          "at": "2026-10-29T22:57Z",
+          "by": "cursor",
+          "what": "step 1 of 8 done: v02 mp4 540.02s sha edebeaf7 ready; prior gate txt crashed on unmapped cuts; polish JSON stale"
         }
       ],
-      "remaining_action": "Inspect J1213 v01 evidence and assembler; plan v02 repairs",
+      "remaining_action": "Remap cuts through pause-trim; rerun polish_gate and picture_qa on 540s v02",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 8,
-        "at": "2026-10-29T22:56Z",
+        "at": "2026-10-29T22:57Z",
         "by": "cursor",
-        "note": "claimed; surveying rough_v01 pack"
+        "note": "v02 mp4 540.02s sha edebeaf7 ready; prior gate txt crashed on unmapped cuts; polish JSON stale"
       },
       "taskKeys": [
         "HOS:008"
