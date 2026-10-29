@@ -107730,18 +107730,24 @@
           "at": "2026-10-29T19:08Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-29T19:08Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J0998/J0999 history and live PRs: PR365 draft open a87cd56a, no reviews/comments; PR358 open c26a79bd"
         }
       ],
-      "remaining_action": "Verify checker-fix approval and merge evidence for HOS 099",
+      "remaining_action": "Check approval history before retaining or clearing the HOS 099 hold",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-29T19:59:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-29T19:08Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Read J0998/J0999 history and live PRs: PR365 draft open a87cd56a, no reviews/comments; PR358 open c26a79bd"
       },
       "taskKeys": [
         "HOS:099"
