@@ -88139,6 +88139,11 @@
           "at": "2026-10-29T18:59Z",
           "by": "relay",
           "what": "condition verification queued: J1217"
+        },
+        {
+          "at": "2026-10-29T19:09Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T01:15:00Z"
         }
       ],
       "kind": "studio",
@@ -88155,12 +88160,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Verified 29 Oct 12:50 UTC: HOS PR365 remains draft OPEN at a87cd56a028648355061a732f027fe087db465e5 with no comments/reviews or matching Ben approval in HOS desk through 6495697066. J0998 requires that approval, merge to HOS main, then unmodified npm run channel:audit exit 0. PR358 remains c26a79bd; manually deduplicated audit reports do not satisfy the gate.",
-        "check_at": "2026-10-29T19:59:27+00:00",
-        "last_recheck": "J1205",
-        "checked_at": "2026-10-29T12:48:36+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1217"
+        "condition": "Verified 29 Oct 19:10 UTC: HOS PR365 remains draft OPEN at a87cd56a028648355061a732f027fe087db465e5, no comments/reviews, no matching approval in HOS desk through 6505915695 or OWB thread through 6505801209. J0998 and HOS Definition of done require Ben approval of this checker fix, merge to HOS main, then unmodified npm run channel:audit exit 0. PR358 remains OPEN c26a79bd. Manually deduplicated reports do not satisfy the gate.",
+        "check_at": "2026-10-30T01:15:00Z",
+        "last_recheck": "J1217",
+        "checked_at": "2026-10-29T19:09:16+00:00",
+        "checked_by": "codex"
       }
     },
     {
