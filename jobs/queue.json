@@ -106400,13 +106400,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-29T16:23Z",
-      "eta": "2026-10-29T18:23Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T12:45Z",
-      "result": "",
+      "result": "parked for Chief: Uranus v05 assembled (sha 6bcb32fa58635dc8574d6bc083c330587ae7867628e6f493d14958daf0c03cc4). Shot9 Beauty rings open 4.00-6.70s 1.0x upscale 1.778x. gate_shorts_open PASS (f0diff 3.41, loudness -14.1); polish/picture_qa/music/sfx PASS; finish_scan loop FAIL by 0.57 (7.45 > 2x open step 3.44). Probe table jobs/reviews/J1204/URANUS_V04_PROBE_2026-10-29.md; delivery URANUS_V05_DELIVERY_2026-10-29.md; UAT standalone_shorts_uranus_v05. v04 Shot16 preserved but near-black FAIL. No upload/swap. Ask Chief: accept hairline loop or authorize Shot9 2.00-4.70 v06. £0.",
       "history": [
         {
           "at": "2026-10-29T12:45Z",
@@ -106552,6 +106552,11 @@
           "at": "2026-10-29T16:46Z",
           "by": "cursor",
           "what": "step 4 of 4 done: v05 sha 6bcb32fa…; gate PASS f0diff 3.41; polish/picture/music/sfx PASS; loop FAIL 7.45>6.88"
+        },
+        {
+          "at": "2026-10-29T16:46Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Uranus v05 assembled (sha 6bcb32fa58635dc8574d6bc083c330587ae7867628e6f493d14958daf0c03cc4). Shot9 Beauty rings open 4.00-6.70s 1.0x upscale 1.778x. gate_shorts_open PASS (f0diff 3.41, loudness -14.1); polish/picture_qa/music/sfx PASS; finish_scan loop FAIL by 0.57 (7.45 > 2x open step 3.44). Probe table jobs/reviews/J1204/URANUS_V04_PROBE_2026-10-29.md; delivery URANUS_V05_DELIVERY_2026-10-29.md; UAT standalone_shorts_uranus_v05. v04 Shot16 preserved but near-black FAIL. No upload/swap. Ask Chief: accept hairline loop or authorize Shot9 2.00-4.70 v06. £0."
         }
       ],
       "remaining_action": "Parked for Chief: Uranus v05 evidence (gate PASS, loop hairline FAIL)",
