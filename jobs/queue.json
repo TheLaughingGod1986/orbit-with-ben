@@ -105282,19 +105282,24 @@
           "at": "2026-10-29T08:52Z",
           "by": "gemini",
           "what": "step 0 of 7 done: Priority overlay batch running in tmux j1191-render: P02:12_notebook_list still ok + Veo 3.1 clip harvesting (live Flow 20,870)"
+        },
+        {
+          "at": "2026-10-29T08:58Z",
+          "by": "gemini",
+          "what": "step 1 of 7 done: Live Flow read 20,870 -> 20,840 (rem_expected 5,565, buffer 15,275 >= 3,000); 2/6 priority plates KEEP (P02:12_notebook_list, P03:07_slow_news); P02:08_jar_spark..P05:06_rod_fitting running in tmux j1191-render"
         }
       ],
-      "remaining_action": "Mint the 6 priority overlay moving plates first (P2:12, P3:07, P2:08, P4:02, P1:16, P5:06)",
+      "remaining_action": "Finish 6 priority overlay moving plates in tmux j1191-render, then mint Parts 01–05 Flow rows",
       "due": "2026-11-08T20:00:00Z",
       "for": "gemini",
       "kind": "video",
       "model": "flow-veo-3.1",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 7,
-        "at": "2026-10-29T08:52Z",
+        "at": "2026-10-29T08:58Z",
         "by": "gemini",
-        "note": "Priority overlay batch running in tmux j1191-render: P02:12_notebook_list still ok + Veo 3.1 clip harvesting (live Flow "
+        "note": "Live Flow read 20,870 -> 20,840 (rem_expected 5,565, buffer 15,275 >= 3,000); 2/6 priority plates KEEP (P02:12_notebook_"
       },
       "taskKeys": [
         "HOS:008"
