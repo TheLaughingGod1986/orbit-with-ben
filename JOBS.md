@@ -44,10 +44,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1132 | mini | blocked | claude | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 | J1160 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J1165 | any | claimed | gemini | 2026-10-29T06:27Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1165 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T05:30Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 50d93d06; 0 new fixes needed))
 - J1164 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T05:25Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
 - J1163 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T05:19Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, bd780c38; 0 new fixes needed))
 - J1162 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -57,4 +57,3 @@ Recently finished:
 - J1157 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (Acting-Chief AUDIT PASS; technical sweep only. Independently verified cross-repo inventory/report hashes 057a13d5fb59/59bf1513de06, all 157 entries identical to accepted J1149 (91 OWB,66 HOS;268 files), 452/452 sidecars present/fresh (425 JSON PASS/no failed items;27 text no FAIL), four recent render hashes match and no newer local project/desk renders. Warnings and manifest-only identity limits remain; no frame/audio/film-stage or upload approval. Follow-up: existing J1100 remains blocked, credit verification 2026-10-30T10:50:00Z then authorized S2/S5 question pickups, S2 instrumental bed, caption-free tails and S6 whole-loop repair (9.26 FAIL; required below 2), gates/direct listening and Chief review. No duplicate repair job, spend or publishing. Ruling OWB #6488200741; HOS #6488208708. Review progress separate from worker 4/4.)
 - J1156 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1155 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T04:25Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 28861836; 0 new fixes needed))
-- J1154 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T04:19Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
