@@ -44,10 +44,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1132 | mini | blocked | claude | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 | J1149 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J1153 | any | claimed | gemini | 2026-10-29T05:12Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1153 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1152 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T04:09Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
 - J1151 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1150 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -57,4 +57,3 @@ Recently finished:
 - J1145 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1144 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1143 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1142 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (acting Chief (Claude) PASS: QA sweep recorded (OWB 998fc844f, HOS aae6485d; report sha 1243e6ca...). 0 FAIL across 452 gate sidecars; no repair jobs needed. J1100's v05/v06 stay held under the 29 Oct FIX ruling; the archived Venus v01 Shorts stay unscheduled (J0977).)
