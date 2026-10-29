@@ -107414,19 +107414,26 @@
           "at": "2026-10-29T18:23Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T18:23Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: claimed; PR #374 MERGED already"
         }
       ],
-      "remaining_action": "HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief",
+      "remaining_action": "Assemble HOS 008 rough v01 from locked VO + 112 KEEP rows; PR #374 already merged",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-10-29T18:23Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed; PR #374 MERGED already"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1214",
