@@ -108626,19 +108626,24 @@
           "at": "2026-10-29T22:52Z",
           "by": "codex",
           "what": "step 1 of 3 done: J1200 delivered; live checks and HOS Ben comments 6507268470,6507810925,6507831644,6508107852 approve all four exact cuts; J1219 done, J1221/J1222/J1223 open"
+        },
+        {
+          "at": "2026-10-29T22:53Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Released J0966 stale hold; worker 5/5 restored; all four approvals matched by exact filename and SHA; no additional job claimed"
         }
       ],
-      "remaining_action": "Reconcile satisfied hold with existing approved delivery jobs",
+      "remaining_action": "Report satisfied hold and existing delivery handoff",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-29T23:03:24+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-29T22:52Z",
+        "at": "2026-10-29T22:53Z",
         "by": "codex",
-        "note": "J1200 delivered; live checks and HOS Ben comments 6507268470,6507810925,6507831644,6508107852 approve all four exact cut"
+        "note": "Released J0966 stale hold; worker 5/5 restored; all four approvals matched by exact filename and SHA; no additional job "
       },
       "taskKeys": [
         "HOS:004",
