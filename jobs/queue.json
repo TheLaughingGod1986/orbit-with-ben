@@ -105328,19 +105328,24 @@
           "at": "2026-10-29T09:15Z",
           "by": "gemini",
           "what": "step 1 of 7 done: P04:02_knuckle_spark KEEP (sha=a4328f1bd850, 100 cr, live Flow 20,640, rem_expected 5,047, buffer 15,593 >= 3,000); 4/6 priority plates done, P01:16_question_sky in progress"
+        },
+        {
+          "at": "2026-10-29T09:22Z",
+          "by": "gemini",
+          "what": "step 2 of 7 done: All 6/6 priority overlay moving plates KEEP (spent 250 / 6,500 cap, live Flow 20,620, rem_expected 5,007, buffer 15,613 >= 3,000; checkpoint gemini/j1191-008-flow-mint @ 8bb97154); Part 01 batch running in tmux j1191-render"
         }
       ],
-      "remaining_action": "Finish 6 priority overlay moving plates (4/6 KEEP, P01:16_question_sky and P05:06_rod_fitting remaining), then mint Parts 01-05 Flow rows",
+      "remaining_action": "Mint Part 01 Flow rows in tmux j1191-render, then Parts 02-05",
       "due": "2026-11-08T20:00:00Z",
       "for": "gemini",
       "kind": "video",
       "model": "flow-veo-3.1",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 7,
-        "at": "2026-10-29T09:15Z",
+        "at": "2026-10-29T09:22Z",
         "by": "gemini",
-        "note": "P04:02_knuckle_spark KEEP (sha=a4328f1bd850, 100 cr, live Flow 20,640, rem_expected 5,047, buffer 15,593 >= 3,000); 4/6 "
+        "note": "All 6/6 priority overlay moving plates KEEP (spent 250 / 6,500 cap, live Flow 20,620, rem_expected 5,007, buffer 15,613 "
       },
       "taskKeys": [
         "HOS:008"
