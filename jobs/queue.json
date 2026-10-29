@@ -105725,13 +105725,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-29T10:47Z",
-      "eta": "2026-10-29T12:47Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "",
+      "result": "parked for Chief: rule-8 v02 masters ready for Ben board OK (by 10:30 on each air day); without OK the scheduled v01 airs. ZpEA8stoSPA Uranus v02 sha256 fd6bfec832bfa84d951c6e8ac2deff6c07ada71a9025e06deb2d8affc0b6f314 (UAT standalone_shorts_uranus_v02); T9fVlG3CCzU Shooting Stars v02 sha256 bee058040b3d59445962b39d2d252f56201fc18901402cce43f7ff48fe9308bd (UAT standalone_shorts_s5_v02); RLSJm59OSzI Titan v02 sha256 be16daeb17284ea3d20148a1e6f8e3ea7ab6cdec64cf22e47f92b6167780b97d (UAT standalone_shorts_s6_v02). All: gate_shorts_open+picture_qa+polish+music+loop PASS; Stay-line excised; first cut 2.7s; no upload/swap. £0.",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -105932,6 +105932,11 @@
           "at": "2026-10-29T12:03Z",
           "by": "cursor",
           "what": "step 5 of 5 done: S4+S5+S6 v02 all gates PASS; delivered repo/UAT/NAS; no upload"
+        },
+        {
+          "at": "2026-10-29T12:03Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: rule-8 v02 masters ready for Ben board OK (by 10:30 on each air day); without OK the scheduled v01 airs. ZpEA8stoSPA Uranus v02 sha256 fd6bfec832bfa84d951c6e8ac2deff6c07ada71a9025e06deb2d8affc0b6f314 (UAT standalone_shorts_uranus_v02); T9fVlG3CCzU Shooting Stars v02 sha256 bee058040b3d59445962b39d2d252f56201fc18901402cce43f7ff48fe9308bd (UAT standalone_shorts_s5_v02); RLSJm59OSzI Titan v02 sha256 be16daeb17284ea3d20148a1e6f8e3ea7ab6cdec64cf22e47f92b6167780b97d (UAT standalone_shorts_s6_v02). All: gate_shorts_open+picture_qa+polish+music+loop PASS; Stay-line excised; first cut 2.7s; no upload/swap. £0."
         }
       ],
       "remaining_action": "parked for Chief: Ben board OK by 10:30 air day for each Short",
