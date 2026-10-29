@@ -79,6 +79,11 @@
   }
   const alsoOn = rest => !rest.length ? "" : `<span class="meta">Same job also covers ${rest.length} more: ${esc(rest.map(v =>
     `${v.number}${v.type === "short" ? " Short" : ""}`).join(", "))}</span>`;
+  // Running jobs no video carries (audits, checks, batch fixes): the same set on Overview and Videos.
+  function studioJobs(b) {
+    const onVideo = new Set((((b.tracker || {}).videos) || []).filter(isWorking).map(v => activeJob(v).id));
+    return (((b.owb || {}).jobs) || []).filter(j => j.status === "claimed" && !onVideo.has(j.id));
+  }
   function jobCard(j) {
     const left = etaText(etaOf(j, Date.now())), p = j.progress && j.progress.of ? j.progress : null;
     return `<a class="row" href="#agents"><div class="thumb job">${esc(j.id)}</div><div class="body"><b>${esc(clip(j.remaining_action || j.title, 90))}</b>
@@ -222,8 +227,7 @@
     const byJob = jobGroups(s.working);
     // A running job with no video of its own (audits, checks, fixes) gets its own card too (Ben, 29 Oct: "Saying
     // running 1 but I can't see any"), so this list always matches "Jobs running".
-    const onVideo = new Set(s.working.map(v => activeJob(v).id));
-    const studio = (((b.owb || {}).jobs) || []).filter(j => j.status === "claimed" && !onVideo.has(j.id));
+    const studio = studioJobs(b);
     const cards = byJob.map(([v, ...rest]) => row(v, doing(v) + alsoOn(rest))).concat(studio.map(jobCard));
     const working = cards.slice(0, 4).join("") || empty("No agent is working this minute.");
     const ready = s.ready.map(v => row(v, `<span class="meta">${esc(v.line || "")}</span>`, uatLink(v))).join("") || empty("Nothing waiting for you.");
@@ -250,8 +254,11 @@
     const vs = (((b.tracker || {}).videos) || []).filter(v =>
       (filterCh === "all" || v.channel === filterCh) && (filterType === "all" || v.type === filterType));
     const g = videoGroups(vs);
+    // Ben, 29 Oct: "Home page saying working on 1, the video page says 0": studio jobs count here too.
+    const studio = filterType === "all" ? studioJobs(b).filter(j => filterCh === "all" || (j.repo || "owb") === filterCh.toLowerCase()) : [];
+    g.working.extra = studio.length;
     const segs = [["all", "All"], ["working", "Working"], ["queued", "Waiting"], ["backlog", "Backlog"]]
-      .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length}</small>`}</button>`).join("");
+      .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length + (g[id].extra || 0)}</small>`}</button>`).join("");
     const chips = [["ch", "all", "Both"], ["ch", "OWB", "Orbit"], ["ch", "HOS", "HOS"], ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
     const list = (items, limit) => items.slice(0, limit).map(v => row(v, isWorking(v) ? doing(v) : "")).join("")
@@ -262,7 +269,7 @@
     const show = id => seg === "all" || seg === id;
     return `<header class="top"><h1>Videos</h1></header>
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
-      ${show("working") ? section("An agent is on it now", g.working.length, jobList(g.working) || empty("No agent is on a video this minute.")) : ""}
+      ${show("working") ? section("An agent is on it now", g.working.length + studio.length, (jobList(g.working) + studio.map(jobCard).join("")) || empty("No agent is working this minute.")) : ""}
       ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
       ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
       ${seg === "all" ? section("On YouTube", g.done.length, list(g.done, 10)) : ""}`;
