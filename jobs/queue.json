@@ -108082,17 +108082,22 @@
           "at": "2026-10-29T20:30Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed J1220; starting v07 open fix"
+        },
+        {
+          "at": "2026-10-29T20:33Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: v06 sha f0b4e0a0 confirmed; open has 3-6px jitter + dup frames; writing assemble_uranus_v07"
         }
       ],
-      "remaining_action": "Locate v06 cut, inspect 0:00-0:03 shake, plan stabilize",
+      "remaining_action": "Build Uranus v07: stabilize Shot9 open/tail only, keep VO/edit",
       "due": "2026-11-02T12:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-29T20:30Z",
+        "at": "2026-10-29T20:33Z",
         "by": "cursor",
-        "note": "claimed J1220; starting v07 open fix"
+        "note": "v06 sha f0b4e0a0 confirmed; open has 3-6px jitter + dup frames; writing assemble_uranus_v07"
       }
     }
   ],
