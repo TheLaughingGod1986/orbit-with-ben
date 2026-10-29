@@ -45,6 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 | J1170 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1174 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J1175 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 
 Recently finished:
 
