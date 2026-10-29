@@ -10,7 +10,7 @@
 import path from "path";
 import type { BufferClient } from "@/lib/publishing/buffer-api";
 import type { BufferStore } from "@/lib/publishing/buffer-store";
-import { isOwnBlobUrl, type HostFile, type StoredMedia } from "@/lib/publishing/media-host";
+import { isOwnMediaUrl, type HostFile, type StoredMedia } from "@/lib/publishing/media-host";
 import type { MediaHint } from "@/lib/publishing/media-finder";
 import { videoIdFromMediaPath } from "@/lib/publishing/buffer-profile";
 import {
@@ -37,7 +37,7 @@ export type MirrorDeps = {
   /** null plans only (no API key). */
   client: BufferClient | null;
   store: BufferStore;
-  /** null when no Blob token: a local file can't be hosted. */
+  /** null without the R2_* keys: a local file can't be hosted. */
   host: HostFile | null;
   checkUrl: (url: string, want: "video" | "image") => Promise<string | null>;
   channelIds: ChannelIds;
@@ -212,7 +212,7 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
   const used = files.filter((f) => urls.get(f.role) && creates.includes(urls.get(f.role)!));
   const toHost = used.filter((f) => !f.url && f.localPath);
   if (toHost.length && !deps.host) {
-    plan.errors.push("No Blob store token (BLOB_READ_WRITE_TOKEN), so the media can't be hosted");
+    plan.errors.push("No R2 media host (set R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and R2_PUBLIC_URL), so the media can't be hosted");
     plan.actions = [];
     return { plan, results: [], sent: false, hosted };
   }
@@ -327,7 +327,7 @@ async function cleanMedia(
     }
   }
   for (const c of candidates) {
-    if (!isOwnBlobUrl(c.url) || skip.has(c.url)) continue;
+    if (!isOwnMediaUrl(c.url) || skip.has(c.url)) continue;
     if (!send || !deps.deleteMedia) {
       out.push({ ...c, deleted: false });
       continue;
