@@ -654,6 +654,20 @@
     } catch (e) {}
   }
 
+  // The studio app's Review button links here as /board#v=<video key>: bring that card into view once and mark it.
+  let focusDone = false;
+  function focusFromHash() {
+    const m = location.hash.match(/(?:^#|&)v=([^&]+)/);
+    if (focusDone || !m || !document.querySelector) return;
+    const key = decodeURIComponent(m[1]);
+    const card = [...document.querySelectorAll("article.card")].find(c => c.dataset.key === key);
+    if (!card) return;
+    focusDone = true;
+    card.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
+    card.style.outline = "2px solid #3b82f6";
+    card.style.outlineOffset = "2px";
+  }
+
   async function pollData() {
     try {
       let url = DATA + "?t=" + Date.now(), sha = "";
@@ -682,6 +696,7 @@
         board = Object.assign({}, j, { tracker: board.tracker });
       }
       render();
+      focusFromHash();
     } catch (e) {
       document.getElementById("asof").textContent = "Could not load board data";
     }

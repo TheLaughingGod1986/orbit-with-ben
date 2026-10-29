@@ -62,6 +62,43 @@ class FlowRefill(unittest.TestCase):
         self.assertNotIn("total", ai_spend_daily.flow_refill({"left": 40, "note": "n"}, 52))
 
 
+class CodexLimits(unittest.TestCase):
+    """The Codex CLI logs its usage limits in ~/.codex/sessions; the newest reading becomes the weekly % left."""
+    NOW = __import__("datetime").datetime(2026, 10, 28, 20, 0, tzinfo=__import__("datetime").timezone.utc)
+
+    def line(self, ts, weekly, five=None, **reset):
+        import json
+        rl = {"secondary": {"used_percent": weekly, "window_minutes": 10080, **reset}}
+        if five is not None:
+            rl["primary"] = {"used_percent": five, "window_minutes": 300, "resets_in_seconds": 3600}
+        return json.dumps({"timestamp": ts, "type": "event_msg", "payload": {"type": "token_count", "rate_limits": rl}})
+
+    def test_newest_reading_wins_and_reads_as_percent_left(self):
+        import ai_spend_daily
+        lines = [self.line("2026-10-28T19:00:00Z", 7, five=12, resets_in_seconds=86400),
+                 self.line("2026-10-28T10:00:00Z", 3), "not json", '{"type":"other"}']
+        r = ai_spend_daily.parse_codex(lines, self.NOW)
+        self.assertEqual((r["left"], r["total"]), (93.0, 100.0))
+        self.assertIn("weekly 7% used, resets Thu 29 Oct 19:00Z", r["note"])
+        self.assertIn("5-hour 12% used", r["note"])
+
+    def test_resets_at_epoch_is_understood(self):
+        import ai_spend_daily
+        r = ai_spend_daily.parse_codex([self.line("2026-10-28T19:00:00Z", 40, resets_at=1793836800)], self.NOW)
+        self.assertEqual(r["left"], 60.0)
+        self.assertIn("resets", r["note"])
+
+    def test_no_reading_or_an_old_one_records_nothing(self):
+        import ai_spend_daily
+        with self.assertRaises(ValueError):
+            ai_spend_daily.parse_codex(['{"type":"x"}'], self.NOW)
+        with self.assertRaises(ValueError):
+            ai_spend_daily.parse_codex([self.line("2026-10-20T19:00:00Z", 5)], self.NOW)
+
+    def test_pools_exist_for_both_accounts(self):
+        self.assertEqual((ai_spend.POOLS["codex"], ai_spend.POOLS["codex-macbook"]), ("%", "%"))
+
+
 SPENDING_PAGE = """Spending
 CURRENT PLAN
 Ultra
@@ -94,6 +131,23 @@ class CursorSpending(unittest.TestCase):
         self.assertIn("limits reset 6 Nov", r["note"])
         self.assertIn("weekly resets 16 Oct", r["note"])
         self.assertEqual(ai_spend.POOLS["cursor"], "%")
+
+    def test_unified_weekly_included_usage_layout(self):
+        import ai_spend_daily
+        page = (
+            "Billing & invoices\nOverview\nInvoices\nCurrent plan\nUltra\n100%\nused\nx\n"
+            "Weekly included usage\n· Resets Oct 29\n"
+            "Included usage with your subscription. Used before your credits.\n"
+            "Account balance\nBuy credits\nAuto top-up\n$17.14\nused this month\nResets Nov 1\n"
+            "Monthly additional usage limit\nNot set\n· Edit\nCredits available\n$0.00\n"
+        )
+        r = ai_spend_daily.parse_cursor(page)
+        self.assertEqual((r["left"], r["total"]), (0, 100))
+        self.assertEqual(r["used"], {"weekly included usage": 100})
+        self.assertIn("Weekly included usage 100% used", r["note"])
+        self.assertIn("weekly resets Oct 29", r["note"])
+        self.assertIn("$17.14 used this month (resets Nov 1)", r["note"])
+        self.assertIn("credits available $0.00", r["note"])
 
     def test_billing_expiring_row_is_available(self):
         import ai_spend_daily

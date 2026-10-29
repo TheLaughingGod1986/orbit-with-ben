@@ -7,28 +7,32 @@
   },
   "subscriptions": [
     {
-      "name": "Google AI Ultra (top tier)",
+      "name": "Google AI Ultra (30 TB)",
       "usd": 199.99,
-      "gbp": 180,
-      "tier": "25,000 Flow credits",
+      "gbp": 189.99,
+      "tier": "25,000 Flow credits · 30 TB",
       "cycleStart": "2026-10-12",
-      "covers": "Flow credits (HOS picture), Gemini checks"
+      "covers": "Flow credits (HOS picture), Gemini checks",
+      "source": "one.google.com/about/plans & pay.google.com (CDP :9222, 28 Oct 2026): Google AI Ultra 30 TB, £189.99/month billed monthly"
     },
     {
       "name": "Cursor Ultra",
       "usd": 200,
       "gbp": 180,
-      "tier": "Pro is $20, Pro+ $60",
+      "tier": "Pro is $20, Super £90, Ultra £180",
       "cycleStart": "2026-10-08",
-      "covers": "Mini worker and Chief (Grok Bot)"
+      "renews": "2026-11-24",
+      "covers": "Mini worker and Chief (Grok Bot)",
+      "source": "grok.com/dashboard/billing/invoices (CDP :9222, 28 Oct 2026): Ultra (£180/mo; invoice 99F4410625 £116.13 prorated upgrade 24 Oct from Super £90 on 15 Oct, period 24 Oct–24 Nov 2026)"
     },
     {
-      "name": "ChatGPT Plus (Codex)",
-      "usd": 20,
-      "gbp": 18,
-      "tier": "Codex is included",
+      "name": "ChatGPT Pro (Codex)",
+      "usd": 100,
+      "gbp": 90,
+      "tier": "Pro (Codex plan 'prolite'); one account on the Mac mini and the MacBook, one shared weekly limit",
       "cycleStart": "",
-      "covers": "third in line as Chief"
+      "covers": "Codex on the Mac mini and the MacBook; third in line as Chief",
+      "source": "Mini ~/.codex/auth.json benoats@gmail.com chatgpt_plan_type=prolite (J1127, 28 Oct); MacBook Codex /status 'Pro' (Ben's screenshot, 28 Oct). Price from the $100 tier at the board's 0.75 x 1.2 VAT rate; confirm on the next chatgpt.com billing read"
     },
     {
       "name": "Claude Pro",
@@ -36,7 +40,8 @@
       "gbp": 18,
       "tier": "$17 a month if paid yearly",
       "cycleStart": "",
-      "covers": "scripts, reviews, decisions, thread"
+      "covers": "scripts, reviews, decisions, thread",
+      "source": "claude.ai not signed in on Mini Chrome (28 Oct 2026); Mini ~/.claude.json is benoats@googlemail.com (organizationType=claude_pro). Not yet read from a claude.ai billing page"
     },
     {
       "name": "ElevenLabs Creator",
@@ -45,7 +50,8 @@
       "tier": "121,000 credits a month (unused credits roll over; the pool showed 209,536 on 7 Oct)",
       "cycleStart": "",
       "covers": "Ben's narrator voice, both channels",
-      "renews": "2026-10-30"
+      "renews": "2026-10-30",
+      "source": "api.elevenlabs.io/v1/user/subscription (28 Oct 2026): tier=creator, $22.00 subtotal ($26.40 incl. tax due 30 Oct 2026)"
     }
   ],
   "target": {
