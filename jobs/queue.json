@@ -105559,13 +105559,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T09:49Z",
-      "eta": "2026-10-29T11:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-29T08:59Z",
-      "result": "",
+      "result": "Verified no Ben HC swap OK in fresh threads and live board at 09:51Z. J0966 held at worker 5/5; next check 29 Oct 15:55Z. Queued delivery J1200 per Claude 6491001837 to restore exact verified media and playable cards; no second job claimed or media work performed. Reports HOS 6493503463 and OWB 6493508168. No spend or YouTube changes.",
       "history": [
         {
           "at": "2026-10-29T08:59Z",
@@ -105591,25 +105591,36 @@
           "at": "2026-10-29T09:52Z",
           "by": "codex",
           "what": "step 2 of 3 done: Live board contains no HC swap approvals; queued delivery J1200, retained J0966 5/5 and set 15:55Z recheck"
+        },
+        {
+          "at": "2026-10-29T09:53Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Evidence and delivery decision posted to HOS 6493503463 and OWB 6493508168; hold retained, worker 5/5 unchanged"
+        },
+        {
+          "at": "2026-10-29T09:53Z",
+          "by": "codex",
+          "what": "done: Verified no Ben HC swap OK in fresh threads and live board at 09:51Z. J0966 held at worker 5/5; next check 29 Oct 15:55Z. Queued delivery J1200 per Claude 6491001837 to restore exact verified media and playable cards; no second job claimed or media work performed. Reports HOS 6493503463 and OWB 6493508168. No spend or YouTube changes."
         }
       ],
-      "remaining_action": "Report verified hold and delivery task J1200",
+      "remaining_action": "Verification complete; J1200 owns delivery before swap approval",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-29T09:59:26+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-29T09:52Z",
+        "at": "2026-10-29T09:53Z",
         "by": "codex",
-        "note": "Live board contains no HC swap approvals; queued delivery J1200, retained J0966 5/5 and set 15:55Z recheck"
+        "note": "Evidence and delivery decision posted to HOS 6493503463 and OWB 6493508168; hold retained, worker 5/5 unchanged"
       },
       "taskKeys": [
         "HOS:004",
         "HOS:005",
         "HOS:007"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6493503463"
     },
     {
       "id": "J1197",
@@ -105692,10 +105703,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T09:53Z",
+      "eta": "2026-10-29T11:53Z",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
       "result": "",
@@ -105704,11 +105715,38 @@
           "at": "2026-10-29T09:36Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T09:53Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T09:54Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: claimed; locating masters"
+        },
+        {
+          "at": "2026-10-29T09:57Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: plates restored from NAS scratch; VO stay-line mapped 3.80-5.54s"
+        },
+        {
+          "at": "2026-10-29T10:00Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: tmux J1199-uranus; log ~/_desk/logs/J1199-uranus-render.log; Stay excised (45 words, last 15.77s); open PIA18182 band+ring motion"
         }
       ],
-      "remaining_action": "OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief",
+      "remaining_action": "Detached Uranus v02 render running; await .done then gate+deliver",
       "due": "2026-11-02T12:00:00Z",
-      "kind": "video"
+      "kind": "video",
+      "progress": {
+        "step": 1,
+        "of": 4,
+        "at": "2026-10-29T10:00Z",
+        "by": "cursor",
+        "note": "tmux J1199-uranus; log ~/_desk/logs/J1199-uranus-render.log; Stay excised (45 words, last 15.77s); open PIA18182 band+ri"
+      }
     },
     {
       "id": "J1200",

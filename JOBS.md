@@ -46,14 +46,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1193 | mini | open | – | – | for gemini · review · HOS 008: review the 11 J0329 code graphics in motion against the locked VO, park for Chief |  |
 | J1194 | mini | open | – | – | for gemini · listing · `gemini-argon` · Apply the 28 Oct description sweep fixes to the repo description files (text only) |  |
 | J1195 | mini | open | – | – | for gemini · listing · `gemini-argon` · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
-| J1196 | any | claimed | codex | 2026-10-29T11:49Z | chief · Chief: verify condition for J0966 |  |
 | J1197 | mini | open | – | – | 030 upload · for gemini · listing · `gemini-argon` · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
 | J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
-| J1199 | mini | open | – | – | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
+| J1199 | mini | claimed | cursor | 2026-10-29T11:53Z | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
 | J1200 | mini | open | – | – | assembly · HOS HC: restore four playable J0966 review copies and swap cards | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6491001837 |
 
 Recently finished:
 
+- J1196 done: Chief: verify condition for J0966 (Verified no Ben HC swap OK in fresh threads and live board at 09:51Z. J0966 held at worker 5/5; next check 29 Oct 15:55Z. Queued delivery J1200 per Claude 6491001837 to restore exact verified media and playable cards; no second job claimed or media work performed. Reports HOS 6493503463 and OWB 6493508168. No spend or YouTube changes.)
 - J1189 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1188 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-29T08:26Z across 57 unique videos (26 public, 14 scheduled, 17 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, HOS 80e16e4a, 0 new fixes needed))
 - J1187 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T08:18Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, e472e5712, 0 fixes needed))
@@ -63,4 +63,3 @@ Recently finished:
 - J1183 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T07:57Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 9f0f5a7c; 0 new fixes needed))
 - J1182 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1181 done: 025 Short iyvWYFP_ETA (airs Mon 9 Nov 11:30): restore its v01 master so the upcoming-Shorts gate can read it (acting Chief (Claude): the YouTube copy of iyvWYFP_ETA (sha 48466c33..., v01 gate PASS at upload) airs as is, as the J0935 ruling already kept it (NO RECUT under Keeper + c61). Its local master was overwritten in place by J0432's seam fix (0195a5fb..., archived in owbshorts.tar), so no local file matches what YouTube has. The gate's NO FILE row for it is expected and known; no swap.)
-- J1180 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
