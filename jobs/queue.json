@@ -107424,17 +107424,22 @@
           "at": "2026-10-29T18:25Z",
           "by": "cursor",
           "what": "step 1 of 5 done: step1 done: PR #374 already MERGED; J1193 code-graphic review still open — will note in pack"
+        },
+        {
+          "at": "2026-10-29T18:29Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: overlays 5/5 built; part01 assembling; tmux j1213-render; log ~/_desk/logs/j1213-render.log"
         }
       ],
-      "remaining_action": "Write _assemble_rough_v01.py and start detached full assemble of 112 KEEP rows",
+      "remaining_action": "Detached rough v01 assemble running (parts 01-05 + join + gates + deliver); await j1213-render.done",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-29T18:25Z",
+        "at": "2026-10-29T18:29Z",
         "by": "cursor",
-        "note": "step1 done: PR #374 already MERGED; J1193 code-graphic review still open — will note in pack"
+        "note": "overlays 5/5 built; part01 assembling; tmux j1213-render; log ~/_desk/logs/j1213-render.log"
       },
       "taskKeys": [
         "HOS:008"
