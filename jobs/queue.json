@@ -101440,17 +101440,22 @@
           "at": "2026-10-29T03:27Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1144; starting read-only listing check on HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-29T03:28Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Data API & deduplicated auditChannel PASS at 2026-10-29T03:28:33Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors)"
         }
       ],
-      "remaining_action": "Run YouTube Data API & deduplicated channel audit on all HOS public and scheduled videos",
+      "remaining_action": "Verify live end screens on 4 public longs and Related video pills on 22 public Shorts",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T03:27Z",
+        "at": "2026-10-29T03:28Z",
         "by": "gemini",
-        "note": "Claimed J1144; starting read-only listing check on HOS live and scheduled videos"
+        "note": "Data API & deduplicated auditChannel PASS at 2026-10-29T03:28:33Z (57 unique videos: 26 public + 14 scheduled + 17 unsch"
       },
       "taskKeys": [
         "HOS:001",
