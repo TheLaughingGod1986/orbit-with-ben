@@ -769,11 +769,12 @@ def newest_uat(ch: str, film: str) -> dict | None:
 
 
 # Streamed watch links (Ben, 15 Oct: "Clicking watch does not play the film"). Safari can't play a Files-app link, so a
-# cut is uploaded once to the Studio Kanban's Blob store and the button opens /api/watch?v=<id> (plays in the browser;
+# cut is uploaded once to the Cloudflare R2 bucket (the Vercel Blob store until 23 Oct; no Blob fallback since 29 Oct)
+# and the button opens /api/watch?v=<id> (plays in the browser;
 # needs Ben's board code, never public in board.json). The register maps the cut's iCloud path (relative to CloudDocs) to
 # its id: WATCH_REGISTER in the repo (committed by whoever uploads by hand) plus WATCH_LOCAL_REGISTER on the Mini (written
-# by the auto-upload below). Auto-upload runs only when env WATCH_UPLOAD_KEY is set and the file is at most
-# WATCH_AUTO_MAX bytes (the Hobby Blob allowance is 1 GB in total; bigger cuts need a phone proxy first, e.g. 720p
+# by the auto-upload below). Auto-upload runs only when the four R2 keys are set (r2_ready) and the file is at most
+# WATCH_AUTO_MAX bytes (bigger cuts need a phone proxy first, e.g. 720p
 # ~1.3 Mbit/s, uploaded with scripts/watch_upload.mjs and added to the register). Otherwise the Files link stays.
 SITE_URL = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
 WATCH_REGISTER = ROOT / "05_Analytics" / "kanban" / "watch_uploads.json"
@@ -849,9 +850,9 @@ def r2_ready(env_file: Path | None = None) -> bool:
 
 
 def auto_upload(wid: str, path: Path, rel: str) -> bool:
-    key = os.environ.get("WATCH_UPLOAD_KEY", "")
+    # R2 only (29 Oct 2026): WATCH_UPLOAD_KEY no longer enables an upload, because the Vercel Blob fallback is gone.
     try:
-        if not (key or r2_ready()) or path.stat().st_size > WATCH_AUTO_MAX:
+        if not r2_ready() or path.stat().st_size > WATCH_AUTO_MAX:
             return False
     except OSError:
         return False
