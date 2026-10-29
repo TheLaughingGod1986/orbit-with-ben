@@ -108002,13 +108002,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-29T22:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
-      "result": "parked for Chief: HOS 008 rough v02 diagnostic delivered (PR https://github.com/TheLaughingGod1986/history-of-science/pull/376). Master 540.02s sha256 edebeaf7… on desk _desk/008/rough_v02 and NAS …/008_Lightning-Franklin/07_Edit-Project/rough_v02/. Repairs: 06_same_thing sequential, 10_metal_easy full-frame CG, 09_window_storm left-5pct, pause-trim≤9:00 with remapped cuts. polish_gate PASS (0 fail/6 WARN), picture_qa PASS (0 fail/6 WARN). music SKIPPED_NO_BED = NOT PASS; SFX unfinished. J1193 still open (required for final graphics PASS). No Ben Ready-for-OK; £0; no upload. J1213 remains held.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T19:15Z",
@@ -108144,18 +108144,16 @@
           "at": "2026-10-29T23:15Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 008 rough v02 diagnostic delivered (PR https://github.com/TheLaughingGod1986/history-of-science/pull/376). Master 540.02s sha256 edebeaf7… on desk _desk/008/rough_v02 and NAS …/008_Lightning-Franklin/07_Edit-Project/rough_v02/. Repairs: 06_same_thing sequential, 10_metal_easy full-frame CG, 09_window_storm left-5pct, pause-trim≤9:00 with remapped cuts. polish_gate PASS (0 fail/6 WARN), picture_qa PASS (0 fail/6 WARN). music SKIPPED_NO_BED = NOT PASS; SFX unfinished. J1193 still open (required for final graphics PASS). No Ben Ready-for-OK; £0; no upload. J1213 remains held."
+        },
+        {
+          "at": "2026-10-29T23:43Z",
+          "by": "codex",
+          "what": "reopened: Chief FIX / NOT APPROVED recorded at 6a1c1b133 jobs/reviews/J1218/CHIEF_REVIEW_2026-10-29.md. Resume SAME assembly job for separate diagnostic v03, preserve v01/v02. Fix consecutive P5 full-frame graphics at 452.965-469.338s; remove all NAS deletion/overwrite branches before running; correct contact-sheet times; supply WARN/freeze motion evidence, v02-missing episode gate and HOS pipeline/board updates. J1193 remains mandatory for final graphics approval; repairs can proceed now. Music/SFX unfinished, no spend or Ben watch. PR376 unmerged; J1213 remains held."
         }
       ],
       "remaining_action": "Parked for Chief review of rough v02",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
-      "progress": {
-        "step": 7,
-        "of": 8,
-        "at": "2026-10-29T23:15Z",
-        "by": "cursor",
-        "note": "PR #376; polish+picture PASS; music SKIPPED_NO_BED; J1193 open; NAS+desk sha edebeaf7 540.02s"
-      },
       "taskKeys": [
         "HOS:008"
       ]
