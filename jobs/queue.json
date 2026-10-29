@@ -108088,18 +108088,26 @@
           "at": "2026-10-29T20:50Z",
           "by": "cursor",
           "what": "step 2 of 5 done: v07a loop/polish FAIL; rebuilding dampen keep=0.35 zoom=1.03"
+        },
+        {
+          "at": "2026-10-29T20:57Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: v07 built sha 97de7112; loop FAIL reverse; UAT iCloud empty/deadlock"
         }
       ],
-      "remaining_action": "Rebuild v07 with velocity dampen on v06 window; gates",
+      "remaining_action": "Fix loop reverse from stabilize; redeliver UAT+NAS",
       "due": "2026-11-02T12:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 0,
         "of": 5,
-        "at": "2026-10-29T20:50Z",
+        "at": "2026-10-29T20:57Z",
         "by": "cursor",
-        "note": "v07a loop/polish FAIL; rebuilding dampen keep=0.35 zoom=1.03"
-      }
+        "note": "v07 built sha 97de7112; loop FAIL reverse; UAT iCloud empty/deadlock"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1221",
