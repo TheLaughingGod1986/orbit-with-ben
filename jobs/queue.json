@@ -107503,17 +107503,22 @@
           "at": "2026-10-29T19:10Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T19:10Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: claimed; starting PR 374 merge check"
         }
       ],
-      "remaining_action": "Detached rough v01 assemble running (parts 01-05 + join + gates + deliver); await j1213-render.done",
+      "remaining_action": "Merge HOS PR #374 once checks green",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 0,
         "of": 5,
-        "at": "2026-10-29T18:29Z",
+        "at": "2026-10-29T19:10Z",
         "by": "cursor",
-        "note": "overlays 5/5 built; part01 assembling; tmux j1213-render; log ~/_desk/logs/j1213-render.log"
+        "note": "claimed; starting PR 374 merge check"
       },
       "taskKeys": [
         "HOS:008"
