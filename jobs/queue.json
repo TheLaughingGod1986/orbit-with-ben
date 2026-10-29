@@ -1,5 +1,5 @@
 {
-  "next_id": 1195,
+  "next_id": 1196,
   "jobs": [
     {
       "id": "J0001",
@@ -105381,6 +105381,34 @@
         }
       ],
       "remaining_action": "Apply the 28 Oct description sweep fixes to the repo description files (text only)",
+      "kind": "listing"
+    },
+    {
+      "id": "J1195",
+      "title": "OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "MacBook lane, text only. For 031 (Magnetic Field Flip, script locked v03, J0340 PASS) and 032 (Titan, locked v01, J0301 PASS), write 11_Upload-Package/description_DRAFT_v01.txt and metadata_DRAFT_v01.json in each film folder, following the house style of the newest finished packages (029, 028): a question first line that does not give the ending away, 2-3 short paragraphs, a chapters block with section names only (times stay '?:??' until the VO is locked), 3 title options (search-shaped, under 60 characters), 10-15 tags. Use the description sweep rules (05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28.md): no internal words, job ids, version tags or file names. The local model may draft; Codex checks every line against the script. Commit, then jobs.py block <id> --agent macbook --reason 'parked for Chief: 031/032 package drafts' --git. No YouTube, no Studio, no media. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T08:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T08:49Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags)",
       "kind": "listing"
     }
   ],
