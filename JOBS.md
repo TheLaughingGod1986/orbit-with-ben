@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
-| J1132 | mini | claimed | codex | 2026-10-29T03:58Z | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
+| J1132 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 | J1137 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1139 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
