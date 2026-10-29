@@ -49,6 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1134 | mini | open | – | – | for gemini · review · `gemini-argon` · Update evidence PRs #314, #315, #317 with main (merge commit, resolve record conflicts) so the Chief can merge |  |
 | J1135 | mini | open | – | – | for gemini · review · `gemini-argon` · HOS: merge records PRs #366 (J1004 paper) and #368 (J1098 Snow read) after the acting Chief PASS |  |
 | J1136 | any | open | – | – | chief · Chief: verify condition for J1132 |  |
+| J1137 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
 
