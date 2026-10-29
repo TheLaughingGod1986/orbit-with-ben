@@ -107067,19 +107067,24 @@
           "at": "2026-10-29T16:54Z",
           "by": "codex",
           "what": "step 2 of 3 done: Reopened J1003 with timestamp, metrics, source commit and SHA256; original read-only scope preserved."
+        },
+        {
+          "at": "2026-10-29T16:54Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirmed J1003 open and hold cleared. Retention curve and audit analysis remain J1003 work."
         }
       ],
-      "remaining_action": "Verify reopened job state and report the evidence",
+      "remaining_action": "Verification complete; J1003 ready for read-only measurement",
       "kind": "chief",
       "recheck_of": "J1003",
       "due": "2026-10-29T17:02:10+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-29T16:54Z",
         "by": "codex",
-        "note": "Reopened J1003 with timestamp, metrics, source commit and SHA256; original read-only scope preserved."
+        "note": "Readback confirmed J1003 open and hold cleared. Retention curve and audit analysis remain J1003 work."
       },
       "taskKeys": [
         "OWB:027"
