@@ -107873,10 +107873,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T20:00Z",
+      "eta": "2026-10-29T22:00Z",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
       "result": "",
@@ -107915,6 +107915,11 @@
           "at": "2026-10-29T19:22Z",
           "by": "cursor",
           "what": "released: Detached render: tmux j1218-render; log ~/_desk/logs/j1218-render.log; done ~/_desk/logs/j1218-render.done; WORK=/Volumes/data/mac-mini-archive/tmp-render-scratch/j1218-hos008-rough-v02; assembler _assemble_rough_v02.py (v01 preserved untracked + .preserved_j1218). Next run: if .done missing leave running; if present read exit+log, finish gates/deliver/PR/park. J1193 still open — needs worker alongside."
+        },
+        {
+          "at": "2026-10-29T20:00Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Detached v02 render running; await gates + desk deliver + park for Chief",
