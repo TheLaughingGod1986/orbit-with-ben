@@ -1,5 +1,5 @@
 {
-  "next_id": 1209,
+  "next_id": 1210,
   "jobs": [
     {
       "id": "J0001",
@@ -84036,6 +84036,11 @@
           "at": "2026-10-29T09:51Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-29T15:55:00Z"
+        },
+        {
+          "at": "2026-10-29T15:56Z",
+          "by": "relay",
+          "what": "condition verification queued: J1209"
         }
       ],
       "kind": "video",
@@ -84072,10 +84077,11 @@
       "hold": {
         "type": "input",
         "condition": "J1196: no explicit Ben HC swap OK in fresh OWB comments through 6493415367, HOS through 6492383263 or live board checks at 09:51Z. HOS-007 OK is J0925 long only. J1200 now owns playable UAT delivery and four review cards per Claude 6491001837; verify that delivery before asking for swaps. Keep worker 5/5, no rebuild. First cutoff 12 Nov 20:00Z; original fallback and publishing restrictions unchanged.",
-        "check_at": "2026-10-29T15:55:00Z",
+        "check_at": "2026-10-29T16:56:51+00:00",
         "last_recheck": "J1196",
         "checked_at": "2026-10-29T09:51:55+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1209"
       }
     },
     {
@@ -106781,6 +106787,37 @@
         "condition": "PR350 decided: all submitted MEO openings rejected, S6 missing input. Elected Chief checks only newly supplied materially different eligible meteor/Titan footage with source/rights/hash/sequence/aspect-correct crop evidence. No new broad search. If absent, retain hold for final 5 Nov 12:00Z check; then close unsuccessful source branch and record existing scheduled-copy fallback. No automatic assembly, PASS or publishing.",
         "check_at": "2026-10-30T18:00:00Z"
       }
+    },
+    {
+      "id": "J1209",
+      "title": "Chief: verify condition for J0966",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0966: J1196: no explicit Ben HC swap OK in fresh OWB comments through 6493415367, HOS through 6492383263 or live board checks at 09:51Z. HOS-007 OK is J0925 long only. J1200 now owns playable UAT delivery and four review cards per Claude 6491001837; verify that delivery before asking for swaps. Keep worker 5/5, no rebuild. First cutoff 12 Nov 20:00Z; original fallback and publishing restrictions unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0966 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-29T15:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T15:56Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: J1200 delivers four playable review copies/cards, then Ben reviews the swaps",
+      "kind": "chief",
+      "recheck_of": "J0966",
+      "due": "2026-10-29T16:56:51+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
