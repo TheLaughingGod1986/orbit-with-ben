@@ -108513,9 +108513,14 @@
           "at": "2026-10-29T23:44Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T23:44Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: claimed; starting read-back + sha verify"
         }
       ],
-      "remaining_action": "Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30)",
+      "remaining_action": "Read back old id x_3L_IdYgEc; verify master sha256",
       "due": "2026-11-14T20:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -108533,12 +108538,14 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-29T23:44Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed; starting read-back + sha verify"
+      },
+      "taskKeys": [
+        "HOS:005"
+      ]
     },
     {
       "id": "J1224",
