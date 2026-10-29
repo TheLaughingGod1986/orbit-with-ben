@@ -50,6 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1195 | macbook | open | – | – | listing · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
 | J1196 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1197 | mini | open | – | – | 030 upload · listing · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
+| J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 
 Recently finished:
 

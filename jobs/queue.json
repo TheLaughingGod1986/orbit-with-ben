@@ -1,5 +1,5 @@
 {
-  "next_id": 1198,
+  "next_id": 1199,
   "jobs": [
     {
       "id": "J0001",
@@ -105540,6 +105540,34 @@
       ],
       "remaining_action": "Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only)",
       "kind": "listing"
+    },
+    {
+      "id": "J1198",
+      "title": "023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief (Claude), 29 Oct audit (LEARNINGS rule 11): Venus has the best long watch time (30.6% average viewed) but 1.6% CTR on 705 impressions. Packaging is the gap.\nWait: thumbnail-only test T011 (A MELTS LEAD vs B EARTH'S TWIN, armed 25 Oct by J0962) must have ended in Studio. Verify the end time in Studio; do not infer it from elapsed days. If it is still running, record a structured wait (condition + next check) and stop.\nThen: keep the thumbnail Studio applied as the winner fixed, record T011's result (every variant's watch-time share, winner, dates) in 05_Analytics/tests/THUMB_LEDGER.json first, and arm a title-only Test & Compare: A 'What Happened to Venus?' (live) vs B 'Venus Was Earth's Twin. Why Is It Hot Enough to Melt Lead?' (58 characters). If Studio warns that starting deletes the ended test's report, stop and park: that click waits on Ben (same as J1132). Read back that the test is running; add the ledger row. Never change privacy or schedule. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T09:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T09:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends",
+      "kind": "studio"
     }
   ],
   "focus": [],
