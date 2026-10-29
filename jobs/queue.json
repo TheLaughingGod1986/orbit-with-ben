@@ -105786,10 +105786,10 @@
       "stage": "picture",
       "after": "J1191",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-29T21:16Z",
-      "eta": "2026-10-29T23:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:36Z",
       "result": "",
@@ -105933,6 +105933,11 @@
           "at": "2026-10-29T21:37Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Part 04 5/13 KEEP (34/57 cumulative across Parts 01-04: +P04:02_spray_paint, +P04:02_spray_paint_c1, +P04:02_spray_paint_c2, +P04:05_minute_second, +P04:06_pretty_nearly), NAS-copied, committed @ 339729d5; freed 5.7 GiB disk space (now 15.7 GiB free); detached tmux j1192-render running P04:06_pretty_nearly_c1..P05:12_clay_handoff_c1 (live Flow 16,670, spent 1,880 / 7,585 cap, rem_expected 2,611, buffer 14,059 >= 3,000)"
+        },
+        {
+          "at": "2026-10-29T21:37Z",
+          "by": "gemini",
+          "what": "released: Part 04 5/13 KEEP (34/57 cumulative across Parts 01-04: +P04:02_spray_paint, +P04:02_spray_paint_c1, +P04:02_spray_paint_c2, +P04:05_minute_second, +P04:06_pretty_nearly; NAS-copied; committed on gemini/j1192-009-tranche1-flow-mint @ 339729d5; live Flow 16,670, spent 1,880 / 7,585 cap, rem_expected 2,611, buffer 14,059 >= 3,000). Detached Parts 04-05 tranche-1 Flow batch (--until-part 05, 23 remaining rows) running in tmux session j1192-render; log: /Users/benjaminoats/_desk/logs/j1192-render.log; done file: /Users/benjaminoats/_desk/logs/j1192-render.done (missing while running; do not start a second copy; after batch completes, run 10-cr Fast retakes on P03:03_shot_slow, P03:04_shot_faster, P04:02_spray_paint_c1, P04:02_spray_paint_c2 reusing parent stills)."
         }
       ],
       "remaining_action": "Mint remaining HOS 009 v04 tranche-1 Flow plates: Part 04 (8 rows) + Part 05 (15 rows) in detached tmux j1192-render, then Fast retakes",
