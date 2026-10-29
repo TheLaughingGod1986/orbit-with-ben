@@ -107894,10 +107894,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-29T21:39Z",
-      "eta": "2026-10-29T23:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
       "result": "",
@@ -107981,6 +107981,11 @@
           "at": "2026-10-29T21:50Z",
           "by": "cursor",
           "what": "step 2 of 7 done: 540.02s capped master on NAS; contact_sheet ~73/112; no second render"
+        },
+        {
+          "at": "2026-10-29T21:50Z",
+          "by": "cursor",
+          "what": "released: detached tmux j1218-render; log ~/_desk/logs/j1218-render.log; done ~/_desk/logs/j1218-render.done; WORK /Volumes/data/mac-mini-archive/tmp-render-scratch/j1218-hos008-rough-v02; master 540.02s already capped; finish-existing running contact+gates+deliver. Next: if .done missing leave running; exit 0 → PR assembler+evidence from clean worktree, park for Chief with J1193 dep + SKIPPED_NO_BED; non-zero → read log. Assembler fixes in shared HOS checkout (uncommitted): contact clamp/PNG local, trailing-cap local no faststart, --finish-existing."
         }
       ],
       "remaining_action": "Detached finish-existing: contact sheet + gates + deliver still running in tmux",
