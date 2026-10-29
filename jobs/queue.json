@@ -106325,17 +106325,22 @@
           "at": "2026-10-29T17:49Z",
           "by": "cursor",
           "what": "step 1 of 5 done: all 4 masters local SHA MATCH + ffprobe OK; PHONE derivatives present beside masters"
+        },
+        {
+          "at": "2026-10-29T17:51Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: UAT hos_007_s04_smallpox_test_v04.mp4 read hit EDEADLK (errno 11); local SHA+ffprobe OK; NAS Harvey under never_saw_v04/"
         }
       ],
-      "remaining_action": "Copy verified masters+PHONE into HOS UAT and NAS; verify playability",
+      "remaining_action": "Write versioned J1200 UAT delivery copies from local verified masters; avoid EDEADLK UAT paths",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-29T17:49Z",
+        "at": "2026-10-29T17:51Z",
         "by": "cursor",
-        "note": "all 4 masters local SHA MATCH + ffprobe OK; PHONE derivatives present beside masters"
+        "note": "UAT hos_007_s04_smallpox_test_v04.mp4 read hit EDEADLK (errno 11); local SHA+ffprobe OK; NAS Harvey under never_saw_v04/"
       },
       "taskKeys": [
         "HOS:007",
