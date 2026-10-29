@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1122 | mini | open | – | – | for gemini · review · `gemini-argon` · Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only) |  |
-| J1129 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · HOS 002 Periodic Table: arm thumb test (live A vs existing MISSING ELEMENT v02), description + chapter fixes, ledger (J1126 decision) |  |
+| J1129 | mini | claimed | codex | 2026-10-29T02:42Z | for codex · studio · `gpt-6.1-sol` · HOS 002 Periodic Table: arm thumb test (live A vs existing MISSING ELEMENT v02), description + chapter fixes, ledger (J1126 decision) |  |
 | J1130 | mini | open (after J1129) | – | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
 | J1132 | mini | open | – | – | studio · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
