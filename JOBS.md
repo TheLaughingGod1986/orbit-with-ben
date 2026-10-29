@@ -46,10 +46,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1178 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1181 | mini | blocked | gemini | – | qa · 025 Short iyvWYFP_ETA (airs Mon 9 Nov 11:30): restore its v01 master so the upcoming-Shorts gate can read it |  |
 | J1183 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1184 | any | claimed | codex | 2026-10-29T09:43Z | chief · Chief: verify condition for J0966 |  |
 
 Recently finished:
 
+- J1184 done: Chief: verify condition for J0966 (Verified current thread and board evidence: no Ben HC swap OK. J0966 remains blocked at worker 5/5; retry 29 Oct 08:41:58Z with recheck J1184. HOS-007 approval is long master J0925 only. Playable UAT/cards remain unverified; next is delivery verification then swap approval. HOS desk 6490991603 and OWB 6490993996 posted. No rebuild, spend or YouTube changes.)
 - J1182 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1180 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1179 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 4 HOS longs; CTR hits vs 4%: OWB Jupiter -jmMROGoZCM 5.1% (1/11 reported), HOS Germs _C92tIJCk8A 7.1% (1/3 reported). 73 OWB + 21 HOS Shorts: stayed-to-watch 94/94, average percentage 72/94; 2 newest Shorts have no lifetime totals yet. Main 022575da5; tracker published ef66caf7 and byte-verified. HOS audit: 4 duplicate-live errors on repeated uU12JA5rMWg records; no Studio settings changed.)
@@ -59,4 +59,3 @@ Recently finished:
 - J1174 done: Chief: verify condition for J0936 (Verified unmet condition: J0936 remains blocked, next check 2026-10-30T10:50Z aligned with J1100 reset/live-balance hold. PR333 0a7fcb6a and completed Gemini S6 review checked: S2/S5 pickups and clean S2 bed unfinished, S6 recorded loop FAIL unresolved, full verified delivery and Chief replacement PASS absent, then Ben corrected-swap approvals required. J1032 PASS and S1/S3/S4 swaps satisfied; historical 6/6, deadlines and fallbacks preserved. No spend or publishing changes.)
 - J1173 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T06:23Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, fe2f53ca; 0 new fixes needed))
 - J1172 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1171 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T06:12Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 2f50421c; 0 new fixes needed))
