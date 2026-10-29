@@ -80369,6 +80369,11 @@
           "at": "2026-10-29T06:27Z",
           "by": "relay",
           "what": "condition verification queued: J1174"
+        },
+        {
+          "at": "2026-10-29T06:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T10:50:00Z"
         }
       ],
       "kind": "video",
@@ -80396,15 +80401,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "J1100: correct S2/S5/S6, pass final gates and Chief review, then obtain Ben swap approvals",
+      "remaining_action": "J1100: finish S2/S5/S6 corrections, gates and delivery; Chief review then Ben swap approvals",
       "hold": {
         "type": "input",
-        "condition": "J1032 v04 assembly and Chief replacement PASS satisfied (28 Oct, PR305 merged 719fdf02); S1/S3/S4 Ben-approved swaps completed in J1101/J1102/J1103. S2/S5/S6 require J1100 corrected v06 media, all final gates and direct listening, durable verified delivery, elected-Chief replacement PASS, then Ben approval of each corrected swap. Latest FIX 6483981556; checkpoint 6484203741 reports S6 loop FAIL and delivery blocked; S2/S5 pickups require actual ElevenLabs reset/balance verification after 30 Oct 10:50Z. Preserve historical 6/6 and existing deadlines/fallbacks; do not repeat completed swaps.",
-        "check_at": "2026-10-29T07:27:28+00:00",
-        "last_recheck": "J1104",
-        "checked_at": "2026-10-29T00:17:49+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1174"
+        "condition": "J1100 S2/S5 corrected v06 cuts still require authorized pickups after 30 Oct 10:50Z with live subscription balance verified, clean instrumental S2 bed, final gates and direct listening. S6 v06 Gemini listening completed, but recorded whole-frame loop 9.26 FAIL remains unresolved; full verified UAT/NAS delivery and elected-Chief replacement PASS remain absent. Then Ben must approve each corrected S2/S5/S6 swap. J1032 v04 PASS and completed S1/S3/S4 swaps J1101/J1102/J1103 remain satisfied; preserve J0936 historical 6/6, all deadlines and v01 fallbacks. Evidence: PR333 head 0a7fcb6a, V06_CHECKPOINT, local GEMINI_S6_V06.md and Chief FIX 6483981556.",
+        "check_at": "2026-10-30T10:50:00Z",
+        "last_recheck": "J1174",
+        "checked_at": "2026-10-29T06:39:37+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
