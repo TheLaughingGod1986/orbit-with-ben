@@ -1,5 +1,5 @@
 {
-  "next_id": 1203,
+  "next_id": 1204,
   "jobs": [
     {
       "id": "J0001",
@@ -106012,6 +106012,34 @@
       ],
       "remaining_action": "Ready to close (posting restored). Elected Chief: jobs.py next --agent claude --can ben --id J1202, then done. Code half (register at upload, tests, PR) not built: split out if still wanted.",
       "kind": "assembly"
+    },
+    {
+      "id": "J1203",
+      "title": "HOS back-post the 3 held Shorts (Herschel, Snow, cathode rays) from Studio Download of the live cut",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Finish J1202's three held HOS back-posts from the exact live cut (Chief, 29 Oct 2026; Claude's option on HOS #180 6495511853). Ben's OK on J1202 (\"Yes, back-post all five older HOS Shorts\") covers this source.\n\nShorts: Herschel infrared c2q7w0pgcn8, John Snow OnJ8MFu0Mi0, cathode rays LCZRHUyTiq0 (all @HistoryOfScienceYT).\n1. In YouTube Studio, use Download on each video to get the live cut. Save each as a NEW file beside the Short's other versions, named *_live_studio_dl.mp4, copy it to HOS UAT on the NAS and check sha256. Never overwrite or rename any existing render or manifest (new Never rule, OWB e72be473a / HOS 9ee5d9d6).\n2. Record each in social/hos/UPLOADS.json as the source file with its sha256 and \"source\": \"studio_download\".\n3. Mirror through the standard mirrorVideo path to HOS Instagram, Facebook and TikTok (TikTok via Buffer only), one Short per day at 11:30 London, in free days after Tue 3 Nov, never on a day that already has an HOS post. Keep each channel at or under 10 scheduled posts (free plan cap); if the cap is hit, schedule what fits and leave the rest for the daily check to add as slots free.\n4. Post results on HOS #180 with a from=cursor header: file paths, sha256, Buffer post ids and London dates. £0.\n",
+      "ref": "J1202",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-29T11:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T11:34Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Download live cuts from Studio, register, mirror to Buffer",
+      "kind": "studio"
     }
   ],
   "focus": [],

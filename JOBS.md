@@ -51,6 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1200 | mini | open | – | – | assembly · HOS HC: restore four playable J0966 review copies and swap cards | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6491001837 |
 | J1201 | mini | open | – | – | qa · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
 | J1202 | mini | open | – | – | assembly · HOS Buffer: register every HOS Short at upload and mirror it to Buffer when it goes public (replaces 'Buffer held until public'); dry-run only, no HOS posting |  |
+| J1203 | mini | open | – | – | studio · HOS back-post the 3 held Shorts (Herschel, Snow, cathode rays) from Studio Download of the live cut | J1202 |
 
 Recently finished:
 
