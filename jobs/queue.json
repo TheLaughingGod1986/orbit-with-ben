@@ -105786,10 +105786,10 @@
       "stage": "picture",
       "after": "J1191",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-29T21:16Z",
+      "eta": "2026-10-29T23:16Z",
       "created_by": "claude",
       "created_at": "2026-10-29T08:36Z",
       "result": "",
@@ -105913,6 +105913,11 @@
           "at": "2026-10-29T19:58Z",
           "by": "gemini",
           "what": "released: Part 03 complete (7/7 KEEP, 29/57 cumulative across Parts 01-03; NAS-copied; committed on gemini/j1192-009-tranche1-flow-mint @ 052e6374; live Flow 16,810, spent 1,740 / 7,585 cap, rem_expected 2,950, buffer 13,860 >= 3,000; note: after batch completes, run 10-cr Fast Set D retakes on P03:03_shot_slow and P03:04_shot_faster reusing 02_cannon_world_t1.png). Detached Part 04 tranche-1 Flow batch (--until-part 04, 13 rows) running in tmux session j1192-render; log: /Users/benjaminoats/_desk/logs/j1192-render.log; done file: /Users/benjaminoats/_desk/logs/j1192-render.done (missing while running; do not start a second copy)."
+        },
+        {
+          "at": "2026-10-29T21:16Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 04 (13 rows running in detached tmux j1192-render), then Part 05 (15 rows)",
