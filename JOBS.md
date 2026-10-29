@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
 | J1190 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1192 | mini | claimed | gemini | 2026-10-29T21:24Z | 009 picture · for gemini · video · `flow-veo-3.1` · HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354) |  |
+| J1192 | mini | open (after J1191) | – | – | 009 picture · for gemini · video · `flow-veo-3.1` · HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354) |  |
 | J1193 | mini | open | – | – | for gemini · review · HOS 008: review the 11 J0329 code graphics in motion against the locked VO, park for Chief |  |
 | J1197 | mini | open | – | – | 030 upload · for gemini · listing · `gemini-argon` · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
 | J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
