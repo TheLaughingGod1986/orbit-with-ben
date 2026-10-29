@@ -108051,13 +108051,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-29T20:29Z",
-      "eta": "2026-10-29T22:29Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-29T20:26Z",
-      "result": "",
+      "result": "parked for Chief: Uranus v07 delivered sha 21dda9ab1c636c70678404ebd8c0d2d82e8f20af20bec3ae427483d2bf51e609. All gates PASS (open/loop/loudness/polish/music/picture_qa/hitch). UAT: OWB UAT/standalone_shorts_uranus_v07/ + NAS same path. Before/after: owb_sa_s4_uranus_v07_open_before_after.jpg + jobs/reviews/J1220/. No upload. Chief: re-point J1212 awaits_ben to v07 for Ben OK by Tue 3 Nov 10:30 London.",
       "history": [
         {
           "at": "2026-10-29T20:26Z",
@@ -108118,6 +108118,11 @@
           "at": "2026-10-29T21:15Z",
           "by": "cursor",
           "what": "step 4 of 5 done: v07 sha 21dda9ab gates PASS; UAT iCloud+NAS delivered"
+        },
+        {
+          "at": "2026-10-29T21:15Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Uranus v07 delivered sha 21dda9ab1c636c70678404ebd8c0d2d82e8f20af20bec3ae427483d2bf51e609. All gates PASS (open/loop/loudness/polish/music/picture_qa/hitch). UAT: OWB UAT/standalone_shorts_uranus_v07/ + NAS same path. Before/after: owb_sa_s4_uranus_v07_open_before_after.jpg + jobs/reviews/J1220/. No upload. Chief: re-point J1212 awaits_ben to v07 for Ben OK by Tue 3 Nov 10:30 London."
         }
       ],
       "remaining_action": "Park for Chief: re-point J1212 awaits_ben to v07",
