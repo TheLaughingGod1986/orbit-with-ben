@@ -108615,9 +108615,14 @@
           "at": "2026-10-29T22:51Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T22:52Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Reading J0966 history, J1200 delivery evidence and current board decisions"
         }
       ],
-      "remaining_action": "Verify readiness: J1200 delivers four playable review copies/cards, then Ben reviews the swaps",
+      "remaining_action": "Verify delivered review cards and explicit HC swap approvals",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-29T23:03:24+00:00",
@@ -108625,11 +108630,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-29T22:51Z",
+        "at": "2026-10-29T22:52Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Reading J0966 history, J1200 delivery evidence and current board decisions"
+      },
+      "taskKeys": [
+        "HOS:004",
+        "HOS:005",
+        "HOS:007"
+      ]
     },
     {
       "id": "J1227",
