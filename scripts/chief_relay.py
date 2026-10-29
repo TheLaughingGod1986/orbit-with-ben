@@ -1013,7 +1013,9 @@ def claude_jobs_to_reroute(data: dict, at: dt.datetime, out: bool) -> list:
     addressed to another agent, never twice (a job already rerouted walks on only via stranded_jobs / walk_on)."""
     picked = []
     for j in data.get("jobs", []):
-        if not routing.claude_owned(j) or j.get("kind") == "chief" or j.get("needs") == "ben":
+        # A MacBook job stays on the MacBook (29 Oct 2026: J1194/J1195 were handed to Gemini on the Mini while
+        # Claude was marked down, though they were never Claude's to run).
+        if not routing.claude_owned(j) or j.get("kind") == "chief" or j.get("needs") in ("ben", "macbook"):
             continue
         if j.get("rerouted_from") or (j.get("for") and j["for"] != "claude"):
             continue

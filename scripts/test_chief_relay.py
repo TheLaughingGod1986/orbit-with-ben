@@ -506,12 +506,13 @@ class Relay(unittest.TestCase):
                               '{"id": "J0301", "kind": "review", "status": "open", "needs": "cloud"}, '
                               '{"id": "J0302", "kind": "assembly", "status": "open", "needs": "mini"}, '
                               '{"id": "J0303", "kind": "chief", "status": "open", "needs": "cloud"}, '
-                              '{"id": "J0304", "model": "claude-opus-5-5", "status": "open", "needs": "ben"}]}')
+                              '{"id": "J0304", "model": "claude-opus-5-5", "status": "open", "needs": "ben"}, '
+                              '{"id": "J0305", "kind": "listing", "status": "open", "needs": "macbook"}]}')
         cr.mark_down("claude", "usage limit", T0 + 120 * MIN, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
         self.assertEqual(self.job(q, "J0301").get("for"), "cursor")
-        for jid in ("J0302", "J0303", "J0304"):
+        for jid in ("J0302", "J0303", "J0304", "J0305"):  # J0305: a MacBook job stays on the MacBook
             self.assertNotIn("rerouted_from", self.job(q, jid), jid)
         self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())
 
