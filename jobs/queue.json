@@ -1,5 +1,5 @@
 {
-  "next_id": 1220,
+  "next_id": 1221,
   "jobs": [
     {
       "id": "J0001",
@@ -108037,6 +108037,35 @@
       "taskKeys": [
         "HOS:007"
       ]
+    },
+    {
+      "id": "J1220",
+      "title": "J1212 Ben changes: Uranus Short v06 -> v07, steady the shaky image at 0:00, gates, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben pressed Changes on J1212 (Uranus Short ZpEA8stoSPA, 'Why Does Uranus Have 21-Year Winters?', airs Tue 3 Nov 11:30 London) at 20:12 London 29 Oct, OWB #264 comment 6507250708: '0:00 the image is shaky'. Source cut: OWB UAT/standalone_shorts_uranus_v06/owb_sa_s4_uranus_v06.mp4 (sha f0b4e0a0...). Make v07 that fixes ONLY the opening shake: stabilise the first shot (e.g. vidstab/deshake, or a steadier window of the same NASA SVS 20390 ring animation) so frame 0 is steady but still moving subject footage (rule 8), still opens on 'Uranus is tipped 97 degrees', no meta-promise, VO/edit otherwise unchanged. Watch 0:00-0:03 frame by frame and attach a before/after contact strip. Run all gates from the final sha (open f0diff, loop, loudness I/TP). Deliver to OWB UAT/standalone_shorts_uranus_v07/ and NAS, no upload. Park for Chief review (Claude while acting Chief), who re-points J1212 awaits_ben to v07. Ben must OK by Tue 3 Nov 10:30 London; if not, v01 airs as scheduled.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-29T20:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T20:26Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build Uranus v07 with a steady 0:00, gate it, park for Chief",
+      "due": "2026-11-02T12:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
