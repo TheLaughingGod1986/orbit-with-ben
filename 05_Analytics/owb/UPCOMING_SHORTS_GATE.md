@@ -1,11 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-10-28 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-10-29 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-10-28 11:30 | [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) `gJwNJN_yMKU` | **no** | NOT REGISTERED |
-| 2026-10-28 11:30 | [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/BbsyFrV8kCY) `BbsyFrV8kCY` | yes | PASS |
 | 2026-10-29 11:30 | [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) `_a66uhRDips` | yes | PASS |
 | 2026-10-30 11:30 | [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) `6dcL5rBmHPM` | yes | PASS |
 | 2026-10-31 11:30 | [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) `VfDm3E2bUgU` | yes | PASS |
@@ -14,18 +12,9 @@ Written by `gate_upcoming.py` at 2026-10-28 06:40 London for Shorts scheduled in
 | 2026-11-07 11:30 | [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) `T9fVlG3CCzU` | yes | PASS |
 | 2026-11-09 11:30 | [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) `iyvWYFP_ETA` | yes | NO FILE |
 | 2026-11-10 11:30 | [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/RLSJm59OSzI) `RLSJm59OSzI` | yes | PASS |
+| 2026-11-11 11:30 | [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) `B1z2dv7m7Vk` | yes | PASS |
 
 ## Details
-
-### gJwNJN_yMKU: NOT REGISTERED
-
-Not in social/UPLOADS.json, so its export file is unknown.
-
-### BbsyFrV8kCY: report-only (would fail 60% stayed gate)
-
-- pushed still at frame 0 (mean 0–1.5 s frame diff 1.00 < 1.50) — use moving footage
-- first cut at 3.77s > 3.0s (scene-change detect)
-- spoken text contains meta-promise ("stay, and i'll show you")
 
 ### ZpEA8stoSPA: report-only (would fail 60% stayed gate)
 
