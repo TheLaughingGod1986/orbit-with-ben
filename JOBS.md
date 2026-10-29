@@ -52,7 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1201 | mini | open | – | – | for gemini · qa · `gemini-argon` · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
 | J1202 | mini | open | – | – | assembly · HOS Buffer: register every HOS Short at upload and mirror it to Buffer when it goes public (replaces 'Buffer held until public'); dry-run only, no HOS posting |  |
 | J1204 | mini | open | – | – | assembly · J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence |  |
-| J1205 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
+| J1205 | any | claimed | codex | 2026-10-29T14:47Z | chief · Chief: verify condition for J0999 |  |
 
 Recently finished:
 
