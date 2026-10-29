@@ -105272,21 +105272,28 @@
           "at": "2026-10-29T08:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T08:38Z",
+          "by": "gemini",
+          "what": "step 0 of 7 done: Starting J1191: checking live Flow balance, disk space, and 008 boards v03"
         }
       ],
-      "remaining_action": "HOS 008 picture: mint the Flow rows of PICTURE_PLAN_v03 (live read first, keep >=3,000 after; cap 5,605 expected)",
+      "remaining_action": "Read live Flow balance, verify >=3,000 buffer after 5,605 expected, and mint the 6 priority overlay plates first",
       "due": "2026-11-08T20:00:00Z",
       "for": "gemini",
       "kind": "video",
       "model": "flow-veo-3.1",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-29T08:36Z",
+        "of": 7,
+        "at": "2026-10-29T08:38Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J1191: checking live Flow balance, disk space, and 008 boards v03"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1192",
