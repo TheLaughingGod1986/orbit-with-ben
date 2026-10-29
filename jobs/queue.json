@@ -102953,17 +102953,22 @@
           "at": "2026-10-29T05:16Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Planned 3-step read-only HOS live/scheduled listing check (Data API + auditChannel, public watch/Shorts endscreen & Related check, update live_fixes/2026-10-29.md)"
+        },
+        {
+          "at": "2026-10-29T05:17Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Queried YouTube Data API + deduplicated auditChannel + playlistItems.list at 2026-10-29T05:17:31Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors)"
         }
       ],
-      "remaining_action": "Run read-only YouTube Data API + deduplicated auditChannel check on HOS videos",
+      "remaining_action": "Verify 4 public long end screens and 22 public Shorts Related pills on live watch/Shorts pages",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T05:16Z",
+        "at": "2026-10-29T05:17Z",
         "by": "gemini",
-        "note": "Planned 3-step read-only HOS live/scheduled listing check (Data API + auditChannel, public watch/Shorts endscreen & Rela"
+        "note": "Queried YouTube Data API + deduplicated auditChannel + playlistItems.list at 2026-10-29T05:17:31Z (57 unique videos: 26 "
       },
       "taskKeys": [
         "HOS:001",
