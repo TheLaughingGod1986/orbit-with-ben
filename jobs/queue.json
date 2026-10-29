@@ -84051,6 +84051,11 @@
           "at": "2026-10-29T17:51Z",
           "by": "cursor",
           "what": "waits on Ben: swap -I_GHK-GcFs (Jenner smallpox test) to hos_007_s04_smallpox_test_v04 (sha 3ef3fa773750); J1200 playable PHONE (by 2026-11-13 10:30 London)"
+        },
+        {
+          "at": "2026-10-29T17:51Z",
+          "by": "cursor",
+          "what": "waits on Ben: swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE (by 2026-11-15 10:30 London)"
         }
       ],
       "kind": "video",
@@ -84092,17 +84097,30 @@
         "checked_at": "2026-10-29T15:59:32+00:00",
         "checked_by": "codex"
       },
-      "awaits_ben": {
-        "what": "swap -I_GHK-GcFs (Jenner smallpox test) to hos_007_s04_smallpox_test_v04 (sha 3ef3fa773750); J1200 playable PHONE",
-        "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_007_s04_smallpox_test_v04_PHONE.mp4",
-        "version": "v04",
-        "due": "2026-11-13T10:30Z",
-        "airs": "2026-11-13T11:30Z",
-        "ifNot": "original scheduled file airs unchanged; no slip",
-        "title": "Jenner smallpox test HC v04",
-        "number": "007",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "swap -I_GHK-GcFs (Jenner smallpox test) to hos_007_s04_smallpox_test_v04 (sha 3ef3fa773750); J1200 playable PHONE",
+          "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_007_s04_smallpox_test_v04_PHONE.mp4",
+          "version": "v04",
+          "due": "2026-11-13T10:30Z",
+          "airs": "2026-11-13T11:30Z",
+          "ifNot": "original scheduled file airs unchanged; no slip",
+          "title": "Jenner smallpox test HC v04",
+          "number": "007",
+          "type": "short"
+        },
+        {
+          "what": "swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE",
+          "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_005_s03_never_saw_v04_PHONE.mp4",
+          "version": "v04",
+          "due": "2026-11-15T10:30Z",
+          "airs": "2026-11-15T11:30Z",
+          "ifNot": "original scheduled file airs unchanged; no slip",
+          "title": "Harvey never saw HC v04",
+          "number": "005",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J0967",
