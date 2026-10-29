@@ -102705,13 +102705,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-29T04:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T04:57Z",
-      "result": "parked for Chief: J1160 QA sweep complete across OWB (9ce93edac) and HOS (16e07b34) with byte-identical J1160_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 efa9177c256de8b353c7088a47fdca8f54e4424992b17f4195c064c5e612ac00) and J1160_QA_SWEEP_REPORT_2026-10-29.md (sha256 271dfe1cfd1fff9c1ff61d9a63239c67a0a56a095c6fd8dad3a7b5ab5897821f). 0 new OWB or HOS renders since J1157; all 157 entries (91 OWB + 66 HOS; 268 media files) and 452/452 applicable picture_qa/polish_gate/music_gate sidecars verified fresh with 0 FAIL (distinct from separate J1100 whole-loop FAIL 9.26 >= 2 on S6 v06; J1100 credit/loop hold at 2026-10-30T10:50:00Z and HELD_CHANGES_REQUIRED preserved; top-level JSON summary counters synchronized 1-to-1; 0 duplicate repair jobs; £0 spend).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T04:57Z",
@@ -102752,18 +102752,16 @@
           "at": "2026-10-29T05:02Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1160 QA sweep complete across OWB (9ce93edac) and HOS (16e07b34) with byte-identical J1160_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 efa9177c256de8b353c7088a47fdca8f54e4424992b17f4195c064c5e612ac00) and J1160_QA_SWEEP_REPORT_2026-10-29.md (sha256 271dfe1cfd1fff9c1ff61d9a63239c67a0a56a095c6fd8dad3a7b5ab5897821f). 0 new OWB or HOS renders since J1157; all 157 entries (91 OWB + 66 HOS; 268 media files) and 452/452 applicable picture_qa/polish_gate/music_gate sidecars verified fresh with 0 FAIL (distinct from separate J1100 whole-loop FAIL 9.26 >= 2 on S6 v06; J1100 credit/loop hold at 2026-10-30T10:50:00Z and HELD_CHANGES_REQUIRED preserved; top-level JSON summary counters synchronized 1-to-1; 0 duplicate repair jobs; £0 spend)."
+        },
+        {
+          "at": "2026-10-29T05:36Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief AUDIT PASS recorded on OWB #6488899395 and HOS #6488904571 after independent evidence verification; reopen only to claim and close audit. J1100 remains held for credits at 2026-10-30T10:50:00Z and whole-loop repair; no production approval."
         }
       ],
       "remaining_action": "Await Chief verification of J1160 QA sweep inventory and report",
       "kind": "qa",
-      "backlog": "both-qa-sweep",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-29T05:01Z",
-        "by": "gemini",
-        "note": "Step 4/4 done: Committed and pushed byte-identical J1160_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 efa9177c256d) and J1"
-      }
+      "backlog": "both-qa-sweep"
     },
     {
       "id": "J1161",
