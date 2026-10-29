@@ -44,10 +44,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1132 | mini | blocked | claude | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 | J1149 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J1151 | any | claimed | gemini | 2026-10-29T05:01Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1151 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1150 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1148 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T03:49Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors, 4/4 public long end screens, 22/22 public Shorts Related pills, 0 new fixes; HOS 751914b1))
 - J1147 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -57,4 +57,3 @@ Recently finished:
 - J1143 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1142 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (acting Chief (Claude) PASS: QA sweep recorded (OWB 998fc844f, HOS aae6485d; report sha 1243e6ca...). 0 FAIL across 452 gate sidecars; no repair jobs needed. J1100's v05/v06 stay held under the 29 Oct FIX ruling; the archived Venus v01 Shorts stay unscheduled (J0977).)
 - J1141 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md: 57 unique HOS videos verified — 26 public (including AMSriTQ-lcQ -> GHZDsiH7L7A), 14 scheduled, 17 private; 4/4 public long end screens and 22/22 public Short Related pills verified live at 2026-10-29T02:37Z; 0 new fixes needed)
-- J1140 done: Correct J1137 QA sweep loop-failure evidence on both channels (Acting-Chief Codex PASS, evidence correction only. Verified byte-identical OWB e78557f56/HOS 7447cc61 report e31f07de7212 and inventory e8dac78d21f8 against durable source measurements. v05 numeric loop PASS whole0.84/masked0.87 but caption-tail FIX; v06 whole9.26 FAIL against <2, masked0.95, no waiver. Original hashes, raw gates, counts, scope and HELD_CHANGES_REQUIRED preserved. Follow-up: close J1137 corrected technical sweep as this review consequence; production remains J1100, verification at 2026-10-30T10:50:00Z for reset/live credits then authorized pickups, instrumental bed, caption-free loop repair, all gates and direct listening. No duplicate repair job or media approval.)
