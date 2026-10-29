@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1109 | any | open | – | – | chief · Chief: verify condition for J1098 |  |
 | J1120 | any | open | – | – | chief · Chief: verify condition for J0961 |  |
 | J1121 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
-| J1122 | macbook | open | – | – | review · Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only) |  |
+| J1122 | mini | open | – | – | for gemini · review · `gemini-argon` · Description sweep, both channels: leaked internal jargon, spoiler first lines, broken chapters -> fix list (text only) |  |
 | J1129 | mini | open | – | – | studio · HOS 002 Periodic Table: arm thumb test (live A vs existing MISSING ELEMENT v02), description + chapter fixes, ledger (J1126 decision) |  |
 | J1130 | mini | open (after J1129) | – | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
