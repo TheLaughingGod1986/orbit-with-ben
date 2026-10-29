@@ -107461,10 +107461,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T19:10Z",
+      "eta": "2026-10-29T21:10Z",
       "created_by": "claude",
       "created_at": "2026-10-29T17:52Z",
       "result": "",
@@ -107498,6 +107498,11 @@
           "at": "2026-10-29T18:29Z",
           "by": "cursor",
           "what": "released: Detached: tmux j1213-render; log ~/_desk/logs/j1213-render.log; done-file ~/_desk/logs/j1213-render.done. PR #374 already MERGED. Assembler: HOS 02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_assemble_rough_v01.py. J1193 still open (noted in pack). No music bed. Next run: if .done missing leave running; if present read exit and finish gates/deliver/park for Chief."
+        },
+        {
+          "at": "2026-10-29T19:10Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Detached rough v01 assemble running (parts 01-05 + join + gates + deliver); await j1213-render.done",
