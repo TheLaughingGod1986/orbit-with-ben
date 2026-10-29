@@ -1,5 +1,5 @@
 {
-  "next_id": 1213,
+  "next_id": 1214,
   "jobs": [
     {
       "id": "J0001",
@@ -107301,6 +107301,35 @@
       "remaining_action": "Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK",
       "due": "2026-11-03T10:30:00Z",
       "kind": "studio"
+    },
+    {
+      "id": "J1213",
+      "title": "HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "After J1191 PASS (29 Oct). 1) Merge HOS PR #374 (picture records) once its checks are green. 2) Assemble 02_Video-Projects/008_Lightning-Franklin from the locked VO and the 112 KEEP rows per PICTURE_PLAN_v03 / the v03 boards (the 5 overlay rows composite their alpha graphics on the minted moving plates; apply J1193's code-graphic review if it has landed, else note it). 3) No music bed without the Chief's OK. 4) picture_qa, polish_gate, music_gate (VO only), episode gate; full-runtime contact sheet. 5) Deliver rough v01 to repo/UAT/NAS with sha256 and park for Chief. Ben's watch only after Chief PASS. GBP0.",
+      "ref": "",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T17:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T17:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief",
+      "due": "2026-11-12T20:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
