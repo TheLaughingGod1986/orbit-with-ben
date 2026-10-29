@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1193 | mini | open | – | – | for gemini · review · HOS 008: review the 11 J0329 code graphics in motion against the locked VO, park for Chief |  |
 | J1194 | macbook | open | – | – | listing · Apply the 28 Oct description sweep fixes to the repo description files (text only) |  |
 | J1195 | macbook | open | – | – | listing · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
+| J1196 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 
 Recently finished:
 
