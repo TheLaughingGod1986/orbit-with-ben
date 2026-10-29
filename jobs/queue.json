@@ -1,5 +1,5 @@
 {
-  "next_id": 1219,
+  "next_id": 1220,
   "jobs": [
     {
       "id": "J0001",
@@ -84085,6 +84085,11 @@
           "at": "2026-10-29T17:51Z",
           "by": "cursor",
           "what": "waits on Ben: swap 4WUs0beKn0A (vaccine-name) to hos_007_s05_vacca_jesty_v05 (sha e5ea76f012fb); J1200 playable PHONE (by 2026-11-17 10:30 London)"
+        },
+        {
+          "at": "2026-10-29T20:15Z",
+          "by": "chief",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J1219"
         }
       ],
       "kind": "video",
@@ -84127,17 +84132,6 @@
         "checked_by": "codex"
       },
       "awaits_ben": [
-        {
-          "what": "swap -I_GHK-GcFs (Jenner smallpox test) to hos_007_s04_smallpox_test_v04 (sha 3ef3fa773750); J1200 playable PHONE",
-          "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_007_s04_smallpox_test_v04_PHONE.mp4",
-          "version": "v04",
-          "due": "2026-11-13T10:30Z",
-          "airs": "2026-11-13T11:30Z",
-          "ifNot": "original scheduled file airs unchanged; no slip",
-          "title": "Jenner smallpox test HC v04",
-          "number": "007",
-          "type": "short"
-        },
         {
           "what": "swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE",
           "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_005_s03_never_saw_v04_PHONE.mp4",
@@ -107945,6 +107939,54 @@
       "taskKeys": [
         "HOS:008"
       ]
+    },
+    {
+      "id": "J1219",
+      "title": "Swap HOS Short -I_GHK-GcFs (007 Jenner) to Ben-OK'd v04 (Private, same slot Fri 13 Nov 11:30)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# Swap HOS Short -I_GHK-GcFs (007 Jenner smallpox test) to Ben-OK'd v04 (Private, same slot Fri 13 Nov 11:30)\n\nBen OK'd J0966.1 v04 on the Studio Kanban at Thu 29 Oct 20:13 London (HOS #180 6507268470: \"watched it, looks good\"). Chief (Grok) queued this delivery job.\nMaster `02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s04_smallpox_test_v04.mp4` (HOS checkout on the mini), sha256 3ef3fa77375083622e8f8d6dee99f009cf60cbc27fc01f9d21857ba6b5b0c4e7; meta `hos_007_s04_smallpox_test_v04_meta.json`; review copy HOS UAT/J1200_J0966_review_2026-10-29/hos_007_s04_smallpox_test_v04_PHONE.mp4 (J1200). Evidence: J0966 history, J1005 audio QA, J1200.\nAirs Fri 13 Nov 11:30 London. Only this one Short: the other three J0966 cuts (x_3L_IdYgEc, -sa2t7dAtCk, 4WUs0beKn0A) still wait on Ben; don't touch them.\n\n1. Read back the old id -I_GHK-GcFs (privacy, publishAt, title, description, tags, cover, Related). It should be Private and scheduled for 13 Nov 11:30; otherwise park for Chief.\n2. Verify the master sha256, then upload it as a NEW Private video with the same publishAt. Copy title, description, tags, frame-0 cover and Related (J0875: the 007 long) from the old id. Captions en-GB from the v04 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing deleted, no Replace.\n4. Verify the swap (verify-swap.ts --job <this job> --old -I_GHK-GcFs --new <new>), update HOS UPLOADS.json, gate_shorts_open status, and any queued jobs that name -I_GHK-GcFs (J0875 etc.) to the new id; post the read-back on HOS desk #180.\nDone by 20:00 London Thu 12 Nov; if it fails after that, leave the original scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6507268470",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-29T20:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T20:15Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-29T20:15Z",
+          "by": "chief",
+          "what": "approved by Ben: swap -I_GHK-GcFs (Jenner smallpox test) to hos_007_s04_smallpox_test_v04 (sha 3ef3fa773750); J1200 playable PHONE v04 (asked in J0966)"
+        }
+      ],
+      "remaining_action": "Swap HOS Short -I_GHK-GcFs (007 Jenner) to Ben-OK'd v04 (Private, same slot Fri 13 Nov 11:30)",
+      "due": "2026-11-12T20:00:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap -I_GHK-GcFs (Jenner smallpox test) to hos_007_s04_smallpox_test_v04 (sha 3ef3fa773750); J1200 playable PHONE",
+        "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_007_s04_smallpox_test_v04_PHONE.mp4",
+        "version": "v04",
+        "airs": "2026-11-13T11:30Z",
+        "title": "Jenner smallpox test HC v04",
+        "number": "007",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0966",
+        "askId": "J0966.1",
+        "okAt": "2026-10-29T20:15Z",
+        "okRef": "6507268470"
+      }
     }
   ],
   "focus": [],
