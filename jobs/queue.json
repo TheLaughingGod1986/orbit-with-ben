@@ -103520,13 +103520,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-29T06:02Z",
-      "eta": "2026-10-29T07:02Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T05:51Z",
-      "result": "",
+      "result": "parked for Chief: J1170 QA sweep complete across OWB (11dd6b7f8) and HOS (6b0342d0) with byte-identical J1170_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 20fcb4a840e6b8fb8f5a86df63ddf8fcdcca467be4f93a8aa0e3bdf190627283) and J1170_QA_SWEEP_REPORT_2026-10-29.md (sha256 cef7f29ec219338cb90aa1242f404cdcf8882448e4b10241f81226cc37335daa). 0 new OWB or HOS renders since J1167; all 157 entries (91 OWB + 66 HOS; 268 media files) and 452/452 applicable picture_qa/polish_gate/music_gate sidecars verified fresh with 0 FAIL (distinct from separate J1100 whole-loop FAIL 9.26 >= 2 on S6 v06; J1100 credit/loop hold at 2026-10-30T10:50:00Z and HELD_CHANGES_REQUIRED preserved; opening report delta heading updated to J1167 2026-10-29T05:44Z -> 2026-10-29T06:05Z; top-level JSON summary counters synchronized 1-to-1; 0 duplicate repair jobs; £0 spend).",
       "history": [
         {
           "at": "2026-10-29T05:51Z",
@@ -103562,6 +103562,11 @@
           "at": "2026-10-29T06:06Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 done: Committed and pushed byte-identical J1170_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 20fcb4a840e6) and J1170_QA_SWEEP_REPORT_2026-10-29.md (sha256 cef7f29ec219) in HOS (6b0342d0) and OWB (11dd6b7f8). 157 entries (91 OWB + 66 HOS; 268 media files); 452/452 applicable sidecars fresh with 0 FAIL; 0 new renders since J1167; 0 new repair jobs created. Parking J1170 for Chief review."
+        },
+        {
+          "at": "2026-10-29T06:06Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J1170 QA sweep complete across OWB (11dd6b7f8) and HOS (6b0342d0) with byte-identical J1170_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 20fcb4a840e6b8fb8f5a86df63ddf8fcdcca467be4f93a8aa0e3bdf190627283) and J1170_QA_SWEEP_REPORT_2026-10-29.md (sha256 cef7f29ec219338cb90aa1242f404cdcf8882448e4b10241f81226cc37335daa). 0 new OWB or HOS renders since J1167; all 157 entries (91 OWB + 66 HOS; 268 media files) and 452/452 applicable picture_qa/polish_gate/music_gate sidecars verified fresh with 0 FAIL (distinct from separate J1100 whole-loop FAIL 9.26 >= 2 on S6 v06; J1100 credit/loop hold at 2026-10-30T10:50:00Z and HELD_CHANGES_REQUIRED preserved; opening report delta heading updated to J1167 2026-10-29T05:44Z -> 2026-10-29T06:05Z; top-level JSON summary counters synchronized 1-to-1; 0 duplicate repair jobs; £0 spend)."
         }
       ],
       "remaining_action": "Park J1170 for Chief review",
