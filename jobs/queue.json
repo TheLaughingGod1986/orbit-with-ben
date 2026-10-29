@@ -101516,18 +101516,30 @@
           "at": "2026-10-29T03:33Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started listing audit of last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-29T03:34Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Checked live watch/Shorts endpoints at 2026-10-29T03:34Z for top 10 public videos plus private status of _a66uhRDips"
         }
       ],
-      "remaining_action": "Audit last 10 live OWB videos (chapters, sources, end screens, Related)",
+      "remaining_action": "Verify chapters, sources, end screens, and Related video readbacks against local cut lists and manifests",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-29T03:33Z",
+        "at": "2026-10-29T03:34Z",
         "by": "gemini",
-        "note": "Started listing audit of last 10 live OWB videos"
-      }
+        "note": "Checked live watch/Shorts endpoints at 2026-10-29T03:34Z for top 10 public videos plus private status of _a66uhRDips"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
