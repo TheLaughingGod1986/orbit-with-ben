@@ -107516,10 +107516,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T19:00Z",
+      "eta": "2026-10-29T21:00Z",
       "created_by": "relay",
       "created_at": "2026-10-29T18:20Z",
       "result": "",
@@ -107528,6 +107528,11 @@
           "at": "2026-10-29T18:20Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T19:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Link the Blood Short to its long video",
@@ -107535,7 +107540,15 @@
       "recheck_of": "J0241",
       "due": "2026-10-29T19:20:47+00:00",
       "due_kind": "condition-verification",
-      "urgent": 5
+      "urgent": 5,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T19:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1215",
