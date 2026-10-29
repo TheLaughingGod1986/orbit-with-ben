@@ -107508,17 +107508,22 @@
           "at": "2026-10-29T19:10Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed; starting PR 374 merge check"
+        },
+        {
+          "at": "2026-10-29T19:11Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: PR374 already MERGED; prior assemble exit 0; verifying deliveries"
         }
       ],
-      "remaining_action": "Merge HOS PR #374 once checks green",
+      "remaining_action": "Verify delivered rough v01 sha256 + run episode gate; park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-29T19:10Z",
+        "at": "2026-10-29T19:11Z",
         "by": "cursor",
-        "note": "claimed; starting PR 374 merge check"
+        "note": "PR374 already MERGED; prior assemble exit 0; verifying deliveries"
       },
       "taskKeys": [
         "HOS:008"
