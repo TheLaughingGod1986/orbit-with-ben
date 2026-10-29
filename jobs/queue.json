@@ -100318,9 +100318,14 @@
           "at": "2026-10-29T00:37Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T00:37Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Reverify next-day eligibility, then arm and read back approved X-rays title-only test",
+      "remaining_action": "Verify HOS 001 test completion and approval history",
       "kind": "chief",
       "recheck_of": "J1132",
       "due": "2026-10-29T01:30:45+00:00",
@@ -100329,10 +100334,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-29T00:37Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:001"
+      ]
     },
     {
       "id": "J1137",
