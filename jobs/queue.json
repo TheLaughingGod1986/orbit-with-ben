@@ -100392,9 +100392,14 @@
           "at": "2026-10-29T01:59Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed J1132; checking the actual Studio test report before any title test."
+        },
+        {
+          "at": "2026-10-29T02:04Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Studio report: thumbnail-only test ran 14 Oct 2026 21:40 to 28 Oct 2026 21:17; insufficient impressions for a winner. Day-after condition met on 29 Oct."
         }
       ],
-      "remaining_action": "Verify current Studio thumbnail test completion and title-test eligibility",
+      "remaining_action": "Check title-only test setup while preserving the completed thumbnail experiment",
       "kind": "studio",
       "taskKeys": [
         "HOS:001"
@@ -100409,11 +100414,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T01:59Z",
+        "at": "2026-10-29T02:04Z",
         "by": "codex",
-        "note": "Claimed J1132; checking the actual Studio test report before any title test."
+        "note": "Studio report: thumbnail-only test ran 14 Oct 2026 21:40 to 28 Oct 2026 21:17; insufficient impressions for a winner. Da"
       }
     },
     {
