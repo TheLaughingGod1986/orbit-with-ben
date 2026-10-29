@@ -106385,13 +106385,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-29T15:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T12:45Z",
-      "result": "parked for Chief: Uranus v03 assembled (sha 87a6a091fc85e81fe453fca37ef0367ed63ceeb4234e58675290b63f70009ac3) with S2-first VO + Shot4 artist open; gate_shorts_open FAIL f0diff 0.36<1.50 (Shot4 max natural ~0.8 on gate metric; only ≥1.50 at ~3× speed). loop FAIL as consequence. polish/music/sfx/picture_qa PASS. Evidence: jobs/reviews/J1204/URANUS_V03_DELIVERY_2026-10-29.md + UAT standalone_shorts_uranus_v03. Need Chief call: exception / assist / new source / speed. No upload. £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T12:45Z",
@@ -106497,18 +106497,16 @@
           "at": "2026-10-29T15:18Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Uranus v03 assembled (sha 87a6a091fc85e81fe453fca37ef0367ed63ceeb4234e58675290b63f70009ac3) with S2-first VO + Shot4 artist open; gate_shorts_open FAIL f0diff 0.36<1.50 (Shot4 max natural ~0.8 on gate metric; only ≥1.50 at ~3× speed). loop FAIL as consequence. polish/music/sfx/picture_qa PASS. Evidence: jobs/reviews/J1204/URANUS_V03_DELIVERY_2026-10-29.md + UAT standalone_shorts_uranus_v03. Need Chief call: exception / assist / new source / speed. No upload. £0."
+        },
+        {
+          "at": "2026-10-29T16:15Z",
+          "by": "chief",
+          "what": "reopened: Chief review of Uranus v03 (87a6a091...): FIX, no PASS, no Ben card. Decision on the four options: (1) gate exception REFUSED - SOURCE_PLAN_RULING says all gates unchanged, and the open gate exists because our Shorts sit near 30% stayed against the 60% target; (2) no motion assist - any added zoom/jitter/overlay motion is the substitute the ruling forbids; (4) 3x time-compression REFUSED - it distorts the Beauty Pass and is not truthful pace. (3) APPROVED, bounded: one no-spend source pass for a different genuinely moving Uranus clip at 1.0x speed and <=2.35x upscale. Candidates: the other shots in NASA SVS 20390 and other public-domain NASA SVS Uranus visualisations (tilt/seasons, rings, moons orbiting), Voyager 2 Uranus approach sequences, and ESA/Webb Uranus video only if it is real video with its credit. Probe each candidate with gate_shorts_open.frame0_diff_0_1_5s on a silent 2.7 s crop BEFORE assembling; only assemble v04 from a window that reaches >=1.50 natively. Keep S2-first VO, URANUS first word, all captions/rules from J1199/SOURCE_PLAN_RULING. Also fix loudness into -14.5..-13.5 and re-run finish_scan loop. Record source URL, licence/credit, SHA-256 and in/out in jobs/reviews/J1204/. If nothing clears by 1 Nov 18:00Z, stop: write the probe table, close the Uranus branch unsuccessful, and the scheduled ZpEA8stoSPA copy airs Tue 3 Nov as J1199's fallback. Preserve v02/v03 files. No upload, swap, Buffer, UPLOADS or spend. GBP0."
         }
       ],
       "remaining_action": "Parked: Uranus v03 built but gate f0diff FAIL — Chief decision on Shot4 vs 1.50 threshold",
       "due": "2026-11-02T12:00:00Z",
       "kind": "assembly",
-      "progress": {
-        "step": 3,
-        "of": 5,
-        "at": "2026-10-29T15:18Z",
-        "by": "cursor",
-        "note": "v03 sha 87a6a091…; gate FAIL f0diff 0.36; Shot4 max natural ~0.8; delivery jobs/reviews/J1204/URANUS_V03_DELIVERY_2026-1"
-      },
       "taskKeys": [
         "OWB:032"
       ]
