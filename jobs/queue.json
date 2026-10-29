@@ -93518,10 +93518,10 @@
       "stage": "",
       "after": "J0935",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T01:04Z",
+      "eta": "2026-10-29T02:04Z",
       "created_by": "gemini",
       "created_at": "2026-10-28T04:11Z",
       "result": "",
@@ -93560,6 +93560,11 @@
           "at": "2026-10-29T01:02Z",
           "by": "claude",
           "what": "reopened: acting Chief (Claude): Ben OK'd v07 on the board (/api/checks OWB-J1059 verdict ok, version v07, 2026-10-28T23:57:41Z). Swap TtgHNLXfDSs to v07 per the 28 Oct amendment (sha256 e9f848d9...), Private, publishAt Wed 11 Nov 11:30 London; read back; never Public, no Replace, no delete."
+        },
+        {
+          "at": "2026-10-29T01:04Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Swap OWB 025 Mars Opening Short TtgHNLXfDSs to wed11_opening_testA_v05 after Ben's OK",
@@ -93575,6 +93580,14 @@
         "due": "2026-11-11T10:30Z",
         "airs": "2026-11-11T11:30Z",
         "ifNot": "v02 airs as scheduled"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T01:04Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
