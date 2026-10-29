@@ -105676,13 +105676,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-10-29T12:21Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-29T14:09:23.660514+00:00",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:49Z",
-      "result": "parked for Chief: 031/032 package drafts; PR #347 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/347; checked locked scripts and package constraints; GBP0",
+      "result": "acting Chief (Claude) PASS, PR #347 merged: 031/032 package drafts meet LEARNINGS rules 10-14 (three distinct picture concepts each, scale/consequence, concept C bright background; scenario titles under 60 characters; no internal words). Final title/thumbnail picks at launch.",
       "history": [
         {
           "at": "2026-10-29T08:49Z",
@@ -105723,6 +105723,11 @@
           "at": "2026-10-29T12:24Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: 031/032 package drafts; PR #347 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/347; checked locked scripts and package constraints; GBP0"
+        },
+        {
+          "at": "2026-10-29T14:09Z",
+          "by": "claude",
+          "what": "done: acting Chief (Claude) PASS, PR #347 merged: 031/032 package drafts meet LEARNINGS rules 10-14 (three distinct picture concepts each, scale/consequence, concept C bright background; scenario titles under 60 characters; no internal words). Final title/thumbnail picks at launch."
         }
       ],
       "remaining_action": "Chief reviews 031/032 package drafts in PR #347",
@@ -106277,13 +106282,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-29T12:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T12:45Z",
-      "result": "parked for Chief: no compliant v03 possible — S4/S5/S6 openings have zero existing moving subject footage on disk (J0914 RAW = Neptune/ISS only; J1199 plates = JPEG stills only; 032 Titan clips empty). Inventory + S4 sentence-1 infeasibility (subject name Uranus at 4.2s, sentence1 says This planet; surprise 21 at 2.26s but first sentence ends 3.40s >3s cut): jobs/reviews/J1204/SOURCE_INVENTORY_2026-10-29.md (ae4bf885f). Missing inputs: PD Uranus SVS-class video, meteor video (not still), Titan moving haze + Dragonfly plate. v02 hashes preserved; no upload/swap. £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T12:45Z",
@@ -106319,23 +106324,16 @@
           "at": "2026-10-29T12:59Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T18:00:00Z"
+        },
+        {
+          "at": "2026-10-29T14:09Z",
+          "by": "claude",
+          "what": "reopened: acting Chief (Claude) ruling 29 Oct: the missing input is moving footage, and public-domain or credit-only space agency video is free, so source it (GBP0) instead of stopping.\n- Uranus (S4, airs Tue 3 Nov, first): NASA/JPL Voyager 2 Uranus approach footage or a NASA SVS Uranus rotation animation (public domain); NASA/ESA/CSA Webb Uranus imagery only if it is real video, with its credit.\n- Shooting stars (S5, Sat 7 Nov): NASA All Sky Fireball Network meteor clips (NASA Meteoroid Environment Office, public domain).\n- Titan (S6, Tue 10 Nov): the ESA/NASA/JPL/University of Arizona Huygens descent movie, credit 'ESA/NASA/JPL/University of Arizona' in the description; a NASA/JHU-APL Dragonfly animation for the Dragonfly line.\nRecord each source URL, licence/credit, file SHA-256 and clip in/out in jobs/reviews/J1204/. A pan or zoom on a still is still not allowed.\n- S4 sentence 1: no new VO is allowed, so the subject is named on screen from frame 0 (hook text with URANUS) and the spoken surprise ('21 years') stays at 2.26 s. That meets rule 8's purpose; accepted as the exception for this Short.\nBuild v03 for each, run the full gate set, deliver with hashes, park for Chief. Deadlines: Uranus 2 Nov 12:00Z, the others 5 Nov 12:00Z. Without a PASSed v03 and Ben's OK by 10:30 on the air day, the scheduled v01 airs. No upload or spend."
         }
       ],
       "remaining_action": "Await J1206 source and audio-plan evidence, then Chief review; no replacement approved",
       "due": "2026-11-02T12:00:00Z",
-      "kind": "assembly",
-      "progress": {
-        "step": 2,
-        "of": 5,
-        "at": "2026-10-29T12:55Z",
-        "by": "cursor",
-        "note": "S4 sentence1 infeasible for named Uranus; inventory ae4bf885f"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief Codex ruling 089360eca: inventory accepted only; no v03 PASS and v02 remains rejected. Await J1206 verified moving-source evidence and Uranus whole-sentence edit feasibility, then Chief source/edit-plan review before assembly. J1199 remains held; original scheduled copies unchanged.",
-        "check_at": "2026-10-30T18:00:00Z"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J1205",

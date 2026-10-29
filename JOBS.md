@@ -44,14 +44,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1191 | mini | open | – | – | 008 picture · for gemini · video · `flow-veo-3.1` · HOS 008 picture: mint the Flow rows of PICTURE_PLAN_v03 (live read first, keep >=3,000 after; cap 5,605 expected) |  |
 | J1192 | mini | open (after J1191) | – | – | 009 picture · for gemini · video · `flow-veo-3.1` · HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354) |  |
 | J1193 | mini | open | – | – | for gemini · review · HOS 008: review the 11 J0329 code graphics in motion against the locked VO, park for Chief |  |
-| J1195 | macbook | blocked | macbook | – | listing · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
 | J1197 | mini | open | – | – | 030 upload · for gemini · listing · `gemini-argon` · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
 | J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1199 | mini | blocked | cursor | – | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
 | J1200 | mini | open | – | – | assembly · HOS HC: restore four playable J0966 review copies and swap cards | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6491001837 |
 | J1201 | mini | open | – | – | for gemini · qa · `gemini-argon` · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
 | J1202 | mini | open | – | – | assembly · HOS Buffer: register every HOS Short at upload and mirror it to Buffer when it goes public (replaces 'Buffer held until public'); dry-run only, no HOS posting |  |
-| J1204 | mini | blocked | cursor | – | assembly · J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence |  |
+| J1204 | mini | open | – | – | assembly · J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence |  |
 | J1207 | mini | open | – | – | review · HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8) |  |
 
 Recently finished:
@@ -60,9 +59,9 @@ Recently finished:
 - J1205 done: Chief: verify condition for J0999 (Verified PR365 remains draft OPEN a87cd56a without matching approval; J0999 remains blocked on J0998 approval/merge and unmodified channel:audit exit 0. Hold verified, recheck 29 Oct 18:50Z. No spend or YouTube changes.)
 - J1203 cancelled: HOS back-post the 3 held Shorts (Herschel, Snow, cathode rays) from Studio Download of the live cut (Superseded 29 Oct by chief: Ben OK'd posting the 17 Oct local re-renders (Herschel, Snow) and the iCloud HOS UAT cathode rays copy instead of Studio downloads. All three are already scheduled in Buffer (Wed 4, Fri 6, Sat 7 Nov 11:30 London). Do NOT mirror them again.)
 - J1196 done: Chief: verify condition for J0966 (Verified no Ben HC swap OK in fresh threads and live board at 09:51Z. J0966 held at worker 5/5; next check 29 Oct 15:55Z. Queued delivery J1200 per Claude 6491001837 to restore exact verified media and playable cards; no second job claimed or media work performed. Reports HOS 6493503463 and OWB 6493508168. No spend or YouTube changes.)
+- J1195 done: OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) (acting Chief (Claude) PASS, PR #347 merged: 031/032 package drafts meet LEARNINGS rules 10-14 (three distinct picture concepts each, scale/consequence, concept C bright background; scenario titles under 60 characters; no internal words). Final title/thumbnail picks at launch.)
 - J1194 done: Apply the 28 Oct description sweep fixes to the repo description files (text only) (16 issue rows applied across 24 text files; 13 skipped with reasons. Report: 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28_APPLIED.md. OWB 934d92aa0; HOS d56a80c8 on macbook/j1194-description-sweep. JSON scope and diff checks pass. Row 25 target files absent; 8 rows live-only. No live changes; GBP0.)
 - J1189 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1188 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-29T08:26Z across 57 unique videos (26 public, 14 scheduled, 17 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, HOS 80e16e4a, 0 new fixes needed))
 - J1187 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T08:18Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, e472e5712, 0 fixes needed))
 - J1186 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
-- J1185 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
