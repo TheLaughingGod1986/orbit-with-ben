@@ -105770,21 +105770,28 @@
           "at": "2026-10-29T17:59Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T18:04Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Starting J1192: inspecting 009 boards v04 (57 tranche-1 rows, 7,354 expected), checking disk space and live Flow balance"
         }
       ],
-      "remaining_action": "HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354)",
+      "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 01 (12), Part 02 (10), Part 03 (7), Part 04 (13), Part 05 (15), then NAS sync + PIPELINE.json",
       "due": "2026-11-12T20:00:00Z",
       "for": "gemini",
       "kind": "video",
       "model": "flow-veo-3.1",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-29T17:59Z",
+        "of": 6,
+        "at": "2026-10-29T18:04Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J1192: inspecting 009 boards v04 (57 tranche-1 rows, 7,354 expected), checking disk space and live Flow balance"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J1193",
