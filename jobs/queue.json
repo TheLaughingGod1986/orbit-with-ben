@@ -80359,6 +80359,11 @@
           "at": "2026-10-28T15:29Z",
           "by": "relay",
           "what": "condition verification queued: J1104"
+        },
+        {
+          "at": "2026-10-29T00:17Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T06:20:00Z"
         }
       ],
       "kind": "video",
@@ -80386,12 +80391,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "J1032 assembles all six locked v07 replacements; then Chief replacement review before Ben swap approval",
+      "remaining_action": "J1100: correct S2/S5/S6, pass final gates and Chief review, then obtain Ben swap approvals",
       "hold": {
-        "type": "dependency",
-        "condition": "J1032 assembly and all final-media gates must complete, then elected-Chief replacement review; no swap or watch cards before replacement PASS",
-        "check_at": "2026-10-28T16:29:25+00:00",
-        "recheck_task": "J1104"
+        "type": "input",
+        "condition": "J1032 v04 assembly and Chief replacement PASS satisfied (28 Oct, PR305 merged 719fdf02); S1/S3/S4 Ben-approved swaps completed in J1101/J1102/J1103. S2/S5/S6 require J1100 corrected v06 media, all final gates and direct listening, durable verified delivery, elected-Chief replacement PASS, then Ben approval of each corrected swap. Latest FIX 6483981556; checkpoint 6484203741 reports S6 loop FAIL and delivery blocked; S2/S5 pickups require actual ElevenLabs reset/balance verification after 30 Oct 10:50Z. Preserve historical 6/6 and existing deadlines/fallbacks; do not repeat completed swaps.",
+        "check_at": "2026-10-29T06:20:00Z",
+        "last_recheck": "J1104",
+        "checked_at": "2026-10-29T00:17:49+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
