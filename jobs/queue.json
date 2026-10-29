@@ -105526,9 +105526,14 @@
           "at": "2026-10-29T14:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T14:22Z",
+          "by": "gemini",
+          "what": "step 4 of 7 done: Read j1191-render.done (exit 1 on P03:12_wire_top harvest timeout at 51/101 KEEP); checking project state on CDP 9222"
         }
       ],
-      "remaining_action": "Continue Flow v03 batch in tmux j1191-render (51/101 KEEP; Part 01 22/22 + Part 02 17/17 complete, Part 03 10/25 through 11_kite_build, 12_wire_top next, then Parts 04-05)",
+      "remaining_action": "Recover or retry P03:12_wire_top and continue Flow v03 batch (51/101 KEEP; Part 03 10/25 -> 25/25, then Parts 04-05)",
       "due": "2026-11-08T20:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -105536,9 +105541,9 @@
       "progress": {
         "step": 4,
         "of": 7,
-        "at": "2026-10-29T14:09Z",
+        "at": "2026-10-29T14:22Z",
         "by": "gemini",
-        "note": "51/101 Flow rows KEEP (6/6 priority + 22/22 Part 01 + 17/17 Part 02 + 10/25 Part 03 through 11_kite_build UAT verified +"
+        "note": "Read j1191-render.done (exit 1 on P03:12_wire_top harvest timeout at 51/101 KEEP); checking project state on CDP 9222"
       },
       "taskKeys": [
         "HOS:008"
