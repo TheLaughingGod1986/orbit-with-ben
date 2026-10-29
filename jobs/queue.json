@@ -100377,13 +100377,27 @@
           "at": "2026-10-29T01:51Z",
           "by": "claude",
           "what": "reopened: acting Chief (Claude): the ended test is eligible (ended 28 Oct 21:17). Starting a new experiment deletes the finished one's report, which can't be undone, so that click goes to Ben. Now: capture the full ended report (every variant's watch-time share, the winner, dates; Studio screenshots) into THUMB_LEDGER and the job's readback, then block 'waits on Ben: OK to start the HOS 001 title test, which deletes the ended thumbnail test report (saved in the ledger)'. Do not press Continue. Same for HOS 002 (J1130) when it reaches that prompt."
+        },
+        {
+          "at": "2026-10-29T01:58Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Chief must resolve Studio delete-current-experiment confirmation before title-only test",
       "kind": "studio",
       "taskKeys": [
         "HOS:001"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J1133",
