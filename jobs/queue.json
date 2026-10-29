@@ -100301,10 +100301,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T00:37Z",
+      "eta": "2026-10-29T02:37Z",
       "created_by": "relay",
       "created_at": "2026-10-29T00:30Z",
       "result": "",
@@ -100313,13 +100313,26 @@
           "at": "2026-10-29T00:30Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T00:37Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Reverify next-day eligibility, then arm and read back approved X-rays title-only test",
       "kind": "chief",
       "recheck_of": "J1132",
       "due": "2026-10-29T01:30:45+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T00:37Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1137",
