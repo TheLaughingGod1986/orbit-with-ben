@@ -105877,17 +105877,22 @@
           "at": "2026-10-29T11:19Z",
           "by": "cursor",
           "what": "step 3 of 5 done: still rendering s5lines=      12 s6lines=0"
+        },
+        {
+          "at": "2026-10-29T11:21Z",
+          "by": "cursor",
+          "what": "step 4 of 5 done: S5 v02 PASS all gates sha256 bee058040b3d59445962b39d2d252f56201fc18901402cce43f7ff48fe9308bd loop 14.80"
         }
       ],
-      "remaining_action": "waiting on tmux J1199-s5s6-v06 for S5+S6 gates",
+      "remaining_action": "S6 still rendering in tmux J1199-s5s6-v06; S5 PASS delivered",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-10-29T11:19Z",
+        "at": "2026-10-29T11:21Z",
         "by": "cursor",
-        "note": "still rendering s5lines=      12 s6lines=0"
+        "note": "S5 v02 PASS all gates sha256 bee058040b3d59445962b39d2d252f56201fc18901402cce43f7ff48fe9308bd loop 14.80"
       },
       "taskKeys": [
         "OWB:030"
