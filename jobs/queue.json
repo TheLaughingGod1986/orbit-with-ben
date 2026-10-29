@@ -107617,6 +107617,11 @@
           "at": "2026-10-29T19:15Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T07:15:00Z"
+        },
+        {
+          "at": "2026-10-29T22:11Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "FIX ruled by Codex: J1218 repairs rough v02; J1193 graphics review required; no Ben watch until gates and Chief PASS",
@@ -107636,7 +107641,8 @@
         "type": "dependency",
         "condition": "Chief ruling FIX / NOT APPROVED: rough v01 fails picture_qa and polish_gate; no Ben watch. J1218 must deliver repaired v02 with unchanged picture gates passing and J1193 must deliver graphics findings before Chief re-review. Missing music remains unfinished, SKIPPED_NO_BED is not PASS.",
         "check_at": "2026-10-30T07:15:00Z"
-      }
+      },
+      "escalated_at": "2026-10-29T22:11Z"
     },
     {
       "id": "J1214",
