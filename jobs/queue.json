@@ -105775,9 +105775,14 @@
           "at": "2026-10-29T18:04Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Starting J1192: inspecting 009 boards v04 (57 tranche-1 rows, 7,354 expected), checking disk space and live Flow balance"
+        },
+        {
+          "at": "2026-10-29T18:09Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Live Flow read 18,550 (rem_expected 7,354, buffer 11,196 >= 3,000, logged via ai_spend.py); Part 01 batch (12 rows) running in tmux j1192-render starting P01:01_moon_falling"
         }
       ],
-      "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 01 (12), Part 02 (10), Part 03 (7), Part 04 (13), Part 05 (15), then NAS sync + PIPELINE.json",
+      "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 01 (12 rows in progress), then Parts 02-05 (45 rows)",
       "due": "2026-11-12T20:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -105785,9 +105790,9 @@
       "progress": {
         "step": 0,
         "of": 6,
-        "at": "2026-10-29T18:04Z",
+        "at": "2026-10-29T18:09Z",
         "by": "gemini",
-        "note": "Starting J1192: inspecting 009 boards v04 (57 tranche-1 rows, 7,354 expected), checking disk space and live Flow balance"
+        "note": "Live Flow read 18,550 (rem_expected 7,354, buffer 11,196 >= 3,000, logged via ai_spend.py); Part 01 batch (12 rows) runn"
       },
       "taskKeys": [
         "HOS:009"
