@@ -102776,13 +102776,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-29T05:04Z",
-      "eta": "2026-10-29T06:04Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T05:03Z",
-      "result": "",
+      "result": "Read-only listing check PASS at 2026-10-29T05:07Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 3d3cbed1; 0 new fixes needed)",
       "history": [
         {
           "at": "2026-10-29T05:03Z",
@@ -102813,6 +102813,11 @@
           "at": "2026-10-29T05:09Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed and pushed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md (3d3cbed1); 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-29T05:09Z",
+          "by": "gemini",
+          "what": "done: Read-only listing check PASS at 2026-10-29T05:07Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 3d3cbed1; 0 new fixes needed)"
         }
       ],
       "remaining_action": "Mark J1161 done and report",
@@ -102834,7 +102839,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "done_ref": "3d3cbed1"
     }
   ],
   "focus": [],
