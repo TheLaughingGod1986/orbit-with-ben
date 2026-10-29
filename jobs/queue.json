@@ -100963,9 +100963,14 @@
           "at": "2026-10-29T02:12Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting 4-step read-only listing check for the last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-29T02:13Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified last 10 live public videos (gJwNJN_yMKU through lbW2iQ9YvqA) and upcoming _a66uhRDips at 2026-10-29T11:30Z"
         }
       ],
-      "remaining_action": "Audit descriptions, chapters, and sources in latest OWB snapshot for last 10 public videos",
+      "remaining_action": "Verify chapter timestamps against local cut overlays and shot lists for live longs",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -100978,11 +100983,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-29T02:12Z",
+        "at": "2026-10-29T02:13Z",
         "by": "gemini",
-        "note": "Starting 4-step read-only listing check for the last 10 live OWB videos"
+        "note": "Identified last 10 live public videos (gJwNJN_yMKU through lbW2iQ9YvqA) and upcoming _a66uhRDips at 2026-10-29T11:30Z"
       },
       "taskKeys": [
         "OWB:021",
