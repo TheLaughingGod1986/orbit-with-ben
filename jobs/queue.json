@@ -99100,13 +99100,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T00:29Z",
-      "eta": "2026-10-29T02:29Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T19:02Z",
-      "result": "",
+      "result": "Superseded verification closed. J0961 completed by Gemini 29 Oct 00:09Z after the recorded Claude 28 Oct 23:38Z exception and existing v04 watch approval. Saved API readback jobs/readbacks/J0961/api-readback.json, summary, UPLOADS and Shorts gate library cross-reference SWDCZfWZVao, k2kEaA7ICjc and heiGCnGKTkE (Private, 9/11/14 Dec 11:30Z), evidence 328fd220a. No correction or fresh episode-gate PASS established by this task; no new exception granted. Do not reopen or re-block completed J0961. Related remains J0923; Buffer deferred. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-10-28T19:02Z",
@@ -99137,6 +99137,11 @@
           "at": "2026-10-29T00:30Z",
           "by": "codex",
           "what": "step 3 of 3 done: Resolved as superseded by completed J0961; preserve its done state and approvals. No new gate PASS claimed, no YouTube changes, no spend."
+        },
+        {
+          "at": "2026-10-29T00:30Z",
+          "by": "codex",
+          "what": "done: Superseded verification closed. J0961 completed by Gemini 29 Oct 00:09Z after the recorded Claude 28 Oct 23:38Z exception and existing v04 watch approval. Saved API readback jobs/readbacks/J0961/api-readback.json, summary, UPLOADS and Shorts gate library cross-reference SWDCZfWZVao, k2kEaA7ICjc and heiGCnGKTkE (Private, 9/11/14 Dec 11:30Z), evidence 328fd220a. No correction or fresh episode-gate PASS established by this task; no new exception granted. Do not reopen or re-block completed J0961. Related remains J0923; Buffer deferred. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Verification resolved; no further work under J1120",
@@ -99153,7 +99158,8 @@
       },
       "taskKeys": [
         "OWB:029"
-      ]
+      ],
+      "done_ref": "328fd220a"
     },
     {
       "id": "J1121",
