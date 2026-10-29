@@ -105767,10 +105767,10 @@
       "stage": "picture",
       "after": "J1191",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-29T18:30Z",
-      "eta": "2026-10-29T20:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:36Z",
       "result": "",
@@ -105819,6 +105819,11 @@
           "at": "2026-10-29T18:39Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Part 01 batch running in detached tmux j1192-render (j1192-render.done absent): 8/12 KEEP (+P01:03_table_three, P01:03_table_three_c1, P01:03_table_three_c2, P01:04_things_fall, P01:05_heavens_map, P01:06_perfect_circles), P01:07_night_field in progress; live Flow 18,550 -> 18,200 (spent 350 / 7,585 cap, rem_expected 6,477, buffer 11,723 >= 3,000); checkpoint gemini/j1192-009-tranche1-flow-mint @ f86b8b94"
+        },
+        {
+          "at": "2026-10-29T18:39Z",
+          "by": "gemini",
+          "what": "released: Detached Part 01 tranche-1 Flow batch (--until-part 01: 8/12 KEEP [P01:01..P01:06], P01:07_night_field..P01:10_farmhouse_dawn in progress; live Flow 18,550 -> 18,200, spent 350 / 7,585 cap, rem_expected 6,477, buffer 11,723 >= 3,000; checkpoint gemini/j1192-009-tranche1-flow-mint @ f86b8b94) still running in tmux session j1192-render; log: /Users/benjaminoats/_desk/logs/j1192-render.log; done file: /Users/benjaminoats/_desk/logs/j1192-render.done (missing while running; do not start a second copy)"
         }
       ],
       "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 01 (8/12 KEEP, 4 remaining in detached tmux j1192-render), then Parts 02-05 (45 rows)",
