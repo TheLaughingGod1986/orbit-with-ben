@@ -106414,17 +106414,22 @@
           "at": "2026-10-29T15:05Z",
           "by": "cursor",
           "what": "step 1 of 5 done: inputs verified: Shot4 sha 32370afa matches; vo_v02 present; ruling S2-first + Shot4 open"
+        },
+        {
+          "at": "2026-10-29T15:07Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: tmux j1204-uranus-v03; log ~/_desk/logs/j1204-uranus-v03.log; donefile ~/_desk/logs/j1204-uranus-v03.done"
         }
       ],
-      "remaining_action": "Write assemble script + start Uranus v03 render on NAS",
+      "remaining_action": "Uranus v03 render running in tmux j1204-uranus-v03; await gates then park for Chief",
       "due": "2026-11-02T12:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-29T15:05Z",
+        "at": "2026-10-29T15:07Z",
         "by": "cursor",
-        "note": "inputs verified: Shot4 sha 32370afa matches; vo_v02 present; ruling S2-first + Shot4 open"
+        "note": "tmux j1204-uranus-v03; log ~/_desk/logs/j1204-uranus-v03.log; donefile ~/_desk/logs/j1204-uranus-v03.done"
       },
       "taskKeys": [
         "OWB:032"
