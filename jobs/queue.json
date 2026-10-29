@@ -87929,13 +87929,18 @@
           "at": "2026-10-28T15:47Z",
           "by": "relay",
           "what": "condition verification queued: J1108"
+        },
+        {
+          "at": "2026-10-29T00:24Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T06:30:00Z"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:099"
       ],
-      "remaining_action": "Await Ben approval and merge of HOS PR #365, then pass channel:audit on HOS main",
+      "remaining_action": "Obtain required checker-fix approval, merge HOS PR365, then pass channel:audit on main",
       "progress": {
         "step": 5,
         "of": 5,
@@ -87945,12 +87950,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J0998 remains blocked: HOS PR #365 a87cd56a is draft OPEN with no Ben approval found on PR or HOS desk; requires Ben OK, merge to HOS main, then unmodified npm run channel:audit exit 0. Studio work evidence remains PR #358 c26a79bd.",
-        "check_at": "2026-10-28T16:47:44+00:00",
-        "last_recheck": "J1078",
-        "checked_at": "2026-10-28T09:27:17+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1108"
+        "condition": "Verified 2026-10-29: HOS PR #365 remains draft OPEN at a87cd56a028648355061a732f027fe087db465e5, no PR comments/reviews or Ben approval found in HOS desk history. J0998 requires Ben OK under HOS AGENTS.md Definition of done, merge to HOS main, then unmodified npm run channel:audit exit 0. Existing Studio evidence PR #358 remains OPEN at c26a79bd.",
+        "check_at": "2026-10-29T06:30:00Z",
+        "last_recheck": "J1108",
+        "checked_at": "2026-10-29T00:24:47+00:00",
+        "checked_by": "codex"
       }
     },
     {
