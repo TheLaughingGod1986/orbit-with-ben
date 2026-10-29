@@ -101896,19 +101896,30 @@
           "at": "2026-10-29T03:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T03:59Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1150; starting read-only listing check across last 10 live public videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Verify live YouTube watch/Shorts endpoints for the last 10 public OWB videos and next scheduled Short",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-29T03:58Z",
+        "at": "2026-10-29T03:59Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1150; starting read-only listing check across last 10 live public videos"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
