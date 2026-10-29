@@ -106258,19 +106258,24 @@
           "at": "2026-10-29T12:48Z",
           "by": "codex",
           "what": "step 2 of 3 done: J0999 hold retained with recheck J1205 and next check 29 Oct 18:50Z; no matching newer OWB approval found"
+        },
+        {
+          "at": "2026-10-29T12:48Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified persisted blocked state and 18:50Z recheck; PR365 unmerged and no matching approval found on either thread"
         }
       ],
-      "remaining_action": "Verify saved hold and report the outcome",
+      "remaining_action": "Verification complete; J0999 awaits checker approval, merge and audit",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-29T13:46:07+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-29T12:48Z",
         "by": "codex",
-        "note": "J0999 hold retained with recheck J1205 and next check 29 Oct 18:50Z; no matching newer OWB approval found"
+        "note": "Verified persisted blocked state and 18:50Z recheck; PR365 unmerged and no matching approval found on either thread"
       },
       "taskKeys": [
         "HOS:099"
