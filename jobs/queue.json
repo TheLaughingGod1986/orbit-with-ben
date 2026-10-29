@@ -101821,18 +101821,22 @@
           "at": "2026-10-29T03:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T03:53Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting 4-step QA sweep: (1) inventory OWB & HOS packs vs gate timestamps, (2) run missing OWB gates, (3) run missing HOS gates, (4) record results and queue any needed fix jobs"
         }
       ],
-      "remaining_action": "Check the newest video packs and record any missing checks",
+      "remaining_action": "Inventory newest OWB and HOS video packs and check gate output timestamps against last renders",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-29T03:53Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Starting 4-step QA sweep: (1) inventory OWB & HOS packs vs gate timestamps, (2) run missing OWB gates, (3) run missing H"
       }
     }
   ],
