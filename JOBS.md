@@ -52,7 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1208 | mini | blocked | codex | – | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
-| J1218 | mini | open | – | – | 008 edit · assembly · HOS 008: repair J1213 rough v01 picture failures into diagnostic v02 |  |
+| J1218 | mini | claimed | cursor | 2026-10-30T00:56Z | 008 edit · assembly · HOS 008: repair J1213 rough v01 picture failures into diagnostic v02 |  |
 | J1221 | mini | open | – | – | studio · Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30) | 6507810925 |
 | J1222 | mini | open | – | – | studio · Swap HOS Short 4WUs0beKn0A (007 vaccine-name) to Ben-OK'd v05 (Private, same slot Tue 17 Nov 11:30) | 6507831644 |
 | J1223 | mini | open | – | – | studio · Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30) | 6508107852 |
