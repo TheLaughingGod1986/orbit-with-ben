@@ -106013,9 +106013,14 @@
           "at": "2026-10-29T12:03Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: rule-8 v02 masters ready for Ben board OK (by 10:30 on each air day); without OK the scheduled v01 airs. ZpEA8stoSPA Uranus v02 sha256 fd6bfec832bfa84d951c6e8ac2deff6c07ada71a9025e06deb2d8affc0b6f314 (UAT standalone_shorts_uranus_v02); T9fVlG3CCzU Shooting Stars v02 sha256 bee058040b3d59445962b39d2d252f56201fc18901402cce43f7ff48fe9308bd (UAT standalone_shorts_s5_v02); RLSJm59OSzI Titan v02 sha256 be16daeb17284ea3d20148a1e6f8e3ea7ab6cdec64cf22e47f92b6167780b97d (UAT standalone_shorts_s6_v02). All: gate_shorts_open+picture_qa+polish+music+loop PASS; Stay-line excised; first cut 2.7s; no upload/swap. £0."
+        },
+        {
+          "at": "2026-10-29T12:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T09:00:00Z"
         }
       ],
-      "remaining_action": "parked for Chief: Ben board OK by 10:30 air day for each Short",
+      "remaining_action": "FIX: await J1204 moving-footage correction and Chief re-review; v02 not approved",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
@@ -106027,7 +106032,12 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief Codex ruling FIX: v02 rejected; all three openings are JPEG-based (S4 synthetic bands/ring, S5 Ken Burns, S6 phase drift), contrary to required existing moving subject footage. Await J1204 verified footage and compliant v03 evidence, then Chief review before any Ben watch or swap. Original scheduled copies remain unchanged.",
+        "check_at": "2026-10-30T09:00:00Z"
+      }
     },
     {
       "id": "J1200",
