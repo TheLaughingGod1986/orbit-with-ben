@@ -105559,13 +105559,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T09:49Z",
-      "eta": "2026-10-29T11:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-29T08:59Z",
-      "result": "",
+      "result": "Verified no Ben HC swap OK in fresh threads and live board at 09:51Z. J0966 held at worker 5/5; next check 29 Oct 15:55Z. Queued delivery J1200 per Claude 6491001837 to restore exact verified media and playable cards; no second job claimed or media work performed. Reports HOS 6493503463 and OWB 6493508168. No spend or YouTube changes.",
       "history": [
         {
           "at": "2026-10-29T08:59Z",
@@ -105596,6 +105596,11 @@
           "at": "2026-10-29T09:53Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence and delivery decision posted to HOS 6493503463 and OWB 6493508168; hold retained, worker 5/5 unchanged"
+        },
+        {
+          "at": "2026-10-29T09:53Z",
+          "by": "codex",
+          "what": "done: Verified no Ben HC swap OK in fresh threads and live board at 09:51Z. J0966 held at worker 5/5; next check 29 Oct 15:55Z. Queued delivery J1200 per Claude 6491001837 to restore exact verified media and playable cards; no second job claimed or media work performed. Reports HOS 6493503463 and OWB 6493508168. No spend or YouTube changes."
         }
       ],
       "remaining_action": "Verification complete; J1200 owns delivery before swap approval",
@@ -105614,7 +105619,8 @@
         "HOS:004",
         "HOS:005",
         "HOS:007"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6493503463"
     },
     {
       "id": "J1197",
