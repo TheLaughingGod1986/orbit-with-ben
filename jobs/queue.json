@@ -1,5 +1,5 @@
 {
-  "next_id": 1197,
+  "next_id": 1198,
   "jobs": [
     {
       "id": "J0001",
@@ -105492,6 +105492,34 @@
       "recheck_of": "J0966",
       "due": "2026-10-29T09:59:26+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1197",
+      "title": "Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 29 Oct 2026, from Orbit Auditor daily audit (29 Oct). GBP0.\n\nLive Apophis Short gJwNJN_yMKU (030, J0974 v13a swap) ends its description with:\n\"Watch the full film: https://www.youtube.com/watch?v=VBaYRPp85Sw\"\nThat link goes to the Venus long (What Happened to Venus?), which is a different topic. Film 030 has no long. The Related = VBaYRPp85Sw link is the deliberate interim from J0975 (Chief re-confirm 26 Oct 08:22) and STAYS. Only the wording is misleading: viewers are told it is \"the full film\" of the asteroid.\n\nDo exactly this, in the Orbit account (verify channel UC_esArsDKd3GJvOkeO0DUog first):\n1. Read back gJwNJN_yMKU: privacy, publishAt, title, description, tags, Related. Save the before description to jobs/reviews/<this job>_before.txt.\n2. Fetch the LIVE listing title of VBaYRPp85Sw (don't infer it from a folder).\n3. Replace ONLY the last line \"Watch the full film: https://www.youtube.com/watch?v=VBaYRPp85Sw\" with:\n   \"Our latest full film, <live Venus title>: https://www.youtube.com/watch?v=VBaYRPp85Sw\"\n   Keep every other byte (sources, NASA link, AI/NASA disclosure, credits) unchanged. No /go/ links.\n4. Save, reopen, read back description and Related (still VBaYRPp85Sw). Save after text + readback. Update 030 J0974_v13a_swap/PACKAGE_MANIFEST.json description to match. Report on OWB #264 as [Chief].\n\nNever: title, tags, thumbnail, privacy, schedule, captions, media, pinned comment, Test & Compare. No delete, no re-upload, no Replace. Don't touch old BbsyFrV8kCY. If the account check fails or the description doesn't contain that exact line, change nothing and block for Chief.\n",
+      "ref": "",
+      "film": "030",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-29T09:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T09:20Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only)",
+      "kind": "listing"
     }
   ],
   "focus": [],

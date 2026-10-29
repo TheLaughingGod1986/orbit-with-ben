@@ -49,6 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1194 | macbook | open | – | – | listing · Apply the 28 Oct description sweep fixes to the repo description files (text only) |  |
 | J1195 | macbook | open | – | – | listing · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
 | J1196 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
+| J1197 | mini | open | – | – | 030 upload · listing · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
 
 Recently finished:
 
