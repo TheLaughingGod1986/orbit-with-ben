@@ -1,5 +1,5 @@
 {
-  "next_id": 1226,
+  "next_id": 1227,
   "jobs": [
     {
       "id": "J0001",
@@ -84110,6 +84110,11 @@
           "at": "2026-10-29T20:56Z",
           "by": "chief",
           "what": "no longer waits on Ben: OK'd, delivered by J1223"
+        },
+        {
+          "at": "2026-10-29T22:03Z",
+          "by": "relay",
+          "what": "condition verification queued: J1226"
         }
       ],
       "kind": "video",
@@ -84146,10 +84151,11 @@
       "hold": {
         "type": "input",
         "condition": "J1209 verified 29 Oct 15:59Z: J1200 remains open/unclaimed; no J0966 review cards on published board and no explicit HC swap OK in live checks or fresh OWB through 6501633873 / HOS through 6501461806. J1200 must deliver four verified playable copies/cards before Ben reviews swaps. HOS-007/J0925 OK covers long only. Keep worker 5/5, no rebuild. First cutoff 12 Nov 20:00Z; original publishing restrictions remain, including Buffer consistency and no failed-gate override.",
-        "check_at": "2026-10-29T22:00:00Z",
+        "check_at": "2026-10-29T23:03:24+00:00",
         "last_recheck": "J1209",
         "checked_at": "2026-10-29T15:59:32+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1226"
       },
       "awaits_was": {
         "what": "swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE",
@@ -108466,6 +108472,37 @@
       "remaining_action": "Stabilise opening shake with measured path; verify gates and playable UAT delivery",
       "due": "2026-11-01T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J1226",
+      "title": "Chief: verify condition for J0966",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0966: J1209 verified 29 Oct 15:59Z: J1200 remains open/unclaimed; no J0966 review cards on published board and no explicit HC swap OK in live checks or fresh OWB through 6501633873 / HOS through 6501461806. J1200 must deliver four verified playable copies/cards before Ben reviews swaps. HOS-007/J0925 OK covers long only. Keep worker 5/5, no rebuild. First cutoff 12 Nov 20:00Z; original publishing restrictions remain, including Buffer consistency and no failed-gate override.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0966 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-29T22:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T22:03Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: J1200 delivers four playable review copies/cards, then Ben reviews the swaps",
+      "kind": "chief",
+      "recheck_of": "J0966",
+      "due": "2026-10-29T23:03:24+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
