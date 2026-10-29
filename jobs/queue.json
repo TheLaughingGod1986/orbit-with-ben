@@ -105475,10 +105475,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-10-29T11:02Z",
+      "eta": "2026-10-29T13:02Z",
       "created_by": "claude",
       "created_at": "2026-10-29T08:49Z",
       "result": "",
@@ -105497,12 +105497,25 @@
           "at": "2026-10-29T10:56Z",
           "by": "claude",
           "what": "back to the MacBook lane: the relay rerouted it to Gemini by mistake (MacBook jobs are never Claude-owned for rerouting; fix in PR)"
+        },
+        {
+          "at": "2026-10-29T11:02Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Apply the 28 Oct description sweep fixes to the repo description files (text only)",
       "kind": "listing",
       "for": "",
-      "model": ""
+      "model": "",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T11:02Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1195",

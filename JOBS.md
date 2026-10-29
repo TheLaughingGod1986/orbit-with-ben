@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1191 | mini | open | – | – | 008 picture · for gemini · video · `flow-veo-3.1` · HOS 008 picture: mint the Flow rows of PICTURE_PLAN_v03 (live read first, keep >=3,000 after; cap 5,605 expected) |  |
 | J1192 | mini | open (after J1191) | – | – | 009 picture · for gemini · video · `flow-veo-3.1` · HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354) |  |
 | J1193 | mini | open | – | – | for gemini · review · HOS 008: review the 11 J0329 code graphics in motion against the locked VO, park for Chief |  |
-| J1194 | macbook | open | – | – | listing · Apply the 28 Oct description sweep fixes to the repo description files (text only) |  |
+| J1194 | macbook | claimed | macbook | 2026-10-29T13:02Z | listing · Apply the 28 Oct description sweep fixes to the repo description files (text only) |  |
 | J1195 | macbook | open | – | – | listing · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
 | J1197 | mini | open | – | – | 030 upload · for gemini · listing · `gemini-argon` · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
 | J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
