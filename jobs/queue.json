@@ -1,5 +1,5 @@
 {
-  "next_id": 1191,
+  "next_id": 1192,
   "jobs": [
     {
       "id": "J0001",
@@ -105238,6 +105238,37 @@
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes"
+    },
+    {
+      "id": "J1191",
+      "title": "HOS 008 picture: mint the Flow rows of PICTURE_PLAN_v03 (live read first, keep >=3,000 after; cap 5,605 expected)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude) price pass, 29 Oct: J0863 PASS. 006 needed 0 Flow and 007 is minted (2,890 used, J0352). Live Flow 20,870 (mini-daily read 29 Oct 08:30Z). 008 expected 5,605 leaves ~15,265, well above the 3,000 buffer, so there is no need to wait for the ~12 Nov renewal. This job is the Chief's authorisation to generate the Flow rows of 008 boards v03 only (02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/PICTURE_PLAN_v03.json, PRICE_REVIEW_v03.md).\nGate, every session: read Flow live and log it (ai_spend.py). Proceed only if live read minus remaining 008 expected is >= 3,000; re-read before each batch and stop/park for Chief if a batch would take it below 3,000. Never buy, top up or upgrade. Cap: 008's whole-film Flow spend may not pass 6,500 without a Chief re-price.\nSame look and rules as 007 (J0352): KEEP/REDO per row against the board, sources and period look; the 11 code-graphic rows stay as rendered (J0329). Mint the five moving plates the overlays need (P2:12, P3:07, P2:08 + P4:02, P1:16, P5:06) first. Record each KEEP in the picture log, update PIPELINE.json picture steps, copy to the NAS (copy only), then park for Chief: picture PASS. No upload. No ElevenLabs. GBP0.",
+      "ref": "",
+      "film": "008",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T08:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T08:35Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "HOS 008 picture: mint the Flow rows of PICTURE_PLAN_v03 (live read first, keep >=3,000 after; cap 5,605 expected)",
+      "due": "2026-11-08T20:00:00Z",
+      "for": "gemini",
+      "kind": "video",
+      "model": "flow-veo-3.1"
     }
   ],
   "focus": [],
