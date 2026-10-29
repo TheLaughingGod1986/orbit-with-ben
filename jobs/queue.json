@@ -105261,10 +105261,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-29T09:00Z",
+      "eta": "2026-10-29T11:00Z",
       "created_by": "claude",
       "created_at": "2026-10-29T08:35Z",
       "result": "",
@@ -105298,6 +105298,11 @@
           "at": "2026-10-29T08:58Z",
           "by": "gemini",
           "what": "released: Detached priority overlay Flow batch (--priority-only: 2/6 done [P2:12_notebook_list sha=35164fd4319c, P3:07_slow_news sha=775e6d72eeb9], P2:08_jar_spark in progress; live Flow 20,840, spent 30 / 6,500 cap, rem_expected 5,565, buffer 15,275 >= 3,000; checkpoint gemini/j1191-008-flow-mint @ a062301a) running in tmux session j1191-render; log: /Users/benjaminoats/_desk/logs/j1191-render.log; done file: /Users/benjaminoats/_desk/logs/j1191-render.done (missing while running; do not start a second copy)"
+        },
+        {
+          "at": "2026-10-29T09:00Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish 6 priority overlay moving plates in tmux j1191-render, then mint Parts 01–05 Flow rows",
