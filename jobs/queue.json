@@ -101969,17 +101969,22 @@
           "at": "2026-10-29T04:03Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting J1151 read-only audit of HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-29T04:04Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Data API & deduplicated auditChannel PASS at 2026-10-29T04:04:13Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors)"
         }
       ],
-      "remaining_action": "Run Data API & auditChannel check on HOS live and scheduled videos",
+      "remaining_action": "Verify 4 public longs end screens and 22 public Shorts Related pills",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T04:03Z",
+        "at": "2026-10-29T04:04Z",
         "by": "gemini",
-        "note": "Starting J1151 read-only audit of HOS live and scheduled videos"
+        "note": "Data API & deduplicated auditChannel PASS at 2026-10-29T04:04:13Z (57 unique videos: 26 public + 14 scheduled + 17 unsch"
       },
       "taskKeys": [
         "HOS:001",
