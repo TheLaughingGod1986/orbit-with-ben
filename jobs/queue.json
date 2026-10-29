@@ -108461,10 +108461,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T22:11Z",
+      "eta": "2026-10-30T00:11Z",
       "created_by": "codex",
       "created_at": "2026-10-29T21:58Z",
       "result": "",
@@ -108498,6 +108498,11 @@
           "at": "2026-10-29T22:09Z",
           "by": "cursor",
           "what": "released: detached: tmux J1225-render; log ~/_desk/logs/J1225-render.log; done ~/_desk/logs/J1225-render.done. Next run: if .done missing leave running; if present read exit+log, finish gates/UAT evidence, park for Chief. Script: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/_assemble_uranus_v08.py. No spend/upload."
+        },
+        {
+          "at": "2026-10-29T22:11Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for tmux J1225-render; then gates + UAT playable verify",
