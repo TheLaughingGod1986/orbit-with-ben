@@ -104325,9 +104325,14 @@
           "at": "2026-10-29T07:07Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-29T07:09Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Verified correct Studio sessions: OWB 9223 and HOS 9460; reading all 14 OWB and 4 HOS longs plus 96 Shorts. Clean worktree prepared; no video settings changed."
         }
       ],
-      "remaining_action": "Read lifetime Studio analytics for both channels, rebuild tracker, and publish the recorded metrics",
+      "remaining_action": "Finish lifetime Studio reads for 114 videos, then rebuild and publish tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
@@ -104341,11 +104346,29 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T07:07Z",
-        "by": "codex"
-      }
+        "at": "2026-10-29T07:09Z",
+        "by": "codex",
+        "note": "Verified correct Studio sessions: OWB 9223 and HOS 9460; reading all 14 OWB and 4 HOS longs plus 96 Shorts. Clean worktr"
+      },
+      "taskKeys": [
+        "OWB:001",
+        "OWB:002",
+        "OWB:004",
+        "OWB:005",
+        "OWB:006",
+        "OWB:013",
+        "OWB:019",
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004"
+      ]
     },
     {
       "id": "J1180",
