@@ -102045,18 +102045,30 @@
           "at": "2026-10-29T04:08Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J1152: inspecting latest snapshot and 2026-10-29.md"
+        },
+        {
+          "at": "2026-10-29T04:09Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1/3: verified live YouTube player/Shorts endpoints and snapshot for top 10 public videos + _a66uhRDips"
         }
       ],
-      "remaining_action": "Audit the last 10 live OWB videos (chapters, sources, end screens, Related) and update 05_Analytics/live_fixes/2026-10-29.md",
+      "remaining_action": "Verify chapters, sources, end screens and Shorts Related links across the 10 live OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T04:08Z",
+        "at": "2026-10-29T04:09Z",
         "by": "gemini",
-        "note": "Started J1152: inspecting latest snapshot and 2026-10-29.md"
-      }
+        "note": "Step 1/3: verified live YouTube player/Shorts endpoints and snapshot for top 10 public videos + _a66uhRDips"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
