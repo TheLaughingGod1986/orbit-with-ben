@@ -106282,13 +106282,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-29T14:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T12:45Z",
-      "result": "parked for Chief: J1206 source/edit plan ready (jobs/reviews/J1206/SOURCE_FEASIBILITY_2026-10-29.md); hashes re-verified; Codex CHIEF_RULING forbids v03 until Chief OK on (1) S4 S2-lead VO reorder (2) SVS Shot4 CGI open (3) S5 hold — no meteor video (4) S6 PIA17656 blur-fill vs reject (5) Dragonfly TakingOff artist CGI. Handoff: jobs/reviews/J1204/HANDOFF_FOR_CHIEF_2026-10-29.md. No upload/swap. £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T12:45Z",
@@ -106354,18 +106354,16 @@
           "at": "2026-10-29T14:12Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: J1206 source/edit plan ready (jobs/reviews/J1206/SOURCE_FEASIBILITY_2026-10-29.md); hashes re-verified; Codex CHIEF_RULING forbids v03 until Chief OK on (1) S4 S2-lead VO reorder (2) SVS Shot4 CGI open (3) S5 hold — no meteor video (4) S6 PIA17656 blur-fill vs reject (5) Dragonfly TakingOff artist CGI. Handoff: jobs/reviews/J1204/HANDOFF_FOR_CHIEF_2026-10-29.md. No upload/swap. £0."
+        },
+        {
+          "at": "2026-10-29T14:18Z",
+          "by": "codex",
+          "what": "reopened: Chief source-plan review COMPLETE: PR #348 merged (5cefd36b5; CI PASS). Ruling jobs/reviews/J1204/SOURCE_PLAN_RULING_2026-10-29.md controls this continuation: S4 Uranus ONLY now; approve complete S2-first reorder, Shot4 0-2.7s artist-animation trial with honest provenance and ALL gates unchanged. No cut PASS or Ben card. S5/S6 sourcing delegated to J1208 due 30 Oct 18:00Z; PIA17656 rejected, Dragonfly mid-beat candidate accepted. Keep J1199 held, no publishing/spend. Existing worker plan had 2 of 3 inputs/handoff steps done; assembly and validation remain, due 2 Nov 12:00Z."
         }
       ],
       "remaining_action": "Park for Chief: source/edit-plan review of J1206 evidence (no v03 until OK)",
       "due": "2026-11-02T12:00:00Z",
-      "kind": "assembly",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-29T14:12Z",
-        "by": "cursor",
-        "note": "blocking for Chief five decision calls in HANDOFF_FOR_CHIEF"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J1205",
