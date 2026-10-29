@@ -101572,13 +101572,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-29T03:37Z",
-      "eta": "2026-10-29T04:37Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T03:36Z",
-      "result": "",
+      "result": "Read-only listing check PASS at 2026-10-29T03:39Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors, 4/4 public long end screens, 22/22 public Shorts Related pills, 0 new fixes; HOS 0f47ff1a)",
       "history": [
         {
           "at": "2026-10-29T03:36Z",
@@ -101609,6 +101609,11 @@
           "at": "2026-10-29T03:41Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed and pushed HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md (0f47ff1a); 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-29T03:41Z",
+          "by": "gemini",
+          "what": "done: Read-only listing check PASS at 2026-10-29T03:39Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors, 4/4 public long end screens, 22/22 public Shorts Related pills, 0 new fixes; HOS 0f47ff1a)"
         }
       ],
       "remaining_action": "Complete J1146 (0 new fixes needed)",
@@ -101630,7 +101635,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "done_ref": "0f47ff1a"
     }
   ],
   "focus": [],
