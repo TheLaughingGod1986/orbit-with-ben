@@ -100968,9 +100968,14 @@
           "at": "2026-10-29T02:13Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Identified last 10 live public videos (gJwNJN_yMKU through lbW2iQ9YvqA) and upcoming _a66uhRDips at 2026-10-29T11:30Z"
+        },
+        {
+          "at": "2026-10-29T02:13Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified local chapter card timestamps for 023 Venus (VBaYRPp85Sw), Compilation (m09jUdwC5hk), 022 Sun (h8HGfyShEHI), and 021 Saturn (55AEQwvs36g)"
         }
       ],
-      "remaining_action": "Verify chapter timestamps against local cut overlays and shot lists for live longs",
+      "remaining_action": "Fetch live YouTube watch/Shorts metadata (descriptions, end screens, cards, Related pills) for last 10 videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -100983,11 +100988,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-10-29T02:13Z",
         "by": "gemini",
-        "note": "Identified last 10 live public videos (gJwNJN_yMKU through lbW2iQ9YvqA) and upcoming _a66uhRDips at 2026-10-29T11:30Z"
+        "note": "Verified local chapter card timestamps for 023 Venus (VBaYRPp85Sw), Compilation (m09jUdwC5hk), 022 Sun (h8HGfyShEHI), an"
       },
       "taskKeys": [
         "OWB:021",
