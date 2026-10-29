@@ -46,6 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1178 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1181 | mini | blocked | gemini | – | qa · 025 Short iyvWYFP_ETA (airs Mon 9 Nov 11:30): restore its v01 master so the upcoming-Shorts gate can read it |  |
 | J1183 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J1185 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
