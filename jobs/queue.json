@@ -1,5 +1,5 @@
 {
-  "next_id": 1212,
+  "next_id": 1213,
   "jobs": [
     {
       "id": "J0001",
@@ -107272,6 +107272,35 @@
       "taskKeys": [
         "OWB:027"
       ]
+    },
+    {
+      "id": "J1212",
+      "title": "Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "HELD ON BEN'S OK (board card). Acting Chief PASS on J1204: OWB UAT/standalone_shorts_uranus_v06/owb_sa_s4_uranus_v06.mp4 sha256 f0b4e0a0318f99ecbe38cdcb0525c8f869fba609d55194da75de45cb579b3ee5 (evidence jobs/reviews/J1204/URANUS_V06_DELIVERY_2026-10-29.md). After Ben's OK, the J1059 way: read back ZpEA8stoSPA (Private, publishAt 2026-11-03T11:30:00Z), verify the master hash, upload v06 Private with the same title/description/tags/cover and publishAt, read it back, then set ZpEA8stoSPA Private and unscheduled (no delete, no Replace), run verify-swap, update UPLOADS.json and Buffer, post the read-back. If not read back by 11:15 London on 3 Nov, leave ZpEA8stoSPA scheduled and park. Never Public. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T17:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T17:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK",
+      "due": "2026-11-03T10:30:00Z",
+      "kind": "studio"
     }
   ],
   "focus": [],
