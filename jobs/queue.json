@@ -1,5 +1,5 @@
 {
-  "next_id": 1222,
+  "next_id": 1223,
   "jobs": [
     {
       "id": "J0001",
@@ -84100,6 +84100,11 @@
           "at": "2026-10-29T20:41Z",
           "by": "chief",
           "what": "no longer waits on Ben (entry 2): OK'd, delivered by J1221"
+        },
+        {
+          "at": "2026-10-29T20:42Z",
+          "by": "chief",
+          "what": "no longer waits on Ben (entry 2): OK'd, delivered by J1222"
         }
       ],
       "kind": "video",
@@ -84141,30 +84146,17 @@
         "checked_at": "2026-10-29T15:59:32+00:00",
         "checked_by": "codex"
       },
-      "awaits_ben": [
-        {
-          "what": "swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE",
-          "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_005_s03_never_saw_v04_PHONE.mp4",
-          "version": "v04",
-          "due": "2026-11-15T10:30Z",
-          "airs": "2026-11-15T11:30Z",
-          "ifNot": "original scheduled file airs unchanged; no slip",
-          "title": "Harvey never saw HC v04",
-          "number": "005",
-          "type": "short"
-        },
-        {
-          "what": "swap 4WUs0beKn0A (vaccine-name) to hos_007_s05_vacca_jesty_v05 (sha e5ea76f012fb); J1200 playable PHONE",
-          "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_007_s05_vacca_jesty_v05_PHONE.mp4",
-          "version": "v05",
-          "due": "2026-11-17T10:30Z",
-          "airs": "2026-11-17T11:30Z",
-          "ifNot": "original scheduled file airs unchanged; no slip",
-          "title": "Vaccine-name HC v05",
-          "number": "007",
-          "type": "short"
-        }
-      ]
+      "awaits_ben": {
+        "what": "swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE",
+        "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_005_s03_never_saw_v04_PHONE.mp4",
+        "version": "v04",
+        "due": "2026-11-15T10:30Z",
+        "airs": "2026-11-15T11:30Z",
+        "ifNot": "original scheduled file airs unchanged; no slip",
+        "title": "Harvey never saw HC v04",
+        "number": "005",
+        "type": "short"
+      }
     },
     {
       "id": "J0967",
@@ -108145,6 +108137,54 @@
         "askId": "J0966.2",
         "okAt": "2026-10-29T20:41Z",
         "okRef": "6507810925"
+      }
+    },
+    {
+      "id": "J1222",
+      "title": "Swap HOS Short 4WUs0beKn0A (007 vaccine-name) to Ben-OK'd v05 (Private, same slot Tue 17 Nov 11:30)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# Swap HOS Short 4WUs0beKn0A (007 vaccine-name) to Ben-OK'd v05 (Private, same slot Tue 17 Nov 11:30)\n\nBen OK'd J0966.3 v05 on the Studio Kanban at Thu 29 Oct 20:41 London (HOS #180 6507831644: \"watched it, looks good\"). Chief (Grok) queued this delivery job.\nMaster `02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s05_vacca_jesty_v05.mp4` (HOS checkout on the mini), sha256 e5ea76f012fb94c54c4a7224140d2d8ca342ea8c02a2fbdb30df17661f94f1ad (re-verified by Chief 29 Oct 20:47); meta `hos_007_s05_vacca_jesty_v05_meta.json`; review copy HOS UAT/J1200_J0966_review_2026-10-29/hos_007_s05_vacca_jesty_v05_PHONE.mp4 (J1200). Evidence: J0966 history, J1005 audio QA, J1200.\nAirs Tue 17 Nov 11:30 London. Only this one Short: the other J0966 cut still waiting (x_3L_IdYgEc Harvey) waits on Ben; don't touch it. Same flow as J1219.\n\n1. Read back the old id 4WUs0beKn0A (privacy, publishAt, title, description, tags, cover, Related). It should be Private and scheduled for 17 Nov 11:30; otherwise park for Chief.\n2. Verify the master sha256, then upload it as a NEW Private video with the same publishAt. Copy title, description verbatim (keep the J0997 line 2 watch link to ETynHpIYLeY), tags and frame-0 cover from the old id. Captions en-GB from the v05 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing deleted, no Replace.\n4. Verify the swap (verify-swap.ts --job <this job> --old 4WUs0beKn0A --new <new>), update HOS UPLOADS.json (new entry with v05 file + sha, social block copied; old id marked supersededBy the new id) and the OWB Buffer registration (social/hos UPLOADS.json + BUFFER_POSTS.json, every channel) to the new id and v05 file, gate_shorts_open status, and any queued jobs that name 4WUs0beKn0A to the new id (J0875 sets Related -> ETynHpIYLeY after the long goes public Thu 12 Nov 18:00Z: retarget it to the new id). Post the read-back on HOS desk #180.\nDone by 20:00 London Mon 16 Nov; if it fails after that, leave the original scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6507831644",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-29T20:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T20:42Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-29T20:42Z",
+          "by": "chief",
+          "what": "approved by Ben: swap 4WUs0beKn0A (vaccine-name) to hos_007_s05_vacca_jesty_v05 (sha e5ea76f012fb); J1200 playable PHONE v05 (asked in J0966)"
+        }
+      ],
+      "remaining_action": "Swap HOS Short 4WUs0beKn0A (007 vaccine-name) to Ben-OK'd v05 (Private, same slot Tue 17 Nov 11:30)",
+      "due": "2026-11-16T20:00:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap 4WUs0beKn0A (vaccine-name) to hos_007_s05_vacca_jesty_v05 (sha e5ea76f012fb); J1200 playable PHONE",
+        "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_007_s05_vacca_jesty_v05_PHONE.mp4",
+        "version": "v05",
+        "airs": "2026-11-17T11:30Z",
+        "title": "Vaccine-name HC v05",
+        "number": "007",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0966",
+        "askId": "J0966.2",
+        "okAt": "2026-10-29T20:42Z",
+        "okRef": "6507831644"
       }
     }
   ],
