@@ -108513,17 +108513,22 @@
           "at": "2026-10-29T22:12Z",
           "by": "cursor",
           "what": "step 2 of 6 done: prior assemble still running: loudness tweak final_fix2; leave tmux; no second copy"
+        },
+        {
+          "at": "2026-10-29T22:15Z",
+          "by": "cursor",
+          "what": "step 3 of 6 done: v08 first cut FINAL_SHA 46499227…; gates open/level/polish/music/picture PASS; loop FAIL 14.14>12; hitch_ok; motion HF improved; UAT copied but not clean"
         }
       ],
-      "remaining_action": "Wait for tmux J1225-render to finish, then run gates + UAT delivery",
+      "remaining_action": "Fix open↔tail loop seam after path-vs-smooth stab; re-render and re-gate",
       "due": "2026-11-01T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-10-29T22:12Z",
+        "at": "2026-10-29T22:15Z",
         "by": "cursor",
-        "note": "prior assemble still running: loudness tweak final_fix2; leave tmux; no second copy"
+        "note": "v08 first cut FINAL_SHA 46499227…; gates open/level/polish/music/picture PASS; loop FAIL 14.14>12; hitch_ok; motion HF i"
       }
     },
     {
