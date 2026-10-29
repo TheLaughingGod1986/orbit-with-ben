@@ -53,7 +53,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1204 | mini | blocked | cursor | – | assembly · J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence |  |
 | J1207 | mini | open | – | – | for gemini · review · `gemini-argon` · HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8) |  |
 | J1208 | mini | blocked | codex | – | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
-| J1211 | any | open | – | – | chief · Chief: verify condition for J1003 |  |
+| J1211 | any | claimed | codex | 2026-10-29T18:52Z | chief · Chief: verify condition for J1003 |  |
 
 Recently finished:
 
