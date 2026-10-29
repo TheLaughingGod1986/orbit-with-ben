@@ -108846,9 +108846,14 @@
           "at": "2026-10-29T23:35Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T23:35Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Park J1192 for Chief tranche 1 PASS",
+      "remaining_action": "Verify J1192 predecessor, approval history and remaining picture gates",
       "kind": "chief",
       "recheck_of": "J1192",
       "due": "2026-10-30T00:30:01+00:00",
@@ -108857,10 +108862,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-29T23:35Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [],
