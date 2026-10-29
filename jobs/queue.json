@@ -100101,13 +100101,13 @@
       "stage": "",
       "after": "J1129",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-29T01:00Z",
-      "eta": "2026-10-29T03:00Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "",
+      "result": "Waiting for: Studio report for AL_-qlWko_g confirms the J1129 MISSING ELEMENT v02 thumbnail-only test ended, supplies actual completion time, and London calendar date is at least the day after that completion",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -100128,9 +100128,19 @@
           "at": "2026-10-29T01:02Z",
           "by": "codex",
           "what": "step 1 of 3 done: Fresh HOS Studio reload shows thumbnail Running; title remains How Did We Discover the Periodic Table?. No Studio settings changed. Readback saved in ~/_desk/handoff/J1130."
+        },
+        {
+          "at": "2026-10-29T01:02Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Studio report for AL_-qlWko_g confirms the J1129 MISSING ELEMENT v02 thumbnail-only test ended, supplies actual completion time, and London calendar date is at least the day after that completion"
+        },
+        {
+          "at": "2026-10-29T01:02Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T03:00:00Z"
         }
       ],
-      "remaining_action": "Wait for MISSING ELEMENT thumbnail test completion, then verify next-day title-test eligibility",
+      "remaining_action": "Recheck thumbnail test in Studio; arm exact approved title-only B only on day after verified completion",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -100141,7 +100151,12 @@
       },
       "taskKeys": [
         "HOS:002"
-      ]
+      ],
+      "hold": {
+        "type": "test",
+        "condition": "Studio report for AL_-qlWko_g confirms the J1129 MISSING ELEMENT v02 thumbnail-only test ended, supplies actual completion time, and London calendar date is at least the day after that completion",
+        "check_at": "2026-10-30T03:00:00Z"
+      }
     },
     {
       "id": "J1131",
