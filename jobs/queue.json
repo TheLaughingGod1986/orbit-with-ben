@@ -1,5 +1,5 @@
 {
-  "next_id": 1200,
+  "next_id": 1201,
   "jobs": [
     {
       "id": "J0001",
@@ -105700,6 +105700,35 @@
       "remaining_action": "OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video"
+    },
+    {
+      "id": "J1200",
+      "title": "HOS HC: restore four playable J0966 review copies and swap cards",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Elected acting Chief Codex, J1196 verification decision, 29 Oct 2026. Implements Claude HOS desk #180 comment 6491001837 and direction 6483600719. This is a DELIVERY task, explicitly authorised to download/hydrate the existing iCloud media and create review copies. GBP0; no new creative render or generation, no TTS, no upload, privacy or schedule change.\n\nJ0966 remains blocked pending delivery and explicit Ben swap OK. Its existing worker progress is 5/5; do not reset or rerender it. Four approved replacement masters:\n- HOS:007 Jenner, -I_GHK-GcFs, hos_007_s04_smallpox_test_v04.mp4, SHA prefix 3ef3fa773750, airs 13 Nov 2026 11:30Z.\n- HOS:005 Harvey, x_3L_IdYgEc, hos_005_s03_never_saw_v04.mp4, SHA prefix e1f862ba737a, airs 15 Nov 2026 11:30Z.\n- HOS:004 Dalton, -sa2t7dAtCk, hos_004_s05_dalton_v04.mp4, SHA prefix 8ce07a605697, airs 16 Nov 2026 11:30Z.\n- HOS:007 vaccine-name, 4WUs0beKn0A, hos_007_s05_vacca_jesty_v05.mp4, SHA prefix e5ea76f012fb, airs 17 Nov 2026 11:30Z.\n\nRead J0966 history, J1083 Chief PASS, J1005 QA and HOS 8df16983 delivery metadata to recover exact full SHA256 and source paths. First try readable verified local/NAS copies. If only iCloud placeholders exist, downloading/hydrating these exact four existing masters is authorised; J1121 EDEADLK was a delivery failure, not reason to rebuild. Never overwrite or delete originals, NAS contents or mismatching files; use new versioned delivery paths. No machine/account reset or destructive cloud repair.\n\nVerify full master SHA256 against recorded metadata; confirm existing gates and Chief PASS attach to these exact versions. Retrieve existing matching PHONE derivatives when available; otherwise create only PHONE viewing encodes from these verified masters, with derivative hashes recorded separately. Copy into HOS UAT and NAS, verify hashes and ffprobe readability. Inspect actual published Play links for all four; do not treat existence of an iCloud placeholder or a 302 alone as proof the video bytes play.\n\nSet four distinct jobs.py awaits J0966 entries, --add as appropriate, with exact video id/version in --what, the verified HOS UAT path, --type short, correct air dates and watch deadlines. Do not overwrite unrelated asks or approvals. Keep J0966 blocked awaiting Ben; preserve worker 5/5. Post delivery evidence and cards on HOS desk as own agent id. Recheck/prompt the elected Chief to verify the hold after successful delivery. Ben's HOS-007/J0925 approval is the long only and is not approval of these swaps.\n\nFirst pack cutoff 12 Nov 20:00Z. Existing instruction: without explicit Ben swap OK by 10:30Z on each air day, originals air unchanged; no schedule slips authorised. Claude flags original Jenner atempo 1.08 and vaccine-name 1.07 versus HOS 1.06 cap, so report any unresolved delivery before cutoff to elected Chief; this task does not override a failed gate or decide publishing.\n\nUse isolated clean worktree for commits; commit metadata/evidence only. Follow NAS/disk rules. For work exceeding 20 minutes start detached, record session/log/.done, release; never duplicate an active process. If hydration still fails, record exact error and concrete next recovery step, finish all unaffected copies, and report to elected Chief. No purchases or login bypass.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6491001837",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-29T09:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T09:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Deliver verified HC phone copies to HOS UAT and four playable review cards",
+      "due": "2026-11-12T20:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
