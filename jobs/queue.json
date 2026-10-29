@@ -105816,17 +105816,22 @@
           "at": "2026-10-29T10:55Z",
           "by": "cursor",
           "what": "step 2 of 5 done: v03 FAIL: S5 visor false-positive 0.003; S6 f0diff 0.26. Patched opens; tmux J1199-s5s6-v04. Uranus v02 PASS delivered."
+        },
+        {
+          "at": "2026-10-29T10:58Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Assembler patched: shared open/tail cycle + soft-Cassini boost; S5 open NHQ202508030001; S6 open PIA14925"
         }
       ],
-      "remaining_action": "Detached S5/S6 v04 re-render (cooler S5 open, PIA06997 S6 open); verify gates then park",
+      "remaining_action": "Wait for tmux J1199-s5s6-v04 (S5 cooler open + S6 PIA14925 boosted cover); then park for Chief",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-10-29T10:55Z",
+        "at": "2026-10-29T10:58Z",
         "by": "cursor",
-        "note": "v03 FAIL: S5 visor false-positive 0.003; S6 f0diff 0.26. Patched opens; tmux J1199-s5s6-v04. Uranus v02 PASS delivered."
+        "note": "Assembler patched: shared open/tail cycle + soft-Cassini boost; S5 open NHQ202508030001; S6 open PIA14925"
       },
       "taskKeys": [
         "OWB:030"
