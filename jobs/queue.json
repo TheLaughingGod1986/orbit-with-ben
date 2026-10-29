@@ -100752,10 +100752,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T02:31Z",
+      "eta": "2026-10-29T03:31Z",
       "created_by": "refill",
       "created_at": "2026-10-29T00:35Z",
       "result": "",
@@ -100819,6 +100819,11 @@
           "at": "2026-10-29T02:31Z",
           "by": "codex",
           "what": "rerouted to codex: Closure of corrected J1137 evidence as direct follow-up to J1140 Chief ruling; no additional worker task."
+        },
+        {
+          "at": "2026-10-29T02:31Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "FIX: verify J1140 evidence corrections before accepting QA sweep; J1100 repair and credit hold remain",
@@ -100855,7 +100860,15 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T02:31Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1138",
