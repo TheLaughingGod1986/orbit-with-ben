@@ -93518,13 +93518,13 @@
       "stage": "",
       "after": "J0935",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-28T04:11Z",
-      "result": "waits on Ben's OK of the OWB 025 Mars Opening Short TtgHNLXfDSs swap to v05 (_PHONE in OWB UAT) by Wed 11 Nov 10:30 London. Acting-Chief PASS ab4ad3de4.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T04:11Z",
@@ -93550,6 +93550,16 @@
           "at": "2026-10-28T23:53Z",
           "by": "claude",
           "what": "waits on Ben: swap the 025 Mars Opening Short \"Why Did a 90-Day Mars Rover Last 14 Years?\" (TtgHNLXfDSs, airs Wed 11 Nov 11:30) to re-cut v07, which opens on a whole sentence (by 2026-11-11 10:30 London)"
+        },
+        {
+          "at": "2026-10-29T01:02Z",
+          "by": "claude",
+          "what": "no longer waits on Ben"
+        },
+        {
+          "at": "2026-10-29T01:02Z",
+          "by": "claude",
+          "what": "reopened: acting Chief (Claude): Ben OK'd v07 on the board (/api/checks OWB-J1059 verdict ok, version v07, 2026-10-28T23:57:41Z). Swap TtgHNLXfDSs to v07 per the 28 Oct amendment (sha256 e9f848d9...), Private, publishAt Wed 11 Nov 11:30 London; read back; never Public, no Replace, no delete."
         }
       ],
       "remaining_action": "Swap OWB 025 Mars Opening Short TtgHNLXfDSs to wed11_opening_testA_v05 after Ben's OK",
@@ -93558,23 +93568,7 @@
       "taskKeys": [
         "OWB:025"
       ],
-      "hold": {
-        "type": "ben",
-        "condition": "waits on Ben's OK of the OWB 025 Mars Opening Short TtgHNLXfDSs swap to v05 (_PHONE in OWB UAT) by Wed 11 Nov 10:30 London. Acting-Chief PASS ab4ad3de4.",
-        "check_at": "2026-11-11T10:30:00Z"
-      },
       "awaits_was": {
-        "what": "swap the 025 Mars Opening Short \"Why Did a 90-Day Mars Rover Last 14 Years?\" (TtgHNLXfDSs, airs Wed 11 Nov 11:30) to re-cut v05",
-        "file": "OWB UAT/025_wed11_opening_testA_v05/wed11_opening_testA_v05_PHONE.mp4",
-        "version": "v05",
-        "due": "2026-11-11T10:30Z",
-        "airs": "2026-11-11T11:30Z",
-        "ifNot": "No OK by then: scheduled v02 airs Wed 11 Nov 11:30 as is",
-        "title": "025 Mars 14-Year Rover Short re-cut v05 (swap)",
-        "number": "025",
-        "type": "short"
-      },
-      "awaits_ben": {
         "what": "swap the 025 Mars Opening Short \"Why Did a 90-Day Mars Rover Last 14 Years?\" (TtgHNLXfDSs, airs Wed 11 Nov 11:30) to re-cut v07, which opens on a whole sentence",
         "file": "OWB UAT/025_wed11_opening_testA_v07/wed11_opening_testA_v07_PHONE.mp4",
         "version": "v07",
