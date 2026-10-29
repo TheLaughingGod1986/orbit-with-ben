@@ -1,5 +1,5 @@
 {
-  "next_id": 1216,
+  "next_id": 1217,
   "jobs": [
     {
       "id": "J0001",
@@ -107538,6 +107538,34 @@
       "due": "2026-10-29T19:20:47+00:00",
       "due_kind": "condition-verification",
       "urgent": 6
+    },
+    {
+      "id": "J1216",
+      "title": "HOS 008: a 'rough_v01' file in HOS UAT put 008 on Ben's board before any Chief review - identify it and move it out of the review path",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Since 29 Oct ~18:00 the board shows HOS:008 'Ready for you · Watch v01' from iCloud 'HOS UAT/008_Lightning-Franklin_rough_v01/hos_008_rough_v01.mp4'. 008's edit (J1213) hasn't started and no Chief PASS exists, so Ben must not be asked to watch it. 1) Read the file (ffprobe, sha256, duration, first frames) and its folder; find which job made it (likely a J1191 picture preview). 2) If it's a preview or partial assembly, rename the folder to 'HOS UAT/_previews/008_picture_preview_J1191' (move within iCloud, never delete) so kanban_snapshot stops treating it as a cut; note the new path in J1213. 3) If it is a real full rough, leave it and park for Chief review instead. 4) Confirm the board no longer shows 008 as Ready for Ben. GBP0, no NAS deletion.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T18:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T18:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008: a 'rough_v01' file in HOS UAT put 008 on Ben's board before any Chief review - identify it and move it out of the review path",
+      "kind": "qa"
     }
   ],
   "focus": [],
