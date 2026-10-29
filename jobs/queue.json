@@ -101445,17 +101445,22 @@
           "at": "2026-10-29T03:28Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Data API & deduplicated auditChannel PASS at 2026-10-29T03:28:33Z (57 unique videos: 26 public + 14 scheduled + 17 unscheduled private; 0 errors)"
+        },
+        {
+          "at": "2026-10-29T03:29Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 4/4 public longs endscreenRenderer (03:28:57Z-03:28:59Z) and 22/22 public Shorts Related pills (03:28:59Z-03:29:25Z); 0 new fixes"
         }
       ],
-      "remaining_action": "Verify live end screens on 4 public longs and Related video pills on 22 public Shorts",
+      "remaining_action": "Update 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md in HOS repo and commit",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-29T03:28Z",
+        "at": "2026-10-29T03:29Z",
         "by": "gemini",
-        "note": "Data API & deduplicated auditChannel PASS at 2026-10-29T03:28:33Z (57 unique videos: 26 public + 14 scheduled + 17 unsch"
+        "note": "Verified 4/4 public longs endscreenRenderer (03:28:57Z-03:28:59Z) and 22/22 public Shorts Related pills (03:28:59Z-03:29"
       },
       "taskKeys": [
         "HOS:001",
