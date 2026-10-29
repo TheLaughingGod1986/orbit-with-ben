@@ -1,5 +1,5 @@
 {
-  "next_id": 1207,
+  "next_id": 1208,
   "jobs": [
     {
       "id": "J0001",
@@ -106366,6 +106366,34 @@
       "remaining_action": "Find rights-cleared moving subject footage and return source proof plus Uranus audio edit plan for Chief",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J1207",
+      "title": "HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J1194 (MacBook, 29 Oct) applied the 28 Oct description sweep fixes. The Orbit half is on main already; the HOS half is commit d56a80c8 on history-of-science branch macbook/j1194-description-sweep (pushed by Ben). Open a PR from that branch to HOS main, check it changes only description/chapter/metadata text files named in 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28_APPLIED.md (orbit-with-ben), run HOS check_all.sh, merge when green. No YouTube or Studio changes. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T13:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T13:08Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8)",
+      "kind": "review"
     }
   ],
   "focus": [],
