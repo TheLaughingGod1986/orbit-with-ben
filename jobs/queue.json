@@ -108851,18 +108851,24 @@
           "at": "2026-10-29T23:35Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-29T23:36Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: J1191 completed with Chief PASS; J1192 already generated 57/57 rows and now requests review on HOS PR 377, so its dependency hold is stale"
         }
       ],
-      "remaining_action": "Verify J1192 predecessor, approval history and remaining picture gates",
+      "remaining_action": "Verify the actual remaining review requirement on PR 377 before setting the J1192 hold",
       "kind": "chief",
       "recheck_of": "J1192",
       "due": "2026-10-30T00:30:01+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T23:35Z",
-        "by": "codex"
+        "at": "2026-10-29T23:36Z",
+        "by": "codex",
+        "note": "J1191 completed with Chief PASS; J1192 already generated 57/57 rows and now requests review on HOS PR 377, so its depend"
       },
       "taskKeys": [
         "HOS:009"
