@@ -1,5 +1,5 @@
 {
-  "next_id": 1224,
+  "next_id": 1225,
   "jobs": [
     {
       "id": "J0001",
@@ -100455,6 +100455,11 @@
           "at": "2026-10-28T21:16Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-29T21:30:00Z"
+        },
+        {
+          "at": "2026-10-29T21:39Z",
+          "by": "relay",
+          "what": "condition verification queued: J1224"
         }
       ],
       "remaining_action": "After verified test completion and the next-day gap, arm the authorized title-only B while holding the live thumbnail fixed",
@@ -100472,7 +100477,8 @@
       "hold": {
         "type": "test",
         "condition": "Studio report for GHZDsiH7L7A confirms the existing combined title-and-thumbnail test has ended, with its completion date verified directly; the next London calendar day has arrived. Recheck observed Running status, never infer completion from the 19h44m estimate.",
-        "check_at": "2026-10-29T21:30:00Z"
+        "check_at": "2026-10-29T22:39:10+00:00",
+        "recheck_task": "J1224"
       }
     },
     {
@@ -108306,6 +108312,37 @@
         "okAt": "2026-10-29T20:56Z",
         "okRef": "6508107852"
       }
+    },
+    {
+      "id": "J1224",
+      "title": "Chief: verify condition for J1131",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1131: Studio report for GHZDsiH7L7A confirms the existing combined title-and-thumbnail test has ended, with its completion date verified directly; the next London calendar day has arrived. Recheck observed Running status, never infer completion from the 19h44m estimate.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1131 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-29T21:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T21:39Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After verified test completion and the next-day gap, arm the authorized title-only B while holding the live thumbnail fixed",
+      "kind": "chief",
+      "recheck_of": "J1131",
+      "due": "2026-10-29T22:39:10+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
