@@ -107523,9 +107523,14 @@
           "at": "2026-10-29T19:12Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 008 rough v01 delivered (557.8s, sha256 6704aa3434634b9d…). PR #374 already MERGED. episode_gate PASS. music_gate SKIPPED_NO_BED (no bed without Chief OK). picture_qa+polish_gate FAIL on 3 split-panel rows: 09_window_storm @2:30, overlay_06_same_thing @6:01, overlay_10_metal_easy @7:58 (+6 low-detail WARNs). Pack: desk/_desk/008/rough_v01, HOS UAT/008_Lightning-Franklin_rough_v01, NAS .../rough_v01/. J1193 code-graphic review still open. Ben watch only after Chief PASS."
+        },
+        {
+          "at": "2026-10-29T19:15Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T07:15:00Z"
         }
       ],
-      "remaining_action": "Park J1213 for Chief review of rough v01 (gates mixed)",
+      "remaining_action": "FIX ruled by Codex: J1218 repairs rough v02; J1193 graphics review required; no Ben watch until gates and Chief PASS",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -107537,7 +107542,12 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief ruling FIX / NOT APPROVED: rough v01 fails picture_qa and polish_gate; no Ben watch. J1218 must deliver repaired v02 with unchanged picture gates passing and J1193 must deliver graphics findings before Chief re-review. Missing music remains unfinished, SKIPPED_NO_BED is not PASS.",
+        "check_at": "2026-10-30T07:15:00Z"
+      }
     },
     {
       "id": "J1214",
