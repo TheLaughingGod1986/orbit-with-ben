@@ -50,6 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1199 | mini | claimed | cursor | 2026-10-29T11:53Z | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
 | J1200 | mini | open | – | – | assembly · HOS HC: restore four playable J0966 review copies and swap cards | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6491001837 |
+| J1201 | mini | open | – | – | qa · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
 
 Recently finished:
 
