@@ -105780,9 +105780,14 @@
           "at": "2026-10-29T18:09Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Live Flow read 18,550 (rem_expected 7,354, buffer 11,196 >= 3,000, logged via ai_spend.py); Part 01 batch (12 rows) running in tmux j1192-render starting P01:01_moon_falling"
+        },
+        {
+          "at": "2026-10-29T18:13Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: P01:01_moon_falling KEEP (sha=3e0774a7dd51, 100 cr, live Flow 18,450, rem_expected 7,095, buffer 11,355 >= 3,000); P01:02_apple_and_moon I2V in progress in tmux j1192-render"
         }
       ],
-      "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 01 (12 rows in progress), then Parts 02-05 (45 rows)",
+      "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 01 (1/12 done, 11 remaining), then Parts 02-05 (45 rows)",
       "due": "2026-11-12T20:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -105790,9 +105795,9 @@
       "progress": {
         "step": 0,
         "of": 6,
-        "at": "2026-10-29T18:09Z",
+        "at": "2026-10-29T18:13Z",
         "by": "gemini",
-        "note": "Live Flow read 18,550 (rem_expected 7,354, buffer 11,196 >= 3,000, logged via ai_spend.py); Part 01 batch (12 rows) runn"
+        "note": "P01:01_moon_falling KEEP (sha=3e0774a7dd51, 100 cr, live Flow 18,450, rem_expected 7,095, buffer 11,355 >= 3,000); P01:0"
       },
       "taskKeys": [
         "HOS:009"
