@@ -106435,13 +106435,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-29T17:30Z",
-      "eta": "2026-10-29T19:30Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T12:45Z",
-      "result": "",
+      "result": "parked for Chief: Uranus v06 assembled (sha f0b4e0a0318f99ecbe38cdcb0525c8f869fba609d55194da75de45cb579b3ee5). Shot9 odd-phase from 60fps frame 53; open 2.0167-4.7167 / tail 0.8833-2.0167; 1.778x; VO f59211a8 reused. gate_shorts_open PASS f0diff 4.74; finish_scan loop PASS 8.28 vs 2x median 12.47; polish/music/sfx/picture_qa PASS (artist WARN only); hitch_ok 0.30-0.55. Loudness I=-14.3 TP=-1.8. Evidence jobs/reviews/J1204/URANUS_V06_DELIVERY_2026-10-29.md (+ hitch frames); UAT standalone_shorts_uranus_v06 iCloud+NAS; commit 7e98a748f. Preserve v02-v05. No upload/swap. GBP0. Need Chief cut PASS or FAIL (no further Shot9 windows if FAIL).",
       "history": [
         {
           "at": "2026-10-29T12:45Z",
@@ -106617,6 +106617,11 @@
           "at": "2026-10-29T17:36Z",
           "by": "cursor",
           "what": "step 1 of 5 done: tmux j1204-uranus-v06 running; log ~/_desk/logs/j1204-uranus-v06.log; .done ~/_desk/logs/j1204-uranus-v06.done; odd-phase Shot9 from frame 53"
+        },
+        {
+          "at": "2026-10-29T17:47Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Uranus v06 assembled (sha f0b4e0a0318f99ecbe38cdcb0525c8f869fba609d55194da75de45cb579b3ee5). Shot9 odd-phase from 60fps frame 53; open 2.0167-4.7167 / tail 0.8833-2.0167; 1.778x; VO f59211a8 reused. gate_shorts_open PASS f0diff 4.74; finish_scan loop PASS 8.28 vs 2x median 12.47; polish/music/sfx/picture_qa PASS (artist WARN only); hitch_ok 0.30-0.55. Loudness I=-14.3 TP=-1.8. Evidence jobs/reviews/J1204/URANUS_V06_DELIVERY_2026-10-29.md (+ hitch frames); UAT standalone_shorts_uranus_v06 iCloud+NAS; commit 7e98a748f. Preserve v02-v05. No upload/swap. GBP0. Need Chief cut PASS or FAIL (no further Shot9 windows if FAIL)."
         }
       ],
       "remaining_action": "Wait for tmux j1204-uranus-v06 render; then verify gates and park for Chief",
