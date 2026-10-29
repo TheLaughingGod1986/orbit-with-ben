@@ -102353,13 +102353,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-29T04:32Z",
-      "eta": "2026-10-29T05:32Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T04:27Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-29T04:27Z",
@@ -102395,6 +102395,11 @@
           "at": "2026-10-29T04:35Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed 05_Analytics/live_fixes/2026-10-29.md (235fd5ef0); 0 fixes needed"
+        },
+        {
+          "at": "2026-10-29T04:35Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Mark J1156 done and report",
@@ -102422,7 +102427,8 @@
         "OWB:023",
         "OWB:027",
         "OWB:030"
-      ]
+      ],
+      "done_ref": "235fd5ef0"
     },
     {
       "id": "J1157",
