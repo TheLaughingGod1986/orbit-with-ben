@@ -12603,7 +12603,7 @@
       "review_or_fix_jobs": [
         "J1100"
       ],
-      "notes": "J1100 v05 intermediate render; gated in J1137 (0 FAIL, 17 WARN); superseded by v06",
+      "notes": "J1100 v05 intermediate render; picture_qa/polish_gate/music_gate PASS in J1137 (0 FAIL, 17 WARN) and FINAL_MEASUREMENTS.json recorded loop_pass=true (whole=0.84, masked=0.87 vs required <2), but superseded by v06 after Acting Chief FIX ruling 12364118e (2026-10-29T00:02Z) rejected reversed captions in the 1s silent loop tail",
       "version_status": "historical_superseded",
       "is_newest_candidate": false,
       "superseded_by": "028_short_lift_night_sky_35yr_v06",
@@ -12618,7 +12618,7 @@
       "total_gate_warnings": 17,
       "automated_technical_gate_status": "PASS_WITH_WARNINGS_REQUIRING_REVIEW",
       "delivery_status": "HISTORICAL_SUPERSEDED",
-      "delivery_detail": "Superseded by newer inventory entry 028_short_lift_night_sky_35yr_v06 (J1100 v06 loop-bridge render; v05 had whole loop diff 19.44 > 12.0).",
+      "delivery_detail": "Superseded by newer inventory entry 028_short_lift_night_sky_35yr_v06 per Acting Chief J1100 FIX ruling 12364118e (2026-10-29T00:02Z): v05 recorded loop_pass=true, whole=0.84, masked=0.87 (<2 required) in /Users/benjaminoats/_desk/renders/J1100-S6-final02/S6_028_X768qs8sNQs/FINAL_MEASUREMENTS.json because its 1s tail reversed captioned opening frames; Chief ordered the 1s silent loop tail rebuilt from caption-free frames in v06.",
       "gate_to_media_binding": {
         "binding_kind": "direct_or_repo_relative_media_path",
         "picture_qa_video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v05.mp4",
@@ -12677,7 +12677,7 @@
       "review_or_fix_jobs": [
         "J1100"
       ],
-      "notes": "J1100 v06 candidate in _desk/renders/J1100-v06-preserved; gated in J1137 (0 FAIL, 17 WARN); held in J1100",
+      "notes": "J1100 v06 candidate in _desk/renders/J1100-v06-preserved; picture_qa/polish_gate/music_gate PASS in J1137 (0 FAIL, 17 WARN), explicitly distinct from the separate whole-loop check FAIL in FINAL_MEASUREMENTS.json (loop_pass=false, whole=9.26, masked=0.95 vs required whole difference <2); held in J1100 (2026-10-30T10:50:00Z credit hold)",
       "version_status": "current_newest",
       "is_newest_candidate": true,
       "superseded_by": null,
@@ -12693,7 +12693,7 @@
       "total_gate_warnings": 17,
       "automated_technical_gate_status": "PASS_WITH_WARNINGS_REQUIRING_REVIEW",
       "delivery_status": "HELD_CHANGES_REQUIRED",
-      "delivery_detail": "J1100: automated picture_qa/polish_gate/music_gate PASS (0 FAIL) & whole loop diff 9.26 <= 12.0 (masked 0.95); Acting Chief FIX (2026-10-29T00:02Z on 12364118e): resolve 1s caption-free loop tail before repo promotion & swap (J1100 held on 2026-10-30T10:50Z; scheduled f17XCtUmN-g v01 remains active fallback)",
+      "delivery_detail": "J1100: automated picture_qa/polish_gate/music_gate PASS (0 FAIL, 17 WARN), explicitly distinct from the separate whole-loop check FAIL in /Users/benjaminoats/_desk/renders/J1100-v06-preserved/S6_028_X768qs8sNQs/FINAL_MEASUREMENTS.json (sha256 5295b0f3d645f192400d3d80fe00a0de372e56d601fd969822531a5452cf8aae) and J1100 history (2026-10-29T00:13Z/00:15Z/00:40Z, bce5915f1): loop_pass=false, whole=9.26, masked=0.95 vs required whole difference <2 (no threshold waiver) after rebuilding the 1s loop tail from caption-free frames per Acting Chief FIX ruling 12364118e (2026-10-29T00:02Z). Held as HELD_CHANGES_REQUIRED in J1100 with credit hold at 2026-10-30T10:50:00Z (scheduled f17XCtUmN-g v01 remains active fallback)",
       "gate_to_media_binding": {
         "binding_kind": "direct_or_repo_relative_media_path",
         "picture_qa_video": "/Users/benjaminoats/_desk/renders/J1100-v06-preserved/S6_028_X768qs8sNQs/S6_028_X768qs8sNQs_v06.mp4",
@@ -12702,7 +12702,7 @@
       }
     }
   ],
-  "correction_job": null,
+  "correction_job": "J1140",
   "single_file_exports_count": 145,
   "visual_packs_count": 8,
   "visual_pack_member_files_count": 119,
@@ -12714,7 +12714,7 @@
   "gate_failure_indicators": 0,
   "entries_with_gate_warnings_count": 142,
   "entries_zero_warnings_count": 11,
-  "scope_and_limits": "Automated technical gate sweep (picture_qa, polish_gate, music_gate) and cryptographic media identity reconciliation only. Does NOT supply full-size human/Chief frame review, audio/ear review, gate_shorts_open/Keeper eligibility, or final upload approval. All J0935 rulings (ab4ad3de4 / de2817f6d / c61), J1084/J1090 Chief review hold on wed11_opening_testA_v07 and J1059 Ben hold, J0936/J1032 Chief replacement-media PASS (cd8f28c40 / 719fdf02d) and Ben swap hold, J0961 episode-gate subscribe_beat hold (c93991316 / J1085), J0966/J1005 Chief/Ben hold, J0977 gate60/Keeper FAILs, J0979 CHANGES REQUIRED hold, and J1008 NO RECUT rulings remain strictly in force.",
+  "scope_and_limits": "Automated technical gate sweep (picture_qa, polish_gate, music_gate) and cryptographic media identity reconciliation only. Does NOT supply full-size human/Chief frame review, audio/ear review, gate_shorts_open/Keeper eligibility, or final upload approval. Zero FAIL in picture_qa/polish_gate/music_gate across all 452 applicable sidecars is explicitly distinct from the separate whole-loop check FAIL on OWB:028 S6 v06 (028_short_lift_night_sky_35yr_v06, loop_pass=false, whole=9.26, masked=0.95 vs required whole difference <2 in /Users/benjaminoats/_desk/renders/J1100-v06-preserved/S6_028_X768qs8sNQs/FINAL_MEASUREMENTS.json); J1100 HELD_CHANGES_REQUIRED and its 2026-10-30T10:50:00Z ElevenLabs credit hold remain strictly in force. All J0935 rulings (ab4ad3de4 / de2817f6d / c61), J1084/J1090 Chief review hold on wed11_opening_testA_v07 and J1059 Ben hold, J0936/J1032 Chief replacement-media PASS (cd8f28c40 / 719fdf02d) and Ben swap hold, J0961 episode-gate subscribe_beat hold (c93991316 / J1085), J0966/J1005 Chief/Ben hold, J0977 gate60/Keeper FAILs, J0979 CHANGES REQUIRED hold, and J1008 NO RECUT rulings remain strictly in force.",
   "reconciles_review": "J1066/J1075/J1079 Chief PASS (c598ed5e9) + J1084/J1090 wed11_opening_testA v06/v07 updates",
   "total_media_files_enumerated": 264,
   "identity_verification_summary": {
