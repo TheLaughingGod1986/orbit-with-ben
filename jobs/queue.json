@@ -88510,13 +88510,27 @@
           "at": "2026-10-29T16:54Z",
           "by": "codex",
           "what": "reopened: J1211 verified mature lifetime Studio capture at 2026-10-29T07:13:31.819902Z (67h43m after release; threshold 2026-10-28T11:30Z). OVLv9dxTcpE: 887 Studio views, 30.7% stayedToWatch, 75.3% avgViewPct. Source 05_Analytics/owb/studio_ctr.json committed by J1179 at 022575da5; SHA256 7568944bf7424220523a74136121f23d91d5835850e7385a8f12113f1329e1b2. Original read-only GBP0 scope remains valid. Reopened for measurement, retention-curve availability check and audit/lab update only; no production approval or final audit PASS."
+        },
+        {
+          "at": "2026-10-29T18:59Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "kind": "review",
       "taskKeys": [
         "OWB:027"
       ],
-      "remaining_action": "Obtain a mature Earth Short Studio reading, then measure retention and update the audit"
+      "remaining_action": "Obtain a mature Earth Short Studio reading, then measure retention and update the audit",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1004",
