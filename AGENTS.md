@@ -54,6 +54,7 @@ cd 07_Content-Ops && npx tsx --env-file=.env scripts/buffer-mirror.ts check    #
 # every upload package carries social copy (manifest `social`: hook, question, alt) and, for a long, Trailer/<slug>_trailer.mp4 (STUDIO_PLAYBOOK.md §12)
 # every long's description carries one 'Sources:' line (4-6 papers or official fact sheets behind the spoken numbers, from SOURCES.md rows with an exact quote; author, year, journal, what it backs), before the image credits. Never name the AI checkers.
 cd 07_Content-Ops && npx tsx scripts/buffer-mirror.ts register --video <id> --media <mp4> --long <longId>    # after uploading by hand, so the daily check can find the file
+# any swap, rebuild or hold of a Short also updates or cancels its Buffer posts (BUFFER_POSTS.json, every channel, OWB and HOS) and its UPLOADS.json entry in the same job; the daily check registers only the cut that will actually air (Claude, HOS #180 6495333904, 29 Oct 2026)
 cd 07_Content-Ops && npm run youtube:auth    # once, or when a script says the YouTube login expired
 python3 00_Brand/Channel-Setup/tools/weekly_public_audit.py
 cd 07_Content-Ops && npm run analytics:snapshot [-- --channel owb|hos]   # daily at 06:40 on the Mac (launchd/analytics-snapshot.sh, own worktree): read-only stats for every video
