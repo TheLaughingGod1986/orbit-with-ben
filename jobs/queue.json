@@ -103768,13 +103768,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-29T06:20Z",
-      "eta": "2026-10-29T07:20Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T06:19Z",
-      "result": "",
+      "result": "Read-only listing check PASS at 2026-10-29T06:23Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, fe2f53ca; 0 new fixes needed)",
       "history": [
         {
           "at": "2026-10-29T06:19Z",
@@ -103805,6 +103805,11 @@
           "at": "2026-10-29T06:24Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: committed 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md (HOS fe2f53ca); 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-29T06:24Z",
+          "by": "gemini",
+          "what": "done: Read-only listing check PASS at 2026-10-29T06:23Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, fe2f53ca; 0 new fixes needed)"
         }
       ],
       "remaining_action": "Finish J1173 and post report",
@@ -103826,7 +103831,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:008"
-      ]
+      ],
+      "done_ref": "fe2f53ca"
     }
   ],
   "focus": [],
