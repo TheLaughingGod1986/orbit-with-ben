@@ -103247,13 +103247,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T05:50Z",
-      "eta": "2026-10-29T06:50Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T05:36Z",
-      "result": "parked for Chief: J1167 QA sweep complete across OWB (2e5b0e5b7) and HOS (cdfdea81) with byte-identical J1167_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 a137963b4da5ef3648dfb93212f6a41598515d9922934a3631f6234cd15dce67) and J1167_QA_SWEEP_REPORT_2026-10-29.md (sha256 ece7cbb706b49909e44d77b9795fa4647fc3536a0d9fd8056a7bfe52cb2ca36a). 0 new OWB or HOS renders since J1160; all 157 entries (91 OWB + 66 HOS; 268 media files) and 452/452 applicable picture_qa/polish_gate/music_gate sidecars verified fresh with 0 FAIL (distinct from separate J1100 whole-loop FAIL 9.26 >= 2 on S6 v06; J1100 credit/loop hold at 2026-10-30T10:50:00Z and HELD_CHANGES_REQUIRED preserved; opening report delta heading updated to J1160 2026-10-29T05:00Z -> 2026-10-29T05:44Z; top-level JSON summary counters synchronized 1-to-1; 0 duplicate repair jobs; £0 spend).",
+      "result": "Acting-Chief AUDIT PASS; technical sweep only. Verified identical OWB/HOS inventory/report hashes a137963b4da5 / ece7cbb706b4; 157 entries identical to accepted J1160 (91 OWB,66 HOS;268 files); 452/452 sidecars independently read and fresh without FAIL (425 JSON,27 text); four recent render hashes match; no newer local project/desk video renders. Warnings and manifest-only identity limits retained. No frame/audio/film-stage/UAT/upload approval. Historical hold prose does not override later completed queue decisions. Follow-up remains J1100 with existing credit check 2026-10-30T10:50:00Z: verify live balance, authorized S2/S5 question pickups, S2 instrumental bed, caption-free tails, S6 whole-loop repair (9.26 FAIL vs required below 2), then gates/listening and Chief review. No duplicate fix job, spend, publishing or unrelated hold change. Ruling OWB #6489105037; HOS #6489108705. Chief review progress recorded separately from worker milestones.",
       "history": [
         {
           "at": "2026-10-29T05:36Z",
@@ -103309,6 +103309,11 @@
           "at": "2026-10-29T05:50Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T05:50Z",
+          "by": "codex",
+          "what": "done: Acting-Chief AUDIT PASS; technical sweep only. Verified identical OWB/HOS inventory/report hashes a137963b4da5 / ece7cbb706b4; 157 entries identical to accepted J1160 (91 OWB,66 HOS;268 files); 452/452 sidecars independently read and fresh without FAIL (425 JSON,27 text); four recent render hashes match; no newer local project/desk video renders. Warnings and manifest-only identity limits retained. No frame/audio/film-stage/UAT/upload approval. Historical hold prose does not override later completed queue decisions. Follow-up remains J1100 with existing credit check 2026-10-30T10:50:00Z: verify live balance, authorized S2/S5 question pickups, S2 instrumental bed, caption-free tails, S6 whole-loop repair (9.26 FAIL vs required below 2), then gates/listening and Chief review. No duplicate fix job, spend, publishing or unrelated hold change. Ruling OWB #6489105037; HOS #6489108705. Chief review progress recorded separately from worker milestones."
         }
       ],
       "remaining_action": "Await Chief verification of J1167 QA sweep inventory and report",
@@ -103329,7 +103334,8 @@
         "at": "2026-10-29T05:46Z",
         "by": "gemini",
         "note": "Step 4/4 done: Committed and pushed byte-identical J1167_QA_SWEEP_INVENTORY_2026-10-29.json (sha256 a137963b4da5) and J1"
-      }
+      },
+      "done_ref": "6489105037"
     },
     {
       "id": "J1168",
