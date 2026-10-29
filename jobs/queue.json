@@ -108790,19 +108790,24 @@
           "at": "2026-10-29T23:32Z",
           "by": "codex",
           "what": "step 2 of 3 done: Kept J0985 blocked on unfinished J1003 readout; corrected stale blocked-prerequisite wording and set next check 30 Oct 05:35Z."
+        },
+        {
+          "at": "2026-10-29T23:32Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirms J0985 blocked, last_recheck J1227, retry 30 Oct 05:35Z; J1003 remains open. Original audit progress and production restrictions preserved."
         }
       ],
-      "remaining_action": "Verify saved hold and report completed condition check",
+      "remaining_action": "Verification complete; J0985 awaits J1003 readout",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-29T23:50:17+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-29T23:32Z",
         "by": "codex",
-        "note": "Kept J0985 blocked on unfinished J1003 readout; corrected stale blocked-prerequisite wording and set next check 30 Oct 0"
+        "note": "Readback confirms J0985 blocked, last_recheck J1227, retry 30 Oct 05:35Z; J1003 remains open. Original audit progress an"
       },
       "taskKeys": [
         "OWB:027"
