@@ -105577,22 +105577,28 @@
           "at": "2026-10-29T09:49Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-29T09:50Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read full J0966 history and fresh threads; Claude 6491001837 requests a delivery job to break repeated verification holds"
         }
       ],
-      "remaining_action": "Verify HC recut delivery and explicit swap approvals",
+      "remaining_action": "Record delivery blocker and verify current board approvals",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-29T09:59:26+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T09:49Z",
-        "by": "codex"
+        "at": "2026-10-29T09:50Z",
+        "by": "codex",
+        "note": "Read full J0966 history and fresh threads; Claude 6491001837 requests a delivery job to break repeated verification hold"
       },
       "taskKeys": [
-        "HOS:003",
         "HOS:004",
+        "HOS:005",
         "HOS:007"
       ]
     },
