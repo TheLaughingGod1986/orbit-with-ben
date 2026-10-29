@@ -100814,10 +100814,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T01:56Z",
+      "eta": "2026-10-29T03:56Z",
       "created_by": "relay",
       "created_at": "2026-10-29T01:09Z",
       "result": "",
@@ -100826,13 +100826,26 @@
           "at": "2026-10-29T01:09Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T01:56Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Chief to resolve Mars Related video link and review PR 339",
       "kind": "chief",
       "recheck_of": "J1059",
       "due": "2026-10-29T02:09:55+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T01:56Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
