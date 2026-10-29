@@ -1,5 +1,5 @@
 {
-  "next_id": 1199,
+  "next_id": 1200,
   "jobs": [
     {
       "id": "J0001",
@@ -105568,6 +105568,35 @@
       ],
       "remaining_action": "023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends",
       "kind": "studio"
+    },
+    {
+      "id": "J1199",
+      "title": "OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief (Claude), Ben's go 29 Oct on LEARNINGS rule 8 (every new Short: frame 0 is moving footage of the subject, subject + surprise in sentence 1, no meta-promise). UPCOMING_SHORTS_GATE.md flags all three scheduled Shorts below on exactly these points (report-only today):\n- ZpEA8stoSPA 'Why Does Uranus Have 21-Year Winters?' (airs Tue 3 Nov 11:30 London): pushed still at frame 0; first cut 5.90 s; 'stay, and I'll show you'.\n- T9fVlG3CCzU 'What Are Shooting Stars Really Made Of?' (Sat 7 Nov): pushed still; first cut 4.70 s; meta-promise.\n- RLSJm59OSzI 'What Would Standing on Saturn's Moon Titan Feel Like?' (Tue 10 Nov): pushed still; first cut 4.30 s; meta-promise.\nFor each, from the existing approved masters and their own film's footage only: replace the opening with moving footage of the subject from frame 0 (first cut <= 3.0 s), remove the meta-promise phrase by cutting existing audio on a sentence boundary (no new VO, no wording change), keep 18-27 s, keep captions word-for-word with the final audio. Run gate_shorts_open (the 60% gate, not report-only), picture_qa, polish_gate and music_gate; deliver the next version with sha256 to repo/UAT/NAS (copy only), then park for Chief. The Chief then puts each on Ben's board for an OK by 10:30 on its air day; without his OK the scheduled copy airs as is. No upload, swap or spend here. Order: Uranus first (3 Nov).",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T09:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T09:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief",
+      "due": "2026-11-02T12:00:00Z",
+      "kind": "video"
     }
   ],
   "focus": [],
