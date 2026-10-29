@@ -107925,17 +107925,22 @@
           "at": "2026-10-29T20:00Z",
           "by": "cursor",
           "what": "step 0 of 7 done: claimed; surveying v01 pack and assembler"
+        },
+        {
+          "at": "2026-10-29T20:06Z",
+          "by": "cursor",
+          "what": "step 3 of 7 done: killed bad 618s trim (input-seek bug); fixed filter_complex trim; tmux j1218-render --resume-join from SAFE pretrim 557.8s; J1193 still open"
         }
       ],
-      "remaining_action": "Inspect HOS 008 rough v01 evidence, assembler, and disk before v02 repair",
+      "remaining_action": "Wait for fixed pause-trim resume-join gates+deliver on NAS scratch",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 7,
-        "at": "2026-10-29T20:00Z",
+        "at": "2026-10-29T20:06Z",
         "by": "cursor",
-        "note": "claimed; surveying v01 pack and assembler"
+        "note": "killed bad 618s trim (input-seek bug); fixed filter_complex trim; tmux j1218-render --resume-join from SAFE pretrim 557."
       },
       "taskKeys": [
         "HOS:008"
