@@ -108518,9 +108518,14 @@
           "at": "2026-10-29T23:44Z",
           "by": "cursor",
           "what": "step 0 of 4 done: claimed; starting read-back + sha verify"
+        },
+        {
+          "at": "2026-10-29T23:46Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: old x_3L_IdYgEc Private publishAt 2026-11-15T11:30:00Z; sha e1f862ba match; building package"
         }
       ],
-      "remaining_action": "Read back old id x_3L_IdYgEc; verify master sha256",
+      "remaining_action": "Build package + upload new Private v04 with same publishAt",
       "due": "2026-11-14T20:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -108537,11 +108542,11 @@
         "okRef": "6508107852"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-29T23:44Z",
+        "at": "2026-10-29T23:46Z",
         "by": "cursor",
-        "note": "claimed; starting read-back + sha verify"
+        "note": "old x_3L_IdYgEc Private publishAt 2026-11-15T11:30:00Z; sha e1f862ba match; building package"
       },
       "taskKeys": [
         "HOS:005"
