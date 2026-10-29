@@ -57,6 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1221 | mini | open | – | – | studio · Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30) | 6507810925 |
 | J1222 | mini | open | – | – | studio · Swap HOS Short 4WUs0beKn0A (007 vaccine-name) to Ben-OK'd v05 (Private, same slot Tue 17 Nov 11:30) | 6507831644 |
 | J1223 | mini | open | – | – | studio · Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30) | 6508107852 |
+| J1225 | mini | open | – | – | assembly · Uranus v08: correct opening shake and verify playable UAT delivery (J1220 FIX) |  |
 
 Recently finished:
 

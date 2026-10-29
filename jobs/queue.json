@@ -1,5 +1,5 @@
 {
-  "next_id": 1225,
+  "next_id": 1226,
   "jobs": [
     {
       "id": "J0001",
@@ -108415,6 +108415,35 @@
       "taskKeys": [
         "HOS:004"
       ]
+    },
+    {
+      "id": "J1225",
+      "title": "Uranus v08: correct opening shake and verify playable UAT delivery (J1220 FIX)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex ruling on J1220: FIX, not PASS. Ben's 29 Oct 20:12 request remains '0:00 the image is shaky' (#264 6507250708). Make a new v08 without overwriting v06/v07 or any uploaded file. No spend, upload, schedule, privacy, Buffer or UPLOADS changes.\n\nRead jobs/reviews/J1220/CHIEF_RULING_2026-10-29.md and CHIEF_MOTION_DIAGNOSTIC.json first. v07 stabilize_cycle subtracts a constant mean step (lines 330-334); it does not smooth the measured per-frame path. Implement actual high-frequency shake correction (measured cumulative path vs smoothed path, or vidstab/deshake), preserving intentional motion, or a demonstrably steadier window of the same approved NASA SVS 20390 Shot9. Check transform signs on a synthetic translated frame before rendering. A linear drift subtraction alone is not sufficient. Do not add freeze frames or weaken gates. Preserve v06 VO, captions, timing and all other edit/audio. Tail changes only as necessary to preserve the forward loop; document them.\n\nMeasure before/after on subject-only ROIs, excluding captions and grain as far as possible. Report both drift and high-frequency variation, and inspect every frame of 0:00-0:03 plus normal-speed playback. The Chief diagnostic is corroborating evidence, not a replacement gate or a new numeric threshold. Update real upscale to include any stabilization crop (v07 1.778 * 1.1285 = about 2.01, not 1.778).\n\nRun the full existing final-sha gate set: open/f0diff, loop/all finish checks, I/TP, polish, picture QA, music, SFX and source hitch. Deliver versioned UAT + NAS copies, PHONE and before/after evidence. Read/hash the actual iCloud master after delivery and verify the board Play source is usable; current v06/v07 iCloud reads throw Errno 11 Resource deadlock avoided, while both NAS masters hash correctly. Repair hydration/delivery without deleting preserved cuts, or report the precise external blocker with a retry time.\n\nPark the new cut for elected-Chief review. J1212 remains held on Ben approval; do not repoint its card until Chief PASS. Ben watch deadline Tue 3 Nov 10:30 London, scheduled fallback ZpEA8stoSPA v01 at 11:30 unchanged. Prior stop deadline 1 Nov 18:00Z remains: if no compliant cut, return an explicit unsuccessful ruling and preserve fallback. No unrelated holds reopened.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-29T21:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T21:58Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Stabilise opening shake with measured path; verify gates and playable UAT delivery",
+      "due": "2026-11-01T18:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
