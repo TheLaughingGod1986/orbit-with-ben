@@ -83054,6 +83054,11 @@
           "at": "2026-10-29T00:00Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J0961; starting verification of v04 Shorts packages and slots"
+        },
+        {
+          "at": "2026-10-29T00:02Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified all 3 v04 master and PHONE SHA256s match SHA256.txt; all 3 Dec slots free in UPLOADS.json"
         }
       ],
       "kind": "studio",
@@ -83084,7 +83089,7 @@
         "type": "short"
       },
       "escalated_at": "2026-10-28T15:29Z",
-      "remaining_action": "Verify v04 master SHA256s, UPLOADS.json slots, and package dry-runs",
+      "remaining_action": "Upload the 3 v04 Shorts as Private with publishAt (Wed 9 / Fri 11 / Mon 14 Dec 11:30Z) and covers",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -83096,11 +83101,11 @@
       "model": "gpt-6.1-sol",
       "urgent": 3,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T00:00Z",
+        "at": "2026-10-29T00:02Z",
         "by": "gemini",
-        "note": "Claimed J0961; starting verification of v04 Shorts packages and slots"
+        "note": "Verified all 3 v04 master and PHONE SHA256s match SHA256.txt; all 3 Dec slots free in UPLOADS.json"
       }
     },
     {
