@@ -105834,19 +105834,24 @@
           "at": "2026-10-29T18:43Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Part 01 batch in detached tmux j1192-render: 9/12 KEEP (+P01:07_night_field sha=a36c79505f76), P01:08_cold_ground in progress; live Flow 18,100 (spent 450 / 7,585 cap, rem_expected 6,218, buffer 11,882 >= 3,000)"
+        },
+        {
+          "at": "2026-10-29T18:58Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Part 01 complete: 12/12 tranche-1 rows KEEP (incl. P01:06_perfect_circles clean t2 retake sha=e0e32d1006b4, P01:07..P01:10 KEEP), NAS-copied, committed @ 74d718dd; live Flow 18,060 (spent 490 / 7,585 cap, rem_expected 6,158, buffer 11,902 >= 3,000)"
         }
       ],
-      "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 01 (9/12 KEEP, 3 Fast remaining in detached tmux j1192-render), then Parts 02-05 (45 rows)",
+      "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 02 (10 Quality rows in detached tmux j1192-render), then Parts 03-05 (35 rows)",
       "due": "2026-11-12T20:00:00Z",
       "for": "gemini",
       "kind": "video",
       "model": "flow-veo-3.1",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-29T18:43Z",
+        "at": "2026-10-29T18:58Z",
         "by": "gemini",
-        "note": "Part 01 batch in detached tmux j1192-render: 9/12 KEEP (+P01:07_night_field sha=a36c79505f76), P01:08_cold_ground in pro"
+        "note": "Part 01 complete: 12/12 tranche-1 rows KEEP (incl. P01:06_perfect_circles clean t2 retake sha=e0e32d1006b4, P01:07..P01:"
       },
       "taskKeys": [
         "HOS:009"
