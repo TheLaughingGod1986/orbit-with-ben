@@ -84016,6 +84016,11 @@
           "at": "2026-10-29T07:41Z",
           "by": "relay",
           "what": "condition verification queued: J1184"
+        },
+        {
+          "at": "2026-10-29T07:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T08:41:58Z"
         }
       ],
       "kind": "video",
@@ -84051,12 +84056,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1176 checked fresh OWB comments through 6489835748, HOS desk through 6488913718 and board checks at 06:45Z: no explicit Ben swap OK for Jenner v04 3ef3fa773750, Harvey v04 e1f862ba737a, Dalton v04 8ce07a605697 or vaccine-name v05 e5ea76f012fb. Claude 6483600719 directs playable UAT plus awaits; that delivery remains unverified after J1121 EDEADLK and rejected repair. No rebuild. First pack cutoff 12 Nov 20:00Z; absent swap OK by 10:30Z air day originals air unchanged.",
-        "check_at": "2026-10-29T08:41:58+00:00",
-        "last_recheck": "J1176",
-        "checked_at": "2026-10-29T06:46:23+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1184"
+        "condition": "J1184: fresh OWB comments through 6490935731 and HOS through 6490288381 plus live board checks show no explicit Ben swap OK for Jenner v04 3ef3fa773750, Harvey v04 e1f862ba737a, Dalton v04 8ce07a605697 or vaccine-name v05 e5ea76f012fb. HOS-007 board OK is J0925 long master only. Playable UAT copies and awaits cards remain unverified after J1121 delivery error; no rebuild. First pack cutoff 12 Nov 20:00Z; absent swap approval by 10:30Z on air day originals air unchanged.",
+        "check_at": "2026-10-29T08:41:58Z",
+        "last_recheck": "J1184",
+        "checked_at": "2026-10-29T07:44:24+00:00",
+        "checked_by": "codex"
       }
     },
     {
