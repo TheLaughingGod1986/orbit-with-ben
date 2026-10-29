@@ -200,7 +200,7 @@
       "needs": "mini",
       "kind": "qa",
       "eta": 60,
-      "every_h": 8,
+      "every_h": 72,
       "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
       "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
       "remaining_action": "Check the newest video packs and record any missing checks"
