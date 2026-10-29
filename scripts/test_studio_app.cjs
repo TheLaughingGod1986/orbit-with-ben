@@ -89,7 +89,7 @@ const flagOnly = t.summary({tracker: {videos: [v({key: 'f', working: true})]}, m
 assert.equal(flagOnly.working.length, 0);
 assert.equal(flagOnly.jobs.working, 0);
 const ov = t.renderTab('overview', {tracker: {videos: []}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [{id: 'J1', status: 'claimed', by: 'gemini', title: 'x'}]}}, NOW);
-assert(ov.includes('Plus 1 studio job not tied to one video') && ov.includes('Jobs running'));
+assert(ov.includes('Studio job · not one video') && ov.includes('Agents working now <span class="n">1</span>') && ov.includes('Jobs running'), 'a studio job shows as its own card and is counted');
 // Every video opens in the hub, never the old board; the detail shows the agent work and its reasons.
 for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) assert(!t.renderTab(tab, board, NOW).includes('/board'), `${tab} never links to /board`);
 const det = t.detail({tracker: {videos: [v({key: 'OWB:005', line: 'Held up by the audit', jobs: [
@@ -124,7 +124,7 @@ assert(t.renderTab('agents', board, NOW).includes('Grok'));
 const batch = {status: 'claimed', id: 'J1100', by: 'codex', title: 'batch C'};
 const ovb = t.renderTab('overview', {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]}),
   v({key: 'c', number: '027', type: 'short', jobs: [batch]})]}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [batch]}}, NOW);
-assert(ovb.includes('Same job also covers 2 more: 028, 027 Short') && !ovb.includes('studio job not tied'));
+assert(ovb.includes('Same job also covers 2 more: 028, 027 Short') && !ovb.includes('Studio job · not one video'));
 assert.equal(t.jobGroups([v({key: 'a', jobs: [batch]}), v({key: 'b', jobs: [batch]})]).length, 1);
 // Videos: a batch job shows its progress once; the other videos say they share it.
 const vb = {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]})]}};
