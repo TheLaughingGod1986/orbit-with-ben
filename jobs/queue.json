@@ -104715,19 +104715,24 @@
           "at": "2026-10-29T07:44Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original history and fresh OWB through 6490935731/HOS through 6490288381; no new HC swap approval"
+        },
+        {
+          "at": "2026-10-29T07:44Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Live board has no HC swap OK; J0966 hold recorded with retry 29 Oct 08:41:58Z, worker 5/5 unchanged"
         }
       ],
-      "remaining_action": "Verify board approvals, then retain or release the J0966 hold",
+      "remaining_action": "Record verification report and close J1184",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-29T08:41:58+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-29T07:44Z",
         "by": "codex",
-        "note": "Read original history and fresh OWB through 6490935731/HOS through 6490288381; no new HC swap approval"
+        "note": "Live board has no HC swap OK; J0966 hold recorded with retry 29 Oct 08:41:58Z, worker 5/5 unchanged"
       },
       "taskKeys": [
         "HOS:004",
