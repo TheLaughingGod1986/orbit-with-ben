@@ -108482,17 +108482,22 @@
           "at": "2026-10-29T22:05Z",
           "by": "cursor",
           "what": "step 1 of 6 done: sources OK; building _assemble_uranus_v08.py"
+        },
+        {
+          "at": "2026-10-29T22:09Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: v08 assembler started; path-vs-smooth stabilize; sign check PASS; tmux J1225-render"
         }
       ],
-      "remaining_action": "Write v08 path-smooth stabilize + synthetic sign check",
+      "remaining_action": "Wait for tmux J1225-render; then gates + UAT playable verify",
       "due": "2026-11-01T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-10-29T22:05Z",
+        "at": "2026-10-29T22:09Z",
         "by": "cursor",
-        "note": "sources OK; building _assemble_uranus_v08.py"
+        "note": "v08 assembler started; path-vs-smooth stabilize; sign check PASS; tmux J1225-render"
       }
     },
     {
