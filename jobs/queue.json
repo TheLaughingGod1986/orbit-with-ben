@@ -108599,13 +108599,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T22:51Z",
-      "eta": "2026-10-30T00:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-29T22:03Z",
-      "result": "",
+      "result": "Verified J1200 delivery and four exact-cut Ben approvals in live checks/HOS 6507268470,6507810925,6507831644,6508107852. Released J0966 stale hold; preserved worker 5/5 and no-rebuild instruction. Existing swap owners J1219 done, J1221/J1222/J1223 open. Report HOS 6510415243. No spend or publishing changes; one dispatched verification.",
       "history": [
         {
           "at": "2026-10-29T22:03Z",
@@ -108636,6 +108636,11 @@
           "at": "2026-10-29T22:54Z",
           "by": "codex",
           "what": "step 3 of 3 done: Hold released with four verified Ben approvals; worker 5/5 preserved; HOS report 6510415243 and OWB report posted"
+        },
+        {
+          "at": "2026-10-29T22:54Z",
+          "by": "codex",
+          "what": "done: Verified J1200 delivery and four exact-cut Ben approvals in live checks/HOS 6507268470,6507810925,6507831644,6508107852. Released J0966 stale hold; preserved worker 5/5 and no-rebuild instruction. Existing swap owners J1219 done, J1221/J1222/J1223 open. Report HOS 6510415243. No spend or publishing changes; one dispatched verification."
         }
       ],
       "remaining_action": "Verification complete; existing delivery jobs own the approved swaps",
@@ -108654,7 +108659,8 @@
         "HOS:004",
         "HOS:005",
         "HOS:007"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6510415243"
     },
     {
       "id": "J1227",
