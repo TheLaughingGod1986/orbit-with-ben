@@ -105703,10 +105703,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-29T10:39Z",
-      "eta": "2026-10-29T12:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
       "result": "",
@@ -105795,6 +105795,11 @@
           "at": "2026-10-29T10:44Z",
           "by": "cursor",
           "what": "step 4 of 6 done: prior s6 FAIL f0diff=0.60 reuse+loop; script fixed; s5 retry live"
+        },
+        {
+          "at": "2026-10-29T10:45Z",
+          "by": "cursor",
+          "what": "released: Uranus v02 PASS delivered (sha256 fd6bfec832bfa84d951c6e8ac2deff6c07ada71a9025e06deb2d8affc0b6f314). S5+S6 v03 DETACHED: tmux J1199-s5s6-v03; logs ~/_desk/logs/J1199-s5-v03.log + J1199-s6-v03.log; sentinel ~/_desk/logs/J1199-s5s6-v03-render.done (ALL_DONE). Script fixes: unique body plates (no reuse), cover_frames no-wrap + steeper open (f0diff smoke ~2.56), loudnorm target -14.0. Prior s6 FAIL f0diff/reuse/loop. Next run: if .done missing leave tmux; if present read exit codes, deliver any PASS to UAT/NAS, park for Chief. No upload."
         }
       ],
       "remaining_action": "S5 fixed-script render running; then S6 re-render (no wrap + unique plates + louder open)",
