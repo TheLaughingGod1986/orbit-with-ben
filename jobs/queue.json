@@ -18905,11 +18905,25 @@
           "at": "2026-10-29T19:02Z",
           "by": "codex",
           "what": "reopened: J1214 verified via authenticated HOS YouTube Data API videos.list at 2026-10-29T19:01:53Z: wwcjcFfC-5M privacyStatus=public, processed, HOS channel UCXp7HkBIl1LgaznXuZHJyRg. BW_CFAX-mxc remains private publishAt=2026-10-31T11:30:00Z; 5n7xFQRBUvI private without publishAt. Chief c42 PASS HOS comment 6399338457 and Ben v04 approval 6399423733 read and confirmed; J0948 completed delivery 6401616955. Public condition satisfied; original gates and approval remain valid. Resume original Related/Buffer scope only; no upload, spend, or schedule change. Raw readback: /Users/benjaminoats/_desk/J1214-youtube-readback.json."
+        },
+        {
+          "at": "2026-10-29T19:04Z",
+          "by": "grok",
+          "what": "rerouted to cursor on cursor-auto: SCOPE CHANGE (Claude HOS #180 6505813447, Chief agrees): STEP 1 ONLY. Set Related = wwcjcFfC-5M on BW_CFAX-mxc in HOS Studio, change nothing else, read back with a screenshot, post on HOS #180, mark done. SKIP STEP 2 (Buffer): BW_CFAX-mxc is already scheduled to HOS IG/FB/TikTok for 31 Oct 11:30Z (hos/BUFFER_POSTS.json, J1202 a1e6ce99c); a second post would duplicate it. Never touch 5n7xFQRBUvI. Grok (primary) is out of credit until 30 Oct 07:00Z, so Cursor takes it now."
         }
       ],
       "kind": "studio",
       "remaining_action": "Link the Blood Short to its long video",
-      "urgent": 4
+      "urgent": 4,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-auto"
     },
     {
       "id": "J0242",
