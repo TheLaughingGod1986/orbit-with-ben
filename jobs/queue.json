@@ -105912,17 +105912,22 @@
           "at": "2026-10-29T11:40Z",
           "by": "cursor",
           "what": "step 4 of 5 done: resume: S4+S5 delivered; S6 v08 FAIL f0=0.58"
+        },
+        {
+          "at": "2026-10-29T11:42Z",
+          "by": "cursor",
+          "what": "step 4 of 5 done: tmux J1199-s6-v09; log ~/_desk/logs/J1199-s6-v09.log; open→PIA06230"
         }
       ],
-      "remaining_action": "fix Titan open motion so gate_shorts_open PASSes (f0diff>=1.50); Uranus+S5 already PASS",
+      "remaining_action": "wait Titan s6 v09 render (PIA06230 open); then gate + park for Chief",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
         "step": 4,
         "of": 5,
-        "at": "2026-10-29T11:40Z",
+        "at": "2026-10-29T11:42Z",
         "by": "cursor",
-        "note": "resume: S4+S5 delivered; S6 v08 FAIL f0=0.58"
+        "note": "tmux J1199-s6-v09; log ~/_desk/logs/J1199-s6-v09.log; open→PIA06230"
       },
       "taskKeys": [
         "OWB:030"

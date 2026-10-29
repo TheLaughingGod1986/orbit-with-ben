@@ -51,10 +51,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1200 | mini | open | – | – | assembly · HOS HC: restore four playable J0966 review copies and swap cards | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6491001837 |
 | J1201 | mini | open | – | – | qa · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
 | J1202 | mini | open | – | – | assembly · HOS Buffer: register every HOS Short at upload and mirror it to Buffer when it goes public (replaces 'Buffer held until public'); dry-run only, no HOS posting |  |
-| J1203 | mini | cancelled | – | – | studio · HOS back-post the 3 held Shorts (Herschel, Snow, cathode rays) from Studio Download of the live cut | J1202 |
 
 Recently finished:
 
+- J1203 cancelled: HOS back-post the 3 held Shorts (Herschel, Snow, cathode rays) from Studio Download of the live cut (Superseded 29 Oct by chief: Ben OK'd posting the 17 Oct local re-renders (Herschel, Snow) and the iCloud HOS UAT cathode rays copy instead of Studio downloads. All three are already scheduled in Buffer (Wed 4, Fri 6, Sat 7 Nov 11:30 London). Do NOT mirror them again.)
 - J1196 done: Chief: verify condition for J0966 (Verified no Ben HC swap OK in fresh threads and live board at 09:51Z. J0966 held at worker 5/5; next check 29 Oct 15:55Z. Queued delivery J1200 per Claude 6491001837 to restore exact verified media and playable cards; no second job claimed or media work performed. Reports HOS 6493503463 and OWB 6493508168. No spend or YouTube changes.)
 - J1194 done: Apply the 28 Oct description sweep fixes to the repo description files (text only) (16 issue rows applied across 24 text files; 13 skipped with reasons. Report: 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28_APPLIED.md. OWB 934d92aa0; HOS d56a80c8 on macbook/j1194-description-sweep. JSON scope and diff checks pass. Row 25 target files absent; 8 rows live-only. No live changes; GBP0.)
 - J1189 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -64,4 +64,3 @@ Recently finished:
 - J1185 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1184 done: Chief: verify condition for J0966 (Verified current thread and board evidence: no Ben HC swap OK. J0966 remains blocked at worker 5/5; retry 29 Oct 08:41:58Z with recheck J1184. HOS-007 approval is long master J0925 only. Playable UAT/cards remain unverified; next is delivery verification then swap approval. HOS desk 6490991603 and OWB 6490993996 posted. No rebuild, spend or YouTube changes.)
 - J1183 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T07:57Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 9f0f5a7c; 0 new fixes needed))
-- J1182 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
