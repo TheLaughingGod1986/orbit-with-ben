@@ -106404,19 +106404,26 @@
           "at": "2026-10-29T15:02Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T15:02Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: claimed; start Uranus-only v03 per SOURCE_PLAN_RULING"
         }
       ],
-      "remaining_action": "Build Uranus v03 from approved S2-first VO and Shot4 artist animation; run all gates and return for cut review",
+      "remaining_action": "Assemble Uranus S4 v03: S2-first VO + Shot4 0-2.7s open; gates; park for Chief",
       "due": "2026-11-02T12:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-10-29T15:02Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed; start Uranus-only v03 per SOURCE_PLAN_RULING"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J1205",
