@@ -131,4 +131,7 @@ const vb = {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({k
 const vt = t.renderTab('videos', vb, NOW);
 assert.equal((vt.match(/class="doing"/g) || []).length, 1, 'one progress line per job');
 assert(vt.includes('In the same job as 027 above'));
+// Videos counts a running studio job too, so it matches Overview's Agents working now.
+const vsj = t.renderTab('videos', {tracker: {videos: []}, owb: {jobs: [{id: 'J1199', status: 'claimed', by: 'cursor', title: 'Shorts fix'}]}}, NOW);
+assert(vsj.includes('Studio job · not one video') && vsj.includes('Working <small>1</small>'), 'Videos shows and counts the studio job');
 console.log('studio app OK');
