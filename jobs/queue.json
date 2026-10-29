@@ -106173,9 +106173,14 @@
           "at": "2026-10-29T15:50Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-10-29T15:55Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T09:00:00Z"
         }
       ],
-      "remaining_action": "Await J1204 Uranus gates, J1208 meteor correction and qualifying Titan input; all replacements remain unapproved",
+      "remaining_action": "Await J1204 Uranus gate resolution and new eligible S5/S6 footage; PR350 rejects current source batch",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
@@ -106190,7 +106195,7 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "PR349 source ruling: all rejected v02 replacements stay unapproved. S4 awaits J1204 gated v03 and Chief review. S5 awaits J1208 genuine MEO onset/crop correction then accepted source plan and gated assembly. S6 external missing input: clean sequential optical Titan imagery with adequate native detail; no new eligible source in reviewed pack. At this existing checkpoint verify new evidence; if absent retain S6 hold with next check by 5 Nov 12:00Z. No automatic release, Ben card or publishing; original schedule/watch terms unchanged.",
+        "condition": "PR350 source review decided: J1208 submitted MEO candidates rejected; S5/S6 await new eligible optical video input, J1208 checks 30 Oct 18:00Z then final 5 Nov 12:00Z if absent. No repeat broad search. S4 awaits J1204 gate resolution and Chief review, untouched by this ruling. Rejected v02 replacements stay unapproved. At this original checkpoint verify new evidence only; no automatic release, Ben card or publishing. Original scheduled-copy fallback and watch terms remain.",
         "check_at": "2026-10-30T09:00:00Z"
       },
       "escalated_at": "2026-10-29T15:50Z"
