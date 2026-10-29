@@ -99202,13 +99202,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T00:31Z",
-      "eta": "2026-10-29T02:31Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T19:02Z",
-      "result": "",
+      "result": "Verified latest HC evidence and Claude direction 6483600719. No explicit Ben swap OK; J0966 blocked, worker 5/5 retained, recheck 29 Oct 06:40Z. UAT read EDEADLK; automatic approval review rejected cloud-copy repair outside verification scope. HOS desk report posted. No rendering, upload, schedule change or spend.",
       "history": [
         {
           "at": "2026-10-28T19:02Z",
@@ -99239,6 +99239,11 @@
           "at": "2026-10-29T00:34Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded J1121 input hold for 29 Oct 06:40Z, preserved J0966 worker 5/5, and reported evidence plus UAT authorization blocker on HOS desk."
+        },
+        {
+          "at": "2026-10-29T00:34Z",
+          "by": "codex",
+          "what": "done: Verified latest HC evidence and Claude direction 6483600719. No explicit Ben swap OK; J0966 blocked, worker 5/5 retained, recheck 29 Oct 06:40Z. UAT read EDEADLK; automatic approval review rejected cloud-copy repair outside verification scope. HOS desk report posted. No rendering, upload, schedule change or spend."
         }
       ],
       "remaining_action": "Verification complete; J0966 retains approval and review-delivery hold",
@@ -99257,7 +99262,8 @@
         "HOS:004",
         "HOS:005",
         "HOS:007"
-      ]
+      ],
+      "done_ref": "6483600719"
     },
     {
       "id": "J1122",
