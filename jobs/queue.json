@@ -104210,10 +104210,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T07:51Z",
+      "eta": "2026-10-29T08:51Z",
       "created_by": "refill",
       "created_at": "2026-10-29T06:51Z",
       "result": "",
@@ -104262,6 +104262,11 @@
           "at": "2026-10-29T07:51Z",
           "by": "codex",
           "what": "reopened: Acting-Chief Codex ACCEPT: technical QA sweep complete only, not creative, listening, film-stage or publishing approval. Verified identical OWB/HOS inventory 0df5de92afb5d03b606900b1a2bbb61f51b46ebb659295cc92ceedf3d53e9171 and report 8aaba36148f37fadb13213e15c16bc4d83dc0d461546990a9cdff6350d80ae11; 157 entries and 452 readable fresh applicable reports, no failure indicators; four newest media hashes match, no newer local video files since J1170. Retain 146 entries with warnings and manifest-only/iCloud limitations. Follow-up is existing J1100: verify live subscription balance at 2026-10-30T10:50:00Z, then authorized S2/S5 pickups, S2 instrumental bed repair, S6 whole-loop repair (9.26 versus required <2), rerun gates and final review. J1100 remains blocked, HELD_CHANGES_REQUIRED; no duplicate job, no other hold changes. Reopening J1178 solely to record accepted review completion."
+        },
+        {
+          "at": "2026-10-29T07:51Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park J1178 for Chief review",
@@ -104288,7 +104293,15 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T07:51Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1179",
