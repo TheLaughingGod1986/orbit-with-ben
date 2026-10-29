@@ -102875,17 +102875,30 @@
           "at": "2026-10-29T05:11Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-29T05:11Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Reviewed 05_Analytics/owb/snapshots/2026-10-28.json and existing 2026-10-29.md audit"
         }
       ],
-      "remaining_action": "Reviewing existing 2026-10-29 live_fixes audit and checking latest live video states",
+      "remaining_action": "Verifying live YouTube watch and Shorts pages (ytInitialPlayerResponse and ytInitialData) for the 10 latest public videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-10-29T05:11Z",
-        "by": "gemini"
-      }
+        "by": "gemini",
+        "note": "Reviewed 05_Analytics/owb/snapshots/2026-10-28.json and existing 2026-10-29.md audit"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
