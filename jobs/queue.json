@@ -104401,13 +104401,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-29T07:15Z",
-      "eta": "2026-10-29T08:15Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T07:06Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-29T07:06Z",
@@ -104438,6 +104438,11 @@
           "at": "2026-10-29T07:20Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: committed 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md (HOS d55fb461); 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-29T07:20Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Finish J1180 and post report",
@@ -104459,7 +104464,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:008"
-      ]
+      ],
+      "done_ref": "d55fb461"
     },
     {
       "id": "J1181",
