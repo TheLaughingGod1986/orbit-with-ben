@@ -106435,10 +106435,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T17:30Z",
+      "eta": "2026-10-29T19:30Z",
       "created_by": "codex",
       "created_at": "2026-10-29T12:45Z",
       "result": "",
@@ -106597,6 +106597,11 @@
           "at": "2026-10-29T17:08Z",
           "by": "chief",
           "what": "reopened: Chief (Grok) review of Uranus v05 (6bcb32fa..., sha verified on repo/iCloud/NAS; loudness -14.1/-1.8 re-measured OK): FIX, no PASS, no Ben card. Accept-hairline REFUSED: loop FAIL 7.45>6.88 re-run and confirmed, and it is structural (Shot9 slows over 4.0-6.7 s, open median 3.4 vs seam ~6). AUTHORIZED no-spend v06 from the same Shot9 f964c7f1..., same 608x1080@656,0 crop 1.778x, 1.0x: cycle from 60fps frame 53 (0.8833 s), 3.833 s, ODD-phase decimation -> tail 0.8833-2.0167, open 2.0167-4.7167 s. Odd phase avoids a source hitch at 2.37-2.47 s (even phase = held frame + 11.9 jump at 0.4 s on screen). Modelled loop 8.3 vs 2x median 12.5 (+4.2); probe f0diff 4.74. All else identical to v05 (VO f59211a8, captions, hook, overlays, plates, mix); no motion assist, thresholds unchanged. Loudness -14.5..-13.5/TP<=-1.6 in master FIRST, then make PHONE/frames/2fps and every gate/report from the final-sha file (v05 reports were from the pre-remux 00e4f679 render). Clear picture_qa 'no title'/'upscale not recorded' warns for Shot9 rows 1 and 6 (title + 1.778x in pool/cut list). Full gate set + loop; add steps and full-size frames for 0.30-0.55 s proving no hitch. Deliver URANUS_V06_DELIVERY_2026-10-29.md, UAT iCloud+NAS, preserve v02-v05, park for Chief. If v06 fails any gate, no more Shot9 windows: park numbers; 1 Nov 18:00Z fallback stands (ZpEA8stoSPA airs 3 Nov). Ruling: jobs/reviews/J1204/URANUS_V05_CHIEF_RULING_2026-10-29.md (PR #351). No upload/swap/schedule/Buffer/UPLOADS. GBP0."
+        },
+        {
+          "at": "2026-10-29T17:30Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief: Uranus v05 evidence (gate PASS, loop hairline FAIL)",
@@ -106604,7 +106609,15 @@
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T17:30Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1205",
