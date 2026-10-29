@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1194 | mini | open | – | – | for gemini · listing · `gemini-argon` · Apply the 28 Oct description sweep fixes to the repo description files (text only) |  |
 | J1195 | mini | open | – | – | for gemini · listing · `gemini-argon` · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
 | J1196 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
-| J1197 | mini | open | – | – | 030 upload · listing · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
+| J1197 | mini | open | – | – | 030 upload · for gemini · listing · `gemini-argon` · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
 | J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1199 | mini | open | – | – | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
 
