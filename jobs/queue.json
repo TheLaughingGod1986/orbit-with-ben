@@ -107998,9 +107998,14 @@
           "at": "2026-10-29T20:22Z",
           "by": "cursor",
           "what": "step 0 of 7 done: v04 master sha256 MATCH 3ef3fa77375083622e8f8d6dee99f009cf60cbc27fc01f9d21857ba6b5b0c4e7; reading YouTube state"
+        },
+        {
+          "at": "2026-10-29T20:23Z",
+          "by": "cursor",
+          "what": "step 1 of 7 done: step1: -I_GHK-GcFs Private publishAt 2026-11-13T11:30:00Z; desc has ETynHpIYLeY watch link; Related unset; v04 sha MATCH; gate PASS"
         }
       ],
-      "remaining_action": "Read back old id -I_GHK-GcFs",
+      "remaining_action": "Upload v04 as NEW Private with same publishAt; copy listing + captions",
       "due": "2026-11-12T20:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -108018,11 +108023,11 @@
         "okRef": "6507268470"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 7,
-        "at": "2026-10-29T20:22Z",
+        "at": "2026-10-29T20:23Z",
         "by": "cursor",
-        "note": "v04 master sha256 MATCH 3ef3fa77375083622e8f8d6dee99f009cf60cbc27fc01f9d21857ba6b5b0c4e7; reading YouTube state"
+        "note": "step1: -I_GHK-GcFs Private publishAt 2026-11-13T11:30:00Z; desc has ETynHpIYLeY watch link; Related unset; v04 sha MATCH"
       },
       "taskKeys": [
         "HOS:007"
