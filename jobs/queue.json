@@ -106239,9 +106239,14 @@
           "at": "2026-10-29T12:47Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T12:47Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read original J0998/J0999 requirements; checking current PR and approval history"
         }
       ],
-      "remaining_action": "Verify readiness: Obtain required checker-fix approval, merge HOS PR365, then pass channel:audit on main",
+      "remaining_action": "Verify approval and audit prerequisites for HOS compilation",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-29T13:46:07+00:00",
@@ -106251,9 +106256,11 @@
         "of": 3,
         "at": "2026-10-29T12:47Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read original J0998/J0999 requirements; checking current PR and approval history"
+      },
+      "taskKeys": [
+        "HOS:099"
+      ]
     }
   ],
   "focus": [],
