@@ -105608,19 +105608,24 @@
           "at": "2026-10-29T16:16Z",
           "by": "gemini",
           "what": "step 5 of 7 done: 79/101 Flow rows KEEP (6/6 priority + Part 01 22/22 + Part 02 17/17 + Part 03 25/25 complete + Part 04 14/16 through 15_copley_medal UAT verified; spent 1,740 / 6,500, live Flow 19,130, rem_expected 1,396, buffer 17,734 >= 3,000)"
+        },
+        {
+          "at": "2026-10-29T16:22Z",
+          "by": "gemini",
+          "what": "step 6 of 7 done: 81/101 Flow rows KEEP (6/6 priority + Parts 01-04 80/80 complete + Part 05 1/21 UAT verified + NAS synced; spent 1,760 / 6,500, live Flow 19,110, rem_expected 1,356, buffer 17,754 >= 3,000; checkpoint d469986c)"
         }
       ],
-      "remaining_action": "Continue Flow v03 batch in tmux j1191-render (79/101 KEEP; Parts 01-03 64/64 complete, Part 04 14/16 through 15_copley_medal, 16_rod_idea and 17_roofs_storm next, then Part 05)",
+      "remaining_action": "Finish Part 05 (20 remaining Flow rows: 01_house_rod..22_newton_handoff_c1) in tmux j1191-render, verify UAT + sync to NAS, then park for Chief: picture PASS",
       "due": "2026-11-08T20:00:00Z",
       "for": "gemini",
       "kind": "video",
       "model": "flow-veo-3.1",
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 7,
-        "at": "2026-10-29T16:16Z",
+        "at": "2026-10-29T16:22Z",
         "by": "gemini",
-        "note": "79/101 Flow rows KEEP (6/6 priority + Part 01 22/22 + Part 02 17/17 + Part 03 25/25 complete + Part 04 14/16 through 15_"
+        "note": "81/101 Flow rows KEEP (6/6 priority + Parts 01-04 80/80 complete + Part 05 1/21 UAT verified + NAS synced; spent 1,760 /"
       },
       "taskKeys": [
         "HOS:008"
