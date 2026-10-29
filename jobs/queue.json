@@ -1,5 +1,5 @@
 {
-  "next_id": 1223,
+  "next_id": 1224,
   "jobs": [
     {
       "id": "J0001",
@@ -84105,6 +84105,11 @@
           "at": "2026-10-29T20:42Z",
           "by": "chief",
           "what": "no longer waits on Ben (entry 2): OK'd, delivered by J1222"
+        },
+        {
+          "at": "2026-10-29T20:56Z",
+          "by": "chief",
+          "what": "no longer waits on Ben: OK'd, delivered by J1223"
         }
       ],
       "kind": "video",
@@ -84146,7 +84151,7 @@
         "checked_at": "2026-10-29T15:59:32+00:00",
         "checked_by": "codex"
       },
-      "awaits_ben": {
+      "awaits_was": {
         "what": "swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE",
         "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_005_s03_never_saw_v04_PHONE.mp4",
         "version": "v04",
@@ -108190,6 +108195,53 @@
         "askId": "J0966.2",
         "okAt": "2026-10-29T20:42Z",
         "okRef": "6507831644"
+      }
+    },
+    {
+      "id": "J1223",
+      "title": "Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30)\n\nBen OK'd J0966 v04 (Harvey never saw) on the Studio Kanban at Thu 29 Oct 20:55 London (HOS #180 6508107852: \"watched it, looks good\"). Chief (Grok) queued this delivery job.\nMaster `02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s03_never_saw_v04.mp4` (HOS checkout on the mini), sha256 e1f862ba737acc4276dd676fc93181b41e729fce029fed57318bf43add3e9f63 (re-verified by Chief 29 Oct 20:58); meta `hos_005_s03_never_saw_v04_meta.json`; review copy HOS UAT/J1200_J0966_review_2026-10-29/hos_005_s03_never_saw_v04_PHONE.mp4 (J1200). Evidence: J0966 history, J1005 audio QA, J1200.\nAirs Sun 15 Nov 11:30 London. Only this one Short; it is the last J0966 cut, so J0966 has nothing left waiting on Ben. Same flow as J1219.\n\n1. Read back the old id x_3L_IdYgEc (privacy, publishAt, title, description, tags, cover, Related). It should be Private and scheduled for 15 Nov 11:30; otherwise park for Chief.\n2. Verify the master sha256, then upload it as a NEW Private video with the same publishAt. Copy title, description verbatim, tags, frame-0 cover and Related (the 005 long) from the old id. Captions en-GB from the v04 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing deleted, no Replace.\n4. Verify the swap (verify-swap.ts --job <this job> --old x_3L_IdYgEc --new <new>), update HOS UPLOADS.json (new entry with v04 file + sha, social block copied; old id marked supersededBy the new id) and the OWB Buffer registration (social/hos UPLOADS.json + BUFFER_POSTS.json, every channel) to the new id and v04 file, gate_shorts_open status, and any queued jobs that name x_3L_IdYgEc to the new id (J0280 Related fixes names it: retarget it). Post the read-back on HOS desk #180.\nDone by 20:00 London Sat 14 Nov; if it fails after that, leave the original scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6508107852",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-29T20:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T20:56Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-29T20:56Z",
+          "by": "chief",
+          "what": "approved by Ben: swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE v04 (asked in J0966)"
+        }
+      ],
+      "remaining_action": "Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30)",
+      "due": "2026-11-14T20:00:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE",
+        "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_005_s03_never_saw_v04_PHONE.mp4",
+        "version": "v04",
+        "airs": "2026-11-15T11:30Z",
+        "title": "Harvey never saw HC v04",
+        "number": "005",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0966",
+        "okAt": "2026-10-29T20:56Z",
+        "okRef": "6508107852"
       }
     }
   ],
