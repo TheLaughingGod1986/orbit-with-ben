@@ -105917,17 +105917,22 @@
           "at": "2026-10-29T11:42Z",
           "by": "cursor",
           "what": "step 4 of 5 done: tmux J1199-s6-v09; log ~/_desk/logs/J1199-s6-v09.log; open→PIA06230"
+        },
+        {
+          "at": "2026-10-29T11:56Z",
+          "by": "cursor",
+          "what": "step 4 of 5 done: probe t149_d6: f0=4.42 visor=0 loop PASS"
         }
       ],
-      "remaining_action": "wait Titan s6 v09 render (PIA06230 open); then gate + park for Chief",
+      "remaining_action": "integrate Titan phase-drift open (PIA14925 d6) and re-render s6 v10",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
         "step": 4,
         "of": 5,
-        "at": "2026-10-29T11:42Z",
+        "at": "2026-10-29T11:56Z",
         "by": "cursor",
-        "note": "tmux J1199-s6-v09; log ~/_desk/logs/J1199-s6-v09.log; open→PIA06230"
+        "note": "probe t149_d6: f0=4.42 visor=0 loop PASS"
       },
       "taskKeys": [
         "OWB:030"
