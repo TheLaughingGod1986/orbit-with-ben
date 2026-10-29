@@ -97144,10 +97144,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-29T00:11Z",
-      "eta": "2026-10-29T02:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
       "result": "",
@@ -97321,6 +97321,11 @@
           "at": "2026-10-29T00:13Z",
           "by": "codex",
           "what": "step 2 of 3 done: S6 v06 rendered with original caption-free plate tail and packet-identical AAC. Measured loop whole9.26 FAIL vs <2; picture-only0.95. No waiver taken. Gates and Gemini listening detached."
+        },
+        {
+          "at": "2026-10-29T00:15Z",
+          "by": "codex",
+          "what": "released: Checkpoint0a7fcb6ad PR333, preserved2/3. S6v06 caption-free tail built; five gate exits0, denseOCR/dark pass, -14.4LUFS/-1.7dBTP, AAC unchanged; whole loop9.26 FAIL(masked0.95), needs Chief ruling. S2/S5 pickups explicitly after30Oct10:50UTC. Gemini detached J1100-s6-v06-listen02, log ~/_desk/logs/J1100-s6-v06-listen02.log, completion same stem.done, output ~/_desk/reviews/J1100/GEMINI_S6_V06.md; absent.done means running, never duplicate. Auto-review twice rejected repo/UAT/NAS delivery despite brief authorisation; v06 only /private/tmp/J1100-v06, not durable or watch-ready. No spend/upload/swap/PASS."
         }
       ],
       "remaining_action": "S6 v06 gates/listening; Chief loop-text ruling and post-reset S2/S5 pickups remain",
