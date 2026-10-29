@@ -107000,19 +107000,24 @@
           "at": "2026-10-29T16:49Z",
           "by": "codex",
           "what": "step 2 of 3 done: Mature lifetime Studio capture verified at 2026-10-29T07:13:31.819902Z (67h43m after release): 887 views, 30.7% stayed, 75.3% viewed. J1003 remains blocked; its verification is now J1211, following completed J1087."
+        },
+        {
+          "at": "2026-10-29T16:50Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirms blocked input hold, mature capture recorded, last_recheck J1210 and next check 29 Oct 22:50Z. J1003/J1211 remain separately owned; no audit PASS issued."
         }
       ],
-      "remaining_action": "Record remaining J1003 readout dependency and verify the updated audit hold",
+      "remaining_action": "Verification complete; J0985 awaits J1003 readout and final Chief review",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-29T17:02:10+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-29T16:49Z",
+        "at": "2026-10-29T16:50Z",
         "by": "codex",
-        "note": "Mature lifetime Studio capture verified at 2026-10-29T07:13:31.819902Z (67h43m after release): 887 views, 30.7% stayed, "
+        "note": "Readback confirms blocked input hold, mature capture recorded, last_recheck J1210 and next check 29 Oct 22:50Z. J1003/J1"
       },
       "taskKeys": [
         "OWB:027"
