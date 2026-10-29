@@ -106490,10 +106490,24 @@
           "at": "2026-10-29T13:08Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T14:10Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8)",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
