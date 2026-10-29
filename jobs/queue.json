@@ -101901,17 +101901,22 @@
           "at": "2026-10-29T03:59Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1150; starting read-only listing check across last 10 live public videos"
+        },
+        {
+          "at": "2026-10-29T03:59Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified all 10 live public videos and next scheduled Short _a66uhRDips (LOGIN_REQUIRED) against live watch/Shorts endpoints (10/10 pass, 0 fixes needed)"
         }
       ],
-      "remaining_action": "Verify live YouTube watch/Shorts endpoints for the last 10 public OWB videos and next scheduled Short",
+      "remaining_action": "Update 05_Analytics/live_fixes/2026-10-29.md with J1150 verification timestamp and commit",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-29T03:59Z",
         "by": "gemini",
-        "note": "Claimed J1150; starting read-only listing check across last 10 live public videos"
+        "note": "Verified all 10 live public videos and next scheduled Short _a66uhRDips (LOGIN_REQUIRED) against live watch/Shorts endpo"
       },
       "taskKeys": [
         "OWB:021",
