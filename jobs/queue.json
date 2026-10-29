@@ -84041,6 +84041,11 @@
           "at": "2026-10-29T15:56Z",
           "by": "relay",
           "what": "condition verification queued: J1209"
+        },
+        {
+          "at": "2026-10-29T15:59Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T22:00:00Z"
         }
       ],
       "kind": "video",
@@ -84076,12 +84081,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1196: no explicit Ben HC swap OK in fresh OWB comments through 6493415367, HOS through 6492383263 or live board checks at 09:51Z. HOS-007 OK is J0925 long only. J1200 now owns playable UAT delivery and four review cards per Claude 6491001837; verify that delivery before asking for swaps. Keep worker 5/5, no rebuild. First cutoff 12 Nov 20:00Z; original fallback and publishing restrictions unchanged.",
-        "check_at": "2026-10-29T16:56:51+00:00",
-        "last_recheck": "J1196",
-        "checked_at": "2026-10-29T09:51:55+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1209"
+        "condition": "J1209 verified 29 Oct 15:59Z: J1200 remains open/unclaimed; no J0966 review cards on published board and no explicit HC swap OK in live checks or fresh OWB through 6501633873 / HOS through 6501461806. J1200 must deliver four verified playable copies/cards before Ben reviews swaps. HOS-007/J0925 OK covers long only. Keep worker 5/5, no rebuild. First cutoff 12 Nov 20:00Z; original publishing restrictions remain, including Buffer consistency and no failed-gate override.",
+        "check_at": "2026-10-29T22:00:00Z",
+        "last_recheck": "J1209",
+        "checked_at": "2026-10-29T15:59:32+00:00",
+        "checked_by": "codex"
       }
     },
     {
