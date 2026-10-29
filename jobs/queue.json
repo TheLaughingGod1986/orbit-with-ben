@@ -105396,9 +105396,14 @@
           "at": "2026-10-29T12:10Z",
           "by": "gemini",
           "what": "step 2 of 7 done: Read j1191-render.done (exit 1 on P01:07_hot_night start-frame upload after 05_split_tree and 06_heavens KEEP; 15/101 Flow rows KEEP, spent 430 / 6,500, live Flow 20,440, rem_expected 4,588, buffer 15,852 >= 3,000)"
+        },
+        {
+          "at": "2026-10-29T12:18Z",
+          "by": "gemini",
+          "what": "step 2 of 7 done: 16/101 Flow rows KEEP (6/6 priority + 10 Part 01 through 07_hot_night UAT verified; child-filter start-frame guard + auto-retry added; spent 440 / 6,500, live Flow 20,430, rem_expected 4,568, buffer 15,862 >= 3,000; checkpoint 2a4d8163)"
         }
       ],
-      "remaining_action": "Fix child-filter guard on 07_hot_night start still and resume Part 01 Flow rows (10/22 Part 01 KEEP), then Parts 02-05",
+      "remaining_action": "Continue detached Flow v03 batch in tmux j1191-render (16/101 KEEP; Part 01 10/22 KEEP, 08_sky_flash in progress, then Parts 02-05)",
       "due": "2026-11-08T20:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -105406,9 +105411,9 @@
       "progress": {
         "step": 2,
         "of": 7,
-        "at": "2026-10-29T12:10Z",
+        "at": "2026-10-29T12:18Z",
         "by": "gemini",
-        "note": "Read j1191-render.done (exit 1 on P01:07_hot_night start-frame upload after 05_split_tree and 06_heavens KEEP; 15/101 Fl"
+        "note": "16/101 Flow rows KEEP (6/6 priority + 10 Part 01 through 07_hot_night UAT verified; child-filter start-frame guard + aut"
       },
       "taskKeys": [
         "HOS:008"
