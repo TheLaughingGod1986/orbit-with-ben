@@ -1,5 +1,5 @@
 {
-  "next_id": 1136,
+  "next_id": 1137,
   "jobs": [
     {
       "id": "J0001",
@@ -100037,6 +100037,11 @@
           "at": "2026-10-28T21:20Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-29T00:30:00Z"
+        },
+        {
+          "at": "2026-10-29T00:30Z",
+          "by": "relay",
+          "what": "condition verification queued: J1136"
         }
       ],
       "remaining_action": "Reverify next-day eligibility, then arm and read back approved X-rays title-only test",
@@ -100054,7 +100059,8 @@
       "hold": {
         "type": "test",
         "condition": "HOS frP_YrNShsU Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, calendar day is now 29 October or later, and no newer conflicting test is running; hold live thumbnail fixed",
-        "check_at": "2026-10-29T00:30:00Z"
+        "check_at": "2026-10-29T01:30:45+00:00",
+        "recheck_task": "J1136"
       }
     },
     {
@@ -100210,6 +100216,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J1136",
+      "title": "Chief: verify condition for J1132",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1132: HOS frP_YrNShsU Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, calendar day is now 29 October or later, and no newer conflicting test is running; hold live thumbnail fixed. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1132 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-29T00:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T00:30Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Reverify next-day eligibility, then arm and read back approved X-rays title-only test",
+      "kind": "chief",
+      "recheck_of": "J1132",
+      "due": "2026-10-29T01:30:45+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
