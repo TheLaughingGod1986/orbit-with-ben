@@ -103520,10 +103520,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-29T06:02Z",
+      "eta": "2026-10-29T07:02Z",
       "created_by": "refill",
       "created_at": "2026-10-29T05:51Z",
       "result": "",
@@ -103532,11 +103532,24 @@
           "at": "2026-10-29T05:51Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T06:02Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the newest video packs and record any missing checks",
       "kind": "qa",
-      "backlog": "both-qa-sweep"
+      "backlog": "both-qa-sweep",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T06:02Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
