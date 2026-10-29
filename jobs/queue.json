@@ -107588,10 +107588,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T19:04Z",
+      "eta": "2026-10-29T21:04Z",
       "created_by": "relay",
       "created_at": "2026-10-29T18:20Z",
       "result": "",
@@ -107600,6 +107600,11 @@
           "at": "2026-10-29T18:20Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T19:04Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Add the remaining Related links to the Blood Shorts",
@@ -107607,7 +107612,15 @@
       "recheck_of": "J0280",
       "due": "2026-10-29T19:20:47+00:00",
       "due_kind": "condition-verification",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T19:04Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1216",
