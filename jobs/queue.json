@@ -107818,10 +107818,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T19:16Z",
+      "eta": "2026-10-29T21:16Z",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
       "result": "",
@@ -107830,11 +107830,24 @@
           "at": "2026-10-29T19:15Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T19:16Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair split composite and overlay legibility; resolve picture gates and graphics review for rough v02",
       "due": "2026-11-12T20:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T19:16Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
