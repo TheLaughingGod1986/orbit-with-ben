@@ -107988,9 +107988,14 @@
           "at": "2026-10-29T20:21Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T20:22Z",
+          "by": "cursor",
+          "what": "step 0 of 7 done: claimed; starting step 1 read-back"
         }
       ],
-      "remaining_action": "Swap HOS Short -I_GHK-GcFs (007 Jenner) to Ben-OK'd v04 (Private, same slot Fri 13 Nov 11:30)",
+      "remaining_action": "Read back old id -I_GHK-GcFs (privacy, publishAt, listing, Related)",
       "due": "2026-11-12T20:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -108009,12 +108014,14 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-29T20:21Z",
+        "of": 7,
+        "at": "2026-10-29T20:22Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed; starting step 1 read-back"
+      },
+      "taskKeys": [
+        "HOS:007"
+      ]
     }
   ],
   "focus": [],
