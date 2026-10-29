@@ -1,5 +1,5 @@
 {
-  "next_id": 1181,
+  "next_id": 1182,
   "jobs": [
     {
       "id": "J0001",
@@ -104450,6 +104450,35 @@
         "HOS:007",
         "HOS:008"
       ]
+    },
+    {
+      "id": "J1181",
+      "title": "025 Short iyvWYFP_ETA (airs Mon 9 Nov 11:30): restore its v01 master so the upcoming-Shorts gate can read it",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "UPCOMING_SHORTS_GATE.md has shown NO FILE for iyvWYFP_ETA since 24 Oct: 02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v01.mp4 is not on the Mini (likely moved off during disk cleanup). The uploaded copy is fine (UPLOADS.json sha256 48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1; v01 gate PASS on record). Find the file on the NAS or iCloud UAT, check its sha256 matches, and copy it back to that path (copy only; never delete or move anything on the NAS). Re-run gate_upcoming.py and confirm the row reads PASS or report-only. If no copy with that hash exists anywhere, park for Chief: the YouTube copy airs as is. No upload, swap or YouTube change. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-29T07:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T07:18Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "025 Short iyvWYFP_ETA (airs Mon 9 Nov 11:30): restore its v01 master so the upcoming-Shorts gate can read it",
+      "due": "2026-11-06T20:00:00Z",
+      "kind": "qa"
     }
   ],
   "focus": [],
