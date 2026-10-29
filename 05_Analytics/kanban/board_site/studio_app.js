@@ -380,28 +380,53 @@
         <span class="meta">${esc(clip(why, 110))}</span></div></div>`;
     }).join("");
     const pools = (b.credits || {}).pools || {};
-    const credit = Object.entries(POOLS).filter(([id]) => pools[id]).map(([id, name]) => {
-      const lt = pools[id].latest || {}, unit = pools[id].unit, total = lt.total || (unit === "%" ? 100 : null);
-      const share = total && lt.left != null ? lt.left / total : null;
-      const stale = (now - Date.parse(lt.at || "")) / 36e5 > 30;
-      const tone = share != null && share < 0.1 ? "red" : stale ? "amber" : "green";
-      const fig = share != null ? Math.round(share * 100) + "%" : unit === "GBP" ? "£" + Number(lt.left).toFixed(0) : Number(lt.left || 0).toLocaleString("en-GB");
-      return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${tone}">${fig}</b>${share != null ? `<div class="bar"><i class="${tone}" style="width:${Math.max(3, share * 100).toFixed(0)}%"></i></div>` : `<small>${stale ? "reading stale" : "left"}</small>`}</a>`;
-    }).join("");
-    // Claude, Gemini and Grok publish no meter: their tile says whether they are up, and when a flagged one is back.
+    // Every model gets a bar where a real reading exists (Ben, 29 Oct: "accurate progress for all the models").
+    // Grok Bot has no meter of its own: it runs on the same weekly pool as Cursor (the Mini reads it from
+    // grok.com/dashboard/billing), so its tile shows that reading. Claude and Gemini show one once the Mini records it.
     const chain = Object.fromEntries((m.chiefChain || []).map(r => [r.agent, r]));
-    const noMeter = [["chief", "Grok"], ["claude", "Claude"], ["gemini", "Gemini"]].map(([id, name]) => {
-      const [tone, word, note] = meterless(chain[id], status[id], now);
-      return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${tone}">${word}</b><small>${esc(note)}</small></a>`;
-    }).join("");
+    const tile = (name, id, alias) => {
+      const pm = poolMeter(id, pools[id], (b.credits || {}), now);
+      if (!pm) {
+        const [tone, word, note] = meterless(chain[alias], status[alias], now);
+        return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${tone}">${word}</b><small>${esc(note)}</small></a>`;
+      }
+      return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${pm.tone}">${pm.fig}</b>${pm.share != null
+        ? `<div class="bar"><i class="${pm.tone}" style="width:${Math.max(3, pm.share * 100).toFixed(0)}%"></i></div>` : ""}<small>${esc(pm.note)}</small></a>`;
+    };
+    const credit = [["ElevenLabs", "elevenlabs"], ["Flow", "flow"], ["Vertex", "vertex"], ["Codex", "codex"], ["Cursor", "cursor"],
+      ["Grok", "cursor", "chief"], ["Claude", "claude", "claude"], ["Gemini", "gemini", "gemini"]]
+      .filter(([, id, alias]) => pools[id] || alias).map(([name, id, alias]) => tile(name, id, alias)).join("");
     return `<header class="top"><h1>Agents</h1><a class="more" href="/ai">Details ›</a></header>
       <div class="chief-card"><span class="dot ${c.agent ? "green" : "red"}"></span><div><b>Chief: ${esc(c.name || "nobody")}</b>
         <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
       ${jobTiles(s.jobs)}
       ${section("Agent team", null, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
-      ${section("Credits", null, `<div class="credits">${credit}${noMeter}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
+      ${section("Credits", null, `<div class="credits">${credit}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
   }
 
+  // A pool's reading as a bar: its own total, else 100 for a %, else the current plan's allowance (credits.tiers),
+  // else for a monthly £ credit the highest reading this calendar month (the refill).
+  function poolMeter(id, pool, credits, now) {
+    if (!pool || !pool.latest) return null;
+    const lt = pool.latest, unit = pool.unit;
+    let total = lt.total || (unit === "%" ? 100 : null), of = "";
+    const tier = ((credits.tiers || {})[id] || []).find(t => t.current);
+    if (!total && tier) { total = tier.allow; of = `of ${Number(total).toLocaleString("en-GB")} (${tier.name.replace(/^Google /, "")})`; }
+    if (!total && unit === "GBP") {
+      const month = new Date(now).toISOString().slice(0, 7);
+      const vals = (pool.series || []).filter(p => String(p[0]).slice(0, 7) === month && p[1] != null).map(p => p[1]);
+      total = vals.length ? Math.max(...vals, lt.left) : null;
+      if (total) of = `of £${Number(total).toFixed(0)} this month`;
+    }
+    const share = total && lt.left != null ? Math.max(0, Math.min(1, lt.left / total)) : null;
+    const stale = (now - Date.parse(lt.at || "")) / 36e5 > 30;
+    const tone = share != null && share < 0.1 ? "red" : stale ? "amber" : "green";
+    const fig = share != null ? Math.round(share * 100) + "%" : unit === "GBP" ? "£" + Number(lt.left).toFixed(0) : Number(lt.left || 0).toLocaleString("en-GB");
+    const reset = (String(lt.note || "").match(/resets? (?:on )?([A-Z][a-z]{2} \d{2} [A-Z][a-z]{2} [\d:]+Z?|[A-Z][a-z]{2} \d{1,2})/) || [])[1];
+    const left = unit === "GBP" ? `£${Number(lt.left).toFixed(2)} left` : unit === "%" ? "" : `${Number(lt.left).toLocaleString("en-GB")} left`;
+    const note = stale ? "reading stale" : [left, of, reset ? "resets " + reset.trim() : ""].filter(Boolean).join(" · ");
+    return { share, fig, tone, note };
+  }
   function meterless(row, st, now) {
     row = row || {}; st = st || {};
     const until = Date.parse(row.until || st.until || "");

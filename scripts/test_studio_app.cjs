@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -141,4 +141,14 @@ assert.deepEqual(t.inProgress([pub, priv]).map(x => x.key), ['priv']);
 const gg = t.videoGroups([pub, priv]);
 assert.deepEqual([gg.queued.map(x => x.key), gg.done.map(x => x.key)], [['priv'], ['pub']]);
 assert(t.thumb(pub).includes('i.ytimg.com') && !t.thumb(priv).includes('i.ytimg.com'));
+// Credit bars: a plan allowance or the month's refill makes a bar; a % pool keeps its reset date.
+const flow = t.poolMeter('flow', {unit: 'credits', latest: {left: 20870, at: new Date(NOW).toISOString()}}, {tiers: {flow: [{name: 'Google AI Ultra $200 tier', allow: 25000, current: true}]}}, NOW);
+assert.equal(flow.fig, '83%'); assert(flow.note.includes('of 25,000'));
+const vx = t.poolMeter('vertex', {unit: 'GBP', latest: {left: 69.48, at: new Date(NOW).toISOString()}, series: [['2026-10-02T08:00Z', 100], ['2026-10-20T08:00Z', 80]]}, {}, NOW);
+assert.equal(vx.fig, '69%'); assert(vx.note.includes('of £100 this month'));
+const cx = t.poolMeter('codex', {unit: '%', latest: {left: 40, total: 100, at: new Date(NOW).toISOString(), note: 'weekly 60% used, resets Wed 04 Nov 06:36Z'}}, {}, NOW);
+assert.equal(cx.fig, '40%'); assert(cx.note.includes('resets Wed 04 Nov 06:36Z'), cx.note);
+assert.equal(t.poolMeter('claude', undefined, {}, NOW), null, 'no reading, no bar');
+const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'weekly resets Oct 29'}}}}}, NOW);
+assert((ag.match(/<span>Grok<\/span><b class="red">0%/) || []).length === 1, 'Grok shows the shared Cursor weekly pool');
 console.log('studio app OK');
