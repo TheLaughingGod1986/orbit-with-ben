@@ -106234,9 +106234,14 @@
           "at": "2026-10-29T12:55Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: no compliant v03 possible — S4/S5/S6 openings have zero existing moving subject footage on disk (J0914 RAW = Neptune/ISS only; J1199 plates = JPEG stills only; 032 Titan clips empty). Inventory + S4 sentence-1 infeasibility (subject name Uranus at 4.2s, sentence1 says This planet; surprise 21 at 2.26s but first sentence ends 3.40s >3s cut): jobs/reviews/J1204/SOURCE_INVENTORY_2026-10-29.md (ae4bf885f). Missing inputs: PD Uranus SVS-class video, meteor video (not still), Titan moving haze + Dragonfly plate. v02 hashes preserved; no upload/swap. £0."
+        },
+        {
+          "at": "2026-10-29T12:59Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T18:00:00Z"
         }
       ],
-      "remaining_action": "Parked for Chief: authorize PD moving footage downloads then re-queue v03 assembly",
+      "remaining_action": "Await J1206 source and audio-plan evidence, then Chief review; no replacement approved",
       "due": "2026-11-02T12:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -106245,6 +106250,11 @@
         "at": "2026-10-29T12:55Z",
         "by": "cursor",
         "note": "S4 sentence1 infeasible for named Uranus; inventory ae4bf885f"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief Codex ruling 089360eca: inventory accepted only; no v03 PASS and v02 remains rejected. Await J1206 verified moving-source evidence and Uranus whole-sentence edit feasibility, then Chief source/edit-plan review before assembly. J1199 remains held; original scheduled copies unchanged.",
+        "check_at": "2026-10-30T18:00:00Z"
       }
     },
     {
