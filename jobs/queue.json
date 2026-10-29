@@ -73249,10 +73249,10 @@
     },
     {
       "id": "J0875",
-      "title": "HOS 007 Shorts -I_GHK-GcFs & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register",
+      "title": "HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register",
       "needs": "mini",
       "repo": "hos",
-      "body": "HOS 007 Shorts -I_GHK-GcFs ('What Was the Edward Jenner Experiment?', Private, publishAt 2026-11-13T11:30Z, J0873) and 4WUs0beKn0A ('Why Is It Called a Vaccine?', Private, publishAt 2026-11-17T11:30Z, J0906) have Related = None because the 007 long had no id yet. Once the 007 long ('Why Vaccines Are Named After a Cow', airs Thu 12 Nov 18:00) is uploaded: set Related video on -I_GHK-GcFs and 4WUs0beKn0A to the long, read both back in Studio, update the HOS records, and register both Shorts for the HOS Buffer mirror (buffer-mirror.ts register --channel hos ... --long <id>, see J0873's and J0906's #99 posts; needs orbit-with-ben PR #260 merged). Must be done before Fri 13 Nov 11:30Z. £0.",
+      "body": "HOS 007 Shorts cLKDiYP55J8 ('What Was the Edward Jenner Experiment?', Private, publishAt 2026-11-13T11:30Z, J0873) and 4WUs0beKn0A ('Why Is It Called a Vaccine?', Private, publishAt 2026-11-17T11:30Z, J0906) have Related = None because the 007 long had no id yet. Once the 007 long ('Why Vaccines Are Named After a Cow', airs Thu 12 Nov 18:00) is uploaded: set Related video on cLKDiYP55J8 and 4WUs0beKn0A to the long, read both back in Studio, update the HOS records, and register both Shorts for the HOS Buffer mirror (buffer-mirror.ts register --channel hos ... --long <id>, see J0873's and J0906's #99 posts; needs orbit-with-ben PR #260 merged). Must be done before Fri 13 Nov 11:30Z. £0.\n\nJ1219 amendment (2026-10-29): scheduled copy for Fri 13 Nov is now cLKDiYP55J8 (v04); -I_GHK-GcFs is Private and unscheduled. Set Related on cLKDiYP55J8 + 4WUs0beKn0A -> ETynHpIYLeY after the long is public.",
       "ref": "",
       "film": "007",
       "stage": "upload",
@@ -73264,7 +73264,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-23T05:20Z",
-      "result": "waits for input: HOS 007 long ETynHpIYLeY public (publishAt Thu 12 Nov 2026 18:00Z; Studio picker lists 23 public videos only, 0 matches while Private). HOS Buffer mirror registered for -I_GHK-GcFs & 4WUs0beKn0A with long=ETynHpIYLeY (OWB b8507a906) and HOS records updated (HOS 9b715232). Reopen on/after Thu 12 Nov 18:05Z (before Fri 13 Nov 11:30Z).",
+      "result": "waits for input: HOS 007 long ETynHpIYLeY public (publishAt Thu 12 Nov 2026 18:00Z; Studio picker lists 23 public videos only, 0 matches while Private). HOS Buffer mirror registered for cLKDiYP55J8 (was -I_GHK-GcFs) & 4WUs0beKn0A with long=ETynHpIYLeY (OWB b8507a906) and HOS records updated (HOS 9b715232). Reopen on/after Thu 12 Nov 18:05Z (before Fri 13 Nov 11:30Z).",
       "history": [
         {
           "at": "2026-10-23T05:20Z",
@@ -73330,6 +73330,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "condition recorded; next verification 2026-11-12T18:05:00Z"
+        },
+        {
+          "at": "2026-10-29T20:27Z",
+          "by": "cursor",
+          "what": "J1219: retarget Related from -I_GHK-GcFs to cLKDiYP55J8 (v04 swap; old Private+unscheduled)"
         }
       ],
       "kind": "listing",
@@ -107961,13 +107966,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-29T20:21Z",
-      "eta": "2026-10-29T22:21Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-29T20:15Z",
-      "result": "",
+      "result": "Swapped -I_GHK-GcFs -> cLKDiYP55J8 (v04). New Private publishAt 2026-11-13T11:30:00Z; old Private unscheduled; en-GB captions; UPLOADS+Buffer+gate+J0875 retarget; HOS 79ea8af8; OWB e962bcb67; desk #180 6507585733. verify-swap PASS.",
       "history": [
         {
           "at": "2026-10-29T20:15Z",
@@ -108008,6 +108013,11 @@
           "at": "2026-10-29T20:24Z",
           "by": "cursor",
           "what": "step 1 of 7 done: dry-run PASS; live upload running (PUBLISHING_DRY_RUN=false)"
+        },
+        {
+          "at": "2026-10-29T20:29Z",
+          "by": "cursor",
+          "what": "done: Swapped -I_GHK-GcFs -> cLKDiYP55J8 (v04). New Private publishAt 2026-11-13T11:30:00Z; old Private unscheduled; en-GB captions; UPLOADS+Buffer+gate+J0875 retarget; HOS 79ea8af8; OWB e962bcb67; desk #180 6507585733. verify-swap PASS."
         }
       ],
       "remaining_action": "Upload v04 as NEW Private with same publishAt",
@@ -108036,7 +108046,8 @@
       },
       "taskKeys": [
         "HOS:007"
-      ]
+      ],
+      "done_ref": "6507585733"
     },
     {
       "id": "J1220",
