@@ -101172,9 +101172,14 @@
           "at": "2026-10-29T02:34Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting 4-step read-only listing check for HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-29T02:36Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: YouTube Data API & deduplicated auditChannel verified 57 unique HOS videos at 2026-10-29T02:36:30Z (26 public, 14 scheduled, 17 private; 0 errors)"
         }
       ],
-      "remaining_action": "Inventory HOS live and scheduled videos and pull live/API metadata",
+      "remaining_action": "Verify live public watch/Shorts pages for 4/4 long end screens and 22/22 Short Related pills",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -101187,12 +101192,22 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-29T02:34Z",
+        "at": "2026-10-29T02:36Z",
         "by": "gemini",
-        "note": "Starting 4-step read-only listing check for HOS live and scheduled videos"
-      }
+        "note": "YouTube Data API & deduplicated auditChannel verified 57 unique HOS videos at 2026-10-29T02:36:30Z (26 public, 14 schedu"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     },
     {
       "id": "J1142",
