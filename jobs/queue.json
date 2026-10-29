@@ -106803,13 +106803,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T15:57Z",
-      "eta": "2026-10-29T17:57Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-29T15:56Z",
-      "result": "",
+      "result": "Verified 29 Oct 15:59Z: J1200 open/unclaimed, no J0966 published review cards or explicit HC swap OK in fresh threads/live checks. J0966 remains blocked at worker 5/5; next check 29 Oct 22:00Z. Delivery stays with J1200; no rebuild or publishing changes. Reports HOS 6501720007 and OWB 6501728523.",
       "history": [
         {
           "at": "2026-10-29T15:56Z",
@@ -106840,6 +106840,11 @@
           "at": "2026-10-29T16:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verification and unchanged hold reported: HOS 6501720007, OWB 6501728523. No second task claimed."
+        },
+        {
+          "at": "2026-10-29T16:01Z",
+          "by": "codex",
+          "what": "done: Verified 29 Oct 15:59Z: J1200 open/unclaimed, no J0966 published review cards or explicit HC swap OK in fresh threads/live checks. J0966 remains blocked at worker 5/5; next check 29 Oct 22:00Z. Delivery stays with J1200; no rebuild or publishing changes. Reports HOS 6501720007 and OWB 6501728523."
         }
       ],
       "remaining_action": "Verification complete; J1200 owns playable delivery before swap approval",
@@ -106858,7 +106863,8 @@
         "HOS:004",
         "HOS:005",
         "HOS:007"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6501720007"
     }
   ],
   "focus": [],

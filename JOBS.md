@@ -53,10 +53,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1204 | mini | blocked | cursor | – | assembly · J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence |  |
 | J1207 | mini | open | – | – | for gemini · review · `gemini-argon` · HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8) |  |
 | J1208 | mini | blocked | codex | – | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
-| J1209 | any | claimed | codex | 2026-10-29T17:57Z | chief · Chief: verify condition for J0966 |  |
 
 Recently finished:
 
+- J1209 done: Chief: verify condition for J0966 (Verified 29 Oct 15:59Z: J1200 open/unclaimed, no J0966 published review cards or explicit HC swap OK in fresh threads/live checks. J0966 remains blocked at worker 5/5; next check 29 Oct 22:00Z. Delivery stays with J1200; no rebuild or publishing changes. Reports HOS 6501720007 and OWB 6501728523.)
 - J1206 done: J1204 follow-up: verify moving sources and Uranus whole-sentence edit feasibility (J1206 return: jobs/reviews/J1206/SOURCE_FEASIBILITY_2026-10-29.md (+ CANDIDATES.json). Archive empty of moving opens. Uranus sentence-reorder FEASIBLE (lead with complete S2 from vo_v02.wav). S4 candidate SVS 20390 Shot4 Beauty Pass CGI 1920x1080 sha 32370afa… upscale 1.778 PASS but picture_qa CGI risk. S5 NEGATIVE (no meteor video). S6 PIA17656 radar flyover motion OK but 2.667x FAIL unless blur-fill; Dragonfly TakingOff 2024 artist CGI subject match. No v03. Awaiting Chief source/edit plan.)
 - J1205 done: Chief: verify condition for J0999 (Verified PR365 remains draft OPEN a87cd56a without matching approval; J0999 remains blocked on J0998 approval/merge and unmodified channel:audit exit 0. Hold verified, recheck 29 Oct 18:50Z. No spend or YouTube changes.)
 - J1203 cancelled: HOS back-post the 3 held Shorts (Herschel, Snow, cathode rays) from Studio Download of the live cut (Superseded 29 Oct by chief: Ben OK'd posting the 17 Oct local re-renders (Herschel, Snow) and the iCloud HOS UAT cathode rays copy instead of Studio downloads. All three are already scheduled in Buffer (Wed 4, Fri 6, Sat 7 Nov 11:30 London). Do NOT mirror them again.)
@@ -66,4 +66,3 @@ Recently finished:
 - J1189 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1188 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-29T08:26Z across 57 unique videos (26 public, 14 scheduled, 17 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, HOS 80e16e4a, 0 new fixes needed))
 - J1187 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T08:18Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, e472e5712, 0 fixes needed))
-- J1186 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
