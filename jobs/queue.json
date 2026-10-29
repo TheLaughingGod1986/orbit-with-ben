@@ -105785,17 +105785,22 @@
           "at": "2026-10-29T10:40Z",
           "by": "cursor",
           "what": "step 0 of 6 done: claimed; Uranus first (3 Nov)"
+        },
+        {
+          "at": "2026-10-29T10:41Z",
+          "by": "cursor",
+          "what": "step 4 of 6 done: claimed after prior release; s6 ffmpeg tweak3 live; s5 retry waiting; Uranus v02 already PASS"
         }
       ],
-      "remaining_action": "Locate Uranus Short master + footage; plan frame-0 / meta-promise fix",
+      "remaining_action": "Wait s6 loudness re-render; fix s5 scale_card; clear titan f0diff/reuse FAILs; deliver UAT/NAS; park Chief",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 6,
-        "at": "2026-10-29T10:40Z",
+        "at": "2026-10-29T10:41Z",
         "by": "cursor",
-        "note": "claimed; Uranus first (3 Nov)"
+        "note": "claimed after prior release; s6 ffmpeg tweak3 live; s5 retry waiting; Uranus v02 already PASS"
       },
       "taskKeys": [
         "OWB:030"
