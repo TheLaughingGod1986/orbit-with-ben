@@ -108366,9 +108366,14 @@
           "at": "2026-10-29T21:51Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T21:51Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: After verified test completion and the next-day gap, arm the authorized title-only B while holding the live thumbnail fixed",
+      "remaining_action": "Verify HOS 004 Studio test completion and next-day eligibility",
       "kind": "chief",
       "recheck_of": "J1131",
       "due": "2026-10-29T22:39:10+00:00",
@@ -108377,10 +108382,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-29T21:51Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:004"
+      ]
     }
   ],
   "focus": [],
