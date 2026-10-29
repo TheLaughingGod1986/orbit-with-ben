@@ -108631,19 +108631,24 @@
           "at": "2026-10-29T22:53Z",
           "by": "codex",
           "what": "step 2 of 3 done: Released J0966 stale hold; worker 5/5 restored; all four approvals matched by exact filename and SHA; no additional job claimed"
+        },
+        {
+          "at": "2026-10-29T22:54Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Hold released with four verified Ben approvals; worker 5/5 preserved; HOS report 6510415243 and OWB report posted"
         }
       ],
-      "remaining_action": "Report satisfied hold and existing delivery handoff",
+      "remaining_action": "Verification complete; existing delivery jobs own the approved swaps",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-29T23:03:24+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-29T22:53Z",
+        "at": "2026-10-29T22:54Z",
         "by": "codex",
-        "note": "Released J0966 stale hold; worker 5/5 restored; all four approvals matched by exact filename and SHA; no additional job "
+        "note": "Hold released with four verified Ben approvals; worker 5/5 preserved; HOS report 6510415243 and OWB report posted"
       },
       "taskKeys": [
         "HOS:004",
