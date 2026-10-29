@@ -100295,13 +100295,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-29T01:10Z",
-      "eta": "2026-10-29T03:10Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "",
+      "result": "parked for Chief: Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, but New test shows Start a new experiment? This deletes your current experiment. Cancelled; brief explicitly prohibits Continue. Resolve protected confirmation before title-only B can be armed. No video changes.",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -100362,6 +100362,11 @@
           "at": "2026-10-29T01:14Z",
           "by": "codex",
           "what": "step 1 of 3 done: Studio report: thumbnail-only test ended 28 Oct 2026 21:17; insufficient impressions. New test requests deletion of current experiment; cancelled, no changes."
+        },
+        {
+          "at": "2026-10-29T01:14Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, but New test shows Start a new experiment? This deletes your current experiment. Cancelled; brief explicitly prohibits Continue. Resolve protected confirmation before title-only B can be armed. No video changes."
         }
       ],
       "remaining_action": "Chief must resolve Studio delete-current-experiment confirmation before title-only test",
