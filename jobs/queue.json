@@ -1,5 +1,5 @@
 {
-  "next_id": 1138,
+  "next_id": 1139,
   "jobs": [
     {
       "id": "J0001",
@@ -93595,6 +93595,11 @@
           "at": "2026-10-29T01:09Z",
           "by": "codex",
           "what": "blocked: parked for Chief: swap completed and verified in PR 339 (eb1875982); Related video Js6EQJ8qDi8 unavailable by exact ID/title in Studio. New B1z2dv7m7Vk Private scheduled 2026-11-11T11:30Z; old TtgHNLXfDSs Private unscheduled. Resolve link when eligible; review/merge records."
+        },
+        {
+          "at": "2026-10-29T01:09Z",
+          "by": "relay",
+          "what": "condition verification queued: J1138"
         }
       ],
       "remaining_action": "Chief to resolve Mars Related video link and review PR 339",
@@ -93617,6 +93622,12 @@
         "at": "2026-10-29T01:09Z",
         "by": "codex",
         "note": "Swap verified; evidence committed eb1875982 in PR 339. Remaining: Related target Js6EQJ8qDi8 unavailable in Studio picke"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-29T02:09:55+00:00",
+        "recheck_task": "J1138"
       }
     },
     {
@@ -100611,6 +100622,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J1138",
+      "title": "Chief: verify condition for J1059",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1059: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1059 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-29T01:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T01:09Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief to resolve Mars Related video link and review PR 339",
+      "kind": "chief",
+      "recheck_of": "J1059",
+      "due": "2026-10-29T02:09:55+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
