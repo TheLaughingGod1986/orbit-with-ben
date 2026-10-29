@@ -104335,9 +104335,14 @@
           "at": "2026-10-29T07:12Z",
           "by": "codex",
           "what": "step 1 of 3 done: Overview/Reach checked for all 114 videos; 87 OWB and 25 HOS have lifetime metrics. Latest Apophis and Curie lifetime totals are unavailable; realtime totals kept separate. Supplementing missing duration/stayed-to-watch through Engagement."
+        },
+        {
+          "at": "2026-10-29T07:13Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Recorded 14 OWB + 4 HOS longs and 73 OWB + 21 HOS Shorts. Stayed-to-watch read for all 94 available Shorts; average percentage available for 72. Nine long percentages calculated from Studio duration/length. Two newest Shorts remain unavailable. Reports rebuilt successfully."
         }
       ],
-      "remaining_action": "Finish Engagement reads for missing metrics; rebuild and publish tracker",
+      "remaining_action": "Verify rebuilt tracker, commit metrics to main, and publish tracker data",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
@@ -104351,11 +104356,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-29T07:12Z",
+        "at": "2026-10-29T07:13Z",
         "by": "codex",
-        "note": "Overview/Reach checked for all 114 videos; 87 OWB and 25 HOS have lifetime metrics. Latest Apophis and Curie lifetime to"
+        "note": "Recorded 14 OWB + 4 HOS longs and 73 OWB + 21 HOS Shorts. Stayed-to-watch read for all 94 available Shorts; average perc"
       },
       "taskKeys": [
         "OWB:001",
