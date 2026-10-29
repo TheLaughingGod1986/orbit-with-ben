@@ -99127,19 +99127,24 @@
           "at": "2026-10-29T00:29Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed J0961 history: Claude exception 28 Oct 23:38Z; Gemini completion 29 Oct 00:09Z; original v04 watch recorded. J1120 predates these events."
+        },
+        {
+          "at": "2026-10-29T00:29Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PASS: saved API readback, UPLOADS and gate library contain all three uploaded IDs; evidence commit 328fd220a. This is record reconciliation, not a new gate PASS or live API check."
         }
       ],
-      "remaining_action": "Cross-check the completed upload records and resolve the superseded verification",
+      "remaining_action": "Close stale J1120 and report the superseding completion",
       "kind": "chief",
       "recheck_of": "J0961",
       "due": "2026-10-28T20:02:35+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-29T00:29Z",
         "by": "codex",
-        "note": "Reviewed J0961 history: Claude exception 28 Oct 23:38Z; Gemini completion 29 Oct 00:09Z; original v04 watch recorded. J1"
+        "note": "PASS: saved API readback, UPLOADS and gate library contain all three uploaded IDs; evidence commit 328fd220a. This is re"
       },
       "taskKeys": [
         "OWB:029"
