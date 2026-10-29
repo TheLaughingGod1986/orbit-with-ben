@@ -105918,9 +105918,14 @@
           "at": "2026-10-29T21:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T21:18Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Part 03 complete (29/57 KEEP) + Part 04 4/13 KEEP (33/57 cumulative, live Flow 16,680, spent 1,870); freeing disk space (<20 GiB free) before resuming Part 04"
         }
       ],
-      "remaining_action": "Mint HOS 009 v04 tranche-1 Flow plates: Part 04 (13 rows running in detached tmux j1192-render), then Part 05 (15 rows)",
+      "remaining_action": "Free disk space (>=20 GiB free via mini_repair + NAS render scratch offload), review/commit Part 04 4/13 KEEP, resume Part 04 (9 remaining rows) + Part 05 (15 rows)",
       "due": "2026-11-12T20:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -105928,9 +105933,9 @@
       "progress": {
         "step": 3,
         "of": 6,
-        "at": "2026-10-29T19:58Z",
+        "at": "2026-10-29T21:18Z",
         "by": "gemini",
-        "note": "Part 03 complete: 7/7 tranche-1 rows KEEP (29/57 cumulative across Parts 01-03; P03:03_shot_slow and P03:04_shot_faster "
+        "note": "Part 03 complete (29/57 KEEP) + Part 04 4/13 KEEP (33/57 cumulative, live Flow 16,680, spent 1,870); freeing disk space "
       },
       "taskKeys": [
         "HOS:009"
