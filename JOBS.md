@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1129 | mini | open | – | – | studio · HOS 002 Periodic Table: arm thumb test (live A vs existing MISSING ELEMENT v02), description + chapter fixes, ledger (J1126 decision) |  |
 | J1130 | mini | open (after J1129) | – | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
-| J1132 | mini | blocked | codex | – | studio · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
+| J1132 | mini | open | – | – | studio · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
 | J1134 | mini | open | – | – | for gemini · review · `gemini-argon` · Update evidence PRs #314, #315, #317 with main (merge commit, resolve record conflicts) so the Chief can merge |  |
 | J1135 | mini | open | – | – | for gemini · review · `gemini-argon` · HOS: merge records PRs #366 (J1004 paper) and #368 (J1098 Snow read) after the acting Chief PASS |  |
