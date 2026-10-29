@@ -3,6 +3,10 @@
   // Reads the same board.json as the video board (/board) and the AI page (/ai). Its only write is Ben's OK / changes
   // tick on the Review tab, sent to /api/checks exactly as /board sends it (same document, same key, no confirmation).
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
+  // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
+  // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
+  const refFetch = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
+    .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
@@ -26,7 +30,8 @@
 
   // A real picture only: the YouTube thumbnail when the video has an id, otherwise a channel tile with its number.
   function thumb(v) {
-    const id = v.youtube && v.youtube.videoId;
+    // YouTube has no thumbnail for a private or scheduled video (404): ask only for public ones.
+    const id = isLive(v) && v.youtube.videoId;
     const fallback = `<span class="tile ${v.channel === "HOS" ? "hos" : "owb"}">${esc(v.number || "")}</span>`;
     return `<div class="thumb">${id ? `<img loading="lazy" alt="" src="https://i.ytimg.com/vi/${esc(id)}/mqdefault.jpg" onerror="this.remove()" onload="if(this.naturalWidth<=120)this.remove()">` : ""}${fallback}</div>`;
   }
@@ -160,7 +165,10 @@
     };
     bg.querySelector("#chg").focus();
   }
-  const inProgress = vs => vs.filter(v => ["progress", "changes", "ready", "approved"].includes(v.lane) && !forBen([v]).length);
+  // Public on YouTube is published, whatever follow-up jobs it still carries (29 Oct audit: Venus, the Earth and
+  // Apophis Shorts sat in "in production" because of a title test or a Related-video step).
+  const isLive = v => !!v.youtube && (v.youtube.privacy === "public" || v.youtube.state === "live");
+  const inProgress = vs => vs.filter(v => ["progress", "changes", "ready", "approved"].includes(v.lane) && !isLive(v) && !forBen([v]).length);
 
   // Publications from now on: YouTube's own schedule first, else the planned air date; one row per YouTube video.
   function schedule(vs, now) {
@@ -243,10 +251,10 @@
   function videoGroups(vs) {
     const active = ["progress", "changes", "ready", "approved"];
     return {
-      working: vs.filter(v => active.includes(v.lane) && isWorking(v)),
-      queued: vs.filter(v => active.includes(v.lane) && !isWorking(v)),
-      backlog: vs.filter(v => v.lane === "upcoming"),
-      done: vs.filter(v => v.lane === "done" && !v.collapsed),
+      working: vs.filter(v => (active.includes(v.lane) || isLive(v)) && isWorking(v)),
+      queued: vs.filter(v => active.includes(v.lane) && !isLive(v) && !isWorking(v)),
+      backlog: vs.filter(v => v.lane === "upcoming" && !isLive(v)),
+      done: vs.filter(v => (v.lane === "done" || isLive(v)) && !v.collapsed && !isWorking(v)),
     };
   }
 
@@ -483,7 +491,7 @@
     try {
       let url = DATA + "?t=" + Date.now(), sha = "";
       try {
-        const g = await fetch(DATA_REF, { cache: "no-cache" });
+        const g = await refFetch();
         if (g.ok) {
           sha = ((await g.json()).object || {}).sha || "";
           if (sha && sha === lastSha && board) return;

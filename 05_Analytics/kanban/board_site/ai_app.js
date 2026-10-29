@@ -3,6 +3,10 @@
   // left on each plan and where it went, so we can pick agents and plans on evidence. Reads the same board.json as
   // the video board (board.models from the relay, board.credits from scripts/ai_spend.py); no secrets, no writes.
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
+  // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
+  // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
+  const refFetch = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
+    .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const STALE_H = 30;   // a pool read daily is stale after a missed day
@@ -146,7 +150,7 @@
     try {
       let url = DATA + "?t=" + Date.now(), sha = "";
       try {
-        const g = await fetch(DATA_REF, { cache: "no-cache" });
+        const g = await refFetch();
         if (g.ok) {
           sha = ((await g.json()).object || {}).sha || "";
           if (sha && sha === lastSha && board) return render();
