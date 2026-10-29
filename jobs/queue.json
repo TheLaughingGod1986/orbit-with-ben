@@ -100567,9 +100567,14 @@
           "at": "2026-10-29T01:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T01:27Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J1135: inspecting HOS PRs #366 (J1004) and #368 (J1098) and checking CI status"
         }
       ],
-      "remaining_action": "HOS: merge records PRs #366 (J1004 paper) and #368 (J1098 Snow read) after the acting Chief PASS",
+      "remaining_action": "Check CI on HOS PRs #366 and #368, then merge into history-of-science main",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -100583,11 +100588,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-29T01:25Z",
+        "at": "2026-10-29T01:27Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J1135: inspecting HOS PRs #366 (J1004) and #368 (J1098) and checking CI status"
+      },
+      "taskKeys": [
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1136",
