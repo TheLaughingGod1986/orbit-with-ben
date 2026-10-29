@@ -106409,17 +106409,22 @@
           "at": "2026-10-29T15:02Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed; start Uranus-only v03 per SOURCE_PLAN_RULING"
+        },
+        {
+          "at": "2026-10-29T15:05Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: inputs verified: Shot4 sha 32370afa matches; vo_v02 present; ruling S2-first + Shot4 open"
         }
       ],
-      "remaining_action": "Assemble Uranus S4 v03: S2-first VO + Shot4 0-2.7s open; gates; park for Chief",
+      "remaining_action": "Write assemble script + start Uranus v03 render on NAS",
       "due": "2026-11-02T12:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-29T15:02Z",
+        "at": "2026-10-29T15:05Z",
         "by": "cursor",
-        "note": "claimed; start Uranus-only v03 per SOURCE_PLAN_RULING"
+        "note": "inputs verified: Shot4 sha 32370afa matches; vo_v02 present; ruling S2-first + Shot4 open"
       },
       "taskKeys": [
         "OWB:032"
