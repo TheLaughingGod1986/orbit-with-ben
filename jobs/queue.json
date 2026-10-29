@@ -107920,17 +107920,22 @@
           "at": "2026-10-29T20:00Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T20:00Z",
+          "by": "cursor",
+          "what": "step 0 of 7 done: claimed; surveying v01 pack and assembler"
         }
       ],
-      "remaining_action": "Detached v02 render running; await gates + desk deliver + park for Chief",
+      "remaining_action": "Inspect HOS 008 rough v01 evidence, assembler, and disk before v02 repair",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 0,
         "of": 7,
-        "at": "2026-10-29T19:22Z",
+        "at": "2026-10-29T20:00Z",
         "by": "cursor",
-        "note": "assembler written; tmux j1218-render started on NAS scratch; J1193 still open (dependency)"
+        "note": "claimed; surveying v01 pack and assembler"
       },
       "taskKeys": [
         "HOS:008"
