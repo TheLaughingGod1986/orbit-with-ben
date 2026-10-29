@@ -1,5 +1,5 @@
 {
-  "next_id": 1204,
+  "next_id": 1205,
   "jobs": [
     {
       "id": "J0001",
@@ -106165,6 +106165,35 @@
       ],
       "remaining_action": "None: superseded by J1202 back-post",
       "kind": "studio"
+    },
+    {
+      "id": "J1204",
+      "title": "J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex review of J1199: FIX, not approved for Ben watch or replacement. Review checked all three v02 SHA-256s against local MP4s (all match), metadata, assembly source, gate reports and frame contact sheets. Numeric gate PASS is insufficient: S4 starts from PIA18182.jpg with synthetic latitude bands and a drawn moving ring; S5 explicitly starts NHQ202508030001.jpg as a Ken Burns crop; S6 translates PIA14925.jpg over navy. These do not meet the J1199 requirement for existing moving footage. S4 sentence 1 says 'This planet', not Uranus; its surprise begins at 2.26 s. S6 frames 9.5-12 s show a blown-up disc while VO names Dragonfly. Picture-QA source titles/upscale provenance are unresolved warnings. V02 remains rejected; do not put these cuts on Ben's board.\n\nNo-spend assembly follow-up, Uranus first: inspect existing approved masters and each Short's own footage for genuinely moving subject footage. Record source file SHA-256, clip in/out and subject motion evidence for each proposed 0-2.7 s opening. Do not use pan/zoom/translation of a JPEG, synthetic ring/band motion, stronger jitter or altered gate thresholds as a substitute. If suitable existing footage is absent, return a source inventory and the precise missing input to Chief; do not spend or silently substitute stills. No new VO or rewriting: for S4 assess whether complete existing sentence boundaries can yield subject+surprise in sentence 1; report infeasibility if they cannot.\n\nBuild new v03 files only where inputs satisfy the brief. Preserve all uploaded files/manifests and rejected v02 hashes. Keep original J1199 authorized 18-27 s, first cut <=3 s, no meta-promise, word-for-word captions, no new VO. Resolve S6 Dragonfly picture/word mismatch using approved own footage, and supply honest source titles and measured upscale in the QA pool/cut list. Run the full original gate set plus SFX/loop; deliver immutable next-version hashes, source provenance, reports, full-size flagged frames and phone exports to repo/UAT/NAS (no media in git). Park the new evidence for Chief.\n\nNo upload, swap, schedule, privacy, Buffer or UPLOADS changes in this task. Existing scheduled copies remain as specified in J1199. After an eventual Chief PASS, Ben's watch deadline remains 10:30 London on 3/7/10 Nov; without OK, original scheduled copy airs. Any later approved swap must update Buffer and UPLOADS in the same job and verify old/new YouTube state. Deadline for this follow-up: 2 Nov 12:00Z. This job resolves only J1199; no other holds reopened.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-29T12:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T12:45Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Find approved moving subject footage and rebuild only compliant v03 Shorts",
+      "due": "2026-11-02T12:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
