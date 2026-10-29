@@ -99976,6 +99976,11 @@
           "at": "2026-10-28T23:38Z",
           "by": "claude",
           "what": "reopened: [Claude] acting Chief (Ben, 28 Oct ~23:00: Grok is down, the acting Chief takes over): Decision: arming a new test only clears Studio's FINISHED 11 Oct experiment. First record that test's final result in THUMB_LEDGER.json (thumb_ledger.py result, from the Studio read) and save its screenshot to the evidence folder; then confirm the dialog and arm live A vs MISSING ELEMENT v02, read back, ledger add + start."
+        },
+        {
+          "at": "2026-10-29T00:41Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Chief must resolve delete-current-experiment confirmation before thumbnail test can be armed and ledger started",
@@ -99984,7 +99989,16 @@
         "HOS:002"
       ],
       "escalated_at": "2026-10-28T23:13Z",
-      "urgent": 4
+      "urgent": 4,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J1130",
