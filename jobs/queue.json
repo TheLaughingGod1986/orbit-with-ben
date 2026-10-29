@@ -98184,9 +98184,14 @@
           "at": "2026-10-29T00:23Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T00:24Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect prerequisite and approvals; record readiness decision; verify queue hold and report."
         }
       ],
-      "remaining_action": "Verify readiness: Await Ben approval and merge of HOS PR #365, then pass channel:audit on HOS main",
+      "remaining_action": "Verify audit-fix approval and merge evidence for J0999",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-28T16:47:44+00:00",
@@ -98194,11 +98199,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-29T00:23Z",
+        "at": "2026-10-29T00:24Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: inspect prerequisite and approvals; record readiness decision; verify queue hold and report."
+      },
+      "taskKeys": [
+        "HOS:099"
+      ]
     },
     {
       "id": "J1109",
