@@ -108461,13 +108461,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-29T22:11Z",
-      "eta": "2026-10-30T00:11Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T21:58Z",
-      "result": "",
+      "result": "Uranus v08 delivered for Chief review (no worker PASS). sha256 9888a2398282c2384290a09eb59a418f36c9960cf6d80036f2cad1cfb634bcf7. Method: path-vs-smooth open HF cancel + seam anchor (corr[open_start]=0) so loop PASS 8.45. Gates: open/level/polish/music/picture/loop/hitch all PASS. I=-14.30 LUFS TP=-1.80. measured_upscale 1.854. Motion accel_rms_y: v06 0.64 / v07 3.90 / v08 0.68. UAT playable NAS+iCloud same sha (Errno 11 fixed for this cut). Evidence jobs/reviews/J1225/. Do NOT repoint J1212 until Chief PASS. No upload/Buffer/privacy. Fallback ZpEA8stoSPA v01 11:30 unchanged.",
       "history": [
         {
           "at": "2026-10-29T21:58Z",
@@ -108528,6 +108528,11 @@
           "at": "2026-10-29T22:24Z",
           "by": "cursor",
           "what": "step 5 of 6 done: sha 9888a239…; all gates PASS; UAT NAS+iCloud playable; motion HF≈v06 <<v07; commits 564f51c41 on main"
+        },
+        {
+          "at": "2026-10-29T22:24Z",
+          "by": "cursor",
+          "what": "done: Uranus v08 delivered for Chief review (no worker PASS). sha256 9888a2398282c2384290a09eb59a418f36c9960cf6d80036f2cad1cfb634bcf7. Method: path-vs-smooth open HF cancel + seam anchor (corr[open_start]=0) so loop PASS 8.45. Gates: open/level/polish/music/picture/loop/hitch all PASS. I=-14.30 LUFS TP=-1.80. measured_upscale 1.854. Motion accel_rms_y: v06 0.64 / v07 3.90 / v08 0.68. UAT playable NAS+iCloud same sha (Errno 11 fixed for this cut). Evidence jobs/reviews/J1225/. Do NOT repoint J1212 until Chief PASS. No upload/Buffer/privacy. Fallback ZpEA8stoSPA v01 11:30 unchanged."
         }
       ],
       "remaining_action": "Park v08 for elected-Chief review (no PASS, no J1212 repoint)",
