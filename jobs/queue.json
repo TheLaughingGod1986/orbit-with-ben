@@ -108067,17 +108067,22 @@
           "at": "2026-10-29T22:57Z",
           "by": "cursor",
           "what": "step 1 of 8 done: v02 mp4 540.02s sha edebeaf7 ready; prior gate txt crashed on unmapped cuts; polish JSON stale"
+        },
+        {
+          "at": "2026-10-29T22:58Z",
+          "by": "cursor",
+          "what": "step 2 of 8 done: tmux j1218-finish; log ~/_desk/logs/j1218-finish.log; done ~/_desk/logs/j1218-finish.done"
         }
       ],
-      "remaining_action": "Remap cuts through pause-trim; rerun polish_gate and picture_qa on 540s v02",
+      "remaining_action": "Wait for finish-existing: remap cuts, polish_gate, picture_qa, deliver NAS/desk",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 8,
-        "at": "2026-10-29T22:57Z",
+        "at": "2026-10-29T22:58Z",
         "by": "cursor",
-        "note": "v02 mp4 540.02s sha edebeaf7 ready; prior gate txt crashed on unmapped cuts; polish JSON stale"
+        "note": "tmux j1218-finish; log ~/_desk/logs/j1218-finish.log; done ~/_desk/logs/j1218-finish.done"
       },
       "taskKeys": [
         "HOS:008"
