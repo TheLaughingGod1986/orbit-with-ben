@@ -1,5 +1,5 @@
 {
-  "next_id": 1140,
+  "next_id": 1141,
   "jobs": [
     {
       "id": "J0001",
@@ -100957,6 +100957,34 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J1140",
+      "title": "Correct J1137 QA sweep loop-failure evidence on both channels",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief J1137 review ruling: FIX evidence, no media or gate changes. Four new media SHA-256 values verified; all 452 raw sidecars exist and report PASS; 157 entries and mirrored reports/inventories reconcile. However the report and inventory assert S6 v06 whole-loop 9.26 <= 12.0; J1100 history and durable FINAL_MEASUREMENTS.json record loop_pass=false, whole=9.26, masked=0.95, required whole difference <2. Correct every affected S6 v05/v06 statement in both repos under 00_Brand/Channel-Setup/audits/qa_sweeps/J1137_QA_SWEEP_*_2026-10-29.*; cite the source measurement and J1100 ruling. Explicitly distinguish 0 FAIL in picture_qa/polish_gate/music_gate from the outstanding separate whole-loop FAIL. Preserve HELD_CHANGES_REQUIRED, all original hashes, raw gate outputs, scope limitations and J1100 credit hold at 2026-10-30T10:50:00Z. Do not rerender, spend, upload, waive thresholds or reopen J1100. Check both copies match, commit corrections from clean worktrees under channel git rules, then return for Chief verification of J1137. No new production repair job: J1100 already owns those fixes.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-29T02:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T02:10Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct the S6 loop threshold and failure status in both J1137 audit copies",
+      "kind": "qa"
     }
   ],
   "focus": [],
