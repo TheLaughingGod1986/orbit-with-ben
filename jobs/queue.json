@@ -101051,9 +101051,14 @@
           "at": "2026-10-29T02:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T02:17Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Correct the S6 loop threshold and failure status in both J1137 audit copies",
+      "remaining_action": "Inspect J1137 QA sweep files, FINAL_MEASUREMENTS.json, and J1100 ruling",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -101068,9 +101073,7 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-29T02:17Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "by": "gemini"
       }
     }
   ],
