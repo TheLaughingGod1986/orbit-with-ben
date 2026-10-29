@@ -101177,9 +101177,14 @@
           "at": "2026-10-29T02:36Z",
           "by": "gemini",
           "what": "step 1 of 4 done: YouTube Data API & deduplicated auditChannel verified 57 unique HOS videos at 2026-10-29T02:36:30Z (26 public, 14 scheduled, 17 private; 0 errors)"
+        },
+        {
+          "at": "2026-10-29T02:37Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: 4/4 public long end screens (02:37:09Z-02:37:11Z) and 22/22 public Short Related pills (02:37:14Z-02:37:41Z, including AMSriTQ-lcQ -> GHZDsiH7L7A) verified live"
         }
       ],
-      "remaining_action": "Verify live public watch/Shorts pages for 4/4 long end screens and 22/22 Short Related pills",
+      "remaining_action": "Write 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md and run check_all.sh in clean HOS worktree",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -101192,11 +101197,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-29T02:36Z",
+        "at": "2026-10-29T02:37Z",
         "by": "gemini",
-        "note": "YouTube Data API & deduplicated auditChannel verified 57 unique HOS videos at 2026-10-29T02:36:30Z (26 public, 14 schedu"
+        "note": "4/4 public long end screens (02:37:09Z-02:37:11Z) and 22/22 public Short Related pills (02:37:14Z-02:37:41Z, including A"
       },
       "taskKeys": [
         "HOS:001",
