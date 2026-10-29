@@ -97767,18 +97767,24 @@
           "at": "2026-10-29T00:21Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-29T00:21Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original job and approval history: Claude marked J1004 done with paper PASS at 23:53Z; PR 366 remains OPEN at unchanged 00b1e653."
         }
       ],
-      "remaining_action": "Verify PR 366 corrections, independent review and merge evidence",
+      "remaining_action": "Reconcile latest paper PASS with still-unmet correction and merge conditions",
       "kind": "chief",
       "recheck_of": "J1004",
       "due": "2026-10-28T16:29:25+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-29T00:21Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Read original job and approval history: Claude marked J1004 done with paper PASS at 23:53Z; PR 366 remains OPEN at uncha"
       },
       "taskKeys": [
         "HOS:006",
