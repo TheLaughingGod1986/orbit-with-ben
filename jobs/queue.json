@@ -83049,6 +83049,11 @@
           "at": "2026-10-29T00:00Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T00:00Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J0961; starting verification of v04 Shorts packages and slots"
         }
       ],
       "kind": "studio",
@@ -83079,7 +83084,7 @@
         "type": "short"
       },
       "escalated_at": "2026-10-28T15:29Z",
-      "remaining_action": "Resolve automatic approval authorization blocker before Private upload",
+      "remaining_action": "Verify v04 master SHA256s, UPLOADS.json slots, and package dry-runs",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -83091,11 +83096,11 @@
       "model": "gpt-6.1-sol",
       "urgent": 3,
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 3,
-        "at": "2026-10-28T23:42Z",
-        "by": "codex",
-        "note": "All approved hashes, three dry runs/Shorts gates, and live free-slot checks verified. Automatic approval review rejected"
+        "at": "2026-10-29T00:00Z",
+        "by": "gemini",
+        "note": "Claimed J0961; starting verification of v04 Shorts packages and slots"
       }
     },
     {
