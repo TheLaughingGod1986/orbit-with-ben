@@ -99328,9 +99328,14 @@
           "at": "2026-10-29T00:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T00:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1122; starting description sweep across OWB and HOS"
         }
       ],
-      "remaining_action": "sweep descriptions, write fix list",
+      "remaining_action": "Scanning OWB and HOS upload description files and manifests",
       "kind": "review",
       "rerouted_from": {
         "needs": "macbook",
@@ -99343,11 +99348,10 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-29T00:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J1122; starting description sweep across OWB and HOS"
       }
     },
     {
