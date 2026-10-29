@@ -1,5 +1,5 @@
 {
-  "next_id": 1202,
+  "next_id": 1203,
   "jobs": [
     {
       "id": "J0001",
@@ -105862,6 +105862,34 @@
       ],
       "remaining_action": "ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model",
       "kind": "qa"
+    },
+    {
+      "id": "J1202",
+      "title": "HOS Buffer: register every HOS Short at upload and mirror it to Buffer when it goes public (replaces 'Buffer held until public'); dry-run only, no HOS posting",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) 29 Oct 2026, Ben asked to fix Buffer for HOS (Buffer is not posting HOS Shorts).\n\nPROBLEM: HOS Shorts are almost never handed to Buffer. HOS upload/swap jobs end with \"Buffer held until the short is public\" and nothing ever picks them up again, so only Curie was ever sent (and it failed on Facebook 28 Oct). The mirror already supports HOS (J0817: `buffer-mirror.ts check --channel hos`, `register --channel hos --video <shortId> --media <short.mp4> --long <longId>`, record in 00_Brand/Channel-Setup/social/hos/), and launchd/buffer-check.sh already runs `check --channel hos` daily, but Shorts are not registered with their media, so the check has nothing to mirror when they go public.\n\nBUILD (code + tools; 07_Content-Ops, tests in tests/buffer-hos.test.ts):\n1. Make registration part of every HOS Short upload/swap: the HOS upload path (and the playbook/AGENTS text) runs `register --channel hos` with the final PHONE/master mp4 and the long id (or --standalone) at upload time, replacing the \"Buffer held until public\" note.\n2. Make the daily `check --channel hos` pick up registered HOS Shorts the first time YouTube reads them back Public (no posting while Private/scheduled), host media on R2 (never Vercel Blob), respect the Buffer free-plan limit of 10 scheduled posts per channel, and never duplicate an existing post (read BUFFER_POSTS.json + remote state first).\n3. Backfill: register (do not post) every HOS Short uploaded since 5 Oct that is missing from social/hos/UPLOADS.json, with media paths verified by sha256.\n4. Tests + `check --channel hos --dry-run` output showing what would go out. PR for Chief merge.\n\nLIMITS: Do NOT post anything for HOS now. The HOS Buffer org is not reachable (BUFFER_HOS_API_KEY state unknown; its YouTube channel disconnected since 5 Oct); restoring that is a separate Ben sign-in. Dry-run only. Never print secrets. No TikTok changes beyond what J0817 already does. No delete, no force-push. GBP0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-29T10:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T10:43Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build and test the HOS go-public Buffer step; PR for Chief",
+      "kind": "assembly"
     }
   ],
   "focus": [],
