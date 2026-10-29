@@ -99122,19 +99122,24 @@
           "at": "2026-10-29T00:29Z",
           "by": "codex",
           "what": "step 0 of 3 done: J0961 is already done; checking evidence before resolving J1120 without reopening it."
+        },
+        {
+          "at": "2026-10-29T00:29Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed J0961 history: Claude exception 28 Oct 23:38Z; Gemini completion 29 Oct 00:09Z; original v04 watch recorded. J1120 predates these events."
         }
       ],
-      "remaining_action": "Verify the superseding J0961 completion and close the stale condition check",
+      "remaining_action": "Cross-check the completed upload records and resolve the superseded verification",
       "kind": "chief",
       "recheck_of": "J0961",
       "due": "2026-10-28T20:02:35+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-29T00:29Z",
         "by": "codex",
-        "note": "J0961 is already done; checking evidence before resolving J1120 without reopening it."
+        "note": "Reviewed J0961 history: Claude exception 28 Oct 23:38Z; Gemini completion 29 Oct 00:09Z; original v04 watch recorded. J1"
       },
       "taskKeys": [
         "OWB:029"
