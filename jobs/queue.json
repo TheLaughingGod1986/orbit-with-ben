@@ -97682,9 +97682,14 @@
           "at": "2026-10-29T00:16Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T00:17Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking J1032 completion, exact media evidence and J0936 approval history."
         }
       ],
-      "remaining_action": "Verify readiness: J1032 assembles all six locked v07 replacements; then Chief replacement review before Ben swap approval",
+      "remaining_action": "Verify replacement PASS evidence and remaining Ben swap approval for J0936",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-10-28T16:29:25+00:00",
@@ -97692,11 +97697,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-28T21:52Z",
-        "by": "claude",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-10-29T00:17Z",
+        "by": "codex",
+        "note": "Checking J1032 completion, exact media evidence and J0936 approval history."
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1105",
