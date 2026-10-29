@@ -105421,9 +105421,14 @@
           "at": "2026-10-29T12:31Z",
           "by": "gemini",
           "what": "step 2 of 7 done: step 2 of 7 done (Part 01 in progress): 20/101 Flow rows KEEP (6/6 priority + 14 Part 01 rows through 11_tall_spire UAT verified; 12_steeple_fire generating; spent 480 / 6,500, live Flow 20,390, rem_expected 4,488, buffer 15,902 >= 3,000)"
+        },
+        {
+          "at": "2026-10-29T12:41Z",
+          "by": "gemini",
+          "what": "step 2 of 7 done: step 2 of 7 done: 24/101 Flow rows KEEP (6/6 priority + 18/22 Part 01 through 14_steeple_rain UAT verified + NAS synced; spent 610 / 6,500, live Flow 20,260, rem_expected 4,169, buffer 16,091 >= 3,000; checkpoint 0da66652)"
         }
       ],
-      "remaining_action": "Continue Part 01 Flow v03 batch (20/101 KEEP; Part 01 14/22 KEEP through 11_tall_spire, 12_steeple_fire generating; then Parts 02-05)",
+      "remaining_action": "Continue detached Flow v03 batch in tmux j1191-render (24/101 KEEP; Part 01 18/22 KEEP through 14_steeple_rain, 15_letter_sparks in progress, then Parts 02-05)",
       "due": "2026-11-08T20:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -105431,9 +105436,9 @@
       "progress": {
         "step": 2,
         "of": 7,
-        "at": "2026-10-29T12:31Z",
+        "at": "2026-10-29T12:41Z",
         "by": "gemini",
-        "note": "step 2 of 7 done (Part 01 in progress): 20/101 Flow rows KEEP (6/6 priority + 14 Part 01 rows through 11_tall_spire UAT "
+        "note": "step 2 of 7 done: 24/101 Flow rows KEEP (6/6 priority + 18/22 Part 01 through 14_steeple_rain UAT verified + NAS synced;"
       },
       "taskKeys": [
         "HOS:008"
