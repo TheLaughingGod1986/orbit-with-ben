@@ -104500,17 +104500,22 @@
           "at": "2026-10-29T07:22Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1181; starting search for mon09_night_cold_v01.mp4"
+        },
+        {
+          "at": "2026-10-29T07:28Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Traced mon09_night_cold_v01.mp4: Oct 10 upload (48466c33...) was overwritten in place by J0432 on Oct 17 (0195a5fb...) and archived in NAS 2026-10-24/YouTube/orbit-with-ben/owbshorts.tar"
         }
       ],
-      "remaining_action": "Search NAS, iCloud UAT, and local rescue/archive paths for mon09_night_cold_v01.mp4",
+      "remaining_action": "Inspect gate_upcoming.py and owbshorts.tar copy vs UPLOADS.json sha256",
       "due": "2026-11-06T20:00:00Z",
       "kind": "qa",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T07:22Z",
+        "at": "2026-10-29T07:28Z",
         "by": "gemini",
-        "note": "Claimed J1181; starting search for mon09_night_cold_v01.mp4"
+        "note": "Traced mon09_night_cold_v01.mp4: Oct 10 upload (48466c33...) was overwritten in place by J0432 on Oct 17 (0195a5fb...) a"
       },
       "taskKeys": [
         "OWB:025"
