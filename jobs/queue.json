@@ -100107,10 +100107,10 @@
       "stage": "",
       "after": "J1129",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T01:00Z",
+      "eta": "2026-10-29T03:00Z",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
       "result": "",
@@ -100119,10 +100119,23 @@
           "at": "2026-10-28T21:12Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T01:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify thumbnail test ended and one day elapsed, then arm approved title-only B with live thumbnail fixed",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T01:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1131",
