@@ -100351,8 +100351,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-29T02:51:54.294683+00:00",
       "eta": "",
       "created_by": "codex",
@@ -100463,6 +100463,11 @@
           "at": "2026-10-29T02:51Z",
           "by": "claude",
           "what": "blocked: waiting for Ben: OK to start the HOS 001 title-only test. Studio's 'Start a new experiment' deletes the ended thumbnail test's report (ended 28 Oct 21:17), which can't be undone. Before Ben's OK the Mini saves that full report (variant shares, winner, dates, screenshots) to THUMB_LEDGER; then press Continue only on Ben's yes. Same for HOS 002 (J1130)."
+        },
+        {
+          "at": "2026-10-29T09:46Z",
+          "by": "claude",
+          "what": "cancelled: LEARNINGS rule 13 (Ben, 29 Oct): HOS 001 X-rays frP_YrNShsU has 39 impressions, too few for a title test to decide; this also removes the 'deletes the ended report' question to Ben. The ended thumbnail test's report stays in Studio."
         }
       ],
       "remaining_action": "Resolve Studio deletion-confirmation restriction before starting title-only test",
@@ -100503,8 +100508,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-28T21:37Z",
       "eta": "",
       "created_by": "codex",
@@ -100545,6 +100550,11 @@
           "at": "2026-10-28T21:39Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-29T21:45:00Z"
+        },
+        {
+          "at": "2026-10-29T09:46Z",
+          "by": "claude",
+          "what": "cancelled: LEARNINGS rule 13 (Ben, 29 Oct): no tests on quiet videos; the compilation m09jUdwC5hk has 49 impressions, and rule 9 retires long compilations."
         }
       ],
       "remaining_action": "Recheck T018; after verified end plus one day, arm the approved title-only test with thumbnail fixed",
