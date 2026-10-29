@@ -97745,13 +97745,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T00:21Z",
-      "eta": "2026-10-29T02:21Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T15:29Z",
-      "result": "",
+      "result": "Verified PR366 OPEN/unmerged at unchanged 00b1e653. Both paper corrections persist. J1004 was subsequently marked DONE with Claude paper PASS at 2026-10-28T23:53Z; preserved that later decision. wait cannot apply to a done parent. Reported discrepancy and remaining correction/merge work on HOS desk; all production/credit/Ben holds unchanged.",
       "history": [
         {
           "at": "2026-10-28T15:29Z",
@@ -97782,6 +97782,11 @@
           "at": "2026-10-29T00:22Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verification reported to HOS desk: later parent completion preserved; paper corrections and merge remain outstanding."
+        },
+        {
+          "at": "2026-10-29T00:22Z",
+          "by": "codex",
+          "what": "done: Verified PR366 OPEN/unmerged at unchanged 00b1e653. Both paper corrections persist. J1004 was subsequently marked DONE with Claude paper PASS at 2026-10-28T23:53Z; preserved that later decision. wait cannot apply to a done parent. Reported discrepancy and remaining correction/merge work on HOS desk; all production/credit/Ben holds unchanged."
         }
       ],
       "remaining_action": "Verification complete; PR 366 corrections and merge remain outstanding",
