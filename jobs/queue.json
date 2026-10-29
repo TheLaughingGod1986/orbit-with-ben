@@ -108455,10 +108455,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T22:03Z",
+      "eta": "2026-10-30T00:03Z",
       "created_by": "codex",
       "created_at": "2026-10-29T21:58Z",
       "result": "",
@@ -108467,11 +108467,24 @@
           "at": "2026-10-29T21:58Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T22:03Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Stabilise opening shake with measured path; verify gates and playable UAT delivery",
       "due": "2026-11-01T18:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T22:03Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1226",
