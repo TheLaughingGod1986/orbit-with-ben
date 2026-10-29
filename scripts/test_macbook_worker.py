@@ -7,7 +7,9 @@ import pathlib
 import sys
 import tempfile
 import time
+import subprocess
 import unittest
+from unittest import mock
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import jobs  # noqa: E402
@@ -103,6 +105,34 @@ class Guards(unittest.TestCase):
         src = pathlib.Path(mw.__file__).read_text()
         body = src[src.index("def run() -> int:"):]
         self.assertLess(body.index("pull_main()"), body.index("guards()"))
+
+
+class BackToMain(unittest.TestCase):
+    def repo(self, root, name):
+        r = pathlib.Path(root) / name
+        r.mkdir(parents=True)
+        for cmd in (["init", "-q", "-b", "main"], ["-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "--allow-empty", "-m", "x"],
+                    ["checkout", "-q", "-b", "macbook/j1194-work"]):
+            subprocess.run(["git", "-C", str(r)] + cmd, check=True)
+        return r
+
+    def test_its_own_clone_left_on_a_work_branch_goes_back_to_main(self):
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
+                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+            r = self.repo(t, "orbit-with-ben")
+            real = mw.sh  # no remote to pull from here: the pull itself is stubbed, every other git call is real
+            fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+                self.assertEqual(mw.pull_main(), "")
+            self.assertEqual(subprocess.run(["git", "-C", str(r), "branch", "--show-current"], capture_output=True, text=True).stdout.strip(), "main")
+
+    def test_bens_own_checkout_is_never_switched(self):
+        with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
+                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
+            r = self.repo(t, "orbit-with-ben")
+            with mock.patch.object(mw, "OWB", r):
+                self.assertIn("not main", mw.pull_main())
+            self.assertEqual(subprocess.run(["git", "-C", str(r), "branch", "--show-current"], capture_output=True, text=True).stdout.strip(), "macbook/j1194-work")
 
 
 class Lane(unittest.TestCase):

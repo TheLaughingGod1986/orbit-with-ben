@@ -40,6 +40,7 @@ import sys
 HOME = pathlib.Path.home()
 OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
 HOS = pathlib.Path(os.environ.get("HOS_REPO", HOME / "YouTube" / "History Of Science"))
+WORKER_DIR = HOME / "_desk" / "worker"  # the clones setup_macbook.sh made for the worker itself
 STATE = HOME / "_desk" / "state"
 AGENT_ID = "macbook"
 
@@ -52,8 +53,12 @@ The job is already claimed for you: {job}
    For a HOS job, work in the HOS checkout ({hos}) and follow its AGENTS.md.
 2. Do the job exactly as its brief says. Report progress as you go:
      python3 scripts/jobs.py progress {job} --agent macbook --step <k> --of <n> --action "<what is left>" --git
-3. Finish with  jobs.py done {job} --agent macbook --result "..." --git  (or block / release with a reason).
-4. Report on the studio thread:  python3 scripts/owb_thread.py post "[MacBook] ..."
+3. Commit your work on a branch named macbook/<job id>, push it (git push -u origin <branch>), and open a PR to main
+   with gh; say the PR number in the result. Then switch every checkout you touched back to main
+   (git checkout main): a checkout left on a branch stops the MacBook taking any further job, and Ben's own
+   History of Science folder must always be left on main.
+4. Finish with  jobs.py done {job} --agent macbook --result "..." --git  (or block / release with a reason).
+5. Report on the studio thread:  python3 scripts/owb_thread.py post "[MacBook] ..."
 
 This is Ben's own laptop, not the Mini:
 - never spend money or credit beyond the written rules, never sign in to anything, never print secrets;
@@ -216,6 +221,13 @@ def pull_main() -> str:
     for repo in (OWB, HOS):
         if (repo / ".git").exists():
             branch = sh(["git", "-C", str(repo), "branch", "--show-current"]).stdout.strip()
+            # A job may leave the worker's own clone on its work branch (J1194, 29 Oct 2026: the MacBook then
+            # refused every later job). Its own clone goes back to main by itself when clean; Ben's checkouts never.
+            if branch != "main" and repo.resolve().is_relative_to(WORKER_DIR.resolve()) \
+                    and not sh(["git", "-C", str(repo), "status", "--porcelain"]).stdout.strip():
+                if sh(["git", "-C", str(repo), "checkout", "-q", "main"]).returncode == 0:
+                    log(f"{repo.name}: back on main from '{branch}'")
+                    branch = "main"
             if branch != "main":
                 return f"{repo} is on '{branch or 'detached'}', not main (re-run setup_macbook.sh)"
             r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
