@@ -104478,13 +104478,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-29T07:22Z",
-      "eta": "2026-10-29T09:22Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T07:18Z",
-      "result": "",
+      "result": "parked for Chief: no copy with UPLOADS.json sha256 48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1 exists anywhere (overwritten in place on 17 Oct by J0432 7a5608724 with sha256 0195a5fb957ce8d9e5433724792080b4fa4259c659f4ef8cb40b936702dcf7a2, which is archived in /Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owbshorts.tar and passes gate_shorts_open --report-only). Per brief, the YouTube copy airs as is (or Chief may rule to extract the 0195a5fb... copy for gate_upcoming).",
       "history": [
         {
           "at": "2026-10-29T07:18Z",
@@ -104515,6 +104515,11 @@
           "at": "2026-10-29T07:32Z",
           "by": "gemini",
           "what": "step 3 of 3 done: All searches and gate verification complete; parking for Chief per brief"
+        },
+        {
+          "at": "2026-10-29T07:32Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: no copy with UPLOADS.json sha256 48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1 exists anywhere (overwritten in place on 17 Oct by J0432 7a5608724 with sha256 0195a5fb957ce8d9e5433724792080b4fa4259c659f4ef8cb40b936702dcf7a2, which is archived in /Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owbshorts.tar and passes gate_shorts_open --report-only). Per brief, the YouTube copy airs as is (or Chief may rule to extract the 0195a5fb... copy for gate_upcoming)."
         }
       ],
       "remaining_action": "Park J1181 for Chief: YouTube copy airs as is (or rule on restoring J0432 0195a5fb... copy from owbshorts.tar)",
