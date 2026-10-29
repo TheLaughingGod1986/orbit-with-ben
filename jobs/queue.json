@@ -105299,10 +105299,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-29T13:29Z",
-      "eta": "2026-10-29T15:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:35Z",
       "result": "",
@@ -105486,6 +105486,11 @@
           "at": "2026-10-29T13:46Z",
           "by": "gemini",
           "what": "step 4 of 7 done: step 4 of 7 done: 44/101 Flow rows KEEP (6/6 priority + 22/22 Part 01 + 17/17 Part 02 complete + 3/25 Part 03 through 02_sentry_box UAT verified + NAS synced; spent 990 / 6,500, live Flow 19,880, rem_expected 3,291, buffer 16,589 >= 3,000; checkpoint 5025d0f4)"
+        },
+        {
+          "at": "2026-10-29T13:46Z",
+          "by": "gemini",
+          "what": "released: 44/101 Flow rows KEEP (6/6 priority overlay plates + 22/22 Part 01 complete + 17/17 Part 02 complete + 3/25 Part 03 rows through 02_sentry_box UAT verified and synced to NAS; spent 990 / 6,500 cap, live Flow 19,880, rem_expected 3,291, buffer 16,589 >= 3,000; checkpoint gemini/j1191-008-flow-mint @ 5025d0f4). Detached Flow v03 batch (--until-part 05) continues running in tmux session j1191-render; log: /Users/benjaminoats/_desk/logs/j1191-render.log; done file: /Users/benjaminoats/_desk/logs/j1191-render.done"
         }
       ],
       "remaining_action": "Continue Flow v03 batch in tmux j1191-render (44/101 KEEP; Part 01 22/22 + Part 02 17/17 complete, Part 03 3/25 through 02_sentry_box, 05_marly_garden next, then Parts 04-05)",
