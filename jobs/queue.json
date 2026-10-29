@@ -103712,18 +103712,30 @@
           "at": "2026-10-29T06:16Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1172; starting read-only listing check on last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-29T06:17Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified top 10 live public videos in 2026-10-28.json snapshot (gJwNJN_yMKU through lbW2iQ9YvqA)"
         }
       ],
-      "remaining_action": "Inspect last 10 live OWB videos from snapshots and previous live_fixes reports",
+      "remaining_action": "Verify long-form chapters, sources, and end screens against local cuts and live watch pages",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-29T06:16Z",
+        "at": "2026-10-29T06:17Z",
         "by": "gemini",
-        "note": "Claimed J1172; starting read-only listing check on last 10 live OWB videos"
-      }
+        "note": "Verified top 10 live public videos in 2026-10-28.json snapshot (gJwNJN_yMKU through lbW2iQ9YvqA)"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
