@@ -108856,19 +108856,24 @@
           "at": "2026-10-29T23:36Z",
           "by": "codex",
           "what": "step 1 of 3 done: J1191 completed with Chief PASS; J1192 already generated 57/57 rows and now requests review on HOS PR 377, so its dependency hold is stale"
+        },
+        {
+          "at": "2026-10-29T23:37Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR377 CI green but no Chief PASS; three SHA-matched KEEP clips reproduce freeze detections (P1 table 3.333-4.375s, P4 put aside 7.083s-end, P4 write c1 0-1.042s). Continuous-playback review remains unproven."
         }
       ],
-      "remaining_action": "Verify the actual remaining review requirement on PR 377 before setting the J1192 hold",
+      "remaining_action": "Record the actual motion-review hold, report evidence and close J1228",
       "kind": "chief",
       "recheck_of": "J1192",
       "due": "2026-10-30T00:30:01+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-29T23:36Z",
+        "at": "2026-10-29T23:37Z",
         "by": "codex",
-        "note": "J1191 completed with Chief PASS; J1192 already generated 57/57 rows and now requests review on HOS PR 377, so its depend"
+        "note": "PR377 CI green but no Chief PASS; three SHA-matched KEEP clips reproduce freeze detections (P1 table 3.333-4.375s, P4 pu"
       },
       "taskKeys": [
         "HOS:009"
