@@ -99100,10 +99100,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T00:29Z",
+      "eta": "2026-10-29T02:29Z",
       "created_by": "relay",
       "created_at": "2026-10-28T19:02Z",
       "result": "",
@@ -99112,13 +99112,26 @@
           "at": "2026-10-28T19:02Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T00:29Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Resolve episode-gate failure before approved v04 Shorts upload",
       "kind": "chief",
       "recheck_of": "J0961",
       "due": "2026-10-28T20:02:35+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T00:29Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1121",
