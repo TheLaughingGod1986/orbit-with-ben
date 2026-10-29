@@ -105591,19 +105591,24 @@
           "at": "2026-10-29T09:52Z",
           "by": "codex",
           "what": "step 2 of 3 done: Live board contains no HC swap approvals; queued delivery J1200, retained J0966 5/5 and set 15:55Z recheck"
+        },
+        {
+          "at": "2026-10-29T09:53Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Evidence and delivery decision posted to HOS 6493503463 and OWB 6493508168; hold retained, worker 5/5 unchanged"
         }
       ],
-      "remaining_action": "Report verified hold and delivery task J1200",
+      "remaining_action": "Verification complete; J1200 owns delivery before swap approval",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-29T09:59:26+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-29T09:52Z",
+        "at": "2026-10-29T09:53Z",
         "by": "codex",
-        "note": "Live board contains no HC swap approvals; queued delivery J1200, retained J0966 5/5 and set 15:55Z recheck"
+        "note": "Evidence and delivery decision posted to HOS 6493503463 and OWB 6493508168; hold retained, worker 5/5 unchanged"
       },
       "taskKeys": [
         "HOS:004",
