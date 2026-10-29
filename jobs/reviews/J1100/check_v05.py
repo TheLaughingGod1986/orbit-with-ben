@@ -12,7 +12,7 @@ def command(a,log):
  return r.returncode
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,required=True);ap.add_argument('--source',type=Path,required=True);ap.add_argument('--media-root',type=Path,required=True);ap.add_argument('--reviewed-ok',type=Path);a=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--version',default='v05',choices=['v05','v06']);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--source',type=Path,required=True);ap.add_argument('--media-root',type=Path,required=True);ap.add_argument('--reviewed-ok',type=Path);a=ap.parse_args()
  pools={}
  for p in a.media_root.glob('02_Video-Projects/*/10_Shorts/**/pool_v03.json'):
   try:
@@ -21,7 +21,7 @@ def main():
     for v in items:pools[v.get('file_id','')]=v.get('title','')
   except (ValueError,TypeError):pass
  summary={}
- for source in sorted(a.source.glob('*/*_v05.mp4')):
+ for source in sorted(a.source.glob('*/*_'+a.version+'.mp4')):
   key=source.parent.name;d=a.out/key
   started=time.monotonic()
   while not (d/'FINISH_COMPLETE.json').exists():
