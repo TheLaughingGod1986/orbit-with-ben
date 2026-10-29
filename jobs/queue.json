@@ -105387,13 +105387,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-29T16:55Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-29T17:52:46.371529+00:00",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:35Z",
-      "result": "parked for Chief: picture PASS — all 101/101 Flow v03 rows minted and KEEP (6/6 priority overlay plates + P1 22/22 + P2 17/17 + P3 25/25 + P4 16/16 + P5 21/21; 2,320 cr used vs 5,605 expected / 6,500 cap; live Flow 20,870 -> 18,550 >= 3,000 buffer) + 11 J0329 code graphics = 112/112 rows; synced to NAS; PIPELINE.json updated; HOS PR #374 (101d48f7)",
+      "result": "acting Chief (Claude) picture PASS: 101/101 Flow rows KEEP + 11 code graphics = 112/112; 2,320 credits vs 5,605 expected (live Flow 18,550, above the buffer); NAS synced; HOS PR #374. J1192 (009 tranche 1) may start.",
       "history": [
         {
           "at": "2026-10-29T08:35Z",
@@ -105719,6 +105719,11 @@
           "at": "2026-10-29T17:29Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: picture PASS — all 101/101 Flow v03 rows minted and KEEP (6/6 priority overlay plates + P1 22/22 + P2 17/17 + P3 25/25 + P4 16/16 + P5 21/21; 2,320 cr used vs 5,605 expected / 6,500 cap; live Flow 20,870 -> 18,550 >= 3,000 buffer) + 11 J0329 code graphics = 112/112 rows; synced to NAS; PIPELINE.json updated; HOS PR #374 (101d48f7)"
+        },
+        {
+          "at": "2026-10-29T17:52Z",
+          "by": "claude",
+          "what": "done: acting Chief (Claude) picture PASS: 101/101 Flow rows KEEP + 11 code graphics = 112/112; 2,320 credits vs 5,605 expected (live Flow 18,550, above the buffer); NAS synced; HOS PR #374. J1192 (009 tranche 1) may start."
         }
       ],
       "remaining_action": "Parked for Chief: picture PASS (HOS PR #374)",
@@ -106538,13 +106543,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-29T17:30Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-29T17:52:46.371529+00:00",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T12:45Z",
-      "result": "parked for Chief: Uranus v06 assembled (sha f0b4e0a0318f99ecbe38cdcb0525c8f869fba609d55194da75de45cb579b3ee5). Shot9 odd-phase from 60fps frame 53; open 2.0167-4.7167 / tail 0.8833-2.0167; 1.778x; VO f59211a8 reused. gate_shorts_open PASS f0diff 4.74; finish_scan loop PASS 8.28 vs 2x median 12.47; polish/music/sfx/picture_qa PASS (artist WARN only); hitch_ok 0.30-0.55. Loudness I=-14.3 TP=-1.8. Evidence jobs/reviews/J1204/URANUS_V06_DELIVERY_2026-10-29.md (+ hitch frames); UAT standalone_shorts_uranus_v06 iCloud+NAS; commit 7e98a748f. Preserve v02-v05. No upload/swap. GBP0. Need Chief cut PASS or FAIL (no further Shot9 windows if FAIL).",
+      "result": "acting Chief (Claude) PASS on Uranus v06 (sha f0b4e0a0...): moving NASA SVS 20390 ring animation from frame 0, sentence 1 names Uranus with the surprise ('tipped 97 degrees'), all gates PASS from the final sha (open f0diff 4.74, loop 8.28, I -14.3 / TP -1.8). Swap carried by the new swap job, held for Ben's OK by Tue 3 Nov 10:30 London. Shooting Stars and Titan follow the same ruling (deadline 5 Nov).",
       "history": [
         {
           "at": "2026-10-29T12:45Z",
@@ -106725,6 +106730,11 @@
           "at": "2026-10-29T17:47Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Uranus v06 assembled (sha f0b4e0a0318f99ecbe38cdcb0525c8f869fba609d55194da75de45cb579b3ee5). Shot9 odd-phase from 60fps frame 53; open 2.0167-4.7167 / tail 0.8833-2.0167; 1.778x; VO f59211a8 reused. gate_shorts_open PASS f0diff 4.74; finish_scan loop PASS 8.28 vs 2x median 12.47; polish/music/sfx/picture_qa PASS (artist WARN only); hitch_ok 0.30-0.55. Loudness I=-14.3 TP=-1.8. Evidence jobs/reviews/J1204/URANUS_V06_DELIVERY_2026-10-29.md (+ hitch frames); UAT standalone_shorts_uranus_v06 iCloud+NAS; commit 7e98a748f. Preserve v02-v05. No upload/swap. GBP0. Need Chief cut PASS or FAIL (no further Shot9 windows if FAIL)."
+        },
+        {
+          "at": "2026-10-29T17:52Z",
+          "by": "claude",
+          "what": "done: acting Chief (Claude) PASS on Uranus v06 (sha f0b4e0a0...): moving NASA SVS 20390 ring animation from frame 0, sentence 1 names Uranus with the surprise ('tipped 97 degrees'), all gates PASS from the final sha (open f0diff 4.74, loop 8.28, I -14.3 / TP -1.8). Swap carried by the new swap job, held for Ben's OK by Tue 3 Nov 10:30 London. Shooting Stars and Titan follow the same ruling (deadline 5 Nov)."
         }
       ],
       "remaining_action": "Wait for tmux j1204-uranus-v06 render; then verify gates and park for Chief",
