@@ -105015,19 +105015,30 @@
           "at": "2026-10-29T08:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T08:16Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1187: read-only listing check on the last 10 live OWB videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Inspect 05_Analytics/owb/snapshots/2026-10-29.json and top 10 live public videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-29T08:15Z",
+        "of": 4,
+        "at": "2026-10-29T08:16Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1187: read-only listing check on the last 10 live OWB videos"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
