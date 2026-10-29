@@ -104520,9 +104520,14 @@
           "at": "2026-10-29T07:32Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: no copy with UPLOADS.json sha256 48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1 exists anywhere (overwritten in place on 17 Oct by J0432 7a5608724 with sha256 0195a5fb957ce8d9e5433724792080b4fa4259c659f4ef8cb40b936702dcf7a2, which is archived in /Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owbshorts.tar and passes gate_shorts_open --report-only). Per brief, the YouTube copy airs as is (or Chief may rule to extract the 0195a5fb... copy for gate_upcoming)."
+        },
+        {
+          "at": "2026-10-29T07:41Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-09T11:40:00Z"
         }
       ],
-      "remaining_action": "Park J1181 for Chief: YouTube copy airs as is (or rule on restoring J0432 0195a5fb... copy from owbshorts.tar)",
+      "remaining_action": "After public readback, register the actual iyvWYFP_ETA opening; original master remains unavailable",
       "due": "2026-11-06T20:00:00Z",
       "kind": "qa",
       "progress": {
@@ -104534,7 +104539,12 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "hold": {
+        "type": "public",
+        "condition": "Acting-Chief ruling 29 Oct: recovery search accepted as exhausted for now, not a master-restoration PASS. Oct 10 PACKAGE_UPLOAD_RESULT and UPLOADS.json identify 48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1; git commit 7a5608724 proves J0432 replaced that filename with 0195a5fb957ce8d9e5433724792080b4fa4259c659f4ef8cb40b936702dcf7a2. Reject restoring the different render as evidence for the uploaded id. Retain iyvWYFP_ETA scheduled 9 Nov 11:30Z per brief; keep NO FILE visible and original upload hash unchanged. External condition: iyvWYFP_ETA is publicly readable. At retry, elected Chief verifies public state, then worker runs gate_shorts_open.py fetch --id iyvWYFP_ETA --date 2026-11-09 --title \"Could a Robot Survive a Night on Mars?\" and records actual public-opening evidence; a downloaded transcode is not the original master and cannot establish its SHA. If not public, inspect current schedule and record a new evidence-based retry. No upload, swap, metadata/privacy change, spend or gate override authorised. No Ben input needed.",
+        "check_at": "2026-11-09T11:40:00Z"
+      }
     },
     {
       "id": "J1182",
