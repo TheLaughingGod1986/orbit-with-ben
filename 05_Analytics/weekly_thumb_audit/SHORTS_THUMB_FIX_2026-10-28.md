@@ -1,6 +1,6 @@
 # Scheduled Shorts cover fixes — 28 October 2026
 
-J1111 · Codex specialist worker · GBP0 · **partial shared job, parked for Chief**.
+J1111 · Codex specialist worker · GBP0 · **Orbit evidence from J1111; HOS completion recorded below**.
 
 ## Orbit: 22 scheduled Shorts read back; 12 cover fixes
 
@@ -40,7 +40,7 @@ The first quick three-image batch returned Save but did not persist. Those attem
 
 The missing approved Mars length-test cover was restored by running its unchanged `_build_cover_thu12_v01.py` with output redirected to the desk and its original NAS `025_MarsRobot_full_rough_v03f.mp4` master. No new design or film render was made.
 
-## HOS: blocked before live inventory or changes
+## HOS: earlier J1111 access attempt (superseded by J1113 below)
 
 Port 9222 refused connection. The existing `~/.hos-chrome-youtube-studio` profile opened in its existing browser session and exposed no requested CDP 9224 endpoint. The Orbit account explicitly returned “Oops, you don’t have permission to view this page” for the exact HOS channel ID `UCXp7HkBIl1LgaznXuZHJyRg`. No HOS metadata or cover was changed. Screenshot: `/Users/benjaminoats/_desk/J1111/evidence/hos-session.png`.
 
@@ -66,3 +66,30 @@ Every new Short upload must explicitly set the frame-0 hook cover, wait for thum
 ## Resource note
 
 Disk headroom check was below 20 GB. `nas_offload.py --apply --json` found no eligible scratch folders and moved/deleted nothing (NAS mounted; about 16.9 GB free). No subscriptions or credits were spent.
+
+## HOS completion — J1113, 28 October 2026
+
+All **10 scheduled HOS Shorts** now show their pack hook or archived frame-zero hook. Changes ran earliest air first; the 30/31 October covers were fixed first. Every cover was saved, reloaded in video details, then fetched again from the refreshed Studio Shorts list. The list row text is identical before/after for all 10 (titles, dates and Scheduled status retained). All 10 details pages read back not Made for Kids after saving. Chief review/PASS remains outstanding.
+
+The existing authenticated `~/.hos-chrome-youtube-studio` Chrome process already exposed **CDP 9460**, with the exact HOS channel `UCXp7HkBIl1LgaznXuZHJyRg`. Direct CDP worked; Playwright connection stalled and its probe was stopped. Used the existing endpoint rather than restarting its live Studio/Flow tabs to change the port to 9222. No password or 2FA was required. Orbit 9223 was untouched.
+
+| Air date | Video | Previous cover | New hook | Saved UTC |
+|---|---|---|---|---|
+| 30 Oct 2026 | `Rl2uZ-KOTl8` | small title/caption on anatomical figure | MORE THAN YOU HAVE | 2026-10-28T17:04:35.691658+00:00 |
+| 31 Oct 2026 | `BW_CFAX-mxc` | small title/caption on anatomical figure | IS THE HEART A PUMP? | 2026-10-28T17:04:55.559539+00:00 |
+| 1 Nov 2026 | `pWySvZsneZg` | mid-film white foil | GOLD THREW IT BACK | 2026-10-28T17:05:15.443919+00:00 |
+| 3 Nov 2026 | `qW2OsD4mujc` | small title on laboratory scene | FOUR ELEMENTS WERE WRONG | 2026-10-28T17:07:12.136014+00:00 |
+| 5 Nov 2026 | `xHnIi9GqOsM` | small title/caption on vein scene | DOORS IN VEINS | 2026-10-28T17:05:38.552047+00:00 |
+| 8 Nov 2026 | `PFj6172YU4Q` | small title/caption on arm | ONE TIGHT BAND | 2026-10-28T17:05:58.830020+00:00 |
+| 13 Nov 2026 | `-I_GHK-GcFs` | small title/caption on bed scene | THE FIRST TEST | 2026-10-28T17:06:18.550509+00:00 |
+| 15 Nov 2026 | `x_3L_IdYgEc` | older FINER THAN A HAIR hook | HE NEVER SAW THIS | 2026-10-28T17:07:35.055764+00:00 |
+| 16 Nov 2026 | `-sa2t7dAtCk` | older WEIGH ATOM hook | EACH ATOM | 2026-10-28T17:07:57.856888+00:00 |
+| 17 Nov 2026 | `4WUs0beKn0A` | cow plate without hook | NOT THE FIRST | 2026-10-28T17:06:38.270016+00:00 |
+
+Only the image-only thumbnail input and Save were used. No title, privacy, schedule, video file, Related, or audience control was changed. GBP0; no credit spent. One slow page was retried; only successful reloaded saves are counted.
+
+Evidence outside git: `/Users/benjaminoats/_desk/J1113/evidence` (before/after images, `before-sheet.jpg`, `after-sheet.jpg`, and archived frame-zero comparisons). JSON read-back, change record and sha256 manifest accompany this report.
+
+Disk: 14.6 GB free; required `nas_offload.py --apply` found no eligible old scratch and moved nothing.
+
+**Chief next:** review the 10-cover after sheet and recorded read-back, then decide PASS. Worker gives no final OK.

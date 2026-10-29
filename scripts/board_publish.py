@@ -243,7 +243,8 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
             "chiefWork": chief_work(at, state, agent, jobs or []),
             "runner": _read_json(state / "runner.json") or {},
             "chiefChain": [{"agent": r.get("agent"), "name": NAMES.get(r.get("agent"), r.get("agent")),
-                            "up": bool(r.get("up")), "why": str(r.get("why") or "")[:120]}
+                            "up": bool(r.get("up")), "why": str(r.get("why") or "")[:120],
+                            "until": (flags.get(r.get("agent")) or {}).get("until", "")}
                            for r in chain.get("rows") or [] if isinstance(r, dict)]}
 
 
