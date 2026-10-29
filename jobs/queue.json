@@ -106317,13 +106317,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-29T15:02Z",
-      "eta": "2026-10-29T17:02Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T12:45Z",
-      "result": "",
+      "result": "parked for Chief: Uranus v03 assembled (sha 87a6a091fc85e81fe453fca37ef0367ed63ceeb4234e58675290b63f70009ac3) with S2-first VO + Shot4 artist open; gate_shorts_open FAIL f0diff 0.36<1.50 (Shot4 max natural ~0.8 on gate metric; only ≥1.50 at ~3× speed). loop FAIL as consequence. polish/music/sfx/picture_qa PASS. Evidence: jobs/reviews/J1204/URANUS_V03_DELIVERY_2026-10-29.md + UAT standalone_shorts_uranus_v03. Need Chief call: exception / assist / new source / speed. No upload. £0.",
       "history": [
         {
           "at": "2026-10-29T12:45Z",
@@ -106424,6 +106424,11 @@
           "at": "2026-10-29T15:18Z",
           "by": "cursor",
           "what": "step 3 of 5 done: v03 sha 87a6a091…; gate FAIL f0diff 0.36; Shot4 max natural ~0.8; delivery jobs/reviews/J1204/URANUS_V03_DELIVERY_2026-10-29.md; UAT copied"
+        },
+        {
+          "at": "2026-10-29T15:18Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Uranus v03 assembled (sha 87a6a091fc85e81fe453fca37ef0367ed63ceeb4234e58675290b63f70009ac3) with S2-first VO + Shot4 artist open; gate_shorts_open FAIL f0diff 0.36<1.50 (Shot4 max natural ~0.8 on gate metric; only ≥1.50 at ~3× speed). loop FAIL as consequence. polish/music/sfx/picture_qa PASS. Evidence: jobs/reviews/J1204/URANUS_V03_DELIVERY_2026-10-29.md + UAT standalone_shorts_uranus_v03. Need Chief call: exception / assist / new source / speed. No upload. £0."
         }
       ],
       "remaining_action": "Parked: Uranus v03 built but gate f0diff FAIL — Chief decision on Shot4 vs 1.50 threshold",
