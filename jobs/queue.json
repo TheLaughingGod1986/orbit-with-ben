@@ -83663,13 +83663,13 @@
       "stage": "",
       "after": "J1005",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "J1121: Ben swap OK absent; Claude 6483600719 directs UAT/awaits. UAT read EDEADLK; cloud-copy repair rejected by automatic approval review. Worker 5/5 retained; no rebuild.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -84115,6 +84115,11 @@
           "at": "2026-10-29T22:03Z",
           "by": "relay",
           "what": "condition verification queued: J1226"
+        },
+        {
+          "at": "2026-10-29T22:53Z",
+          "by": "codex",
+          "what": "reopened: J1226 verified 29 Oct: J1200 delivery evidence HOS PR375 and desk 6504311036; live checks independently confirm all four Ben approvals: 6507268470 Jenner v04, 6507810925 Dalton v04, 6507831644 vaccine-name v05, 6508107852 Harvey v04. Match by filename/SHA, not renumbered ask ids. Delivery already delegated: J1219 done, J1221/J1222/J1223 open. Release stale hold; local build complete, no rebuild or duplicate swap. Preserve worker 5/5 and original gates/Buffer/deadlines."
         }
       ],
       "kind": "video",
@@ -84141,22 +84146,6 @@
       },
       "remaining_action": "J1200 delivers four playable review copies/cards, then Ben reviews the swaps",
       "urgent": 2,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-29T00:33Z",
-        "by": "codex",
-        "note": "J1121: restored worker 5/5 cleared by reopening; Claude 6483600719 directs UAT/awaits, not rendering. Ben approval absen"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "J1209 verified 29 Oct 15:59Z: J1200 remains open/unclaimed; no J0966 review cards on published board and no explicit HC swap OK in live checks or fresh OWB through 6501633873 / HOS through 6501461806. J1200 must deliver four verified playable copies/cards before Ben reviews swaps. HOS-007/J0925 OK covers long only. Keep worker 5/5, no rebuild. First cutoff 12 Nov 20:00Z; original publishing restrictions remain, including Buffer consistency and no failed-gate override.",
-        "check_at": "2026-10-29T23:03:24+00:00",
-        "last_recheck": "J1209",
-        "checked_at": "2026-10-29T15:59:32+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1226"
-      },
       "awaits_was": {
         "what": "swap x_3L_IdYgEc (Harvey never saw) to hos_005_s03_never_saw_v04 (sha e1f862ba737a); J1200 playable PHONE",
         "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_005_s03_never_saw_v04_PHONE.mp4",
