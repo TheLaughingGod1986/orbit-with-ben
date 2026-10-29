@@ -107894,10 +107894,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T21:39Z",
+      "eta": "2026-10-29T23:39Z",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
       "result": "",
@@ -107961,6 +107961,11 @@
           "at": "2026-10-29T20:17Z",
           "by": "cursor",
           "what": "released: Detached resume: tmux j1218-render; log ~/_desk/logs/j1218-render.log; done ~/_desk/logs/j1218-render.done; WORK=/Volumes/data/mac-mini-archive/tmp-render-scratch/j1218-hos008-rough-v02; SAFE pretrim 557.8s; pause-trim fixed (filter_complex interleaved concat). Next: if .done missing leave running; if 0 finish deliver/PR/park; if non-zero read log. J1193 still open — required for graphics PASS."
+        },
+        {
+          "at": "2026-10-29T21:39Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for resume-join encode+gates+deliver; then PR evidence and park for Chief (J1193 still open)",
