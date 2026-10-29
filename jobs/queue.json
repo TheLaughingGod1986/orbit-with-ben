@@ -108017,10 +108017,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T23:51Z",
+      "eta": "2026-10-30T01:51Z",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
       "result": "",
@@ -108169,6 +108169,11 @@
           "at": "2026-10-29T23:43Z",
           "by": "codex",
           "what": "remaining action: FIX: make diagnostic v03 per Chief review 6a1c1b133; repair P5 graphics and unsafe NAS cleanup; J1193 required before picture PASS"
+        },
+        {
+          "at": "2026-10-29T23:51Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "FIX: make diagnostic v03 per Chief review 6a1c1b133; repair P5 graphics and unsafe NAS cleanup; J1193 required before picture PASS",
@@ -108176,7 +108181,15 @@
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T23:51Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1219",
