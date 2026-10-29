@@ -100460,9 +100460,14 @@
           "at": "2026-10-29T21:39Z",
           "by": "relay",
           "what": "condition verification queued: J1224"
+        },
+        {
+          "at": "2026-10-29T21:53Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T00:05:00Z"
         }
       ],
-      "remaining_action": "After verified test completion and the next-day gap, arm the authorized title-only B while holding the live thumbnail fixed",
+      "remaining_action": "Wait for 30 Oct London, then recheck finished report before authorized title-only test with thumbnail fixed",
       "kind": "studio",
       "progress": {
         "step": 2,
@@ -100475,10 +100480,12 @@
         "HOS:004"
       ],
       "hold": {
-        "type": "test",
-        "condition": "Studio report for GHZDsiH7L7A confirms the existing combined title-and-thumbnail test has ended, with its completion date verified directly; the next London calendar day has arrived. Recheck observed Running status, never infer completion from the 19h44m estimate.",
-        "check_at": "2026-10-29T22:39:10+00:00",
-        "recheck_task": "J1224"
+        "type": "input",
+        "condition": "Studio directly verified at 2026-10-29 21:53Z: combined Title and thumbnail test finished 29 October 2026 at 17:54 Europe/London (started 15 October 18:00), insufficient impressions. Remaining condition: London date must be 30 October or later; re-read Studio before reopening. Evidence: /Users/benjaminoats/_desk/reports/J1224/studio_readback.json. No new test authorized before that next-day gap.",
+        "check_at": "2026-10-30T00:05:00Z",
+        "last_recheck": "J1224",
+        "checked_at": "2026-10-29T21:53:33+00:00",
+        "checked_by": "codex"
       }
     },
     {
