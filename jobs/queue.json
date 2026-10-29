@@ -100814,13 +100814,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T01:56Z",
-      "eta": "2026-10-29T03:56Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-29T01:09Z",
-      "result": "",
+      "result": "Verified superseded: J1059 already done by acting Chief Claude at 2026-10-29T01:51Z. PR 339 merged as 320db69ad678a4306bd0debe57cbd257ddc1932a; jobs/readbacks/J1059.json ok=true records B1z2dv7m7Vk Private scheduled 2026-11-11T11:30Z and TtgHNLXfDSs Private unscheduled. J1093 acceptance PASS 1295111c0 and Ben board v07 OK 2026-10-28T23:57:41Z recorded in original history. J0124 explicitly carries Related to Js6EQJ8qDi8 for replacement B1z2dv7m7Vk once the long is verified public. Leave J1059 done; no repeat swap or new hold. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-10-29T01:09Z",
@@ -100846,6 +100846,11 @@
           "at": "2026-10-29T01:57Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR 339 merged 01:51:23Z; readback ok; J1093 PASS and Ben v07 OK recorded; J0124 explicitly targets B1z2dv7m7Vk"
+        },
+        {
+          "at": "2026-10-29T01:57Z",
+          "by": "codex",
+          "what": "done: Verified superseded: J1059 already done by acting Chief Claude at 2026-10-29T01:51Z. PR 339 merged as 320db69ad678a4306bd0debe57cbd257ddc1932a; jobs/readbacks/J1059.json ok=true records B1z2dv7m7Vk Private scheduled 2026-11-11T11:30Z and TtgHNLXfDSs Private unscheduled. J1093 acceptance PASS 1295111c0 and Ben board v07 OK 2026-10-28T23:57:41Z recorded in original history. J0124 explicitly carries Related to Js6EQJ8qDi8 for replacement B1z2dv7m7Vk once the long is verified public. Leave J1059 done; no repeat swap or new hold. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Close superseded verification without reopening completed J1059",
