@@ -104135,9 +104135,14 @@
           "at": "2026-10-29T06:53Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1177; starting read-only listing check on last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-29T06:54Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified top 10 live public videos in fresh 2026-10-29.json snapshot (2026-10-29T06:40:10.269Z, gJwNJN_yMKU through lbW2iQ9YvqA)"
         }
       ],
-      "remaining_action": "Inspect last 10 live OWB videos from 2026-10-29 snapshot and live YouTube watch/Shorts pages",
+      "remaining_action": "Verify long-form chapters, sources, and end screens against local cuts and live watch pages",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -104150,12 +104155,19 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-29T06:53Z",
+        "at": "2026-10-29T06:54Z",
         "by": "gemini",
-        "note": "Claimed J1177; starting read-only listing check on last 10 live OWB videos"
-      }
+        "note": "Verified top 10 live public videos in fresh 2026-10-29.json snapshot (2026-10-29T06:40:10.269Z, gJwNJN_yMKU through lbW2"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     },
     {
       "id": "J1178",
