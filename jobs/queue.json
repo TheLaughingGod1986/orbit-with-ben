@@ -87985,6 +87985,11 @@
           "at": "2026-10-29T06:30Z",
           "by": "relay",
           "what": "condition verification queued: J1175"
+        },
+        {
+          "at": "2026-10-29T06:43Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-29T12:45:00Z"
         }
       ],
       "kind": "studio",
@@ -88001,12 +88006,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Verified 2026-10-29: HOS PR #365 remains draft OPEN at a87cd56a028648355061a732f027fe087db465e5, no PR comments/reviews or Ben approval found in HOS desk history. J0998 requires Ben OK under HOS AGENTS.md Definition of done, merge to HOS main, then unmodified npm run channel:audit exit 0. Existing Studio evidence PR #358 remains OPEN at c26a79bd.",
-        "check_at": "2026-10-29T07:30:47+00:00",
-        "last_recheck": "J1108",
-        "checked_at": "2026-10-29T00:24:47+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1175"
+        "condition": "Verified 29 Oct 06:46 UTC: HOS PR365 remains draft OPEN at a87cd56a028648355061a732f027fe087db465e5, no comments/reviews or required Ben approval found through HOS desk 6489615513. J0998 requires that approval, merge to HOS main, then unmodified npm run channel:audit exit 0. PR358 c26a79bd retains Studio evidence and original 58-video/4-error audit; later manually deduplicated reports do not satisfy this gate.",
+        "check_at": "2026-10-29T12:45:00Z",
+        "last_recheck": "J1175",
+        "checked_at": "2026-10-29T06:43:17+00:00",
+        "checked_by": "codex"
       }
     },
     {
