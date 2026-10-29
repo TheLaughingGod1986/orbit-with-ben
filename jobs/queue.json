@@ -100301,12 +100301,12 @@
       "after": "",
       "eta_min": 120,
       "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-29T01:58Z",
+      "by": "claude",
+      "since": "2026-10-29T02:51:54.294683+00:00",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "parked for Chief: Studio New test requires Start a new experiment? This deletes your current experiment. Cancelled per J1132 and HOS Never rule. Completed thumbnail test ended 28 Oct 2026 21:17; day-after condition met, but title-only test cannot be armed without the explicitly forbidden Continue.",
+      "result": "waiting for Ben: OK to start the HOS 001 title-only test. Studio's 'Start a new experiment' deletes the ended thumbnail test's report (ended 28 Oct 21:17), which can't be undone. Before Ben's OK the Mini saves that full report (variant shares, winner, dates, screenshots) to THUMB_LEDGER; then press Continue only on Ben's yes. Same for HOS 002 (J1130).",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -100407,6 +100407,11 @@
           "at": "2026-10-29T02:05Z",
           "by": "codex",
           "what": "blocked: parked for Chief: Studio New test requires Start a new experiment? This deletes your current experiment. Cancelled per J1132 and HOS Never rule. Completed thumbnail test ended 28 Oct 2026 21:17; day-after condition met, but title-only test cannot be armed without the explicitly forbidden Continue."
+        },
+        {
+          "at": "2026-10-29T02:51Z",
+          "by": "claude",
+          "what": "blocked: waiting for Ben: OK to start the HOS 001 title-only test. Studio's 'Start a new experiment' deletes the ended thumbnail test's report (ended 28 Oct 21:17), which can't be undone. Before Ben's OK the Mini saves that full report (variant shares, winner, dates, screenshots) to THUMB_LEDGER; then press Continue only on Ben's yes. Same for HOS 002 (J1130)."
         }
       ],
       "remaining_action": "Resolve Studio deletion-confirmation restriction before starting title-only test",
@@ -100429,6 +100434,11 @@
         "at": "2026-10-29T02:05Z",
         "by": "codex",
         "note": "New test opens: Start a new experiment? This deletes your current experiment. Do you want to continue? Cancelled as expl"
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "waiting for Ben: OK to start the HOS 001 title-only test. Studio's 'Start a new experiment' deletes the ended thumbnail test's report (ended 28 Oct 21:17), which can't be undone. Before Ben's OK the Mini saves that full report (variant shares, winner, dates, screenshots) to THUMB_LEDGER; then press Continue only on Ben's yes. Same for HOS 002 (J1130).",
+        "check_at": "2026-10-29T08:51:54.294683+00:00"
       }
     },
     {
