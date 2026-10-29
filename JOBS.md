@@ -52,7 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1202 | mini | open | – | – | assembly · HOS Buffer: register every HOS Short at upload and mirror it to Buffer when it goes public (replaces 'Buffer held until public'); dry-run only, no HOS posting |  |
 | J1204 | mini | open | – | – | assembly · J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence |  |
 | J1207 | mini | open | – | – | for gemini · review · `gemini-argon` · HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8) |  |
-| J1208 | mini | open | – | – | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
+| J1208 | mini | claimed | cursor | 2026-10-29T16:42Z | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
 
 Recently finished:
 
