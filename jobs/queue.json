@@ -104495,9 +104495,14 @@
           "at": "2026-10-29T07:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T07:22Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1181; starting search for mon09_night_cold_v01.mp4"
         }
       ],
-      "remaining_action": "025 Short iyvWYFP_ETA (airs Mon 9 Nov 11:30): restore its v01 master so the upcoming-Shorts gate can read it",
+      "remaining_action": "Search NAS, iCloud UAT, and local rescue/archive paths for mon09_night_cold_v01.mp4",
       "due": "2026-11-06T20:00:00Z",
       "kind": "qa",
       "progress": {
@@ -104505,9 +104510,11 @@
         "of": 3,
         "at": "2026-10-29T07:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1181; starting search for mon09_night_cold_v01.mp4"
+      },
+      "taskKeys": [
+        "OWB:025"
+      ]
     }
   ],
   "focus": [],
