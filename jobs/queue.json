@@ -100836,19 +100836,28 @@
           "at": "2026-10-29T01:56Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-29T01:56Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: J1059 already completed by Claude at 01:51Z; checking merged evidence and J0124 handoff"
         }
       ],
-      "remaining_action": "Verify J1059 evidence, prerequisites and approvals",
+      "remaining_action": "Confirm completed swap evidence and Related-video follow-up",
       "kind": "chief",
       "recheck_of": "J1059",
       "due": "2026-10-29T02:09:55+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-29T01:56Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "J1059 already completed by Claude at 01:51Z; checking merged evidence and J0124 handoff"
+      },
+      "taskKeys": [
+        "OWB:025"
+      ]
     }
   ],
   "focus": [],
