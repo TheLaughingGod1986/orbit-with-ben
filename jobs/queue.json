@@ -105805,10 +105805,10 @@
       "stage": "picture",
       "after": "J1191",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-29T22:25Z",
-      "eta": "2026-10-30T00:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:36Z",
       "result": "",
@@ -105987,6 +105987,11 @@
           "at": "2026-10-29T22:49Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Part 05 complete: 15/15 KEEP (57/57 first-pass tranche-1 rows minted, NAS-copied, committed @ b5ca84cf; live Flow 15,630, spent 2,920 / 7,585 cap); starting 7 targeted UAT retakes"
+        },
+        {
+          "at": "2026-10-29T22:49Z",
+          "by": "gemini",
+          "what": "released: Parts 01-05 first-pass complete: 57/57 Flow v04 tranche-1 rows minted and NAS-copied (committed on gemini/j1192-009-tranche1-flow-mint @ b5ca84cf; live Flow 15,630, spent 2,920 / 7,585 cap, buffer >= 3,000). Detached 7-plate UAT retake batch (_retake_flow_v04_tranche1.py: P03:03_shot_slow, P03:04_shot_faster, P04:02_spray_paint_c1, P04:02_spray_paint_c2, P05:08_cup_and_planets_c1 parent-still Fast retakes + P05:05_iss_orbit, P05:06_iss_apple clean-still Quality retakes; ~250 cr total) running in tmux session j1192-render; log: /Users/benjaminoats/_desk/logs/j1192-render.log; done file: /Users/benjaminoats/_desk/logs/j1192-render.done (missing while running; when done=0, inspect retake UAT sheets, rsync part03-05 to NAS, update PIPELINE.json + production-status.md, and park J1192 for Chief)."
         }
       ],
       "remaining_action": "Run 7 targeted UAT retakes (5 Fast parent-still + 2 Quality clean-still) in detached tmux j1192-render, then sync NAS, update PIPELINE.json and park for Chief",
