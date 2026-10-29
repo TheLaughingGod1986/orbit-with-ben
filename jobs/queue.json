@@ -98171,13 +98171,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T00:23Z",
-      "eta": "2026-10-29T02:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-28T15:47Z",
-      "result": "",
+      "result": "Verified prerequisite unmet: HOS PR365 draft OPEN a87cd56a, no comments/reviews or Ben approval on desk; PR358 c26a79bd retains Studio evidence and original audit 58 videos/4 errors. J0999 remains blocked with last_recheck J1108; next check 2026-10-29T06:30:00Z. Required checker-fix approval, merge and unmodified main audit exit 0 remain outstanding. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-10-28T15:47Z",
@@ -98208,6 +98208,11 @@
           "at": "2026-10-29T00:25Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified persisted blocked state, last_recheck J1108 and 29 Oct 06:30Z check. PR358 REVIEW_J0999 confirms original audit 58 videos/4 errors; no new audit PASS claimed."
+        },
+        {
+          "at": "2026-10-29T00:25Z",
+          "by": "codex",
+          "what": "done: Verified prerequisite unmet: HOS PR365 draft OPEN a87cd56a, no comments/reviews or Ben approval on desk; PR358 c26a79bd retains Studio evidence and original audit 58 videos/4 errors. J0999 remains blocked with last_recheck J1108; next check 2026-10-29T06:30:00Z. Required checker-fix approval, merge and unmodified main audit exit 0 remain outstanding. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Verification complete; J0999 retains approval and audit hold",
