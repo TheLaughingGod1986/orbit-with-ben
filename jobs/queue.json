@@ -108776,19 +108776,24 @@
           "at": "2026-10-29T23:31Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: inspect prerequisite evidence, record readiness or precise hold, verify queue and report."
+        },
+        {
+          "at": "2026-10-29T23:32Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Verified mature lifetime capture and J1211 done; J1003 open for Gemini, no result; audit appendix still awaits that measurement."
         }
       ],
-      "remaining_action": "Verify J1003 readout and final audit readiness",
+      "remaining_action": "Record unmet J1003 readout dependency",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-29T23:50:17+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T23:31Z",
+        "at": "2026-10-29T23:32Z",
         "by": "codex",
-        "note": "Plan: inspect prerequisite evidence, record readiness or precise hold, verify queue and report."
+        "note": "Verified mature lifetime capture and J1211 done; J1003 open for Gemini, no result; audit appendix still awaits that meas"
       },
       "taskKeys": [
         "OWB:027"
