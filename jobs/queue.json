@@ -101167,9 +101167,14 @@
           "at": "2026-10-29T02:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T02:34Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting 4-step read-only listing check for HOS live and scheduled videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Inventory HOS live and scheduled videos and pull live/API metadata",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -101183,11 +101188,10 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-29T02:33Z",
+        "of": 4,
+        "at": "2026-10-29T02:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Starting 4-step read-only listing check for HOS live and scheduled videos"
       }
     },
     {
