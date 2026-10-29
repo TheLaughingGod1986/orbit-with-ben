@@ -100936,13 +100936,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-29T02:12Z",
-      "eta": "2026-10-29T03:12Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T01:58Z",
-      "result": "",
+      "result": "Read-only listing check on the last 10 live public OWB videos (gJwNJN_yMKU through lbW2iQ9YvqA) at 05_Analytics/live_fixes/2026-10-29.md (commit beedf6f03): 10/10 pass chapters, sources, end screens, and Shorts Related video checks; 0 fixes needed.",
       "history": [
         {
           "at": "2026-10-29T01:58Z",
@@ -100983,6 +100983,11 @@
           "at": "2026-10-29T02:16Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Wrote 05_Analytics/live_fixes/2026-10-29.md (commit beedf6f03); 10/10 live public videos pass with 0 fixes needed"
+        },
+        {
+          "at": "2026-10-29T02:16Z",
+          "by": "gemini",
+          "what": "done: Read-only listing check on the last 10 live public OWB videos (gJwNJN_yMKU through lbW2iQ9YvqA) at 05_Analytics/live_fixes/2026-10-29.md (commit beedf6f03): 10/10 pass chapters, sources, end screens, and Shorts Related video checks; 0 fixes needed."
         }
       ],
       "remaining_action": "Complete J1139",
@@ -101010,7 +101015,8 @@
         "OWB:023",
         "OWB:027",
         "OWB:030"
-      ]
+      ],
+      "done_ref": "beedf6f03"
     },
     {
       "id": "J1140",
