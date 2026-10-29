@@ -106612,20 +106612,25 @@
           "at": "2026-10-29T17:32Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Chief authorized v06; writing assembler"
+        },
+        {
+          "at": "2026-10-29T17:36Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: tmux j1204-uranus-v06 running; log ~/_desk/logs/j1204-uranus-v06.log; .done ~/_desk/logs/j1204-uranus-v06.done; odd-phase Shot9 from frame 53"
         }
       ],
-      "remaining_action": "Build Uranus v06 per Chief ruling (Shot9 odd-phase 0.8833–4.7167); gates from final sha",
+      "remaining_action": "Wait for tmux j1204-uranus-v06 render; then verify gates and park for Chief",
       "due": "2026-11-02T12:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-29T17:32Z",
+        "at": "2026-10-29T17:36Z",
         "by": "cursor",
-        "note": "Chief authorized v06; writing assembler"
+        "note": "tmux j1204-uranus-v06 running; log ~/_desk/logs/j1204-uranus-v06.log; .done ~/_desk/logs/j1204-uranus-v06.done; odd-phas"
       }
     },
     {
