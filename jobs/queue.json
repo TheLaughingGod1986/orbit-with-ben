@@ -108114,13 +108114,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-29T21:58Z",
-      "eta": "2026-10-29T23:58Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-29T20:26Z",
-      "result": "",
+      "result": "Chief review complete: FIX, v07 NOT approved. Ruling 1a5389793 jobs/reviews/J1220/CHIEF_RULING_2026-10-29.md. J1225 queued for genuine path stabilization and verified iCloud/NAS delivery, due 1 Nov 18:00Z. Supplied gates pass but fix is constant drift, shake improvement unproven; iCloud read fails Errno 11. J1212 remains held on Ben, v06 card not repointed; Tue 3 Nov 10:30 watch deadline and 11:30 v01 fallback retained. No upload/social changes.",
       "history": [
         {
           "at": "2026-10-29T20:26Z",
@@ -108196,6 +108196,11 @@
           "at": "2026-10-29T21:58Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T21:58Z",
+          "by": "codex",
+          "what": "done: Chief review complete: FIX, v07 NOT approved. Ruling 1a5389793 jobs/reviews/J1220/CHIEF_RULING_2026-10-29.md. J1225 queued for genuine path stabilization and verified iCloud/NAS delivery, due 1 Nov 18:00Z. Supplied gates pass but fix is constant drift, shake improvement unproven; iCloud read fails Errno 11. J1212 remains held on Ben, v06 card not repointed; Tue 3 Nov 10:30 watch deadline and 11:30 v01 fallback retained. No upload/social changes."
         }
       ],
       "remaining_action": "Park for Chief: re-point J1212 awaits_ben to v07",
@@ -108211,7 +108216,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "1a5389793"
     },
     {
       "id": "J1221",
