@@ -53,11 +53,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1204 | mini | blocked | cursor | – | assembly · J1199 FIX: replace JPEG-based openings with verified existing subject footage; v03 evidence |  |
 | J1207 | mini | open | – | – | for gemini · review · `gemini-argon` · HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8) |  |
 | J1208 | mini | blocked | codex | – | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
-| J1210 | any | claimed | codex | 2026-10-29T18:48Z | chief · Chief: verify condition for J0985 |  |
 | J1211 | any | open | – | – | chief · Chief: verify condition for J1003 |  |
 
 Recently finished:
 
+- J1210 done: Chief: verify condition for J0985 (Verified mature Studio lifetime source at 2026-10-29T07:13:31.819902Z (67h43m after release): OVLv9dxTcpE 887 views, 30.7% stayed, 75.3% average viewed. J1003 readout remains incomplete, with J1211 its separate verification owner. J0985 remains blocked via wait --recheck J1210, retry 2026-10-29T22:50:00Z; readback verified. J1002 complete; final non-author Chief closure still required. No spend or publishing changes.)
 - J1209 done: Chief: verify condition for J0966 (Verified 29 Oct 15:59Z: J1200 open/unclaimed, no J0966 published review cards or explicit HC swap OK in fresh threads/live checks. J0966 remains blocked at worker 5/5; next check 29 Oct 22:00Z. Delivery stays with J1200; no rebuild or publishing changes. Reports HOS 6501720007 and OWB 6501728523.)
 - J1206 done: J1204 follow-up: verify moving sources and Uranus whole-sentence edit feasibility (J1206 return: jobs/reviews/J1206/SOURCE_FEASIBILITY_2026-10-29.md (+ CANDIDATES.json). Archive empty of moving opens. Uranus sentence-reorder FEASIBLE (lead with complete S2 from vo_v02.wav). S4 candidate SVS 20390 Shot4 Beauty Pass CGI 1920x1080 sha 32370afa… upscale 1.778 PASS but picture_qa CGI risk. S5 NEGATIVE (no meteor video). S6 PIA17656 radar flyover motion OK but 2.667x FAIL unless blur-fill; Dragonfly TakingOff 2024 artist CGI subject match. No v03. Awaiting Chief source/edit plan.)
 - J1205 done: Chief: verify condition for J0999 (Verified PR365 remains draft OPEN a87cd56a without matching approval; J0999 remains blocked on J0998 approval/merge and unmodified channel:audit exit 0. Hold verified, recheck 29 Oct 18:50Z. No spend or YouTube changes.)
@@ -67,4 +67,3 @@ Recently finished:
 - J1194 done: Apply the 28 Oct description sweep fixes to the repo description files (text only) (16 issue rows applied across 24 text files; 13 skipped with reasons. Report: 05_Analytics/weekly_thumb_audit/DESCRIPTION_SWEEP_2026-10-28_APPLIED.md. OWB 934d92aa0; HOS d56a80c8 on macbook/j1194-description-sweep. JSON scope and diff checks pass. Row 25 target files absent; 8 rows live-only. No live changes; GBP0.)
 - J1189 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1188 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-29T08:26Z across 57 unique videos (26 public, 14 scheduled, 17 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, HOS 80e16e4a, 0 new fixes needed))
-- J1187 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T08:18Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, e472e5712, 0 fixes needed))
