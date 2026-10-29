@@ -6666,7 +6666,7 @@
       "title": "025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103)",
       "needs": "mini",
       "repo": "owb",
-      "body": "The date-bound rest of J0103 (025 Mars robot), under J0084's original brief and authorisation (ref 6077231242). Runs once the gate job says the long `Js6EQJ8qDi8` is public (Sun 8 Nov 18:00Z).\n\nAlready done in J0103: end screen + card on Js6EQJ8qDi8; all three Shorts uploaded private and scheduled with Studio covers set: `iyvWYFP_ETA` (Mon 9 Nov 11:30Z), `TtgHNLXfDSs` (Wed 11 Nov 11:30Z, Test A opening), `bSjWiCbB7pY` (Fri 13 Nov 11:30Z).\n\nTo do:\n1. Related video = `Js6EQJ8qDi8` on all three Shorts in Studio (the picker lists public videos only). `iyvWYFP_ETA` first: it airs Mon 9 Nov 11:30Z. Do NOT change title, privacy or publishAt.\n2. Pinned comment on `Js6EQJ8qDi8` (`update-pinned-comment.ts`; the API refused it while scheduled). No pinned comment on any Short.\n3. Buffer: check the Mon (`iyvWYFP_ETA`) and Fri (`bSjWiCbB7pY`) posts exist (refused at the 10/10 scheduled limit on 10 Oct; the 07:05 `buffer-mirror.ts check` should have added them). If not, run `buffer-mirror.ts check`.\n4. When 026 goes public (Sun 15 Nov), swap the long's end-screen video from `-jmMROGoZCM` to 026's id (the script hands off to 026).\n\nReport ids and what changed on #99, with a thread line for each Studio change.\n",
+      "body": "The date-bound rest of J0103 (025 Mars robot), under J0084's original brief and authorisation (ref 6077231242). Runs once the gate job says the long `Js6EQJ8qDi8` is public (Sun 8 Nov 18:00Z).\n\nAlready done in J0103: end screen + card on Js6EQJ8qDi8; all three Shorts uploaded private and scheduled with Studio covers set: `iyvWYFP_ETA` (Mon 9 Nov 11:30Z), `TtgHNLXfDSs` (Wed 11 Nov 11:30Z, Test A opening), `bSjWiCbB7pY` (Fri 13 Nov 11:30Z).\n\nTo do:\n1. Related video = `Js6EQJ8qDi8` on all three Shorts in Studio (the picker lists public videos only). `iyvWYFP_ETA` first: it airs Mon 9 Nov 11:30Z. Do NOT change title, privacy or publishAt.\n2. Pinned comment on `Js6EQJ8qDi8` (`update-pinned-comment.ts`; the API refused it while scheduled). No pinned comment on any Short.\n3. Buffer: check the Mon (`iyvWYFP_ETA`) and Fri (`bSjWiCbB7pY`) posts exist (refused at the 10/10 scheduled limit on 10 Oct; the 07:05 `buffer-mirror.ts check` should have added them). If not, run `buffer-mirror.ts check`.\n4. When 026 goes public (Sun 15 Nov), swap the long's end-screen video from `-jmMROGoZCM` to 026's id (the script hands off to 026).\n\nReport ids and what changed on #99, with a thread line for each Studio change.\n\n\n29 Oct (acting Chief Claude): the Mars Opening Short is now B1z2dv7m7Vk (v07, J1059; TtgHNLXfDSs is retired, Private and unscheduled). Set its Related video to Js6EQJ8qDi8 with the others once the long is public, before Wed 11 Nov 11:30 London.",
       "ref": "6103189873",
       "film": "",
       "stage": "",
@@ -93518,13 +93518,13 @@
       "stage": "",
       "after": "J0935",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-29T01:04Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-10-29T01:51:41.882962+00:00",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-28T04:11Z",
-      "result": "parked for Chief: swap completed and verified in PR 339 (eb1875982); Related video Js6EQJ8qDi8 unavailable by exact ID/title in Studio. New B1z2dv7m7Vk Private scheduled 2026-11-11T11:30Z; old TtgHNLXfDSs Private unscheduled. Resolve link when eligible; review/merge records.",
+      "result": "acting Chief (Claude) PASS: swap read back (PR 339 merged): new B1z2dv7m7Vk Private, publishAt 2026-11-11T11:30Z, v07 sha e9f848d9...; old TtgHNLXfDSs Private, unscheduled. Related to Js6EQJ8qDi8 can only be set once the long is public (Sun 8 Nov 18:00 London): moved to J0124.",
       "history": [
         {
           "at": "2026-10-28T04:11Z",
@@ -93600,6 +93600,11 @@
           "at": "2026-10-29T01:09Z",
           "by": "relay",
           "what": "condition verification queued: J1138"
+        },
+        {
+          "at": "2026-10-29T01:51Z",
+          "by": "claude",
+          "what": "done: acting Chief (Claude) PASS: swap read back (PR 339 merged): new B1z2dv7m7Vk Private, publishAt 2026-11-11T11:30Z, v07 sha e9f848d9...; old TtgHNLXfDSs Private, unscheduled. Related to Js6EQJ8qDi8 can only be set once the long is public (Sun 8 Nov 18:00 London): moved to J0124."
         }
       ],
       "remaining_action": "Chief to resolve Mars Related video link and review PR 339",
@@ -100295,13 +100300,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-29T01:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "parked for Chief: Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, but New test shows Start a new experiment? This deletes your current experiment. Cancelled; brief explicitly prohibits Continue. Resolve protected confirmation before title-only B can be armed. No video changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -100367,20 +100372,18 @@
           "at": "2026-10-29T01:14Z",
           "by": "codex",
           "what": "blocked: parked for Chief: Studio confirms thumbnail-only test ended 28 October 2026 at 21:17, but New test shows Start a new experiment? This deletes your current experiment. Cancelled; brief explicitly prohibits Continue. Resolve protected confirmation before title-only B can be armed. No video changes."
+        },
+        {
+          "at": "2026-10-29T01:51Z",
+          "by": "claude",
+          "what": "reopened: acting Chief (Claude): the ended test is eligible (ended 28 Oct 21:17). Starting a new experiment deletes the finished one's report, which can't be undone, so that click goes to Ben. Now: capture the full ended report (every variant's watch-time share, the winner, dates; Studio screenshots) into THUMB_LEDGER and the job's readback, then block 'waits on Ben: OK to start the HOS 001 title test, which deletes the ended thumbnail test report (saved in the ledger)'. Do not press Continue. Same for HOS 002 (J1130) when it reaches that prompt."
         }
       ],
       "remaining_action": "Chief must resolve Studio delete-current-experiment confirmation before title-only test",
       "kind": "studio",
       "taskKeys": [
         "HOS:001"
-      ],
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-10-29T01:14Z",
-        "by": "codex",
-        "note": "Studio report: thumbnail-only test ended 28 Oct 2026 21:17; insufficient impressions. New test requests deletion of curr"
-      }
+      ]
     },
     {
       "id": "J1133",
