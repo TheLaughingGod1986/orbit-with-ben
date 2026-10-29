@@ -107850,17 +107850,22 @@
           "at": "2026-10-29T19:19Z",
           "by": "cursor",
           "what": "step 1 of 7 done: step0 done: inspected v01 FAILs; freezes all on CG rows pending J1193"
+        },
+        {
+          "at": "2026-10-29T19:22Z",
+          "by": "cursor",
+          "what": "step 2 of 7 done: assembler written; tmux j1218-render started on NAS scratch; J1193 still open (dependency)"
         }
       ],
-      "remaining_action": "Write v02 assembler (sequential same_thing, metal_easy CG, window reframe); start detached render",
+      "remaining_action": "Detached v02 render running; await gates + desk deliver + park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 7,
-        "at": "2026-10-29T19:19Z",
+        "at": "2026-10-29T19:22Z",
         "by": "cursor",
-        "note": "step0 done: inspected v01 FAILs; freezes all on CG rows pending J1193"
+        "note": "assembler written; tmux j1218-render started on NAS scratch; J1193 still open (dependency)"
       },
       "taskKeys": [
         "HOS:008"
