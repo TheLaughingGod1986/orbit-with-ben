@@ -105790,17 +105790,22 @@
           "at": "2026-10-29T10:41Z",
           "by": "cursor",
           "what": "step 4 of 6 done: claimed after prior release; s6 ffmpeg tweak3 live; s5 retry waiting; Uranus v02 already PASS"
+        },
+        {
+          "at": "2026-10-29T10:44Z",
+          "by": "cursor",
+          "what": "step 4 of 6 done: prior s6 FAIL f0diff=0.60 reuse+loop; script fixed; s5 retry live"
         }
       ],
-      "remaining_action": "Wait s6 loudness re-render; fix s5 scale_card; clear titan f0diff/reuse FAILs; deliver UAT/NAS; park Chief",
+      "remaining_action": "S5 fixed-script render running; then S6 re-render (no wrap + unique plates + louder open)",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
         "step": 4,
         "of": 6,
-        "at": "2026-10-29T10:41Z",
+        "at": "2026-10-29T10:44Z",
         "by": "cursor",
-        "note": "claimed after prior release; s6 ffmpeg tweak3 live; s5 retry waiting; Uranus v02 already PASS"
+        "note": "prior s6 FAIL f0diff=0.60 reuse+loop; script fixed; s5 retry live"
       },
       "taskKeys": [
         "OWB:030"
