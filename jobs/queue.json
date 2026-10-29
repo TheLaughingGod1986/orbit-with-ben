@@ -102380,9 +102380,14 @@
           "at": "2026-10-29T04:33Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1156; starting read-only listing audit of last 10 public OWB videos"
+        },
+        {
+          "at": "2026-10-29T04:34Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified live YouTube status for _a66uhRDips (private) and top public videos"
         }
       ],
-      "remaining_action": "Verify last 10 live public OWB videos (chapters, sources, end screens, Related pills)",
+      "remaining_action": "Verify chapters against cuts and source lines in descriptions",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -102395,11 +102400,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-29T04:33Z",
+        "at": "2026-10-29T04:34Z",
         "by": "gemini",
-        "note": "Claimed J1156; starting read-only listing audit of last 10 public OWB videos"
+        "note": "Verified live YouTube status for _a66uhRDips (private) and top public videos"
       },
       "taskKeys": [
         "OWB:021",
