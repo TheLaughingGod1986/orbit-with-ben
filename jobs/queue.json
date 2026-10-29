@@ -101367,17 +101367,22 @@
           "at": "2026-10-29T03:22Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1143; starting read-only audit of last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-29T03:23Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Checked live watch/Shorts endpoints for top 10 public videos plus private status of _a66uhRDips"
         }
       ],
-      "remaining_action": "Verify live YouTube watch/Shorts metadata and snapshots for last 10 public OWB videos",
+      "remaining_action": "Verify chapters, sources, end screens, and Related video readbacks against local cut lists and manifests",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-29T03:22Z",
+        "at": "2026-10-29T03:23Z",
         "by": "gemini",
-        "note": "Claimed J1143; starting read-only audit of last 10 live OWB videos"
+        "note": "Checked live watch/Shorts endpoints for top 10 public videos plus private status of _a66uhRDips"
       },
       "taskKeys": [
         "OWB:021",
