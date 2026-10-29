@@ -18863,13 +18863,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-14T20:55Z",
-      "result": "waits for input: HOS 005 long wwcjcFfC-5M public (publishAt Thu 29 Oct 18:00 London); reopen then",
+      "result": "",
       "history": [
         {
           "at": "2026-10-14T20:55Z",
@@ -18900,16 +18900,15 @@
           "at": "2026-10-29T18:20Z",
           "by": "relay",
           "what": "condition verification queued: J1214"
+        },
+        {
+          "at": "2026-10-29T19:02Z",
+          "by": "codex",
+          "what": "reopened: J1214 verified via authenticated HOS YouTube Data API videos.list at 2026-10-29T19:01:53Z: wwcjcFfC-5M privacyStatus=public, processed, HOS channel UCXp7HkBIl1LgaznXuZHJyRg. BW_CFAX-mxc remains private publishAt=2026-10-31T11:30:00Z; 5n7xFQRBUvI private without publishAt. Chief c42 PASS HOS comment 6399338457 and Ben v04 approval 6399423733 read and confirmed; J0948 completed delivery 6401616955. Public condition satisfied; original gates and approval remain valid. Resume original Related/Buffer scope only; no upload, spend, or schedule change. Raw readback: /Users/benjaminoats/_desk/J1214-youtube-readback.json."
         }
       ],
       "kind": "studio",
       "remaining_action": "Link the Blood Short to its long video",
-      "hold": {
-        "type": "public",
-        "condition": "Blood long wwcjcFfC-5M must read back Public",
-        "check_at": "2026-10-29T19:20:47+00:00",
-        "recheck_task": "J1214"
-      },
       "urgent": 4
     },
     {
