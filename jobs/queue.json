@@ -99333,9 +99333,14 @@
           "at": "2026-10-29T00:48Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1122; starting description sweep across OWB and HOS"
+        },
+        {
+          "at": "2026-10-29T00:51Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Enumerated all upload description files, chapter files, Shorts listings, and PACKAGE_MANIFEST.json across OWB and HOS"
         }
       ],
-      "remaining_action": "Scanning OWB and HOS upload description files and manifests",
+      "remaining_action": "Auditing all OWB and HOS descriptions for jargon, spoilers, and chapter issues",
       "kind": "review",
       "rerouted_from": {
         "needs": "macbook",
@@ -99347,12 +99352,41 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-29T00:48Z",
+        "at": "2026-10-29T00:51Z",
         "by": "gemini",
-        "note": "Claimed J1122; starting description sweep across OWB and HOS"
-      }
+        "note": "Enumerated all upload description files, chapter files, Shorts listings, and PACKAGE_MANIFEST.json across OWB and HOS"
+      },
+      "taskKeys": [
+        "OWB:001",
+        "OWB:002",
+        "OWB:003",
+        "OWB:005",
+        "OWB:013",
+        "OWB:019",
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1123",
