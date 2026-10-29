@@ -1,5 +1,5 @@
 {
-  "next_id": 1221,
+  "next_id": 1222,
   "jobs": [
     {
       "id": "J0001",
@@ -84095,6 +84095,11 @@
           "at": "2026-10-29T20:15Z",
           "by": "chief",
           "what": "no longer waits on Ben (entry 1): OK'd, delivered by J1219"
+        },
+        {
+          "at": "2026-10-29T20:41Z",
+          "by": "chief",
+          "what": "no longer waits on Ben (entry 2): OK'd, delivered by J1221"
         }
       ],
       "kind": "video",
@@ -84146,17 +84151,6 @@
           "ifNot": "original scheduled file airs unchanged; no slip",
           "title": "Harvey never saw HC v04",
           "number": "005",
-          "type": "short"
-        },
-        {
-          "what": "swap -sa2t7dAtCk (Dalton) to hos_004_s05_dalton_v04 (sha 8ce07a605697); J1200 playable PHONE",
-          "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_004_s05_dalton_v04_PHONE.mp4",
-          "version": "v04",
-          "due": "2026-11-16T10:30Z",
-          "airs": "2026-11-16T11:30Z",
-          "ifNot": "original scheduled file airs unchanged; no slip",
-          "title": "Dalton HC v04",
-          "number": "004",
           "type": "short"
         },
         {
@@ -108098,6 +108092,54 @@
         "at": "2026-10-29T20:33Z",
         "by": "cursor",
         "note": "v06 sha f0b4e0a0 confirmed; open has 3-6px jitter + dup frames; writing assemble_uranus_v07"
+      }
+    },
+    {
+      "id": "J1221",
+      "title": "Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30)\n\nBen OK'd J0966.2 v04 on the Studio Kanban at Thu 29 Oct 20:40 London (HOS #180 6507810925: \"watched it, looks good\"). Chief (Grok) queued this delivery job.\nMaster `02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_s05_dalton_v04.mp4` (HOS checkout on the mini), sha256 8ce07a60569707f689c7d90e06826493bf7a40e5c3c3a4a05216d6a48dbb082c (re-verified by Chief 29 Oct 20:45); meta `hos_004_s05_dalton_v04_meta.json`; review copy HOS UAT/J1200_J0966_review_2026-10-29/hos_004_s05_dalton_v04_PHONE.mp4 (J1200). Evidence: J0966 history, J1005 audio QA, J1200.\nAirs Mon 16 Nov 11:30 London. Only this one Short: the other two J0966 cuts still waiting (x_3L_IdYgEc, 4WUs0beKn0A) wait on Ben; don't touch them. Same flow as J1219.\n\n1. Read back the old id -sa2t7dAtCk (privacy, publishAt, title, description, tags, cover, Related). It should be Private and scheduled for 16 Nov 11:30; otherwise park for Chief.\n2. Verify the master sha256, then upload it as a NEW Private video with the same publishAt. Copy title, description, tags, frame-0 cover and Related (the 004 long) from the old id. Captions en-GB from the v04 meta spoken text.\n3. Only after step 2 reads back Private + correct publishAt: set the old id to private and unscheduled. Nothing deleted, no Replace.\n4. Verify the swap (verify-swap.ts --job <this job> --old -sa2t7dAtCk --new <new>), update HOS UPLOADS.json (incl. Buffer entries), gate_shorts_open status, and any queued jobs that name -sa2t7dAtCk to the new id; post the read-back on HOS desk #180.\nDone by 20:00 London Sun 15 Nov; if it fails after that, leave the original scheduled and park for Chief. Never Public, no Replace, no delete, no force-push. GBP0.\n",
+      "ref": "6507810925",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-29T20:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-29T20:41Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-10-29T20:41Z",
+          "by": "chief",
+          "what": "approved by Ben: swap -sa2t7dAtCk (Dalton) to hos_004_s05_dalton_v04 (sha 8ce07a605697); J1200 playable PHONE v04 (asked in J0966)"
+        }
+      ],
+      "remaining_action": "Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30)",
+      "due": "2026-11-15T20:00:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "swap -sa2t7dAtCk (Dalton) to hos_004_s05_dalton_v04 (sha 8ce07a605697); J1200 playable PHONE",
+        "file": "HOS UAT/J1200_J0966_review_2026-10-29/hos_004_s05_dalton_v04_PHONE.mp4",
+        "version": "v04",
+        "airs": "2026-11-16T11:30Z",
+        "title": "Dalton HC v04",
+        "number": "004",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J0966",
+        "askId": "J0966.2",
+        "okAt": "2026-10-29T20:41Z",
+        "okRef": "6507810925"
       }
     }
   ],

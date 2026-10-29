@@ -54,6 +54,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1218 | mini | open | – | – | 008 edit · assembly · HOS 008: repair J1213 rough v01 picture failures into diagnostic v02 |  |
 | J1220 | mini | claimed | cursor | 2026-10-29T22:29Z | assembly · J1212 Ben changes: Uranus Short v06 -> v07, steady the shaky image at 0:00, gates, park for Chief |  |
+| J1221 | mini | open | – | – | studio · Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30) | 6507810925 |
 
 Recently finished:
 
