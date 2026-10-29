@@ -104867,9 +104867,14 @@
           "at": "2026-10-29T08:01Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected 05_Analytics/owb/snapshots/2026-10-29.json and 05_Analytics/live_fixes/2026-10-29.md; identified top 10 public videos (gJwNJN_yMKU, 1OCNzhkiBuc, OVLv9dxTcpE, VBaYRPp85Sw, vlkj8RQKmH8, 2e-giqFmfy8, 82Ao0v5XiQI, m09jUdwC5hk, n_4XskX0yZk, lbW2iQ9YvqA)"
+        },
+        {
+          "at": "2026-10-29T08:02Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified live watch and Shorts endpoints at 2026-10-29T08:02Z: all 10 live public videos pass chapters, sources, end screens, and Related checks; _a66uhRDips still LOGIN_REQUIRED ahead of 11:30Z"
         }
       ],
-      "remaining_action": "Verify snapshot and live YouTube endpoints for last 10 public videos",
+      "remaining_action": "Update 05_Analytics/live_fixes/2026-10-29.md with J1185 verification",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -104882,11 +104887,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-29T08:01Z",
+        "at": "2026-10-29T08:02Z",
         "by": "gemini",
-        "note": "Inspected 05_Analytics/owb/snapshots/2026-10-29.json and 05_Analytics/live_fixes/2026-10-29.md; identified top 10 public"
+        "note": "Verified live watch and Shorts endpoints at 2026-10-29T08:02Z: all 10 live public videos pass chapters, sources, end scr"
       },
       "taskKeys": [
         "OWB:021",
