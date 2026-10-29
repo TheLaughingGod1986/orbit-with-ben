@@ -1,0 +1,99 @@
+{
+  "ok": true,
+  "dryRun": true,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": false,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-12-02T11:30:00.000Z",
+    "platformPostId": null,
+    "platformUrl": null,
+    "message": "Dry-run complete. Would upload now with publishAt=2026-12-02T11:30:00.000Z.",
+    "responseSummary": "{\"title\":\"Is a Star Really Coming Towards Us?\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-12-02T11:30:00.000Z\",\"madeForKids\":false,\"containsSyntheticMedia\":true,\"categoryId\":\"28\",\"contentFormat\":\"shorts\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/11_Upload-Package/v04-J1103",
+    "sha256": "0eb18596d2d6fb0edb8e885782fa9bd94bfe4965fc882c9f70b6f3317de2de97",
+    "title": "Is a Star Really Coming Towards Us?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 7,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/wed02_opening_testA/11_Upload-Package/v04-J1103/cover.jpg",
+    "scheduledAt": "2026-12-02T11:30:00.000Z",
+    "sources": {
+      "manifest": "/private/tmp/J1103-wt/jobs/readbacks/J1103/package/PACKAGE_MANIFEST.json",
+      "video": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/028_short_wed02_opening_testA_v04/028_short_wed02_opening_testA_v04.mp4",
+      "thumbnail": "/private/tmp/J1103-wt/jobs/readbacks/J1103/package/cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "studioFinish": {
+    "videoId": null,
+    "studioEditUrl": null,
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title \u00b7 description \u00b7 tags \u00b7 schedule \u00b7 video",
+        "detail": "Run package upload first"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only \u2014 no official Data API pin endpoint"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to F-jImX5h7ws (its own full film). No new Short pins."
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only \u2014 subscribe + best next video"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "Package resolved; upload not run yet."
+  }
+}
