@@ -105271,10 +105271,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-10-29T09:25Z",
-      "eta": "2026-10-29T11:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:35Z",
       "result": "",
@@ -105363,6 +105363,11 @@
           "at": "2026-10-29T09:46Z",
           "by": "gemini",
           "what": "step 2 of 7 done: 13/101 Flow rows KEEP (6/6 priority + 7 Part 01: 01_kite_open..04_storm_mystery UAT verified; spent 410 / 6,500, live Flow 20,460, rem_expected 4,628, buffer 15,832 >= 3,000; checkpoint 03d71de3)"
+        },
+        {
+          "at": "2026-10-29T09:46Z",
+          "by": "gemini",
+          "what": "released: 13/101 Flow rows KEEP (6/6 priority overlay plates + 7 Part 01 rows 01_kite_open, 01_kite_open_c1, 02_tower_tilt, 03_table_three, 03_table_three_c1, 03b_town_safe, 04_storm_mystery UAT verified; spent 410 / 6,500 cap, live Flow 20,460, rem_expected 4,628, buffer 15,832 >= 3,000; checkpoint gemini/j1191-008-flow-mint @ 03d71de3). Part 01 batch (--until-part 01) still running detached in tmux session j1191-render; log: /Users/benjaminoats/_desk/logs/j1191-render.log; done file: /Users/benjaminoats/_desk/logs/j1191-render.done"
         }
       ],
       "remaining_action": "Mint remaining Part 01 Flow rows in tmux j1191-render (8/22 Part 01 KEEP, 05_split_tree running), then Parts 02-05",
