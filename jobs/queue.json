@@ -106656,13 +106656,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-29T15:55Z",
-      "eta": "2026-10-29T17:55Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
-      "result": "",
+      "result": "Chief review COMPLETE: PR350 merged, CI PASS. All 18 hashes verified; submitted MEO crops rejected (remaining reticles and inadequate subject presentation). S6 input absent. Bounded research complete; no source/cut PASS. External input hold only: new materially different clean sequential meteor/Titan candidate with full provenance and aspect-correct <=2.35x crop. No repeat broad search, render or publishing; scheduled-copy fallback stands. Ruling jobs/reviews/J1208/MEO_FINAL_RULING_2026-10-29.md.",
       "history": [
         {
           "at": "2026-10-29T14:17Z",
@@ -106748,6 +106748,11 @@
           "at": "2026-10-29T15:55Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-29T15:55Z",
+          "by": "codex",
+          "what": "blocked: Chief review COMPLETE: PR350 merged, CI PASS. All 18 hashes verified; submitted MEO crops rejected (remaining reticles and inadequate subject presentation). S6 input absent. Bounded research complete; no source/cut PASS. External input hold only: new materially different clean sequential meteor/Titan candidate with full provenance and aspect-correct <=2.35x crop. No repeat broad search, render or publishing; scheduled-copy fallback stands. Ruling jobs/reviews/J1208/MEO_FINAL_RULING_2026-10-29.md."
         }
       ],
       "remaining_action": "parked for Chief source decision on MEO rejection",
@@ -106760,6 +106765,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Chief review COMPLETE: PR350 merged, CI PASS. All 18 hashes verified; submitted MEO crops rejected (remaining reticles and inadequate subject presentation). S6 input absent. Bounded research complete; no source/cut PASS. External input hold only: new materially different clean sequential meteor/Titan candidate with full provenance and aspect-correct <=2.35x crop. No repeat broad search, render or publishing; scheduled-copy fallback stands. Ruling jobs/reviews/J1208/MEO_FINAL_RULING_2026-10-29.md.",
+        "check_at": "2026-10-29T21:55:50+00:00"
       }
     }
   ],
