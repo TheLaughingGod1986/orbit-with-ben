@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1192 | mini | open (after J1191) | – | – | 009 picture · for gemini · video · `flow-veo-3.1` · HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354) |  |
 | J1193 | mini | open | – | – | for gemini · review · HOS 008: review the 11 J0329 code graphics in motion against the locked VO, park for Chief |  |
 | J1194 | mini | open | – | – | for gemini · listing · `gemini-argon` · Apply the 28 Oct description sweep fixes to the repo description files (text only) |  |
-| J1195 | macbook | open | – | – | listing · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
+| J1195 | mini | open | – | – | for gemini · listing · `gemini-argon` · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
 | J1196 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1197 | mini | open | – | – | 030 upload · listing · Apophis Short gJwNJN_yMKU: fix misleading 'Watch the full film' line (Venus link stays, wording only) |  |
 | J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
