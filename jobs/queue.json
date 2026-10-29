@@ -105703,10 +105703,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T10:39Z",
+      "eta": "2026-10-29T12:39Z",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
       "result": "",
@@ -105775,6 +105775,11 @@
           "at": "2026-10-29T10:37Z",
           "by": "cursor",
           "what": "released: Uranus v02 PASS (sha256 fd6bfec832bfa84d951c6e8ac2deff6c07ada71a9025e06deb2d8affc0b6f314) in OWB UAT + NAS standalone_shorts_uranus_v02. s5+s6 v02 re-render DETACHED: tmux J1199-s5s6, logs ~/_desk/logs/J1199-s5-render.log + J1199-s6-render.log, sentinel ~/_desk/logs/J1199-s5s6-render.done (ALL_DONE). Prior s5 failed scale_card (fixed); prior s6 failed f0diff/loudness (open pan/zoom amped). Next run: if .done missing leave tmux; if present read exit codes, fix any FAIL, deliver UAT/NAS, park for Chief. No upload."
+        },
+        {
+          "at": "2026-10-29T10:39Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for tmux J1199-s5s6 (.done); verify s5+s6 gates; park all three for Chief",
