@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
 | J1190 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1191 | mini | claimed | gemini | 2026-10-29T15:00Z | 008 picture · for gemini · video · `flow-veo-3.1` · HOS 008 picture: mint the Flow rows of PICTURE_PLAN_v03 (live read first, keep >=3,000 after; cap 5,605 expected) |  |
+| J1191 | mini | open | – | – | 008 picture · for gemini · video · `flow-veo-3.1` · HOS 008 picture: mint the Flow rows of PICTURE_PLAN_v03 (live read first, keep >=3,000 after; cap 5,605 expected) |  |
 | J1192 | mini | open (after J1191) | – | – | 009 picture · for gemini · video · `flow-veo-3.1` · HOS 009 picture tranche 1: mint the Flow parents + Fast plates of boards v04 (live read first, keep >=3,000 after; expected 7,354) |  |
 | J1193 | mini | open | – | – | for gemini · review · HOS 008: review the 11 J0329 code graphics in motion against the locked VO, park for Chief |  |
 | J1195 | macbook | blocked | macbook | – | listing · OWB 031 + 032: draft upload packages from the locked scripts (titles, descriptions, chapter names, tags) |  |
