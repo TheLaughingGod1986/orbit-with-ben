@@ -103550,10 +103550,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-29T06:50Z",
+      "eta": "2026-10-29T07:50Z",
       "created_by": "refill",
       "created_at": "2026-10-29T05:51Z",
       "result": "",
@@ -103602,6 +103602,11 @@
           "at": "2026-10-29T06:50Z",
           "by": "codex",
           "what": "reopened: Acting-Chief Codex ruling: ACCEPT J1170 technical inventory sweep as complete. Independently verified OWB/HOS byte-identical inventory 20fcb4a840e6 and report cef7f29ec219, 157 entries (91 OWB/66 HOS), all 452 applicable sidecars readable/fresh with no failure indicators, four newest candidate media hashes, and zero newer renders in both project trees and desk renders. This is not creative, listening, warning clearance or upload approval. Follow-up remains J1100: verify live subscription credits at 2026-10-30T10:50:00Z, authorized S2/S5 pickups and S2 instrumental bed fix, repair S6 v06 whole-loop FAIL 9.26 versus required <2, rerun gates and obtain final review. Preserve all HELD_CHANGES_REQUIRED, credit/date/Ben holds; no duplicate fix jobs, no spend. Release only this completed audit for administrative closure."
+        },
+        {
+          "at": "2026-10-29T06:50Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park J1170 for Chief review",
@@ -103628,7 +103633,15 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T06:50Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1171",
