@@ -106081,10 +106081,24 @@
           "at": "2026-10-29T10:08Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-29T12:41Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model",
-      "kind": "qa"
+      "kind": "qa",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1202",
