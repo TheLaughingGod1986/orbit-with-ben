@@ -106630,10 +106630,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-29T15:19Z",
+      "eta": "2026-10-29T17:19Z",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
       "result": "",
@@ -106682,11 +106682,24 @@
           "at": "2026-10-29T14:59Z",
           "by": "codex",
           "what": "remaining action: Check genuine MEO meteor onset and clean crop; return source evidence by 30 Oct 18:00Z (PR349); Titan input remains held in J1199"
+        },
+        {
+          "at": "2026-10-29T15:19Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check genuine MEO meteor onset and clean crop; return source evidence by 30 Oct 18:00Z (PR349); Titan input remains held in J1199",
       "due": "2026-10-30T18:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-29T15:19Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
