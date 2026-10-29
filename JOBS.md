@@ -43,10 +43,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1131 | mini | blocked | codex | – | studio · HOS 004: later title-only test after current thumbnail test ends (GHZDsiH7L7A) |  |
 | J1132 | mini | blocked | claude | – | for codex · studio · `gpt-6.1-sol` · HOS 001: later title-only test after current thumbnail test ends (frP_YrNShsU) |  |
 | J1133 | mini | blocked | codex | – | studio · Compilation: title-only Test & Compare after T018 thumbnail test ends |  |
-| J1186 | any | claimed | gemini | 2026-10-29T09:06Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1186 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1185 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1184 done: Chief: verify condition for J0966 (Verified current thread and board evidence: no Ben HC swap OK. J0966 remains blocked at worker 5/5; retry 29 Oct 08:41:58Z with recheck J1184. HOS-007 approval is long master J0925 only. Playable UAT/cards remain unverified; next is delivery verification then swap approval. HOS desk 6490991603 and OWB 6490993996 posted. No rebuild, spend or YouTube changes.)
 - J1183 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T07:57Z on 26 public + 14 scheduled HOS videos (HOS 00_Brand/Channel-Setup/audits/live_fixes/2026-10-29.md, 9f0f5a7c; 0 new fixes needed))
@@ -56,4 +56,3 @@ Recently finished:
 - J1179 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 4 HOS longs; CTR hits vs 4%: OWB Jupiter -jmMROGoZCM 5.1% (1/11 reported), HOS Germs _C92tIJCk8A 7.1% (1/3 reported). 73 OWB + 21 HOS Shorts: stayed-to-watch 94/94, average percentage 72/94; 2 newest Shorts have no lifetime totals yet. Main 022575da5; tracker published ef66caf7 and byte-verified. HOS audit: 4 duplicate-live errors on repeated uU12JA5rMWg records; no Studio settings changed.)
 - J1178 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (acting Chief (Claude) PASS: QA sweep recorded (OWB e223dcbcc, HOS cb62fbaa), 0 new renders since J1170, 0 FAIL. The sweep now runs every 72 h (backlog both-qa-sweep).)
 - J1177 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (Read-only listing check PASS at 2026-10-29T06:55Z on last 10 public OWB videos (05_Analytics/live_fixes/2026-10-29.md, 0 fixes needed))
-- J1176 done: Chief: verify condition for J0966 (Verified J0966 approval history and fresh OWB/HOS/board evidence: no Ben swap OK for HC four replacements. J0966 blocked, worker 5/5 retained, original recorded retry 29 Oct 07:40:36Z kept with recheck J1176. HOS desk report posted; playable UAT/cards remain unverified after prior delivery error. No rebuild, upload, schedule change or spend.)
