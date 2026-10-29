@@ -107924,17 +107924,22 @@
           "at": "2026-10-29T20:06Z",
           "by": "cursor",
           "what": "step 3 of 7 done: killed bad 618s trim (input-seek bug); fixed filter_complex trim; tmux j1218-render --resume-join from SAFE pretrim 557.8s; J1193 still open"
+        },
+        {
+          "at": "2026-10-29T20:17Z",
+          "by": "cursor",
+          "what": "step 3 of 7 done: filter_complex trim encoding on NAS (~147MB building.mp4 growing); prior 618s bug fixed; parts 1-5 reused"
         }
       ],
-      "remaining_action": "Wait for fixed pause-trim resume-join gates+deliver on NAS scratch",
+      "remaining_action": "Wait for resume-join encode+gates+deliver; then PR evidence and park for Chief (J1193 still open)",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 3,
         "of": 7,
-        "at": "2026-10-29T20:06Z",
+        "at": "2026-10-29T20:17Z",
         "by": "cursor",
-        "note": "killed bad 618s trim (input-seek bug); fixed filter_complex trim; tmux j1218-render --resume-join from SAFE pretrim 557."
+        "note": "filter_complex trim encoding on NAS (~147MB building.mp4 growing); prior 618s bug fixed; parts 1-5 reused"
       },
       "taskKeys": [
         "HOS:008"
