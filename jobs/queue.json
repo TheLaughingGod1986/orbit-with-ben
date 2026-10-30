@@ -1,5 +1,5 @@
 {
-  "next_id": 1277,
+  "next_id": 1278,
   "jobs": [
     {
       "id": "J0001",
@@ -114042,6 +114042,34 @@
       "taskKeys": [
         "HOS:002"
       ]
+    },
+    {
+      "id": "J1277",
+      "title": "Facebook Reels post as 'Untitled Video': send the Reel title through Buffer (+ readback on the Apophis Reel)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 30 Oct: the Apophis Short's Facebook Reel (29 Oct) has 214K views, 1,721 interactions and 428 follows, but Meta lists it and the Venus Reels as 'Untitled Video'. Cause: 07_Content-Ops/src/lib/publishing/buffer-mirror.ts sends facebook metadata { type: 'reel' } only; no Reel title. 1) Introspect Buffer's API on the Mini (it has the token; never print it) for a Facebook Reel title field in createPost metadata. 2) If it exists, set it to the YouTube title (or social.hook) for Facebook Reels, with a test in the buffer-mirror tests, and open an OWB PR (CI green; Claude reviews and merges). If Buffer has no such field, say so with the schema evidence and stop. Don't hand-edit live Facebook posts and don't re-post anything. 3) Report the Apophis Reel's text as posted (does it carry the 'Full film' YouTube link? only 2 link clicks from 214K views). GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T17:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T17:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Facebook Reels post as 'Untitled Video': send the Reel title through Buffer (+ readback on the Apophis Reel)",
+      "kind": "listing"
     }
   ],
   "focus": [],
