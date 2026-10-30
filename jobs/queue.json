@@ -115290,16 +115290,21 @@
           "at": "2026-10-30T23:53Z",
           "by": "cursor",
           "what": "step 0 of 6 done: Source tails: ch00 last 10 ms -27.1 dBFS, ch02 last 10 ms -54.8 dBFS. Building v02a now."
+        },
+        {
+          "at": "2026-10-30T23:55Z",
+          "by": "cursor",
+          "what": "step 4 of 6 done: Checks: duration 582.440s exact. I -20.0 LUFS, peak -3.4. Null max abs 0. ch02 RMS -62.53 last sample 0. ch00 RMS -33.15 last sample 1. Not locked."
         }
       ],
-      "remaining_action": "Copy v02 parts into v02a and apply the 20 ms tail fades on ch00 and ch02",
+      "remaining_action": "Parked for Chief: ch00 tail fails the -50 dB and zero-sample checks",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 6,
-        "at": "2026-10-30T23:53Z",
+        "at": "2026-10-30T23:55Z",
         "by": "cursor",
-        "note": "Source tails: ch00 last 10 ms -27.1 dBFS, ch02 last 10 ms -54.8 dBFS. Building v02a now."
+        "note": "Checks: duration 582.440s exact. I -20.0 LUFS, peak -3.4. Null max abs 0. ch02 RMS -62.53 last sample 0. ch00 RMS -33.15"
       },
       "taskKeys": [
         "OWB:032"
