@@ -45,10 +45,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1244 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1248 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling) |  |
-| J1249 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1249 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 pass, no fixes. New Venus Short _a66uhRDips: Related pill = VBaYRPp85Sw, description matches its package. Report 05_Analytics/live_fixes/2026-10-30.md.)
 - J1247 done: HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green (Verified check_all.sh 009 ALL CHECKS PASS on HOS PR #377 head (f65645f6) and CI green (no-desk-close, no-media, status-board, Studio core check = SUCCESS, MERGEABLE/CLEAN); squash-merged HOS PR #377 (gemini/j1192-009-tranche1-flow-mint, J1192 tranche 1 records + J1237 motion evidence incl. P04:10 IN >= 1.083 s edit note) into history-of-science main at fa9c6c3c92a35b24518befaba74756050798ba5c, deleted the branch, pulled main, and verified check_all.sh 009 ALL CHECKS PASS on main. Desk #180 6519646714. No mint, no spend. GBP0.)
 - J1246 cancelled: Chief: verify condition for J1192 ()
 - J1245 done: Chief: verify condition for J0999 (Verified: J0999 condition unmet (HOS PR #365 draft, awaiting Ben's checker-fix OK via J0998). J0999 re-held to 31 Oct 09:00Z. Diff read: narrow dedup, no check removed.)
@@ -58,4 +58,3 @@ Recently finished:
 - J1240 done: Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX) (Chief review complete: FIX, NOT PASS. Ruling 860a2a718 (PR 353), jobs/reviews/J1240/CHIEF_RULING_2026-10-30.md. Temporal blending is not motion-compensated sampling; measured 3px step-change remains unexplained and 0.5px estimator cannot validate 0.25px target. iCloud/NAS final hash verified. Follow-up J1242 ready in assembly lane: validated prototype then v10, due 1 Nov 20:00 London. J1212 remains held, no card repoint; scheduled ZpEA8stoSPA unchanged. No external wait, spend or publishing.)
 - J1239 cancelled: Chief: verify condition for J0966 ()
 - J1238 done: Chief: verify condition for J1130 (Verified thumbnail-only test still running in live HOS Studio (two variants, estimated 12 days 20 hours). J1130 remains blocked; next check 2026-10-30 10:15 UTC. Evidence ~/_desk/handoff/J1238/hos_test_report.txt and .png. No YouTube settings changed.)
-- J1237 done: HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief (Acting Chief (Claude) 30 Oct: evidence accepted (review_J1192_motion on HOS PR #377 f65645f6; contact grids checked).)
