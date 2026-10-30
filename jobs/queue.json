@@ -105773,9 +105773,14 @@
           "at": "2026-10-30T09:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T09:46Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1190; starting step 1 of 3: read-only HOS Data API and package audit"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Run read-only HOS Data API and package audit (step 1 of 3)",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -105790,11 +105795,20 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-30T09:45Z",
+        "at": "2026-10-30T09:46Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1190; starting step 1 of 3: read-only HOS Data API and package audit"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008"
+      ]
     },
     {
       "id": "J1191",
