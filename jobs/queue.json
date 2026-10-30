@@ -27580,6 +27580,11 @@
           "at": "2026-10-30T10:55Z",
           "by": "relay",
           "what": "condition verification queued: J1255"
+        },
+        {
+          "at": "2026-10-30T14:51Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T20:51:00Z"
         }
       ],
       "kind": "vo",
@@ -27591,15 +27596,14 @@
         "by": "cursor",
         "note": "dry-run 7765 chars; 119 left"
       },
-      "remaining_action": "Record locked Magnetic Field Flip v03 VO after Titan and verified sufficient renewed credit",
+      "remaining_action": "Record locked 031 v03 VO after Titan J0302 is served and a fresh sufficient-credit check",
       "hold": {
         "type": "input",
-        "condition": "Live ElevenLabs credit must cover locked 031 v03 (7765 characters) after priority Titan J0302 (7879 characters) is served. API 2026-10-30T00:44:41Z: only 114 remaining, reset 10:50:31Z; date alone is not proof. Evidence jobs/readbacks/J1230.json.",
-        "check_at": "2026-10-30T11:55:20+00:00",
-        "last_recheck": "J1230",
-        "checked_at": "2026-10-30T00:45:13+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1255"
+        "condition": "Priority Titan J0302 must be served first (currently open); then live ElevenLabs balance must still cover locked 031 v03 at 7765 characters. API 2026-10-30T14:50:53Z confirms restored active balance of 121114; credit reset itself is satisfied. Evidence jobs/readbacks/J1255.json, b842ca945.",
+        "check_at": "2026-10-30T20:51:00Z",
+        "last_recheck": "J1255",
+        "checked_at": "2026-10-30T14:51:46+00:00",
+        "checked_by": "codex"
       }
     },
     {
