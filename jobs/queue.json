@@ -108568,20 +108568,25 @@
           "at": "2026-10-30T02:30Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T02:30Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: claimed; starting ruling read"
         }
       ],
-      "remaining_action": "Detached asm v03 running (parts 2–5 + join + gates); next run checks .done",
+      "remaining_action": "Read Chief rulings + J1193 findings; inventory HOS 008 v02 state",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 6,
-        "at": "2026-10-30T02:20Z",
+        "at": "2026-10-30T02:30Z",
         "by": "cursor",
-        "note": "Fixed NameError + NAS mux hang; part01 105.42s DONE; tmux j1218-asm-v03; PR379"
+        "note": "claimed; starting ruling read"
       }
     },
     {
