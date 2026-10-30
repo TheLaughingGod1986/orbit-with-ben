@@ -115124,10 +115124,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T21:21Z",
+      "eta": "2026-10-31T00:21Z",
       "created_by": "chief",
       "created_at": "2026-10-30T20:59Z",
       "result": "",
@@ -115166,6 +115166,11 @@
           "at": "2026-10-30T21:20Z",
           "by": "cursor",
           "what": "released: Master v01 is built. Do not start a second music take (lightning008_score_bed_v01.mp3, song XV6uI76yzdLON8PmTVwC, 7425 credits). Do not start a second gate run. tmux j1287-gates is running polish_gate, picture_qa, music_gate and gate:episode. Log /Users/benjaminoats/_desk/logs/J1287-gates.log and done file /Users/benjaminoats/_desk/logs/J1287-gates.done. Missing done file means still running. Master sha256 aa7f15bcc731447ea84bde03d07ee139c7281bacb0607015530e6666964e4e53. Local precheck and NAS desk _desk/008/master_v01. Video MD5 matches v12, 12923 packets, -14.1 LUFS, -1.4 dBTP, A/V offset 0.001479 s. REVIEW_master_v01.md is in 07_Edit-Project/master_v01. Next: read the gate results, package-lint (chapters unchanged), open the HOS evidence PR, and park for Chief. Do not merge PR 385."
+        },
+        {
+          "at": "2026-10-30T21:21Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Gates are running in tmux j1287-gates; then park the master for Chief",
