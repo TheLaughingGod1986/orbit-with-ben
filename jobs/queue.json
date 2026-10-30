@@ -113097,9 +113097,14 @@
           "at": "2026-10-30T16:39Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J1266; starting inspection of HOS 009 and 010 files"
+        },
+        {
+          "at": "2026-10-30T16:42Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Inspected 004-008 descriptions, PR #387/#388, and 009/010 FACT_NOTES_v01.md + VO_TAKES_KEEP.json + wav durations"
         }
       ],
-      "remaining_action": "Inspect HOS 004-007 descriptions, 009/010 FACT_NOTES_v01.md, VO_TAKES_KEEP.json, and lint:package rules",
+      "remaining_action": "Compute provisional Chapters and draft Sources blocks for HOS 009 and 010 long descriptions",
       "due": "2026-11-18T20:00:00Z",
       "kind": "listing",
       "rerouted_from": {
@@ -113112,11 +113117,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-30T16:39Z",
+        "at": "2026-10-30T16:42Z",
         "by": "gemini",
-        "note": "Claimed J1266; starting inspection of HOS 009 and 010 files"
+        "note": "Inspected 004-008 descriptions, PR #387/#388, and 009/010 FACT_NOTES_v01.md + VO_TAKES_KEEP.json + wav durations"
       },
       "taskKeys": [
         "HOS:009",
