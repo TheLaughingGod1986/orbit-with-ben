@@ -111377,10 +111377,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T08:53Z",
-      "eta": "2026-10-30T10:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T07:54Z",
       "result": "",
@@ -111464,6 +111464,11 @@
           "at": "2026-10-30T09:07Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Ten splice segments are in. Master copy is on the NAS. Gates run next."
+        },
+        {
+          "at": "2026-10-30T09:13Z",
+          "by": "cursor",
+          "what": "released: tmux j1248-v05fix still running _swap_rough_v05.py (contact sheet ~frame 74/112, then polish_gate and picture_qa). Log ~/_desk/logs/j1248-v05fix.log. Done file ~/_desk/logs/j1248-v05fix.done is absent while it runs: do not start a second copy. Worktree /private/tmp/j1248-hos008-cg-v04-wt branch cursor/j1248-hos008-cg-v04. When the done file is 0: confirm gates PASS and runtime <=540s, confirm sha256 copies at precheck, HOS UAT and NAS, commit the v04 scripts plus evidence (jpg forced; no mp4), push the HOS PR, then park for Chief: graphics + composite PASS. No music bed, no Ben watch, no upload. The three corrected rows are already in the master: rod spark on the roof tip, Paris in the sky off the rigging, three beats on the card."
         }
       ],
       "remaining_action": "Splice is copying the new rough v05 master, then gates and delivery",
