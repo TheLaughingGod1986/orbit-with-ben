@@ -44,6 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1244 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1248 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling) |  |
+| J1250 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
