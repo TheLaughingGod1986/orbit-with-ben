@@ -83813,13 +83813,13 @@
       "stage": "",
       "after": "J1005",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-30T00:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "parked for Chief: all 4 J0966 local HC re-cuts verified on disk + NAS (Jenner v04 3ef3fa773750, Harvey v04 e1f862ba737a, Dalton v04 8ce07a605697, vaccine-name v05 e5ea76f012fb), Chief PASS (J1083) + J1200 delivery + all 4 Ben swap OKs (6507268470, 6507810925, 6507831644, 6508107852) complete, and Studio swaps delegated to J1219 (done), J1223 (done), J1221 (open), J1222 (open); ready for Chief to mark J0966 done",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -84303,6 +84303,11 @@
         {
           "at": "2026-10-30T00:36:31Z",
           "what": "J1221: retarget from -sa2t7dAtCk to xzKoHg0E0_U (v04 swap; old Private+unscheduled)"
+        },
+        {
+          "at": "2026-10-30T01:33Z",
+          "by": "codex",
+          "what": "reopened: J1234 verified: predecessor J1005 done; corrected delivery 8df16983 and J1200 complete. Claude acting-Chief handoff 6483600719 checked live. All four Ben exact-cut approvals checked live on HOS #180: 6507268470 Jenner v04 3ef3fa773750, 6507810925 Dalton v04 8ce07a605697, 6507831644 vaccine-name v05 e5ea76f012fb, 6508107852 Harvey v04 e1f862ba737a. Gemini verified disk/NAS 2026-10-30 00:30Z. All delegated swaps now done: J1219 cLKDiYP55J8, J1221 xzKoHg0E0_U, J1222 xgx2lYHhYZM, J1223 Wvjd8g0CpzE. Clear stale dependency hold for administrative closeout only; no rebuild or duplicate swap. Preserve worker 5/5. Dalton Related Studio remains separately noted in J1221. No new upload, spend or schedule permission."
         }
       ],
       "kind": "video",
@@ -84339,19 +84344,6 @@
         "title": "Harvey never saw HC v04",
         "number": "005",
         "type": "short"
-      },
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-30T00:30Z",
-        "by": "gemini",
-        "note": "Verified 4 local masters + 12 NAS copies SHA256; all 4 Ben OKs recorded; swaps in J1219/J1223 (done) & J1221/J1222 (open"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-30T01:31:33+00:00",
-        "recheck_task": "J1234"
       }
     },
     {
