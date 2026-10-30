@@ -106820,13 +106820,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T07:27Z",
-      "eta": "2026-10-30T09:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "",
+      "result": "Waiting for: Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended (no longer 'Test running…' / estimated remaining); A/B test report shows final watch-time shares",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -106847,9 +106847,19 @@
           "at": "2026-10-30T07:31Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Studio CDP 9223: T011 still Test running, estimated 9d 16h left (~2026-11-08 23:30Z). Evidence ~/_desk/handoff/J1198/. No arm, no privacy/title change."
+        },
+        {
+          "at": "2026-10-30T07:31Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended (no longer 'Test running…' / estimated remaining); A/B test report shows final watch-time shares"
+        },
+        {
+          "at": "2026-10-30T07:31Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-09T00:30:00Z"
         }
       ],
-      "remaining_action": "Wait for T011 end in Studio; then record ledger and arm next test per rules 12-13",
+      "remaining_action": "After T011 ends: record T011 result in THUMB_LEDGER.json; keep winner thumb; arm title-only or new 465C thumb test per rules 12-13 (park for Ben if Studio warns deleting ended report)",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -106860,7 +106870,12 @@
       },
       "taskKeys": [
         "OWB:023"
-      ]
+      ],
+      "hold": {
+        "type": "test",
+        "condition": "Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended (no longer 'Test running…' / estimated remaining); A/B test report shows final watch-time shares",
+        "check_at": "2026-11-09T00:30:00Z"
+      }
     },
     {
       "id": "J1199",
