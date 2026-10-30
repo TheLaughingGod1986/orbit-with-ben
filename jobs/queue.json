@@ -97808,10 +97808,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-30T15:13Z",
+      "eta": "2026-10-30T17:13Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
       "result": "",
@@ -98025,6 +98025,11 @@
           "at": "2026-10-30T14:42Z",
           "by": "codex",
           "what": "reopened: J1253 verified at 2026-10-30T14:41:28Z: live ElevenLabs active Creator, 0/121114 used, 121114 remaining, extension flags false; next reset 30 Nov. Authorized S2/S5 text <=160 chars. Evidence PR356 commit4484866d8. Credit hold satisfied; reopen for repairs only under 29 Oct Chief ruling. Resume prior 2/3 plan (reopen clears displayed progress). S6 whole-loop9.26 FAIL remains; no waiver, music generation, upload or swap. Preserve all gates, Gemini listening, Chief review/Ben watch, deadlines and scheduled-v01 fallback. Worker must re-read balance under lock before each pickup and honor 20GB render guard (current7.4GB; NAS dry-run no eligible scratch)."
+        },
+        {
+          "at": "2026-10-30T15:13Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify reset/live credits, record authorized pickups, resolve v06 loop failure, finish gates and review delivery",
@@ -98043,7 +98048,15 @@
         "OWB:028"
       ],
       "escalated_at": "2026-10-28T22:00Z",
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T15:13Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1101",
