@@ -32,7 +32,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J0998 | mini | blocked | gemini | – | assembly · HOS audit: reproduce playlist boundary duplicate and draft narrow dedup fix | 6428572814 |
 | J0999 | mini | blocked | gemini | – | studio · HOS 099: compilation end screen and altered-content readback | 6428572814 |
-| J1003 | mini | claimed | gemini | 2026-10-30T07:27Z | for gemini · review · `gemini-argon` · Earth Short OVLv9dxTcpE: mature 48-hour measurement (J0985 follow-up) |  |
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
