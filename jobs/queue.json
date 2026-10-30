@@ -27685,19 +27685,26 @@
           "at": "2026-10-30T19:31Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T19:32Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Chief h18 cleared Titan-first. J0302 ch02 retake already parked for Chief."
         }
       ],
       "kind": "vo",
       "model": "eleven_v3",
-      "remaining_action": "Record locked 031 v03 VO after Titan J0302 is served and a fresh sufficient-credit check",
+      "remaining_action": "Dry-run locked 031 v03 and read ElevenLabs balance",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T19:31Z",
+        "of": 4,
+        "at": "2026-10-30T19:32Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Chief h18 cleared Titan-first. J0302 ch02 retake already parked for Chief."
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J0346",
