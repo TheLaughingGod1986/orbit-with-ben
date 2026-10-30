@@ -107984,9 +107984,14 @@
           "at": "2026-10-29T22:11Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-30T01:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T15:00:00Z"
         }
       ],
-      "remaining_action": "FIX ruled by Codex: J1218 repairs rough v02; J1193 graphics review required; no Ben watch until gates and Chief PASS",
+      "remaining_action": "Held for J1218 v03 repairs and J1193 graphics approval; music/SFX unfinished",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -108001,8 +108006,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Chief ruling FIX / NOT APPROVED: rough v01 fails picture_qa and polish_gate; no Ben watch. J1218 must deliver repaired v02 with unchanged picture gates passing and J1193 must deliver graphics findings before Chief re-review. Missing music remains unfinished, SKIPPED_NO_BED is not PASS.",
-        "check_at": "2026-10-30T07:15:00Z"
+        "condition": "FIX / NOT APPROVED: J1218 must deliver separate compliant v03; v01/v02 remain held. J1193 findings exist in PR378 and must be incorporated; formal graphics approval is still required. Music/SFX unfinished; no Ben watch.",
+        "check_at": "2026-10-30T15:00:00Z"
       },
       "escalated_at": "2026-10-29T22:11Z"
     },
