@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | open | – | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1277 | mini | open | – | – | for gemini · listing · `gemini-argon` · Facebook Reels post as 'Untitled Video': send the Reel title through Buffer (+ readback on the Apophis Reel) |  |
 | J1279 | mini | open | – | – | for gemini · script · `gemini-argon` · OWB: 3 Shorts in the Apophis mould (Facebook replication test), scripts + packaging, park for Chief |  |
-| J1280 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
+| J1280 | any | claimed | codex | 2026-10-30T20:42Z | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
