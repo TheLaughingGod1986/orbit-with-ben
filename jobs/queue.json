@@ -110540,17 +110540,22 @@
           "at": "2026-10-30T06:24Z",
           "by": "cursor",
           "what": "step 0 of 4 done: claimed; reading ruling"
+        },
+        {
+          "at": "2026-10-30T06:26Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: prior run left rough_v04 + evidence; gates FAIL, dur 549.5s"
         }
       ],
-      "remaining_action": "Read J1218 ruling; locate HOS 008 v02 builder + rough v03",
+      "remaining_action": "Verify v03 FIX pack + v04 deliverables; commit evidence; park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T06:24Z",
+        "at": "2026-10-30T06:26Z",
         "by": "cursor",
-        "note": "claimed; reading ruling"
+        "note": "prior run left rough_v04 + evidence; gates FAIL, dur 549.5s"
       },
       "taskKeys": [
         "HOS:008"
