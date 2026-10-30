@@ -113196,13 +113196,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T17:39Z",
-      "eta": "2026-10-30T19:39Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "",
+      "result": "parked for Chief: rough v10 graphics + composite, evidence 0cc892c8 on HOS PR 385, master 09d358442307823b. Composite worst 0.834, frame-diff 0.000 at 463.2/464/466/468.7 (same indexes), tip 10.5 px, polish and picture_qa 0 fail. No stage PASS. No UAT. No upload. GBP0.",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113323,6 +113323,11 @@
           "at": "2026-10-30T17:59Z",
           "by": "cursor",
           "what": "step 6 of 6 done: Evidence 0cc892c8 on HOS PR 385. Master 09d358442307823b. Composite 0.834, frame diff 0.000, tip 10.5 px, gates 0 fail."
+        },
+        {
+          "at": "2026-10-30T17:59Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: rough v10 graphics + composite, evidence 0cc892c8 on HOS PR 385, master 09d358442307823b. Composite worst 0.834, frame-diff 0.000 at 463.2/464/466/468.7 (same indexes), tip 10.5 px, polish and picture_qa 0 fail. No stage PASS. No UAT. No upload. GBP0."
         }
       ],
       "remaining_action": "Parked for Chief review of rough v10",
