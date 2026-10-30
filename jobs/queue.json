@@ -1,5 +1,5 @@
 {
-  "next_id": 1283,
+  "next_id": 1284,
   "jobs": [
     {
       "id": "J0001",
@@ -114545,6 +114545,36 @@
       "recheck_of": "J1130",
       "due": "2026-10-30T20:23:00+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1283",
+      "title": "Chief h21: move superseded HOS 008 /tmp scratch to NAS (mini ~3 GB free)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling h21 on OWB #264 (comment 6530515205). HIGH PRIORITY: mini ~3 GB free; move superseded HOS 008 /tmp scratch to NAS ahead of new renders. GBP0.\n\nSame NAS scratch destination as J1268: /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-30/ (create dated subfolder only if that day's folder is absent; never overwrite NAS content).\n\n1. Copy each folder to the NAS first (copy_verified, not shutil.copy2):\n   - /private/tmp/j1263-hos008-rough-v08 (superseded)\n   - /private/tmp/j1267-hos008-rough-v09 (VOID h18/h19)\n   - /private/tmp/j1267-hos008-rough-v10 (VOID h20)\n   - /private/tmp/j1267-seg-probe\n2. Leave in place: any j1267 rough v11 or v12 folder (live), j1267-pr385-v10-wt, J1131-hos-wt, and j1218-v03-wt (J1213 still blocked).\n3. For each moved folder: sha256 every file on both sides; match file count and total bytes. Remove the local copy only after all three match. Never delete or overwrite anything on the NAS. Never touch videos or project folders outside the listed /tmp scratch.\n4. Post free space before and after on OWB #264 with a [Chief] prefix. If free space is still under 10 GB, park for Chief and list the next-largest movable scratch.\n\nGBP0. Never print secrets.\n",
+      "ref": "6530515205",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T19:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T19:31Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Move superseded HOS 008 /tmp scratch to NAS; verify sha256; free space on #264",
+      "for": "cursor",
+      "kind": "assembly",
+      "urgent": 1
     }
   ],
   "focus": [],
