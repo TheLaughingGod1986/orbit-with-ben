@@ -111344,20 +111344,28 @@
           "at": "2026-10-30T09:55Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T09:57Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. NAS offload had nothing old enough (11 GB free). Starting Studio read."
         }
       ],
-      "remaining_action": "Read the latest Studio performance figures",
+      "remaining_action": "Read lifetime Studio analytics for every OWB and HOS film",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T09:55Z",
+        "of": 4,
+        "at": "2026-10-30T09:57Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. NAS offload had nothing old enough (11 GB free). Starting Studio read."
+      },
+      "taskKeys": [
+        "OWB:021",
+        "HOS:006"
+      ]
     },
     {
       "id": "J1245",
