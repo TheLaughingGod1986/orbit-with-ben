@@ -107377,16 +107377,21 @@
           "at": "2026-10-30T07:54Z",
           "by": "cursor",
           "what": "step 1 of 5 done: gap found: HOS channel-youtube afterUpload does not register; OWB does. Backfill mostly done; Chief marked ready-to-close after restore+schedule"
+        },
+        {
+          "at": "2026-10-30T07:56Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: worktrees ready; 3 mid-Oct Shorts lack verified local media for backfill; code gap is HOS afterUpload no-op"
         }
       ],
-      "remaining_action": "Wire HOS afterUpload to register --channel hos into OWB social/hos; update playbook text",
+      "remaining_action": "Implement HOS afterUpload register + playbook + tests + dry-run PR",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 5,
-        "at": "2026-10-30T07:54Z",
+        "at": "2026-10-30T07:56Z",
         "by": "cursor",
-        "note": "gap found: HOS channel-youtube afterUpload does not register; OWB does. Backfill mostly done; Chief marked ready-to-clos"
+        "note": "worktrees ready; 3 mid-Oct Shorts lack verified local media for backfill; code gap is HOS afterUpload no-op"
       },
       "taskKeys": [
         "HOS:006"
