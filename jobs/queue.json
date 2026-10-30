@@ -24123,13 +24123,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-30T19:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T16:34Z",
-      "result": "parked for Chief: Titan ch02-only retake titan_landing_vo_v02.wav sha 5316b02f08099449a20f5fc03a238fd9a55deded92fba2386ce92a2107cce56e, 582.44s, -20.0 LUFS, true peak -3.4 dBFS. ch02 107.68s (112.96-5.28, inside +/-6). Scribe ch02 99.19%: 'For seventy-two minutes' and 'out beside' hold; only fourteen/14 and centimetres/centimeters. Tail FAIL: final 50 ms mean -38.1 dB max -27.7 dB (bar below -40); final 150 ms mean -32.6 max -19.8, not near-silence. One attempt only, no second take, v01 untouched. Ledger over-log 7879; true counter_delta 635 (117448 to 116813). Metadata 6e19a0d12. No mux.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T16:34Z",
@@ -24265,6 +24265,11 @@
           "at": "2026-10-30T19:30Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Titan ch02-only retake titan_landing_vo_v02.wav sha 5316b02f08099449a20f5fc03a238fd9a55deded92fba2386ce92a2107cce56e, 582.44s, -20.0 LUFS, true peak -3.4 dBFS. ch02 107.68s (112.96-5.28, inside +/-6). Scribe ch02 99.19%: 'For seventy-two minutes' and 'out beside' hold; only fourteen/14 and centimetres/centimeters. Tail FAIL: final 50 ms mean -38.1 dB max -27.7 dB (bar below -40); final 150 ms mean -32.6 max -19.8, not near-silence. One attempt only, no second take, v01 untouched. Ledger over-log 7879; true counter_delta 635 (117448 to 116813). Metadata 6e19a0d12. No mux."
+        },
+        {
+          "at": "2026-10-30T21:00Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
         }
       ],
       "kind": "vo",
@@ -24272,14 +24277,7 @@
       "remaining_action": "Chief reviews the chapter 2 retake before any mux",
       "taskKeys": [
         "OWB:032"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-30T19:29Z",
-        "by": "cursor",
-        "note": "One ch02 attempt. Words fixed. Ending still audible in the final 50 ms. v01 untouched."
-      }
+      ]
     },
     {
       "id": "J0303",
