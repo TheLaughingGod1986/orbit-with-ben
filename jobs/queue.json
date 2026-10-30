@@ -1,5 +1,5 @@
 {
-  "next_id": 1278,
+  "next_id": 1279,
   "jobs": [
     {
       "id": "J0001",
@@ -108180,6 +108180,11 @@
           "at": "2026-10-29T15:55Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T18:00:00Z"
+        },
+        {
+          "at": "2026-10-30T18:00Z",
+          "by": "relay",
+          "what": "condition verification queued: J1278"
         }
       ],
       "remaining_action": "New eligible meteor/Titan footage required; Chief verifies 30 Oct 18:00Z, final deadline 5 Nov 12:00Z",
@@ -108196,7 +108201,8 @@
       "hold": {
         "type": "input",
         "condition": "PR350 decided: all submitted MEO openings rejected, S6 missing input. Elected Chief checks only newly supplied materially different eligible meteor/Titan footage with source/rights/hash/sequence/aspect-correct crop evidence. No new broad search. If absent, retain hold for final 5 Nov 12:00Z check; then close unsuccessful source branch and record existing scheduled-copy fallback. No automatic assembly, PASS or publishing.",
-        "check_at": "2026-10-30T18:00:00Z"
+        "check_at": "2026-10-30T19:00:28+00:00",
+        "recheck_task": "J1278"
       }
     },
     {
@@ -114080,6 +114086,37 @@
       ],
       "remaining_action": "Facebook Reels post as 'Untitled Video': send the Reel title through Buffer (+ readback on the Apophis Reel)",
       "kind": "listing"
+    },
+    {
+      "id": "J1278",
+      "title": "Chief: verify condition for J1208",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1208: PR350 decided: all submitted MEO openings rejected, S6 missing input. Elected Chief checks only newly supplied materially different eligible meteor/Titan footage with source/rights/hash/sequence/aspect-correct crop evidence. No new broad search. If absent, retain hold for final 5 Nov 12:00Z check; then close unsuccessful source branch and record existing scheduled-copy fallback. No automatic assembly, PASS or publishing.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1208 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T18:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T18:00Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: New eligible meteor/Titan footage required; Chief verifies 30 Oct 18:00Z, final deadline 5 Nov 12:00Z",
+      "kind": "chief",
+      "recheck_of": "J1208",
+      "due": "2026-10-30T18:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
