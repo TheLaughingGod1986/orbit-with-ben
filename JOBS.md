@@ -45,6 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1266 | mini | open | – | – | for gemini · listing · `gemini-argon` · HOS 009 + 010: add Sources and provisional Chapters to the long descriptions (Chief h13 on J1261) | 6521114044 |
 | J1267 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: P5:10 shorter clean hold (t1 frames 109-150) + 11_safe_path lead-in -> rough v09 (Chief h14 on J1263) | 6523423311 |
 | J1270 | mini | open | – | – | assembly · Restore Mini headroom for J1100 OWB 027/028 repairs; identify recurring growth |  |
+| J1271 | mini | open | – | – | 024 upload · studio · OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public |  |
 
 Recently finished:
 
