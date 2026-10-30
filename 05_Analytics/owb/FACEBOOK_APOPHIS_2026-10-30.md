@@ -34,7 +34,7 @@ Instagram and Threads got the OLD v05 cut on 28 Oct (Buffer can't swap media on 
 - Only 2 of 214K viewers clicked through to YouTube.
 - The Reels post as "Untitled Video" (J1277 is fixing that).
 
-## The replication test (J1278)
+## The replication test (J1279)
 
 - Make 3 more Shorts in the Apophis mould, £0 to script:
   - a real dated event or a "could it hit us / can I see it" question;
