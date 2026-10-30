@@ -11,6 +11,12 @@ def blank():
     return {"film": "027", "title": "", "air": "", "stages": {}, "claims": [], "next": ""}
 
 
+class Parse(unittest.TestCase):
+    def test_minute_and_second_stamps(self):
+        self.assertEqual(studio.parse("2026-10-26T08:47Z"), dt.datetime(2026, 10, 26, 8, 47, tzinfo=dt.timezone.utc))
+        self.assertEqual(studio.parse("2026-10-26T08:47:15Z"), dt.datetime(2026, 10, 26, 8, 47, 15, tzinfo=dt.timezone.utc))
+
+
 class Claims(unittest.TestCase):
     def test_claim_marks_doing(self):
         d = blank()
