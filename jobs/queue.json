@@ -1,5 +1,5 @@
 {
-  "next_id": 1258,
+  "next_id": 1259,
   "jobs": [
     {
       "id": "J0001",
@@ -112130,6 +112130,34 @@
       "remaining_action": "HOS 008: P3:04 composite + frame-exact splice/runtime -> rough v06 (Chief h07 on J1248)",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J1258",
+      "title": "HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS 007 Shorts records fix (Chief h09, re HOS #180 6521114044). Records only, £0, no YouTube changes.\n\nChief checked main (post #383, cb1b92ec): 02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORTS_UPLOAD_INDEX.json still lists the swapped-out cuts:\n- s04_smallpox_test: file 10_Shorts/hos_007_s04_smallpox_test_v01.mp4, video_id -I_GHK-GcFs. Live is cLKDiYP55J8, hos_007_s04_smallpox_test_v04.mp4 (J1219; s04_smallpox_test_v04/PACKAGE_MANIFEST.json youtubeId cLKDiYP55J8).\n- s05_vacca_jesty: file 10_Shorts/hos_007_s05_vacca_jesty_v02.mp4, video_id 4WUs0beKn0A. Live is xgx2lYHhYZM, hos_007_s05_vacca_jesty_v05.mp4 (J1222; s05_vacca_jesty_v05/PACKAGE_MANIFEST.json youtubeId xgx2lYHhYZM).\n\nDo:\n1. Repoint both rows (file, video_id, youtube_video_id, url, and any scheduled time/atempo/sha fields) to the live v04/v05 ids and files. Keep the old ids on each row as superseded_by / superseded fields so history isn't lost.\n2. Check the old s04_smallpox_test/ and s05_vacca_jesty/ PACKAGE_MANIFEST.json media fields: mark them superseded (pointing to the v04/v05 packages) so nothing picks the old cut.\n3. Check 04_Audio/tools/fix_published_playback_lag.py and the 007 production-status.md still read correctly against the updated index (dry run only, no uploads).\n4. Open a HOS PR (docs/records only), CI green, and park it for Chief review with the PR link. Don't merge yourself.\nNo privacy/publishAt changes, no uploads, no Studio edits.\n",
+      "ref": "6521114044",
+      "film": "007",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T11:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T11:05Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05)",
+      "kind": "listing"
     }
   ],
   "focus": [],
