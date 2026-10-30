@@ -113313,20 +113313,25 @@
           "at": "2026-10-30T17:48Z",
           "by": "cursor",
           "what": "step 1 of 6 done: h19 re-splice. Alpha sha 53454827 and composite f8453cc7 are on disk. v09 left void. Full-film CRF 18 drifts past 1.0 vs the composite, so v10 replaces only the 93-frame GOP (42 plate + 29 lead-in + 22 keep) and stream-copies the rest of v08."
+        },
+        {
+          "at": "2026-10-30T17:54Z",
+          "by": "cursor",
+          "what": "step 3 of 6 done: Aligned video_start 0.125. Composite worst 0.834. Frame diff 0.000 at 463.2/464/466/468.7, same frame indexes. Tip worst 10.5 px. 12923 frames, A/V offset 0.0015s. Gates on the unaligned file are being re-run on the aligned master."
         }
       ],
-      "remaining_action": "Splice rough v10: J1273 alpha into code_graphics_v07, replace only the 93-frame GOP, then run gates",
+      "remaining_action": "Re-run gates on the timeline-aligned rough v10, then deliver and commit the evidence",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 6,
-        "at": "2026-10-30T17:48Z",
+        "at": "2026-10-30T17:54Z",
         "by": "cursor",
-        "note": "h19 re-splice. Alpha sha 53454827 and composite f8453cc7 are on disk. v09 left void. Full-film CRF 18 drifts past 1.0 vs"
+        "note": "Aligned video_start 0.125. Composite worst 0.834. Frame diff 0.000 at 463.2/464/466/468.7, same frame indexes. Tip worst"
       }
     },
     {
