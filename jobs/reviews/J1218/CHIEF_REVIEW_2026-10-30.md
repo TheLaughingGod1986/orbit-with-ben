@@ -1,21 +1,35 @@
-# J1218 repeat-submission review — 30 October 2026
+# J1218 HOS 008 rough v03: acting Chief (Claude) graphics review, 30 Oct 2026 04:xx UTC
 
-Acting Chief: codex. Ruling: FIX / NOT APPROVED. PR376 remains unmerged; J1213 and v01/v02 stay held from Ben watch, upload and scheduling. No spend authorized.
+**FIX on 4 graphics. 6 graphics pass as drawn. Overlay composites and the 6 WARN plates are not yet judged. No finished-film PASS, no Ben watch.**
 
-Reviewed PR376 head 2598d0c7bc9ce2fc602a3c9f2cde66b82e306818 against the previously reviewed 095ef62d4aaacdcb8f59a9762d8b19cdb3b4ff59 and the 29 October Chief ruling. The only new 008 evidence is episode-gate PASS (script 92.1), pipeline/status records, summary metadata and WARN notes. The assembler and cuts are byte-identical between these commits. No v03 was delivered. CI success does not clear creative failures.
+## What I looked at, and its limits
 
-The required fixes therefore remain: three consecutive full-frame P5 graphics at 452.9646–469.338 s; unsafe NAS unlink/rmtree/overwrite paths in the assembler; inaccurate contact-sheet sample labels; missing full motion/VO checks. New WARN notes compare frames 0.5 s apart and call static teaching cards expected. That does not establish continuous motion or clear the existing motion rule. The same v02 SHA edebeaf7e71d29051135859d7ad7e87bb4ee73d7e52a37b8251ccfb951dcad06 and 540.021321 s container remain recorded. Episode-gate evidence and pipeline delivery are acknowledged, not requested again as missing. Pipeline wording claiming 540.02s <=9:00 must be corrected.
+Claude runs in the cloud and cannot open the master, the NAS or UAT. I re-rendered every row of `code_graphics_v02` here, using `_build_code_graphics_v02.py` from HOS PR #379 at e05f343 (PICTURE_PLAN_v03 and the part-02..05 v03 boards from the same commit).
 
-J1193 evidence has NOW ARRIVED: HOS PR378 head 210b64d1524ad798c96a30dad221bbc24a4039ec, CODE_GRAPHICS_v01_REVIEW.md. Read its full per-row table as repair input. It reports ten FIX and one standalone KEEP, plus assembly fixes for duplicate labels. This review does not complete or merge J1193; its Chief review remains separate. No longer wait for Gemini to produce the report. Its exact geographic coordinates are proposals, not independently verified source geometry: obtain a direct source URL and validate geometry before implementing any claimed historical map. Preserve locked speech and facts.
+- Five frames per row at 8, 30, 50, 70 and 92% of `use_s`: `cg_v02_strips/*.jpg`, made by `render_cg_strips.py`.
+- The font is DejaVu Serif Bold instead of Didot (Didot isn't on Linux). That changes the label face only, not the timing or the drawing.
+- Overlay rows are shown on a flat grey stand-in, not on their moving plate. So this review judges what each graphic draws and when. It does not judge how each one sits on its plate.
 
-## Concrete follow-up: SAME J1218, diagnostic v03
+## Per row
 
-1. Read this ruling and jobs/reviews/J1218/CHIEF_REVIEW_2026-10-29.md before resuming. Preserve all v01/v02 masters/manifests. Do not rerun or redeliver v02 as completion. Write a versioned v03 assembler with fresh output directories and no deletion/overwrite on NAS; local temporary cleanup only. No new mint or music generation.
-2. Incorporate J1193 row-level timing, contrast, alpha-layer and label findings. In particular clean P5:10 alpha and composite it on the existing KEEP moving plate, between P5:09 and P5:11; remove duplicate side labels; restore a legible, correctly timed P4:06 explanation on sequential moving shots. Fix motion/holds and check all rows against locked VO. Any disputed specialist recommendation needs evidence and explicit disposition, not silent omission.
-3. Correct actual sampled contact-sheet times and verify intervals after pause trims. Export within 540 s including padding without removing spoken words or the ending. Supply per-row motion findings for all WARN/freeze cases, full Teach/Polish checklist, unchanged picture/polish/episode gates and durable SHA/path records. Music SKIPPED_NO_BED is not PASS; SFX/music remain unfinished.
-4. Update 008 production-status, PIPELINE and generated board accurately. Check PR376 against current main; unrelated HOS005/J1223 changes currently appear in its file list and must be excluded from the repair diff without reverting those records on main. Commit from a clean worktree.
-5. Request Chief picture review only after v03 evidence is complete and J1193 findings have been dispositioned. J1193 formal graphics approval remains a prerequisite to final picture PASS. If that formal review is the only remaining wait, use a dependency hold naming J1193 and a concrete UTC recheck. No generic parked-for-Chief resubmission of unchanged v02.
+| Row | Ruling | Why / what to change |
+|---|---|---|
+| P2:14 likeness_pairs | PASS (graphic) | Jar spark beside the cloud, crooked blue traces arrive on the second sentence. Reads. |
+| P2:15 likeness_fire | FIX | No crack is ever drawn. "Fire" is a flame shape that reads as a pen nib. "Could kill animals" is one thin line. Draw a visible crack (jagged split) on "crack", a real flicker flame on "fire", and a small animal silhouette knocked over, or a clear shock spark, on "kill animals". Time each beat to the locked word records. |
+| P3:03 rod_cloud | FIX | The "rod" is a hollow tall rectangle that reads as a chimney or tower. The charge dots run cloud to roof apex, not to a rod tip. The VO says the rod should pull sparks. Draw a thin pointed iron rod on the roof, run the dot stream cloud to rod tip, and add a small spark at the tip on "pull sparks". |
+| P3:04 letter_crosses | FIX | The geography is still not recognisable: two bare wiggly lines and a small outline, no land fill, no place names. J1193 required recognisable geography. Use simple filled landmasses (North America east coast; Britain/Ireland plus a France/Europe edge), small place labels PHILADELPHIA and PARIS at the two dots, and the dotted route on "crossed the ocean". Illustrative only: no voyage or packet claim (source correction stands). |
+| P3:15 wet_dry | FIX | Rain, twine, key and hand are there, but nothing shows the difference the line is about. Make the wet twine one colour with charge dots flowing down it, the dry silk ribbon at the hand a clearly different colour, and the dots stopping at the silk ("but dry silk would not"). |
+| P4:06 same_thing | PASS (graphic), composite unjudged | Jar spark and cloud bolt share one drawing. ELECTRICITY appears at about 5.1 s, matching the locked +5.14 s. One label. |
+| P4:08 teach_charge | PASS (graphic) | Kite, string, key, no bolt drawn. Label fits the negative claim. |
+| P5:08 looking_path | PASS (graphic), composite unjudged | Branching path now runs only downward (the J1193 upward segment is fixed). |
+| P5:09 wood_vs_metal | PASS (graphic) | Bolt hits the wooden roof, flame follows. Cracks open in the stone steeple. Both beats readable. |
+| P5:10 metal_easy | Composite unjudged | On its own it is a column of small rings filling in. It only works if the column sits exactly on the rod in KEEP `06_rod_fitting`. Bring composite frames to prove it. |
+| P5:11 safe_path | PASS (KEEP) | SAFE PATH DOWN (3 words), path runs roof, rod, outside wall, ground. |
 
-J1218 is reopened to its assembly specialist chain with this ruling placed at the TOP of its brief, preventing the stale v02 brief from superseding the required repairs. Deadline unchanged: 12 November 20:00Z. J1213 remains held, dependency J1218 repaired delivery plus J1193 formal graphics approval; verification 30 October 15:00Z. No unrelated holds changed. No Ready-for-OK card.
+## Next (J1241)
 
-Review scope: differential text/code/evidence audit; no claim of a new full-film motion/audio watch or fresh media hash verification. Disk offload attempted with authorized access: no eligible old scratch; about 9 GB free. No rendering or NAS deletion occurred. Nothing required from Ben.
+1. Rebuild P2:15, P3:03, P3:04 and P3:15 as `code_graphics_v03` (new version, never overwrite v02). Same locked VO and timings, £0.
+2. Composite evidence from rough v03 (and from v04 for the rebuilt rows): full-size frames at 25/50/75% of each overlay row (P2:15, P3:04, P4:06, P5:08, P5:10), and at the 6 picture_qa WARN times (1:19, 4:28, 4:51, 5:46, 6:58, 8:31), committed to the HOS PR.
+3. Diagnostic rough v04 with v03 graphics, same gates, then park for Chief.
+
+Music/SFX finishing stays outstanding. No Ben watch, no upload, no spend.
