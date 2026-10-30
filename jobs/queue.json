@@ -114601,20 +114601,27 @@
           "at": "2026-10-30T19:40Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T19:41Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Free before: 3.5 GB. Folders: v08 762M, v09 792M, v10 1.4G, seg-probe 355M. v11 and named worktrees stay."
         }
       ],
-      "remaining_action": "Move superseded HOS 008 /tmp scratch to NAS; verify sha256; free space on #264",
+      "remaining_action": "Copy four superseded HOS 008 scratch folders to the NAS and verify sha256",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 1,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T19:40Z",
+        "of": 4,
+        "at": "2026-10-30T19:41Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Free before: 3.5 GB. Folders: v08 762M, v09 792M, v10 1.4G, seg-probe 355M. v11 and named worktrees stay."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [],
