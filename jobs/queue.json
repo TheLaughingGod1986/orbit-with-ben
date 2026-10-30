@@ -80576,6 +80576,11 @@
           "at": "2026-10-30T10:50Z",
           "by": "relay",
           "what": "condition verification queued: J1252"
+        },
+        {
+          "at": "2026-10-30T14:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T20:38:00Z"
         }
       ],
       "kind": "video",
@@ -80603,15 +80608,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "J1100: finish S2/S5/S6 corrections, gates and delivery; Chief review then Ben swap approvals",
+      "remaining_action": "J1100: finish S2/S5/S6 corrections and verified delivery; Chief replacement review then Ben swap approvals",
       "hold": {
         "type": "input",
-        "condition": "J1100 S2/S5 corrected v06 cuts still require authorized pickups after 30 Oct 10:50Z with live subscription balance verified, clean instrumental S2 bed, final gates and direct listening. S6 v06 Gemini listening completed, but recorded whole-frame loop 9.26 FAIL remains unresolved; full verified UAT/NAS delivery and elected-Chief replacement PASS remain absent. Then Ben must approve each corrected S2/S5/S6 swap. J1032 v04 PASS and completed S1/S3/S4 swaps J1101/J1102/J1103 remain satisfied; preserve J0936 historical 6/6, all deadlines and v01 fallbacks. Evidence: PR333 head 0a7fcb6a, V06_CHECKPOINT, local GEMINI_S6_V06.md and Chief FIX 6483981556.",
-        "check_at": "2026-10-30T11:50:27+00:00",
-        "last_recheck": "J1174",
-        "checked_at": "2026-10-29T06:39:37+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1252"
+        "condition": "J1100 S2/S5 corrected v06 still need authorized pickups with live credits verified, instrumental-only S2 bed, gates and direct listening. S6 Gemini listening complete but whole-frame loop 9.26 FAIL remains. Complete verified UAT/NAS delivery, corrected replacement Chief PASS and Ben S2/S5/S6 swap approvals absent. Evidence checked: PR333 OPEN head 0a7fcb6ad, zero reviews/comments; V06_CHECKPOINT_2026-10-29.md; FINAL_MEASUREMENTS loop_pass=false; local GEMINI_S6_V06.md; Chief FIX 6483981556. Reset date alone proves no readiness; J1253 separately verifies J1100 credits. Preserve J1032 PASS, completed J1101/J1102/J1103, J0936 historical 6/6, deadlines and remaining v01 fallbacks.",
+        "check_at": "2026-10-30T20:38:00Z",
+        "last_recheck": "J1252",
+        "checked_at": "2026-10-30T14:38:25+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
