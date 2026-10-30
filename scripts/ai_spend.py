@@ -14,8 +14,9 @@ AI Ultra credits refill on Mon 12 Oct. Every agent that reads a balance or spend
 
 Pools and units: cursor (% of Cursor's own Cursor Models pool left, of 100, from its spending page; it shows no $ since
 12 Oct), flow (Flow credits), vertex (GBP of
-Google Cloud credit), elevenlabs (credits), claude (notes only, e.g. "hit the 5-hour limit"), codex and codex-macbook (% of the Codex
-weekly limit left on the Mini's and the MacBook's accounts, from the CLI's own logs). Each pool counts from its
+Google Cloud credit), elevenlabs (credits), claude (% of the Claude weekly limit left, from claude.ai/settings/usage, or limit notes),
+codex and codex-macbook (% of the Codex weekly limit left on the Mini's and the MacBook's accounts, from the CLI's own logs),
+gemini (% of the Gemini weekly limit left, from agy /usage). Each pool counts from its
 plan's reset date (plans.json poolStarts): Cursor from 8 Oct, Flow from 12 Oct. `record` is a balance reading; `spend` is one use. Add --git to
 commit the ledger line and push to main. Subscriptions and their prices live in 05_Analytics/ai_spend/plans.json.
 """
@@ -33,8 +34,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DIR = ROOT / "05_Analytics" / "ai_spend"
 LEDGER = DIR / "ledger.jsonl"
 PLANS = DIR / "plans.json"
-POOLS = {"cursor": "%", "flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "note",
-         "codex": "%", "codex-macbook": "%"}
+POOLS = {"cursor": "%", "flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "%",
+         "codex": "%", "codex-macbook": "%", "gemini": "%"}
 
 
 def now() -> str:
@@ -76,7 +77,7 @@ def build_doc(rows: list[dict]) -> dict:
         if row.get("kind") == "spend":
             entry["logged"] = round(entry["logged"] + float(row.get("amount") or 0), 2)
             entry["entries"] += 1
-        elif row.get("kind") == "record":
+        elif row.get("kind") == "record" and row.get("left") is not None:
             entry["latest"] = {k: row.get(k) for k in ("at", "left", "total")}
     rows = [r for r in rows if r.get("at", "") >= starts.get(r.get("pool"), start)]
     pools = {}
@@ -85,7 +86,8 @@ def build_doc(rows: list[dict]) -> dict:
         spends = [r for r in rows if r["pool"] == pool and r["kind"] == "spend"]
         if not reads and not spends:
             continue
-        first, last = (reads[0], reads[-1]) if reads else (None, None)
+        bal = [r for r in reads if r.get("left") is not None]
+        first, last = (bal[0], bal[-1]) if bal else (None, None)
         pools[pool] = {
             "unit": unit,
             "latest": last and {k: last.get(k) for k in ("left", "total", "at", "by", "note")},
