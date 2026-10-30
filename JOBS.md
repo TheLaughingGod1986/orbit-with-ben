@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1254 | any | open | – | – | chief · Chief: verify condition for J0302 |  |
 | J1255 | any | open | – | – | chief · Chief: verify condition for J0345 |  |
 | J1256 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
+| J1257 | mini | open | – | – | 008 edit · assembly · HOS 008: P3:04 composite + frame-exact splice/runtime -> rough v06 (Chief h07 on J1248) | 6521101809 |
 
 Recently finished:
 

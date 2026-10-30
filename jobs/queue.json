@@ -1,5 +1,5 @@
 {
-  "next_id": 1257,
+  "next_id": 1258,
   "jobs": [
     {
       "id": "J0001",
@@ -112079,6 +112079,35 @@
       "recheck_of": "J0862",
       "due": "2026-10-30T12:01:03+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1257",
+      "title": "HOS 008: P3:04 composite + frame-exact splice/runtime -> rough v06 (Chief h07 on J1248)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) ruling h07 on J1248, 30 Oct: HOS #180 comment 6521101809. Read it first. Rough v05 (a97e2f82) is FIX. PASS (lock these, keep byte-identical): P3:03 rod_cloud, P2:15 likeness_fire, P4:06 same_thing (ELECTRICITY), P5:10 metal_easy. FIX: P3:04 composite, runtime, bookkeeping.\n1. code_graphics_v05 (new folder, seeded from code_graphics_v04). Every row byte-identical except P3:04. P3:04: one compact inset map wholly inside the clear LEFT sky of plate 07_slow_news (about x 60-540, y 60-420 at 1920x1080): Philadelphia west, Paris east, both landmasses + dotted route + both city labels inside the inset, 55-65% fill. Nothing over masts, sails, bowsprit, jib-boom, stays or rigging on any frame of the row (check a 10-frame strip across the row). Route starts on 'crossed' (1.90 s) and is complete by about 2.7 s. Illustrative only, no new claims. Title label may stay.\n2. Rough v06 built from rough v04 (e00bb897), NOT v05: swap in the four passed v05 FIX assets byte-identical (P2:15, P3:03, P4:06, P5:10; asset sha256 as recorded in cuts_rough_v05.json) plus the new P3:04. Splice frame-exact (video by frame count; base audio carried as one continuous track, no per-segment AAC re-encode). Then trim >=0.5 s of pause/hold at one PAUSE_TRIM_v03 point (pause only, VO words locked) so ffprobe format duration AND video AND audio stream durations are each <=540.000 s and A/V end offset <=1 frame. Report all four numbers.\n3. Evidence: full-size P3:04 frames at p10/p25/p50/p75/p90; P4:06 at the spoken word (+5.14) and +1.5 s later; one p50 frame each of the other four FIX rows; one 5-row contact sheet (same file in the pack and in composite_evidence_v06); regenerate code_graphics_v05/MEDIA_SHA256SUMS.txt from the actual files (v04's was a stale v03 copy).\n4. Same gates (polish, picture_qa), deliver repo/UAT/NAS copy-only with sha256 (never overwrite v02-v05), commit evidence to a HOS PR, park for Chief: graphics + composite PASS. No music bed, no Ben watch, no upload, no Flow mint. GBP0.\n",
+      "ref": "6521101809",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T11:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T11:03Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008: P3:04 composite + frame-exact splice/runtime -> rough v06 (Chief h07 on J1248)",
+      "due": "2026-11-12T20:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
