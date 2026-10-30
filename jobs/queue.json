@@ -112852,17 +112852,22 @@
           "at": "2026-10-30T13:55Z",
           "by": "cursor",
           "what": "step 1 of 4 done: SMB rejects rsync temp names that start with ._. Copy resumed with rsync --inplace. Sources still on the mini until the checksum matches."
+        },
+        {
+          "at": "2026-10-30T14:00Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Copy still running in tmux j1268-offload (rsync --inplace). j1241 partial on NAS. Sources kept. Disk 6.9 GiB free. Do not start a second copy."
         }
       ],
-      "remaining_action": "Copy j1241 and j1248 worktrees to the NAS and verify them",
+      "remaining_action": "Wait for the NAS copy to finish, then checksum and only then remove the /tmp copies",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-30T13:55Z",
+        "at": "2026-10-30T14:00Z",
         "by": "cursor",
-        "note": "SMB rejects rsync temp names that start with ._. Copy resumed with rsync --inplace. Sources still on the mini until the "
+        "note": "Copy still running in tmux j1268-offload (rsync --inplace). j1241 partial on NAS. Sources kept. Disk 6.9 GiB free. Do no"
       },
       "taskKeys": [
         "HOS:008"
