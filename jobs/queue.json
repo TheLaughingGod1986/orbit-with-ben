@@ -24123,13 +24123,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T18:01Z",
-      "eta": "2026-10-30T19:31Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T16:34Z",
-      "result": "",
+      "result": "parked for Chief: Titan v02 VO titan_landing_vo_v01.wav (45fb27498), 587.72s, -20.1 LUFS, mean -23.3 dB, max -3.7 dB. Tool vo_check PASS, Scribe 95.21% (31 runs: numerals and UK spelling; hear for seventy-two vs the 72, out beside vs outside, point six vs 1 6). Balance 121114 to 117448 (counter charged 3666). No mux, no second take.",
       "history": [
         {
           "at": "2026-10-15T16:34Z",
@@ -24220,6 +24220,11 @@
           "at": "2026-10-30T18:12Z",
           "by": "cursor",
           "what": "step 4 of 4 done: Parked for Chief. No mux and no second take."
+        },
+        {
+          "at": "2026-10-30T18:12Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Titan v02 VO titan_landing_vo_v01.wav (45fb27498), 587.72s, -20.1 LUFS, mean -23.3 dB, max -3.7 dB. Tool vo_check PASS, Scribe 95.21% (31 runs: numerals and UK spelling; hear for seventy-two vs the 72, out beside vs outside, point six vs 1 6). Balance 121114 to 117448 (counter charged 3666). No mux, no second take."
         }
       ],
       "kind": "vo",
