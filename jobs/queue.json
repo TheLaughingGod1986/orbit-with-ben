@@ -113308,20 +113308,25 @@
           "at": "2026-10-30T17:40Z",
           "by": "cursor",
           "what": "step 0 of 6 done: Claimed J1267. Disk 8.5 GB free; nas_offload had nothing older than 48h. Previous render done file exists; no ffmpeg running. Reading h19 re-splice brief."
+        },
+        {
+          "at": "2026-10-30T17:48Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: h19 re-splice. Alpha sha 53454827 and composite f8453cc7 are on disk. v09 left void. Full-film CRF 18 drifts past 1.0 vs the composite, so v10 replaces only the 93-frame GOP (42 plate + 29 lead-in + 22 keep) and stream-copies the rest of v08."
         }
       ],
-      "remaining_action": "Read h19 ruling and locate voided v09, J1273 alpha, and the v08 splice so the v10 re-splice can start",
+      "remaining_action": "Splice rough v10: J1273 alpha into code_graphics_v07, replace only the 93-frame GOP, then run gates",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-30T17:40Z",
+        "at": "2026-10-30T17:48Z",
         "by": "cursor",
-        "note": "Claimed J1267. Disk 8.5 GB free; nas_offload had nothing older than 48h. Previous render done file exists; no ffmpeg run"
+        "note": "h19 re-splice. Alpha sha 53454827 and composite f8453cc7 are on disk. v09 left void. Full-film CRF 18 drifts past 1.0 vs"
       }
     },
     {
