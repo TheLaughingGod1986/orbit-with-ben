@@ -108578,9 +108578,14 @@
           "at": "2026-10-30T02:30Z",
           "by": "cursor",
           "what": "step 1 of 6 done: parts 01-04 done; part 05 assembling; no duplicate started"
+        },
+        {
+          "at": "2026-10-30T02:39Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: parts 01-05 done; join_full on NAS scratch"
         }
       ],
-      "remaining_action": "Wait for detached v03 assemble (tmux j1218-asm-v03); then gates + evidence",
+      "remaining_action": "Wait for detached v03 join+gates (tmux j1218-asm-v03)",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -108589,9 +108594,9 @@
       "progress": {
         "step": 1,
         "of": 6,
-        "at": "2026-10-30T02:30Z",
+        "at": "2026-10-30T02:39Z",
         "by": "cursor",
-        "note": "parts 01-04 done; part 05 assembling; no duplicate started"
+        "note": "parts 01-05 done; join_full on NAS scratch"
       }
     },
     {
