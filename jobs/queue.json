@@ -109785,9 +109785,14 @@
           "at": "2026-10-30T01:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T01:36Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Resolve three motion flags and review existing tranche-1 plates on PR377; generation complete",
+      "remaining_action": "Check PR377 for resolution of three motion flags and Chief tranche-1 approval",
       "kind": "chief",
       "recheck_of": "J1192",
       "due": "2026-10-30T01:31:33+00:00",
@@ -109796,10 +109801,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-30T01:36Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J1236",
