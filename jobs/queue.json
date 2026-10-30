@@ -108575,9 +108575,14 @@
           "at": "2026-10-30T00:31Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T00:32Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30)",
+      "remaining_action": "Read back old id -sa2t7dAtCk (privacy, publishAt, listing, Related); verify v04 master sha256",
       "due": "2026-11-15T20:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -108596,12 +108601,13 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T00:31Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 5,
+        "at": "2026-10-30T00:32Z",
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "HOS:004"
+      ]
     },
     {
       "id": "J1222",
