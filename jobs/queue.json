@@ -113185,13 +113185,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T17:09Z",
-      "eta": "2026-10-30T19:09Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "",
+      "result": "parked for Chief: frame-diff FAIL at 462.3s mean_abs 44.311 (v08 still the metal plate until 463.13s; v09 lead-in). Later samples 1.531/1.070/1.001. polish and picture_qa PASS. Evidence ef7810f0 on HOS PR 385. Not forced.",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113277,6 +113277,11 @@
           "at": "2026-10-30T17:21Z",
           "by": "cursor",
           "what": "step 5 of 6 done: Splice built. polish and picture_qa PASS. Frame-diff FAIL 44.311 at 462.3s because v08 is still the metal plate. Evidence ef7810f0 on HOS PR 385. Not forced."
+        },
+        {
+          "at": "2026-10-30T17:21Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: frame-diff FAIL at 462.3s mean_abs 44.311 (v08 still the metal plate until 463.13s; v09 lead-in). Later samples 1.531/1.070/1.001. polish and picture_qa PASS. Evidence ef7810f0 on HOS PR 385. Not forced."
         }
       ],
       "remaining_action": "Parked for Chief: frame-diff at 462.3s is 44.3",
