@@ -113150,16 +113150,22 @@
           "at": "2026-10-30T14:56Z",
           "by": "cursor",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-30T15:00Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: j1241 already on NAS. Prior j1248 rsync pid 5356 is dead and left no done file; dest is 1.4G. Starting one finish pass. j1218 still skipped: J1213 blocked past 15:00Z. j1263 kept: J1267 open."
         }
       ],
-      "remaining_action": "Survey /tmp render worktrees and which jobs still need them",
+      "remaining_action": "Finish j1248 checksum and remove only if it matches; leave j1218 and j1263",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-30T14:56Z",
-        "by": "cursor"
+        "at": "2026-10-30T15:00Z",
+        "by": "cursor",
+        "note": "j1241 already on NAS. Prior j1248 rsync pid 5356 is dead and left no done file; dest is 1.4G. Starting one finish pass. "
       },
       "taskKeys": [
         "HOS:008"
