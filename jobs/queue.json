@@ -114456,10 +114456,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-10-30T21:19Z",
+      "eta": "2026-10-30T23:19Z",
       "created_by": "claude",
       "created_at": "2026-10-30T17:55Z",
       "result": "",
@@ -114513,6 +114513,11 @@
           "at": "2026-10-30T21:19Z",
           "by": "chief",
           "what": "handed back: Chief closes it (merged)"
+        },
+        {
+          "at": "2026-10-30T21:19Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review and merge PR #358 (CI green)",
@@ -114520,7 +114525,15 @@
       "taskKeys": [
         "OWB:030",
         "OWB:023"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T21:19Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1278",
