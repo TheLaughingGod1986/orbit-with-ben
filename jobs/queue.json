@@ -1,5 +1,5 @@
 {
-  "next_id": 1287,
+  "next_id": 1288,
   "jobs": [
     {
       "id": "J0001",
@@ -115064,6 +115064,34 @@
       ],
       "remaining_action": "Watch v12 rod and safe-path transition continuously; return timestamped QA evidence",
       "kind": "qa"
+    },
+    {
+      "id": "J1287",
+      "title": "HOS 008 Lightning: master v01 from locked rough v12 (bed + house SFX, -14 LUFS, chapters re-verify, gates), park for Chief (Chief h22 on J1267)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) ruling h22 on J1267, 30 Oct 2026 (HOS #180, the h22 comment in this job's ref). HOS 008 rough v12 (precheck `07_Edit-Project/_precheck/rough_v12/hos_008_rough_v12.mp4`, sha256 d032e5fb7ae89f492f1d4df59070ce13a419c23287834780f8996999d17520b4, 12923 frames, 539.626 s) is PASS on graphics and composite, and it is the picture lock for this stage. Read h22 and the h21 terms first.\n\nDo (HOS 008 Lightning, master v01, £0):\n1. Picture is locked: use the v12 video stream unchanged (stream copy). Don't re-encode or re-cut picture. The VO track is the v08/v12 audio (byte-identical). No VO edits.\n2. Music bed + house SFX, following HOS 007 J0830/J0856. Make one per-film score bed with `04_Audio/tools/generate_music_bed.py`. This is house practice, and its justification is that 008 has no bed and the 007 bed is a vaccine score. Do a dry-run first, take a fresh ElevenLabs balance read, run it under `desk-lock elevenlabs` after the queued VO jobs, and stay inside the paid balance. One bed take only. Never buy or top up; if the balance can't cover it, park for a Chief price pass. Cue SFX with the house sfx_kit on every on-screen teaching moment: a soft ink tick on each WHO card, date stamp and data pill, and a gentle page-turn whoosh on each chapter card. That's about 1 a minute or more, never over a VO first word. Record the true credit delta in the result.\n3. Mix to -14.0 LUFS integrated / ≤ -1.0 dBTP. Run `sfx_kit.py level --bed` and paste it: bed ~16–21 dB under VO in speech, rising in pauses, 0 breaches. Confirm the bed's tempo/onsets are audible (music_gate bpm not null).\n4. Re-verify the provisional Chapters in `11_Upload-Package/Descriptions/lightning_long_description_v01.txt` against the locked master (0:00 first, ≥3 stamps, ≥10 s apart, each on its chapter card / first VO word). Fix stamps only if they moved, and run package-lint.\n5. Gates on the full master: unmodified polish_gate, picture_qa, music_gate, gate:episode, all 0 fail. Report format/video/audio durations and A/V end offset (≤1 frame). Frames must stay 12923.\n6. Deliver copy-only with sha256 to a new `master_v01` folder (repo precheck + NAS desk). Never write into rough_v02–v12, and never delete or move NAS deliverables (cp, then hash-check). Write REVIEW_master_v01 (before/after numbers). Open or update a HOS PR with the evidence (normal commits, no force-push). HOS PR #385 (rough evidence) may be merged once its checks are green, by normal merge, if it doesn't conflict.\n7. Park for Chief: master v01. No Ben watch, no UAT copy and no upload until Chief passes the master.\n",
+      "ref": "6533306017",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T20:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T20:59Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008 Lightning: master v01 from locked rough v12 (bed + house SFX, -14 LUFS, chapters re-verify, gates), park for Chief (Chief h22 on J1267)",
+      "kind": "assembly"
     }
   ],
   "focus": [],

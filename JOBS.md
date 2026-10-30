@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1277 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Facebook Reels post as 'Untitled Video': send the Reel title through Buffer (+ readback on the Apophis Reel) |  |
 | J1279 | mini | blocked | gemini | – | for gemini · script · `gemini-argon` · OWB: 3 Shorts in the Apophis mould (Facebook replication test), scripts + packaging, park for Chief |  |
 | J1283 | mini | blocked | cursor | – | for cursor · assembly · Chief h21: move superseded HOS 008 /tmp scratch to NAS (mini ~3 GB free) | 6530515205 |
+| J1287 | mini | open | – | – | 008 edit · assembly · HOS 008 Lightning: master v01 from locked rough v12 (bed + house SFX, -14 LUFS, chapters re-verify, gates), park for Chief (Chief h22 on J1267) | 6533306017 |
 
 Recently finished:
 
