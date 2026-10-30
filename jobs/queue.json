@@ -83676,10 +83676,10 @@
     },
     {
       "id": "J0966",
-      "title": "HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), -sa2t7dAtCk (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs",
+      "title": "HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), xzKoHg0E0_U (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief (Grok) 25 Oct 23:25 London. J0917 batch HC (after HB). Audit fixes #10-#13 (HOS 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md).\n- -I_GHK-GcFs (Fri 13 Nov): where the reorder moves the payoff forward, the last line must still loop into line 1 with a matched cut to frame 0. Note J0875 sets its Related to the 007 long.\n- x_3L_IdYgEc (Sun 15 Nov), -sa2t7dAtCk (Mon 16 Nov), 4WUs0beKn0A (Tue 17 Nov; also in J0875).\nSame rules for every HOS re-cut (Chief ruling OWB #264 6389730716 / HOS #180 6389732009): local v02 next to v01, v01 untouched. GBP0: VO trims, reorders and splices from existing audio only (only words already on disk), no new TTS, Veo, Flow, Vertex or paid API. Frame 0 moving and full-bleed at 30% black or less (no zoom/pan on a still), subject named in 0-1.5 s, first word by 0.15 s, first cut by 3.0 s, later plates 4.0 s max. Drop 'watch the full film' overlays, spoken CTAs and agenda questions; no video ID or code anywhere on screen (Ben 25 Oct). Last word to a matched loop back to frame 0 in 1.5 s or less; no answer-and-done line before 70% of runtime. Write the six brief fields into each v02 meta. Gates: gate_shorts_open check --air-date (incl. the J0918 ship gate, now merged), picture_qa, polish_gate, music_gate, sfx level, all PASS. _PHONE copies to HOS UAT + NAS, sha256 checked. Commit meta, gate text and frame sheets only. No upload, no Studio change. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd the swap by 10:30 on its air day, v01 airs as scheduled; don't slip the slot.\nPark: jobs.py block <id> --reason \"parked for Chief: <ids> v02 PASS; Ben to OK swap\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
+      "body": "Chief (Grok) 25 Oct 23:25 London. J0917 batch HC (after HB). Audit fixes #10-#13 (HOS 00_Brand/Channel-Setup/audits/STAYED60_UPCOMING_AUDIT_2026-10-25.md).\n- -I_GHK-GcFs (Fri 13 Nov): where the reorder moves the payoff forward, the last line must still loop into line 1 with a matched cut to frame 0. Note J0875 sets its Related to the 007 long.\n- x_3L_IdYgEc (Sun 15 Nov), xzKoHg0E0_U (Mon 16 Nov), 4WUs0beKn0A (Tue 17 Nov; also in J0875).\nSame rules for every HOS re-cut (Chief ruling OWB #264 6389730716 / HOS #180 6389732009): local v02 next to v01, v01 untouched. GBP0: VO trims, reorders and splices from existing audio only (only words already on disk), no new TTS, Veo, Flow, Vertex or paid API. Frame 0 moving and full-bleed at 30% black or less (no zoom/pan on a still), subject named in 0-1.5 s, first word by 0.15 s, first cut by 3.0 s, later plates 4.0 s max. Drop 'watch the full film' overlays, spoken CTAs and agenda questions; no video ID or code anywhere on screen (Ben 25 Oct). Last word to a matched loop back to frame 0 in 1.5 s or less; no answer-and-done line before 70% of runtime. Write the six brief fields into each v02 meta. Gates: gate_shorts_open check --air-date (incl. the J0918 ship gate, now merged), picture_qa, polish_gate, music_gate, sfx level, all PASS. _PHONE copies to HOS UAT + NAS, sha256 checked. Commit meta, gate text and frame sheets only. No upload, no Studio change. If a Short isn't parked by 20:00 London the day before it airs, or Ben hasn't OK'd the swap by 10:30 on its air day, v01 airs as scheduled; don't slip the slot.\nPark: jobs.py block <id> --reason \"parked for Chief: <ids> v02 PASS; Ben to OK swap\" --git. Never Public, no Replace, no delete, no force-push, no --no-verify. GBP0.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -84167,6 +84167,10 @@
           "at": "2026-10-30T00:31Z",
           "by": "relay",
           "what": "condition verification queued: J1234"
+        },
+        {
+          "at": "2026-10-30T00:36:31Z",
+          "what": "J1221: retarget from -sa2t7dAtCk to xzKoHg0E0_U (v04 swap; old Private+unscheduled)"
         }
       ],
       "kind": "video",
@@ -108595,9 +108599,14 @@
           "at": "2026-10-30T00:34Z",
           "by": "cursor",
           "what": "step 2 of 5 done: dry-run PASS; starting real upload"
+        },
+        {
+          "at": "2026-10-30T00:36Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: verify-swap PASS; xzKoHg0E0_U Private 2026-11-16T11:30Z; old unscheduled"
         }
       ],
-      "remaining_action": "Upload v04 Private; then unschedule old + captions + verify-swap",
+      "remaining_action": "Commit HOS+OWB registry updates; desk+thread report; mark done",
       "due": "2026-11-15T20:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -108615,11 +108624,11 @@
         "okRef": "6507810925"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-10-30T00:34Z",
+        "at": "2026-10-30T00:36Z",
         "by": "cursor",
-        "note": "dry-run PASS; starting real upload"
+        "note": "verify-swap PASS; xzKoHg0E0_U Private 2026-11-16T11:30Z; old unscheduled"
       },
       "taskKeys": [
         "HOS:004"
