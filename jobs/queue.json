@@ -112406,13 +112406,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-30T12:23Z",
-      "eta": "2026-10-30T14:23Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T11:56Z",
-      "result": "",
+      "result": "parked for Chief: release-gate PR review (HOS PR #387, commit 592eaae7 on gemini/j1259-release-gate-chapters-sources; vitest 189/189 pass, package-lint fails only 008/009/010 with description.chapters + description.sources by design)",
       "history": [
         {
           "at": "2026-10-30T11:56Z",
@@ -112443,6 +112443,11 @@
           "at": "2026-10-30T12:26Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Opened HOS PR #387 (592eaae7 on gemini/j1259-release-gate-chapters-sources); vitest 189/189 pass, package-lint fails only 008/009/010 with description.chapters + description.sources by design"
+        },
+        {
+          "at": "2026-10-30T12:26Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: release-gate PR review (HOS PR #387, commit 592eaae7 on gemini/j1259-release-gate-chapters-sources; vitest 189/189 pass, package-lint fails only 008/009/010 with description.chapters + description.sources by design)"
         }
       ],
       "remaining_action": "Park J1261 for Chief: release-gate PR review",
