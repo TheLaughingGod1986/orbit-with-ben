@@ -24123,10 +24123,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T19:23Z",
+      "eta": "2026-10-30T20:53Z",
       "created_by": "chief",
       "created_at": "2026-10-15T16:34Z",
       "result": "",
@@ -24230,6 +24230,11 @@
           "at": "2026-10-30T19:09Z",
           "by": "chief",
           "what": "reopened: Chief h18 (OWB #264 6531358370): FIX, targeted ch02-only re-take, no full second take. Real misreads in ch02: 224.7s 'For seventy-two minutes' spoken 'The seventy-two minutes' (Scribe + Whisper agree); 239.2s 'out beside it' heard 'outside'/'out the side'; ch02 last word 'you.' clipped at the chapter end (-28 dB in final 50 ms). Levels PASS (-20.1 LUFS, TP -3.7, no clipping, max pause 1.46s). Other 28 Scribe runs harmless (numerals, US spelling, toward/towards, farther/further). Do: cp (never mv) ch00, ch01, ch03-ch06 .mp3 from parts/titan_landing_vo_v01/ into parts/titan_landing_vo_v02/ (NOT ch02), dry-run, then desk-lock elevenlabs -- python3 04_Audio/tools/vo_take.py --script .../01_Script/titan_landing_script_master_v02.md --out .../02_Voiceover --stem titan_landing_vo_v02 --order 97b7af4e --order 6531358370 --retake 6531358370. Only ch02 (1443 chars, ~700 credits) is spoken; at most one more ch02-only attempt; v01 untouched; script locked. Pass bar: 'For seventy-two/72 minutes' (not 'The'), 'beside' as its own word, ch02 tail below -40 dB in the final 50 ms (or 0.15 s near-silence), rest of ch02 matches the script apart from numerals and spelling, -20 +/-1 LUFS, TP <= -1 dBTP, ch02 112.96 +/-6 s. Ledger will over-log 7879 chars: don't edit it, report the true counter_delta in the result. Park for Chief with v02 path/sha/LUFS/ch02 Scribe/credits. No mux until Chief PASS; assembly is queued at that PASS. Never buy or top up (117448 left). GBP0."
+        },
+        {
+          "at": "2026-10-30T19:23Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "vo",
@@ -24237,7 +24242,15 @@
       "remaining_action": "Chief reviews the Titan v02 take before any mux",
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T19:23Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0303",
