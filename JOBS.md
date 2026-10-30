@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1256 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 | J1262 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 | J1264 | mini | open | – | – | for gemini · qa · `gemini-argon` · HOS PR #387: make the Chapters/Sources gate release-stage (warn while drafting, fail at release) so contract CI stays green (Chief h13 on J1261) | 6522827968 |
-| J1266 | mini | open | – | – | listing · HOS 009 + 010: add Sources and provisional Chapters to the long descriptions (Chief h13 on J1261) | 6521114044 |
+| J1266 | mini | open | – | – | for gemini · listing · `gemini-argon` · HOS 009 + 010: add Sources and provisional Chapters to the long descriptions (Chief h13 on J1261) | 6521114044 |
 | J1267 | mini | open | – | – | 008 edit · assembly · HOS 008: P5:10 shorter clean hold (t1 frames 109-150) + 11_safe_path lead-in -> rough v09 (Chief h14 on J1263) | 6523423311 |
 | J1268 | mini | open | – | – | assembly · Mini disk: move finished /tmp render worktrees to NAS (render scratch rules) |  |
 | J1269 | any | open | – | – | chief · Chief: verify condition for J0978 |  |

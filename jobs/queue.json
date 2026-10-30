@@ -112783,11 +112783,25 @@
           "at": "2026-10-30T13:21Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T14:34Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "HOS 009 + 010: add Sources and provisional Chapters to the long descriptions (Chief h13 on J1261)",
       "due": "2026-11-18T20:00:00Z",
-      "kind": "listing"
+      "kind": "listing",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1267",
