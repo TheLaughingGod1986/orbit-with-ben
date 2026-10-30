@@ -115263,13 +115263,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T23:50Z",
-      "eta": "2026-10-31T00:50Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T21:00Z",
-      "result": "",
+      "result": "parked for Chief: ch00 tail fails the specified 20 ms qsin fade. ch00 last 10 ms RMS -33.15 dBFS (need below -50), last sample L=R=1 (need 0). ch02 passes: last 10 ms RMS -62.53 dBFS, last sample 0. Duration 582.440 s (0 ms vs v02). ebur128 I -20.0 LUFS, true peak -3.4 dBTP. Null outside the two 20 ms windows: max abs diff 0. sha256 wav 56482edfe32ab6015033779d319ae3827f94c52ea5b89dcddc6d45127ccf0c35 mp3 a457adae2b5b23f20c4348fde76e0ac95332d649f98659307f863ac9b099f4fe. Attempt left on disk, not locked. v01 and v02 untouched. No STT copy, no spend.",
       "history": [
         {
           "at": "2026-10-30T21:00Z",
@@ -115295,6 +115295,11 @@
           "at": "2026-10-30T23:55Z",
           "by": "cursor",
           "what": "step 4 of 6 done: Checks: duration 582.440s exact. I -20.0 LUFS, peak -3.4. Null max abs 0. ch02 RMS -62.53 last sample 0. ch00 RMS -33.15 last sample 1. Not locked."
+        },
+        {
+          "at": "2026-10-30T23:55Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: ch00 tail fails the specified 20 ms qsin fade. ch00 last 10 ms RMS -33.15 dBFS (need below -50), last sample L=R=1 (need 0). ch02 passes: last 10 ms RMS -62.53 dBFS, last sample 0. Duration 582.440 s (0 ms vs v02). ebur128 I -20.0 LUFS, true peak -3.4 dBTP. Null outside the two 20 ms windows: max abs diff 0. sha256 wav 56482edfe32ab6015033779d319ae3827f94c52ea5b89dcddc6d45127ccf0c35 mp3 a457adae2b5b23f20c4348fde76e0ac95332d649f98659307f863ac9b099f4fe. Attempt left on disk, not locked. v01 and v02 untouched. No STT copy, no spend."
         }
       ],
       "remaining_action": "Parked for Chief: ch00 tail fails the -50 dB and zero-sample checks",
