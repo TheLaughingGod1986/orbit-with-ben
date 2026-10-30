@@ -115136,13 +115136,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T21:21Z",
-      "eta": "2026-10-31T00:21Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T20:59Z",
-      "result": "",
+      "result": "parked for Chief: HOS 008 master v01 sha 0eced44bf65a5cb12567f085e5ca286f45f0adac2d727fb331840e58158d7877, -14.12 LUFS, -1.04 dBTP, 12923 frames, video MD5 matches v12. music_gate PASS 66.7 BPM. Evidence PR 390. PR 385 left unmerged (checks green). No UAT, no upload.",
       "history": [
         {
           "at": "2026-10-30T20:59Z",
@@ -115203,6 +115203,11 @@
           "at": "2026-10-30T22:12Z",
           "by": "cursor",
           "what": "step 6 of 7 done: Master sha 0eced44b on local precheck and NAS desk. Video MD5 matches v12, 12923 frames, -14.12 LUFS, -1.04 dBTP, offset 0.022 s. music_gate PASS 66.7 BPM. SFX level PASS. Chapters unchanged. PR https://github.com/TheLaughingGod1986/history-of-science/pull/390. Flat-pause mix kept as hos_008_master_v01_flatpause.mp4. PR 385 not merged."
+        },
+        {
+          "at": "2026-10-30T22:12Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: HOS 008 master v01 sha 0eced44bf65a5cb12567f085e5ca286f45f0adac2d727fb331840e58158d7877, -14.12 LUFS, -1.04 dBTP, 12923 frames, video MD5 matches v12. music_gate PASS 66.7 BPM. Evidence PR 390. PR 385 left unmerged (checks green). No UAT, no upload."
         }
       ],
       "remaining_action": "Parked for Chief: master v01. No UAT and no upload.",
