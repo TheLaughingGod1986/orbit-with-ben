@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1271 | mini | open | – | – | 024 upload · studio · OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public |  |
 | J1272 | mini | open | – | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1273 | mini | open | – | – | 008 edit · chart · HOS 008: J1267 h15 tracked rod-overlay preflight, 42 frames, GBP0 |  |
+| J1274 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 

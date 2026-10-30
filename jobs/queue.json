@@ -1,5 +1,5 @@
 {
-  "next_id": 1274,
+  "next_id": 1275,
   "jobs": [
     {
       "id": "J0001",
@@ -98066,6 +98066,11 @@
           "at": "2026-10-30T15:47Z",
           "by": "codex",
           "what": "Acting Chief Codex ruling, 30 Oct 2026: FIX; no PASS.\nReviewed full body/history/result, PR333 0a7fcb6ad v06 measurements and checkpoint, completed Gemini S6 v06 direct AAC/caption review, S2/S5 advisory evidence, and J1253 subscription verification. S6 caption-free silent tail is confirmed, but whole-frame loop 9.26 fails the locked <2.0 threshold; masked 0.95 is not a substitute. Retain only the existing S6 audio/timing/softness exceptions. S2/S5 continuous pickups, S2 instrumental-only bed proof (ASR and listening), caption repairs and final gates are still outstanding. No new listening or media PASS is claimed by this review.\nRequired nas_offload.py --apply found no eligible scratch: 8545 -> 8543 MB free; 8094 MB after review worktree. Earlier recovery jobs including J1268 are completed and do not establish current headroom. Follow-up J1270 is now queued for safe recovery to >=20 GB, target 30 GB, and investigation of renewed growth, due 31 Oct 12:00 London. Original J1100 remains held, now explicitly dependent on J1270 and live >=20 GB verification; scheduled condition check 31 Oct 03:00 UTC.\nAfter recovery, elected Chief verifies live space and reopens repairs only. Preserve worker 2/3 and OWB:027/028 links. Resume the 29 Oct repair ruling. Resolve the loop with a compliant edit before final render; if caption-free tail and frame-0 hook reveal a defect in the metric, supply reproducible decoded-frame evidence and a proposed gate correction for Chief review, rather than silently masking text or waiving failure. Keep accepted S6 audio unchanged. Finish the authorised S2/S5 pickups with a fresh locked balance check, no music generation; recheck all gates and Gemini listening, deliver durable masters/phone copies and hashes, then return for Chief replacement review before Ben watch.\nPreserve all deadlines and scheduled-v01 fallback. No upload, swap, schedule/privacy change, watch card or expansion of spend is authorised by this ruling."
+        },
+        {
+          "at": "2026-10-30T16:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J1274"
         }
       ],
       "remaining_action": "Await J1270 disk recovery and live 20 GB verification; then finish S2/S5 pickups and S6 loop repair",
@@ -98095,7 +98100,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J1270 completed safe disk recovery and elected Chief verifies live Mini free space >=20 GB; then reopen only for outstanding repairs under 29 Oct ruling. S6 full-frame loop FAIL still requires compliant fix or evidenced gate-correction review.",
-        "check_at": "2026-10-31T03:00:00Z"
+        "check_at": "2026-10-30T17:15:13+00:00",
+        "recheck_task": "J1274"
       }
     },
     {
@@ -113548,6 +113554,37 @@
       "remaining_action": "Track the rod overlay and verify the 42-frame candidate before full assembly",
       "due": "2026-11-12T20:00:00Z",
       "kind": "chart"
+    },
+    {
+      "id": "J1274",
+      "title": "Chief: verify condition for J1100",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1100: J1270 completed safe disk recovery and elected Chief verifies live Mini free space >=20 GB; then reopen only for outstanding repairs under 29 Oct ruling. S6 full-frame loop FAIL still requires compliant fix or evidenced gate-correction review.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T16:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T16:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await J1270 disk recovery and live 20 GB verification; then finish S2/S5 pickups and S6 loop repair",
+      "kind": "chief",
+      "recheck_of": "J1100",
+      "due": "2026-10-30T17:15:13+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
