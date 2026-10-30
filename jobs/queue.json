@@ -112887,17 +112887,22 @@
           "at": "2026-10-30T14:10Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T14:10Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Data volume about 7 GB free."
         }
       ],
-      "remaining_action": "Offload already running. Do not start a second rsync. Check ~/_desk/logs/J1268-offload.done; missing means still running.",
+      "remaining_action": "Inventory /tmp render worktrees and which jobs still need them",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-10-30T14:08Z",
+        "at": "2026-10-30T14:10Z",
         "by": "cursor",
-        "note": "Eligible: move j1241 and j1248. Skip j1218. Keep j1263. rsync pid 79882 at 0.61/1.08GB."
+        "note": "Claimed. Data volume about 7 GB free."
       },
       "taskKeys": [
         "HOS:008"
