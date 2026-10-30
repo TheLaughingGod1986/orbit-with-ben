@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1255 | any | open | – | – | chief · Chief: verify condition for J0345 |  |
 | J1256 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 | J1257 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: P3:04 composite + frame-exact splice/runtime -> rough v06 (Chief h07 on J1248) | 6521101809 |
-| J1258 | mini | open | – | – | 007 upload · listing · HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05) | 6521114044 |
+| J1258 | mini | claimed | gemini | 2026-10-30T13:41Z | 007 upload · listing · HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05) | 6521114044 |
 | J1259 | any | open | – | – | 008 upload · qa · HOS release gate: block a long with no Chapters or Sources (before 008 ships) | 6521114044 |
 
 Recently finished:
