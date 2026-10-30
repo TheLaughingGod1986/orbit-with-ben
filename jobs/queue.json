@@ -111749,10 +111749,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-30T10:21Z",
+      "eta": "2026-10-30T11:21Z",
       "created_by": "refill",
       "created_at": "2026-10-30T09:55Z",
       "result": "",
@@ -111761,11 +111761,24 @@
           "at": "2026-10-30T09:55Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T10:21Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
-      "backlog": "hos-live-listing-fixes"
+      "backlog": "hos-live-listing-fixes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T10:21Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1251",
