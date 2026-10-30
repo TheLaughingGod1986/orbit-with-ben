@@ -112113,10 +112113,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T11:25Z",
+      "eta": "2026-10-30T13:25Z",
       "created_by": "chief",
       "created_at": "2026-10-30T11:03Z",
       "result": "",
@@ -112150,6 +112150,11 @@
           "at": "2026-10-30T11:23Z",
           "by": "cursor",
           "what": "released: Splice running detached. tmux j1257-render. Log ~/_desk/logs/j1257-render.log. Done file ~/_desk/logs/j1257-render.done (missing = still running; do not start a second copy). Work dir /Volumes/data/mac-mini-archive/tmp-render-scratch/j1257-hos008-rough-v06. P3:04 inset PASS (fill 59.8%, off the ship). Next: pause trim, gates, deliver, HOS PR, park for Chief."
+        },
+        {
+          "at": "2026-10-30T11:25Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Frame-exact splice is running in tmux j1257-render; then pause trim, gates, deliver, PR",
