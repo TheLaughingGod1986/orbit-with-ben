@@ -1,5 +1,5 @@
 {
-  "next_id": 1252,
+  "next_id": 1254,
   "jobs": [
     {
       "id": "J0001",
@@ -80553,6 +80553,11 @@
           "at": "2026-10-29T06:39Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T10:50:00Z"
+        },
+        {
+          "at": "2026-10-30T10:50Z",
+          "by": "relay",
+          "what": "condition verification queued: J1252"
         }
       ],
       "kind": "video",
@@ -80584,10 +80589,11 @@
       "hold": {
         "type": "input",
         "condition": "J1100 S2/S5 corrected v06 cuts still require authorized pickups after 30 Oct 10:50Z with live subscription balance verified, clean instrumental S2 bed, final gates and direct listening. S6 v06 Gemini listening completed, but recorded whole-frame loop 9.26 FAIL remains unresolved; full verified UAT/NAS delivery and elected-Chief replacement PASS remain absent. Then Ben must approve each corrected S2/S5/S6 swap. J1032 v04 PASS and completed S1/S3/S4 swaps J1101/J1102/J1103 remain satisfied; preserve J0936 historical 6/6, all deadlines and v01 fallbacks. Evidence: PR333 head 0a7fcb6a, V06_CHECKPOINT, local GEMINI_S6_V06.md and Chief FIX 6483981556.",
-        "check_at": "2026-10-30T10:50:00Z",
+        "check_at": "2026-10-30T11:50:27+00:00",
         "last_recheck": "J1174",
         "checked_at": "2026-10-29T06:39:37+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1252"
       },
       "preparation_review": {
         "by": "codex",
@@ -97978,6 +97984,11 @@
           "at": "2026-10-29T00:41Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T10:50:00Z"
+        },
+        {
+          "at": "2026-10-30T10:50Z",
+          "by": "relay",
+          "what": "condition verification queued: J1253"
         }
       ],
       "remaining_action": "Verify reset/live credits, record authorized pickups, resolve v06 loop failure, finish gates and review delivery",
@@ -98007,7 +98018,8 @@
       "hold": {
         "type": "credits",
         "condition": "30 Oct 10:50 UTC ElevenLabs reset reached and live subscription balance sufficient for authorized S2/S5 pickups; no overage",
-        "check_at": "2026-10-30T10:50:00Z"
+        "check_at": "2026-10-30T11:50:27+00:00",
+        "recheck_task": "J1253"
       }
     },
     {
@@ -111844,6 +111856,68 @@
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-10-30T11:20:23+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1252",
+      "title": "Chief: verify condition for J0936",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0936: J1100 S2/S5 corrected v06 cuts still require authorized pickups after 30 Oct 10:50Z with live subscription balance verified, clean instrumental S2 bed, final gates and direct listening. S6 v06 Gemini listening completed, but recorded whole-frame loop 9.26 FAIL remains unresolved; full verified UAT/NAS delivery and elected-Chief replacement PASS remain absent. Then Ben must approve each corrected S2/S5/S6 swap. J1032 v04 PASS and completed S1/S3/S4 swaps J1101/J1102/J1103 remain satisfied; preserve J0936 historical 6/6, all deadlines and v01 fallbacks. Evidence: PR333 head 0a7fcb6a, V06_CHECKPOINT, local GEMINI_S6_V06.md and Chief FIX 6483981556.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0936 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T10:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T10:50Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: J1100: finish S2/S5/S6 corrections, gates and delivery; Chief review then Ben swap approvals",
+      "kind": "chief",
+      "recheck_of": "J0936",
+      "due": "2026-10-30T11:50:27+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1253",
+      "title": "Chief: verify condition for J1100",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1100: 30 Oct 10:50 UTC ElevenLabs reset reached and live subscription balance sufficient for authorized S2/S5 pickups; no overage. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T10:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T10:50Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify reset/live credits, record authorized pickups, resolve v06 loop failure, finish gates and review delivery",
+      "kind": "chief",
+      "recheck_of": "J1100",
+      "due": "2026-10-30T11:50:27+00:00",
       "due_kind": "condition-verification"
     }
   ],
