@@ -115280,18 +115280,25 @@
           "at": "2026-10-30T23:50Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T23:50Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: Claimed. No spend. Copy fades then concat, checks, lock."
         }
       ],
-      "remaining_action": "032 Titan: assemble locked VO titan_landing_vo_v02a (v02 parts + 20 ms ch00/ch02 tail fades, no spend), record VO lock (Chief h23 on J0302)",
+      "remaining_action": "Inspect v02 parts, concat order and durations before copying into v02a",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-10-30T23:50Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. No spend. Copy fades then concat, checks, lock."
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J1290",
