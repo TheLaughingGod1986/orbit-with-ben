@@ -49,6 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1277 | mini | open | – | – | listing · Facebook Reels post as 'Untitled Video': send the Reel title through Buffer (+ readback on the Apophis Reel) |  |
 | J1278 | any | open | – | – | chief · Chief: verify condition for J1208 |  |
 | J1279 | any | open | – | – | script · OWB: 3 Shorts in the Apophis mould (Facebook replication test), scripts + packaging, park for Chief |  |
+| J1280 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
