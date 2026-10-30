@@ -109369,19 +109369,24 @@
           "at": "2026-10-30T00:48Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J0862 history, v02 scripts and J1004 approval boundaries; live subscription HTTP 200 shows 114 characters left"
+        },
+        {
+          "at": "2026-10-30T00:48Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Balance recorded in AI spend ledger; J0862 remains blocked with verification at 11:00Z after API-reported 10:50:31Z reset"
         }
       ],
-      "remaining_action": "Record credit evidence and retain J0862 hold until after API reset time",
+      "remaining_action": "Verify saved hold and report the completed credit check",
       "kind": "chief",
       "recheck_of": "J0862",
       "due": "2026-10-30T01:05:39+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-30T00:48Z",
         "by": "codex",
-        "note": "Read J0862 history, v02 scripts and J1004 approval boundaries; live subscription HTTP 200 shows 114 characters left"
+        "note": "Balance recorded in AI spend ledger; J0862 remains blocked with verification at 11:00Z after API-reported 10:50:31Z rese"
       },
       "taskKeys": [
         "HOS:009",
