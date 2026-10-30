@@ -112515,10 +112515,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T12:29Z",
-      "eta": "2026-10-30T14:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T12:28Z",
       "result": "",
@@ -112557,6 +112557,11 @@
           "at": "2026-10-30T12:52Z",
           "by": "cursor",
           "what": "step 4 of 5 done: Master c1f952a7 delivered. Polish and picture_qa PASS. Plate in-point frame 109 (4.542s). Commit still checking out the worktree."
+        },
+        {
+          "at": "2026-10-30T12:52Z",
+          "by": "cursor",
+          "what": "released: Do not rebuild. tmux j1263-render is committing evidence to HOS PR #385. Log ~/_desk/logs/j1263-render.log, done file ~/_desk/logs/j1263-render.done. Missing .done means still running: leave it. Master c1f952a714c8758f66bf284b578873a449eb9bdecdff1782672983834be4d382 is already delivered (precheck rough_v08, HOS UAT, NAS desk). Gates PASS. When .done is 0, park for Chief: graphics + composite. If the worktree add failed, commit evidence only (no mp4) onto cursor/j1257-hos008-rough-v06, then park. Continue note: /private/tmp/j1263-hos008-rough-v08/CONTINUE.txt"
         }
       ],
       "remaining_action": "Finish the PR #385 evidence commit in tmux j1263-render, then park for Chief",
