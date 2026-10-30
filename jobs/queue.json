@@ -112552,16 +112552,21 @@
           "at": "2026-10-30T12:44Z",
           "by": "cursor",
           "what": "step 2 of 5 done: NAS splice write stalled. Restarted the same build onto /private/tmp. Local splice is encoding at about 7 MB/s. Pause trim is still the v07 cut, frames 1539-1552."
+        },
+        {
+          "at": "2026-10-30T12:52Z",
+          "by": "cursor",
+          "what": "step 4 of 5 done: Master c1f952a7 delivered. Polish and picture_qa PASS. Plate in-point frame 109 (4.542s). Commit still checking out the worktree."
         }
       ],
-      "remaining_action": "Splice rough v08 from v04 on local disk, then pause trim, gates and deliver",
+      "remaining_action": "Finish the PR #385 evidence commit in tmux j1263-render, then park for Chief",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-10-30T12:44Z",
+        "at": "2026-10-30T12:52Z",
         "by": "cursor",
-        "note": "NAS splice write stalled. Restarted the same build onto /private/tmp. Local splice is encoding at about 7 MB/s. Pause tr"
+        "note": "Master c1f952a7 delivered. Polish and picture_qa PASS. Plate in-point frame 109 (4.542s). Commit still checking out the "
       },
       "taskKeys": [
         "HOS:008"
