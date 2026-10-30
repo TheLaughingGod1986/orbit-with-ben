@@ -114634,18 +114634,23 @@
           "at": "2026-10-30T19:52Z",
           "by": "cursor",
           "what": "step 1 of 4 done: v08, v09 and v10 are on the NAS. nas_offload kept each Mini copy because NFS wrote ._* AppleDouble sidecars (content paths were not missing). seg-probe copy still running. Next: hash every source file against the NAS path and remove locals only on a match."
+        },
+        {
+          "at": "2026-10-30T19:56Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Moved v08, v09, v10 and seg-probe to mini-tmp-scratch/2026-10-30. sha256 matched. Free 3.5 GB -> 6.7 GB. Posted #264 comment 6532246376. Next movable scratch is under 120 MB each (741 MB together)."
         }
       ],
-      "remaining_action": "Verify source-file sha256 on the NAS, ignoring AppleDouble sidecars, then remove local copies",
+      "remaining_action": "Parked for Chief: disk still under 10 GB after the four scratch moves",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 1,
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-30T19:52Z",
+        "at": "2026-10-30T19:56Z",
         "by": "cursor",
-        "note": "v08, v09 and v10 are on the NAS. nas_offload kept each Mini copy because NFS wrote ._* AppleDouble sidecars (content pat"
+        "note": "Moved v08, v09, v10 and seg-probe to mini-tmp-scratch/2026-10-30. sha256 matched. Free 3.5 GB -> 6.7 GB. Posted #264 com"
       },
       "taskKeys": [
         "HOS:008"
