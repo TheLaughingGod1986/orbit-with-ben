@@ -109282,19 +109282,24 @@
           "at": "2026-10-30T00:44Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed J0345 approval, locked v03, prior 7765-character dry run, and Titan-first condition; Codex remains elected Chief."
+        },
+        {
+          "at": "2026-10-30T00:44Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Live subscription HTTP 200 at 00:44:41Z: 114 characters remaining; reset 10:50:31Z. Locked scripts require 7765 for 031 and 7879 for Titan; insufficient credit."
         }
       ],
-      "remaining_action": "Read live ElevenLabs subscription and record readiness decision",
+      "remaining_action": "Record blocked condition, verify queue state and report",
       "kind": "chief",
       "recheck_of": "J0345",
       "due": "2026-10-30T01:05:39+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-30T00:44Z",
         "by": "codex",
-        "note": "Reviewed J0345 approval, locked v03, prior 7765-character dry run, and Titan-first condition; Codex remains elected Chie"
+        "note": "Live subscription HTTP 200 at 00:44:41Z: 114 characters remaining; reset 10:50:31Z. Locked scripts require 7765 for 031 "
       },
       "taskKeys": [
         "OWB:031",
