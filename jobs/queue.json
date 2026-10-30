@@ -111354,18 +111354,23 @@
           "at": "2026-10-30T10:00Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Studio signed in on 9223 and 9460. Reading lifetime cards for 89 OWB and 27 HOS films."
+        },
+        {
+          "at": "2026-10-30T10:05Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Studio lifetime read: 89 OWB and 27 HOS films, 0 left unread."
         }
       ],
-      "remaining_action": "Read lifetime Studio analytics for every OWB and HOS film",
+      "remaining_action": "Rebuild the tracker from the Studio read and publish the board",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T10:00Z",
+        "at": "2026-10-30T10:05Z",
         "by": "cursor",
-        "note": "Studio signed in on 9223 and 9460. Reading lifetime cards for 89 OWB and 27 HOS films."
+        "note": "Studio lifetime read: 89 OWB and 27 HOS films, 0 left unread."
       },
       "taskKeys": [
         "OWB:021",
