@@ -110369,13 +110369,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T04:47Z",
-      "eta": "2026-10-30T06:47Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T03:52Z",
-      "result": "",
+      "result": "Chief review complete: FIX, NOT PASS. Ruling 860a2a718 (PR 353), jobs/reviews/J1240/CHIEF_RULING_2026-10-30.md. Temporal blending is not motion-compensated sampling; measured 3px step-change remains unexplained and 0.5px estimator cannot validate 0.25px target. iCloud/NAS final hash verified. Follow-up J1242 ready in assembly lane: validated prototype then v10, due 1 Nov 20:00 London. J1212 remains held, no card repoint; scheduled ZpEA8stoSPA unchanged. No external wait, spend or publishing.",
       "history": [
         {
           "at": "2026-10-30T03:52Z",
@@ -110436,6 +110436,11 @@
           "at": "2026-10-30T04:47Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T04:47Z",
+          "by": "codex",
+          "what": "done: Chief review complete: FIX, NOT PASS. Ruling 860a2a718 (PR 353), jobs/reviews/J1240/CHIEF_RULING_2026-10-30.md. Temporal blending is not motion-compensated sampling; measured 3px step-change remains unexplained and 0.5px estimator cannot validate 0.25px target. iCloud/NAS final hash verified. Follow-up J1242 ready in assembly lane: validated prototype then v10, due 1 Nov 20:00 London. J1212 remains held, no card repoint; scheduled ZpEA8stoSPA unchanged. No external wait, spend or publishing."
         }
       ],
       "remaining_action": "parked for Chief: review v09 cut + PASS (do not repoint J1212)",
@@ -110448,7 +110453,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "860a2a718"
     },
     {
       "id": "J1241",

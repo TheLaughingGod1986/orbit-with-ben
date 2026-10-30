@@ -47,12 +47,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1237 | mini | blocked | gemini | – | 009 picture · qa · HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief |  |
-| J1240 | mini | claimed | codex | 2026-10-30T06:47Z | assembly · Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX) |  |
 | J1241 | mini | open | – | – | 008 edit · assembly · HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) |  |
 | J1242 | mini | open | – | – | assembly · Uranus v10: motion-compensated opening and precise path evidence (J1240 FIX) |  |
 
 Recently finished:
 
+- J1240 done: Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX) (Chief review complete: FIX, NOT PASS. Ruling 860a2a718 (PR 353), jobs/reviews/J1240/CHIEF_RULING_2026-10-30.md. Temporal blending is not motion-compensated sampling; measured 3px step-change remains unexplained and 0.5px estimator cannot validate 0.25px target. iCloud/NAS final hash verified. Follow-up J1242 ready in assembly lane: validated prototype then v10, due 1 Nov 20:00 London. J1212 remains held, no card repoint; scheduled ZpEA8stoSPA unchanged. No external wait, spend or publishing.)
 - J1239 cancelled: Chief: verify condition for J0966 ()
 - J1238 done: Chief: verify condition for J1130 (Verified thumbnail-only test still running in live HOS Studio (two variants, estimated 12 days 20 hours). J1130 remains blocked; next check 2026-10-30 10:15 UTC. Evidence ~/_desk/handoff/J1238/hos_test_report.txt and .png. No YouTube settings changed.)
 - J1236 done: Chief: verify condition for J0999 (Verified unmet: PR365 unchanged draft OPEN a87cd56a without approval or merge; PR358 OPEN c26a79bd. J0999 blocked; next recheck 2026-10-30T07:45:00Z. No Studio writes, merge or spend.)
@@ -62,4 +62,3 @@ Recently finished:
 - J1232 done: Chief: verify condition for J0978 (Condition satisfied: Atom title test finished 29 Oct 17:54, no winner (insufficient impressions), original title live. J0978 reopened. Evidence jobs/readbacks/J1232.json (1cd2ef193); channel:audit 61 videos, 0 errors. No YouTube mutations or spend.)
 - J1231 done: Chief: verify condition for J0862 (Verified live ElevenLabs HTTP 200 at 2026-10-30T00:47:42Z: 209422/209536 used, 114 remaining; insufficient. API reset 2026-10-30T10:50:31Z. J0862 kept blocked with recheck 11:00Z; original approvals/gates preserved. Balance recorded in AI spend ledger. HOS desk #6512130347. No spend or publishing changes.)
 - J1230 done: Chief: verify condition for J0345 (Verified live API at 00:44:41Z: 114 characters remain; 031 v03 needs 7765. J0345 stays blocked; recheck 2026-10-30T10:55Z after API reset 10:50:31Z. Titan J0302 (7879 chars) stays ahead. Evidence and ledger a86b49a9f; no spend or publishing changes.)
-- J1229 done: Chief: verify condition for J0302 (Verified live ElevenLabs at 00:39:29Z: 114 remaining (209422/209536 used), locked Titan v02 requires 7879. API reset 30 Oct 10:50:31Z. J0302 remains blocked; next verification 30 Oct 10:55 UTC. Balance recorded in ledger. No spend or schedule changes.)
