@@ -110570,17 +110570,22 @@
           "at": "2026-10-30T06:31Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T06:31Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: claimed; reading review"
         }
       ],
-      "remaining_action": "Detached resplice running; next run checks .done then commits evidence and parks for Chief",
+      "remaining_action": "Read J1218 Chief review; locate HOS 008 assets and v02 builder",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 0,
         "of": 4,
-        "at": "2026-10-30T06:29Z",
+        "at": "2026-10-30T06:31Z",
         "by": "cursor",
-        "note": "tmux j1241-resplice; log ~/_desk/logs/j1241-resplice.log; done ~/_desk/logs/j1241-resplice.done"
+        "note": "claimed; reading review"
       },
       "taskKeys": [
         "HOS:008"
