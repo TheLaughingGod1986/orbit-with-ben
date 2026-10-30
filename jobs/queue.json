@@ -110557,10 +110557,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T06:17Z",
+      "eta": "2026-10-30T08:17Z",
       "created_by": "codex",
       "created_at": "2026-10-30T04:47Z",
       "result": "",
@@ -110759,6 +110759,11 @@
           "at": "2026-10-30T06:15Z",
           "by": "cursor",
           "what": "released: detached full assemble: tmux J1242-uranus-v10-full; log ~/_desk/logs/J1242-uranus-v10-full.log; donefile ~/_desk/logs/J1242-uranus-v10-full.done. proto11 improved (flicker 0.62, ymax 1.0 PASS, dmax 1.0 still FAIL). Next run: if .done missing leave running; if present read exit+log, finish gates/UAT delivery, park for Chief (not PASS). No upload. Fallback ZpEA8stoSPA untouched."
+        },
+        {
+          "at": "2026-10-30T06:17Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for tmux J1242-uranus-v10-full .done; then gates/delivery and park for Chief",
