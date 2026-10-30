@@ -88435,6 +88435,11 @@
           "at": "2026-10-30T07:52Z",
           "by": "relay",
           "what": "condition verification queued: J1245"
+        },
+        {
+          "at": "2026-10-30T08:52Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-10-31T09:00:00Z"
         }
       ],
       "kind": "studio",
@@ -88450,13 +88455,12 @@
         "note": "Completed Studio reload read-back (End Screen 48:58:06-49:18:06, Altered content=Yes, Not Made for Kids, playlist PLEbpf"
       },
       "hold": {
-        "type": "input",
-        "condition": "Verified 30 Oct: PR365 draft OPEN at a87cd56a028648355061a732f027fe087db465e5, no comments/reviews or new approval through HOS 6512811326 and OWB 6512768945. J0998 and HOS Definition of done require Ben checker-fix approval, merge to main and unmodified channel:audit exit 0. PR358 OPEN c26a79bd. Gate remains unmet.",
-        "check_at": "2026-10-30T08:52:21+00:00",
-        "last_recheck": "J1236",
-        "checked_at": "2026-10-30T01:41:05+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1245"
+        "type": "ben",
+        "condition": "Verified 30 Oct 08:5x UTC (Claude): HOS PR #365 still a draft at a87cd56a (no review or approval). J0998 needs Ben's OK to merge it (HOS AGENTS.md: a checker fix needs his OK). Then channel:audit must exit 0 on HOS main before J0999 closes. PR #358 is still open at c26a79bd. Gate unmet. I read the diff: it dedups playlist IDs repeated across API page boundaries; it removes no check.",
+        "check_at": "2026-10-31T09:00:00Z",
+        "last_recheck": "J1245",
+        "checked_at": "2026-10-30T08:52:10+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -111260,10 +111264,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-10-30T08:51Z",
+      "eta": "2026-10-30T10:51Z",
       "created_by": "relay",
       "created_at": "2026-10-30T07:52Z",
       "result": "",
@@ -111272,13 +111276,26 @@
           "at": "2026-10-30T07:52Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T08:51Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Obtain required checker-fix approval, merge HOS PR365, then pass channel:audit on main",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-30T08:52:21+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T08:51Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1246",
