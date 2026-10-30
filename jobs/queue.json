@@ -101007,9 +101007,14 @@
           "at": "2026-10-30T19:23Z",
           "by": "relay",
           "what": "condition verification queued: J1282"
+        },
+        {
+          "at": "2026-10-30T20:46Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T02:46:00Z"
         }
       ],
-      "remaining_action": "Verify thumbnail-test completion and following London day before title-only test",
+      "remaining_action": "Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -101023,12 +101028,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Studio must confirm J1129 MISSING ELEMENT v02 thumbnail-only test on AL_-qlWko_g ended, supply actual completion time, and London date must be at least the next day. J1280 fresh reload and navigation both returned Oops, something went wrong; completion remains unverified. Evidence _desk/handoff/J1280/hos_test_report.txt and .png. Last successful J1251 report said Test running.",
-        "check_at": "2026-10-30T20:23:00+00:00",
-        "last_recheck": "J1280",
-        "checked_at": "2026-10-30T18:43:26+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1282"
+        "condition": "Studio must confirm J1129 MISSING ELEMENT v02 thumbnail-only test on AL_-qlWko_g ended, provide actual completion time, and London date must be at least the next day. J1282 at 30 Oct 20:46 UTC could not verify: video errors and HOS dashboard explicitly denies current session access; signed-in selector offers personal channel only. Evidence _desk/handoff/J1282/hos_test_report.txt and hos_channel_access.txt plus screenshots. Last successful J1251 read said Test running.",
+        "check_at": "2026-10-31T02:46:00Z",
+        "last_recheck": "J1282",
+        "checked_at": "2026-10-30T20:46:56+00:00",
+        "checked_by": "codex"
       }
     },
     {
