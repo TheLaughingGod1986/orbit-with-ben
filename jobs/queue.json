@@ -113865,19 +113865,24 @@
           "at": "2026-10-30T17:32Z",
           "by": "codex",
           "what": "step 2 of 3 done: Live 17:32Z free 7,554,764,800 bytes; offload apply 7204 MiB unchanged, no eligible scratch. J1100 held for live >=20 GB; retained original 31 Oct 03:00Z retry and repair gates."
+        },
+        {
+          "at": "2026-10-30T17:32Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirms blocked, last_recheck J1274, retry 31 Oct 03:00Z, original 2/3 progress and both film links intact. No media PASS or publishing."
         }
       ],
-      "remaining_action": "Verify persisted hold and report disk evidence",
+      "remaining_action": "Verification complete: J1100 remains held for disk recovery",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-30T17:15:13+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-30T17:32Z",
         "by": "codex",
-        "note": "Live 17:32Z free 7,554,764,800 bytes; offload apply 7204 MiB unchanged, no eligible scratch. J1100 held for live >=20 GB"
+        "note": "Readback confirms blocked, last_recheck J1274, retry 31 Oct 03:00Z, original 2/3 progress and both film links intact. No"
       },
       "taskKeys": [
         "OWB:027",
