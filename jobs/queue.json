@@ -113303,9 +113303,14 @@
           "at": "2026-10-30T17:39Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T17:40Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: Claimed J1267. Disk 8.5 GB free; nas_offload had nothing older than 48h. Previous render done file exists; no ffmpeg running. Reading h19 re-splice brief."
         }
       ],
-      "remaining_action": "Parked for Chief: frame-diff at 462.3s is 44.3",
+      "remaining_action": "Read h19 ruling and locate voided v09, J1273 alpha, and the v08 splice so the v10 re-splice can start",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -113313,11 +113318,10 @@
       ],
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T17:39Z",
+        "of": 6,
+        "at": "2026-10-30T17:40Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J1267. Disk 8.5 GB free; nas_offload had nothing older than 48h. Previous render done file exists; no ffmpeg run"
       }
     },
     {
