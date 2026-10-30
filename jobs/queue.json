@@ -112333,13 +112333,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-30T12:00Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-30T12:28Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T11:42Z",
-      "result": "parked for Chief: HOS 008 rough v07 gates PASS (polish + picture_qa). Plate in-point +3.50s, pause at 64.33s on the shutter cut. No finished-film PASS. Evidence on HOS PR #385.",
+      "result": "Chief (Grok) h11 30 Oct: rough v07 (b69525f8, HOS PR #385) FIX on P5:10 only, not a finished-film PASS. Lock: pause trim moved to 64.333-64.875 s (hook untrimmed), P3:04, P2:15, P3:03, P4:06, alpha bb821f40, splice and durations. Scope past +/-0.5 s accepted (plate 8.0 s, no freeze, VO match). FIX: the +3.50 s window opens on a hammer morph (vanishes at plate 4.0-4.375 s) and repeats footage from the 06_rod_fitting row ~21 s earlier; pick the smallest in-point >=4.40 s ending by 7.60 s that passes the unmodified gates. Follow-up J1263 (rough v08). HOS #180 re 6522751408. GBP0.",
       "history": [
         {
           "at": "2026-10-30T11:42Z",
@@ -112380,17 +112380,25 @@
           "at": "2026-10-30T12:22Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 008 rough v07 gates PASS (polish + picture_qa). Plate in-point +3.50s, pause at 64.33s on the shutter cut. No finished-film PASS. Evidence on HOS PR #385."
+        },
+        {
+          "at": "2026-10-30T12:28Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-30T12:28Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-30T12:29Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h11 30 Oct: rough v07 (b69525f8, HOS PR #385) FIX on P5:10 only, not a finished-film PASS. Lock: pause trim moved to 64.333-64.875 s (hook untrimmed), P3:04, P2:15, P3:03, P4:06, alpha bb821f40, splice and durations. Scope past +/-0.5 s accepted (plate 8.0 s, no freeze, VO match). FIX: the +3.50 s window opens on a hammer morph (vanishes at plate 4.0-4.375 s) and repeats footage from the 06_rod_fitting row ~21 s earlier; pick the smallest in-point >=4.40 s ending by 7.60 s that passes the unmodified gates. Follow-up J1263 (rough v08). HOS #180 re 6522751408. GBP0."
         }
       ],
       "remaining_action": "Parked for Chief: rough v07 graphics and composite review",
       "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-30T12:22Z",
-        "by": "cursor",
-        "note": "polish PASS, picture_qa PASS. Master b69525f87bf8. Plate +3.50s. Pause 64.33-64.88s. Evidence on HOS PR #385."
-      },
       "taskKeys": [
         "HOS:008"
       ]
