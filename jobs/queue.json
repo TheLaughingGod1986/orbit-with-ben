@@ -108523,20 +108523,25 @@
           "at": "2026-10-30T01:53Z",
           "by": "cursor",
           "what": "step 1 of 6 done: rulings read; freed local scratch; starting v03 code"
+        },
+        {
+          "at": "2026-10-30T02:01Z",
+          "by": "cursor",
+          "what": "step 3 of 6 done: CG v02 rendered (11 mp4/5 mov); PR379 pushed; asm running; NAS CG rsync skipped (hung)"
         }
       ],
-      "remaining_action": "Build non-destructive v03 assembler + graphics FIX pack; then detach render",
+      "remaining_action": "Wait for detached asm tmux j1218-asm-v03; then gates+deliver+Chief park",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 6,
-        "at": "2026-10-30T01:53Z",
+        "at": "2026-10-30T02:01Z",
         "by": "cursor",
-        "note": "rulings read; freed local scratch; starting v03 code"
+        "note": "CG v02 rendered (11 mp4/5 mov); PR379 pushed; asm running; NAS CG rsync skipped (hung)"
       }
     },
     {
