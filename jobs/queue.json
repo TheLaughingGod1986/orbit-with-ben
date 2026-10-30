@@ -113070,13 +113070,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-30T16:39Z",
-      "eta": "2026-10-30T18:09Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "",
+      "result": "parked for Chief: HOS PR #389 (1fb32488) adds final Sources and provisional Chapters to HOS 009 and 010 long descriptions + provisional notes in production-status.md; check_all.sh and lint:package PASS on main and with #387; all 4 CI checks green",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113122,6 +113122,11 @@
           "at": "2026-10-30T16:51Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened HOS PR #389 (1fb32488) with all 4 CI checks green"
+        },
+        {
+          "at": "2026-10-30T16:51Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS PR #389 (1fb32488) adds final Sources and provisional Chapters to HOS 009 and 010 long descriptions + provisional notes in production-status.md; check_all.sh and lint:package PASS on main and with #387; all 4 CI checks green"
         }
       ],
       "remaining_action": "Park J1266 for Chief review of HOS PR #389",
