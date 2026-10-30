@@ -110774,17 +110774,22 @@
           "at": "2026-10-30T06:19Z",
           "by": "cursor",
           "what": "step 3 of 5 done: full assemble exit 1: sha 7f621154…; polish/music/picture_qa/sfx PASS; open FAIL f0diff 1.40; loop FAIL 4.18>2×1.56; hitch_ok; flicker 1.81 vs v09 2.09"
+        },
+        {
+          "at": "2026-10-30T06:20Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: assembler bug: full path wrote v10 under key v09; fixing evidence without re-render"
         }
       ],
-      "remaining_action": "Fix open f0diff+loop FAILS (peak bump), re-render full v10, then park for Chief",
+      "remaining_action": "Fix MOTION_DIAGNOSTIC v09/v10 mislabel; write delivery note; park for Chief (gates not clean; no further Shot9 iterate)",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-10-30T06:19Z",
+        "at": "2026-10-30T06:20Z",
         "by": "cursor",
-        "note": "full assemble exit 1: sha 7f621154…; polish/music/picture_qa/sfx PASS; open FAIL f0diff 1.40; loop FAIL 4.18>2×1.56; hit"
+        "note": "assembler bug: full path wrote v10 under key v09; fixing evidence without re-render"
       },
       "taskKeys": [
         "OWB:030"
