@@ -112537,16 +112537,21 @@
           "at": "2026-10-30T12:29Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed. NAS offload: nothing in /private/tmp older than 48h. Data volume 8.9 GB free."
+        },
+        {
+          "at": "2026-10-30T12:33Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Ruling h11 read. v07 method is frame-exact splice from v04. Probing in-points next."
         }
       ],
-      "remaining_action": "Read h11 ruling and v07 splice, then pick P5:10 plate in-point >= 4.40 s",
+      "remaining_action": "Probe plate in-points from 4.40 s for brick coverage, gates and rod-trace offset",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-30T12:29Z",
+        "at": "2026-10-30T12:33Z",
         "by": "cursor",
-        "note": "Claimed. NAS offload: nothing in /private/tmp older than 48h. Data volume 8.9 GB free."
+        "note": "Ruling h11 read. v07 method is frame-exact splice from v04. Probing in-points next."
       },
       "taskKeys": [
         "HOS:008"
