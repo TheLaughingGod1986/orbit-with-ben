@@ -85895,6 +85895,11 @@
           "at": "2026-10-30T07:22Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Studio CDP :9460 confirmed History of Science; J0280 Title Test & Compare on GHZDsiH7L7A finished 29 Oct 17:54 ('Not enough impressions to declare a winner'; Variant A 'What's Really Inside an Atom?' visible to all viewers, watch-time share '—' on all 3 titles: A 'What's Really Inside an Atom?', B 'Why Is the Periodic Table in This Order?', C 'How Small Can You Cut Gold?')"
+        },
+        {
+          "at": "2026-10-30T07:26Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Data API retitle refused with 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE) while 'A/B testing titles · Results ready' remains attached on Studio edit page; verified all fields match originals.json in 05_Analytics/tests/studio_tests_2026-10-30/test_b_apply_readback.json and logged J0280 result in PR #354"
         }
       ],
       "kind": "listing",
@@ -85910,13 +85915,13 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Apply planned Test B title, line 1, and tags on GHZDsiH7L7A via HOS Data API (dry run first)",
+      "remaining_action": "Clear finished Studio A/B title test widget on GHZDsiH7L7A so Data API allows title update",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-10-30T07:22Z",
+        "at": "2026-10-30T07:26Z",
         "by": "gemini",
-        "note": "Studio CDP :9460 confirmed History of Science; J0280 Title Test & Compare on GHZDsiH7L7A finished 29 Oct 17:54 ('Not eno"
+        "note": "Data API retitle refused with 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE) while 'A/"
       }
     },
     {
