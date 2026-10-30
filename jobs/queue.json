@@ -113311,13 +113311,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T15:40Z",
-      "eta": "2026-10-30T17:40Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T13:39Z",
-      "result": "",
+      "result": "Verified unchanged Studio title-test widget; API unlock not proven. J0978 remains blocked, next check 2026-10-30T21:45Z. Evidence bc7b6db8f; no YouTube writes. HOS channel audit 62 videos, 0 errors.",
       "history": [
         {
           "at": "2026-10-30T13:39Z",
@@ -113348,6 +113348,11 @@
           "at": "2026-10-30T15:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence bc7b6db8f committed; J0978 hold preserved for 21:45Z; HOS audit 62 videos, 0 errors; no YouTube writes"
+        },
+        {
+          "at": "2026-10-30T15:43Z",
+          "by": "codex",
+          "what": "done: Verified unchanged Studio title-test widget; API unlock not proven. J0978 remains blocked, next check 2026-10-30T21:45Z. Evidence bc7b6db8f; no YouTube writes. HOS channel audit 62 videos, 0 errors."
         }
       ],
       "remaining_action": "Verification complete; J0978 waits for evidence the API title restriction has cleared",
@@ -113364,7 +113369,8 @@
       },
       "taskKeys": [
         "HOS:004"
-      ]
+      ],
+      "done_ref": "bc7b6db8f"
     }
   ],
   "focus": [],
