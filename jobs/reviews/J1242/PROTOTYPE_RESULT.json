@@ -1,0 +1,53 @@
+{
+  "job": "J1242",
+  "mode": "prototype_open",
+  "measured_upscale": 1.8488888888888888,
+  "src_indices_head": [
+    53,
+    55,
+    57,
+    59,
+    61,
+    63,
+    65,
+    67
+  ],
+  "open_prototype": "/private/tmp/J1242-uranus-v10/open_prototype_v10.mp4",
+  "cycle": "/private/tmp/J1242-uranus-v10/seg_open_tail_cycle.mp4",
+  "v10_vs_v09": {
+    "flicker_v09": 2.092521387338638,
+    "flicker_v10": 0.6189311277121305,
+    "step_max_v09": [
+      1.0,
+      2.7
+    ],
+    "step_max_v10": [
+      0.20000000000000018,
+      1.0000000000000002
+    ],
+    "step_change_max_v09": [
+      1.0,
+      4.0
+    ],
+    "step_change_max_v10": [
+      0.20000000000000018,
+      0.9999999999999996
+    ],
+    "flicker_improved": true,
+    "step_max_y_ok_raw": true,
+    "step_change_y_ok_raw": false,
+    "step_max_y_ok": true,
+    "step_change_y_ok": false,
+    "reliable_step_max_v10": [
+      0.20000000000000018,
+      1.0000000000000002
+    ],
+    "reliable_step_change_max_v10": [
+      0.20000000000000018,
+      0.9999999999999996
+    ],
+    "unreliable_count_v10": 0
+  },
+  "estimator_synthetic_ok": true,
+  "next": "If flicker_improved and path near targets: run full v10 assemble without --prototype. Else iterate MC/path; preserve ZpEA8stoSPA fallback."
+}
