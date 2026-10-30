@@ -112360,16 +112360,21 @@
           "at": "2026-10-30T12:09Z",
           "by": "cursor",
           "what": "step 1 of 4 done: P5:10 in-point +3.50s (alpha mov unchanged; +/-0.5s still a full-height brick corner). Pause frames 1539-1552 at 64.33-64.88s on 10_wait_shutter out, join_dist 0.13s. Hook untouched."
+        },
+        {
+          "at": "2026-10-30T12:17Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Swap pass done (387MB). Pause-trim encode is writing hos_008_rough_v07.mp4 (367MB, still running). Plate +3.50s and the 64.33s boundary trim are in."
         }
       ],
-      "remaining_action": "Encode rough v07: plate in-point +3.50s and pause at the 1:04 shot boundary",
+      "remaining_action": "Encode rough v07 pause trim, then run polish and picture gates",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-30T12:09Z",
+        "at": "2026-10-30T12:17Z",
         "by": "cursor",
-        "note": "P5:10 in-point +3.50s (alpha mov unchanged; +/-0.5s still a full-height brick corner). Pause frames 1539-1552 at 64.33-6"
+        "note": "Swap pass done (387MB). Pause-trim encode is writing hos_008_rough_v07.mp4 (367MB, still running). Plate +3.50s and the "
       },
       "taskKeys": [
         "HOS:008"
