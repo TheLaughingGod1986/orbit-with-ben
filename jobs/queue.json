@@ -109865,19 +109865,28 @@
           "at": "2026-10-30T01:39Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-30T01:40Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J0998/J0999 history and current approval rule; PR365 draft OPEN unchanged, PR358 OPEN."
         }
       ],
-      "remaining_action": "Verify J0999 approval, merge and audit evidence",
+      "remaining_action": "Check approval history and record the verified J0999 hold",
       "kind": "chief",
       "recheck_of": "J0999",
       "due": "2026-10-30T02:20:55+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-30T01:39Z",
-        "by": "codex"
-      }
+        "at": "2026-10-30T01:40Z",
+        "by": "codex",
+        "note": "Read J0998/J0999 history and current approval rule; PR365 draft OPEN unchanged, PR358 OPEN."
+      },
+      "taskKeys": [
+        "HOS:099"
+      ]
     }
   ],
   "focus": [],
