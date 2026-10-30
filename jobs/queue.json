@@ -111749,13 +111749,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-30T10:21Z",
-      "eta": "2026-10-30T11:21Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-30T09:55Z",
-      "result": "",
+      "result": "Read-only HOS listing check PASS at 2026-10-30T10:23Z across 62 unique videos (27 public, 13 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-30.md, HOS dc6283be, 0 new fixes needed)",
       "history": [
         {
           "at": "2026-10-30T09:55Z",
@@ -111786,6 +111786,11 @@
           "at": "2026-10-30T10:25Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: committed 00_Brand/Channel-Setup/audits/live_fixes/2026-10-30.md (HOS dc6283be); 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-30T10:25Z",
+          "by": "gemini",
+          "what": "done: Read-only HOS listing check PASS at 2026-10-30T10:23Z across 62 unique videos (27 public, 13 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-30.md, HOS dc6283be, 0 new fixes needed)"
         }
       ],
       "remaining_action": "Mark J1250 done and post report",
@@ -111807,7 +111812,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:008"
-      ]
+      ],
+      "done_ref": "dc6283be"
     },
     {
       "id": "J1251",
