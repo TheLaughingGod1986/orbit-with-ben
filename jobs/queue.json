@@ -113145,17 +113145,21 @@
           "at": "2026-10-30T14:56Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T14:56Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "When J1268-j1248-rsync.done is 0, verify that copy and remove the local worktree. Do not start a second rsync.",
+      "remaining_action": "Survey /tmp render worktrees and which jobs still need them",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 4,
-        "at": "2026-10-30T14:29Z",
-        "by": "cursor",
-        "note": "j1248 rsync still running at 14:29Z (pid 5356, 12 min). Done file absent. Continue: ~/_desk/logs/J1268-CONTINUE.txt"
+        "at": "2026-10-30T14:56Z",
+        "by": "cursor"
       },
       "taskKeys": [
         "HOS:008"
