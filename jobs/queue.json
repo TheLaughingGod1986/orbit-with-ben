@@ -112828,17 +112828,22 @@
           "at": "2026-10-30T13:40Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Disk 7.0 GiB free. Checking candidates before any move."
+        },
+        {
+          "at": "2026-10-30T13:42Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Move j1241 cg v03 (1.08 GB, job done, no open path ref) and j1248 cg v04 (1.50 GB, job done). Skip j1218 v03: J1213 still blocked on v03 repairs, check is 15:00 London. Keep j1263 rough v08 for open J1267. No open handles. Disk 7.0 GiB free."
         }
       ],
-      "remaining_action": "Find finished /tmp worktrees and confirm which jobs still need them",
+      "remaining_action": "Copy j1241 and j1248 worktrees to the NAS and verify them",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T13:40Z",
+        "at": "2026-10-30T13:42Z",
         "by": "cursor",
-        "note": "Claimed. Disk 7.0 GiB free. Checking candidates before any move."
+        "note": "Move j1241 cg v03 (1.08 GB, job done, no open path ref) and j1248 cg v04 (1.50 GB, job done). Skip j1218 v03: J1213 stil"
       },
       "taskKeys": [
         "HOS:008"
