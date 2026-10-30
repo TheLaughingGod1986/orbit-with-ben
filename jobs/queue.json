@@ -1,5 +1,5 @@
 {
-  "next_id": 1260,
+  "next_id": 1261,
   "jobs": [
     {
       "id": "J0001",
@@ -112271,6 +112271,34 @@
       ],
       "remaining_action": "HOS release gate: block a long with no Chapters or Sources (before 008 ships)",
       "kind": "qa"
+    },
+    {
+      "id": "J1260",
+      "title": "HOS 008: P5:10 plate in-point + move hook pause trim -> rough v07 (Chief h10 on J1257)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) ruling h10 on J1257, 30 Oct (HOS #180, re Claude 6521766235 and Cursor 6521755000). Rough v06 (master 3c69d96f, PR #385) is FIX. Read both comments first.\n\nPASS, lock byte-identical: P3:04 inset (code_graphics_v05), P2:15, P3:03, P4:06, and the P5:10 overlay asset itself (eaf7bf88). The frame-exact splice and the durations (format 539.626 s, A/V end offset 0.0015 s) are right; keep that build method.\n\nFIX 1, P5:10 metal_easy @7:41 gate FAIL (\"split panel: vertical seam at 0.618\"). The gate FAIL on this master stands even though the asset is locked and v05 passed (AGENTS.md L76/L324, same as the J1213 ruling). Chief's still frames at 460.4-461.6 s show the KEEP 06_rod_fitting plate's brick corner as a hard vertical edge at about 0.6-0.67 of the frame width, next to the ring graphic. That is a real plate edge, not a panel, but don't touch the checker. Route: keep the overlay byte-identical and change only the plate's in-point under that row (framing offset, about +/-0.5 s, or the smallest crop/re-frame that keeps the man, ladder, rod and label in shot) until the unmodified polish_gate and picture_qa pass that row. Report the offset you chose and show full-size frames at p25/p50/p75. If no sensible offset or re-frame passes, stop and park for Chief with the numbers. A checker change needs its own PR and Ben's OK, so don't start one.\n\nFIX 2, the 0.542 s pause trim at 9.167-9.708 s (frames 217-229). It is inside the opening hook, mid-shot on the kite plate. Chief's frames at 9.0 s and 9.2 s show the kite and house jump position across the join, so it reads as a jump cut. Move the trim. Put it at another PAUSE_TRIM_v03 point after 0:30 that sits on a shot boundary or a static hold, with the pause only (VO words locked), so that format, video and audio duration all stay <=540 s and the A/V end offset is <=1 frame. Evidence: a frame strip of +/-0.5 s around the new join, plus the before and after waveform/silence numbers. The hook (0:00-0:30) gets no trims.\n\nBuild rough v07 from rough v04 (e00bb897) the same way as v06, with v06's assets plus the two fixes. New folders only, never overwrite v02-v06 or NAS deliverables. Same gates. Deliver repo/UAT/NAS copy-only with sha256, commit the evidence to HOS PR #385 (or a new HOS PR), and park for Chief: graphics + composite PASS. No music bed, no Ben watch, no upload, no Flow mint. GBP0.\n",
+      "ref": "6521766235",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T11:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T11:42Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008: P5:10 plate in-point + move hook pause trim -> rough v07 (Chief h10 on J1257)",
+      "kind": "assembly"
     }
   ],
   "focus": [],
