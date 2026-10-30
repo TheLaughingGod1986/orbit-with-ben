@@ -108573,20 +108573,25 @@
           "at": "2026-10-30T02:30Z",
           "by": "cursor",
           "what": "step 0 of 6 done: claimed; starting ruling read"
+        },
+        {
+          "at": "2026-10-30T02:30Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: parts 01-04 done; part 05 assembling; no duplicate started"
         }
       ],
-      "remaining_action": "Read Chief rulings + J1193 findings; inventory HOS 008 v02 state",
+      "remaining_action": "Wait for detached v03 assemble (tmux j1218-asm-v03); then gates + evidence",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
         "at": "2026-10-30T02:30Z",
         "by": "cursor",
-        "note": "claimed; starting ruling read"
+        "note": "parts 01-04 done; part 05 assembling; no duplicate started"
       }
     },
     {
