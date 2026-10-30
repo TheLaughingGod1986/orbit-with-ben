@@ -112547,16 +112547,21 @@
           "at": "2026-10-30T12:38Z",
           "by": "cursor",
           "what": "step 2 of 5 done: Row check PASS at frame 109 (4.542s). Offsets p10 -0.44%, p25 -0.89%, p50 +0.47%, p75 +0.91%, p90 +0.91%. No vertical seam. Polish and picture_qa PASS on the row. Long splice running in tmux j1263-render."
+        },
+        {
+          "at": "2026-10-30T12:44Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: NAS splice write stalled. Restarted the same build onto /private/tmp. Local splice is encoding at about 7 MB/s. Pause trim is still the v07 cut, frames 1539-1552."
         }
       ],
-      "remaining_action": "Splice rough v08 from v04 with plate in-point 4.541667 s, then run gates",
+      "remaining_action": "Splice rough v08 from v04 on local disk, then pause trim, gates and deliver",
       "kind": "assembly",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-10-30T12:38Z",
+        "at": "2026-10-30T12:44Z",
         "by": "cursor",
-        "note": "Row check PASS at frame 109 (4.542s). Offsets p10 -0.44%, p25 -0.89%, p50 +0.47%, p75 +0.91%, p90 +0.91%. No vertical se"
+        "note": "NAS splice write stalled. Restarted the same build onto /private/tmp. Local splice is encoding at about 7 MB/s. Pause tr"
       },
       "taskKeys": [
         "HOS:008"
