@@ -111372,19 +111372,25 @@
           "at": "2026-10-30T08:00Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T08:01Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling)",
+      "remaining_action": "Read J1241 ruling and locate HOS 008 graphics/composite assets",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T08:00Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 5,
+        "at": "2026-10-30T08:01Z",
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [],
