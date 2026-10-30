@@ -113133,9 +113133,14 @@
           "at": "2026-10-30T19:57Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T19:58Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1264; starting inspection of HOS PR #387 branch gemini/j1259-release-gate-chapters-sources"
         }
       ],
-      "remaining_action": "HOS PR #387: make the Chapters/Sources gate release-stage (warn while drafting, fail at release) so contract CI stays green (Chief h13 on J1261)",
+      "remaining_action": "Inspect PR #387 branch gemini/j1259-release-gate-chapters-sources and update rules.ts, hos-contract.test.ts, and STUDIO_PLAYBOOK.md",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -113148,11 +113153,10 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T19:57Z",
+        "of": 4,
+        "at": "2026-10-30T19:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J1264; starting inspection of HOS PR #387 branch gemini/j1259-release-gate-chapters-sources"
       }
     },
     {
