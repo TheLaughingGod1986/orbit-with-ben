@@ -112101,13 +112101,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T14:45Z",
-      "eta": "2026-10-30T16:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T10:55Z",
-      "result": "",
+      "result": "Verified live ElevenLabs at 2026-10-30T14:46:38Z: active, 121114 characters remaining against Titan v02 requirement 7879. Recorded ledger; J0302 reopened with existing approvals and gates intact. Read-back verified open and hold cleared. No credits spent; no publishing changes. NAS offload attempted under disk rule: no eligible old scratch, approximately 7 GB free.",
       "history": [
         {
           "at": "2026-10-30T10:55Z",
@@ -112138,6 +112138,11 @@
           "at": "2026-10-30T14:47Z",
           "by": "codex",
           "what": "step 3 of 3 done: Read-back confirms J0302 open with credit hold cleared and original approval/body retained. No spend. Ledger and queue changes pushed from clean worktree."
+        },
+        {
+          "at": "2026-10-30T14:47Z",
+          "by": "codex",
+          "what": "done: Verified live ElevenLabs at 2026-10-30T14:46:38Z: active, 121114 characters remaining against Titan v02 requirement 7879. Recorded ledger; J0302 reopened with existing approvals and gates intact. Read-back verified open and hold cleared. No credits spent; no publishing changes. NAS offload attempted under disk rule: no eligible old scratch, approximately 7 GB free."
         }
       ],
       "remaining_action": "Verification complete; Titan VO is available to its worker",
