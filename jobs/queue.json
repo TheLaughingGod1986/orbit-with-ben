@@ -110484,19 +110484,26 @@
           "at": "2026-10-30T04:49Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T04:49Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: claimed; starting"
         }
       ],
-      "remaining_action": "HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling)",
+      "remaining_action": "read Chief review + locate HOS 008 assets; build code_graphics_v03 for 4 FIX rows",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-30T04:49Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed; starting"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1242",
