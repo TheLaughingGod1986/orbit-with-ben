@@ -113246,9 +113246,14 @@
           "at": "2026-10-30T17:04Z",
           "by": "cursor",
           "what": "step 1 of 4 done: h15 measure: trace span y=280-920. Worst shaft offset in each sample is under 19.2 px (p10 17.5, p25 10.0, p50 5.0, p75 14.5, p90 17.0). Hand at the grip is not the rod. Splice starting."
+        },
+        {
+          "at": "2026-10-30T17:06Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: h15 PASS worst 14.0 px (limit 19.2). Splice running in tmux j1267-render. Log ~/_desk/logs/J1267-render.log. Done file written only when it exits. Do not start a second copy."
         }
       ],
-      "remaining_action": "Splice rough v09 from the passing three-height rod check, then run the gates",
+      "remaining_action": "Wait for the detached rough v09 splice, then gates, evidence and park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -113257,9 +113262,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-30T17:04Z",
+        "at": "2026-10-30T17:06Z",
         "by": "cursor",
-        "note": "h15 measure: trace span y=280-920. Worst shaft offset in each sample is under 19.2 px (p10 17.5, p25 10.0, p50 5.0, p75 "
+        "note": "h15 PASS worst 14.0 px (limit 19.2). Splice running in tmux j1267-render. Log ~/_desk/logs/J1267-render.log. Done file w"
       }
     },
     {
