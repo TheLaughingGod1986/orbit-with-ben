@@ -113408,13 +113408,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-30T15:56Z",
-      "eta": "2026-10-30T17:56Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-30T15:46Z",
-      "result": "",
+      "result": "20 GB not reached. Do not reopen J1100. Container free 7,491,870,720 -> 12,790,501,376 bytes (12.79 decimal GB). Recovered about 5.30 GB: unused Cursor CLI copies, GoogleUpdater crx_cache, Synology daemon.log (5 MB tail kept). nas_offload had nothing older than 48 h. Chrome clones are shared APFS (10 removed, +6.5 MB, rest left). Nothing moved to the NAS. Next safe bytes: hos-008-lightning 5.1 GB only after 48 h and if unreferenced; Cursor chats 4.0 GB need a Chief decision to cross 20 GB. Synology backup-sync is dataless but nested inside itself. Report ~/_desk/logs/J1270/REPORT.txt. GBP0.",
       "history": [
         {
           "at": "2026-10-30T15:46Z",
@@ -113440,6 +113440,11 @@
           "at": "2026-10-30T16:14Z",
           "by": "cursor",
           "what": "step 4 of 4 done: Safe reclaim stopped at 12.79 decimal GB free (12,790,501,376 bytes container free; was 7,491,870,720). About 5.30 GB recovered. 20 GB not reached. No NAS move. J1100 not reopened. Report ~/_desk/logs/J1270/REPORT.txt."
+        },
+        {
+          "at": "2026-10-30T16:14Z",
+          "by": "cursor",
+          "what": "done: 20 GB not reached. Do not reopen J1100. Container free 7,491,870,720 -> 12,790,501,376 bytes (12.79 decimal GB). Recovered about 5.30 GB: unused Cursor CLI copies, GoogleUpdater crx_cache, Synology daemon.log (5 MB tail kept). nas_offload had nothing older than 48 h. Chrome clones are shared APFS (10 removed, +6.5 MB, rest left). Nothing moved to the NAS. Next safe bytes: hos-008-lightning 5.1 GB only after 48 h and if unreferenced; Cursor chats 4.0 GB need a Chief decision to cross 20 GB. Synology backup-sync is dataless but nested inside itself. Report ~/_desk/logs/J1270/REPORT.txt. GBP0."
         }
       ],
       "remaining_action": "Chief verifies free space. J1100 stays blocked.",
