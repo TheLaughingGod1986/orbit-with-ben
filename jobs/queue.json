@@ -112847,6 +112847,11 @@
           "at": "2026-10-30T13:49Z",
           "by": "cursor",
           "what": "step 1 of 4 done: First rsync stopped: Synology rejected AppleDouble ._* sidecars (25 and 54 tiny files). Sources kept. Retry excludes those sidecars and resumes into the partial NAS folders."
+        },
+        {
+          "at": "2026-10-30T13:55Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: SMB rejects rsync temp names that start with ._. Copy resumed with rsync --inplace. Sources still on the mini until the checksum matches."
         }
       ],
       "remaining_action": "Copy j1241 and j1248 worktrees to the NAS and verify them",
@@ -112855,9 +112860,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-30T13:49Z",
+        "at": "2026-10-30T13:55Z",
         "by": "cursor",
-        "note": "First rsync stopped: Synology rejected AppleDouble ._* sidecars (25 and 54 tiny files). Sources kept. Retry excludes tho"
+        "note": "SMB rejects rsync temp names that start with ._. Copy resumed with rsync --inplace. Sources still on the mini until the "
       },
       "taskKeys": [
         "HOS:008"
