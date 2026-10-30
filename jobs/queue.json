@@ -107372,16 +107372,21 @@
           "at": "2026-10-30T07:53Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed; scanning existing Buffer HOS code and prior progress"
+        },
+        {
+          "at": "2026-10-30T07:54Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: gap found: HOS channel-youtube afterUpload does not register; OWB does. Backfill mostly done; Chief marked ready-to-close after restore+schedule"
         }
       ],
-      "remaining_action": "Inspect J1202 prior work and Buffer HOS code state",
+      "remaining_action": "Wire HOS afterUpload to register --channel hos into OWB social/hos; update playbook text",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-30T07:53Z",
+        "at": "2026-10-30T07:54Z",
         "by": "cursor",
-        "note": "claimed; scanning existing Buffer HOS code and prior progress"
+        "note": "gap found: HOS channel-youtube afterUpload does not register; OWB does. Backfill mostly done; Chief marked ready-to-clos"
       },
       "taskKeys": [
         "HOS:006"
