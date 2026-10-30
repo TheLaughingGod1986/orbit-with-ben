@@ -108608,20 +108608,25 @@
           "at": "2026-10-30T02:53Z",
           "by": "cursor",
           "what": "step 1 of 6 done: v03 master exists (PAUSE TRIM 557.81→540.02s); contact-sheet PNGs encoding; tmux j1218-asm-v03; log ~/_desk/logs/j1218-asm-v03.log; no duplicate render"
+        },
+        {
+          "at": "2026-10-30T03:10Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: v03 master sha 0da87a82… 540.02s; picture_qa PASS 0 FAIL/6 WARN; polish PASS 0 FAIL/6 WARN; music SKIPPED_NO_BED; desk pack ready; NAS durable copy ~98%"
         }
       ],
-      "remaining_action": "Wait for detached j1218-asm-v03 assembler (contact sheet + gates); then desk deliver + Chief park",
+      "remaining_action": "Assembler deliver finishing NAS rsync; episode gate + evidence pack + park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-10-30T02:53Z",
+        "at": "2026-10-30T03:10Z",
         "by": "cursor",
-        "note": "v03 master exists (PAUSE TRIM 557.81→540.02s); contact-sheet PNGs encoding; tmux j1218-asm-v03; log ~/_desk/logs/j1218-a"
+        "note": "v03 master sha 0da87a82… 540.02s; picture_qa PASS 0 FAIL/6 WARN; polish PASS 0 FAIL/6 WARN; music SKIPPED_NO_BED; desk p"
       }
     },
     {
