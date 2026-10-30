@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1254 | any | open | – | – | chief · Chief: verify condition for J0302 |  |
 | J1255 | any | open | – | – | chief · Chief: verify condition for J0345 |  |
 | J1256 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
-| J1258 | mini | claimed | gemini | 2026-10-30T13:41Z | 007 upload · listing · HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05) | 6521114044 |
+| J1258 | mini | blocked | gemini | – | 007 upload · listing · HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05) | 6521114044 |
 | J1260 | mini | open | – | – | 008 edit · assembly · HOS 008: P5:10 plate in-point + move hook pause trim -> rough v07 (Chief h10 on J1257) | 6521766235 |
 | J1261 | mini | open | – | – | qa · HOS: open PR for the chapters/sources release gate (J1259 patch), park for Chief |  |
 
