@@ -112739,13 +112739,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T15:35Z",
-      "eta": "2026-10-30T17:35Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T11:59Z",
-      "result": "",
+      "result": "Verified J1002 45ef75589 and J1003 0c18bb2cb are complete. Historical Studio SHA256 matches; Earth 887 lifetime views, 30.7% stayed MISS, 75.3% viewed PASS and 100-bucket maximum drop 0.20->0.21 (-4.98pp) reproduce. Final independent audit PASS absent; Mercury narrative says 0.18->0.19 (-5.76pp), but both saved mature raw curves yield 0.20->0.21 (-5.59pp). Retained J0985 blocked with precise reconciliation requirement and final review, wait --recheck J1262, next check 2026-10-30T21:45:00Z. Readback PASS. No spend or publishing changes. NAS offload found no eligible old scratch.",
       "history": [
         {
           "at": "2026-10-30T11:59Z",
@@ -112776,6 +112776,11 @@
           "at": "2026-10-30T15:38Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback PASS: J0985 blocked, last_recheck J1262, next verification 21:45Z; J1003 done. Earth source hash and raw maximum drop independently reproduced."
+        },
+        {
+          "at": "2026-10-30T15:38Z",
+          "by": "codex",
+          "what": "done: Verified J1002 45ef75589 and J1003 0c18bb2cb are complete. Historical Studio SHA256 matches; Earth 887 lifetime views, 30.7% stayed MISS, 75.3% viewed PASS and 100-bucket maximum drop 0.20->0.21 (-4.98pp) reproduce. Final independent audit PASS absent; Mercury narrative says 0.18->0.19 (-5.76pp), but both saved mature raw curves yield 0.20->0.21 (-5.59pp). Retained J0985 blocked with precise reconciliation requirement and final review, wait --recheck J1262, next check 2026-10-30T21:45:00Z. Readback PASS. No spend or publishing changes. NAS offload found no eligible old scratch."
         }
       ],
       "remaining_action": "Verification complete; report retained audit hold",
