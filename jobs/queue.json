@@ -108629,20 +108629,25 @@
           "at": "2026-10-30T03:19Z",
           "by": "cursor",
           "what": "step 1 of 6 done: prior tmux j1218-asm-v03 already joined 540.02s sha=0da87a82; NAS rsync WARN exit20; UAT rsync live; not duplicating"
+        },
+        {
+          "at": "2026-10-30T03:21Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: asm v03 done exit0; UAT sha 0da87a82; picture/polish PASS; music SKIPPED_NO_BED; NAS rsync failed during deliver — retrying cp"
         }
       ],
-      "remaining_action": "Wait for in-flight v03 deliver (rsync); then gates + evidence pack",
+      "remaining_action": "NAS durable copy + episode gate + evidence/PR; park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-10-30T03:19Z",
+        "at": "2026-10-30T03:21Z",
         "by": "cursor",
-        "note": "prior tmux j1218-asm-v03 already joined 540.02s sha=0da87a82; NAS rsync WARN exit20; UAT rsync live; not duplicating"
+        "note": "asm v03 done exit0; UAT sha 0da87a82; picture/polish PASS; music SKIPPED_NO_BED; NAS rsync failed during deliver — retry"
       }
     },
     {
