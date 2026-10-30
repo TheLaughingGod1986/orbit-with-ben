@@ -111402,17 +111402,22 @@
           "at": "2026-10-30T08:27Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T08:28Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Reclaimed. picture_qa PASS, polish PASS, runtime 540.458s. Delivering copies now. tmux j1248-render; no .done yet."
         }
       ],
-      "remaining_action": "Detached render running: code_graphics_v04 + rough_v05 splice",
+      "remaining_action": "Wait for detached rough_v05 delivery, then commit the HOS PR and park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-10-30T08:09Z",
+        "at": "2026-10-30T08:28Z",
         "by": "cursor",
-        "note": "still running; tmux j1248-render; log ~/_desk/logs/j1248-render.log"
+        "note": "Reclaimed. picture_qa PASS, polish PASS, runtime 540.458s. Delivering copies now. tmux j1248-render; no .done yet."
       },
       "taskKeys": [
         "HOS:008"
