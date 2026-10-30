@@ -109702,9 +109702,14 @@
           "at": "2026-10-30T01:31Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T01:31Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Chief to mark J0966 done (all 4 local HC cuts verified & Ben-approved; swaps in J1219/J1221/J1222/J1223)",
+      "remaining_action": "Verify J0966 predecessor, evidence and remaining approvals",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-30T01:31:33+00:00",
@@ -109713,10 +109718,12 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-30T01:31Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:007",
+        "HOS:008"
+      ]
     },
     {
       "id": "J1235",
