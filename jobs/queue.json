@@ -112113,10 +112113,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T11:06Z",
+      "eta": "2026-10-30T13:06Z",
       "created_by": "chief",
       "created_at": "2026-10-30T11:03Z",
       "result": "",
@@ -112125,11 +112125,24 @@
           "at": "2026-10-30T11:03Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T11:06Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 008: P3:04 composite + frame-exact splice/runtime -> rough v06 (Chief h07 on J1248)",
       "due": "2026-11-12T20:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T11:06Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1258",
