@@ -110369,10 +110369,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T04:11Z",
-      "eta": "2026-10-30T06:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T03:52Z",
       "result": "",
@@ -110396,6 +110396,11 @@
           "at": "2026-10-30T04:18Z",
           "by": "cursor",
           "what": "step 1 of 5 done: script written; tmux J1240-uranus-v09 past Shot9 extract; log ~/_desk/logs/J1240-uranus-v09.log"
+        },
+        {
+          "at": "2026-10-30T04:18Z",
+          "by": "cursor",
+          "what": "released: detached: tmux J1240-uranus-v09; log ~/_desk/logs/J1240-uranus-v09.log; donefile ~/_desk/logs/J1240-uranus-v09.done. Assembler: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/_assemble_uranus_v09.py (slow eased ≤1.5px/frame open + motion blur). Next run: if .done missing leave running; if present read exit+log, finish gates/UAT evidence, park for Chief. No upload."
         }
       ],
       "remaining_action": "Detached v09 assemble running in tmux; next run checks .done then gates/UAT/park",
