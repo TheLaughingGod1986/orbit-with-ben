@@ -45,6 +45,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1248 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling) |  |
 | J1252 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1253 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1254 | any | open | – | – | chief · Chief: verify condition for J0302 |  |
+| J1255 | any | open | – | – | chief · Chief: verify condition for J0345 |  |
 
 Recently finished:
 

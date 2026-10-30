@@ -1,5 +1,5 @@
 {
-  "next_id": 1254,
+  "next_id": 1256,
   "jobs": [
     {
       "id": "J0001",
@@ -24175,6 +24175,11 @@
           "at": "2026-10-30T00:40Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T10:55:00Z"
+        },
+        {
+          "at": "2026-10-30T10:55Z",
+          "by": "relay",
+          "what": "condition verification queued: J1254"
         }
       ],
       "kind": "vo",
@@ -24190,10 +24195,11 @@
       "hold": {
         "type": "input",
         "condition": "Live ElevenLabs subscription must have at least 7879 characters for locked Titan v02; API at 2026-10-30T00:39:29Z showed only 114 remaining and reset at 10:50:31Z. Re-read balance after reset; date alone is not proof.",
-        "check_at": "2026-10-30T10:55:00Z",
+        "check_at": "2026-10-30T11:55:20+00:00",
         "last_recheck": "J1229",
         "checked_at": "2026-10-30T00:40:09+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1254"
       }
     },
     {
@@ -27580,6 +27586,11 @@
           "at": "2026-10-30T00:45Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T10:55:00Z"
+        },
+        {
+          "at": "2026-10-30T10:55Z",
+          "by": "relay",
+          "what": "condition verification queued: J1255"
         }
       ],
       "kind": "vo",
@@ -27595,10 +27606,11 @@
       "hold": {
         "type": "input",
         "condition": "Live ElevenLabs credit must cover locked 031 v03 (7765 characters) after priority Titan J0302 (7879 characters) is served. API 2026-10-30T00:44:41Z: only 114 remaining, reset 10:50:31Z; date alone is not proof. Evidence jobs/readbacks/J1230.json.",
-        "check_at": "2026-10-30T10:55:00Z",
+        "check_at": "2026-10-30T11:55:20+00:00",
         "last_recheck": "J1230",
         "checked_at": "2026-10-30T00:45:13+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1255"
       }
     },
     {
@@ -111967,6 +111979,68 @@
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-30T11:50:27+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1254",
+      "title": "Chief: verify condition for J0302",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0302: Live ElevenLabs subscription must have at least 7879 characters for locked Titan v02; API at 2026-10-30T00:39:29Z showed only 114 remaining and reset at 10:50:31Z. Re-read balance after reset; date alone is not proof.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0302 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T10:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T10:55Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Record the locked Titan v02 voiceover once sufficient renewed credit is verified",
+      "kind": "chief",
+      "recheck_of": "J0302",
+      "due": "2026-10-30T11:55:20+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1255",
+      "title": "Chief: verify condition for J0345",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0345: Live ElevenLabs credit must cover locked 031 v03 (7765 characters) after priority Titan J0302 (7879 characters) is served. API 2026-10-30T00:44:41Z: only 114 remaining, reset 10:50:31Z; date alone is not proof. Evidence jobs/readbacks/J1230.json.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0345 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T10:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T10:55Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Record locked Magnetic Field Flip v03 VO after Titan and verified sufficient renewed credit",
+      "kind": "chief",
+      "recheck_of": "J0345",
+      "due": "2026-10-30T11:55:20+00:00",
       "due_kind": "condition-verification"
     }
   ],
