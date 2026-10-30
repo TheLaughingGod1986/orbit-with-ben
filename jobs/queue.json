@@ -108518,20 +108518,25 @@
           "at": "2026-10-30T01:52Z",
           "by": "cursor",
           "what": "step 0 of 6 done: claimed J1218; disk ~8GB free, nas_offload next"
+        },
+        {
+          "at": "2026-10-30T01:53Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: rulings read; freed local scratch; starting v03 code"
         }
       ],
-      "remaining_action": "Read Chief FIX rulings + J1193 findings; assess v02/v03 state and disk before repair",
+      "remaining_action": "Build non-destructive v03 assembler + graphics FIX pack; then detach render",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-30T01:52Z",
+        "at": "2026-10-30T01:53Z",
         "by": "cursor",
-        "note": "claimed J1218; disk ~8GB free, nas_offload next"
+        "note": "rulings read; freed local scratch; starting v03 code"
       }
     },
     {
