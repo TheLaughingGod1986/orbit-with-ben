@@ -108241,9 +108241,14 @@
           "at": "2026-10-30T18:00Z",
           "by": "relay",
           "what": "condition verification queued: J1278"
+        },
+        {
+          "at": "2026-10-30T18:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T12:00:00Z"
         }
       ],
-      "remaining_action": "New eligible meteor/Titan footage required; Chief verifies 30 Oct 18:00Z, final deadline 5 Nov 12:00Z",
+      "remaining_action": "Await new eligible S5/S6 footage; final verification 5 Nov 12:00 UTC, otherwise retain scheduled-copy fallback",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -108256,9 +108261,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "PR350 decided: all submitted MEO openings rejected, S6 missing input. Elected Chief checks only newly supplied materially different eligible meteor/Titan footage with source/rights/hash/sequence/aspect-correct crop evidence. No new broad search. If absent, retain hold for final 5 Nov 12:00Z check; then close unsuccessful source branch and record existing scheduled-copy fallback. No automatic assembly, PASS or publishing.",
-        "check_at": "2026-10-30T19:00:28+00:00",
-        "recheck_task": "J1278"
+        "condition": "J1278 verified 30 Oct: no newly supplied eligible S5 meteor or S6 Titan footage. PR350 rejects submitted MEO openings; Titan optical input missing. Require materially different sequential footage with source, commercial rights, hash, native dimensions, exact in/out, full-size sequence and clean aspect-correct crop at <=2.35x. Final check 5 Nov 12:00Z: if still absent close unsuccessful source branch and record existing scheduled-copy fallback. No broad search, automatic assembly, PASS or publishing.",
+        "check_at": "2026-11-05T12:00:00Z",
+        "last_recheck": "J1278",
+        "checked_at": "2026-10-30T18:39:52+00:00",
+        "checked_by": "codex"
       }
     },
     {
