@@ -107256,9 +107256,14 @@
           "at": "2026-10-30T07:32Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T07:33Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model",
+      "remaining_action": "Inspect ai_spend_daily.py, claude.ai/settings/usage in CDP :9222, and Gemini usage endpoints",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -107271,11 +107276,9 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T07:32Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "of": 4,
+        "at": "2026-10-30T07:33Z",
+        "by": "gemini"
       }
     },
     {
