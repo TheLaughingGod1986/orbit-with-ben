@@ -107382,16 +107382,21 @@
           "at": "2026-10-30T07:56Z",
           "by": "cursor",
           "what": "step 1 of 5 done: worktrees ready; 3 mid-Oct Shorts lack verified local media for backfill; code gap is HOS afterUpload no-op"
+        },
+        {
+          "at": "2026-10-30T08:00Z",
+          "by": "cursor",
+          "what": "step 5 of 5 done: OWB PR #355 + HOS PR #381; dry-run logged; 3 mid-Oct Shorts still need Studio Download media to backfill"
         }
       ],
-      "remaining_action": "Implement HOS afterUpload register + playbook + tests + dry-run PR",
+      "remaining_action": "None: PRs up for Chief merge",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 5,
         "of": 5,
-        "at": "2026-10-30T07:56Z",
+        "at": "2026-10-30T08:00Z",
         "by": "cursor",
-        "note": "worktrees ready; 3 mid-Oct Shorts lack verified local media for backfill; code gap is HOS afterUpload no-op"
+        "note": "OWB PR #355 + HOS PR #381; dry-run logged; 3 mid-Oct Shorts still need Studio Download media to backfill"
       },
       "taskKeys": [
         "HOS:006"
