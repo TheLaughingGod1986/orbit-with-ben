@@ -113146,13 +113146,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-30T21:19Z",
-      "eta": "2026-10-30T22:49Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "",
+      "result": "Chief (Grok) h26, HOS #180 6533670849 (PR note 6533671128): PASS. HOS PR #387 head d0398c57 squash-merged as 5c25d75d. Diff matches h13 terms (release-stage severity: error when m.video set or schedule-now <=7 d, else warn '(blocks at release)'; Claude's 4 tests + a/b/c; playbook line). CI green; independent vitest 192/192 and package-lint exit 0 at the head and over today's main (008/009/010 pass the gate with no chapters/sources warn). GBP0.",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113213,6 +113213,11 @@
           "at": "2026-10-30T21:19Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T21:19Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h26, HOS #180 6533670849 (PR note 6533671128): PASS. HOS PR #387 head d0398c57 squash-merged as 5c25d75d. Diff matches h13 terms (release-stage severity: error when m.video set or schedule-now <=7 d, else warn '(blocks at release)'; Claude's 4 tests + a/b/c; playbook line). CI green; independent vitest 192/192 and package-lint exit 0 at the head and over today's main (008/009/010 pass the gate with no chapters/sources warn). GBP0."
         }
       ],
       "remaining_action": "Done; parking J1264 for Chief release-gate PR review (merge)",
@@ -113224,7 +113229,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6533670849"
     },
     {
       "id": "J1265",
