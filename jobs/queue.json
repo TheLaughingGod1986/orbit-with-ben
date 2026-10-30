@@ -113102,9 +113102,14 @@
           "at": "2026-10-30T16:42Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Inspected 004-008 descriptions, PR #387/#388, and 009/010 FACT_NOTES_v01.md + VO_TAKES_KEEP.json + wav durations"
+        },
+        {
+          "at": "2026-10-30T16:46Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Computed provisional VO part chapter timings and verified 8 FACT_NOTES citations each for HOS 009 and 010"
         }
       ],
-      "remaining_action": "Compute provisional Chapters and draft Sources blocks for HOS 009 and 010 long descriptions",
+      "remaining_action": "Apply Chapters and Sources blocks to 009 and 010 long descriptions and update production-status.md",
       "due": "2026-11-18T20:00:00Z",
       "kind": "listing",
       "rerouted_from": {
@@ -113117,11 +113122,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-30T16:42Z",
+        "at": "2026-10-30T16:46Z",
         "by": "gemini",
-        "note": "Inspected 004-008 descriptions, PR #387/#388, and 009/010 FACT_NOTES_v01.md + VO_TAKES_KEEP.json + wav durations"
+        "note": "Computed provisional VO part chapter timings and verified 8 FACT_NOTES citations each for HOS 009 and 010"
       },
       "taskKeys": [
         "HOS:009",
