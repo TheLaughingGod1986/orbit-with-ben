@@ -85935,6 +85935,11 @@
           "at": "2026-10-30T13:39Z",
           "by": "relay",
           "what": "condition verification queued: J1269"
+        },
+        {
+          "at": "2026-10-30T15:42Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T21:45:00Z"
         }
       ],
       "kind": "listing",
@@ -85950,7 +85955,7 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Clear finished Studio A/B title test widget on GHZDsiH7L7A so Data API allows title update",
+      "remaining_action": "Verify the finished Atom title test no longer blocks the approved Test B metadata update",
       "progress": {
         "step": 4,
         "of": 5,
@@ -85960,9 +85965,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Data API 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE on GHZDsiH7L7A; J0280 Title Test & Compare finished 29 Oct 17:54 inconclusive with Variant A 'What's Really Inside an Atom?' visible to all and watch-time share '—' on A/B/C, but Studio edit page still holds 'A/B testing titles · Results ready'; readback verified all fields original in PR #354)",
-        "check_at": "2026-10-30T14:39:23+00:00",
-        "recheck_task": "J1269"
+        "condition": "J1269 live Studio reload 30 Oct 15:41Z still shows A/B testing titles / Results ready on GHZDsiH7L7A. Original title and Public remain. Earlier API restriction UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE is not proven cleared; no write probe made. PR 354 holds prior refusal and originals verification.",
+        "check_at": "2026-10-30T21:45:00Z",
+        "last_recheck": "J1269",
+        "checked_at": "2026-10-30T15:42:53+00:00",
+        "checked_by": "codex"
       }
     },
     {
