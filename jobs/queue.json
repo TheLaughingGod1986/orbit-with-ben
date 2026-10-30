@@ -114902,13 +114902,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T20:48Z",
-      "eta": "2026-10-30T22:48Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T20:42Z",
-      "result": "",
+      "result": "Verified J0936 condition unmet: PR333 unchanged OPEN 0a7fcb6ad, S2/S5 repairs outstanding, S6 whole-loop9.26 FAIL, delivery/replacement PASS/Ben swap approvals absent. J1253 cleared credits only; J1100 still behind20GB guard, live about6.8GiB. Hold updated for31Oct03:00UTC; existing approvals, swaps,6/6 history and deadlines preserved. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-10-30T20:42Z",
@@ -114939,6 +114939,11 @@
           "at": "2026-10-30T20:49Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0936 hold updated with current disk, repair, delivery and approval blockers; next check 31 Oct 03:00 UTC aligned with J1100. Prior PASS, completed swaps, 6/6 history and fallbacks preserved."
+        },
+        {
+          "at": "2026-10-30T20:50Z",
+          "by": "codex",
+          "what": "done: Verified J0936 condition unmet: PR333 unchanged OPEN 0a7fcb6ad, S2/S5 repairs outstanding, S6 whole-loop9.26 FAIL, delivery/replacement PASS/Ben swap approvals absent. J1253 cleared credits only; J1100 still behind20GB guard, live about6.8GiB. Hold updated for31Oct03:00UTC; existing approvals, swaps,6/6 history and deadlines preserved. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 remains held for repairs and approvals",
