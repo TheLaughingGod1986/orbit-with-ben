@@ -114386,13 +114386,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-30T20:12Z",
-      "eta": "2026-10-30T22:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T17:55Z",
-      "result": "",
+      "result": "parked for Chief: PR #358 (3c734de39, CI green) sets assets[0].video.metadata.title for Facebook Reels; Apophis FB Reel 6ae325220c2cf67057729db8 read back and reported",
       "history": [
         {
           "at": "2026-10-30T17:55Z",
@@ -114428,6 +114428,11 @@
           "at": "2026-10-30T20:25Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Opened PR #358 (3c734de39) with CI green (Content Ops checks + Studio core check PASS)"
+        },
+        {
+          "at": "2026-10-30T20:25Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PR #358 (3c734de39, CI green) sets assets[0].video.metadata.title for Facebook Reels; Apophis FB Reel 6ae325220c2cf67057729db8 read back and reported"
         }
       ],
       "remaining_action": "Review and merge PR #358 (CI green)",
