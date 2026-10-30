@@ -98071,9 +98071,14 @@
           "at": "2026-10-30T16:15Z",
           "by": "relay",
           "what": "condition verification queued: J1274"
+        },
+        {
+          "at": "2026-10-30T17:32Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T03:00:00Z"
         }
       ],
-      "remaining_action": "Await J1270 disk recovery and live 20 GB verification; then finish S2/S5 pickups and S6 loop repair",
+      "remaining_action": "Restore and verify 20 GB free; then finish S2/S5 pickups and S6 loop repair",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -98098,10 +98103,12 @@
         "note": "Required NAS offload completed with full filesystem access: no /private/tmp scratch old enough to move; 7,955 MB before "
       },
       "hold": {
-        "type": "dependency",
-        "condition": "J1270 completed safe disk recovery and elected Chief verifies live Mini free space >=20 GB; then reopen only for outstanding repairs under 29 Oct ruling. S6 full-frame loop FAIL still requires compliant fix or evidenced gate-correction review.",
-        "check_at": "2026-10-30T17:15:13+00:00",
-        "recheck_task": "J1274"
+        "type": "input",
+        "condition": "Safe disk recovery must restore live Mini free space to >=20 GB, verified by elected Chief. J1270 ended below guard (12,790,501,376 bytes); J1274 live 2026-10-30T17:32Z only 7,554,764,800 bytes. Required nas_offload --apply found no eligible scratch (7204 MiB before/after). Reopen repairs only under 29/30 Oct rulings; S6 full-frame loop 9.26 FAIL still needs compliant fix or evidenced gate-correction review.",
+        "check_at": "2026-10-31T03:00:00Z",
+        "last_recheck": "J1274",
+        "checked_at": "2026-10-30T17:32:25+00:00",
+        "checked_by": "codex"
       }
     },
     {
