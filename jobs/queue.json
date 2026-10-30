@@ -108538,20 +108538,24 @@
           "at": "2026-10-30T02:04Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T02:04Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Wait for detached asm tmux j1218-asm-v03; then gates+deliver+Chief park",
+      "remaining_action": "Read Chief rulings + J1193 findings; inventory HOS 008 rough/assembler state",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 6,
-        "at": "2026-10-30T02:01Z",
-        "by": "cursor",
-        "note": "CG v02 rendered (11 mp4/5 mov); PR379 pushed; asm running; NAS CG rsync skipped (hung)"
+        "at": "2026-10-30T02:04Z",
+        "by": "cursor"
       }
     },
     {
