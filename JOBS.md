@@ -49,7 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1258 | mini | blocked | gemini | – | 007 upload · listing · HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05) | 6521114044 |
 | J1261 | mini | blocked | gemini | – | qa · HOS: open PR for the chapters/sources release gate (J1259 patch), park for Chief |  |
 | J1262 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1263 | mini | open | – | – | 008 edit · assembly · HOS 008: P5:10 plate in-point >=4.40 s -> rough v08 (Chief h11 on J1260) | 6522751408 |
+| J1263 | mini | claimed | cursor | 2026-10-30T14:54Z | 008 edit · assembly · HOS 008: P5:10 plate in-point >=4.40 s -> rough v08 (Chief h11 on J1260) | 6522751408 |
 
 Recently finished:
 
