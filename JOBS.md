@@ -54,13 +54,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1218 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: repair J1213 rough v01 picture failures into diagnostic v02 |  |
 | J1222 | mini | open | – | – | studio · Swap HOS Short 4WUs0beKn0A (007 vaccine-name) to Ben-OK'd v05 (Private, same slot Tue 17 Nov 11:30) | 6507831644 |
-| J1232 | any | claimed | codex | 2026-10-30T02:51Z | chief · Chief: verify condition for J0978 |  |
 | J1233 | any | open | – | – | chief · Chief: verify condition for J1131 |  |
 | J1234 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1235 | any | open | – | – | chief · Chief: verify condition for J1192 |  |
 
 Recently finished:
 
+- J1232 done: Chief: verify condition for J0978 (Condition satisfied: Atom title test finished 29 Oct 17:54, no winner (insufficient impressions), original title live. J0978 reopened. Evidence jobs/readbacks/J1232.json (1cd2ef193); channel:audit 61 videos, 0 errors. No YouTube mutations or spend.)
 - J1231 done: Chief: verify condition for J0862 (Verified live ElevenLabs HTTP 200 at 2026-10-30T00:47:42Z: 209422/209536 used, 114 remaining; insufficient. API reset 2026-10-30T10:50:31Z. J0862 kept blocked with recheck 11:00Z; original approvals/gates preserved. Balance recorded in AI spend ledger. HOS desk #6512130347. No spend or publishing changes.)
 - J1230 done: Chief: verify condition for J0345 (Verified live API at 00:44:41Z: 114 characters remain; 031 v03 needs 7765. J0345 stays blocked; recheck 2026-10-30T10:55Z after API reset 10:50:31Z. Titan J0302 (7879 chars) stays ahead. Evidence and ledger a86b49a9f; no spend or publishing changes.)
 - J1229 done: Chief: verify condition for J0302 (Verified live ElevenLabs at 00:39:29Z: 114 remaining (209422/209536 used), locked Titan v02 requires 7879. API reset 30 Oct 10:50:31Z. J0302 remains blocked; next verification 30 Oct 10:55 UTC. Balance recorded in ledger. No spend or schedule changes.)
@@ -70,4 +70,3 @@ Recently finished:
 - J1225 done: Uranus v08: correct opening shake and verify playable UAT delivery (J1220 FIX) (Uranus v08 delivered for Chief review (no worker PASS). sha256 9888a2398282c2384290a09eb59a418f36c9960cf6d80036f2cad1cfb634bcf7. Method: path-vs-smooth open HF cancel + seam anchor (corr[open_start]=0) so loop PASS 8.45. Gates: open/level/polish/music/picture/loop/hitch all PASS. I=-14.30 LUFS TP=-1.80. measured_upscale 1.854. Motion accel_rms_y: v06 0.64 / v07 3.90 / v08 0.68. UAT playable NAS+iCloud same sha (Errno 11 fixed for this cut). Evidence jobs/reviews/J1225/. Do NOT repoint J1212 until Chief PASS. No upload/Buffer/privacy. Fallback ZpEA8stoSPA v01 11:30 unchanged.)
 - J1224 done: Chief: verify condition for J1131 (Verified Studio: combined test finished 29 Oct 2026 17:54 London; insufficient impressions. J1131 remains blocked until next London day, recheck 30 Oct 00:05Z. Evidence /Users/benjaminoats/_desk/reports/J1224/studio_readback.json; HOS desk report posted. No YouTube changes or spend.)
 - J1223 done: Swap HOS Short x_3L_IdYgEc (005 Harvey never saw) to Ben-OK'd v04 (Private, same slot Sun 15 Nov 11:30) (Swapped x_3L_IdYgEc -> Wvjd8g0CpzE (v04). New Private publishAt 2026-11-15T11:30:00Z; old Private unscheduled; en-GB captions; UPLOADS+Buffer+gate+J0280 retarget; HOS e4cafbaf; OWB 9e283c474; desk #180 posted. verify-swap PASS.)
-- J1221 done: Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30) (Swapped -sa2t7dAtCk -> xzKoHg0E0_U (v04). New Private publishAt 2026-11-16T11:30:00Z; old Private unscheduled; en-GB captions; UPLOADS+Buffer+gate; HOS 72041a33; OWB 11d3b8391; desk #180 posted. verify-swap PASS. Related Studio pending.)
