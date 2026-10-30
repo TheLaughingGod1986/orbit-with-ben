@@ -27478,6 +27478,11 @@
           "at": "2026-10-30T00:05Z",
           "by": "relay",
           "what": "condition verification queued: J1230"
+        },
+        {
+          "at": "2026-10-30T00:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T10:55:00Z"
         }
       ],
       "kind": "vo",
@@ -27489,12 +27494,14 @@
         "by": "cursor",
         "note": "dry-run 7765 chars; 119 left"
       },
-      "remaining_action": "Record the Magnetic Field Flip voiceover",
+      "remaining_action": "Record locked Magnetic Field Flip v03 VO after Titan and verified sufficient renewed credit",
       "hold": {
-        "type": "credits",
-        "condition": "ElevenLabs must have sufficient renewed characters; Titan J0302 remains ahead",
-        "check_at": "2026-10-30T01:05:39+00:00",
-        "recheck_task": "J1230"
+        "type": "input",
+        "condition": "Live ElevenLabs credit must cover locked 031 v03 (7765 characters) after priority Titan J0302 (7879 characters) is served. API 2026-10-30T00:44:41Z: only 114 remaining, reset 10:50:31Z; date alone is not proof. Evidence jobs/readbacks/J1230.json.",
+        "check_at": "2026-10-30T10:55:00Z",
+        "last_recheck": "J1230",
+        "checked_at": "2026-10-30T00:45:13+00:00",
+        "checked_by": "codex"
       }
     },
     {
