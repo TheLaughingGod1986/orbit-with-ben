@@ -110769,17 +110769,22 @@
           "at": "2026-10-30T06:17Z",
           "by": "cursor",
           "what": "step 2 of 5 done: resume: assemble still running (no .done); FINAL_SHA already logged; measuring motion diagnostics"
+        },
+        {
+          "at": "2026-10-30T06:19Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: full assemble exit 1: sha 7f621154…; polish/music/picture_qa/sfx PASS; open FAIL f0diff 1.40; loop FAIL 4.18>2×1.56; hitch_ok; flicker 1.81 vs v09 2.09"
         }
       ],
-      "remaining_action": "Wait for detached full assemble (tmux J1242-uranus-v10-full); then gates + UAT delivery + park for Chief",
+      "remaining_action": "Fix open f0diff+loop FAILS (peak bump), re-render full v10, then park for Chief",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-10-30T06:17Z",
+        "at": "2026-10-30T06:19Z",
         "by": "cursor",
-        "note": "resume: assemble still running (no .done); FINAL_SHA already logged; measuring motion diagnostics"
+        "note": "full assemble exit 1: sha 7f621154…; polish/music/picture_qa/sfx PASS; open FAIL f0diff 1.40; loop FAIL 4.18>2×1.56; hit"
       },
       "taskKeys": [
         "OWB:030"
