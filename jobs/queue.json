@@ -113401,10 +113401,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-10-30T20:59Z",
+      "eta": "2026-10-30T22:59Z",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
       "result": "",
@@ -113628,6 +113628,11 @@
           "at": "2026-10-30T20:59Z",
           "by": "chief",
           "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-30T20:59Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "J1286 continuous-playback QA, then Chief acceptance; direct-master VO condition cleared",
@@ -113635,7 +113640,15 @@
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T20:59Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1268",
