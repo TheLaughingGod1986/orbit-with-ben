@@ -113479,13 +113479,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T16:15Z",
-      "eta": "2026-10-30T18:15Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T15:52Z",
-      "result": "",
+      "result": "Waiting for: rVqgtkBV3jc reads Public, then post and pin light_speed_long_pinned_v01.txt",
       "history": [
         {
           "at": "2026-10-30T15:52Z",
@@ -113511,6 +113511,16 @@
           "at": "2026-10-30T16:25Z",
           "by": "cursor",
           "what": "step 2 of 3 done: End screen saved and read back: Subscribe + What Happened to Venus? (VBaYRPp85Sw), 7:51:01-8:11:01 (20s). Title, description, Scheduled and not-made-for-kids unchanged. Readback 01dc02125."
+        },
+        {
+          "at": "2026-10-30T16:25Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: rVqgtkBV3jc reads Public, then post and pin light_speed_long_pinned_v01.txt"
+        },
+        {
+          "at": "2026-10-30T16:25Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-01T18:05:00Z"
         }
       ],
       "remaining_action": "After go-public, pin the comment on rVqgtkBV3jc",
@@ -113525,7 +113535,12 @@
       },
       "taskKeys": [
         "OWB:024"
-      ]
+      ],
+      "hold": {
+        "type": "public",
+        "condition": "rVqgtkBV3jc reads Public, then post and pin light_speed_long_pinned_v01.txt",
+        "check_at": "2026-11-01T18:05:00Z"
+      }
     },
     {
       "id": "J1272",
