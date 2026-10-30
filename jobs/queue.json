@@ -110199,16 +110199,21 @@
           "at": "2026-10-30T03:49Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified 3 clips (1280x720, 24fps, 8.0s, sha256 matches ledger) and board use_s (7.0s, 3.76s, 5.34s)"
+        },
+        {
+          "at": "2026-10-30T03:56Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Exported 122 full-size PNG frames, 3 full-size PNG strips, 3 1-row contact sheets, and 3 frame-difference plots"
         }
       ],
-      "remaining_action": "Export full-size PNG strips, 1-row contact sheets, and frame-difference plots for the 3 flagged windows (+0.5 s either side)",
+      "remaining_action": "Inspect exported strips/sheets/plots and write 3-line read for each clip",
       "kind": "qa",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T03:49Z",
+        "at": "2026-10-30T03:56Z",
         "by": "gemini",
-        "note": "Verified 3 clips (1280x720, 24fps, 8.0s, sha256 matches ledger) and board use_s (7.0s, 3.76s, 5.34s)"
+        "note": "Exported 122 full-size PNG frames, 3 full-size PNG strips, 3 1-row contact sheets, and 3 frame-difference plots"
       },
       "taskKeys": [
         "HOS:009"
