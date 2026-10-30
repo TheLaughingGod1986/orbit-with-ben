@@ -110550,17 +110550,22 @@
           "at": "2026-10-30T06:27Z",
           "by": "cursor",
           "what": "renewed to 2026-10-30T07:57Z"
+        },
+        {
+          "at": "2026-10-30T06:27Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: seg0 keep inflated +9.5s; evidence times wrong; fixing splice"
         }
       ],
-      "remaining_action": "Verify v03 FIX pack + v04 deliverables; commit evidence; park for Chief",
+      "remaining_action": "Re-splice rough v04 with fixed keep durations; re-extract evidence; re-gate",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-30T06:26Z",
+        "at": "2026-10-30T06:27Z",
         "by": "cursor",
-        "note": "prior run left rough_v04 + evidence; gates FAIL, dur 549.5s"
+        "note": "seg0 keep inflated +9.5s; evidence times wrong; fixing splice"
       },
       "taskKeys": [
         "HOS:008"
