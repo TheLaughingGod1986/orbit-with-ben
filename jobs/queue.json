@@ -111264,13 +111264,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-10-30T08:51Z",
-      "eta": "2026-10-30T10:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T07:52Z",
-      "result": "",
+      "result": "Verified: J0999 condition unmet (HOS PR #365 draft, awaiting Ben's checker-fix OK via J0998). J0999 re-held to 31 Oct 09:00Z. Diff read: narrow dedup, no check removed.",
       "history": [
         {
           "at": "2026-10-30T07:52Z",
@@ -111281,6 +111281,11 @@
           "at": "2026-10-30T08:51Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T08:52Z",
+          "by": "claude",
+          "what": "done: Verified: J0999 condition unmet (HOS PR #365 draft, awaiting Ben's checker-fix OK via J0998). J0999 re-held to 31 Oct 09:00Z. Diff read: narrow dedup, no check removed."
         }
       ],
       "remaining_action": "Verify readiness: Obtain required checker-fix approval, merge HOS PR365, then pass channel:audit on main",

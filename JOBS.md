@@ -44,13 +44,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1244 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J1245 | any | claimed | claude | 2026-10-30T10:51Z | chief · Chief: verify condition for J0999 |  |
 | J1247 | mini | open | – | – | 009 picture · review · HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green |  |
 | J1248 | mini | open | – | – | 008 edit · assembly · HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling) |  |
 
 Recently finished:
 
 - J1246 cancelled: Chief: verify condition for J1192 ()
+- J1245 done: Chief: verify condition for J0999 (Verified: J0999 condition unmet (HOS PR #365 draft, awaiting Ben's checker-fix OK via J0998). J0999 re-held to 31 Oct 09:00Z. Diff read: narrow dedup, no check removed.)
 - J1243 done: Chief: verify condition for J0985 (Verified original J0985 ruling, J1002 correction 45ef75589, J1211 reopening and saved mature Studio capture. J1003 remains open for Gemini with no result; audit still records mature read pending. Retained J0985 blocked via wait --recheck J1243, next verification 2026-10-30T11:45:00Z. Needs retention availability check, audit/lab update, then non-author elected-Chief final review. Readback passed. No spend or publishing changes. Low-disk NAS offload checked: no eligible old scratch.)
 - J1242 cancelled: Uranus v10: motion-compensated opening and precise path evidence (J1240 FIX) (parked for Chief: Uranus v10 delivered sha 7f621154…; open FAIL f0diff 1.40; loop FAIL 4.18>2×1.56; polish/picture_qa/music/sfx/hitch PASS; flicker 1.81 (v09 2.09); reliable ymax 1.0 PASS, dmax 1.0 FAIL vs 0.25. Evidence jobs/reviews/J1242/URANUS_V10_DELIVERY_2026-10-30.md. No upload/J1212/Buffer. Fallback ZpEA8stoSPA preserved.)
 - J1241 done: HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) (Acting Chief (Claude) review 30 Oct: rough v04 (sha e00bb897) graphics+composite FIX. PASS P3:15 (graphic), P5:08 (composite). FIX P3:03 (no rod/stream), P3:04 composite (map covers ship), P2:15 composite (illegible over handwriting), P4:06 (ELECTRICITY label missing after +5.14 s), P5:10 (label a faint ghost). Ruling jobs/reviews/J1241/CHIEF_REVIEW_2026-10-30.md. Follow-up J1248 (graphics v04 -> rough v05). No finished-film PASS, no Ben watch.)
@@ -59,4 +59,3 @@ Recently finished:
 - J1238 done: Chief: verify condition for J1130 (Verified thumbnail-only test still running in live HOS Studio (two variants, estimated 12 days 20 hours). J1130 remains blocked; next check 2026-10-30 10:15 UTC. Evidence ~/_desk/handoff/J1238/hos_test_report.txt and .png. No YouTube settings changed.)
 - J1237 done: HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief (Acting Chief (Claude) 30 Oct: evidence accepted (review_J1192_motion on HOS PR #377 f65645f6; contact grids checked).)
 - J1236 done: Chief: verify condition for J0999 (Verified unmet: PR365 unchanged draft OPEN a87cd56a without approval or merge; PR358 OPEN c26a79bd. J0999 blocked; next recheck 2026-10-30T07:45:00Z. No Studio writes, merge or spend.)
-- J1235 done: Chief: verify condition for J1192 (Verified PR377 unchanged at bd45df1f with no review/comments; HOS desk #6511102950 remains latest relevant ruling, no continuous-playback resolution or Chief PASS. J1192 remains blocked; wait recorded with --recheck J1235 for 2026-10-30T07:45Z. Reported on HOS desk. No generation, spend or publishing.)
