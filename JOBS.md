@@ -50,6 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1283 | mini | blocked | cursor | – | for cursor · assembly · Chief h21: move superseded HOS 008 /tmp scratch to NAS (mini ~3 GB free) | 6530515205 |
 | J1287 | mini | open | – | – | 008 edit · assembly · HOS 008 Lightning: master v01 from locked rough v12 (bed + house SFX, -14 LUFS, chapters re-verify, gates), park for Chief (Chief h22 on J1267) | 6533306017 |
 | J1288 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
+| J1289 | mini | open | – | – | 032 vo · assembly · 032 Titan: assemble locked VO titan_landing_vo_v02a (v02 parts + 20 ms ch00/ch02 tail fades, no spend), record VO lock (Chief h23 on J0302) | 6533350373 |
 
 Recently finished:
 

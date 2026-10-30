@@ -1,5 +1,5 @@
 {
-  "next_id": 1289,
+  "next_id": 1290,
   "jobs": [
     {
       "id": "J0001",
@@ -115129,6 +115129,34 @@
       "recheck_of": "J0862",
       "due": "2026-10-30T22:00:02+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1289",
+      "title": "032 Titan: assemble locked VO titan_landing_vo_v02a (v02 parts + 20 ms ch00/ch02 tail fades, no spend), record VO lock (Chief h23 on J0302)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) ruling h23 on J0302, 30 Oct 2026 (OWB #264, the h23 comment in this job's ref). Titan VO take `titan_landing_vo_v02` (ch02-only re-take, metadata 6e19a0d12) is PASS. \"you.\" at the ch02 end is complete: it's a low creaky decay, not a cut. The h18 tail bar is waived for v02, and the fix is in the assembler. No re-take and no ElevenLabs spend.\n\nDo (Cursor, mini, £0, nothing paid):\n1. Make `02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/02_Voiceover/parts/titan_landing_vo_v02a/`. **Copy** (cp, never mv or delete) ch00–ch06 .wav/.mp3 and gap.wav from `parts/titan_landing_vo_v02/` (gap.wav from v01 if v02 has none). Leave v01 and v02 untouched.\n2. In v02a only: ch02.wav gets `afade=t=out:st=107.66:d=0.02:curve=qsin` (a 20 ms fade ending on its last sample, 107.68 s). ch00.wav gets a 20 ms qsin fade ending on its last sample (duration 50.48 s, so st=50.46). Same sample rate, channels and bit depth. No other changes.\n3. Concat ch00, gap, ch01, gap … ch06 (same order as `parts/titan_landing_vo_v01/concat.txt`) into `titan_landing_vo_v02a.wav` + `.mp3`. Duration must equal v02 (582.44 s ±1 ms).\n4. Checks, pasted into the result: ebur128 integrated -20 ±1 LUFS, TP ≤ -1 dBTP. The ch02 and ch00 part ends have last-10 ms RMS below -50 dB and a last sample of 0. Null test v02a vs v02 outside the two 20 ms fade windows: max abs diff 0 (or ≤1 LSB). sha256 of the wav and mp3, labelled correctly. Write word timings for v02a: re-use v02's Scribe words (timing is unchanged; don't run a new paid STT). Copy `stt/titan_landing_vo_v02/` to `stt/titan_landing_vo_v02a/` and note that.\n5. Record the VO lock in 032 `status.json`/`production-status.md` (vo: locked, `titan_landing_vo_v02a`, sha). Commit normally (WAVs are gitignored, so commit metadata only) and push.\n6. Mark this job done with the paths and shas. If any check fails, park for Chief with the numbers instead. No mux to picture (there is no picture yet), no Veo/Flow/Vertex mint, no upload.\n",
+      "ref": "6533350373",
+      "film": "032",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T21:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T21:00Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "032 Titan: assemble locked VO titan_landing_vo_v02a (v02 parts + 20 ms ch00/ch02 tail fades, no spend), record VO lock (Chief h23 on J0302)",
+      "kind": "assembly"
     }
   ],
   "focus": [],
