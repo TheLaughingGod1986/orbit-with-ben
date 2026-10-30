@@ -113068,17 +113068,22 @@
           "at": "2026-10-30T15:27Z",
           "by": "cursor",
           "what": "step 1 of 6 done: v08 P5:10 is 71 frames at 459.297-462.256s. Clean window is the first 42. Safe-path row on screen is 157 frames, so the lead-in makes 186, which keeps 12923 frames."
+        },
+        {
+          "at": "2026-10-30T15:34Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: p25 offset -34.5px (-1.80%), limit 19.2px. Other samples within 1%. No splice. Evidence commit f18f5751 on HOS PR 385."
         }
       ],
-      "remaining_action": "Render the 42-frame metal alpha and the safe-path lead-in, then splice rough v09",
+      "remaining_action": "Parked for Chief: P5:10 rod-top check failed at p25",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-10-30T15:27Z",
+        "at": "2026-10-30T15:34Z",
         "by": "cursor",
-        "note": "v08 P5:10 is 71 frames at 459.297-462.256s. Clean window is the first 42. Safe-path row on screen is 157 frames, so the "
+        "note": "p25 offset -34.5px (-1.80%), limit 19.2px. Other samples within 1%. No splice. Evidence commit f18f5751 on HOS PR 385."
       },
       "taskKeys": [
         "HOS:008"
