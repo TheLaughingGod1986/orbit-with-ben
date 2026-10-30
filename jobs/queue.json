@@ -113185,13 +113185,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-30T17:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "parked for Chief: frame-diff FAIL at 462.3s mean_abs 44.311 (v08 still the metal plate until 463.13s; v09 lead-in). Later samples 1.531/1.070/1.001. polish and picture_qa PASS. Evidence ef7810f0 on HOS PR 385. Not forced.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113282,6 +113282,11 @@
           "at": "2026-10-30T17:21Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: frame-diff FAIL at 462.3s mean_abs 44.311 (v08 still the metal plate until 463.13s; v09 lead-in). Later samples 1.531/1.070/1.001. polish and picture_qa PASS. Evidence ef7810f0 on HOS PR 385. Not forced."
+        },
+        {
+          "at": "2026-10-30T17:25Z",
+          "by": "grok",
+          "what": "reopened: Chief h19 (HOS #180 6529021911): ef7810f0 and rough_v09 deliveries VOID (same h18-voided master d1412236, v06 alpha dd2ab582, copy_verified removed). Re-splice: restore copy_verified(); J1273 alpha 53454827 into new code_graphics_v07 (sha-verified), no render_alpha(); P5:10 vs composite f8453cc7 mean abs <=1.0 at row frames 0/5/11/21/32/38/41; tip_offset <=19.2 px p10-p90; safe-path 29+157=186, 12923 frames; h14 body frame-diff at 463.2/464/466/468.7 s <=1.0, explain any miss with source frame indices; full unmodified gates 0 fail; deliver only to new rough_v10 folders (never v02-v09) via copy_verified; fresh PR #385 worktree, normal push; park for Chief. One encode at a time. No UAT copy, no upload. GBP0."
         }
       ],
       "remaining_action": "Parked for Chief: frame-diff at 462.3s is 44.3",
@@ -113289,14 +113294,7 @@
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
-      ],
-      "progress": {
-        "step": 5,
-        "of": 6,
-        "at": "2026-10-30T17:21Z",
-        "by": "cursor",
-        "note": "Splice built. polish and picture_qa PASS. Frame-diff FAIL 44.311 at 462.3s because v08 is still the metal plate. Evidenc"
-      }
+      ]
     },
     {
       "id": "J1268",
