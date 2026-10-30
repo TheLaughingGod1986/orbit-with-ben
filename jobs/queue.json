@@ -98056,9 +98056,14 @@
           "at": "2026-10-30T15:14Z",
           "by": "codex",
           "what": "blocked: parked for Chief: live render headroom 7,955 MB below explicit 20 GB guard; required nas_offload.py --apply found no eligible scratch. Preserve 2/3 plan, OWB:027/028 links. No pickups/render/spend started. Restore disk headroom before v06 repairs; S6 loop 9.26 FAIL unresolved. Report issue264 comment6526185845."
+        },
+        {
+          "at": "2026-10-30T15:46Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T03:00:00Z"
         }
       ],
-      "remaining_action": "Restore 20 GB render headroom before authorized S2/S5 pickups and remaining v06 repairs",
+      "remaining_action": "Await J1270 disk recovery and live 20 GB verification; then finish S2/S5 pickups and S6 loop repair",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -98081,6 +98086,11 @@
         "at": "2026-10-30T15:14Z",
         "by": "codex",
         "note": "Required NAS offload completed with full filesystem access: no /private/tmp scratch old enough to move; 7,955 MB before "
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J1270 completed safe disk recovery and elected Chief verifies live Mini free space >=20 GB; then reopen only for outstanding repairs under 29 Oct ruling. S6 full-frame loop FAIL still requires compliant fix or evidenced gate-correction review.",
+        "check_at": "2026-10-31T03:00:00Z"
       }
     },
     {
