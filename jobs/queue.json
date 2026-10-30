@@ -110551,10 +110551,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T05:44Z",
+      "eta": "2026-10-30T07:44Z",
       "created_by": "codex",
       "created_at": "2026-10-30T04:47Z",
       "result": "",
@@ -110683,6 +110683,11 @@
           "at": "2026-10-30T05:40Z",
           "by": "cursor",
           "what": "released: proto6 done: MC open + signed-flow cleanup. Flicker 2.09→1.04 PASS direction; reliable_dmax 2.4→1.3; ymax still 2.7 (targets 1.5/0.25 FAIL). Evidence jobs/reviews/J1242/. Assembler _assemble_uranus_v10.py --prototype. Scratch /private/tmp/J1242-uranus-v10/open_prototype_v10.mp4. Full v10 NOT started. Next: path tighten or Chief OK flicker-win ship. No upload/J1212/Buffer."
+        },
+        {
+          "at": "2026-10-30T05:44Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Iterate path further or await Chief flicker-win OK before full v10",
