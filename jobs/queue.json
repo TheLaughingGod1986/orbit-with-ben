@@ -98035,9 +98035,14 @@
           "at": "2026-10-30T15:13Z",
           "by": "codex",
           "what": "step 2 of 3 done: Preserved prior 2/3 plan. Live free space 7.8 GiB; required NAS offload hit sandbox permission, retrying with filesystem access before edits or spend."
+        },
+        {
+          "at": "2026-10-30T15:14Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Required NAS offload completed with full filesystem access: no /private/tmp scratch old enough to move; 7,955 MB before and after. Preserve prior 2/3; no new VO, render, spend, or publishing action."
         }
       ],
-      "remaining_action": "Restore 20 GB render headroom, then record authorized pickups and finish v06 repairs and gates",
+      "remaining_action": "Restore 20 GB render headroom before authorized S2/S5 pickups and remaining v06 repairs",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -98057,9 +98062,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-10-30T15:13Z",
+        "at": "2026-10-30T15:14Z",
         "by": "codex",
-        "note": "Preserved prior 2/3 plan. Live free space 7.8 GiB; required NAS offload hit sandbox permission, retrying with filesystem"
+        "note": "Required NAS offload completed with full filesystem access: no /private/tmp scratch old enough to move; 7,955 MB before "
       }
     },
     {
