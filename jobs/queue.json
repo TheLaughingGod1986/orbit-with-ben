@@ -110723,17 +110723,22 @@
           "at": "2026-10-30T06:02Z",
           "by": "cursor",
           "what": "step 4 of 6 done: proto9 monitoring after 5min"
+        },
+        {
+          "at": "2026-10-30T06:03Z",
+          "by": "cursor",
+          "what": "step 4 of 6 done: launched proto10; path-lock removed; DESIGN_PEAK=0.80"
         }
       ],
-      "remaining_action": "Wait proto9 capped residual path-lock; full assemble only if path ≤1.5/0.25",
+      "remaining_action": "Wait proto10 slow-design MC (peak 0.80); full only if measured path OK",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 4,
         "of": 6,
-        "at": "2026-10-30T06:02Z",
+        "at": "2026-10-30T06:03Z",
         "by": "cursor",
-        "note": "proto9 monitoring after 5min"
+        "note": "launched proto10; path-lock removed; DESIGN_PEAK=0.80"
       },
       "taskKeys": [
         "OWB:030"
