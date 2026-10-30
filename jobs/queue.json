@@ -112113,10 +112113,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T11:06Z",
-      "eta": "2026-10-30T13:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T11:03Z",
       "result": "",
@@ -112145,6 +112145,11 @@
           "at": "2026-10-30T11:23Z",
           "by": "cursor",
           "what": "step 2 of 5 done: P3:04 inset is in the left sky (fill 59.8%, alpha outside the inset is 0). Four v05 FIX assets match cuts_rough_v05.json. Splice ffmpeg is encoding hos_008_rough_v06_swapped.mp4. Pause cut is 0.542s at 9.168s, 0.05s from a PAUSE_TRIM_v03 join."
+        },
+        {
+          "at": "2026-10-30T11:23Z",
+          "by": "cursor",
+          "what": "released: Splice running detached. tmux j1257-render. Log ~/_desk/logs/j1257-render.log. Done file ~/_desk/logs/j1257-render.done (missing = still running; do not start a second copy). Work dir /Volumes/data/mac-mini-archive/tmp-render-scratch/j1257-hos008-rough-v06. P3:04 inset PASS (fill 59.8%, off the ship). Next: pause trim, gates, deliver, HOS PR, park for Chief."
         }
       ],
       "remaining_action": "Frame-exact splice is running in tmux j1257-render; then pause trim, gates, deliver, PR",
