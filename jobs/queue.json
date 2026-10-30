@@ -110633,17 +110633,22 @@
           "at": "2026-10-30T05:32Z",
           "by": "cursor",
           "what": "step 0 of 6 done: resume after proto4: flicker OK, reliable ymax/dmax still FAIL"
+        },
+        {
+          "at": "2026-10-30T05:33Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: softened flow cleanup; tmux J1242-uranus-v10-proto5"
         }
       ],
-      "remaining_action": "Tighten v10 open path: replace only ambiguous ROI estimates; re-run prototype",
+      "remaining_action": "Await proto5: soft flow cleanup re-prototype (replace ambiguous only)",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-30T05:32Z",
+        "at": "2026-10-30T05:33Z",
         "by": "cursor",
-        "note": "resume after proto4: flicker OK, reliable ymax/dmax still FAIL"
+        "note": "softened flow cleanup; tmux J1242-uranus-v10-proto5"
       },
       "taskKeys": [
         "OWB:030"
