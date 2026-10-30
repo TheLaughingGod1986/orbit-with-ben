@@ -72319,15 +72319,22 @@
           "at": "2026-10-30T00:05Z",
           "by": "relay",
           "what": "condition verification queued: J1231"
+        },
+        {
+          "at": "2026-10-30T00:48Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T11:00:00Z"
         }
       ],
       "kind": "vo",
-      "remaining_action": "Record voiceovers for the Moon and Dinosaur Shorts",
+      "remaining_action": "Record approved Moon and Dinosaur Shorts voiceovers once live credit suffices and original gates remain valid",
       "hold": {
-        "type": "credits",
-        "condition": "ElevenLabs must have sufficient renewed characters for the approved Shorts voiceovers",
-        "check_at": "2026-10-30T01:05:39+00:00",
-        "recheck_task": "J1231"
+        "type": "input",
+        "condition": "Live ElevenLabs subscription must show enough renewed characters for the approved HOS 009 and 010 Shorts VO. J1231 GET at 2026-10-30T00:47:42Z: 209422 used of 209536, only 114 left; API reset 2026-10-30T10:50:31Z. Credit hold remains; all original script, production and Ben gates remain.",
+        "check_at": "2026-10-30T11:00:00Z",
+        "last_recheck": "J1231",
+        "checked_at": "2026-10-30T00:48:23+00:00",
+        "checked_by": "codex"
       }
     },
     {
