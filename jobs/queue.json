@@ -112130,19 +112130,26 @@
           "at": "2026-10-30T11:06Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T11:06Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. Disk 11 GB free; NAS offload had nothing older than 48h."
         }
       ],
-      "remaining_action": "HOS 008: P3:04 composite + frame-exact splice/runtime -> rough v06 (Chief h07 on J1248)",
+      "remaining_action": "Find v04/v05 assets and Chief h07, then build code_graphics_v05 P3:04",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-10-30T11:06Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Disk 11 GB free; NAS offload had nothing older than 48h."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1258",
