@@ -115685,19 +115685,23 @@
           "at": "2026-10-30T23:57Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T23:57Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Inventory first; no moves yet."
         }
       ],
-      "remaining_action": "Chief h30: provenance inventory + copy-first NAS move of ~/_desk done-job scratch to reach >=20 GiB (Mini 17.1 GiB free)",
+      "remaining_action": "Provenance inventory of ~/_desk scratch before any NAS move",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-30T23:57Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed. Inventory first; no moves yet."
       }
     }
   ],
