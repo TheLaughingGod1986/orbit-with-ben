@@ -1,0 +1,107 @@
+{
+  "about": "J0978 Test B apply attempt + read-back 30 Oct 2026 (HOS GHZDsiH7L7A). Studio Title & Thumbnail Test & Compare (J0280) finished 29 Oct 2026 at 17:54 ('Not enough impressions to declare a winner', Variant A 'What's Really Inside an Atom?' visible to all viewers), but Studio still holds 'A/B testing titles · Results ready' on the title widget and YouTube Data API videos.update refused title change with 400 Precondition check failed (reason: UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE). Because retitle ran first, no fields were modified; API read-back confirms title, line 1, full description, tags, privacy and publishAt match originals.json verbatim.",
+  "checkedAt": "2026-10-30T07:24:26.533Z",
+  "channel": {
+    "id": "UCXp7HkBIl1LgaznXuZHJyRg",
+    "handle": "@historyofscienceyt",
+    "name": "History of Science"
+  },
+  "studioJ0280TitleTestReport": {
+    "mode": "Title and thumbnail",
+    "editPageState": "A/B testing titles · Results ready",
+    "statusText": "Test finished. Ran from 15 October 2026 at 18:00 to 29 October 2026 at 17:54.",
+    "verdict": "Not enough impressions to declare a winner",
+    "variants": [
+      {
+        "variant": "A",
+        "title": "What's Really Inside an Atom?",
+        "note": "Now visible to all viewers",
+        "watchTimeShare": "—"
+      },
+      {
+        "variant": "B",
+        "title": "Why Is the Periodic Table in This Order?",
+        "watchTimeShare": "—"
+      },
+      {
+        "variant": "C",
+        "title": "How Small Can You Cut Gold?",
+        "watchTimeShare": "—"
+      }
+    ]
+  },
+  "dryRun": {
+    "retitle": {
+      "id": "GHZDsiH7L7A",
+      "from": "What's Really Inside an Atom?",
+      "to": "What's Inside an Atom? Mostly Empty Space",
+      "dryRun": true
+    },
+    "redescribe": {
+      "id": "GHZDsiH7L7A",
+      "dryRun": true,
+      "fromLen": 1368,
+      "toLen": 1425
+    },
+    "retag": {
+      "id": "GHZDsiH7L7A",
+      "from": [
+        "atom",
+        "history of chemistry",
+        "history of science",
+        "moseley",
+        "periodic table",
+        "rutherford"
+      ],
+      "to": [
+        "atom",
+        "history of the atom",
+        "inside an atom",
+        "atoms are mostly empty space",
+        "true size of an atom",
+        "atomic number",
+        "history of chemistry",
+        "history of science",
+        "moseley",
+        "periodic table",
+        "rutherford",
+        "thomson",
+        "dalton"
+      ],
+      "dryRun": true
+    }
+  },
+  "applyError": {
+    "script": "07_Content-Ops/scripts/retitle-videos.ts",
+    "httpStatus": 400,
+    "message": "Precondition check failed.",
+    "domain": "youtube.api.v3.VideoUpdateResponse.Error",
+    "reason": "UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE",
+    "status": "FAILED_PRECONDITION"
+  },
+  "readBack": {
+    "GHZDsiH7L7A": {
+      "title": "What's Really Inside an Atom?",
+      "line1": "What's really inside an atom, and why is the periodic table in this order? Four discoveries, one century — from a knife and a gold coin to the number that fixed the table.",
+      "description": "What's really inside an atom, and why is the periodic table in this order? Four discoveries, one century — from a knife and a gold coin to the number that fixed the table.\n\nCut gold in half, then again. How small can you go before it stops being gold? Dalton weighed atoms. Thomson found a piece inside them. Rutherford found their tiny centre. Moseley counted what was inside every element — and tellurium 52 finally sat before iodine 53 for a reason that wasn't weight.\n\nA 3D cartoon film about the moment chemistry got a ruler that worked.\n\nHistory of Science · Discovery. Wonder. Proof. · @HistoryOfScienceYT\n\n#HistoryOfScience #Atom #PeriodicTable #AtomicNumber #Moseley #Rutherford #Thomson #Dalton\n\n0:00 How small can you cut gold?\n1:09 The table that broke its own rule\n2:41 The crumb inside the atom\n4:05 The shell that bounced back\n5:55 Counting with X-rays\n\nSources: J. Dalton, A New System of Chemical Philosophy (1808); D. Mendeleev, Zeitschrift für Chemie 12 (1869); J. J. Thomson, \"Cathode Rays\", Philosophical Magazine 44 (1897); H. Geiger & E. Marsden, \"On a Diffuse Reflection of the α-Particles\", Proc. R. Soc. A 82 (1909); E. Rutherford, \"The Scattering of α and β Particles by Matter and the Structure of the Atom\", Philosophical Magazine 21 (1911); H. G. J. Moseley, \"The High-Frequency Spectra of the Elements\", Philosophical Magazine 26 (1913).",
+      "tags": [
+        "atom",
+        "history of chemistry",
+        "history of science",
+        "moseley",
+        "periodic table",
+        "rutherford"
+      ],
+      "privacy": "public",
+      "publishAt": null
+    }
+  },
+  "matchesOriginals": {
+    "title": true,
+    "line1": true,
+    "description": true,
+    "tags": true,
+    "privacy": true,
+    "publishAt": true
+  }
+}
