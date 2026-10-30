@@ -110628,17 +110628,22 @@
           "at": "2026-10-30T05:32Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T05:32Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: resume after proto4: flicker OK, reliable ymax/dmax still FAIL"
         }
       ],
-      "remaining_action": "Iterate source-flow cleanup (stop replace-all); re-prototype until path nearer targets or Chief call",
+      "remaining_action": "Tighten v10 open path: replace only ambiguous ROI estimates; re-run prototype",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 6,
-        "at": "2026-10-30T05:30Z",
+        "at": "2026-10-30T05:32Z",
         "by": "cursor",
-        "note": "proto4 exit0: flicker 2.09→1.25; reliable ymax 3.3 dmax 3.0 FAIL; designed 1.50/0.07 OK; full NOT started; evidence jobs"
+        "note": "resume after proto4: flicker OK, reliable ymax/dmax still FAIL"
       },
       "taskKeys": [
         "OWB:030"
