@@ -112815,10 +112815,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T14:02Z",
-      "eta": "2026-10-30T15:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:30Z",
       "result": "",
@@ -112877,6 +112877,11 @@
           "at": "2026-10-30T14:08Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Eligible: move j1241 and j1248. Skip j1218. Keep j1263. rsync pid 79882 at 0.61/1.08GB."
+        },
+        {
+          "at": "2026-10-30T14:08Z",
+          "by": "cursor",
+          "what": "released: Offload already running. Do NOT start a second rsync. zsh 79867, bash 79869, rsync 79882. Script ~/_desk/logs/j1268_offload.sh. Log ~/_desk/logs/J1268-offload.log. Stdout ~/_desk/logs/J1268-offload.stdout. Done file ~/_desk/logs/J1268-offload.done (missing = still running; leave it). Present = read the exit code and log, then report. Skip j1218 (J1213 check 15:00Z). Keep j1263 (J1267 open). Move only j1241 then j1248 after the checks in the script. Free space still 6.9GB; nothing removed yet."
         }
       ],
       "remaining_action": "Offload already running. Do not start a second rsync. Check ~/_desk/logs/J1268-offload.done; missing means still running.",
