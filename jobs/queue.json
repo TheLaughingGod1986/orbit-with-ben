@@ -113430,17 +113430,22 @@
           "at": "2026-10-30T15:56Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Free space about 7.0 GB. nas_offload dry run: nothing in /private/tmp old enough."
+        },
+        {
+          "at": "2026-10-30T16:04Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Data volume 202.6 GB used, 7.5 GB container free. No local snapshots. VM swap 11.8 GB left alone. Chrome code-sign clones report 189 GB but J1128 showed those are shared APFS clones, not recoverable space. Research JSON stayed small (j1106 97 MB, J1107 76 MB). /private/tmp scratch is 5.2 GB and younger than 48 h, so nas_offload has nothing eligible. Young worktrees kept: j1218 1.3 GB (J1213), j1263 762 MB (J1267)."
         }
       ],
-      "remaining_action": "Inventory disk, prior recovery evidence, tmux and job inputs",
+      "remaining_action": "Inventory disk consumers, then run mini_repair and nas_offload",
       "due": "2026-10-31T12:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-10-30T15:56Z",
+        "at": "2026-10-30T16:04Z",
         "by": "cursor",
-        "note": "Claimed. Free space about 7.0 GB. nas_offload dry run: nothing in /private/tmp old enough."
+        "note": "Data volume 202.6 GB used, 7.5 GB container free. No local snapshots. VM swap 11.8 GB left alone. Chrome code-sign clone"
       },
       "taskKeys": [
         "OWB:027",
