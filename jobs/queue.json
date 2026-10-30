@@ -112165,17 +112165,22 @@
           "at": "2026-10-30T11:31Z",
           "by": "cursor",
           "what": "step 2 of 5 done: Pass 1 swap kept (12936 frames, audio copied). Stopped the head/tail AAC trim: it would miss the 1-frame A/V lock. New trim drops frames 217-229 inside the 9.12-9.76s silence and shifts later PTS by 0.541666s. tmux j1257-render."
+        },
+        {
+          "at": "2026-10-30T11:36Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Durations format 539.626s, video 539.500s, audio 539.626s, A/V end offset 0.0015s. Pause cut 0.542s at frames 217-229, inside silence. Evidence frames grabbed. polish_gate running."
         }
       ],
-      "remaining_action": "Corrected pause trim is encoding; then duration check, gates, deliver, HOS PR",
+      "remaining_action": "Polish and picture gates are running; then deliver, HOS PR, park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-10-30T11:31Z",
+        "at": "2026-10-30T11:36Z",
         "by": "cursor",
-        "note": "Pass 1 swap kept (12936 frames, audio copied). Stopped the head/tail AAC trim: it would miss the 1-frame A/V lock. New t"
+        "note": "Durations format 539.626s, video 539.500s, audio 539.626s, A/V end offset 0.0015s. Pause cut 0.542s at frames 217-229, i"
       },
       "taskKeys": [
         "HOS:008"
