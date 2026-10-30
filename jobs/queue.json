@@ -85823,10 +85823,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-30T07:18Z",
+      "eta": "2026-10-30T08:48Z",
       "created_by": "chief",
       "created_at": "2026-10-26T09:43Z",
       "result": "",
@@ -85880,6 +85880,11 @@
           "at": "2026-10-30T00:54Z",
           "by": "codex",
           "what": "reopened: J1232 verified live HOS Studio: test finished 29 Oct 2026 17:54, no winner (not enough impressions), shares shown as dashes; original title remains live. Evidence jobs/readbacks/J1232.json at 1cd2ef193. Date gate met. Original approved Test B scope and dry-run/readback gates retained; no YouTube change made. channel:audit: 61 videos, 0 errors."
+        },
+        {
+          "at": "2026-10-30T07:18Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "listing",
@@ -85895,7 +85900,15 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Start the next Atom title test"
+      "remaining_action": "Start the next Atom title test",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T07:18Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0979",
