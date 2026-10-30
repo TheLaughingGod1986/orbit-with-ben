@@ -113257,13 +113257,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T18:44Z",
-      "eta": "2026-10-30T20:44Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "",
+      "result": "parked for Chief: rough v12 graphics + composite. Evidence 337c3401 on HOS PR 385. Master sha d032e5fb7ae89f492f1d4df59070ce13a419c23287834780f8996999d17520b4. Title-box worst 0.952, join 0.001, body frame-diff 0.409, plate-gone 44.408, composite 0.866, tip 10.5 px, audio matches v08, polish and picture_qa 0 fail, 12923 frames. No stage PASS. No UAT. No upload. GBP0.",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113469,6 +113469,11 @@
           "at": "2026-10-30T19:22Z",
           "by": "cursor",
           "what": "step 6 of 6 done: Evidence 337c3401 on HOS PR 385. Master d032e5fb. Title 0.952, join 0.001, body 0.409, plate-gone 44.4, composite 0.866, tip 10.5 px, gates 0 fail."
+        },
+        {
+          "at": "2026-10-30T19:22Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: rough v12 graphics + composite. Evidence 337c3401 on HOS PR 385. Master sha d032e5fb7ae89f492f1d4df59070ce13a419c23287834780f8996999d17520b4. Title-box worst 0.952, join 0.001, body frame-diff 0.409, plate-gone 44.408, composite 0.866, tip 10.5 px, audio matches v08, polish and picture_qa 0 fail, 12923 frames. No stage PASS. No UAT. No upload. GBP0."
         }
       ],
       "remaining_action": "Parked for Chief review of rough v12",
