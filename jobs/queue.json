@@ -27613,13 +27613,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T19:31Z",
-      "eta": "2026-10-30T21:01Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T23:47Z",
-      "result": "",
+      "result": "parked for Chief: magnetic_field_flip_vo_v01.wav sha a6997c62e6c57ac650b959b811941b596ad76c2770be8ed3741aad3df4cce61d, 560.76s, -19.9 LUFS, true peak -3.6 dBFS, mean -23.1 dB. Tool vo_check PASS, Scribe 96.58% (19 runs). Harmless: numerals and UK/US spelling. Flag for ear: Pontfarein heard pomperoin; field's heard field; nine per cent heard 9; six per cent heard 6. Chars sent 7765; subscription counter 4497 to 8101, remaining 113013. Metadata 25408ea36. No mux.",
       "history": [
         {
           "at": "2026-10-15T23:47Z",
@@ -27705,6 +27705,11 @@
           "at": "2026-10-30T19:39Z",
           "by": "cursor",
           "what": "step 3 of 4 done: Metadata 25408ea36. Scribe flag: Pontfarein heard as pomperoin. No mux."
+        },
+        {
+          "at": "2026-10-30T19:39Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: magnetic_field_flip_vo_v01.wav sha a6997c62e6c57ac650b959b811941b596ad76c2770be8ed3741aad3df4cce61d, 560.76s, -19.9 LUFS, true peak -3.6 dBFS, mean -23.1 dB. Tool vo_check PASS, Scribe 96.58% (19 runs). Harmless: numerals and UK/US spelling. Flag for ear: Pontfarein heard pomperoin; field's heard field; nine per cent heard 9; six per cent heard 6. Chars sent 7765; subscription counter 4497 to 8101, remaining 113013. Metadata 25408ea36. No mux."
         }
       ],
       "kind": "vo",
