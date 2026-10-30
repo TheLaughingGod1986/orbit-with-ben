@@ -113144,9 +113144,14 @@
           "at": "2026-10-30T15:34Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: P5:10 42-frame hold rod-top at p25 is -34.5px (-1.80%), limit 1% of width (19.2px). p10 +6.5, p50 -2.5, p75 +17.5, p90 +17.5. Trace kept at x=1180.5 so it matches alpha bb821f40. No splice, no trace shift, no other plate. Evidence f18f5751 on HOS PR #385 (_desk/008/rough_v09/ALIGN_FAIL.md)."
+        },
+        {
+          "at": "2026-10-30T15:54Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T17:53:21Z"
         }
       ],
-      "remaining_action": "Parked for Chief: P5:10 rod-top check failed at p25",
+      "remaining_action": "Await J1273 tracked-rod preflight and Chief acceptance, then finish rough v09",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -113158,7 +113163,12 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Chief h15 FIX (Codex, 30 Oct): f18f5751 p25 -34.5px exceeds 19.2px; no PASS, no master splice. Await J1273 tracked-rod candidate and elected-Chief acceptance. Only candidate registration may change; frames 109-150, gates, VO and other rows locked. Later safe-path uses 29+157=186 displayed frames with exact PTS/frame-diff verification. Preserve original 2/6; resume only after accepted J1273 evidence. No spend or Ben action.",
+        "check_at": "2026-10-30T17:53:21Z"
+      }
     },
     {
       "id": "J1268",
