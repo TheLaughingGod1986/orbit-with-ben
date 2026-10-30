@@ -110563,17 +110563,22 @@
           "at": "2026-10-30T04:59Z",
           "by": "cursor",
           "what": "step 0 of 6 done: claimed; surveying paths; film tag provisional"
+        },
+        {
+          "at": "2026-10-30T05:01Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: step0 survey done; copying v09→v10"
         }
       ],
-      "remaining_action": "Locate v09 assets, measure source motion, prototype motion-compensated opening",
+      "remaining_action": "Write v10 MC open prototype + validate hi-res estimator; park full render until open improves",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-30T04:59Z",
+        "at": "2026-10-30T05:01Z",
         "by": "cursor",
-        "note": "claimed; surveying paths; film tag provisional"
+        "note": "step0 survey done; copying v09→v10"
       },
       "taskKeys": [
         "OWB:030"
