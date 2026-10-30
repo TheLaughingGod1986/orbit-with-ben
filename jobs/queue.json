@@ -114408,9 +114408,14 @@
           "at": "2026-10-30T20:12Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T20:13Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting step 1: inspect buffer-mirror.ts, introspect Buffer GraphQL schema, and read Apophis Reel text"
         }
       ],
-      "remaining_action": "Facebook Reels post as 'Untitled Video': send the Reel title through Buffer (+ readback on the Apophis Reel)",
+      "remaining_action": "Introspect Buffer GraphQL API for Facebook Reel title field and read back Apophis Reel text",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -114424,11 +114429,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-30T20:12Z",
+        "at": "2026-10-30T20:13Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting step 1: inspect buffer-mirror.ts, introspect Buffer GraphQL schema, and read Apophis Reel text"
+      },
+      "taskKeys": [
+        "OWB:030",
+        "OWB:023"
+      ]
     },
     {
       "id": "J1278",
