@@ -114413,9 +114413,14 @@
           "at": "2026-10-30T20:13Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting step 1: inspect buffer-mirror.ts, introspect Buffer GraphQL schema, and read Apophis Reel text"
+        },
+        {
+          "at": "2026-10-30T20:20Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Introspected Buffer schema and read back Apophis FB Reel 6ae325220c2cf67057729db8: FacebookPostMetadataInput has no title field, but VideoMetadataInput (assets[0].video.metadata.title) exists and defaults to 'Untitled Video' when omitted; Apophis text carries Full film: https://youtu.be/VBaYRPp85Sw"
         }
       ],
-      "remaining_action": "Introspect Buffer GraphQL API for Facebook Reel title field and read back Apophis Reel text",
+      "remaining_action": "Set assets[0].video.metadata.title for Facebook Reels in buffer-mirror.ts and add unit tests",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -114427,11 +114432,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-30T20:13Z",
+        "at": "2026-10-30T20:20Z",
         "by": "gemini",
-        "note": "Starting step 1: inspect buffer-mirror.ts, introspect Buffer GraphQL schema, and read Apophis Reel text"
+        "note": "Introspected Buffer schema and read back Apophis FB Reel 6ae325220c2cf67057729db8: FacebookPostMetadataInput has no titl"
       },
       "taskKeys": [
         "OWB:030",
