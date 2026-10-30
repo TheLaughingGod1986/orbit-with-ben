@@ -18915,10 +18915,15 @@
           "at": "2026-10-30T01:21Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T01:21Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: claimed J0241; disk 9.9G free — nas_offload next"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Link the Blood Short to its long video",
+      "remaining_action": "Confirm HOS 005 long wwcjcFfC-5M is Public, then set Related on BW_CFAX-mxc and HOS Buffer for 31 Oct",
       "urgent": 4,
       "rerouted_from": {
         "needs": "mini",
@@ -18931,12 +18936,14 @@
       "model": "cursor-auto",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-30T01:21Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed J0241; disk 9.9G free — nas_offload next"
+      },
+      "taskKeys": [
+        "HOS:005"
+      ]
     },
     {
       "id": "J0242",
