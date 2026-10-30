@@ -80703,6 +80703,11 @@
           "at": "2026-10-30T20:42Z",
           "by": "relay",
           "what": "condition verification queued: J1284"
+        },
+        {
+          "at": "2026-10-30T20:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T03:00:00Z"
         }
       ],
       "kind": "video",
@@ -80730,15 +80735,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "J1100: finish S2/S5/S6 corrections and verified delivery; Chief replacement review then Ben swap approvals",
+      "remaining_action": "Restore disk headroom, complete J1100 S2/S5/S6 repairs and delivery, then Chief review and Ben swap approvals",
       "hold": {
         "type": "input",
-        "condition": "J1100 S2/S5 corrected v06 still need authorized pickups with live credits verified, instrumental-only S2 bed, gates and direct listening. S6 Gemini listening complete but whole-frame loop 9.26 FAIL remains. Complete verified UAT/NAS delivery, corrected replacement Chief PASS and Ben S2/S5/S6 swap approvals absent. Evidence checked: PR333 OPEN head 0a7fcb6ad, zero reviews/comments; V06_CHECKPOINT_2026-10-29.md; FINAL_MEASUREMENTS loop_pass=false; local GEMINI_S6_V06.md; Chief FIX 6483981556. Reset date alone proves no readiness; J1253 separately verifies J1100 credits. Preserve J1032 PASS, completed J1101/J1102/J1103, J0936 historical 6/6, deadlines and remaining v01 fallbacks.",
-        "check_at": "2026-10-30T21:42:57+00:00",
-        "last_recheck": "J1252",
-        "checked_at": "2026-10-30T14:38:25+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1284"
+        "condition": "J1100 remains blocked on live >=20 GB disk headroom (about 6.8 GiB now; required NAS offload found no eligible scratch; recovery J1283 pending). J1253 verified subscription credits but did not approve media. S2/S5 continuous pickups, instrumental-only S2 bed proof, caption repairs, gates and direct listening remain outstanding; S6 whole-frame loop 9.26 FAIL against <2.0 remains despite completed advisory Gemini listening. Need corrected durable UAT/NAS delivery, Chief replacement PASS and Ben S2/S5/S6 swap approvals. PR333 still OPEN at 0a7fcb6ad with no reviews/comments; checkpoint and FINAL_MEASUREMENTS loop_pass=false checked. Preserve J1032 PASS, completed J1101/J1102/J1103, historical J0936 6/6, deadlines and remaining scheduled-v01 fallbacks.",
+        "check_at": "2026-10-31T03:00:00Z",
+        "last_recheck": "J1284",
+        "checked_at": "2026-10-30T20:49:52+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
