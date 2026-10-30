@@ -110483,10 +110483,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T06:53Z",
+      "eta": "2026-10-30T08:53Z",
       "created_by": "claude",
       "created_at": "2026-10-30T04:01Z",
       "result": "",
@@ -110595,6 +110595,11 @@
           "at": "2026-10-30T06:46Z",
           "by": "cursor",
           "what": "released: tmux j1241-resplice still running (_swap_rough_v04.py). log:~/_desk/logs/j1241-resplice.log done:~/_desk/logs/j1241-resplice.done. Master spliced 540.168s + composite evidence extracted; now Running gates (contact_sheet then polish/picture_qa then deliver). Worktree /private/tmp/j1241-hos008-cg-v03-wt branch cursor/j1241-hos008-cg-v03. Next: when .done present, verify gates/deliver, commit evidence+summary to HOS PR (no media masters in git), park for Chief graphics+composite. Prior pack had fibres_rise split-panel FAIL (KEEP plate, not FIX rows)."
+        },
+        {
+          "at": "2026-10-30T06:53Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await tmux j1241-resplice .done then commit evidence + park for Chief",
