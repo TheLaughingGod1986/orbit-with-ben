@@ -24073,6 +24073,11 @@
           "at": "2026-10-30T00:05Z",
           "by": "relay",
           "what": "condition verification queued: J1229"
+        },
+        {
+          "at": "2026-10-30T00:40Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T10:55:00Z"
         }
       ],
       "kind": "vo",
@@ -24084,12 +24089,14 @@
         "by": "cursor",
         "note": "dry-run 8139 chars; 119 left"
       },
-      "remaining_action": "Record the Titan voiceover",
+      "remaining_action": "Record the locked Titan v02 voiceover once sufficient renewed credit is verified",
       "hold": {
-        "type": "credits",
-        "condition": "ElevenLabs must have sufficient renewed characters for the locked Titan take",
-        "check_at": "2026-10-30T01:05:39+00:00",
-        "recheck_task": "J1229"
+        "type": "input",
+        "condition": "Live ElevenLabs subscription must have at least 7879 characters for locked Titan v02; API at 2026-10-30T00:39:29Z showed only 114 remaining and reset at 10:50:31Z. Re-read balance after reset; date alone is not proof.",
+        "check_at": "2026-10-30T10:55:00Z",
+        "last_recheck": "J1229",
+        "checked_at": "2026-10-30T00:40:09+00:00",
+        "checked_by": "codex"
       }
     },
     {
