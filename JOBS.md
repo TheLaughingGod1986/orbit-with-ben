@@ -48,6 +48,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1237 | mini | blocked | gemini | – | 009 picture · qa · HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief |  |
 | J1241 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) |  |
 | J1244 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J1245 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
+| J1246 | any | open | – | – | chief · Chief: verify condition for J1192 |  |
 
 Recently finished:
 
