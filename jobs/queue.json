@@ -113236,20 +113236,25 @@
           "at": "2026-10-30T16:55Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T16:55Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Chief h15: three heights per sample, limit 19.2 px; safe-path is 29+157=186 frames; total stays 12923."
         }
       ],
-      "remaining_action": "Await J1273 tracked-rod preflight and Chief acceptance, then finish rough v09",
+      "remaining_action": "Re-measure rod vs trace at three heights inside the trace span, then splice rough v09 if every sample is within 19.2 px",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 2,
-        "of": 6,
+        "step": 0,
+        "of": 4,
         "at": "2026-10-30T16:55Z",
-        "by": "chief",
-        "note": "Chief h17 (HOS #180 6528379688) confirms Claude's J1273 ACCEPT after an independent Chief look at all 42 frames: no hamm"
+        "by": "cursor",
+        "note": "Claimed. Chief h15: three heights per sample, limit 19.2 px; safe-path is 29+157=186 frames; total stays 12923."
       }
     },
     {
