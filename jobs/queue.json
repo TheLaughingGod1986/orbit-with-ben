@@ -112668,13 +112668,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-30T13:23Z",
-      "eta": "2026-10-30T14:53Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "",
+      "result": "parked for Chief: HOS PR #388 (673752b7) adds Chapters (0:00, 1:40, 3:08, 5:19, 6:49 from rough v08 c1f952a7) + 7 FACT_NOTES Sources to 008 long description and marks provisional in production-status.md; check_all.sh + lint:package PASS on main and against #387, CI 4/4 green, HOS #180 6524173281 (£0)",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -112710,6 +112710,11 @@
           "at": "2026-10-30T13:38Z",
           "by": "gemini",
           "what": "step 4 of 4 done: HOS PR #388 opened (673752b7), all 4 CI checks green, posted HOS #180 comment 6524173281"
+        },
+        {
+          "at": "2026-10-30T13:38Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS PR #388 (673752b7) adds Chapters (0:00, 1:40, 3:08, 5:19, 6:49 from rough v08 c1f952a7) + 7 FACT_NOTES Sources to 008 long description and marks provisional in production-status.md; check_all.sh + lint:package PASS on main and against #387, CI 4/4 green, HOS #180 6524173281 (£0)"
         }
       ],
       "remaining_action": "Parked for Chief review and merge of HOS PR #388",
