@@ -113146,13 +113146,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-30T19:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "parked for Chief: release-gate PR review (merge) — HOS PR #387 head d0398c57 all checks green (check, contract, no-media, no-desk-close); vitest 192/192 and package-lint exit 0 pasted on PR (#issuecomment-6532398770)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113198,6 +113198,11 @@
           "at": "2026-10-30T20:05Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: release-gate PR review (merge) — HOS PR #387 head d0398c57 all checks green (check, contract, no-media, no-desk-close); vitest 192/192 and package-lint exit 0 pasted on PR (#issuecomment-6532398770)"
+        },
+        {
+          "at": "2026-10-30T21:19Z",
+          "by": "chief",
+          "what": "reopened: Chief h26: PASS, merged 5c25d75d; closing"
         }
       ],
       "remaining_action": "Done; parking J1264 for Chief release-gate PR review (merge)",
@@ -113210,14 +113215,7 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-30T20:05Z",
-        "by": "gemini",
-        "note": "All 4 steps complete; PR #387 head d0398c57 CI green, vitest 192/192 and package-lint exit 0 pasted on PR"
-      }
+      "model": "gemini-argon"
     },
     {
       "id": "J1265",
