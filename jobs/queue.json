@@ -113318,20 +113318,25 @@
           "at": "2026-10-30T17:54Z",
           "by": "cursor",
           "what": "step 3 of 6 done: Aligned video_start 0.125. Composite worst 0.834. Frame diff 0.000 at 463.2/464/466/468.7, same frame indexes. Tip worst 10.5 px. 12923 frames, A/V offset 0.0015s. Gates on the unaligned file are being re-run on the aligned master."
+        },
+        {
+          "at": "2026-10-30T17:59Z",
+          "by": "cursor",
+          "what": "step 6 of 6 done: Evidence 0cc892c8 on HOS PR 385. Master 09d358442307823b. Composite 0.834, frame diff 0.000, tip 10.5 px, gates 0 fail."
         }
       ],
-      "remaining_action": "Re-run gates on the timeline-aligned rough v10, then deliver and commit the evidence",
+      "remaining_action": "Parked for Chief review of rough v10",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 3,
+        "step": 6,
         "of": 6,
-        "at": "2026-10-30T17:54Z",
+        "at": "2026-10-30T17:59Z",
         "by": "cursor",
-        "note": "Aligned video_start 0.125. Composite worst 0.834. Frame diff 0.000 at 463.2/464/466/468.7, same frame indexes. Tip worst"
+        "note": "Evidence 0cc892c8 on HOS PR 385. Master 09d358442307823b. Composite 0.834, frame diff 0.000, tip 10.5 px, gates 0 fail."
       }
     },
     {
