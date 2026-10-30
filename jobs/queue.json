@@ -112128,19 +112128,24 @@
           "at": "2026-10-30T14:46Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed J0302 approval history; v02 only removes the approved agenda sentence, and house extraction confirms 7879 characters. Live subscription GET returned 121114 remaining at 14:46:38Z."
+        },
+        {
+          "at": "2026-10-30T14:47Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Live balance recorded in the ledger; J0302 reopened with approval evidence and all original VO gates retained."
         }
       ],
-      "remaining_action": "Record the verified credit balance and reopen Titan VO",
+      "remaining_action": "Verify the reopened job and report the result",
       "kind": "chief",
       "recheck_of": "J0302",
       "due": "2026-10-30T11:55:20+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-30T14:46Z",
+        "at": "2026-10-30T14:47Z",
         "by": "codex",
-        "note": "Reviewed J0302 approval history; v02 only removes the approved agenda sentence, and house extraction confirms 7879 chara"
+        "note": "Live balance recorded in the ledger; J0302 reopened with approval evidence and all original VO gates retained."
       },
       "taskKeys": [
         "OWB:032"
