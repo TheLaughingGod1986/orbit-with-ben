@@ -85681,13 +85681,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T09:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-26T09:43Z",
-      "result": "waits for: J0280 Title Test & Compare on GHZDsiH7L7A still running",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T09:43Z",
@@ -85733,6 +85733,11 @@
           "at": "2026-10-30T00:05Z",
           "by": "relay",
           "what": "condition verification queued: J1232"
+        },
+        {
+          "at": "2026-10-30T00:54Z",
+          "by": "codex",
+          "what": "reopened: J1232 verified live HOS Studio: test finished 29 Oct 2026 17:54, no winner (not enough impressions), shares shown as dashes; original title remains live. Evidence jobs/readbacks/J1232.json at 1cd2ef193. Date gate met. Original approved Test B scope and dry-run/readback gates retained; no YouTube change made. channel:audit: 61 videos, 0 errors."
         }
       ],
       "kind": "listing",
@@ -85748,20 +85753,7 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-10-26T09:48Z",
-        "by": "gemini",
-        "note": "Checked HOS Studio (CDP 9460, UCXp7HkBIl1LgaznXuZHJyRg) on GHZDsiH7L7A: A/B testing titles reads Running… (also before F"
-      },
-      "remaining_action": "Start the next Atom title test",
-      "hold": {
-        "type": "test",
-        "condition": "Verify the Atom title test on GHZDsiH7L7A has ended before starting the approved next test",
-        "check_at": "2026-10-30T01:05:39+00:00",
-        "recheck_task": "J1232"
-      }
+      "remaining_action": "Start the next Atom title test"
     },
     {
       "id": "J0979",

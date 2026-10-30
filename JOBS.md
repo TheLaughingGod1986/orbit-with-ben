@@ -29,7 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
 | J0966 | mini | blocked | gemini | – | for gemini · video · HOS 60% re-cut batch HC (local only): -I_GHK-GcFs (13 Nov), x_3L_IdYgEc (15 Nov), xzKoHg0E0_U (16 Nov), 4WUs0beKn0A (17 Nov) - each parked by 20:00 London the day before it airs |  |
 | J0969 | mini | blocked | chief | – | studio · 022 date gate: on/after Sun 1 Nov 18:00 London, read the running A/B/C thumb test (T012), then arm B v02 10% BRIGHTER vs the winner on h8HGfyShEHI | 6407771727 |
-| J0978 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
+| J0978 | mini | open | – | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 | J0979 | mini | blocked | codex | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0985 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
