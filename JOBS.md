@@ -55,6 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1233 | any | open | – | – | chief · Chief: verify condition for J1131 |  |
 | J1234 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 | J1235 | any | open | – | – | chief · Chief: verify condition for J1192 |  |
+| J1236 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 
 Recently finished:
 
