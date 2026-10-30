@@ -113241,20 +113241,25 @@
           "at": "2026-10-30T16:55Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Chief h15: three heights per sample, limit 19.2 px; safe-path is 29+157=186 frames; total stays 12923."
+        },
+        {
+          "at": "2026-10-30T17:04Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: h15 measure: trace span y=280-920. Worst shaft offset in each sample is under 19.2 px (p10 17.5, p25 10.0, p50 5.0, p75 14.5, p90 17.0). Hand at the grip is not the rod. Splice starting."
         }
       ],
-      "remaining_action": "Re-measure rod vs trace at three heights inside the trace span, then splice rough v09 if every sample is within 19.2 px",
+      "remaining_action": "Splice rough v09 from the passing three-height rod check, then run the gates",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T16:55Z",
+        "at": "2026-10-30T17:04Z",
         "by": "cursor",
-        "note": "Claimed. Chief h15: three heights per sample, limit 19.2 px; safe-path is 29+157=186 frames; total stays 12923."
+        "note": "h15 measure: trace span y=280-920. Worst shaft offset in each sample is under 19.2 px (p10 17.5, p25 10.0, p50 5.0, p75 "
       }
     },
     {
