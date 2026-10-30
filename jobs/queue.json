@@ -1,5 +1,5 @@
 {
-  "next_id": 1275,
+  "next_id": 1276,
   "jobs": [
     {
       "id": "J0001",
@@ -113734,6 +113734,34 @@
       "recheck_of": "J1100",
       "due": "2026-10-30T17:15:13+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1275",
+      "title": "HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude) PASS on J1266, 30 Oct. 1) Merge HOS PR #389 (1fb32488) once all 4 checks are green; squash, no force-push. 2) Then block with jobs.py wait --type dependency until 009's and 010's picture/edit is locked (the final cut exists). 3) When each locks: re-time its Chapters to the actual chapter-card/VO times in the locked cut (0:00 first, >=3 stamps, >=10 s apart), keep the Sources, run lint:package, and open a small PR for the Chief. The provisional stamps must never upload as they are. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T16:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T16:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut",
+      "kind": "listing"
     }
   ],
   "focus": [],
