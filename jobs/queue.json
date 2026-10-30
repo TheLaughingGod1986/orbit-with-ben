@@ -109262,13 +109262,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T00:43Z",
-      "eta": "2026-10-30T02:43Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T00:05Z",
-      "result": "",
+      "result": "Verified live API at 00:44:41Z: 114 characters remain; 031 v03 needs 7765. J0345 stays blocked; recheck 2026-10-30T10:55Z after API reset 10:50:31Z. Titan J0302 (7879 chars) stays ahead. Evidence and ledger a86b49a9f; no spend or publishing changes.",
       "history": [
         {
           "at": "2026-10-30T00:05Z",
@@ -109299,6 +109299,11 @@
           "at": "2026-10-30T00:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0345 remains blocked, retry 30 Oct 10:55Z; Titan-first condition preserved. Sanitized API evidence and balance ledger committed from clean worktree. No spend."
+        },
+        {
+          "at": "2026-10-30T00:45Z",
+          "by": "codex",
+          "what": "done: Verified live API at 00:44:41Z: 114 characters remain; 031 v03 needs 7765. J0345 stays blocked; recheck 2026-10-30T10:55Z after API reset 10:50:31Z. Titan J0302 (7879 chars) stays ahead. Evidence and ledger a86b49a9f; no spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0345 awaits sufficient credit after Titan",
@@ -109316,7 +109321,8 @@
       "taskKeys": [
         "OWB:031",
         "OWB:032"
-      ]
+      ],
+      "done_ref": "a86b49a9f"
     },
     {
       "id": "J1231",
