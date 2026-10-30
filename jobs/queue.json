@@ -112249,10 +112249,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-30T14:53Z",
+      "eta": "2026-10-30T16:53Z",
       "created_by": "relay",
       "created_at": "2026-10-30T11:01Z",
       "result": "",
@@ -112261,13 +112261,26 @@
           "at": "2026-10-30T11:01Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T14:53Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Record approved Moon and Dinosaur Shorts voiceovers once live credit suffices and original gates remain valid",
       "kind": "chief",
       "recheck_of": "J0862",
       "due": "2026-10-30T12:01:03+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T14:53Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1257",
