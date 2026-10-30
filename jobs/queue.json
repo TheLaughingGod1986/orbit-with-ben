@@ -112902,17 +112902,22 @@
           "at": "2026-10-30T14:18Z",
           "by": "cursor",
           "what": "step 3 of 4 done: j1241 moved. NAS mini-tmp-scratch/2026-10-30/j1241-hos008-cg-v03-wt. Local marker only. Data volume 7.9 Gi free (was 6.9). j1248 rsync pid started 14:16Z. Log ~/_desk/logs/J1268-j1248-rsync.log. Done file absent while it runs. Do not start a second rsync."
+        },
+        {
+          "at": "2026-10-30T14:29Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: j1248 rsync still running at 14:29Z (pid 5356, 12 min). Done file absent. Continue: ~/_desk/logs/J1268-CONTINUE.txt"
         }
       ],
-      "remaining_action": "j1248 rsync to NAS is running; verify and remove it when the done file appears",
+      "remaining_action": "When J1268-j1248-rsync.done is 0, verify that copy and remove the local worktree. Do not start a second rsync.",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-10-30T14:18Z",
+        "at": "2026-10-30T14:29Z",
         "by": "cursor",
-        "note": "j1241 moved. NAS mini-tmp-scratch/2026-10-30/j1241-hos008-cg-v03-wt. Local marker only. Data volume 7.9 Gi free (was 6.9"
+        "note": "j1248 rsync still running at 14:29Z (pid 5356, 12 min). Done file absent. Continue: ~/_desk/logs/J1268-CONTINUE.txt"
       },
       "taskKeys": [
         "HOS:008"
