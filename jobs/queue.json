@@ -112815,10 +112815,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T14:02Z",
+      "eta": "2026-10-30T15:02Z",
       "created_by": "chief",
       "created_at": "2026-10-30T13:30Z",
       "result": "",
@@ -112862,6 +112862,11 @@
           "at": "2026-10-30T14:00Z",
           "by": "cursor",
           "what": "released: NAS copy still running. tmux j1268-offload. log ~/_desk/logs/J1268-offload.log stdout ~/_desk/logs/J1268-offload.stdout done ~/_desk/logs/J1268-offload.done. Missing .done means still running: do not start a second rsync. When .done is 0, both worktrees were checksum-checked and the /tmp copies replaced with MOVED_TO_NAS.txt. When non-zero, sources were kept; resume rsync --inplace into the partial NAS folders and do not write into a folder that already has MOVED_FROM.txt. Skip j1218 (J1213 still blocked on v03). Keep j1263 for open J1267. Disk still 6.9 GiB until the local copies are removed."
+        },
+        {
+          "at": "2026-10-30T14:02Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for the NAS copy to finish, then checksum and only then remove the /tmp copies",
