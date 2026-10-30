@@ -51,6 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1218 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: repair J1213 rough v01 picture failures into diagnostic v02 |  |
 | J1237 | mini | open | – | – | 009 picture · qa · HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief |  |
 | J1238 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
+| J1239 | any | open | – | – | chief · Chief: verify condition for J0966 |  |
 
 Recently finished:
 
