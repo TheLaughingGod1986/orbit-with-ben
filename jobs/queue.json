@@ -113459,20 +113459,25 @@
           "at": "2026-10-30T19:12Z",
           "by": "cursor",
           "what": "step 2 of 6 done: h21 checks PASS: title 0.952, join 0.001, body 0.409, plate-gone 44.4, composite 0.866, tip 10.5 px, gates 0 fail. Evidence worktree checkout still running."
+        },
+        {
+          "at": "2026-10-30T19:15Z",
+          "by": "cursor",
+          "what": "step 4 of 6 done: h21 checks PASS. Clearing NAS AppleDouble files so the evidence commit can land on PR 385."
         }
       ],
-      "remaining_action": "Finish the PR 385 evidence commit, then park rough v12 for Chief",
+      "remaining_action": "Commit rough v12 evidence to HOS PR 385 and park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 6,
-        "at": "2026-10-30T19:12Z",
+        "at": "2026-10-30T19:15Z",
         "by": "cursor",
-        "note": "h21 checks PASS: title 0.952, join 0.001, body 0.409, plate-gone 44.4, composite 0.866, tip 10.5 px, gates 0 fail. Evide"
+        "note": "h21 checks PASS. Clearing NAS AppleDouble files so the evidence commit can land on PR 385."
       }
     },
     {
