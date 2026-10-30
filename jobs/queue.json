@@ -18920,10 +18920,15 @@
           "at": "2026-10-30T01:21Z",
           "by": "cursor",
           "what": "step 0 of 4 done: claimed J0241; disk 9.9G free — nas_offload next"
+        },
+        {
+          "at": "2026-10-30T01:22Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: API privacy check in progress; adapting J0280 Related script"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Confirm HOS 005 long wwcjcFfC-5M is Public, then set Related on BW_CFAX-mxc and HOS Buffer for 31 Oct",
+      "remaining_action": "Confirm long Public; set Related on BW_CFAX-mxc via CDP 9460",
       "urgent": 4,
       "rerouted_from": {
         "needs": "mini",
@@ -18937,9 +18942,9 @@
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-10-30T01:21Z",
+        "at": "2026-10-30T01:22Z",
         "by": "cursor",
-        "note": "claimed J0241; disk 9.9G free — nas_offload next"
+        "note": "API privacy check in progress; adapting J0280 Related script"
       },
       "taskKeys": [
         "HOS:005"
