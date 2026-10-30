@@ -111479,17 +111479,22 @@
           "at": "2026-10-30T09:16Z",
           "by": "cursor",
           "what": "step 1 of 4 done: tmux j1248-v05fix still running; contact sheet around frame 97 of 112; done file absent; not starting a second copy"
+        },
+        {
+          "at": "2026-10-30T09:26Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: polish PASS, picture_qa PASS, runtime 540.458s, master sha a97e2f82. v04 master still e00bb897. iCloud in-place write deadlocked; retrying delivery."
         }
       ],
-      "remaining_action": "Contact sheet is still extracting frames, then polish and picture gates",
+      "remaining_action": "Gates passed; copying the evidence pack to precheck, UAT and the NAS",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T09:16Z",
+        "at": "2026-10-30T09:26Z",
         "by": "cursor",
-        "note": "tmux j1248-v05fix still running; contact sheet around frame 97 of 112; done file absent; not starting a second copy"
+        "note": "polish PASS, picture_qa PASS, runtime 540.458s, master sha a97e2f82. v04 master still e00bb897. iCloud in-place write de"
       },
       "taskKeys": [
         "HOS:008"
