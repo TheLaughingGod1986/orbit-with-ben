@@ -106146,18 +106146,23 @@
           "at": "2026-10-30T00:07Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1193; starting multimodal review of 11 HOS 008 code graphics against locked VO"
+        },
+        {
+          "at": "2026-10-30T00:09Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Extracted word-level VO timings, manifest specs, and builder code for all 11 rows"
         }
       ],
-      "remaining_action": "Read CODE_GRAPHICS_v01_REVIEW.md and inspect the 11 code graphics and VO timings",
+      "remaining_action": "Multimodally inspect all 11 code graphic MP4s and stills/phone-size previews against VO word timings",
       "for": "gemini",
       "kind": "review",
       "due": "2026-11-12T20:00:00Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T00:07Z",
+        "at": "2026-10-30T00:09Z",
         "by": "gemini",
-        "note": "Claimed J1193; starting multimodal review of 11 HOS 008 code graphics against locked VO"
+        "note": "Extracted word-level VO timings, manifest specs, and builder code for all 11 rows"
       },
       "taskKeys": [
         "HOS:008"
