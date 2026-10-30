@@ -112806,10 +112806,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T13:40Z",
+      "eta": "2026-10-30T14:40Z",
       "created_by": "chief",
       "created_at": "2026-10-30T13:30Z",
       "result": "",
@@ -112818,11 +112818,24 @@
           "at": "2026-10-30T13:30Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T13:40Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Mini disk: move finished /tmp render worktrees to NAS (render scratch rules)",
       "due": "2026-10-30T18:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T13:40Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1269",
