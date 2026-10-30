@@ -100618,13 +100618,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-28T21:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "Waiting for: Studio report for GHZDsiH7L7A confirms the existing combined title-and-thumbnail test has ended, with its completion date verified directly; the next London calendar day has arrived. Recheck observed Running status, never infer completion from the 19h44m estimate.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -100675,29 +100675,18 @@
           "at": "2026-10-30T00:05Z",
           "by": "relay",
           "what": "condition verification queued: J1233"
+        },
+        {
+          "at": "2026-10-30T01:29Z",
+          "by": "codex",
+          "what": "reopened: J1233 verified directly in Studio at 2026-10-30T01:29:21Z: combined Title and thumbnail test finished 29 October 2026 at 17:54 Europe/London, insufficient impressions. London date is 30 October; next-day condition satisfied. Original J1126/J1129 authorization retained: title-only B Why Did Particles Bounce Back Off Gold Foil?, live A and thumbnail fixed. All original guards remain, including no Continue on delete-current-experiment confirmation without a separate Chief ruling. Evidence /Users/benjaminoats/_desk/reports/J1233/studio_report.json. No Studio changes made."
         }
       ],
       "remaining_action": "Wait for 30 Oct London, then recheck finished report before authorized title-only test with thumbnail fixed",
       "kind": "studio",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-28T21:16Z",
-        "by": "codex",
-        "note": "Studio A/B test report: Title and thumbnail; Test running; estimated 19h44m remaining. No test or metadata changed."
-      },
       "taskKeys": [
         "HOS:004"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Studio directly verified at 2026-10-29 21:53Z: combined Title and thumbnail test finished 29 October 2026 at 17:54 Europe/London (started 15 October 18:00), insufficient impressions. Remaining condition: London date must be 30 October or later; re-read Studio before reopening. Evidence: /Users/benjaminoats/_desk/reports/J1224/studio_readback.json. No new test authorized before that next-day gap.",
-        "check_at": "2026-10-30T01:05:39+00:00",
-        "last_recheck": "J1224",
-        "checked_at": "2026-10-29T21:53:33+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1233"
-      }
+      ]
     },
     {
       "id": "J1132",
