@@ -108306,10 +108306,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T02:51Z",
+      "eta": "2026-10-30T04:51Z",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
       "result": "",
@@ -108593,6 +108593,11 @@
           "at": "2026-10-30T02:50Z",
           "by": "cursor",
           "what": "released: Detached assemble still running: tmux j1218-asm-v03; log ~/_desk/logs/j1218-asm-v03.log; done ~/_desk/logs/j1218-asm-v03.done (absent=running). Parts 01-05 assembled; join_full on NAS scratch j1218-hos008-rough-v03/full_join_v03; trailing cap 540.000s in progress. Worktree /private/tmp/j1218-v03-wt. Next run: if .done missing leave alone; if present read rc+log, then gates/evidence/PR. Do NOT start a second assemble."
+        },
+        {
+          "at": "2026-10-30T02:51Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Detached v03 join finishing (gates next); resume when j1218-asm-v03.done exists",
