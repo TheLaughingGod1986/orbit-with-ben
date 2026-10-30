@@ -1,5 +1,5 @@
 {
-  "next_id": 1270,
+  "next_id": 1271,
   "jobs": [
     {
       "id": "J0001",
@@ -113371,6 +113371,35 @@
         "HOS:004"
       ],
       "done_ref": "bc7b6db8f"
+    },
+    {
+      "id": "J1270",
+      "title": "Restore Mini headroom for J1100 OWB 027/028 repairs; identify recurring growth",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex follow-up from J1100 review, 30 Oct 2026. Restore live Mini render headroom to at least 20 GB (aim 30 GB) so OWB:027/028 J1100 can resume its existing 2/3 repair plan. GBP0. J1100 stays blocked; no rendering or pickups in this recovery job.\n\nEvidence: required nas_offload.py --apply at this review found nothing eligible; 8545 -> 8543 MB free, approximately 8101 MB after creating review worktree. J1110/J1112/J1128 and J1268 are completed, so do not assume their historical free-space readings still hold. Read J1268 result and J1128 recovery evidence before selecting anything.\n\nClaim before work. Inventory current disk use and active tmux/processes plus all open/blocked job input references. Use mini_repair.py safe cache/clean-worktree mechanisms and prescribed nas_offload.py first. For additional superseded local render exports/scratch, preserve current and previous versions and every active input, every uploaded-file identity/manifest and the only copy of any master. Copy eligible superseded media to mounted NAS, produce SHA256 manifests and verify full match before removing only the verified local copy; leave MOVED_TO_NAS.txt. Never delete or overwrite NAS data, touch secrets, iCloud originals, active jobs, or unpushed/dirty worktrees. If scratch is younger than the standing 48-hour rule, leave it. No rule exception is granted. Do not kill production or erase snapshots blindly. Investigate renewed growth so recovery is not immediately consumed again.\n\nRun long transfers detached with session/log/.done and release honestly. Report exact before/after free bytes, items moved/skipped, checksum evidence and continuing growth. If safe eligible data cannot supply 20 GB, report the largest specific remaining consumers and a concrete safe proposal; do not loop indefinitely. Deadline 31 Oct 2026 12:00 London, ahead of J1100 batch target 1 Nov 20:00. On completion the elected Chief verifies live >=20 GB and reopens only J1100 for already-authorised repair work. No publishing, music generation or other credit spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-30T15:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T15:46Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Recover at least 20 GB free safely and identify renewed disk growth blocking J1100",
+      "due": "2026-10-31T12:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
