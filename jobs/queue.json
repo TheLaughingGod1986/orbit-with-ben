@@ -100861,9 +100861,14 @@
           "at": "2026-10-30T17:07Z",
           "by": "relay",
           "what": "condition verification queued: J1276"
+        },
+        {
+          "at": "2026-10-30T17:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T18:07:43Z"
         }
       ],
-      "remaining_action": "Wait for actual thumbnail-test completion and the following London day before the title-only test",
+      "remaining_action": "Verify thumbnail-test completion and following London day before title-only test",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -100877,12 +100882,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Studio must confirm the J1129 MISSING ELEMENT v02 thumbnail-only test on AL_-qlWko_g ended, supply actual completion time, and London date must be at least the next day. J1251 fresh Studio report at 2026-10-30T10:53:53Z still says Test running, estimated 12 days 13 hours; evidence _desk/handoff/J1251/hos_test_report.txt and .png.",
-        "check_at": "2026-10-30T18:07:43+00:00",
-        "last_recheck": "J1251",
-        "checked_at": "2026-10-30T10:54:51+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1276"
+        "condition": "Studio must confirm J1129 MISSING ELEMENT v02 thumbnail-only test on AL_-qlWko_g ended, supply actual completion time, and London date must be at least the next day. J1276 fresh Studio reload and navigation both failed with Oops, something went wrong; completion unverified. Evidence _desk/handoff/J1276/hos_test_report.txt and .png. Last successful J1251 report said Test running.",
+        "check_at": "2026-10-30T18:07:43Z",
+        "last_recheck": "J1276",
+        "checked_at": "2026-10-30T17:37:13+00:00",
+        "checked_by": "codex"
       }
     },
     {
