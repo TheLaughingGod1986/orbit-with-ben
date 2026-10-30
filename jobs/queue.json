@@ -22497,6 +22497,11 @@
           "at": "2026-10-30T01:03Z",
           "by": "cursor",
           "what": "step 1 of 4 done: all 3 target longs public; writing Related setter"
+        },
+        {
+          "at": "2026-10-30T01:10Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: item 1 Rl2uZ-KOTl8 in progress; Playwright hung so using puppeteer"
         }
       ],
       "kind": "studio",
@@ -22509,14 +22514,14 @@
       },
       "for": "cursor",
       "model": "cursor-auto",
-      "remaining_action": "Set Related on 7 HOS Shorts via Studio CDP 9460; read back each",
+      "remaining_action": "Setting Related on remaining HOS Shorts via CDP 9460 (puppeteer)",
       "urgent": 3,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T01:03Z",
+        "at": "2026-10-30T01:10Z",
         "by": "cursor",
-        "note": "all 3 target longs public; writing Related setter"
+        "note": "item 1 Rl2uZ-KOTl8 in progress; Playwright hung so using puppeteer"
       },
       "taskKeys": [
         "HOS:005",
