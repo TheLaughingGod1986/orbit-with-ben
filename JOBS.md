@@ -49,6 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1218 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: repair J1213 rough v01 picture failures into diagnostic v02 |  |
 | J1237 | mini | claimed | gemini | 2026-10-30T05:46Z | 009 picture · qa · HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief |  |
 | J1238 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
+| J1240 | mini | open | – | – | assembly · Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX) |  |
 
 Recently finished:
 

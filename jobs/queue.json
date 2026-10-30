@@ -1,5 +1,5 @@
 {
-  "next_id": 1240,
+  "next_id": 1241,
   "jobs": [
     {
       "id": "J0001",
@@ -110280,6 +110280,35 @@
       "recheck_of": "J0966",
       "due": "2026-10-30T04:37:48+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1240",
+      "title": "Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief (Claude) ruling on J1225 Uranus v08, 30 Oct 03:5x UTC: FIX, not PASS. Ben's note on v06 was '0:00 the image is shaky' (#264 6507250708), and by the J1225 evidence v08 moves almost exactly like v06 (jobs/reviews/J1225/MOTION_DIAGNOSTIC.json: accel_rms_y v06 0.64, v08 0.68), so on the record it cannot answer his note. Read that file before starting. Its per-frame steps (2 px resolution at the 540x960 decode) show three things:\n1. v06 and v08 open on a fast steady vertical scroll, -4 px/frame (about 120 px/s at 1080 wide) of thin bright ring arcs at 1.85x upscale. Fine high-contrast lines moving that fast strobe and shimmer, which reads as shake even when the path is smooth. This is the most likely thing Ben saw.\n2. v08 frames 0-5 alternate -2/-4: a stutter in the very first frames, exactly at 0:00. v06 had a -2/-6 hitch near frame 12-14 (about 0.4 s).\n3. The scroll stops dead at frame 68 (about 2.27 s), going from 120 px/s to 0 in one frame: a visible jolt before the 2.7 s cut.\nMake v09 from the same approved NASA SVS 20390 Shot9, v06 VO, captions, timing and the rest of the edit. Never overwrite v06/v07/v08 or any uploaded file.\n- Slow the opening move to at most 1.5 px/frame at 1080 wide, with an ease-in from frame 0 (frame 0 must still move: rule 8) and an ease-out to rest before the 2.7 s cut. No hard stop, no frame-to-frame step change above 0.25 px.\n- Render the move sub-pixel (high-quality resample from the source at full resolution, not integer shifts), with a light 180-degree-shutter motion blur (blend 2-4 sub-steps per frame) so the ring arcs don't strobe. Keep measured_upscale at or below 1.85, lower if the framing allows.\n- Measure v06, v08 and v09 at full 1080x1920 with sub-pixel phase correlation (upsampled) on the subject ROI, and add a temporal-flicker number for the ring region (mean absolute frame difference after motion compensation). Report per-frame steps, step-change max, accel_rms and flicker for all three. v09 must beat v06 clearly on step-change max and flicker. That is evidence for the Chief, not a new gate.\n- Contact strip of every frame 0:00-0:03 plus a 0.25x-speed MP4 of the opening for the Chief.\n- Full existing final-sha gate set (open/f0diff, loop/finish, I/TP, polish, picture_qa, music, hitch). Deliver to repo/UAT/NAS with sha256 (copy only) and park for Chief by Sun 1 Nov 20:00 London. The Chief then puts it on Ben's board for his OK by Tue 3 Nov 10:30. Without a PASS and his OK, the scheduled ZpEA8stoSPA copy airs as is. Do not repoint J1212.\nNo upload, swap, schedule, privacy, Buffer or UPLOADS change. GBP0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T03:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T03:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX)",
+      "due": "2026-11-01T20:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
