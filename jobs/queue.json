@@ -112135,17 +112135,22 @@
           "at": "2026-10-30T11:06Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed. Disk 11 GB free; NAS offload had nothing older than 48h."
+        },
+        {
+          "at": "2026-10-30T11:11Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: v04 sha e00bb897 confirmed. Left sky x60-540 y60-420 is clear of the ship. Four v05 FIX asset hashes match cuts_rough_v05.json."
         }
       ],
-      "remaining_action": "Find v04/v05 assets and Chief h07, then build code_graphics_v05 P3:04",
+      "remaining_action": "Render compact P3:04 inset, then frame-exact splice rough v06",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-30T11:06Z",
+        "at": "2026-10-30T11:11Z",
         "by": "cursor",
-        "note": "Claimed. Disk 11 GB free; NAS offload had nothing older than 48h."
+        "note": "v04 sha e00bb897 confirmed. Left sky x60-540 y60-420 is clear of the ship. Four v05 FIX asset hashes match cuts_rough_v0"
       },
       "taskKeys": [
         "HOS:008"
