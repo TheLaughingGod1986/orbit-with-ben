@@ -112355,16 +112355,21 @@
           "at": "2026-10-30T12:02Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. v06 method is frame-exact splice of v04 e00bb897. Disk 9.7GB; scratch stays on the NAS."
+        },
+        {
+          "at": "2026-10-30T12:09Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: P5:10 in-point +3.50s (alpha mov unchanged; +/-0.5s still a full-height brick corner). Pause frames 1539-1552 at 64.33-64.88s on 10_wait_shutter out, join_dist 0.13s. Hook untouched."
         }
       ],
-      "remaining_action": "Test P5:10 plate in-points and a pause trim after 0:30",
+      "remaining_action": "Encode rough v07: plate in-point +3.50s and pause at the 1:04 shot boundary",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T12:02Z",
+        "at": "2026-10-30T12:09Z",
         "by": "cursor",
-        "note": "Claimed. v06 method is frame-exact splice of v04 e00bb897. Disk 9.7GB; scratch stays on the NAS."
+        "note": "P5:10 in-point +3.50s (alpha mov unchanged; +/-0.5s still a full-height brick corner). Pause frames 1539-1552 at 64.33-6"
       },
       "taskKeys": [
         "HOS:008"
