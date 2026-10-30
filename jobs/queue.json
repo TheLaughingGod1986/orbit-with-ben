@@ -112238,16 +112238,21 @@
           "at": "2026-10-30T11:41Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1258; starting inspection of HOS 007 Shorts records"
+        },
+        {
+          "at": "2026-10-30T11:50Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected 007 SHORTS_UPLOAD_INDEX.json, s04/s05 and v04/v05 PACKAGE_MANIFEST.json, SHORTS_RELEASE.json, fix_published_playback_lag.py, and production-status.md"
         }
       ],
-      "remaining_action": "Inspect 007 SHORTS_UPLOAD_INDEX.json, manifests, fix_published_playback_lag.py, and production-status.md",
+      "remaining_action": "Update 007 SHORTS_UPLOAD_INDEX.json, old s04/s05 manifests, SHORTS_RELEASE.json, meta JSONs, and production-status.md in clean HOS worktree",
       "kind": "listing",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T11:41Z",
+        "at": "2026-10-30T11:50Z",
         "by": "gemini",
-        "note": "Claimed J1258; starting inspection of HOS 007 Shorts records"
+        "note": "Inspected 007 SHORTS_UPLOAD_INDEX.json, s04/s05 and v04/v05 PACKAGE_MANIFEST.json, SHORTS_RELEASE.json, fix_published_pl"
       },
       "taskKeys": [
         "HOS:007"
