@@ -113155,17 +113155,22 @@
           "at": "2026-10-30T15:00Z",
           "by": "cursor",
           "what": "step 3 of 4 done: j1241 already on NAS. Prior j1248 rsync pid 5356 is dead and left no done file; dest is 1.4G. Starting one finish pass. j1218 still skipped: J1213 blocked past 15:00Z. j1263 kept: J1267 open."
+        },
+        {
+          "at": "2026-10-30T15:07Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: Data rsync finished 15:06Z. Two archive symlinks recreated on the NAS. Checksum dry-run running. tmux j1268-j1248. Log ~/_desk/logs/J1268-j1248-finish.log. Done file absent."
         }
       ],
-      "remaining_action": "Finish j1248 checksum and remove only if it matches; leave j1218 and j1263",
+      "remaining_action": "Wait for j1248 checksum, then remove the local copy only if it matches",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-10-30T15:00Z",
+        "at": "2026-10-30T15:07Z",
         "by": "cursor",
-        "note": "j1241 already on NAS. Prior j1248 rsync pid 5356 is dead and left no done file; dest is 1.4G. Starting one finish pass. "
+        "note": "Data rsync finished 15:06Z. Two archive symlinks recreated on the NAS. Checksum dry-run running. tmux j1268-j1248. Log ~"
       },
       "taskKeys": [
         "HOS:008"
