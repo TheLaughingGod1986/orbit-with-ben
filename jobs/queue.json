@@ -114898,10 +114898,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-30T20:48Z",
+      "eta": "2026-10-30T22:48Z",
       "created_by": "relay",
       "created_at": "2026-10-30T20:42Z",
       "result": "",
@@ -114910,13 +114910,26 @@
           "at": "2026-10-30T20:42Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T20:48Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: J1100: finish S2/S5/S6 corrections and verified delivery; Chief replacement review then Ben swap approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-10-30T21:42:57+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T20:48Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
