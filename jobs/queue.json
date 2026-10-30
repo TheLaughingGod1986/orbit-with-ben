@@ -1,5 +1,5 @@
 {
-  "next_id": 1276,
+  "next_id": 1277,
   "jobs": [
     {
       "id": "J0001",
@@ -100849,6 +100849,11 @@
           "at": "2026-10-30T10:54Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T17:00:00Z"
+        },
+        {
+          "at": "2026-10-30T17:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J1276"
         }
       ],
       "remaining_action": "Wait for actual thumbnail-test completion and the following London day before the title-only test",
@@ -100866,10 +100871,11 @@
       "hold": {
         "type": "input",
         "condition": "Studio must confirm the J1129 MISSING ELEMENT v02 thumbnail-only test on AL_-qlWko_g ended, supply actual completion time, and London date must be at least the next day. J1251 fresh Studio report at 2026-10-30T10:53:53Z still says Test running, estimated 12 days 13 hours; evidence _desk/handoff/J1251/hos_test_report.txt and .png.",
-        "check_at": "2026-10-30T17:00:00Z",
+        "check_at": "2026-10-30T18:07:43+00:00",
         "last_recheck": "J1251",
         "checked_at": "2026-10-30T10:54:51+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1276"
       }
     },
     {
@@ -113818,6 +113824,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J1276",
+      "title": "Chief: verify condition for J1130",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1130: Studio must confirm the J1129 MISSING ELEMENT v02 thumbnail-only test on AL_-qlWko_g ended, supply actual completion time, and London date must be at least the next day. J1251 fresh Studio report at 2026-10-30T10:53:53Z still says Test running, estimated 12 days 13 hours; evidence _desk/handoff/J1251/hos_test_report.txt and .png.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1130 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T17:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T17:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for actual thumbnail-test completion and the following London day before the title-only test",
+      "kind": "chief",
+      "recheck_of": "J1130",
+      "due": "2026-10-30T18:07:43+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
