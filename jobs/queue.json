@@ -112897,17 +112897,22 @@
           "at": "2026-10-30T14:12Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Eligible: J1241 done, J1248 done, no open job names those paths. SKIP j1218-v03-wt: J1213 still blocked, check 15:00Z. KEEP j1263 rough v08 (J1267 open). Existing offload pid 79867, log ~/_desk/logs/J1268-offload.log, done file not written yet. j1241 checksum started 14:11Z."
+        },
+        {
+          "at": "2026-10-30T14:18Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: j1241 moved. NAS mini-tmp-scratch/2026-10-30/j1241-hos008-cg-v03-wt. Local marker only. Data volume 7.9 Gi free (was 6.9). j1248 rsync pid started 14:16Z. Log ~/_desk/logs/J1268-j1248-rsync.log. Done file absent while it runs. Do not start a second rsync."
         }
       ],
-      "remaining_action": "Offload of j1241 then j1248 is already running; do not start a second copy",
+      "remaining_action": "j1248 rsync to NAS is running; verify and remove it when the done file appears",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-30T14:12Z",
+        "at": "2026-10-30T14:18Z",
         "by": "cursor",
-        "note": "Eligible: J1241 done, J1248 done, no open job names those paths. SKIP j1218-v03-wt: J1213 still blocked, check 15:00Z. K"
+        "note": "j1241 moved. NAS mini-tmp-scratch/2026-10-30/j1241-hos008-cg-v03-wt. Local marker only. Data volume 7.9 Gi free (was 6.9"
       },
       "taskKeys": [
         "HOS:008"
