@@ -108598,20 +108598,25 @@
           "at": "2026-10-30T02:51Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T02:52Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: claimed; reading CHIEF_REVIEW 29+30 Oct and J1193 CODE_GRAPHICS findings"
         }
       ],
-      "remaining_action": "Detached v03 join finishing (gates next); resume when j1218-asm-v03.done exists",
+      "remaining_action": "Read Chief rulings + J1193; inventory v02 assembler and rough cuts for diagnostic v03",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 6,
-        "at": "2026-10-30T02:50Z",
+        "at": "2026-10-30T02:52Z",
         "by": "cursor",
-        "note": "join pause-trim done; trailing cap 540.000s writing to NAS; tmux j1218-asm-v03 still live"
+        "note": "claimed; reading CHIEF_REVIEW 29+30 Oct and J1193 CODE_GRAPHICS findings"
       }
     },
     {
