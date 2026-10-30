@@ -18930,10 +18930,15 @@
           "at": "2026-10-30T01:24Z",
           "by": "cursor",
           "what": "step 1 of 4 done: long wwcjcFfC-5M Public confirmed via API"
+        },
+        {
+          "at": "2026-10-30T01:25Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Related set: BW_CFAX-mxc -> Tied Arm (wwcjcFfC-5M); Studio readback OK"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Set Related video on BW_CFAX-mxc -> wwcjcFfC-5M in HOS Studio CDP 9460",
+      "remaining_action": "HOS Buffer mirror for BW_CFAX-mxc (31 Oct 11:30 London) via BUFFER_HOS_API_KEY",
       "urgent": 4,
       "rerouted_from": {
         "needs": "mini",
@@ -18945,11 +18950,11 @@
       "for": "cursor",
       "model": "cursor-auto",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T01:24Z",
+        "at": "2026-10-30T01:25Z",
         "by": "cursor",
-        "note": "long wwcjcFfC-5M Public confirmed via API"
+        "note": "Related set: BW_CFAX-mxc -> Tied Arm (wwcjcFfC-5M); Studio readback OK"
       },
       "taskKeys": [
         "HOS:005"
