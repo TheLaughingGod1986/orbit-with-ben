@@ -108590,9 +108590,14 @@
           "at": "2026-10-30T00:34Z",
           "by": "cursor",
           "what": "step 1 of 5 done: old readback Private+2026-11-16T11:30:00Z; master sha OK; package+SRT ready"
+        },
+        {
+          "at": "2026-10-30T00:34Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: dry-run PASS; starting real upload"
         }
       ],
-      "remaining_action": "Dry-run then upload v04 Private with publishAt 2026-11-16T11:30:00Z",
+      "remaining_action": "Upload v04 Private; then unschedule old + captions + verify-swap",
       "due": "2026-11-15T20:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -108610,11 +108615,11 @@
         "okRef": "6507810925"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
         "at": "2026-10-30T00:34Z",
         "by": "cursor",
-        "note": "old readback Private+2026-11-16T11:30:00Z; master sha OK; package+SRT ready"
+        "note": "dry-run PASS; starting real upload"
       },
       "taskKeys": [
         "HOS:004"
