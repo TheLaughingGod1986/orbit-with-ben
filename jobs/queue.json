@@ -1,5 +1,5 @@
 {
-  "next_id": 1234,
+  "next_id": 1236,
   "jobs": [
     {
       "id": "J0001",
@@ -84162,6 +84162,11 @@
           "at": "2026-10-30T00:30Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: all 4 J0966 local HC re-cuts verified on disk + NAS (Jenner v04 3ef3fa773750, Harvey v04 e1f862ba737a, Dalton v04 8ce07a605697, vaccine-name v05 e5ea76f012fb), Chief PASS (J1083) + J1200 delivery + all 4 Ben swap OKs (6507268470, 6507810925, 6507831644, 6508107852) complete, and Studio swaps delegated to J1219 (done), J1223 (done), J1221 (open), J1222 (open); ready for Chief to mark J0966 done"
+        },
+        {
+          "at": "2026-10-30T00:31Z",
+          "by": "relay",
+          "what": "condition verification queued: J1234"
         }
       ],
       "kind": "video",
@@ -84205,6 +84210,12 @@
         "at": "2026-10-30T00:30Z",
         "by": "gemini",
         "note": "Verified 4 local masters + 12 NAS copies SHA256; all 4 Ben OKs recorded; swaps in J1219/J1223 (done) & J1221/J1222 (open"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-30T01:31:33+00:00",
+        "recheck_task": "J1234"
       }
     },
     {
@@ -106082,6 +106093,11 @@
           "at": "2026-10-29T23:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T00:30:01Z"
+        },
+        {
+          "at": "2026-10-30T00:31Z",
+          "by": "relay",
+          "what": "condition verification queued: J1235"
         }
       ],
       "remaining_action": "Resolve three motion flags and review existing tranche-1 plates on PR377; generation complete",
@@ -106102,10 +106118,11 @@
       "hold": {
         "type": "input",
         "condition": "Tranche 1 already minted (57/57); HOS PR377 at bd45df1f needs documented continuous-playback resolution of freeze flags P01:03_table_three (3.333-4.375s), P04:07_put_aside (7.083s to end), P04:10_write_it_down_c1 (0-1.042s), then Chief tranche-1 review/PASS. Do not restart generation on predecessor completion.",
-        "check_at": "2026-10-30T00:30:01Z",
+        "check_at": "2026-10-30T01:31:33+00:00",
         "last_recheck": "J1228",
         "checked_at": "2026-10-29T23:37:54+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1235"
       }
     },
     {
@@ -109244,6 +109261,68 @@
       "kind": "chief",
       "recheck_of": "J1131",
       "due": "2026-10-30T01:05:39+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1234",
+      "title": "Chief: verify condition for J0966",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0966: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0966 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T00:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T00:31Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief to mark J0966 done (all 4 local HC cuts verified & Ben-approved; swaps in J1219/J1221/J1222/J1223)",
+      "kind": "chief",
+      "recheck_of": "J0966",
+      "due": "2026-10-30T01:31:33+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1235",
+      "title": "Chief: verify condition for J1192",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1192: Tranche 1 already minted (57/57); HOS PR377 at bd45df1f needs documented continuous-playback resolution of freeze flags P01:03_table_three (3.333-4.375s), P04:07_put_aside (7.083s to end), P04:10_write_it_down_c1 (0-1.042s), then Chief tranche-1 review/PASS. Do not restart generation on predecessor completion.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1192 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T00:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T00:31Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Resolve three motion flags and review existing tranche-1 plates on PR377; generation complete",
+      "kind": "chief",
+      "recheck_of": "J1192",
+      "due": "2026-10-30T01:31:33+00:00",
       "due_kind": "condition-verification"
     }
   ],
