@@ -1,0 +1,89 @@
+{
+  "job": "J1272",
+  "by": "cursor",
+  "verified_at": "2026-10-30T17:27:20Z",
+  "films": [
+    "OWB:027"
+  ],
+  "video": "6bbbvfCx6zY",
+  "channelId": "UC_esArsDKd3GJvOkeO0DUog",
+  "cdp": "http://127.0.0.1:9223",
+  "pre_change_state": {
+    "checked_at": "2026-10-30T17:23:24Z",
+    "channelId": "UC_esArsDKd3GJvOkeO0DUog",
+    "title": "What If Earth Stopped Spinning?",
+    "description_length": 1997,
+    "description_sha256": "bbc2bc9b77e7b12b1625183e64213e0c955493a639cc6317c31f95016ef1519d",
+    "description_video_ids": [],
+    "visibility": "Scheduled",
+    "audience": "No, it's not Made for Kids",
+    "audience_not_made_for_kids_checked": true,
+    "studio_duration_sidepanel": "7:27",
+    "player_duration_ms": 446334,
+    "endscreen_elements": [],
+    "screenshot": "jobs/readbacks/J1272_6bbbvfCx6zY_pre_endscreen.png"
+  },
+  "choice": {
+    "description_named_another_public_long": false,
+    "video_element": "VBaYRPp85Sw",
+    "video_title": "What Happened to Venus?",
+    "why": "Live description has no watch-next video id. Default in the brief is the Venus long. Search returned one card, the element reads back at 8:34 (the Venus long's length), and the end-screen editor HTML contains VBaYRPp85Sw."
+  },
+  "studio_readback_after_reload": {
+    "channelId": "UC_esArsDKd3GJvOkeO0DUog",
+    "title": "What If Earth Stopped Spinning?",
+    "title_unchanged": true,
+    "description_length": 1997,
+    "description_sha256": "bbc2bc9b77e7b12b1625183e64213e0c955493a639cc6317c31f95016ef1519d",
+    "description_unchanged": true,
+    "visibility": "Scheduled",
+    "visibility_unchanged": true,
+    "audience": "No, it's not Made for Kids",
+    "audience_not_made_for_kids_checked": true,
+    "publishAt_untouched": "2026-11-22T18:00:00Z",
+    "thumbnail_test_and_compare": "A/B testing chip left untouched",
+    "studio_video_duration_sidepanel": "7:27",
+    "editor_end": "7:26:09 (446299 ms)",
+    "endscreen": {
+      "rows": [
+        "Subscribe: Orbit With Ben",
+        "Video: What Happened to Venus?"
+      ],
+      "start_str": "7:06:09",
+      "end_str": "7:26:09",
+      "start_ms": 426299,
+      "end_ms": 446299,
+      "span_ms": 20000,
+      "subscribe_element": {
+        "target": "Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog)",
+        "row_label": "Subscribe: Orbit With Ben",
+        "overlay_box": {
+          "x": 938,
+          "y": 467,
+          "w": 74,
+          "h": 74
+        }
+      },
+      "video_element": {
+        "type": "Choose specific video",
+        "target_video_id": "VBaYRPp85Sw",
+        "target_title": "What Happened to Venus?",
+        "row_label": "Video: What Happened to Venus?",
+        "element_duration_label": "8:34",
+        "selected_radio": "Video: What Happened to Venus?",
+        "overlay_box": {
+          "x": 658,
+          "y": 467,
+          "w": 155,
+          "h": 87
+        }
+      },
+      "placement": "Upper band of the end frame. Venus card on the left, Subscribe on the right. The end picture is Earth with a small NASA credit at the bottom-left; the elements sit above that credit. OCEANS MOVE is the thumbnail in the side panel, not burned into the end frame.",
+      "save_disabled_on_reload": true,
+      "private_note": "Studio says end screen elements won't display on the watch page while the video is private. They are saved and apply once it is public.",
+      "editor_html_contains_target_id": true,
+      "screenshot": "jobs/readbacks/J1272_6bbbvfCx6zY_post_endscreen.png"
+    }
+  },
+  "pinned_comment": "Not posted. 6bbbvfCx6zY is Scheduled Private until 2026-11-22T18:00:00Z. Comment creation is refused until public. Held to 2026-11-22T18:05:00Z."
+}
