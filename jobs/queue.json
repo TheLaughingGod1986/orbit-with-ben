@@ -114254,9 +114254,14 @@
           "at": "2026-10-30T20:09Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Squash-merged HOS PR #389 (1fb32488 -> 7c136209) into main; check_all.sh and lint:package PASS on main for 009 and 010"
+        },
+        {
+          "at": "2026-10-30T20:09Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified HOS 009 (picture 70/90, tranche 2 after ~12 Nov, edit todo due 19 Nov) and 010 (picture todo due 22 Nov, edit todo due 26 Nov) have no locked cuts yet; setting dependency wait"
         }
       ],
-      "remaining_action": "Check HOS 009 and 010 picture/edit status and set dependency wait until locked cuts exist",
+      "remaining_action": "Re-time HOS 009 and 010 provisional Chapters to actual chapter-card/VO times once each film's locked cut exists (PR #389 merged at 7c136209)",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -114268,11 +114273,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-10-30T20:09Z",
         "by": "gemini",
-        "note": "Squash-merged HOS PR #389 (1fb32488 -> 7c136209) into main; check_all.sh and lint:package PASS on main for 009 and 010"
+        "note": "Verified HOS 009 (picture 70/90, tranche 2 after ~12 Nov, edit todo due 19 Nov) and 010 (picture todo due 22 Nov, edit t"
       },
       "taskKeys": [
         "HOS:009",
