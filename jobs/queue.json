@@ -111382,17 +111382,22 @@
           "at": "2026-10-30T08:02Z",
           "by": "cursor",
           "what": "step 1 of 5 done: Read J1241 FIX ruling; using /private/tmp/j1241-hos008-cg-v03-wt @ da9a7b4"
+        },
+        {
+          "at": "2026-10-30T08:08Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: tmux j1248-render; log ~/_desk/logs/j1248-render.log; done ~/_desk/logs/j1248-render.done"
         }
       ],
-      "remaining_action": "Build code_graphics_v04 for five FIX rows then assemble rough_v05",
+      "remaining_action": "Detached: render code_graphics_v04 + splice rough_v05 in tmux j1248-render",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-30T08:02Z",
+        "at": "2026-10-30T08:08Z",
         "by": "cursor",
-        "note": "Read J1241 FIX ruling; using /private/tmp/j1241-hos008-cg-v03-wt @ da9a7b4"
+        "note": "tmux j1248-render; log ~/_desk/logs/j1248-render.log; done ~/_desk/logs/j1248-render.done"
       },
       "taskKeys": [
         "HOS:008"
