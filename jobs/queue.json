@@ -112423,18 +112423,27 @@
           "at": "2026-10-30T12:23Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T12:24Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1261; reading J1259 README and patch"
         }
       ],
-      "remaining_action": "HOS: open PR for the chapters/sources release gate (J1259 patch), park for Chief",
+      "remaining_action": "Apply J1259 patch on a fresh HOS branch from main",
       "kind": "qa",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-30T12:23Z",
+        "at": "2026-10-30T12:24Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1261; reading J1259 README and patch"
+      },
+      "taskKeys": [
+        "HOS:008",
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1262",
