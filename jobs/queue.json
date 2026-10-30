@@ -110703,17 +110703,22 @@
           "at": "2026-10-30T05:51Z",
           "by": "cursor",
           "what": "step 3 of 6 done: proto7 still running; monitoring"
+        },
+        {
+          "at": "2026-10-30T05:52Z",
+          "by": "cursor",
+          "what": "step 4 of 6 done: proto7 ymax2.0; launched proto8 tmux J1242-uranus-v10-proto8"
         }
       ],
-      "remaining_action": "Wait proto7 path-lock prototype; then decide full assemble or iterate",
+      "remaining_action": "Wait proto8 align-then-offset path-lock; then full assemble if path OK",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-10-30T05:51Z",
+        "at": "2026-10-30T05:52Z",
         "by": "cursor",
-        "note": "proto7 still running; monitoring"
+        "note": "proto7 ymax2.0; launched proto8 tmux J1242-uranus-v10-proto8"
       },
       "taskKeys": [
         "OWB:030"
