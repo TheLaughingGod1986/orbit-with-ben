@@ -111771,17 +111771,22 @@
           "at": "2026-10-30T10:22Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting 3-step read-only HOS listing check: (1) lint:package + channel:audit + API state, (2) verify live end screens and Shorts Related pills, (3) update 00_Brand/Channel-Setup/audits/live_fixes/2026-10-30.md"
+        },
+        {
+          "at": "2026-10-30T10:22Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1 done: lint:package PASS; channel-audit.ts PASS at 2026-10-30T10:22Z (62 unique videos: 27 public, 13 scheduled, 22 private; 0 errors)"
         }
       ],
-      "remaining_action": "Run lint:package and channel-audit.ts on HOS live and scheduled videos",
+      "remaining_action": "Verify live end screens on public longs and Related video pills on public Shorts",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-30T10:22Z",
         "by": "gemini",
-        "note": "Starting 3-step read-only HOS listing check: (1) lint:package + channel:audit + API state, (2) verify live end screens a"
+        "note": "Step 1 done: lint:package PASS; channel-audit.ts PASS at 2026-10-30T10:22Z (62 unique videos: 27 public, 13 scheduled, 2"
       },
       "taskKeys": [
         "HOS:001",
