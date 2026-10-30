@@ -111366,18 +111366,25 @@
           "at": "2026-10-30T09:29Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T09:30Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1247; checking HOS PR #377 and J1192 result"
         }
       ],
-      "remaining_action": "HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green",
+      "remaining_action": "Inspect HOS PR #377, run check_all.sh on PR head, and squash-merge if green",
       "kind": "review",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-30T09:29Z",
+        "at": "2026-10-30T09:30Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1247; checking HOS PR #377 and J1192 result"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J1248",
