@@ -112892,17 +112892,22 @@
           "at": "2026-10-30T14:10Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Data volume about 7 GB free."
+        },
+        {
+          "at": "2026-10-30T14:12Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Eligible: J1241 done, J1248 done, no open job names those paths. SKIP j1218-v03-wt: J1213 still blocked, check 15:00Z. KEEP j1263 rough v08 (J1267 open). Existing offload pid 79867, log ~/_desk/logs/J1268-offload.log, done file not written yet. j1241 checksum started 14:11Z."
         }
       ],
-      "remaining_action": "Inventory /tmp render worktrees and which jobs still need them",
+      "remaining_action": "Offload of j1241 then j1248 is already running; do not start a second copy",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T14:10Z",
+        "at": "2026-10-30T14:12Z",
         "by": "cursor",
-        "note": "Claimed. Data volume about 7 GB free."
+        "note": "Eligible: J1241 done, J1248 done, no open job names those paths. SKIP j1218-v03-wt: J1213 still blocked, check 15:00Z. K"
       },
       "taskKeys": [
         "HOS:008"
