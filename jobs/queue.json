@@ -88788,13 +88788,18 @@
           "at": "2026-10-30T06:59Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: verified mature Studio capture 2026-10-29T07:13:31.819902Z (67h43m post-release, SHA256 7568944b) for OVLv9dxTcpE (887 views, 30.7% stayed MISS, 75.3% avgViewPct PASS, 16s AVD), snapshots through 2026-10-30, and earth_sudden_air_v05_meta.json/cuts_v05.json"
+        },
+        {
+          "at": "2026-10-30T07:05Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: fetched and persisted 100-bucket YTA retention curves (through 2026-10-28), YTA reporting window metrics, and live Data API v3 counts for OVLv9dxTcpE, vlkj8RQKmH8, and y-SPHQ0-VjQ in evidence_2026-10-26_owb_reconciled.json"
         }
       ],
       "kind": "review",
       "taskKeys": [
         "OWB:027"
       ],
-      "remaining_action": "Fetch YouTube Analytics reporting-window metrics and retention curves for OVLv9dxTcpE, y-SPHQ0-VjQ, and vlkj8RQKmH8",
+      "remaining_action": "Update OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, and 05_Analytics/LEARNINGS.md Shorts lab with mature OVLv9dxTcpE readout",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -88805,11 +88810,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T06:59Z",
+        "at": "2026-10-30T07:05Z",
         "by": "gemini",
-        "note": "Step 1 complete: verified mature Studio capture 2026-10-29T07:13:31.819902Z (67h43m post-release, SHA256 7568944b) for O"
+        "note": "Step 2 complete: fetched and persisted 100-bucket YTA retention curves (through 2026-10-28), YTA reporting window metric"
       }
     },
     {
