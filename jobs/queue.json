@@ -114222,13 +114222,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-30T20:06Z",
-      "eta": "2026-10-30T22:06Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T16:52Z",
-      "result": "",
+      "result": "Waiting for: HOS PR #389 squash-merged at 7c136209 (check_all.sh and lint:package PASS on main). Wait until HOS 009 (edit due 2026-11-19) and HOS 010 (edit due 2026-11-26) picture/edit are locked and the final cuts exist; then re-time each film's provisional Chapters to the actual chapter-card/VO times in the locked cut (0:00 first, >=3 stamps, >=10 s apart), keep Sources intact, run lint:package, and open a small PR for Chief before upload.",
       "history": [
         {
           "at": "2026-10-30T16:52Z",
@@ -114259,6 +114259,16 @@
           "at": "2026-10-30T20:09Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified HOS 009 (picture 70/90, tranche 2 after ~12 Nov, edit todo due 19 Nov) and 010 (picture todo due 22 Nov, edit todo due 26 Nov) have no locked cuts yet; setting dependency wait"
+        },
+        {
+          "at": "2026-10-30T20:09Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: HOS PR #389 squash-merged at 7c136209 (check_all.sh and lint:package PASS on main). Wait until HOS 009 (edit due 2026-11-19) and HOS 010 (edit due 2026-11-26) picture/edit are locked and the final cuts exist; then re-time each film's provisional Chapters to the actual chapter-card/VO times in the locked cut (0:00 first, >=3 stamps, >=10 s apart), keep Sources intact, run lint:package, and open a small PR for Chief before upload."
+        },
+        {
+          "at": "2026-10-30T20:09Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-19T18:00:00Z"
         }
       ],
       "remaining_action": "Re-time HOS 009 and 010 provisional Chapters to actual chapter-card/VO times once each film's locked cut exists (PR #389 merged at 7c136209)",
@@ -114282,7 +114292,12 @@
       "taskKeys": [
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "HOS PR #389 squash-merged at 7c136209 (check_all.sh and lint:package PASS on main). Wait until HOS 009 (edit due 2026-11-19) and HOS 010 (edit due 2026-11-26) picture/edit are locked and the final cuts exist; then re-time each film's provisional Chapters to the actual chapter-card/VO times in the locked cut (0:00 first, >=3 stamps, >=10 s apart), keep Sources intact, run lint:package, and open a small PR for Chief before upload.",
+        "check_at": "2026-11-19T18:00:00Z"
+      }
     },
     {
       "id": "J1276",
