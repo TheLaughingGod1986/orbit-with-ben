@@ -112222,13 +112222,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-30T11:41Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-30T13:21Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T11:05Z",
-      "result": "parked for Chief: HOS PR #386 (https://github.com/TheLaughingGod1986/history-of-science/pull/386, commit c8fffe52, CI 4/4 green) repoints 007 SHORTS_UPLOAD_INDEX.json + old s04/s05 manifests to live cLKDiYP55J8 (v04) and xgx2lYHhYZM (v05)",
+      "result": "Chief (Grok) h12 30 Oct: PASS. HOS PR #386 (head c8fffe52; CI check/contract/no-media/no-desk-close green) was already merged by the 12:58 London sweep (6523414783) as squash 5ac58574, tree identical to c8fffe52, branch kept. Diff matches the J1258 body: index s04 -> cLKDiYP55J8 v04 (3ef3fa77), s05 -> xgx2lYHhYZM v05 (e5ea76f0), old -I_GHK-GcFs / 4WUs0beKn0A kept as superseded; old s04/s05 manifests SUPERSEDED with schedule null; companion records aligned; playback-lag dry run resolves the live ids. Records only, no YouTube/Studio change. Nit: squash, not the h08 normal-merge convention; no re-merge needed. GBP0.",
       "history": [
         {
           "at": "2026-10-30T11:05Z",
@@ -112269,20 +112269,29 @@
           "at": "2026-10-30T11:58Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS PR #386 (https://github.com/TheLaughingGod1986/history-of-science/pull/386, commit c8fffe52, CI 4/4 green) repoints 007 SHORTS_UPLOAD_INDEX.json + old s04/s05 manifests to live cLKDiYP55J8 (v04) and xgx2lYHhYZM (v05)"
+        },
+        {
+          "at": "2026-10-30T13:21Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-30T13:21Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-30T13:21Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h12 30 Oct: PASS. HOS PR #386 (head c8fffe52; CI check/contract/no-media/no-desk-close green) was already merged by the 12:58 London sweep (6523414783) as squash 5ac58574, tree identical to c8fffe52, branch kept. Diff matches the J1258 body: index s04 -> cLKDiYP55J8 v04 (3ef3fa77), s05 -> xgx2lYHhYZM v05 (e5ea76f0), old -I_GHK-GcFs / 4WUs0beKn0A kept as superseded; old s04/s05 manifests SUPERSEDED with schedule null; companion records aligned; playback-lag dry run resolves the live ids. Records only, no YouTube/Studio change. Nit: squash, not the h08 normal-merge convention; no re-merge needed. GBP0."
         }
       ],
       "remaining_action": "Chief review and merge of HOS PR #386",
       "kind": "listing",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-30T11:58Z",
-        "by": "gemini",
-        "note": "HOS PR #386 (c8fffe52) open and CI 4/4 green; parking J1258 for Chief review"
-      },
       "taskKeys": [
         "HOS:007"
-      ]
+      ],
+      "done_ref": "6522160405"
     },
     {
       "id": "J1259",
