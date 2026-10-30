@@ -1,5 +1,5 @@
 {
-  "next_id": 1269,
+  "next_id": 1270,
   "jobs": [
     {
       "id": "J0001",
@@ -85929,6 +85929,11 @@
           "at": "2026-10-30T07:26Z",
           "by": "gemini",
           "what": "blocked: Data API 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE on GHZDsiH7L7A; J0280 Title Test & Compare finished 29 Oct 17:54 inconclusive with Variant A 'What's Really Inside an Atom?' visible to all and watch-time share '—' on A/B/C, but Studio edit page still holds 'A/B testing titles · Results ready'; readback verified all fields original in PR #354)"
+        },
+        {
+          "at": "2026-10-30T13:39Z",
+          "by": "relay",
+          "what": "condition verification queued: J1269"
         }
       ],
       "kind": "listing",
@@ -85955,7 +85960,8 @@
       "hold": {
         "type": "input",
         "condition": "Data API 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE on GHZDsiH7L7A; J0280 Title Test & Compare finished 29 Oct 17:54 inconclusive with Variant A 'What's Really Inside an Atom?' visible to all and watch-time share '—' on A/B/C, but Studio edit page still holds 'A/B testing titles · Results ready'; readback verified all fields original in PR #354)",
-        "check_at": "2026-10-30T13:26:13+00:00"
+        "check_at": "2026-10-30T14:39:23+00:00",
+        "recheck_task": "J1269"
       }
     },
     {
@@ -112817,6 +112823,37 @@
       "remaining_action": "Mini disk: move finished /tmp render worktrees to NAS (render scratch rules)",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J1269",
+      "title": "Chief: verify condition for J0978",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0978: Data API 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE on GHZDsiH7L7A; J0280 Title Test & Compare finished 29 Oct 17:54 inconclusive with Variant A 'What's Really Inside an Atom?' visible to all and watch-time share '—' on A/B/C, but Studio edit page still holds 'A/B testing titles · Results ready'; readback verified all fields original in PR #354). Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0978 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T13:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T13:39Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Clear finished Studio A/B title test widget on GHZDsiH7L7A so Data API allows title update",
+      "kind": "chief",
+      "recheck_of": "J0978",
+      "due": "2026-10-30T14:39:23+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
