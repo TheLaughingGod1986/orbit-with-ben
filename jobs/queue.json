@@ -110580,17 +110580,22 @@
           "at": "2026-10-30T06:33Z",
           "by": "cursor",
           "what": "step 1 of 4 done: cg_v03 present; rough_v04 pack exists; resplice encoding raw mp4"
+        },
+        {
+          "at": "2026-10-30T06:37Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: concat done; copying master into pack; tmux j1241-resplice still live"
         }
       ],
-      "remaining_action": "Wait for j1241-resplice ffmpeg; then gates + deliver + park for Chief",
+      "remaining_action": "Await j1241-resplice gates+deliver; then commit evidence and park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T06:33Z",
+        "at": "2026-10-30T06:37Z",
         "by": "cursor",
-        "note": "cg_v03 present; rough_v04 pack exists; resplice encoding raw mp4"
+        "note": "concat done; copying master into pack; tmux j1241-resplice still live"
       },
       "taskKeys": [
         "HOS:008"
