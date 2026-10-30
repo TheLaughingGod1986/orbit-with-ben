@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1264 | mini | open | – | – | for gemini · qa · `gemini-argon` · HOS PR #387: make the Chapters/Sources gate release-stage (warn while drafting, fail at release) so contract CI stays green (Chief h13 on J1261) | 6522827968 |
 | J1267 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: P5:10 shorter clean hold (t1 frames 109-150) + 11_safe_path lead-in -> rough v09 (Chief h14 on J1263) | 6523423311 |
 | J1271 | mini | blocked | cursor | – | 024 upload · studio · OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public |  |
-| J1272 | mini | open | – | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
+| J1272 | mini | claimed | cursor | 2026-10-30T19:22Z | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1274 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1275 | mini | open | – | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1276 | any | open | – | – | chief · Chief: verify condition for J1130 |  |

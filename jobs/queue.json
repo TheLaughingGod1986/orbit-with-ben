@@ -113675,10 +113675,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T17:22Z",
+      "eta": "2026-10-30T19:22Z",
       "created_by": "claude",
       "created_at": "2026-10-30T15:52Z",
       "result": "",
@@ -113687,11 +113687,24 @@
           "at": "2026-10-30T15:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T17:22Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public",
       "due": "2026-11-20T18:00:00Z",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T17:22Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1273",
