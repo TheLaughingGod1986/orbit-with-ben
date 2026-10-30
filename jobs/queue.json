@@ -111355,10 +111355,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T08:00Z",
-      "eta": "2026-10-30T10:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T07:54Z",
       "result": "",
@@ -111392,6 +111392,11 @@
           "at": "2026-10-30T08:09Z",
           "by": "cursor",
           "what": "step 2 of 5 done: still running; tmux j1248-render; log ~/_desk/logs/j1248-render.log"
+        },
+        {
+          "at": "2026-10-30T08:09Z",
+          "by": "cursor",
+          "what": "released: Detached long render: tmux session j1248-render; log ~/_desk/logs/j1248-render.log; done file ~/_desk/logs/j1248-render.done. Next wake: if .done missing leave running; if present read exit code+log, commit HOS PR, deliver UAT/NAS sha256, park for Chief graphics+composite PASS."
         }
       ],
       "remaining_action": "Detached render running: code_graphics_v04 + rough_v05 splice",
