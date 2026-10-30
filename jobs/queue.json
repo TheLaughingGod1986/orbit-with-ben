@@ -110541,10 +110541,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T05:17Z",
-      "eta": "2026-10-30T07:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-30T04:47Z",
       "result": "",
@@ -110618,6 +110618,11 @@
           "at": "2026-10-30T05:30Z",
           "by": "cursor",
           "what": "step 3 of 6 done: proto4 exit0: flicker 2.09→1.25; reliable ymax 3.3 dmax 3.0 FAIL; designed 1.50/0.07 OK; full NOT started; evidence jobs/reviews/J1242"
+        },
+        {
+          "at": "2026-10-30T05:30Z",
+          "by": "cursor",
+          "what": "released: proto4 done: MC open + zoom-aware path + reliable_* metrics. Flicker 2.09→1.25 vs v09 but path still over (reliable ymax 3.3 / dmax 3.0). Designed 1.50/0.07. Flow cleanup replace-all 40/40 too aggressive — next: replace only ambiguous. Assembler: _assemble_uranus_v10.py --prototype. Scratch open: /private/tmp/J1242-uranus-v10/open_prototype_v10.mp4. Evidence: jobs/reviews/J1242/. Full v10 NOT started. No upload/J1212/Buffer change."
         }
       ],
       "remaining_action": "Iterate source-flow cleanup (stop replace-all); re-prototype until path nearer targets or Chief call",
