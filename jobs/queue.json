@@ -110728,20 +110728,28 @@
           "at": "2026-10-30T05:42Z",
           "by": "codex",
           "what": "step 0 of 3 done: Read original briefs; checking saved evidence, results and approval history."
+        },
+        {
+          "at": "2026-10-30T05:43Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Verified J1002 correction, J1211 reopening and saved mature Studio capture; J1003 remains open with no result and audit still pending."
         }
       ],
-      "remaining_action": "Verify J1003 evidence and J0985 final-review condition",
+      "remaining_action": "Record unmet J0985 condition and next verification",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-30T06:41:11+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-30T05:42Z",
+        "at": "2026-10-30T05:43Z",
         "by": "codex",
-        "note": "Read original briefs; checking saved evidence, results and approval history."
-      }
+        "note": "Verified J1002 correction, J1211 reopening and saved mature Studio capture; J1003 remains open with no result and audit "
+      },
+      "taskKeys": [
+        "OWB:027"
+      ]
     }
   ],
   "focus": [],
