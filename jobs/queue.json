@@ -113272,20 +113272,25 @@
           "at": "2026-10-30T17:09Z",
           "by": "cursor",
           "what": "step 0 of 6 done: Claimed. Disk 9.3 GB free; nas_offload had nothing older than 48h. Reading existing v08/v09 scratch."
+        },
+        {
+          "at": "2026-10-30T17:21Z",
+          "by": "cursor",
+          "what": "step 5 of 6 done: Splice built. polish and picture_qa PASS. Frame-diff FAIL 44.311 at 462.3s because v08 is still the metal plate. Evidence ef7810f0 on HOS PR 385. Not forced."
         }
       ],
-      "remaining_action": "Read h14 ruling and v08 build, then cut P5:10 to frames 109-150",
+      "remaining_action": "Parked for Chief: frame-diff at 462.3s is 44.3",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 5,
         "of": 6,
-        "at": "2026-10-30T17:09Z",
+        "at": "2026-10-30T17:21Z",
         "by": "cursor",
-        "note": "Claimed. Disk 9.3 GB free; nas_offload had nothing older than 48h. Reading existing v08/v09 scratch."
+        "note": "Splice built. polish and picture_qa PASS. Frame-diff FAIL 44.311 at 462.3s because v08 is still the metal plate. Evidenc"
       }
     },
     {
