@@ -106282,13 +106282,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T01:48Z",
-      "eta": "2026-10-30T02:08Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T08:36Z",
-      "result": "parked for Chief: J1193 multimodal review of 11 J0329 code graphics vs locked VO complete (HOS PR #378, commit 210b64d1; CODE_GRAPHICS_v01_REVIEW.md). Rulings: (1) P3:04 Atlantic contour = FIX (8-seg zigzags read as facing lightning bolts, place Paris at y=535 coastal same as Philadelphia, collide with P3:07 ship, polish_gate WARN 0.0135 < 0.0162; sourced 1752 Bellin coastline + Britain/Ireland + Seine inland Paris (1572,426) + Philadelphia (366,588) + Westerlies route coordinates given); (2) Phone legibility (360x202 / 168x94) = paper headers OK (~6.2:1) except P3:15 WET TWINE kerning and rough_v02 duplicate bottom side_label on P4:08 & P5:11 (7w), while moving-plate alpha overlays (P2:15, P3:04, P4:06, P5:08, P5:10) wash out without dark stroke (stroke_width=4) and bake 2D wireframe roofs/tower into alpha .movs on P2:15, P5:08, P5:10; (3) Per-row VO/motion: 1 KEEP (P5:11 standalone CG, SAFE PATH DOWN 3w, ticks [0.6,1.5,3.5]) and 10 FIX with exact word/tick timestamps. Read-only, £0 spend.",
+      "result": "Acting Chief codex: FIX / NOT APPROVED. Specialist review accepted with caveats; ten rows require repair, P5:11 standalone KEEP only with assembly label FIX. Bellin coordinates/route are unverified proposals, not approved source geometry; PR378 remains unmerged pending correction. Full ruling jobs/reviews/J1193/CHIEF_REVIEW_2026-10-30.md (0ebbfe58a). Existing J1218 owns versioned graphics + diagnostic v03 repairs, source correction and all-row motion/VO/phone evidence for a new Chief graphics decision. J1193 done = review delivered, NOT picture PASS. J1213/v01/v02 remain held; existing dependency/check date preserved. GBP0; no Ben.",
       "history": [
         {
           "at": "2026-10-29T08:36Z",
@@ -106354,9 +106354,14 @@
           "at": "2026-10-30T01:48Z",
           "by": "codex",
           "what": "claimed parked specialist review for elected-Chief ruling; worker progress preserved"
+        },
+        {
+          "at": "2026-10-30T01:50Z",
+          "by": "codex",
+          "what": "done: Acting Chief codex: FIX / NOT APPROVED. Specialist review accepted with caveats; ten rows require repair, P5:11 standalone KEEP only with assembly label FIX. Bellin coordinates/route are unverified proposals, not approved source geometry; PR378 remains unmerged pending correction. Full ruling jobs/reviews/J1193/CHIEF_REVIEW_2026-10-30.md (0ebbfe58a). Existing J1218 owns versioned graphics + diagnostic v03 repairs, source correction and all-row motion/VO/phone evidence for a new Chief graphics decision. J1193 done = review delivered, NOT picture PASS. J1213/v01/v02 remain held; existing dependency/check date preserved. GBP0; no Ben."
         }
       ],
-      "remaining_action": "Park J1193 for Chief",
+      "remaining_action": "Review ruled FIX; J1218 repairs and returns for Chief graphics/composite approval",
       "for": "gemini",
       "kind": "review",
       "due": "2026-11-12T20:00:00Z",
@@ -106369,7 +106374,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "0ebbfe58a"
     },
     {
       "id": "J1194",
@@ -107911,7 +107917,7 @@
       "title": "HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief",
       "needs": "mini",
       "repo": "hos",
-      "body": "After J1191 PASS (29 Oct). 1) Merge HOS PR #374 (picture records) once its checks are green. 2) Assemble 02_Video-Projects/008_Lightning-Franklin from the locked VO and the 112 KEEP rows per PICTURE_PLAN_v03 / the v03 boards (the 5 overlay rows composite their alpha graphics on the minted moving plates; apply J1193's code-graphic review if it has landed, else note it). 3) No music bed without the Chief's OK. 4) picture_qa, polish_gate, music_gate (VO only), episode gate; full-runtime contact sheet. 5) Deliver rough v01 to repo/UAT/NAS with sha256 and park for Chief. Ben's watch only after Chief PASS. GBP0.",
+      "body": "J1193 ruling clarification (30 Oct, codex): review complete with FIX, not picture approval. Repaired graphics/composite approval must come with J1218 v03. Existing hold and check date unchanged. See jobs/reviews/J1193/CHIEF_REVIEW_2026-10-30.md.\n\nAfter J1191 PASS (29 Oct). 1) Merge HOS PR #374 (picture records) once its checks are green. 2) Assemble 02_Video-Projects/008_Lightning-Franklin from the locked VO and the 112 KEEP rows per PICTURE_PLAN_v03 / the v03 boards (the 5 overlay rows composite their alpha graphics on the minted moving plates; apply J1193's code-graphic review if it has landed, else note it). 3) No music bed without the Chief's OK. 4) picture_qa, polish_gate, music_gate (VO only), episode gate; full-runtime contact sheet. 5) Deliver rough v01 to repo/UAT/NAS with sha256 and park for Chief. Ben's watch only after Chief PASS. GBP0.",
       "ref": "",
       "film": "008",
       "stage": "edit",
@@ -107994,6 +108000,11 @@
           "at": "2026-10-30T01:44Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T15:00:00Z"
+        },
+        {
+          "at": "2026-10-30T01:50Z",
+          "by": "codex",
+          "what": "J1193 review complete with FIX; original cut remains held for J1218 repair and graphics/composite approval; hold dates unchanged"
         }
       ],
       "remaining_action": "Held for J1218 v03 repairs and J1193 graphics approval; music/SFX unfinished",
@@ -108284,7 +108295,7 @@
       "title": "HOS 008: repair J1213 rough v01 picture failures into diagnostic v02",
       "needs": "mini",
       "repo": "hos",
-      "body": "LATEST ACTING CHIEF RULING (30 Oct, codex): FIX / NOT APPROVED. Deliver separate diagnostic v03, NOT v02. REQUIRED FIRST READ: jobs/reviews/J1218/CHIEF_REVIEW_2026-10-30.md and CHIEF_REVIEW_2026-10-29.md in OWB. Prior v02 assembler and cuts are unchanged after the previous FIX. Remove unsafe NAS cleanup, repair P5 back-to-back full-frame graphics, correct sample times, and incorporate now-delivered J1193 findings from HOS PR378 (210b64d1). J1193 report exists; formal graphics approval remains pending. Preserve old versions. GBP0. No Ben watch/upload. The ruling files govern the work below wherever the original brief is stale.\n\nORIGINAL BRIEF / HISTORICAL CONTEXT:\nActing Chief Codex ruling on J1213: FIX / NOT APPROVED. Original rough v01 stays held from Ben watch; no upload, scheduling or publication. Preserve v01 and its manifest. PR374 is already merged (9c2427a12f2abee11f4d9b1489adb56abcdf7afd). Verified local rough SHA256 6704aa3434634b9d2b1d7446488175130a9aeeb7ab877c782d97364ffd45d7f7. Evidence in HOS 02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_desk/008/rough_v01.\n\nDeliver a separate rough v02 using locked VO and existing KEEP plates, GBP0, no new generation or music credit. No rule or gate overrides.\n1. Replace the real split-screen composite at 6:01 (P4 06_same_thing; assembler explicitly joins left/right plates) with sequential full-frame moving shots or one appropriate moving plate; retime the alpha explanation to those shots, keep it off Franklin and the hero object, and ensure phone legibility. The source assembler is currently untracked in the shared HOS checkout: preserve it and commit a versioned v02 assembler from a clean worktree.\n2. Recompose 7:58 P5 10_metal_easy: white linework currently covers the worker/ladder and the label disappears against brick. Keep the rod/path explanation legible and away from the subject. The apparent detector seam may be architectural; do not label it a confirmed split without checking in motion.\n3. Inspect 2:30 P2 09_window_storm in motion: the sampled sheet appears to show a natural window edge, not a pasted panel. Try an honest subject-preserving reframe within upscale limits using existing moving footage, then rerun unchanged gates. If a genuine detector defect remains, document it for a separate gate-fix review; never suppress or weaken the check to pass this cut.\n4. Review all six low-detail WARN rows full size and in motion: 1:22 bells, 2:53 likeness pairs, 4:38 wet/dry, 5:02 kite climb, 7:15 wire bells, 7:53 wood/metal. The contact sheet alone does not clear motion, scientific meaning or phone legibility. Check the recorded freeze_lines in parts 2-5 (6/13/6/10), distinguish actual freezes from detector events, and remove any real freeze without VO changes.\n5. Apply J1193 per-row graphics findings when available; it remains a required input to final graphics approval. Repairs can start now. If it has not landed by delivery, record a dependency on J1193 rather than another generic Chief hold. Check all Teach on screen and Polish items for this film, not just automated image gates.\n6. Run picture_qa, polish_gate and episode gate; produce full-runtime contact sheets and each flagged frame. Music is still absent: SKIPPED_NO_BED is NOT PASS. This is a VO-only diagnostic rough, not a finished cut. Do not generate a bed under this job. Report SFX/music finishing still outstanding explicitly.\n7. Copy v02 to durable NAS/desk review storage with SHA256, and commit text evidence, reproducible assembler, production-status and HOS PIPELINE/status-board updates from a clean worktree in a PR. No Ben Ready-for-OK card. Park for Chief review only with specific evidence and remaining blockers. Original J1213 stays held pending this repair and J1193.\n\nDisk: mandated nas_offload --apply found no eligible old scratch, about 12 GB free. Check disk before render, use mounted NAS scratch if needed, never write into an unmounted share or delete NAS files. Detach any long render with session/log/done paths and never start duplicate processes. Deadline inherited from J1213: 12 Nov 20:00Z.\n\n\nChief addendum (Grok, 29 Oct 19:2x London, HOS #180 re 6506056490 + 6506101174; J1218 is the ONLY 008 v02 job, no second job queued):\n8. Runtime must land at 9:00 or under. v01 is 557.8 s, so trim at least 18 s, using pauses and holds only (polish_gate pause-trim notes at 0:15-0:45 and 1:00-2:30). VO wording stays locked; no lines cut.\n9. If any row can only be fixed with a new Flow mint, park that row and state the Flow credit cost. Do not spend; spend goes to Ben.\n10. J1193 (code-graphic motion review) remains a prerequisite for the 008 picture PASS; if it is not already running, run it alongside so both land together.",
+      "body": "J1193 FORMAL RULING (30 Oct, codex): FIX / NOT APPROVED. Read jobs/reviews/J1193/CHIEF_REVIEW_2026-10-30.md FIRST alongside the J1218 rulings. J1193 review is complete, not graphics PASS. Ten repair rows; P5:11 standalone KEEP plus assembly label FIX. You own the versioned graphics repair and diagnostic v03, per-row motion/VO/phone evidence, and correction of unsupported Bellin sourcing claims in the review/production-status. Obtain direct primary-source evidence before implementing geographic coordinates or a historical route; specialist coordinates are proposals. PR378 stays unmerged until corrected, but its report is available now and does not block repairs. Return repaired graphics/composites for elected-Chief decision under THIS job; never wait on the now-complete J1193 as though it approved the assets. No new job, no new spend; all original holds/gates remain.\n\nLATEST ACTING CHIEF RULING (30 Oct, codex): FIX / NOT APPROVED. Deliver separate diagnostic v03, NOT v02. REQUIRED FIRST READ: jobs/reviews/J1218/CHIEF_REVIEW_2026-10-30.md and CHIEF_REVIEW_2026-10-29.md in OWB. Prior v02 assembler and cuts are unchanged after the previous FIX. Remove unsafe NAS cleanup, repair P5 back-to-back full-frame graphics, correct sample times, and incorporate now-delivered J1193 findings from HOS PR378 (210b64d1). J1193 report exists; formal graphics approval remains pending. Preserve old versions. GBP0. No Ben watch/upload. The ruling files govern the work below wherever the original brief is stale.\n\nORIGINAL BRIEF / HISTORICAL CONTEXT:\nActing Chief Codex ruling on J1213: FIX / NOT APPROVED. Original rough v01 stays held from Ben watch; no upload, scheduling or publication. Preserve v01 and its manifest. PR374 is already merged (9c2427a12f2abee11f4d9b1489adb56abcdf7afd). Verified local rough SHA256 6704aa3434634b9d2b1d7446488175130a9aeeb7ab877c782d97364ffd45d7f7. Evidence in HOS 02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_desk/008/rough_v01.\n\nDeliver a separate rough v02 using locked VO and existing KEEP plates, GBP0, no new generation or music credit. No rule or gate overrides.\n1. Replace the real split-screen composite at 6:01 (P4 06_same_thing; assembler explicitly joins left/right plates) with sequential full-frame moving shots or one appropriate moving plate; retime the alpha explanation to those shots, keep it off Franklin and the hero object, and ensure phone legibility. The source assembler is currently untracked in the shared HOS checkout: preserve it and commit a versioned v02 assembler from a clean worktree.\n2. Recompose 7:58 P5 10_metal_easy: white linework currently covers the worker/ladder and the label disappears against brick. Keep the rod/path explanation legible and away from the subject. The apparent detector seam may be architectural; do not label it a confirmed split without checking in motion.\n3. Inspect 2:30 P2 09_window_storm in motion: the sampled sheet appears to show a natural window edge, not a pasted panel. Try an honest subject-preserving reframe within upscale limits using existing moving footage, then rerun unchanged gates. If a genuine detector defect remains, document it for a separate gate-fix review; never suppress or weaken the check to pass this cut.\n4. Review all six low-detail WARN rows full size and in motion: 1:22 bells, 2:53 likeness pairs, 4:38 wet/dry, 5:02 kite climb, 7:15 wire bells, 7:53 wood/metal. The contact sheet alone does not clear motion, scientific meaning or phone legibility. Check the recorded freeze_lines in parts 2-5 (6/13/6/10), distinguish actual freezes from detector events, and remove any real freeze without VO changes.\n5. Apply J1193 per-row graphics findings when available; it remains a required input to final graphics approval. Repairs can start now. If it has not landed by delivery, record a dependency on J1193 rather than another generic Chief hold. Check all Teach on screen and Polish items for this film, not just automated image gates.\n6. Run picture_qa, polish_gate and episode gate; produce full-runtime contact sheets and each flagged frame. Music is still absent: SKIPPED_NO_BED is NOT PASS. This is a VO-only diagnostic rough, not a finished cut. Do not generate a bed under this job. Report SFX/music finishing still outstanding explicitly.\n7. Copy v02 to durable NAS/desk review storage with SHA256, and commit text evidence, reproducible assembler, production-status and HOS PIPELINE/status-board updates from a clean worktree in a PR. No Ben Ready-for-OK card. Park for Chief review only with specific evidence and remaining blockers. Original J1213 stays held pending this repair and J1193.\n\nDisk: mandated nas_offload --apply found no eligible old scratch, about 12 GB free. Check disk before render, use mounted NAS scratch if needed, never write into an unmounted share or delete NAS files. Detach any long render with session/log/done paths and never start duplicate processes. Deadline inherited from J1213: 12 Nov 20:00Z.\n\n\nChief addendum (Grok, 29 Oct 19:2x London, HOS #180 re 6506056490 + 6506101174; J1218 is the ONLY 008 v02 job, no second job queued):\n8. Runtime must land at 9:00 or under. v01 is 557.8 s, so trim at least 18 s, using pauses and holds only (polish_gate pause-trim notes at 0:15-0:45 and 1:00-2:30). VO wording stays locked; no lines cut.\n9. If any row can only be fixed with a new Flow mint, park that row and state the Flow credit cost. Do not spend; spend goes to Ben.\n10. J1193 (code-graphic motion review) remains a prerequisite for the 008 picture PASS; if it is not already running, run it alongside so both land together.",
       "ref": "",
       "film": "008",
       "stage": "edit",
@@ -108487,9 +108498,14 @@
           "at": "2026-10-30T01:45Z",
           "by": "codex",
           "what": "remaining action: FIX: produce v03 per 30 Oct ruling; safe NAS outputs, P5 moving plate, J1193 findings, motion evidence and accurate timing"
+        },
+        {
+          "at": "2026-10-30T01:50Z",
+          "by": "codex",
+          "what": "J1193 ruled FIX; concrete repair/source-correction handoff in jobs/reviews/J1193/CHIEF_REVIEW_2026-10-30.md; no wait for absent Chief"
         }
       ],
-      "remaining_action": "FIX: produce v03 per 30 Oct ruling; safe NAS outputs, P5 moving plate, J1193 findings, motion evidence and accurate timing",
+      "remaining_action": "Repair 10 graphics and assembly labels; verify map sources; deliver diagnostic v03 for Chief graphics/composite review",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
