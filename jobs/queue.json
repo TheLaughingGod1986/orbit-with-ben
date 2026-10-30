@@ -112815,10 +112815,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T14:10Z",
-      "eta": "2026-10-30T15:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:30Z",
       "result": "",
@@ -112907,6 +112907,11 @@
           "at": "2026-10-30T14:29Z",
           "by": "cursor",
           "what": "step 3 of 4 done: j1248 rsync still running at 14:29Z (pid 5356, 12 min). Done file absent. Continue: ~/_desk/logs/J1268-CONTINUE.txt"
+        },
+        {
+          "at": "2026-10-30T14:29Z",
+          "by": "cursor",
+          "what": "released: j1241 moved and verified. j1248 rsync STILL RUNNING pid 5356. Log ~/_desk/logs/J1268-j1248-rsync.log. Done ~/_desk/logs/J1268-j1248-rsync.done (absent=running). Do NOT start a second rsync. When done is 0, checksum, match counts, lsof, then worktree remove. SKIP j1218 until J1213's 15:00Z check. KEEP j1263 (J1267 open). Steps in ~/_desk/logs/J1268-CONTINUE.txt"
         }
       ],
       "remaining_action": "When J1268-j1248-rsync.done is 0, verify that copy and remove the local worktree. Do not start a second rsync.",
