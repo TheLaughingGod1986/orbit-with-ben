@@ -113410,20 +113410,25 @@
           "at": "2026-10-30T18:14Z",
           "by": "cursor",
           "what": "step 0 of 6 done: h20 FIX: v10 frames 11067-11088 are the old METAL plate. Lead-in becomes 51 frames (29 fade + 22 hold)."
+        },
+        {
+          "at": "2026-10-30T18:17Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: Lead-in is 29 fade frames then 22 hold frames, ending at the 463.167s keyframe. Old plate frames 11067-11088 are not reused."
         }
       ],
-      "remaining_action": "Build rough v11: 51-frame SAFE PATH lead-in through 463.167s so the old plate flash is gone",
+      "remaining_action": "Splice rough v11: 42-frame plate plus 51-frame SAFE PATH lead-in, then run the h20 checks",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-30T18:14Z",
+        "at": "2026-10-30T18:17Z",
         "by": "cursor",
-        "note": "h20 FIX: v10 frames 11067-11088 are the old METAL plate. Lead-in becomes 51 frames (29 fade + 22 hold)."
+        "note": "Lead-in is 29 fade frames then 22 hold frames, ending at the 463.167s keyframe. Old plate frames 11067-11088 are not reu"
       }
     },
     {
