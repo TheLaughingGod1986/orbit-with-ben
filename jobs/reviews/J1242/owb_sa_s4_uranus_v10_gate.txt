@@ -1,0 +1,7 @@
+sha256=7f6211546d85c930dd4e5db0a7cf6b0da1c3880d618f7c66ef2026e941037063
+FAIL  owb_sa_s4_uranus_v10.mp4  dur=18.0s  audio=-16.9dB  motion=4.71  f0diff=1.4  cut1=2.7s  vo_onset=0.00s  tail_gap=2.08s  vo_src=/private/tmp/J1242-uranus-v10/stem_vo.wav  dhash=6b23143979e307ae  visor=0.0
+   FAIL  pushed still at frame 0 (mean 0–1.5 s frame diff 1.40 < 1.50) — use moving footage
+   warn  duration 18.0s outside 22–27s band
+   warn  gap from last word to end is 2.08s > 1.5s (last word 15.92s, duration 18.00s)
+   warn  picture barely changes in the first second (motion 4.7 < 10) — trim the clip's ease-in so frame 0 is already mid-action
+   sheet /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_sa_s4_uranus_v10_open_sheet.jpg
