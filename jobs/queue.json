@@ -1,5 +1,5 @@
 {
-  "next_id": 1263,
+  "next_id": 1264,
   "jobs": [
     {
       "id": "J0001",
@@ -112495,6 +112495,34 @@
       "recheck_of": "J0985",
       "due": "2026-10-30T12:59:31+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1263",
+      "title": "HOS 008: P5:10 plate in-point >=4.40 s -> rough v08 (Chief h11 on J1260)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) ruling h11 on J1260, 30 Oct (HOS #180, re Claude 6522751408 and Cursor 6522744240). Rough v07 (master b69525f8, HOS PR #385) is FIX on one row only. Read both comments and the Chief ruling first.\n\nPASS, lock byte-identical: everything v07 carries except the P5:10 composite. That includes the moved pause trim (64.333-64.875 s, frames 1539-1552, on the 10_wait_shutter / 11_tall_spire boundary; the hook 0:00-0:30 stays untrimmed), the P3:04 inset, P2:15, P3:03, P4:06, the P5:10 alpha mov bb821f40, the frame-exact splice method and the durations (format 539.626 s, A/V end offset 0.0015 s).\n\nScope: Chief accepts going past h10's +/-0.5 s on the plate in-point. +/-0.5 s could not pass and the plate is 8.000 s, so a later window is still inside KEEP 06_rod_fitting_t1 with no freeze (per-frame YDIF 0.4-1.8 across 3.5-6.5 s; the plate only goes near-still after about 7.8 s). The VO line there (\"But a metal rod is an easy path\") still matches a workman on a ladder holding the rod.\n\nFIX, P5:10 metal_easy plate in-point. +3.50 s has two problems in Chief's stills of 06_rod_fitting_t1.mp4:\n1. Prop morph at the start of the row. The hammer in his hand shrinks and vanishes between plate 4.00 s and 4.375 s (film ~459.8-460.2 s), so it plays in the first half-second of the explainer row.\n2. Repeat. Plate 3.50-4.375 s is the same footage the 06_rod_fitting row already shows at 437.7-438.6 s, about 21 s earlier.\nAlso check: at p50 (plate ~5.0 s) the rod top leans left, about 20 px at 1024 wide, so the gold trace sits beside the rod top rather than on it. p25 and p75 are aligned.\nRoute: keep the alpha mov byte-identical and pick the smallest plate in-point >= 4.40 s whose 71-frame window ends by 7.60 s, where the unmodified polish_gate and picture_qa pass the row and the brick corner stays covered. Report the in-point, full-size frames at p10/p25/p50/p75/p90, and the rod-top vs trace x offset at each (aim <= 1% of width). If nothing in 4.40-4.64 s passes, park for Chief with the numbers. Don't touch the checker. A checker change needs its own PR and Ben's OK.\n\nBuild rough v08 from rough v04 (e00bb897) the same way as v07, with v07's assets and pause trim plus this one fix. New folders only, never overwrite v02-v07 or NAS deliverables. Same gates. Deliver repo/UAT/NAS copy-only with sha256, commit the evidence to HOS PR #385, and park for Chief: graphics + composite PASS. No music bed, no Ben watch, no upload, no Flow mint. GBP0.\n",
+      "ref": "6522751408",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T12:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T12:28Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008: P5:10 plate in-point >=4.40 s -> rough v08 (Chief h11 on J1260)",
+      "kind": "assembly"
     }
   ],
   "focus": [],
