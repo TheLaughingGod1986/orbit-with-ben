@@ -111974,13 +111974,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T14:36Z",
-      "eta": "2026-10-30T16:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T10:50Z",
-      "result": "",
+      "result": "Verified condition NOT satisfied: PR333 unchanged 0a7fcb6ad; S2/S5 corrected v06 and clean S2 bed pending; S6 direct Gemini listening complete but whole-frame loop 9.26 remains FAIL. Corrected delivery/Chief PASS/Ben swap approvals absent. J0936 remains blocked, recheck 2026-10-30T20:38Z; historical 6/6, J1032 PASS, S1/S3/S4 swaps and deadlines preserved. No spend or publishing change.",
       "history": [
         {
           "at": "2026-10-30T10:50Z",
@@ -112011,6 +112011,11 @@
           "at": "2026-10-30T14:38Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback confirms blocked J0936, last_recheck J1252, next check 30 Oct 20:38Z; historical 6/6 and existing approvals preserved."
+        },
+        {
+          "at": "2026-10-30T14:38Z",
+          "by": "codex",
+          "what": "done: Verified condition NOT satisfied: PR333 unchanged 0a7fcb6ad; S2/S5 corrected v06 and clean S2 bed pending; S6 direct Gemini listening complete but whole-frame loop 9.26 remains FAIL. Corrected delivery/Chief PASS/Ben swap approvals absent. J0936 remains blocked, recheck 2026-10-30T20:38Z; historical 6/6, J1032 PASS, S1/S3/S4 swaps and deadlines preserved. No spend or publishing change."
         }
       ],
       "remaining_action": "Verification complete: J0936 remains held for corrected replacements and approvals",
@@ -112029,7 +112034,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/333"
     },
     {
       "id": "J1253",
