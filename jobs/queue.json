@@ -110749,17 +110749,22 @@
           "at": "2026-10-30T06:14Z",
           "by": "cursor",
           "what": "step 1 of 5 done: proto11: flicker 2.09->0.62; ymax 1.0 PASS; dmax 1.0 still FAIL; synthetic PASS; launching full assemble"
+        },
+        {
+          "at": "2026-10-30T06:15Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: full assemble launched; tmux J1242-uranus-v10-full; log ~/_desk/logs/J1242-uranus-v10-full.log; .done when exit written"
         }
       ],
-      "remaining_action": "Full v10 assemble+gates running detached; then deliver and park for Chief",
+      "remaining_action": "Wait for tmux J1242-uranus-v10-full .done; then gates/delivery and park for Chief",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-30T06:14Z",
+        "at": "2026-10-30T06:15Z",
         "by": "cursor",
-        "note": "proto11: flicker 2.09->0.62; ymax 1.0 PASS; dmax 1.0 still FAIL; synthetic PASS; launching full assemble"
+        "note": "full assemble launched; tmux J1242-uranus-v10-full; log ~/_desk/logs/J1242-uranus-v10-full.log; .done when exit written"
       },
       "taskKeys": [
         "OWB:030"
