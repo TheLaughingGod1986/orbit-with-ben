@@ -107261,9 +107261,14 @@
           "at": "2026-10-30T07:33Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-30T07:41Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected CDP :9222 claude.ai/settings/usage (signed out -> redirects to /login) and found agy -p /usage exposes Gemini Models Weekly and Five Hour Limit Remaining % + reset timestamps"
         }
       ],
-      "remaining_action": "Inspect ai_spend_daily.py, claude.ai/settings/usage in CDP :9222, and Gemini usage endpoints",
+      "remaining_action": "Implement Claude and Gemini usage parsers/readers in ai_spend_daily.py and update POOLS in ai_spend.py",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -107275,10 +107280,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T07:33Z",
-        "by": "gemini"
+        "at": "2026-10-30T07:41Z",
+        "by": "gemini",
+        "note": "Inspected CDP :9222 claude.ai/settings/usage (signed out -> redirects to /login) and found agy -p /usage exposes Gemini "
       }
     },
     {
