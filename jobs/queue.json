@@ -1,5 +1,5 @@
 {
-  "next_id": 1273,
+  "next_id": 1274,
   "jobs": [
     {
       "id": "J0001",
@@ -113473,6 +113473,35 @@
       "remaining_action": "OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public",
       "due": "2026-11-20T18:00:00Z",
       "kind": "studio"
+    },
+    {
+      "id": "J1273",
+      "title": "HOS 008: J1267 h15 tracked rod-overlay preflight, 42 frames, GBP0",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Codex covering as elected acting Chief, J1267 review h15, 30 Oct 2026. Ruling FIX, no film/stage PASS.\n\nRead J1267 body/history, HOS PR #385 evidence f18f5751 (07_Edit-Project/_desk/008/rough_v09/ALIGN_FAIL.md and ROD_TRACE.json), and the existing _build_rough_v09.py. The original job remains held. This is its prerequisite graphics preflight, not permission to splice a full master.\n\nEvidence: fixed trace x=1180.5; p10 rod=1187, p25=1146, p50=1178, p75/p90=1198. p25 offset -34.5px exceeds unchanged 19.2px limit. Rod extrema differ by 52px, greater than twice the tolerance (38.4px), so another static x cannot satisfy all five samples. Full-size p25/p75 reviewed: the upper rod moves relative to the lower shaft. Tracking only a whole vertical line risks missing the shaft.\n\nAuthorisation: GBP0 code-graphic correction only, kind chart. Supersede h14's fixed registration requirement ONLY for this candidate: track the existing callout/trace/rings to the actual rod with per-frame control points along its visible shaft, retaining house art, label, 42-frame timing and animation. Keep label anchored; no plate movement, paint patch, new mint, freeze, replay, slow motion, interpolation, alternate plate or changed source window. Use source frames 109-150 exactly, 24fps, leave all originals and failed v06 intact; choose a new candidate folder/version. Do not edit polish_gate, picture_qa, or the existing tip_offset detector/tolerance. Its existing trace_x argument can receive independently measured rendered trace coordinates: never feed rod_x as trace_x to manufacture zero. Record actual rendered trace and rod positions separately at matching exact frame indices. Check both rod-top x requirement and visible shaft registration; inspect all 42 frames for tracking jitter and prop morph. Same timing: callout by .15s, trace .30 to <=1.55s, label full by <=.50s through end, no fade-out.\n\nDeliver only the candidate alpha and 42-frame composite, all-frame workman strip, p10/p25/p50/p75/p90 full-size stills, per-frame tracking coordinates and reproducible independently measured offsets (<=19.2px), and unchanged row gates. Explain any unavoidable occlusion; never guess a PASS. Keep the 1% threshold. No full-master render until elected Chief accepts this candidate. Park candidate for Chief review with evidence, including failures.\n\nTiming correction accepted in principle for later assembly: v08 cuts list safe-path 462.2557-468.7957 (6.540s), displayed body 157 frames, although asset metadata says 168. Lead-in adds 29 => 186 displayed frames, not 197; verify exact original master PTS and preserve displayed body frame identity and end boundary before splicing. Total 12923, original pause trim, VO, other rows and existing h14 frame-diff/gates remain locked.\n\nAlso fix the candidate delivery code before it is ever used: _build_rough_v09.py deliver() and commit_evidence() contain shutil.rmtree(target/desk) including potential NAS destinations. No deletion on NAS is authorised; use new destinations, copy-only and hashes, refuse existing conflicting files. Do not execute old delivery blindly.\n\nCommit evidence to HOS PR #385 via a clean worktree and normal push, no force-push, media paths/hashes only. Keep originals untouched. No music, Ben watch, upload, spend, or unrelated holds. HOS:008. On completion notify the elected Chief to review this prerequisite and then resume J1267 at its existing 2/6 only if accepted; this job does not itself release J1267. If work exceeds run cap, detach with log/done and release as usual. Disk is about 8GB free; prescribed nas_offload found no eligible old scratch, avoid a full render.\n",
+      "ref": "",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-30T15:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T15:53Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Track the rod overlay and verify the 42-frame candidate before full assembly",
+      "due": "2026-11-12T20:00:00Z",
+      "kind": "chart"
     }
   ],
   "focus": [],
