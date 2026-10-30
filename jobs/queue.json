@@ -108624,20 +108624,25 @@
           "at": "2026-10-30T03:18Z",
           "by": "cursor",
           "what": "step 0 of 6 done: claimed; reading rulings"
+        },
+        {
+          "at": "2026-10-30T03:19Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: prior tmux j1218-asm-v03 already joined 540.02s sha=0da87a82; NAS rsync WARN exit20; UAT rsync live; not duplicating"
         }
       ],
-      "remaining_action": "Read Chief rulings + J1193 findings; inspect HOS 008 v02/v03 state",
+      "remaining_action": "Wait for in-flight v03 deliver (rsync); then gates + evidence pack",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-30T03:18Z",
+        "at": "2026-10-30T03:19Z",
         "by": "cursor",
-        "note": "claimed; reading rulings"
+        "note": "prior tmux j1218-asm-v03 already joined 540.02s sha=0da87a82; NAS rsync WARN exit20; UAT rsync live; not duplicating"
       }
     },
     {
