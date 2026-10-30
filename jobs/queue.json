@@ -114606,6 +114606,11 @@
           "at": "2026-10-30T19:41Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Free before: 3.5 GB. Folders: v08 762M, v09 792M, v10 1.4G, seg-probe 355M. v11 and named worktrees stay."
+        },
+        {
+          "at": "2026-10-30T19:47Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: v08 is on the NAS (52 files, 798929822 bytes) but nas_offload kept the Mini copy: NFS added AppleDouble ._* sidecars so the raw file count did not match. Local stays until each source file's sha256 matches. v09 copy is running."
         }
       ],
       "remaining_action": "Copy four superseded HOS 008 scratch folders to the NAS and verify sha256",
@@ -114615,9 +114620,9 @@
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-10-30T19:41Z",
+        "at": "2026-10-30T19:47Z",
         "by": "cursor",
-        "note": "Free before: 3.5 GB. Folders: v08 762M, v09 792M, v10 1.4G, seg-probe 355M. v11 and named worktrees stay."
+        "note": "v08 is on the NAS (52 files, 798929822 bytes) but nas_offload kept the Mini copy: NFS added AppleDouble ._* sidecars so "
       },
       "taskKeys": [
         "HOS:008"
