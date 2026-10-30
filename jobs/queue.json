@@ -110764,17 +110764,22 @@
           "at": "2026-10-30T06:17Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T06:17Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: resume: assemble still running (no .done); FINAL_SHA already logged; measuring motion diagnostics"
         }
       ],
-      "remaining_action": "Wait for tmux J1242-uranus-v10-full .done; then gates/delivery and park for Chief",
+      "remaining_action": "Wait for detached full assemble (tmux J1242-uranus-v10-full); then gates + UAT delivery + park for Chief",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-10-30T06:15Z",
+        "at": "2026-10-30T06:17Z",
         "by": "cursor",
-        "note": "full assemble launched; tmux J1242-uranus-v10-full; log ~/_desk/logs/J1242-uranus-v10-full.log; .done when exit written"
+        "note": "resume: assemble still running (no .done); FINAL_SHA already logged; measuring motion diagnostics"
       },
       "taskKeys": [
         "OWB:030"
