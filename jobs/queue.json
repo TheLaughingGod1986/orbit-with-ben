@@ -107345,13 +107345,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-30T07:52Z",
-      "eta": "2026-10-30T10:52Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-29T10:43Z",
-      "result": "HOS Buffer restored 29 Oct: new BUFFER_HOS_API_KEY in 07_Content-Ops/.env (backup .env.bak-20261029-buffer-hos); read-only check 200, channels TikTok/Instagram/Facebook. 6 Shorts registered (sha256), 4 scheduled 30 Oct-3 Nov 11:30 London to IG/FB/TikTok (a1e6ce99c). Log: history-of-science#180 comment 6495312507.",
+      "result": "Code + docs + dry-run done. OWB PR #355 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/355), HOS PR #381 (https://github.com/TheLaughingGod1986/history-of-science/pull/381) for Chief merge. Dry-run: would mirror xHnIi9GqOsM; 5 deferred past 7d window; nothing posted. Backfill still missing verified media for 29bpGAI0wb8, TbMMJSRKC3U, clV6E10NLPw (aired mid-Oct).",
       "history": [
         {
           "at": "2026-10-29T10:43Z",
@@ -107387,6 +107387,11 @@
           "at": "2026-10-30T08:00Z",
           "by": "cursor",
           "what": "step 5 of 5 done: OWB PR #355 + HOS PR #381; dry-run logged; 3 mid-Oct Shorts still need Studio Download media to backfill"
+        },
+        {
+          "at": "2026-10-30T08:00Z",
+          "by": "cursor",
+          "what": "done: Code + docs + dry-run done. OWB PR #355 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/355), HOS PR #381 (https://github.com/TheLaughingGod1986/history-of-science/pull/381) for Chief merge. Dry-run: would mirror xHnIi9GqOsM; 5 deferred past 7d window; nothing posted. Backfill still missing verified media for 29bpGAI0wb8, TbMMJSRKC3U, clV6E10NLPw (aired mid-Oct)."
         }
       ],
       "remaining_action": "None: PRs up for Chief merge",

@@ -39,7 +39,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1198 | mini | blocked | cursor | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1199 | mini | blocked | cursor | – | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
 | J1201 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
-| J1202 | mini | claimed | cursor | 2026-10-30T10:52Z | assembly · HOS Buffer: register every HOS Short at upload and mirror it to Buffer when it goes public (replaces 'Buffer held until public'); dry-run only, no HOS posting |  |
 | J1207 | mini | open | – | – | for gemini · review · `gemini-argon` · HOS: merge the MacBook's J1194 description fixes (branch macbook/j1194-description-sweep, d56a80c8) |  |
 | J1208 | mini | blocked | codex | – | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
