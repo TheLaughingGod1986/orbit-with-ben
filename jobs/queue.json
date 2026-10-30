@@ -111355,10 +111355,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T08:27Z",
-      "eta": "2026-10-30T10:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T07:54Z",
       "result": "",
@@ -111417,6 +111417,11 @@
           "at": "2026-10-30T08:43Z",
           "by": "cursor",
           "what": "step 2 of 5 done: ELECTRICITY is solid at the spoken frame and still up 1.5s later. Gates running on the resplice. tmux j1248-resplice."
+        },
+        {
+          "at": "2026-10-30T08:49Z",
+          "by": "cursor",
+          "what": "released: Detached resplice after ELECTRICITY hold fix. tmux j1248-resplice; log ~/_desk/logs/j1248-resplice.log; done ~/_desk/logs/j1248-resplice.done. Label is solid at spoken +5.14 (347.79s) and still up at 349.33s. Gates were on the contact sheet. Next: if .done missing, leave it (do not start a second resplice). If exit 0, verify gates, commit HOS branch cursor/j1248-hos008-cg-v04 from /private/tmp/j1248-hos008-cg-v04-wt (no AppleDouble, no mp4), park for Chief graphics+composite PASS. UAT/NAS copy is inside the script."
         }
       ],
       "remaining_action": "Finish rough_v05 gates after the ELECTRICITY hold fix, then commit the HOS PR and park for Chief",
