@@ -108306,10 +108306,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T02:04Z",
-      "eta": "2026-10-30T04:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
       "result": "",
@@ -108558,6 +108558,11 @@
           "at": "2026-10-30T02:20Z",
           "by": "cursor",
           "what": "step 3 of 6 done: Fixed NameError + NAS mux hang; part01 105.42s DONE; tmux j1218-asm-v03; PR379"
+        },
+        {
+          "at": "2026-10-30T02:20Z",
+          "by": "cursor",
+          "what": "released: Detached: tmux j1218-asm-v03 · log ~/_desk/logs/j1218-asm-v03.log · done ~/_desk/logs/j1218-asm-v03.done · WORK /Volumes/data/mac-mini-archive/tmp-render-scratch/j1218-hos008-rough-v03 · PR379. Part01 DONE; do not start second copy. Next: read .done then finish evidence/gates/park for Chief."
         }
       ],
       "remaining_action": "Detached asm v03 running (parts 2–5 + join + gates); next run checks .done",
