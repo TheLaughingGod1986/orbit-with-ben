@@ -110653,17 +110653,22 @@
           "at": "2026-10-30T05:37Z",
           "by": "cursor",
           "what": "step 2 of 6 done: proto5 FAIL path ymax5.1; launched proto6 tmux J1242-uranus-v10-proto6"
+        },
+        {
+          "at": "2026-10-30T05:38Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: proto6 running lines=      16"
         }
       ],
-      "remaining_action": "Await proto6: ambiguous-only flow cleanup (no global sign force)",
+      "remaining_action": "Await proto6: ambiguous-only flow cleanup",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 2,
         "of": 6,
-        "at": "2026-10-30T05:37Z",
+        "at": "2026-10-30T05:38Z",
         "by": "cursor",
-        "note": "proto5 FAIL path ymax5.1; launched proto6 tmux J1242-uranus-v10-proto6"
+        "note": "proto6 running lines=      16"
       },
       "taskKeys": [
         "OWB:030"
