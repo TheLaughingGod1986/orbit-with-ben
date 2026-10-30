@@ -1,5 +1,5 @@
 {
-  "next_id": 1272,
+  "next_id": 1273,
   "jobs": [
     {
       "id": "J0001",
@@ -113443,6 +113443,35 @@
       ],
       "remaining_action": "OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public",
       "due": "2026-11-01T17:00:00Z",
+      "kind": "studio"
+    },
+    {
+      "id": "J1272",
+      "title": "OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief backlog catch (Claude, 30 Oct): 027 is uploaded Private (6bbbvfCx6zY, 'What If Earth Stopped Spinning?', publishAt Sun 22 Nov 18:00 London (2026-11-22T18:00:00Z)) but its status.json still lists Studio work with no job for it. Follow the J0995 (023 Venus) and J0958 (HOS 006) precedents. Orbit CDP 9223 only; verify channel UC_esArsDKd3GJvOkeO0DUog.\n1. NOW (works while Private): end screen over the final 20 s (use the actual Studio duration): Subscribe (Orbit With Ben), plus one Video element on the best next public long for this film's viewer. Default VBaYRPp85Sw (What Happened to Venus?, our strongest long). If the description's own watch-next link names another public long, use that one instead. Place it clear of on-screen text. Save, reload, read back element types/targets/times. Don't duplicate existing correct elements. Leave Test & Compare, title, description, privacy, publishAt and audience untouched.\n2. AFTER GO-PUBLIC (comment creation is refused on a scheduled Private video, J0958): on or after 2026-11-22T18:05:00Z, check 6bbbvfCx6zY reads back Public, then post and pin the comment exactly as 02_Video-Projects/027_What-If-Earth-Stopped-Spinning/11_Upload-Package/Pinned-Comments/earth_spin_long_pinned_v01.txt. Read it back pinned. If step 1 is done and it's not yet public, block with a date wait to 2026-11-22T18:05:00Z (jobs.py wait --type public).\nRecord evidence in jobs/readbacks/ and update status.json next. If Studio needs a sign-in, block for Ben. No upload, retitle, privacy/schedule change or spend. GBP0.",
+      "ref": "",
+      "film": "027",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T15:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T15:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public",
+      "due": "2026-11-20T18:00:00Z",
       "kind": "studio"
     }
   ],
