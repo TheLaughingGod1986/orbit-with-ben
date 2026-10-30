@@ -35,7 +35,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1067 | ben | open | – | – | studio · Apophis gJwNJN_yMKU: restore Buffer authentication and reconcile existing v05 social posts |  |
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
-| J1190 | mini | claimed | gemini | 2026-10-30T10:45Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1198 | mini | blocked | cursor | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1199 | mini | blocked | cursor | – | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
 | J1201 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |

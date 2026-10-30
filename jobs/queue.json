@@ -105751,13 +105751,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-30T09:45Z",
-      "eta": "2026-10-30T10:45Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-29T08:35Z",
-      "result": "",
+      "result": "Read-only HOS listing check PASS at 2026-10-30T09:50Z across 62 unique videos (27 public, 13 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-30.md, HOS f446e0e5, 0 new fixes needed)",
       "history": [
         {
           "at": "2026-10-29T08:35Z",
@@ -105793,6 +105793,11 @@
           "at": "2026-10-30T09:53Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: committed 00_Brand/Channel-Setup/audits/live_fixes/2026-10-30.md (HOS f446e0e5); 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-30T09:53Z",
+          "by": "gemini",
+          "what": "done: Read-only HOS listing check PASS at 2026-10-30T09:50Z across 62 unique videos (27 public, 13 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-30.md, HOS f446e0e5, 0 new fixes needed)"
         }
       ],
       "remaining_action": "Mark J1190 done and post report",
@@ -105823,7 +105828,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:008"
-      ]
+      ],
+      "done_ref": "f446e0e5"
     },
     {
       "id": "J1191",
