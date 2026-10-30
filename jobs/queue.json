@@ -115156,16 +115156,21 @@
           "at": "2026-10-30T21:09Z",
           "by": "cursor",
           "what": "step 1 of 7 done: One bed take landed: lightning008_score_bed_v01.mp3, 540.03 s, song XV6uI76yzdLON8PmTVwC, true delta 7425 credits (8101 to 15526). 21 SFX cues, 2.3 a minute. Mixing now."
+        },
+        {
+          "at": "2026-10-30T21:20Z",
+          "by": "cursor",
+          "what": "step 3 of 7 done: Master v01 sha256 aa7f15bc… is on the local precheck and the NAS desk. Video stream MD5 matches v12 (12923 packets). Mix -14.1 LUFS, true peak -1.4 dBFS, A/V offset 0.001479 s. One bed take, 7425 credits, 66.7 BPM. SFX level PASS. Chapters unchanged. Gates log ~/_desk/logs/J1287-gates.log"
         }
       ],
-      "remaining_action": "Level the bed and SFX under the locked VO, then mix the master",
+      "remaining_action": "Gates are running in tmux j1287-gates; then park the master for Chief",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 7,
-        "at": "2026-10-30T21:09Z",
+        "at": "2026-10-30T21:20Z",
         "by": "cursor",
-        "note": "One bed take landed: lightning008_score_bed_v01.mp3, 540.03 s, song XV6uI76yzdLON8PmTVwC, true delta 7425 credits (8101 "
+        "note": "Master v01 sha256 aa7f15bc… is on the local precheck and the NAS desk. Video stream MD5 matches v12 (12923 packets). Mix"
       },
       "taskKeys": [
         "HOS:008"
