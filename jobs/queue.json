@@ -24123,13 +24123,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-30T18:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T16:34Z",
-      "result": "parked for Chief: Titan v02 VO titan_landing_vo_v01.wav (45fb27498), 587.72s, -20.1 LUFS, mean -23.3 dB, max -3.7 dB. Tool vo_check PASS, Scribe 95.21% (31 runs: numerals and UK spelling; hear for seventy-two vs the 72, out beside vs outside, point six vs 1 6). Balance 121114 to 117448 (counter charged 3666). No mux, no second take.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T16:34Z",
@@ -24225,18 +24225,16 @@
           "at": "2026-10-30T18:12Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Titan v02 VO titan_landing_vo_v01.wav (45fb27498), 587.72s, -20.1 LUFS, mean -23.3 dB, max -3.7 dB. Tool vo_check PASS, Scribe 95.21% (31 runs: numerals and UK spelling; hear for seventy-two vs the 72, out beside vs outside, point six vs 1 6). Balance 121114 to 117448 (counter charged 3666). No mux, no second take."
+        },
+        {
+          "at": "2026-10-30T19:09Z",
+          "by": "chief",
+          "what": "reopened: Chief h18 (OWB #264 6531358370): FIX, targeted ch02-only re-take, no full second take. Real misreads in ch02: 224.7s 'For seventy-two minutes' spoken 'The seventy-two minutes' (Scribe + Whisper agree); 239.2s 'out beside it' heard 'outside'/'out the side'; ch02 last word 'you.' clipped at the chapter end (-28 dB in final 50 ms). Levels PASS (-20.1 LUFS, TP -3.7, no clipping, max pause 1.46s). Other 28 Scribe runs harmless (numerals, US spelling, toward/towards, farther/further). Do: cp (never mv) ch00, ch01, ch03-ch06 .mp3 from parts/titan_landing_vo_v01/ into parts/titan_landing_vo_v02/ (NOT ch02), dry-run, then desk-lock elevenlabs -- python3 04_Audio/tools/vo_take.py --script .../01_Script/titan_landing_script_master_v02.md --out .../02_Voiceover --stem titan_landing_vo_v02 --order 97b7af4e --order 6531358370 --retake 6531358370. Only ch02 (1443 chars, ~700 credits) is spoken; at most one more ch02-only attempt; v01 untouched; script locked. Pass bar: 'For seventy-two/72 minutes' (not 'The'), 'beside' as its own word, ch02 tail below -40 dB in the final 50 ms (or 0.15 s near-silence), rest of ch02 matches the script apart from numerals and spelling, -20 +/-1 LUFS, TP <= -1 dBTP, ch02 112.96 +/-6 s. Ledger will over-log 7879 chars: don't edit it, report the true counter_delta in the result. Park for Chief with v02 path/sha/LUFS/ch02 Scribe/credits. No mux until Chief PASS; assembly is queued at that PASS. Never buy or top up (117448 left). GBP0."
         }
       ],
       "kind": "vo",
       "model": "eleven_v3",
       "remaining_action": "Chief reviews the Titan v02 take before any mux",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-30T18:12Z",
-        "by": "cursor",
-        "note": "Parked for Chief. No mux and no second take."
-      },
       "taskKeys": [
         "OWB:032"
       ]
