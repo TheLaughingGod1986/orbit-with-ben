@@ -112867,17 +112867,22 @@
           "at": "2026-10-30T14:02Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T14:03Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Disk 6.9 GB free. nas_offload had nothing older than 48h."
         }
       ],
-      "remaining_action": "Wait for the NAS copy to finish, then checksum and only then remove the /tmp copies",
+      "remaining_action": "Find finished /tmp render worktrees and check which jobs still need them",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-10-30T14:00Z",
+        "at": "2026-10-30T14:03Z",
         "by": "cursor",
-        "note": "Copy still running in tmux j1268-offload (rsync --inplace). j1241 partial on NAS. Sources kept. Disk 6.9 GiB free. Do no"
+        "note": "Claimed. Disk 6.9 GB free. nas_offload had nothing older than 48h."
       },
       "taskKeys": [
         "HOS:008"
