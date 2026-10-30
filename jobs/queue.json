@@ -86975,6 +86975,11 @@
           "at": "2026-10-30T05:41Z",
           "by": "relay",
           "what": "condition verification queued: J1243"
+        },
+        {
+          "at": "2026-10-30T05:43Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T11:45:00Z"
         }
       ],
       "kind": "review",
@@ -87010,15 +87015,14 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T19:20Z",
-      "remaining_action": "Await J1003 mature Earth readout, then non-author Chief final audit review",
+      "remaining_action": "Await J1003 retention check and audit update, then non-author Chief final review",
       "hold": {
         "type": "input",
-        "condition": "J1003 is open for Gemini after completed J1211 verification, but its mature Earth measurement, retention-curve availability check and audit/lab update remain unfinished (no result). Saved lifetime Studio capture 2026-10-29T07:13:31.819902Z verifies OVLv9dxTcpE at 887 views, 30.7% stayedToWatch, 75.3% avgViewPct. J1002 correction is complete. Require J1003 readout followed by non-author elected-Chief final audit review; no final audit PASS or production authorization.",
-        "check_at": "2026-10-30T06:41:11+00:00",
-        "last_recheck": "J1227",
-        "checked_at": "2026-10-29T23:32:40+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1243"
+        "condition": "J1243 verified J1003 remains open for Gemini with no result; retention-curve availability check and mature Earth audit/lab update are unfinished. Saved lifetime Studio capture 2026-10-29T07:13:31.819902Z records OVLv9dxTcpE at 887 views, 30.7% stayedToWatch and 75.3% avgViewPct; capture availability alone is not a completed readout. J1002 correction is complete (45ef75589). Require J1003 readout followed by non-author elected-Chief final audit review; no final audit PASS or production authorization.",
+        "check_at": "2026-10-30T11:45:00Z",
+        "last_recheck": "J1243",
+        "checked_at": "2026-10-30T05:43:25+00:00",
+        "checked_by": "codex"
       }
     },
     {
