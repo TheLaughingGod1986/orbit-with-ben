@@ -1,5 +1,5 @@
 {
-  "next_id": 1241,
+  "next_id": 1242,
   "jobs": [
     {
       "id": "J0001",
@@ -110318,6 +110318,35 @@
       ],
       "remaining_action": "Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX)",
       "due": "2026-11-01T20:00:00Z",
+      "kind": "assembly"
+    },
+    {
+      "id": "J1241",
+      "title": "HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude) ruling on J1218 rough v03, 30 Oct: read jobs/reviews/J1218/CHIEF_REVIEW_2026-10-30.md and the strips in jobs/reviews/J1218/cg_v02_strips/ first.\n1. Make code_graphics_v03 (new folder, never overwrite v02) from _build_code_graphics_v02.py, changing only P2:15 likeness_fire, P3:03 rod_cloud, P3:04 letter_crosses and P3:15 wet_dry as the review says. Time beats from the locked word records. No new words or claims. The P3:04 route stays illustrative (source correction stands). Keep the six passed rows byte-identical.\n2. Diagnostic rough v04 from rough v03 with those four rows swapped. Same pause trims, runtime <=540 s, all existing gates.\n3. Composite evidence: full-size frames at 25/50/75% of each overlay row (P2:15, P3:04, P4:06, P5:08, P5:10) and at the 6 picture_qa WARN rows (13_ring_the_bells_c1, 15_wet_dry, 19_kite_climb, 06_same_thing, 02_wire_bells, 18_rod_closeup), at their v04 film times. Commit them to the HOS PR, plus a contact sheet of the four rebuilt rows.\n4. Deliver to repo/UAT/NAS with sha256 (copy only, no NAS delete or overwrite) and park for Chief: graphics + composite PASS.\nNo music bed (still needs a Chief OK), no Ben watch, no upload, no Flow mint. GBP0.\n",
+      "ref": "",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T04:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T04:01Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling)",
+      "due": "2026-11-12T20:00:00Z",
       "kind": "assembly"
     }
   ],

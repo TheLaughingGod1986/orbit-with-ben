@@ -50,6 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1237 | mini | claimed | gemini | 2026-10-30T05:46Z | 009 picture · qa · HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief |  |
 | J1238 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 | J1240 | mini | open | – | – | assembly · Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX) |  |
+| J1241 | mini | open | – | – | 008 edit · assembly · HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) |  |
 
 Recently finished:
 
