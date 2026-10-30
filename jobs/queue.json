@@ -111407,17 +111407,22 @@
           "at": "2026-10-30T08:28Z",
           "by": "cursor",
           "what": "step 2 of 5 done: Reclaimed. picture_qa PASS, polish PASS, runtime 540.458s. Delivering copies now. tmux j1248-render; no .done yet."
+        },
+        {
+          "at": "2026-10-30T08:33Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: rough_v05 gates PASS but ELECTRICITY is only a ghost at +5.14s and full for under 1.5s. Re-rendering that one graphic."
         }
       ],
-      "remaining_action": "Wait for detached rough_v05 delivery, then commit the HOS PR and park for Chief",
+      "remaining_action": "Rebuild P4:06 so ELECTRICITY is solid from the spoken word for at least 1.5s, then resplice that row",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-10-30T08:28Z",
+        "at": "2026-10-30T08:33Z",
         "by": "cursor",
-        "note": "Reclaimed. picture_qa PASS, polish PASS, runtime 540.458s. Delivering copies now. tmux j1248-render; no .done yet."
+        "note": "rough_v05 gates PASS but ELECTRICITY is only a ghost at +5.14s and full for under 1.5s. Re-rendering that one graphic."
       },
       "taskKeys": [
         "HOS:008"
