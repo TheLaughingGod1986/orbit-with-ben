@@ -110,13 +110,14 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 2 d | 43 | 58.6% | too few to judge | 71.6% | too few to judge |
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 3 d | 213 | 28.0% | MISS | 65.3% | WATCH |
-| [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 6 d | 49 | 30.4% | too few to judge | 50.0% | too few to judge |
-| [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 8 d | 171 | 40.0% | MISS | 86.6% | PASS |
-| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 9 d | 150 | 23.1% | MISS | 55.9% | WATCH |
+| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 47 h (early) | 255 | 22.3% | MISS | 79.7% | PASS |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 2 d | 80 | 68.9% | too few to judge | 66.0% | too few to judge |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 3 d | 223 | 28.4% | MISS | 64.6% | WATCH |
+| [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 6 d | 49 | 29.8% | too few to judge | 50.0% | too few to judge |
+| [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 8 d | 175 | 40.5% | MISS | 86.9% | PASS |
+| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 9 d | 151 | 23.1% | MISS | 56.9% | WATCH |
 | [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | 10 d | 134 | 43.4% | MISS | 105.6% | LOOP |
-| [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | 11 d | 57 | 24.0% | too few to judge | 117.7% | too few to judge |
+| [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | 11 d | 58 | 24.0% | too few to judge | 117.7% | too few to judge |
 | [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | 13 d | 1224 | 40.8% | MISS | 44.0% | MISS |
 
-Stayed to watch: 0 of 5 judged Shorts at 60%+. Average viewed: 2 of 5 at 70%+.
+Stayed to watch: 0 of 6 judged Shorts at 60%+. Average viewed: 3 of 6 at 70%+.

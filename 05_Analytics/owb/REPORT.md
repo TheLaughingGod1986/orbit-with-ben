@@ -190,15 +190,17 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 2 d | 279 | 41.1% | MISS | 78.5% | PASS |
-| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 3 d | 887 | 30.7% | MISS | 75.3% | PASS |
-| [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 5 d | 850 | 32.1% | MISS | 76.1% | PASS |
+| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 23 h (early) | 312 | 29.3% | MISS | 106.0% | LOOP |
+| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 47 h (early) | 452 | 34.3% | MISS | 236.0% | LOOP |
+| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 2 d | 495 | 42.4% | MISS | 75.1% | PASS |
+| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 3 d | 892 | 30.8% | MISS | 75.7% | PASS |
+| [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 5 d | 851 | 32.1% | MISS | 76.1% | PASS |
 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 6 d | 81 | 34.3% | too few to judge | 58.3% | too few to judge |
-| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 7 d | 90 | 14.1% | too few to judge | 53.3% | too few to judge |
-| [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 8 d | 886 | 31.7% | MISS | 62.1% | WATCH |
-| [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 9 d | 12 | 75.0% | too few to judge | - | no read |
+| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 7 d | 90 | 14.1% | too few to judge | 53.4% | too few to judge |
+| [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 8 d | 887 | 31.7% | MISS | 62.2% | WATCH |
+| [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 9 d | 12 | 25.0% | too few to judge | 30.9% | too few to judge |
 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | 10 d | 109 | 56.8% | WATCH | 78.6% | PASS |
-| [Jupiter Has No Ground](https://youtu.be/23KZK7OjsEE) | 12 d | 8 | 66.7% | too few to judge | - | no read |
+| [Jupiter Has No Ground](https://youtu.be/23KZK7OjsEE) | 12 d | 8 | 33.3% | too few to judge | 34.2% | too few to judge |
 | [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) | 13 d | 161 | 25.3% | MISS | 60.8% | WATCH |
 
-Stayed to watch: 0 of 6 judged Shorts at 60%+. Average viewed: 4 of 6 at 70%+.
+Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 6 of 8 at 70%+.
