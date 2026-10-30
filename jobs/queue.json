@@ -110406,17 +110406,22 @@
           "at": "2026-10-30T04:21Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T04:28Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: v09a delivered but gate FAIL f0diff=0.57 + loop freeze@2.53s; motion evidence beat v06 (flicker 1.97 vs 3.20). Retimed open curve; tmux J1240-uranus-v09 restarted"
         }
       ],
-      "remaining_action": "Detached v09 assemble running in tmux; next run checks .done then gates/UAT/park",
+      "remaining_action": "Re-render v09b: stronger frame-0 motion + soft ease-out floor; wait for gates",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 5,
-        "at": "2026-10-30T04:18Z",
+        "at": "2026-10-30T04:28Z",
         "by": "cursor",
-        "note": "script written; tmux J1240-uranus-v09 past Shot9 extract; log ~/_desk/logs/J1240-uranus-v09.log"
+        "note": "v09a delivered but gate FAIL f0diff=0.57 + loop freeze@2.53s; motion evidence beat v06 (flicker 1.97 vs 3.20). Retimed o"
       }
     },
     {
