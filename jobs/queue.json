@@ -113843,9 +113843,14 @@
           "at": "2026-10-30T17:31Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T17:31Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking J1270 report, original repair approvals and live free space."
         }
       ],
-      "remaining_action": "Verify readiness: Await J1270 disk recovery and live 20 GB verification; then finish S2/S5 pickups and S6 loop repair",
+      "remaining_action": "Verify disk recovery evidence and preserve J1100 repair hold",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-30T17:15:13+00:00",
@@ -113855,9 +113860,12 @@
         "of": 3,
         "at": "2026-10-30T17:31Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking J1270 report, original repair approvals and live free space."
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1275",
