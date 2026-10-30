@@ -111377,16 +111377,22 @@
           "at": "2026-10-30T08:01Z",
           "by": "cursor",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-10-30T08:02Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Read J1241 FIX ruling; using /private/tmp/j1241-hos008-cg-v03-wt @ da9a7b4"
         }
       ],
-      "remaining_action": "Read J1241 ruling and locate HOS 008 graphics/composite assets",
+      "remaining_action": "Build code_graphics_v04 for five FIX rows then assemble rough_v05",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-30T08:01Z",
-        "by": "cursor"
+        "at": "2026-10-30T08:02Z",
+        "by": "cursor",
+        "note": "Read J1241 FIX ruling; using /private/tmp/j1241-hos008-cg-v03-wt @ da9a7b4"
       },
       "taskKeys": [
         "HOS:008"
