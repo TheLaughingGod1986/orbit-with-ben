@@ -111855,9 +111855,14 @@
           "at": "2026-10-30T10:51Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T10:51Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for verified thumbnail-test completion, then the next London day before the approved title-only test",
+      "remaining_action": "Verify current Studio thumbnail-test status and record the next eligibility check",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-10-30T11:20:23+00:00",
@@ -111866,10 +111871,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-30T10:51Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     },
     {
       "id": "J1252",
