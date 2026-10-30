@@ -110728,17 +110728,22 @@
           "at": "2026-10-30T06:03Z",
           "by": "cursor",
           "what": "step 4 of 6 done: launched proto10; path-lock removed; DESIGN_PEAK=0.80"
+        },
+        {
+          "at": "2026-10-30T06:07Z",
+          "by": "cursor",
+          "what": "step 4 of 6 done: proto10 ymax PASS; launched proto11 blend+peak0.70"
         }
       ],
-      "remaining_action": "Wait proto10 slow-design MC (peak 0.80); full only if measured path OK",
+      "remaining_action": "Wait proto11 path-blend; full assemble if dmax also OK",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 4,
         "of": 6,
-        "at": "2026-10-30T06:03Z",
+        "at": "2026-10-30T06:07Z",
         "by": "cursor",
-        "note": "launched proto10; path-lock removed; DESIGN_PEAK=0.80"
+        "note": "proto10 ymax PASS; launched proto11 blend+peak0.70"
       },
       "taskKeys": [
         "OWB:030"
