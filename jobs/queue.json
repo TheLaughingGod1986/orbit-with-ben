@@ -113146,10 +113146,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-10-30T21:19Z",
+      "eta": "2026-10-30T22:49Z",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
       "result": "",
@@ -113208,10 +113208,23 @@
           "at": "2026-10-30T21:19Z",
           "by": "chief",
           "what": "handed back: Chief closes it (merged)"
+        },
+        {
+          "at": "2026-10-30T21:19Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Done; parking J1264 for Chief release-gate PR review (merge)",
-      "kind": "qa"
+      "kind": "qa",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T21:19Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1265",

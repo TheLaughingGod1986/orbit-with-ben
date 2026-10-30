@@ -40,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1208 | mini | blocked | codex | – | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
-| J1264 | mini | open | – | – | qa · HOS PR #387: make the Chapters/Sources gate release-stage (warn while drafting, fail at release) so contract CI stays green (Chief h13 on J1261) | 6522827968 |
+| J1264 | mini | claimed | chief | 2026-10-30T22:49Z | qa · HOS PR #387: make the Chapters/Sources gate release-stage (warn while drafting, fail at release) so contract CI stays green (Chief h13 on J1261) | 6522827968 |
 | J1271 | mini | blocked | cursor | – | 024 upload · studio · OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
