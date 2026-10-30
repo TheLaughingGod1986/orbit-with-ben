@@ -112695,17 +112695,22 @@
           "at": "2026-10-30T13:30Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified 5 VO part starts in v08 (c1f952a7 / cuts_rough_v08.json + audio word onsets): 0:00, 1:40, 3:08, 5:19, 6:49; inspected FACT_NOTES_v01.md and 004-007 descriptions"
+        },
+        {
+          "at": "2026-10-30T13:35Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Updated lightning_long_description_v01.txt with Chapters (0:00, 1:40, 3:08, 5:19, 6:49) + 7 FACT_NOTES Sources and recorded provisional note in production-status.md"
         }
       ],
-      "remaining_action": "Draft Chapters and Sources blocks in lightning_long_description_v01.txt and update production-status.md",
+      "remaining_action": "Run check_all.sh and lint:package -- --film 008 on main and against PR #387",
       "due": "2026-11-11T20:00:00Z",
       "kind": "listing",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T13:30Z",
+        "at": "2026-10-30T13:35Z",
         "by": "gemini",
-        "note": "Verified 5 VO part starts in v08 (c1f952a7 / cuts_rough_v08.json + audio word onsets): 0:00, 1:40, 3:08, 5:19, 6:49; ins"
+        "note": "Updated lightning_long_description_v01.txt with Chapters (0:00, 1:40, 3:08, 5:19, 6:49) + 7 FACT_NOTES Sources and recor"
       },
       "taskKeys": [
         "HOS:008"
