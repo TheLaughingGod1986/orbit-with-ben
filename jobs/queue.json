@@ -22361,10 +22361,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T01:00Z",
+      "eta": "2026-10-30T02:00Z",
       "created_by": "chief",
       "created_at": "2026-10-15T08:47Z",
       "result": "",
@@ -22482,6 +22482,11 @@
           "at": "2026-10-30T00:39Z",
           "by": "chief",
           "what": "J1221: added xzKoHg0E0_U -> GHZDsiH7L7A (Dalton v04 swap; no other job owned it)"
+        },
+        {
+          "at": "2026-10-30T01:00Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -22495,7 +22500,15 @@
       "for": "cursor",
       "model": "cursor-auto",
       "remaining_action": "Add the remaining Related links to the Blood Shorts",
-      "urgent": 3
+      "urgent": 3,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T01:00Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0281",
