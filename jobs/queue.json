@@ -112823,19 +112823,26 @@
           "at": "2026-10-30T13:40Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T13:40Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Disk 7.0 GiB free. Checking candidates before any move."
         }
       ],
-      "remaining_action": "Mini disk: move finished /tmp render worktrees to NAS (render scratch rules)",
+      "remaining_action": "Find finished /tmp worktrees and confirm which jobs still need them",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-30T13:40Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Disk 7.0 GiB free. Checking candidates before any move."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1269",
