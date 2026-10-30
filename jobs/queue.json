@@ -1,5 +1,5 @@
 {
-  "next_id": 1237,
+  "next_id": 1238,
   "jobs": [
     {
       "id": "J0001",
@@ -110047,6 +110047,34 @@
       "taskKeys": [
         "HOS:099"
       ]
+    },
+    {
+      "id": "J1237",
+      "title": "HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude), 30 Oct 02:5x UTC. J1192 tranche 1 is minted (57/57 KEEP, HOS PR #377 @ bd45df1f) and waits only on the 3 motion flags from desk #6511102950: P01:03_table_three 3.333-4.375 s, P04:07_put_aside 7.083 s to end, P04:10_write_it_down_c1 0-1.042 s. The Chief cannot watch from the cloud, so bring the evidence: for each clip, export the full-size frames across the flagged window plus 0.5 s either side (every frame, PNG strip + a 1-row contact sheet), a frame-difference plot over the clip, and a 3-line read: is the motion continuous (no freeze, pop, morph or warp of a hand/object), and would it hold in the cut at its board in/out points. If a window is a defect but the board's in/out can avoid it, say the trimmed in/out. Commit the strips under 02_Video-Projects/009_The-Falling-Moon-Gravity/07_Edit-Project/review_J1192_motion/ on PR #377 (or a follow-up PR), post the link on desk #180, then park for Chief: tranche 1 PASS. No new mint, no retake, no spend, no upload. GBP0.",
+      "ref": "",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T02:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T02:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief",
+      "kind": "qa"
     }
   ],
   "focus": [],
