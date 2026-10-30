@@ -113058,19 +113058,26 @@
           "at": "2026-10-30T15:15Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T15:15Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: Claimed J1267. Locating v08 assembly and code-graphic sources."
         }
       ],
-      "remaining_action": "HOS 008: P5:10 shorter clean hold (t1 frames 109-150) + 11_safe_path lead-in -> rough v09 (Chief h14 on J1263)",
+      "remaining_action": "Read h14 ruling and locate v08 assets, then render P5:10 and 11_safe_path for rough v09",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-10-30T15:15Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1267. Locating v08 assembly and code-graphic sources."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1268",
