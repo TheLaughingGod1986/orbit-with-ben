@@ -111359,18 +111359,23 @@
           "at": "2026-10-30T10:05Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Studio lifetime read: 89 OWB and 27 HOS films, 0 left unread."
+        },
+        {
+          "at": "2026-10-30T10:06Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Wrote studio_ctr.json and rebuilt the tracker. Commit f0232c498."
         }
       ],
-      "remaining_action": "Rebuild the tracker from the Studio read and publish the board",
+      "remaining_action": "Commit the Studio read and mark the job done",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-30T10:05Z",
+        "at": "2026-10-30T10:06Z",
         "by": "cursor",
-        "note": "Studio lifetime read: 89 OWB and 27 HOS films, 0 left unread."
+        "note": "Wrote studio_ctr.json and rebuilt the tracker. Commit f0232c498."
       },
       "taskKeys": [
         "OWB:021",
