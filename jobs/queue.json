@@ -110744,17 +110744,22 @@
           "at": "2026-10-30T06:11Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed; surveying v09 assembler and motion evidence"
+        },
+        {
+          "at": "2026-10-30T06:14Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: proto11: flicker 2.09->0.62; ymax 1.0 PASS; dmax 1.0 still FAIL; synthetic PASS; launching full assemble"
         }
       ],
-      "remaining_action": "Prototype motion-compensated Uranus opening; validate estimator; then full v10 if improved",
+      "remaining_action": "Full v10 assemble+gates running detached; then deliver and park for Chief",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-30T06:11Z",
+        "at": "2026-10-30T06:14Z",
         "by": "cursor",
-        "note": "claimed; surveying v09 assembler and motion evidence"
+        "note": "proto11: flicker 2.09->0.62; ymax 1.0 PASS; dmax 1.0 still FAIL; synthetic PASS; launching full assemble"
       },
       "taskKeys": [
         "OWB:030"
