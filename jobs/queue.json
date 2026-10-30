@@ -1,5 +1,5 @@
 {
-  "next_id": 1261,
+  "next_id": 1262,
   "jobs": [
     {
       "id": "J0001",
@@ -112318,6 +112318,34 @@
       ],
       "remaining_action": "HOS 008: P5:10 plate in-point + move hook pause trim -> rough v07 (Chief h10 on J1257)",
       "kind": "assembly"
+    },
+    {
+      "id": "J1261",
+      "title": "HOS: open PR for the chapters/sources release gate (J1259 patch), park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Claude wrote and tested the J1259 change but can't push to HOS. Read orbit-with-ben jobs/reviews/J1259/README.md. On a fresh branch from HOS main (cb1b92e or later): git apply jobs/reviews/J1259/hos_release_gate_chapters_sources.patch (if it no longer applies cleanly, re-make the same change by hand from the README). In 07_Content-Ops: npx vitest run (expect all pass) and npx tsx scripts/package-lint.ts (expect FAIL on exactly 008/009/010 with description.chapters + description.sources, nothing else). Open a HOS PR titled 'hos-contract: block a long with no Chapters or Sources (J1259)', with the README as its body, saying plainly that the hos-contract CI check is red by design on 008/009/010. Do not merge. Park for Chief: release-gate PR review. Do not edit the 008/009/010 descriptions in this job. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T11:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T11:56Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS: open PR for the chapters/sources release gate (J1259 patch), park for Chief",
+      "kind": "qa"
     }
   ],
   "focus": [],
