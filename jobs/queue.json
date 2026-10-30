@@ -110742,19 +110742,24 @@
           "at": "2026-10-30T05:43Z",
           "by": "codex",
           "what": "step 2 of 3 done: J0985 hold retained with recheck J1243 and next verification 30 Oct 11:45Z; original gates preserved."
+        },
+        {
+          "at": "2026-10-30T05:43Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirms J0985 blocked, next check 11:45Z, last_recheck J1243; J1003 still open without result."
         }
       ],
-      "remaining_action": "Verify saved hold and report J1243 outcome",
+      "remaining_action": "Verification complete; J0985 awaits J1003 and final review",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-30T06:41:11+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-30T05:43Z",
         "by": "codex",
-        "note": "J0985 hold retained with recheck J1243 and next verification 30 Oct 11:45Z; original gates preserved."
+        "note": "Readback confirms J0985 blocked, next check 11:45Z, last_recheck J1243; J1003 still open without result."
       },
       "taskKeys": [
         "OWB:027"
