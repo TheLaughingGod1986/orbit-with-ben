@@ -49,6 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1237 | mini | blocked | gemini | – | 009 picture · qa · HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief |  |
 | J1240 | mini | blocked | cursor | – | assembly · Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX) |  |
 | J1241 | mini | open | – | – | 008 edit · assembly · HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) |  |
+| J1242 | mini | open | – | – | assembly · Uranus v10: motion-compensated opening and precise path evidence (J1240 FIX) |  |
 
 Recently finished:
 
