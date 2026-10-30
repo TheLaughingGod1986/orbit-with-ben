@@ -100636,9 +100636,14 @@
           "at": "2026-10-30T03:16Z",
           "by": "relay",
           "what": "condition verification queued: J1238"
+        },
+        {
+          "at": "2026-10-30T04:07Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T10:15:00Z"
         }
       ],
-      "remaining_action": "Recheck thumbnail test in Studio; arm exact approved title-only B only on day after verified completion",
+      "remaining_action": "Wait for verified thumbnail-test completion, then the next London day before the approved title-only test",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -100651,10 +100656,12 @@
         "HOS:002"
       ],
       "hold": {
-        "type": "test",
-        "condition": "Studio report for AL_-qlWko_g confirms the J1129 MISSING ELEMENT v02 thumbnail-only test ended, supplies actual completion time, and London calendar date is at least the day after that completion",
-        "check_at": "2026-10-30T04:16:45+00:00",
-        "recheck_task": "J1238"
+        "type": "input",
+        "condition": "Studio must confirm J1129 MISSING ELEMENT v02 thumbnail-only test on AL_-qlWko_g ended, provide actual completion time, and London date must be at least the next day. J1238 fresh report on 30 Oct 04:06 UTC still says Test running, estimated 12 days 20 hours; evidence ~/_desk/handoff/J1238/hos_test_report.txt and .png.",
+        "check_at": "2026-10-30T10:15:00Z",
+        "last_recheck": "J1238",
+        "checked_at": "2026-10-30T04:07:19+00:00",
+        "checked_by": "codex"
       }
     },
     {
