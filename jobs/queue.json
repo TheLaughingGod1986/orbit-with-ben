@@ -112771,19 +112771,24 @@
           "at": "2026-10-30T15:37Z",
           "by": "codex",
           "what": "step 2 of 3 done: Updated hold: J1003 complete; Mercury narrative differs from saved raw curve. Final audit review still required; next check 30 Oct 21:45Z."
+        },
+        {
+          "at": "2026-10-30T15:38Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback PASS: J0985 blocked, last_recheck J1262, next verification 21:45Z; J1003 done. Earth source hash and raw maximum drop independently reproduced."
         }
       ],
-      "remaining_action": "Read back J0985 hold and report verification outcome",
+      "remaining_action": "Verification complete; report retained audit hold",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-30T12:59:31+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-30T15:37Z",
+        "at": "2026-10-30T15:38Z",
         "by": "codex",
-        "note": "Updated hold: J1003 complete; Mercury narrative differs from saved raw curve. Final audit review still required; next ch"
+        "note": "Readback PASS: J0985 blocked, last_recheck J1262, next verification 21:45Z; J1003 done. Earth source hash and raw maximu"
       },
       "taskKeys": [
         "OWB:027"
