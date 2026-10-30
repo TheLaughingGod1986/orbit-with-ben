@@ -113425,19 +113425,27 @@
           "at": "2026-10-30T15:56Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T15:56Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Free space about 7.0 GB. nas_offload dry run: nothing in /private/tmp old enough."
         }
       ],
-      "remaining_action": "Recover at least 20 GB free safely and identify renewed disk growth blocking J1100",
+      "remaining_action": "Inventory disk, prior recovery evidence, tmux and job inputs",
       "due": "2026-10-31T12:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-30T15:56Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Free space about 7.0 GB. nas_offload dry run: nothing in /private/tmp old enough."
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1271",
