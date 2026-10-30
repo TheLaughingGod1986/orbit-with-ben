@@ -113321,9 +113321,14 @@
           "at": "2026-10-30T15:40Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T15:40Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Clear finished Studio A/B title test widget on GHZDsiH7L7A so Data API allows title update",
+      "remaining_action": "Verify whether the atom title test still blocks J0978",
       "kind": "chief",
       "recheck_of": "J0978",
       "due": "2026-10-30T14:39:23+00:00",
@@ -113332,10 +113337,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-30T15:40Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:001"
+      ]
     }
   ],
   "focus": [],
