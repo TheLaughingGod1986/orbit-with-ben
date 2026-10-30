@@ -113107,9 +113107,14 @@
           "at": "2026-10-30T16:46Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Computed provisional VO part chapter timings and verified 8 FACT_NOTES citations each for HOS 009 and 010"
+        },
+        {
+          "at": "2026-10-30T16:48Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Updated moon_long_description_v01.txt, clay_long_description_v01.txt, and both production-status.md files"
         }
       ],
-      "remaining_action": "Apply Chapters and Sources blocks to 009 and 010 long descriptions and update production-status.md",
+      "remaining_action": "Run check_all.sh and lint:package for HOS 009 and 010 and verify diff",
       "due": "2026-11-18T20:00:00Z",
       "kind": "listing",
       "rerouted_from": {
@@ -113122,11 +113127,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-10-30T16:46Z",
+        "at": "2026-10-30T16:48Z",
         "by": "gemini",
-        "note": "Computed provisional VO part chapter timings and verified 8 FACT_NOTES citations each for HOS 009 and 010"
+        "note": "Updated moon_long_description_v01.txt, clay_long_description_v01.txt, and both production-status.md files"
       },
       "taskKeys": [
         "HOS:009",
