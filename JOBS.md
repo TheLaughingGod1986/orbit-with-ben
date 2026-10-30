@@ -47,13 +47,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1237 | mini | blocked | gemini | – | 009 picture · qa · HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief |  |
-| J1238 | any | claimed | codex | 2026-10-30T06:03Z | chief · Chief: verify condition for J1130 |  |
 | J1240 | mini | open | – | – | assembly · Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX) |  |
 | J1241 | mini | open | – | – | 008 edit · assembly · HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) |  |
 
 Recently finished:
 
 - J1239 cancelled: Chief: verify condition for J0966 ()
+- J1238 done: Chief: verify condition for J1130 (Verified thumbnail-only test still running in live HOS Studio (two variants, estimated 12 days 20 hours). J1130 remains blocked; next check 2026-10-30 10:15 UTC. Evidence ~/_desk/handoff/J1238/hos_test_report.txt and .png. No YouTube settings changed.)
 - J1236 done: Chief: verify condition for J0999 (Verified unmet: PR365 unchanged draft OPEN a87cd56a without approval or merge; PR358 OPEN c26a79bd. J0999 blocked; next recheck 2026-10-30T07:45:00Z. No Studio writes, merge or spend.)
 - J1235 done: Chief: verify condition for J1192 (Verified PR377 unchanged at bd45df1f with no review/comments; HOS desk #6511102950 remains latest relevant ruling, no continuous-playback resolution or Chief PASS. J1192 remains blocked; wait recorded with --recheck J1235 for 2026-10-30T07:45Z. Reported on HOS desk. No generation, spend or publishing.)
 - J1234 done: Chief: verify condition for J0966 (Verified J1005 predecessor, corrected HC delivery, Claude handoff 6483600719 and all four exact-cut Ben approvals live (6507268470, 6507810925, 6507831644, 6508107852). J1219/J1221/J1222/J1223 all done. Reopened J0966 for administrative closeout only and restored worker 5/5. No rebuild, duplicate swap, spend or YouTube change. Disk offload attempted: NAS accessible, no eligible old scratch.)
@@ -62,4 +62,3 @@ Recently finished:
 - J1231 done: Chief: verify condition for J0862 (Verified live ElevenLabs HTTP 200 at 2026-10-30T00:47:42Z: 209422/209536 used, 114 remaining; insufficient. API reset 2026-10-30T10:50:31Z. J0862 kept blocked with recheck 11:00Z; original approvals/gates preserved. Balance recorded in AI spend ledger. HOS desk #6512130347. No spend or publishing changes.)
 - J1230 done: Chief: verify condition for J0345 (Verified live API at 00:44:41Z: 114 characters remain; 031 v03 needs 7765. J0345 stays blocked; recheck 2026-10-30T10:55Z after API reset 10:50:31Z. Titan J0302 (7879 chars) stays ahead. Evidence and ledger a86b49a9f; no spend or publishing changes.)
 - J1229 done: Chief: verify condition for J0302 (Verified live ElevenLabs at 00:39:29Z: 114 remaining (209422/209536 used), locked Titan v02 requires 7879. API reset 30 Oct 10:50:31Z. J0302 remains blocked; next verification 30 Oct 10:55 UTC. Balance recorded in ledger. No spend or schedule changes.)
-- J1228 done: Chief: verify condition for J1192 (Condition not satisfied: J1191 is complete, but J1192 already minted 57/57 and needs tranche-1 picture review on HOS PR377 bd45df1f. Three SHA-matched KEEP clips reproduce unresolved freeze flags: P01 table 3.333-4.375s; P04 put aside 7.083s-end; P04 write c1 0-1.042s. Corrected hold to input review with --recheck J1228; retained 2026-10-30T00:30:01Z. No generation restart, no PASS/merge, no spend. Full evidence on HOS desk.)
