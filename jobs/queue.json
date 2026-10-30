@@ -114222,10 +114222,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-30T20:06Z",
+      "eta": "2026-10-30T22:06Z",
       "created_by": "claude",
       "created_at": "2026-10-30T16:52Z",
       "result": "",
@@ -114239,6 +114239,11 @@
           "at": "2026-10-30T16:54Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-30T20:06Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut",
@@ -114251,7 +114256,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T20:06Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1276",
