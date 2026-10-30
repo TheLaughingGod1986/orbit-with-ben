@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 031 | vo | cursor | 2026-10-30T19:31Z | 2026-10-30T21:00Z | J0345 031 Magnetic Field Flip: VO from locked script v03 (J0340 PASS) |
+| 031 | vo | cursor | 2026-10-30T19:32Z | 2026-10-30T20:12Z | J0345 VO v03 |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
