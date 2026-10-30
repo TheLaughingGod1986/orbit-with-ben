@@ -110411,17 +110411,22 @@
           "at": "2026-10-30T04:28Z",
           "by": "cursor",
           "what": "step 1 of 5 done: v09a delivered but gate FAIL f0diff=0.57 + loop freeze@2.53s; motion evidence beat v06 (flicker 1.97 vs 3.20). Retimed open curve; tmux J1240-uranus-v09 restarted"
+        },
+        {
+          "at": "2026-10-30T04:35Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: v09b open PASS f0diff=2.3; loop FAIL 8.74>2x2.41. Softening tail→open seam. tmux J1240-uranus-v09"
         }
       ],
-      "remaining_action": "Re-render v09b: stronger frame-0 motion + soft ease-out floor; wait for gates",
+      "remaining_action": "v09c render with seam soften for loop 2x rule; waiting on gates",
       "due": "2026-11-01T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-30T04:28Z",
+        "at": "2026-10-30T04:35Z",
         "by": "cursor",
-        "note": "v09a delivered but gate FAIL f0diff=0.57 + loop freeze@2.53s; motion evidence beat v06 (flicker 1.97 vs 3.20). Retimed o"
+        "note": "v09b open PASS f0diff=2.3; loop FAIL 8.74>2x2.41. Softening tail→open seam. tmux J1240-uranus-v09"
       }
     },
     {
