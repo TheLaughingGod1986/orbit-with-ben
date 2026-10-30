@@ -112515,13 +112515,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T12:54Z",
-      "eta": "2026-10-30T14:54Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T12:28Z",
-      "result": "",
+      "result": "parked for Chief: graphics + composite review of rough v08 (in-point 4.541667s frame 109, master c1f952a7, gates PASS, evidence 65f5f782 on PR 385)",
       "history": [
         {
           "at": "2026-10-30T12:28Z",
@@ -112582,6 +112582,11 @@
           "at": "2026-10-30T12:58Z",
           "by": "cursor",
           "what": "step 5 of 5 done: Evidence commit 65f5f782 on HOS PR 385. Plate in-point 4.541667s frame 109. Master c1f952a7. Polish and picture QA PASS."
+        },
+        {
+          "at": "2026-10-30T12:58Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: graphics + composite review of rough v08 (in-point 4.541667s frame 109, master c1f952a7, gates PASS, evidence 65f5f782 on PR 385)"
         }
       ],
       "remaining_action": "Parked for Chief: graphics and composite review of rough v08",
