@@ -108280,13 +108280,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-29T23:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
-      "result": "parked for Chief: HOS 008 diagnostic rough v02 delivered (PR #376). Master 540.02s sha256 edebeaf7… on desk+NAS. polish/picture PASS (6 WARN); episode gate PASS; music SKIPPED_NO_BED NOT PASS; SFX unfinished; J1193 still open (required for graphics PASS). No Ben Ready-for-OK. No upload. £0. Evidence: _desk/008/rough_v02/J1218_REPAIR_NOTES.md + https://github.com/TheLaughingGod1986/history-of-science/pull/376",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T19:15Z",
@@ -108467,6 +108467,11 @@
           "at": "2026-10-30T01:44Z",
           "by": "codex",
           "what": "Chief repeat review FIX: latest v03 ruling prepended to brief; J1193 findings delivered, not absent. See jobs/reviews/J1218/CHIEF_REVIEW_2026-10-30.md."
+        },
+        {
+          "at": "2026-10-30T01:44Z",
+          "by": "codex",
+          "what": "reopened: FIX / NOT APPROVED: v02 resubmitted unchanged after v03 ruling. Read updated brief and jobs/reviews/J1218/CHIEF_REVIEW_2026-10-30.md FIRST. Same job must produce v03 with safe NAS handling, P5 moving-plate fix, correct sampled times and J1193 PR378 findings incorporated. No spend/Ben watch; J1213 held."
         }
       ],
       "remaining_action": "Park for Chief with PR376 evidence and blockers",
@@ -108474,14 +108479,7 @@
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
-      ],
-      "progress": {
-        "step": 6,
-        "of": 7,
-        "at": "2026-10-29T23:55Z",
-        "by": "cursor",
-        "note": "PIPELINE+episode gate pushed; master sha edebeaf7; music SKIPPED_NO_BED; J1193 open"
-      }
+      ]
     },
     {
       "id": "J1219",
