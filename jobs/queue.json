@@ -111987,9 +111987,14 @@
           "at": "2026-10-30T14:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T14:36Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Review original hold, current J1100 evidence, then record readiness ruling"
         }
       ],
-      "remaining_action": "Verify readiness: J1100: finish S2/S5/S6 corrections, gates and delivery; Chief review then Ben swap approvals",
+      "remaining_action": "Verify corrected S2/S5/S6 evidence and approvals for J0936",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-10-30T11:50:27+00:00",
@@ -111999,9 +112004,13 @@
         "of": 3,
         "at": "2026-10-30T14:36Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Review original hold, current J1100 evidence, then record readiness ruling"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1253",
