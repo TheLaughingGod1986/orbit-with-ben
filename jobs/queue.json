@@ -112274,18 +112274,28 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T11:05Z",
-      "result": "",
+      "result": "Today neither lint:package nor gate:episode checks a long's chapters or sources (008/009/010 PASS on main). Added checkChaptersAndSources to lintLongPackage (longs only; 0:00 first, >=3 stamps, >=10 s apart; Sources block) with 4 tests: vitest 97/97, package-lint now FAILs exactly 008/009/010. Claude can't push to HOS: patch + evidence in jobs/reviews/J1259/; J1261 (Mini) opens the HOS PR and parks it for the Chief. hos-contract CI will be red on 008/009/010 by design.",
       "history": [
         {
           "at": "2026-10-30T11:05Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T11:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T11:56Z",
+          "by": "claude",
+          "what": "done: Today neither lint:package nor gate:episode checks a long's chapters or sources (008/009/010 PASS on main). Added checkChaptersAndSources to lintLongPackage (longs only; 0:00 first, >=3 stamps, >=10 s apart; Sources block) with 4 tests: vitest 97/97, package-lint now FAILs exactly 008/009/010. Claude can't push to HOS: patch + evidence in jobs/reviews/J1259/; J1261 (Mini) opens the HOS PR and parks it for the Chief. hos-contract CI will be red on 008/009/010 by design."
         }
       ],
       "remaining_action": "HOS release gate: block a long with no Chapters or Sources (before 008 ships)",
