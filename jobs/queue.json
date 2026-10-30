@@ -113401,13 +113401,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-30T20:59Z",
-      "eta": "2026-10-30T22:59Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "",
+      "result": "Chief (Grok) h22 30 Oct: PASS (graphics + composite), HOS #180 6533306017, PR #385 6533309643. Rough v12 d032e5fb7ae89f492f1d4df59070ce13a419c23287834780f8996999d17520b4 is the picture lock for master v01. Decoded framemd5 vs v08: 250 frames differ, all in 459.292-469.667 s; audio packets identical; 12923 frames; A/V end 0.0015 s. No prop-morph (24 fps workman crop), no old-plate flash-back, no black, title once and steady. Direct-master STT small.en+base.en: 'But a metal rod / is an easy path' at 459.6-462.7 s, so the sync condition is met. Supersedes Codex hold 6533263921; J1286 cancelled. Not a finished-film PASS. No UAT, no upload. GBP0.",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113633,6 +113633,11 @@
           "at": "2026-10-30T20:59Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T20:59Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h22 30 Oct: PASS (graphics + composite), HOS #180 6533306017, PR #385 6533309643. Rough v12 d032e5fb7ae89f492f1d4df59070ce13a419c23287834780f8996999d17520b4 is the picture lock for master v01. Decoded framemd5 vs v08: 250 frames differ, all in 459.292-469.667 s; audio packets identical; 12923 frames; A/V end 0.0015 s. No prop-morph (24 fps workman crop), no old-plate flash-back, no black, title once and steady. Direct-master STT small.en+base.en: 'But a metal rod / is an easy path' at 459.6-462.7 s, so the sync condition is met. Supersedes Codex hold 6533263921; J1286 cancelled. Not a finished-film PASS. No UAT, no upload. GBP0."
         }
       ],
       "remaining_action": "J1286 continuous-playback QA, then Chief acceptance; direct-master VO condition cleared",
@@ -113648,7 +113653,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6533306017"
     },
     {
       "id": "J1268",
