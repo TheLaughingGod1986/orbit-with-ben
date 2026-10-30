@@ -108672,10 +108672,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T00:55Z",
+      "eta": "2026-10-30T02:55Z",
       "created_by": "chief",
       "created_at": "2026-10-29T20:42Z",
       "result": "",
@@ -108689,6 +108689,11 @@
           "at": "2026-10-29T20:42Z",
           "by": "chief",
           "what": "approved by Ben: swap 4WUs0beKn0A (vaccine-name) to hos_007_s05_vacca_jesty_v05 (sha e5ea76f012fb); J1200 playable PHONE v05 (asked in J0966)"
+        },
+        {
+          "at": "2026-10-30T00:55Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Swap HOS Short 4WUs0beKn0A (007 vaccine-name) to Ben-OK'd v05 (Private, same slot Tue 17 Nov 11:30)",
@@ -108707,6 +108712,14 @@
         "askId": "J0966.2",
         "okAt": "2026-10-29T20:42Z",
         "okRef": "6507831644"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T00:55Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
