@@ -1,5 +1,5 @@
 {
-  "next_id": 1284,
+  "next_id": 1285,
   "jobs": [
     {
       "id": "J0001",
@@ -80698,6 +80698,11 @@
           "at": "2026-10-30T14:38Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T20:38:00Z"
+        },
+        {
+          "at": "2026-10-30T20:42Z",
+          "by": "relay",
+          "what": "condition verification queued: J1284"
         }
       ],
       "kind": "video",
@@ -80729,10 +80734,11 @@
       "hold": {
         "type": "input",
         "condition": "J1100 S2/S5 corrected v06 still need authorized pickups with live credits verified, instrumental-only S2 bed, gates and direct listening. S6 Gemini listening complete but whole-frame loop 9.26 FAIL remains. Complete verified UAT/NAS delivery, corrected replacement Chief PASS and Ben S2/S5/S6 swap approvals absent. Evidence checked: PR333 OPEN head 0a7fcb6ad, zero reviews/comments; V06_CHECKPOINT_2026-10-29.md; FINAL_MEASUREMENTS loop_pass=false; local GEMINI_S6_V06.md; Chief FIX 6483981556. Reset date alone proves no readiness; J1253 separately verifies J1100 credits. Preserve J1032 PASS, completed J1101/J1102/J1103, J0936 historical 6/6, deadlines and remaining v01 fallbacks.",
-        "check_at": "2026-10-30T20:38:00Z",
+        "check_at": "2026-10-30T21:42:57+00:00",
         "last_recheck": "J1252",
         "checked_at": "2026-10-30T14:38:25+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1284"
       },
       "preparation_review": {
         "by": "codex",
@@ -114836,6 +114842,37 @@
       "taskKeys": [
         "HOS:008"
       ]
+    },
+    {
+      "id": "J1284",
+      "title": "Chief: verify condition for J0936",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0936: J1100 S2/S5 corrected v06 still need authorized pickups with live credits verified, instrumental-only S2 bed, gates and direct listening. S6 Gemini listening complete but whole-frame loop 9.26 FAIL remains. Complete verified UAT/NAS delivery, corrected replacement Chief PASS and Ben S2/S5/S6 swap approvals absent. Evidence checked: PR333 OPEN head 0a7fcb6ad, zero reviews/comments; V06_CHECKPOINT_2026-10-29.md; FINAL_MEASUREMENTS loop_pass=false; local GEMINI_S6_V06.md; Chief FIX 6483981556. Reset date alone proves no readiness; J1253 separately verifies J1100 credits. Preserve J1032 PASS, completed J1101/J1102/J1103, J0936 historical 6/6, deadlines and remaining v01 fallbacks.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0936 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T20:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T20:42Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: J1100: finish S2/S5/S6 corrections and verified delivery; Chief replacement review then Ben swap approvals",
+      "kind": "chief",
+      "recheck_of": "J0936",
+      "due": "2026-10-30T21:42:57+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
