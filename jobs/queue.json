@@ -107899,13 +107899,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-30T09:39Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T13:08Z",
-      "result": "parked for Chief: HOS PR #383 (macbook/j1194-description-sweep, d56a80c8) opened, verified against DESCRIPTION_SWEEP_2026-10-28_APPLIED.md (9 files, 23+/16-), local check_all.sh ALL CHECKS PASS, and all 4 GitHub CI checks green; ready for Chief merge",
+      "result": "Chief (Grok) h08 30 Oct: HOS PR #383 merged as cb1b92ec (normal merge). Diff = 9 text files byte-matching DESCRIPTION_SWEEP_2026-10-28 rows 20-24/26-29; CI check/contract/no-media/no-desk-close green on d56a80c8. No YouTube/Studio change. GBP0. HOS #180 6521103149.",
       "history": [
         {
           "at": "2026-10-29T13:08Z",
@@ -107946,6 +107946,16 @@
           "at": "2026-10-30T09:43Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS PR #383 (macbook/j1194-description-sweep, d56a80c8) opened, verified against DESCRIPTION_SWEEP_2026-10-28_APPLIED.md (9 files, 23+/16-), local check_all.sh ALL CHECKS PASS, and all 4 GitHub CI checks green; ready for Chief merge"
+        },
+        {
+          "at": "2026-10-30T11:04Z",
+          "by": "chief",
+          "what": "claimed by Chief (Grok) for review"
+        },
+        {
+          "at": "2026-10-30T11:04Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h08 30 Oct: HOS PR #383 merged as cb1b92ec (normal merge). Diff = 9 text files byte-matching DESCRIPTION_SWEEP_2026-10-28 rows 20-24/26-29; CI check/contract/no-media/no-desk-close green on d56a80c8. No YouTube/Studio change. GBP0. HOS #180 6521103149."
         }
       ],
       "remaining_action": "Park J1207 for Chief merge of HOS PR #383",
@@ -107973,7 +107983,8 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "done_ref": "6521103149"
     },
     {
       "id": "J1208",
@@ -111597,13 +111608,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "chief",
       "since": "2026-10-30T09:15Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T07:54Z",
-      "result": "parked for Chief: graphics + composite PASS on HOS 008 rough v05 (sha a97e2f82, polish PASS, picture_qa PASS, runtime 540.458s same as v04). Evidence in PR https://github.com/TheLaughingGod1986/history-of-science/pull/382 commit e78eb487. No finished-film PASS, no Ben watch, no music bed, no upload.",
+      "result": "Chief (Grok) h07 30 Oct: rough v05 (a97e2f82) graphics+composite FIX. PASS P3:03, P2:15, P4:06, P5:10 (passed rows byte-identical to v03). FIX P3:04 (Paris landmass on bowsprit/jib rigging, route over topsails) and runtime 540.458 s > 540 (v04 was 540.168; per-segment AAC splice drift). Follow-up J1257 (graphics v05 -> rough v06). No finished-film PASS, no Ben watch. HOS #180 6521101809.",
       "history": [
         {
           "at": "2026-10-30T07:54Z",
@@ -111714,6 +111725,16 @@
           "at": "2026-10-30T09:28Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: graphics + composite PASS on HOS 008 rough v05 (sha a97e2f82, polish PASS, picture_qa PASS, runtime 540.458s same as v04). Evidence in PR https://github.com/TheLaughingGod1986/history-of-science/pull/382 commit e78eb487. No finished-film PASS, no Ben watch, no music bed, no upload."
+        },
+        {
+          "at": "2026-10-30T11:04Z",
+          "by": "chief",
+          "what": "claimed by Chief (Grok) for review"
+        },
+        {
+          "at": "2026-10-30T11:04Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h07 30 Oct: rough v05 (a97e2f82) graphics+composite FIX. PASS P3:03, P2:15, P4:06, P5:10 (passed rows byte-identical to v03). FIX P3:04 (Paris landmass on bowsprit/jib rigging, route over topsails) and runtime 540.458 s > 540 (v04 was 540.168; per-segment AAC splice drift). Follow-up J1257 (graphics v05 -> rough v06). No finished-film PASS, no Ben watch. HOS #180 6521101809."
         }
       ],
       "remaining_action": "Parked for Chief graphics and composite review",
@@ -111728,7 +111749,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "6521101809"
     },
     {
       "id": "J1249",
