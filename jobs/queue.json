@@ -18863,10 +18863,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T01:21Z",
+      "eta": "2026-10-30T01:51Z",
       "created_by": "claude",
       "created_at": "2026-10-14T20:55Z",
       "result": "",
@@ -18910,6 +18910,11 @@
           "at": "2026-10-29T19:04Z",
           "by": "grok",
           "what": "rerouted to cursor on cursor-auto: SCOPE CHANGE (Claude HOS #180 6505813447, Chief agrees): STEP 1 ONLY. Set Related = wwcjcFfC-5M on BW_CFAX-mxc in HOS Studio, change nothing else, read back with a screenshot, post on HOS #180, mark done. SKIP STEP 2 (Buffer): BW_CFAX-mxc is already scheduled to HOS IG/FB/TikTok for 31 Oct 11:30Z (hos/BUFFER_POSTS.json, J1202 a1e6ce99c); a second post would duplicate it. Never touch 5n7xFQRBUvI. Grok (primary) is out of credit until 30 Oct 07:00Z, so Cursor takes it now."
+        },
+        {
+          "at": "2026-10-30T01:21Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -18923,7 +18928,15 @@
         "by": ""
       },
       "for": "cursor",
-      "model": "cursor-auto"
+      "model": "cursor-auto",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T01:21Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0242",

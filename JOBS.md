@@ -10,7 +10,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0123 | cloud | blocked | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | blocked | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0135 | mini | blocked | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
-| J0241 | mini | open | – | – | for cursor · studio · `cursor-auto` · HOS 005 s04 BW_CFAX-mxc: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188, repointed by J0948) |  |
+| J0241 | mini | claimed | cursor | 2026-10-30T01:51Z | for cursor · studio · `cursor-auto` · HOS 005 s04 BW_CFAX-mxc: Related -> wwcjcFfC-5M once the long is public, plus HOS Buffer for 31 Oct (from J0188, repointed by J0948) |  |
 | J0275 | mini | blocked | gemini | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0302 | mini | blocked | cursor | – | 032 vo · vo · `eleven_v3` · 032 Titan: VO from locked script v01 (J0301 PASS) | 97b7af4e |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
