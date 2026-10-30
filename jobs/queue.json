@@ -108585,9 +108585,14 @@
           "at": "2026-10-30T00:33Z",
           "by": "cursor",
           "what": "step 0 of 5 done: master sha256 OK 8ce07a605697; building package"
+        },
+        {
+          "at": "2026-10-30T00:34Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: old readback Private+2026-11-16T11:30:00Z; master sha OK; package+SRT ready"
         }
       ],
-      "remaining_action": "Read back -sa2t7dAtCk; build v04 package; upload Private same publishAt",
+      "remaining_action": "Dry-run then upload v04 Private with publishAt 2026-11-16T11:30:00Z",
       "due": "2026-11-15T20:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -108605,11 +108610,11 @@
         "okRef": "6507810925"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-30T00:33Z",
+        "at": "2026-10-30T00:34Z",
         "by": "cursor",
-        "note": "master sha256 OK 8ce07a605697; building package"
+        "note": "old readback Private+2026-11-16T11:30:00Z; master sha OK; package+SRT ready"
       },
       "taskKeys": [
         "HOS:004"
