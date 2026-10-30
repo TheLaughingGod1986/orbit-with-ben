@@ -110369,13 +110369,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-30T04:21Z",
-      "eta": "2026-10-30T06:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T03:52Z",
-      "result": "",
+      "result": "parked for Chief: Uranus v09 delivered (sha 458b1f67d08c5671…); all final-sha gates PASS (open/loop/polish/picture_qa/music/sfx/hitch). Evidence jobs/reviews/J1240/URANUS_V09_DELIVERY_2026-10-30.md + MOTION_DIAGNOSTIC.json. UAT iCloud+NAS playable. Do NOT repoint J1212 / ZpEA8stoSPA until Chief PASS + Ben OK. No upload.",
       "history": [
         {
           "at": "2026-10-30T03:52Z",
@@ -110421,6 +110421,11 @@
           "at": "2026-10-30T04:42Z",
           "by": "cursor",
           "what": "step 5 of 5 done: v09 sha 458b1f67… all gates PASS; flicker 2.76 vs v06 3.20; UAT/NAS delivered"
+        },
+        {
+          "at": "2026-10-30T04:42Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Uranus v09 delivered (sha 458b1f67d08c5671…); all final-sha gates PASS (open/loop/polish/picture_qa/music/sfx/hitch). Evidence jobs/reviews/J1240/URANUS_V09_DELIVERY_2026-10-30.md + MOTION_DIAGNOSTIC.json. UAT iCloud+NAS playable. Do NOT repoint J1212 / ZpEA8stoSPA until Chief PASS + Ben OK. No upload."
         }
       ],
       "remaining_action": "parked for Chief: review v09 cut + PASS (do not repoint J1212)",
