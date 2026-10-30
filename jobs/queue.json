@@ -113408,10 +113408,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T15:56Z",
+      "eta": "2026-10-30T17:56Z",
       "created_by": "codex",
       "created_at": "2026-10-30T15:46Z",
       "result": "",
@@ -113420,11 +113420,24 @@
           "at": "2026-10-30T15:46Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T15:56Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Recover at least 20 GB free safely and identify renewed disk growth blocking J1100",
       "due": "2026-10-31T12:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T15:56Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1271",
