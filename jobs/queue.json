@@ -113092,9 +113092,14 @@
           "at": "2026-10-30T16:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T16:39Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J1266; starting inspection of HOS 009 and 010 files"
         }
       ],
-      "remaining_action": "HOS 009 + 010: add Sources and provisional Chapters to the long descriptions (Chief h13 on J1261)",
+      "remaining_action": "Inspect HOS 004-007 descriptions, 009/010 FACT_NOTES_v01.md, VO_TAKES_KEEP.json, and lint:package rules",
       "due": "2026-11-18T20:00:00Z",
       "kind": "listing",
       "rerouted_from": {
@@ -113108,12 +113113,15 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-10-30T16:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1266; starting inspection of HOS 009 and 010 files"
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1267",
