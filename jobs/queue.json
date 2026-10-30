@@ -113160,17 +113160,22 @@
           "at": "2026-10-30T15:07Z",
           "by": "cursor",
           "what": "step 3 of 4 done: Data rsync finished 15:06Z. Two archive symlinks recreated on the NAS. Checksum dry-run running. tmux j1268-j1248. Log ~/_desk/logs/J1268-j1248-finish.log. Done file absent."
+        },
+        {
+          "at": "2026-10-30T15:12Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: j1248 removed after checksum zero, 7514 files, 1500142671 bytes, lsof clear. Data volume 7.8 Gi free. j1218 skipped. j1263 kept."
         }
       ],
-      "remaining_action": "Wait for j1248 checksum, then remove the local copy only if it matches",
+      "remaining_action": "Report the move on the studio thread",
       "due": "2026-10-30T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-30T15:07Z",
+        "at": "2026-10-30T15:12Z",
         "by": "cursor",
-        "note": "Data rsync finished 15:06Z. Two archive symlinks recreated on the NAS. Checksum dry-run running. tmux j1268-j1248. Log ~"
+        "note": "j1248 removed after checksum zero, 7514 files, 1500142671 bytes, lsof clear. Data volume 7.8 Gi free. j1218 skipped. j12"
       },
       "taskKeys": [
         "HOS:008"
