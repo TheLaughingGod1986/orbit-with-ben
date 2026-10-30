@@ -83685,13 +83685,13 @@
       "stage": "",
       "after": "J1005",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-30T00:24Z",
-      "eta": "2026-10-30T02:24Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T23:08Z",
-      "result": "",
+      "result": "parked for Chief: all 4 J0966 local HC re-cuts verified on disk + NAS (Jenner v04 3ef3fa773750, Harvey v04 e1f862ba737a, Dalton v04 8ce07a605697, vaccine-name v05 e5ea76f012fb), Chief PASS (J1083) + J1200 delivery + all 4 Ben swap OKs (6507268470, 6507810925, 6507831644, 6508107852) complete, and Studio swaps delegated to J1219 (done), J1223 (done), J1221 (open), J1222 (open); ready for Chief to mark J0966 done",
       "history": [
         {
           "at": "2026-10-25T23:08Z",
@@ -84157,6 +84157,11 @@
           "at": "2026-10-30T00:30Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Verified 4 local masters + 12 NAS copies SHA256; all 4 Ben OKs recorded; swaps in J1219/J1223 (done) & J1221/J1222 (open)"
+        },
+        {
+          "at": "2026-10-30T00:30Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: all 4 J0966 local HC re-cuts verified on disk + NAS (Jenner v04 3ef3fa773750, Harvey v04 e1f862ba737a, Dalton v04 8ce07a605697, vaccine-name v05 e5ea76f012fb), Chief PASS (J1083) + J1200 delivery + all 4 Ben swap OKs (6507268470, 6507810925, 6507831644, 6508107852) complete, and Studio swaps delegated to J1219 (done), J1223 (done), J1221 (open), J1222 (open); ready for Chief to mark J0966 done"
         }
       ],
       "kind": "video",
