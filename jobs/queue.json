@@ -87053,6 +87053,11 @@
           "at": "2026-10-30T11:59Z",
           "by": "relay",
           "what": "condition verification queued: J1262"
+        },
+        {
+          "at": "2026-10-30T15:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T21:45:00Z"
         }
       ],
       "kind": "review",
@@ -87088,15 +87093,14 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T19:20Z",
-      "remaining_action": "Await J1003 retention check and audit update, then non-author Chief final review",
+      "remaining_action": "Reconcile Mercury retention narrative with raw curve, then final Chief audit review",
       "hold": {
         "type": "input",
-        "condition": "J1243 verified J1003 remains open for Gemini with no result; retention-curve availability check and mature Earth audit/lab update are unfinished. Saved lifetime Studio capture 2026-10-29T07:13:31.819902Z records OVLv9dxTcpE at 887 views, 30.7% stayedToWatch and 75.3% avgViewPct; capture availability alone is not a completed readout. J1002 correction is complete (45ef75589). Require J1003 readout followed by non-author elected-Chief final audit review; no final audit PASS or production authorization.",
-        "check_at": "2026-10-30T12:59:31+00:00",
-        "last_recheck": "J1243",
-        "checked_at": "2026-10-30T05:43:25+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1262"
+        "condition": "J1262 verified J1002 (45ef75589) and J1003 (0c18bb2cb) complete; historical Studio hash and Earth 100-bucket maximum drop reproduce. Final non-author Chief audit PASS is absent. Reconcile Mercury vlkj8RQKmH8 narrative (0.18->0.19, -5.76pp) against both persisted mature raw curves (0.20->0.21, 126.22->120.63 percent, -5.59pp), including cut/VO mapping, then obtain final audit review. Original production gates and approvals remain unchanged; no production authorization.",
+        "check_at": "2026-10-30T21:45:00Z",
+        "last_recheck": "J1262",
+        "checked_at": "2026-10-30T15:37:37+00:00",
+        "checked_by": "codex"
       }
     },
     {
