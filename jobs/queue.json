@@ -1,5 +1,5 @@
 {
-  "next_id": 1248,
+  "next_id": 1249,
   "jobs": [
     {
       "id": "J0001",
@@ -111318,6 +111318,35 @@
       ],
       "remaining_action": "HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green",
       "kind": "review"
+    },
+    {
+      "id": "J1248",
+      "title": "HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude) ruling on J1241, 30 Oct. Read jobs/reviews/J1241/CHIEF_REVIEW_2026-10-30.md first. Fix exactly the five FIX rows: P3:03 (rod on roof ridge, dot stream cloud->rod tip, spark on 'pull sparks'); P3:04 composite (smaller map in the sky band, 55-65% fill, clear of hull and rigging, route on 'crossed the ocean', illustrative only); P2:15 composite (three beats on a darkened/vignetted band or paper card, legible on a phone, each on its word); P4:06 (restore one ELECTRICITY label, visible >=1.5 s from the spoken word at +5.14 s); P5:10 (METAL CONDUCTS label with the house stroke/contrast, full alpha mid-row). New versioned folders only (code_graphics_v04, rough_v05). Never overwrite v02/v03/v04 or NAS deliverables. Keep the passed rows byte-identical. Same gates, runtime <=540 s. Evidence: full-size composite frames at p25/p50/p75 of every overlay row plus a frame at the spoken word for P4:06, and a contact sheet of the 5 rows. Commit to the HOS PR, deliver repo/UAT/NAS with sha256 (copy only), park for Chief: graphics + composite PASS. No music bed, no Ben watch, no upload, no mint. GBP0.",
+      "ref": "",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T07:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T07:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling)",
+      "due": "2026-11-12T20:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
