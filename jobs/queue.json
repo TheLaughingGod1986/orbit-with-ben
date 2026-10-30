@@ -113112,9 +113112,14 @@
           "at": "2026-10-30T16:48Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Updated moon_long_description_v01.txt, clay_long_description_v01.txt, and both production-status.md files"
+        },
+        {
+          "at": "2026-10-30T16:48Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: check_all.sh and lint:package PASS on both HOS 009 and 010 (on main and with PR #387 checkChaptersAndSources)"
         }
       ],
-      "remaining_action": "Run check_all.sh and lint:package for HOS 009 and 010 and verify diff",
+      "remaining_action": "Commit, push branch, open HOS PR, verify CI green, and park J1266 for Chief",
       "due": "2026-11-18T20:00:00Z",
       "kind": "listing",
       "rerouted_from": {
@@ -113127,11 +113132,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
         "at": "2026-10-30T16:48Z",
         "by": "gemini",
-        "note": "Updated moon_long_description_v01.txt, clay_long_description_v01.txt, and both production-status.md files"
+        "note": "check_all.sh and lint:package PASS on both HOS 009 and 010 (on main and with PR #387 checkChaptersAndSources)"
       },
       "taskKeys": [
         "HOS:009",
