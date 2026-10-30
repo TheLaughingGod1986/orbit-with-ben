@@ -115315,18 +115315,23 @@
           "at": "2026-10-30T22:13Z",
           "by": "cursor",
           "what": "step 0 of 7 done: Claimed. df shows 4.8 GiB free before moves."
+        },
+        {
+          "at": "2026-10-30T22:20Z",
+          "by": "cursor",
+          "what": "step 1 of 8 done: Inventory done. 4714 MB free. Starting precheck copies."
         }
       ],
-      "remaining_action": "Inventory scratch folders, confirm NAS, skip any with open handles",
+      "remaining_action": "Copy superseded HOS 008 precheck renders to the NAS",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
-        "step": 0,
-        "of": 7,
-        "at": "2026-10-30T22:13Z",
+        "step": 1,
+        "of": 8,
+        "at": "2026-10-30T22:20Z",
         "by": "cursor",
-        "note": "Claimed. df shows 4.8 GiB free before moves."
+        "note": "Inventory done. 4714 MB free. Starting precheck copies."
       },
       "taskKeys": [
         "HOS:008"
