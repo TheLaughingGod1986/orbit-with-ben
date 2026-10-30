@@ -469,3 +469,5 @@
 {"at": "2026-10-30T14:51:19Z", "kind": "record", "pool": "elevenlabs", "left": 121114.0, "total": 121114.0, "note": "J1255 live subscription GET 2026-10-30T14:50:53Z HTTP 200 active; 0 used. No spend. Titan J0302 still open, so J0345 remains held.", "by": "codex"}
 {"at": "2026-10-30T14:54:21Z", "kind": "record", "pool": "elevenlabs", "left": 121114.0, "total": 121114.0, "note": "J1256 read-only GET /v1/user/subscription HTTP 200 at 2026-10-30T14:54:03Z: active Creator, character_count 0; renewed subscription verified; no spend", "by": "codex"}
 {"at": "2026-10-30T18:04:09Z", "kind": "record", "pool": "elevenlabs", "left": 121114.0, "total": 121114.0, "note": "J0302 pre-spend: Titan v02 7879 chars; HOS first for Nov but balance covers this take", "by": "cursor"}
+{"at": "2026-10-30T18:07:01Z", "kind": "spend", "pool": "elevenlabs", "amount": 7879.0, "film": "OWB:032", "what": "VO take titan_landing_vo_v01", "by": "vo_take"}
+{"at": "2026-10-30T18:11:34Z", "kind": "record", "pool": "elevenlabs", "left": 117448.0, "total": 121114.0, "note": "J0302 after Titan v02: subscription used 3666 of 121114 (text 7879); remaining 117448", "by": "cursor"}
