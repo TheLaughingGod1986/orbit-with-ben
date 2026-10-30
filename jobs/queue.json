@@ -97811,13 +97811,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-29T00:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "Waiting for: 30 Oct 10:50 UTC ElevenLabs reset reached and live subscription balance sufficient for authorized S2/S5 pickups; no overage",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -98023,6 +98023,11 @@
           "at": "2026-10-30T10:50Z",
           "by": "relay",
           "what": "condition verification queued: J1253"
+        },
+        {
+          "at": "2026-10-30T14:42Z",
+          "by": "codex",
+          "what": "reopened: J1253 verified at 2026-10-30T14:41:28Z: live ElevenLabs active Creator, 0/121114 used, 121114 remaining, extension flags false; next reset 30 Nov. Authorized S2/S5 text <=160 chars. Evidence PR356 commit4484866d8. Credit hold satisfied; reopen for repairs only under 29 Oct Chief ruling. Resume prior 2/3 plan (reopen clears displayed progress). S6 whole-loop9.26 FAIL remains; no waiver, music generation, upload or swap. Preserve all gates, Gemini listening, Chief review/Ben watch, deadlines and scheduled-v01 fallback. Worker must re-read balance under lock before each pickup and honor 20GB render guard (current7.4GB; NAS dry-run no eligible scratch)."
         }
       ],
       "remaining_action": "Verify reset/live credits, record authorized pickups, resolve v06 loop failure, finish gates and review delivery",
@@ -98041,20 +98046,7 @@
         "OWB:028"
       ],
       "escalated_at": "2026-10-28T22:00Z",
-      "urgent": 1,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-29T00:40Z",
-        "by": "codex",
-        "note": "Completed prior Gemini S6 v06 review collected verbatim; six payload hashes verified in durable local _desk copy. Whole "
-      },
-      "hold": {
-        "type": "credits",
-        "condition": "30 Oct 10:50 UTC ElevenLabs reset reached and live subscription balance sufficient for authorized S2/S5 pickups; no overage",
-        "check_at": "2026-10-30T11:50:27+00:00",
-        "recheck_task": "J1253"
-      }
+      "urgent": 1
     },
     {
       "id": "J1101",
