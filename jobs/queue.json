@@ -113947,10 +113947,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-30T17:34Z",
+      "eta": "2026-10-30T19:34Z",
       "created_by": "relay",
       "created_at": "2026-10-30T17:07Z",
       "result": "",
@@ -113959,13 +113959,26 @@
           "at": "2026-10-30T17:07Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T17:34Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Wait for actual thumbnail-test completion and the following London day before the title-only test",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-10-30T18:07:43+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T17:34Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
