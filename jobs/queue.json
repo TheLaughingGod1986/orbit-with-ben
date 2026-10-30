@@ -114244,9 +114244,14 @@
           "at": "2026-10-30T20:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T20:08Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1275; checking HOS PR #389 (1fb32488) checks and merge state"
         }
       ],
-      "remaining_action": "HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut",
+      "remaining_action": "Merge HOS PR #389 (1fb32488) once 4 checks are green, then wait for 009 and 010 locked cuts to re-time Chapters",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -114259,12 +114264,15 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T20:06Z",
+        "of": 4,
+        "at": "2026-10-30T20:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1275; checking HOS PR #389 (1fb32488) checks and merge state"
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1276",
