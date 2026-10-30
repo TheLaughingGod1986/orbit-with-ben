@@ -36,6 +36,7 @@ Instagram and Threads got the OLD v05 cut on 28 Oct (Buffer can't swap media on 
 
 ## The replication test (J1279)
 
+- **Drafted scripts, NASA sources, £0 picture plan, and upload packages (`J1279`):** `00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/SCRIPTS_AND_PACKAGING_v01.md` (parked for Chief `script PASS`).
 - Make 3 more Shorts in the Apophis mould, £0 to script:
   - a real dated event or a "could it hit us / can I see it" question;
   - the subject named and the surprise claim inside 1 s;
