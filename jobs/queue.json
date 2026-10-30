@@ -112243,16 +112243,21 @@
           "at": "2026-10-30T11:50Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected 007 SHORTS_UPLOAD_INDEX.json, s04/s05 and v04/v05 PACKAGE_MANIFEST.json, SHORTS_RELEASE.json, fix_published_playback_lag.py, and production-status.md"
+        },
+        {
+          "at": "2026-10-30T11:54Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Repointed 007 SHORTS_UPLOAD_INDEX.json, SHORTS_RELEASE.json, s04/s05 PACKAGE_MANIFEST.json, v04/v05 meta JSONs, LAUNCH_PLAN.md, SHORTS_LOG.md, and production-status.md to cLKDiYP55J8 / xgx2lYHhYZM"
         }
       ],
-      "remaining_action": "Update 007 SHORTS_UPLOAD_INDEX.json, old s04/s05 manifests, SHORTS_RELEASE.json, meta JSONs, and production-status.md in clean HOS worktree",
+      "remaining_action": "Verify fix_published_playback_lag.py dry-run, lint:package, and check_all.sh",
       "kind": "listing",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T11:50Z",
+        "at": "2026-10-30T11:54Z",
         "by": "gemini",
-        "note": "Inspected 007 SHORTS_UPLOAD_INDEX.json, s04/s05 and v04/v05 PACKAGE_MANIFEST.json, SHORTS_RELEASE.json, fix_published_pl"
+        "note": "Repointed 007 SHORTS_UPLOAD_INDEX.json, SHORTS_RELEASE.json, s04/s05 PACKAGE_MANIFEST.json, v04/v05 meta JSONs, LAUNCH_P"
       },
       "taskKeys": [
         "HOS:007"
