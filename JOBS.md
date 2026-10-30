@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | open | – | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1277 | mini | open | – | – | for gemini · listing · `gemini-argon` · Facebook Reels post as 'Untitled Video': send the Reel title through Buffer (+ readback on the Apophis Reel) |  |
 | J1279 | mini | open | – | – | for gemini · script · `gemini-argon` · OWB: 3 Shorts in the Apophis mould (Facebook replication test), scripts + packaging, park for Chief |  |
-| J1281 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J1281 | any | claimed | claude | 2026-10-30T20:52Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1282 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 | J1283 | mini | claimed | cursor | 2026-10-30T20:40Z | for cursor · assembly · Chief h21: move superseded HOS 008 /tmp scratch to NAS (mini ~3 GB free) | 6530515205 |
 
