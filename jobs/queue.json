@@ -114875,7 +114875,7 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -114922,6 +114922,11 @@
           "at": "2026-10-30T21:17Z",
           "by": "chief",
           "what": "reopened: Chief h25 (OWB #264 6533643461): ruled; h21 moves PASS; follow-on copy-first move queued."
+        },
+        {
+          "at": "2026-10-30T21:18Z",
+          "by": "chief",
+          "what": "cancelled: closed by Chief h25 (OWB #264 6533643461): Cursor's h21 work PASS (four superseded HOS 008 folders on NAS, sha256/count/bytes matched, NAS untouched, 3.5 -> 6.7 GB). Not redone; the remaining space work moves to J1290 (copy-first move of superseded 008 precheck/rough + done-job scratch, ~9.9 GB). Closed as cancelled only because jobs.py cannot let chief claim a for-cursor job to mark it done."
         }
       ],
       "remaining_action": "Parked for Chief: disk still under 10 GB after the four scratch moves",
