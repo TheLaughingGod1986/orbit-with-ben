@@ -115668,10 +115668,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T23:57Z",
+      "eta": "2026-10-31T01:57Z",
       "created_by": "chief",
       "created_at": "2026-10-30T23:55Z",
       "result": "",
@@ -115680,12 +115680,25 @@
           "at": "2026-10-30T23:55Z",
           "by": "chief",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-10-30T23:57Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief h30: provenance inventory + copy-first NAS move of ~/_desk done-job scratch to reach >=20 GiB (Mini 17.1 GiB free)",
       "for": "cursor",
       "kind": "assembly",
-      "urgent": 2
+      "urgent": 2,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T23:57Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
