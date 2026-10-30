@@ -44,12 +44,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1244 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J1247 | mini | claimed | gemini | 2026-10-30T11:29Z | 009 picture · review · HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green |  |
 | J1248 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling) |  |
 | J1249 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1247 done: HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green (Verified check_all.sh 009 ALL CHECKS PASS on HOS PR #377 head (f65645f6) and CI green (no-desk-close, no-media, status-board, Studio core check = SUCCESS, MERGEABLE/CLEAN); squash-merged HOS PR #377 (gemini/j1192-009-tranche1-flow-mint, J1192 tranche 1 records + J1237 motion evidence incl. P04:10 IN >= 1.083 s edit note) into history-of-science main at fa9c6c3c92a35b24518befaba74756050798ba5c, deleted the branch, pulled main, and verified check_all.sh 009 ALL CHECKS PASS on main. Desk #180 6519646714. No mint, no spend. GBP0.)
 - J1246 cancelled: Chief: verify condition for J1192 ()
 - J1245 done: Chief: verify condition for J0999 (Verified: J0999 condition unmet (HOS PR #365 draft, awaiting Ben's checker-fix OK via J0998). J0999 re-held to 31 Oct 09:00Z. Diff read: narrow dedup, no check removed.)
 - J1243 done: Chief: verify condition for J0985 (Verified original J0985 ruling, J1002 correction 45ef75589, J1211 reopening and saved mature Studio capture. J1003 remains open for Gemini with no result; audit still records mature read pending. Retained J0985 blocked via wait --recheck J1243, next verification 2026-10-30T11:45:00Z. Needs retention availability check, audit/lab update, then non-author elected-Chief final review. Readback passed. No spend or publishing changes. Low-disk NAS offload checked: no eligible old scratch.)
@@ -59,4 +59,3 @@ Recently finished:
 - J1239 cancelled: Chief: verify condition for J0966 ()
 - J1238 done: Chief: verify condition for J1130 (Verified thumbnail-only test still running in live HOS Studio (two variants, estimated 12 days 20 hours). J1130 remains blocked; next check 2026-10-30 10:15 UTC. Evidence ~/_desk/handoff/J1238/hos_test_report.txt and .png. No YouTube settings changed.)
 - J1237 done: HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief (Acting Chief (Claude) 30 Oct: evidence accepted (review_J1192_motion on HOS PR #377 f65645f6; contact grids checked).)
-- J1236 done: Chief: verify condition for J0999 (Verified unmet: PR365 unchanged draft OPEN a87cd56a without approval or merge; PR358 OPEN c26a79bd. J0999 blocked; next recheck 2026-10-30T07:45:00Z. No Studio writes, merge or spend.)
