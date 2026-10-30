@@ -1,5 +1,5 @@
 {
-  "next_id": 1291,
+  "next_id": 1293,
   "jobs": [
     {
       "id": "J0001",
@@ -86091,6 +86091,11 @@
           "at": "2026-10-30T15:42Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T21:45:00Z"
+        },
+        {
+          "at": "2026-10-30T21:51Z",
+          "by": "relay",
+          "what": "condition verification queued: J1291"
         }
       ],
       "kind": "listing",
@@ -86117,10 +86122,11 @@
       "hold": {
         "type": "input",
         "condition": "J1269 live Studio reload 30 Oct 15:41Z still shows A/B testing titles / Results ready on GHZDsiH7L7A. Original title and Public remain. Earlier API restriction UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE is not proven cleared; no write probe made. PR 354 holds prior refusal and originals verification.",
-        "check_at": "2026-10-30T21:45:00Z",
+        "check_at": "2026-10-30T22:51:28+00:00",
         "last_recheck": "J1269",
         "checked_at": "2026-10-30T15:42:53+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1291"
       }
     },
     {
@@ -87216,6 +87222,11 @@
           "at": "2026-10-30T15:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T21:45:00Z"
+        },
+        {
+          "at": "2026-10-30T21:51Z",
+          "by": "relay",
+          "what": "condition verification queued: J1292"
         }
       ],
       "kind": "review",
@@ -87255,10 +87266,11 @@
       "hold": {
         "type": "input",
         "condition": "J1262 verified J1002 (45ef75589) and J1003 (0c18bb2cb) complete; historical Studio hash and Earth 100-bucket maximum drop reproduce. Final non-author Chief audit PASS is absent. Reconcile Mercury vlkj8RQKmH8 narrative (0.18->0.19, -5.76pp) against both persisted mature raw curves (0.20->0.21, 126.22->120.63 percent, -5.59pp), including cut/VO mapping, then obtain final audit review. Original production gates and approvals remain unchanged; no production authorization.",
-        "check_at": "2026-10-30T21:45:00Z",
+        "check_at": "2026-10-30T22:51:28+00:00",
         "last_recheck": "J1262",
         "checked_at": "2026-10-30T15:37:37+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1292"
       }
     },
     {
@@ -115284,6 +115296,68 @@
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2
+    },
+    {
+      "id": "J1291",
+      "title": "Chief: verify condition for J0978",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0978: J1269 live Studio reload 30 Oct 15:41Z still shows A/B testing titles / Results ready on GHZDsiH7L7A. Original title and Public remain. Earlier API restriction UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE is not proven cleared; no write probe made. PR 354 holds prior refusal and originals verification.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0978 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T21:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T21:51Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify the finished Atom title test no longer blocks the approved Test B metadata update",
+      "kind": "chief",
+      "recheck_of": "J0978",
+      "due": "2026-10-30T22:51:28+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1292",
+      "title": "Chief: verify condition for J0985",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0985: J1262 verified J1002 (45ef75589) and J1003 (0c18bb2cb) complete; historical Studio hash and Earth 100-bucket maximum drop reproduce. Final non-author Chief audit PASS is absent. Reconcile Mercury vlkj8RQKmH8 narrative (0.18->0.19, -5.76pp) against both persisted mature raw curves (0.20->0.21, 126.22->120.63 percent, -5.59pp), including cut/VO mapping, then obtain final audit review. Original production gates and approvals remain unchanged; no production authorization.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0985 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-30T21:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T21:51Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Reconcile Mercury retention narrative with raw curve, then final Chief audit review",
+      "kind": "chief",
+      "recheck_of": "J0985",
+      "due": "2026-10-30T22:51:28+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],

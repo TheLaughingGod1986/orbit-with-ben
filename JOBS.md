@@ -48,6 +48,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1288 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 | J1289 | mini | open | – | – | 032 vo · assembly · 032 Titan: assemble locked VO titan_landing_vo_v02a (v02 parts + 20 ms ch00/ch02 tail fades, no spend), record VO lock (Chief h23 on J0302) | 6533350373 |
 | J1290 | mini | open | – | – | for cursor · assembly · Chief h25: copy-first move superseded HOS 008 precheck/rough scratch + done-job scratch to NAS (~9.9 GB, Mini 6.6 GB free) | 6533643461 |
+| J1291 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
+| J1292 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 
 Recently finished:
 
