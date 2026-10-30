@@ -114456,13 +114456,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-30T21:19Z",
-      "eta": "2026-10-30T23:19Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T17:55Z",
-      "result": "",
+      "result": "Chief (Grok) h27, OWB #264 6533675412 (PR note 6533675945): PASS. OWB PR #358 head 3c734de39 squash-merged as dd97af235. Facebook Reels send assets[0].video.metadata.title (YouTube title, else social.hook); metadata.facebook stays {type: reel}; IG/TikTok unchanged; tests cover Short, trailer and hook fallback; CI green. Already-sent Reels keep 'Untitled Video' (no Buffer edit). GBP0.",
       "history": [
         {
           "at": "2026-10-30T17:55Z",
@@ -114518,6 +114518,11 @@
           "at": "2026-10-30T21:19Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T21:19Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h27, OWB #264 6533675412 (PR note 6533675945): PASS. OWB PR #358 head 3c734de39 squash-merged as dd97af235. Facebook Reels send assets[0].video.metadata.title (YouTube title, else social.hook); metadata.facebook stays {type: reel}; IG/TikTok unchanged; tests cover Short, trailer and hook fallback; CI green. Already-sent Reels keep 'Untitled Video' (no Buffer edit). GBP0."
         }
       ],
       "remaining_action": "Review and merge PR #358 (CI green)",
@@ -114533,7 +114538,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6533675412"
     },
     {
       "id": "J1278",
