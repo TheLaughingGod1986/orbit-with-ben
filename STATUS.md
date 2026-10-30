@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 032 | vo | cursor | 2026-10-30T18:01Z | 2026-10-30T19:30Z | J0302 032 Titan: VO from locked script v01 (J0301 PASS) |
+| 032 | vo | cursor | 2026-10-30T18:02Z | 2026-10-30T19:12Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
