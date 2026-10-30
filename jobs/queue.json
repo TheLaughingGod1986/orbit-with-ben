@@ -110184,16 +110184,21 @@
           "at": "2026-10-30T03:47Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1237; starting step 1"
+        },
+        {
+          "at": "2026-10-30T03:49Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified 3 clips (1280x720, 24fps, 8.0s, sha256 matches ledger) and board use_s (7.0s, 3.76s, 5.34s)"
         }
       ],
-      "remaining_action": "Inspect PR #377, desk #6511102950, and locate the 3 clips and board in/out points for HOS 009",
+      "remaining_action": "Export full-size PNG strips, 1-row contact sheets, and frame-difference plots for the 3 flagged windows (+0.5 s either side)",
       "kind": "qa",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T03:47Z",
+        "at": "2026-10-30T03:49Z",
         "by": "gemini",
-        "note": "Claimed J1237; starting step 1"
+        "note": "Verified 3 clips (1280x720, 24fps, 8.0s, sha256 matches ledger) and board use_s (7.0s, 3.76s, 5.34s)"
       },
       "taskKeys": [
         "HOS:009"
