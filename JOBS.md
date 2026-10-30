@@ -49,6 +49,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1289 | mini | claimed | cursor | 2026-10-31T00:50Z | 032 vo · assembly · 032 Titan: assemble locked VO titan_landing_vo_v02a (v02 parts + 20 ms ch00/ch02 tail fades, no spend), record VO lock (Chief h23 on J0302) | 6533350373 |
 | J1291 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 | J1292 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
+| J1293 | mini | open | – | – | for cursor · assembly · Chief h30: provenance inventory + copy-first NAS move of ~/_desk done-job scratch to reach >=20 GiB (Mini 17.1 GiB free) | 6535964806 |
 
 Recently finished:
 

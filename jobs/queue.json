@@ -1,5 +1,5 @@
 {
-  "next_id": 1293,
+  "next_id": 1294,
   "jobs": [
     {
       "id": "J0001",
@@ -115651,6 +115651,35 @@
       "recheck_of": "J0985",
       "due": "2026-10-30T22:51:28+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1293",
+      "title": "Chief h30: provenance inventory + copy-first NAS move of ~/_desk done-job scratch to reach >=20 GiB (Mini 17.1 GiB free)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling h30 on J1290 (OWB #264). The Mini has 17.1 GiB free (df 17 Gi avail; diskutil 18.3 GB not allocated at 23:53Z). J1100 resumes at >=20 GiB and the relay's J1100 condition check is 31 Oct 03:00Z, so this is urgent. GBP0.\n\nDestination: /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-30/ (it exists), or a dated sibling such as .../2026-10-31/ if you start after midnight UTC. Use one subfolder per source item, named after it. Create only missing folders. Never overwrite or delete anything on the NAS.\n\nMethod, exactly as in h25/J1290, one folder at a time:\n- First run `lsof +D <folder>` and skip any folder with open handles; say which ones you skipped.\n- Copy with COPYFILE_DISABLE=1 (rsync/nas_offload copy_verified, not shutil.copy2).\n- sha256 every source file and check it against the same path on the NAS. Source file count and byte total must match. Compare against the source file list and ignore NFS ._* sidecars; don't delete them. Write FILE_LIST.txt, SHA256SUMS.txt, SYMLINKS.txt and MOVED_FROM.txt into the NAS folder.\n- Only when all three match, remove the local folder and leave MOVED_TO_NAS.txt (NAS path, file count, bytes, time, owning job).\n- Never delete without a verified copy.\n\nStep 1. Provenance inventory first, before you move anything. Write it to ~/_desk/logs/J<this id>-inventory.md and paste it into the report. For each subfolder of ~/_desk/renders and ~/_desk/scratch, and for each of ~/_desk/wt-j1192-hos, ~/_desk/007, ~/_desk/watch_proxies, ~/_desk/tmp-item9 and ~/_desk/worktrees/* , record:\n- size and newest mtime\n- any job id or film in its path or contents (READMEs, logs, json, git branch name)\n- whether any open, claimed or blocked job references it: grep OWB jobs/queue.json (bodies, results, history) for the folder name and for its job id, and check that job's status\n- git worktrees only: HEAD sha, branch, `git status --porcelain` count, and whether the branch is in sync with origin\n\nChief's pre-read at 23:55Z, for planning only (verify it yourself):\n- ~/_desk/renders (1941 MB) is almost all J1100* (protected). Only J1032, J1032-finish08 and J1032-finish12 are not J1100, and those are already stubs. Expect ~0 from renders.\n- ~/_desk/scratch (1591 MB): chief/relay-wt 844 MB, chief/j1067 524 MB, gemini-j0240-wt 106 MB, silent-sweep 37 MB, and small files.\n- ~/_desk/worktrees/analytics (504 MB): HEAD 85ae199ce, clean.\n- wt-j1192-hos 330 MB, 007 279 MB, watch_proxies 260 MB, tmp-item9 249 MB.\n- The named list may yield only about 2.5 GB, and 20 GiB needs about 2.9 GiB more. So also inventory the other top-level ~/_desk folders tied to a job id or a shipped film (reviews 238 MB, 006 211 MB, j0329-code-graphics-v01 135 MB, j1106 97 MB, J0232-venus-short 79 MB, J1107 77 MB, j0099 39 MB, the J02xx thumbnail folders and the like). Inventory the small done-job scratch left in /private/tmp too (not j1100_*). Apply the same rules to them.\n\nStep 2. Move, largest first, only items that pass all of these:\n- tied to a done or cancelled job, or to a shipped film\n- not referenced by any non-done job\n- `lsof +D` clear\n\nFor git worktrees: record HEAD sha and branch in MOVED_TO_NAS.txt and confirm the tree is clean. If it isn't clean, the copy keeps the untracked and modified files. After the verified move, run `git worktree prune` in the owning main repo only. No branch deletes, nothing on remote, no resets.\n\nDo NOT touch:\n- ~/_desk/venvs, ~/_desk/venv-graphics, ~/_desk/venv-owb-gfx, ~/_desk/cache (live tooling; no cache deletes)\n- any J1100 scratch (~/_desk/renders/J1100*, /private/tmp/j1100_*)\n- HOS 008 _precheck/rough_v12, rough_v08, 07_Edit-Project/master_v01 and master_v02, ~/_desk/008, NAS scratch/J1287 (J1287 reopened as master v02 under h29)\n- J1289 Titan assembly inputs (~/_desk/032 and anything J1289 reads; it's claimed now)\n- ~/_desk/scratch/chief/relay-wt and board-wt (relay and board tooling), ~/_desk/bin, state, logs, handoff, MINI_RUNBOOK.md\n- agent homes (.cursor, .gemini, .codex), personal folders (Library/Messages, Documents, Pictures, Desktop, Downloads), browser profiles\n- anything whose owner you can't establish: list it, don't move it\nNo reboot. The VM swap shrinks by itself.\n\nReport on OWB #264 with a [Chief] prefix:\n- free space before and after (df, and diskutil \"Not Allocated\")\n- the inventory table\n- for each moved folder: file count, bytes, NAS path, owning job and status\n- for each skipped folder: the reason (lsof, live job, unknown owner, protected)\n\nIf free space is >=20 GiB, mark the job done and say so: the relay's J1100 condition check (31 Oct 03:00Z) decides on J1100/J0936. If it's still under 20 GiB, park for Chief with the remaining candidates (path, size, owner, status), unmoved.\n\nGBP0. Never print secrets.\n",
+      "ref": "6535964806",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T23:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T23:55Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Chief h30: provenance inventory + copy-first NAS move of ~/_desk done-job scratch to reach >=20 GiB (Mini 17.1 GiB free)",
+      "for": "cursor",
+      "kind": "assembly"
     }
   ],
   "focus": [],
