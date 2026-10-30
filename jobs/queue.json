@@ -109272,9 +109272,14 @@
           "at": "2026-10-30T00:43Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T00:43Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Record the Magnetic Field Flip voiceover",
+      "remaining_action": "Verify renewed ElevenLabs credit and Titan priority for Magnetic Field Flip VO",
       "kind": "chief",
       "recheck_of": "J0345",
       "due": "2026-10-30T01:05:39+00:00",
@@ -109283,10 +109288,12 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-30T00:43Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:031",
+        "OWB:032"
+      ]
     },
     {
       "id": "J1231",
