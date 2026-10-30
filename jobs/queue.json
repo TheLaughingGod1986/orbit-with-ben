@@ -112176,13 +112176,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T14:49Z",
-      "eta": "2026-10-30T16:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T10:55Z",
-      "result": "",
+      "result": "Live API verified 121114 characters remaining; enough for both scripts, but Titan J0302 remains open and unserved. J0345 stays blocked on Titan-first ordering; retry 2026-10-30T20:51Z with fresh balance. Sanitized evidence and ledger b842ca945. No spend, upload or schedule change.",
       "history": [
         {
           "at": "2026-10-30T10:55Z",
@@ -112213,6 +112213,11 @@
           "at": "2026-10-30T14:51Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence b842ca945 committed; J0345 hold now identifies unserved Titan, with recheck 30 Oct 20:51Z. No spend or publishing changes."
+        },
+        {
+          "at": "2026-10-30T14:51Z",
+          "by": "codex",
+          "what": "done: Live API verified 121114 characters remaining; enough for both scripts, but Titan J0302 remains open and unserved. J0345 stays blocked on Titan-first ordering; retry 2026-10-30T20:51Z with fresh balance. Sanitized evidence and ledger b842ca945. No spend, upload or schedule change."
         }
       ],
       "remaining_action": "Verification complete; 031 awaits priority Titan VO",
@@ -112230,7 +112235,8 @@
       "taskKeys": [
         "OWB:031",
         "OWB:032"
-      ]
+      ],
+      "done_ref": "b842ca945"
     },
     {
       "id": "J1256",
