@@ -115121,16 +115121,21 @@
           "at": "2026-10-30T21:01Z",
           "by": "cursor",
           "what": "step 0 of 7 done: Claimed J1287. Picture lock is rough v12; next is the ruling, the v12 file, and an ElevenLabs dry-run before any bed take."
+        },
+        {
+          "at": "2026-10-30T21:06Z",
+          "by": "cursor",
+          "what": "step 1 of 7 done: v12 sha256 d032e5fb matches the picture lock (12923 frames, 539.626 s). ElevenLabs 113013 of 121114 left. J0302 VO is done and J0345 is already parked, so J0807 cannot take the lock yet. Dry-run next, then one bed take."
         }
       ],
-      "remaining_action": "Read h22/h21, locate locked v12, dry-run the one music bed",
+      "remaining_action": "One ElevenLabs music bed take under desk-lock, then house SFX cues",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 7,
-        "at": "2026-10-30T21:01Z",
+        "at": "2026-10-30T21:06Z",
         "by": "cursor",
-        "note": "Claimed J1287. Picture lock is rough v12; next is the ruling, the v12 file, and an ElevenLabs dry-run before any bed tak"
+        "note": "v12 sha256 d032e5fb matches the picture lock (12923 frames, 539.626 s). ElevenLabs 113013 of 121114 left. J0302 VO is do"
       },
       "taskKeys": [
         "HOS:008"
