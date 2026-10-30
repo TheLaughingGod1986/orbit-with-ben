@@ -113143,9 +113143,14 @@
           "at": "2026-10-30T20:02Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Updated rules.ts (release-stage checkChaptersAndSources + lintLongPackage), hos-contract.test.ts (3 new release/draft cases), and STUDIO_PLAYBOOK.md §9"
+        },
+        {
+          "at": "2026-10-30T20:03Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: vitest (18 test files / 145 tests, 27 in hos-contract), package-lint (exit 0: 006/007 PASS, 008/009/010 PASS with warn), and check_all.sh all PASS"
         }
       ],
-      "remaining_action": "Run vitest, package-lint.ts, and check_all.sh locally to verify all tests pass and package-lint exits 0",
+      "remaining_action": "Commit on gemini/j1259-release-gate-chapters-sources, push to PR #387, and verify CI checks",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -113157,11 +113162,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T20:02Z",
+        "at": "2026-10-30T20:03Z",
         "by": "gemini",
-        "note": "Updated rules.ts (release-stage checkChaptersAndSources + lintLongPackage), hos-contract.test.ts (3 new release/draft ca"
+        "note": "vitest (18 test files / 145 tests, 27 in hos-contract), package-lint (exit 0: 006/007 PASS, 008/009/010 PASS with warn),"
       }
     },
     {
