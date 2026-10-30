@@ -22361,13 +22361,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-30T01:00Z",
-      "eta": "2026-10-30T02:00Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T08:47Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-15T08:47Z",
@@ -22517,6 +22517,11 @@
           "at": "2026-10-30T01:20Z",
           "by": "cursor",
           "what": "step 4 of 4 done: 7/7 Related OK; audit committed hos 509f7b2f"
+        },
+        {
+          "at": "2026-10-30T01:20Z",
+          "by": "cursor",
+          "what": "done: done"
         }
       ],
       "kind": "studio",
