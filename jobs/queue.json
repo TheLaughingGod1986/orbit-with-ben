@@ -1,5 +1,5 @@
 {
-  "next_id": 1247,
+  "next_id": 1248,
   "jobs": [
     {
       "id": "J0001",
@@ -111285,6 +111285,34 @@
       "recheck_of": "J1192",
       "due": "2026-10-30T08:52:21+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1247",
+      "title": "HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude) 30 Oct: J1192 tranche 1 PASSED (see its result for the P04:10 IN >= 1.083 s edit note). Merge HOS PR #377 (gemini/j1192-009-tranche1-flow-mint, records + review_J1192_motion evidence) if all checks are green: run the repo's check_all.sh on the PR head first. Squash merge, never force-push. If a check is red, fix only the records, or block naming the check. No mint, no spend. GBP0.",
+      "ref": "",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-30T07:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T07:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green",
+      "kind": "review"
     }
   ],
   "focus": [],

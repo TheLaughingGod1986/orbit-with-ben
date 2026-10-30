@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1241 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) |  |
 | J1244 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1245 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
+| J1247 | mini | open | – | – | 009 picture · review · HOS 009: merge picture-records PR #377 (J1192 tranche 1 PASS) once checks are green |  |
 
 Recently finished:
 
