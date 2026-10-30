@@ -114418,9 +114418,14 @@
           "at": "2026-10-30T20:20Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Introspected Buffer schema and read back Apophis FB Reel 6ae325220c2cf67057729db8: FacebookPostMetadataInput has no title field, but VideoMetadataInput (assets[0].video.metadata.title) exists and defaults to 'Untitled Video' when omitted; Apophis text carries Full film: https://youtu.be/VBaYRPp85Sw"
+        },
+        {
+          "at": "2026-10-30T20:22Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Updated buffer-mirror.ts to pass video.metadata.title (YouTube title || social.hook) on Facebook Reels and added unit tests in buffer-mirror.test.ts; typecheck, lint, 187/187 tests, and core_sync check all PASS"
         }
       ],
-      "remaining_action": "Set assets[0].video.metadata.title for Facebook Reels in buffer-mirror.ts and add unit tests",
+      "remaining_action": "Commit, push branch, open OWB PR with CI green, and park J1277 for review/merge",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -114432,11 +114437,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-30T20:20Z",
+        "at": "2026-10-30T20:22Z",
         "by": "gemini",
-        "note": "Introspected Buffer schema and read back Apophis FB Reel 6ae325220c2cf67057729db8: FacebookPostMetadataInput has no titl"
+        "note": "Updated buffer-mirror.ts to pass video.metadata.title (YouTube title || social.hook) on Facebook Reels and added unit te"
       },
       "taskKeys": [
         "OWB:030",
