@@ -106235,6 +106235,11 @@
           "at": "2026-10-30T01:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-30T01:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-30T07:45:00Z"
         }
       ],
       "remaining_action": "Resolve three motion flags and review existing tranche-1 plates on PR377; generation complete",
@@ -106254,12 +106259,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Tranche 1 already minted (57/57); HOS PR377 at bd45df1f needs documented continuous-playback resolution of freeze flags P01:03_table_three (3.333-4.375s), P04:07_put_aside (7.083s to end), P04:10_write_it_down_c1 (0-1.042s), then Chief tranche-1 review/PASS. Do not restart generation on predecessor completion.",
-        "check_at": "2026-10-30T01:31:33+00:00",
-        "last_recheck": "J1228",
-        "checked_at": "2026-10-29T23:37:54+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1235"
+        "condition": "Tranche 1 is already minted (57/57). PR377 remains unchanged at bd45df1f; desk #6511102950 still requires documented continuous-playback adjudication of P01:03_table_three (3.333-4.375s), P04:07_put_aside (7.083s to end), P04:10_write_it_down_c1 (0-1.042s), followed by Chief tranche-1 review/PASS. No newer resolution found on PR or desk. Do not restart generation.",
+        "check_at": "2026-10-30T07:45:00Z",
+        "last_recheck": "J1235",
+        "checked_at": "2026-10-30T01:37:52+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-10-30T01:35Z"
     },
