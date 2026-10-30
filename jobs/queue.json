@@ -1,5 +1,5 @@
 {
-  "next_id": 1267,
+  "next_id": 1268,
   "jobs": [
     {
       "id": "J0001",
@@ -112533,13 +112533,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-30T12:54Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-10-30T13:21Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T12:28Z",
-      "result": "parked for Chief: graphics + composite review of rough v08 (in-point 4.541667s frame 109, master c1f952a7, gates PASS, evidence 65f5f782 on PR 385)",
+      "result": "Chief (Grok) h14 30 Oct: rough v08 (c1f952a7, HOS PR #385) FIX on P5:10 only, not a finished-film PASS. Verified in stills: 06_rod_fitting_t1 hammer pops into his left hand at frames 152-155 (6.33-6.46 s) with no pickup and shrinks away by frame 168 (~7.0 s), inside the 109-179 window; clean unused stretch is frames 105-151 only (<71). c1 tail and 18_rod_closeup tail rejected as plates. Lock everything else byte-identical. Fix: P5:10 = t1 frames 109-150 (42 frames, 459.297-461.047 s) with a re-timed 42-frame alpha; 11_safe_path takes the freed 29 frames as a lead-in, all its events at v08 film times; durations unchanged. Follow-up J1267 (rough v09). GBP0.",
       "history": [
         {
           "at": "2026-10-30T12:28Z",
@@ -112605,20 +112605,29 @@
           "at": "2026-10-30T12:58Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: graphics + composite review of rough v08 (in-point 4.541667s frame 109, master c1f952a7, gates PASS, evidence 65f5f782 on PR 385)"
+        },
+        {
+          "at": "2026-10-30T13:21Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-30T13:21Z",
+          "by": "chief",
+          "what": "claimed for Chief done"
+        },
+        {
+          "at": "2026-10-30T13:21Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h14 30 Oct: rough v08 (c1f952a7, HOS PR #385) FIX on P5:10 only, not a finished-film PASS. Verified in stills: 06_rod_fitting_t1 hammer pops into his left hand at frames 152-155 (6.33-6.46 s) with no pickup and shrinks away by frame 168 (~7.0 s), inside the 109-179 window; clean unused stretch is frames 105-151 only (<71). c1 tail and 18_rod_closeup tail rejected as plates. Lock everything else byte-identical. Fix: P5:10 = t1 frames 109-150 (42 frames, 459.297-461.047 s) with a re-timed 42-frame alpha; 11_safe_path takes the freed 29 frames as a lead-in, all its events at v08 film times; durations unchanged. Follow-up J1267 (rough v09). GBP0."
         }
       ],
       "remaining_action": "Parked for Chief: graphics and composite review of rough v08",
       "kind": "assembly",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-30T12:58Z",
-        "by": "cursor",
-        "note": "Evidence commit 65f5f782 on HOS PR 385. Plate in-point 4.541667s frame 109. Master c1f952a7. Polish and picture QA PASS."
-      },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "6523423311"
     },
     {
       "id": "J1264",
@@ -112705,6 +112714,35 @@
       "remaining_action": "HOS 009 + 010: add Sources and provisional Chapters to the long descriptions (Chief h13 on J1261)",
       "due": "2026-11-18T20:00:00Z",
       "kind": "listing"
+    },
+    {
+      "id": "J1267",
+      "title": "HOS 008: P5:10 shorter clean hold (t1 frames 109-150) + 11_safe_path lead-in -> rough v09 (Chief h14 on J1263)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) ruling h14 on J1263, 30 Oct (HOS #180, re Claude 6523423311, Cursor 6523408007, Chief hammer check 6523488534). Rough v08 (master c1f952a7, HOS PR #385, evidence 65f5f782) is FIX on P5:10 only. Read those comments and the h14 ruling first.\n\nPASS, lock byte-identical: every row and asset v08 carries except P5:10 10_metal_easy and the head of 11_safe_path (below). That includes the pause trim (64.333-64.875 s, frames 1539-1552; hook untrimmed), P3:04, P2:15, P3:03, P4:06, the frame-exact splice from rough v04 e00bb897, total frames 12923 and the durations (format 539.626 s, video 539.500 s, A/V end offset <=1 frame).\n\nWhy FIX: in 06_rod_fitting_t1.mp4 (sha 73c43fc2) his left hand leaves the rod and a hammer appears in it with no pickup at source frames 152-155 (6.33-6.46 s), moves to his right hand, then shrinks and is gone by frame 168 (~7.0 s). That's the prop-morph class h11 rejected, inside v08's window (frames 109-179). Clean, unused footage of that plate is only frames 105-151 (frames 0-104 already play in the 06_rod_fitting row at 434.2-438.6 s). No in-point gives 71 clean frames. Checked and rejected as replacement plates: 06_rod_fitting_c1_t1 frames 105-191 (kneeling at the ground rod, wrong geometry for the wall-rod overlay, head leaves frame, object in hand changes); 18_rod_closeup_t1 frames 106-191 (smoke plume grows off the rod from ~5.1 s, reads as burning). A new mint is priced and would need Ben, so it's not the route.\n\nFIX route: shorter P5:10 hold, freed frames go to the 11_safe_path card's head.\n1. P5:10 plate = 06_rod_fitting_t1 source frames 109-150 exactly (4.541667-6.250000 s, 42 frames; ends 1 frame before the left-hand lift at 151). Row timeline 459.297-461.047 s (v08 timeline numbers).\n2. New alpha code_graphics_v06/code_graphic_008_p5_10_metal_easy.mov (new folder seeded from v05/v04; never overwrite bb821f40): same art, METAL CONDUCTS label, callout bracket and ring/trace registration as bb821f40, re-timed to 42 frames: callout on by 0.15 s, trace starts 0.30 s and reaches the rod foot by 1.55 s, label at full alpha from <=0.50 s to the row end (>=1.0 s full hold). No fade-out.\n3. 11_safe_path: new cg_11_safe_path (code_graphics_v06) = 29-frame lead-in + the existing 168 frames, 197 frames total, row 461.047-468.796 s. Every existing animation event keeps its v08 film time: v09 frames from 462.256 s to 468.796 s must be the same source frames as v08 (report a frame-diff, mean abs <=1.0 at 462.3/464/466/468.7 s). The lead-in is the card's opening state with only its SAFE PATH DOWN title (or the card's first element) fading in over the 29 frames; no frozen footage frame. Same renderer, GBP0.\n4. VO: report which words play over 459.30-461.05 s and 461.05-462.26 s (expect \"But a metal rod\" on the rod plate and \"is an easy path\" carrying into the card) from the v08 word timings.\n5. Gates: unmodified polish_gate and picture_qa on the full master PASS (0 fail). Rod-top vs trace x offset at p10/p25/p50/p75/p90 of the 42-frame row <=1% of width. Durations and frame count unchanged from v08. Don't touch the checker.\n6. Evidence (composite_evidence_v09): a 24 fps strip of all 42 plate frames cropped to the workman (both hands on the rod, no hammer, in every frame); full-size P5:10 p10/p25/p50/p75/p90; 11_safe_path at 461.05/461.5/462.0/462.26/462.3 s plus the v08 frame at 462.3 s; join frames at 461.00/461.09 s; regenerated MEDIA_SHA256SUMS.txt.\nIf any check fails, park for Chief with the numbers rather than forcing it (no other plate, no slow-mo/interpolation, no freeze-pad, no frame replay).\n\nBuild rough v09 from rough v04 (e00bb897) the same way as v08. New folders only; never overwrite v02-v08 or NAS deliverables. Deliver repo/UAT/NAS copy-only with sha256, commit the evidence to HOS PR #385 (normal commit, no force-push), park for Chief: graphics + composite. No music bed, no Ben watch, no upload, no Flow mint. GBP0.\n",
+      "ref": "6523423311",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T13:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T13:21Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008: P5:10 shorter clean hold (t1 frames 109-150) + 11_safe_path lead-in -> rough v09 (Chief h14 on J1263)",
+      "due": "2026-11-12T20:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
