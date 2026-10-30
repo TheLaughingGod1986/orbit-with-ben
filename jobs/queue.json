@@ -109211,19 +109211,24 @@
           "at": "2026-10-30T00:39Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J0302 approval and v02 instruction; live subscription has 114 characters, v02 needs 7879; reset 30 Oct 10:50:31 UTC"
+        },
+        {
+          "at": "2026-10-30T00:40Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Balance recorded in ai_spend ledger; J0302 remains blocked with recheck 30 Oct 10:55 UTC after API reset."
         }
       ],
-      "remaining_action": "Record insufficient credit and set the next verification after the API reset",
+      "remaining_action": "Verify the recorded hold and report the completed credit check",
       "kind": "chief",
       "recheck_of": "J0302",
       "due": "2026-10-30T01:05:39+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-30T00:39Z",
+        "at": "2026-10-30T00:40Z",
         "by": "codex",
-        "note": "Read J0302 approval and v02 instruction; live subscription has 114 characters, v02 needs 7879; reset 30 Oct 10:50:31 UTC"
+        "note": "Balance recorded in ai_spend ledger; J0302 remains blocked with recheck 30 Oct 10:55 UTC after API reset."
       },
       "taskKeys": [
         "OWB:032"
