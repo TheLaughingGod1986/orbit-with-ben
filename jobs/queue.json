@@ -108306,10 +108306,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T01:51Z",
-      "eta": "2026-10-30T03:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T19:15Z",
       "result": "",
@@ -108528,6 +108528,11 @@
           "at": "2026-10-30T02:01Z",
           "by": "cursor",
           "what": "step 3 of 6 done: CG v02 rendered (11 mp4/5 mov); PR379 pushed; asm running; NAS CG rsync skipped (hung)"
+        },
+        {
+          "at": "2026-10-30T02:01Z",
+          "by": "cursor",
+          "what": "released: Detached render in progress. tmux: j1218-asm-v03. Logs: ~/_desk/logs/j1218-asm-v03.log + j1218-cg-v02.log. Done files: j1218-cg-v02.done (=0), j1218-asm-v03.done (pending). PR379 https://github.com/TheLaughingGod1986/history-of-science/pull/379. Next run: if asm.done missing leave running; if 0 finish gates/deliver/evidence; if nonzero read log. Disk ~13GB; NAS CG rsync hung so CG is local+shared checkout only."
         }
       ],
       "remaining_action": "Wait for detached asm tmux j1218-asm-v03; then gates+deliver+Chief park",
