@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1248 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: graphics v04 + composite fixes -> rough v05 (J1241 ruling) |  |
-| J1251 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
+| J1251 | any | claimed | codex | 2026-10-30T12:51Z | chief · Chief: verify condition for J1130 |  |
 | J1252 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1253 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
