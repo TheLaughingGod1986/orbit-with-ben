@@ -1,0 +1,104 @@
+diff --git a/07_Content-Ops/src/lib/hos-contract/rules.ts b/07_Content-Ops/src/lib/hos-contract/rules.ts
+index 6d45a39..1451cff 100644
+--- a/07_Content-Ops/src/lib/hos-contract/rules.ts
++++ b/07_Content-Ops/src/lib/hos-contract/rules.ts
+@@ -204,6 +204,40 @@ export function isPublished(manifest: Record<string, unknown>, now = new Date())
+   return !schedule || schedule.getTime() <= now.getTime();
+ }
+ 
++const CHAPTER_LINE = /^((?:\d{1,2}:)?\d{1,2}:\d{2})\s+\S/;
++
++function stampSeconds(stamp: string): number {
++  return stamp.split(":").reduce((t, part) => t * 60 + Number(part), 0);
++}
++
++/**
++ * A long's description needs a Chapters block (0:00 first, at least 3 stamps, each at least 10 s
++ * after the last: YouTube's own rules for showing chapters) and a Sources block (a "Sources" line
++ * with at least one source after it). Shorts don't go through this.
++ */
++export function checkChaptersAndSources(description: string): Finding[] {
++  const f: Finding[] = [];
++  const lines = description.split(/\r?\n/).map((l) => l.trim());
++  const stamps = lines.map((l) => CHAPTER_LINE.exec(l)?.[1]).filter((x): x is string => !!x).map(stampSeconds);
++  if (!stamps.length) {
++    f.push(err("description.chapters", "no Chapters block (0:00 first, then at least 2 more timestamps)"));
++  } else {
++    if (stamps[0] !== 0) f.push(err("description.chapters", "the first chapter must start at 0:00"));
++    if (stamps.length < 3) f.push(err("description.chapters", `only ${stamps.length} chapter stamp(s); YouTube needs at least 3`));
++    for (let i = 1; i < stamps.length; i++)
++      if (stamps[i] - stamps[i - 1] < 10) {
++        f.push(err("description.chapters", "chapter stamps must rise by at least 10 s each"));
++        break;
++      }
++  }
++  const at = lines.findIndex((l) => /^sources\b/i.test(l));
++  const inline = at === -1 ? "" : lines[at].replace(/^sources\s*:?/i, "").trim();
++  const next = at === -1 ? "" : lines.slice(at + 1).find((l) => l) || "";
++  if (at === -1 || (!inline && (!next || CHAPTER_LINE.test(next))))
++    f.push(err("description.sources", "no Sources block (a Sources line with the sources under it)"));
++  return f;
++}
++
+ export function lintLongPackage(input: LongPackageInput): Finding[] {
+   const m = input.manifest;
+   const f: Finding[] = [];
+@@ -242,6 +276,7 @@ export function lintLongPackage(input: LongPackageInput): Finding[] {
+   if (/\/go\//.test(input.description) && !m.affiliate)
+     f.push(err("description.go-link", "/go/ link in a description with no affiliate product"));
+   if (!input.description.trim()) f.push(err("description.missing", "description is empty"));
++  else f.push(...checkChaptersAndSources(input.description));
+   if (!m.captionsFile) f.push(warn("captions", "no captionsFile (captions from the script)"));
+   f.push(
+     ...checkNeighbours({
+diff --git a/07_Content-Ops/tests/hos-contract.test.ts b/07_Content-Ops/tests/hos-contract.test.ts
+index bf7bf8e..ff70763 100644
+--- a/07_Content-Ops/tests/hos-contract.test.ts
++++ b/07_Content-Ops/tests/hos-contract.test.ts
+@@ -5,6 +5,7 @@ import {
+   checkTags,
+   checkNeighbours,
+   checkTitle,
++  checkChaptersAndSources,
+   lintLongPackage,
+   lintShortsRelease,
+   ukSlot,
+@@ -29,7 +30,8 @@ const longInput = (manifest: Record<string, unknown>, extra: Partial<Parameters<
+   title: "What's Really Inside an Atom?",
+   titleAbc: ["What's Really Inside an Atom?", "Why Is the Periodic Table in This Order?"],
+   tags: ["atom", "periodic table", "rutherford", "moseley", "history of science"],
+-  description: "What's inside an atom? Mostly nothing.",
++  description:
++    "What's inside an atom? Mostly nothing.\n\nChapters\n0:00 How small can you cut gold?\n1:09 The table that broke its own rule\n2:41 The crumb inside the atom\n\nSources\nH. Moseley, Phil. Mag. 26 (1913)",
+   liveTitles: ["How Did We Discover the Periodic Table?"],
+   ...extra,
+ });
+@@ -42,6 +44,28 @@ describe("UK slots", () => {
+   });
+ });
+ 
++describe("long description: chapters and sources", () => {
++  const ok = "Hook.\n\nChapters\n0:00 One\n1:00 Two\n2:00 Three\n\nSources\nA. Author, Book (1900)";
++  it("passes a description with both blocks", () => {
++    expect(rules(checkChaptersAndSources(ok))).toEqual([]);
++    expect(rules(checkChaptersAndSources(ok.replace("Sources\nA.", "Sources: A.")))).toEqual([]);
++  });
++  it("fails no chapters, a first stamp after 0:00, fewer than 3 stamps, or stamps under 10 s apart", () => {
++    expect(rules(checkChaptersAndSources("Hook.\n\nSources\nA. Author"))).toEqual(["description.chapters"]);
++    expect(rules(checkChaptersAndSources(ok.replace("0:00 One", "0:05 One")))).toEqual(["description.chapters"]);
++    expect(rules(checkChaptersAndSources(ok.replace("2:00 Three\n", "")))).toEqual(["description.chapters"]);
++    expect(rules(checkChaptersAndSources(ok.replace("1:00 Two", "0:05 Two")))).toEqual(["description.chapters"]);
++  });
++  it("fails no Sources block, or a Sources heading with nothing under it", () => {
++    expect(rules(checkChaptersAndSources(ok.replace("\n\nSources\nA. Author, Book (1900)", "")))).toEqual(["description.sources"]);
++    expect(rules(checkChaptersAndSources(ok.replace("A. Author, Book (1900)", "")))).toEqual(["description.sources"]);
++  });
++  it("fails a long package whose description has neither (Shorts are not checked)", () => {
++    const r = rules(lintLongPackage(longInput(goodManifest, { description: "Why did Franklin fly a kite?" })));
++    expect(r).toEqual(expect.arrayContaining(["description.chapters", "description.sources"]));
++  });
++});
++
+ describe("long package lint", () => {
+   it("passes a correct package", () => {
+     expect(rules(lintLongPackage(longInput(goodManifest)))).toEqual([]);
