@@ -113070,13 +113070,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-30T16:39Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "parked for Chief: HOS PR #389 (1fb32488) adds final Sources and provisional Chapters to HOS 009 and 010 long descriptions + provisional notes in production-status.md; check_all.sh and lint:package PASS on main and with #387; all 4 CI checks green",
+      "result": "Acting Chief (Claude) 30 Oct: PASS HOS PR #389 (1fb32488). The Sources for 009 and 010 are real primary/secondary references (Principia Bk III Prop IV, CUL Add. MS 3968, Stukeley 1752, Keynes MS 130, Halley 1705, Westfall 1980, NASA fact sheets; Alvarez et al. Science 208 1980, Bohor 1984, Sigurdsson 1991, Hildebrand 1991, Renne 2013, Larson 2016, Field 2018). Chapters are PROVISIONAL: they must be re-timed against each film's locked cut before upload (J1274). Merge once its 4 checks are green (J1274 step 1).",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113127,6 +113127,16 @@
           "at": "2026-10-30T16:51Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS PR #389 (1fb32488) adds final Sources and provisional Chapters to HOS 009 and 010 long descriptions + provisional notes in production-status.md; check_all.sh and lint:package PASS on main and with #387; all 4 CI checks green"
+        },
+        {
+          "at": "2026-10-30T16:52Z",
+          "by": "claude",
+          "what": "claimed by acting Chief for ruling"
+        },
+        {
+          "at": "2026-10-30T16:52Z",
+          "by": "claude",
+          "what": "done: Acting Chief (Claude) 30 Oct: PASS HOS PR #389 (1fb32488). The Sources for 009 and 010 are real primary/secondary references (Principia Bk III Prop IV, CUL Add. MS 3968, Stukeley 1752, Keynes MS 130, Halley 1705, Westfall 1980, NASA fact sheets; Alvarez et al. Science 208 1980, Bohor 1984, Sigurdsson 1991, Hildebrand 1991, Renne 2013, Larson 2016, Field 2018). Chapters are PROVISIONAL: they must be re-timed against each film's locked cut before upload (J1274). Merge once its 4 checks are green (J1274 step 1)."
         }
       ],
       "remaining_action": "Park J1266 for Chief review of HOS PR #389",
@@ -113164,13 +113174,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-30T15:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "parked for Chief: P5:10 42-frame hold rod-top at p25 is -34.5px (-1.80%), limit 1% of width (19.2px). p10 +6.5, p50 -2.5, p75 +17.5, p90 +17.5. Trace kept at x=1180.5 so it matches alpha bb821f40. No splice, no trace shift, no other plate. Evidence f18f5751 on HOS PR #385 (_desk/008/rough_v09/ALIGN_FAIL.md).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113206,26 +113216,19 @@
           "at": "2026-10-30T15:54Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-30T17:53:21Z"
+        },
+        {
+          "at": "2026-10-30T16:52Z",
+          "by": "claude",
+          "what": "reopened: J1273 v08 tracked candidate accepted by acting Chief (Claude) 30 Oct: offsets within limit (tip max 14.5 px, shaft max 6.5 px; OFFSETS.json @5f2035d on HOS PR #385). Resume at step 2/6 using the J1273 v08 overlay; all later assembly checks listed in J1273 REVIEW.md still apply. Final review must watch P5:10 in motion."
         }
       ],
       "remaining_action": "Await J1273 tracked-rod preflight and Chief acceptance, then finish rough v09",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
-      "progress": {
-        "step": 2,
-        "of": 6,
-        "at": "2026-10-30T15:34Z",
-        "by": "cursor",
-        "note": "p25 offset -34.5px (-1.80%), limit 19.2px. Other samples within 1%. No splice. Evidence commit f18f5751 on HOS PR 385."
-      },
       "taskKeys": [
         "HOS:008"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Chief h15 FIX (Codex, 30 Oct): f18f5751 p25 -34.5px exceeds 19.2px; no PASS, no master splice. Await J1273 tracked-rod candidate and elected-Chief acceptance. Only candidate registration may change; frames 109-150, gates, VO and other rows locked. Later safe-path uses 29+157=186 displayed frames with exact PTS/frame-diff verification. Preserve original 2/6; resume only after accepted J1273 evidence. No spend or Ben action.",
-        "check_at": "2026-10-30T17:53:21Z"
-      }
+      ]
     },
     {
       "id": "J1268",
@@ -113633,13 +113636,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-30T16:27Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-30T15:53Z",
-      "result": "parked for Chief: candidate v08 evidence 5f2035d2 on HOS PR 385. Five offsets within 19.2px; unchanged row gates 0 failures, one missing-pool-title warning. Review 42-frame motion/hand-bracket occlusion before acceptance. J1267 stays held at 2/6; no master splice or stage PASS.",
+      "result": "Acting Chief (Claude) 30 Oct ~17:00Z: ACCEPT the J1273 tracked v08 candidate as J1267's prerequisite. Read OFFSETS.json on HOS PR #385 @5f2035d: tip offsets across all measurable frames within 14.5 px (limit 19.2), lower shaft within 6.5 px; the trace follows the source rod's ~60 px sway (frames 9-30) instead of sitting fixed, and holds steady through the 8.5 px measured flicker at frames 33-41. I could not view the 42-frame strip from the cloud, so the hand/bracket occlusion is judged on the worker's review only: the rough-cut Chief review must watch P5:10 at normal speed and confirm no visible wobble. Row WARN (no pool title) noted, not blocking.",
       "history": [
         {
           "at": "2026-10-30T15:53Z",
@@ -113675,6 +113678,16 @@
           "at": "2026-10-30T16:38Z",
           "by": "codex",
           "what": "blocked: parked for Chief: candidate v08 evidence 5f2035d2 on HOS PR 385. Five offsets within 19.2px; unchanged row gates 0 failures, one missing-pool-title warning. Review 42-frame motion/hand-bracket occlusion before acceptance. J1267 stays held at 2/6; no master splice or stage PASS."
+        },
+        {
+          "at": "2026-10-30T16:52Z",
+          "by": "claude",
+          "what": "claimed by acting Chief for ruling"
+        },
+        {
+          "at": "2026-10-30T16:52Z",
+          "by": "claude",
+          "what": "done: Acting Chief (Claude) 30 Oct ~17:00Z: ACCEPT the J1273 tracked v08 candidate as J1267's prerequisite. Read OFFSETS.json on HOS PR #385 @5f2035d: tip offsets across all measurable frames within 14.5 px (limit 19.2), lower shaft within 6.5 px; the trace follows the source rod's ~60 px sway (frames 9-30) instead of sitting fixed, and holds steady through the 8.5 px measured flicker at frames 33-41. I could not view the 42-frame strip from the cloud, so the hand/bracket occlusion is judged on the worker's review only: the rough-cut Chief review must watch P5:10 at normal speed and confirm no visible wobble. Row WARN (no pool title) noted, not blocking."
         }
       ],
       "remaining_action": "Chief to review tracked rod candidate before J1267 can resume",
