@@ -112350,18 +112350,25 @@
           "at": "2026-10-30T12:00Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T12:02Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. v06 method is frame-exact splice of v04 e00bb897. Disk 9.7GB; scratch stays on the NAS."
         }
       ],
-      "remaining_action": "HOS 008: P5:10 plate in-point + move hook pause trim -> rough v07 (Chief h10 on J1257)",
+      "remaining_action": "Test P5:10 plate in-points and a pause trim after 0:30",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T12:00Z",
+        "of": 4,
+        "at": "2026-10-30T12:02Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. v06 method is frame-exact splice of v04 e00bb897. Disk 9.7GB; scratch stays on the NAS."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1261",
