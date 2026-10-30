@@ -109707,22 +109707,29 @@
           "at": "2026-10-30T01:31Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-30T01:32Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: J1005 predecessor done; all four delegated swap jobs now done; inspecting exact approval evidence"
         }
       ],
-      "remaining_action": "Verify J0966 predecessor, evidence and remaining approvals",
+      "remaining_action": "Verify exact-cut approvals and final completion evidence for J0966",
       "kind": "chief",
       "recheck_of": "J0966",
       "due": "2026-10-30T01:31:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-30T01:31Z",
-        "by": "codex"
+        "at": "2026-10-30T01:32Z",
+        "by": "codex",
+        "note": "J1005 predecessor done; all four delegated swap jobs now done; inspecting exact approval evidence"
       },
       "taskKeys": [
-        "HOS:007",
-        "HOS:008"
+        "HOS:004",
+        "HOS:005",
+        "HOS:007"
       ]
     },
     {
