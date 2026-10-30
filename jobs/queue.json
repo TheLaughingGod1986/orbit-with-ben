@@ -115285,16 +115285,21 @@
           "at": "2026-10-30T23:50Z",
           "by": "cursor",
           "what": "step 0 of 6 done: Claimed. No spend. Copy fades then concat, checks, lock."
+        },
+        {
+          "at": "2026-10-30T23:53Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: Source tails: ch00 last 10 ms -27.1 dBFS, ch02 last 10 ms -54.8 dBFS. Building v02a now."
         }
       ],
-      "remaining_action": "Inspect v02 parts, concat order and durations before copying into v02a",
+      "remaining_action": "Copy v02 parts into v02a and apply the 20 ms tail fades on ch00 and ch02",
       "kind": "assembly",
       "progress": {
         "step": 0,
         "of": 6,
-        "at": "2026-10-30T23:50Z",
+        "at": "2026-10-30T23:53Z",
         "by": "cursor",
-        "note": "Claimed. No spend. Copy fades then concat, checks, lock."
+        "note": "Source tails: ch00 last 10 ms -27.1 dBFS, ch02 last 10 ms -54.8 dBFS. Building v02a now."
       },
       "taskKeys": [
         "OWB:032"
