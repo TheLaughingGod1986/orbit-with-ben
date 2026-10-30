@@ -110483,10 +110483,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T06:31Z",
+      "eta": "2026-10-30T08:31Z",
       "created_by": "claude",
       "created_at": "2026-10-30T04:01Z",
       "result": "",
@@ -110565,6 +110565,11 @@
           "at": "2026-10-30T06:29Z",
           "by": "cursor",
           "what": "released: Detached resplice: tmux j1241-resplice; log ~/_desk/logs/j1241-resplice.log; donefile ~/_desk/logs/j1241-resplice.done. Prior v04 had seg0 keep video inflate (+9.5s) so dur=549.5 and evidence times wrong; splice patched to -ss after -i + -t. Six PASS rows byte-identical to v02. Next: when .done, verify dur<=540 + gates, commit evidence (no mp4), deliver, park for Chief graphics+composite PASS."
+        },
+        {
+          "at": "2026-10-30T06:31Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Detached resplice running; next run checks .done then commits evidence and parks for Chief",
