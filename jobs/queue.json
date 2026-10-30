@@ -113138,9 +113138,14 @@
           "at": "2026-10-30T19:58Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1264; starting inspection of HOS PR #387 branch gemini/j1259-release-gate-chapters-sources"
+        },
+        {
+          "at": "2026-10-30T20:02Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Updated rules.ts (release-stage checkChaptersAndSources + lintLongPackage), hos-contract.test.ts (3 new release/draft cases), and STUDIO_PLAYBOOK.md §9"
         }
       ],
-      "remaining_action": "Inspect PR #387 branch gemini/j1259-release-gate-chapters-sources and update rules.ts, hos-contract.test.ts, and STUDIO_PLAYBOOK.md",
+      "remaining_action": "Run vitest, package-lint.ts, and check_all.sh locally to verify all tests pass and package-lint exits 0",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -113152,11 +113157,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T19:58Z",
+        "at": "2026-10-30T20:02Z",
         "by": "gemini",
-        "note": "Claimed J1264; starting inspection of HOS PR #387 branch gemini/j1259-release-gate-chapters-sources"
+        "note": "Updated rules.ts (release-stage checkChaptersAndSources + lintLongPackage), hos-contract.test.ts (3 new release/draft ca"
       }
     },
     {
