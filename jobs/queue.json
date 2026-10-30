@@ -109847,13 +109847,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-30T01:39Z",
-      "eta": "2026-10-30T03:39Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T01:20Z",
-      "result": "",
+      "result": "Verified unmet: PR365 unchanged draft OPEN a87cd56a without approval or merge; PR358 OPEN c26a79bd. J0999 blocked; next recheck 2026-10-30T07:45:00Z. No Studio writes, merge or spend.",
       "history": [
         {
           "at": "2026-10-30T01:20Z",
@@ -109884,6 +109884,11 @@
           "at": "2026-10-30T01:40Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0999 remains blocked; condition and evidence recorded, next verification 30 Oct 07:45 UTC."
+        },
+        {
+          "at": "2026-10-30T01:41Z",
+          "by": "codex",
+          "what": "done: Verified unmet: PR365 unchanged draft OPEN a87cd56a without approval or merge; PR358 OPEN c26a79bd. J0999 blocked; next recheck 2026-10-30T07:45:00Z. No Studio writes, merge or spend."
         }
       ],
       "remaining_action": "Verification complete; J0999 awaits required checker-fix approval and audit",
