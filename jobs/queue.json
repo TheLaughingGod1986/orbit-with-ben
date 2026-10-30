@@ -113456,20 +113456,25 @@
           "at": "2026-10-30T18:44Z",
           "by": "cursor",
           "what": "step 0 of 6 done: Claimed. Disk 4.5 GB free; nas_offload moved nothing (tmp under 48h)."
+        },
+        {
+          "at": "2026-10-30T18:49Z",
+          "by": "cursor",
+          "what": "step 1 of 6 done: h21: v11 title drops for 0.6s at 463.167s. Building v12 from the card's own title pixels."
         }
       ],
-      "remaining_action": "Read h14 ruling and locate v08 build, then cut P5:10 and the safe-path lead-in into rough v09",
+      "remaining_action": "Build rough v12: one SAFE PATH title through the join, then gates",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-10-30T18:44Z",
+        "at": "2026-10-30T18:49Z",
         "by": "cursor",
-        "note": "Claimed. Disk 4.5 GB free; nas_offload moved nothing (tmp under 48h)."
+        "note": "h21: v11 title drops for 0.6s at 463.167s. Building v12 from the card's own title pixels."
       }
     },
     {
