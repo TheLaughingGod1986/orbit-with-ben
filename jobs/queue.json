@@ -112072,19 +112072,24 @@
           "at": "2026-10-30T14:42Z",
           "by": "codex",
           "what": "step 2 of 3 done: Live API: active Creator, 0 used of 121114; both extension flags false. Capacity verified; no spend. NAS offload has no eligible scratch; render disk guard retained."
+        },
+        {
+          "at": "2026-10-30T14:43Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR356 evidence and ledger merged after CI pass. J1100 credit hold released with prior 2/3 resume instruction and all failed-gate/review/disk safeguards retained. No spend or publishing changes."
         }
       ],
-      "remaining_action": "Record verified credits and reopen J1100 for repairs with existing gates intact",
+      "remaining_action": "Verification complete; J1100 reopened for authorised repairs",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-30T11:50:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-30T14:42Z",
+        "at": "2026-10-30T14:43Z",
         "by": "codex",
-        "note": "Live API: active Creator, 0 used of 121114; both extension flags false. Capacity verified; no spend. NAS offload has no "
+        "note": "PR356 evidence and ledger merged after CI pass. J1100 credit hold released with prior 2/3 resume instruction and all fai"
       },
       "taskKeys": [
         "OWB:027",
