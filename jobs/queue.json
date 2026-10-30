@@ -22487,6 +22487,11 @@
           "at": "2026-10-30T01:00Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T01:01Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: claimed J0280; checking public status of longs and current Related"
         }
       ],
       "kind": "studio",
@@ -22499,16 +22504,18 @@
       },
       "for": "cursor",
       "model": "cursor-auto",
-      "remaining_action": "Add the remaining Related links to the Blood Shorts",
+      "remaining_action": "Check which HOS Related targets are public and settable now",
       "urgent": 3,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-30T01:00Z",
+        "of": 4,
+        "at": "2026-10-30T01:01Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed J0280; checking public status of longs and current Related"
+      },
+      "taskKeys": [
+        "HOS:007"
+      ]
     },
     {
       "id": "J0281",
