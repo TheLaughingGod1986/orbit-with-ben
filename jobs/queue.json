@@ -108553,20 +108553,25 @@
           "at": "2026-10-30T02:06Z",
           "by": "cursor",
           "what": "step 2 of 6 done: Prior asm exited NameError at part01; special_assets overlays OK; CG v02 present"
+        },
+        {
+          "at": "2026-10-30T02:20Z",
+          "by": "cursor",
+          "what": "step 3 of 6 done: Fixed NameError + NAS mux hang; part01 105.42s DONE; tmux j1218-asm-v03; PR379"
         }
       ],
-      "remaining_action": "Fix assemble_part NameError; restart detached v03 render",
+      "remaining_action": "Detached asm v03 running (parts 2–5 + join + gates); next run checks .done",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-10-30T02:06Z",
+        "at": "2026-10-30T02:20Z",
         "by": "cursor",
-        "note": "Prior asm exited NameError at part01; special_assets overlays OK; CG v02 present"
+        "note": "Fixed NameError + NAS mux hang; part01 105.42s DONE; tmux j1218-asm-v03; PR379"
       }
     },
     {
