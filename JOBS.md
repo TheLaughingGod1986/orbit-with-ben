@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
 | J1237 | mini | blocked | gemini | – | 009 picture · qa · HOS 009 tranche 1: motion evidence for the 3 flagged windows (J1192), park for Chief |  |
-| J1241 | mini | claimed | cursor | 2026-10-30T08:24Z | 008 edit · assembly · HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) |  |
+| J1241 | mini | claimed | cursor | 2026-10-30T07:57Z | 008 edit · assembly · HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling) |  |
 | J1242 | mini | blocked | cursor | – | assembly · Uranus v10: motion-compensated opening and precise path evidence (J1240 FIX) |  |
 
 Recently finished:
