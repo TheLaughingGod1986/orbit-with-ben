@@ -112224,18 +112224,25 @@
           "at": "2026-10-30T11:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T11:41Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1258; starting inspection of HOS 007 Shorts records"
         }
       ],
-      "remaining_action": "HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05)",
+      "remaining_action": "Inspect 007 SHORTS_UPLOAD_INDEX.json, manifests, fix_published_playback_lag.py, and production-status.md",
       "kind": "listing",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-30T11:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1258; starting inspection of HOS 007 Shorts records"
+      },
+      "taskKeys": [
+        "HOS:007"
+      ]
     },
     {
       "id": "J1259",
