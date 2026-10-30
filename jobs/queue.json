@@ -115316,8 +115316,8 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-30T22:13Z",
       "eta": "",
       "created_by": "chief",
@@ -115563,6 +115563,11 @@
           "at": "2026-10-30T23:48Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: J1290 copied and verified the named scratch, then removed the local copies. Free space is still under 20 GiB (17.1 GiB). Next candidates were not moved: /Users/benjaminoats/_desk/renders (1940 MB, no job id in the path); /Users/benjaminoats/_desk/scratch (1590 MB, no job id in the path); /Users/benjaminoats/_desk/worktrees (503 MB, no job id in the path); /Users/benjaminoats/_desk/cache (373 MB, no job id in the path); /Users/benjaminoats/_desk/wt-j1192-hos (329 MB, J1192 done); /Users/benjaminoats/_desk/venvs (321 MB, no job id in the path); /Users/benjaminoats/_desk/venv-graphics (292 MB, no job id in the path); /Users/benjaminoats/_desk/007 (278 MB, no job id in the path); /Users/benjaminoats/_desk/watch_proxies (259 MB, no job id in the path); /Users/benjaminoats/_desk/tmp-item9 (248 MB, no job id in the path)"
+        },
+        {
+          "at": "2026-10-30T23:55Z",
+          "by": "chief",
+          "what": "cancelled"
         }
       ],
       "remaining_action": "Report the free space and close J1290",
