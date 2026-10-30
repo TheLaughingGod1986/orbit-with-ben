@@ -115176,16 +115176,21 @@
           "at": "2026-10-30T21:30Z",
           "by": "cursor",
           "what": "step 3 of 7 done: Original take has a 46.4 s silence from 0:03. The bed file was shifted 50 s and the tail looped from the same take (no second ElevenLabs take). A remux landed at 21:24. Checking that master against v12, loudness, and music_gate."
+        },
+        {
+          "at": "2026-10-30T21:36Z",
+          "by": "cursor",
+          "what": "step 3 of 7 done: 21:24 master is -14.0 LUFS, video MD5 matches v12, 12923 frames. Speech bed is 20.4 LU under the VO but pauses do not rise. One gain pass on the same take is remixing that now. No second music take."
         }
       ],
-      "remaining_action": "Verify the repaired-bed remux, then chapters, package-lint, evidence PR, and park for Chief",
+      "remaining_action": "Finish the pause-lift remux, then gates, chapters, package-lint, and park for Chief",
       "kind": "assembly",
       "progress": {
         "step": 3,
         "of": 7,
-        "at": "2026-10-30T21:30Z",
+        "at": "2026-10-30T21:36Z",
         "by": "cursor",
-        "note": "Original take has a 46.4 s silence from 0:03. The bed file was shifted 50 s and the tail looped from the same take (no s"
+        "note": "21:24 master is -14.0 LUFS, video MD5 matches v12, 12923 frames. Speech bed is 20.4 LU under the VO but pauses do not ri"
       },
       "taskKeys": [
         "HOS:008"
