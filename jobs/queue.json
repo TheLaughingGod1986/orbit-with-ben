@@ -110369,10 +110369,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T04:11Z",
+      "eta": "2026-10-30T06:11Z",
       "created_by": "claude",
       "created_at": "2026-10-30T03:52Z",
       "result": "",
@@ -110381,11 +110381,24 @@
           "at": "2026-10-30T03:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T04:11Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Uranus Short v09: fix the 0:00 shake (slow eased sub-pixel open, no dead stop) (J1225 FIX)",
       "due": "2026-11-01T20:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T04:11Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1241",
