@@ -112160,17 +112160,22 @@
           "at": "2026-10-30T11:26Z",
           "by": "cursor",
           "what": "step 2 of 5 done: Pass 1 overlay still running (swapped.mp4 386MB of v04 411MB). Did not start a second copy. Done file still missing."
+        },
+        {
+          "at": "2026-10-30T11:31Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Pass 1 swap kept (12936 frames, audio copied). Stopped the head/tail AAC trim: it would miss the 1-frame A/V lock. New trim drops frames 217-229 inside the 9.12-9.76s silence and shifts later PTS by 0.541666s. tmux j1257-render."
         }
       ],
-      "remaining_action": "Frame-exact splice pass 1 is still encoding in tmux j1257-render; then pause trim, gates, deliver, PR",
+      "remaining_action": "Corrected pause trim is encoding; then duration check, gates, deliver, HOS PR",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-10-30T11:26Z",
+        "at": "2026-10-30T11:31Z",
         "by": "cursor",
-        "note": "Pass 1 overlay still running (swapped.mp4 386MB of v04 411MB). Did not start a second copy. Done file still missing."
+        "note": "Pass 1 swap kept (12936 frames, audio copied). Stopped the head/tail AAC trim: it would miss the 1-frame A/V lock. New t"
       },
       "taskKeys": [
         "HOS:008"
