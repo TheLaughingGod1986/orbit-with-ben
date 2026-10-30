@@ -113111,13 +113111,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-30T19:57Z",
-      "eta": "2026-10-30T21:27Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
-      "result": "",
+      "result": "parked for Chief: release-gate PR review (merge) — HOS PR #387 head d0398c57 all checks green (check, contract, no-media, no-desk-close); vitest 192/192 and package-lint exit 0 pasted on PR (#issuecomment-6532398770)",
       "history": [
         {
           "at": "2026-10-30T13:21Z",
@@ -113158,6 +113158,11 @@
           "at": "2026-10-30T20:05Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 steps complete; PR #387 head d0398c57 CI green, vitest 192/192 and package-lint exit 0 pasted on PR"
+        },
+        {
+          "at": "2026-10-30T20:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: release-gate PR review (merge) — HOS PR #387 head d0398c57 all checks green (check, contract, no-media, no-desk-close); vitest 192/192 and package-lint exit 0 pasted on PR (#issuecomment-6532398770)"
         }
       ],
       "remaining_action": "Done; parking J1264 for Chief release-gate PR review (merge)",
