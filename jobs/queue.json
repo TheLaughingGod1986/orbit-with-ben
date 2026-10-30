@@ -111412,17 +111412,22 @@
           "at": "2026-10-30T08:33Z",
           "by": "cursor",
           "what": "step 2 of 5 done: rough_v05 gates PASS but ELECTRICITY is only a ghost at +5.14s and full for under 1.5s. Re-rendering that one graphic."
+        },
+        {
+          "at": "2026-10-30T08:43Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: ELECTRICITY is solid at the spoken frame and still up 1.5s later. Gates running on the resplice. tmux j1248-resplice."
         }
       ],
-      "remaining_action": "Rebuild P4:06 so ELECTRICITY is solid from the spoken word for at least 1.5s, then resplice that row",
+      "remaining_action": "Finish rough_v05 gates after the ELECTRICITY hold fix, then commit the HOS PR and park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-10-30T08:33Z",
+        "at": "2026-10-30T08:43Z",
         "by": "cursor",
-        "note": "rough_v05 gates PASS but ELECTRICITY is only a ghost at +5.14s and full for under 1.5s. Re-rendering that one graphic."
+        "note": "ELECTRICITY is solid at the spoken frame and still up 1.5s later. Gates running on the resplice. tmux j1248-resplice."
       },
       "taskKeys": [
         "HOS:008"
