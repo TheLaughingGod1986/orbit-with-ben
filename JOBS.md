@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1267 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008: P5:10 shorter clean hold (t1 frames 109-150) + 11_safe_path lead-in -> rough v09 (Chief h14 on J1263) | 6523423311 |
 | J1271 | mini | blocked | cursor | – | 024 upload · studio · OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public |  |
 | J1272 | mini | open | – | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
-| J1273 | mini | claimed | codex | 2026-10-30T18:27Z | 008 edit · chart · HOS 008: J1267 h15 tracked rod-overlay preflight, 42 frames, GBP0 |  |
+| J1273 | mini | blocked | codex | – | 008 edit · chart · HOS 008: J1267 h15 tracked rod-overlay preflight, 42 frames, GBP0 |  |
 | J1274 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
