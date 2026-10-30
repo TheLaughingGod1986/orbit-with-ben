@@ -24123,10 +24123,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T18:01Z",
+      "eta": "2026-10-30T19:31Z",
       "created_by": "chief",
       "created_at": "2026-10-15T16:34Z",
       "result": "",
@@ -24185,11 +24185,24 @@
           "at": "2026-10-30T14:47Z",
           "by": "codex",
           "what": "reopened: J1254 verified 2026-10-30T14:46:38Z via live ElevenLabs subscription GET HTTP 200: active, 0 used / 121114 limit, 121114 remaining >= Titan v02 7879 characters (house spoken_chapters extraction). Reading committed in ai_spend ledger. J0301 Chief PASS and 29 Oct v02 approval remain valid; diff only removes the approved agenda sentence. Reopen for existing VO scope only; dry-run and fresh pre-spend balance/channel-priority checks remain required. No spend or upload performed."
+        },
+        {
+          "at": "2026-10-30T18:01Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "vo",
       "model": "eleven_v3",
-      "remaining_action": "Record the locked Titan v02 voiceover once sufficient renewed credit is verified"
+      "remaining_action": "Record the locked Titan v02 voiceover once sufficient renewed credit is verified",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T18:01Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0303",
