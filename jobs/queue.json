@@ -1,5 +1,5 @@
 {
-  "next_id": 1259,
+  "next_id": 1260,
   "jobs": [
     {
       "id": "J0001",
@@ -112158,6 +112158,34 @@
       ],
       "remaining_action": "HOS 007 Shorts records: repoint SHORTS_UPLOAD_INDEX + old manifests to live cLKDiYP55J8 (v04) / xgx2lYHhYZM (v05)",
       "kind": "listing"
+    },
+    {
+      "id": "J1259",
+      "title": "HOS release gate: block a long with no Chapters or Sources (before 008 ships)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "HOS release gate: block a long without Chapters or Sources (Chief h09, re HOS #180 6521114044). £0, code/check only.\n\nClaude flagged that the 008/009/010 long descriptions on HOS main now read as final but have no Chapters block and no Sources block. Before 008 ships, the release gate must stop that.\n\nDo:\n1. Check whether package-lint (npm run lint:package) or gate:episode / the release gate already fails a long-form package whose description lacks a Chapters block (0:00 first, at least 3 stamps) or a Sources block. Report what it does today with evidence (run it against 008, 009, 010).\n2. If it doesn't block, add the check for longs only (Shorts exempt), with tests, so 008/009/010 fail until chapters and sources are filled. Don't invent chapters or sources to make them pass.\n3. Open a HOS PR, CI green except the expected 008/009/010 failures if the gate runs on CI (say so plainly), and park it for Chief review. Don't merge yourself.\n",
+      "ref": "6521114044",
+      "film": "008",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-30T11:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-30T11:05Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS release gate: block a long with no Chapters or Sources (before 008 ships)",
+      "kind": "qa"
     }
   ],
   "focus": [],
