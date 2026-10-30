@@ -106842,15 +106842,21 @@
           "at": "2026-10-30T07:27Z",
           "by": "cursor",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-30T07:31Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Studio CDP 9223: T011 still Test running, estimated 9d 16h left (~2026-11-08 23:30Z). Evidence ~/_desk/handoff/J1198/. No arm, no privacy/title change."
         }
       ],
-      "remaining_action": "Verify T011 ended in Studio; do not infer from days",
+      "remaining_action": "Wait for T011 end in Studio; then record ledger and arm next test per rules 12-13",
       "kind": "studio",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T07:27Z",
-        "by": "cursor"
+        "at": "2026-10-30T07:31Z",
+        "by": "cursor",
+        "note": "Studio CDP 9223: T011 still Test running, estimated 9d 16h left (~2026-11-08 23:30Z). Evidence ~/_desk/handoff/J1198/. N"
       },
       "taskKeys": [
         "OWB:023"
