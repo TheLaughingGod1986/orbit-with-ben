@@ -112133,19 +112133,24 @@
           "at": "2026-10-30T14:47Z",
           "by": "codex",
           "what": "step 2 of 3 done: Live balance recorded in the ledger; J0302 reopened with approval evidence and all original VO gates retained."
+        },
+        {
+          "at": "2026-10-30T14:47Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Read-back confirms J0302 open with credit hold cleared and original approval/body retained. No spend. Ledger and queue changes pushed from clean worktree."
         }
       ],
-      "remaining_action": "Verify the reopened job and report the result",
+      "remaining_action": "Verification complete; Titan VO is available to its worker",
       "kind": "chief",
       "recheck_of": "J0302",
       "due": "2026-10-30T11:55:20+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-30T14:47Z",
         "by": "codex",
-        "note": "Live balance recorded in the ledger; J0302 reopened with approval evidence and all original VO gates retained."
+        "note": "Read-back confirms J0302 open with credit hold cleared and original approval/body retained. No spend. Ledger and queue c"
       },
       "taskKeys": [
         "OWB:032"
