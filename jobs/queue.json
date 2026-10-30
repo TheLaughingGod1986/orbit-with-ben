@@ -112668,10 +112668,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-30T13:23Z",
+      "eta": "2026-10-30T14:53Z",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
       "result": "",
@@ -112680,11 +112680,24 @@
           "at": "2026-10-30T13:21Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T13:23Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 008: add a real Chapters + Sources block to the long description before release (Chief h13 on J1261)",
       "due": "2026-11-11T20:00:00Z",
-      "kind": "listing"
+      "kind": "listing",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T13:23Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1266",
