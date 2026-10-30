@@ -24123,13 +24123,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-15T16:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T16:34Z",
-      "result": "ElevenLabs: 119 characters left, this take needs 8139; nothing spent; wait for the 30 Oct reset",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T16:34Z",
@@ -24180,27 +24180,16 @@
           "at": "2026-10-30T10:55Z",
           "by": "relay",
           "what": "condition verification queued: J1254"
+        },
+        {
+          "at": "2026-10-30T14:47Z",
+          "by": "codex",
+          "what": "reopened: J1254 verified 2026-10-30T14:46:38Z via live ElevenLabs subscription GET HTTP 200: active, 0 used / 121114 limit, 121114 remaining >= Titan v02 7879 characters (house spoken_chapters extraction). Reading committed in ai_spend ledger. J0301 Chief PASS and 29 Oct v02 approval remain valid; diff only removes the approved agenda sentence. Reopen for existing VO scope only; dry-run and fresh pre-spend balance/channel-priority checks remain required. No spend or upload performed."
         }
       ],
       "kind": "vo",
       "model": "eleven_v3",
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-15T16:43Z",
-        "by": "cursor",
-        "note": "dry-run 8139 chars; 119 left"
-      },
-      "remaining_action": "Record the locked Titan v02 voiceover once sufficient renewed credit is verified",
-      "hold": {
-        "type": "input",
-        "condition": "Live ElevenLabs subscription must have at least 7879 characters for locked Titan v02; API at 2026-10-30T00:39:29Z showed only 114 remaining and reset at 10:50:31Z. Re-read balance after reset; date alone is not proof.",
-        "check_at": "2026-10-30T11:55:20+00:00",
-        "last_recheck": "J1229",
-        "checked_at": "2026-10-30T00:40:09+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1254"
-      }
+      "remaining_action": "Record the locked Titan v02 voiceover once sufficient renewed credit is verified"
     },
     {
       "id": "J0303",
