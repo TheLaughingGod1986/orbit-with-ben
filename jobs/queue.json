@@ -108553,10 +108553,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T00:31Z",
+      "eta": "2026-10-30T02:31Z",
       "created_by": "chief",
       "created_at": "2026-10-29T20:41Z",
       "result": "",
@@ -108570,6 +108570,11 @@
           "at": "2026-10-29T20:41Z",
           "by": "chief",
           "what": "approved by Ben: swap -sa2t7dAtCk (Dalton) to hos_004_s05_dalton_v04 (sha 8ce07a605697); J1200 playable PHONE v04 (asked in J0966)"
+        },
+        {
+          "at": "2026-10-30T00:31Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Swap HOS Short -sa2t7dAtCk (004 Dalton) to Ben-OK'd v04 (Private, same slot Mon 16 Nov 11:30)",
@@ -108588,6 +108593,14 @@
         "askId": "J0966.2",
         "okAt": "2026-10-29T20:41Z",
         "okRef": "6507810925"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T00:31Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
