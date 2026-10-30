@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1208 | mini | blocked | codex | – | assembly · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
 | J1212 | mini | blocked | – | – | studio · Swap Uranus Short ZpEA8stoSPA to rule-8 v06 (Private, Tue 3 Nov 11:30 London) after Ben's OK |  |
 | J1213 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief |  |
-| J1255 | any | open | – | – | chief · Chief: verify condition for J0345 |  |
+| J1255 | any | claimed | codex | 2026-10-30T16:49Z | chief · Chief: verify condition for J0345 |  |
 | J1256 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 | J1262 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 | J1264 | mini | open | – | – | for gemini · qa · `gemini-argon` · HOS PR #387: make the Chapters/Sources gate release-stage (warn while drafting, fail at release) so contract CI stays green (Chief h13 on J1261) | 6522827968 |
