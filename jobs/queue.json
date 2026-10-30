@@ -113041,10 +113041,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T15:15Z",
+      "eta": "2026-10-30T17:15Z",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
       "result": "",
@@ -113053,11 +113053,24 @@
           "at": "2026-10-30T13:21Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-30T15:15Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 008: P5:10 shorter clean hold (t1 frames 109-150) + 11_safe_path lead-in -> rough v09 (Chief h14 on J1263)",
       "due": "2026-11-12T20:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T15:15Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1268",
