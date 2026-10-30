@@ -115193,16 +115193,21 @@
           "at": "2026-10-30T21:36Z",
           "by": "cursor",
           "what": "step 3 of 7 done: 21:24 master is -14.0 LUFS, video MD5 matches v12, 12923 frames. Speech bed is 20.4 LU under the VO but pauses do not rise. One gain pass on the same take is remixing that now. No second music take."
+        },
+        {
+          "at": "2026-10-30T21:56Z",
+          "by": "cursor",
+          "what": "step 3 of 7 done: Gates on the 21:20 file were polish 0, picture 0, music 0, episode 0. A later pass found a 46 s hole in the take and wrote rise and park remuxes. Measuring those stems now. No second music take."
         }
       ],
-      "remaining_action": "Finish the pause-lift remux, then gates, chapters, package-lint, and park for Chief",
+      "remaining_action": "Measure the pause-lift master against the bed window, then gates and the Chief park",
       "kind": "assembly",
       "progress": {
         "step": 3,
         "of": 7,
-        "at": "2026-10-30T21:36Z",
+        "at": "2026-10-30T21:56Z",
         "by": "cursor",
-        "note": "21:24 master is -14.0 LUFS, video MD5 matches v12, 12923 frames. Speech bed is 20.4 LU under the VO but pauses do not ri"
+        "note": "Gates on the 21:20 file were polish 0, picture 0, music 0, episode 0. A later pass found a 46 s hole in the take and wro"
       },
       "taskKeys": [
         "HOS:008"
