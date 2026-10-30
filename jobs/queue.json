@@ -113179,10 +113179,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-30T16:55Z",
+      "eta": "2026-10-30T18:55Z",
       "created_by": "chief",
       "created_at": "2026-10-30T13:21Z",
       "result": "",
@@ -113231,6 +113231,11 @@
           "at": "2026-10-30T16:55Z",
           "by": "chief",
           "what": "step 2 of 6 done: Chief h17 (HOS #180 6528379688) confirms Claude's J1273 ACCEPT after an independent Chief look at all 42 frames: no hammer or prop morph, trace on the swaying rod; tip <=14.5 px; shaft re-measured with a separate estimator p95 9.4 / max 15.8 px <=19.2; timing in spec; gates untouched; copy-only delivery verified. Resume terms: (1) use the J1273 alpha sha 53454827 copied once into a new code_graphics_v07/ (sha verified). Don't call the static render_alpha() and don't touch failed v06 or bb821f40. The master P5:10 row must match the candidate composite (mean abs <=1.0 at row frames 0/5/11/21/32/38/41) and unchanged tip_offset <=19.2 px at p10-p90. (2) safe-path 29+157=186; verify PTS, body identity and end; 12923 frames; h14 frame-diff <=1.0. (3) full unmodified gates 0 fail. (4) deliver only via the copy-only deliver(); commit_evidence from a clean PR #385 worktree with a normal push; park for Chief. GBP0."
+        },
+        {
+          "at": "2026-10-30T16:55Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await J1273 tracked-rod preflight and Chief acceptance, then finish rough v09",
