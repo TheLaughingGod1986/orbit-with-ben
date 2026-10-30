@@ -112542,16 +112542,21 @@
           "at": "2026-10-30T12:33Z",
           "by": "cursor",
           "what": "step 1 of 5 done: Ruling h11 read. v07 method is frame-exact splice from v04. Probing in-points next."
+        },
+        {
+          "at": "2026-10-30T12:38Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Row check PASS at frame 109 (4.542s). Offsets p10 -0.44%, p25 -0.89%, p50 +0.47%, p75 +0.91%, p90 +0.91%. No vertical seam. Polish and picture_qa PASS on the row. Long splice running in tmux j1263-render."
         }
       ],
-      "remaining_action": "Probe plate in-points from 4.40 s for brick coverage, gates and rod-trace offset",
+      "remaining_action": "Splice rough v08 from v04 with plate in-point 4.541667 s, then run gates",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-30T12:33Z",
+        "at": "2026-10-30T12:38Z",
         "by": "cursor",
-        "note": "Ruling h11 read. v07 method is frame-exact splice from v04. Probing in-points next."
+        "note": "Row check PASS at frame 109 (4.542s). Offsets p10 -0.44%, p25 -0.89%, p50 +0.47%, p75 +0.91%, p90 +0.91%. No vertical se"
       },
       "taskKeys": [
         "HOS:008"
