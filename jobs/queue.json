@@ -110504,17 +110504,22 @@
           "at": "2026-10-30T04:55Z",
           "by": "cursor",
           "what": "renewed to 2026-10-30T05:40Z"
+        },
+        {
+          "at": "2026-10-30T04:57Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: 4 FIX assets ready; splice started (seg_00); graphics committed 3faba61d"
         }
       ],
-      "remaining_action": "splice rough v04 + gates + composite evidence; then deliver and park for Chief",
+      "remaining_action": "wait for tmux j1241-rough-v04 splice/gates/deliver; then commit evidence and park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-30T04:55Z",
+        "at": "2026-10-30T04:57Z",
         "by": "cursor",
-        "note": "code_graphics_v03 rendered; 4 FIX changed; 7 PASS rows byte-identical"
+        "note": "4 FIX assets ready; splice started (seg_00); graphics committed 3faba61d"
       },
       "taskKeys": [
         "HOS:008"
