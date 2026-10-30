@@ -112532,18 +112532,25 @@
           "at": "2026-10-30T12:29Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T12:29Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. NAS offload: nothing in /private/tmp older than 48h. Data volume 8.9 GB free."
         }
       ],
-      "remaining_action": "HOS 008: P5:10 plate in-point >=4.40 s -> rough v08 (Chief h11 on J1260)",
+      "remaining_action": "Read h11 ruling and v07 splice, then pick P5:10 plate in-point >= 4.40 s",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-10-30T12:29Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. NAS offload: nothing in /private/tmp older than 48h. Data volume 8.9 GB free."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [],
