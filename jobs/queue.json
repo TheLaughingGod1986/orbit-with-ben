@@ -110555,17 +110555,22 @@
           "at": "2026-10-30T06:27Z",
           "by": "cursor",
           "what": "step 1 of 4 done: seg0 keep inflated +9.5s; evidence times wrong; fixing splice"
+        },
+        {
+          "at": "2026-10-30T06:29Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: tmux j1241-resplice; log ~/_desk/logs/j1241-resplice.log; done ~/_desk/logs/j1241-resplice.done"
         }
       ],
-      "remaining_action": "Re-splice rough v04 with fixed keep durations; re-extract evidence; re-gate",
+      "remaining_action": "Detached resplice running; next run checks .done then commits evidence and parks for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-30T06:27Z",
+        "at": "2026-10-30T06:29Z",
         "by": "cursor",
-        "note": "seg0 keep inflated +9.5s; evidence times wrong; fixing splice"
+        "note": "tmux j1241-resplice; log ~/_desk/logs/j1241-resplice.log; done ~/_desk/logs/j1241-resplice.done"
       },
       "taskKeys": [
         "HOS:008"
