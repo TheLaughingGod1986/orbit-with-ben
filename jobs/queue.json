@@ -113267,20 +113267,25 @@
           "at": "2026-10-30T17:09Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-30T17:09Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: Claimed. Disk 9.3 GB free; nas_offload had nothing older than 48h. Reading existing v08/v09 scratch."
         }
       ],
-      "remaining_action": "Wait for the detached rough v09 splice, then gates, evidence and park for Chief",
+      "remaining_action": "Read h14 ruling and v08 build, then cut P5:10 to frames 109-150",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-30T17:06Z",
+        "step": 0,
+        "of": 6,
+        "at": "2026-10-30T17:09Z",
         "by": "cursor",
-        "note": "h15 PASS worst 14.0 px (limit 19.2). Splice running in tmux j1267-render. Log ~/_desk/logs/J1267-render.log. Done file w"
+        "note": "Claimed. Disk 9.3 GB free; nas_offload had nothing older than 48h. Reading existing v08/v09 scratch."
       }
     },
     {
