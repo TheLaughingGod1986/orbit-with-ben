@@ -24123,10 +24123,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-10-30T21:01Z",
+      "eta": "2026-10-30T22:31Z",
       "created_by": "chief",
       "created_at": "2026-10-15T16:34Z",
       "result": "",
@@ -24270,6 +24270,11 @@
           "at": "2026-10-30T21:00Z",
           "by": "chief",
           "what": "reopened: Chief taking parked review"
+        },
+        {
+          "at": "2026-10-30T21:01Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "kind": "vo",
@@ -24277,7 +24282,15 @@
       "remaining_action": "Chief reviews the chapter 2 retake before any mux",
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-30T21:01Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0303",
