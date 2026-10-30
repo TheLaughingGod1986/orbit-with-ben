@@ -110575,17 +110575,22 @@
           "at": "2026-10-30T06:31Z",
           "by": "cursor",
           "what": "step 0 of 4 done: claimed; reading review"
+        },
+        {
+          "at": "2026-10-30T06:33Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: cg_v03 present; rough_v04 pack exists; resplice encoding raw mp4"
         }
       ],
-      "remaining_action": "Read J1218 Chief review; locate HOS 008 assets and v02 builder",
+      "remaining_action": "Wait for j1241-resplice ffmpeg; then gates + deliver + park for Chief",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T06:31Z",
+        "at": "2026-10-30T06:33Z",
         "by": "cursor",
-        "note": "claimed; reading review"
+        "note": "cg_v03 present; rough_v04 pack exists; resplice encoding raw mp4"
       },
       "taskKeys": [
         "HOS:008"
