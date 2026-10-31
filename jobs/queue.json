@@ -116962,13 +116962,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T04:09Z",
-      "eta": "2026-10-31T06:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T03:46Z",
-      "result": "",
+      "result": "Condition verified: J1299 (PR #392 merged 725a6e45), J1300 (v03 d56ba2a4) and J1301 (vo_check PASS 0 fails, metadata 5bb67c1a) all done; Chief ruled h39 PASS on J1301 directly (closed cancelled-with-PASS), J0807 done, follow-on J1310. No reopen needed.",
       "history": [
         {
           "at": "2026-10-31T03:46Z",
@@ -116979,6 +116979,11 @@
           "at": "2026-10-31T04:09Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T04:09Z",
+          "by": "chief",
+          "what": "done: Condition verified: J1299 (PR #392 merged 725a6e45), J1300 (v03 d56ba2a4) and J1301 (vo_check PASS 0 fails, metadata 5bb67c1a) all done; Chief ruled h39 PASS on J1301 directly (closed cancelled-with-PASS), J0807 done, follow-on J1310. No reopen needed."
         }
       ],
       "remaining_action": "Verify readiness: Parked for Chief VO review",
@@ -116993,7 +116998,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6538573892"
     }
   ],
   "focus": [],
