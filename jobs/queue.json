@@ -125833,10 +125833,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T21:29Z",
+      "eta": "2026-10-31T23:29Z",
       "created_by": "relay",
       "created_at": "2026-10-31T20:59Z",
       "result": "",
@@ -125845,13 +125845,26 @@
           "at": "2026-10-31T20:59Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T21:29Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Chief to resolve identical excluded bed and local listening; publish evidence when authorized",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T21:59:12+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T21:29Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
