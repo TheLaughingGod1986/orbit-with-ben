@@ -123707,19 +123707,24 @@
           "at": "2026-10-31T17:30Z",
           "by": "codex",
           "what": "step 2 of 3 done: All eight afed1c552 hashes match; both tested beds have nonempty ASR; no completed source listening. Live disk 33.999 GiB."
+        },
+        {
+          "at": "2026-10-31T17:31Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Recorded unmet condition linked to J1386; existing 18:01:34Z retry and original worker 2/3 preserved."
         }
       ],
-      "remaining_action": "Record unmet readiness condition and finish verification",
+      "remaining_action": "Verification complete; J1100 held on bed and listening evidence",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T18:01:34+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-31T17:30Z",
+        "at": "2026-10-31T17:31Z",
         "by": "codex",
-        "note": "All eight afed1c552 hashes match; both tested beds have nonempty ASR; no completed source listening. Live disk 33.999 Gi"
+        "note": "Recorded unmet condition linked to J1386; existing 18:01:34Z retry and original worker 2/3 preserved."
       },
       "taskKeys": [
         "OWB:027",
