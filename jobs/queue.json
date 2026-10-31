@@ -86231,6 +86231,11 @@
           "at": "2026-10-30T21:51Z",
           "by": "relay",
           "what": "condition verification queued: J1291"
+        },
+        {
+          "at": "2026-10-31T04:49Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-10-31T10:50:00Z"
         }
       ],
       "kind": "listing",
@@ -86246,7 +86251,7 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Verify the finished Atom title test no longer blocks the approved Test B metadata update",
+      "remaining_action": "Restore read-only HOS Studio access, confirm the finished Atom title test no longer blocks the approved Test B metadata update",
       "progress": {
         "step": 4,
         "of": 5,
@@ -86255,13 +86260,12 @@
         "note": "Data API retitle refused with 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE) while 'A/"
       },
       "hold": {
-        "type": "input",
-        "condition": "J1269 live Studio reload 30 Oct 15:41Z still shows A/B testing titles / Results ready on GHZDsiH7L7A. Original title and Public remain. Earlier API restriction UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE is not proven cleared; no write probe made. PR 354 holds prior refusal and originals verification.",
-        "check_at": "2026-10-30T22:51:28+00:00",
-        "last_recheck": "J1269",
-        "checked_at": "2026-10-30T15:42:53+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1291"
+        "type": "test",
+        "condition": "Not verifiable at 2026-10-31T04:50Z: no fresh Studio read since J1269 (30 Oct 15:41Z: GHZDsiH7L7A still shows A/B testing titles / Results ready; original title and Public remain), and J1282 (30 Oct 20:46Z) found the mini browser session denied HOS Studio access (personal channel only). API UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE not proven cleared; no write probe. PR 354 holds the prior refusal and originals verification. Needs a fresh read-only HOS Studio read showing the test widget cleared.",
+        "check_at": "2026-10-31T10:50:00Z",
+        "last_recheck": "J1291",
+        "checked_at": "2026-10-31T04:49:37+00:00",
+        "checked_by": "chief"
       }
     },
     {
