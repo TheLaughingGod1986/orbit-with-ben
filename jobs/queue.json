@@ -125032,18 +125032,31 @@
           "at": "2026-10-31T20:12Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1403; starting read-only listing check on last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-31T20:12Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified last 10 public OWB videos (VfDm3E2bUgU, 6dcL5rBmHPM, _a66uhRDips, gJwNJN_yMKU, 1OCNzhkiBuc, OVLv9dxTcpE, VBaYRPp85Sw, vlkj8RQKmH8, 2e-giqFmfy8, 82Ao0v5XiQI)"
         }
       ],
-      "remaining_action": "Identify the last 10 live OWB videos from snapshots and studio records",
+      "remaining_action": "Verify live YouTube listings for the last 10 public OWB videos and next scheduled video",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-10-31T20:12Z",
         "by": "gemini",
-        "note": "Claimed J1403; starting read-only listing check on last 10 live OWB videos"
-      }
+        "note": "Identified last 10 public OWB videos (VfDm3E2bUgU, 6dcL5rBmHPM, _a66uhRDips, gJwNJN_yMKU, 1OCNzhkiBuc, OVLv9dxTcpE, VBaY"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
