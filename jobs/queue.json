@@ -115937,13 +115937,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-31T01:04Z",
-      "eta": "2026-10-31T02:04Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T00:24Z",
-      "result": "",
+      "result": "Assembled 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/02_Voiceover/magnetic_field_flip_vo_v02a from copied v02 parts. Fades: ch00 st=35.24 d=0.12, ch01 st=88.38 d=0.02, ch02 st=100.28 d=0.04, ch03 st=92.14 d=0.02, ch04 st=73.96 d=0.04, ch05 st=86.22 d=0.02, ch06 st=87.42 d=0.18, curve=qsin. wav sha256 3444635a3efa951a1031d6681390053abd9cdd3cc1ed97d537086ee7de86b3c6 (matches Chief sim). mp3 sha256 334085b5f1eb1992a0fd7f31ff46f97b24b0443158551f2cf91476a9d9c31347 (libmp3lame 128k, 48 kHz stereo, same settings as v02). 568.280 s, 27,277,440 frames, pcm_s16le. ebur128 I -19.9 LUFS, LRA 4.8, true peak -3.5 dBFS. Last-10 ms RMS: ch00 -56.11, ch01 -71.55, ch02 -58.22, ch03 -71.09, ch04 -58.07, ch05 -59.52, ch06 -57.08; last sample 0/0 on every part. Null vs v02: max abs diff 0 outside 35.240-35.360, 124.440-124.460, 225.440-225.480, 318.320-318.340, 393.000-393.040, 479.960-479.980 and 568.100-568.280 s. STT copied from stt/magnetic_field_flip_vo_v02 to stt/magnetic_field_flip_vo_v02a; no new paid STT. v01 and v02 wav/mp3/parts/stt untouched (v02 wav still c7c482ac8cdf6738b2172044e8b5e97e03fb7c1fa01b3488e6f24fdc21fd125f). 1905 date/place card spells PONTFAREIN (h24). Lock commit c8ed778ab. No mux, no spend, no upload.",
       "history": [
         {
           "at": "2026-10-31T00:24Z",
@@ -115969,6 +115969,11 @@
           "at": "2026-10-31T01:09Z",
           "by": "cursor",
           "what": "step 5 of 6 done: Checks PASS. wav 3444635a matches Chief sim. Lock recorded in c8ed778ab. v01 and v02 untouched."
+        },
+        {
+          "at": "2026-10-31T01:09Z",
+          "by": "cursor",
+          "what": "done: Assembled 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/02_Voiceover/magnetic_field_flip_vo_v02a from copied v02 parts. Fades: ch00 st=35.24 d=0.12, ch01 st=88.38 d=0.02, ch02 st=100.28 d=0.04, ch03 st=92.14 d=0.02, ch04 st=73.96 d=0.04, ch05 st=86.22 d=0.02, ch06 st=87.42 d=0.18, curve=qsin. wav sha256 3444635a3efa951a1031d6681390053abd9cdd3cc1ed97d537086ee7de86b3c6 (matches Chief sim). mp3 sha256 334085b5f1eb1992a0fd7f31ff46f97b24b0443158551f2cf91476a9d9c31347 (libmp3lame 128k, 48 kHz stereo, same settings as v02). 568.280 s, 27,277,440 frames, pcm_s16le. ebur128 I -19.9 LUFS, LRA 4.8, true peak -3.5 dBFS. Last-10 ms RMS: ch00 -56.11, ch01 -71.55, ch02 -58.22, ch03 -71.09, ch04 -58.07, ch05 -59.52, ch06 -57.08; last sample 0/0 on every part. Null vs v02: max abs diff 0 outside 35.240-35.360, 124.440-124.460, 225.440-225.480, 318.320-318.340, 393.000-393.040, 479.960-479.980 and 568.100-568.280 s. STT copied from stt/magnetic_field_flip_vo_v02 to stt/magnetic_field_flip_vo_v02a; no new paid STT. v01 and v02 wav/mp3/parts/stt untouched (v02 wav still c7c482ac8cdf6738b2172044e8b5e97e03fb7c1fa01b3488e6f24fdc21fd125f). 1905 date/place card spells PONTFAREIN (h24). Lock commit c8ed778ab. No mux, no spend, no upload."
         }
       ],
       "remaining_action": "Mark J1295 done with the v02a paths and checksums",
@@ -115983,7 +115988,8 @@
       },
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "done_ref": "6536440194"
     }
   ],
   "focus": [],
