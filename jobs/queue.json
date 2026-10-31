@@ -117027,13 +117027,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-31T04:16Z",
-      "eta": "2026-10-31T05:16Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T04:09Z",
-      "result": "",
+      "result": "hos_013_vo_v03a locked. WAV 837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0. MP3 ada7eaa775104ee5dea9e9be98155abfc0b1e9fda010097f42ca9fa25bed7f85. 02_Voiceover/ on the Mini. vo_check PASS, 0 fails. HOS 4812d385. Desk #180 comment 6538959406.",
       "history": [
         {
           "at": "2026-10-31T04:09Z",
@@ -117074,6 +117074,11 @@
           "at": "2026-10-31T04:24Z",
           "by": "cursor",
           "what": "step 5 of 5 done: Desk comment 6538959406. HOS commit 4812d385. vo_check PASS, 0 fails."
+        },
+        {
+          "at": "2026-10-31T04:24Z",
+          "by": "cursor",
+          "what": "done: hos_013_vo_v03a locked. WAV 837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0. MP3 ada7eaa775104ee5dea9e9be98155abfc0b1e9fda010097f42ca9fa25bed7f85. 02_Voiceover/ on the Mini. vo_check PASS, 0 fails. HOS 4812d385. Desk #180 comment 6538959406."
         }
       ],
       "remaining_action": "Job finished",
@@ -117088,7 +117093,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "4812d385"
     }
   ],
   "focus": [],
