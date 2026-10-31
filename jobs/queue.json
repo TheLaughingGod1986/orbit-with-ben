@@ -117898,13 +117898,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-31T06:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-31T06:52Z",
-      "result": "parked for Chief: picture PASS on AR1 v01, AR2 v02, AR3 v02 in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/review_frames/ (commit 493f42649)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-31T06:52Z",
@@ -117940,17 +117940,15 @@
           "at": "2026-10-31T06:59Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: picture PASS on AR1 v01, AR2 v02, AR3 v02 in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/review_frames/ (commit 493f42649)"
+        },
+        {
+          "at": "2026-10-31T07:33Z",
+          "by": "codex",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Park J1317 for Chief picture PASS",
       "kind": "qa",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-31T06:59Z",
-        "by": "gemini",
-        "note": "Committed review_frames/ (frame 0 1080x1920 q85 + 0.5s contact sheets 4 cols q80 <1.5MB) in 493f42649"
-      },
       "taskKeys": [
         "OWB:030"
       ]
