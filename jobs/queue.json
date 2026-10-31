@@ -118340,10 +118340,10 @@
       "stage": "",
       "after": "J1317",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T12:58Z",
+      "eta": "2026-10-31T14:58Z",
       "created_by": "codex",
       "created_at": "2026-10-31T07:33Z",
       "result": "",
@@ -118497,6 +118497,11 @@
           "at": "2026-10-31T12:57Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-10-31T12:58Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await J1345 AR3 composition correction and elected-Chief picture review",
@@ -118513,7 +118518,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T12:58Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1322",
