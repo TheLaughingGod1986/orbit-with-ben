@@ -125250,19 +125250,33 @@
           "at": "2026-10-31T20:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T20:26Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting 3-step read-only HOS listing audit (1: lint:package & channel:audit, 2: verify public end screens & Shorts Related pills, 3: update 2026-10-31.md & run check_all.sh)"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Run lint:package and channel:audit on HOS live and scheduled videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T20:25Z",
+        "at": "2026-10-31T20:26Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting 3-step read-only HOS listing audit (1: lint:package & channel:audit, 2: verify public end screens & Shorts Rela"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     }
   ],
   "focus": [],
