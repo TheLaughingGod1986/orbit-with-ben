@@ -116663,6 +116663,11 @@
           "at": "2026-10-31T03:49Z",
           "by": "cursor",
           "what": "step 1 of 4 done: lsof clear on j1287-v03. No other open job cites it. PIPELINE and HOS json have no cite. Worktree gemini-j0240-wt still held by bash 1852 and node 1975; will skip. 20 files, 1666816 KB."
+        },
+        {
+          "at": "2026-10-31T03:58Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Source hashed: 20 files, 1706780395 bytes. rsync to NAS still running. Local copy kept until sha match. Worktree still skipped (bash 1852, node 1975)."
         }
       ],
       "remaining_action": "Copy /private/tmp/j1287-v03 to the NAS and verify sha256",
@@ -116671,9 +116676,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-31T03:49Z",
+        "at": "2026-10-31T03:58Z",
         "by": "cursor",
-        "note": "lsof clear on j1287-v03. No other open job cites it. PIPELINE and HOS json have no cite. Worktree gemini-j0240-wt still "
+        "note": "Source hashed: 20 files, 1706780395 bytes. rsync to NAS still running. Local copy kept until sha match. Worktree still s"
       },
       "taskKeys": [
         "HOS:008"
