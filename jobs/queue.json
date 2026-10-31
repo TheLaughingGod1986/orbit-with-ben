@@ -1,5 +1,5 @@
 {
-  "next_id": 1331,
+  "next_id": 1332,
   "jobs": [
     {
       "id": "J0001",
@@ -119048,6 +119048,35 @@
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes"
+    },
+    {
+      "id": "J1331",
+      "title": "J1326 follow-up: resolve exact UAT serving paths and bounded headroom",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex J1326 ruling, 31 Oct 2026. Records-only investigation; GBP0. No moving, unlinking, NAS writes/deletes, media changes, publishing, generation or broad scans. J1326 evidence PR366 accepted; zero files cleared. J1322 and J1100 remain held.\nResolve the exact physical serving paths for the 120 repo-root OWB UAT candidate files in jobs/reviews/J1326/file_decisions.csv and 24 media duplicate proofs in uat_hash_proof.json. Trace board Play/signing and watch-link resolution code/config without exposing secrets. Distinguish CloudDocs from repository-root files. Check live queue, UPLOADS/Buffer manifests, current and previous watch/master versions and rebuild references. For each exact candidate return KEEP with concrete reference, or proposed redundant-copy candidate with allocated bytes, full source/destination hashes and evidence that all exclusions are satisfied. Hash equality alone is insufficient. Do not clear current/previous or uploaded records by version ordering. No worktree-resident UAT, iCloud files, gate-media cache or source assets may be selected.\nTake two timestamped df readings and bounded allocation readings for ONLY /private/tmp/J1321-media, /private/tmp/J1321-render and /private/tmp/J1324-render. These remain KEEP while J1321/J1324 picture acceptance is unresolved; read J1329 and successor repair rulings too. Do not wait to do the independent watch-path tracing. Explain the change from 09:02:53 4.91755 GiB to the Chief 09:39:07 reading 8952156 KiB (8.53744 GiB) only where existing records prove it; mark unassigned remainder unknown. Do not infer cause from mtime, and no sweep to fill the gap.\nReport remaining shortfall to 20 GiB and J1100 restart 10 GiB. Preserve J1100 2/3, h43-LOOP, accepted pickups and all gates, J1320 inputs, HOS008 graphics dependency locks (J1213/J1241), local c0f876ffa and J1322-records. Deliver small records from a clean sparse worktree/PR and return exact proposal to elected Chief; no recovery authority granted. Link OWB:027,OWB:028. If NAS genuinely unavailable after approved read access, keep all sources and use observable mount/read condition with retry within one hour. Start now; finish by 1 Nov 00:00 UTC.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T09:40Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T09:40Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Trace UAT serving paths and prove any exact redundant-copy candidates; no moves",
+      "due": "2026-11-01T00:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],

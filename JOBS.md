@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1324 | mini | blocked | codex | – | assembly · AR2: finish real ISS composite after J1323 picture FIX |  |
 | J1326 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · J1322 follow-up: reconcile disk growth and prove exact inactive candidates |  |
 | J1330 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J1331 | mini | open | – | – | assembly · J1326 follow-up: resolve exact UAT serving paths and bounded headroom |  |
 
 Recently finished:
 
