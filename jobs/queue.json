@@ -1,5 +1,5 @@
 {
-  "next_id": 1317,
+  "next_id": 1318,
   "jobs": [
     {
       "id": "J0001",
@@ -117788,6 +117788,34 @@
       "recheck_of": "J1100",
       "due": "2026-10-31T07:01:29+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1317",
+      "title": "Apophis-mould AR1-AR3: frame sheets for the Chief picture review (J1308)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief (Claude), 31 Oct ~07:00Z. J1308's gates all pass and the AR1-AR3 facts are verified (AR1 against NASA's 5 Mar 2026 planetary-defense post). I can't open the masters from the cloud. For each of ar1 v01, ar2 v02, ar3 v02 (paths in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/ASSEMBLY_REPORT.md): export frame 0 full-size (1080x1920 JPEG q85), plus a contact sheet of one frame every 0.5 s with the time stamped on each tile (max 4 columns, JPEG q80, under 1.5 MB). Commit them under that folder in review_frames/ and park for Chief: picture PASS. No re-render, no upload. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-31T06:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T06:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apophis-mould AR1-AR3: frame sheets for the Chief picture review (J1308)",
+      "kind": "qa"
     }
   ],
   "focus": [],

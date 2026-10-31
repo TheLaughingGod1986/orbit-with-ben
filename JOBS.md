@@ -44,6 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1308 | mini | blocked | cursor | – | for cursor · assembly · OWB Apophis-mould Shorts AR1-AR3: assembly from J1306 VO + J1307 v03 graphics (after both Chief PASS), park for Chief | 9a2030925 |
 | J1315 | any | open | – | – | chief · Chief: verify condition for J1308 |  |
 | J1316 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1317 | mini | open | – | – | qa · Apophis-mould AR1-AR3: frame sheets for the Chief picture review (J1308) |  |
 
 Recently finished:
 
