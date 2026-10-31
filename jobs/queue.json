@@ -118460,13 +118460,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T08:39Z",
-      "eta": "2026-10-31T10:39Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T08:29Z",
-      "result": "",
+      "result": "Verification complete: J1317 done does not clear J1321. Ruling #6541270078: AR3 v09 picture PASS; AR2 v05 FIX for black rectangular station inset. Both NAS hashes verified; sheets and WARN frames inspected. J1324 corrective assembly queued, not claimed. J1321 held on corrected AR2 plus Chief acceptance, retry 2026-10-31T09:29:13Z retained. No UAT/upload/schedule or spend.",
       "history": [
         {
           "at": "2026-10-31T08:29Z",
@@ -118497,6 +118497,11 @@
           "at": "2026-10-31T08:42Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling posted #6541270078; J1321 actual input hold recorded with J1323 recheck, original 09:29:13Z retry retained. J1324 open, not claimed; no cohort approval."
+        },
+        {
+          "at": "2026-10-31T08:42Z",
+          "by": "codex",
+          "what": "done: Verification complete: J1317 done does not clear J1321. Ruling #6541270078: AR3 v09 picture PASS; AR2 v05 FIX for black rectangular station inset. Both NAS hashes verified; sheets and WARN frames inspected. J1324 corrective assembly queued, not claimed. J1321 held on corrected AR2 plus Chief acceptance, retry 2026-10-31T09:29:13Z retained. No UAT/upload/schedule or spend."
         }
       ],
       "remaining_action": "Verification complete; J1321 held for J1324 correction and Chief acceptance",
@@ -118513,7 +118518,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/264#issuecomment-6541270078"
     },
     {
       "id": "J1324",
