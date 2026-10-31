@@ -119728,9 +119728,14 @@
           "at": "2026-10-31T10:42Z",
           "by": "codex",
           "what": "step 2 of 4 done: V09 rendered and archived; picture/polish/SFX pass, loop reports 3-frame freeze at 15.93s. V10 detached with stronger smooth push only in authorized late interval; no grain/sharpening."
+        },
+        {
+          "at": "2026-10-31T10:43Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: V10 all four gates exit 0; exact AAC matches v08, NAS master hash verified. Full 39-tile sheet and exact 18.9s loop WARN inspected. AR1/AR3 and prior masters hashes match."
         }
       ],
-      "remaining_action": "Resolve late-shot freeze in v10 and verify all composite gates",
+      "remaining_action": "Commit verified correction evidence and return PR for Chief picture acceptance",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -119742,11 +119747,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-31T10:42Z",
+        "at": "2026-10-31T10:43Z",
         "by": "codex",
-        "note": "V09 rendered and archived; picture/polish/SFX pass, loop reports 3-frame freeze at 15.93s. V10 detached with stronger sm"
+        "note": "V10 all four gates exit 0; exact AAC matches v08, NAS master hash verified. Full 39-tile sheet and exact 18.9s loop WARN"
       },
       "taskKeys": [
         "OWB:030"
