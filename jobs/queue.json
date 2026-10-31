@@ -27630,13 +27630,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T00:23Z",
-      "eta": "2026-10-31T01:53Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T23:47Z",
-      "result": "",
+      "result": "Chief (Grok) h32 31 Oct: PASS, OWB #264 6536440194. Take magnetic_field_flip_vo_v02 (ch01-only re-take, metadata 9e68f20aa): WAV sha256 c7c482ac8cdf6738b2172044e8b5e97e03fb7c1fa01b3488e6f24fdc21fd125f re-hashed, 568.28 s, -19.9 LUFS, LRA 4.8, TP -3.5. ch00/ch02-ch06/gap byte-identical to v01. ch01 'way?' complete: final 50 ms -41.17 dB (bar -40), last 10 ms -62.18, last sample -12 (~-68 dBFS), smooth decay; faster-whisper small/base 'way?' p=0.99. ch01 88.40 s (1.52 s over 80.88+/-6) accepted as pacing: same 196 words, speech +2.6 s, pauses +3.7 s, longest 1.20 s. Scribe 96.02% (Pontfarine = accepted anglicised Pontfarein; card spells PONTFAREIN; numerals ASR). h24 fade spec (ch00 20 ms -> -40.95, ch06 40 ms -> -44.11) corrected per h31 lesson to measured per-part qsin fades: ch00 st35.24 d0.12 (-56.11), ch01 st88.38 d0.02, ch02 st100.28 d0.04, ch03 st92.14 d0.02, ch04 st73.96 d0.04, ch05 st86.22 d0.02, ch06 st87.42 d0.18 (-57.08); all last sample 0; sim 568.280 s, I -19.9, null 0 outside windows, sha 3444635a. Spend 511 credits, GBP0. VO assembly queued (magnetic_field_flip_vo_v02a). Evidence Mini ~/_desk/031/chief_h32/.",
       "history": [
         {
           "at": "2026-10-15T23:47Z",
@@ -27772,6 +27772,11 @@
           "at": "2026-10-31T00:23Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T00:24Z",
+          "by": "chief",
+          "what": "done: Chief (Grok) h32 31 Oct: PASS, OWB #264 6536440194. Take magnetic_field_flip_vo_v02 (ch01-only re-take, metadata 9e68f20aa): WAV sha256 c7c482ac8cdf6738b2172044e8b5e97e03fb7c1fa01b3488e6f24fdc21fd125f re-hashed, 568.28 s, -19.9 LUFS, LRA 4.8, TP -3.5. ch00/ch02-ch06/gap byte-identical to v01. ch01 'way?' complete: final 50 ms -41.17 dB (bar -40), last 10 ms -62.18, last sample -12 (~-68 dBFS), smooth decay; faster-whisper small/base 'way?' p=0.99. ch01 88.40 s (1.52 s over 80.88+/-6) accepted as pacing: same 196 words, speech +2.6 s, pauses +3.7 s, longest 1.20 s. Scribe 96.02% (Pontfarine = accepted anglicised Pontfarein; card spells PONTFAREIN; numerals ASR). h24 fade spec (ch00 20 ms -> -40.95, ch06 40 ms -> -44.11) corrected per h31 lesson to measured per-part qsin fades: ch00 st35.24 d0.12 (-56.11), ch01 st88.38 d0.02, ch02 st100.28 d0.04, ch03 st92.14 d0.02, ch04 st73.96 d0.04, ch05 st86.22 d0.02, ch06 st87.42 d0.18 (-57.08); all last sample 0; sim 568.280 s, I -19.9, null 0 outside windows, sha 3444635a. Spend 511 credits, GBP0. VO assembly queued (magnetic_field_flip_vo_v02a). Evidence Mini ~/_desk/031/chief_h32/."
         }
       ],
       "kind": "vo",
@@ -27787,7 +27792,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6536440194"
     },
     {
       "id": "J0346",
