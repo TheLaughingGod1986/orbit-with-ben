@@ -72707,18 +72707,22 @@
           "at": "2026-10-31T11:01Z",
           "by": "relay",
           "what": "condition verification queued: J1342"
+        },
+        {
+          "at": "2026-10-31T11:31Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T17:32:00Z"
         }
       ],
       "kind": "vo",
-      "remaining_action": "Decide 009 Short_B hook recording scope (Chief/Claude), then record only the takes that need replacing",
+      "remaining_action": "Approve the 009 Short B replacement opening and exact recording scope, then record only required replacements",
       "hold": {
         "type": "input",
-        "condition": "Credit is not the blocker (live ElevenLabs 30 Oct 14:54Z: 121114 remaining). Still unmet at 2026-10-31T04:50Z: no approved recording scope resolving the 009 Short_B hook (no HOS commit, PR or job since J1256/J1004 settles it). J1004 Chief PASS (HOS PR #366) keeps its block (both time intervals required), approves 010 Short_A existing-audio Option A1 and records existing v02 takes. Do not regenerate the four unchanged scripts or treat restored credit as script approval. Original production and Ben gates unchanged.",
-        "check_at": "2026-10-31T12:01:12+00:00",
-        "last_recheck": "J1288",
-        "checked_at": "2026-10-31T04:49:16+00:00",
-        "checked_by": "chief",
-        "recheck_task": "J1342"
+        "condition": "Verified 2026-10-31T11:31Z: still no approved 009 Short_B replacement opening and recording scope in HOS main, recent PRs, desk or queue. Accepted J1004 / merged HOS PR 366 retains its hook block: both one minute and one second must remain; existing audio cannot meet 2.85s at atempo<=1.06. 010 Short_A Option A1 is already approved for existing-audio assembly; v02 takes exist. Do not regenerate four unchanged scripts. Prior renewed-credit reading (J1256, 30 Oct 14:54Z, 121114) is historical, not a current balance; read live before any future authorised spend. All production and Ben gates remain.",
+        "check_at": "2026-10-31T17:32:00Z",
+        "last_recheck": "J1342",
+        "checked_at": "2026-10-31T11:31:32+00:00",
+        "checked_by": "codex"
       }
     },
     {
