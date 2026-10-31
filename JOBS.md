@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1407 | any | claimed | gemini | 2026-10-31T21:31Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1407 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1406 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS 97900f6c))
 - J1405 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1404 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS 2d15fd3f))
@@ -54,4 +54,3 @@ Recently finished:
 - J1400 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS e97d203b))
 - J1399 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 pass, no fixes. New: standalone test S3 VfDm3E2bUgU (no Related by design, J0216). 05_Analytics/live_fixes/2026-10-31.md.)
 - J1398 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS f2f39efa))
-- J1397 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (7a8898462); 0 fixes needed)
