@@ -127537,18 +127537,26 @@
           "at": "2026-10-31T23:53Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1435; starting read-only audit of last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-31T23:54Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Confirmed last 10 public videos from 2026-10-31 snapshot + VfDm3E2bUgU (live since 11:30Z); next scheduled rVqgtkBV3jc at 2026-11-01T18:00Z"
         }
       ],
-      "remaining_action": "Audit last 10 live OWB videos (chapters, sources, end screens, Related) and write 05_Analytics/live_fixes/ report",
+      "remaining_action": "Verify chapters, sources, end screens and Related pill across the 10 live videos and update 05_Analytics/live_fixes/2026-10-31.md",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T23:53Z",
+        "at": "2026-10-31T23:54Z",
         "by": "gemini",
-        "note": "Claimed J1435; starting read-only audit of last 10 live OWB videos"
-      }
+        "note": "Confirmed last 10 public videos from 2026-10-31 snapshot + VfDm3E2bUgU (live since 11:30Z); next scheduled rVqgtkBV3jc a"
+      },
+      "taskKeys": [
+        "OWB:023"
+      ]
     }
   ],
   "focus": [],
