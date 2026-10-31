@@ -44,6 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1320 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate |  |
 | J1322 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · J1318 ruling: recover Mini space from verified inactive scratch only |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
+| J1366 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
