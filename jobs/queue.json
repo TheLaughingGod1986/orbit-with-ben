@@ -116920,13 +116920,13 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-31T04:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T03:19Z",
-      "result": "parked for Chief: h38 v03 revision 7e6dcb51f on codex/j1307-graphics; delivery checks succeed, picture_qa has 4 split-panel FAILs on odds/station and 1 date-card WARN; report and evidence committed",
+      "result": "",
       "history": [
         {
           "at": "2026-10-31T03:19Z",
@@ -117007,18 +117007,16 @@
           "at": "2026-10-31T04:29Z",
           "by": "codex",
           "what": "blocked: parked for Chief: h38 v03 revision 7e6dcb51f on codex/j1307-graphics; delivery checks succeed, picture_qa has 4 split-panel FAILs on odds/station and 1 date-card WARN; report and evidence committed"
+        },
+        {
+          "at": "2026-10-31T04:46Z",
+          "by": "chief",
+          "what": "reopened: h41 FIX on v03 (7e6dcb51f). v04 into NEW 07_Edit-Project/graphics_j1307_v04/ (keep v03), commit on top of 7e6dcb51f on codex/j1307-graphics, push normally, park for Chief. h38 fixes band/tint order/GD timing/odds call-out PASS; picture_qa 4 split-panel gutter FAILs ruled false positives (navy QA backdrop line, std 0, tipped by label-raised median; record citing h41 if backdrop-only gutter recurs). 1) ar1_size: SCALE:/15-STOREY/BUILDING at spacing 74 merges strokes (fills 660-730/734-804/808-878) and BUILDING stroke touches rock + building tops (y~880-882). Keep text, each line <=980 px, >=8 px transparent gap between stroked lines, >=12 px clear of all art on every frame (e.g. 88 px two lines 'SCALE: 15-STOREY'/'BUILDING', or lower the art). 2) ar2_station: 109 M/(FOOTBALL/FIELD) strokes merge (ink y745-908) and ')' runs to y~911 over the third solar panel (top y895). Same gap/clearance rules (e.g. '(FOOTBALL FIELD)' one 88 px line under '109 M', or move art down). 3) ar3_path: NE 110m Morocco ring includes Western Sahara (2,520 of 8,239 tinted px south of 27.67N); redraw W. Sahara polygon in base land colour over the tint or clip. Add a failing verify_graphics.py assertion for label line gap >=8 px and art clearance >=12 px. Optional: GD dot from same integer index as ci (lands f90 with EGYPT). Everything else unchanged. Rerun verify + picture_qa, update GRAPHICS_REPORT.md. GBP0, no VO/mint/upload, no merge."
         }
       ],
       "remaining_action": "Chief review of v03 h38 fixes and four unresolved picture-QA findings",
       "for": "codex",
-      "kind": "chart",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-31T04:29Z",
-        "by": "codex",
-        "note": "Revision 7e6dcb51f pushed to codex/j1307-graphics; v03 report, hashes and QA committed, v02 preserved. No film PASS or m"
-      }
+      "kind": "chart"
     },
     {
       "id": "J1308",
