@@ -115811,18 +115811,23 @@
           "at": "2026-10-31T00:46Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Claimed. Disk 15 GiB free. Inventory first."
+        },
+        {
+          "at": "2026-10-31T00:51Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Inventory written. Free space 14 GiB. Moving 007, chief_h31, watch_proxies, gemini-j0240-wt. J1100, relay-wt, analytics worktree, 031, 008, 032 left in place."
         }
       ],
-      "remaining_action": "Inventory ~/_desk scratch before any NAS move",
+      "remaining_action": "Copy verified done-job scratch to the NAS",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T00:46Z",
+        "at": "2026-10-31T00:51Z",
         "by": "cursor",
-        "note": "Claimed. Disk 15 GiB free. Inventory first."
+        "note": "Inventory written. Free space 14 GiB. Moving 007, chief_h31, watch_proxies, gemini-j0240-wt. J1100, relay-wt, analytics "
       },
       "taskKeys": [
         "OWB:032"
