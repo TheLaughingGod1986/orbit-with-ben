@@ -115806,23 +115806,26 @@
           "at": "2026-10-31T00:46Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T00:46Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Claimed. Disk 15 GiB free. Inventory first."
         }
       ],
-      "remaining_action": "Wait for tmux J1293-move; if J1293-move.done is missing leave it, then park if still under 20 GiB",
+      "remaining_action": "Inventory ~/_desk scratch before any NAS move",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-31T00:10Z",
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T00:46Z",
         "by": "cursor",
-        "note": "rsync of wt-j1192-hos in progress. Do not start a second copy."
+        "note": "Claimed. Disk 15 GiB free. Inventory first."
       },
       "taskKeys": [
-        "OWB:026",
-        "OWB:027",
-        "OWB:028"
+        "OWB:032"
       ]
     },
     {
