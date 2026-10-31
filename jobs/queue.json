@@ -1,5 +1,5 @@
 {
-  "next_id": 1316,
+  "next_id": 1317,
   "jobs": [
     {
       "id": "J0001",
@@ -98437,6 +98437,11 @@
           "at": "2026-10-31T06:01Z",
           "by": "codex",
           "what": "blocked: parked for Chief: live df 8.3 GiB is below Chief h43 restart minimum 10 GiB. Required nas_offload.py --apply found no eligible scratch (8506 MB unchanged). Preserve 2/3, OWB:027/028 links, accepted pickups and h43-LOOP ruling; restore headroom before restarting v07 repairs. No media edits/spend/upload this run."
+        },
+        {
+          "at": "2026-10-31T06:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J1316"
         }
       ],
       "remaining_action": "Restore at least 10 GiB free to restart v07 repairs under Chief h43",
@@ -98462,6 +98467,12 @@
         "at": "2026-10-31T06:01Z",
         "by": "codex",
         "note": "Preserved prior 2/3 plan and completed S2/S5 pickups. Live df 8.3 GiB; required nas_offload --apply found nothing eligib"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-31T07:01:29+00:00",
+        "recheck_task": "J1316"
       }
     },
     {
@@ -117745,6 +117756,37 @@
       "kind": "chief",
       "recheck_of": "J1308",
       "due": "2026-10-31T07:00:05+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1316",
+      "title": "Chief: verify condition for J1100",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1100: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-31T06:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T06:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Restore at least 10 GiB free to restart v07 repairs under Chief h43",
+      "kind": "chief",
+      "recheck_of": "J1100",
+      "due": "2026-10-31T07:01:29+00:00",
       "due_kind": "condition-verification"
     }
   ],
