@@ -98487,9 +98487,14 @@
           "at": "2026-10-31T09:40Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-31T14:45:00Z"
+        },
+        {
+          "at": "2026-10-31T09:52Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T14:45:00Z"
         }
       ],
-      "remaining_action": "Wait for measured disk recovery and Chief restart verification under h43",
+      "remaining_action": "Await verified >=10 GiB free before resuming the existing v07 repair and gate work",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -98515,7 +98520,7 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1326 Chief review 31 Oct 09:39Z: df 8952156 KiB free (8.537 GiB), below h43 restart 10 GiB; J1322 recovery unresolved, J1331 exact-reference investigation queued. KEEP worker 2/3, OWB:027/028, h43-LOOP, accepted pickups and every gate. Restart only after elected-Chief live verification >=10 GiB; park below 6 GiB. No restart authorised.",
+        "condition": "J1331 Chief review 31 Oct: PR367 accepted, recovery allowlist empty; J1322 still held. Live 09:50:55Z df 8851356 KiB (8.441 GiB) below 10 GiB restart. Restart only after elected-Chief live verification >=10 GiB; park below 6 GiB. Preserve worker 2/3, OWB:027/028, h43-LOOP, accepted pickups and every gate. No restart authorised.",
         "check_at": "2026-10-31T14:45:00Z"
       }
     },
