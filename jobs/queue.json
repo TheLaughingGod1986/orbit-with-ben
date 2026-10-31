@@ -117076,7 +117076,7 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -117208,6 +117208,11 @@
           "at": "2026-10-31T05:14Z",
           "by": "chief",
           "what": "reopened: Chief h42 PASS on v04 0b91a30e5 (OWB #264 6539441792); reopened only so Chief can claim and close it as done for J1308. No further work for codex."
+        },
+        {
+          "at": "2026-10-31T05:15Z",
+          "by": "chief",
+          "what": "cancelled: Chief h42 PASS on v04 0b91a30e5 (OWB #264 6539441792), closed cancelled-with-PASS per house practice (h35/h37/h39) because jobs.py lets only codex claim/done this worker job. ar1_size gap 27/clr 37 px, ar2_station 16/49 px, Morocco tint 0 px south of 27.67N, GD dot f90; 7 other sequences byte-identical to v03; odds gutters = h41 backdrop false positive; ar3_dates WARN accepted. Merged PR #360 036ddbe4f. v04 pack graphics_j1307_v04/ is THE J1308 pack. No further work for codex."
         }
       ],
       "remaining_action": "Chief review of v04 h41 fixes and retained diagnostic findings",
