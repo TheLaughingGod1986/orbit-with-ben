@@ -115799,16 +115799,22 @@
           "at": "2026-10-31T00:19Z",
           "by": "cursor",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-31T00:19Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: v02b parts copied from v02; ch00 180 ms qsin at 50.30 and ch02 20 ms qsin at 107.66; frame counts unchanged"
         }
       ],
-      "remaining_action": "Copy v02 parts into v02b and apply the h31 fades",
+      "remaining_action": "Concat v02b wav and mp3, then run the h31 level, tail and null checks",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-10-31T00:19Z",
-        "by": "cursor"
+        "by": "cursor",
+        "note": "v02b parts copied from v02; ch00 180 ms qsin at 50.30 and ch02 20 ms qsin at 107.66; frame counts unchanged"
       },
       "taskKeys": [
         "OWB:032"
