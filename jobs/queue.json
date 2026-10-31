@@ -121426,6 +121426,11 @@
           "at": "2026-10-31T14:44Z",
           "by": "relay",
           "what": "condition verification queued: J1367"
+        },
+        {
+          "at": "2026-10-31T15:17Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T15:44:54Z"
         }
       ],
       "remaining_action": "Resolve missing full-runtime score and package targets; rerun affected gates and full playback review",
@@ -121442,12 +121447,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1357 verified accepted AR1 v01, AR2 v06 and AR3 v05 hashes unchanged; three manifest video targets still missing. PR376/92de3841c music omission and silent-tail findings unresolved; no corrected music/gates or full audiovisual review evidence. Scoped no-spend correction and versioned package mapping needed before final watch; J1356 forbids rebuild. Existing picture PASS retained, no publishing or Ben-watch approval.",
-        "check_at": "2026-10-31T15:44:54+00:00",
-        "last_recheck": "J1357",
-        "checked_at": "2026-10-31T13:44:44+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1367"
+        "condition": "J1367 fresh hashes confirm accepted AR1 v01, AR2 v06 and AR3 v05 unchanged; all three manifest export targets remain absent. PR376 at 92de3841c remains unresolved: full-runtime music, silent tails, corrected package mapping, affected gates and full audiovisual review evidence outstanding. Scoped no-spend correction required; J1356 forbids rebuild. Existing picture acceptance retained, no final-watch or publishing approval.",
+        "check_at": "2026-10-31T15:44:54Z",
+        "last_recheck": "J1367",
+        "checked_at": "2026-10-31T15:17:06+00:00",
+        "checked_by": "codex"
       }
     },
     {
