@@ -116779,10 +116779,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-10-31T04:49Z",
+      "eta": "2026-10-31T04:59Z",
       "created_by": "relay",
       "created_at": "2026-10-31T02:46Z",
       "result": "",
@@ -116791,13 +116791,26 @@
           "at": "2026-10-31T02:46Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T04:49Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-10-31T03:46:18+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T04:49Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1304",
