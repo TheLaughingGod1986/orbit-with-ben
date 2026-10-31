@@ -117826,13 +117826,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T07:27Z",
-      "eta": "2026-10-31T09:27Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T06:01Z",
-      "result": "",
+      "result": "Verified J1100 remains blocked: live 10152730624 bytes (9.4555 GiB) below h43 10 GiB restart floor at 07:28Z. Required NAS offload found no eligible scratch. Recorded input wait with recheck J1316 for 2026-10-31T13:28Z; preserved J1100 2/3, OWB:027/028 links, pickups, h43-LOOP and all review/gate requirements. No media changes, spend or publishing.",
       "history": [
         {
           "at": "2026-10-31T06:01Z",
@@ -117863,6 +117863,11 @@
           "at": "2026-10-31T07:28Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified persisted input hold, 13:28Z retry, original 2/3 and film links; reported outcome to studio thread."
+        },
+        {
+          "at": "2026-10-31T07:28Z",
+          "by": "codex",
+          "what": "done: Verified J1100 remains blocked: live 10152730624 bytes (9.4555 GiB) below h43 10 GiB restart floor at 07:28Z. Required NAS offload found no eligible scratch. Recorded input wait with recheck J1316 for 2026-10-31T13:28Z; preserved J1100 2/3, OWB:027/028 links, pickups, h43-LOOP and all review/gate requirements. No media changes, spend or publishing."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits sufficient disk headroom",
