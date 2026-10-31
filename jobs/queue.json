@@ -98602,6 +98602,11 @@
           "at": "2026-10-31T16:01Z",
           "by": "relay",
           "what": "condition verification queued: J1380"
+        },
+        {
+          "at": "2026-10-31T16:33Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T17:01:29Z"
         }
       ],
       "remaining_action": "Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
@@ -98630,12 +98635,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Verified instrumental-only S2 bed with empty base.en ASR and completed listening; resolve recorded source-audio transfer approval rejection through authorized review or supply an existing cleared source. Checkpoint afed1c552 has eight matching hashes but neither tested bed passes and listening remains incomplete. Disk verified 34.620 GiB; predecessor J1270 complete. Retain h43-LOOP, accepted pickups/S6 audio, worker 2/3 and all original gates/approvals.",
-        "check_at": "2026-10-31T17:01:29+00:00",
-        "last_recheck": "J1370",
-        "checked_at": "2026-10-31T15:24:01+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1380"
+        "condition": "Verified instrumental-only S2 bed with empty base.en ASR and completed listening; resolve recorded source-audio transfer approval rejection through authorized review or supply an existing cleared source. J1380 reverified all eight afed1c552 checkpoint hashes; both tested bed alternatives still have nonempty ASR and no source-listening completion exists. Live disk 34.190 GiB; J1270 complete. Preserve worker 2/3, OWB:027/028, h43-LOOP, accepted pickups/S6 audio and all original gates, approvals, deadlines and scheduled-v01 fallback.",
+        "check_at": "2026-10-31T17:01:29Z",
+        "last_recheck": "J1380",
+        "checked_at": "2026-10-31T16:33:15+00:00",
+        "checked_by": "codex"
       }
     },
     {
