@@ -123,6 +123,11 @@ class Offload(unittest.TestCase):
         (moved / no.MARKER).write_text("x")
         self.assertEqual(no.candidates(self.scratch, 48, 0, time.time()), [])
 
+    def test_scheduled_short_keep_paths_includes_explicit_and_uploads(self):
+        keep = no.scheduled_short_keep_paths()
+        for rel in no.SCHEDULED_SHORT_KEEP_PATHS:
+            self.assertIn(rel, keep)
+
 
 if __name__ == "__main__":
     unittest.main()

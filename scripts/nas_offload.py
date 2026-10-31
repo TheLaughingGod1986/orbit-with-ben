@@ -37,6 +37,37 @@ MARKER = "MOVED_TO_NAS.txt"
 # System and tool folders in /private/tmp that are never render scratch.
 SKIP_PREFIXES = ("com.apple", "launchd", "tmux", "powerlog", "ollama", "pip-", "npm-", "node-compile", "claude",
                  "codex", "gemini", "cursor", "playwright", "pytest", "_MEI", ".", "boost_interprocess")
+# Scheduled-Short export paths that a 'superseded' sweep must never offload before the Short airs (J1320).
+SCHEDULED_SHORT_KEEP_PATHS = (
+    "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4",
+    "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v01.mp4",
+    "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4",
+    "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4",
+)
+
+
+def scheduled_short_keep_paths(repo_root: pathlib.Path | None = None) -> set[str]:
+    """Repo-relative or absolute paths of scheduled (non-retired, non-superseded) Short exports to keep on disk."""
+    root = repo_root or pathlib.Path(__file__).resolve().parent.parent
+    keep = set(SCHEDULED_SHORT_KEEP_PATHS)
+    for rel_uploads in (
+        "00_Brand/Channel-Setup/social/UPLOADS.json",
+        "00_Brand/Channel-Setup/social/hos/UPLOADS.json",
+    ):
+        up_path = root / rel_uploads
+        if not up_path.is_file():
+            continue
+        try:
+            videos = json.loads(up_path.read_text()).get("videos", {})
+        except ValueError:
+            continue
+        for rec in videos.values():
+            if not isinstance(rec, dict) or rec.get("retired") or rec.get("supersededBy"):
+                continue
+            fl = rec.get("file")
+            if fl:
+                keep.add(str(fl))
+    return keep
 
 
 def free_mb(path: pathlib.Path = HOME) -> int:
