@@ -98482,9 +98482,14 @@
           "at": "2026-10-31T08:44Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-31T14:45:00Z"
+        },
+        {
+          "at": "2026-10-31T09:40Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T14:45:00Z"
         }
       ],
-      "remaining_action": "Restore bounded disk headroom, then verify >=10 GiB before v07 repairs",
+      "remaining_action": "Wait for measured disk recovery and Chief restart verification under h43",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -98510,11 +98515,8 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1322 bounded recovery and elected-Chief live verification >=10 GiB under h43 remain unmet: 2026-10-31T08:44:31Z free 4482519040 bytes (4.174671 GiB), below 6 GiB park threshold; nas_offload found no eligible scratch. Preserve worker 2/3, OWB:027/028, accepted pickups, h43-LOOP and every repair gate; only J1322 bounded scope approved.",
-        "check_at": "2026-10-31T14:45:00Z",
-        "last_recheck": "J1325",
-        "checked_at": "2026-10-31T08:44:48+00:00",
-        "checked_by": "codex"
+        "condition": "J1326 Chief review 31 Oct 09:39Z: df 8952156 KiB free (8.537 GiB), below h43 restart 10 GiB; J1322 recovery unresolved, J1331 exact-reference investigation queued. KEEP worker 2/3, OWB:027/028, h43-LOOP, accepted pickups and every gate. Restart only after elected-Chief live verification >=10 GiB; park below 6 GiB. No restart authorised.",
+        "check_at": "2026-10-31T14:45:00Z"
       }
     },
     {
