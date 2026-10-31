@@ -98697,9 +98697,14 @@
           "at": "2026-10-31T20:59Z",
           "by": "relay",
           "what": "condition verification queued: J1414"
+        },
+        {
+          "at": "2026-10-31T21:30Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T21:59:12Z"
         }
       ],
-      "remaining_action": "Chief to resolve identical excluded bed and local listening; publish evidence when authorized",
+      "remaining_action": "Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -98724,10 +98729,12 @@
         "note": "Dual local ASR complete: small.en words no_speech_prob 0.766, so revised joint speech flag not met. Named bed hashes ide"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-31T21:59:12+00:00",
-        "recheck_task": "J1414"
+        "type": "input",
+        "condition": "Cleared instrumental-only S2 bed and required local opening/middle/end listening evidence. Evidence 3e26b379b: named bed SHA256 13adc031... is previously excluded candidate under 20:52Z ruling; dual ASR does not jointly flag speech but listening explicitly NOT PERFORMED. Disk sufficient at 34326110208 bytes. Preserve 2/3, OWB:027/028, accepted pickups/S6 audio/h43 LOOP/deadlines/v01 fallback; no source-audio API egress or publishing.",
+        "check_at": "2026-10-31T21:59:12Z",
+        "last_recheck": "J1414",
+        "checked_at": "2026-10-31T21:30:48+00:00",
+        "checked_by": "codex"
       }
     },
     {
