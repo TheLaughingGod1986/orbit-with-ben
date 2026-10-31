@@ -116879,10 +116879,10 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T04:25Z",
+      "eta": "2026-10-31T06:55Z",
       "created_by": "chief",
       "created_at": "2026-10-31T03:19Z",
       "result": "",
@@ -116931,11 +116931,24 @@
           "at": "2026-10-31T03:43Z",
           "by": "chief",
           "what": "reopened: h38 FIX, v03 into NEW 07_Edit-Project/graphics_j1307_v03/ (keep v02), commit on top of 1faade493 on codex/j1307-graphics (now on GitHub). 1) ar3_path: the shadow band is an opaque fill that hides the land under it (the southern tip of Spain and the Moroccan/Algerian coast disappear). Make the band translucent (dark fill, alpha about 0.55) so coasts and borders show through, and keep the N/S limit lines and the centre line. 2) ar3_path: remove the hollow country markers. Spain (-4,40), Algeria (3,28) and Libya (17,27) sit well off the path, and Egypt (30,27) touches the GD dot. Instead, tint the labelled country's own Natural Earth polygon while its label is up. 3) ar3_path: the GD marker shows only under the EGYPT label (q>=5/6, not from 0.78 under LIBYA), as the only dot near 26d49N 031d08E. 4) ar1_odds: make it one call-out that builds to the exact C1 string. Show '4.3% (JUNE 2025)', then add '-> 0% (WEBB, FEB 2026)' below it while the first line stays, with no fully transparent gap mid-graphic. 5) ar2_station: add '(FOOTBALL FIELD)' under '109 M' so the label ends as '109 M (FOOTBALL FIELD)', not an orphan parenthesis. 6) ar1_size: the second label is 'SCALE: 15-STOREY BUILDING' (v02 s02 VISUAL MUST), with line breaks allowed and each line <=980 px. Everything else is accepted as is (strings, GD/Nemo/Moon 12.2r/bar 2.77x geometry, RGBA 1080x1920, y656-1264). Re-run verify_graphics + picture_qa, update GRAPHICS_REPORT, park for Chief. GBP0, no VO/mint/upload."
+        },
+        {
+          "at": "2026-10-31T04:25Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief review of AR1–AR3 graphics; branch publication approval required",
       "for": "codex",
-      "kind": "chart"
+      "kind": "chart",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T04:25Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1308",
