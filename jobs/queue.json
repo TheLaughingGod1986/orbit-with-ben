@@ -118311,9 +118311,14 @@
           "at": "2026-10-31T08:29Z",
           "by": "relay",
           "what": "condition verification queued: J1323"
+        },
+        {
+          "at": "2026-10-31T08:42Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T09:29:13Z"
         }
       ],
-      "remaining_action": "Elected Chief to review corrected AR2 v05 and AR3 v09 pictures; cohort held",
+      "remaining_action": "Await J1324 AR2 composite correction and elected-Chief picture acceptance; cohort held from UAT/upload",
       "kind": "assembly",
       "progress": {
         "step": 4,
@@ -118326,10 +118331,12 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-31T09:29:13+00:00",
-        "recheck_task": "J1323"
+        "type": "input",
+        "condition": "J1324 delivers a corrected AR2 station composite with passing unmodified gates and elected-Chief picture acceptance; AR3 v09 and AR1 v01 preserved",
+        "check_at": "2026-10-31T09:29:13Z",
+        "last_recheck": "J1323",
+        "checked_at": "2026-10-31T08:42:22+00:00",
+        "checked_by": "codex"
       }
     },
     {
