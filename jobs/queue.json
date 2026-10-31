@@ -1,5 +1,5 @@
 {
-  "next_id": 1333,
+  "next_id": 1334,
   "jobs": [
     {
       "id": "J0001",
@@ -119194,6 +119194,35 @@
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes"
+    },
+    {
+      "id": "J1333",
+      "title": "J1331 ruling: repair OWB029 per-cut watch IDs and verify Play bytes",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex ruling 31 Oct 2026, J1331 / merged PR367 (843fb1b09). Authorised reversible watch-link correction only, GBP0. Claim as own agent and link OWB:029 on progress. Evidence jobs/reviews/J1331 proves Wednesday J0961 approved v04 and Monday v04 both map to owb-029-v04, whose R2 bytes are Monday. Check current state before changing. Trace the three intended v04 PHONE cuts to existing approval and full hashes; preserve media, approvals, uploaded records, all old R2 objects and all NAS files. Assign distinct per-cut/version IDs and correct the exact local/committed watch-register mappings used by Wednesday, Friday, Monday cards and tracker; upload only the already-approved matching PHONE bytes to private signed-watch storage if needed, no rendering or new review claim. Verify both top-level and nested aliases intentionally map to the right cut. Fix any demonstrated ID-generation collision in code with a focused regression test and PR; shared-core edits obey core_sync. Republish the board using the existing authorized process; no new public distribution or YouTube/Buffer change. Read back each signed Play link to filename, size and full SHA256, compare to its intended source; board_check must pass, and Wednesday must not play Monday. Do not expose signed URLs or credentials. Return evidence and any code PR to elected Chief. If source identity or approval cannot be established, retain all bytes and flag that exact card for Chief; never infer approval from version ordering. Preserve J1322/J1100 holds. This is a watch-link correction, no film PASS or upload authority.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T09:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T09:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Give each OWB029 v04 Short its own watch ID and verify the published cards play the intended cut",
+      "due": "2026-11-01T00:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],

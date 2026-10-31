@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1330 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1331 | mini | blocked | codex | – | assembly · J1326 follow-up: resolve exact UAT serving paths and bounded headroom |  |
 | J1332 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J1333 | mini | open | – | – | assembly · J1331 ruling: repair OWB029 per-cut watch IDs and verify Play bytes |  |
 
 Recently finished:
 
