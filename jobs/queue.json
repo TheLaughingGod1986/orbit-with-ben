@@ -1,5 +1,5 @@
 {
-  "next_id": 1326,
+  "next_id": 1327,
   "jobs": [
     {
       "id": "J0001",
@@ -118633,6 +118633,35 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J1326",
+      "title": "J1322 follow-up: reconcile disk growth and prove exact inactive candidates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1322 Chief review follow-up, Codex, 31 Oct 2026. GBP0, read-only investigation and records only; no move/unlink, no NAS writes/deletes, no publishing or generation. Original J1322 and J1100 stay held.\n1. Reconcile current allocated disk use against J1318 inventory d48161fdf and J1322 c0f876ffa. Record two timestamped df readings, largest growing exact paths, active processes/open files and ownership. Investigate roughly 5-6 GiB regression since worker readback (10.689 GiB to 4-5 GiB); do not infer cause from mtime alone. Do not copy large files or make a full worktree.\n2. Resolve current/previous and active-reference proof for exact retained HOS005/006/007 _work_ and repo-root OWB UAT candidates in /private/tmp/J1322-records/jobs/reviews/J1322/deferred.json. Check current queue, cut lists, upload/Buffer manifests and watch references. Record a per-file KEEP or eligible-candidate decision with evidence. Worktree-resident UAT stays excluded. Keep HOS008 code_graphics_v01/v02 until J1213/J1218 row-level dependency clearance; keep Apophis assembly/graphics while J1321/J1324 repair/acceptance remains unresolved; keep all J1320 and J1100 inputs. All original J1322 exclusions remain binding. T2-C obsolete VO is investigation only with exact lock and current/previous proof, no removal.\n3. Produce exact-path, allocated-byte, source/destination/full-hash proposal only for proven inactive scratch or verified redundant copies. Identify current+previous explicitly. Remaining 4.549 GiB inventory alone cannot meet 20 GiB; quantify actual shortfall and propose bounded additional scratch candidates, never broad home/export/cache/iCloud sweeps. No automatic broadening or permission inferred from this job. If no eligible paths, state that and quantify dominant retained growth.\n4. Commit small evidence via clean sparse worktree/PR; preserve local c0f876ffa evidence (do not remove its worktree). Return to elected Chief for exact allowlist ruling and measured headroom check. Link OWB:027,OWB:028, preserve J1100 worker2/3 and h43-LOOP. Use observable condition and retry within one hour if NAS read access unavailable. Complete investigation by 1 Nov 00:00 UTC; start as soon as claimable.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T08:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T08:48Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reconcile disk regression and prove exact safe recovery candidates for Chief",
+      "due": "2026-11-01T00:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
