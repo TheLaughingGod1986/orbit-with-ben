@@ -118220,18 +118220,25 @@
           "at": "2026-10-31T08:08Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T08:08Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Claimed J1321; disk has 11 GiB free; checking scratch offload before render."
         }
       ],
-      "remaining_action": "Replace AR2 station icon and clear AR3 eclipse/map overlap; rerun composite gates",
+      "remaining_action": "Inspect binding review and sources, correct AR2 and AR3, then run gates and prepare Chief review",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-31T08:08Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1321; disk has 11 GiB free; checking scratch offload before render."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1322",
