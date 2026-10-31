@@ -1,0 +1,53 @@
+{
+  "job": "J1322",
+  "before_df": "Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on\n/dev/disk3s5   239362496 194436920   8780208    96% 2854459 87802080    3%   /System/Volumes/Data\n",
+  "allowlist": [
+    {
+      "source": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_desk/008/rough_v01/hos_008_rough_v01.mp4",
+      "destination": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/rough_v01/hos_008_rough_v01.mp4",
+      "sha256": "6704aa3434634b9d2b1d7446488175130a9aeeb7ab877c782d97364ffd45d7f7",
+      "bytes": 545436977,
+      "allocated_local_bytes": 545439744,
+      "allocated_nas_bytes": 545437184,
+      "source_state": [
+        16777234,
+        907428590,
+        545436977,
+        1793298791921836287,
+        1793298837337964712
+      ]
+    },
+    {
+      "source": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_desk/008/rough_v02/hos_008_rough_v02.mp4",
+      "destination": "/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/rough_v02/hos_008_rough_v02.mp4",
+      "sha256": "edebeaf7e71d29051135859d7ad7e87bb4ee73d7e52a37b8251ccfb951dcad06",
+      "bytes": 987874326,
+      "allocated_local_bytes": 987877376,
+      "allocated_nas_bytes": 987874816,
+      "source_state": [
+        16777234,
+        907472650,
+        987874326,
+        1793310232000000000,
+        1793315455678475584
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "source": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v01/hos_008_master_v01_gain.mp4",
+      "reason": "existing NAS duplicate unavailable; needs copy checkpoint"
+    },
+    {
+      "source": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v01/hos_008_master_v01_park.mp4",
+      "reason": "existing NAS duplicate unavailable; needs copy checkpoint"
+    },
+    {
+      "source": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v01/hos_008_master_v01_rise.mp4",
+      "reason": "existing NAS duplicate unavailable; needs copy checkpoint"
+    }
+  ],
+  "preserved": "all current/previous masters and scratch, VO, graphics, source plates, worktrees, J1100/J1320/J1321 inputs; other candidates unproven and remain local",
+  "after_df": "Filesystem   1024-blocks      Used Available Capacity iused     ifree %iused  Mounted on\n/dev/disk3s5   239362496 193132276  10084852    96% 2854493 100848520    3%   /System/Volumes/Data\n",
+  "unique_allocated_removed": 1533317120
+}
