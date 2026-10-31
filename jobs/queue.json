@@ -118588,19 +118588,24 @@
           "at": "2026-10-31T08:44Z",
           "by": "codex",
           "what": "step 0 of 3 done: Three steps: review approvals and recovery evidence; verify live free space; record hold decision and close verification."
+        },
+        {
+          "at": "2026-10-31T08:44Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1100 full ruling/history, h43-LOOP and accepted pickups; J1322 recovered five files but remained blocked at 3/4 with historical 10.689 GiB."
         }
       ],
-      "remaining_action": "Verify recovery evidence and live disk before deciding J1100 hold",
+      "remaining_action": "Verify current disk space against h43 restart threshold",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T09:42:57+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T08:44Z",
         "by": "codex",
-        "note": "Three steps: review approvals and recovery evidence; verify live free space; record hold decision and close verification"
+        "note": "Read J1100 full ruling/history, h43-LOOP and accepted pickups; J1322 recovered five files but remained blocked at 3/4 wi"
       },
       "taskKeys": [
         "OWB:027",
