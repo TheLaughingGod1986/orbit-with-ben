@@ -116081,18 +116081,23 @@
           "at": "2026-10-31T01:36Z",
           "by": "cursor",
           "what": "step 0 of 4 done: claimed; measuring disk and listing candidates"
+        },
+        {
+          "at": "2026-10-31T01:42Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: NAS mounted; compilation archive same size as local; gemini worktree still held by bash 1852 and node 1975"
         }
       ],
-      "remaining_action": "Verify ignored shipped media, then copy-first to NAS",
+      "remaining_action": "Verify each ignored file, then copy it to the NAS",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-10-31T01:36Z",
+        "at": "2026-10-31T01:42Z",
         "by": "cursor",
-        "note": "claimed; measuring disk and listing candidates"
+        "note": "NAS mounted; compilation archive same size as local; gemini worktree still held by bash 1852 and node 1975"
       },
       "taskKeys": [
         "HOS:006"
