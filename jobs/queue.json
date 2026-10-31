@@ -117289,17 +117289,22 @@
           "at": "2026-10-31T05:32Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Assembler restarted after a cut-list bug. Render is tmux j1308-asm, log _desk/logs/J1308-asm.log."
+        },
+        {
+          "at": "2026-10-31T05:38Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: AR1 gates passed. AR2 failed a full-width title seam at 9.2s. AR3 SFX mix hung on adelay. Restarted ar2+ar3 in tmux j1308-asm2, log _desk/logs/J1308-asm2.log."
         }
       ],
-      "remaining_action": "Encode AR1-AR3 masters, then run polish, picture and loop gates",
+      "remaining_action": "Re-encode AR2 and AR3 after the title seam and the stuck SFX mix",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-31T05:32Z",
+        "at": "2026-10-31T05:38Z",
         "by": "cursor",
-        "note": "Assembler restarted after a cut-list bug. Render is tmux j1308-asm, log _desk/logs/J1308-asm.log."
+        "note": "AR1 gates passed. AR2 failed a full-width title seam at 9.2s. AR3 SFX mix hung on adelay. Restarted ar2+ar3 in tmux j130"
       },
       "taskKeys": [
         "OWB:030"
