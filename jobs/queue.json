@@ -121226,16 +121226,21 @@
           "at": "2026-10-31T13:35Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR375 integrates 51 unchanged evidence files; hashes and local CI pass; successor J1356 created after J1355"
+        },
+        {
+          "at": "2026-10-31T13:37Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR375 merged b1f0bd69d after CI PASS; PR370-374 integrated, PR363/365/369 superseded, J1324/J1338 cancelled; J1356 is sole successor"
         }
       ],
-      "remaining_action": "Merge CI-checked integration and close superseded records",
+      "remaining_action": "Integration complete; J1356 owns final-watch and remaining gates",
       "kind": "chief",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-31T13:35Z",
+        "at": "2026-10-31T13:37Z",
         "by": "codex",
-        "note": "PR375 integrates 51 unchanged evidence files; hashes and local CI pass; successor J1356 created after J1355"
+        "note": "PR375 merged b1f0bd69d after CI PASS; PR370-374 integrated, PR363/365/369 superseded, J1324/J1338 cancelled; J1356 is so"
       },
       "taskKeys": [
         "OWB:030"
