@@ -115903,13 +115903,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T04:49Z",
-      "eta": "2026-10-31T04:59Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-30T21:51Z",
-      "result": "",
+      "result": "Unverifiable: no fresh Studio read; HOS Studio access denied since J1282. J0978 held, six-hour retry 2026-10-31T10:50Z. No YouTube writes.",
       "history": [
         {
           "at": "2026-10-30T21:51Z",
@@ -115920,6 +115920,11 @@
           "at": "2026-10-31T04:49Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T04:49Z",
+          "by": "chief",
+          "what": "done: Unverifiable: no fresh Studio read; HOS Studio access denied since J1282. J0978 held, six-hour retry 2026-10-31T10:50Z. No YouTube writes."
         }
       ],
       "remaining_action": "Verify readiness: Verify the finished Atom title test no longer blocks the approved Test B metadata update",
