@@ -119260,13 +119260,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T09:54Z",
-      "eta": "2026-10-31T11:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T09:51Z",
-      "result": "",
+      "result": "Watch-link correction complete: 3 distinct private watch IDs, 12 local aliases corrected, six signed Play filenames/sizes/full hashes verified, Wednesday no longer plays Monday; board republished and board_check PASS. PR368 (299a399d2) contains collision fix, committed mappings and evidence; 12 watch tests PASS. PR remains open due independently reproduced pre-existing Venus status-note CI failure; no failed-check override. J1322/J1100 holds and YouTube/Buffer unchanged; GBP0.",
       "history": [
         {
           "at": "2026-10-31T09:51Z",
@@ -119297,6 +119297,11 @@
           "at": "2026-10-31T09:58Z",
           "by": "codex",
           "what": "step 3 of 3 done: Six signed Play byte hashes match; published Wednesday/Monday IDs differ; board_check passes; 12 watch tests pass"
+        },
+        {
+          "at": "2026-10-31T09:58Z",
+          "by": "codex",
+          "what": "done: Watch-link correction complete: 3 distinct private watch IDs, 12 local aliases corrected, six signed Play filenames/sizes/full hashes verified, Wednesday no longer plays Monday; board republished and board_check PASS. PR368 (299a399d2) contains collision fix, committed mappings and evidence; 12 watch tests PASS. PR remains open due independently reproduced pre-existing Venus status-note CI failure; no failed-check override. J1322/J1100 holds and YouTube/Buffer unchanged; GBP0."
         }
       ],
       "remaining_action": "Handoff complete: watch links corrected; PR368 awaits baseline CI resolution and merge",
@@ -119311,7 +119316,8 @@
       },
       "taskKeys": [
         "OWB:029"
-      ]
+      ],
+      "done_ref": "299a399d2"
     }
   ],
   "focus": [],
