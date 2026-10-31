@@ -86251,6 +86251,11 @@
           "at": "2026-10-31T10:51Z",
           "by": "relay",
           "what": "condition verification queued: J1340"
+        },
+        {
+          "at": "2026-10-31T10:54Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T16:55:00Z"
         }
       ],
       "kind": "listing",
@@ -86266,7 +86271,7 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Restore read-only HOS Studio access, confirm the finished Atom title test no longer blocks the approved Test B metadata update",
+      "remaining_action": "Confirm the Atom title-test widget has cleared before the approved Test B metadata update",
       "progress": {
         "step": 4,
         "of": 5,
@@ -86275,13 +86280,12 @@
         "note": "Data API retitle refused with 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE) while 'A/"
       },
       "hold": {
-        "type": "test",
-        "condition": "Not verifiable at 2026-10-31T04:50Z: no fresh Studio read since J1269 (30 Oct 15:41Z: GHZDsiH7L7A still shows A/B testing titles / Results ready; original title and Public remain), and J1282 (30 Oct 20:46Z) found the mini browser session denied HOS Studio access (personal channel only). API UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE not proven cleared; no write probe. PR 354 holds the prior refusal and originals verification. Needs a fresh read-only HOS Studio read showing the test widget cleared.",
-        "check_at": "2026-10-31T11:51:42+00:00",
-        "last_recheck": "J1291",
-        "checked_at": "2026-10-31T04:49:37+00:00",
-        "checked_by": "chief",
-        "recheck_task": "J1340"
+        "type": "input",
+        "condition": "Fresh HOS Studio read 31 Oct 10:55 UTC via CDP 9460 confirms access restored but GHZDsiH7L7A still shows A/B testing titles / Results ready, original title and Public. API title restriction is not proven cleared; no write probe. Evidence /Users/benjaminoats/_desk/handoff/J1340/readback.json and atom_edit.png. Needs fresh read-only evidence the title-test widget has cleared.",
+        "check_at": "2026-10-31T16:55:00Z",
+        "last_recheck": "J1340",
+        "checked_at": "2026-10-31T10:54:12+00:00",
+        "checked_by": "codex"
       }
     },
     {
