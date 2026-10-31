@@ -118677,9 +118677,14 @@
           "at": "2026-10-31T08:58Z",
           "by": "codex",
           "what": "blocked: parked for Chief: AR2 v08 picture acceptance, including native late-shot low-detail WARN; PR365 14d7d1c4c. Worker delivery 4/4; all four gates PASS, AAC identical, master and review images NAS SHA verified. J1321 remains held; no UAT/upload/schedule."
+        },
+        {
+          "at": "2026-10-31T10:36Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T11:36:00Z"
         }
       ],
-      "remaining_action": "Chief picture acceptance of AR2 v08 and late-shot WARN",
+      "remaining_action": "J1338 corrects late ISS detail; then Chief inspects new delivery (v08 FIX)",
       "kind": "assembly",
       "progress": {
         "step": 4,
@@ -118690,7 +118695,12 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief FIX upheld on PR365 14d7d1c4c: AR2 v08 late ISS detail at 16.0/16.6s is unacceptable despite four automated passes. Corrective assembly J1338 must deliver sharp native detail for 14.766667-18.400s, unchanged gates, exact AAC and durable hash, then elected-Chief picture acceptance. J1321 remains held; no UAT/publishing.",
+        "check_at": "2026-10-31T11:36:00Z"
+      }
     },
     {
       "id": "J1325",
