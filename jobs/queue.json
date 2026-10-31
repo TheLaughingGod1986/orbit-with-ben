@@ -116744,13 +116744,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T04:48Z",
-      "eta": "2026-10-31T04:58Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T03:01Z",
-      "result": "",
+      "result": "Verified unmet at 04:49Z: J1100 only just reopened (5f028e5f5) for repairs; no replacement delivery, Chief PASS or Ben swap approvals. J0936 held, next check 2026-10-31T10:00Z.",
       "history": [
         {
           "at": "2026-10-31T03:01Z",
@@ -116761,6 +116761,11 @@
           "at": "2026-10-31T04:48Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T04:48Z",
+          "by": "chief",
+          "what": "done: Verified unmet at 04:49Z: J1100 only just reopened (5f028e5f5) for repairs; no replacement delivery, Chief PASS or Ben swap approvals. J0936 held, next check 2026-10-31T10:00Z."
         }
       ],
       "remaining_action": "Verify readiness: Restore disk headroom, complete J1100 S2/S5/S6 repairs and delivery, then Chief review and Ben swap approvals",
