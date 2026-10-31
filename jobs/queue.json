@@ -115959,17 +115959,22 @@
           "at": "2026-10-31T01:04Z",
           "by": "cursor",
           "what": "step 0 of 6 done: Claimed. Inspecting v02 parts, concat settings, and Chief h32 sim."
+        },
+        {
+          "at": "2026-10-31T01:06Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: v02a wav matches Chief sim sha 3444635a. Duration 568.280 s. v02 wav and mp3 hashes unchanged. Checks next."
         }
       ],
-      "remaining_action": "Copy v02 parts into v02a and apply measured qsin fades",
+      "remaining_action": "Run loudness, tail and null checks on magnetic_field_flip_vo_v02a",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 6,
-        "at": "2026-10-31T01:04Z",
+        "at": "2026-10-31T01:06Z",
         "by": "cursor",
-        "note": "Claimed. Inspecting v02 parts, concat settings, and Chief h32 sim."
+        "note": "v02a wav matches Chief sim sha 3444635a. Duration 568.280 s. v02 wav and mp3 hashes unchanged. Checks next."
       },
       "taskKeys": [
         "OWB:031"
