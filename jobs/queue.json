@@ -98764,6 +98764,11 @@
           "at": "2026-10-31T23:09Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-31T23:40Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T00:08:33Z"
         }
       ],
       "remaining_action": "Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
@@ -98792,12 +98797,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1422 verified: S2 instrumental bed clearance and local opening/middle/end listening remain unproven. Fresh named-bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 matches the candidate excluded by the 20:52Z ruling. Evidence 3e26b379b and all three audition hashes verified; listening records remain NOT PERFORMED. Dual ASR does not jointly flag speech but is not listening proof. Live free 33965838336 bytes. Preserve 2/3, OWB:027/028, accepted pickups/continuous S2 phrase/S6 audio/h43-LOOP/deadlines/v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-01T00:08:33+00:00",
-        "last_recheck": "J1422",
-        "checked_at": "2026-10-31T22:36:02+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1430"
+        "condition": "J1430 verified: cleared instrumental S2 bed and local opening/middle/end listening remain unproven. Named bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 still matches excluded candidate. Evidence 3e26b379b and all three audition hashes verified; listening NOT PERFORMED. Dual ASR does not jointly flag speech but cannot replace listening. Free 34587975680 bytes. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-01T00:08:33Z",
+        "last_recheck": "J1430",
+        "checked_at": "2026-10-31T23:40:18+00:00",
+        "checked_by": "codex"
       }
     },
     {
