@@ -118382,6 +118382,11 @@
           "at": "2026-10-31T10:31Z",
           "by": "relay",
           "what": "condition verification queued: J1336"
+        },
+        {
+          "at": "2026-10-31T10:33Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T11:31:35Z"
         }
       ],
       "remaining_action": "Correct AR2 late ISS picture detail and obtain picture acceptance; cohort held from UAT/upload",
@@ -118398,12 +118403,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "AR2 late ISS interval 14.766667-18.4s corrected for visibly smeared detail (v08 picture FIX in J1329), with unmodified gates and elected-Chief picture acceptance; preserve AR1 v01 and AR3 v09",
-        "check_at": "2026-10-31T11:31:35+00:00",
-        "last_recheck": "J1329",
-        "checked_at": "2026-10-31T09:36:39+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1336"
+        "condition": "AR2 late ISS interval 14.766667-18.4s corrected for visibly smeared detail, with unmodified gates and elected-Chief picture acceptance; PR365 remains v08 at 14d7d1c4c rejected by ruling 6541774693; preserve AR1 v01 and AR3 v09",
+        "check_at": "2026-10-31T11:31:35Z",
+        "last_recheck": "J1336",
+        "checked_at": "2026-10-31T10:33:45+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-10-31T10:28Z"
     },
