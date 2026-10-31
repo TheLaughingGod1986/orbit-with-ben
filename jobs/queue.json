@@ -115690,19 +115690,29 @@
           "at": "2026-10-30T23:57Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Inventory first; no moves yet."
+        },
+        {
+          "at": "2026-10-31T00:04Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Inventory at ~/_desk/logs/J1293-inventory.md. Move running in tmux J1293-move. Eligible set is about 1 GB; live and unknown folders stay."
         }
       ],
-      "remaining_action": "Provenance inventory of ~/_desk scratch before any NAS move",
+      "remaining_action": "Copy eligible done-job scratch to the NAS and verify sha256",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-30T23:57Z",
+        "at": "2026-10-31T00:04Z",
         "by": "cursor",
-        "note": "Claimed. Inventory first; no moves yet."
-      }
+        "note": "Inventory at ~/_desk/logs/J1293-inventory.md. Move running in tmux J1293-move. Eligible set is about 1 GB; live and unkn"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
