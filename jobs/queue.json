@@ -121457,9 +121457,14 @@
           "at": "2026-10-31T15:48Z",
           "by": "relay",
           "what": "condition verification queued: J1377"
+        },
+        {
+          "at": "2026-10-31T15:50Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T16:48:47Z"
         }
       ],
-      "remaining_action": "Resolve missing full-runtime score and package targets; rerun affected gates and full playback review",
+      "remaining_action": "Resolve full-runtime music and missing package targets; rerun affected gates and full playback review",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -121473,12 +121478,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1367 fresh hashes confirm accepted AR1 v01, AR2 v06 and AR3 v05 unchanged; all three manifest export targets remain absent. PR376 at 92de3841c remains unresolved: full-runtime music, silent tails, corrected package mapping, affected gates and full audiovisual review evidence outstanding. Scoped no-spend correction required; J1356 forbids rebuild. Existing picture acceptance retained, no final-watch or publishing approval.",
-        "check_at": "2026-10-31T16:48:47+00:00",
-        "last_recheck": "J1367",
-        "checked_at": "2026-10-31T15:17:06+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1377"
+        "condition": "J1377 verified accepted AR1 v01, AR2 v06 and AR3 v05 hashes unchanged and all three manifest export targets absent. PR376 remains open at 92de3841c without correction evidence. Full-runtime music, silent-tail correction, versioned package mapping, affected gates and full audiovisual review remain outstanding. Scoped no-spend correction required; J1356 forbids rebuild. Existing picture acceptance retained; no final-watch or publishing approval.",
+        "check_at": "2026-10-31T16:48:47Z",
+        "last_recheck": "J1377",
+        "checked_at": "2026-10-31T15:50:56+00:00",
+        "checked_by": "codex"
       }
     },
     {
