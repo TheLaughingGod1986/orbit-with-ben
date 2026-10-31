@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1271 | mini | blocked | cursor | – | 024 upload · studio · OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
-| J1318 | mini | blocked | gemini | – | qa · Mini disk: read-only report of the biggest local folders + a move-to-NAS plan (J1100 needs 10 GiB free) |  |
+| J1318 | mini | open | – | – | qa · Mini disk: read-only report of the biggest local folders + a move-to-NAS plan (J1100 needs 10 GiB free) |  |
 | J1319 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1320 | mini | open | – | – | for gemini · qa · `gemini-argon` · Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate |  |
 | J1321 | mini | open (after J1317) | – | – | assembly · AR2–AR3: correct J1317 picture-review failures |  |
