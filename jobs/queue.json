@@ -120545,13 +120545,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T12:51Z",
-      "eta": "2026-10-31T14:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T12:00Z",
-      "result": "",
+      "result": "Condition verified unmet. J1002 45ef75589 and J1003 0c18bb2cb complete; no later audit commit. Both persisted Mercury 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp); main audit/EVIDENCE map this to 4.09-4.29s, while Chief review note and J1003 result retain 0.18->0.19 (-5.76pp) and different cut/VO mapping. No final independent Chief PASS. J0985 retained blocked via wait --recheck J1347; next check 2026-10-31T19:00Z. Readback PASS. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-10-31T12:00Z",
@@ -120582,6 +120582,11 @@
           "at": "2026-10-31T12:53Z",
           "by": "codex",
           "what": "step 3 of 3 done: PASS readback: blocked, last_recheck J1347, check_at 19:00Z. Both raw 100-bucket curves independently reproduce -5.59pp; unresolved review/result narrative prevents closure."
+        },
+        {
+          "at": "2026-10-31T12:53Z",
+          "by": "codex",
+          "what": "done: Condition verified unmet. J1002 45ef75589 and J1003 0c18bb2cb complete; no later audit commit. Both persisted Mercury 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp); main audit/EVIDENCE map this to 4.09-4.29s, while Chief review note and J1003 result retain 0.18->0.19 (-5.76pp) and different cut/VO mapping. No final independent Chief PASS. J0985 retained blocked via wait --recheck J1347; next check 2026-10-31T19:00Z. Readback PASS. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; report retained J0985 hold",

@@ -47,12 +47,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1324 | mini | blocked | codex | – | assembly · AR2: finish real ISS composite after J1323 picture FIX |  |
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
 | J1345 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR3: clear duration graphic from eclipse and show unobscured totality | c70206699 |
-| J1347 | any | claimed | codex | 2026-10-31T14:51Z | chief · Chief: verify condition for J0985 |  |
 | J1349 | any | open | – | – | chief · Chief: verify condition for J1321 |  |
 
 Recently finished:
 
 - J1348 done: URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00) (done)
+- J1347 done: Chief: verify condition for J0985 (Condition verified unmet. J1002 45ef75589 and J1003 0c18bb2cb complete; no later audit commit. Both persisted Mercury 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp); main audit/EVIDENCE map this to 4.09-4.29s, while Chief review note and J1003 result retain 0.18->0.19 (-5.76pp) and different cut/VO mapping. No final independent Chief PASS. J0985 retained blocked via wait --recheck J1347; next check 2026-10-31T19:00Z. Readback PASS. No spend or publishing changes.)
 - J1346 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1344 done: Chief: verify condition for J1321 (Verified PR370 master/image hashes and pictures. AR2 v06 PASS; AR3 v03 FIX: duration bars cover corona at 13.1s. Ruling PR371 c70206699. J1345 queued; J1321 held with original 12:48:21Z retry. No spend or publishing approval.)
 - J1343 done: Chief: verify condition for J1321 (Condition verified satisfied: AR2 v10 PR369 picture PASS, ruling 6542851516. Four unchanged gates pass; fresh master, review-image and protected AR1/AR3 hashes match. J1321 reopened for correction close-out. No merge, UAT handoff, upload, schedule or spend. One dispatched job completed.)
@@ -61,4 +61,3 @@ Recently finished:
 - J1340 done: Chief: verify condition for J0978 (done)
 - J1339 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1337 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-31T10:49Z across 62 unique videos (28 public, 12 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md, HOS 0afdae08, 0 new fixes needed))
-- J1336 done: Chief: verify condition for J1321 (Verified condition unmet: PR365 unchanged at 14d7d1c4c; no corrected delivery supersedes J1329 ruling 6541774693 rejecting AR2 v08 late ISS detail. J1321 remains blocked, recheck J1336, existing 2026-10-31T11:31:35Z checkpoint retained. AR1 v01 and AR3 v09 preserved. No UAT, publishing, spend or Ben action. Verification 3/3; report posted on studio thread.)
