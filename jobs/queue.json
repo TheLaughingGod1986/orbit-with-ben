@@ -117895,17 +117895,21 @@
           "at": "2026-10-31T07:01Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T07:01Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1318; starting read-only disk survey and NAS comparison"
         }
       ],
-      "remaining_action": "Mini disk: read-only report of the biggest local folders + a move-to-NAS plan (J1100 needs 10 GiB free)",
+      "remaining_action": "Survey disk usage and top 25 biggest folders/files across home, _desk, /private/tmp, and render scratch",
       "kind": "qa",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-31T07:01Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J1318; starting read-only disk survey and NAS comparison"
       }
     },
     {
