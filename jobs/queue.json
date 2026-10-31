@@ -118263,9 +118263,14 @@
           "at": "2026-10-31T08:01Z",
           "by": "codex",
           "what": "step 1 of 4 done: Two old rough duplicates rehashed and removed: 1533317120 allocated bytes; df 9.62 GiB after worktree overhead. Diagnostic copy detached in J1322-diagnostics."
+        },
+        {
+          "at": "2026-10-31T08:02Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: PR362 e22f945ce records exact manifests and retained candidates. Initial two-file batch complete; diagnostic batch still running in J1322-diagnostics; do not duplicate."
         }
       ],
-      "remaining_action": "Copy and verify three obsolete diagnostic outputs, then record remaining shortfall",
+      "remaining_action": "Read detached diagnostic result, complete candidate dependency checks, and verify remaining space shortfall",
       "due": "2026-11-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 2,
@@ -118281,9 +118286,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-31T08:01Z",
+        "at": "2026-10-31T08:02Z",
         "by": "codex",
-        "note": "Two old rough duplicates rehashed and removed: 1533317120 allocated bytes; df 9.62 GiB after worktree overhead. Diagnost"
+        "note": "PR362 e22f945ce records exact manifests and retained candidates. Initial two-file batch complete; diagnostic batch still"
       },
       "taskKeys": [
         "OWB:027",
