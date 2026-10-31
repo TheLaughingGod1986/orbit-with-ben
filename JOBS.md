@@ -42,12 +42,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1430 | any | claimed | codex | 2026-11-01T01:39Z | chief · Chief: verify condition for J1100 |  |
 | J1431 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1432 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 
 Recently finished:
 
+- J1430 done: Chief: verify condition for J1100 (Verified condition unmet: excluded bed hash 13adc031 unchanged; all audition hashes checked, listening NOT PERFORMED. J1100 stays 2/3, OWB:027/028; approvals, deadlines and fallback preserved. Retry 2026-11-01T00:08:33Z. Report 6550692112. No spend or publishing.)
 - J1429 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md; 0 fixes needed)
 - J1428 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md; 0 fixes needed)
 - J1426 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -57,4 +57,3 @@ Recently finished:
 - J1422 done: Chief: verify condition for J1100 (Verified condition remains unmet: current bed matches excluded 13adc031 candidate; evidence 3e26b379b and three audition hashes checked, listening NOT PERFORMED. J1100 remains blocked at 2/3 with OWB:027/028 and all approvals/deadlines/fallbacks preserved; retry 2026-10-31T23:04:41Z. Live free 33965838336 bytes. No spend, render, publishing or film PASS.)
 - J1421 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (29 public + 11 scheduled + 22 private); 5/5 public longs end screens and 24/24 public Shorts Related pills live; updated 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md (HOS 84d202fd); 0 new fixes needed)
 - J1420 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (3f701e345); 0 fixes needed)
-- J1419 done: Chief: verify condition for J0979 (Condition NOT satisfied. Reviewed J0979 original brief/rejection/history, J1000 audit, J1042 shelving ruling and J1374 verification. Current 031 and 032 status/production records confirm locked VO (J1295/c8ed778ab and J1294/4a9a2e16b) but picture not started; 033-061 status records contain no VO/picture locks. J0979 stays blocked with recheck J1419 at 2026-11-01T03:55:00Z. Exact source-time EDL, unused subject-naming question, duplicate check and original gates remain required once locked picture exists. 029 reserve v01 remains shelved. No spend, media change, upload, scheduling or film approval.)
