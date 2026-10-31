@@ -116870,17 +116870,22 @@
           "at": "2026-10-31T04:31Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. h40 lock read. No API call. Splice next."
+        },
+        {
+          "at": "2026-10-31T04:32Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: AR1 and AR3 v03 WAV shas match the h40 sim. 881520 and 818640 frames."
         }
       ],
-      "remaining_action": "Splice AR1 and AR3 v03 from recorded v02 takes. No ElevenLabs.",
+      "remaining_action": "Encode 128k mp3s and free faster-whisper word timings for AR1 and AR3 v03.",
       "for": "cursor",
       "kind": "vo",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T04:31Z",
+        "at": "2026-10-31T04:32Z",
         "by": "cursor",
-        "note": "Claimed. h40 lock read. No API call. Splice next."
+        "note": "AR1 and AR3 v03 WAV shas match the h40 sim. 881520 and 818640 frames."
       }
     },
     {
