@@ -117841,18 +117841,24 @@
           "at": "2026-10-31T07:27Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-31T07:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original brief, approval history, J1270 and J1313; governing h43 minimum is 10 GiB; existing J1100 2/3 remains intact."
         }
       ],
-      "remaining_action": "Verify J1100 headroom and latest Chief repair ruling",
+      "remaining_action": "Measure live disk against Chief h43 restart threshold",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T07:01:29+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T07:27Z",
-        "by": "codex"
+        "at": "2026-10-31T07:28Z",
+        "by": "codex",
+        "note": "Read original brief, approval history, J1270 and J1313; governing h43 minimum is 10 GiB; existing J1100 2/3 remains inta"
       },
       "taskKeys": [
         "OWB:027",
