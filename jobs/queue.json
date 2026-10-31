@@ -118727,13 +118727,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T09:40Z",
-      "eta": "2026-10-31T11:40Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T08:48Z",
-      "result": "",
+      "result": "Acting Chief Codex ruling 31 Oct: ACCEPT records-only investigation; PR366 merged (566c9cdcc, merge 426a5ed42). KEEP all 8057 exact candidates / 4884897792 allocated bytes; 24 recorded matching full-hash duplicates do not clear watch/current/previous references. Approved offload allowlist EMPTY, 0 bytes. Growth reconciliation is bounded, with 1.68 GiB historical residual unassigned; no causal claim beyond evidence. Fresh 09:39:07Z df 8952156 KiB = 8.537 GiB, 11.463 GiB below 20 GiB and below h43 10 GiB restart. NAS accessible; normal dry-run found no age-eligible scratch. J1331 queued for exact UAT serving-path/reference proof and bounded three-family remeasurement, due 1 Nov 00:00Z; no moves authorised. J1322 remains dependency-held, check 10:30Z; J1100 held with original 14:45Z check, worker 2/3, h43-LOOP and all gates preserved. No film PASS, Ben watch, spend or publishing.",
       "history": [
         {
           "at": "2026-10-31T08:48Z",
@@ -118789,6 +118789,11 @@
           "at": "2026-10-31T09:40Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T09:41Z",
+          "by": "codex",
+          "what": "done: Acting Chief Codex ruling 31 Oct: ACCEPT records-only investigation; PR366 merged (566c9cdcc, merge 426a5ed42). KEEP all 8057 exact candidates / 4884897792 allocated bytes; 24 recorded matching full-hash duplicates do not clear watch/current/previous references. Approved offload allowlist EMPTY, 0 bytes. Growth reconciliation is bounded, with 1.68 GiB historical residual unassigned; no causal claim beyond evidence. Fresh 09:39:07Z df 8952156 KiB = 8.537 GiB, 11.463 GiB below 20 GiB and below h43 10 GiB restart. NAS accessible; normal dry-run found no age-eligible scratch. J1331 queued for exact UAT serving-path/reference proof and bounded three-family remeasurement, due 1 Nov 00:00Z; no moves authorised. J1322 remains dependency-held, check 10:30Z; J1100 held with original 14:45Z check, worker 2/3, h43-LOOP and all gates preserved. No film PASS, Ben watch, spend or publishing."
         }
       ],
       "remaining_action": "Chief exact-file allowlist ruling and fresh headroom verification",
@@ -118814,7 +118819,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "426a5ed42"
     },
     {
       "id": "J1327",
