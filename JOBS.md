@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1381 | any | claimed | gemini | 2026-10-31T17:35Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1381 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1380 done: Chief: verify condition for J1100 (done)
 - J1379 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1378 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 fixes; 29 public HOS videos pass. New since J1314: BW_CFAX-mxc (31 Oct 11:30Z), Related = wwcjcFfC-5M, description carries the full-film link. Evidence jobs/reviews/J1285/.)
@@ -54,4 +54,3 @@ Recently finished:
 - J1374 done: Chief: verify condition for J0979 (Condition NOT satisfied. Read J0979 original rejection/history, J1000 audit, J1042 shelving ruling and J1328 evidence. Verified 031 and 032 locked VO records (J1295/c8ed778ab and J1294/4a9a2e16b); both status.json records explicitly say picture not started, corroborated by production records. 033-061 have no recorded VO/picture locks. J0979 remains blocked with recheck J1374 at 2026-10-31T21:45:00Z. Exact source-time EDL, duplicate and original-gate checks remain required when locked picture exists. 029 reserve v01 stays shelved. No spend, generation, upload, scheduling or film approval.)
 - J1373 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1372 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
-- J1371 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
