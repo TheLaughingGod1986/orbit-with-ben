@@ -1,0 +1,23 @@
+{
+  "identity": "NASA jsc2021m000259; accepted Crew-2 Nov 8 2021 fly-around source from J1321",
+  "local": "/private/tmp/J1321-media/crew2.mp4",
+  "sha256": "0d5a7ea1662190864da2f2bd0640fe77225e212074ee56ce546be5138cf43f48",
+  "source_interval": [
+    540,
+    543.2
+  ],
+  "extraction": "ffmpeg -ss 540 -i crew2.mp4 -t 4 -vf fps=30 /private/tmp/J1338-render/iss_day_%04d.jpg",
+  "timeline_interval": [
+    14.766666666666667,
+    18.4
+  ],
+  "native_dimensions": [
+    1280,
+    720
+  ],
+  "sharp_resize": [
+    1080,
+    608
+  ],
+  "max_effective_upscale": 0.952
+}
