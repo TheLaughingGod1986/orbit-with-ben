@@ -120398,9 +120398,14 @@
           "at": "2026-10-31T11:57Z",
           "by": "codex",
           "what": "step 1 of 4 done: v04 failed picture/polish: panel gutter and incorrect reused offset metadata. v05 uses inspected 49-52s Earth/cloud stretch with accurate offset; failed v04 preserved. Clear totality sample inspected."
+        },
+        {
+          "at": "2026-10-31T11:58Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Fresh v05 unchanged picture/polish/SFX gates exit 0, loop passes; 18.055s, -14.7 LUFS, -1.4 dBTP. Preparing durable evidence and exact half-second sheet."
         }
       ],
-      "remaining_action": "Render fresh AR3 v05 and rerun unchanged gates",
+      "remaining_action": "Verify persistent AR3 master, AAC identity and review images",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -120412,11 +120417,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-31T11:57Z",
+        "at": "2026-10-31T11:58Z",
         "by": "codex",
-        "note": "v04 failed picture/polish: panel gutter and incorrect reused offset metadata. v05 uses inspected 49-52s Earth/cloud stre"
+        "note": "Fresh v05 unchanged picture/polish/SFX gates exit 0, loop passes; 18.055s, -14.7 LUFS, -1.4 dBTP. Preparing durable evid"
       },
       "taskKeys": [
         "OWB:030"
