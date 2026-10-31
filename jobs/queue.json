@@ -98582,6 +98582,11 @@
           "at": "2026-10-31T15:00Z",
           "by": "relay",
           "what": "condition verification queued: J1370"
+        },
+        {
+          "at": "2026-10-31T15:24Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T16:00:21Z"
         }
       ],
       "remaining_action": "Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
@@ -98609,10 +98614,12 @@
         "note": "Found original continuous S2 phrase; unchanged extract ASR confirms wording, no pickup/spend. Existing house bed candida"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-31T16:00:21+00:00",
-        "recheck_task": "J1370"
+        "type": "input",
+        "condition": "Verified instrumental-only S2 bed with empty base.en ASR and completed listening; resolve recorded source-audio transfer approval rejection through authorized review or supply an existing cleared source. Checkpoint afed1c552 has eight matching hashes but neither tested bed passes and listening remains incomplete. Disk verified 34.620 GiB; predecessor J1270 complete. Retain h43-LOOP, accepted pickups/S6 audio, worker 2/3 and all original gates/approvals.",
+        "check_at": "2026-10-31T16:00:21Z",
+        "last_recheck": "J1370",
+        "checked_at": "2026-10-31T15:24:01+00:00",
+        "checked_by": "codex"
       }
     },
     {
