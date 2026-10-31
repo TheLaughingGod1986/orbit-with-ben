@@ -41,11 +41,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1385 | any | claimed | codex | 2026-10-31T19:26Z | chief · Chief: verify condition for J0978 |  |
 | J1386 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1385 done: Chief: verify condition for J0978 (Verified 31 Oct 17:27:49 UTC: HOS Atom title-test widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only check 23:35 UTC. Evidence _desk/handoff/J1385/readback.json and atom_edit.png. HOS channel audit: 62 videos, 0 errors. No YouTube changes or spend; reported on HOS desk.)
 - J1384 done: Chief: verify condition for J1356 (Verified unmet: all three accepted master SHA256 values match; all three manifest export targets absent. PR376 remains open at 92de3841c without new correction evidence. J1356 stays blocked with recheck J1384 and existing 17:53:25Z retry. Next: scoped no-spend music/tail correction, versioned package mapping, affected gates and full audiovisual review. Picture acceptance retained; no media changes, spend, watch or publishing approval.)
 - J1383 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1382 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1378 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 fixes; 29 public HOS videos pass. New since J1314: BW_CFAX-mxc (31 Oct 11:30Z), Related = wwcjcFfC-5M, description carries the full-film link. Evidence jobs/reviews/J1285/.)
 - J1377 done: Chief: verify condition for J1356 (Verified unmet: fresh hashes match accepted AR1 v01, AR2 v06, AR3 v05; all three manifest export targets absent. PR376 unchanged at 92de3841c; no newer correction or full audiovisual review evidence found. Kept J1356 blocked with recheck J1377 and retained 2026-10-31T16:48:47Z retry. Next required: scoped no-spend music/tail correction, versioned package mapping, affected gates and full playback review. Existing picture acceptance preserved. No media changes, spend, watch approval or publishing.)
 - J1376 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1375 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
