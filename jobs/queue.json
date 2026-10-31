@@ -117230,13 +117230,13 @@
       "stage": "",
       "after": "J1306",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-31T04:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T03:44Z",
-      "result": "waiting on J1307 graphics PASS",
+      "result": "",
       "history": [
         {
           "at": "2026-10-31T03:44Z",
@@ -117272,26 +117272,16 @@
           "at": "2026-10-31T04:47Z",
           "by": "chief",
           "what": "condition recorded; next verification 2026-10-31T07:30:00Z"
+        },
+        {
+          "at": "2026-10-31T05:15Z",
+          "by": "chief",
+          "what": "reopened: Chief h42 (OWB #264 6539441792): J1307 graphics PASS on the v04 pack (0b91a30e5, merged PR #360 036ddbe4f). J1307 shows cancelled-with-PASS (house practice; jobs.py lets only codex mark it done). Treat that as the 'J1307 done' gate: it is met. J1306 VO done (h40 lock). USE ONLY 07_Edit-Project/graphics_j1307_v04/ (not v02/v03) and GRAPHICS_REPORT.md at 0b91a30e5; re-time with render_graphics.py --only/--duration into NEW dirs, never overwrite. Follow CHIEF_H40_VO_LOCK line clock (ar1_size not used) and CHIEF_H37 C4/C5/C7/C8. Binding picture_qa is on the real composites; the ar1_odds backdrop gutter and the text-card edge-density WARN don't carry over. Everything else per the job body. GBP0, no mint/upload/schedule; park for Chief."
         }
       ],
       "remaining_action": "Waiting on J1307 v04 graphics PASS; assembly stays stopped",
       "for": "cursor",
-      "kind": "assembly",
-      "progress": {
-        "step": 1,
-        "of": 2,
-        "at": "2026-10-31T04:38Z",
-        "by": "cursor",
-        "note": "J1306 done (h40 VO lock). J1307 still blocked, not done: parked for Chief on v03 7e6dcb51f with 4 picture_qa split-panel"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "waiting on J1307 graphics PASS: Chief h41 (OWB #264 6539186497, 04:47Z) ruled v03 7e6dcb51f FIX (ar1_size/ar2_station label collisions, Morocco tint incl. W. Sahara); J1307 reopened for codex v04 (87b1d988d). Do not use v02 or v03 packs.",
-        "check_at": "2026-10-31T07:30:00Z",
-        "last_recheck": "J1311",
-        "checked_at": "2026-10-31T04:47:40+00:00",
-        "checked_by": "chief"
-      }
+      "kind": "assembly"
     },
     {
       "id": "J1309",
