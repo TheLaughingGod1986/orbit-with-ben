@@ -124884,18 +124884,26 @@
           "at": "2026-10-31T20:01Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting read-only audit of the last 10 public OWB videos"
+        },
+        {
+          "at": "2026-10-31T20:03Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Checked 2026-10-31 snapshot and live YouTube listings for the last 10 public OWB videos (VfDm3E2bUgU..82Ao0v5XiQI); rVqgtkBV3jc remains private until 1 Nov 18:00Z"
         }
       ],
-      "remaining_action": "Inspect latest snapshot and live YouTube listings for the last 10 public OWB videos",
+      "remaining_action": "Verify chapters, sources, end screen and Related pill against cut and manifest",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T20:01Z",
+        "at": "2026-10-31T20:03Z",
         "by": "gemini",
-        "note": "Starting read-only audit of the last 10 public OWB videos"
-      }
+        "note": "Checked 2026-10-31 snapshot and live YouTube listings for the last 10 public OWB videos (VfDm3E2bUgU..82Ao0v5XiQI); rVqg"
+      },
+      "taskKeys": [
+        "OWB:023"
+      ]
     }
   ],
   "focus": [],
