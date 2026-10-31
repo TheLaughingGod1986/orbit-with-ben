@@ -1,0 +1,137 @@
+{
+  "stem": "apophis_ar1_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "6c7d0f83b",
+    "J1279"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 322,
+      "duration_s": 24.4
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 322,
+  "words": 50,
+  "duration_s": 24.4,
+  "loudness": {
+    "lufs_integrated": -21.3,
+    "mean_volume_db": -24.1,
+    "max_volume_db": -4.6
+  },
+  "sha256_mp3": "a4c9a2d6efdb4cef6a9038c789a924130494086259725f126b2984623f87a3ff",
+  "scribe": {
+    "transcript": "Asteroid 2024 YR4 will skim past the Moon on December 22nd, 2032. At 60 meters wide, it matches a 15-story building. Early tracking gave a 4% chance of lunar impact. It will miss, passing 21,200 kilometers up. Look up that night knowing",
+    "script_words": 55,
+    "scribe_words": 44,
+    "match_rate_pct": 58.18,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "twenty",
+          "four",
+          "y",
+          "r",
+          "four"
+        ],
+        "scribe": [
+          "2024",
+          "yr4"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "second",
+          "twenty",
+          "thirty",
+          "two"
+        ],
+        "scribe": [
+          "22nd",
+          "2032"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "sixty",
+          "metres"
+        ],
+        "scribe": [
+          "60",
+          "meters"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "fifteen",
+          "storey"
+        ],
+        "scribe": [
+          "15",
+          "story"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "four",
+          "percent"
+        ],
+        "scribe": [
+          "4"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "one",
+          "thousand",
+          "two",
+          "hundred",
+          "kilometres"
+        ],
+        "scribe": [
+          "21",
+          "200",
+          "kilometers"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 19537,
+      "limit": 121114,
+      "remaining": 101577
+    },
+    "after": {
+      "used": 19537,
+      "limit": 121114,
+      "remaining": 101577
+    },
+    "counter_delta": 0
+  },
+  "text": "Asteroid twenty twenty-four Y R four will skim past the Moon on December twenty-second, twenty thirty-two. At sixty metres wide, it matches a fifteen-storey building. Early tracking gave a four percent chance of lunar impact. It will miss, passing twenty-one thousand two hundred kilometres up. Look up that night knowing…",
+  "made_at": "2026-10-31T04:08:52+0000"
+}

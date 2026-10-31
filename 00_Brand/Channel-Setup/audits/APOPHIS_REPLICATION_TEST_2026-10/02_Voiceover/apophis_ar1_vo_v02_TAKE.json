@@ -1,0 +1,103 @@
+{
+  "stem": "apophis_ar1_vo_v02",
+  "voice": "Ben Orbit Narrator",
+  "model_id": "eleven_v3",
+  "orders": [
+    "6c7d0f83b",
+    "J1279",
+    "C7"
+  ],
+  "built_from": "C7 trims 1 then 2 spliced onto apophis_ar1_vo_v01. Trim 1 alone was 24.07 s (planned cut 25.07). No other words changed.",
+  "spoken_chars": 308,
+  "words": 47,
+  "duration_s": 23.0,
+  "loudness": {
+    "lufs_integrated": -21.2,
+    "mean_volume_db": -24.0,
+    "max_volume_db": -4.6
+  },
+  "sha256_wav": "9154050eee7ae6a9245897368dff3282f0bd68f3dc5f28169cedf2e1d9ed28d6",
+  "sha256_mp3": "72c10c30d9da1a0b48979eed7e801558b4ab7c1f4c95581f043658f5abcb2d88",
+  "scribe": {
+    "transcript": "Asteroid 2024 YR4 will skim past the Moon on December 22nd, 2032. 60 meters wide, it matches a 15-story building. Early tracking gave a 4% chance of lunar impact. It will miss, passing 21,200 kilometers up. Look up knowing",
+    "script_words": 52,
+    "scribe_words": 41,
+    "match_rate_pct": 55.77,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "twenty",
+          "four",
+          "y",
+          "r",
+          "four"
+        ],
+        "scribe": [
+          "2024",
+          "yr4"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "second",
+          "twenty",
+          "thirty",
+          "two",
+          "sixty",
+          "metres"
+        ],
+        "scribe": [
+          "22nd",
+          "2032",
+          "60",
+          "meters"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "fifteen",
+          "storey"
+        ],
+        "scribe": [
+          "15",
+          "story"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "four",
+          "percent"
+        ],
+        "scribe": [
+          "4"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "one",
+          "thousand",
+          "two",
+          "hundred",
+          "kilometres"
+        ],
+        "scribe": [
+          "21",
+          "200",
+          "kilometers"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "text": "Asteroid twenty twenty-four Y R four will skim past the Moon on December twenty-second, twenty thirty-two. Sixty metres wide, it matches a fifteen-storey building. Early tracking gave a four percent chance of lunar impact. It will miss, passing twenty-one thousand two hundred kilometres up. Look up knowing…",
+  "made_at": "2026-10-31T04:13:05+0000"
+}

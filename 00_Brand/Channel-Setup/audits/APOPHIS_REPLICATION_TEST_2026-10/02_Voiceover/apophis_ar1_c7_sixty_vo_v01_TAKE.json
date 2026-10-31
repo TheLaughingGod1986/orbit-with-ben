@@ -1,0 +1,83 @@
+{
+  "stem": "apophis_ar1_c7_sixty_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "6c7d0f83b",
+    "J1279",
+    "C7"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 56,
+      "duration_s": 4.08
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 56,
+  "words": 8,
+  "duration_s": 4.08,
+  "loudness": {
+    "lufs_integrated": -20.2,
+    "mean_volume_db": -23.0,
+    "max_volume_db": -5.3
+  },
+  "sha256_mp3": "3469e5f3d60814598dc81138b942194dd598e758a0f3167384712684fea52e28",
+  "scribe": {
+    "transcript": "60 meters wide, it matches a 15-story building",
+    "script_words": 9,
+    "scribe_words": 9,
+    "match_rate_pct": 55.56,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "sixty",
+          "metres"
+        ],
+        "scribe": [
+          "60",
+          "meters"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "fifteen",
+          "storey"
+        ],
+        "scribe": [
+          "15",
+          "story"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 19965,
+      "limit": 121114,
+      "remaining": 101149
+    },
+    "after": {
+      "used": 19967,
+      "limit": 121114,
+      "remaining": 101147
+    },
+    "counter_delta": 2
+  },
+  "text": "Sixty metres wide, it matches a fifteen-storey building.",
+  "made_at": "2026-10-31T04:11:17+0000"
+}
