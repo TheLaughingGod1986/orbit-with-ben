@@ -115964,17 +115964,22 @@
           "at": "2026-10-31T01:06Z",
           "by": "cursor",
           "what": "step 2 of 6 done: v02a wav matches Chief sim sha 3444635a. Duration 568.280 s. v02 wav and mp3 hashes unchanged. Checks next."
+        },
+        {
+          "at": "2026-10-31T01:09Z",
+          "by": "cursor",
+          "what": "step 5 of 6 done: Checks PASS. wav 3444635a matches Chief sim. Lock recorded in c8ed778ab. v01 and v02 untouched."
         }
       ],
-      "remaining_action": "Run loudness, tail and null checks on magnetic_field_flip_vo_v02a",
+      "remaining_action": "Mark J1295 done with the v02a paths and checksums",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 5,
         "of": 6,
-        "at": "2026-10-31T01:06Z",
+        "at": "2026-10-31T01:09Z",
         "by": "cursor",
-        "note": "v02a wav matches Chief sim sha 3444635a. Duration 568.280 s. v02 wav and mp3 hashes unchanged. Checks next."
+        "note": "Checks PASS. wav 3444635a matches Chief sim. Lock recorded in c8ed778ab. v01 and v02 untouched."
       },
       "taskKeys": [
         "OWB:031"
