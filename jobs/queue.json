@@ -116273,10 +116273,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-10-31T02:28Z",
+      "eta": "2026-10-31T02:43Z",
       "created_by": "relay",
       "created_at": "2026-10-31T02:24Z",
       "result": "",
@@ -116285,13 +116285,26 @@
           "at": "2026-10-31T02:24Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T02:28Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Parked for Chief: review HOS 013 VO v02",
       "kind": "chief",
       "recheck_of": "J0807",
       "due": "2026-10-31T03:24:50+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T02:28Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1299",
