@@ -118148,9 +118148,14 @@
           "at": "2026-10-31T07:53Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Confirmed all 4 NAS files are 17 Oct J0432 seam-fix overwrites (commit 7a5608724) and none match the Oct 10-13 UPLOADS.json / PACKAGE_UPLOAD_RESULT sha256s; per J1181 ruling, did not restore mismatched renders over scheduled paths"
+        },
+        {
+          "at": "2026-10-31T07:55Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Added scheduled-Short keep-list to scripts/nas_offload.py (+ test) and _desk/logs/J1296_move.py; ran gate_upcoming.py"
         }
       ],
-      "remaining_action": "Add scheduled-Short paths to offload keep-list and re-run gate_upcoming.py",
+      "remaining_action": "Commit offload keep-list + refreshed UPCOMING_SHORTS_GATE.md and park for Chief",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -118162,11 +118167,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-31T07:53Z",
+        "at": "2026-10-31T07:55Z",
         "by": "gemini",
-        "note": "Confirmed all 4 NAS files are 17 Oct J0432 seam-fix overwrites (commit 7a5608724) and none match the Oct 10-13 UPLOADS.j"
+        "note": "Added scheduled-Short keep-list to scripts/nas_offload.py (+ test) and _desk/logs/J1296_move.py; ran gate_upcoming.py"
       },
       "taskKeys": [
         "OWB:025"
