@@ -116574,16 +116574,21 @@
           "at": "2026-10-31T03:41Z",
           "by": "cursor",
           "what": "renewed to 2026-10-31T04:11Z"
+        },
+        {
+          "at": "2026-10-31T03:41Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: vo_check running on v03 via vo_check_py312.sh (small.en)"
         }
       ],
       "remaining_action": "Run unmodified vo_check on hos_013_vo_v03.wav",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-10-31T03:41Z",
         "by": "cursor",
-        "note": "J1299 merge 725a6e45 is on main; v03 sha matches J1300"
+        "note": "vo_check running on v03 via vo_check_py312.sh (small.en)"
       },
       "taskKeys": [
         "HOS:013"
