@@ -119585,19 +119585,24 @@
           "at": "2026-10-31T10:33Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original job, J1324 delivery and J1329 FIX history; PR365 remains unchanged at 14d7d1c4c with no later review comments."
+        },
+        {
+          "at": "2026-10-31T10:33Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Verified PR365 unchanged at 14d7d1c4c; no successor delivery in current PRs/queue. Chief ruling 6541774693 rejects v08 late detail; four gate passes do not satisfy picture acceptance."
         }
       ],
-      "remaining_action": "Confirm whether any corrected delivery supersedes rejected AR2 v08",
+      "remaining_action": "Record unmet condition and retain J1321 hold",
       "kind": "chief",
       "recheck_of": "J1321",
       "due": "2026-10-31T11:31:35+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T10:33Z",
         "by": "codex",
-        "note": "Read original job, J1324 delivery and J1329 FIX history; PR365 remains unchanged at 14d7d1c4c with no later review comme"
+        "note": "Verified PR365 unchanged at 14d7d1c4c; no successor delivery in current PRs/queue. Chief ruling 6541774693 rejects v08 l"
       },
       "taskKeys": [
         "OWB:030"
