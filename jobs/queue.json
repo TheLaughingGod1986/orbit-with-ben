@@ -119401,19 +119401,30 @@
           "at": "2026-10-31T10:07Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T10:08Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1334; starting read-only listing check on last 10 public OWB videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Identify and verify top 10 live public OWB videos in 2026-10-31.json snapshot",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-31T10:07Z",
+        "of": 4,
+        "at": "2026-10-31T10:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1334; starting read-only listing check on last 10 public OWB videos"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     },
     {
       "id": "J1335",
