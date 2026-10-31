@@ -120361,13 +120361,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T11:54Z",
-      "eta": "2026-10-31T13:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T11:52Z",
-      "result": "",
+      "result": "parked for Chief: PR372 b5b6be2f0 AR3 v05 picture acceptance, including totality low-detail WARN. Unmodified picture/polish/loop/SFX pass; persistent hash and identical AAC verified. J1321 remains held with original retry. GBP0; no UAT/upload/scheduling.",
       "history": [
         {
           "at": "2026-10-31T11:52Z",
@@ -120413,6 +120413,11 @@
           "at": "2026-10-31T12:00Z",
           "by": "codex",
           "what": "step 4 of 4 done: PR372 b5b6be2f0 delivered with persistent hash, identical AAC, unchanged gates and review sheets; worker correction complete, picture acceptance remains Chief-owned."
+        },
+        {
+          "at": "2026-10-31T12:00Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: PR372 b5b6be2f0 AR3 v05 picture acceptance, including totality low-detail WARN. Unmodified picture/polish/loop/SFX pass; persistent hash and identical AAC verified. J1321 remains held with original retry. GBP0; no UAT/upload/scheduling."
         }
       ],
       "remaining_action": "Elected Chief to review AR3 v05 pictures and retained low-detail WARN in PR372",
