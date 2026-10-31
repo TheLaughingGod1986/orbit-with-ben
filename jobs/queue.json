@@ -116547,8 +116547,8 @@
       "stage": "vo",
       "after": "J1299",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-31T02:36Z",
       "eta": "",
       "created_by": "chief",
@@ -116604,6 +116604,11 @@
           "at": "2026-10-31T03:46Z",
           "by": "relay",
           "what": "condition verification queued: J1309"
+        },
+        {
+          "at": "2026-10-31T04:08Z",
+          "by": "chief",
+          "what": "cancelled"
         }
       ],
       "remaining_action": "Parked for Chief VO review",
