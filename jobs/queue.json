@@ -121359,19 +121359,28 @@
           "at": "2026-10-31T13:43Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-31T13:44Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1356, J1355 integration, acceptance history and PR376 evidence 92de3841c; original rebuild prohibition and picture acceptance retained."
         }
       ],
-      "remaining_action": "Verify J1356 evidence and approval history",
+      "remaining_action": "Verify whether accepted masters and package paths resolve the hold",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-10-31T14:42:26+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T13:43Z",
-        "by": "codex"
-      }
+        "at": "2026-10-31T13:44Z",
+        "by": "codex",
+        "note": "Read J1356, J1355 integration, acceptance history and PR376 evidence 92de3841c; original rebuild prohibition and picture"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
