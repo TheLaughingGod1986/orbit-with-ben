@@ -127601,19 +127601,26 @@
           "at": "2026-10-31T23:57Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T23:58Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1436; starting read-only audit of last 10 live OWB videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Identify last 10 public OWB videos from snapshot and scheduled queue",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T23:57Z",
+        "at": "2026-10-31T23:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1436; starting read-only audit of last 10 live OWB videos"
+      },
+      "taskKeys": [
+        "OWB:023"
+      ]
     }
   ],
   "focus": [],
