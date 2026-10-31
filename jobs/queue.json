@@ -120598,16 +120598,21 @@
           "at": "2026-10-31T12:42Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Fixed: (1) enabled & bootstrapped dev.orbit.buffer-check (was marked disabled in launchctl gui/501 + outdated 28 Sep plist); (2) restored 024 thumb+trailer and 027/028/ZpEA8stoSPA NAS media paths in UPLOADS.json"
+        },
+        {
+          "at": "2026-10-31T12:48Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Mirrored OWB 024 long (rVqgtkBV3jc) and all 3 Shorts through 7 Nov (hZH0C7fpCk4, ZpEA8stoSPA, T9fVlG3CCzU) to IG/FB/Threads; read back scheduled status and FB Reel titles in Buffer"
         }
       ],
-      "remaining_action": "Run buffer-mirror.ts check --dry-run, then live for OWB (+ ZpEA8stoSPA) and verify in Buffer",
+      "remaining_action": "Commit BUFFER_POSTS.json and UPLOADS.json after HOS check and Buffer read-back",
       "kind": "listing",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-31T12:42Z",
+        "at": "2026-10-31T12:48Z",
         "by": "gemini",
-        "note": "Fixed: (1) enabled & bootstrapped dev.orbit.buffer-check (was marked disabled in launchctl gui/501 + outdated 28 Sep pli"
+        "note": "Mirrored OWB 024 long (rVqgtkBV3jc) and all 3 Shorts through 7 Nov (hZH0C7fpCk4, ZpEA8stoSPA, T9fVlG3CCzU) to IG/FB/Thre"
       },
       "taskKeys": [
         "OWB:024",
