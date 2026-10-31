@@ -116783,13 +116783,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T04:49Z",
-      "eta": "2026-10-31T04:59Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T02:46Z",
-      "result": "",
+      "result": "Unverifiable: HOS Studio access denied since J1282; last read J1251 said running (~12d13h left). J1130 held, six-hour retry 2026-10-31T10:50Z. No YouTube changes.",
       "history": [
         {
           "at": "2026-10-31T02:46Z",
@@ -116800,6 +116800,11 @@
           "at": "2026-10-31T04:49Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T04:50Z",
+          "by": "chief",
+          "what": "done: Unverifiable: HOS Studio access denied since J1282; last read J1251 said running (~12d13h left). J1130 held, six-hour retry 2026-10-31T10:50Z. No YouTube changes."
         }
       ],
       "remaining_action": "Verify readiness: Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
