@@ -118435,9 +118435,14 @@
           "at": "2026-10-31T08:07Z",
           "by": "codex",
           "what": "blocked: parked for Chief: recovery verified at 10.689 GiB free, 20 GiB target unmet; exact retained candidate disposition in local commit c0f876ffa (/private/tmp/J1322-records). Five files recovered 2712698880 allocated bytes; J1100 remains held pending elected-Chief threshold verification. Evidence branch push rejected by automatic approval review as unverified egress; commit remains local."
+        },
+        {
+          "at": "2026-10-31T08:48Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T09:45:00Z"
         }
       ],
-      "remaining_action": "Submit shortfall evidence for Chief disposition; retain uncertain inputs",
+      "remaining_action": "Await J1326 candidate proofs and disk-growth reconciliation, then Chief recovery ruling",
       "due": "2026-11-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 2,
@@ -118460,7 +118465,12 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Acting Chief Codex ruling 31 Oct: FIX, not recovery completion. All five archived files freshly rehashed successfully; 2712698880 allocated bytes recovered historically. Live 5.15 GiB is below J1100 restart 10 GiB and recovery target 20 GiB. Retain all uncertain files; no broadening approved. Await J1326 growth reconciliation and exact current/previous/reference proofs, then elected-Chief allowlist/headroom ruling. Preserve worker 3/4 and J1100 2/3/h43-LOOP; no film PASS or restart.",
+        "check_at": "2026-10-31T09:45:00Z"
+      }
     },
     {
       "id": "J1323",
