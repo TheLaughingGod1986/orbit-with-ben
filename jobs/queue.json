@@ -117031,13 +117031,13 @@
       "stage": "",
       "after": "J1306",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-31T04:37Z",
-      "eta": "2026-10-31T07:37Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T03:44Z",
-      "result": "",
+      "result": "waiting on J1307 graphics PASS",
       "history": [
         {
           "at": "2026-10-31T03:44Z",
@@ -117058,6 +117058,11 @@
           "at": "2026-10-31T04:38Z",
           "by": "cursor",
           "what": "step 1 of 2 done: J1306 done (h40 VO lock). J1307 still blocked, not done: parked for Chief on v03 7e6dcb51f with 4 picture_qa split-panel FAILs. No v03 Chief PASS. No assembly started."
+        },
+        {
+          "at": "2026-10-31T04:38Z",
+          "by": "cursor",
+          "what": "blocked: waiting on J1307 graphics PASS"
         }
       ],
       "remaining_action": "Waiting on J1307 graphics PASS. Assembly stays stopped; v02 pack unused.",
@@ -117069,6 +117074,11 @@
         "at": "2026-10-31T04:38Z",
         "by": "cursor",
         "note": "J1306 done (h40 VO lock). J1307 still blocked, not done: parked for Chief on v03 7e6dcb51f with 4 picture_qa split-panel"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "waiting on J1307 graphics PASS",
+        "check_at": "2026-10-31T10:38:12+00:00"
       }
     },
     {
