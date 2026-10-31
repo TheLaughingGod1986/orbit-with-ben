@@ -116875,17 +116875,22 @@
           "at": "2026-10-31T04:32Z",
           "by": "cursor",
           "what": "step 1 of 4 done: AR1 and AR3 v03 WAV shas match the h40 sim. 881520 and 818640 frames."
+        },
+        {
+          "at": "2026-10-31T04:34Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: 128k mp3s written. Whisper small.en and base.en hear the locked sentences. SHA still matches."
         }
       ],
-      "remaining_action": "Encode 128k mp3s and free faster-whisper word timings for AR1 and AR3 v03.",
+      "remaining_action": "Commit the v03 TAKE.json, words json and h40 section of VO_REPORT.md.",
       "for": "cursor",
       "kind": "vo",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-31T04:32Z",
+        "at": "2026-10-31T04:34Z",
         "by": "cursor",
-        "note": "AR1 and AR3 v03 WAV shas match the h40 sim. 881520 and 818640 frames."
+        "note": "128k mp3s written. Whisper small.en and base.en hear the locked sentences. SHA still matches."
       }
     },
     {
