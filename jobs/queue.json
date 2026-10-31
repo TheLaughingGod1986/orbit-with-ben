@@ -118712,11 +118712,25 @@
           "at": "2026-10-31T08:48Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T08:58Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Reconcile disk regression and prove exact safe recovery candidates for Chief",
       "due": "2026-11-01T00:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],

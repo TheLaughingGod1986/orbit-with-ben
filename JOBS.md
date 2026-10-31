@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1321 | mini | blocked | codex | – | assembly · AR2–AR3: correct J1317 picture-review failures |  |
 | J1322 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · J1318 ruling: recover Mini space from verified inactive scratch only |  |
 | J1324 | mini | blocked | codex | – | assembly · AR2: finish real ISS composite after J1323 picture FIX |  |
-| J1326 | mini | open | – | – | assembly · J1322 follow-up: reconcile disk growth and prove exact inactive candidates |  |
+| J1326 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · J1322 follow-up: reconcile disk growth and prove exact inactive candidates |  |
 
 Recently finished:
 
