@@ -118330,10 +118330,10 @@
       "stage": "",
       "after": "J1317",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T11:37Z",
+      "eta": "2026-10-31T13:37Z",
       "created_by": "codex",
       "created_at": "2026-10-31T07:33Z",
       "result": "",
@@ -118427,6 +118427,11 @@
           "at": "2026-10-31T11:36Z",
           "by": "codex",
           "what": "reopened: J1343 verified 31 Oct: PR369 head 4193152a0290065c32e3b40fcbdf4fc055dde3f7 AR2 v10 replaces late interval; elected-Chief picture PASS ruling 6542851516 after full-size frames and all tiles. Four unchanged gates pass; NAS SHA256 b8dd0285ca162d1109923395d44dff1712f7bc97f61932bbadb6b3017aab841d and preserved AR1/AR3 hashes freshly match. Condition satisfied; correction close-out only, no publishing approval."
+        },
+        {
+          "at": "2026-10-31T11:37Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Correct AR2 late ISS picture detail and obtain picture acceptance; cohort held from UAT/upload",
@@ -118434,7 +118439,15 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "escalated_at": "2026-10-31T10:28Z"
+      "escalated_at": "2026-10-31T10:28Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T11:37Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1322",
