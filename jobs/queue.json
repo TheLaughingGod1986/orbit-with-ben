@@ -118258,9 +118258,14 @@
           "at": "2026-10-31T07:59Z",
           "by": "codex",
           "what": "step 0 of 4 done: NAS mounted; preserve master v03/v02 and all worktrees; two old rough exports selected for exact verification"
+        },
+        {
+          "at": "2026-10-31T08:01Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Two old rough duplicates rehashed and removed: 1533317120 allocated bytes; df 9.62 GiB after worktree overhead. Diagnostic copy detached in J1322-diagnostics."
         }
       ],
-      "remaining_action": "Validate old HOS008 rough duplicates against NAS and active references",
+      "remaining_action": "Copy and verify three obsolete diagnostic outputs, then record remaining shortfall",
       "due": "2026-11-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 2,
@@ -118274,11 +118279,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T07:59Z",
+        "at": "2026-10-31T08:01Z",
         "by": "codex",
-        "note": "NAS mounted; preserve master v03/v02 and all worktrees; two old rough exports selected for exact verification"
+        "note": "Two old rough duplicates rehashed and removed: 1533317120 allocated bytes; df 9.62 GiB after worktree overhead. Diagnost"
       },
       "taskKeys": [
         "OWB:027",
