@@ -126490,13 +126490,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T22:35Z",
-      "eta": "2026-11-01T00:35Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T22:04Z",
-      "result": "",
+      "result": "Verified condition remains unmet: current bed matches excluded 13adc031 candidate; evidence 3e26b379b and three audition hashes checked, listening NOT PERFORMED. J1100 remains blocked at 2/3 with OWB:027/028 and all approvals/deadlines/fallbacks preserved; retry 2026-10-31T23:04:41Z. Live free 33965838336 bytes. No spend, render, publishing or film PASS.",
       "history": [
         {
           "at": "2026-10-31T22:04Z",
@@ -126527,6 +126527,11 @@
           "at": "2026-10-31T22:36Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet condition with recheck J1422 and preserved original 23:04:41 UTC retry; posted findings to studio thread. No media PASS."
+        },
+        {
+          "at": "2026-10-31T22:36Z",
+          "by": "codex",
+          "what": "done: Verified condition remains unmet: current bed matches excluded 13adc031 candidate; evidence 3e26b379b and three audition hashes checked, listening NOT PERFORMED. J1100 remains blocked at 2/3 with OWB:027/028 and all approvals/deadlines/fallbacks preserved; retry 2026-10-31T23:04:41Z. Live free 33965838336 bytes. No spend, render, publishing or film PASS."
         }
       ],
       "remaining_action": "Verification complete; J1100 remains held for cleared bed and local listening evidence",
