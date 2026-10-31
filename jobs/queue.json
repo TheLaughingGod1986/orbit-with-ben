@@ -118330,13 +118330,13 @@
       "stage": "",
       "after": "J1317",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-31T08:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T07:33Z",
-      "result": "parked for Chief: corrected AR2 v05 and AR3 v09 need elected-Chief picture review; automated picture, polish, loop and SFX gates pass. Delivery 994571421, branch worker/J1321-picture-fixes. Cohort held from UAT/upload; no Ben action.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-31T07:33Z",
@@ -118422,29 +118422,18 @@
           "at": "2026-10-31T11:32Z",
           "by": "relay",
           "what": "condition verification queued: J1343"
+        },
+        {
+          "at": "2026-10-31T11:36Z",
+          "by": "codex",
+          "what": "reopened: J1343 verified 31 Oct: PR369 head 4193152a0290065c32e3b40fcbdf4fc055dde3f7 AR2 v10 replaces late interval; elected-Chief picture PASS ruling 6542851516 after full-size frames and all tiles. Four unchanged gates pass; NAS SHA256 b8dd0285ca162d1109923395d44dff1712f7bc97f61932bbadb6b3017aab841d and preserved AR1/AR3 hashes freshly match. Condition satisfied; correction close-out only, no publishing approval."
         }
       ],
       "remaining_action": "Correct AR2 late ISS picture detail and obtain picture acceptance; cohort held from UAT/upload",
       "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-31T08:28Z",
-        "by": "codex",
-        "note": "Delivery commit 994571421: both cuts pass unmodified picture/polish/loop/SFX; audio payloads identical to v02; old maste"
-      },
       "taskKeys": [
         "OWB:030"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "AR2 late ISS interval 14.766667-18.4s corrected for visibly smeared detail, with unmodified gates and elected-Chief picture acceptance; PR365 remains v08 at 14d7d1c4c rejected by ruling 6541774693; preserve AR1 v01 and AR3 v09",
-        "check_at": "2026-10-31T12:32:54+00:00",
-        "last_recheck": "J1336",
-        "checked_at": "2026-10-31T10:33:45+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1343"
-      },
       "escalated_at": "2026-10-31T10:28Z"
     },
     {
