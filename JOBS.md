@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1308 | mini | claimed | cursor | 2026-10-31T08:16Z | for cursor · assembly · OWB Apophis-mould Shorts AR1-AR3: assembly from J1306 VO + J1307 v03 graphics (after both Chief PASS), park for Chief | 9a2030925 |
-| J1314 | any | claimed | claude | 2026-10-31T06:51Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1314 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (No change since J1285 (30 Oct ~20:55Z): no HOS video went public in between (latest public Rl2uZ-KOTl8, 30 Oct 11:30Z; next BW_CFAX-mxc 31 Oct 11:30Z, Related already read back in J0241). 28/28 pass, 0 fixes.)
 - J1313 done: Chief: verify condition for J1100 (Condition met: J1270 done; live df avail 13,746,100 KB (13.1 GiB >= 10 GiB h34/h36 bar) at 05:17Z; Chief ruling supplied (h43, OWB #264 6539463596: S6 loop gate correction adopted as h43-LOOP with base-render provenance + pixel reconciliation + OCR); S2/S5 pickups done (126 plan chars). J1100 reopened for codex (assembly, S2 bed proof, captions, all gates incl. h43-LOOP, Gemini listening, UAT/NAS delivery, park for Chief replacement review). J0936 hold unchanged (check 10:00Z).)
 - J1312 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass (6dcL5rBmHPM..m09jUdwC5hk); 0 new fixes needed. Report committed to 05_Analytics/live_fixes/2026-10-31.md.)
 - J1311 done: Chief: verify condition for J1308 (Verified unmet: J1307 v03 ruled FIX by Chief h41 (6539186497), J1307 reopened 87b1d988d. J1308 held (dependency, a34f0dc17), next check 2026-10-31T07:30Z.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1306 done: OWB Apophis-mould Shorts AR1-AR3: VO from locked v02 scripts (J1279 h37 PASS), park for Chief (h40 VO locked, no ElevenLabs. AR1 v03 de70ed062c017993e22da6dd5f0e77dd9c9de8331ba94be61e4e74e36a52aedb cut 19.37s answer 12.17s. AR2 v01 d0d0e4c4e55f616bc73f361e2b508bb4f62b4e94fc0398e66b275917ff5f6283 cut 19.40s answer 10.94s. AR3 v03 95ab6cf199bea32c4b85516926152d54b333c0730626f89b97858551dd146c2c cut 18.06s answer 6.93s (peaking 10.26s). Commit fff716e14.)
 - J1305 done: Chief: verify condition for J1100 (Verified at 2026-10-31T04:48Z: df 14271812 KB avail meets the h34/h36 J1100 bar (>=10 GiB start, park <6 GiB); J1270 done. J1100 reopened for repairs only with evidence note. GBP0.)
 - J1304 done: Chief: verify condition for J0936 (Verified unmet at 04:49Z: J1100 only just reopened (5f028e5f5) for repairs; no replacement delivery, Chief PASS or Ben swap approvals. J0936 held, next check 2026-10-31T10:00Z.)
-- J1303 done: Chief: verify condition for J1130 (Unverifiable: HOS Studio access denied since J1282; last read J1251 said running (~12d13h left). J1130 held, six-hour retry 2026-10-31T10:50Z. No YouTube changes.)
