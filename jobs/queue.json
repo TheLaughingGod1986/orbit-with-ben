@@ -124518,19 +124518,24 @@
           "at": "2026-10-31T19:43Z",
           "by": "codex",
           "what": "step 2 of 3 done: Retained J0985 blocked with recheck J1396 and next check 1 Nov 01:45Z. Raw evidence SHA256 3f6132b6e279e6d7282e5784c3acc4d17c6c3816c7d2b8ede47565a45ab92562; both 100-row copies match."
+        },
+        {
+          "at": "2026-10-31T19:43Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback PASS: J0985 remains blocked, last_recheck J1396, next check 2026-11-01T01:45:00Z. Original approvals unchanged."
         }
       ],
-      "remaining_action": "Verify saved J0985 hold and finish verification report",
+      "remaining_action": "Verification complete; report retained J0985 hold",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-31T20:00:34+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-31T19:43Z",
         "by": "codex",
-        "note": "Retained J0985 blocked with recheck J1396 and next check 1 Nov 01:45Z. Raw evidence SHA256 3f6132b6e279e6d7282e5784c3acc"
+        "note": "Readback PASS: J0985 remains blocked, last_recheck J1396, next check 2026-11-01T01:45:00Z. Original approvals unchanged."
       },
       "taskKeys": [
         "OWB:021",
