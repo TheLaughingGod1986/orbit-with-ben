@@ -1,0 +1,17 @@
+{
+  "eligible_files": [],
+  "eligible_allocated_bytes": 0,
+  "reason": "No candidate meets all inactivity, exact watch-path, current/previous, rebuild-input and exclusion conditions simultaneously. Hash equality alone does not waive exclusions.",
+  "all_original_candidates_allocated": 4884897792,
+  "file_decision_counts": {
+    "HOS008_ROW_CLEARANCE": 69,
+    "ONLY_CURRENT_WORK_VERSION": 738,
+    "CURRENT_BUILDER_STEMS": 86,
+    "CURRENT_PREVIOUS_OR_HISTORIC_INPUT": 1348,
+    "DURABLE_POINTER": 3,
+    "UAT_WATCH_OR_VERSION": 120,
+    "APOPHIS_REPAIR_HOLD": 5693
+  },
+  "no_move_no_unlink": true,
+  "requires": "Chief exact-path ruling, then fresh df and source/reference recheck. J1100 remains held at worker 2/3 with h43-LOOP."
+}
