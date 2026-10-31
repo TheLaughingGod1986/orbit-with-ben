@@ -118512,9 +118512,14 @@
           "at": "2026-10-31T12:59Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resume correction close-out only per J1349; preserving prior three-step plan. Chief PR371 accepts AR2 v06; PR373 accepts AR3 v05. No new render required."
+        },
+        {
+          "at": "2026-10-31T12:59Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh accepted/protected master and review-image hashes match; recorded unmodified gates succeed. Pairing AR1 v01, AR2 v06, AR3 v05; existing Chief approvals PR371 and PR373."
         }
       ],
-      "remaining_action": "Verify accepted AR2 v06 and AR3 v05 and record correction close-out",
+      "remaining_action": "Submit verified correction close-out record and finish J1321",
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
@@ -118530,11 +118535,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T12:59Z",
         "by": "codex",
-        "note": "Resume correction close-out only per J1349; preserving prior three-step plan. Chief PR371 accepts AR2 v06; PR373 accepts"
+        "note": "Fresh accepted/protected master and review-image hashes match; recorded unmodified gates succeed. Pairing AR1 v01, AR2 v"
       }
     },
     {
