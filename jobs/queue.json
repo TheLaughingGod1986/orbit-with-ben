@@ -121624,13 +121624,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-31T14:03Z",
-      "eta": "2026-10-31T15:03Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-31T14:02Z",
-      "result": "",
+      "result": "Read-only HOS listing check PASS at 2026-10-31T14:05Z across 62 unique videos (29 public, 11 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md, HOS 5192036d, 0 new fixes needed)",
       "history": [
         {
           "at": "2026-10-31T14:02Z",
@@ -121661,6 +121661,11 @@
           "at": "2026-10-31T14:06Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: committed and pushed 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md (HOS 5192036d); 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-31T14:06Z",
+          "by": "gemini",
+          "what": "done: Read-only HOS listing check PASS at 2026-10-31T14:05Z across 62 unique videos (29 public, 11 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md, HOS 5192036d, 0 new fixes needed)"
         }
       ],
       "remaining_action": "Complete J1360 and post report",
@@ -121682,7 +121687,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:008"
-      ]
+      ],
+      "done_ref": "5192036d"
     }
   ],
   "focus": [],
