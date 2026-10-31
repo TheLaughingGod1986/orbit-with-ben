@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1315 | any | open | – | – | chief · Chief: verify condition for J1308 |  |
 | J1316 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1317 | mini | blocked | gemini | – | qa · Apophis-mould AR1-AR3: frame sheets for the Chief picture review (J1308) |  |
-| J1318 | mini | claimed | gemini | 2026-10-31T09:01Z | qa · Mini disk: read-only report of the biggest local folders + a move-to-NAS plan (J1100 needs 10 GiB free) |  |
+| J1318 | mini | blocked | gemini | – | qa · Mini disk: read-only report of the biggest local folders + a move-to-NAS plan (J1100 needs 10 GiB free) |  |
 | J1319 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1320 | mini | open | – | – | qa · Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate |  |
 

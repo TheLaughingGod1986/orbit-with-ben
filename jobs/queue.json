@@ -117878,13 +117878,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-10-31T07:01Z",
-      "eta": "2026-10-31T09:01Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-31T06:52Z",
-      "result": "",
+      "result": "parked for Chief: move-plan OK (jobs/reviews/disk_2026-10-31.md, d48161fdf; frees 21.48 GiB = 7.88 GiB already sha256-verified on NAS + 13.60 GiB copy+verify render scratch, lifting / from 9.4 GiB to ~30.9 GiB free so J1100 can run)",
       "history": [
         {
           "at": "2026-10-31T06:52Z",
@@ -117920,6 +117920,11 @@
           "at": "2026-10-31T07:21Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Read-only inventory and 21.48 GiB move-to-NAS plan ready for Chief approval in jobs/reviews/disk_2026-10-31.md"
+        },
+        {
+          "at": "2026-10-31T07:21Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: move-plan OK (jobs/reviews/disk_2026-10-31.md, d48161fdf; frees 21.48 GiB = 7.88 GiB already sha256-verified on NAS + 13.60 GiB copy+verify render scratch, lifting / from 9.4 GiB to ~30.9 GiB free so J1100 can run)"
         }
       ],
       "remaining_action": "Parked for Chief: move-plan OK",
