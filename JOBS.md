@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1396 | any | claimed | codex | 2026-10-31T21:41Z | chief · Chief: verify condition for J0985 |  |
 
 Recently finished:
 
+- J1396 done: Chief: verify condition for J0985 (Verified condition unmet. Latest audit commit 0c18bb2cb; both identical persisted mature Mercury 100-bucket curves independently give 0.20->0.21, 126.22->120.63 percent (-5.59pp), 4.088-4.2924s. Chief review line 67 and J1003 result still give 0.18->0.19 (-5.76pp), 3.68-3.88s and conflicting cut mapping. No final non-author audit PASS. Retained J0985 blocked via wait --recheck J1396, next check 2026-11-01T01:45:00Z; readback PASS. No spend or publishing changes.)
 - J1395 done: Chief: verify condition for J1130 (Verified access remains denied; J1130 held for actual test completion evidence. Next check 2026-11-01T01:40Z; evidence _desk/handoff/J1395.)
 - J1394 done: Chief: verify condition for J1100 (Verified afed1c552: all eight hashes match. Both tested beds retain nonempty base.en ASR and source listening has no result/log/done. Prior source-audio transfer and evidence-push approval rejection unresolved; no retry or bypass. J1100 kept blocked at 2/3 with OWB:027/028 and all rulings/deadlines/fallbacks preserved; next check 2026-11-01T01:37Z. Live disk 36.453 GiB. No production, spend or publishing changes.)
 - J1393 done: Chief: verify condition for J1356 (done)
@@ -54,4 +54,3 @@ Recently finished:
 - J1389 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1388 done: Chief: verify condition for J0862 (done)
 - J1387 done: Chief: verify condition for J1130 (done)
-- J1386 done: Chief: verify condition for J1100 (Readiness not proven: eight checkpoint hashes match, both bed candidates retain nonempty ASR, source listening and transfer approval unresolved. J1100 remains blocked at 2/3; retry 2026-10-31T18:01:34Z retained. Disk 33.999 GiB. No production or publishing changes.)
