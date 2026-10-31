@@ -123828,10 +123828,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T17:35Z",
+      "eta": "2026-10-31T19:35Z",
       "created_by": "relay",
       "created_at": "2026-10-31T17:34Z",
       "result": "",
@@ -123840,13 +123840,26 @@
           "at": "2026-10-31T17:34Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T17:35Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Approve the 009 Short B replacement opening and exact recording scope, then record only required replacements",
       "kind": "chief",
       "recheck_of": "J0862",
       "due": "2026-10-31T18:34:25+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T17:35Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
