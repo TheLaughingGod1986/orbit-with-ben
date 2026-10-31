@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1401 | any | claimed | gemini | 2026-10-31T21:00Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1401 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md; 0 fixes needed)
 - J1400 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS e97d203b))
 - J1399 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 pass, no fixes. New: standalone test S3 VfDm3E2bUgU (no Related by design, J0216). 05_Analytics/live_fixes/2026-10-31.md.)
 - J1398 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS f2f39efa))
@@ -54,4 +54,3 @@ Recently finished:
 - J1394 done: Chief: verify condition for J1100 (Verified afed1c552: all eight hashes match. Both tested beds retain nonempty base.en ASR and source listening has no result/log/done. Prior source-audio transfer and evidence-push approval rejection unresolved; no retry or bypass. J1100 kept blocked at 2/3 with OWB:027/028 and all rulings/deadlines/fallbacks preserved; next check 2026-11-01T01:37Z. Live disk 36.453 GiB. No production, spend or publishing changes.)
 - J1393 done: Chief: verify condition for J1356 (done)
 - J1392 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS 01fbec8b))
-- J1391 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (b9d1d8f8f); 0 fixes needed)
