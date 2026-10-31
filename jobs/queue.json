@@ -127244,13 +127244,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T23:41Z",
-      "eta": "2026-11-01T01:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T23:32Z",
-      "result": "",
+      "result": "Verified condition unmet: J1100 blocked 2/3, latest J1430; evidence 3e26b379b and three audition hashes checked, local listening NOT PERFORMED and S2 bed not cleared. PR333 OPEN 0a7fcb6ad without reviews/comments. J0936 held with retry 2026-11-01T00:32:45Z; all prior accepted work, approvals, deadlines and v01 fallback preserved. Report #6550715739. No spend/media/publishing changes.",
       "history": [
         {
           "at": "2026-10-31T23:32Z",
@@ -127281,6 +127281,11 @@
           "at": "2026-10-31T23:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded J1431-linked hold preserving 1 Nov 00:32:45Z retry; report confirmed on thread #6550715739. No media PASS or publishing change."
+        },
+        {
+          "at": "2026-10-31T23:43Z",
+          "by": "codex",
+          "what": "done: Verified condition unmet: J1100 blocked 2/3, latest J1430; evidence 3e26b379b and three audition hashes checked, local listening NOT PERFORMED and S2 bed not cleared. PR333 OPEN 0a7fcb6ad without reviews/comments. J0936 held with retry 2026-11-01T00:32:45Z; all prior accepted work, approvals, deadlines and v01 fallback preserved. Report #6550715739. No spend/media/publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 remains held for replacement evidence",
