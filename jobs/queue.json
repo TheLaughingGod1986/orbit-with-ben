@@ -117053,17 +117053,22 @@
           "at": "2026-10-31T04:38Z",
           "by": "cursor",
           "what": "step 0 of 2 done: Gate check started. Standalone AR1-AR3 cohort has no numbered film."
+        },
+        {
+          "at": "2026-10-31T04:38Z",
+          "by": "cursor",
+          "what": "step 1 of 2 done: J1306 done (h40 VO lock). J1307 still blocked, not done: parked for Chief on v03 7e6dcb51f with 4 picture_qa split-panel FAILs. No v03 Chief PASS. No assembly started."
         }
       ],
-      "remaining_action": "Confirm J1306 VO PASS and J1307 v03 graphics PASS before any assembly",
+      "remaining_action": "Waiting on J1307 graphics PASS. Assembly stays stopped; v02 pack unused.",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 2,
         "at": "2026-10-31T04:38Z",
         "by": "cursor",
-        "note": "Gate check started. Standalone AR1-AR3 cohort has no numbered film."
+        "note": "J1306 done (h40 VO lock). J1307 still blocked, not done: parked for Chief on v03 7e6dcb51f with 4 picture_qa split-panel"
       }
     },
     {
