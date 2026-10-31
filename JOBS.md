@@ -44,6 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1431 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1432 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
+| J1433 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 
 Recently finished:
 
