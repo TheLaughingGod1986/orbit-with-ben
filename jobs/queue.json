@@ -86396,6 +86396,11 @@
           "at": "2026-10-31T09:06Z",
           "by": "relay",
           "what": "condition verification queued: J1328"
+        },
+        {
+          "at": "2026-10-31T09:32Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T15:35:00Z"
         }
       ],
       "kind": "assembly",
@@ -86411,15 +86416,14 @@
         "by": "codex",
         "note": "J1000 queued: no-spend existing-VO question EDL or cancellation recommendation; review complete"
       },
-      "remaining_action": "Wait for a post-30-Oct-reset OWB long (031+) to lock VO and picture with an unused Keeper-compliant question opening",
+      "remaining_action": "Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
       "hold": {
         "type": "input",
-        "condition": "J1000 audit (92a775ee8) and J1042 Chief check (3782768ab) verified 0 unused non-anaphoric subject-naming line-1 questions across pre-26-Oct locked OWB longs (021-029) under fewest-Shorts and Keeper/Sun/Saturn/date/credit holds; 029_short_lift_die_young_10my_v01 remains shelved. Wait until a post-30-Oct-reset OWB long (031+) locks VO and picture with an unused Keeper-compliant question opening.",
-        "check_at": "2026-10-31T10:06:56+00:00",
-        "last_recheck": "J1042",
-        "checked_at": "2026-10-27T18:55:12+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1328"
+        "condition": "J1328 verified 031 VO magnetic_field_flip_vo_v02a (J1295, c8ed778ab) and 032 VO titan_landing_vo_v02b (J1294, 4a9a2e16b), but both status records say picture not started; 033-061 have no recorded VO/picture locks. Await a 031+ long with locked VO AND picture and an unused Keeper-compliant subject-naming question opening. Recheck exact source-time EDL, duplicates and all original gates/holds before reopening. 029 reserve v01 remains shelved under J1042; no spend/upload approval.",
+        "check_at": "2026-10-31T15:35:00Z",
+        "last_recheck": "J1328",
+        "checked_at": "2026-10-31T09:32:01+00:00",
+        "checked_by": "codex"
       }
     },
     {
