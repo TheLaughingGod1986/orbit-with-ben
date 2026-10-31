@@ -87416,6 +87416,11 @@
           "at": "2026-10-31T12:00Z",
           "by": "relay",
           "what": "condition verification queued: J1347"
+        },
+        {
+          "at": "2026-10-31T12:52Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T19:00:00Z"
         }
       ],
       "kind": "review",
@@ -87451,15 +87456,14 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T19:20Z",
-      "remaining_action": "Reconcile Mercury retention narrative with raw curves (worker), then final non-author Chief audit review",
+      "remaining_action": "Reconcile Mercury retention narrative with raw curves, then final independent Chief audit review",
       "hold": {
         "type": "input",
-        "condition": "Verified unmet at 2026-10-31T04:51Z: no commit or job since J1262 reconciles the Mercury vlkj8RQKmH8 narrative (0.18->0.19, -5.76pp) against both persisted mature raw curves (0.20->0.21, 126.22->120.63 percent, -5.59pp) with cut/VO mapping, and no final non-author Chief audit PASS exists. J1002 (45ef75589) and J1003 (0c18bb2cb) complete. Original production gates and approvals unchanged; no production authorization.",
-        "check_at": "2026-10-31T13:00:41+00:00",
-        "last_recheck": "J1292",
-        "checked_at": "2026-10-31T04:49:45+00:00",
-        "checked_by": "chief",
-        "recheck_task": "J1347"
+        "condition": "J1347 verified 31 Oct: both persisted mature Mercury vlkj8RQKmH8 curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp), mapped in audit/EVIDENCE to 4.09-4.29s. J1003 result and OWB_2026-10-26_CHIEF_REVIEW.md still assert 0.18->0.19 (-5.76pp), 3.68-3.88s and different cut mapping. No later audit commit or final non-author Chief PASS exists. Reconcile these narratives against raw buckets and cut/VO evidence before final independent review. J1002 and J1003 complete; all original production gates and approvals unchanged.",
+        "check_at": "2026-10-31T19:00:00Z",
+        "last_recheck": "J1347",
+        "checked_at": "2026-10-31T12:52:48+00:00",
+        "checked_by": "codex"
       }
     },
     {
