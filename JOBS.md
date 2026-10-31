@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
 | J1345 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR3: clear duration graphic from eclipse and show unobscured totality | c70206699 |
 | J1346 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J1347 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 
 Recently finished:
 
