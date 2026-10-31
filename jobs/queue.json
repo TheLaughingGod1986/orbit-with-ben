@@ -1,5 +1,5 @@
 {
-  "next_id": 1306,
+  "next_id": 1307,
   "jobs": [
     {
       "id": "J0001",
@@ -116698,6 +116698,35 @@
       "recheck_of": "J1100",
       "due": "2026-10-31T04:01:31+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1306",
+      "title": "OWB Apophis-mould Shorts AR1-AR3: VO from locked v02 scripts (J1279 h37 PASS), park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "OWB Apophis replication test (J1279 script PASS, Chief h37). Voice-over for the 3 primary Shorts AR1 (2024 YR4), AR2 (ISS), AR3 (2027 eclipse). AR4 Halley is reserve: no VO.\n\nScript: the spoken `>` lines in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/SCRIPTS_AND_PACKAGING_v02.md §4–§6, verbatim. Read CHIEF_H37_CORRECTIONS.md in the same folder first; it is binding.\n\n1. Money check, before any API call. ElevenLabs runs only inside the existing plan's remaining characters. Expect about 1–3k characters for 3 Shorts including retakes. If the remaining balance can't cover it, or the call would trigger usage-based overage, a top-up or any other real money, do not call. Record a wait or block \"needs Ben: ElevenLabs characters\" and stop. Leave J0862's share (HOS 009/010 Shorts VO) untouched.\n2. Take: 04_Audio/tools/vo_take.py with eleven_v3, voice Ben Orbit Narrator only. Do one take per Short, plus up to 2 line retakes where Scribe v2 mishears a word. Numerals are read the house way: \"twenty twenty-four Y R four\", \"twenty thirty-two\", \"twenty twenty-seven\", \"twenty twenty-six's\".\n3. Check: Scribe v2 word check against the script (vo_check). Measure each take: total VO length, first-word onset, surprise-word time, answer-line start (s and % of the planned cut = VO + 1.0 s loop tail), and the last word end.\n4. Length bar: each planned cut is 17.0–20.0 s (VO + 1.0 s loop tail). If one is over, apply only the pre-approved trims in CHIEF_H37_CORRECTIONS.md C7, in order, and re-take that line. Any other change comes back to Chief.\n5. Answer bar (C8): the answer line starts by about 13.5 s. The \"look up\" line is last and runs into line 1.\n6. Files go under 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/02_Voiceover/ (media off git, per AGENTS.md). Commit the TAKE.json, words json and a short VO_REPORT.md with sha256, LUFS and the timings above.\n7. Park for Chief VO review. No picture, no upload, no schedule. Only the existing plan's characters (£0 extra).\n",
+      "ref": "6c7d0f83b",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T03:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T03:19Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "OWB Apophis-mould Shorts AR1-AR3: VO from locked v02 scripts (J1279 h37 PASS), park for Chief",
+      "for": "cursor",
+      "kind": "vo"
     }
   ],
   "focus": [],
