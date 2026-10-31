@@ -1,5 +1,5 @@
 {
-  "next_id": 1300,
+  "next_id": 1301,
   "jobs": [
     {
       "id": "J0001",
@@ -116308,6 +116308,34 @@
       "remaining_action": "Open the vo_check alias/ordinal PR for Chief",
       "kind": "assembly",
       "model": "gpt-6-astra"
+    },
+    {
+      "id": "J1300",
+      "title": "HOS 013 VO: re-hear 'what was doing the shaping' (2:44.58) with whisper medium.en + base.en; pickup to v03 only if a word is really missing (<=~50 credits, nothing bought) (Chief on J0807)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) decision on J0807 (HOS #180, re Cursor 6537745991 and Claude 6537756171), 31 Oct 2026. HOS 013 VO v02 is not passed while `vo_check` FAILs. This job settles the one fail that is not a checker gap: script line 51 of `01_Script/darwin_script_master_v02.md`, \"But what was doing the shaping?\" at ~2:44.58 of `02_Voiceover/hos_013_vo_v02.wav` (sha256 fa100bb9…b47b6, 512.48 s). vo_check (small.en) heard \"what was doing **was** shaping\"; Scribe heard the script. So the question is whether \"the\" (and \"doing\") are cleanly spoken. GBP0 unless a pickup is needed; cap below.\n\nDo (Cursor, Mini):\n1. Copy (never mv) a padded clip, ~2:40.0–2:50.0, from hos_013_vo_v02.wav to scratch. Re-hear it with faster-whisper **medium.en** and **base.en** (word_timestamps, int8, CPU), as on 008, plus small.en for comparison. Paste each model's text and the word timings/probabilities for \"doing the shaping\". Also look at the energy envelope around \"doing\"/\"the\" and note whether there is a distinct syllable for \"the\".\n2. Rule of thumb: if medium.en AND base.en both hear \"doing the shaping\" (or \"doing the\" clearly present), the take is fine and NO pickup is made; record that and go to step 4.\n3. If either model (or the envelope) shows \"the\"/\"doing\" genuinely missing or mangled: record a one-sentence pickup of exactly the locked line \"But what was doing the shaping?\" with the same house setup as the \"credit\" pickup (Ben Orbit Narrator, eleven_v3, speed 1.04, vo_take.py / el_client.py). Read the ElevenLabs balance first and log it (ai_spend.py record); cap ~50 credits (at most 2 attempts, stop at 100), balance was 101,592 of 121,114; never buy, top up or spill into billing (Ben: floor is 0). Scribe-check the pickup (must be 100%). Splice it into a NEW file `hos_013_vo_v03.wav` built from v02 (keep v01 and v02 untouched), with a `hos_013_vo_v03_SPLICE.json` cut record like v02's, matching loudness and clean (faded, no click) joins. Report sha256, duration, ebur128.\n4. Update `02_Voiceover/VO_STATUS.md` with the re-hear results and (if made) v03. Commit metadata only on HOS main (no media in git) and push.\n5. Mark this job done with: which take is final (v02 or v03), its sha256, and the re-hear evidence. Do NOT run the final vo_check sign-off here and do NOT call it a lock: that is J1301, after the vo_check fix (J1299) merges.\nNo picture, no upload, nothing for Ben.\n",
+      "ref": "6537756171",
+      "film": "013",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T02:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T02:27Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Re-hear the 013 shaping line and pick up only if needed",
+      "kind": "assembly"
     }
   ],
   "focus": [],
