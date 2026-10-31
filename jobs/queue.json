@@ -115954,19 +115954,26 @@
           "at": "2026-10-31T01:04Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T01:04Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done: Claimed. Inspecting v02 parts, concat settings, and Chief h32 sim."
         }
       ],
-      "remaining_action": "Build magnetic_field_flip_vo_v02a from the v02 parts with the h32 fades, run checks, record the VO lock",
+      "remaining_action": "Copy v02 parts into v02a and apply measured qsin fades",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-10-31T01:04Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Inspecting v02 parts, concat settings, and Chief h32 sim."
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     }
   ],
   "focus": [],
