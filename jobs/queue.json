@@ -117853,19 +117853,24 @@
           "at": "2026-10-31T07:28Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original brief, approval history, J1270 and J1313; governing h43 minimum is 10 GiB; existing J1100 2/3 remains intact."
+        },
+        {
+          "at": "2026-10-31T07:28Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Live 9.4555 GiB fails h43 10 GiB restart floor; NAS offload no eligible scratch; J1100 input hold set for 13:28Z, no reopen."
         }
       ],
-      "remaining_action": "Measure live disk against Chief h43 restart threshold",
+      "remaining_action": "Verify recorded hold and report J1316 outcome",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T07:01:29+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T07:28Z",
         "by": "codex",
-        "note": "Read original brief, approval history, J1270 and J1313; governing h43 minimum is 10 GiB; existing J1100 2/3 remains inta"
+        "note": "Live 9.4555 GiB fails h43 10 GiB restart floor; NAS offload no eligible scratch; J1100 input hold set for 13:28Z, no reo"
       },
       "taskKeys": [
         "OWB:027",
