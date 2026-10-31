@@ -123187,13 +123187,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T16:31Z",
-      "eta": "2026-10-31T18:31Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T16:01Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-31T16:01Z",
@@ -123224,6 +123224,11 @@
           "at": "2026-10-31T16:33Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet input condition linked to J1380 and retained existing 2026-10-31T17:01:29Z retry. All production gates and worker 2/3 preserved."
+        },
+        {
+          "at": "2026-10-31T16:33Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1100 remains held on bed and listening evidence",
