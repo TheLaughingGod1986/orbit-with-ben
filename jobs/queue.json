@@ -116086,18 +116086,23 @@
           "at": "2026-10-31T01:42Z",
           "by": "cursor",
           "what": "step 0 of 4 done: NAS mounted; compilation archive same size as local; gemini worktree still held by bash 1852 and node 1975"
+        },
+        {
+          "at": "2026-10-31T01:43Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: 22 phase-1 files and 12 superseded 029 exports passed ignore, lsof and active-job checks. Worktree still held, left in place."
         }
       ],
-      "remaining_action": "Verify each ignored file, then copy it to the NAS",
+      "remaining_action": "Copy verified ignored media onto the NAS and check each sha256",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T01:42Z",
+        "at": "2026-10-31T01:43Z",
         "by": "cursor",
-        "note": "NAS mounted; compilation archive same size as local; gemini worktree still held by bash 1852 and node 1975"
+        "note": "22 phase-1 files and 12 superseded 029 exports passed ignore, lsof and active-job checks. Worktree still held, left in p"
       },
       "taskKeys": [
         "HOS:006"
