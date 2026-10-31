@@ -98658,6 +98658,11 @@
           "at": "2026-10-31T18:02Z",
           "by": "relay",
           "what": "condition verification queued: J1394"
+        },
+        {
+          "at": "2026-10-31T19:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T01:37:00Z"
         }
       ],
       "remaining_action": "Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
@@ -98686,12 +98691,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Verified instrumental-only S2 bed with empty base.en ASR and completed listening; resolve recorded source-audio transfer approval rejection through authorized review or supply an existing cleared source. J1386 reverified all eight afed1c552 hashes; both tested beds still have nonempty ASR and no source-listening completion exists. Live disk 33.999 GiB. Preserve worker 2/3, OWB:027/028, h43-LOOP, accepted pickups/S6 audio, all original gates, approvals, deadlines and scheduled-v01 fallback.",
-        "check_at": "2026-10-31T19:02:22+00:00",
-        "last_recheck": "J1386",
-        "checked_at": "2026-10-31T17:31:02+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1394"
+        "condition": "Verified instrumental-only S2 bed with empty base.en ASR and completed listening; resolve recorded source-audio transfer approval rejection through authorized review or supply an existing cleared source. J1394 reverified all eight afed1c552 hashes; both tested beds retain nonempty ASR and no source-listening result/log/done exists. Disk 36.453 GiB. Preserve worker 2/3, OWB:027/028, h43-LOOP, accepted pickups/S6 audio, all original gates, approvals, deadlines and scheduled-v01 fallback.",
+        "check_at": "2026-11-01T01:37:00Z",
+        "last_recheck": "J1394",
+        "checked_at": "2026-10-31T19:37:00+00:00",
+        "checked_by": "codex"
       }
     },
     {
