@@ -125940,19 +125940,30 @@
           "at": "2026-10-31T21:32Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-31T21:32Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original brief and approval history: J1032 PASS and J1101-J1103 completed; J0936 historical 6/6 retained; S2/S5/S6 replacements still gated."
         }
       ],
-      "remaining_action": "Verify J0936 evidence and remaining replacement-cut gates",
+      "remaining_action": "Verify latest J1100 evidence and record J0936 remaining conditions",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-10-31T22:31:26+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T21:32Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "Read original brief and approval history: J1032 PASS and J1101-J1103 completed; J0936 historical 6/6 retained; S2/S5/S6 "
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
