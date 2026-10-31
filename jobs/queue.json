@@ -120593,16 +120593,21 @@
           "at": "2026-10-31T12:35Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Diagnosed: (1) LaunchAgent dev.orbit.buffer-check not loaded in launchctl (last log entry Sun 11 Oct 07:05; ~/Library/LaunchAgents plist outdated from 28 Sep); all R2_*/BUFFER_* keys present in .env; (2) 024 rVqgtkBV3jc thumb+trailer on NAS, ZpEA8stoSPA past top-50 uploads playlist & on NAS, 027/028 Shorts on NAS"
+        },
+        {
+          "at": "2026-10-31T12:42Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Fixed: (1) enabled & bootstrapped dev.orbit.buffer-check (was marked disabled in launchctl gui/501 + outdated 28 Sep plist); (2) restored 024 thumb+trailer and 027/028/ZpEA8stoSPA NAS media paths in UPLOADS.json"
         }
       ],
-      "remaining_action": "Fix NAS media paths in UPLOADS.json (024 thumb/trailer, ZpEA8stoSPA, 027/028 Shorts) and bootstrap dev.orbit.buffer-check LaunchAgent",
+      "remaining_action": "Run buffer-mirror.ts check --dry-run, then live for OWB (+ ZpEA8stoSPA) and verify in Buffer",
       "kind": "listing",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-31T12:35Z",
+        "at": "2026-10-31T12:42Z",
         "by": "gemini",
-        "note": "Diagnosed: (1) LaunchAgent dev.orbit.buffer-check not loaded in launchctl (last log entry Sun 11 Oct 07:05; ~/Library/La"
+        "note": "Fixed: (1) enabled & bootstrapped dev.orbit.buffer-check (was marked disabled in launchctl gui/501 + outdated 28 Sep pli"
       },
       "taskKeys": [
         "OWB:024",
