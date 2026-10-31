@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1324 | mini | blocked | codex | – | assembly · AR2: finish real ISS composite after J1323 picture FIX |  |
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
 | J1341 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
+| J1342 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 
 Recently finished:
 
