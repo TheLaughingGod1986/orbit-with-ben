@@ -122317,9 +122317,14 @@
           "at": "2026-10-31T15:18Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T15:19Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: J1100 disk recovery, v07 repair/gate/delivery proof, Chief replacement review, then Ben swap approvals",
+      "remaining_action": "Verify current repair evidence and approvals for J0936",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-10-31T15:46:06+00:00",
@@ -122327,11 +122332,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T15:18Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-10-31T15:19Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1369",
