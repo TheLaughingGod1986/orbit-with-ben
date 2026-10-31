@@ -117770,20 +117770,28 @@
           "at": "2026-10-31T07:25Z",
           "by": "codex",
           "what": "step 0 of 3 done: J1308 is already marked done; checking whether this verification is superseded."
+        },
+        {
+          "at": "2026-10-31T07:25Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read full J1308 history: h40 VO lock, h42 v04 graphics PASS, and Claude completion at 06:52Z. Retaining existing OWB:030 task linkage."
         }
       ],
-      "remaining_action": "Verify J1308 completion and prerequisite approval evidence",
+      "remaining_action": "Verify assembly evidence and the outstanding J1317 picture review",
       "kind": "chief",
       "recheck_of": "J1308",
       "due": "2026-10-31T07:00:05+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T07:25Z",
         "by": "codex",
-        "note": "J1308 is already marked done; checking whether this verification is superseded."
-      }
+        "note": "Read full J1308 history: h40 VO lock, h42 v04 graphics PASS, and Claude completion at 06:52Z. Retaining existing OWB:030"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1316",
