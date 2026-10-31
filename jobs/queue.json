@@ -1,5 +1,5 @@
 {
-  "next_id": 1296,
+  "next_id": 1297,
   "jobs": [
     {
       "id": "J0001",
@@ -116027,6 +116027,35 @@
         "OWB:031"
       ],
       "done_ref": "6536440194"
+    },
+    {
+      "id": "J1296",
+      "title": "Chief h34: copy-first NAS move of git-ignored shipped/superseded repo media (compilation v05 master, superseded standalone Short versions, HOS 006 intermediate join) to restore >=20 GB house headroom",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling h34 on J1293 (OWB #264). J1293's verified moves are accepted (PASS). This is the second-tier, copy-first move of git-ignored media from shipped or superseded work inside the two repos. It restores general house headroom (AGENTS.md render-scratch rule: 20 GB). Chief re-measured J1100's real need under h34, so **J1100 no longer waits on this job** (see the h34 comment). Urgent. GBP0.\n\nLive at 01:28Z: df 12 Gi avail; container free 13.0 GB. It is still falling, because J1287 master v03 is writing about 1.7 GB in /private/tmp/j1287-v03 and swap grew by 1 GB. Both are legitimate live work. Leave them alone.\n\nDestination: /Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-31/<repo>/<repo-relative path>/. Keep the repo-relative path so a restore is a straight copy back. Create only missing folders. Never overwrite or delete anything on the NAS. If /Volumes/data is not mounted, stop and park; never write into an unmounted path.\n\nMethod (h25/h30/J1293, file by file):\n- Before each file, check `lsof <file>`. Skip any file that is open.\n- **Reference check:** grep OWB jobs/queue.json (bodies, results, history) for the file's basename and its version stem (for example `owb_sa_s4_uranus_v06`). Skip the file if any open, claimed or blocked job names it. For HOS files, also grep the HOS repo's desk/PIPELINE json.\n- `git check-ignore` must say the file is ignored. Never move a tracked file.\n- Copy with COPYFILE_DISABLE=1 (rsync or nas_offload copy_verified). Check sha256 and byte size against the NAS copy. Write FILE_LIST.txt, SHA256SUMS.txt and MOVED_FROM.txt into the NAS folder. Remove the local file only on a full match, then leave `<name>.MOVED_TO_NAS.txt` beside it: NAS path, sha256, bytes, time, owning job, live video id.\n- Log `df -k /System/Volumes/Data` and diskutil \"Container Free Space\" after every file.\n\nCandidates, largest first (Chief pre-read at 01:25Z; verify each yourself):\n1. OWB `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_compilation_v05.mp4`, 2,796,439,567 bytes, ignored. This is the Compilation 01 master, uploaded under J0276 (done) and live as m09jUdwC5hk. No non-done job cites it. Because it may be the only copy of the master (AGENTS.md NAS rule 4), also copy it into the OWB film NAS archive folder if a compilation folder exists there. Otherwise the mini-tmp-scratch copy is the archive copy, and MOVED_TO_NAS says so.\n2. The same 06_Final-Exports folder: **superseded Short versions** (`*.mp4` and `*_PHONE.mp4`). Keep the newest two versions of each Short, plus any version a non-done job cites. Today that means **keep uranus v06** (J1212 blocked) and uranus v09 and v10, neptune v06 and v07, and iss_sunrises v03 and v04. That leaves for the move: neptune v01–v05 (~438 MB), iss_sunrises v01–v02 (~117 MB) and uranus v01–v05 and v07–v08 (~470 MB). Leave the jpg, json and txt sidecars in place. They're small, and the gates read them.\n3. HOS `02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/master_v06/hos_006_full_join_v06_teach.mp4`, about 543 MB, ignored. It's an intermediate join, not the master. **Keep `hos_006_master_v06.mp4`, its _PHONE and stem_vo_v06.wav**, because J0958 (blocked) is the 006 Studio finish on VbPubYd6Fbs.\n4. `~/_desk/scratch/gemini-j0240-wt` (106 MB, J0240 done). Do this one only if `lsof +D` is now clear (bash 1852 and node 1975 held it at 01:02Z). Same worktree rules as J1293: copy keeps the dirty files, `git worktree prune` only, no branch delete.\n5. Optional, only if 1–4 leave you under 20 GB: shipped-film `10_Shorts` exports in OWB 029 Betelgeuse and HOS 006, under the same rules. Superseded versions only, keep the newest two plus anything cited.\n\nDo NOT touch:\n- anything in OWB 028/027 (J1100/J0936), HOS 005 (J0966 Harvey cut x_3L_IdYgEc still held), HOS 007, 008, 009 or 010, OWB 030, 031 or 032\n- /private/tmp/j1287-v03 and /private/tmp/j1100_*\n- ~/_desk/renders/J1100*, ~/_desk/008, 031 and 032\n- relay-wt, board-wt, the analytics worktree, venvs, cache, bin, state, logs, handoff\n- agent homes, personal folders, browser profiles, ~/Library\n- `/var/folders/.../X/com.google.Chrome.code_sign_clone` (80 clones, which du counts as 168 GB). J1128/J1270 showed these are shared APFS clones, and removing 10 freed 6.5 MB. They are not a lever.\nNo git gc, no resets, no force-push, no reboot. The VM swap shrinks by itself.\n\nReport on OWB #264 with a [Chief] prefix:\n- df and container free before and after\n- for each file: bytes, sha256 match, NAS path, owner job and status, live id\n- for each skip: the reason\n\nIf container free is >=20 GB, mark this job done. If not, park for Chief with what's left, unmoved. Either way J1100 is not gated on this job (h34). GBP0. Never print secrets.\n",
+      "ref": "6536896845",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T01:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T01:30Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Copy-first move of the h34 candidate list to the NAS, then report free space",
+      "for": "cursor",
+      "kind": "assembly"
     }
   ],
   "focus": [],
