@@ -1,5 +1,5 @@
 {
-  "next_id": 1321,
+  "next_id": 1322,
   "jobs": [
     {
       "id": "J0001",
@@ -118100,6 +118100,34 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J1321",
+      "title": "AR2–AR3: correct J1317 picture-review failures",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex ruling on J1317 (31 Oct 2026): AR1 v01 picture PASS; AR2 v02 and AR3 v02 FIX. Read CHIEF_J1317_PICTURE_REVIEW.md in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/ (PR #361) and all J1308 binding h37/h40/h42 instructions.\n\n1. Preserve AR1 v01 exactly. Preserve old AR2/AR3 files, manifests and hashes; write new versions.\n2. AR2: replace assembly draw_iss flat station in frame 0, loop tail and other non-DATA shots with verified real ISS fly-around footage (Crew-2) or a faithful render from the NASA 3D Resources model, as h37 C4 specified. Do not alter the already-approved 109 m DATA graphic. Verify source identity and visible in-points; no Discovery, Bahamas or KSC press video substitutes.\n3. AR3: at 9-11 s move the path graphic off the eclipse disc/corona by using an appropriate moving Earth/ocean background for the path interval. Retain the approved graphic and its VO timing; show the eclipse unobscured in the adjacent interval. Keep the 2017 stamp and NASA/Aubrey Gemignani attribution on those plates.\n4. No script/VO, facts, title, music or duration changes. No mint, credit spend, upload or schedule. GBP0.\n5. Run applicable unmodified picture_qa, polish, loop and SFX gates on the new real composites. Export new full-size frame 0 and 0.5 s sheets. Record source provenance, master paths/hashes and raw gate outputs in a new report. Park for elected-Chief picture review; cohort remains held from UAT/upload until then.\n\nClaim as normal assembly work, report films OWB:030 for existing cohort linkage. Check disk before render; current ~9 GB, nas_offload found no eligible old scratch. Follow scratch policy and detach any long render with tmux/log/.done, release with exact paths; never start duplicate renders or delete anything on NAS. Use a clean worktree and a PR. No Ben action required.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J1317",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T07:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T07:33Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Replace AR2 station icon and clear AR3 eclipse/map overlap; rerun composite gates",
+      "kind": "assembly"
     }
   ],
   "focus": [],
