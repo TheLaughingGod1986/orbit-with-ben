@@ -118742,9 +118742,14 @@
           "at": "2026-10-31T09:05Z",
           "by": "codex",
           "what": "step 3 of 4 done: 8057 per-file KEEP decisions; 24 UAT media have matching full hashes; 4.918 GiB free, no eligible allowlist, unresolved growth explicitly bounded"
+        },
+        {
+          "at": "2026-10-31T09:06Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Evidence 566c9cdcc delivered in PR366; no moves/unlinks. 4.918 GiB free; 8057 KEEP decisions and 24 full-hash duplicate proofs; J1100 held"
         }
       ],
-      "remaining_action": "Commit verified disk evidence and return exact allowlist decision to Chief",
+      "remaining_action": "Chief exact-file allowlist ruling and fresh headroom verification",
       "due": "2026-11-01T00:00:00Z",
       "kind": "assembly",
       "rerouted_from": {
@@ -118757,11 +118762,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-31T09:05Z",
+        "at": "2026-10-31T09:06Z",
         "by": "codex",
-        "note": "8057 per-file KEEP decisions; 24 UAT media have matching full hashes; 4.918 GiB free, no eligible allowlist, unresolved "
+        "note": "Evidence 566c9cdcc delivered in PR366; no moves/unlinks. 4.918 GiB free; 8057 KEEP decisions and 24 full-hash duplicate "
       },
       "taskKeys": [
         "OWB:027",
