@@ -119670,9 +119670,14 @@
           "at": "2026-10-31T10:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T10:48Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting read-only audit of HOS live and scheduled videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Run lint:package and channel:audit on HOS live and scheduled videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -119687,11 +119692,20 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T10:47Z",
+        "at": "2026-10-31T10:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting read-only audit of HOS live and scheduled videos"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008"
+      ]
     },
     {
       "id": "J1338",
