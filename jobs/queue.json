@@ -118344,9 +118344,14 @@
           "at": "2026-10-31T09:29Z",
           "by": "relay",
           "what": "condition verification queued: J1329"
+        },
+        {
+          "at": "2026-10-31T09:36Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T10:29:25Z"
         }
       ],
-      "remaining_action": "Await J1324 AR2 composite correction and elected-Chief picture acceptance; cohort held from UAT/upload",
+      "remaining_action": "Correct AR2 late ISS picture detail and obtain picture acceptance; cohort held from UAT/upload",
       "kind": "assembly",
       "progress": {
         "step": 4,
@@ -118360,12 +118365,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1324 delivers a corrected AR2 station composite with passing unmodified gates and elected-Chief picture acceptance; AR3 v09 and AR1 v01 preserved",
-        "check_at": "2026-10-31T10:29:25+00:00",
-        "last_recheck": "J1323",
-        "checked_at": "2026-10-31T08:42:22+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1329"
+        "condition": "AR2 late ISS interval 14.766667-18.4s corrected for visibly smeared detail (v08 picture FIX in J1329), with unmodified gates and elected-Chief picture acceptance; preserve AR1 v01 and AR3 v09",
+        "check_at": "2026-10-31T10:29:25Z",
+        "last_recheck": "J1329",
+        "checked_at": "2026-10-31T09:36:39+00:00",
+        "checked_by": "codex"
       }
     },
     {
