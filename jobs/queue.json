@@ -118983,19 +118983,24 @@
           "at": "2026-10-31T09:35Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J1321/J1324 history; AR2 v08 delivered in PR365, but queue still records pending Chief picture acceptance. AR1 v01 and AR3 v09 must remain preserved."
+        },
+        {
+          "at": "2026-10-31T09:36Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR365 raw gates pass; NAS AR2 and preserved AR1/AR3 hashes match. Inspected full sheet/frame0/16s/exact 16.6s WARN: late ISS detail visibly smeared; picture acceptance withheld on quality, not Chief availability."
         }
       ],
-      "remaining_action": "Check AR2 v08 delivery and recorded Chief acceptance against J1321 hold",
+      "remaining_action": "Record AR2 v08 picture FIX and retain J1321 input hold",
       "kind": "chief",
       "recheck_of": "J1321",
       "due": "2026-10-31T10:29:25+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-31T09:35Z",
+        "at": "2026-10-31T09:36Z",
         "by": "codex",
-        "note": "Read J1321/J1324 history; AR2 v08 delivered in PR365, but queue still records pending Chief picture acceptance. AR1 v01 "
+        "note": "PR365 raw gates pass; NAS AR2 and preserved AR1/AR3 hashes match. Inspected full sheet/frame0/16s/exact 16.6s WARN: late"
       },
       "taskKeys": [
         "OWB:030"
