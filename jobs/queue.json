@@ -119723,9 +119723,14 @@
           "at": "2026-10-31T10:41Z",
           "by": "codex",
           "what": "step 1 of 4 done: Inspected native full-size preview: selected accepted Crew-2 source 540–543.2s, sunlit station detail; no crop, sharpening or added grain. Offload found nothing eligible."
+        },
+        {
+          "at": "2026-10-31T10:42Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: V09 rendered and archived; picture/polish/SFX pass, loop reports 3-frame freeze at 15.93s. V10 detached with stronger smooth push only in authorized late interval; no grain/sharpening."
         }
       ],
-      "remaining_action": "Render AR2 v09 late replacement and run unchanged composite gates",
+      "remaining_action": "Resolve late-shot freeze in v10 and verify all composite gates",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -119737,11 +119742,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-31T10:41Z",
+        "at": "2026-10-31T10:42Z",
         "by": "codex",
-        "note": "Inspected native full-size preview: selected accepted Crew-2 source 540–543.2s, sunlit station detail; no crop, sharpeni"
+        "note": "V09 rendered and archived; picture/polish/SFX pass, loop reports 3-frame freeze at 15.93s. V10 detached with stronger sm"
       },
       "taskKeys": [
         "OWB:030"
