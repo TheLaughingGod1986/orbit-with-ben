@@ -117027,10 +117027,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-31T04:16Z",
+      "eta": "2026-10-31T05:16Z",
       "created_by": "chief",
       "created_at": "2026-10-31T04:09Z",
       "result": "",
@@ -117039,11 +117039,24 @@
           "at": "2026-10-31T04:09Z",
           "by": "chief",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-10-31T04:16Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 013 VO: build locked hos_013_vo_v03a from v03 with Chief h39 measured chapter-end fades, checks, mp3, vo_check, record VO lock (J1301 h39 PASS)",
       "for": "cursor",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T04:16Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
