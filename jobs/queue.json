@@ -117299,17 +117299,22 @@
           "at": "2026-10-31T05:48Z",
           "by": "cursor",
           "what": "step 0 of 3 done: AR1 gates already pass. AR2 and AR3 fail on the map slab edges. AR3 loop is 8.01 against a 0.87 NOAA step."
+        },
+        {
+          "at": "2026-10-31T05:50Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: v01 AR1 gates pass and stays. v02 feathers the map slabs, lifts the hook above the loop mask, and breaks the eclipse credit gutter."
         }
       ],
-      "remaining_action": "Fix AR2 and AR3 split-panel seams and the AR3 loop, then re-render",
+      "remaining_action": "Re-render AR2 and AR3 masters and rerun the Short gates",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T05:48Z",
+        "at": "2026-10-31T05:50Z",
         "by": "cursor",
-        "note": "AR1 gates already pass. AR2 and AR3 fail on the map slab edges. AR3 loop is 8.01 against a 0.87 NOAA step."
+        "note": "v01 AR1 gates pass and stays. v02 feathers the map slabs, lifts the hook above the loop mask, and breaks the eclipse cre"
       },
       "taskKeys": [
         "OWB:030"
