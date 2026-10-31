@@ -115762,13 +115762,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-31T00:46Z",
-      "eta": "2026-10-31T02:46Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T23:55Z",
-      "result": "",
+      "result": "parked for Chief: 15.0 GB free (14 GiB df), need 20 GiB. This pass moved 007, chief_h31, watch_proxies (839 MB, sha256 matched). gemini-j0240-wt skipped, lsof bash 1852 and node 1975. Earlier pass moved 42 small folders (1.09 GB). Gap is about 6.1 GiB and the only folders that size are protected: J1100 renders 1.94 GB, hos-008-lightning 1.55 GB (J1287), relay-wt 844 MB, venvs/cache, analytics worktree, agent homes. Inventory ~/_desk/logs/J1293-inventory.md",
       "history": [
         {
           "at": "2026-10-30T23:55Z",
@@ -115839,6 +115839,11 @@
           "at": "2026-10-31T01:02Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Moved 007, chief_h31, watch_proxies (839 MB, sha256 matched). gemini-j0240-wt skipped: lsof bash 1852 and node 1975. Free 15.0 GB, need 20 GiB."
+        },
+        {
+          "at": "2026-10-31T01:03Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: 15.0 GB free (14 GiB df), need 20 GiB. This pass moved 007, chief_h31, watch_proxies (839 MB, sha256 matched). gemini-j0240-wt skipped, lsof bash 1852 and node 1975. Earlier pass moved 42 small folders (1.09 GB). Gap is about 6.1 GiB and the only folders that size are protected: J1100 renders 1.94 GB, hos-008-lightning 1.55 GB (J1287), relay-wt 844 MB, venvs/cache, analytics worktree, agent homes. Inventory ~/_desk/logs/J1293-inventory.md"
         }
       ],
       "remaining_action": "Park for Chief: still under 20 GiB",
