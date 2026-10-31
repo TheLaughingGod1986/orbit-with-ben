@@ -98442,6 +98442,11 @@
           "at": "2026-10-31T06:01Z",
           "by": "relay",
           "what": "condition verification queued: J1316"
+        },
+        {
+          "at": "2026-10-31T07:28Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T13:28:00Z"
         }
       ],
       "remaining_action": "Restore at least 10 GiB free to restart v07 repairs under Chief h43",
@@ -98469,10 +98474,12 @@
         "note": "Preserved prior 2/3 plan and completed S2/S5 pickups. Live df 8.3 GiB; required nas_offload --apply found nothing eligib"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-31T07:01:29+00:00",
-        "recheck_task": "J1316"
+        "type": "input",
+        "condition": "Live Mini free space at least 10 GiB per Chief h43; 2026-10-31 07:28Z measured 10152730624 bytes (9.4555 GiB), below 10737418240 bytes. Required NAS offload found no eligible scratch. Preserve h43-LOOP, accepted pickups, remaining gates and Chief review before Ben watch.",
+        "check_at": "2026-10-31T13:28:00Z",
+        "last_recheck": "J1316",
+        "checked_at": "2026-10-31T07:28:27+00:00",
+        "checked_by": "codex"
       }
     },
     {
