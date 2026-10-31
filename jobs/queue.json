@@ -118480,19 +118480,24 @@
           "at": "2026-10-31T08:40Z",
           "by": "codex",
           "what": "step 1 of 3 done: J1317 done; PR363 at 994571421 delivers AR2 v05 and AR3 v09. Automated gates pass, but no Chief picture PASS exists."
+        },
+        {
+          "at": "2026-10-31T08:42Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Reviewed native frames, complete sheets and WARN frames; NAS hashes match. AR3 v09 picture PASS; AR2 v05 FIX for unfinished black-inset composite. Follow-up J1324 queued, not claimed."
         }
       ],
-      "remaining_action": "Review corrected composites and record the actual remaining picture condition",
+      "remaining_action": "Record J1321 hold against AR2 corrective delivery J1324 and close verification",
       "kind": "chief",
       "recheck_of": "J1321",
       "due": "2026-10-31T09:29:13+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-31T08:40Z",
+        "at": "2026-10-31T08:42Z",
         "by": "codex",
-        "note": "J1317 done; PR363 at 994571421 delivers AR2 v05 and AR3 v09. Automated gates pass, but no Chief picture PASS exists."
+        "note": "Reviewed native frames, complete sheets and WARN frames; NAS hashes match. AR3 v09 picture PASS; AR2 v05 FIX for unfinis"
       },
       "taskKeys": [
         "OWB:030"
