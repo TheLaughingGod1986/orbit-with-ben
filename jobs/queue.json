@@ -117983,10 +117983,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T07:37Z",
+      "eta": "2026-10-31T09:37Z",
       "created_by": "claude",
       "created_at": "2026-10-31T06:52Z",
       "result": "",
@@ -118035,6 +118035,11 @@
           "at": "2026-10-31T07:37Z",
           "by": "codex",
           "what": "reopened: Acting Chief Codex ruling: FIX to blanket plan; inventory accepted only as candidate list. 21.48 GiB not certified (conflicting T1-D sizes, abbreviated hashes, unsafe highest-version selection, gate cache required by launchd). Bounded move authorisation and concrete execution delegated to J1322 with fresh full hashes, rsync, inactive-input checks, current+previous protection and no NAS deletion/overwrite. J1100 stays held pending recovery and >=10 GiB live verification. Reopen J1318 only to claim and close the completed review; no file move is performed by J1318."
+        },
+        {
+          "at": "2026-10-31T07:37Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief: move-plan OK",
@@ -118042,7 +118047,15 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T07:37Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1319",
