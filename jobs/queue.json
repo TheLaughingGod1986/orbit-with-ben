@@ -118143,9 +118143,14 @@
           "at": "2026-10-31T07:48Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Traced all 4 exports: J1296 moved owb_sa_s4_uranus_v01.mp4 on 31 Oct; 025 Shorts fri13/mon09/thu12 were archived in NAS owbshorts.tar on 24 Oct after J0432 (17 Oct 7a5608724) overwrote all 4 in place"
+        },
+        {
+          "at": "2026-10-31T07:53Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Confirmed all 4 NAS files are 17 Oct J0432 seam-fix overwrites (commit 7a5608724) and none match the Oct 10-13 UPLOADS.json / PACKAGE_UPLOAD_RESULT sha256s; per J1181 ruling, did not restore mismatched renders over scheduled paths"
         }
       ],
-      "remaining_action": "CopyNAS exports back and check sha256 against UPLOADS.json and J0432",
+      "remaining_action": "Add scheduled-Short paths to offload keep-list and re-run gate_upcoming.py",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -118157,11 +118162,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-31T07:48Z",
+        "at": "2026-10-31T07:53Z",
         "by": "gemini",
-        "note": "Traced all 4 exports: J1296 moved owb_sa_s4_uranus_v01.mp4 on 31 Oct; 025 Shorts fri13/mon09/thu12 were archived in NAS "
+        "note": "Confirmed all 4 NAS files are 17 Oct J0432 seam-fix overwrites (commit 7a5608724) and none match the Oct 10-13 UPLOADS.j"
       },
       "taskKeys": [
         "OWB:025"
