@@ -117775,19 +117775,24 @@
           "at": "2026-10-31T07:25Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read full J1308 history: h40 VO lock, h42 v04 graphics PASS, and Claude completion at 06:52Z. Retaining existing OWB:030 task linkage."
+        },
+        {
+          "at": "2026-10-31T07:26Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Assembly report checked: AR1 v01, AR2/AR3 v02. J1308 is done; J1317 separately retains picture review. No reopening or release approval warranted."
         }
       ],
-      "remaining_action": "Verify assembly evidence and the outstanding J1317 picture review",
+      "remaining_action": "Close superseded verification and report the outstanding picture review",
       "kind": "chief",
       "recheck_of": "J1308",
       "due": "2026-10-31T07:00:05+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-31T07:25Z",
+        "at": "2026-10-31T07:26Z",
         "by": "codex",
-        "note": "Read full J1308 history: h40 VO lock, h42 v04 graphics PASS, and Claude completion at 06:52Z. Retaining existing OWB:030"
+        "note": "Assembly report checked: AR1 v01, AR2/AR3 v02. J1308 is done; J1317 separately retains picture review. No reopening or r"
       },
       "taskKeys": [
         "OWB:030"
