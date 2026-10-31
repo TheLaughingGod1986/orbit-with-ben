@@ -87471,6 +87471,11 @@
           "at": "2026-10-31T19:00Z",
           "by": "relay",
           "what": "condition verification queued: J1396"
+        },
+        {
+          "at": "2026-10-31T19:43Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T01:45:00Z"
         }
       ],
       "kind": "review",
@@ -87506,15 +87511,14 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T19:20Z",
-      "remaining_action": "Reconcile Mercury retention narrative with raw curves, then final independent Chief audit review",
+      "remaining_action": "Reconcile Mercury retention narrative with raw curves and cut/VO evidence, then obtain independent final audit review",
       "hold": {
         "type": "input",
-        "condition": "J1347 verified 31 Oct: both persisted mature Mercury vlkj8RQKmH8 curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp), mapped in audit/EVIDENCE to 4.09-4.29s. J1003 result and OWB_2026-10-26_CHIEF_REVIEW.md still assert 0.18->0.19 (-5.76pp), 3.68-3.88s and different cut mapping. No later audit commit or final non-author Chief PASS exists. Reconcile these narratives against raw buckets and cut/VO evidence before final independent review. J1002 and J1003 complete; all original production gates and approvals unchanged.",
-        "check_at": "2026-10-31T20:00:34+00:00",
-        "last_recheck": "J1347",
-        "checked_at": "2026-10-31T12:52:48+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1396"
+        "condition": "J1396 verified unmet: latest audit commit remains 0c18bb2cb. Both persisted mature Mercury vlkj8RQKmH8 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp), 4.088-4.2924s at 20.44s runtime. Chief review line 67 and J1003 result still assert 0.18->0.19, -5.76pp, 3.68-3.88s and different cut mapping. Reconciliation against raw buckets and cut/VO evidence and final non-author Chief audit PASS are still missing. J1002/J1003 complete; original production gates and approvals unchanged.",
+        "check_at": "2026-11-01T01:45:00Z",
+        "last_recheck": "J1396",
+        "checked_at": "2026-10-31T19:43:06+00:00",
+        "checked_by": "codex"
       }
     },
     {
