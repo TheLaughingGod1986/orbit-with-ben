@@ -46,10 +46,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1324 | mini | blocked | codex | – | assembly · AR2: finish real ISS composite after J1323 picture FIX |  |
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
 | J1345 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR3: clear duration graphic from eclipse and show unobscured totality | c70206699 |
-| J1350 | any | claimed | gemini | 2026-10-31T14:01Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1350 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass (VfDm3E2bUgU..82Ao0v5XiQI, plus #11 m09jUdwC5hk) against 2026-10-31.json snapshot and live YouTube endpoints (VfDm3E2bUgU live since 11:30Z); 0 new fixes needed. Report committed to 05_Analytics/live_fixes/2026-10-31.md (b5930e806).)
 - J1349 done: Chief: verify condition for J1321 (AR3 v05 picture PASS, PR373. Verified PR372 hashes, unchanged AAC, clear duration bars and adjacent credited totality; retained WARN accepted. J1321 reopened for close-out only. GBP0; no upload/schedule/UAT handoff.)
 - J1348 done: URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00) (done)
 - J1347 done: Chief: verify condition for J0985 (Condition verified unmet. J1002 45ef75589 and J1003 0c18bb2cb complete; no later audit commit. Both persisted Mercury 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp); main audit/EVIDENCE map this to 4.09-4.29s, while Chief review note and J1003 result retain 0.18->0.19 (-5.76pp) and different cut/VO mapping. No final independent Chief PASS. J0985 retained blocked via wait --recheck J1347; next check 2026-10-31T19:00Z. Readback PASS. No spend or publishing changes.)
@@ -59,4 +59,3 @@ Recently finished:
 - J1342 done: Chief: verify condition for J0862 (Verified unmet at 2026-10-31T11:31Z: no approved 009 Short B replacement opening or recording scope in current HOS main, recent PRs, desk or queue. J1004 / merged PR 366 retains hook block; 010 A Option A1 and existing v02 takes preserved. J0862 remains blocked, input recheck 2026-10-31T17:32Z via J1342. HOS report 6542814772; OWB report 6542817389. No spend, generation or publishing changes.)
 - J1341 done: Chief: verify condition for J1130 (done)
 - J1340 done: Chief: verify condition for J0978 (done)
-- J1339 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
