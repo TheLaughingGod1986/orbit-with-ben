@@ -1,5 +1,5 @@
 {
-  "next_id": 1322,
+  "next_id": 1323,
   "jobs": [
     {
       "id": "J0001",
@@ -118144,6 +118144,35 @@
         }
       ],
       "remaining_action": "Replace AR2 station icon and clear AR3 eclipse/map overlap; rerun composite gates",
+      "kind": "assembly"
+    },
+    {
+      "id": "J1322",
+      "title": "J1318 ruling: recover Mini space from verified inactive scratch only",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief Codex ruling on J1318, 31 Oct 2026: FIX to blanket move plan; conditional move-plan OK only for the bounded recovery below. Inventory d48161fdf is a candidate list, not a deletion manifest. Its 21.48 GiB forecast is not verified: T1-D says 1.71 GiB versus 1.30 in the inventory, grouped paths omit full hashes, and highest version is not proof of which file is live or needed.\n\nClaim this queue job before work; film links OWB:027,OWB:028. Claim a relevant studio stage before any move; do not take a stage already held. Run moves detached in tmux with log and completion file, release at a checkpoint, never duplicate a running session. GBP0; no publishing, media rewrite, NAS deletion or NAS overwrite.\n\n1. Produce an exact absolute-path allowlist from J1318 T1-A/T1-B/T1-E and T2-A first: old HOS008 rough/precheck/code-graphic duplicates, repo-root OWB UAT duplicates, completed HOS005/006/007 and standalone Shorts _work_ scratch. These are candidates only. Check current queue, processes/open files, cut lists, upload/Buffer manifests and watch references; exclude every active input, active or previous render version, live/scheduled export, current watch file, tracked file, symlink and source asset needed for rebuilding. Preserve current AND previous scratch per house rules. Do not infer inactivity from version number or modification time alone. If eligible candidates cannot reach 20 GiB free, expand only to T2-C obsolete unlocked VO takes with current lock proof and T2-E superseded Apophis scratch with current J1321 dependencies checked. Anything uncertain stays local and is listed for a specific further decision.\n2. EXCLUDE all gate-media cache (daily launchd cannot read NAS), all iCloud/CloudDocs, Desktop, Downloads, application/browser/agent state, rescue folders, retired launch items, git worktrees, all J1100 scratch/inputs/pickups, OWB027/028 source pools, all current/previous masters, VO and plates. T2-B highest-version export sweep and T2-G broad home sweep are NOT approved. Do not remove J1320 inputs. These exclusions override J1318's proposal.\n3. Verify real NAS mount and capacity first. Use rsync to a new unique archive directory, preserving relative paths; never overwrite an existing NAS file. For an existing duplicate, re-hash it in place. Record full SHA-256, byte size and allocated local bytes for EVERY source/destination in a durable manifest; hash/read back both sides and recheck source unchanged immediately before unlink. Only fully matching, stable files may be removed locally. Leave MOVED_TO_NAS.txt pointers; no recursive blanket deletion. Retain git metadata/records. Stop on any mismatch or disappearing mount. No NAS deletions.\n4. Aim for >=20 GiB live free, preferably 25 GiB; stop when met, do not chase the report's estimated 21.48 GiB recovery. Report actual df before/after, unique allocated bytes removed, manifests, pointer samples, exclusions and remaining blockers. If a shortfall remains, provide exact additional candidates; no automatic broadening. If NAS unavailable, keep every source and use jobs.py wait with observable mount condition and retry within one hour.\n5. J1100 remains blocked. On recovery, report the measured >=10 GiB restart condition to elected Chief for verification/reopen under h43 (park below 6 GiB); preserve worker 2/3, h43-LOOP, accepted pickups and all remaining gates. Do not reopen J1100 yourself as an ordinary worker or relax unrelated date/credit/Ben holds.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T07:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T07:36Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify exact inactive paths and archive eligible scratch to restore 20 GiB free",
+      "due": "2026-11-01T12:00:00Z",
       "kind": "assembly"
     }
   ],
