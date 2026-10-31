@@ -98125,13 +98125,13 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T06:00Z",
-      "eta": "2026-10-31T08:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "",
+      "result": "parked for Chief: live df 8.3 GiB is below Chief h43 restart minimum 10 GiB. Required nas_offload.py --apply found no eligible scratch (8506 MB unchanged). Preserve 2/3, OWB:027/028 links, accepted pickups and h43-LOOP ruling; restore headroom before restarting v07 repairs. No media edits/spend/upload this run.",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -98432,6 +98432,11 @@
           "at": "2026-10-31T06:01Z",
           "by": "codex",
           "what": "step 2 of 3 done: Preserved prior 2/3 plan and completed S2/S5 pickups. Live df 8.3 GiB; required nas_offload --apply found nothing eligible (8506 MB unchanged). Latest Chief h43 start floor is 10 GiB, park floor 6 GiB; no assembly or spend started this run."
+        },
+        {
+          "at": "2026-10-31T06:01Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: live df 8.3 GiB is below Chief h43 restart minimum 10 GiB. Required nas_offload.py --apply found no eligible scratch (8506 MB unchanged). Preserve 2/3, OWB:027/028 links, accepted pickups and h43-LOOP ruling; restore headroom before restarting v07 repairs. No media edits/spend/upload this run."
         }
       ],
       "remaining_action": "Restore at least 10 GiB free to restart v07 repairs under Chief h43",
