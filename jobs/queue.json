@@ -98467,9 +98467,14 @@
           "at": "2026-10-31T08:42Z",
           "by": "relay",
           "what": "condition verification queued: J1325"
+        },
+        {
+          "at": "2026-10-31T08:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T14:45:00Z"
         }
       ],
-      "remaining_action": "Await J1322 recovery, then verify >=10 GiB free before resuming v07 repairs",
+      "remaining_action": "Restore bounded disk headroom, then verify >=10 GiB before v07 repairs",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -98495,9 +98500,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1322 bounded NAS recovery completed and elected Chief verifies live Mini free space >=10 GiB under h43; park below 6 GiB. Preserve worker 2/3, h43-LOOP, accepted pickups and every repair gate. Review J1318 closed; only J1322 bounded move scope is approved.",
-        "check_at": "2026-10-31T09:42:57+00:00",
-        "recheck_task": "J1325"
+        "condition": "J1322 bounded recovery and elected-Chief live verification >=10 GiB under h43 remain unmet: 2026-10-31T08:44:31Z free 4482519040 bytes (4.174671 GiB), below 6 GiB park threshold; nas_offload found no eligible scratch. Preserve worker 2/3, OWB:027/028, accepted pickups, h43-LOOP and every repair gate; only J1322 bounded scope approved.",
+        "check_at": "2026-10-31T14:45:00Z",
+        "last_recheck": "J1325",
+        "checked_at": "2026-10-31T08:44:48+00:00",
+        "checked_by": "codex"
       }
     },
     {
