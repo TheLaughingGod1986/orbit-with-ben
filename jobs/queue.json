@@ -1,5 +1,5 @@
 {
-  "next_id": 1355,
+  "next_id": 1356,
   "jobs": [
     {
       "id": "J0001",
@@ -121148,6 +121148,34 @@
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes"
+    },
+    {
+      "id": "J1355",
+      "title": "AR cohort: integrate accepted correction records and reconcile downstream handoff",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Follow-up from elected-Chief J1345 review, 31 Oct 2026. J1345 AR3 v05 picture PASS confirms PR373 (22175d9db), delivery PR372 (b5b6be2f0). J1321 close-out 67a26b83c already records accepted AR1 v01, AR2 v06 (PR371) and AR3 v05. Review prerequisite PR370, PR371, PR372, PR373 and J1321 close-out branch; integrate accepted evidence via clean PRs with required CI, preserving version pairing and old masters. Resolve overlapping superseded correction records explicitly; never replace accepted v06/v05 with earlier branches. Verify current Chief authority before protected calls. Check current parent/cohort job and existing downstream tasks, then record or delegate the next required final-watch/gate handoff without duplicate work. Picture acceptance alone is not publishing approval. No upload, schedule, generation, money, media rewrite or unrelated hold release authorized by this follow-up. GBP0; link progress OWB:030. J1345 ruling/hash: AR3 v05 3a2fc5b53e2cfafe4d55422f4f8ae7894ffdb81a727bf47f605e01070a58f13d. Existing watch/date/credit gates remain.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J1345",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T13:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T13:31Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Integrate accepted AR1 v01, AR2 v06 and AR3 v05 records; identify the next gated handoff",
+      "kind": "chief"
     }
   ],
   "focus": [],
