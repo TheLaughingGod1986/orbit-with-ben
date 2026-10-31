@@ -115668,10 +115668,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-10-30T23:57Z",
-      "eta": "2026-10-31T01:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T23:55Z",
       "result": "",
@@ -115700,6 +115700,11 @@
           "at": "2026-10-31T00:10Z",
           "by": "cursor",
           "what": "step 1 of 4 done: rsync of wt-j1192-hos in progress. Do not start a second copy."
+        },
+        {
+          "at": "2026-10-31T00:10Z",
+          "by": "cursor",
+          "what": "released: tmux J1293-move still copying. Log ~/_desk/logs/J1293-move.log. Done file ~/_desk/logs/J1293-move.done is missing while it runs: do not start a second copy. Script j1293_offload.py. NAS day 2026-10-31. Inventory J1293-inventory.md. When .done exists, read J1293-result.json and park for Chief if still under 20 GiB. Eligible set is about 1 GB. Local delete only after sha256 match. GBP0."
         }
       ],
       "remaining_action": "Wait for tmux J1293-move; if J1293-move.done is missing leave it, then park if still under 20 GiB",
