@@ -98733,6 +98733,11 @@
           "at": "2026-10-31T22:04Z",
           "by": "relay",
           "what": "condition verification queued: J1422"
+        },
+        {
+          "at": "2026-10-31T22:36Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T23:04:41Z"
         }
       ],
       "remaining_action": "Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
@@ -98761,12 +98766,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Cleared instrumental-only S2 bed and required local opening/middle/end listening evidence. Evidence 3e26b379b: named bed SHA256 13adc031... is previously excluded candidate under 20:52Z ruling; dual ASR does not jointly flag speech but listening explicitly NOT PERFORMED. Disk sufficient at 34326110208 bytes. Preserve 2/3, OWB:027/028, accepted pickups/S6 audio/h43 LOOP/deadlines/v01 fallback; no source-audio API egress or publishing.",
-        "check_at": "2026-10-31T23:04:41+00:00",
-        "last_recheck": "J1414",
-        "checked_at": "2026-10-31T21:30:48+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1422"
+        "condition": "J1422 verified: S2 instrumental bed clearance and local opening/middle/end listening remain unproven. Fresh named-bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 matches the candidate excluded by the 20:52Z ruling. Evidence 3e26b379b and all three audition hashes verified; listening records remain NOT PERFORMED. Dual ASR does not jointly flag speech but is not listening proof. Live free 33965838336 bytes. Preserve 2/3, OWB:027/028, accepted pickups/continuous S2 phrase/S6 audio/h43-LOOP/deadlines/v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-10-31T23:04:41Z",
+        "last_recheck": "J1422",
+        "checked_at": "2026-10-31T22:36:02+00:00",
+        "checked_by": "codex"
       }
     },
     {
