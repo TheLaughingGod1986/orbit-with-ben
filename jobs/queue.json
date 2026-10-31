@@ -117905,16 +117905,21 @@
           "at": "2026-10-31T07:06Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Completed disk survey across home (29G YouTube, 11.7G Library/AppSupport, 6.8G _desk, 6.6G .cursor, 5.7G .gemini), _desk, /private/tmp, and repo media"
+        },
+        {
+          "at": "2026-10-31T07:18Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Cross-checked local folders/files against 66,163 NAS paths and verified SHA-256 hashes of top local media; found 9.77 GiB of >=15 MiB media + 862 MiB Desktop + 1.30 GiB CloudDocs roughs already on NAS"
         }
       ],
-      "remaining_action": "Check NAS sha256 verification status for largest local media and render scratch folders",
+      "remaining_action": "Write and commit jobs/reviews/disk_2026-10-31.md with top-25 tables (Home, _desk, /private/tmp, Render Scratch) and >=15 GiB sha256-verified NAS move plan",
       "kind": "qa",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-31T07:06Z",
+        "at": "2026-10-31T07:18Z",
         "by": "gemini",
-        "note": "Completed disk survey across home (29G YouTube, 11.7G Library/AppSupport, 6.8G _desk, 6.6G .cursor, 5.7G .gemini), _desk"
+        "note": "Cross-checked local folders/files against 66,163 NAS paths and verified SHA-256 hashes of top local media; found 9.77 Gi"
       },
       "taskKeys": [
         "OWB:027",
