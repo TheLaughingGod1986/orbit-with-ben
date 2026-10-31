@@ -119691,13 +119691,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T10:38Z",
-      "eta": "2026-10-31T12:38Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T10:36Z",
-      "result": "",
+      "result": "Delivered PR369: AR2 v10 all unchanged composite gates pass, exact AAC match and NAS hash verified. Parked for separate elected-Chief picture acceptance including preserved 18.9s loop WARN; J1324/J1321 stay held. No UAT/upload.",
       "history": [
         {
           "at": "2026-10-31T10:36Z",
@@ -119738,6 +119738,11 @@
           "at": "2026-10-31T10:44Z",
           "by": "codex",
           "what": "step 4 of 4 done: Delivered PR369 with code, raw gates, exact AAC identity, preserved hashes, NAS master and verified review image paths. Worker production complete; cohort remains held for separate picture acceptance."
+        },
+        {
+          "at": "2026-10-31T10:44Z",
+          "by": "codex",
+          "what": "blocked: Delivered PR369: AR2 v10 all unchanged composite gates pass, exact AAC match and NAS hash verified. Parked for separate elected-Chief picture acceptance including preserved 18.9s loop WARN; J1324/J1321 stay held. No UAT/upload."
         }
       ],
       "remaining_action": "Elected Chief to accept AR2 v10 pictures and retained loop WARN in PR369",
@@ -119760,7 +119765,12 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Delivered PR369: AR2 v10 all unchanged composite gates pass, exact AAC match and NAS hash verified. Parked for separate elected-Chief picture acceptance including preserved 18.9s loop WARN; J1324/J1321 stay held. No UAT/upload.",
+        "check_at": "2026-10-31T16:44:45+00:00"
+      }
     },
     {
       "id": "J1339",
