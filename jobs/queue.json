@@ -121194,13 +121194,13 @@
       "stage": "",
       "after": "J1345",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T13:33Z",
-      "eta": "2026-10-31T15:33Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T13:31Z",
-      "result": "",
+      "result": "Integrated PR370-374 unchanged via PR375 b1f0bd69d, CI PASS; 51 imported files byte-identical, 8 media/review and 6 raw-report hashes match. Accepted AR1 v01 AR2 v06 AR3 v05 preserved. Closed superseded PR363/365/369 without merge; cancelled J1324/J1338 as superseded, preserving history/media. Sole successor J1356 depends on this job for full playback, remaining gates and final-watch cards. No publishing approval, media changes, spend or unrelated hold release.",
       "history": [
         {
           "at": "2026-10-31T13:31Z",
@@ -121231,6 +121231,11 @@
           "at": "2026-10-31T13:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR375 merged b1f0bd69d after CI PASS; PR370-374 integrated, PR363/365/369 superseded, J1324/J1338 cancelled; J1356 is sole successor"
+        },
+        {
+          "at": "2026-10-31T13:37Z",
+          "by": "codex",
+          "what": "done: Integrated PR370-374 unchanged via PR375 b1f0bd69d, CI PASS; 51 imported files byte-identical, 8 media/review and 6 raw-report hashes match. Accepted AR1 v01 AR2 v06 AR3 v05 preserved. Closed superseded PR363/365/369 without merge; cancelled J1324/J1338 as superseded, preserving history/media. Sole successor J1356 depends on this job for full playback, remaining gates and final-watch cards. No publishing approval, media changes, spend or unrelated hold release."
         }
       ],
       "remaining_action": "Integration complete; J1356 owns final-watch and remaining gates",
@@ -121244,7 +121249,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "b1f0bd69d"
     },
     {
       "id": "J1356",
