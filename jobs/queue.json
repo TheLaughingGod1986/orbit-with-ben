@@ -98109,13 +98109,13 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-30T15:13Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "FIX, acting Chief Codex: outstanding S2/S5 repairs and S6 full-frame loop FAIL9.26. Recovery J1270 must finish and live >=20 GB be verified before resuming worker2/3. Check31Oct03:00UTC. Full ruling in body/history; no film PASS or publishing.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -98371,6 +98371,11 @@
           "at": "2026-10-31T03:01Z",
           "by": "relay",
           "what": "condition verification queued: J1305"
+        },
+        {
+          "at": "2026-10-31T04:48Z",
+          "by": "chief",
+          "what": "reopened: Chief h41 (J1305 verify, 2026-10-31T04:48Z): disk condition met under the governing Chief headroom bar for J1100 (h34 OWB #264 6537199853, restated h36 6537999447: start at df >=10 GiB, park below 6 GiB; house 20 GB target accepted as unreachable without touching protected work). Live df avail 14271812 KB (13.61 GiB), container free 14614245376 B. J1270 done. Reopened for repairs ONLY per the 29/30 Oct rulings: S2/S5 continuous pickups with fresh locked balance check (no music generation), S2 instrumental-only bed proof, caption repairs; S6 full-frame loop 9.26 FAIL needs a compliant edit or reproducible decoded-frame evidence plus a proposed gate correction for Chief review (no masking or waiver); keep accepted S6 audio. Re-run all gates and Gemini listening, deliver durable masters/_PHONE/hashes to UAT+NAS, park for Chief replacement review before Ben watch. Park (block) if df drops below 6 GiB. No upload, swap, schedule/privacy change, watch card or new spend; deadlines and scheduled-v01 fallbacks unchanged."
         }
       ],
       "remaining_action": "Restore and verify 20 GB free; then finish S2/S5 pickups and S6 loop repair",
@@ -98389,23 +98394,7 @@
         "OWB:028"
       ],
       "escalated_at": "2026-10-28T22:00Z",
-      "urgent": 1,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-30T15:14Z",
-        "by": "codex",
-        "note": "Required NAS offload completed with full filesystem access: no /private/tmp scratch old enough to move; 7,955 MB before "
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Safe disk recovery must restore live Mini free space to >=20 GB, verified by elected Chief. J1270 ended below guard (12,790,501,376 bytes); J1274 live 2026-10-30T17:32Z only 7,554,764,800 bytes. Required nas_offload --apply found no eligible scratch (7204 MiB before/after). Reopen repairs only under 29/30 Oct rulings; S6 full-frame loop 9.26 FAIL still needs compliant fix or evidenced gate-correction review.",
-        "check_at": "2026-10-31T04:01:31+00:00",
-        "last_recheck": "J1274",
-        "checked_at": "2026-10-30T17:32:25+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1305"
-      }
+      "urgent": 1
     },
     {
       "id": "J1101",
