@@ -117294,17 +117294,22 @@
           "at": "2026-10-31T05:38Z",
           "by": "cursor",
           "what": "step 1 of 4 done: AR1 gates passed. AR2 failed a full-width title seam at 9.2s. AR3 SFX mix hung on adelay. Restarted ar2+ar3 in tmux j1308-asm2, log _desk/logs/J1308-asm2.log."
+        },
+        {
+          "at": "2026-10-31T05:48Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: AR1 gates already pass. AR2 and AR3 fail on the map slab edges. AR3 loop is 8.01 against a 0.87 NOAA step."
         }
       ],
-      "remaining_action": "Re-encode AR2 and AR3 after the title seam and the stuck SFX mix",
+      "remaining_action": "Fix AR2 and AR3 split-panel seams and the AR3 loop, then re-render",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-31T05:38Z",
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T05:48Z",
         "by": "cursor",
-        "note": "AR1 gates passed. AR2 failed a full-width title seam at 9.2s. AR3 SFX mix hung on adelay. Restarted ar2+ar3 in tmux j130"
+        "note": "AR1 gates already pass. AR2 and AR3 fail on the map slab edges. AR3 loop is 8.01 against a 0.87 NOAA step."
       },
       "taskKeys": [
         "OWB:030"
