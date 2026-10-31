@@ -121211,16 +121211,21 @@
           "at": "2026-10-31T13:34Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed PR370-374 and current queue; accepted v01/v06/v05 pairing confirmed, no downstream watch task exists"
+        },
+        {
+          "at": "2026-10-31T13:35Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR375 integrates 51 unchanged evidence files; hashes and local CI pass; successor J1356 created after J1355"
         }
       ],
-      "remaining_action": "Integrate accepted records with CI and reconcile superseded corrections",
+      "remaining_action": "Merge CI-checked integration and close superseded records",
       "kind": "chief",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-31T13:34Z",
+        "at": "2026-10-31T13:35Z",
         "by": "codex",
-        "note": "Reviewed PR370-374 and current queue; accepted v01/v06/v05 pairing confirmed, no downstream watch task exists"
+        "note": "PR375 integrates 51 unchanged evidence files; hashes and local CI pass; successor J1356 created after J1355"
       },
       "taskKeys": [
         "OWB:030"
