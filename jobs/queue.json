@@ -124730,10 +124730,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-10-31T19:52Z",
+      "eta": "2026-10-31T20:52Z",
       "created_by": "refill",
       "created_at": "2026-10-31T19:49Z",
       "result": "",
@@ -124742,11 +124742,24 @@
           "at": "2026-10-31T19:49Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T19:52Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
       "kind": "listing",
-      "backlog": "owb-live-listing-fixes"
+      "backlog": "owb-live-listing-fixes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T19:52Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
