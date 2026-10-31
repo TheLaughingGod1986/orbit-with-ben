@@ -116134,10 +116134,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-31T01:58Z",
+      "eta": "2026-10-31T02:43Z",
       "created_by": "chief",
       "created_at": "2026-10-31T01:41Z",
       "result": "",
@@ -116146,11 +116146,24 @@
           "at": "2026-10-31T01:41Z",
           "by": "chief",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-10-31T01:58Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 008 Lightning: copy master v03 (cf1561c2) to HOS UAT for Ben's watch, verify sha (Chief h35 PASS on J1287)",
       "for": "cursor",
-      "kind": "listing"
+      "kind": "listing",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T01:58Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
