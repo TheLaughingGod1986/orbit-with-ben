@@ -1,5 +1,5 @@
 {
-  "next_id": 1315,
+  "next_id": 1316,
   "jobs": [
     {
       "id": "J0001",
@@ -117319,6 +117319,11 @@
           "at": "2026-10-31T05:59Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: AR1 v01 and AR2/AR3 v02 pass picture_qa, polish_gate, loop and SFX. Report and assembler in 0a00772fa. No upload, no schedule, £0."
+        },
+        {
+          "at": "2026-10-31T06:00Z",
+          "by": "relay",
+          "what": "condition verification queued: J1315"
         }
       ],
       "remaining_action": "Parked for Chief review of the three passing Shorts",
@@ -117333,7 +117338,13 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-31T07:00:05+00:00",
+        "recheck_task": "J1315"
+      }
     },
     {
       "id": "J1309",
@@ -117682,6 +117693,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J1315",
+      "title": "Chief: verify condition for J1308",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1308: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1308 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-31T06:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T06:00Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for Chief review of the three passing Shorts",
+      "kind": "chief",
+      "recheck_of": "J1308",
+      "due": "2026-10-31T07:00:05+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
