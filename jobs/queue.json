@@ -124367,19 +124367,24 @@
           "at": "2026-10-31T19:36Z",
           "by": "codex",
           "what": "step 2 of 3 done: All eight afed1c552 hashes match; both beds retain nonempty ASR, no source listening result/log/done exists. Disk 36.453 GiB."
+        },
+        {
+          "at": "2026-10-31T19:37Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1100 remains blocked at worker 2/3; unmet audio condition recorded with recheck J1394 for 2026-11-01T01:37Z."
         }
       ],
-      "remaining_action": "Record unmet audio condition and finish verification",
+      "remaining_action": "Verification complete; J1100 awaits qualifying bed and approved listening evidence",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T19:02:22+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-31T19:36Z",
+        "at": "2026-10-31T19:37Z",
         "by": "codex",
-        "note": "All eight afed1c552 hashes match; both beds retain nonempty ASR, no source listening result/log/done exists. Disk 36.453"
+        "note": "J1100 remains blocked at worker 2/3; unmet audio condition recorded with recheck J1394 for 2026-11-01T01:37Z."
       },
       "taskKeys": [
         "OWB:027",
