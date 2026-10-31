@@ -122941,13 +122941,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T15:49Z",
-      "eta": "2026-10-31T17:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T15:48Z",
-      "result": "",
+      "result": "Verified unmet: fresh hashes match accepted AR1 v01, AR2 v06, AR3 v05; all three manifest export targets absent. PR376 unchanged at 92de3841c; no newer correction or full audiovisual review evidence found. Kept J1356 blocked with recheck J1377 and retained 2026-10-31T16:48:47Z retry. Next required: scoped no-spend music/tail correction, versioned package mapping, affected gates and full playback review. Existing picture acceptance preserved. No media changes, spend, watch approval or publishing.",
       "history": [
         {
           "at": "2026-10-31T15:48Z",
@@ -122978,6 +122978,11 @@
           "at": "2026-10-31T15:51Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 remains blocked; recheck J1377 recorded with existing 16:48:47Z retry and picture acceptance preserved"
+        },
+        {
+          "at": "2026-10-31T15:51Z",
+          "by": "codex",
+          "what": "done: Verified unmet: fresh hashes match accepted AR1 v01, AR2 v06, AR3 v05; all three manifest export targets absent. PR376 unchanged at 92de3841c; no newer correction or full audiovisual review evidence found. Kept J1356 blocked with recheck J1377 and retained 2026-10-31T16:48:47Z retry. Next required: scoped no-spend music/tail correction, versioned package mapping, affected gates and full playback review. Existing picture acceptance preserved. No media changes, spend, watch approval or publishing."
         }
       ],
       "remaining_action": "Verification complete; J1356 awaits correction evidence",
@@ -122994,7 +122999,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "92de3841c"
     }
   ],
   "focus": [],
