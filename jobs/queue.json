@@ -124331,10 +124331,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T19:35Z",
+      "eta": "2026-10-31T21:35Z",
       "created_by": "relay",
       "created_at": "2026-10-31T18:02Z",
       "result": "",
@@ -124343,13 +124343,26 @@
           "at": "2026-10-31T18:02Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T19:35Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T19:02:22+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T19:35Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1395",
