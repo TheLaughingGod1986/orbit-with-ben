@@ -118133,9 +118133,14 @@
           "at": "2026-10-31T07:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T07:39Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1320; starting inspection of missing Short exports and NAS archive"
         }
       ],
-      "remaining_action": "Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate",
+      "remaining_action": "Inspect UPCOMING_SHORTS_GATE.md, UPLOADS.json, and NAS paths from J1296",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -118148,12 +118153,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-31T07:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1320; starting inspection of missing Short exports and NAS archive"
+      },
+      "taskKeys": [
+        "OWB:025"
+      ]
     },
     {
       "id": "J1321",
