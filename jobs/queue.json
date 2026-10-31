@@ -116799,10 +116799,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-31T04:05Z",
+      "eta": "2026-10-31T05:35Z",
       "created_by": "chief",
       "created_at": "2026-10-31T03:19Z",
       "result": "",
@@ -116811,11 +116811,24 @@
           "at": "2026-10-31T03:19Z",
           "by": "chief",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-10-31T04:05Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "OWB Apophis-mould Shorts AR1-AR3: VO from locked v02 scripts (J1279 h37 PASS), park for Chief",
       "for": "cursor",
-      "kind": "vo"
+      "kind": "vo",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T04:05Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1307",
