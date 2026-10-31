@@ -116813,13 +116813,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-31T04:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T03:19Z",
-      "result": "parked for Chief: AR1-AR3 VO recorded (83d5b0ab6, 1048 chars, no overage, J0862 share untouched). AR2 v01 planned cut 19.4s and answer at 11.0s, inside both bars. AR1 v02 after C7 trims 1+2 is planned cut 24.0s with the answer at 16.5s. AR3 v02 after C7 trim 3 is planned cut 27.2s with the answer at 19.1s. Scribe REVIEW is numerals and US spelling only. No further word change is authorized.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-31T03:19Z",
@@ -116855,18 +116855,16 @@
           "at": "2026-10-31T04:15Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: AR1-AR3 VO recorded (83d5b0ab6, 1048 chars, no overage, J0862 share untouched). AR2 v01 planned cut 19.4s and answer at 11.0s, inside both bars. AR1 v02 after C7 trims 1+2 is planned cut 24.0s with the answer at 16.5s. AR3 v02 after C7 trim 3 is planned cut 27.2s with the answer at 19.1s. Scribe REVIEW is numerals and US spelling only. No further word change is authorized."
+        },
+        {
+          "at": "2026-10-31T04:28Z",
+          "by": "chief",
+          "what": "reopened: Chief h40: AR2 v01 PASS as recorded (cut 19.40 s, answer 10.94 s). AR1/AR3 FIX by Chief sentence cuts from the recorded v02 takes: no re-take, no ElevenLabs, GBP0. Binding: 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/CHIEF_H40_VO_LOCK.md (26a9c2c34). From 02_Voiceover/: 1) python3 vo_build_h40/splice_v03.py ar1 and then ar3, unedited. WAV sha must equal Chief sim: ar1 de70ed062c017993e22da6dd5f0e77dd9c9de8331ba94be61e4e74e36a52aedb (881520 frames, 18.365 s), ar3 95ab6cf199bea32c4b85516926152d54b333c0730626f89b97858551dd146c2c (818640 frames, 17.055 s); if not, block and stop. 2) 128k mp3s; TAKE.json for each v03 (built_from v02 + h40, spoken text = the v03 words in the lock file); words json from free faster-whisper word timings (no Scribe, no paid STT). 3) Add an 'h40 lock' section to VO_REPORT.md: locked stems AR1 v03 / AR2 v01 / AR3 v03 with shas, cuts 19.37 / 19.40 / 18.06 s, answers 12.17 / 10.94 / 6.93 (peaking 10.26) s, and point to CHIEF_H40_VO_LOCK.md for the line clock and the graphics plan. Commit (media stays off git). 4) Close this job as DONE (not cancelled) so J1308 releases; no re-park needed if the shas match. Keep v01/v02/retakes/parts/stt untouched (cp, never mv or delete). No picture, upload or schedule."
         }
       ],
       "remaining_action": "Parked for Chief: VO review of AR1-AR3",
       "for": "cursor",
-      "kind": "vo",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-31T04:14Z",
-        "by": "cursor",
-        "note": "Committed 83d5b0ab6. AR2 planned cut 19.4s, answer 11.0s. AR1 v02 24.0s, answer 16.5s. AR3 v02 27.2s, answer 19.1s. C7 t"
-      }
+      "kind": "vo"
     },
     {
       "id": "J1307",
