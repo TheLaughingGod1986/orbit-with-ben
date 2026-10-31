@@ -118340,13 +118340,13 @@
       "stage": "",
       "after": "J1317",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T12:58Z",
-      "eta": "2026-10-31T14:58Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T07:33Z",
-      "result": "",
+      "result": "Correction close-out complete: accepted AR1 v01 unchanged, AR2 v06 (Chief PR371), AR3 v05 (Chief PR373). Fresh master/protected/image hashes match; existing unmodified gate successes verified. Records 67a26b83c; no new PASS, UAT handoff, publishing or spend. Chief retains integration and downstream gates.",
       "history": [
         {
           "at": "2026-10-31T07:33Z",
@@ -118522,6 +118522,11 @@
           "at": "2026-10-31T13:00Z",
           "by": "codex",
           "what": "step 3 of 3 done: Close-out committed 67a26b83c with accepted version pairing and fresh hash verification; no new media or approval."
+        },
+        {
+          "at": "2026-10-31T13:00Z",
+          "by": "codex",
+          "what": "done: Correction close-out complete: accepted AR1 v01 unchanged, AR2 v06 (Chief PR371), AR3 v05 (Chief PR373). Fresh master/protected/image hashes match; existing unmodified gate successes verified. Records 67a26b83c; no new PASS, UAT handoff, publishing or spend. Chief retains integration and downstream gates."
         }
       ],
       "remaining_action": "Correction complete; Chief retains PR integration and downstream watch/publishing gates",
@@ -118545,7 +118550,8 @@
         "at": "2026-10-31T13:00Z",
         "by": "codex",
         "note": "Close-out committed 67a26b83c with accepted version pairing and fresh hash verification; no new media or approval."
-      }
+      },
+      "done_ref": "67a26b83c"
     },
     {
       "id": "J1322",
