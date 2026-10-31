@@ -126503,9 +126503,14 @@
           "at": "2026-10-31T22:35Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T22:35Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
+      "remaining_action": "Verify S2 bed clearance and required listening evidence for J1100",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T23:04:41+00:00",
@@ -126514,10 +126519,12 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-31T22:35Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1423",
