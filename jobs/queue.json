@@ -120373,10 +120373,24 @@
           "at": "2026-10-31T11:52Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T11:53Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Correct AR3 duration-overlay collision, preserve approved AR1 and AR2",
-      "kind": "assembly"
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],
