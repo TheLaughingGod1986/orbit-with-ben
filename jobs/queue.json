@@ -119718,9 +119718,14 @@
           "at": "2026-10-31T10:39Z",
           "by": "codex",
           "what": "step 0 of 4 done: Claimed scoped AR2 repair; checking disk and binding instructions before preview"
+        },
+        {
+          "at": "2026-10-31T10:41Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Inspected native full-size preview: selected accepted Crew-2 source 540–543.2s, sunlit station detail; no crop, sharpening or added grain. Offload found nothing eligible."
         }
       ],
-      "remaining_action": "Inspect prior correction and restore native ISS detail in late AR2 interval",
+      "remaining_action": "Render AR2 v09 late replacement and run unchanged composite gates",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -119732,11 +119737,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T10:39Z",
+        "at": "2026-10-31T10:41Z",
         "by": "codex",
-        "note": "Claimed scoped AR2 repair; checking disk and binding instructions before preview"
+        "note": "Inspected native full-size preview: selected accepted Crew-2 source 540–543.2s, sunlit station detail; no crop, sharpeni"
       },
       "taskKeys": [
         "OWB:030"
