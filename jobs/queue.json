@@ -72727,18 +72727,22 @@
           "at": "2026-10-31T23:41Z",
           "by": "relay",
           "what": "condition verification queued: J1433"
+        },
+        {
+          "at": "2026-10-31T23:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T05:55:00Z"
         }
       ],
       "kind": "vo",
-      "remaining_action": "Approve the 009 Short B replacement opening and exact recording scope, then record only required replacements",
+      "remaining_action": "Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
       "hold": {
         "type": "input",
-        "condition": "Verified 2026-10-31: HOS main, recent PRs, desk through 6546821627 and queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged HOS PR 366 retains the hook block: both one minute and one second must remain; existing audio cannot meet 2.85s at atempo<=1.06. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit reading required before any future authorised spend. All production and Ben gates remain.",
-        "check_at": "2026-11-01T00:41:00+00:00",
-        "last_recheck": "J1388",
-        "checked_at": "2026-10-31T17:36:00+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1433"
+        "condition": "Verified 2026-10-31 23:50Z: HOS main 220312c6, PRs through 393, desk through 6550757741 and queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the hook block: both one minute and one second required; existing audio cannot meet 2.85s at atempo<=1.06. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit reading required before any future authorised spend. All production and Ben gates remain.",
+        "check_at": "2026-11-01T05:55:00Z",
+        "last_recheck": "J1433",
+        "checked_at": "2026-10-31T23:49:28+00:00",
+        "checked_by": "codex"
       }
     },
     {
