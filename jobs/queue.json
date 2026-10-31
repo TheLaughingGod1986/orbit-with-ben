@@ -86281,6 +86281,11 @@
           "at": "2026-10-31T16:55Z",
           "by": "relay",
           "what": "condition verification queued: J1385"
+        },
+        {
+          "at": "2026-10-31T17:28Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T23:35:00Z"
         }
       ],
       "kind": "listing",
@@ -86296,7 +86301,7 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Confirm the Atom title-test widget has cleared before the approved Test B metadata update",
+      "remaining_action": "Confirm Atom title-test widget clearance before approved Test B metadata update",
       "progress": {
         "step": 4,
         "of": 5,
@@ -86306,12 +86311,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Fresh HOS Studio read 31 Oct 10:55 UTC via CDP 9460 confirms access restored but GHZDsiH7L7A still shows A/B testing titles / Results ready, original title and Public. API title restriction is not proven cleared; no write probe. Evidence /Users/benjaminoats/_desk/handoff/J1340/readback.json and atom_edit.png. Needs fresh read-only evidence the title-test widget has cleared.",
-        "check_at": "2026-10-31T17:55:49+00:00",
-        "last_recheck": "J1340",
-        "checked_at": "2026-10-31T10:54:12+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1385"
+        "condition": "Fresh HOS Studio read 31 Oct 17:29 UTC via CDP 9460 still shows A/B testing titles / Results ready on GHZDsiH7L7A, original title and Public. Title-test widget clearance and API restriction removal remain unproven; no write probe. Evidence /Users/benjaminoats/_desk/handoff/J1385/readback.json and atom_edit.png. Requires fresh read-only evidence that the title-test widget has cleared.",
+        "check_at": "2026-10-31T23:35:00Z",
+        "last_recheck": "J1385",
+        "checked_at": "2026-10-31T17:28:20+00:00",
+        "checked_by": "codex"
       }
     },
     {
