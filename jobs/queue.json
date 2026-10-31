@@ -122797,13 +122797,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-10-31T15:43Z",
-      "eta": "2026-10-31T16:43Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-31T15:41Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-10-31T15:41Z",
@@ -122839,6 +122839,11 @@
           "at": "2026-10-31T15:48Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: committed and pushed 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md (HOS 34052adf); 0 new fixes needed"
+        },
+        {
+          "at": "2026-10-31T15:48Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete J1375 and post report",
@@ -122869,7 +122874,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:008"
-      ]
+      ],
+      "done_ref": "34052adf"
     },
     {
       "id": "J1376",
