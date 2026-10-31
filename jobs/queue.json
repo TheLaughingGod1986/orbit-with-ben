@@ -121305,9 +121305,14 @@
           "at": "2026-10-31T13:42Z",
           "by": "relay",
           "what": "condition verification queued: J1357"
+        },
+        {
+          "at": "2026-10-31T13:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T14:42:26Z"
         }
       ],
-      "remaining_action": "Resolve absent score bed and missing package targets, then complete full playback review and final-watch handoff",
+      "remaining_action": "Resolve missing full-runtime score and package targets; rerun affected gates and full playback review",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -121320,10 +121325,12 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Final-watch readiness blocked: required music absent from documented VO+SFX mix, measured silent loop tails, and three manifest export targets missing. Evidence 92de3841c on codex/J1356-watch. Needs scoped no-spend correction/package mapping, affected gates and full moving/audio review; J1356 forbids rebuild. Existing picture PASS retained; no awaits or publishing approval.",
-        "check_at": "2026-10-31T14:42:26+00:00",
-        "recheck_task": "J1357"
+        "type": "input",
+        "condition": "J1357 verified accepted AR1 v01, AR2 v06 and AR3 v05 hashes unchanged; three manifest video targets still missing. PR376/92de3841c music omission and silent-tail findings unresolved; no corrected music/gates or full audiovisual review evidence. Scoped no-spend correction and versioned package mapping needed before final watch; J1356 forbids rebuild. Existing picture PASS retained, no publishing or Ben-watch approval.",
+        "check_at": "2026-10-31T14:42:26Z",
+        "last_recheck": "J1357",
+        "checked_at": "2026-10-31T13:44:44+00:00",
+        "checked_by": "codex"
       }
     },
     {
