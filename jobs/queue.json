@@ -116771,13 +116771,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T04:48Z",
-      "eta": "2026-10-31T04:58Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T03:01Z",
-      "result": "",
+      "result": "Verified at 2026-10-31T04:48Z: df 14271812 KB avail meets the h34/h36 J1100 bar (>=10 GiB start, park <6 GiB); J1270 done. J1100 reopened for repairs only with evidence note. GBP0.",
       "history": [
         {
           "at": "2026-10-31T03:01Z",
@@ -116788,6 +116788,11 @@
           "at": "2026-10-31T04:48Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T04:48Z",
+          "by": "chief",
+          "what": "done: Verified at 2026-10-31T04:48Z: df 14271812 KB avail meets the h34/h36 J1100 bar (>=10 GiB start, park <6 GiB); J1270 done. J1100 reopened for repairs only with evidence note. GBP0."
         }
       ],
       "remaining_action": "Verify readiness: Restore and verify 20 GB free; then finish S2/S5 pickups and S6 loop repair",
@@ -116802,7 +116807,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6537199853"
     },
     {
       "id": "J1306",
