@@ -80889,6 +80889,11 @@
           "at": "2026-10-31T14:46Z",
           "by": "relay",
           "what": "condition verification queued: J1368"
+        },
+        {
+          "at": "2026-10-31T15:20Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T21:30:00Z"
         }
       ],
       "kind": "video",
@@ -80916,15 +80921,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "J1100 disk recovery, v07 repair/gate/delivery proof, Chief replacement review, then Ben swap approvals",
+      "remaining_action": "J1100 instrumental bed and listening clearance, v07 repairs/gates/delivery, Chief replacement PASS, then Ben swaps",
       "hold": {
         "type": "input",
-        "condition": "J1335 verified 31 Oct: J1100 remains blocked at 2/3; live df 9268600 KiB (8.84 GiB) below h43 10 GiB restart; required nas_offload --apply found no eligible scratch. Two S2/S5 pickups completed (0c017ff38) and accepted as sources by Chief h43 comment 6539463596; do not repeat them. h43-LOOP correction adopted, but final v07 implementation and evidence still needed. Outstanding: live headroom restart verification, S2 continuous bound phrase and instrumental-only bed proof, caption repairs, v07 assembly and all gates including h43-LOOP, Gemini final AAC listening, durable UAT/NAS hashes, Chief replacement PASS, then Ben S2/S5/S6 swap approvals. PR333 OPEN at 0a7fcb6ad, no new comments or replacement PASS. Preserve J1032 PASS, completed J1101-J1103, J0936 historical 6/6, batch target 1 Nov 20:00 London and per-Short deadlines/scheduled-v01 fallbacks.",
-        "check_at": "2026-10-31T15:46:06+00:00",
-        "last_recheck": "J1335",
-        "checked_at": "2026-10-31T10:30:45+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1368"
+        "condition": "J1368 verified 31 Oct: disk restart condition now met (df 36897604 KiB, about 35.19 GiB). J1100 remains blocked 2/3. Read local source checkpoint afed1c552: continuous S2 because-the-ground-at-the-equator phrase recovered unchanged with ASR provenance; no extra pickup needed. Existing S2/S5 pickups accepted as sources under h43 6539463596; do not repeat. Still required: instrumental-only bed satisfying ASR and listening, resolution of recorded source-audio/evidence-push auto-review rejection (J1370 queued), v07 assembly and captions, all final gates including h43-LOOP, Gemini final AAC listening, durable UAT/NAS hashes, Chief replacement PASS, then Ben S2/S5/S6 swap approvals. PR333 OPEN at 0a7fcb6ad with zero reviews/comments. Preserve J1032 PASS, completed J1101-J1103, historical J0936 6/6, batch target 1 Nov 20:00 London, individual deadlines and scheduled-v01 fallbacks.",
+        "check_at": "2026-10-31T21:30:00Z",
+        "last_recheck": "J1368",
+        "checked_at": "2026-10-31T15:20:03+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
