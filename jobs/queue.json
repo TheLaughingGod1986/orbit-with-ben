@@ -118238,12 +118238,26 @@
           "at": "2026-10-31T07:36Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T07:57Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Verify exact inactive paths and archive eligible scratch to restore 20 GiB free",
       "due": "2026-11-01T12:00:00Z",
       "kind": "assembly",
-      "urgent": 2
+      "urgent": 2,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],
