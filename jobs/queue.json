@@ -121344,13 +121344,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T13:43Z",
-      "eta": "2026-10-31T15:43Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T13:42Z",
-      "result": "",
+      "result": "Verified hold remains unmet. Fresh SHA-256 reads match accepted AR1 v01/AR2 v06/AR3 v05; all three manifest export targets still absent. Reviewed J1356 and PR376 evidence 92de3841c plus J1355 acceptance history; no newer correction or music/full-playback gate evidence. J1356 retained as input hold, original retry 2026-10-31T14:42:26Z, recheck J1357. No rebuild, spend, approval, publishing or duplicate watch cards.",
       "history": [
         {
           "at": "2026-10-31T13:42Z",
@@ -121381,6 +121381,11 @@
           "at": "2026-10-31T13:44Z",
           "by": "codex",
           "what": "step 3 of 3 done: Kept J1356 blocked with recheck J1357 and original 2026-10-31T14:42:26Z retry. No approval or media change. NAS offload found no eligible old scratch."
+        },
+        {
+          "at": "2026-10-31T13:44Z",
+          "by": "codex",
+          "what": "done: Verified hold remains unmet. Fresh SHA-256 reads match accepted AR1 v01/AR2 v06/AR3 v05; all three manifest export targets still absent. Reviewed J1356 and PR376 evidence 92de3841c plus J1355 acceptance history; no newer correction or music/full-playback gate evidence. J1356 retained as input hold, original retry 2026-10-31T14:42:26Z, recheck J1357. No rebuild, spend, approval, publishing or duplicate watch cards."
         }
       ],
       "remaining_action": "Verification complete; J1356 remains on evidence-backed input hold",
@@ -121397,7 +121402,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "92de3841c"
     }
   ],
   "focus": [],
