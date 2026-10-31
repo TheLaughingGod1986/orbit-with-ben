@@ -120289,13 +120289,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T11:49Z",
-      "eta": "2026-10-31T13:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T11:48Z",
-      "result": "",
+      "result": "Verified PR370 master/image hashes and pictures. AR2 v06 PASS; AR3 v03 FIX: duration bars cover corona at 13.1s. Ruling PR371 c70206699. J1345 queued; J1321 held with original 12:48:21Z retry. No spend or publishing approval.",
       "history": [
         {
           "at": "2026-10-31T11:48Z",
@@ -120326,6 +120326,11 @@
           "at": "2026-10-31T11:52Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling PR371 recorded; J1345 queued; J1321 hold updated with exact unmet condition and original retry. No UAT or publishing approval."
+        },
+        {
+          "at": "2026-10-31T11:52Z",
+          "by": "codex",
+          "what": "done: Verified PR370 master/image hashes and pictures. AR2 v06 PASS; AR3 v03 FIX: duration bars cover corona at 13.1s. Ruling PR371 c70206699. J1345 queued; J1321 held with original 12:48:21Z retry. No spend or publishing approval."
         }
       ],
       "remaining_action": "Verification complete; J1345 supplies remaining AR3 correction",
@@ -120342,7 +120347,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "c70206699"
     },
     {
       "id": "J1345",
