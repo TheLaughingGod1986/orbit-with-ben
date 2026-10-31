@@ -124335,13 +124335,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T19:35Z",
-      "eta": "2026-10-31T21:35Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T18:02Z",
-      "result": "",
+      "result": "Verified afed1c552: all eight hashes match. Both tested beds retain nonempty base.en ASR and source listening has no result/log/done. Prior source-audio transfer and evidence-push approval rejection unresolved; no retry or bypass. J1100 kept blocked at 2/3 with OWB:027/028 and all rulings/deadlines/fallbacks preserved; next check 2026-11-01T01:37Z. Live disk 36.453 GiB. No production, spend or publishing changes.",
       "history": [
         {
           "at": "2026-10-31T18:02Z",
@@ -124372,6 +124372,11 @@
           "at": "2026-10-31T19:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1100 remains blocked at worker 2/3; unmet audio condition recorded with recheck J1394 for 2026-11-01T01:37Z."
+        },
+        {
+          "at": "2026-10-31T19:37Z",
+          "by": "codex",
+          "what": "done: Verified afed1c552: all eight hashes match. Both tested beds retain nonempty base.en ASR and source listening has no result/log/done. Prior source-audio transfer and evidence-push approval rejection unresolved; no retry or bypass. J1100 kept blocked at 2/3 with OWB:027/028 and all rulings/deadlines/fallbacks preserved; next check 2026-11-01T01:37Z. Live disk 36.453 GiB. No production, spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits qualifying bed and approved listening evidence",
