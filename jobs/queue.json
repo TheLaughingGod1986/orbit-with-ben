@@ -122748,19 +122748,24 @@
           "at": "2026-10-31T15:39Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J0979 history, J1000 audit, J1042 ruling and J1328 verification; original rejection and no-spend/upload holds remain in force."
+        },
+        {
+          "at": "2026-10-31T15:40Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 031 and 032 status.json and production records retain locked VO but no locked picture; 033-061 status records contain no VO/picture locks. No eligible source pair to assess for a new EDL."
         }
       ],
-      "remaining_action": "Verify current picture locks against J0979 release conditions",
+      "remaining_action": "Record unchanged J0979 input hold and next verification",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-10-31T16:38:37+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-31T15:39Z",
+        "at": "2026-10-31T15:40Z",
         "by": "codex",
-        "note": "Read J0979 history, J1000 audit, J1042 ruling and J1328 verification; original rejection and no-spend/upload holds remai"
+        "note": "031 and 032 status.json and production records retain locked VO but no locked picture; 033-061 status records contain no"
       },
       "taskKeys": [
         "OWB:031",
