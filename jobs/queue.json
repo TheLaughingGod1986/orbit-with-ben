@@ -115834,18 +115834,23 @@
           "at": "2026-10-31T01:01Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Moved watch_proxies: 5 files, 271981775 bytes"
+        },
+        {
+          "at": "2026-10-31T01:02Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Moved 007, chief_h31, watch_proxies (839 MB, sha256 matched). gemini-j0240-wt skipped: lsof bash 1852 and node 1975. Free 15.0 GB, need 20 GiB."
         }
       ],
-      "remaining_action": "Copy verified done-job scratch to the NAS",
+      "remaining_action": "Park for Chief: still under 20 GiB",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-31T01:01Z",
+        "at": "2026-10-31T01:02Z",
         "by": "cursor",
-        "note": "Moved watch_proxies: 5 files, 271981775 bytes"
+        "note": "Moved 007, chief_h31, watch_proxies (839 MB, sha256 matched). gemini-j0240-wt skipped: lsof bash 1852 and node 1975. Fre"
       },
       "taskKeys": [
         "OWB:032"
