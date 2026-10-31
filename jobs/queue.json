@@ -118605,19 +118605,24 @@
           "at": "2026-10-31T08:44Z",
           "by": "codex",
           "what": "step 2 of 3 done: Live 08:44:31Z free=4482519040 bytes (4.174671 GiB), below h43 start 10 GiB and park 6 GiB; required offload found no eligible scratch. Historical recovery is not current headroom."
+        },
+        {
+          "at": "2026-10-31T08:45Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1100 hold updated: live 4.175 GiB fails h43; next check 31 Oct 14:45Z, recheck J1325. Existing 2/3 progress, accepted pickups and all gates preserved."
         }
       ],
-      "remaining_action": "Record failed restart condition and next verification time",
+      "remaining_action": "Close completed verification and report retained disk hold",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T09:42:57+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-31T08:44Z",
+        "at": "2026-10-31T08:45Z",
         "by": "codex",
-        "note": "Live 08:44:31Z free=4482519040 bytes (4.174671 GiB), below h43 start 10 GiB and park 6 GiB; required offload found no el"
+        "note": "J1100 hold updated: live 4.175 GiB fails h43; next check 31 Oct 14:45Z, recheck J1325. Existing 2/3 progress, accepted p"
       },
       "taskKeys": [
         "OWB:027",
