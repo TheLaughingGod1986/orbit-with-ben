@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1271 | mini | blocked | cursor | – | 024 upload · studio · OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
-| J1308 | mini | claimed | cursor | 2026-10-31T08:16Z | for cursor · assembly · OWB Apophis-mould Shorts AR1-AR3: assembly from J1306 VO + J1307 v03 graphics (after both Chief PASS), park for Chief | 9a2030925 |
+| J1308 | mini | blocked | cursor | – | for cursor · assembly · OWB Apophis-mould Shorts AR1-AR3: assembly from J1306 VO + J1307 v03 graphics (after both Chief PASS), park for Chief | 9a2030925 |
 
 Recently finished:
 
