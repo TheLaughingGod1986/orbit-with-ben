@@ -18,3 +18,4 @@ Required nas_offload found no eligible scratch; 5.2 GiB free initially. No prote
 
 Next: elected Chief inspects the full-size late WARN and all tiles before picture acceptance. This delivery does not approve a film stage or reopen J1321. No Ben action, spend or publishing.
 
+Review images are durable at /Volumes/data/mac-mini-archive/jobs/J1324/review_v08/; review_images.json records freshly matched SHA256 hashes. Images stay off git.
