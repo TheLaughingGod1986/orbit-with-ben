@@ -118330,13 +118330,13 @@
       "stage": "",
       "after": "J1317",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T11:37Z",
-      "eta": "2026-10-31T13:37Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T07:33Z",
-      "result": "",
+      "result": "parked for elected-Chief picture review: PR #370 (7d4f04a17), AR2 v06 and AR3 v03 pass picture/polish/loop/SFX. Review frame 0, 0.5s sheets and low-detail WARNs; cohort remains held from UAT/upload/scheduling. Persistent delivery: 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1321_delivery_v02. GBP0; nothing for Ben.",
       "history": [
         {
           "at": "2026-10-31T07:33Z",
@@ -118457,6 +118457,11 @@
           "at": "2026-10-31T11:47Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR #370, commit 7d4f04a17. Corrected persistent masters and review images delivered; old-master and identical-AAC checks pass; all four composite gates pass. No render remains active."
+        },
+        {
+          "at": "2026-10-31T11:47Z",
+          "by": "codex",
+          "what": "blocked: parked for elected-Chief picture review: PR #370 (7d4f04a17), AR2 v06 and AR3 v03 pass picture/polish/loop/SFX. Review frame 0, 0.5s sheets and low-detail WARNs; cohort remains held from UAT/upload/scheduling. Persistent delivery: 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1321_delivery_v02. GBP0; nothing for Ben."
         }
       ],
       "remaining_action": "Elected Chief reviews corrected AR2/AR3 pictures and retained WARNs",
@@ -118471,6 +118476,11 @@
         "at": "2026-10-31T11:47Z",
         "by": "codex",
         "note": "PR #370, commit 7d4f04a17. Corrected persistent masters and review images delivered; old-master and identical-AAC checks"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "parked for elected-Chief picture review: PR #370 (7d4f04a17), AR2 v06 and AR3 v03 pass picture/polish/loop/SFX. Review frame 0, 0.5s sheets and low-detail WARNs; cohort remains held from UAT/upload/scheduling. Persistent delivery: 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1321_delivery_v02. GBP0; nothing for Ben.",
+        "check_at": "2026-10-31T17:47:46+00:00"
       }
     },
     {
