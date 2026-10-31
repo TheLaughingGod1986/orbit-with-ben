@@ -117832,16 +117832,21 @@
           "at": "2026-10-31T06:54Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1317; starting verification of AR1-AR3 masters"
+        },
+        {
+          "at": "2026-10-31T06:55Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified AR1 v01, AR2 v02, AR3 v02 masters and sha256 hashes match ASSEMBLY_REPORT.md"
         }
       ],
-      "remaining_action": "Verify AR1 v01, AR2 v02, AR3 v02 masters and sha256 hashes",
+      "remaining_action": "Export frame 0 JPEGs (1080x1920 q85) and 0.5s contact sheets (max 4 cols, q80, <1.5 MB) for AR1 v01, AR2 v02, AR3 v02",
       "kind": "qa",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T06:54Z",
+        "at": "2026-10-31T06:55Z",
         "by": "gemini",
-        "note": "Claimed J1317; starting verification of AR1-AR3 masters"
+        "note": "Verified AR1 v01, AR2 v02, AR3 v02 masters and sha256 hashes match ASSEMBLY_REPORT.md"
       },
       "taskKeys": [
         "OWB:030"
