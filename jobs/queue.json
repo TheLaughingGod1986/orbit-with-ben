@@ -118231,13 +118231,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T08:05Z",
-      "eta": "2026-10-31T10:05Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T07:36Z",
-      "result": "",
+      "result": "parked for Chief: recovery verified at 10.689 GiB free, 20 GiB target unmet; exact retained candidate disposition in local commit c0f876ffa (/private/tmp/J1322-records). Five files recovered 2712698880 allocated bytes; J1100 remains held pending elected-Chief threshold verification. Evidence branch push rejected by automatic approval review as unverified egress; commit remains local.",
       "history": [
         {
           "at": "2026-10-31T07:36Z",
@@ -118298,6 +118298,11 @@
           "at": "2026-10-31T08:06Z",
           "by": "codex",
           "what": "step 3 of 4 done: NAS readback verified; live df 10.689 GiB exceeds 10 GiB restart threshold but misses 20 GiB. J1100 stays blocked; exact retained candidates need disposition."
+        },
+        {
+          "at": "2026-10-31T08:07Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: recovery verified at 10.689 GiB free, 20 GiB target unmet; exact retained candidate disposition in local commit c0f876ffa (/private/tmp/J1322-records). Five files recovered 2712698880 allocated bytes; J1100 remains held pending elected-Chief threshold verification. Evidence branch push rejected by automatic approval review as unverified egress; commit remains local."
         }
       ],
       "remaining_action": "Submit shortfall evidence for Chief disposition; retain uncertain inputs",
