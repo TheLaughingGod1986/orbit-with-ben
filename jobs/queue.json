@@ -120157,13 +120157,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T11:33Z",
-      "eta": "2026-10-31T13:33Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T11:32Z",
-      "result": "",
+      "result": "Condition verified satisfied: AR2 v10 PR369 picture PASS, ruling 6542851516. Four unchanged gates pass; fresh master, review-image and protected AR1/AR3 hashes match. J1321 reopened for correction close-out. No merge, UAT handoff, upload, schedule or spend. One dispatched job completed.",
       "history": [
         {
           "at": "2026-10-31T11:32Z",
@@ -120194,6 +120194,11 @@
           "at": "2026-10-31T11:36Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling 6542851516 accepts AR2 v10 picture; fresh NAS and preserved AR1/AR3 hashes match. J1321 reopened, no publishing approval."
+        },
+        {
+          "at": "2026-10-31T11:36Z",
+          "by": "codex",
+          "what": "done: Condition verified satisfied: AR2 v10 PR369 picture PASS, ruling 6542851516. Four unchanged gates pass; fresh master, review-image and protected AR1/AR3 hashes match. J1321 reopened for correction close-out. No merge, UAT handoff, upload, schedule or spend. One dispatched job completed."
         }
       ],
       "remaining_action": "Verification complete; J1321 reopened for correction close-out",
@@ -120210,7 +120215,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "6542851516"
     }
   ],
   "focus": [],

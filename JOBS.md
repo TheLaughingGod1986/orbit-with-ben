@@ -46,10 +46,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1322 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · J1318 ruling: recover Mini space from verified inactive scratch only |  |
 | J1324 | mini | blocked | codex | – | assembly · AR2: finish real ISS composite after J1323 picture FIX |  |
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
-| J1343 | any | claimed | codex | 2026-10-31T13:33Z | chief · Chief: verify condition for J1321 |  |
 
 Recently finished:
 
+- J1343 done: Chief: verify condition for J1321 (Condition verified satisfied: AR2 v10 PR369 picture PASS, ruling 6542851516. Four unchanged gates pass; fresh master, review-image and protected AR1/AR3 hashes match. J1321 reopened for correction close-out. No merge, UAT handoff, upload, schedule or spend. One dispatched job completed.)
 - J1342 done: Chief: verify condition for J0862 (Verified unmet at 2026-10-31T11:31Z: no approved 009 Short B replacement opening or recording scope in current HOS main, recent PRs, desk or queue. J1004 / merged PR 366 retains hook block; 010 A Option A1 and existing v02 takes preserved. J0862 remains blocked, input recheck 2026-10-31T17:32Z via J1342. HOS report 6542814772; OWB report 6542817389. No spend, generation or publishing changes.)
 - J1341 done: Chief: verify condition for J1130 (done)
 - J1340 done: Chief: verify condition for J0978 (done)
@@ -59,4 +59,3 @@ Recently finished:
 - J1335 done: Chief: verify condition for J0936 (Verified J0936; remains blocked. Read original/history, PR333 OPEN 0a7fcb6ad, pickup evidence 0c017ff38 and Chief h43 6539463596. Corrected stale hold: S2/S5 pickups completed/accepted as sources and h43-LOOP adopted; v07 repairs/gates/listening/delivery and replacement PASS/Ben swaps still outstanding. Live df 8.84 GiB below 10 GiB restart; required NAS offload found no eligible scratch. Next check 31 Oct 14:45 UTC aligned with J1100. Preserved J1032 PASS, J1101-J1103, historical 6/6 and deadlines/v01 fallbacks. No media edits, spend or publishing changes.)
 - J1334 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass (6dcL5rBmHPM..m09jUdwC5hk) against 2026-10-31.json snapshot and live YouTube endpoints; 0 new fixes needed. Report committed to 05_Analytics/live_fixes/2026-10-31.md.)
 - J1333 done: J1331 ruling: repair OWB029 per-cut watch IDs and verify Play bytes (Watch-link correction complete: 3 distinct private watch IDs, 12 local aliases corrected, six signed Play filenames/sizes/full hashes verified, Wednesday no longer plays Monday; board republished and board_check PASS. PR368 (299a399d2) contains collision fix, committed mappings and evidence; 12 watch tests PASS. PR remains open due independently reproduced pre-existing Venus status-note CI failure; no failed-check override. J1322/J1100 holds and YouTube/Buffer unchanged; GBP0.)
-- J1332 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1281 (30 Oct ~19:55Z): no OWB video went public in between (latest 6dcL5rBmHPM 30 Oct 11:30Z; next VfDm3E2bUgU 31 Oct 11:30Z). 10/10 pass, 0 fixes (05_Analytics/live_fixes/2026-10-30.md).)
