@@ -123513,13 +123513,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T17:24Z",
-      "eta": "2026-10-31T19:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T16:53Z",
-      "result": "",
+      "result": "Verified unmet: all three accepted master SHA256 values match; all three manifest export targets absent. PR376 remains open at 92de3841c without new correction evidence. J1356 stays blocked with recheck J1384 and existing 17:53:25Z retry. Next: scoped no-spend music/tail correction, versioned package mapping, affected gates and full audiovisual review. Picture acceptance retained; no media changes, spend, watch or publishing approval.",
       "history": [
         {
           "at": "2026-10-31T16:53Z",
@@ -123550,6 +123550,11 @@
           "at": "2026-10-31T17:25Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 input hold retained with recheck J1384 and existing 17:53:25Z retry; picture acceptance unchanged"
+        },
+        {
+          "at": "2026-10-31T17:25Z",
+          "by": "codex",
+          "what": "done: Verified unmet: all three accepted master SHA256 values match; all three manifest export targets absent. PR376 remains open at 92de3841c without new correction evidence. J1356 stays blocked with recheck J1384 and existing 17:53:25Z retry. Next: scoped no-spend music/tail correction, versioned package mapping, affected gates and full audiovisual review. Picture acceptance retained; no media changes, spend, watch or publishing approval."
         }
       ],
       "remaining_action": "Verification complete; J1356 awaits correction evidence",
@@ -123566,7 +123571,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "92de3841c"
     },
     {
       "id": "J1385",

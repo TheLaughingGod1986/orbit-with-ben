@@ -41,12 +41,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1384 | any | claimed | codex | 2026-10-31T19:24Z | chief · Chief: verify condition for J1356 |  |
 | J1385 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 | J1386 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1384 done: Chief: verify condition for J1356 (Verified unmet: all three accepted master SHA256 values match; all three manifest export targets absent. PR376 remains open at 92de3841c without new correction evidence. J1356 stays blocked with recheck J1384 and existing 17:53:25Z retry. Next: scoped no-spend music/tail correction, versioned package mapping, affected gates and full audiovisual review. Picture acceptance retained; no media changes, spend, watch or publishing approval.)
 - J1383 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1382 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1381 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
@@ -56,4 +56,3 @@ Recently finished:
 - J1377 done: Chief: verify condition for J1356 (Verified unmet: fresh hashes match accepted AR1 v01, AR2 v06, AR3 v05; all three manifest export targets absent. PR376 unchanged at 92de3841c; no newer correction or full audiovisual review evidence found. Kept J1356 blocked with recheck J1377 and retained 2026-10-31T16:48:47Z retry. Next required: scoped no-spend music/tail correction, versioned package mapping, affected gates and full playback review. Existing picture acceptance preserved. No media changes, spend, watch approval or publishing.)
 - J1376 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1375 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
-- J1374 done: Chief: verify condition for J0979 (Condition NOT satisfied. Read J0979 original rejection/history, J1000 audit, J1042 shelving ruling and J1328 evidence. Verified 031 and 032 locked VO records (J1295/c8ed778ab and J1294/4a9a2e16b); both status.json records explicitly say picture not started, corroborated by production records. 033-061 have no recorded VO/picture locks. J0979 remains blocked with recheck J1374 at 2026-10-31T21:45:00Z. Exact source-time EDL, duplicate and original-gate checks remain required when locked picture exists. 029 reserve v01 stays shelved. No spend, generation, upload, scheduling or film approval.)
