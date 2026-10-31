@@ -119119,19 +119119,27 @@
           "at": "2026-10-31T09:43Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T09:43Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Records-only investigation; no recovery or media changes authorised."
         }
       ],
-      "remaining_action": "Trace UAT serving paths and prove any exact redundant-copy candidates; no moves",
+      "remaining_action": "Trace exact UAT serving paths and references; measure bounded headroom",
       "due": "2026-11-01T00:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-31T09:43Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Records-only investigation; no recovery or media changes authorised."
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
