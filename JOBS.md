@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1319 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1320 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate |  |
 | J1321 | mini | open (after J1317) | – | – | assembly · AR2–AR3: correct J1317 picture-review failures |  |
-| J1322 | mini | claimed | codex | 2026-10-31T09:57Z | for codex · assembly · `gpt-6.1-sol` · J1318 ruling: recover Mini space from verified inactive scratch only |  |
+| J1322 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · J1318 ruling: recover Mini space from verified inactive scratch only |  |
 
 Recently finished:
 

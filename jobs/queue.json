@@ -118226,10 +118226,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-10-31T07:57Z",
-      "eta": "2026-10-31T09:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T07:36Z",
       "result": "",
@@ -118268,6 +118268,11 @@
           "at": "2026-10-31T08:02Z",
           "by": "codex",
           "what": "step 1 of 4 done: PR362 e22f945ce records exact manifests and retained candidates. Initial two-file batch complete; diagnostic batch still running in J1322-diagnostics; do not duplicate."
+        },
+        {
+          "at": "2026-10-31T08:03Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint PR362 e22f945ce. Two old rough duplicates removed after rehash: 1533317120 allocated bytes. Diagnostic copy/verify/unlink still running in tmux J1322-diagnostics; log /Users/benjaminoats/_desk/jobs/J1322/diagnostics.log; completion /Users/benjaminoats/_desk/jobs/J1322/diagnostics.done; missing means running, never duplicate. Read result when done, release codex 027 edit restoring prior done state, then continue remaining candidate proofs. No J1100 reopening or PASS. 1/4 retained."
         }
       ],
       "remaining_action": "Read detached diagnostic result, complete candidate dependency checks, and verify remaining space shortfall",
