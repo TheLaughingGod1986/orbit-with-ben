@@ -782,8 +782,18 @@ WATCH_LOCAL_REGISTER = Path(os.environ.get("WATCH_LOCAL_REGISTER", str(Path.home
 WATCH_AUTO_MAX = int(os.environ.get("WATCH_AUTO_MAX", str(120 * 1024 * 1024)))
 
 
-def watch_id(ch: str, film: str, version: str) -> str:
-    return re.sub(r"[^a-z0-9_-]", "-", f"{ch}-{film}-{version or 'cut'}".lower())
+def watch_id(ch: str, film: str, version: str, filename: str) -> str:
+    """Include the exact cut name: a film/version can contain several different Shorts.
+
+    Hash the basename before slugging so punctuation/case cannot collapse distinct names.
+    Top-level and nested aliases of the same named cut intentionally share an ID.
+    Existing register entries retain their IDs until explicitly repaired.
+    """
+    import hashlib
+    name = Path(filename).name
+    digest = hashlib.sha256(name.encode()).hexdigest()[:20]
+    prefix = re.sub(r"[^a-z0-9_-]", "-", f"{ch}-{film}-{version or 'cut'}".lower())[:42]
+    return f"{prefix}-{digest}"
 
 
 def watch_register() -> dict:
@@ -890,7 +900,7 @@ def stream_link(ch: str, film: str, pick: Path, rel: str) -> dict | None:
     version = version_of(pick.name)
     wid = watch_register().get(rel)
     if not wid:
-        wid = watch_id(ch, film, version)
+        wid = watch_id(ch, film, version, pick.name)
         if not auto_upload(wid, pick, rel):
             return None
     return {"url": f"{SITE_URL}/api/watch?v={wid}", "version": version, "label": "", "kind": "stream", "file": rel,
@@ -1022,7 +1032,7 @@ def ask_watch(e: dict) -> dict | None:
     rel = pick.relative_to(ICLOUD).as_posix() if ICLOUD in pick.parents else str(pick)
     wid = watch_register().get(rel)
     if not wid:
-        wid = re.sub(r"[^a-z0-9_-]", "-", f"{e.get('channel', 'owb')}-{e['id']}-{e.get('version') or 'cut'}".lower())
+        wid = watch_id(e.get("channel", "owb"), e["id"], e.get("version") or version_of(pick.name), pick.name)
         if not auto_upload(wid, pick, rel):
             return None
     return {"url": sign_watch_url(f"{SITE_URL}/api/watch?v={wid}"), "version": e.get("version") or version_of(pick.name),
