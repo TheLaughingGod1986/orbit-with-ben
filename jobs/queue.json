@@ -116355,16 +116355,22 @@
           "at": "2026-10-31T02:31Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-31T02:32Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Inspected brief and checker; isolated branch created, aliases and ordinal normalization implemented."
         }
       ],
-      "remaining_action": "Inspect checker, fix ordinal normalization, test and submit PR",
+      "remaining_action": "Run regression checks and patched checker against the existing v02 WAV",
       "kind": "assembly",
       "model": "gpt-6-astra",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T02:31Z",
-        "by": "codex"
+        "at": "2026-10-31T02:32Z",
+        "by": "codex",
+        "note": "Inspected brief and checker; isolated branch created, aliases and ordinal normalization implemented."
       },
       "taskKeys": [
         "HOS:013"
