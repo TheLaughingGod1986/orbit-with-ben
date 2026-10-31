@@ -116653,19 +116653,26 @@
           "at": "2026-10-31T03:47Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T03:47Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. NAS mounted. Container free 14.6 GB before any move."
         }
       ],
-      "remaining_action": "Copy /private/tmp/j1287-v03 to NAS mini-tmp-scratch, sha-verify, release local",
+      "remaining_action": "Verify NAS, lsof, and that no other open job cites j1287-v03",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-31T03:47Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. NAS mounted. Container free 14.6 GB before any move."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1303",
