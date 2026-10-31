@@ -116782,10 +116782,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-10-31T04:48Z",
+      "eta": "2026-10-31T04:58Z",
       "created_by": "relay",
       "created_at": "2026-10-31T03:01Z",
       "result": "",
@@ -116794,13 +116794,26 @@
           "at": "2026-10-31T03:01Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T04:48Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Restore and verify 20 GB free; then finish S2/S5 pickups and S6 loop repair",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T04:01:31+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T04:48Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1306",
