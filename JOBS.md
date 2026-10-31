@@ -48,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1291 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 | J1292 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 | J1293 | mini | open | – | – | for cursor · assembly · Chief h30: provenance inventory + copy-first NAS move of ~/_desk done-job scratch to reach >=20 GiB (Mini 17.1 GiB free) | 6535964806 |
+| J1295 | mini | open | – | – | 031 vo · for cursor · assembly · 031 Magnetic Field Flip: assemble locked VO magnetic_field_flip_vo_v02a (v02 parts; measured per-part qsin tail fades, ch00 120 ms, ch06 180 ms), record VO lock (Chief h32 on J0345) | 6536440194 |
 
 Recently finished:
 

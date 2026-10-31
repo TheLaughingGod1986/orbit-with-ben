@@ -1,5 +1,5 @@
 {
-  "next_id": 1295,
+  "next_id": 1296,
   "jobs": [
     {
       "id": "J0001",
@@ -115864,6 +115864,35 @@
         "OWB:032"
       ],
       "done_ref": "6536095334"
+    },
+    {
+      "id": "J1295",
+      "title": "031 Magnetic Field Flip: assemble locked VO magnetic_field_flip_vo_v02a (v02 parts; measured per-part qsin tail fades, ch00 120 ms, ch06 180 ms), record VO lock (Chief h32 on J0345)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) ruling h32 on J0345, 31 Oct 2026 (OWB #264, the h32 comment in this job's ref). The 031 VO take `magnetic_field_flip_vo_v02` (ch01-only re-take, metadata 9e68f20aa, WAV sha256 c7c482ac8cdf6738b2172044e8b5e97e03fb7c1fa01b3488e6f24fdc21fd125f) is PASS. The h24 assembly fades (20 ms on ch00, 40 ms on ch06) were too short to reach -50 dBFS. This job uses the measured per-part fades below instead. No re-take, no ElevenLabs, no paid STT. £0.\n\nUse a new stem, `magnetic_field_flip_vo_v02a`, so that nothing gets overwritten. Leave v01 and v02 (wav, mp3, parts, stt) untouched.\n\nDo (Cursor, mini, £0, nothing paid):\n1. Make `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/02_Voiceover/parts/magnetic_field_flip_vo_v02a/`. **Copy** (cp, never mv or delete) ch00–ch06 .wav/.mp3, gap.wav and concat.txt from `parts/magnetic_field_flip_vo_v02/`.\n2. In v02a only, from the v02 sources, apply a qsin fade-out that ends on each part's last sample. Keep pcm_s16le, 48 kHz stereo. No other changes.\n   - ch00.wav `afade=t=out:st=35.24:d=0.12:curve=qsin`\n   - ch01.wav `afade=t=out:st=88.38:d=0.02:curve=qsin`\n   - ch02.wav `afade=t=out:st=100.28:d=0.04:curve=qsin`\n   - ch03.wav `afade=t=out:st=92.14:d=0.02:curve=qsin`\n   - ch04.wav `afade=t=out:st=73.96:d=0.04:curve=qsin`\n   - ch05.wav `afade=t=out:st=86.22:d=0.02:curve=qsin`\n   - ch06.wav `afade=t=out:st=87.42:d=0.18:curve=qsin`\n   Frame counts must not change.\n3. Concat in the concat.txt order (ch00, gap, ch01 … ch06) into `02_Voiceover/magnetic_field_flip_vo_v02a.wav` and `.mp3`, with the same mp3 settings as v02. Duration must be 568.280 s (27,277,440 frames).\n4. Checks, pasted into the result:\n   - ebur128 I -20 ±1 LUFS, TP ≤ -1 dBTP.\n   - Every part end has last-10 ms stereo RMS below -50 dBFS and last sample 0/0. Chief sim: ch00 -56.11, ch01 -71.55, ch02 -58.22, ch03 -71.09, ch04 -58.07, ch05 -59.52, ch06 -57.08.\n   - Null test v02a vs v02: max abs diff 0 outside 35.240–35.360, 124.440–124.460, 225.440–225.480, 318.320–318.340, 393.000–393.040, 479.960–479.980 and 568.100–568.280 s.\n   - sha256 of the wav and mp3, labelled correctly.\n   Chief's sim (`~/_desk/031/chief_h32/sim_mff_vo_v02a.wav`, made with `build_sim.sh` and checked with `check.py` in that folder) gave I -19.9 LUFS, LRA 4.8, peak -3.5, 27,277,440 frames, null 0 outside the windows, and wav sha256 3444635a3efa951a1031d6681390053abd9cdd3cc1ed97d537086ee7de86b3c6. A match with that sha is a bonus, not a requirement.\n5. Word timings: re-use v02's Scribe words, since timing is unchanged. Copy `stt/magnetic_field_flip_vo_v02/` to `stt/magnetic_field_flip_vo_v02a/` and note it. No new paid STT.\n6. Record the VO lock in 031 `status.json`/`production-status.md`: vo locked, `magnetic_field_flip_vo_v02a`, wav and mp3 sha, rulings h24 and h32. The 1905 date/place card spells PONTFAREIN (h24). Commit metadata only (WAVs are gitignored) and push.\n7. Mark this job done with the paths and shas. If any check fails, park for Chief with the numbers. No mux, no Veo/Flow/Vertex mint, no upload.\n",
+      "ref": "6536440194",
+      "film": "031",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T00:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T00:24Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Build magnetic_field_flip_vo_v02a from the v02 parts with the h32 fades, run checks, record the VO lock",
+      "for": "cursor",
+      "kind": "assembly"
     }
   ],
   "focus": [],
