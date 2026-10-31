@@ -116333,13 +116333,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T02:31Z",
-      "eta": "2026-10-31T04:01Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T02:27Z",
-      "result": "",
+      "result": "HOS PR #392, head 6a1b684a0db892dcef2924dd018a103d9c8e2cce. Nine unit tests and check_all.sh pass; fresh patched v02 audio check retains exactly the 2:44.58 doing-the/doing-was failure for J1300. Chief review requested on HOS #180 comment 6537867465; no merge or VO approval.",
       "history": [
         {
           "at": "2026-10-31T02:27Z",
@@ -116375,6 +116375,11 @@
           "at": "2026-10-31T02:35Z",
           "by": "codex",
           "what": "step 4 of 4 done: Opened HOS PR 392 at 6a1b684a0db892dcef2924dd018a103d9c8e2cce; review handoff posted on HOS desk comment 6537867465. Code tests pass; VO correctly remains FAIL for J1300."
+        },
+        {
+          "at": "2026-10-31T02:35Z",
+          "by": "codex",
+          "what": "done: HOS PR #392, head 6a1b684a0db892dcef2924dd018a103d9c8e2cce. Nine unit tests and check_all.sh pass; fresh patched v02 audio check retains exactly the 2:44.58 doing-the/doing-was failure for J1300. Chief review requested on HOS #180 comment 6537867465; no merge or VO approval."
         }
       ],
       "remaining_action": "Chief review and merge PR 392 after CI",
@@ -116389,7 +116394,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/392"
     },
     {
       "id": "J1300",
