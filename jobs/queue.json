@@ -118978,19 +118978,28 @@
           "at": "2026-10-31T09:35Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-31T09:35Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1321/J1324 history; AR2 v08 delivered in PR365, but queue still records pending Chief picture acceptance. AR1 v01 and AR3 v09 must remain preserved."
         }
       ],
-      "remaining_action": "Verify corrected AR2 evidence and preserve the existing release hold",
+      "remaining_action": "Check AR2 v08 delivery and recorded Chief acceptance against J1321 hold",
       "kind": "chief",
       "recheck_of": "J1321",
       "due": "2026-10-31T10:29:25+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T09:35Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "Read J1321/J1324 history; AR2 v08 delivered in PR365, but queue still records pending Chief picture acceptance. AR1 v01 "
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
