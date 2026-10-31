@@ -119406,17 +119406,22 @@
           "at": "2026-10-31T10:08Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1334; starting read-only listing check on last 10 public OWB videos"
+        },
+        {
+          "at": "2026-10-31T10:09Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified top 10 public videos in 05_Analytics/owb/snapshots/2026-10-31.json (6dcL5rBmHPM..m09jUdwC5hk)"
         }
       ],
-      "remaining_action": "Identify and verify top 10 live public OWB videos in 2026-10-31.json snapshot",
+      "remaining_action": "Verify chapters, sources, end screens, and Shorts Related pills on all 10 live public videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T10:08Z",
+        "at": "2026-10-31T10:09Z",
         "by": "gemini",
-        "note": "Claimed J1334; starting read-only listing check on last 10 public OWB videos"
+        "note": "Identified top 10 public videos in 05_Analytics/owb/snapshots/2026-10-31.json (6dcL5rBmHPM..m09jUdwC5hk)"
       },
       "taskKeys": [
         "OWB:021",
