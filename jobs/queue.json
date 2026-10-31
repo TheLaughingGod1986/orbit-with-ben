@@ -1,5 +1,5 @@
 {
-  "next_id": 1297,
+  "next_id": 1298,
   "jobs": [
     {
       "id": "J0001",
@@ -116097,6 +116097,35 @@
       "taskKeys": [
         "HOS:006"
       ]
+    },
+    {
+      "id": "J1297",
+      "title": "HOS 008 Lightning: copy master v03 (cf1561c2) to HOS UAT for Ben's watch, verify sha (Chief h35 PASS on J1287)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief h35 PASS on J1287 (HOS #180, the h35 comment in this job's ref): HOS 008 Lightning master v03 is the 008 master. sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b, 539.626 s, -14.129 LUFS / -1.2 dBTP, picture = locked rough v12, VO lag 0.000 ms. HOS PR #390 merged by Chief. GBP0.\n\nDo (same as J0857/J0867 for 006/007):\n1. Source: NAS desk `/Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_desk/008/master_v03/hos_008_master_v03.mp4` (or the identical precheck copy). Check its sha256 first.\n2. Copy to iCloud `HOS UAT/008_Lightning-Franklin/hos_008_master_v03.mp4`. Create the folder if it is missing, and never overwrite. If house watch practice makes a `_PHONE` copy (006 v05/v06), make `hos_008_master_v03_PHONE.mp4` from this master with the house tool and record its sha. Never re-encode the master itself.\n3. Verify the sha256 on a fully downloaded copy (iCloud placeholders don't count). Byte size is 393,139,693.\n4. Record the UAT path and sha in HOS PIPELINE.json (008 edit note) with a normal commit and check_all PASS. Report on HOS #180 with a hos-desk header.\nDon't upload, don't touch YouTube/Studio, and don't change the listing. Don't message Ben or ask him to watch: his watch comes through the normal UAT board. Delete or move nothing, and keep master_v01/v02/v03 and every NAS copy. No ElevenLabs.\n",
+      "ref": "PENDING_H35",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T01:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T01:41Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "HOS 008 Lightning: copy master v03 (cf1561c2) to HOS UAT for Ben's watch, verify sha (Chief h35 PASS on J1287)",
+      "for": "cursor",
+      "kind": "listing"
     }
   ],
   "focus": [],
