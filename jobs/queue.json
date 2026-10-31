@@ -115190,8 +115190,8 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-31T01:10Z",
       "eta": "",
       "created_by": "chief",
@@ -115342,6 +115342,11 @@
           "at": "2026-10-31T01:32Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 008 master v03 sha cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b. Same v12 picture (video MD5 1ab08ec6, 12923 packets). Unshifted VO, lag 0.000 ms at 5/100/300/500 s on ffmpeg and afconvert. Same bed arrangement sha 142b7d41, seam 372.25 s, re-ducked. Ch3 whoosh 187.65 s, body end 188.41 s, 0.20 s before Franklin at 188.61 s. Ch2 stays 99.67 s. -14.1 LUFS, -1.2 dBTP, linear, A/V offset 0.001479 s. polish/picture/music/episode/package-lint exit 0. music 66.7 BPM, 127 placeholder warns, bed mp3 sha 40937135 unchanged. PR https://github.com/TheLaughingGod1986/history-of-science/pull/390 at f436c8a2. No UAT, no upload, no ElevenLabs."
+        },
+        {
+          "at": "2026-10-31T01:41Z",
+          "by": "chief",
+          "what": "cancelled"
         }
       ],
       "remaining_action": "Park HOS 008 master v03 for Chief",
