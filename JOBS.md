@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
 | J1345 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR3: clear duration graphic from eclipse and show unobscured totality | c70206699 |
 | J1347 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1348 | mini | open | – | – | listing · URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00) |  |
+| J1348 | mini | claimed | gemini | 2026-10-31T14:29Z | listing · URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00) |  |
 
 Recently finished:
 

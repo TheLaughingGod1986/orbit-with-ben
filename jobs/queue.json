@@ -120566,10 +120566,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-31T12:29Z",
+      "eta": "2026-10-31T14:29Z",
       "created_by": "claude",
       "created_at": "2026-10-31T12:27Z",
       "result": "",
@@ -120578,10 +120578,23 @@
           "at": "2026-10-31T12:27Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T12:29Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00)",
-      "kind": "listing"
+      "kind": "listing",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T12:29Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
