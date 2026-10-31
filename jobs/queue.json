@@ -1,5 +1,5 @@
 {
-  "next_id": 1338,
+  "next_id": 1339,
   "jobs": [
     {
       "id": "J0001",
@@ -119650,6 +119650,34 @@
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes"
+    },
+    {
+      "id": "J1338",
+      "title": "AR2: restore native detail in late ISS interval after J1324 FIX",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief Codex J1324 review, 31 Oct 2026: AR2 v08 FIX upheld after inspection of full-size 16.0/16.6s frames and 0.5s sheet. PR365 remains 14d7d1c4c. Prior binding ruling #6541774693; no successor repair was queued. J1324 and J1321 remain held, not approved.\n\nCorrect ONLY late non-DATA interval 14.766667–18.400s. Use a visibly sharper disjoint section of accepted real NASA Crew-2 footage, or reduce crop/enlargement if native detail demonstrably returns. Source identity must remain verified. Export and inspect full-size late preview before rendering; truss, panels and modules must retain real detail. No sharpening/grain to conceal lost detail, no luma key or feather-only fix. Preserve improved v08 opening/loop, approved 109m DATA original composite, South Pacific map, captions and all clocks. Preserve AR1 v01 and AR3 v09 exactly. No script, fact, title, audio or duration changes.\n\nRead original J1324 brief, PR365 J1324_CORRECTION_REPORT.md/assemble_j1324.py and binding h37/h40/h42 instructions. New version only; preserve all prior masters/manifests/hashes. Run unchanged picture_qa, polish, loop and SFX gates on actual new composite. Deliver full-size late preview and exact WARN frame if any, frame0, complete 0.5s sheet, raw gate outputs, exact AAC identity, changed intervals and durable NAS master with verified SHA256. Clean sparse worktree/PR; no media in git. Return for elected-Chief picture acceptance before J1324/J1321 can clear. Do not merge PR365 or send UAT/upload.\n\nGBP0; no mint/spend/publishing/schedule. OWB:030 linkage on first progress. Check disk; 9GB free and nas_offload found no eligible old scratch at this review. Keep current/previous and all recovery exclusions, no NAS deletes or overwrites. Detach any long render with log and .done and check before starting to avoid duplicate runs. Claim only when dispatched; no Ben action. This job is independent corrective production: do NOT depend on held J1324/J1321 (that would deadlock). Their acceptance waits on this delivery.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T10:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T10:36Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Replace smeared late ISS shot and deliver new version for picture acceptance",
+      "kind": "assembly"
     }
   ],
   "focus": [],
