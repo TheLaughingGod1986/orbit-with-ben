@@ -116071,20 +116071,27 @@
           "at": "2026-10-31T01:36Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T01:36Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: claimed; measuring disk and listing candidates"
         }
       ],
-      "remaining_action": "Copy-first move of the h34 candidate list to the NAS, then report free space",
+      "remaining_action": "Verify ignored shipped media, then copy-first to NAS",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-31T01:36Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed; measuring disk and listing candidates"
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     }
   ],
   "focus": [],
