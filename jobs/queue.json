@@ -125782,18 +125782,30 @@
           "at": "2026-10-31T21:00Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1413; starting read-only listing check on last 10 live OWB videos"
+        },
+        {
+          "at": "2026-10-31T21:01Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Linked films and started live verification of top 10 public OWB videos"
         }
       ],
-      "remaining_action": "Inspect last 10 live OWB videos from snapshots and Studio/API data",
+      "remaining_action": "Verify all 10 live OWB videos and next scheduled video",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T21:00Z",
+        "at": "2026-10-31T21:01Z",
         "by": "gemini",
-        "note": "Claimed J1413; starting read-only listing check on last 10 live OWB videos"
-      }
+        "note": "Linked films and started live verification of top 10 public OWB videos"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     },
     {
       "id": "J1414",
