@@ -98452,6 +98452,11 @@
           "at": "2026-10-31T07:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-01T00:00:00Z"
+        },
+        {
+          "at": "2026-10-31T07:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T08:40:00Z"
         }
       ],
       "remaining_action": "Await J1322 recovery, then verify >=10 GiB free before resuming v07 repairs",
@@ -98480,8 +98485,8 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1322 bounded NAS recovery completed and elected Chief verifies live Mini free space >=10 GiB under h43; park below 6 GiB. Preserve 2/3, h43-LOOP, accepted pickups, all repair gates and original approvals. J1318 review completed; no blanket move approval.",
-        "check_at": "2026-11-01T00:00:00Z"
+        "condition": "J1322 bounded NAS recovery completed and elected Chief verifies live Mini free space >=10 GiB under h43; park below 6 GiB. Preserve worker 2/3, h43-LOOP, accepted pickups and every repair gate. Review J1318 closed; only J1322 bounded move scope is approved.",
+        "check_at": "2026-10-31T08:40:00Z"
       }
     },
     {
