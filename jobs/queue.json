@@ -118700,13 +118700,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T08:59Z",
-      "eta": "2026-10-31T10:59Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T08:48Z",
-      "result": "",
+      "result": "parked for Chief: PR366 (566c9cdcc) evidence complete 4/4; exact-file disposition and measured headroom ruling required. 4.918 GiB free, 15.082 GiB short; empty eligible allowlist, 8057 KEEP files; all original J1322/J1100 holds and worker 2/3 h43-LOOP preserved. No moves/unlinks or NAS writes.",
       "history": [
         {
           "at": "2026-10-31T08:48Z",
@@ -118747,6 +118747,11 @@
           "at": "2026-10-31T09:06Z",
           "by": "codex",
           "what": "step 4 of 4 done: Evidence 566c9cdcc delivered in PR366; no moves/unlinks. 4.918 GiB free; 8057 KEEP decisions and 24 full-hash duplicate proofs; J1100 held"
+        },
+        {
+          "at": "2026-10-31T09:06Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: PR366 (566c9cdcc) evidence complete 4/4; exact-file disposition and measured headroom ruling required. 4.918 GiB free, 15.082 GiB short; empty eligible allowlist, 8057 KEEP files; all original J1322/J1100 holds and worker 2/3 h43-LOOP preserved. No moves/unlinks or NAS writes."
         }
       ],
       "remaining_action": "Chief exact-file allowlist ruling and fresh headroom verification",
