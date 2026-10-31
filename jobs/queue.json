@@ -115190,13 +115190,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-31T01:10Z",
-      "eta": "2026-10-31T04:10Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-30T20:59Z",
-      "result": "",
+      "result": "parked for Chief: HOS 008 master v03 sha cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b. Same v12 picture (video MD5 1ab08ec6, 12923 packets). Unshifted VO, lag 0.000 ms at 5/100/300/500 s on ffmpeg and afconvert. Same bed arrangement sha 142b7d41, seam 372.25 s, re-ducked. Ch3 whoosh 187.65 s, body end 188.41 s, 0.20 s before Franklin at 188.61 s. Ch2 stays 99.67 s. -14.1 LUFS, -1.2 dBTP, linear, A/V offset 0.001479 s. polish/picture/music/episode/package-lint exit 0. music 66.7 BPM, 127 placeholder warns, bed mp3 sha 40937135 unchanged. PR https://github.com/TheLaughingGod1986/history-of-science/pull/390 at f436c8a2. No UAT, no upload, no ElevenLabs.",
       "history": [
         {
           "at": "2026-10-30T20:59Z",
@@ -115327,19 +115327,34 @@
           "at": "2026-10-31T01:21Z",
           "by": "cursor",
           "what": "step 1 of 6 done: Unshifted VO is 25902071 samples. Full-file v12 decode is in progress on the NAS; no second music take."
+        },
+        {
+          "at": "2026-10-31T01:30Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: Master sha cf1561c2. Video MD5 matches v12, 12923 packets. -14.1 LUFS, -1.2 dBTP. VO lag 0.0 ms at 5/100/300/500 s, ffmpeg and afconvert. Ch3 whoosh 187.65 s, clearance 0.20 s. No ElevenLabs."
+        },
+        {
+          "at": "2026-10-31T01:32Z",
+          "by": "cursor",
+          "what": "step 5 of 6 done: PR 390 f436c8a2. Master sha cf1561c2. -14.1 LUFS, -1.2 dBTP, VO lag 0.0 ms. Gates exit 0. No ElevenLabs."
+        },
+        {
+          "at": "2026-10-31T01:32Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: HOS 008 master v03 sha cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b. Same v12 picture (video MD5 1ab08ec6, 12923 packets). Unshifted VO, lag 0.000 ms at 5/100/300/500 s on ffmpeg and afconvert. Same bed arrangement sha 142b7d41, seam 372.25 s, re-ducked. Ch3 whoosh 187.65 s, body end 188.41 s, 0.20 s before Franklin at 188.61 s. Ch2 stays 99.67 s. -14.1 LUFS, -1.2 dBTP, linear, A/V offset 0.001479 s. polish/picture/music/episode/package-lint exit 0. music 66.7 BPM, 127 placeholder warns, bed mp3 sha 40937135 unchanged. PR https://github.com/TheLaughingGod1986/history-of-science/pull/390 at f436c8a2. No UAT, no upload, no ElevenLabs."
         }
       ],
-      "remaining_action": "Mix HOS 008 master v03 from the unshifted VO, the existing bed, and the moved chapter-3 whoosh",
+      "remaining_action": "Park HOS 008 master v03 for Chief",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "progress": {
-        "step": 1,
+        "step": 5,
         "of": 6,
-        "at": "2026-10-31T01:21Z",
+        "at": "2026-10-31T01:32Z",
         "by": "cursor",
-        "note": "Unshifted VO is 25902071 samples. Full-file v12 decode is in progress on the NAS; no second music take."
+        "note": "PR 390 f436c8a2. Master sha cf1561c2. -14.1 LUFS, -1.2 dBTP, VO lag 0.0 ms. Gates exit 0. No ElevenLabs."
       }
     },
     {
