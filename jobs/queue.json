@@ -118288,9 +118288,14 @@
           "at": "2026-10-31T08:05Z",
           "by": "codex",
           "what": "step 1 of 4 done: Resumed prior 1/4 checkpoint; no duplicate batch started; NAS mounted and df about 11 GiB free."
+        },
+        {
+          "at": "2026-10-31T08:06Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Diagnostic exit 0; all three NAS files freshly rehashed and pointers verified. Total unique allocated removed 2712698880 bytes; retained exact candidates and J1213/J1320/J1321 dependencies recorded."
         }
       ],
-      "remaining_action": "Read diagnostic completion and verify remaining eligible scratch against active inputs",
+      "remaining_action": "Record verified recovery and exact retained candidates for Chief shortfall decision",
       "due": "2026-11-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 2,
@@ -118304,11 +118309,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-31T08:05Z",
+        "at": "2026-10-31T08:06Z",
         "by": "codex",
-        "note": "Resumed prior 1/4 checkpoint; no duplicate batch started; NAS mounted and df about 11 GiB free."
+        "note": "Diagnostic exit 0; all three NAS files freshly rehashed and pointers verified. Total unique allocated removed 2712698880"
       },
       "taskKeys": [
         "OWB:027",
