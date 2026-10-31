@@ -47,6 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
 | J1354 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J1355 | any | claimed | codex | 2026-10-31T15:33Z | chief · AR cohort: integrate accepted correction records and reconcile downstream handoff |  |
+| J1356 | mini | open (after J1355) | – | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 
 Recently finished:
 

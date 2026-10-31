@@ -1,5 +1,5 @@
 {
-  "next_id": 1356,
+  "next_id": 1357,
   "jobs": [
     {
       "id": "J0001",
@@ -121225,6 +121225,34 @@
       "taskKeys": [
         "OWB:030"
       ]
+    },
+    {
+      "id": "J1356",
+      "title": "AR cohort: verify finished cuts and prepare final-watch handoff",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1355 elected-Chief handoff, 31 October 2026. Claim only when dispatched; link progress OWB:030. Read J1355_INTEGRATION.md and J1321_CLOSEOUT.json in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10. Accepted cohort is AR1 v01 (49b3e4f0f7276885f942d3451978eba33c9a2fec68216fcafdd79466f877cd07), AR2 v06 (6d517aad6c61a0f12d67b4f2f7990f94ea165e17e01055b56873e89415bf8e67), AR3 v05 (3a2fc5b53e2cfafe4d55422f4f8ae7894ffdb81a727bf47f605e01070a58f13d). Never substitute the separate PR363/365/369 AR2 v10 + AR3 v09 branch. J1308/J1321 production and picture corrections are complete; picture acceptance is not publishing approval.\n\nPerform the next finished-watch/gate handoff, not a rebuild: verify these exact masters and existing script/facts/VO locks and test-specific timing authorisations; watch/listen to the full moving cuts and check all applicable gates and packaging, retaining accepted WARN decisions. Do not claim a new audio audition from frame sheets. Establish any remaining gate work explicitly; failed gates cannot be waived. Preserve originals and manifests. No mint, spend, media rewrite, upload, schedule, retitle, privacy change or Buffer post authorised. Existing date/credit/watch holds remain; do not invent a watch deadline or treat picture PASS as Ben approval.\n\nIf ready for Ben, prepare durable watch copies under distinct per-cut paths/IDs, verify their hashes and complete playback mapping, then use jobs.py awaits --agent <own id> with --add for all three Shorts and a clear watch-by time selected under existing scheduling rules. Verify the published board cards and Play links before reporting the handoff. A final-watch preparation completion must leave the required watch signal; it is not permission to publish. If another worker has since created the same handoff, reconcile it instead of creating duplicate tasks/cards. Chief authority must be rechecked before protected decisions; use own agent id. GBP0. Clean worktree and PR for records, no media in git. Stop after this one task.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J1355",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T13:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T13:34Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify accepted AR1 v01 AR2 v06 AR3 v05 gates and prepare Ben watch cards",
+      "kind": "chief"
     }
   ],
   "focus": [],
