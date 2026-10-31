@@ -1,5 +1,5 @@
 {
-  "next_id": 1343,
+  "next_id": 1344,
   "jobs": [
     {
       "id": "J0001",
@@ -118417,6 +118417,11 @@
           "at": "2026-10-31T10:33Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-31T11:31:35Z"
+        },
+        {
+          "at": "2026-10-31T11:32Z",
+          "by": "relay",
+          "what": "condition verification queued: J1343"
         }
       ],
       "remaining_action": "Correct AR2 late ISS picture detail and obtain picture acceptance; cohort held from UAT/upload",
@@ -118434,10 +118439,11 @@
       "hold": {
         "type": "input",
         "condition": "AR2 late ISS interval 14.766667-18.4s corrected for visibly smeared detail, with unmodified gates and elected-Chief picture acceptance; PR365 remains v08 at 14d7d1c4c rejected by ruling 6541774693; preserve AR1 v01 and AR3 v09",
-        "check_at": "2026-10-31T11:31:35Z",
+        "check_at": "2026-10-31T12:32:54+00:00",
         "last_recheck": "J1336",
         "checked_at": "2026-10-31T10:33:45+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1343"
       },
       "escalated_at": "2026-10-31T10:28Z"
     },
@@ -120150,6 +120156,37 @@
         "HOS:009",
         "HOS:010"
       ]
+    },
+    {
+      "id": "J1343",
+      "title": "Chief: verify condition for J1321",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1321: AR2 late ISS interval 14.766667-18.4s corrected for visibly smeared detail, with unmodified gates and elected-Chief picture acceptance; PR365 remains v08 at 14d7d1c4c rejected by ruling 6541774693; preserve AR1 v01 and AR3 v09. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1321 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-31T11:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T11:32Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Correct AR2 late ISS picture detail and obtain picture acceptance; cohort held from UAT/upload",
+      "kind": "chief",
+      "recheck_of": "J1321",
+      "due": "2026-10-31T12:32:54+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
