@@ -1,5 +1,5 @@
 {
-  "next_id": 1308,
+  "next_id": 1309,
   "jobs": [
     {
       "id": "J0001",
@@ -116823,6 +116823,35 @@
       "remaining_action": "Chief review of AR1–AR3 graphics; branch publication approval required",
       "for": "codex",
       "kind": "chart"
+    },
+    {
+      "id": "J1308",
+      "title": "OWB Apophis-mould Shorts AR1-AR3: assembly from J1306 VO + J1307 v03 graphics (after both Chief PASS), park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "OWB Apophis replication test: assembly of the 3 primary Shorts, AR1 (2024 YR4), AR2 (ISS) and AR3 (2027 eclipse). It follows J1279 (h37 script PASS), J1306 (VO) and J1307 (code graphics, Chief h38).\n\nGates. Start only when BOTH of these are true:\n- J1306 VO has a Chief PASS. This job is `after J1306`, so Chief must close J1306 as **done**, not cancelled, for this job to release.\n- J1307 graphics have a Chief PASS on the v03 pack (J1307 status done; v02 got h38 FIX).\nIf J1307 isn't done yet, block with \"waiting on J1307 graphics PASS\" and stop. Don't use the v02 pack.\n\nBinding reading:\n- SCRIPTS_AND_PACKAGING_v02.md, §4–§6 VISUAL MUST lines.\n- CHIEF_H37_CORRECTIONS.md (6c7d0f83b, which wins on conflict, especially the C4/C5 plate rules and the C7/C8 timing rules).\n- GRAPHICS_REPORT.md for the PASSed pack.\n- The J1306 VO_REPORT.md timings.\nAll of these are in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/.\n\n1. Cut each Short to VO + 1.0 s loop tail (17.0–20.0 s). Re-time the parameterised graphics to the measured spoken lines with render_graphics.py `--only/--duration` into NEW output dirs. Never overwrite a pack.\n2. Each card or graphic sits only on its own spoken line. Keep them clear of 0–2 s and the title interval. Never stack the map labels with a date card. One label at a time.\n3. Plates follow C4/C5:\n   - AR2 frame 0 is moving station footage (Crew-2 fly-around or a code-rendered ISS).\n   - No Bahamas plate and no Discovery lettering.\n   - Mask the NOAA logo.\n   - Stamp the 2017 strip `2017`.\n   - Credit NASA/Aubrey Gemignani.\n4. Report the payoff % from the real VO (C8). Use only the C7 trims if a cut is over 20.0 s.\n5. Run the full Short gates (polish_gate, picture_qa with jitter and near-black checks on the real composites, the loop seam) and render 1080x1920 masters.\n6. Commit the edit scripts and ASSEMBLY_REPORT.md. Media stays off git under 07_Edit-Project/.\n7. Park for Chief.\n\nNo mint, no upload, no schedule. £0.\n",
+      "ref": "9a2030925",
+      "film": "",
+      "stage": "",
+      "after": "J1306",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T03:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T03:44Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "OWB Apophis-mould Shorts AR1-AR3: assembly from J1306 VO + J1307 v03 graphics (after both Chief PASS), park for Chief",
+      "for": "cursor",
+      "kind": "assembly"
     }
   ],
   "focus": [],
