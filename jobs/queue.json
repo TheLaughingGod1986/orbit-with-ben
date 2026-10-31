@@ -117233,13 +117233,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T04:47Z",
-      "eta": "2026-10-31T04:57Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T04:38Z",
-      "result": "",
+      "result": "Verified unmet: J1307 v03 ruled FIX by Chief h41 (6539186497), J1307 reopened 87b1d988d. J1308 held (dependency, a34f0dc17), next check 2026-10-31T07:30Z.",
       "history": [
         {
           "at": "2026-10-31T04:38Z",
@@ -117250,6 +117250,11 @@
           "at": "2026-10-31T04:47Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T04:48Z",
+          "by": "chief",
+          "what": "done: Verified unmet: J1307 v03 ruled FIX by Chief h41 (6539186497), J1307 reopened 87b1d988d. J1308 held (dependency, a34f0dc17), next check 2026-10-31T07:30Z."
         }
       ],
       "remaining_action": "Verify readiness: Waiting on J1307 graphics PASS. Assembly stays stopped; v02 pack unused.",
@@ -117264,7 +117269,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6539186497"
     }
   ],
   "focus": [],
