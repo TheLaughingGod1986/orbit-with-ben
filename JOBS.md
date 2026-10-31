@@ -47,10 +47,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1324 | mini | blocked | codex | – | assembly · AR2: finish real ISS composite after J1323 picture FIX |  |
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
 | J1345 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR3: clear duration graphic from eclipse and show unobscured totality | c70206699 |
-| J1349 | any | claimed | codex | 2026-10-31T14:54Z | chief · Chief: verify condition for J1321 |  |
 
 Recently finished:
 
+- J1349 done: Chief: verify condition for J1321 (AR3 v05 picture PASS, PR373. Verified PR372 hashes, unchanged AAC, clear duration bars and adjacent credited totality; retained WARN accepted. J1321 reopened for close-out only. GBP0; no upload/schedule/UAT handoff.)
 - J1348 done: URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00) (done)
 - J1347 done: Chief: verify condition for J0985 (Condition verified unmet. J1002 45ef75589 and J1003 0c18bb2cb complete; no later audit commit. Both persisted Mercury 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp); main audit/EVIDENCE map this to 4.09-4.29s, while Chief review note and J1003 result retain 0.18->0.19 (-5.76pp) and different cut/VO mapping. No final independent Chief PASS. J0985 retained blocked via wait --recheck J1347; next check 2026-10-31T19:00Z. Readback PASS. No spend or publishing changes.)
 - J1346 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
@@ -60,4 +60,3 @@ Recently finished:
 - J1341 done: Chief: verify condition for J1130 (done)
 - J1340 done: Chief: verify condition for J0978 (done)
 - J1339 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1337 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-31T10:49Z across 62 unique videos (28 public, 12 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md, HOS 0afdae08, 0 new fixes needed))
