@@ -124358,19 +124358,24 @@
           "at": "2026-10-31T19:36Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original brief, approval history and afed1c552 source checkpoint; no new thread authorization."
+        },
+        {
+          "at": "2026-10-31T19:36Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All eight afed1c552 hashes match; both beds retain nonempty ASR, no source listening result/log/done exists. Disk 36.453 GiB."
         }
       ],
-      "remaining_action": "Verify source hashes and current listening evidence",
+      "remaining_action": "Record unmet audio condition and finish verification",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T19:02:22+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T19:36Z",
         "by": "codex",
-        "note": "Read original brief, approval history and afed1c552 source checkpoint; no new thread authorization."
+        "note": "All eight afed1c552 hashes match; both beds retain nonempty ASR, no source listening result/log/done exists. Disk 36.453"
       },
       "taskKeys": [
         "OWB:027",
