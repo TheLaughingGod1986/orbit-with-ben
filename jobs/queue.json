@@ -95294,7 +95294,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -95306,6 +95306,11 @@
           "at": "2026-10-28T06:42Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T14:53Z",
+          "by": "claude",
+          "what": "cancelled: resolved without Ben: Buffer auth works again (J1348 mirrored OWB + HOS through 7 Nov on 31 Oct). The old BbsyFrV8kCY v05 posts went out on 28 Oct and cannot be edited after sending; the Facebook v13a repost stands (BUFFER_POSTS.json gJwNJN_yMKU)."
         }
       ],
       "remaining_action": "Restore Buffer credential, then update the existing Apophis posts to v13a without duplicates",
@@ -98181,13 +98186,13 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-31T06:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "parked for Chief: live df 8.3 GiB is below Chief h43 restart minimum 10 GiB. Required nas_offload.py --apply found no eligible scratch (8506 MB unchanged). Preserve 2/3, OWB:027/028 links, accepted pickups and h43-LOOP ruling; restore headroom before restarting v07 repairs. No media edits/spend/upload this run.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -98543,6 +98548,11 @@
           "at": "2026-10-31T14:46Z",
           "by": "relay",
           "what": "condition verification queued: J1369"
+        },
+        {
+          "at": "2026-10-31T14:53Z",
+          "by": "claude",
+          "what": "reopened: Acting Chief (Claude) 31 Oct ~14:55Z: J1322 recovered space to 10.689 GiB free (>= the h43 10 GiB restart minimum). I can't read df from the cloud, so the restart is CONDITIONAL: the claiming worker runs df first and proceeds only if >=10 GiB free, otherwise re-blocks at once with the reading; park below 6 GiB mid-run as before. Preserve worker 2/3, OWB:027/028 links, h43-LOOP ruling, accepted pickups and every gate. No upload, spend or schedule change."
         }
       ],
       "remaining_action": "Await verified >=10 GiB free before resuming the existing v07 repair and gate work",
@@ -98561,20 +98571,7 @@
         "OWB:028"
       ],
       "escalated_at": "2026-10-31T08:04Z",
-      "urgent": 1,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-31T06:01Z",
-        "by": "codex",
-        "note": "Preserved prior 2/3 plan and completed S2/S5 pickups. Live df 8.3 GiB; required nas_offload --apply found nothing eligib"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "J1331 Chief review 31 Oct: PR367 accepted, recovery allowlist empty; J1322 still held. Live 09:50:55Z df 8851356 KiB (8.441 GiB) below 10 GiB restart. Restart only after elected-Chief live verification >=10 GiB; park below 6 GiB. Preserve worker 2/3, OWB:027/028, h43-LOOP, accepted pickups and every gate. No restart authorised.",
-        "check_at": "2026-10-31T15:46:06+00:00",
-        "recheck_task": "J1369"
-      }
+      "urgent": 1
     },
     {
       "id": "J1101",
@@ -118259,13 +118256,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-31T07:39Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-31T07:11Z",
-      "result": "parked for Chief: all 4 NAS files are 17 Oct J0432 seam-fix overwrites (commit 7a5608724) and none match the Oct 10-13 UPLOADS.json / PACKAGE_UPLOAD_RESULT sha256s: (1) ZpEA8stoSPA owb_sa_s4_uranus_v01.mp4 moved by J1296 today has sha 0aec6e86525d... vs uploaded c4d1262afa79... (swap to v06 held in J1212); (2) bSjWiCbB7pY fri13_ingenuity_72_v02.mp4 entered the 14-day window today (archived 24 Oct in owbshorts.tar) with sha 50ba8955c20b... vs uploaded 45683cdf147e...; (3) iyvWYFP_ETA mon09_night_cold_v01.mp4 in owbshorts.tar has sha 0195a5fb957c... vs uploaded 48466c33946e... (J1181 ruling); (4) N42gKBbD7tE thu12_length_test_dust_v01.mp4 in owbshorts.tar has sha b6dd4a232fa3... vs uploaded 7c399d5c3d75.... Per J1181 ruling and brief sha256 match rule, did not copy mismatched renders back over scheduled paths. Added all 4 paths + UPLOADS.json scheduled-Short guard to scripts/nas_offload.py and _desk/logs/J1296_move.py, and refreshed UPCOMING_SHORTS_GATE.md (commit 049badd8a). GBP0.",
+      "result": "Acting Chief (Claude) 31 Oct: correct call not to copy back. None of the 4 NAS files are the uploaded bytes (all are 17 Oct J0432 seam-fix renders), so NO FILE for ZpEA8stoSPA, bSjWiCbB7pY, iyvWYFP_ETA and N42gKBbD7tE is a known, accepted state: the YouTube copies are canonical and air as scheduled (J1181 precedent). The keep-list guard in nas_offload.py (049badd8a) stands. Follow-up J1370: let the gate show these as KNOWN instead of NO FILE.",
       "history": [
         {
           "at": "2026-10-31T07:11Z",
@@ -118316,6 +118313,16 @@
           "at": "2026-10-31T10:14Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-31T14:53Z",
+          "by": "claude",
+          "what": "claimed by acting Chief for ruling"
+        },
+        {
+          "at": "2026-10-31T14:53Z",
+          "by": "claude",
+          "what": "done: Acting Chief (Claude) 31 Oct: correct call not to copy back. None of the 4 NAS files are the uploaded bytes (all are 17 Oct J0432 seam-fix renders), so NO FILE for ZpEA8stoSPA, bSjWiCbB7pY, iyvWYFP_ETA and N42gKBbD7tE is a known, accepted state: the YouTube copies are canonical and air as scheduled (J1181 precedent). The keep-list guard in nas_offload.py (049badd8a) stands. Follow-up J1370: let the gate show these as KNOWN instead of NO FILE."
         }
       ],
       "remaining_action": "Parked for Chief: all 4 NAS exports are 17 Oct J0432 overwrites (mismatched vs UPLOADS.json sha256)",
@@ -118576,13 +118583,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-10-31T08:05Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T07:36Z",
-      "result": "parked for Chief: recovery verified at 10.689 GiB free, 20 GiB target unmet; exact retained candidate disposition in local commit c0f876ffa (/private/tmp/J1322-records). Five files recovered 2712698880 allocated bytes; J1100 remains held pending elected-Chief threshold verification. Evidence branch push rejected by automatic approval review as unverified egress; commit remains local.",
+      "result": "Acting Chief (Claude) 31 Oct: recovery accepted (10.689 GiB free, five verified files, 2.71 GB). The 20 GiB target stays open but doesn't block J1100 (its bar is 10 GiB). Local evidence commit c0f876ffa: push it via a normal PR when the review gate allows.",
       "history": [
         {
           "at": "2026-10-31T07:36Z",
@@ -118668,6 +118675,16 @@
           "at": "2026-10-31T10:14Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-31T14:53Z",
+          "by": "claude",
+          "what": "claimed by acting Chief for ruling"
+        },
+        {
+          "at": "2026-10-31T14:53Z",
+          "by": "claude",
+          "what": "done: Acting Chief (Claude) 31 Oct: recovery accepted (10.689 GiB free, five verified files, 2.71 GB). The 20 GiB target stays open but doesn't block J1100 (its bar is 10 GiB). Local evidence commit c0f876ffa: push it via a normal PR when the review gate allows."
         }
       ],
       "remaining_action": "Recheck headroom and picture dependencies; retain all files until exact recovery eligibility is proven",
@@ -122231,7 +122248,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -122243,6 +122260,11 @@
           "at": "2026-10-31T14:46Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T14:53Z",
+          "by": "claude",
+          "what": "cancelled: moot: J1100 reopened by acting Chief with a live df guard at claim"
         }
       ],
       "remaining_action": "Verify readiness: Await verified >=10 GiB free before resuming the existing v07 repair and gate work",
