@@ -124504,19 +124504,24 @@
           "at": "2026-10-31T19:42Z",
           "by": "codex",
           "what": "step 0 of 3 done: Check original hold, recompute raw curves, then record and verify the readiness decision."
+        },
+        {
+          "at": "2026-10-31T19:42Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original approval history checked. Latest audit commit remains 0c18bb2cb; review line 67 and J1003 result still conflict with both persisted mature raw curves. No final independent audit PASS."
         }
       ],
-      "remaining_action": "Verify Mercury retention reconciliation and independent audit approval",
+      "remaining_action": "Record unmet Mercury reconciliation condition and next verification",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-31T20:00:34+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T19:42Z",
         "by": "codex",
-        "note": "Check original hold, recompute raw curves, then record and verify the readiness decision."
+        "note": "Original approval history checked. Latest audit commit remains 0c18bb2cb; review line 67 and J1003 result still conflict"
       },
       "taskKeys": [
         "OWB:021",
