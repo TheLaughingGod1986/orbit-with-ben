@@ -68026,10 +68026,15 @@
           "at": "2026-10-31T02:24Z",
           "by": "relay",
           "what": "condition verification queued: J1298"
+        },
+        {
+          "at": "2026-10-31T02:27Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-10-31T09:00:00Z"
         }
       ],
       "kind": "vo",
-      "remaining_action": "Parked for Chief: review HOS 013 VO v02",
+      "remaining_action": "Chief rules HOS 013 VO after J1299+J1300+J1301",
       "progress": {
         "step": 4,
         "of": 4,
@@ -68042,9 +68047,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-10-31T03:24:50+00:00",
-        "recheck_task": "J1298"
+        "condition": "Held by Chief, not PASS, not cancelled (HOS #180, Claude 6537756171): vo_check FAILs 5 lines on v02; no PASS while it FAILs (override is Ben's). Waits on J1299 (vo_check Lyell/bedder/ordinal fix PR merged), J1300 (re-hear 'doing the shaping', pickup v03 only if needed) and J1301 (unmodified vo_check PASS on the final take, parked for Chief). Then Chief rules v02/v03 normally.",
+        "check_at": "2026-10-31T09:00:00Z",
+        "last_recheck": "J1298",
+        "checked_at": "2026-10-31T02:27:57+00:00",
+        "checked_by": "chief"
       }
     },
     {
