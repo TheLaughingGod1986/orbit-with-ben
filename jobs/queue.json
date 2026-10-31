@@ -101340,9 +101340,14 @@
           "at": "2026-10-31T10:51Z",
           "by": "relay",
           "what": "condition verification queued: J1341"
+        },
+        {
+          "at": "2026-10-31T11:28Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T17:28:00Z"
         }
       ],
-      "remaining_action": "Restore read-only HOS Studio access and verify thumbnail-test completion before title-only test",
+      "remaining_action": "Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -101355,13 +101360,12 @@
         "HOS:002"
       ],
       "hold": {
-        "type": "test",
-        "condition": "Not verifiable at 2026-10-31T04:52Z: no fresh Studio read. J1282 (30 Oct 20:46Z) found the mini browser session denied HOS Studio access (personal channel only; _desk/handoff/J1282). Last successful read J1251 (30 Oct): J1129 MISSING ELEMENT v02 thumbnail-only test on AL_-qlWko_g still running, about 12 d 13 h estimated remaining. Needs a fresh Studio read confirming the test ended, its actual completion time, and London date at least the next day.",
-        "check_at": "2026-10-31T11:51:42+00:00",
-        "last_recheck": "J1303",
-        "checked_at": "2026-10-31T04:50:08+00:00",
-        "checked_by": "chief",
-        "recheck_task": "J1341"
+        "type": "input",
+        "condition": "Fresh 31 Oct 11:28 UTC read cannot verify completion: video page errors and both CDP 9222/9223 sessions deny HOS channel access (evidence _desk/handoff/J1341). Require readable Studio report confirming J1129 MISSING ELEMENT v02 test ended, actual completion timestamp, and at least the following London calendar day.",
+        "check_at": "2026-10-31T17:28:00Z",
+        "last_recheck": "J1341",
+        "checked_at": "2026-10-31T11:28:32+00:00",
+        "checked_by": "codex"
       }
     },
     {
