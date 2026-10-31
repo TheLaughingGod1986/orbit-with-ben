@@ -118255,6 +118255,11 @@
           "at": "2026-10-31T07:55Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: all 4 NAS files are 17 Oct J0432 seam-fix overwrites (commit 7a5608724) and none match the Oct 10-13 UPLOADS.json / PACKAGE_UPLOAD_RESULT sha256s: (1) ZpEA8stoSPA owb_sa_s4_uranus_v01.mp4 moved by J1296 today has sha 0aec6e86525d... vs uploaded c4d1262afa79... (swap to v06 held in J1212); (2) bSjWiCbB7pY fri13_ingenuity_72_v02.mp4 entered the 14-day window today (archived 24 Oct in owbshorts.tar) with sha 50ba8955c20b... vs uploaded 45683cdf147e...; (3) iyvWYFP_ETA mon09_night_cold_v01.mp4 in owbshorts.tar has sha 0195a5fb957c... vs uploaded 48466c33946e... (J1181 ruling); (4) N42gKBbD7tE thu12_length_test_dust_v01.mp4 in owbshorts.tar has sha b6dd4a232fa3... vs uploaded 7c399d5c3d75.... Per J1181 ruling and brief sha256 match rule, did not copy mismatched renders back over scheduled paths. Added all 4 paths + UPLOADS.json scheduled-Short guard to scripts/nas_offload.py and _desk/logs/J1296_move.py, and refreshed UPCOMING_SHORTS_GATE.md (commit 049badd8a). GBP0."
+        },
+        {
+          "at": "2026-10-31T10:14Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for Chief: all 4 NAS exports are 17 Oct J0432 overwrites (mismatched vs UPLOADS.json sha256)",
@@ -118277,7 +118282,8 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "escalated_at": "2026-10-31T10:14Z"
     },
     {
       "id": "J1321",
@@ -118483,6 +118489,11 @@
           "at": "2026-10-31T09:51Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-31T10:30:00Z"
+        },
+        {
+          "at": "2026-10-31T10:14Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Recheck headroom and picture dependencies; retain all files until exact recovery eligibility is proven",
@@ -118513,7 +118524,8 @@
         "type": "dependency",
         "condition": "J1331 Chief ruling: PR367 accepted/merged, all 120 UAT candidates and three scratch families KEEP; approved new recovery allowlist empty (0 bytes). Await J1321/J1324 corrected-picture acceptance and exact current/previous/source exclusion clearance before any new candidate proposal; no automatic move or broad scan. Recheck live headroom and changed dependency evidence at 10:30Z, retain 3/4 and all exclusions. Watch correction is J1333 and does not itself clear files.",
         "check_at": "2026-10-31T10:30:00Z"
-      }
+      },
+      "escalated_at": "2026-10-31T10:14Z"
     },
     {
       "id": "J1323",
