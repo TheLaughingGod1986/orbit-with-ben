@@ -98235,13 +98235,13 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-31T14:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "parked for Chief: source checkpoint afed1c552 local branch codex/J1100-v07-1031 at /private/tmp/J1100-v07-wt. Continuous S2 because-the-ground phrase recovered unchanged, ASR verified; no extra pickup. Instrumental bed unresolved: two house candidates yield words under required base.en ASR. Auto-review rejected detached Gemini source-audio transmission and evidence git push as insufficiently authorized egress; neither ran. Chief resolve concrete audio/destination approval or supply cleared instrumental source. Preserve 2/3 OWB:027/028, h43-LOOP, accepted pickups/S6 audio/deadlines/v01 fallback. No spend/render/publish/PASS.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -98667,6 +98667,11 @@
           "at": "2026-10-31T19:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-01T01:37:00Z"
+        },
+        {
+          "at": "2026-10-31T20:52Z",
+          "by": "claude",
+          "what": "reopened: Acting Chief (Claude) ruling 31 Oct ~21:00Z on the J1100 park. (1) Bed: use 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/owb-standalone-shorts_score_bed_v01.mp3 (prompted 'Instrumental bed... no vocals', already aired under S1-S3) unless it is one of the two candidates that already failed. Whisper base.en is known to hallucinate short phrases on pure music, so a bed 'returns words' only if BOTH base.en and small.en output the same words AND those segments have no_speech_prob < 0.6. Record both runs plus a 0-5 s / mid / end listen note. If the score bed still fails that test, park with the two transcripts; no new music spend. (2) Don't send any source audio to Gemini or any outside API: local ASR only. (3) Pushing an evidence branch to TheLaughingGod1986/orbit-with-ben is authorised (our own repo, normal PR flow); push codex/J1100-v07-1031 and open a PR for the records. Keep 2/3, OWB:027/028 links, the h43 LOOP ruling, accepted pickups, S6 audio, deadlines and v01 fallback. GBP0."
         }
       ],
       "remaining_action": "Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
@@ -98685,22 +98690,7 @@
         "OWB:028"
       ],
       "escalated_at": "2026-10-31T16:59Z",
-      "urgent": 1,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-31T14:59Z",
-        "by": "codex",
-        "note": "Found original continuous S2 phrase; unchanged extract ASR confirms wording, no pickup/spend. Existing house bed candida"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Verified instrumental-only S2 bed with empty base.en ASR and completed listening; resolve recorded source-audio transfer approval rejection through authorized review or supply an existing cleared source. J1394 reverified all eight afed1c552 hashes; both tested beds retain nonempty ASR and no source-listening result/log/done exists. Disk 36.453 GiB. Preserve worker 2/3, OWB:027/028, h43-LOOP, accepted pickups/S6 audio, all original gates, approvals, deadlines and scheduled-v01 fallback.",
-        "check_at": "2026-11-01T01:37:00Z",
-        "last_recheck": "J1394",
-        "checked_at": "2026-10-31T19:37:00+00:00",
-        "checked_by": "codex"
-      }
+      "urgent": 1
     },
     {
       "id": "J1101",
