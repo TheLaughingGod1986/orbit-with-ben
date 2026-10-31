@@ -2,7 +2,7 @@
 """Check delivery alpha/band/frame counts and build a diagnostic still reel for picture_qa.
 The neutral navy is a QA display background, NOT an assembly plate or film approval.
 """
-import argparse,hashlib,json,subprocess,itertools
+import argparse,hashlib,json,subprocess,itertools,sys
 from pathlib import Path
 from PIL import Image,ImageDraw
 p=argparse.ArgumentParser();p.add_argument('media',type=Path);p.add_argument('--qa-script',type=Path,required=True);a=p.parse_args()
@@ -15,6 +15,8 @@ for i,item in enumerate(m['items']):
  for f in frames:
   im=Image.open(f);assert im.mode=='RGBA' and im.size==(1080,1920)
   box=im.getchannel('A').getbbox();assert box is None or (box[1]>=656 and box[3]<=1264),(f,box)
+  if item['name']=='ar1_odds' and 0<int(f.stem.split('_')[-1])<item['frames']-1:
+   assert im.crop((0,835,1080,910)).getchannel('A').getbbox(), (f,'first odds line disappeared')
   hashes.append(hashlib.sha256(f.read_bytes()).hexdigest())
   all_hashes[str(f.relative_to(a.media))]=hashes[-1]
  assert len(set(hashes))>1,(item['name'],'no animation')
@@ -29,6 +31,8 @@ for i,item in enumerate(m['items']):
 (out/'delivery_checks.json').write_text(json.dumps(checks,indent=2)+'\n')
 (out/'cuts.json').write_text(json.dumps(cuts,indent=2)+'\n');sheet.save(out/'all_stills.jpg')
 subprocess.run(['ffmpeg','-v','error','-y','-framerate','1','-i',str(out/'still_%03d.png'),'-c:v','libx264','-r','30','-pix_fmt','yuv420p',str(out/'still_review.mp4')],check=True)
-r=subprocess.run(['python3',str(a.qa_script),str(out/'still_review.mp4'),'--cuts',str(out/'cuts.json'),'--out-dir',str(out/'picture'),'--no-jitter'],capture_output=True,text=True)
+r=subprocess.run([sys.executable,str(a.qa_script),str(out/'still_review.mp4'),'--cuts',str(out/'cuts.json'),'--out-dir',str(out/'picture'),'--no-jitter'],capture_output=True,text=True)
 (out/'picture_qa_stdout.txt').write_text(r.stdout+r.stderr);print(r.stdout);print('picture_qa exit',r.returncode)
 print('Delivery geometry/alpha/count checks succeeded:',len(checks),'sequences')
+
+raise SystemExit(r.returncode)

@@ -23,13 +23,13 @@ NAMES=list(CARDS)+['ar1_size','ar1_miss','ar2_station','ar2_nemo','ar3_path','ar
 def ease(v):
  v=max(0.,min(1.,v)); return v*v*(3-2*v)
 
-def label(im,text,y=720,opacity=1):
+def label(im,text,y=720,opacity=1,spacing=100):
  # 96px Arial Black gives 69px capitals: 11.35% of the centre band.
  layer=Image.new('RGBA',(W,H));d=ImageDraw.Draw(layer);f=ImageFont.truetype(FONT,96)
  for i,line in enumerate(text.split('\n')):
   b=d.textbbox((0,0),line,font=f); width=b[2]-b[0]
   if width>980: raise ValueError('Label too wide: '+line)
-  d.text(((W-width)/2,y+i*100-b[1]),line,font=f,fill=WHITE,stroke_width=4,stroke_fill=(12,24,42,255))
+  d.text(((W-width)/2,y+i*spacing-b[1]),line,font=f,fill=WHITE,stroke_width=4,stroke_fill=(12,24,42,255))
  layer.putalpha(layer.getchannel('A').point(lambda a:round(a*opacity)))
  im.alpha_composite(layer)
 
@@ -37,7 +37,7 @@ def ruler(d,x0,x1,y):
  d.line((x0,y,x1,y),fill=YELLOW,width=5)
  for x in [x0,x1]:d.line((x,y-13,x,y+13),fill=YELLOW,width=5)
 
-def map_base(bounds):
+def map_base(bounds, highlight=None):
  # Geographic data only: our own equirectangular render, no sourced map image.
  lo,hi,bot,top=bounds
  def xy(lon,lat):return ((lon-lo)/(hi-lo)*W,Y0+(top-lat)/(top-bot)*(Y1-Y0))
@@ -53,7 +53,7 @@ def map_base(bounds):
    for shift in [-360,0,360]:
     pts=[xy(lon+shift,lat) for lon,lat in ring]
     if max(x for x,y in pts)<0 or min(x for x,y in pts)>W:continue
-    dl.polygon(pts,fill=(99,135,128,255),outline=(152,178,156,255))
+    dl.polygon(pts,fill=(166,173,104,255) if f['name']==highlight else (99,135,128,255),outline=(152,178,156,255))
  # Clip drawn geography to exact centre band.
  im.alpha_composite(land.crop((0,Y0,W,Y1)),(0,Y0))
  return im,xy
@@ -72,11 +72,17 @@ class Renderer:
  def __init__(self,moon):
   self.moon=moon_disc(moon,60)
   self.eclipse,self.exy=map_base((-48,45,12,55))
+  self.countries=['Spain','Morocco','Algeria','Tunisia','Libya','Egypt']
+  self.highlighted=[map_base((-48,45,12,55),c)[0] for c in self.countries]
   self.pacific,self.pxy=map_base((-205,-65,-72,7))
   self.data=json.loads((HERE/'eclipse_path.json').read_text())
  def frame(self,name,t,duration):
   q=t/duration; im=Image.new('RGBA',(W,H));d=ImageDraw.Draw(im)
-  if name in CARDS:
+  if name=='ar1_odds':
+   # One accumulating call-out: the first observation stays visible.
+   label(im,'4.3% (JUNE 2025)',835)
+   label(im,'→ 0%\n(WEBB, FEB 2026)',965,ease((q-.35)/.12))
+  elif name in CARDS:
    cards=CARDS[name];pos=min(len(cards)-1,int(q*len(cards)));local=q*len(cards)-pos
    opacity=min(ease(local/.18),ease((1-local)/.18))
    label(im,cards[pos],910,opacity)
@@ -94,7 +100,7 @@ class Renderer:
    for i in range(1,15):
     y=bottom-i*20*p;d.line((712,y,848,y),fill=BLUE,width=2)
    ruler(d,175,475,1210)
-   label(im,'60 M' if q<.48 else '15-STOREY\nBUILDING',685)
+   label(im,'60 M' if q<.48 else 'SCALE:\n15-STOREY\nBUILDING',660,spacing=74)
   elif name=='ar1_miss':
    # One common isotropic scale: Moon r=30px; altitude=366.1485px.
    cx,cy,r=540,1190,30; scale=r/1737;alt=21200*scale
@@ -120,7 +126,8 @@ class Renderer:
       for j in range(1,5):d.line((x+j*20,yy,x+j*20,yy+95),fill=(114,161,193),width=1)
    d.rounded_rectangle((490,970,590,1115),radius=15,fill=(198,212,223),outline=WHITE,width=3)
    ruler(d,left,right,1225)
-   label(im,'109 M' if q<.48 else '(FOOTBALL\nFIELD)',680)
+   label(im,'109 M',665)
+   label(im,'(FOOTBALL\nFIELD)',745,ease((q-.35)/.12),spacing=74)
   elif name=='ar2_nemo':
    im=self.pacific.copy();d=ImageDraw.Draw(im)
    x,y=self.pxy(-123-24/60,-48-53/60)
@@ -129,21 +136,22 @@ class Renderer:
    d.ellipse((x-5,y-5,x+5,y+5),fill=YELLOW)
    label(im,'EMPTY SOUTH\nPACIFIC',690)
   elif name=='ar3_path':
-   im=self.eclipse.copy();d=ImageDraw.Draw(im)
+   ci=min(5,int(q*6))
+   im=self.highlighted[ci].copy();d=ImageDraw.Draw(im)
    rows=[r for r in self.data['rows'] if r['centre'][0]<44]
    count=max(2,int(len(rows)*ease(q/.85)));active=rows[:count]
    north=[self.exy(*r['north']) for r in active];south=[self.exy(*r['south']) for r in active]
-   d.polygon(north+south[::-1],fill=(17,28,57,255))
+   shadow=Image.new('RGBA',(W,H))
+   ImageDraw.Draw(shadow).polygon(north+south[::-1],fill=(17,28,57,140))
+   im.alpha_composite(shadow)
+   d=ImageDraw.Draw(im)
    d.line(north,fill=BLUE,width=2);d.line(south,fill=BLUE,width=2)
    d.line([self.exy(*r['centre']) for r in active],fill=YELLOW,width=3)
    countries=['SPAIN','MOROCCO','ALGERIA','TUNISIA','LIBYA','EGYPT']
    ci=min(5,int(q*6))
    label(im,countries[ci],690)
-   locations=[(-4,40),(-6,32),(3,28),(9,34),(17,27),(30,27)]
-   mx,my=self.exy(*locations[ci])
-   d.ellipse((mx-6,my-6,mx+6,my+6),outline=WHITE,width=2)
    x,y=self.exy(*self.data['greatest_duration'])
-   if q>.78:
+   if q>=5/6:
     d.ellipse((x-9,y-9,x+9,y+9),fill=YELLOW,outline=WHITE,width=2)
     # Marker has no extra simultaneous label; metadata identifies greatest duration.
   elif name=='ar3_duration':
@@ -169,7 +177,7 @@ def main():
  if a.duration<1 or a.fps<1: p.error('duration >=1 and fps >=1 required')
  a.out.mkdir(parents=True,exist_ok=True);r=Renderer(a.moon);manifest=[]
  for name in [a.only] if a.only else NAMES:
-  stem='code_graphic_'+name+'_v02';dest=a.out/stem;dest.mkdir(exist_ok=True)
+  stem='code_graphic_'+name+'_v03';dest=a.out/stem;dest.mkdir(exist_ok=True)
   if not a.stills_only:
    if any(dest.glob('frame_*.png')):raise RuntimeError('Refusing to overwrite a sequence: '+str(dest))
    for i in range(round(a.duration*a.fps)):
