@@ -72697,18 +72697,22 @@
           "at": "2026-10-30T21:00Z",
           "by": "relay",
           "what": "condition verification queued: J1288"
+        },
+        {
+          "at": "2026-10-31T04:49Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-10-31T11:00:00Z"
         }
       ],
       "kind": "vo",
-      "remaining_action": "Resolve Moon Short B opening and confirm which existing takes actually need replacement before recording",
+      "remaining_action": "Decide 009 Short_B hook recording scope (Chief/Claude), then record only the takes that need replacing",
       "hold": {
         "type": "input",
-        "condition": "Credit restored: live ElevenLabs HTTP 200 at 2026-10-30T14:54:03Z shows 0/121114 used, 121114 remaining. Remaining production input: approved recording scope resolving 009 Short_B hook before any regeneration; J1004 Chief PASS retains its block (both time intervals required), approves 010 Short_A existing-audio Option A1, and records existing v02 takes. Do not regenerate all four unchanged scripts or treat restored credit as script approval. Preserve original production and Ben gates.",
-        "check_at": "2026-10-30T22:00:02+00:00",
-        "last_recheck": "J1256",
-        "checked_at": "2026-10-30T14:54:38+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1288"
+        "condition": "Credit is not the blocker (live ElevenLabs 30 Oct 14:54Z: 121114 remaining). Still unmet at 2026-10-31T04:50Z: no approved recording scope resolving the 009 Short_B hook (no HOS commit, PR or job since J1256/J1004 settles it). J1004 Chief PASS (HOS PR #366) keeps its block (both time intervals required), approves 010 Short_A existing-audio Option A1 and records existing v02 takes. Do not regenerate the four unchanged scripts or treat restored credit as script approval. Original production and Ben gates unchanged.",
+        "check_at": "2026-10-31T11:00:00Z",
+        "last_recheck": "J1288",
+        "checked_at": "2026-10-31T04:49:16+00:00",
+        "checked_by": "chief"
       }
     },
     {
