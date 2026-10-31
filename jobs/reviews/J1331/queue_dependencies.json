@@ -1,0 +1,122 @@
+[
+  {
+    "id": "J1100",
+    "title": "J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief",
+    "status": "blocked",
+    "remaining_action": "Wait for measured disk recovery and Chief restart verification under h43",
+    "result": "parked for Chief: live df 8.3 GiB is below Chief h43 restart minimum 10 GiB. Required nas_offload.py --apply found no eligible scratch (8506 MB unchanged). Preserve 2/3, OWB:027/028 links, accepted pickups and h43-LOOP ruling; restore headroom before restarting v07 repairs. No media edits/spend/upload this run.",
+    "progress": {
+      "step": 2,
+      "of": 3,
+      "at": "2026-10-31T06:01Z",
+      "by": "codex",
+      "note": "Preserved prior 2/3 plan and completed S2/S5 pickups. Live df 8.3 GiB; required nas_offload --apply found nothing eligib"
+    },
+    "waiting_on": null
+  },
+  {
+    "id": "J1213",
+    "title": "HOS 008 edit: merge picture PR #374, then lay the 112 KEEP rows to the locked VO -> rough v01, gates, park for Chief",
+    "status": "blocked",
+    "remaining_action": "Held for J1218 v03 repairs and Chief graphics/composite approval; J1193 ruled FIX; music/SFX unfinished",
+    "result": "parked for Chief: HOS 008 rough v01 delivered (557.8s, sha256 6704aa3434634b9d\u2026). PR #374 already MERGED. episode_gate PASS. music_gate SKIPPED_NO_BED (no bed without Chief OK). picture_qa+polish_gate FAIL on 3 split-panel rows: 09_window_storm @2:30, overlay_06_same_thing @6:01, overlay_10_metal_easy @7:58 (+6 low-detail WARNs). Pack: desk/_desk/008/rough_v01, HOS UAT/008_Lightning-Franklin_rough_v01, NAS .../rough_v01/. J1193 code-graphic review still open. Ben watch only after Chief PASS.",
+    "progress": {
+      "step": 4,
+      "of": 5,
+      "at": "2026-10-29T19:12Z",
+      "by": "cursor",
+      "note": "sha verified on 4 copies; episode_gate PASS; picture_qa+polish FAIL x3 split-panel; music SKIPPED_NO_BED; J1193 still op"
+    },
+    "waiting_on": null
+  },
+  {
+    "id": "J1241",
+    "title": "HOS 008: code graphics v03 (4 FIX rows) + rough v04 + composite frames (J1218 ruling)",
+    "status": "done",
+    "remaining_action": "parked for Chief: graphics + composite PASS",
+    "result": "Acting Chief (Claude) review 30 Oct: rough v04 (sha e00bb897) graphics+composite FIX. PASS P3:15 (graphic), P5:08 (composite). FIX P3:03 (no rod/stream), P3:04 composite (map covers ship), P2:15 composite (illegible over handwriting), P4:06 (ELECTRICITY label missing after +5.14 s), P5:10 (label a faint ghost). Ruling jobs/reviews/J1241/CHIEF_REVIEW_2026-10-30.md. Follow-up J1248 (graphics v04 -> rough v05). No finished-film PASS, no Ben watch.",
+    "progress": {
+      "step": 4,
+      "of": 4,
+      "at": "2026-10-30T06:56Z",
+      "by": "cursor",
+      "note": "rough v04 delivered sha e00bb897; polish+picture PASS; PR evidence committed da9a7b44"
+    },
+    "waiting_on": null
+  },
+  {
+    "id": "J1320",
+    "title": "Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate",
+    "status": "blocked",
+    "remaining_action": "Parked for Chief: all 4 NAS exports are 17 Oct J0432 overwrites (mismatched vs UPLOADS.json sha256)",
+    "result": "parked for Chief: all 4 NAS files are 17 Oct J0432 seam-fix overwrites (commit 7a5608724) and none match the Oct 10-13 UPLOADS.json / PACKAGE_UPLOAD_RESULT sha256s: (1) ZpEA8stoSPA owb_sa_s4_uranus_v01.mp4 moved by J1296 today has sha 0aec6e86525d... vs uploaded c4d1262afa79... (swap to v06 held in J1212); (2) bSjWiCbB7pY fri13_ingenuity_72_v02.mp4 entered the 14-day window today (archived 24 Oct in owbshorts.tar) with sha 50ba8955c20b... vs uploaded 45683cdf147e...; (3) iyvWYFP_ETA mon09_night_cold_v01.mp4 in owbshorts.tar has sha 0195a5fb957c... vs uploaded 48466c33946e... (J1181 ruling); (4) N42gKBbD7tE thu12_length_test_dust_v01.mp4 in owbshorts.tar has sha b6dd4a232fa3... vs uploaded 7c399d5c3d75.... Per J1181 ruling and brief sha256 match rule, did not copy mismatched renders back over scheduled paths. Added all 4 paths + UPLOADS.json scheduled-Short guard to scripts/nas_offload.py and _desk/logs/J1296_move.py, and refreshed UPCOMING_SHORTS_GATE.md (commit 049badd8a). GBP0.",
+    "progress": {
+      "step": 4,
+      "of": 4,
+      "at": "2026-10-31T07:55Z",
+      "by": "gemini",
+      "note": "Committed 049badd8a (scheduled-Short keep-list in scripts/nas_offload.py + _desk/logs/J1296_move.py + refreshed UPCOMING"
+    },
+    "waiting_on": null
+  },
+  {
+    "id": "J1321",
+    "title": "AR2\u2013AR3: correct J1317 picture-review failures",
+    "status": "blocked",
+    "remaining_action": "Correct AR2 late ISS picture detail and obtain picture acceptance; cohort held from UAT/upload",
+    "result": "parked for Chief: corrected AR2 v05 and AR3 v09 need elected-Chief picture review; automated picture, polish, loop and SFX gates pass. Delivery 994571421, branch worker/J1321-picture-fixes. Cohort held from UAT/upload; no Ben action.",
+    "progress": {
+      "step": 4,
+      "of": 4,
+      "at": "2026-10-31T08:28Z",
+      "by": "codex",
+      "note": "Delivery commit 994571421: both cuts pass unmodified picture/polish/loop/SFX; audio payloads identical to v02; old maste"
+    },
+    "waiting_on": null
+  },
+  {
+    "id": "J1322",
+    "title": "J1318 ruling: recover Mini space from verified inactive scratch only",
+    "status": "blocked",
+    "remaining_action": "Await J1331 exact path proofs, then Chief recovery ruling",
+    "result": "parked for Chief: recovery verified at 10.689 GiB free, 20 GiB target unmet; exact retained candidate disposition in local commit c0f876ffa (/private/tmp/J1322-records). Five files recovered 2712698880 allocated bytes; J1100 remains held pending elected-Chief threshold verification. Evidence branch push rejected by automatic approval review as unverified egress; commit remains local.",
+    "progress": {
+      "step": 3,
+      "of": 4,
+      "at": "2026-10-31T08:06Z",
+      "by": "codex",
+      "note": "NAS readback verified; live df 10.689 GiB exceeds 10 GiB restart threshold but misses 20 GiB. J1100 stays blocked; exact"
+    },
+    "waiting_on": null
+  },
+  {
+    "id": "J1324",
+    "title": "AR2: finish real ISS composite after J1323 picture FIX",
+    "status": "blocked",
+    "remaining_action": "Chief picture acceptance of AR2 v08 and late-shot WARN",
+    "result": "parked for Chief: AR2 v08 picture acceptance, including native late-shot low-detail WARN; PR365 14d7d1c4c. Worker delivery 4/4; all four gates PASS, AAC identical, master and review images NAS SHA verified. J1321 remains held; no UAT/upload/schedule.",
+    "progress": {
+      "step": 4,
+      "of": 4,
+      "at": "2026-10-31T08:58Z",
+      "by": "codex",
+      "note": "Delivery committed 14d7d1c4c, PR365. Master and full-size review images SHA-verified on NAS. Four unmodified gates PASS;"
+    },
+    "waiting_on": null
+  },
+  {
+    "id": "J1329",
+    "title": "Chief: verify condition for J1321",
+    "status": "done",
+    "remaining_action": "Verification complete; J1321 retained on AR2 late-shot correction",
+    "result": "Verification complete; Chief ruling #6541774693: AR2 v08 FIX for smeared late ISS detail at 16.0/16.6s despite four automated gate passes. Fresh NAS AR2 and preserved AR1/AR3 hashes match. J1321 held on late-shot correction plus picture acceptance, recheck J1329, existing 10:29:25Z retry retained. No UAT/upload/schedule approval, spend or Ben action.",
+    "progress": {
+      "step": 3,
+      "of": 3,
+      "at": "2026-10-31T09:37Z",
+      "by": "codex",
+      "note": "Chief picture FIX recorded; J1321 wait updated with J1329 recheck and existing 10:29:25Z retry. No stage or publishing a"
+    },
+    "waiting_on": null
+  }
+]
