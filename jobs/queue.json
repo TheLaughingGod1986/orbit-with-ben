@@ -126271,19 +126271,24 @@
           "at": "2026-10-31T21:51Z",
           "by": "codex",
           "what": "step 2 of 3 done: 031 and 032 have explicit VO lock records but picture not started; 033-061 status records have no VO or picture lock. Condition remains unmet"
+        },
+        {
+          "at": "2026-10-31T21:51Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Recorded J0979 input hold with recheck J1419 for 2026-11-01T03:55Z; 029 shelving and all original gates preserved"
         }
       ],
-      "remaining_action": "Record the unmet picture-lock condition and finish verification",
+      "remaining_action": "Close verification and report the continuing hold",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-10-31T22:50:06+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-10-31T21:51Z",
         "by": "codex",
-        "note": "031 and 032 have explicit VO lock records but picture not started; 033-061 status records have no VO or picture lock. Co"
+        "note": "Recorded J0979 input hold with recheck J1419 for 2026-11-01T03:55Z; 029 shelving and all original gates preserved"
       },
       "taskKeys": [
         "OWB:029",
