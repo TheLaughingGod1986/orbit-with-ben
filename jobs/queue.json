@@ -27630,10 +27630,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-10-31T00:23Z",
+      "eta": "2026-10-31T01:53Z",
       "created_by": "chief",
       "created_at": "2026-10-15T23:47Z",
       "result": "",
@@ -27767,6 +27767,11 @@
           "at": "2026-10-31T00:23Z",
           "by": "chief",
           "what": "reopened: Chief taking parked review (h32)"
+        },
+        {
+          "at": "2026-10-31T00:23Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "kind": "vo",
@@ -27774,7 +27779,15 @@
       "remaining_action": "Block J0345 for Chief with the v02 path and measurements",
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T00:23Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0346",
