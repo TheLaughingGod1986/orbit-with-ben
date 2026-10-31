@@ -121061,19 +121061,33 @@
           "at": "2026-10-31T13:23Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T13:24Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J1353: checking 2026-10-31 HOS live_fixes report and running fresh read-only verification"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Run read-only HOS channel and listing check on live and scheduled videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T13:23Z",
+        "at": "2026-10-31T13:24Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J1353: checking 2026-10-31 HOS live_fixes report and running fresh read-only verification"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008"
+      ]
     }
   ],
   "focus": [],
