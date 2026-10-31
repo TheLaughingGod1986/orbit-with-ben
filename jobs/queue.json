@@ -118883,13 +118883,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T09:30Z",
-      "eta": "2026-10-31T11:30Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T09:06Z",
-      "result": "",
+      "result": "Condition NOT satisfied. Verified original J0979 rejection, J1000 audit and J1042 ruling. 031 VO lock c8ed778ab/J1295 and 032 VO lock 4a9a2e16b/J1294 exist, but both current status.json records explicitly say picture not started; 033-061 have no recorded VO/picture locks. J0979 remains blocked with recheck J1328 at 2026-10-31T15:35:00Z; next verify locked picture and unused Keeper-compliant question EDL. 029 reserve remains shelved. No spend, generation, upload, scheduling or film approval.",
       "history": [
         {
           "at": "2026-10-31T09:06Z",
@@ -118920,6 +118920,11 @@
           "at": "2026-10-31T09:32Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0979 remains blocked; wait recheck J1328 recorded for 2026-10-31 15:35 UTC. No film PASS, render, spend, upload or schedule change."
+        },
+        {
+          "at": "2026-10-31T09:32Z",
+          "by": "codex",
+          "what": "done: Condition NOT satisfied. Verified original J0979 rejection, J1000 audit and J1042 ruling. 031 VO lock c8ed778ab/J1295 and 032 VO lock 4a9a2e16b/J1294 exist, but both current status.json records explicitly say picture not started; 033-061 have no recorded VO/picture locks. J0979 remains blocked with recheck J1328 at 2026-10-31T15:35:00Z; next verify locked picture and unused Keeper-compliant question EDL. 029 reserve remains shelved. No spend, generation, upload, scheduling or film approval."
         }
       ],
       "remaining_action": "Close completed condition verification and report the retained hold",
