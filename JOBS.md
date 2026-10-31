@@ -46,11 +46,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1322 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · J1318 ruling: recover Mini space from verified inactive scratch only |  |
 | J1324 | mini | blocked | codex | – | assembly · AR2: finish real ISS composite after J1323 picture FIX |  |
 | J1338 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · AR2: restore native detail in late ISS interval after J1324 FIX |  |
-| J1341 | any | claimed | codex | 2026-10-31T13:26Z | chief · Chief: verify condition for J1130 |  |
 | J1342 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 
 Recently finished:
 
+- J1341 done: Chief: verify condition for J1130 (done)
 - J1340 done: Chief: verify condition for J0978 (done)
 - J1339 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1337 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-31T10:49Z across 62 unique videos (28 public, 12 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md, HOS 0afdae08, 0 new fixes needed))
@@ -60,4 +60,3 @@ Recently finished:
 - J1333 done: J1331 ruling: repair OWB029 per-cut watch IDs and verify Play bytes (Watch-link correction complete: 3 distinct private watch IDs, 12 local aliases corrected, six signed Play filenames/sizes/full hashes verified, Wednesday no longer plays Monday; board republished and board_check PASS. PR368 (299a399d2) contains collision fix, committed mappings and evidence; 12 watch tests PASS. PR remains open due independently reproduced pre-existing Venus status-note CI failure; no failed-check override. J1322/J1100 holds and YouTube/Buffer unchanged; GBP0.)
 - J1332 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1281 (30 Oct ~19:55Z): no OWB video went public in between (latest 6dcL5rBmHPM 30 Oct 11:30Z; next VfDm3E2bUgU 31 Oct 11:30Z). 10/10 pass, 0 fixes (05_Analytics/live_fixes/2026-10-30.md).)
 - J1331 done: J1326 follow-up: resolve exact UAT serving paths and bounded headroom (Acting Chief Codex 31 Oct: ACCEPT records-only PR367 (50046414c, merged 843fb1b09). Validated 120 unique KEEP paths / 767926272 allocated bytes, 24 matching NAS hash proofs and unchanged three-family scratch / 3848400896 bytes. Approved recovery allowlist EMPTY, zero bytes; historical 3.62 GiB increase remains unknown. CloudDocs-first resolution and R2 watch-ID collision supported by code and readback: Wednesday v04 plays Monday. Concrete correction delegated J1333, due 1 Nov 00:00 UTC, distinct per-cut IDs and full playback hashes required. J1322 remains held on picture-acceptance/current-previous exclusion clearance, retry 31 Oct 10:30Z; J1100 held at 2/3, h43-LOOP and all gates preserved, existing 14:45Z check retained. Fresh 09:50:55Z df 8851356 KiB = 8.441 GiB, 1.559 below restart / 11.559 below house target; normal NAS offload found no eligible scratch. No moves, media changes, spending, film PASS, watch approval or publishing. Worker 4/4 preserved; Chief review separate.)
-- J1330 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-31T10:03Z across 62 unique videos (28 public, 12 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md, HOS c2e79964, 0 new fixes needed))
