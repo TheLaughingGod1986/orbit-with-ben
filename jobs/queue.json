@@ -115777,10 +115777,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-31T00:17Z",
+      "eta": "2026-10-31T01:17Z",
       "created_by": "chief",
       "created_at": "2026-10-31T00:12Z",
       "result": "",
@@ -115789,11 +115789,24 @@
           "at": "2026-10-31T00:12Z",
           "by": "chief",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-10-31T00:17Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "032 Titan: assemble locked VO titan_landing_vo_v02b (v02 parts; ch00 180 ms qsin fade st=50.30, ch02 20 ms st=107.66), record VO lock (Chief h31 on J1289)",
       "for": "cursor",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T00:17Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
