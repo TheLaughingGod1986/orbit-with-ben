@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1391 | any | claimed | gemini | 2026-10-31T18:50Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1391 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (b9d1d8f8f); 0 fixes needed)
 - J1390 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1389 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1388 done: Chief: verify condition for J0862 (done)
@@ -54,4 +54,3 @@ Recently finished:
 - J1384 done: Chief: verify condition for J1356 (Verified unmet: all three accepted master SHA256 values match; all three manifest export targets absent. PR376 remains open at 92de3841c without new correction evidence. J1356 stays blocked with recheck J1384 and existing 17:53:25Z retry. Next: scoped no-spend music/tail correction, versioned package mapping, affected gates and full audiovisual review. Picture acceptance retained; no media changes, spend, watch or publishing approval.)
 - J1383 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1382 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1381 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
