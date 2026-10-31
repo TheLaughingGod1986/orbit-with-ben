@@ -116668,17 +116668,22 @@
           "at": "2026-10-31T03:58Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Source hashed: 20 files, 1706780395 bytes. rsync to NAS still running. Local copy kept until sha match. Worktree still skipped (bash 1852, node 1975)."
+        },
+        {
+          "at": "2026-10-31T04:04Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: j1287-v03: 20 files, 1706780395 bytes, sha matched, NAS mini-tmp-scratch/2026-10-31/tmp/j1287-v03. Container 14.5 GB to 16.2 GB. Skipped gemini-j0240-wt (bash 1852, node 1975). Reported #264 comment 6538770066."
         }
       ],
-      "remaining_action": "Copy /private/tmp/j1287-v03 to the NAS and verify sha256",
+      "remaining_action": "Nothing left on J1302",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 4,
-        "at": "2026-10-31T03:58Z",
+        "at": "2026-10-31T04:04Z",
         "by": "cursor",
-        "note": "Source hashed: 20 files, 1706780395 bytes. rsync to NAS still running. Local copy kept until sha match. Worktree still s"
+        "note": "j1287-v03: 20 files, 1706780395 bytes, sha matched, NAS mini-tmp-scratch/2026-10-31/tmp/j1287-v03. Container 14.5 GB to "
       },
       "taskKeys": [
         "HOS:008"
