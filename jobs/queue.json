@@ -122241,9 +122241,14 @@
           "at": "2026-10-31T15:15Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T15:16Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Resolve missing full-runtime score and package targets; rerun affected gates and full playback review",
+      "remaining_action": "Verify accepted AR cuts, package targets and any new audio correction evidence",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-10-31T15:44:54+00:00",
@@ -122251,11 +122256,12 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T15:15Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-10-31T15:16Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1368",
