@@ -116117,8 +116117,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-31T02:25Z",
       "eta": "",
       "created_by": "chief",
@@ -116184,6 +116184,11 @@
           "at": "2026-10-31T02:29Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: container free 17.3 GB (target 20). Moved 34 files, 4.64 GB, sha256 matched, locals removed only on match. Left: gemini-j0240-wt 106 MB (bash 1852, node 1975); 029 v03/v04 and lift v01 kept as newest; HOS 006 Shorts are v01 only plus work segments. Those cannot close the 2.7 GB gap. J1100 is not gated (h34). Report #264 comment 6537808816. GBP0."
+        },
+        {
+          "at": "2026-10-31T02:45Z",
+          "by": "chief",
+          "what": "cancelled"
         }
       ],
       "remaining_action": "Parked for Chief: container free 17.3 GB, brief's remaining files cannot close the gap",
