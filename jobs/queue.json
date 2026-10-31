@@ -119102,10 +119102,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T09:43Z",
+      "eta": "2026-10-31T11:43Z",
       "created_by": "codex",
       "created_at": "2026-10-31T09:40Z",
       "result": "",
@@ -119114,11 +119114,24 @@
           "at": "2026-10-31T09:40Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T09:43Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Trace UAT serving paths and prove any exact redundant-copy candidates; no moves",
       "due": "2026-11-01T00:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T09:43Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
