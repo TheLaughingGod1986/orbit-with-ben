@@ -1,5 +1,5 @@
 {
-  "next_id": 1299,
+  "next_id": 1300,
   "jobs": [
     {
       "id": "J0001",
@@ -116279,6 +116279,35 @@
       "recheck_of": "J0807",
       "due": "2026-10-31T03:24:50+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1299",
+      "title": "HOS vo_check.py: Lyell/bedder aliases + ordinal digits (1st<->first) with tests, own small PR (Chief on J0807; Claude 6537756171)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) decision on J0807 (HOS #180, re Cursor 6537745991 and Claude 6537756171), 31 Oct 2026. HOS 013 VO v02 is NOT passed while `vo_check` FAILs; overriding a failed check is Ben's alone, and a check that's wrong is fixed in its own PR (HOS AGENTS.md ~L324). This job is that PR. Code only, no audio, no ElevenLabs, no paid STT. GBP0.\n\nFile: HOS `00_Brand/Channel-Setup/tools/vo_check.py` (tests: `00_Brand/Channel-Setup/tools/test_vo_check.py`). HOS main at 80208b3d or later.\n\nWhat the checker gets wrong on `013/02_Voiceover/vo_check/hos_013_vo_v02.json` (faster-whisper small.en):\n1. `lyle` vs script `lyell` (5:27.70 and 5:53.38). Add `\"lyle\": \"lyell\"` (and `\"lyle's\": \"lyell's\"`) to `ALIASES`, the same kind of entry as `thompson` -> `thomson`.\n2. `bedder` vs script `better` (7:23.56, \"half better beak\"; the 7:23.36 window re-check already hears \"better\"). Add `\"bedder\": \"better\"`.\n3. Ordinals (5:51.96, \"On the first of July\"): Whisper writes `1st`, which `NUMERAL` drops, but `first` (and `second`) are not in `NUMBER_WORDS` (only third..thirtieth are), so the script keeps \"first\" and it looks deleted. Fix it so a digit ordinal and the spelled ordinal compare equal on both sides: 1st<->first, 2nd<->second, 3rd<->third, 4th..31st and 100th-style Nth<->words. Either map digit ordinals to their words before the numeral drop, or drop spelled ordinals consistently on both sides; pick one, keep it simple, and do not start dropping ordinary words (e.g. \"second\" as a unit of time must still be compared when the other side has a non-number word there).\n\nDo NOT touch the fifth fail (\"what was doing the shaping\" heard as \"what was doing was shaping\", 2:44.58). That is a real disagreement about a spoken word and is being settled by audio in J1300, not by an alias.\n\nTests (add to test_vo_check.py, house style, no audio):\n- \"his friend Charles Lyell\" == \"his friend Charles Lyle\"\n- \"a half better beak\" == \"a half bedder beak\"\n- \"On the first of July\" == \"On the 1st of July\"; \"the second of May\" == \"the 2nd of May\"; \"the twenty-third of June\" == \"the 23rd of June\"\n- regression: \"a garden at Marly\" != \"a garden at Mali\" still; \"what was doing the shaping\" != \"what was doing was shaping\" still; \"one second later\" != \"one sec later\" (or similar) still differs.\n- All existing tests still pass.\n\nDo:\n1. Branch from HOS main, e.g. `fix/vo-check-lyell-ordinals`. Change only vo_check.py and test_vo_check.py (+ a one-line note in VO_CHECK_PY312.md only if it documents ALIASES). No other files, no media.\n2. Run `python3 00_Brand/Channel-Setup/tools/test_vo_check.py` and the repo's check_all.sh; paste both outputs in the PR body.\n3. As evidence only (do not commit outputs): re-run the PATCHED vo_check, unmodified otherwise, against the existing 013 v02 wav on the Mini and report that the remaining fail list is exactly the 2:44.58 \"doing the shaping\" line (or explain any difference).\n4. Open the PR on TheLaughingGod1986/history-of-science against main, title like \"vo_check: Lyell/bedder aliases + ordinal digits (J1299)\". Do not merge; Chief reviews and merges after CI passes. Post a short hos-desk note on HOS #180 (from=<you> to=grok film=013 stage=vo status=review) with the PR number.\n5. Mark this job done with the PR number and head sha. If tests can't be made to pass, block for Chief with the failing output.\nNo ElevenLabs, no YouTube, nothing for Ben.\n",
+      "ref": "6537756171",
+      "film": "013",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T02:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T02:27Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Open the vo_check alias/ordinal PR for Chief",
+      "kind": "assembly",
+      "model": "gpt-6-astra"
     }
   ],
   "focus": [],
