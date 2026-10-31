@@ -27630,10 +27630,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-31T00:11Z",
+      "eta": "2026-10-31T01:41Z",
       "created_by": "chief",
       "created_at": "2026-10-15T23:47Z",
       "result": "",
@@ -27732,6 +27732,11 @@
           "at": "2026-10-30T21:16Z",
           "by": "chief",
           "what": "reopened: Chief h24 (OWB #264 6533630504): FIX, ch01-only re-take. Flags accepted: Pontfarein spoken anglicised 'pom-fa-rine' (faster-whisper small/base: Pomp for Rhine / Pomp Forein), date/place card spells PONTFAREIN; field's -> 'field strength' (possessive merges, accepted); nine/six per cent = ASR numerals. Real fault: ch01 last word 'way?' clipped (still voiced -20..-25 dB to the last sample; final 50 ms -24.8 dB, last 10 ms -25.5, last sample -0.079; same as Titan v01 h18). Levels PASS (-19.9 LUFS, LRA 4.6, TP -3.6). Do: mkdir parts/magnetic_field_flip_vo_v02/, cp (never mv/delete) ch00.mp3 and ch02-ch06.mp3 from parts/magnetic_field_flip_vo_v01/ (NOT ch01); fresh credit read + --dry-run; vo_take.py --script .../01_Script/magnetic_field_flip_script_master_v03.md --out .../02_Voiceover --stem magnetic_field_flip_vo_v02 --order 9334d38a --order 6533630504 --retake 6533630504 under desk-lock elevenlabs; v01 untouched; script locked, no SSML; one more ch01-only attempt if it clips again, then park the better take. Pass bar: ch01 'way?' below -40 dB in final 50 ms or >=0.15 s near-silence after it; rest of ch01 matches script; ch01 80.88+-6 s; -20+-1 LUFS; TP <= -1 dBTP. Park with v02 path, WAV sha (not mp3), LUFS, ch01 Scribe + tail numbers, true counter_delta (don't edit the over-logged ledger lines). No mux until Chief PASS; assembly then adds 20 ms qsin fade on ch00 end and 40 ms on ch06 end. Never buy/top up. GBP0."
+        },
+        {
+          "at": "2026-10-31T00:11Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "vo",
@@ -27739,7 +27744,15 @@
       "remaining_action": "Park the take path and loudness for Chief before any mux",
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T00:11Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0346",
