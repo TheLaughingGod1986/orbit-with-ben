@@ -51,7 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1304 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1305 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1306 | mini | open | – | – | for cursor · vo · OWB Apophis-mould Shorts AR1-AR3: VO from locked v02 scripts (J1279 h37 PASS), park for Chief | 6c7d0f83b |
-| J1307 | mini | blocked | codex | – | for codex · chart · OWB Apophis-mould Shorts AR1-AR3: code graphics (2027 path map, Point Nemo map, cards, scale bars) per J1279 h37, park for Chief | 6c7d0f83b |
+| J1307 | mini | open | – | – | for codex · chart · OWB Apophis-mould Shorts AR1-AR3: code graphics (2027 path map, Point Nemo map, cards, scale bars) per J1279 h37, park for Chief | 6c7d0f83b |
 
 Recently finished:
 
