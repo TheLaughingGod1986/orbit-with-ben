@@ -118138,9 +118138,14 @@
           "at": "2026-10-31T07:39Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1320; starting inspection of missing Short exports and NAS archive"
+        },
+        {
+          "at": "2026-10-31T07:48Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Traced all 4 exports: J1296 moved owb_sa_s4_uranus_v01.mp4 on 31 Oct; 025 Shorts fri13/mon09/thu12 were archived in NAS owbshorts.tar on 24 Oct after J0432 (17 Oct 7a5608724) overwrote all 4 in place"
         }
       ],
-      "remaining_action": "Inspect UPCOMING_SHORTS_GATE.md, UPLOADS.json, and NAS paths from J1296",
+      "remaining_action": "CopyNAS exports back and check sha256 against UPLOADS.json and J0432",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -118152,11 +118157,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T07:39Z",
+        "at": "2026-10-31T07:48Z",
         "by": "gemini",
-        "note": "Claimed J1320; starting inspection of missing Short exports and NAS archive"
+        "note": "Traced all 4 exports: J1296 moved owb_sa_s4_uranus_v01.mp4 on 31 Oct; 025 Shorts fri13/mon09/thu12 were archived in NAS "
       },
       "taskKeys": [
         "OWB:025"
