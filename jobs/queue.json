@@ -115816,6 +115816,11 @@
           "at": "2026-10-31T00:51Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Inventory written. Free space 14 GiB. Moving 007, chief_h31, watch_proxies, gemini-j0240-wt. J1100, relay-wt, analytics worktree, 031, 008, 032 left in place."
+        },
+        {
+          "at": "2026-10-31T00:54Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: rsync of _desk/007 (285 MB, 2983 files) to NAS 2026-10-31/007 is in tmux J1293-move. chief_h31, watch_proxies and gemini-j0240-wt follow. Local copies stay until sha256 matches."
         }
       ],
       "remaining_action": "Copy verified done-job scratch to the NAS",
@@ -115825,9 +115830,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-10-31T00:51Z",
+        "at": "2026-10-31T00:54Z",
         "by": "cursor",
-        "note": "Inventory written. Free space 14 GiB. Moving 007, chief_h31, watch_proxies, gemini-j0240-wt. J1100, relay-wt, analytics "
+        "note": "rsync of _desk/007 (285 MB, 2983 files) to NAS 2026-10-31/007 is in tmux J1293-move. chief_h31, watch_proxies and gemini"
       },
       "taskKeys": [
         "OWB:032"
