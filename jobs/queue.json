@@ -117049,17 +117049,22 @@
           "at": "2026-10-31T04:16Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed. Six chapter-end fades, then checks, mp3, vo_check, lock."
+        },
+        {
+          "at": "2026-10-31T04:17Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: v03a wav sha 837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0 matches Chief sim. 24599040 frames, 512.480 s, pcm_s16le 48 kHz stereo."
         }
       ],
-      "remaining_action": "Copy Chief fade builder and confirm v03 input",
+      "remaining_action": "Run fade checker, loudness, and encode the mp3",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-10-31T04:16Z",
+        "at": "2026-10-31T04:17Z",
         "by": "cursor",
-        "note": "Claimed. Six chapter-end fades, then checks, mp3, vo_check, lock."
+        "note": "v03a wav sha 837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0 matches Chief sim. 24599040 frames, 512.48"
       },
       "taskKeys": [
         "HOS:013"
