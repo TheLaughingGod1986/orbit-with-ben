@@ -117550,13 +117550,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T05:16Z",
-      "eta": "2026-10-31T07:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T05:00Z",
-      "result": "",
+      "result": "Condition met: J1270 done; live df avail 13,746,100 KB (13.1 GiB >= 10 GiB h34/h36 bar) at 05:17Z; Chief ruling supplied (h43, OWB #264 6539463596: S6 loop gate correction adopted as h43-LOOP with base-render provenance + pixel reconciliation + OCR); S2/S5 pickups done (126 plan chars). J1100 reopened for codex (assembly, S2 bed proof, captions, all gates incl. h43-LOOP, Gemini listening, UAT/NAS delivery, park for Chief replacement review). J0936 hold unchanged (check 10:00Z).",
       "history": [
         {
           "at": "2026-10-31T05:00Z",
@@ -117567,6 +117567,11 @@
           "at": "2026-10-31T05:16Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T05:16Z",
+          "by": "chief",
+          "what": "done: Condition met: J1270 done; live df avail 13,746,100 KB (13.1 GiB >= 10 GiB h34/h36 bar) at 05:17Z; Chief ruling supplied (h43, OWB #264 6539463596: S6 loop gate correction adopted as h43-LOOP with base-render provenance + pixel reconciliation + OCR); S2/S5 pickups done (126 plan chars). J1100 reopened for codex (assembly, S2 bed proof, captions, all gates incl. h43-LOOP, Gemini listening, UAT/NAS delivery, park for Chief replacement review). J0936 hold unchanged (check 10:00Z)."
         }
       ],
       "remaining_action": "Verify readiness: Chief reviews reproduced S6 loop conflict; assemble with completed S2/S5 pickups after ruling",
@@ -117581,7 +117586,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6539463596"
     }
   ],
   "focus": [],

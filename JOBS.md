@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1308 | mini | claimed | cursor | 2026-10-31T08:16Z | for cursor · assembly · OWB Apophis-mould Shorts AR1-AR3: assembly from J1306 VO + J1307 v03 graphics (after both Chief PASS), park for Chief | 9a2030925 |
-| J1313 | any | claimed | chief | 2026-10-31T07:16Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1313 done: Chief: verify condition for J1100 (Condition met: J1270 done; live df avail 13,746,100 KB (13.1 GiB >= 10 GiB h34/h36 bar) at 05:17Z; Chief ruling supplied (h43, OWB #264 6539463596: S6 loop gate correction adopted as h43-LOOP with base-render provenance + pixel reconciliation + OCR); S2/S5 pickups done (126 plan chars). J1100 reopened for codex (assembly, S2 bed proof, captions, all gates incl. h43-LOOP, Gemini listening, UAT/NAS delivery, park for Chief replacement review). J0936 hold unchanged (check 10:00Z).)
 - J1312 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass (6dcL5rBmHPM..m09jUdwC5hk); 0 new fixes needed. Report committed to 05_Analytics/live_fixes/2026-10-31.md.)
 - J1311 done: Chief: verify condition for J1308 (Verified unmet: J1307 v03 ruled FIX by Chief h41 (6539186497), J1307 reopened 87b1d988d. J1308 held (dependency, a34f0dc17), next check 2026-10-31T07:30Z.)
 - J1310 done: HOS 013 VO: build locked hos_013_vo_v03a from v03 with Chief h39 measured chapter-end fades, checks, mp3, vo_check, record VO lock (J1301 h39 PASS) (hos_013_vo_v03a locked. WAV 837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0. MP3 ada7eaa775104ee5dea9e9be98155abfc0b1e9fda010097f42ca9fa25bed7f85. 02_Voiceover/ on the Mini. vo_check PASS, 0 fails. HOS 4812d385. Desk #180 comment 6538959406.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1305 done: Chief: verify condition for J1100 (Verified at 2026-10-31T04:48Z: df 14271812 KB avail meets the h34/h36 J1100 bar (>=10 GiB start, park <6 GiB); J1270 done. J1100 reopened for repairs only with evidence note. GBP0.)
 - J1304 done: Chief: verify condition for J0936 (Verified unmet at 04:49Z: J1100 only just reopened (5f028e5f5) for repairs; no replacement delivery, Chief PASS or Ben swap approvals. J0936 held, next check 2026-10-31T10:00Z.)
 - J1303 done: Chief: verify condition for J1130 (Unverifiable: HOS Studio access denied since J1282; last read J1251 said running (~12d13h left). J1130 held, six-hour retry 2026-10-31T10:50Z. No YouTube changes.)
-- J1302 done: Chief h36: copy-first NAS move of HOS 008 master v03 build scratch /private/tmp/j1287-v03 (J1287 PASS h35) + gemini-j0240-wt only if lsof clear; done whatever free space (Moved /private/tmp/j1287-v03 (20 files, 1706780395 bytes, sha matched) to NAS mini-tmp-scratch/2026-10-31/tmp/j1287-v03. Container free 14.5 GB to 16.2 GB. Skipped gemini-j0240-wt: still held by bash 1852 and node 1975. Report #264 6538770066. GBP0.)
