@@ -117038,13 +117038,13 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T04:50Z",
-      "eta": "2026-10-31T07:20Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T03:19Z",
-      "result": "",
+      "result": "parked for Chief: v04 h41 revision 0b91a30e5 pushed; label gaps/clearances and Morocco tint verified. Raw QA retains 2 backdrop-only odds gutters covered by h41 and 1 date-card WARN; report and evidence committed.",
       "history": [
         {
           "at": "2026-10-31T03:19Z",
@@ -117160,6 +117160,11 @@
           "at": "2026-10-31T04:54Z",
           "by": "codex",
           "what": "step 4 of 4 done: Pushed 0b91a30e5 to codex/j1307-graphics. V03 preserved; v04 media, frame hashes, clearance regression checks and raw QA documented. No merge or worker PASS."
+        },
+        {
+          "at": "2026-10-31T04:54Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: v04 h41 revision 0b91a30e5 pushed; label gaps/clearances and Morocco tint verified. Raw QA retains 2 backdrop-only odds gutters covered by h41 and 1 date-card WARN; report and evidence committed."
         }
       ],
       "remaining_action": "Chief review of v04 h41 fixes and retained diagnostic findings",
