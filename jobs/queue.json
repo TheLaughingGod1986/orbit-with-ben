@@ -122964,19 +122964,24 @@
           "at": "2026-10-31T15:50Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original task, acceptance history and unchanged open PR376; no newer correction PR found"
+        },
+        {
+          "at": "2026-10-31T15:50Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three accepted masters; PR376 unchanged and no newer correction task or evidence found"
         }
       ],
-      "remaining_action": "Check current master hashes and package export targets",
+      "remaining_action": "Record unresolved J1356 input hold and report verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-10-31T16:48:47+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T15:50Z",
         "by": "codex",
-        "note": "Read original task, acceptance history and unchanged open PR376; no newer correction PR found"
+        "note": "Fresh SHA256 matches all three accepted masters; PR376 unchanged and no newer correction task or evidence found"
       },
       "taskKeys": [
         "OWB:030"
