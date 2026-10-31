@@ -124513,19 +124513,24 @@
           "at": "2026-10-31T19:42Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original approval history checked. Latest audit commit remains 0c18bb2cb; review line 67 and J1003 result still conflict with both persisted mature raw curves. No final independent audit PASS."
+        },
+        {
+          "at": "2026-10-31T19:43Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Retained J0985 blocked with recheck J1396 and next check 1 Nov 01:45Z. Raw evidence SHA256 3f6132b6e279e6d7282e5784c3acc4d17c6c3816c7d2b8ede47565a45ab92562; both 100-row copies match."
         }
       ],
-      "remaining_action": "Record unmet Mercury reconciliation condition and next verification",
+      "remaining_action": "Verify saved J0985 hold and finish verification report",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-31T20:00:34+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-10-31T19:42Z",
+        "at": "2026-10-31T19:43Z",
         "by": "codex",
-        "note": "Original approval history checked. Latest audit commit remains 0c18bb2cb; review line 67 and J1003 result still conflict"
+        "note": "Retained J0985 blocked with recheck J1396 and next check 1 Nov 01:45Z. Raw evidence SHA256 3f6132b6e279e6d7282e5784c3acc"
       },
       "taskKeys": [
         "OWB:021",
