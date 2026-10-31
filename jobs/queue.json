@@ -80855,6 +80855,11 @@
           "at": "2026-10-31T03:01Z",
           "by": "relay",
           "what": "condition verification queued: J1304"
+        },
+        {
+          "at": "2026-10-31T04:48Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-10-31T10:00:00Z"
         }
       ],
       "kind": "video",
@@ -80882,15 +80887,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "Restore disk headroom, complete J1100 S2/S5/S6 repairs and delivery, then Chief review and Ben swap approvals",
+      "remaining_action": "J1100 repairs and delivery, Chief replacement review, then Ben swap approvals",
       "hold": {
         "type": "input",
-        "condition": "J1100 remains blocked on live >=20 GB disk headroom (about 6.8 GiB now; required NAS offload found no eligible scratch; recovery J1283 pending). J1253 verified subscription credits but did not approve media. S2/S5 continuous pickups, instrumental-only S2 bed proof, caption repairs, gates and direct listening remain outstanding; S6 whole-frame loop 9.26 FAIL against <2.0 remains despite completed advisory Gemini listening. Need corrected durable UAT/NAS delivery, Chief replacement PASS and Ben S2/S5/S6 swap approvals. PR333 still OPEN at 0a7fcb6ad with no reviews/comments; checkpoint and FINAL_MEASUREMENTS loop_pass=false checked. Preserve J1032 PASS, completed J1101/J1102/J1103, historical J0936 6/6, deadlines and remaining scheduled-v01 fallbacks.",
-        "check_at": "2026-10-31T04:01:31+00:00",
-        "last_recheck": "J1284",
-        "checked_at": "2026-10-30T20:49:52+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1304"
+        "condition": "J1100 reopened by Chief h41 at 04:48Z for S2/S5/S6 repairs only (disk bar met: df 14,271,812 KB >= h34 10 GiB bar; 5f028e5f5) but repairs not yet done. Still needed: J1100 S2/S5 pickups, S2 instrumental-only bed proof, caption repairs, S6 loop fix (9.26 FAIL vs <2.0) or evidenced gate correction, gates + listening, durable UAT/NAS delivery, Chief replacement PASS, then Ben S2/S5/S6 swap approvals. PR333 status unchanged. Preserve J1032 PASS, J1101-J1103, historical J0936 6/6, deadlines (batch park Sun 1 Nov 20:00 London) and scheduled-v01 fallbacks.",
+        "check_at": "2026-10-31T10:00:00Z",
+        "last_recheck": "J1304",
+        "checked_at": "2026-10-31T04:48:50+00:00",
+        "checked_by": "chief"
       },
       "preparation_review": {
         "by": "codex",
