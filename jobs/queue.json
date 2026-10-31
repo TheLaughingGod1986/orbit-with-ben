@@ -1,5 +1,5 @@
 {
-  "next_id": 1310,
+  "next_id": 1311,
   "jobs": [
     {
       "id": "J0001",
@@ -117000,6 +117000,35 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "done_ref": "6538573892"
+    },
+    {
+      "id": "J1310",
+      "title": "HOS 013 VO: build locked hos_013_vo_v03a from v03 with Chief h39 measured chapter-end fades, checks, mp3, vo_check, record VO lock (J1301 h39 PASS)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) ruling h39 on J1301, 31 Oct 2026 (HOS #180, the h39 comment in this job's ref). HOS 013 Darwin–Wallace VO take `hos_013_vo_v03` (WAV sha256 d56ba2a45a76125e29b0d620ab84772a9311399354c07d860ac168938ff05038, metadata 5bb67c1a) is **PASS** on words, loudness and length. The J1300 pickup ends on a 20 ms fade that only reaches -37.7 dBFS in its last 10 ms (\"shaping?\" nasal tail, the h23/h31/h32 too-short-fade lesson), and five other chapter ends are above the -50 bar. This job builds the locked take `hos_013_vo_v03a` with Chief-measured fades. No re-take, no ElevenLabs, no paid STT. GBP0.\n\nNew stem `hos_013_vo_v03a`, so nothing is overwritten. Leave v01, v02, v03, both pickups, parts and stt untouched (cp, never mv or delete).\n\nDo (Cursor, Mini, GBP0):\n1. Copy Chief's builder `~/_desk/013/chief_h39/fade_v03a.py` and checker `~/_desk/013/chief_h39/check_v03a.py` into `02_Video-Projects/013_Darwin-Wallace-Evolution/02_Voiceover/vo_build_h39/` (cp). Do not edit them.\n2. Run `python3 vo_build_h39/fade_v03a.py hos_013_vo_v03.wav hos_013_vo_v03a.wav` from `02_Voiceover/`. It refuses any input that is not v03 (sha prefix d56ba2a45a76125e). It applies qsin fade-outs that end on each chapter's last audio frame, nothing else:\n   - ch00 \"changes.\" 74.740-74.800 s (60 ms)\n   - ch01 \"shaping?\" 170.250-170.330 s (80 ms; replaces the J1300 20 ms pickup-tail fade in effect)\n   - ch02 \"someone?\" 275.540-275.560 s (20 ms; also removes a 3 ms onset blip at -27 dBFS on the last samples)\n   - ch03 \"heard?\" 365.580-365.640 s (60 ms)\n   - ch04 \"print.\" 447.440-447.460 s (20 ms)\n   - ch05 \"today.\" 512.440-512.480 s (40 ms, film end)\n3. Checks, pasted into the result:\n   - Frames 24,599,040 (512.480 s), pcm_s16le 48 kHz stereo.\n   - wav sha256 must be **837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0** (Chief's sim; the build is deterministic). If it differs, park for Chief with both shas.\n   - `python3 vo_build_h39/check_v03a.py hos_013_vo_v03a.wav`: every end last-10 ms below -50 dBFS with last sample 0/0 (Chief sim: -56.34, -53.88, -64.70, -55.30, -68.92, -59.94) and null vs v03 max 0 outside the six windows.\n   - ffmpeg ebur128=peak=true: I -19.5 LUFS (inside -20 +/-1), true peak -3.6 dBTP, LRA 5.0.\n4. Encode `hos_013_vo_v03a.mp3` (libmp3lame 128k, 48 kHz stereo, same as v02's mp3). Label the wav and mp3 shas correctly.\n5. Re-run the unmodified house `vo_check` (vo_check_py312.sh, `--json` only, same as J1301) on v03a against `01_Script/darwin_script_master_v02.md`; save `vo_check/hos_013_vo_v03a.json`. Must be PASS, 0 fails. Word timings for the edit: export faster-whisper small.en word timestamps (free, CPU int8) to `stt/hos_013_vo_v03a/words_fw_small_en.json`. No Scribe, no paid STT.\n6. Record the VO lock: `production-status.md` Stage/VO rows and a `VO_STATUS.md` section: vo **locked**, `hos_013_vo_v03a`, wav and mp3 sha, rulings J1301 h39 (and J0807/J1299/J1300 chain). Add the chapter starts on the VO clock for the edit (script card times shift): ch01 1:15.50, ch02 2:51.08, ch03 4:36.26, ch04 6:06.34, ch05 7:28.16; film 8:32.48. Note the 1.69 s beat after \"into the open.\" at 0:20.34 is accepted in the VO; the editor may tighten it to no less than 0.6 s if the hook needs it. Commit metadata only (no WAV/MP3 in git) on HOS main and push, as J1301 did.\n7. Post a hos-desk note on HOS #180 (from=cursor to=grok film=013 stage=vo status=done) and mark this job done with paths and shas. If any check fails, park for Chief with the numbers.\nNo mux, no Veo/Flow/Vertex mint, no upload, nothing for Ben.\n",
+      "ref": "6538573892",
+      "film": "013",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T04:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T04:09Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "HOS 013 VO: build locked hos_013_vo_v03a from v03 with Chief h39 measured chapter-end fades, checks, mp3, vo_check, record VO lock (J1301 h39 PASS)",
+      "for": "cursor",
+      "kind": "assembly"
     }
   ],
   "focus": [],
