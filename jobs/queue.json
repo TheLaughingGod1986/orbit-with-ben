@@ -117274,19 +117274,26 @@
           "at": "2026-10-31T05:16Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T05:22Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Gates met: J1306 done, J1307 cancelled-with-PASS on v04 (h42). Using graphics_j1307_v04 only. ar1_size unused."
         }
       ],
-      "remaining_action": "Waiting on J1307 v04 graphics PASS; assembly stays stopped",
+      "remaining_action": "Re-time v04 graphics to the h40 line clock and assemble AR1-AR3 masters",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-31T05:16Z",
+        "of": 4,
+        "at": "2026-10-31T05:22Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Gates met: J1306 done, J1307 cancelled-with-PASS on v04 (h42). Using graphics_j1307_v04 only. ar1_size unused."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1309",
