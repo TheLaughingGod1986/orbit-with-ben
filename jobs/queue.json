@@ -1,5 +1,5 @@
 {
-  "next_id": 1370,
+  "next_id": 1371,
   "jobs": [
     {
       "id": "J0001",
@@ -98573,6 +98573,11 @@
           "at": "2026-10-31T14:59Z",
           "by": "codex",
           "what": "blocked: parked for Chief: source checkpoint afed1c552 local branch codex/J1100-v07-1031 at /private/tmp/J1100-v07-wt. Continuous S2 because-the-ground phrase recovered unchanged, ASR verified; no extra pickup. Instrumental bed unresolved: two house candidates yield words under required base.en ASR. Auto-review rejected detached Gemini source-audio transmission and evidence git push as insufficiently authorized egress; neither ran. Chief resolve concrete audio/destination approval or supply cleared instrumental source. Preserve 2/3 OWB:027/028, h43-LOOP, accepted pickups/S6 audio/deadlines/v01 fallback. No spend/render/publish/PASS."
+        },
+        {
+          "at": "2026-10-31T15:00Z",
+          "by": "relay",
+          "what": "condition verification queued: J1370"
         }
       ],
       "remaining_action": "Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
@@ -98598,6 +98603,12 @@
         "at": "2026-10-31T14:59Z",
         "by": "codex",
         "note": "Found original continuous S2 phrase; unchanged extract ASR confirms wording, no pickup/spend. Existing house bed candida"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-31T16:00:21+00:00",
+        "recheck_task": "J1370"
       }
     },
     {
@@ -122298,6 +122309,37 @@
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T15:46:06+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1370",
+      "title": "Chief: verify condition for J1100",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1100: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-31T15:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T15:00Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
+      "kind": "chief",
+      "recheck_of": "J1100",
+      "due": "2026-10-31T16:00:21+00:00",
       "due_kind": "condition-verification"
     }
   ],
