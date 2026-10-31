@@ -1,5 +1,5 @@
 {
-  "next_id": 1324,
+  "next_id": 1325,
   "jobs": [
     {
       "id": "J0001",
@@ -118497,6 +118497,34 @@
       "taskKeys": [
         "OWB:030"
       ]
+    },
+    {
+      "id": "J1324",
+      "title": "AR2: finish real ISS composite after J1323 picture FIX",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Elected-Chief Codex ruling in J1323, 31 Oct 2026. Continue only the AR2 correction from PR363 (994571421, worker/J1321-picture-fixes), J1321_CORRECTION_REPORT.md and its binding h37/h40/h42 instructions. J1321 stays held until this delivery and Chief picture acceptance. AR3 v09 has picture PASS in J1323; AR1 v01 retains J1317 PASS. Preserve both exactly, all old masters, manifests and hashes.\n\nAR2 v05 FIX: frame 0/0–2 s, late station shots around 15.5–16.6 s, and loop return show a conspicuous black rectangular inset feathered over unrelated Earth footage. The late station is small and dark. Real Crew-2 source identity is accepted; visual finish is not. Recompose only these non-DATA shots using source-native station footage with coherent fill/blur and clear station detail. No stronger-feather-only fix, no destructive luma key that removes dark station parts. Keep source geometry/detail. Export and inspect frame 0 and one late-shot still before full render. Retain the approved 109 m DATA graphic and its original composite, South Pacific map and all VO/graphics clocks. No changes to script, facts, titles, audio or duration.\n\nWrite a new version, run unmodified picture_qa/polish/loop/SFX gates on real composites, provide full-size frame 0, late-shot still, 0.5 s sheet, raw outputs and durable NAS master/hash. Report the actual changed intervals and exact audio identity. Return for elected-Chief picture review; no UAT or publishing.\n\nGBP0, no mint/spend/upload/schedule. Claim this job only when dispatched; OWB:030 linkage. Check disk first (~4.3 GB at J1323); nas_offload found no eligible old scratch. Obey current/previous scratch preservation and any J1322 recovery decisions; no NAS deletes/overwrites. Clean worktree and PR, detach long renders with log/.done, never duplicate running render. No Ben action.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-10-31T08:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T08:41Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Recompose AR2 station shots without the black rectangular inset; retain AR1 and AR3",
+      "kind": "assembly"
     }
   ],
   "focus": [],
