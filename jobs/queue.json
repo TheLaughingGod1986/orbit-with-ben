@@ -121573,17 +121573,30 @@
           "at": "2026-10-31T13:58Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-10-31T13:59Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected 05_Analytics/owb/snapshots/2026-10-31.json and existing 2026-10-31.md report"
         }
       ],
-      "remaining_action": "Inspecting last 10 live OWB videos from snapshots and existing live_fixes reports",
+      "remaining_action": "Querying live YouTube watch and Shorts pages for the last 10 public OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T13:58Z",
-        "by": "gemini"
-      }
+        "at": "2026-10-31T13:59Z",
+        "by": "gemini",
+        "note": "Inspected 05_Analytics/owb/snapshots/2026-10-31.json and existing 2026-10-31.md report"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
