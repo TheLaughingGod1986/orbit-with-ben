@@ -1,5 +1,5 @@
 {
-  "next_id": 1302,
+  "next_id": 1303,
   "jobs": [
     {
       "id": "J0001",
@@ -116511,6 +116511,35 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J1302",
+      "title": "Chief h36: copy-first NAS move of HOS 008 master v03 build scratch /private/tmp/j1287-v03 (J1287 PASS h35) + gemini-j0240-wt only if lsof clear; done whatever free space",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling h36 on J1296 (OWB #264, the h36 comment in this job's ref). J1296's 34 moves (4,635,643,887 B) are accepted (PASS). This is the one bounded follow-on h34 already foresaw (\"J1287 v03 scratch can go to the NAS after Chief rules on v03\"). Chief ruled J1287 master v03 PASS at h35 (HOS #180 6537320070) and J1297 (UAT copy) is done, so the v03 build scratch is now releasable. Not urgent. J1100 is NOT gated on this job (h34 bar: start at df >=10 GiB, park below 6 GiB). GBP0.\n\nCandidate list (the only candidates; Chief read them at 02:40Z, verify each yourself):\n1. `/private/tmp/j1287-v03/` (about 1.6 GB, 21 files, newest mtime 01:26Z on 31 Oct). It holds HOS 008 master v03 build/verification scratch: `stem_bed_v02_arranged.wav`, `stem_bed_v03.wav`, `stem_bed_v03_preduck.wav`, `stem_sfx_v02.wav`, `stem_sfx_v03.wav`, `stem_vo_v03_unshifted.wav`, `stem_vo_v12.wav`, `audio_master_v03.wav`/`_dry.wav`/`.m4a`, `decode_*` f32/wav/m4a, `_lufs_snip.wav`. The master itself (sha cf1561c2...3099b) is already on the NAS desk and in precheck; this folder isn't.\n2. `~/_desk/scratch/gemini-j0240-wt` (106 MB, J0240 done), only if `lsof +D` is clear. At 02:40Z it was still the cwd of bash 1852 (`check_all.sh 02_Video-Projects/008_Lightning-Franklin`, up 16 days) and its npm child 1975. Do NOT kill those processes in this job. If they still hold it, skip it and say so.\n\nMethod (same as J1293/J1296):\n- Before you start, confirm `/Volumes/data` is mounted (NFS 192.168.1.119:/volume1/data). If it isn't, stop and park.\n- Run `lsof +D /private/tmp/j1287-v03`. If anything holds it, stop and park.\n- Grep OWB jobs/queue.json (non-done jobs: body, result, history) and HOS desk/PIPELINE json for `j1287-v03`. If any open, claimed or blocked job other than this one cites it, skip it.\n- Copy with COPYFILE_DISABLE=1 to `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-31/tmp/j1287-v03/` (worktree: `.../2026-10-31/scratch/gemini-j0240-wt/`). Create only missing folders. Never overwrite or delete anything on the NAS. Write FILE_LIST.txt, SHA256SUMS.txt and MOVED_FROM.txt there.\n- Match sha256 and byte size on every file. Remove local files only on a full match of the whole folder, then leave `/private/tmp/j1287-v03.MOVED_TO_NAS.txt` with the NAS path, file count, total bytes, SHA256SUMS location, time, owning job (J1287, PASS h35) and \"HOS 008 not yet uploaded\". For the worktree, the copy keeps dirty files; run `git worktree prune` only, with no branch delete.\n- Log `df -k /System/Volumes/Data` and diskutil \"Container Free Space\" before, after each folder, and at the end.\n\nDo NOT touch anything else. That includes `/private/tmp/j1100_*`, `/private/tmp/j1299-wt`, every other /private/tmp entry, `~/_desk/renders/J1100*`, ~/_desk/008/031/032, every item on the J1296 do-not-touch list, the files J1296 kept (newest two Short versions, uranus v06, HOS 006 master_v06/_PHONE/stem_vo, 029 v03/v04, lift v01, HOS 006 Shorts), the Chrome code-sign clones, agent homes, and ~/Library. No git gc, no resets, no force-push, no reboot, no process kills.\n\nDone condition: when the copy is verified and the locals are released, mark this job **done** whatever the final free space. Expected result is about 18.5-19 GB container free. Chief h36 accepts that the house 20 GB target can't be reached right now without touching protected live work. Don't hunt for more candidates; the next headroom step is J1100's own scratch/renders going to the NAS when J1100 delivers (AGENTS.md). Report on OWB #264 with a [Chief] prefix: df/container before and after, per-folder file count, bytes and sha match, NAS path, and each skip with its reason. GBP0. Never print secrets.\n",
+      "ref": "6537808816",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T02:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T02:45Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Copy /private/tmp/j1287-v03 to NAS mini-tmp-scratch, sha-verify, release local",
+      "for": "cursor",
+      "kind": "assembly"
     }
   ],
   "focus": [],
