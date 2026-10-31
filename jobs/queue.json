@@ -122228,13 +122228,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T15:15Z",
-      "eta": "2026-10-31T17:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T14:44Z",
-      "result": "",
+      "result": "Hold verified unmet: fresh SHA-256 reads match accepted AR1 v01/AR2 v06/AR3 v05; all three manifest targets still absent. Reviewed J1355/J1356/J1357 approval and result history and unchanged open PR376 at 92de3841c. No new correction, music-gate or full audiovisual review evidence found. J1356 remains blocked with recheck J1367 and existing retry 2026-10-31T15:44:54Z. Next: scoped no-spend correction and versioned package mapping, affected gates and full playback review. No rebuild, spend, publishing or watch approval.",
       "history": [
         {
           "at": "2026-10-31T14:44Z",
@@ -122265,6 +122265,11 @@
           "at": "2026-10-31T15:17Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded recheck J1367 on J1356; retained retry 2026-10-31T15:44:54Z and existing picture acceptance. No media or approval changes."
+        },
+        {
+          "at": "2026-10-31T15:17Z",
+          "by": "codex",
+          "what": "done: Hold verified unmet: fresh SHA-256 reads match accepted AR1 v01/AR2 v06/AR3 v05; all three manifest targets still absent. Reviewed J1355/J1356/J1357 approval and result history and unchanged open PR376 at 92de3841c. No new correction, music-gate or full audiovisual review evidence found. J1356 remains blocked with recheck J1367 and existing retry 2026-10-31T15:44:54Z. Next: scoped no-spend correction and versioned package mapping, affected gates and full playback review. No rebuild, spend, publishing or watch approval."
         }
       ],
       "remaining_action": "Verification complete; J1356 remains blocked on audio and package evidence",
@@ -122281,7 +122286,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "92de3841c"
     },
     {
       "id": "J1368",
