@@ -122246,18 +122246,24 @@
           "at": "2026-10-31T15:16Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-31T15:16Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1356/J1357 history, J1355 integration and PR376; no newer correction PR found."
         }
       ],
-      "remaining_action": "Verify accepted AR cuts, package targets and any new audio correction evidence",
+      "remaining_action": "Check current hashes and manifest targets against unresolved readiness findings",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-10-31T15:44:54+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T15:16Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Read J1356/J1357 history, J1355 integration and PR376; no newer correction PR found."
       },
       "taskKeys": [
         "OWB:030"
