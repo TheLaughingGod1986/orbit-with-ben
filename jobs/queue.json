@@ -115794,19 +115794,25 @@
           "at": "2026-10-31T00:17Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T00:19Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "032 Titan: assemble locked VO titan_landing_vo_v02b (v02 parts; ch00 180 ms qsin fade st=50.30, ch02 20 ms st=107.66), record VO lock (Chief h31 on J1289)",
+      "remaining_action": "Copy v02 parts into v02b and apply the h31 fades",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-31T00:17Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 4,
+        "at": "2026-10-31T00:19Z",
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
