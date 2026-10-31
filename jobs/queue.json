@@ -120558,9 +120558,14 @@
           "at": "2026-10-31T12:51Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T12:52Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read original hold and approval history; checking persisted evidence and later changes."
         }
       ],
-      "remaining_action": "Verify readiness: Reconcile Mercury retention narrative with raw curves (worker), then final non-author Chief audit review",
+      "remaining_action": "Verify Mercury curve reconciliation and independent audit approval",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-31T13:00:41+00:00",
@@ -120568,11 +120573,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T12:51Z",
+        "at": "2026-10-31T12:52Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read original hold and approval history; checking persisted evidence and later changes."
+      },
+      "taskKeys": [
+        "OWB:021"
+      ]
     },
     {
       "id": "J1348",
