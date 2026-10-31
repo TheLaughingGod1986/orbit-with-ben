@@ -1,58 +1,71 @@
-# J1307 — h38 graphics revision v03 for Chief review
+# J1307 — h41 graphics revision v04 for Chief review
 
 Worker: codex · 31 October 2026 · £0. No VO, mint, upload or channel changes.
-Status: **parked for Chief; picture QA has unresolved findings. No PASS.**
-This revision is on top of `1faade493`, branch `codex/j1307-graphics`.
-Binding instructions: Chief h38 in J1307 history, following h37. Spoken words unchanged.
+Status: **ready for Chief review; no worker PASS or merge.**
+Revision on top of `7e6dcb51f`, branch `codex/j1307-graphics`.
+Binding scope: Chief h41 in J1307 history. Spoken words unchanged.
 
 ## Delivery
 
 Ten straight-RGBA PNG sequences, 1080×1920, 30 fps, 108 frames / 3.6 seconds each.
-Durations remain provisional parameters (`--duration`, `--fps`, `--only`).
-Media is off git under:
+Timing remains parameterized by `--duration`, `--fps`, `--only` for assembly to fit measured VO.
+Media is off git:
 
-`/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/graphics_j1307_v03/`
+`/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/graphics_j1307_v04/`
 
-Each `code_graphic_<name>_v03/` contains frames and three previews.
-`qa/all_stills.jpg` is the review sheet; `qa/still_review.mp4` is the diagnostic reel.
-v02 is preserved. Its report and evidence are in `graphics/verification/`.
-Current manifests, frame hashes and QA evidence are in `graphics/verification_v03/`.
+Each `code_graphic_<name>_v04/` contains frames and three previews.
+`qa/all_stills.jpg` is the review sheet; `qa/still_review.mp4` is a diagnostic reel.
+V02 and v03 media remain untouched. Their reports and evidence are preserved in
+`graphics/verification/` and `graphics/verification_v03/`.
+V04 manifests, frame hashes and raw QA are in `graphics/verification_v04/`.
 
-## Six requested changes
+## h41 changes and measured results
 
-1. **AR3 path:** shadow is alpha-composited at 140/255 (54.9%) over the map. Coastlines and borders remain visible. Northern/southern limits and centre line remain.
-2. **AR3 countries:** removed all hollow country dots. The named Natural Earth polygon is tinted while its label is displayed, in Spain → Morocco → Algeria → Tunisia → Libya → Egypt order.
-3. **AR3 Greatest Duration:** the only dot appears at 26°49′N, 031°08′E only when q ≥ 5/6, under EGYPT. It is absent during LIBYA.
-4. **AR1 odds:** `4.3% (JUNE 2025)` stays on screen as `→ 0% (WEBB, FEB 2026)` builds below it. No fully transparent internal handover. The verifier checks first-line visibility on every interior frame.
-5. **AR2 station:** `109 M` stays above `(FOOTBALL FIELD)`, with the parenthetical wrapped across two lines. One accumulated call-out, no orphaned replacement.
-6. **AR1 size:** the second label is `SCALE: 15-STOREY BUILDING`, wrapped across three lines. Each line stays within 980 px. The same 96 px house font is retained; compact line spacing keeps the label above the silhouettes.
+- **AR1 size:** `SCALE: 15-STOREY` / `BUILDING`, 88 px Arial Black, 100 px baseline spacing.
+  The minimum transparent gap between stroked lines is **27 px**; clearance above artwork is **37 px**.
+- **AR2 station:** `109 M` followed by the single 88 px line `(FOOTBALL FIELD)`.
+  Minimum stroked-line gap is **16 px**; clearance above artwork is **49 px**.
+- **AR3 Morocco:** tint is clipped at **27.67°N**. The source's Morocco polygon includes western Western Sahara,
+  while its `W. Sahara` feature only covers the eastern portion; drawing that feature last alone did not solve it.
+  Final base-map measurement: **0 tinted pixels south of 27.67°N**, 6,244 tinted pixels north of it.
+  Base geography remains unchanged; only the Morocco tint is clipped.
+- **AR3 Greatest Duration:** dot uses `ci == 5`, the exact same country index as EGYPT; first appears at frame 90.
+- Other source geometry, labels, translucent shadow and the accumulated odds call-out remain as accepted in h41.
 
-Other source geometry and numbers are unchanged from the accepted v02: NASA path rows; Moon radius 1,737 km and surface miss 21,200 km; Point Nemo; equal-scale duration bars. Source files remain in `graphics/`. All content stays inside y=656..1264.
+`verify_graphics.py` checks actual stroked alpha pixels on every frame of the two affected sequences:
+expected number of separate lines, each line ≤980 px wide, transparent line gaps ≥8 px, artwork clearance ≥12 px.
+It also asserts that Morocco tint exists and does not extend south of the clipping latitude.
+Regression check against v03 rejects both broken layouts: size has merged lines; station has a 1 px gap.
+The v04 check decoded all **1,080 frames**, confirming RGBA, dimensions, centre band, frame counts and animation.
+All 30 stills were viewed on the sheet; the two fixed labels and Morocco map were inspected at full size.
 
-## Verification and unresolved findings
+## Raw picture QA and Chief's prior ruling
 
-`verify_graphics.py` decoded all 1,080 frames: correct RGBA dimensions, band bounds, frame counts, animation and no static hold over four seconds. The persistent odds-line check succeeds. All 30 representative stills were inspected on the sheet; the Egypt map and accumulated odds card were also inspected at full size.
+Unmodified `picture_qa.py`: **2 FAIL, 1 WARN**, exit 1 (preserved, not suppressed).
 
-The unmodified `picture_qa.py` reports **4 FAIL and 1 WARN** on the neutral-navy diagnostic reel:
+- AR1 odds samples 1 and 2: vertical gutter at 0.642. Both corresponding source-still columns (x=693)
+  are uniform RGB **45,64,87**, standard deviation **0**: the diagnostic navy background only.
+  **Chief h41 explicitly ruled the v03 backdrop-only gutters false positives and instructed recording that ruling if they recur.**
+  These two unchanged odds findings are that same recurrence; raw results remain in the pack.
+- AR3 date sample 0: low-detail WARN, edge density 0.0143 below p5 0.0157; unchanged.
+- The station's two former gutter findings no longer occur.
 
-- AR1 odds samples 1 and 2: vertical gutter at 0.642.
-- AR2 station samples 1 and 2: horizontal gutter at 0.833.
-- AR3 date sample 0: low detail, edge density 0.0143 below film p5 0.0157.
+No thresholds, sampling, exit codes or gate code were changed. The verifier propagates picture QA exit 1.
+These are alpha assets: actual composites over moving plates still require assembly picture/polish QA.
+The navy backdrop is diagnostic, not a film plate.
 
-These findings are retained verbatim, with no exemption, threshold change or sampling adjustment. The reviewed images show the requested accumulated text and station schematic; Chief must adjudicate the findings or request another revision. These are alpha assets, so the actual moving-plate composites must also run through picture/polish QA during assembly. The neutral background is diagnostic only, not a film plate.
-
-The verifier now invokes picture QA with its own Python interpreter and propagates its nonzero exit status; it cannot report a successful command exit when picture QA fails.
-
-## Reproduce
-
-Use the existing Pillow/NumPy environment, ffmpeg and macOS Arial Black:
+## Reproduce and handoff
 
 ```bash
 /Users/benjaminoats/_desk/venv-graphics/bin/python graphics/render_graphics.py --out 07_Edit-Project/graphics_new_version --moon <NAS-pool>/moon/GSFC_20171208_Archive_e000868.jpg --duration 3.6 --fps 30
 /Users/benjaminoats/_desk/venv-graphics/bin/python graphics/verify_graphics.py 07_Edit-Project/graphics_new_version --qa-script <repo>/scripts/picture_qa.py
 ```
 
-Completed detached render: `J1307-render-v03`; `_desk/logs/J1307-render-v03.done` = 0. No render remains active.
-Required NAS offload found no eligible old scratch; no NAS file was changed or removed.
+Detached render `J1307-render-v04` completed, followed by corrected-map rerender `J1307-map-v04`.
+Logs and `.done` receipts are in `_desk/logs/`; both receipts contain 1 because the raw picture QA findings are retained.
+All rendering and delivery checks completed; no render remains active.
+Mini repair preserved the branch and removed its old clean temporary worktree; this run used `/private/tmp/j1307-v04-wt`.
+The NAS offload check found no eligible old scratch. No NAS file was changed or removed.
 
-Next: Chief reviews v03 and the four diagnostic FAILs. Assembly fits approved assets to measured VO and reruns final composite gates. Nothing requires Ben for this worker task.
+Next: Chief reviews v04 and decides acceptance. Assembly then fits approved assets to measured VO and reruns composite gates.
+Nothing requires Ben for this worker task.

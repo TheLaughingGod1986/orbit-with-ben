@@ -23,9 +23,9 @@ NAMES=list(CARDS)+['ar1_size','ar1_miss','ar2_station','ar2_nemo','ar3_path','ar
 def ease(v):
  v=max(0.,min(1.,v)); return v*v*(3-2*v)
 
-def label(im,text,y=720,opacity=1,spacing=100):
+def label(im,text,y=720,opacity=1,spacing=100,size=96):
  # 96px Arial Black gives 69px capitals: 11.35% of the centre band.
- layer=Image.new('RGBA',(W,H));d=ImageDraw.Draw(layer);f=ImageFont.truetype(FONT,96)
+ layer=Image.new('RGBA',(W,H));d=ImageDraw.Draw(layer);f=ImageFont.truetype(FONT,size)
  for i,line in enumerate(text.split('\n')):
   b=d.textbbox((0,0),line,font=f); width=b[2]-b[0]
   if width>980: raise ValueError('Label too wide: '+line)
@@ -45,7 +45,8 @@ def map_base(bounds, highlight=None):
  for y in range(Y0,Y1):
   k=(y-Y0)/(Y1-Y0);d.line((0,y,W,y),fill=(22+int(7*k),68+int(11*k),98+int(15*k),255))
  land=Image.new('RGBA',(W,H));dl=ImageDraw.Draw(land)
- for f in json.loads((HERE/'countries.json').read_text())['features']:
+ features=json.loads((HERE/'countries.json').read_text())['features']
+ for f in features:
   g=f['geometry'];polys=g['coordinates'] if g['type']=='MultiPolygon' else [g['coordinates']]
   for poly in polys:
    ring=poly[0]
@@ -53,7 +54,15 @@ def map_base(bounds, highlight=None):
    for shift in [-360,0,360]:
     pts=[xy(lon+shift,lat) for lon,lat in ring]
     if max(x for x,y in pts)<0 or min(x for x,y in pts)>W:continue
-    dl.polygon(pts,fill=(166,173,104,255) if f['name']==highlight else (99,135,128,255),outline=(152,178,156,255))
+    is_highlight=f['name']==highlight
+    dl.polygon(pts,fill=(166,173,104,255) if is_highlight and highlight!='Morocco' else (99,135,128,255),outline=(152,178,156,255))
+    if is_highlight and highlight=='Morocco':
+     # NE's Morocco ring includes the western part of Western Sahara; the
+     # W. Sahara feature covers only its eastern part. Clip tint at 27.67N.
+     tint=Image.new('RGBA',(W,H))
+     ImageDraw.Draw(tint).polygon(pts,fill=(166,173,104,255),outline=(152,178,156,255))
+     cutoff=int(xy(0,27.67)[1])
+     land.alpha_composite(tint.crop((0,0,W,cutoff)),(0,0))
  # Clip drawn geography to exact centre band.
  im.alpha_composite(land.crop((0,Y0,W,Y1)),(0,Y0))
  return im,xy
@@ -100,7 +109,7 @@ class Renderer:
    for i in range(1,15):
     y=bottom-i*20*p;d.line((712,y,848,y),fill=BLUE,width=2)
    ruler(d,175,475,1210)
-   label(im,'60 M' if q<.48 else 'SCALE:\n15-STOREY\nBUILDING',660,spacing=74)
+   label(im,'60 M',660) if q<.48 else label(im,'SCALE: 15-STOREY\nBUILDING',670,spacing=100,size=88)
   elif name=='ar1_miss':
    # One common isotropic scale: Moon r=30px; altitude=366.1485px.
    cx,cy,r=540,1190,30; scale=r/1737;alt=21200*scale
@@ -127,7 +136,7 @@ class Renderer:
    d.rounded_rectangle((490,970,590,1115),radius=15,fill=(198,212,223),outline=WHITE,width=3)
    ruler(d,left,right,1225)
    label(im,'109 M',665)
-   label(im,'(FOOTBALL\nFIELD)',745,ease((q-.35)/.12),spacing=74)
+   label(im,'(FOOTBALL FIELD)',760,ease((q-.35)/.12),size=88)
   elif name=='ar2_nemo':
    im=self.pacific.copy();d=ImageDraw.Draw(im)
    x,y=self.pxy(-123-24/60,-48-53/60)
@@ -151,7 +160,7 @@ class Renderer:
    ci=min(5,int(q*6))
    label(im,countries[ci],690)
    x,y=self.exy(*self.data['greatest_duration'])
-   if q>=5/6:
+   if ci==5:
     d.ellipse((x-9,y-9,x+9,y+9),fill=YELLOW,outline=WHITE,width=2)
     # Marker has no extra simultaneous label; metadata identifies greatest duration.
   elif name=='ar3_duration':
@@ -177,7 +186,7 @@ def main():
  if a.duration<1 or a.fps<1: p.error('duration >=1 and fps >=1 required')
  a.out.mkdir(parents=True,exist_ok=True);r=Renderer(a.moon);manifest=[]
  for name in [a.only] if a.only else NAMES:
-  stem='code_graphic_'+name+'_v03';dest=a.out/stem;dest.mkdir(exist_ok=True)
+  stem='code_graphic_'+name+'_v04';dest=a.out/stem;dest.mkdir(exist_ok=True)
   if not a.stills_only:
    if any(dest.glob('frame_*.png')):raise RuntimeError('Refusing to overwrite a sequence: '+str(dest))
    for i in range(round(a.duration*a.fps)):
