@@ -117827,18 +117827,25 @@
           "at": "2026-10-31T06:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T06:54Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1317; starting verification of AR1-AR3 masters"
         }
       ],
-      "remaining_action": "Apophis-mould AR1-AR3: frame sheets for the Chief picture review (J1308)",
+      "remaining_action": "Verify AR1 v01, AR2 v02, AR3 v02 masters and sha256 hashes",
       "kind": "qa",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T06:53Z",
+        "at": "2026-10-31T06:54Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1317; starting verification of AR1-AR3 masters"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1318",
