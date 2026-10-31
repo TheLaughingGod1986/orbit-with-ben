@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1288 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 | J1291 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 | J1292 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1296 | mini | claimed | cursor | 2026-10-31T04:25Z | for cursor · assembly · Chief h34: copy-first NAS move of git-ignored shipped/superseded repo media (compilation v05 master, superseded standalone Short versions, HOS 006 intermediate join) to restore >=20 GB house headroom | 6536896845 |
+| J1296 | mini | blocked | cursor | – | for cursor · assembly · Chief h34: copy-first NAS move of git-ignored shipped/superseded repo media (compilation v05 master, superseded standalone Short versions, HOS 006 intermediate join) to restore >=20 GB house headroom | 6536896845 |
 | J1299 | mini | open | – | – | 013 vo · assembly · `gpt-6-astra` · HOS vo_check.py: Lyell/bedder aliases + ordinal digits (1st<->first) with tests, own small PR (Chief on J0807; Claude 6537756171) | 6537756171 |
 | J1300 | mini | open | – | – | 013 vo · assembly · HOS 013 VO: re-hear 'what was doing the shaping' (2:44.58) with whisper medium.en + base.en; pickup to v03 only if a word is really missing (<=~50 credits, nothing bought) (Chief on J0807) | 6537756171 |
 | J1301 | mini | open (after J1299) | – | – | 013 vo · assembly · HOS 013 VO: unmodified vo_check on the final take (v02 or v03 from J1300) after the J1299 fix merges; park for Chief (Chief on J0807) | 6537756171 |
