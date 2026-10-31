@@ -118111,10 +118111,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-31T07:39Z",
+      "eta": "2026-10-31T09:39Z",
       "created_by": "claude",
       "created_at": "2026-10-31T07:11Z",
       "result": "",
@@ -118128,6 +118128,11 @@
           "at": "2026-10-31T07:24Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-10-31T07:39Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate",
@@ -118140,7 +118145,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T07:39Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1321",
