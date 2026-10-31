@@ -118906,19 +118906,24 @@
           "at": "2026-10-31T09:31Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original rejection, J1000 audit and J1042 ruling; 029 reserve remains shelved"
+        },
+        {
+          "at": "2026-10-31T09:31Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 031 VO lock c8ed778ab/J1295 and 032 VO lock 4a9a2e16b/J1294 exist, but both status.json files explicitly say picture not started. All 033-061 status records lack VO/picture locks. No eligible locked-picture source exists; question eligibility remains unverified until picture is ready."
         }
       ],
-      "remaining_action": "Record whether new long picture satisfies the release condition",
+      "remaining_action": "Retain J0979 input hold and record the next verification",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-10-31T10:06:56+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T09:31Z",
         "by": "codex",
-        "note": "Read original rejection, J1000 audit and J1042 ruling; 029 reserve remains shelved"
+        "note": "031 VO lock c8ed778ab/J1295 and 032 VO lock 4a9a2e16b/J1294 exist, but both status.json files explicitly say picture not"
       },
       "taskKeys": [
         "OWB:029",
