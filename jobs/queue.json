@@ -118225,16 +118225,21 @@
           "at": "2026-10-31T08:08Z",
           "by": "codex",
           "what": "step 0 of 4 done: Claimed J1321; disk has 11 GiB free; checking scratch offload before render."
+        },
+        {
+          "at": "2026-10-31T08:10Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Read h37/h40/h42 and J1317 ruling; clean worktree /private/tmp/owb-J1321. NAS offload found no eligible scratch. NASA asset jsc2021m000259 explicitly identifies Nov 8 Crew-2 fly-around; source download and visual selection underway. New assembler preserves old audio bitstreams."
         }
       ],
-      "remaining_action": "Inspect binding review and sources, correct AR2 and AR3, then run gates and prepare Chief review",
+      "remaining_action": "Verify Crew-2 visible in-points and render corrected AR2/AR3 composites",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T08:08Z",
+        "at": "2026-10-31T08:10Z",
         "by": "codex",
-        "note": "Claimed J1321; disk has 11 GiB free; checking scratch offload before render."
+        "note": "Read h37/h40/h42 and J1317 ruling; clean worktree /private/tmp/owb-J1321. NAS offload found no eligible scratch. NASA as"
       },
       "taskKeys": [
         "OWB:030"
