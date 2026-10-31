@@ -118555,13 +118555,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T08:51Z",
-      "eta": "2026-10-31T10:51Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T08:41Z",
-      "result": "",
+      "result": "parked for Chief: AR2 v08 picture acceptance, including native late-shot low-detail WARN; PR365 14d7d1c4c. Worker delivery 4/4; all four gates PASS, AAC identical, master and review images NAS SHA verified. J1321 remains held; no UAT/upload/schedule.",
       "history": [
         {
           "at": "2026-10-31T08:41Z",
@@ -118597,6 +118597,11 @@
           "at": "2026-10-31T08:58Z",
           "by": "codex",
           "what": "step 4 of 4 done: Delivery committed 14d7d1c4c, PR365. Master and full-size review images SHA-verified on NAS. Four unmodified gates PASS; no UAT or publishing approval."
+        },
+        {
+          "at": "2026-10-31T08:58Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: AR2 v08 picture acceptance, including native late-shot low-detail WARN; PR365 14d7d1c4c. Worker delivery 4/4; all four gates PASS, AAC identical, master and review images NAS SHA verified. J1321 remains held; no UAT/upload/schedule."
         }
       ],
       "remaining_action": "Chief picture acceptance of AR2 v08 and late-shot WARN",
