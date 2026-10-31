@@ -41,13 +41,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1393 | any | claimed | codex | 2026-10-31T21:33Z | chief · Chief: verify condition for J1356 |  |
 | J1394 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1395 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 | J1396 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 
 Recently finished:
 
+- J1393 done: Chief: verify condition for J1356 (done)
 - J1392 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS 01fbec8b))
 - J1391 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (b9d1d8f8f); 0 fixes needed)
 - J1390 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
@@ -57,4 +57,3 @@ Recently finished:
 - J1386 done: Chief: verify condition for J1100 (Readiness not proven: eight checkpoint hashes match, both bed candidates retain nonempty ASR, source listening and transfer approval unresolved. J1100 remains blocked at 2/3; retry 2026-10-31T18:01:34Z retained. Disk 33.999 GiB. No production or publishing changes.)
 - J1385 done: Chief: verify condition for J0978 (Verified 31 Oct 17:27:49 UTC: HOS Atom title-test widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only check 23:35 UTC. Evidence _desk/handoff/J1385/readback.json and atom_edit.png. HOS channel audit: 62 videos, 0 errors. No YouTube changes or spend; reported on HOS desk.)
 - J1384 done: Chief: verify condition for J1356 (Verified unmet: all three accepted master SHA256 values match; all three manifest export targets absent. PR376 remains open at 92de3841c without new correction evidence. J1356 stays blocked with recheck J1384 and existing 17:53:25Z retry. Next: scoped no-spend music/tail correction, versioned package mapping, affected gates and full audiovisual review. Picture acceptance retained; no media changes, spend, watch or publishing approval.)
-- J1383 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
