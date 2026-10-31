@@ -117059,17 +117059,22 @@
           "at": "2026-10-31T04:18Z",
           "by": "cursor",
           "what": "step 2 of 5 done: Checker last-10 ms -56.34 -53.88 -64.70 -55.30 -68.92 -59.94, last sample 0/0, null outside windows 0. Loudness I -19.5 LUFS, true peak -3.6 dBTP, LRA 5.0. mp3 sha ada7eaa775104ee5dea9e9be98155abfc0b1e9fda010097f42ca9fa25bed7f85."
+        },
+        {
+          "at": "2026-10-31T04:20Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: vo_check PASS, 0 fails, 146 wpm, 1174 script words, 1173 heard. Warns are the accepted 1.69 s beat at 0:20.34 plus sounds-alike spellings."
         }
       ],
-      "remaining_action": "Run house vo_check and export word timings",
+      "remaining_action": "Export word timings, then record the VO lock",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-10-31T04:18Z",
+        "at": "2026-10-31T04:20Z",
         "by": "cursor",
-        "note": "Checker last-10 ms -56.34 -53.88 -64.70 -55.30 -68.92 -59.94, last sample 0/0, null outside windows 0. Loudness I -19.5 "
+        "note": "vo_check PASS, 0 fails, 146 wpm, 1174 script words, 1173 heard. Warns are the accepted 1.69 s beat at 0:20.34 plus sound"
       },
       "taskKeys": [
         "HOS:013"
