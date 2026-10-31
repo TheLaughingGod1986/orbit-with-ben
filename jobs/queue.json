@@ -118293,9 +118293,14 @@
           "at": "2026-10-31T08:06Z",
           "by": "codex",
           "what": "step 2 of 4 done: Diagnostic exit 0; all three NAS files freshly rehashed and pointers verified. Total unique allocated removed 2712698880 bytes; retained exact candidates and J1213/J1320/J1321 dependencies recorded."
+        },
+        {
+          "at": "2026-10-31T08:06Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: NAS readback verified; live df 10.689 GiB exceeds 10 GiB restart threshold but misses 20 GiB. J1100 stays blocked; exact retained candidates need disposition."
         }
       ],
-      "remaining_action": "Record verified recovery and exact retained candidates for Chief shortfall decision",
+      "remaining_action": "Submit shortfall evidence for Chief disposition; retain uncertain inputs",
       "due": "2026-11-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 2,
@@ -118309,11 +118314,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
         "at": "2026-10-31T08:06Z",
         "by": "codex",
-        "note": "Diagnostic exit 0; all three NAS files freshly rehashed and pointers verified. Total unique allocated removed 2712698880"
+        "note": "NAS readback verified; live df 10.689 GiB exceeds 10 GiB restart threshold but misses 20 GiB. J1100 stays blocked; exact"
       },
       "taskKeys": [
         "OWB:027",
