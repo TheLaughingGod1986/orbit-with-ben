@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1390 | any | claimed | gemini | 2026-10-31T18:44Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1390 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1389 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1388 done: Chief: verify condition for J0862 (done)
 - J1387 done: Chief: verify condition for J1130 (done)
@@ -54,4 +54,3 @@ Recently finished:
 - J1383 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1382 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1381 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
-- J1380 done: Chief: verify condition for J1100 (done)
