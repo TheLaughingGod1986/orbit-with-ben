@@ -118517,9 +118517,14 @@
           "at": "2026-10-31T12:59Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh accepted/protected master and review-image hashes match; recorded unmodified gates succeed. Pairing AR1 v01, AR2 v06, AR3 v05; existing Chief approvals PR371 and PR373."
+        },
+        {
+          "at": "2026-10-31T13:00Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Close-out committed 67a26b83c with accepted version pairing and fresh hash verification; no new media or approval."
         }
       ],
-      "remaining_action": "Submit verified correction close-out record and finish J1321",
+      "remaining_action": "Correction complete; Chief retains PR integration and downstream watch/publishing gates",
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
@@ -118535,11 +118540,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-31T12:59Z",
+        "at": "2026-10-31T13:00Z",
         "by": "codex",
-        "note": "Fresh accepted/protected master and review-image hashes match; recorded unmodified gates succeed. Pairing AR1 v01, AR2 v"
+        "note": "Close-out committed 67a26b83c with accepted version pairing and fresh hash verification; no new media or approval."
       }
     },
     {
