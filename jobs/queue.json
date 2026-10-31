@@ -123531,19 +123531,28 @@
           "at": "2026-10-31T17:24Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-31T17:24Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Acceptance history and PR376 checked; fresh hashes match all three accepted masters"
         }
       ],
-      "remaining_action": "Verify the accepted Apophis cuts, correction evidence and J1356 waiting condition",
+      "remaining_action": "Verify current package targets against the recorded blockers",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-10-31T17:53:25+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T17:24Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "Acceptance history and PR376 checked; fresh hashes match all three accepted masters"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1385",
