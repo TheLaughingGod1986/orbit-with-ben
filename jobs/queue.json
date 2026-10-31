@@ -1,5 +1,5 @@
 {
-  "next_id": 1294,
+  "next_id": 1295,
   "jobs": [
     {
       "id": "J0001",
@@ -115745,6 +115745,35 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J1294",
+      "title": "032 Titan: assemble locked VO titan_landing_vo_v02b (v02 parts; ch00 180 ms qsin fade st=50.30, ch02 20 ms st=107.66), record VO lock (Chief h31 on J1289)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief (Grok) ruling h31 on J1289 (OWB #264, the h31 comment in this job's ref). The J1289 parts are PASS: ch02 passes, and the ch00 word \"own?\" is complete. The h23 ch00 spec was wrong. A 20 ms qsin fade only takes about 7 dB off a tail that sits at -27 dBFS. The corrected spec is a 180 ms qsin fade that starts after the word. No re-take, no ElevenLabs, no paid STT. £0.\n\nUse a new stem, `titan_landing_vo_v02b`, so that nothing gets overwritten. The J1289 attempt `titan_landing_vo_v02a` (wav 56482edf…, mp3 a457adae…, parts/titan_landing_vo_v02a/ with NOT_LOCKED.txt) stays on disk exactly as it is, as the record of the failed spec. Leave v01, v02 and v02a untouched.\n\nDo (Cursor, mini, £0, nothing paid):\n1. Make `02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/02_Voiceover/parts/titan_landing_vo_v02b/`. **Copy** (cp, never mv or delete) ch00–ch06 .wav/.mp3, gap.wav and concat.txt from `parts/titan_landing_vo_v02/`. Take the source from **v02**, never from v02a: v02a's ch00 is already faded.\n2. In v02b only, from the v02 sources:\n   - ch00.wav: `afade=t=out:st=50.30:d=0.18:curve=qsin`. The part is 50.48 s (2,423,040 frames), so the fade ends on the last sample.\n   - ch02.wav: `afade=t=out:st=107.66:d=0.02:curve=qsin`. This is unchanged from h23 and passed in J1289.\n   - Keep pcm_s16le, 48 kHz stereo. No other changes.\n3. Concat in the concat.txt order (ch00, gap, ch01 … ch06) into `02_Voiceover/titan_landing_vo_v02b.wav` and `.mp3`, with the same mp3 settings as v02. Duration must be 582.440 s (27,957,120 frames).\n4. Checks, pasted into the result:\n   - ebur128 I -20 ±1 LUFS, TP ≤ -1 dBTP.\n   - ch00 part end: last-10 ms RMS below -50 dBFS (Chief sim -51.76) and last sample 0/0.\n   - ch02 part end: below -50 (J1289 -62.53) and last sample 0.\n   - Null test v02b vs v02: max abs diff 0 outside 50.300–50.480 s and 245.140–245.160 s.\n   - sha256 of the wav and mp3, labelled correctly.\n   Chief's sim (`~/_desk/chief_h31/sim_titan_vo_v02b.wav`, the same commands) gave: I -20.0 LUFS, LRA 4.8, peak -3.4, 27,957,120 frames, null 0 outside the windows, and wav sha256 55232eebb76b6863…. A match with that sha is a bonus, not a requirement.\n5. Word timings: re-use v02's Scribe words, since timing is unchanged. Copy `stt/titan_landing_vo_v02/` to `stt/titan_landing_vo_v02b/` and note it. No new paid STT.\n6. Record the VO lock in 032 `status.json`/`production-status.md`: vo locked, `titan_landing_vo_v02b`, wav and mp3 sha, ruling h31. Also note that v02a is an unlocked failed-spec attempt. Commit metadata only (WAVs are gitignored) and push.\n7. Mark this job done with the paths and shas. If any check fails, park for Chief with the numbers. No mux, no Veo/Flow/Vertex mint, no upload.\n",
+      "ref": "6536095334",
+      "film": "032",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T00:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T00:12Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "032 Titan: assemble locked VO titan_landing_vo_v02b (v02 parts; ch00 180 ms qsin fade st=50.30, ch02 20 ms st=107.66), record VO lock (Chief h31 on J1289)",
+      "for": "cursor",
+      "kind": "assembly"
     }
   ],
   "focus": [],
