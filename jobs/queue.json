@@ -1,5 +1,5 @@
 {
-  "next_id": 1348,
+  "next_id": 1349,
   "jobs": [
     {
       "id": "J0001",
@@ -120554,6 +120554,34 @@
       "recheck_of": "J0985",
       "due": "2026-10-31T13:00:41+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1348",
+      "title": "URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 31 Oct ~12:00 London: 'buffer queue is empty'. BUFFER_POSTS.json has nothing after VfDm3E2bUgU (31 Oct 11:30, now sent). The daily launchd check (07:05, 'buffer-mirror.ts check') should already hold every upload going public within 7 days: 024 long rVqgtkBV3jc (Sun 1 Nov 18:00), hZH0C7fpCk4 (2 Nov), ZpEA8stoSPA (3 Nov), T9fVlG3CCzU (7 Nov) and the rest. Last records 29 Oct 11:07.\n1. Read the launchd log for the daily check (last 3 runs) and say exactly why it stopped: likely suspects are missing R2_* keys in the Mac .env since the R2-only switch (PR #345, 29 Oct; no Blob fallback) and/or media files moved to the NAS by J1296 (see J1320). Never print secrets; say only which variable is missing.\n2. Fix the cause (restore media paths via J1320 or point --media at the NAS copy; if a key is missing and only Ben can add it, block for Ben naming the variable).\n3. Run 'npx tsx --env-file=.env scripts/buffer-mirror.ts check --dry-run', then for real. Read back in Buffer that 024 and every Short going public by 7 Nov is scheduled on Instagram/Facebook/Threads (Facebook Reels now carry titles, J1277). Commit BUFFER_POSTS.json.\n4. Do the same for HOS: 'check --channel hos'.\nNo YouTube change. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-31T12:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T12:27Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00)",
+      "kind": "listing"
     }
   ],
   "focus": [],
