@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1398 | mini | claimed | gemini | 2026-10-31T20:50Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1399 | any | claimed | claude | 2026-10-31T20:52Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1399 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 pass, no fixes. New: standalone test S3 VfDm3E2bUgU (no Related by design, J0216). 05_Analytics/live_fixes/2026-10-31.md.)
 - J1397 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (7a8898462); 0 fixes needed)
 - J1396 done: Chief: verify condition for J0985 (Verified condition unmet. Latest audit commit 0c18bb2cb; both identical persisted mature Mercury 100-bucket curves independently give 0.20->0.21, 126.22->120.63 percent (-5.59pp), 4.088-4.2924s. Chief review line 67 and J1003 result still give 0.18->0.19 (-5.76pp), 3.68-3.88s and conflicting cut mapping. No final non-author audit PASS. Retained J0985 blocked via wait --recheck J1396, next check 2026-11-01T01:45:00Z; readback PASS. No spend or publishing changes.)
 - J1395 done: Chief: verify condition for J1130 (Verified access remains denied; J1130 held for actual test completion evidence. Next check 2026-11-01T01:40Z; evidence _desk/handoff/J1395.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1391 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (b9d1d8f8f); 0 fixes needed)
 - J1390 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1389 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1388 done: Chief: verify condition for J0862 (done)
