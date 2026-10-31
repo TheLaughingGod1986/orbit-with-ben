@@ -118340,13 +118340,13 @@
       "stage": "",
       "after": "J1317",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-31T11:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T07:33Z",
-      "result": "parked for elected-Chief picture review: PR #370 (7d4f04a17), AR2 v06 and AR3 v03 pass picture/polish/loop/SFX. Review frame 0, 0.5s sheets and low-detail WARNs; cohort remains held from UAT/upload/scheduling. Persistent delivery: 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1321_delivery_v02. GBP0; nothing for Ben.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-31T07:33Z",
@@ -118487,6 +118487,11 @@
           "at": "2026-10-31T12:50Z",
           "by": "relay",
           "what": "condition verification queued: J1349"
+        },
+        {
+          "at": "2026-10-31T12:56Z",
+          "by": "codex",
+          "what": "reopened: J1349 verified 31 Oct 2026: PR372 b5b6be2f0 AR3 v05 elected-Chief picture PASS in PR373 22175d9db. Full-size duration/totality and all 37 tiles inspected; bars over Earth, adjacent corona clear with 2017 credit. Fresh master SHA256 3a2fc5b53e2cfafe4d55422f4f8ae7894ffdb81a727bf47f605e01070a58f13d; protected AR1/AR2/v03 and review-image hashes match, AAC identical. Unchanged picture/polish/loop/SFX PASS; WARN accepted. Reopen correction close-out only; downstream watch/publishing gates remain."
         }
       ],
       "remaining_action": "Await J1345 AR3 composition correction and elected-Chief picture review",
@@ -118494,23 +118499,7 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "escalated_at": "2026-10-31T10:28Z",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-10-31T11:47Z",
-        "by": "codex",
-        "note": "PR #370, commit 7d4f04a17. Corrected persistent masters and review images delivered; old-master and identical-AAC checks"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "J1344 picture ruling c70206699 / PR371: AR2 v06 PASS; AR3 v03 FIX. J1345 must deliver new AR3 with duration bars clear of disc/corona and adjacent unobscured totality, unchanged audio/timing, fresh gates and elected-Chief picture PASS. Cohort held from UAT/upload/scheduling.",
-        "check_at": "2026-10-31T13:50:41+00:00",
-        "last_recheck": "J1344",
-        "checked_at": "2026-10-31T11:52:30+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1349"
-      }
+      "escalated_at": "2026-10-31T10:28Z"
     },
     {
       "id": "J1322",
