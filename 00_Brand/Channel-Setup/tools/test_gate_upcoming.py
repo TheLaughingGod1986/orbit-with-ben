@@ -53,6 +53,22 @@ class Upcoming(unittest.TestCase):
             self.assertIn("NO FILE", text)
             self.assertIn("missing.mp4", text)
 
+    def test_a_ruled_missing_export_reads_known_not_no_file(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            (d / "snap.json").write_text(json.dumps({"videos": [vid("x", at="2099-01-01T10:30:00Z"), vid("y", at="2099-01-02T10:30:00Z")]}))
+            (d / "up.json").write_text(json.dumps({"videos": {"x": {"file": "gone.mp4", "knownNoFile": "uploaded bytes not kept locally (J1320)"},
+                                                              "y": {"file": "missing.mp4"}}}))
+            g.datetime = type("D", (datetime,), {"now": staticmethod(lambda tz=None: datetime(2098, 12, 25, tzinfo=timezone.utc))})
+            try:
+                g.main(["--snapshot", str(d / "snap.json"), "--uploads", str(d / "up.json"), "--media-root", str(d), "--out", str(d / "out.md")])
+            finally:
+                g.datetime = datetime
+            text = (d / "out.md").read_text()
+            self.assertIn("`x` | yes | KNOWN |".replace("yes", "**no**"), text)
+            self.assertIn("J1320", text)
+            self.assertIn("### y: NO FILE", text)  # an unruled missing export still raises the alarm
+
     def test_a_missing_ffprobe_reads_not_checked_not_fail(self):
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)

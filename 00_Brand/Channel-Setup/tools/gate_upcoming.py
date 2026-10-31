@@ -10,6 +10,8 @@ weren't compared against them. The Mini's 06:40 tracker job runs this after its 
   - `gate_shorts_open.py check <file> --air-date <London date> --id <id>`
   - with --add, a Short missing from the library is registered as `scheduled` (so later Shorts are compared to it)
   - a FAIL that a recorded waiver covers exactly (<export stem>_gate.json beside the file) reads "PASS (waived)"
+  - a missing export the Chief has already ruled on (UPLOADS.json "knownNoFile": "<why, with the ruling>") reads
+    "KNOWN", not NO FILE, so a settled case stops raising the alarm every morning (J1320, 31 Oct 2026)
   - NAS files (26 Oct 2026): macOS privacy stops the launchd job reading /Volumes (EPERM, "Operation not permitted"),
     while agent sessions can. `--stage` (run from an agent session) copies each upcoming Short's NAS export, its
     sidecar meta and every NAS file the meta names into --cache, with the meta rewritten to the local copies; the
@@ -62,7 +64,8 @@ def upcoming(snapshot: dict, uploads: dict, now: datetime, days: int) -> list[di
         when = datetime.fromisoformat(at.replace("Z", "+00:00"))
         if now <= when <= now + timedelta(days=days):
             out.append({"id": v["id"], "title": v.get("title", ""), "publishAt": at, "air": london_date(at), "file": entry.get("file"),
-                        "length_test": bool(entry.get("lengthTest"))})
+                        "length_test": bool(entry.get("lengthTest")),
+                        "known_no_file": entry.get("knownNoFile") or ""})
     return sorted(out, key=lambda r: r["publishAt"])
 
 
@@ -260,6 +263,9 @@ def main(argv: list[str] | None = None) -> int:
                 details.append(f"### {r['id']}: NOT CHECKED (NAS not readable from this job)\n\nmacOS privacy blocks this job from: `{blocked[0]}`"
                                f"{' and ' + str(len(blocked) - 1) + ' more' if len(blocked) > 1 else ''}. From an agent session run "
                                "`gate_upcoming.py --stage` (same arguments), then re-run. No Short was judged.\n")
+            elif r["file"] and not f.exists() and r.get("known_no_file"):
+                verdict = "KNOWN"
+                details.append(f"### {r['id']}: KNOWN, no local export\n\nExport not found: `{r['file']}`. Already ruled on: {r['known_no_file']}\n")
             elif not f or not f.exists():
                 verdict = "NO FILE" if r["file"] else "NOT REGISTERED"
                 details.append(f"### {r['id']}: {verdict}\n\n{'Export not found: `' + r['file'] + '`' if r['file'] else 'Not in social/UPLOADS.json, so its export file is unknown.'}\n")
