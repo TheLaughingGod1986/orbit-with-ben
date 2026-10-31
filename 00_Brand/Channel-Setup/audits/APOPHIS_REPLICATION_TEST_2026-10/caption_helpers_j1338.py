@@ -86,4 +86,3 @@ def load_words(path: Path):
             continue
         words.append({'word': text, 'start': float(w['start']), 'end': float(w['end'])})
     return words
-
