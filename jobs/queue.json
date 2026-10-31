@@ -122725,13 +122725,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T15:39Z",
-      "eta": "2026-10-31T17:39Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T15:38Z",
-      "result": "",
+      "result": "Condition NOT satisfied. Read J0979 original rejection/history, J1000 audit, J1042 shelving ruling and J1328 evidence. Verified 031 and 032 locked VO records (J1295/c8ed778ab and J1294/4a9a2e16b); both status.json records explicitly say picture not started, corroborated by production records. 033-061 have no recorded VO/picture locks. J0979 remains blocked with recheck J1374 at 2026-10-31T21:45:00Z. Exact source-time EDL, duplicate and original-gate checks remain required when locked picture exists. 029 reserve v01 stays shelved. No spend, generation, upload, scheduling or film approval.",
       "history": [
         {
           "at": "2026-10-31T15:38Z",
@@ -122762,6 +122762,11 @@
           "at": "2026-10-31T15:40Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0979 remains blocked; wait recorded with recheck J1374 for 2026-10-31T21:45Z. Original gates and 029 shelving preserved."
+        },
+        {
+          "at": "2026-10-31T15:40Z",
+          "by": "codex",
+          "what": "done: Condition NOT satisfied. Read J0979 original rejection/history, J1000 audit, J1042 shelving ruling and J1328 evidence. Verified 031 and 032 locked VO records (J1295/c8ed778ab and J1294/4a9a2e16b); both status.json records explicitly say picture not started, corroborated by production records. 033-061 have no recorded VO/picture locks. J0979 remains blocked with recheck J1374 at 2026-10-31T21:45:00Z. Exact source-time EDL, duplicate and original-gate checks remain required when locked picture exists. 029 reserve v01 stays shelved. No spend, generation, upload, scheduling or film approval."
         }
       ],
       "remaining_action": "Finish verification and report unchanged source-picture blocker",
