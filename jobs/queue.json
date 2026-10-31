@@ -117836,9 +117836,14 @@
           "at": "2026-10-31T07:27Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T07:27Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Restore at least 10 GiB free to restart v07 repairs under Chief h43",
+      "remaining_action": "Verify J1100 headroom and latest Chief repair ruling",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T07:01:29+00:00",
@@ -117847,10 +117852,12 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-31T07:27Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1317",
