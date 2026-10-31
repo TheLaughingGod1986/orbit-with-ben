@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1303 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 | J1304 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1305 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
-| J1306 | mini | claimed | cursor | 2026-10-31T05:35Z | for cursor · vo · OWB Apophis-mould Shorts AR1-AR3: VO from locked v02 scripts (J1279 h37 PASS), park for Chief | 6c7d0f83b |
+| J1306 | mini | blocked | cursor | – | for cursor · vo · OWB Apophis-mould Shorts AR1-AR3: VO from locked v02 scripts (J1279 h37 PASS), park for Chief | 6c7d0f83b |
 | J1307 | mini | open | – | – | for codex · chart · OWB Apophis-mould Shorts AR1-AR3: code graphics (2027 path map, Point Nemo map, cards, scale bars) per J1279 h37, park for Chief | 6c7d0f83b |
 | J1308 | mini | open (after J1306) | – | – | for cursor · assembly · OWB Apophis-mould Shorts AR1-AR3: assembly from J1306 VO + J1307 v03 graphics (after both Chief PASS), park for Chief | 9a2030925 |
 | J1310 | mini | open | – | – | 013 vo · for cursor · assembly · HOS 013 VO: build locked hos_013_vo_v03a from v03 with Chief h39 measured chapter-end fades, checks, mp3, vo_check, record VO lock (J1301 h39 PASS) | 6538573892 |

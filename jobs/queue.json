@@ -116813,13 +116813,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-10-31T04:05Z",
-      "eta": "2026-10-31T05:35Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T03:19Z",
-      "result": "",
+      "result": "parked for Chief: AR1-AR3 VO recorded (83d5b0ab6, 1048 chars, no overage, J0862 share untouched). AR2 v01 planned cut 19.4s and answer at 11.0s, inside both bars. AR1 v02 after C7 trims 1+2 is planned cut 24.0s with the answer at 16.5s. AR3 v02 after C7 trim 3 is planned cut 27.2s with the answer at 19.1s. Scribe REVIEW is numerals and US spelling only. No further word change is authorized.",
       "history": [
         {
           "at": "2026-10-31T03:19Z",
@@ -116850,6 +116850,11 @@
           "at": "2026-10-31T04:14Z",
           "by": "cursor",
           "what": "step 4 of 4 done: Committed 83d5b0ab6. AR2 planned cut 19.4s, answer 11.0s. AR1 v02 24.0s, answer 16.5s. AR3 v02 27.2s, answer 19.1s. C7 trims applied. 1048 chars, 101072 left, no overage."
+        },
+        {
+          "at": "2026-10-31T04:15Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: AR1-AR3 VO recorded (83d5b0ab6, 1048 chars, no overage, J0862 share untouched). AR2 v01 planned cut 19.4s and answer at 11.0s, inside both bars. AR1 v02 after C7 trims 1+2 is planned cut 24.0s with the answer at 16.5s. AR3 v02 after C7 trim 3 is planned cut 27.2s with the answer at 19.1s. Scribe REVIEW is numerals and US spelling only. No further word change is authorized."
         }
       ],
       "remaining_action": "Parked for Chief: VO review of AR1-AR3",
