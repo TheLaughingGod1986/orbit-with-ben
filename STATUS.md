@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 032 | vo | cursor | 2026-10-31T00:17Z | 2026-10-31T01:16Z | J1294 032 Titan: assemble locked VO titan_landing_vo_v02b (v02 parts; ch00 180 ms qsin fade st=50.30, ch02 20 ms st=107.66), record VO lock (Chief h31 on J1289) |
+| 032 | vo | cursor | 2026-10-31T00:17Z | 2026-10-31T00:37Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
