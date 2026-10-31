@@ -116877,13 +116877,13 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T04:25Z",
-      "eta": "2026-10-31T06:55Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T03:19Z",
-      "result": "",
+      "result": "parked for Chief: h38 v03 revision 7e6dcb51f on codex/j1307-graphics; delivery checks succeed, picture_qa has 4 split-panel FAILs on odds/station and 1 date-card WARN; report and evidence committed",
       "history": [
         {
           "at": "2026-10-31T03:19Z",
@@ -116959,6 +116959,11 @@
           "at": "2026-10-31T04:29Z",
           "by": "codex",
           "what": "step 4 of 4 done: Revision 7e6dcb51f pushed to codex/j1307-graphics; v03 report, hashes and QA committed, v02 preserved. No film PASS or merge."
+        },
+        {
+          "at": "2026-10-31T04:29Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: h38 v03 revision 7e6dcb51f on codex/j1307-graphics; delivery checks succeed, picture_qa has 4 split-panel FAILs on odds/station and 1 date-card WARN; report and evidence committed"
         }
       ],
       "remaining_action": "Chief review of v03 h38 fixes and four unresolved picture-QA findings",
