@@ -118573,13 +118573,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T08:43Z",
-      "eta": "2026-10-31T10:43Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T08:42Z",
-      "result": "",
+      "result": "Verification complete; J1100 remains blocked. At 2026-10-31T08:44:31Z free=4482519040 bytes (4.174671 GiB), below h43 >=10 GiB restart and <6 GiB park floor. J1322 local c0f876ffa records five-file recovery and historical 10.689 GiB, not current headroom; J1322 still blocked 3/4. Required nas_offload --apply found no eligible scratch. Updated wait with next check 2026-10-31T14:45:00Z and recheck J1325; preserved J1100 2/3, accepted pickups, h43-LOOP, film links and every repair/delivery/review gate. No media changes, spend or publishing actions.",
       "history": [
         {
           "at": "2026-10-31T08:42Z",
@@ -118610,6 +118610,11 @@
           "at": "2026-10-31T08:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1100 hold updated: live 4.175 GiB fails h43; next check 31 Oct 14:45Z, recheck J1325. Existing 2/3 progress, accepted pickups and all gates preserved."
+        },
+        {
+          "at": "2026-10-31T08:45Z",
+          "by": "codex",
+          "what": "done: Verification complete; J1100 remains blocked. At 2026-10-31T08:44:31Z free=4482519040 bytes (4.174671 GiB), below h43 >=10 GiB restart and <6 GiB park floor. J1322 local c0f876ffa records five-file recovery and historical 10.689 GiB, not current headroom; J1322 still blocked 3/4. Required nas_offload --apply found no eligible scratch. Updated wait with next check 2026-10-31T14:45:00Z and recheck J1325; preserved J1100 2/3, accepted pickups, h43-LOOP, film links and every repair/delivery/review gate. No media changes, spend or publishing actions."
         }
       ],
       "remaining_action": "Close completed verification and report retained disk hold",
