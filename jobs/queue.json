@@ -116134,13 +116134,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-31T01:58Z",
-      "eta": "2026-10-31T02:43Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T01:41Z",
-      "result": "",
+      "result": "UAT master sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b (393139693 bytes, fully on disk). Phone sha256 2e4f94eb2f220fd2f4e17d1c404cc08591fb03d7341e9aac6c82cfebbbeb45c7 (115314504 bytes). check_all PASS. PR 391. Desk 6537533555. Not uploaded.",
       "history": [
         {
           "at": "2026-10-31T01:41Z",
@@ -116171,6 +116171,11 @@
           "at": "2026-10-31T02:02Z",
           "by": "cursor",
           "what": "step 4 of 4 done: UAT master sha cf1561c2 verified on disk. Phone sha 2e4f94eb. check_all PASS. PR https://github.com/TheLaughingGod1986/history-of-science/pull/391. Desk 6537533555."
+        },
+        {
+          "at": "2026-10-31T02:03Z",
+          "by": "cursor",
+          "what": "done: UAT master sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b (393139693 bytes, fully on disk). Phone sha256 2e4f94eb2f220fd2f4e17d1c404cc08591fb03d7341e9aac6c82cfebbbeb45c7 (115314504 bytes). check_all PASS. PR 391. Desk 6537533555. Not uploaded."
         }
       ],
       "remaining_action": "Chief merges HOS PR #391",
@@ -116185,7 +116190,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/391"
     }
   ],
   "focus": [],
