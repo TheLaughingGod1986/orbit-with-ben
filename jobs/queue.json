@@ -116636,13 +116636,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-10-31T03:47Z",
-      "eta": "2026-10-31T04:47Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-31T02:45Z",
-      "result": "",
+      "result": "Moved /private/tmp/j1287-v03 (20 files, 1706780395 bytes, sha matched) to NAS mini-tmp-scratch/2026-10-31/tmp/j1287-v03. Container free 14.5 GB to 16.2 GB. Skipped gemini-j0240-wt: still held by bash 1852 and node 1975. Report #264 6538770066. GBP0.",
       "history": [
         {
           "at": "2026-10-31T02:45Z",
@@ -116673,6 +116673,11 @@
           "at": "2026-10-31T04:04Z",
           "by": "cursor",
           "what": "step 4 of 4 done: j1287-v03: 20 files, 1706780395 bytes, sha matched, NAS mini-tmp-scratch/2026-10-31/tmp/j1287-v03. Container 14.5 GB to 16.2 GB. Skipped gemini-j0240-wt (bash 1852, node 1975). Reported #264 comment 6538770066."
+        },
+        {
+          "at": "2026-10-31T04:04Z",
+          "by": "cursor",
+          "what": "done: Moved /private/tmp/j1287-v03 (20 files, 1706780395 bytes, sha matched) to NAS mini-tmp-scratch/2026-10-31/tmp/j1287-v03. Container free 14.5 GB to 16.2 GB. Skipped gemini-j0240-wt: still held by bash 1852 and node 1975. Report #264 6538770066. GBP0."
         }
       ],
       "remaining_action": "Nothing left on J1302",
@@ -116687,7 +116692,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "6538770066"
     },
     {
       "id": "J1303",
