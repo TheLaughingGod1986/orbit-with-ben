@@ -67974,13 +67974,13 @@
       "stage": "",
       "after": "J0345",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T04:08Z",
-      "eta": "2026-10-31T05:38Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-21T15:34Z",
-      "result": "",
+      "result": "Chief h39 PASS on HOS 013 VO: take hos_013_vo_v03 (sha d56ba2a4, 512.48 s, -19.5 LUFS, TP -3.6, vo_check 0 fails after J1299 PR #392; J1300 shaping pickup; 5:31 credit pickup). Lock is hos_013_vo_v03a with Chief-measured chapter-end fades, built by J1310 (cursor). GBP0.",
       "history": [
         {
           "at": "2026-10-21T15:34Z",
@@ -68041,6 +68041,11 @@
           "at": "2026-10-31T04:08Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T04:09Z",
+          "by": "chief",
+          "what": "done: Chief h39 PASS on HOS 013 VO: take hos_013_vo_v03 (sha d56ba2a4, 512.48 s, -19.5 LUFS, TP -3.6, vo_check 0 fails after J1299 PR #392; J1300 shaping pickup; 5:31 credit pickup). Lock is hos_013_vo_v03a with Chief-measured chapter-end fades, built by J1310 (cursor). GBP0."
         }
       ],
       "kind": "vo",
@@ -68055,7 +68060,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6538573892"
     },
     {
       "id": "J0808",
