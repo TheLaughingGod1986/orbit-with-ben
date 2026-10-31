@@ -116151,19 +116151,26 @@
           "at": "2026-10-31T01:58Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T01:58Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Source sha256 cf1561c2 matches Chief h35; 393139693 bytes on NAS. UAT folder missing, will create."
         }
       ],
-      "remaining_action": "HOS 008 Lightning: copy master v03 (cf1561c2) to HOS UAT for Ben's watch, verify sha (Chief h35 PASS on J1287)",
+      "remaining_action": "Copy Lightning master v03 to HOS UAT and verify sha256",
       "for": "cursor",
       "kind": "listing",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-31T01:58Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Source sha256 cf1561c2 matches Chief h35; 393139693 bytes on NAS. UAT folder missing, will create."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [],
