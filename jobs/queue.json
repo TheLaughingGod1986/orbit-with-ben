@@ -118915,19 +118915,24 @@
           "at": "2026-10-31T09:31Z",
           "by": "codex",
           "what": "step 2 of 3 done: 031 VO lock c8ed778ab/J1295 and 032 VO lock 4a9a2e16b/J1294 exist, but both status.json files explicitly say picture not started. All 033-061 status records lack VO/picture locks. No eligible locked-picture source exists; question eligibility remains unverified until picture is ready."
+        },
+        {
+          "at": "2026-10-31T09:32Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J0979 remains blocked; wait recheck J1328 recorded for 2026-10-31 15:35 UTC. No film PASS, render, spend, upload or schedule change."
         }
       ],
-      "remaining_action": "Retain J0979 input hold and record the next verification",
+      "remaining_action": "Close completed condition verification and report the retained hold",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-10-31T10:06:56+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-10-31T09:31Z",
+        "at": "2026-10-31T09:32Z",
         "by": "codex",
-        "note": "031 VO lock c8ed778ab/J1295 and 032 VO lock 4a9a2e16b/J1294 exist, but both status.json files explicitly say picture not"
+        "note": "J0979 remains blocked; wait recheck J1328 recorded for 2026-10-31 15:35 UTC. No film PASS, render, spend, upload or sche"
       },
       "taskKeys": [
         "OWB:029",
