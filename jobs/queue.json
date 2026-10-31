@@ -117748,13 +117748,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T07:25Z",
-      "eta": "2026-10-31T09:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T06:00Z",
-      "result": "",
+      "result": "Superseded verification resolved: J1308 already done by acting Chief Claude at 2026-10-31T06:52Z. Checked h40 J1306 VO lock and h42 explicit J1307 v04 cancelled-with-PASS authorization; assembly report and all three master SHA256 hashes match. Saved picture_qa, polish and SFX reports PASS (one visual WARN per cut). No reopen of completed assembly. Chief visual review remains blocked in J1317, frame sheets committed at 493f42649; no final picture/UAT/release approval inferred. No spend, upload or schedule change.",
       "history": [
         {
           "at": "2026-10-31T06:00Z",
@@ -117785,6 +117785,11 @@
           "at": "2026-10-31T07:26Z",
           "by": "codex",
           "what": "step 3 of 3 done: All three master SHA256 hashes match ASSEMBLY_REPORT.md. Saved picture, polish and SFX reports PASS, with one visual WARN per cut. J1308 was completed by acting Chief Claude; J1317 holds the pending visual decision. Closing stale verification only."
+        },
+        {
+          "at": "2026-10-31T07:26Z",
+          "by": "codex",
+          "what": "done: Superseded verification resolved: J1308 already done by acting Chief Claude at 2026-10-31T06:52Z. Checked h40 J1306 VO lock and h42 explicit J1307 v04 cancelled-with-PASS authorization; assembly report and all three master SHA256 hashes match. Saved picture_qa, polish and SFX reports PASS (one visual WARN per cut). No reopen of completed assembly. Chief visual review remains blocked in J1317, frame sheets committed at 493f42649; no final picture/UAT/release approval inferred. No spend, upload or schedule change."
         }
       ],
       "remaining_action": "Verification complete; picture approval remains in J1317",
