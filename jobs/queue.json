@@ -101472,6 +101472,11 @@
           "at": "2026-10-31T17:29Z",
           "by": "relay",
           "what": "condition verification queued: J1387"
+        },
+        {
+          "at": "2026-10-31T17:33Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T18:29:02Z"
         }
       ],
       "remaining_action": "Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
@@ -101488,12 +101493,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Fresh 31 Oct 11:28 UTC read cannot verify completion: video page errors and both CDP 9222/9223 sessions deny HOS channel access (evidence _desk/handoff/J1341). Require readable Studio report confirming J1129 MISSING ELEMENT v02 test ended, actual completion timestamp, and at least the following London calendar day.",
-        "check_at": "2026-10-31T18:29:02+00:00",
-        "last_recheck": "J1341",
-        "checked_at": "2026-10-31T11:28:32+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1387"
+        "condition": "Fresh 31 Oct 17:33-17:34 UTC read: both CDP 9222/9223 video pages error and both HOS channel dashboards deny permission (evidence _desk/handoff/J1387). Require readable Studio report confirming J1129 MISSING ELEMENT v02 test ended, actual completion timestamp, and at least the following London calendar day.",
+        "check_at": "2026-10-31T18:29:02Z",
+        "last_recheck": "J1387",
+        "checked_at": "2026-10-31T17:33:58+00:00",
+        "checked_by": "codex"
       }
     },
     {
