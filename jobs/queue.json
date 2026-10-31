@@ -116360,17 +116360,22 @@
           "at": "2026-10-31T02:32Z",
           "by": "codex",
           "what": "step 1 of 4 done: Inspected brief and checker; isolated branch created, aliases and ordinal normalization implemented."
+        },
+        {
+          "at": "2026-10-31T02:33Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Nine normalization tests and the complete check_all.sh suite pass. Fresh small.en transcription is running in tmux j1299-vo-check."
         }
       ],
-      "remaining_action": "Run regression checks and patched checker against the existing v02 WAV",
+      "remaining_action": "Finish fresh Whisper evidence check, then open the code PR",
       "kind": "assembly",
       "model": "gpt-6-astra",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-10-31T02:32Z",
+        "at": "2026-10-31T02:33Z",
         "by": "codex",
-        "note": "Inspected brief and checker; isolated branch created, aliases and ordinal normalization implemented."
+        "note": "Nine normalization tests and the complete check_all.sh suite pass. Fresh small.en transcription is running in tmux j1299"
       },
       "taskKeys": [
         "HOS:013"
