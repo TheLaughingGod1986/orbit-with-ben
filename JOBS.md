@@ -45,6 +45,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1322 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · J1318 ruling: recover Mini space from verified inactive scratch only |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1367 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
+| J1368 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J1369 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
