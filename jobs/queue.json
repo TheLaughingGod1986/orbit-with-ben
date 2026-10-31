@@ -118593,19 +118593,24 @@
           "at": "2026-10-31T08:44Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J1100 full ruling/history, h43-LOOP and accepted pickups; J1322 recovered five files but remained blocked at 3/4 with historical 10.689 GiB."
+        },
+        {
+          "at": "2026-10-31T08:44Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Live 08:44:31Z free=4482519040 bytes (4.174671 GiB), below h43 start 10 GiB and park 6 GiB; required offload found no eligible scratch. Historical recovery is not current headroom."
         }
       ],
-      "remaining_action": "Verify current disk space against h43 restart threshold",
+      "remaining_action": "Record failed restart condition and next verification time",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T09:42:57+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T08:44Z",
         "by": "codex",
-        "note": "Read J1100 full ruling/history, h43-LOOP and accepted pickups; J1322 recovered five files but remained blocked at 3/4 wi"
+        "note": "Live 08:44:31Z free=4482519040 bytes (4.174671 GiB), below h43 start 10 GiB and park 6 GiB; required offload found no el"
       },
       "taskKeys": [
         "OWB:027",
