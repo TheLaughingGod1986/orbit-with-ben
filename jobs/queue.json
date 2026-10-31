@@ -123536,19 +123536,24 @@
           "at": "2026-10-31T17:24Z",
           "by": "codex",
           "what": "step 1 of 3 done: Acceptance history and PR376 checked; fresh hashes match all three accepted masters"
+        },
+        {
+          "at": "2026-10-31T17:24Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All accepted hashes match; all three manifest export targets remain absent; PR376 unchanged with no correction evidence"
         }
       ],
-      "remaining_action": "Verify current package targets against the recorded blockers",
+      "remaining_action": "Record unresolved J1356 hold and finish verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-10-31T17:53:25+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T17:24Z",
         "by": "codex",
-        "note": "Acceptance history and PR376 checked; fresh hashes match all three accepted masters"
+        "note": "All accepted hashes match; all three manifest export targets remain absent; PR376 unchanged with no correction evidence"
       },
       "taskKeys": [
         "OWB:030"
