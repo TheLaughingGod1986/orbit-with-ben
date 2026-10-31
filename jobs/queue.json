@@ -117284,17 +117284,22 @@
           "at": "2026-10-31T05:29Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Nine graphics re-timed into graphics_j1308_v01 (983 frames). v04 pack untouched. ar1_size not used."
+        },
+        {
+          "at": "2026-10-31T05:32Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Assembler restarted after a cut-list bug. Render is tmux j1308-asm, log _desk/logs/J1308-asm.log."
         }
       ],
-      "remaining_action": "Assemble AR1-AR3 masters from the re-timed v04 graphics and the h40 VO",
+      "remaining_action": "Encode AR1-AR3 masters, then run polish, picture and loop gates",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-31T05:29Z",
+        "at": "2026-10-31T05:32Z",
         "by": "cursor",
-        "note": "Nine graphics re-timed into graphics_j1308_v01 (983 frames). v04 pack untouched. ar1_size not used."
+        "note": "Assembler restarted after a cut-list bug. Render is tmux j1308-asm, log _desk/logs/J1308-asm.log."
       },
       "taskKeys": [
         "OWB:030"
