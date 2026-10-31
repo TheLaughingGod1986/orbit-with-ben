@@ -1,5 +1,5 @@
 {
-  "next_id": 1318,
+  "next_id": 1319,
   "jobs": [
     {
       "id": "J0001",
@@ -117815,6 +117815,34 @@
         }
       ],
       "remaining_action": "Apophis-mould AR1-AR3: frame sheets for the Chief picture review (J1308)",
+      "kind": "qa"
+    },
+    {
+      "id": "J1318",
+      "title": "Mini disk: read-only report of the biggest local folders + a move-to-NAS plan (J1100 needs 10 GiB free)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1100 is held because the Mini has 8.3 GiB free (restart minimum 10 GiB), and nas_offload.py --apply found nothing eligible. Read-only first: list the 25 biggest folders/files under the user's home, ~/_desk, /private/tmp and any render scratch (du -sh, sorted), and mark which already have a sha256-verified copy on the NAS. Propose a move plan that frees at least 15 GiB: copy to the NAS, verify sha256, and only then remove the local copy, for render scratch and already-archived media only. Never delete anything on the NAS, and never remove a video's only copy. Commit the report to jobs/reviews/disk_2026-10-31.md and park for Chief: move-plan OK. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-31T06:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T06:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Mini disk: read-only report of the biggest local folders + a move-to-NAS plan (J1100 needs 10 GiB free)",
       "kind": "qa"
     }
   ],

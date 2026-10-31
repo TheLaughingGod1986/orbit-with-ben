@@ -45,6 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1315 | any | open | – | – | chief · Chief: verify condition for J1308 |  |
 | J1316 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1317 | mini | open | – | – | qa · Apophis-mould AR1-AR3: frame sheets for the Chief picture review (J1308) |  |
+| J1318 | mini | open | – | – | qa · Mini disk: read-only report of the biggest local folders + a move-to-NAS plan (J1100 needs 10 GiB free) |  |
 
 Recently finished:
 
