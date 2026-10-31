@@ -124081,18 +124081,30 @@
           "at": "2026-10-31T17:50Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1391; starting 4-step read-only listing check"
+        },
+        {
+          "at": "2026-10-31T17:51Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified last 10 public OWB videos (VfDm3E2bUgU..82Ao0v5XiQI); confirmed 024 long rVqgtkBV3jc still private"
         }
       ],
-      "remaining_action": "Inspect snapshots and previous live_fixes reports for the last 10 live OWB videos",
+      "remaining_action": "Verify descriptions, chapter timestamps against cuts, and source links on all 10 live videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T17:50Z",
+        "at": "2026-10-31T17:51Z",
         "by": "gemini",
-        "note": "Claimed J1391; starting 4-step read-only listing check"
-      }
+        "note": "Identified last 10 public OWB videos (VfDm3E2bUgU..82Ao0v5XiQI); confirmed 024 long rVqgtkBV3jc still private"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
