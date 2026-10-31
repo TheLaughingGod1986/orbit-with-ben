@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1373 | any | claimed | gemini | 2026-10-31T16:34Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1373 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1372 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1371 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1370 done: Chief: verify condition for J1100 (Verified J1100 original brief, approval history through h43, latest result and afed1c552 source checkpoint: eight manifest files hash-match; live disk 34.620 GiB satisfies restart floor; J1270/J1322 complete. Readiness NOT proven: both tested instrumental alternatives have nonempty required base.en ASR and direct listening remains incomplete. Prior auto-review rejected source-audio transfer/evidence push; no retry or bypass performed. Kept J1100 blocked with explicit input condition linked to J1370 and retained recorded retry 2026-10-31T16:00:21Z. Preserve 2/3, OWB:027/028, h43-LOOP, accepted pickups/S6 audio, final gates, Chief replacement review before Ben watch, deadlines and scheduled-v01 fallback. No spend, render, upload, swap, schedule/privacy change or PASS.)
@@ -54,4 +54,3 @@ Recently finished:
 - J1366 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1365 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1364 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
-- J1363 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
