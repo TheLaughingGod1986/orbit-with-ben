@@ -117044,19 +117044,26 @@
           "at": "2026-10-31T04:16Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T04:16Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. Six chapter-end fades, then checks, mp3, vo_check, lock."
         }
       ],
-      "remaining_action": "HOS 013 VO: build locked hos_013_vo_v03a from v03 with Chief h39 measured chapter-end fades, checks, mp3, vo_check, record VO lock (J1301 h39 PASS)",
+      "remaining_action": "Copy Chief fade builder and confirm v03 input",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-10-31T04:16Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Six chapter-end fades, then checks, mp3, vo_check, lock."
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [],
