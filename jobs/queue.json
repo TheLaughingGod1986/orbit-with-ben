@@ -120844,18 +120844,30 @@
           "at": "2026-10-31T13:02Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Checking existing live_fixes reports and recent OWB snapshots"
+        },
+        {
+          "at": "2026-10-31T13:05Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified top 10 live public videos (VfDm3E2bUgU..82Ao0v5XiQI, plus #11 m09jUdwC5hk) on live YouTube endpoints and against repo cuts/manifests"
         }
       ],
-      "remaining_action": "Audit last 10 live OWB videos (chapters, sources, end screens, Related)",
+      "remaining_action": "Update 05_Analytics/live_fixes/2026-10-31.md with VfDm3E2bUgU live at 11:30Z and verify 10/10 pass",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T13:02Z",
+        "at": "2026-10-31T13:05Z",
         "by": "gemini",
-        "note": "Checking existing live_fixes reports and recent OWB snapshots"
-      }
+        "note": "Verified top 10 live public videos (VfDm3E2bUgU..82Ao0v5XiQI, plus #11 m09jUdwC5hk) on live YouTube endpoints and agains"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
