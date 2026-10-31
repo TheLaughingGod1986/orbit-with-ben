@@ -117985,13 +117985,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T07:37Z",
-      "eta": "2026-10-31T09:37Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-31T06:52Z",
-      "result": "",
+      "result": "Acting Chief Codex review complete: FIX to wholesale 21.48 GiB plan; inventory is a candidate list only. Conflicting iCloud size estimates, abbreviated hashes and version-based export selection do not prove safe removal; gate-media cache must remain for launchd. Conditional move-plan OK is limited to J1322 exact-path inactive scratch/duplicate recovery with fresh full SHA-256 manifests, rsync, current+previous protection, no NAS overwrite/deletion and actual df readback. J1322 is queued (assembly lane); target >=20 GiB free, no broad home/iCloud/cache/J1100/source-pool sweep. J1100 remains held on J1322 recovery and elected-Chief >=10 GiB verification under h43, with all repairs/gates/accepted pickups preserved. nas_offload --apply found nothing eligible (9139 MB unchanged); no media moved or spend/publishing action in this review.",
       "history": [
         {
           "at": "2026-10-31T06:52Z",
@@ -118042,6 +118042,11 @@
           "at": "2026-10-31T07:37Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T07:37Z",
+          "by": "codex",
+          "what": "done: Acting Chief Codex review complete: FIX to wholesale 21.48 GiB plan; inventory is a candidate list only. Conflicting iCloud size estimates, abbreviated hashes and version-based export selection do not prove safe removal; gate-media cache must remain for launchd. Conditional move-plan OK is limited to J1322 exact-path inactive scratch/duplicate recovery with fresh full SHA-256 manifests, rsync, current+previous protection, no NAS overwrite/deletion and actual df readback. J1322 is queued (assembly lane); target >=20 GiB free, no broad home/iCloud/cache/J1100/source-pool sweep. J1100 remains held on J1322 recovery and elected-Chief >=10 GiB verification under h43, with all repairs/gates/accepted pickups preserved. nas_offload --apply found nothing eligible (9139 MB unchanged); no media moved or spend/publishing action in this review."
         }
       ],
       "remaining_action": "Parked for Chief: move-plan OK",
@@ -118057,7 +118062,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "d48161fdf"
     },
     {
       "id": "J1319",
