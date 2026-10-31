@@ -123688,9 +123688,14 @@
           "at": "2026-10-31T17:29Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T17:30Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Review original brief, verify current evidence, record readiness decision."
         }
       ],
-      "remaining_action": "Verify readiness: Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
+      "remaining_action": "Verify instrumental bed, listening evidence and approval history for J1100",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T18:01:34+00:00",
@@ -123698,11 +123703,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T17:29Z",
+        "at": "2026-10-31T17:30Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Review original brief, verify current evidence, record readiness decision."
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1387",
