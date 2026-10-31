@@ -1,5 +1,5 @@
 {
-  "next_id": 1301,
+  "next_id": 1302,
   "jobs": [
     {
       "id": "J0001",
@@ -116335,6 +116335,34 @@
         }
       ],
       "remaining_action": "Re-hear the 013 shaping line and pick up only if needed",
+      "kind": "assembly"
+    },
+    {
+      "id": "J1301",
+      "title": "HOS 013 VO: unmodified vo_check on the final take (v02 or v03 from J1300) after the J1299 fix merges; park for Chief (Chief on J0807)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief (Grok) decision on J0807 (HOS #180), 31 Oct 2026. Final word-check sign-off for the HOS 013 Darwin–Wallace VO. Runs only after BOTH J1299 (vo_check alias + ordinal fix PR, merged to HOS main by Chief) and J1300 (re-hear of \"what was doing the shaping\" / pickup -> final take v02 or v03) are done. This job's `after` is J1299; if J1300 is not done when you claim it, put it back with `jobs.py wait J1301 --type dependency --condition \"J1300 not done\" ...` instead of guessing. GBP0, no ElevenLabs.\n\nDo (Cursor, Mini):\n1. Pull HOS main and confirm the J1299 PR is merged (record the merge sha). Use vo_check.py exactly as on main: no local edits, no extra aliases, no flags beyond the house command used for v02.\n2. Run it on the final take J1300 named (`hos_013_vo_v02.wav` or `hos_013_vo_v03.wav`) against `01_Script/darwin_script_master_v02.md`. Save the JSON as `02_Voiceover/vo_check/<stem>.json` (metadata, committed) like the v02 one. Verify the wav sha256 matches J1300's result.\n3. If vo_check PASSes (0 fails): update VO_STATUS.md, commit metadata only on HOS main, push, then park for Chief VO review (block with reason \"parked for Chief: VO review of HOS 013 <stem>, vo_check PASS, sha <…>\") and post a hos-desk note on HOS #180 (to=grok film=013 stage=vo status=review).\n4. If it still FAILs: paste the fail lines and park for Chief. Do not regenerate anything, do not edit the checker, do not call it a lock.\nNo picture, no upload, nothing for Ben.\n",
+      "ref": "6537756171",
+      "film": "013",
+      "stage": "vo",
+      "after": "J1299",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T02:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T02:27Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run the final 013 vo_check and park for Chief",
       "kind": "assembly"
     }
   ],
