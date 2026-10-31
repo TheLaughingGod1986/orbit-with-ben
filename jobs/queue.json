@@ -126262,19 +126262,24 @@
           "at": "2026-10-31T21:51Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J0979 rejection and approval history, J1000 audit result, J1042 shelving ruling and J1374 verification; all original holds remain in force"
+        },
+        {
+          "at": "2026-10-31T21:51Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 031 and 032 have explicit VO lock records but picture not started; 033-061 status records have no VO or picture lock. Condition remains unmet"
         }
       ],
-      "remaining_action": "Check current 031+ production records for locked picture",
+      "remaining_action": "Record the unmet picture-lock condition and finish verification",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-10-31T22:50:06+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T21:51Z",
         "by": "codex",
-        "note": "Read J0979 rejection and approval history, J1000 audit result, J1042 shelving ruling and J1374 verification; all origina"
+        "note": "031 and 032 have explicit VO lock records but picture not started; 033-061 status records have no VO or picture lock. Co"
       },
       "taskKeys": [
         "OWB:029",
