@@ -98125,10 +98125,10 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T06:00Z",
+      "eta": "2026-10-31T08:00Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
       "result": "",
@@ -98422,6 +98422,11 @@
           "at": "2026-10-31T05:16Z",
           "by": "chief",
           "what": "reopened: Chief h43 (J1313 verify; OWB #264 6539463596): S6 loop gate correction ruled SOUND and EVIDENCED and adopted as gate h43-LOOP (not a waiver or mask). Chief reproduced true f0-vs-last whole 8.1313 (180x320)/8.59 (270x480); only rows 22-62/320 (frame-0 hook) exceed 5, rest 0.85 < opening step 4.57. h43-LOOP for S2/S5/S6 final masters: (1) text-free base from the same build/filtergraph with only text layers disabled, manifest with both sha256s + filtergraph diff; (2) base whole-frame f0-vs-last <2.0 (report 180x320 + 270x480), c37 checks unchanged on final; (3) final last vs base last <1.0 whole; final f0 vs base f0 <1.0 outside the frame-0 text alpha bboxes +8 px; (4) OCR f0 = locked hook, every tail frame empty, captions word-for-word vs final AAC (S5 'GLIESE 710 COME' / 'TO THE SUN?'); (5) report final whole as diagnostic. Script jobs/reviews/J1100/loop_h43.py; don't edit short_c37/shared gates. Keep S6 AAC/timing/exceptions. S2/S5 pickups accepted as sources (no re-record). Work: 1) S2 continuous 'because the ground at the equator' source, else one <=40-char pickup (29 Oct ruling 3 scope, fresh locked balance, same voice/settings, no overage); 2) S2 instrumental-only bed proof (bed ASR no words + listening; v01j rejected; no music gen); 3) S5 captions; 4) assemble v07 S2/S5/S6 with 1.0 s caption-free tails, v01-v06 untouched; 5) all gates (gate_shorts_open strict --air-date, picture_qa, polish, music, SFX, -14.0+/-0.5 LUFS, TP<=-1.6, OCR every 3rd frame, dark-run, sheets, _PHONE.mp4) + h43-LOOP; 6) Gemini direct listening on all three; 7) durable repo/UAT/NAS with SHA-256 manifests; 8) start df>=10 GiB (13.1 GiB now), park <6 GiB; 9) park for Chief replacement review. Deadlines/v01 fallback unchanged. No upload/swap/schedule/privacy/watch card/other spend."
+        },
+        {
+          "at": "2026-10-31T06:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief reviews reproduced S6 loop conflict; assemble with completed S2/S5 pickups after ruling",
@@ -98440,7 +98445,15 @@
         "OWB:028"
       ],
       "escalated_at": "2026-10-28T22:00Z",
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T06:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1101",
