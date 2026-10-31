@@ -1,5 +1,5 @@
 {
-  "next_id": 1320,
+  "next_id": 1321,
   "jobs": [
     {
       "id": "J0001",
@@ -117950,6 +117950,34 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J1320",
+      "title": "Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "05_Analytics/owb/UPCOMING_SHORTS_GATE.md (31 Oct) shows NO FILE for 4 scheduled Shorts. ZpEA8stoSPA (airs Tue 3 Nov) passed on 30 Oct, so J1296's 'superseded standalone Short versions' move seems to have taken still-scheduled exports to the NAS. The files to bring back (copy NAS -> repo path, verify sha256, never remove the NAS copy):\n- 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4\n- 02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4\n- plus mon09_night_cold_v01.mp4 and thu12_length_test_dust_v01.mp4 only if their exact uploaded bytes exist on the NAS (J1181: iyvWYFP_ETA's local master was overwritten, so a NO FILE there may stay; say so).\nMatch each against the uploaded sha256 in UPLOADS.json / the package results where recorded. Then run the gate (gate_upcoming) and commit the refreshed UPCOMING_SHORTS_GATE.md. Also add these scheduled-Short paths to the offload keep-list, so a 'superseded' sweep never takes the file of a Short that hasn't aired. No YouTube change, no re-render. GBP0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-10-31T07:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T07:11Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate",
+      "kind": "qa"
     }
   ],
   "focus": [],
