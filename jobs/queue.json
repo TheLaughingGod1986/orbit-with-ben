@@ -120418,13 +120418,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-31T11:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T11:52Z",
-      "result": "parked for Chief: PR372 b5b6be2f0 AR3 v05 picture acceptance, including totality low-detail WARN. Unmodified picture/polish/loop/SFX pass; persistent hash and identical AAC verified. J1321 remains held with original retry. GBP0; no UAT/upload/scheduling.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-31T11:52Z",
@@ -120475,6 +120475,11 @@
           "at": "2026-10-31T12:00Z",
           "by": "codex",
           "what": "blocked: parked for Chief: PR372 b5b6be2f0 AR3 v05 picture acceptance, including totality low-detail WARN. Unmodified picture/polish/loop/SFX pass; persistent hash and identical AAC verified. J1321 remains held with original retry. GBP0; no UAT/upload/scheduling."
+        },
+        {
+          "at": "2026-10-31T13:30Z",
+          "by": "codex",
+          "what": "reopened: Elected-Chief ruling: AR3 v05 picture PASS, confirming PR373 22175d9db on PR372 b5b6be2f0. Fresh master/protected/image hashes match; full-size samples and 37 half-second tiles inspected. Duration graphic over Earth, adjacent corona unobscured with 2017 NASA/Aubrey Gemignani credit; low-detail WARN accepted, no FAIL waived. J1321 already closed after J1349 verification; reopen J1345 solely to record review close-out. Downstream watch/publishing gates remain."
         }
       ],
       "remaining_action": "Elected Chief to review AR3 v05 pictures and retained low-detail WARN in PR372",
@@ -120488,13 +120493,6 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-31T12:00Z",
-        "by": "codex",
-        "note": "PR372 b5b6be2f0 delivered with persistent hash, identical AAC, unchanged gates and review sheets; worker correction comp"
-      },
       "taskKeys": [
         "OWB:030"
       ]
