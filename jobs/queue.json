@@ -117898,13 +117898,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-10-31T07:33Z",
-      "eta": "2026-10-31T09:33Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-31T06:52Z",
-      "result": "",
+      "result": "Chief review complete: evidence ACCEPTED; AR1 v01 picture PASS; AR2 v02 FIX (h37 C4 station icon is not real ISS footage/NASA model); AR3 v02 FIX (9-11s map covers eclipse). Ruling merged PR #361, 4ce8b528d. Corrective assembly J1321 depends on this review, preserves AR1 and old masters, supplies new composites/gates/sheets, then returns for Chief. Cohort held: no UAT/upload/schedule approval. GBP0; no Ben action.",
       "history": [
         {
           "at": "2026-10-31T06:52Z",
@@ -117950,6 +117950,11 @@
           "at": "2026-10-31T07:33Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T07:33Z",
+          "by": "codex",
+          "what": "done: Chief review complete: evidence ACCEPTED; AR1 v01 picture PASS; AR2 v02 FIX (h37 C4 station icon is not real ISS footage/NASA model); AR3 v02 FIX (9-11s map covers eclipse). Ruling merged PR #361, 4ce8b528d. Corrective assembly J1321 depends on this review, preserves AR1 and old masters, supplies new composites/gates/sheets, then returns for Chief. Cohort held: no UAT/upload/schedule approval. GBP0; no Ben action."
         }
       ],
       "remaining_action": "Park J1317 for Chief picture PASS",
@@ -117964,7 +117969,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "4ce8b528d"
     },
     {
       "id": "J1318",
