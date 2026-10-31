@@ -119260,10 +119260,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T09:54Z",
+      "eta": "2026-10-31T11:54Z",
       "created_by": "codex",
       "created_at": "2026-10-31T09:51Z",
       "result": "",
@@ -119272,11 +119272,24 @@
           "at": "2026-10-31T09:51Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T09:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Give each OWB029 v04 Short its own watch ID and verify the published cards play the intended cut",
       "due": "2026-11-01T00:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T09:54Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
