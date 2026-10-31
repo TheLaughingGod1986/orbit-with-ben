@@ -27630,13 +27630,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-31T00:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-15T23:47Z",
-      "result": "parked for Chief: magnetic_field_flip_vo_v02.wav sha c7c482ac8cdf6738b2172044e8b5e97e03fb7c1fa01b3488e6f24fdc21fd125f, 568.28s, -19.9 LUFS, LRA 4.8, TP -3.5 dBFS, mean -23.2 dB. ch01-only; other chapter mp3s match v01. ch01 88.40s (bar 80.88+/-6, 1.52s over). Tail: final 50 ms mean -41.2 dB max -30.8; last 10 ms mean -62.2 max -53.8; last-sample peak -57.6 dB. Scribe way? ends 0.04s before the file end. ch01 Scribe 96.02%: pontfarine for Pontfarein, 23, 780000. No second take: the ending does not clip. True counter_delta 511 (used 15526 to 16037, remaining 105077). Ledger line logs 7765 full-script chars and was left as written. Metadata 9e68f20aa. v01 untouched. No mux.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T23:47Z",
@@ -27762,6 +27762,11 @@
           "at": "2026-10-31T00:16Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: magnetic_field_flip_vo_v02.wav sha c7c482ac8cdf6738b2172044e8b5e97e03fb7c1fa01b3488e6f24fdc21fd125f, 568.28s, -19.9 LUFS, LRA 4.8, TP -3.5 dBFS, mean -23.2 dB. ch01-only; other chapter mp3s match v01. ch01 88.40s (bar 80.88+/-6, 1.52s over). Tail: final 50 ms mean -41.2 dB max -30.8; last 10 ms mean -62.2 max -53.8; last-sample peak -57.6 dB. Scribe way? ends 0.04s before the file end. ch01 Scribe 96.02%: pontfarine for Pontfarein, 23, 780000. No second take: the ending does not clip. True counter_delta 511 (used 15526 to 16037, remaining 105077). Ledger line logs 7765 full-script chars and was left as written. Metadata 9e68f20aa. v01 untouched. No mux."
+        },
+        {
+          "at": "2026-10-31T00:23Z",
+          "by": "chief",
+          "what": "reopened: Chief taking parked review (h32)"
         }
       ],
       "kind": "vo",
@@ -27769,14 +27774,7 @@
       "remaining_action": "Block J0345 for Chief with the v02 path and measurements",
       "taskKeys": [
         "OWB:031"
-      ],
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-10-31T00:16Z",
-        "by": "cursor",
-        "note": "Ready to park. ch01 88.40s is 1.52s over the length bar. Tail mean -41.2 dB. No mux."
-      }
+      ]
     },
     {
       "id": "J0346",
