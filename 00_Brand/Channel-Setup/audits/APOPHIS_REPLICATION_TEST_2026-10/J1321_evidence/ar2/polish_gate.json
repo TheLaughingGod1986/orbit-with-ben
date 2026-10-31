@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/J1321-render-v06/ar2/owb_apophis_ar2_v06.mp4",
+  "edge_floor": 0.0283,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "ar2_06_Crew2_flyaround_loop",
+      "cut": 6,
+      "t": 18.9,
+      "source": "Crew2_flyaround_loop_preroll",
+      "why": [
+        "low detail: edge density 0.024 < film p5 0.0283"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "ar2_00_Crew2_flyaround_s0",
+      "source": "Crew2_flyaround",
+      "t": 1.2,
+      "std": 38.85,
+      "mean": 92.36,
+      "p95": 124.0,
+      "edge": 0.0532,
+      "hf": 13.54,
+      "lf": 28.0,
+      "std8": 32.39,
+      "edge8": 0.1631,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "ar2_01_GSFC_20171208_Archive_e002130_s1",
+      "source": "GSFC_20171208_Archive_e002130",
+      "t": 3.8,
+      "std": 55.6,
+      "mean": 103.52,
+      "p95": 198.0,
+      "edge": 0.2504,
+      "hf": 16.81,
+      "lf": 46.84,
+      "std8": 49.69,
+      "edge8": 0.5303,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "ar2_02_GSFC_20171208_Archive_e002130_s2",
+      "source": "GSFC_20171208_Archive_e002130",
+      "t": 6.68,
+      "std": 53.47,
+      "mean": 86.03,
+      "p95": 204.0,
+      "edge": 0.18,
+      "hf": 18.57,
+      "lf": 42.8,
+      "std8": 45.83,
+      "edge8": 0.4222,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "ar2_03_GSFC_20171208_Archive_e002130_s3",
+      "source": "GSFC_20171208_Archive_e002130",
+      "t": 9.57,
+      "std": 56.3,
+      "mean": 113.87,
+      "p95": 205.0,
+      "edge": 0.3268,
+      "hf": 22.11,
+      "lf": 43.88,
+      "std8": 47.05,
+      "edge8": 0.6045,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "ar2_04_Gerst_Earth_timelapses_2017_s4",
+      "source": "Gerst_Earth_timelapses_2017",
+      "t": 12.87,
+      "std": 88.09,
+      "mean": 93.04,
+      "p95": 226.0,
+      "edge": 0.0487,
+      "hf": 12.77,
+      "lf": 85.01,
+      "std8": 85.91,
+      "edge8": 0.2002,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "ar2_05_Crew2_flyaround_s5",
+      "source": "Crew2_flyaround",
+      "t": 16.58,
+      "std": 29.89,
+      "mean": 85.15,
+      "p95": 116.0,
+      "edge": 0.0384,
+      "hf": 9.54,
+      "lf": 25.53,
+      "std8": 26.88,
+      "edge8": 0.1039,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "ar2_06_Crew2_flyaround_loop",
+      "source": "Crew2_flyaround_loop_preroll",
+      "t": 18.9,
+      "std": 27.89,
+      "mean": 88.21,
+      "p95": 118.0,
+      "edge": 0.024,
+      "hf": 4.8,
+      "lf": 26.24,
+      "std8": 26.91,
+      "edge8": 0.0772,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.024 < film p5 0.0283"
+      ]
+    }
+  ]
+}
