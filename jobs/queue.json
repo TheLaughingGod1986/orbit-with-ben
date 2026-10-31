@@ -116333,10 +116333,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-10-31T02:31Z",
+      "eta": "2026-10-31T04:01Z",
       "created_by": "chief",
       "created_at": "2026-10-31T02:27Z",
       "result": "",
@@ -116345,11 +116345,24 @@
           "at": "2026-10-31T02:27Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-10-31T02:31Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Open the vo_check alias/ordinal PR for Chief",
       "kind": "assembly",
-      "model": "gpt-6-astra"
+      "model": "gpt-6-astra",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T02:31Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1300",
