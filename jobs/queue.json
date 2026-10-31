@@ -118460,9 +118460,14 @@
           "at": "2026-10-31T08:48Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-10-31T09:45:00Z"
+        },
+        {
+          "at": "2026-10-31T09:40Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-10-31T10:30:00Z"
         }
       ],
-      "remaining_action": "Await J1326 candidate proofs and disk-growth reconciliation, then Chief recovery ruling",
+      "remaining_action": "Await J1331 exact path proofs, then Chief recovery ruling",
       "due": "2026-11-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 2,
@@ -118488,8 +118493,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Acting Chief Codex ruling 31 Oct: FIX, not recovery completion. All five archived files freshly rehashed successfully; 2712698880 allocated bytes recovered historically. Live 5.15 GiB is below J1100 restart 10 GiB and recovery target 20 GiB. Retain all uncertain files; no broadening approved. Await J1326 growth reconciliation and exact current/previous/reference proofs, then elected-Chief allowlist/headroom ruling. Preserve worker 3/4 and J1100 2/3/h43-LOOP; no film PASS or restart.",
-        "check_at": "2026-10-31T09:45:00Z"
+        "condition": "J1326 Chief ruling: evidence accepted in merged PR366; KEEP all 8057 files, empty offload allowlist. Await J1331 exact UAT serving-path/reference proof and elected-Chief allowlist/headroom ruling. Fresh 09:39Z free 8.537 GiB remains below 10 GiB restart and 20 GiB target. No new moves; retain worker 3/4 and all original exclusions.",
+        "check_at": "2026-10-31T10:30:00Z"
       }
     },
     {
