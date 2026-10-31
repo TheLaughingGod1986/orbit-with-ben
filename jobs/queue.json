@@ -122959,18 +122959,24 @@
           "at": "2026-10-31T15:49Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-31T15:50Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original task, acceptance history and unchanged open PR376; no newer correction PR found"
         }
       ],
-      "remaining_action": "Verify J1356 correction evidence and accepted AR masters",
+      "remaining_action": "Check current master hashes and package export targets",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-10-31T16:48:47+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-10-31T15:49Z",
-        "by": "codex"
+        "at": "2026-10-31T15:50Z",
+        "by": "codex",
+        "note": "Read original task, acceptance history and unchanged open PR376; no newer correction PR found"
       },
       "taskKeys": [
         "OWB:030"
