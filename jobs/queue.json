@@ -116658,17 +116658,22 @@
           "at": "2026-10-31T03:47Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. NAS mounted. Container free 14.6 GB before any move."
+        },
+        {
+          "at": "2026-10-31T03:49Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: lsof clear on j1287-v03. No other open job cites it. PIPELINE and HOS json have no cite. Worktree gemini-j0240-wt still held by bash 1852 and node 1975; will skip. 20 files, 1666816 KB."
         }
       ],
-      "remaining_action": "Verify NAS, lsof, and that no other open job cites j1287-v03",
+      "remaining_action": "Copy /private/tmp/j1287-v03 to the NAS and verify sha256",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T03:47Z",
+        "at": "2026-10-31T03:49Z",
         "by": "cursor",
-        "note": "Claimed. NAS mounted. Container free 14.6 GB before any move."
+        "note": "lsof clear on j1287-v03. No other open job cites it. PIPELINE and HOS json have no cite. Worktree gemini-j0240-wt still "
       },
       "taskKeys": [
         "HOS:008"
