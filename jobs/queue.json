@@ -1,5 +1,5 @@
 {
-  "next_id": 1307,
+  "next_id": 1308,
   "jobs": [
     {
       "id": "J0001",
@@ -116727,6 +116727,35 @@
       "remaining_action": "OWB Apophis-mould Shorts AR1-AR3: VO from locked v02 scripts (J1279 h37 PASS), park for Chief",
       "for": "cursor",
       "kind": "vo"
+    },
+    {
+      "id": "J1307",
+      "title": "OWB Apophis-mould Shorts AR1-AR3: code graphics (2027 path map, Point Nemo map, cards, scale bars) per J1279 h37, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "OWB Apophis replication test (J1279 script PASS, Chief h37). Code graphics for the 3 primary Shorts AR1/AR2/AR3. £0 own code. Read SCRIPTS_AND_PACKAGING_v02.md (§4–§6 VISUAL MUST lines) and CHIEF_H37_CORRECTIONS.md in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/. Where they disagree, the corrections file wins.\n\nBuild these as 1080x1920 alpha (ProRes 4444 .mov or PNG sequence). Durations are parameters, because the VO isn't measured yet, and assembly fits them later. House type, one label at a time, inside the 16:9 centre band, no UI slab.\n1. AR3 2027 totality path map, plotted from NASA's SE2027Aug02Tpath / SE2027Aug02Tgoogle data: northern limit, southern limit and centre line from the Atlantic to the Red Sea. Draw it as an animated shadow band. Countries labelled one at a time: Spain, Morocco, Algeria, Tunisia, Libya, Egypt. Greatest Duration marker at 26°49'N 031°08'E. Base plate: GSFC_20171208_Archive_e002130.jpg (NAS pool_v01/earth), or a code-drawn equirectangular base. Put the data file and the plot script in git.\n2. AR3 cards and bar: `2 AUG 2027 · 258 KM PATH · LONGEST: 6M23S, EGYPT`, and a DATA bar `2026 ECLIPSE: 2M 18S` vs `2027 EGYPT: 6M 23S` (2.78x).\n3. AR2: card `RETIRES 2030 · DEORBIT BURN ~2031 · DECISION 2027`; a South Pacific target map (Point Nemo ~48°53'S 123°24'W, label EMPTY SOUTH PACIFIC); and a `109 M (FOOTBALL FIELD)` station-silhouette scale.\n4. AR1: date card `22 DEC 2032`; call-out `4.3% (JUNE 2025) → 0% (WEBB, FEB 2026)`; a 60 m rock vs 15-storey building silhouette; and a Moon-disc miss diagram with the arc passing at `21,200 KM` from the surface, at true scale (Moon radius 1,737 km).\n5. Run picture_qa.py on stills from each graphic. Commit the scripts and a GRAPHICS_REPORT.md, with media under 07_Edit-Project/ off git.\nPark for Chief. No VO, no mint, no upload, £0.\n",
+      "ref": "6c7d0f83b",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-10-31T03:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T03:19Z",
+          "by": "chief",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "OWB Apophis-mould Shorts AR1-AR3: code graphics (2027 path map, Point Nemo map, cards, scale bars) per J1279 h37, park for Chief",
+      "for": "codex",
+      "kind": "chart"
     }
   ],
   "focus": [],
