@@ -120103,9 +120103,14 @@
           "at": "2026-10-31T11:30Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T11:30Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking original job, approved audio decisions and later evidence; no recording or publishing authorised by this verification."
         }
       ],
-      "remaining_action": "Verify readiness: Decide 009 Short_B hook recording scope (Chief/Claude), then record only the takes that need replacing",
+      "remaining_action": "Verify the approved Shorts recording scope and resolve the J0862 hold",
       "kind": "chief",
       "recheck_of": "J0862",
       "due": "2026-10-31T12:01:12+00:00",
@@ -120115,9 +120120,12 @@
         "of": 3,
         "at": "2026-10-31T11:30Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking original job, approved audio decisions and later evidence; no recording or publishing authorised by this verifi"
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     }
   ],
   "focus": [],
