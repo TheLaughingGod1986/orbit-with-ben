@@ -120403,9 +120403,14 @@
           "at": "2026-10-31T11:58Z",
           "by": "codex",
           "what": "step 2 of 4 done: Fresh v05 unchanged picture/polish/SFX gates exit 0, loop passes; 18.055s, -14.7 LUFS, -1.4 dBTP. Preparing durable evidence and exact half-second sheet."
+        },
+        {
+          "at": "2026-10-31T11:59Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Durable v05 master verified; AAC identical to v03; protected AR1/AR2/v03 hashes match. All 37 half-second tiles and full-size samples inspected. Totality low-detail WARN retained for Chief."
         }
       ],
-      "remaining_action": "Verify persistent AR3 master, AAC identity and review images",
+      "remaining_action": "Publish correction PR and hand off picture review to Chief",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -120417,11 +120422,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-10-31T11:58Z",
+        "at": "2026-10-31T11:59Z",
         "by": "codex",
-        "note": "Fresh v05 unchanged picture/polish/SFX gates exit 0, loop passes; 18.055s, -14.7 LUFS, -1.4 dBTP. Preparing durable evid"
+        "note": "Durable v05 master verified; AAC identical to v03; protected AR1/AR2/v03 hashes match. All 37 half-second tiles and full"
       },
       "taskKeys": [
         "OWB:030"
