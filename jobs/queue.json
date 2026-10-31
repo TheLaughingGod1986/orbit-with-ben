@@ -122435,19 +122435,24 @@
           "at": "2026-10-31T15:23Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: inspect original brief and rulings; verify latest evidence; record condition decision and report."
+        },
+        {
+          "at": "2026-10-31T15:23Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1100 original brief and approval history through h43 and latest block. J1270/J1322 complete; latest block is bed/listening evidence, not predecessor or disk."
         }
       ],
-      "remaining_action": "Verify J1100 bed, listening and approval evidence before changing its hold",
+      "remaining_action": "Verify source checkpoint and record actual unmet input condition",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T16:00:21+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T15:23Z",
         "by": "codex",
-        "note": "Plan: inspect original brief and rulings; verify latest evidence; record condition decision and report."
+        "note": "Read J1100 original brief and approval history through h43 and latest block. J1270/J1322 complete; latest block is bed/l"
       },
       "taskKeys": [
         "OWB:027",
