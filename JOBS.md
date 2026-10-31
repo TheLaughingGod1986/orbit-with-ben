@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1288 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 | J1291 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 | J1292 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1296 | mini | open | – | – | for cursor · assembly · Chief h34: copy-first NAS move of git-ignored shipped/superseded repo media (compilation v05 master, superseded standalone Short versions, HOS 006 intermediate join) to restore >=20 GB house headroom | 6536896845 |
+| J1296 | mini | claimed | cursor | 2026-10-31T04:25Z | for cursor · assembly · Chief h34: copy-first NAS move of git-ignored shipped/superseded repo media (compilation v05 master, superseded standalone Short versions, HOS 006 intermediate join) to restore >=20 GB house headroom | 6536896845 |
 | J1298 | any | open | – | – | chief · Chief: verify condition for J0807 |  |
 
 Recently finished:
