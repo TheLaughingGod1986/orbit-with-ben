@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/J1321-render/assembly_v09/ar3/owb_apophis_ar3_v09.mp4",
+  "edge_floor": 0.0272,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "ar3_02_NHQ201708210100_s2",
+      "cut": 2,
+      "t": 6.63,
+      "source": "NHQ201708210100",
+      "why": [
+        "low detail: edge density 0.023 < film p5 0.0272"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "ar3_00_NOAA_sat_eclipse_2024_notext_s0",
+      "source": "NOAA_sat_eclipse_2024_notext",
+      "t": 1.2,
+      "std": 70.25,
+      "mean": 108.08,
+      "p95": 216.0,
+      "edge": 0.3345,
+      "hf": 21.21,
+      "lf": 56.93,
+      "std8": 61.27,
+      "edge8": 0.6031,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "ar3_01_Gerst_Earth_timelapses_2017_s1",
+      "source": "Gerst_Earth_timelapses_2017",
+      "t": 4.3,
+      "std": 81.48,
+      "mean": 117.93,
+      "p95": 223.0,
+      "edge": 0.0662,
+      "hf": 12.75,
+      "lf": 77.59,
+      "std8": 79.06,
+      "edge8": 0.3456,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "ar3_02_NHQ201708210100_s2",
+      "source": "NHQ201708210100",
+      "t": 6.63,
+      "std": 77.07,
+      "mean": 74.94,
+      "p95": 239.0,
+      "edge": 0.023,
+      "hf": 11.02,
+      "lf": 72.45,
+      "std8": 74.78,
+      "edge8": 0.187,
+      "seams": [],
+      "video": false,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.023 < film p5 0.0272"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "ar3_03_Gerst_Earth_timelapses_2017_s3",
+      "source": "Gerst_Earth_timelapses_2017",
+      "t": 8.28,
+      "std": 55.75,
+      "mean": 174.28,
+      "p95": 235.0,
+      "edge": 0.0394,
+      "hf": 12.02,
+      "lf": 51.82,
+      "std8": 53.2,
+      "edge8": 0.2615,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "ar3_04_Gerst_Earth_timelapses_2017_s4",
+      "source": "Gerst_Earth_timelapses_2017",
+      "t": 10.43,
+      "std": 59.54,
+      "mean": 187.53,
+      "p95": 238.0,
+      "edge": 0.0398,
+      "hf": 12.34,
+      "lf": 55.83,
+      "std8": 56.99,
+      "edge8": 0.2066,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "ar3_05_Gerst_Earth_timelapses_2017_s5",
+      "source": "Gerst_Earth_timelapses_2017",
+      "t": 12.98,
+      "std": 29.95,
+      "mean": 245.33,
+      "p95": 254.0,
+      "edge": 0.035,
+      "hf": 15.8,
+      "lf": 19.51,
+      "std8": 21.5,
+      "edge8": 0.1398,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "ar3_06_NOAA_sat_eclipse_2024_notext_s6",
+      "source": "NOAA_sat_eclipse_2024_notext",
+      "t": 15.83,
+      "std": 70.52,
+      "mean": 104.4,
+      "p95": 215.0,
+      "edge": 0.3398,
+      "hf": 20.82,
+      "lf": 60.45,
+      "std8": 63.34,
+      "edge8": 0.5881,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "ar3_07_NOAA_sat_eclipse_2024_notext_loop",
+      "source": "NOAA_sat_eclipse_2024_notext_loop_preroll",
+      "t": 17.56,
+      "std": 67.62,
+      "mean": 99.12,
+      "p95": 208.0,
+      "edge": 0.3212,
+      "hf": 16.65,
+      "lf": 59.52,
+      "std8": 62.23,
+      "edge8": 0.554,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

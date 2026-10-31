@@ -1,0 +1,200 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/J1321-render/assembly_v05/ar2/owb_apophis_ar2_v05.mp4",
+  "edge_floor": 0.0486,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "ar2_05_Crew2_flyaround_s5",
+      "cut": 5,
+      "t": 16.58,
+      "source": "Crew2_flyaround",
+      "why": [
+        "low detail: edge density 0.0485 < film p5 0.0486"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "ar2_00_Crew2_flyaround_s0",
+      "source": "Crew2_flyaround",
+      "t": 1.2,
+      "std": 62.1,
+      "mean": 81.71,
+      "p95": 202.0,
+      "edge": 0.1863,
+      "hf": 17.9,
+      "lf": 52.32,
+      "std8": 55.7,
+      "edge8": 0.4605,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "ar2_01_Gerst_Earth_timelapses_2017_s1",
+      "source": "Gerst_Earth_timelapses_2017",
+      "t": 3.8,
+      "std": 36.49,
+      "mean": 160.4,
+      "p95": 199.0,
+      "edge": 0.0587,
+      "hf": 11.32,
+      "lf": 30.41,
+      "std8": 32.27,
+      "edge8": 0.3077,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "ar2_02_GSFC_20171208_Archive_e002130_s2",
+      "source": "GSFC_20171208_Archive_e002130",
+      "t": 6.68,
+      "std": 53.46,
+      "mean": 86.03,
+      "p95": 204.0,
+      "edge": 0.1801,
+      "hf": 18.55,
+      "lf": 42.8,
+      "std8": 45.82,
+      "edge8": 0.4228,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.019,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.028,
+        "reversals": 0,
+        "frames": 62,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "ar2_03_GSFC_20171208_Archive_e002130_s3",
+      "source": "GSFC_20171208_Archive_e002130",
+      "t": 9.57,
+      "std": 56.3,
+      "mean": 113.87,
+      "p95": 205.0,
+      "edge": 0.3268,
+      "hf": 22.11,
+      "lf": 43.88,
+      "std8": 47.05,
+      "edge8": 0.6045,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -3.046,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.021,
+        "reversals": 0,
+        "frames": 57,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "ar2_04_Gerst_Earth_timelapses_2017_s4",
+      "source": "Gerst_Earth_timelapses_2017",
+      "t": 12.87,
+      "std": 88.09,
+      "mean": 93.04,
+      "p95": 226.0,
+      "edge": 0.0487,
+      "hf": 12.77,
+      "lf": 85.01,
+      "std8": 85.91,
+      "edge8": 0.2002,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "ar2_05_Crew2_flyaround_s5",
+      "source": "Crew2_flyaround",
+      "t": 16.58,
+      "std": 52.25,
+      "mean": 85.8,
+      "p95": 172.0,
+      "edge": 0.0485,
+      "hf": 10.27,
+      "lf": 49.21,
+      "std8": 49.94,
+      "edge8": 0.2079,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0485 < film p5 0.0486"
+      ]
+    },
+    {
+      "cut": 6,
+      "row": "ar2_06_Crew2_flyaround_loop",
+      "source": "Crew2_flyaround_loop_preroll",
+      "t": 18.9,
+      "std": 57.2,
+      "mean": 83.01,
+      "p95": 188.0,
+      "edge": 0.1813,
+      "hf": 13.02,
+      "lf": 52.01,
+      "std8": 53.86,
+      "edge8": 0.4414,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
