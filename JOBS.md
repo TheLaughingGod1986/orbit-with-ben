@@ -49,6 +49,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1301 | mini | claimed | cursor | 2026-10-31T03:21Z | 013 vo · assembly · HOS 013 VO: unmodified vo_check on the final take (v02 or v03 from J1300) after the J1299 fix merges; park for Chief (Chief on J0807) | 6537756171 |
 | J1302 | mini | open | – | – | for cursor · assembly · Chief h36: copy-first NAS move of HOS 008 master v03 build scratch /private/tmp/j1287-v03 (J1287 PASS h35) + gemini-j0240-wt only if lsof clear; done whatever free space | 6537808816 |
 | J1303 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
+| J1304 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J1305 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
