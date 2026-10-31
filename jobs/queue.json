@@ -120917,17 +120917,22 @@
           "at": "2026-10-31T13:11Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting read-only audit of HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-31T13:11Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1 done: lint:package PASS; channel-audit.ts PASS at 2026-10-31T13:11Z (62 unique videos: 29 public, 11 scheduled, 22 private; 0 errors)"
         }
       ],
-      "remaining_action": "Run lint:package and channel:audit on HOS live and scheduled videos",
+      "remaining_action": "Verify live end screens on 5 public longs and Related pills on 24 public Shorts",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T13:11Z",
         "by": "gemini",
-        "note": "Starting read-only audit of HOS live and scheduled videos"
+        "note": "Step 1 done: lint:package PASS; channel-audit.ts PASS at 2026-10-31T13:11Z (62 unique videos: 29 public, 11 scheduled, 2"
       },
       "taskKeys": [
         "HOS:001",
