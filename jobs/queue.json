@@ -114753,10 +114753,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-10-31T02:47Z",
+      "eta": "2026-10-31T04:47Z",
       "created_by": "claude",
       "created_at": "2026-10-30T18:02Z",
       "result": "",
@@ -114815,6 +114815,11 @@
           "at": "2026-10-30T21:20Z",
           "by": "chief",
           "what": "reopened: Chief h28 (OWB #264 6533691867): FIX -> SCRIPTS_AND_PACKAGING_v02.md (keep v01). Cohort AR1+AR2+AR3, AR4 Halley reserve; keep declarative v13a Line 1. Facts: AR1 PASS (NASA PD 5 Mar 2026: lunar impact ruled out, 21,200 km, earlier 4.3%; 53-67 m 15-storey); AR3 facts PASS (6m23.2s, 258 km, 2026 2m18s); AR4 PASS. Fixes: (1) AR2: plan not fact - ops through 2030, USDV burn end-2030/early-2031 into remote South Pacific, go/extend decision 2027 (GAO-26-107805). Title drop 'in 2030' (e.g. 'Where Will the International Space Station Crash?'); Line 1 'NASA plans to crash the Space Station into the ocean around 2031.'; last line 'Look up and watch it cross the sky, because...'; payoff '...into the empty South Pacific.'; hook caption no hard 2030; card 'RETIRES 2030 · DEORBIT BURN ~2031 · DECISION 2027'; add GAO quote. (2) AR3 payoff '...peaking over Egypt at six minutes twenty-three seconds.'; card '2 AUG 2027 · 258 KM PATH · LONGEST: 6M23S, LUXOR'. (3) AR3 s02: EPIC clip is the 2017 US eclipse - replace with GBP0 code-drawn 2027 path map from NASA SE2027Aug02Tpath; label any 2017/2024 plate with its year; no Spain/Morocco claim on Gerst unless ground track verified. (4) AR1 call-outs '4.3% (early 2025) -> 0% (Webb, Feb 2026)' and '22 DEC 2032'. (5) Every named asset: verified Mini/NAS path or free PD/CC source + credit (several not in repo tree). (6) Narrator ~2.4 words/s: trim each to <=46 words for 17-20 s; payoff % re-measured on VO. (7) Update AR2/AR3 titles in manifests; no schedule/upload. Park for Chief script PASS. No VO, no mint, GBP0."
+        },
+        {
+          "at": "2026-10-31T02:47Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief script PASS",
@@ -114827,7 +114832,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T02:47Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1280",
