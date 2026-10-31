@@ -1,5 +1,5 @@
 {
-  "next_id": 1414,
+  "next_id": 1415,
   "jobs": [
     {
       "id": "J0001",
@@ -98692,6 +98692,11 @@
           "at": "2026-10-31T20:58Z",
           "by": "codex",
           "what": "blocked: parked for Chief: named standalone bed is byte-identical to previously excluded candidate (13adc031...). Dual local ASR does not jointly flag speech: small.en Thank you has no_speech_prob 0.766; direct local listening not performed. Clarify bed exclusion and arrange required local listening. Evidence 3e26b379b at /private/tmp/J1100-bed-evidence includes prior afed1c552. Auto-review rejected push to authorized evidence branch as insufficient user authorization for payload/destination; no push/PR created. Preserve 2/3 OWB:027/028, pickups, S6 audio, h43 LOOP, deadlines/v01 fallback. GBP0; no render/publishing changes; no active detached process."
+        },
+        {
+          "at": "2026-10-31T20:59Z",
+          "by": "relay",
+          "what": "condition verification queued: J1414"
         }
       ],
       "remaining_action": "Chief to resolve identical excluded bed and local listening; publish evidence when authorized",
@@ -98717,6 +98722,12 @@
         "at": "2026-10-31T20:58Z",
         "by": "codex",
         "note": "Dual local ASR complete: small.en words no_speech_prob 0.766, so revised joint speech flag not met. Named bed hashes ide"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-10-31T21:59:12+00:00",
+        "recheck_task": "J1414"
       }
     },
     {
@@ -125766,6 +125777,37 @@
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes"
+    },
+    {
+      "id": "J1414",
+      "title": "Chief: verify condition for J1100",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1100: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-31T20:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T20:59Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief to resolve identical excluded bed and local listening; publish evidence when authorized",
+      "kind": "chief",
+      "recheck_of": "J1100",
+      "due": "2026-10-31T21:59:12+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
