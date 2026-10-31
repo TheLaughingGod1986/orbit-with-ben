@@ -118492,6 +118492,11 @@
           "at": "2026-10-31T12:56Z",
           "by": "codex",
           "what": "reopened: J1349 verified 31 Oct 2026: PR372 b5b6be2f0 AR3 v05 elected-Chief picture PASS in PR373 22175d9db. Full-size duration/totality and all 37 tiles inspected; bars over Earth, adjacent corona clear with 2017 credit. Fresh master SHA256 3a2fc5b53e2cfafe4d55422f4f8ae7894ffdb81a727bf47f605e01070a58f13d; protected AR1/AR2/v03 and review-image hashes match, AAC identical. Unchanged picture/polish/loop/SFX PASS; WARN accepted. Reopen correction close-out only; downstream watch/publishing gates remain."
+        },
+        {
+          "at": "2026-10-31T12:57Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Await J1345 AR3 composition correction and elected-Chief picture review",
@@ -118499,7 +118504,16 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "escalated_at": "2026-10-31T10:28Z"
+      "escalated_at": "2026-10-31T10:28Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J1322",
