@@ -44,10 +44,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1320 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Upcoming-Shorts gate: copy 4 airing Shorts' exports back from the NAS (J1296 moved them), re-run the gate |  |
 | J1322 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · J1318 ruling: recover Mini space from verified inactive scratch only |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1359 | any | claimed | gemini | 2026-10-31T14:58Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1359 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1358 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-31T13:54Z across 62 unique videos (29 public, 11 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md, HOS c6c3c977, 0 new fixes needed))
 - J1357 done: Chief: verify condition for J1356 (Verified hold remains unmet. Fresh SHA-256 reads match accepted AR1 v01/AR2 v06/AR3 v05; all three manifest export targets still absent. Reviewed J1356 and PR376 evidence 92de3841c plus J1355 acceptance history; no newer correction or music/full-playback gate evidence. J1356 retained as input hold, original retry 2026-10-31T14:42:26Z, recheck J1357. No rebuild, spend, approval, publishing or duplicate watch cards.)
 - J1355 done: AR cohort: integrate accepted correction records and reconcile downstream handoff (Integrated PR370-374 unchanged via PR375 b1f0bd69d, CI PASS; 51 imported files byte-identical, 8 media/review and 6 raw-report hashes match. Accepted AR1 v01 AR2 v06 AR3 v05 preserved. Closed superseded PR363/365/369 without merge; cancelled J1324/J1338 as superseded, preserving history/media. Sole successor J1356 depends on this job for full playback, remaining gates and final-watch cards. No publishing approval, media changes, spend or unrelated hold release.)
@@ -57,4 +57,3 @@ Recently finished:
 - J1351 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS listing check PASS at 2026-10-31T13:13Z across 62 unique videos (29 public, 11 scheduled, 22 private; 00_Brand/Channel-Setup/audits/live_fixes/2026-10-31.md, HOS b41ab305, 0 new fixes needed))
 - J1350 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass (VfDm3E2bUgU..82Ao0v5XiQI, plus #11 m09jUdwC5hk) against 2026-10-31.json snapshot and live YouTube endpoints (VfDm3E2bUgU live since 11:30Z); 0 new fixes needed. Report committed to 05_Analytics/live_fixes/2026-10-31.md (b5930e806).)
 - J1349 done: Chief: verify condition for J1321 (AR3 v05 picture PASS, PR373. Verified PR372 hashes, unchanged AAC, clear duration bars and adjacent credited totality; retained WARN accepted. J1321 reopened for close-out only. GBP0; no upload/schedule/UAT handoff.)
-- J1348 done: URGENT Buffer queue empty: daily buffer-mirror check hasn't scheduled anything since 29 Oct (024 goes public Sun 1 Nov 18:00) (done)
