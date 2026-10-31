@@ -120383,9 +120383,14 @@
           "at": "2026-10-31T11:54Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T11:54Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Claimed scoped correction; disk 5 GB free, checking safe NAS offload before render."
         }
       ],
-      "remaining_action": "Correct AR3 duration-overlay collision, preserve approved AR1 and AR2",
+      "remaining_action": "Inspect approved AR3 edit and prepare correction",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -120398,12 +120403,14 @@
       "model": "gpt-6.1-sol",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-10-31T11:54Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed scoped correction; disk 5 GB free, checking safe NAS offload before render."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1346",
