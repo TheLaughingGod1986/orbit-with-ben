@@ -118722,9 +118722,14 @@
           "at": "2026-10-31T08:59Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T09:00Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Read brief; read-only investigation, no moves or deletions"
         }
       ],
-      "remaining_action": "Reconcile disk regression and prove exact safe recovery candidates for Chief",
+      "remaining_action": "Reconcile disk growth and verify exact retained scratch references",
       "due": "2026-11-01T00:00:00Z",
       "kind": "assembly",
       "rerouted_from": {
@@ -118738,12 +118743,15 @@
       "model": "gpt-6.1-sol",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-31T08:59Z",
+        "of": 4,
+        "at": "2026-10-31T09:00Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read brief; read-only investigation, no moves or deletions"
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1327",
