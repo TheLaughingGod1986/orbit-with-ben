@@ -121263,13 +121263,13 @@
       "stage": "",
       "after": "J1355",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T13:38Z",
-      "eta": "2026-10-31T15:38Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T13:34Z",
-      "result": "",
+      "result": "Final-watch readiness blocked: required music absent from documented VO+SFX mix, measured silent loop tails, and three manifest export targets missing. Evidence 92de3841c on codex/J1356-watch. Needs scoped no-spend correction/package mapping, affected gates and full moving/audio review; J1356 forbids rebuild. Existing picture PASS retained; no awaits or publishing approval.",
       "history": [
         {
           "at": "2026-10-31T13:34Z",
@@ -121295,6 +121295,11 @@
           "at": "2026-10-31T13:41Z",
           "by": "codex",
           "what": "step 1 of 3 done: 92de3841c: all master/VO hashes match and full decode passes. About 1s silent tails; assembler contains VO+SFX only. Three manifest video targets missing. Full audiovisual review and watch handoff incomplete."
+        },
+        {
+          "at": "2026-10-31T13:41Z",
+          "by": "codex",
+          "what": "blocked: Final-watch readiness blocked: required music absent from documented VO+SFX mix, measured silent loop tails, and three manifest export targets missing. Evidence 92de3841c on codex/J1356-watch. Needs scoped no-spend correction/package mapping, affected gates and full moving/audio review; J1356 forbids rebuild. Existing picture PASS retained; no awaits or publishing approval."
         }
       ],
       "remaining_action": "Resolve absent score bed and missing package targets, then complete full playback review and final-watch handoff",
@@ -121308,7 +121313,12 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Final-watch readiness blocked: required music absent from documented VO+SFX mix, measured silent loop tails, and three manifest export targets missing. Evidence 92de3841c on codex/J1356-watch. Needs scoped no-spend correction/package mapping, affected gates and full moving/audio review; J1356 forbids rebuild. Existing picture PASS retained; no awaits or publishing approval.",
+        "check_at": "2026-10-31T19:41:50+00:00"
+      }
     }
   ],
   "focus": [],
