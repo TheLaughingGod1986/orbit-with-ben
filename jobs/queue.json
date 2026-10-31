@@ -125860,19 +125860,24 @@
           "at": "2026-10-31T21:30Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J1100 full brief, approval history, latest result and J1270. Disk recovered, but latest block is excluded bed identity and absent local listening."
+        },
+        {
+          "at": "2026-10-31T21:30Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Verified evidence 3e26b379b and both ASR transcripts: no joint speech flag, but audition manifest says listening NOT PERFORMED and identical excluded bed remains uncleared. Live free space 34326110208 bytes."
         }
       ],
-      "remaining_action": "Verify current bed evidence and replace stale dependency hold with actual unmet condition",
+      "remaining_action": "Record unmet instrumental-bed and local-listening condition; report verification",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-10-31T21:59:12+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-10-31T21:30Z",
         "by": "codex",
-        "note": "Read J1100 full brief, approval history, latest result and J1270. Disk recovered, but latest block is excluded bed ident"
+        "note": "Verified evidence 3e26b379b and both ASR transcripts: no joint speech flag, but audition manifest says listening NOT PER"
       },
       "taskKeys": [
         "OWB:027",
