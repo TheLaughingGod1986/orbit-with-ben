@@ -41,11 +41,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1395 | any | claimed | codex | 2026-10-31T21:39Z | chief · Chief: verify condition for J1130 |  |
 | J1396 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 
 Recently finished:
 
+- J1395 done: Chief: verify condition for J1130 (Verified access remains denied; J1130 held for actual test completion evidence. Next check 2026-11-01T01:40Z; evidence _desk/handoff/J1395.)
 - J1394 done: Chief: verify condition for J1100 (Verified afed1c552: all eight hashes match. Both tested beds retain nonempty base.en ASR and source listening has no result/log/done. Prior source-audio transfer and evidence-push approval rejection unresolved; no retry or bypass. J1100 kept blocked at 2/3 with OWB:027/028 and all rulings/deadlines/fallbacks preserved; next check 2026-11-01T01:37Z. Live disk 36.453 GiB. No production, spend or publishing changes.)
 - J1393 done: Chief: verify condition for J1356 (done)
 - J1392 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (0 new fixes needed; 29/29 public HOS videos (5 longs + 24 Shorts) and 11 scheduled videos pass lint:package, channel:audit (0 errors), live end-screen and Related video checks (HOS 01fbec8b))
@@ -55,4 +55,3 @@ Recently finished:
 - J1388 done: Chief: verify condition for J0862 (done)
 - J1387 done: Chief: verify condition for J1130 (done)
 - J1386 done: Chief: verify condition for J1100 (Readiness not proven: eight checkpoint hashes match, both bed candidates retain nonempty ASR, source listening and transfer approval unresolved. J1100 remains blocked at 2/3; retry 2026-10-31T18:01:34Z retained. Disk 33.999 GiB. No production or publishing changes.)
-- J1385 done: Chief: verify condition for J0978 (Verified 31 Oct 17:27:49 UTC: HOS Atom title-test widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only check 23:35 UTC. Evidence _desk/handoff/J1385/readback.json and atom_edit.png. HOS channel audit: 62 videos, 0 errors. No YouTube changes or spend; reported on HOS desk.)
