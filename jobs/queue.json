@@ -116169,6 +116169,11 @@
           "at": "2026-10-31T02:25Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T02:28Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Copy still running: tmux j1296-nas, python pid 28443, no .done file. Container free 17.3 GB at 02:28Z. Phase 5 029 Shorts in progress. Not starting a second copy."
         }
       ],
       "remaining_action": "Wait for tmux j1296-nas. If J1296-move.done is missing, do not start a second copy. Then read the report and park if under 20 GB.",
@@ -116178,12 +116183,13 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-31T01:53Z",
+        "at": "2026-10-31T02:28Z",
         "by": "cursor",
-        "note": "Compilation 2.12/2.80 GB at 01:53Z. tmux j1296-nas pid 28443. done file ~/_desk/logs/J1296-move.done"
+        "note": "Copy still running: tmux j1296-nas, python pid 28443, no .done file. Container free 17.3 GB at 02:28Z. Phase 5 029 Short"
       },
       "taskKeys": [
-        "HOS:006"
+        "HOS:006",
+        "OWB:029"
       ]
     },
     {
