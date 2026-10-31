@@ -118248,9 +118248,14 @@
           "at": "2026-10-31T07:57Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T07:58Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify exact inactive paths and archive eligible scratch to restore 20 GiB free",
+      "remaining_action": "Verify exact candidate paths and current dependencies before any archive move",
       "due": "2026-11-01T12:00:00Z",
       "kind": "assembly",
       "urgent": 2,
@@ -118265,12 +118270,14 @@
       "model": "gpt-6.1-sol",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-10-31T07:57Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 4,
+        "at": "2026-10-31T07:58Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
