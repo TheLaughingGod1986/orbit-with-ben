@@ -123926,18 +123926,30 @@
           "at": "2026-10-31T17:38Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J1389; checking existing live_fixes and latest OWB snapshot"
+        },
+        {
+          "at": "2026-10-31T17:39Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified last 10 public OWB videos (VfDm3E2bUgU..82Ao0v5XiQI); confirmed 024 long rVqgtkBV3jc still private"
         }
       ],
-      "remaining_action": "Identify last 10 live OWB videos and audit chapters, sources, end screens, and Related pills",
+      "remaining_action": "Audit descriptions, chapter timestamps against cuts, and source links for the last 10 live OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T17:38Z",
+        "at": "2026-10-31T17:39Z",
         "by": "gemini",
-        "note": "Started J1389; checking existing live_fixes and latest OWB snapshot"
-      }
+        "note": "Identified last 10 public OWB videos (VfDm3E2bUgU..82Ao0v5XiQI); confirmed 024 long rVqgtkBV3jc still private"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
