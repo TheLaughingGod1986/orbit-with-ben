@@ -116273,13 +116273,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-10-31T02:28Z",
-      "eta": "2026-10-31T02:43Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-10-31T02:24Z",
-      "result": "",
+      "result": "Checked by Chief: J0807 condition NOT met. v02 vo_check FAILs 5 lines; no PASS while it FAILs (HOS AGENTS.md ~L324). J0807 kept blocked (wait recorded, check 2026-10-31T09:00Z) on J1299 (vo_check fix PR), J1300 (re-hear/pickup) and J1301 (unmodified vo_check on final take). GBP0, nothing for Ben.",
       "history": [
         {
           "at": "2026-10-31T02:24Z",
@@ -116290,6 +116290,11 @@
           "at": "2026-10-31T02:28Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T02:28Z",
+          "by": "chief",
+          "what": "done: Checked by Chief: J0807 condition NOT met. v02 vo_check FAILs 5 lines; no PASS while it FAILs (HOS AGENTS.md ~L324). J0807 kept blocked (wait recorded, check 2026-10-31T09:00Z) on J1299 (vo_check fix PR), J1300 (re-hear/pickup) and J1301 (unmodified vo_check on final take). GBP0, nothing for Ben."
         }
       ],
       "remaining_action": "Verify readiness: Parked for Chief: review HOS 013 VO v02",
@@ -116304,7 +116309,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6537756171"
     },
     {
       "id": "J1299",
