@@ -118153,9 +118153,14 @@
           "at": "2026-10-31T07:55Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Added scheduled-Short keep-list to scripts/nas_offload.py (+ test) and _desk/logs/J1296_move.py; ran gate_upcoming.py"
+        },
+        {
+          "at": "2026-10-31T07:55Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Committed 049badd8a (scheduled-Short keep-list in scripts/nas_offload.py + _desk/logs/J1296_move.py + refreshed UPCOMING_SHORTS_GATE.md)"
         }
       ],
-      "remaining_action": "Commit offload keep-list + refreshed UPCOMING_SHORTS_GATE.md and park for Chief",
+      "remaining_action": "Parked for Chief: all 4 NAS exports are 17 Oct J0432 overwrites (mismatched vs UPLOADS.json sha256)",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -118167,11 +118172,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
         "at": "2026-10-31T07:55Z",
         "by": "gemini",
-        "note": "Added scheduled-Short keep-list to scripts/nas_offload.py (+ test) and _desk/logs/J1296_move.py; ran gate_upcoming.py"
+        "note": "Committed 049badd8a (scheduled-Short keep-list in scripts/nas_offload.py + _desk/logs/J1296_move.py + refreshed UPCOMING"
       },
       "taskKeys": [
         "OWB:025"
