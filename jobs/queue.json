@@ -124277,18 +124277,24 @@
           "at": "2026-10-31T19:33Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-10-31T19:33Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Acceptance history and unchanged PR376 checked; all three accepted master hashes freshly match"
         }
       ],
-      "remaining_action": "Verify J1356 correction evidence and accepted export hashes",
+      "remaining_action": "Verify manifest targets and record the remaining input hold",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-10-31T18:58:52+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-10-31T19:33Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Acceptance history and unchanged PR376 checked; all three accepted master hashes freshly match"
       },
       "taskKeys": [
         "OWB:030"
