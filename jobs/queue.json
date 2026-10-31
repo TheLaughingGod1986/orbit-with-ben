@@ -116096,18 +116096,23 @@
           "at": "2026-10-31T01:47Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Compilation v05 copying at about 4 MB/s: 596 MB of 2.80 GB on the NAS. tmux j1296-nas, log ~/_desk/logs/J1296-move.log"
+        },
+        {
+          "at": "2026-10-31T01:53Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Compilation 2.12/2.80 GB at 01:53Z. tmux j1296-nas pid 28443. done file ~/_desk/logs/J1296-move.done"
         }
       ],
-      "remaining_action": "Copy verified ignored media onto the NAS and check each sha256",
+      "remaining_action": "Wait for tmux j1296-nas. If J1296-move.done is missing, do not start a second copy. Then read the report and park if under 20 GB.",
       "for": "cursor",
       "kind": "assembly",
       "urgent": 2,
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-10-31T01:47Z",
+        "at": "2026-10-31T01:53Z",
         "by": "cursor",
-        "note": "Compilation v05 copying at about 4 MB/s: 596 MB of 2.80 GB on the NAS. tmux j1296-nas, log ~/_desk/logs/J1296-move.log"
+        "note": "Compilation 2.12/2.80 GB at 01:53Z. tmux j1296-nas pid 28443. done file ~/_desk/logs/J1296-move.done"
       },
       "taskKeys": [
         "HOS:006"
