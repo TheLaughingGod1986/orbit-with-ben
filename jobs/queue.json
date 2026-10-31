@@ -1,5 +1,5 @@
 {
-  "next_id": 1386,
+  "next_id": 1387,
   "jobs": [
     {
       "id": "J0001",
@@ -98618,6 +98618,11 @@
           "at": "2026-10-31T16:59Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-10-31T17:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J1386"
         }
       ],
       "remaining_action": "Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
@@ -98647,10 +98652,11 @@
       "hold": {
         "type": "input",
         "condition": "Verified instrumental-only S2 bed with empty base.en ASR and completed listening; resolve recorded source-audio transfer approval rejection through authorized review or supply an existing cleared source. J1380 reverified all eight afed1c552 checkpoint hashes; both tested bed alternatives still have nonempty ASR and no source-listening completion exists. Live disk 34.190 GiB; J1270 complete. Preserve worker 2/3, OWB:027/028, h43-LOOP, accepted pickups/S6 audio and all original gates, approvals, deadlines and scheduled-v01 fallback.",
-        "check_at": "2026-10-31T17:01:29Z",
+        "check_at": "2026-10-31T18:01:34+00:00",
         "last_recheck": "J1380",
         "checked_at": "2026-10-31T16:33:15+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1386"
       }
     },
     {
@@ -123552,6 +123558,37 @@
       "kind": "chief",
       "recheck_of": "J0978",
       "due": "2026-10-31T17:55:49+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1386",
+      "title": "Chief: verify condition for J1100",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1100: Verified instrumental-only S2 bed with empty base.en ASR and completed listening; resolve recorded source-audio transfer approval rejection through authorized review or supply an existing cleared source. J1380 reverified all eight afed1c552 checkpoint hashes; both tested bed alternatives still have nonempty ASR and no source-listening completion exists. Live disk 34.190 GiB; J1270 complete. Preserve worker 2/3, OWB:027/028, h43-LOOP, accepted pickups/S6 audio and all original gates, approvals, deadlines and scheduled-v01 fallback.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-31T17:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T17:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Resolve instrumental bed and approved listening, then finish v07 repairs and gates",
+      "kind": "chief",
+      "recheck_of": "J1100",
+      "due": "2026-10-31T18:01:34+00:00",
       "due_kind": "condition-verification"
     }
   ],
