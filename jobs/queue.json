@@ -124953,17 +124953,22 @@
           "at": "2026-10-31T20:06Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J1402 read-only listing check on HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-10-31T20:07Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Loaded HOS live/scheduled snapshots and 2026-10-31 listing state (29 public + 11 scheduled)"
         }
       ],
-      "remaining_action": "Audit HOS live and scheduled video listings (chapters, sources, end screens, Related)",
+      "remaining_action": "Run lint:package, channel:audit, and live end-screen/Related checks on HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T20:06Z",
+        "at": "2026-10-31T20:07Z",
         "by": "gemini",
-        "note": "Started J1402 read-only listing check on HOS live and scheduled videos"
+        "note": "Loaded HOS live/scheduled snapshots and 2026-10-31 listing state (29 public + 11 scheduled)"
       },
       "taskKeys": [
         "HOS:001",
