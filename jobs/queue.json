@@ -117054,17 +117054,22 @@
           "at": "2026-10-31T04:17Z",
           "by": "cursor",
           "what": "step 1 of 5 done: v03a wav sha 837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0 matches Chief sim. 24599040 frames, 512.480 s, pcm_s16le 48 kHz stereo."
+        },
+        {
+          "at": "2026-10-31T04:18Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Checker last-10 ms -56.34 -53.88 -64.70 -55.30 -68.92 -59.94, last sample 0/0, null outside windows 0. Loudness I -19.5 LUFS, true peak -3.6 dBTP, LRA 5.0. mp3 sha ada7eaa775104ee5dea9e9be98155abfc0b1e9fda010097f42ca9fa25bed7f85."
         }
       ],
-      "remaining_action": "Run fade checker, loudness, and encode the mp3",
+      "remaining_action": "Run house vo_check and export word timings",
       "for": "cursor",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-10-31T04:17Z",
+        "at": "2026-10-31T04:18Z",
         "by": "cursor",
-        "note": "v03a wav sha 837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0 matches Chief sim. 24599040 frames, 512.48"
+        "note": "Checker last-10 ms -56.34 -53.88 -64.70 -55.30 -68.92 -59.94, last sample 0/0, null outside windows 0. Loudness I -19.5 "
       },
       "taskKeys": [
         "HOS:013"
