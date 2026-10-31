@@ -118896,9 +118896,14 @@
           "at": "2026-10-31T09:30Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T09:31Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read J0979, J1000 and J1042 history; checking current film evidence"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for a post-30-Oct-reset OWB long (031+) to lock VO and picture with an unused Keeper-compliant question opening",
+      "remaining_action": "Verify new locked VO and picture against the J0979 release condition",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-10-31T10:06:56+00:00",
@@ -118906,11 +118911,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T09:30Z",
+        "at": "2026-10-31T09:31Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read J0979, J1000 and J1042 history; checking current film evidence"
+      },
+      "taskKeys": [
+        "OWB:029",
+        "OWB:031",
+        "OWB:032"
+      ]
     },
     {
       "id": "J1329",
