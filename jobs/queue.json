@@ -115173,10 +115173,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-10-31T00:23Z",
+      "eta": "2026-10-31T03:23Z",
       "created_by": "chief",
       "created_at": "2026-10-30T20:59Z",
       "result": "",
@@ -115250,13 +115250,26 @@
           "at": "2026-10-30T23:07Z",
           "by": "chief",
           "what": "reopened: Chief h29 (HOS #180 6535394007): FIX, bed seam only -> master v02, same picture. PASS: framemd5 = v12 (12923), -14.1 LUFS / -1.0 dBTP, A/V 0.022 s, gates rc 0 (unmodified), chapters, lint:package PASS; reuse re-run 181/181 readable, 0 warns, max music sim 0.392; bed mp3 is the shifted bed (master~v01g 0.999 in pauses); credits 7425 true (fresh read 22:50Z used 15526, remaining 105588); h21/h22 STT 455-470 still met. FAIL: loop at 480.6-482.5 s (8:00.6) joins the take's fade-out ending (-54.2 dB 2 s RMS) to its opening theme (-41.1 dB, +13 dB) and 8:01-8:59 replays the opening music; builder code not committed. Do (cursor, mini, GBP0, NO ElevenLabs call): 1) bed v02 from lightning008_score_bed_v01_take.mp3 only: music from film 0.0 (take 50.70 s), take's natural ending (~last 25 s) at film end, cover ~50.3 s shortfall with ONE repeat of a mid-body section (not take 50.7-110 s), one seam on the 66.7 BPM bar grid (~3.6 s), 1.5-3 s equal-power crossfade, chosen by script (spectral/chroma + level match), under running VO >=2 s from any >=0.8 s pause or chapter card. 2) Seam bar in BED_SEAMS.json: 2 s RMS each side +-1 dB, short-term LUFS +-1 LU over +-2 s, 2nd-diff click ratio <= body max, spectral flux <= body p99.9, no >=6 s stretch >6 LU under body median except final ending; record seam time, xfade, source in/out. 3) Commit 07_Edit-Project/master_v02/_build_bed_v02.py + stem sha; duck/pause-lift pass: speech mean 16-21.5 LU, 0 breach runs, >=0.8 s pauses >=2.5 LU above speech; sfx_kit level --bed PASS. 4) SFX: move ch2 whoosh so body ends >=0.10 s before 'In' 100.46 s (start ~99.70); ch3 whoosh body ends >=0.10 s before 188.54 s; other 19 cues unchanged. 5) Mix -14.0+-0.3 LUFS, <=-1.0 dBTP, VO lag vs v12 0+-1 ms (now +10 ms; compensate limiter latency), v12 video stream copy (MD5 1ab08ec6, 12923 frames), A/V <=1 frame. 6) Unmodified polish_gate/picture_qa/gate:episode 0 fail; music_gate on v02 bed with --others all HOS+OWB 05_Music + OWB UAT, 0 warns, top-5 sims recorded; lint:package --film 008. 7) Copy-only deliver master_v02 (precheck hos_008_master_v02.mp4 + NAS _desk/008/master_v02, same canonical name/sha); master_v01 and variants untouched, no deletes/renames; BED_PROVENANCE.json; REVIEW_master_v02.md; update PR #390 normal commits. 8) If no seam meets the bar, park for Chief with best 3 candidates; no second take without a Chief price pass, never buy/top up. Park for Chief: master v02. No Ben watch, no UAT, no upload."
+        },
+        {
+          "at": "2026-10-31T00:23Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief: master v01. No UAT and no upload.",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-10-31T00:23Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1288",
