@@ -124499,9 +124499,14 @@
           "at": "2026-10-31T19:41Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T19:42Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Check original hold, recompute raw curves, then record and verify the readiness decision."
         }
       ],
-      "remaining_action": "Verify readiness: Reconcile Mercury retention narrative with raw curves, then final independent Chief audit review",
+      "remaining_action": "Verify Mercury retention reconciliation and independent audit approval",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-10-31T20:00:34+00:00",
@@ -124509,11 +124514,24 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T19:41Z",
+        "at": "2026-10-31T19:42Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Check original hold, recompute raw curves, then record and verify the readiness decision."
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
