@@ -119575,9 +119575,14 @@
           "at": "2026-10-31T10:32Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T10:32Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Correct AR2 late ISS picture detail and obtain picture acceptance; cohort held from UAT/upload",
+      "remaining_action": "Verify latest AR2 late-shot correction and picture acceptance",
       "kind": "chief",
       "recheck_of": "J1321",
       "due": "2026-10-31T11:31:35+00:00",
@@ -119586,10 +119591,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-10-31T10:32Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
