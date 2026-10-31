@@ -1,5 +1,5 @@
 {
-  "next_id": 1335,
+  "next_id": 1336,
   "jobs": [
     {
       "id": "J0001",
@@ -80864,6 +80864,11 @@
           "at": "2026-10-31T04:48Z",
           "by": "chief",
           "what": "condition recorded; next verification 2026-10-31T10:00:00Z"
+        },
+        {
+          "at": "2026-10-31T10:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J1335"
         }
       ],
       "kind": "video",
@@ -80895,10 +80900,11 @@
       "hold": {
         "type": "input",
         "condition": "J1100 reopened by Chief h41 at 04:48Z for S2/S5/S6 repairs only (disk bar met: df 14,271,812 KB >= h34 10 GiB bar; 5f028e5f5) but repairs not yet done. Still needed: J1100 S2/S5 pickups, S2 instrumental-only bed proof, caption repairs, S6 loop fix (9.26 FAIL vs <2.0) or evidenced gate correction, gates + listening, durable UAT/NAS delivery, Chief replacement PASS, then Ben S2/S5/S6 swap approvals. PR333 status unchanged. Preserve J1032 PASS, J1101-J1103, historical J0936 6/6, deadlines (batch park Sun 1 Nov 20:00 London) and scheduled-v01 fallbacks.",
-        "check_at": "2026-10-31T10:00:00Z",
+        "check_at": "2026-10-31T11:07:03+00:00",
         "last_recheck": "J1304",
         "checked_at": "2026-10-31T04:48:50+00:00",
-        "checked_by": "chief"
+        "checked_by": "chief",
+        "recheck_task": "J1335"
       },
       "preparation_review": {
         "by": "codex",
@@ -119395,6 +119401,37 @@
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes"
+    },
+    {
+      "id": "J1335",
+      "title": "Chief: verify condition for J0936",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0936: J1100 reopened by Chief h41 at 04:48Z for S2/S5/S6 repairs only (disk bar met: df 14,271,812 KB >= h34 10 GiB bar; 5f028e5f5) but repairs not yet done. Still needed: J1100 S2/S5 pickups, S2 instrumental-only bed proof, caption repairs, S6 loop fix (9.26 FAIL vs <2.0) or evidenced gate correction, gates + listening, durable UAT/NAS delivery, Chief replacement PASS, then Ben S2/S5/S6 swap approvals. PR333 status unchanged. Preserve J1032 PASS, J1101-J1103, historical J0936 6/6, deadlines (batch park Sun 1 Nov 20:00 London) and scheduled-v01 fallbacks.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0936 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-10-31T10:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-10-31T10:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: J1100 repairs and delivery, Chief replacement review, then Ben swap approvals",
+      "kind": "chief",
+      "recheck_of": "J0936",
+      "due": "2026-10-31T11:07:03+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
