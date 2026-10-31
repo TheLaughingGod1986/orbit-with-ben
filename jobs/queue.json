@@ -98125,13 +98125,13 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-10-31T04:56Z",
-      "eta": "2026-10-31T06:56Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "",
+      "result": "parked for Chief: unchanged S6 whole-frame loop reproduced 9.26 FAIL (<2.0), actual decoded endpoints 8.1313; caption-free tail and frame-0 hook conflict require Chief decision on proposed provenance-backed gate correction. Two authorized continuous S2/S5 pickups completed, Scribe 100% each, 126 credits; metadata/evidence commit 0c017ff38 on codex/J1100-resume-1031. Preserve 2/3 and OWB:027/028. No gate changed or media approved; assembly/bed proof/final gates/listening/delivery outstanding.",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -98407,6 +98407,11 @@
           "at": "2026-10-31T04:58Z",
           "by": "codex",
           "what": "step 2 of 3 done: Both authorized pickups complete, 126 chars total: Scribe 100% each; tool VO checks PASS (-18.7/-19.3 LUFS). Reproduced unchanged S6 whole-frame loop 9.26 FAIL; diagnostic frames show hook/caption difference. No gate changed."
+        },
+        {
+          "at": "2026-10-31T05:00Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: unchanged S6 whole-frame loop reproduced 9.26 FAIL (<2.0), actual decoded endpoints 8.1313; caption-free tail and frame-0 hook conflict require Chief decision on proposed provenance-backed gate correction. Two authorized continuous S2/S5 pickups completed, Scribe 100% each, 126 credits; metadata/evidence commit 0c017ff38 on codex/J1100-resume-1031. Preserve 2/3 and OWB:027/028. No gate changed or media approved; assembly/bed proof/final gates/listening/delivery outstanding."
         }
       ],
       "remaining_action": "Chief reviews reproduced S6 loop conflict; assemble with completed S2/S5 pickups after ruling",
