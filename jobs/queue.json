@@ -116156,17 +116156,22 @@
           "at": "2026-10-31T01:58Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Source sha256 cf1561c2 matches Chief h35; 393139693 bytes on NAS. UAT folder missing, will create."
+        },
+        {
+          "at": "2026-10-31T01:59Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Master copied to HOS UAT/008_Lightning-Franklin/hos_008_master_v03.mp4. Fully on disk (393139693 bytes). sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b matches Chief h35. Phone encode running."
         }
       ],
-      "remaining_action": "Copy Lightning master v03 to HOS UAT and verify sha256",
+      "remaining_action": "Build the phone copy, then record the UAT path in PIPELINE.json",
       "for": "cursor",
       "kind": "listing",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-10-31T01:58Z",
+        "at": "2026-10-31T01:59Z",
         "by": "cursor",
-        "note": "Source sha256 cf1561c2 matches Chief h35; 393139693 bytes on NAS. UAT folder missing, will create."
+        "note": "Master copied to HOS UAT/008_Lightning-Franklin/hos_008_master_v03.mp4. Fully on disk (393139693 bytes). sha256 cf1561c2"
       },
       "taskKeys": [
         "HOS:008"
