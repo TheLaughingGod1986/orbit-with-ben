@@ -124590,9 +124590,14 @@
           "at": "2026-10-31T19:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-10-31T19:46Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Read 2026-10-31 snapshot and live_fixes report; starting live YouTube readback across the 10 latest public videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Verify live YouTube status and listings for the last 10 public OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -124607,11 +124612,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-10-31T19:45Z",
+        "at": "2026-10-31T19:46Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read 2026-10-31 snapshot and live_fixes report; starting live YouTube readback across the 10 latest public videos"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     },
     {
       "id": "J1398",
