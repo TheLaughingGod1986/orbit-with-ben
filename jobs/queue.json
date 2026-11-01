@@ -128533,19 +128533,24 @@
           "at": "2026-11-01T02:23Z",
           "by": "codex",
           "what": "step 0 of 3 done: Review original approval history, recompute persisted Mercury curves, and verify queue readback."
+        },
+        {
+          "at": "2026-11-01T02:24Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Approval history checked; audit latest commit remains 0c18bb2cb. Chief review line 67 and J1003 result retain contradictory Mercury drop and cut mapping; no final non-author PASS."
         }
       ],
-      "remaining_action": "Verify audit reconciliation and independent approval, then record hold decision",
+      "remaining_action": "Record unmet reconciliation condition and verify retained hold",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-01T02:47:12+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T02:23Z",
+        "at": "2026-11-01T02:24Z",
         "by": "codex",
-        "note": "Review original approval history, recompute persisted Mercury curves, and verify queue readback."
+        "note": "Approval history checked; audit latest commit remains 0c18bb2cb. Chief review line 67 and J1003 result retain contradict"
       },
       "taskKeys": [
         "OWB:021",
