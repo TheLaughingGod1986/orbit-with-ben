@@ -133719,16 +133719,22 @@
           "at": "2026-11-01T13:54Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-01T13:55Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Confirmed 2026-11-01 snapshot: same 10 live public videos (VfDm3E2bUgU..82Ao0v5XiQI); next scheduled rVqgtkBV3jc at 2026-11-01T18:00:00Z"
         }
       ],
-      "remaining_action": "Verify latest OWB public video snapshot and check if any new video went live since 07:55Z",
+      "remaining_action": "Fetch live YouTube pages for rVqgtkBV3jc and the 10 public videos to verify chapters, sources, end screens, and Related pills",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T13:54Z",
-        "by": "gemini"
+        "at": "2026-11-01T13:55Z",
+        "by": "gemini",
+        "note": "Confirmed 2026-11-01 snapshot: same 10 live public videos (VfDm3E2bUgU..82Ao0v5XiQI); next scheduled rVqgtkBV3jc at 2026"
       },
       "taskKeys": [
         "OWB:023",
