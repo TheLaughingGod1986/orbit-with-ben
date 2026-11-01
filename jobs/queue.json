@@ -131743,19 +131743,24 @@
           "at": "2026-11-01T09:51Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR380 remains OPEN at d0b04b5e0 with no comments or new delivery; PR379 merged. No new thread messages. J1471 and J1356 remain blocked."
+        },
+        {
+          "at": "2026-11-01T09:51Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Recorded unmet ISS input condition with last_recheck J1487; retained 2026-11-01T10:47:06Z retry and every existing hold."
         }
       ],
-      "remaining_action": "Record unmet ISS input condition and preserve repair holds",
+      "remaining_action": "Verify saved input hold and report the readiness decision",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T10:47:06+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-01T09:51Z",
         "by": "codex",
-        "note": "PR380 remains OPEN at d0b04b5e0 with no comments or new delivery; PR379 merged. No new thread messages. J1471 and J1356 "
+        "note": "Recorded unmet ISS input condition with last_recheck J1487; retained 2026-11-01T10:47:06Z retry and every existing hold."
       },
       "taskKeys": [
         "OWB:030"
