@@ -131339,19 +131339,24 @@
           "at": "2026-11-01T08:51Z",
           "by": "codex",
           "what": "step 2 of 3 done: Retained blocked input condition, linked J1482 and preserved existing 2026-11-01T09:46:33Z retry; all other holds remain."
+        },
+        {
+          "at": "2026-11-01T08:52Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirms blocked/input, last_recheck J1482 and 09:46:33Z retry. Existing failed gates and approval holds preserved."
         }
       ],
-      "remaining_action": "Read back J1471 hold and close verification",
+      "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T09:46:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-01T08:51Z",
+        "at": "2026-11-01T08:52Z",
         "by": "codex",
-        "note": "Retained blocked input condition, linked J1482 and preserved existing 2026-11-01T09:46:33Z retry; all other holds remain"
+        "note": "Readback confirms blocked/input, last_recheck J1482 and 09:46:33Z retry. Existing failed gates and approval holds preser"
       },
       "taskKeys": [
         "OWB:030"
