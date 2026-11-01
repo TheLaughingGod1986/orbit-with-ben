@@ -130443,13 +130443,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T07:36Z",
-      "eta": "2026-11-01T09:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T07:35Z",
-      "result": "",
+      "result": "Verified J1356 condition remains unmet: PR379 merged at 1b3a988cc, but raw opening gates FAIL (AR1 6.00s first cut; AR2 diff 0.25; AR3 diff 1.41). J1471 remains open without delivery. Retained J1356 block and 2026-11-01T08:35:31Z recheck, requiring corrected versions, complete gates/metadata, full moving/audio review and pace WARN assessment. Existing approval/date/credit/watch holds preserved. No film PASS, watch release, publishing or spend.",
       "history": [
         {
           "at": "2026-11-01T07:35Z",
@@ -130480,6 +130480,11 @@
           "at": "2026-11-01T07:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 remains blocked; unmet condition recorded with recheck J1472 and existing 2026-11-01T08:35:31Z verification time. No approvals released."
+        },
+        {
+          "at": "2026-11-01T07:37Z",
+          "by": "codex",
+          "what": "done: Verified J1356 condition remains unmet: PR379 merged at 1b3a988cc, but raw opening gates FAIL (AR1 6.00s first cut; AR2 diff 0.25; AR3 diff 1.41). J1471 remains open without delivery. Retained J1356 block and 2026-11-01T08:35:31Z recheck, requiring corrected versions, complete gates/metadata, full moving/audio review and pace WARN assessment. Existing approval/date/credit/watch holds preserved. No film PASS, watch release, publishing or spend."
         }
       ],
       "remaining_action": "Verification complete; J1356 awaits J1471 remediation",
@@ -130496,7 +130501,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/379"
     }
   ],
   "focus": [],
