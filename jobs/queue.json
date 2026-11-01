@@ -129030,18 +129030,24 @@
           "at": "2026-11-01T03:42Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-01T03:42Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1130 condition, J1129 test approval and running T020 history, J1126 decision and J1451 access failures"
         }
       ],
-      "remaining_action": "Verify the HOS 002 thumbnail test completion in Studio",
+      "remaining_action": "Read fresh Studio evidence for HOS 002",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-01T04:41:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T03:42Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Read J1130 condition, J1129 test approval and running T020 history, J1126 decision and J1451 access failures"
       },
       "taskKeys": [
         "HOS:002"
