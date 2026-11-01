@@ -185,15 +185,16 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 2 d | 312 | 29.3% | MISS | 106.0% | LOOP |
-| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 3 d | 452 | 34.3% | MISS | 236.0% | LOOP |
-| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 4 d | 495 | 42.4% | MISS | 75.1% | PASS |
-| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 5 d | 891 | 30.7% | MISS | 75.7% | PASS |
+| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 44 h (early) | 44 | 22.2% | too few to judge | 66.7% | too few to judge |
+| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 2 d | 522 | 32.5% | MISS | 91.7% | PASS |
+| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 3 d | 459 | 34.2% | MISS | 233.3% | LOOP |
+| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 4 d | 493 | 42.6% | MISS | 75.1% | PASS |
+| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 5 d | 891 | 30.7% | MISS | 75.9% | PASS |
 | [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 7 d | 851 | 32.1% | MISS | 76.1% | PASS |
 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 8 d | 81 | 34.3% | too few to judge | 58.3% | too few to judge |
-| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 9 d | 90 | 14.1% | too few to judge | 53.4% | too few to judge |
+| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 9 d | 90 | 14.1% | too few to judge | 53.3% | too few to judge |
 | [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 10 d | 887 | 31.7% | MISS | 62.2% | WATCH |
-| [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 11 d | 12 | 25.0% | too few to judge | 30.9% | too few to judge |
+| [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 11 d | 12 | 75.0% | too few to judge | - | no read |
 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | 12 d | 109 | 56.8% | WATCH | 78.6% | PASS |
 
 Stayed to watch: 0 of 7 judged Shorts at 60%+. Average viewed: 6 of 7 at 70%+.

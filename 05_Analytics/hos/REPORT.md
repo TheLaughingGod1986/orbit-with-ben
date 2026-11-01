@@ -115,9 +115,10 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 3 d | 255 | 22.3% | MISS | 79.7% | PASS |
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 4 d | 80 | 68.9% | too few to judge | 66.0% | too few to judge |
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 5 d | 223 | 28.4% | MISS | 64.6% | WATCH |
+| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 44 h (early) | 71 | 24.7% | too few to judge | 58.9% | too few to judge |
+| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 3 d | 265 | 21.3% | MISS | 79.7% | PASS |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 4 d | 84 | 70.2% | too few to judge | 65.4% | too few to judge |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 5 d | 221 | 28.6% | MISS | 64.6% | WATCH |
 | [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 8 d | 49 | 29.8% | too few to judge | 50.0% | too few to judge |
 | [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 10 d | 175 | 40.5% | MISS | 86.9% | PASS |
 | [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 11 d | 151 | 23.1% | MISS | 56.9% | WATCH |
