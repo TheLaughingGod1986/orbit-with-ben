@@ -86904,6 +86904,11 @@
           "at": "2026-11-01T22:40Z",
           "by": "relay",
           "what": "condition verification queued: J1558"
+        },
+        {
+          "at": "2026-11-01T23:18Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-02T05:20:00Z"
         }
       ],
       "kind": "assembly",
@@ -86922,12 +86927,11 @@
       "remaining_action": "Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
       "hold": {
         "type": "input",
-        "condition": "J1525 verified 031 magnetic_field_flip_vo_v02a (J1295/c8ed778ab) and 032 titan_landing_vo_v02b (J1294/4a9a2e16b) VO lock records. Both status.json records explicitly say picture not started; production-status.md lists CG pending. 033-061 have no recorded VO/picture locks. Await a 031+ long with locked VO AND picture, then verify an unused Keeper-compliant subject-naming question opening, exact source-time EDL, duplicates and all original gates/holds. 029 reserve v01 remains shelved under J1042; no spend/upload approval.",
-        "check_at": "2026-11-01T23:40:57+00:00",
-        "last_recheck": "J1525",
-        "checked_at": "2026-11-01T16:19:04+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1558"
+        "condition": "J1558 verified 031 magnetic_field_flip_vo_v02a (J1295/c8ed778ab) and 032 titan_landing_vo_v02b (J1294/4a9a2e16b) VO lock records. Both status.json records explicitly say picture not started; production-status.md lists CG pending. 033-061 have no recorded VO/picture locks. Await a 031+ long with locked VO AND picture, then verify an unused Keeper-compliant subject-naming question opening, exact source-time EDL, duplicates and all original gates/holds. 029 reserve v01 remains shelved under J1042; no spend/upload approval.",
+        "check_at": "2026-11-02T05:20:00Z",
+        "last_recheck": "J1558",
+        "checked_at": "2026-11-01T23:18:49+00:00",
+        "checked_by": "gemini"
       }
     },
     {
