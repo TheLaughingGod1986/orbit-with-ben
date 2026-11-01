@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1456 | any | claimed | codex | 2026-11-01T06:13Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1456 done: Chief: verify condition for J1100 (done)
 - J1455 done: Chief: verify condition for J0979 (done)
 - J1454 done: Chief: verify condition for J1130 (Verified 03:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T04:41:27Z retry; evidence _desk/handoff/J1454 and HOS desk 6553009181. No YouTube changes or spend.)
 - J1453 done: Chief: verify condition for J0936 (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1449 done: Chief: verify condition for J1100 (done)
 - J1448 done: Chief: verify condition for J0985 (Condition verified unmet. Audit latest commit 0c18bb2cb; both saved Mercury curves reproduce -5.59pp at 4.088-4.2924s (0.20->0.21), while Chief review line 67 and J1003 result retain -5.76pp at 3.68-3.88s and conflicting cut mapping. Reconciliation and final non-author audit PASS remain missing. J0985 stays blocked; wait --recheck J1448 set 1 Nov 08:30Z, readback PASS. No spend or publishing changes.)
 - J1447 done: Chief: verify condition for J1130 (Studio access still denied on both CDP sessions. J1130 remains blocked; existing retry 2026-11-01T02:40:40Z retained. Evidence _desk/handoff/J1447; HOS desk report posted. No YouTube changes or spend.)
-- J1446 done: Chief: verify condition for J1356 (Verified unchanged accepted master hashes, missing package exports and unchanged PR376. J1356 remains blocked on music/tail correction, versioned mapping, affected gates and full playback review; next check 2026-11-01T07:50Z. No media or publishing change.)
