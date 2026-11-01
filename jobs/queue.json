@@ -134131,19 +134131,28 @@
           "at": "2026-11-01T14:42Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-01T14:42Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR380 OPEN unchanged at d0b04b5e0; no comments or reviews; J1471 still blocked on approved ISS opening input"
         }
       ],
-      "remaining_action": "Verify J1356 evidence and whether the corrected ISS opening is ready",
+      "remaining_action": "Check saved opening failures and final-watch approval requirements",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T15:41:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T14:42Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "PR380 OPEN unchanged at d0b04b5e0; no comments or reviews; J1471 still blocked on approved ISS opening input"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
