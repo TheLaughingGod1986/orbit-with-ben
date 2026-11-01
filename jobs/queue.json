@@ -134506,19 +134506,24 @@
           "at": "2026-11-01T15:27Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1520; starting verification of J1100 waiting condition"
+        },
+        {
+          "at": "2026-11-01T15:27Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100 brief, approval history, and J1514 result; Gemini is elected Chief"
         }
       ],
-      "remaining_action": "Read J1100 waiting condition, latest evidence and audition listening status",
+      "remaining_action": "Inspect /private/tmp/J1100-bed-evidence, bed hashes, and listening evidence",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T16:25:46+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T15:27Z",
         "by": "gemini",
-        "note": "Claimed J1520; starting verification of J1100 waiting condition"
+        "note": "Read J1100 brief, approval history, and J1514 result; Gemini is elected Chief"
       },
       "taskKeys": [
         "OWB:027",
