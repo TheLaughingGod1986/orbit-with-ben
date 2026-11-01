@@ -87561,6 +87561,11 @@
           "at": "2026-11-01T01:47Z",
           "by": "relay",
           "what": "condition verification queued: J1448"
+        },
+        {
+          "at": "2026-11-01T02:24Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T08:30:00Z"
         }
       ],
       "kind": "review",
@@ -87599,12 +87604,11 @@
       "remaining_action": "Reconcile Mercury retention narrative with raw curves and cut/VO evidence, then obtain independent final audit review",
       "hold": {
         "type": "input",
-        "condition": "J1396 verified unmet: latest audit commit remains 0c18bb2cb. Both persisted mature Mercury vlkj8RQKmH8 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp), 4.088-4.2924s at 20.44s runtime. Chief review line 67 and J1003 result still assert 0.18->0.19, -5.76pp, 3.68-3.88s and different cut mapping. Reconciliation against raw buckets and cut/VO evidence and final non-author Chief audit PASS are still missing. J1002/J1003 complete; original production gates and approvals unchanged.",
-        "check_at": "2026-11-01T02:47:12+00:00",
-        "last_recheck": "J1396",
-        "checked_at": "2026-10-31T19:43:06+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1448"
+        "condition": "J1448 verified unmet: latest audit commit remains 0c18bb2cb; both persisted Mercury vlkj8RQKmH8 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp), 4.088-4.2924s at 20.44s runtime. Chief review line 67 and J1003 result still assert 0.18->0.19 (-5.76pp), 3.68-3.88s and conflicting cut mapping. Reconciliation with raw curves and cut/VO evidence plus final non-author Chief audit PASS remain missing. J1002/J1003 complete; original production gates and approvals unchanged.",
+        "check_at": "2026-11-01T08:30:00Z",
+        "last_recheck": "J1448",
+        "checked_at": "2026-11-01T02:24:37+00:00",
+        "checked_by": "codex"
       }
     },
     {
