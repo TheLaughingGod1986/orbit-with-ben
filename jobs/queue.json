@@ -130654,13 +130654,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T07:47Z",
-      "eta": "2026-11-01T09:47Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T07:46Z",
-      "result": "",
+      "result": "Verification complete: Studio access still denied; J1130 hold preserved with 08:46:09 UTC retry. Evidence _desk/handoff/J1474.",
       "history": [
         {
           "at": "2026-11-01T07:46Z",
@@ -130691,6 +130691,11 @@
           "at": "2026-11-01T07:48Z",
           "by": "codex",
           "what": "step 3 of 3 done: Saved fresh evidence and retained J1130 retry at 08:46:09 UTC; reporting to HOS desk and Orbit thread"
+        },
+        {
+          "at": "2026-11-01T07:48Z",
+          "by": "codex",
+          "what": "done: Verification complete: Studio access still denied; J1130 hold preserved with 08:46:09 UTC retry. Evidence _desk/handoff/J1474."
         }
       ],
       "remaining_action": "Verification complete; J1130 remains held for readable Studio evidence",
