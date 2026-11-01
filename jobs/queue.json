@@ -137042,19 +137042,24 @@
           "at": "2026-11-01T20:44Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Step 1 complete: inspected J0985, J1002, J1003, J1515 and located the stale Mercury 0.18->0.19 (-5.76pp) line in OWB_2026-10-26_CHIEF_REVIEW.md line 67"
+        },
+        {
+          "at": "2026-11-01T20:48Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Step 2 complete: reconciled Mercury vlkj8RQKmH8 tied -5.59pp drops (0.20->0.21 at 4.0880-4.2924s and 0.24->0.25 at 4.9056-5.1100s) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, LEARNINGS.md, and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d) in commit 0ac2007b9"
         }
       ],
-      "remaining_action": "Verify raw Mercury vlkj8RQKmH8 curves and cut/VO metadata, and reconcile OWB_2026-10-26_CHIEF_REVIEW.md and evidence JSON",
+      "remaining_action": "Record wait --recheck J1549 on J0985 for non-author Chief final audit PASS and finish J1549",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-01T21:41:18+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-01T20:44Z",
+        "at": "2026-11-01T20:48Z",
         "by": "gemini",
-        "note": "Step 1 complete: inspected J0985, J1002, J1003, J1515 and located the stale Mercury 0.18->0.19 (-5.76pp) line in OWB_202"
+        "note": "Step 2 complete: reconciled Mercury vlkj8RQKmH8 tied -5.59pp drops (0.20->0.21 at 4.0880-4.2924s and 0.24->0.25 at 4.905"
       },
       "taskKeys": [
         "OWB:021",
