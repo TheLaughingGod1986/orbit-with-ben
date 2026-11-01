@@ -137714,9 +137714,14 @@
           "at": "2026-11-01T22:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T22:16Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1557 to verify J1130 waiting condition on HOS 002 (AL_-qlWko_g) thumbnail test T020"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for HOS 002 (AL_-qlWko_g) thumbnail test T020 to finish in Studio (CDP 9460), then arm title-only test the next London day",
+      "remaining_action": "Read J1130 history, J1523 evidence, and live HOS Studio test report for AL_-qlWko_g on CDP 9460",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-01T23:15:46+00:00",
@@ -137726,9 +137731,11 @@
         "of": 3,
         "at": "2026-11-01T22:16Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1557 to verify J1130 waiting condition on HOS 002 (AL_-qlWko_g) thumbnail test T020"
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     }
   ],
   "focus": [],
