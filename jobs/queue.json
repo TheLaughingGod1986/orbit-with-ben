@@ -134952,19 +134952,24 @@
           "at": "2026-11-01T16:18Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Confirmed 031 (magnetic_field_flip_vo_v02a, J1295/c8ed778ab) and 032 (titan_landing_vo_v02b, J1294/4a9a2e16b) have locked VO only and picture not started (CG pending); 033-061 have no recorded VO or picture locks"
+        },
+        {
+          "at": "2026-11-01T16:19Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: J0979 input hold retained with J1525 evidence and next check 2026-11-01T22:20:00Z; original J1042 shelving and approval gates preserved"
         }
       ],
-      "remaining_action": "Check chief_relay.py status, record J0979 wait hold with --recheck J1525, and close J1525",
+      "remaining_action": "Close verification and report the continuing picture-lock hold",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-01T17:06:47+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-01T16:18Z",
+        "at": "2026-11-01T16:19Z",
         "by": "gemini",
-        "note": "Confirmed 031 (magnetic_field_flip_vo_v02a, J1295/c8ed778ab) and 032 (titan_landing_vo_v02b, J1294/4a9a2e16b) have locke"
+        "note": "J0979 input hold retained with J1525 evidence and next check 2026-11-01T22:20:00Z; original J1042 shelving and approval "
       },
       "taskKeys": [
         "OWB:029",
