@@ -128358,13 +128358,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T01:47Z",
-      "eta": "2026-11-01T03:47Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T01:37Z",
-      "result": "",
+      "result": "Verified unchanged accepted master hashes, missing package exports and unchanged PR376. J1356 remains blocked on music/tail correction, versioned mapping, affected gates and full playback review; next check 2026-11-01T07:50Z. No media or publishing change.",
       "history": [
         {
           "at": "2026-11-01T01:37Z",
@@ -128395,6 +128395,11 @@
           "at": "2026-11-01T01:48Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J1356 input hold with fresh file evidence; next verification 1 Nov 07:50Z"
+        },
+        {
+          "at": "2026-11-01T01:49Z",
+          "by": "codex",
+          "what": "done: Verified unchanged accepted master hashes, missing package exports and unchanged PR376. J1356 remains blocked on music/tail correction, versioned mapping, affected gates and full playback review; next check 2026-11-01T07:50Z. No media or publishing change."
         }
       ],
       "remaining_action": "Verification complete; J1356 awaits correction evidence",
@@ -128411,7 +128416,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "92de3841c"
     },
     {
       "id": "J1447",
