@@ -130144,10 +130144,24 @@
           "at": "2026-11-01T07:04Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-01T07:11Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Add 05_Music score bed to AR1-AR3, mux full-runtime music over VO+SFX (-c:v copy) into new versions, map 06_Final-Exports, and rerun gates",
-      "kind": "assembly"
+      "kind": "assembly",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J1469",
