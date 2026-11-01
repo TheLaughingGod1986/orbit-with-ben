@@ -136194,19 +136194,24 @@
           "at": "2026-11-01T18:54Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1539; starting verification of J0936 waiting condition"
+        },
+        {
+          "at": "2026-11-01T18:55Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J0936, J1100, J1532, and latest J1538 (which holds J1100 blocked at 2/3 until 19:29:07Z); J1032 PASS and completed swaps J1101-J1103 preserved"
         }
       ],
-      "remaining_action": "Verify J0936 waiting condition: check J1100 status, PR 333, and evidence for S2/S5/S6",
+      "remaining_action": "Verify evidence 3e26b379b, audition hashes, PR 333, and J1538/J1100 state",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T19:53:06+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T18:54Z",
+        "at": "2026-11-01T18:55Z",
         "by": "gemini",
-        "note": "Claimed J1539; starting verification of J0936 waiting condition"
+        "note": "Read J0936, J1100, J1532, and latest J1538 (which holds J1100 blocked at 2/3 until 19:29:07Z); J1032 PASS and completed "
       },
       "taskKeys": [
         "OWB:026",
