@@ -136667,13 +136667,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-01T20:00Z",
-      "eta": "2026-11-01T22:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T19:59Z",
-      "result": "",
+      "result": "Verified latest J1543 and evidence 3e26b379b; all three audition hashes match, listening remains NOT PERFORMED, PR333 open at 0a7fcb6ad without reviews. J0936 stays blocked with recorded retry 2026-11-01T20:59:49Z; J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks preserved.",
       "history": [
         {
           "at": "2026-11-01T19:59Z",
@@ -136704,6 +136704,11 @@
           "at": "2026-11-01T20:03Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Retained hold on J0936 with 20:59:49 UTC recheck; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks"
+        },
+        {
+          "at": "2026-11-01T20:03Z",
+          "by": "gemini",
+          "what": "done: Verified latest J1543 and evidence 3e26b379b; all three audition hashes match, listening remains NOT PERFORMED, PR333 open at 0a7fcb6ad without reviews. J0936 stays blocked with recorded retry 2026-11-01T20:59:49Z; J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks preserved."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
@@ -136722,7 +136727,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1546",
