@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1558 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
-| J1559 | any | claimed | gemini | 2026-11-02T00:51Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1559 done: Chief: verify condition for J1100 (done)
 - J1557 done: Chief: verify condition for J1130 (Verified live HOS Studio on CDP 9460 (.hos-chrome-youtube-studio): AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) is still Running (Estimated time remaining: 10 days 1 hour; watch-time share — on both variants). J1130 kept blocked; next check 2026-11-02T04:50:00Z. Evidence: _desk/handoff/J1557. No YouTube changes or spend.)
 - J1556 done: Chief: verify condition for J1471 (done)
 - J1555 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50) and 06_Final-Exports master hashes remain unchanged from J1468. J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T23:00:46Z. No film PASS, watch release, spend or publishing changes.)
@@ -54,4 +54,3 @@ Recently finished:
 - J1551 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50) and 06_Final-Exports master hashes remain unchanged from J1468. J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T22:00:33Z. No film PASS, watch release, spend or publishing changes.)
 - J1550 done: Chief: verify condition for J0936 (done)
 - J1549 done: Chief: verify condition for J0985 (Reconciled Mercury vlkj8RQKmH8 retention curve narrative (tied -5.59pp drops at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md line 67, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, LEARNINGS.md, and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d) in commit 0ac2007b9. Kept J0985 blocked via wait --recheck J1549 (next check 2026-11-02T02:50:00Z) solely for non-author Chief (grok, claude, or codex) final audit PASS because gemini authored J0985/J1002/J1003 (never self-approve J0985). Original gates and approvals unchanged; GBP0 spend.)
-- J1548 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T21:30:57Z retry. Studio report posted. No spend or publishing changes.)
