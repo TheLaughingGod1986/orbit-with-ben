@@ -131334,19 +131334,24 @@
           "at": "2026-11-01T08:51Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR379 merged; PR380 unchanged d0b04b5e0 with no comments or approved ISS delivery. Saved opening gates still FAIL on all three cuts."
+        },
+        {
+          "at": "2026-11-01T08:51Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Retained blocked input condition, linked J1482 and preserved existing 2026-11-01T09:46:33Z retry; all other holds remain."
         }
       ],
-      "remaining_action": "Retain J1471 input hold and verify recorded retry",
+      "remaining_action": "Read back J1471 hold and close verification",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T09:46:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-01T08:51Z",
         "by": "codex",
-        "note": "PR379 merged; PR380 unchanged d0b04b5e0 with no comments or approved ISS delivery. Saved opening gates still FAIL on all"
+        "note": "Retained blocked input condition, linked J1482 and preserved existing 2026-11-01T09:46:33Z retry; all other holds remain"
       },
       "taskKeys": [
         "OWB:030"
