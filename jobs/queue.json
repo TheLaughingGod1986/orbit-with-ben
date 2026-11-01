@@ -130154,9 +130154,14 @@
           "at": "2026-11-01T07:11Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T07:12Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Add 05_Music score bed to AR1-AR3, mux full-runtime music over VO+SFX (-c:v copy) into new versions, map 06_Final-Exports, and rerun gates",
+      "remaining_action": "Locate locked AR1–AR3 stems, add full-runtime score, and verify new cuts",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -130170,11 +130175,12 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-01T07:11Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-11-01T07:12Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1469",
