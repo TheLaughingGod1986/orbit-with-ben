@@ -127484,9 +127484,14 @@
           "at": "2026-11-01T11:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1427; starting read-only listing check on HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-11-01T11:46Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 done: npm run lint:package and npm run channel:audit PASS (62 videos, 0 errors); pWySvZsneZg is now public (30 public + 10 scheduled)"
         }
       ],
-      "remaining_action": "Run read-only channel audit on HOS live and scheduled videos",
+      "remaining_action": "Verify live end screens on all 5 public longs and Related video pill on all 25 public Shorts",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "taskKeys": [
@@ -127508,11 +127513,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-01T11:45Z",
+        "at": "2026-11-01T11:46Z",
         "by": "gemini",
-        "note": "Claimed J1427; starting read-only listing check on HOS live and scheduled videos"
+        "note": "Step 1/4 done: npm run lint:package and npm run channel:audit PASS (62 videos, 0 errors); pWySvZsneZg is now public (30 "
       }
     },
     {
