@@ -43,10 +43,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1471 | mini | open (after J1468) | – | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1473 | any | claimed | codex | 2026-11-01T09:39Z | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
+- J1473 done: Chief: verify condition for J0936 (done)
 - J1472 done: Chief: verify condition for J1356 (Verified J1356 condition remains unmet: PR379 merged at 1b3a988cc, but raw opening gates FAIL (AR1 6.00s first cut; AR2 diff 0.25; AR3 diff 1.41). J1471 remains open without delivery. Retained J1356 block and 2026-11-01T08:35:31Z recheck, requiring corrected versions, complete gates/metadata, full moving/audio review and pace WARN assessment. Existing approval/date/credit/watch holds preserved. No film PASS, watch release, publishing or spend.)
 - J1470 done: Chief: verify condition for J1100 (done)
 - J1469 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 5 HOS longs; 76 OWB + 23 HOS Shorts. CTR >=4%: OWB 2/11 measured (Sun 4.3%, -jmMROGoZCM 5%); HOS 1/3 (Germs 7.1%). Latest Short each channel has no lifetime metrics yet; unavailable fields omitted. 461 merged fields verified; tracker published and HTTP 200. Commit 251eaa53b; evidence _desk/jobs/J1469. HOS audit: 62 videos, 0 errors.)
@@ -56,4 +56,3 @@ Recently finished:
 - J1465 done: Chief: verify condition for J0936 (Verified latest J1464 and evidence 3e26b379b; all audition hashes match, listening remains unperformed, PR333 open without approval. J0936 stays blocked with recorded retry 2026-11-01T07:37:39Z; prior approvals, deadlines and fallbacks preserved. Studio report posted.)
 - J1464 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and three audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3, approvals and 2026-11-01T07:14:07Z retry. Report #6554330536.)
 - J1463 done: Chief: verify condition for J0862 (Verified unmet: HOS main 220312c6, PRs through 394, desk through 6554133437 and queue contain no approved 009 Short B replacement opening or recording scope. J0862 remains blocked; next check 2026-11-01T12:05Z via J1463. Existing v02 takes, approved 010 A Option A1 and all gates preserved. HOS desk report posted. No spend or publishing changes.)
-- J1462 done: Chief: verify condition for J0978 (Verified 1 Nov 05:53 UTC: HOS Atom title-test widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only check 1 Nov 11:55 UTC. Evidence HOS PR 394 (d2c6f074) and _desk/handoff/J1462. Channel audit 62 videos, 0 errors; check_all ALL CHECKS PASS. No YouTube changes or spend. Reported on HOS desk.)
