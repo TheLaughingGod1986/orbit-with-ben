@@ -131820,19 +131820,24 @@
           "at": "2026-11-01T10:01Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed J0979 rejection, J1000 feasibility result, J1042 shelving decision and latest J1455 recheck"
+        },
+        {
+          "at": "2026-11-01T10:01Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 031/032 status.json and production-status.md confirm VO locked, picture not started; 033-061 have no recorded VO/picture locks"
         }
       ],
-      "remaining_action": "Verify current picture readiness and preserve the original release gates",
+      "remaining_action": "Record the unmet picture-lock condition and next verification",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-01T11:00:07+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-01T10:01Z",
         "by": "codex",
-        "note": "Reviewed J0979 rejection, J1000 feasibility result, J1042 shelving decision and latest J1455 recheck"
+        "note": "031/032 status.json and production-status.md confirm VO locked, picture not started; 033-061 have no recorded VO/picture"
       },
       "taskKeys": [
         "OWB:029",
