@@ -129253,13 +129253,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T04:37Z",
-      "eta": "2026-11-01T06:37Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T04:36Z",
-      "result": "",
+      "result": "Verified unmet condition; J0936 remains blocked with existing retry. Latest J1456 and evidence 3e26b379b checked; audition hashes match, listening unperformed, PR333 unchanged.",
       "history": [
         {
           "at": "2026-11-01T04:36Z",
@@ -129290,6 +129290,11 @@
           "at": "2026-11-01T04:38Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded J1457-linked unmet condition, retained 05:36:33 UTC retry and posted required studio report."
+        },
+        {
+          "at": "2026-11-01T04:38Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition; J0936 remains blocked with existing retry. Latest J1456 and evidence 3e26b379b checked; audition hashes match, listening unperformed, PR333 unchanged."
         }
       ],
       "remaining_action": "Verification complete; J0936 held for replacement evidence",
