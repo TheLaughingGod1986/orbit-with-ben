@@ -121962,9 +121962,14 @@
           "at": "2026-11-01T07:35Z",
           "by": "relay",
           "what": "condition verification queued: J1472"
+        },
+        {
+          "at": "2026-11-01T07:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T08:35:31Z"
         }
       ],
-      "remaining_action": "Await J1471 opening fixes and complete gate/playback evidence before final-watch review",
+      "remaining_action": "Await J1471 opening fixes, complete gates and moving/audio review before final-watch readiness",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -121977,10 +121982,12 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "J1467 review: J1468 audio repair PR379 delivered, but AR1 first cut and AR2/AR3 opening motion still FAIL. Await J1471 after J1468: corrected new versions, complete gates/metadata, full moving/audio review and pace WARN assessment. Then elected Chief verifies readiness under J1356; no watch or publishing release.",
-        "check_at": "2026-11-01T08:35:31+00:00",
-        "recheck_task": "J1472"
+        "type": "input",
+        "condition": "J1472 verified merged PR379 (1b3a988cc): AR1 v02 first cut 6.00s exceeds 3s; AR2 v07 opening diff 0.25 and AR3 v06 1.41 are below 1.50. J1471 is open with no delivery. Await J1471 corrected new versions, complete gate metadata, full moving/audio review and pace WARN assessment before elected-Chief final-watch readiness verification. Existing approvals and Ben/date/credit holds persist; no watch or publishing release.",
+        "check_at": "2026-11-01T08:35:31Z",
+        "last_recheck": "J1472",
+        "checked_at": "2026-11-01T07:37:21+00:00",
+        "checked_by": "codex"
       }
     },
     {
