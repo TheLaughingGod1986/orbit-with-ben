@@ -44,10 +44,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1467 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1469 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J1470 | any | claimed | codex | 2026-11-01T09:21Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1470 done: Chief: verify condition for J1100 (done)
 - J1468 done: AR cohort (AR1 v01, AR2 v06, AR3 v05): fix music_gate FAIL (add 05_Music bed, mux full-runtime score over VO+SFX with -c:v copy into new versions, map 06_Final-Exports) (Audio repair delivered in PR #379: AR1 v02 / AR2 v07 / AR3 v06. Music/SFX/picture/polish PASS; original video bitstreams and source masters unchanged. Parked for Chief/J1356: Shorts opening gates still FAIL on unchanged picture; no upload/schedule/spend.)
 - J1466 done: Chief: verify condition for J1130 (done)
 - J1465 done: Chief: verify condition for J0936 (Verified latest J1464 and evidence 3e26b379b; all audition hashes match, listening remains unperformed, PR333 open without approval. J0936 stays blocked with recorded retry 2026-11-01T07:37:39Z; prior approvals, deadlines and fallbacks preserved. Studio report posted.)
@@ -57,4 +57,3 @@ Recently finished:
 - J1461 done: Chief: verify condition for J1130 (Verified 05:44 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T06:42:36Z retry. Evidence _desk/handoff/J1461; HOS desk comment 6554059401. No YouTube changes or spend.)
 - J1460 done: Chief: verify condition for J0936 (done)
 - J1459 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3 and approvals; recorded retry 2026-11-01T06:13:17Z. Studio report posted.)
-- J1458 done: Chief: verify condition for J1130 (Verified 04:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T05:41:40Z retry; evidence _desk/handoff/J1458 and HOS desk report. No YouTube changes or spend.)
