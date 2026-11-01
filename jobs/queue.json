@@ -137136,19 +137136,24 @@
           "at": "2026-11-01T21:02Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1550 as acting Chief; starting verification of J0936 waiting condition"
+        },
+        {
+          "at": "2026-11-01T21:03Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J0936, J1100, J1545, and latest J1548 (which holds J1100 blocked at 2/3 until 21:30:57Z); J1032 PASS and completed swaps J1101-J1103 preserved"
         }
       ],
-      "remaining_action": "Read J0936, J1100, J1545, and latest J1548 history and approval records",
+      "remaining_action": "Verify evidence 3e26b379b at /private/tmp/J1100-bed-evidence, audition hashes, and PR #333 status",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T22:00:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T21:02Z",
+        "at": "2026-11-01T21:03Z",
         "by": "gemini",
-        "note": "Claimed J1550 as acting Chief; starting verification of J0936 waiting condition"
+        "note": "Read J0936, J1100, J1545, and latest J1548 (which holds J1100 blocked at 2/3 until 21:30:57Z); J1032 PASS and completed "
       },
       "taskKeys": [
         "OWB:026",
