@@ -1,5 +1,5 @@
 {
-  "next_id": 1471,
+  "next_id": 1472,
   "jobs": [
     {
       "id": "J0001",
@@ -130320,6 +130320,34 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J1471",
+      "title": "AR cohort: correct remaining opening-gate failures after J1468",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief Codex ruling on J1467, 1 Nov 2026: technical sweep accepted only. J1468 PR379 audio repairs AR1 v02 / AR2 v07 / AR3 v06 still FAIL gate_shorts_open: AR1 first cut 6.00s >3s; AR2 opening diff 0.25<1.50; AR3 1.41<1.50. Scoped GBP0 correction authorised: inspect full moving openings against locked lines and h40 timings, use existing approved moving assets to correct only the failing opening/cut in new versioned masters, preserve all originals, locked VO, repaired full-runtime score and accepted remaining picture. Never substitute the separate AR2 v10/AR3 v09 branch. No generation or credits. If suitable approved assets are absent, report exact missing assets for Chief; do not mint or waive gates. Run all affected picture/polish/music/SFX/Shorts-open/loop checks with complete metadata. Review full moving cuts and listen to audio including pace WARN; do not claim listening from ASR or stills. Commit evidence and versioned pre-upload mappings in clean worktree PR; hand results to J1356 for final-watch readiness and protected review. No upload, schedule, privacy, retitle, Buffer or Ben watch release. Link progress OWB:030. This delegates remediation only; all failed-cut and existing Ben/date/credit holds remain.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J1468",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-01T07:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T07:24Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct AR1 first cut and AR2/AR3 opening motion in new versions, then rerun gates",
+      "kind": "assembly"
     }
   ],
   "focus": [],
