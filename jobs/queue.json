@@ -128547,19 +128547,24 @@
           "at": "2026-11-01T02:24Z",
           "by": "codex",
           "what": "step 2 of 3 done: Retained J0985 hold with recheck J1448 for 1 Nov 08:30Z. Both raw curves independently reproduce -5.59pp at 4.088-4.2924s; evidence SHA256 3f6132b6e279e6d7282e5784c3acc4d17c6c3816c7d2b8ede47565a45ab92562."
+        },
+        {
+          "at": "2026-11-01T02:24Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback PASS: J0985 blocked, last_recheck J1448, next check 2026-11-01T08:30:00Z. Original gates and approvals retained."
         }
       ],
-      "remaining_action": "Verify recorded hold and report outcome",
+      "remaining_action": "Verification complete; report retained audit hold",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-01T02:47:12+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-01T02:24Z",
         "by": "codex",
-        "note": "Retained J0985 hold with recheck J1448 for 1 Nov 08:30Z. Both raw curves independently reproduce -5.59pp at 4.088-4.2924"
+        "note": "Readback PASS: J0985 blocked, last_recheck J1448, next check 2026-11-01T08:30:00Z. Original gates and approvals retained"
       },
       "taskKeys": [
         "OWB:021",
