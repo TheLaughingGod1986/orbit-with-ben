@@ -136839,9 +136839,14 @@
           "at": "2026-11-01T20:11Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T20:11Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1547; starting verification of J1471 waiting condition and PR #380"
         }
       ],
-      "remaining_action": "Verify readiness: Identify suitable approved ISS opening input before resuming scoped opening repairs",
+      "remaining_action": "Verify PR #380, J1468 master/cache hashes, and whether approved ISS opening input has arrived for J1471",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T21:04:47+00:00",
@@ -136851,9 +136856,11 @@
         "of": 3,
         "at": "2026-11-01T20:11Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1547; starting verification of J1471 waiting condition and PR #380"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
