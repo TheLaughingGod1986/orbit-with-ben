@@ -1,0 +1,87 @@
+{
+  "job": "J0969",
+  "by": "gemini",
+  "verified_at": "2026-11-01T18:51:35+00:00",
+  "films": [
+    "OWB:022"
+  ],
+  "channelId": "UC_esArsDKd3GJvOkeO0DUog",
+  "cdp": "http://127.0.0.1:9223",
+  "sun_h8HGfyShEHI": {
+    "video_id": "h8HGfyShEHI",
+    "title": "Is the Sun Getting Brighter?",
+    "prior_test": {
+      "ledger_id": "T012",
+      "mode": "Thumbnail only (A/B/C)",
+      "window": "18 October 2026 at 18:00 to 1 November 2026 at 17:14",
+      "status": "Test finished. Not enough impressions to declare a winner",
+      "winner_recorded": "draw (house vs house; A BURNING HARDER Now visible to all viewers)",
+      "variants": {
+        "A": "BURNING HARDER (sun_thumb_A_burning-harder.png) — Now visible to all viewers, Watch-time share —",
+        "B": "IT'S CLIMBING (sun_thumb_B_its-climbing.png) — Watch-time share —",
+        "C": "RUNNING DOWN? (sun_thumb_C_running-down.png) — Watch-time share —"
+      },
+      "reach_18_oct_to_1_nov": {
+        "impressions": 118,
+        "recommended_share": "4.2%",
+        "ctr": "4.2%",
+        "views": 9,
+        "unique_viewers": 4,
+        "engaged_views": 5,
+        "avg_view_duration": "1:53",
+        "watch_time_hours": 0.16
+      }
+    },
+    "armed_test": {
+      "ledger_id": "T019",
+      "started": "2026-11-01",
+      "readBack": "2026-11-15",
+      "mode": "Thumbnail only",
+      "a": {
+        "maker": "house",
+        "description": "live thumbnail winner (BURNING HARDER)",
+        "file": "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_A_burning-harder.png"
+      },
+      "b": {
+        "maker": "codex",
+        "description": "10% BRIGHTER (J0963 Chief PASS c54/c57)",
+        "file": "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/tc_B_j0963/sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg",
+        "sha256": "e7247c5232a3ec78b7413722e184bfdfc15a1e9ee6070dd63a3acbf6981021bf",
+        "bytes": 251097,
+        "dimensions": "1280x720"
+      },
+      "studio_readback_after_reload": {
+        "thumbnail_section": "Test running… (Estimated time remaining: 13 days 23 hours…)",
+        "variants_shown": [
+          "BURNING HARDER (Watch-time share —)",
+          "10% BRIGHTER (Watch-time share —)"
+        ],
+        "title_unchanged": "Is the Sun Getting Brighter?",
+        "visibility": "Public",
+        "audience": "No, it's not Made for Kids"
+      }
+    },
+    "artifacts": [
+      {
+        "path": "/Users/benjaminoats/_desk/j0969/02_test_report.png",
+        "sha256": "3b08918cdb924cee8218a47cd22f4bd949bc5fc473bd7279aacdf96846a88445"
+      },
+      {
+        "path": "/Users/benjaminoats/_desk/j0969/03_reach.png",
+        "sha256": "b76a4fe7091ad641f9b251a1e564666510b67373156d0878a345985c5de17856"
+      },
+      {
+        "path": "/Users/benjaminoats/_desk/j0969/07_b_uploaded.png",
+        "sha256": "3700128e51c12686848518e440de52e472235ffc5d6485bdf779c2ae5a3ca12f"
+      },
+      {
+        "path": "/Users/benjaminoats/_desk/j0969/10_reloaded_edit.png",
+        "sha256": "6e4e3aa311bcc86f4070851cfa29a7e05c8def76ec15dc0cbc18ddeb3d34cc6a"
+      },
+      {
+        "path": "/Users/benjaminoats/_desk/j0969/11_confirm_test_running.png",
+        "sha256": "b7f3522b87ecf19a2430945691ff7989996a942a0b78fbc9c06f3167f7cf7071"
+      }
+    ]
+  }
+}

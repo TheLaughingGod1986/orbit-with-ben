@@ -281,7 +281,7 @@
     },
     {
       "id": "T012",
-      "status": "running",
+      "status": "done",
       "started": "2026-10-18",
       "channel": "owb",
       "video": "h8HGfyShEHI",
@@ -299,9 +299,14 @@
         "maker": "house",
         "file": "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_C_running-down.png"
       },
-      "result": null,
+      "result": {
+        "impressions": 118,
+        "winner": "draw",
+        "read": "2026-11-01"
+      },
       "readBack": "2026-11-01",
-      "note": "Back-filled by Chief c57 (OWB #264 6407771727, 26 Oct 2026). Thumbnail-only A/B/C found running in Studio by J0969 on 26 Oct 03:31 London (A BURNING HARDER, B IT'S CLIMBING, C RUNNING DOWN?, J0020 house builder; about 6d 13h left -> ends about Sun 1 Nov 16:30 London). Start date inferred (14-day test armed at publish, 18 Oct). No arm job or row was recorded. House vs house: not a maker comparison, record result with --winner draw and the real winner here. J0969 then arms B v02 10% BRIGHTER (codex) vs the winner."
+      "note": "Back-filled by Chief c57 (OWB #264 6407771727, 26 Oct 2026). Thumbnail-only A/B/C found running in Studio by J0969 on 26 Oct 03:31 London (A BURNING HARDER, B IT'S CLIMBING, C RUNNING DOWN?, J0020 house builder; about 6d 13h left -> ends about Sun 1 Nov 16:30 London). Start date inferred (14-day test armed at publish, 18 Oct). No arm job or row was recorded. House vs house: not a maker comparison, record result with --winner draw and the real winner here. J0969 then arms B v02 10% BRIGHTER (codex) vs the winner. Read-back 1 Nov 2026 (J0969): Test finished (Ran from 18 October 2026 at 18:00 to 1 November 2026 at 17:14). Studio says Not enough impressions to declare a winner; watch-time shares A=— (not shown), B=— (not shown), C=— (not shown). A (BURNING HARDER) is Now visible to all viewers. Reach 18 Oct–1 Nov: 118 impressions, 4.2% CTR, 9 views, 5 engaged views, 1:53 avg view duration, 0.16h watch time.",
+      "ended": "2026-11-01"
     },
     {
       "id": "T013",
@@ -422,6 +427,26 @@
         "file": "/Users/benjaminoats/_desk/j1106/designs/m09jUdwC5hk_B_v02.jpg"
       },
       "result": null
+    },
+    {
+      "id": "T019",
+      "status": "running",
+      "started": "2026-11-01",
+      "channel": "owb",
+      "video": "h8HGfyShEHI",
+      "title": "Is the Sun Getting Brighter?",
+      "job": "J0963",
+      "a": {
+        "maker": "house",
+        "file": "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_A_burning-harder.png"
+      },
+      "b": {
+        "maker": "codex",
+        "file": "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/tc_B_j0963/sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg"
+      },
+      "result": null,
+      "readBack": "2026-11-15",
+      "note": "Armed 1 Nov 2026 (J0969 / J0963 Chief PASS c54/c57). Thumbnail only. A house live winner BURNING HARDER (sun_thumb_A_burning-harder.png). B codex J0963 v02 10% BRIGHTER (1280x720, sha256 e7247c5232a3ec78). Prior 18 Oct–1 Nov thumbnail-only A/B/C test (T012) finished inconclusive (no winner, A visible to all; Reach 18 Oct–1 Nov: 118 impressions, 4.2% CTR, 9 views, 5 engaged views). Studio read-back after reload: Thumbnail Running…, Estimated time remaining: 13 days 23 hours…, Title Is the Sun Getting Brighter? and Public unchanged."
     }
   ]
 }
