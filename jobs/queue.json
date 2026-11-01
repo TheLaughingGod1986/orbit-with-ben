@@ -128766,13 +128766,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T02:41Z",
-      "eta": "2026-11-01T04:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T02:40Z",
-      "result": "",
+      "result": "Fresh 02:42 UTC Studio reads deny HOS access on both CDP sessions. J1130 remains blocked; recorded 2026-11-01T03:40:59Z retry retained. Evidence _desk/handoff/J1451; HOS desk notified. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-11-01T02:40Z",
@@ -128803,6 +128803,11 @@
           "at": "2026-11-01T02:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1130 hold updated with fresh denial evidence; retained 03:40:59 UTC retry; report posted to HOS desk"
+        },
+        {
+          "at": "2026-11-01T02:43Z",
+          "by": "codex",
+          "what": "done: Fresh 02:42 UTC Studio reads deny HOS access on both CDP sessions. J1130 remains blocked; recorded 2026-11-01T03:40:59Z retry retained. Evidence _desk/handoff/J1451; HOS desk notified. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Verification complete; J1130 held for readable Studio evidence",
