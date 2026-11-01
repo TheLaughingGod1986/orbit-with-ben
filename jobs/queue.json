@@ -133157,19 +133157,24 @@
           "at": "2026-11-01T12:40Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: inspect approvals and current delivery, verify gate evidence, record readiness decision"
+        },
+        {
+          "at": "2026-11-01T12:40Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original approval history read; PR379 audio repair merged. PR380 unchanged at d0b04b5e0, OPEN with no comments or reviews; J1471 blocked."
         }
       ],
-      "remaining_action": "Verify corrected delivery, gate evidence and review history for J1356",
+      "remaining_action": "Verify saved opening gates and record readiness decision",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T13:39:07+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T12:40Z",
         "by": "codex",
-        "note": "Plan: inspect approvals and current delivery, verify gate evidence, record readiness decision"
+        "note": "Original approval history read; PR379 audio repair merged. PR380 unchanged at d0b04b5e0, OPEN with no comments or review"
       },
       "taskKeys": [
         "OWB:030"
