@@ -86581,6 +86581,11 @@
           "at": "2026-11-01T03:55Z",
           "by": "relay",
           "what": "condition verification queued: J1455"
+        },
+        {
+          "at": "2026-11-01T03:56Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T10:00:00Z"
         }
       ],
       "kind": "assembly",
@@ -86599,12 +86604,11 @@
       "remaining_action": "Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
       "hold": {
         "type": "input",
-        "condition": "J1419 verified current 031 magnetic_field_flip_vo_v02a (J1295/c8ed778ab) and 032 titan_landing_vo_v02b (J1294/4a9a2e16b) VO lock records; both status.json records still explicitly say picture not started. 033-061 have no recorded VO/picture locks. Await a 031+ long with locked VO AND picture, then verify an unused Keeper-compliant subject-naming question opening, exact source-time EDL, duplicates and all original gates/holds. 029 reserve v01 stays shelved under J1042; no spend/upload approval.",
-        "check_at": "2026-11-01T04:55:21+00:00",
-        "last_recheck": "J1419",
-        "checked_at": "2026-10-31T21:51:43+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1455"
+        "condition": "J1455 verified 031 magnetic_field_flip_vo_v02a (J1295/c8ed778ab) and 032 titan_landing_vo_v02b (J1294/4a9a2e16b) VO lock records; both status.json records explicitly say picture not started, consistent with production-status.md. 033-061 have no recorded VO/picture locks. Await a 031+ long with locked VO AND picture, then verify an unused Keeper-compliant subject-naming question opening, exact source-time EDL, duplicates and all original gates/holds. 029 reserve v01 remains shelved under J1042; no spend/upload approval.",
+        "check_at": "2026-11-01T10:00:00Z",
+        "last_recheck": "J1455",
+        "checked_at": "2026-11-01T03:56:55+00:00",
+        "checked_by": "codex"
       }
     },
     {
