@@ -128528,9 +128528,14 @@
           "at": "2026-11-01T02:23Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T02:23Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Review original approval history, recompute persisted Mercury curves, and verify queue readback."
         }
       ],
-      "remaining_action": "Verify readiness: Reconcile Mercury retention narrative with raw curves and cut/VO evidence, then obtain independent final audit review",
+      "remaining_action": "Verify audit reconciliation and independent approval, then record hold decision",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-01T02:47:12+00:00",
@@ -128540,9 +128545,22 @@
         "of": 3,
         "at": "2026-11-01T02:23Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Review original approval history, recompute persisted Mercury curves, and verify queue readback."
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032"
+      ]
     },
     {
       "id": "J1449",
