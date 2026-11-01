@@ -132739,10 +132739,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-01T11:55Z",
+      "eta": "2026-11-01T13:55Z",
       "created_by": "relay",
       "created_at": "2026-11-01T11:51Z",
       "result": "",
@@ -132751,13 +132751,26 @@
           "at": "2026-11-01T11:51Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-01T11:55Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Identify suitable approved ISS opening input before resuming scoped opening repairs",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T12:51:07+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-01T11:55Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
