@@ -134488,13 +134488,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-01T15:26Z",
-      "eta": "2026-11-01T17:26Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T15:25Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-01T15:25Z",
@@ -134525,6 +134525,11 @@
           "at": "2026-11-01T15:29Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded unmet condition with existing 16:25:46 UTC retry; original repair progress and gates preserved."
+        },
+        {
+          "at": "2026-11-01T15:29Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits cleared bed and local listening",

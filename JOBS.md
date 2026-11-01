@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1520 | any | claimed | gemini | 2026-11-01T17:26Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1520 done: Chief: verify condition for J1100 (done)
 - J1519 done: Chief: verify condition for J1471 (done)
 - J1518 done: Chief: verify condition for J1130 (Verification complete: both Studio video pages error and HOS dashboards deny permission. J1130 remains blocked; recorded retry 2026-11-01T15:57:15Z retained. Evidence/report: _desk/handoff/J1518; HOS desk informed. No YouTube changes or spend.)
 - J1517 done: Chief: verify condition for J0936 (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1513 done: Chief: verify condition for J1471 (Verified PR380 OPEN unchanged at d0b04b5e0; no comments, reviews or approved replacement ISS delivery. J1471 remains blocked/input, last_recheck J1513, retry 2026-11-01T14:57:11Z. Failed opening gates and J1356/Ben/date/credit/publishing holds retained.)
 - J1512 done: Chief: verify condition for J1130 (Verification complete: both Studio video pages error and HOS dashboards deny permission. J1130 remains blocked; recorded retry 2026-11-01T14:57:11Z retained. Evidence and report: _desk/handoff/J1512. HOS desk informed. No YouTube changes or spend.)
 - J1511 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks (re-verified at 2026-11-01T13:55Z against 2026-11-01.json snapshot and live YouTube pages); updated 05_Analytics/live_fixes/2026-11-01.md (0c37e0405); 0 fixes needed)
-- J1510 done: Chief: verify condition for J0936 (Verified 3e26b379b, three audition hashes and unchanged PR333; J0936 remains held pending J1100 repairs, cleared bed/listening, gates and replacement approvals. Preserved existing 2026-11-01T14:42:37Z check and all deadlines/fallbacks. Studio report posted; no spend or publishing changes.)
