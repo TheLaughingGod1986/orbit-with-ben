@@ -130587,6 +130587,11 @@
           "at": "2026-11-01T09:47Z",
           "by": "relay",
           "what": "condition verification queued: J1487"
+        },
+        {
+          "at": "2026-11-01T09:51Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T10:47:06Z"
         }
       ],
       "remaining_action": "Identify suitable approved ISS opening input before resuming scoped opening repairs",
@@ -130603,12 +130608,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1482 verified PR380 remains diagnostics-only at d0b04b5e0 with no approved ISS opening delivery. Require an identified approved ISS interval or approach for AR2 0-2.4s and loop preroll, native motion, <=2.35x upscale and locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete affected gates and full moving/audio review including pace WARN remain owed. J1356 and all Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-01T10:47:06+00:00",
-        "last_recheck": "J1482",
-        "checked_at": "2026-11-01T08:51:47+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1487"
+        "condition": "J1487 verified PR380 remains OPEN at d0b04b5e0 with no comments or approved ISS opening delivery. Require identified approved ISS interval or approach for AR2 0-2.4s and loop preroll, native motion, <=2.35x upscale and locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates still FAIL. J1356 and all Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-01T10:47:06Z",
+        "last_recheck": "J1487",
+        "checked_at": "2026-11-01T09:51:52+00:00",
+        "checked_by": "codex"
       }
     },
     {
