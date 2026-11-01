@@ -43,11 +43,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1467 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J1468 | mini | claimed | codex | 2026-11-01T07:56Z | for codex · assembly · `gpt-6.1-sol` · AR cohort (AR1 v01, AR2 v06, AR3 v05): fix music_gate FAIL (add 05_Music bed, mux full-runtime score over VO+SFX with -c:v copy into new versions, map 06_Final-Exports) |  |
 | J1469 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
+- J1468 done: AR cohort (AR1 v01, AR2 v06, AR3 v05): fix music_gate FAIL (add 05_Music bed, mux full-runtime score over VO+SFX with -c:v copy into new versions, map 06_Final-Exports) (Audio repair delivered in PR #379: AR1 v02 / AR2 v07 / AR3 v06. Music/SFX/picture/polish PASS; original video bitstreams and source masters unchanged. Parked for Chief/J1356: Shorts opening gates still FAIL on unchanged picture; no upload/schedule/spend.)
 - J1466 done: Chief: verify condition for J1130 (done)
 - J1465 done: Chief: verify condition for J0936 (Verified latest J1464 and evidence 3e26b379b; all audition hashes match, listening remains unperformed, PR333 open without approval. J0936 stays blocked with recorded retry 2026-11-01T07:37:39Z; prior approvals, deadlines and fallbacks preserved. Studio report posted.)
 - J1464 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and three audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3, approvals and 2026-11-01T07:14:07Z retry. Report #6554330536.)
@@ -57,4 +57,3 @@ Recently finished:
 - J1460 done: Chief: verify condition for J0936 (done)
 - J1459 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3 and approvals; recorded retry 2026-11-01T06:13:17Z. Studio report posted.)
 - J1458 done: Chief: verify condition for J1130 (Verified 04:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T05:41:40Z retry; evidence _desk/handoff/J1458 and HOS desk report. No YouTube changes or spend.)
-- J1457 done: Chief: verify condition for J0936 (Verified unmet condition; J0936 remains blocked with existing retry. Latest J1456 and evidence 3e26b379b checked; audition hashes match, listening unperformed, PR333 unchanged.)
