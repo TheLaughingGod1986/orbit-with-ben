@@ -129999,9 +129999,14 @@
           "at": "2026-11-01T06:44Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T06:44Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
+      "remaining_action": "Verify Studio access and actual thumbnail-test completion for J1130",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-01T07:43:17+00:00",
@@ -130010,10 +130015,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-01T06:44Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     }
   ],
   "focus": [],
