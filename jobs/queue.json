@@ -137141,19 +137141,24 @@
           "at": "2026-11-01T21:03Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J0936, J1100, J1545, and latest J1548 (which holds J1100 blocked at 2/3 until 21:30:57Z); J1032 PASS and completed swaps J1101-J1103 preserved"
+        },
+        {
+          "at": "2026-11-01T21:03Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Evidence 3e26b379b still records listening NOT PERFORMED; all 3 audition hashes match. PR333 OPEN at 0a7fcb6ad without reviews/comments. Latest J1548 retains J1100 repair hold."
         }
       ],
-      "remaining_action": "Verify evidence 3e26b379b at /private/tmp/J1100-bed-evidence, audition hashes, and PR #333 status",
+      "remaining_action": "Record unmet condition on J0936 with jobs.py wait and finish J1550",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T22:00:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-01T21:03Z",
         "by": "gemini",
-        "note": "Read J0936, J1100, J1545, and latest J1548 (which holds J1100 blocked at 2/3 until 21:30:57Z); J1032 PASS and completed "
+        "note": "Evidence 3e26b379b still records listening NOT PERFORMED; all 3 audition hashes match. PR333 OPEN at 0a7fcb6ad without r"
       },
       "taskKeys": [
         "OWB:026",
