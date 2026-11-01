@@ -128199,13 +128199,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T01:42Z",
-      "eta": "2026-11-01T03:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T01:11Z",
-      "result": "",
+      "result": "Verified condition unmet: named bed hash 13adc031 unchanged and excluded; three audition hashes match, listening NOT PERFORMED. Evidence 3e26b379b. J1100 remains blocked at 2/3 with OWB:027/028 links, accepted repairs, gates, deadlines and fallback preserved. Retry 2026-11-01T02:11:26Z. Thread report posted. No spend, source-audio egress or publishing.",
       "history": [
         {
           "at": "2026-11-01T01:11Z",
@@ -128236,6 +128236,11 @@
           "at": "2026-11-01T01:44Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet condition with recheck J1444 and retained 02:11:26 UTC retry; thread report submitted."
+        },
+        {
+          "at": "2026-11-01T01:44Z",
+          "by": "codex",
+          "what": "done: Verified condition unmet: named bed hash 13adc031 unchanged and excluded; three audition hashes match, listening NOT PERFORMED. Evidence 3e26b379b. J1100 remains blocked at 2/3 with OWB:027/028 links, accepted repairs, gates, deadlines and fallback preserved. Retry 2026-11-01T02:11:26Z. Thread report posted. No spend, source-audio egress or publishing."
         }
       ],
       "remaining_action": "Verification complete; J1100 held for cleared bed and local listening evidence",

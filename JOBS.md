@@ -42,13 +42,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1444 | any | claimed | codex | 2026-11-01T03:42Z | chief · Chief: verify condition for J1100 |  |
 | J1445 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1446 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1447 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
+- J1444 done: Chief: verify condition for J1100 (Verified condition unmet: named bed hash 13adc031 unchanged and excluded; three audition hashes match, listening NOT PERFORMED. Evidence 3e26b379b. J1100 remains blocked at 2/3 with OWB:027/028 links, accepted repairs, gates, deadlines and fallback preserved. Retry 2026-11-01T02:11:26Z. Thread report posted. No spend, source-audio egress or publishing.)
 - J1443 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md (75b1f1d6a); 0 fixes needed)
 - J1442 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1434 (1 h earlier): nothing went public. 10/10 pass, 0 fixes.)
 - J1441 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md (f9deaf0e4); 0 fixes needed)
@@ -58,4 +58,3 @@ Recently finished:
 - J1437 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1436 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (eb6295eb5); 0 fixes needed)
 - J1435 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (81ce1c4c8); 0 fixes needed)
-- J1434 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1399 (31 Oct ~19:55Z): no OWB video went public in between (next: 024 rVqgtkBV3jc Sun 1 Nov 18:00, then hZH0C7fpCk4 2 Nov). 10/10 pass, 0 fixes (05_Analytics/live_fixes/2026-10-31.md).)
