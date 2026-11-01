@@ -85375,13 +85375,13 @@
       "stage": "",
       "after": "J0963",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "chief",
-      "since": "2026-10-26T03:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-26T03:23Z",
-      "result": "date gate: waits until 2026-11-01T18:00Z (Sun 1 Nov 18:00 London). The running 022 thumbnail-only A/B/C test (T012, ends about Sun 1 Nov 16:30 London) stays; then read the result and arm B v02 (392ff18ac, sha e7247c52) vs the winner. Chief c57 (OWB #264 6407771727). GBP0.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T03:23Z",
@@ -85437,19 +85437,18 @@
           "at": "2026-11-01T18:02Z",
           "by": "relay",
           "what": "condition verification queued: J1534"
+        },
+        {
+          "at": "2026-11-01T18:07Z",
+          "by": "gemini",
+          "what": "reopened: Verified 2026-11-01T18:05Z on Orbit Studio CDP 9223 (J1534, _desk/handoff/J1534): 1 Nov 18:00 London gate passed; h8HGfyShEHI Public; T012 thumbnail-only A/B/C test finished (Ran 18 Oct 18:00 to 1 Nov 17:14; 'Not enough impressions to declare a winner'; watch-time share — on A/B/C; A BURNING HARDER 'Now visible to all viewers'). Variant B sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg sha256 e7247c52 verified; Chief c54/c57 approvals valid."
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "OWB:022"
       ],
-      "remaining_action": "Read the thumbnail-test result and start the approved comparison",
-      "hold": {
-        "type": "date",
-        "condition": "Read the completed running thumbnail test T012 after the recorded 1 Nov 18:00 London gate before arming the approved comparison",
-        "check_at": "2026-11-01T19:02:31+00:00",
-        "recheck_task": "J1534"
-      }
+      "remaining_action": "Read the thumbnail-test result and start the approved comparison"
     },
     {
       "id": "J0970",
