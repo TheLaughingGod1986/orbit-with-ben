@@ -1,5 +1,5 @@
 {
-  "next_id": 1468,
+  "next_id": 1469,
   "jobs": [
     {
       "id": "J0001",
@@ -130105,6 +130105,34 @@
         "OWB:030",
         "HOS:008"
       ]
+    },
+    {
+      "id": "J1468",
+      "title": "AR cohort (AR1 v01, AR2 v06, AR3 v05): fix music_gate FAIL (add 05_Music bed, mux full-runtime score over VO+SFX with -c:v copy into new versions, map 06_Final-Exports)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Queued from J1467 QA sweep (and matching J1356 blocker 92de3841c): music_gate FAIL on OWB Apophis Replication Test accepted cohort AR1 v01 (49b3e4f0f727...), AR2 v06 (6d517aad6c61...), and AR3 v05 (3a2fc5b53e2c...): (1) 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/05_Music/ is missing owb-standalone-shorts_score_bed_v01.mp3 + owb-standalone-shorts_score_bed_v01_plan.json (FAIL own); (2) assemble_j1308.py mixed only VO + SFX without the score bed, leaving ~1.0 s silent loop tails (violating R8 full-runtime music); and (3) 11_Upload-Package/owb_ar1..ar3/PACKAGE_MANIFEST.json point to missing 06_Final-Exports files. Scoped no-spend fix (£0): 1) Copy owb-standalone-shorts_score_bed_v01.mp3 and owb-standalone-shorts_score_bed_v01_plan.json from STANDALONE_SHORTS_TEST_2026-10/05_Music/ into APOPHIS_REPLICATION_TEST_2026-10/05_Music/. 2) Without re-encoding the accepted picture streams (-c:v copy) and without overwriting AR1 v01, AR2 v06, or AR3 v05, mix the locked h40 VO + house SFX + ducked full-runtime owb-standalone-shorts_score_bed_v01.mp3 (covering the full duration including the 1.0 s loop tail, ~-14 LUFS, passing sfx_kit.py level) into new versioned masters (AR1 v02, AR2 v07, AR3 v06) and populate the versioned 06_Final-Exports targets for 11_Upload-Package/owb_ar1..ar3. 3) Run music_gate.py, sfx_kit.py level, picture_qa.py, polish_gate.py, and gate_shorts_open.py on all three new cuts, commit evidence in a clean worktree, and park for Chief / J1356. No spend, no upload, no schedule.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-01T07:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T07:04Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Add 05_Music score bed to AR1-AR3, mux full-runtime music over VO+SFX (-c:v copy) into new versions, map 06_Final-Exports, and rerun gates",
+      "kind": "assembly"
     }
   ],
   "focus": [],
