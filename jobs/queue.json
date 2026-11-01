@@ -130169,9 +130169,14 @@
           "at": "2026-11-01T07:14Z",
           "by": "codex",
           "what": "step 1 of 3 done: First pass preserved video hashes and passed SFX level; correcting peak margin and Python dependency environment before final evidence"
+        },
+        {
+          "at": "2026-11-01T07:16Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Three versioned masters and export targets created; picture streams identical, picture/polish/SFX gates PASS. Finalize AR3 loudness and explicit existing-score reuse waiver."
         }
       ],
-      "remaining_action": "Finish audio remux and run gates in graphics Python environment",
+      "remaining_action": "Finalize gate evidence and park unchanged-picture opening failures for J1356",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -130183,11 +130188,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-01T07:14Z",
+        "at": "2026-11-01T07:16Z",
         "by": "codex",
-        "note": "First pass preserved video hashes and passed SFX level; correcting peak margin and Python dependency environment before "
+        "note": "Three versioned masters and export targets created; picture streams identical, picture/polish/SFX gates PASS. Finalize A"
       },
       "taskKeys": [
         "OWB:030"
