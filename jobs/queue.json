@@ -122102,9 +122102,14 @@
           "at": "2026-11-01T10:37Z",
           "by": "relay",
           "what": "condition verification queued: J1490"
+        },
+        {
+          "at": "2026-11-01T10:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T11:37:28Z"
         }
       ],
-      "remaining_action": "Await J1471 approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
+      "remaining_action": "Await approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -122118,12 +122123,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1484 verified PR380 unchanged at d0b04b5e0, diagnostics only; J1471 remains blocked without an approved ISS opening interval or approach. No corrected delivery. Saved J1468 opening FAILs remain: AR1 first cut 6.00s >3s, AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected new masters, complete metadata and passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-01T11:37:28+00:00",
-        "last_recheck": "J1484",
-        "checked_at": "2026-11-01T09:38:25+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1490"
+        "condition": "J1490 verified PR380 remains OPEN at d0b04b5e0 with no comments or corrected delivery; J1471 remains blocked on an approved ISS opening interval or approach. Saved J1468 opening gates FAIL: AR1 first cut 6.00s exceeds 3s; AR2 diff 0.25 and AR3 1.41 below 1.50. Require corrected new masters, complete metadata and passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-01T11:37:28Z",
+        "last_recheck": "J1490",
+        "checked_at": "2026-11-01T10:39:08+00:00",
+        "checked_by": "codex"
       }
     },
     {
