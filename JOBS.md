@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1458 | any | claimed | codex | 2026-11-01T06:42Z | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
+- J1458 done: Chief: verify condition for J1130 (Verified 04:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T05:41:40Z retry; evidence _desk/handoff/J1458 and HOS desk report. No YouTube changes or spend.)
 - J1457 done: Chief: verify condition for J0936 (Verified unmet condition; J0936 remains blocked with existing retry. Latest J1456 and evidence 3e26b379b checked; audition hashes match, listening unperformed, PR333 unchanged.)
 - J1456 done: Chief: verify condition for J1100 (done)
 - J1455 done: Chief: verify condition for J0979 (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1451 done: Chief: verify condition for J1130 (Fresh 02:42 UTC Studio reads deny HOS access on both CDP sessions. J1130 remains blocked; recorded 2026-11-01T03:40:59Z retry retained. Evidence _desk/handoff/J1451; HOS desk notified. No YouTube changes or spend.)
 - J1450 done: Chief: verify condition for J0936 (Verified unmet: J1449 keeps J1100 blocked at 2/3; evidence 3e26b379b retains excluded bed and unperformed listening, three audition hashes match. PR333 OPEN 0a7fcb6ad with no reviews/comments. J0936 hold recorded with retry 2026-11-01T03:35:11Z. Approvals, deadlines and fallbacks preserved. No spend or publishing.)
 - J1449 done: Chief: verify condition for J1100 (done)
-- J1448 done: Chief: verify condition for J0985 (Condition verified unmet. Audit latest commit 0c18bb2cb; both saved Mercury curves reproduce -5.59pp at 4.088-4.2924s (0.20->0.21), while Chief review line 67 and J1003 result retain -5.76pp at 3.68-3.88s and conflicting cut mapping. Reconciliation and final non-author audit PASS remain missing. J0985 stays blocked; wait --recheck J1448 set 1 Nov 08:30Z, readback PASS. No spend or publishing changes.)
