@@ -1,5 +1,5 @@
 {
-  "next_id": 1478,
+  "next_id": 1479,
   "jobs": [
     {
       "id": "J0001",
@@ -87656,6 +87656,11 @@
           "at": "2026-11-01T02:24Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-01T08:30:00Z"
+        },
+        {
+          "at": "2026-11-01T08:30Z",
+          "by": "relay",
+          "what": "condition verification queued: J1478"
         }
       ],
       "kind": "review",
@@ -87695,10 +87700,11 @@
       "hold": {
         "type": "input",
         "condition": "J1448 verified unmet: latest audit commit remains 0c18bb2cb; both persisted Mercury vlkj8RQKmH8 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp), 4.088-4.2924s at 20.44s runtime. Chief review line 67 and J1003 result still assert 0.18->0.19 (-5.76pp), 3.68-3.88s and conflicting cut mapping. Reconciliation with raw curves and cut/VO evidence plus final non-author Chief audit PASS remain missing. J1002/J1003 complete; original production gates and approvals unchanged.",
-        "check_at": "2026-11-01T08:30:00Z",
+        "check_at": "2026-11-01T09:30:47+00:00",
         "last_recheck": "J1448",
         "checked_at": "2026-11-01T02:24:37+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1478"
       }
     },
     {
@@ -130947,6 +130953,37 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J1478",
+      "title": "Chief: verify condition for J0985",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0985: J1448 verified unmet: latest audit commit remains 0c18bb2cb; both persisted Mercury vlkj8RQKmH8 100-bucket curves reproduce 0.20->0.21, 126.22->120.63 percent (-5.59pp), 4.088-4.2924s at 20.44s runtime. Chief review line 67 and J1003 result still assert 0.18->0.19 (-5.76pp), 3.68-3.88s and conflicting cut mapping. Reconciliation with raw curves and cut/VO evidence plus final non-author Chief audit PASS remain missing. J1002/J1003 complete; original production gates and approvals unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0985 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-01T08:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T08:30Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Reconcile Mercury retention narrative with raw curves and cut/VO evidence, then obtain independent final audit review",
+      "kind": "chief",
+      "recheck_of": "J0985",
+      "due": "2026-11-01T09:30:47+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
