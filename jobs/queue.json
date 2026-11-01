@@ -135784,10 +135784,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-01T18:22Z",
-      "eta": "2026-11-01T20:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T18:08Z",
       "result": "",
@@ -135816,6 +135816,11 @@
           "at": "2026-11-01T18:25Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Fresh Studio read at 2026-11-01T18:25:04Z still shows A/B testing titles / Results ready, original title and Public. Channel audit: 62 videos, 0 errors."
+        },
+        {
+          "at": "2026-11-01T18:27Z",
+          "by": "gemini",
+          "what": "released: Handing protected Chief decision back per chief_relay.py status (Chief: Codex returned at 18:26:52Z). Verification complete: fresh read-only HOS Studio check at 2026-11-01T18:25:04Z (CDP 9460) on GHZDsiH7L7A still shows A/B testing titles / Results ready, original title 'What's Really Inside an Atom?' and Public. Evidence saved in _desk/handoff/J1535/{readback.json,atom_edit.png} and HOS PR #396 (commit c0280f6e; channel:audit 62 videos, 0 errors; check_all.sh ALL CHECKS PASS). Ready for elected Chief to run jobs.py wait J0978 --condition ... --check-at 2026-11-02T00:25:00Z --recheck J1535 and close J1535."
         }
       ],
       "remaining_action": "Commit HOS audit evidence, update J0978 wait condition to 2 Nov 00:10 UTC, finish J1535, and report",
