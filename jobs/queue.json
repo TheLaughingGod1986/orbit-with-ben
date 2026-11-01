@@ -130164,9 +130164,14 @@
           "at": "2026-11-01T07:12Z",
           "by": "codex",
           "what": "step 1 of 3 done: Located all accepted masters and original VO/SFX stems; existing 60-second score available"
+        },
+        {
+          "at": "2026-11-01T07:14Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: First pass preserved video hashes and passed SFX level; correcting peak margin and Python dependency environment before final evidence"
         }
       ],
-      "remaining_action": "Mix existing score into three new masters without re-encoding picture",
+      "remaining_action": "Finish audio remux and run gates in graphics Python environment",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -130180,9 +130185,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-01T07:12Z",
+        "at": "2026-11-01T07:14Z",
         "by": "codex",
-        "note": "Located all accepted masters and original VO/SFX stems; existing 60-second score available"
+        "note": "First pass preserved video hashes and passed SFX level; correcting peak margin and Python dependency environment before "
       },
       "taskKeys": [
         "OWB:030"
