@@ -134669,19 +134669,24 @@
           "at": "2026-11-01T15:48Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1522; starting 3-step verification of J0936 waiting condition"
+        },
+        {
+          "at": "2026-11-01T15:49Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read original J0936 brief and approvals; latest J1520 still holds J1100 blocked at 2/3; J1032 and completed swaps J1101-J1103 preserved"
         }
       ],
-      "remaining_action": "Read J0936/J1100 history, check S2 bed/listening evidence and PR333, and record wait or reopen decision",
+      "remaining_action": "Verify S2 bed/listening evidence (3e26b379b), audition hashes, and PR333 state",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T16:47:08+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T15:48Z",
+        "at": "2026-11-01T15:49Z",
         "by": "gemini",
-        "note": "Claimed J1522; starting 3-step verification of J0936 waiting condition"
+        "note": "Read original J0936 brief and approvals; latest J1520 still holds J1100 blocked at 2/3; J1032 and completed swaps J1101-"
       },
       "taskKeys": [
         "OWB:026",
