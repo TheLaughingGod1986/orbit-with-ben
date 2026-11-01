@@ -1,5 +1,5 @@
 {
-  "next_id": 1521,
+  "next_id": 1522,
   "jobs": [
     {
       "id": "J0001",
@@ -122327,6 +122327,11 @@
           "at": "2026-11-01T14:44Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-01T15:41:00Z"
+        },
+        {
+          "at": "2026-11-01T15:41Z",
+          "by": "relay",
+          "what": "condition verification queued: J1521"
         }
       ],
       "remaining_action": "Await approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
@@ -122344,10 +122349,11 @@
       "hold": {
         "type": "input",
         "condition": "J1516 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. J1471 lacks approved ISS opening input. Saved FAILs: AR1 first cut 6.00s >3s; AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-01T15:41:00Z",
+        "check_at": "2026-11-01T16:41:35+00:00",
         "last_recheck": "J1516",
         "checked_at": "2026-11-01T14:44:49+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1521"
       }
     },
     {
@@ -134548,6 +134554,37 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J1521",
+      "title": "Chief: verify condition for J1356",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1356: J1516 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. J1471 lacks approved ISS opening input. Saved FAILs: AR1 first cut 6.00s >3s; AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1356 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-01T15:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T15:41Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
+      "kind": "chief",
+      "recheck_of": "J1356",
+      "due": "2026-11-01T16:41:35+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
