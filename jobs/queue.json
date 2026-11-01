@@ -137833,9 +137833,14 @@
           "at": "2026-11-01T23:17Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1558; checking J0979 and 031+ VO/picture lock records"
+        },
+        {
+          "at": "2026-11-01T23:18Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1525 prior recheck"
         }
       ],
-      "remaining_action": "Read J0979 and check 031+ VO and picture lock status",
+      "remaining_action": "Verify 031-061 VO and picture lock status and check recent git/job history",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-01T23:40:57+00:00",
@@ -137850,13 +137855,14 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T23:17Z",
+        "at": "2026-11-01T23:18Z",
         "by": "gemini",
-        "note": "Claimed J1558; checking J0979 and 031+ VO/picture lock records"
+        "note": "Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1525 prior recheck"
       },
       "taskKeys": [
+        "OWB:029",
         "OWB:031",
         "OWB:032"
       ]
