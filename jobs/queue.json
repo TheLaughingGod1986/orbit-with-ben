@@ -130887,13 +130887,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T08:22Z",
-      "eta": "2026-11-01T10:22Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T08:21Z",
-      "result": "",
+      "result": "Verified: J1100 remains blocked; excluded bed and local listening unresolved. Three audition hashes match; retry 2026-11-01T09:21:42Z. Original 2/3 and all scoped approvals preserved.",
       "history": [
         {
           "at": "2026-11-01T08:21Z",
@@ -130924,6 +130924,11 @@
           "at": "2026-11-01T08:24Z",
           "by": "codex",
           "what": "step 3 of 3 done: Unmet condition recorded; original 09:21:42 UTC retry retained. Thread report posted; readback pending."
+        },
+        {
+          "at": "2026-11-01T08:24Z",
+          "by": "codex",
+          "what": "done: Verified: J1100 remains blocked; excluded bed and local listening unresolved. Three audition hashes match; retry 2026-11-01T09:21:42Z. Original 2/3 and all scoped approvals preserved."
         }
       ],
       "remaining_action": "Verification complete; J1100 held for bed clearance and local listening",
