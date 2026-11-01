@@ -43,11 +43,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1492 | any | claimed | codex | 2026-11-01T12:48Z | chief · Chief: verify condition for J1130 |  |
 | J1493 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1492 done: Chief: verify condition for J1130 (Verification complete: both Studio profiles deny HOS access; J1130 remains blocked with recorded 11:47:30 UTC retry. Evidence /Users/benjaminoats/_desk/handoff/J1492. Report posted to HOS desk.)
 - J1491 done: Chief: verify condition for J0936 (done)
 - J1490 done: Chief: verify condition for J1356 (Verified condition remains unmet: PR380 unchanged at d0b04b5e0, diagnostics only and no comments; J1471 blocked. Saved opening FAILs confirmed: AR1 6.00s first cut, AR2 diff 0.25, AR3 1.41. J1356 remains held for approved ISS input, corrected masters, complete gates and full audiovisual review including pace WARN. Retained 11:37:28Z retry. No film PASS, watch release, publishing change or spend.)
 - J1489 done: Chief: verify condition for J1100 (done)
@@ -57,4 +57,3 @@ Recently finished:
 - J1485 done: Chief: verify condition for J0936 (Verified condition unmet: latest J1483 retains J1100 at 2/3; excluded S2 bed and local listening unresolved, all audition hashes match, PR333 open without reviews. J0936 hold retained for 10:39:07 UTC; original approvals, deadlines and fallbacks preserved. Thread report 6556240980. No spend or publishing changes.)
 - J1484 done: Chief: verify condition for J1356 (Condition remains unmet: PR380 unchanged at d0b04b5e0 is diagnostics only; J1471 blocked with no corrected delivery. Saved AR1/AR2/AR3 opening FAILs verified. J1356 hold updated, existing 10:36:30Z retry retained. Approved ISS input, new cuts, complete gates and full audiovisual review including pace WARN still required. No film PASS, watch release, publishing change or spend.)
 - J1483 done: Chief: verify condition for J1100 (done)
-- J1482 done: Chief: verify condition for J1471 (done)
