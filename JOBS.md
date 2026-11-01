@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1522 | any | claimed | gemini | 2026-11-01T17:47Z | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
+- J1522 done: Chief: verify condition for J0936 (done)
 - J1521 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50). J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T16:41:35Z. No film PASS, watch release, spend or publishing changes.)
 - J1520 done: Chief: verify condition for J1100 (done)
 - J1519 done: Chief: verify condition for J1471 (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1515 done: Chief: verify condition for J0985 (Verified condition remains unmet at audit commit 0c18bb2cb. Both saved Mercury curves show tied -5.59pp drops at 4.088-4.2924s and 4.9056-5.1100s, conflicting with Chief review line 67 and J1003 result. J0985 remains blocked pending reconciliation and independent final audit PASS; next check 2026-11-01T20:40:00Z. No spend or publishing change.)
 - J1514 done: Chief: verify condition for J1100 (done)
 - J1513 done: Chief: verify condition for J1471 (Verified PR380 OPEN unchanged at d0b04b5e0; no comments, reviews or approved replacement ISS delivery. J1471 remains blocked/input, last_recheck J1513, retry 2026-11-01T14:57:11Z. Failed opening gates and J1356/Ben/date/credit/publishing holds retained.)
-- J1512 done: Chief: verify condition for J1130 (Verification complete: both Studio video pages error and HOS dashboards deny permission. J1130 remains blocked; recorded retry 2026-11-01T14:57:11Z retained. Evidence and report: _desk/handoff/J1512. HOS desk informed. No YouTube changes or spend.)
