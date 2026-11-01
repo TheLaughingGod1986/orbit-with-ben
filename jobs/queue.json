@@ -1,5 +1,5 @@
 {
-  "next_id": 1518,
+  "next_id": 1520,
   "jobs": [
     {
       "id": "J0001",
@@ -102157,6 +102157,11 @@
           "at": "2026-11-01T13:59Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-01T14:57:11Z"
+        },
+        {
+          "at": "2026-11-01T14:57Z",
+          "by": "relay",
+          "what": "condition verification queued: J1518"
         }
       ],
       "remaining_action": "Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
@@ -102174,10 +102179,11 @@
       "hold": {
         "type": "input",
         "condition": "1 Nov 14:00 UTC: fresh video pages error on CDP 9222 and 9223, and correct HOS dashboards deny permission on both. Evidence /Users/benjaminoats/_desk/handoff/J1512. Require readable Studio report confirming J1129 MISSING ELEMENT v02 test T020 ended, its actual completion timestamp, and at least the following London calendar day.",
-        "check_at": "2026-11-01T14:57:11Z",
+        "check_at": "2026-11-01T15:57:15+00:00",
         "last_recheck": "J1512",
         "checked_at": "2026-11-01T13:59:38+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1518"
       }
     },
     {
@@ -130917,6 +130923,11 @@
           "at": "2026-11-01T14:02Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-01T14:57:11Z"
+        },
+        {
+          "at": "2026-11-01T14:57Z",
+          "by": "relay",
+          "what": "condition verification queued: J1519"
         }
       ],
       "remaining_action": "Identify suitable approved ISS opening input before resuming scoped opening repairs",
@@ -130934,10 +130945,11 @@
       "hold": {
         "type": "input",
         "condition": "J1513 verified PR380 OPEN unchanged at d0b04b5e0 with no comments, reviews or approved replacement delivery. Require approved ISS interval or approach for AR2 0-2.4s and loop preroll, native motion and <=2.35x upscale with locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-01T14:57:11Z",
+        "check_at": "2026-11-01T15:57:15+00:00",
         "last_recheck": "J1513",
         "checked_at": "2026-11-01T14:02:17+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1519"
       }
     },
     {
@@ -134260,6 +134272,68 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J1518",
+      "title": "Chief: verify condition for J1130",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1130: 1 Nov 14:00 UTC: fresh video pages error on CDP 9222 and 9223, and correct HOS dashboards deny permission on both. Evidence /Users/benjaminoats/_desk/handoff/J1512. Require readable Studio report confirming J1129 MISSING ELEMENT v02 test T020 ended, its actual completion timestamp, and at least the following London calendar day.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1130 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-01T14:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T14:57Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
+      "kind": "chief",
+      "recheck_of": "J1130",
+      "due": "2026-11-01T15:57:15+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1519",
+      "title": "Chief: verify condition for J1471",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1471: J1513 verified PR380 OPEN unchanged at d0b04b5e0 with no comments, reviews or approved replacement delivery. Require approved ISS interval or approach for AR2 0-2.4s and loop preroll, native motion and <=2.35x upscale with locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1471 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-01T14:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T14:57Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Identify suitable approved ISS opening input before resuming scoped opening repairs",
+      "kind": "chief",
+      "recheck_of": "J1471",
+      "due": "2026-11-01T15:57:15+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
