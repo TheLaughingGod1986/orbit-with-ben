@@ -1,0 +1,142 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar1_2024_yr4_moon_v02.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 1,
+      "row": "ar1_01_GSFC_20171208_Archive_e000868",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e000868.jpg",
+      "title": "NASA GSFC full Moon photograph",
+      "t": 4.2,
+      "at": "0:04",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0614 < film p5 0.0729"
+      ],
+      "offset": 130.0
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "ar1_00_as11-44-6667",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/as11-44-6667.jpg",
+      "title": "Apollo 11 Hasselblad full Moon photograph",
+      "t": 1.2,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 100.0
+    },
+    {
+      "cut": 1,
+      "row": "ar1_01_GSFC_20171208_Archive_e000868",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e000868.jpg",
+      "title": "NASA GSFC full Moon photograph",
+      "t": 4.2,
+      "at": "0:04",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0614 < film p5 0.0729"
+      ],
+      "offset": 130.0
+    },
+    {
+      "cut": 2,
+      "row": "ar1_02_GSFC_20171208_Archive_e001939",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e001939.jpg",
+      "title": "NASA LRO far-side Moon photograph",
+      "t": 7.1,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 160.0
+    },
+    {
+      "cut": 3,
+      "row": "ar1_03_GSFC_20171208_Archive_e000868",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e000868.jpg",
+      "title": "NASA GSFC full Moon photograph",
+      "t": 9.9,
+      "at": "0:10",
+      "fail": [],
+      "warn": [],
+      "offset": 190.0
+    },
+    {
+      "cut": 4,
+      "row": "ar1_04_as11-44-6667",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/as11-44-6667.jpg",
+      "title": "Apollo 11 Hasselblad full Moon photograph",
+      "t": 13.4,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": 220.0
+    },
+    {
+      "cut": 5,
+      "row": "ar1_05_GSFC_20171208_Archive_e001939",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e001939.jpg",
+      "title": "NASA LRO far-side Moon photograph",
+      "t": 16.78,
+      "at": "0:17",
+      "fail": [],
+      "warn": [],
+      "offset": 250.0
+    },
+    {
+      "cut": 6,
+      "row": "ar1_06_as11-44-6667_loop",
+      "source": "as11-44-6667_loop_preroll",
+      "title": "Apollo 11 Hasselblad full Moon photograph, continued to the frame before frame 0",
+      "t": 18.87,
+      "at": "0:19",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0729,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "short": "ar3",
+  "source": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1345_v05/ar3/owb_apophis_ar3_v05.mp4",
+  "source_sha256": "3a2fc5b53e2cfafe4d55422f4f8ae7894ffdb81a727bf47f605e01070a58f13d",
+  "master": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1468/ar3/owb_apophis_ar3_v06.mp4",
+  "final": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar3_2027_eclipse_v06.mp4",
+  "sha256": "0c6c0ddf2d9161223763b3946bd5b6dfb4603add53d6fcb967c1782d320b96cc",
+  "picture_stream_hash": "SHA256=665745cfbe64170871f7ba4a30d8603e89ef949061709d0277dffe57e930c667",
+  "picture_bitstream_unchanged": true,
+  "seconds": 18.066667,
+  "stems": {
+    "stem_vo.wav": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1468/ar3/stem_vo.wav",
+    "stem_sfx.wav": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1468/ar3/stem_sfx.wav",
+    "stem_bed.wav": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1468/ar3/stem_bed.wav"
+  },
+  "mix_measurement": {
+    "input_i": "-14.22",
+    "input_tp": "-2.11",
+    "input_lra": "4.80",
+    "input_thresh": "-25.25",
+    "output_i": "-24.83",
+    "output_tp": "-12.08",
+    "output_lra": "3.50",
+    "output_thresh": "-35.58",
+    "normalization_type": "dynamic",
+    "target_offset": "0.83"
+  },
+  "gates": {
+    "sfx_level": 0,
+    "music_gate": 0,
+    "picture_qa": 0,
+    "polish_gate": 0,
+    "shorts_gate": 1
+  },
+  "mix_filter": "VO + SFX + ducked bed amix normalize=0, volume=8dB, alimiter limit=0.78 level=false attack=5 release=50; 48k AAC 256k",
+  "input_stem_sha256": {
+    "stem_vo.wav": "9ddfe36d81328c51a2ff1bcb03ba5eca8d62b9792890fa4b37af66e1af094882",
+    "stem_sfx.wav": "d189c3da86b545abd4a07dd8eb5f7c77b6d3f27d4dfd4574f51e1072d20c6259",
+    "stem_bed.wav": "b0fafbd304779a219ba28320117730163f03f1d7c9c4ab8dd3c9f5fb13045ef6"
+  },
+  "final_tail_level": [
+    "[Parsed_volumedetect_0 @ 0xb2ac31980] mean_volume: -34.1 dB",
+    "[Parsed_volumedetect_0 @ 0xb2ac31980] max_volume: -20.4 dB"
+  ]
+}
