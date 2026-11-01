@@ -1,5 +1,5 @@
 {
-  "next_id": 1535,
+  "next_id": 1537,
   "jobs": [
     {
       "id": "J0001",
@@ -86576,6 +86576,11 @@
           "at": "2026-11-01T12:00Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-01T18:05:00Z"
+        },
+        {
+          "at": "2026-11-01T18:08Z",
+          "by": "relay",
+          "what": "condition verification queued: J1535"
         }
       ],
       "kind": "listing",
@@ -86602,10 +86607,11 @@
       "hold": {
         "type": "input",
         "condition": "Fresh HOS Studio read 1 Nov 12:00 UTC still shows A/B testing titles / Results ready on GHZDsiH7L7A with original title and Public. Widget clearance and API restriction removal remain unproven; no write probe. Evidence _desk/handoff/J1500/readback.json and atom_edit.png. Requires fresh read-only evidence of title-test widget clearance.",
-        "check_at": "2026-11-01T18:05:00Z",
+        "check_at": "2026-11-01T19:08:29+00:00",
         "last_recheck": "J1500",
         "checked_at": "2026-11-01T12:00:15+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1535"
       }
     },
     {
@@ -115250,6 +115256,11 @@
           "at": "2026-10-30T16:25Z",
           "by": "cursor",
           "what": "condition recorded; next verification 2026-11-01T18:05:00Z"
+        },
+        {
+          "at": "2026-11-01T18:08Z",
+          "by": "relay",
+          "what": "condition verification queued: J1536"
         }
       ],
       "remaining_action": "After go-public, pin the comment on rVqgtkBV3jc",
@@ -115268,7 +115279,8 @@
       "hold": {
         "type": "public",
         "condition": "rVqgtkBV3jc reads Public, then post and pin light_speed_long_pinned_v01.txt",
-        "check_at": "2026-11-01T18:05:00Z"
+        "check_at": "2026-11-01T19:08:29+00:00",
+        "recheck_task": "J1536"
       }
     },
     {
@@ -135725,6 +135737,68 @@
       "taskKeys": [
         "OWB:022"
       ]
+    },
+    {
+      "id": "J1535",
+      "title": "Chief: verify condition for J0978",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0978: Fresh HOS Studio read 1 Nov 12:00 UTC still shows A/B testing titles / Results ready on GHZDsiH7L7A with original title and Public. Widget clearance and API restriction removal remain unproven; no write probe. Evidence _desk/handoff/J1500/readback.json and atom_edit.png. Requires fresh read-only evidence of title-test widget clearance.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0978 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-01T18:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T18:08Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Confirm Atom title-test widget clearance before approved Test B metadata update",
+      "kind": "chief",
+      "recheck_of": "J0978",
+      "due": "2026-11-01T19:08:29+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1536",
+      "title": "Chief: verify condition for J1271",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1271: rVqgtkBV3jc reads Public, then post and pin light_speed_long_pinned_v01.txt. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1271 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-01T18:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T18:08Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After go-public, pin the comment on rVqgtkBV3jc",
+      "kind": "chief",
+      "recheck_of": "J1271",
+      "due": "2026-11-01T17:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
