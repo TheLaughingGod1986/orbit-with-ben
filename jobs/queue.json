@@ -98912,6 +98912,11 @@
           "at": "2026-11-01T05:13Z",
           "by": "relay",
           "what": "condition verification queued: J1459"
+        },
+        {
+          "at": "2026-11-01T05:14Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T06:13:17Z"
         }
       ],
       "remaining_action": "Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
@@ -98940,12 +98945,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1456 verified: cleared instrumental S2 bed and local opening/middle/end listening remain unproven. Named bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 matches excluded candidate. Evidence 3e26b379b and three audition hashes verified; listening NOT PERFORMED. Dual ASR does not jointly flag speech but cannot replace listening. Free 30205300736 bytes. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-01T06:13:17+00:00",
-        "last_recheck": "J1456",
-        "checked_at": "2026-11-01T04:14:33+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1459"
+        "condition": "J1459 verified: cleared instrumental S2 bed and local opening/middle/end listening remain unproven. Evidence 3e26b379b and all three audition hashes match; listening explicitly NOT PERFORMED. Named bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains the excluded candidate. Dual ASR is not listening. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-01T06:13:17Z",
+        "last_recheck": "J1459",
+        "checked_at": "2026-11-01T05:14:50+00:00",
+        "checked_by": "codex"
       }
     },
     {
