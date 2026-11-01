@@ -138231,19 +138231,24 @@
           "at": "2026-11-01T23:43Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J1100 brief, approval history, and J1559 result; checking evidence worktree and chief status"
+        },
+        {
+          "at": "2026-11-01T23:44Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 3e26b379b and all 4 SHA256 hashes (bed 13adc031... + 3 audition wavs); listening remains NOT PERFORMED and no source-audio API egress rule stands"
         }
       ],
-      "remaining_action": "Verify /private/tmp/J1100-bed-evidence commit 3e26b379b, audition hashes, and chief_relay status",
+      "remaining_action": "Record unmet condition on J1100 via jobs.py wait and finish J1563",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-01T23:43Z",
+        "at": "2026-11-01T23:44Z",
         "by": "gemini",
-        "note": "Read J1100 brief, approval history, and J1559 result; checking evidence worktree and chief status"
+        "note": "Verified 3e26b379b and all 4 SHA256 hashes (bed 13adc031... + 3 audition wavs); listening remains NOT PERFORMED and no s"
       },
       "taskKeys": [
         "OWB:027",
