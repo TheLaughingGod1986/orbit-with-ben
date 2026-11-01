@@ -133328,19 +133328,24 @@
           "at": "2026-11-01T12:53Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: review approval history, check Studio evidence, record hold decision and report."
+        },
+        {
+          "at": "2026-11-01T12:53Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed original approvals, T020 running-test evidence, J1130 hold and J1126 decision; completion requires Studio timestamp."
         }
       ],
-      "remaining_action": "Verify Studio test completion and record whether J1130 can resume",
+      "remaining_action": "Read current Studio test report for T020",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-01T13:51:38+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T12:53Z",
         "by": "codex",
-        "note": "Plan: review approval history, check Studio evidence, record hold decision and report."
+        "note": "Reviewed original approvals, T020 running-test evidence, J1130 hold and J1126 decision; completion requires Studio times"
       },
       "taskKeys": [
         "HOS:002"
