@@ -135802,19 +135802,24 @@
           "at": "2026-11-01T18:10Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1536, starting verification of J1271 waiting condition"
+        },
+        {
+          "at": "2026-11-01T18:11Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified rVqgtkBV3jc reads Public via YouTube Data API v3 (publishedAt 2026-11-01T18:00:20Z, privacyStatus=public) and oEmbed HTTP 200; J1271 step 1 end screen already saved and pinned comment file verified"
         }
       ],
-      "remaining_action": "Verify whether rVqgtkBV3jc is Public on YouTube and check J1271 condition",
+      "remaining_action": "Reopen J1271 with verified Public readback evidence",
       "kind": "chief",
       "recheck_of": "J1271",
       "due": "2026-11-01T17:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T18:10Z",
+        "at": "2026-11-01T18:11Z",
         "by": "gemini",
-        "note": "Claimed J1536, starting verification of J1271 waiting condition"
+        "note": "Verified rVqgtkBV3jc reads Public via YouTube Data API v3 (publishedAt 2026-11-01T18:00:20Z, privacyStatus=public) and o"
       },
       "taskKeys": [
         "OWB:024"
