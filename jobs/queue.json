@@ -131074,9 +131074,14 @@
           "at": "2026-11-01T08:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T08:37Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: read approval history, verify latest evidence, record hold or reopening and report."
         }
       ],
-      "remaining_action": "Verify readiness: Await J1471 opening fixes, complete gates and moving/audio review before final-watch readiness",
+      "remaining_action": "Verify AR cohort correction delivery and final-watch prerequisites",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T09:35:54+00:00",
@@ -131084,11 +131089,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-01T08:36Z",
+        "at": "2026-11-01T08:37Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: read approval history, verify latest evidence, record hold or reopening and report."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
