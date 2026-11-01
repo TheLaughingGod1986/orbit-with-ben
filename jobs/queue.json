@@ -136844,19 +136844,24 @@
           "at": "2026-11-01T20:11Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1547; starting verification of J1471 waiting condition and PR #380"
+        },
+        {
+          "at": "2026-11-01T20:12Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews); J1468 master & Crew-2 cache hashes verified; no new ISS opening input"
         }
       ],
-      "remaining_action": "Verify PR #380, J1468 master/cache hashes, and whether approved ISS opening input has arrived for J1471",
+      "remaining_action": "Record unmet input hold on J1471 with --recheck J1547 and verify queue readback",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T21:04:47+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T20:11Z",
+        "at": "2026-11-01T20:12Z",
         "by": "gemini",
-        "note": "Claimed J1547; starting verification of J1471 waiting condition and PR #380"
+        "note": "PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews); J1468 master & Crew-2 cache hashes verified; no new ISS opening "
       },
       "taskKeys": [
         "OWB:030"
