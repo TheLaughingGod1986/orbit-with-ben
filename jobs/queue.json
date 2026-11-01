@@ -134916,10 +134916,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-01T16:17Z",
+      "eta": "2026-11-01T18:17Z",
       "created_by": "relay",
       "created_at": "2026-11-01T16:06Z",
       "result": "",
@@ -134928,13 +134928,26 @@
           "at": "2026-11-01T16:06Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-01T16:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-01T17:06:47+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-01T16:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
