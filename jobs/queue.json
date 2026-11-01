@@ -127675,17 +127675,30 @@
           "at": "2026-11-01T00:02Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-01T00:02Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified last 10 live public videos and next scheduled video from snapshot and UPLOADS.json"
         }
       ],
-      "remaining_action": "Identify last 10 live OWB videos and read prior audit context",
+      "remaining_action": "Verify live YouTube watch and Shorts pages for all 10 live videos and upcoming scheduled video",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-01T00:02Z",
-        "by": "gemini"
-      }
+        "by": "gemini",
+        "note": "Identified last 10 live public videos and next scheduled video from snapshot and UPLOADS.json"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
