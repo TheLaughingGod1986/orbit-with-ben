@@ -43,10 +43,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1489 | any | claimed | codex | 2026-11-01T12:23Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1489 done: Chief: verify condition for J1100 (done)
 - J1488 done: Chief: verify condition for J0979 (Verified current 031/032 status.json and production-status.md: VO locks J1295/c8ed778ab and J1294/4a9a2e16b remain recorded, but picture not started. 033-061 have no recorded VO/picture locks. J0979 remains blocked via wait --recheck J1488; next check 2026-11-01T16:05Z. J1042 shelving of 029 reserve v01 and all original gates preserved. No spend or publishing changes.)
 - J1487 done: Chief: verify condition for J1471 (Verified PR380 unchanged at d0b04b5e0, diagnostics only with no approved ISS delivery. J1471 remains blocked/input; retry 2026-11-01T10:47:06Z, last_recheck J1487. Saved opening FAILs and J1356/all approval holds preserved.)
 - J1486 done: Chief: verify condition for J1130 (Verification complete: both Studio profiles deny HOS access; J1130 remains blocked with recorded 10:47:06 UTC retry. Evidence /Users/benjaminoats/_desk/handoff/J1486.)
@@ -56,4 +56,3 @@ Recently finished:
 - J1482 done: Chief: verify condition for J1471 (done)
 - J1481 done: Chief: verify condition for J1130 (Verification complete: both Studio profiles deny HOS access; J1130 remains blocked with recorded 09:46:33 UTC retry. Evidence /Users/benjaminoats/_desk/handoff/J1481.)
 - J1480 done: Chief: verify condition for J0936 (Verified J0936 condition unmet: J1477 retains J1100 2/3; listening NOT PERFORMED and excluded bed unchanged, audition hashes match, PR333 open without reviews. Hold retained with 09:38:28 UTC recheck; original approvals, deadlines and fallbacks preserved. Report posted; no spend or publishing changes.)
-- J1479 done: Chief: verify condition for J1356 (Verified condition unmet: J1471 blocked; PR380 d0b04b5e0 delivers diagnostics only, no corrected masters. J1468 opening FAILs persist (AR1 6s first cut; AR2 0.25 and AR3 1.41 motion difference). Updated J1356 hold with missing approved ISS input, corrected versions, complete gates and full moving/audio review including pace WARN; preserved existing 2026-11-01T09:35:54Z retry. No film PASS, watch/publishing release or spend.)
