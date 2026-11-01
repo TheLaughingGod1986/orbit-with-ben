@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1467 | mini | claimed | gemini | 2026-11-01T07:52Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J1467 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1468 | mini | open | – | – | assembly · AR cohort (AR1 v01, AR2 v06, AR3 v05): fix music_gate FAIL (add 05_Music bed, mux full-runtime score over VO+SFX with -c:v copy into new versions, map 06_Final-Exports) |  |
 
 Recently finished:
