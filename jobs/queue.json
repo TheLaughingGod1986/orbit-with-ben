@@ -131716,13 +131716,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T09:51Z",
-      "eta": "2026-11-01T11:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T09:47Z",
-      "result": "",
+      "result": "Verified PR380 unchanged at d0b04b5e0, diagnostics only with no approved ISS delivery. J1471 remains blocked/input; retry 2026-11-01T10:47:06Z, last_recheck J1487. Saved opening FAILs and J1356/all approval holds preserved.",
       "history": [
         {
           "at": "2026-11-01T09:47Z",
@@ -131753,6 +131753,11 @@
           "at": "2026-11-01T09:52Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback confirms blocked/input, last_recheck J1487 and 10:47:06Z retry. PR380 and saved FAIL evidence remain unchanged; all holds preserved."
+        },
+        {
+          "at": "2026-11-01T09:52Z",
+          "by": "codex",
+          "what": "done: Verified PR380 unchanged at d0b04b5e0, diagnostics only with no approved ISS delivery. J1471 remains blocked/input; retry 2026-11-01T10:47:06Z, last_recheck J1487. Saved opening FAILs and J1356/all approval holds preserved."
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
