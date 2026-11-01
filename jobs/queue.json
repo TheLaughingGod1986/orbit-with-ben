@@ -131810,9 +131810,14 @@
           "at": "2026-11-01T10:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T10:01Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: review original rulings; verify current production records; update hold and report"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
+      "remaining_action": "Verify current VO and picture locks, then record the J0979 hold decision",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-01T11:00:07+00:00",
@@ -131820,11 +131825,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-01T10:00Z",
+        "at": "2026-11-01T10:01Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: review original rulings; verify current production records; update hold and report"
+      },
+      "taskKeys": [
+        "OWB:029",
+        "OWB:031",
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
