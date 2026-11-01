@@ -87908,6 +87908,11 @@
           "at": "2026-11-01T20:41Z",
           "by": "relay",
           "what": "condition verification queued: J1549"
+        },
+        {
+          "at": "2026-11-01T20:49Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-02T02:50:00Z"
         }
       ],
       "kind": "review",
@@ -87943,15 +87948,14 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T19:20Z",
-      "remaining_action": "Reconcile Mercury retention narrative with raw curves and cut/VO evidence, then obtain independent final audit review",
+      "remaining_action": "Obtain non-author Chief (grok, claude, or codex) final audit PASS on reconciled commit 0ac2007b9",
       "hold": {
         "type": "input",
-        "condition": "J1515 verified unmet: latest audit commit remains 0c18bb2cb. Both saved Mercury vlkj8RQKmH8 curves reproduce tied -5.59pp drops at 0.20->0.21 (4.088-4.2924s) and 0.24->0.25 (4.9056-5.1100s), rounded to source precision. Chief review line 67 and J1003 result still claim 0.18->0.19, -5.76pp, 3.68-3.88s and conflicting cut mapping. Reconcile narrative with raw curves and cut/VO evidence, then obtain final non-author Chief audit PASS. J1002/J1003 complete; original gates and approvals unchanged.",
-        "check_at": "2026-11-01T21:41:18+00:00",
-        "last_recheck": "J1515",
-        "checked_at": "2026-11-01T14:36:57+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1549"
+        "condition": "J1549 reconciled Mercury vlkj8RQKmH8 curve drops (tied -5.59pp at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, LEARNINGS.md, and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90239a1ab84ef9ca2b8c12a2508d5499ebc00fbe29efc) in commit 0ac2007b9 (superseding J1003 stale queue result string). Because gemini authored J0985/J1002/J1003 (never self-approve J0985), J0985 awaits final non-author Chief (grok, claude, or codex) audit PASS. Original gates and approvals unchanged.",
+        "check_at": "2026-11-02T02:50:00Z",
+        "last_recheck": "J1549",
+        "checked_at": "2026-11-01T20:49:53+00:00",
+        "checked_by": "gemini"
       }
     },
     {
