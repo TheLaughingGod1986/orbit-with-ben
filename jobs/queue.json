@@ -128847,13 +128847,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T03:13Z",
-      "eta": "2026-11-01T05:13Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T03:12Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-01T03:12Z",
@@ -128884,6 +128884,11 @@
           "at": "2026-11-01T03:14Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet condition with recheck J1452, retained 04:12:27 UTC retry, and verified thread report 6552750245."
+        },
+        {
+          "at": "2026-11-01T03:14Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1100 held for bed clearance and local listening",
