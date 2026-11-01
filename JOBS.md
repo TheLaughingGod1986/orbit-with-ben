@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1461 | any | claimed | codex | 2026-11-01T07:43Z | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
+- J1461 done: Chief: verify condition for J1130 (Verified 05:44 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T06:42:36Z retry. Evidence _desk/handoff/J1461; HOS desk comment 6554059401. No YouTube changes or spend.)
 - J1460 done: Chief: verify condition for J0936 (done)
 - J1459 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3 and approvals; recorded retry 2026-11-01T06:13:17Z. Studio report posted.)
 - J1458 done: Chief: verify condition for J1130 (Verified 04:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T05:41:40Z retry; evidence _desk/handoff/J1458 and HOS desk report. No YouTube changes or spend.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1454 done: Chief: verify condition for J1130 (Verified 03:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T04:41:27Z retry; evidence _desk/handoff/J1454 and HOS desk 6553009181. No YouTube changes or spend.)
 - J1453 done: Chief: verify condition for J0936 (done)
 - J1452 done: Chief: verify condition for J1100 (done)
-- J1451 done: Chief: verify condition for J1130 (Fresh 02:42 UTC Studio reads deny HOS access on both CDP sessions. J1130 remains blocked; recorded 2026-11-01T03:40:59Z retry retained. Evidence _desk/handoff/J1451; HOS desk notified. No YouTube changes or spend.)
