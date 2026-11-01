@@ -131980,19 +131980,24 @@
           "at": "2026-11-01T10:38Z",
           "by": "codex",
           "what": "step 0 of 3 done: Check approval history, current correction evidence, then record the readiness decision"
+        },
+        {
+          "at": "2026-11-01T10:38Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original approvals read; PR379 merged audio repair, PR380 unchanged at d0b04b5e0 with no comments; J1471 blocked"
         }
       ],
-      "remaining_action": "Verify corrected AR cohort delivery and remaining final-watch conditions",
+      "remaining_action": "Check saved opening gates and current correction evidence",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T11:37:28+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T10:38Z",
         "by": "codex",
-        "note": "Check approval history, current correction evidence, then record the readiness decision"
+        "note": "Original approvals read; PR379 merged audio repair, PR380 unchanged at d0b04b5e0 with no comments; J1471 blocked"
       },
       "taskKeys": [
         "OWB:030"
