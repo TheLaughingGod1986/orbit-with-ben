@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1531 | any | claimed | gemini | 2026-11-01T19:44Z | chief · Chief: verify condition for J1356 |  |
 
 Recently finished:
 
+- J1531 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50) and 06_Final-Exports master hashes remain unchanged from J1468. J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T18:43:28Z. No film PASS, watch release, spend or publishing changes.)
 - J1530 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T18:26:38Z retry. Studio report posted. No spend or publishing changes.)
 - J1529 done: Chief: verify condition for J1471 (done)
 - J1528 done: Chief: verify condition for J0936 (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1524 done: Chief: verify condition for J1471 (done)
 - J1523 done: Chief: verify condition for J1130 (Verified live HOS Studio on CDP 9460 (.hos-chrome-youtube-studio): AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) is still Running (Estimated time remaining: 10 days 8 hours; watch-time share — on both variants). J1130 kept blocked; next check 2026-11-01T22:15:00Z. Evidence: _desk/handoff/J1523. No YouTube changes or spend.)
 - J1522 done: Chief: verify condition for J0936 (done)
-- J1521 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50). J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T16:41:35Z. No film PASS, watch release, spend or publishing changes.)
