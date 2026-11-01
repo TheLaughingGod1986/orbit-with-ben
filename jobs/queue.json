@@ -131061,13 +131061,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T08:36Z",
-      "eta": "2026-11-01T10:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T08:35Z",
-      "result": "",
+      "result": "Verified condition unmet: J1471 blocked; PR380 d0b04b5e0 delivers diagnostics only, no corrected masters. J1468 opening FAILs persist (AR1 6s first cut; AR2 0.25 and AR3 1.41 motion difference). Updated J1356 hold with missing approved ISS input, corrected versions, complete gates and full moving/audio review including pace WARN; preserved existing 2026-11-01T09:35:54Z retry. No film PASS, watch/publishing release or spend.",
       "history": [
         {
           "at": "2026-11-01T08:35Z",
@@ -131098,6 +131098,11 @@
           "at": "2026-11-01T08:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: Updated J1356 condition with PR380 diagnostics and missing ISS input; preserved existing 09:35:54Z retry and all approval/watch/publishing holds."
+        },
+        {
+          "at": "2026-11-01T08:38Z",
+          "by": "codex",
+          "what": "done: Verified condition unmet: J1471 blocked; PR380 d0b04b5e0 delivers diagnostics only, no corrected masters. J1468 opening FAILs persist (AR1 6s first cut; AR2 0.25 and AR3 1.41 motion difference). Updated J1356 hold with missing approved ISS input, corrected versions, complete gates and full moving/audio review including pace WARN; preserved existing 2026-11-01T09:35:54Z retry. No film PASS, watch/publishing release or spend."
         }
       ],
       "remaining_action": "Verification complete; J1356 remains held for corrected cuts and review",
@@ -131114,7 +131119,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     }
   ],
   "focus": [],

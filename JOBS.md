@@ -43,10 +43,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1479 | any | claimed | codex | 2026-11-01T10:36Z | chief · Chief: verify condition for J1356 |  |
 
 Recently finished:
 
+- J1479 done: Chief: verify condition for J1356 (Verified condition unmet: J1471 blocked; PR380 d0b04b5e0 delivers diagnostics only, no corrected masters. J1468 opening FAILs persist (AR1 6s first cut; AR2 0.25 and AR3 1.41 motion difference). Updated J1356 hold with missing approved ISS input, corrected versions, complete gates and full moving/audio review including pace WARN; preserved existing 2026-11-01T09:35:54Z retry. No film PASS, watch/publishing release or spend.)
 - J1478 done: Chief: verify condition for J0985 (done)
 - J1477 done: Chief: verify condition for J1100 (Verified: J1100 remains blocked; excluded bed and local listening unresolved. Three audition hashes match; retry 2026-11-01T09:21:42Z. Original 2/3 and all scoped approvals preserved.)
 - J1476 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks (re-verified at 2026-11-01T07:55Z against 2026-11-01.json snapshot and live YouTube pages); updated 05_Analytics/live_fixes/2026-11-01.md (a100a410c); 0 fixes needed)
@@ -56,4 +56,3 @@ Recently finished:
 - J1472 done: Chief: verify condition for J1356 (Verified J1356 condition remains unmet: PR379 merged at 1b3a988cc, but raw opening gates FAIL (AR1 6.00s first cut; AR2 diff 0.25; AR3 diff 1.41). J1471 remains open without delivery. Retained J1356 block and 2026-11-01T08:35:31Z recheck, requiring corrected versions, complete gates/metadata, full moving/audio review and pace WARN assessment. Existing approval/date/credit/watch holds preserved. No film PASS, watch release, publishing or spend.)
 - J1470 done: Chief: verify condition for J1100 (done)
 - J1469 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 5 HOS longs; 76 OWB + 23 HOS Shorts. CTR >=4%: OWB 2/11 measured (Sun 4.3%, -jmMROGoZCM 5%); HOS 1/3 (Germs 7.1%). Latest Short each channel has no lifetime metrics yet; unavailable fields omitted. 461 merged fields verified; tracker published and HTTP 200. Commit 251eaa53b; evidence _desk/jobs/J1469. HOS audit: 62 videos, 0 errors.)
-- J1468 done: AR cohort (AR1 v01, AR2 v06, AR3 v05): fix music_gate FAIL (add 05_Music bed, mux full-runtime score over VO+SFX with -c:v copy into new versions, map 06_Final-Exports) (Audio repair delivered in PR #379: AR1 v02 / AR2 v07 / AR3 v06. Music/SFX/picture/polish PASS; original video bitstreams and source masters unchanged. Parked for Chief/J1356: Shorts opening gates still FAIL on unchanged picture; no upload/schedule/spend.)
