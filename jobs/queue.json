@@ -134795,7 +134795,7 @@
     {
       "id": "J1524",
       "title": "Chief: verify condition for J1471",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J1471: J1519 verified PR380 OPEN unchanged at d0b04b5e0 with no comments, reviews or approved replacement delivery. Require approved ISS interval or approach for AR2 0-2.4s and loop preroll, native motion and <=2.35x upscale with locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1471 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -134815,13 +134815,27 @@
           "at": "2026-11-01T15:58Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-01T16:07Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Verify readiness: Identify suitable approved ISS opening input before resuming scoped opening repairs",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T16:58:26+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1525",
