@@ -40,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1543 | mini | open | – | – | for gemini · chief · `gemini-argon` · Chief: verify condition for J1100 |  |
+| J1543 | mini | claimed | gemini | 2026-11-01T21:33Z | for gemini · chief · `gemini-argon` · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
