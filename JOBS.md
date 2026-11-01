@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1442 | any | claimed | claude | 2026-11-01T01:51Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1442 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1434 (1 h earlier): nothing went public. 10/10 pass, 0 fixes.)
 - J1441 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md (f9deaf0e4); 0 fixes needed)
 - J1440 done: Chief: verify condition for J0936 (done)
 - J1439 done: Chief: verify condition for J1100 (Verified condition unmet: excluded bed hash 13adc031 unchanged; all three audition hashes match, listening NOT PERFORMED. J1100 remains 2/3, OWB:027/028; accepted repairs, gates, deadlines and fallback preserved. Retry 2026-11-01T01:10:37Z. Report 6551301392. No spend or publishing.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1435 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (81ce1c4c8); 0 fixes needed)
 - J1434 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1399 (31 Oct ~19:55Z): no OWB video went public in between (next: 024 rVqgtkBV3jc Sun 1 Nov 18:00, then hZH0C7fpCk4 2 Nov). 10/10 pass, 0 fixes (05_Analytics/live_fixes/2026-10-31.md).)
 - J1433 done: Chief: verify condition for J0862 (Verified unmet: HOS main 220312c6, PRs through 393, desk through 6550757741 and queue show no approved 009 Short B replacement opening or recording scope. J0862 remains blocked, next check 2026-11-01T05:55Z via J1433. Existing takes and 010 A Option A1 preserved; all gates retained. Report posted to HOS desk. No spend or publishing changes.)
-- J1432 done: Chief: verify condition for J0978 (Verified 31 Oct 23:46:17 UTC: HOS Atom title-test widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only check 1 Nov 05:50 UTC. Evidence _desk/handoff/J1432/readback.json and atom_edit.png; HOS PR 393 (1358ee46) records evidence and production-status audit. Channel audit 62 videos, 0 errors. No YouTube changes or spend; reported on HOS desk.)
