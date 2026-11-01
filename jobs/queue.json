@@ -133152,9 +133152,14 @@
           "at": "2026-11-01T12:40Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T12:40Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect approvals and current delivery, verify gate evidence, record readiness decision"
         }
       ],
-      "remaining_action": "Verify readiness: Await approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
+      "remaining_action": "Verify corrected delivery, gate evidence and review history for J1356",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T13:39:07+00:00",
@@ -133164,9 +133169,11 @@
         "of": 3,
         "at": "2026-11-01T12:40Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: inspect approvals and current delivery, verify gate evidence, record readiness decision"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
