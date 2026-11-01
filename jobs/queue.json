@@ -134044,19 +134044,24 @@
           "at": "2026-11-01T14:36Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed original J0985 gates, J1002/J1003 results and approval history; audit latest commit still 0c18bb2cb, no final non-author PASS."
+        },
+        {
+          "at": "2026-11-01T14:36Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Both saved 100-bucket curves reproduce tied -5.59pp drops at 4.088-4.2924s and 4.9056-5.1100s; Chief review line 67 and J1003 result still conflict. Evidence SHA256 3f6132b6e279e6d7282e5784c3acc4d17c6c3816c7d2b8ede47565a45ab92562."
         }
       ],
-      "remaining_action": "Verify raw Mercury curves against the audit claims",
+      "remaining_action": "Record unmet condition and verify the retained hold",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-01T15:35:03+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-01T14:36Z",
         "by": "codex",
-        "note": "Reviewed original J0985 gates, J1002/J1003 results and approval history; audit latest commit still 0c18bb2cb, no final n"
+        "note": "Both saved 100-bucket curves reproduce tied -5.59pp drops at 4.088-4.2924s and 4.9056-5.1100s; Chief review line 67 and "
       },
       "taskKeys": [
         "OWB:021",
