@@ -130132,10 +130132,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-01T07:11Z",
+      "eta": "2026-11-01T07:56Z",
       "created_by": "gemini",
       "created_at": "2026-11-01T07:04Z",
       "result": "",
@@ -130149,6 +130149,11 @@
           "at": "2026-11-01T07:11Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-01T07:11Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Add 05_Music score bed to AR1-AR3, mux full-runtime music over VO+SFX (-c:v copy) into new versions, map 06_Final-Exports, and rerun gates",
@@ -130161,7 +130166,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-01T07:11Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1469",
