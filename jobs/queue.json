@@ -130067,13 +130067,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-01T06:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-01T06:51Z",
-      "result": "parked for Chief: J1467 QA sweep complete (OWB 729ab4f7e, HOS 50734860; inventory sha256 cd1bced4326c, report sha256 545261bd11bf): 169 entries (99 OWB + 70 HOS; 290 files), 487/487 applicable gate sidecars fresh; 12 new renders gated since J1178 (5 OWB Standalone Shorts PASS, 4 HOS 008 packs/masters PASS, 3 OWB AR cohort cuts picture_qa/polish_gate PASS + music_gate FAIL -> J1468 queued). £0 spend.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-01T06:51Z",
@@ -130114,18 +130114,16 @@
           "at": "2026-11-01T07:09Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1467 QA sweep complete (OWB 729ab4f7e, HOS 50734860; inventory sha256 cd1bced4326c, report sha256 545261bd11bf): 169 entries (99 OWB + 70 HOS; 290 files), 487/487 applicable gate sidecars fresh; 12 new renders gated since J1178 (5 OWB Standalone Shorts PASS, 4 HOS 008 packs/masters PASS, 3 OWB AR cohort cuts picture_qa/polish_gate PASS + music_gate FAIL -> J1468 queued). £0 spend."
+        },
+        {
+          "at": "2026-11-01T07:25Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling: ACCEPT technical QA sweep only. Verified both report hashes, all 487 sidecars present and 11 delta export hashes. Three original AR music FAILs correctly identified. J1468 repairs delivered in PR379 but opening gates still FAIL; J1471 after J1468 now owns no-spend correction and full gate/playback evidence for J1356. No film PASS, WARN clearance, final-watch release or publishing approval. Reopen audit solely to claim and record completed review."
         }
       ],
       "remaining_action": "Await Chief review of J1467 QA sweep and J1468 AR music_gate repair",
       "kind": "qa",
       "backlog": "both-qa-sweep",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-01T07:09Z",
-        "by": "gemini",
-        "note": "Committed byte-identical J1467 inventory (cd1bced4326c) and report (545261bd11bf) on OWB 729ab4f7e and HOS 50734860; que"
-      },
       "taskKeys": [
         "OWB:030",
         "HOS:008"
