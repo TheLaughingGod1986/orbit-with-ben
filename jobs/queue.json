@@ -131994,19 +131994,24 @@
           "at": "2026-11-01T10:39Z",
           "by": "codex",
           "what": "step 2 of 3 done: Saved gates verified: AR1 first cut 6.00s; AR2 diff 0.25; AR3 1.41. PR380 diagnostics only, no corrected delivery or audiovisual review"
+        },
+        {
+          "at": "2026-11-01T10:39Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Unmet condition recorded with J1490 recheck reference; 11:37:28Z retry retained; existing holds unchanged"
         }
       ],
-      "remaining_action": "Record unmet final-watch condition and close verification",
+      "remaining_action": "Verification complete; J1356 remains blocked for corrected cuts and review",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T11:37:28+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-01T10:39Z",
         "by": "codex",
-        "note": "Saved gates verified: AR1 first cut 6.00s; AR2 diff 0.25; AR3 1.41. PR380 diagnostics only, no corrected delivery or aud"
+        "note": "Unmet condition recorded with J1490 recheck reference; 11:37:28Z retry retained; existing holds unchanged"
       },
       "taskKeys": [
         "OWB:030"
