@@ -137019,13 +137019,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-01T20:41Z",
-      "eta": "2026-11-01T22:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T20:41Z",
-      "result": "",
+      "result": "Reconciled Mercury vlkj8RQKmH8 retention curve narrative (tied -5.59pp drops at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md line 67, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, LEARNINGS.md, and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d) in commit 0ac2007b9. Kept J0985 blocked via wait --recheck J1549 (next check 2026-11-02T02:50:00Z) solely for non-author Chief (grok, claude, or codex) final audit PASS because gemini authored J0985/J1002/J1003 (never self-approve J0985). Original gates and approvals unchanged; GBP0 spend.",
       "history": [
         {
           "at": "2026-11-01T20:41Z",
@@ -137056,6 +137056,11 @@
           "at": "2026-11-01T20:49Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 complete: recorded J0985 wait --recheck J1549 for non-author Chief final audit PASS at 2026-11-02T02:50:00Z and verified readback"
+        },
+        {
+          "at": "2026-11-01T20:50Z",
+          "by": "gemini",
+          "what": "done: Reconciled Mercury vlkj8RQKmH8 retention curve narrative (tied -5.59pp drops at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md line 67, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, LEARNINGS.md, and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d) in commit 0ac2007b9. Kept J0985 blocked via wait --recheck J1549 (next check 2026-11-02T02:50:00Z) solely for non-author Chief (grok, claude, or codex) final audit PASS because gemini authored J0985/J1002/J1003 (never self-approve J0985). Original gates and approvals unchanged; GBP0 spend."
         }
       ],
       "remaining_action": "Mark J1549 done and post OWB thread report",
@@ -137083,7 +137088,8 @@
         "OWB:030",
         "OWB:031",
         "OWB:032"
-      ]
+      ],
+      "done_ref": "0ac2007b9"
     }
   ],
   "focus": [],
