@@ -130905,19 +130905,24 @@
           "at": "2026-11-01T08:23Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking original approvals, latest evidence and retry condition."
+        },
+        {
+          "at": "2026-11-01T08:23Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original brief and approval history checked; retain original 2/3, pickups and h43-LOOP."
         }
       ],
-      "remaining_action": "Verify S2 bed clearance and local listening evidence",
+      "remaining_action": "Check current bed and listening records against the approved condition",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T09:21:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T08:23Z",
         "by": "codex",
-        "note": "Checking original approvals, latest evidence and retry condition."
+        "note": "Original brief and approval history checked; retain original 2/3, pickups and h43-LOOP."
       },
       "taskKeys": [
         "OWB:027",
