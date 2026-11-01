@@ -132161,19 +132161,24 @@
           "at": "2026-11-01T10:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed J1129 authorization, running T020 readback, J1130 history, panel decision and J1486 evidence."
+        },
+        {
+          "at": "2026-11-01T10:49Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh 10:49 UTC reads on CDP 9222 and 9223 show video errors and HOS dashboard permission denial; evidence saved in _desk/handoff/J1492."
         }
       ],
-      "remaining_action": "Read fresh Studio evidence for T020 completion",
+      "remaining_action": "Record the unmet condition and report verification",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-01T11:47:30+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-01T10:49Z",
         "by": "codex",
-        "note": "Reviewed J1129 authorization, running T020 readback, J1130 history, panel decision and J1486 evidence."
+        "note": "Fresh 10:49 UTC reads on CDP 9222 and 9223 show video errors and HOS dashboard permission denial; evidence saved in _des"
       },
       "taskKeys": [
         "HOS:002"
