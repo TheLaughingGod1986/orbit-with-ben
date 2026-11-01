@@ -136903,10 +136903,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-01T20:31Z",
-      "eta": "2026-11-01T22:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T20:30Z",
       "result": "",
@@ -136925,6 +136925,11 @@
           "at": "2026-11-01T20:32Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1548; starting inspection of J1100 waiting condition and evidence."
+        },
+        {
+          "at": "2026-11-01T20:32Z",
+          "by": "gemini",
+          "what": "released: Higher-priority Chief (codex) returned to UP status in chief_relay.py at 2026-11-01T20:32:31Z; handing Chief verification of J1100 (J1548) back to elected Chief per protocol."
         }
       ],
       "remaining_action": "Inspect J1100 waiting condition, latest result, evidence 3e26b379b and approval history",
