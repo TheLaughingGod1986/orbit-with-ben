@@ -43,10 +43,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1485 | any | claimed | codex | 2026-11-01T11:40Z | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
+- J1485 done: Chief: verify condition for J0936 (Verified condition unmet: latest J1483 retains J1100 at 2/3; excluded S2 bed and local listening unresolved, all audition hashes match, PR333 open without reviews. J0936 hold retained for 10:39:07 UTC; original approvals, deadlines and fallbacks preserved. Thread report 6556240980. No spend or publishing changes.)
 - J1484 done: Chief: verify condition for J1356 (Condition remains unmet: PR380 unchanged at d0b04b5e0 is diagnostics only; J1471 blocked with no corrected delivery. Saved AR1/AR2/AR3 opening FAILs verified. J1356 hold updated, existing 10:36:30Z retry retained. Approved ISS input, new cuts, complete gates and full audiovisual review including pace WARN still required. No film PASS, watch release, publishing change or spend.)
 - J1483 done: Chief: verify condition for J1100 (done)
 - J1482 done: Chief: verify condition for J1471 (done)
@@ -56,4 +56,3 @@ Recently finished:
 - J1478 done: Chief: verify condition for J0985 (done)
 - J1477 done: Chief: verify condition for J1100 (Verified: J1100 remains blocked; excluded bed and local listening unresolved. Three audition hashes match; retry 2026-11-01T09:21:42Z. Original 2/3 and all scoped approvals preserved.)
 - J1476 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks (re-verified at 2026-11-01T07:55Z against 2026-11-01.json snapshot and live YouTube pages); updated 05_Analytics/live_fixes/2026-11-01.md (a100a410c); 0 fixes needed)
-- J1475 done: Chief: verify condition for J1471 (Verified J1468 done and PR379 merged; reviewed J1471 history and PR380 d0b04b5e0 source diagnostics. No suitable approved ISS opening input or corrected masters delivered. J1471 remains blocked with explicit input condition and original retry 2026-11-01T08:46:09Z, last_recheck J1475. Next: identify approved ISS opening/loop interval or separately scope acquisition, then scoped repairs and complete gates/playback. J1356 and all Ben/date/credit holds retained. No spend or publishing changes.)
