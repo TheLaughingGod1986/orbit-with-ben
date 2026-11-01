@@ -130067,10 +130067,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-01T07:25Z",
+      "eta": "2026-11-01T08:25Z",
       "created_by": "refill",
       "created_at": "2026-11-01T06:51Z",
       "result": "",
@@ -130119,6 +130119,11 @@
           "at": "2026-11-01T07:25Z",
           "by": "codex",
           "what": "reopened: Chief ruling: ACCEPT technical QA sweep only. Verified both report hashes, all 487 sidecars present and 11 delta export hashes. Three original AR music FAILs correctly identified. J1468 repairs delivered in PR379 but opening gates still FAIL; J1471 after J1468 now owns no-spend correction and full gate/playback evidence for J1356. No film PASS, WARN clearance, final-watch release or publishing approval. Reopen audit solely to claim and record completed review."
+        },
+        {
+          "at": "2026-11-01T07:25Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await Chief review of J1467 QA sweep and J1468 AR music_gate repair",
@@ -130127,7 +130132,15 @@
       "taskKeys": [
         "OWB:030",
         "HOS:008"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-01T07:25Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1468",
