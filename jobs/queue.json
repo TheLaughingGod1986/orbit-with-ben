@@ -131641,13 +131641,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T09:47Z",
-      "eta": "2026-11-01T11:47Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T09:47Z",
-      "result": "",
+      "result": "Verification complete: both Studio profiles deny HOS access; J1130 remains blocked with recorded 10:47:06 UTC retry. Evidence /Users/benjaminoats/_desk/handoff/J1486.",
       "history": [
         {
           "at": "2026-11-01T09:47Z",
@@ -131678,6 +131678,11 @@
           "at": "2026-11-01T09:49Z",
           "by": "codex",
           "what": "step 3 of 3 done: Fresh evidence saved; J1130 hold updated with recheck J1486 and existing 10:47:06 UTC retry preserved"
+        },
+        {
+          "at": "2026-11-01T09:49Z",
+          "by": "codex",
+          "what": "done: Verification complete: both Studio profiles deny HOS access; J1130 remains blocked with recorded 10:47:06 UTC retry. Evidence /Users/benjaminoats/_desk/handoff/J1486."
         }
       ],
       "remaining_action": "Verification complete; J1130 remains held for readable Studio evidence",
