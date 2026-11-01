@@ -127653,13 +127653,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-01T00:01Z",
-      "eta": "2026-11-01T01:01Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-01T00:00Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-01T00:00Z",
@@ -127690,6 +127690,11 @@
           "at": "2026-11-01T00:04Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Wrote and committed 05_Analytics/live_fixes/2026-11-01.md (10/10 pass, 0 fixes needed)"
+        },
+        {
+          "at": "2026-11-01T00:04Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete J1437 and post report",
