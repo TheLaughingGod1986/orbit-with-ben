@@ -130996,19 +130996,24 @@
           "at": "2026-11-01T08:32Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed J0985 approval history and completed J1002/J1003 results; latest audit commit remains 0c18bb2cb, with contradictory Mercury claim at Chief review line 67 and no final non-author PASS."
+        },
+        {
+          "at": "2026-11-01T08:32Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Both raw curves reproduce -5.59pp at 4.088-4.2924s; evidence SHA256 3f6132b6e279e6d7282e5784c3acc4d17c6c3816c7d2b8ede47565a45ab92562. Retained J0985 hold with next check 1 Nov 14:35Z."
         }
       ],
-      "remaining_action": "Recompute Mercury curves and record whether the audit hold can clear",
+      "remaining_action": "Verify retained hold and report outcome",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-01T09:30:47+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-01T08:32Z",
         "by": "codex",
-        "note": "Reviewed J0985 approval history and completed J1002/J1003 results; latest audit commit remains 0c18bb2cb, with contradic"
+        "note": "Both raw curves reproduce -5.59pp at 4.088-4.2924s; evidence SHA256 3f6132b6e279e6d7282e5784c3acc4d17c6c3816c7d2b8ede475"
       },
       "taskKeys": [
         "OWB:021",
