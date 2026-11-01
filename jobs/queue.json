@@ -130425,13 +130425,13 @@
       "stage": "",
       "after": "J1468",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-01T07:42Z",
-      "eta": "2026-11-01T09:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-01T07:24Z",
-      "result": "",
+      "result": "Missing suitable approved ISS opening candidate: cached Crew-2 351-374s native-motion proxies 0.156-0.321%, exploratory ~2.35x crops max 0.704%, threshold 1.50. PR380 d0b04b5e0 records diagnostics (not final gate), preserved master hashes and exact input request. Need Chief to identify approved alternate interval/approach; no mint or gate waiver. Remaining AR1/AR3 corrections, full gates, full moving/audio review and pace assessment still owed. J1356/all holds remain.",
       "history": [
         {
           "at": "2026-11-01T07:24Z",
@@ -130457,6 +130457,11 @@
           "at": "2026-11-01T07:45Z",
           "by": "codex",
           "what": "step 1 of 3 done: Inspection evidence d0b04b5e0, PR380. Native Crew-2 window/crop probes below threshold; all J1468 master hashes match. No corrected masters or audition claimed."
+        },
+        {
+          "at": "2026-11-01T07:45Z",
+          "by": "codex",
+          "what": "blocked: Missing suitable approved ISS opening candidate: cached Crew-2 351-374s native-motion proxies 0.156-0.321%, exploratory ~2.35x crops max 0.704%, threshold 1.50. PR380 d0b04b5e0 records diagnostics (not final gate), preserved master hashes and exact input request. Need Chief to identify approved alternate interval/approach; no mint or gate waiver. Remaining AR1/AR3 corrections, full gates, full moving/audio review and pace assessment still owed. J1356/all holds remain."
         }
       ],
       "remaining_action": "Identify approved ISS opening candidate; repair openings and complete gates/playback",
