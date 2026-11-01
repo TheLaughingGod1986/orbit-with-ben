@@ -122012,9 +122012,14 @@
           "at": "2026-11-01T08:35Z",
           "by": "relay",
           "what": "condition verification queued: J1479"
+        },
+        {
+          "at": "2026-11-01T08:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T09:35:54Z"
         }
       ],
-      "remaining_action": "Await J1471 opening fixes, complete gates and moving/audio review before final-watch readiness",
+      "remaining_action": "Await J1471 approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -122028,12 +122033,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1472 verified merged PR379 (1b3a988cc): AR1 v02 first cut 6.00s exceeds 3s; AR2 v07 opening diff 0.25 and AR3 v06 1.41 are below 1.50. J1471 is open with no delivery. Await J1471 corrected new versions, complete gate metadata, full moving/audio review and pace WARN assessment before elected-Chief final-watch readiness verification. Existing approvals and Ben/date/credit holds persist; no watch or publishing release.",
-        "check_at": "2026-11-01T09:35:54+00:00",
-        "last_recheck": "J1472",
-        "checked_at": "2026-11-01T07:37:21+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1479"
+        "condition": "J1479 verified PR380 d0b04b5e0 is diagnostics only and J1471 is blocked on a suitable approved ISS opening interval/approach. No corrected masters delivered. Saved J1468 gates still FAIL: AR1 first cut 6.00s exceeds 3s; AR2 opening diff 0.25 and AR3 1.41 below 1.50. Require J1471 corrected new versions, complete gate metadata and passing affected checks, full moving/audio review and pace WARN assessment before final-watch readiness. Existing approvals and Ben/date/credit holds persist; no watch or publishing release.",
+        "check_at": "2026-11-01T09:35:54Z",
+        "last_recheck": "J1479",
+        "checked_at": "2026-11-01T08:37:45+00:00",
+        "checked_by": "codex"
       }
     },
     {
