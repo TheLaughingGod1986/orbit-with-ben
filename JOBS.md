@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1450 | any | claimed | codex | 2026-11-01T04:36Z | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
+- J1450 done: Chief: verify condition for J0936 (Verified unmet: J1449 keeps J1100 blocked at 2/3; evidence 3e26b379b retains excluded bed and unperformed listening, three audition hashes match. PR333 OPEN 0a7fcb6ad with no reviews/comments. J0936 hold recorded with retry 2026-11-01T03:35:11Z. Approvals, deadlines and fallbacks preserved. No spend or publishing.)
 - J1449 done: Chief: verify condition for J1100 (done)
 - J1448 done: Chief: verify condition for J0985 (Condition verified unmet. Audit latest commit 0c18bb2cb; both saved Mercury curves reproduce -5.59pp at 4.088-4.2924s (0.20->0.21), while Chief review line 67 and J1003 result retain -5.76pp at 3.68-3.88s and conflicting cut mapping. Reconciliation and final non-author audit PASS remain missing. J0985 stays blocked; wait --recheck J1448 set 1 Nov 08:30Z, readback PASS. No spend or publishing changes.)
 - J1447 done: Chief: verify condition for J1130 (Studio access still denied on both CDP sessions. J1130 remains blocked; existing retry 2026-11-01T02:40:40Z retained. Evidence _desk/handoff/J1447; HOS desk report posted. No YouTube changes or spend.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1443 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md (75b1f1d6a); 0 fixes needed)
 - J1442 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1434 (1 h earlier): nothing went public. 10/10 pass, 0 fixes.)
 - J1441 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md (f9deaf0e4); 0 fixes needed)
-- J1440 done: Chief: verify condition for J0936 (done)
