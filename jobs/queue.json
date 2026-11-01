@@ -131797,13 +131797,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T10:00Z",
-      "eta": "2026-11-01T12:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T10:00Z",
-      "result": "",
+      "result": "Verified current 031/032 status.json and production-status.md: VO locks J1295/c8ed778ab and J1294/4a9a2e16b remain recorded, but picture not started. 033-061 have no recorded VO/picture locks. J0979 remains blocked via wait --recheck J1488; next check 2026-11-01T16:05Z. J1042 shelving of 029 reserve v01 and all original gates preserved. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-01T10:00Z",
@@ -131834,6 +131834,11 @@
           "at": "2026-11-01T10:02Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0979 input hold retained with J1488 evidence and next check 2026-11-01T16:05Z; original shelving and approval gates preserved"
+        },
+        {
+          "at": "2026-11-01T10:02Z",
+          "by": "codex",
+          "what": "done: Verified current 031/032 status.json and production-status.md: VO locks J1295/c8ed778ab and J1294/4a9a2e16b remain recorded, but picture not started. 033-061 have no recorded VO/picture locks. J0979 remains blocked via wait --recheck J1488; next check 2026-11-01T16:05Z. J1042 shelving of 029 reserve v01 and all original gates preserved. No spend or publishing changes."
         }
       ],
       "remaining_action": "Close verification and report the continuing picture-lock hold",
