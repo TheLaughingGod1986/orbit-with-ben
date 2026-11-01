@@ -134021,13 +134021,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T14:35Z",
-      "eta": "2026-11-01T16:35Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T14:35Z",
-      "result": "",
+      "result": "Verified condition remains unmet at audit commit 0c18bb2cb. Both saved Mercury curves show tied -5.59pp drops at 4.088-4.2924s and 4.9056-5.1100s, conflicting with Chief review line 67 and J1003 result. J0985 remains blocked pending reconciliation and independent final audit PASS; next check 2026-11-01T20:40:00Z. No spend or publishing change.",
       "history": [
         {
           "at": "2026-11-01T14:35Z",
@@ -134058,6 +134058,11 @@
           "at": "2026-11-01T14:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback verified J0985 blocked, last_recheck J1515, next verification 2026-11-01T20:40:00Z; no production gate or approval changed."
+        },
+        {
+          "at": "2026-11-01T14:37Z",
+          "by": "codex",
+          "what": "done: Verified condition remains unmet at audit commit 0c18bb2cb. Both saved Mercury curves show tied -5.59pp drops at 4.088-4.2924s and 4.9056-5.1100s, conflicting with Chief review line 67 and J1003 result. J0985 remains blocked pending reconciliation and independent final audit PASS; next check 2026-11-01T20:40:00Z. No spend or publishing change."
         }
       ],
       "remaining_action": "Verification complete; report retained audit hold",
