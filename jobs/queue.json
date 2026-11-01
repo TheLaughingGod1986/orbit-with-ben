@@ -80949,6 +80949,11 @@
           "at": "2026-11-01T00:33Z",
           "by": "relay",
           "what": "condition verification queued: J1440"
+        },
+        {
+          "at": "2026-11-01T00:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T01:33:39Z"
         }
       ],
       "kind": "video",
@@ -80979,12 +80984,11 @@
       "remaining_action": "Finish S2/S5/S6 replacement cuts and gates, then obtain replacement PASS and Ben swap approvals",
       "hold": {
         "type": "input",
-        "condition": "J1431 verified: J1100 remains blocked 2/3; latest J1430 confirms excluded S2 bed and absent local opening/middle/end listening. Evidence 3e26b379b and all three audition hashes verified; listening NOT PERFORMED. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, final AAC listening, durable UAT/NAS hashes, Chief replacement PASS, then Ben S2/S5/S6 swap approvals. PR333 OPEN 0a7fcb6ad with no reviews/comments. Disk 34505678848 bytes free. Preserve accepted pickups/continuous S2 phrase/S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, batch target 1 Nov 20:00 London, individual deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection unresolved; no source-audio API egress.",
-        "check_at": "2026-11-01T01:33:39+00:00",
-        "last_recheck": "J1431",
-        "checked_at": "2026-10-31T23:42:58+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1440"
+        "condition": "J1440 verified: J1100 still blocked 2/3; latest J1439 and evidence 3e26b379b show S2 bed exclusion unresolved and local opening/middle/end listening NOT PERFORMED (all three audition hashes verified). Require cleared instrumental bed and listening, v07 assembly/caption repairs, final gates including h43-LOOP, final AAC listening, durable UAT/NAS hashes, Chief replacement PASS, then Ben S2/S5/S6 swap approvals. PR333 OPEN 0a7fcb6ad with no reviews/comments. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, batch target 1 Nov 20:00 London, individual deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection unresolved; no source-audio API egress.",
+        "check_at": "2026-11-01T01:33:39Z",
+        "last_recheck": "J1440",
+        "checked_at": "2026-11-01T00:44:15+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
