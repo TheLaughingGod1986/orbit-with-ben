@@ -130759,19 +130759,24 @@
           "at": "2026-11-01T07:50Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR379 merged; PR380 d0b04b5e0 contains diagnostics only, no corrected master or suitable approved ISS candidate; J1356 remains blocked"
+        },
+        {
+          "at": "2026-11-01T07:50Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: J1471 remains blocked on specific ISS input; replaced generic predecessor hold with input hold, preserving 08:46:09Z retry and all approvals"
         }
       ],
-      "remaining_action": "Record the unmet ISS input condition and preserve existing holds",
+      "remaining_action": "Verify saved hold and report the completed condition check",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T08:46:09+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-01T07:50Z",
         "by": "codex",
-        "note": "PR379 merged; PR380 d0b04b5e0 contains diagnostics only, no corrected master or suitable approved ISS candidate; J1356 r"
+        "note": "J1471 remains blocked on specific ISS input; replaced generic predecessor hold with input hold, preserving 08:46:09Z ret"
       },
       "taskKeys": [
         "OWB:030"
