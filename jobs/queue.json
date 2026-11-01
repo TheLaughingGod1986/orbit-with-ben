@@ -130458,19 +130458,24 @@
           "at": "2026-11-01T07:36Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: read approval history; verify latest repair evidence; record hold or reopening and report."
+        },
+        {
+          "at": "2026-11-01T07:36Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1356 history and J1467 ruling; J1471 remains open with no delivery. PR379 is merged at 1b3a988cc."
         }
       ],
-      "remaining_action": "Verify J1471 repair evidence against J1356 release conditions",
+      "remaining_action": "Check merged audio-repair gates and outstanding opening remediation",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T08:35:31+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T07:36Z",
         "by": "codex",
-        "note": "Plan: read approval history; verify latest repair evidence; record hold or reopening and report."
+        "note": "Read J1356 history and J1467 ruling; J1471 remains open with no delivery. PR379 is merged at 1b3a988cc."
       },
       "taskKeys": [
         "OWB:030"
