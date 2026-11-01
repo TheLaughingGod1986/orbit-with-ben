@@ -130987,19 +130987,24 @@
           "at": "2026-11-01T08:32Z",
           "by": "codex",
           "what": "step 0 of 3 done: Check approval history, recompute persisted curves, then record and verify hold outcome."
+        },
+        {
+          "at": "2026-11-01T08:32Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed J0985 approval history and completed J1002/J1003 results; latest audit commit remains 0c18bb2cb, with contradictory Mercury claim at Chief review line 67 and no final non-author PASS."
         }
       ],
-      "remaining_action": "Verify Mercury curve reconciliation and independent audit PASS",
+      "remaining_action": "Recompute Mercury curves and record whether the audit hold can clear",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-01T09:30:47+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T08:32Z",
         "by": "codex",
-        "note": "Check approval history, recompute persisted curves, then record and verify hold outcome."
+        "note": "Reviewed J0985 approval history and completed J1002/J1003 results; latest audit commit remains 0c18bb2cb, with contradic"
       },
       "taskKeys": [
         "OWB:021",
