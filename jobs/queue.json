@@ -137037,19 +137037,39 @@
           "at": "2026-11-01T20:42Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-01T20:44Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1 complete: inspected J0985, J1002, J1003, J1515 and located the stale Mercury 0.18->0.19 (-5.76pp) line in OWB_2026-10-26_CHIEF_REVIEW.md line 67"
         }
       ],
-      "remaining_action": "Inspect J0985, J1515, J1002, J1003 and the Mercury vlkj8RQKmH8 retention curve audit",
+      "remaining_action": "Verify raw Mercury vlkj8RQKmH8 curves and cut/VO metadata, and reconcile OWB_2026-10-26_CHIEF_REVIEW.md and evidence JSON",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-01T21:41:18+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T20:42Z",
-        "by": "gemini"
-      }
+        "at": "2026-11-01T20:44Z",
+        "by": "gemini",
+        "note": "Step 1 complete: inspected J0985, J1002, J1003, J1515 and located the stale Mercury 0.18->0.19 (-5.76pp) line in OWB_202"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
