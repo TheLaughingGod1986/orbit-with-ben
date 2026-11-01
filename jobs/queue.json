@@ -81099,6 +81099,11 @@
           "at": "2026-11-01T13:42Z",
           "by": "relay",
           "what": "condition verification queued: J1510"
+        },
+        {
+          "at": "2026-11-01T13:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T14:42:37Z"
         }
       ],
       "kind": "video",
@@ -81126,15 +81131,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "Finish S2/S5/S6 replacement cuts and gates, then obtain replacement PASS and Ben swap approvals",
+      "remaining_action": "Finish J1100 audio and caption repairs, gates and replacement review before Ben watches S2/S5/S6",
       "hold": {
         "type": "input",
-        "condition": "J1505 verified: latest J1503 retains J1100 blocked at 2/3. Evidence 3e26b379b excludes S2 bed 13adc031; opening/middle/end listening NOT PERFORMED and all three audition hashes match. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, final AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 swap approvals. PR333 OPEN at 0a7fcb6ad without reviews/comments. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, 1 Nov 20:00 London batch target, individual deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
-        "check_at": "2026-11-01T14:42:37+00:00",
-        "last_recheck": "J1505",
-        "checked_at": "2026-11-01T12:43:40+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1510"
+        "condition": "J1510 verified: latest J1508 retains J1100 blocked at 2/3. Evidence 3e26b379b excludes S2 bed 13adc031; opening/middle/end listening NOT PERFORMED and all three audition hashes match. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, final AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 swap approvals. PR333 OPEN at 0a7fcb6ad without reviews/comments. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, 1 Nov 20:00 London batch target, individual deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
+        "check_at": "2026-11-01T14:42:37Z",
+        "last_recheck": "J1510",
+        "checked_at": "2026-11-01T13:44:18+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
