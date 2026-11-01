@@ -122242,6 +122242,11 @@
           "at": "2026-11-01T13:40Z",
           "by": "relay",
           "what": "condition verification queued: J1509"
+        },
+        {
+          "at": "2026-11-01T13:41Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T14:40:01Z"
         }
       ],
       "remaining_action": "Await approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
@@ -122258,12 +122263,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1504 verified PR380 OPEN and unchanged at d0b04b5e0, with no comments or reviews; J1471 remains blocked on approved ISS opening input. Saved opening FAILs remain: AR1 first cut 6.00s >3s; AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata and passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-01T14:40:01+00:00",
-        "last_recheck": "J1504",
-        "checked_at": "2026-11-01T12:41:22+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1509"
+        "condition": "J1509 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; J1471 remains blocked on approved ISS opening input. Saved opening FAILs: AR1 first cut 6.00s >3s; AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-01T14:40:01Z",
+        "last_recheck": "J1509",
+        "checked_at": "2026-11-01T13:41:54+00:00",
+        "checked_by": "codex"
       }
     },
     {
