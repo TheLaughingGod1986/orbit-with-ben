@@ -85385,10 +85385,10 @@
       "stage": "",
       "after": "J0963",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-01T18:42Z",
+      "eta": "2026-11-01T19:27Z",
       "created_by": "chief",
       "created_at": "2026-10-26T03:23Z",
       "result": "",
@@ -85452,13 +85452,26 @@
           "at": "2026-11-01T18:07Z",
           "by": "gemini",
           "what": "reopened: Verified 2026-11-01T18:05Z on Orbit Studio CDP 9223 (J1534, _desk/handoff/J1534): 1 Nov 18:00 London gate passed; h8HGfyShEHI Public; T012 thumbnail-only A/B/C test finished (Ran 18 Oct 18:00 to 1 Nov 17:14; 'Not enough impressions to declare a winner'; watch-time share — on A/B/C; A BURNING HARDER 'Now visible to all viewers'). Variant B sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg sha256 e7247c52 verified; Chief c54/c57 approvals valid."
+        },
+        {
+          "at": "2026-11-01T18:42Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "OWB:022"
       ],
-      "remaining_action": "Read the thumbnail-test result and start the approved comparison"
+      "remaining_action": "Read the thumbnail-test result and start the approved comparison",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-01T18:42Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0970",

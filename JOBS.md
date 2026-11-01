@@ -22,7 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0936 | mini | blocked | gemini | – | for gemini · video · 60% re-cut batch C c59 FIX -> v03 (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - level -14 LUFS/TP<=-1.6, _PHONE.mp4, NAS copies + per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6409202315 |
 | J0958 | mini | blocked | chief | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
-| J0969 | mini | open (after J0963) | – | – | studio · 022 date gate: on/after Sun 1 Nov 18:00 London, read the running A/B/C thumb test (T012), then arm B v02 10% BRIGHTER vs the winner on h8HGfyShEHI | 6407771727 |
+| J0969 | mini | claimed | gemini | 2026-11-01T19:27Z | studio · 022 date gate: on/after Sun 1 Nov 18:00 London, read the running A/B/C thumb test (T012), then arm B v02 10% BRIGHTER vs the winner on h8HGfyShEHI | 6407771727 |
 | J0978 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 | J0979 | mini | blocked | codex | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0985 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
