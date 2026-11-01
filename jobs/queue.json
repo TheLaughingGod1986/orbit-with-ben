@@ -130453,9 +130453,14 @@
           "at": "2026-11-01T07:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T07:36Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: read approval history; verify latest repair evidence; record hold or reopening and report."
         }
       ],
-      "remaining_action": "Verify readiness: Await J1471 opening fixes and complete gate/playback evidence before final-watch review",
+      "remaining_action": "Verify J1471 repair evidence against J1356 release conditions",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T08:35:31+00:00",
@@ -130465,9 +130470,11 @@
         "of": 3,
         "at": "2026-11-01T07:36Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: read approval history; verify latest repair evidence; record hold or reopening and report."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
