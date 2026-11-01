@@ -98862,6 +98862,11 @@
           "at": "2026-11-01T03:12Z",
           "by": "relay",
           "what": "condition verification queued: J1452"
+        },
+        {
+          "at": "2026-11-01T03:14Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T04:12:27Z"
         }
       ],
       "remaining_action": "Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
@@ -98890,12 +98895,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1449 verified: cleared instrumental S2 bed and local opening/middle/end listening remain unproven. Named bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 matches excluded candidate. Evidence 3e26b379b and all three audition hashes verified; listening NOT PERFORMED. Dual ASR does not jointly flag speech but cannot replace listening. Free 31396896768 bytes. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-01T04:12:27+00:00",
-        "last_recheck": "J1449",
-        "checked_at": "2026-11-01T02:27:15+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1452"
+        "condition": "J1452 verified: cleared instrumental S2 bed and local opening/middle/end listening remain unproven. Named bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 matches excluded candidate. Evidence 3e26b379b and three audition hashes verified; listening NOT PERFORMED. Dual ASR does not jointly flag speech but cannot replace listening. Free 30751793152 bytes. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-01T04:12:27Z",
+        "last_recheck": "J1452",
+        "checked_at": "2026-11-01T03:14:07+00:00",
+        "checked_by": "codex"
       }
     },
     {
