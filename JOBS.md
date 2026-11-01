@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1501 | any | claimed | gemini | 2026-11-01T13:03Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1501 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS e1da4a0b))
 - J1500 done: Chief: verify condition for J0978 (Verified HOS Atom widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only verification 1 Nov 18:05 UTC. Evidence HOS PR 395, commit 36a017b7; local _desk/handoff/J1500. Channel audit 62 videos, 0 errors; all HOS repository checks pass. No YouTube changes or spend. HOS desk report posted.)
 - J1499 done: Chief: verify condition for J1471 (done)
 - J1498 done: Chief: verify condition for J1130 (Verification complete: fresh Studio errors and HOS permission denial on both profiles. J1130 remains blocked; existing 2026-11-01T12:51:07Z retry retained. Evidence /Users/benjaminoats/_desk/handoff/J1498; report posted to HOS desk. No YouTube changes or spend.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1494 done: Chief: verify condition for J1100 (Verified evidence and hashes; S2 bed clearance and local listening remain unproven. J1100 held at 2/3; retry 2026-11-01T12:22:43Z. No spend or publishing changes.)
 - J1493 done: Chief: verify condition for J1471 (Verified PR380 OPEN and unchanged at d0b04b5e0, no comments/reviews or approved ISS delivery. J1471 remains blocked/input; retained retry 2026-11-01T11:47:30Z, last_recheck J1493. Saved opening FAILs and J1356/all approval holds preserved. GBP0.)
 - J1492 done: Chief: verify condition for J1130 (Verification complete: both Studio profiles deny HOS access; J1130 remains blocked with recorded 11:47:30 UTC retry. Evidence /Users/benjaminoats/_desk/handoff/J1492. Report posted to HOS desk.)
-- J1491 done: Chief: verify condition for J0936 (done)
