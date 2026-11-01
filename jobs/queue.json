@@ -136858,19 +136858,24 @@
           "at": "2026-11-01T20:13Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Updated J1471 input hold with J1547 verification; retained retry 2026-11-01T21:04:47Z and all existing holds"
+        },
+        {
+          "at": "2026-11-01T20:13Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Readback confirms J1471 blocked/input, last_recheck J1547, checked_by gemini, retry 2026-11-01T21:04:47Z"
         }
       ],
-      "remaining_action": "Verify J1471 hold readback and close J1547",
+      "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T21:04:47+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-01T20:13Z",
         "by": "gemini",
-        "note": "Updated J1471 input hold with J1547 verification; retained retry 2026-11-01T21:04:47Z and all existing holds"
+        "note": "Readback confirms J1471 blocked/input, last_recheck J1547, checked_by gemini, retry 2026-11-01T21:04:47Z"
       },
       "taskKeys": [
         "OWB:030"
