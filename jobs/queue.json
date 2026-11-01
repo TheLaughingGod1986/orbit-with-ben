@@ -130732,13 +130732,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T07:49Z",
-      "eta": "2026-11-01T09:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T07:46Z",
-      "result": "",
+      "result": "Verified J1468 done and PR379 merged; reviewed J1471 history and PR380 d0b04b5e0 source diagnostics. No suitable approved ISS opening input or corrected masters delivered. J1471 remains blocked with explicit input condition and original retry 2026-11-01T08:46:09Z, last_recheck J1475. Next: identify approved ISS opening/loop interval or separately scope acquisition, then scoped repairs and complete gates/playback. J1356 and all Ben/date/credit holds retained. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-01T07:46Z",
@@ -130769,6 +130769,11 @@
           "at": "2026-11-01T07:51Z",
           "by": "codex",
           "what": "step 3 of 3 done: Read back blocked/input state, J1475 recheck link and preserved 2026-11-01T08:46:09Z retry; no gate or publishing hold released"
+        },
+        {
+          "at": "2026-11-01T07:51Z",
+          "by": "codex",
+          "what": "done: Verified J1468 done and PR379 merged; reviewed J1471 history and PR380 d0b04b5e0 source diagnostics. No suitable approved ISS opening input or corrected masters delivered. J1471 remains blocked with explicit input condition and original retry 2026-11-01T08:46:09Z, last_recheck J1475. Next: identify approved ISS opening/loop interval or separately scope acquisition, then scoped repairs and complete gates/playback. J1356 and all Ben/date/credit holds retained. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
