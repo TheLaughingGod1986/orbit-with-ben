@@ -134647,10 +134647,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-01T15:47Z",
+      "eta": "2026-11-01T17:47Z",
       "created_by": "relay",
       "created_at": "2026-11-01T15:47Z",
       "result": "",
@@ -134659,13 +134659,26 @@
           "at": "2026-11-01T15:47Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-01T15:47Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Finish J1100 audio and caption repairs, gates and replacement review before Ben watches S2/S5/S6",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T16:47:08+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-01T15:47Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
