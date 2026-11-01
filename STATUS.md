@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 024 | upload | gemini | 2026-11-01T18:14Z | 2026-11-01T20:13Z | J1271 OWB 024 Studio finish on rVqgtkBV3jc: end screen now, pinned comment once public |
+| 024 | upload | gemini | 2026-11-01T18:15Z | 2026-11-01T19:15Z | J1271: post and pin comment on public rVqgtkBV3jc |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
