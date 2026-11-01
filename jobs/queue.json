@@ -128696,9 +128696,14 @@
           "at": "2026-11-01T02:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T02:36Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking original brief, latest worker evidence and approval history; verification only."
         }
       ],
-      "remaining_action": "Verify readiness: Finish S2/S5/S6 replacement cuts and gates, then obtain replacement PASS and Ben swap approvals",
+      "remaining_action": "Verify J0936 replacement evidence and swap approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T03:35:11+00:00",
@@ -128708,9 +128713,13 @@
         "of": 3,
         "at": "2026-11-01T02:36Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking original brief, latest worker evidence and approval history; verification only."
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
