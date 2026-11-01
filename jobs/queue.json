@@ -134664,9 +134664,14 @@
           "at": "2026-11-01T15:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T15:48Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1522; starting 3-step verification of J0936 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Finish J1100 audio and caption repairs, gates and replacement review before Ben watches S2/S5/S6",
+      "remaining_action": "Read J0936/J1100 history, check S2 bed/listening evidence and PR333, and record wait or reopen decision",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T16:47:08+00:00",
@@ -134674,11 +134679,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-01T15:47Z",
+        "at": "2026-11-01T15:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1522; starting 3-step verification of J0936 waiting condition"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
