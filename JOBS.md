@@ -42,11 +42,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1506 | any | claimed | codex | 2026-11-01T14:52Z | chief · Chief: verify condition for J1130 |  |
 | J1507 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1506 done: Chief: verify condition for J1130 (Verification complete: both Studio video pages error and HOS dashboards deny access. J1130 remains blocked; existing 2026-11-01T13:51:38Z retry retained. Evidence _desk/handoff/J1506; HOS desk report 6558219088. No YouTube changes or spend.)
 - J1505 done: Chief: verify condition for J0936 (done)
 - J1504 done: Chief: verify condition for J1356 (Verified condition unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews or corrected delivery. J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening failures persist. J1356 kept blocked pending corrected masters, complete affected gates and full audiovisual review including pace WARN; retry retained 2026-11-01T13:39:07Z. No film PASS, watch release, spend or publishing changes.)
 - J1503 done: Chief: verify condition for J1100 (Verified evidence and hashes; S2 bed clearance and local listening remain unproven. J1100 held at 2/3; retained retry 2026-11-01T13:23:32Z. Report #6557918085. No spend or publishing changes.)
@@ -56,4 +56,3 @@ Recently finished:
 - J1499 done: Chief: verify condition for J1471 (done)
 - J1498 done: Chief: verify condition for J1130 (Verification complete: fresh Studio errors and HOS permission denial on both profiles. J1130 remains blocked; existing 2026-11-01T12:51:07Z retry retained. Evidence /Users/benjaminoats/_desk/handoff/J1498; report posted to HOS desk. No YouTube changes or spend.)
 - J1497 done: Chief: verify condition for J0936 (Verified J0936 hold remains unmet: J1494/J1100 2/3; 3e26b379b excludes S2 bed, three audition hashes match but listening NOT PERFORMED; PR333 OPEN at 0a7fcb6ad without reviews/comments. Retained 12:41:25 UTC retry, all prior approvals/progress/deadlines and scheduled fallbacks. Report posted; no media, spend or publishing changes.)
-- J1496 done: Chief: verify condition for J1356 (Verified condition unmet: PR380 unchanged at d0b04b5e0, diagnostics only, no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening failures remain. J1356 kept blocked for corrected masters, complete metadata/gates and full audiovisual review including pace WARN. Retained 2026-11-01T12:38:54Z retry. No film PASS, watch release, spend or publishing changes.)
