@@ -135184,19 +135184,24 @@
           "at": "2026-11-01T16:49Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1528; starting 3-step verification of J0936 waiting condition"
+        },
+        {
+          "at": "2026-11-01T16:50Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read original J0936 brief and approvals; latest J1526 still holds J1100 blocked at 2/3; J1032 and completed swaps J1101-J1103 preserved"
         }
       ],
-      "remaining_action": "Check original J0936 brief, approval history, and latest J1100/J1526 state",
+      "remaining_action": "Verify /private/tmp/J1100-bed-evidence commit 3e26b379b, audition hashes, and PR #333 state",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T17:47:34+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T16:49Z",
+        "at": "2026-11-01T16:50Z",
         "by": "gemini",
-        "note": "Claimed J1528; starting 3-step verification of J0936 waiting condition"
+        "note": "Read original J0936 brief and approvals; latest J1526 still holds J1100 blocked at 2/3; J1032 and completed swaps J1101-"
       },
       "taskKeys": [
         "OWB:026",
