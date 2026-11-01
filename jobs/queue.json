@@ -130475,19 +130475,24 @@
           "at": "2026-11-01T07:37Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR379 raw Shorts gates confirm AR1 first cut 6.00s, AR2 motion diff 0.25, AR3 1.41: all FAIL. J1471 open; complete metadata/playback and pace review absent."
+        },
+        {
+          "at": "2026-11-01T07:37Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1356 remains blocked; unmet condition recorded with recheck J1472 and existing 2026-11-01T08:35:31Z verification time. No approvals released."
         }
       ],
-      "remaining_action": "Record unmet repair condition and retain J1356 hold",
+      "remaining_action": "Verification complete; J1356 awaits J1471 remediation",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T08:35:31+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-01T07:37Z",
         "by": "codex",
-        "note": "PR379 raw Shorts gates confirm AR1 first cut 6.00s, AR2 motion diff 0.25, AR3 1.41: all FAIL. J1471 open; complete metad"
+        "note": "J1356 remains blocked; unmet condition recorded with recheck J1472 and existing 2026-11-01T08:35:31Z verification time. "
       },
       "taskKeys": [
         "OWB:030"
