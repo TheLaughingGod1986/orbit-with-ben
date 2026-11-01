@@ -134933,9 +134933,14 @@
           "at": "2026-11-01T16:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T16:18Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J1525 verification of J0979 waiting condition; inspected J0979 and J1525 job definitions"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
+      "remaining_action": "Inspect J0979 history and check OWB 031+ VO and picture lock status",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-01T17:06:47+00:00",
@@ -134943,11 +134948,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-01T16:17Z",
+        "at": "2026-11-01T16:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J1525 verification of J0979 waiting condition; inspected J0979 and J1525 job definitions"
+      },
+      "taskKeys": [
+        "OWB:031",
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
