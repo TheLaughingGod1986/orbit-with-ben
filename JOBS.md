@@ -42,7 +42,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1467 | mini | claimed | codex | 2026-11-01T08:25Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J1469 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1471 | mini | open (after J1468) | – | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 
@@ -50,6 +49,7 @@ Recently finished:
 
 - J1470 done: Chief: verify condition for J1100 (done)
 - J1468 done: AR cohort (AR1 v01, AR2 v06, AR3 v05): fix music_gate FAIL (add 05_Music bed, mux full-runtime score over VO+SFX with -c:v copy into new versions, map 06_Final-Exports) (Audio repair delivered in PR #379: AR1 v02 / AR2 v07 / AR3 v06. Music/SFX/picture/polish PASS; original video bitstreams and source masters unchanged. Parked for Chief/J1356: Shorts opening gates still FAIL on unchanged picture; no upload/schedule/spend.)
+- J1467 done: Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) (Acting-Chief Codex ACCEPTS the technical sweep only: report 545261bd11bf and inventory cd1bced4326c identical across OWB/HOS; 169 entries (99/70), all 487 referenced sidecars present, no parsed verdict mismatches, 11 new single-file media hashes verified. Three original AR music FAILs valid. J1468 PR379 delivered audio repairs, but three Shorts opening FAILs persist; delegated J1471 after J1468 for scoped no-spend correction, complete gates and moving/audio review. J1356 remains held on J1471 with existing 2026-11-01T07:50Z verification. Historical baseline prose and current_newest labels are snapshot context, not current approval; HOS music WARNs and all creative/Ben/date/credit holds persist. No film PASS, audio audition, WARN waiver, final-watch or publishing approval. GBP0.)
 - J1466 done: Chief: verify condition for J1130 (done)
 - J1465 done: Chief: verify condition for J0936 (Verified latest J1464 and evidence 3e26b379b; all audition hashes match, listening remains unperformed, PR333 open without approval. J0936 stays blocked with recorded retry 2026-11-01T07:37:39Z; prior approvals, deadlines and fallbacks preserved. Studio report posted.)
 - J1464 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and three audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3, approvals and 2026-11-01T07:14:07Z retry. Report #6554330536.)
@@ -57,4 +57,3 @@ Recently finished:
 - J1462 done: Chief: verify condition for J0978 (Verified 1 Nov 05:53 UTC: HOS Atom title-test widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only check 1 Nov 11:55 UTC. Evidence HOS PR 394 (d2c6f074) and _desk/handoff/J1462. Channel audit 62 videos, 0 errors; check_all ALL CHECKS PASS. No YouTube changes or spend. Reported on HOS desk.)
 - J1461 done: Chief: verify condition for J1130 (Verified 05:44 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T06:42:36Z retry. Evidence _desk/handoff/J1461; HOS desk comment 6554059401. No YouTube changes or spend.)
 - J1460 done: Chief: verify condition for J0936 (done)
-- J1459 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3 and approvals; recorded retry 2026-11-01T06:13:17Z. Studio report posted.)
