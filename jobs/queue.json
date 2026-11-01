@@ -133548,13 +133548,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T13:40Z",
-      "eta": "2026-11-01T15:40Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T13:40Z",
-      "result": "",
+      "result": "Condition unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews or corrected delivery; J1471 blocked on approved ISS input. Saved AR1/AR2/AR3 opening failures persist. J1356 stays blocked for corrected masters, complete affected gates and full audiovisual review including pace WARN; next check 2026-11-01T14:40:01Z. No film PASS, watch release, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-01T13:40Z",
@@ -133580,6 +133580,11 @@
           "at": "2026-11-01T13:41Z",
           "by": "codex",
           "what": "step 2 of 3 done: Read saved gates: AR1 first cut 6.00s; AR2 diff 0.25; AR3 diff 1.41. Corrected delivery, complete metadata and full audiovisual review still absent"
+        },
+        {
+          "at": "2026-11-01T13:42Z",
+          "by": "codex",
+          "what": "done: Condition unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews or corrected delivery; J1471 blocked on approved ISS input. Saved AR1/AR2/AR3 opening failures persist. J1356 stays blocked for corrected masters, complete affected gates and full audiovisual review including pace WARN; next check 2026-11-01T14:40:01Z. No film PASS, watch release, spend or publishing changes."
         }
       ],
       "remaining_action": "Record unmet readiness condition and close verification",

@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1509 | any | claimed | codex | 2026-11-01T15:40Z | chief · Chief: verify condition for J1356 |  |
 
 Recently finished:
 
+- J1509 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews or corrected delivery; J1471 blocked on approved ISS input. Saved AR1/AR2/AR3 opening failures persist. J1356 stays blocked for corrected masters, complete affected gates and full audiovisual review including pace WARN; next check 2026-11-01T14:40:01Z. No film PASS, watch release, spend or publishing changes.)
 - J1508 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T14:24:34Z retry. Studio report posted. No spend or publishing changes.)
 - J1507 done: Chief: verify condition for J1471 (Verified PR380 OPEN at d0b04b5e0 with no comments, reviews or approved replacement ISS delivery. J1471 remains blocked/input, last_recheck J1507, retry 2026-11-01T13:51:38Z. All failed gates and J1356/Ben/date/credit/publishing holds retained.)
 - J1506 done: Chief: verify condition for J1130 (Verification complete: both Studio video pages error and HOS dashboards deny access. J1130 remains blocked; existing 2026-11-01T13:51:38Z retry retained. Evidence _desk/handoff/J1506; HOS desk report 6558219088. No YouTube changes or spend.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1502 done: Chief: verify condition for J0862 (Verified unmet: HOS e1da4a0b, PRs through 395, desk through 6557653911 and queue show no approved 009 Short B replacement opening or exact recording scope. J0862 stays blocked; next check 2026-11-01T18:15Z via J1502. Existing v02 takes, approved 010 A Option A1 and all gates retained. Reported on HOS desk. No spend or publishing changes.)
 - J1501 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS e1da4a0b))
 - J1500 done: Chief: verify condition for J0978 (Verified HOS Atom widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only verification 1 Nov 18:05 UTC. Evidence HOS PR 395, commit 36a017b7; local _desk/handoff/J1500. Channel audit 62 videos, 0 errors; all HOS repository checks pass. No YouTube changes or spend. HOS desk report posted.)
-- J1499 done: Chief: verify condition for J1471 (done)
