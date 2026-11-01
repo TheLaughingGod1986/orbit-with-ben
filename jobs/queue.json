@@ -102421,9 +102421,14 @@
           "at": "2026-11-01T22:15Z",
           "by": "relay",
           "what": "condition verification queued: J1557"
+        },
+        {
+          "at": "2026-11-01T22:50Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-02T04:50:00Z"
         }
       ],
-      "remaining_action": "Wait for HOS 002 (AL_-qlWko_g) thumbnail test T020 to finish in Studio (CDP 9460), then arm title-only test the next London day",
+      "remaining_action": "Arm title-only B 'How Mendeleev's Periodic Table Predicted Missing Metals' on AL_-qlWko_g in HOS Studio the day after current thumbnail test ends",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -102437,12 +102442,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "1 Nov 16:03 UTC: Live HOS Studio on CDP 9460 (~/.hos-chrome-youtube-studio) shows AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) still Test running (Estimated time remaining: 10 days 8 hours; watch-time share — on both variants). Evidence /Users/benjaminoats/_desk/handoff/J1523. Require Studio report on CDP 9460 confirming T020 ended, actual completion timestamp, and at least the following London calendar day.",
-        "check_at": "2026-11-01T23:15:46+00:00",
-        "last_recheck": "J1523",
-        "checked_at": "2026-11-01T16:15:23+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1557"
+        "condition": "1 Nov 22:49 UTC: Live HOS Studio on CDP 9460 (~/.hos-chrome-youtube-studio) shows AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) still Test running (Estimated time remaining: 10 days 1 hour; watch-time share — on both variants). Evidence /Users/benjaminoats/_desk/handoff/J1557. Require Studio report on CDP 9460 confirming T020 ended, actual completion timestamp, and at least the following London calendar day.",
+        "check_at": "2026-11-02T04:50:00Z",
+        "last_recheck": "J1557",
+        "checked_at": "2026-11-01T22:50:01+00:00",
+        "checked_by": "gemini"
       }
     },
     {
