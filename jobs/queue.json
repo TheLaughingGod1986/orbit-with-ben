@@ -101902,6 +101902,11 @@
           "at": "2026-11-01T07:46Z",
           "by": "relay",
           "what": "condition verification queued: J1474"
+        },
+        {
+          "at": "2026-11-01T07:48Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T08:46:09Z"
         }
       ],
       "remaining_action": "Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
@@ -101918,12 +101923,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "1 Nov 06:45 UTC: CDP 9222 and 9223 video pages error and both HOS dashboards deny permission; evidence _desk/handoff/J1466. Require readable Studio report confirming J1129 MISSING ELEMENT v02 test ended, its actual completion timestamp, and at least the following London calendar day.",
-        "check_at": "2026-11-01T08:46:09+00:00",
-        "last_recheck": "J1466",
-        "checked_at": "2026-11-01T06:46:03+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1474"
+        "condition": "1 Nov 07:48 UTC: fresh CDP 9222 and 9223 video pages error and both HOS dashboards deny permission; evidence _desk/handoff/J1474. Require readable Studio report confirming J1129 MISSING ELEMENT v02 test ended, its actual completion timestamp, and at least the following London calendar day.",
+        "check_at": "2026-11-01T08:46:09Z",
+        "last_recheck": "J1474",
+        "checked_at": "2026-11-01T07:48:32+00:00",
+        "checked_by": "codex"
       }
     },
     {
