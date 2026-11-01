@@ -41,6 +41,10 @@ ESCALATE_EVERY_H = 24
 # The never-empty fallback skips items on a weekly-ish cadence: it picked the key added longest ago, which was always a
 # weekly audit, so the "weekly" OWB/HOS audits ran every 1-2 days (40+ HOS copies 15-28 Oct, J1099 two days after J0984).
 STRICT_EVERY_H = 72
+# ...and it still waits a little after a key's last copy: with only a few free keys it re-added the same listing check
+# every few minutes once each was done (8 copies of "Backlog OWB: listing check" in 2 h, 31 Oct-1 Nov), each one a
+# worker's time and credits spent re-checking nothing new. The floor is min(FALLBACK_MIN_H, every_h / 4).
+FALLBACK_MIN_H = 6.0
 LIVE = ("open", "claimed", "blocked")
 
 
@@ -104,8 +108,12 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
             continue
         add(it)
     if have == 0:
+        def rested(it):
+            prev = last.get(it["key"])
+            floor = min(FALLBACK_MIN_H, it.get("every_h", 24) / 4)
+            return not prev or at - studio.parse(prev) >= dt.timedelta(hours=floor)
         free = [it for it in items if not busy(it["key"]) and not it.get("daily_at")
-                and it.get("every_h", 24) < STRICT_EVERY_H]
+                and it.get("every_h", 24) < STRICT_EVERY_H and rested(it)]
         if free:
             add(min(free, key=lambda it: last.get(it["key"], "")))
     return added

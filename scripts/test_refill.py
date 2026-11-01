@@ -71,7 +71,16 @@ class NeverEmpty(unittest.TestCase):
         d = empty()
         refill.do_refill(d, ITEMS[:1], T0)
         d["jobs"][0]["status"] = "done"
-        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + H)), 1)  # cooldown waived: queue was empty
+        self.assertEqual(refill.do_refill(d, ITEMS[:1], T0 + H), [])  # too soon after its last copy, even when empty
+        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + 6 * H)), 1)  # cooldown waived after the floor
+
+    def test_nothing_ready_does_not_churn_one_key_back_to_back(self):
+        d = empty()
+        for minutes in (0, 5, 10, 60):
+            refill.do_refill(d, ITEMS[:1], T0 + dt.timedelta(minutes=minutes))
+            for j in d["jobs"]:
+                j["status"] = "done"
+        self.assertEqual(len(d["jobs"]), 1)  # one copy in the hour, not four
 
     def test_nothing_ready_never_rushes_a_weekly_item(self):
         weekly = [dict(ITEMS[0], key="audit", title="audit", every_h=168)]
