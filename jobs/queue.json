@@ -129762,18 +129762,24 @@
           "at": "2026-11-01T05:56Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-01T05:57Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original job, prior checks, J1004 acceptance and merged PR 366."
         }
       ],
-      "remaining_action": "Verify approved HOS 009 Short B opening and recording scope",
+      "remaining_action": "Check current approvals against the blocked opening",
       "kind": "chief",
       "recheck_of": "J0862",
       "due": "2026-11-01T06:55:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T05:56Z",
-        "by": "codex"
+        "at": "2026-11-01T05:57Z",
+        "by": "codex",
+        "note": "Read original job, prior checks, J1004 acceptance and merged PR 366."
       },
       "taskKeys": [
         "HOS:009",
