@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1462 | any | claimed | codex | 2026-11-01T07:51Z | chief · Chief: verify condition for J0978 |  |
 
 Recently finished:
 
+- J1462 done: Chief: verify condition for J0978 (Verified 1 Nov 05:53 UTC: HOS Atom title-test widget still A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only check 1 Nov 11:55 UTC. Evidence HOS PR 394 (d2c6f074) and _desk/handoff/J1462. Channel audit 62 videos, 0 errors; check_all ALL CHECKS PASS. No YouTube changes or spend. Reported on HOS desk.)
 - J1461 done: Chief: verify condition for J1130 (Verified 05:44 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T06:42:36Z retry. Evidence _desk/handoff/J1461; HOS desk comment 6554059401. No YouTube changes or spend.)
 - J1460 done: Chief: verify condition for J0936 (done)
 - J1459 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3 and approvals; recorded retry 2026-11-01T06:13:17Z. Studio report posted.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1455 done: Chief: verify condition for J0979 (done)
 - J1454 done: Chief: verify condition for J1130 (Verified 03:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T04:41:27Z retry; evidence _desk/handoff/J1454 and HOS desk 6553009181. No YouTube changes or spend.)
 - J1453 done: Chief: verify condition for J0936 (done)
-- J1452 done: Chief: verify condition for J1100 (done)
