@@ -40,11 +40,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1551 | any | claimed | gemini | 2026-11-01T23:06Z | chief · Chief: verify condition for J1356 |  |
 | J1552 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1551 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50) and 06_Final-Exports master hashes remain unchanged from J1468. J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T22:00:33Z. No film PASS, watch release, spend or publishing changes.)
 - J1550 done: Chief: verify condition for J0936 (done)
 - J1549 done: Chief: verify condition for J0985 (Reconciled Mercury vlkj8RQKmH8 retention curve narrative (tied -5.59pp drops at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md line 67, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, LEARNINGS.md, and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d) in commit 0ac2007b9. Kept J0985 blocked via wait --recheck J1549 (next check 2026-11-02T02:50:00Z) solely for non-author Chief (grok, claude, or codex) final audit PASS because gemini authored J0985/J1002/J1003 (never self-approve J0985). Original gates and approvals unchanged; GBP0 spend.)
 - J1548 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T21:30:57Z retry. Studio report posted. No spend or publishing changes.)
@@ -54,4 +54,3 @@ Recently finished:
 - J1544 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks (including newly public 024 rVqgtkBV3jc at #1); updated 05_Analytics/live_fixes/2026-11-01.md (07e34e979); 0 fixes needed)
 - J1543 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T20:30:17Z retry. Studio report posted. No spend or publishing changes.)
 - J1542 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS 09841a65))
-- J1541 done: Chief: verify condition for J1471 (done)
