@@ -131388,13 +131388,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T09:23Z",
-      "eta": "2026-11-01T11:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T09:22Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-01T09:22Z",
@@ -131425,6 +131425,11 @@
           "at": "2026-11-01T09:24Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet condition with existing 10:22:21 UTC retry; thread report posted. Original J1100 progress and scoped approvals preserved."
+        },
+        {
+          "at": "2026-11-01T09:24Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1100 remains held for bed clearance and local listening",

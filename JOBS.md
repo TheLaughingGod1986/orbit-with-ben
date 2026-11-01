@@ -43,10 +43,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1483 | any | claimed | codex | 2026-11-01T11:23Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1483 done: Chief: verify condition for J1100 (done)
 - J1482 done: Chief: verify condition for J1471 (done)
 - J1481 done: Chief: verify condition for J1130 (Verification complete: both Studio profiles deny HOS access; J1130 remains blocked with recorded 09:46:33 UTC retry. Evidence /Users/benjaminoats/_desk/handoff/J1481.)
 - J1480 done: Chief: verify condition for J0936 (Verified J0936 condition unmet: J1477 retains J1100 2/3; listening NOT PERFORMED and excluded bed unchanged, audition hashes match, PR333 open without reviews. Hold retained with 09:38:28 UTC recheck; original approvals, deadlines and fallbacks preserved. Report posted; no spend or publishing changes.)
@@ -56,4 +56,3 @@ Recently finished:
 - J1476 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks (re-verified at 2026-11-01T07:55Z against 2026-11-01.json snapshot and live YouTube pages); updated 05_Analytics/live_fixes/2026-11-01.md (a100a410c); 0 fixes needed)
 - J1475 done: Chief: verify condition for J1471 (Verified J1468 done and PR379 merged; reviewed J1471 history and PR380 d0b04b5e0 source diagnostics. No suitable approved ISS opening input or corrected masters delivered. J1471 remains blocked with explicit input condition and original retry 2026-11-01T08:46:09Z, last_recheck J1475. Next: identify approved ISS opening/loop interval or separately scope acquisition, then scoped repairs and complete gates/playback. J1356 and all Ben/date/credit holds retained. No spend or publishing changes.)
 - J1474 done: Chief: verify condition for J1130 (Verification complete: Studio access still denied; J1130 hold preserved with 08:46:09 UTC retry. Evidence _desk/handoff/J1474.)
-- J1473 done: Chief: verify condition for J0936 (done)
