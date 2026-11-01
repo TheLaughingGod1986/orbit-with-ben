@@ -135684,9 +135684,14 @@
           "at": "2026-11-01T18:03Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T18:03Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Reviewed J0969 brief and Chief ruling c57; checking T012 state"
         }
       ],
-      "remaining_action": "Verify readiness: Read the thumbnail-test result and start the approved comparison",
+      "remaining_action": "Check THUMB_LEDGER T012 and Orbit Studio (CDP 9223) A/B testing state for h8HGfyShEHI",
       "kind": "chief",
       "recheck_of": "J0969",
       "due": "2026-11-01T19:02:31+00:00",
@@ -135696,9 +135701,11 @@
         "of": 3,
         "at": "2026-11-01T18:03Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Reviewed J0969 brief and Chief ruling c57; checking T012 state"
+      },
+      "taskKeys": [
+        "OWB:022"
+      ]
     }
   ],
   "focus": [],
