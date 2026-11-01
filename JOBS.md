@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1481 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
+| J1481 | any | claimed | codex | 2026-11-01T10:47Z | chief · Chief: verify condition for J1130 |  |
 | J1482 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
