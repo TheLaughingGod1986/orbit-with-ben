@@ -1,5 +1,5 @@
 {
-  "next_id": 1557,
+  "next_id": 1558,
   "jobs": [
     {
       "id": "J0001",
@@ -102404,6 +102404,11 @@
           "at": "2026-11-01T16:15Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-01T22:15:00Z"
+        },
+        {
+          "at": "2026-11-01T22:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J1557"
         }
       ],
       "remaining_action": "Wait for HOS 002 (AL_-qlWko_g) thumbnail test T020 to finish in Studio (CDP 9460), then arm title-only test the next London day",
@@ -102421,10 +102426,11 @@
       "hold": {
         "type": "input",
         "condition": "1 Nov 16:03 UTC: Live HOS Studio on CDP 9460 (~/.hos-chrome-youtube-studio) shows AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) still Test running (Estimated time remaining: 10 days 8 hours; watch-time share — on both variants). Evidence /Users/benjaminoats/_desk/handoff/J1523. Require Studio report on CDP 9460 confirming T020 ended, actual completion timestamp, and at least the following London calendar day.",
-        "check_at": "2026-11-01T22:15:00Z",
+        "check_at": "2026-11-01T23:15:46+00:00",
         "last_recheck": "J1523",
         "checked_at": "2026-11-01T16:15:23+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J1557"
       }
     },
     {
@@ -137679,6 +137685,37 @@
       "taskKeys": [
         "OWB:030"
       ]
+    },
+    {
+      "id": "J1557",
+      "title": "Chief: verify condition for J1130",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1130: 1 Nov 16:03 UTC: Live HOS Studio on CDP 9460 (~/.hos-chrome-youtube-studio) shows AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) still Test running (Estimated time remaining: 10 days 8 hours; watch-time share — on both variants). Evidence /Users/benjaminoats/_desk/handoff/J1523. Require Studio report on CDP 9460 confirming T020 ended, actual completion timestamp, and at least the following London calendar day.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1130 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-01T22:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-01T22:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for HOS 002 (AL_-qlWko_g) thumbnail test T020 to finish in Studio (CDP 9460), then arm title-only test the next London day",
+      "kind": "chief",
+      "recheck_of": "J1130",
+      "due": "2026-11-01T23:15:46+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
