@@ -132770,19 +132770,24 @@
           "at": "2026-11-01T11:55Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR380 remains OPEN at d0b04b5e0, no comments/reviews or replacement delivery; original opening failures persist"
+        },
+        {
+          "at": "2026-11-01T11:56Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: J1471 remains blocked/input; recheck J1499 recorded, existing 12:51:07Z retry and all approval holds retained"
         }
       ],
-      "remaining_action": "Record unmet ISS input condition and preserve repair holds",
+      "remaining_action": "Verify saved hold and close verification job",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T12:51:07+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-01T11:55Z",
+        "at": "2026-11-01T11:56Z",
         "by": "codex",
-        "note": "PR380 remains OPEN at d0b04b5e0, no comments/reviews or replacement delivery; original opening failures persist"
+        "note": "J1471 remains blocked/input; recheck J1499 recorded, existing 12:51:07Z retry and all approval holds retained"
       },
       "taskKeys": [
         "OWB:030"
