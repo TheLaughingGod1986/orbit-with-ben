@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1454 | any | claimed | codex | 2026-11-01T05:42Z | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
+- J1454 done: Chief: verify condition for J1130 (Verified 03:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T04:41:27Z retry; evidence _desk/handoff/J1454 and HOS desk 6553009181. No YouTube changes or spend.)
 - J1453 done: Chief: verify condition for J0936 (done)
 - J1452 done: Chief: verify condition for J1100 (done)
 - J1451 done: Chief: verify condition for J1130 (Fresh 02:42 UTC Studio reads deny HOS access on both CDP sessions. J1130 remains blocked; recorded 2026-11-01T03:40:59Z retry retained. Evidence _desk/handoff/J1451; HOS desk notified. No YouTube changes or spend.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1447 done: Chief: verify condition for J1130 (Studio access still denied on both CDP sessions. J1130 remains blocked; existing retry 2026-11-01T02:40:40Z retained. Evidence _desk/handoff/J1447; HOS desk report posted. No YouTube changes or spend.)
 - J1446 done: Chief: verify condition for J1356 (Verified unchanged accepted master hashes, missing package exports and unchanged PR376. J1356 remains blocked on music/tail correction, versioned mapping, affected gates and full playback review; next check 2026-11-01T07:50Z. No media or publishing change.)
 - J1445 done: Chief: verify condition for J0936 (Verified unmet condition: latest J1444 keeps J1100 at 2/3; evidence 3e26b379b retains excluded S2 bed and listening NOT PERFORMED. Three audition hashes match; PR333 OPEN 0a7fcb6ad without reviews/comments. J0936 hold rechecked, retry 2026-11-01T02:34:40Z; approvals, deadlines and fallbacks preserved. Studio report posted. No spend or publishing.)
-- J1444 done: Chief: verify condition for J1100 (Verified condition unmet: named bed hash 13adc031 unchanged and excluded; three audition hashes match, listening NOT PERFORMED. Evidence 3e26b379b. J1100 remains blocked at 2/3 with OWB:027/028 links, accepted repairs, gates, deadlines and fallback preserved. Retry 2026-11-01T02:11:26Z. Thread report posted. No spend, source-audio egress or publishing.)
