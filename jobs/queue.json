@@ -133566,19 +133566,24 @@
           "at": "2026-11-01T13:41Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: inspect approval history and delivery, check gate evidence, record condition decision"
+        },
+        {
+          "at": "2026-11-01T13:41Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR380 remains OPEN at d0b04b5e0 with no comments or reviews; J1471 still blocked on approved ISS input"
         }
       ],
-      "remaining_action": "Verify corrected AR delivery and readiness evidence",
+      "remaining_action": "Verify saved opening failures and record readiness condition",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T14:40:01+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T13:41Z",
         "by": "codex",
-        "note": "Plan: inspect approval history and delivery, check gate evidence, record condition decision"
+        "note": "PR380 remains OPEN at d0b04b5e0 with no comments or reviews; J1471 still blocked on approved ISS input"
       },
       "taskKeys": [
         "OWB:030"
