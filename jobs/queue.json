@@ -131307,13 +131307,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T08:50Z",
-      "eta": "2026-11-01T10:50Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T08:46Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-01T08:46Z",
@@ -131344,6 +131344,11 @@
           "at": "2026-11-01T08:52Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback confirms blocked/input, last_recheck J1482 and 09:46:33Z retry. Existing failed gates and approval holds preserved."
+        },
+        {
+          "at": "2026-11-01T08:52Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
