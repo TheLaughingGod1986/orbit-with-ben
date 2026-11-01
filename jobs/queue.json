@@ -128515,13 +128515,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T02:23Z",
-      "eta": "2026-11-01T04:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T01:47Z",
-      "result": "",
+      "result": "Condition verified unmet. Audit latest commit 0c18bb2cb; both saved Mercury curves reproduce -5.59pp at 4.088-4.2924s (0.20->0.21), while Chief review line 67 and J1003 result retain -5.76pp at 3.68-3.88s and conflicting cut mapping. Reconciliation and final non-author audit PASS remain missing. J0985 stays blocked; wait --recheck J1448 set 1 Nov 08:30Z, readback PASS. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-01T01:47Z",
@@ -128552,6 +128552,11 @@
           "at": "2026-11-01T02:24Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback PASS: J0985 blocked, last_recheck J1448, next check 2026-11-01T08:30:00Z. Original gates and approvals retained."
+        },
+        {
+          "at": "2026-11-01T02:25Z",
+          "by": "codex",
+          "what": "done: Condition verified unmet. Audit latest commit 0c18bb2cb; both saved Mercury curves reproduce -5.59pp at 4.088-4.2924s (0.20->0.21), while Chief review line 67 and J1003 result retain -5.76pp at 3.68-3.88s and conflicting cut mapping. Reconciliation and final non-author audit PASS remain missing. J0985 stays blocked; wait --recheck J1448 set 1 Nov 08:30Z, readback PASS. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; report retained audit hold",

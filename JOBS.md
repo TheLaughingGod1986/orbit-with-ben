@@ -42,11 +42,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1448 | any | claimed | codex | 2026-11-01T04:23Z | chief · Chief: verify condition for J0985 |  |
 | J1449 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1448 done: Chief: verify condition for J0985 (Condition verified unmet. Audit latest commit 0c18bb2cb; both saved Mercury curves reproduce -5.59pp at 4.088-4.2924s (0.20->0.21), while Chief review line 67 and J1003 result retain -5.76pp at 3.68-3.88s and conflicting cut mapping. Reconciliation and final non-author audit PASS remain missing. J0985 stays blocked; wait --recheck J1448 set 1 Nov 08:30Z, readback PASS. No spend or publishing changes.)
 - J1447 done: Chief: verify condition for J1130 (Studio access still denied on both CDP sessions. J1130 remains blocked; existing retry 2026-11-01T02:40:40Z retained. Evidence _desk/handoff/J1447; HOS desk report posted. No YouTube changes or spend.)
 - J1446 done: Chief: verify condition for J1356 (Verified unchanged accepted master hashes, missing package exports and unchanged PR376. J1356 remains blocked on music/tail correction, versioned mapping, affected gates and full playback review; next check 2026-11-01T07:50Z. No media or publishing change.)
 - J1445 done: Chief: verify condition for J0936 (Verified unmet condition: latest J1444 keeps J1100 at 2/3; evidence 3e26b379b retains excluded S2 bed and listening NOT PERFORMED. Three audition hashes match; PR333 OPEN 0a7fcb6ad without reviews/comments. J0936 hold rechecked, retry 2026-11-01T02:34:40Z; approvals, deadlines and fallbacks preserved. Studio report posted. No spend or publishing.)
@@ -56,4 +56,3 @@ Recently finished:
 - J1441 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md (f9deaf0e4); 0 fixes needed)
 - J1440 done: Chief: verify condition for J0936 (done)
 - J1439 done: Chief: verify condition for J1100 (Verified condition unmet: excluded bed hash 13adc031 unchanged; all three audition hashes match, listening NOT PERFORMED. J1100 remains 2/3, OWB:027/028; accepted repairs, gates, deadlines and fallback preserved. Retry 2026-11-01T01:10:37Z. Report 6551301392. No spend or publishing.)
-- J1438 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md; 0 fixes needed)
