@@ -134376,9 +134376,14 @@
           "at": "2026-11-01T15:01Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T15:01Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Identify suitable approved ISS opening input before resuming scoped opening repairs",
+      "remaining_action": "Verify approved ISS opening input and current repair evidence",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T15:57:15+00:00",
@@ -134387,10 +134392,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-01T15:01Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
