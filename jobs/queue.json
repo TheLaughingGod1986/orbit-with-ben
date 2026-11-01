@@ -137810,13 +137810,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-01T23:17Z",
-      "eta": "2026-11-02T01:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T22:40Z",
-      "result": "",
+      "result": "Verified current 031/032 status.json and production-status.md: VO locks J1295/c8ed778ab (magnetic_field_flip_vo_v02a) and J1294/4a9a2e16b (titan_landing_vo_v02b) remain recorded, but picture not started (CG pending). 033-061 have no recorded VO/picture locks. J0979 remains blocked via wait --recheck J1558; next check 2026-11-02T05:20:00Z. J1042 shelving of 029 reserve v01 and all original gates preserved. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-01T22:40Z",
@@ -137852,6 +137852,11 @@
           "at": "2026-11-01T23:18Z",
           "by": "gemini",
           "what": "step 3 of 3 done: J0979 input hold retained with J1558 evidence and next check 2026-11-02T05:20:00Z; original J1042 shelving and approval gates preserved"
+        },
+        {
+          "at": "2026-11-01T23:18Z",
+          "by": "gemini",
+          "what": "done: Verified current 031/032 status.json and production-status.md: VO locks J1295/c8ed778ab (magnetic_field_flip_vo_v02a) and J1294/4a9a2e16b (titan_landing_vo_v02b) remain recorded, but picture not started (CG pending). 033-061 have no recorded VO/picture locks. J0979 remains blocked via wait --recheck J1558; next check 2026-11-02T05:20:00Z. J1042 shelving of 029 reserve v01 and all original gates preserved. No spend or publishing changes."
         }
       ],
       "remaining_action": "Close verification and report the continuing picture-lock hold",
