@@ -131493,19 +131493,24 @@
           "at": "2026-11-01T09:37Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original approval history; PR380 unchanged at d0b04b5e0, diagnostics only; J1471 remains blocked"
+        },
+        {
+          "at": "2026-11-01T09:38Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Verified unchanged PR380 and saved FAILs: AR1 6.00s first cut; AR2 diff 0.25; AR3 1.41; no corrected delivery"
         }
       ],
-      "remaining_action": "Verify saved gates and latest correction delivery",
+      "remaining_action": "Record unmet condition and preserve J1356 hold",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T10:36:30+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-01T09:37Z",
+        "at": "2026-11-01T09:38Z",
         "by": "codex",
-        "note": "Read original approval history; PR380 unchanged at d0b04b5e0, diagnostics only; J1471 remains blocked"
+        "note": "Verified unchanged PR380 and saved FAILs: AR1 6.00s first cut; AR2 diff 0.25; AR3 1.41; no corrected delivery"
       },
       "taskKeys": [
         "OWB:030"
