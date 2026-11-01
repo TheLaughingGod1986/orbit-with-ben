@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1548 | mini | claimed | gemini | 2026-11-01T22:36Z | for gemini · chief · `gemini-argon` · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1548 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T21:30:57Z retry. Studio report posted. No spend or publishing changes.)
 - J1547 done: Chief: verify condition for J1471 (done)
 - J1546 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50) and 06_Final-Exports master hashes remain unchanged from J1468. J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T20:59:49Z. No film PASS, watch release, spend or publishing changes.)
 - J1545 done: Chief: verify condition for J0936 (Verified latest J1543 and evidence 3e26b379b; all three audition hashes match, listening remains NOT PERFORMED, PR333 open at 0a7fcb6ad without reviews. J0936 stays blocked with recorded retry 2026-11-01T20:59:49Z; J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks preserved.)
@@ -53,4 +53,3 @@ Recently finished:
 - J1541 done: Chief: verify condition for J1471 (done)
 - J1540 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50) and 06_Final-Exports master hashes remain unchanged from J1468. J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T19:53:06Z. No film PASS, watch release, spend or publishing changes.)
 - J1539 done: Chief: verify condition for J0936 (Verified latest J1538 and evidence 3e26b379b; all three audition hashes match, listening remains NOT PERFORMED, PR333 open at 0a7fcb6ad without reviews. J0936 stays blocked with recorded retry 2026-11-01T19:53:06Z; J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks preserved.)
-- J1538 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T19:29:07Z retry. Studio report posted. No spend or publishing changes.)

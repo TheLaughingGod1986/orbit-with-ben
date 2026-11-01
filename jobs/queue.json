@@ -136907,13 +136907,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-01T20:36Z",
-      "eta": "2026-11-01T22:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T20:30Z",
-      "result": "",
+      "result": "Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T21:30:57Z retry. Studio report posted. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-01T20:30Z",
@@ -136964,6 +136964,11 @@
           "at": "2026-11-01T20:39Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded unmet condition on J1100 with existing 21:30:57Z retry; original repair progress and gates preserved."
+        },
+        {
+          "at": "2026-11-01T20:39Z",
+          "by": "gemini",
+          "what": "done: Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T21:30:57Z retry. Studio report posted. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits cleared bed and local listening",
@@ -136990,7 +136995,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "done_ref": "3e26b379b"
     }
   ],
   "focus": [],
