@@ -128231,19 +128231,24 @@
           "at": "2026-11-01T01:43Z",
           "by": "codex",
           "what": "step 2 of 3 done: Bed SHA256 remains 13adc031; three audition hashes verified, each listening NOT PERFORMED. Evidence commit 3e26b379b; free 31440490496 bytes."
+        },
+        {
+          "at": "2026-11-01T01:44Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Recorded unmet condition with recheck J1444 and retained 02:11:26 UTC retry; thread report submitted."
         }
       ],
-      "remaining_action": "Record unmet condition and report verification",
+      "remaining_action": "Verification complete; J1100 held for cleared bed and local listening evidence",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T02:11:26+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-01T01:43Z",
+        "at": "2026-11-01T01:44Z",
         "by": "codex",
-        "note": "Bed SHA256 remains 13adc031; three audition hashes verified, each listening NOT PERFORMED. Evidence commit 3e26b379b; fr"
+        "note": "Recorded unmet condition with recheck J1444 and retained 02:11:26 UTC retry; thread report submitted."
       },
       "taskKeys": [
         "OWB:027",
