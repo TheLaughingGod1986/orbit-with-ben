@@ -81029,6 +81029,11 @@
           "at": "2026-11-01T07:38Z",
           "by": "relay",
           "what": "condition verification queued: J1473"
+        },
+        {
+          "at": "2026-11-01T07:40Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T08:38:21Z"
         }
       ],
       "kind": "video",
@@ -81059,12 +81064,11 @@
       "remaining_action": "Finish S2/S5/S6 replacement cuts and gates, then obtain replacement PASS and Ben swap approvals",
       "hold": {
         "type": "input",
-        "condition": "J1465 verified: latest J1464 retains J1100 blocked at 2/3. Evidence 3e26b379b retains excluded S2 bed 13adc031 and opening/middle/end listening NOT PERFORMED; all three audition hashes match. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, final AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 swap approvals. PR333 OPEN at 0a7fcb6ad without reviews/comments. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, 1 Nov 20:00 London batch target, individual deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
-        "check_at": "2026-11-01T08:38:21+00:00",
-        "last_recheck": "J1465",
-        "checked_at": "2026-11-01T06:39:24+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1473"
+        "condition": "J1473 verified: latest J1470 retains J1100 blocked at 2/3. Evidence 3e26b379b retains excluded S2 bed 13adc031 and opening/middle/end listening NOT PERFORMED; all three audition hashes match. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, final AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 swap approvals. PR333 OPEN at 0a7fcb6ad without reviews/comments. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, 1 Nov 20:00 London batch target, individual deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
+        "check_at": "2026-11-01T08:38:21Z",
+        "last_recheck": "J1473",
+        "checked_at": "2026-11-01T07:40:11+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
