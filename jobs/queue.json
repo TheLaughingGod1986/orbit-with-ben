@@ -132221,9 +132221,14 @@
           "at": "2026-11-01T10:51Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T10:51Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking J1471 brief, history and current PR380 evidence"
         }
       ],
-      "remaining_action": "Verify readiness: Identify suitable approved ISS opening input before resuming scoped opening repairs",
+      "remaining_action": "Verify approved ISS opening delivery and preserve unmet holds",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T11:47:30+00:00",
@@ -132233,9 +132238,11 @@
         "of": 3,
         "at": "2026-11-01T10:51Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking J1471 brief, history and current PR380 evidence"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
