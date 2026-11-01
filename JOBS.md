@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1443 | any | claimed | gemini | 2026-11-01T01:53Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1443 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md (75b1f1d6a); 0 fixes needed)
 - J1442 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1434 (1 h earlier): nothing went public. 10/10 pass, 0 fixes.)
 - J1441 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-11-01.md (f9deaf0e4); 0 fixes needed)
 - J1440 done: Chief: verify condition for J0936 (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1436 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (eb6295eb5); 0 fixes needed)
 - J1435 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks; updated 05_Analytics/live_fixes/2026-10-31.md (81ce1c4c8); 0 fixes needed)
 - J1434 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No change since J1399 (31 Oct ~19:55Z): no OWB video went public in between (next: 024 rVqgtkBV3jc Sun 1 Nov 18:00, then hZH0C7fpCk4 2 Nov). 10/10 pass, 0 fixes (05_Analytics/live_fixes/2026-10-31.md).)
-- J1433 done: Chief: verify condition for J0862 (Verified unmet: HOS main 220312c6, PRs through 393, desk through 6550757741 and queue show no approved 009 Short B replacement opening or recording scope. J0862 remains blocked, next check 2026-11-01T05:55Z via J1433. Existing takes and 010 A Option A1 preserved; all gates retained. Report posted to HOS desk. No spend or publishing changes.)
