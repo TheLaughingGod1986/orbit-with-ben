@@ -134753,9 +134753,14 @@
           "at": "2026-11-01T15:59Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T15:59Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
+      "remaining_action": "Read J1130 history, J1129 status, and J1518 evidence",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-01T16:58:26+00:00",
@@ -134764,10 +134769,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-01T15:59Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     },
     {
       "id": "J1524",
