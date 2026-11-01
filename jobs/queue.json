@@ -134141,19 +134141,24 @@
           "at": "2026-11-01T14:43Z",
           "by": "codex",
           "what": "step 2 of 3 done: Saved gates still FAIL: AR1 cut 6.00s; AR2 diff 0.25; AR3 diff 1.41. PR380 diagnostics supply no corrected delivery or full audiovisual review"
+        },
+        {
+          "at": "2026-11-01T14:43Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Unmet condition recorded on J1356; next check retained at 2026-11-01T15:41:00Z; no approvals or publishing holds released"
         }
       ],
-      "remaining_action": "Record unmet readiness condition and next verification time",
+      "remaining_action": "Verification complete; J1356 remains blocked pending corrected delivery",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-01T15:41:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-01T14:43Z",
         "by": "codex",
-        "note": "Saved gates still FAIL: AR1 cut 6.00s; AR2 diff 0.25; AR3 diff 1.41. PR380 diagnostics supply no corrected delivery or f"
+        "note": "Unmet condition recorded on J1356; next check retained at 2026-11-01T15:41:00Z; no approvals or publishing holds release"
       },
       "taskKeys": [
         "OWB:030"
