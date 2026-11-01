@@ -128452,19 +128452,28 @@
           "at": "2026-11-01T01:50Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-01T01:50Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed J1129 authorization, T020 running evidence, J1130 conditions and prior access failure."
         }
       ],
-      "remaining_action": "Verify the HOS thumbnail test completion evidence for J1130",
+      "remaining_action": "Read Studio test status and actual completion timestamp",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-01T02:40:40+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T01:50Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "Reviewed J1129 authorization, T020 running evidence, J1130 conditions and prior access failure."
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     },
     {
       "id": "J1448",
