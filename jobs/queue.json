@@ -130159,9 +130159,14 @@
           "at": "2026-11-01T07:12Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-01T07:12Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Located all accepted masters and original VO/SFX stems; existing 60-second score available"
         }
       ],
-      "remaining_action": "Locate locked AR1–AR3 stems, add full-runtime score, and verify new cuts",
+      "remaining_action": "Mix existing score into three new masters without re-encoding picture",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -130173,10 +130178,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T07:12Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Located all accepted masters and original VO/SFX stems; existing 60-second score available"
       },
       "taskKeys": [
         "OWB:030"
