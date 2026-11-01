@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1427 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J1466 | any | claimed | codex | 2026-11-01T08:44Z | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
+- J1466 done: Chief: verify condition for J1130 (done)
 - J1465 done: Chief: verify condition for J0936 (Verified latest J1464 and evidence 3e26b379b; all audition hashes match, listening remains unperformed, PR333 open without approval. J0936 stays blocked with recorded retry 2026-11-01T07:37:39Z; prior approvals, deadlines and fallbacks preserved. Studio report posted.)
 - J1464 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and three audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3, approvals and 2026-11-01T07:14:07Z retry. Report #6554330536.)
 - J1463 done: Chief: verify condition for J0862 (Verified unmet: HOS main 220312c6, PRs through 394, desk through 6554133437 and queue contain no approved 009 Short B replacement opening or recording scope. J0862 remains blocked; next check 2026-11-01T12:05Z via J1463. Existing v02 takes, approved 010 A Option A1 and all gates preserved. HOS desk report posted. No spend or publishing changes.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1459 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; J1100 remains blocked for cleared instrumental bed and local listening. Preserved 2/3 and approvals; recorded retry 2026-11-01T06:13:17Z. Studio report posted.)
 - J1458 done: Chief: verify condition for J1130 (Verified 04:43 UTC: both Studio sessions deny HOS access. J1130 remains blocked with recorded 2026-11-01T05:41:40Z retry; evidence _desk/handoff/J1458 and HOS desk report. No YouTube changes or spend.)
 - J1457 done: Chief: verify condition for J0936 (Verified unmet condition; J0936 remains blocked with existing retry. Latest J1456 and evidence 3e26b379b checked; audition hashes match, listening unperformed, PR333 unchanged.)
-- J1456 done: Chief: verify condition for J1100 (done)
