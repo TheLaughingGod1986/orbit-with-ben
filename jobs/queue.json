@@ -121952,9 +121952,14 @@
           "at": "2026-11-01T01:48Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-01T07:50:00Z"
+        },
+        {
+          "at": "2026-11-01T07:25Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T07:50:00Z"
         }
       ],
-      "remaining_action": "Resolve full-runtime music and missing package targets; rerun affected gates and full playback review",
+      "remaining_action": "Await J1471 opening fixes and complete gate/playback evidence before final-watch review",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -121967,12 +121972,9 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "input",
-        "condition": "J1446: fresh hashes match accepted AR1 v01, AR2 v06 and AR3 v05. All three current manifest export targets remain absent; PR376 remains OPEN unchanged at 92de3841c, with no newer correction PR. Full-runtime music, silent-tail correction, versioned package mapping, affected gates and full audiovisual review remain outstanding. Scoped no-spend correction required; J1356 forbids rebuild. Existing picture acceptance retained; no final-watch or publishing approval.",
-        "check_at": "2026-11-01T07:50:00Z",
-        "last_recheck": "J1446",
-        "checked_at": "2026-11-01T01:48:45+00:00",
-        "checked_by": "codex"
+        "type": "dependency",
+        "condition": "J1467 review: J1468 audio repair PR379 delivered, but AR1 first cut and AR2/AR3 opening motion still FAIL. Await J1471 after J1468: corrected new versions, complete gates/metadata, full moving/audio review and pace WARN assessment. Then elected Chief verifies readiness under J1356; no watch or publishing release.",
+        "check_at": "2026-11-01T07:50:00Z"
       }
     },
     {
