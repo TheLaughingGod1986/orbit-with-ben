@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1543 | mini | claimed | gemini | 2026-11-01T21:33Z | for gemini · chief · `gemini-argon` · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1543 done: Chief: verify condition for J1100 (Verified evidence 3e26b379b and audition hashes; bed clearance and actual local listening remain unproven. J1100 held at 2/3 with existing 2026-11-01T20:30:17Z retry. Studio report posted. No spend or publishing changes.)
 - J1542 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS 09841a65))
 - J1541 done: Chief: verify condition for J1471 (done)
 - J1540 done: Chief: verify condition for J1356 (Condition unmet: PR380 OPEN unchanged at d0b04b5e0 with no comments/reviews; J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening FAILs persist (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50) and 06_Final-Exports master hashes remain unchanged from J1468. J1356 remains blocked for corrected versioned masters, complete metadata and affected gates, full moving/audio review including pace WARN. Next check 2026-11-01T19:53:06Z. No film PASS, watch release, spend or publishing changes.)
@@ -53,4 +53,3 @@ Recently finished:
 - J1536 done: Chief: verify condition for J1271 (Verified rVqgtkBV3jc reads Public via YouTube Data API v3 (publishedAt 2026-11-01T18:00:20Z, privacyStatus=public) and oEmbed 200; reopened J1271 for Studio pinned comment.)
 - J1535 done: Chief: verify condition for J0978 (Verified HOS Atom (GHZDsiH7L7A) Studio widget still shows A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only verification 2 Nov 00:25 UTC. Evidence HOS PR #396, commit c0280f6e; local _desk/handoff/J1535. Channel audit 62 videos, 0 errors; all HOS repository checks pass. No YouTube changes or spend.)
 - J1534 done: Chief: verify condition for J0969 (Verified 2026-11-01T18:05Z on Orbit Studio CDP 9223 (READ ONLY): 1 Nov 18:00 London gate passed; h8HGfyShEHI Public; T012 thumbnail-only A/B/C test finished ('Ran from 18 October 2026 at 18:00 to 1 November 2026 at 17:14'; 'Not enough impressions to declare a winner'; watch-time share — across A/B/C; A BURNING HARDER 'Now visible to all viewers'). Variant B sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg sha256 e7247c5232a3ec78b7413722e184bfdfc15a1e9ee6070dd63a3acbf6981021bf verified; Chief c54/c57 approvals valid. Reopened J0969 with evidence in _desk/handoff/J1534. No Studio changes or spend.)
-- J1533 done: Chief: verify condition for J1471 (done)
