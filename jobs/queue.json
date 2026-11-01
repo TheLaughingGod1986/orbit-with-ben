@@ -130079,18 +130079,27 @@
           "at": "2026-11-01T06:52Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J1467 QA sweep"
+        },
+        {
+          "at": "2026-11-01T06:58Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified new renders since J1178: 5 OWB Standalone Shorts, OWB AR1/AR2/AR3 cohort, and HOS 008 code_graphics_v02 + master v01-v03"
         }
       ],
-      "remaining_action": "Locate newest OWB and HOS packs and check gate output timestamps against last renders",
+      "remaining_action": "Inspect gate sidecars on new OWB Standalone/AR Shorts and run missing gates on HOS 008 code_graphics_v02",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-01T06:52Z",
+        "at": "2026-11-01T06:58Z",
         "by": "gemini",
-        "note": "Started J1467 QA sweep"
-      }
+        "note": "Identified new renders since J1178: 5 OWB Standalone Shorts, OWB AR1/AR2/AR3 cohort, and HOS 008 code_graphics_v02 + mas"
+      },
+      "taskKeys": [
+        "OWB:030",
+        "HOS:008"
+      ]
     }
   ],
   "focus": [],
