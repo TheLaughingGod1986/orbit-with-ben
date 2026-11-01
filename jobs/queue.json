@@ -127991,9 +127991,14 @@
           "at": "2026-11-01T00:47Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting read-only live listing check on last 10 public OWB videos"
+        },
+        {
+          "at": "2026-11-01T00:48Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Identified last 10 live public videos and next scheduled release rVqgtkBV3jc from snapshot and UPLOADS.json"
         }
       ],
-      "remaining_action": "Audit the last 10 live public OWB videos and verify next scheduled release",
+      "remaining_action": "Verify live YouTube watch and Shorts endpoints for the 10 public videos and next scheduled release",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -128006,12 +128011,19 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-01T00:47Z",
+        "at": "2026-11-01T00:48Z",
         "by": "gemini",
-        "note": "Starting read-only live listing check on last 10 public OWB videos"
-      }
+        "note": "Identified last 10 live public videos and next scheduled release rVqgtkBV3jc from snapshot and UPLOADS.json"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
