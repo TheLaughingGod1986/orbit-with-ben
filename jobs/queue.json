@@ -136853,19 +136853,24 @@
           "at": "2026-11-01T20:12Z",
           "by": "gemini",
           "what": "step 1 of 3 done: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews); J1468 master & Crew-2 cache hashes verified; no new ISS opening input"
+        },
+        {
+          "at": "2026-11-01T20:13Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Updated J1471 input hold with J1547 verification; retained retry 2026-11-01T21:04:47Z and all existing holds"
         }
       ],
-      "remaining_action": "Record unmet input hold on J1471 with --recheck J1547 and verify queue readback",
+      "remaining_action": "Verify J1471 hold readback and close J1547",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T21:04:47+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-01T20:12Z",
+        "at": "2026-11-01T20:13Z",
         "by": "gemini",
-        "note": "PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews); J1468 master & Crew-2 cache hashes verified; no new ISS opening "
+        "note": "Updated J1471 input hold with J1547 verification; retained retry 2026-11-01T21:04:47Z and all existing holds"
       },
       "taskKeys": [
         "OWB:030"
