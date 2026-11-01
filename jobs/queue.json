@@ -130477,9 +130477,14 @@
           "at": "2026-11-01T07:46Z",
           "by": "relay",
           "what": "condition verification queued: J1475"
+        },
+        {
+          "at": "2026-11-01T07:50Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T08:46:09Z"
         }
       ],
-      "remaining_action": "Identify approved ISS opening candidate; repair openings and complete gates/playback",
+      "remaining_action": "Identify suitable approved ISS opening input before resuming scoped opening repairs",
       "kind": "assembly",
       "progress": {
         "step": 1,
@@ -130492,10 +130497,12 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-01T08:46:09+00:00",
-        "recheck_task": "J1475"
+        "type": "input",
+        "condition": "J1475 verified J1468 complete and PR379 merged. PR380 d0b04b5e0 is diagnostics only: no suitable approved ISS opening candidate or corrected masters delivered. Require identified approved ISS interval/approach for AR2 0-2.4s and loop preroll, respecting locked VO, native motion, <=2.35x upscale and unchanged gates; otherwise separately scoped acquisition. AR1/AR3 opening repairs, complete gates and full moving/audio review remain owed. J1356 and all Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-01T08:46:09Z",
+        "last_recheck": "J1475",
+        "checked_at": "2026-11-01T07:50:46+00:00",
+        "checked_by": "codex"
       }
     },
     {
