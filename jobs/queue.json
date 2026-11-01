@@ -132062,9 +132062,14 @@
           "at": "2026-11-01T10:40Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed dispatched verification; reading original job and latest evidence."
+        },
+        {
+          "at": "2026-11-01T10:41Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Corrected film links: J0936 is OWB batch C, not HOS."
         }
       ],
-      "remaining_action": "Verify J0936 evidence and approval conditions",
+      "remaining_action": "Verify remaining batch C replacement evidence and approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-01T11:39:35+00:00",
@@ -132072,12 +132077,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-01T10:40Z",
+        "at": "2026-11-01T10:41Z",
         "by": "codex",
-        "note": "Claimed dispatched verification; reading original job and latest evidence."
+        "note": "Corrected film links: J0936 is OWB batch C, not HOS."
       },
       "taskKeys": [
-        "HOS:007"
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
       ]
     }
   ],
