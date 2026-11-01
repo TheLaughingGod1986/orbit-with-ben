@@ -127390,7 +127390,7 @@
     {
       "id": "J1427",
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
       "ref": "",
@@ -127455,6 +127455,11 @@
           "at": "2026-11-01T11:38Z",
           "by": "codex",
           "what": "reopened: J1495 verified condition satisfied: authenticated YouTube Data API videos.list HTTP 200 at 2026-11-01T11:37:43.701Z returned pWySvZsneZg, Why Gold Foil Bounced Rutherford’s Particles Back, channel UCXp7HkBIl1LgaznXuZHJyRg, privacyStatus public, uploadStatus processed, publishedAt 2026-11-01T11:30:00Z, madeForKids false. Reviewed original body/history and HOS live_fixes/2026-10-31.md: previous 62-video audit reported no new fixes. Reopen solely to re-run the original read-only listing audit; change nothing in Studio and preserve all gate and approval requirements. No outstanding Ben approval is attached to this audit. Citation correction: 6548189922 resolves in OWB to an unrelated Codex J1394 report, not the claimed Claude instruction (HOS lookup 404); readiness is established by direct API evidence, not that citation or elapsed time. No upload, spend, schedule or privacy change made."
+        },
+        {
+          "at": "2026-11-01T11:38Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 588 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Re-run HOS live listing check after pWySvZsneZg goes public on 1 Nov 11:30Z",
@@ -127468,7 +127473,16 @@
         "HOS:005",
         "HOS:006",
         "HOS:007"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1428",
