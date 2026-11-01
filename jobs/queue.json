@@ -132761,19 +132761,24 @@
           "at": "2026-11-01T11:55Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking original scope, approval history and replacement delivery"
+        },
+        {
+          "at": "2026-11-01T11:55Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR380 remains OPEN at d0b04b5e0, no comments/reviews or replacement delivery; original opening failures persist"
         }
       ],
-      "remaining_action": "Verify approved ISS opening input and current PR380 evidence",
+      "remaining_action": "Record unmet ISS input condition and preserve repair holds",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T12:51:07+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-01T11:55Z",
         "by": "codex",
-        "note": "Checking original scope, approval history and replacement delivery"
+        "note": "PR380 remains OPEN at d0b04b5e0, no comments/reviews or replacement delivery; original opening failures persist"
       },
       "taskKeys": [
         "OWB:030"
