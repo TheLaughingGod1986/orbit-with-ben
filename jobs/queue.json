@@ -128275,13 +128275,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T01:45Z",
-      "eta": "2026-11-01T03:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T01:34Z",
-      "result": "",
+      "result": "Verified unmet condition: latest J1444 keeps J1100 at 2/3; evidence 3e26b379b retains excluded S2 bed and listening NOT PERFORMED. Three audition hashes match; PR333 OPEN 0a7fcb6ad without reviews/comments. J0936 hold rechecked, retry 2026-11-01T02:34:40Z; approvals, deadlines and fallbacks preserved. Studio report posted. No spend or publishing.",
       "history": [
         {
           "at": "2026-11-01T01:34Z",
@@ -128312,6 +128312,11 @@
           "at": "2026-11-01T01:46Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded J1445-linked unmet condition, retained 02:34:40 UTC retry and posted studio report; approvals and scheduled fallbacks preserved."
+        },
+        {
+          "at": "2026-11-01T01:47Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition: latest J1444 keeps J1100 at 2/3; evidence 3e26b379b retains excluded S2 bed and listening NOT PERFORMED. Three audition hashes match; PR333 OPEN 0a7fcb6ad without reviews/comments. J0936 hold rechecked, retry 2026-11-01T02:34:40Z; approvals, deadlines and fallbacks preserved. Studio report posted. No spend or publishing."
         }
       ],
       "remaining_action": "Verification complete; J0936 held for replacement evidence",
