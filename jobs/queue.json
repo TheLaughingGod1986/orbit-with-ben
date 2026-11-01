@@ -134381,18 +134381,24 @@
           "at": "2026-11-01T15:01Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-01T15:02Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR380 OPEN at d0b04b5e0, no comments or reviews; source diagnostics and J1468 gate failures checked. No new approved replacement."
         }
       ],
-      "remaining_action": "Verify approved ISS opening input and current repair evidence",
+      "remaining_action": "Record unmet ISS input condition and retain repair hold",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-01T15:57:15+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-01T15:01Z",
-        "by": "codex"
+        "at": "2026-11-01T15:02Z",
+        "by": "codex",
+        "note": "PR380 OPEN at d0b04b5e0, no comments or reviews; source diagnostics and J1468 gate failures checked. No new approved rep"
       },
       "taskKeys": [
         "OWB:030"
