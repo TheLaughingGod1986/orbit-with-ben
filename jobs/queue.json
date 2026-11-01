@@ -133139,13 +133139,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-01T12:40Z",
-      "eta": "2026-11-01T14:40Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-01T12:39Z",
-      "result": "",
+      "result": "Verified condition unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews or corrected delivery. J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening failures persist. J1356 kept blocked pending corrected masters, complete affected gates and full audiovisual review including pace WARN; retry retained 2026-11-01T13:39:07Z. No film PASS, watch release, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-01T12:39Z",
@@ -133176,6 +133176,11 @@
           "at": "2026-11-01T12:41Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet condition against J1504; retained 13:39:07Z retry and all approval, watch, credit and publishing holds."
+        },
+        {
+          "at": "2026-11-01T12:41Z",
+          "by": "codex",
+          "what": "done: Verified condition unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews or corrected delivery. J1471 blocked on approved ISS opening input. Saved AR1/AR2/AR3 opening failures persist. J1356 kept blocked pending corrected masters, complete affected gates and full audiovisual review including pace WARN; retry retained 2026-11-01T13:39:07Z. No film PASS, watch release, spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1356 remains blocked for corrected cuts and review",
@@ -133192,7 +133197,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     }
   ],
   "focus": [],
