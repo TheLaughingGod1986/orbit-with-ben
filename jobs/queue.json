@@ -137697,10 +137697,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-01T22:16Z",
+      "eta": "2026-11-02T00:16Z",
       "created_by": "relay",
       "created_at": "2026-11-01T22:15Z",
       "result": "",
@@ -137709,13 +137709,26 @@
           "at": "2026-11-01T22:15Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-01T22:16Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Wait for HOS 002 (AL_-qlWko_g) thumbnail test T020 to finish in Studio (CDP 9460), then arm title-only test the next London day",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-01T23:15:46+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-01T22:16Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
