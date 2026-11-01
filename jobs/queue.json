@@ -137828,9 +137828,14 @@
           "at": "2026-11-01T23:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-01T23:17Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1558; checking J0979 and 031+ VO/picture lock records"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
+      "remaining_action": "Read J0979 and check 031+ VO and picture lock status",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-01T23:40:57+00:00",
@@ -137849,9 +137854,12 @@
         "of": 3,
         "at": "2026-11-01T23:17Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1558; checking J0979 and 031+ VO/picture lock records"
+      },
+      "taskKeys": [
+        "OWB:031",
+        "OWB:032"
+      ]
     },
     {
       "id": "J1559",
