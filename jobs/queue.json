@@ -102122,6 +102122,11 @@
           "at": "2026-11-01T13:57Z",
           "by": "relay",
           "what": "condition verification queued: J1512"
+        },
+        {
+          "at": "2026-11-01T13:59Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-01T14:57:11Z"
         }
       ],
       "remaining_action": "Restore readable HOS Studio access and verify thumbnail-test completion before title-only test",
@@ -102138,12 +102143,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "1 Nov 12:54 UTC: fresh video pages error on CDP 9222 and 9223; correct HOS dashboards deny permission on both. Evidence /Users/benjaminoats/_desk/handoff/J1506. Require readable Studio report confirming J1129 MISSING ELEMENT v02 test T020 ended, actual completion timestamp, and at least the following London calendar day.",
-        "check_at": "2026-11-01T14:57:11+00:00",
-        "last_recheck": "J1506",
-        "checked_at": "2026-11-01T12:54:17+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1512"
+        "condition": "1 Nov 14:00 UTC: fresh video pages error on CDP 9222 and 9223, and correct HOS dashboards deny permission on both. Evidence /Users/benjaminoats/_desk/handoff/J1512. Require readable Studio report confirming J1129 MISSING ELEMENT v02 test T020 ended, its actual completion timestamp, and at least the following London calendar day.",
+        "check_at": "2026-11-01T14:57:11Z",
+        "last_recheck": "J1512",
+        "checked_at": "2026-11-01T13:59:38+00:00",
+        "checked_by": "codex"
       }
     },
     {
