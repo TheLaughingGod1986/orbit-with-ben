@@ -140938,10 +140938,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-02T06:26Z",
-      "eta": "2026-11-02T08:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T06:25Z",
       "result": "",
@@ -140960,6 +140960,11 @@
           "at": "2026-11-02T06:26Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1595; starting inspection of J0936, J1100, PR #333 and recent rechecks"
+        },
+        {
+          "at": "2026-11-02T06:27Z",
+          "by": "gemini",
+          "what": "released: Handing J1595 back to higher-priority elected Chief Codex (returned at 2026-11-02T06:27:17Z per chief_relay.py status); no state changes made on J0936"
         }
       ],
       "remaining_action": "Verify readiness: Finish J1100 audio and caption repairs, gates and replacement review before Ben watches S2/S5/S6",
