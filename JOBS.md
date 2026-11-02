@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1584 | any | claimed | gemini | 2026-11-02T06:05Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1584 done: Chief: verify condition for J1100 (done)
 - J1583 done: Chief: verify condition for J1471 (done)
 - J1582 done: Chief: verify condition for J1356 (done)
 - J1581 done: Chief: verify condition for J0936 (Verified J0936 waiting condition: latest J1580 retains J1100 blocked at 2/3 (until 2026-11-02T04:03:53Z), evidence 3e26b379b still records local listening NOT PERFORMED with matching audition hashes and excluded bed 13adc031, and PR #333 remains OPEN at 0a7fcb6ad with 0 reviews/comments. Retained hold on J0936 until 2026-11-02T04:23:31Z; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks.)
@@ -53,4 +53,3 @@ Recently finished:
 - J1577 done: Chief: verify condition for J1356 (done)
 - J1576 done: Chief: verify condition for J0936 (Verified J0936 waiting condition: latest J1573 retains J1100 blocked at 2/3 (until 2026-11-02T03:03:16Z), evidence 3e26b379b still records local listening NOT PERFORMED with matching audition hashes and excluded bed 13adc031, and PR #333 remains OPEN at 0a7fcb6ad with 0 reviews/comments. Retained hold on J0936 until 2026-11-02T03:22:26Z; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks.)
 - J1575 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
-- J1574 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS 7221fa6a))
