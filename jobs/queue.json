@@ -139582,20 +139582,39 @@
           "at": "2026-11-02T02:52Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1579; checking J0985 and non-author Chief availability"
+        },
+        {
+          "at": "2026-11-02T02:54Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified commit 0ac2007b9, evidence SHA256 b753794d, reconciled Mercury tied -5.59pp drops, and confirmed grok/claude/codex are all down so non-author Chief PASS remains unmet"
         }
       ],
-      "remaining_action": "Read J0985, J1549 and chief_relay status to verify J0985 waiting condition",
+      "remaining_action": "Update J0985 wait condition with --recheck J1579 for non-author Chief audit PASS",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-02T03:51:09+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T02:52Z",
+        "at": "2026-11-02T02:54Z",
         "by": "gemini",
-        "note": "Claimed J1579; checking J0985 and non-author Chief availability"
-      }
+        "note": "Verified commit 0ac2007b9, evidence SHA256 b753794d, reconciled Mercury tied -5.59pp drops, and confirmed grok/claude/co"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
