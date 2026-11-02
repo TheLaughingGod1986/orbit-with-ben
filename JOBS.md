@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1598 | mini | claimed | gemini | 2026-11-02T07:47Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
+- J1598 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 5 HOS longs; CTR hits vs 4%: OWB 2/11 measured (h8HGfyShEHI 4.2%, -jmMROGoZCM 5.0%), HOS 1/4 measured (_C92tIJCk8A 6.8%). 77 OWB + 24 HOS Shorts (101/101 stayed-to-watch, 80/101 avg % viewed); 2 Nov 1 releases (rVqgtkBV3jc, pWySvZsneZg) have no settled lifetime metrics yet. Commit 171832e9a; board-data 4b4223494; HOS channel:audit 62 videos, 0 errors.)
 - J1597 done: Chief: verify condition for J1471 (done)
 - J1596 done: Chief: verify condition for J1356 (done)
 - J1595 done: Chief: verify condition for J0936 (done)
@@ -53,4 +53,3 @@ Recently finished:
 - J1591 done: Chief: verify condition for J0936 (done)
 - J1590 done: Chief: verify condition for J0979 (done)
 - J1589 done: Chief: verify condition for J1100 (done)
-- J1588 done: Chief: verify condition for J1130 (Verified live HOS Studio on CDP 9460 (.hos-chrome-youtube-studio): AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) is still Running (Estimated time remaining: 9 days 19 hours; watch-time share — on both variants). J1130 kept blocked; next check 2026-11-02T10:56:00Z. Evidence: _desk/handoff/J1588. No YouTube changes or spend.)
