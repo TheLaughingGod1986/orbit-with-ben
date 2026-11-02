@@ -141455,13 +141455,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-02T07:31Z",
-      "eta": "2026-11-02T09:31Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T07:28Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-02T07:28Z",
@@ -141497,6 +141497,11 @@
           "at": "2026-11-02T07:34Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Retained hold on J0936 with 2026-11-02T08:28:54Z recheck; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks"
+        },
+        {
+          "at": "2026-11-02T07:34Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
