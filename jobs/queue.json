@@ -141327,19 +141327,24 @@
           "at": "2026-11-02T07:18Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1600; starting verification of J1100 waiting condition"
+        },
+        {
+          "at": "2026-11-02T07:19Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100 and J1594 full history, rulings, and hold state"
         }
       ],
-      "remaining_action": "Inspect J1100, J1594, and evidence for cleared instrumental S2 bed and local listening",
+      "remaining_action": "Verify 3e26b379b evidence, SHA-256 hashes, and listening/bed clearance state",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T07:18Z",
+        "at": "2026-11-02T07:19Z",
         "by": "gemini",
-        "note": "Claimed J1600; starting verification of J1100 waiting condition"
+        "note": "Read J1100 and J1594 full history, rulings, and hold state"
       },
       "taskKeys": [
         "OWB:027",
