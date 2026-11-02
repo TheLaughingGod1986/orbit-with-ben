@@ -86783,6 +86783,11 @@
           "at": "2026-11-02T07:17Z",
           "by": "relay",
           "what": "condition verification queued: J1599"
+        },
+        {
+          "at": "2026-11-02T07:27Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-02T13:25:00Z"
         }
       ],
       "kind": "listing",
@@ -86808,12 +86813,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Fresh HOS Studio read 2 Nov 01:06 UTC via CDP 9460 still shows A/B testing titles / Results ready on GHZDsiH7L7A with original title and Public. Widget clearance and API restriction removal remain unproven; no write probe. Evidence _desk/handoff/J1567/readback.json, atom_edit.png and HOS PR #397. Requires fresh read-only evidence of title-test widget clearance.",
-        "check_at": "2026-11-02T08:17:20+00:00",
-        "last_recheck": "J1567",
-        "checked_at": "2026-11-02T01:08:51+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1599"
+        "condition": "Fresh HOS Studio read 2 Nov 07:25 UTC via CDP 9460 still shows A/B testing titles / Results ready on GHZDsiH7L7A with original title and Public. Widget clearance and API restriction removal remain unproven; no write probe. Evidence _desk/handoff/J1599/readback.json, atom_edit.png and HOS PR #398. Requires fresh read-only evidence of title-test widget clearance.",
+        "check_at": "2026-11-02T13:25:00Z",
+        "last_recheck": "J1599",
+        "checked_at": "2026-11-02T07:27:34+00:00",
+        "checked_by": "gemini"
       }
     },
     {
