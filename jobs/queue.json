@@ -132135,9 +132135,14 @@
           "at": "2026-11-02T15:24Z",
           "by": "relay",
           "what": "condition verification queued: J1641"
+        },
+        {
+          "at": "2026-11-02T15:40Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T16:24:55Z"
         }
       ],
-      "remaining_action": "Identify suitable approved ISS opening input before resuming scoped opening repairs",
+      "remaining_action": "Identify approved moving ISS opening input, then correct and review AR cohort",
       "kind": "assembly",
       "progress": {
         "step": 1,
@@ -132151,12 +132156,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1637 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; all three J1468 master hashes and Crew-2 cache match. Require approved ISS interval or approach for AR2 0-2.4s plus loop preroll, identifiable station detail, native motion and <=2.35x upscale with locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete metadata, affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-02T16:24:55+00:00",
-        "last_recheck": "J1637",
-        "checked_at": "2026-11-02T14:34:59+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1641"
+        "condition": "J1641 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 matches all three J1468 masters and Crew-2 cache. Still require approved ISS interval or approach for AR2 0-2.4s plus loop preroll, identifiable station detail, native motion and <=2.35x upscale with locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete metadata, affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-02T16:24:55Z",
+        "last_recheck": "J1641",
+        "checked_at": "2026-11-02T15:40:06+00:00",
+        "checked_by": "codex"
       }
     },
     {
