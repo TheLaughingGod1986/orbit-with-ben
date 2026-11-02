@@ -142815,19 +142815,24 @@
           "at": "2026-11-02T11:01Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified on CDP 9460: AL_-qlWko_g test T020 still Test running (Estimated time remaining: 9 days 13 hours)"
+        },
+        {
+          "at": "2026-11-02T11:02Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Recorded J1130 hold with live CDP 9460 Studio readback (T020 still running, 9d 13h left) and next verification at 2026-11-02T17:02:00Z."
         }
       ],
-      "remaining_action": "Write J1617 verification report and update J1130 wait condition",
+      "remaining_action": "Finish J1617 and post report",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-02T11:56:31+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T11:01Z",
+        "at": "2026-11-02T11:02Z",
         "by": "gemini",
-        "note": "Verified on CDP 9460: AL_-qlWko_g test T020 still Test running (Estimated time remaining: 9 days 13 hours)"
+        "note": "Recorded J1130 hold with live CDP 9460 Studio readback (T020 still running, 9d 13h left) and next verification at 2026-1"
       },
       "taskKeys": [
         "HOS:002"
