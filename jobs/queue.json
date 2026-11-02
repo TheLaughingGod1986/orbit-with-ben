@@ -143952,13 +143952,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T13:37Z",
-      "eta": "2026-11-02T15:37Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T13:36Z",
-      "result": "",
+      "result": "Verified evidence 3e26b379b and fresh bed/audition hashes. J1100 remains blocked: cleared instrumental S2 bed and actual local listening unproven. Preserved 2/3, approvals, deadlines and existing retry 2026-11-02T14:36:20Z. No media approval, spend or publishing.",
       "history": [
         {
           "at": "2026-11-02T13:36Z",
@@ -143989,6 +143989,11 @@
           "at": "2026-11-02T13:42Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J1100 input hold and 14:36:20Z retry; original 2/3 and approvals preserved. Required repair recovered about 1.1 GB after transient queue pull failure."
+        },
+        {
+          "at": "2026-11-02T13:42Z",
+          "by": "codex",
+          "what": "done: Verified evidence 3e26b379b and fresh bed/audition hashes. J1100 remains blocked: cleared instrumental S2 bed and actual local listening unproven. Preserved 2/3, approvals, deadlines and existing retry 2026-11-02T14:36:20Z. No media approval, spend or publishing."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits cleared bed and local listening",
@@ -144006,7 +144011,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     }
   ],
   "focus": [],
