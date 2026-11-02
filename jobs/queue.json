@@ -138648,10 +138648,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-02T01:15Z",
-      "eta": "2026-11-02T03:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T00:59Z",
       "result": "",
@@ -138670,6 +138670,11 @@
           "at": "2026-11-02T01:16Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1568; checking J0862 waiting condition across HOS main, PRs, desk #180, and queue"
+        },
+        {
+          "at": "2026-11-02T01:19Z",
+          "by": "gemini",
+          "what": "released: Handing Chief verification J1568 back to returned higher-priority Chief (codex, up since 2026-11-02T01:17:19Z). Read-only check at 2026-11-02T01:18Z confirmed HOS main 09841a65, PRs through 397, desk #180 through 6562561090, and queue still contain no approved 009 Short B replacement opening or exact recording scope."
         }
       ],
       "remaining_action": "Check HOS main, PRs, desk #180 and queue for approved 009 Short B replacement opening and recording scope",
