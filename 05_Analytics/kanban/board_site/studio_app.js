@@ -238,40 +238,150 @@
     }
     return {label: "UAT ETA unavailable", detail: (e.reasons || []).join(" · ") || "Waiting for production evidence", tone: "amber"};
   }
-  function milestoneProgress(v, expanded) {
-    const p = v.production;
-    if (!p || !Array.isArray(p.milestones)) return '<span class="meta">Milestone progress not recorded</span>';
-    // The percentage counts recorded milestones, never inferred work or elapsed film time.
-    const done = p.milestones.filter(m => ["done", "skip", "passed"].includes(m.state)).length;
-    const total = p.milestones.length;
-    const unknown = p.milestones.filter(m => m.state === "unknown").length;
-    const progress = total ? bar({step: done, of: total}, "production milestones recorded complete")
-      + (unknown ? `<span class="meta">${unknown} milestone(s) have no recorded state</span>` : "") : "";
-    const list = expanded ? `<ul class="notes">${p.milestones.map(m => `<li><b>${esc(m.label)}</b> · ${esc(m.state)}${m.evidence ? ` · ${esc(m.evidence)}` : ""}${m.sampleCount != null ? ` · ${esc(m.sampleCount)} historical samples` : ""}</li>`).join("")}</ul>` : "";
-    return progress + list;
+  const MILESTONES = [['topic','Topic'],['script','Script'],['sources','Fact checks'],['vo','Voice'],['shots','Shot plan'],['picture','Picture'],['edit','Edit'],['thumbs','Packaging'],['qa','Chief QA']];
+  const expandedStages = new Map();
+  const disclosureState = new Map();
+  let videoSort = 'uat';
+  const completeStage = m => ['done','skip','passed'].includes(m.displayState || m.state) && !m.awaitingApproval;
+  function milestones(v) {
+    const recorded = new Map(((v.production || {}).milestones || []).map(m => [m.id, m]));
+    return MILESTONES.map(([id,label]) => Object.assign({id,label,state:'unknown',dependsOn:[]}, recorded.get(id)));
+  }
+  function progressStats(v) {
+    const rows = milestones(v), done = rows.filter(completeStage).length;
+    return {rows, done, total:9, percent:Math.round(done / 9 * 100), unknown:rows.filter(m => m.state === 'unknown').length};
+  }
+  function stageView(m) {
+    const state = m.awaitingApproval ? 'review' : m.displayState || m.state;
+    if (completeStage(m)) return {text:state === 'skip' ? 'Not required · recorded' : 'Completed',tone:'complete',icon:'✓'};
+    if (state === 'review') return {text:'Awaiting approval',tone:'held',icon:'!'};
+    if (state === 'blocked') return {text:'Blocked',tone:'held',icon:'!'};
+    if (['doing','in_progress'].includes(state)) return {text:'In progress',tone:'active',icon:'●'};
+    return {text:['todo','pending','queued'].includes(state) ? 'Not started' : 'Unconfirmed',tone:'neutral',icon:'○'};
+  }
+  function currentProduction(v) {
+    const rows = milestones(v), ids = (v.production || {}).activeStages || [];
+    const recorded = ids.map(id => rows.find(m => m.id === id)).filter(Boolean).filter(m => !completeStage(m));
+    if (recorded.length) return recorded;
+    // Backward-compatible selection from explicit stage states, prioritising approval/blocking work.
+    const path = (((v.production || {}).eta || {}).criticalPath || []);
+    return rows.filter(m => ['held','active'].includes(stageView(m).tone)).sort((a,b) =>
+      (stageView(a).tone === 'held' ? 0 : 1) - (stageView(b).tone === 'held' ? 0 : 1)
+      || (path.includes(a.id) ? 0 : 1) - (path.includes(b.id) ? 0 : 1));
+  }
+  const ownerName = m => AGENTS[m.owner] || m.owner || 'Unassigned';
+  function conciseEvidence(m) {
+    if (m.summary) return m.summary;
+    const text = String(m.evidence || ''), parts = [];
+    const flow = text.match(/\b(\d+)\s*\/\s*(\d+)\s+Flow\b/i);
+    if (m.id === 'picture' && flow && /minted|generated/i.test(text)) parts.push(`${flow[1]}/${flow[2]} Flow shots generated`);
+    if (m.version) parts.push(m.version);
+    const score = Number((m.source || {}).score);
+    if ((m.source || {}).score != null && Number.isFinite(score)) parts.push(`Score ${score}`);
+    if (m.id === 'vo' && /Claude\s+(?:QA\s+)?PASS(?:ED)?\b/i.test(text)) parts.push('Claude QA passed');
+    return parts.join(' · ');
+  }
+  function nextAction(m) {
+    if (stageView(m).text === 'Awaiting approval') {
+      const reviewer = m.reviewer || (/\b(?:parked|awaiting|waiting).*Chief\b/i.test(String(m.evidence || '')) ? 'chief' : '');
+      return reviewer === 'chief' ? 'Chief reviews and approves this stage.' : reviewer ? `${AGENTS[reviewer] || reviewer} reviews and approves this stage.` : 'The recorded reviewer needs to approve this stage.';
+    }
+    const jobs = m.jobs || [];
+    const job = jobs.find(j => j.status === 'blocked') || jobs.find(j => j.status === 'claimed') || jobs.find(j => j.status === 'open');
+    const raw = m.nextAction || (job || {}).remaining_action || '';
+    // Long/internal logs stay intact in technical details; never rewrite them into invented facts.
+    if (raw && raw.length <= 140 && !/\bJ\d{3,}|\/[\w.-]+\/|sha256|credits?\b/i.test(raw)) return raw;
+    if (stageView(m).tone === 'held') return 'Resolve the recorded blocker before this stage can continue.';
+    return job && job.status === 'open' ? 'Waiting for an agent to start; queue timing is unconfirmed.' : 'Open stage details for the recorded next step.';
+  }
+  function durationText(minutes) {
+    minutes = Math.max(0, Math.round(minutes));
+    const days = Math.floor(minutes/1440), hours = Math.floor(minutes%1440/60), mins = minutes%60;
+    return [days ? `${days}d` : '', hours ? `${hours}h` : '', !days && mins ? `${mins}m` : ''].filter(Boolean).join(' ') || 'under 1m';
+  }
+  function forecastView(v, now) {
+    const p = v.production || {}, e = p.eta || {}, o = uatOutlook(v, now);
+    if (v.lane === 'ready' && v.readyFor === 'Ben') return {value:'Ready now',reason:'Your review can start',confidence:'Ready',credible:false};
+    if (['approved','done'].includes(v.lane) || isLive(v)) return {value:'Handoff complete',reason:'Production countdown ended',confidence:'Complete',credible:false};
+    if (e.state === 'estimated' && o.tone === 'blue') {
+      const age = (now-Date.parse(p.asOf))/MIN;
+      return {value:`~${durationText(e.lowerMinutes-age)}–${durationText(e.upperMinutes-age)}`,reason:'Estimated calendar time to your review',confidence:`${e.confidence === 'medium' ? 'Medium' : e.confidence === 'high' ? 'High' : 'Low'} confidence`,credible:true,minutes:e.upperMinutes-age};
+    }
+    const reasons = (e.reasons || []).join(' ');
+    const reason = /fresh production|range exceeded/.test(o.detail) ? o.detail : /manual Flow/.test(reasons) ? 'Manual production timing is unconfirmed'
+      : /blocked|review timing|dependency|Requested changes/.test(reasons) ? 'A production dependency needs resolving'
+      : /queue|worker/.test(reasons) ? 'Queue start or agent availability is unconfirmed' : 'Insufficient historical timing data';
+    return {value:'Pending',reason,confidence:'Unavailable',credible:false};
+  }
+  function milestoneProgress(v) {
+    const p = progressStats(v);
+    return `<div class="milestone-mini" aria-label="${p.percent}% milestone completion; ${p.done} of 9 complete"><div class="track"><i style="width:${p.percent}%"></i></div><span>${p.percent}% <span class="muted">· ${p.done} of 9 milestones complete</span></span></div>`;
+  }
+  function recordedTime(value) {
+    const at=Date.parse(value || '');
+    return Number.isFinite(at) ? new Date(at).toLocaleString('en-GB',{timeZone:'Europe/London',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}) + ' London' : String(value || '');
+  }
+  function technicalFields(value) {
+    if (value == null || value === '') return '';
+    if (typeof value !== 'object') return `<span>${esc(value)}</span>`;
+    return `<dl class="tech-fields">${Object.entries(value).filter(([,x]) => x != null && x !== '').map(([key,x]) => `<div><dt>${esc(key)}</dt><dd>${technicalFields(x)}</dd></div>`).join('')}</dl>`;
+  }
+  function milestoneCard(v, m, current) {
+    const state = stageView(m), saved = expandedStages.get(v.key), open = saved ? saved.has(m.id) : m.id === current;
+    const jobs = m.jobs || [], source = m.source || {};
+    const times = [['Started',recordedTime(source.startedAt || source.since)],['Completed',recordedTime(source.completedAt)],['Duration',source.durationSeconds ? durationText(source.durationSeconds/60) : '']].filter(([,value])=>value);
+    return `<details class="milestone-card ${state.tone}" data-stage="${esc(m.id)}" data-video="${esc(v.key)}" ${open?'open':''}>
+      <summary aria-label="${esc(m.label)}: ${esc(state.text)}"><span class="stage-icon" aria-hidden="true">${state.icon}</span><span class="stage-copy"><b>${esc(m.label)}</b><small>${esc([state.text,conciseEvidence(m)].filter(Boolean).join(' · '))}</small></span><span class="expand-icon" aria-hidden="true">⌄</span></summary>
+      <div class="stage-expanded"><dl class="stage-facts"><div><dt>Status</dt><dd>${esc(state.text)}</dd></div><div><dt>Assigned agent</dt><dd>${esc(ownerName(m))}</dd></div>${times.map(([label,value])=>`<div><dt>${label}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
+      ${!completeStage(m)?`<p class="next-action"><span>Next action</span>${esc(nextAction(m))}</p>`:''}
+      <details class="technical" data-disclosure="${esc(v.key)}-${esc(m.id)}-tech"><summary>View technical details</summary><div class="technical-body">${m.evidence?`<p>${esc(m.evidence)}</p>`:''}${technicalFields(source)}${jobs.map(j=>technicalFields(j)).join('')}${m.sampleCount!=null?`<p>${esc(m.sampleCount)} comparable historical stage samples</p>`:''}</div></details></div></details>`;
+  }
+  function currentStageCard(v) {
+    if (['approved','done'].includes(v.lane) || isLive(v) || forBen([v]).length) return '';
+    const stages = currentProduction(v), m = stages[0];
+    if (!m) return `<section class="current-stage"><p class="eyebrow">Current stage</p><h2>Not confirmed yet</h2><p class="muted">No active stage is recorded. Unknown milestones remain unconfirmed.</p></section>`;
+    const state = stageView(m);
+    return `<section class="current-stage ${state.tone}"><p class="eyebrow">Current stage</p><h2>${esc(m.label)}${m.id==='picture'?' production':''}</h2>${conciseEvidence(m)?`<p>${esc(conciseEvidence(m))}</p>`:''}
+      <p class="stage-status"><span class="status-dot ${state.tone}"></span>${esc(state.text)}</p><p class="next-action"><span>Next action</span>${esc(nextAction(m))}</p><p class="muted">Assigned agent: <strong>${esc(ownerName(m))}</strong></p>
+      ${stages.length>1?`<details class="other-stages" data-disclosure="${esc(v.key)}-other"><summary>${stages.length-1} other active stage${stages.length>2?'s':''}</summary>${stages.slice(1).map(x=>`<a class="other-stage" href="#stage-${esc(x.id)}">${esc(x.label)} · ${esc(stageView(x).text)}</a>`).join('')}</details>`:''}</section>`;
   }
   function productionDetail(v, now) {
-    const o = uatOutlook(v, now), e = ((v.production || {}).eta || {});
-    return section("Production toward UAT", null, `<p class="line">${esc(o.label)}</p><p class="meta">${esc(o.detail)}</p>`
-      + milestoneProgress(v, true) + (e.state === "estimated" && e.criticalPath && e.criticalPath.length ? `<p class="meta">Critical path: ${esc(e.criticalPath.join(" → "))}</p>` : "")
-      + (e.basedOn ? `<p class="meta">${esc(e.basedOn)}</p>` : "")
-      + '<p class="meta">Milestones count completed stages, not film runtime or task steps. Upload and your watch time are outside this UAT estimate.</p>');
+    const p=progressStats(v), f=forecastView(v,now), production=v.production || {}, e=production.eta || {}, current=(currentProduction(v)[0] || {}).id;
+    const fresh = Number.isFinite(Date.parse(production.asOf)) && now-Date.parse(production.asOf)>=0 && now-Date.parse(production.asOf)<=QUIET_MIN*MIN;
+    const partial = fresh && !['approved','done','ready'].includes(v.lane) ? (production.partialEstimates || []).filter(x=>x.upperMinutes>(now-Date.parse(production.asOf))/MIN) : [];
+    return `<section class="progress-hero" aria-label="Production progress and UAT forecast"><div class="progress-head"><p class="eyebrow">Production progress</p><strong class="progress-number">${p.percent}<span>%</span></strong></div><p class="milestone-caption">${p.done} of 9 milestones complete</p><div class="hero-track" role="progressbar" aria-label="Milestone completion, not production time" aria-valuemin="0" aria-valuemax="9" aria-valuenow="${p.done}"><i style="width:${p.percent}%"></i></div>
+      <p class="muted progress-note">Milestone completion · not time elapsed${p.unknown?` · ${p.unknown} unconfirmed`:''}</p><div class="forecast-block"><div><span class="eyebrow">Estimated UAT</span><b>${esc(f.value)}</b></div><span class="confidence">${esc(f.confidence)}</span></div><p class="muted">${esc(f.reason)}</p>
+      ${partial.length?`<p class="partial-estimate">Stage estimate only: ${esc(partial[0].label)} · ~${durationText(Math.max(0,partial[0].lowerMinutes-(now-Date.parse(production.asOf))/MIN))}–${durationText(partial[0].upperMinutes-(now-Date.parse(production.asOf))/MIN)} remaining · low confidence. Full UAT estimate unavailable.</p>`:''}
+      <details class="technical forecast-diagnostics" data-disclosure="${esc(v.key)}-forecast"><summary>How this estimate works</summary><div class="technical-body"><p>${esc(e.basedOn || 'Timing needs comparable completed stages and confirmed dependencies. Task completion does not imply video readiness.')}</p>${e.reasons && e.reasons.length?`<ul>${e.reasons.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`:''}${e.criticalPath && e.criticalPath.length?`<p>Critical path: ${esc(e.criticalPath.join(' → '))}</p>`:''}<p>Updated: ${esc(production.asOf || 'Not published')}. Publication dates and your watch time are separate from UAT readiness. Confidence is qualitative, not a calibrated probability.</p></div></details></section>
+      ${currentStageCard(v)}<section class="milestone-timeline"><h2>Production milestones <span class="n">${p.done}/9</span></h2><div class="stage-strip" aria-hidden="true">${p.rows.map(m=>`<i class="${stageView(m).tone}"></i>`).join('')}</div>${p.rows.map(m=>`<div id="stage-${m.id}">${milestoneCard(v,m,current)}</div>`).join('')}</section>`;
+  }
+  function videoUpdated(v) {
+    const dates=[v.updatedAt,(v.check||{}).at,...milestones(v).flatMap(m=>{const s=m.source||{};return [s.updatedAt,s.completedAt,s.startedAt,s.since,...(m.jobs||[]).map(j=>(j.progress||{}).at)]})];
+    // production.asOf is the publisher clock, not a meaningful production update.
+    return Math.max(0,...dates.map(d=>Date.parse(d||'')).filter(Number.isFinite));
+  }
+  const blockedVideo=v=>currentProduction(v).some(m=>stageView(m).tone==='held') || (v.jobs||[]).some(j=>j.status==='blocked');
+  function sortVideos(vs, mode, now) {
+    return vs.slice().sort((a,b)=>{
+      if(mode==='updated') return videoUpdated(b)-videoUpdated(a);
+      if(mode==='blocked') return Number(blockedVideo(b))-Number(blockedVideo(a));
+      if(mode==='stage') {const ai=MILESTONES.findIndex(([id])=>id===(currentProduction(a)[0]||{}).id),bi=MILESTONES.findIndex(([id])=>id===(currentProduction(b)[0]||{}).id);return (ai<0?99:ai)-(bi<0?99:bi);}
+      const af=forecastView(a,now),bf=forecastView(b,now);
+      return Number(bf.credible)-Number(af.credible) || (af.credible && bf.credible ? af.minutes-bf.minutes : 0);
+    });
+  }
+  function videoProductionRow(v, now) {
+    const current=currentProduction(v)[0], f=forecastView(v,now);
+    return row(v, `<span class="meta current-label">${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Blocked / approval pending</span>':''}</span>${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`);
   }
   function productionOutlook(vs, now) {
-    const candidates = vs.filter(v => !isLive(v) && ["progress", "changes", "ready", "approved"].includes(v.lane));
-    const priority = v => v.lane === "ready" ? 0 : (v.jobs || []).some(j => j.status === "claimed") ? 1 : 2;
-    const sorted = candidates.slice().sort((a,b) => priority(a)-priority(b));
-    const cards = sorted.slice(0,4).map(v => {
-      const o = uatOutlook(v, now);
-      return `<a class="row" href="${detailLink(v)}"><div class="body"><b>${esc(v.title || v.number || "Untitled video")}</b>
-        <span class="meta">${esc(ch(v))} · ${esc(kind(v))} · ${esc(stage(v))}</span>
-        <span class="tag ${o.tone}">${esc(o.label)}</span><span class="meta">${esc(clip(o.detail, 180))}</span>
-        ${milestoneProgress(v, false)}</div><span class="chev">›</span></a>`;
-    }).join("");
-    return section("Next videos toward UAT", candidates.length,
-      cards || empty("No videos currently moving toward UAT."),
-      ' <a class="more" href="#videos">All videos</a>')
-      + '<p class="meta">ETAs are shown only when supported by tracked work. Task progress is not total film progress.</p>';
+    const candidates=vs.filter(v=>!isLive(v) && (['progress','changes'].includes(v.lane) || v.lane==='ready' && v.readyFor!=='Ben'));
+    const sorted=sortVideos(candidates,'uat',now);
+    return section('Next ready for UAT',candidates.length,sorted.slice(0,4).map(v=>{
+      const m=currentProduction(v)[0];
+      return `<div class="production-card">${videoProductionRow(v,now)}${m && stageView(m).tone==='held'?`<p class="blocking-action">${esc(nextAction(m))}</p>`:''}</div>`;
+    }).join('') || empty('No videos currently moving toward UAT.'),' <a class="more" href="#videos">All videos</a>')
+      + '<p class="meta ranking-note">Only supported estimates determine readiness order. Pending estimates retain their recorded order.</p>';
   }
 
   function overview(b, now) {
@@ -289,12 +399,14 @@
     const studio = studioJobs(b);
     const cards = byJob.map(([v, ...rest]) => row(v, doing(v) + alsoOn(rest))).concat(studio.map(jobCard));
     const working = cards.slice(0, 4).join("") || empty("No agent is working this minute.");
-    const ready = s.ready.map(v => row(v, `<span class="meta">${esc(v.line || "")}</span>`, uatLink(v))).join("") || empty("Nothing waiting for you.");
+    const ready = s.ready.map(v => row(v, `<span class="meta">Finished cut · Watch and review</span>`, uatLink(v))).join("") || empty("Nothing waiting for you.");
     const pipe = `${jobTiles(s.jobs)}<p class="meta">Jobs are the agents' tasks across both channels. ${s.jobs.doneToday} finished today.</p>`;
     return `<header class="top"><div><h1>Studio</h1><p class="meta">Orbit With Ben · History of Science</p></div>
-      <span class="pill ${s.health[0]}"><i></i>${esc(s.health[1])}</span></header>${miniLine(s, b)}${tiles}
+      <span class="pill ${s.health[0]}"><i></i>${esc(s.health[1])}</span></header>
       ${section("Ready for your review", s.ready.length, ready)}
       ${productionOutlook(((b.tracker || {}).videos) || [], now)}
+      ${section("Production pipeline", null, `<div class="pipeline-grid"><a href="#videos"><b>${s.progress.filter(v=>!blockedVideo(v)&&isWorking(v)).length}</b><span>Working</span></a><a href="#videos"><b>${s.progress.filter(v=>!blockedVideo(v)&&!isWorking(v)).length}</b><span>Waiting</span></a><a href="#videos"><b>${s.progress.filter(blockedVideo).length}</b><span>Blocked</span></a></div>`)}
+      ${section("Studio health", null, miniLine(s,b)+tiles)}
       ${section("Agents working now", cards.length, working, ' <a class="more" href="#videos">See all</a>')}
       ${section("Agent jobs", null, pipe, ' <a class="more" href="#agents">Agents</a>')}`;
   }
@@ -314,6 +426,7 @@
     const vs = (((b.tracker || {}).videos) || []).filter(v =>
       (filterCh === "all" || v.channel === filterCh) && (filterType === "all" || v.type === filterType));
     const g = videoGroups(vs);
+    for (const key of Object.keys(g)) g[key] = sortVideos(g[key], videoSort, Date.now());
     // Ben, 29 Oct: "Home page saying working on 1, the video page says 0": studio jobs count here too.
     const studio = filterType === "all" ? studioJobs(b).filter(j => filterCh === "all" || (j.repo || "owb") === filterCh.toLowerCase()) : [];
     g.working.extra = studio.length;
@@ -321,14 +434,15 @@
       .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length + (g[id].extra || 0)}</small>`}</button>`).join("");
     const chips = [["ch", "all", "Both"], ["ch", "OWB", "Orbit"], ["ch", "HOS", "HOS"], ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
-    const list = (items, limit) => items.slice(0, limit).map(v => row(v, isWorking(v) ? doing(v) : "")).join("")
+    const list = (items, limit) => items.slice(0, limit).map(v => videoProductionRow(v, Date.now())).join("")
       + (items.length > limit ? `<p class="meta">${items.length - limit} more: pick Orbit or HOS, Longs or Shorts to narrow the list.</p>` : "");
     // A batch job on several videos: the first card carries the job, the others say whose job they share.
-    const jobList = items => jobGroups(items).map(([first, ...rest]) => row(first, doing(first) + alsoOn(rest))
-      + rest.map(v => row(v, `<span class="meta">In the same job as ${esc(first.number)}${first.type === "short" ? " Short" : ""} above</span>`)).join("")).join("");
+    const jobList = items => jobGroups(items).map(([first, ...rest]) => videoProductionRow(first, Date.now())
+      + rest.map(v => videoProductionRow(v, Date.now())).join('')).join('');
     const show = id => seg === "all" || seg === id;
     return `<header class="top"><h1>Videos</h1></header>
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
+      <label class="sort-control">Sort videos<select id="video-sort"><option value="uat" ${videoSort==='uat'?'selected':''}>Nearest credible UAT</option><option value="updated" ${videoSort==='updated'?'selected':''}>Recently updated</option><option value="stage" ${videoSort==='stage'?'selected':''}>Production stage</option><option value="blocked" ${videoSort==='blocked'?'selected':''}>Blocked first</option></select></label>
       ${show("working") ? section("An agent is on it now", g.working.length + studio.length, (jobList(g.working) + studio.map(jobCard).join("")) || empty("No agent is working this minute.")) : ""}
       ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
       ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
@@ -339,7 +453,7 @@
   const JOB_WORD = { claimed: ["green", "Working"], open: ["", "Queued"], blocked: ["amber", "On hold"], done: ["", "Done"] };
   function detail(b, key) {
     const v = ((((b.tracker || {}).videos) || []).find(x => x.key === key));
-    const back = `<header class="top"><a class="more back" href="javascript:history.back()">‹ Back</a></header>`;
+    const back = `<header class="top"><a class="more back" href="#videos">‹ Back to Videos</a></header>`;
     if (!v) return back + empty("That video isn't on the board any more.");
     const yt = v.youtube || {}, w = v.watch || {};
     const links = [
@@ -354,14 +468,12 @@
         ${j.status === "claimed" ? (j.progress && j.progress.of > 0 ? bar(j.progress, etaText(etaOf(j, Date.now()))) : `<span class="meta">${esc(etaText(etaOf(j, Date.now())))}</span>`) : ""}</div>`; }).join("");
     const notes = (v.notes || []).map(n => `<li class="${n.done ? "done" : ""}">${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("");
     const flags = (v.flags || []).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
-    return `${back}<div class="hero">${thumb(v)}</div>
-      <h1 class="uat-title">${esc(v.title)}</h1>
-      <p class="meta">${ch(v)} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
-      ${flags ? `<div class="flags">${flags}</div>` : ""}
-      ${v.line ? `<p class="line">${esc(v.line)}</p>` : ""}
+    return `${back}<div class="video-heading">${thumb(v)}<div><h1 class="uat-title">${esc(v.title)}</h1>
+      <p class="meta">${v.channel==='HOS'?'History of Science':'Orbit With Ben'} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
+      </div></div>
       ${links.length ? `<div class="btns">${links.join("")}</div>` : ""}
       ${productionDetail(v, Date.now())}
-      ${section("Agent work on this video", jobs.length, jobRows || empty("No agent jobs on this video right now."))}
+      <details class="technical video-technical" data-disclosure="${esc(v.key)}-jobs"><summary>Agent work &amp; technical details <span>${jobs.length} jobs</span></summary><div class="technical-body">${v.line?`<p>${esc(v.line)}</p>`:''}${flags}${jobRows}${jobs.map(j=>technicalFields(j)).join('')}</div></details>
       ${notes ? section("Your notes", null, `<ul class="notes">${notes}</ul>`) : ""}`;
   }
 
@@ -532,6 +644,10 @@
   const videoKey = () => { const m = (location.hash || "").match(/^#v=(.+)$/); return m ? decodeURIComponent(m[1]) : ""; };
 
   function render() {
+    document.querySelectorAll('details[data-disclosure]').forEach(el => disclosureState.set(el.dataset.disclosure,el.open));
+    const focused = document.activeElement;
+    const focusStage = focused && focused.tagName === 'SUMMARY' && focused.parentElement.dataset.stage;
+    const focusId = focused && focused.id;
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
@@ -557,6 +673,18 @@
       notes.value = (notes.value && !notes.value.endsWith("\n") ? notes.value + "\n" : notes.value) + stamp(vid.currentTime) + " ";
       notes.focus();
     });
+    document.querySelectorAll('details[data-disclosure]').forEach(el => {
+      if (disclosureState.has(el.dataset.disclosure)) el.open=disclosureState.get(el.dataset.disclosure);
+    });
+    if (focusId) document.getElementById(focusId)?.focus({preventScroll:true});
+    else if (focusStage) document.querySelector(`details[data-stage="${focusStage}"]>summary`)?.focus({preventScroll:true});
+    const sortControl = document.getElementById('video-sort');
+    if (sortControl) sortControl.onchange = () => { videoSort=sortControl.value; render(); };
+    document.querySelectorAll('details[data-stage]').forEach(el => el.addEventListener('toggle', () => {
+      const key=el.dataset.video;
+      if (!expandedStages.has(key)) expandedStages.set(key,new Set([...document.querySelectorAll('details[data-stage][open]')].map(x=>x.dataset.stage)));
+      const saved=expandedStages.get(key); if(el.open) saved.add(el.dataset.stage); else saved.delete(el.dataset.stage);
+    }));
     document.querySelectorAll("[data-seg]").forEach(btn => btn.onclick = () => { seg = btn.dataset.seg; render(); });
     document.querySelectorAll(".chips button").forEach(btn => btn.onclick = () => {
       if (btn.dataset.f === "ch") filterCh = btn.dataset.v;

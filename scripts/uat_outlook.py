@@ -7,6 +7,7 @@ unknown queue waits and manual gates suppress the calendar estimate.
 from datetime import datetime, timezone
 from math import ceil
 from statistics import median
+import re
 
 
 PLAN = {
@@ -94,15 +95,77 @@ def history_samples(repo, relative, channel):
         return {}
 
 
-def forecast(video, stages, jobs, samples, now):
+def milestone_rows(stages, jobs):
+    """Presentation metadata only. Keep the source state and notes unchanged."""
     rows = []
+    seen = {}
+    for job in jobs:
+        seen.setdefault(job.get('id'), job)
     for key, deps in PLAN.items():
         raw = stages.get(key) or {}
+        related = [j for j in seen.values() if j.get('stage') == key]
+        live = [j for j in related if j.get('status') in ('claimed', 'blocked', 'open')]
+        live.sort(key=lambda j: {'blocked': 0, 'claimed': 1, 'open': 2}[j['status']])
         state = raw.get('state') or raw.get('status') or 'unknown'
-        rows.append(dict(id=key, label=LABELS[key], state=state,
-                         evidence=raw.get('ref') or raw.get('note') or raw.get('proof') or '',
-                         dependsOn=list(deps)))
-    result = dict(asOf=now.isoformat(), milestones=rows, completed=sum(r['state'] in DONE for r in rows), total=len(rows),
+        approval = raw.get('approval') or {}
+        approval_pending = (state == 'review' or (isinstance(approval, dict) and approval.get('status') in ('pending', 'requested'))
+            or any(j.get('status') == 'blocked' and ((j.get('hold') or {}).get('type') in ('approval', 'chief')
+                or re.search(r'(?:parked|awaiting|waiting) for (?:the )?Chief.*(?:PASS|approval)|Chief.*(?:PASS|approval).*pending',
+                             str((j.get('hold') or {}).get('condition') or j.get('result') or ''), re.I)) for j in live))
+        display = 'review' if approval_pending else 'blocked' if state not in DONE and any(j.get('status') == 'blocked' for j in live) else state
+        evidence = raw.get('note') or raw.get('proof') or raw.get('ref') or ''
+        texts = [str(evidence)] + [str(j.get('result') or '') for j in related]
+        note = ' '.join(texts)
+        summary = ''
+        shots = re.search(r'\b(\d+)\s*/\s*(\d+)\s+Flow\b', note, re.I)
+        if shots and key == 'picture' and re.search(r'minted|generated', note, re.I):
+            summary = f'{shots[1]}/{shots[2]} Flow shots generated'
+        duration = re.search(r'\b(\d+(?:\.\d+)?)\s*s\b', str(evidence)) if key == 'vo' else None
+        if duration:
+            seconds = round(float(duration[1]))
+            summary = f'{seconds//60}m {seconds%60:02d}s recorded voice'
+        version = raw.get('version') or next(iter(re.findall(r'\bv\d+[a-z]?\b', str(evidence), re.I)), '')
+        reviewer = raw.get('reviewer') or ((approval.get('by') or approval.get('owner')) if isinstance(approval, dict) else '') or ''
+        if not reviewer and approval_pending:
+            explicit_chief_hold = any(j.get('status') == 'blocked' and re.search(r'Chief', str((j.get('hold') or {}).get('condition') or ''), re.I) for j in live)
+            if explicit_chief_hold or re.search(r'(?:parked|awaiting|waiting).*Chief', str(evidence), re.I):
+                reviewer = 'chief'
+        row = dict(id=key, label=LABELS[key], state=state, displayState=display,
+                   awaitingApproval=approval_pending, dependsOn=list(deps), evidence=evidence,
+                   summary=summary, reviewer=reviewer,
+                   owner=raw.get('owner') or raw.get('by') or next((j.get('by') for j in live if j.get('by')), ''),
+                   version=version, jobs=[{k: j.get(k) for k in ('id', 'status', 'by', 'title', 'remaining_action', 'hold', 'result', 'progress', 'claimedAt')} for j in related],
+                   source={k: raw[k] for k in ('note', 'proof', 'ref', 'version', 'score', 'durationSeconds', 'startedAt', 'completedAt', 'since', 'updatedAt', 'approval', 'progress') if k in raw})
+        rows.append(row)
+    return rows
+
+
+def select_current(rows, critical_path=()):
+    """Active workflow evidence first; never choose the first incomplete stage."""
+    by_id = {r['id']: r for r in rows}
+    def descendants(key):
+        return sum(key in dependency_chain(other['id'], by_id) for other in rows if other['displayState'] not in DONE)
+    active = [r for r in rows if r['displayState'] not in DONE and (r['displayState'] in ('doing', 'in_progress', 'blocked', 'review')
+              or any(j['status'] in ('claimed', 'blocked') for j in r['jobs']))]
+    active.sort(key=lambda r: (0 if r['displayState'] in ('blocked', 'review') else 1,
+                               0 if r['id'] in critical_path else 1, -descendants(r['id']), list(PLAN).index(r['id'])))
+    if not active:
+        # Queued work is a candidate only when all its milestone prerequisites are recorded complete.
+        active = [r for r in rows if any(j['status'] == 'open' for j in r['jobs'])
+                  and all(by_id[d]['displayState'] in DONE for d in r['dependsOn'])]
+    return [r['id'] for r in active]
+
+
+def dependency_chain(key, rows):
+    direct = rows[key]['dependsOn']
+    return set(direct).union(*(dependency_chain(k, rows) for k in direct)) if direct else set()
+
+
+def forecast(video, stages, jobs, samples, now):
+    rows = milestone_rows(stages, jobs)
+    result = dict(asOf=now.isoformat(), milestones=rows,
+                  completed=sum(r['displayState'] in DONE for r in rows), total=len(rows),
+                  activeStages=select_current(rows), partialEstimates=[],
                   eta=dict(state='unavailable', confidence='unavailable', reasons=[], criticalPath=[]))
     eta = result['eta']
     if video.get('lane') == 'ready' and video.get('readyFor') == 'Ben':
@@ -132,16 +195,17 @@ def forecast(video, stages, jobs, samples, now):
     for j in relevant:
         if j.get('status') == 'claimed' and j.get('by'):
             agents.setdefault(j['by'], set()).add(j.get('stage'))
-    if any(len(stages) > 1 for stages in agents.values()):
+    shared_capacity = any(len(stages) > 1 for stages in agents.values())
+    if shared_capacity:
         reasons.append('Shared worker capacity: parallel stage timing is not confirmed')
-    finishes, paths, counts = {}, {}, []
+    finishes, paths, counts, variability = {}, {}, [], []
     for row in rows:
         key = row['id']
-        if row['state'] in DONE:
+        if row['displayState'] in DONE:
             finishes[key], paths[key] = (0, 0), []
             continue
-        if row['state'] in ('blocked', 'review', 'unknown'):
-            reasons.append(f"{row['label']}: {row['state']} timing")
+        if row['displayState'] in ('blocked', 'review', 'unknown'):
+            reasons.append(f"{row['label']}: {row['displayState']} timing")
         observations = [v for v, film in samples.get((video['channel'], video['type'], key), []) if film != video['key']]
         row['sampleCount'] = len(observations)
         if len(observations) < 3:
@@ -151,8 +215,10 @@ def forecast(video, stages, jobs, samples, now):
         values = sorted(observations)
         low, high = median(values), values[min(len(values)-1, ceil(.8 * len(values))-1)]
         counts.append(len(values))
+        variability.append(high / low if low else float('inf'))
         row['typicalMinutes'], row['upperMinutes'] = ceil(low), ceil(high)
-        if row['state'] in ('doing', 'in_progress'):
+        before_reasons = len(reasons)
+        if row['displayState'] in ('doing', 'in_progress'):
             if not any(j.get('stage') == key and j.get('status') == 'claimed' for j in relevant):
                 reasons.append(f"{row['label']}: no worker currently running this stage")
             start = date((stages.get(key) or {}).get('since'))
@@ -166,6 +232,13 @@ def forecast(video, stages, jobs, samples, now):
                 low, high = max(0, low-elapsed), max(0, high-elapsed)
         elif not any(j.get('stage') == key for j in relevant):
             reasons.append(f"{row['label']}: remaining work not queued")
+        stage_jobs = [j for j in relevant if j.get('stage') == key]
+        if (row['displayState'] in ('doing', 'in_progress') and len(reasons) == before_reasons
+                and not shared_capacity and stage_jobs and all(j.get('status') == 'claimed' and not j.get('after')
+                    and not j.get('manual') and j.get('needs') not in ('flow', 'manual')
+                    and 'flow' not in str(j.get('title', '')).lower() for j in stage_jobs)):
+            result['partialEstimates'].append(dict(stage=key, label=row['label'], lowerMinutes=ceil(low),
+                upperMinutes=ceil(high), confidence='low', sampleCount=len(values)))
         deps = row['dependsOn']
         low_parent = max(deps, key=lambda d: finishes[d][0]) if deps else None
         high_parent = max(deps, key=lambda d: finishes[d][1]) if deps else None
@@ -174,12 +247,13 @@ def forecast(video, stages, jobs, samples, now):
         paths[key] = (paths[high_parent] if high_parent else []) + [key]
     eta['reasons'] = list(dict.fromkeys(reasons))
     eta['criticalPath'] = paths.get('qa', [])
+    result['activeStages'] = select_current(rows, eta['criticalPath'])
     if not reasons and not paths.get('qa'):
         reasons.append('Milestones complete; UAT handoff not confirmed')
         eta['reasons'] = reasons
     if not reasons:
         low, high = finishes['qa']
-        eta.update(state='estimated', confidence='medium' if min(counts or [0]) >= 10 else 'low',
+        eta.update(state='estimated', confidence='medium' if min(counts or [0]) >= 10 and max(variability or [99]) <= 2 else 'low',
                    lowerMinutes=ceil(low), upperMinutes=ceil(high),
                    basedOn='Recorded stage transitions in Git; median–80th percentile; parallel branches use the longest path')
     return result
@@ -194,7 +268,10 @@ def attach(videos, hos, owb, alljobs, now):
     for status in (root / '02_Video-Projects').glob('*/status.json'):
         for bucket, values in history_samples(root, str(status.relative_to(root)), 'OWB').items():
             samples.setdefault(bucket, []).extend(values)
-    hos_repo = root.parent / 'history-of-science'
+    import os
+    candidates = [Path(os.environ.get('HOS_REPO', ''))] if os.environ.get('HOS_REPO') else []
+    candidates += [root.parent / name for name in ('hos', 'history-of-science', 'History Of Science')]
+    hos_repo = next((p for p in candidates if (p / '00_Brand/Channel-Setup/PIPELINE.json').exists()), root.parent / 'hos')
     samples.update(history_samples(hos_repo, '00_Brand/Channel-Setup/PIPELINE.json', 'HOS'))
     for video in videos:
         # Parent-film stages cannot certify a Short or a synthetic approval card.
@@ -203,4 +280,13 @@ def attach(videos, hos, owb, alljobs, now):
         jobs = [j for j in alljobs if j.get('id') in ids]
         dependencies = {j.get('after') for j in jobs}
         jobs += [j for j in alljobs if j.get('id') in dependencies and j not in jobs]
-        video['production'] = forecast(video, stages, jobs, samples, now)
+        production = forecast(video, stages, jobs, samples, now)
+        owners = {j.get('by') for j in jobs if j.get('status') == 'claimed' and j.get('by')}
+        competing = [j for j in alljobs if j.get('id') not in ids and j.get('status') == 'claimed' and j.get('by') in owners]
+        if competing and production['eta']['state'] not in ('ready', 'complete'):
+            production['eta'].update(state='unavailable', confidence='unavailable')
+            production['eta']['reasons'].append('Assigned agents have other claimed work; calendar capacity is unconfirmed')
+            production['eta'].pop('lowerMinutes', None)
+            production['eta'].pop('upperMinutes', None)
+            production['partialEstimates'] = []
+        video['production'] = production

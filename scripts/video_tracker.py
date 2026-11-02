@@ -1182,7 +1182,7 @@ def _card(
         "watch": watch,
         "jobs": [{"id": j.get("id"), "status": j.get("status"), "title": (j.get("title") or "")[:120],
                   "by": j.get("by") or "", "kind": j.get("kind") or "",
-                  **{k:j.get(k) for k in ("remaining_action","hold","after","result","eta","progress")} } for j in jobs],
+                  **{k:j.get(k) for k in ("remaining_action","hold","after","result","eta","progress","stage","claimedAt")} } for j in jobs],
         "check": ({"verdict": check.get("verdict"), "version": check.get("version"), "at": check.get("at"),
                    "handled": bool(check.get("handled"))} if check else None),
         "shortId": short_id,
