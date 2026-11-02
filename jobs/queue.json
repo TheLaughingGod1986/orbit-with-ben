@@ -144513,13 +144513,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T14:38Z",
-      "eta": "2026-11-02T16:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T14:37Z",
-      "result": "",
+      "result": "Verified original approvals and evidence 3e26b379b; fresh bed and three audition hashes match. J1100 remains blocked: cleared instrumental S2 bed and actual local listening unproven. Preserved 2/3, OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback and recorded retry 2026-11-02T15:37:31Z. No spend, audio egress or publishing.",
       "history": [
         {
           "at": "2026-11-02T14:37Z",
@@ -144550,6 +144550,11 @@
           "at": "2026-11-02T14:40Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J1100 input hold and recorded 15:37:31Z retry; original 2/3, approvals and deadlines preserved."
+        },
+        {
+          "at": "2026-11-02T14:40Z",
+          "by": "codex",
+          "what": "done: Verified original approvals and evidence 3e26b379b; fresh bed and three audition hashes match. J1100 remains blocked: cleared instrumental S2 bed and actual local listening unproven. Preserved 2/3, OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback and recorded retry 2026-11-02T15:37:31Z. No spend, audio egress or publishing."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits cleared bed and local listening",
@@ -144567,7 +144572,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     }
   ],
   "focus": [],
