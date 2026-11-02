@@ -139105,19 +139105,24 @@
           "at": "2026-11-02T02:05Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J1100 brief, approval history, and ran NAS offload dry run (16,543 MB free, nothing eligible)"
+        },
+        {
+          "at": "2026-11-02T02:06Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 3e26b379b and all 5 SHA256 hashes (2 bed copies 13adc031... + 3 audition wavs); listening remains NOT PERFORMED and no source-audio API egress rule stands"
         }
       ],
-      "remaining_action": "Check J1100 bed evidence and audition files for any new cleared S2 bed or local listening proof",
+      "remaining_action": "Record unmet condition on J1100 with jobs.py wait and complete J1573",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T02:05Z",
+        "at": "2026-11-02T02:06Z",
         "by": "gemini",
-        "note": "Read J1100 brief, approval history, and ran NAS offload dry run (16,543 MB free, nothing eligible)"
+        "note": "Verified 3e26b379b and all 5 SHA256 hashes (2 bed copies 13adc031... + 3 audition wavs); listening remains NOT PERFORMED"
       },
       "taskKeys": [
         "OWB:027",
