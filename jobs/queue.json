@@ -142549,13 +142549,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-02T10:21Z",
-      "eta": "2026-11-02T12:21Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T10:16Z",
-      "result": "",
+      "result": "J1614 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1614 (next check 2026-11-02T11:16:15Z); all existing approvals and holds preserved.",
       "history": [
         {
           "at": "2026-11-02T10:16Z",
@@ -142586,6 +142586,11 @@
           "at": "2026-11-02T10:25Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Unmet condition recorded on J1356; next check retained at 2026-11-02T11:16:15Z; all approvals and holds preserved"
+        },
+        {
+          "at": "2026-11-02T10:25Z",
+          "by": "gemini",
+          "what": "done: J1614 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1614 (next check 2026-11-02T11:16:15Z); all existing approvals and holds preserved."
         }
       ],
       "remaining_action": "Verification complete; J1356 remains blocked pending corrected delivery",
