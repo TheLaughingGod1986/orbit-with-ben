@@ -142152,19 +142152,24 @@
           "at": "2026-11-02T09:24Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Recorded J0985 wait condition via wait --recheck J1609 (check-at 2026-11-02T15:25:00Z)"
+        },
+        {
+          "at": "2026-11-02T09:24Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: All verification steps complete; closing J1609"
         }
       ],
-      "remaining_action": "Complete J1609 verification task and post report on OWB thread",
+      "remaining_action": "Close J1609 and post report",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-02T10:15:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-02T09:24Z",
         "by": "gemini",
-        "note": "Recorded J0985 wait condition via wait --recheck J1609 (check-at 2026-11-02T15:25:00Z)"
+        "note": "All verification steps complete; closing J1609"
       },
       "taskKeys": [
         "OWB:021",
