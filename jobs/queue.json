@@ -144794,19 +144794,24 @@
           "at": "2026-11-02T15:39Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR380 OPEN unchanged d0b04b5e0, no comments/reviews; fresh hashes match all three masters and Crew-2 cache."
+        },
+        {
+          "at": "2026-11-02T15:40Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Recorded unmet input via wait --recheck J1641; retained recorded 16:24:55 UTC retry and all existing holds."
         }
       ],
-      "remaining_action": "Record unmet ISS input condition and retain holds",
+      "remaining_action": "Verify saved hold and report outcome",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T16:24:55+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T15:39Z",
+        "at": "2026-11-02T15:40Z",
         "by": "codex",
-        "note": "PR380 OPEN unchanged d0b04b5e0, no comments/reviews; fresh hashes match all three masters and Crew-2 cache."
+        "note": "Recorded unmet input via wait --recheck J1641; retained recorded 16:24:55 UTC retry and all existing holds."
       },
       "taskKeys": [
         "OWB:030"
