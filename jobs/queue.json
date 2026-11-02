@@ -138697,19 +138697,24 @@
           "at": "2026-11-02T01:11Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1569; inspecting J1100 waiting condition and evidence"
+        },
+        {
+          "at": "2026-11-02T01:11Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100 brief, approval history, and NAS offload dry run (16,578 MB free, nothing eligible)"
         }
       ],
-      "remaining_action": "Read J1100, J1563, and local evidence for cleared instrumental S2 bed and local listening",
+      "remaining_action": "Verify evidence 3e26b379b, SHA256 hashes, and whether cleared S2 bed and local listening are satisfied",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-02T01:11Z",
         "by": "gemini",
-        "note": "Claimed J1569; inspecting J1100 waiting condition and evidence"
+        "note": "Read J1100 brief, approval history, and NAS offload dry run (16,578 MB free, nothing eligible)"
       },
       "taskKeys": [
         "OWB:027",
