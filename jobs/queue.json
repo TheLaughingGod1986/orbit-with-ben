@@ -144799,19 +144799,24 @@
           "at": "2026-11-02T15:40Z",
           "by": "codex",
           "what": "step 2 of 3 done: Recorded unmet input via wait --recheck J1641; retained recorded 16:24:55 UTC retry and all existing holds."
+        },
+        {
+          "at": "2026-11-02T15:40Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirms blocked input, last_recheck J1641, checked_by codex, retry 16:24:55 UTC. All holds preserved."
         }
       ],
-      "remaining_action": "Verify saved hold and report outcome",
+      "remaining_action": "Verification complete; J1471 awaits approved ISS input",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T16:24:55+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-02T15:40Z",
         "by": "codex",
-        "note": "Recorded unmet input via wait --recheck J1641; retained recorded 16:24:55 UTC retry and all existing holds."
+        "note": "Readback confirms blocked input, last_recheck J1641, checked_by codex, retry 16:24:55 UTC. All holds preserved."
       },
       "taskKeys": [
         "OWB:030"
