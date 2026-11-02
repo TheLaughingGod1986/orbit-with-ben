@@ -40,11 +40,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1678 | any | claimed | codex | 2026-11-03T00:46Z | chief · Chief: verify condition for J1356 |  |
 | J1679 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1678 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports. Saved opening FAILs remain (AR1 6.00s; AR2 0.25; AR3 1.41). J1356 remains held; next check 2026-11-02T23:29:45Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes.)
 - J1677 done: Chief: verify condition for J1130 (done)
 - J1676 done: Chief: verify condition for J1100 (Verified original approval history and fresh bed/three audition hashes against 3e26b379b. No newer local listening record; J1100 remains blocked for cleared instrumental S2 bed and actual local opening/middle/end listening. Preserved 2/3, OWB:027/028, pickups, continuous phrase, S6 audio, h43-LOOP and deadlines/v01 fallback. Next check retained: 2026-11-02T23:29:45Z. Required NAS offload found no eligible scratch; about 15.4 GB free. No spend, audio egress, render or publishing.)
 - J1675 done: Chief: verify condition for J0985 (Verified publication approval remains absent through thread 6590234532; local J1642 review preserved. J0985 remains blocked with recheck J1675, recorded retry 2026-11-02T23:29:45Z. Procedural report posted; no publication retry, spend or YouTube changes.)
@@ -54,4 +54,3 @@ Recently finished:
 - J1671 done: Chief: verify condition for J1471 (done)
 - J1670 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN at unchanged d0b04b5e0 without comments/reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports. Saved opening FAILs persist (AR1 6.00s; AR2 0.25; AR3 1.41). J1356 hold retained via J1670; next check 2026-11-02T21:26:39Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment still required. No fresh gates or audition claimed. No spend or publishing changes.)
 - J1669 done: Chief: verify condition for J0936 (Verified original brief/approvals, latest J1664/J1100 and evidence 3e26b379b. J0936 stays blocked on S2 bed clearance/local listening and subsequent repairs, gates and approvals. Three audition hashes match; no newer listening evidence found. PR333 OPEN at 0a7fcb6ad without reviews/comments. Recorded retry 2026-11-02T21:26:39Z retained; progress, accepted sources, completed swaps, deadlines and fallbacks preserved. NAS offload found no eligible scratch. No spend, source-audio egress or publishing changes.)
-- J1668 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
