@@ -143408,19 +143408,24 @@
           "at": "2026-11-02T12:26Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR380 OPEN at d0b04b5e0; no comments/reviews. Read repair evidence and original approvals; no corrected delivery."
+        },
+        {
+          "at": "2026-11-02T12:26Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh hashes match all J1468 finals. Saved FAILs: AR1 cut 6.00s; AR2 motion diff 0.25; AR3 1.41. No new audition or gate rerun claimed."
         }
       ],
-      "remaining_action": "Record verified gate failures and retain J1356 hold",
+      "remaining_action": "Retain hold and report completed readiness verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T13:17:23+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-02T12:26Z",
         "by": "codex",
-        "note": "PR380 OPEN at d0b04b5e0; no comments/reviews. Read repair evidence and original approvals; no corrected delivery."
+        "note": "Fresh hashes match all J1468 finals. Saved FAILs: AR1 cut 6.00s; AR2 motion diff 0.25; AR3 1.41. No new audition or gate"
       },
       "taskKeys": [
         "OWB:030"
