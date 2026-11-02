@@ -145463,19 +145463,24 @@
           "at": "2026-11-02T17:27Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original approvals checked; latest J1647 retains J1100 at 2/3. J1032 PASS and completed J1101-J1103 remain valid records."
+        },
+        {
+          "at": "2026-11-02T17:27Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All three audition hashes match 3e26b379b; no new listening record in evidence locations. PR333 remains OPEN at 0a7fcb6ad with no reviews/comments."
         }
       ],
-      "remaining_action": "Verify local repair evidence before retaining J0936 hold",
+      "remaining_action": "Record unmet repair conditions and retain J0936 hold",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T18:25:36+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-02T17:27Z",
         "by": "codex",
-        "note": "Original approvals checked; latest J1647 retains J1100 at 2/3. J1032 PASS and completed J1101-J1103 remain valid records"
+        "note": "All three audition hashes match 3e26b379b; no new listening record in evidence locations. PR333 remains OPEN at 0a7fcb6a"
       },
       "taskKeys": [
         "OWB:026",
