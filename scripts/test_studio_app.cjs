@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -152,3 +152,19 @@ assert.equal(t.poolMeter('claude', undefined, {}, NOW), null, 'no reading, no ba
 const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'weekly resets Oct 29'}}}}}, NOW);
 assert((ag.match(/<span>Grok<\/span><b class="red">0%/) || []).length === 1, 'Grok shows the shared Cursor weekly pool');
 console.log('studio app OK');
+
+// Milestones and ETA share the same producer evidence on Overview and video detail.
+const tracked = v({production: {asOf: new Date(NOW).toISOString(), milestones: [{label: 'Edit <unsafe>', state: 'done'}, {label: 'Chief QA', state: 'doing'}],
+  eta: {state: 'estimated', confidence: 'low', lowerMinutes: 15, upperMinutes: 25, criticalPath: ['qa'], basedOn: 'Git stage transitions'}}});
+assert(t.milestoneProgress(tracked, true).includes('50%'));
+assert(t.productionDetail(tracked, NOW).includes('15–25 min'));
+assert(t.productionDetail(tracked, NOW).includes('&lt;unsafe&gt;'));
+assert(!t.productionDetail(tracked, NOW).includes('<unsafe>'));
+assert(t.uatOutlook(v({}), NOW).detail.includes('not been published'));
+const blockedProduction = v({production: {milestones: [], eta: {state: 'unavailable', reasons: ['Flow <manual>', 'credit reset']}}});
+assert(t.productionDetail(blockedProduction, NOW).includes('Flow &lt;manual&gt; · credit reset'));
+assert(t.overview({tracker: {videos: [tracked]}}, NOW).includes('production milestones recorded complete'));
+assert(!t.renderTab('review', {tracker: {videos: [tracked, blockedProduction]}}, NOW).includes('15–25 min'));
+
+assert(t.uatOutlook(tracked, NOW + 80 * 6e4).detail.includes('fresh production'));
+assert(t.uatOutlook(tracked, NOW + 26 * 6e4).detail.includes('range exceeded'));

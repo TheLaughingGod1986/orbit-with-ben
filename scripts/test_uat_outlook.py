@@ -1,0 +1,121 @@
+import unittest
+from datetime import datetime, timedelta, timezone
+from uat_outlook import PLAN, attach, forecast, learn_documents
+
+NOW = datetime(2026, 11, 2, 18, tzinfo=timezone.utc)
+
+
+class OutlookTests(unittest.TestCase):
+    def setUp(self):
+        self.video = dict(key='OWB:999', channel='OWB', type='long', lane='progress')
+        self.stages = {key: dict(state='done') for key in PLAN}
+        self.samples = {('OWB', 'long', key): [(10, 'OWB:001'), (20, 'OWB:002'), (30, 'OWB:003')] for key in PLAN}
+
+    def run_forecast(self, jobs=()):
+        return forecast(self.video, self.stages, list(jobs), self.samples, NOW)
+
+    def test_final_stage_estimate_excludes_upload_and_watch(self):
+        self.stages['qa'] = dict(state='doing', since=(NOW-timedelta(minutes=5)).isoformat())
+        result = self.run_forecast([dict(id='qa', stage='qa', status='claimed', by='chief')])
+        self.assertEqual(result['completed'], 8)
+        self.assertEqual(result['eta']['state'], 'estimated')
+        self.assertEqual(result['eta']['lowerMinutes'], 15)
+        self.assertEqual(result['eta']['upperMinutes'], 25)
+        self.assertEqual(result['eta']['confidence'], 'low')
+        self.assertEqual(result['eta']['criticalPath'], ['qa'])
+
+    def test_parallel_branches_take_max_not_sum(self):
+        for stage in ('vo', 'picture', 'edit', 'thumbs', 'qa'):
+            self.stages[stage] = dict(state='doing', since=NOW.isoformat())
+        result = self.run_forecast([dict(id=k, stage=k, status='claimed', by=k) for k in ('vo', 'picture', 'edit', 'thumbs', 'qa')])
+        # Picture -> edit -> QA is three stages, not five serial stages.
+        self.assertEqual(result['eta']['lowerMinutes'], 60)
+        self.assertEqual(result['eta']['upperMinutes'], 90)
+
+    def test_block_queue_manual_dependency_and_unmapped_work(self):
+        for job, message in [
+            (dict(status='blocked', hold={'condition': 'credit reset'}), 'credit reset'),
+            (dict(status='open'), 'queue start'),
+            (dict(status='claimed', title='Flow generation'), 'manual Flow'),
+            (dict(status='claimed', after='Joutside'), 'dependency Joutside'),
+            (dict(status='claimed', stage='admin'), 'not mapped'),
+        ]:
+            job = dict(id='J1', stage='qa', **job) if 'stage' not in job else dict(id='J1', **job)
+            e = self.run_forecast([job])['eta']
+            self.assertEqual(e['state'], 'unavailable')
+            self.assertIn(message, ' '.join(e['reasons']))
+            self.assertNotIn('lowerMinutes', e)
+
+    def test_insufficient_history_overrun_and_missing_start(self):
+        self.stages['qa'] = dict(state='doing')
+        self.assertIn('start not recorded', ' '.join(self.run_forecast()['eta']['reasons']))
+        self.stages['qa']['since'] = (NOW-timedelta(hours=2)).isoformat()
+        self.assertIn('longer than historical', ' '.join(self.run_forecast()['eta']['reasons']))
+        self.samples.clear()
+        self.assertIn('fewer than 3', ' '.join(self.run_forecast()['eta']['reasons']))
+
+    def test_ready_review_changes_and_completed_handoffs(self):
+        self.video.update(lane='ready', readyFor='Ben')
+        self.assertEqual(self.run_forecast()['eta']['state'], 'ready')
+        self.video.update(lane='changes')
+        self.assertEqual(self.run_forecast()['eta']['state'], 'unavailable')
+        self.video.update(lane='approved')
+        self.assertEqual(self.run_forecast()['eta']['state'], 'complete')
+
+    def test_real_transitions_unknown_baseline_and_rework(self):
+        key = 'OWB:001'
+        def snap(minutes, state):
+            return NOW+timedelta(minutes=minutes), {key: {'edit': {'state': state}}}
+        self.assertEqual(learn_documents([snap(0, 'doing'), snap(10, 'done')], 'OWB'), {})
+        samples = learn_documents([snap(0, 'todo'), snap(1, 'doing'), snap(11, 'done'),
+                                   snap(12, 'doing'), snap(17, 'done')], 'OWB')
+        self.assertEqual(samples[('OWB', 'long', 'edit')], [(15, key)])
+
+    def test_complete_milestones_without_handoff_are_not_ready(self):
+        e = self.run_forecast()['eta']
+        self.assertEqual(e['state'], 'unavailable')
+        self.assertIn('handoff not confirmed', ' '.join(e['reasons']))
+
+    def test_history_batch_reads_real_git_boundaries(self):
+        import json
+        import os
+        from pathlib import Path
+        import subprocess
+        import tempfile
+        from uat_outlook import history_samples
+        with tempfile.TemporaryDirectory() as directory:
+            def git(*args, at=None):
+                env = dict(os.environ)
+                if at:
+                    env.update(GIT_AUTHOR_DATE=at, GIT_COMMITTER_DATE=at)
+                return subprocess.run(['git', '-C', directory, *args], env=env, capture_output=True, check=True)
+            git('init')
+            git('config', 'user.name', 'Test')
+            git('config', 'user.email', 'test@example.com')
+            for i, state in enumerate(('todo', 'doing', 'done')):
+                Path(directory, 'status.json').write_text(json.dumps(dict(film='001', stages=dict(edit=dict(state=state)))))
+                git('add', 'status.json')
+                git('commit', '-m', state, at=f'2026-11-01T12:{i*10:02}:00Z')
+            self.assertEqual(history_samples(directory, 'status.json', 'OWB')[('OWB', 'long', 'edit')], [(10, 'OWB:001')])
+            self.assertEqual(history_samples(directory, 'missing.json', 'OWB'), {})
+
+    def test_current_film_cannot_train_its_own_eta(self):
+        self.samples[('OWB', 'long', 'qa')][0] = (10, 'OWB:999')
+        self.stages['qa'] = dict(state='doing', since=NOW.isoformat())
+        self.assertEqual(self.run_forecast()['eta']['state'], 'unavailable')
+
+    def test_short_never_inherits_parent_stage_completion(self):
+        from unittest.mock import patch
+        video = dict(self.video, key='OWB:999:S:x', type='short')
+        with patch('uat_outlook.history_samples', return_value={}):
+            attach([video], {}, [dict(film='999', stages=self.stages)], [], NOW)
+        self.assertEqual(video['production']['completed'], 0)
+        self.assertEqual(video['production']['eta']['state'], 'unavailable')
+
+    def test_same_worker_parallel_capacity_unavailable(self):
+        jobs = [dict(id=k, stage=k, status='claimed', by='cursor') for k in ('picture', 'vo')]
+        self.assertIn('Shared worker', ' '.join(self.run_forecast(jobs)['eta']['reasons']))
+
+
+if __name__ == '__main__':
+    unittest.main()

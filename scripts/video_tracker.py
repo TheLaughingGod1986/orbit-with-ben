@@ -1042,6 +1042,9 @@ def build_videos(
     add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now)
     settle_ready(videos, now)
 
+    from uat_outlook import attach
+    attach(videos, hos, owb, alljobs or jobs, now)
+
     videos.sort(key=lambda v: (LANES.index(v["lane"]), 0 if v.get("ask") else 1, (v.get("ask") or {}).get("due") or "9999",
                                (v.get("approved") or {}).get("airs") or v.get("air") or "9999", v["key"]))
     counts = {lane: sum(1 for v in videos if v["lane"] == lane and not v.get("collapsed")) for lane in LANES}
