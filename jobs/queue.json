@@ -1,5 +1,5 @@
 {
-  "next_id": 1568,
+  "next_id": 1570,
   "jobs": [
     {
       "id": "J0001",
@@ -72762,6 +72762,11 @@
           "at": "2026-11-01T18:37Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-02T00:40:00Z"
+        },
+        {
+          "at": "2026-11-02T00:59Z",
+          "by": "relay",
+          "what": "condition verification queued: J1568"
         }
       ],
       "kind": "vo",
@@ -72769,10 +72774,11 @@
       "hold": {
         "type": "input",
         "condition": "Verified 2026-11-01 18:37Z: HOS main e1da4a0b, PRs through 396, desk through 6562144186 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit reading before future authorised spend. All production and Ben gates remain.",
-        "check_at": "2026-11-02T00:40:00Z",
+        "check_at": "2026-11-02T01:59:39+00:00",
         "last_recheck": "J1537",
         "checked_at": "2026-11-01T18:37:36+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J1568"
       }
     },
     {
@@ -99460,6 +99466,11 @@
           "at": "2026-11-01T23:44Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-02T00:41:41Z"
+        },
+        {
+          "at": "2026-11-02T00:59Z",
+          "by": "relay",
+          "what": "condition verification queued: J1569"
         }
       ],
       "remaining_action": "Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
@@ -99489,10 +99500,11 @@
       "hold": {
         "type": "input",
         "condition": "J1563 verified: cleared instrumental S2 bed and local opening/middle/end listening remain unproven. Evidence 3e26b379b and all three audition hashes match; listening explicitly NOT PERFORMED. Named bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains excluded. Dual ASR is not listening. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-02T00:41:41Z",
+        "check_at": "2026-11-02T01:59:39+00:00",
         "last_recheck": "J1563",
         "checked_at": "2026-11-01T23:44:33+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J1569"
       }
     },
     {
@@ -138591,6 +138603,68 @@
       "taskKeys": [
         "HOS:004"
       ]
+    },
+    {
+      "id": "J1568",
+      "title": "Chief: verify condition for J0862",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0862: Verified 2026-11-01 18:37Z: HOS main e1da4a0b, PRs through 396, desk through 6562144186 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit reading before future authorised spend. All production and Ben gates remain.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0862 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-02T00:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-02T00:59Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
+      "kind": "chief",
+      "recheck_of": "J0862",
+      "due": "2026-11-02T01:59:39+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1569",
+      "title": "Chief: verify condition for J1100",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1100: J1563 verified: cleared instrumental S2 bed and local opening/middle/end listening remain unproven. Evidence 3e26b379b and all three audition hashes match; listening explicitly NOT PERFORMED. Named bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains excluded. Dual ASR is not listening. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-02T00:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-02T00:59Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
+      "kind": "chief",
+      "recheck_of": "J1100",
+      "due": "2026-11-01T20:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
