@@ -99889,6 +99889,11 @@
           "at": "2026-11-02T17:42Z",
           "by": "relay",
           "what": "condition verification queued: J1652"
+        },
+        {
+          "at": "2026-11-02T17:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T18:42:02Z"
         }
       ],
       "remaining_action": "Clear instrumental S2 bed and complete actual local listening before remaining repairs and gates",
@@ -99917,12 +99922,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1647 verified: cleared instrumental S2 bed and actual local opening/middle/end listening remain unproven. Fresh hashes match 3e26b379b; listening NOT PERFORMED; no newer listening record in J1100 evidence locations. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains excluded. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines/v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-02T18:42:02+00:00",
-        "last_recheck": "J1647",
-        "checked_at": "2026-11-02T16:44:31+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1652"
+        "condition": "J1652 verified: cleared instrumental S2 bed and actual local opening/middle/end listening remain unproven. Fresh bed and audition hashes match 3e26b379b; listening NOT PERFORMED and no newer local listening record. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains excluded. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines/v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-02T18:42:02Z",
+        "last_recheck": "J1652",
+        "checked_at": "2026-11-02T17:44:17+00:00",
+        "checked_by": "codex"
       }
     },
     {
