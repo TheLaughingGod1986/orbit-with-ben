@@ -132229,6 +132229,11 @@
           "at": "2026-11-02T17:25Z",
           "by": "relay",
           "what": "condition verification queued: J1651"
+        },
+        {
+          "at": "2026-11-02T17:34Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T18:25:36Z"
         }
       ],
       "remaining_action": "Identify approved moving ISS opening input, then correct and review AR cohort",
@@ -132245,12 +132250,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1646 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 matches all three J1468 masters and Crew-2 cache. Still require approved ISS interval or approach for AR2 0-2.4s plus loop preroll, identifiable station detail, native motion and <=2.35x upscale with locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete metadata, affected gates and full moving/audio review including pace WARN remain owed. Recorded opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-02T18:25:36+00:00",
-        "last_recheck": "J1646",
-        "checked_at": "2026-11-02T16:35:04+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1651"
+        "condition": "J1651 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 matches all three J1468 masters and Crew-2 cache. Still require approved ISS interval or approach for AR2 0-2.4s plus loop preroll, identifiable station detail, native motion and <=2.35x upscale with locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete metadata, affected gates and full moving/audio review including pace WARN remain owed. Recorded opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-02T18:25:36Z",
+        "last_recheck": "J1651",
+        "checked_at": "2026-11-02T17:34:18+00:00",
+        "checked_by": "codex"
       }
     },
     {
