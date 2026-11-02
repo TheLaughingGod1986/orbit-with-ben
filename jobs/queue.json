@@ -144608,13 +144608,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T15:26Z",
-      "eta": "2026-11-02T17:26Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T15:24Z",
-      "result": "",
+      "result": "Verified latest J1638 and evidence 3e26b379b: J1100 remains blocked at 2/3; fresh audition hashes match, but cleared instrumental bed and actual listening remain unproven. PR333 OPEN at 0a7fcb6ad without reviews/comments. J0936 hold and existing 16:24:55Z retry retained. Original approvals, completed swaps, deadlines and fallback schedules preserved. No media, spend or publishing changes. Report OWB264 comment6581113743.",
       "history": [
         {
           "at": "2026-11-02T15:24Z",
@@ -144645,6 +144645,11 @@
           "at": "2026-11-02T15:30Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0936 hold and 16:24:55Z retry retained. Original approvals and progress preserved. Required Mini repair after transient pull failure recovered 536 MB; both repos current."
+        },
+        {
+          "at": "2026-11-02T15:33Z",
+          "by": "codex",
+          "what": "done: Verified latest J1638 and evidence 3e26b379b: J1100 remains blocked at 2/3; fresh audition hashes match, but cleared instrumental bed and actual listening remain unproven. PR333 OPEN at 0a7fcb6ad without reviews/comments. J0936 hold and existing 16:24:55Z retry retained. Original approvals, completed swaps, deadlines and fallback schedules preserved. No media, spend or publishing changes. Report OWB264 comment6581113743."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
@@ -144663,7 +144668,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1640",
