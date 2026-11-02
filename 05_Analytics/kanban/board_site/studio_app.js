@@ -98,6 +98,8 @@
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
 
   function stage(v) {
+    if (isLive(v)) return "Published";
+    if ((v.youtube || {}).state === "scheduled") return "Scheduled";
     if (v.lane === "ready") return v.readyFor === "Ben" ? "Ready for you" : `Waiting on ${v.readyFor || "a check"}`;
     if (v.lane === "changes") return "Fixing your changes";
     if (v.lane === "approved") return "Approved, on its way";
@@ -205,7 +207,7 @@
 
   function row(v, extra, href) {
     return `<a class="row" href="${href || detailLink(v)}">${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
-      <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || bar(progressOf(v))}</div><span class="chev">›</span></a>`;
+      <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
   }
   const jobTiles = j => `<div class="tiles three"><div class="tile-stat"><b class="blue">${j.working}</b><span>Jobs running</span></div>
       <div class="tile-stat"><b>${j.queued}</b><span>Jobs queued</span></div><div class="tile-stat"><b>${j.held}</b><span>Jobs on hold</span></div></div>`;
@@ -315,6 +317,7 @@
     return {value:'Pending',reason,confidence:'Unavailable',credible:false};
   }
   function milestoneProgress(v) {
+    if (isLive(v)) return '<span class="meta">Published</span>';
     const p = progressStats(v);
     return `<div class="milestone-mini" aria-label="${p.percent}% milestone completion; ${p.done} of 9 complete"><div class="track"><i style="width:${p.percent}%"></i></div><span>${p.percent}% <span class="muted">· ${p.done} of 9 milestones complete</span></span></div>`;
   }
@@ -347,6 +350,10 @@
       ${stages.length>1?`<details class="other-stages" data-disclosure="${esc(v.key)}-other"><summary>${stages.length-1} other active stage${stages.length>2?'s':''}</summary>${stages.slice(1).map(x=>`<a class="other-stage" href="#stage-${esc(x.id)}">${esc(x.label)} · ${esc(stageView(x).text)}</a>`).join('')}</details>`:''}</section>`;
   }
   function productionDetail(v, now) {
+    if(isLive(v)) return section('Published on YouTube',null,
+      '<p class="muted">This video is published. Production progress and UAT forecasts no longer apply.</p>'
+      + `<details class="technical" data-disclosure="${esc(v.key)}-history"><summary>Recorded production history</summary><p class="muted">Unconfirmed milestones mean historical records are missing, not that the published video is unfinished.</p>${milestones(v).map(m=>milestoneCard(v,m,null)).join('')}</details>`);
+
     const p=progressStats(v), f=forecastView(v,now), production=v.production || {}, e=production.eta || {}, current=(currentProduction(v)[0] || {}).id;
     const fresh = Number.isFinite(Date.parse(production.asOf)) && now-Date.parse(production.asOf)>=0 && now-Date.parse(production.asOf)<=QUIET_MIN*MIN;
     const partial = fresh && !['approved','done','ready'].includes(v.lane) ? (production.partialEstimates || []).filter(x=>x.upperMinutes>(now-Date.parse(production.asOf))/MIN) : [];
@@ -372,6 +379,7 @@
     });
   }
   function videoProductionRow(v, now) {
+    if (isLive(v)) return row(v, "");
     const current=currentProduction(v)[0], f=forecastView(v,now);
     return row(v, `<span class="meta current-label">${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Blocked / approval pending</span>':''}</span>${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`);
   }
@@ -484,10 +492,10 @@
   function videoGroups(vs) {
     const active = ["progress", "changes", "ready", "approved"];
     return {
-      working: vs.filter(v => (active.includes(v.lane) || isLive(v)) && isWorking(v)),
+      working: vs.filter(v => active.includes(v.lane) && !isLive(v) && isWorking(v)),
       queued: vs.filter(v => active.includes(v.lane) && !isLive(v) && !isWorking(v)),
       backlog: vs.filter(v => v.lane === "upcoming" && !isLive(v)),
-      done: vs.filter(v => (v.lane === "done" || isLive(v)) && !v.collapsed && !isWorking(v)),
+      done: vs.filter(v => (v.lane === "done" || isLive(v)) && !v.collapsed && (isLive(v) || !isWorking(v))),
     };
   }
 
