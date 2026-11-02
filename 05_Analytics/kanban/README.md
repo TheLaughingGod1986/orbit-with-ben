@@ -89,3 +89,55 @@ button that opens it on his phone. `kanban_snapshot.py` picks one link per film 
 number first and the version as `_vNN[letter]` in the name (e.g. `026_NearestStar_v05_PHONE.mp4`), and set the film
 note's `you` in `film_briefs.json` as usual. The button then appears by itself within a couple of minutes. Never upload or change
 privacy just to get a link; a private upload counts only once the upload job has made it.
+
+## Mobile Studio UAT outlook (PR #382)
+
+Overview's **Next videos toward UAT** and each video detail read `tracker.videos[].production`,
+created by `scripts/uat_outlook.py` from the same snapshot used for lanes. The Review tab
+continues to use finished cuts explicitly awaiting Ben; forecast progress never grants approval.
+
+`production` contains `asOf`, `milestones` (`id`, `label`, `state`, evidence, dependencies,
+optional historical sample count/range), `completed`, `total`, and `eta`. Milestone percent is
+an equal count of recorded completed/skipped stages, not a weighted estimate of film effort.
+Unknown stages are shown explicitly. Task steps remain in Agent work and cannot complete a milestone.
+The UAT graph is topic → script → sources → voice and shot plan → picture → edit and packaging
+→ Chief QA. Upload and Ben's watch duration are outside the graph. QA must be recorded explicitly
+as `stages.qa` with `state`/`status`; an edit job finishing cannot stand in for Chief approval.
+Longs use their own source stages. Shorts and synthetic cards never inherit a parent long's completion.
+
+Historical durations come from actual `doing` → `done` stage transitions in Git (up to 80
+path-changing commits per film or HOS pipeline), including intervening review/rework. A stage
+already doing in the oldest available snapshot has no observable start and supplies no sample.
+Workers may record exact timezone-aware `startedAt` and `completedAt` stage boundaries. Rework
+cycles are combined per film. Samples stay within channel/format and exclude the current film;
+there must be at least three comparable films for every unfinished stage. HOS history is read
+from the sibling `history-of-science` checkout; unavailable or shallow history fails closed.
+
+ETA uses median–80th-percentile stage durations, subtracts time since a recorded stage start,
+and takes the longest dependency path across parallel branches. Confidence is low with 3–9
+observations per remaining stage, medium with 10+, never a calibrated probability. Unknown
+queue start, incomplete external dependencies, blocked work, shared worker capacity, manual
+Flow/operator timing, missing stage/job coverage, requested changes or overruns suppress the
+numeric estimate and expose reasons. Nothing substitutes keyword estimates or planned air dates.
+Forecasts older than 75 minutes or beyond their range require an update; even an unchanged board
+SHA re-renders the age check. Older board payloads show “not published yet.”
+
+Page and data roll out separately: deploy this PR as a **preview** for Chief review. After Chief
+approves and merges, the Mini must run the updated snapshot/publisher before live milestones
+appear; a page-only preview still reads the current production board, which may lack this field.
+Do not publish fixture forecasts to `board-data` or deploy production before Chief approval.
+
+Validation:
+
+```bash
+python3 -m unittest discover -s scripts -p 'test_uat_outlook.py' -v
+node scripts/test_studio_app.cjs
+python3 05_Analytics/kanban/board_site/build.py
+python3 -m http.server 8765 --directory 05_Analytics/kanban/board_site/dist
+# Separate shell, with Playwright installed and Chromium available:
+node scripts/test_studio_uat_browser.cjs
+# Optional: STUDIO_PREVIEW_URL=<preview> STUDIO_QA_SCREENSHOTS=<existing directory>
+```
+
+Browser QA intercepts board reads with producer-generated fixture forecasts, checks 360/390/1280px,
+Overview → detail navigation, unavailable reasons and Review isolation, and refuses every write.

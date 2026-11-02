@@ -223,30 +223,50 @@
     return text ? `<p class="mini ${live ? "on" : ""}"><i></i>${esc(text)}</p>` : "";
   }
 
-  // Per-video UAT outlook: only claim a time when an actual remaining-job estimate exists.
-  // A single job ETA is not a film ETA; never present it as a UAT countdown.
+  // Milestone progress is independent of job step progress. Older board data stays readable.
   function uatOutlook(v, now) {
-    if (v.lane === "ready" && v.readyFor === "Ben") return { label: "Ready for UAT", detail: "Your review can start now", tone: "green" };
-    if (v.lane === "ready") return { label: "Awaiting final review", detail: "Waiting on " + (v.readyFor || "quality checks"), tone: "amber" };
-    const jobs = v.jobs || [], running = jobs.filter(j => j.status === "claimed");
-    const blocked = jobs.filter(j => j.status === "blocked");
-    if (blocked.length) return { label: "UAT ETA unavailable", detail: blocked.length + " blocked job(s) · " + clip(blocked[0].remaining_action || blocked[0].title || "Needs attention", 85), tone: "amber" };
-    if (running.length) {
-      const e = etaOf(running[0], now);
-      return { label: "UAT ETA pending", detail: e && !e.over ? "Current task: " + etaText(e) + " · more stages may remain" : "Active task · no reliable end-to-end estimate", tone: "blue" };
+    if (v.lane === "ready" && v.readyFor === "Ben") return {label: "Ready for UAT", detail: "Your review can start now", tone: "green"};
+    if (["approved", "done"].includes(v.lane)) return {label: "UAT handoff passed", detail: "Follow-up work is shown below", tone: "green"};
+    const p = v.production, e = p && p.eta;
+    if (!e) return {label: "UAT ETA unavailable", detail: "Production milestones have not been published yet", tone: "amber"};
+    if (e.state === "estimated") {
+      const age = (now - Date.parse(p.asOf || "")) / MIN;
+      if (!Number.isFinite(age) || age < 0 || age > QUIET_MIN) return {label: "UAT ETA unavailable", detail: "Forecast needs fresh production data", tone: "amber"};
+      if (age >= e.upperMinutes) return {label: "UAT ETA unavailable", detail: "Historical range exceeded · waiting for a new production update", tone: "amber"};
+      return {label: `UAT in about ${Math.max(0, Math.ceil(e.lowerMinutes - age))}–${Math.ceil(e.upperMinutes - age)} min`,
+        detail: `${e.confidence} confidence · historical stage durations · estimate, not a deadline`, tone: "blue"};
     }
-    return { label: "UAT ETA pending", detail: jobs.some(j => j.status === "open") ? "Queued tasks must start before a reliable ETA is possible" : "Waiting for production milestones", tone: "amber" };
+    return {label: "UAT ETA unavailable", detail: (e.reasons || []).join(" · ") || "Waiting for production evidence", tone: "amber"};
+  }
+  function milestoneProgress(v, expanded) {
+    const p = v.production;
+    if (!p || !Array.isArray(p.milestones)) return '<span class="meta">Milestone progress not recorded</span>';
+    // The percentage counts recorded milestones, never inferred work or elapsed film time.
+    const done = p.milestones.filter(m => ["done", "skip", "passed"].includes(m.state)).length;
+    const total = p.milestones.length;
+    const unknown = p.milestones.filter(m => m.state === "unknown").length;
+    const progress = total ? bar({step: done, of: total}, "production milestones recorded complete")
+      + (unknown ? `<span class="meta">${unknown} milestone(s) have no recorded state</span>` : "") : "";
+    const list = expanded ? `<ul class="notes">${p.milestones.map(m => `<li><b>${esc(m.label)}</b> · ${esc(m.state)}${m.evidence ? ` · ${esc(m.evidence)}` : ""}${m.sampleCount != null ? ` · ${esc(m.sampleCount)} historical samples` : ""}</li>`).join("")}</ul>` : "";
+    return progress + list;
+  }
+  function productionDetail(v, now) {
+    const o = uatOutlook(v, now), e = ((v.production || {}).eta || {});
+    return section("Production toward UAT", null, `<p class="line">${esc(o.label)}</p><p class="meta">${esc(o.detail)}</p>`
+      + milestoneProgress(v, true) + (e.state === "estimated" && e.criticalPath && e.criticalPath.length ? `<p class="meta">Critical path: ${esc(e.criticalPath.join(" → "))}</p>` : "")
+      + (e.basedOn ? `<p class="meta">${esc(e.basedOn)}</p>` : "")
+      + '<p class="meta">Milestones count completed stages, not film runtime or task steps. Upload and your watch time are outside this UAT estimate.</p>');
   }
   function productionOutlook(vs, now) {
     const candidates = vs.filter(v => !isLive(v) && ["progress", "changes", "ready", "approved"].includes(v.lane));
     const priority = v => v.lane === "ready" ? 0 : (v.jobs || []).some(j => j.status === "claimed") ? 1 : 2;
     const sorted = candidates.slice().sort((a,b) => priority(a)-priority(b));
     const cards = sorted.slice(0,4).map(v => {
-      const o = uatOutlook(v, now), p = progressOf(v);
+      const o = uatOutlook(v, now);
       return `<a class="row" href="${detailLink(v)}"><div class="body"><b>${esc(v.title || v.number || "Untitled video")}</b>
         <span class="meta">${esc(ch(v))} · ${esc(kind(v))} · ${esc(stage(v))}</span>
-        <span class="doing">${esc(o.label)}</span><span class="meta">${esc(o.detail)}</span>
-        ${p ? bar(p, "active task only, not overall video completion") : ""}</div><span class="chev">›</span></a>`;
+        <span class="tag ${o.tone}">${esc(o.label)}</span><span class="meta">${esc(clip(o.detail, 180))}</span>
+        ${milestoneProgress(v, false)}</div><span class="chev">›</span></a>`;
     }).join("");
     return section("Next videos toward UAT", candidates.length,
       cards || empty("No videos currently moving toward UAT."),
@@ -340,6 +360,7 @@
       ${flags ? `<div class="flags">${flags}</div>` : ""}
       ${v.line ? `<p class="line">${esc(v.line)}</p>` : ""}
       ${links.length ? `<div class="btns">${links.join("")}</div>` : ""}
+      ${productionDetail(v, Date.now())}
       ${section("Agent work on this video", jobs.length, jobRows || empty("No agent jobs on this video right now."))}
       ${notes ? section("Your notes", null, `<ul class="notes">${notes}</ul>`) : ""}`;
   }
@@ -551,7 +572,10 @@
         const g = await refFetch();
         if (g.ok) {
           sha = ((await g.json()).object || {}).sha || "";
-          if (sha && sha === lastSha && board) return;
+          if (sha && sha === lastSha && board) {
+            if (!uatKey() || !document.getElementById("uat-notes")) render();
+            return;
+          }
           if (sha) url = DATA_AT(sha);
         }
       } catch (e) {}
