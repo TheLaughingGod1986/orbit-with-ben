@@ -99819,9 +99819,14 @@
           "at": "2026-11-02T14:37Z",
           "by": "relay",
           "what": "condition verification queued: J1638"
+        },
+        {
+          "at": "2026-11-02T14:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T15:37:31Z"
         }
       ],
-      "remaining_action": "Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
+      "remaining_action": "Obtain cleared instrumental S2 bed and required local listening evidence before repairs resume",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -99847,12 +99852,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1631 verified: cleared instrumental S2 bed and actual local opening/middle/end listening remain unproven. Evidence 3e26b379b and fresh audition hashes match; listening explicitly NOT PERFORMED. Bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains excluded; dual ASR is not listening. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-02T15:37:31+00:00",
-        "last_recheck": "J1631",
-        "checked_at": "2026-11-02T13:39:26+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1638"
+        "condition": "J1638 verified: cleared instrumental S2 bed and actual local opening/middle/end listening remain unproven. Evidence 3e26b379b and fresh audition hashes match; listening explicitly NOT PERFORMED. Bed SHA256 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains excluded; dual ASR is not listening. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-02T15:37:31Z",
+        "last_recheck": "J1638",
+        "checked_at": "2026-11-02T14:39:56+00:00",
+        "checked_by": "codex"
       }
     },
     {
