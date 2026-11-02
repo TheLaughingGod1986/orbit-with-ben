@@ -142147,19 +142147,24 @@
           "at": "2026-11-02T09:23Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified J0985 reconciliation commit 0ac2007b9 and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90239a1ab84ef9ca2b8c12a2508d5499ebc00fbe29efc)"
+        },
+        {
+          "at": "2026-11-02T09:24Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Recorded J0985 wait condition via wait --recheck J1609 (check-at 2026-11-02T15:25:00Z)"
         }
       ],
-      "remaining_action": "Re-check chief_relay status and record J0985 wait condition for non-author Chief audit PASS",
+      "remaining_action": "Complete J1609 verification task and post report on OWB thread",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-02T10:15:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T09:23Z",
+        "at": "2026-11-02T09:24Z",
         "by": "gemini",
-        "note": "Verified J0985 reconciliation commit 0ac2007b9 and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90"
+        "note": "Recorded J0985 wait condition via wait --recheck J1609 (check-at 2026-11-02T15:25:00Z)"
       },
       "taskKeys": [
         "OWB:021",
