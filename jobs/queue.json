@@ -145541,19 +145541,24 @@
           "at": "2026-11-02T17:30Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original scope, acceptance history and J1471. PR380 remains OPEN at d0b04b5e0 with no comments or reviews."
+        },
+        {
+          "at": "2026-11-02T17:31Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 exports; no newer exports. Saved opening FAILs: AR1 6.00s, AR2 0.25, AR3 1.41."
         }
       ],
-      "remaining_action": "Verify current AR export hashes and remaining opening failures",
+      "remaining_action": "Record unmet readiness condition and close verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T18:25:36+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T17:30Z",
+        "at": "2026-11-02T17:31Z",
         "by": "codex",
-        "note": "Read original scope, acceptance history and J1471. PR380 remains OPEN at d0b04b5e0 with no comments or reviews."
+        "note": "Fresh SHA256 matches all three J1468 exports; no newer exports. Saved opening FAILs: AR1 6.00s, AR2 0.25, AR3 1.41."
       },
       "taskKeys": [
         "OWB:030"
