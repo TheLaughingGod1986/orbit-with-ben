@@ -147157,13 +147157,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T20:31Z",
-      "eta": "2026-11-02T22:31Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T20:26Z",
-      "result": "",
+      "result": "Verified unmet condition: PR380 OPEN at unchanged d0b04b5e0 without comments/reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports. Saved opening FAILs persist (AR1 6.00s; AR2 0.25; AR3 1.41). J1356 hold retained via J1670; next check 2026-11-02T21:26:39Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment still required. No fresh gates or audition claimed. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T20:26Z",
@@ -147194,6 +147194,11 @@
           "at": "2026-11-02T20:32Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 hold updated via J1670; retained 21:26:39Z retry, existing approvals and publishing holds."
+        },
+        {
+          "at": "2026-11-02T20:32Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition: PR380 OPEN at unchanged d0b04b5e0 without comments/reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports. Saved opening FAILs persist (AR1 6.00s; AR2 0.25; AR3 1.41). J1356 hold retained via J1670; next check 2026-11-02T21:26:39Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment still required. No fresh gates or audition claimed. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1356 remains held for corrected delivery",
@@ -147210,7 +147215,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     },
     {
       "id": "J1671",
