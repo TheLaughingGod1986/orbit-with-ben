@@ -88008,6 +88008,11 @@
           "at": "2026-11-02T02:51Z",
           "by": "relay",
           "what": "condition verification queued: J1579"
+        },
+        {
+          "at": "2026-11-02T02:54Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-02T08:55:00Z"
         }
       ],
       "kind": "review",
@@ -88046,12 +88051,11 @@
       "remaining_action": "Obtain non-author Chief (grok, claude, or codex) final audit PASS on reconciled commit 0ac2007b9",
       "hold": {
         "type": "input",
-        "condition": "J1549 reconciled Mercury vlkj8RQKmH8 curve drops (tied -5.59pp at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, LEARNINGS.md, and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90239a1ab84ef9ca2b8c12a2508d5499ebc00fbe29efc) in commit 0ac2007b9 (superseding J1003 stale queue result string). Because gemini authored J0985/J1002/J1003 (never self-approve J0985), J0985 awaits final non-author Chief (grok, claude, or codex) audit PASS. Original gates and approvals unchanged.",
-        "check_at": "2026-11-02T03:51:09+00:00",
-        "last_recheck": "J1549",
-        "checked_at": "2026-11-01T20:49:53+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1579"
+        "condition": "J1579 verified commit 0ac2007b9 and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90239a1ab84ef9ca2b8c12a2508d5499ebc00fbe29efc) reconcile Mercury vlkj8RQKmH8 curve drops (tied -5.59pp at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, and LEARNINGS.md (superseding J1003 stale queue result string). Because gemini authored J0985/J1002/J1003/J1549 (never self-approve J0985) and grok/claude/codex are all down, J0985 awaits final non-author Chief (grok, claude, or codex) audit PASS. Original gates and approvals unchanged.",
+        "check_at": "2026-11-02T08:55:00Z",
+        "last_recheck": "J1579",
+        "checked_at": "2026-11-02T02:54:38+00:00",
+        "checked_by": "gemini"
       }
     },
     {
