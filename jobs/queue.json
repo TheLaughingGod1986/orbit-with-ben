@@ -144848,10 +144848,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-02T15:47Z",
+      "eta": "2026-11-02T17:47Z",
       "created_by": "relay",
       "created_at": "2026-11-02T15:33Z",
       "result": "",
@@ -144860,13 +144860,26 @@
           "at": "2026-11-02T15:33Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-02T15:47Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Obtain non-author Chief (grok, claude, or codex) final audit PASS on reconciled commit 0ac2007b9",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-02T16:33:36+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-02T15:47Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1643",
