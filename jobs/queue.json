@@ -141785,19 +141785,32 @@
           "at": "2026-11-02T08:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T08:11Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4: channel:audit (62 videos, 0 errors), lint:package (PASS), and 2026-11-02 snapshot (30 public + 10 scheduled + 22 unscheduled private) verified"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Verify live end screens on 5 public HOS longs and Related video pills on 25 public HOS Shorts",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-02T08:08Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-02T08:11Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Step 1/4: channel:audit (62 videos, 0 errors), lint:package (PASS), and 2026-11-02 snapshot (30 public + 10 scheduled + "
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007"
+      ]
     }
   ],
   "focus": [],
