@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -129,8 +129,8 @@ assert.equal(t.jobGroups([v({key: 'a', jobs: [batch]}), v({key: 'b', jobs: [batc
 // Videos: a batch job shows its progress once; the other videos say they share it.
 const vb = {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]})]}};
 const vt = t.renderTab('videos', vb, NOW);
-assert.equal((vt.match(/class="doing"/g) || []).length, 1, 'one progress line per job');
-assert(vt.includes('In the same job as 027 above'));
+assert.equal((vt.match(/class="doing"/g) || []).length, 0, 'task percentages are kept in Agent work, not video milestone rows');
+assert(vt.includes('027') && vt.includes('028') && vt.includes('milestones complete'));
 // Videos counts a running studio job too, so it matches Overview's Agents working now.
 const vsj = t.renderTab('videos', {tracker: {videos: []}, owb: {jobs: [{id: 'J1199', status: 'claimed', by: 'cursor', title: 'Shorts fix'}]}}, NOW);
 assert(vsj.includes('Studio job · not one video') && vsj.includes('Working <small>1</small>'), 'Videos shows and counts the studio job');
@@ -151,20 +151,56 @@ assert.equal(cx.fig, '40%'); assert(cx.note.includes('resets Wed 04 Nov 06:36Z')
 assert.equal(t.poolMeter('claude', undefined, {}, NOW), null, 'no reading, no bar');
 const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'weekly resets Oct 29'}}}}}, NOW);
 assert((ag.match(/<span>Grok<\/span><b class="red">0%/) || []).length === 1, 'Grok shows the shared Cursor weekly pool');
-console.log('studio app OK');
+
 
 // Milestones and ETA share the same producer evidence on Overview and video detail.
-const tracked = v({production: {asOf: new Date(NOW).toISOString(), milestones: [{label: 'Edit <unsafe>', state: 'done'}, {label: 'Chief QA', state: 'doing'}],
+const tracked = v({production: {asOf: new Date(NOW).toISOString(), milestones: [{id:'edit', label: 'Edit <unsafe>', state: 'done'}, {id:'qa', label: 'Chief QA', state: 'doing'}],
   eta: {state: 'estimated', confidence: 'low', lowerMinutes: 15, upperMinutes: 25, criticalPath: ['qa'], basedOn: 'Git stage transitions'}}});
-assert(t.milestoneProgress(tracked, true).includes('50%'));
-assert(t.productionDetail(tracked, NOW).includes('15–25 min'));
+assert(t.milestoneProgress(tracked, true).includes('11%'));
+assert(t.productionDetail(tracked, NOW).includes('~15m–25m'));
 assert(t.productionDetail(tracked, NOW).includes('&lt;unsafe&gt;'));
 assert(!t.productionDetail(tracked, NOW).includes('<unsafe>'));
 assert(t.uatOutlook(v({}), NOW).detail.includes('not been published'));
 const blockedProduction = v({production: {milestones: [], eta: {state: 'unavailable', reasons: ['Flow <manual>', 'credit reset']}}});
-assert(t.productionDetail(blockedProduction, NOW).includes('Flow &lt;manual&gt; · credit reset'));
-assert(t.overview({tracker: {videos: [tracked]}}, NOW).includes('production milestones recorded complete'));
+assert(t.productionDetail(blockedProduction, NOW).includes('Flow &lt;manual&gt;') && t.productionDetail(blockedProduction, NOW).includes('credit reset'));
+assert(t.overview({tracker: {videos: [tracked]}}, NOW).includes('milestones complete'));
 assert(!t.renderTab('review', {tracker: {videos: [tracked, blockedProduction]}}, NOW).includes('15–25 min'));
 
 assert(t.uatOutlook(tracked, NOW + 80 * 6e4).detail.includes('fresh production'));
 assert(t.uatOutlook(tracked, NOW + 26 * 6e4).detail.includes('range exceeded'));
+
+// V2: nine unique milestones, independent from task progress and approval waits.
+const nine = ['topic','script','sources','vo','shots','picture','edit','thumbs','qa'];
+const v2 = v({jobs:[{id:'dup',status:'claimed',progress:{step:99,of:100}}],production:{asOf:new Date(NOW).toISOString(),
+  milestones:nine.map((id,i)=>({id,label:id,state:i<3?'done':i===5?'review':'unknown',owner:id==='picture'?'chief':'',
+    evidence:id==='picture'?'J1191 complete (parked for Chief picture PASS): all 101/101 Flow v03 rows minted and KEEP…':'',dependsOn:[]})),
+  activeStages:['picture'],eta:{state:'unavailable',reasons:['Edit: fewer than 3 comparable historical stages','Chief QA: fewer than 3 comparable historical stages']}}});
+assert.equal(t.progressStats(v2).percent,33);
+assert.equal(t.progressStats(v2).done,3);
+v2.production.milestones.push(v2.production.milestones[0]);
+assert.equal(t.progressStats(v2).done,3,'duplicate milestones never inflate counts');
+assert.equal(t.currentProduction(v2)[0].id,'picture');
+assert.equal(t.stageView(t.currentProduction(v2)[0]).text,'Awaiting approval');
+assert(t.productionDetail(v2,NOW).includes('101/101 Flow shots generated'));
+assert(t.productionDetail(v2,NOW).includes('View technical details'));
+assert(t.productionDetail(v2,NOW).includes('J1191 complete (parked for Chief picture PASS)'));
+assert.equal((t.productionDetail(v2,NOW).match(/data-stage="[^"]+"[^>]* open/g)||[]).length,1,'only current stage expanded initially');
+assert(t.forecastView(v2,NOW).value==='Pending');
+const unassigned = v({production:{milestones:nine.map(id=>({id,state:'unknown'}))}});
+assert.equal(t.currentProduction(unassigned).length,0,'unknown is not a current stage');
+const approvalDone = v({production:{milestones:[{id:'picture',state:'done',awaitingApproval:true}]}});
+assert.equal(t.progressStats(approvalDone).done,0);
+const pending1=v({key:'pending1'}),pending2=v({key:'pending2'});
+assert.deepEqual(t.sortVideos([pending1,pending2],'uat',NOW).map(x=>x.key),['pending1','pending2']);
+assert.equal(t.videoUpdated(v({production:{asOf:new Date(NOW).toISOString()}})),0,'publisher time is not a production update');
+assert.equal(t.forecastView(v({...tracked,lane:'done'}),NOW).value,'Handoff complete');
+assert(t.detail({tracker:{videos:[v2]}},v2.key).includes('href="#videos"'));
+console.log('Studio V2 unit checks OK');
+
+const later = v({key:'later',production:{asOf:new Date(NOW).toISOString(),milestones:[],eta:{state:'estimated',confidence:'low',lowerMinutes:30,upperMinutes:60}}});
+const sooner = v({key:'sooner',production:{asOf:new Date(NOW).toISOString(),milestones:[],eta:{state:'estimated',confidence:'low',lowerMinutes:10,upperMinutes:20}}});
+assert.deepEqual(t.sortVideos([pending1,later,pending2,sooner],'uat',NOW).map(x=>x.key),['sooner','later','pending1','pending2']);
+const updated = v({key:'updated',production:{milestones:[{id:'edit',state:'doing',source:{updatedAt:new Date(NOW).toISOString()}}]}});
+assert.deepEqual(t.sortVideos([pending1,updated],'updated',NOW).map(x=>x.key),['updated','pending1']);
+assert(t.forecastView(tracked,NOW+80*6e4).value==='Pending');
+console.log('Studio app regression and V2 checks OK');

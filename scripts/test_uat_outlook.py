@@ -99,6 +99,51 @@ class OutlookTests(unittest.TestCase):
             self.assertEqual(history_samples(directory, 'status.json', 'OWB')[('OWB', 'long', 'edit')], [(10, 'OWB:001')])
             self.assertEqual(history_samples(directory, 'missing.json', 'OWB'), {})
 
+    def test_approval_wait_duplicate_jobs_and_original_note(self):
+        from uat_outlook import milestone_rows, select_current
+        original = 'J1191 complete (parked for Chief picture PASS): all 101/101 Flow v03 rows minted and KEEP'
+        self.stages['picture'] = dict(state='done', note=original)
+        job = dict(id='J1191', stage='picture', status='blocked', by='chief', hold={'type':'approval', 'condition':'Chief picture PASS'})
+        rows = milestone_rows(self.stages, [job, job])
+        picture = next(r for r in rows if r['id']=='picture')
+        self.assertEqual(picture['state'], 'done', 'source state never rewritten')
+        self.assertEqual(picture['displayState'], 'review')
+        self.assertEqual(picture['summary'], '101/101 Flow shots generated')
+        self.assertEqual(picture['source']['note'], original)
+        self.assertEqual(len(picture['jobs']), 1)
+        self.assertEqual(select_current(rows), ['picture'])
+        result = self.run_forecast([job, job])
+        self.assertEqual(result['completed'], 8)
+        self.assertEqual(result['eta']['state'], 'unavailable')
+
+    def test_partial_stage_estimate_is_not_full_uat(self):
+        self.stages['picture'] = dict(state='doing', since=NOW.isoformat())
+        self.stages['qa'] = dict(state='unknown')
+        self.samples.pop(('OWB','long','qa'))
+        result = self.run_forecast([dict(id='J1', stage='picture', status='claimed', by='cursor')])
+        self.assertEqual(result['eta']['state'], 'unavailable')
+        self.assertEqual(result['partialEstimates'][0]['stage'], 'picture')
+        self.assertNotIn('lowerMinutes', result['eta'])
+
+    def test_format_channel_and_variability_are_not_pooled(self):
+        self.stages['qa'] = dict(state='doing', since=NOW.isoformat())
+        self.video['type'] = 'short'
+        self.assertEqual(self.run_forecast()['eta']['state'], 'unavailable')
+        self.video.update(type='long', channel='HOS')
+        self.assertEqual(self.run_forecast()['eta']['state'], 'unavailable')
+        self.video['channel'] = 'OWB'
+        self.samples[('OWB','long','qa')] = [(10 if i<7 else 1000, 'OWB:'+str(i)) for i in range(12)]
+        result = self.run_forecast([dict(id='qa',stage='qa',status='claimed',by='chief')])
+        self.assertEqual(result['eta']['confidence'], 'low')
+
+    def test_review_does_not_invent_a_chief_assignment(self):
+        from uat_outlook import milestone_rows
+        rows = milestone_rows({'vo':{'state':'review','note':'Recording ready for checking'}}, [])
+        voice = next(r for r in rows if r['id']=='vo')
+        self.assertEqual(voice['owner'], '')
+        self.assertEqual(voice['reviewer'], '')
+        self.assertTrue(voice['awaitingApproval'])
+
     def test_current_film_cannot_train_its_own_eta(self):
         self.samples[('OWB', 'long', 'qa')][0] = (10, 'OWB:999')
         self.stages['qa'] = dict(state='doing', since=NOW.isoformat())

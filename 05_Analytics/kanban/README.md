@@ -141,3 +141,40 @@ node scripts/test_studio_uat_browser.cjs
 
 Browser QA intercepts board reads with producer-generated fixture forecasts, checks 360/390/1280px,
 Overview → detail navigation, unavailable reasons and Review isolation, and refuses every write.
+
+## Studio V2 presentation (follow-up to merged PR #382)
+
+The detail page now leads with a compact video header, a milestone-count progress/forecast hero,
+and the current blocking/active stage. A nine-stage segmented strip and native `<details>` rows
+keep the original evidence accessible. Only the current stage opens initially. Open stages,
+technical disclosures and keyboard focus survive live polling; routes and Review POST documents
+are unchanged. Native summary controls expose their expanded state to assistive technology.
+
+Overview prioritises finished cuts awaiting Ben, then production outlook and the pipeline. Agent
+health and queue diagnostics follow. Videos retains channel/format and Working/Waiting/Backlog
+filters, and adds credible-UAT, recorded-update, stage and blocked sorting within those groups.
+Missing estimates retain their recorded relative order. Publisher `asOf` is never treated as a
+meaningful video update time. Pending estimates have one primary explanation; diagnostic reasons
+are available under “How this estimate works.”
+
+Backward-compatible telemetry additions in `production`:
+
+- Each milestone retains `state` and adds `displayState`, `awaitingApproval`, `owner`, `reviewer`,
+  concise `summary`, `version`, related `jobs`, and original `source` note/reference/time fields.
+  These are read-only presentation fields. A recorded approval hold keeps the milestone incomplete
+  even when a related job says it is done. Completed task steps cannot complete a video milestone.
+- `activeStages` prioritises recorded blockers/approval waits, dependency impact and the critical
+  path. Unknown stages are not selected just because they come first. Without recorded ownership
+  the UI says Unassigned; an unspecified reviewer is not silently called Chief.
+- `partialEstimates` contains stage-only ranges where that running stage has sufficient comparable
+  historical evidence, a recorded start and no unresolved local/manual/capacity constraints.
+  They never replace `eta`, which remains unavailable if the full UAT path is unknown.
+- Confidence also considers historical spread. Competing claimed work by the same agents suppresses
+  calendar ranges, including partial ranges. Unknown queue starts continue to suppress full ETAs.
+- HOS history discovery supports the publisher's real `board-wt/hos` checkout and `HOS_REPO`, as
+  well as the historical checkout names. No milestones are inferred from generated-asset counts.
+
+No source stage/job records, approvals, publishing dates, media visibility or generation are
+modified. Older board payloads still render using their recorded stage evidence. Full V2 metadata
+requires the normal Mini publisher after an approved merge, independently of the page deployment.
+Screenshots and the validation record are in `docs/review/studio-v2/QA.md`.
