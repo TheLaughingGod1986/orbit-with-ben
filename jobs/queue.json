@@ -143827,19 +143827,24 @@
           "at": "2026-11-02T13:28Z",
           "by": "codex",
           "what": "step 2 of 3 done: J1471 input hold refreshed with J1629 evidence; retained 14:18 UTC retry and all gate, approval and publishing holds."
+        },
+        {
+          "at": "2026-11-02T13:28Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirms J1471 blocked/input, last_recheck J1629, checked_by codex, retry 2026-11-02T14:18:00Z. No approval or publishing hold released."
         }
       ],
-      "remaining_action": "Verify recorded hold and close verification task",
+      "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T14:18:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-02T13:28Z",
         "by": "codex",
-        "note": "J1471 input hold refreshed with J1629 evidence; retained 14:18 UTC retry and all gate, approval and publishing holds."
+        "note": "Readback confirms J1471 blocked/input, last_recheck J1629, checked_by codex, retry 2026-11-02T14:18:00Z. No approval or "
       },
       "taskKeys": [
         "OWB:030"
