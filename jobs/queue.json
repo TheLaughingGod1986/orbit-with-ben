@@ -138944,19 +138944,24 @@
           "at": "2026-11-02T01:35Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1571; starting verification of J1356 waiting condition"
+        },
+        {
+          "at": "2026-11-02T01:36Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: PR380 OPEN unchanged at d0b04b5e0 with 0 comments/reviews; J1471 still blocked on approved ISS opening input"
         }
       ],
-      "remaining_action": "Verify J1356 waiting condition (PR380, J1471, AR1/AR2/AR3 masters and gates)",
+      "remaining_action": "Check saved gates and 06_Final-Exports master hashes for AR1-AR3",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T02:20:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T01:35Z",
+        "at": "2026-11-02T01:36Z",
         "by": "gemini",
-        "note": "Claimed J1571; starting verification of J1356 waiting condition"
+        "note": "PR380 OPEN unchanged at d0b04b5e0 with 0 comments/reviews; J1471 still blocked on approved ISS opening input"
       },
       "taskKeys": [
         "OWB:030"
