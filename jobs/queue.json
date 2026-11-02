@@ -145841,13 +145841,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T18:04Z",
-      "eta": "2026-11-02T20:04Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T18:03Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-02T18:03Z",
@@ -145878,6 +145878,11 @@
           "at": "2026-11-02T18:06Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1130 remains blocked with current evidence and recorded 19:03:27Z retry; report saved in _desk/handoff/J1654/REPORT.md."
+        },
+        {
+          "at": "2026-11-02T18:06Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1130 awaits recorded Studio recheck",
