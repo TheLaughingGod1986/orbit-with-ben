@@ -138321,9 +138321,14 @@
           "at": "2026-11-02T00:18Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T00:19Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1564; starting verification of J0936 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Finish J1100 audio and caption repairs, gates and replacement review before Ben watches S2/S5/S6",
+      "remaining_action": "Inspect J0936, J1100, and latest verification jobs; verify waiting condition and PR #333",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T01:17:04+00:00",
@@ -138340,11 +138345,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-02T00:18Z",
+        "at": "2026-11-02T00:19Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1564; starting verification of J0936 waiting condition"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1565",
