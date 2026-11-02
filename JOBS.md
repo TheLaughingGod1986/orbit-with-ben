@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1617 | any | claimed | gemini | 2026-11-02T12:57Z | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
+- J1617 done: Chief: verify condition for J1130 (Verified live HOS Studio on CDP 9460 (.hos-chrome-youtube-studio): AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) is still Running (Estimated time remaining: 9 days 13 hours; watch-time share — on both variants). J1130 kept blocked; next check 2026-11-02T17:02:00Z. Evidence: _desk/handoff/J1617. No YouTube changes or spend.)
 - J1616 done: Chief: verify condition for J1100 (done)
 - J1615 done: Chief: verify condition for J1471 (done)
 - J1614 done: Chief: verify condition for J1356 (J1614 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1614 (next check 2026-11-02T11:16:15Z); all existing approvals and holds preserved.)
@@ -53,4 +53,3 @@ Recently finished:
 - J1610 done: Chief: verify condition for J1356 (J1610 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1610 (next check 2026-11-02T10:15:43Z); all existing approvals and holds preserved.)
 - J1609 done: Chief: verify condition for J0985 (Verified J0985 waiting condition: commit 0ac2007b9 and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90239a1ab84ef9ca2b8c12a2508d5499ebc00fbe29efc) reconcile Mercury vlkj8RQKmH8 curve drops (tied -5.59pp at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, and LEARNINGS.md. Because gemini authored J0985/J1002/J1003/J1549 (never self-approve J0985) and all non-author Chiefs (grok, claude, codex) are currently down, kept J0985 blocked via wait --recheck J1609 (next check 2026-11-02T15:25:00Z, 6h retry) awaiting final non-author Chief audit PASS. Original gates and approvals unchanged; GBP0 spend.)
 - J1608 done: Chief: verify condition for J0936 (done)
-- J1607 done: Chief: verify condition for J1100 (done)
