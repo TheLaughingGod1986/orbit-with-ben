@@ -143654,19 +143654,30 @@
           "at": "2026-11-02T13:19Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-02T13:20Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original brief and approval history; J1626 retains J1100 blocked at 2/3. J1032 PASS and completed S1/S3/S4 swaps preserved."
         }
       ],
-      "remaining_action": "Verify J0936 replacement evidence and approval conditions",
+      "remaining_action": "Check current repair evidence and replacement approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T14:18:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T13:19Z",
-        "by": "codex"
-      }
+        "at": "2026-11-02T13:20Z",
+        "by": "codex",
+        "note": "Read original brief and approval history; J1626 retains J1100 blocked at 2/3. J1032 PASS and completed S1/S3/S4 swaps pr"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1628",
