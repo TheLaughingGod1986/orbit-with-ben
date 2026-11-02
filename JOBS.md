@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1673 | any | claimed | codex | 2026-11-02T23:07Z | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
+- J1673 done: Chief: verify condition for J1130 (Verified T020 still Running at 21:09:54Z; J1130 remains blocked, recheck J1673 recorded, retry 2026-11-02T22:05:55Z. Evidence _desk/handoff/J1673.)
 - J1672 done: Chief: verify condition for J1100 (Verified original approvals and fresh bed/audition hashes against 3e26b379b. No newer local listening record; J1100 stays blocked pending instrumental bed clearance and actual local listening. Preserved 2/3, OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback. Recorded next check 2026-11-02T21:43:55Z. Required NAS offload found no eligible scratch (16724 MB free). No spend, audio egress, render or publishing.)
 - J1671 done: Chief: verify condition for J1471 (done)
 - J1670 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN at unchanged d0b04b5e0 without comments/reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports. Saved opening FAILs persist (AR1 6.00s; AR2 0.25; AR3 1.41). J1356 hold retained via J1670; next check 2026-11-02T21:26:39Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment still required. No fresh gates or audition claimed. No spend or publishing changes.)
@@ -53,4 +53,3 @@ Recently finished:
 - J1666 done: Chief: verify condition for J1130 (done)
 - J1665 done: Chief: verify condition for J0862 (Verified unmet: HOS fadfb918, PRs through 398, desk through 6586722365, J1004/PR366 and queue show no approved 009 Short B replacement opening or exact recording scope. J0862 stays blocked; recheck 2026-11-03T02:00Z linked J1665. Preserve v02 takes and 010 A Option A1. Reported on HOS desk; no spend or YouTube changes.)
 - J1664 done: Chief: verify condition for J1100 (Verified original approvals and evidence 3e26b379b. Fresh bed and opening/middle/end hashes match; no newer local listening record. J1100 remains blocked on instrumental bed clearance and actual local listening. Preserved 2/3, OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback; next check 2026-11-02T20:43:01Z. NAS offload found no eligible scratch (16566 MB free). No spend, source-audio egress, render or publishing.)
-- J1663 done: Chief: verify condition for J0978 (Read-only verification unavailable: Studio returned blank content after navigation/reload, including existing tabs. J0978 remains blocked; next check 2026-11-03 01:45 UTC. Evidence PR 385 / ed63f00c1 and _desk/handoff/J1663. No YouTube changes or spend.)

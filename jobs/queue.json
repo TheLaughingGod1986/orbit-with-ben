@@ -147397,13 +147397,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T21:07Z",
-      "eta": "2026-11-02T23:07Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T21:05Z",
-      "result": "",
+      "result": "Verified T020 still Running at 21:09:54Z; J1130 remains blocked, recheck J1673 recorded, retry 2026-11-02T22:05:55Z. Evidence _desk/handoff/J1673.",
       "history": [
         {
           "at": "2026-11-02T21:05Z",
@@ -147439,6 +147439,11 @@
           "at": "2026-11-02T21:11Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet Running condition with recheck J1673 and retry 22:05:55Z; evidence and report in _desk/handoff/J1673."
+        },
+        {
+          "at": "2026-11-02T21:11Z",
+          "by": "codex",
+          "what": "done: Verified T020 still Running at 21:09:54Z; J1130 remains blocked, recheck J1673 recorded, retry 2026-11-02T22:05:55Z. Evidence _desk/handoff/J1673."
         }
       ],
       "remaining_action": "Verification complete; J1130 awaits next recorded Studio check",
