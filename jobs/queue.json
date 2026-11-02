@@ -144640,19 +144640,24 @@
           "at": "2026-11-02T15:27Z",
           "by": "codex",
           "what": "step 2 of 3 done: Evidence 3e26b379b still says listening NOT PERFORMED; audition hashes match. PR333 remains OPEN at 0a7fcb6ad with no reviews/comments. Latest J1638 preserves repair hold."
+        },
+        {
+          "at": "2026-11-02T15:30Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J0936 hold and 16:24:55Z retry retained. Original approvals and progress preserved. Required Mini repair after transient pull failure recovered 536 MB; both repos current."
         }
       ],
-      "remaining_action": "Record continued J0936 hold and next verification",
+      "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T16:24:55+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-02T15:27Z",
+        "at": "2026-11-02T15:30Z",
         "by": "codex",
-        "note": "Evidence 3e26b379b still says listening NOT PERFORMED; audition hashes match. PR333 remains OPEN at 0a7fcb6ad with no re"
+        "note": "J0936 hold and 16:24:55Z retry retained. Original approvals and progress preserved. Required Mini repair after transient"
       },
       "taskKeys": [
         "OWB:026",
