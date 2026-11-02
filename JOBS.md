@@ -40,12 +40,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1623 | any | claimed | codex | 2026-11-02T14:20Z | chief · Chief: verify condition for J0936 |  |
 | J1624 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1625 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1623 done: Chief: verify condition for J0936 (Verified unmet condition: J1100 remains blocked at 2/3; audition hashes match, local listening absent; PR333 remains open without approval. J0936 hold retained for 2026-11-02T13:17:23Z. No media or publishing changes.)
 - J1622 done: Chief: verify condition for J1100 (done)
 - J1621 done: Chief: verify condition for J0979 (Verified J0979 waiting condition: 031 (magnetic_field_flip_vo_v02a, J1295/c8ed778ab) and 032 (titan_landing_vo_v02b, J1294/4a9a2e16b) have locked VO only and picture not started (0 files in 04_Video-Generation/08_Edit/09_Final-Render, CG pending); 033-061 have no VO or picture locks; 021-029 have 0 unused non-anaphoric subject-naming line-1 questions (J1000 92a775ee8 / J1042 3782768ab). Retained J0979 input hold (--recheck J1621, next check 2026-11-02T17:45:00Z); 029 reserve v01 remains shelved.)
 - J1620 done: Chief: verify condition for J1471 (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1616 done: Chief: verify condition for J1100 (done)
 - J1615 done: Chief: verify condition for J1471 (done)
 - J1614 done: Chief: verify condition for J1356 (J1614 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1614 (next check 2026-11-02T11:16:15Z); all existing approvals and holds preserved.)
-- J1613 done: Chief: verify condition for J0936 (done)

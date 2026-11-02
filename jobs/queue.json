@@ -143307,13 +143307,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T12:20Z",
-      "eta": "2026-11-02T14:20Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T12:17Z",
-      "result": "",
+      "result": "Verified unmet condition: J1100 remains blocked at 2/3; audition hashes match, local listening absent; PR333 remains open without approval. J0936 hold retained for 2026-11-02T13:17:23Z. No media or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T12:17Z",
@@ -143344,6 +143344,11 @@
           "at": "2026-11-02T12:22Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0936 remains blocked; recorded J1623 verification and existing 2026-11-02T13:17:23Z retry. Prior PASS, completed swaps, production progress and fallbacks preserved."
+        },
+        {
+          "at": "2026-11-02T12:22Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition: J1100 remains blocked at 2/3; audition hashes match, local listening absent; PR333 remains open without approval. J0936 hold retained for 2026-11-02T13:17:23Z. No media or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
@@ -143362,7 +143367,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1624",
