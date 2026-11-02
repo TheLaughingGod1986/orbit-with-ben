@@ -117,13 +117,14 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 2 d | 71 | 24.7% | too few to judge | 58.9% | too few to judge |
+| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 44 h (early) | 66 | 27.9% | too few to judge | 87.7% | too few to judge |
+| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 2 d | 77 | 25.0% | too few to judge | 55.2% | too few to judge |
 | [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 4 d | 265 | 21.3% | MISS | 79.7% | PASS |
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 5 d | 84 | 70.2% | too few to judge | 65.4% | too few to judge |
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 6 d | 221 | 28.6% | MISS | 64.6% | WATCH |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 5 d | 86 | 70.8% | too few to judge | 66.3% | too few to judge |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 6 d | 223 | 29.0% | MISS | 64.5% | WATCH |
 | [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 9 d | 49 | 29.8% | too few to judge | 50.0% | too few to judge |
 | [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 11 d | 175 | 40.5% | MISS | 86.9% | PASS |
-| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 12 d | 151 | 23.1% | MISS | 56.9% | WATCH |
-| [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | 13 d | 134 | 43.4% | MISS | 105.6% | LOOP |
+| [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 12 d | 152 | 23.1% | MISS | 56.9% | WATCH |
+| [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | 13 d | 135 | 43.9% | MISS | 105.5% | LOOP |
 
 Stayed to watch: 0 of 5 judged Shorts at 60%+. Average viewed: 3 of 5 at 70%+.
