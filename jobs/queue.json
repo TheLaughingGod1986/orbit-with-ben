@@ -148356,19 +148356,24 @@
           "at": "2026-11-02T23:43Z",
           "by": "codex",
           "what": "step 1 of 3 done: Scope and approval history checked; PR380 remains OPEN at d0b04b5e0 with no comments or reviews. NAS offload found no eligible scratch."
+        },
+        {
+          "at": "2026-11-02T23:44Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All three final-export SHA256 hashes match J1468; no newer exports. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41; metadata and full audiovisual review still owed."
         }
       ],
-      "remaining_action": "Verify current AR export hashes and saved gate evidence",
+      "remaining_action": "Record J1356 continued hold and finish verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T00:30:19+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T23:43Z",
+        "at": "2026-11-02T23:44Z",
         "by": "codex",
-        "note": "Scope and approval history checked; PR380 remains OPEN at d0b04b5e0 with no comments or reviews. NAS offload found no el"
+        "note": "All three final-export SHA256 hashes match J1468; no newer exports. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 "
       },
       "taskKeys": [
         "OWB:030"
