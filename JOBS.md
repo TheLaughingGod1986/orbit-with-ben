@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1604 | any | claimed | gemini | 2026-11-02T09:46Z | chief · Chief: verify condition for J0862 |  |
 
 Recently finished:
 
+- J1604 done: Chief: verify condition for J0862 (Verified unmet at 2026-11-02 07:50Z: HOS main 7221fa6a, PRs through 398, desk through 6566903871 and queue contain no approved 009 Short B replacement opening or exact recording scope. J0862 remains blocked; next check 2026-11-02T13:50:00Z via J1604. Existing v02 takes, approved 010 A Option A1 and all gates preserved. No spend or publishing changes.)
 - J1603 done: Chief: verify condition for J1471 (done)
 - J1602 done: Chief: verify condition for J1356 (J1602 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1602 (next check 2026-11-02T08:28:54Z); all existing approvals and holds preserved.)
 - J1601 done: Chief: verify condition for J0936 (done)
@@ -53,4 +53,3 @@ Recently finished:
 - J1597 done: Chief: verify condition for J1471 (done)
 - J1596 done: Chief: verify condition for J1356 (done)
 - J1595 done: Chief: verify condition for J0936 (done)
-- J1594 done: Chief: verify condition for J1100 (done)
