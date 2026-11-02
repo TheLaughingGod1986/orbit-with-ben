@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1606 | any | claimed | gemini | 2026-11-02T09:17Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1606 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1605 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (done)
 - J1604 done: Chief: verify condition for J0862 (Verified unmet at 2026-11-02 07:50Z: HOS main 7221fa6a, PRs through 398, desk through 6566903871 and queue contain no approved 009 Short B replacement opening or exact recording scope. J0862 remains blocked; next check 2026-11-02T13:50:00Z via J1604. Existing v02 takes, approved 010 A Option A1 and all gates preserved. No spend or publishing changes.)
 - J1603 done: Chief: verify condition for J1471 (done)
@@ -53,4 +53,3 @@ Recently finished:
 - J1599 done: Chief: verify condition for J0978 (Verified GHZDsiH7L7A via CDP 9460 at 2026-11-02T07:25:49.144Z: A/B testing titles / Results ready still visible; J0978 kept blocked with wait --recheck J1599 until 2026-11-02T13:25:00Z. Evidence in _desk/handoff/J1599/ and HOS PR #398 (5df1b123); channel:audit 62 videos, 0 errors; check_all.sh ALL CHECKS PASS.)
 - J1598 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 5 HOS longs; CTR hits vs 4%: OWB 2/11 measured (h8HGfyShEHI 4.2%, -jmMROGoZCM 5.0%), HOS 1/4 measured (_C92tIJCk8A 6.8%). 77 OWB + 24 HOS Shorts (101/101 stayed-to-watch, 80/101 avg % viewed); 2 Nov 1 releases (rVqgtkBV3jc, pWySvZsneZg) have no settled lifetime metrics yet. Commit 171832e9a; board-data 4b4223494; HOS channel:audit 62 videos, 0 errors.)
 - J1597 done: Chief: verify condition for J1471 (done)
-- J1596 done: Chief: verify condition for J1356 (done)

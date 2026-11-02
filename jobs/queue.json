@@ -141843,13 +141843,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-02T08:17Z",
-      "eta": "2026-11-02T09:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-02T08:15Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-02T08:15Z",
@@ -141880,6 +141880,11 @@
           "at": "2026-11-02T08:20Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Audit complete (10/10 pass); closing J1606"
+        },
+        {
+          "at": "2026-11-02T08:21Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Close J1606 and post report on #264",
