@@ -144124,19 +144124,32 @@
           "at": "2026-11-02T14:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T14:11Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1633; starting read-only listing check on HOS live and scheduled videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Run lint:package, channel:audit, and check 2026-11-02 snapshot",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-02T14:10Z",
+        "of": 4,
+        "at": "2026-11-02T14:11Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1633; starting read-only listing check on HOS live and scheduled videos"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007"
+      ]
     }
   ],
   "focus": [],
