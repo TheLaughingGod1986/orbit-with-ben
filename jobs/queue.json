@@ -123574,6 +123574,11 @@
           "at": "2026-11-02T22:29Z",
           "by": "relay",
           "what": "condition verification queued: J1678"
+        },
+        {
+          "at": "2026-11-02T22:47Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T23:29:45Z"
         }
       ],
       "remaining_action": "Await corrected AR openings, complete gates and full audiovisual review before final-watch handoff",
@@ -123590,12 +123595,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1670 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 matches all three J1468 final exports and no newer final exports exist. J1471 still lacks approved ISS opening input. Saved opening FAILs: AR1 first cut 6.00s >3s; AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-02T23:29:45+00:00",
-        "last_recheck": "J1670",
-        "checked_at": "2026-11-02T20:32:36+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1678"
+        "condition": "J1678 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 matches all three J1468 final exports and no newer final exports exist. J1471 still lacks approved ISS opening input. Saved opening FAILs: AR1 first cut 6.00s >3s; AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-02T23:29:45Z",
+        "last_recheck": "J1678",
+        "checked_at": "2026-11-02T22:47:30+00:00",
+        "checked_by": "codex"
       }
     },
     {
