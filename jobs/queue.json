@@ -143737,19 +143737,24 @@
           "at": "2026-11-02T13:24Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR380 remains OPEN at d0b04b5e0 with no comments or reviews. Read integration, acceptance history and J1468 repair evidence."
+        },
+        {
+          "at": "2026-11-02T13:24Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 finals. Saved opening FAILs remain: AR1 cut 6.00s; AR2 diff 0.25; AR3 1.41. No new gate run or audiovisual review claimed."
         }
       ],
-      "remaining_action": "Verify final-master hashes and saved gate failures",
+      "remaining_action": "Record J1356 continued hold and finish verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T14:18:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-02T13:24Z",
         "by": "codex",
-        "note": "PR380 remains OPEN at d0b04b5e0 with no comments or reviews. Read integration, acceptance history and J1468 repair evide"
+        "note": "Fresh SHA256 matches all three J1468 finals. Saved opening FAILs remain: AR1 cut 6.00s; AR2 diff 0.25; AR3 1.41. No new "
       },
       "taskKeys": [
         "OWB:030"
