@@ -72767,18 +72767,22 @@
           "at": "2026-11-02T00:59Z",
           "by": "relay",
           "what": "condition verification queued: J1568"
+        },
+        {
+          "at": "2026-11-02T01:27Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-02T07:30:00Z"
         }
       ],
       "kind": "vo",
       "remaining_action": "Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
       "hold": {
         "type": "input",
-        "condition": "Verified 2026-11-01 18:37Z: HOS main e1da4a0b, PRs through 396, desk through 6562144186 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit reading before future authorised spend. All production and Ben gates remain.",
-        "check_at": "2026-11-02T01:59:39+00:00",
-        "last_recheck": "J1537",
-        "checked_at": "2026-11-01T18:37:36+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1568"
+        "condition": "Verified 2026-11-02 01:27Z: HOS main 09841a65, PRs through 397, desk through 6562561090 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit reading before future authorised spend. All production and Ben gates remain.",
+        "check_at": "2026-11-02T07:30:00Z",
+        "last_recheck": "J1568",
+        "checked_at": "2026-11-02T01:27:48+00:00",
+        "checked_by": "gemini"
       }
     },
     {
