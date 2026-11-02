@@ -140843,10 +140843,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-02T06:07Z",
+      "eta": "2026-11-02T08:07Z",
       "created_by": "relay",
       "created_at": "2026-11-02T06:06Z",
       "result": "",
@@ -140855,13 +140855,26 @@
           "at": "2026-11-02T06:06Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-02T06:07Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Provide cleared instrumental S2 bed and required local listening evidence before repairs resume",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-02T06:07Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
