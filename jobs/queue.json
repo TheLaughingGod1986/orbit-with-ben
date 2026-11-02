@@ -142248,19 +142248,24 @@
           "at": "2026-11-02T09:35Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Saved gates still FAIL (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50); 06_Final-Exports master hashes unchanged from J1468; J1356 wait hold updated with --recheck J1610"
+        },
+        {
+          "at": "2026-11-02T09:36Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Unmet condition recorded on J1356; next check retained at 2026-11-02T10:15:43Z; all approvals and holds preserved"
         }
       ],
-      "remaining_action": "Verify J1356 hold readback and complete J1610",
+      "remaining_action": "Verification complete; J1356 remains blocked pending corrected delivery",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T10:15:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-02T09:35Z",
+        "at": "2026-11-02T09:36Z",
         "by": "gemini",
-        "note": "Saved gates still FAIL (AR1 first cut 6.00s >3s; AR2 diff 0.25 <1.50; AR3 diff 1.41 <1.50); 06_Final-Exports master hash"
+        "note": "Unmet condition recorded on J1356; next check retained at 2026-11-02T10:15:43Z; all approvals and holds preserved"
       },
       "taskKeys": [
         "OWB:030"
