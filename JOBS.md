@@ -40,11 +40,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1628 | any | claimed | codex | 2026-11-02T15:23Z | chief · Chief: verify condition for J1356 |  |
 | J1629 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1628 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN at unchanged d0b04b5e0 with no comments/reviews; fresh hashes match all three J1468 finals. Saved opening FAILs persist: AR1 cut 6.00s, AR2 diff 0.25, AR3 1.41. J1471 approved ISS input and corrected delivery still absent. Kept J1356 blocked via wait --recheck J1628; next check 2026-11-02T14:18Z. Complete metadata, affected gates, full audiovisual review and pace WARN assessment remain required. Existing approvals and holds preserved. No spend or publishing changes.)
 - J1627 done: Chief: verify condition for J0936 (Verified unmet condition: J1626 retains J1100 blocked at 2/3; three audition hashes match but local listening absent; PR333 remains open without approval. J0936 hold retained for 2026-11-02T14:18:00Z. NAS offload found no eligible scratch; 11.6 GB free. No media or publishing changes.)
 - J1626 done: Chief: verify condition for J1100 (Verified existing evidence and fresh hashes; J1100 remains blocked for cleared instrumental S2 bed and actual local listening. Preserved worker 2/3 and retry 2026-11-02T13:34:54Z. No media approval or publishing.)
 - J1625 done: Chief: verify condition for J1471 (Verified PR380 OPEN at d0b04b5e0 with no comments/reviews or approved replacement delivery. Three J1468 master hashes and ISS cache match. J1471 remains blocked on approved native-motion ISS opening and loop input; saved gate FAILs and full moving/audio review remain. Hold refreshed with J1625, retry 2026-11-02T13:17:23Z. All J1356/Ben/date/credit/publishing holds preserved; GBP0.)
@@ -54,4 +54,3 @@ Recently finished:
 - J1621 done: Chief: verify condition for J0979 (Verified J0979 waiting condition: 031 (magnetic_field_flip_vo_v02a, J1295/c8ed778ab) and 032 (titan_landing_vo_v02b, J1294/4a9a2e16b) have locked VO only and picture not started (0 files in 04_Video-Generation/08_Edit/09_Final-Render, CG pending); 033-061 have no VO or picture locks; 021-029 have 0 unused non-anaphoric subject-naming line-1 questions (J1000 92a775ee8 / J1042 3782768ab). Retained J0979 input hold (--recheck J1621, next check 2026-11-02T17:45:00Z); 029 reserve v01 remains shelved.)
 - J1620 done: Chief: verify condition for J1471 (done)
 - J1619 done: Chief: verify condition for J1356 (J1619 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1619 (next check 2026-11-02T12:17:14Z); all existing approvals and holds preserved.)
-- J1618 done: Chief: verify condition for J0936 (done)
