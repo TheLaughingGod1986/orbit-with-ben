@@ -146270,19 +146270,24 @@
           "at": "2026-11-02T19:05Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking original approval, current Studio evidence, then recording the condition decision."
+        },
+        {
+          "at": "2026-11-02T19:06Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed J1130 original authorization, approval decision and J1654 evidence; requires actual T020 end time and next London day."
         }
       ],
-      "remaining_action": "Verify current Studio test status and completion timestamp",
+      "remaining_action": "Read live HOS thumbnail test status",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-02T20:04:25+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T19:05Z",
+        "at": "2026-11-02T19:06Z",
         "by": "codex",
-        "note": "Checking original approval, current Studio evidence, then recording the condition decision."
+        "note": "Reviewed J1130 original authorization, approval decision and J1654 evidence; requires actual T020 end time and next Lond"
       },
       "taskKeys": [
         "HOS:002"
