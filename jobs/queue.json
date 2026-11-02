@@ -72797,18 +72797,22 @@
           "at": "2026-11-02T19:55Z",
           "by": "relay",
           "what": "condition verification queued: J1665"
+        },
+        {
+          "at": "2026-11-02T19:57Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T02:00:00Z"
         }
       ],
       "kind": "vo",
       "remaining_action": "Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
       "hold": {
         "type": "input",
-        "condition": "Verified 2026-11-02 13:55Z: HOS main 37c23ad3, PRs through 398, desk through 6578549505 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit reading before future authorised spend. All production and Ben gates remain.",
-        "check_at": "2026-11-02T20:55:11+00:00",
-        "last_recheck": "J1632",
-        "checked_at": "2026-11-02T13:53:29+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1665"
+        "condition": "Verified 2026-11-02 19:58Z: HOS main fadfb918, PRs through 398, desk through 6586722365 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Approve replacement wording and recording scope first; fresh live credit reading before future authorised spend. All production and Ben gates remain.",
+        "check_at": "2026-11-03T02:00:00Z",
+        "last_recheck": "J1665",
+        "checked_at": "2026-11-02T19:57:44+00:00",
+        "checked_by": "codex"
       }
     },
     {
