@@ -99869,9 +99869,14 @@
           "at": "2026-11-02T16:41Z",
           "by": "relay",
           "what": "condition verification queued: J1647"
+        },
+        {
+          "at": "2026-11-02T16:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T17:41:22Z"
         }
       ],
-      "remaining_action": "Obtain cleared instrumental S2 bed and required local listening evidence before repairs resume",
+      "remaining_action": "Clear instrumental S2 bed and complete actual local listening before remaining repairs and gates",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -99897,12 +99902,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1643 verified: cleared instrumental S2 bed and actual local opening/middle/end listening remain unproven. Fresh hashes match 3e26b379b; listening NOT PERFORMED, no newer local evidence. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains excluded. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines/v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-02T17:41:22+00:00",
-        "last_recheck": "J1643",
-        "checked_at": "2026-11-02T15:45:07+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1647"
+        "condition": "J1647 verified: cleared instrumental S2 bed and actual local opening/middle/end listening remain unproven. Fresh hashes match 3e26b379b; listening NOT PERFORMED; no newer listening record in J1100 evidence locations. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 remains excluded. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines/v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-02T17:41:22Z",
+        "last_recheck": "J1647",
+        "checked_at": "2026-11-02T16:44:31+00:00",
+        "checked_by": "codex"
       }
     },
     {
