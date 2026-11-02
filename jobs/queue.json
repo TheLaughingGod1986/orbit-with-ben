@@ -86943,6 +86943,11 @@
           "at": "2026-11-02T19:36Z",
           "by": "relay",
           "what": "condition verification queued: J1663"
+        },
+        {
+          "at": "2026-11-02T19:40Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T01:45:00Z"
         }
       ],
       "kind": "listing",
@@ -86958,7 +86963,7 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Wait for Atom title-test widget clearance before the approved Test B listing update",
+      "remaining_action": "Wait for verified Atom title-test clearance before approved Test B listing update",
       "progress": {
         "step": 4,
         "of": 5,
@@ -86968,12 +86973,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Fresh HOS Studio read 2 Nov 13:33 UTC via CDP 9460 still shows A/B testing titles / Results ready on GHZDsiH7L7A, original title and Public. Requires read-only evidence of title-test widget clearance; API restriction removal remains unproven and no write probe was made. Evidence OWB PR 381, jobs/readbacks/J1630.json and _desk/handoff/J1630/atom_edit.png.",
-        "check_at": "2026-11-02T20:36:53+00:00",
-        "last_recheck": "J1630",
-        "checked_at": "2026-11-02T13:35:00+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1663"
+        "condition": "Requires read-only proof of Atom GHZDsiH7L7A title-test widget clearance. J1663 on 2 Nov 19:40 UTC could not verify: fresh Studio navigation/reload and existing tabs returned empty bodies. Last successful read 13:33 UTC showed Results ready widget. API restriction removal remains unproven; no write probe. Evidence jobs/readbacks/J1663.json at ed63f00c1 and _desk/handoff/J1663.",
+        "check_at": "2026-11-03T01:45:00Z",
+        "last_recheck": "J1663",
+        "checked_at": "2026-11-02T19:40:45+00:00",
+        "checked_by": "codex"
       }
     },
     {
