@@ -41,6 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1642 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
+| J1643 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
