@@ -138658,7 +138658,7 @@
     {
       "id": "J1568",
       "title": "Chief: verify condition for J0862",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J0862: Verified 2026-11-01 18:37Z: HOS main e1da4a0b, PRs through 396, desk through 6562144186 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit reading before future authorised spend. All production and Ben gates remain.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0862 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -138693,6 +138693,11 @@
           "at": "2026-11-02T01:19Z",
           "by": "gemini",
           "what": "released: Handing Chief verification J1568 back to returned higher-priority Chief (codex, up since 2026-11-02T01:17:19Z). Read-only check at 2026-11-02T01:18Z confirmed HOS main 09841a65, PRs through 397, desk #180 through 6562561090, and queue still contain no approved 009 Short B replacement opening or exact recording scope."
+        },
+        {
+          "at": "2026-11-02T01:22Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Check HOS main, PRs, desk #180 and queue for approved 009 Short B replacement opening and recording scope",
@@ -138710,7 +138715,16 @@
       "taskKeys": [
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1569",
