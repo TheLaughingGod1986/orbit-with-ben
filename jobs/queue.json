@@ -88208,6 +88208,11 @@
           "at": "2026-11-02T15:33Z",
           "by": "relay",
           "what": "condition verification queued: J1642"
+        },
+        {
+          "at": "2026-11-02T15:53Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T21:53:50Z"
         }
       ],
       "kind": "review",
@@ -88243,15 +88248,14 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T19:20Z",
-      "remaining_action": "Obtain non-author Chief (grok, claude, or codex) final audit PASS on reconciled commit 0ac2007b9",
+      "remaining_action": "Obtain explicit approval for publication of the completed local audit review",
       "hold": {
         "type": "input",
-        "condition": "J1609 verified commit 0ac2007b9 and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90239a1ab84ef9ca2b8c12a2508d5499ebc00fbe29efc) reconcile Mercury vlkj8RQKmH8 curve drops (tied -5.59pp at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, and LEARNINGS.md (superseding J1003 stale queue result string). Because gemini authored J0985/J1002/J1003/J1549 (never self-approve J0985) and grok/claude/codex are all down, J0985 awaits final non-author Chief (grok, claude, or codex) audit PASS. Original gates and approvals unchanged.",
-        "check_at": "2026-11-02T16:33:36+00:00",
-        "last_recheck": "J1609",
-        "checked_at": "2026-11-02T09:24:22+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1642"
+        "condition": "Explicit approval to publish local J1642 review commit 33af1e441 to the public studio repo. Automatic approval review rejected this analytics-derived payload despite verified origin. Review is preserved locally at /Users/benjaminoats/_desk/handoff/J1642/; no retry of publication without approval. Original production gates and approvals remain unchanged.",
+        "check_at": "2026-11-02T21:53:50Z",
+        "last_recheck": "J1642",
+        "checked_at": "2026-11-02T15:53:50+00:00",
+        "checked_by": "codex"
       }
     },
     {
