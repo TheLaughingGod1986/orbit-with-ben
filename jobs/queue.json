@@ -86863,6 +86863,11 @@
           "at": "2026-11-02T13:25Z",
           "by": "relay",
           "what": "condition verification queued: J1630"
+        },
+        {
+          "at": "2026-11-02T13:35Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T19:35:00Z"
         }
       ],
       "kind": "listing",
@@ -86878,7 +86883,7 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Start the next Atom title test",
+      "remaining_action": "Wait for Atom title-test widget clearance before the approved Test B listing update",
       "progress": {
         "step": 4,
         "of": 5,
@@ -86888,12 +86893,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Fresh HOS Studio read 2 Nov 07:25 UTC via CDP 9460 still shows A/B testing titles / Results ready on GHZDsiH7L7A with original title and Public. Widget clearance and API restriction removal remain unproven; no write probe. Evidence _desk/handoff/J1599/readback.json, atom_edit.png and HOS PR #398. Requires fresh read-only evidence of title-test widget clearance.",
-        "check_at": "2026-11-02T14:25:43+00:00",
-        "last_recheck": "J1599",
-        "checked_at": "2026-11-02T07:27:34+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1630"
+        "condition": "Fresh HOS Studio read 2 Nov 13:33 UTC via CDP 9460 still shows A/B testing titles / Results ready on GHZDsiH7L7A, original title and Public. Requires read-only evidence of title-test widget clearance; API restriction removal remains unproven and no write probe was made. Evidence OWB PR 381, jobs/readbacks/J1630.json and _desk/handoff/J1630/atom_edit.png.",
+        "check_at": "2026-11-02T19:35:00Z",
+        "last_recheck": "J1630",
+        "checked_at": "2026-11-02T13:35:00+00:00",
+        "checked_by": "codex"
       }
     },
     {
