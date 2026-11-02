@@ -124,6 +124,7 @@ const board={tracker:{videos:[v,{...v,key:'HOS:998',checkId:'HOS-998',title:'The
       await page.waitForFunction(()=>location.hash==='#review');
       await page.goto(`${base}/#videos`);
       await page.getByRole('heading',{name:'Videos',exact:true}).waitFor();
+      await page.getByRole('button',{name:'All',exact:true}).click();
       const published=page.locator('a.row').filter({hasText:'Published film'}).first();
       const publishedText=await published.innerText();
       assert(publishedText.includes('Published')&&!publishedText.includes('%')&&!publishedText.includes('UAT:'));
