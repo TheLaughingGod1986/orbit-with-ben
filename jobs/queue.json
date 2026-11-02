@@ -145029,13 +145029,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T16:26Z",
-      "eta": "2026-11-02T18:26Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T16:25Z",
-      "result": "",
+      "result": "Verified latest J1643/J1100 and original approvals: J0936 remains blocked pending cleared S2 bed, local listening, repairs, gates and replacement approvals. All three audition hashes match 3e26b379b. PR333 OPEN at 0a7fcb6ad without reviews/comments. Preserved 17:25:01Z retry, original progress/deadlines, completed swaps and scheduled fallbacks. Live disk 21,116 MB. Report posted to OWB264; no spend, audio egress or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T16:25Z",
@@ -145066,6 +145066,11 @@
           "at": "2026-11-02T16:27Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0936 input hold retained with existing 17:25:01Z retry. Completed approvals, progress, deadlines and scheduled fallbacks preserved."
+        },
+        {
+          "at": "2026-11-02T16:28Z",
+          "by": "codex",
+          "what": "done: Verified latest J1643/J1100 and original approvals: J0936 remains blocked pending cleared S2 bed, local listening, repairs, gates and replacement approvals. All three audition hashes match 3e26b379b. PR333 OPEN at 0a7fcb6ad without reviews/comments. Preserved 17:25:01Z retry, original progress/deadlines, completed swaps and scheduled fallbacks. Live disk 21,116 MB. Report posted to OWB264; no spend, audio egress or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
@@ -145084,7 +145089,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1645",
