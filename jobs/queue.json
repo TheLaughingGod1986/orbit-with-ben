@@ -141860,19 +141860,31 @@
           "at": "2026-11-02T08:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T08:18Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1606; starting read-only listing check on last 10 live videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Verify last 10 live public videos against 2026-11-02 snapshot and live YouTube watch/Shorts pages",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-02T08:17Z",
+        "at": "2026-11-02T08:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1606; starting read-only listing check on last 10 live videos"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
