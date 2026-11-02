@@ -143325,19 +143325,30 @@
           "at": "2026-11-02T12:20Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-02T12:21Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original J0936 and J1100 briefs and approval history; J1622 still retains repair hold at 2/3; S1/S3/S4 swaps completed"
         }
       ],
-      "remaining_action": "Verify J0936 evidence, approvals and remaining replacement gates",
+      "remaining_action": "Verify unchanged bed evidence and outstanding replacement approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T13:17:23+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T12:20Z",
-        "by": "codex"
-      }
+        "at": "2026-11-02T12:21Z",
+        "by": "codex",
+        "note": "Read original J0936 and J1100 briefs and approval history; J1622 still retains repair hold at 2/3; S1/S3/S4 swaps comple"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1624",
