@@ -142991,19 +142991,24 @@
           "at": "2026-11-02T11:25Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1619; checking PR #380, J1471, and J1356 state"
+        },
+        {
+          "at": "2026-11-02T11:26Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: PR #380 still OPEN unchanged at d0b04b5e0 (0 comments/reviews); J1471 still blocked on approved ISS opening input"
         }
       ],
-      "remaining_action": "Verify waiting condition for J1356 (PR #380 and J1471 opening fixes)",
+      "remaining_action": "Check saved gate_shorts_open evidence and update J1356 wait hold",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T12:17:14+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T11:25Z",
+        "at": "2026-11-02T11:26Z",
         "by": "gemini",
-        "note": "Claimed J1619; checking PR #380, J1471, and J1356 state"
+        "note": "PR #380 still OPEN unchanged at d0b04b5e0 (0 comments/reviews); J1471 still blocked on approved ISS opening input"
       },
       "taskKeys": [
         "OWB:030"
