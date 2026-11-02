@@ -141478,9 +141478,14 @@
           "at": "2026-11-02T07:31Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1601; starting inspection of J0936 and J1100"
+        },
+        {
+          "at": "2026-11-02T07:32Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J0936 brief, approval/hold history, J1595 and latest J1600 result on J1100 (blocked at 2/3 until 2026-11-02T08:17:20Z)"
         }
       ],
-      "remaining_action": "Read J0936, J1100, PR #333 and recent verification jobs to check if J0936 waiting condition is met",
+      "remaining_action": "Verify /private/tmp/J1100-bed-evidence hashes, listening status and PR #333 state",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T08:28:54+00:00",
@@ -141495,12 +141500,17 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T07:31Z",
+        "at": "2026-11-02T07:32Z",
         "by": "gemini",
-        "note": "Claimed J1601; starting inspection of J0936 and J1100"
-      }
+        "note": "Read J0936 brief, approval/hold history, J1595 and latest J1600 result on J1100 (blocked at 2/3 until 2026-11-02T08:17:2"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1602",
