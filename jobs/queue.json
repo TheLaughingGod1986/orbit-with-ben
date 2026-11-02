@@ -148491,13 +148491,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T23:52Z",
-      "eta": "2026-11-03T01:52Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T23:51Z",
-      "result": "",
+      "result": "Verified J0979 condition unmet: 031/032 retain VO locks J1295/c8ed778ab and J1294/4a9a2e16b, but picture not started, CG pending and zero generation/edit/final files. 033-061 have no VO/picture locks. Reviewed original rejection and J1000/J1042 shelving. J0979 remains blocked with recheck J1686; retained retry 2026-11-03T00:51:19Z. 029 reserve v01 remains shelved; all gates and approvals preserved. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T23:51Z",
@@ -148528,6 +148528,11 @@
           "at": "2026-11-02T23:53Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0979 remains blocked with J1686 evidence; retained retry 2026-11-03T00:51:19Z and all original approvals/gates"
+        },
+        {
+          "at": "2026-11-02T23:53Z",
+          "by": "codex",
+          "what": "done: Verified J0979 condition unmet: 031/032 retain VO locks J1295/c8ed778ab and J1294/4a9a2e16b, but picture not started, CG pending and zero generation/edit/final files. 033-061 have no VO/picture locks. Reviewed original rejection and J1000/J1042 shelving. J0979 remains blocked with recheck J1686; retained retry 2026-11-03T00:51:19Z. 029 reserve v01 remains shelved; all gates and approvals preserved. No spend or publishing changes."
         }
       ],
       "remaining_action": "Close verification and report continuing picture-lock hold",

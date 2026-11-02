@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1686 | any | claimed | codex | 2026-11-03T01:52Z | chief · Chief: verify condition for J0979 |  |
 
 Recently finished:
 
+- J1686 done: Chief: verify condition for J0979 (Verified J0979 condition unmet: 031/032 retain VO locks J1295/c8ed778ab and J1294/4a9a2e16b, but picture not started, CG pending and zero generation/edit/final files. 033-061 have no VO/picture locks. Reviewed original rejection and J1000/J1042 shelving. J0979 remains blocked with recheck J1686; retained retry 2026-11-03T00:51:19Z. 029 reserve v01 remains shelved; all gates and approvals preserved. No spend or publishing changes.)
 - J1685 done: Chief: verify condition for J1471 (Verified PR380 unchanged and preserved master/cache hashes match. J1471 remains blocked on approved ISS opening input; retained retry 2026-11-03T00:30:19Z. All gates and publishing holds remain.)
 - J1684 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports. Saved opening FAILs remain (AR1 6.00s; AR2 0.25; AR3 1.41). J1356 remains held; next check 2026-11-03T00:30:19Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes.)
 - J1683 done: Chief: verify condition for J1130 (done)
@@ -53,4 +53,3 @@ Recently finished:
 - J1679 done: Chief: verify condition for J1471 (Verified PR380 unchanged and preserved master/cache hashes match. J1471 remains blocked on approved ISS opening input; retained retry 2026-11-02T23:29:45Z. All gates and publishing holds remain.)
 - J1678 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports. Saved opening FAILs remain (AR1 6.00s; AR2 0.25; AR3 1.41). J1356 remains held; next check 2026-11-02T23:29:45Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes.)
 - J1677 done: Chief: verify condition for J1130 (done)
-- J1676 done: Chief: verify condition for J1100 (Verified original approval history and fresh bed/three audition hashes against 3e26b379b. No newer local listening record; J1100 remains blocked for cleared instrumental S2 bed and actual local opening/middle/end listening. Preserved 2/3, OWB:027/028, pickups, continuous phrase, S6 audio, h43-LOOP and deadlines/v01 fallback. Next check retained: 2026-11-02T23:29:45Z. Required NAS offload found no eligible scratch; about 15.4 GB free. No spend, audio egress, render or publishing.)
