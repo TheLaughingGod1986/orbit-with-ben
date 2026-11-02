@@ -145042,9 +145042,14 @@
           "at": "2026-11-02T16:26Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T16:26Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking original brief, latest repair state and approval evidence."
         }
       ],
-      "remaining_action": "Verify readiness: Finish J1100 audio and caption repairs, gates and replacement review before Ben watches S2/S5/S6",
+      "remaining_action": "Verify J0936 repair evidence and replacement approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T17:25:01+00:00",
@@ -145054,9 +145059,13 @@
         "of": 3,
         "at": "2026-11-02T16:26Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking original brief, latest repair state and approval evidence."
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1645",
