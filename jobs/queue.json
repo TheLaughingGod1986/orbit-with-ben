@@ -139591,19 +139591,24 @@
           "at": "2026-11-02T02:54Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified commit 0ac2007b9, evidence SHA256 b753794d, reconciled Mercury tied -5.59pp drops, and confirmed grok/claude/codex are all down so non-author Chief PASS remains unmet"
+        },
+        {
+          "at": "2026-11-02T02:54Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Recorded J0985 wait --recheck J1579 for non-author Chief audit PASS (check-at 2026-11-02T08:55:00Z)"
         }
       ],
-      "remaining_action": "Update J0985 wait condition with --recheck J1579 for non-author Chief audit PASS",
+      "remaining_action": "Finish J1579 and post OWB thread report",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-02T03:51:09+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-02T02:54Z",
         "by": "gemini",
-        "note": "Verified commit 0ac2007b9, evidence SHA256 b753794d, reconciled Mercury tied -5.59pp drops, and confirmed grok/claude/co"
+        "note": "Recorded J0985 wait --recheck J1579 for non-author Chief audit PASS (check-at 2026-11-02T08:55:00Z)"
       },
       "taskKeys": [
         "OWB:021",
