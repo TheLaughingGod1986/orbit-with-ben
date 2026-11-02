@@ -146575,13 +146575,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T19:37Z",
-      "eta": "2026-11-02T21:37Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T19:36Z",
-      "result": "",
+      "result": "Read-only verification unavailable: Studio returned blank content after navigation/reload, including existing tabs. J0978 remains blocked; next check 2026-11-03 01:45 UTC. Evidence PR 385 / ed63f00c1 and _desk/handoff/J1663. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-11-02T19:36Z",
@@ -146612,6 +146612,11 @@
           "at": "2026-11-02T19:41Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence PR 385; J0978 hold retained with recheck J1663, next 3 Nov 01:45 UTC. JSON and diff checks passed."
+        },
+        {
+          "at": "2026-11-02T19:41Z",
+          "by": "codex",
+          "what": "done: Read-only verification unavailable: Studio returned blank content after navigation/reload, including existing tabs. J0978 remains blocked; next check 2026-11-03 01:45 UTC. Evidence PR 385 / ed63f00c1 and _desk/handoff/J1663. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Verification finished; J0978 held for fresh Studio evidence",
@@ -146628,7 +146633,8 @@
       },
       "taskKeys": [
         "HOS:004"
-      ]
+      ],
+      "done_ref": "ed63f00c1"
     }
   ],
   "focus": [],
