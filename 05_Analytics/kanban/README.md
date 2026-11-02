@@ -178,3 +178,26 @@ No source stage/job records, approvals, publishing dates, media visibility or ge
 modified. Older board payloads still render using their recorded stage evidence. Full V2 metadata
 requires the normal Mini publisher after an approved merge, independently of the page deployment.
 Screenshots and the validation record are in `docs/review/studio-v2/QA.md`.
+
+## Studio V3 Overview
+
+Overview uses `overviewModel`, `producingVideos`, `scheduledThisWeek` and `featureVideo` in the
+existing app. The three statistics open `#review`, `#videos&view=producing`, and
+`#schedule&view=week`. Existing tab/video/UAT routes continue to work. Scope links reset stale
+Videos filters; user-selected filters still work within the producing scope.
+
+Producing excludes Backlog, published/scheduled work, done cards and cuts ready for Ben. A shared
+job cannot increase the video count; stable keys and explicit YouTube IDs deduplicate aliases.
+The schedule statistic counts recorded schedules in the London Monday–Sunday calendar week,
+not a rolling seven days or planned air dates. Schedule labels these definitions explicitly.
+
+One featured card uses existing milestone counts and UAT forecasts, with deterministic readiness,
+blocker, focus/priority and meaningful-progress fallbacks. Unknown timing stays pending. Agent
+names require fresh job timestamps; status combines real work, freshness and availability rather
+than Chief presence. All operational details remain under Agents, including the expandable queue.
+
+Unchanged render output retains the existing DOM. The existing poll cadence and same-SHA network
+shortcut remain; transient refresh errors retain loaded content and an initial failure shows an
+automatic-retry message. V2 technical disclosures and UAT notes remain protected.
+
+See `docs/review/studio-v3/QA.md` for definitions, before/after captures and executed tests.

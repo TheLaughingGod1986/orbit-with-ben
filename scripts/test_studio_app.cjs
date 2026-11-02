@@ -4,10 +4,10 @@ const fs = require('fs'), vm = require('vm'), assert = require('assert'), path =
 const source = fs.readFileSync(path.join(__dirname, '../05_Analytics/kanban/board_site/studio_app.js'), 'utf8');
 const hook = '  // STUDIO_APP_TEST_HOOK';
 assert(source.includes(hook), 'studio_app.js keeps its test hook');
-const context = {Date, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
+const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -89,7 +89,7 @@ const flagOnly = t.summary({tracker: {videos: [v({key: 'f', working: true})]}, m
 assert.equal(flagOnly.working.length, 0);
 assert.equal(flagOnly.jobs.working, 0);
 const ov = t.renderTab('overview', {tracker: {videos: []}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [{id: 'J1', status: 'claimed', by: 'gemini', title: 'x'}]}}, NOW);
-assert(ov.includes('Studio job · not one video') && ov.includes('Agents working now <span class="n">1</span>') && ov.includes('Jobs running'), 'a studio job shows as its own card and is counted');
+assert(ov.includes('1 active job') && !ov.includes('J1') && !ov.includes('Agents working now'), 'studio jobs stay counted in compact activity without raw cards');
 // Every video opens in the hub, never the old board; the detail shows the agent work and its reasons.
 for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) assert(!t.renderTab(tab, board, NOW).includes('/board'), `${tab} never links to /board`);
 const det = t.detail({tracker: {videos: [v({key: 'OWB:005', line: 'Held up by the audit', jobs: [
@@ -124,7 +124,7 @@ assert(t.renderTab('agents', board, NOW).includes('Grok'));
 const batch = {status: 'claimed', id: 'J1100', by: 'codex', title: 'batch C'};
 const ovb = t.renderTab('overview', {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]}),
   v({key: 'c', number: '027', type: 'short', jobs: [batch]})]}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [batch]}}, NOW);
-assert(ovb.includes('Same job also covers 2 more: 028, 027 Short') && !ovb.includes('Studio job · not one video'));
+assert(ovb.includes('1 active job') && !ovb.includes('J1100'), 'a shared job is counted once without exposing its title');
 assert.equal(t.jobGroups([v({key: 'a', jobs: [batch]}), v({key: 'b', jobs: [batch]})]).length, 1);
 // Videos: a batch job shows its progress once; the other videos say they share it.
 const vb = {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]})]}};
@@ -204,3 +204,52 @@ const updated = v({key:'updated',production:{milestones:[{id:'edit',state:'doing
 assert.deepEqual(t.sortVideos([pending1,updated],'updated',NOW).map(x=>x.key),['updated','pending1']);
 assert(t.forecastView(tracked,NOW+80*6e4).value==='Pending');
 console.log('Studio app regression and V2 checks OK');
+
+// V3 shared video selectors, calendar weeks, health and deterministic featured selection.
+const freshModels={checkedAt:new Date(NOW).toISOString(),models:[]};
+const makeBoard=videos=>({tracker:{videos},models:freshModels,owb:{jobs:[]}});
+const shared={id:'Jshared',status:'claimed',by:'codex',claimedAt:new Date(NOW).toISOString()};
+const producingA=v({key:'OWB:101',jobs:[shared]}), producingB=v({key:'HOS:101',channel:'HOS',jobs:[shared]});
+const publicFollowup=v({key:'OWB:102',youtube:{videoId:'abcdefghijk',privacy:'public',state:'live'},jobs:[shared]});
+const scheduled=v({key:'OWB:103',lane:'done',youtube:{videoId:'bcdefghijkl',state:'scheduled',publishAt:'2026-10-30T18:00:00Z'}});
+const readyFilm=v({key:'OWB:104',lane:'ready',readyFor:'Ben'});
+const db=makeBoard([producingA,producingA,producingB,publicFollowup,scheduled,readyFilm,readyFilm]);
+const om=t.overviewModel(db,NOW);
+assert.equal(om.ready.length,1);assert.equal(om.producing.length,2);assert.equal(om.running.length,1);assert.equal(om.week.length,1);
+assert.equal(t.featureVideo(db,NOW).key,'OWB:104','finished Ben review comes first');
+assert.equal(t.featureVideo(makeBoard([pending1,pending2,sooner,later]),NOW).key,'sooner','credible earliest UAT outranks pending');
+const nearlyDone=v({key:'blocked',production:{milestones:nine.map((id,i)=>({id,state:i<8?'done':'review'})),activeStages:['qa']}});
+assert.equal(t.featureVideo(makeBoard([nearlyDone,producingA]),NOW).key,producingA.key,'nominal progress does not promote a blocked film');
+const focused=makeBoard([v({key:'OWB:202'}),v({key:'OWB:201'})]);focused.owb.focus=['202'];
+assert.equal(t.featureVideo(focused,NOW).key,'OWB:202','recorded focus breaks readiness ties');
+assert.equal(t.featureVideo(makeBoard([v({key:'z'}),v({key:'a'})]),NOW).key,'a','fallback has an explicit stable key');
+assert.equal(t.featuredOutlook(pending1,NOW),'Estimate pending');
+const staleBoard={...makeBoard([v({key:'stale',jobs:[{...shared,claimedAt:new Date(NOW-80*6e4).toISOString()}]})]),models:{checkedAt:new Date(NOW-80*6e4).toISOString()}};
+assert.equal(t.overviewModel(staleBoard,NOW).status.text,'Attention needed');
+assert(!t.overview(staleBoard,NOW).includes('Codex is working'));
+assert.equal(t.overviewModel({...db,models:staleBoard.models},NOW).status.text,'Running · Limited','fresh job activity is independent of a stale relay report');
+assert.equal(t.overviewModel({...db,models:{...freshModels,models:[{id:'claude',status:'red'}]}},NOW).status.text,'Running · Limited');
+assert(t.overview(db,NOW).includes('Codex is working'));
+assert.equal(t.overviewModel(makeBoard([]),NOW).status.text,'Waiting');
+const weekNow=Date.parse('2026-11-02T12:00:00Z');
+const slot=(key,at,state='scheduled')=>v({key,lane:'done',youtube:{state,publishAt:at}});
+const weekVideos=[slot('start','2026-11-02T00:00:00Z'),slot('end','2026-11-08T23:59:00Z'),slot('next','2026-11-09T00:00:00Z'),
+  slot('live','2026-11-04T18:00:00Z','live'),v({key:'planned',air:'2026-11-05'})];
+assert.deepEqual(t.scheduledThisWeek(weekVideos,weekNow).map(r=>r.v.key),['start','end']);
+assert.equal(t.weekDates(Date.parse('2026-07-05T23:30:00Z')).start,'2026-07-06','calendar uses London day across BST midnight');
+context.location.hash='#videos&view=producing';
+assert(t.renderTab('videos',db,NOW).includes('Producing · 2 unique videos'));
+context.location.hash='#schedule&view=week';
+assert(t.renderTab('schedule',db,NOW).includes('This week · scheduled <span class="n">1</span>'));
+context.location.hash='';
+assert.equal((t.overview(db,NOW).match(/class="featured-video"/g)||[]).length,1);
+assert(!t.overview(db,NOW).includes('How this estimate works'));
+console.log('Studio V3 selector and Overview checks OK');
+
+const identicalSlot=[slot('OWB:s1','2026-11-04T18:00:00Z'),slot('OWB:s2','2026-11-04T18:00:00Z')];
+identicalSlot[0].youtube.videoId='abcdefghijk';identicalSlot[1].youtube.videoId='bcdefghijkl';
+assert.equal(t.scheduledThisWeek(identicalSlot,weekNow).length,2,'distinct videos sharing a slot are still two scheduled videos');
+const ytReady=v({key:'physical',youtube:{videoId:'abcdefghijk',state:'private'}});
+assert.equal(t.uniqueVideos([ytReady,{...ytReady,key:'alias'},ytReady]).length,1);
+assert.equal(t.uniqueVideos([v({key:'same'}),v({key:'same',youtube:{videoId:'abcdefghijk'}})]).length,1);
+assert.equal(t.producingVideos([v({key:'backlog',lane:'upcoming',production:nearlyDone.production})]).length,0,'backlog milestones do not silently promote a video into active production');
