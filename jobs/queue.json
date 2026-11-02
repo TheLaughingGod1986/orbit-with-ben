@@ -102949,6 +102949,11 @@
           "at": "2026-11-02T18:03Z",
           "by": "relay",
           "what": "condition verification queued: J1654"
+        },
+        {
+          "at": "2026-11-02T18:06Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T19:03:27Z"
         }
       ],
       "remaining_action": "Verify T020 completion and next London calendar day before arming approved title-only test",
@@ -102965,12 +102970,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "2 Nov 17:06 UTC: fresh HOS Studio details on CDP 9460 show AL_-qlWko_g thumbnail Running. Detailed A/B report did not load (30-second timeout), so completion timestamp cannot be verified. Evidence: /Users/benjaminoats/_desk/handoff/J1648. Require T020 ended with actual Studio completion timestamp and at least the following London calendar day.",
-        "check_at": "2026-11-02T19:03:27+00:00",
-        "last_recheck": "J1648",
-        "checked_at": "2026-11-02T17:06:31+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1654"
+        "condition": "2 Nov 18:06 UTC: fresh HOS Studio details on CDP 9460 show AL_-qlWko_g thumbnail Running. Detailed report did not load within 20 seconds; no completion timestamp verified. Evidence: /Users/benjaminoats/_desk/handoff/J1654. Require T020 ended with actual Studio completion timestamp and at least the following London calendar day.",
+        "check_at": "2026-11-02T19:03:27Z",
+        "last_recheck": "J1654",
+        "checked_at": "2026-11-02T18:06:25+00:00",
+        "checked_by": "codex"
       }
     },
     {
