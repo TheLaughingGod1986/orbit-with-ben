@@ -143139,13 +143139,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-02T11:39Z",
-      "eta": "2026-11-02T13:39Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T11:28Z",
-      "result": "",
+      "result": "Verified J0979 waiting condition: 031 (magnetic_field_flip_vo_v02a, J1295/c8ed778ab) and 032 (titan_landing_vo_v02b, J1294/4a9a2e16b) have locked VO only and picture not started (0 files in 04_Video-Generation/08_Edit/09_Final-Render, CG pending); 033-061 have no VO or picture locks; 021-029 have 0 unused non-anaphoric subject-naming line-1 questions (J1000 92a775ee8 / J1042 3782768ab). Retained J0979 input hold (--recheck J1621, next check 2026-11-02T17:45:00Z); 029 reserve v01 remains shelved.",
       "history": [
         {
           "at": "2026-11-02T11:28Z",
@@ -143176,6 +143176,11 @@
           "at": "2026-11-02T11:42Z",
           "by": "gemini",
           "what": "step 3 of 3 done: J0979 input hold retained with J1621 evidence and next check 2026-11-02T17:45:00Z; original J1042 shelving and approval gates preserved"
+        },
+        {
+          "at": "2026-11-02T11:42Z",
+          "by": "gemini",
+          "what": "done: Verified J0979 waiting condition: 031 (magnetic_field_flip_vo_v02a, J1295/c8ed778ab) and 032 (titan_landing_vo_v02b, J1294/4a9a2e16b) have locked VO only and picture not started (0 files in 04_Video-Generation/08_Edit/09_Final-Render, CG pending); 033-061 have no VO or picture locks; 021-029 have 0 unused non-anaphoric subject-naming line-1 questions (J1000 92a775ee8 / J1042 3782768ab). Retained J0979 input hold (--recheck J1621, next check 2026-11-02T17:45:00Z); 029 reserve v01 remains shelved."
         }
       ],
       "remaining_action": "Close verification and report the continuing picture-lock hold on thread",
