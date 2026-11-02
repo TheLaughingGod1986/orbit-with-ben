@@ -81339,6 +81339,11 @@
           "at": "2026-11-02T12:17Z",
           "by": "relay",
           "what": "condition verification queued: J1623"
+        },
+        {
+          "at": "2026-11-02T12:22Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T13:17:23Z"
         }
       ],
       "kind": "video",
@@ -81369,12 +81374,11 @@
       "remaining_action": "Finish J1100 audio and caption repairs, gates and replacement review before Ben watches S2/S5/S6",
       "hold": {
         "type": "input",
-        "condition": "J1618 verified: latest J1616 retains J1100 blocked at 2/3. Evidence 3e26b379b excludes S2 bed 13adc031; opening/middle/end listening NOT PERFORMED and all three audition hashes match. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, final AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 swap approvals. PR333 OPEN at 0a7fcb6ad without reviews/comments. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, 1 Nov 20:00 London batch target, individual deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
-        "check_at": "2026-11-02T13:17:23+00:00",
-        "last_recheck": "J1618",
-        "checked_at": "2026-11-02T11:22:26+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1623"
+        "condition": "J1623 verified: latest J1622 retains J1100 blocked at 2/3. Evidence 3e26b379b excludes S2 bed 13adc031; local opening/middle/end listening NOT PERFORMED and all three audition hashes match. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, final AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 swap approvals. PR333 OPEN at 0a7fcb6ad without reviews/comments. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, 1 Nov 20:00 London batch target, individual deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
+        "check_at": "2026-11-02T13:17:23Z",
+        "last_recheck": "J1623",
+        "checked_at": "2026-11-02T12:22:10+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
