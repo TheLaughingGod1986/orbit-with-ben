@@ -141282,13 +141282,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-02T07:23Z",
-      "eta": "2026-11-02T09:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T07:17Z",
-      "result": "",
+      "result": "Verified GHZDsiH7L7A via CDP 9460 at 2026-11-02T07:25:49.144Z: A/B testing titles / Results ready still visible; J0978 kept blocked with wait --recheck J1599 until 2026-11-02T13:25:00Z. Evidence in _desk/handoff/J1599/ and HOS PR #398 (5df1b123); channel:audit 62 videos, 0 errors; check_all.sh ALL CHECKS PASS.",
       "history": [
         {
           "at": "2026-11-02T07:17Z",
@@ -141319,6 +141319,11 @@
           "at": "2026-11-02T07:27Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Updated J0978 wait condition to 2026-11-02T13:25:00Z with --recheck J1599"
+        },
+        {
+          "at": "2026-11-02T07:27Z",
+          "by": "gemini",
+          "what": "done: Verified GHZDsiH7L7A via CDP 9460 at 2026-11-02T07:25:49.144Z: A/B testing titles / Results ready still visible; J0978 kept blocked with wait --recheck J1599 until 2026-11-02T13:25:00Z. Evidence in _desk/handoff/J1599/ and HOS PR #398 (5df1b123); channel:audit 62 videos, 0 errors; check_all.sh ALL CHECKS PASS."
         }
       ],
       "remaining_action": "Complete J1599 and report on OWB thread and HOS desk",
@@ -141335,7 +141340,8 @@
       },
       "taskKeys": [
         "HOS:004"
-      ]
+      ],
+      "done_ref": "5df1b123"
     },
     {
       "id": "J1600",
