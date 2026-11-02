@@ -140017,19 +140017,24 @@
           "at": "2026-11-02T04:05Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1584; inspecting J1100, J1580, and local evidence"
+        },
+        {
+          "at": "2026-11-02T04:06Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100/J1580 full history and approval chain; checking local evidence and hashes"
         }
       ],
-      "remaining_action": "Read J1100, J1580, and check if cleared instrumental S2 bed and local opening/middle/end listening are satisfied",
+      "remaining_action": "Verify evidence 3e26b379b, SHA256 hashes, and local listening status for J1100",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T04:05Z",
+        "at": "2026-11-02T04:06Z",
         "by": "gemini",
-        "note": "Claimed J1584; inspecting J1100, J1580, and local evidence"
+        "note": "Read J1100/J1580 full history and approval chain; checking local evidence and hashes"
       },
       "taskKeys": [
         "OWB:027",
