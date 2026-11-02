@@ -146169,13 +146169,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T18:44Z",
-      "eta": "2026-11-02T20:44Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T18:42Z",
-      "result": "",
+      "result": "Verified original approvals and evidence 3e26b379b. Fresh bed and opening/middle/end hashes match; no newer local listening record. J1100 remains blocked on instrumental bed clearance and actual local listening. Preserved 2/3, OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback and recorded retry 2026-11-02T19:42:57Z. Required NAS offload found no eligible scratch. No spend, source-audio egress, render or publishing.",
       "history": [
         {
           "at": "2026-11-02T18:42Z",
@@ -146206,6 +146206,11 @@
           "at": "2026-11-02T18:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J1100 blocked with recorded 19:42:57Z retry and J1658 recheck; original 2/3 and approvals preserved."
+        },
+        {
+          "at": "2026-11-02T18:45Z",
+          "by": "codex",
+          "what": "done: Verified original approvals and evidence 3e26b379b. Fresh bed and opening/middle/end hashes match; no newer local listening record. J1100 remains blocked on instrumental bed clearance and actual local listening. Preserved 2/3, OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback and recorded retry 2026-11-02T19:42:57Z. Required NAS offload found no eligible scratch. No spend, source-audio egress, render or publishing."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits bed clearance and local listening",
@@ -146223,7 +146228,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     }
   ],
   "focus": [],
