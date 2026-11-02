@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1575 | any | claimed | gemini | 2026-11-02T03:16Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J1575 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1574 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS 7221fa6a))
 - J1573 done: Chief: verify condition for J1100 (done)
 - J1572 done: Chief: verify condition for J1471 (Verified PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1468 master hashes and Crew-2 station cache hash unchanged; no new approved ISS opening interval or replacement delivered. Kept J1471 blocked on input (last_recheck J1572, retry 2026-11-02T02:20:33Z) with J1356 and all Ben/date/credit/publishing holds retained.)
@@ -53,4 +53,3 @@ Recently finished:
 - J1568 done: Chief: verify condition for J0862 (Verified unmet at 2026-11-02 01:27Z: HOS main 09841a65, PRs through 397, desk through 6562561090 and queue contain no approved 009 Short B replacement opening or exact recording scope. J0862 remains blocked; next check 2026-11-02T07:30:00Z via J1568. Existing v02 takes, approved 010 A Option A1 and all gates preserved. No spend or publishing changes.)
 - J1567 done: Chief: verify condition for J0978 (Verified HOS Atom (GHZDsiH7L7A) Studio widget still shows A/B testing titles / Results ready; original title and Public. J0978 remains blocked, next read-only verification 2 Nov 07:05 UTC. Evidence HOS PR #397, commit d13623ca; local _desk/handoff/J1567. Channel audit 62 videos, 0 errors; all HOS repository checks pass. No YouTube changes or spend.)
 - J1566 done: Chief: verify condition for J1471 (Verified PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1468 master hashes and Crew-2 station cache hash unchanged; no new approved ISS opening interval or replacement delivered. Kept J1471 blocked on input (last_recheck J1566, retry 2026-11-02T01:17:04Z) with J1356 and all Ben/date/credit/publishing holds retained.)
-- J1565 done: Chief: verify condition for J1356 (done)
