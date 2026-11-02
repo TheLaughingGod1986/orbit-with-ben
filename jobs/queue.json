@@ -143157,19 +143157,24 @@
           "at": "2026-11-02T11:40Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1621; starting verification of J0979 waiting condition"
+        },
+        {
+          "at": "2026-11-02T11:41Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1590 prior recheck"
         }
       ],
-      "remaining_action": "Read J0979 history, J1590 evidence, and check OWB 031+ VO and picture lock status",
+      "remaining_action": "Verify 031-061 status.json and production-status.md for locked VO and picture",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-02T12:28:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T11:40Z",
+        "at": "2026-11-02T11:41Z",
         "by": "gemini",
-        "note": "Claimed J1621; starting verification of J0979 waiting condition"
+        "note": "Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1590 prior recheck"
       },
       "taskKeys": [
         "OWB:029",
