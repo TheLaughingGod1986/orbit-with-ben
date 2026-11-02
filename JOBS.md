@@ -42,10 +42,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1610 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1611 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
-| J1612 | any | claimed | gemini | 2026-11-02T11:27Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1612 done: Chief: verify condition for J1100 (done)
 - J1609 done: Chief: verify condition for J0985 (Verified J0985 waiting condition: commit 0ac2007b9 and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90239a1ab84ef9ca2b8c12a2508d5499ebc00fbe29efc) reconcile Mercury vlkj8RQKmH8 curve drops (tied -5.59pp at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, and LEARNINGS.md. Because gemini authored J0985/J1002/J1003/J1549 (never self-approve J0985) and all non-author Chiefs (grok, claude, codex) are currently down, kept J0985 blocked via wait --recheck J1609 (next check 2026-11-02T15:25:00Z, 6h retry) awaiting final non-author Chief audit PASS. Original gates and approvals unchanged; GBP0 spend.)
 - J1608 done: Chief: verify condition for J0936 (done)
 - J1607 done: Chief: verify condition for J1100 (done)
@@ -55,4 +55,3 @@ Recently finished:
 - J1603 done: Chief: verify condition for J1471 (done)
 - J1602 done: Chief: verify condition for J1356 (J1602 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1602 (next check 2026-11-02T08:28:54Z); all existing approvals and holds preserved.)
 - J1601 done: Chief: verify condition for J0936 (done)
-- J1600 done: Chief: verify condition for J1100 (done)
