@@ -144445,9 +144445,14 @@
           "at": "2026-11-02T14:33Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T14:33Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Reading J1471 and prior verification; no repair or publishing authorised by this check."
         }
       ],
-      "remaining_action": "Verify readiness: Identify suitable approved ISS opening input before resuming scoped opening repairs",
+      "remaining_action": "Verify current AR opening repair evidence and approval history",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T15:24:42+00:00",
@@ -144457,9 +144462,11 @@
         "of": 3,
         "at": "2026-11-02T14:33Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Reading J1471 and prior verification; no repair or publishing authorised by this check."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
