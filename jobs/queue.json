@@ -140996,10 +140996,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-02T06:29Z",
+      "eta": "2026-11-02T08:29Z",
       "created_by": "relay",
       "created_at": "2026-11-02T06:25Z",
       "result": "",
@@ -141013,6 +141013,11 @@
           "at": "2026-11-02T06:29Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-02T06:29Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
@@ -141028,7 +141033,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-02T06:29Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1597",
