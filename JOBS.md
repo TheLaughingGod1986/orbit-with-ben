@@ -43,6 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1601 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1602 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1603 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
+| J1604 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 
 Recently finished:
 
