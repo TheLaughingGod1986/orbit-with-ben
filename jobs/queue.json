@@ -146044,19 +146044,24 @@
           "at": "2026-11-02T18:31Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh hashes match all three J1468 exports; no newer exports. Saved opening FAILs remain: AR1 6.00s, AR2 0.25, AR3 1.41."
+        },
+        {
+          "at": "2026-11-02T18:31Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Updated J1356 hold via recheck J1656, retaining 2026-11-02T19:25:57Z retry and all approval/publishing/watch holds."
         }
       ],
-      "remaining_action": "Record unmet readiness condition and close verification",
+      "remaining_action": "Verification complete; J1356 remains held for corrected delivery",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T19:25:57+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-02T18:31Z",
         "by": "codex",
-        "note": "Fresh hashes match all three J1468 exports; no newer exports. Saved opening FAILs remain: AR1 6.00s, AR2 0.25, AR3 1.41."
+        "note": "Updated J1356 hold via recheck J1656, retaining 2026-11-02T19:25:57Z retry and all approval/publishing/watch holds."
       },
       "taskKeys": [
         "OWB:030"
