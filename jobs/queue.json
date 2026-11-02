@@ -148346,9 +148346,14 @@
           "at": "2026-11-02T23:43Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T23:43Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: review scope and approvals; verify PR and current export hashes; record readiness decision and close verification."
         }
       ],
-      "remaining_action": "Verify readiness: Await corrected AR openings, complete gates and full audiovisual review before final-watch handoff",
+      "remaining_action": "Verify corrected AR exports and review evidence for J1356",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T00:30:19+00:00",
@@ -148358,9 +148363,11 @@
         "of": 3,
         "at": "2026-11-02T23:43Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: review scope and approvals; verify PR and current export hashes; record readiness decision and close verification."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1685",
