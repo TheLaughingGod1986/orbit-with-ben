@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -269,3 +269,19 @@ assert(idleHtml.includes('Studio waiting for next job')&&!idleHtml.includes('rol
 for(const progress of [{step:-1,of:5},{step:6,of:5},{step:2,of:0},{step:1.5,of:5}, {step:'<img>',of:5}]) assert.equal(t.recordedTaskProgress({progress}),null);
 assert(!t.activityCard({...activityBoard,owb:{jobs:[{...runningTask,progress:{step:5,of:5},estMin:100}]}},NOW).includes('Task ETA: ~'));
 console.log('Studio active-job card checks OK');
+
+// Published status overrides stale production lanes and follow-up jobs, without fabricating 100% history.
+const publicMissing=v({key:'published',lane:'progress',youtube:{state:'live',privacy:'public',videoId:'abcdefghijk'},jobs:[{id:'followup',status:'claimed',progress:{step:1,of:2}}]});
+assert.equal(t.stage(publicMissing),'Published');
+const publishedRow=t.videoProductionRow(publicMissing,NOW);
+assert(!publishedRow.includes('0%')&&!publishedRow.includes('UAT:')&&!publishedRow.includes('In progress'));
+assert(!publishedRow.includes('50%'),'follow-up task progress is not published-video progress');
+assert(publishedRow.includes('Published'));
+const publishedDetail=t.productionDetail(publicMissing,NOW);
+assert(publishedDetail.includes('Published on YouTube')&&publishedDetail.includes('Recorded production history'));
+assert(!publishedDetail.includes('role="progressbar"')&&!publishedDetail.includes('progress-number'));
+assert(publishedDetail.includes('Unconfirmed'),'unknown history stays unknown, not changed to complete');
+assert(t.videoGroups([publicMissing]).done.some(x=>x.key==='published'));
+assert.equal(t.videoGroups([publicMissing]).working.length,0);
+assert(t.videoProductionRow(v({key:'unfinished'}),NOW).includes('0%'),'active production still uses recorded milestone counts');
+console.log('Published-video regression checks OK');

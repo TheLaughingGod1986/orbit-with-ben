@@ -122,6 +122,18 @@ const board={tracker:{videos:[v,{...v,key:'HOS:998',checkId:'HOS-998',title:'The
       assert.equal(await page.locator('#uat-notes').inputValue(),'0:38 text does not match the voice');
       await page.getByRole('button',{name:'Request changes',exact:true}).click();
       await page.waitForFunction(()=>location.hash==='#review');
+      await page.goto(`${base}/#videos`);
+      await page.getByRole('heading',{name:'Videos',exact:true}).waitFor();
+      await page.getByRole('button',{name:'All',exact:true}).click();
+      const published=page.locator('a.row').filter({hasText:'Published film'}).first();
+      const publishedText=await published.innerText();
+      assert(publishedText.includes('Published')&&!publishedText.includes('%')&&!publishedText.includes('UAT:'));
+      await published.click();await page.getByRole('heading',{name:'Published on YouTube',exact:true}).waitFor();
+      assert.equal(await page.locator('.progress-hero').count(),0);
+      assert.equal(await page.locator('main [role="progressbar"]').count(),0);
+      await page.getByText('Recorded production history',{exact:true}).click();
+      assert((await page.locator('main').innerText()).includes('Unconfirmed'));
+      assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
       await page.close();
     }
     assert.deepEqual(errors,[]);
