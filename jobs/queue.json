@@ -144450,19 +144450,24 @@
           "at": "2026-11-02T14:33Z",
           "by": "codex",
           "what": "step 0 of 3 done: Reading J1471 and prior verification; no repair or publishing authorised by this check."
+        },
+        {
+          "at": "2026-11-02T14:34Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR380 remains OPEN at d0b04b5e0 with no comments/reviews; all three preserved masters and Crew-2 cache SHA256 match."
         }
       ],
-      "remaining_action": "Verify current AR opening repair evidence and approval history",
+      "remaining_action": "Record unmet ISS opening condition and preserve repair holds",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T15:24:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T14:33Z",
+        "at": "2026-11-02T14:34Z",
         "by": "codex",
-        "note": "Reading J1471 and prior verification; no repair or publishing authorised by this check."
+        "note": "PR380 remains OPEN at d0b04b5e0 with no comments/reviews; all three preserved masters and Crew-2 cache SHA256 match."
       },
       "taskKeys": [
         "OWB:030"
