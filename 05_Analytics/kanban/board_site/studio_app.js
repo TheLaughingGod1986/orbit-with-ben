@@ -241,7 +241,7 @@
   const MILESTONES = [['topic','Topic'],['script','Script'],['sources','Fact checks'],['vo','Voice'],['shots','Shot plan'],['picture','Picture'],['edit','Edit'],['thumbs','Packaging'],['qa','Chief QA']];
   const expandedStages = new Map();
   const disclosureState = new Map();
-  let renderedView="", renderedNav="";
+  let renderedView="", renderedNav="", focusedJobRoute="";
   let videoSort = 'uat';
   const completeStage = m => ['done','skip','passed'].includes(m.displayState || m.state) && !m.awaitingApproval;
   function milestones(v) {
@@ -467,17 +467,34 @@
       <dl class="featured-facts"><div><dt>Current stage</dt><dd>${esc(stageLabel)}</dd></div><div><dt>Estimated UAT</dt><dd class="${ready?'ready-text':blockedVideo(v)?'held-text':''}">${esc(featuredOutlook(v,now))}</dd></div></dl>
       <p class="featured-next"><span>${ready?'Ready for you':blockedVideo(v)?'Needs attention':'Next action'}</span>${esc(action)}</p></a>`;
   }
+  function recordedTaskProgress(j) {
+    const p=j.progress || {}, step=Number(p.step), of=Number(p.of);
+    return p.step!=null && p.of!=null && Number.isInteger(step) && Number.isInteger(of) && of>0 && step>=0 && step<=of ? {step,of} : null;
+  }
+  const jobRoute=id=>'#agents&job='+encodeURIComponent(id);
+  const selectedJob=()=>new URLSearchParams((location.hash||'').slice(1)).get('job')||'';
+  function activityCard(b,now) {
+    const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
+    // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
+    const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} on hold</p>`;
+    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>Studio waiting for next job</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
+    const p=recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
+    // Reuse the existing task estimator only with a valid recorded start and valid inputs.
+    const e=(!p || p.step<p.of) && Number.isFinite(start) && start<=now && (p && p.step>0 && p.step<p.of || Number.isFinite(+j.estMin) && +j.estMin>0)
+      ? etaOf({...j,progress:p || {step:0,of:0}},now) : null;
+    const eta=e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
+    return `<section class="overview-activity"><h2>Studio activity</h2><a class="active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents">
+      <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is working</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
+      <p class="activity-action">${esc(clip(j.remaining_action||j.title||'Current action not recorded',160))}</p>
+      ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:'<p class="activity-progress-missing">Task progress not recorded</p>'}
+      <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
+  }
   function overview(b, now) {
     const s=overviewModel(b,now), candidate=featureVideo(b,now);
-    const names=s.fresh ? [...new Set(s.running.filter(j=>{
-      const activityAt=Math.max(...[j.claimedAt,(j.progress||{}).at,(j.last||{}).at].map(d=>Date.parse(d||'')).filter(Number.isFinite));
-      return Number.isFinite(activityAt) && now>=activityAt && now-activityAt<=QUIET_MIN*MIN;
-    }).map(j=>AGENTS[j.by]).filter(Boolean))] : [];
-    const activity=!s.fresh?'Studio status needs a fresh update':s.running.length ? (names.length===1?`${names[0]} is working`:names.length>1?'Agents are working':'Production work is active') : 'Studio waiting for next job';
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="overview-stats" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       <section class="overview-feature"><h2>Next for your review</h2>${featuredCard(candidate,now,s.producing.length)}</section>
-      <section class="overview-activity"><h2>Studio activity</h2><a href="#agents" aria-label="${esc(activity)}. Open Agents"><div><b>${esc(activity)}</b><span>${s.fresh?s.running.length+' active job'+(s.running.length===1?'':'s'):'Last activity report is stale or missing'}</span></div><span class="chev" aria-hidden="true">›</span><p>${s.queued.length} queued · ${s.held.length} on hold</p></a></section></div>`;
+      ${activityCard(b,now)}</div>`;
   }
 
   // Working / Queued / Backlog (Ben, 28 Oct): active work is one tap away; All keeps everything with On YouTube.
@@ -603,7 +620,7 @@
 
   function agentQueue(b,now) {
     const s=overviewModel(b,now), jobs=s.jobs.filter(j=>['claimed','open','blocked'].includes(j.status)).sort((a,b)=>['claimed','open','blocked'].indexOf(a.status)-['claimed','open','blocked'].indexOf(b.status));
-    return `<details class="technical video-technical" data-disclosure="agent-queue"><summary>Job queue · ${jobs.length} job${jobs.length===1?'':'s'}</summary><div class="technical-body">${jobs.length?jobs.map(j=>`<article class="job"><b>${esc(j.id)} · ${esc(j.title || 'Untitled job')}</b><p>Recorded status: ${esc(j.status)}${j.by?' · '+esc(AGENTS[j.by]||j.by):''}</p>${j.remaining_action?`<p>${esc(j.remaining_action)}</p>`:''}${technicalFields(j.hold)}${j.result?`<p>${esc(j.result)}</p>`:''}<details class="technical"><summary>Recorded job metadata</summary>${technicalFields(j)}</details></article>`).join(''):'No queued or active jobs recorded.'}</div></details>`;
+    return `<details class="technical video-technical" data-disclosure="agent-queue" ${selectedJob()?'open':''}><summary>Job queue · ${jobs.length} job${jobs.length===1?'':'s'}</summary><div class="technical-body">${jobs.length?jobs.map(j=>`<article id="job-${esc(j.id)}" class="job ${selectedJob()===j.id?'selected-job':''}" tabindex="-1"><b>${esc(j.id)} · ${esc(j.title || 'Untitled job')}</b><p>Recorded status: ${esc(j.status)}${j.by?' · '+esc(AGENTS[j.by]||j.by):''}</p>${j.remaining_action?`<p>${esc(j.remaining_action)}</p>`:''}${technicalFields(j.hold)}${j.result?`<p>${esc(j.result)}</p>`:''}<details class="technical"><summary>Recorded job metadata</summary>${technicalFields(j)}</details></article>`).join(''):'No queued or active jobs recorded.'}</div></details>`;
   }
 
   function agents(b, now) {
@@ -755,10 +772,14 @@
       notes.focus();
     });
     document.querySelectorAll('details[data-disclosure]').forEach(el => {
-      if (disclosureState.has(el.dataset.disclosure)) el.open=disclosureState.get(el.dataset.disclosure);
+      if (el.dataset.disclosure==='agent-queue' && selectedJob()) el.open=true;
+      else if (disclosureState.has(el.dataset.disclosure)) el.open=disclosureState.get(el.dataset.disclosure);
     });
     if (focusId) document.getElementById(focusId)?.focus({preventScroll:true});
     else if (focusStage) document.querySelector(`details[data-stage="${focusStage}"]>summary`)?.focus({preventScroll:true});
+    const target=tab==='agents' && selectedJob() ? document.getElementById('job-'+selectedJob()) : null;
+    if(tab!=='agents' || !selectedJob()) focusedJobRoute="";
+    if(target && focusedJobRoute!==location.hash) {focusedJobRoute=location.hash;requestAnimationFrame(()=>{target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});});}
     const sortControl = document.getElementById('video-sort');
     if (sortControl) sortControl.onchange = () => { videoSort=sortControl.value; render(); };
     document.querySelectorAll('details[data-stage]').forEach(el => el.addEventListener('toggle', () => {

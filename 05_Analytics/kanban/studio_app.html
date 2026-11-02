@@ -222,6 +222,13 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .list-scope { font-size:14px; display:flex; align-items:center; gap:16px; }.list-scope>a { color:var(--blue); margin-left:auto; min-height:44px; display:inline-flex; align-items:center; }
 @media(min-width:700px) { .overview-header>div>p { font-size:13px; }.overview-stats>a { min-height:84px; }.featured-heading .thumb { width:88px; height:56px; flex-basis:88px; }.featured-video { padding:20px; } }
 
+
+.active-job-card .activity-action { color:var(--ink); font-size:14px; line-height:1.45; overflow-wrap:anywhere; }
+.active-job-card .activity-progress { flex:1 0 100%; min-width:0; }
+.active-job-card .activity-progress>span { margin-top:6px; }
+.active-job-card .activity-eta,.active-job-card .activity-progress-missing { margin:0; font-size:12px; }
+.active-job-card .activity-footer { border-top:1px solid var(--line); padding-top:8px; }
+.job.selected-job { border-color:var(--blue); box-shadow:0 0 0 1px var(--blue); scroll-margin:24px; }
 </style>
 </head>
 <body>
