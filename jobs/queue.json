@@ -146201,19 +146201,24 @@
           "at": "2026-11-02T18:45Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh bed and all three audition hashes match 3e26b379b; no newer local listening record. NAS offload found no eligible scratch; 18,923 MB free, above h43 restart floor."
+        },
+        {
+          "at": "2026-11-02T18:45Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Retained J1100 blocked with recorded 19:42:57Z retry and J1658 recheck; original 2/3 and approvals preserved."
         }
       ],
-      "remaining_action": "Record unmet condition and finish verification",
+      "remaining_action": "Verification complete; J1100 awaits bed clearance and local listening",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-02T18:45Z",
         "by": "codex",
-        "note": "Fresh bed and all three audition hashes match 3e26b379b; no newer local listening record. NAS offload found no eligible "
+        "note": "Retained J1100 blocked with recorded 19:42:57Z retry and J1658 recheck; original 2/3 and approvals preserved."
       },
       "taskKeys": [
         "OWB:027",
