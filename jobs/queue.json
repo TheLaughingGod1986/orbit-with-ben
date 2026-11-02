@@ -142904,9 +142904,14 @@
           "at": "2026-11-02T11:20Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1618; reading J0936, J1100, J1613, J1616, and PR 333 state"
+        },
+        {
+          "at": "2026-11-02T11:20Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J0936 brief, approval/hold history, J1613, and latest J1616 result on J1100 (blocked at 2/3 until 2026-11-02T11:30:44Z)"
         }
       ],
-      "remaining_action": "Read J0936, J1100, J1613 and J1616 state and verify waiting condition evidence",
+      "remaining_action": "Verify evidence 3e26b379b, audition hashes, and PR 333 state",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T12:17:14+00:00",
@@ -142921,11 +142926,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-02T11:20Z",
         "by": "gemini",
-        "note": "Claimed J1618; reading J0936, J1100, J1613, J1616, and PR 333 state"
+        "note": "Read J0936 brief, approval/hold history, J1613, and latest J1616 result on J1100 (blocked at 2/3 until 2026-11-02T11:30:"
       },
       "taskKeys": [
         "OWB:026",
