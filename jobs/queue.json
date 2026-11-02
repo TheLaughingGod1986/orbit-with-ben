@@ -144353,10 +144353,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-02T14:29Z",
+      "eta": "2026-11-02T16:29Z",
       "created_by": "relay",
       "created_at": "2026-11-02T14:24Z",
       "result": "",
@@ -144365,13 +144365,26 @@
           "at": "2026-11-02T14:24Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-02T14:29Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await corrected AR openings, complete gates and full audiovisual review before final-watch handoff",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T15:24:42+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-02T14:29Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1637",
