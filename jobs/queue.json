@@ -140766,13 +140766,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-02T05:36Z",
-      "eta": "2026-11-02T07:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T05:24Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-02T05:24Z",
@@ -140803,6 +140803,11 @@
           "at": "2026-11-02T05:40Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Readback confirms J1471 blocked/input, last_recheck J1593, checked_by gemini, retry 2026-11-02T06:24:55Z"
+        },
+        {
+          "at": "2026-11-02T05:40Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
