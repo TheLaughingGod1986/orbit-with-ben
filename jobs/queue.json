@@ -146845,19 +146845,24 @@
           "at": "2026-11-02T20:06Z",
           "by": "codex",
           "what": "step 1 of 3 done: Confirmed J1129 approval history and J1130 condition: actual T020 completion timestamp plus following London day."
+        },
+        {
+          "at": "2026-11-02T20:07Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh Studio readback shows thumbnail Running; no completion time. Evidence saved to _desk/handoff/J1666/studio_details.txt and PNG."
         }
       ],
-      "remaining_action": "Read fresh Studio test status and capture evidence",
+      "remaining_action": "Record unmet test condition and finish verification",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-02T21:05:12+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T20:06Z",
+        "at": "2026-11-02T20:07Z",
         "by": "codex",
-        "note": "Confirmed J1129 approval history and J1130 condition: actual T020 completion timestamp plus following London day."
+        "note": "Fresh Studio readback shows thumbnail Running; no completion time. Evidence saved to _desk/handoff/J1666/studio_details."
       },
       "taskKeys": [
         "HOS:002"
