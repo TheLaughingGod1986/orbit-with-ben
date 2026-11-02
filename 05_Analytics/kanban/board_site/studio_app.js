@@ -9,7 +9,7 @@
     .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
-  const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
+  const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
   const QUIET_MIN = 75;  // the relay checks in every 10-20 min; this long without it, the Mac mini is quiet
   const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook" };
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
@@ -108,7 +108,7 @@
     return v.lane === "upcoming" ? "Planned" : "In progress";
   }
 
-  const forBen = vs => vs.filter(v => v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId]);
+  const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId]);
   // /board shows Approve / Changes for a long, or a Short with an ask (tracker_app.js showActions); the same here.
   const canTick = v => v.type === "long" || !!v.ask;
 
@@ -194,7 +194,7 @@
     const health = !m.checkedAt || isNaN(quietMin) ? ["amber", "No news yet"]
       : quietMin > QUIET_MIN ? ["red", `Mac mini quiet ${Math.round(quietMin / 60)} h`]
       : (m.models || []).some(x => x.status === "red") ? ["amber", "Running, some agents out"] : ["green", "Healthy"];
-    const week = schedule(vs, now).filter(r => r.at - now < 7 * 864e5);
+    const week = scheduledThisWeek(vs, now);
     return {
       health, ready: forBen(vs), working: vs.filter(isWorking),
       progress: inProgress(vs), week, chief: m.chief || {}, runner: m.runner || {},
@@ -241,6 +241,7 @@
   const MILESTONES = [['topic','Topic'],['script','Script'],['sources','Fact checks'],['vo','Voice'],['shots','Shot plan'],['picture','Picture'],['edit','Edit'],['thumbs','Packaging'],['qa','Chief QA']];
   const expandedStages = new Map();
   const disclosureState = new Map();
+  let renderedView="", renderedNav="";
   let videoSort = 'uat';
   const completeStage = m => ['done','skip','passed'].includes(m.displayState || m.state) && !m.awaitingApproval;
   function milestones(v) {
@@ -374,41 +375,109 @@
     const current=currentProduction(v)[0], f=forecastView(v,now);
     return row(v, `<span class="meta current-label">${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Blocked / approval pending</span>':''}</span>${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`);
   }
-  function productionOutlook(vs, now) {
-    const candidates=vs.filter(v=>!isLive(v) && (['progress','changes'].includes(v.lane) || v.lane==='ready' && v.readyFor!=='Ben'));
-    const sorted=sortVideos(candidates,'uat',now);
-    return section('Next ready for UAT',candidates.length,sorted.slice(0,4).map(v=>{
-      const m=currentProduction(v)[0];
-      return `<div class="production-card">${videoProductionRow(v,now)}${m && stageView(m).tone==='held'?`<p class="blocking-action">${esc(nextAction(m))}</p>`:''}</div>`;
-    }).join('') || empty('No videos currently moving toward UAT.'),' <a class="more" href="#videos">All videos</a>')
-      + '<p class="meta ranking-note">Only supported estimates determine readiness order. Pending estimates retain their recorded order.</p>';
+  // One set of selectors feeds Overview and its linked lists. Jobs never stand in for videos.
+  function uniqueVideos(vs) {
+    const selected=new Map(), byKey=new Map();
+    const score=v=>(isLive(v)?100:0)+(v.lane==='ready' && v.readyFor==='Ben'?20:0)+((v.youtube||{}).videoId?10:0)+(!/:OK:/.test(v.key||'')?2:0)+(v.production?1:0);
+    for(const v of vs) if(v.key && (!byKey.has(v.key) || score(v)>score(byKey.get(v.key)))) byKey.set(v.key,v);
+    for(const v of byKey.values()) {
+      const id=(v.youtube||{}).videoId ? `yt:${v.youtube.videoId}` : v.key;
+      if(!id) continue;
+      if(!selected.has(id) || score(v)>score(selected.get(id))) selected.set(id,v);
+    }
+    return [...selected.values()];
   }
-
+  function producingVideos(vs) {
+    return uniqueVideos(vs).filter(v=>!isLive(v) && (v.youtube||{}).state!=='scheduled' && v.lane!=='done'
+      && !(v.lane==='ready' && v.readyFor==='Ben')
+      && ['progress','changes','ready','approved'].includes(v.lane));
+  }
+  function londonDay(at) {
+    const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(at).map(x=>[x.type,x.value]));
+    return `${p.year}-${p.month}-${p.day}`;
+  }
+  function weekDates(now) {
+    const local=new Date(londonDay(now)+'T12:00:00Z');
+    local.setUTCDate(local.getUTCDate()-((local.getUTCDay()+6)%7));
+    const start=local.toISOString().slice(0,10);
+    local.setUTCDate(local.getUTCDate()+7);const end=local.toISOString().slice(0,10);
+    local.setUTCDate(local.getUTCDate()+7);return {start,end,nextEnd:local.toISOString().slice(0,10)};
+  }
+  function scheduledThisWeek(vs, now) {
+    const {start,end}=weekDates(now);
+    // Include a recorded overdue schedule until YouTube's readback says public; never include a mere air plan.
+    const rows=uniqueVideos(vs).filter(v=>!isLive(v) && (v.youtube||{}).state==='scheduled')
+      .flatMap(v=>schedule([v],-Infinity)).filter(r=>r.scheduled && !!(r.v.youtube||{}).publishAt);
+    return rows.filter(r=>londonDay(r.at)>=start && londonDay(r.at)<end)
+      .filter(r=>!/:OK:/.test(r.v.key) || (r.v.youtube||{}).videoId || !rows.some(other=>other!==r && (other.v.youtube||{}).videoId && other.at===r.at && other.v.channel===r.v.channel && other.v.type===r.v.type))
+      .sort((a,b)=>a.at-b.at || a.v.key.localeCompare(b.v.key));
+  }
+  const routeView=()=>new URLSearchParams((location.hash||'').slice(1)).get('view')||'';
+  function overviewModel(b, now) {
+    const vs=uniqueVideos(((b.tracker||{}).videos)||[]), ready=forBen(vs), producing=producingVideos(vs);
+    const jobs=new Map();
+    for(const j of [...(((b.owb||{}).jobs)||[]),...vs.flatMap(v=>v.jobs||[])]) if(j.id && !jobs.has(j.id)) jobs.set(j.id,j);
+    const all=[...jobs.values()], models=b.models||{};
+    const age=(now-Date.parse(models.checkedAt||''))/MIN;
+    const fresh=Number.isFinite(age) && age>=0 && age<=QUIET_MIN && models.fresh!==false;
+    const running=all.filter(j=>j.status==='claimed'), queued=all.filter(j=>j.status==='open'), held=all.filter(j=>j.status==='blocked');
+    const freshRunning=running.filter(j=>{
+      const at=Math.max(...[j.claimedAt,(j.progress||{}).at,(j.last||{}).at].map(d=>Date.parse(d||'')).filter(Number.isFinite));
+      return Number.isFinite(at) && now>=at && now-at<=QUIET_MIN*MIN;
+    });
+    const activeRunning=fresh?running:freshRunning, operationalFresh=fresh || freshRunning.length>0;
+    const degraded=!fresh || (models.models||[]).some(m=>['red','amber'].includes(m.status));
+    const agents=(models.models||[]).filter(m=>AGENTS[m.id] && m.id!=='macbook');
+    const noCapacity=queued.length>0 && agents.length>0 && agents.every(m=>m.status==='red');
+    const status=!operationalFresh ? {text:'Attention needed',tone:'red'} : activeRunning.length ? {text:degraded?'Running · Limited':'Running',tone:degraded?'amber':'green'}
+      : {text:noCapacity || held.length && !queued.length?'Attention needed':'Waiting',tone:noCapacity || held.length && !queued.length?'red':'amber'};
+    return {vs,ready,producing,jobs:all,week:scheduledThisWeek(vs,now),fresh:operationalFresh,running:activeRunning,queued,held,status};
+  }
+  function featureVideo(b, now) {
+    const s=overviewModel(b,now), focus=(((b.owb||{}).focus)||[]).map(x=>String(x).includes(':')?String(x):'OWB:'+x);
+    const rank=v=>{
+      const ready=forBen([v]).length>0, blocked=blockedVideo(v), f=forecastView(v,now), p=progressStats(v), active=currentProduction(v);
+      const finalQA=active.some(m=>m.id==='qa') || p.rows.filter(m=>m.id!=='qa').every(completeStage);
+      const unresolved=p.rows.filter(m=>!completeStage(m) && (stageView(m).tone==='held' || m.state==='unknown')).length;
+      const priority=Number(v.productionPriority ?? v.priority);
+      return [ready?0:1,blocked?1:0,f.credible?0:1,f.credible?f.minutes:Infinity,finalQA?0:1,unresolved,
+        focus.includes(v.key)?0:1,Number.isFinite(priority)?priority:Infinity,-videoUpdated(v),v.key];
+    };
+    const candidates=uniqueVideos([...s.ready,...s.producing.filter(v=>v.lane!=='approved')]);
+    return candidates.sort((a,b)=>{
+      const ar=rank(a),br=rank(b);for(let i=0;i<ar.length;i++){if(ar[i]<br[i])return -1;if(ar[i]>br[i])return 1;}return 0;
+    })[0]||null;
+  }
+  function featuredOutlook(v,now) {
+    if(forBen([v]).length) return 'Ready for UAT';
+    if(blockedVideo(v)) return 'Blocked';
+    const f=forecastView(v,now);
+    return f.credible ? `Approximately ${durationText(f.minutes)}` : 'Estimate pending';
+  }
+  function featuredCard(v,now,producingCount=0) {
+    if(!v) return `<p class="overview-empty">${producingCount?'UAT handoffs are complete. Approved videos are moving toward publishing.':'No videos are in production right now. Explore the backlog in Videos.'}</p><a class="overview-empty-link" href="#videos">Open Videos <span aria-hidden="true">›</span></a>`;
+    const p=progressStats(v), m=currentProduction(v)[0], ready=forBen([v]).length>0;
+    const stageLabel=ready?'Ready for your UAT':m ? m.label+(stageView(m).text==='Awaiting approval'?' approval':'') : 'Unconfirmed';
+    const action=ready?'Your review can start now.' : m ? nextAction(m) : 'The next production step has not been confirmed.';
+    return `<a class="featured-video" href="${detailLink(v)}" aria-label="Open ${esc(v.title||'video')} production details">
+      <div class="featured-heading">${thumb(v)}<div><h3>${esc(v.title||'Untitled video')}</h3><p>${v.channel==='HOS'?'History of Science':'Orbit With Ben'} · ${kind(v)}</p></div><span class="chev" aria-hidden="true">›</span></div>
+      <div class="featured-progress-heading"><span>Milestones completed</span><b>${p.percent}%</b></div>
+      <div class="hero-track" role="progressbar" aria-label="Milestones completed, not production time" aria-valuenow="${p.done}" aria-valuemin="0" aria-valuemax="9"><i style="width:${p.percent}%"></i></div>
+      <p class="featured-count">${p.done} of 9 milestones complete${p.unknown?` · ${p.unknown} unconfirmed`:''}</p>
+      <dl class="featured-facts"><div><dt>Current stage</dt><dd>${esc(stageLabel)}</dd></div><div><dt>Estimated UAT</dt><dd class="${ready?'ready-text':blockedVideo(v)?'held-text':''}">${esc(featuredOutlook(v,now))}</dd></div></dl>
+      <p class="featured-next"><span>${ready?'Ready for you':blockedVideo(v)?'Needs attention':'Next action'}</span>${esc(action)}</p></a>`;
+  }
   function overview(b, now) {
-    const s = summary(b, now);
-    const tiles = `<div class="tiles">
-      <a class="tile-stat" href="#review"><b class="${s.ready.length ? "amber" : ""}">${s.ready.length}</b><span>Ready for you</span></a>
-      <a class="tile-stat" href="#videos"><b class="blue">${s.progress.length}</b><span>Videos in production</span></a>
-      <a class="tile-stat" href="#schedule"><b>${s.week.length}</b><span>Going live this week</span></a>
-      <a class="tile-stat" href="#agents"><b class="${s.chief.agent ? "green" : "red"}">${esc(s.chief.name || "None")}</b><span>Chief · ${s.chief.agent ? "online" : "nobody up"}</span></a></div>`;
-    // One card per running job (Ben, 28 Oct: "1 job running but seeing 3"): a batch job that covers several videos
-    // shows once, on its first video, and names the others.
-    const byJob = jobGroups(s.working);
-    // A running job with no video of its own (audits, checks, fixes) gets its own card too (Ben, 29 Oct: "Saying
-    // running 1 but I can't see any"), so this list always matches "Jobs running".
-    const studio = studioJobs(b);
-    const cards = byJob.map(([v, ...rest]) => row(v, doing(v) + alsoOn(rest))).concat(studio.map(jobCard));
-    const working = cards.slice(0, 4).join("") || empty("No agent is working this minute.");
-    const ready = s.ready.map(v => row(v, `<span class="meta">Finished cut · Watch and review</span>`, uatLink(v))).join("") || empty("Nothing waiting for you.");
-    const pipe = `${jobTiles(s.jobs)}<p class="meta">Jobs are the agents' tasks across both channels. ${s.jobs.doneToday} finished today.</p>`;
-    return `<header class="top"><div><h1>Studio</h1><p class="meta">Orbit With Ben · History of Science</p></div>
-      <span class="pill ${s.health[0]}"><i></i>${esc(s.health[1])}</span></header>
-      ${section("Ready for your review", s.ready.length, ready)}
-      ${productionOutlook(((b.tracker || {}).videos) || [], now)}
-      ${section("Production pipeline", null, `<div class="pipeline-grid"><a href="#videos"><b>${s.progress.filter(v=>!blockedVideo(v)&&isWorking(v)).length}</b><span>Working</span></a><a href="#videos"><b>${s.progress.filter(v=>!blockedVideo(v)&&!isWorking(v)).length}</b><span>Waiting</span></a><a href="#videos"><b>${s.progress.filter(blockedVideo).length}</b><span>Blocked</span></a></div>`)}
-      ${section("Studio health", null, miniLine(s,b)+tiles)}
-      ${section("Agents working now", cards.length, working, ' <a class="more" href="#videos">See all</a>')}
-      ${section("Agent jobs", null, pipe, ' <a class="more" href="#agents">Agents</a>')}`;
+    const s=overviewModel(b,now), candidate=featureVideo(b,now);
+    const names=s.fresh ? [...new Set(s.running.filter(j=>{
+      const activityAt=Math.max(...[j.claimedAt,(j.progress||{}).at,(j.last||{}).at].map(d=>Date.parse(d||'')).filter(Number.isFinite));
+      return Number.isFinite(activityAt) && now>=activityAt && now-activityAt<=QUIET_MIN*MIN;
+    }).map(j=>AGENTS[j.by]).filter(Boolean))] : [];
+    const activity=!s.fresh?'Studio status needs a fresh update':s.running.length ? (names.length===1?`${names[0]} is working`:names.length>1?'Agents are working':'Production work is active') : 'Studio waiting for next job';
+    return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
+      <div class="overview-stats" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
+      <section class="overview-feature"><h2>Next for your review</h2>${featuredCard(candidate,now,s.producing.length)}</section>
+      <section class="overview-activity"><h2>Studio activity</h2><a href="#agents" aria-label="${esc(activity)}. Open Agents"><div><b>${esc(activity)}</b><span>${s.fresh?s.running.length+' active job'+(s.running.length===1?'':'s'):'Last activity report is stale or missing'}</span></div><span class="chev" aria-hidden="true">›</span><p>${s.queued.length} queued · ${s.held.length} on hold</p></a></section></div>`;
   }
 
   // Working / Queued / Backlog (Ben, 28 Oct): active work is one tap away; All keeps everything with On YouTube.
@@ -423,12 +492,12 @@
   }
 
   function videos(b) {
-    const vs = (((b.tracker || {}).videos) || []).filter(v =>
+    const vs = (routeView()==='producing' ? producingVideos(((b.tracker||{}).videos)||[]) : uniqueVideos(((b.tracker||{}).videos)||[])).filter(v =>
       (filterCh === "all" || v.channel === filterCh) && (filterType === "all" || v.type === filterType));
     const g = videoGroups(vs);
     for (const key of Object.keys(g)) g[key] = sortVideos(g[key], videoSort, Date.now());
     // Ben, 29 Oct: "Home page saying working on 1, the video page says 0": studio jobs count here too.
-    const studio = filterType === "all" ? studioJobs(b).filter(j => filterCh === "all" || (j.repo || "owb") === filterCh.toLowerCase()) : [];
+    const studio = routeView()!=='producing' && filterType === "all" ? studioJobs(b).filter(j => filterCh === "all" || (j.repo || "owb") === filterCh.toLowerCase()) : [];
     g.working.extra = studio.length;
     const segs = [["all", "All"], ["working", "Working"], ["queued", "Waiting"], ["backlog", "Backlog"]]
       .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length + (g[id].extra || 0)}</small>`}</button>`).join("");
@@ -439,8 +508,9 @@
     // A batch job on several videos: the first card carries the job, the others say whose job they share.
     const jobList = items => jobGroups(items).map(([first, ...rest]) => videoProductionRow(first, Date.now())
       + rest.map(v => videoProductionRow(v, Date.now())).join('')).join('');
-    const show = id => seg === "all" || seg === id;
+    const show = id => routeView()==='producing' || seg === "all" || seg === id;
     return `<header class="top"><h1>Videos</h1></header>
+      ${routeView()==='producing'?`<p class="list-scope">Producing · ${vs.length} unique videos <a href="#videos">Show all</a></p>`:''}
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
       <label class="sort-control">Sort videos<select id="video-sort"><option value="uat" ${videoSort==='uat'?'selected':''}>Nearest credible UAT</option><option value="updated" ${videoSort==='updated'?'selected':''}>Recently updated</option><option value="stage" ${videoSort==='stage'?'selected':''}>Production stage</option><option value="blocked" ${videoSort==='blocked'?'selected':''}>Blocked first</option></select></label>
       ${show("working") ? section("An agent is on it now", g.working.length + studio.length, (jobList(g.working) + studio.map(jobCard).join("")) || empty("No agent is working this minute.")) : ""}
@@ -478,7 +548,7 @@
   }
 
   function review(b) {
-    const vs = ((b.tracker || {}).videos) || [];
+    const vs = uniqueVideos(((b.tracker || {}).videos) || []);
     const need = forBen(vs).map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}
       <a class="btn watch" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch || {}).version || v.version || "")}</a></div>`).join("");
     const checked = vs.map(v => (sent[v.checkId] || {}).key === v.key ? Object.assign({}, v, { check: sent[v.checkId] }) : v);
@@ -531,6 +601,11 @@
     return ["amber", "Idle"];
   }
 
+  function agentQueue(b,now) {
+    const s=overviewModel(b,now), jobs=s.jobs.filter(j=>['claimed','open','blocked'].includes(j.status)).sort((a,b)=>['claimed','open','blocked'].indexOf(a.status)-['claimed','open','blocked'].indexOf(b.status));
+    return `<details class="technical video-technical" data-disclosure="agent-queue"><summary>Job queue · ${jobs.length} job${jobs.length===1?'':'s'}</summary><div class="technical-body">${jobs.length?jobs.map(j=>`<article class="job"><b>${esc(j.id)} · ${esc(j.title || 'Untitled job')}</b><p>Recorded status: ${esc(j.status)}${j.by?' · '+esc(AGENTS[j.by]||j.by):''}</p>${j.remaining_action?`<p>${esc(j.remaining_action)}</p>`:''}${technicalFields(j.hold)}${j.result?`<p>${esc(j.result)}</p>`:''}<details class="technical"><summary>Recorded job metadata</summary>${technicalFields(j)}</details></article>`).join(''):'No queued or active jobs recorded.'}</div></details>`;
+  }
+
   function agents(b, now) {
     const m = b.models || {}, jobs = ((b.owb || {}).jobs) || [], c = m.chief || {}, s = summary(b, now);
     const status = Object.fromEntries((m.models || []).map(x => [x.id, x]));
@@ -566,6 +641,7 @@
         <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
       ${jobTiles(s.jobs)}
       ${section("Agent team", null, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
+      ${agentQueue(b,now)}
       ${section("Credits", null, `<div class="credits">${credit}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
   }
 
@@ -613,7 +689,8 @@
   }
 
   function scheduleTab(b, now) {
-    const rows = schedule(((b.tracker || {}).videos) || [], now);
+    const vs=uniqueVideos(((b.tracker||{}).videos)||[]);
+    const rows = schedule(vs, now), actualWeek=scheduledThisWeek(vs,now), bounds=weekDates(now);
     const day = at => new Date(at).toLocaleDateString("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "short" });
     const time = at => new Date(at).toLocaleTimeString("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit" });
     const item = r => { const warn = readiness(r.v, r.at, now);
@@ -621,12 +698,12 @@
     const byDay = list => { let out = "", last = "";
       for (const r of list) { const d = day(r.at); if (d !== last) { out += `<h3 class="day">${esc(d)}</h3>`; last = d; } out += item(r); }
       return out; };
-    const week = rows.filter(r => r.at - now < 7 * 864e5), next = rows.filter(r => r.at - now >= 7 * 864e5 && r.at - now < 14 * 864e5);
-    const later = rows.filter(r => r.at - now >= 14 * 864e5);
-    return `<header class="top"><h1>Schedule</h1></header>
-      ${section("This week", week.length, byDay(week) || empty("Nothing scheduled this week."))}
-      ${section("Next week", next.length, byDay(next) || empty("Nothing yet."))}
-      ${section("Later", later.length, byDay(later.slice(0, 12)) || empty("Nothing yet."))}`;
+    const planned=rows.filter(r=>!r.scheduled && londonDay(r.at)>=bounds.start && londonDay(r.at)<bounds.end);
+    const next=rows.filter(r=>londonDay(r.at)>=bounds.end && londonDay(r.at)<bounds.nextEnd);
+    const later=rows.filter(r=>londonDay(r.at)>=bounds.nextEnd);
+    return `<header class="top"><h1>Schedule</h1></header><p class="meta">Calendar weeks · Monday–Sunday · London time</p>
+      ${section("This week · scheduled",actualWeek.length,byDay(actualWeek)||empty("Nothing scheduled this week."))}
+      ${routeView()==='week'?'<a class="more" href="#schedule">Full schedule</a>':`${planned.length?section("This week · planned",planned.length,byDay(planned)):''}${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}${section("Later",later.length,byDay(later.slice(0,12))||empty("Nothing yet."))}`}`;
   }
 
   function renderTab(tab, b, now) {
@@ -638,7 +715,8 @@
     const t = (location.hash || "").replace("#", "");
     if (t.startsWith("uat=")) return "review";
     if (t.startsWith("v=")) return "videos";
-    return TABS.some(([id]) => id === t) ? t : "overview";
+    const tab=t.split("&")[0];
+    return TABS.some(([id]) => id === tab) ? tab : "overview";
   }
   const uatKey = () => { const m = (location.hash || "").match(/^#uat=(.+)$/); return m ? decodeURIComponent(m[1]) : ""; };
   const videoKey = () => { const m = (location.hash || "").match(/^#v=(.+)$/); return m ? decodeURIComponent(m[1]) : ""; };
@@ -651,10 +729,13 @@
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
-    document.getElementById("view").innerHTML = key && ready ? uat(board, key) : vk && ready ? detail(board, vk) : renderTab(tab, board, now);
+    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : renderTab(tab,board,now);
+    const view=document.getElementById("view");
+    if (renderedView!==nextView) { view.innerHTML=nextView; renderedView=nextView; }
     const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
-    document.getElementById("nav").innerHTML = TABS.map(([id, label, icon]) =>
-      `<a href="#${id}" class="${id === tab ? "on" : ""}"><span class="ic">${icon}</span>${label}${id === "review" && waiting ? `<em>${waiting}</em>` : ""}</a>`).join("");
+    const nextNav = TABS.map(([id, label, icon]) =>
+      `<a id="tab-${id}" href="#${id}" ${id===tab?'aria-current="page"':''} class="${id === tab ? "on" : ""}"><span class="ic">${icon}</span>${label}${id === "review" && waiting ? `<em>${waiting}</em>` : ""}</a>`).join("");
+    if (nextNav!==renderedNav) { document.getElementById("nav").innerHTML=nextNav; renderedNav=nextNav; }
     const byKey = k => (((board || {}).tracker || {}).videos || []).find(v => v.key === k);
     const notes = document.getElementById("uat-notes");
     document.querySelectorAll("[data-ok]").forEach(btn => btn.onclick = () => {
@@ -708,18 +789,23 @@
         }
       } catch (e) {}
       const r = await fetch(url, { cache: sha ? "force-cache" : "no-store" });
-      if (!r.ok) return;
-      board = await r.json();
+      if (!r.ok) throw new Error("Board unavailable");
+      const incoming=await r.json();
+      if (!incoming || !incoming.tracker || !Array.isArray(incoming.tracker.videos)) throw new Error("Invalid board data");
+      board = incoming;
       if (sha) lastSha = sha;
       try { const mb = await fetch(MACBOOK + "?t=" + Date.now(), { cache: "no-store" }); macbook = mb.ok ? await mb.json() : null; } catch (e) {}
       if (!uatKey() || !document.getElementById("uat-notes")) render();  // never wipe notes or the player mid-review
     } catch (e) {
-      document.getElementById("view").innerHTML = '<p class="empty">Could not load the studio data.</p>';
+      if (!board) { renderedView=""; document.getElementById("view").innerHTML = '<p class="empty" role="status">Could not load the studio data. Retrying automatically.</p>'; }
     }
   }
 
   // STUDIO_APP_TEST_HOOK
-  window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
+  window.addEventListener("hashchange", () => {
+    if(location.hash==="#videos&view=producing") {filterCh="all";filterType="all";seg="all";}
+    render(); window.scrollTo(0, 0);
+  });
   render();
   poll();
   setInterval(poll, 60 * 1000);
