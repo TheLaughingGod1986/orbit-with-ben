@@ -145758,13 +145758,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T17:47Z",
-      "eta": "2026-11-02T19:47Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T17:46Z",
-      "result": "",
+      "result": "Verified J0979 condition unmet: 031/032 VO locks (J1295/c8ed778ab, J1294/4a9a2e16b), picture not started, CG pending, zero generation/edit/final files; 033-061 no VO/picture locks. Original rejection and J1000/J1042 shelving reviewed. J0979 blocked with recheck J1653, next check 2026-11-02T23:50Z. 029 reserve v01 shelved. No spend/upload/schedule changes.",
       "history": [
         {
           "at": "2026-11-02T17:46Z",
@@ -145795,6 +145795,11 @@
           "at": "2026-11-02T17:49Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0979 input hold retained with J1653 evidence; next verification 2026-11-02T23:50Z; shelving and all approval gates preserved"
+        },
+        {
+          "at": "2026-11-02T17:49Z",
+          "by": "codex",
+          "what": "done: Verified J0979 condition unmet: 031/032 VO locks (J1295/c8ed778ab, J1294/4a9a2e16b), picture not started, CG pending, zero generation/edit/final files; 033-061 no VO/picture locks. Original rejection and J1000/J1042 shelving reviewed. J0979 blocked with recheck J1653, next check 2026-11-02T23:50Z. 029 reserve v01 shelved. No spend/upload/schedule changes."
         }
       ],
       "remaining_action": "Close verification and report continuing picture-lock hold",
