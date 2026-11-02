@@ -142292,19 +142292,24 @@
           "at": "2026-11-02T09:27Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1612; starting verification of J1100 condition and evidence"
+        },
+        {
+          "at": "2026-11-02T09:28Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100 and J1607 full history, rulings, and hold state"
         }
       ],
-      "remaining_action": "Read J1100 and J1607 history, verify current bed/listening evidence, and update J1100 wait state",
+      "remaining_action": "Inspect /private/tmp/J1100-bed-evidence, commit 3e26b379b, and verify all 5 SHA256 hashes and listening status",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T09:27Z",
+        "at": "2026-11-02T09:28Z",
         "by": "gemini",
-        "note": "Claimed J1612; starting verification of J1100 condition and evidence"
+        "note": "Read J1100 and J1607 full history, rulings, and hold state"
       },
       "taskKeys": [
         "OWB:027",
