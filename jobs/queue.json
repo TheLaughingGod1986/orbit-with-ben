@@ -145201,18 +145201,24 @@
           "at": "2026-11-02T16:34Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-02T16:34Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR380 OPEN at d0b04b5e0, no comments/reviews; fresh SHA256 matches all three masters and Crew-2 cache. No replacement approval found."
         }
       ],
-      "remaining_action": "Verify J1471 evidence and approved ISS input, record decision and check hold",
+      "remaining_action": "Record unmet ISS input and preserve existing holds",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T17:25:01+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-02T16:34Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "PR380 OPEN at d0b04b5e0, no comments/reviews; fresh SHA256 matches all three masters and Crew-2 cache. No replacement ap"
       },
       "taskKeys": [
         "OWB:030"
