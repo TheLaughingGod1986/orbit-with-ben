@@ -139251,18 +139251,27 @@
           "at": "2026-11-02T02:17Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1575; starting read-only listing check for 2026-11-02"
+        },
+        {
+          "at": "2026-11-02T02:18Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Fetched live metadata for last 11 public videos; rVqgtkBV3jc and VBaYRPp85Sw chapters and Sources present"
         }
       ],
-      "remaining_action": "Fetch live metadata, end screens and Related pills for the last 10 live OWB videos",
+      "remaining_action": "Verify live end screens on longs and Related pills on Shorts",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-02T02:17Z",
+        "at": "2026-11-02T02:18Z",
         "by": "gemini",
-        "note": "Claimed J1575; starting read-only listing check for 2026-11-02"
-      }
+        "note": "Fetched live metadata for last 11 public videos; rVqgtkBV3jc and VBaYRPp85Sw chapters and Sources present"
+      },
+      "taskKeys": [
+        "OWB:023",
+        "OWB:024"
+      ]
     }
   ],
   "focus": [],
