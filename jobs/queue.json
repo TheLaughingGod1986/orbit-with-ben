@@ -139019,19 +139019,24 @@
           "at": "2026-11-02T01:39Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1572; checking J1471, PR #380 and J1356 hold state"
+        },
+        {
+          "at": "2026-11-02T01:40Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: PR #380 OPEN unchanged at d0b04b5e0 (0 comments/reviews); J1468 export hashes and Crew-2 cache hash unchanged"
         }
       ],
-      "remaining_action": "Inspect J1471 waiting condition, PR #380 state, saved gate evidence and approval history",
+      "remaining_action": "Verify saved gate evidence, master/cache hashes and whether any approved ISS opening replacement was delivered",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T02:20:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T01:39Z",
+        "at": "2026-11-02T01:40Z",
         "by": "gemini",
-        "note": "Claimed J1572; checking J1471, PR #380 and J1356 hold state"
+        "note": "PR #380 OPEN unchanged at d0b04b5e0 (0 comments/reviews); J1468 export hashes and Crew-2 cache hash unchanged"
       },
       "taskKeys": [
         "OWB:030"
