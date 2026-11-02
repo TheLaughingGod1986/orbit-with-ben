@@ -143189,19 +143189,24 @@
           "at": "2026-11-02T11:35Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J1100 history, rulings, and hold state"
+        },
+        {
+          "at": "2026-11-02T11:37Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 3e26b379b and all 5 SHA256 hashes (2 bed copies 13adc031... + 3 audition wavs); listening remains NOT PERFORMED and no source-audio API egress rule stands"
         }
       ],
-      "remaining_action": "Inspect /private/tmp/J1100-bed-evidence and check if cleared S2 bed or local listening evidence landed",
+      "remaining_action": "Record unmet condition on J1100 and close J1622",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T11:35Z",
+        "at": "2026-11-02T11:37Z",
         "by": "gemini",
-        "note": "Read J1100 history, rulings, and hold state"
+        "note": "Verified 3e26b379b and all 5 SHA256 hashes (2 bed copies 13adc031... + 3 audition wavs); listening remains NOT PERFORMED"
       },
       "taskKeys": [
         "OWB:027",
