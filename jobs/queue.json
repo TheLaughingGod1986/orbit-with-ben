@@ -143487,19 +143487,24 @@
           "at": "2026-11-02T12:31Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR380 OPEN at d0b04b5e0; no comments/reviews or approved replacement delivery. All three J1468 master hashes match; saved opening gates FAIL."
+        },
+        {
+          "at": "2026-11-02T12:32Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: J1471 input hold refreshed with J1625 evidence; retained retry 2026-11-02T13:17:23Z and all approval, gate and publishing holds."
         }
       ],
-      "remaining_action": "Record unmet ISS opening condition and retain J1471 hold",
+      "remaining_action": "Verify saved hold and report J1625 outcome",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T13:17:23+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-02T12:31Z",
+        "at": "2026-11-02T12:32Z",
         "by": "codex",
-        "note": "PR380 OPEN at d0b04b5e0; no comments/reviews or approved replacement delivery. All three J1468 master hashes match; save"
+        "note": "J1471 input hold refreshed with J1625 evidence; retained retry 2026-11-02T13:17:23Z and all approval, gate and publishin"
       },
       "taskKeys": [
         "OWB:030"
