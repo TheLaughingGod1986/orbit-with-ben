@@ -102909,9 +102909,14 @@
           "at": "2026-11-02T17:03Z",
           "by": "relay",
           "what": "condition verification queued: J1648"
+        },
+        {
+          "at": "2026-11-02T17:06Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T18:03:01Z"
         }
       ],
-      "remaining_action": "Arm title-only B 'How Mendeleev's Periodic Table Predicted Missing Metals' on AL_-qlWko_g in HOS Studio the day after current thumbnail test ends",
+      "remaining_action": "Verify T020 completion and next London calendar day before arming approved title-only test",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -102925,12 +102930,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "2 Nov 11:01 UTC: Live HOS Studio on CDP 9460 (~/.hos-chrome-youtube-studio) shows AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) still Test running (Estimated time remaining: 9 days 13 hours; watch-time share — on both variants). Evidence /Users/benjaminoats/_desk/handoff/J1617. Require Studio report on CDP 9460 confirming T020 ended, actual completion timestamp, and at least the following London calendar day.",
-        "check_at": "2026-11-02T18:03:01+00:00",
-        "last_recheck": "J1617",
-        "checked_at": "2026-11-02T11:02:19+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1648"
+        "condition": "2 Nov 17:06 UTC: fresh HOS Studio details on CDP 9460 show AL_-qlWko_g thumbnail Running. Detailed A/B report did not load (30-second timeout), so completion timestamp cannot be verified. Evidence: /Users/benjaminoats/_desk/handoff/J1648. Require T020 ended with actual Studio completion timestamp and at least the following London calendar day.",
+        "check_at": "2026-11-02T18:03:01Z",
+        "last_recheck": "J1648",
+        "checked_at": "2026-11-02T17:06:31+00:00",
+        "checked_by": "codex"
       }
     },
     {
