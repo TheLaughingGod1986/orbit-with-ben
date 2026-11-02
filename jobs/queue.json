@@ -146822,13 +146822,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T20:06Z",
-      "eta": "2026-11-02T22:06Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T20:05Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-02T20:05Z",
@@ -146864,6 +146864,11 @@
           "at": "2026-11-02T20:08Z",
           "by": "codex",
           "what": "step 3 of 3 done: Hold successfully recorded with recheck J1666; T020 Running, retry 21:05:12Z; evidence _desk/handoff/J1666."
+        },
+        {
+          "at": "2026-11-02T20:08Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1130 awaits recorded Studio recheck",
