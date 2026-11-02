@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1621 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
-| J1622 | any | claimed | gemini | 2026-11-02T13:34Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1622 done: Chief: verify condition for J1100 (done)
 - J1620 done: Chief: verify condition for J1471 (done)
 - J1619 done: Chief: verify condition for J1356 (J1619 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1619 (next check 2026-11-02T12:17:14Z); all existing approvals and holds preserved.)
 - J1618 done: Chief: verify condition for J0936 (done)
@@ -54,4 +54,3 @@ Recently finished:
 - J1614 done: Chief: verify condition for J1356 (J1614 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1614 (next check 2026-11-02T11:16:15Z); all existing approvals and holds preserved.)
 - J1613 done: Chief: verify condition for J0936 (done)
 - J1612 done: Chief: verify condition for J1100 (done)
-- J1611 done: Chief: verify condition for J1471 (done)
