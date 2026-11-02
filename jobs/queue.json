@@ -143152,9 +143152,14 @@
           "at": "2026-11-02T11:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T11:40Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1621; starting verification of J0979 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
+      "remaining_action": "Read J0979 history, J1590 evidence, and check OWB 031+ VO and picture lock status",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-02T12:28:27+00:00",
@@ -143162,11 +143167,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-02T11:39Z",
+        "at": "2026-11-02T11:40Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1621; starting verification of J0979 waiting condition"
+      },
+      "taskKeys": [
+        "OWB:029",
+        "OWB:031",
+        "OWB:032"
+      ]
     },
     {
       "id": "J1622",
