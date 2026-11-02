@@ -138395,13 +138395,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-02T00:24Z",
-      "eta": "2026-11-02T02:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T00:17Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-02T00:17Z",
@@ -138432,6 +138432,11 @@
           "at": "2026-11-02T00:26Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Unmet condition recorded on J1356; next check retained at 2026-11-02T01:17:04Z; all approvals and holds preserved"
+        },
+        {
+          "at": "2026-11-02T00:26Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1356 remains blocked pending corrected delivery",
