@@ -140440,19 +140440,24 @@
           "at": "2026-11-02T05:06Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1589; starting inspection of J1100 waiting condition"
+        },
+        {
+          "at": "2026-11-02T05:07Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100 and J1584 full history, rulings, and hold state"
         }
       ],
-      "remaining_action": "Inspect J1100 history, evidence 3e26b379b, S2 bed and local audition listening status",
+      "remaining_action": "Verify local evidence 3e26b379b, SHA256 hashes of S2 bed candidates and audition files, and check whether local listening was performed",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T05:06Z",
+        "at": "2026-11-02T05:07Z",
         "by": "gemini",
-        "note": "Claimed J1589; starting inspection of J1100 waiting condition"
+        "note": "Read J1100 and J1584 full history, rulings, and hold state"
       },
       "taskKeys": [
         "OWB:027",
