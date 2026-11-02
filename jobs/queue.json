@@ -140865,19 +140865,24 @@
           "at": "2026-11-02T06:07Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1594; starting inspection of J1100 waiting condition"
+        },
+        {
+          "at": "2026-11-02T06:08Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100 and J1589 full history, rulings, and hold state"
         }
       ],
-      "remaining_action": "Inspect J1100 waiting condition, latest evidence, and approval history",
+      "remaining_action": "Verify evidence at /private/tmp/J1100-bed-evidence, bed SHA256 hashes, and listening status",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T06:07Z",
+        "at": "2026-11-02T06:08Z",
         "by": "gemini",
-        "note": "Claimed J1594; starting inspection of J1100 waiting condition"
+        "note": "Read J1100 and J1589 full history, rulings, and hold state"
       },
       "taskKeys": [
         "OWB:027",
