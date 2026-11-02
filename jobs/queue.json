@@ -142723,19 +142723,24 @@
           "at": "2026-11-02T10:32Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J1616 verification; inspecting J1100, J1612 and current evidence"
+        },
+        {
+          "at": "2026-11-02T10:32Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100 and J1612 full history, rulings, and hold state"
         }
       ],
-      "remaining_action": "Verify J1100 waiting condition (cleared S2 instrumental bed and local listening)",
+      "remaining_action": "Check /private/tmp/J1100-bed-evidence, SHA256 hashes and local listening status",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-02T10:32Z",
         "by": "gemini",
-        "note": "Started J1616 verification; inspecting J1100, J1612 and current evidence"
+        "note": "Read J1100 and J1612 full history, rulings, and hold state"
       },
       "taskKeys": [
         "OWB:027",
