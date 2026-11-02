@@ -138586,19 +138586,24 @@
           "at": "2026-11-02T00:37Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Reviewed J0978 approval history, API Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE), and J1535 evidence on HOS:004 (GHZDsiH7L7A)"
+        },
+        {
+          "at": "2026-11-02T01:02Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1567; starting verification of J0978 waiting condition on HOS 004 (GHZDsiH7L7A)"
         }
       ],
-      "remaining_action": "Perform fresh read-only HOS Studio check via CDP 9460 on GHZDsiH7L7A and run HOS channel:audit",
+      "remaining_action": "Read J0978 history and verify Studio title-test widget state on GHZDsiH7L7A",
       "kind": "chief",
       "recheck_of": "J0978",
       "due": "2026-11-02T01:28:41+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 3,
-        "at": "2026-11-02T00:37Z",
+        "at": "2026-11-02T01:02Z",
         "by": "gemini",
-        "note": "Reviewed J0978 approval history, API Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE), and J"
+        "note": "Claimed J1567; starting verification of J0978 waiting condition on HOS 004 (GHZDsiH7L7A)"
       },
       "taskKeys": [
         "HOS:004"
