@@ -148504,9 +148504,14 @@
           "at": "2026-11-02T23:52Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T23:52Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Reviewing rejection and shelving history, then checking current 031+ production evidence"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for locked 031+ long picture, then verify an unused Keeper-compliant opening in its locked VO",
+      "remaining_action": "Verify current picture locks and preserve J0979 hold if unmet",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-03T00:51:19+00:00",
@@ -148516,9 +148521,13 @@
         "of": 3,
         "at": "2026-11-02T23:52Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Reviewing rejection and shelving history, then checking current 031+ production evidence"
+      },
+      "taskKeys": [
+        "OWB:029",
+        "OWB:031",
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
