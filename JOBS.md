@@ -40,12 +40,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1602 | any | claimed | gemini | 2026-11-02T09:37Z | chief · Chief: verify condition for J1356 |  |
 | J1603 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1604 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 
 Recently finished:
 
+- J1602 done: Chief: verify condition for J1356 (J1602 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1602 (next check 2026-11-02T08:28:54Z); all existing approvals and holds preserved.)
 - J1601 done: Chief: verify condition for J0936 (done)
 - J1600 done: Chief: verify condition for J1100 (done)
 - J1599 done: Chief: verify condition for J0978 (Verified GHZDsiH7L7A via CDP 9460 at 2026-11-02T07:25:49.144Z: A/B testing titles / Results ready still visible; J0978 kept blocked with wait --recheck J1599 until 2026-11-02T13:25:00Z. Evidence in _desk/handoff/J1599/ and HOS PR #398 (5df1b123); channel:audit 62 videos, 0 errors; check_all.sh ALL CHECKS PASS.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1595 done: Chief: verify condition for J0936 (done)
 - J1594 done: Chief: verify condition for J1100 (done)
 - J1593 done: Chief: verify condition for J1471 (done)
-- J1592 done: Chief: verify condition for J1356 (done)
