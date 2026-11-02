@@ -148021,13 +148021,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T23:34Z",
-      "eta": "2026-11-03T01:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T23:30Z",
-      "result": "",
+      "result": "Verified original brief, approval history, latest J1682 and evidence 3e26b379b. Three audition hashes match; required local listening and cleared S2 bed remain absent. PR333 OPEN at 0a7fcb6ad with no reviews/comments. J0936 remains blocked; next check retained 2026-11-03T00:30:19Z. Preserved J1100 2/3, J1032 PASS, completed J1101-J1103, historical 6/6, approvals and scheduled fallbacks. NAS offload found no eligible scratch; about 15.7 GB free. No spend, audio egress, render or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T23:30Z",
@@ -148058,6 +148058,11 @@
           "at": "2026-11-02T23:35Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J0936 blocked with J1680 recheck and existing 2026-11-03T00:30:19Z retry; original progress, approvals and scheduled fallbacks preserved."
+        },
+        {
+          "at": "2026-11-02T23:35Z",
+          "by": "codex",
+          "what": "done: Verified original brief, approval history, latest J1682 and evidence 3e26b379b. Three audition hashes match; required local listening and cleared S2 bed remain absent. PR333 OPEN at 0a7fcb6ad with no reviews/comments. J0936 remains blocked; next check retained 2026-11-03T00:30:19Z. Preserved J1100 2/3, J1032 PASS, completed J1101-J1103, historical 6/6, approvals and scheduled fallbacks. NAS offload found no eligible scratch; about 15.7 GB free. No spend, audio egress, render or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repairs and replacement approvals",
@@ -148076,7 +148081,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1681",
