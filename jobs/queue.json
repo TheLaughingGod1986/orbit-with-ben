@@ -143732,19 +143732,24 @@
           "at": "2026-11-02T13:24Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: inspect approval and repair history; verify delivered evidence; record readiness decision and report."
+        },
+        {
+          "at": "2026-11-02T13:24Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR380 remains OPEN at d0b04b5e0 with no comments or reviews. Read integration, acceptance history and J1468 repair evidence."
         }
       ],
-      "remaining_action": "Verify repair evidence and final-master identity before deciding J1356 readiness",
+      "remaining_action": "Verify final-master hashes and saved gate failures",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T14:18:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-02T13:24Z",
         "by": "codex",
-        "note": "Plan: inspect approval and repair history; verify delivered evidence; record readiness decision and report."
+        "note": "PR380 remains OPEN at d0b04b5e0 with no comments or reviews. Read integration, acceptance history and J1468 repair evide"
       },
       "taskKeys": [
         "OWB:030"
