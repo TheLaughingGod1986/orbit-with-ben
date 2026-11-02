@@ -143460,13 +143460,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T12:30Z",
-      "eta": "2026-11-02T14:30Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T12:17Z",
-      "result": "",
+      "result": "Verified PR380 OPEN at d0b04b5e0 with no comments/reviews or approved replacement delivery. Three J1468 master hashes and ISS cache match. J1471 remains blocked on approved native-motion ISS opening and loop input; saved gate FAILs and full moving/audio review remain. Hold refreshed with J1625, retry 2026-11-02T13:17:23Z. All J1356/Ben/date/credit/publishing holds preserved; GBP0.",
       "history": [
         {
           "at": "2026-11-02T12:17Z",
@@ -143497,6 +143497,11 @@
           "at": "2026-11-02T12:32Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback confirms J1471 blocked/input, last_recheck J1625, checked_by codex, retry 2026-11-02T13:17:23Z. No approval or publishing hold released."
+        },
+        {
+          "at": "2026-11-02T12:32Z",
+          "by": "codex",
+          "what": "done: Verified PR380 OPEN at d0b04b5e0 with no comments/reviews or approved replacement delivery. Three J1468 master hashes and ISS cache match. J1471 remains blocked on approved native-motion ISS opening and loop input; saved gate FAILs and full moving/audio review remain. Hold refreshed with J1625, retry 2026-11-02T13:17:23Z. All J1356/Ben/date/credit/publishing holds preserved; GBP0."
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
