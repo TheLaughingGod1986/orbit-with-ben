@@ -223,6 +223,37 @@
     return text ? `<p class="mini ${live ? "on" : ""}"><i></i>${esc(text)}</p>` : "";
   }
 
+  // Per-video UAT outlook: only claim a time when an actual remaining-job estimate exists.
+  // A single job ETA is not a film ETA; never present it as a UAT countdown.
+  function uatOutlook(v, now) {
+    if (v.lane === "ready" && v.readyFor === "Ben") return { label: "Ready for UAT", detail: "Your review can start now", tone: "green" };
+    if (v.lane === "ready") return { label: "Awaiting final review", detail: "Waiting on " + (v.readyFor || "quality checks"), tone: "amber" };
+    const jobs = v.jobs || [], running = jobs.filter(j => j.status === "claimed");
+    const blocked = jobs.filter(j => j.status === "blocked");
+    if (blocked.length) return { label: "UAT ETA unavailable", detail: blocked.length + " blocked job(s) · " + clip(blocked[0].remaining_action || blocked[0].title || "Needs attention", 85), tone: "amber" };
+    if (running.length) {
+      const e = etaOf(running[0], now);
+      return { label: "UAT ETA pending", detail: e && !e.over ? "Current task: " + etaText(e) + " · more stages may remain" : "Active task · no reliable end-to-end estimate", tone: "blue" };
+    }
+    return { label: "UAT ETA pending", detail: jobs.some(j => j.status === "open") ? "Queued tasks must start before a reliable ETA is possible" : "Waiting for production milestones", tone: "amber" };
+  }
+  function productionOutlook(vs, now) {
+    const candidates = vs.filter(v => !isLive(v) && ["progress", "changes", "ready", "approved"].includes(v.lane));
+    const priority = v => v.lane === "ready" ? 0 : (v.jobs || []).some(j => j.status === "claimed") ? 1 : 2;
+    const sorted = candidates.slice().sort((a,b) => priority(a)-priority(b));
+    const cards = sorted.slice(0,4).map(v => {
+      const o = uatOutlook(v, now), p = progressOf(v);
+      return `<a class="row" href="${detailLink(v)}"><div class="body"><b>${esc(v.title || v.number || "Untitled video")}</b>
+        <span class="meta">${esc(ch(v))} · ${esc(kind(v))} · ${esc(stage(v))}</span>
+        <span class="doing">${esc(o.label)}</span><span class="meta">${esc(o.detail)}</span>
+        ${p ? bar(p, "active task only, not overall video completion") : ""}</div><span class="chev">›</span></a>`;
+    }).join("");
+    return section("Next videos toward UAT", candidates.length,
+      cards || empty("No videos currently moving toward UAT."),
+      ' <a class="more" href="#videos">All videos</a>')
+      + '<p class="meta">ETAs are shown only when supported by tracked work. Task progress is not total film progress.</p>';
+  }
+
   function overview(b, now) {
     const s = summary(b, now);
     const tiles = `<div class="tiles">
@@ -243,6 +274,7 @@
     return `<header class="top"><div><h1>Studio</h1><p class="meta">Orbit With Ben · History of Science</p></div>
       <span class="pill ${s.health[0]}"><i></i>${esc(s.health[1])}</span></header>${miniLine(s, b)}${tiles}
       ${section("Ready for your review", s.ready.length, ready)}
+      ${productionOutlook(((b.tracker || {}).videos) || [], now)}
       ${section("Agents working now", cards.length, working, ' <a class="more" href="#videos">See all</a>')}
       ${section("Agent jobs", null, pipe, ' <a class="more" href="#agents">Agents</a>')}`;
   }
