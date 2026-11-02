@@ -147513,10 +147513,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-02T22:33Z",
+      "eta": "2026-11-03T00:33Z",
       "created_by": "relay",
       "created_at": "2026-11-02T22:29Z",
       "result": "",
@@ -147525,13 +147525,26 @@
           "at": "2026-11-02T22:29Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-02T22:33Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Clear S2 instrumental bed and local listening, then complete repair gates and replacement approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T23:29:45+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-02T22:33Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1675",
