@@ -143398,9 +143398,14 @@
           "at": "2026-11-02T12:24Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T12:24Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read original J1356, J1471 and prior verification; checking current delivery evidence"
         }
       ],
-      "remaining_action": "Verify readiness: Await approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
+      "remaining_action": "Verify corrected AR masters, gate evidence and final-watch readiness",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T13:17:23+00:00",
@@ -143410,9 +143415,11 @@
         "of": 3,
         "at": "2026-11-02T12:24Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read original J1356, J1471 and prior verification; checking current delivery evidence"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1625",
