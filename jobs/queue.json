@@ -143813,19 +143813,24 @@
           "at": "2026-11-02T13:27Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking original brief, approval history and current PR380 delivery"
+        },
+        {
+          "at": "2026-11-02T13:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR380 remains OPEN at d0b04b5e0 with no comments/reviews; three master hashes and ISS cache match. No approved replacement delivered."
         }
       ],
-      "remaining_action": "Verify approved ISS opening input and J1471 evidence",
+      "remaining_action": "Record verified unmet ISS input condition and preserve holds",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T14:18:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T13:27Z",
+        "at": "2026-11-02T13:28Z",
         "by": "codex",
-        "note": "Checking original brief, approval history and current PR380 delivery"
+        "note": "PR380 remains OPEN at d0b04b5e0 with no comments/reviews; three master hashes and ISS cache match. No approved replaceme"
       },
       "taskKeys": [
         "OWB:030"
