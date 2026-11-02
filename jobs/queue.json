@@ -144692,13 +144692,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T15:34Z",
-      "eta": "2026-11-02T17:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T15:24Z",
-      "result": "",
+      "result": "Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews. Fresh hashes match all three J1468 exports; no newer exports. Saved opening FAILs persist (AR1 6.00s, AR2 0.25, AR3 1.41). J1471 approved ISS opening input and corrected delivery remain absent. J1356 held via recheck J1640; retry 2026-11-02T16:24:55Z. Complete metadata, affected gates, full audiovisual review and pace WARN assessment still required. No new review or gate rerun claimed; all approvals and holds preserved. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T15:24Z",
@@ -144729,6 +144729,11 @@
           "at": "2026-11-02T15:36Z",
           "by": "codex",
           "what": "step 3 of 3 done: Hold recorded with recheck J1640; retained 2026-11-02T16:24:55Z retry. Existing approvals and publishing/watch holds preserved."
+        },
+        {
+          "at": "2026-11-02T15:36Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews. Fresh hashes match all three J1468 exports; no newer exports. Saved opening FAILs persist (AR1 6.00s, AR2 0.25, AR3 1.41). J1471 approved ISS opening input and corrected delivery remain absent. J1356 held via recheck J1640; retry 2026-11-02T16:24:55Z. Complete metadata, affected gates, full audiovisual review and pace WARN assessment still required. No new review or gate rerun claimed; all approvals and holds preserved. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1356 remains blocked pending corrected delivery",
