@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1626 | any | claimed | codex | 2026-11-02T14:36Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1626 done: Chief: verify condition for J1100 (Verified existing evidence and fresh hashes; J1100 remains blocked for cleared instrumental S2 bed and actual local listening. Preserved worker 2/3 and retry 2026-11-02T13:34:54Z. No media approval or publishing.)
 - J1625 done: Chief: verify condition for J1471 (Verified PR380 OPEN at d0b04b5e0 with no comments/reviews or approved replacement delivery. Three J1468 master hashes and ISS cache match. J1471 remains blocked on approved native-motion ISS opening and loop input; saved gate FAILs and full moving/audio review remain. Hold refreshed with J1625, retry 2026-11-02T13:17:23Z. All J1356/Ben/date/credit/publishing holds preserved; GBP0.)
 - J1624 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN unchanged d0b04b5e0 with zero comments/reviews; all three final master hashes match J1468. Saved opening gates FAIL (AR1 6.00s first cut; AR2 diff 0.25; AR3 1.41). J1471 approved ISS input and corrected delivery remain absent. J1356 kept blocked via wait --recheck J1624, next check 2026-11-02T13:17:23Z. Full moving/audio review, pace WARN and complete affected gates still required; existing approvals and holds preserved. No spend or publishing changes.)
 - J1623 done: Chief: verify condition for J0936 (Verified unmet condition: J1100 remains blocked at 2/3; audition hashes match, local listening absent; PR333 remains open without approval. J0936 hold retained for 2026-11-02T13:17:23Z. No media or publishing changes.)
@@ -53,4 +53,3 @@ Recently finished:
 - J1619 done: Chief: verify condition for J1356 (J1619 verified J1356 waiting condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1471 still blocked on approved ISS opening input, 06_Final-Exports master hashes unchanged from J1468, and saved gate_shorts_open checks still FAIL (AR1 first cut 6.00s >3s; AR2 opening diff 0.25 <1.50; AR3 opening diff 1.41 <1.50). J1356 kept blocked via jobs.py wait --recheck J1619 (next check 2026-11-02T12:17:14Z); all existing approvals and holds preserved.)
 - J1618 done: Chief: verify condition for J0936 (done)
 - J1617 done: Chief: verify condition for J1130 (Verified live HOS Studio on CDP 9460 (.hos-chrome-youtube-studio): AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) is still Running (Estimated time remaining: 9 days 13 hours; watch-time share — on both variants). J1130 kept blocked; next check 2026-11-02T17:02:00Z. Evidence: _desk/handoff/J1617. No YouTube changes or spend.)
-- J1616 done: Chief: verify condition for J1100 (done)
