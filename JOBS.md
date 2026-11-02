@@ -41,10 +41,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1599 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
-| J1600 | any | claimed | gemini | 2026-11-02T09:18Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1600 done: Chief: verify condition for J1100 (done)
 - J1598 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (14 OWB + 5 HOS longs; CTR hits vs 4%: OWB 2/11 measured (h8HGfyShEHI 4.2%, -jmMROGoZCM 5.0%), HOS 1/4 measured (_C92tIJCk8A 6.8%). 77 OWB + 24 HOS Shorts (101/101 stayed-to-watch, 80/101 avg % viewed); 2 Nov 1 releases (rVqgtkBV3jc, pWySvZsneZg) have no settled lifetime metrics yet. Commit 171832e9a; board-data 4b4223494; HOS channel:audit 62 videos, 0 errors.)
 - J1597 done: Chief: verify condition for J1471 (done)
 - J1596 done: Chief: verify condition for J1356 (done)
@@ -54,4 +54,3 @@ Recently finished:
 - J1592 done: Chief: verify condition for J1356 (done)
 - J1591 done: Chief: verify condition for J0936 (done)
 - J1590 done: Chief: verify condition for J0979 (done)
-- J1589 done: Chief: verify condition for J1100 (done)
