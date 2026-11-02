@@ -138303,13 +138303,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-02T00:18Z",
-      "eta": "2026-11-02T02:18Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T00:17Z",
-      "result": "",
+      "result": "Verified J0936 waiting condition: latest J1563 retains J1100 blocked at 2/3 (until 2026-11-02T00:41:41Z), evidence 3e26b379b still records local listening NOT PERFORMED with matching audition hashes and excluded bed 13adc031, and PR #333 remains OPEN at 0a7fcb6ad with 0 reviews/comments. Retained hold on J0936 until 2026-11-02T01:17:04Z; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks.",
       "history": [
         {
           "at": "2026-11-02T00:17Z",
@@ -138345,6 +138345,11 @@
           "at": "2026-11-02T00:22Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Retained hold on J0936 with 2026-11-02T01:17:04Z recheck; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks"
+        },
+        {
+          "at": "2026-11-02T00:22Z",
+          "by": "gemini",
+          "what": "done: Verified J0936 waiting condition: latest J1563 retains J1100 blocked at 2/3 (until 2026-11-02T00:41:41Z), evidence 3e26b379b still records local listening NOT PERFORMED with matching audition hashes and excluded bed 13adc031, and PR #333 remains OPEN at 0a7fcb6ad with 0 reviews/comments. Retained hold on J0936 until 2026-11-02T01:17:04Z; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
@@ -138372,7 +138377,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1565",
