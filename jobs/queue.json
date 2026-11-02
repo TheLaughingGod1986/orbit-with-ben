@@ -143385,13 +143385,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T12:24Z",
-      "eta": "2026-11-02T14:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T12:17Z",
-      "result": "",
+      "result": "Verified unmet condition: PR380 OPEN unchanged d0b04b5e0 with zero comments/reviews; all three final master hashes match J1468. Saved opening gates FAIL (AR1 6.00s first cut; AR2 diff 0.25; AR3 1.41). J1471 approved ISS input and corrected delivery remain absent. J1356 kept blocked via wait --recheck J1624, next check 2026-11-02T13:17:23Z. Full moving/audio review, pace WARN and complete affected gates still required; existing approvals and holds preserved. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T12:17Z",
@@ -143422,6 +143422,11 @@
           "at": "2026-11-02T12:26Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 hold updated with J1624 evidence; next check retained at 2026-11-02T13:17:23Z. All approvals and holds preserved."
+        },
+        {
+          "at": "2026-11-02T12:26Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition: PR380 OPEN unchanged d0b04b5e0 with zero comments/reviews; all three final master hashes match J1468. Saved opening gates FAIL (AR1 6.00s first cut; AR2 diff 0.25; AR3 1.41). J1471 approved ISS input and corrected delivery remain absent. J1356 kept blocked via wait --recheck J1624, next check 2026-11-02T13:17:23Z. Full moving/audio review, pace WARN and complete affected gates still required; existing approvals and holds preserved. No spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1356 remains blocked pending corrected delivery",
