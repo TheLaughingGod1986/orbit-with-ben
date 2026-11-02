@@ -140523,21 +140523,27 @@
           "at": "2026-11-02T05:21Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1590; checking J0979 and 031+ VO/picture lock state"
+        },
+        {
+          "at": "2026-11-02T05:22Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1558 prior recheck"
         }
       ],
-      "remaining_action": "Read J0979 history and verify whether any OWB 031+ film has locked VO and picture",
+      "remaining_action": "Verify 031-061 VO and picture lock records in status.json and production-status.md",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-02T06:20:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T05:21Z",
+        "at": "2026-11-02T05:22Z",
         "by": "gemini",
-        "note": "Claimed J1590; checking J0979 and 031+ VO/picture lock state"
+        "note": "Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1558 prior recheck"
       },
       "taskKeys": [
+        "OWB:029",
         "OWB:031",
         "OWB:032"
       ]
