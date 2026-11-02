@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1573 | any | claimed | gemini | 2026-11-02T04:04Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
+- J1573 done: Chief: verify condition for J1100 (done)
 - J1572 done: Chief: verify condition for J1471 (Verified PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1468 master hashes and Crew-2 station cache hash unchanged; no new approved ISS opening interval or replacement delivered. Kept J1471 blocked on input (last_recheck J1572, retry 2026-11-02T02:20:33Z) with J1356 and all Ben/date/credit/publishing holds retained.)
 - J1571 done: Chief: verify condition for J1356 (done)
 - J1570 done: Chief: verify condition for J0936 (Verified J0936 waiting condition: latest J1569 retains J1100 blocked at 2/3 (until 2026-11-02T01:59:39Z), evidence 3e26b379b still records local listening NOT PERFORMED with matching audition hashes and excluded bed 13adc031, and PR #333 remains OPEN at 0a7fcb6ad with 0 reviews/comments. Retained hold on J0936 until 2026-11-02T02:20:33Z; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks.)
@@ -53,4 +53,3 @@ Recently finished:
 - J1566 done: Chief: verify condition for J1471 (Verified PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1468 master hashes and Crew-2 station cache hash unchanged; no new approved ISS opening interval or replacement delivered. Kept J1471 blocked on input (last_recheck J1566, retry 2026-11-02T01:17:04Z) with J1356 and all Ben/date/credit/publishing holds retained.)
 - J1565 done: Chief: verify condition for J1356 (done)
 - J1564 done: Chief: verify condition for J0936 (Verified J0936 waiting condition: latest J1563 retains J1100 blocked at 2/3 (until 2026-11-02T00:41:41Z), evidence 3e26b379b still records local listening NOT PERFORMED with matching audition hashes and excluded bed 13adc031, and PR #333 remains OPEN at 0a7fcb6ad with 0 reviews/comments. Retained hold on J0936 until 2026-11-02T01:17:04Z; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks.)
-- J1563 done: Chief: verify condition for J1100 (done)
