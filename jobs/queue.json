@@ -88328,6 +88328,11 @@
           "at": "2026-11-02T23:30Z",
           "by": "relay",
           "what": "condition verification queued: J1681"
+        },
+        {
+          "at": "2026-11-02T23:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T00:30:19Z"
         }
       ],
       "kind": "review",
@@ -88366,12 +88371,11 @@
       "remaining_action": "Obtain explicit approval for publication of the completed local audit review",
       "hold": {
         "type": "input",
-        "condition": "Explicit approval to publish local J1642 review commit 33af1e441 to the public studio repo remains absent. J1675 checked original job/history, preserved local decision and all 40 thread comments since the review through 6590234532; no approval found. Prior automatic approval rejection remains binding; do not retry publication without explicit approval. Local review remains at /Users/benjaminoats/_desk/handoff/J1642/. Original production gates and approvals unchanged.",
-        "check_at": "2026-11-03T00:30:19+00:00",
-        "last_recheck": "J1675",
-        "checked_at": "2026-11-02T22:38:59+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1681"
+        "condition": "Explicit approval to publish local J1642 review commit 33af1e441 remains absent. J1681 checked original history, preserved local decision and seven subsequent comments through 6591245554. Prior automatic approval rejection remains binding; no publication retry without explicit approval. Review preserved at /Users/benjaminoats/_desk/handoff/J1642/. Original gates and approvals unchanged.",
+        "check_at": "2026-11-03T00:30:19Z",
+        "last_recheck": "J1681",
+        "checked_at": "2026-11-02T23:38:08+00:00",
+        "checked_by": "codex"
       }
     },
     {
