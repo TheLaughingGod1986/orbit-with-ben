@@ -143902,19 +143902,24 @@
           "at": "2026-11-02T13:34Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh HOS Studio read at 13:33 UTC: title-test Results ready widget persists, original title, Public. Evidence saved; no writes."
+        },
+        {
+          "at": "2026-11-02T13:35Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J0978 hold retained with recheck J1630 at 19:35 UTC; evidence PR 381 (cec955ed8), JSON and diff checks pass."
         }
       ],
-      "remaining_action": "Record the retained hold and next verification, then report",
+      "remaining_action": "Report completed verification; J0978 waits for widget clearance",
       "kind": "chief",
       "recheck_of": "J0978",
       "due": "2026-11-02T14:25:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-02T13:34Z",
+        "at": "2026-11-02T13:35Z",
         "by": "codex",
-        "note": "Fresh HOS Studio read at 13:33 UTC: title-test Results ready widget persists, original title, Public. Evidence saved; no"
+        "note": "J0978 hold retained with recheck J1630 at 19:35 UTC; evidence PR 381 (cec955ed8), JSON and diff checks pass."
       },
       "taskKeys": [
         "HOS:004"
