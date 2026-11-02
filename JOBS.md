@@ -40,11 +40,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1566 | any | claimed | gemini | 2026-11-02T02:29Z | chief · Chief: verify condition for J1471 |  |
 | J1567 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 
 Recently finished:
 
+- J1566 done: Chief: verify condition for J1471 (Verified PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1468 master hashes and Crew-2 station cache hash unchanged; no new approved ISS opening interval or replacement delivered. Kept J1471 blocked on input (last_recheck J1566, retry 2026-11-02T01:17:04Z) with J1356 and all Ben/date/credit/publishing holds retained.)
 - J1565 done: Chief: verify condition for J1356 (done)
 - J1564 done: Chief: verify condition for J0936 (Verified J0936 waiting condition: latest J1563 retains J1100 blocked at 2/3 (until 2026-11-02T00:41:41Z), evidence 3e26b379b still records local listening NOT PERFORMED with matching audition hashes and excluded bed 13adc031, and PR #333 remains OPEN at 0a7fcb6ad with 0 reviews/comments. Retained hold on J0936 until 2026-11-02T01:17:04Z; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks.)
 - J1563 done: Chief: verify condition for J1100 (done)
@@ -54,4 +54,3 @@ Recently finished:
 - J1559 done: Chief: verify condition for J1100 (done)
 - J1558 done: Chief: verify condition for J0979 (Verified current 031/032 status.json and production-status.md: VO locks J1295/c8ed778ab (magnetic_field_flip_vo_v02a) and J1294/4a9a2e16b (titan_landing_vo_v02b) remain recorded, but picture not started (CG pending). 033-061 have no recorded VO/picture locks. J0979 remains blocked via wait --recheck J1558; next check 2026-11-02T05:20:00Z. J1042 shelving of 029 reserve v01 and all original gates preserved. No spend or publishing changes.)
 - J1557 done: Chief: verify condition for J1130 (Verified live HOS Studio on CDP 9460 (.hos-chrome-youtube-studio): AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) is still Running (Estimated time remaining: 10 days 1 hour; watch-time share — on both variants). J1130 kept blocked; next check 2026-11-02T04:50:00Z. Evidence: _desk/handoff/J1557. No YouTube changes or spend.)
-- J1556 done: Chief: verify condition for J1471 (done)
