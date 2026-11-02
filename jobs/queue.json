@@ -140528,19 +140528,24 @@
           "at": "2026-11-02T05:22Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1558 prior recheck"
+        },
+        {
+          "at": "2026-11-02T05:22Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Confirmed 031 (magnetic_field_flip_vo_v02a, J1295/c8ed778ab) and 032 (titan_landing_vo_v02b, J1294/4a9a2e16b) have locked VO only and picture not started (CG pending); 033-061 have no VO or picture locks"
         }
       ],
-      "remaining_action": "Verify 031-061 VO and picture lock records in status.json and production-status.md",
+      "remaining_action": "Keep J0979 on input hold via wait --recheck J1590 and set next verification in 6 hours",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-02T06:20:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-02T05:22Z",
         "by": "gemini",
-        "note": "Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1558 prior recheck"
+        "note": "Confirmed 031 (magnetic_field_flip_vo_v02a, J1295/c8ed778ab) and 032 (titan_landing_vo_v02b, J1294/4a9a2e16b) have locke"
       },
       "taskKeys": [
         "OWB:029",
