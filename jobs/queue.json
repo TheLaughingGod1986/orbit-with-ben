@@ -123194,6 +123194,11 @@
           "at": "2026-11-02T13:18Z",
           "by": "relay",
           "what": "condition verification queued: J1628"
+        },
+        {
+          "at": "2026-11-02T13:25Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-02T14:18:00Z"
         }
       ],
       "remaining_action": "Await corrected AR openings, complete gates and full audiovisual review before final-watch handoff",
@@ -123210,12 +123215,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1624 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 checks match all J1468 final masters. J1471 lacks approved ISS opening input. Saved FAILs remain: AR1 first cut 6.00s >3s; AR2 opening diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment. All existing approvals and Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-02T14:18:00+00:00",
-        "last_recheck": "J1624",
-        "checked_at": "2026-11-02T12:26:42+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1628"
+        "condition": "J1628 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 checks match all three J1468 final masters. J1471 still lacks approved ISS opening input. Saved opening FAILs: AR1 first cut 6.00s >3s; AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment. Existing approvals and Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-02T14:18:00Z",
+        "last_recheck": "J1628",
+        "checked_at": "2026-11-02T13:25:02+00:00",
+        "checked_by": "codex"
       }
     },
     {
