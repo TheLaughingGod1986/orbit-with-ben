@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1588 | any | claimed | gemini | 2026-11-02T06:51Z | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
+- J1588 done: Chief: verify condition for J1130 (Verified live HOS Studio on CDP 9460 (.hos-chrome-youtube-studio): AL_-qlWko_g thumbnail-only test T020 (live A vs MISSING ELEMENT v02) is still Running (Estimated time remaining: 9 days 19 hours; watch-time share — on both variants). J1130 kept blocked; next check 2026-11-02T10:56:00Z. Evidence: _desk/handoff/J1588. No YouTube changes or spend.)
 - J1587 done: Chief: verify condition for J1471 (done)
 - J1586 done: Chief: verify condition for J1356 (done)
 - J1585 done: Chief: verify condition for J0936 (done)
@@ -53,4 +53,3 @@ Recently finished:
 - J1581 done: Chief: verify condition for J0936 (Verified J0936 waiting condition: latest J1580 retains J1100 blocked at 2/3 (until 2026-11-02T04:03:53Z), evidence 3e26b379b still records local listening NOT PERFORMED with matching audition hashes and excluded bed 13adc031, and PR #333 remains OPEN at 0a7fcb6ad with 0 reviews/comments. Retained hold on J0936 until 2026-11-02T04:23:31Z; preserved J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and v01 fallbacks.)
 - J1580 done: Chief: verify condition for J1100 (done)
 - J1579 done: Chief: verify condition for J0985 (Verified J0985 waiting condition: commit 0ac2007b9 and evidence_2026-10-26_owb_reconciled.json (SHA256 b753794d07e99553e3f90239a1ab84ef9ca2b8c12a2508d5499ebc00fbe29efc) reconcile Mercury vlkj8RQKmH8 curve drops (tied -5.59pp at 0.20->0.21 [4.0880-4.2924s] and 0.24->0.25 [4.9056-5.1100s]) and cut/VO mapping across OWB_2026-10-26_CHIEF_REVIEW.md, OWB_2026-10-26.md, OWB_2026-10-26_EVIDENCE.md, and LEARNINGS.md. Because gemini authored J0985/J1002/J1003/J1549 (never self-approve J0985) and all non-author Chiefs (grok, claude, codex) are currently down, kept J0985 blocked via wait --recheck J1579 (next check 2026-11-02T08:55:00Z, 6h retry) awaiting final non-author Chief audit PASS. Original gates and approvals unchanged; GBP0 spend.)
-- J1578 done: Chief: verify condition for J1471 (Verified PR380 OPEN unchanged at d0b04b5e0 (0 comments/reviews), J1468 master hashes and Crew-2 station cache hash unchanged; no new approved ISS opening interval or replacement delivered. Kept J1471 blocked on input (last_recheck J1578, retry 2026-11-02T03:22:26Z) with J1356 and all Ben/date/credit/publishing holds retained.)
