@@ -143636,13 +143636,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T13:19Z",
-      "eta": "2026-11-02T15:19Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T13:18Z",
-      "result": "",
+      "result": "Verified unmet condition: J1626 retains J1100 blocked at 2/3; three audition hashes match but local listening absent; PR333 remains open without approval. J0936 hold retained for 2026-11-02T14:18:00Z. NAS offload found no eligible scratch; 11.6 GB free. No media or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T13:18Z",
@@ -143673,6 +143673,11 @@
           "at": "2026-11-02T13:20Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet conditions on J0936 with existing 2026-11-02T14:18:00Z retry. Preserved J1100 2/3, J0936 6/6 history, prior approvals, completed swaps and fallbacks."
+        },
+        {
+          "at": "2026-11-02T13:20Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition: J1626 retains J1100 blocked at 2/3; three audition hashes match but local listening absent; PR333 remains open without approval. J0936 hold retained for 2026-11-02T14:18:00Z. NAS offload found no eligible scratch; 11.6 GB free. No media or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
@@ -143691,7 +143696,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1628",
