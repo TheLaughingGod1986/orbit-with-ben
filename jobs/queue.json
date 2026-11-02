@@ -142986,9 +142986,14 @@
           "at": "2026-11-02T11:24Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T11:25Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1619; checking PR #380, J1471, and J1356 state"
         }
       ],
-      "remaining_action": "Verify readiness: Await approved ISS opening input, corrected cuts, complete gates and full audiovisual review",
+      "remaining_action": "Verify waiting condition for J1356 (PR #380 and J1471 opening fixes)",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T12:17:14+00:00",
@@ -142996,11 +143001,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-02T11:24Z",
+        "at": "2026-11-02T11:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1619; checking PR #380, J1471, and J1356 state"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1620",
