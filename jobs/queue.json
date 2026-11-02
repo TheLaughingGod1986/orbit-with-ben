@@ -140203,20 +140203,28 @@
           "at": "2026-11-02T04:31Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1586; starting verification of J1356 waiting condition"
+        },
+        {
+          "at": "2026-11-02T04:32Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: PR380 OPEN unchanged at d0b04b5e0 with 0 comments/reviews; J1471 still blocked on approved ISS opening input"
         }
       ],
-      "remaining_action": "Inspect J1356, J1471, PR380 and verify waiting condition",
+      "remaining_action": "Verify 06_Final-Exports hashes and J1468_evidence gate statuses",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-02T05:23:44+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-02T04:31Z",
+        "at": "2026-11-02T04:32Z",
         "by": "gemini",
-        "note": "Claimed J1586; starting verification of J1356 waiting condition"
-      }
+        "note": "PR380 OPEN unchanged at d0b04b5e0 with 0 comments/reviews; J1471 still blocked on approved ISS opening input"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1587",
