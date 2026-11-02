@@ -40,7 +40,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1674 | any | claimed | codex | 2026-11-03T00:33Z | chief · Chief: verify condition for J0936 |  |
 | J1675 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
 | J1677 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 | J1678 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
@@ -49,6 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J1676 done: Chief: verify condition for J1100 (Verified original approval history and fresh bed/three audition hashes against 3e26b379b. No newer local listening record; J1100 remains blocked for cleared instrumental S2 bed and actual local opening/middle/end listening. Preserved 2/3, OWB:027/028, pickups, continuous phrase, S6 audio, h43-LOOP and deadlines/v01 fallback. Next check retained: 2026-11-02T23:29:45Z. Required NAS offload found no eligible scratch; about 15.4 GB free. No spend, audio egress, render or publishing.)
+- J1674 done: Chief: verify condition for J0936 (done)
 - J1673 done: Chief: verify condition for J1130 (Verified T020 still Running at 21:09:54Z; J1130 remains blocked, recheck J1673 recorded, retry 2026-11-02T22:05:55Z. Evidence _desk/handoff/J1673.)
 - J1672 done: Chief: verify condition for J1100 (Verified original approvals and fresh bed/audition hashes against 3e26b379b. No newer local listening record; J1100 stays blocked pending instrumental bed clearance and actual local listening. Preserved 2/3, OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback. Recorded next check 2026-11-02T21:43:55Z. Required NAS offload found no eligible scratch (16724 MB free). No spend, audio egress, render or publishing.)
 - J1671 done: Chief: verify condition for J1471 (done)
@@ -57,4 +57,3 @@ Recently finished:
 - J1668 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1667 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS 4bd9357b))
 - J1666 done: Chief: verify condition for J1130 (done)
-- J1665 done: Chief: verify condition for J0862 (Verified unmet: HOS fadfb918, PRs through 398, desk through 6586722365, J1004/PR366 and queue show no approved 009 Short B replacement opening or exact recording scope. J0862 stays blocked; recheck 2026-11-03T02:00Z linked J1665. Preserve v02 takes and 010 A Option A1. Reported on HOS desk; no spend or YouTube changes.)
