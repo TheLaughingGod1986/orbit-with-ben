@@ -142133,9 +142133,14 @@
           "at": "2026-11-02T09:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-02T09:22Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Obtain non-author Chief (grok, claude, or codex) final audit PASS on reconciled commit 0ac2007b9",
+      "remaining_action": "Inspect J0985 state, evidence files, and chief_relay status",
       "kind": "chief",
       "recheck_of": "J0985",
       "due": "2026-11-02T10:15:43+00:00",
@@ -142144,9 +142149,7 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-02T09:22Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "by": "gemini"
       }
     },
     {
