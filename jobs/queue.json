@@ -144279,13 +144279,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T14:25Z",
-      "eta": "2026-11-02T16:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T14:24Z",
-      "result": "",
+      "result": "Verified latest J1631 and evidence 3e26b379b: J1100 remains blocked at 2/3, audition hashes match but actual listening is absent. PR333 OPEN without reviews/comments. J0936 remains blocked; existing retry 2026-11-02T15:24:42Z preserved. Safe NAS offload found no eligible scratch, about 10.6 GB free. No media, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T14:24Z",
@@ -144316,6 +144316,11 @@
           "at": "2026-11-02T14:27Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J0936 hold and existing 15:24:42Z retry. Preserved original progress, completed swaps, approvals, deadlines and v01 fallbacks."
+        },
+        {
+          "at": "2026-11-02T14:28Z",
+          "by": "codex",
+          "what": "done: Verified latest J1631 and evidence 3e26b379b: J1100 remains blocked at 2/3, audition hashes match but actual listening is absent. PR333 OPEN without reviews/comments. J0936 remains blocked; existing retry 2026-11-02T15:24:42Z preserved. Safe NAS offload found no eligible scratch, about 10.6 GB free. No media, spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
@@ -144334,7 +144339,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1636",
