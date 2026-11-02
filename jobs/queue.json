@@ -145440,13 +145440,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T17:26Z",
-      "eta": "2026-11-02T19:26Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T17:25Z",
-      "result": "",
+      "result": "Verified latest J1647/J1100, original approvals and evidence. J0936 remains blocked: excluded S2 bed and unperformed local listening; three audition hashes match. PR333 OPEN at 0a7fcb6ad without reviews/comments. Retained 18:25:36Z retry, accepted sources, original progress/deadlines, completed swaps and scheduled fallbacks. No spend, source-audio egress or publishing changes.",
       "history": [
         {
           "at": "2026-11-02T17:25Z",
@@ -145477,6 +145477,11 @@
           "at": "2026-11-02T17:27Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained input hold with recorded 18:25:36Z retry; original progress, approvals, deadlines and scheduled fallbacks preserved."
+        },
+        {
+          "at": "2026-11-02T17:28Z",
+          "by": "codex",
+          "what": "done: Verified latest J1647/J1100, original approvals and evidence. J0936 remains blocked: excluded S2 bed and unperformed local listening; three audition hashes match. PR333 OPEN at 0a7fcb6ad without reviews/comments. Retained 18:25:36Z retry, accepted sources, original progress/deadlines, completed swaps and scheduled fallbacks. No spend, source-audio egress or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits repair evidence and replacement approvals",
@@ -145495,7 +145500,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1650",
