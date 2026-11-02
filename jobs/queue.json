@@ -143184,19 +143184,24 @@
           "at": "2026-11-02T11:35Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J1622 verification of J1100 waiting condition"
+        },
+        {
+          "at": "2026-11-02T11:35Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1100 history, rulings, and hold state"
         }
       ],
-      "remaining_action": "Check J1100 waiting condition (cleared instrumental S2 bed and local listening proof)",
+      "remaining_action": "Inspect /private/tmp/J1100-bed-evidence and check if cleared S2 bed or local listening evidence landed",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-02T11:35Z",
         "by": "gemini",
-        "note": "Started J1622 verification of J1100 waiting condition"
+        "note": "Read J1100 history, rulings, and hold state"
       },
       "taskKeys": [
         "OWB:027",
