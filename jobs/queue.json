@@ -144464,19 +144464,24 @@
           "at": "2026-11-02T14:35Z",
           "by": "codex",
           "what": "step 2 of 3 done: J1471 hold refreshed using J1637; existing 15:24:42 UTC retry retained; all approval and publishing holds preserved."
+        },
+        {
+          "at": "2026-11-02T14:35Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback confirms blocked input hold, last_recheck J1637, checked_by codex and 15:24:42 UTC retry; all original holds retained."
         }
       ],
-      "remaining_action": "Verify saved hold and close this verification task",
+      "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-02T15:24:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-02T14:35Z",
         "by": "codex",
-        "note": "J1471 hold refreshed using J1637; existing 15:24:42 UTC retry retained; all approval and publishing holds preserved."
+        "note": "Readback confirms blocked input hold, last_recheck J1637, checked_by codex and 15:24:42 UTC retry; all original holds re"
       },
       "taskKeys": [
         "OWB:030"
