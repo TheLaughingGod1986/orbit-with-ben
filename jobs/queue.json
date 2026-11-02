@@ -138866,19 +138866,24 @@
           "at": "2026-11-02T01:31Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1570; starting verification of J0936 waiting condition"
+        },
+        {
+          "at": "2026-11-02T01:31Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J0936 brief, approval/hold history, J1564 and latest J1569 result on J1100 (blocked at 2/3 until 2026-11-02T01:59:39Z)"
         }
       ],
-      "remaining_action": "Read J0936 brief, approval history, and latest J1569/J1100 status",
+      "remaining_action": "Verify commit 3e26b379b evidence, bed/audition SHA256 hashes, and PR #333 status",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-02T02:20:33+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-02T01:31Z",
         "by": "gemini",
-        "note": "Claimed J1570; starting verification of J0936 waiting condition"
+        "note": "Read J0936 brief, approval/hold history, J1564 and latest J1569 result on J1100 (blocked at 2/3 until 2026-11-02T01:59:3"
       },
       "taskKeys": [
         "OWB:026",
