@@ -143870,13 +143870,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-02T13:31Z",
-      "eta": "2026-11-02T15:31Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-02T13:25Z",
-      "result": "",
+      "result": "Fresh HOS Studio verification 2026-11-02 13:33 UTC: Atom title-test Results ready widget persists; original title and Public. J0978 remains blocked; next read-only check 19:35 UTC via wait --recheck J1630. Evidence PR 381 and _desk/handoff/J1630; no YouTube writes or spend.",
       "history": [
         {
           "at": "2026-11-02T13:25Z",
@@ -143907,6 +143907,11 @@
           "at": "2026-11-02T13:35Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0978 hold retained with recheck J1630 at 19:35 UTC; evidence PR 381 (cec955ed8), JSON and diff checks pass."
+        },
+        {
+          "at": "2026-11-02T13:35Z",
+          "by": "codex",
+          "what": "done: Fresh HOS Studio verification 2026-11-02 13:33 UTC: Atom title-test Results ready widget persists; original title and Public. J0978 remains blocked; next read-only check 19:35 UTC via wait --recheck J1630. Evidence PR 381 and _desk/handoff/J1630; no YouTube writes or spend."
         }
       ],
       "remaining_action": "Report completed verification; J0978 waits for widget clearance",
@@ -143923,7 +143928,8 @@
       },
       "taskKeys": [
         "HOS:004"
-      ]
+      ],
+      "done_ref": "cec955ed8"
     }
   ],
   "focus": [],
