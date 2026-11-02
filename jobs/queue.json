@@ -148365,19 +148365,24 @@
           "at": "2026-11-02T23:44Z",
           "by": "codex",
           "what": "step 2 of 3 done: All three final-export SHA256 hashes match J1468; no newer exports. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41; metadata and full audiovisual review still owed."
+        },
+        {
+          "at": "2026-11-02T23:46Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1356 hold updated via J1684; retained 2026-11-03 00:30:19Z retry and all existing approval and publishing holds."
         }
       ],
-      "remaining_action": "Record J1356 continued hold and finish verification",
+      "remaining_action": "Verification complete; J1356 remains held for corrected delivery",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T00:30:19+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-02T23:44Z",
+        "at": "2026-11-02T23:46Z",
         "by": "codex",
-        "note": "All three final-export SHA256 hashes match J1468; no newer exports. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 "
+        "note": "J1356 hold updated via J1684; retained 2026-11-03 00:30:19Z retry and all existing approval and publishing holds."
       },
       "taskKeys": [
         "OWB:030"
