@@ -158739,9 +158739,14 @@
           "at": "2026-11-03T14:10Z",
           "by": "relay",
           "what": "condition verification queued: J1841"
+        },
+        {
+          "at": "2026-11-03T14:21Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T15:10:42Z"
         }
       ],
-      "remaining_action": "Elected Chief to view moving candidate and decide exact framing and interval",
+      "remaining_action": "Chief reviews the delivered ISS candidate through ready job J1841; no timed wait or new acquisition is required",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -158763,10 +158768,9 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Acquisition candidate delivered at 406f91068 on codex/J1834-acquisition. Needs elected-Chief actual moving review of ~/. _desk/cache/J1834/feather_candidate_T545.mp4 (use /Users/benjaminoats/_desk/cache/J1834), phone and preroll previews; station recognition/cropped Dragon/soft fill and 2.35x WARN remain. Metric 1.54, picture/polish PASS are not creative approval. J1471/J1356 holds unchanged.",
-        "check_at": "2026-11-03T15:10:42+00:00",
-        "recheck_task": "J1841"
+        "type": "input",
+        "condition": "Parked for Chief approval of delivered ISS candidate 406f91068. Review job J1841 is eligible now; 15:10 is a follow-up, not a start gate. Review native and phone motion, exact framing, station recognition and preroll before approving any input. Acquisition is delivered; J1471 and J1356 remain held until actual approval.",
+        "check_at": "2026-11-03T15:10:42Z"
       }
     },
     {
