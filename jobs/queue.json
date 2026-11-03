@@ -88444,6 +88444,11 @@
           "at": "2026-11-03T03:31Z",
           "by": "relay",
           "what": "condition verification queued: J1711"
+        },
+        {
+          "at": "2026-11-03T03:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T04:31:43Z"
         }
       ],
       "kind": "review",
@@ -88482,12 +88487,11 @@
       "remaining_action": "Obtain explicit approval for publication of the completed local audit review",
       "hold": {
         "type": "input",
-        "condition": "Explicit approval to publish local J1642 review commit 33af1e441 remains absent. J1705 reviewed original brief, approval history, preserved local decision and verification, and subsequent thread comments through 6594007381. Prior automatic approval rejection remains binding; no publication retry without explicit approval. Review remains local at /Users/benjaminoats/_desk/handoff/J1642/. Original gates and approvals unchanged.",
-        "check_at": "2026-11-03T04:31:43+00:00",
-        "last_recheck": "J1705",
-        "checked_at": "2026-11-03T02:39:54+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1711"
+        "condition": "Explicit approval to publish local J1642 review commit 33af1e441 remains absent. J1711 reviewed original brief, approval history, preserved local decision and verification, and all subsequent thread comments through 6594871458. Prior automatic approval rejection remains binding; no publication retry without explicit approval. Review remains local at /Users/benjaminoats/_desk/handoff/J1642/. Original gates and approvals unchanged.",
+        "check_at": "2026-11-03T04:31:43Z",
+        "last_recheck": "J1711",
+        "checked_at": "2026-11-03T03:44:29+00:00",
+        "checked_by": "codex"
       }
     },
     {
