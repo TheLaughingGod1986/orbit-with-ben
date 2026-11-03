@@ -154426,9 +154426,14 @@
           "at": "2026-11-03T11:05Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T11:05Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect original hold and follow-up evidence; record readiness decision; verify queue and report"
         }
       ],
-      "remaining_action": "Verify readiness: Held for J1218 v03 repairs and Chief graphics/composite approval; J1193 ruled FIX; music/SFX unfinished",
+      "remaining_action": "Verify latest HOS 008 repair evidence and approval before updating J1213 hold",
       "kind": "chief",
       "recheck_of": "J1213",
       "due": "2026-11-03T11:50:25+00:00",
@@ -154438,9 +154443,11 @@
         "of": 3,
         "at": "2026-11-03T11:05Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: inspect original hold and follow-up evidence; record readiness decision; verify queue and report"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J1758",
