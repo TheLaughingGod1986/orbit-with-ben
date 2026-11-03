@@ -158653,9 +158653,14 @@
           "at": "2026-11-03T14:03Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T14:04Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Prior rulings read; NASA collection/metadata/usage captured. Survey identifies another station exterior near 550 s; bounded native interval download started. NAS offload found no eligible scratch."
         }
       ],
-      "remaining_action": "Inspect prior rulings and acquire a bounded real ISS opening candidate",
+      "remaining_action": "Acquire and measure the Crew-2 exterior interval found in low-resolution survey",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -158667,10 +158672,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T14:03Z",
-        "by": "codex"
+        "at": "2026-11-03T14:04Z",
+        "by": "codex",
+        "note": "Prior rulings read; NASA collection/metadata/usage captured. Survey identifies another station exterior near 550 s; boun"
       },
       "taskKeys": [
         "OWB:030"
