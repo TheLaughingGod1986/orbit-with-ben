@@ -161217,6 +161217,11 @@
           "at": "2026-11-03T17:24Z",
           "by": "codex",
           "what": "Ben requested immediate claim; cloud capability-checked claim returned no eligible job. Mini execution required. Previous audit target 2026-11-03T17:34:33Z; dispatch requested now, not a promised start time."
+        },
+        {
+          "at": "2026-11-03T18:21Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Ben requests immediate claim: a capable authenticated Mini worker must claim J1870 by ID and audit live Buffer; cloud session lacks Mini access",
@@ -161224,7 +161229,16 @@
       "kind": "studio",
       "audit_key": "buffer-live-audit-2026-11-03",
       "urgent": 3,
-      "due_kind": "user-immediate-claim"
+      "due_kind": "user-immediate-claim",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J1871",
