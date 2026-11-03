@@ -164369,13 +164369,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T22:22Z",
-      "eta": "2026-11-03T22:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T22:19Z",
-      "result": "",
+      "result": "Published only inspected 001b6962f four workflow Markdown briefs (14396 bytes) on codex/J1846-scope as PR433 under J1910-relayed text-only approval. Full diff/ancestry and remote files verified; no excluded extras; local diff/core/4 tests PASS; GitHub run41730441612 SUCCESS; scope-only review PASS. J1846 publication hold cleared and reopened with exact evidence, rejection history retained. Dispatch permits claiming only J1910: J1846 remains open for normal owner completion, then J1847 eligible immediately; J1847->J1848->J1849 unchanged. No media/source/Edit PASS, spend, rendering, uploads or milestone changes. Publication complete; parent lifecycle closure is explicit next action, not another permission check.",
       "history": [
         {
           "at": "2026-11-03T22:19Z",
@@ -164406,6 +164406,11 @@
           "at": "2026-11-03T22:27Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR433 exact 001b6962f verified; CI SUCCESS; scope-only review PASS. J1846 permission hold removed with evidence. Only J1910 claimed as instructed; J1846 closure remains next dispatch, no media approval."
+        },
+        {
+          "at": "2026-11-03T22:27Z",
+          "by": "codex",
+          "what": "done: Published only inspected 001b6962f four workflow Markdown briefs (14396 bytes) on codex/J1846-scope as PR433 under J1910-relayed text-only approval. Full diff/ancestry and remote files verified; no excluded extras; local diff/core/4 tests PASS; GitHub run41730441612 SUCCESS; scope-only review PASS. J1846 publication hold cleared and reopened with exact evidence, rejection history retained. Dispatch permits claiming only J1910: J1846 remains open for normal owner completion, then J1847 eligible immediately; J1847->J1848->J1849 unchanged. No media/source/Edit PASS, spend, rendering, uploads or milestone changes. Publication complete; parent lifecycle closure is explicit next action, not another permission check."
         }
       ],
       "remaining_action": "Publication complete; J1846 is reopened for normal owner completion before J1847 dispatch",
@@ -164423,7 +164428,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/433"
     }
   ],
   "focus": [],
