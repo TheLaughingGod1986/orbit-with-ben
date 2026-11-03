@@ -105,6 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1881 | mini | open (after J1880) | – | – | 008 edit · chief · Chief: review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1882 | any | open | – | – | chief · Chief: verify condition for J1825 |  |
 | J1883 | mini | open | – | – | assembly · Buffer: validate merged repair on authenticated Mini without writes | J1874 |
+| J1884 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
 
 Recently finished:
 
