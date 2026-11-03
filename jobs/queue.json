@@ -160144,9 +160144,14 @@
           "at": "2026-11-03T15:32Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T15:32Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read brief and elected-Chief status; checking current evidence and approval history"
         }
       ],
-      "remaining_action": "Verify readiness: Await approved replacement ISS input via J1847-J1849, then J1471 repairs and full final-watch review",
+      "remaining_action": "Verify replacement input, master repairs and final-watch readiness evidence",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T16:13:46+00:00",
@@ -160156,9 +160161,11 @@
         "of": 3,
         "at": "2026-11-03T15:32Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read brief and elected-Chief status; checking current evidence and approval history"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1855",
