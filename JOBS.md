@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1844 | mini | blocked | gemini | – | for gemini · review · AR2 ISS: Gemini moving-preview review of J1834 candidate | J1834 |
 | J1846 | any | claimed | codex | 2026-11-03T16:55Z | chief · AR2 ISS: scope bounded alternative after J1844 moving-review FIX | J1845 |
 | J1847 | mini | open (after J1846) | – | – | for codex · chart · `gpt-6-astra` · AR2 ISS: bounded faithful NASA IGOAL model opening preview | J1846 |
+| J1848 | mini | open (after J1847) | – | – | for gemini · review · `gemini-argon` · AR2 NASA model: Gemini native moving and phone review | J1846 |
 
 Recently finished:
 
