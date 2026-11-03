@@ -1,5 +1,5 @@
 {
-  "next_id": 1870,
+  "next_id": 1871,
   "jobs": [
     {
       "id": "J0001",
@@ -161040,6 +161040,36 @@
       "recheck_of": "J1753",
       "due": "2026-11-03T18:02:45+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1870",
+      "title": "Buffer: verify missing queues and prepare exact OWB/HOS recovery",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben reports only one queued post per Orbit Facebook/Threads/Instagram in the Buffer widget. Investigate LIVE Buffer and the daily mirror on the authenticated Mini. Cloud workspace has no Buffer credentials or connected browser; do not ask Ben to paste keys. This is a read-only audit and recovery-plan task, not authorization to create/delete/edit/rehost/publish posts.\n\nRecorded evidence at main902d78ad078b311798bbe6db604d9ca77f30ce7b: both profile ledgers' newest recordedAt is31 Oct12:44Z. OWB has only T9fVlG3CCzU (7 Nov11:30Z) as a future receipt; all three Orbit networks have its post IDs. Registered upcoming OWB Js6EQJ8qDi8 (Mars long8 Nov18:00Z) and iyvWYFP_ETA (Mars night Short9 Nov11:30Z) have no receipts, though both were inside the7-day window at today's07:05 run. HOS PFj6172YU4Q (tight-band Short8 Nov11:30Z) is registered and lacks receipts. OWB RLSJm59OSzI (Titan10 Nov11:30Z) became eligible only AFTER today's07:05 check, so it may correctly wait for tomorrow; do not call that a missed run. These are ledger gaps, not verified missing live posts. Snapshot source3 Nov06:40 for both channels.\n\nHOS ledger also has future dueAt for c2q7w0pgcn8 (4 Nov), LCZRHUyTiq0 (6 Nov), OnJ8MFu0Mi0 (7 Nov), whereas today's YouTube snapshot records these IDs public on19,23,26 Oct. Inspect live post statuses/dates and swap history before deciding whether records are stale or future posts would wrongly repeat older cuts. HOS xHnIi9GqOsM (5 Nov) is genuinely scheduled in the snapshot. Verify exact approved swapped IDs and file hashes; preserve dates and exclusions.\n\nCloud HEAD/range-GET on ledger R2 media for T9fVlG3CCzU and four future HOS receipts returned403, body 'error code:1010', serverenvoy. This can be caller/IP specific, not proof Buffer fetch fails. Recheck from Mini with appropriate Range requests and verify Buffer's actual asset status. No full-media copy or raw binary/secret output in reports.\n\n1. Read applicable OWB/HOS AGENTS/HANDOVER and Buffer profile policy. Verify authenticated channel/org IDs and live read-only Buffer scheduled/sent/error/deleted statuses per receipt. Count actual queued posts per network with due times/media identity; distinguish widget scope from other orgs.\n2. Inspect launchctl print gui/$(id -u)/dev.orbit.buffer-check, ~/Library/Logs/orbit-buffer-check.log, last successful OWB and HOS runs, last-exit/lock contention, shared checkout branch, unpushed social records and safe pull/install status. Diagnose why receipts stop31 Oct; do not assume the task ran or auth is valid. Never print credentials. Do not bypass desk locks.\n3. Under the existing youtube-buffer lock run buffer-mirror.ts check --dry-run for OWB and --channel hos separately, preserving redacted results. Dry-run has no posting or hosting authorization; do not run the write-mode check under this task. Compare live authenticated YouTube schedules, registrations, original approved media/hash/readability, ledger post IDs, network statuses and7-day/10-post capacity. Distinguish partial network failure, unpublished ledger changes, expired URL, wrong future old-video post, credential failure and normal deferred work. Do not treat a receipt as proof of successful delivery.\n4. Produce a concrete recovery plan with exact video/network/post IDs, approved source/hash and unchanged YouTube go-public time. Prepare idempotent missing-post creates only for approved current/future uploads; any replay/late post, deletion, reschedule or media upload needs its original scope and Chief review. OWB TikTok remains paused; preserve HOS's separately authorized profile. No paid generation, account upgrade, YouTube state/date change or secret egress.\n5. Queue one linked elected-Chief decision/recovery job with the exact plan and required scope, or a specific capability/access hold, then report location and actual live findings. Recommend a focused code/scheduler PR only if logs/tests establish a fault (missing-key silent plan-only success and per-network partial-ledger retry are code paths to inspect, not established root causes). Do not stop with generic 'Buffer checked'.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T17:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T17:14Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read live Buffer queues and mirror logs; identify missing posts and hand Chief an exact recovery plan",
+      "due": "2026-11-03T17:34:33Z",
+      "kind": "studio",
+      "audit_key": "buffer-live-audit-2026-11-03"
     }
   ],
   "focus": [],
