@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1907 | mini | open (after J1782) | – | – | 041 script · chief · 041 Io: restore topic and editorial decision before facts and script lock | J1782 |
 | J1909 | mini | open (after J1783) | – | – | 042 script · chief · 042 Red Giant: restore topic and editorial decision before facts and script lock | J1783 |
 | J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
-| J1914 | mini | open | – | – | chief · Chief: turn available credits and stale holds into scoped production work | Ben resource-unblocking request 2026-11-03 |
+| J1914 | mini | claimed | codex | 2026-11-04T00:23Z | chief · Chief: turn available credits and stale holds into scoped production work | Ben resource-unblocking request 2026-11-03 |
 | J1915 | mini | open | – | – | chief · Chief: apply Ben direct approval and resume exact six-post Buffer recovery J1878 | J1878 |
 | J1916 | mini | open | – | – | chief · Chief: persist verified Codex quota reset and finish interrupted J1849 decision | J1849 |
 
