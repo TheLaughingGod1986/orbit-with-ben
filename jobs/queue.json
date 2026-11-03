@@ -150257,9 +150257,14 @@
           "at": "2026-11-03T02:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T02:42Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1707; starting verification of J1130 condition for HOS 002 (AL_-qlWko_g) thumbnail test T020."
         }
       ],
-      "remaining_action": "Verify readiness: Verify T020 completion and next London calendar day before arming approved title-only test",
+      "remaining_action": "Read J1130 history and J1697 evidence; refresh HOS Studio AL_-qlWko_g test status and update J1130 wait/reopen",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-03T03:31:27+00:00",
@@ -150267,11 +150272,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T02:41Z",
+        "at": "2026-11-03T02:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1707; starting verification of J1130 condition for HOS 002 (AL_-qlWko_g) thumbnail test T020."
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     },
     {
       "id": "J1708",
