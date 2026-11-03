@@ -161044,9 +161044,14 @@
           "at": "2026-11-03T23:41Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J1849: 4-step plan to verify J1846/J1847/J1848 evidence + native video playback, verify hashes/interval/gates, record Chief exact-input acceptance, and satisfy J1471 ISS-input hold"
+        },
+        {
+          "at": "2026-11-03T23:43Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 complete: Rechecked chief_relay.py status (Gemini elected Chief), recorded moving_video_input capability, read J1846 REPORT/RENDER_BRIEF (001b6962f) and J1848 specialist moving review (PR #435 / adcf308939), and natively viewed all 5 moving MP4s and 6 key review/seam stills via read_file."
         }
       ],
-      "remaining_action": "Verify J1846/J1847/J1848 evidence, native video playback, hashes/gates, and record Chief source decision + J1471 ISS-input unblocking",
+      "remaining_action": "Independently verify SHA256 hashes, intervals, recipe, rights/attribution, and unmodified gate outputs before recording Chief decision",
       "due": "2026-11-03T22:32:47+00:00",
       "kind": "chief",
       "urgent": 4,
@@ -161056,11 +161061,11 @@
         "Ben-2026-11-03-resource-unblock"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-03T23:41Z",
+        "at": "2026-11-03T23:43Z",
         "by": "gemini",
-        "note": "Starting J1849: 4-step plan to verify J1846/J1847/J1848 evidence + native video playback, verify hashes/interval/gates, "
+        "note": "Step 1/4 complete: Rechecked chief_relay.py status (Gemini elected Chief), recorded moving_video_input capability, read "
       },
       "taskKeys": [
         "OWB:030"
