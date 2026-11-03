@@ -160238,19 +160238,24 @@
           "at": "2026-11-03T15:39Z",
           "by": "codex",
           "what": "step 2 of 3 done: Retained J1471 input hold with J1855 evidence and existing 16:13:46Z retry; replacement dependencies unchanged"
+        },
+        {
+          "at": "2026-11-03T15:39Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback PASS after accounting for UTC Z normalization: hold, retry instant, J1356 and dependencies preserved"
         }
       ],
-      "remaining_action": "Verify hold readback and report J1855 result",
+      "remaining_action": "Verification complete; J1471 retains its ISS-input hold",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T16:13:46+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-03T15:39Z",
         "by": "codex",
-        "note": "Retained J1471 input hold with J1855 evidence and existing 16:13:46Z retry; replacement dependencies unchanged"
+        "note": "Readback PASS after accounting for UTC Z normalization: hold, retry instant, J1356 and dependencies preserved"
       },
       "taskKeys": [
         "OWB:030"
