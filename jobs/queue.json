@@ -156569,19 +156569,24 @@
           "at": "2026-11-03T11:17Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original scope, J1355 acceptance, J1468 repair and J1471 input request read; PR380 OPEN unchanged at d0b04b5e0 without comments or reviews."
+        },
+        {
+          "at": "2026-11-03T11:17Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches AR1 v02, AR2 v07, AR3 v06; final export folder contains only those three. Saved gates FAIL: AR1 6.00s first cut; AR2 0.25 and AR3 1.41 below 1.50."
         }
       ],
-      "remaining_action": "Verify current AR exports and retained gate failures",
+      "remaining_action": "Record unmet readiness condition and close verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T12:01:12+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T11:17Z",
         "by": "codex",
-        "note": "Original scope, J1355 acceptance, J1468 repair and J1471 input request read; PR380 OPEN unchanged at d0b04b5e0 without c"
+        "note": "Fresh SHA256 matches AR1 v02, AR2 v07, AR3 v06; final export folder contains only those three. Saved gates FAIL: AR1 6.0"
       },
       "taskKeys": [
         "OWB:030"
