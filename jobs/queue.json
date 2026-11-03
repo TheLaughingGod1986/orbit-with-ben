@@ -158748,9 +158748,14 @@
           "at": "2026-11-03T14:21Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T15:10:42Z"
+        },
+        {
+          "at": "2026-11-03T14:26Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T15:10:42Z"
         }
       ],
-      "remaining_action": "Chief reviews the delivered ISS candidate through ready job J1841; no timed wait or new acquisition is required",
+      "remaining_action": "Elected Chief with playback capability reviews delivered ISS candidate; no new acquisition required",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -158773,8 +158778,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Parked for Chief approval of delivered ISS candidate 406f91068. Review job J1841 is eligible now; 15:10 is a follow-up, not a start gate. Review native and phone motion, exact framing, station recognition and preroll before approving any input. Acquisition is delivered; J1471 and J1356 remain held until actual approval.",
-        "check_at": "2026-11-03T15:10:42Z"
+        "condition": "J1841: five delivery hashes and sizes match 406f91068; acquisition PR410 OPEN without reviews. Actual moving review remains absent: this session can view stills but has no video playback input. A playback-capable elected Chief must review portrait, phone and preroll previews and approve exact hash/interval/recipe, station recognition, cropped Dragon, soft fill and 2.35x WARN. J1471/J1356 and all existing holds persist.",
+        "check_at": "2026-11-03T15:10:42Z",
+        "last_recheck": "J1841",
+        "checked_at": "2026-11-03T14:26:35+00:00",
+        "checked_by": "codex"
       }
     },
     {
