@@ -81579,6 +81579,11 @@
           "at": "2026-11-03T09:57Z",
           "by": "relay",
           "what": "condition verification queued: J1747"
+        },
+        {
+          "at": "2026-11-03T10:06Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T10:57:27Z"
         }
       ],
       "kind": "video",
@@ -81609,12 +81614,11 @@
       "remaining_action": "Clear S2 instrumental bed and local listening, then complete repair gates and replacement approvals",
       "hold": {
         "type": "input",
-        "condition": "J1741 verified J1743/J1100 still blocked at 2/3. Evidence 3e26b379b excludes S2 bed 13adc031; three audition hashes match and newest local evidence remains 31 Oct with listening NOT PERFORMED. PR333 OPEN at 0a7fcb6ad without reviews/comments. Require cleared instrumental bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
-        "check_at": "2026-11-03T10:57:27+00:00",
-        "last_recheck": "J1741",
-        "checked_at": "2026-11-03T08:39:55+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1747"
+        "condition": "J1747 verified J1749/J1100 still blocked at 2/3. Three audition hashes match 3e26b379b; newest local evidence remains 31 Oct with listening NOT PERFORMED. PR333 OPEN at 0a7fcb6ad without reviews/comments. Require cleared instrumental S2 bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Preserve excluded bed 13adc031, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
+        "check_at": "2026-11-03T10:57:27Z",
+        "last_recheck": "J1747",
+        "checked_at": "2026-11-03T10:06:09+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
