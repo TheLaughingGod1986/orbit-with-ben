@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1897 | mini | open (after J1775) | – | – | 034 script · chief · 034 Pluto: restore topic and editorial decision before facts and script lock | J1775 |
 | J1898 | mini | open (after J1776) | – | – | 035 script · chief · 035 Triton: restore topic and editorial decision before facts and script lock | J1776 |
 | J1899 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1900 | mini | open (after J1777) | – | – | 036 script · chief · 036 Mercury: restore topic and editorial decision before facts and script lock | J1777 |
 
 Recently finished:
 
