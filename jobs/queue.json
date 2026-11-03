@@ -156553,13 +156553,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T21:50Z",
-      "eta": "2026-11-03T23:50Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -156590,6 +156590,11 @@
           "at": "2026-11-03T21:53Z",
           "by": "codex",
           "what": "step 3 of 3 done: PASS: published successor and board agree; no stage claim, clean worktree, original drafts/sources unchanged. No spend or publishing changes."
+        },
+        {
+          "at": "2026-11-03T21:53Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Handoff repair verified; J1901 owns the remaining topic and editorial decision",
@@ -156609,7 +156614,8 @@
       },
       "taskKeys": [
         "OWB:037"
-      ]
+      ],
+      "done_ref": "14303908e2"
     },
     {
       "id": "J1779",
