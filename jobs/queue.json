@@ -162698,6 +162698,11 @@
           "at": "2026-11-03T20:06Z",
           "by": "codex",
           "what": "PR425 review head advanced normally to 64e8332e17e27dbd1649480d2f1d449e21b2d735; expected runner 672fbdd6a32d7c9c. Ownership/progress unchanged; review current full diff and checks before merge/validation."
+        },
+        {
+          "at": "2026-11-03T20:27Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Verify installed/loaded version and actual sequential claims; report capability holds honestly",
@@ -162707,7 +162712,16 @@
       "due_kind": "user-immediate-claim",
       "due": "2026-11-03T19:59:35+00:00",
       "review_head": "64e8332e17e27dbd1649480d2f1d449e21b2d735",
-      "expected_runner_version": "672fbdd6a32d7c9c"
+      "expected_runner_version": "672fbdd6a32d7c9c",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J1888",
