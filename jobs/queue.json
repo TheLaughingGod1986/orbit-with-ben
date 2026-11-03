@@ -157941,19 +157941,30 @@
           "at": "2026-11-03T13:08Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T13:09Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed J0979 rejection, J1000 audit, J1042 shelving and J1730 verification; original gates and holds remain."
         }
       ],
-      "remaining_action": "Verify J0979 source film voice and picture locks",
+      "remaining_action": "Check current 031+ voice approval and picture records",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-03T14:06:06+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T13:08Z",
-        "by": "codex"
-      }
+        "at": "2026-11-03T13:09Z",
+        "by": "codex",
+        "note": "Reviewed J0979 rejection, J1000 audit, J1042 shelving and J1730 verification; original gates and holds remain."
+      },
+      "taskKeys": [
+        "OWB:029",
+        "OWB:031",
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
