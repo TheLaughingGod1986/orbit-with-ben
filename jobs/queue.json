@@ -119020,6 +119020,11 @@
           "at": "2026-10-31T02:03Z",
           "by": "cursor",
           "what": "done: UAT master sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b (393139693 bytes, fully on disk). Phone sha256 2e4f94eb2f220fd2f4e17d1c404cc08591fb03d7341e9aac6c82cfebbbeb45c7 (115314504 bytes). check_all PASS. PR 391. Desk 6537533555. Not uploaded."
+        },
+        {
+          "at": "2026-11-03T15:46Z",
+          "by": "codex",
+          "what": "waits on Ben: Watch Franklin master v03, approved by Chief h35 (by 2026-11-15 20:00 London)"
         }
       ],
       "remaining_action": "Chief merges HOS PR #391",
@@ -119035,7 +119040,15 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/391"
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/391",
+      "awaits_ben": {
+        "what": "Watch Franklin master v03, approved by Chief h35",
+        "file": "HOS UAT/008_Lightning-Franklin/J1755_verified/hos_008_master_v03.mp4",
+        "version": "v03",
+        "due": "2026-11-15T20:00Z",
+        "ifNot": "Elected Chief checks the watch outcome and remaining gates; no upload authorised by J1755",
+        "card": "HOS:008"
+      }
     },
     {
       "id": "J1298",
