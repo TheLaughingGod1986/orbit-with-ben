@@ -402,3 +402,7 @@ assert.equal(t.stageView({id:'edit',state:'blocked',jobs:[reviewParent]}).text,'
 
 reviewBoard.workflow.states.J1835={state:'running'};
 assert.equal(t.reviewQueueInfo(reviewBoard,reviewParent,NOW).miniBusy.id,'J1835');
+
+assert(t.activityVideoContext(contextBoard,{id:'specialist',kind:'review',ref:'parent'}).label.includes('no video linked'));
+contextBoard.owb.jobs.push({id:'J1834',repo:'hos',film:'008'});
+assert(t.activityVideoContext(contextBoard,{id:'J1844',kind:'review',ref:'J1834'}).label.includes('Franklin'));

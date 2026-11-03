@@ -623,8 +623,9 @@
       for(const v of videos) if(v.key&&(v.jobs||[]).some(x=>x.id===job.id)) keys.add(v.key);
     };
     add(j);
-    if(j.recheck_of) {
-      const parent=(((b.owb||{}).jobs)||[]).find(x=>x.id===j.recheck_of);
+    const parentId=j.recheck_of||(j.kind==='review'&&/^J\d{4}$/.test(j.ref||'')?j.ref:'');
+    if(parentId) {
+      const parent=(((b.owb||{}).jobs)||[]).find(x=>x.id===parentId);
       if(parent) add(parent);
     }
     const rows=[...keys].map(key=>({key,video:videos.find(v=>v.key===key)}));
