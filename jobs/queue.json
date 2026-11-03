@@ -155616,9 +155616,14 @@
           "at": "2026-11-03T13:48Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T13:48Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Chief resolves 030 edit handoff and records the next owner/action",
+      "remaining_action": "Trace the 030 edit block to exact review and delivery evidence",
       "kind": "chief",
       "handoff": {
         "film": "030",
@@ -155630,10 +155635,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-03T13:48Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1772",
