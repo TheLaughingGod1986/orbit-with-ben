@@ -1,10 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-02 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-03 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-11-02 11:30 | [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) `hZH0C7fpCk4` | yes | PASS |
 | 2026-11-03 11:30 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) `ZpEA8stoSPA` | yes | NOT CHECKED |
 | 2026-11-07 11:30 | [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) `T9fVlG3CCzU` | yes | PASS |
 | 2026-11-09 11:30 | [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) `iyvWYFP_ETA` | yes | KNOWN |
@@ -13,6 +12,7 @@ Written by `gate_upcoming.py` at 2026-11-02 06:40 London for Shorts scheduled in
 | 2026-11-12 11:30 | [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/N42gKBbD7tE) `N42gKBbD7tE` | yes | KNOWN |
 | 2026-11-13 11:30 | [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/bSjWiCbB7pY) `bSjWiCbB7pY` | yes | KNOWN |
 | 2026-11-14 11:30 | [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/gmzaCfJF1gA) `gmzaCfJF1gA` | yes | PASS |
+| 2026-11-16 11:30 | [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/HZGTovJu_TQ) `HZGTovJu_TQ` | yes | **FAIL** |
 
 ## Details
 
@@ -49,4 +49,10 @@ Export not found: `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts
 - pushed still at frame 0 (mean 0–1.5 s frame diff 0.64 < 1.50) — use moving footage
 - first cut at 5.90s > 3.0s (scene-change detect)
 - spoken text contains meta-promise ("stay, and i'll show you")
+
+### HZGTovJu_TQ: FAIL
+
+```
+/Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/mon16_cant_see_nearest_star_v01.mp4: Operation not permitted
+```
 
