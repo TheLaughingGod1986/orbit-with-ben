@@ -1,0 +1,90 @@
+{
+  "job": "J1883",
+  "ref": "J1874",
+  "linked_jobs": [
+    "J1870",
+    "J1874",
+    "J1878"
+  ],
+  "validated_at_utc": "2026-11-03T19:21:00Z",
+  "agent": "gemini",
+  "pr422_merge_commit": "a65e83e53466bf33823e85cdba09d474f1b7a2b5",
+  "installed_repo_path": "/Users/benjaminoats/YouTube/orbit-with-ben",
+  "installed_branch": "main",
+  "installed_head_at_check": "edb0a09fa1f9fb576c34119ebf9b7cd51e364778",
+  "pr422_is_ancestor": true,
+  "tracked_diff_clean": true,
+  "launch_agent": {
+    "label": "dev.orbit.buffer-check",
+    "plist": "/Users/benjaminoats/Library/LaunchAgents/dev.orbit.buffer-check.plist",
+    "program_arguments": [
+      "/bin/zsh",
+      "-lc",
+      "/Users/benjaminoats/YouTube/orbit-with-ben/07_Content-Ops/launchd/buffer-check.sh"
+    ],
+    "script_sha256": "961a5615a07b845712612fc2bb7f1ad1ad66f8411bb901184e0de10f1dd90808",
+    "script_git_blob": "ede04d12845d186a8156aae5c3cae90d8a8762d1",
+    "direct_cli_path_present": true,
+    "outer_nested_lock_removed": true
+  },
+  "unit_tests": {
+    "desk_lock_py": {
+      "tests": 6,
+      "passed": 6,
+      "exit_code": 0
+    },
+    "buffer_recovery_vitest": {
+      "tests": 10,
+      "passed": 10,
+      "exit_code": 0
+    }
+  },
+  "dry_run_checks": {
+    "owb": {
+      "command": "npx tsx --env-file=.env scripts/buffer-mirror.ts check --dry-run",
+      "exit_code": 1,
+      "sent": false,
+      "checked": 24,
+      "changes_count": 0,
+      "auto_mirrored": [
+        {
+          "videoId": "Js6EQJ8qDi8",
+          "source": "00_Brand/Channel-Setup/social/UPLOADS.json",
+          "sent": false
+        }
+      ],
+      "deferred_count": 21,
+      "unmirrored": [
+        {
+          "videoId": "iyvWYFP_ETA",
+          "reason": "Approved original unavailable: the local master was overwritten by J0432's seam fix; the YouTube copy airs as is (J1181, J1320)"
+        },
+        {
+          "videoId": "RLSJm59OSzI",
+          "reason": "Social source SHA256 mismatch; preserve the approved original and hold this post"
+        }
+      ]
+    },
+    "hos": {
+      "command": "npx tsx --env-file=.env scripts/buffer-mirror.ts check --channel hos --dry-run",
+      "exit_code": 0,
+      "sent": false,
+      "checked": 11,
+      "changes_count": 0,
+      "auto_mirrored": [
+        {
+          "videoId": "PFj6172YU4Q",
+          "source": "00_Brand/Channel-Setup/social/hos/UPLOADS.json",
+          "sent": false
+        }
+      ],
+      "deferred_count": 4,
+      "unmirrored": []
+    },
+    "genuine_other_lock_refusal": {
+      "exit_code": 75,
+      "verified_isolated": true
+    }
+  },
+  "writes_executed": false
+}
