@@ -161341,10 +161341,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-03T18:54Z",
-      "eta": "2026-11-03T20:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T16:56Z",
       "result": "",
@@ -161383,6 +161383,11 @@
           "at": "2026-11-03T19:07Z",
           "by": "codex",
           "what": "step 2 of 3 done: J1880 and dependent J1881 queued; API acknowledgement read back with unchanged notes. PR402 bf06cafe open: local checks and core/board/desk CI pass, no-media checkout pending. No merge or media approval."
+        },
+        {
+          "at": "2026-11-03T19:07Z",
+          "by": "codex",
+          "what": "released: 2/3 checkpoint: HOS PR402 bf06cafebab2defa72e7e073730385b9d336b319 contains original six-note JSON and correction records. J1880 assembly preparation + J1881 dependent Chief scope review are open; no duplicate jobs. Existing checks API acknowledgement verified (tracked only, all notes unresolved). Local ALL CHECKS PASS; core/status-board/desk CI pass; no-media checkout still pending. Next elected Chief verifies review and exact head, merges PR402 only after green checks, then closes J1868. J1755/PR401 separate publication hold unchanged. No media/spend/publishing. HOS desk report posted."
         }
       ],
       "remaining_action": "Verify final PR402 CI and merge triage records, then close J1868; do not duplicate handoffs",
