@@ -154882,10 +154882,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T11:50Z",
+      "eta": "2026-11-03T13:50Z",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
       "result": "",
@@ -154894,6 +154894,11 @@
           "at": "2026-11-03T10:50Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T11:50Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 020 edit handoff and records the next owner/action",
@@ -154903,6 +154908,14 @@
         "stage": "edit",
         "kind": "orphan-blocked",
         "signature": "afb0f37941d2843dff5e"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T11:50Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
