@@ -164613,19 +164613,24 @@
           "at": "2026-11-03T22:46Z",
           "by": "codex",
           "what": "step 2 of 3 done: No approval found through thread 6617337646; J1910 excludes the new payload. Updated J1847 input hold with --recheck J1911, preserving original 23:43:37Z check time and all media gates."
+        },
+        {
+          "at": "2026-11-03T22:46Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback assertions pass: J1847 blocked at 3/4, original retry retained, J1848/J1849 dependencies intact. Five delivered hashes match. No publication retry, render, source acceptance or channel change."
         }
       ],
-      "remaining_action": "Verify retained parent hold and close this condition check",
+      "remaining_action": "Verification complete; J1847 publication approval remains outstanding",
       "kind": "chief",
       "recheck_of": "J1847",
       "due": "2026-11-03T14:30:08+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-03T22:46Z",
         "by": "codex",
-        "note": "No approval found through thread 6617337646; J1910 excludes the new payload. Updated J1847 input hold with --recheck J19"
+        "note": "Readback assertions pass: J1847 blocked at 3/4, original retry retained, J1848/J1849 dependencies intact. Five delivered"
       },
       "taskKeys": [
         "OWB:030"
