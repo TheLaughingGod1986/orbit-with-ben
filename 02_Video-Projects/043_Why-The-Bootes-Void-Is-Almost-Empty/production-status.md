@@ -4,18 +4,24 @@
 |-------|-------|
 | Slug | `043_Why-The-Bootes-Void-Is-Almost-Empty` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-18_J0514.md` (scored 19/30, #1 of 5) |
-| Topic lock | **Pending Chief decision** (`J0514` parked for Chief: lock 043 Boötes Void or pick #2 Ganymede Bigger Than Mercury / #3 Terraform Mars / #4 Enceladus Geysers / #5 Andromeda Collision; confirm Short-first waiver) |
-| Script draft | `01_Script/bootes_void_script_master_v01.md` (v01 drafted 18 Oct 2026 in J0522, revised from v00 in J0514; 1,200 spoken words / 1,284 reviewer words, ~8.6 min; notes in `01_Script/SCRIPT_NOTES_v01.md`) |
-| Script review | **PASS — 95.3 / 100** (1,200 spoken words / 1,284 reviewer words, ~8.6 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0522`) |
-| Sources | `01_Script/SOURCES.md` — 6 rows updated to v01 and pre-checked with verbatim quotes (`NASA Large-Scale Structures`, `NASA Dark Matter`, `NASA Dark Energy`, `NASA GSFC Blueshift Next Stop: Voids`, `NASA Hubble MCG+01-02-015 & Pisces A/B`, `NASA Roman Space Telescope Cosmic Voids`, `NASA Ganymede Facts`, `LOC Name Authority Records n83826725 / n88039663 / n84073001 / n81114174 / n85800131`) |
-| Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
-| Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
+| Topic lock | **Pending J1913 Chief topic/editorial decision; no approval.** Original request: (`J0514` parked for Chief: lock 043 Boötes Void or pick #2 Ganymede Bigger Than Mercury / #3 Terraform Mars / #4 Enceladus Geysers / #5 Andromeda Collision; confirm Short-first waiver) |
+| Script draft | Current: `01_Script/bootes_void_script_master_v01.md` (`J0522` / `40e015cf7e`, 18 Oct 2026; recorded 1,200 spoken words / 1,284 reviewer words, ~8.6 min; draft only; notes in `01_Script/SCRIPT_NOTES_v01.md`). `v00` retained. |
+| Script review | **Chief review pending J1913 (FIX / not locked in J1784).** Recorded v01 automated score 95.3 / 100 is not editorial, scientific or script-lock approval. See `jobs/reviews/J1784/CHIEF_HANDOFF_2026-11-03.md` for required fixes. |
+| Sources | `01_Script/SOURCES.md` — 6 rows drafted in v01 (`NASA Large-Scale Structures`, `NASA Dark Matter`, `NASA Dark Energy`, `NASA GSFC Blueshift Next Stop: Voids`, `NASA Hubble MCG+01-02-015 & Pisces A/B`, `NASA Roman Space Telescope Cosmic Voids`, `NASA Ganymede Facts`, `LOC Name Authority Records n83826725 / n88039663 / n84073001 / n81114174 / n85800131`); self-marked `VERIFIED` during script drafting only — requires formal `agy` Gemini `facts` pass and direct Chief `MUST QUOTE` verification |
+| Gemini facts pass | Pending topic lock and J1913 editorial fixes (no formal `facts` or `CLAUDE_QUOTE_CHECK` artifact present) |
+| Gate | Production blocked: topic/neighbour and Short-first decision, unsigned pre-build audit, editorial fixes, formal Gemini `facts`, direct quote check and explicit script lock remain. Outputs below are historical v01 evidence only. |
 | VO | Pending (wait for topic lock + Gemini `facts` + `CLAUDE_QUOTE_CHECK` + Chief script sign-off) |
 | CG | Pending (NASA Hubble Ultra Deep Field, MCG+01-02-015, Pisces A & B, Coma Cluster, Chandra/Hubble Bullet Cluster 1E 0657-56, WMAP CMB Cold Spot, Roman Space Telescope + code graphics + Omni Orbit) |
-| Runtime target | 7–9 min (1,200 spoken words / 1,284 reviewer words, ~8.6 min est.) |
+| Runtime target | 7–9 min (1,200 spoken words / 1,284 reviewer words, ~8.6 min est., not timed VO) |
 | Shorts | 3 episode Shorts on lock |
 
-## Marker counts (`bootes_void_script_master_v01.md`)
+## Handoff repair — 3 November 2026 (J1784)
+
+`J0514` and `J0522` were cancelled as duplicate refill copies citing `J0789`/`J0802`, which reviewed `061` only. `J0804` deferred `035`–`061` locks. `J1913` now owns the missing topic/editorial decision; neither cancellation nor the automated score approves this film. Although `01_Script/SOURCES.md` rows 1–6 were marked `MUST QUOTE — VERIFIED` by the draft author during `J0522`, no formal Gemini `facts` pass or direct quote-check artifact is present. No VO, picture spend or publishing is authorised by this repair.
+
+Evidence and specific next actions: `jobs/reviews/J1784/CHIEF_HANDOFF_2026-11-03.md`.
+
+## Historical v01 marker counts (`bootes_void_script_master_v01.md`)
 
 - `DATA:` **7** (all ≥ 3 required; includes 3 before `[SUBSCRIBE BEAT]`, 1 build-up timeline, and 7 `SCALE:` comparisons + 7 `NUMBER OBJECT:` labels)
 - `SCALE:` **7** (`grep -c "SCALE:"` = 7 = `DATA:` count)
