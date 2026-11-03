@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1817 | mini | open (after J1761) | – | – | 013 edit · chief · OWB 013: establish long edit provenance after cancelled Short claim |  |
 | J1818 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1819 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1820 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1820 | any | claimed | codex | 2026-11-03T14:07Z | chief · Chief: verify condition for J1100 |  |
 | J1821 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1822 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
