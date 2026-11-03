@@ -4,7 +4,7 @@
   "air": "",
   "stages": {
     "sources": {
-      "state": "blocked"
+      "state": "doing"
     },
     "vo": {
       "state": "blocked",
@@ -25,6 +25,14 @@
       "follow_up": "Resume J1753: listen to v02b and record what was heard, then make VO-only PASS/FIX decision"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "sources",
+      "by": "codex",
+      "at": "2026-11-03T21:26Z",
+      "eta": "2026-11-03T21:41Z",
+      "note": "J1773: reconcile original sources approval and stale block"
+    }
+  ],
   "next": "032 VO: technical checks PASS; J1753 awaits actual listening by a Mini audio-capable elected Chief. Picture not started."
 }
