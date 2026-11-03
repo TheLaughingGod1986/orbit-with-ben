@@ -162420,9 +162420,14 @@
           "at": "2026-11-03T20:00Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T20:00Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1884; inspecting J0979, J1827, J1752, J1753 and 031-061 VO/picture status"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for approved locked 031+ voice and picture, then verify an unused Keeper-compliant opening",
+      "remaining_action": "Verify 031+ locked VO listening approval (J1752/J1753) and picture lock status for J0979",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-03T20:17:21+00:00",
@@ -162432,9 +162437,13 @@
         "of": 3,
         "at": "2026-11-03T20:00Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1884; inspecting J0979, J1827, J1752, J1753 and 031-061 VO/picture status"
+      },
+      "taskKeys": [
+        "OWB:029",
+        "OWB:031",
+        "OWB:032"
+      ]
     },
     {
       "id": "J1885",
