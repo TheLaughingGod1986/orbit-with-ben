@@ -164386,9 +164386,14 @@
           "at": "2026-11-03T22:22Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T22:22Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Inspect exact local J1846 payload, publish only approved workflow text, then release its dependent preview chain",
+      "remaining_action": "Inspect the exact ISS workflow payload and publication authorization",
       "kind": "chief",
       "approval_scope_key": "J1846:user-text-only-publication",
       "urgent": 1,
@@ -164398,10 +164403,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-03T22:22Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
