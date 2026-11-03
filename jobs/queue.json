@@ -162957,13 +162957,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T20:44Z",
-      "eta": "2026-11-03T22:44Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T20:43Z",
-      "result": "",
+      "result": "Verified J1100 condition: no new local listening or S2 instrumental-bed clearance. Four hashes match 3e26b379b; local evidence remains 31 Oct. Session has no demonstrated audio input, so parent now has typed capability hold requiring audio_input, recheck J1890, existing check time 2026-11-03T21:43:01Z retained. Disk 31.486 GiB meets h43 restart floor. Original 2/3, OWB:027/028, accepted sources/S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback preserved. No render, spend, source-audio egress or publishing.",
       "history": [
         {
           "at": "2026-11-03T20:43Z",
@@ -162994,6 +162994,11 @@
           "at": "2026-11-03T20:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded capability hold requiring audio_input on parent with recheck J1890; retained 21:43:01Z check time and parent 2/3. Live disk 31.486 GiB; hashes unchanged; no media approval."
+        },
+        {
+          "at": "2026-11-03T20:46Z",
+          "by": "codex",
+          "what": "done: Verified J1100 condition: no new local listening or S2 instrumental-bed clearance. Four hashes match 3e26b379b; local evidence remains 31 Oct. Session has no demonstrated audio input, so parent now has typed capability hold requiring audio_input, recheck J1890, existing check time 2026-11-03T21:43:01Z retained. Disk 31.486 GiB meets h43 restart floor. Original 2/3, OWB:027/028, accepted sources/S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback preserved. No render, spend, source-audio egress or publishing."
         }
       ],
       "remaining_action": "Verification complete; J1100 requires local listening and bed clearance",
