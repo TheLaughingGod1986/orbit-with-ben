@@ -149507,13 +149507,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T01:46Z",
-      "eta": "2026-11-03T03:46Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T01:31Z",
-      "result": "",
+      "result": "Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no other final exports present. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. J1356 remains held; next check 2026-11-03T02:31:21Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T01:31Z",
@@ -149539,6 +149539,11 @@
           "at": "2026-11-03T01:47Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 final exports; no other final exports present. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. Metadata and full audiovisual review remain owed."
+        },
+        {
+          "at": "2026-11-03T01:48Z",
+          "by": "codex",
+          "what": "done: Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no other final exports present. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. J1356 remains held; next check 2026-11-03T02:31:21Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes."
         }
       ],
       "remaining_action": "Record unchanged J1356 hold and close verification",
@@ -149555,7 +149560,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     },
     {
       "id": "J1699",
