@@ -158792,21 +158792,28 @@
           "at": "2026-11-03T14:16Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking original brief, latest repair evidence and approval history."
+        },
+        {
+          "at": "2026-11-03T14:17Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original brief and approval history; J1838 is newer than dispatch and retains J1100 blocked at 2/3. Historical PASS and completed swaps preserved."
         }
       ],
-      "remaining_action": "Verify J0936 repair evidence and approval gates",
+      "remaining_action": "Verify latest local evidence and replacement approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T14:16Z",
+        "at": "2026-11-03T14:17Z",
         "by": "codex",
-        "note": "Checking original brief, latest repair evidence and approval history."
+        "note": "Read original brief and approval history; J1838 is newer than dispatch and retains J1100 blocked at 2/3. Historical PASS"
       },
       "taskKeys": [
+        "OWB:026",
+        "OWB:027",
         "OWB:028"
       ]
     },
