@@ -157603,13 +157603,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T12:37Z",
-      "eta": "2026-11-03T14:37Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T12:35Z",
-      "result": "",
+      "result": "Verified J1823 condition NOT satisfied. Visual FIX for B title pairing; C preferred but no final packaging approval. All artifact/original hashes match. Evidence d604bef0f on codex/J1824-verification; J1823 input hold recheck 2026-11-03T18:40Z. Original A authorization preserved; no Studio action or spend.",
       "history": [
         {
           "at": "2026-11-03T12:35Z",
@@ -157640,6 +157640,11 @@
           "at": "2026-11-03T12:39Z",
           "by": "codex",
           "what": "step 3 of 3 done: Committed d604bef0f; J1823 structured input hold names actual unmet conditions, recheck 18:40Z. No media approval or Studio authority granted."
+        },
+        {
+          "at": "2026-11-03T12:39Z",
+          "by": "codex",
+          "what": "done: Verified J1823 condition NOT satisfied. Visual FIX for B title pairing; C preferred but no final packaging approval. All artifact/original hashes match. Evidence d604bef0f on codex/J1824-verification; J1823 input hold recheck 2026-11-03T18:40Z. Original A authorization preserved; no Studio action or spend."
         }
       ],
       "remaining_action": "Verification complete; J1823 remains held on the recorded correction and packaging review",
