@@ -158626,13 +158626,13 @@
       "stage": "edit",
       "after": "J1833",
       "eta_min": 25,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-03T14:03Z",
-      "eta": "2026-11-03T14:28Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T13:58Z",
-      "result": "",
+      "result": "Acquisition candidate delivered at 406f91068 on codex/J1834-acquisition. Needs elected-Chief actual moving review of ~/. _desk/cache/J1834/feather_candidate_T545.mp4 (use /Users/benjaminoats/_desk/cache/J1834), phone and preroll previews; station recognition/cropped Dragon/soft fill and 2.35x WARN remain. Metric 1.54, picture/polish PASS are not creative approval. J1471/J1356 holds unchanged.",
       "history": [
         {
           "at": "2026-11-03T13:58Z",
@@ -158673,6 +158673,11 @@
           "at": "2026-11-03T14:10Z",
           "by": "codex",
           "what": "step 3 of 3 done: Acquisition records 406f91068 pushed for review; persistent cache ~186 MB. Metric 1.54, picture PASS with softness WARN, polish PASS. Actual playback/creative acceptance remains; no input hold satisfied."
+        },
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "codex",
+          "what": "blocked: Acquisition candidate delivered at 406f91068 on codex/J1834-acquisition. Needs elected-Chief actual moving review of ~/. _desk/cache/J1834/feather_candidate_T545.mp4 (use /Users/benjaminoats/_desk/cache/J1834), phone and preroll previews; station recognition/cropped Dragon/soft fill and 2.35x WARN remain. Metric 1.54, picture/polish PASS are not creative approval. J1471/J1356 holds unchanged."
         }
       ],
       "remaining_action": "Elected Chief to view moving candidate and decide exact framing and interval",
@@ -158695,7 +158700,12 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Acquisition candidate delivered at 406f91068 on codex/J1834-acquisition. Needs elected-Chief actual moving review of ~/. _desk/cache/J1834/feather_candidate_T545.mp4 (use /Users/benjaminoats/_desk/cache/J1834), phone and preroll previews; station recognition/cropped Dragon/soft fill and 2.35x WARN remain. Metric 1.54, picture/polish PASS are not creative approval. J1471/J1356 holds unchanged.",
+        "check_at": "2026-11-03T20:10:14+00:00"
+      }
     }
   ],
   "focus": [],
