@@ -155524,13 +155524,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T13:40Z",
-      "eta": "2026-11-03T15:40Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX merged PR407 (0c4847a1e): linked existing J0923 to OWB:029 upload; preserved blocked public hold, J0922 dependency, 4/5 progress and 6 Dec 18:05Z check. Fresh API readback confirms long and three Shorts remain Private on their December schedules and en-GB captions serving. Original Ben/Chief approvals saved. No new media PASS, YouTube mutation or spend. NAS scratch offload exit 0, no eligible folders.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -155561,6 +155561,11 @@
           "at": "2026-11-03T13:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: Merged state verified: mapping, hold, dependency, 4/5 progress and released stage claim all correct"
+        },
+        {
+          "at": "2026-11-03T13:45Z",
+          "by": "codex",
+          "what": "done: FIX merged PR407 (0c4847a1e): linked existing J0923 to OWB:029 upload; preserved blocked public hold, J0922 dependency, 4/5 progress and 6 Dec 18:05Z check. Fresh API readback confirms long and three Shorts remain Private on their December schedules and en-GB captions serving. Original Ben/Chief approvals saved. No new media PASS, YouTube mutation or spend. NAS scratch offload exit 0, no eligible folders."
         }
       ],
       "remaining_action": "Resolved; J0923 waits for Public readback on 6 December at 18:05Z",
@@ -155580,7 +155585,8 @@
       },
       "taskKeys": [
         "OWB:029"
-      ]
+      ],
+      "done_ref": "0c4847a1e"
     },
     {
       "id": "J1771",
