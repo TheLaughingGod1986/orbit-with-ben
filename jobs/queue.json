@@ -155556,9 +155556,14 @@
           "at": "2026-11-03T13:44Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR407 merged after both CI checks passed; existing J0923 now maps to 029 upload with its public hold intact"
+        },
+        {
+          "at": "2026-11-03T13:45Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Merged state verified: mapping, hold, dependency, 4/5 progress and released stage claim all correct"
         }
       ],
-      "remaining_action": "Verify merged workflow state and report the retained December public hold",
+      "remaining_action": "Resolved; J0923 waits for Public readback on 6 December at 18:05Z",
       "kind": "chief",
       "handoff": {
         "film": "029",
@@ -155567,11 +155572,11 @@
         "signature": "ac722713d4d1d7afea4b"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T13:44Z",
+        "at": "2026-11-03T13:45Z",
         "by": "codex",
-        "note": "PR407 merged after both CI checks passed; existing J0923 now maps to 029 upload with its public hold intact"
+        "note": "Merged state verified: mapping, hold, dependency, 4/5 progress and released stage claim all correct"
       },
       "taskKeys": [
         "OWB:029"
