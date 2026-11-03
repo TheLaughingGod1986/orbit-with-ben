@@ -160728,19 +160728,24 @@
           "at": "2026-11-03T22:37Z",
           "by": "codex",
           "what": "step 2 of 4 done: Candidate 2 draft complete: 102 native frames at 30 fps, continuous 3.4 seconds; opening frames 30-101 score 7.53 against unchanged motion threshold 1.50. Still inspection shows intact unclipped station and coherent Earth fill; moving review remains J1848."
+        },
+        {
+          "at": "2026-11-03T22:40Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: 1080x1920 finalist delivered: 102 frames/3.4s, exact 1s preroll + 2.4s opening; motion 7.57; picture PASS with one unresolved render WARN, polish PASS. Hashes/probes/source rights/recipe/samples recorded; no source acceptance."
         }
       ],
-      "remaining_action": "Render full-resolution finalist and collect unchanged gate outputs",
+      "remaining_action": "Commit exact preview delivery and hand off to Gemini moving review",
       "due": "2026-11-03T14:30:08Z",
       "for": "codex",
       "kind": "chart",
       "model": "gpt-6-astra",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-03T22:37Z",
+        "at": "2026-11-03T22:40Z",
         "by": "codex",
-        "note": "Candidate 2 draft complete: 102 native frames at 30 fps, continuous 3.4 seconds; opening frames 30-101 score 7.53 agains"
+        "note": "1080x1920 finalist delivered: 102 frames/3.4s, exact 1s preroll + 2.4s opening; motion 7.57; picture PASS with one unres"
       },
       "taskKeys": [
         "OWB:030"
