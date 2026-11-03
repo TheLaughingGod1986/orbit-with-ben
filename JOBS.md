@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1849 | any | open (after J1848) | – | – | chief · AR2 NASA model: Chief exact-input acceptance or bounded fallback | J1846 |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
-| J1874 | mini | open | – | – | chief · Buffer recovery: decide exact J1870 creates, source holds and daily mirror repair | J1870 |
+| J1874 | mini | claimed | codex | 2026-11-03T22:39Z | chief · Buffer recovery: decide exact J1870 creates, source holds and daily mirror repair | J1870 |
 | J1878 | mini | blocked | codex | – | studio · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
 | J1879 | mini | blocked | codex | – | assembly · Buffer: recover approved Mars-night and Titan social sources | J1874 |
 | J1880 | mini | open | – | – | 008 edit · assembly · HOS 008: prepare six Franklin v03 UAT corrections and exact edit recipe | HOS-008:v03:2026-11-03T16:08:33.439Z / J1868 |
