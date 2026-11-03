@@ -155147,13 +155147,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T21:01Z",
-      "eta": "2026-11-03T23:01Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX complete: PR429 merged. Removed HOS J0160 credit block misfiled on OWB Europa; picture todo explicitly unverified, claim cleared, board valid. Original HOS Chief decision 6126300569 preserved. Both CI checks and local matching suites passed. No media PASS, spend, generation, upload or visibility change. No further action for this bookkeeping repair.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -155219,6 +155219,11 @@
           "at": "2026-11-03T21:08Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR429 merged as 064d6c7c0a. Both CI checks and all corresponding local suites passed; main board valid, Europa picture todo/unverified, no stage claim."
+        },
+        {
+          "at": "2026-11-03T21:08Z",
+          "by": "codex",
+          "what": "done: FIX complete: PR429 merged. Removed HOS J0160 credit block misfiled on OWB Europa; picture todo explicitly unverified, claim cleared, board valid. Original HOS Chief decision 6126300569 preserved. Both CI checks and local matching suites passed. No media PASS, spend, generation, upload or visibility change. No further action for this bookkeeping repair."
         }
       ],
       "remaining_action": "Correction merged and verified; close J1760",
@@ -155239,7 +155244,8 @@
         "at": "2026-11-03T21:08Z",
         "by": "codex",
         "note": "PR429 merged as 064d6c7c0a. Both CI checks and all corresponding local suites passed; main board valid, Europa picture t"
-      }
+      },
+      "done_ref": "064d6c7c0a41a5abdacbeb005db8c074fc71af36"
     },
     {
       "id": "J1761",
