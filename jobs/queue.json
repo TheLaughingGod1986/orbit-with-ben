@@ -152859,9 +152859,14 @@
           "at": "2026-11-03T08:11Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T08:12Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Review original hold, current HOS evidence and approvals; record ruling and report."
         }
       ],
-      "remaining_action": "Verify readiness: Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
+      "remaining_action": "Verify approved replacement opening and recording scope for J0862",
       "kind": "chief",
       "recheck_of": "J0862",
       "due": "2026-11-03T09:10:32+00:00",
@@ -152869,11 +152874,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T08:11Z",
+        "at": "2026-11-03T08:12Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Review original hold, current HOS evidence and approvals; record ruling and report."
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     }
   ],
   "focus": [],
