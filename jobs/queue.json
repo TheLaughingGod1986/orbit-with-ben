@@ -154535,9 +154535,14 @@
           "at": "2026-11-03T11:24Z",
           "by": "codex",
           "what": "step 1 of 3 done: OWB status history consists solely of J0146, a HOS Atom thumbnail task; HOS commit 77bf286 confirms its channel and evidence."
+        },
+        {
+          "at": "2026-11-03T11:26Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR 399 merged after Rules and Studio core checks passed. J0146 now belongs to HOS; erroneous JWST review reset to unverified todo with decision evidence."
         }
       ],
-      "remaining_action": "Correct the cross-channel job record and spurious JWST review state",
+      "remaining_action": "Verify the merged correction and close J1758",
       "kind": "chief",
       "handoff": {
         "film": "004",
@@ -154546,11 +154551,11 @@
         "signature": "7311887de7393199f14a"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T11:24Z",
+        "at": "2026-11-03T11:26Z",
         "by": "codex",
-        "note": "OWB status history consists solely of J0146, a HOS Atom thumbnail task; HOS commit 77bf286 confirms its channel and evid"
+        "note": "PR 399 merged after Rules and Studio core checks passed. J0146 now belongs to HOS; erroneous JWST review reset to unveri"
       },
       "taskKeys": [
         "OWB:004",
