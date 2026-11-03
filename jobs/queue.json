@@ -100596,6 +100596,11 @@
           "at": "2026-11-03T15:13Z",
           "by": "relay",
           "what": "condition verification queued: J1853"
+        },
+        {
+          "at": "2026-11-03T15:16Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T16:13:46Z"
         }
       ],
       "remaining_action": "Obtain cleared instrumental S2 bed and recorded local listening; restore h43 restart headroom before v07 repairs",
@@ -100624,12 +100629,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1838 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded. Safe NAS offload found nothing eligible, 7462 MB free before verification worktree, below h43 restart minimum 10 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines/v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-03T16:13:46+00:00",
-        "last_recheck": "J1838",
-        "checked_at": "2026-11-03T14:14:08+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1853"
+        "condition": "J1853 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three auditions match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded. Safe NAS offload found nothing eligible; 7694 MiB free before worktree, 6.99 GiB after, below h43 restart minimum 10 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines/v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-03T16:13:46Z",
+        "last_recheck": "J1853",
+        "checked_at": "2026-11-03T15:16:24+00:00",
+        "checked_by": "codex"
       }
     },
     {
