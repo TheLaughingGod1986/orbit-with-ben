@@ -81604,6 +81604,11 @@
           "at": "2026-11-03T12:06Z",
           "by": "relay",
           "what": "condition verification queued: J1818"
+        },
+        {
+          "at": "2026-11-03T12:11Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T13:06:28Z"
         }
       ],
       "kind": "video",
@@ -81631,15 +81636,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "Clear S2 instrumental bed and local listening, then complete repair gates and replacement approvals",
+      "remaining_action": "Clear S2 instrumental bed and local listening, restore headroom, then complete repairs and replacement approvals",
       "hold": {
         "type": "input",
-        "condition": "J1812 verified latest J1814/J1100 blocked at 2/3. Bed 13adc031 and three audition hashes match 3e26b379b; newest local evidence 31 Oct, listening NOT PERFORMED. PR333 OPEN at 0a7fcb6ad without reviews/comments. Require cleared instrumental S2 bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
-        "check_at": "2026-11-03T13:06:28+00:00",
-        "last_recheck": "J1812",
-        "checked_at": "2026-11-03T11:12:03+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1818"
+        "condition": "J1818 verified latest J1820/J1100 remains blocked at 2/3. Three local audition hashes match 3e26b379b; newest local evidence is 31 Oct, listening NOT PERFORMED. PR333 OPEN at 0a7fcb6ad without reviews/comments. Require cleared instrumental S2 bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Live disk 4686 MB is below h43 restart minimum; NAS offload found no eligible scratch. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
+        "check_at": "2026-11-03T13:06:28Z",
+        "last_recheck": "J1818",
+        "checked_at": "2026-11-03T12:11:46+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
