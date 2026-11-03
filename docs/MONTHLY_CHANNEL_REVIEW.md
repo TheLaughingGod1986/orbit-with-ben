@@ -6,7 +6,7 @@ Ben's standing instruction, 3 November 2026: use channel performance every month
 
 The existing Mini relay calls `refill.py` on every cycle. Two calendar items in `jobs/backlog.json` queue on the first of each month at 09:00 Europe/London, after the daily snapshot. Each covers the previous complete calendar month. If the machine misses that time it catches up on its next refill; this is a queue time, not a guaranteed finish time. Each report has a target of the third at 09:00 London. The first run catches up October 2026. No separate scheduler service or production database.
 
-One job per channel and reporting month, including while production queues are full. Failed work is resumed through the same job; a blocked old report must not prevent the next month's review. Run records remain in the existing queue. A report is not complete until a readable artifact and Chief handoff exist. Publishing private analytics to a public repository still requires the established permission; never retry a previously rejected publication implicitly.
+One job per channel and reporting month, including while production queues are full. Failed work is resumed through the same job; a blocked old report must not prevent the next month's review. Run records remain in the existing queue. A report is not complete until a readable artifact and Chief handoff exist. Publishing private analytics to a public repository still requires the established permission; never retry a previously rejected publication implicitly. Public notifications contain report status and location only, with no metrics or derived findings unless their publication is authorized.
 
 ## Required analysis, separately for each channel
 
