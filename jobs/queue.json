@@ -162718,9 +162718,14 @@
           "at": "2026-11-03T20:29Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR425 merged at exact reviewed head with both checks SUCCESS; actual Mini runner and installed fingerprint match 672fbdd6a32d7c9c; live lease names J1887/codex."
+        },
+        {
+          "at": "2026-11-03T20:30Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 17 isolated handoff tests PASS; log proves safe-boundary reload and Cursor-to-Codex fallback; board shows actual running claim and both audio reviews waiting at preserved 1/3."
         }
       ],
-      "remaining_action": "Verify dispatch continuation, board projection and capability holds",
+      "remaining_action": "Publish redacted runtime validation report through a normal PR",
       "kind": "assembly",
       "dispatch_repair_scope": "425:validate",
       "urgent": 1,
@@ -162738,11 +162743,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T20:29Z",
+        "at": "2026-11-03T20:30Z",
         "by": "codex",
-        "note": "PR425 merged at exact reviewed head with both checks SUCCESS; actual Mini runner and installed fingerprint match 672fbdd"
+        "note": "17 isolated handoff tests PASS; log proves safe-boundary reload and Cursor-to-Codex fallback; board shows actual running"
       }
     },
     {
