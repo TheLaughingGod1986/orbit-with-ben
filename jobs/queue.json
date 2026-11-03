@@ -1,5 +1,5 @@
 {
-  "next_id": 1877,
+  "next_id": 1878,
   "jobs": [
     {
       "id": "J0001",
@@ -158136,6 +158136,11 @@
           "at": "2026-11-03T15:10Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-03T18:41Z",
+          "by": "relay",
+          "what": "condition verification queued: J1877"
         }
       ],
       "remaining_action": "Correct B title pairing, obtain packaging panel decision, then review exact final thumbnails; preserve original A",
@@ -158154,10 +158159,11 @@
       "hold": {
         "type": "input",
         "condition": "B v02 TWO SUNS needs a corrected nearest-star title pairing; corrected set needs independent packaging panel decision and elected-Chief approval of exact files. Evidence d604bef0f jobs/reviews/J1824.md.",
-        "check_at": "2026-11-03T18:40:00Z",
+        "check_at": "2026-11-03T19:41:07+00:00",
         "last_recheck": "J1824",
         "checked_at": "2026-11-03T12:39:32+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1877"
       },
       "escalated_at": "2026-11-03T15:10Z"
     },
@@ -161619,6 +161625,37 @@
         "OWB:028"
       ],
       "done_ref": "3e26b379b"
+    },
+    {
+      "id": "J1877",
+      "title": "Chief: verify condition for J1823",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1823: B v02 TWO SUNS needs a corrected nearest-star title pairing; corrected set needs independent packaging panel decision and elected-Chief approval of exact files. Evidence d604bef0f jobs/reviews/J1824.md.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1823 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T18:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T18:41Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Correct B title pairing, obtain packaging panel decision, then review exact final thumbnails; preserve original A",
+      "kind": "chief",
+      "recheck_of": "J1823",
+      "due": "2026-11-03T19:41:07+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
