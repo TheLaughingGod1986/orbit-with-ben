@@ -29,6 +29,10 @@ Other repos exist (e.g. oppti-internal-linking, Channel Scout); they follow the 
 - **Uploads:** `PUBLISHING_DRY_RUN=false` only on the one real upload command line; never replace an armed Test & Compare.
 - **Git:** never force-push; new PRs; merge when green or none required. Never merge/close the thread PRs (OWB #99, HOS #180).
 
+## Missing footage workflow — 3 November 2026
+
+Ben approved the bounded archive/stock → generated illustration or revised shot workflow. The rule is in `AGENTS.md` → **Missing footage fallback**, mirrored into the playbook and always-on Cursor rule. Default search budget is 20 active minutes / three candidate assets per missing input, not per retry. Chief owns the fallback decision and scoped generation approval; channel model restrictions and all credit/QA gates remain unchanged.
+
 ## Pending decisions (open with Ben, 12 Oct 2026)
 1. **Long film + standalone Shorts (asked 14:46):** Ben asked about an hour-long film a month and standalone ~20 s story Shorts. Chief's recommendation: a standalone Shorts test (2 per week per channel for 4 weeks) plus one 45–60 min compilation to test the long format. **No decision yet** — direction change, so it waits for Ben.
 2. **Make the public repos private?** Unanswered. Don't change visibility unasked.

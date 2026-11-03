@@ -70,6 +70,8 @@ Also see `STUDIO_PLAYBOOK.md` §7.
 
 ## 3. Production locks (existing · restated)
 
+**Missing footage (Ben, 3 Nov 2026):** follow `AGENTS.md` → **Missing footage fallback**. Bound archive/stock investigation, record why candidates fail, then obtain a concrete Chief fallback decision and linked next action; do not reset the search budget or repeat an unchanged hold.
+
 | Rule | Detail |
 |---|---|
 | Orbit generation | Orbit is always **Omni**. One approved tumble fallback only: the **0–3 s** window on the named tumble file (e.g. `veo_orbit_tumble_v03_fallback_0-3s.mp4`). No other Orbit fallback without Ben. |
