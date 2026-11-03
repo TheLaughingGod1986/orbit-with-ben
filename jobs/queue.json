@@ -157727,11 +157727,25 @@
           "at": "2026-11-03T12:44Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T12:47Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Add approved en-GB captions and verify remaining Studio finish evidence",
       "due": "2026-11-14T18:00:00Z",
-      "kind": "studio"
+      "kind": "studio",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [],
