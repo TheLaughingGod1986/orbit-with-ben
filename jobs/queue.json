@@ -152283,9 +152283,14 @@
           "at": "2026-11-03T07:07Z",
           "by": "codex",
           "what": "step 1 of 3 done: Initial lifetime pass finished for all 123 videos; HOS Engagement supplements complete; OWB supplements running"
+        },
+        {
+          "at": "2026-11-03T07:09Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Read 15 OWB + 5 HOS longs and 77 OWB + 25 HOS Shorts; one Orbit Short has no metrics. Tracker rebuilt; 4 measured long CTRs meet 4%, including tiny samples."
         }
       ],
-      "remaining_action": "Finish missing retention reads, validate metrics and rebuild tracker",
+      "remaining_action": "Commit verified tracker data and publish the board tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
@@ -152299,11 +152304,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T07:07Z",
+        "at": "2026-11-03T07:09Z",
         "by": "codex",
-        "note": "Initial lifetime pass finished for all 123 videos; HOS Engagement supplements complete; OWB supplements running"
+        "note": "Read 15 OWB + 5 HOS longs and 77 OWB + 25 HOS Shorts; one Orbit Short has no metrics. Tracker rebuilt; 4 measured long C"
       },
       "taskKeys": [
         "OWB:024",
