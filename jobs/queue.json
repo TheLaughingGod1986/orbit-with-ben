@@ -164243,9 +164243,14 @@
           "at": "2026-11-03T22:13Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T22:13Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect original approval history; verify current thread and branch evidence; record parent condition and finish verification."
         }
       ],
-      "remaining_action": "Verify readiness: Obtain explicit approval for public evidence-branch payload, then open required PR and complete scope job",
+      "remaining_action": "Verify explicit approval for J1846 public workflow briefs and preserve hold if absent",
       "kind": "chief",
       "recheck_of": "J1846",
       "due": "2026-11-03T14:30:08+00:00",
@@ -164255,9 +164260,11 @@
         "of": 3,
         "at": "2026-11-03T22:13Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: inspect original approval history; verify current thread and branch evidence; record parent condition and finish v"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
