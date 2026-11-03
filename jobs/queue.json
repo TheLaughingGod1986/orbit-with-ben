@@ -1,5 +1,5 @@
 {
-  "next_id": 1886,
+  "next_id": 1888,
   "jobs": [
     {
       "id": "J0001",
@@ -162494,6 +162494,70 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J1886",
+      "title": "Chief: review and merge dispatcher retry/capability repair PR425",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben explicitly requested dispatcher repair now. PR425 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/425 exact head a585fd66f304d175d42b3476c5c0080282a516a6. Cloud code implementation has passed619 scripts tests (one existing skip),10 VO tests,27 gate tests; core/rules/STATUS/diff checks pass. Mini authoritative election currently Gemini (Codex down after exit1 until20:17Z); local cloud CLI availability is NOT used to override that. Recheck actual chief_relay.py status before protected review/merge. Elected Chief only.\n\nReview exact diff/tests and normal CI statuses. Fixes: released job no longer ends entire run; ordinary failed claims hand to a healthy eligible backup immediately preserving progress; capability filtering precedes worker selection for explicit requirements; typed capability holds propagate to one deduplicated check and direct claims/board agree; synthetic condition-check deadlines do not outrank real production unless parent has actual inherited deadline; refill happens before selection. Live leases/unfinished ownership, named independent tasks, Chief authority, publishing/date/credit/Ben holds and Mini/MacBook boundaries remain intact. Reports expire within60min and require actual observed input-tool evidence; green status/ffmpeg/ASR/stills are not hearing/motion proof.\n\nActual newtests exercise relay loops, source-role/capability waits, stale reports, ordinary-failure backup and unchanged progress. Read docs/handover/DISPATCHER_RELIABILITY_2026-11-03.md. Check exact-head CI SUCCESS; if required checks running wait briefly/read again, do not bypass. Record own actual review and PASS/FIX. If PASS normal merge --squash --match-head-commit a585fd66f304d175d42b3476c5c0080282a516a6, no force/bypass. If FIX record concrete issue on PR and own job. This is code repair only: no media/post/schedule/credit or stage approval.\n\nAfter merge in a clean worktree, retype ONLY J1752/J1753 if they are still blocked specifically for actual missing listening input: preserve original condition, check_at, last_recheck/checked evidence, history, technical1/3 progress and all approvals; set hold.type=capability, hold.requires=[audio_input], required_capabilities=[audio_input], log rationale and PR. Gate any currently OPEN checks referencing those parents with same requirement; never alter a claimed concurrent job. Use ordinary transactional jobs.with_git; no direct raw queue push. Do not reopen or approve either voice review. If scope changed/new listening approval exists, preserve newer state and report.\n\nKeep J1843 open for measured parallel capacity and portable MacBook overflow; record this serial-reliability subpart only. Current Mini source should contain merged patch after normal pull. New relay code_version expected d07717d91051592b; source updates only restart relay at a safe boundary after this CLI exits. Do NOT kill/kickstart running worker, force-release lock, fake claim or patch health status. Finish this review job promptly after recording merge/typed-hold result, letting dependent validation run on fresh relay. No new authority for blocked BufferJ1878 or evidence-publication holds.",
+      "ref": "J1843",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T19:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T19:59Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review exact PR425 head and checks, merge if PASS, then finish so fresh relay can start",
+      "kind": "chief",
+      "dispatch_repair_scope": "425:review",
+      "urgent": 1,
+      "due_kind": "user-immediate-claim",
+      "due": "2026-11-03T19:59:35+00:00"
+    },
+    {
+      "id": "J1887",
+      "title": "Validate Mini dispatcher rollout and real next-job pickup after PR425",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After predecessor Chief review/merge PR425, validate actual Mini runtime. If predecessor returned FIX or PR not merged, record precise dependency hold; never assume done means PASS. Expected code_version d07717d91051592b (unless later authorized changes); confirm merged source/clean checkout, loaded and desired runner version match and worker lease names THIS actual claim on mac-mini. Code fingerprint forces safe-boundary restart; do not kill any worker, reset checkout, force locks or call jobs.next under another agent.\n\nVerify actual claim history and execution/runs evidence for this task and predecessor; distinguish launched/claimed/done. Inspect chain logs showing prior terminal/released job followed by next selection without old repeated-check stop. Run isolated new tests (PYTHONPATH=scripts python3 -m unittest scripts.test_dispatcher_handoffs) if installed source matches; tests use temp queues/fake CLI only, no real production API writes. Verify current board workflow projection shows actual claim with fresh timestamp and required_capabilities checks wait without a fresh demonstrated capability report; J1752/J1753 must keep their full listening holds/technical progress, not be reopened or marked completed. Record capability report only from actual available input tools, not model name, ffmpeg, ASR or player window.\n\nPublish concise redacted code/operational validation report with installed+loaded SHA/version, claim times, exact actual successes/limits and no credentials/private media; use normal PR route. Existing board refresh should publish actual progress; no fabricated health/history. If loaded source lags, record safe repair needed and leave current execution untouched. Keep full parallel/MacBook capacity J1843 open; this fixes serial selector only. No Buffer media/posts, new publishing/evidence egress, spend, schedule, source or stage changes.",
+      "ref": "J1843",
+      "film": "",
+      "stage": "",
+      "after": "J1886",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T19:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T19:59Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify installed/loaded version and actual sequential claims; report capability holds honestly",
+      "kind": "assembly",
+      "dispatch_repair_scope": "425:validate",
+      "urgent": 1,
+      "due_kind": "user-immediate-claim",
+      "due": "2026-11-03T19:59:35+00:00"
     }
   ],
   "focus": [],
