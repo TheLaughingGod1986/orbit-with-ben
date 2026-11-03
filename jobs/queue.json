@@ -162259,10 +162259,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-03T19:51Z",
+      "eta": "2026-11-03T21:51Z",
       "created_by": "relay",
       "created_at": "2026-11-03T19:08Z",
       "result": "",
@@ -162271,13 +162271,26 @@
           "at": "2026-11-03T19:08Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T19:51Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Review local finish evidence and resolve publication approval for evidence",
       "kind": "chief",
       "recheck_of": "J1825",
       "due": "2026-11-03T20:08:38+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T19:51Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1883",
