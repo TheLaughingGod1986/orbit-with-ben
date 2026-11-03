@@ -77364,13 +77364,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-24T21:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:18Z",
-      "result": "waits for input: HOS 008 completed approved picture/edit and fewer than two built Test B Shorts. Acting-Chief codex ruling: no extra 007 Short; scope resolved, no Short PASS. Re-inventory 008 locked pair before assembly; cancel as redundant if both already built. Elected Chief reopens only when inputs ready; assembly specialist chain then builds/gates existing VO + picture only. J0863 and other holds unchanged. Decision: https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
+      "result": "",
       "history": [
         {
           "at": "2026-10-24T18:18Z",
@@ -77446,32 +77446,22 @@
           "at": "2026-10-28T00:39Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
+        },
+        {
+          "at": "2026-11-03T15:47Z",
+          "by": "codex",
+          "what": "reopened: J1755 verified h22 picture lock and h35 approved master cf1561c2 on NAS and restored UAT. No built MP4/MOV or manifests in local or NAS HOS008 10_Shorts; locked v02 pair exists. Old J0863 renewal/missing-picture condition superseded. Resume original single-Short scope using locked approved existing media only, no extra 007 cut, no generation, no upload. Re-inventory at claim; preserve 1/3 progress. Assembly chain Cursor then Codex then Gemini; Chief review remains required."
         }
       ],
       "kind": "assembly",
       "backlog": "hos-short-from-locked",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-10-24T21:54Z",
-        "by": "codex",
-        "note": "Inventory committed 39997889; HOS desk 6390006230 posted. Build/gates unstarted pending Chief scope decision."
-      },
       "taskKeys": [
         "HOS:007",
         "HOS:008"
       ],
       "escalated_at": "2026-10-25T03:43Z",
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
-      "remaining_action": "Wait for HOS 008 picture (J0863 Flow renewal) and edit approval, then re-inventory 008 Test B Shorts before assembly",
-      "hold": {
-        "type": "input",
-        "condition": "HOS 008 picture and edit must be completed and approved (currently picture is blocked at 11/112 rows with 101 Flow Veo rows gated on J0863 after the ~12 Nov Flow renewal, 5 moving-plate composites pending, and edit is todo) and 008 inventory must still have fewer than two built Test B Shorts (currently 0 built; 14/18 rows in SHORTS_PICTURE_PLAN_v02.json are blocked_missing_plate)",
-        "check_at": "2026-11-12T09:00:00Z",
-        "last_recheck": "J1049",
-        "checked_at": "2026-10-28T00:39:38+00:00",
-        "checked_by": "gemini"
-      }
+      "remaining_action": "Wait for HOS 008 picture (J0863 Flow renewal) and edit approval, then re-inventory 008 Test B Shorts before assembly"
     },
     {
       "id": "J0913",
