@@ -150501,10 +150501,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-03T03:38Z",
-      "eta": "2026-11-03T05:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T03:31Z",
       "result": "",
@@ -150528,6 +150528,11 @@
           "at": "2026-11-03T03:40Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Checked J0936, J1032 PASS, completed J1101-J1103, and latest J1712 verification keeping J1100 blocked at 2/3"
+        },
+        {
+          "at": "2026-11-03T03:41Z",
+          "by": "gemini",
+          "what": "released: Handing J1710 back to higher-priority elected Chief Codex (returned at 03:40:28Z). Verified J1712 kept J1100 blocked at 2/3, 3e26b379b evidence and all 3 audition WAV hashes match, PR #333 OPEN at 0a7fcb6ad without reviews/comments, and NAS offload has no eligible scratch (~14 GiB free); J0936 untouched."
         }
       ],
       "remaining_action": "Verify S2 bed/audition hashes, local listening records, PR #333 and J1100 state",
