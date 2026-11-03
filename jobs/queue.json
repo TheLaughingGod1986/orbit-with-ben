@@ -81654,6 +81654,11 @@
           "at": "2026-11-03T15:13Z",
           "by": "relay",
           "what": "condition verification queued: J1851"
+        },
+        {
+          "at": "2026-11-03T15:25Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T16:13:46Z"
         }
       ],
       "kind": "video",
@@ -81684,12 +81689,11 @@
       "remaining_action": "Clear S2 instrumental bed and local listening, restore headroom, then complete repairs and replacement approvals",
       "hold": {
         "type": "input",
-        "condition": "J1835 verified latest J1838/J1100 remains blocked at 2/3. Three audition hashes match 3e26b379b; newest local evidence is 31 Oct, listening NOT PERFORMED. PR333 OPEN unchanged at 0a7fcb6ad without reviews/comments. Require cleared instrumental S2 bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Live disk about 7454 MB remains below h43 restart minimum 10 GiB; NAS offload found no eligible scratch. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
-        "check_at": "2026-11-03T16:13:46+00:00",
-        "last_recheck": "J1835",
-        "checked_at": "2026-11-03T14:17:39+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1851"
+        "condition": "J1851 verified newer J1853/J1100 remains blocked at 2/3. Three audition hashes match 3e26b379b; latest local evidence is 31 Oct, listening NOT PERFORMED. PR333 OPEN unchanged at 0a7fcb6ad with no reviews/comments. Require cleared instrumental S2 bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. About 7.2 GB free before worktree is below h43 restart minimum 10 GiB; NAS offload found no eligible scratch. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
+        "check_at": "2026-11-03T16:13:46Z",
+        "last_recheck": "J1851",
+        "checked_at": "2026-11-03T15:25:27+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
