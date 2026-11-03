@@ -40,13 +40,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1748 | any | claimed | codex | 2026-11-03T12:09Z | chief · Chief: verify condition for J0985 |  |
 | J1750 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1751 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
 - J1749 done: Chief: verify condition for J1100 (Fresh bed and three audition hashes match 3e26b379b; no newer local listening evidence. J1100 remains blocked at 2/3, retry 2026-11-03T10:57:27Z. Preserved accepted sources, h43-LOOP, deadlines/v01 fallback. NAS dry run found no eligible scratch; 13012 MB free. No spend, source-audio egress, media approval or publishing changes.)
+- J1748 done: Chief: verify condition for J0985 (Verified no explicit publication approval through thread 6600748616. J0985 remains blocked on publication of local J1642 review; retained check 2026-11-03T10:57:27Z, recheck J1748. Procedural report posted. No publication retry, spend or YouTube changes.)
 - J1747 done: Chief: verify condition for J0936 (Verified latest J1749/J1100, original approval history, local audition hashes and unchanged unreviewed PR333. J0936 remains blocked: instrumental S2 bed clearance, actual local listening, repairs/gates and replacement approvals unproven. Existing 2026-11-03T10:57:27Z retry retained; historical progress, J1032 PASS, completed J1101-J1103, accepted sources and fallbacks preserved. No spend, media approval, source-audio egress or publishing changes.)
 - J1746 done: Chief: verify condition for J1130 (Studio 2026-11-03 08:55:48 UTC: T020 still Running, no completion timestamp. J1130 remains blocked; next check 14:56 UTC. Evidence /Users/benjaminoats/_desk/handoff/J1746/; HOS desk report posted. No Studio changes or spend.)
 - J1745 done: Chief: verify condition for J1471 (PR380 unchanged at d0b04b5e0 without comments or reviews; fresh SHA256 matches three J1468 masters and Crew-2. J1471 remains blocked on approved ISS opening input; retry retained at 2026-11-03T09:34:16Z. All gates and J1356/Ben/date/credit/publishing holds preserved.)
@@ -55,4 +55,3 @@ Recently finished:
 - J1742 done: Chief: verify condition for J0985 (Verified no explicit approval through thread 6599154580. J0985 remains blocked on publication of local J1642 review, next check 2026-11-03T09:34:16Z, recheck J1742. Report posted; no publication retry, spend or YouTube changes.)
 - J1741 done: Chief: verify condition for J0936 (Verified J1743/J1100, evidence 3e26b379b and unchanged PR333. All three audition hashes match; no newer local listening clearance. J0936 remains blocked with recorded retry 2026-11-03T09:34:16Z. Historical progress, accepted sources, J1032 PASS, completed J1101-J1103, deadlines and scheduled fallbacks preserved. No media acceptance, spend or publishing changes.)
 - J1740 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks against 2026-11-03.json snapshot and live YouTube pages; updated 05_Analytics/live_fixes/2026-11-03.md (1c60f6389); 0 fixes needed)
-- J1739 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS 04c64325))
