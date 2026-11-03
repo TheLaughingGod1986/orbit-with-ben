@@ -111308,9 +111308,14 @@
           "at": "2026-11-03T10:50Z",
           "by": "relay",
           "what": "condition verification queued: J1757"
+        },
+        {
+          "at": "2026-11-03T11:07Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T17:15:00Z"
         }
       ],
-      "remaining_action": "Held for J1218 v03 repairs and Chief graphics/composite approval; J1193 ruled FIX; music/SFX unfinished",
+      "remaining_action": "J1755: verify readable master-v03 UAT copy and reconcile PR391 plus watch/board records; no rough re-render",
       "due": "2026-11-12T20:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -111324,10 +111329,12 @@
         "HOS:008"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "FIX / NOT APPROVED: J1218 must deliver separate compliant v03; v01/v02 remain held. J1193 findings exist in PR378 and must be incorporated; formal graphics approval is still required. Music/SFX unfinished; no Ben watch.",
-        "check_at": "2026-11-03T11:50:25+00:00",
-        "recheck_task": "J1757"
+        "type": "input",
+        "condition": "Later Chief h22 (6533306017) and h35 (6537320070) supersede graphics/music repair blockers; master v03 cf1561c2 was delivered by J1297. Current UAT read returns OSError 11 Resource deadlock avoided, so current hash/watch readiness is unverified. J1755 must reconcile current media, PR391 (OPEN at 3bf00f09), board and Ben-watch state; preserve all older failed cuts. Do not restart rough edits or infer upload approval.",
+        "check_at": "2026-11-03T17:15:00Z",
+        "last_recheck": "J1757",
+        "checked_at": "2026-11-03T11:07:02+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-10-29T22:11Z"
     },
