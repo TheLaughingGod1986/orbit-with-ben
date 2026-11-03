@@ -154525,9 +154525,14 @@
           "at": "2026-11-03T11:23Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T11:24Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: OWB status history consists solely of J0146, a HOS Atom thumbnail task; HOS commit 77bf286 confirms its channel and evidence."
         }
       ],
-      "remaining_action": "Trace thumbnail evidence and approval history for OWB 004",
+      "remaining_action": "Correct the cross-channel job record and spurious JWST review state",
       "kind": "chief",
       "handoff": {
         "film": "004",
@@ -154536,13 +154541,15 @@
         "signature": "7311887de7393199f14a"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T11:23Z",
-        "by": "codex"
+        "at": "2026-11-03T11:24Z",
+        "by": "codex",
+        "note": "OWB status history consists solely of J0146, a HOS Atom thumbnail task; HOS commit 77bf286 confirms its channel and evid"
       },
       "taskKeys": [
-        "OWB:004"
+        "OWB:004",
+        "HOS:004"
       ]
     },
     {
