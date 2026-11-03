@@ -133432,9 +133432,14 @@
           "at": "2026-11-03T14:10Z",
           "by": "relay",
           "what": "condition verification queued: J1840"
+        },
+        {
+          "at": "2026-11-03T15:08Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T15:10:42Z"
         }
       ],
-      "remaining_action": "Identify approved moving ISS opening input, then correct and review AR cohort",
+      "remaining_action": "Obtain accepted replacement ISS input through J1846-J1849, then correct and review AR cohort",
       "kind": "assembly",
       "progress": {
         "step": 1,
@@ -133448,12 +133453,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1832 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 matches all three J1468 masters and Crew-2 cache. Still missing approved ISS interval or approach for AR2 0-2.4s plus loop preroll: identifiable station detail, native motion, <=2.35x upscale and locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete metadata, affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-03T15:10:42+00:00",
-        "last_recheck": "J1832",
-        "checked_at": "2026-11-03T13:29:06+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1840"
+        "condition": "J1840 verified PR410 at 406f91068 and PR414 at 1474821f3: delivered T545 candidate received Gemini moving-review FIX for station recognition, cropped Dragon, fill and softness; no approved exact ISS input exists. Replacement scope J1846 is blocked on its recorded evidence-publication approval; J1847 model preview -> J1848 moving review -> J1849 Chief input decision already queued behind it. Do not repeat unchanged T545 review. J1471 retains AR1/AR3 repairs, complete metadata, affected gates and full moving/audio pace review; J1356 and all Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-03T15:10:42Z",
+        "last_recheck": "J1840",
+        "checked_at": "2026-11-03T15:08:15+00:00",
+        "checked_by": "codex"
       }
     },
     {
