@@ -124499,9 +124499,14 @@
           "at": "2026-11-03T16:17Z",
           "by": "relay",
           "what": "condition verification queued: J1863"
+        },
+        {
+          "at": "2026-11-03T18:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T00:39:17Z"
         }
       ],
-      "remaining_action": "Await J1846 evidence publication approval and J1847-J1849 input acceptance, then J1471 repairs and final-watch review",
+      "remaining_action": "Obtain approved ISS replacement and J1471 repaired cuts before full moving/audio final-watch review",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -124515,12 +124520,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1854 verified: fresh SHA256 matches all three J1468 final exports and no additional final exports exist. PR380 remains OPEN at d0b04b5e0; PR414 remains OPEN at 1474821f3 with T545 moving-review FIX. Saved opening FAILs remain AR1 6.00s first cut, AR2 diff 0.25, AR3 diff 1.41. J1846 scope at local 001b6962f is blocked on its recorded public evidence-push approval; J1847 -> J1848 -> J1849 remain unstarted. Need approved exact replacement ISS input, J1471 versioned repairs, complete metadata and affected gates, then full moving/audio and pace review. Existing accepted picture/audio, excluded AR2 v10/AR3 v09 branch and all Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-03T17:17:11+00:00",
-        "last_recheck": "J1854",
-        "checked_at": "2026-11-03T15:34:07+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1863"
+        "condition": "J1863 verified fresh SHA256 matches all three J1468 final exports; no additional finals. PR380 OPEN d0b04b5e0; PR414 OPEN 1474821f3 retains T545 FIX. Saved opening FAILs: AR1 first cut 6.00s, AR2 diff 0.25, AR3 diff 1.41. J1846 local scope 001b6962f remains blocked on recorded public evidence-push approval; J1847-J1849 unstarted. Need approved exact replacement ISS input, J1471 versioned repairs with complete metadata and passing affected gates, then J1356 full moving/audio and pace review. Preserve accepted picture/audio, AR2 v10/AR3 v09 exclusion and all Ben/date/credit/publishing holds.",
+        "check_at": "2026-11-04T00:39:17Z",
+        "last_recheck": "J1863",
+        "checked_at": "2026-11-03T18:39:17+00:00",
+        "checked_by": "codex"
       }
     },
     {
