@@ -155147,10 +155147,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T21:01Z",
+      "eta": "2026-11-03T23:01Z",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
       "result": "",
@@ -155194,6 +155194,11 @@
           "at": "2026-11-03T19:30Z",
           "by": "gemini",
           "what": "reopened: Elected acting Chief (gemini) verification PASS and explicit public-push approval granted (J1872): verified local commit 3ff239494f0b12af2cbb24808cc220ca3877c3ec on codex/j1760-picture-record in /private/tmp/j1760-wt touches only non-secret bookkeeping files (02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/status.json, STATUS.md, docs/review/J1760/DECISION.md) on user-owned remote https://github.com/TheLaughingGod1986/orbit-with-ben.git. Provenance verified: OWB 006 picture block originated solely from misfiled HOS J0160 commits (6dc82a888c, 11115a422d, f5006f2cb2, 10fc880c24); J0160 is already done under HOS #180 Chief decision 6126300569 and HOS merge b019df4bf20c2f6fc720a815d6d8ccfb5c64760e. Under AGENTS.md (Ben, 28 Oct 2026: only finished video watches rely on Ben; Chief owns studio decisions), pushing and merging this non-secret record correction to origin is explicitly approved. No media PASS, spend, upload or schedule change."
+        },
+        {
+          "at": "2026-11-03T21:01Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Publish and merge the prepared record correction after approval review is cleared",
@@ -155207,7 +155212,15 @@
       "taskKeys": [
         "OWB:006",
         "HOS:006"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T21:01Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1761",
