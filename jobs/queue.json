@@ -163257,13 +163257,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T21:10Z",
-      "eta": "2026-11-03T23:10Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T21:09Z",
-      "result": "",
+      "result": "Verified original scope 001b6962f, clean evidence worktree, 54 subsequent thread comments through 6615484272 and no PR for codex/J1846-scope. No explicit payload-publication approval found. J1846 remains blocked; last_recheck J1893, original retry 2026-11-03T22:09:05Z retained. Queue assertions PASS. No push retry, new media review, spend or publishing changes. Dependent production holds preserved.",
       "history": [
         {
           "at": "2026-11-03T21:09Z",
@@ -163294,6 +163294,11 @@
           "at": "2026-11-03T21:12Z",
           "by": "codex",
           "what": "step 3 of 3 done: Parent updated with last_recheck J1893, retry retained at 22:09:05Z. Queue assertions PASS: J1846 blocked at 2/3, J1847-J1849 dependency chain intact, J1471/J1356 blocked."
+        },
+        {
+          "at": "2026-11-03T21:12Z",
+          "by": "codex",
+          "what": "done: Verified original scope 001b6962f, clean evidence worktree, 54 subsequent thread comments through 6615484272 and no PR for codex/J1846-scope. No explicit payload-publication approval found. J1846 remains blocked; last_recheck J1893, original retry 2026-11-03T22:09:05Z retained. Queue assertions PASS. No push retry, new media review, spend or publishing changes. Dependent production holds preserved."
         }
       ],
       "remaining_action": "Verification complete; J1846 awaits explicit payload publication approval",
