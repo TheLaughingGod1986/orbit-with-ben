@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1859 | mini | open | – | – | for gemini · review · `gemini-argon` · Monthly channel improvement review: Orbit With Ben — 2026-10 |  |
 | J1860 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1861 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1862 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1862 | any | claimed | codex | 2026-11-03T18:33Z | chief · Chief: verify condition for J1100 |  |
 | J1863 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1864 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1865 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
