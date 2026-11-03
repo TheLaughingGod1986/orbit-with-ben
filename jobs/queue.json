@@ -159192,13 +159192,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T15:06Z",
-      "eta": "2026-11-03T17:06Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T14:10Z",
-      "result": "",
+      "result": "Verified latest acquisition and approval history: PR410 406f91068 and Gemini FIX PR414 1474821f3 do not satisfy J1471 input condition. Updated J1471 hold/action with J1840 recheck and existing J1846-J1849 replacement chain; preserved original retry and all J1356/Ben/date/credit/publishing holds. Queue assertions PASS. No independent playback claim, media approval, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T14:10Z",
@@ -159229,6 +159229,11 @@
           "at": "2026-11-03T15:08Z",
           "by": "codex",
           "what": "step 3 of 3 done: Queue readback PASS: J1471 blocked with last_recheck J1840, original 15:10:42Z check retained, J1356 blocked and replacement dependency chain intact."
+        },
+        {
+          "at": "2026-11-03T15:08Z",
+          "by": "codex",
+          "what": "done: Verified latest acquisition and approval history: PR410 406f91068 and Gemini FIX PR414 1474821f3 do not satisfy J1471 input condition. Updated J1471 hold/action with J1840 recheck and existing J1846-J1849 replacement chain; preserved original retry and all J1356/Ben/date/credit/publishing holds. Queue assertions PASS. No independent playback claim, media approval, spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1471 retains input hold pending J1846-J1849",
