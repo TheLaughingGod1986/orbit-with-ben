@@ -353,3 +353,12 @@ const linkedQA=t.stageExplanation({...qaVideo,jobs:[{id:'Jreview',stage:'qa',sta
 assert.equal(linkedQA.job.id,'Jreview');assert.equal(linkedQA.owner,'Codex');assert(linkedQA.why.includes('claimed'));
 assert(t.stageExplanationHtml({...qaVideo,jobs:[{id:'Jreview',stage:'qa',status:'open',title:'<unsafe>'}]},unknownQA).includes('&lt;unsafe&gt;'));
 console.log('Stage explanation checks OK');
+// Overview never describes blocked production as waiting for Ben to watch.
+const notReadyOverview=t.overview({tracker:{videos:[v({key:'blocked-example',lane:'progress'})]},owb:{jobs:[]}},NOW);
+assert(notReadyOverview.includes('Next in production')&&notReadyOverview.includes('Nothing is ready for your review yet.'));
+assert(!notReadyOverview.includes('Next for your review')&&!notReadyOverview.includes('▶ Watch & review'));
+const readyOverview=t.overview({tracker:{videos:[v({key:'watch-now',lane:'ready',readyFor:'Ben',watch:{url:'https://example.com/cut.mp4',version:'v02'}})]},owb:{jobs:[]}},NOW);
+assert(readyOverview.includes('Ready for your review')&&readyOverview.includes('href="#uat=watch-now"')&&readyOverview.includes('▶ Watch & review v02'));
+const missingDelivery=t.overview({tracker:{videos:[v({key:'missing-watch',lane:'ready',readyFor:'Ben'})]},owb:{jobs:[]}},NOW);
+assert(missingDelivery.includes('no watch link is recorded')&&!missingDelivery.includes('▶ Watch & review'));
+console.log('Review readiness wording and Watch CTA checks OK');
