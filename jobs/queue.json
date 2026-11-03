@@ -162425,19 +162425,24 @@
           "at": "2026-11-03T20:00Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1884; inspecting J0979, J1827, J1752, J1753 and 031-061 VO/picture status"
+        },
+        {
+          "at": "2026-11-03T20:02Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1827; original gates/holds and 029 v01 shelving remain unchanged"
         }
       ],
-      "remaining_action": "Verify 031+ locked VO listening approval (J1752/J1753) and picture lock status for J0979",
+      "remaining_action": "Verify 031-061 VO/picture lock state on disk",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-03T20:17:21+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T20:00Z",
+        "at": "2026-11-03T20:02Z",
         "by": "gemini",
-        "note": "Claimed J1884; inspecting J0979, J1827, J1752, J1753 and 031-061 VO/picture status"
+        "note": "Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1827; original gates/hold"
       },
       "taskKeys": [
         "OWB:029",
