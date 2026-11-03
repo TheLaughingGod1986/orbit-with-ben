@@ -10,12 +10,16 @@
  * A match only counts if the file exists on this machine. It never guesses from titles.
  */
 import fs from "fs";
+import { createHash } from "node:crypto";
 import path from "path";
 import type { SocialCopy } from "@/lib/publishing/buffer-mirror";
 
 export type UploadRecord = {
   packageDir?: string;
   sha256?: string;
+  knownNoFile?: string;
+  youtubeUploadSha256?: string;
+  sourceNote?: string;
   kind?: "short" | "long";
   /** Short: the mp4 that went to YouTube. Repo-relative in the registry. */
   file?: string;
@@ -45,6 +49,7 @@ export type MediaHint = {
   source: string;
   /** Found in UPLOADS.json: it came through this pipeline (youtube:package or register). */
   registered?: boolean;
+  sourceError?: string;
 };
 
 const PROJECTS = "02_Video-Projects";
@@ -173,14 +178,35 @@ export function scanProjectRecords(repoRoot: string): Map<string, Found> {
   return found;
 }
 
+/** Compare the approved social-source hash, including explicit differing-source approvals. */
+export function validateShortSource(record: UploadRecord | undefined, file: string | null | undefined): string | null {
+  if (!record) return null;
+  if (record.knownNoFile) return "Approved original unavailable: " + record.knownNoFile;
+  if (!record.sha256) return null; // Legacy entries retain their existing behavior.
+  if (!file) return "Recorded social source unavailable; restore the approved original before mirroring";
+  if (!/^[a-f0-9]{64}$/i.test(record.sha256)) return "Recorded source SHA256 is invalid; source verification required";
+  let fd: number | undefined;
+  try {
+    fd = fs.openSync(file, "r");
+    const hash = createHash("sha256"), block = Buffer.alloc(1024*1024);
+    let bytes: number;
+    while ((bytes=fs.readSync(fd,block,0,block.length,null)) > 0) hash.update(block.subarray(0,bytes));
+    return hash.digest("hex") === record.sha256.toLowerCase() ? null : "Social source SHA256 mismatch; preserve the approved original and hold this post";
+  } catch { return "Recorded social source cannot be read; source verification required"; }
+  finally { if (fd !== undefined) fs.closeSync(fd); }
+}
+
 /** Everything the mirror needs for one upload, or null when nothing on this machine matches. */
 export function findMedia(videoId: string, opts: { registry: Registry; scanned: Map<string, Found>; repoRoot: string; registryFile: string }): MediaHint | null {
   const reg = opts.registry.videos[videoId];
   if (reg) {
     const abs = (p?: string) => (p ? resolveRecordedPath(path.resolve(opts.repoRoot, p), opts.registryFile, opts.repoRoot) : null);
+    const mediaPath = abs(reg.file);
+    const sourceError = reg.kind === "short" ? validateShortSource(reg, mediaPath) : null;
     return {
       videoId,
-      mediaPath: abs(reg.file),
+      mediaPath,
+      ...(sourceError ? { sourceError } : {}),
       thumbPath: abs(reg.thumb),
       trailerPath: abs(reg.trailer),
       ...(reg.social ? { social: reg.social } : {}),

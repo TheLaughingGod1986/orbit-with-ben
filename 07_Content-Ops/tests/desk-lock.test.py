@@ -13,6 +13,46 @@ BUFFER_CHECK = OPS / 'launchd/buffer-check.sh'
 
 
 class DeskLockTests(unittest.TestCase):
+    def test_daily_wrapper_reaches_both_locked_clis_without_self_deadlock(self):
+        with tempfile.TemporaryDirectory(prefix='buffer-daily-success-') as root:
+            repo = Path(root)/'repo'
+            ops = repo/'07_Content-Ops'
+            (ops/'scripts').mkdir(parents=True)
+            (ops/'.env').write_text('')
+            (ops/'node_modules').symlink_to(OPS/'node_modules',target_is_directory=True)
+            calls = Path(root)/'calls'
+            fixture = "import fs from 'node:fs';\nimport {ensureDeskLock} from " + repr(str(OPS/'scripts/with-desk-lock.ts')) + ";\nensureDeskLock();\nfs.appendFileSync(process.env.RUN_LOG!,process.argv.includes('hos')?'hos\\n':'owb\\n');\n"
+            (ops/'scripts/buffer-mirror.ts').write_text(fixture)
+            subprocess.run(['git','init','-q',str(repo)],check=True)
+            subprocess.run(['git','-C',str(repo),'checkout','-qb','offline-test'],check=True)
+            env={**os.environ,'ORBIT_REPO':str(repo),'DESK_LOCK_ROOT':str(Path(root)/'locks'),'RUN_LOG':str(calls)}
+            result=subprocess.run(['bash',str(BUFFER_CHECK)],env=env,capture_output=True,text=True,timeout=30)
+            self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+            self.assertEqual(calls.read_text().splitlines(),['owb','hos'])
+            self.assertFalse((Path(root)/'locks/youtube-buffer.lock').exists())
+
+    def test_npx_tsx_cli_owns_one_real_lock_without_outer_wrapper(self):
+        with tempfile.TemporaryDirectory(prefix='buffer-npx-lock-') as root:
+            fixture = Path(root) / 'entry.ts'
+            ready, release = Path(root) / 'ready', Path(root) / 'release'
+            fixture.write_text("import fs from 'node:fs';\nimport {ensureDeskLock} from " + repr(str(OPS / 'scripts/with-desk-lock.ts')) + ";\nensureDeskLock();\nfs.writeFileSync(process.env.READY_FILE!, 'locked');\nif(process.env.HOLD==='1'){const t=setInterval(()=>{if(fs.existsSync(process.env.RELEASE_FILE!))clearInterval(t)},25)}else{process.exitCode=23}\n")
+            env = {**os.environ, 'DESK_LOCK_ROOT':root, 'READY_FILE':str(ready), 'RELEASE_FILE':str(release)}
+            command = ['npx','--no-install','tsx',str(fixture)]
+            holder = subprocess.Popen(command,cwd=OPS,env={**env,'HOLD':'1'},stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+            try:
+                for _ in range(300):
+                    if ready.exists(): break
+                    time.sleep(.02)
+                self.assertTrue(ready.exists(),'npx/tsx command must enter its real operation lock')
+                result=subprocess.run(command,cwd=OPS,env=env,capture_output=True,timeout=15)
+                self.assertEqual(result.returncode,75,'another live writer must remain excluded')
+            finally:
+                release.touch();holder.wait(timeout=15)
+            self.assertFalse((Path(root)/'youtube-buffer.lock').exists())
+            result=subprocess.run(command,cwd=OPS,env=env,capture_output=True,timeout=15)
+            self.assertEqual(result.returncode,23,result.stderr)
+            self.assertFalse((Path(root)/'youtube-buffer.lock').exists())
+
     def test_writers_and_cleanup(self):
         with tempfile.TemporaryDirectory(prefix='owb-lock-') as root:
             env = {**os.environ, 'DESK_LOCK_ROOT': root}
@@ -110,14 +150,19 @@ class DeskLockTests(unittest.TestCase):
                 '#!/bin/bash\necho "$@" >> "$NOTIFY_LOG"\n'
             )
             osascript.chmod(0o755)
-            # Hold the lock so buffer-check's desk-lock wrapper exits 75.
-            directory = Path(root) / 'youtube-buffer.lock'
-            directory.mkdir()
-            (directory / 'owner.txt').write_text(f'pid={os.getpid()}\nuser=test\n')
+            # Test the daily supervisor's repeated-75 policy independently of credentials.
+            # Real competing holders and the actual npx/tsx chain are exercised above.
+            npx = bin_dir / 'npx'
+            npx.write_text('#!/bin/sh\nexit 75\n')
+            npx.chmod(0o755)
+            repo = Path(root) / 'repo'
+            (repo/'07_Content-Ops').mkdir(parents=True)
+            subprocess.run(['git','init','-q',str(repo)],check=True)
+            subprocess.run(['git','-C',str(repo),'checkout','-qb','offline-test'],check=True)
             env = {
                 **os.environ,
                 'DESK_LOCK_ROOT': root,
-                'ORBIT_REPO': str(REPO),
+                'ORBIT_REPO': str(repo),
                 'PATH': f'{bin_dir}:{os.environ.get("PATH", "")}',
                 'NOTIFY_LOG': str(notify_log),
             }

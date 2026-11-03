@@ -12,7 +12,7 @@ import { checkChannelsFile, getProfile, ownedByOtherProfile, profileFiles, refus
 import { createFileBufferStore } from "@/lib/publishing/buffer-store";
 import { checkMediaUrl } from "@/lib/publishing/media-host";
 import { createR2Host, r2Config } from "@/lib/publishing/media-host-r2";
-import { findMedia, loadRegistry, scanProjectRecords } from "@/lib/publishing/media-finder";
+import { findMedia, loadRegistry, scanProjectRecords, validateShortSource } from "@/lib/publishing/media-finder";
 import type { MirrorDeps } from "@/lib/publishing/buffer-runner";
 import {
   fetchYouTubeVideos,
@@ -34,6 +34,14 @@ export function loadChannelIds(file = CHANNELS_FILE, profile: BufferProfile = ge
   return checkChannelsFile(profile, JSON.parse(fs.readFileSync(file, "utf8")));
 }
 
+/** Registered uploads may be absent from the uploads playlist entirely. */
+export async function scheduledWithRegistry(token: string, now: Date, ids: string[], list = listScheduledUploads, byId = fetchYouTubeVideos) {
+  const merged = new Map((await list(token, now)).map(v => [v.id,v]));
+  for (const [id,video] of await byId(token, ids)) merged.set(id,video);
+  return [...merged.values()].filter(v => v.privacyStatus === "private" && v.publishAt && Date.parse(v.publishAt) > now.getTime())
+    .sort((a,b) => Date.parse(a.publishAt!) - Date.parse(b.publishAt!));
+}
+
 export function createMirrorDeps(opts: { channelIds?: ChannelIds; ledgerFile?: string; profile?: BufferProfile } = {}): MirrorDeps {
   const profile = opts.profile ?? getProfile("owb");
   const files = profileFiles(profile, REPO_ROOT);
@@ -47,7 +55,7 @@ export function createMirrorDeps(opts: { channelIds?: ChannelIds; ledgerFile?: s
   return {
     youtubeToken: profile.id === "owb" ? getYouTubeAccessToken : () => getChannelAccessToken(profile.youtubeTokenEnv, profile.youtubeChannelId),
     fetchVideos: fetchYouTubeVideos,
-    listScheduled: listScheduledUploads,
+    listScheduled: (token, now) => scheduledWithRegistry(token, now, Object.keys(loadRegistry(files.uploads).videos)),
     listRecentlyPublic: (token, now) => listRecentlyPublic(token, now),
     client: key ? createBufferApiClient(key) : null,
     store: createFileBufferStore(opts.ledgerFile ?? files.ledger),
@@ -55,6 +63,7 @@ export function createMirrorDeps(opts: { channelIds?: ChannelIds; ledgerFile?: s
     deleteMedia: r2Host?.deleteMedia,
     listMedia: r2Host?.listMedia,
     checkUrl: (url, want) => checkMediaUrl(url, want),
+    validateSource: (videoId, mediaPath, kind) => kind === "short" ? validateShortSource(loadRegistry(files.uploads).videos[videoId], mediaPath) : null,
     channelIds: opts.channelIds ?? loadChannelIds(files.channels, profile),
     now: () => new Date(),
     networks: profile.networks,
