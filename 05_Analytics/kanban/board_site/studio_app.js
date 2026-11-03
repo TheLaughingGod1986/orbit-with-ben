@@ -554,26 +554,27 @@
     const states=Number.isFinite(workflowAge)&&workflowAge>=0&&workflowAge<=QUIET_MIN ? workflow.states||{} : {};
     for(const active of workflow.active||[]) {
       const id=active.id||active.job;
-      if(!id || (states[id]||{}).state!=='running') continue;
+      if(!id || !['running','starting'].includes((states[id]||{}).state)) continue;
       const index=all.findIndex(j=>j.id===id), recorded=index>=0?all[index]:{};
-      const current={...recorded,id,title:recorded.title||active.title,by:active.worker||active.agent||recorded.by,progress:active.progress||recorded.progress};
+      const current={...recorded,id,title:recorded.title||active.title,by:active.worker||active.agent||recorded.by,progress:active.progress||recorded.progress,phase:active.phase||active.mode,dispatchStartedAt:active.startedAt,dispatchExpiresAt:active.expiresAt};
       if(index>=0) all[index]=current; else all.push(current);
     }
-    const jobState=j=>(states[j.id]||{}).state;
-    const running=all.filter(j=>jobState(j)?jobState(j)==='running':j.status==='claimed'),
+    const jobState=j=>{const value=(states[j.id]||{}).state;return value==='starting'&&!(Date.parse(j.dispatchExpiresAt||'')>now)?'stalled':value;};
+    const running=all.filter(j=>jobState(j)?['running','starting'].includes(jobState(j)):j.status==='claimed'),
       queued=all.filter(j=>jobState(j)?['queued','review'].includes(jobState(j)):j.status==='open'),
       held=all.filter(j=>jobState(j)?['waiting','stalled'].includes(jobState(j)):j.status==='blocked');
     const freshRunning=running.filter(j=>{
-      const at=Math.max(...[j.claimedAt,(j.progress||{}).at,(j.last||{}).at].map(d=>Date.parse(d||'')).filter(Number.isFinite));
+      const at=Math.max(...[j.claimedAt,j.dispatchStartedAt,(j.progress||{}).at,(j.last||{}).at].map(d=>Date.parse(d||'')).filter(Number.isFinite));
       return Number.isFinite(at) && now>=at && now-at<=QUIET_MIN*MIN;
     });
     const activeRunning=fresh?running:freshRunning, operationalFresh=fresh || freshRunning.length>0;
     const degraded=!fresh || (models.models||[]).some(m=>['red','amber'].includes(m.status));
     const agents=(models.models||[]).filter(m=>AGENTS[m.id] && m.id!=='macbook');
     const noCapacity=queued.length>0 && agents.length>0 && agents.every(m=>m.status==='red');
-    const status=!operationalFresh ? {text:'Attention needed',tone:'red'} : activeRunning.length ? {text:degraded?'Running · Limited':'Running',tone:degraded?'amber':'green'}
+    const startupUnconfirmed=all.some(j=>j.phase==='starting'&&jobState(j)==='stalled');
+    const status=!operationalFresh || startupUnconfirmed ? {text:'Attention needed',tone:'red'} : activeRunning.length ? {text:activeRunning.every(j=>j.phase==='starting')?'Starting':degraded?'Running · Limited':'Running',tone:degraded?'amber':'green'}
       : {text:noCapacity || held.length && !queued.length?'Attention needed':'Waiting',tone:noCapacity || held.length && !queued.length?'red':'amber'};
-    return {vs,ready,producing,jobs:all,week:scheduledThisWeek(vs,now),fresh:operationalFresh,running:activeRunning,queued,held,status};
+    return {vs,ready,producing,jobs:all,week:scheduledThisWeek(vs,now),fresh:operationalFresh,running:activeRunning,queued,held,status,startupUnconfirmed};
   }
   function featureVideo(b, now) {
     const s=overviewModel(b,now), focus=(((b.owb||{}).focus)||[]).map(x=>String(x).includes(':')?String(x):'OWB:'+x);
@@ -640,18 +641,18 @@
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
     // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
     const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} on hold</p>`;
-    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is on hold':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
+    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is on hold':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
     const videoContext=activityVideoContext(b,j);
-    const p=recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
+    const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
     // Reuse the existing task estimator only with a valid recorded start and valid inputs.
     const e=(!p || p.step<p.of) && Number.isFinite(start) && start<=now && (p && p.step>0 && p.step<p.of || Number.isFinite(+j.estMin) && +j.estMin>0)
       ? etaOf({...j,progress:p || {step:0,of:0}},now) : null;
-    const eta=e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
+    const eta=starting?'Worker launched; task claim pending':e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
     return `<section class="overview-activity"><h2>Studio activity</h2><a class="active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents">
-      <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is working</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
+      <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is ${starting?'starting':'working'}</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
       <p class="activity-video"><span>${videoContext.count>1?'Videos':videoContext.count?'Video':'Scope'}</span>${esc(videoContext.label)}</p>
       <p class="activity-action">${esc(clip(j.remaining_action||j.title||'Current action not recorded',160))}</p>
-      ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:'<p class="activity-progress-missing">Task progress not recorded</p>'}
+      ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:`<p class="activity-progress-missing">${starting?'Preparing to claim the selected job':'Task progress not recorded'}</p>`}
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
   }
   function overview(b, now) {

@@ -406,3 +406,14 @@ assert.equal(t.reviewQueueInfo(reviewBoard,reviewParent,NOW).miniBusy.id,'J1835'
 assert(t.activityVideoContext(contextBoard,{id:'specialist',kind:'review',ref:'parent'}).label.includes('no video linked'));
 contextBoard.owb.jobs.push({id:'J1834',repo:'hos',film:'008'});
 assert(t.activityVideoContext(contextBoard,{id:'J1844',kind:'review',ref:'J1834'}).label.includes('Franklin'));
+
+// Live execution lease reports startup without fabricating a claim, progress or task ETA.
+const startupBoard={models:{checkedAt:new Date(NOW).toISOString(),models:[]},tracker:{videos:[]},owb:{jobs:[{id:'Jlaunch',status:'open',title:'Prepare the selected review',progress:{step:3,of:3}}]},workflow:{at:new Date(NOW).toISOString(),states:{Jlaunch:{state:'starting'}},active:[{id:'Jlaunch',worker:'gemini',mode:'starting',phase:'starting',startedAt:new Date(NOW-6e4).toISOString(),expiresAt:new Date(NOW+10*6e4).toISOString()}]}};
+const startupHtml=t.activityCard(startupBoard,NOW), startupModel=t.overviewModel(startupBoard,NOW);
+assert(startupHtml.includes('Gemini is starting')&&startupHtml.includes('Worker launched; task claim pending'));
+assert(!startupHtml.includes('role="progressbar"')&&!startupHtml.includes('Task ETA: ~'));
+assert.equal(startupModel.queued.length,0);assert.equal(startupModel.running.length,1);assert.equal(startupModel.status.text,'Starting');
+const expiredStartup=t.overviewModel(startupBoard,NOW+11*6e4);assert.equal(expiredStartup.running.length,0);assert.equal(expiredStartup.status.text,'Attention needed');
+const onlyHeartbeat={...startupBoard,workflow:{},owb:{jobs:[{id:'Jlaunch',status:'open'}]},models:{checkedAt:new Date(NOW).toISOString(),runner:{state:'working',job:'Jlaunch'}}};
+assert.equal(t.overviewModel(onlyHeartbeat,NOW).running.length,0,'heartbeat alone never fabricates active work');
+console.log('Starting-worker visibility checks OK');

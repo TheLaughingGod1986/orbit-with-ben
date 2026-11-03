@@ -326,6 +326,17 @@ class QuickNoOp(unittest.TestCase):
             finally:
                 bp.STATE = old
 
+    def test_quick_key_changes_when_valid_execution_ends_without_a_queue_commit(self):
+        import chief_relay as relay
+        from unittest.mock import patch
+        remote = lambda repo, *refs: "unchanged-ref"
+        lease = {"job":"J1", "worker":"codex", "expiresAt":"2026-11-03T16:00:00Z"}
+        with patch.object(relay, "current_execution", return_value=lease):
+            launched = bp.quick_key(remote)
+        with patch.object(relay, "current_execution", return_value=None):
+            stopped = bp.quick_key(remote)
+        self.assertNotEqual(launched, stopped)
+
     def test_launchd_runs_every_minute(self):
         plist = (HERE / "mini" / "com.owb.board-publish.plist").read_text()
         self.assertIn("<key>StartInterval</key><integer>60</integer>", plist)
