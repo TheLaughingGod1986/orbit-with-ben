@@ -161341,10 +161341,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T18:54Z",
+      "eta": "2026-11-03T20:54Z",
       "created_by": "codex",
       "created_at": "2026-11-03T16:56Z",
       "result": "",
@@ -161353,12 +161353,25 @@
           "at": "2026-11-03T16:56Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T18:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify Ben’s v03 notes and assign linked correction and QA jobs with an owner",
       "due": "2026-11-03T17:56:19Z",
       "kind": "chief",
-      "review_request": "HOS-008:v03:2026-11-03T16:08:33.439Z"
+      "review_request": "HOS-008:v03:2026-11-03T16:08:33.439Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T18:54Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1869",
