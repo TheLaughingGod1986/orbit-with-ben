@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1847 | mini | open (after J1846) | – | – | for codex · chart · `gpt-6-astra` · AR2 ISS: bounded faithful NASA IGOAL model opening preview | J1846 |
 | J1848 | mini | open (after J1847) | – | – | for gemini · review · `gemini-argon` · AR2 NASA model: Gemini native moving and phone review | J1846 |
 | J1849 | any | open (after J1848) | – | – | chief · AR2 NASA model: Chief exact-input acceptance or bounded fallback | J1846 |
-| J1854 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
+| J1854 | any | claimed | codex | 2026-11-03T17:32Z | chief · Chief: verify condition for J1356 |  |
 | J1855 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1856 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
 | J1857 | mini | open | – | – | for gemini · review · `gemini-argon` · Monthly channel audit: verify 1 Nov run, review October and repair calendar handoff |  |
