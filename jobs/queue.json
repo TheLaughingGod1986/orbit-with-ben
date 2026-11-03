@@ -1,5 +1,5 @@
 {
-  "next_id": 1882,
+  "next_id": 1883,
   "jobs": [
     {
       "id": "J0001",
@@ -158307,6 +158307,11 @@
           "at": "2026-11-03T12:53Z",
           "by": "codex",
           "what": "blocked: Evidence publication blocked by automatic approval review: public origin rejected for private-video operational readbacks. Local commit 765b4fa9c in /private/tmp/J1825-wt; captions serving. End screen/cards require scoped finish decision; upload remains incomplete."
+        },
+        {
+          "at": "2026-11-03T19:08Z",
+          "by": "relay",
+          "what": "condition verification queued: J1882"
         }
       ],
       "remaining_action": "Review local finish evidence and resolve publication approval for evidence",
@@ -158334,7 +158339,8 @@
       "hold": {
         "type": "input",
         "condition": "Evidence publication blocked by automatic approval review: public origin rejected for private-video operational readbacks. Local commit 765b4fa9c in /private/tmp/J1825-wt; captions serving. End screen/cards require scoped finish decision; upload remains incomplete.",
-        "check_at": "2026-11-03T18:53:26+00:00"
+        "check_at": "2026-11-03T20:08:38+00:00",
+        "recheck_task": "J1882"
       }
     },
     {
@@ -162008,6 +162014,37 @@
       "remaining_action": "Review J1880 recipe, scope bounded corrections and queue capable media QA",
       "due": "2026-11-04T14:00:00Z",
       "kind": "chief"
+    },
+    {
+      "id": "J1882",
+      "title": "Chief: verify condition for J1825",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1825: Evidence publication blocked by automatic approval review: public origin rejected for private-video operational readbacks. Local commit 765b4fa9c in /private/tmp/J1825-wt; captions serving. End screen/cards require scoped finish decision; upload remains incomplete.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1825 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T19:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T19:08Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Review local finish evidence and resolve publication approval for evidence",
+      "kind": "chief",
+      "recheck_of": "J1825",
+      "due": "2026-11-03T20:08:38+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
