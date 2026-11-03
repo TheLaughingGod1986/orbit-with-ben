@@ -1,5 +1,5 @@
 {
-  "next_id": 1752,
+  "next_id": 1753,
   "jobs": [
     {
       "id": "J0001",
@@ -153930,6 +153930,34 @@
       "recheck_of": "J1471",
       "due": "2026-11-03T10:57:27+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1752",
+      "title": "031 Voice: Chief final verification of locked take after J1295",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief final review of OWB 031 voice lock magnetic_field_flip_vo_v02a. Ben asks why approvals remain idle (3 Nov 2026). Assembly J1295 is done but stages.vo.state remains review, with no reviewer/follow-up. Read Chief ruling https://github.com/TheLaughingGod1986/orbit-with-ben/issues/264#issuecomment-6536440194, assembly result and latest production-status.md/status.json. On the Mini independently verify the actual locked output against the ruling: full WAV/MP3 SHA256, timing/levels and tail/null checks; perform required local listening, recording what was actually heard. Do not claim listening from ASR or filenames. Record evidence and explicit PASS or specific FIX. On PASS update only this VO stage with actual locked version, reviewer, approval reference and completion evidence; do not approve picture or whole film. On FIX record concrete unfinished action, responsible reviewer/worker and follow-up and queue any required correction. Preserve all old takes, source data, media gates, priorities and film approvals. No paid generation, upload, scheduling or visibility changes. If terminal lacks Mini/media access, keep review visibly awaiting a Mini-capable Chief, never mark done or approved from metadata alone. Audit sibling missing review handoffs after these two, without bulk approvals.",
+      "ref": "6536440194",
+      "film": "031",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T10:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T10:14Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief checks the locked recording and records PASS or a specific fix",
+      "kind": "chief"
     }
   ],
   "focus": [],
