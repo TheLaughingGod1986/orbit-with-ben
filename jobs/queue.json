@@ -164226,10 +164226,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T22:13Z",
+      "eta": "2026-11-04T00:13Z",
       "created_by": "relay",
       "created_at": "2026-11-03T22:12Z",
       "result": "",
@@ -164238,13 +164238,26 @@
           "at": "2026-11-03T22:12Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T22:13Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit approval for public evidence-branch payload, then open required PR and complete scope job",
       "kind": "chief",
       "recheck_of": "J1846",
       "due": "2026-11-03T14:30:08+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T22:13Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
