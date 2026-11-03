@@ -153915,13 +153915,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T10:15Z",
-      "eta": "2026-11-03T12:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T09:57Z",
-      "result": "",
+      "result": "PR380 remains OPEN at d0b04b5e0 without comments or reviews. Fresh SHA256 matches all three J1468 masters and Crew-2 source. J1471 remains blocked on approved ISS opening input; retry retained at 2026-11-03T10:57:27Z. Existing failed gates and J1356/Ben/date/credit/publishing holds preserved.",
       "history": [
         {
           "at": "2026-11-03T09:57Z",
@@ -153952,6 +153952,11 @@
           "at": "2026-11-03T10:17Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback confirms blocked input, last_recheck J1751, checked_by codex and retained 10:57:27 UTC retry"
+        },
+        {
+          "at": "2026-11-03T10:17Z",
+          "by": "codex",
+          "what": "done: PR380 remains OPEN at d0b04b5e0 without comments or reviews. Fresh SHA256 matches all three J1468 masters and Crew-2 source. J1471 remains blocked on approved ISS opening input; retry retained at 2026-11-03T10:57:27Z. Existing failed gates and J1356/Ben/date/credit/publishing holds preserved."
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
@@ -153968,7 +153973,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     },
     {
       "id": "J1752",
