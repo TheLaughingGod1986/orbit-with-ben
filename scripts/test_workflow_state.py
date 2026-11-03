@@ -174,3 +174,89 @@ class StartupVisibility(unittest.TestCase):
         self.assertEqual((snap['counts']['starting'],snap['counts']['running']),(0,1))
         j['status']='done'
         self.assertEqual(w.snapshot({'jobs':[j]},NOW,'codex',{'codex'},choose,execution=self.lease())['active'],[])
+
+
+class ImmediateUserDispatch(unittest.TestCase):
+    def fixture(self):
+        held=job('J1859',status_override='x');held.pop('status_override')
+        held.update(status='claimed',by='gemini',eta='2026-10-26T23:00Z',kind='review',backlog='monthly-improvement-owb',progress={'step':2,'of':4})
+        request=job('J1870',urgent=3,due=NOW.isoformat(),due_kind='user-immediate-claim')
+        older=job('Jcheck',kind='chief',due='2026-10-25T09:00Z')
+        return {'jobs':[held,request,older]}
+    def pick(self,data,**kwargs):
+        return w.select_dispatch(data,NOW,'codex',{'codex','gemini'},choose,**kwargs)
+    def test_request_uses_free_worker_at_boundary_without_changing_claims(self):
+        data=self.fixture();before=copy.deepcopy(data);p=self.pick(data)
+        self.assertEqual((p['job']['id'],p['worker']),('J1870','codex'))
+        self.assertEqual(data,before)
+        # The actual selected worker's normal exact-ID claim must agree with dispatch.
+        self.assertEqual(jobs.choose_next(data,'codex',w.MINI,NOW,'J1870')['id'],'J1870')
+    def test_valid_execution_is_never_preempted(self):
+        data=self.fixture();e={'job':'J1859','worker':'gemini','expiresAt':(NOW+dt.timedelta(minutes=10)).isoformat()}
+        self.assertEqual(self.pick(data,execution=e)['job']['id'],'J1859')
+        e['expiresAt']=(NOW-dt.timedelta(seconds=1)).isoformat()
+        self.assertEqual(self.pick(data,execution=e)['job']['id'],'J1870')
+    def test_ordinary_urgency_and_future_requests_do_not_override_resume(self):
+        for changes in [{'due_kind':'production'}, {'urgent':False}, {'due':(NOW+dt.timedelta(hours=1)).isoformat()}]:
+            data=self.fixture();data['jobs'][1].update(changes)
+            self.assertEqual(self.pick(data)['job']['id'],'J1859')
+    def test_holds_dependencies_named_workers_and_exclusions_remain_enforced(self):
+        for changes in [{'hold':{'condition':'Needs approval'}}, {'after':'missing'}, {'after':'J1859'}, {'needs':'ben'}, {'for':'gemini'}]:
+            data=self.fixture();data['jobs'][1].update(changes)
+            self.assertEqual(self.pick(data)['job']['id'],'J1859')
+        self.assertEqual(self.pick(self.fixture(),exclude=['J1870'])['job']['id'],'J1859')
+    def test_no_worker_gets_a_second_claim_or_an_ineligible_routing_fallback(self):
+        data=self.fixture();data['jobs'].append({**job('Jheld'),'status':'claimed','by':'codex','eta':'2026-10-26T23:00Z'})
+        self.assertEqual(self.pick(data)['job']['id'],'J1859')
+        data=self.fixture()
+        p=w.select_dispatch(data,NOW,'codex',{'codex','gemini'},lambda j,up:'gemini')
+        self.assertEqual(p['job']['id'],'J1859')
+    def test_chief_requests_use_only_elected_chief(self):
+        data=self.fixture();data['jobs'][1]['kind']='chief'
+        self.assertEqual(self.pick(data)['worker'],'codex')
+        data['jobs'][0]['by']='codex'
+        self.assertNotEqual(self.pick(data)['job']['id'],'J1870')
+
+    def test_media_or_nonmonthly_claim_cannot_be_yielded(self):
+        for patch in [{'film':'027','stage':'edit'},{'kind':'assembly'},{'backlog':'ordinary-review'}]:
+            data=self.fixture();data['jobs'][0].update(patch)
+            self.assertEqual(self.pick(data)['job']['id'],'J1859')
+    def test_safe_yield_preserves_steps_and_next_exact_claim_is_real(self):
+        data=self.fixture();pick=self.pick(data)
+        result=jobs.yield_monthly_for_request(data,'J1870',pick['yield_monthly'],NOW)
+        self.assertEqual(result,['J1859'])
+        self.assertEqual(data['jobs'][0]['progress'],{'step':2,'of':4})
+        self.assertEqual(data['jobs'][0]['status'],'open')
+        self.assertEqual(data['jobs'][0]['history'][-1]['by'],'relay')
+        claimed=jobs.do_next(data,'codex',w.MINI,NOW,job_id='J1870')
+        self.assertEqual(claimed['id'],'J1870')
+        snap=w.snapshot(data,NOW,'codex',{'codex','gemini'},choose)
+        self.assertEqual([x['id'] for x in snap['active']],['J1870'],'yielded report is queued, never a fake second running job')
+    def test_yield_races_are_atomic_and_preserve_holds(self):
+        for patch in [{'hold':{'condition':'wait for approval'}},{'status':'claimed','by':'gemini'},{'after':'missing'}]:
+            data=self.fixture();pick=self.pick(data);data['jobs'][1].update(patch);before=copy.deepcopy(data)
+            with self.assertRaises(ValueError):jobs.yield_monthly_for_request(data,'J1870',pick['yield_monthly'],NOW)
+            self.assertEqual(data,before)
+        data=self.fixture();pick=self.pick(data);data['jobs'][0]['by']='codex';before=copy.deepcopy(data)
+        with self.assertRaises(ValueError):jobs.yield_monthly_for_request(data,'J1870',pick['yield_monthly'],NOW)
+        self.assertEqual(data,before)
+
+    def test_relay_wont_touch_queue_while_execution_is_live(self):
+        import chief_relay as relay
+        from unittest.mock import patch
+        data=self.fixture();pick=self.pick(data)
+        with patch.object(relay,'current_execution',return_value={'job':'J1859'}), patch.object(jobs,'with_git') as transaction, patch.object(relay,'log'):
+            self.assertFalse(relay.yield_monthly_for_dispatch(pick));transaction.assert_not_called()
+    def test_relay_commits_yield_before_allowing_dispatch_and_stops_on_race(self):
+        import chief_relay as relay
+        from unittest.mock import patch
+        data=self.fixture();pick=self.pick(data)
+        def transact(apply,message):
+            out,error,touched=apply(data);return out,error
+        with patch.object(relay,'current_execution',return_value=None), patch.object(relay,'now',return_value=NOW), patch.object(relay,'log'), patch.object(jobs,'with_git',side_effect=transact):
+            self.assertTrue(relay.yield_monthly_for_dispatch(pick))
+            self.assertEqual(data['jobs'][0]['status'],'open')
+        data=self.fixture();pick=self.pick(data);data['jobs'][1]['hold']={'condition':'Needs approval'}
+        with patch.object(relay,'current_execution',return_value=None), patch.object(relay,'now',return_value=NOW), patch.object(relay,'log'), patch.object(jobs,'with_git',side_effect=transact):
+            self.assertFalse(relay.yield_monthly_for_dispatch(pick))
+            self.assertEqual(data['jobs'][0]['status'],'claimed')

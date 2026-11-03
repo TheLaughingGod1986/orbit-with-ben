@@ -1286,6 +1286,28 @@ def offload_scratch(at: dt.datetime) -> None:
         notify(f"Chief relay: {line}")
 
 
+def yield_monthly_for_dispatch(selection):
+    """Called under the relay run lock, after the previous run_cli has returned."""
+    if not selection or not selection.get("yield_monthly"):
+        return True
+    if current_execution(now()):
+        log("immediate request waits: an execution lease is still active")
+        return False
+    import jobs
+    def apply(current):
+        try:
+            released = jobs.yield_monthly_for_request(current, selection["job"]["id"], selection["yield_monthly"], now())
+            return released, None, []
+        except ValueError as error:
+            return None, str(error), []
+    released, error = jobs.with_git(apply, "jobs: yield monthly report at safe boundary for user claim request")
+    if error:
+        log("immediate request handoff requires replanning: " + error)
+        return False
+    log("immediate request " + selection["job"]["id"] + ": preserved and queued " + ", ".join(released or []))
+    return True
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
     fetch_claude_beat(at)
@@ -1363,6 +1385,8 @@ def run_locked(at: dt.datetime) -> int:
         data = read_json(OWB / "jobs" / "queue.json") or {}
         selection = workflow.select_dispatch(data, at, leader, up, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
                                              review_ids={j["id"] for j in chief_reviews}, execution=current_execution(at))
+        if not yield_monthly_for_dispatch(selection):
+            return 0
         review_due = bool(selection and selection["mode"] == "review")
         if selection:
             who = selection["worker"]
