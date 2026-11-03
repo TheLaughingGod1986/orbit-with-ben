@@ -148938,19 +148938,24 @@
           "at": "2026-11-03T00:44Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: check scope and approvals; verify PR and export evidence; record hold decision and close verification."
+        },
+        {
+          "at": "2026-11-03T00:44Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Scope and approval history checked; PR380 remains OPEN at d0b04b5e0 with no comments or reviews. NAS offload found no eligible scratch."
         }
       ],
-      "remaining_action": "Verify corrected AR exports and readiness evidence",
+      "remaining_action": "Verify final export hashes and remaining gate evidence",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T01:30:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T00:44Z",
         "by": "codex",
-        "note": "Plan: check scope and approvals; verify PR and export evidence; record hold decision and close verification."
+        "note": "Scope and approval history checked; PR380 remains OPEN at d0b04b5e0 with no comments or reviews. NAS offload found no el"
       },
       "taskKeys": [
         "OWB:030"
