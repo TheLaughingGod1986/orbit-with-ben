@@ -152369,13 +152369,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T07:41Z",
-      "eta": "2026-11-03T09:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T07:34Z",
-      "result": "",
+      "result": "Verified J1734/J1100, evidence 3e26b379b and unchanged PR333. Three audition hashes match; no newer local listening clearance. J0936 remains blocked with recorded retry 2026-11-03T08:34:08Z. Historical progress, accepted sources, J1032 PASS, completed swaps, deadlines and fallbacks preserved. No media acceptance, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T07:34Z",
@@ -152406,6 +152406,11 @@
           "at": "2026-11-03T07:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J0936 hold and recorded 3 Nov 08:34:08 UTC retry; existing progress, approvals, deadlines and fallbacks preserved."
+        },
+        {
+          "at": "2026-11-03T07:43Z",
+          "by": "codex",
+          "what": "done: Verified J1734/J1100, evidence 3e26b379b and unchanged PR333. Three audition hashes match; no newer local listening clearance. J0936 remains blocked with recorded retry 2026-11-03T08:34:08Z. Historical progress, accepted sources, J1032 PASS, completed swaps, deadlines and fallbacks preserved. No media acceptance, spend or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits audio clearance, repairs and approvals",
@@ -152424,7 +152429,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1733",
