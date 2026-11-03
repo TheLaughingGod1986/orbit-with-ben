@@ -151610,19 +151610,24 @@
           "at": "2026-11-03T05:45Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original approval and repair history. PR380 remains OPEN at d0b04b5e0 with no comments or reviews; J1471 still lacks approved ISS input."
+        },
+        {
+          "at": "2026-11-03T05:45Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 final exports; no additional final exports. Saved opening FAILs: AR1 6.00s first cut, AR2 diff 0.25, AR3 diff 1.41. No new gates or audiovisual audition claimed."
         }
       ],
-      "remaining_action": "Verify export hashes and saved opening failures",
+      "remaining_action": "Record unmet readiness condition and next check",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T06:32:54+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T05:45Z",
         "by": "codex",
-        "note": "Read original approval and repair history. PR380 remains OPEN at d0b04b5e0 with no comments or reviews; J1471 still lack"
+        "note": "Fresh SHA256 matches all three J1468 final exports; no additional final exports. Saved opening FAILs: AR1 6.00s first cu"
       },
       "taskKeys": [
         "OWB:030"
