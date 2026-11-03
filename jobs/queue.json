@@ -159815,10 +159815,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T15:19Z",
+      "eta": "2026-11-03T17:19Z",
       "created_by": "relay",
       "created_at": "2026-11-03T15:01Z",
       "result": "",
@@ -159827,13 +159827,26 @@
           "at": "2026-11-03T15:01Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T15:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Verify T020 completion and next London calendar day before arming approved title-only test",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-03T16:01:48+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T15:19Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1851",
