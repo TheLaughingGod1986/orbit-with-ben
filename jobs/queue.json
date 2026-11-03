@@ -158283,13 +158283,13 @@
       "stage": "upload",
       "after": "J1767",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-03T12:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T12:44Z",
-      "result": "Evidence publication blocked by automatic approval review: public origin rejected for private-video operational readbacks. Local commit 765b4fa9c in /private/tmp/J1825-wt; captions serving. End screen/cards require scoped finish decision; upload remains incomplete.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T12:44Z",
@@ -158335,6 +158335,11 @@
           "at": "2026-11-03T19:08Z",
           "by": "relay",
           "what": "condition verification queued: J1882"
+        },
+        {
+          "at": "2026-11-03T19:56Z",
+          "by": "gemini",
+          "what": "reopened: Evidence published (0086351449/ee5291fb9c); en-GB captions serving verified. Elected-Chief APPROVED end screen (rVqgtkBV3jc left + Subscribe right, 07:54.533-08:14.533 / 7:54:15-8:14:16) and single video card (rVqgtkBV3jc at 05:55.220 / 05:55, default title, no teaser) in jobs/reviews/J1882/DECISION.md; install in Studio CDP 9223 and read back."
         }
       ],
       "remaining_action": "Review local finish evidence and resolve publication approval for evidence",
@@ -158349,22 +158354,9 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-03T12:53Z",
-        "by": "codex",
-        "note": "Evidence locally committed as 765b4fa9c; automatic approval review rejected public-origin evidence push"
-      },
       "taskKeys": [
         "OWB:026"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Evidence publication blocked by automatic approval review: public origin rejected for private-video operational readbacks. Local commit 765b4fa9c in /private/tmp/J1825-wt; captions serving. End screen/cards require scoped finish decision; upload remains incomplete.",
-        "check_at": "2026-11-03T20:08:38+00:00",
-        "recheck_task": "J1882"
-      }
+      ]
     },
     {
       "id": "J1826",
