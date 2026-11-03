@@ -156801,9 +156801,14 @@
           "at": "2026-11-03T22:04Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T22:05Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Chief resolves 040 script handoff and records the next owner/action",
+      "remaining_action": "Trace script approval evidence, restore the missing review handoff, and verify board state",
       "kind": "chief",
       "handoff": {
         "film": "040",
@@ -156814,11 +156819,12 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T22:04Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-11-03T22:05Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:040"
+      ]
     },
     {
       "id": "J1782",
