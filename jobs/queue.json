@@ -159148,19 +159148,24 @@
           "at": "2026-11-03T15:04Z",
           "by": "codex",
           "what": "step 2 of 3 done: All three final-export hashes match J1468; saved opening FAILs remain. J1844 FIX closed administratively; J1846 scoped J1847-J1849 replacement handoff, not input approval."
+        },
+        {
+          "at": "2026-11-03T15:04Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1356 hold updated with PR414 FIX and J1847-J1849 replacement chain; retained 15:10:42Z check. No gate waiver, playback claim, media edit or publishing action."
         }
       ],
-      "remaining_action": "Record unmet J1356 condition and close verification",
+      "remaining_action": "Close completed J1839 verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-03T15:04Z",
         "by": "codex",
-        "note": "All three final-export hashes match J1468; saved opening FAILs remain. J1844 FIX closed administratively; J1846 scoped J"
+        "note": "J1356 hold updated with PR414 FIX and J1847-J1849 replacement chain; retained 15:10:42Z check. No gate waiver, playback "
       },
       "taskKeys": [
         "OWB:030"
