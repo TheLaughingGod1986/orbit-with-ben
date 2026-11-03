@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1906 | mini | open (after J1781) | – | – | 040 script · chief · 040 Wrong Kind of Aliens: restore topic and editorial decision before facts and script lock | J1781 |
 | J1907 | mini | open (after J1782) | – | – | 041 script · chief · 041 Io: restore topic and editorial decision before facts and script lock | J1782 |
 | J1909 | mini | open (after J1783) | – | – | 042 script · chief · 042 Red Giant: restore topic and editorial decision before facts and script lock | J1783 |
-| J1912 | mini | open | – | – | chief · Chief: verify private local ISS preview handoff while public push stays rejected | J1847 |
+| J1912 | mini | claimed | gemini | 2026-11-03T23:18Z | chief · Chief: verify private local ISS preview handoff while public push stays rejected | J1847 |
 | J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
 
 Recently finished:

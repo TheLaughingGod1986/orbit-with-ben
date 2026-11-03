@@ -164721,10 +164721,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-03T23:03Z",
+      "eta": "2026-11-03T23:18Z",
       "created_by": "codex",
       "created_at": "2026-11-03T22:51Z",
       "result": "",
@@ -164733,6 +164733,11 @@
           "at": "2026-11-03T22:51Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T23:03Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Inspect original local-handoff requirements and completed delivery; preserve rejected public push and unblock only permitted private review",
@@ -164740,7 +164745,15 @@
       "handoff_scope_key": "J1847:private-local-review",
       "urgent": 1,
       "due_kind": "user-immediate-claim",
-      "due": "2026-11-03T22:51:00+00:00"
+      "due": "2026-11-03T22:51:00+00:00",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T23:03Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1913",
