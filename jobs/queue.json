@@ -158303,19 +158303,24 @@
           "at": "2026-11-03T13:25Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 final exports; no additional final exports. Saved opening gates remain FAIL; PR380 and missing ISS input unchanged."
+        },
+        {
+          "at": "2026-11-03T13:25Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1356 remains blocked; condition updated and recorded 14:10:26Z retry retained. No new gate run, audition or publishing approval; all holds persist."
         }
       ],
-      "remaining_action": "Record J1356 hold and finish verification report",
+      "remaining_action": "Close completed J1831 verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T14:10:26+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-03T13:25Z",
         "by": "codex",
-        "note": "Fresh SHA256 matches all three J1468 final exports; no additional final exports. Saved opening gates remain FAIL; PR380 "
+        "note": "J1356 remains blocked; condition updated and recorded 14:10:26Z retry retained. No new gate run, audition or publishing "
       },
       "taskKeys": [
         "OWB:030"
