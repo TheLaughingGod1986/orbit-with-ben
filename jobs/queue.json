@@ -1,5 +1,5 @@
 {
-  "next_id": 1872,
+  "next_id": 1873,
   "jobs": [
     {
       "id": "J0001",
@@ -155066,6 +155066,11 @@
           "at": "2026-11-03T11:37Z",
           "by": "codex",
           "what": "blocked: Automatic approval review rejected publishing the prepared correction to the public origin, twice (second after verified user-owned remote and inspected non-secret scope). Needs explicit public-push approval. Local commit 3ff239494 on codex/j1760-picture-record in /private/tmp/j1760-wt; provenance verified, STATUS/diff checks pass. Next: approve push, PR/checks/merge, then verify stage. Stage claim released to original blocked state; no media approval or publishing change."
+        },
+        {
+          "at": "2026-11-03T17:55Z",
+          "by": "relay",
+          "what": "condition verification queued: J1872"
         }
       ],
       "remaining_action": "Publish and merge the prepared record correction after approval review is cleared",
@@ -155090,7 +155095,8 @@
       "hold": {
         "type": "input",
         "condition": "Automatic approval review rejected publishing the prepared correction to the public origin, twice (second after verified user-owned remote and inspected non-secret scope). Needs explicit public-push approval. Local commit 3ff239494 on codex/j1760-picture-record in /private/tmp/j1760-wt; provenance verified, STATUS/diff checks pass. Next: approve push, PR/checks/merge, then verify stage. Stage claim released to original blocked state; no media approval or publishing change.",
-        "check_at": "2026-11-03T17:37:51+00:00"
+        "check_at": "2026-11-03T18:55:55+00:00",
+        "recheck_task": "J1872"
       }
     },
     {
@@ -161118,6 +161124,37 @@
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1872",
+      "title": "Chief: verify condition for J1760",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1760: Automatic approval review rejected publishing the prepared correction to the public origin, twice (second after verified user-owned remote and inspected non-secret scope). Needs explicit public-push approval. Local commit 3ff239494 on codex/j1760-picture-record in /private/tmp/j1760-wt; provenance verified, STATUS/diff checks pass. Next: approve push, PR/checks/merge, then verify stage. Stage claim released to original blocked state; no media approval or publishing change.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1760 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T17:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T17:55Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Publish and merge the prepared record correction after approval review is cleared",
+      "kind": "chief",
+      "recheck_of": "J1760",
+      "due": "2026-11-03T18:55:55+00:00",
       "due_kind": "condition-verification"
     }
   ],
