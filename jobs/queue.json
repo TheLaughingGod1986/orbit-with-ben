@@ -1,5 +1,5 @@
 {
-  "next_id": 1883,
+  "next_id": 1884,
   "jobs": [
     {
       "id": "J0001",
@@ -161744,9 +161744,14 @@
           "at": "2026-11-03T18:54Z",
           "by": "codex",
           "what": "Elected-Chief reviewed immutable J1870 audit and original-package/source evidence; approved exact future R2 hosting + missing Buffer creates only for Js6EQJ8qDi8/PFj6172YU4Q. Linked execution/source jobs J1878, J1879. Original read-only audit does not grant these writes; this narrow decision does. No recovery completion claimed."
+        },
+        {
+          "at": "2026-11-03T19:15Z",
+          "by": "codex",
+          "what": "PR422 merged a65e83e53466bf33823e85cdba09d474f1b7a2b5; validate installed Mini source read-only. J1878 rejected by automatic approval review pending direct user approval; no hosting/posts executed. J1879 source recovery separate."
         }
       ],
-      "remaining_action": "Scope approved: J1878 restores two ready uploads; J1879 owns held source recovery; focused code repair under implementation",
+      "remaining_action": "PR422 merged a65e83e53466bf33823e85cdba09d474f1b7a2b5; validate installed Mini source read-only. J1878 rejected by automatic approval review pending direct user approval; no hosting/posts executed. J1879 source recovery separate.",
       "due": "2026-11-04T07:00:00Z",
       "kind": "chief",
       "approved_scope": {
@@ -162106,6 +162111,38 @@
       "recheck_of": "J1825",
       "due": "2026-11-03T20:08:38+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1883",
+      "title": "Buffer: validate merged repair on authenticated Mini without writes",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "PR422 merged a65e83e53466bf33823e85cdba09d474f1b7a2b5. Read-only validation: clean Mini source/worktree, normal pull if clean; confirm installed buffer-check.sh SHA contains direct CLI path and no outer nested lock. Verify LaunchAgent path to actual installed source. From 07_Content-Ops run direct npx tsx --env-file=.env scripts/buffer-mirror.ts check --dry-run and same with --channel hos. NEVER run buffer-check.sh --dry-run: wrapper ignores args and would write. Do not run write-mode check or restart daily job manually. Record installed SHA, exit codes, redacted dry plans, genuine other-lock refusal if applicable. Expected source holds for Mars night and Titan must remain explicit; no wrong-source plan/host/create. Keep secrets local. J1878 automatic approval review REJECTED R2 uploads and Buffer creates pending direct trusted user approval: this validation does not authorize or retry them. Preserve all posts/dates/media and no new scope. Commit concise validation report/PR; link J1874 and J1878. No need to repeat J1870 audit.",
+      "ref": "J1874",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T19:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T19:15Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Confirm installed merge and direct authenticated dry runs for both profiles; no hosting or posts",
+      "kind": "assembly",
+      "recovery_scope_key": "J1874:validate-code",
+      "urgent": 1,
+      "due_kind": "user-immediate-claim",
+      "due": "2026-11-03T19:15:55+00:00"
     }
   ],
   "focus": [],
