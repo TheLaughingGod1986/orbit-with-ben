@@ -150351,19 +150351,24 @@
           "at": "2026-11-03T02:50Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 final exports (0be76279..., 253f53fa..., 0c6c0ddf...); no newer final exports exist; saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41"
+        },
+        {
+          "at": "2026-11-03T02:51Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded unchanged hold on J1356 (recheck J1708, next check 2026-11-03T03:31:27Z)"
         }
       ],
-      "remaining_action": "Record unchanged J1356 hold via jobs.py wait and close J1708",
+      "remaining_action": "Close verification J1708",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T03:31:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T02:50Z",
+        "at": "2026-11-03T02:51Z",
         "by": "gemini",
-        "note": "Fresh SHA256 matches all three J1468 final exports (0be76279..., 253f53fa..., 0c6c0ddf...); no newer final exports exist"
+        "note": "Recorded unchanged hold on J1356 (recheck J1708, next check 2026-11-03T03:31:27Z)"
       },
       "taskKeys": [
         "OWB:030"
