@@ -97,8 +97,14 @@
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
 
+  function pendingChanges(v) {
+    if (isLive(v)) return false;
+    const local=sent[v.checkId], c=local && local.key===v.key ? local : v.type==='long' ? v.check : null;
+    return !!c && c.verdict==='change' && c.handled!==true && !!c.version && c.version===v.version;
+  }
   function stage(v) {
     if (isLive(v)) return "Published";
+    if (pendingChanges(v)) return "Fixing your changes";
     if ((v.youtube || {}).state === "scheduled") return "Scheduled";
     if (v.lane === "ready") return v.readyFor === "Ben" ? "Ready for you" : `Waiting on ${v.readyFor || "a check"}`;
     if (v.lane === "changes") return "Fixing your changes";
@@ -110,7 +116,7 @@
     return v.lane === "upcoming" ? "Planned" : "In progress";
   }
 
-  const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId]);
+  const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v));
   // /board shows Approve / Changes for a long, or a Short with an ask (tracker_app.js showActions); the same here.
   const canTick = v => v.type === "long" || !!v.ask;
 
@@ -227,6 +233,7 @@
 
   // Milestone progress is independent of job step progress. Older board data stays readable.
   function uatOutlook(v, now) {
+    if (pendingChanges(v)) return {label:"Changes requested",detail:"Your notes need correction and fresh QA before another review",tone:"amber"};
     if (v.lane === "ready" && v.readyFor === "Ben") return {label: "Ready for UAT", detail: "Your review can start now", tone: "green"};
     if (["approved", "done"].includes(v.lane)) return {label: "UAT handoff passed", detail: "Follow-up work is shown below", tone: "green"};
     const p = v.production, e = p && p.eta;
@@ -384,6 +391,7 @@
   }
   function forecastView(v, now) {
     const p = v.production || {}, e = p.eta || {}, o = uatOutlook(v, now);
+    if (pendingChanges(v)) return {value:'Pending',reason:'Your requested changes need correction and fresh QA',confidence:'Unavailable',credible:false};
     if (v.lane === 'ready' && v.readyFor === 'Ben') return {value:'Ready now',reason:'Your review can start',confidence:'Ready',credible:false};
     if (['approved','done'].includes(v.lane) || isLive(v)) return {value:'Handoff complete',reason:'Production countdown ended',confidence:'Complete',credible:false};
     if (e.state === 'estimated' && o.tone === 'blue') {
@@ -400,6 +408,9 @@
   }
   function milestoneProgress(v) {
     if (isLive(v)) return '<span class="meta">Published</span>';
+    if (forBen([v]).length) return '<span class="meta">Finished cut awaiting your review</span>';
+    if (v.lane==='changes'||pendingChanges(v)) return '<span class="meta">Changes requested · revision progress not recorded</span>';
+    if (['approved','done'].includes(v.lane)||(v.youtube||{}).state==='scheduled') return '<span class="meta">UAT handoff complete</span>';
     const p = progressStats(v);
     return `<div class="milestone-mini" aria-label="${p.percent}% milestone completion; ${p.done} of 9 complete"><div class="track"><i style="width:${p.percent}%"></i></div><span>${p.percent}% <span class="muted">· ${p.done} of 9 milestones complete</span></span></div>`;
   }
@@ -472,9 +483,16 @@
       ${stages.length>1?`<details class="other-stages" data-disclosure="${esc(v.key)}-other"><summary>${stages.length-1} other active stage${stages.length>2?'s':''}</summary>${stages.slice(1).map(x=>`<a class="other-stage" href="#stage-${esc(x.id)}">${esc(x.label)} · ${esc(stageView(x).text)}</a>`).join('')}</details>`:''}</section>`;
   }
   function productionDetail(v, now) {
-    if(isLive(v)) return section('Published on YouTube',null,
-      '<p class="muted">This video is published. Production progress and UAT forecasts no longer apply.</p>'
-      + `<details class="technical" data-disclosure="${esc(v.key)}-history"><summary>Recorded production history</summary><p class="muted">Unconfirmed milestones mean historical records are missing, not that the published video is unfinished.</p>${milestones(v).map(m=>milestoneCard(v,m,null)).join('')}</details>`);
+    const published=isLive(v), changes=!published&&(v.lane==='changes'||pendingChanges(v)), ready=!changes&&forBen([v]).length>0;
+    const scheduled=(v.youtube||{}).state==='scheduled', approved=['approved','done'].includes(v.lane);
+    if(published||changes||ready||scheduled||approved) {
+      const title=published?'Published on YouTube':changes?'Changes requested':ready?'Ready for your review':scheduled?'Scheduled on YouTube':'UAT handoff complete';
+      const explanation=published?'This video is published. Production progress and UAT forecasts no longer apply.':changes?'Your requested changes need correction and fresh QA before another review. The earlier milestone records do not measure progress on these revisions.':ready?'A finished cut has been handed over for your review. Incomplete historical milestone records do not describe how much of this cut remains to be made.':scheduled?'This video is scheduled. The publication date is separate from production milestone history.':'Your UAT handoff is complete. Delivery and any linked follow-up work are separate from historical milestone coverage.';
+      const linked=[...new Map((v.jobs||[]).filter(LIVE).map(j=>[j.id,j])).values()];
+      return section(title,null,`<p class="muted">${esc(explanation)}</p>${changes?'<p class="muted">Your timestamped notes are listed below. The records must identify the correction owner and next action.</p>':''}
+        ${linked.length?`<div class="next-action"><span>${published?'Post-publication work':'Linked outstanding work'} · ${linked.length} job${linked.length===1?'':'s'}</span><p>${published?'These linked jobs do not make the published video unfinished. A shared job may also cover other videos.':'Job completion and recorded milestone history are separate from your review decision.'}</p>${linked.map(j=>`<a class="other-stage blocker-job-link" href="${jobRoute(j.id)}">${esc(j.id)} · ${esc(clip(j.remaining_action||j.title||'Action not recorded',160))} · ${esc((JOB_WORD[j.status]||['',j.status])[1])}</a>`).join('')}</div>`:''}
+        <details class="technical" data-disclosure="${esc(v.key)}-history"><summary>Recorded production history</summary><p class="muted">Unconfirmed milestones mean historical records are missing, not that the delivered video is unfinished. Source records and approval requirements remain unchanged.</p>${milestones(v).map(m=>milestoneCard(v,m,null)).join('')}</details>`);
+    }
 
     const p=progressStats(v), f=forecastView(v,now), production=v.production || {}, e=production.eta || {}, current=(currentProduction(v)[0] || {}).id;
     const fresh = Number.isFinite(Date.parse(production.asOf)) && now-Date.parse(production.asOf)>=0 && now-Date.parse(production.asOf)<=QUIET_MIN*MIN;
@@ -502,7 +520,8 @@
   }
   function videoProductionRow(v, now) {
     if (isLive(v)) return row(v, "");
-    const current=currentProduction(v)[0], f=forecastView(v,now);
+    const historyOnly=forBen([v]).length || pendingChanges(v) || ['approved','done','changes'].includes(v.lane) || (v.youtube||{}).state==='scheduled';
+    const current=historyOnly?null:currentProduction(v)[0], f=forecastView(v,now);
     return row(v, `<span class="meta current-label">${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Blocked / approval pending</span>':''}</span>${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`);
   }
   // One set of selectors feeds Overview and its linked lists. Jobs never stand in for videos.
@@ -519,7 +538,7 @@
   }
   function producingVideos(vs) {
     return uniqueVideos(vs).filter(v=>!isLive(v) && (v.youtube||{}).state!=='scheduled' && v.lane!=='done'
-      && !(v.lane==='ready' && v.readyFor==='Ben')
+      && !forBen([v]).length
       && ['progress','changes','ready','approved'].includes(v.lane));
   }
   function londonDay(at) {
@@ -593,20 +612,21 @@
   }
   function featuredOutlook(v,now) {
     if(forBen([v]).length) return 'Ready for UAT';
+    if(v.lane==='changes'||pendingChanges(v)) return 'Awaiting corrections';
     if(blockedVideo(v)) return 'Blocked';
     const f=forecastView(v,now);
     return f.credible ? `Approximately ${durationText(f.minutes)}` : 'Estimate pending';
   }
   function featuredCard(v,now,producingCount=0) {
     if(!v) return `<p class="overview-empty">${producingCount?'UAT handoffs are complete. Approved videos are moving toward publishing.':'No videos are in production right now. Explore the backlog in Videos.'}</p><a class="overview-empty-link" href="#videos">Open Videos <span aria-hidden="true">›</span></a>`;
-    const p=progressStats(v), m=currentProduction(v)[0], ready=forBen([v]).length>0;
-    const stageLabel=ready?'Ready for your UAT':m ? m.label+(stageView(m).text==='Awaiting approval'?' approval':'') : 'Unconfirmed';
-    const action=ready?((v.watch||{}).url?'Use Watch & review below to open this cut.':'Review delivery incomplete: no watch link is recorded.') : m ? stageView(m).tone==='held'?blockerModel(v,m).action:nextAction(m) : 'The next production step has not been confirmed.';
+    const p=progressStats(v), m=currentProduction(v)[0], ready=forBen([v]).length>0, changes=v.lane==='changes'||pendingChanges(v);
+    const stageLabel=ready?'Ready for your UAT':changes?'Requested corrections':m ? m.label+(stageView(m).text==='Awaiting approval'?' approval':'') : 'Unconfirmed';
+    const action=ready?((v.watch||{}).url?'Use Watch & review below to open this cut.':'Review delivery incomplete: no watch link is recorded.') : changes?'Your notes need correction and fresh QA. Open the video for linked work and responsibility.':m ? stageView(m).tone==='held'?blockerModel(v,m).action:nextAction(m) : 'The next production step has not been confirmed.';
     return `<a class="featured-video" href="${detailLink(v)}" aria-label="Open ${esc(v.title||'video')} production details">
       <div class="featured-heading">${thumb(v)}<div><h3>${esc(v.title||'Untitled video')}</h3><p>${v.channel==='HOS'?'History of Science':'Orbit With Ben'} · ${kind(v)}</p></div><span class="chev" aria-hidden="true">›</span></div>
-      <div class="featured-progress-heading"><span>Milestones completed</span><b>${p.percent}%</b></div>
+      ${ready?'<p class="featured-count">Finished cut awaiting your review</p>':changes?'<p class="featured-count">Changes requested · revision progress not recorded</p>':`<div class="featured-progress-heading"><span>Milestones completed</span><b>${p.percent}%</b></div>
       <div class="hero-track" role="progressbar" aria-label="Milestones completed, not production time" aria-valuenow="${p.done}" aria-valuemin="0" aria-valuemax="9"><i style="width:${p.percent}%"></i></div>
-      <p class="featured-count">${p.done} of 9 milestones complete${p.unknown?` · ${p.unknown} unconfirmed`:''}</p>
+      <p class="featured-count">${p.done} of 9 milestones complete${p.unknown?` · ${p.unknown} unconfirmed`:''}</p>`}
       <dl class="featured-facts"><div><dt>Current stage</dt><dd>${esc(stageLabel)}</dd></div><div><dt>Estimated UAT</dt><dd class="${ready?'ready-text':blockedVideo(v)?'held-text':''}">${esc(featuredOutlook(v,now))}</dd></div></dl>
       <p class="featured-next"><span>${ready?'Ready for you':blockedVideo(v)?'Needs attention':'Next action'}</span>${esc(action)}</p></a>${ready&&(v.watch||{}).url?`<a class="btn primary" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch||{}).version||v.version||'')}</a>`:''}`;
   }
@@ -713,7 +733,7 @@
       forBen([v]).length ? `<a class="btn primary" href="${uatLink(v)}">▶ Watch & review</a>` : w.url ? `<a class="btn" href="${esc(w.url)}" target="_blank" rel="noopener">▶ Watch ${esc(w.version || v.version || "")}</a>` : "",
       yt.url ? `<a class="btn" href="${esc(yt.url)}" target="_blank" rel="noopener">Open on YouTube</a>` : "",
     ].filter(Boolean);
-    const jobs = (v.jobs || []).slice().sort((a, b) => ["claimed", "open", "blocked", "done"].indexOf(a.status) - ["claimed", "open", "blocked", "done"].indexOf(b.status));
+    const jobs = [...new Map((v.jobs || []).map(j=>[j.id,j])).values()].sort((a, b) => ["claimed", "open", "blocked", "done"].indexOf(a.status) - ["claimed", "open", "blocked", "done"].indexOf(b.status));
     const jobRows = jobs.map(j => { const [tone, word] = JOB_WORD[j.status] || ["", j.status];
       const why = j.status === "blocked" ? (j.hold && j.hold.condition) || j.result : j.remaining_action;
       return `<div class="job"><div class="job-top"><span class="tag ${tone}">${word}</span><b>${esc(clip(j.title || j.id, 90))}</b></div>

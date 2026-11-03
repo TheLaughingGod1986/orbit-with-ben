@@ -417,3 +417,30 @@ const expiredStartup=t.overviewModel(startupBoard,NOW+11*6e4);assert.equal(expir
 const onlyHeartbeat={...startupBoard,workflow:{},owb:{jobs:[{id:'Jlaunch',status:'open'}]},models:{checkedAt:new Date(NOW).toISOString(),runner:{state:'working',job:'Jlaunch'}}};
 assert.equal(t.overviewModel(onlyHeartbeat,NOW).running.length,0,'heartbeat alone never fabricates active work');
 console.log('Starting-worker visibility checks OK');
+
+// Delivered cuts retain missing historical stages without misleading completion percentages.
+const readyHistory=v({key:'HOS:008',channel:'HOS',version:'v03',lane:'ready',readyFor:'Ben',watch:{url:'https://example.test/v03'},production:{milestones:[{id:'topic',state:'done'},{id:'script',state:'done'},{id:'vo',state:'done'},{id:'picture',state:'doing'}]}});
+const readyHistoryHtml=t.productionDetail(readyHistory,NOW);
+assert(readyHistoryHtml.includes('Ready for your review')&&readyHistoryHtml.includes('Recorded production history'));
+assert(!readyHistoryHtml.includes('progress-number')&&!readyHistoryHtml.includes('role="progressbar"')&&!readyHistoryHtml.includes('Current stage'));
+assert.equal(t.progressStats(readyHistory).done,3,'history is never silently promoted to 100%');
+assert(!t.overview({tracker:{videos:[readyHistory]}},NOW).includes('33%'),'ready feature does not report historical coverage as production progress');
+const reviewChanged={...readyHistory,check:{verdict:'change',version:'v03',handled:false}};
+assert.equal(t.forBen([reviewChanged]).length,0,'unhandled same-version changes override a stale ready lane');
+assert.equal(t.stage(reviewChanged),'Fixing your changes');
+assert(t.productionDetail(reviewChanged,NOW).includes('Changes requested'));
+assert(!t.forecastView(reviewChanged,NOW).reason.includes('Your review can start'));
+assert.equal(t.forBen([{...reviewChanged,version:'v04'}]).length,1,'old-version feedback does not block a new cut');
+assert.equal(t.forBen([{...reviewChanged,check:{...reviewChanged.check,handled:true}}]).length,1,'handled feedback does not suppress a fresh recorded handoff');
+const postPublish=t.productionDetail({...publicMissing,jobs:[...publicMissing.jobs,...publicMissing.jobs]},NOW);
+assert(postPublish.includes('Post-publication work')&&postPublish.includes('1 job'));
+assert(postPublish.includes('#agents&job=followup'),'follow-up work is linked to its actual job');
+assert(!postPublish.includes('progress-number'));
+console.log('Delivered-cut historical coverage and post-publication work checks OK');
+
+assert.equal(t.producingVideos([reviewChanged]).length,1,'stale ready lane plus current changes remains in producing count');
+assert(!t.videoProductionRow(readyHistory,NOW).includes('33%'));
+assert(!t.videoProductionRow(reviewChanged,NOW).includes('33%'));
+assert.equal(t.forecastView({...publicMissing,version:'v03',check:{verdict:'change',version:'v03',handled:false}},NOW).value,'Handoff complete','publication overrides old review feedback');
+
+assert(!t.detail({tracker:{videos:[{...publicMissing,jobs:[...publicMissing.jobs,...publicMissing.jobs]}]}},publicMissing.key).includes('2 jobs'),'technical linked-job count is also deduplicated');
