@@ -1,5 +1,5 @@
 {
-  "next_id": 1912,
+  "next_id": 1913,
   "jobs": [
     {
       "id": "J0001",
@@ -164674,6 +164674,38 @@
       "taskKeys": [
         "OWB:030"
       ]
+    },
+    {
+      "id": "J1912",
+      "title": "Chief: verify private local ISS preview handoff while public push stays rejected",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1847 rendered its preview locally and is blocked3/4 only on rejected public git push of renderer code/provenance commit eba37bfe7e. Do not retry that push, publish contents through another public channel, or treat Ben's earlier TEXT-WORKFLOW-only approval as renderer-code/evidence publication permission. No new public egress is authorized. Public push remains rejected.\n\nSafer existing-scope route to assess: original J1847 brief requires persistent local delivery, code/records in a clean worktree, exact hashes/terms/gates and handoff to J1848. It does not explicitly say that a public renderer PR must precede local media review. Root AGENTS requires clean worktree commits; Mini PROMPT step4 likewise requires clean commits, not a blanket public-push gate. Read current applicable AGENTS/HANDOVER, exact original briefs and any local rules yourself before deciding. Recheck actual Chief election before any scope/hold decision.\n\nOn Mini, inspect J1847's already-complete local delivery and private evidence worktree read-only; verify its five output hashes, source/terms, renderer recipe and complete unmodified gates including unresolved WARN. No rerender, new download, generation, credit spend or deletion. Nothing here gives source, picture, Edit, finished-film or publication PASS.\n\nDetermine whether ANY explicit applicable rule makes public renderer evidence publication a prerequisite for LOCAL J1848 review. If yes, quote exact file/instruction and preserve that gate; do not override or bypass it. Report which private inspection can safely proceed, if any. If not, record a narrow Chief scope amendment: J1847's final step is verified PRIVATE LOCAL HANDOFF to existing J1848/J1849 using the existing cache/worktree and exact hashes. Keep code/media/provenance contents private. Public renderer/evidence publication is separate and must remain blocked pending its own authorization; preserve every rejection/history record. A metadata/path/hash reference already used by the existing queue is not permission to paste the rejected payload into the public queue or comments.\n\nUse normal ownership/hold APIs. If local handoff is permitted, reopen J1847 only to finish that real remaining step, preserving its actual3/4 progress, output hashes and spent budgets, and prepend the local-only scope so it never repeats rendering or public upload. Do not complete J1847 from this decision without the actual handoff. If your current claim prevents another claim, finish this Chief decision and prioritize J1847 for the next safe dispatch; do not fake a second active owner. Preserve J1847->J1848->J1849 dependencies; do not skip local review, alter thresholds or accept media. J1848 must use actually verified native-video input through its already-authorized existing Gemini CLI route, not stills/metrics or a new provider/public upload. Its findings and J1849 assessment may remain in the same private local evidence package if existing rules permit; never infer this authorizes public payloads.\n\nRecord exact actual outcome, owner and next action. If any fresh review rejects the private action too, stop that action and report exact reason; do not retry unchanged or disguise the payload. Original AR1/AR2/AR3 correction gates, J1471/J1356 and all Ben/date/credit/YouTube/Buffer/media publishing holds remain. This is solely a local-handoff policy/capability check with a concrete permitted follow-through, not permission to publish new content.",
+      "ref": "J1847",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T22:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T22:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect original local-handoff requirements and completed delivery; preserve rejected public push and unblock only permitted private review",
+      "kind": "chief",
+      "handoff_scope_key": "J1847:private-local-review",
+      "urgent": 1,
+      "due_kind": "user-immediate-claim",
+      "due": "2026-11-03T22:51:00+00:00"
     }
   ],
   "focus": [],
