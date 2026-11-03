@@ -159127,20 +159127,25 @@
           "at": "2026-11-03T14:25Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original scope, delivery 406f91068 and downstream holds; actual playback acceptance is explicitly absent"
+        },
+        {
+          "at": "2026-11-03T14:26Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All five delivery hashes and sizes match; PR410 has no reviews; phone still inspected, actual playback unavailable"
         }
       ],
-      "remaining_action": "Verify candidate integrity and record review limitation",
+      "remaining_action": "Record preserved input hold and finish verification report",
       "kind": "chief",
       "recheck_of": "J1834",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "urgent": 3,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T14:25Z",
+        "at": "2026-11-03T14:26Z",
         "by": "codex",
-        "note": "Read original scope, delivery 406f91068 and downstream holds; actual playback acceptance is explicitly absent"
+        "note": "All five delivery hashes and sizes match; PR410 has no reviews; phone still inspected, actual playback unavailable"
       },
       "taskKeys": [
         "OWB:030"
