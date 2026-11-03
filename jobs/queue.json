@@ -100675,6 +100675,11 @@
           "at": "2026-11-03T19:39Z",
           "by": "relay",
           "what": "condition verification queued: J1885"
+        },
+        {
+          "at": "2026-11-03T19:42Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-03T20:39:22Z"
         }
       ],
       "remaining_action": "Obtain cleared instrumental S2 bed and recorded local listening before v07 repairs; disk headroom verified",
@@ -100703,12 +100708,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1876 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and all three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded; ASR is not listening. Disk prerequisite is now satisfied: 39.575 GiB free, above h43 restart minimum 10 GiB; recheck at restart and park below 6 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-03T20:39:22+00:00",
-        "last_recheck": "J1876",
-        "checked_at": "2026-11-03T18:34:30+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1885"
+        "condition": "J1885 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and all three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded; ASR is not listening. Disk prerequisite is satisfied: 34.807 GiB free, above h43 restart minimum 10 GiB; recheck at restart and park below 6 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-03T20:39:22Z",
+        "last_recheck": "J1885",
+        "checked_at": "2026-11-03T19:42:41+00:00",
+        "checked_by": "gemini"
       }
     },
     {
