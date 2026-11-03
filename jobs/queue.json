@@ -159300,10 +159300,10 @@
       "stage": "",
       "after": "J1833",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-03T14:34Z",
+      "eta": "2026-11-03T16:34Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:30Z",
       "result": "",
@@ -159312,12 +159312,25 @@
           "at": "2026-11-03T14:30Z",
           "by": "codex",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-03T14:34Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Gemini verifies native video input and reviews delivered ISS candidate; Chief retains final approval",
       "due": "2026-11-03T14:30:08Z",
       "for": "gemini",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T14:34Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
