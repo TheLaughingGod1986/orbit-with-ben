@@ -149276,19 +149276,24 @@
           "at": "2026-11-03T01:34Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original approvals reviewed: local-only audio, dual ASR criterion, excluded bed, h43-LOOP and existing 2/3 preserved."
+        },
+        {
+          "at": "2026-11-03T01:34Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh bed and opening/middle/end hashes match 3e26b379b; no newer local review or log evidence. Actual listening remains NOT PERFORMED."
         }
       ],
-      "remaining_action": "Check bed and listening evidence against the latest ruling",
+      "remaining_action": "Record unmet bed clearance and listening condition",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T01:34Z",
         "by": "codex",
-        "note": "Original approvals reviewed: local-only audio, dual ASR criterion, excluded bed, h43-LOOP and existing 2/3 preserved."
+        "note": "Fresh bed and opening/middle/end hashes match 3e26b379b; no newer local review or log evidence. Actual listening remains"
       },
       "taskKeys": [
         "OWB:027",
