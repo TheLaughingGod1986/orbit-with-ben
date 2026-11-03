@@ -1,5 +1,5 @@
 {
-  "next_id": 1825,
+  "next_id": 1826,
   "jobs": [
     {
       "id": "J0001",
@@ -157687,6 +157687,35 @@
       "taskKeys": [
         "OWB:026"
       ]
+    },
+    {
+      "id": "J1825",
+      "title": "026 upload finish: install approved en-GB captions and verify Studio end screen/cards",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1767 elected-Chief FIX, 3 November 2026. Resolve OWB:026 upload completion evidence before the long airs 15 November 18:00Z. Existing approvals remain J0794, Ben comment 6337324360, J0833 and replacement J1101/PR313. Evidence: jobs/reviews/J1767/.\n\n1. Read current Studio/API state for c5AdqQsnnys. captions.list on 3 November returned only an automatic en ASR track, not the packaged en-GB track. Verify the approved 11_Upload-Package/Captions/nearest_star_long_v06_en-GB.srt against the approved v06 timing. Add that existing approved SRT as en-GB if absent; preserve any existing manual track and never duplicate it. Read back serving status. No spoken-line edits, generation, or video upload.\n2. Read back end screen and cards in Orbit Studio CDP 9223. The upload result still lists them pending and J1767 found no completion record. Record existing targets/timings and evidence. If absent, return the exact proposed target/timing to the elected Chief before setting it; do not invent prior approval.\n3. Confirm existing thumbnail A remains; do not start or replace Test & Compare during 026 Shorts week (J0141/J0861). Read back synthetic disclosure, audience and en-GB metadata. Preserve all titles, descriptions, privacy and schedules. Reconcile existing Buffer registry only as needed; do not post outside normal Buffer timing.\n4. Commit evidence from a clean worktree and submit for elected-Chief review. Upload stage may close only when required finish items are evidenced or explicitly assigned to their existing condition-based job. J0861 remains held until c5AdqQsnnys reads Public, next check 2026-11-15T18:05Z; it owns Related on HZGTovJu_TQ, cwU_0WWeNZ4 and aAUgIGEuPwQ and the long pinned comment. J1823 remains separate thumbnail correction/review. Old A6TW_6CXhcs stays Private unscheduled.\n\nAuthorisation is limited to the existing packaged en-GB caption correction and read-only Studio verification. No new media approval, upload, visibility/schedule change, thumbnail test, credit spend or deletion. If further changes are required, return a specific FIX to elected Chief. Link OWB:026 in progress updates.\n",
+      "ref": "",
+      "film": "026",
+      "stage": "upload",
+      "after": "J1767",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T12:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T12:44Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Add approved en-GB captions and verify remaining Studio finish evidence",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "studio"
     }
   ],
   "focus": [],
