@@ -156172,13 +156172,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T21:25Z",
-      "eta": "2026-11-03T23:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Resolved sources orphan block: restored explicit J0301 Chief PASS at 97b7af4e after verifying unchanged SOURCES and v01 script plus removal-only v02 diff. Evidence and state merged in PR431 (60d544d994). STATUS check PASS; sources done, stage claim cleared. J1753 VO listening block preserved; no media approval, spend or publishing change.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -156209,6 +156209,11 @@
           "at": "2026-11-03T21:28Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR431 merged; source approval restored; studio status check PASS; VO block preserved"
+        },
+        {
+          "at": "2026-11-03T21:28Z",
+          "by": "codex",
+          "what": "done: Resolved sources orphan block: restored explicit J0301 Chief PASS at 97b7af4e after verifying unchanged SOURCES and v01 script plus removal-only v02 diff. Evidence and state merged in PR431 (60d544d994). STATUS check PASS; sources done, stage claim cleared. J1753 VO listening block preserved; no media approval, spend or publishing change."
         }
       ],
       "remaining_action": "Sources reconciliation complete; J1753 owns the remaining VO listening review",
@@ -156228,7 +156233,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "60d544d994"
     },
     {
       "id": "J1774",
