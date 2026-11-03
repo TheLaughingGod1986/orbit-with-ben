@@ -161879,9 +161879,14 @@
           "at": "2026-11-03T19:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T19:34Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1875; starting verification of J0936 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Clear S2 bed and local listening, recover restart headroom, finish repairs and replacement approvals",
+      "remaining_action": "Read J0936, J1100, J1871, J1860, PR #333, and local evidence for OWB 028 S2/S5/S6",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-03T19:31:59+00:00",
@@ -161889,11 +161894,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T19:33Z",
+        "at": "2026-11-03T19:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1875; starting verification of J0936 waiting condition"
+      },
+      "taskKeys": [
+        "OWB:028"
+      ]
     },
     {
       "id": "J1876",
