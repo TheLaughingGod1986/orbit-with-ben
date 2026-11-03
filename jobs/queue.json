@@ -160733,18 +160733,24 @@
           "at": "2026-11-03T16:34Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T16:34Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original repair approvals, h43-LOOP, latest result and 3e26b379b; preserve all existing acceptances and deadlines."
         }
       ],
-      "remaining_action": "Verify bed clearance, local listening evidence and h43 restart space",
+      "remaining_action": "Check current bed and listening records against original evidence",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T16:34Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Read original repair approvals, h43-LOOP, latest result and 3e26b379b; preserve all existing acceptances and deadlines."
       },
       "taskKeys": [
         "OWB:027",
