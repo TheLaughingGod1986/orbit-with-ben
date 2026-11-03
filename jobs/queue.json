@@ -160556,6 +160556,11 @@
           "at": "2026-11-03T22:12Z",
           "by": "relay",
           "what": "condition verification queued: J1908"
+        },
+        {
+          "at": "2026-11-03T22:14Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T23:12:06Z"
         }
       ],
       "remaining_action": "Obtain explicit approval for public evidence-branch payload, then open required PR and complete scope job",
@@ -160573,12 +160578,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1893 verified 3 Nov: no subsequent explicit approval to publish J1846 workflow briefs after automatic approval review twice rejected the public branch push. Thread checked through 6615484272; GitHub lists no PR for codex/J1846-scope. Commit 001b6962fbaba027490cf3ed29c2d68bcc64915d remains in clean /private/tmp/J1846-wt. Need explicit approval for this public payload before push/PR; do not retry or bypass. J1847-J1849 remain dependent; J1471/J1356 and all media/gate/Ben/publishing holds remain.",
-        "check_at": "2026-11-03T23:12:06+00:00",
-        "last_recheck": "J1893",
-        "checked_at": "2026-11-03T21:12:30+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1908"
+        "condition": "J1908 verified 3 Nov: 12 thread comments since previous check through 6616702104 contain no explicit approval for publishing the four J1846 workflow briefs. No PR exists for codex/J1846-scope; clean /private/tmp/J1846-wt retains 001b6962fbaba027490cf3ed29c2d68bcc64915d. Automatic approval review previously rejected this public branch push twice; explicit payload approval remains required. Do not retry or bypass. J1847-J1849 dependencies and J1471/J1356 media, gate, Ben and publishing holds remain.",
+        "check_at": "2026-11-03T23:12:06Z",
+        "last_recheck": "J1908",
+        "checked_at": "2026-11-03T22:14:29+00:00",
+        "checked_by": "codex"
       }
     },
     {
