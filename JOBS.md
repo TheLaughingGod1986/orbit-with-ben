@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1877 | any | open | – | – | chief · Chief: verify condition for J1823 |  |
 | J1878 | mini | open | – | – | studio · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
 | J1879 | mini | open | – | – | assembly · Buffer: recover approved Mars-night and Titan social sources | J1874 |
+| J1880 | mini | open | – | – | 008 edit · assembly · HOS 008: prepare six Franklin v03 UAT corrections and exact edit recipe | HOS-008:v03:2026-11-03T16:08:33.439Z / J1868 |
 
 Recently finished:
 

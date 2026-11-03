@@ -1,5 +1,5 @@
 {
-  "next_id": 1880,
+  "next_id": 1881,
   "jobs": [
     {
       "id": "J0001",
@@ -161914,6 +161914,35 @@
       "due": "2026-11-04T07:00:00Z",
       "kind": "assembly",
       "recovery_scope_key": "J1874:sources"
+    },
+    {
+      "id": "J1880",
+      "title": "HOS 008: prepare six Franklin v03 UAT corrections and exact edit recipe",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J1868 acting-Chief intake of Ben's HOS:008 master v03 review, 2026-11-03T16:08:33.439Z, original J1297. This is correction preparation, not media approval or authority to render/generate/upload. Read the current checks API first; if superseded, reconcile without duplicating work. Original notes and correction acceptance criteria are preserved in 008/07_Edit-Project/J1868_UAT_CORRECTIONS.md and J1868_BEN_REVIEW_v03.json (HOS PR from codex/j1868-franklin-triage).\n\nUse verified master cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b (NAS desk master_v03, 393139693 bytes), rough-v12 locked picture and actual cut list/VO. Claim HOS edit ownership before work. Capability-routed assembly worker: Cursor/Grok -> Cursor Auto -> Codex -> Gemini per current availability; a signed-out primary does not block an eligible fallback.\n\n1. Map EACH original timestamp to exact source row, clip/hash, cut interval and spoken line, inspecting adjacent cuts: 00:20 unreadable text/background; 0:30 scene flash; 1:49 hair flies out of tube; 2:20 silver foil behaviour; 3:31 unclear diagram/map; 7:58 falling rods. Preserve the verbatim notes/timestamps. These are Ben's observations, not already independently reproduced defects. Record actual media-input capability and uncertainty; screenshots/metrics alone are not proof of normal motion.\n2. Prepare bounded corrections: 00:20 readable house-type contrast over a compliant moving plate; 0:30 remove the unintended scene flash without clipping VO; 1:49, 2:20 and 7:58 inspect approved native moving alternatives and safe source intervals supporting the same locked line, no frozen/still workaround or misleading physics; 3:31 simplify our own animated diagram to one understandable idea matching the line, sourced labels, no invented geometry. Map edits before changing anything. Preserve full-runtime score, mix, h35 VO sync and unaffected footage.\n3. Deliver an exact edit recipe / code diff (new version only) plus source inventory, proposed changed intervals, six acceptance checks and any missing asset. No replacement render, generation, credit spend, VO rewrite, watch-object publication, upload, scheduling, privacy or listing changes. Missing footage search is at most 20 active minutes/three candidates per input, tracked cumulatively; HOS house style and engine restrictions stand. If no approved asset can work, specify reference, route, bounded takes, acceptance and estimated credit cap for elected Chief to consider separately; do not spend.\n4. Hand concrete recipe and unresolved inputs to the dependent elected-Chief scope review. Update existing production records with handoff evidence. Do not mark Ben's notes resolved or historical stages approved; J1755's delivery repair and automatic-publication rejection remain separate. Preserve every original file, hash, NAS copy, review and J1297 handoff. GBP0.\n",
+      "ref": "HOS-008:v03:2026-11-03T16:08:33.439Z / J1868",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T18:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T18:56Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Map six Ben notes to source and VO, prepare bounded no-spend correction recipe",
+      "due": "2026-11-04T12:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
