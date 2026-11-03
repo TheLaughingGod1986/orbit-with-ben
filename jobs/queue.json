@@ -150418,19 +150418,24 @@
           "at": "2026-11-03T02:54Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Original brief and approval history checked; PR380 OPEN at unchanged d0b04b5e0, no comments or reviews"
+        },
+        {
+          "at": "2026-11-03T02:55Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 masters and Crew-2 cache; saved opening gates still FAIL; PR380 has no new input"
         }
       ],
-      "remaining_action": "Verify fresh SHA256 hashes of J1468 masters and Crew-2 cache and check saved opening gates",
+      "remaining_action": "Re-check Chief authority, update J1471 hold via jobs.py wait --recheck J1709, and complete J1709",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T03:31:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T02:54Z",
+        "at": "2026-11-03T02:55Z",
         "by": "gemini",
-        "note": "Original brief and approval history checked; PR380 OPEN at unchanged d0b04b5e0, no comments or reviews"
+        "note": "Fresh SHA256 matches all three J1468 masters and Crew-2 cache; saved opening gates still FAIL; PR380 has no new input"
       },
       "taskKeys": [
         "OWB:030"
