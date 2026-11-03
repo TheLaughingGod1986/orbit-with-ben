@@ -152387,19 +152387,30 @@
           "at": "2026-11-03T07:42Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T07:42Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original brief and approvals; newer J1734 still holds J1100 at 2/3; PR333 unchanged and without reviews"
         }
       ],
-      "remaining_action": "Verify J0936 evidence, remaining gates and approvals",
+      "remaining_action": "Check current audio evidence and replacement approval records",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-03T08:34:08+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T07:42Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "Read original brief and approvals; newer J1734 still holds J1100 at 2/3; PR333 unchanged and without reviews"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1733",
