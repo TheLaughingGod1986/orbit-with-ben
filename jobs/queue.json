@@ -161884,21 +161884,28 @@
           "at": "2026-11-03T19:34Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J1875; starting verification of J0936 waiting condition"
+        },
+        {
+          "at": "2026-11-03T19:35Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J0936 brief, approval history, and latest J1876/J1100 hold; J1100 remains blocked at 2/3, J1032 PASS and J1101-J1103 completion preserved"
         }
       ],
-      "remaining_action": "Read J0936, J1100, J1871, J1860, PR #333, and local evidence for OWB 028 S2/S5/S6",
+      "remaining_action": "Verify local audition hashes against 3e26b379b, PR #333 status, and disk free space",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-03T19:31:59+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T19:34Z",
+        "at": "2026-11-03T19:35Z",
         "by": "gemini",
-        "note": "Claimed J1875; starting verification of J0936 waiting condition"
+        "note": "Read J0936 brief, approval history, and latest J1876/J1100 hold; J1100 remains blocked at 2/3, J1032 PASS and J1101-J110"
       },
       "taskKeys": [
+        "OWB:026",
+        "OWB:027",
         "OWB:028"
       ]
     },
