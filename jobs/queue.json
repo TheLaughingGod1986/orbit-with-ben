@@ -161064,13 +161064,19 @@
           "at": "2026-11-03T17:14Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T17:24Z",
+          "by": "codex",
+          "what": "Ben requested immediate claim; cloud capability-checked claim returned no eligible job. Mini execution required. Previous audit target 2026-11-03T17:34:33Z; dispatch requested now, not a promised start time."
         }
       ],
-      "remaining_action": "Read live Buffer queues and mirror logs; identify missing posts and hand Chief an exact recovery plan",
-      "due": "2026-11-03T17:34:33Z",
+      "remaining_action": "Ben requests immediate claim: a capable authenticated Mini worker must claim J1870 by ID and audit live Buffer; cloud session lacks Mini access",
+      "due": "2026-11-03T17:24:21+00:00",
       "kind": "studio",
       "audit_key": "buffer-live-audit-2026-11-03",
-      "urgent": 3
+      "urgent": 3,
+      "due_kind": "user-immediate-claim"
     }
   ],
   "focus": [],
