@@ -158574,18 +158574,24 @@
           "at": "2026-11-03T13:55Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T13:55Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Resolve the approved ISS opening input so J1471 can resume",
+      "remaining_action": "Inspect approved ISS inputs and choose a supported opening or bounded acquisition",
       "kind": "chief",
       "progress": {
         "step": 0,
         "of": 3,
         "at": "2026-11-03T13:55Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
