@@ -159139,19 +159139,24 @@
           "at": "2026-11-03T15:04Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original scope and approvals read; PR380 unchanged. J1844 delivered moving-review FIX in PR414; no ISS input approval."
+        },
+        {
+          "at": "2026-11-03T15:04Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All three final-export hashes match J1468; saved opening FAILs remain. J1844 FIX closed administratively; J1846 scoped J1847-J1849 replacement handoff, not input approval."
         }
       ],
-      "remaining_action": "Verify existing exports and capture new ISS FIX review dependency",
+      "remaining_action": "Record unmet J1356 condition and close verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T15:04Z",
         "by": "codex",
-        "note": "Original scope and approvals read; PR380 unchanged. J1844 delivered moving-review FIX in PR414; no ISS input approval."
+        "note": "All three final-export hashes match J1468; saved opening FAILs remain. J1844 FIX closed administratively; J1846 scoped J"
       },
       "taskKeys": [
         "OWB:030"
