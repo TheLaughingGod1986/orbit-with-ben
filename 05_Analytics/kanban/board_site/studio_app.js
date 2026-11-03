@@ -591,11 +591,32 @@
   }
   const jobRoute=id=>'#agents&job='+encodeURIComponent(id);
   const selectedJob=()=>new URLSearchParams((location.hash||'').slice(1)).get('job')||'';
+  function activityVideoContext(b,j) {
+    const videos=uniqueVideos(((b.tracker||{}).videos)||[]), keys=new Set();
+    const add=job=>{
+      for(const key of Array.isArray(job.taskKeys)?job.taskKeys:[]) if(typeof key==='string'&&/^(OWB|HOS):/.test(key)) keys.add(key);
+      if(/^\d+$/.test(String(job.film||''))) keys.add((job.repo==='hos'?'HOS':'OWB')+':'+String(job.film).padStart(3,'0'));
+      for(const v of videos) if(v.key&&(v.jobs||[]).some(x=>x.id===job.id)) keys.add(v.key);
+    };
+    add(j);
+    if(j.recheck_of) {
+      const parent=(((b.owb||{}).jobs)||[]).find(x=>x.id===j.recheck_of);
+      if(parent) add(parent);
+    }
+    const rows=[...keys].map(key=>({key,video:videos.find(v=>v.key===key)}));
+    const label=row=>{
+      const channel=row.key.startsWith('HOS:')?'History of Science':'Orbit With Ben';
+      return row.video?`${row.video.title||row.key} · ${channel} · ${kind(row.video)}`:`${channel} · ${row.key.split(':')[1]} · title not recorded`;
+    };
+    return rows.length?{label:rows.slice(0,2).map(label).join(' / ')+(rows.length>2?` · +${rows.length-2} more videos`:''),count:rows.length}
+      :{label:'Studio task · no video linked in the job record',count:0};
+  }
   function activityCard(b,now) {
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
     // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
     const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} on hold</p>`;
     if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is on hold':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
+    const videoContext=activityVideoContext(b,j);
     const p=recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
     // Reuse the existing task estimator only with a valid recorded start and valid inputs.
     const e=(!p || p.step<p.of) && Number.isFinite(start) && start<=now && (p && p.step>0 && p.step<p.of || Number.isFinite(+j.estMin) && +j.estMin>0)
@@ -603,6 +624,7 @@
     const eta=e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
     return `<section class="overview-activity"><h2>Studio activity</h2><a class="active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents">
       <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is working</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
+      <p class="activity-video"><span>${videoContext.count>1?'Videos':videoContext.count?'Video':'Scope'}</span>${esc(videoContext.label)}</p>
       <p class="activity-action">${esc(clip(j.remaining_action||j.title||'Current action not recorded',160))}</p>
       ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:'<p class="activity-progress-missing">Task progress not recorded</p>'}
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
