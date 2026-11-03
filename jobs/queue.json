@@ -154606,13 +154606,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-03T15:44Z",
-      "eta": "2026-11-03T17:44Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:48Z",
-      "result": "",
+      "result": "2/3 complete: h35 master and restored iCloud UAT verified; PR391 merged, J1213 superseded, J0912 reopened. PR401 records reconciliation. Browser watch endpoint redirects 302 but R2 media returns 403. Automatic approval review rejected replacement watch-object upload because J1755 says no upload. Needs explicit approval for approved master cf1561c2 to existing R2 watch store, new ID hos-008-v03-j1755; no YouTube upload. Elected Chief resumes delivery and range-read verification; preserve copies.",
       "history": [
         {
           "at": "2026-11-03T10:48Z",
@@ -154648,6 +154648,11 @@
           "at": "2026-11-03T15:50Z",
           "by": "codex",
           "what": "step 2 of 3 done: Records and UAT hash verified. Board ready card exists; watch endpoint 302 then media host 403. Auto-review rejected replacement R2 upload; no upload occurred."
+        },
+        {
+          "at": "2026-11-03T15:50Z",
+          "by": "codex",
+          "what": "blocked: 2/3 complete: h35 master and restored iCloud UAT verified; PR391 merged, J1213 superseded, J0912 reopened. PR401 records reconciliation. Browser watch endpoint redirects 302 but R2 media returns 403. Automatic approval review rejected replacement watch-object upload because J1755 says no upload. Needs explicit approval for approved master cf1561c2 to existing R2 watch store, new ID hos-008-v03-j1755; no YouTube upload. Elected Chief resumes delivery and range-read verification; preserve copies."
         }
       ],
       "remaining_action": "Finish PR401 and restore browser watch delivery after explicit R2 upload scope approval; verify media range read",
@@ -154662,7 +154667,12 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "2/3 complete: h35 master and restored iCloud UAT verified; PR391 merged, J1213 superseded, J0912 reopened. PR401 records reconciliation. Browser watch endpoint redirects 302 but R2 media returns 403. Automatic approval review rejected replacement watch-object upload because J1755 says no upload. Needs explicit approval for approved master cf1561c2 to existing R2 watch store, new ID hos-008-v03-j1755; no YouTube upload. Elected Chief resumes delivery and range-read verification; preserve copies.",
+        "check_at": "2026-11-03T21:50:40+00:00"
+      }
     },
     {
       "id": "J1756",
