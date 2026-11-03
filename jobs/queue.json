@@ -124415,9 +124415,14 @@
           "at": "2026-11-03T15:13Z",
           "by": "relay",
           "what": "condition verification queued: J1854"
+        },
+        {
+          "at": "2026-11-03T15:34Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T16:13:46Z"
         }
       ],
-      "remaining_action": "Await approved replacement ISS input via J1847-J1849, then J1471 repairs and full final-watch review",
+      "remaining_action": "Await J1846 evidence publication approval and J1847-J1849 input acceptance, then J1471 repairs and final-watch review",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -124431,12 +124436,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1839: PR380 remains OPEN at d0b04b5e0; fresh hashes match all three J1468 final exports, with no additional final exports. Saved opening FAILs: AR1 first cut 6.00s; AR2 diff 0.25; AR3 diff 1.41. New J1844 moving review in PR414 at 1474821f3 recommends FIX for T545 recognition, cropped Dragon, incoherent fill and softness. J1846 records replacement chain J1847 -> J1848 -> J1849; no approved replacement or corrected masters yet. Require exact input approval, J1471 versioned repairs, complete metadata, passing affected gates and full moving/audio/pace review. Existing approvals and all Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-03T16:13:46+00:00",
-        "last_recheck": "J1839",
-        "checked_at": "2026-11-03T15:04:49+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1854"
+        "condition": "J1854 verified: fresh SHA256 matches all three J1468 final exports and no additional final exports exist. PR380 remains OPEN at d0b04b5e0; PR414 remains OPEN at 1474821f3 with T545 moving-review FIX. Saved opening FAILs remain AR1 6.00s first cut, AR2 diff 0.25, AR3 diff 1.41. J1846 scope at local 001b6962f is blocked on its recorded public evidence-push approval; J1847 -> J1848 -> J1849 remain unstarted. Need approved exact replacement ISS input, J1471 versioned repairs, complete metadata and affected gates, then full moving/audio and pace review. Existing accepted picture/audio, excluded AR2 v10/AR3 v09 branch and all Ben/date/credit/publishing holds persist.",
+        "check_at": "2026-11-03T16:13:46Z",
+        "last_recheck": "J1854",
+        "checked_at": "2026-11-03T15:34:07+00:00",
+        "checked_by": "codex"
       }
     },
     {
