@@ -159134,18 +159134,24 @@
           "at": "2026-11-03T15:03Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T15:04Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original scope and approvals read; PR380 unchanged. J1844 delivered moving-review FIX in PR414; no ISS input approval."
         }
       ],
-      "remaining_action": "Verify corrected AR masters, gates and review evidence for J1356",
+      "remaining_action": "Verify existing exports and capture new ISS FIX review dependency",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T15:03Z",
-        "by": "codex"
+        "at": "2026-11-03T15:04Z",
+        "by": "codex",
+        "note": "Original scope and approvals read; PR380 unchanged. J1844 delivered moving-review FIX in PR414; no ISS input approval."
       },
       "taskKeys": [
         "OWB:030"
