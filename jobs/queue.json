@@ -159215,19 +159215,24 @@
           "at": "2026-11-03T15:07Z",
           "by": "codex",
           "what": "step 1 of 3 done: New acquisition exists, but J1844 returned FIX; J1846 already scoped J1847-J1849. PR380 and PR410 remain open without approval."
+        },
+        {
+          "at": "2026-11-03T15:08Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR414 1474821f3 confirms specialist FIX; no approved ISS input. J1847-J1849 are already linked after blocked scope job J1846. No independent playback or media approval claimed."
         }
       ],
-      "remaining_action": "Verify specialist FIX and linked fallback before updating J1471 hold",
+      "remaining_action": "Record unmet input condition and verify queue readback",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T15:07Z",
+        "at": "2026-11-03T15:08Z",
         "by": "codex",
-        "note": "New acquisition exists, but J1844 returned FIX; J1846 already scoped J1847-J1849. PR380 and PR410 remain open without ap"
+        "note": "PR414 1474821f3 confirms specialist FIX; no approved ISS input. J1847-J1849 are already linked after blocked scope job J"
       },
       "taskKeys": [
         "OWB:030"
