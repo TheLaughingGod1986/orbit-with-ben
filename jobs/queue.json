@@ -1,5 +1,5 @@
 {
-  "next_id": 1817,
+  "next_id": 1818,
   "jobs": [
     {
       "id": "J0001",
@@ -156835,6 +156835,34 @@
         "OWB:030"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
+    },
+    {
+      "id": "J1817",
+      "title": "OWB 013: establish long edit provenance after cancelled Short claim",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1761 evidence: J0791 selected Moon only for a duplicate backlog Short, produced no cut, and Chief cancelled it 2026-10-21T15:35Z as duplicate of J0759. J0759 PASS concerns OWB 022 Sun, not Moon. J0979 is the surviving backlog Short family: do not recreate J0791 or make a new Moon Short. Git fd8f05c7e shows the duplicate claim overwrote edit=done; prior 62a807731 merely cleared a NAS claim and has no media approval reference. September production-status.md still records provisional tidal FAILs, so neither old done nor prose LOCK is sufficient to approve current media. Identify the actual long master associated with 2fsQcea-voM using upload/archive manifests and original Chief/Ben approval history. NAS pointer: /Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/MANIFEST_NAS_20261005.sha256. Verify path/hash and distinguish released long from old partial roughs. Restore historical completion only with attributable approval evidence; if a new media judgement is needed, perform required viewing/listening and gates, never infer PASS. Record exact evidence and correct status/next owner. If unavailable, use structured input hold with concrete condition and next check. No generation, render, upload, title/privacy change, deletion, or spend authorized. Preserve focus priority and all existing gates. Disk preflight 3 Nov: 12.5 GB free; NAS offload dry run found no scratch older than 48h, so no render starts. This is provenance/state reconciliation only, not an order to rework a live film.",
+      "ref": "",
+      "film": "013",
+      "stage": "edit",
+      "after": "J1761",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T11:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T11:41Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify exact Moon long master and approval provenance; reconcile edit state",
+      "kind": "chief"
     }
   ],
   "focus": [],
