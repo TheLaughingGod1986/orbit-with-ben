@@ -154190,13 +154190,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-03T10:45Z",
-      "eta": "2026-11-03T12:45Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:43Z",
-      "result": "",
+      "result": "Waiting for: Installed relay ac2d15fae277db48 is observed loaded after this run exits; J1809 safely refreshes HOS role-aware delivery without historical replay; J1810 establishes a genuine listening capability or precise supported limitation; an actual eligible Chief stage ruling survives job done and has its next action recorded. Evidence PR397. CI and synthetic stage tests alone do not satisfy this hold.",
       "history": [
         {
           "at": "2026-11-03T10:43Z",
@@ -154227,9 +154227,19 @@
           "at": "2026-11-03T10:54Z",
           "by": "codex",
           "what": "step 2 of 4 done: Installed-code HOS canary passed persistence+ack. Reconcile queued 51 repairs and repeated with zero duplicates. Runtime validation remains incomplete: parent reload waits for this run to exit; HOS watcher predates release; no genuine audio review or real stage completion observed. Evidence 9cf68ad8b; follow-ups J1809 and J1810."
+        },
+        {
+          "at": "2026-11-03T10:55Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Installed relay ac2d15fae277db48 is observed loaded after this run exits; J1809 safely refreshes HOS role-aware delivery without historical replay; J1810 establishes a genuine listening capability or precise supported limitation; an actual eligible Chief stage ruling survives job done and has its next action recorded. Evidence PR397. CI and synthetic stage tests alone do not satisfy this hold."
+        },
+        {
+          "at": "2026-11-03T10:55Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T11:00:00Z"
         }
       ],
-      "remaining_action": "Verify refreshed services and a real stage ruling after J1809/J1810 remediation",
+      "remaining_action": "Verify refreshed runtime and real stage handoff evidence after J1809/J1810; retain media review holds",
       "kind": "chief",
       "progress": {
         "step": 2,
@@ -154241,7 +154251,12 @@
       "taskKeys": [
         "OWB:031",
         "OWB:032"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Installed relay ac2d15fae277db48 is observed loaded after this run exits; J1809 safely refreshes HOS role-aware delivery without historical replay; J1810 establishes a genuine listening capability or precise supported limitation; an actual eligible Chief stage ruling survives job done and has its next action recorded. Evidence PR397. CI and synthetic stage tests alone do not satisfy this hold.",
+        "check_at": "2026-11-04T11:00:00Z"
+      }
     },
     {
       "id": "J1755",
