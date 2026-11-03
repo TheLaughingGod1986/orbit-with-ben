@@ -105,6 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1905 | mini | open (after J1780) | – | – | 039 script · chief · 039 Planet Sounds: restore topic and editorial decision before facts and script lock | J1780 |
 | J1906 | mini | open (after J1781) | – | – | 040 script · chief · 040 Wrong Kind of Aliens: restore topic and editorial decision before facts and script lock | J1781 |
 | J1907 | mini | open (after J1782) | – | – | 041 script · chief · 041 Io: restore topic and editorial decision before facts and script lock | J1782 |
+| J1909 | mini | open (after J1783) | – | – | 042 script · chief · 042 Red Giant: restore topic and editorial decision before facts and script lock | J1783 |
 
 Recently finished:
 
