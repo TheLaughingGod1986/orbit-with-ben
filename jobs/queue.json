@@ -162183,20 +162183,25 @@
           "at": "2026-11-03T19:20Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified PR422 merge a65e83e53466bf33823e85cdba09d474f1b7a2b5 in clean main checkout (HEAD edb0a09fa1), installed buffer-check.sh SHA256 961a5615a07b... (git blob ede04d1284) has direct CLI calls and no outer nested lock, LaunchAgent dev.orbit.buffer-check points to /Users/benjaminoats/YouTube/orbit-with-ben/07_Content-Ops/launchd/buffer-check.sh, and desk-lock + buffer-recovery unit tests PASS"
+        },
+        {
+          "at": "2026-11-03T19:20Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: OWB check --dry-run ran cleanly without self-lock (exit 1 due to 2 explicit unmirrored source holds: iyvWYFP_ETA Mars night and RLSJm59OSzI Titan; Js6EQJ8qDi8 Mars long discovered in dry-run autoMirrored with sent=false; 21 deferred; 0 writes)"
         }
       ],
-      "remaining_action": "Run direct npx tsx --env-file=.env scripts/buffer-mirror.ts check --dry-run (OWB) from 07_Content-Ops",
+      "remaining_action": "Run direct npx tsx --env-file=.env scripts/buffer-mirror.ts check --channel hos --dry-run from 07_Content-Ops",
       "kind": "assembly",
       "recovery_scope_key": "J1874:validate-code",
       "urgent": 1,
       "due_kind": "user-immediate-claim",
       "due": "2026-11-03T19:15:55+00:00",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-11-03T19:20Z",
         "by": "gemini",
-        "note": "Verified PR422 merge a65e83e53466bf33823e85cdba09d474f1b7a2b5 in clean main checkout (HEAD edb0a09fa1), installed buffer"
+        "note": "OWB check --dry-run ran cleanly without self-lock (exit 1 due to 2 explicit unmirrored source holds: iyvWYFP_ETA Mars ni"
       },
       "taskKeys": [
         "OWB:025",
