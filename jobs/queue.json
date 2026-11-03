@@ -158557,13 +158557,13 @@
       "stage": "edit",
       "after": "J1771",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T13:55Z",
-      "eta": "2026-11-03T14:25Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T13:50Z",
-      "result": "",
+      "result": "Completed input decision through bounded GBP0 acquisition J1834 (after J1833, 030/edit). PR409 merged; both CI checks PASS. Crew-2 hash and survey verified, no passing interval approved. 030 edit remains blocked; J1471 input and J1356 readiness holds unchanged. No media PASS, spend, publishing or watch release.",
       "history": [
         {
           "at": "2026-11-03T13:50Z",
@@ -158594,6 +158594,11 @@
           "at": "2026-11-03T14:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR409 merged with Rules and Studio core CI PASS; acquisition J1834 linked after J1833; 030 edit blocked and J1471/J1356 holds preserved."
+        },
+        {
+          "at": "2026-11-03T14:01Z",
+          "by": "codex",
+          "what": "done: Completed input decision through bounded GBP0 acquisition J1834 (after J1833, 030/edit). PR409 merged; both CI checks PASS. Crew-2 hash and survey verified, no passing interval approved. 030 edit remains blocked; J1471 input and J1356 readiness holds unchanged. No media PASS, spend, publishing or watch release."
         }
       ],
       "remaining_action": "Scope complete; J1834 acquisition precedes J1471 correction and J1356 review",
@@ -158607,7 +158612,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/409"
     },
     {
       "id": "J1834",
