@@ -149110,19 +149110,24 @@
           "at": "2026-11-03T00:53Z",
           "by": "codex",
           "what": "step 2 of 3 done: 031/032 VO lock records remain; both say picture not started and CG pending, with zero generation/edit/final files. 033-061 have no recorded VO/picture locks. NAS offload found no eligible scratch."
+        },
+        {
+          "at": "2026-11-03T00:54Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified condition unmet and recorded J0979 input hold with recheck J1693 for 2026-11-03 06:55 UTC; original shelving and all gates retained."
         }
       ],
-      "remaining_action": "Record verified unmet condition on J0979 and finish verification",
+      "remaining_action": "Close verification and post the recorded outcome",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-03T01:51:58+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T00:53Z",
+        "at": "2026-11-03T00:54Z",
         "by": "codex",
-        "note": "031/032 VO lock records remain; both say picture not started and CG pending, with zero generation/edit/final files. 033-"
+        "note": "Verified condition unmet and recorded J0979 input hold with recheck J1693 for 2026-11-03 06:55 UTC; original shelving an"
       },
       "taskKeys": [
         "OWB:029",
