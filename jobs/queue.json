@@ -160299,18 +160299,24 @@
           "at": "2026-11-03T15:41Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T15:41Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original scope and delivery read; J1844 now records FIX, superseding absent-review premise"
         }
       ],
-      "remaining_action": "Verify J1844 review evidence and exact ISS candidate approval",
+      "remaining_action": "Verify newer FIX review and successor scope; preserve unmet input hold",
       "kind": "chief",
       "recheck_of": "J1834",
       "due": "2026-11-03T16:13:46+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T15:41Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Original scope and delivery read; J1844 now records FIX, superseding absent-review premise"
       },
       "taskKeys": [
         "OWB:030"
