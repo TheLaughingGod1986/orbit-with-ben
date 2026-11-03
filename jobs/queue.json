@@ -160748,9 +160748,14 @@
           "at": "2026-11-03T22:43Z",
           "by": "relay",
           "what": "condition verification queued: J1911"
+        },
+        {
+          "at": "2026-11-03T22:46Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T23:43:37Z"
         }
       ],
-      "remaining_action": "Obtain approval to publish completed text/code evidence, then hand off to J1848",
+      "remaining_action": "Obtain explicit approval for J1847 renderer/evidence publication, then hand off existing preview to J1848",
       "due": "2026-11-03T14:30:08Z",
       "for": "codex",
       "kind": "chart",
@@ -160766,10 +160771,12 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Preview complete locally at /Users/benjaminoats/_desk/cache/J1847/delivery; clean evidence commit eba37bfe7e on codex/j1847-preview in /private/tmp/J1847-wt. Step 3/4. Automatic approval review rejected git push of renderer code and provenance/evidence to GitHub origin, requiring explicit payload/destination approval. Need approval to publish this text/code-only commit to TheLaughingGod1986/orbit-with-ben and open its evidence PR; no media will be pushed. Then hand off exact local delivery to existing J1848 -> J1849. Picture/polish checks pass with one unresolved render WARN; no source or finished-film approval. J1471/J1356 and all holds preserved. Do not rerender or repeat source acquisition.",
-        "check_at": "2026-11-03T23:43:37+00:00",
-        "recheck_task": "J1911"
+        "type": "input",
+        "condition": "J1911 verified at 2026-11-03T22:47Z: explicit approval remains absent for publishing commit eba37bfe7e74926ea540e87b85abd9df40e6aa48 (28 text/code renderer and provenance/evidence files) to public TheLaughingGod1986/orbit-with-ben feature branch and evidence PR. J1910 approval was limited to four J1846 workflow Markdown briefs, not this payload. Latest thread #6617337646 records rejection, no later approval found. All five local output hashes match; no rerender needed. Preserve step 3/4, J1848 -> J1849 review chain, render WARN, J1471/J1356 and all holds.",
+        "check_at": "2026-11-03T23:43:37Z",
+        "last_recheck": "J1911",
+        "checked_at": "2026-11-03T22:46:10+00:00",
+        "checked_by": "codex"
       }
     },
     {
