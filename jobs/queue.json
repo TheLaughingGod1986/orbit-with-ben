@@ -159205,9 +159205,14 @@
           "at": "2026-11-03T15:06Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T15:07Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read original remediation and acquisition scopes; checking latest delivery and holds."
         }
       ],
-      "remaining_action": "Verify readiness: Identify approved moving ISS opening input, then correct and review AR cohort",
+      "remaining_action": "Verify ISS opening input and approval evidence for J1471",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T15:10:42+00:00",
@@ -159215,11 +159220,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T15:06Z",
+        "at": "2026-11-03T15:07Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read original remediation and acquisition scopes; checking latest delivery and holds."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1841",
