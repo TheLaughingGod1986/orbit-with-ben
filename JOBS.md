@@ -100,6 +100,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1881 | mini | open (after J1880) | – | – | 008 edit · chief · Chief: review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1888 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 | J1889 | mini | open | – | – | chief · J1879: review recovered Mars-night and Titan Studio source candidates | J1879 |
+| J1891 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
+| J1892 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
+| J1893 | any | open | – | – | chief · Chief: verify condition for J1846 |  |
 
 Recently finished:
 
