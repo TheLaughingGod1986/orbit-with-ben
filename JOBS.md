@@ -40,10 +40,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
-| J1700 | any | claimed | codex | 2026-11-03T03:54Z | chief · Chief: verify condition for J0978 |  |
 
 Recently finished:
 
+- J1700 done: Chief: verify condition for J0978 (Fresh Atom Studio read still shows A/B testing titles / Results ready, original title and Public. J0978 remains blocked; next check 2026-11-03 08:00 UTC. Evidence PR 388 / 05bbaf593. No YouTube changes or spend.)
 - J1699 done: Chief: verify condition for J1471 (done)
 - J1698 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no other final exports present. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. J1356 remains held; next check 2026-11-03T02:31:21Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes.)
 - J1697 done: Chief: verify condition for J1130 (done)
@@ -53,4 +53,3 @@ Recently finished:
 - J1693 done: Chief: verify condition for J0979 (Verified J0979 input condition remains unmet. 031/032 retain VO lock records J1295/c8ed778ab and J1294/4a9a2e16b, but picture not started, CG pending and zero generation/edit/final files. 033-061 have no recorded VO/picture locks. Reviewed J1000/J1042 shelving and J1686 evidence. J0979 remains blocked with recheck J1693, next check 2026-11-03T06:55:00Z. 029 reserve v01 remains shelved; all original gates and approvals preserved. No spend or publishing changes. Required NAS offload found no eligible old scratch; about 15.6 GB free before temporary worktree.)
 - J1692 done: Chief: verify condition for J1471 (Verified PR380 unchanged and three J1468 master plus Crew-2 cache hashes match. J1471 remains blocked on approved ISS opening input; retained retry 2026-11-03T01:30:27Z. All gates and Ben/date/credit/publishing holds remain.)
 - J1691 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. J1356 remains held; next check 2026-11-03T01:30:27Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes.)
-- J1690 done: Chief: verify condition for J1130 (done)
