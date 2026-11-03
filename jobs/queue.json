@@ -159832,9 +159832,14 @@
           "at": "2026-11-03T15:19Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T15:19Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Three steps: review approval, read fresh Studio evidence, record decision and report."
         }
       ],
-      "remaining_action": "Verify readiness: Verify T020 completion and next London calendar day before arming approved title-only test",
+      "remaining_action": "Check authorization and current T020 status, then record the hold decision",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-03T16:01:48+00:00",
@@ -159844,9 +159849,11 @@
         "of": 3,
         "at": "2026-11-03T15:19Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Three steps: review approval, read fresh Studio evidence, record decision and report."
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     },
     {
       "id": "J1851",
