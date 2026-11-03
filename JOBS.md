@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1864 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1865 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
+| J1867 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 
 Recently finished:
 
