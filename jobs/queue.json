@@ -151686,19 +151686,24 @@
           "at": "2026-11-03T05:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original brief and approvals read; PR380 remains OPEN at d0b04b5e0 with no comments or reviews"
+        },
+        {
+          "at": "2026-11-03T05:50Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 masters and Crew-2; saved opening gates remain FAIL; no new PR380 approval"
         }
       ],
-      "remaining_action": "Check saved gates and master integrity against PR380",
+      "remaining_action": "Record unmet input hold and close verification",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T06:32:54+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T05:49Z",
+        "at": "2026-11-03T05:50Z",
         "by": "codex",
-        "note": "Original brief and approvals read; PR380 remains OPEN at d0b04b5e0 with no comments or reviews"
+        "note": "Fresh SHA256 matches all three J1468 masters and Crew-2; saved opening gates remain FAIL; no new PR380 approval"
       },
       "taskKeys": [
         "OWB:030"
