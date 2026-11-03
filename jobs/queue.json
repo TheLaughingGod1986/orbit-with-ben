@@ -161280,9 +161280,14 @@
           "at": "2026-11-03T18:50Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T18:50Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Verification only; preserve J1752 completed technical step and VO review state."
         }
       ],
-      "remaining_action": "Verify readiness: Complete actual listening of locked v02a with an audio-capable elected Chief, then record VO-only PASS or FIX",
+      "remaining_action": "Verify J1752 listening capability and evidence, then record the hold decision",
       "kind": "chief",
       "recheck_of": "J1752",
       "due": "2026-11-03T17:32:17+00:00",
@@ -161292,9 +161297,11 @@
         "of": 3,
         "at": "2026-11-03T18:50Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Verification only; preserve J1752 completed technical step and VO review state."
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J1868",
