@@ -161039,9 +161039,14 @@
           "at": "2026-11-03T23:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T23:41Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J1849: 4-step plan to verify J1846/J1847/J1848 evidence + native video playback, verify hashes/interval/gates, record Chief exact-input acceptance, and satisfy J1471 ISS-input hold"
         }
       ],
-      "remaining_action": "Decide exact model input from native moving evidence; release only ISS input hold if accepted",
+      "remaining_action": "Verify J1846/J1847/J1848 evidence, native video playback, hashes/gates, and record Chief source decision + J1471 ISS-input unblocking",
       "due": "2026-11-03T22:32:47+00:00",
       "kind": "chief",
       "urgent": 4,
@@ -161052,12 +161057,14 @@
       ],
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-03T23:40Z",
+        "of": 4,
+        "at": "2026-11-03T23:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J1849: 4-step plan to verify J1846/J1847/J1848 evidence + native video playback, verify hashes/interval/gates, "
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1850",
