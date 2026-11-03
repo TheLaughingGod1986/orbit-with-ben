@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -318,3 +318,22 @@ console.log('Studio blocker guidance checks OK');
 const ownStageJob={...inputJob,id:'Jstage',stage:'edit',by:'gemini',hold:{condition:'Awaiting the recorded edit review'}};
 assert.equal(t.blockerModel(v({jobs:[inputJob,ownStageJob]}),blockedEdit).job.id,'Jstage','explicit stage mapping outranks a reference match');
 assert(!t.blockerModel(v({jobs:[{...inputJob,status:'done'}]}),blockedEdit).job,'completed records cannot become active blockers');
+
+// Missing milestone data must explain the gap without inventing approval or linking unrelated jobs.
+const unknownQA={id:'qa',label:'Chief QA',state:'unknown',dependsOn:['edit','thumbs']};
+const completedPrereqs=[{id:'edit',label:'Edit',state:'done'},{id:'thumbs',label:'Packaging',state:'done'},unknownQA];
+const qaVideo=v({production:{milestones:completedPrereqs},jobs:[{id:'unrelated',stage:'',status:'blocked',remaining_action:'Repair a Short'}]});
+let qaContext=t.stageExplanation(qaVideo,unknownQA);
+assert(qaContext.why.includes('no recorded review decision'));assert(!qaContext.job);
+assert(qaContext.action.includes('queue its review'));assert(qaContext.owner.includes('Chief owns QA'));
+const qaHtml=t.milestoneCard(qaVideo,unknownQA,'qa');
+assert(qaHtml.includes('QA decision not recorded')&&!qaHtml.includes('Unassigned')&&!qaHtml.includes('Open stage details for'));
+const scheduledQA=t.stageExplanation({...qaVideo,youtube:{state:'scheduled',publishAtLondon:'Sun 22 Nov 2026 18:00 GMT'}},unknownQA);
+assert(scheduledQA.why.includes('already scheduled')&&scheduledQA.why.includes('22 Nov'));
+assert(scheduledQA.action.includes('not a reason to restart production'));
+const waitingQA=t.stageExplanation({...qaVideo,production:{milestones:[{id:'edit',label:'Edit',state:'blocked'},unknownQA]}},unknownQA);
+assert(waitingQA.why.includes('Edit (Blocked)'));
+const linkedQA=t.stageExplanation({...qaVideo,jobs:[{id:'Jreview',stage:'qa',status:'claimed',by:'codex',remaining_action:'Review the final cut'}]},unknownQA);
+assert.equal(linkedQA.job.id,'Jreview');assert.equal(linkedQA.owner,'Codex');assert(linkedQA.why.includes('claimed'));
+assert(t.stageExplanationHtml({...qaVideo,jobs:[{id:'Jreview',stage:'qa',status:'open',title:'<unsafe>'}]},unknownQA).includes('&lt;unsafe&gt;'));
+console.log('Stage explanation checks OK');
