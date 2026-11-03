@@ -157563,9 +157563,14 @@
           "at": "2026-11-03T12:35Z",
           "by": "relay",
           "what": "condition verification queued: J1824"
+        },
+        {
+          "at": "2026-11-03T12:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T18:40:00Z"
         }
       ],
-      "remaining_action": "Elected Chief to visually review B/C v02 before any Test and Compare authority",
+      "remaining_action": "Correct B title pairing, obtain packaging panel decision, then review exact final thumbnails; preserve original A",
       "due": "2026-11-14T18:00:00Z",
       "kind": "thumb",
       "progress": {
@@ -157579,10 +157584,12 @@
         "OWB:026"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-03T13:35:35+00:00",
-        "recheck_task": "J1824"
+        "type": "input",
+        "condition": "B v02 TWO SUNS needs a corrected nearest-star title pairing; corrected set needs independent packaging panel decision and elected-Chief approval of exact files. Evidence d604bef0f jobs/reviews/J1824.md.",
+        "check_at": "2026-11-03T18:40:00Z",
+        "last_recheck": "J1824",
+        "checked_at": "2026-11-03T12:39:32+00:00",
+        "checked_by": "codex"
       }
     },
     {
