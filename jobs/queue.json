@@ -154178,10 +154178,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T10:45Z",
+      "eta": "2026-11-03T12:45Z",
       "created_by": "codex",
       "created_at": "2026-11-03T10:43Z",
       "result": "",
@@ -154190,10 +154190,23 @@
           "at": "2026-11-03T10:43Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T10:45Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review PR394 and HOS399, validate live handoffs and resolve review-capability routing",
-      "kind": "chief"
+      "kind": "chief",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T10:45Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],

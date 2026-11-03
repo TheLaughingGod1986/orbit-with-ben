@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1752 | mini | blocked | codex | – | 031 vo · chief · 031 Voice: Chief final verification of locked take after J1295 | 6536440194 |
 | J1753 | mini | blocked | codex | – | 032 vo · chief · 032 Voice: Chief final verification of locked take after J1294 | 6536311192 |
-| J1754 | mini | open | – | – | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
+| J1754 | mini | claimed | codex | 2026-11-03T12:45Z | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
 
 Recently finished:
 
