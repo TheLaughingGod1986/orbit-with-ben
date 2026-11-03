@@ -156709,13 +156709,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T22:00Z",
-      "eta": "2026-11-04T00:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Resolved 039 orphan-review: J1905 restores topic/editorial decision before facts and direct quote checks. Board remains review; no script or production approval. Clean worktree verified and drafts preserved.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -156746,6 +156746,11 @@
           "at": "2026-11-03T22:03Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified linked successor, review state, no stage claim, clean worktree and unchanged drafts/sources/audit."
+        },
+        {
+          "at": "2026-11-03T22:03Z",
+          "by": "codex",
+          "what": "done: Resolved 039 orphan-review: J1905 restores topic/editorial decision before facts and direct quote checks. Board remains review; no script or production approval. Clean worktree verified and drafts preserved."
         }
       ],
       "remaining_action": "Handoff repair verified; J1905 owns topic and editorial decision",
@@ -156765,7 +156770,8 @@
       },
       "taskKeys": [
         "OWB:039"
-      ]
+      ],
+      "done_ref": "e9ccd47ae4"
     },
     {
       "id": "J1781",
