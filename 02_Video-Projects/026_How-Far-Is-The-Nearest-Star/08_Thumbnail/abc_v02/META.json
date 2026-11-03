@@ -1,0 +1,119 @@
+{
+  "job": "J1823",
+  "version": "v02",
+  "status": "REVIEW ONLY \u2014 no publishing authority",
+  "title": "How Far Is the Nearest Star?",
+  "composition": "Earth is a familiar foreground reference; angular sizes and separation are NOT a physical scale diagram. Telescope diffraction halos are not stellar surfaces.",
+  "original_a": {
+    "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg",
+    "sha256": "922855804c4a846fc82f1269d0e524b5b89bde781c187afe5f416367aa970216"
+  },
+  "sources": [
+    {
+      "id": "potw1343a",
+      "subject": "Proxima Centauri",
+      "credit": "ESA/Hubble & NASA; CC BY 4.0",
+      "recovered_url": "https://esahubble.org/media/archives/images/large/potw1343a.jpg",
+      "path": "/Users/benjaminoats/_desk/J1823/inputs/potw1343a.jpg",
+      "sha256": "163774dc420405e6b15e0cbc3fac0b87dc93f405a7e39c4b5d14dcbcfb19a136",
+      "dimensions": [
+        604,
+        592
+      ]
+    },
+    {
+      "id": "GSFC_20171208_Archive_e000214",
+      "subject": "Alpha Centauri A and B, not Proxima",
+      "credit": "NASA/ESA Hubble",
+      "recovered_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000214/GSFC_20171208_Archive_e000214~orig.jpg",
+      "path": "/Users/benjaminoats/_desk/J1823/inputs/GSFC_20171208_Archive_e000214.jpg",
+      "sha256": "8d3cda622bd552609dba831f2a15096b35edc27184904fa62fd4315d22326d7d",
+      "dimensions": [
+        1280,
+        836
+      ]
+    },
+    {
+      "id": "GSFC_20171208_Archive_e002130",
+      "subject": "Blue Marble 2007 East \u2014 Earth",
+      "credit": "NASA",
+      "recovered_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002130/GSFC_20171208_Archive_e002130~orig.jpg",
+      "path": "/Users/benjaminoats/_desk/J1823/inputs/GSFC_20171208_Archive_e002130.jpg",
+      "sha256": "3ca40e6058ded3f7b8d777c1fcb3b167f9e1f9af9d1d3f15388e92c2c3d66fb3",
+      "dimensions": [
+        3718,
+        3718
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "key": "B",
+      "file": "nearest_star_thumb_B_v02.jpg",
+      "sha256": "902fe1931424415e8f3dbc23da74f24da603bc083e7cbfb350396afb2f94254c",
+      "hook": "TWO SUNS",
+      "yellow_word": "SUNS",
+      "source_id": "GSFC_20171208_Archive_e000214",
+      "crop": [
+        0,
+        58,
+        1280,
+        778
+      ],
+      "upscale": 1.0,
+      "earth_box": [
+        55,
+        490,
+        245,
+        680
+      ],
+      "hook_box": [
+        48,
+        34,
+        755,
+        114
+      ]
+    },
+    {
+      "key": "C",
+      "file": "nearest_star_thumb_C_v02.jpg",
+      "sha256": "62c8a813c53a8f1fff098c492a49c7b4b5168eadb26b40a2572f169114721dab",
+      "hook": "HIDDEN STAR",
+      "yellow_word": "HIDDEN",
+      "source_id": "potw1343a",
+      "crop": [
+        0,
+        126,
+        604,
+        466
+      ],
+      "upscale": 2.119205298013245,
+      "earth_box": [
+        55,
+        490,
+        245,
+        680
+      ],
+      "hook_box": [
+        48,
+        34,
+        936,
+        114
+      ]
+    }
+  ],
+  "original_preservation": {
+    "nearest_star_thumb_C_900m-years-on-foot.jpg": "48243dfa51a655b0f284698c72dfde27e50363d6da9d12d359da270afe808eb6",
+    "nearest_star_thumb_B_light-takes-4-years.jpg": "a803750f7ed289380342d648c246d7211f093be0eaaf9e36ab74875bdfdfb311",
+    "nearest_star_thumbs_v01_small_size_check.jpg": "06d313bd850600c14c50299ae0c354b3c87de159801ce458c18dbeeae5e257fd",
+    "nearest_star_thumb_A_you-cant-see-it.jpg": "922855804c4a846fc82f1269d0e524b5b89bde781c187afe5f416367aa970216",
+    "META.json": "640c8fea2f7d7481933b7dc806907b955c80777c2659bab81671cc865b9846fd"
+  },
+  "artifacts": {
+    "tool_preview.jpg": "cd8ddb613dfe746232a0a40db99a9cbd7d83ad9a992000e9772264604e15f395",
+    "nearest_star_thumb_C_v02.jpg": "62c8a813c53a8f1fff098c492a49c7b4b5168eadb26b40a2572f169114721dab",
+    "comparison_true_168x94.png": "b6ad4a945caad93075379450a88813caf0bc99d86df195fcd479320d3cca8642",
+    "nearest_star_thumb_B_v02.jpg": "902fe1931424415e8f3dbc23da74f24da603bc083e7cbfb350396afb2f94254c"
+  },
+  "asset_directory": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/abc_v02"
+}
