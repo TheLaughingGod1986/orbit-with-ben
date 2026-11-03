@@ -161720,19 +161720,24 @@
           "at": "2026-11-03T19:30Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified commit 3ff239494 in /private/tmp/j1760-wt (non-secret status/board/DECISION.md only), OWB 006 history (6dc82a888c..10fc880c24 from HOS J0160), and HOS #180 6126300569 / b019df4"
+        },
+        {
+          "at": "2026-11-03T19:30Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Granted acting-Chief public-push approval and reopened J1760 with verified provenance and commit 3ff239494 evidence"
         }
       ],
-      "remaining_action": "Grant acting-Chief public-push approval and reopen J1760 with verified provenance evidence",
+      "remaining_action": "Verify reopened J1760 queue state and close J1872",
       "kind": "chief",
       "recheck_of": "J1760",
       "due": "2026-11-03T18:55:55+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T19:30Z",
         "by": "gemini",
-        "note": "Verified commit 3ff239494 in /private/tmp/j1760-wt (non-secret status/board/DECISION.md only), OWB 006 history (6dc82a88"
+        "note": "Granted acting-Chief public-push approval and reopened J1760 with verified provenance and commit 3ff239494 evidence"
       },
       "taskKeys": [
         "OWB:006",
