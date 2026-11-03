@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1747 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1748 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1749 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1749 | any | claimed | codex | 2026-11-03T11:58Z | chief · Chief: verify condition for J1100 |  |
 | J1750 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1751 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
