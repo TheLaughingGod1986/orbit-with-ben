@@ -161135,13 +161135,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T18:08Z",
-      "eta": "2026-11-03T20:08Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T17:29Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-03T17:29Z",
@@ -161172,6 +161172,11 @@
           "at": "2026-11-03T18:10Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J1100 hold with recheck J1871 and existing 18:29:20Z retry; original 2/3 progress, approvals, deadlines and fallback unchanged."
+        },
+        {
+          "at": "2026-11-03T18:10Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits bed clearance, local listening and disk headroom",
@@ -161189,7 +161194,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1872",
