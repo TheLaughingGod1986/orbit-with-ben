@@ -159116,13 +159116,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T15:03Z",
-      "eta": "2026-11-03T17:03Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T14:10Z",
-      "result": "",
+      "result": "Verified J1356 condition remains unmet. Fresh SHA256 matches all three J1468 final exports; no corrected final exports; saved opening FAILs persist. PR380 unchanged d0b04b5e0. New PR414 1474821f3 records Gemini moving-review FIX for T545. J1846 replacement handoff J1847-J1849 exists; no source approval yet. Updated J1356 hold and action, retained 15:10:42Z retry. No new gate run, audition, media edit, spend or publishing action. NAS offload found no eligible old scratch.",
       "history": [
         {
           "at": "2026-11-03T14:10Z",
@@ -159153,6 +159153,11 @@
           "at": "2026-11-03T15:04Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 hold updated with PR414 FIX and J1847-J1849 replacement chain; retained 15:10:42Z check. No gate waiver, playback claim, media edit or publishing action."
+        },
+        {
+          "at": "2026-11-03T15:05Z",
+          "by": "codex",
+          "what": "done: Verified J1356 condition remains unmet. Fresh SHA256 matches all three J1468 final exports; no corrected final exports; saved opening FAILs persist. PR380 unchanged d0b04b5e0. New PR414 1474821f3 records Gemini moving-review FIX for T545. J1846 replacement handoff J1847-J1849 exists; no source approval yet. Updated J1356 hold and action, retained 15:10:42Z retry. No new gate run, audition, media edit, spend or publishing action. NAS offload found no eligible old scratch."
         }
       ],
       "remaining_action": "Close completed J1839 verification",
@@ -159169,7 +159174,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/414"
     },
     {
       "id": "J1840",
