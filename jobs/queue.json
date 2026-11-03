@@ -1,5 +1,5 @@
 {
-  "next_id": 1809,
+  "next_id": 1810,
   "jobs": [
     {
       "id": "J0001",
@@ -156061,6 +156061,34 @@
         "kind": "orphan-review",
         "signature": "14fa2d2f6a289cc91969"
       }
+    },
+    {
+      "id": "J1809",
+      "title": "HOS desk: route elected Chief handoffs and safely refresh legacy watcher",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J1754 runtime audit follow-up after HOS PR399 merge ddefc984. Fix HOS Chief-role delivery safely, using actual elected identity, not Grok impersonation. Current for_agent uses literal equality; PARTIES lacks chief/gemini and WRITERS lacks claude/gemini. Live launchd com.hos.desk PID8834 began 14 Oct, runs --watch 120 --run as default grok, and wrapper always invokes cursor-agent. Installed new code is not loaded by that process. In the 1403-comment inventory: 175 nonterminal literal-recipient messages fall at/below saved watermarks; 31 address chief, 84 address grok beyond its watermark, 35 have comma-separated recipients. These counts are candidates, not unfinished tasks. Inventory is /private/tmp/j1754-desk-inventory.json (will also be committed in J1754 evidence). Implement elected-role resolution, supported Gemini/Claude identities, deduplication across succession and recipient lists, durable reassignment/ack semantics, and ensure ordinary Cursor does not inherit Chief authority. Before restart/recovery, classify candidate messages against newer outcomes, actual queue, stage and release history. Never bulk replay historical production or reset watermarks. Only recover specific verified unresolved IDs. Test role handover, duplicate recipient lists and handback. Safely refresh the actual launchd watcher only at an idle boundary with no unreviewed historical auto-dispatch; record PID/version and controlled live delivery+ack. J1754 already proved installed-code literal-recipient persistence using canary 6601656621, outcome 6601682729. No spend, source-audio egress, publishing or media approvals. Submit clean PR and Chief review; preserve Ben finished-film UAT.",
+      "ref": "J1754",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T10:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T10:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair role-addressed pending delivery and selectively reconcile historical inbox before watcher restart",
+      "kind": "assembly"
     }
   ],
   "focus": [],

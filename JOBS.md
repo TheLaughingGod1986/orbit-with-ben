@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1806 | mini | open | – | – | chief · Chief: resolve 061 topic orphan-review |  |
 | J1807 | mini | open | – | – | chief · Chief: resolve 061 script orphan-review |  |
 | J1808 | mini | open | – | – | chief · Chief: resolve 061 sources orphan-review |  |
+| J1809 | mini | open | – | – | assembly · HOS desk: route elected Chief handoffs and safely refresh legacy watcher | J1754 |
 
 Recently finished:
 
