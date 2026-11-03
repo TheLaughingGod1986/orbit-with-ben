@@ -157949,13 +157949,13 @@
       "stage": "upload",
       "after": "J1769",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T13:30Z",
-      "eta": "2026-11-03T15:30Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T13:04Z",
-      "result": "",
+      "result": "Delivery evidence PASS; PR315 merged at 64aaaa223 after live-state, five master-hash, listing/caption/cover and preservation checks. J0910 current replacements corrected; Public condition and 29 Nov 18:05Z check retained. J0936/J1100 holds untouched. 028 upload delivery stage done. No YouTube mutation, new media approval or spend.",
       "history": [
         {
           "at": "2026-11-03T13:04Z",
@@ -157991,6 +157991,11 @@
           "at": "2026-11-03T13:39Z",
           "by": "codex",
           "what": "step 4 of 4 done: PR315 merged as 64aaaa223; verified landed records and preserved holds. Upload delivery stage done with merge ref; 584 local tests passed (8 skipped), both CI checks passed."
+        },
+        {
+          "at": "2026-11-03T13:39Z",
+          "by": "codex",
+          "what": "done: Delivery evidence PASS; PR315 merged at 64aaaa223 after live-state, five master-hash, listing/caption/cover and preservation checks. J0910 current replacements corrected; Public condition and 29 Nov 18:05Z check retained. J0936/J1100 holds untouched. 028 upload delivery stage done. No YouTube mutation, new media approval or spend."
         }
       ],
       "remaining_action": "Delivery review complete; dated Related and pin work remains J0910",
@@ -158005,7 +158010,8 @@
       },
       "taskKeys": [
         "OWB:028"
-      ]
+      ],
+      "done_ref": "64aaaa22310712b1fc3a861c80e3d7f861b40738"
     },
     {
       "id": "J1827",
