@@ -863,6 +863,16 @@ def short_title_from_path(meta: dict) -> str:
     return ""
 
 
+def watch_format(watch):
+    """Use an explicit format or a recorded Short asset path, never an opaque URL/title."""
+    if not isinstance(watch, dict):
+        return ""
+    if watch.get('type') in ('long', 'short'):
+        return watch['type']
+    file = str(watch.get('file') or '').replace('\\', '/')
+    return 'short' if re.search(r'(?:^|/)10_Shorts/|(?:^|/)[^/]*_short(?:_v\d+[a-z0-9-]*)?(?:_PHONE)?\.mp4$', file, re.I) else ''
+
+
 def build_videos(
     *,
     hos: dict,
@@ -1042,6 +1052,13 @@ def build_videos(
     add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now)
     settle_ready(videos, now)
 
+    # Approval/ask overlays may carry an old project format too. Resolve the
+    # recorded watch asset again without changing IDs, checks or workflow state.
+    for video in videos:
+        recorded_format = watch_format(video.get('watch'))
+        if recorded_format and recorded_format != video.get('type') and not (video.get('youtube') or {}).get('videoId'):
+            video.update(type=recorded_format, cutFormatCorrected=True)
+
     from uat_outlook import attach
     attach(videos, hos, owb, alljobs or jobs, now)
 
@@ -1161,6 +1178,11 @@ def _card(
     if youtube and youtube.get("publishAtLondon"):
         air_text = youtube["publishAtLondon"]
 
+    recorded_format = watch_format(watch)
+    corrected_format = bool(recorded_format and recorded_format != vtype and not (youtube or {}).get('videoId'))
+    if corrected_format:
+        vtype = recorded_format
+
     return {
         "key": key,
         "checkId": check_id(key.split(":S:")[0] if ":S:" in key else key),
@@ -1168,6 +1190,7 @@ def _card(
         "number": number,
         "title": title,
         "type": vtype,
+        **({"cutFormatCorrected": True} if corrected_format else {}),
         "version": version,
         "air": air,
         "airText": air_text,

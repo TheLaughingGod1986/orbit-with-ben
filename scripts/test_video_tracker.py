@@ -38,6 +38,23 @@ def live_fixture():
 
 
 class ParseNotes(unittest.TestCase):
+    def test_recorded_watch_format_is_not_guessed_from_opaque_url_or_title(self):
+        self.assertEqual(vt.watch_format({'file':'OWB UAT/030_apophis_short_v13a/030_apophis_short_v13a_PHONE.mp4'}),'short')
+        self.assertEqual(vt.watch_format({'file':'project/10_Shorts/one/master.mp4'}),'short')
+        self.assertEqual(vt.watch_format({'url':'https://example.test/short.mp4','title':'A Short'}),'')
+        self.assertEqual(vt.watch_format({'file':'long_with_shorts_bumper.mp4'}),'')
+
+    def test_project_watch_short_is_corrected_without_changing_deep_link_or_review(self):
+        args=dict(key='OWB:030',channel='OWB',number='030',title='Apophis',vtype='long',air='',brief={},release=None,
+                  upload_rows=[],jobs=[],check=None,watch={'file':'030_apophis_short_v13a_PHONE.mp4','version':'v13a','url':'https://example.test/watch'},
+                  override_lane=None,now=datetime.now(timezone.utc))
+        card=vt._card(**args)
+        self.assertEqual((card['key'],card['checkId'],card['type']),('OWB:030','OWB-030','short'))
+        self.assertTrue(card['cutFormatCorrected'])
+        self.assertEqual(card['watch'],args['watch'])
+        args.update(release={'videoId':'realLong000','state':'live'})
+        self.assertEqual(vt._card(**args)['type'],'long','an unrelated watch link cannot relabel a known published video')
+
     def test_timecoded_list(self):
         notes = vt.parse_change_notes(
             "HOS 007 Vaccine: Ben's 3 changes\n"
