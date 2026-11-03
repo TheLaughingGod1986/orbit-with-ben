@@ -110018,9 +110018,14 @@
           "at": "2026-11-03T10:50Z",
           "by": "relay",
           "what": "condition verification queued: J1756"
+        },
+        {
+          "at": "2026-11-03T11:00Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T12:00:00Z"
         }
       ],
-      "remaining_action": "Await J1204 Uranus gate resolution and new eligible S5/S6 footage; PR350 rejects current source batch",
+      "remaining_action": "Await eligible S5/S6 footage until final 5 Nov noon check; Uranus correction unsuccessful, preserve fallback",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
@@ -110034,10 +110039,12 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "PR350 source review decided: J1208 submitted MEO candidates rejected; S5/S6 await new eligible optical video input, J1208 checks 30 Oct 18:00Z then final 5 Nov 12:00Z if absent. No repeat broad search. S4 awaits J1204 gate resolution and Chief review, untouched by this ruling. Rejected v02 replacements stay unapproved. At this original checkpoint verify new evidence only; no automatic release, Ben card or publishing. Original scheduled-copy fallback and watch terms remain.",
-        "check_at": "2026-11-03T11:50:25+00:00",
-        "recheck_task": "J1756"
+        "type": "input",
+        "condition": "J1756 verified 3 Nov: no new eligible S5 meteor/S6 Titan input in designated NAS evidence (1706 files, newest 29 Oct), matching open PRs or subsequent thread submissions. PR350 rejection and J1278 final 5 Nov 12:00Z checkpoint stand. Require materially different clean sequential footage with source, reuse rights, hash, native dimensions, exact in/out, full-size sequence and aspect-correct crop <=2.35x; no repeat broad search or automatic assembly. S4 no longer awaits J1204: v06 passed there, then Ben requested shake correction; J1242 closed v10 UNSUCCESSFUL for open/loop FAIL and stopped Shot9 iterations. J1212 approval hold is untouched. Rejected v02 and later failed cuts remain unapproved; original fallback and Ben-watch terms preserved. At final S5/S6 check, close unsuccessful source branch if still absent. No publishing authorized.",
+        "check_at": "2026-11-05T12:00:00Z",
+        "last_recheck": "J1756",
+        "checked_at": "2026-11-03T11:00:19+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-10-29T15:50Z"
     },
