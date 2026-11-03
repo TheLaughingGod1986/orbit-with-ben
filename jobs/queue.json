@@ -152764,13 +152764,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T08:01Z",
-      "eta": "2026-11-03T10:01Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T08:00Z",
-      "result": "",
+      "result": "Fresh Atom Studio reload at 08:03 UTC still shows A/B testing titles / Results ready, original title and Public. J0978 remains blocked; next check 2026-11-03 14:05 UTC. Evidence PR 389 / e4a886ac9. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-11-03T08:00Z",
@@ -152801,6 +152801,11 @@
           "at": "2026-11-03T08:04Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence PR 389 merged after CI passed; J0978 remains blocked with next check 3 Nov 14:05 UTC."
+        },
+        {
+          "at": "2026-11-03T08:04Z",
+          "by": "codex",
+          "what": "done: Fresh Atom Studio reload at 08:03 UTC still shows A/B testing titles / Results ready, original title and Public. J0978 remains blocked; next check 2026-11-03 14:05 UTC. Evidence PR 389 / e4a886ac9. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Verification complete; J0978 awaits title-test clearance",
@@ -152817,7 +152822,8 @@
       },
       "taskKeys": [
         "HOS:004"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/389"
     }
   ],
   "focus": [],
