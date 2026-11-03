@@ -133584,6 +133584,11 @@
           "at": "2026-11-03T16:17Z",
           "by": "relay",
           "what": "condition verification queued: J1864"
+        },
+        {
+          "at": "2026-11-03T18:43Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T21:01:21Z"
         }
       ],
       "remaining_action": "Obtain accepted exact ISS replacement through J1846-J1849, then correct AR openings and run full gates",
@@ -133600,12 +133605,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1855 verified J1844 FIX at 1474821f3 and replacement scope 001b6962f: no approved exact ISS opening input. J1846 remains blocked on recorded public evidence-push approval; J1847 preview, J1848 moving review and J1849 Chief acceptance are unstarted dependencies. Do not repeat T545. Preserve remaining AR1/AR3 repairs, complete metadata and gates, J1356 full moving/audio pace review, and all Ben/date/credit/publishing holds.",
-        "check_at": "2026-11-03T17:17:11+00:00",
-        "last_recheck": "J1855",
-        "checked_at": "2026-11-03T15:39:08+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1864"
+        "condition": "J1864 verified J1844 FIX at 1474821f3 and J1846 scope 001b6962f: no approved exact ISS replacement. J1846 remains blocked on recorded approval for its public evidence-branch push; J1847 preview, J1848 actual-moving review and J1849 Chief exact-input acceptance are unstarted. Do not repeat T545. Preserve AR1/AR3 corrections, complete metadata and all gates, J1356 full moving/audio pace review, originals and all Ben/date/credit/publishing holds.",
+        "check_at": "2026-11-03T21:01:21Z",
+        "last_recheck": "J1864",
+        "checked_at": "2026-11-03T18:43:12+00:00",
+        "checked_by": "codex"
       }
     },
     {
