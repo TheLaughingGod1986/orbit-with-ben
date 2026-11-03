@@ -157091,13 +157091,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T12:10Z",
-      "eta": "2026-11-03T14:10Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T12:06Z",
-      "result": "",
+      "result": "Verified original rulings, latest J1820/J1100, unchanged local audition hashes and PR333 OPEN at 0a7fcb6ad without reviews/comments. J0936 remains blocked: instrumental S2 clearance, actual local listening, repairs/gates and replacement approvals unproven; live disk below restart floor. Retained 2026-11-03T13:06:28Z retry, historical progress, accepted sources, completed swaps and scheduled-v01 fallbacks. No spend, audio egress, media approval or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T12:06Z",
@@ -157128,6 +157128,11 @@
           "at": "2026-11-03T12:11Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J0936 hold and 13:06:28Z retry; progress, accepted sources, completed swaps and scheduled fallbacks preserved"
+        },
+        {
+          "at": "2026-11-03T12:12Z",
+          "by": "codex",
+          "what": "done: Verified original rulings, latest J1820/J1100, unchanged local audition hashes and PR333 OPEN at 0a7fcb6ad without reviews/comments. J0936 remains blocked: instrumental S2 clearance, actual local listening, repairs/gates and replacement approvals unproven; live disk below restart floor. Retained 2026-11-03T13:06:28Z retry, historical progress, accepted sources, completed swaps and scheduled-v01 fallbacks. No spend, audio egress, media approval or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits audio clearance, repair gates and approvals",
@@ -157146,7 +157151,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1819",
