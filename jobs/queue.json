@@ -1,5 +1,5 @@
 {
-  "next_id": 1845,
+  "next_id": 1846,
   "jobs": [
     {
       "id": "J0001",
@@ -159347,6 +159347,11 @@
           "at": "2026-11-03T14:46Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1844 specialist moving-preview review of J1834 ISS candidate (406f91068 / PR #410, OWB:030 AR2) complete in PR #414 (commit 1474821f3; jobs/reviews/J1844/REPORT.md + EVIDENCE.json). Verified native video/mp4 multimodal playback via read_file and all 5 DELIVERY.json + 60 FILES.json cache hashes in /Users/benjaminoats/_desk/cache/J1834/ without copying into git. Watched feather_candidate_T545.mp4 (95d73199718a..., 2.4024s), phone_T545.mp4 (51b15ea0a19a..., 270x480), preroll_and_open_T545.mp4 (c8ed10b6454f..., 3.4034s [544.0,547.4)s), and native 1280x720 [544.0,547.4)s source in motion. Recommendation to elected Chief: FIX / DO NOT APPROVE feather_candidate_T545.mp4 as AR2 opening input: (1) frame 0 (0.000s / source 545.0s) through 2.402s shows only close-up external payload boxes/robotic arm fixture with zero solar arrays, truss span, or recognizable ISS module silhouette at 1080x1920 or 270x480 phone size; (2) departing Crew Dragon Endeavour at upper-left (x=175..345, y=420..495) is sliced in half by the top crop edge (y=420) and drifts upward out of the 48px top alpha feather (y=420..468) across 0.000-2.383s; (3) bottom reflected-border boxblur fill (y=1452..1920) smears high-contrast white/black boxes into a heavy vertical smudge band; (4) 2.3478x (1080/460) 720p upscale is visibly soft in motion (picture_qa sharpness WARN not cleared despite 1.54 metric). Preroll-to-opening seam at t=1.001s is continuous. J1834 remains blocked for elected-Chief recorded source decision; J1471 sole correction worker (input hold not satisfied) and J1356 final-watch readiness holds preserved. Silent-source visual review only, GBP0."
+        },
+        {
+          "at": "2026-11-03T14:48Z",
+          "by": "relay",
+          "what": "condition verification queued: J1845"
         }
       ],
       "remaining_action": "Park J1844 for elected-Chief recorded source decision on J1834",
@@ -159362,7 +159367,44 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-03T15:48:48+00:00",
+        "recheck_task": "J1845"
+      }
+    },
+    {
+      "id": "J1845",
+      "title": "Chief: verify condition for J1844",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1844: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1844 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T14:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:48Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Park J1844 for elected-Chief recorded source decision on J1834",
+      "kind": "chief",
+      "recheck_of": "J1844",
+      "due": "2026-11-03T14:30:08+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
