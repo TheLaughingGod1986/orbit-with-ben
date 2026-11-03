@@ -159224,19 +159224,24 @@
           "at": "2026-11-03T15:08Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR414 1474821f3 confirms specialist FIX; no approved ISS input. J1847-J1849 are already linked after blocked scope job J1846. No independent playback or media approval claimed."
+        },
+        {
+          "at": "2026-11-03T15:08Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Queue readback PASS: J1471 blocked with last_recheck J1840, original 15:10:42Z check retained, J1356 blocked and replacement dependency chain intact."
         }
       ],
-      "remaining_action": "Record unmet input condition and verify queue readback",
+      "remaining_action": "Verification complete; J1471 retains input hold pending J1846-J1849",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-03T15:08Z",
         "by": "codex",
-        "note": "PR414 1474821f3 confirms specialist FIX; no approved ISS input. J1847-J1849 are already linked after blocked scope job J"
+        "note": "Queue readback PASS: J1471 blocked with last_recheck J1840, original 15:10:42Z check retained, J1356 blocked and replace"
       },
       "taskKeys": [
         "OWB:030"
