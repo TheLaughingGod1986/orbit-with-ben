@@ -159210,19 +159210,24 @@
           "at": "2026-11-03T15:07Z",
           "by": "codex",
           "what": "step 0 of 3 done: Read original remediation and acquisition scopes; checking latest delivery and holds."
+        },
+        {
+          "at": "2026-11-03T15:07Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: New acquisition exists, but J1844 returned FIX; J1846 already scoped J1847-J1849. PR380 and PR410 remain open without approval."
         }
       ],
-      "remaining_action": "Verify ISS opening input and approval evidence for J1471",
+      "remaining_action": "Verify specialist FIX and linked fallback before updating J1471 hold",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T15:07Z",
         "by": "codex",
-        "note": "Read original remediation and acquisition scopes; checking latest delivery and holds."
+        "note": "New acquisition exists, but J1844 returned FIX; J1846 already scoped J1847-J1849. PR380 and PR410 remain open without ap"
       },
       "taskKeys": [
         "OWB:030"
