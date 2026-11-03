@@ -150586,19 +150586,24 @@
           "at": "2026-11-03T03:34Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J1100 and J1706 full history, rulings, and hold state; local-only rule and bed exclusion remain in force"
+        },
+        {
+          "at": "2026-11-03T03:35Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 3e26b379b, afed1c552, bed hash 13adc031... and 3 audition WAV hashes; no newer local listening record since 31 Oct"
         }
       ],
-      "remaining_action": "Verify 3e26b379b bed and audition hashes and check local listening records",
+      "remaining_action": "Record unmet condition on J1100 and complete verification job J1712",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T03:34Z",
+        "at": "2026-11-03T03:35Z",
         "by": "gemini",
-        "note": "Read J1100 and J1706 full history, rulings, and hold state; local-only rule and bed exclusion remain in force"
+        "note": "Verified 3e26b379b, afed1c552, bed hash 13adc031... and 3 audition WAV hashes; no newer local listening record since 31 "
       },
       "taskKeys": [
         "OWB:027",
