@@ -106,6 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1870 | mini | open | – | – | studio · Buffer: verify missing queues and prepare exact OWB/HOS recovery |  |
 | J1871 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1872 | any | open | – | – | chief · Chief: verify condition for J1760 |  |
+| J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 1873,
+  "next_id": 1874,
   "jobs": [
     {
       "id": "J0001",
@@ -161171,6 +161171,34 @@
       "recheck_of": "J1760",
       "due": "2026-11-03T18:55:55+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1873",
+      "title": "Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review the completed Orbit With Ben 2026-10 monthly improvement report prepared under J1859 (docs/MONTHLY_CHANNEL_REVIEW.md). Private artifacts on the Mini: /Users/benjaminoats/_desk/handoff/J1859/OWB_MONTHLY_IMPROVEMENT_REVIEW_2026-10.md and /Users/benjaminoats/_desk/handoff/J1859/EVIDENCE_INDEX_2026-10.json (with raw YTA dataset yta_owb_oct2026_sep2026.json). Per docs/MONTHLY_CHANNEL_REVIEW.md and binding publication holds (J1642/J0985), keep analytics metrics and derived findings in the local private handoff area unless publication is explicitly authorized. Record an explicit Chief decision on the proposed November experiments (OWB-2026-11-E1, OWB-2026-11-E2, OWB-2026-11-E3) and urgent no-spend recovery/hygiene actions (URG-OWB-1 NAS gate staging, URG-OWB-2 monthly Studio Reach window capture, URG-OWB-3 Shorts-to-Long bridge links and Buffer retry), queue any newly approved implementation jobs, and record their IDs in the report's action register. Preserve ongoing experiments and all Ben/Chief gates.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-03T18:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T18:05Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review private OWB 2026-10 report in _desk/handoff/J1859/, record decisions on URG-OWB-1..3 and OWB-2026-11-E1..E3, and queue approved jobs",
+      "kind": "chief"
     }
   ],
   "focus": [],
