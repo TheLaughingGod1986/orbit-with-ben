@@ -92,11 +92,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1810 | mini | open | – | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
 | J1817 | mini | open (after J1761) | – | – | 013 edit · chief · OWB 013: establish long edit provenance after cancelled Short claim |  |
-| J1821 | any | claimed | codex | 2026-11-03T14:16Z | chief · Chief: verify condition for J1356 |  |
 | J1822 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1821 done: Chief: verify condition for J1356 (Verified condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 without comments/reviews; fresh SHA256 matches all three J1468 exports, with no additional final exports. Saved opening FAILs remain AR1 first cut 6.00s; AR2 diff 0.25 and AR3 1.41 below 1.50. J1356 stays blocked pending approved ISS input, corrected versioned masters, complete metadata, passing affected gates and full moving/audio review including pace WARN. Retained recorded retry 2026-11-03T13:06:28Z. No spend, media change, new gate run, audition or publishing action.)
 - J1820 done: Chief: verify condition for J1100 (Verified bed and all three audition hashes unchanged; no newer local listening evidence since 31 Oct. J1100 remains blocked at 2/3; next check 2026-11-03T13:06:28Z. Accepted sources, h43-LOOP, deadlines and v01 fallback preserved. Required NAS offload found no eligible scratch, 4537 MB free, below h43 restart floor. No spend, audio egress, media approval or publishing changes.)
 - J1819 done: Chief: verify condition for J0985 (done)
 - J1818 done: Chief: verify condition for J0936 (Verified original rulings, latest J1820/J1100, unchanged local audition hashes and PR333 OPEN at 0a7fcb6ad without reviews/comments. J0936 remains blocked: instrumental S2 clearance, actual local listening, repairs/gates and replacement approvals unproven; live disk below restart floor. Retained 2026-11-03T13:06:28Z retry, historical progress, accepted sources, completed swaps and scheduled-v01 fallbacks. No spend, audio egress, media approval or publishing changes.)
@@ -106,4 +106,3 @@ Recently finished:
 - J1813 done: Chief: verify condition for J0985 (Verified no explicit publication approval through thread 6602308715. J0985 remains blocked on publication of preserved J1642 review commit 33af1e441; retained 2026-11-03T12:01:12Z check, recheck J1813. Procedural report 6602359097 posted. No publication retry, spend or YouTube changes.)
 - J1812 done: Chief: verify condition for J0936 (Verified original rulings, latest J1814/J1100, unchanged local bed and audition hashes, and PR333 OPEN at 0a7fcb6ad without reviews/comments. J0936 remains blocked: cleared instrumental S2 bed, actual local listening, repairs/gates and replacement approvals unproven. Retained 2026-11-03T12:01:12Z retry, historical progress, accepted sources, completed swaps and scheduled-v01 fallbacks. No spend, source-audio egress, media approval or publishing changes.)
 - J1765 done: Chief: resolve 023 upload orphan-review (done)
-- J1764 done: Chief: resolve 023 thumbs orphan-review (Resolved Venus thumbs orphan-review: scoped PASS of two J1111 cover fixes from direct current thumbnail inspection and historical Studio readbacks. Evidence 0cd9208d0; thumbs done, claim cleared. Long T011 uncalled; J1198 owns follow-up. No spend or YouTube changes.)
