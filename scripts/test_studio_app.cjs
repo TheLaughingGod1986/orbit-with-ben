@@ -399,3 +399,6 @@ const specialistInfo=t.reviewQueueInfo(reviewBoard,reviewParent,NOW);
 assert.equal(specialistInfo.reviewer,'Gemini');assert.equal(specialistInfo.task.id,'J1844');assert(!specialistInfo.busy,'Codex work does not establish Gemini is busy');
 
 assert.equal(t.stageView({id:'edit',state:'blocked',jobs:[reviewParent]}).text,'Awaiting review');
+
+reviewBoard.workflow.states.J1835={state:'running'};
+assert.equal(t.reviewQueueInfo(reviewBoard,reviewParent,NOW).miniBusy.id,'J1835');
