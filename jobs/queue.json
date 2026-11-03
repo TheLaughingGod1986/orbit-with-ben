@@ -156784,13 +156784,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T22:04Z",
-      "eta": "2026-11-04T00:04Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX / not locked. Restored cancelled 040 script handoff as J1906 (040/script, after J1781); evidence b1f3b6ade4, jobs/reviews/J1781/CHIEF_HANDOFF_2026-11-03.md. Board remains review, no claim; neighbours, editorial fixes, formal Gemini facts and direct quote check required before explicit lock. No spend or production approval.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -156821,6 +156821,11 @@
           "at": "2026-11-03T22:07Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified J1906 open with 040/script and J1781 dependency, script review with no claim, evidence reference exists, script/source files unchanged, clean worktree"
+        },
+        {
+          "at": "2026-11-03T22:07Z",
+          "by": "codex",
+          "what": "done: FIX / not locked. Restored cancelled 040 script handoff as J1906 (040/script, after J1781); evidence b1f3b6ade4, jobs/reviews/J1781/CHIEF_HANDOFF_2026-11-03.md. Board remains review, no claim; neighbours, editorial fixes, formal Gemini facts and direct quote check required before explicit lock. No spend or production approval."
         }
       ],
       "remaining_action": "Workflow repair verified; close J1781 and report J1906 handoff",
