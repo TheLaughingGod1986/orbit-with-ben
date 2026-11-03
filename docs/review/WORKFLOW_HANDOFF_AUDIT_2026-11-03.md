@@ -40,3 +40,7 @@ A passing test suite does not prove the installed launchd service is current, me
 During the audit, the Mini picked up J1752/J1753. Both are now explicit input holds: technical verification is recorded, but the Codex sessions report no audio-input capability and correctly withheld final listening approval. J1752/J1753 must resume with a genuinely listening-capable elected reviewer. An agent name or Chief election alone does not prove media-review capability. The cloud test suite does not resolve this runtime capability limitation; rollout must verify capability-aware handling rather than retrying unchanged text-only sessions.
 
 The runner version fingerprint now includes the new handoff module and studio timestamp/state helpers, so future changes to those loaded modules trigger the existing safe-boundary restart mechanism.
+
+## Overdue legacy dependency hold (J1213)
+
+J1213 is type=dependency with a recorded 30 October check but no structured after ID. `hold_due` previously returned false before consulting check_at. It now honors the expired check even when the predecessor was only named in prose. Regression verifies exactly one Chief verification task is queued, the parent remains blocked, and a future check does not release it. J1218 repair history progressed through J1267 picture lock and J1297 master-v03 delivery; reconciliation must use that later evidence rather than re-run rough-v01 edits or imply Cursor is the only eligible worker.

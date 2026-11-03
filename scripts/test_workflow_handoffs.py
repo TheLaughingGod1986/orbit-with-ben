@@ -105,3 +105,17 @@ class Timestamps(unittest.TestCase):
         other={'id':'J9','film':'032','created_at':'2026-10-01T12:00Z'}
         self.assertLess(w.order(repair,{},['031'],AT),w.order(other,{},['031'],AT))
         self.assertNotIn('due',repair) # never manufacture a production deadline
+
+class LegacyDependencyHolds(unittest.TestCase):
+    def test_overdue_dependency_without_after_still_requests_verification(self):
+        job={'id':'J1213','status':'blocked','hold':{'type':'dependency','condition':'Wait for J1218 repairs','check_at':'2026-10-30T15:00:00Z'}}
+        self.assertTrue(w.hold_due(job,{'J1213':job},AT))
+        data={'jobs':[job],'next_id':2000}
+        ids=jobs.reconcile_holds(data,AT)
+        self.assertEqual(len(ids),2)
+        self.assertEqual(job['status'],'blocked')
+        self.assertEqual(data['jobs'][-1]['recheck_of'],'J1213')
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+    def test_future_dependency_check_does_not_release_work(self):
+        job={'id':'J1','status':'blocked','hold':{'type':'dependency','check_at':(AT+dt.timedelta(hours=1)).isoformat()}}
+        self.assertFalse(w.hold_due(job,{'J1':job},AT))

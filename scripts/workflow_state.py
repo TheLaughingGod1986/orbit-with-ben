@@ -82,7 +82,10 @@ def hold_due(j, by_id, at):
     hold = j.get("hold") or {}
     check = timestamp(hold.get("check_at"))
     if hold.get("type") == "dependency" and not hold.get("last_recheck"):
-        return bool(j.get("after") and by_id.get(j["after"],{}).get("status") == "done")
+        if j.get("after") and by_id.get(j["after"],{}).get("status") == "done":
+            return True
+        # Legacy holds may name their predecessor only in prose. Their recorded check must still run.
+        # Verification can repair the graph; it never releases the held production job automatically.
     if check:
         return check <= at
     return bool(j.get("after") and by_id.get(j["after"], {}).get("status") == "done" and not external_hold(j, at))
