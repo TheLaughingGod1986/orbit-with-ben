@@ -4,7 +4,13 @@
   "air": "",
   "stages": {
     "sources": {
-      "state": "doing"
+      "state": "done",
+      "ref": "97b7af4ee9",
+      "reviewer": "codex",
+      "review_job": "J1773",
+      "approval_job": "J0301",
+      "review_result": "Existing Chief sources PASS restored; approved source files unchanged; v02 only removes agenda sentence",
+      "review_evidence": "01_Script/J1773_SOURCES_RECONCILIATION.md"
     },
     "vo": {
       "state": "blocked",
@@ -25,14 +31,6 @@
       "follow_up": "Resume J1753: listen to v02b and record what was heard, then make VO-only PASS/FIX decision"
     }
   },
-  "claims": [
-    {
-      "stage": "sources",
-      "by": "codex",
-      "at": "2026-11-03T21:26Z",
-      "eta": "2026-11-03T21:41Z",
-      "note": "J1773: reconcile original sources approval and stale block"
-    }
-  ],
+  "claims": [],
   "next": "032 VO: technical checks PASS; J1753 awaits actual listening by a Mini audio-capable elected Chief. Picture not started."
 }

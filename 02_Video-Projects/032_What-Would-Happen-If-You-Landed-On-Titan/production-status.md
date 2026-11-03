@@ -61,3 +61,7 @@ Pass threshold: 90
 ## J1753 final verification — 3 November 2026
 
 Codex independently verified the actual v02b WAV/MP3 hashes, timing, loudness, h31 tails, null and copied word timings: technical PASS. Final VO approval remains pending because this session has no audio listening input; no listening is claimed. [Evidence](02_Voiceover/review_J1753/REVIEW.md). Responsible reviewer: the elected Chief with actual Mini listening capability; resume J1753 for listening and a VO-only PASS/FIX. No media correction ordered and no picture approval.
+
+## J1773 sources reconciliation — 3 November 2026
+
+Sources: **PASS retained from Chief J0301**, approved commit `97b7af4ee9`. The governing v01 sources table and script v01 are byte-identical to that approval; v02 only removes the agenda sentence. The older unchecked source blocker above is superseded by this evidence. Claude’s quote recheck is embedded in SOURCES.md; no separate quote-check file is claimed. [Reconciliation](01_Script/J1773_SOURCES_RECONCILIATION.md). J1753 still holds final VO listening review; no picture approval.
