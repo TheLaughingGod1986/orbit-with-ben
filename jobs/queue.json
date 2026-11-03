@@ -154733,13 +154733,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T11:39Z",
-      "eta": "2026-11-03T13:39Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX: traced stale block to cancelled duplicate J0791 (Chief 21 Oct). J0759 approval is for Sun, not Moon; historical 013 done had no approval ref. Linked successor J1817 (Chief, OWB:013/edit, after J1761) verifies actual master and approval provenance. Board now names J1817; edit remains blocked, no media PASS. STATUS.md and linkage checks pass; no spend/render/upload/state change.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -154770,6 +154770,11 @@
           "at": "2026-11-03T11:42Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified J1817 dependency/film/stage, blocked status and next action, no stage claim, cancelled J0791, clean worktree; STATUS.md check PASS."
+        },
+        {
+          "at": "2026-11-03T11:42Z",
+          "by": "codex",
+          "what": "done: FIX: traced stale block to cancelled duplicate J0791 (Chief 21 Oct). J0759 approval is for Sun, not Moon; historical 013 done had no approval ref. Linked successor J1817 (Chief, OWB:013/edit, after J1761) verifies actual master and approval provenance. Board now names J1817; edit remains blocked, no media PASS. STATUS.md and linkage checks pass; no spend/render/upload/state change."
         }
       ],
       "remaining_action": "Workflow repair complete; J1817 verifies original master approval",
