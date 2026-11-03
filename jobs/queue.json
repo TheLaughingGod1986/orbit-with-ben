@@ -161532,18 +161532,24 @@
           "at": "2026-11-03T18:33Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T18:33Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1100 approval history, h43-LOOP and 31 October bed ruling; retain all existing acceptances and deadlines."
         }
       ],
-      "remaining_action": "Verify S2 bed clearance, local listening evidence and current render headroom",
+      "remaining_action": "Check current bed hashes and local listening records",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T18:33Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Read J1100 approval history, h43-LOOP and 31 October bed ruling; retain all existing acceptances and deadlines."
       },
       "taskKeys": [
         "OWB:027",
