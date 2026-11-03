@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1825 | mini | blocked | codex | – | 026 upload · studio · 026 upload finish: install approved en-GB captions and verify Studio end screen/cards |  |
 | J1834 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
 | J1843 | mini | open | – | – | assembly · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
-| J1849 | any | open (after J1848) | – | – | chief · AR2 NASA model: Chief exact-input acceptance or bounded fallback | J1846 |
+| J1849 | any | claimed | gemini | 2026-11-04T01:40Z | chief · AR2 NASA model: Chief exact-input acceptance or bounded fallback | J1846 |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 | J1878 | mini | blocked | codex | – | studio · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
