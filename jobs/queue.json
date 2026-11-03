@@ -150826,19 +150826,24 @@
           "at": "2026-11-03T03:50Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original brief and prior verification checked; PR380 remains OPEN at d0b04b5e0 with no comments or reviews"
+        },
+        {
+          "at": "2026-11-03T03:50Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 masters and Crew-2 cache; saved opening gates remain FAIL; no new approval on PR380"
         }
       ],
-      "remaining_action": "Verify retained master hashes and opening gate evidence",
+      "remaining_action": "Record unchanged ISS input hold and verify queue state",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T04:31:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T03:50Z",
         "by": "codex",
-        "note": "Original brief and prior verification checked; PR380 remains OPEN at d0b04b5e0 with no comments or reviews"
+        "note": "Fresh SHA256 matches all three J1468 masters and Crew-2 cache; saved opening gates remain FAIL; no new approval on PR380"
       },
       "taskKeys": [
         "OWB:030"
