@@ -100695,9 +100695,14 @@
           "at": "2026-11-03T20:43Z",
           "by": "relay",
           "what": "condition verification queued: J1890"
+        },
+        {
+          "at": "2026-11-03T20:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T21:43:01Z"
         }
       ],
-      "remaining_action": "Obtain cleared instrumental S2 bed and recorded local listening before v07 repairs; disk headroom verified",
+      "remaining_action": "Obtain local audio-capable listening and cleared instrumental S2 bed before v07 repairs",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -100722,14 +100727,19 @@
         "note": "Dual local ASR complete: small.en words no_speech_prob 0.766, so revised joint speech flag not met. Named bed hashes ide"
       },
       "hold": {
-        "type": "input",
-        "condition": "J1885 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and all three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded; ASR is not listening. Disk prerequisite is satisfied: 34.807 GiB free, above h43 restart minimum 10 GiB; recheck at restart and park below 6 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-03T21:43:01+00:00",
-        "last_recheck": "J1885",
-        "checked_at": "2026-11-03T19:42:41+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1890"
-      }
+        "type": "capability",
+        "condition": "J1890 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Inspected session tools: no demonstrated audio perception; shell, ASR and still images cannot satisfy listening. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded pending clearance. Disk 31.486 GiB satisfies h43 restart >=10 GiB; recheck at restart, park below 6 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-03T21:43:01Z",
+        "requires": [
+          "audio_input"
+        ],
+        "last_recheck": "J1890",
+        "checked_at": "2026-11-03T20:45:54+00:00",
+        "checked_by": "codex"
+      },
+      "required_capabilities": [
+        "audio_input"
+      ]
     },
     {
       "id": "J1101",
