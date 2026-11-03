@@ -160691,13 +160691,13 @@
       "stage": "",
       "after": "J1846",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-03T22:32Z",
-      "eta": "2026-11-04T00:32Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:58Z",
-      "result": "",
+      "result": "Preview complete locally at /Users/benjaminoats/_desk/cache/J1847/delivery; clean evidence commit eba37bfe7e on codex/j1847-preview in /private/tmp/J1847-wt. Step 3/4. Automatic approval review rejected git push of renderer code and provenance/evidence to GitHub origin, requiring explicit payload/destination approval. Need approval to publish this text/code-only commit to TheLaughingGod1986/orbit-with-ben and open its evidence PR; no media will be pushed. Then hand off exact local delivery to existing J1848 -> J1849. Picture/polish checks pass with one unresolved render WARN; no source or finished-film approval. J1471/J1356 and all holds preserved. Do not rerender or repeat source acquisition.",
       "history": [
         {
           "at": "2026-11-03T14:58Z",
@@ -160738,6 +160738,11 @@
           "at": "2026-11-03T22:41Z",
           "by": "codex",
           "what": "step 3 of 4 done: Local delivery and commit eba37bfe7e complete; five output hashes verified. Automatic approval review rejected pushing renderer/provenance evidence to origin as not explicitly authorized for this payload/destination. No workaround attempted; media and holds preserved."
+        },
+        {
+          "at": "2026-11-03T22:41Z",
+          "by": "codex",
+          "what": "blocked: Preview complete locally at /Users/benjaminoats/_desk/cache/J1847/delivery; clean evidence commit eba37bfe7e on codex/j1847-preview in /private/tmp/J1847-wt. Step 3/4. Automatic approval review rejected git push of renderer code and provenance/evidence to GitHub origin, requiring explicit payload/destination approval. Need approval to publish this text/code-only commit to TheLaughingGod1986/orbit-with-ben and open its evidence PR; no media will be pushed. Then hand off exact local delivery to existing J1848 -> J1849. Picture/polish checks pass with one unresolved render WARN; no source or finished-film approval. J1471/J1356 and all holds preserved. Do not rerender or repeat source acquisition."
         }
       ],
       "remaining_action": "Obtain approval to publish completed text/code evidence, then hand off to J1848",
@@ -160754,7 +160759,12 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Preview complete locally at /Users/benjaminoats/_desk/cache/J1847/delivery; clean evidence commit eba37bfe7e on codex/j1847-preview in /private/tmp/J1847-wt. Step 3/4. Automatic approval review rejected git push of renderer code and provenance/evidence to GitHub origin, requiring explicit payload/destination approval. Need approval to publish this text/code-only commit to TheLaughingGod1986/orbit-with-ben and open its evidence PR; no media will be pushed. Then hand off exact local delivery to existing J1848 -> J1849. Picture/polish checks pass with one unresolved render WARN; no source or finished-film approval. J1471/J1356 and all holds preserved. Do not rerender or repeat source acquisition.",
+        "check_at": "2026-11-04T04:41:43+00:00"
+      }
     },
     {
       "id": "J1848",
