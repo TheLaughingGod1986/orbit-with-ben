@@ -156559,9 +156559,14 @@
           "at": "2026-11-03T11:16Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T11:16Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: read scope and approvals; check current artifacts; record ruling and report."
         }
       ],
-      "remaining_action": "Verify readiness: Await approved ISS input, corrected AR masters and complete gate and audiovisual review evidence",
+      "remaining_action": "Verify AR corrections, approvals and gate evidence",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T12:01:12+00:00",
@@ -156571,9 +156576,11 @@
         "of": 3,
         "at": "2026-11-03T11:16Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: read scope and approvals; check current artifacts; record ruling and report."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1816",
