@@ -156875,9 +156875,14 @@
           "at": "2026-11-03T22:09Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T22:09Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Chief resolves 041 script handoff and records the next owner/action",
+      "remaining_action": "Trace 041 script review history and restore its missing decision handoff",
       "kind": "chief",
       "handoff": {
         "film": "041",
@@ -156889,10 +156894,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-03T22:09Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:041"
+      ]
     },
     {
       "id": "J1783",
