@@ -156112,9 +156112,14 @@
           "at": "2026-11-03T21:15Z",
           "by": "codex",
           "what": "step 1 of 3 done: Traced original v05, J0990 exact-hash release, J0974 v13a swap and J1197 completed description edit; AR cohort holds are separate."
+        },
+        {
+          "at": "2026-11-03T21:17Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR430/906f43c592: authenticated readback confirms replacement Public and old Private unscheduled; exact J1197 description/title match. Stage fix preserves AR holds; CI pending."
         }
       ],
-      "remaining_action": "Verify current upload states and correct stale review metadata",
+      "remaining_action": "Land verified stage reconciliation and report J1772",
       "kind": "chief",
       "handoff": {
         "film": "030",
@@ -156123,11 +156128,11 @@
         "signature": "c305c35c4699087ced81"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T21:15Z",
+        "at": "2026-11-03T21:17Z",
         "by": "codex",
-        "note": "Traced original v05, J0990 exact-hash release, J0974 v13a swap and J1197 completed description edit; AR cohort holds are"
+        "note": "PR430/906f43c592: authenticated readback confirms replacement Public and old Private unscheduled; exact J1197 descriptio"
       },
       "taskKeys": [
         "OWB:030"
