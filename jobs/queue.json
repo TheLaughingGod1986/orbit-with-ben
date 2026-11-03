@@ -156085,13 +156085,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T21:14Z",
-      "eta": "2026-11-03T23:14Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Resolved stale 030 upload review in merged PR430. Live gJwNJN_yMKU Public; old BbsyFrV8kCY Private unscheduled; exact J1197 title/description verified. Existing J0990/Ben approvals preserved, no new media PASS. Stage done, AR J1471/J1356 holds and Buffer J1878/J1879/J1889 unchanged. Both CI checks PASS. No YouTube/Buffer writes or spend.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -156122,6 +156122,11 @@
           "at": "2026-11-03T21:23Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR430 merged after Rules and Studio core CI PASS; local core and 4 audit tests pass. Live old/new readback and J1197 equality verified, original Ben/Chief comments confirmed. Upload done; AR holds unchanged."
+        },
+        {
+          "at": "2026-11-03T21:23Z",
+          "by": "codex",
+          "what": "done: Resolved stale 030 upload review in merged PR430. Live gJwNJN_yMKU Public; old BbsyFrV8kCY Private unscheduled; exact J1197 title/description verified. Existing J0990/Ben approvals preserved, no new media PASS. Stage done, AR J1471/J1356 holds and Buffer J1878/J1879/J1889 unchanged. Both CI checks PASS. No YouTube/Buffer writes or spend."
         }
       ],
       "remaining_action": "Reconciliation complete; AR repairs and Buffer recovery remain with existing jobs",
@@ -156141,7 +156146,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/430"
     },
     {
       "id": "J1773",
