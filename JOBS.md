@@ -101,6 +101,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1889 | mini | open | – | – | chief · J1879: review recovered Mars-night and Titan Studio source candidates | J1879 |
 | J1891 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1892 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
+| J1894 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
+| J1895 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 
 Recently finished:
 
