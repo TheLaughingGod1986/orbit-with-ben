@@ -4,9 +4,9 @@
 |-------|-------|
 | Slug | `039_Every-Planet-Has-A-Sound` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-17_J0453.md` (scored 23/30, #1 of 5) |
-| Topic lock | **Pending Chief decision** (`J0453` parked for Chief: lock 039 or pick #2 Wrong Kind of Aliens / #3 Io Volcanoes / #4 Sun Red Giant; confirm Short-first waiver) |
+| Topic lock | **Pending Chief decision via J1905 (J1780 handoff repair, 3 Nov)** (`J0453` parked for Chief: lock 039 or pick #2 Wrong Kind of Aliens / #3 Io Volcanoes / #4 Sun Red Giant; confirm Short-first waiver) |
 | Script draft | `01_Script/planet_sounds_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0461; 1,222 spoken words / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; revised from v00 drafted in J0453) |
-| Script review | **PASS — 95.8 / 100** (1,222 spoken words / 1,299 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0461`) |
+| Script review | **Unlocked; Chief review restored in J1905. Historical automated score only: 95.8 / 100** (1,222 spoken words / 1,299 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0461`) |
 | Sources | `01_Script/SOURCES.md` — 7 rows started and pre-checked with verbatim quotes (`NASA Perseverance Rover Components`, `NASA JPL Perseverance Sounds of Mars`, `NASA Perseverance Mars Speed of Sound Release`, `NASA InSight Mars Wind Resource`, `NASA/ESA Cassini-Huygens & Titan Audio`, `University of Iowa Donald Gurnett & Cassini RPWS`, `JPL Saturn-Enceladus Plasma Wave Audio`, `NASA Chandra Perseus Black Hole Sound Waves`, `LOC Name Authority Records n79134100 / n85087745 / n80131454 / n87929862`) |
 | Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
 | Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
@@ -82,3 +82,7 @@ Pass threshold: 90
 
 Script score: **95.8/100** · PASS
 ```
+
+## Handoff repair — 3 November 2026 (J1780)
+
+J0453/J0461 were cancelled as duplicates of J0789/J0802, whose decisions concern only unlocked 061 drafts. No 039 lock is established. J1905 restores topic/editorial review before formal Gemini facts and direct quote checks. See `jobs/reviews/J1780/CHIEF_HANDOFF_2026-11-03.md`. No production approval; v00/v01 and source evidence preserved.
