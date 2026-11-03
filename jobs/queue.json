@@ -161906,10 +161906,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T19:09Z",
+      "eta": "2026-11-03T19:39Z",
       "created_by": "codex",
       "created_at": "2026-11-03T18:54Z",
       "result": "",
@@ -161918,6 +161918,11 @@
           "at": "2026-11-03T18:54Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T19:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Restore the two source-ready future social posts with verified assets and fresh per-network receipts",
@@ -161925,7 +161930,15 @@
       "kind": "studio",
       "recovery_scope_key": "J1874:ready",
       "urgent": 1,
-      "due_kind": "user-immediate-claim"
+      "due_kind": "user-immediate-claim",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T19:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1879",

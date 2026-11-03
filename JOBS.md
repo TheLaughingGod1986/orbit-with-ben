@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1874 | mini | open | – | – | chief · Buffer recovery: decide exact J1870 creates, source holds and daily mirror repair | J1870 |
 | J1875 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1877 | any | open | – | – | chief · Chief: verify condition for J1823 |  |
-| J1878 | mini | open | – | – | studio · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
+| J1878 | mini | claimed | codex | 2026-11-03T19:39Z | studio · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
 | J1879 | mini | open | – | – | assembly · Buffer: recover approved Mars-night and Titan social sources | J1874 |
 | J1880 | mini | open | – | – | 008 edit · assembly · HOS 008: prepare six Franklin v03 UAT corrections and exact edit recipe | HOS-008:v03:2026-11-03T16:08:33.439Z / J1868 |
 | J1881 | mini | open (after J1880) | – | – | 008 edit · chief · Chief: review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
