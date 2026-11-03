@@ -164596,19 +164596,24 @@
           "at": "2026-11-03T22:45Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking parent history, exact evidence commit and thread approvals; no rerender or media approval."
+        },
+        {
+          "at": "2026-11-03T22:45Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Verified clean eba37bfe7e evidence commit and all five delivered video hashes. J1910 approval covers four workflow Markdown briefs only, not this renderer/evidence payload."
         }
       ],
-      "remaining_action": "Verify approval and evidence for J1847 publication hold",
+      "remaining_action": "Check latest approval messages against the rejected J1847 payload",
       "kind": "chief",
       "recheck_of": "J1847",
       "due": "2026-11-03T14:30:08+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T22:45Z",
         "by": "codex",
-        "note": "Checking parent history, exact evidence commit and thread approvals; no rerender or media approval."
+        "note": "Verified clean eba37bfe7e evidence commit and all five delivered video hashes. J1910 approval covers four workflow Markd"
       },
       "taskKeys": [
         "OWB:030"
