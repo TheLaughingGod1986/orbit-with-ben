@@ -153335,13 +153335,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T08:46Z",
-      "eta": "2026-11-03T10:46Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T08:34Z",
-      "result": "",
+      "result": "Verified condition remains unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews. Fresh SHA256 matches all three J1468 final exports, no additional exports. J1356 remains blocked for approved ISS input, corrected versioned masters, complete metadata, affected gates and full moving/audio review including pace WARN. Saved opening FAILs persist (AR1 6.00s; AR2 0.25; AR3 1.41). Existing retry 2026-11-03T09:34:16Z retained. No fresh gates/audition claimed, no spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T08:34Z",
@@ -153372,6 +153372,11 @@
           "at": "2026-11-03T08:48Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 hold updated with J1744 evidence; existing 09:34:16Z retry retained. No new gate PASS or audition claimed."
+        },
+        {
+          "at": "2026-11-03T08:49Z",
+          "by": "codex",
+          "what": "done: Verified condition remains unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews. Fresh SHA256 matches all three J1468 final exports, no additional exports. J1356 remains blocked for approved ISS input, corrected versioned masters, complete metadata, affected gates and full moving/audio review including pace WARN. Saved opening FAILs persist (AR1 6.00s; AR2 0.25; AR3 1.41). Existing retry 2026-11-03T09:34:16Z retained. No fresh gates/audition claimed, no spend or publishing changes."
         }
       ],
       "remaining_action": "Close completed J1744 verification",
@@ -153388,7 +153393,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     },
     {
       "id": "J1745",
