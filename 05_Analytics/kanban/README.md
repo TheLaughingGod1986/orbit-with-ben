@@ -216,3 +216,14 @@ once on entry. Subsequent refreshes update the card without forcing repeated scr
 board polling and all UAT/publishing behaviour are unchanged. Tests: `test_studio_app.cjs` and
 `test_studio_activity_browser.cjs` cover active, idle, multiple, missing/invalid progress, supported
 ETA, queue linking and refresh transitions; the existing tab/UAT and failure suites also pass.
+
+### Blocker guidance
+
+Current-stage and expanded milestone cards show source-backed reasons, recorded unblock actions,
+job owner/reviewer, follow-up/overdue check time, last check and dependency status. Exact stage job
+mappings take precedence over matching recorded references; otherwise video-level holds are clearly
+labelled as having an unconfirmed stage link. Missing details stay explicit. A check time is not a
+release ETA. Job links open the existing highlighted Agents record; no hold is released by the UI.
+Original conditions/actions/notes remain available, and other video holds can be expanded. No
+production record or ownership is rewritten. See `docs/review/studio-blockers/QA.md` for the real
+OWB030 example and tests, including `scripts/test_studio_blockers_browser.cjs`.

@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -285,3 +285,33 @@ assert(t.videoGroups([publicMissing]).done.some(x=>x.key==='published'));
 assert.equal(t.videoGroups([publicMissing]).working.length,0);
 assert(t.videoProductionRow(v({key:'unfinished'}),NOW).includes('0%'),'active production still uses recorded milestone counts');
 console.log('Published-video regression checks OK');
+
+// Blocker guidance uses actual holds and explicit stage references, never a guessed owner or release time.
+const blockedEdit={id:'edit',label:'Edit',state:'blocked',source:{ref:'d0b04b5e0'},evidence:'d0b04b5e0',jobs:[]};
+const inputJob={id:'J1471',stage:'',status:'blocked',by:'codex',title:'Correct openings',remaining_action:'Identify approved moving ISS input, then correct and review the openings',after:'J1468',hold:{type:'input',condition:'Approved ISS interval for AR2 0-2.4s plus loop preroll remains missing. Correct masters and run the affected checks.',checked_at:new Date(NOW-10*6e4).toISOString(),check_at:new Date(NOW+30*6e4).toISOString()},result:'Inspection d0b04b5e0; no suitable approved input.'};
+const blockedFilm=v({key:'OWB:030',jobs:[{id:'other',status:'blocked',by:'cursor',hold:{condition:'Unrelated video gate'}},inputJob],production:{milestones:[blockedEdit],activeStages:['edit'],eta:{state:'unavailable'}}});
+const guidance=t.blockerModel(blockedFilm,blockedEdit);
+assert.equal(guidance.job.id,'J1471');assert.equal(guidance.scope,'reference');assert.equal(guidance.owner,'Codex');
+assert(guidance.why.includes('International Space Station'));assert(guidance.action.includes('Identify approved'));
+t.setBoard({owb:{jobStates:{J1468:{status:'done'}}}});
+const guideHtml=t.blockerGuide(blockedFilm,blockedEdit,NOW);
+assert(guideHtml.includes('Why blocked')&&guideHtml.includes('How to unblock')&&guideHtml.includes('#agents&job=J1471'));
+assert(guideHtml.includes('J1468 · Completed')&&guideHtml.includes('Next recorded check'));
+assert(guideHtml.includes('not a promise')&&guideHtml.includes('1 other recorded video hold'));
+assert(guideHtml.includes(inputJob.hold.condition),'original condition is available unmodified');
+assert(!guideHtml.includes('Resolve the recorded blocker'));
+const missingGuide=t.blockerModel(v({jobs:[]}),blockedEdit);
+assert(missingGuide.why.includes('no stage-specific reason'));assert.equal(missingGuide.owner,'Not recorded');assert(missingGuide.action.includes('No unblock action'));
+const videoOnly=t.blockerModel(v({jobs:[{...inputJob,result:'No reference',hold:{condition:'Waiting for footage'}}]}),blockedEdit);
+assert.equal(videoOnly.scope,'video');
+const reviewStageFixture={id:'picture',label:'Picture',state:'review',reviewer:'claude',jobs:[]};
+const reviewGuide=t.blockerModel(blockedFilm,reviewStageFixture);
+assert.equal(reviewGuide.scope,'stage');assert(reviewGuide.why.includes('Claude'));assert(!reviewGuide.why.includes('ISS'));
+const overdue=t.blockerGuide(v({jobs:[{...inputJob,stage:'edit',hold:{condition:'Waiting for <unsafe>',check_at:new Date(NOW-6e4).toISOString()}}]}),blockedEdit,NOW);
+assert(overdue.includes('Check overdue')&&overdue.includes('&lt;unsafe&gt;')&&!overdue.includes('<unsafe>'));
+assert(!t.blockerReason('Approved ISS input found; waiting for edit review.').includes('is missing'));
+console.log('Studio blocker guidance checks OK');
+
+const ownStageJob={...inputJob,id:'Jstage',stage:'edit',by:'gemini',hold:{condition:'Awaiting the recorded edit review'}};
+assert.equal(t.blockerModel(v({jobs:[inputJob,ownStageJob]}),blockedEdit).job.id,'Jstage','explicit stage mapping outranks a reference match');
+assert(!t.blockerModel(v({jobs:[{...inputJob,status:'done'}]}),blockedEdit).job,'completed records cannot become active blockers');
