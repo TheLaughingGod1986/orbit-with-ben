@@ -159108,13 +159108,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T14:24Z",
-      "eta": "2026-11-03T16:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T14:10Z",
-      "result": "",
+      "result": "Verification complete: PR413 / b89b84560. Five delivery hashes and sizes match; PR410 unreviewed. Actual moving review unavailable in this session, so no creative approval. J1834 remains blocked with recheck J1841 and original 2026-11-03T15:10:42Z follow-up. J1471/J1356 and all holds preserved.",
       "history": [
         {
           "at": "2026-11-03T14:10Z",
@@ -159145,6 +159145,11 @@
           "at": "2026-11-03T14:26Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence b89b84560 pushed; J1834 wait recorded with recheck J1841 and original 15:10:42Z follow-up; no creative approval"
+        },
+        {
+          "at": "2026-11-03T14:26Z",
+          "by": "codex",
+          "what": "done: Verification complete: PR413 / b89b84560. Five delivery hashes and sizes match; PR410 unreviewed. Actual moving review unavailable in this session, so no creative approval. J1834 remains blocked with recheck J1841 and original 2026-11-03T15:10:42Z follow-up. J1471/J1356 and all holds preserved."
         }
       ],
       "remaining_action": "Verification complete; J1834 still needs actual moving review",
@@ -159162,7 +159167,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/413"
     },
     {
       "id": "J1842",
