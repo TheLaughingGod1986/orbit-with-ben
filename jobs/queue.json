@@ -154314,9 +154314,14 @@
           "at": "2026-11-03T10:58Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T10:58Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Review original hold, inspect new evidence, then record Chief ruling and next checkpoint."
         }
       ],
-      "remaining_action": "Verify readiness: Await J1204 Uranus gate resolution and new eligible S5/S6 footage; PR350 rejects current source batch",
+      "remaining_action": "Verify new source and gate evidence for J1199",
       "kind": "chief",
       "recheck_of": "J1199",
       "due": "2026-11-02T12:00:00+00:00",
@@ -154326,9 +154331,11 @@
         "of": 3,
         "at": "2026-11-03T10:58Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Review original hold, inspect new evidence, then record Chief ruling and next checkpoint."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1757",
