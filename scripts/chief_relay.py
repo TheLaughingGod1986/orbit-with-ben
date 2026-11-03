@@ -78,6 +78,7 @@ STATE = pathlib.Path(os.environ.get("DESK_STATE", HOME / "_desk" / "state"))
 OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import workflow_state as workflow
+import workflow_handoffs as handoffs
 import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and model)
 
 
@@ -1321,7 +1322,9 @@ def run_locked(at: dt.datetime) -> int:
         broken = any(j.get("status") in ("open","blocked") and workflow.dependency_problem(j,by_id)
                      and j.get("dependency_problem") != workflow.dependency_problem(j,by_id) for j in queue.get("jobs", []))
         check_due = any(workflow.hold_due(j,by_id,at) and not any(x.get("recheck_of") == j["id"] and x.get("status") in workflow.LIVE for x in queue.get("jobs", [])) for j in queue.get("jobs", []))
-        if (broken or check_due) and (OWB / "scripts" / "jobs.py").exists():
+        stage_gaps = handoffs.findings(queue, list(handoffs.records(OWB / '02_Video-Projects')), at)
+        missing_handoff = any(not any(j.get('handoff', {}).get('signature') == gap['signature'] and j.get('status') in workflow.LIVE for j in queue.get('jobs', [])) for gap in stage_gaps)
+        if (broken or check_due or missing_handoff) and (OWB / "scripts" / "jobs.py").exists():
             result = subprocess.run([sys.executable,str(OWB / "scripts/jobs.py"),"reconcile","--agent","relay","--git"],capture_output=True,text=True,timeout=180)
             if result.returncode:
                 log("queue reconciliation failed: " + (result.stderr or result.stdout)[-250:])
