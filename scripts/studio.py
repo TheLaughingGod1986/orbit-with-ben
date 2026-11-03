@@ -40,9 +40,11 @@ def iso(t):
 
 
 def parse(s):
-    # Minute stamps are the house format; some agents write seconds (J-history 26 Oct), which once crashed jobs.py watch.
-    fmt = "%Y-%m-%dT%H:%M:%SZ" if s.count(":") == 2 else "%Y-%m-%dT%H:%MZ"
-    return dt.datetime.strptime(s, fmt).replace(tzinfo=dt.timezone.utc)
+    # All producers use ISO timestamps, including seconds, fractions and UTC offsets.
+    value = dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=dt.timezone.utc)
+    return value.astimezone(dt.timezone.utc)
 
 
 def film_dir(films, key):

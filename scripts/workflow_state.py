@@ -82,7 +82,10 @@ def hold_due(j, by_id, at):
     hold = j.get("hold") or {}
     check = timestamp(hold.get("check_at"))
     if hold.get("type") == "dependency" and not hold.get("last_recheck"):
-        return bool(j.get("after") and by_id.get(j["after"],{}).get("status") == "done")
+        if j.get("after") and by_id.get(j["after"],{}).get("status") == "done":
+            return True
+        # Legacy holds may name their predecessor only in prose. Their recorded check must still run.
+        # Verification can repair the graph; it never releases the held production job automatically.
     if check:
         return check <= at
     return bool(j.get("after") and by_id.get(j["after"], {}).get("status") == "done" and not external_hold(j, at))
@@ -157,6 +160,7 @@ def recently_released(j, at):
 
 def order(j, due, focus=(), at=None):
     at = at or dt.datetime.now(dt.timezone.utc)
+    film = j.get("film") or (j.get("handoff") or {}).get("film")
     urgent = j.get("urgent")
     rank = urgent if isinstance(urgent, int) and not isinstance(urgent, bool) else 0
     created = timestamp(j.get("created_at") or j.get("addedAt") or next((h.get("at") for h in j.get("history", []) if h.get("at")), None))
@@ -165,8 +169,8 @@ def order(j, due, focus=(), at=None):
             1 if recently_released(j, at) else 0,
             0 if urgent else 1, rank if urgent else 0,
             1 if j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I) else 0,
-            0 if j.get("film") in focus and j.get("film") else 1,
-            0 if j.get("film") else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
+            0 if film in focus and film else 1,
+            0 if film else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
             created.timestamp() if created else inf, j["id"])
 
 def claimable(j, rows, at, agent, chief, can=MINI, execution=None):

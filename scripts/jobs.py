@@ -59,6 +59,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import chief_relay  # noqa: E402
 import routing  # noqa: E402
 import workflow_state as workflow
+import workflow_handoffs as handoffs
 import studio  # noqa: E402
 
 ROOT = studio.ROOT
@@ -648,11 +649,23 @@ def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
     return None
 
 
+def check_board_completion(job: dict, ref: str) -> None:
+    if not on_board(job) or not workflow.role_job(job):
+        return
+    record = studio.load(film_status_path(job))
+    state = record.get("stages", {}).get(job["stage"], {}).get("state")
+    if state not in ("done", "skip", "blocked") or not ref:
+        raise ValueError("Chief stage review needs an explicit done/skip/blocked ruling in status.json and --ref before closing; do not leave it doing/review")
+
+
 def board_release(job: dict, agent: str, state: str, ref: str = "") -> None:
     if not on_board(job):
         return
     path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
     d = studio.load(path)
+    if state == "review" and workflow.role_job(job):
+        # A Chief has explicitly ruled before closing. Never overwrite that ruling with review again.
+        state = d.get("stages", {}).get(job["stage"], {}).get("state", "review")
     if any(c["stage"] == job["stage"] and c["by"] == agent for c in d.get("claims", [])):
         studio.do_release(d, job["stage"], agent, state, ref)
         studio.save(path, d)
@@ -901,6 +914,7 @@ def main(argv=None) -> int:
                 return {"id":"metadata","title":"Workflow metadata","needs":"any","status":"done","result":"metadata updated","history":[]},None,touched
             if args.cmd == "reconcile":
                 changes = reconcile_dependencies(data, at) + reconcile_holds(data, at)
+                changes += handoffs.reconcile(data, list(handoffs.records(studio.FILMS)), at, do_add)
                 return {"id": "reconcile", "title": "Dependency reconciliation", "needs": "any", "status": "done", "result": ", ".join(changes), "history": []}, None, touched
             if args.cmd == "add":
                 body = args.body_file.read_text() if args.body_file else args.body
@@ -948,6 +962,8 @@ def main(argv=None) -> int:
                     parent = find(data,job["recheck_of"])
                     if parent and parent.get("status") == "blocked" and (parent.get("hold") or {}).get("last_recheck") != job["id"]:
                         raise ValueError("Record the condition result on the held job with wait --recheck " + job["id"] + ", or reopen it with evidence, before closing this check")
+                check_board_completion(job, args.ref)
+                handoffs.check_completion(job, data, list(handoffs.records(studio.FILMS)), at)
                 do_done(job, args.agent, args.result or "done", at, args.ref)
                 board_release(job, args.agent, "review", args.ref)
             elif args.cmd == "block":
