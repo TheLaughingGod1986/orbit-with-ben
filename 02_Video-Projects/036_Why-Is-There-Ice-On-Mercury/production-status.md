@@ -4,9 +4,9 @@
 |-------|-------|
 | Slug | `036_Why-Is-There-Ice-On-Mercury` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-16_J0403.md` (scored 25/30, #1 of 5) |
-| Topic lock | **Pending Chief decision** (`J0403` parked for Chief: lock 036 or pick #2 Milky Way Centre / #3 Left in Space / #4 Planet Sounds; decide Short-first waiver vs standalone Short `vlkj8RQKmH8`) |
+| Topic lock | **Pending Chief decision J1900** (`J0403` cancelled without a 036 decision; originally parked for Chief: lock 036 or pick #2 Milky Way Centre / #3 Left in Space / #4 Planet Sounds; decide Short-first waiver vs standalone Short `vlkj8RQKmH8`) |
 | Script draft | `01_Script/mercury_polar_ice_script_master_v01.md` (v01 drafted 16 Oct 2026 in J0411; 1,278 spoken words / 1,298 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`) |
-| Script review | **PASS — 95.8 / 100** (1,278 spoken words / 1,298 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings) |
+| Script review | **Automated score only — 95.8 / 100; Chief editorial review pending J1900** (1,278 spoken words / 1,298 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings) |
 | Sources | `01_Script/SOURCES.md` — 10 rows started and pre-checked with verbatim quotes (`NASA Mercury Facts`, `NASA MESSENGER`, `NASA Mariner 10`, `NASA BepiColombo`, `NASA Mercury's Strange Hollows`, `NASA Release 15-079`, `JHU Gazette / MESSENGER Release`, `NSSDCA Mercury Fact Sheet`, `JPL Photojournal PIA19411 / PIA16523 / PIA18748 / PIA16522 / PIA15160`, `LOC Name Authority Records n88291472 / nr93014292 / n80020330 / n50054908`) |
 | Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
 | Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
@@ -82,3 +82,11 @@ Pass threshold: 90
 
 Script score: **95.8/100** · PASS
 ```
+
+## Workflow repair — J1777, 3 November 2026
+
+J1900 now owns the Chief topic/editorial decision on OWB:036/script, after J1777. J0403/J0411 were cancelled citing J0789/J0802, which reviewed only 061. J0804 deferred 035–061 locks; the credit reset does not itself approve a topic. Mercury remains an unlocked candidate.
+
+The 95.8 score and pasted gate output above are historical automated results, not a current editorial or scientific PASS. The pre-build audit is unsigned and blank; all ten source rows remain TO VERIFY, and formal Gemini facts plus direct MUST QUOTE checks are outstanding. J1900 must resolve neighbour/Short-first evidence, the opening and graphics issues, and queue any rewrite and dependent facts/lock work if advancing. The 24 October Short schedule above is historical, not a current readback. No VO, media or publishing approval.
+
+Evidence and handoff: `jobs/reviews/J1777/CHIEF_HANDOFF_2026-11-03.md`. No spend or Ben action required by this repair.
