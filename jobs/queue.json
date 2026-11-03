@@ -162407,13 +162407,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-03T20:00Z",
-      "eta": "2026-11-03T22:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T19:17Z",
-      "result": "",
+      "result": "Verified J0979 waiting condition remains unmet (3 Nov 2026, 20:02Z). 031 (magnetic_field_flip_vo_v02a) and 032 (titan_landing_vo_v02b) stem lock records remain on disk with technical verification PASS, but final VO listening approval is still blocked on J1752/J1753, and picture has not started on either film (status.json has no picture/edit stage, production-status.md says CG pending, 04_Generated-Clips has only 01_Raw/.gitkeep, and 07_Edit-Project contains setup files only). 030 long has VO/CG pending, and 033-061 have no recorded VO or picture locks. Reviewed original J0979 rejection (2cbadfe1a), J1000 existing-VO audit (92a775ee8), J1042 shelving (3782768ab) and J1827 verification: 029_short_lift_die_young_10my_v01 remains shelved and all original gates/holds remain in force. J0979 stays blocked with wait --recheck J1884 set for 2026-11-04T02:05:00Z. No spend, generation or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T19:17Z",
@@ -162444,6 +162444,11 @@
           "at": "2026-11-03T20:02Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Updated J0979 wait hold with --recheck J1884 (next check 2026-11-04T02:05:00Z); original gates and 029 shelving preserved"
+        },
+        {
+          "at": "2026-11-03T20:02Z",
+          "by": "gemini",
+          "what": "done: Verified J0979 waiting condition remains unmet (3 Nov 2026, 20:02Z). 031 (magnetic_field_flip_vo_v02a) and 032 (titan_landing_vo_v02b) stem lock records remain on disk with technical verification PASS, but final VO listening approval is still blocked on J1752/J1753, and picture has not started on either film (status.json has no picture/edit stage, production-status.md says CG pending, 04_Generated-Clips has only 01_Raw/.gitkeep, and 07_Edit-Project contains setup files only). 030 long has VO/CG pending, and 033-061 have no recorded VO or picture locks. Reviewed original J0979 rejection (2cbadfe1a), J1000 existing-VO audit (92a775ee8), J1042 shelving (3782768ab) and J1827 verification: 029_short_lift_die_young_10my_v01 remains shelved and all original gates/holds remain in force. J0979 stays blocked with wait --recheck J1884 set for 2026-11-04T02:05:00Z. No spend, generation or publishing changes."
         }
       ],
       "remaining_action": "Finish J1884 and report on thread",
