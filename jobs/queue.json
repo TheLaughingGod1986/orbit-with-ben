@@ -152273,9 +152273,14 @@
           "at": "2026-11-03T07:05Z",
           "by": "codex",
           "what": "step 0 of 3 done: Both signed-in browsers verified; lifetime reads underway for 93 OWB and 30 HOS videos; unavailable metrics left blank"
+        },
+        {
+          "at": "2026-11-03T07:06Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: HOS first pass complete: 5 longs and 25 Shorts; OWB collection continuing; latest live films linked, scope remains both complete channel catalogues"
         }
       ],
-      "remaining_action": "Finish lifetime Studio reads, then rebuild and publish tracker",
+      "remaining_action": "Complete remaining Studio reads and retention supplements, then rebuild tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
@@ -152291,10 +152296,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T07:05Z",
+        "at": "2026-11-03T07:06Z",
         "by": "codex",
-        "note": "Both signed-in browsers verified; lifetime reads underway for 93 OWB and 30 HOS videos; unavailable metrics left blank"
-      }
+        "note": "HOS first pass complete: 5 longs and 25 Shorts; OWB collection continuing; latest live films linked, scope remains both "
+      },
+      "taskKeys": [
+        "OWB:024",
+        "HOS:005"
+      ]
     }
   ],
   "focus": [],
