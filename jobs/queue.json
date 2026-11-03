@@ -156634,13 +156634,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T21:55Z",
-      "eta": "2026-11-03T23:55Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Resolved 038 orphan-review: J1904 restores topic/editorial decision and facts/quote-check handoff. Board remains review; no script or production approval. Verified clean worktree and preserved drafts.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -156671,6 +156671,11 @@
           "at": "2026-11-03T21:58Z",
           "by": "codex",
           "what": "step 3 of 3 done: PASS: successor and board agree; clean worktree, no stage claim, drafts/sources/audit unchanged. No spend or publishing changes."
+        },
+        {
+          "at": "2026-11-03T21:58Z",
+          "by": "codex",
+          "what": "done: Resolved 038 orphan-review: J1904 restores topic/editorial decision and facts/quote-check handoff. Board remains review; no script or production approval. Verified clean worktree and preserved drafts."
         }
       ],
       "remaining_action": "Handoff repair verified; J1904 owns topic and editorial decision",
@@ -156690,7 +156695,8 @@
       },
       "taskKeys": [
         "OWB:038"
-      ]
+      ],
+      "done_ref": "2b791a0949"
     },
     {
       "id": "J1780",
