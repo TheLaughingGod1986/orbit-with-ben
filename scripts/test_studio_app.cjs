@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {activityVideoContext,blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -318,3 +318,18 @@ console.log('Studio blocker guidance checks OK');
 const ownStageJob={...inputJob,id:'Jstage',stage:'edit',by:'gemini',hold:{condition:'Awaiting the recorded edit review'}};
 assert.equal(t.blockerModel(v({jobs:[inputJob,ownStageJob]}),blockedEdit).job.id,'Jstage','explicit stage mapping outranks a reference match');
 assert(!t.blockerModel(v({jobs:[{...inputJob,status:'done'}]}),blockedEdit).job,'completed records cannot become active blockers');
+
+// Activity video context comes from existing associations, never guessed from a job title.
+const contextVideos=[v({key:'HOS:008',channel:'HOS',title:'How Franklin Tamed Lightning',jobs:[{id:'J1757'}]}),v({key:'OWB:030',channel:'OWB',title:'Apophis'})];
+const contextBoard={tracker:{videos:contextVideos},owb:{jobs:[{id:'parent',repo:'hos',film:'008'}]}};
+assert(t.activityVideoContext(contextBoard,{id:'J1757'}).label.includes('Franklin'));
+assert(t.activityVideoContext(contextBoard,{id:'x',taskKeys:['HOS:008','HOS:008']}).count===1);
+assert(t.activityVideoContext(contextBoard,{id:'x',repo:'hos',film:'008'}).label.includes('History of Science'));
+assert(t.activityVideoContext(contextBoard,{id:'x',recheck_of:'parent'}).label.includes('Franklin'));
+assert.equal(t.activityVideoContext(contextBoard,{id:'x',taskKeys:['HOS:008','OWB:030']}).count,2);
+assert(t.activityVideoContext(contextBoard,{id:'x',taskKeys:['HOS:999']}).label.includes('title not recorded'));
+assert(t.activityVideoContext(contextBoard,{id:'x',title:'HOS 008 mentioned in prose'}).label.includes('no video linked'));
+console.log('Activity video context checks OK');
+
+const escapedContext=t.activityCard({...activityBoard,tracker:{videos:[v({key:'HOS:008',channel:'HOS',title:'<svg onload=alert(1)>',jobs:[{id:'Jactual'}]})]}},NOW);
+assert(escapedContext.includes('&lt;svg onload=alert(1)&gt;')&&!escapedContext.includes('<svg onload'));
