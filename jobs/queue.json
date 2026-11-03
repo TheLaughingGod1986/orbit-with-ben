@@ -152606,13 +152606,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T07:48Z",
-      "eta": "2026-11-03T09:48Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T07:34Z",
-      "result": "",
+      "result": "Condition remains unmet: PR380 OPEN unchanged at d0b04b5e0, no comments or reviews; fresh SHA256 matches all three J1468 final exports, with no additional exports. Saved opening FAILs remain AR1 6.00s, AR2 0.25 and AR3 1.41. J1356 remains blocked pending approved ISS input, corrected versioned masters, complete metadata, passing affected gates and full moving/audio review including pace WARN. Existing retry retained at 2026-11-03T08:34:08Z. No fresh gates or audition claimed; no spend or publishing changes. Disk about 13 GB free; existing detached J1732 scratch offload discovered and left running, this run duplicate stopped without deleting NAS files.",
       "history": [
         {
           "at": "2026-11-03T07:34Z",
@@ -152643,6 +152643,11 @@
           "at": "2026-11-03T07:50Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 remains blocked with current evidence and recheck J1735; existing next check retained at 2026-11-03T08:34:08Z. All approvals and holds preserved."
+        },
+        {
+          "at": "2026-11-03T07:51Z",
+          "by": "codex",
+          "what": "done: Condition remains unmet: PR380 OPEN unchanged at d0b04b5e0, no comments or reviews; fresh SHA256 matches all three J1468 final exports, with no additional exports. Saved opening FAILs remain AR1 6.00s, AR2 0.25 and AR3 1.41. J1356 remains blocked pending approved ISS input, corrected versioned masters, complete metadata, passing affected gates and full moving/audio review including pace WARN. Existing retry retained at 2026-11-03T08:34:08Z. No fresh gates or audition claimed; no spend or publishing changes. Disk about 13 GB free; existing detached J1732 scratch offload discovered and left running, this run duplicate stopped without deleting NAS files."
         }
       ],
       "remaining_action": "Close completed verification J1735",
@@ -152659,7 +152664,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     },
     {
       "id": "J1736",
