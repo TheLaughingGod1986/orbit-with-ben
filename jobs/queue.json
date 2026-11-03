@@ -150513,10 +150513,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T03:52Z",
+      "eta": "2026-11-03T05:52Z",
       "created_by": "relay",
       "created_at": "2026-11-03T03:31Z",
       "result": "",
@@ -150545,6 +150545,11 @@
           "at": "2026-11-03T03:41Z",
           "by": "gemini",
           "what": "released: Handing J1710 back to higher-priority elected Chief Codex (returned at 03:40:28Z). Verified J1712 kept J1100 blocked at 2/3, 3e26b379b evidence and all 3 audition WAV hashes match, PR #333 OPEN at 0a7fcb6ad without reviews/comments, and NAS offload has no eligible scratch (~14 GiB free); J0936 untouched."
+        },
+        {
+          "at": "2026-11-03T03:52Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify S2 bed/audition hashes, local listening records, PR #333 and J1100 state",
