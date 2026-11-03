@@ -1,5 +1,5 @@
 {
-  "next_id": 1811,
+  "next_id": 1812,
   "jobs": [
     {
       "id": "J0001",
@@ -156121,6 +156121,34 @@
         }
       ],
       "remaining_action": "Demonstrate a supported no-cost listening path before routing J1752 and J1753",
+      "kind": "chief"
+    },
+    {
+      "id": "J1811",
+      "title": "Chief: review board dispatch and stage-explanation PR395/PR396",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1754 observed new review requests on the live thread at 6601594623 and 6601765760. Review OWB PR395 (ready/held Overview dispatch classification) and PR396 (expanded-stage movement/prerequisite explanation) at exact current heads and CI, within current elected Chief authority. Compare actual board workflow to queue and scheduled/public tracker records; do not infer missing production from unknown historical QA. If code PASS and required checks green merge normally, then verify built/published board runtime and service/code refresh with evidence. If FIX, record concrete successor. These requests have no existing live queue job as of 3 Nov 10:54 UTC. Coordinate with J1754 runtime evidence PR397; do not mark its remaining media/capability hold satisfied from UI changes. No publishing, schedule, media approval or paid generation.",
+      "ref": "J1754",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T10:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T10:55Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review new board PRs and verify published queue/stage explanations against source state",
       "kind": "chief"
     }
   ],
