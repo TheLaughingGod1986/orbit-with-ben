@@ -164369,10 +164369,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T22:22Z",
+      "eta": "2026-11-03T22:42Z",
       "created_by": "codex",
       "created_at": "2026-11-03T22:19Z",
       "result": "",
@@ -164381,6 +164381,11 @@
           "at": "2026-11-03T22:19Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T22:22Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Inspect exact local J1846 payload, publish only approved workflow text, then release its dependent preview chain",
@@ -164388,7 +164393,15 @@
       "approval_scope_key": "J1846:user-text-only-publication",
       "urgent": 1,
       "due_kind": "user-immediate-claim",
-      "due": "2026-11-03T22:19:20+00:00"
+      "due": "2026-11-03T22:19:20+00:00",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T22:22Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
