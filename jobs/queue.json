@@ -158331,13 +158331,13 @@
       "stage": "upload",
       "after": "J1767",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-03T20:53Z",
-      "eta": "2026-11-03T22:53Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T12:44Z",
-      "result": "",
+      "result": "Studio changes approved by J1882 saved and independently reopened; captions serving and metadata preserved. Evidence committed locally e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected pushing completion summary and PR because private-video-derived metadata destination trust was unverified; explicit publication approval needed. Do not repeat Studio changes.",
       "history": [
         {
           "at": "2026-11-03T12:44Z",
@@ -158428,6 +158428,11 @@
           "at": "2026-11-03T20:59Z",
           "by": "codex",
           "what": "step 2 of 3 done: Studio work verified; local commit e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected public push/PR of private-video-derived summary."
+        },
+        {
+          "at": "2026-11-03T20:59Z",
+          "by": "codex",
+          "what": "blocked: Studio changes approved by J1882 saved and independently reopened; captions serving and metadata preserved. Evidence committed locally e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected pushing completion summary and PR because private-video-derived metadata destination trust was unverified; explicit publication approval needed. Do not repeat Studio changes."
         }
       ],
       "remaining_action": "Publish local completion evidence after approval-review restriction is resolved",
@@ -158442,6 +158447,11 @@
         "at": "2026-11-03T20:59Z",
         "by": "codex",
         "note": "Studio work verified; local commit e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected public pu"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Studio changes approved by J1882 saved and independently reopened; captions serving and metadata preserved. Evidence committed locally e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected pushing completion summary and PR because private-video-derived metadata destination trust was unverified; explicit publication approval needed. Do not repeat Studio changes.",
+        "check_at": "2026-11-04T02:59:24+00:00"
       }
     },
     {
