@@ -158663,9 +158663,14 @@
           "at": "2026-11-03T14:07Z",
           "by": "codex",
           "what": "step 1 of 3 done: Eight previews measured. Tight 2.348x crop peaks at 1.47, still below 1.50. Full-plate preview also fails split-panel QA; checking feathered crop before closing finite investigation."
+        },
+        {
+          "at": "2026-11-03T14:08Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: T545 feathered candidate measures 1.54; picture QA PASS with 2.35x sharpness WARN; polish PASS. Exact-frame samples and 3.4s preroll/open preview created. Moving review and creative approval remain required."
         }
       ],
-      "remaining_action": "Finish bounded crop checks and record failed candidate evidence",
+      "remaining_action": "Commit candidate provenance, checks and review handoff",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -158677,11 +158682,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T14:07Z",
+        "at": "2026-11-03T14:08Z",
         "by": "codex",
-        "note": "Eight previews measured. Tight 2.348x crop peaks at 1.47, still below 1.50. Full-plate preview also fails split-panel QA"
+        "note": "T545 feathered candidate measures 1.54; picture QA PASS with 2.35x sharpness WARN; polish PASS. Exact-frame samples and "
       },
       "taskKeys": [
         "OWB:030"
