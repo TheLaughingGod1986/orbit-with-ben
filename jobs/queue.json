@@ -152624,18 +152624,24 @@
           "at": "2026-11-03T07:49Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T07:49Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original approvals and repair history checked; PR380 unchanged at d0b04b5e0 with no comments or reviews."
         }
       ],
-      "remaining_action": "Verify corrected AR masters and review evidence for J1356",
+      "remaining_action": "Check current master hashes and saved gate evidence",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T08:34:08+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T07:49Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Original approvals and repair history checked; PR380 unchanged at d0b04b5e0 with no comments or reviews."
       },
       "taskKeys": [
         "OWB:030"
