@@ -160154,19 +160154,24 @@
           "at": "2026-11-03T15:33Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original approvals, J1468 repair, PR380/414 and J1846 scope; replacement chain unstarted"
+        },
+        {
+          "at": "2026-11-03T15:33Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh hashes match all three J1468 exports; no new final exports. PR380 and PR414 unchanged; replacement unapproved"
         }
       ],
-      "remaining_action": "Verify current final exports and retain unmet readiness hold",
+      "remaining_action": "Record unmet readiness condition and close verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T16:13:46+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T15:33Z",
         "by": "codex",
-        "note": "Read original approvals, J1468 repair, PR380/414 and J1846 scope; replacement chain unstarted"
+        "note": "Fresh hashes match all three J1468 exports; no new final exports. PR380 and PR414 unchanged; replacement unapproved"
       },
       "taskKeys": [
         "OWB:030"
