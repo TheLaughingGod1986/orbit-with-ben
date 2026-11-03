@@ -159469,13 +159469,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-03T14:55Z",
-      "eta": "2026-11-03T16:55Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:51Z",
-      "result": "",
+      "result": "Scope decision and bounded J1847 -> J1848 -> J1849 handoff recorded locally in 001b6962f, clean /private/tmp/J1846-wt branch codex/J1846-scope. J1844 administrative hold closed with FIX; J1471/J1356 retained. Required evidence PR blocked: automatic approval review twice rejected git push to public TheLaughingGod1986/orbit-with-ben, including after ADMIN ownership verification, requiring explicit approval to publish these workflow briefs. Need user approval for this public payload before push/PR; do not bypass or repeat. No media approval/spend/publishing changes. Step 2/3.",
       "history": [
         {
           "at": "2026-11-03T14:51Z",
@@ -159501,6 +159501,11 @@
           "at": "2026-11-03T15:00Z",
           "by": "codex",
           "what": "step 2 of 3 done: 001b6962f: scope committed; J1847-J1849 queued; J1844 admin hold closed. Queue assertions PASS. Public push rejected by automatic approval review twice."
+        },
+        {
+          "at": "2026-11-03T15:01Z",
+          "by": "codex",
+          "what": "blocked: Scope decision and bounded J1847 -> J1848 -> J1849 handoff recorded locally in 001b6962f, clean /private/tmp/J1846-wt branch codex/J1846-scope. J1844 administrative hold closed with FIX; J1471/J1356 retained. Required evidence PR blocked: automatic approval review twice rejected git push to public TheLaughingGod1986/orbit-with-ben, including after ADMIN ownership verification, requiring explicit approval to publish these workflow briefs. Need user approval for this public payload before push/PR; do not bypass or repeat. No media approval/spend/publishing changes. Step 2/3."
         }
       ],
       "remaining_action": "Obtain approval for public evidence-branch push, open required PR, then complete scope job",
@@ -159515,7 +159520,12 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Scope decision and bounded J1847 -> J1848 -> J1849 handoff recorded locally in 001b6962f, clean /private/tmp/J1846-wt branch codex/J1846-scope. J1844 administrative hold closed with FIX; J1471/J1356 retained. Required evidence PR blocked: automatic approval review twice rejected git push to public TheLaughingGod1986/orbit-with-ben, including after ADMIN ownership verification, requiring explicit approval to publish these workflow briefs. Need user approval for this public payload before push/PR; do not bypass or repeat. No media approval/spend/publishing changes. Step 2/3.",
+        "check_at": "2026-11-03T21:01:21+00:00"
+      }
     },
     {
       "id": "J1847",
