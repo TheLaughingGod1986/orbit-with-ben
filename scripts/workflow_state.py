@@ -203,12 +203,56 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None):
         return False
     return not j.get("after") or by_id.get(j["after"], {}).get("status") == "done"
 
+def yieldable_monthly_claim(j):
+    return (j.get("status") == "claimed" and j.get("needs") == "mini" and j.get("kind") == "review"
+            and str(j.get("backlog", "")).startswith("monthly-improvement-") and not j.get("film") and not j.get("stage")
+            and not j.get("hold") and not j.get("awaits_ben"))
+
+def immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude=(), execution=None, focus=()):
+    """Honor explicit user claim requests at a safe dispatch boundary.
+
+    Never interrupt an execution lease or give a worker a second claimed job.
+    A green worker is eligible here only through the existing routing/claim gates.
+    """
+    if execution and timestamp(execution.get("expiresAt")) and timestamp(execution["expiresAt"]) > at:
+        return None
+    owned = [j for j in rows if j.get("status") == "claimed" and j.get("by") in actors]
+    # Only unmapped monthly analysis can yield automatically; media/stage claims keep ownership.
+    if any(not yieldable_monthly_claim(j) for j in owned):
+        return None
+    occupied = {j.get("by") for j in rows if j.get("status") == "claimed"}
+    free = set(actors) - occupied
+    by_id, due = {j["id"]: j for j in rows}, deadlines(rows)
+    picks = []
+    for j in rows:
+        requested = timestamp(j.get("due"))
+        if (j["id"] in exclude or j.get("status") != "open" or not j.get("urgent")
+                or j.get("due_kind") != "user-immediate-claim" or not requested or requested > at):
+            continue
+        if external_hold(j, at) or dependency_problem(j, by_id):
+            continue
+        if role_job(j):
+            worker = chief if chief in free and claimable(j, rows, at, chief, chief, execution=execution) else None
+        else:
+            eligible = {a for a in free & set(workers) if claimable(j, rows, at, a, chief, execution=execution)}
+            worker = choose_worker(j, eligible) if eligible else None
+            if worker not in eligible:
+                worker = None
+        if worker:
+            mode = "chief-inbox" if worker == chief and chief not in workers else "job"
+            picks.append((order(j, due, focus, at), {"job":j, "worker":worker, "mode":mode,
+                "yield_monthly":[{"id":old["id"], "by":old.get("by")} for old in owned]}))
+    return min(picks, key=lambda x:x[0])[1] if picks else None
+
 def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, exclude=(), execution=None, include_chief=False):
     actors = set(workers) | ({chief} if chief and include_chief else set())
     rows = data.get("jobs", [])
     by_id, due = {j["id"]: j for j in rows}, deadlines(rows)
     candidates = []
-    # Resume existing ownership before selecting new work, matching jobs.py next (including overdue claims).
+    requested = immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude, execution, data.get("focus") or ())
+    if requested:
+        return requested
+    # Ordinary deadlines retain resume-first behavior; explicit user requests above only use free workers.
     for j in rows:
         if j["id"] not in exclude and j.get("by") in actors and j.get("status") == "claimed" and state(j, by_id, at, execution=execution) in {"running","stalled"} and (not role_job(j) or j.get("by") == chief) and not external_hold(j,at) and not dependency_problem(j,by_id):
             return {"job": j, "worker": j["by"], "mode": "job"}

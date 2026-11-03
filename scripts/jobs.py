@@ -367,6 +367,33 @@ def choose_next(data, agent, can, at, job_id=""):
     return next((j for j in ordered(data, at) if (not job_id or j["id"] == job_id) and claimable(data,j,can,at,agent)), None)
 
 
+def yield_monthly_for_request(data, request_id, owned, at):
+    """Supervisor-only safe-boundary handoff; preserve report evidence and progress.
+
+    The relay verifies its previous process has exited before invoking this.
+    Validate every row before releasing any ownership; a race requires replanning.
+    """
+    request = find(data, request_id)
+    due = workflow.timestamp((request or {}).get("due"))
+    if (not request or request.get("status") != "open" or not request.get("urgent")
+            or request.get("due_kind") != "user-immediate-claim" or not due or due > at
+            or workflow.external_hold(request, at) or workflow.dependency_problem(request, {j["id"]:j for j in data["jobs"]})
+            or request.get("after") and (find(data, request["after"]) or {}).get("status") != "done"):
+        raise ValueError("Immediate request changed; replan before yielding")
+    rows = []
+    for old in owned:
+        j = find(data, old["id"])
+        if j and j.get("status") in ("done", "cancelled"):
+            continue
+        if not j or not workflow.yieldable_monthly_claim(j) or j.get("by") != old.get("by"):
+            raise ValueError("Monthly ownership changed; replan before yielding")
+        rows.append(j)
+    for j in rows:
+        previous = j.get("by", "")
+        j.update(status="open", by="", since="", eta="")
+        log(j, at, "relay", f"released: safe-boundary yield from {previous} for explicit user request {request_id}; recorded progress and private report work preserved")
+    return [j["id"] for j in rows]
+
 def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None, job_id: str = "") -> dict | None:
     job = choose_next(data,agent,can,at,job_id)
     if not job:
