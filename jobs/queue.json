@@ -103746,6 +103746,11 @@
           "at": "2026-11-03T15:01Z",
           "by": "relay",
           "what": "condition verification queued: J1850"
+        },
+        {
+          "at": "2026-11-03T15:21Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T21:21:00Z"
         }
       ],
       "remaining_action": "Verify T020 completion and next London calendar day before arming approved title-only test",
@@ -103762,12 +103767,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "3 Nov 08:55:48 UTC: refreshed HOS Studio AL_-qlWko_g thumbnail still Running; no completion timestamp. Evidence /Users/benjaminoats/_desk/handoff/J1746/studio_details.txt and PNG. Require actual T020 completion timestamp and at least the following London calendar day.",
-        "check_at": "2026-11-03T16:01:48+00:00",
-        "last_recheck": "J1746",
-        "checked_at": "2026-11-03T08:56:29+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1850"
+        "condition": "3 Nov 15:20:49 UTC: refreshed HOS Studio AL_-qlWko_g thumbnail still Running; no completion timestamp. Evidence /Users/benjaminoats/_desk/handoff/J1850/studio_details.txt and PNG. Require actual T020 completion timestamp and at least the following London calendar day.",
+        "check_at": "2026-11-03T21:21:00Z",
+        "last_recheck": "J1850",
+        "checked_at": "2026-11-03T15:21:13+00:00",
+        "checked_by": "codex"
       }
     },
     {
