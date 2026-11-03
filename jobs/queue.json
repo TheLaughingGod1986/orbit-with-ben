@@ -157351,19 +157351,24 @@
           "at": "2026-11-03T12:17Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original scope, accepted picture history, J1468 repair and J1471 input request; PR380 remains OPEN at d0b04b5e0 without comments or reviews."
+        },
+        {
+          "at": "2026-11-03T12:17Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 final exports; no additional final exports. PR380 unchanged; J1471 has no approved ISS input or corrected masters."
         }
       ],
-      "remaining_action": "Verify export hashes and remaining opening-gate evidence",
+      "remaining_action": "Record unmet J1356 condition and close verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T13:06:28+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T12:17Z",
         "by": "codex",
-        "note": "Read original scope, accepted picture history, J1468 repair and J1471 input request; PR380 remains OPEN at d0b04b5e0 wit"
+        "note": "Fresh SHA256 matches all three J1468 final exports; no additional final exports. PR380 unchanged; J1471 has no approved "
       },
       "taskKeys": [
         "OWB:030"
