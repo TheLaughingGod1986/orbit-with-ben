@@ -162430,19 +162430,24 @@
           "at": "2026-11-03T20:02Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1827; original gates/holds and 029 v01 shelving remain unchanged"
+        },
+        {
+          "at": "2026-11-03T20:02Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 031/032 VO stems remain blocked on J1752/J1753 listening approval and picture not started (04_Generated-Clips has .gitkeep only, 07_Edit-Project setup files only); 033-061 have no VO/picture locks"
         }
       ],
-      "remaining_action": "Verify 031-061 VO/picture lock state on disk",
+      "remaining_action": "Update J0979 wait hold with --recheck J1884 and close J1884",
       "kind": "chief",
       "recheck_of": "J0979",
       "due": "2026-11-03T20:17:21+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T20:02Z",
         "by": "gemini",
-        "note": "Reviewed J0979 rejection (2cbadfe1a), J1000 audit (92a775ee8), J1042 shelving (3782768ab) and J1827; original gates/hold"
+        "note": "Verified 031/032 VO stems remain blocked on J1752/J1753 listening approval and picture not started (04_Generated-Clips h"
       },
       "taskKeys": [
         "OWB:029",
