@@ -1,5 +1,5 @@
 {
-  "next_id": 1835,
+  "next_id": 1842,
   "jobs": [
     {
       "id": "J0001",
@@ -81629,6 +81629,11 @@
           "at": "2026-11-03T13:16Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T14:10:26Z"
+        },
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "condition verification queued: J1835"
         }
       ],
       "kind": "video",
@@ -81660,10 +81665,11 @@
       "hold": {
         "type": "input",
         "condition": "J1828 verified latest J1830/J1100 remains blocked at 2/3. Three local audition hashes match 3e26b379b; newest local evidence is 31 Oct, listening NOT PERFORMED. PR333 OPEN unchanged at 0a7fcb6ad without reviews/comments. Require cleared instrumental S2 bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Live disk about 2494 MB is below h43 restart minimum 10 GiB; NAS offload found no eligible scratch. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
-        "check_at": "2026-11-03T14:10:26Z",
+        "check_at": "2026-11-03T15:10:42+00:00",
         "last_recheck": "J1828",
         "checked_at": "2026-11-03T13:16:52+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1835"
       },
       "preparation_review": {
         "by": "codex",
@@ -87173,6 +87179,11 @@
           "at": "2026-11-03T08:04Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T14:05:00Z"
+        },
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "condition verification queued: J1836"
         }
       ],
       "kind": "listing",
@@ -87199,10 +87210,11 @@
       "hold": {
         "type": "input",
         "condition": "Fresh Studio reload 3 Nov 08:03 UTC still shows A/B testing titles / Results ready on Atom GHZDsiH7L7A, original title and Public. Requires read-only widget clearance proof; API restriction removal unproven, no write probe. Evidence J1737 at e4a886ac9 and _desk/handoff/J1737/readback.json.",
-        "check_at": "2026-11-03T14:05:00Z",
+        "check_at": "2026-11-03T15:10:42+00:00",
         "last_recheck": "J1737",
         "checked_at": "2026-11-03T08:04:10+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1836"
       }
     },
     {
@@ -88688,6 +88700,11 @@
           "at": "2026-11-03T13:22Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T14:10:26Z"
+        },
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "condition verification queued: J1837"
         }
       ],
       "kind": "review",
@@ -88727,10 +88744,11 @@
       "hold": {
         "type": "input",
         "condition": "Explicit approval to publish local J1642 review commit 33af1e441 remains absent. J1829 reviewed original brief, approval history, preserved local decision and verification, and subsequent thread comments through 6604906947. Prior automatic approval rejection remains binding; no publication retry without explicit approval. Review remains local at /Users/benjaminoats/_desk/handoff/J1642/. Original gates and approvals unchanged.",
-        "check_at": "2026-11-03T14:10:26Z",
+        "check_at": "2026-11-03T15:10:42+00:00",
         "last_recheck": "J1829",
         "checked_at": "2026-11-03T13:22:17+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1837"
       }
     },
     {
@@ -100529,6 +100547,11 @@
           "at": "2026-11-03T13:13Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T14:10:26Z"
+        },
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "condition verification queued: J1838"
         }
       ],
       "remaining_action": "Obtain cleared instrumental S2 bed and recorded local listening; restore h43 restart headroom before v07 repairs",
@@ -100558,10 +100581,11 @@
       "hold": {
         "type": "input",
         "condition": "J1830 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three audition hashes match 3e26b379b; latest local review evidence remains 31 Oct. Excluded bed remains excluded. NAS offload found no eligible scratch (2518 MB free before verification worktree), below h43 restart minimum 10 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines/v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-03T14:10:26Z",
+        "check_at": "2026-11-03T15:10:42+00:00",
         "last_recheck": "J1830",
         "checked_at": "2026-11-03T13:13:44+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1838"
       }
     },
     {
@@ -124310,6 +124334,11 @@
           "at": "2026-11-03T13:25Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T14:10:26Z"
+        },
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "condition verification queued: J1839"
         }
       ],
       "remaining_action": "Await corrected AR openings, complete gate metadata and full moving/audio review",
@@ -124327,10 +124356,11 @@
       "hold": {
         "type": "input",
         "condition": "J1831 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no additional final exports. J1471 still lacks approved ISS opening input. Saved opening FAILs remain AR1 first cut 6.00s >3s, AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates and full moving/audio review including pace WARN. Existing approvals and Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-03T14:10:26Z",
+        "check_at": "2026-11-03T15:10:42+00:00",
         "last_recheck": "J1831",
         "checked_at": "2026-11-03T13:25:50+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1839"
       }
     },
     {
@@ -133365,6 +133395,11 @@
           "at": "2026-11-03T13:29Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T14:10:26Z"
+        },
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "condition verification queued: J1840"
         }
       ],
       "remaining_action": "Identify approved moving ISS opening input, then correct and review AR cohort",
@@ -133382,10 +133417,11 @@
       "hold": {
         "type": "input",
         "condition": "J1832 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 matches all three J1468 masters and Crew-2 cache. Still missing approved ISS interval or approach for AR2 0-2.4s plus loop preroll: identifiable station detail, native motion, <=2.35x upscale and locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete metadata, affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.",
-        "check_at": "2026-11-03T14:10:26Z",
+        "check_at": "2026-11-03T15:10:42+00:00",
         "last_recheck": "J1832",
         "checked_at": "2026-11-03T13:29:06+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1840"
       }
     },
     {
@@ -158678,6 +158714,11 @@
           "at": "2026-11-03T14:10Z",
           "by": "codex",
           "what": "blocked: Acquisition candidate delivered at 406f91068 on codex/J1834-acquisition. Needs elected-Chief actual moving review of ~/. _desk/cache/J1834/feather_candidate_T545.mp4 (use /Users/benjaminoats/_desk/cache/J1834), phone and preroll previews; station recognition/cropped Dragon/soft fill and 2.35x WARN remain. Metric 1.54, picture/polish PASS are not creative approval. J1471/J1356 holds unchanged."
+        },
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "condition verification queued: J1841"
         }
       ],
       "remaining_action": "Elected Chief to view moving candidate and decide exact framing and interval",
@@ -158704,8 +158745,226 @@
       "hold": {
         "type": "dependency",
         "condition": "Acquisition candidate delivered at 406f91068 on codex/J1834-acquisition. Needs elected-Chief actual moving review of ~/. _desk/cache/J1834/feather_candidate_T545.mp4 (use /Users/benjaminoats/_desk/cache/J1834), phone and preroll previews; station recognition/cropped Dragon/soft fill and 2.35x WARN remain. Metric 1.54, picture/polish PASS are not creative approval. J1471/J1356 holds unchanged.",
-        "check_at": "2026-11-03T20:10:14+00:00"
+        "check_at": "2026-11-03T15:10:42+00:00",
+        "recheck_task": "J1841"
       }
+    },
+    {
+      "id": "J1835",
+      "title": "Chief: verify condition for J0936",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0936: J1828 verified latest J1830/J1100 remains blocked at 2/3. Three local audition hashes match 3e26b379b; newest local evidence is 31 Oct, listening NOT PERFORMED. PR333 OPEN unchanged at 0a7fcb6ad without reviews/comments. Require cleared instrumental S2 bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Live disk about 2494 MB is below h43 restart minimum 10 GiB; NAS offload found no eligible scratch. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0936 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Clear S2 instrumental bed and local listening, restore headroom, then complete repairs and replacement approvals",
+      "kind": "chief",
+      "recheck_of": "J0936",
+      "due": "2026-11-03T15:10:42+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1836",
+      "title": "Chief: verify condition for J0978",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0978: Fresh Studio reload 3 Nov 08:03 UTC still shows A/B testing titles / Results ready on Atom GHZDsiH7L7A, original title and Public. Requires read-only widget clearance proof; API restriction removal unproven, no write probe. Evidence J1737 at e4a886ac9 and _desk/handoff/J1737/readback.json.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0978 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for verified Atom title-test clearance before approved Test B listing update",
+      "kind": "chief",
+      "recheck_of": "J0978",
+      "due": "2026-11-03T15:10:42+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1837",
+      "title": "Chief: verify condition for J0985",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0985: Explicit approval to publish local J1642 review commit 33af1e441 remains absent. J1829 reviewed original brief, approval history, preserved local decision and verification, and subsequent thread comments through 6604906947. Prior automatic approval rejection remains binding; no publication retry without explicit approval. Review remains local at /Users/benjaminoats/_desk/handoff/J1642/. Original gates and approvals unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0985 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Obtain explicit approval for publication of the completed local audit review",
+      "kind": "chief",
+      "recheck_of": "J0985",
+      "due": "2026-11-03T15:10:42+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1838",
+      "title": "Chief: verify condition for J1100",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1100: J1830 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three audition hashes match 3e26b379b; latest local review evidence remains 31 Oct. Excluded bed remains excluded. NAS offload found no eligible scratch (2518 MB free before verification worktree), below h43 restart minimum 10 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines/v01 fallback. No source-audio API egress or publishing.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Obtain cleared instrumental S2 bed and recorded local listening; restore h43 restart headroom before v07 repairs",
+      "kind": "chief",
+      "recheck_of": "J1100",
+      "due": "2026-11-01T20:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1839",
+      "title": "Chief: verify condition for J1356",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1356: J1831 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no additional final exports. J1471 still lacks approved ISS opening input. Saved opening FAILs remain AR1 first cut 6.00s >3s, AR2 diff 0.25 and AR3 1.41 <1.50. Require corrected versioned masters, complete metadata, passing affected gates and full moving/audio review including pace WARN. Existing approvals and Ben/date/credit/publishing holds persist.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1356 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await corrected AR openings, complete gate metadata and full moving/audio review",
+      "kind": "chief",
+      "recheck_of": "J1356",
+      "due": "2026-11-03T15:10:42+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1840",
+      "title": "Chief: verify condition for J1471",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1471: J1832 verified PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews; fresh SHA256 matches all three J1468 masters and Crew-2 cache. Still missing approved ISS interval or approach for AR2 0-2.4s plus loop preroll: identifiable station detail, native motion, <=2.35x upscale and locked VO; otherwise separately scoped acquisition. AR1/AR3 repairs, complete metadata, affected gates and full moving/audio review including pace WARN remain owed. Saved opening gates FAIL. J1356 and all Ben/date/credit/publishing holds persist.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1471 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Identify approved moving ISS opening input, then correct and review AR cohort",
+      "kind": "chief",
+      "recheck_of": "J1471",
+      "due": "2026-11-03T15:10:42+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1841",
+      "title": "Chief: verify condition for J1834",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1834: Acquisition candidate delivered at 406f91068 on codex/J1834-acquisition. Needs elected-Chief actual moving review of ~/. _desk/cache/J1834/feather_candidate_T545.mp4 (use /Users/benjaminoats/_desk/cache/J1834), phone and preroll previews; station recognition/cropped Dragon/soft fill and 2.35x WARN remain. Metric 1.54, picture/polish PASS are not creative approval. J1471/J1356 holds unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1834 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T14:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:10Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Elected Chief to view moving candidate and decide exact framing and interval",
+      "kind": "chief",
+      "recheck_of": "J1834",
+      "due": "2026-11-03T15:10:42+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
