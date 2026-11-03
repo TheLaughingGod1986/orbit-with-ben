@@ -158331,10 +158331,10 @@
       "stage": "upload",
       "after": "J1767",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T20:53Z",
+      "eta": "2026-11-03T22:53Z",
       "created_by": "codex",
       "created_at": "2026-11-03T12:44Z",
       "result": "",
@@ -158398,6 +158398,11 @@
           "at": "2026-11-03T19:58Z",
           "by": "gemini",
           "what": "remaining action: Install approved end screen (rVqgtkBV3jc + Subscribe, 7:54:15-8:14:16) and card (rVqgtkBV3jc at 05:55) in Studio CDP 9223 per J1882 and read back"
+        },
+        {
+          "at": "2026-11-03T20:53Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Install approved end screen (rVqgtkBV3jc + Subscribe, 7:54:15-8:14:16) and card (rVqgtkBV3jc at 05:55) in Studio CDP 9223 per J1882 and read back",
@@ -158405,7 +158410,15 @@
       "kind": "studio",
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T20:53Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1826",
