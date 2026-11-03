@@ -154222,16 +154222,21 @@
           "at": "2026-11-03T10:50Z",
           "by": "codex",
           "what": "step 2 of 4 done: PR394 a8d46b2 and PR399 8e7644f approved, merged and installed. Live HOS canary persisted over two process starts and was cleared with trusted linked outcome plus ack."
+        },
+        {
+          "at": "2026-11-03T10:54Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Installed-code HOS canary passed persistence+ack. Reconcile queued 51 repairs and repeated with zero duplicates. Runtime validation remains incomplete: parent reload waits for this run to exit; HOS watcher predates release; no genuine audio review or real stage completion observed. Evidence 9cf68ad8b; follow-ups J1809 and J1810."
         }
       ],
-      "remaining_action": "Validate installed runtime, capture reconciliation evidence and queue routing/capability follow-ups",
+      "remaining_action": "Verify refreshed services and a real stage ruling after J1809/J1810 remediation",
       "kind": "chief",
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-03T10:50Z",
+        "at": "2026-11-03T10:54Z",
         "by": "codex",
-        "note": "PR394 a8d46b2 and PR399 8e7644f approved, merged and installed. Live HOS canary persisted over two process starts and wa"
+        "note": "Installed-code HOS canary passed persistence+ack. Reconcile queued 51 repairs and repeated with zero duplicates. Runtime"
       },
       "taskKeys": [
         "OWB:031",
