@@ -1,5 +1,5 @@
 {
-  "next_id": 1834,
+  "next_id": 1835,
   "jobs": [
     {
       "id": "J0001",
@@ -158598,6 +158598,34 @@
       "taskKeys": [
         "OWB:030"
       ]
+    },
+    {
+      "id": "J1834",
+      "title": "AR2: acquire a real ISS opening candidate for J1471",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# AR2 ISS opening acquisition — J1833 Chief scope\n\n3 November 2026. Codex, elected acting Chief. GBP0 acquisition only, for OWB:030 AR replication. This task supplies a reviewed input to J1471; it does not edit any cohort master.\n\n## Bounded work\n\n1. Read J1833 REPORT.md, h37 C4, J1317 picture ruling, J1321 source metadata, PR380 diagnostics at d0b04b5e0, J1471 and J1356 holds. Link progress OWB:030. Check for an existing acquisition delivery before starting.\n2. Inspect other intervals in the official NASA Crew-2 reel `jsc2021m000259_SpaceX_Crew-2_Flight_Day_3_Highlights` first. The existing 351–374 s cache remains untouched. Obtain official collection metadata and a low-resolution survey before selecting downloads. If it offers no suitable interval, inspect at most TWO additional official NASA real-ISS exterior video assets. Verify each NASA ID, downloadable rendition, ownership/usage terms and visible content; no guesses from titles. New source identity is pending Chief approval, not approved by this brief.\n3. Budget the investigation to 20 minutes active work and 2 GB new local downloads, at most three source assets total. Prefer range/interval downloads (at most 60 s per candidate) and native source quality for the finalist. Do not download a large full reel merely to find an in-point. If a download exceeds the run window, use detached tmux with log/receipt and release; never start a duplicate. Check disk/NAS availability first; retain existing files and never delete NAS material.\n4. Seek one continuous source interval of at least 3.4 s: [T-1,T) for the one-second loop preroll, [T,T+2.4) for opening. Native motion and normal playback speed; station modules/truss/arrays identifiable at frame 0. Sunlit detail preferred. No shot transition inside this 3.4 s. Record exact full-source T, cache offsets and source frame rate. Keep h40 words, VO clocks and all existing cut durations unchanged.\n5. Make only a separate candidate preview, NOT an AR2 master: 1080x1920, coherent picture fill, exact crop/scale/feather recipe, actual upscale <=2.35x from the native decoded source. Show enough station to recognise it on a phone. A blurred moving fill may surround the sharp plate if coherent. No artificial acceleration, animated still, jitter, flashing caption or noise added to manufacture motion. No generated video/image, credits or paid service. No flat station icon. NASA-model rendering would need a separate bounded brief and is not this task.\n\n## Required delivery and acceptance\n\n- Persistent cache under `~/_desk/cache/<job-id>/`, with SHA256, bytes, ffprobe dimensions/fps/duration, official asset and download URLs, captured metadata/usage evidence, retrieval date, time offsets and reproducible preview command. Media stays outside git; records in a clean-worktree PR.\n- Exact frame 0, quarter-second opening samples through 2.4 s, and preroll-to-opening seam evidence; supply the moving candidate for actual viewing, not just a sheet. Inspect native station detail and coherent fill at full size and phone size. State what was actually viewed; do not claim audio audition.\n- Run the unchanged `frame0_diff_0_1_5s` calculation from `gate_shorts_open.py` on the actual portrait preview, requiring >=1.50, and applicable picture/polish checks with complete source/crop metadata. Record raw outputs and all WARNs. A silent source preview is not a finished Short and must never receive a full Shorts ship PASS; full opening/audio/loop gates belong to J1471's eventual composite.\n- A passing metric is necessary but not creative approval. Park the acquisition for the currently elected Chief to view the moving preview, review provenance, framing, motion and seam, and approve an exact source/hash/interval/recipe. Only after that evidence exists may the Chief satisfy J1471's input hold. If none passes, report the finite candidates and concrete failures, preserving the hold; never label all possible footage unsuitable.\n- J1471 remains the sole correction worker after J1468, including AR1/AR3 repairs, new versions, complete metadata and affected picture/polish/music/SFX/Shorts-open/loop gates. J1356 retains full moving/audio review, pace WARN assessment and final-watch readiness. Preserve repaired full-runtime score, accepted remaining picture, original masters/manifests, AR2 v10/AR3 v09 branch exclusion, failed gates and Ben/date/credit holds. No upload, schedule, retitle, privacy, Buffer or Ben-watch release.\n",
+      "ref": "",
+      "film": "030",
+      "stage": "edit",
+      "after": "J1833",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T13:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T13:58Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Acquire and document one ISS opening candidate for Chief review; no cohort edit",
+      "kind": "assembly"
     }
   ],
   "focus": [],
