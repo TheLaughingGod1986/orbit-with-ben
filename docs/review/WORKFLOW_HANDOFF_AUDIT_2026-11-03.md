@@ -34,3 +34,9 @@ Read-only inventory: `python3 scripts/workflow_handoffs.py` emits JSON and exits
 Python unit/regression tests exercise queue, stage, dependency, hold, dispatch, succession, refresh and approval calculations. New tests cover orphan recovery, duplicate suppression, live/expired claims, HOS number collisions, Chief completion, source preservation, focus continuation, malformed records and timestamps.
 
 A passing test suite does not prove the installed launchd service is current, media has actually been listened to, browser sign-ins are usable, or YouTube/Buffer accepted a write. After review/merge, verify the Mini's installed/loaded runner version, observe reconcile creating/deduplicating repair jobs, watch one real review through its explicit ruling and successor, and inspect the next published board snapshot. Verify HOS inbox delivery/ack separately. Retain the existing money, manual-review and Ben finished-video gates. No claim that all production handoffs are fault-free is made from cloud checks alone.
+
+## Live review execution update
+
+During the audit, the Mini picked up J1752/J1753. Both are now explicit input holds: technical verification is recorded, but the Codex sessions report no audio-input capability and correctly withheld final listening approval. J1752/J1753 must resume with a genuinely listening-capable elected reviewer. An agent name or Chief election alone does not prove media-review capability. The cloud test suite does not resolve this runtime capability limitation; rollout must verify capability-aware handling rather than retrying unchanged text-only sessions.
+
+The runner version fingerprint now includes the new handoff module and studio timestamp/state helpers, so future changes to those loaded modules trigger the existing safe-boundary restart mechanism.

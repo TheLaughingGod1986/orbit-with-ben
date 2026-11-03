@@ -84,7 +84,7 @@ import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and
 
 def code_version():
     root = pathlib.Path(__file__).resolve().parent
-    return hashlib.sha256(b"\0".join((root/name).read_bytes() for name in ("chief_relay.py","workflow_state.py","jobs.py","routing.py"))).hexdigest()[:16]
+    return hashlib.sha256(b"\0".join((root/name).read_bytes() for name in ("chief_relay.py","workflow_state.py","workflow_handoffs.py","studio.py","jobs.py","routing.py"))).hexdigest()[:16]
 
 LOADED_VERSION = code_version()
 
