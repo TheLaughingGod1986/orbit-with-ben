@@ -444,3 +444,8 @@ assert(!t.videoProductionRow(reviewChanged,NOW).includes('33%'));
 assert.equal(t.forecastView({...publicMissing,version:'v03',check:{verdict:'change',version:'v03',handled:false}},NOW).value,'Handoff complete','publication overrides old review feedback');
 
 assert(!t.detail({tracker:{videos:[{...publicMissing,jobs:[...publicMissing.jobs,...publicMissing.jobs]}]}},publicMissing.key).includes('2 jobs'),'technical linked-job count is also deduplicated');
+
+const scheduledHistory=v({youtube:{state:'scheduled',privacy:'private'},production:readyHistory.production});
+assert(!t.milestoneProgress(scheduledHistory).includes('UAT handoff complete'),'a schedule does not establish Ben approval');
+assert(t.productionDetail(scheduledHistory,NOW).includes('Scheduled on YouTube'));
+assert(!t.productionDetail(scheduledHistory,NOW).includes('progress-number'));

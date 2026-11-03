@@ -410,7 +410,8 @@
     if (isLive(v)) return '<span class="meta">Published</span>';
     if (forBen([v]).length) return '<span class="meta">Finished cut awaiting your review</span>';
     if (v.lane==='changes'||pendingChanges(v)) return '<span class="meta">Changes requested · revision progress not recorded</span>';
-    if (['approved','done'].includes(v.lane)||(v.youtube||{}).state==='scheduled') return '<span class="meta">UAT handoff complete</span>';
+    if (['approved','done'].includes(v.lane)) return '<span class="meta">UAT handoff complete</span>';
+    if ((v.youtube||{}).state==='scheduled') return '<span class="meta">Scheduled · milestone history retained</span>';
     const p = progressStats(v);
     return `<div class="milestone-mini" aria-label="${p.percent}% milestone completion; ${p.done} of 9 complete"><div class="track"><i style="width:${p.percent}%"></i></div><span>${p.percent}% <span class="muted">· ${p.done} of 9 milestones complete</span></span></div>`;
   }
