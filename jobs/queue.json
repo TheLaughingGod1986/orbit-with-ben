@@ -1,5 +1,5 @@
 {
-  "next_id": 1902,
+  "next_id": 1904,
   "jobs": [
     {
       "id": "J0001",
@@ -154847,6 +154847,11 @@
           "at": "2026-11-03T15:50Z",
           "by": "codex",
           "what": "blocked: 2/3 complete: h35 master and restored iCloud UAT verified; PR391 merged, J1213 superseded, J0912 reopened. PR401 records reconciliation. Browser watch endpoint redirects 302 but R2 media returns 403. Automatic approval review rejected replacement watch-object upload because J1755 says no upload. Needs explicit approval for approved master cf1561c2 to existing R2 watch store, new ID hos-008-v03-j1755; no YouTube upload. Elected Chief resumes delivery and range-read verification; preserve copies."
+        },
+        {
+          "at": "2026-11-03T21:54Z",
+          "by": "relay",
+          "what": "condition verification queued: J1902"
         }
       ],
       "remaining_action": "Finish PR401 and restore browser watch delivery after explicit R2 upload scope approval; verify media range read",
@@ -154865,7 +154870,8 @@
       "hold": {
         "type": "input",
         "condition": "2/3 complete: h35 master and restored iCloud UAT verified; PR391 merged, J1213 superseded, J0912 reopened. PR401 records reconciliation. Browser watch endpoint redirects 302 but R2 media returns 403. Automatic approval review rejected replacement watch-object upload because J1755 says no upload. Needs explicit approval for approved master cf1561c2 to existing R2 watch store, new ID hos-008-v03-j1755; no YouTube upload. Elected Chief resumes delivery and range-read verification; preserve copies.",
-        "check_at": "2026-11-03T21:50:40+00:00"
+        "check_at": "2026-11-03T22:54:25+00:00",
+        "recheck_task": "J1902"
       }
     },
     {
@@ -162809,6 +162815,11 @@
           "at": "2026-11-03T20:52Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T21:52:06Z"
+        },
+        {
+          "at": "2026-11-03T21:54Z",
+          "by": "relay",
+          "what": "condition verification queued: J1903"
         }
       ],
       "remaining_action": "Inspect native moving alternatives and finalise exact Franklin correction recipe from PR403",
@@ -162827,10 +162838,11 @@
       "hold": {
         "type": "capability",
         "condition": "HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved.",
-        "check_at": "2026-11-03T21:52:06Z",
+        "check_at": "2026-11-03T22:54:25+00:00",
         "requires": [
           "moving_video_input"
-        ]
+        ],
+        "recheck_task": "J1903"
       },
       "required_capabilities": [
         "moving_video_input"
@@ -163857,6 +163869,71 @@
       ],
       "remaining_action": "Decide topic readiness and editorial fixes before formal facts and script lock",
       "kind": "chief"
+    },
+    {
+      "id": "J1902",
+      "title": "Chief: verify condition for J1755",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1755: 2/3 complete: h35 master and restored iCloud UAT verified; PR391 merged, J1213 superseded, J0912 reopened. PR401 records reconciliation. Browser watch endpoint redirects 302 but R2 media returns 403. Automatic approval review rejected replacement watch-object upload because J1755 says no upload. Needs explicit approval for approved master cf1561c2 to existing R2 watch store, new ID hos-008-v03-j1755; no YouTube upload. Elected Chief resumes delivery and range-read verification; preserve copies.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1755 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T21:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T21:54Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Finish PR401 and restore browser watch delivery after explicit R2 upload scope approval; verify media range read",
+      "kind": "chief",
+      "recheck_of": "J1755",
+      "due": "2026-11-03T22:54:25+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1903",
+      "title": "Chief: verify condition for J1880",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1880: HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1880 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T21:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T21:54Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Inspect native moving alternatives and finalise exact Franklin correction recipe from PR403",
+      "kind": "chief",
+      "recheck_of": "J1880",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "due": "2026-11-03T22:54:25+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],

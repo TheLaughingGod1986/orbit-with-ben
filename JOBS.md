@@ -103,6 +103,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1899 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1900 | mini | open (after J1777) | – | – | 036 script · chief · 036 Mercury: restore topic and editorial decision before facts and script lock | J1777 |
 | J1901 | mini | open (after J1778) | – | – | 037 script · chief · 037 Milky Way Centre: restore topic and editorial decision before facts and script lock | J1778 |
+| J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
+| J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
 
 Recently finished:
 
