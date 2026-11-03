@@ -42,12 +42,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1710 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1711 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1712 | any | claimed | gemini | 2026-11-03T05:33Z | chief · Chief: verify condition for J1100 |  |
 | J1713 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1714 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1712 done: Chief: verify condition for J1100 (done)
 - J1709 done: Chief: verify condition for J1471 (done)
 - J1708 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no other final exports present. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. J1356 remains held; next check 2026-11-03T03:31:27Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes.)
 - J1707 done: Chief: verify condition for J1130 (3 Nov 02:45:54 UTC: HOS Studio AL_-qlWko_g thumbnail test T020 still Running (no completion timestamp). Evidence in /Users/benjaminoats/_desk/handoff/J1707/. J1130 kept blocked; next check 2026-11-03T08:46:00Z. HOS channel:audit 62 videos, 0 errors.)
@@ -57,4 +57,3 @@ Recently finished:
 - J1703 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J1702 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS ab6e8124))
 - J1701 done: Chief: verify condition for J0862 (Verified unmet: HOS main 4bd9357b, PRs through 398, desk through 3 Nov 01:59 UTC, accepted J1004/merged PR366 and queue show no approved 009 Short B replacement opening or recording scope. J0862 remains held; next check 2026-11-03T08:10Z via J1701. Existing v02 takes, 010 A Option A1 and all production/Ben gates preserved. Reported HOS desk. No spend or YouTube changes.)
-- J1700 done: Chief: verify condition for J0978 (Fresh Atom Studio read still shows A/B testing titles / Results ready, original title and Public. J0978 remains blocked; next check 2026-11-03 08:00 UTC. Evidence PR 388 / 05bbaf593. No YouTube changes or spend.)
