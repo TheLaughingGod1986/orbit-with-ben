@@ -151695,19 +151695,24 @@
           "at": "2026-11-03T05:50Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 masters and Crew-2; saved opening gates remain FAIL; no new PR380 approval"
+        },
+        {
+          "at": "2026-11-03T05:50Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Hold readback confirms blocked input, last_recheck J1724, checked_by codex and retained 2026-11-03 06:32:54 UTC retry"
         }
       ],
-      "remaining_action": "Record unmet input hold and close verification",
+      "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T06:32:54+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-03T05:50Z",
         "by": "codex",
-        "note": "Fresh SHA256 matches all three J1468 masters and Crew-2; saved opening gates remain FAIL; no new PR380 approval"
+        "note": "Hold readback confirms blocked input, last_recheck J1724, checked_by codex and retained 2026-11-03 06:32:54 UTC retry"
       },
       "taskKeys": [
         "OWB:030"
