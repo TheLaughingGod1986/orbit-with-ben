@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1870 | mini | claimed | codex | 2026-11-03T18:52Z | for codex · studio · `gpt-6.1-sol` · Buffer: verify missing queues and prepare exact OWB/HOS recovery |  |
 | J1872 | any | open | – | – | chief · Chief: verify condition for J1760 |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
+| J1874 | mini | open | – | – | chief · Buffer recovery: decide exact J1870 creates, source holds and daily mirror repair | J1870 |
 
 Recently finished:
 

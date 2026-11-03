@@ -1,5 +1,5 @@
 {
-  "next_id": 1874,
+  "next_id": 1875,
   "jobs": [
     {
       "id": "J0001",
@@ -161414,6 +161414,35 @@
         }
       ],
       "remaining_action": "Review private OWB 2026-10 report in _desk/handoff/J1859/, record decisions on URG-OWB-1..3 and OWB-2026-11-E1..E3, and queue approved jobs",
+      "kind": "chief"
+    },
+    {
+      "id": "J1874",
+      "title": "Buffer recovery: decide exact J1870 creates, source holds and daily mirror repair",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J1870 (audit only), report commit 58ffb1fc03 on codex/J1870-buffer-audit; jobs/reviews/J1870/RECOVERY_PLAN.md plus 19 redacted evidence files. Read report and associated PR before deciding. Authenticated Mac mini evidence 3 Nov 18:22–18:30Z.\n\nElected Chief only: verify chief_relay.py status before protected decisions. Review the audit and give a concrete narrow recovery scope, then route its implementation through the existing specialist queue. This job is the single decision/recovery owner; do not just acknowledge it or rerun unchanged audit.\n\nEstablished faults: loaded daily LaunchAgent exits75 because wrapper owns youtube-buffer and npx/tsx intermediary makes ensureDeskLock reacquire its own lock (exact dry reproduction75; direct locked dry runs0). Installed plist equals repo, current main/no tracked changes/no unpushed records. Daily1–3Nov failed before HOS. Upload discovery only reads50 playlist entries: Mars long Js6EQJ8qDi8 at position60, night iyvWYFP_ETA absent from all184 returned entries but both scheduled by authenticated direct-id fetch.\n\nLive queues: OWB1 per IG/FB/Threads (T9fVlG3CCzU 7Nov11:30Z). HOS4 per IG/FB/TikTok; three old-video dates4/6/7Nov are intentional Ben-approved back-posts (HOS desk6495697066), not stale entries: preserve them, their source exceptions and existing posts. Five queued R2 URLs return206 from Mini; Buffer metadata processing false. Old Curie Facebook6ade37890b5343d070e1ba0a remains error28Oct; no retry authorized here.\n\nProposed narrow scope for Chief to review/authorize: use existing R2 and standard mirror route to create only missing network posts for OWB Mars long Js6EQJ8qDi8 at8Nov18:00Z (IG/FB trailer sha7aa47737a87987b24ce09f322795bd9717d6488076a6c52dbcc9d42e0c9c16d4, Threads thumbnail shabb5e525b6fd9d72a753b179197cf4785a00a404bdfc6e0e23cdd5bca2f7a3e9d) and HOS PFj6172YU4Q at8Nov11:30Z (IG/FB/TikTok exact v05 shac31fbb5c88f61b9bc2bbfae8b7a059b84b99575c5876066167ae22021ace70df). Explicit dry plans in prepared-plans.json; placeholder URLs MUST be replaced through authorized hosting. All actual local source paths in file-checks.json. Original Mars long receipt IDs now Post not found; recheck remote video/network identity before recreation. Re-read ledger+live queue immediately before every create, skip any existing/sent counterpart; no parallel writers. Post readback/status/date/media and commit receipts. No blanket write-mode check because it also cleans objects and would select wrong Titan bytes.\n\nSource holds needing concrete scoped owner, not an absent-Chief wait: iyvWYFP_ETA9Nov11:30 original missing; expected SHA48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1, registry knownNoFile from J0432 overwrite; dry plan no media URL. Titan RLSJm59OSzI10Nov11:30 registry expectedafe0e80f044aca2887b9a9ef1d2aaf9fee9098285315fdc5d667eaca0019ca6c but local v01sha3f2f51d4f8ffd1adfc0e9c0e91c25839198860e49c3085367ea876f341d606a2. Do not mirror mismatch or approve failed gates. Restore proven original or scope an independently reviewed Studio Download/current-cut recovery. No new YouTube upload/swap/date change authorized. HOS Cathode local iCloud unavailable but its already queued R2 asset works; leave it alone.\n\nFocused code work justified by evidence: preserve one real whole-command lock and genuine other-holder refusal while fixing daily wrapper→npx→tsx self-deadlock; use direct-id authenticated lookup of registered scheduled ids, not playlist-only; fail closed on source SHA mismatch/missing original while preserving explicit approved social-source exceptions. Regress exact wrapper process chain, registered schedule absent from playlist, mismatched Titan and approved HOS social sources. Never weaken pid checks/use env-only bypass. Before any daily write execution ensure it cannot host the mismatched Titan. Route code to assembly specialist via normal chain, clean worktree PR, required shared-core sync if applicable.\n\nPreserve7-day/10-post cap; lateCurie replay separate; OWB TikTok paused; HOS TikTok separate profile only. Preserve current swapped ids cLKDiYP55J8/Wvjd8g0CpzE/xzKoHg0E0_U/xgx2lYHhYZM and all date/credit/Ben holds. GBP0, no topup, no secret egress, no NAS deletion. No generic pause for Grok/Claude; elected Chief decides within rules. Original first upcoming gap8Nov11:30, but scheduler repair target before4Nov07:05 daily run. J1870 itself granted no write permission; this follow-up Chief must explicitly scope it.\n",
+      "ref": "J1870",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T18:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T18:30Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review live audit and scope safe Buffer recovery without changing approved dates",
+      "due": "2026-11-04T07:00:00Z",
       "kind": "chief"
     }
   ],
