@@ -81529,6 +81529,11 @@
           "at": "2026-11-03T05:32Z",
           "by": "relay",
           "what": "condition verification queued: J1720"
+        },
+        {
+          "at": "2026-11-03T05:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T06:32:54Z"
         }
       ],
       "kind": "video",
@@ -81559,12 +81564,11 @@
       "remaining_action": "Clear S2 instrumental bed and local listening, then complete repair gates and replacement approvals",
       "hold": {
         "type": "input",
-        "condition": "J1715 verified latest J1717/J1100: J1100 blocked at 2/3. Evidence 3e26b379b excludes S2 bed 13adc031; actual local listening remains unrecorded; three audition hashes match. PR333 OPEN at 0a7fcb6ad without reviews/comments. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress. Temporary evidence checkout absent; committed evidence remains readable. NAS found no eligible scratch; about 14 GiB free.",
-        "check_at": "2026-11-03T06:32:54+00:00",
-        "last_recheck": "J1715",
-        "checked_at": "2026-11-03T04:36:58+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1720"
+        "condition": "J1720 verified latest J1722/J1100: J1100 blocked at 2/3. Evidence 3e26b379b excludes S2 bed 13adc031; required local listening remains unrecorded. All three audition hashes match; newest local evidence remains 31 Oct. PR333 OPEN at 0a7fcb6ad without reviews/comments. Require cleared instrumental bed and local listening, v07 assembly/caption repairs, final gates including h43-LOOP, AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Preserve accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress. NAS offload found no eligible scratch; about 14 GB free.",
+        "check_at": "2026-11-03T06:32:54Z",
+        "last_recheck": "J1720",
+        "checked_at": "2026-11-03T05:37:57+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
