@@ -155214,9 +155214,14 @@
           "at": "2026-11-03T21:03Z",
           "by": "codex",
           "what": "step 2 of 3 done: Correction 3b73398e06 published; generated board and diff validation pass. No media approval or HOS changes."
+        },
+        {
+          "at": "2026-11-03T21:08Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR429 merged as 064d6c7c0a. Both CI checks and all corresponding local suites passed; main board valid, Europa picture todo/unverified, no stage claim."
         }
       ],
-      "remaining_action": "Merge the correction after checks and verify main",
+      "remaining_action": "Correction merged and verified; close J1760",
       "kind": "chief",
       "handoff": {
         "film": "006",
@@ -155229,11 +155234,11 @@
         "HOS:006"
       ],
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T21:03Z",
+        "at": "2026-11-03T21:08Z",
         "by": "codex",
-        "note": "Correction 3b73398e06 published; generated board and diff validation pass. No media approval or HOS changes."
+        "note": "PR429 merged as 064d6c7c0a. Both CI checks and all corresponding local suites passed; main board valid, Europa picture t"
       }
     },
     {
