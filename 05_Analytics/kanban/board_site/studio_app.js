@@ -342,11 +342,11 @@
   function reviewQueueInfo(b,j,now,mb=null) {
     if(!j) return null;
     const jobs=((b.owb||{}).jobs)||[], state=(b.workflow||{}).states||{};
-    const task=jobs.find(x=>x.recheck_of===j.id&&['open','claimed'].includes(x.status));
-    const needsReview=/(?:parked|awaiting|waiting) for (?:the )?Chief.*(?:review|approval)/i.test(String((j.hold||{}).condition||j.result||''));
+    const task=jobs.find(x=>x.kind==='review'&&x.ref===j.id&&['open','claimed'].includes(x.status))||jobs.find(x=>x.recheck_of===j.id&&['open','claimed'].includes(x.status));
+    const needsReview=task&&task.kind==='review'&&task.ref===j.id||/(?:parked|awaiting|waiting) for (?:the )?Chief.*(?:review|approval)/i.test(String((j.hold||{}).condition||j.result||''));
     if(!task||!needsReview) return null;
     const fresh=stamp=>{const age=now-Date.parse(stamp||'');return Number.isFinite(age)&&age>=0&&age<=5*MIN;};
-    const models=b.models||{}, chief=(models.chief||{}).agent, reviewer=AGENTS[chief]||chief||'Elected Chief';
+    const models=b.models||{}, chief=task.kind==='review'?(task.by||task.for):(models.chief||{}).agent, reviewer=AGENTS[chief]||chief||'Elected Chief';
     const ownState=state[task.id]||{}, predecessor=((b.owb||{}).jobStates||{})[task.after]||{};
     const ready=fresh((b.workflow||{}).at)?['queued','review'].includes(ownState.state):task.status==='open'&&!task.hold&&(!task.after||predecessor.status==='done')&&(!task.notBefore||Date.parse(task.notBefore)<=now);
     const active=jobs.find(x=>x.status==='claimed'&&x.by===chief);
@@ -367,7 +367,7 @@
     const dependencyStatus={done:'Completed',blocked:'Blocked',claimed:'In progress',open:'Queued',cancelled:'Cancelled'}[dependency.status]||'Status unreported';
     const check=Number.isFinite(due)?`${due<now?'Check overdue: ':'Next recorded check: '}${recordedTime(model.checkAt)}`:'No next check recorded';
     return `<div class="blocker-guide" data-blocker-scope="${model.scope}"><p class="blocker-scope">${model.scope==='reference'?'Related recorded hold':model.scope==='video'?'Video-level hold · stage link unconfirmed':'Recorded stage hold'}</p>
-      <h3>${review?'Awaiting Chief review':'Why blocked'}</h3><p class="blocker-reason">${esc(model.why)}</p>
+      <h3>${review?(review.task.kind==='review'?'Awaiting specialist review':'Awaiting Chief review'):'Why blocked'}</h3><p class="blocker-reason">${esc(model.why)}</p>
       <h3>How to unblock</h3><p class="blocker-action">${esc(model.action)}</p>
       <dl class="blocker-facts"><div><dt>${j?(review?'Previous worker':'Recorded job owner'):'Reviewer / owner'}</dt><dd>${esc(model.owner)}</dd></div><div><dt>Follow-up</dt><dd>${esc(check)}</dd></div>${Number.isFinite(checked)?`<div><dt>Last checked</dt><dd>${esc(recordedTime(model.checkedAt))}</dd></div>`:''}${model.dependency?`<div><dt>Recorded dependency</dt><dd>${esc(model.dependency)} · ${esc(dependencyStatus)}</dd></div>`:''}</dl>
       ${review?`<div class="review-handoff"><p><b>${esc(review.reviewer)} · ${review.ready?'review queued and eligible now':review.task.status==='claimed'?'review job claimed':'review queue state needs confirmation'}</b></p><a class="blocker-job-link" href="${jobRoute(review.task.id)}">Open review job ${esc(review.task.id)} →</a>${review.busy?`<p>${esc(review.reviewer)} is ${review.busy.status==='claimed'?'working on':'starting'} ${esc(review.busy.id)}: ${esc(clip(review.busy.remaining_action||review.busy.title,140))}</p>`:''}<details class="technical"><summary>Reviewer availability and MacBook</summary><p>${esc(review.availability)}</p><p>${esc(review.macbookText)}</p><p>Device availability does not establish media-review capability or Chief approval authority.</p></details></div>`:''}

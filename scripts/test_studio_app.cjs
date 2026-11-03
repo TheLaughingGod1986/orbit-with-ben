@@ -392,3 +392,8 @@ const reviewHtml=t.blockerGuide(v({jobs:[reviewParent]}),{id:'edit',label:'Edit'
 assert(reviewHtml.includes('Awaiting Chief review')&&reviewHtml.includes('review queued and eligible now')&&reviewHtml.includes('#agents&job=J1841'));
 assert(reviewHtml.includes('Previous worker')&&reviewHtml.includes('does not schedule or delay'));
 console.log('Review queue and capacity explanation checks OK');
+
+reviewBoard.owb.jobs.push({id:'J1844',kind:'review',ref:'J1834',status:'open',for:'gemini'});
+reviewBoard.workflow.states.J1844={state:'queued'};
+const specialistInfo=t.reviewQueueInfo(reviewBoard,reviewParent,NOW);
+assert.equal(specialistInfo.reviewer,'Gemini');assert.equal(specialistInfo.task.id,'J1844');assert(!specialistInfo.busy,'Codex work does not establish Gemini is busy');
