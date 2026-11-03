@@ -1,5 +1,5 @@
 {
-  "next_id": 1833,
+  "next_id": 1834,
   "jobs": [
     {
       "id": "J0001",
@@ -158529,6 +158529,34 @@
         "OWB:030"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
+    },
+    {
+      "id": "J1833",
+      "title": "AR cohort: Chief selects or scopes the missing ISS opening for J1471",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1771 records-only FIX, 3 Nov 2026. The 030 edit block is J1471 AR replication work, not the released Apophis v13a. Read PR380 at d0b04b5e0 (source diagnostics only), J1471 hold and J1356 readiness hold. As elected Chief, inspect existing approved ISS sources and select an exact suitable interval/approach for AR2 opening 0-2.4s plus one-second loop preroll: identifiable station detail, native motion, coherent fill, <=2.35x upscale, locked h40 VO and timing. Existing Crew-2 351-374s proxies did not identify a passing candidate; this is not proof all crops fail. If no approved existing input works, scope a separate GBP0 source-acquisition task with provenance and review gates; no paid generation. Record exact source path/hash, interval and framing evidence or explicit bounded acquisition brief, then update J1471 input hold only when actually satisfied. J1471 remains the sole correction worker (after J1468), J1356 the full moving/audio and final-watch reviewer: do not duplicate them. Preserve AR1/AR3 opening fixes, all failed gates, pace WARN, accepted remaining picture/audio, originals, branch exclusions and Ben/date/credit holds. No media PASS from filenames or diagnostics; no upload, schedule, retitle, privacy, Buffer, spend or Ben-watch release authorised. Recheck Chief authority before deciding; own agent id. Use clean-worktree evidence PR. Completion must leave a concrete input or linked acquisition task, not another unchanged recheck.",
+      "ref": "",
+      "film": "030",
+      "stage": "edit",
+      "after": "J1771",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T13:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T13:50Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Resolve the approved ISS opening input so J1471 can resume",
+      "kind": "chief"
     }
   ],
   "focus": [],
