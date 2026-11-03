@@ -163272,19 +163272,24 @@
           "at": "2026-11-03T21:11Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original scope, hold history and clean evidence commit 001b6962f; no media approval is part of this verification."
+        },
+        {
+          "at": "2026-11-03T21:11Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 54 thread comments checked through 6615484272; no subsequent payload approval. GitHub PR query for codex/J1846-scope returns none. Evidence worktree remains clean."
         }
       ],
-      "remaining_action": "Check subsequent approval and preserve or release J1846 hold",
+      "remaining_action": "Record unchanged J1846 publication hold and verify queue state",
       "kind": "chief",
       "recheck_of": "J1846",
       "due": "2026-11-03T14:30:08+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T21:11Z",
         "by": "codex",
-        "note": "Read original scope, hold history and clean evidence commit 001b6962f; no media approval is part of this verification."
+        "note": "54 thread comments checked through 6615484272; no subsequent payload approval. GitHub PR query for codex/J1846-scope ret"
       },
       "taskKeys": [
         "OWB:030"
