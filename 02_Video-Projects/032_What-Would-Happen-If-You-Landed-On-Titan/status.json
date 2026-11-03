@@ -7,7 +7,7 @@
       "state": "blocked"
     },
     "vo": {
-      "state": "review",
+      "state": "doing",
       "ref": "6536095334",
       "lock": "titan_landing_vo_v02b",
       "ruling": "Chief h31 (J1289, OWB #264 6536095334), assembled by J1294",
@@ -25,6 +25,14 @@
       "follow_up": "Resume J1753: listen to v02b and record what was heard, then make VO-only PASS/FIX decision"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "vo",
+      "by": "codex",
+      "at": "2026-11-03T10:33Z",
+      "eta": "2026-11-03T12:32Z",
+      "note": "J1753 032 Voice: Chief final verification of locked take after J1294"
+    }
+  ],
   "next": "032 VO: technical checks PASS; J1753 awaits actual listening by a Mini audio-capable elected Chief. Picture not started."
 }
