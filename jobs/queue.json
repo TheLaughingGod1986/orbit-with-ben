@@ -161088,13 +161088,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T18:42Z",
-      "eta": "2026-11-03T20:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T16:17Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-03T16:17Z",
@@ -161125,6 +161125,11 @@
           "at": "2026-11-03T18:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback assertions PASS: J1471 blocked, recheck J1864, retry 21:01:21Z; J1846 blocked and J1847-J1849 unstarted; J1356 blocked"
+        },
+        {
+          "at": "2026-11-03T18:43Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1471 retains ISS-input hold",
