@@ -1,5 +1,5 @@
 {
-  "next_id": 1858,
+  "next_id": 1860,
   "jobs": [
     {
       "id": "J0001",
@@ -160378,7 +160378,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -160400,6 +160400,11 @@
           "at": "2026-11-03T15:18Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3687 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-03T15:46Z",
+          "by": "codex",
+          "what": "cancelled: Superseded by PR418 monthly schedule and October channel reviews J1858, J1859. Calendar setup implemented; analysis continues in these linked jobs, not claimed complete."
         }
       ],
       "remaining_action": "Verify monthly audit execution; produce the October review and concrete approved improvement handoffs",
@@ -160413,6 +160418,70 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J1858",
+      "title": "Monthly channel improvement review: History of Science — 2026-10",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Report month: 2026-10. Monthly improvement review for History of Science, requested by Ben 3 Nov 2026. Read docs/MONTHLY_CHANNEL_REVIEW.md in the Orbit With Ben checkout (shared scheduling owner, including for HOS reports) and all available recorded data for this channel. Analyze the specified complete calendar month, compare with the preceding month and age/format-matched video cohorts, and assess previous experiment outcomes. Produce an evidence-linked report and ranked practical changes to improve retention, impressions CTR, views per video and total watch time. Separate Shorts and longs. This is an analytical review, not just a snapshot or totals report. Use existing daily snapshots, channel_daily.json, Studio reads and actual retention/traffic-source data where available. Identify missing or stale data and permission/capability gaps explicitly; never substitute lifetime CTR for monthly CTR. Write private analytics-derived material only to the approved local analytics handoff area unless publication is explicitly permitted; existing publication-rejection holds remain binding. Deliver report location and status via the normal Chief handoff, with one linked Chief review job and measurable next-month experiments. Keep analytics-derived findings in the approved private report unless their publication is explicitly authorized. Recommend/prepare no-spend follow-up jobs with owners and dates; do not apply changes to live videos, publishing, tests, production policies or paid services without the existing required review. Preserve ongoing experiments and all Ben/Chief gates. Report collection failures with a linked recovery action; never claim completion without a readable report.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-03T15:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T15:46Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Monthly channel improvement review: History of Science — 2026-10",
+      "kind": "review",
+      "backlog": "monthly-improvement-hos",
+      "report_month": "2026-10",
+      "due": "2026-11-03T09:00Z",
+      "due_kind": "monthly-audit"
+    },
+    {
+      "id": "J1859",
+      "title": "Monthly channel improvement review: Orbit With Ben — 2026-10",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Report month: 2026-10. Monthly improvement review for Orbit With Ben, requested by Ben 3 Nov 2026. Read docs/MONTHLY_CHANNEL_REVIEW.md in the Orbit With Ben checkout (shared scheduling owner, including for HOS reports) and all available recorded data for this channel. Analyze the specified complete calendar month, compare with the preceding month and age/format-matched video cohorts, and assess previous experiment outcomes. Produce an evidence-linked report and ranked practical changes to improve retention, impressions CTR, views per video and total watch time. Separate Shorts and longs. This is an analytical review, not just a snapshot or totals report. Use existing daily snapshots, channel_daily.json, Studio reads and actual retention/traffic-source data where available. Identify missing or stale data and permission/capability gaps explicitly; never substitute lifetime CTR for monthly CTR. Write private analytics-derived material only to the approved local analytics handoff area unless publication is explicitly permitted; existing publication-rejection holds remain binding. Deliver report location and status via the normal Chief handoff, with one linked Chief review job and measurable next-month experiments. Keep analytics-derived findings in the approved private report unless their publication is explicitly authorized. Recommend/prepare no-spend follow-up jobs with owners and dates; do not apply changes to live videos, publishing, tests, production policies or paid services without the existing required review. Preserve ongoing experiments and all Ben/Chief gates. Report collection failures with a linked recovery action; never claim completion without a readable report.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-03T15:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T15:46Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Monthly channel improvement review: Orbit With Ben — 2026-10",
+      "kind": "review",
+      "backlog": "monthly-improvement-owb",
+      "report_month": "2026-10",
+      "due": "2026-11-03T09:00Z",
+      "due_kind": "monthly-audit"
     }
   ],
   "focus": [],
@@ -160434,6 +160503,8 @@
     "both-qa-sweep": "2026-11-01T06:51Z",
     "studio-ctr-daily": "2026-11-03T07:00Z",
     "owb-weekly-thumb-audit": "2026-10-28T15:44Z",
-    "hos-weekly-thumb-audit": "2026-10-28T15:44Z"
+    "hos-weekly-thumb-audit": "2026-10-28T15:44Z",
+    "monthly-improvement-hos": "2026-11-03T15:46Z",
+    "monthly-improvement-owb": "2026-11-03T15:46Z"
   }
 }
