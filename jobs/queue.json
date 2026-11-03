@@ -158271,13 +158271,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T13:23Z",
-      "eta": "2026-11-03T15:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T13:10Z",
-      "result": "",
+      "result": "Condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 without comments/reviews. Fresh SHA256 matches all three J1468 final exports; no additional final exports. Saved opening FAILs remain AR1 first cut 6.00s, AR2 diff 0.25 and AR3 1.41 below 1.50. J1356 stays blocked pending approved ISS input, corrected versioned masters, complete metadata, passing affected gates and full moving/audio review including pace WARN. Retained recorded retry 2026-11-03T14:10:26Z. No spend, media change, new gate run, audition or publishing action. NAS offload check found no eligible old scratch.",
       "history": [
         {
           "at": "2026-11-03T13:10Z",
@@ -158308,6 +158308,11 @@
           "at": "2026-11-03T13:25Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1356 remains blocked; condition updated and recorded 14:10:26Z retry retained. No new gate run, audition or publishing approval; all holds persist."
+        },
+        {
+          "at": "2026-11-03T13:26Z",
+          "by": "codex",
+          "what": "done: Condition remains unmet: PR380 OPEN unchanged at d0b04b5e0 without comments/reviews. Fresh SHA256 matches all three J1468 final exports; no additional final exports. Saved opening FAILs remain AR1 first cut 6.00s, AR2 diff 0.25 and AR3 1.41 below 1.50. J1356 stays blocked pending approved ISS input, corrected versioned masters, complete metadata, passing affected gates and full moving/audio review including pace WARN. Retained recorded retry 2026-11-03T14:10:26Z. No spend, media change, new gate run, audition or publishing action. NAS offload check found no eligible old scratch."
         }
       ],
       "remaining_action": "Close completed J1831 verification",
@@ -158324,7 +158329,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     },
     {
       "id": "J1832",
