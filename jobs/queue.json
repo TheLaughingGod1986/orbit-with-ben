@@ -153348,9 +153348,14 @@
           "at": "2026-11-03T08:46Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T08:47Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await approved ISS input, corrected AR masters and complete gate and audiovisual review evidence",
+      "remaining_action": "Verify correction evidence and preserve unmet gates for J1356",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T09:34:16+00:00",
@@ -153358,11 +153363,12 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T08:46Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-11-03T08:47Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1745",
