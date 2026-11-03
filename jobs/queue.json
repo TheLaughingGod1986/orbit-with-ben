@@ -158863,13 +158863,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T14:11Z",
-      "eta": "2026-11-03T16:11Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T14:10Z",
-      "result": "",
+      "result": "Verified original approvals and 3e26b379b: bed and three audition hashes unchanged; latest local evidence remains 31 Oct. Instrumental clearance and actual local listening unproven; exclusion retained. Safe NAS offload found no eligible scratch, 7462 MB free before worktree, below h43 10 GiB restart floor. J1100 remains blocked at 2/3 with OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback preserved. Next verification 2026-11-03T15:10:42Z. No spend, source-audio egress, render or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T14:10Z",
@@ -158900,6 +158900,11 @@
           "at": "2026-11-03T14:14Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded hold with recheck J1838 and retained 15:10:42Z retry. J1100 remains 2/3; existing source acceptances, h43-LOOP and deadlines preserved."
+        },
+        {
+          "at": "2026-11-03T14:14Z",
+          "by": "codex",
+          "what": "done: Verified original approvals and 3e26b379b: bed and three audition hashes unchanged; latest local evidence remains 31 Oct. Instrumental clearance and actual local listening unproven; exclusion retained. Safe NAS offload found no eligible scratch, 7462 MB free before worktree, below h43 10 GiB restart floor. J1100 remains blocked at 2/3 with OWB:027/028, accepted sources, h43-LOOP, deadlines/v01 fallback preserved. Next verification 2026-11-03T15:10:42Z. No spend, source-audio egress, render or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits cleared music, local listening and disk headroom",
@@ -158917,7 +158922,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1839",
