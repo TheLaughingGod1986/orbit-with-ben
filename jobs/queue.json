@@ -87013,6 +87013,11 @@
           "at": "2026-11-03T01:48Z",
           "by": "relay",
           "what": "condition verification queued: J1700"
+        },
+        {
+          "at": "2026-11-03T01:58Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T08:00:00Z"
         }
       ],
       "kind": "listing",
@@ -87038,12 +87043,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Requires read-only proof of Atom GHZDsiH7L7A title-test widget clearance. J1663 on 2 Nov 19:40 UTC could not verify: fresh Studio navigation/reload and existing tabs returned empty bodies. Last successful read 13:33 UTC showed Results ready widget. API restriction removal remains unproven; no write probe. Evidence jobs/readbacks/J1663.json at ed63f00c1 and _desk/handoff/J1663.",
-        "check_at": "2026-11-03T02:48:49+00:00",
-        "last_recheck": "J1663",
-        "checked_at": "2026-11-02T19:40:45+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1700"
+        "condition": "Fresh Studio read 3 Nov 01:57 UTC still shows A/B testing titles / Results ready on Atom GHZDsiH7L7A, original title and Public. Requires read-only widget clearance proof; API restriction removal unproven, no write probe. Evidence jobs/readbacks/J1700.json at 05bbaf593 and _desk/handoff/J1700/readback.json.",
+        "check_at": "2026-11-03T08:00:00Z",
+        "last_recheck": "J1700",
+        "checked_at": "2026-11-03T01:58:14+00:00",
+        "checked_by": "codex"
       }
     },
     {
