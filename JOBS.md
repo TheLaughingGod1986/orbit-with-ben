@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1823 | mini | blocked | codex | – | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
 | J1825 | mini | blocked | codex | – | 026 upload · for codex · studio · `gpt-6.1-sol` · 026 upload finish: install approved en-GB captions and verify Studio end screen/cards |  |
 | J1834 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
-| J1837 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
+| J1837 | any | claimed | codex | 2026-11-03T16:28Z | chief · Chief: verify condition for J0985 |  |
 | J1839 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1840 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1842 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
