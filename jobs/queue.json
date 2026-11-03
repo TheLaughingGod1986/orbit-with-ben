@@ -100631,6 +100631,11 @@
           "at": "2026-11-03T17:29Z",
           "by": "relay",
           "what": "condition verification queued: J1871"
+        },
+        {
+          "at": "2026-11-03T18:09Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T18:29:20Z"
         }
       ],
       "remaining_action": "Obtain cleared instrumental S2 bed and recorded local listening; restore h43 restart headroom before v07 repairs",
@@ -100659,12 +100664,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J1862 verified: instrumental S2 bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and all three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded. NAS offload found nothing eligible: 6693 MiB before worktree, 5.995 GiB after, below h43 restart minimum 10 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-03T18:29:20+00:00",
-        "last_recheck": "J1862",
-        "checked_at": "2026-11-03T16:35:14+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1871"
+        "condition": "J1871 verified: instrumental S2 bed clearance and actual local opening/middle/end listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and all three auditions match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded. Required NAS offload found nothing eligible, 6600 MiB before worktree; 5.935 GiB after, below h43 restart minimum 10 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.",
+        "check_at": "2026-11-03T18:29:20Z",
+        "last_recheck": "J1871",
+        "checked_at": "2026-11-03T18:09:56+00:00",
+        "checked_by": "codex"
       }
     },
     {
