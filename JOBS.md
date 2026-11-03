@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1868 | mini | open | – | – | 008 edit · chief · Chief: assign Franklin v03 UAT corrections from Ben’s six notes | HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1869 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
 | J1870 | mini | open | – | – | studio · Buffer: verify missing queues and prepare exact OWB/HOS recovery |  |
+| J1871 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
