@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1847 | mini | open (after J1846) | – | – | for codex · chart · `gpt-6-astra` · AR2 ISS: bounded faithful NASA IGOAL model opening preview | J1846 |
 | J1848 | mini | open (after J1847) | – | – | for gemini · review · `gemini-argon` · AR2 NASA model: Gemini native moving and phone review | J1846 |
 | J1849 | any | open (after J1848) | – | – | chief · AR2 NASA model: Chief exact-input acceptance or bounded fallback | J1846 |
-| J1865 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
+| J1865 | any | claimed | codex | 2026-11-03T20:45Z | chief · Chief: verify condition for J1834 |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1867 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 | J1868 | mini | open | – | – | 008 edit · chief · Chief: assign Franklin v03 UAT corrections from Ben’s six notes | HOS-008:v03:2026-11-03T16:08:33.439Z |
