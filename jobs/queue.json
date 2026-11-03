@@ -160539,13 +160539,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-03T14:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:51Z",
-      "result": "Scope decision and bounded J1847 -> J1848 -> J1849 handoff recorded locally in 001b6962f, clean /private/tmp/J1846-wt branch codex/J1846-scope. J1844 administrative hold closed with FIX; J1471/J1356 retained. Required evidence PR blocked: automatic approval review twice rejected git push to public TheLaughingGod1986/orbit-with-ben, including after ADMIN ownership verification, requiring explicit approval to publish these workflow briefs. Need user approval for this public payload before push/PR; do not bypass or repeat. No media approval/spend/publishing changes. Step 2/3.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T14:51Z",
@@ -160606,26 +160606,19 @@
           "at": "2026-11-03T22:26Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-03T22:40:00Z"
+        },
+        {
+          "at": "2026-11-03T22:27Z",
+          "by": "codex",
+          "what": "reopened: J1910 authorized publication succeeded: PR433 exact 001b6962fbaba027490cf3ed29c2d68bcc64915d, four inspected Markdown workflow briefs only. GitHub Studio core check run41730441612 SUCCESS; local diff/core/4 tests PASS; elected-Chief written scope review PASS only. Original scope/evidence-PR requirement satisfied. Prior rejections remain history; no media/source/Edit approval. Administrative completion under J1910 remains; dependencies unchanged."
         }
       ],
       "remaining_action": "Verify PR433 checks and complete documented ISS workflow scope; text publication approval is satisfied",
       "due": "2026-11-03T14:30:08Z",
       "kind": "chief",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-03T15:00Z",
-        "by": "codex",
-        "note": "001b6962f: scope committed; J1847-J1849 queued; J1844 admin hold closed. Queue assertions PASS. Public push rejected by "
-      },
       "taskKeys": [
         "OWB:030"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "J1910 applied Ben text-only publication authorization: full four-file 001b6962f diff inspected and published successfully as PR433, https://github.com/TheLaughingGod1986/orbit-with-ben/pull/433 . Permission satisfied; previous rejected attempts remain historical. Local diff/core/4 audit tests pass; written scope review passes only. GitHub run 41730441612 still running checkout, no failure observed. Verify required PR checks, then normal ownership closure of J1846; never request same publication approval or retry unchanged T545. Preserve J1847 after J1846, J1848 after J1847, J1849 after J1848 and all J1471/J1356 media gates.",
-        "check_at": "2026-11-03T22:40:00Z"
-      }
+      ]
     },
     {
       "id": "J1847",
