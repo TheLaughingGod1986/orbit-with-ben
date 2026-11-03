@@ -151791,19 +151791,30 @@
           "at": "2026-11-03T06:38Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T06:38Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original brief and approvals; latest J1727 keeps J1100 blocked at 2/3; PR333 remains open without reviews or comments"
         }
       ],
-      "remaining_action": "Verify J0936 evidence and approvals before deciding whether its hold can clear",
+      "remaining_action": "Check current audio evidence against the outstanding J0936 release conditions",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-03T07:34:01+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T06:38Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "Read original brief and approvals; latest J1727 keeps J1100 blocked at 2/3; PR333 remains open without reviews or commen"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1726",
