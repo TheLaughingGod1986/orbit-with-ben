@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1854 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1855 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1856 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
-| J1857 | mini | open | – | – | review · Monthly channel audit: verify 1 Nov run, review October and repair calendar handoff |  |
+| J1857 | mini | open | – | – | for gemini · review · `gemini-argon` · Monthly channel audit: verify 1 Nov run, review October and repair calendar handoff |  |
 
 Recently finished:
 
