@@ -441,13 +441,15 @@ def quick_key(remote=ls_remote) -> str | None:
         parts.append((HOME / "_desk" / "state" / "chief" / "current.json").read_text())
     except OSError:
         parts.append("")
-    for name in ("active.json", "inbox.json"):
+    for name in ("active.json", "inbox.json", "execution.json", "runner.json"):
         try:
             parts.append((CHIEF_STATE / name).read_text())
         except OSError:
             parts.append("")
     # Process liveness and lease expiry can change without a queue commit.
     parts.append(chief_work(now(), CHIEF_STATE, (_read_json(CHIEF_STATE / "current.json") or {}).get("agent", ""), [])["active"])
+    import chief_relay as relay
+    parts.append(relay.current_execution(now()))  # launch, exit and expiry invalidate the quick cache
     return digest(parts)
 
 

@@ -142,3 +142,35 @@ class Workflow(unittest.TestCase):
     def test_multi_cut_approval_deadlines_are_supported(self):
         j=job('J1',awaits_was=[{'due':'2026-10-27T10:30Z'},{'due':'2026-10-28T10:30Z'}])
         self.assertEqual(w.deadlines([j])['J1'],w.timestamp('2026-10-27T10:30Z'))
+
+class StartupVisibility(unittest.TestCase):
+    def lease(self):
+        return {'job':'J1','worker':'codex','startedAt':(NOW-dt.timedelta(minutes=1)).isoformat(),'expiresAt':(NOW+dt.timedelta(minutes=20)).isoformat()}
+    def test_live_launch_before_claim_is_starting_not_idle_or_completed_work(self):
+        j=job('J1');data={'jobs':[j,job('J2')]};lease=self.lease()
+        snap=w.snapshot(data,NOW,'codex',{'codex','gemini'},choose,execution=lease)
+        self.assertEqual(snap['states']['J1']['state'],'starting')
+        self.assertEqual(snap['active'][0]['worker'],'codex')
+        self.assertEqual(snap['active'][0]['phase'],'starting')
+        self.assertNotIn('progress',snap['active'][0])
+        self.assertEqual((snap['counts']['starting'],snap['counts']['running']),(1,0))
+        self.assertEqual(snap['next']['id'],'J2')
+        self.assertEqual(j['status'],'open')
+        self.assertTrue(w.claimable(j,data['jobs'],NOW,'codex','codex',execution=lease))
+        self.assertFalse(w.claimable(j,data['jobs'],NOW,'gemini','codex',execution=lease))
+    def test_expired_future_and_unrelated_leases_never_show_work(self):
+        j=job('J1')
+        for fields in [{'expiresAt':NOW.isoformat()},{'startedAt':(NOW+dt.timedelta(minutes=1)).isoformat()},{'job':'other'},{'worker':''}]:
+            self.assertNotEqual(w.state(j,{'J1':j},NOW,execution={**self.lease(),**fields}),'starting')
+        self.assertEqual(w.state(j,{'J1':j},NOW),'queued')
+    def test_hold_and_unfinished_dependency_win_over_startup(self):
+        j=job('J1',hold={'condition':'Input missing'})
+        self.assertEqual(w.state(j,{'J1':j},NOW,execution=self.lease()),'waiting')
+        j.pop('hold');j['after']='J2';other=job('J2')
+        self.assertEqual(w.state(j,{'J1':j,'J2':other},NOW,execution=self.lease()),'waiting')
+    def test_claim_and_completion_end_the_startup_phase(self):
+        j={**job('J1'),'status':'claimed','by':'codex','eta':NOW.isoformat()}
+        snap=w.snapshot({'jobs':[j]},NOW,'codex',{'codex'},choose,execution=self.lease())
+        self.assertEqual((snap['counts']['starting'],snap['counts']['running']),(0,1))
+        j['status']='done'
+        self.assertEqual(w.snapshot({'jobs':[j]},NOW,'codex',{'codex'},choose,execution=self.lease())['active'],[])

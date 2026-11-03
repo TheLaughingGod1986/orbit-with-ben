@@ -90,6 +90,13 @@ def hold_due(j, by_id, at):
         return check <= at
     return bool(j.get("after") and by_id.get(j["after"], {}).get("status") == "done" and not external_hold(j, at))
 
+def starting_execution(j, at, execution=None):
+    """Caller supplies a process-validated execution lease, not a heartbeat."""
+    if not execution or j.get("status") != "open" or execution.get("job") != j.get("id"):
+        return False
+    start, end = timestamp(execution.get("startedAt")), timestamp(execution.get("expiresAt"))
+    return bool(execution.get("worker") and start and end and start <= at < end)
+
 def state(j, by_id, at, active_review=None, execution=None):
     if j.get("status") not in LIVE:
         return j.get("status") or "unknown"
@@ -97,6 +104,10 @@ def state(j, by_id, at, active_review=None, execution=None):
         return "running"
     if external_hold(j,at) or dependency_problem(j,by_id):
         return "waiting"
+    if j.get("status") == "open" and starting_execution(j, at, execution):
+        if j.get("after") and by_id.get(j["after"], {}).get("status") != "done":
+            return "waiting"
+        return "starting"
     if j.get("status") == "claimed":
         return "stalled" if claim_is_stalled(j, at, execution) else "running"
     if external_hold(j, at) or dependency_problem(j, by_id):
@@ -186,6 +197,8 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None):
         return False
     if j.get("status") not in ("open", "claimed"):
         return False
+    if starting_execution(j, at, execution) and execution.get("worker") != agent:
+        return False
     if j.get("status") == "claimed" and state(j, by_id, at, execution=execution) != "stalled":
         return False
     return not j.get("after") or by_id.get(j["after"], {}).get("status") == "done"
@@ -227,11 +240,17 @@ def snapshot(data, at, chief, workers, choose_worker, active_review=None, review
     by_id = {j["id"]: j for j in rows}
     states = {j["id"]: {"state": state(j, by_id, at, active_review, execution), "reason": reason(j, by_id, at)} for j in rows if j.get("status") in LIVE}
     active = [{"id": j["id"], "title": j.get("title", ""), "worker": j.get("by"), "mode": "job", "progress": j.get("progress")} for j in rows if j.get("status") == "claimed" and states.get(j["id"], {}).get("state") == "running"]
+    for j in rows:
+        if states.get(j["id"], {}).get("state") == "starting":
+            states[j["id"]]["reason"] = "Worker launched; task claim pending"
+            active.append({"id":j["id"], "title":j.get("title", ""), "worker":execution["worker"],
+                           "mode":"starting", "phase":"starting", "startedAt":execution["startedAt"],
+                           "expiresAt":execution["expiresAt"]})
     if active_review and states.get(active_review.get("job"), {}).get("state") == "running":
         active = [a for a in active if a["id"] != active_review["job"]]
         active.append({**active_review, "id": active_review["job"], "worker": active_review.get("agent"), "mode": "review"})
     pick = select_dispatch(data, at, chief, workers, choose_worker, review_ids, exclude=[a["id"] for a in active], execution=execution, include_chief=include_chief)
-    counts = {k: sum(s["state"] == k for s in states.values()) for k in ("running", "queued", "review", "waiting", "stalled")}
+    counts = {k: sum(s["state"] == k for s in states.values()) for k in ("running", "starting", "queued", "review", "waiting", "stalled")}
     # Unavailable workers are waiting, not ready to run.
     for j in rows:
         if states.get(j["id"], {}).get("state") == "queued":
