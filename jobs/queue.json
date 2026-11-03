@@ -151013,9 +151013,14 @@
           "at": "2026-11-03T04:33Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T04:34Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking original rulings, current evidence, then recording readiness decision."
         }
       ],
-      "remaining_action": "Verify readiness: Clear instrumental S2 bed and complete actual local listening before remaining repairs and gates",
+      "remaining_action": "Verify J1100 bed clearance and local listening evidence",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
@@ -151023,11 +151028,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T04:33Z",
+        "at": "2026-11-03T04:34Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking original rulings, current evidence, then recording readiness decision."
+      },
+      "taskKeys": [
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1718",
