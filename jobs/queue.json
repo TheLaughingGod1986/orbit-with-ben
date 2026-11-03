@@ -156247,13 +156247,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T21:30Z",
-      "eta": "2026-11-03T23:30Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Workflow FIX complete: J0363 cancellation cited J0802 (061 only), leaving 033 unreviewed. J1896 now owns Chief topic/editorial decision on OWB:033/script after J1774. Board remains review/unlocked; neighbour audit, Gemini facts and direct quote check remain required. Evidence jobs/reviews/J1774/CHIEF_HANDOFF_2026-11-03.md at 5ebfc59ae1. No script/media approval, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -156284,6 +156284,11 @@
           "at": "2026-11-03T21:33Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified J1896 dependency and film/stage mapping, review state, released claim, unchanged script, clean worktree; evidence 5ebfc59ae1."
+        },
+        {
+          "at": "2026-11-03T21:33Z",
+          "by": "codex",
+          "what": "done: Workflow FIX complete: J0363 cancellation cited J0802 (061 only), leaving 033 unreviewed. J1896 now owns Chief topic/editorial decision on OWB:033/script after J1774. Board remains review/unlocked; neighbour audit, Gemini facts and direct quote check remain required. Evidence jobs/reviews/J1774/CHIEF_HANDOFF_2026-11-03.md at 5ebfc59ae1. No script/media approval, spend or publishing changes."
         }
       ],
       "remaining_action": "Handoff repaired; J1896 owns the remaining topic and script decision",
@@ -156303,7 +156308,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "5ebfc59ae1"
     },
     {
       "id": "J1775",
