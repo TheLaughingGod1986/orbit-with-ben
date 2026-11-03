@@ -42,7 +42,10 @@ const board={tracker:{videos:[v,{...v,key:'HOS:998',checkId:'HOS-998',title:'The
       });
       const base=process.env.STUDIO_PREVIEW_URL||'http://127.0.0.1:8765';
       await page.goto(base);
-      await page.getByRole('heading',{name:/Next for your review/}).waitFor();
+      await page.getByRole('heading',{name:/Ready for your review/}).waitFor();
+      await page.locator('.overview-feature').getByRole('link',{name:/Watch & review/}).click();
+      await page.locator('#uat-notes').waitFor();
+      await page.locator('#nav').getByRole('link',{name:/Overview/}).click();
       assert.equal(await page.locator('.overview-stats>a').count(),3);
       const statValues=await page.locator('.overview-stats b').allTextContents();
       assert.deepEqual(statValues,['2','3','0']);

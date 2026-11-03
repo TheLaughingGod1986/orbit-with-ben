@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -318,3 +318,61 @@ console.log('Studio blocker guidance checks OK');
 const ownStageJob={...inputJob,id:'Jstage',stage:'edit',by:'gemini',hold:{condition:'Awaiting the recorded edit review'}};
 assert.equal(t.blockerModel(v({jobs:[inputJob,ownStageJob]}),blockedEdit).job.id,'Jstage','explicit stage mapping outranks a reference match');
 assert(!t.blockerModel(v({jobs:[{...inputJob,status:'done'}]}),blockedEdit).job,'completed records cannot become active blockers');
+
+// Raw open is not ready: workflow dependencies/date gates control the activity footer.
+const dispatchBoard={models:{checkedAt:new Date(NOW).toISOString()},tracker:{videos:[]},owb:{jobs:[{id:'future',status:'open'},{id:'dependent',status:'open'},{id:'ready',status:'open'}]},workflow:{at:new Date(NOW).toISOString(),states:{future:{state:'waiting'},dependent:{state:'waiting'},ready:{state:'queued'}}}};
+assert.equal(t.overviewModel(dispatchBoard,NOW).queued.length,1);
+assert.equal(t.overviewModel(dispatchBoard,NOW).held.length,2);
+assert(t.activityCard(dispatchBoard,NOW).includes('Ready work waiting for dispatch'));
+dispatchBoard.workflow.states.ready.state='waiting';
+assert(t.activityCard(dispatchBoard,NOW).includes('No job running · work is on hold'));
+assert(t.activityCard(dispatchBoard,NOW).includes('0 queued · 3 on hold'));
+console.log('Dispatch visibility checks OK');
+
+dispatchBoard.owb.jobs.push({id:'chiefReview',status:'blocked',by:'cursor',title:'Review the output'});
+dispatchBoard.workflow.states.chiefReview={state:'running'};
+dispatchBoard.workflow.active=[{id:'chiefReview',worker:'codex',progress:{step:1,of:3}}];
+assert(t.activityCard(dispatchBoard,NOW).includes('Codex is working'));
+assert(t.activityCard(dispatchBoard,NOW).includes('1 of 3 steps'));
+assert.equal(t.overviewModel(dispatchBoard,NOW).running.length,1);
+// Missing milestone data must explain the gap without inventing approval or linking unrelated jobs.
+const unknownQA={id:'qa',label:'Chief QA',state:'unknown',dependsOn:['edit','thumbs']};
+const completedPrereqs=[{id:'edit',label:'Edit',state:'done'},{id:'thumbs',label:'Packaging',state:'done'},unknownQA];
+const qaVideo=v({production:{milestones:completedPrereqs},jobs:[{id:'unrelated',stage:'',status:'blocked',remaining_action:'Repair a Short'}]});
+let qaContext=t.stageExplanation(qaVideo,unknownQA);
+assert(qaContext.why.includes('no recorded review decision'));assert(!qaContext.job);
+assert(qaContext.action.includes('queue its review'));assert(qaContext.owner.includes('Chief owns QA'));
+const qaHtml=t.milestoneCard(qaVideo,unknownQA,'qa');
+assert(qaHtml.includes('QA decision not recorded')&&!qaHtml.includes('Unassigned')&&!qaHtml.includes('Open stage details for'));
+const scheduledQA=t.stageExplanation({...qaVideo,youtube:{state:'scheduled',publishAtLondon:'Sun 22 Nov 2026 18:00 GMT'}},unknownQA);
+assert(scheduledQA.why.includes('already scheduled')&&scheduledQA.why.includes('22 Nov'));
+assert(scheduledQA.action.includes('not a reason to restart production'));
+const waitingQA=t.stageExplanation({...qaVideo,production:{milestones:[{id:'edit',label:'Edit',state:'blocked'},unknownQA]}},unknownQA);
+assert(waitingQA.why.includes('Edit (Blocked)'));
+const linkedQA=t.stageExplanation({...qaVideo,jobs:[{id:'Jreview',stage:'qa',status:'claimed',by:'codex',remaining_action:'Review the final cut'}]},unknownQA);
+assert.equal(linkedQA.job.id,'Jreview');assert.equal(linkedQA.owner,'Codex');assert(linkedQA.why.includes('claimed'));
+assert(t.stageExplanationHtml({...qaVideo,jobs:[{id:'Jreview',stage:'qa',status:'open',title:'<unsafe>'}]},unknownQA).includes('&lt;unsafe&gt;'));
+console.log('Stage explanation checks OK');
+// Overview never describes blocked production as waiting for Ben to watch.
+const notReadyOverview=t.overview({tracker:{videos:[v({key:'blocked-example',lane:'progress'})]},owb:{jobs:[]}},NOW);
+assert(notReadyOverview.includes('Next in production')&&notReadyOverview.includes('Nothing is ready for your review yet.'));
+assert(!notReadyOverview.includes('Next for your review')&&!notReadyOverview.includes('▶ Watch & review'));
+const readyOverview=t.overview({tracker:{videos:[v({key:'watch-now',lane:'ready',readyFor:'Ben',watch:{url:'https://example.com/cut.mp4',version:'v02'}})]},owb:{jobs:[]}},NOW);
+assert(readyOverview.includes('Ready for your review')&&readyOverview.includes('href="#uat=watch-now"')&&readyOverview.includes('▶ Watch & review v02'));
+const missingDelivery=t.overview({tracker:{videos:[v({key:'missing-watch',lane:'ready',readyFor:'Ben'})]},owb:{jobs:[]}},NOW);
+assert(missingDelivery.includes('no watch link is recorded')&&!missingDelivery.includes('▶ Watch & review'));
+console.log('Review readiness wording and Watch CTA checks OK');
+// Activity video context comes from existing associations, never guessed from a job title.
+const contextVideos=[v({key:'HOS:008',channel:'HOS',title:'How Franklin Tamed Lightning',jobs:[{id:'J1757'}]}),v({key:'OWB:030',channel:'OWB',title:'Apophis'})];
+const contextBoard={tracker:{videos:contextVideos},owb:{jobs:[{id:'parent',repo:'hos',film:'008'}]}};
+assert(t.activityVideoContext(contextBoard,{id:'J1757'}).label.includes('Franklin'));
+assert(t.activityVideoContext(contextBoard,{id:'x',taskKeys:['HOS:008','HOS:008']}).count===1);
+assert(t.activityVideoContext(contextBoard,{id:'x',repo:'hos',film:'008'}).label.includes('History of Science'));
+assert(t.activityVideoContext(contextBoard,{id:'x',recheck_of:'parent'}).label.includes('Franklin'));
+assert.equal(t.activityVideoContext(contextBoard,{id:'x',taskKeys:['HOS:008','OWB:030']}).count,2);
+assert(t.activityVideoContext(contextBoard,{id:'x',taskKeys:['HOS:999']}).label.includes('title not recorded'));
+assert(t.activityVideoContext(contextBoard,{id:'x',title:'HOS 008 mentioned in prose'}).label.includes('no video linked'));
+console.log('Activity video context checks OK');
+
+const escapedContext=t.activityCard({...activityBoard,tracker:{videos:[v({key:'HOS:008',channel:'HOS',title:'<svg onload=alert(1)>',jobs:[{id:'Jactual'}]})]}},NOW);
+assert(escapedContext.includes('&lt;svg onload=alert(1)&gt;')&&!escapedContext.includes('<svg onload'));

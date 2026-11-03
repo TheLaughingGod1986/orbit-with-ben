@@ -295,7 +295,7 @@
     // Long/internal logs stay intact in technical details; never rewrite them into invented facts.
     if (raw && raw.length <= 140 && !/\bJ\d{3,}|\/[\w.-]+\/|sha256|credits?\b/i.test(raw)) return raw;
     if (stageView(m).tone === 'held') return 'Resolve the recorded blocker before this stage can continue.';
-    return job && job.status === 'open' ? 'Waiting for an agent to start; queue timing is unconfirmed.' : 'Open stage details for the recorded next step.';
+    return job && job.status === 'open' ? 'Waiting for an agent to start; queue timing is unconfirmed.' : 'No next action is recorded. Chief needs to confirm the handoff and owner.';
   }
   function blockerJobs(v,m) {
     const own=new Set((m.jobs||[]).map(j=>j.id)), jobs=new Map();
@@ -388,23 +388,63 @@
     if (typeof value !== 'object') return `<span>${esc(value)}</span>`;
     return `<dl class="tech-fields">${Object.entries(value).filter(([,x]) => x != null && x !== '').map(([key,x]) => `<div><dt>${esc(key)}</dt><dd>${technicalFields(x)}</dd></div>`).join('')}</dl>`;
   }
+  function stageExplanation(v,m) {
+    const rows=milestones(v), own=new Set((m.jobs||[]).map(j=>j.id));
+    const linked=[...(v.jobs||[]),...(m.jobs||[])].filter((j,i,all)=>j.id&&all.findIndex(x=>x.id===j.id)===i&&(own.has(j.id)||j.stage===m.id));
+    const live=linked.filter(j=>['claimed','open','blocked'].includes(j.status));
+    const job=live.find(j=>j.status==='claimed')||live.find(j=>j.status==='blocked')||live[0];
+    const missing=(m.displayState||m.state||'unknown')==='unknown'&&!m.awaitingApproval;
+    const deps=(m.dependsOn||[]).map(id=>rows.find(x=>x.id===id)).filter(Boolean);
+    const unfinished=deps.filter(x=>!completeStage(x)), confirmed=unfinished.filter(x=>stageView(x).text!=='Unconfirmed');
+    const scheduled=(v.youtube||{}).state==='scheduled', published=isLive(v);
+    let why,action,owner;
+    if(job) {
+      const state=(((board||{}).workflow||{}).states||{})[job.id]||{};
+      const prerequisite=((((board||{}).owb||{}).jobStates||{})[job.after]||{}).status||'state not recorded';
+      why=job.status==='claimed'?'A linked job is claimed; recorded activity is available below.':state.reason||(job.hold||{}).condition|| (job.after?`Linked prerequisite ${job.after}: ${prerequisite}. This job has not been claimed.`:'A linked job is queued; its start time is not recorded.');
+      action=job.remaining_action||job.title||'Check the linked job for the next recorded action.';
+      owner=job.by ? (AGENTS[job.by]||job.by) : 'The linked job has not been claimed.';
+    } else if(missing&&(scheduled||published)) {
+      why=scheduled?`This video is already scheduled${v.youtube.publishAtLondon?' for '+v.youtube.publishAtLondon:''}. Its ${m.label} decision is missing from the milestone records.`:`This video is already on YouTube. Its historical ${m.label} decision is missing from the milestone records.`;
+      action='Reconcile the approval record for this version; this missing record alone is not a reason to restart production.';
+      owner=m.id==='qa'?'Chief owns QA decisions; no stage-specific review job is recorded.':'No stage-specific job is recorded.';
+    } else if(confirmed.length) {
+      why='Recorded prerequisites are unfinished: '+confirmed.map(x=>`${x.label} (${stageView(x).text})`).join(', ')+'.';
+      action='Complete or resolve those prerequisites, then record the handoff to this stage.';
+      owner='No stage-specific job is recorded; Chief needs to confirm the next owner.';
+    } else if(unfinished.length) {
+      why='Prerequisite records need confirmation: '+unfinished.map(x=>x.label).join(', ')+'. No linked job establishes whether this stage is waiting or underway.';
+      action='Chief needs to reconcile the prerequisite evidence and record the next action and owner.';
+      owner='No stage-specific job is recorded.';
+    } else {
+      why=`${m.label} has no recorded ${m.id==='qa'?'review decision':'stage update'} or linked active job. The records do not establish why it has not moved.`;
+      action=m.id==='qa'?'Chief needs to verify whether this version has already passed QA; otherwise queue its review with an eligible reviewer.':'Chief needs to confirm the stage state and queue the next action with an owner.';
+      owner=m.id==='qa'?'Chief owns QA decisions; an individual reviewer has not been recorded.':'No stage-specific job is recorded.';
+    }
+    if(!job&&m.owner) owner='Recorded stage owner: '+(AGENTS[m.owner]||m.owner)+'. No stage-specific active job is recorded.';
+    return {missing,why,action,owner,job};
+  }
+  function stageExplanationHtml(v,m) {
+    const c=stageExplanation(v,m);
+    return `<div class="next-action stage-explanation"><span>What is happening</span><p>${esc(c.why)}</p><span>Next action</span><p>${esc(c.action)}</p><span>Responsibility</span><p>${esc(c.owner)}</p>${c.job?`<a class="other-stage" href="${jobRoute(c.job.id)}">Open job ${esc(c.job.id)} →</a>`:''}</div>`;
+  }
   function milestoneCard(v, m, current) {
-    const state = stageView(m), saved = expandedStages.get(v.key), open = saved ? saved.has(m.id) : m.id === current;
+    const state = stageView(m), context=stageExplanation(v,m), displayStatus=context.missing?(m.id==='qa'?'QA decision not recorded':'Stage update not recorded'):state.text, saved = expandedStages.get(v.key), open = saved ? saved.has(m.id) : m.id === current;
     const jobs = m.jobs || [], source = m.source || {};
     const times = [['Started',recordedTime(source.startedAt || source.since)],['Completed',recordedTime(source.completedAt)],['Duration',source.durationSeconds ? durationText(source.durationSeconds/60) : '']].filter(([,value])=>value);
     return `<details class="milestone-card ${state.tone}" data-stage="${esc(m.id)}" data-video="${esc(v.key)}" ${open?'open':''}>
-      <summary aria-label="${esc(m.label)}: ${esc(state.text)}"><span class="stage-icon" aria-hidden="true">${state.icon}</span><span class="stage-copy"><b>${esc(m.label)}</b><small>${esc([state.text,conciseEvidence(m)].filter(Boolean).join(' · '))}</small></span><span class="expand-icon" aria-hidden="true">⌄</span></summary>
-      <div class="stage-expanded"><dl class="stage-facts"><div><dt>Status</dt><dd>${esc(state.text)}</dd></div><div><dt>Assigned agent</dt><dd>${esc(ownerName(m))}</dd></div>${times.map(([label,value])=>`<div><dt>${label}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
-      ${!completeStage(m)?(state.tone==='held' && !isLive(v)?blockerGuide(v,m):`<p class="next-action"><span>Next action</span>${esc(nextAction(m))}</p>`):''}
+      <summary aria-label="${esc(m.label)}: ${esc(displayStatus)}"><span class="stage-icon" aria-hidden="true">${state.icon}</span><span class="stage-copy"><b>${esc(m.label)}</b><small>${esc([displayStatus,conciseEvidence(m)].filter(Boolean).join(' · '))}</small></span><span class="expand-icon" aria-hidden="true">⌄</span></summary>
+      <div class="stage-expanded"><dl class="stage-facts"><div><dt>Status</dt><dd>${esc(displayStatus)}</dd></div>${m.owner?`<div><dt>Assigned agent</dt><dd>${esc(ownerName(m))}</dd></div>`:''}${times.map(([label,value])=>`<div><dt>${label}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
+      ${!completeStage(m)?(state.tone==='held' && !isLive(v)?blockerGuide(v,m):stageExplanationHtml(v,m)):''}
       <details class="technical" data-disclosure="${esc(v.key)}-${esc(m.id)}-tech"><summary>View technical details</summary><div class="technical-body">${m.evidence?`<p>${esc(m.evidence)}</p>`:''}${technicalFields(source)}${jobs.map(j=>technicalFields(j)).join('')}${m.sampleCount!=null?`<p>${esc(m.sampleCount)} comparable historical stage samples</p>`:''}</div></details></div></details>`;
   }
   function currentStageCard(v) {
     if (['approved','done'].includes(v.lane) || isLive(v) || forBen([v]).length) return '';
     const stages = currentProduction(v), m = stages[0];
-    if (!m) return `<section class="current-stage"><p class="eyebrow">Current stage</p><h2>Not confirmed yet</h2><p class="muted">No active stage is recorded. Unknown milestones remain unconfirmed.</p></section>`;
+    if (!m) return `<section class="current-stage"><p class="eyebrow">Current stage</p><h2>No current-stage handoff recorded</h2><p class="muted">The records do not identify an active stage. Chief needs to reconcile the production evidence and record the next job and owner.</p></section>`;
     const state = stageView(m);
     return `<section class="current-stage ${state.tone}"><p class="eyebrow">Current stage</p><h2>${esc(m.label)}${m.id==='picture'?' production':''}</h2>${conciseEvidence(m)?`<p>${esc(conciseEvidence(m))}</p>`:''}
-      <p class="stage-status"><span class="status-dot ${state.tone}"></span>${esc(state.text)}</p>${state.tone==='held'?`<button type="button" class="stage-more" data-open-stage="${esc(m.id)}" aria-label="More information about ${esc(m.label)}: ${esc(state.text)}">More information <span aria-hidden="true">↓</span></button>`:`<p class="next-action"><span>Next action</span>${esc(nextAction(m))}</p><p class="muted">Assigned agent: <strong>${esc(ownerName(m))}</strong></p>`}
+      <p class="stage-status"><span class="status-dot ${state.tone}"></span>${esc(state.text)}</p>${state.tone==='held'?`<button type="button" class="stage-more" data-open-stage="${esc(m.id)}" aria-label="More information about ${esc(m.label)}: ${esc(state.text)}">More information <span aria-hidden="true">↓</span></button>`:`<p class="next-action"><span>Next action</span>${esc(nextAction(m))}</p>${m.owner?`<p class="muted">Assigned agent: <strong>${esc(ownerName(m))}</strong></p>`:'<p class="muted">Chief needs to record the next owner.</p>'}`}
       ${stages.length>1?`<details class="other-stages" data-disclosure="${esc(v.key)}-other"><summary>${stages.length-1} other active stage${stages.length>2?'s':''}</summary>${stages.slice(1).map(x=>`<a class="other-stage" href="#stage-${esc(x.id)}">${esc(x.label)} · ${esc(stageView(x).text)}</a>`).join('')}</details>`:''}</section>`;
   }
   function productionDetail(v, now) {
@@ -486,7 +526,19 @@
     const all=[...jobs.values()], models=b.models||{};
     const age=(now-Date.parse(models.checkedAt||''))/MIN;
     const fresh=Number.isFinite(age) && age>=0 && age<=QUIET_MIN && models.fresh!==false;
-    const running=all.filter(j=>j.status==='claimed'), queued=all.filter(j=>j.status==='open'), held=all.filter(j=>j.status==='blocked');
+    const workflow=b.workflow||{}, workflowAge=(now-Date.parse(workflow.at||''))/MIN;
+    const states=Number.isFinite(workflowAge)&&workflowAge>=0&&workflowAge<=QUIET_MIN ? workflow.states||{} : {};
+    for(const active of workflow.active||[]) {
+      const id=active.id||active.job;
+      if(!id || (states[id]||{}).state!=='running') continue;
+      const index=all.findIndex(j=>j.id===id), recorded=index>=0?all[index]:{};
+      const current={...recorded,id,title:recorded.title||active.title,by:active.worker||active.agent||recorded.by,progress:active.progress||recorded.progress};
+      if(index>=0) all[index]=current; else all.push(current);
+    }
+    const jobState=j=>(states[j.id]||{}).state;
+    const running=all.filter(j=>jobState(j)?jobState(j)==='running':j.status==='claimed'),
+      queued=all.filter(j=>jobState(j)?['queued','review'].includes(jobState(j)):j.status==='open'),
+      held=all.filter(j=>jobState(j)?['waiting','stalled'].includes(jobState(j)):j.status==='blocked');
     const freshRunning=running.filter(j=>{
       const at=Math.max(...[j.claimedAt,(j.progress||{}).at,(j.last||{}).at].map(d=>Date.parse(d||'')).filter(Number.isFinite));
       return Number.isFinite(at) && now>=at && now-at<=QUIET_MIN*MIN;
@@ -524,14 +576,14 @@
     if(!v) return `<p class="overview-empty">${producingCount?'UAT handoffs are complete. Approved videos are moving toward publishing.':'No videos are in production right now. Explore the backlog in Videos.'}</p><a class="overview-empty-link" href="#videos">Open Videos <span aria-hidden="true">›</span></a>`;
     const p=progressStats(v), m=currentProduction(v)[0], ready=forBen([v]).length>0;
     const stageLabel=ready?'Ready for your UAT':m ? m.label+(stageView(m).text==='Awaiting approval'?' approval':'') : 'Unconfirmed';
-    const action=ready?'Your review can start now.' : m ? stageView(m).tone==='held'?blockerModel(v,m).action:nextAction(m) : 'The next production step has not been confirmed.';
+    const action=ready?((v.watch||{}).url?'Use Watch & review below to open this cut.':'Review delivery incomplete: no watch link is recorded.') : m ? stageView(m).tone==='held'?blockerModel(v,m).action:nextAction(m) : 'The next production step has not been confirmed.';
     return `<a class="featured-video" href="${detailLink(v)}" aria-label="Open ${esc(v.title||'video')} production details">
       <div class="featured-heading">${thumb(v)}<div><h3>${esc(v.title||'Untitled video')}</h3><p>${v.channel==='HOS'?'History of Science':'Orbit With Ben'} · ${kind(v)}</p></div><span class="chev" aria-hidden="true">›</span></div>
       <div class="featured-progress-heading"><span>Milestones completed</span><b>${p.percent}%</b></div>
       <div class="hero-track" role="progressbar" aria-label="Milestones completed, not production time" aria-valuenow="${p.done}" aria-valuemin="0" aria-valuemax="9"><i style="width:${p.percent}%"></i></div>
       <p class="featured-count">${p.done} of 9 milestones complete${p.unknown?` · ${p.unknown} unconfirmed`:''}</p>
       <dl class="featured-facts"><div><dt>Current stage</dt><dd>${esc(stageLabel)}</dd></div><div><dt>Estimated UAT</dt><dd class="${ready?'ready-text':blockedVideo(v)?'held-text':''}">${esc(featuredOutlook(v,now))}</dd></div></dl>
-      <p class="featured-next"><span>${ready?'Ready for you':blockedVideo(v)?'Needs attention':'Next action'}</span>${esc(action)}</p></a>`;
+      <p class="featured-next"><span>${ready?'Ready for you':blockedVideo(v)?'Needs attention':'Next action'}</span>${esc(action)}</p></a>${ready&&(v.watch||{}).url?`<a class="btn primary" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch||{}).version||v.version||'')}</a>`:''}`;
   }
   function recordedTaskProgress(j) {
     const p=j.progress || {}, step=Number(p.step), of=Number(p.of);
@@ -539,11 +591,32 @@
   }
   const jobRoute=id=>'#agents&job='+encodeURIComponent(id);
   const selectedJob=()=>new URLSearchParams((location.hash||'').slice(1)).get('job')||'';
+  function activityVideoContext(b,j) {
+    const videos=uniqueVideos(((b.tracker||{}).videos)||[]), keys=new Set();
+    const add=job=>{
+      for(const key of Array.isArray(job.taskKeys)?job.taskKeys:[]) if(typeof key==='string'&&/^(OWB|HOS):/.test(key)) keys.add(key);
+      if(/^\d+$/.test(String(job.film||''))) keys.add((job.repo==='hos'?'HOS':'OWB')+':'+String(job.film).padStart(3,'0'));
+      for(const v of videos) if(v.key&&(v.jobs||[]).some(x=>x.id===job.id)) keys.add(v.key);
+    };
+    add(j);
+    if(j.recheck_of) {
+      const parent=(((b.owb||{}).jobs)||[]).find(x=>x.id===j.recheck_of);
+      if(parent) add(parent);
+    }
+    const rows=[...keys].map(key=>({key,video:videos.find(v=>v.key===key)}));
+    const label=row=>{
+      const channel=row.key.startsWith('HOS:')?'History of Science':'Orbit With Ben';
+      return row.video?`${row.video.title||row.key} · ${channel} · ${kind(row.video)}`:`${channel} · ${row.key.split(':')[1]} · title not recorded`;
+    };
+    return rows.length?{label:rows.slice(0,2).map(label).join(' / ')+(rows.length>2?` · +${rows.length-2} more videos`:''),count:rows.length}
+      :{label:'Studio task · no video linked in the job record',count:0};
+  }
   function activityCard(b,now) {
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
     // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
     const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} on hold</p>`;
-    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>Studio waiting for next job</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
+    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is on hold':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
+    const videoContext=activityVideoContext(b,j);
     const p=recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
     // Reuse the existing task estimator only with a valid recorded start and valid inputs.
     const e=(!p || p.step<p.of) && Number.isFinite(start) && start<=now && (p && p.step>0 && p.step<p.of || Number.isFinite(+j.estMin) && +j.estMin>0)
@@ -551,6 +624,7 @@
     const eta=e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
     return `<section class="overview-activity"><h2>Studio activity</h2><a class="active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents">
       <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is working</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
+      <p class="activity-video"><span>${videoContext.count>1?'Videos':videoContext.count?'Video':'Scope'}</span>${esc(videoContext.label)}</p>
       <p class="activity-action">${esc(clip(j.remaining_action||j.title||'Current action not recorded',160))}</p>
       ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:'<p class="activity-progress-missing">Task progress not recorded</p>'}
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
@@ -559,7 +633,7 @@
     const s=overviewModel(b,now), candidate=featureVideo(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="overview-stats" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
-      <section class="overview-feature"><h2>Next for your review</h2>${featuredCard(candidate,now,s.producing.length)}</section>
+      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted">Nothing is ready for your review yet.</p>':''}${featuredCard(candidate,now,s.producing.length)}</section>
       ${activityCard(b,now)}</div>`;
   }
 
