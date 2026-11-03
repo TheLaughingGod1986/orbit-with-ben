@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -376,3 +376,19 @@ console.log('Activity video context checks OK');
 
 const escapedContext=t.activityCard({...activityBoard,tracker:{videos:[v({key:'HOS:008',channel:'HOS',title:'<svg onload=alert(1)>',jobs:[{id:'Jactual'}]})]}},NOW);
 assert(escapedContext.includes('&lt;svg onload=alert(1)&gt;')&&!escapedContext.includes('<svg onload'));
+
+// A follow-up checkpoint is distinct from the ready review's start and from real device capacity.
+const reviewParent={id:'J1834',status:'blocked',by:'codex',hold:{condition:'Parked for Chief approval of delivered candidate',check_at:new Date(NOW+60*6e4).toISOString()}};
+const reviewTask={id:'J1841',recheck_of:'J1834',status:'open'};
+const busyTask={id:'J1835',status:'claimed',by:'codex',title:'Check another film'};
+const reviewBoard={owb:{jobs:[reviewParent,reviewTask,busyTask]},models:{checkedAt:new Date(NOW).toISOString(),chief:{agent:'codex'}},workflow:{at:new Date(NOW).toISOString(),states:{J1841:{state:'queued'}}}};
+let reviewInfo=t.reviewQueueInfo(reviewBoard,reviewParent,NOW,{at:new Date(NOW).toISOString(),state:'waiting',why:['in use']});
+assert(reviewInfo.ready&&reviewInfo.busy.id==='J1835');assert(reviewInfo.macbookText.includes('in use'));assert(reviewInfo.availability.includes('No reliable'));
+assert(!t.reviewQueueInfo(reviewBoard,{...reviewParent,hold:{condition:'Missing footage'}},NOW));
+reviewInfo=t.reviewQueueInfo({...reviewBoard,models:{...reviewBoard.models,checkedAt:new Date(NOW-10*6e4).toISOString()}},reviewParent,NOW);
+assert(!reviewInfo.busy&&reviewInfo.macbookText.includes('stale or missing'));
+t.setBoard(reviewBoard);
+const reviewHtml=t.blockerGuide(v({jobs:[reviewParent]}),{id:'edit',label:'Edit',state:'review',jobs:[reviewParent]},NOW);
+assert(reviewHtml.includes('Awaiting Chief review')&&reviewHtml.includes('review queued and eligible now')&&reviewHtml.includes('#agents&job=J1841'));
+assert(reviewHtml.includes('Previous worker')&&reviewHtml.includes('does not schedule or delay'));
+console.log('Review queue and capacity explanation checks OK');

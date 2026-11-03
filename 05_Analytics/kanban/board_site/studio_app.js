@@ -339,17 +339,39 @@
       action:stageApproval?nextAction(m):m.nextAction||'No unblock action is recorded. A responsible owner and a specific next step need to be recorded.',
       owner:stageApproval?(reviewer||'Not recorded'):ownerName(m)==='Unassigned'?'Not recorded':ownerName(m),others:entries};
   }
+  function reviewQueueInfo(b,j,now,mb=null) {
+    if(!j) return null;
+    const jobs=((b.owb||{}).jobs)||[], state=(b.workflow||{}).states||{};
+    const task=jobs.find(x=>x.recheck_of===j.id&&['open','claimed'].includes(x.status));
+    const needsReview=/(?:parked|awaiting|waiting) for (?:the )?Chief.*(?:review|approval)/i.test(String((j.hold||{}).condition||j.result||''));
+    if(!task||!needsReview) return null;
+    const fresh=stamp=>{const age=now-Date.parse(stamp||'');return Number.isFinite(age)&&age>=0&&age<=5*MIN;};
+    const models=b.models||{}, chief=(models.chief||{}).agent, reviewer=AGENTS[chief]||chief||'Elected Chief';
+    const ownState=state[task.id]||{}, predecessor=((b.owb||{}).jobStates||{})[task.after]||{};
+    const ready=fresh((b.workflow||{}).at)?['queued','review'].includes(ownState.state):task.status==='open'&&!task.hold&&(!task.after||predecessor.status==='done')&&(!task.notBefore||Date.parse(task.notBefore)<=now);
+    const active=jobs.find(x=>x.status==='claimed'&&x.by===chief);
+    const next=(b.workflow||{}).next||{}, runner=models.runner||{};
+    const starting=runner.state==='working'&&fresh(runner.at)&&next.id===runner.job&&next.worker===chief?jobs.find(x=>x.id===runner.job):null;
+    const busy=fresh(models.checkedAt)?active||starting:null;
+    const estimate=busy&&recordedTaskProgress(busy), started=busy&&Date.parse(busy.claimedAt||'');
+    const eta=estimate&&estimate.step>0&&estimate.step<estimate.of&&Number.isFinite(started)&&started<=now?etaOf(busy,now):null;
+    const availability=eta&&!eta.over?`Current task estimate: about ${durationText(eta.min)} remaining. A review start time is not reserved.`:'No reliable reviewer-free time is recorded.';
+    const mbAge=mb?now-Date.parse(mb.at||''):NaN;
+    const macbookText=Number.isFinite(mbAge)&&mbAge>=0&&mbAge<=20*MIN?`MacBook worker: ${mb.state||'state unreported'}${mb.job?' on '+mb.job:''}${(mb.why||[]).length?' · '+mb.why.join('; '):''}.`:'MacBook availability report is stale or missing.';
+    return {task,reviewer,ready,busy,availability,macbookText};
+  }
   function blockerGuide(v,m,now=Date.now()) {
-    const model=blockerModel(v,m), j=model.job;
+    const model=blockerModel(v,m), j=model.job, review=reviewQueueInfo(board||{},j,now,macbook);
     const due=Date.parse(model.checkAt||''), checked=Date.parse(model.checkedAt||'');
     const states=((board||{}).owb||{}).jobStates||{}, dependency=states[model.dependency]||{};
     const dependencyStatus={done:'Completed',blocked:'Blocked',claimed:'In progress',open:'Queued',cancelled:'Cancelled'}[dependency.status]||'Status unreported';
     const check=Number.isFinite(due)?`${due<now?'Check overdue: ':'Next recorded check: '}${recordedTime(model.checkAt)}`:'No next check recorded';
     return `<div class="blocker-guide" data-blocker-scope="${model.scope}"><p class="blocker-scope">${model.scope==='reference'?'Related recorded hold':model.scope==='video'?'Video-level hold · stage link unconfirmed':'Recorded stage hold'}</p>
-      <h3>Why blocked</h3><p class="blocker-reason">${esc(model.why)}</p>
+      <h3>${review?'Awaiting Chief review':'Why blocked'}</h3><p class="blocker-reason">${esc(model.why)}</p>
       <h3>How to unblock</h3><p class="blocker-action">${esc(model.action)}</p>
-      <dl class="blocker-facts"><div><dt>${j?'Recorded job owner':'Reviewer / owner'}</dt><dd>${esc(model.owner)}</dd></div><div><dt>Follow-up</dt><dd>${esc(check)}</dd></div>${Number.isFinite(checked)?`<div><dt>Last checked</dt><dd>${esc(recordedTime(model.checkedAt))}</dd></div>`:''}${model.dependency?`<div><dt>Recorded dependency</dt><dd>${esc(model.dependency)} · ${esc(dependencyStatus)}</dd></div>`:''}</dl>
-      ${Number.isFinite(due)?'<p class="blocker-caption">The check time is a follow-up, not a promise that the video will be unblocked.</p>':''}
+      <dl class="blocker-facts"><div><dt>${j?(review?'Previous worker':'Recorded job owner'):'Reviewer / owner'}</dt><dd>${esc(model.owner)}</dd></div><div><dt>Follow-up</dt><dd>${esc(check)}</dd></div>${Number.isFinite(checked)?`<div><dt>Last checked</dt><dd>${esc(recordedTime(model.checkedAt))}</dd></div>`:''}${model.dependency?`<div><dt>Recorded dependency</dt><dd>${esc(model.dependency)} · ${esc(dependencyStatus)}</dd></div>`:''}</dl>
+      ${review?`<div class="review-handoff"><p><b>${esc(review.reviewer)} · ${review.ready?'review queued and eligible now':review.task.status==='claimed'?'review job claimed':'review queue state needs confirmation'}</b></p><a class="blocker-job-link" href="${jobRoute(review.task.id)}">Open review job ${esc(review.task.id)} →</a>${review.busy?`<p>${esc(review.reviewer)} is ${review.busy.status==='claimed'?'working on':'starting'} ${esc(review.busy.id)}: ${esc(clip(review.busy.remaining_action||review.busy.title,140))}</p>`:''}<details class="technical"><summary>Reviewer availability and MacBook</summary><p>${esc(review.availability)}</p><p>${esc(review.macbookText)}</p><p>Device availability does not establish media-review capability or Chief approval authority.</p></details></div>`:''}
+      ${Number.isFinite(due)?`<p class="blocker-caption">${review?'The follow-up time does not schedule or delay the queued review.':'The check time is a follow-up, not a promise that the video will be unblocked.'}</p>`:''}
       ${j?`<a class="blocker-job-link" href="${jobRoute(j.id)}">Open blocking job ${esc(j.id)} <span aria-hidden="true">›</span></a><details class="technical" data-disclosure="${esc(v.key)}-${esc(m.id)}-hold"><summary>Full recorded blocker</summary><div class="technical-body">${(j.hold||{}).condition?`<p>${esc(j.hold.condition)}</p>`:''}${j.remaining_action?`<p>Recorded next action: ${esc(j.remaining_action)}</p>`:''}${j.result?`<p>${esc(j.result)}</p>`:''}</div></details>`:''}
       ${model.others.length?`<details class="technical" data-disclosure="${esc(v.key)}-${esc(m.id)}-other-holds"><summary>${model.others.length} other recorded video hold${model.others.length===1?'':'s'}</summary><div class="technical-body">${model.others.map(({job})=>`<article><b>${esc(job.title||job.id)}</b><p>${esc(blockerReason((job.hold||{}).condition||job.result)||'Reason not recorded')}</p><p>Next step: ${esc(job.remaining_action||'Not recorded')}</p><a class="blocker-job-link" href="${jobRoute(job.id)}">Open ${esc(job.id)}</a></article>`).join('')}</div></details>`:''}</div>`;
   }
