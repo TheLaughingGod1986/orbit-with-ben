@@ -87194,6 +87194,11 @@
           "at": "2026-11-03T14:10Z",
           "by": "relay",
           "what": "condition verification queued: J1836"
+        },
+        {
+          "at": "2026-11-03T14:22Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T20:25:00Z"
         }
       ],
       "kind": "listing",
@@ -87219,12 +87224,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Fresh Studio reload 3 Nov 08:03 UTC still shows A/B testing titles / Results ready on Atom GHZDsiH7L7A, original title and Public. Requires read-only widget clearance proof; API restriction removal unproven, no write probe. Evidence J1737 at e4a886ac9 and _desk/handoff/J1737/readback.json.",
-        "check_at": "2026-11-03T15:10:42+00:00",
-        "last_recheck": "J1737",
-        "checked_at": "2026-11-03T08:04:10+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1836"
+        "condition": "Fresh Studio reload 3 Nov 14:21 UTC still shows A/B testing titles / Results ready on Atom GHZDsiH7L7A, original title and Public. Read-only widget clearance and API restriction removal remain unproven; no write probe. Evidence f4870c57a jobs/readbacks/J1836.json and _desk/handoff/J1836/readback.json.",
+        "check_at": "2026-11-03T20:25:00Z",
+        "last_recheck": "J1836",
+        "checked_at": "2026-11-03T14:22:18+00:00",
+        "checked_by": "codex"
       }
     },
     {
