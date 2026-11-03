@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1848 | mini | open (after J1847) | – | – | for gemini · review · `gemini-argon` · AR2 NASA model: Gemini native moving and phone review | J1846 |
 | J1849 | any | open (after J1848) | – | – | chief · AR2 NASA model: Chief exact-input acceptance or bounded fallback | J1846 |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
-| J1868 | mini | open | – | – | 008 edit · chief · Chief: assign Franklin v03 UAT corrections from Ben’s six notes | HOS-008:v03:2026-11-03T16:08:33.439Z |
+| J1868 | mini | claimed | codex | 2026-11-03T21:07Z | 008 edit · chief · Chief: assign Franklin v03 UAT corrections from Ben’s six notes | HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1869 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
 | J1872 | any | open | – | – | chief · Chief: verify condition for J1760 |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
