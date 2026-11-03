@@ -160723,19 +160723,24 @@
           "at": "2026-11-03T22:36Z",
           "by": "codex",
           "what": "step 1 of 4 done: First-frame WebGL/GLTF preflight passed; NASA GLB geometry/materials intact. Candidate 1 still rejected for clipped array and exposed plate edge; candidate 2 is final framing attempt. Existing 3718-square NASA Blue Marble composite verified, not mislabelled as a photograph."
+        },
+        {
+          "at": "2026-11-03T22:37Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Candidate 2 draft complete: 102 native frames at 30 fps, continuous 3.4 seconds; opening frames 30-101 score 7.53 against unchanged motion threshold 1.50. Still inspection shows intact unclipped station and coherent Earth fill; moving review remains J1848."
         }
       ],
-      "remaining_action": "Render second bounded framing candidate and collect preview evidence",
+      "remaining_action": "Render full-resolution finalist and collect unchanged gate outputs",
       "due": "2026-11-03T14:30:08Z",
       "for": "codex",
       "kind": "chart",
       "model": "gpt-6-astra",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-03T22:36Z",
+        "at": "2026-11-03T22:37Z",
         "by": "codex",
-        "note": "First-frame WebGL/GLTF preflight passed; NASA GLB geometry/materials intact. Candidate 1 still rejected for clipped arra"
+        "note": "Candidate 2 draft complete: 102 native frames at 30 fps, continuous 3.4 seconds; opening frames 30-101 score 7.53 agains"
       },
       "taskKeys": [
         "OWB:030"
