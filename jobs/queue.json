@@ -161030,19 +161030,24 @@
           "at": "2026-11-03T18:38Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original scope, acceptance history, J1854 and replacement chain; PR380 and PR414 still OPEN at unchanged heads."
+        },
+        {
+          "at": "2026-11-03T18:39Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 exports; only those three finals exist. Saved opening FAILs persist; replacement J1847-J1849 unstarted, J1846 blocked."
         }
       ],
-      "remaining_action": "Finish current export and replacement-chain verification",
+      "remaining_action": "Record unmet readiness condition and close verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T17:17:11+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T18:38Z",
+        "at": "2026-11-03T18:39Z",
         "by": "codex",
-        "note": "Read original scope, acceptance history, J1854 and replacement chain; PR380 and PR414 still OPEN at unchanged heads."
+        "note": "Fresh SHA256 matches all three J1468 exports; only those three finals exist. Saved opening FAILs persist; replacement J1"
       },
       "taskKeys": [
         "OWB:030"
