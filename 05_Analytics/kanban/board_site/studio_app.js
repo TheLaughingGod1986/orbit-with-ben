@@ -404,7 +404,7 @@
     if (!m) return `<section class="current-stage"><p class="eyebrow">Current stage</p><h2>Not confirmed yet</h2><p class="muted">No active stage is recorded. Unknown milestones remain unconfirmed.</p></section>`;
     const state = stageView(m);
     return `<section class="current-stage ${state.tone}"><p class="eyebrow">Current stage</p><h2>${esc(m.label)}${m.id==='picture'?' production':''}</h2>${conciseEvidence(m)?`<p>${esc(conciseEvidence(m))}</p>`:''}
-      <p class="stage-status"><span class="status-dot ${state.tone}"></span>${esc(state.text)}</p>${state.tone==='held'?blockerGuide(v,m):`<p class="next-action"><span>Next action</span>${esc(nextAction(m))}</p><p class="muted">Assigned agent: <strong>${esc(ownerName(m))}</strong></p>`}
+      <p class="stage-status"><span class="status-dot ${state.tone}"></span>${esc(state.text)}</p>${state.tone==='held'?`<button type="button" class="stage-more" data-open-stage="${esc(m.id)}" aria-label="More information about ${esc(m.label)}: ${esc(state.text)}">More information <span aria-hidden="true">↓</span></button>`:`<p class="next-action"><span>Next action</span>${esc(nextAction(m))}</p><p class="muted">Assigned agent: <strong>${esc(ownerName(m))}</strong></p>`}
       ${stages.length>1?`<details class="other-stages" data-disclosure="${esc(v.key)}-other"><summary>${stages.length-1} other active stage${stages.length>2?'s':''}</summary>${stages.slice(1).map(x=>`<a class="other-stage" href="#stage-${esc(x.id)}">${esc(x.label)} · ${esc(stageView(x).text)}</a>`).join('')}</details>`:''}</section>`;
   }
   function productionDetail(v, now) {
@@ -846,6 +846,15 @@
     const target=tab==='agents' && selectedJob() ? document.getElementById('job-'+selectedJob()) : null;
     if(tab!=='agents' || !selectedJob()) focusedJobRoute="";
     if(target && focusedJobRoute!==location.hash) {focusedJobRoute=location.hash;requestAnimationFrame(()=>{target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});});}
+    document.querySelectorAll('[data-open-stage]').forEach(button => button.onclick = () => {
+      const card = [...document.querySelectorAll('details[data-stage]')].find(el => el.dataset.stage === button.dataset.openStage);
+      if (!card) return;
+      card.open = true;
+      const saved = expandedStages.get(card.dataset.video) || new Set();
+      saved.add(card.dataset.stage); expandedStages.set(card.dataset.video, saved);
+      card.querySelector('summary')?.focus({preventScroll:true});
+      card.scrollIntoView({block:'start', behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+    });
     const sortControl = document.getElementById('video-sort');
     if (sortControl) sortControl.onchange = () => { videoSort=sortControl.value; render(); };
     document.querySelectorAll('details[data-stage]').forEach(el => el.addEventListener('toggle', () => {
