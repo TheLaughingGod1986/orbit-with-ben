@@ -486,7 +486,19 @@
     const all=[...jobs.values()], models=b.models||{};
     const age=(now-Date.parse(models.checkedAt||''))/MIN;
     const fresh=Number.isFinite(age) && age>=0 && age<=QUIET_MIN && models.fresh!==false;
-    const running=all.filter(j=>j.status==='claimed'), queued=all.filter(j=>j.status==='open'), held=all.filter(j=>j.status==='blocked');
+    const workflow=b.workflow||{}, workflowAge=(now-Date.parse(workflow.at||''))/MIN;
+    const states=Number.isFinite(workflowAge)&&workflowAge>=0&&workflowAge<=QUIET_MIN ? workflow.states||{} : {};
+    for(const active of workflow.active||[]) {
+      const id=active.id||active.job;
+      if(!id || (states[id]||{}).state!=='running') continue;
+      const index=all.findIndex(j=>j.id===id), recorded=index>=0?all[index]:{};
+      const current={...recorded,id,title:recorded.title||active.title,by:active.worker||active.agent||recorded.by,progress:active.progress||recorded.progress};
+      if(index>=0) all[index]=current; else all.push(current);
+    }
+    const jobState=j=>(states[j.id]||{}).state;
+    const running=all.filter(j=>jobState(j)?jobState(j)==='running':j.status==='claimed'),
+      queued=all.filter(j=>jobState(j)?['queued','review'].includes(jobState(j)):j.status==='open'),
+      held=all.filter(j=>jobState(j)?['waiting','stalled'].includes(jobState(j)):j.status==='blocked');
     const freshRunning=running.filter(j=>{
       const at=Math.max(...[j.claimedAt,(j.progress||{}).at,(j.last||{}).at].map(d=>Date.parse(d||'')).filter(Number.isFinite));
       return Number.isFinite(at) && now>=at && now-at<=QUIET_MIN*MIN;
@@ -543,7 +555,7 @@
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
     // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
     const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} on hold</p>`;
-    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>Studio waiting for next job</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
+    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is on hold':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
     const p=recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
     // Reuse the existing task estimator only with a valid recorded start and valid inputs.
     const e=(!p || p.step<p.of) && Number.isFinite(start) && start<=now && (p && p.step>0 && p.step<p.of || Number.isFinite(+j.estMin) && +j.estMin>0)

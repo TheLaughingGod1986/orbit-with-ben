@@ -318,3 +318,20 @@ console.log('Studio blocker guidance checks OK');
 const ownStageJob={...inputJob,id:'Jstage',stage:'edit',by:'gemini',hold:{condition:'Awaiting the recorded edit review'}};
 assert.equal(t.blockerModel(v({jobs:[inputJob,ownStageJob]}),blockedEdit).job.id,'Jstage','explicit stage mapping outranks a reference match');
 assert(!t.blockerModel(v({jobs:[{...inputJob,status:'done'}]}),blockedEdit).job,'completed records cannot become active blockers');
+
+// Raw open is not ready: workflow dependencies/date gates control the activity footer.
+const dispatchBoard={models:{checkedAt:new Date(NOW).toISOString()},tracker:{videos:[]},owb:{jobs:[{id:'future',status:'open'},{id:'dependent',status:'open'},{id:'ready',status:'open'}]},workflow:{at:new Date(NOW).toISOString(),states:{future:{state:'waiting'},dependent:{state:'waiting'},ready:{state:'queued'}}}};
+assert.equal(t.overviewModel(dispatchBoard,NOW).queued.length,1);
+assert.equal(t.overviewModel(dispatchBoard,NOW).held.length,2);
+assert(t.activityCard(dispatchBoard,NOW).includes('Ready work waiting for dispatch'));
+dispatchBoard.workflow.states.ready.state='waiting';
+assert(t.activityCard(dispatchBoard,NOW).includes('No job running · work is on hold'));
+assert(t.activityCard(dispatchBoard,NOW).includes('0 queued · 3 on hold'));
+console.log('Dispatch visibility checks OK');
+
+dispatchBoard.owb.jobs.push({id:'chiefReview',status:'blocked',by:'cursor',title:'Review the output'});
+dispatchBoard.workflow.states.chiefReview={state:'running'};
+dispatchBoard.workflow.active=[{id:'chiefReview',worker:'codex',progress:{step:1,of:3}}];
+assert(t.activityCard(dispatchBoard,NOW).includes('Codex is working'));
+assert(t.activityCard(dispatchBoard,NOW).includes('1 of 3 steps'));
+assert.equal(t.overviewModel(dispatchBoard,NOW).running.length,1);
