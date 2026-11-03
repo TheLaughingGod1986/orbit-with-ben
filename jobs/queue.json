@@ -153511,19 +153511,24 @@
           "at": "2026-11-03T08:54Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking authorization, fresh Studio evidence, then recording decision."
+        },
+        {
+          "at": "2026-11-03T08:54Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J1130, J1129 authorization/history, panel decision and previous Studio evidence; actual end time plus following London date required."
         }
       ],
-      "remaining_action": "Verify live T020 thumbnail-test status and retain or clear J1130 hold",
+      "remaining_action": "Read fresh Studio status for T020",
       "kind": "chief",
       "recheck_of": "J1130",
       "due": "2026-11-03T09:49:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T08:54Z",
         "by": "codex",
-        "note": "Checking authorization, fresh Studio evidence, then recording decision."
+        "note": "Read J1130, J1129 authorization/history, panel decision and previous Studio evidence; actual end time plus following Lon"
       },
       "taskKeys": [
         "HOS:002"
