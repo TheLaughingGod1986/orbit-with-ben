@@ -157404,13 +157404,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T12:20Z",
-      "eta": "2026-11-03T14:20Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T12:06Z",
-      "result": "",
+      "result": "PR380 remains OPEN at d0b04b5e0 without comments or reviews. Fresh SHA256 matches all three J1468 masters and Crew-2 source. J1471 remains blocked on approved ISS opening input; retry retained at 2026-11-03T13:06:28Z. Existing failed gates and J1356/Ben/date/credit/publishing holds preserved. NAS offload found no eligible old scratch; no media moved.",
       "history": [
         {
           "at": "2026-11-03T12:06Z",
@@ -157441,6 +157441,11 @@
           "at": "2026-11-03T12:22Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback confirms blocked input, last_recheck J1822, checked_by codex and retained 13:06:28 UTC retry"
+        },
+        {
+          "at": "2026-11-03T12:22Z",
+          "by": "codex",
+          "what": "done: PR380 remains OPEN at d0b04b5e0 without comments or reviews. Fresh SHA256 matches all three J1468 masters and Crew-2 source. J1471 remains blocked on approved ISS opening input; retry retained at 2026-11-03T13:06:28Z. Existing failed gates and J1356/Ben/date/credit/publishing holds preserved. NAS offload found no eligible old scratch; no media moved."
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
@@ -157457,7 +157462,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     }
   ],
   "focus": [],
