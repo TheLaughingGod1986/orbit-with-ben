@@ -105,6 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
 | J1904 | mini | open (after J1779) | – | – | 038 script · chief · 038 Voyager Golden Record: restore topic and editorial decision before facts and script lock | J1779 |
+| J1905 | mini | open (after J1780) | – | – | 039 script · chief · 039 Planet Sounds: restore topic and editorial decision before facts and script lock | J1780 |
 
 Recently finished:
 
