@@ -151018,19 +151018,24 @@
           "at": "2026-11-03T04:34Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking original rulings, current evidence, then recording readiness decision."
+        },
+        {
+          "at": "2026-11-03T04:34Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original rulings read: excluded identical bed, local-only listening, h43-LOOP and accepted sources remain binding."
         }
       ],
-      "remaining_action": "Verify J1100 bed clearance and local listening evidence",
+      "remaining_action": "Check current bed hashes and newer local listening records",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T04:34Z",
         "by": "codex",
-        "note": "Checking original rulings, current evidence, then recording readiness decision."
+        "note": "Original rulings read: excluded identical bed, local-only listening, h43-LOOP and accepted sources remain binding."
       },
       "taskKeys": [
         "OWB:027",
