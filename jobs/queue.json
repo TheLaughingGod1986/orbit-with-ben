@@ -158092,13 +158092,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T13:12Z",
-      "eta": "2026-11-03T15:12Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T13:10Z",
-      "result": "",
+      "result": "Verified bed and three audition hashes unchanged against 3e26b379b; no local review newer than 31 Oct. J1100 remains blocked at 2/3, next check 2026-11-03T14:10:26Z. Instrumental clearance and actual local listening unproven; excluded bed remains excluded. Required NAS offload found no eligible scratch, 2518 MB free before verification worktree, below h43 restart floor. Accepted sources, h43-LOOP, deadlines/v01 fallback retained. No spend, audio egress, media approval or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T13:10Z",
@@ -158129,6 +158129,11 @@
           "at": "2026-11-03T13:14Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unmet conditions with recheck J1830; retained 14:10:26Z retry, original 2/3 progress, source acceptances, h43-LOOP and deadlines."
+        },
+        {
+          "at": "2026-11-03T13:14Z",
+          "by": "codex",
+          "what": "done: Verified bed and three audition hashes unchanged against 3e26b379b; no local review newer than 31 Oct. J1100 remains blocked at 2/3, next check 2026-11-03T14:10:26Z. Instrumental clearance and actual local listening unproven; excluded bed remains excluded. Required NAS offload found no eligible scratch, 2518 MB free before verification worktree, below h43 restart floor. Accepted sources, h43-LOOP, deadlines/v01 fallback retained. No spend, audio egress, media approval or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits instrumental clearance, local listening and disk headroom",
@@ -158146,7 +158151,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1831",
