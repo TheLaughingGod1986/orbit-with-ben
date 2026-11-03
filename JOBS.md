@@ -99,6 +99,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1809 | mini | open | – | – | assembly · HOS desk: route elected Chief handoffs and safely refresh legacy watcher | J1754 |
 | J1810 | mini | open | – | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
+| J1812 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J1813 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
+| J1814 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1815 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
+| J1816 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
