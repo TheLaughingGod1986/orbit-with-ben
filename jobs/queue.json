@@ -161232,9 +161232,14 @@
           "at": "2026-11-03T18:23Z",
           "by": "codex",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-03T18:24Z",
+          "by": "codex",
+          "what": "step 1 of 5 done: Read both channel policies; OWB/HOS inboxes read. Daily Nov 1–3 exits 75 show nested self-lock conflict; direct OWB dry run succeeds."
         }
       ],
-      "remaining_action": "Verify live Buffer queues and daily mirror evidence",
+      "remaining_action": "Inspect live Buffer posts and prove daily lock failure",
       "due": "2026-11-03T17:24:21+00:00",
       "kind": "studio",
       "audit_key": "buffer-live-audit-2026-11-03",
@@ -161250,11 +161255,18 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-03T18:23Z",
-        "by": "codex"
-      }
+        "at": "2026-11-03T18:24Z",
+        "by": "codex",
+        "note": "Read both channel policies; OWB/HOS inboxes read. Daily Nov 1–3 exits 75 show nested self-lock conflict; direct OWB dry "
+      },
+      "taskKeys": [
+        "OWB:025",
+        "OWB:026",
+        "HOS:006",
+        "HOS:007"
+      ]
     },
     {
       "id": "J1871",
