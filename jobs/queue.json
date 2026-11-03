@@ -151254,13 +151254,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T04:44Z",
-      "eta": "2026-11-03T06:44Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T04:32Z",
-      "result": "",
+      "result": "Verified PR380 unchanged at d0b04b5e0; all three repaired masters and Crew-2 SHA256 match. No approved ISS opening input; J1471 remains blocked with retry 2026-11-03T05:32:27Z. Existing failed gates and all holds retained.",
       "history": [
         {
           "at": "2026-11-03T04:32Z",
@@ -151291,6 +151291,11 @@
           "at": "2026-11-03T04:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: Hold readback confirms blocked input, last_recheck J1719, checked_by codex and retained 2026-11-03 05:32:27 UTC retry"
+        },
+        {
+          "at": "2026-11-03T04:45Z",
+          "by": "codex",
+          "what": "done: Verified PR380 unchanged at d0b04b5e0; all three repaired masters and Crew-2 SHA256 match. No approved ISS opening input; J1471 remains blocked with retry 2026-11-03T05:32:27Z. Existing failed gates and all holds retained."
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
@@ -151307,7 +151312,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     }
   ],
   "focus": [],
