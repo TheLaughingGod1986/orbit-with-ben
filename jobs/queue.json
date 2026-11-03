@@ -161115,19 +161115,24 @@
           "at": "2026-11-03T18:43Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original J1471, J1855, J1844 FIX at 1474821f3 and J1846 scope at 001b6962f; replacement jobs unstarted, no acceptance recorded"
+        },
+        {
+          "at": "2026-11-03T18:43Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Retained J1471 input hold; next check matches J1846 recorded retry 2026-11-03 21:01:21Z"
         }
       ],
-      "remaining_action": "Record unchanged ISS-input hold and dependency retry",
+      "remaining_action": "Verify queue readback and report J1864 outcome",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T17:17:11+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T18:43Z",
         "by": "codex",
-        "note": "Read original J1471, J1855, J1844 FIX at 1474821f3 and J1846 scope at 001b6962f; replacement jobs unstarted, no acceptan"
+        "note": "Retained J1471 input hold; next check matches J1846 recorded retry 2026-11-03 21:01:21Z"
       },
       "taskKeys": [
         "OWB:030"
