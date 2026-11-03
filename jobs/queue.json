@@ -156578,19 +156578,24 @@
           "at": "2026-11-03T11:17Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh SHA256 matches AR1 v02, AR2 v07, AR3 v06; final export folder contains only those three. Saved gates FAIL: AR1 6.00s first cut; AR2 0.25 and AR3 1.41 below 1.50."
+        },
+        {
+          "at": "2026-11-03T11:18Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1356 blocked condition updated with current evidence; existing 12:01:12Z retry retained. No fresh gate PASS or audiovisual review claimed; all holds persist."
         }
       ],
-      "remaining_action": "Record unmet readiness condition and close verification",
+      "remaining_action": "Close completed J1815 verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T12:01:12+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T11:17Z",
+        "at": "2026-11-03T11:18Z",
         "by": "codex",
-        "note": "Fresh SHA256 matches AR1 v02, AR2 v07, AR3 v06; final export folder contains only those three. Saved gates FAIL: AR1 6.0"
+        "note": "J1356 blocked condition updated with current evidence; existing 12:01:12Z retry retained. No fresh gate PASS or audiovis"
       },
       "taskKeys": [
         "OWB:030"
