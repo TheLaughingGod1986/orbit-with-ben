@@ -160760,13 +160760,13 @@
       "stage": "",
       "after": "J1846",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-03T23:20Z",
-      "eta": "2026-11-04T01:20Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:58Z",
-      "result": "",
+      "result": "Private local handoff complete under J1912 scope amendment (no rerender, no source re-download, no public GitHub push of /private/tmp/J1847-wt eba37bfe7e; public_push_hold_preserved retained). Verified 5 local output MP4s in /Users/benjaminoats/_desk/cache/J1847/delivery (continuous_native 64bf39169da7c47da79805d7c40fa5a39bf49fae6f99df3bdc4249a6cf1d1afa, opening 44382ebfc58b63ea502669cf8925f91f0099f3e4e52071324957e6e7ef5241be, phone_continuous 0e9611306ba774423b19d50554c8560f634fadf1d1782240c7bfbdafb2af7b5b, phone_opening ea011edae05d3948666260e42cadd2e8f195f35dc1e2db363ddaab1794d69db6, preroll a426e77d106fe838ff4127646c6deca6b85da946b2aa63ff6d60b6ef7a6a2e84), 2 source hashes (iss.glb 3b03742fb55f2a495c4a72aaa2cb175aaeff5ee38f4f42b95f92083e30a464ef, earth.jpg 3ca40e6058ded3f7b8d777c1fcb3b167f9e1f9af9d1d3f15388e92c2c3d66fb3), unmodified gates (frame0_diff_0_1_5s=7.57 PASS, picture_qa PASS with 1 unresolved render WARN at 0:01, polish_gate PASS), and preserved cumulative budgets (8/45 worker min, 3/15 setup min, 5/90 render min, 99,474,165/500,000,000 download B, 841,007,230/2,000,000,000 scratch B, 2/2 candidates, 1/1 draft, 1/1 finalist, GBP0, 0 credits). Ready for J1848 Gemini native-video review -> J1849 Chief exact-input decision; J1471/J1356 and all AR1/AR2/AR3, Ben, date, credit, YouTube and Buffer holds preserved.",
       "history": [
         {
           "at": "2026-11-03T14:58Z",
@@ -160852,6 +160852,11 @@
           "at": "2026-11-03T23:23Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 complete: verified 5 output SHA256 hashes, 2 source SHA256 hashes, unmodified gates (motion 7.57, picture PASS with 1 WARN, polish PASS), and preserved budgets in /Users/benjaminoats/_desk/cache/J1847/delivery and clean local worktree /private/tmp/J1847-wt (eba37bfe7e) without rerendering or public GitHub push. Handed off privately to J1848 -> J1849."
+        },
+        {
+          "at": "2026-11-03T23:23Z",
+          "by": "gemini",
+          "what": "done: Private local handoff complete under J1912 scope amendment (no rerender, no source re-download, no public GitHub push of /private/tmp/J1847-wt eba37bfe7e; public_push_hold_preserved retained). Verified 5 local output MP4s in /Users/benjaminoats/_desk/cache/J1847/delivery (continuous_native 64bf39169da7c47da79805d7c40fa5a39bf49fae6f99df3bdc4249a6cf1d1afa, opening 44382ebfc58b63ea502669cf8925f91f0099f3e4e52071324957e6e7ef5241be, phone_continuous 0e9611306ba774423b19d50554c8560f634fadf1d1782240c7bfbdafb2af7b5b, phone_opening ea011edae05d3948666260e42cadd2e8f195f35dc1e2db363ddaab1794d69db6, preroll a426e77d106fe838ff4127646c6deca6b85da946b2aa63ff6d60b6ef7a6a2e84), 2 source hashes (iss.glb 3b03742fb55f2a495c4a72aaa2cb175aaeff5ee38f4f42b95f92083e30a464ef, earth.jpg 3ca40e6058ded3f7b8d777c1fcb3b167f9e1f9af9d1d3f15388e92c2c3d66fb3), unmodified gates (frame0_diff_0_1_5s=7.57 PASS, picture_qa PASS with 1 unresolved render WARN at 0:01, polish_gate PASS), and preserved cumulative budgets (8/45 worker min, 3/15 setup min, 5/90 render min, 99,474,165/500,000,000 download B, 841,007,230/2,000,000,000 scratch B, 2/2 candidates, 1/1 draft, 1/1 finalist, GBP0, 0 credits). Ready for J1848 Gemini native-video review -> J1849 Chief exact-input decision; J1471/J1356 and all AR1/AR2/AR3, Ben, date, credit, YouTube and Buffer holds preserved."
         }
       ],
       "remaining_action": "Mark J1847 done for private local handoff to J1848 -> J1849 and report on thread",
@@ -160886,7 +160891,8 @@
       },
       "urgent": 2,
       "due_kind": "user-immediate-claim",
-      "priority_scope_key": "Ben-ISS-text-deploy-followthrough"
+      "priority_scope_key": "Ben-ISS-text-deploy-followthrough",
+      "done_ref": "eba37bfe7e"
     },
     {
       "id": "J1848",
