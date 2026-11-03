@@ -104,6 +104,23 @@ def current_execution(at):
     return value
 
 
+def worker_capabilities():
+    return read_json(d("capabilities.json")) or {}
+
+
+def record_capabilities(agent, available, evidence, minutes, at):
+    """Record an observed tool capability, never infer it from agent availability."""
+    if agent not in chain() + list(routing.MINI_WORKERS) or not str(evidence).strip() or not 1 <= minutes <= 60:
+        raise ValueError("Capability reports need a known agent, actual probe evidence and a 1–60 minute lifetime")
+    names = [x.strip() for x in available.split(",") if x.strip()]
+    if any(not re.fullmatch(r"[a-z][a-z0-9_]{0,63}", x) for x in names):
+        raise ValueError("Use capability identifiers such as audio_input, not prose")
+    reports = worker_capabilities()
+    reports[agent] = {"at":iso(at), "expiresAt":iso(at+dt.timedelta(minutes=minutes)),
+                      "available":sorted(set(names)), "evidence":str(evidence).strip()}
+    write_json(d("capabilities.json"), reports)
+
+
 def first_dir(*cands) -> pathlib.Path:
     return next((c for c in cands if c.is_dir()), cands[0])
 
@@ -474,8 +491,11 @@ def pending_chief_reviews(at: dt.datetime) -> list:
     data = read_json(OWB / "jobs" / "queue.json") or {}
     by_id = {j["id"]: j for j in data.get("jobs", [])}
     due = workflow.deadlines(data.get("jobs", []))
+    capabilities = worker_capabilities()
+    leader = acting(at)[1] if any(j.get("required_capabilities") for j in data.get("jobs", [])) else ""
     return sorted((j for j in data.get("jobs", [])
                    if not workflow.external_hold(j, at) and not workflow.dependency_problem(j, by_id)
+                   and not workflow.capability_problem(j, leader, at, capabilities)
                    and (workflow.state(j, by_id, at) == "review" or (workflow.role_job(j) and workflow.state(j, by_id, at) == "queued"))),
                   key=lambda j: workflow.order(j, due, data.get("focus") or (), at))
 
@@ -609,6 +629,14 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    As soon as you choose the video(s), include --films HOS:006 (or OWB:028,OWB:029 for a shared job) on that progress
    command, and --note with the concrete outcome of each finished step. Keep the links on later progress updates.
    This connects the live job to the video's swim lane. A job parked for review is not an approved film stage.
+   Inspect your actual input tools once at session start. Record demonstrated audio_input/moving_video_input only
+   if this session can really perceive that medium (ffmpeg, ASR, a player window or a model name is not proof):
+     python3 scripts/chief_relay.py capabilities --agent {agent} --available '<demonstrated identifiers, or empty>' --evidence '<actual tool/probe result>'
+   If the assigned work cannot proceed because of an input capability, park it with a typed hold, not a generic
+   six-hour input retry: jobs.py wait <id> --agent {agent} --type capability --requires audio_input
+   --condition '<what input is unavailable and what was actually tested>' --check-at '<future UTC time>' --git.
+   For a condition verification, update its original parent with --recheck <verification id> and finish the
+   verification itself. Never claim to hear audio or review motion from text/stills/measurements.
    If it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue (on the HOS
    desk, or a Claude message on #99 asking the Chief for something with no Chief reply yet).
    If nothing is waiting anywhere, stop without posting.
@@ -1031,13 +1059,16 @@ def workers_up(at: dt.datetime) -> set:
     return {a for a in routing.MINI_WORKERS if state_of(a, at)[0]}
 
 
-def stranded_jobs(data: dict, up: set) -> list:
+def stranded_jobs(data: dict, up: set, at=None) -> list:
     """Jobs the relay already handed to a worker (rerouted_from) that haven't started, whose worker is now down (out of
     usage): they walk on down their chain. Jobs Claude or Chief addressed by hand (no rerouted_from) wait for that
     agent, e.g. a second opinion from Codex."""
+    capabilities = worker_capabilities()
+    at = at or now()
     return [j for j in data.get("jobs", []) if j.get("rerouted_from") and j.get("status") == "open"
             and j.get("for") in routing.MINI_WORKERS
-            and (j["for"] not in up or (j.get("model") and not routing.lane_ok(j["for"], j["model"])))]
+            and (j["for"] not in up or workflow.capability_problem(j,j["for"],at,capabilities)
+                 or (j.get("model") and not routing.lane_ok(j["for"], j["model"])))]
 
 
 def stalled_claims(data: dict, at: dt.datetime) -> list:
@@ -1105,11 +1136,13 @@ def reroute_work(at: dt.datetime) -> list:
         mark_down("claude", "a Claude job was blocked on a usage limit", at + dt.timedelta(hours=retry_h), at)
     if not out:
         hand_back_claude(data)
-    moves = [(j, routing.next_lane(j, "claude", up), f"Claude out of usage ({why})")
+    capabilities = worker_capabilities()
+    eligible = lambda j: {a for a in up if not workflow.capability_problem(j,a,at,capabilities)}
+    moves = [(j, routing.next_lane(j, "claude", eligible(j)), f"Claude out of usage ({why})")
              for j in claude_jobs_to_reroute(data, at, out)]
-    moves += [(j, routing.next_lane(j, j["for"], up, j.get("model") or ""), f"{NAMES.get(j['for'], j['for'])} is down too")
-              for j in stranded_jobs(data, up)]
-    moves += [(j, routing.next_lane(j, j["by"], up, j.get("model") or ""), f"{NAMES.get(j['by'], j['by'])} stopped answering on it (claim past its ETA)")
+    moves += [(j, routing.next_lane(j, j["for"], eligible(j), j.get("model") or ""), f"{NAMES.get(j['for'], j['for'])} is unavailable or lacks required input")
+              for j in stranded_jobs(data, up, at)]
+    moves += [(j, routing.next_lane(j, j["by"], eligible(j), j.get("model") or ""), f"{NAMES.get(j['by'], j['by'])} stopped answering on it (claim past its ETA)")
               for j in stalled_claims(data, at)]
     moved = []
     for j, lane, reason in moves:
@@ -1327,10 +1360,11 @@ def run_locked(at: dt.datetime) -> int:
     # longer outage goes in scripts/credit_flags.json with its true reset time.
     retry_h = float(os.environ.get("CHIEF_RETRY_H", "1"))
     # Ben, 12 Oct 2026: the Mini never idles. When a job ends, the next ready job starts straight away in this same
-    # run (no waiting for the next launchd tick); CHIEF_CHAIN_MAX bounds one run, and a job that comes straight back
-    # open (released to retry later) ends the chain so it isn't re-run in a tight loop.
+    # run (no waiting for the next launchd tick); CHIEF_CHAIN_MAX bounds one run.
+    # Already-attempted released tasks yield to others instead of ending the run.
     chain_max = int(os.environ.get("CHIEF_CHAIN_MAX", "12"))
     chained, last_ran = 0, None
+    attempted = set()
     reviewed = set()
     while True:
         desired = code_version()
@@ -1382,9 +1416,19 @@ def run_locked(at: dt.datetime) -> int:
             continue
         chief_reviews = [j for j in due_chief_reviews(chief_inbox, leader, at)
                          if j["id"] not in reviewed] if leader in routing.MINI_WORKERS else []
+        added = keep_busy()  # refill before selecting, so new ready work is seen in this pass
+        if added:
+            log(f"refill: added {' '.join(added)} from jobs/backlog.json")
         data = read_json(OWB / "jobs" / "queue.json") or {}
         selection = workflow.select_dispatch(data, at, leader, up, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
-                                             review_ids={j["id"] for j in chief_reviews}, execution=current_execution(at))
+                                             review_ids={j["id"] for j in chief_reviews}, execution=current_execution(at),
+                                             exclude=attempted, capabilities=worker_capabilities())
+        # An open/released job that already ran must not be rediscovered by the
+        # legacy fallback below. Continue other eligible jobs in this same run.
+        if not selection and attempted and data.get("jobs"):
+            log("chain: no unattempted eligible jobs; held work and retries preserved")
+            push_heartbeat(at, "idle", note="No unattempted eligible jobs; see queue holds and retry records")
+            return 0
         if not yield_monthly_for_dispatch(selection):
             return 0
         review_due = bool(selection and selection["mode"] == "review")
@@ -1414,9 +1458,6 @@ def run_locked(at: dt.datetime) -> int:
             not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120"))))
         if worker_only:
             sweep = False
-        added = keep_busy()  # every pass, not only when dry: keeps >=3 Mini jobs ready (Ben, 12 Oct 14:36)
-        if added:
-            log(f"refill: added {' '.join(added)} from jobs/backlog.json")
         reviews = chief_reviews if who == leader and not worker_only else []
         review_work = bool(reviews and review_due)
         if not queue_has_work(who) and not sweep and not review_work:
@@ -1533,30 +1574,42 @@ def run_locked(at: dt.datetime) -> int:
             fail_h = retry_h if addressed else float(os.environ.get("CHIEF_FAIL_RETRY_H", "1"))
             mark_down(who, f"its {'run for an addressed job' if addressed else 'last run'} failed (exit {code})",
                       now() + dt.timedelta(hours=fail_h), now())
+            if job:
+                walk_on(job, who, model, now(), reason=f"run failed (exit {code})")
             if who == leader:
                 at = now()  # a failed elected Chief yields to the next available Chief in this run
                 continue
-            return 0
+            at = now()
+            continue  # a failed specialist must not strand work for healthy workers
         chained += 1
         last_ran = job.get("id") if job else None
+        if job:
+            current = read_json(OWB / "jobs" / "queue.json") or {}
+            row = next((j for j in current.get("jobs", []) if j.get("id") == job["id"]), None)
+            # Never abandon an unfinished claim. Its owner must resume or park
+            # it; released/done/blocked tasks may yield to other work immediately.
+            if row and row.get("status") != "claimed":
+                attempted.add(job["id"])
         if chained >= chain_max or (not job and not review_work):
             return 0
         log(f"chain: {reviews[0]['id'] if review_work else last_ran} ended; checking remaining Chief duties and ready jobs ({chained}/{chain_max})")
         at = at + (now() - started)  # the run's own clock moved on by the job's length
 
 
-def walk_on(job: dict, who: str, model: str, at: dt.datetime) -> None:
+def walk_on(job: dict, who: str, model: str, at: dt.datetime, reason="out of usage") -> None:
     """`who` ran out of usage on `job`: if the job is still open or held by `who`, hand it to the next worker up in its
     chain (so it isn't left claimed by a worker that can't finish it). If nobody further down is up, it waits."""
     data = read_json(OWB / "jobs" / "queue.json") or {}
     cur = next((j for j in data.get("jobs", []) if j.get("id") == job.get("id")), None)
     if not cur or not (cur.get("status") == "open" or (cur.get("status") == "claimed" and cur.get("by") == who)):
         return
-    lane = routing.next_lane(cur, who, workers_up(at), model)
+    capabilities = worker_capabilities()
+    eligible = {a for a in workers_up(at) if not workflow.capability_problem(cur,a,at,capabilities)}
+    lane = routing.next_lane(cur, who, eligible, model)
     if not lane:
         log(f"chain: {cur['id']} waits: nobody after {who} in its chain is up")
         return
-    if reroute(cur, lane[0], lane_model(lane), f"{NAMES.get(who, who)} out of usage; next in its chain: {lane[0]}"):
+    if reroute(cur, lane[0], lane_model(lane), f"{NAMES.get(who, who)} {reason}; next in its chain: {lane[0]}"):
         log(f"chain: {cur['id']} rerouted from {who} to {lane[0]} on {lane[1]}")
 
 
@@ -1603,6 +1656,11 @@ def main(argv=None) -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status")
     sub.add_parser("run")
+    cp = sub.add_parser("capabilities", help="record a fresh, actually demonstrated worker tool capability")
+    cp.add_argument("--agent", required=True)
+    cp.add_argument("--available", default="", help="comma-separated demonstrated capabilities; empty means none")
+    cp.add_argument("--evidence", required=True, help="actual probe/result reference, never a model-name assumption")
+    cp.add_argument("--minutes", type=int, default=30)
     rp = sub.add_parser("review-progress")
     rp.add_argument("--agent", required=True)
     rp.add_argument("--job", required=True)
@@ -1618,6 +1676,9 @@ def main(argv=None) -> int:
     u.add_argument("agent")
     a = ap.parse_args(argv)
     at = now()
+    if a.cmd == "capabilities":
+        record_capabilities(a.agent, a.available, a.evidence, a.minutes, at)
+        return 0
     if a.cmd == "review-progress":
         review_progress(a.agent, a.job, a.step, a.note, at)
         return 0

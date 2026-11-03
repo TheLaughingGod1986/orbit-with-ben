@@ -441,7 +441,7 @@ def quick_key(remote=ls_remote) -> str | None:
         parts.append((HOME / "_desk" / "state" / "chief" / "current.json").read_text())
     except OSError:
         parts.append("")
-    for name in ("active.json", "inbox.json", "execution.json", "runner.json"):
+    for name in ("active.json", "inbox.json", "execution.json", "runner.json", "capabilities.json"):
         try:
             parts.append((CHIEF_STATE / name).read_text())
         except OSError:
@@ -450,6 +450,8 @@ def quick_key(remote=ls_remote) -> str | None:
     parts.append(chief_work(now(), CHIEF_STATE, (_read_json(CHIEF_STATE / "current.json") or {}).get("agent", ""), [])["active"])
     import chief_relay as relay
     parts.append(relay.current_execution(now()))  # launch, exit and expiry invalidate the quick cache
+    parts.append({a: r for a,r in relay.worker_capabilities().items()
+                  if workflow.timestamp(r.get("expiresAt")) and workflow.timestamp(r["expiresAt"]) > now()})
     return digest(parts)
 
 
@@ -476,7 +478,7 @@ def dispatch_snapshot(board: dict, at: dt.datetime, queue_path: pathlib.Path | N
     active = ((board.get("models") or {}).get("chiefWork") or {}).get("active")
     chooser = lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), "")
     return workflow.snapshot(data, at, chief, up, chooser, active, {j["id"] for j in due}, execution=relay.current_execution(at),
-                             include_chief=any(r.get("agent") == chief and r.get("up") for r in rows))
+                             include_chief=any(r.get("agent") == chief and r.get("up") for r in rows), capabilities=relay.worker_capabilities())
 
 
 def run_once(a) -> int:
