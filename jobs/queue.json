@@ -160206,13 +160206,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T15:38Z",
-      "eta": "2026-11-03T17:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T15:13Z",
-      "result": "",
+      "result": "Verified J1844 FIX at 1474821f3 and J1846 scope at 001b6962f. No accepted ISS replacement exists; J1846 publication-approval hold and unstarted J1847-J1849 chain remain. Recorded J1471 wait with recheck J1855 and original 16:13:46Z retry. Readback assertions PASS; J1356 and all media/Ben/date/credit/publishing holds preserved. No independent playback, spend or publishing change.",
       "history": [
         {
           "at": "2026-11-03T15:13Z",
@@ -160243,6 +160243,11 @@
           "at": "2026-11-03T15:39Z",
           "by": "codex",
           "what": "step 3 of 3 done: Readback PASS after accounting for UTC Z normalization: hold, retry instant, J1356 and dependencies preserved"
+        },
+        {
+          "at": "2026-11-03T15:39Z",
+          "by": "codex",
+          "what": "done: Verified J1844 FIX at 1474821f3 and J1846 scope at 001b6962f. No accepted ISS replacement exists; J1846 publication-approval hold and unstarted J1847-J1849 chain remain. Recorded J1471 wait with recheck J1855 and original 16:13:46Z retry. Readback assertions PASS; J1356 and all media/Ben/date/credit/publishing holds preserved. No independent playback, spend or publishing change."
         }
       ],
       "remaining_action": "Verification complete; J1471 retains its ISS-input hold",
