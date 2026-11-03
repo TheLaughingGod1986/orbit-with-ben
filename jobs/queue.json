@@ -149525,19 +149525,24 @@
           "at": "2026-11-03T01:47Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: check scope and approvals; verify current evidence; record hold decision and finish verification."
+        },
+        {
+          "at": "2026-11-03T01:47Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Scope and approval history checked. PR380 remains OPEN at d0b04b5e0 with no comments or reviews; J1471 input hold unchanged."
         }
       ],
-      "remaining_action": "Verify corrected AR exports and review evidence for J1356",
+      "remaining_action": "Verify current exports against the recorded failed gates",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T02:31:21+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T01:47Z",
         "by": "codex",
-        "note": "Plan: check scope and approvals; verify current evidence; record hold decision and finish verification."
+        "note": "Scope and approval history checked. PR380 remains OPEN at d0b04b5e0 with no comments or reviews; J1471 input hold unchan"
       },
       "taskKeys": [
         "OWB:030"
