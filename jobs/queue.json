@@ -72817,18 +72817,22 @@
           "at": "2026-11-03T08:10Z",
           "by": "relay",
           "what": "condition verification queued: J1738"
+        },
+        {
+          "at": "2026-11-03T08:13Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T14:15:00Z"
         }
       ],
       "kind": "vo",
       "remaining_action": "Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
       "hold": {
         "type": "input",
-        "condition": "Verified 2026-11-03 02:05Z: HOS main 4bd9357b, PRs through 398, desk through 2026-11-03 01:59Z and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Approve replacement wording and recording scope first; fresh live credit reading before future authorised spend. All production and Ben gates remain.",
-        "check_at": "2026-11-03T09:10:32+00:00",
-        "last_recheck": "J1701",
-        "checked_at": "2026-11-03T02:04:10+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1738"
+        "condition": "Verified 2026-11-03 08:13Z: HOS main ab6e8124, PRs through 398, desk through 08:05Z and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR 366 retains the block: both one minute and one second required; speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Preserve existing v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Approve replacement wording and recording scope first; fresh live credit reading before future authorised spend. All production and Ben gates remain.",
+        "check_at": "2026-11-03T14:15:00Z",
+        "last_recheck": "J1738",
+        "checked_at": "2026-11-03T08:13:16+00:00",
+        "checked_by": "codex"
       }
     },
     {
