@@ -108,7 +108,7 @@ class Timestamps(unittest.TestCase):
 
 class LegacyDependencyHolds(unittest.TestCase):
     def test_overdue_dependency_without_after_still_requests_verification(self):
-        job={'id':'J1213','status':'blocked','hold':{'type':'dependency','condition':'Wait for J1218 repairs','check_at':'2026-10-30T15:00:00Z'}}
+        job={'id':'J1213','title':'HOS008 edit','status':'blocked','hold':{'type':'dependency','condition':'Wait for J1218 repairs','check_at':'2026-10-30T15:00:00Z'}}
         self.assertTrue(w.hold_due(job,{'J1213':job},AT))
         data={'jobs':[job],'next_id':2000}
         ids=jobs.reconcile_holds(data,AT)
