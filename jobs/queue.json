@@ -162196,13 +162196,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-03T20:32Z",
-      "eta": "2026-11-03T21:02Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:54Z",
-      "result": "",
+      "result": "Waiting for: J1889 must independently watch and hear exact recovered Studio candidates; this session tool inspection demonstrated neither audio nor moving-video perception. Both full ffmpeg decodes pass but do not establish identity/quality acceptance. Evidence PR427; no repeat downloads or source search.",
       "history": [
         {
           "at": "2026-11-03T18:54Z",
@@ -162238,9 +162238,19 @@
           "at": "2026-11-03T20:38Z",
           "by": "codex",
           "what": "step 2 of 3 done: Evidence PR427 / 88c016c70b committed; both full decodes exit0. J1889 queued with audio_input,moving_video_input requirements. No audiovisual acceptance or source-ready claim; both registry holds unchanged."
+        },
+        {
+          "at": "2026-11-03T20:38Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J1889 must independently watch and hear exact recovered Studio candidates; this session tool inspection demonstrated neither audio nor moving-video perception. Both full ffmpeg decodes pass but do not establish identity/quality acceptance. Evidence PR427; no repeat downloads or source search."
+        },
+        {
+          "at": "2026-11-03T20:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T06:00:00Z"
         }
       ],
-      "remaining_action": "J1889 must watch/hear both recovered candidates before any social-source exception",
+      "remaining_action": "Await capability-qualified J1889 acceptance review; keep Mars missing-original and Titan mismatch holds",
       "due": "2026-11-04T07:00:00Z",
       "kind": "assembly",
       "recovery_scope_key": "J1874:sources",
@@ -162253,6 +162263,19 @@
       },
       "taskKeys": [
         "OWB:025"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "J1889 must independently watch and hear exact recovered Studio candidates; this session tool inspection demonstrated neither audio nor moving-video perception. Both full ffmpeg decodes pass but do not establish identity/quality acceptance. Evidence PR427; no repeat downloads or source search.",
+        "check_at": "2026-11-04T06:00:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
       ]
     },
     {
