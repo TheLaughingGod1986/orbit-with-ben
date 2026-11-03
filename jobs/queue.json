@@ -158862,13 +158862,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T14:20Z",
-      "eta": "2026-11-03T16:20Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T14:10Z",
-      "result": "",
+      "result": "Fresh Atom Studio reload 3 Nov 14:21 UTC still shows A/B testing titles / Results ready, original title and Public. J0978 remains blocked; next check 3 Nov 20:25 UTC. Evidence PR 411 merged after CI PASS; HOS audit 62 videos, 0 errors. No YouTube change or spend.",
       "history": [
         {
           "at": "2026-11-03T14:10Z",
@@ -158899,6 +158899,11 @@
           "at": "2026-11-03T14:22Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence PR 411 passed CI and merged; J0978 retained blocked with next check 3 Nov 20:25 UTC. HOS audit: 62 videos, 0 errors."
+        },
+        {
+          "at": "2026-11-03T14:23Z",
+          "by": "codex",
+          "what": "done: Fresh Atom Studio reload 3 Nov 14:21 UTC still shows A/B testing titles / Results ready, original title and Public. J0978 remains blocked; next check 3 Nov 20:25 UTC. Evidence PR 411 merged after CI PASS; HOS audit 62 videos, 0 errors. No YouTube change or spend."
         }
       ],
       "remaining_action": "Verification complete; J0978 awaits title-test clearance",
@@ -158915,7 +158920,8 @@
       },
       "taskKeys": [
         "HOS:004"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/411"
     },
     {
       "id": "J1837",
