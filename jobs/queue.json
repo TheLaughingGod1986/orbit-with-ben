@@ -1,5 +1,5 @@
 {
-  "next_id": 1869,
+  "next_id": 1870,
   "jobs": [
     {
       "id": "J0001",
@@ -154536,6 +154536,11 @@
           "at": "2026-11-03T10:37Z",
           "by": "codex",
           "what": "blocked: Capability blocker: actual listening required, but this Codex session has no audio input. Technical evidence remains PASS at 1/3; no audio heard and no final approval. Resume J1753 only with an elected Chief able to hear local audio; then record listening and VO-only PASS/FIX. Blocked rather than released after repeated identical dispatches; existing review_J1753 evidence and stage follow-up remain valid. No media correction or spend."
+        },
+        {
+          "at": "2026-11-03T17:02Z",
+          "by": "relay",
+          "what": "condition verification queued: J1869"
         }
       ],
       "remaining_action": "Complete actual listening of v02b with an audio-capable elected Chief and record VO-only PASS or FIX",
@@ -154553,7 +154558,8 @@
       "hold": {
         "type": "input",
         "condition": "Capability blocker: actual listening required, but this Codex session has no audio input. Technical evidence remains PASS at 1/3; no audio heard and no final approval. Resume J1753 only with an elected Chief able to hear local audio; then record listening and VO-only PASS/FIX. Blocked rather than released after repeated identical dispatches; existing review_J1753 evidence and stage follow-up remain valid. No media correction or spend.",
-        "check_at": "2026-11-03T16:37:51+00:00"
+        "check_at": "2026-11-03T18:02:45+00:00",
+        "recheck_task": "J1869"
       }
     },
     {
@@ -160993,6 +160999,37 @@
       "due": "2026-11-03T17:56:19Z",
       "kind": "chief",
       "review_request": "HOS-008:v03:2026-11-03T16:08:33.439Z"
+    },
+    {
+      "id": "J1869",
+      "title": "Chief: verify condition for J1753",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1753: Capability blocker: actual listening required, but this Codex session has no audio input. Technical evidence remains PASS at 1/3; no audio heard and no final approval. Resume J1753 only with an elected Chief able to hear local audio; then record listening and VO-only PASS/FIX. Blocked rather than released after repeated identical dispatches; existing review_J1753 evidence and stage follow-up remain valid. No media correction or spend.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1753 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-03T17:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T17:02Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Complete actual listening of v02b with an audio-capable elected Chief and record VO-only PASS or FIX",
+      "kind": "chief",
+      "recheck_of": "J1753",
+      "due": "2026-11-03T18:02:45+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
