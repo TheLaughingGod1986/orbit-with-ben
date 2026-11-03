@@ -1,5 +1,5 @@
 {
-  "next_id": 1844,
+  "next_id": 1845,
   "jobs": [
     {
       "id": "J0001",
@@ -159258,6 +159258,36 @@
       ],
       "remaining_action": "Implement measured execution capacity, portable MacBook fallback and honest next-slot reporting",
       "kind": "assembly"
+    },
+    {
+      "id": "J1844",
+      "title": "AR2 ISS: Gemini moving-preview review of J1834 candidate",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben asks the next available capable agent to take delivered candidate review now, not wait for a follow-up clock. Gemini is reported available on the Mini. J1841 verified all five J1834 delivery hashes/sizes but its Codex session could not view moving video. Use the established Gemini native/multimodal moving-review approach previously used for J1193; verify the actual tool accepts video input before claiming any viewing. If unsupported, report the concrete capability failure immediately and retain the gate; do not substitute ASR/still frames for actual motion review or repeatedly reread hashes.\n\nSpecialist review of J1834 candidate only (records 406f91068 on codex/J1834-acquisition, PR410). Read J1834 exact acquisition scope, J1833 ruling and J1841/PR413. Verify the persistent approved-source cache under /Users/benjaminoats/_desk/cache/J1834/ without copying into git. Watch feather_candidate_T545.mp4 plus native, phone and one-second-preroll previews using an actually supported visual input. Check identifiable ISS modules/truss/arrays at frame0, cropped Dragon/recognition, coherent soft fill, true upscale<=2.35x, native continuous motion, exact 3.4s interval and seam. Metric1.54 and picture/polish PASS alone do not clear softness/creative WARNs. Record what was actually viewed, exact source/hash/in-out/recipe, specific times and KEEP/FIX recommendation with evidence. Do not re-render AR masters, generate media, spend, upload, retitle, schedule or change visibility. No source-audio/API egress; this is a silent-source visual review.\n\nThis is an advisory specialist review under current Chief delegation, not an election of Gemini as Chief and not final video/input approval. Return the specific native-moving assessment to the elected Chief for the recorded source decision. Existing requirement for Chief actual-moving acceptance must be resolved explicitly by that Chief, never silently waived. J1471 remains sole correction worker and J1356 final-watch owner; all gate/Ben/date/credit holds remain. At delivery, leave an explicit Chief decision task or linked review handoff, not a generic timed recheck. Reference J1834 and OWB030 in progress. Due now reflects Ben's ASAP routing request, not a promised completion or publication time.\n",
+      "ref": "J1834",
+      "film": "",
+      "stage": "",
+      "after": "J1833",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T14:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T14:30Z",
+          "by": "codex",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Gemini verifies native video input and reviews delivered ISS candidate; Chief retains final approval",
+      "due": "2026-11-03T14:30:08Z",
+      "for": "gemini",
+      "kind": "review"
     }
   ],
   "focus": [],

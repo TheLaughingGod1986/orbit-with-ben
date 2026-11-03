@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1840 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1842 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 | J1843 | mini | open | – | – | assembly · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
+| J1844 | mini | open (after J1833) | – | – | for gemini · review · AR2 ISS: Gemini moving-preview review of J1834 candidate | J1834 |
 
 Recently finished:
 
