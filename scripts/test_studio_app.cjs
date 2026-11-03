@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {videoProductionRow, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -89,7 +89,7 @@ const flagOnly = t.summary({tracker: {videos: [v({key: 'f', working: true})]}, m
 assert.equal(flagOnly.working.length, 0);
 assert.equal(flagOnly.jobs.working, 0);
 const ov = t.renderTab('overview', {tracker: {videos: []}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [{id: 'J1', status: 'claimed', by: 'gemini', title: 'x'}]}}, NOW);
-assert(ov.includes('1 active job') && !ov.includes('J1') && !ov.includes('Agents working now'), 'studio jobs stay counted in compact activity without raw cards');
+assert(ov.includes('J1') && ov.includes('active-job-card') && !ov.includes('Agents working now'), 'the compact activity card opens its actual job');
 // Every video opens in the hub, never the old board; the detail shows the agent work and its reasons.
 for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) assert(!t.renderTab(tab, board, NOW).includes('/board'), `${tab} never links to /board`);
 const det = t.detail({tracker: {videos: [v({key: 'OWB:005', line: 'Held up by the audit', jobs: [
@@ -124,7 +124,7 @@ assert(t.renderTab('agents', board, NOW).includes('Grok'));
 const batch = {status: 'claimed', id: 'J1100', by: 'codex', title: 'batch C'};
 const ovb = t.renderTab('overview', {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]}),
   v({key: 'c', number: '027', type: 'short', jobs: [batch]})]}, models: {checkedAt: new Date(NOW).toISOString()}, owb: {jobs: [batch]}}, NOW);
-assert(ovb.includes('1 active job') && !ovb.includes('J1100'), 'a shared job is counted once without exposing its title');
+assert(ovb.includes('J1100') && !ovb.includes('other active job'), 'a shared job is shown once');
 assert.equal(t.jobGroups([v({key: 'a', jobs: [batch]}), v({key: 'b', jobs: [batch]})]).length, 1);
 // Videos: a batch job shows its progress once; the other videos say they share it.
 const vb = {tracker: {videos: [v({key: 'a', number: '027', jobs: [batch]}), v({key: 'b', number: '028', jobs: [batch]})]}};
@@ -253,6 +253,22 @@ const ytReady=v({key:'physical',youtube:{videoId:'abcdefghijk',state:'private'}}
 assert.equal(t.uniqueVideos([ytReady,{...ytReady,key:'alias'},ytReady]).length,1);
 assert.equal(t.uniqueVideos([v({key:'same'}),v({key:'same',youtube:{videoId:'abcdefghijk'}})]).length,1);
 assert.equal(t.producingVideos([v({key:'backlog',lane:'upcoming',production:nearlyDone.production})]).length,0,'backlog milestones do not silently promote a video into active production');
+
+const runningTask={id:'Jactual',status:'claimed',by:'codex',title:'Assemble the film',remaining_action:'Finish the recorded edit',claimedAt:new Date(NOW-10*6e4).toISOString(),progress:{step:2,of:5}};
+const activityBoard={tracker:{videos:[]},models:freshModels,owb:{jobs:[runningTask,{id:'q',status:'open'},{id:'h',status:'blocked'}]}};
+const activeHtml=t.activityCard(activityBoard,NOW);
+assert(activeHtml.includes('Codex is working')&&activeHtml.includes('Jactual')&&activeHtml.includes('Finish the recorded edit'));
+assert(activeHtml.includes('2 of 5 steps · 40%')&&activeHtml.includes('Task ETA: ~15m remaining (estimate)'));
+assert(activeHtml.includes('#agents&job=Jactual')&&activeHtml.includes('1 queued · 1 on hold'));
+const multipleHtml=t.activityCard({...activityBoard,owb:{jobs:[runningTask,{...runningTask,id:'Jsecond'}]}},NOW);
+assert(multipleHtml.includes('+1 other active job'));
+const missingHtml=t.activityCard({...activityBoard,owb:{jobs:[{...runningTask,progress:null,claimedAt:''}]}},NOW);
+assert(!missingHtml.includes('role="progressbar"')&&missingHtml.includes('Task progress not recorded')&&missingHtml.includes('Task ETA unavailable'));
+const idleHtml=t.activityCard(makeBoard([]),NOW);
+assert(idleHtml.includes('Studio waiting for next job')&&!idleHtml.includes('role="progressbar"'));
+for(const progress of [{step:-1,of:5},{step:6,of:5},{step:2,of:0},{step:1.5,of:5}, {step:'<img>',of:5}]) assert.equal(t.recordedTaskProgress({progress}),null);
+assert(!t.activityCard({...activityBoard,owb:{jobs:[{...runningTask,progress:{step:5,of:5},estMin:100}]}},NOW).includes('Task ETA: ~'));
+console.log('Studio active-job card checks OK');
 
 // Published status overrides stale production lanes and follow-up jobs, without fabricating 100% history.
 const publicMissing=v({key:'published',lane:'progress',youtube:{state:'live',privacy:'public',videoId:'abcdefghijk'},jobs:[{id:'followup',status:'claimed',progress:{step:1,of:2}}]});

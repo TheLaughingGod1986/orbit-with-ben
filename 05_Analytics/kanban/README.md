@@ -201,3 +201,18 @@ shortcut remain; transient refresh errors retain loaded content and an initial f
 automatic-retry message. V2 technical disclosures and UAT notes remain protected.
 
 See `docs/review/studio-v3/QA.md` for definitions, before/after captures and executed tests.
+
+### Overview active job card
+
+Studio activity shows one deduplicated `claimed` job from the existing board, prioritising recorded
+urgency and otherwise preserving publisher order. It includes the recorded agent, ID, current
+action (or title), valid integer step counts and the existing task ETA estimate when its inputs
+are available. Percentages are task steps only; missing/invalid counts produce no bar. Completed
+reported steps do not leave a countdown. Long actions are shortened on the card and remain intact
+in Agents. Additional active jobs are counted, and queued/on-hold totals remain in the footer.
+
+`#agents&job=<encoded-id>` opens the queue, highlights the corresponding row and scrolls/focuses it
+once on entry. Subsequent refreshes update the card without forcing repeated scrolling. The normal
+board polling and all UAT/publishing behaviour are unchanged. Tests: `test_studio_app.cjs` and
+`test_studio_activity_browser.cjs` cover active, idle, multiple, missing/invalid progress, supported
+ETA, queue linking and refresh transitions; the existing tab/UAT and failure suites also pass.
