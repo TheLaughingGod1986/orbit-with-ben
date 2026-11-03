@@ -161836,13 +161836,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T20:39Z",
-      "eta": "2026-11-03T22:39Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:30Z",
-      "result": "",
+      "result": "Decision/routing complete, not Buffer restoration: retained exact approved_scope and existing J1878 external-write approval hold plus J1879/J1889 source-capability review. Reviewed merged repair PR422; accepted and merged read-only validation PR424 (997a585408). Decision record PR428/c6aca230e3; reports OWB6614952082 HOS6614953509. No duplicate jobs, recovery writes or media approval.",
       "history": [
         {
           "at": "2026-11-03T18:30Z",
@@ -161883,6 +161883,11 @@
           "at": "2026-11-03T20:42Z",
           "by": "codex",
           "what": "step 3 of 3 done: Decision PR428; validation PR424 merged. Reported OWB6614952082 and HOS6614953509. No recovery writes or media PASS; existing holds preserved."
+        },
+        {
+          "at": "2026-11-03T20:42Z",
+          "by": "codex",
+          "what": "done: Decision/routing complete, not Buffer restoration: retained exact approved_scope and existing J1878 external-write approval hold plus J1879/J1889 source-capability review. Reviewed merged repair PR422; accepted and merged read-only validation PR424 (997a585408). Decision record PR428/c6aca230e3; reports OWB6614952082 HOS6614953509. No duplicate jobs, recovery writes or media approval."
         }
       ],
       "remaining_action": "Decision complete; execution remains with J1878 and source acceptance with J1879/J1889",
@@ -161928,7 +161933,8 @@
       "taskKeys": [
         "OWB:025",
         "HOS:005"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/428"
     },
     {
       "id": "J1875",
