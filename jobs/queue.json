@@ -164230,13 +164230,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T22:13Z",
-      "eta": "2026-11-04T00:13Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T22:12Z",
-      "result": "",
+      "result": "Verified clean local evidence commit 001b6962f, 12 subsequent thread comments through 6616702104, and no PR for codex/J1846-scope. No explicit public-payload approval found. J1846 remains blocked at 2/3; last_recheck J1908, recorded 2026-11-03T23:12:06Z retry retained. Queue assertions PASS; J1847-J1849 chain and J1471/J1356 holds intact. No rejected-push retry, spend, media approval or publishing change.",
       "history": [
         {
           "at": "2026-11-03T22:12Z",
@@ -164267,6 +164267,11 @@
           "at": "2026-11-03T22:14Z",
           "by": "codex",
           "what": "step 3 of 3 done: Queue assertions PASS: J1846 blocked at 2/3, last_recheck J1908, original 23:12:06Z retry retained; successor chain and J1471/J1356 holds intact."
+        },
+        {
+          "at": "2026-11-03T22:14Z",
+          "by": "codex",
+          "what": "done: Verified clean local evidence commit 001b6962f, 12 subsequent thread comments through 6616702104, and no PR for codex/J1846-scope. No explicit public-payload approval found. J1846 remains blocked at 2/3; last_recheck J1908, recorded 2026-11-03T23:12:06Z retry retained. Queue assertions PASS; J1847-J1849 chain and J1471/J1356 holds intact. No rejected-push retry, spend, media approval or publishing change."
         }
       ],
       "remaining_action": "Verification complete; J1846 still requires explicit payload publication approval",
