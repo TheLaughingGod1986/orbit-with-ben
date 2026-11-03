@@ -158267,10 +158267,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T13:23Z",
+      "eta": "2026-11-03T15:23Z",
       "created_by": "relay",
       "created_at": "2026-11-03T13:10Z",
       "result": "",
@@ -158279,13 +158279,26 @@
           "at": "2026-11-03T13:10Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T13:23Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await approved ISS input, corrected AR masters and complete gate and audiovisual review evidence",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T14:10:26+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T13:23Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1832",
