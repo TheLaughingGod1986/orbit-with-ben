@@ -162252,13 +162252,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-03T19:51Z",
-      "eta": "2026-11-03T21:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T19:08Z",
-      "result": "",
+      "result": "Verified J1825 captions serving (AUieDabCf3D4RCt_2m-WbndPN0jO3XF3OcJL80UsskzNVMz069eBDahiEzndhgn_Xb7MLc6sikYd1k_44NI), published /private/tmp/J1825-wt commit 765b4fa9c (0086351449), issued elected-Chief end screen/card approval (jobs/reviews/J1882/DECISION.md, ee5291fb9c), and reopened/handed back J1825 for Studio CDP 9223 installation and readback.",
       "history": [
         {
           "at": "2026-11-03T19:08Z",
@@ -162289,6 +162289,11 @@
           "at": "2026-11-03T19:58Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Reopened and handed back J1825 with elected-Chief end screen/card approval"
+        },
+        {
+          "at": "2026-11-03T19:58Z",
+          "by": "gemini",
+          "what": "done: Verified J1825 captions serving (AUieDabCf3D4RCt_2m-WbndPN0jO3XF3OcJL80UsskzNVMz069eBDahiEzndhgn_Xb7MLc6sikYd1k_44NI), published /private/tmp/J1825-wt commit 765b4fa9c (0086351449), issued elected-Chief end screen/card approval (jobs/reviews/J1882/DECISION.md, ee5291fb9c), and reopened/handed back J1825 for Studio CDP 9223 installation and readback."
         }
       ],
       "remaining_action": "Complete J1882 verification task",
@@ -162305,7 +162310,8 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "done_ref": "ee5291fb9c"
     },
     {
       "id": "J1883",
