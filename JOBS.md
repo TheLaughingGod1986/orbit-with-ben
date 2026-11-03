@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1817 | mini | open (after J1761) | – | – | 013 edit · chief · OWB 013: establish long edit provenance after cancelled Short claim |  |
 | J1823 | mini | blocked | codex | – | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
 | J1825 | mini | blocked | codex | – | 026 upload · for codex · studio · `gpt-6.1-sol` · 026 upload finish: install approved en-GB captions and verify Studio end screen/cards |  |
-| J1834 | mini | open (after J1833) | – | – | 030 edit · assembly · AR2: acquire a real ISS opening candidate for J1471 |  |
+| J1834 | mini | open (after J1833) | – | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
 
 Recently finished:
 
