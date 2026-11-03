@@ -1,5 +1,5 @@
 {
-  "next_id": 1881,
+  "next_id": 1882,
   "jobs": [
     {
       "id": "J0001",
@@ -161943,6 +161943,35 @@
       "remaining_action": "Map six Ben notes to source and VO, prepare bounded no-spend correction recipe",
       "due": "2026-11-04T12:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J1881",
+      "title": "Chief: review Franklin six-note correction recipe and scope production handoffs",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Dependent review for J1868 Franklin v03 six-note correction intake. After the correction-preparation predecessor delivers, elected Chief checks chief_relay.py status and reviews its exact six-row source/VO mapping and proposed edit recipe against Ben's original 2026-11-03T16:08:33.439Z review and h22/h35 locks. Read current review first; do not duplicate superseded work.\n\nDecide the concrete bounded correction scope. No generation, replacement render, upload or watch-object publication is authorized by this planning job itself. If feasible, queue a separately scoped no-spend new-version assembly job with exact assets/intervals, preservation requirements and all original gates, then a dependent media-capable QA/Chief review. If assets are missing, explicitly scope the permitted HOS Flow/Veo route, bounded takes and credit cap under live-balance/no-overage rules in a separate job; never waive a gate, use a still workaround or rewrite locked VO. Verify reviewer media-input capability before assignment; no moving/audio PASS from stills or measurements alone. Review all six corrections in context and the full cut, with phone readability, VO sync, music/SFX and unchanged-window checks. Chief media decision then Ben's finished-film watch remain required.\n\nDo not finish this review with only prose about later work: record actionable assembly/QA successor IDs and owners/dependencies, or a concrete input hold. Marking this intake handled means tracked, not corrected/approved. Preserve the original review, notes and timestamps, J1297 and v03 hash cf1561c2...3099b, historical h22/h35 evidence and all older cuts. J1755 owns the separate browser-delivery hold: its automatic approval rejection remains intact, no R2 publication under this task. No YouTube or schedule change. Do not infer unknown milestones complete from the master. GBP0.\n",
+      "ref": "J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z",
+      "film": "008",
+      "stage": "edit",
+      "after": "J1880",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T18:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T18:57Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review J1880 recipe, scope bounded corrections and queue capable media QA",
+      "due": "2026-11-04T14:00:00Z",
+      "kind": "chief"
     }
   ],
   "focus": [],
