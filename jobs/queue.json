@@ -158811,19 +158811,24 @@
           "at": "2026-11-03T14:17Z",
           "by": "codex",
           "what": "done: Verified latest J1838/J1100 and original approvals. Three local audition hashes match 3e26b379b; newest evidence remains 31 Oct, listening NOT PERFORMED. PR333 OPEN unchanged at 0a7fcb6ad without reviews/comments. J0936 remains blocked; retry 2026-11-03T15:10:42Z. Cleared instrumental bed, local listening, v07 repairs, final gates, durable hashes and replacement approvals remain unproven. About 7.4 GB free below restart floor; safe NAS offload found no eligible scratch. Preserved historical progress, accepted sources, J1032 PASS, completed swaps and scheduled fallbacks. No spend, audio egress or publishing changes."
+        },
+        {
+          "at": "2026-11-03T14:19Z",
+          "by": "codex",
+          "what": "step 3 of 3 recorded after completion: final hold update succeeded; repaired missed progress write caused by transient git pull failure."
         }
       ],
-      "remaining_action": "Record unmet conditions and retain J0936 hold",
+      "remaining_action": "Verification complete; J0936 awaits audio clearance, repairs and approvals",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-03T15:10:42+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T14:17Z",
+        "at": "2026-11-03T14:19Z",
         "by": "codex",
-        "note": "Three audition hashes match 3e26b379b; newest evidence remains 31 Oct and listening NOT PERFORMED. PR333 unchanged, OPEN"
+        "note": "Verification and hold update completed; final progress corrected after transient git pull failure before done."
       },
       "taskKeys": [
         "OWB:026",
