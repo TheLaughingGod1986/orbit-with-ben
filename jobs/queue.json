@@ -163267,19 +163267,24 @@
           "at": "2026-11-03T21:10Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: read original evidence; check subsequent approval; record condition and verify queue."
+        },
+        {
+          "at": "2026-11-03T21:11Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original scope, hold history and clean evidence commit 001b6962f; no media approval is part of this verification."
         }
       ],
-      "remaining_action": "Verify public-branch approval, update J1846 hold, and close verification",
+      "remaining_action": "Check subsequent approval and preserve or release J1846 hold",
       "kind": "chief",
       "recheck_of": "J1846",
       "due": "2026-11-03T14:30:08+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T21:10Z",
+        "at": "2026-11-03T21:11Z",
         "by": "codex",
-        "note": "Plan: read original evidence; check subsequent approval; record condition and verify queue."
+        "note": "Read original scope, hold history and clean evidence commit 001b6962f; no media approval is part of this verification."
       },
       "taskKeys": [
         "OWB:030"
