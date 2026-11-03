@@ -1,5 +1,5 @@
 {
-  "next_id": 1826,
+  "next_id": 1827,
   "jobs": [
     {
       "id": "J0001",
@@ -157857,6 +157857,35 @@
         "condition": "Evidence publication blocked by automatic approval review: public origin rejected for private-video operational readbacks. Local commit 765b4fa9c in /private/tmp/J1825-wt; captions serving. End screen/cards require scoped finish decision; upload remains incomplete.",
         "check_at": "2026-11-03T18:53:26+00:00"
       }
+    },
+    {
+      "id": "J1826",
+      "title": "028: review and land J1103 delivery PR315; reconcile Related targets",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1769 FIX: complete the orphaned OWB:028 upload delivery review, not a new media approval or upload.\n\nEvidence inspected 3 Nov 2026: upload stage ref cd9b0a711 is J1103 delivery in PR #315, which remains OPEN with no reviews or comments; head f90f40a3a44283c6cd848f9ec4e888d14150582a, check SUCCESS, mergeability UNKNOWN. Read cd9b0a711:jobs/reviews/J1103_delivery_2026-10-28.md and its before/final/captions/Studio records. J1103 has Ben board approval 2026-10-28T11:33:01Z and J1032 replacement PASS for S4 v04 SHA256 0eb18596d2d6fb0edb8e885782fa9bd94bfe4965fc882c9f70b6f3317de2de97. These approvals are scoped to that exact cut; no new media PASS is granted by J1769.\n\nRequired work: verify approval chain and actual delivery evidence; read current YouTube state without mutation for old DETI0HV2jlI and replacement v6euXX2omz4 (recorded Private unscheduled / Private 2026-12-02T11:30Z). Verify master hash against approved cut and captions/cover records. Review PR315 including its two upload receipts, UPLOADS, gate library and deferred Buffer plan. Reconcile against current main without reverting later records, run required checks, then elected Chief may PASS and land the reviewed evidence. If a discrepancy remains, record a specific FIX and linked correction; never treat job done or a filename as media approval.\n\nCorrect J0910 to target current replacements xvarZP2aYyE (J1102, former bizlhspnVvY) and v6euXX2omz4 (J1103, former DETI0HV2jlI), after verifying live state. Preserve its Public-readback condition on F-jImX5h7ws and 2026-11-29T18:05Z next check. Other targets jJ5LkFGyzLI, X768qs8sNQs and f17XCtUmN-g must be verified against the actual airing cuts. Preserve J0936/J1100 holds and all replacement/Ben gates; their unfinished S2/S5/S6 work is not approved here.\n\nJ0894 Studio finish already Chief-PASSed 25 Oct; its committed PACKAGE_UPLOAD_RESULT.md section 4 records captions, A/B/C, end screen and card. Do not repeat those writes or replace a running test. Long F-jImX5h7ws remains scheduled 29 Nov 18:00Z; pin/Related remain J0910 after Public. Finish by updating 028 upload stage/ref and next action with the reviewed evidence and remaining dated work.\n\nNo paid generation, upload, privacy/schedule/title changes, new media approval, audio egress or deletion authorised. Use a clean worktree; check elected Chief authority before protected decisions. J1769 checked required NAS offload: no eligible scratch, about 2.6 GB free; no render needed.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/315",
+      "film": "028",
+      "stage": "upload",
+      "after": "J1769",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T13:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T13:04Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review replacement delivery evidence and correct post-public targets",
+      "due": "2026-11-29T18:05:00Z",
+      "kind": "chief"
     }
   ],
   "focus": [],

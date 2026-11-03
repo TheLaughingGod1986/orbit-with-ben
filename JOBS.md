@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1817 | mini | open (after J1761) | – | – | 013 edit · chief · OWB 013: establish long edit provenance after cancelled Short claim |  |
 | J1823 | mini | blocked | codex | – | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
 | J1825 | mini | blocked | codex | – | 026 upload · for codex · studio · `gpt-6.1-sol` · 026 upload finish: install approved en-GB captions and verify Studio end screen/cards |  |
+| J1826 | mini | open (after J1769) | – | – | 028 upload · chief · 028: review and land J1103 delivery PR315; reconcile Related targets | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/315 |
 
 Recently finished:
 
