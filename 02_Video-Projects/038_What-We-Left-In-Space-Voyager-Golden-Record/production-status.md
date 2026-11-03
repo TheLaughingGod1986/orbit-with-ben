@@ -4,9 +4,9 @@
 |-------|-------|
 | Slug | `038_What-We-Left-In-Space-Voyager-Golden-Record` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-17_J0437.md` (scored 25/30, #1 of 5) |
-| Topic lock | **Pending Chief decision** (`J0437` parked for Chief: lock 038 or pick #2 Planet Sounds / #3 Wrong Kind of Aliens / #4 Io Volcanoes; confirm whether scheduled standalone Short `kKN8Ale42sE` *Voyager 1 Is About to Be One Light-Day Away* airing 17 Nov 2026 satisfies Short-first) |
+| Topic lock | **Pending Chief decision — J1904**. J1779 restored the handoff from cancelled J0437/J0446; neighbour evidence, Short-first decision and priority review remain required. |
 | Script draft | `01_Script/voyager_golden_record_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0446; 1,221 spoken words / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; revised from v00 drafted in J0437) |
-| Script review | **PASS — 95.4 / 100** (1,221 spoken words / 1,299 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0446`) |
+| Script review | **Unlocked / FIX — J1904**. Historical automated score 95.4/100 from J0446 is not editorial or scientific approval. See J1779 review note. |
 | Sources | `01_Script/SOURCES.md` — 9 rows started and pre-checked with verbatim quotes (`NASA Science Voyager 1`, `NASA Voyager 1 What Is a Light-Day?`, `NASA Apollo 11`, `NASA Science Pioneer 10`, `NASA Voyager Golden Record Contents / Making / Cover`, `NASA Pale Blue Dot / Fast Facts`, `JPL Release Ed Stone`, `NASA Voyager Interstellar Mission / Q&A with Dr. Ed Stone / FAQ`, `NASA Perseverance Rover Components`, `LOC Name Authority Records n80008815 / n79064998 / n84081625 / n79092362 / n79021791 / n83017119`) |
 | Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
 | Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
@@ -14,6 +14,12 @@
 | CG | Pending (NASA/JPL `PIA14113` Golden Record, `PIA23645` Pale Blue Dot, Pioneer 10 plaque, Voyager 1 & 2 spacecraft + code graphics + Omni Orbit) |
 | Runtime target | 7–9 min (1,221 spoken words / 1,299 reviewer words, ~8.7 min est.) |
 | Shorts | 3 episode Shorts on lock + standalone Short `kKN8Ale42sE` (*Voyager 1 Is About to Be One Light-Day Away*, airing 17 Nov 2026) |
+
+## Current handoff — J1779, 3 November 2026
+
+J1904 owns topic/editorial review and the dependent facts/quote-check/script-lock chain. Both original jobs were cancelled against 061-only reviews; neither cancellation approved 038. All nine SOURCES rows remain TO VERIFY, and the pre-build audit remains unsigned. The title promise, opening, dense data windows and overlong FACT labels need review before lock. No production approval or spend. Detailed evidence: `jobs/reviews/J1779/CHIEF_HANDOFF_2026-11-03.md` (repo root).
+
+The marker counts and pasted gate output below are historical J0446 evidence, not a fresh sign-off.
 
 ## Marker counts (`voyager_golden_record_script_master_v01.md`)
 
