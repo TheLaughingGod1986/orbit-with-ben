@@ -20,7 +20,8 @@
     "generate:platform-copy": "tsx scripts/generate-platform-copy.ts",
     "create:export-package": "tsx scripts/create-export-package.ts",
     "import:performance": "tsx scripts/import-performance-data.ts",
-    "verify:growth-v2": "vitest run tests/growth-system-v2.test.ts tests/episode-ops-v2.test.ts && tsx scripts/diagnose-youtube-growth.ts --file content/samples/json/youtube_growth_metrics_sample.json && tsx scripts/next-episode-brief.ts --file content/samples/json/youtube_growth_metrics_sample.json --out ../docs/NEXT_EPISODE_BRIEF.md"
+    "verify:growth-v2": "vitest run tests/growth-system-v2.test.ts tests/episode-ops-v2.test.ts && tsx scripts/diagnose-youtube-growth.ts --file content/samples/json/youtube_growth_metrics_sample.json && tsx scripts/next-episode-brief.ts --file content/samples/json/youtube_growth_metrics_sample.json --out ../docs/NEXT_EPISODE_BRIEF.md",
+    "pretest": "python3 tests/desk-lock.test.py"
   },
   "dependencies": {
     "aws4fetch": "^1.0.20",
