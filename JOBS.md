@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1826 | mini | open (after J1769) | – | – | 028 upload · chief · 028: review and land J1103 delivery PR315; reconcile Related targets | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/315 |
 | J1828 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1829 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1830 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1830 | any | claimed | codex | 2026-11-03T15:12Z | chief · Chief: verify condition for J1100 |  |
 | J1831 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1832 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
