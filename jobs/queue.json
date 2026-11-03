@@ -150413,19 +150413,28 @@
           "at": "2026-11-03T02:53Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T02:54Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Original brief and approval history checked; PR380 OPEN at unchanged d0b04b5e0, no comments or reviews"
         }
       ],
-      "remaining_action": "Inspect J1471, J1699, PR #380, and local masters/cache to verify J1471 waiting condition",
+      "remaining_action": "Verify fresh SHA256 hashes of J1468 masters and Crew-2 cache and check saved opening gates",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T03:31:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T02:53Z",
-        "by": "gemini"
-      }
+        "at": "2026-11-03T02:54Z",
+        "by": "gemini",
+        "note": "Original brief and approval history checked; PR380 OPEN at unchanged d0b04b5e0, no comments or reviews"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
