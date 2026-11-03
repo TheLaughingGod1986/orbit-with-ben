@@ -1,5 +1,5 @@
 {
-  "next_id": 1755,
+  "next_id": 1756,
   "jobs": [
     {
       "id": "J0001",
@@ -154220,6 +154220,34 @@
         "OWB:031",
         "OWB:032"
       ]
+    },
+    {
+      "id": "J1755",
+      "title": "Chief: reconcile stale HOS008 J1213 hold against later master-v03 evidence",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ben reports overdue HOS008 Edit hold J1213 and asks for backup ownership. Reconcile, do not restart rough-v01 edits. J1213 hold type dependency has check_at 30 Oct 15:00 but no after ID; workflow.hold_due historically ignored it. Fix added to PR394, verify exact head before rollout. Trace completed repair chain J1218 -> J1241 -> J1248 -> J1257 -> J1260 -> J1263 -> J1267 (Chief h22 picture lock), then J1287 Chief h35 and J1297 completed master-v03 UAT delivery (sha cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b). Verify original later rulings and current media/checks/Ben changes before changing state. HOS PR391 remains open in last read; check and review normally. Resolve or supersede the obsolete J1213 condition with durable evidence and correct next action; retain historical failed cuts. Repair affected HOS008 status/board links and J0912's stale missing-picture premise after verifying actual Shorts inventory. If finished master truly awaits Ben, use existing UAT workflow; never infer Ben approval or finished-film PASS from graphics-only PASS. If work remains, queue concrete successor under current assembly fallback chain (Cursor -> Codex -> Gemini), carrying real dependencies and review capabilities. No paid generation, upload, schedule or visibility changes. Never block solely on unavailable Cursor if another eligible worker can perform the task. Report specific evidence, owner and follow-up; do not mark this task complete from screenshots or old prose alone.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T10:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T10:48Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify later HOS008 approvals and delivery, retire stale dependency and assign actual remaining work",
+      "kind": "chief"
     }
   ],
   "focus": [],
