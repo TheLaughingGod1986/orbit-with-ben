@@ -152028,19 +152028,24 @@
           "at": "2026-11-03T06:44Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking original holds, current repair evidence and exact export hashes."
+        },
+        {
+          "at": "2026-11-03T06:44Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original approvals and repair history checked; PR380 remains OPEN at d0b04b5e0 with no comments or reviews."
         }
       ],
-      "remaining_action": "Verify corrected AR masters and approval evidence",
+      "remaining_action": "Check final export hashes and retained opening failures",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T07:34:01+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T06:44Z",
         "by": "codex",
-        "note": "Checking original holds, current repair evidence and exact export hashes."
+        "note": "Original approvals and repair history checked; PR380 remains OPEN at d0b04b5e0 with no comments or reviews."
       },
       "taskKeys": [
         "OWB:030"
