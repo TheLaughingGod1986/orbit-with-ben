@@ -159908,13 +159908,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T15:14Z",
-      "eta": "2026-11-03T17:14Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T15:13Z",
-      "result": "",
+      "result": "Verified original approvals and current local evidence: bed and three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Instrumental clearance and actual local listening remain unproven; exclusion retained. NAS offload found nothing eligible, 7694 MiB before worktree and 6.99 GiB after, below h43 10 GiB restart floor. J1100 stays blocked at 2/3 with OWB:027/028, accepted sources, h43-LOOP, deadlines and scheduled-v01 fallback preserved. Existing retry retained: 2026-11-03T16:13:46Z. No spend, source-audio egress, render or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T15:13Z",
@@ -159945,6 +159945,11 @@
           "at": "2026-11-03T15:16Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded unchanged J1100 hold with recheck J1853 and retained 16:13:46Z retry; original progress, acceptances and deadlines preserved."
+        },
+        {
+          "at": "2026-11-03T15:16Z",
+          "by": "codex",
+          "what": "done: Verified original approvals and current local evidence: bed and three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Instrumental clearance and actual local listening remain unproven; exclusion retained. NAS offload found nothing eligible, 7694 MiB before worktree and 6.99 GiB after, below h43 10 GiB restart floor. J1100 stays blocked at 2/3 with OWB:027/028, accepted sources, h43-LOOP, deadlines and scheduled-v01 fallback preserved. Existing retry retained: 2026-11-03T16:13:46Z. No spend, source-audio egress, render or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits cleared bed, local listening and restart headroom",
@@ -159962,7 +159967,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1854",
