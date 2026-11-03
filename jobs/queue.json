@@ -155031,13 +155031,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T12:02Z",
-      "eta": "2026-11-03T14:02Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -155068,6 +155068,11 @@
           "at": "2026-11-03T12:05Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified origin/main upload done, claim cleared, J1198 hold unchanged and clean worktree"
+        },
+        {
+          "at": "2026-11-03T12:05Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Close J1765 and post its verified result",
@@ -155087,7 +155092,8 @@
       },
       "taskKeys": [
         "OWB:023"
-      ]
+      ],
+      "done_ref": "9e770d1ac"
     },
     {
       "id": "J1766",
