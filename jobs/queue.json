@@ -162026,13 +162026,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-03T19:44Z",
-      "eta": "2026-11-03T21:44Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T18:41Z",
-      "result": "",
+      "result": "Verified J1823 condition NOT satisfied. All 5 v01 and 4 v02 hashes match abc_v02/META.json (B v02 902fe193..., C v02 62c8a813..., comparison 168x94 b6ad4a94...); PR #404 (e704c98a0) and PR #405 (d604bef0f) unchanged; no 026 packaging panel decision or v03 B correction exists. Retained J1823 blocked on input hold via --recheck J1877, next check 2026-11-04T01:48:00Z. Original A authorization (J0833) and 14 Nov deadline preserved; no spend or Studio change.",
       "history": [
         {
           "at": "2026-11-03T18:41Z",
@@ -162063,6 +162063,11 @@
           "at": "2026-11-03T19:48Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified all v01/v02 hashes, PRs #404/#405, and panel state; J1823 input hold set to 2026-11-04T01:48:00Z"
+        },
+        {
+          "at": "2026-11-03T19:48Z",
+          "by": "gemini",
+          "what": "done: Verified J1823 condition NOT satisfied. All 5 v01 and 4 v02 hashes match abc_v02/META.json (B v02 902fe193..., C v02 62c8a813..., comparison 168x94 b6ad4a94...); PR #404 (e704c98a0) and PR #405 (d604bef0f) unchanged; no 026 packaging panel decision or v03 B correction exists. Retained J1823 blocked on input hold via --recheck J1877, next check 2026-11-04T01:48:00Z. Original A authorization (J0833) and 14 Nov deadline preserved; no spend or Studio change."
         }
       ],
       "remaining_action": "Verification complete; J1823 remains held on B correction, packaging panel decision, and Chief visual approval",
@@ -162079,7 +162084,8 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "done_ref": "d604bef0f"
     },
     {
       "id": "J1878",
