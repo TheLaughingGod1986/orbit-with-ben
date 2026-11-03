@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1753 | mini | blocked | codex | – | 032 vo · chief · 032 Voice: Chief final verification of locked take after J1294 | 6536311192 |
 | J1754 | mini | blocked | codex | – | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
 | J1755 | mini | open | – | – | chief · Chief: reconcile stale HOS008 J1213 hold against later master-v03 evidence |  |
-| J1759 | mini | open | – | – | chief · Chief: resolve 005 thumbs orphan-review |  |
+| J1759 | mini | claimed | codex | 2026-11-03T13:28Z | chief · Chief: resolve 005 thumbs orphan-review |  |
 | J1760 | mini | open | – | – | chief · Chief: resolve 006 picture orphan-blocked |  |
 | J1761 | mini | open | – | – | chief · Chief: resolve 013 edit orphan-blocked |  |
 | J1762 | mini | open | – | – | chief · Chief: resolve 019 thumbs orphan-review |  |

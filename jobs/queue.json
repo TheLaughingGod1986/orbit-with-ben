@@ -154584,10 +154584,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T11:28Z",
+      "eta": "2026-11-03T13:28Z",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
       "result": "",
@@ -154596,6 +154596,11 @@
           "at": "2026-11-03T10:50Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T11:28Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 005 thumbs handoff and records the next owner/action",
@@ -154605,6 +154610,14 @@
         "stage": "thumbs",
         "kind": "orphan-review",
         "signature": "3fbd6d6eefd1c6987b2e"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T11:28Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
