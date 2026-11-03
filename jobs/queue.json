@@ -87528,6 +87528,11 @@
           "at": "2026-11-03T19:17Z",
           "by": "relay",
           "what": "condition verification queued: J1884"
+        },
+        {
+          "at": "2026-11-03T20:02Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-04T02:05:00Z"
         }
       ],
       "kind": "assembly",
@@ -87546,12 +87551,11 @@
       "remaining_action": "Wait for approved locked 031+ voice and picture, then verify an unused Keeper-compliant opening",
       "hold": {
         "type": "input",
-        "condition": "J1827 verified 031 magnetic_field_flip_vo_v02a and 032 titan_landing_vo_v02b stem lock records remain, but final VO listening approval is blocked on J1752/J1753. Both status records say picture not started and production-status says CG pending; generated-clips folders have no media and edit folders contain setup files only. 033-061 have no recorded VO/picture locks. Await a 031+ long with approved locked VO AND picture, then verify unused Keeper-compliant subject-naming question opening, exact source-time EDL, duplicates and all original gates/holds. 029 reserve v01 remains shelved under J1042; no spend or upload approval.",
-        "check_at": "2026-11-03T20:17:21+00:00",
-        "last_recheck": "J1827",
-        "checked_at": "2026-11-03T13:09:34+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1884"
+        "condition": "J1884 verified 031 magnetic_field_flip_vo_v02a and 032 titan_landing_vo_v02b stem lock records remain, but final VO listening approval is blocked on J1752/J1753. Both status records show picture not started and production-status says CG pending; 04_Generated-Clips has only .gitkeep and 07_Edit-Project contains setup files only. 033-061 have no recorded VO/picture locks. Await a 031+ long with approved locked VO AND picture, then verify unused Keeper-compliant subject-naming question opening, exact source-time EDL, duplicates and all original gates/holds. 029 reserve v01 remains shelved under J1042; no spend or upload approval.",
+        "check_at": "2026-11-04T02:05:00Z",
+        "last_recheck": "J1884",
+        "checked_at": "2026-11-03T20:02:27+00:00",
+        "checked_by": "gemini"
       }
     },
     {
