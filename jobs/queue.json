@@ -161242,9 +161242,14 @@
           "at": "2026-11-03T18:25Z",
           "by": "codex",
           "what": "step 2 of 5 done: Live Buffer: OWB 1 scheduled per network, HOS 4 per network plus one old Facebook error; all channels connected. Nested daily wrapper reproduced exit 75; both direct dry runs succeeded."
+        },
+        {
+          "at": "2026-11-03T18:26Z",
+          "by": "codex",
+          "what": "step 3 of 5 done: Both dry runs complete; live schedules verified. Mars long is playlist position 60, night Short absent from playlist; source missing for night and Titan local hash mismatches upload. All 5 queued R2 URLs return 206 from Mini."
         }
       ],
-      "remaining_action": "Verify source hashes and prepare exact missing-post recovery plan",
+      "remaining_action": "Write recovery plan with source blockers and original late-post approvals",
       "due": "2026-11-03T17:24:21+00:00",
       "kind": "studio",
       "audit_key": "buffer-live-audit-2026-11-03",
@@ -161260,11 +161265,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-03T18:25Z",
+        "at": "2026-11-03T18:26Z",
         "by": "codex",
-        "note": "Live Buffer: OWB 1 scheduled per network, HOS 4 per network plus one old Facebook error; all channels connected. Nested "
+        "note": "Both dry runs complete; live schedules verified. Mars long is playlist position 60, night Short absent from playlist; so"
       },
       "taskKeys": [
         "OWB:025",
