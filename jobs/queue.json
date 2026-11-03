@@ -151676,9 +151676,14 @@
           "at": "2026-11-03T05:49Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T05:49Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Identify approved moving ISS opening input, then correct and review AR cohort",
+      "remaining_action": "Verify ISS opening evidence and preserve unmet repair holds",
       "kind": "chief",
       "recheck_of": "J1471",
       "due": "2026-11-03T06:32:54+00:00",
@@ -151687,10 +151692,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-03T05:49Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
