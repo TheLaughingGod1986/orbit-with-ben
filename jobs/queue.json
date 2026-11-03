@@ -151605,20 +151605,28 @@
           "at": "2026-11-03T05:44Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed verification task; no publishing or spend authorised."
+        },
+        {
+          "at": "2026-11-03T05:45Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original approval and repair history. PR380 remains OPEN at d0b04b5e0 with no comments or reviews; J1471 still lacks approved ISS input."
         }
       ],
-      "remaining_action": "Check J1356 history, corrected opening evidence and remaining review gates",
+      "remaining_action": "Verify export hashes and saved opening failures",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T06:32:54+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T05:44Z",
+        "at": "2026-11-03T05:45Z",
         "by": "codex",
-        "note": "Claimed verification task; no publishing or spend authorised."
-      }
+        "note": "Read original approval and repair history. PR380 remains OPEN at d0b04b5e0 with no comments or reviews; J1471 still lack"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1724",
