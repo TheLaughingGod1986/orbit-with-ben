@@ -11,7 +11,7 @@
       "ref": "c0476c0b"
     },
     "edit": {
-      "state": "blocked",
+      "state": "doing",
       "ref": "jobs/reviews/J1771_030_edit_handoff_2026-11-03.md",
       "note": "AR cohort: missing approved ISS opening input owned by Chief J1833; correction J1471 and readiness J1356 remain held. J1771 fixes handoff only."
     },
@@ -41,6 +41,14 @@
       "ref": "upload done"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "edit",
+      "by": "codex",
+      "at": "2026-11-03T13:55Z",
+      "eta": "2026-11-03T14:24Z",
+      "note": "J1833 AR cohort: Chief selects or scopes the missing ISS opening for J1471"
+    }
+  ],
   "next": "AR cohort blocked: J1833 Chief selects/scopes approved ISS opening; J1471 then corrects openings and gates; J1356 reviews full moving/audio cuts and watch readiness. Original Apophis v13a delivery is separate; no new media approval."
 }
