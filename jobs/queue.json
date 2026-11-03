@@ -155262,9 +155262,14 @@
           "at": "2026-11-03T12:44Z",
           "by": "codex",
           "what": "step 2 of 3 done: Queued J1825 after J1767 for approved en-GB captions and Studio finish verification; J0861 public hold and J1823 thumbnail review preserved."
+        },
+        {
+          "at": "2026-11-03T12:47Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR406 merged after both CI checks passed. Board corrects Friday id and blocks completion on J1825; live schedules and J0861 hold unchanged."
         }
       ],
-      "remaining_action": "Commit the FIX evidence and corrected board, then close J1767",
+      "remaining_action": "Close the resolved workflow repair; J1825 owns remaining upload finish work",
       "kind": "chief",
       "handoff": {
         "film": "026",
@@ -155273,11 +155278,11 @@
         "signature": "d0cf8dc59b27b6a4f54d"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T12:44Z",
+        "at": "2026-11-03T12:47Z",
         "by": "codex",
-        "note": "Queued J1825 after J1767 for approved en-GB captions and Studio finish verification; J0861 public hold and J1823 thumbna"
+        "note": "PR406 merged after both CI checks passed. Board corrects Friday id and blocks completion on J1825; live schedules and J0"
       },
       "taskKeys": [
         "OWB:026"
