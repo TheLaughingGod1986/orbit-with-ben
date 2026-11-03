@@ -158034,13 +158034,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T13:15Z",
-      "eta": "2026-11-03T15:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T13:10Z",
-      "result": "",
+      "result": "Verified latest J1830/J1100, original approvals and unchanged local audition hashes; newest listening evidence still 31 Oct and NOT PERFORMED. PR333 remains OPEN at 0a7fcb6ad without reviews/comments. J0936 retained blocked with 14:10:26Z retry: instrumental clearance, actual local listening, repairs/gates and replacement approvals unproven; about 2.5 GB free below restart floor. Historical progress, accepted sources, J1032 PASS, completed swaps and scheduled fallbacks preserved. No spend, audio egress or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T13:10Z",
@@ -158071,6 +158071,11 @@
           "at": "2026-11-03T13:17Z",
           "by": "codex",
           "what": "step 3 of 3 done: Retained J0936 hold with fresh evidence and 14:10:26Z retry; prior approvals, historical progress and fallbacks preserved"
+        },
+        {
+          "at": "2026-11-03T13:18Z",
+          "by": "codex",
+          "what": "done: Verified latest J1830/J1100, original approvals and unchanged local audition hashes; newest listening evidence still 31 Oct and NOT PERFORMED. PR333 remains OPEN at 0a7fcb6ad without reviews/comments. J0936 retained blocked with 14:10:26Z retry: instrumental clearance, actual local listening, repairs/gates and replacement approvals unproven; about 2.5 GB free below restart floor. Historical progress, accepted sources, J1032 PASS, completed swaps and scheduled fallbacks preserved. No spend, audio egress or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits audio clearance, repairs and approvals",
@@ -158089,7 +158094,8 @@
         "OWB:026",
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1829",
