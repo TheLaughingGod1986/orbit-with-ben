@@ -161341,13 +161341,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T19:07Z",
-      "eta": "2026-11-03T21:07Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T16:56Z",
-      "result": "",
+      "result": "Triage 3/3 complete. PR402 merged 83ec30c1 after local ALL CHECKS PASS and green CI. Exact six Ben v03 notes/timestamps preserved; current review acknowledged through existing API as tracked only, not resolved. J1880 assembly correction preparation ready; J1881 elected-Chief scope review after J1880; both HOS008 edit. J1755/PR401 separate browser-delivery/publication hold unchanged. HOS desk final report posted. No media approval, render, spend, upload or schedule change.",
       "history": [
         {
           "at": "2026-11-03T16:56Z",
@@ -161398,6 +161398,11 @@
           "at": "2026-11-03T19:08Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR402 merged as 83ec30c1 after all required CI passed; original review retained and API acknowledgement verified; six notes remain unresolved; J1755 separate hold unchanged"
+        },
+        {
+          "at": "2026-11-03T19:08Z",
+          "by": "codex",
+          "what": "done: Triage 3/3 complete. PR402 merged 83ec30c1 after local ALL CHECKS PASS and green CI. Exact six Ben v03 notes/timestamps preserved; current review acknowledged through existing API as tracked only, not resolved. J1880 assembly correction preparation ready; J1881 elected-Chief scope review after J1880; both HOS008 edit. J1755/PR401 separate browser-delivery/publication hold unchanged. HOS desk final report posted. No media approval, render, spend, upload or schedule change."
         }
       ],
       "remaining_action": "Triage complete; J1880 prepares corrections and J1881 scopes production/QA",
@@ -161413,7 +161418,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/402"
     },
     {
       "id": "J1869",
