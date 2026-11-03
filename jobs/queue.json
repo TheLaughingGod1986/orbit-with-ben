@@ -152629,19 +152629,24 @@
           "at": "2026-11-03T07:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original approvals and repair history checked; PR380 unchanged at d0b04b5e0 with no comments or reviews."
+        },
+        {
+          "at": "2026-11-03T07:50Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fresh SHA256 matches all three J1468 final exports; no additional exports. Saved opening FAILs remain 6.00s, 0.25 and 1.41; no fresh gates or audition claimed."
         }
       ],
-      "remaining_action": "Check current master hashes and saved gate evidence",
+      "remaining_action": "Record unmet condition and preserve J1356 hold",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T08:34:08+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T07:49Z",
+        "at": "2026-11-03T07:50Z",
         "by": "codex",
-        "note": "Original approvals and repair history checked; PR380 unchanged at d0b04b5e0 with no comments or reviews."
+        "note": "Fresh SHA256 matches all three J1468 final exports; no additional exports. Saved opening FAILs remain 6.00s, 0.25 and 1."
       },
       "taskKeys": [
         "OWB:030"
