@@ -162552,10 +162552,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-03T20:04Z",
+      "eta": "2026-11-03T20:24Z",
       "created_by": "codex",
       "created_at": "2026-11-03T19:59Z",
       "result": "",
@@ -162564,6 +162564,11 @@
           "at": "2026-11-03T19:59Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T20:04Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review exact PR425 head and checks, merge if PASS, then finish so fresh relay can start",
@@ -162571,7 +162576,15 @@
       "dispatch_repair_scope": "425:review",
       "urgent": 1,
       "due_kind": "user-immediate-claim",
-      "due": "2026-11-03T19:59:35+00:00"
+      "due": "2026-11-03T19:59:35+00:00",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T20:04Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1887",

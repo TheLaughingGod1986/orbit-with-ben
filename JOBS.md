@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1879 | mini | open | – | – | assembly · Buffer: recover approved Mars-night and Titan social sources | J1874 |
 | J1880 | mini | open | – | – | 008 edit · assembly · HOS 008: prepare six Franklin v03 UAT corrections and exact edit recipe | HOS-008:v03:2026-11-03T16:08:33.439Z / J1868 |
 | J1881 | mini | open (after J1880) | – | – | 008 edit · chief · Chief: review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
-| J1886 | mini | open | – | – | chief · Chief: review and merge dispatcher retry/capability repair PR425 | J1843 |
+| J1886 | mini | claimed | gemini | 2026-11-03T20:24Z | chief · Chief: review and merge dispatcher retry/capability repair PR425 | J1843 |
 | J1887 | mini | open (after J1886) | – | – | assembly · Validate Mini dispatcher rollout and real next-job pickup after PR425 | J1843 |
 
 Recently finished:
