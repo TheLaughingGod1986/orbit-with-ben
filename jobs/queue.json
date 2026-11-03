@@ -160304,19 +160304,24 @@
           "at": "2026-11-03T15:41Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original scope and delivery read; J1844 now records FIX, superseding absent-review premise"
+        },
+        {
+          "at": "2026-11-03T15:41Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR414 head 1474821f3 confirms Gemini moving FIX; PR410 has no approval. J1846 scope 001b6962f blocked; J1847-J1849 unstarted."
         }
       ],
-      "remaining_action": "Verify newer FIX review and successor scope; preserve unmet input hold",
+      "remaining_action": "Record current FIX and replacement dependency in J1834 hold",
       "kind": "chief",
       "recheck_of": "J1834",
       "due": "2026-11-03T16:13:46+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-03T15:41Z",
         "by": "codex",
-        "note": "Original scope and delivery read; J1844 now records FIX, superseding absent-review premise"
+        "note": "PR414 head 1474821f3 confirms Gemini moving FIX; PR410 has no approval. J1846 scope 001b6962f blocked; J1847-J1849 unsta"
       },
       "taskKeys": [
         "OWB:030"
