@@ -154807,13 +154807,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T11:45Z",
-      "eta": "2026-11-03T13:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX complete: stale OWB:019 thumbs review reconciled to J1118 acting-Chief PASS and J1119 T017 delivery. NAS hashes, full-size/168px inspection and grade PASS verified. Stage done, claim cleared; T017 outcome uncalled. Evidence a2672d345 jobs/reviews/J1762/REVIEW.md. No spend or Studio changes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -154844,6 +154844,11 @@
           "at": "2026-11-03T11:48Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified origin/main stage done, no claim, explicit next action, and unchanged null T017 result"
+        },
+        {
+          "at": "2026-11-03T11:48Z",
+          "by": "codex",
+          "what": "done: FIX complete: stale OWB:019 thumbs review reconciled to J1118 acting-Chief PASS and J1119 T017 delivery. NAS hashes, full-size/168px inspection and grade PASS verified. Stage done, claim cleared; T017 outcome uncalled. Evidence a2672d345 jobs/reviews/J1762/REVIEW.md. No spend or Studio changes."
         }
       ],
       "remaining_action": "Review repair complete; T017 remains under routine monitoring",
@@ -154863,7 +154868,8 @@
       },
       "taskKeys": [
         "OWB:019"
-      ]
+      ],
+      "done_ref": "a2672d345"
     },
     {
       "id": "J1763",
