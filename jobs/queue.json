@@ -160905,13 +160905,13 @@
       "stage": "",
       "after": "J1847",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-03T23:26Z",
-      "eta": "2026-11-04T01:26Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:58Z",
-      "result": "",
+      "result": "Specialist native moving-video and 270x480 phone review of J1847 NASA IGOAL ISS 3D model delivery complete (PR #435, commit adcf308939fc747a7ebe90f06579233cd2ce9e78; jobs/reviews/J1848/REPORT.md + EVIDENCE.json and /Users/benjaminoats/_desk/handoff/J1848/). Reverified and recorded moving_video_input capability via read_file (video/mp4). Verified 2 source SHA256 hashes (iss.glb 3b03742fb55f2a495c4a72aaa2cb175aaeff5ee38f4f42b95f92083e30a464ef, earth.jpg 3ca40e6058ded3f7b8d777c1fcb3b167f9e1f9af9d1d3f15388e92c2c3d66fb3), all 5 output MP4 SHA256 hashes at 30/1 fps in /Users/benjaminoats/_desk/cache/J1847/delivery/ (continuous_native_1080x1920.mp4 64bf39169da7c47da79805d7c40fa5a39bf49fae6f99df3bdc4249a6cf1d1afa [0,102) 3.4s, opening_1080x1920.mp4 44382ebfc58b63ea502669cf8925f91f0099f3e4e52071324957e6e7ef5241be [30,102) 2.4s, preroll_1080x1920.mp4 a426e77d106fe838ff4127646c6deca6b85da946b2aa63ff6d60b6ef7a6a2e84 [0,30) 1.0s, phone_continuous_270x480.mp4 0e9611306ba774423b19d50554c8560f634fadf1d1782240c7bfbdafb2af7b5b, phone_opening_270x480.mp4 ea011edae05d3948666260e42cadd2e8f195f35dc1e2db363ddaab1794d69db6), 282/282 non-log cache files, and unmodified gates (frame0_diff_0_1_5s=7.57 PASS, picture_qa PASS with 0:01 render WARN cleared on full-size/moving inspection, polish_gate PASS). Viewed all 5 moving MP4s and 17 full-size sample/QA stills in full via read_file. All 9 timestamped criteria PASS (frame-0 ISS modules/truss/8 solar wings recognition, intact unclipped geometry, 270x480 phone clarity with 3D parallax over Indian Ocean channel, smooth 30/1 fps 3D camera orbit, 100% coherent Earth fill, 1.0x native station scale + 1.198x max Earth upscale <=2.35x, ACES Filmic lighting, zero freeze/jitter/cuts, seamless preroll-to-opening transition at t=1.000s / frame 29->30->31). Recommendation to elected Chief in J1849: PASS / APPROVE EXACT INPUT (continuous_native 64bf3916..., preroll a426e77d... [0,30), opening 44382ebf... [30,102)) with required NASA IGOAL + Blue Marble illustration attribution. Silent-source visual review only (no audio listening claimed); GBP0. J1849 is now unblocked; J1471/J1356 and all public-push/Ben/date/credit/publishing holds preserved.",
       "history": [
         {
           "at": "2026-11-03T14:58Z",
@@ -160952,6 +160952,11 @@
           "at": "2026-11-03T23:34Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4: All 4 steps complete; handing off J1848 specialist moving-video review (PR #435 / adcf308939) to J1849"
+        },
+        {
+          "at": "2026-11-03T23:34Z",
+          "by": "gemini",
+          "what": "done: Specialist native moving-video and 270x480 phone review of J1847 NASA IGOAL ISS 3D model delivery complete (PR #435, commit adcf308939fc747a7ebe90f06579233cd2ce9e78; jobs/reviews/J1848/REPORT.md + EVIDENCE.json and /Users/benjaminoats/_desk/handoff/J1848/). Reverified and recorded moving_video_input capability via read_file (video/mp4). Verified 2 source SHA256 hashes (iss.glb 3b03742fb55f2a495c4a72aaa2cb175aaeff5ee38f4f42b95f92083e30a464ef, earth.jpg 3ca40e6058ded3f7b8d777c1fcb3b167f9e1f9af9d1d3f15388e92c2c3d66fb3), all 5 output MP4 SHA256 hashes at 30/1 fps in /Users/benjaminoats/_desk/cache/J1847/delivery/ (continuous_native_1080x1920.mp4 64bf39169da7c47da79805d7c40fa5a39bf49fae6f99df3bdc4249a6cf1d1afa [0,102) 3.4s, opening_1080x1920.mp4 44382ebfc58b63ea502669cf8925f91f0099f3e4e52071324957e6e7ef5241be [30,102) 2.4s, preroll_1080x1920.mp4 a426e77d106fe838ff4127646c6deca6b85da946b2aa63ff6d60b6ef7a6a2e84 [0,30) 1.0s, phone_continuous_270x480.mp4 0e9611306ba774423b19d50554c8560f634fadf1d1782240c7bfbdafb2af7b5b, phone_opening_270x480.mp4 ea011edae05d3948666260e42cadd2e8f195f35dc1e2db363ddaab1794d69db6), 282/282 non-log cache files, and unmodified gates (frame0_diff_0_1_5s=7.57 PASS, picture_qa PASS with 0:01 render WARN cleared on full-size/moving inspection, polish_gate PASS). Viewed all 5 moving MP4s and 17 full-size sample/QA stills in full via read_file. All 9 timestamped criteria PASS (frame-0 ISS modules/truss/8 solar wings recognition, intact unclipped geometry, 270x480 phone clarity with 3D parallax over Indian Ocean channel, smooth 30/1 fps 3D camera orbit, 100% coherent Earth fill, 1.0x native station scale + 1.198x max Earth upscale <=2.35x, ACES Filmic lighting, zero freeze/jitter/cuts, seamless preroll-to-opening transition at t=1.000s / frame 29->30->31). Recommendation to elected Chief in J1849: PASS / APPROVE EXACT INPUT (continuous_native 64bf3916..., preroll a426e77d... [0,30), opening 44382ebf... [30,102)) with required NASA IGOAL + Blue Marble illustration attribution. Silent-source visual review only (no audio listening claimed); GBP0. J1849 is now unblocked; J1471/J1356 and all public-push/Ben/date/credit/publishing holds preserved."
         }
       ],
       "remaining_action": "Complete J1848 to unblock elected-Chief exact-input decision J1849",
@@ -160971,7 +160976,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "adcf308939"
     },
     {
       "id": "J1849",
