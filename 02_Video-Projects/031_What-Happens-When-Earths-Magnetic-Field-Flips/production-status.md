@@ -62,3 +62,9 @@ v01 and v02 (wav, mp3, parts, stt) were not modified.
 Words: 1321 · Est. min: 8.8 · Chapters: 6
 Pass threshold: 90
 ```
+
+## J1752 final VO review — 3 November 2026
+
+Technical verification PASS against the actual Mini output: both full hashes match J1295, 568.280 s, -19.9 LUFS / -3.5 dBTP, all seven tails below -50 dBFS and ending 0/0, null outside h32 fades exactly zero. Evidence: `02_Voiceover/review_J1752/measurements.json` and `REVIEW.md`.
+
+Final approval remains pending: codex could measure the files but had no audio listening input; nothing was heard in this session. Required FIX is completion of the listening review, not a media rebuild. Responsible reviewer: elected Chief with actual Mini audio listening capability, resuming J1752 (1/3 complete). No other stage is approved.
