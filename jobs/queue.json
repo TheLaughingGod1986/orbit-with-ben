@@ -156397,13 +156397,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T21:41Z",
-      "eta": "2026-11-03T23:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Workflow FIX only: restored cancelled J0387/J0395 handoff via J1898 (OWB:035/script, after J1776). Triton remains unlocked/unapproved; pre-build/neighbour, editorial, formal Gemini facts and Chief direct quote/lock gates remain. Report jobs/reviews/J1776/CHIEF_HANDOFF_2026-11-03.md; board and production notes updated. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -156434,6 +156434,11 @@
           "at": "2026-11-03T21:44Z",
           "by": "codex",
           "what": "step 3 of 3 done: PASS: linked open successor, review state retained, no stage claim, clean worktree; no production approval or spend."
+        },
+        {
+          "at": "2026-11-03T21:44Z",
+          "by": "codex",
+          "what": "done: Workflow FIX only: restored cancelled J0387/J0395 handoff via J1898 (OWB:035/script, after J1776). Triton remains unlocked/unapproved; pre-build/neighbour, editorial, formal Gemini facts and Chief direct quote/lock gates remain. Report jobs/reviews/J1776/CHIEF_HANDOFF_2026-11-03.md; board and production notes updated. No spend or publishing changes."
         }
       ],
       "remaining_action": "Handoff repair verified; J1898 owns the remaining topic and editorial decision",
@@ -156453,7 +156458,8 @@
       },
       "taskKeys": [
         "OWB:035"
-      ]
+      ],
+      "done_ref": "114f4d29cb"
     },
     {
       "id": "J1777",
