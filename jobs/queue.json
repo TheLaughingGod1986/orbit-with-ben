@@ -161163,13 +161163,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T18:45Z",
-      "eta": "2026-11-03T20:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T16:17Z",
-      "result": "",
+      "result": "Verified original scope, Gemini FIX at 1474821f3, replacement scope 001b6962f, live PR410/414 unchanged and approval history through 6612506489. No accepted replacement. J1834 stays blocked; next verification 3 Nov 21:01:21 UTC follows J1846 recorded retry. J1846 public evidence-push approval blocker remains; J1847-J1849 unstarted. Queue assertions PASS. No repeated media review, independent playback claim, spend or publication change; J1471/J1356 and all existing holds preserved.",
       "history": [
         {
           "at": "2026-11-03T16:17Z",
@@ -161200,6 +161200,11 @@
           "at": "2026-11-03T18:47Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1834 remains blocked with recheck J1865 at 21:01:21 UTC; queue assertions PASS and all downstream holds preserved"
+        },
+        {
+          "at": "2026-11-03T18:47Z",
+          "by": "codex",
+          "what": "done: Verified original scope, Gemini FIX at 1474821f3, replacement scope 001b6962f, live PR410/414 unchanged and approval history through 6612506489. No accepted replacement. J1834 stays blocked; next verification 3 Nov 21:01:21 UTC follows J1846 recorded retry. J1846 public evidence-push approval blocker remains; J1847-J1849 unstarted. Queue assertions PASS. No repeated media review, independent playback claim, spend or publication change; J1471/J1356 and all existing holds preserved."
         }
       ],
       "remaining_action": "Verification complete; await accepted replacement through J1846-J1849",
@@ -161216,7 +161221,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/414"
     },
     {
       "id": "J1866",
