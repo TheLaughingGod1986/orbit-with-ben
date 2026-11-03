@@ -152796,19 +152796,24 @@
           "at": "2026-11-03T08:03Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh Studio reload at 08:03 UTC shows A/B testing titles / Results ready, original title and Public. Clearance unproven; no write probe."
+        },
+        {
+          "at": "2026-11-03T08:04Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Evidence PR 389 merged after CI passed; J0978 remains blocked with next check 3 Nov 14:05 UTC."
         }
       ],
-      "remaining_action": "Record evidence and retain J0978 hold with next verification time",
+      "remaining_action": "Verification complete; J0978 awaits title-test clearance",
       "kind": "chief",
       "recheck_of": "J0978",
       "due": "2026-11-03T09:00:35+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T08:03Z",
+        "at": "2026-11-03T08:04Z",
         "by": "codex",
-        "note": "Fresh Studio reload at 08:03 UTC shows A/B testing titles / Results ready, original title and Public. Clearance unproven"
+        "note": "Evidence PR 389 merged after CI passed; J0978 remains blocked with next check 3 Nov 14:05 UTC."
       },
       "taskKeys": [
         "HOS:004"
