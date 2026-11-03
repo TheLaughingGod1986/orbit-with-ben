@@ -78527,8 +78527,8 @@
       "repo": "owb",
       "body": "After the 029 Private upload (previous job), as J0894: Studio-only steps, none of which change privacy or schedule: 1) upload the en-GB captions as English (UK); 2) arm thumbnail-only Test & Compare with the Chief-passed A/B/C; 3) end screen over the last 20 s (subscribe + best-for-viewer video) and cards per the house checklist; 4) pinned comment from Pinned-Comments/ (if Studio won't post it on a private video, block this step until Sun 6 Dec 18:05 London and say so). Read back each in Studio, record in 11_Upload-Package/PACKAGE_UPLOAD_RESULT.md. If Studio needs a sign-in, block for Ben. Never change privacy or publishAt. Chief ruling HOS #180 6384887788.\nDisk (Mac mini ~6 GB free on 24 Oct): preflight df -h /; stop and block if free space is under 3 GB. Put scratch/intermediates on the NAS (/Volumes/data/mac-mini-archive/scratch/<job>/) when it is mounted and writable, else /private/tmp with encoded intermediates only. Delete, move or archive nothing; no Replace, nothing Public. £0.\n\nAlso after Sun 6 Dec 2026 18:00 London (when vP1BbqZ_dnM goes public): set Related video -> vP1BbqZ_dnM in Orbit Studio (CDP 9223) on the three 029 Shorts uploaded in J0961 (set SWDCZfWZVao first before Wed 9 Dec 11:30Z): 1. SWDCZfWZVao ('Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?', Wed 9 Dec 11:30Z); 2. k2kEaA7ICjc ('Is Betelgeuse Really About to Explode?', Fri 11 Dec 11:30Z, Test A); 3. heiGCnGKTkE ('How Bright Will Betelgeuse Get When It Explodes?', Mon 14 Dec 11:30Z), and update UPLOADS.json (relatedStatus: 'studio_done').\n",
       "ref": "6384887788",
-      "film": "",
-      "stage": "",
+      "film": "029",
+      "stage": "upload",
       "after": "J0922",
       "eta_min": 120,
       "status": "blocked",
@@ -78583,6 +78583,11 @@
           "at": "2026-10-29T00:08Z",
           "by": "gemini",
           "what": "added J0961 029 Short IDs SWDCZfWZVao (Wed 9 Dec), k2kEaA7ICjc (Fri 11 Dec, Test A), heiGCnGKTkE (Mon 14 Dec) for after-go-public Related -> vP1BbqZ_dnM"
+        },
+        {
+          "at": "2026-11-03T13:43Z",
+          "by": "codex",
+          "what": "J1770 FIX: link existing public hold to OWB:029 upload; preserve status, dependency J0922, 4/5 progress and 6 Dec 18:05Z check."
         }
       ],
       "kind": "studio",
