@@ -154590,6 +154590,11 @@
           "at": "2026-11-03T17:02Z",
           "by": "relay",
           "what": "condition verification queued: J1869"
+        },
+        {
+          "at": "2026-11-03T19:16Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T01:20:00Z"
         }
       ],
       "remaining_action": "Complete actual listening of v02b with an audio-capable elected Chief and record VO-only PASS or FIX",
@@ -154606,9 +154611,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Capability blocker: actual listening required, but this Codex session has no audio input. Technical evidence remains PASS at 1/3; no audio heard and no final approval. Resume J1753 only with an elected Chief able to hear local audio; then record listening and VO-only PASS/FIX. Blocked rather than released after repeated identical dispatches; existing review_J1753 evidence and stage follow-up remain valid. No media correction or spend.",
-        "check_at": "2026-11-03T18:02:45+00:00",
-        "recheck_task": "J1869"
+        "condition": "Actual listening of titan_landing_vo_v02b by an elected Chief with verified local audio input; this session has no listening input and heard no audio. Technical PASS remains 1/3, with final VO-only PASS/FIX pending.",
+        "check_at": "2026-11-04T01:20:00Z",
+        "last_recheck": "J1869",
+        "checked_at": "2026-11-03T19:16:46+00:00",
+        "checked_by": "codex"
       }
     },
     {
