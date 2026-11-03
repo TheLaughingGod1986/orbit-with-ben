@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1810 | mini | open | – | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
 | J1817 | mini | open (after J1761) | – | – | 013 edit · chief · OWB 013: establish long edit provenance after cancelled Short claim |  |
-| J1822 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
+| J1822 | any | claimed | codex | 2026-11-03T14:20Z | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
