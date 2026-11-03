@@ -154882,13 +154882,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T11:50Z",
-      "eta": "2026-11-03T13:50Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Workflow FIX complete: PR 403 reconciles stale 020 edit block with J0870 shelved decision of 23 Oct. Stage skip explicitly limited to failed additional Short; no media PASS. Original failures retained, no repair successor needed, no upload or spend. Rules/core checks and main STATUS verification PASS.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -154919,6 +154919,11 @@
           "at": "2026-11-03T11:54Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 403 merged after Rules and Studio core checks passed; main stage skip and cleared claim verified, STATUS check PASS."
+        },
+        {
+          "at": "2026-11-03T11:54Z",
+          "by": "codex",
+          "what": "done: Workflow FIX complete: PR 403 reconciles stale 020 edit block with J0870 shelved decision of 23 Oct. Stage skip explicitly limited to failed additional Short; no media PASS. Original failures retained, no repair successor needed, no upload or spend. Rules/core checks and main STATUS verification PASS."
         }
       ],
       "remaining_action": "Handoff resolved; report completed correction",
