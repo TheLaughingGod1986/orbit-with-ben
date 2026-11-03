@@ -1,0 +1,127 @@
+{
+  "job": "J1844",
+  "ref": "J1834",
+  "film": "OWB:030",
+  "cohort_cut": "AR2",
+  "reviewed_at": "2026-11-03T14:44:00Z",
+  "reviewer": "gemini",
+  "model": "gemini-4-argon",
+  "role": "specialist_worker_advisory",
+  "multimodal_video_input_supported": true,
+  "multimodal_tool_used": "read_file (video/mp4 native stream)",
+  "silent_source_visual_review_only": true,
+  "audio_auditioned": false,
+  "candidate_commit": "406f91068ea7d2207d1ba336a687086dda9fb755",
+  "candidate_pr": 410,
+  "verification_commit": "b89b845605ea0b0308beab9d11d1a1b640c1dca9",
+  "verification_pr": 413,
+  "source": {
+    "nasa_id": "jsc2021m000259_SpaceX_Crew-2_Flight_Day_3_Highlights",
+    "official_metadata": "https://images-api.nasa.gov/search?nasa_id=jsc2021m000259_SpaceX_Crew-2_Flight_Day_3_Highlights",
+    "download_url": "https://images-assets.nasa.gov/video/jsc2021m000259_SpaceX_Crew-2_Flight_Day_3_Highlights/jsc2021m000259_SpaceX_Crew-2_Flight_Day_3_Highlights~orig.mp4",
+    "usage_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "cache_file": "/Users/benjaminoats/_desk/cache/J1834/crew2_540_600.mp4",
+    "cache_sha256": "08a1d37c090b303475efe6796f86fc200fd799092aa99ec325eaf087440f94d5",
+    "cache_bytes": 71610462,
+    "native_resolution": "1280x720",
+    "native_fps": "60000/1001",
+    "cache_full_source_start_s": 540.0,
+    "preroll_full_source_interval_s": [544.0, 545.0],
+    "opening_full_source_interval_s": [545.0, 547.4],
+    "continuous_interval_duration_s": 3.4,
+    "recipe_filter_complex": "[0:v]split=2[b][f];[b]crop=720:720:280:0,scale=1080:1080,pad=1080:1920:0:420,fillborders=top=420:bottom=420:mode=reflect,boxblur=30:3[bg];[f]crop=460:460:450:180,scale=1080:1080,format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*min(1,min(Y,H-1-Y)/48)'[fg];[bg][fg]overlay=0:420,setsar=1[v]",
+    "foreground_crop": "460x460 at (450, 180)",
+    "foreground_upscale_factor": 2.347826
+  },
+  "cache_verification": {
+    "delivery_files_verified": 5,
+    "all_cache_files_verified": 60,
+    "all_hashes_and_bytes_match": true,
+    "copied_into_git": false
+  },
+  "actually_viewed_videos": [
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1834/feather_candidate_T545.mp4",
+      "sha256": "95d73199718ad0fd998d70a1b5a3b236bd4175448a96f4299522f64d71fd6254",
+      "bytes": 1230495,
+      "resolution": "1080x1920",
+      "fps": "60000/1001",
+      "duration_s": 2.4024
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1834/phone_T545.mp4",
+      "sha256": "51b15ea0a19ae3b9a1094ea96c42cd957e59f5733f276b6fa64a77a09d671cfd",
+      "bytes": 88280,
+      "resolution": "270x480",
+      "fps": "60000/1001",
+      "duration_s": 2.4024
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1834/preroll_and_open_T545.mp4",
+      "sha256": "c8ed10b6454f5699cf58cfc228c24964e3552b539e2a26386ae43217d2b9fbba",
+      "bytes": 1729510,
+      "resolution": "1080x1920",
+      "fps": "60000/1001",
+      "duration_s": 3.4034
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1834/crew2_540_600.mp4 [544.0, 547.4)s native 1280x720 slice",
+      "source_sha256": "08a1d37c090b303475efe6796f86fc200fd799092aa99ec325eaf087440f94d5",
+      "resolution": "1280x720",
+      "fps": "60000/1001",
+      "duration_s": 3.4034
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1834/feather_candidate_T544.mp4",
+      "sha256": "2eef4f47652c44e498a1cd2e5a1ad402522ea94dc84b8dd88cf1e66c855e6fef",
+      "bytes": 1242638
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1834/crop_candidate_T544.mp4",
+      "sha256": "d7107a93a86ba3c8dffc2c1814c443af26fd09e03341fff6e2a820619f043a3e",
+      "bytes": 1271447
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1834/candidate_T544.mp4",
+      "sha256": "edbdd83b2fb868ee0d0ae2dd2464ba80d4f1f9b5480fdf2a19b5e47c4b088d68",
+      "bytes": 965196
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1834/candidate_T551.mp4",
+      "sha256": "8c3bdde6b95a05dbe7fca42b45349b9a87c29871db59b5bf3600b8c400471f88",
+      "bytes": 576687
+    }
+  ],
+  "criteria": {
+    "identifiable_iss_modules_truss_arrays_frame0": {
+      "verdict": "FIX",
+      "notes": "At frame 0 (0.000s / source 545.0s) through 2.402s, the 460x460 crop shows only close-up rectangular external payload boxes (ELC/ORUs), a robotic arm/antenna fixture, and bottom grapple fixtures. Zero solar arrays, zero truss span, and no recognizable ISS habitable module silhouette are visible at 1080x1920 or 270x480 phone size."
+    },
+    "cropped_dragon_and_recognition": {
+      "verdict": "FIX",
+      "notes": "Departing Crew Dragon Endeavour at upper-left (x=175..345, y=420..495) is sliced in half by the top crop edge (source y=180, output y=420) and sits inside the 48px top alpha feather (y=420..468). At 0.000s (source 545.0s) its nose cone is severed, leaving the dark circular forward hatch floating on the top feather boundary like a clipped hemisphere, and across 0.250s-2.383s it drifts further upward out of the crop."
+    },
+    "coherent_soft_fill": {
+      "verdict": "FIX",
+      "notes": "Top 48px alpha feather (y=420..468) cuts through the moving Dragon spacecraft; bottom reflected-border boxblur fill (y=1452..1920) smears the high-contrast white/black bottom payload boxes into a prominent vertical smudge band across the lower quarter of the frame."
+    },
+    "upscale_within_2_35x_and_sharpness": {
+      "verdict": "FIX",
+      "notes": "Numeric scale is 1080/460 = 2.347826x (<= 2.35x), triggering picture_qa WARN 'sharpness: upscaled 2.35x, may look soft'. Moving playback at 1080x1920 confirms visible softness and H.264 macroblock smoothing on hardware edges and clouds; automated metric 1.54 and picture/polish PASS do not clear this WARN."
+    },
+    "native_continuous_motion": {
+      "verdict": "PASS_WITH_WARN",
+      "notes": "Native 59.94 fps (60000/1001) continuous motion with no shot cut or speed change across [544.0, 547.4)s, but foreground hardware is camera-fixed/static; the 1.54% frame0_diff_0_1_5s score is driven by background cloud parallax and the clipped Dragon drifting through the top feather edge."
+    },
+    "exact_3_4s_interval_and_seam": {
+      "verdict": "PASS",
+      "notes": "preroll_and_open_T545.mp4 (3.4034s, 204 frames) is continuous across the preroll [544.0, 545.0)s to opening [545.0, 547.4)s boundary at t=1.001s (seam_before.jpg -> seam_after.jpg) with no jump cut."
+    }
+  },
+  "recommendation": "FIX",
+  "holds_preserved": {
+    "J1834": "blocked_pending_elected_chief_ruling",
+    "J1471": "input_hold_not_satisfied_sole_correction_worker",
+    "J1356": "readiness_hold_unchanged_final_watch_owner"
+  }
+}
