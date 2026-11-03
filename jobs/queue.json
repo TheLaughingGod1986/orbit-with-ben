@@ -155551,9 +155551,14 @@
           "at": "2026-11-03T13:42Z",
           "by": "codex",
           "what": "step 1 of 3 done: Traced approvals and upload results; J0923 has the correct public hold but lacks film/stage mapping"
+        },
+        {
+          "at": "2026-11-03T13:44Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR407 merged after both CI checks passed; existing J0923 now maps to 029 upload with its public hold intact"
         }
       ],
-      "remaining_action": "Verify current YouTube state and link the existing public-status hold to film 029",
+      "remaining_action": "Verify merged workflow state and report the retained December public hold",
       "kind": "chief",
       "handoff": {
         "film": "029",
@@ -155562,11 +155567,11 @@
         "signature": "ac722713d4d1d7afea4b"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T13:42Z",
+        "at": "2026-11-03T13:44Z",
         "by": "codex",
-        "note": "Traced approvals and upload results; J0923 has the correct public hold but lacks film/stage mapping"
+        "note": "PR407 merged after both CI checks passed; existing J0923 now maps to 029 upload with its public hold intact"
       },
       "taskKeys": [
         "OWB:029"
