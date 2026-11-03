@@ -1,5 +1,5 @@
 {
-  "next_id": 1914,
+  "next_id": 1915,
   "jobs": [
     {
       "id": "J0001",
@@ -157959,7 +157959,7 @@
       "title": "Chief: establish genuine audio-input capability for held 031/032 VO reviews",
       "needs": "mini",
       "repo": "owb",
-      "body": "J1754 capability follow-up for OWB031/J1752 and OWB032/J1753. Their technical checks are complete; required actual listening is not. Current Codex session exposes no audio-input/listening tool. Local codex --help advertises image attachments, not audio; agy --help advertises text/stream-json and mic-serve, which is not proof of source-file listening. Do not claim that either CLI can hear a WAV from a path or afplay playback. Determine and demonstrate a supported listening input within existing subscribed/local tooling using a non-production, no-cost fixture. Inspect actual tool schemas/installed capabilities, record what signal reaches the reviewer and what it hears, and establish identity plus elected-Chief authority for the actual review. No source-audio API upload/egress, new paid service or generation is authorized. If no supported route exists, record exactly which capability is missing and retain the J1752/J1753 holds; do not repeatedly redispatch unchanged text-only review sessions or imply a missing queue task. Do not approve either VO or picture from this discovery alone. Once a genuine route exists, route the existing two review jobs to an eligible elected reviewer; preserve technical evidence and Ben finished-video UAT.",
+      "body": "\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nNew evidence: Mini Gemini reports audio_input and moving_video_input demonstrated through native read_file on local audio/mpeg and video/mp4 in J1847 execution/thread6618064920. Reverify actual tool capability in your session, then use normal ownership APIs to resume existing J1752/J1753 at their recorded 1/3 and hear exact locked takes. No regeneration, new paid API or fabricated listening; capability demonstration alone is not VO PASS. Chief authority must follow the actual Mini election, not cloud CLI status.\n\nJ1754 capability follow-up for OWB031/J1752 and OWB032/J1753. Their technical checks are complete; required actual listening is not. Current Codex session exposes no audio-input/listening tool. Local codex --help advertises image attachments, not audio; agy --help advertises text/stream-json and mic-serve, which is not proof of source-file listening. Do not claim that either CLI can hear a WAV from a path or afplay playback. Determine and demonstrate a supported listening input within existing subscribed/local tooling using a non-production, no-cost fixture. Inspect actual tool schemas/installed capabilities, record what signal reaches the reviewer and what it hears, and establish identity plus elected-Chief authority for the actual review. No source-audio API upload/egress, new paid service or generation is authorized. If no supported route exists, record exactly which capability is missing and retain the J1752/J1753 holds; do not repeatedly redispatch unchanged text-only review sessions or imply a missing queue task. Do not approve either VO or picture from this discovery alone. Once a genuine route exists, route the existing two review jobs to an eligible elected reviewer; preserve technical evidence and Ben finished-video UAT.",
       "ref": "J1754",
       "film": "",
       "stage": "",
@@ -157977,10 +157977,21 @@
           "at": "2026-11-03T10:51Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T23:37Z",
+          "by": "codex",
+          "what": "Ben asks to resolve production holds using available resources; current evidence and explicit next action attached. Status, owner, progress, gates and original deadlines preserved."
         }
       ],
       "remaining_action": "Demonstrate a supported no-cost listening path before routing J1752 and J1753",
-      "kind": "chief"
+      "kind": "chief",
+      "resource_unblock_notes": [
+        "Ben-2026-11-03-resource-unblock"
+      ],
+      "urgent": 2,
+      "due": "2026-11-03T23:37:09+00:00",
+      "due_kind": "user-resource-unblock"
     },
     {
       "id": "J1811",
@@ -160423,7 +160434,7 @@
       "title": "Implement capacity-aware Mini dispatch and portable MacBook overflow",
       "needs": "mini",
       "repo": "owb",
-      "body": "Ben, 3 Nov: run a waiting task on the next capable available agent, use an available MacBook worker when Mini capacity is genuinely exhausted, and otherwise expose who is busy and a supported next-slot outlook. Current relay holds one serial execution lane, so green agents do not imply spare execution slots. MacBook heartbeat reports generic host macbook; verify actual registered machine rather than assume Air/Pro identity.\n\nImplement and review a capacity-aware dispatch change in a focused PR: actual per-host active execution leases, configured limits plus measured resource/capability guards, concurrent independent work only when safe, and an explicit portable-job contract for MacBook spillover. Preserve single elected-Chief signoff, film/stage claims, shared account limits, generation/browser mutexes, dependency/Ben/money gates and atomic queue claims. Do not blindly run several render/browser jobs or route Mini-only paths/sign-ins to the laptop. Transfer required approved inputs/output receipts only with verified readable hashes and supported access. Respect mains/idle/disk guards; do not interrupt a laptop in use. Worker fallback must use verified model/media capability, not just a green heartbeat. Expose running job, owner, host, current action/progress and recorded task estimate; distinguish that from a reserved/free-slot estimate. If no supported availability estimate exists, explicitly report unknown, never invent a countdown.\n\nSeparate external-condition waits, ready queue/capacity waits and pending review so a check_at timestamp never becomes a deliberate worker start delay. Keep delivered candidate review ready without automatically approving it or redoing acquisition. Use J1834/J1841 as regression evidence, including a busy Chief plus another available specialist. The frontend explanation in PR412 is presentation only and does not implement parallel scheduling.\n\nTests: one eligible free lane dispatches immediately; busy Mini plus powered/idle/capable MacBook stages portable job exactly once; laptop in use/offline/unsupported remains excluded; no two hosts claim same job/stage; model outage walks capability-safe fallback; Chief review/signoff preserved; unavailable media capability remains explicit; dead worker lease recovery; no paid generation/publishing performed by tests. Rollout requires exact-head Chief review and observed real host transitions, not CI alone. No spend, media regeneration, upload, schedule, visibility or policy changes are authorized by this engineering task.\n",
+      "body": "\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nBen repeated resource-unblocking request: inspect actual per-host leases and freshness, current Mini worker authentication/quota failures and MacBook powered/idle availability. Codex Mini and MacBook share an account quota; moving machines does not reset it. Cursor latest execution reports authentication required, while daily credit says exhausted: inspect exact current cause without printing secrets or starting interactive sign-in. Do not call unavailable workers free. Implement/test capacity and portable overflow safely in this existing focused job, with review and observed rollout; no parallel browser/generation writers or unsupported host paths. Do not interrupt an active media review or label queue assignment as a launch/claim.\n\nBen, 3 Nov: run a waiting task on the next capable available agent, use an available MacBook worker when Mini capacity is genuinely exhausted, and otherwise expose who is busy and a supported next-slot outlook. Current relay holds one serial execution lane, so green agents do not imply spare execution slots. MacBook heartbeat reports generic host macbook; verify actual registered machine rather than assume Air/Pro identity.\n\nImplement and review a capacity-aware dispatch change in a focused PR: actual per-host active execution leases, configured limits plus measured resource/capability guards, concurrent independent work only when safe, and an explicit portable-job contract for MacBook spillover. Preserve single elected-Chief signoff, film/stage claims, shared account limits, generation/browser mutexes, dependency/Ben/money gates and atomic queue claims. Do not blindly run several render/browser jobs or route Mini-only paths/sign-ins to the laptop. Transfer required approved inputs/output receipts only with verified readable hashes and supported access. Respect mains/idle/disk guards; do not interrupt a laptop in use. Worker fallback must use verified model/media capability, not just a green heartbeat. Expose running job, owner, host, current action/progress and recorded task estimate; distinguish that from a reserved/free-slot estimate. If no supported availability estimate exists, explicitly report unknown, never invent a countdown.\n\nSeparate external-condition waits, ready queue/capacity waits and pending review so a check_at timestamp never becomes a deliberate worker start delay. Keep delivered candidate review ready without automatically approving it or redoing acquisition. Use J1834/J1841 as regression evidence, including a busy Chief plus another available specialist. The frontend explanation in PR412 is presentation only and does not implement parallel scheduling.\n\nTests: one eligible free lane dispatches immediately; busy Mini plus powered/idle/capable MacBook stages portable job exactly once; laptop in use/offline/unsupported remains excluded; no two hosts claim same job/stage; model outage walks capability-safe fallback; Chief review/signoff preserved; unavailable media capability remains explicit; dead worker lease recovery; no paid generation/publishing performed by tests. Rollout requires exact-head Chief review and observed real host transitions, not CI alone. No spend, media regeneration, upload, schedule, visibility or policy changes are authorized by this engineering task.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -160441,10 +160452,21 @@
           "at": "2026-11-03T14:27Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T23:37Z",
+          "by": "codex",
+          "what": "Ben asks to resolve production holds using available resources; current evidence and explicit next action attached. Status, owner, progress, gates and original deadlines preserved."
         }
       ],
       "remaining_action": "Implement measured execution capacity, portable MacBook fallback and honest next-slot reporting",
-      "kind": "assembly"
+      "kind": "assembly",
+      "resource_unblock_notes": [
+        "Ben-2026-11-03-resource-unblock"
+      ],
+      "urgent": 2,
+      "due": "2026-11-03T23:37:09+00:00",
+      "due_kind": "user-resource-unblock"
     },
     {
       "id": "J1844",
@@ -160984,7 +161006,7 @@
       "title": "AR2 NASA model: Chief exact-input acceptance or bounded fallback",
       "needs": "any",
       "repo": "owb",
-      "body": "# AR2 replacement — Chief source decision\n\nJ1846 follow-through, OWB:030. Recheck chief_relay.py status and use own id. Read J1846 REPORT/RENDER_BRIEF, the renderer delivery and Gemini actual-moving review. Verify exact hashes/interval/recipe and all gates/WARNs before a decision. This task is ready as soon as its review predecessor finishes, never a timed recheck.\n\nJ1846 explicitly delegates the actual moving-viewing component to Gemini using its verified native video input; this is a one-off review-method exception to J1833/J1834's requirement that the elected Chief personally play the preview. The currently elected Chief retains source acceptance and must explicitly cite and assess Gemini's timestamped playback evidence, not claim independent viewing. If the Chief has verified moving input it should also view it. If Gemini cannot actually view, or any required check fails, no source acceptance is permitted. This delegation changes neither media gates nor final audiovisual/Ben-watch requirements.\n\nOn suitable evidence approve only the exact new source/hash/interval/recipe and satisfy J1471's ISS-input hold with that reference, preserving all other corrections and gates. J1471 alone performs master repairs; J1356 still owns full moving/audio/pace and final-watch readiness. No new final-watch or publication approval here. If FIX or bounded render failure, record the concrete next scoped alternative and immediately queue its capable worker; no repeated T545 inspection, no unbounded model retries. Any Veo scope requires reference, approved world-footage route, finite takes/credit cap and live no-overage checks; no generation is authorised by this brief itself. Preserve h40 timing, originals/manifests, AR2 v10/AR3 v09 exclusions and all Ben/date/credit/failed-gate/publishing holds.\n",
+      "body": "\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nJ1847 is done and J1848 now records actual native moving/phone review PASS (PR435/adcf308939). Make the exact-input decision now from evidence; if accepted satisfy only ISS input hold, then immediately arrange J1471 repairs and J1356 full audiovisual review. Do not treat specialist PASS as final-film approval.\n\n# AR2 replacement — Chief source decision\n\nJ1846 follow-through, OWB:030. Recheck chief_relay.py status and use own id. Read J1846 REPORT/RENDER_BRIEF, the renderer delivery and Gemini actual-moving review. Verify exact hashes/interval/recipe and all gates/WARNs before a decision. This task is ready as soon as its review predecessor finishes, never a timed recheck.\n\nJ1846 explicitly delegates the actual moving-viewing component to Gemini using its verified native video input; this is a one-off review-method exception to J1833/J1834's requirement that the elected Chief personally play the preview. The currently elected Chief retains source acceptance and must explicitly cite and assess Gemini's timestamped playback evidence, not claim independent viewing. If the Chief has verified moving input it should also view it. If Gemini cannot actually view, or any required check fails, no source acceptance is permitted. This delegation changes neither media gates nor final audiovisual/Ben-watch requirements.\n\nOn suitable evidence approve only the exact new source/hash/interval/recipe and satisfy J1471's ISS-input hold with that reference, preserving all other corrections and gates. J1471 alone performs master repairs; J1356 still owns full moving/audio/pace and final-watch readiness. No new final-watch or publication approval here. If FIX or bounded render failure, record the concrete next scoped alternative and immediately queue its capable worker; no repeated T545 inspection, no unbounded model retries. Any Veo scope requires reference, approved world-footage route, finite takes/credit cap and live no-overage checks; no generation is authorised by this brief itself. Preserve h40 timing, originals/manifests, AR2 v10/AR3 v09 exclusions and all Ben/date/credit/failed-gate/publishing holds.\n",
       "ref": "J1846",
       "film": "",
       "stage": "",
@@ -161007,6 +161029,11 @@
           "at": "2026-11-03T22:32Z",
           "by": "codex",
           "what": "Ben requested deployment after text-only approval scope; J1910 records publication PR433. Prioritize ready ISS follow-through at safe dispatch boundaries. Existing status, after dependencies, budgets and all media/approval gates unchanged."
+        },
+        {
+          "at": "2026-11-03T23:37Z",
+          "by": "codex",
+          "what": "Ben asks to resolve production holds using available resources; current evidence and explicit next action attached. Status, owner, progress, gates and original deadlines preserved."
         }
       ],
       "remaining_action": "Decide exact model input from native moving evidence; release only ISS input hold if accepted",
@@ -161014,7 +161041,10 @@
       "kind": "chief",
       "urgent": 4,
       "due_kind": "user-immediate-claim",
-      "priority_scope_key": "Ben-ISS-text-deploy-followthrough"
+      "priority_scope_key": "Ben-ISS-text-deploy-followthrough",
+      "resource_unblock_notes": [
+        "Ben-2026-11-03-resource-unblock"
+      ]
     },
     {
       "id": "J1850",
@@ -163913,7 +163943,7 @@
       "title": "J1879: review recovered Mars-night and Titan Studio source candidates",
       "needs": "mini",
       "repo": "owb",
-      "body": "Follow J1879 source recovery, report commit 88c016c70b on codex/J1879-source-recovery; jobs/reviews/J1879/REPORT.md and studio-downloads.json. This is the single linked acceptance decision for two current Studio Download candidates, NOT permission to host/post/upload/change YouTube or substitute a later render. Elected Chief must recheck chief_relay.py status. Requires demonstrated audio_input and moving_video_input; never claim perception from ffmpeg, transcripts, stills or player presence. If unavailable use a typed capability hold and preserve source holds.\n\nReview exact local candidates, rehash first:\nMars iyvWYFP_ETA: /Users/benjaminoats/_desk/J1879/current-upload-candidates/Could a Robot Survive a Night on Mars_.mp4, 3667108 bytes, SHA70c0137661530df7397bdcfb883e5524f884f202d471d8cd73c5b613b80ddb7e, H264/AAC720x1280,25.500s video. Expected upload SHA48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1.\nTitan RLSJm59OSzI: /Users/benjaminoats/_desk/J1879/current-upload-candidates/What Would Standing on Saturn's Moon Titan Feel Like_.mp4,1000998 bytes,SHA68836fd5f65bfb768bab429fd2c46047136a7478d5aba87abdc7e36f5f96b575,H264/AAC720x1280,21.966667s video. Expected upload SHAafe0e80f044aca2887b9a9ef1d2aaf9fee9098285315fdc5d667eaca0019ca6c.\n\nOne Studio Download per item already completed on verified OWB channel UC_esArsDKd3GJvOkeO0DUog at each exact video edit page. Both fully decode without errors; this is not perceptual acceptance. Original uploaded bytes not recovered. Do not download again or reset the original-location search budget. Two candidates examined each (Mars archived seam-fix plus Studio; Titan overwritten local plus Studio), below20 active minutes. Existing negative J1181/J1320 evidence preserved. Empty ID-named files in that folder are Playwright placeholders, never candidates.\n\nActually watch and hear both full clips, assess identity, content, audio clarity, motion/phone quality and visible encode defects; document input method and observations/timestamps. Compare original upload lineage and encoding limits; no original bytes available for direct comparison. J1008 retains scheduled Titan, forbids substituting local SHA3f2f51d4... and does not waive failed gates. Mars archive SHA0195a5fb... is likewise not an original. Preserve existing schedule9Nov11:30Z/10Nov11:30Z, exclusions, J0216 exceptions, all Ben/credit holds. Do not treat original-upload authority as a social-source exception.\n\nGive a concrete acceptance/rejection decision for these exact hashes only when evidence supports it. If accepted, separately scope registry exception and any hosting/Buffer job; none authorized here. If rejected document why and choose a bounded next action without new render/spend/swap authority. Keep current UPLOADS.json/source holds unchanged until accepted decision is recorded. Update parent J1879 with review reference or --recheck where applicable; do not call source-ready from filename or matching planned duration. GBP0, no secrets, no NAS deletion. The reviewer/Chief owns the decision; do not ask Ben for an ordinary reversible decision.\n",
+      "body": "\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nGemini now has demonstrated local native moving-video/audio input evidence (J1847/J1848); independently reverify tool/input capability and review the exact recovered social candidates. Use existing private local inputs; do not redownload or upload new source data. Decide acceptance and hand off existing J1879. No Buffer creates/R2 uploads under this review; J1878 automatic-approval rejection remains separate.\n\nFollow J1879 source recovery, report commit 88c016c70b on codex/J1879-source-recovery; jobs/reviews/J1879/REPORT.md and studio-downloads.json. This is the single linked acceptance decision for two current Studio Download candidates, NOT permission to host/post/upload/change YouTube or substitute a later render. Elected Chief must recheck chief_relay.py status. Requires demonstrated audio_input and moving_video_input; never claim perception from ffmpeg, transcripts, stills or player presence. If unavailable use a typed capability hold and preserve source holds.\n\nReview exact local candidates, rehash first:\nMars iyvWYFP_ETA: /Users/benjaminoats/_desk/J1879/current-upload-candidates/Could a Robot Survive a Night on Mars_.mp4, 3667108 bytes, SHA70c0137661530df7397bdcfb883e5524f884f202d471d8cd73c5b613b80ddb7e, H264/AAC720x1280,25.500s video. Expected upload SHA48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1.\nTitan RLSJm59OSzI: /Users/benjaminoats/_desk/J1879/current-upload-candidates/What Would Standing on Saturn's Moon Titan Feel Like_.mp4,1000998 bytes,SHA68836fd5f65bfb768bab429fd2c46047136a7478d5aba87abdc7e36f5f96b575,H264/AAC720x1280,21.966667s video. Expected upload SHAafe0e80f044aca2887b9a9ef1d2aaf9fee9098285315fdc5d667eaca0019ca6c.\n\nOne Studio Download per item already completed on verified OWB channel UC_esArsDKd3GJvOkeO0DUog at each exact video edit page. Both fully decode without errors; this is not perceptual acceptance. Original uploaded bytes not recovered. Do not download again or reset the original-location search budget. Two candidates examined each (Mars archived seam-fix plus Studio; Titan overwritten local plus Studio), below20 active minutes. Existing negative J1181/J1320 evidence preserved. Empty ID-named files in that folder are Playwright placeholders, never candidates.\n\nActually watch and hear both full clips, assess identity, content, audio clarity, motion/phone quality and visible encode defects; document input method and observations/timestamps. Compare original upload lineage and encoding limits; no original bytes available for direct comparison. J1008 retains scheduled Titan, forbids substituting local SHA3f2f51d4... and does not waive failed gates. Mars archive SHA0195a5fb... is likewise not an original. Preserve existing schedule9Nov11:30Z/10Nov11:30Z, exclusions, J0216 exceptions, all Ben/credit holds. Do not treat original-upload authority as a social-source exception.\n\nGive a concrete acceptance/rejection decision for these exact hashes only when evidence supports it. If accepted, separately scope registry exception and any hosting/Buffer job; none authorized here. If rejected document why and choose a bounded next action without new render/spend/swap authority. Keep current UPLOADS.json/source holds unchanged until accepted decision is recorded. Update parent J1879 with review reference or --recheck where applicable; do not call source-ready from filename or matching planned duration. GBP0, no secrets, no NAS deletion. The reviewer/Chief owns the decision; do not ask Ben for an ordinary reversible decision.\n",
       "ref": "J1879",
       "film": "",
       "stage": "",
@@ -163931,6 +163961,11 @@
           "at": "2026-11-03T20:37Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T23:37Z",
+          "by": "codex",
+          "what": "Ben asks to resolve production holds using available resources; current evidence and explicit next action attached. Status, owner, progress, gates and original deadlines preserved."
         }
       ],
       "remaining_action": "Watch and hear recovered Studio candidates and decide exact social-source acceptance",
@@ -163939,7 +163974,11 @@
       "required_capabilities": [
         "audio_input",
         "moving_video_input"
-      ]
+      ],
+      "resource_unblock_notes": [
+        "Ben-2026-11-03-resource-unblock"
+      ],
+      "urgent": 2
     },
     {
       "id": "J1890",
@@ -164151,7 +164190,7 @@
       "title": "Chief: verify condition for J0862",
       "needs": "any",
       "repo": "owb",
-      "body": "Verify the waiting condition for J0862: Verified 3 Nov 15:13Z: HOS ce5d17cd, PRs through 400, desk through 6606923484 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR366 retains the block: both one minute and one second required; existing speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Approve replacement wording and exact recording scope before recording. Preserve v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit check required before future authorised spend; all production and Ben gates remain.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0862 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "body": "\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nCredit is not the recorded substantive blocker: published ElevenLabs balance at 08:30Z is 101014 characters; structured J0862 hold instead requires approved HOS009 Short B replacement opening and exact recording scope. Make that editorial/recording decision within Chief authority, verify current HOS rules, re-read live credit before a scoped API take, preserve existing accepted 010 A1 and v02 takes. If approved, resume existing original job with evidence rather than defer to an obsolete 30 Oct reset. No unchanged four-script regeneration.\n\nVerify the waiting condition for J0862: Verified 3 Nov 15:13Z: HOS ce5d17cd, PRs through 400, desk through 6606923484 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR366 retains the block: both one minute and one second required; existing speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Approve replacement wording and exact recording scope before recording. Preserve v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit check required before future authorised spend; all production and Ben gates remain.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0862 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -164169,13 +164208,22 @@
           "at": "2026-11-03T21:24Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T23:37Z",
+          "by": "codex",
+          "what": "Ben asks to resolve production holds using available resources; current evidence and explicit next action attached. Status, owner, progress, gates and original deadlines preserved."
         }
       ],
       "remaining_action": "Verify readiness: Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
       "kind": "chief",
       "recheck_of": "J0862",
       "due": "2026-11-03T22:24:26+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "resource_unblock_notes": [
+        "Ben-2026-11-03-resource-unblock"
+      ],
+      "urgent": 2
     },
     {
       "id": "J1895",
@@ -164418,7 +164466,7 @@
       "title": "Chief: verify condition for J1880",
       "needs": "any",
       "repo": "owb",
-      "body": "Verify the waiting condition for J1880: HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1880 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "body": "\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nReverify newly demonstrated Gemini native moving-video input (J1848), inspect local Franklin alternatives and finish the existing J1880 correction recipe with exact intervals/spoken alignment, then hand to J1881. No reason to wait for a text-only agent. Preserve unapproved notes, failed gates and final-watch requirements.\n\nVerify the waiting condition for J1880: HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1880 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -164436,6 +164484,11 @@
           "at": "2026-11-03T21:54Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T23:37Z",
+          "by": "codex",
+          "what": "Ben asks to resolve production holds using available resources; current evidence and explicit next action attached. Status, owner, progress, gates and original deadlines preserved."
         }
       ],
       "remaining_action": "Verify readiness: Inspect native moving alternatives and finalise exact Franklin correction recipe from PR403",
@@ -164445,7 +164498,11 @@
         "moving_video_input"
       ],
       "due": "2026-11-03T22:54:25+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "resource_unblock_notes": [
+        "Ben-2026-11-03-resource-unblock"
+      ],
+      "urgent": 2
     },
     {
       "id": "J1904",
@@ -164902,6 +164959,38 @@
       ],
       "remaining_action": "Decide topic readiness and editorial fixes before formal facts and script lock",
       "kind": "chief"
+    },
+    {
+      "id": "J1914",
+      "title": "Chief: turn available credits and stale holds into scoped production work",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben directly asks: \"We have Vertex Credit, which we're not used, and we've only got a few days left ... Let's find a solution for these blockers.\" Use already-paid/eligible promotional resources productively under existing rules, not a blanket spend/approval waiver. Do not buy, top up, upgrade, enable overage or use an unapproved service. User is asking for real progress, not empty queue resets.\n\nRecheck actual Mini Chief election and authoritative main queue, fresh board/heartbeat, worker execution and capability reports. Cloud Codex CLI status does not establish Mini Chief authority. Keep a concrete private blocker/action matrix covering all current blocked jobs, classification (real date/public event, editorial/QA, capability, credit, auth, publication), affected films, exact unresolved condition, existing owner/job, next action and evidence. Reuse existing jobs; deduplicate and preserve histories/recorded progress, no mass reopen or auto-approval. An old human-readable result can differ from the structured hold: read both, correct stale display metadata truthfully. Dates are verification times, never deliberate delayed starts. No free-slot countdown without evidence.\n\nResource evidence to REVERIFY LIVE: board's 3 Nov 08:30 reading Vertex GBP69.48 is Google Developer Program premium MONTHLY Available; Free Trial GBP0 Used, not the expired historical GBP225.63. Flow15430 and ElevenLabs101014 available in that reading. Do not assert those are still spendable or expiring in a few days from age alone. Read actual entitlement/model/project/region eligibility, amount, expiry and pending spend ledger through existing credential-safe billing reader. Existing guard reportedly stops at GBP1; retain stricter active lag margin. If reader only supports Free Trial and rejects this monthly pool, do not bypass it or relabel monthly credit as trial: create/reuse a focused backward-compatible tested billing-reader repair and have it reviewed before minting. Report exact usable amount/expiry privately, public metadata only where authorized.\n\nPrioritize near-UAT pipeline and channel_balance focus, not unrelated asset stockpiling. For each genuinely missing visual, use approved source-first bounded research rule, and choose a separate scoped Veo world-footage / Omni-character / sourced diagram fallback when needed. Each approved generation scope must name film/locked spoken line, shot/reference/tool/model/location, finite takes and maximum credit cost below verified available balance after pending spend and lag margin, acceptance/QA criteria and capable worker. Reuse existing generation jobs or queue a deduplicated linked worker job with immediate readiness when inputs are locked. This task may make normal reversible Chief scoping decisions within standing authority, but does not itself mint under no-generation predecessor briefs, waive facts or visual gates, or consume credits merely to empty balances. The ISS J1847/J1848 source is already delivered/reviewed; finish J1849 decision rather than generate it again. Actual authorized generation still uses existing ledger/desk locks and per-batch balance checks.\n\nSpecific existing unblock paths: J1810 -> J1752/J1753 actual listening using freshly verified Gemini native audio; J1894 -> J0862 HOS opening/recording decision (not obsolete reset); J1889 -> J1879 exact social candidate acceptance; J1903 -> J1880 -> J1881 Franklin recipe; J1849 -> J1471 -> J1356 exact ISS acceptance, bounded corrections, full audiovisual/pace QA; J1843 measured capacity and portable MacBook overflow. Finish real handoffs with recorded next owner/action, no duplicate generic audit jobs. Prioritize finite production prerequisites before routine diagnostics.\n\nPreserve active worker claims and real date/Ben/test/publication holds. J1878 automatic review rejected R2 uploads and six Buffer creates for lack of direct trusted authorization: do not retry that rejected payload, disguise it, or interpret this broad blocker request as exact external-post approval. Likewise retain other rejected public evidence pushes; investigate permitted private-local completion/handoff through explicit applicable rules as J1912 did, never publish rejected data through queue/comments. If no permitted route exists, prepare the exact bounded payload/destination/action for one specific user decision. No YouTube scheduling/privacy changes or final-UAT approvals. Finish this task only with a readable private matrix and concrete existing-job updates/scoped handoffs, or precise supported limitations; an assignment is not pickup and tests are not runtime proof.",
+      "ref": "Ben resource-unblocking request 2026-11-03",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T23:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T23:37Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify live usable credit and expiry; scope missing-content work and resolve stale holds through existing jobs",
+      "kind": "chief",
+      "resource_scope_key": "Ben-2026-11-03-resource-unblock",
+      "urgent": 2,
+      "due": "2026-11-03T23:37:09+00:00",
+      "due_kind": "user-resource-unblock"
     }
   ],
   "focus": [],
