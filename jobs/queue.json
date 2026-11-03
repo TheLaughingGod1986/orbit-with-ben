@@ -162347,13 +162347,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-03T20:47Z",
-      "eta": "2026-11-03T22:47Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:56Z",
-      "result": "",
+      "result": "Waiting for: HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved.",
       "history": [
         {
           "at": "2026-11-03T18:56Z",
@@ -162379,9 +162379,19 @@
           "at": "2026-11-03T20:52Z",
           "by": "codex",
           "what": "step 1 of 4 done: Partial recipe committed HOS 6137ff0d; master hash verified, six notes/source rows/neighbours preserved. Repository checks PASS. Still-only input cannot select safe motion intervals; source trim and spoken alignment remain unfinished."
+        },
+        {
+          "at": "2026-11-03T20:52Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved."
+        },
+        {
+          "at": "2026-11-03T20:52Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T21:52:06Z"
         }
       ],
-      "remaining_action": "Inspect native moving alternatives and finalise exact Franklin correction intervals",
+      "remaining_action": "Inspect native moving alternatives and finalise exact Franklin correction recipe from PR403",
       "due": "2026-11-04T12:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -162393,6 +162403,17 @@
       },
       "taskKeys": [
         "HOS:008"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved.",
+        "check_at": "2026-11-03T21:52:06Z",
+        "requires": [
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "moving_video_input"
       ]
     },
     {
