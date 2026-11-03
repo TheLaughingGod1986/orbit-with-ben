@@ -155305,13 +155305,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T12:54Z",
-      "eta": "2026-11-03T14:54Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Resolved OWB:028 thumbs orphan-review. Scoped PASS of three J1111 Gliese cover fixes after viewing archived Studio screenshots/list images and matching all nine evidence hashes. Stage done, claim cleared; all other film-status fields preserved. Existing J0894 Studio finish remains. No spend or YouTube writes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -155342,6 +155342,11 @@
           "at": "2026-11-03T12:58Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified thumbs done with review ref; no claims remain and every other film-status field is unchanged."
+        },
+        {
+          "at": "2026-11-03T12:58Z",
+          "by": "codex",
+          "what": "done: Resolved OWB:028 thumbs orphan-review. Scoped PASS of three J1111 Gliese cover fixes after viewing archived Studio screenshots/list images and matching all nine evidence hashes. Stage done, claim cleared; all other film-status fields preserved. Existing J0894 Studio finish remains. No spend or YouTube writes."
         }
       ],
       "remaining_action": "Complete J1768 and report scoped cover PASS",
@@ -155361,7 +155366,8 @@
       },
       "taskKeys": [
         "OWB:028"
-      ]
+      ],
+      "done_ref": "8bd9227d8"
     },
     {
       "id": "J1769",
