@@ -152042,19 +152042,24 @@
           "at": "2026-11-03T06:44Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fresh hashes match all three J1468 exports; no additional final exports. Saved opening FAILs remain 6.00s, 0.25 and 1.41. No fresh audition or gate PASS claimed."
+        },
+        {
+          "at": "2026-11-03T06:45Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1356 remains blocked with fresh evidence and recheck J1728; next check retained at 2026-11-03T07:34:01Z. All original holds preserved."
         }
       ],
-      "remaining_action": "Record unmet condition and close verification",
+      "remaining_action": "Close completed verification J1728",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T07:34:01+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T06:44Z",
+        "at": "2026-11-03T06:45Z",
         "by": "codex",
-        "note": "Fresh hashes match all three J1468 exports; no additional final exports. Saved opening FAILs remain 6.00s, 0.25 and 1.41"
+        "note": "J1356 remains blocked with fresh evidence and recheck J1728; next check retained at 2026-11-03T07:34:01Z. All original h"
       },
       "taskKeys": [
         "OWB:030"
