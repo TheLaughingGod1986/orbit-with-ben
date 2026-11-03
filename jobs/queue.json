@@ -153156,13 +153156,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T08:35Z",
-      "eta": "2026-11-03T10:35Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T08:34Z",
-      "result": "",
+      "result": "Verified fresh bed and all three audition hashes against 3e26b379b; no newer local listening record. J1100 remains blocked at 2/3 with existing 2026-11-03T09:34:16Z retry, accepted sources, h43-LOOP, deadlines and v01 fallback. No media acceptance, spend or publishing changes. Required offload discovered existing J1732 recovery; stopped this runs duplicate, leaving J1732 intact.",
       "history": [
         {
           "at": "2026-11-03T08:34Z",
@@ -153193,6 +153193,11 @@
           "at": "2026-11-03T08:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1100 remains blocked at 2/3; retained existing 09:34:16Z retry and all approvals, h43-LOOP, deadlines and v01 fallback."
+        },
+        {
+          "at": "2026-11-03T08:37Z",
+          "by": "codex",
+          "what": "done: Verified fresh bed and all three audition hashes against 3e26b379b; no newer local listening record. J1100 remains blocked at 2/3 with existing 2026-11-03T09:34:16Z retry, accepted sources, h43-LOOP, deadlines and v01 fallback. No media acceptance, spend or publishing changes. Required offload discovered existing J1732 recovery; stopped this runs duplicate, leaving J1732 intact."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits bed clearance and local listening",
@@ -153210,7 +153215,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1744",
