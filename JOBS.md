@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1881 | mini | open (after J1880) | – | – | 008 edit · chief · Chief: review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1882 | any | open | – | – | chief · Chief: verify condition for J1825 |  |
 | J1884 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
-| J1885 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1885 | any | claimed | gemini | 2026-11-03T21:40Z | chief · Chief: verify condition for J1100 |  |
 
 Recently finished:
 
