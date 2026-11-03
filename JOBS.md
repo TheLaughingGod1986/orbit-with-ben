@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1889 | mini | open | – | – | chief · J1879: review recovered Mars-night and Titan Studio source candidates | J1879 |
 | J1891 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 | J1892 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
-| J1893 | any | open | – | – | chief · Chief: verify condition for J1846 |  |
+| J1893 | any | claimed | codex | 2026-11-03T23:10Z | chief · Chief: verify condition for J1846 |  |
 
 Recently finished:
 
