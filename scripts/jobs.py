@@ -120,7 +120,8 @@ def london_hm(stamp: str) -> str:
 
 def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
            stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "",
-           kind: str = "", model: str = "", not_before: str = "", reset: str = "", due: str = "", action: str = "") -> dict:
+           kind: str = "", model: str = "", not_before: str = "", reset: str = "", due: str = "", action: str = "", requires=None) -> dict:
+    requirements = workflow.capability_names(requires)
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
     if kind and kind not in routing.KINDS:
@@ -152,6 +153,8 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
         job["kind"] = kind
     if model:
         job["model"] = model
+    if requirements:
+        job["required_capabilities"] = requirements
     if nb:
         job["not_before"] = nb
         job["reset"] = reset.strip()
@@ -168,7 +171,7 @@ def film_named(title: str) -> bool:
 
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
     chief = agent if workflow.role_job(job) and chief_relay.is_elected_chief(agent, at) else ""
-    return workflow.claimable(job, data["jobs"], at, agent, chief, can, chief_relay.current_execution(at))
+    return workflow.claimable(job, data["jobs"], at, agent, chief, can, chief_relay.current_execution(at), chief_relay.worker_capabilities())
 
 
 def ordered(data: dict, at: dt.datetime | None = None) -> list:
@@ -179,10 +182,12 @@ def ordered(data: dict, at: dt.datetime | None = None) -> list:
 def set_wait(job, agent, at, hold, action="", recheck=""):
     if not str(agent or "").strip():
         raise ValueError("A non-empty --agent is required")
+    requirements = workflow.capability_names(hold.get("requires"))
+    if hold.get("type") == "capability" and not requirements:
+        raise ValueError("A capability hold needs --requires with the actual missing tool capability")
     if job.get("status") == "claimed":
         _mine(job,agent)
-        do_block(job,agent,"Waiting for: " + str(hold.get("condition") or ""),at)
-    if job.get("status") != "blocked":
+    if job.get("status") not in ("claimed", "blocked"):
         raise ValueError("A hold can only be recorded on a claimed or blocked job")
     if agent != "relay" and job.get("by") != agent and not chief_relay.is_elected_chief(agent,at):
         raise ValueError("Only the holder or elected Chief may update this hold")
@@ -191,12 +196,18 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
     if not condition or not check:
         raise ValueError("A hold needs --condition and --check-at")
     value = {"type":hold.get("type") or "input","condition":condition,"check_at":check}
+    if requirements:
+        value["requires"] = requirements
     if recheck:
         if workflow.timestamp(check) <= at:
             raise ValueError("A verification retry needs a future --check-at")
         if not chief_relay.is_elected_chief(agent,at):
             raise ValueError("Only the elected Chief may record a condition check")
         value.update(last_recheck=recheck,checked_at=at.isoformat(),checked_by=agent)
+    if job.get("status") == "claimed":
+        do_block(job,agent,"Waiting for: " + condition,at)
+    if hold.get("type") == "capability":
+        job["required_capabilities"] = sorted(set(job.get("required_capabilities") or []) | set(requirements))
     job["hold"] = value
     if action:
         job["remaining_action"] = str(action).strip()
@@ -221,6 +232,8 @@ def apply_metadata(data, entries, agent, at):
         if action and (not j.get("remaining_action") or entry.get("replace")):
             j["remaining_action"] = action
             log(j,at,agent,"remaining action: " + action)
+        if "required_capabilities" in entry:
+            j["required_capabilities"] = workflow.capability_names(entry["required_capabilities"])
         if entry.get("hold") and j["status"] == "blocked" and not j.get("hold"):
             set_wait(j,agent,at,entry["hold"])
     data.clear(); data.update(planned)
@@ -231,10 +244,16 @@ def reconcile_holds(data, at):
     due = workflow.deadlines(data["jobs"])
     changed = []
     for parent in list(data["jobs"]):
-        if parent.get("recheck_of") or not workflow.hold_due(parent,by_id,at):
+        if parent.get("recheck_of"):
             continue
         pending = next((j for j in data["jobs"] if j.get("recheck_of") == parent["id"] and j.get("status") in workflow.LIVE),None)
+        requirements = (parent.get("hold") or {}).get("requires", []) if (parent.get("hold") or {}).get("type") == "capability" else []
         if pending:
+            if requirements and pending.get("status") == "open" and pending.get("required_capabilities") != requirements:
+                pending["required_capabilities"] = list(requirements)
+                changed.append(pending["id"])
+            continue
+        if not workflow.hold_due(parent,by_id,at):
             continue
         condition = (parent.get("hold") or {}).get("condition") or "Required predecessor is complete; verify remaining gates and approvals"
         task = do_add(data,title="Chief: verify condition for " + parent["id"],needs="any",kind="chief",by="relay",at=at,
@@ -245,6 +264,8 @@ def reconcile_holds(data, at):
             "Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. "
             "If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.")
         task["recheck_of"] = parent["id"]
+        if requirements:
+            task["required_capabilities"] = list(requirements)
         task["remaining_action"] = ("Verify readiness: " + (parent.get("remaining_action") or parent["title"]))[:180]
         target = at + dt.timedelta(hours=1)
         if parent["id"] in due:
@@ -287,7 +308,7 @@ MINI_NEEDS = {"mini", "gemini", "any"}
 def can_any_mini_claim(data, job, at):
     chief = chief_relay.acting(at)[1] if workflow.role_job(job) else ""
     actors = [chief] if workflow.role_job(job) else [job["for"]] if job.get("for") else routing.MINI_WORKERS
-    return any(actor and workflow.claimable(job,data["jobs"],at,actor,chief,MINI_NEEDS,chief_relay.current_execution(at)) for actor in actors)
+    return any(actor and workflow.claimable(job,data["jobs"],at,actor,chief,MINI_NEEDS,chief_relay.current_execution(at),chief_relay.worker_capabilities()) for actor in actors)
 
 
 def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
@@ -361,7 +382,7 @@ def choose_next(data, agent, can, at, job_id=""):
     held = next((j for j in data["jobs"] if j.get("by") == agent and j["status"] == "claimed"), None)
     if held:
         require_chief(held, agent, at)
-        if workflow.external_hold(held,at):
+        if workflow.external_hold(held,at) or workflow.capability_problem(held,agent,at,chief_relay.worker_capabilities()):
             return None
         return held if not job_id or held["id"] == job_id else None
     return next((j for j in ordered(data, at) if (not job_id or j["id"] == job_id) and claimable(data,j,can,at,agent)), None)
@@ -812,6 +833,7 @@ def main(argv=None) -> int:
     a.add_argument("--needs", required=True, choices=NEEDS)
     a.add_argument("--body", default="")
     a.add_argument("--body-file", type=pathlib.Path)
+    a.add_argument("--requires", default="", help="explicit tool capabilities, e.g. audio_input,moving_video_input")
     a.add_argument("--ref", default="")
     a.add_argument("--film", default="")
     a.add_argument("--stage", default="")
@@ -843,7 +865,8 @@ def main(argv=None) -> int:
     wt.add_argument("--agent", required=True)
     wt.add_argument("--condition", required=True)
     wt.add_argument("--check-at", required=True)
-    wt.add_argument("--type", dest="hold_type", default="input", choices=["input","public","credits","test","dependency","date","ben"])
+    wt.add_argument("--type", dest="hold_type", default="input", choices=["input","public","credits","test","dependency","date","ben","capability"])
+    wt.add_argument("--requires", default="", help="missing capabilities; required for --type capability")
     wt.add_argument("--action", default="")
     wt.add_argument("--recheck", default="", help="verification task whose condition check this records")
     n = sub.add_parser("next")
@@ -950,7 +973,7 @@ def main(argv=None) -> int:
                           "won't move that film's stage when it's done (J0814)", file=sys.stderr)
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
-                             for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset, due=args.due, action=args.action)
+                             for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset, due=args.due, action=args.action, requires=args.requires)
                 if args.approved_from:
                     src = find(data, args.approved_from)
                     if not src:
@@ -1011,7 +1034,7 @@ def main(argv=None) -> int:
             elif args.cmd == "wait":
                 if args.recheck and (find(data,args.recheck) or {}).get("recheck_of") != job["id"]:
                     raise ValueError("--recheck must identify this job's Chief verification task")
-                set_wait(job, args.agent, at, {"type":args.hold_type,"condition":args.condition,"check_at":args.check_at}, args.action, args.recheck)
+                set_wait(job, args.agent, at, {"type":args.hold_type,"condition":args.condition,"check_at":args.check_at,"requires":args.requires}, args.action, args.recheck)
             elif args.cmd == "awaits" and args.clear and not args.dropped and job.get("awaits_ben") and (
                     args.ok or job["status"] in ("open", "claimed", "blocked")):
                 # Clearing a held job that goes on = Ben OK'd it (Ben, 25 Oct 14:13): it shows in "Approved, on its

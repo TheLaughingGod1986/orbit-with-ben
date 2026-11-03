@@ -8,6 +8,30 @@ LIVE = {"open", "claimed", "blocked"}
 MINI = {"mini", "gemini", "any"}
 STALL_GRACE = dt.timedelta(minutes=45)
 
+def capability_names(value):
+    if not value:
+        return []
+    names = value.split(",") if isinstance(value, str) else value or []
+    if not isinstance(names, list) or any(not isinstance(n, str) or not re.fullmatch(r"[a-z][a-z0-9_]{0,63}", n.strip()) for n in names):
+        raise ValueError("Capabilities must be identifiers such as audio_input")
+    return sorted({n.strip() for n in names})
+
+def capability_problem(j, agent, at, capabilities=None):
+    """Online is not proof of media input. Explicit requirements fail closed.
+
+    Reports are local, per worker and short lived; neither a model name nor a
+    heartbeat supplies a capability. Jobs without requirements keep their rules.
+    """
+    required = j.get("required_capabilities") or []
+    if not required:
+        return ""
+    report = (capabilities or {}).get(agent) or {}
+    checked, expires = timestamp(report.get("at")), timestamp(report.get("expiresAt"))
+    fresh = checked and expires and checked <= at < expires and expires-checked <= dt.timedelta(hours=1) and report.get("evidence")
+    available = (report.get("available") or []) if fresh else []
+    missing = sorted(set(required) - set(available))
+    return "Waiting for verified capability: " + ", ".join(missing) if missing else ""
+
 def timestamp(value):
     if not value:
         return None
@@ -176,19 +200,24 @@ def order(j, due, focus=(), at=None):
     rank = urgent if isinstance(urgent, int) and not isinstance(urgent, bool) else 0
     created = timestamp(j.get("created_at") or j.get("addedAt") or next((h.get("at") for h in j.get("history", []) if h.get("at")), None))
     inf = float("inf")
-    return (due.get(j["id"]).timestamp() if j["id"] in due else inf,
-            1 if recently_released(j, at) else 0,
+    # Synthetic one-hour verification deadlines must not outrank actual work.
+    # A check for a parent with a real production deadline retains that deadline.
+    verification = j.get("recheck_of") if j.get("due_kind") == "condition-verification" else ""
+    background = bool(verification and verification not in due)
+    deadline = due.get(verification) if verification else due.get(j["id"])
+    return (1 if recently_released(j, at) else 0, 1 if background else 0,
+            deadline.timestamp() if deadline else inf,
             0 if urgent else 1, rank if urgent else 0,
             1 if j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I) else 0,
             0 if film in focus and film else 1,
             0 if film else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
             created.timestamp() if created else inf, j["id"])
 
-def claimable(j, rows, at, agent, chief, can=MINI, execution=None):
+def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=None):
     if not str(agent or "").strip():
         return False
     by_id = {r["id"]: r for r in rows}
-    if external_hold(j, at) or dependency_problem(j, by_id):
+    if external_hold(j, at) or dependency_problem(j, by_id) or capability_problem(j, agent, at, capabilities):
         return False
     if role_job(j):
         if not chief or agent != chief:
@@ -208,7 +237,7 @@ def yieldable_monthly_claim(j):
             and str(j.get("backlog", "")).startswith("monthly-improvement-") and not j.get("film") and not j.get("stage")
             and not j.get("hold") and not j.get("awaits_ben"))
 
-def immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude=(), execution=None, focus=()):
+def immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude=(), execution=None, focus=(), capabilities=None):
     """Honor explicit user claim requests at a safe dispatch boundary.
 
     Never interrupt an execution lease or give a worker a second claimed job.
@@ -232,9 +261,9 @@ def immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude=
         if external_hold(j, at) or dependency_problem(j, by_id):
             continue
         if role_job(j):
-            worker = chief if chief in free and claimable(j, rows, at, chief, chief, execution=execution) else None
+            worker = chief if chief in free and claimable(j, rows, at, chief, chief, execution=execution, capabilities=capabilities) else None
         else:
-            eligible = {a for a in free & set(workers) if claimable(j, rows, at, a, chief, execution=execution)}
+            eligible = {a for a in free & set(workers) if claimable(j, rows, at, a, chief, execution=execution, capabilities=capabilities)}
             worker = choose_worker(j, eligible) if eligible else None
             if worker not in eligible:
                 worker = None
@@ -244,18 +273,20 @@ def immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude=
                 "yield_monthly":[{"id":old["id"], "by":old.get("by")} for old in owned]}))
     return min(picks, key=lambda x:x[0])[1] if picks else None
 
-def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, exclude=(), execution=None, include_chief=False):
+def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, exclude=(), execution=None, include_chief=False, capabilities=None):
     actors = set(workers) | ({chief} if chief and include_chief else set())
     rows = data.get("jobs", [])
     by_id, due = {j["id"]: j for j in rows}, deadlines(rows)
     candidates = []
-    requested = immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude, execution, data.get("focus") or ())
+    requested = immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude, execution, data.get("focus") or (), capabilities)
     if requested:
         return requested
     # Ordinary deadlines retain resume-first behavior; explicit user requests above only use free workers.
     for j in rows:
-        if j["id"] not in exclude and j.get("by") in actors and j.get("status") == "claimed" and state(j, by_id, at, execution=execution) in {"running","stalled"} and (not role_job(j) or j.get("by") == chief) and not external_hold(j,at) and not dependency_problem(j,by_id):
+        if j["id"] not in exclude and j.get("by") in actors and j.get("status") == "claimed" and state(j, by_id, at, execution=execution) in {"running","stalled"} and (not role_job(j) or j.get("by") == chief) and not external_hold(j,at) and not dependency_problem(j,by_id) and not capability_problem(j,j.get("by"),at,capabilities):
             return {"job": j, "worker": j["by"], "mode": "job"}
+    occupied = {j.get("by") for j in rows if j.get("status") == "claimed"}
+    free = set(workers) - occupied
     for j in rows:
         if j["id"] in exclude or external_hold(j, at) or dependency_problem(j, by_id):
             continue
@@ -263,22 +294,27 @@ def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, ex
         if review and state(j, by_id, at) != "review":
             continue
         if review:
-            if chief not in actors or (review_ids is not None and j["id"] not in review_ids):
+            if chief not in actors or chief in occupied or (review_ids is not None and j["id"] not in review_ids):
                 continue
             worker = chief
+            if capability_problem(j, worker, at, capabilities):
+                continue
         else:
             if role_job(j):
-                worker = chief if chief in actors else None
+                worker = chief if chief in actors and chief not in occupied else None
             elif j.get("for"):
-                worker = j["for"] if j["for"] in workers else None
+                worker = j["for"] if j["for"] in free else None
             else:
-                worker = choose_worker(j, workers)
-            if not worker or not claimable(j, rows, at, worker, chief, execution=execution):
+                eligible = {a for a in free if claimable(j, rows, at, a, chief, execution=execution, capabilities=capabilities)}
+                worker = choose_worker(j, eligible) if eligible else None
+                if worker not in eligible:
+                    worker = None
+            if not worker or not claimable(j, rows, at, worker, chief, execution=execution, capabilities=capabilities):
                 continue
         candidates.append((order(j, due, data.get("focus") or (), at), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
     return min(candidates, key=lambda p: p[0])[1] if candidates else None
 
-def snapshot(data, at, chief, workers, choose_worker, active_review=None, review_ids=None, execution=None, include_chief=False):
+def snapshot(data, at, chief, workers, choose_worker, active_review=None, review_ids=None, execution=None, include_chief=False, capabilities=None):
     actors = set(workers) | ({chief} if chief and include_chief else set())
     rows = data.get("jobs", [])
     by_id = {j["id"]: j for j in rows}
@@ -293,14 +329,18 @@ def snapshot(data, at, chief, workers, choose_worker, active_review=None, review
     if active_review and states.get(active_review.get("job"), {}).get("state") == "running":
         active = [a for a in active if a["id"] != active_review["job"]]
         active.append({**active_review, "id": active_review["job"], "worker": active_review.get("agent"), "mode": "review"})
-    pick = select_dispatch(data, at, chief, workers, choose_worker, review_ids, exclude=[a["id"] for a in active], execution=execution, include_chief=include_chief)
+    pick = select_dispatch(data, at, chief, workers, choose_worker, review_ids, exclude=[a["id"] for a in active], execution=execution, include_chief=include_chief, capabilities=capabilities)
     counts = {k: sum(s["state"] == k for s in states.values()) for k in ("running", "starting", "queued", "review", "waiting", "stalled")}
     # Unavailable workers are waiting, not ready to run.
     for j in rows:
         if states.get(j["id"], {}).get("state") == "queued":
-            worker = chief if role_job(j) else j.get("for") or choose_worker(j, workers)
-            if worker not in actors or not claimable(j, rows, at, worker or "", chief, execution=execution):
-                states[j["id"]] = {"state": "waiting", "reason": "Waiting for an available eligible worker"}
+            eligible = {a for a in actors if claimable(j, rows, at, a, chief, execution=execution, capabilities=capabilities)}
+            if not eligible:
+                required = j.get("required_capabilities") or []
+                why = "Waiting for an available eligible worker"
+                if required:
+                    why += " with verified capability: " + ", ".join(required)
+                states[j["id"]] = {"state": "waiting", "reason": why}
                 counts["queued"] -= 1
                 counts["waiting"] += 1
     return {"version": 1, "at": at.isoformat(), "active": active,

@@ -465,7 +465,7 @@ class Relay(unittest.TestCase):
         import json
         import jobs
         self.routed_queue(jobs_json)
-        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "cursor did it"')
+        self.cursor = self.fake("cursor", f'echo "$@" >> {self.tmp}/cursor.args; echo "cursor did it"')
         self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "codex did it"')
         self.old_reroute, self.old_q = cr.reroute, cr.queue_has_work
         q = cr.OWB / "jobs" / "queue.json"
@@ -515,6 +515,10 @@ class Relay(unittest.TestCase):
         for jid in ("J0302", "J0303", "J0304", "J0305"):  # J0305: a MacBook job stays on the MacBook
             self.assertNotIn("rerouted_from", self.job(q, jid), jid)
         self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())
+        # The released/open review no longer stops unrelated assembly work in
+        # this run. Keep all invocations rather than inspecting only the last.
+        self.assertIn("--model grok-4.7", (self.tmp / "cursor.args").read_text())
+        self.assertIn("DISPATCH PRIORITY: claim only J0302", (self.tmp / "cursor.args").read_text())
 
     def test_with_cursor_down_the_claude_job_goes_to_gemini_before_codex(self):
         os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
