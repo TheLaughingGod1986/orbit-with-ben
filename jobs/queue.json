@@ -151210,19 +151210,24 @@
           "at": "2026-11-03T04:42Z",
           "by": "codex",
           "what": "step 2 of 3 done: All three final export SHA256 values match J1468; only those exports present. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. No new gate run or audiovisual review claimed."
+        },
+        {
+          "at": "2026-11-03T04:42Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1356 remains blocked; recorded unchanged evidence and retained next check 2026-11-03T05:32:27Z with recheck J1718."
         }
       ],
-      "remaining_action": "Record unmet condition and retain J1356 hold",
+      "remaining_action": "Close completed verification J1718",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T05:32:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-03T04:42Z",
         "by": "codex",
-        "note": "All three final export SHA256 values match J1468; only those exports present. Saved opening FAILs remain AR1 6.00s, AR2 "
+        "note": "J1356 remains blocked; recorded unchanged evidence and retained next check 2026-11-03T05:32:27Z with recheck J1718."
       },
       "taskKeys": [
         "OWB:030"
