@@ -153116,19 +153116,24 @@
           "at": "2026-11-03T08:39Z",
           "by": "codex",
           "what": "step 0 of 3 done: Read brief; checking latest dependency evidence and approval history before hold decision"
+        },
+        {
+          "at": "2026-11-03T08:39Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original brief and approval history checked; J1743 keeps J1100 blocked at 2/3; PR333 remains open without reviews or comments"
         }
       ],
-      "remaining_action": "Verify repair evidence and approvals for J0936",
+      "remaining_action": "Verify current local evidence before recording J0936 hold",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-03T09:34:16+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T08:39Z",
         "by": "codex",
-        "note": "Read brief; checking latest dependency evidence and approval history before hold decision"
+        "note": "Original brief and approval history checked; J1743 keeps J1100 blocked at 2/3; PR333 remains open without reviews or com"
       },
       "taskKeys": [
         "OWB:026",
