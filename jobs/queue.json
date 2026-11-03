@@ -160927,9 +160927,14 @@
           "at": "2026-11-03T23:26Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T23:27Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1848; starting 4-step specialist moving-video review of J1847 NASA IGOAL ISS model delivery (OWB:030 AR2)"
         }
       ],
-      "remaining_action": "Actually view new model opening, phone and preroll; deliver exact-hash recommendation to Chief",
+      "remaining_action": "Verify read_file video/mp4 capability, J1847 local hashes/provenance/recipe/gates, watch all 5 moving MP4s, and deliver specialist recommendation to J1849",
       "due": "2026-11-03T22:32:47+00:00",
       "for": "gemini",
       "kind": "review",
@@ -160939,12 +160944,14 @@
       "priority_scope_key": "Ben-ISS-text-deploy-followthrough",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-03T23:26Z",
+        "of": 4,
+        "at": "2026-11-03T23:27Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1848; starting 4-step specialist moving-video review of J1847 NASA IGOAL ISS model delivery (OWB:030 AR2)"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1849",
