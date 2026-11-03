@@ -153367,19 +153367,24 @@
           "at": "2026-11-03T08:47Z",
           "by": "codex",
           "what": "step 2 of 3 done: All three final-export SHA256 values match J1468; no newer exports. PR380 unchanged; required ISS input and corrected gate/review evidence absent."
+        },
+        {
+          "at": "2026-11-03T08:48Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: J1356 hold updated with J1744 evidence; existing 09:34:16Z retry retained. No new gate PASS or audition claimed."
         }
       ],
-      "remaining_action": "Retain J1356 hold and record verified unmet condition",
+      "remaining_action": "Close completed J1744 verification",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T09:34:16+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T08:47Z",
+        "at": "2026-11-03T08:48Z",
         "by": "codex",
-        "note": "All three final-export SHA256 values match J1468; no newer exports. PR380 unchanged; required ISS input and corrected ga"
+        "note": "J1356 hold updated with J1744 evidence; existing 09:34:16Z retry retained. No new gate PASS or audition claimed."
       },
       "taskKeys": [
         "OWB:030"
