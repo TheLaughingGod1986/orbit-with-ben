@@ -164591,9 +164591,14 @@
           "at": "2026-11-03T22:45Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T22:45Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking parent history, exact evidence commit and thread approvals; no rerender or media approval."
         }
       ],
-      "remaining_action": "Verify readiness: Obtain approval to publish completed text/code evidence, then hand off to J1848",
+      "remaining_action": "Verify approval and evidence for J1847 publication hold",
       "kind": "chief",
       "recheck_of": "J1847",
       "due": "2026-11-03T14:30:08+00:00",
@@ -164603,9 +164608,11 @@
         "of": 3,
         "at": "2026-11-03T22:45Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking parent history, exact evidence commit and thread approvals; no rerender or media approval."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
