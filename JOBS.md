@@ -42,12 +42,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1747 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1748 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1749 | any | claimed | codex | 2026-11-03T11:58Z | chief · Chief: verify condition for J1100 |  |
 | J1750 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1751 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1749 done: Chief: verify condition for J1100 (Fresh bed and three audition hashes match 3e26b379b; no newer local listening evidence. J1100 remains blocked at 2/3, retry 2026-11-03T10:57:27Z. Preserved accepted sources, h43-LOOP, deadlines/v01 fallback. NAS dry run found no eligible scratch; 13012 MB free. No spend, source-audio egress, media approval or publishing changes.)
 - J1746 done: Chief: verify condition for J1130 (Studio 2026-11-03 08:55:48 UTC: T020 still Running, no completion timestamp. J1130 remains blocked; next check 14:56 UTC. Evidence /Users/benjaminoats/_desk/handoff/J1746/; HOS desk report posted. No Studio changes or spend.)
 - J1745 done: Chief: verify condition for J1471 (PR380 unchanged at d0b04b5e0 without comments or reviews; fresh SHA256 matches three J1468 masters and Crew-2. J1471 remains blocked on approved ISS opening input; retry retained at 2026-11-03T09:34:16Z. All gates and J1356/Ben/date/credit/publishing holds preserved.)
 - J1744 done: Chief: verify condition for J1356 (Verified condition remains unmet: PR380 OPEN unchanged at d0b04b5e0, no comments/reviews. Fresh SHA256 matches all three J1468 final exports, no additional exports. J1356 remains blocked for approved ISS input, corrected versioned masters, complete metadata, affected gates and full moving/audio review including pace WARN. Saved opening FAILs persist (AR1 6.00s; AR2 0.25; AR3 1.41). Existing retry 2026-11-03T09:34:16Z retained. No fresh gates/audition claimed, no spend or publishing changes.)
@@ -57,4 +57,3 @@ Recently finished:
 - J1740 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public videos pass chapters, sources, end screens and Related checks against 2026-11-03.json snapshot and live YouTube pages; updated 05_Analytics/live_fixes/2026-11-03.md (1c60f6389); 0 fixes needed)
 - J1739 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (62 videos, 0 errors (30 public [5 longs + 25 Shorts] + 10 scheduled + 22 private); 5/5 public longs end screens and 25/25 public Shorts Related PASS; 0 new fixes needed (HOS 04c64325))
 - J1738 done: Chief: verify condition for J0862 (Verified unmet: HOS main ab6e8124, PRs through 398, desk through 08:05Z, current queue and accepted J1004/merged PR 366 contain no approved 009 Short B replacement opening or exact recording scope. J0862 remains blocked with recheck J1738 and next check 2026-11-03T14:15Z. Preserve v02 takes and approved 010 Short A Option A1; fresh live credit check before any future authorised take. No spend or YouTube changes.)
-- J1737 done: Chief: verify condition for J0978 (Fresh Atom Studio reload at 08:03 UTC still shows A/B testing titles / Results ready, original title and Public. J0978 remains blocked; next check 2026-11-03 14:05 UTC. Evidence PR 389 / e4a886ac9. No YouTube changes or spend.)
