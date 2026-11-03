@@ -150745,18 +150745,24 @@
           "at": "2026-11-03T03:46Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T03:47Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original acceptance and repair history checked; PR380 remains open at d0b04b5e0 with no comments or reviews; J1471 input remains blocked."
         }
       ],
-      "remaining_action": "Verify AR correction evidence and retain or release J1356 hold",
+      "remaining_action": "Verify current master hashes and opening-gate evidence",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T04:31:43+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T03:46Z",
-        "by": "codex"
+        "at": "2026-11-03T03:47Z",
+        "by": "codex",
+        "note": "Original acceptance and repair history checked; PR380 remains open at d0b04b5e0 with no comments or reviews; J1471 input"
       },
       "taskKeys": [
         "OWB:030"
