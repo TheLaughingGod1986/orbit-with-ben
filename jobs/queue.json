@@ -151196,18 +151196,24 @@
           "at": "2026-11-03T04:41Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-03T04:41Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Original handoff and repair history checked; PR380 remains open unchanged at d0b04b5e0 with no comments or reviews. J1471 still lacks approved ISS input."
         }
       ],
-      "remaining_action": "Verify repair evidence and approval history for J1356",
+      "remaining_action": "Verify current export hashes and retained opening failures",
       "kind": "chief",
       "recheck_of": "J1356",
       "due": "2026-11-03T05:32:27+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-03T04:41Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Original handoff and repair history checked; PR380 remains open unchanged at d0b04b5e0 with no comments or reviews. J147"
       },
       "taskKeys": [
         "OWB:030"
