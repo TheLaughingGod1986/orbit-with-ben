@@ -902,11 +902,7 @@ def next_job(agent: str):
         import jobs  # noqa: E402  (jobs imports this module; by now it's loaded)
         data = jobs.load(OWB / "jobs" / "queue.json")
         at = jobs.now()
-        held = next((j for j in data["jobs"] if j.get("by") == agent and j.get("status") == "claimed"), None)
-        if held:
-            return held
-        return next((j for j in jobs.ordered(data, at)
-                     if jobs.claimable(data, j, jobs.MINI_NEEDS, at, agent)), None)
+        return jobs.choose_next(data, agent, jobs.MINI_NEEDS, at)
     except Exception as e:  # an unreadable queue never stops a run: the worker just gets its default model
         log(f"routing: queue not readable ({e.__class__.__name__}); default worker and model")
         return None
@@ -1341,6 +1337,27 @@ def yield_monthly_for_dispatch(selection):
     return True
 
 
+def recorded_task_outcome(job, who, started):
+    """A worker that parked its task has not necessarily failed as an agent.
+
+    Require a fresh canonical outcome by this run's owner; an old hold, CLI
+    prose or launch signal cannot suppress a real worker failure.
+    """
+    if not job:
+        return ""
+    data = read_json(OWB / "jobs" / "queue.json") or {}
+    current = next((j for j in data.get("jobs", []) if j.get("id") == job["id"]), None)
+    if not current or current.get("by") != who or current.get("status") not in {"blocked", "done", "cancelled"}:
+        return ""
+    floor = started.replace(second=0, microsecond=0)  # canonical queue stamps have minute precision
+    expected = {"blocked":"blocked:", "done":"done:", "cancelled":"cancelled"}[current["status"]]
+    if any(h.get("by") == who and str(h.get("what") or "").startswith(expected)
+           and workflow.timestamp(h.get("at")) and floor <= workflow.timestamp(h["at"]) <= now()
+           for h in current.get("history", [])):
+        return current["status"]
+    return ""
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
     fetch_claude_beat(at)
@@ -1568,6 +1585,15 @@ def run_locked(at: dt.datetime) -> int:
             at = now()
             continue
         if code not in (0, 124):
+            outcome = recorded_task_outcome(job, who, started)
+            if outcome:
+                log(f"chain: {job['id']} recorded {outcome}; exit {code} is task-local, not an agent outage")
+                attempted.add(job["id"])
+                chained += 1
+                if chained >= chain_max:
+                    return 0
+                at = now()
+                continue
             notify(f"Chief relay: {NAMES.get(who, who)}'s run failed (exit {code}). Log: ~/Library/Logs/chief-relay.log")
             # Don't wake it again every minute into the same failure (Gemini exit 2, 13-14 Oct: 88 posts in 20 h).
             # An addressed job waits the usual retry; a plain worker run waits CHIEF_FAIL_RETRY_H, so others take the queue.

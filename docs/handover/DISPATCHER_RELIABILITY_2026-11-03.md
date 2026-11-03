@@ -5,7 +5,7 @@ Ben asked to repair dispatch before further production work. This changes schedu
 ## Fixed paths
 
 - A recently released task yields behind other ready work even if its deadline is old. The relay excludes already-attempted released/done/blocked tasks for the rest of the current run and continues immediately to other eligible work. It never drops an unfinished claim or interrupts a process-validated execution lease.
-- A specialist exiting with an ordinary error is marked down under the existing retry policy; healthy workers can continue in that same run. Existing usage/model failover still applies.
+- An ordinary worker failure hands its still-owned task to an eligible backup immediately; healthy workers continue in the same run. A fresh canonical blocked/done outcome by that run's owner instead makes a nonzero exit task-local: it does not bench the whole agent for an approval/input hold. Old/different-owner holds cannot hide a worker failure, and explicit usage/model failure signals still trigger their existing failover.
 - Automatically created condition-verification tasks cannot use their synthetic one-hour deadline to outrank real production. Checks for a parent with a recorded production deadline retain its actual inherited deadline. Chief decisions and manual urgent requests retain their gates.
 - Required capabilities are filtered before choosing the preferred worker, including immediate requests, rerouted-worker failover, direct queue claims and board projections. Online/model names are insufficient proof. Named independent assignments and Chief authority remain intact.
 

@@ -169,7 +169,8 @@ class RelayContinuation(unittest.TestCase):
                 elif selected=='RETRY':
                     if leave_claim:j.update(status='claimed',by=who,eta=(AT+dt.timedelta(minutes=30)).isoformat())
                     elif failure:
-                        j.update(status='blocked',hold={'condition':'task failure; preserve original scope'})
+                        j.update(status='blocked',by=who,hold={'condition':'task failure; preserve original scope'})
+                        j['history'].append({'at':AT.isoformat(),'by':who,'what':'blocked: task-local approval/input hold'})
                     else:j['history'].append({'at':AT.isoformat(),'what':'released: retry later'})
                 else:j['status']='done'
                 q.write_text(json.dumps(d))
@@ -183,9 +184,9 @@ class RelayContinuation(unittest.TestCase):
         self.assertEqual([i for i,_ in ran],['RETRY','WORK'])
         self.assertEqual(data['jobs'][0]['status'],'open')
 
-    def test_failed_specialist_continues_to_healthy_worker_in_same_pass(self):
+    def test_recorded_task_hold_does_not_bench_a_healthy_worker(self):
         ran,data=self.exercise(failure=True)
-        self.assertEqual(ran,[('RETRY','codex'),('WORK','gemini')])
+        self.assertEqual(ran,[('RETRY','codex'),('WORK','codex')])
         self.assertEqual(data['jobs'][0]['status'],'blocked')
 
     def test_unfinished_claim_remains_owned_and_is_not_abandoned(self):
@@ -199,5 +200,14 @@ class RelayContinuation(unittest.TestCase):
         self.assertEqual(ran,[('RETRY','codex'),('RETRY','gemini'),('WORK','gemini')])
         self.assertEqual(data['jobs'][0]['status'],'done')
         self.assertEqual(data['jobs'][0]['progress']['step'],1)
+
+    def test_old_or_different_owner_hold_cannot_hide_current_worker_failure(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(cr,'OWB',pathlib.Path(tmp)):
+            q=pathlib.Path(tmp)/'jobs/queue.json';q.parent.mkdir()
+            for by,stamp in [('gemini',AT),('codex',AT-dt.timedelta(hours=1)),('codex',AT+dt.timedelta(hours=1))]:
+                j={**row('R'),'status':'blocked','by':by,'history':[{'by':by,'at':stamp.isoformat(),'what':'blocked: old hold'}]}
+                q.write_text(json.dumps({'jobs':[j]}))
+                with patch.object(cr,'now',return_value=AT):
+                    self.assertEqual(cr.recorded_task_outcome(j,'codex',AT),'')
 
 if __name__=='__main__':unittest.main()
