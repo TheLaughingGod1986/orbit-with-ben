@@ -162947,10 +162947,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T20:44Z",
+      "eta": "2026-11-03T22:44Z",
       "created_by": "relay",
       "created_at": "2026-11-03T20:43Z",
       "result": "",
@@ -162959,13 +162959,26 @@
           "at": "2026-11-03T20:43Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T20:44Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Obtain cleared instrumental S2 bed and recorded local listening before v07 repairs; disk headroom verified",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T20:44Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
