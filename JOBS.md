@@ -97,7 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 | J1878 | mini | blocked | codex | – | studio · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
 | J1879 | mini | blocked | codex | – | assembly · Buffer: recover approved Mars-night and Titan social sources | J1874 |
-| J1880 | mini | open | – | – | 008 edit · assembly · HOS 008: prepare six Franklin v03 UAT corrections and exact edit recipe | HOS-008:v03:2026-11-03T16:08:33.439Z / J1868 |
+| J1880 | mini | claimed | codex | 2026-11-03T22:47Z | 008 edit · assembly · HOS 008: prepare six Franklin v03 UAT corrections and exact edit recipe | HOS-008:v03:2026-11-03T16:08:33.439Z / J1868 |
 | J1881 | mini | open (after J1880) | – | – | 008 edit · chief · Chief: review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1888 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
 | J1889 | mini | open | – | – | chief · J1879: review recovered Mars-night and Titan Studio source candidates | J1879 |
