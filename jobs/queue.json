@@ -162989,19 +162989,24 @@
           "at": "2026-11-03T20:45Z",
           "by": "codex",
           "what": "step 2 of 3 done: Bed and three audition hashes match 3e26b379b. Existing manifest records no listening; no new clearance. Current tools do not demonstrate audio input. Preserve bed exclusion and all original gates."
+        },
+        {
+          "at": "2026-11-03T20:45Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Recorded capability hold requiring audio_input on parent with recheck J1890; retained 21:43:01Z check time and parent 2/3. Live disk 31.486 GiB; hashes unchanged; no media approval."
         }
       ],
-      "remaining_action": "Record audio capability hold on J1100 and close verification",
+      "remaining_action": "Verification complete; J1100 requires local listening and bed clearance",
       "kind": "chief",
       "recheck_of": "J1100",
       "due": "2026-11-01T20:00:00+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-03T20:45Z",
         "by": "codex",
-        "note": "Bed and three audition hashes match 3e26b379b. Existing manifest records no listening; no new clearance. Current tools d"
+        "note": "Recorded capability hold requiring audio_input on parent with recheck J1890; retained 21:43:01Z check time and parent 2/"
       },
       "taskKeys": [
         "OWB:027",
