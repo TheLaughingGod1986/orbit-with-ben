@@ -1,5 +1,5 @@
 {
-  "next_id": 1810,
+  "next_id": 1811,
   "jobs": [
     {
       "id": "J0001",
@@ -156089,6 +156089,34 @@
       ],
       "remaining_action": "Repair role-addressed pending delivery and selectively reconcile historical inbox before watcher restart",
       "kind": "assembly"
+    },
+    {
+      "id": "J1810",
+      "title": "Chief: establish genuine audio-input capability for held 031/032 VO reviews",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1754 capability follow-up for OWB031/J1752 and OWB032/J1753. Their technical checks are complete; required actual listening is not. Current Codex session exposes no audio-input/listening tool. Local codex --help advertises image attachments, not audio; agy --help advertises text/stream-json and mic-serve, which is not proof of source-file listening. Do not claim that either CLI can hear a WAV from a path or afplay playback. Determine and demonstrate a supported listening input within existing subscribed/local tooling using a non-production, no-cost fixture. Inspect actual tool schemas/installed capabilities, record what signal reaches the reviewer and what it hears, and establish identity plus elected-Chief authority for the actual review. No source-audio API upload/egress, new paid service or generation is authorized. If no supported route exists, record exactly which capability is missing and retain the J1752/J1753 holds; do not repeatedly redispatch unchanged text-only review sessions or imply a missing queue task. Do not approve either VO or picture from this discovery alone. Once a genuine route exists, route the existing two review jobs to an eligible elected reviewer; preserve technical evidence and Ben finished-video UAT.",
+      "ref": "J1754",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T10:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T10:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Demonstrate a supported no-cost listening path before routing J1752 and J1753",
+      "kind": "chief"
     }
   ],
   "focus": [],
