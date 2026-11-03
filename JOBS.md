@@ -44,6 +44,59 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1753 | mini | blocked | codex | – | 032 vo · chief · 032 Voice: Chief final verification of locked take after J1294 | 6536311192 |
 | J1754 | mini | claimed | codex | 2026-11-03T12:45Z | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
 | J1755 | mini | open | – | – | chief · Chief: reconcile stale HOS008 J1213 hold against later master-v03 evidence |  |
+| J1756 | any | open | – | – | chief · Chief: verify condition for J1199 |  |
+| J1757 | any | open | – | – | chief · Chief: verify condition for J1213 |  |
+| J1758 | mini | open | – | – | chief · Chief: resolve 004 thumbs orphan-review |  |
+| J1759 | mini | open | – | – | chief · Chief: resolve 005 thumbs orphan-review |  |
+| J1760 | mini | open | – | – | chief · Chief: resolve 006 picture orphan-blocked |  |
+| J1761 | mini | open | – | – | chief · Chief: resolve 013 edit orphan-blocked |  |
+| J1762 | mini | open | – | – | chief · Chief: resolve 019 thumbs orphan-review |  |
+| J1763 | mini | open | – | – | chief · Chief: resolve 020 edit orphan-blocked |  |
+| J1764 | mini | open | – | – | chief · Chief: resolve 023 thumbs orphan-review |  |
+| J1765 | mini | open | – | – | chief · Chief: resolve 023 upload orphan-review |  |
+| J1766 | mini | open | – | – | chief · Chief: resolve 026 thumbs orphan-review |  |
+| J1767 | mini | open | – | – | chief · Chief: resolve 026 upload orphan-review |  |
+| J1768 | mini | open | – | – | chief · Chief: resolve 028 thumbs orphan-review |  |
+| J1769 | mini | open | – | – | chief · Chief: resolve 028 upload orphan-review |  |
+| J1770 | mini | open | – | – | chief · Chief: resolve 029 upload orphan-blocked |  |
+| J1771 | mini | open | – | – | chief · Chief: resolve 030 edit orphan-blocked |  |
+| J1772 | mini | open | – | – | chief · Chief: resolve 030 upload orphan-review |  |
+| J1773 | mini | open | – | – | chief · Chief: resolve 032 sources orphan-blocked |  |
+| J1774 | mini | open | – | – | chief · Chief: resolve 033 script orphan-review |  |
+| J1775 | mini | open | – | – | chief · Chief: resolve 034 script orphan-review |  |
+| J1776 | mini | open | – | – | chief · Chief: resolve 035 script orphan-review |  |
+| J1777 | mini | open | – | – | chief · Chief: resolve 036 script orphan-review |  |
+| J1778 | mini | open | – | – | chief · Chief: resolve 037 script orphan-review |  |
+| J1779 | mini | open | – | – | chief · Chief: resolve 038 script orphan-review |  |
+| J1780 | mini | open | – | – | chief · Chief: resolve 039 script orphan-review |  |
+| J1781 | mini | open | – | – | chief · Chief: resolve 040 script orphan-review |  |
+| J1782 | mini | open | – | – | chief · Chief: resolve 041 script orphan-review |  |
+| J1783 | mini | open | – | – | chief · Chief: resolve 042 script orphan-review |  |
+| J1784 | mini | open | – | – | chief · Chief: resolve 043 script orphan-review |  |
+| J1785 | mini | open | – | – | chief · Chief: resolve 044 script orphan-review |  |
+| J1786 | mini | open | – | – | chief · Chief: resolve 045 script orphan-review |  |
+| J1787 | mini | open | – | – | chief · Chief: resolve 046 script orphan-review |  |
+| J1788 | mini | open | – | – | chief · Chief: resolve 047 script orphan-review |  |
+| J1789 | mini | open | – | – | chief · Chief: resolve 048 script orphan-review |  |
+| J1790 | mini | open | – | – | chief · Chief: resolve 049 script orphan-review |  |
+| J1791 | mini | open | – | – | chief · Chief: resolve 050 script orphan-review |  |
+| J1792 | mini | open | – | – | chief · Chief: resolve 051 script orphan-review |  |
+| J1793 | mini | open | – | – | chief · Chief: resolve 052 script orphan-review |  |
+| J1794 | mini | open | – | – | chief · Chief: resolve 053 script orphan-review |  |
+| J1795 | mini | open | – | – | chief · Chief: resolve 054 script orphan-review |  |
+| J1796 | mini | open | – | – | chief · Chief: resolve 055 script orphan-review |  |
+| J1797 | mini | open | – | – | chief · Chief: resolve 056 script orphan-review |  |
+| J1798 | mini | open | – | – | chief · Chief: resolve 057 script orphan-review |  |
+| J1799 | mini | open | – | – | chief · Chief: resolve 058 script orphan-review |  |
+| J1800 | mini | open | – | – | chief · Chief: resolve 059 script orphan-review |  |
+| J1801 | mini | open | – | – | chief · Chief: resolve 059 topic orphan-review |  |
+| J1802 | mini | open | – | – | chief · Chief: resolve 059 sources orphan-review |  |
+| J1803 | mini | open | – | – | chief · Chief: resolve 060 topic orphan-review |  |
+| J1804 | mini | open | – | – | chief · Chief: resolve 060 script orphan-review |  |
+| J1805 | mini | open | – | – | chief · Chief: resolve 060 sources orphan-review |  |
+| J1806 | mini | open | – | – | chief · Chief: resolve 061 topic orphan-review |  |
+| J1807 | mini | open | – | – | chief · Chief: resolve 061 script orphan-review |  |
+| J1808 | mini | open | – | – | chief · Chief: resolve 061 sources orphan-review |  |
 
 Recently finished:
 
