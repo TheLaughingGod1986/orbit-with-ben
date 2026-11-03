@@ -159018,9 +159018,14 @@
           "at": "2026-11-03T16:17Z",
           "by": "relay",
           "what": "condition verification queued: J1865"
+        },
+        {
+          "at": "2026-11-03T18:47Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T21:01:21Z"
         }
       ],
-      "remaining_action": "Resolve J1846 evidence-publication block, then J1847 preview, J1848 moving review and J1849 Chief input decision",
+      "remaining_action": "Resolve J1846 evidence-publication approval, then J1847 preview, J1848 moving review and J1849 exact-input decision",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -159043,12 +159048,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1856 verified PR414 at 1474821f3: Gemini actual-moving review is FIX for station recognition, cropped Dragon, incoherent fill and unresolved softness. PR410 remains OPEN at 406f91068 without acceptance. J1846 records replacement scope at 001b6962f but is blocked on recorded public evidence-push approval; J1847 -> J1848 -> J1849 remain unstarted. Need accepted exact replacement input; do not repeat unchanged T545 review. J1471/J1356 and all gate, Ben, date, credit and publishing holds persist. No independent playback claim by this verification.",
-        "check_at": "2026-11-03T17:17:11+00:00",
-        "last_recheck": "J1856",
-        "checked_at": "2026-11-03T15:42:05+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1865"
+        "condition": "J1865 verified PR410 OPEN at 406f91068 and PR414 OPEN at 1474821f3, neither with reviews/comments; Gemini moving FIX persists for station recognition, cropped Dragon, incoherent fill and softness. Thread through 6612506489 has no replacement acceptance or J1846 payload approval. J1846 scope 001b6962f remains blocked by recorded public evidence-push approval rejection; J1847 -> J1848 -> J1849 unstarted. Need accepted exact replacement input. Do not repeat T545 review. J1471/J1356 and all failed-gate, Ben, date, credit and publishing holds persist; no independent playback claimed.",
+        "check_at": "2026-11-03T21:01:21Z",
+        "last_recheck": "J1865",
+        "checked_at": "2026-11-03T18:47:10+00:00",
+        "checked_by": "codex"
       }
     },
     {
