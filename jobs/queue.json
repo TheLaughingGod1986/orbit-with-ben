@@ -160539,10 +160539,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T22:29Z",
+      "eta": "2026-11-04T00:29Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:51Z",
       "result": "",
@@ -160616,6 +160616,11 @@
           "at": "2026-11-03T22:27Z",
           "by": "codex",
           "what": "remaining action: Claim and close scope job using PR433 / 001b6962f: publication, scope review and CI passed; then J1847 becomes eligible. No further publication permission needed."
+        },
+        {
+          "at": "2026-11-03T22:29Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Claim and close scope job using PR433 / 001b6962f: publication, scope review and CI passed; then J1847 becomes eligible. No further publication permission needed.",
@@ -160623,7 +160628,15 @@
       "kind": "chief",
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T22:29Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1847",
