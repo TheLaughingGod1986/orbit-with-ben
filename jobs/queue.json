@@ -149911,19 +149911,31 @@
           "at": "2026-11-03T02:20Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-03T02:21Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1703; starting read-only listing check for 2026-11-03"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Query live YouTube listings and snapshot for the last 10 public OWB videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-03T02:20Z",
+        "at": "2026-11-03T02:21Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1703; starting read-only listing check for 2026-11-03"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:027",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [],
