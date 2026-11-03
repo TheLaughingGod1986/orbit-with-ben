@@ -157752,9 +157752,14 @@
           "at": "2026-11-03T12:52Z",
           "by": "codex",
           "what": "step 2 of 3 done: Manual en-GB track now independently reads serving; no end screen or cards; title, metadata, privacy and schedule unchanged"
+        },
+        {
+          "at": "2026-11-03T12:53Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Evidence locally committed as 765b4fa9c; automatic approval review rejected public-origin evidence push"
         }
       ],
-      "remaining_action": "Commit verified finish evidence and submit exact missing-item FIX",
+      "remaining_action": "Review local finish evidence and resolve publication approval for evidence",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "rerouted_from": {
@@ -157767,11 +157772,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T12:52Z",
+        "at": "2026-11-03T12:53Z",
         "by": "codex",
-        "note": "Manual en-GB track now independently reads serving; no end screen or cards; title, metadata, privacy and schedule unchan"
+        "note": "Evidence locally committed as 765b4fa9c; automatic approval review rejected public-origin evidence push"
       },
       "taskKeys": [
         "OWB:026"
