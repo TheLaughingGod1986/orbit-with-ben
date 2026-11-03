@@ -161263,10 +161263,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-03T18:50Z",
+      "eta": "2026-11-03T20:50Z",
       "created_by": "relay",
       "created_at": "2026-11-03T16:32Z",
       "result": "",
@@ -161275,13 +161275,26 @@
           "at": "2026-11-03T16:32Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-03T18:50Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Complete actual listening of locked v02a with an audio-capable elected Chief, then record VO-only PASS or FIX",
       "kind": "chief",
       "recheck_of": "J1752",
       "due": "2026-11-03T17:32:17+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-03T18:50Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1868",
