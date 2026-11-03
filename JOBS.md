@@ -91,6 +91,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1823 | mini | blocked | codex | – | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
 | J1825 | mini | blocked | codex | – | 026 upload · for codex · studio · `gpt-6.1-sol` · 026 upload finish: install approved en-GB captions and verify Studio end screen/cards |  |
 | J1826 | mini | open (after J1769) | – | – | 028 upload · chief · 028: review and land J1103 delivery PR315; reconcile Related targets | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/315 |
+| J1828 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J1829 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
+| J1830 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1831 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
+| J1832 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
