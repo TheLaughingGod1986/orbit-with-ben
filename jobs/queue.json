@@ -1,5 +1,5 @@
 {
-  "next_id": 1868,
+  "next_id": 1869,
   "jobs": [
     {
       "id": "J0001",
@@ -160963,6 +160963,36 @@
       "recheck_of": "J1752",
       "due": "2026-11-03T17:32:17+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1868",
+      "title": "Chief: assign Franklin v03 UAT corrections from Ben’s six notes",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ben asked why a delivered/live-looking video still has incomplete milestones. Current board shows HOS008 Franklin planned 19 Nov, no public YouTube record, and six changes requested on v03 at 2026-11-03T16:08:33.439Z (handled false). No dedicated correction job was linked in the inspected main queue. Verify current review document first; if superseded, reconcile and stop without duplicating work.\n\nRead the original J1297 handoff, current HOS008 pipeline and Chief approvals, existing J1755 watch-delivery hold and actual Ben notes: 00:20 on-screen text readability/background; 0:30 scene flash; 1:49 hair/tube behaviour; 2:20 silver-foil behaviour; 3:31 diagram/map clarity; 7:58 falling rods. Preserve the original notes and timestamps. Decide the correction scope and queue linked correction/review jobs with actual owner or capability-routed role, dependencies, and a specific remaining action. Record handoff IDs in the existing production records and acknowledge the review only through the existing workflow after its work is genuinely tracked. Do not mark notes resolved, approve media, or mark unknown historical stages complete merely because a master exists.\n\nThis task authorizes read-only triage, record reconciliation and no-spend planning. No paid generation, replacement render, upload, watch-object publication, YouTube state change, scheduling change or approval bypass. Existing automatic-publication rejection for J1755 and all original scope gates remain intact; keep delivery repair and requested film changes distinct. A review-ready cut is not proof of individual undocumented stage approvals. Never infer a missed edit from legacy picture/QA states. Keep published follow-up jobs separate from production completion. Close this triage only after recording linked actionable handoffs or a concrete hold.\n",
+      "ref": "HOS-008:v03:2026-11-03T16:08:33.439Z",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-03T16:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-03T16:56Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify Ben’s v03 notes and assign linked correction and QA jobs with an owner",
+      "due": "2026-11-03T17:56:19Z",
+      "kind": "chief",
+      "review_request": "HOS-008:v03:2026-11-03T16:08:33.439Z"
     }
   ],
   "focus": [],
