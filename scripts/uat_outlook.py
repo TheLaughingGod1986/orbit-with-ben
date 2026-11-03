@@ -260,6 +260,8 @@ def forecast(video, stages, jobs, samples, now):
 
 
 def attach(videos, hos, owb, alljobs, now):
+    scope_records = {'HOS:' + str(f.get('id')): f.get('milestoneScope') or {} for f in hos.get('films') or []}
+    scope_records.update({'OWB:' + str(f.get('film')): f.get('milestoneScope') or {} for f in owb})
     sources = {'HOS:' + str(f.get('id')): f.get('stages') or {} for f in hos.get('films') or []}
     sources.update({'OWB:' + str(f.get('film')): f.get('stages') or {} for f in owb})
     from pathlib import Path
@@ -275,12 +277,28 @@ def attach(videos, hos, owb, alljobs, now):
     samples.update(history_samples(hos_repo, '00_Brand/Channel-Setup/PIPELINE.json', 'HOS'))
     for video in videos:
         # Parent-film stages cannot certify a Short or a synthetic approval card.
-        stages = sources.get(video['key'], {}) if video.get('type') == 'long' else {}
+        project_stages = sources.get(video['key'], {})
+        recorded_scope = scope_records.get(video['key'], {})
+        watch_version = (video.get('watch') or {}).get('version') or video.get('version')
+        exact_scope = isinstance(recorded_scope, dict) and recorded_scope.get('type') == 'cut' and bool(video.get('version')) and watch_version == video.get('version') and recorded_scope.get('version') == video.get('version') and recorded_scope.get('format') == video.get('type')
+        mixed_scope = not exact_scope and bool(video.get('cutFormatCorrected') or (video.get('watch') and any(
+            re.match(r'\s*AR cohort:', str(s.get('note') or ''), re.I) for s in project_stages.values())))
+        stages = project_stages if video.get('type') == 'long' or exact_scope else {}
         ids = {j['id'] for j in video.get('jobs') or []}
         jobs = [j for j in alljobs if j.get('id') in ids]
         dependencies = {j.get('after') for j in jobs}
         jobs += [j for j in alljobs if j.get('id') in dependencies and j not in jobs]
         production = forecast(video, stages, jobs, samples, now)
+        if exact_scope:
+            production.update(scope='cut', scopeVersion=recorded_scope['version'])
+        if mixed_scope:
+            history = forecast(video, project_stages, jobs, samples, now)
+            production = forecast(video, {}, [], samples, now)
+            production.update(scope='unconfirmed_cut', projectHistory=history,
+                scopeReason='Recorded project milestones include related production work; progress for this exact cut is unconfirmed.')
+            if production['eta']['state'] not in ('ready', 'complete'):
+                production['eta'] = dict(state='unavailable', confidence='unavailable', reasons=[production['scopeReason']])
+                production['partialEstimates'] = []
         owners = {j.get('by') for j in jobs if j.get('status') == 'claimed' and j.get('by')}
         competing = [j for j in alljobs if j.get('id') not in ids and j.get('status') == 'claimed' and j.get('by') in owners]
         if competing and production['eta']['state'] not in ('ready', 'complete'):

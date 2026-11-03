@@ -157,6 +157,42 @@ class OutlookTests(unittest.TestCase):
         self.assertEqual(video['production']['completed'], 0)
         self.assertEqual(video['production']['eta']['state'], 'unavailable')
 
+    def test_mixed_cut_keeps_project_history_without_borrowing_completion_or_eta(self):
+        import copy
+        from unittest.mock import patch
+        stages={k:dict(state='done' if k not in ('edit','qa') else 'blocked' if k=='edit' else 'unknown') for k in PLAN}
+        stages['edit']['note']='AR cohort: replacement input remains blocked; original cut is separate'
+        original=copy.deepcopy(stages)
+        for corrected in [False,True]:
+            video=dict(self.video,cutFormatCorrected=corrected,type='short' if corrected else 'long',watch={'file':'original.mp4'})
+            with patch('uat_outlook.history_samples',return_value={}):
+                attach([video],{},[dict(film='999',stages=stages)],[],NOW)
+            p=video['production']
+            self.assertEqual(p['scope'],'unconfirmed_cut')
+            self.assertEqual(p['projectHistory']['completed'],7)
+            self.assertEqual(p['completed'],0)
+            self.assertEqual(p['eta']['state'],'unavailable')
+            self.assertNotIn('lowerMinutes',p['eta'])
+            self.assertEqual(stages,original)
+
+    def test_unambiguous_long_retains_milestone_completion(self):
+        from unittest.mock import patch
+        video=dict(self.video)
+        with patch('uat_outlook.history_samples',return_value={}):
+            attach([video],{},[dict(film='999',stages=self.stages)],[],NOW)
+        self.assertNotIn('scope',video['production'])
+        self.assertEqual(video['production']['completed'],9)
+
+    def test_exact_cut_mapping_can_restore_short_progress_but_wrong_version_cannot(self):
+        from unittest.mock import patch
+        for version, expected in [('v13a',9),('v12',0)]:
+            video=dict(self.video,type='short',version='v13a',cutFormatCorrected=True)
+            source=dict(film='999',stages=self.stages,milestoneScope=dict(type='cut',format='short',version=version))
+            with patch('uat_outlook.history_samples',return_value={}):
+                attach([video],{},[source],[],NOW)
+            self.assertEqual(video['production']['completed'],expected)
+            self.assertEqual(video['production']['scope'],'cut' if expected else 'unconfirmed_cut')
+
     def test_same_worker_parallel_capacity_unavailable(self):
         jobs = [dict(id=k, stage=k, status='claimed', by='cursor') for k in ('picture', 'vo')]
         self.assertIn('Shared worker', ' '.join(self.run_forecast(jobs)['eta']['reasons']))

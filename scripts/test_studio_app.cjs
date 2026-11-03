@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -449,3 +449,26 @@ const scheduledHistory=v({youtube:{state:'scheduled',privacy:'private'},producti
 assert(!t.milestoneProgress(scheduledHistory).includes('UAT handoff complete'),'a schedule does not establish Ben approval');
 assert(t.productionDetail(scheduledHistory,NOW).includes('Scheduled on YouTube'));
 assert(!t.productionDetail(scheduledHistory,NOW).includes('progress-number'));
+
+// Cut identity and aggregate history must stay separate, including cached board payloads.
+const mixedCut=v({key:'OWB:030',version:'v13a',watch:{url:'https://example.test/watch',file:'OWB UAT/030_apophis_short_v13a_PHONE.mp4'},production:{milestones:['topic','script','sources','vo','shots','picture','edit','thumbs','qa'].map(id=>({id,state:id==='edit'?'blocked':id==='qa'?'unknown':'done',source:id==='edit'?{note:'AR cohort: separate replacement work'}:{}}))}});
+const normalized=t.normalizeCut(mixedCut);
+assert.equal(normalized.type,'short');assert.equal(normalized.key,'OWB:030');assert.equal(mixedCut.type,'long','source records are unchanged');
+const mixedOverview=t.overview({tracker:{videos:[mixedCut]}},NOW);
+assert(mixedOverview.includes('Short')&&mixedOverview.includes('Cut progress')&&mixedOverview.includes('Unconfirmed'));
+assert(!mixedOverview.includes('78%')&&!mixedOverview.includes('0%'));
+assert(!t.videoProductionRow(mixedCut,NOW).includes('78%'));
+const mixedDetail=t.productionDetail(mixedCut,NOW);
+assert(mixedDetail.includes('Progress for this cut unconfirmed')&&mixedDetail.includes('Related project history · 7 of 9'));
+assert(!mixedDetail.includes('progress-number')&&!mixedDetail.includes('role="progressbar"'));
+assert(!t.forecastView(mixedCut,NOW).credible);
+assert.equal(t.progressStats(mixedCut).done,7,'original history is retained');
+assert(t.productionDetail({...mixedCut,lane:'ready',readyFor:'Ben'},NOW).includes('Ready for your review'));
+assert.equal(t.normalizeCut({...mixedCut,youtube:{videoId:'publishedLong',state:'live'}}).type,'long');
+console.log('Exact-cut identity and mixed-scope progress checks OK');
+
+const exactCut={...normalized,production:{...mixedCut.production,scope:'cut',scopeVersion:'v13a'}};
+assert(!t.unconfirmedCut(exactCut));assert(t.milestoneProgress(exactCut).includes('78%'));
+assert(t.unconfirmedCut({...exactCut,version:'v14'}),'a later cut cannot borrow an earlier version mapping');
+
+assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'watch and card versions must agree');
