@@ -158845,9 +158845,14 @@
           "at": "2026-11-03T15:13Z",
           "by": "relay",
           "what": "condition verification queued: J1856"
+        },
+        {
+          "at": "2026-11-03T15:42Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T16:13:46Z"
         }
       ],
-      "remaining_action": "J1844: Gemini reviews delivered ISS candidate, then Chief decides the input; follow-up time is not a start gate",
+      "remaining_action": "Resolve J1846 evidence-publication block, then J1847 preview, J1848 moving review and J1849 Chief input decision",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -158870,12 +158875,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1841: five delivery hashes and sizes match 406f91068; acquisition PR410 OPEN without reviews. Actual moving review remains absent: this session can view stills but has no video playback input. A playback-capable elected Chief must review portrait, phone and preroll previews and approve exact hash/interval/recipe, station recognition, cropped Dragon, soft fill and 2.35x WARN. J1471/J1356 and all existing holds persist.",
-        "check_at": "2026-11-03T16:13:46+00:00",
-        "last_recheck": "J1841",
-        "checked_at": "2026-11-03T14:26:35+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1856"
+        "condition": "J1856 verified PR414 at 1474821f3: Gemini actual-moving review is FIX for station recognition, cropped Dragon, incoherent fill and unresolved softness. PR410 remains OPEN at 406f91068 without acceptance. J1846 records replacement scope at 001b6962f but is blocked on recorded public evidence-push approval; J1847 -> J1848 -> J1849 remain unstarted. Need accepted exact replacement input; do not repeat unchanged T545 review. J1471/J1356 and all gate, Ben, date, credit and publishing holds persist. No independent playback claim by this verification.",
+        "check_at": "2026-11-03T16:13:46Z",
+        "last_recheck": "J1856",
+        "checked_at": "2026-11-03T15:42:05+00:00",
+        "checked_by": "codex"
       }
     },
     {
