@@ -157018,13 +157018,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-03T22:51Z",
-      "eta": "2026-11-04T00:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX / not locked. Restored cancelled 043 handoff as J1913 (043/script, after J1784). Evidence recorded in jobs/reviews/J1784/CHIEF_HANDOFF_2026-11-03.md (4a26b484d7) and 043 status updated (f0135b82ba). Board returned to review without claim; neighbour audit, editorial fixes, formal Gemini facts and direct quote check required before explicit lock. No spend or production approval.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -157075,6 +157075,11 @@
           "at": "2026-11-03T22:58Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All verification checks passed; closing J1784"
+        },
+        {
+          "at": "2026-11-03T22:59Z",
+          "by": "gemini",
+          "what": "done: FIX / not locked. Restored cancelled 043 handoff as J1913 (043/script, after J1784). Evidence recorded in jobs/reviews/J1784/CHIEF_HANDOFF_2026-11-03.md (4a26b484d7) and 043 status updated (f0135b82ba). Board returned to review without claim; neighbour audit, editorial fixes, formal Gemini facts and direct quote check required before explicit lock. No spend or production approval."
         }
       ],
       "remaining_action": "Close J1784 and post report on #99",
