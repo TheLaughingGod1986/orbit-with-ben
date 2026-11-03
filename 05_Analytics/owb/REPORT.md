@@ -191,15 +191,15 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 2 d | 1085 | 31.4% | MISS | 66.4% | WATCH |
-| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 3 d | 44 | 22.2% | too few to judge | 66.7% | too few to judge |
-| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 4 d | 524 | 32.4% | MISS | 91.7% | PASS |
+| [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 2 d | 1096 | 31.7% | MISS | 66.4% | WATCH |
+| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 3 d | 45 | 21.7% | too few to judge | 66.7% | too few to judge |
+| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 4 d | 520 | 32.7% | MISS | 91.7% | PASS |
 | [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 5 d | 457 | 34.2% | MISS | 233.3% | LOOP |
-| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 6 d | 492 | 42.6% | MISS | 75.1% | PASS |
-| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 7 d | 891 | 30.7% | MISS | 75.9% | PASS |
+| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 6 d | 493 | 42.6% | MISS | 75.1% | PASS |
+| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 7 d | 892 | 30.7% | MISS | 75.9% | PASS |
 | [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 9 d | 851 | 32.1% | MISS | 76.1% | PASS |
 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 10 d | 82 | 34.3% | too few to judge | 58.3% | too few to judge |
-| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 11 d | 90 | 14.1% | too few to judge | 53.3% | too few to judge |
+| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 11 d | 91 | 14.0% | too few to judge | 53.3% | too few to judge |
 | [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 12 d | 887 | 31.7% | MISS | 62.2% | WATCH |
 | [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | 13 d | 12 | 75.0% | too few to judge | - | no read |
 

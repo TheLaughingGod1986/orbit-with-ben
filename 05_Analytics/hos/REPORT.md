@@ -116,11 +116,12 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 2 d | 66 | 27.9% | too few to judge | 87.7% | too few to judge |
-| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 3 d | 77 | 25.0% | too few to judge | 55.2% | too few to judge |
-| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 5 d | 265 | 21.3% | MISS | 79.7% | PASS |
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 6 d | 86 | 70.8% | too few to judge | 66.3% | too few to judge |
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 7 d | 223 | 29.0% | MISS | 64.5% | WATCH |
+| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 44 h (early) | 87 | 29.0% | too few to judge | 67.1% | too few to judge |
+| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 2 d | 85 | 32.1% | too few to judge | 84.0% | too few to judge |
+| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 3 d | 78 | 25.9% | too few to judge | 53.6% | too few to judge |
+| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 5 d | 265 | 21.7% | MISS | 78.7% | PASS |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 6 d | 91 | 72.6% | too few to judge | 64.6% | too few to judge |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 7 d | 230 | 29.6% | MISS | 65.7% | WATCH |
 | [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 10 d | 49 | 29.8% | too few to judge | 50.0% | too few to judge |
 | [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 12 d | 175 | 40.5% | MISS | 86.9% | PASS |
 | [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | 13 d | 152 | 23.1% | MISS | 56.9% | WATCH |
