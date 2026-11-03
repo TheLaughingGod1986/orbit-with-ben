@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1823 | mini | blocked | codex | – | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
 | J1825 | mini | blocked | codex | – | 026 upload · for codex · studio · `gpt-6.1-sol` · 026 upload finish: install approved en-GB captions and verify Studio end screen/cards |  |
 | J1834 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
-| J1842 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
+| J1842 | any | claimed | codex | 2026-11-03T17:11Z | chief · Chief: verify condition for J0862 |  |
 | J1843 | mini | open | – | – | assembly · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1846 | any | blocked | codex | – | chief · AR2 ISS: scope bounded alternative after J1844 moving-review FIX | J1845 |
 | J1847 | mini | open (after J1846) | – | – | for codex · chart · `gpt-6-astra` · AR2 ISS: bounded faithful NASA IGOAL model opening preview | J1846 |
