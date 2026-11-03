@@ -42,12 +42,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1471 | mini | blocked | codex | – | assembly · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1715 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J1716 | any | open | – | – | chief · Chief: verify condition for J0985 |  |
-| J1717 | any | claimed | codex | 2026-11-03T06:33Z | chief · Chief: verify condition for J1100 |  |
 | J1718 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1719 | any | open | – | – | chief · Chief: verify condition for J1471 |  |
 
 Recently finished:
 
+- J1717 done: Chief: verify condition for J1100 (Verified unchanged bed and audition hashes against 3e26b379b; no newer local listening evidence. J1100 remains blocked at 2/3; retained retry 2026-11-03T05:32:27Z and all existing approvals/locks/fallbacks. No media or publishing changes.)
 - J1714 done: Chief: verify condition for J1471 (Verified PR380 unchanged at d0b04b5e0; all three repaired masters and Crew-2 SHA256 match. No approved ISS opening input; J1471 remains blocked with retry 2026-11-03T04:31:43Z. Existing failed gates and all holds retained.)
 - J1713 done: Chief: verify condition for J1356 (Verified condition unmet: PR380 open unchanged at d0b04b5e0, no comments/reviews. Fresh SHA256 matches all three J1468 final exports; no newer final exports present. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. J1356 remains held pending approved ISS input, corrected versioned masters, complete metadata, affected gates and full moving/audio review including pace WARN. Next check retained 2026-11-03T04:31:43Z. No fresh gates or audition claimed; no spend or publishing changes. Required NAS offload found no eligible scratch; about 14 GB free.)
 - J1712 done: Chief: verify condition for J1100 (done)
@@ -57,4 +57,3 @@ Recently finished:
 - J1708 done: Chief: verify condition for J1356 (Verified unmet condition: PR380 OPEN unchanged at d0b04b5e0 with no comments or reviews. Fresh SHA256 matches all three J1468 final exports; no other final exports present. Saved opening FAILs remain AR1 6.00s, AR2 0.25, AR3 1.41. J1356 remains held; next check 2026-11-03T03:31:27Z. Approved ISS input, corrected masters, complete metadata, passing affected gates, full moving/audio review and pace WARN assessment required. No fresh gates or audition claimed; no spend or publishing changes.)
 - J1707 done: Chief: verify condition for J1130 (3 Nov 02:45:54 UTC: HOS Studio AL_-qlWko_g thumbnail test T020 still Running (no completion timestamp). Evidence in /Users/benjaminoats/_desk/handoff/J1707/. J1130 kept blocked; next check 2026-11-03T08:46:00Z. HOS channel:audit 62 videos, 0 errors.)
 - J1706 done: Chief: verify condition for J1100 (Verified original approvals and fresh bed/three audition hashes; no newer local listening record. J1100 remains blocked at 2/3 for instrumental bed clearance and actual local opening/middle/end listening. Retained next check 2026-11-03T03:31:27Z, OWB:027/028 links, accepted sources, h43-LOOP, deadlines/v01 fallback. NAS scratch check found nothing eligible; about 14 GiB free. No spend, audio egress, rendering or publishing.)
-- J1705 done: Chief: verify condition for J0985 (Verified original history, preserved J1642 review and subsequent comments through 6594007381; no explicit publication approval. J0985 remains blocked with recheck J1705 and next check 2026-11-03T03:31:27Z. Procedural report 6594048241 posted. No publication retry, spend or YouTube changes.)

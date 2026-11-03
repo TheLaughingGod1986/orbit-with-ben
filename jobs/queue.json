@@ -151000,13 +151000,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T04:33Z",
-      "eta": "2026-11-03T06:33Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T04:32Z",
-      "result": "",
+      "result": "Verified unchanged bed and audition hashes against 3e26b379b; no newer local listening evidence. J1100 remains blocked at 2/3; retained retry 2026-11-03T05:32:27Z and all existing approvals/locks/fallbacks. No media or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T04:32Z",
@@ -151037,6 +151037,11 @@
           "at": "2026-11-03T04:34Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1100 hold preserved at 2/3; retry 3 Nov 05:32:27 UTC. Hashes match, approvals and fallback preserved."
+        },
+        {
+          "at": "2026-11-03T04:34Z",
+          "by": "codex",
+          "what": "done: Verified unchanged bed and audition hashes against 3e26b379b; no newer local listening evidence. J1100 remains blocked at 2/3; retained retry 2026-11-03T05:32:27Z and all existing approvals/locks/fallbacks. No media or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J1100 awaits bed clearance and local listening",
@@ -151054,7 +151059,8 @@
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "3e26b379b"
     },
     {
       "id": "J1718",
