@@ -154628,17 +154628,22 @@
           "at": "2026-11-03T15:45Z",
           "by": "codex",
           "what": "step 1 of 3 done: Original h22/h35 verified; NAS master SHA matches cf1561c2; both old iCloud copies unreadable. No built Shorts in local/NAS 10_Shorts."
+        },
+        {
+          "at": "2026-11-03T15:48Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: NAS and restored UAT hashes match; PR391 merged; J1297 watch restored; J1213 superseded; J0912 reopened without credit wait."
         }
       ],
-      "remaining_action": "Restore readable UAT delivery and reconcile HOS008 records and Shorts hold",
+      "remaining_action": "Commit reconciled HOS records and verify published watch access",
       "kind": "chief",
       "urgent": 2,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-03T15:45Z",
+        "at": "2026-11-03T15:48Z",
         "by": "codex",
-        "note": "Original h22/h35 verified; NAS master SHA matches cf1561c2; both old iCloud copies unreadable. No built Shorts in local/"
+        "note": "NAS and restored UAT hashes match; PR391 merged; J1297 watch restored; J1213 superseded; J0912 reopened without credit w"
       },
       "taskKeys": [
         "HOS:008"
