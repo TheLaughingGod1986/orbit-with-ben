@@ -154431,19 +154431,24 @@
           "at": "2026-11-03T11:05Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: inspect original hold and follow-up evidence; record readiness decision; verify queue and report"
+        },
+        {
+          "at": "2026-11-03T11:06Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read h22 picture PASS 6533306017, h35 master PASS 6537320070, UAT delivery 6537533555; PR391 still OPEN at 3bf00f09"
         }
       ],
-      "remaining_action": "Verify latest HOS 008 repair evidence and approval before updating J1213 hold",
+      "remaining_action": "Replace obsolete repair hold with current reconciliation requirement under J1755",
       "kind": "chief",
       "recheck_of": "J1213",
       "due": "2026-11-03T11:50:25+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-03T11:05Z",
+        "at": "2026-11-03T11:06Z",
         "by": "codex",
-        "note": "Plan: inspect original hold and follow-up evidence; record readiness decision; verify queue and report"
+        "note": "Read h22 picture PASS 6533306017, h35 master PASS 6537320070, UAT delivery 6537533555; PR391 still OPEN at 3bf00f09"
       },
       "taskKeys": [
         "HOS:008"
