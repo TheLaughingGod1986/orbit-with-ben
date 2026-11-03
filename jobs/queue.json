@@ -159352,9 +159352,14 @@
           "at": "2026-11-03T14:48Z",
           "by": "relay",
           "what": "condition verification queued: J1845"
+        },
+        {
+          "at": "2026-11-03T14:52Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-03T15:48:48Z"
         }
       ],
-      "remaining_action": "Park J1844 for elected-Chief recorded source decision on J1834",
+      "remaining_action": "Resolve J1844 FIX through ready Chief fallback decision J1846; retain ISS input hold",
       "due": "2026-11-03T14:30:08Z",
       "for": "gemini",
       "kind": "review",
@@ -159369,10 +159374,12 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-03T15:48:48+00:00",
-        "recheck_task": "J1845"
+        "type": "input",
+        "condition": "J1845 verified PR414 at 1474821f3: Gemini specialist moving review recommends FIX for unrecognisable ISS, cropped Dragon, incoherent fill and unresolved softness. No exact source acceptance exists; predecessor J1833 completion does not clear those gates. Retain non-approval. J1846 is immediately ready for elected-Chief bounded alternative scope and recorded disposition; do not repeat unchanged T545 review. J1471/J1356 and all existing holds persist.",
+        "check_at": "2026-11-03T15:48:48Z",
+        "last_recheck": "J1845",
+        "checked_at": "2026-11-03T14:52:27+00:00",
+        "checked_by": "codex"
       }
     },
     {
