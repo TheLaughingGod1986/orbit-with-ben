@@ -397,3 +397,5 @@ reviewBoard.owb.jobs.push({id:'J1844',kind:'review',ref:'J1834',status:'open',fo
 reviewBoard.workflow.states.J1844={state:'queued'};
 const specialistInfo=t.reviewQueueInfo(reviewBoard,reviewParent,NOW);
 assert.equal(specialistInfo.reviewer,'Gemini');assert.equal(specialistInfo.task.id,'J1844');assert(!specialistInfo.busy,'Codex work does not establish Gemini is busy');
+
+assert.equal(t.stageView({id:'edit',state:'blocked',jobs:[reviewParent]}).text,'Awaiting review');

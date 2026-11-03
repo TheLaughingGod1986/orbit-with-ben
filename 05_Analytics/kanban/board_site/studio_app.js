@@ -258,6 +258,7 @@
     const state = m.awaitingApproval ? 'review' : m.displayState || m.state;
     if (completeStage(m)) return {text:state === 'skip' ? 'Not required · recorded' : 'Completed',tone:'complete',icon:'✓'};
     if (state === 'review') return {text:'Awaiting approval',tone:'held',icon:'!'};
+    if (state === 'blocked' && (m.jobs||[]).some(j=>reviewQueueInfo(board||{},j,Date.now(),macbook))) return {text:'Awaiting review',tone:'held',icon:'!'};
     if (state === 'blocked') return {text:'Blocked',tone:'held',icon:'!'};
     if (['doing','in_progress'].includes(state)) return {text:'In progress',tone:'active',icon:'●'};
     return {text:['todo','pending','queued'].includes(state) ? 'Not started' : 'Unconfirmed',tone:'neutral',icon:'○'};
