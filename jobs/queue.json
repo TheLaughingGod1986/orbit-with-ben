@@ -150395,13 +150395,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-03T02:53Z",
-      "eta": "2026-11-03T04:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T02:31Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-03T02:31Z",
@@ -150432,6 +150432,11 @@
           "at": "2026-11-03T02:56Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Hold readback confirms blocked input, last_recheck J1709, checked_by gemini and retained 2026-11-03 03:31:27 UTC retry"
+        },
+        {
+          "at": "2026-11-03T02:56Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Verification complete; J1471 awaits approved ISS opening input",
@@ -150448,7 +150453,8 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/380"
     }
   ],
   "focus": [],
