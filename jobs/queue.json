@@ -152168,13 +152168,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T06:57Z",
-      "eta": "2026-11-03T08:57Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T06:55Z",
-      "result": "",
+      "result": "Verified input condition unmet: 031/032 retain VO lock records but picture not started, CG pending and zero generation/edit/final files; 033-061 have no recorded VO/picture locks. Reviewed J0979 original ruling, J1000 audit, J1042 shelving and J1693 evidence. J0979 remains blocked with recheck J1730 for 2026-11-03T13:05:00Z. 029 reserve v01 remains shelved; all original gates and approvals retained. No spend or publishing changes. NAS offload check found no eligible old scratch (about 14 GB free before temporary worktree).",
       "history": [
         {
           "at": "2026-11-03T06:55Z",
@@ -152205,6 +152205,11 @@
           "at": "2026-11-03T06:58Z",
           "by": "codex",
           "what": "step 3 of 3 done: J0979 remains blocked; recheck J1730 recorded for 3 Nov 13:05 UTC. Shelving and original gates retained."
+        },
+        {
+          "at": "2026-11-03T06:58Z",
+          "by": "codex",
+          "what": "done: Verified input condition unmet: 031/032 retain VO lock records but picture not started, CG pending and zero generation/edit/final files; 033-061 have no recorded VO/picture locks. Reviewed J0979 original ruling, J1000 audit, J1042 shelving and J1693 evidence. J0979 remains blocked with recheck J1730 for 2026-11-03T13:05:00Z. 029 reserve v01 remains shelved; all original gates and approvals retained. No spend or publishing changes. NAS offload check found no eligible old scratch (about 14 GB free before temporary worktree)."
         }
       ],
       "remaining_action": "Close verification and report the recorded hold",
