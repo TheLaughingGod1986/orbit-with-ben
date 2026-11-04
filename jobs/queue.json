@@ -165635,18 +165635,23 @@
           "at": "2026-11-04T20:47Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Steps 1-2 completed in 88c016c70b; capability hold lifted under PR480; running tool-provable checks + native video/audio inspection"
+        },
+        {
+          "at": "2026-11-04T20:54Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Completed tool-provable checks (hashes, decode, ebur128 loudness, PCM correlation r=0.9933/0.9925, faster-whisper 100% word match, dHash) + native multimodal video/audio review at 447dad87e2"
         }
       ],
-      "remaining_action": "Complete tool-provable checks (hashes, decode, duration, stills, ASR, timing) and native video/audio inspection on recovered Studio candidates",
+      "remaining_action": "Hand off verified Studio candidates to linked Chief decision J1889",
       "due": "2026-11-04T07:00:00Z",
       "kind": "assembly",
       "recovery_scope_key": "J1874:sources",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T20:47Z",
+        "at": "2026-11-04T20:54Z",
         "by": "gemini",
-        "note": "Steps 1-2 completed in 88c016c70b; capability hold lifted under PR480; running tool-provable checks + native video/audio"
+        "note": "Completed tool-provable checks (hashes, decode, ebur128 loudness, PCM correlation r=0.9933/0.9925, faster-whisper 100% w"
       },
       "taskKeys": [
         "OWB:025"
