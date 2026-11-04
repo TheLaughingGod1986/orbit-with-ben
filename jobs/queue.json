@@ -158056,9 +158056,14 @@
           "at": "2026-11-04T03:45Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T03:46Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect evidence; restore exact next actions; verify durable queue and stage links."
         }
       ],
-      "remaining_action": "Chief resolves 053 script handoff and records the next owner/action",
+      "remaining_action": "Trace 053 script evidence and missing approval handoffs",
       "kind": "chief",
       "handoff": {
         "film": "053",
@@ -158069,11 +158074,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-04T03:45Z",
+        "at": "2026-11-04T03:46Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: inspect evidence; restore exact next actions; verify durable queue and stage links."
+      },
+      "taskKeys": [
+        "OWB:053"
+      ]
     },
     {
       "id": "J1795",
