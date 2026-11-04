@@ -105,6 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1941 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
 | J1942 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
 | J1943 | cloud | open (after J1942) | – | – | review · Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
+| J1944 | any | open (after J1943) | – | – | 026 thumbs · chief · Chief: exact-file ruling on OWB 026 abc_v04 after J1823 fresh panel |  |
 
 Recently finished:
 
