@@ -1,5 +1,10 @@
 # Production Status — 060 Why Saturn's Moon Hyperion Looks Like a Giant Tumbling Space Sponge
 
+## Current ruling — 4 November 2026 (J1804)
+
+**FIX / not locked.** J1960 owns the combined topic/editorial decision after J1958 topic evidence; J1805 owns sources repair. No approved air date. The November window and v00 stage text below are historical, not current authorisation. Fresh v01 script check PASS 95.8; episode gate BLOCK (unsigned audit, selects v00). Evidence: `jobs/reviews/J1804/CHIEF_SCRIPT_RULING_2026-11-04.md`. No VO or production approval.
+
+
 **Current Stage:** Topic & Script Draft (`v00`) — Parked for Chief topic lock & review (`J0773`)
 **Working Title:** Why Does Saturn's Moon Hyperion Look Like a Giant Tumbling Space Sponge?
 **Alt Titles:**
