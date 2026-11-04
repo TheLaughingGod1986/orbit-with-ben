@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 061 | sources | gemini | 2026-11-04T17:51Z | 2026-11-04T19:50Z | J1967 061 Venus rotation: direct MUST QUOTE review after Gemini facts |
+| 061 | sources | gemini | 2026-11-04T17:52Z | 2026-11-04T18:52Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
