@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 060 | topic | gemini | 2026-11-04T14:59Z | 2026-11-04T16:58Z | J1958 060 Hyperion: verify topic neighbours and audience evidence |
+| 060 | topic | gemini | 2026-11-04T14:59Z | 2026-11-04T15:59Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
