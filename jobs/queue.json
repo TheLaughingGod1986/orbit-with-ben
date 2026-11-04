@@ -161997,13 +161997,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-04T09:57Z",
-      "eta": "2026-11-04T11:57Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "",
+      "result": "parked for Chief: Step 2/3 implementation and 292-test verification complete on PR437 head 1c309dd443 (codex/J1843-capacity, rollout_enabled=False). Needs Step 3 exact-head Chief review and observed real-host transitions before enabling capacity rollout.",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162249,6 +162249,11 @@
           "at": "2026-11-04T10:04Z",
           "by": "gemini",
           "what": "step 2 of 3 done: PR437 synced with main at 1c309dd443; 292 focused tests + core_sync/py_compile/diff PASS; rollout_enabled=False"
+        },
+        {
+          "at": "2026-11-04T10:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Step 2/3 implementation and 292-test verification complete on PR437 head 1c309dd443 (codex/J1843-capacity, rollout_enabled=False). Needs Step 3 exact-head Chief review and observed real-host transitions before enabling capacity rollout."
         }
       ],
       "remaining_action": "Exact-head Chief review of PR437 head 1c309dd443 and observed real-host transitions before enabling capacity rollout",
