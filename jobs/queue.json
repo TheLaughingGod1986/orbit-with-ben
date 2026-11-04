@@ -90008,13 +90008,13 @@
       "stage": "",
       "after": "J0981",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-27T17:21Z",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T01:19Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T22:13Z",
-      "result": "Waiting for: Needs Ben OK to merge draft HOS PR #365 (a87cd56a): deduplicate repeated playlist video IDs across page boundaries in channel-audit.ts and rules.ts (per HOS AGENTS.md Definition of done: fix a wrong check in its own PR with Ben's OK)",
+      "result": "J1917: Ben approval recorded; PR365 head fab39c33 merged as 8cb5a749. Authenticated merged-main HOS audit exited 0: 62 videos, 0 errors. Evidence HOS PR404 eb1b29d0.",
       "history": [
         {
           "at": "2026-10-26T22:13Z",
@@ -90075,22 +90075,30 @@
           "at": "2026-11-04T00:01Z",
           "by": "codex",
           "what": "PR365 conflict resolved without forcepush; new expected head fab39c33, same narrow three-file diff,28/28 updated contract tests/core56/diff PASS; fresh CI pending."
+        },
+        {
+          "at": "2026-11-04T01:19Z",
+          "by": "codex",
+          "what": "reopened: J1917: Ben approval recorded; PR365 head fab39c33 merged as 8cb5a749. Authenticated merged-main HOS audit exited 0: 62 videos, 0 errors. Evidence HOS PR404 eb1b29d0."
+        },
+        {
+          "at": "2026-11-04T01:19Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Original completed 4/4 retained; merge and live audit now verified"
+        },
+        {
+          "at": "2026-11-04T01:19Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T01:19Z",
+          "by": "codex",
+          "what": "done: J1917: Ben approval recorded; PR365 head fab39c33 merged as 8cb5a749. Authenticated merged-main HOS audit exited 0: 62 videos, 0 errors. Evidence HOS PR404 eb1b29d0."
         }
       ],
       "kind": "assembly",
-      "remaining_action": "Chief verifies Ben approval, merges HOS PR365 at approved head, then runs authenticated channel audit on merged main",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-10-27T17:32Z",
-        "by": "gemini",
-        "note": "Opened draft HOS PR #365 (a87cd56a, branch gemini/j0998-channel-audit-dedup) with sanitized reproduction, narrow ID dedu"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Needs Ben OK to merge draft HOS PR #365 (a87cd56a): deduplicate repeated playlist video IDs across page boundaries in channel-audit.ts and rules.ts (per HOS AGENTS.md Definition of done: fix a wrong check in its own PR with Ben's OK)",
-        "check_at": "2026-10-28T09:00:00Z"
-      },
+      "remaining_action": "Checker fix merged and authenticated postmerge audit verified",
       "direct_user_approvals": [
         {
           "key": "Ben-direct-HOS365-a87cd56a-approval",
@@ -90101,7 +90109,15 @@
           "scope": "HOS PR365 same-video-ID deduplication at a87cd56a028648355061a732f027fe087db465e5 only",
           "pr_comment": "https://github.com/TheLaughingGod1986/history-of-science/pull/365#issuecomment-6618608637"
         }
-      ]
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-04T01:19Z",
+        "by": "codex",
+        "note": "Original completed 4/4 retained; merge and live audit now verified"
+      },
+      "done_ref": "8cb5a749"
     },
     {
       "id": "J0999",
@@ -90114,13 +90130,13 @@
       "stage": "",
       "after": "J0981",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-27T17:34Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T22:14Z",
-      "result": "Depends on J0998 (awaiting Ben OK to merge draft HOS PR #365 a87cd56a for playlist boundary ID dedup in channel-audit.ts) so npm run channel:audit exits 0 on HOS main; all Studio/API work on uAomPaOBrM8 is complete and pushed to HOS PR #358 (c26a79bd)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T22:14Z",
@@ -90271,28 +90287,23 @@
           "at": "2026-11-04T00:01Z",
           "by": "codex",
           "what": "PR365 conflict resolved without forcepush; new expected head fab39c33, same narrow three-file diff,28/28 updated contract tests/core56/diff PASS; fresh CI pending."
+        },
+        {
+          "at": "2026-11-04T01:19Z",
+          "by": "codex",
+          "what": "reopened: J1917: Ben approval recorded; PR365 head fab39c33 merged as 8cb5a749. Authenticated merged-main HOS audit exited 0: 62 videos, 0 errors. Evidence HOS PR404 eb1b29d0. Checker hold satisfied; full Studio checklist remains unverified, so job is ready for missing read-only verification rather than done."
+        },
+        {
+          "at": "2026-11-04T01:19Z",
+          "by": "codex",
+          "what": "step 5 of 5 done: Preserved original 5/5 worker milestones; not approval. Saved end-screen/disclosure evidence reviewed; missing checklist remains."
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:099"
       ],
-      "remaining_action": "Obtain required checker-fix approval, merge HOS PR365, then pass channel:audit on main",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-27T18:24Z",
-        "by": "gemini",
-        "note": "Completed Studio reload read-back (End Screen 48:58:06-49:18:06, Altered content=Yes, Not Made for Kids, playlist PLEbpf"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Verified 30 Oct 08:5x UTC (Claude): HOS PR #365 still a draft at a87cd56a (no review or approval). J0998 needs Ben's OK to merge it (HOS AGENTS.md: a checker fix needs his OK). Then channel:audit must exit 0 on HOS main before J0999 closes. PR #358 is still open at c26a79bd. Gate unmet. I read the diff: it dedups playlist IDs repeated across API page boundaries; it removes no check.",
-        "check_at": "2026-10-31T09:00:00Z",
-        "last_recheck": "J1245",
-        "checked_at": "2026-10-30T08:52:10+00:00",
-        "checked_by": "claude"
-      },
+      "remaining_action": "Read-only verify missing Studio checklist and land narrow PR358 evidence; preserve completed settings; see HOS PR404",
       "direct_user_approvals": [
         {
           "key": "Ben-direct-HOS365-a87cd56a-approval",
@@ -90303,7 +90314,14 @@
           "scope": "HOS PR365 same-video-ID deduplication at a87cd56a028648355061a732f027fe087db465e5 only",
           "pr_comment": "https://github.com/TheLaughingGod1986/history-of-science/pull/365#issuecomment-6618608637"
         }
-      ]
+      ],
+      "progress": {
+        "step": 5,
+        "of": 5,
+        "at": "2026-11-04T01:19Z",
+        "by": "codex",
+        "note": "Preserved original 5/5 worker milestones; not approval. Saved end-screen/disclosure evidence reviewed; missing checklist"
+      }
     },
     {
       "id": "J1000",
@@ -165731,8 +165749,8 @@
       "eta_min": 10,
       "status": "claimed",
       "by": "codex",
-      "since": "2026-11-04T01:15Z",
-      "eta": "2026-11-04T01:25Z",
+      "since": "2026-11-04T01:19Z",
+      "eta": "2026-11-04T01:29Z",
       "created_by": "codex",
       "created_at": "2026-11-03T23:59Z",
       "result": "",
@@ -165776,6 +165794,16 @@
           "at": "2026-11-04T01:18Z",
           "by": "codex",
           "what": "step 3 of 4 done: Merged-main authenticated channel:audit exited 0: 62 videos, 0 errors. Saved J0999 end-screen/disclosure evidence reviewed; full Studio-only checklist is not evidenced."
+        },
+        {
+          "at": "2026-11-04T01:19Z",
+          "by": "codex",
+          "what": "released: Atomic J1917 parent reconciliation; no additional production task selected"
+        },
+        {
+          "at": "2026-11-04T01:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record passing audit and reconcile J0998 completion and J0999 remaining Studio checklist",

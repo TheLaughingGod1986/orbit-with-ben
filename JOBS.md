@@ -25,8 +25,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0979 | mini | blocked | codex | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0985 | mini | open (after J1002) | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
-| J0998 | mini | blocked | gemini | – | assembly · HOS audit: reproduce playlist boundary duplicate and draft narrow dedup fix | 6428572814 |
-| J0999 | mini | blocked | gemini | – | studio · HOS 099: compilation end screen and altered-content readback | 6428572814 |
+| J0999 | mini | open (after J0981) | – | – | studio · HOS 099: compilation end screen and altered-content readback | 6428572814 |
 | J1100 | mini | blocked | codex | – | for codex · video · J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1198 | mini | blocked | cursor | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
@@ -98,7 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1907 | mini | open (after J1782) | – | – | 041 script · chief · 041 Io: restore topic and editorial decision before facts and script lock | J1782 |
 | J1909 | mini | open (after J1783) | – | – | 042 script · chief · 042 Red Giant: restore topic and editorial decision before facts and script lock | J1783 |
 | J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
-| J1917 | mini | claimed | codex | 2026-11-04T01:25Z | chief · Chief: merge Ben-approved HOS checker PR365 and clear J0998/J0999 audit handoff | J0998 |
+| J1917 | mini | claimed | codex | 2026-11-04T01:29Z | chief · Chief: merge Ben-approved HOS checker PR365 and clear J0998/J0999 audit handoff | J0998 |
 | J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 
