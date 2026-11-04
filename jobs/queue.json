@@ -168739,13 +168739,13 @@
       "stage": "script",
       "after": "J1788",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T09:35Z",
-      "eta": "2026-11-04T11:35Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T02:31Z",
-      "result": "",
+      "result": "Chief DEFER/FIX recorded and merged (48d28a7eb1), CI passed. 047 remains unlocked with topic/script blocked; J2003 owns evidence then J2004 capacity/advancement and conditional rewrite-facts-lock. No Short-first waiver, spend or production approval. Five input hashes and focus unchanged.",
       "history": [
         {
           "at": "2026-11-04T02:31Z",
@@ -168776,6 +168776,11 @@
           "at": "2026-11-04T09:41Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR475 merged at 48d28a7eb1 after both CI checks passed; five input hashes and focus unchanged; successor dependencies and blocked stages verified."
+        },
+        {
+          "at": "2026-11-04T09:42Z",
+          "by": "codex",
+          "what": "done: Chief DEFER/FIX recorded and merged (48d28a7eb1), CI passed. 047 remains unlocked with topic/script blocked; J2003 owns evidence then J2004 capacity/advancement and conditional rewrite-facts-lock. No Short-first waiver, spend or production approval. Five input hashes and focus unchanged."
         }
       ],
       "remaining_action": "Decision delivered; J2003 evidence then J2004 advancement remain",
@@ -168789,7 +168794,8 @@
       },
       "taskKeys": [
         "OWB:047"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/475"
     },
     {
       "id": "J1934",
