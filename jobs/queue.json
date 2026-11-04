@@ -157964,13 +157964,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T03:04Z",
-      "eta": "2026-11-04T05:04Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX/not locked: 052 original handoffs cancelled without film approval. PR447 merged (26f0f2d3ef); J1939 restores topic/editorial decision with film/script linkage and dependency. Stage remains review, claim cleared, hashes/board/CI verified. No spend or publishing changes; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -158001,6 +158001,11 @@
           "at": "2026-11-04T03:07Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR447 merged as 26f0f2d3ef; CI and diff check pass. Verified input hashes, J1939 dependency, review stage, cleared claim and board next action."
+        },
+        {
+          "at": "2026-11-04T03:07Z",
+          "by": "codex",
+          "what": "done: FIX/not locked: 052 original handoffs cancelled without film approval. PR447 merged (26f0f2d3ef); J1939 restores topic/editorial decision with film/script linkage and dependency. Stage remains review, claim cleared, hashes/board/CI verified. No spend or publishing changes; nothing for Ben."
         }
       ],
       "remaining_action": "Handoff complete; J1939 owns remaining Miranda topic and editorial decision",
@@ -158020,7 +158025,8 @@
       },
       "taskKeys": [
         "OWB:052"
-      ]
+      ],
+      "done_ref": "26f0f2d3ef"
     },
     {
       "id": "J1794",
