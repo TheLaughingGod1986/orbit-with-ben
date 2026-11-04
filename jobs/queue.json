@@ -170317,9 +170317,14 @@
           "at": "2026-11-04T14:03Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Inspected J1802 ruling, J1956 Gemini facts output, SOURCES.md, SOURCES_v01_J0765.md, and v01 script; SHA-256 input hashes verified"
+        },
+        {
+          "at": "2026-11-04T14:10Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Directly opened and verified all primary sources (PubMed XMLs, MOLA JGR 2001 PDF, LPSC 5633/2252/2386 PDFs, NASA Mars Facts/NSSDC, 8 PIA JSONs, 11 LOC records, PSRD, ScienceDaily, Wikipedia); caught 3 citation/quote errors in J1956 as well as all v01 script/source flags"
         }
       ],
-      "remaining_action": "Directly open primary sources for all 16 MUST QUOTE rows and key spoken/visual claims in 059 v01",
+      "remaining_action": "Write 01_Script/CLAUDE_QUOTE_CHECK_v01.md and jobs/reviews/J1957/DIRECT_QUOTE_CHECK_2026-11-04.md with direct primary-source verifications and hand off fixes to J1953",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -170331,11 +170336,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T14:03Z",
+        "at": "2026-11-04T14:10Z",
         "by": "gemini",
-        "note": "Inspected J1802 ruling, J1956 Gemini facts output, SOURCES.md, SOURCES_v01_J0765.md, and v01 script; SHA-256 input hashe"
+        "note": "Directly opened and verified all primary sources (PubMed XMLs, MOLA JGR 2001 PDF, LPSC 5633/2252/2386 PDFs, NASA Mars Fa"
       },
       "taskKeys": [
         "OWB:059"
