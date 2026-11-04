@@ -83,6 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2150 | cloud | open | – | – | review · 032 J2089: review 18 DATA stills and resolve remaining harvest conflicts | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491 |
 | J2151 | macbook | open | – | – | `gemini-argon` · MacBook setup test: gemini |  |
 | J2152 | macbook | open | – | – | `cursor-grok-4-7` · MacBook setup test: cursor |  |
+| J2153 | macbook | open | – | – | chart · `gpt-6-astra` · MacBook setup test: codex |  |
 
 Recently finished:
 
