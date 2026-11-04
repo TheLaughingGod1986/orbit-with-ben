@@ -4,12 +4,12 @@
 |-------|-------|
 | Slug | `040_Wrong-Kind-Of-Aliens` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-17_J0469.md` (scored 22/30, #1 of 5) |
-| Topic lock | **Pending Chief decision** (`J0469` parked for Chief: lock 040 or pick #2 Io Volcanoes / #3 Sun Red Giant / #5 Boötes Void; confirm Short-first waiver) |
-| Script draft | `01_Script/wrong_kind_of_aliens_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0477; 1,225 spoken words / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; revised from v00 drafted in J0469) |
-| Script review | **PASS — 95.8 / 100** (1,225 spoken words / 1,299 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0477`) |
+| Topic lock | **DEFER (J1906, 4 Nov): unlocked candidate; no Short-first waiver. J1986 evidence/overlap audit then J1987 capacity/advancement decision.** J1781 restored the handoff from cancelled J0469/J0477; `pII09FbRYGc` (*Why Europa Is Hiding a Massive Ocean*, `291` views, unrecorded stayed %) tests `006` Europa's ocean while `006` long `NbW5G1BpPY0` is at `15` views, other `006` Shorts sit at `2`–`127` views (`1glQuYFSaYQ` `0%` stayed), `RLSJm59OSzI` on Titan is private with `0` views, and no silicon/alternative-biochemistry Short has aired. Chapters 1–5 also overlap `006` Europa, `032` Titan and `046` Enceladus. |
+| Script draft | `01_Script/wrong_kind_of_aliens_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0477; 1,252 whitespace spoken words / 1,225 notes / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; v00 retained) |
+| Script review | **FIX (J1906, 4 Nov).** Historical automated score 95.8/100 from J0477 is not editorial, scientific or script-lock approval; script remains unlocked under review until explicit Chief approval. See `jobs/reviews/J1906/CHIEF_EDITORIAL_RULING_2026-11-04.md` for required specialist fixes if advanced. |
 | Sources | `01_Script/SOURCES.md` — 7 rows started and pre-checked with verbatim quotes (`WHOI Discovery of Hydrothermal Vents`, `NASA Enceladus & Enceladus Hydrothermal Activity`, `NASA Europa Clipper & Europa`, `NASA Titan Facts & Photojournal PIA20016`, `ESA Titan Facts & Organics`, `Cornell Chronicle Kraken Mare`, `Mastrogiuseppe et al. 2014 & Lorenz 1993`, `NASA/JHUAPL Dragonfly`, `Caltech News & CaltechAUTHORS Kan et al. 2016`, `NobelPrize.org Frances Arnold`, `NASA Io`, `LOC Name Authority Records n83073944 / n79083314 / n79134100 / n88666692`) |
-| Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
-| Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
+| Gemini facts pass | Not started; J1987 owns the specialist rewrite → formal Gemini facts → direct quotes/lock chain if advanced. All seven rows remain TO VERIFY. |
+| Gate | Production blocked: topic/neighbour, overlap and Short-first decision, unsigned prebuild audit, editorial fixes, formal Gemini facts, direct quote check and explicit script lock remain. Outputs below are historical J0477 evidence only. |
 | VO | Pending (wait for topic lock + Gemini `facts` + `CLAUDE_QUOTE_CHECK` + Chief script sign-off) |
 | CG | Pending (NASA `PIA25690` Europa JunoCam, `PIA17184`/`PIA19061` Enceladus plumes, `PIA17655` Titan northern seas, Europa Clipper KSC launch & High Bay 1 antenna, JHUAPL Dragonfly rotorcraft + code graphics + Omni Orbit) |
 | Runtime target | 7–9 min (1,225 spoken words / 1,299 reviewer words, ~8.7 min est.) |
@@ -82,3 +82,12 @@ Pass threshold: 90
 
 Script score: **95.8/100** · PASS
 ```
+
+## Handoff repair — 3 November 2026 (J1781)
+
+J0469/J0477 were cancelled as duplicates of J0789/J0802, whose decisions concern only unlocked 061 drafts. No 040 lock is established. J1906 restores topic/editorial review before formal Gemini facts and direct quote checks. See `jobs/reviews/J1781/CHIEF_HANDOFF_2026-11-03.md`. No production approval; v00/v01 and source evidence preserved.
+
+## Chief ruling — 4 November 2026 (J1906)
+
+DEFER topic advancement; FIX script (remains unlocked under review until explicit Chief approval). No Short-first waiver or production approval. J1986 owns neighbours, completed topic audit, overlap audit against `001`/`003`/`006`/`032`/`046`/`041`, and matching Short-first evidence (`pII09FbRYGc`, *Why Europa Is Hiding a Massive Ocean*, verified live 4 Nov as public with 291 views and unrecorded stayed % on `006` Europa's ocean while `NbW5G1BpPY0` sits at 15 views; `1glQuYFSaYQ` verified live 4 Nov at 127 views / 0% stayed; `Xza_jSHD4qw` 96 views, `eVp9a7f4rWg` 93 views, `VE0f186WQZo` 91 views, `TE_HDKAnqms` 2 views; `RLSJm59OSzI` verified live 4 Nov as private with 0 views; no silicon/alternative-biochemistry Short has aired); J1987 owns capacity/advancement and any specialist rewrite/facts/direct-quotes chain. HOS November is 2/4 complete against OWB 5/4. Reconsider when HOS reaches four completed November films or Chief records a fresh non-displacing capacity rationale, overlap with `006`/`032`/`046` is resolved, and topic evidence passes. Reconcile incoming 039 (`J1985`) and outgoing 041 (`J1907`) handoffs before script lock. Historical notes above are not approval; v00/v01 and SOURCES are unchanged. Full ruling: `jobs/reviews/J1906/CHIEF_EDITORIAL_RULING_2026-11-04.md`. Nothing for Ben.
+

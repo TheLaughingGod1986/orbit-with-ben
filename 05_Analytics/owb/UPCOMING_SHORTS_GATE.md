@@ -1,10 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-03 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-04 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-11-03 11:30 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) `ZpEA8stoSPA` | yes | NOT CHECKED |
 | 2026-11-07 11:30 | [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) `T9fVlG3CCzU` | yes | PASS |
 | 2026-11-09 11:30 | [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) `iyvWYFP_ETA` | yes | KNOWN |
 | 2026-11-10 11:30 | [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/RLSJm59OSzI) `RLSJm59OSzI` | yes | PASS |
@@ -13,12 +12,9 @@ Written by `gate_upcoming.py` at 2026-11-03 06:40 London for Shorts scheduled in
 | 2026-11-13 11:30 | [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/bSjWiCbB7pY) `bSjWiCbB7pY` | yes | KNOWN |
 | 2026-11-14 11:30 | [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/gmzaCfJF1gA) `gmzaCfJF1gA` | yes | PASS |
 | 2026-11-16 11:30 | [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/HZGTovJu_TQ) `HZGTovJu_TQ` | yes | **FAIL** |
+| 2026-11-17 11:30 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/kKN8Ale42sE) `kKN8Ale42sE` | yes | PASS |
 
 ## Details
-
-### ZpEA8stoSPA: NOT CHECKED (NAS not readable from this job)
-
-macOS privacy blocks this job from: `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-31/owb/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4`. From an agent session run `gate_upcoming.py --stage` (same arguments), then re-run. No Short was judged.
 
 ### T9fVlG3CCzU: report-only (would fail 60% stayed gate)
 
@@ -55,4 +51,10 @@ Export not found: `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts
 ```
 /Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/mon16_cant_see_nearest_star_v01.mp4: Operation not permitted
 ```
+
+### kKN8Ale42sE: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.33 < 1.50) — use moving footage
+- first cut at 4.60s > 3.0s (scene-change detect)
+- spoken text contains meta-promise ("stay, and i'll show you")
 

@@ -1,11 +1,13 @@
 # Production status — 033 Why Uranus Has 21-Year Winters After Being Knocked Sideways
 
+**Current ruling, 4 November 2026 (J1896, codex acting Chief): topic DEFER / script FIX; unlocked candidate only.** The historic score below is not a script or facts approval. See `jobs/reviews/J1896/CHIEF_EDITORIAL_RULING_2026-11-04.md`. J1969 owns topic/neighbour/Short evidence, then J1970 owns capacity and advancement plus any specialist rewrite → formal Gemini facts → direct quote-check/lock chain. HOS production has priority. No VO, production spend or air date is authorised. The Short's historic scheduled state below has not been reverified; J1969 must establish the actual public cut and performance. Current board state is in `status.json`.
+
 | Field | Value |
 |-------|-------|
 | Slug | `033_Why-This-Planet-Has-21-Year-Winters` |
 | Working title | `Why Uranus Has 21-Year Winters After Being Knocked Sideways` |
-| Gate | not run (topic not locked; parked for Chief in J0363) |
-| Script review | PASS 95.2 / 100 (`uranus_21_year_winter_script_master_v01.md`, 1,338 spoken words / 1,365 reviewer words, 6 chapters, J0363) |
+| Gate | topic deferred / script FIX under J1896; J1969 → J1970 owns reconsideration |
+| Script review | Historical automated 95.2 / 100 only (`uranus_21_year_winter_script_master_v01.md`, 1,338 spoken words / 1,365 reviewer words, 6 chapters, J0363); current Chief editorial FIX |
 | VO | pending (blocked until Chief topic lock, Gemini `facts` pass, `CLAUDE_QUOTE_CHECK` and script lock) |
 | CG | pending (Vertex Veo / Omni Orbit-only) |
 | Runtime target | 7–9 min |

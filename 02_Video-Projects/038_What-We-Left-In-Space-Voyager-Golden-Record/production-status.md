@@ -4,12 +4,12 @@
 |-------|-------|
 | Slug | `038_What-We-Left-In-Space-Voyager-Golden-Record` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-17_J0437.md` (scored 25/30, #1 of 5) |
-| Topic lock | **Pending Chief decision — J1904**. J1779 restored the handoff from cancelled J0437/J0446; neighbour evidence, Short-first decision and priority review remain required. |
-| Script draft | `01_Script/voyager_golden_record_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0446; 1,221 spoken words / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; revised from v00 drafted in J0437) |
-| Script review | **Unlocked / FIX — J1904**. Historical automated score 95.4/100 from J0446 is not editorial or scientific approval. See J1779 review note. |
+| Topic lock | **DEFER (J1904, 4 Nov): unlocked candidate; no Short-first waiver. J1981 evidence then J1982 capacity/advancement decision.** J1779 restored the handoff from cancelled J0437/J0446; `kKN8Ale42sE` (*How Far From Earth Is Voyager 1 Right Now?*) verified live 4 Nov as private with 0 views (`publishAt: 2026-11-17T11:30:00Z`), not measured Short-first proof. |
+| Script draft | `01_Script/voyager_golden_record_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0446; 1,249 whitespace spoken words / 1,221 notes / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; v00 retained) |
+| Script review | **FIX (J1904, 4 Nov).** Historical automated score 95.4/100 from J0446 is not editorial, scientific or script-lock approval. See `jobs/reviews/J1904/CHIEF_EDITORIAL_RULING_2026-11-04.md` for required specialist fixes if advanced. |
 | Sources | `01_Script/SOURCES.md` — 9 rows started and pre-checked with verbatim quotes (`NASA Science Voyager 1`, `NASA Voyager 1 What Is a Light-Day?`, `NASA Apollo 11`, `NASA Science Pioneer 10`, `NASA Voyager Golden Record Contents / Making / Cover`, `NASA Pale Blue Dot / Fast Facts`, `JPL Release Ed Stone`, `NASA Voyager Interstellar Mission / Q&A with Dr. Ed Stone / FAQ`, `NASA Perseverance Rover Components`, `LOC Name Authority Records n80008815 / n79064998 / n84081625 / n79092362 / n79021791 / n83017119`) |
-| Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
-| Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
+| Gemini facts pass | Not started; J1982 owns the specialist rewrite → formal Gemini facts → direct quotes/lock chain if advanced. All nine rows remain TO VERIFY. |
+| Gate | Production blocked: topic/neighbour and Short-first decision, unsigned prebuild audit, editorial fixes, formal Gemini facts, direct quote check and explicit script lock remain. Outputs below are historical J0446 evidence only. |
 | VO | Pending (wait for topic lock + Gemini `facts` + `CLAUDE_QUOTE_CHECK` + Chief script sign-off) |
 | CG | Pending (NASA/JPL `PIA14113` Golden Record, `PIA23645` Pale Blue Dot, Pioneer 10 plaque, Voyager 1 & 2 spacecraft + code graphics + Omni Orbit) |
 | Runtime target | 7–9 min (1,221 spoken words / 1,299 reviewer words, ~8.7 min est.) |
@@ -88,3 +88,7 @@ Pass threshold: 90
 
 Script score: **95.4/100** · PASS
 ```
+
+## Chief ruling — 4 November 2026 (J1904)
+
+DEFER topic advancement; FIX script. No Short-first waiver or production approval. J1981 owns neighbours, completed topic audit and matching Short-first evidence (`kKN8Ale42sE`, *How Far From Earth Is Voyager 1 Right Now?*, verified live 4 Nov as private with 0 views, scheduled 17 Nov 2026 11:30Z); J1982 owns capacity/advancement and any specialist rewrite/facts/direct-quotes chain. HOS November is 2/4 complete against OWB 5/4. Reconsider when HOS reaches four completed November films or Chief records a fresh non-displacing capacity rationale, and topic evidence passes. Reconcile incoming 037 (`J1980`) and outgoing 039 (`J1905`) handoffs before script lock. Historical notes above are not approval; v00/v01 and SOURCES are unchanged. Full ruling: `jobs/reviews/J1904/CHIEF_EDITORIAL_RULING_2026-11-04.md`. Nothing for Ben.

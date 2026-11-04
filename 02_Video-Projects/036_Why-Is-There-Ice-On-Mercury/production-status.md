@@ -4,9 +4,9 @@
 |-------|-------|
 | Slug | `036_Why-Is-There-Ice-On-Mercury` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-16_J0403.md` (scored 25/30, #1 of 5) |
-| Topic lock | **Pending Chief decision J1900** (`J0403` cancelled without a 036 decision; originally parked for Chief: lock 036 or pick #2 Milky Way Centre / #3 Left in Space / #4 Planet Sounds; decide Short-first waiver vs standalone Short `vlkj8RQKmH8`) |
+| Topic lock | **DEFER — J1900; evidence J1977 then Chief J1978** (`J0403` cancelled without a 036 decision; originally parked for Chief: lock 036 or pick #2 Milky Way Centre / #3 Left in Space / #4 Planet Sounds; decide Short-first waiver vs standalone Short `vlkj8RQKmH8`) |
 | Script draft | `01_Script/mercury_polar_ice_script_master_v01.md` (v01 drafted 16 Oct 2026 in J0411; 1,278 spoken words / 1,298 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`) |
-| Script review | **Automated score only — 95.8 / 100; Chief editorial review pending J1900** (1,278 spoken words / 1,298 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings) |
+| Script review | **FIX — J1900; historical automated score 95.8 / 100 only** (1,278 spoken words / 1,298 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings) |
 | Sources | `01_Script/SOURCES.md` — 10 rows started and pre-checked with verbatim quotes (`NASA Mercury Facts`, `NASA MESSENGER`, `NASA Mariner 10`, `NASA BepiColombo`, `NASA Mercury's Strange Hollows`, `NASA Release 15-079`, `JHU Gazette / MESSENGER Release`, `NSSDCA Mercury Fact Sheet`, `JPL Photojournal PIA19411 / PIA16523 / PIA18748 / PIA16522 / PIA15160`, `LOC Name Authority Records n88291472 / nr93014292 / n80020330 / n50054908`) |
 | Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
 | Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
@@ -90,3 +90,15 @@ J1900 now owns the Chief topic/editorial decision on OWB:036/script, after J1777
 The 95.8 score and pasted gate output above are historical automated results, not a current editorial or scientific PASS. The pre-build audit is unsigned and blank; all ten source rows remain TO VERIFY, and formal Gemini facts plus direct MUST QUOTE checks are outstanding. J1900 must resolve neighbour/Short-first evidence, the opening and graphics issues, and queue any rewrite and dependent facts/lock work if advancing. The 24 October Short schedule above is historical, not a current readback. No VO, media or publishing approval.
 
 Evidence and handoff: `jobs/reviews/J1777/CHIEF_HANDOFF_2026-11-03.md`. No spend or Ben action required by this repair.
+
+## Chief editorial decision — J1900, 4 November 2026
+
+**DEFER topic advancement; FIX script.** Retain the unlocked polar-ice candidate. HOS November is 2/4 complete against OWB 5/4; focus unchanged. No Short-first waiver or production approval.
+
+The 4 November stored snapshot records `vlkj8RQKmH8` public with 851 views. The 3 November 07:03:36Z lifetime Studio read records 32.1% stayed-to-watch (below 40%) and 76.1% average viewed (a different metric). Its day-length promise is not automatic polar-ice-topic proof. The old scheduling prose above is historical.
+
+J1977 owns verified neighbours, topic opportunity/pre-build audit and matching Short evidence. J1978 then owns advancement after evidence and capacity checks: HOS November reaches four completed films, or Chief records a fresh specific priority rationale without displacing focus. No approval from elapsed time, dependency completion or credit reset.
+
+If advanced, J1978 must queue specialist v02 rewrite, formal Gemini facts via agy on all ten source rows/revised claims, and dependent Chief direct quotes and explicit script lock with current gates. Preserve v00/v01. No VO before the whole chain passes.
+
+Full editorial FIX and release conditions: `jobs/reviews/J1900/CHIEF_EDITORIAL_RULING_2026-11-04.md`. Nothing required from Ben; no spend or publishing changes.
