@@ -157452,9 +157452,14 @@
           "at": "2026-11-04T01:42Z",
           "by": "codex",
           "what": "step 2 of 3 done: FIX / not locked; successor J1929 owns 045 script review after J1786. Stage returned to review without approval."
+        },
+        {
+          "at": "2026-11-04T01:44Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Evidence PR441 landed; successor and dependency verified; 045 review state and no approval preserved."
         }
       ],
-      "remaining_action": "Commit and verify the evidence report and restored review handoff",
+      "remaining_action": "Handoff repair complete; J1929 owns the remaining topic and script decision",
       "kind": "chief",
       "handoff": {
         "film": "045",
@@ -157463,11 +157468,11 @@
         "signature": "a6f92c14c378698b0f91"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T01:42Z",
+        "at": "2026-11-04T01:44Z",
         "by": "codex",
-        "note": "FIX / not locked; successor J1929 owns 045 script review after J1786. Stage returned to review without approval."
+        "note": "Evidence PR441 landed; successor and dependency verified; 045 review state and no approval preserved."
       },
       "taskKeys": [
         "OWB:045"
