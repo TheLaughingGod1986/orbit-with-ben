@@ -169993,19 +169993,29 @@
           "at": "2026-11-04T07:01Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-04T07:02Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read parent, approval history, J1915 decision and subsequent J1878 rejection; no newer trusted approval in this session or inboxes"
         }
       ],
-      "remaining_action": "Verify J1878 approval history and unmet authorization condition",
+      "remaining_action": "Record unchanged approval-review hold and next verification",
       "kind": "chief",
       "recheck_of": "J1878",
       "due": "2026-11-03T18:54:58+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-04T07:01Z",
-        "by": "codex"
-      }
+        "at": "2026-11-04T07:02Z",
+        "by": "codex",
+        "note": "Read parent, approval history, J1915 decision and subsequent J1878 rejection; no newer trusted approval in this session "
+      },
+      "taskKeys": [
+        "OWB:025",
+        "HOS:005"
+      ]
     },
     {
       "id": "J1976",
