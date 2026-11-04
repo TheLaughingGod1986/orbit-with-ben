@@ -161910,9 +161910,14 @@
           "at": "2026-11-04T05:24Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed existing PR437 checkpoint 702c10404d; keeping original 1/3 plan and disabled production rollout."
+        },
+        {
+          "at": "2026-11-04T05:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Added identity-bound local orphan recovery and fail-closed lease filtering. Seventeen lease tests pass; full capacity regression checks underway. Implementation remains incomplete and rollout disabled."
         }
       ],
-      "remaining_action": "Complete trusted host evidence, crash reconciliation and portable integration before review/rollout",
+      "remaining_action": "Finish trusted host evidence and portable integration, then exact-head review and observed rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -161923,9 +161928,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T05:24Z",
+        "at": "2026-11-04T05:28Z",
         "by": "codex",
-        "note": "Resumed existing PR437 checkpoint 702c10404d; keeping original 1/3 plan and disabled production rollout."
+        "note": "Added identity-bound local orphan recovery and fail-closed lease filtering. Seventeen lease tests pass; full capacity re"
       },
       "rerouted_from": {
         "needs": "mini",
