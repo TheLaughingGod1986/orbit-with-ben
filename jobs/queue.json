@@ -170338,9 +170338,14 @@
           "at": "2026-11-04T14:29Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J1802 ruling, J1956 Gemini report, SOURCES.md (v01 and updated), and script v01; verified input SHA256 hashes"
+        },
+        {
+          "at": "2026-11-04T14:36Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Directly fetched and verified all primary sources (PubMed XMLs, Smith et al. 2001 JGR PDF, McGovern 2010 PDF, Robbins 2010 PDF, Beddingfield 2011 PDF, NASA Science/NSSDC/PIA API, PSRD, ScienceDaily, LOC, Wikipedia)"
         }
       ],
-      "remaining_action": "Directly fetch and verify primary sources for all 16 MUST QUOTE rows and spoken/visual claims",
+      "remaining_action": "Write 01_Script/CLAUDE_QUOTE_CHECK_v01.md and jobs/reviews/J1957/ direct quote check report",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -170352,11 +170357,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T14:29Z",
+        "at": "2026-11-04T14:36Z",
         "by": "gemini",
-        "note": "Read J1802 ruling, J1956 Gemini report, SOURCES.md (v01 and updated), and script v01; verified input SHA256 hashes"
+        "note": "Directly fetched and verified all primary sources (PubMed XMLs, Smith et al. 2001 JGR PDF, McGovern 2010 PDF, Robbins 20"
       },
       "taskKeys": [
         "OWB:059"
