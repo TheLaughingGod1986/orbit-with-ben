@@ -160797,9 +160797,14 @@
           "at": "2026-11-04T01:05Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed clean PR437 checkpoint; existing 1/3 plan retained. Current Cursor failure is authentication required; no audio/video capability demonstrated."
+        },
+        {
+          "at": "2026-11-04T01:09Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint 0d6d543bfa adds bounded hash-verified portable bundles and return receipts. 188 tests PASS; step 2 incomplete; rollout disabled."
         }
       ],
-      "remaining_action": "Continue PR437 atomic cross-host reservation and verified portable transfer; review and rollout remain",
+      "remaining_action": "Continue PR437 canonical cross-host claims and launch integration; then exact-head review and observed rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -160810,9 +160815,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T01:05Z",
+        "at": "2026-11-04T01:09Z",
         "by": "codex",
-        "note": "Resumed clean PR437 checkpoint; existing 1/3 plan retained. Current Cursor failure is authentication required; no audio/"
+        "note": "Checkpoint 0d6d543bfa adds bounded hash-verified portable bundles and return receipts. 188 tests PASS; step 2 incomplete"
       }
     },
     {
