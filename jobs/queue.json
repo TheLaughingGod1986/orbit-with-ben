@@ -172771,21 +172771,31 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T11:48Z",
-      "result": "",
+      "result": "Waiting for: PR480 merged to main",
       "history": [
         {
           "at": "2026-11-04T11:48Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: PR480 merged to main"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-04T13:00:00Z"
         }
       ],
-      "remaining_action": "Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run",
+      "remaining_action": "resume J2018",
       "kind": "qa",
       "log": [
         {
@@ -172793,7 +172803,12 @@
           "by": "claude",
           "what": "claimed to record a date/dependency hold"
         }
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "PR480 merged to main",
+        "check_at": "2026-11-04T13:00:00Z"
+      }
     },
     {
       "id": "J2019",
