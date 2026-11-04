@@ -159085,13 +159085,13 @@
       "stage": "thumbs",
       "after": "J1766",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-04T01:22Z",
-      "eta": "2026-11-04T03:22Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T12:27Z",
-      "result": "",
+      "result": "Waiting for: v03 delivered in PR439 commit80195a8a72; independent panel J1920-J1922, decision J1923 and elected-Chief exact-file ruling J1924 required. Files exist in shared abc_v03 with META hashes. Preserve original A; no live packaging authority.",
       "history": [
         {
           "at": "2026-11-03T12:27Z",
@@ -159182,9 +159182,19 @@
           "at": "2026-11-04T01:24Z",
           "by": "codex",
           "what": "step 2 of 3 done: Built Proxima-only B/C v03. Colour gates pass186.4/3% and116.3/2%; full-size and168x94 viewed; source and preserved v01/v02 hashes verified."
+        },
+        {
+          "at": "2026-11-04T01:26Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: v03 delivered in PR439 commit80195a8a72; independent panel J1920-J1922, decision J1923 and elected-Chief exact-file ruling J1924 required. Files exist in shared abc_v03 with META hashes. Preserve original A; no live packaging authority."
+        },
+        {
+          "at": "2026-11-04T01:26Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T02:00:00Z"
         }
       ],
-      "remaining_action": "Commit exact-file evidence and queue independent panel plus Chief review",
+      "remaining_action": "Await already-queued independent panel and exact-file Chief decision; no rebuild unless FIX",
       "due": "2026-11-14T18:00:00Z",
       "kind": "thumb",
       "taskKeys": [
@@ -159212,6 +159222,11 @@
         "at": "2026-11-04T01:24Z",
         "by": "codex",
         "note": "Built Proxima-only B/C v03. Colour gates pass186.4/3% and116.3/2%; full-size and168x94 viewed; source and preserved v01/"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "v03 delivered in PR439 commit80195a8a72; independent panel J1920-J1922, decision J1923 and elected-Chief exact-file ruling J1924 required. Files exist in shared abc_v03 with META hashes. Preserve original A; no live packaging authority.",
+        "check_at": "2026-11-05T02:00:00Z"
       }
     },
     {
