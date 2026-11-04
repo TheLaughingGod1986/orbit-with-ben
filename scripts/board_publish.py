@@ -428,12 +428,26 @@ def ls_remote(repo: pathlib.Path, *refs: str) -> str:
     return git(repo, "ls-remote", "origin", *refs, timeout=30)
 
 
+def heartbeats(repo: pathlib.Path | None = None) -> tuple:
+    """(Mini heartbeat, MacBook heartbeat) from their branches, or None each when unreadable (machines card)."""
+    repo = repo or OWB
+    out = []
+    for branch in ("mini-heartbeat", "macbook-heartbeat"):
+        try:
+            git(repo, "fetch", "-q", "origin", f"+refs/heads/{branch}:refs/remotes/origin/{branch}", timeout=30)
+            out.append(json.loads(git(repo, "show", f"origin/{branch}:heartbeat.json", timeout=15)))
+        except Exception:  # noqa: BLE001
+            out.append(None)
+    return tuple(out)
+
+
 def quick_key(remote=ls_remote) -> str | None:
     """A cheap fingerprint of everything a rebuild reads that can move between runs: main and mini-heartbeat of
     orbit-with-ben, main of history-of-science (one ls-remote each, no fetch) and the Mini's acting-Chief file.
     None if a remote can't be read; the caller then does the full rebuild."""
     try:
-        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat"), remote(HOS, "refs/heads/main")]
+        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat", "refs/heads/macbook-heartbeat"),
+                 remote(HOS, "refs/heads/main")]
     except Exception as e:  # noqa: BLE001
         log(f"quick check failed, full rebuild: {e!r}"[:300])
         return None
@@ -503,6 +517,12 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"models not read: {e}")
     board["workflow"] = dispatch_snapshot(board, at)
+    try:  # Machines: what each one is on and its jobs in 24 h (Ben, 4 Nov 2026); never blocks the board push
+        import machines
+        queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
+        board["machines"] = machines.section(queue, *heartbeats(), at)
+    except Exception as e:  # noqa: BLE001
+        log(f"machines not built: {e}")
     try:  # Last 24 hours on the home page (Ben, 4 Nov 2026); never blocks the board push
         import progress24
         board["progress24h"] = progress24.section(STATE / "progress_history.json", board, at)
