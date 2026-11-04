@@ -53,6 +53,18 @@ class Machines(unittest.TestCase):
         s = {r["id"]: r for r in m.section(q, None, {"state": "working", "job": "J9", "why": []}, AT)["machines"]}
         self.assertEqual(s["macbook"]["now"][0]["id"], "J9")
 
+    def test_relay_execution_and_fresh_heartbeat_show_the_minis_job(self):
+        q = {"jobs": [{"id": "J7", "status": "open", "title": "picture"}, {"id": "J8", "status": "open", "title": "review"}]}
+        hb = {"at": "2026-11-04T22:50:00Z", "state": "running", "note": "woke Gemini for J8 (cap 25 min)"}
+        s = {r["id"]: r for r in m.section(q, hb, None, AT, [{"job": "J7", "worker": "codex", "startedAt": "x"}])["machines"]}
+        self.assertEqual([(n["id"], n["agent"]) for n in s["mini"]["now"]], [("J7", "codex"), ("J8", "gemini")])
+        self.assertEqual(s["mini"]["now"][0]["title"], "picture")
+
+    def test_old_woke_heartbeat_is_not_a_current_job(self):
+        hb = {"at": "2026-11-04T22:00:00Z", "state": "running", "note": "woke Gemini for J8 (cap 25 min)"}
+        s = {r["id"]: r for r in m.section({"jobs": []}, hb, None, AT)["machines"]}
+        self.assertEqual(s["mini"]["now"], [])
+
     def test_unknown_agents_are_ignored(self):
         q = {"jobs": [{"id": "J1", "status": "claimed", "by": "someone", "title": "x"}]}
         self.assertTrue(all(not r["now"] for r in m.section(q, None, None, AT)["machines"]))
