@@ -477,6 +477,7 @@ def dispatch_snapshot(board: dict, at: dt.datetime, queue_path: pathlib.Path | N
     due = relay.due_chief_reviews(pending, chief, at)
     active = ((board.get("models") or {}).get("chiefWork") or {}).get("active")
     chooser = lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), "")
+    data = {**data, "tracker": board.get("tracker") or {}}
     return workflow.snapshot(data, at, chief, up, chooser, active, {j["id"] for j in due}, execution=relay.current_execution(at),
                              include_chief=any(r.get("agent") == chief and r.get("up") for r in rows), capabilities=relay.worker_capabilities())
 

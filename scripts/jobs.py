@@ -130,6 +130,12 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
         raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
     if bool(film) != bool(stage):
         raise ValueError("--film and --stage go together")
+    # Infrastructure jobs may use production kinds; a film reference in the
+    # title/body (or an explicit film) distinguishes film work from tooling.
+    production = kind in {"script", "facts", "vo", "image", "chart", "thumb", "video", "assembly", "qa"}
+    exempt = by in {"relay", "backlog", "refill"} or bool(re.match(r"backlog\b", title, re.I))
+    if not exempt and (film_named(title) or (production and (film or film_named(body) or re.search(r"\b\d{3}_[A-Za-z]", body)))) and not (film and stage):
+        raise ValueError("Film production jobs require --film and --stage")
     if stage and stage not in studio.STAGES:
         raise ValueError(f"stage must be one of {', '.join(studio.STAGES)}")
     if after and not find(data, after):
@@ -166,7 +172,7 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
 
 def film_named(title: str) -> bool:
     """A title that starts with a film number or names one with its channel (OWB 027, HOS 006)."""
-    return bool(re.match(r"\s*0\d\d\b", title) or re.search(r"\b(?:OWB|HOS)[ :]*0\d\d\b", title))
+    return bool(re.match(r"\s*\d{3}\b", title) or re.search(r"\b(?:OWB|HOS)[ :]*\d{3}\b", title, re.I))
 
 
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
@@ -176,7 +182,9 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str 
 
 def ordered(data: dict, at: dt.datetime | None = None) -> list:
     due = workflow.deadlines(data["jobs"])
-    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at))
+    from workflow_board import load_tracker
+    nearest = workflow.near_watch(load_tracker())
+    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest))
 
 
 def set_wait(job, agent, at, hold, action="", recheck=""):
@@ -995,9 +1003,6 @@ def main(argv=None) -> int:
                 return {"id": "reconcile", "title": "Dependency reconciliation", "needs": "any", "status": "done", "result": ", ".join(changes), "history": []}, None, touched
             if args.cmd == "add":
                 body = args.body_file.read_text() if args.body_file else args.body
-                if not args.film and film_named(args.title):
-                    print(f"jobs: warning: '{args.title[:60]}' names a film but has no --film/--stage, so the board "
-                          "won't move that film's stage when it's done (J0814)", file=sys.stderr)
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
                              for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset, due=args.due, action=args.action, requires=args.requires)
