@@ -172380,9 +172380,14 @@
           "at": "2026-11-04T11:25Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T11:25Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: review exact heads; release approved patch and record independent capacity/hold decisions; verify runtime and handoff."
         }
       ],
-      "remaining_action": "Chief review and release PR477 alone, verify safe Mini runtime reload; handle PR437 capacity separately",
+      "remaining_action": "Review and release PR477, assess PR437 separately, verify worker and holds",
       "kind": "chief",
       "overnight_review_key": "Ben-overnight-visible-production-2026-11-04",
       "urgent": 2,
@@ -172401,9 +172406,11 @@
         "of": 3,
         "at": "2026-11-04T11:25Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: review exact heads; release approved patch and record independent capacity/hold decisions; verify runtime and hand"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J2011",
