@@ -166623,10 +166623,10 @@
       "stage": "script",
       "after": "J1779",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-04T07:23Z",
-      "eta": "2026-11-04T09:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T21:57Z",
       "result": "",
@@ -166655,6 +166655,11 @@
           "at": "2026-11-04T07:26Z",
           "by": "codex",
           "what": "step 2 of 3 done: DEFER/FIX recorded; fresh API confirms proposed Short private/0 views; evidence and dependent Chief decision queued."
+        },
+        {
+          "at": "2026-11-04T07:27Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex run failed (exit 1); next in its chain: gemini"
         }
       ],
       "remaining_action": "Verify ruling, successor dependencies and final board state",
@@ -166668,7 +166673,16 @@
       },
       "taskKeys": [
         "OWB:038"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "codex"
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1905",
