@@ -157601,9 +157601,14 @@
           "at": "2026-11-04T02:29Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T02:30Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Chief resolves 047 script handoff and records the next owner/action",
+      "remaining_action": "Trace 047 script review evidence and resolve its orphaned stage",
       "kind": "chief",
       "handoff": {
         "film": "047",
@@ -157614,11 +157619,12 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-04T02:29Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-11-04T02:30Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:047"
+      ]
     },
     {
       "id": "J1789",
