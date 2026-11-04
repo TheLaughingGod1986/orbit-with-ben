@@ -171209,17 +171209,23 @@
           "at": "2026-11-04T14:50Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-04T14:51Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Restored existing 2/3 checkpoint from job history; earlier default-plan reset was incorrect. Prior 89-video metrics already published in 15abb5504f. Retrying browser responsiveness before missing-page collection."
         }
       ],
-      "remaining_action": "Inspect read-only Studio collector, refresh both channels and verify tracker",
+      "remaining_action": "Recover 36 crashed Studio reads, validate missing metrics and republish tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T14:50Z",
-        "by": "codex"
+        "at": "2026-11-04T14:51Z",
+        "by": "codex",
+        "note": "Restored existing 2/3 checkpoint from job history; earlier default-plan reset was incorrect. Prior 89-video metrics alre"
       },
       "rerouted_from": {
         "needs": "mini",
