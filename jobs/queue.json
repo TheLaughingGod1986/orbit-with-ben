@@ -1,5 +1,5 @@
 {
-  "next_id": 1925,
+  "next_id": 1927,
   "jobs": [
     {
       "id": "J0001",
@@ -154903,6 +154903,11 @@
           "at": "2026-11-04T00:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-04T01:20:00Z"
+        },
+        {
+          "at": "2026-11-04T01:27Z",
+          "by": "relay",
+          "what": "condition verification queued: J1925"
         }
       ],
       "remaining_action": "J1810 validates native audio input before exact-take listening and VO-only Chief decision",
@@ -154920,10 +154925,11 @@
       "hold": {
         "type": "capability",
         "condition": "J1810 PR438: current agy native read_file audio/mpeg fixture validation failed. First claimed perception contradicted fixture; independent recheck explicitly cannot hear. Demonstrate reliable native acoustic input before activating exact-take specialist listening; Chief retains VO-only decision. Preserve 1/3 technical PASS and h31 locks; not Ben UAT.",
-        "check_at": "2026-11-04T01:20:00Z",
+        "check_at": "2026-11-04T02:27:16+00:00",
         "requires": [
           "audio_input"
-        ]
+        ],
+        "recheck_task": "J1925"
       },
       "required_capabilities": [
         "audio_input"
@@ -159192,6 +159198,11 @@
           "at": "2026-11-04T01:26Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-05T02:00:00Z"
+        },
+        {
+          "at": "2026-11-04T01:27Z",
+          "by": "relay",
+          "what": "condition verification queued: J1926"
         }
       ],
       "remaining_action": "Await already-queued independent panel and exact-file Chief decision; no rebuild unless FIX",
@@ -159226,7 +159237,8 @@
       "hold": {
         "type": "dependency",
         "condition": "v03 delivered in PR439 commit80195a8a72; independent panel J1920-J1922, decision J1923 and elected-Chief exact-file ruling J1924 required. Files exist in shared abc_v03 with META hashes. Preserve original A; no live packaging authority.",
-        "check_at": "2026-11-05T02:00:00Z"
+        "check_at": "2026-11-04T02:27:16+00:00",
+        "recheck_task": "J1926"
       }
     },
     {
@@ -166077,6 +166089,71 @@
       "remaining_action": "Review panel decision and exact v03 files; rule without changing live packaging",
       "due": "2026-11-14T18:00:00Z",
       "kind": "chief"
+    },
+    {
+      "id": "J1925",
+      "title": "Chief: verify condition for J1753",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1753: J1810 PR438: current agy native read_file audio/mpeg fixture validation failed. First claimed perception contradicted fixture; independent recheck explicitly cannot hear. Demonstrate reliable native acoustic input before activating exact-take specialist listening; Chief retains VO-only decision. Preserve 1/3 technical PASS and h31 locks; not Ben UAT.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1753 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T01:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T01:27Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: J1810 validates native audio input before exact-take listening and VO-only Chief decision",
+      "kind": "chief",
+      "recheck_of": "J1753",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "due": "2026-11-04T02:27:16+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1926",
+      "title": "Chief: verify condition for J1823",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1823: v03 delivered in PR439 commit80195a8a72; independent panel J1920-J1922, decision J1923 and elected-Chief exact-file ruling J1924 required. Files exist in shared abc_v03 with META hashes. Preserve original A; no live packaging authority.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1823 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T01:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T01:27Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await already-queued independent panel and exact-file Chief decision; no rebuild unless FIX",
+      "kind": "chief",
+      "recheck_of": "J1823",
+      "due": "2026-11-04T02:27:16+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],

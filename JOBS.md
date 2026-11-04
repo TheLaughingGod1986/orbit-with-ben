@@ -104,6 +104,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1922 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes |  |
 | J1923 | cloud | open (after J1922) | – | – | review · Packaging panel decision: OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes |  |
 | J1924 | mini | open (after J1923) | – | – | 026 thumbs · chief · Chief: exact-file decision on OWB026 J1823 v03 after packaging panel |  |
+| J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
+| J1926 | any | open | – | – | chief · Chief: verify condition for J1823 |  |
 
 Recently finished:
 
