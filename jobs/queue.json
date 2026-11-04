@@ -170228,16 +170228,21 @@
           "at": "2026-11-04T13:19Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J1802/J1800 rulings, v01 script, SOURCES.md, SCRIPT_NOTES_v01.md, and production-status.md; verified exact SHA-256 input hashes"
+        },
+        {
+          "at": "2026-11-04T13:28Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Fetched and verified all 7 PubMed XMLs, 10 LOC authority records, 22 NASA PIA assets, NASA Mars fact sheets, Wikipedia Olympus_Mons refs, and primary JGR/LPSC/PSRD sources (Smith et al. 2001 mola.summary.pdf, Plescia 2004, McGovern & Morgan 2009, McGovern 2010 #5633, Robbins et al. 2010 #2252, Beddingfield & Burr 2011 #2386, Martel 2005 PSRD) across all 16 rows and script markers"
         }
       ],
-      "remaining_action": "Audit all 16 SOURCES.md rows and every subclaim, spoken/visual number, date, WHO, WHEN, DATA, SCALE, FACT, LABEL, and NASA ID against live primary sources and Wikipedia leads",
+      "remaining_action": "Write formal Gemini sources verification report (GEMINI_QUOTE_PASS_v01.md and jobs/reviews/J1956/) and update 059 SOURCES.md + production-status.md without touching script drafts",
       "kind": "facts",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T13:19Z",
+        "at": "2026-11-04T13:28Z",
         "by": "gemini",
-        "note": "Read J1802/J1800 rulings, v01 script, SOURCES.md, SCRIPT_NOTES_v01.md, and production-status.md; verified exact SHA-256 "
+        "note": "Fetched and verified all 7 PubMed XMLs, 10 LOC authority records, 22 NASA PIA assets, NASA Mars fact sheets, Wikipedia O"
       },
       "taskKeys": [
         "OWB:059"
