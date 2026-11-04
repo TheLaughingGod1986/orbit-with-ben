@@ -170328,9 +170328,14 @@
           "at": "2026-11-04T14:10Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Directly opened and verified all primary sources (PubMed XMLs, MOLA JGR 2001 PDF, LPSC 5633/2252/2386 PDFs, NASA Mars Facts/NSSDC, 8 PIA JSONs, 11 LOC records, PSRD, ScienceDaily, Wikipedia); caught 3 citation/quote errors in J1956 as well as all v01 script/source flags"
+        },
+        {
+          "at": "2026-11-04T14:28Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1957 for OWB:059 direct MUST QUOTE review"
         }
       ],
-      "remaining_action": "Write 01_Script/CLAUDE_QUOTE_CHECK_v01.md and jobs/reviews/J1957/DIRECT_QUOTE_CHECK_2026-11-04.md with direct primary-source verifications and hand off fixes to J1953",
+      "remaining_action": "Read J1802 ruling, J1956 Gemini facts output, SOURCES.md, and script v01",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -170342,11 +170347,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-04T14:10Z",
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-04T14:28Z",
         "by": "gemini",
-        "note": "Directly opened and verified all primary sources (PubMed XMLs, MOLA JGR 2001 PDF, LPSC 5633/2252/2386 PDFs, NASA Mars Fa"
+        "note": "Claimed J1957 for OWB:059 direct MUST QUOTE review"
       },
       "taskKeys": [
         "OWB:059"
