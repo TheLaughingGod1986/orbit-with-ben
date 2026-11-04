@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1936 | mini | open (after J1791) | – | – | 050 script · chief · 050 Iapetus: Chief topic and editorial decision before script lock |  |
 | J1937 | mini | open (after J1792) | – | – | 051 script · chief · 051 DART: Chief topic and editorial decision before script lock |  |
 | J1939 | mini | open (after J1793) | – | – | 052 script · chief · 052 Miranda: topic and editorial decision before script lock | J1793 |
-| J1944 | any | open (after J1943) | – | – | 026 thumbs · chief · Chief: exact-file ruling on OWB 026 abc_v04 after J1823 fresh panel |  |
+| J1944 | any | claimed | codex | 2026-11-04T07:40Z | 026 thumbs · chief · Chief: exact-file ruling on OWB 026 abc_v04 after J1823 fresh panel |  |
 | J1946 | mini | open (after J1794) | – | – | 053 script · chief · 053 Parker Solar Probe: topic and editorial decision before script lock | J1794 |
 | J1947 | mini | open (after J1795) | – | – | 054 script · chief · 054 Simulation: topic and editorial decision before script lock |  |
 | J1948 | mini | open (after J1796) | – | – | 055 script · chief · 055 Human Spaceflight: topic and editorial decision before script lock |  |
