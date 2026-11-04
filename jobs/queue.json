@@ -162470,9 +162470,14 @@
           "at": "2026-11-04T19:41Z",
           "by": "codex",
           "what": "step 2 of 3 done: Claimed continuation; implementation remains 2/3, no rollout or extra lane authorised."
+        },
+        {
+          "at": "2026-11-04T19:48Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Implemented failure reconciliation and reviewed-source identity across real queue commits; 98 capacity tests pass. Caller integration remains unfinished; rollout disabled."
         }
       ],
-      "remaining_action": "Integrate disabled capacity callers and cleanup on PR437, then request exact-head review",
+      "remaining_action": "Finish disabled Mini/laptop production callers and receipt transport; then exact-head review",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162492,9 +162497,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T19:41Z",
+        "at": "2026-11-04T19:48Z",
         "by": "codex",
-        "note": "Claimed continuation; implementation remains 2/3, no rollout or extra lane authorised."
+        "note": "Implemented failure reconciliation and reviewed-source identity across real queue commits; 98 capacity tests pass. Calle"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
