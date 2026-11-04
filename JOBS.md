@@ -74,8 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2038 | mini | open | – | – | chief · Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day) |  |
 | J2039 | mini | blocked | codex | – | assembly · Film-first order + require --film/--stage on production jobs (audit fix C) |  |
 | J2040 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
-| J2089 | mini | blocked | codex | – | 032 picture · assembly · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
-| J2090 | cloud | open | – | – | review · 032: review J2089 source identity corrections and 13 teaching-overlay stills | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491 |
+| J2089 | mini | open | – | – | 032 picture · assembly · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
 | J2141 | mini | claimed | codex | 2026-11-04T22:12Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
 
 Recently finished:
