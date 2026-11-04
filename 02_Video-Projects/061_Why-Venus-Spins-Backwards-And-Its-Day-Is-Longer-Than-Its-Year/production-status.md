@@ -1,6 +1,6 @@
 # Production Status — 061 Why Venus Spins Backwards and Its Day Is Longer Than Its Year
 
-**Current Stage:** Topic FIX / not locked (J1806, 4 Nov 2026). J1963 verifies missing evidence and existing-Venus-long overlap; J1807 owns the subsequent topic/editorial decision, with sources handled by J1808. J0789/J0802 accepted unlocked drafts only.
+**Current Stage:** Topic and script FIX / not locked (J1806/J1807, 4 Nov 2026). J1963 verifies topic evidence and existing-Venus-long overlap; J1964 owns the combined topic/editorial decision after J1963, with sources handled by J1808. J0789/J0802 accepted unlocked drafts only. Current v01 reviewer 95.8 PASS; episode gate BLOCK on unsigned audit; editorial corrections remain.
 **Working Title:** Why Does Venus Spin Backwards and Have a Day Longer Than Its Year?
 **Alt Titles:**
 1. Why Venus Spins Backwards and Its Day Is Longer Than Its Year
@@ -10,13 +10,14 @@
 
 ---
 
-See `jobs/reviews/J1806/CHIEF_TOPIC_RULING_2026-11-04.md` for the ruling and evidence gaps. Historical scores below are draft records, not topic/script locks or current scientific validation.
+See `jobs/reviews/J1806/CHIEF_TOPIC_RULING_2026-11-04.md` and `jobs/reviews/J1807/CHIEF_SCRIPT_RULING_2026-11-04.md` for the rulings and evidence gaps. Historical scores below are draft records, not topic/script locks or current scientific validation.
 
 ## Stage History
 
 | Date | Stage | Agent | Status | Notes |
 |---|---|---|---|---|
-| 2026-11-04 | Topic handoff (`J1806`) | `codex` | FIX / not locked | J1963 owns topic evidence and 023 overlap; J1807 owns decision after evidence, J1808 sources. No production approval. |
+| 2026-11-04 | Script handoff (`J1807`) | `codex` | FIX / not locked | J1964 follows J1963 for topic/editorial ruling; J1808 retains facts/quote handoff. Exact v01 reviewer 95.8 PASS; episode BLOCK; see J1807 ruling. |
+| 2026-11-04 | Topic handoff (`J1806`) | `codex` | FIX / not locked | J1963 owns topic evidence and 023 overlap; J1964 owns decision after J1963 evidence, J1808 sources. No production approval. |
 | 2026-10-21 | Topic & Ideas (`J0789`) | `gemini` | Parked for Chief | 5 candidates scored in `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-21_J0789.md`; #1 pick `061` Venus (`30/30` studio / `16/30` audit rubric; 4+ neighbours ≥ 1M views; direct hand-off from `060`). `PRE_BUILD_VIDIQ_AUDIT.md` drafted unsigned (no topic lock without Chief). |
 | 2026-10-21 | Long Script `v00` & `SOURCES.md` (`J0789`) | `gemini` | Parked for Chief | `01_Script/venus_retrograde_script_master_v00.md` (`95.8/100 PASS`, `1,499` reviewer words, `10.0 min`, `5` chapters, `8/8` structure gates, `DATA: 6`, `SCALE: 6`, `WHO: 15`, `WHEN: 6`, `FACT: 4`, `NUMBER OBJECT: 6`). `01_Script/SOURCES.md` populated with 16 primary claim rows + verified verbatim quotes. |
 | 2026-10-21 | Long Script `v01` & `SOURCES.md` (`J0802`) | `gemini` | Parked for Chief | Revised to `01_Script/venus_retrograde_script_master_v01.md` (synced to `01_Script/episode_script_draft_v01.md`, documented in `01_Script/SCRIPT_NOTES_v01.md`): tightened spoken word count from `1,434` to **`1,269` spoken words** (`1,290` reviewer words, `~8.6 min`, inside the `1,200–1,300` target), scoring **`95.8 / 100` PASS** (`8/8` structure gates, `10/10` hook, `10/10` scientificAccuracy, `10/10` escalation) with `DATA: 6`, `SCALE: 6`, `WHO: 16` (every chapter Ch 1–5 carries named scientists with `WHO:` cards), `WHEN: 6` (100% spoken-to-visual date match in every section), `FACT: 4`, `NUMBER OBJECT: 6`, and `LABEL: 6` (word-for-word VO match). |
