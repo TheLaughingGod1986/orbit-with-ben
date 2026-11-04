@@ -162560,9 +162560,14 @@
           "at": "2026-11-04T20:41Z",
           "by": "codex",
           "what": "step 2 of 3 done: Resuming existing 2/3 plan; inspecting prior caller worktree and PR437 before edits; no rollout."
+        },
+        {
+          "at": "2026-11-04T20:43Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR437 f847b1ed90: synchronized main; fixed canonical cleanup for nonzero/timeout/guard-stop outcomes. 99 capacity +19 leases +12 portable tests PASS; core56/status/whitespace PASS. Caller/transport integration and real-host acceptance remain; rollout disabled."
         }
       ],
-      "remaining_action": "Integrate disabled capacity dispatch into production callers and verify failure cleanup",
+      "remaining_action": "Implement production capacity callers and portable receipt transport; then exact-head review",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162582,9 +162587,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T20:41Z",
+        "at": "2026-11-04T20:43Z",
         "by": "codex",
-        "note": "Resuming existing 2/3 plan; inspecting prior caller worktree and PR437 before edits; no rollout."
+        "note": "PR437 f847b1ed90: synchronized main; fixed canonical cleanup for nonzero/timeout/guard-stop outcomes. 99 capacity +19 le"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
