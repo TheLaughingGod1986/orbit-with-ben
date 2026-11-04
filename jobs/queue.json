@@ -167152,13 +167152,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T03:00Z",
-      "eta": "2026-11-04T05:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T02:59Z",
-      "result": "",
+      "result": "Verified J0936 condition remains unmet. J1100 blocked 2/3; local auditions match 3e26b379b, latest evidence 31 Oct, no documented listening or S2 bed clearance. PR333 OPEN unchanged 0a7fcb6ad with no reviews/comments. Disk 31.43 GiB exceeds restart floor. Updated parent input hold with recheck J1938, retaining 2026-11-04T03:59:01Z retry. Preserved approvals, progress, deadlines and scheduled fallbacks. No spend, render, source-audio egress or publishing changes.",
       "history": [
         {
           "at": "2026-11-04T02:59Z",
@@ -167189,6 +167189,11 @@
           "at": "2026-11-04T03:02Z",
           "by": "codex",
           "what": "step 3 of 3 done: Updated J0936 hold via recheck J1938; retained 03:59:01Z retry, historical progress, prior approvals and scheduled fallbacks"
+        },
+        {
+          "at": "2026-11-04T03:02Z",
+          "by": "codex",
+          "what": "done: Verified J0936 condition remains unmet. J1100 blocked 2/3; local auditions match 3e26b379b, latest evidence 31 Oct, no documented listening or S2 bed clearance. PR333 OPEN unchanged 0a7fcb6ad with no reviews/comments. Disk 31.43 GiB exceeds restart floor. Updated parent input hold with recheck J1938, retaining 2026-11-04T03:59:01Z retry. Preserved approvals, progress, deadlines and scheduled fallbacks. No spend, render, source-audio egress or publishing changes."
         }
       ],
       "remaining_action": "Verification complete; J0936 awaits bed clearance, local listening and replacement repairs",
