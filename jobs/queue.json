@@ -1,5 +1,5 @@
 {
-  "next_id": 2018,
+  "next_id": 2019,
   "jobs": [
     {
       "id": "J0001",
@@ -172746,6 +172746,34 @@
       ],
       "remaining_action": "Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception",
       "kind": "chief"
+    },
+    {
+      "id": "J2018",
+      "title": "Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After PR480 merges: install the same-day missed-run alarm on the Mini (Ben, 4 Nov 2026, monthly report rec. 6).\n  launchctl bootout gui/$(id -u)/com.owb.missed-runs 2>/dev/null\n  cp 07_Content-Ops/launchd/com.owb.missed-runs.plist ~/Library/LaunchAgents/\n  launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.missed-runs.plist\nThen confirm `launchctl print gui/$(id -u)/com.owb.missed-runs` shows it loaded, and that ~/Library/Logs/owb-missed-runs.log shows the four checks (tracker, buffer, claude, mini) with times and no Python error. The GitHub token must come from `gh auth token` as for owb_thread.py; never print it. Done when the log shows a clean run.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run",
+      "kind": "qa"
     }
   ],
   "focus": [],
