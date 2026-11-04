@@ -165630,18 +165630,23 @@
           "at": "2026-11-04T20:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1879; starting bounded search for Mars night (48466c33...) and Titan (afe0e80f...) originals"
+        },
+        {
+          "at": "2026-11-04T20:47Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Steps 1-2 completed in 88c016c70b; capability hold lifted under PR480; running tool-provable checks + native video/audio inspection"
         }
       ],
-      "remaining_action": "Search recorded original/package/iCloud/NAS handoff locations and receipts for Mars night and Titan expected SHAs",
+      "remaining_action": "Complete tool-provable checks (hashes, decode, duration, stills, ASR, timing) and native video/audio inspection on recovered Studio candidates",
       "due": "2026-11-04T07:00:00Z",
       "kind": "assembly",
       "recovery_scope_key": "J1874:sources",
       "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-11-04T20:45Z",
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-04T20:47Z",
         "by": "gemini",
-        "note": "Claimed J1879; starting bounded search for Mars night (48466c33...) and Titan (afe0e80f...) originals"
+        "note": "Steps 1-2 completed in 88c016c70b; capability hold lifted under PR480; running tool-provable checks + native video/audio"
       },
       "taskKeys": [
         "OWB:025"
