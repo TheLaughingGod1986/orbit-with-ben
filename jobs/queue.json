@@ -166218,10 +166218,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T02:20Z",
+      "eta": "2026-11-04T02:50Z",
       "created_by": "codex",
       "created_at": "2026-11-04T01:25Z",
       "result": "",
@@ -166235,12 +166235,25 @@
           "at": "2026-11-04T02:14Z",
           "by": "gemini",
           "what": "deadline: 2026-11-14T18:00:00Z"
+        },
+        {
+          "at": "2026-11-04T02:20Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel (gemini): OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes",
       "for": "gemini",
       "kind": "review",
-      "due": "2026-11-14T18:00:00Z"
+      "due": "2026-11-14T18:00:00Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T02:20Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1922",
