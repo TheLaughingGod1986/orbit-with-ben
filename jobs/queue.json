@@ -172651,13 +172651,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T12:39Z",
-      "eta": "2026-11-04T14:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T10:56Z",
-      "result": "",
+      "result": "Fixed gate_upcoming.py export_path() to collapse ../../../../Volumes/... NAS paths (so both --stage and launchd TCC detection recognize them), staged HZGTovJu_TQ and upcoming NAS Shorts into ~/_desk/cache/gate-media, and regenerated UPCOMING_SHORTS_GATE.md with HZGTovJu_TQ (and cwU_0WWeNZ4) PASS.",
       "history": [
         {
           "at": "2026-11-04T10:56Z",
@@ -172693,6 +172693,11 @@
           "at": "2026-11-04T12:44Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed gate_upcoming.py path normalization fix, unit test, and regenerated UPCOMING_SHORTS_GATE.md (HZGTovJu_TQ and cwU_0WWeNZ4 PASS)"
+        },
+        {
+          "at": "2026-11-04T12:44Z",
+          "by": "gemini",
+          "what": "done: Fixed gate_upcoming.py export_path() to collapse ../../../../Volumes/... NAS paths (so both --stage and launchd TCC detection recognize them), staged HZGTovJu_TQ and upcoming NAS Shorts into ~/_desk/cache/gate-media, and regenerated UPCOMING_SHORTS_GATE.md with HZGTovJu_TQ (and cwU_0WWeNZ4) PASS."
         }
       ],
       "remaining_action": "Close J2014 and post report on thread",
