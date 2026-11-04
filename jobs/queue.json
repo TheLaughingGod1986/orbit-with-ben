@@ -174133,12 +174133,12 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "since": "2026-11-04T20:05Z",
-      "eta": "2026-11-04T22:05Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T12:28Z",
-      "result": "",
+      "result": "Worker changes and verification complete; PR493 awaits Chief review/merge. Tab counts 9223 1→1 and 9222 3→3; seven clean runs over 30 minutes; 20 tests OK. No live publishing changes.",
       "history": [
         {
           "at": "2026-11-04T12:28Z",
@@ -174219,6 +174219,11 @@
           "at": "2026-11-04T20:07Z",
           "by": "codex",
           "what": "step 4 of 4 done: PR493 opened. Installed janitor verified over 30 minutes: seven clean runs; current 35 runs, exit 0. Tab counts 9223 1→1, 9222 3→3, no closures needed. All 20 tests pass; four helper migrations compile."
+        },
+        {
+          "at": "2026-11-04T20:07Z",
+          "by": "codex",
+          "what": "done: Worker changes and verification complete; PR493 awaits Chief review/merge. Tab counts 9223 1→1 and 9222 3→3; seven clean runs over 30 minutes; 20 tests OK. No live publishing changes."
         }
       ],
       "kind": "assembly",
@@ -174252,7 +174257,8 @@
       },
       "remaining_action": "Chief to review and merge PR493",
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/493"
     },
     {
       "id": "J2023",
