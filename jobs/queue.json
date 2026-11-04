@@ -111307,9 +111307,14 @@
           "at": "2026-11-04T00:12Z",
           "by": "codex",
           "what": "step 1 of 3 done: Live monthly promo Available GBP69.48; Used/Expired rows excluded. GBP price/linkage/pending-cost evidence incomplete. Forward source plan needs 3.85s of each 8s take. Eight guard tests pass; no generation."
+        },
+        {
+          "at": "2026-11-04T00:18Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Reviewed no-network guard with Gemini findings addressed; 13 guard and 14 existing ledger tests pass. Commit 5871d839f1. No spend or generated source; exact 1.15-3.85s opening plus 0-1.15s forward preroll planned."
         }
       ],
-      "remaining_action": "Review and harden the monthly-promo guard; verify billing linkage and pending costs before generation",
+      "remaining_action": "Verify live entitlement, billing linkage, GBP SKU and pending costs; review live caller before two scoped takes",
       "due": "2026-10-30T18:00:00Z",
       "kind": "video",
       "superseded_holds": [
@@ -111323,11 +111328,11 @@
         }
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T00:12Z",
+        "at": "2026-11-04T00:18Z",
         "by": "codex",
-        "note": "Live monthly promo Available GBP69.48; Used/Expired rows excluded. GBP price/linkage/pending-cost evidence incomplete. F"
+        "note": "Reviewed no-network guard with Gemini findings addressed; 13 guard and 14 existing ledger tests pass. Commit 5871d839f1."
       },
       "taskKeys": [
         "OWB:030"
