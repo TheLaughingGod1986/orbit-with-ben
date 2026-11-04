@@ -162102,10 +162102,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T11:35Z",
+      "eta": "2026-11-04T13:35Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "",
@@ -162364,6 +162364,11 @@
           "at": "2026-11-04T11:29Z",
           "by": "codex",
           "what": "reopened: J2010 exact-head review FIX on PR437 1c309dd443: capacity_reservations.consume_with_git calls hos_board_claim inside the OWB Git retry callback without rollback or durable cross-repo reconciliation. Reproduced: first callback claims HOS007 edit; OWB push rejection discards queue attempt; refreshed HOS evidence then rejects retry (no currently eligible capacity proposal), leaving canonical queue OPEN and HOS stage owned by codex. Existing 68 capacity tests pass with process inspection, but omit this cross-repo retry. Fix with retry-safe durable reconciliation/compensation or fail closed on HOS stages until a supported adapter exists; add push-race regression. Preserve implementation 2/3; no rollout. Fresh Mini host registration/probes absent; cached MacBook battery/in-use and stale. Re-review new head and compose PR477 before normal merge; no extra lanes until original observed-host contract passes."
+        },
+        {
+          "at": "2026-11-04T11:35Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix PR437 HOS claim rollback on OWB push races, add regression, then exact-head review; capacity stays disabled",
