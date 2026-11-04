@@ -110721,12 +110721,12 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "since": "2026-11-04T20:19Z",
-      "eta": "2026-11-04T22:19Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T10:08Z",
-      "result": "",
+      "result": "Claude and Gemini usage readers live in scripts/ai_spend_daily.py (ALL) with POOLS claude='%' and gemini='%' in scripts/ai_spend.py; updated parse_claude for live claude.ai/settings/usage Pro 'This week' layout + reuse_page (commit d2b77f4f2c); full unittest suite 661 tests OK; recorded live readings: claude left=73% (96% session resets 8:50 PM; weekly 27% used resets Wednesday 10:00 AM) and gemini left=81% (5-hour 0% used resets 01:33Z; weekly 19% used resets Fri 06 Nov 22:00Z).",
       "history": [
         {
           "at": "2026-10-29T10:08Z",
@@ -110807,6 +110807,11 @@
           "at": "2026-11-04T20:39Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed d2b77f4f2c and recorded live Claude (73% left) and Gemini (81% left) usage readings in ledger.jsonl"
+        },
+        {
+          "at": "2026-11-04T20:39Z",
+          "by": "gemini",
+          "what": "done: Claude and Gemini usage readers live in scripts/ai_spend_daily.py (ALL) with POOLS claude='%' and gemini='%' in scripts/ai_spend.py; updated parse_claude for live claude.ai/settings/usage Pro 'This week' layout + reuse_page (commit d2b77f4f2c); full unittest suite 661 tests OK; recorded live readings: claude left=73% (96% session resets 8:50 PM; weekly 27% used resets Wednesday 10:00 AM) and gemini left=81% (5-hour 0% used resets 01:33Z; weekly 19% used resets Fri 06 Nov 22:00Z)."
         }
       ],
       "kind": "qa",
@@ -110832,7 +110837,8 @@
         }
       ],
       "by": "gemini",
-      "remaining_action": "Complete J1201 and report on thread #99"
+      "remaining_action": "Complete J1201 and report on thread #99",
+      "done_ref": "d2b77f4f2c"
     },
     {
       "id": "J1202",
