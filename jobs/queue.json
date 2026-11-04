@@ -165678,20 +165678,29 @@
           "at": "2026-11-04T01:12Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-04T01:12Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Fresh log at 01:12Z: weekly 5% used, reset 10 Nov 23:17Z; Codex elected. J1849 already completed 00:56Z, so no second claim needed."
         }
       ],
-      "remaining_action": "Verify current quota recovery, reconcile availability, and hand off J1849",
+      "remaining_action": "Validate availability expiry handling and completed J1849 handoff",
       "kind": "chief",
       "availability_repair_key": "Codex-real-reset-Chief-J1849-2026-11-03",
       "urgent": 5,
       "due": "2026-11-03T23:56:19+00:00",
       "due_kind": "user-blocker-repair",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-04T01:12Z",
-        "by": "codex"
-      }
+        "by": "codex",
+        "note": "Fresh log at 01:12Z: weekly 5% used, reset 10 Nov 23:17Z; Codex elected. J1849 already completed 00:56Z, so no second cl"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1917",
