@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1809 | mini | open | – | – | assembly · HOS desk: route elected Chief handoffs and safely refresh legacy watcher | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
 | J1834 | mini | open (after J1833) | – | – | 030 edit · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
-| J1843 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
+| J1843 | mini | claimed | codex | 2026-11-04T21:41Z | for codex · assembly · `gpt-6.1-sol` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 | J1879 | mini | open | – | – | assembly · Buffer: recover approved Mars-night and Titan social sources | J1874 |
