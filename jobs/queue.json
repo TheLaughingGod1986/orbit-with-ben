@@ -167532,7 +167532,7 @@
     {
       "id": "J1943",
       "title": "Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes.** Read the three critiques in `05_Analytics/tests/panels/owb-026-nearest-star-v04-j1823/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.",
       "ref": "",
@@ -167552,10 +167552,24 @@
           "at": "2026-11-04T03:38Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T03:40Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4428 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1944",
