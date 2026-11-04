@@ -110721,12 +110721,12 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "since": "2026-10-30T07:32Z",
+      "status": "done",
+      "since": "2026-11-04T20:19Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T10:08Z",
-      "result": "",
+      "result": "Claude and Gemini usage readers live in scripts/ai_spend_daily.py (ALL) with POOLS claude='%' and gemini='%' in scripts/ai_spend.py; updated parse_claude for live claude.ai/settings/usage Pro 'This week' layout + reuse_page (commit d2b77f4f2c); full unittest suite 661 tests OK; recorded live readings: claude left=73% (96% session resets 8:50 PM; weekly 27% used resets Wednesday 10:00 AM) and gemini left=81% (5-hour 0% used resets 01:33Z; weekly 19% used resets Fri 06 Nov 22:00Z).",
       "history": [
         {
           "at": "2026-10-29T10:08Z",
@@ -110777,6 +110777,41 @@
           "at": "2026-11-04T15:58Z",
           "by": "claude",
           "what": "released: dependency met (PR merged); stale hold cleared (True, 'gemini')"
+        },
+        {
+          "at": "2026-11-04T20:19Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:20Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1201; starting inspection of ai_spend.py, ai_spend_daily.py, claude.ai usage page, and Gemini usage limits"
+        },
+        {
+          "at": "2026-11-04T20:23Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected live signed-in claude.ai/settings/usage on CDP :9222 (session 96% used resets 8:50 PM; This week 27% used resets Wednesday 10:00 AM) and agy -p /usage (Gemini 80% left); identified parse_claude matching summary line above Current session"
+        },
+        {
+          "at": "2026-11-04T20:25Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Updated parse_claude for live claude.ai/settings/usage layout (left=73, total=100, 96% session, 27% weekly) and switched _page_text to reuse_page; added live page unit test in test_ai_spend_daily.py"
+        },
+        {
+          "at": "2026-11-04T20:38Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Full unittest suite passed: 661 tests OK (skipped=2)"
+        },
+        {
+          "at": "2026-11-04T20:39Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Committed d2b77f4f2c and recorded live Claude (73% left) and Gemini (81% left) usage readings in ledger.jsonl"
+        },
+        {
+          "at": "2026-11-04T20:39Z",
+          "by": "gemini",
+          "what": "done: Claude and Gemini usage readers live in scripts/ai_spend_daily.py (ALL) with POOLS claude='%' and gemini='%' in scripts/ai_spend.py; updated parse_claude for live claude.ai/settings/usage Pro 'This week' layout + reuse_page (commit d2b77f4f2c); full unittest suite 661 tests OK; recorded live readings: claude left=73% (96% session resets 8:50 PM; weekly 27% used resets Wednesday 10:00 AM) and gemini left=81% (5-hour 0% used resets 01:33Z; weekly 19% used resets Fri 06 Nov 22:00Z)."
         }
       ],
       "kind": "qa",
@@ -110790,9 +110825,9 @@
       "progress": {
         "step": 4,
         "of": 4,
-        "at": "2026-10-30T07:52Z",
+        "at": "2026-11-04T20:39Z",
         "by": "gemini",
-        "note": "Recorded live Gemini usage reading (45% left, resets Fri 30 Oct 22:00Z); committed e949d7b44 to main; claude.ai/settings"
+        "note": "Committed d2b77f4f2c and recorded live Claude (73% left) and Gemini (81% left) usage readings in ledger.jsonl"
       },
       "log": [
         {
@@ -110800,7 +110835,10 @@
           "by": "claude",
           "what": "released: Ben, 4 Nov 2026: signed in to claude.ai in the Mini CDP Chrome (\"done\"). Resume: add the Claude reader (and Gemini) to ai_spend_daily; never print cookies or tokens."
         }
-      ]
+      ],
+      "by": "gemini",
+      "remaining_action": "Complete J1201 and report on thread #99",
+      "done_ref": "d2b77f4f2c"
     },
     {
       "id": "J1202",
@@ -161428,12 +161466,12 @@
       "stage": "edit",
       "after": "J1833",
       "eta_min": 25,
-      "status": "open",
-      "since": "2026-11-03T14:03Z",
+      "status": "done",
+      "since": "2026-11-04T20:09Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T13:58Z",
-      "result": "",
+      "result": "Existing acquisition reconciled and closed, PR494 / f5aa54f4e6. Five delivery hashes match; three previews fully decode. T545 remains rejected; J1846-J1849 already completed replacement input chain. J1471 owns remaining repairs/gates, J1356 follows. No new approval, media edit, spend or publishing change.",
       "history": [
         {
           "at": "2026-11-03T13:58Z",
@@ -161534,9 +161572,34 @@
           "at": "2026-11-04T18:05Z",
           "by": "claude",
           "what": "released: capability hold lifted. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Do every tool-provable check (hashes, decode, duration, stills, ASR, timing) and record it; no worker needs to watch or listen; Ben's final watch is the check."
+        },
+        {
+          "at": "2026-11-04T20:09Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:09Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed acquisition only; no cohort edits. NAS offload found no eligible scratch; 14.25 GB free."
+        },
+        {
+          "at": "2026-11-04T20:10Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Existing acquisition already delivered in PR410; five delivery hashes match and three previews fully decode. J1846 chose model fallback; J1847/J1848/J1849 already completed. Preserve original three-step plan; initial 0/3 reset was unnecessary."
+        },
+        {
+          "at": "2026-11-04T20:10Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Closeout f5aa54f4e6 records existing delivery, fresh five-file hashes/three decodes, rejected T545 and completed J1846-J1849 fallback. No new source approval or downstream gate change."
+        },
+        {
+          "at": "2026-11-04T20:11Z",
+          "by": "codex",
+          "what": "done: Existing acquisition reconciled and closed, PR494 / f5aa54f4e6. Five delivery hashes match; three previews fully decode. T545 remains rejected; J1846-J1849 already completed replacement input chain. J1471 owns remaining repairs/gates, J1356 follows. No new approval, media edit, spend or publishing change."
         }
       ],
-      "remaining_action": "Complete J1847 preview, J1848 moving review and J1849 source decision; then J1471 repairs/gates and J1356 full QA",
+      "remaining_action": "Acquisition complete; existing J1471 correction work remains",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -161549,14 +161612,16 @@
       "progress": {
         "step": 3,
         "of": 3,
-        "at": "2026-11-03T14:10Z",
+        "at": "2026-11-04T20:10Z",
         "by": "codex",
-        "note": "Acquisition records 406f91068 pushed for review; persistent cache ~186 MB. Metric 1.54, picture PASS with softness WARN,"
+        "note": "Closeout f5aa54f4e6 records existing delivery, fresh five-file hashes/three decodes, rejected T545 and completed J1846-J"
       },
       "taskKeys": [
         "OWB:030"
       ],
-      "publication_wording_update": "J1910-PR433"
+      "publication_wording_update": "J1910-PR433",
+      "by": "codex",
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/494"
     },
     {
       "id": "J1835",
@@ -162160,8 +162225,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "codex",
-      "since": "2026-11-04T19:41Z",
-      "eta": "2026-11-04T21:41Z",
+      "since": "2026-11-04T20:41Z",
+      "eta": "2026-11-04T22:41Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "Chief FIX at 91576db52d: 94 capacity tests PASS; CI stale STATUS.md and production caller integration incomplete. Same-job engineering ready; no merge or rollout.",
@@ -162470,9 +162535,34 @@
           "at": "2026-11-04T19:41Z",
           "by": "codex",
           "what": "step 2 of 3 done: Claimed continuation; implementation remains 2/3, no rollout or extra lane authorised."
+        },
+        {
+          "at": "2026-11-04T19:48Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Implemented failure reconciliation and reviewed-source identity across real queue commits; 98 capacity tests pass. Caller integration remains unfinished; rollout disabled."
+        },
+        {
+          "at": "2026-11-04T19:52Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR437 head 35d648ce61: failed-launch canonical reconciliation and queue-commit review identity fixed; 321 tests PASS. Production callers/transport and observed acceptance remain; no rollout."
+        },
+        {
+          "at": "2026-11-04T19:52Z",
+          "by": "codex",
+          "what": "released: Tested checkpoint PR437 head 35d648ce61f41869c2d6de80eeacb4e2a66ef200; preserve 2/3. Fixed failure reconciliation and real-Git HEAD drift. Next: disabled production callers in chief_relay/macbook_worker, supported consuming-host input/output receipts and reconciliation, caller success/failure/changing-guard tests, then exact-head review and observed-host acceptance. Remaining integration exceeds a bounded 20-minute segment. Ready engineering remains open, no timed hold; rollout disabled."
+        },
+        {
+          "at": "2026-11-04T20:41Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:41Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Resuming existing 2/3 plan; inspecting prior caller worktree and PR437 before edits; no rollout."
         }
       ],
-      "remaining_action": "Integrate disabled capacity callers and cleanup on PR437, then request exact-head review",
+      "remaining_action": "Integrate disabled capacity dispatch into production callers and verify failure cleanup",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162492,9 +162582,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T19:41Z",
+        "at": "2026-11-04T20:41Z",
         "by": "codex",
-        "note": "Claimed continuation; implementation remains 2/3, no rollout or extra lane authorised."
+        "note": "Resuming existing 2/3 plan; inspecting prior caller worktree and PR437 before edits; no rollout."
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
@@ -174118,12 +174208,12 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "since": "",
+      "status": "done",
+      "since": "2026-11-04T20:05Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T12:28Z",
-      "result": "",
+      "result": "Worker changes and verification complete; PR493 awaits Chief review/merge. Tab counts 9223 1→1 and 9222 3→3; seven clean runs over 30 minutes; 20 tests OK. No live publishing changes.",
       "history": [
         {
           "at": "2026-11-04T12:28Z",
@@ -174179,6 +174269,36 @@
           "at": "2026-11-04T17:14Z",
           "by": "codex",
           "what": "released: Resume only after ~/_desk/logs/J2022-check.done exists; tmux session J2022-check is running the 31-minute capture, do not start another copy. Read J2022-check.log, compare baseline 9223=1 and 9222=3, then report on #478. PR 487 awaits Chief review; code worktree /private/tmp/j2022-codex, commit 3165ac75ec. Keep 5-step plan, 4 done. Worker has not issued final PASS."
+        },
+        {
+          "at": "2026-11-04T20:04Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-04T20:05Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:05Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-04T20:06Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Recovered previous J2022 worktree: janitor installed at 17:13, now 35 clean launchd runs with exit 0; before/current counts 9223=1, 9222=3. Scratch offload found no eligible old folders."
+        },
+        {
+          "at": "2026-11-04T20:07Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: PR493 opened. Installed janitor verified over 30 minutes: seven clean runs; current 35 runs, exit 0. Tab counts 9223 1→1, 9222 3→3, no closures needed. All 20 tests pass; four helper migrations compile."
+        },
+        {
+          "at": "2026-11-04T20:07Z",
+          "by": "codex",
+          "what": "done: Worker changes and verification complete; PR493 awaits Chief review/merge. Tab counts 9223 1→1 and 9222 3→3; seven clean runs over 30 minutes; 20 tests OK. No live publishing changes."
         }
       ],
       "kind": "assembly",
@@ -174202,15 +174322,18 @@
         "status": "open",
         "by": ""
       },
-      "by": "",
+      "by": "codex",
       "progress": {
         "step": 4,
-        "of": 5,
-        "at": "2026-11-04T17:14Z",
+        "of": 4,
+        "at": "2026-11-04T20:07Z",
         "by": "codex",
-        "note": "PR 487 opened (commit 3165ac75ec). Initial janitor log clean, counts unchanged at 1/3. tmux J2022-check captures after 3"
+        "note": "PR493 opened. Installed janitor verified over 30 minutes: seven clean runs; current 35 runs, exit 0. Tab counts 9223 1→1"
       },
-      "remaining_action": "Read the detached 30-minute janitor capture, report final tab counts, and hand PR 487 to Chief"
+      "remaining_action": "Chief to review and merge PR493",
+      "for": "codex",
+      "model": "gpt-6.1-sol",
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/493"
     },
     {
       "id": "J2023",
@@ -175001,6 +175124,11 @@
           "at": "2026-11-04T17:49Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review and merge PR488 head 0a655e1d52. Worker implementation complete; 667 scripts tests OK (8 skipped), 42 other tests pass; core/rules checks pass. GitHub checks not reported yet. No worker merge authority."
+        },
+        {
+          "at": "2026-11-04T19:54Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief reviews PR488 head 0a655e1d52 and merges after required checks",
@@ -175012,7 +175140,8 @@
         "at": "2026-11-04T17:49Z",
         "by": "codex",
         "note": "Worker implementation and PR complete: 667 script tests OK (8 skipped), 42 additional tests pass, core/rules/diff checks"
-      }
+      },
+      "escalated_at": "2026-11-04T19:54Z"
     },
     {
       "id": "J2040",
@@ -175072,9 +175201,39 @@
           "at": "2026-11-04T18:31Z",
           "by": "codex",
           "what": "released: Partial implementation at 3/4, PR490, c12f6b6b52 plus handoff commit on codex/j2040-allowlist. Git gateway/rule installed and positive push tested; three validation tests pass. Resume same J2040 for guarded service routes and fresh-session negative review proof. Existing Buffer routes delete posts/media and R2 permits bucket override, so no unsafe broad service rule installed. J2007 cancelled; no retry. NAS offload PID74781 / exec session74764 remains active with no completion summary; do not duplicate. No money or publishing changes."
+        },
+        {
+          "at": "2026-11-04T19:55Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T19:55Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-04T19:56Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Resuming prior 3/4 handoff; earlier step 0 was a reporting reset, not lost completed work. J2007 remains cancelled."
+        },
+        {
+          "at": "2026-11-04T20:00Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: 10 R2 boundary tests pass; fresh Git dry-run succeeded without escalation and created no branch. Outside-list HEAD explicitly requested escalation and was approved, not refused. NAS offload finished: no eligible scratch, ~11.7 GB remains."
+        },
+        {
+          "at": "2026-11-04T20:03Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: R2 slice installed and pushed as 5a7dfc68c8 to existing PR490. Ten R2 plus three Git tests pass; SigV4 matches aws4fetch; installed R2 dry run succeeded without upload. Buffer/YouTube and policy-reload proof unfinished. NAS offload ended with no eligible scratch; 11749 MB free."
+        },
+        {
+          "at": "2026-11-04T20:03Z",
+          "by": "codex",
+          "what": "released: Checkpoint at existing 3/4, PR490 commit 5a7dfc68c8 in /private/tmp/j2040-wt. Installed tested R2 gateway /Users/benjaminoats/.codex/bin/studio-r2-upload.py and narrow rule, exact copies/evidence in docs/CODEX_ALLOWLIST.md and jobs/reviews/J2040/r2-resume-evidence.json. 13 tests pass; fake-credential signature cross-check matches aws4fetch; live PUT not tested. Git dry-run and branch push succeeded without escalation; scratch branch absent. Outside-list harmless HEAD explicitly reviewed and approved, not refused. Next: guarded Buffer create/read/update and YouTube channel/publishing boundaries; ordinary mirror/package remains outside allow-list. This remaining implementation is longer than a safe single run; preserve plan. J2007 cancelled, no retry. NAS offload complete/no eligible folders, disk still 11749 MB free. No detached process remains, no money or publishing changes, no Chief PASS."
         }
       ],
-      "remaining_action": "Complete guarded R2/Buffer/YouTube rules and fresh-session policy verification",
+      "remaining_action": "Finish guarded Buffer and channel-pinned YouTube routes, then verify later-session rules",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -175089,9 +175248,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-04T18:30Z",
+        "at": "2026-11-04T20:03Z",
         "by": "codex",
-        "note": "Git slice committed c12f6b6b52; 3 validation tests pass. Rule/parser evidence, installed hashes and remaining service gu"
+        "note": "R2 slice installed and pushed as 5a7dfc68c8 to existing PR490. Ten R2 plus three Git tests pass; SigV4 matches aws4fetch"
       }
     },
     {
@@ -177061,9 +177220,9 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-04T18:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
@@ -177098,9 +177257,14 @@
           "at": "2026-11-04T18:38Z",
           "by": "codex",
           "what": "blocked: parked for Chief: J2090 reviews PR491 source identity corrections and 13 graphic stills before rendering; multiple approved PIA IDs depict wrong subjects. Partial at 1/4, £0 spent."
+        },
+        {
+          "at": "2026-11-04T20:14Z",
+          "by": "claude",
+          "what": "released by review J2090: source corrections named in jobs/reviews/J2090/REVIEW.md; overlays approved to render; resume plan at step 2/4"
         }
       ],
-      "remaining_action": "Await source corrections and Chief overlay frame review; then finish harvest, graphics and verification",
+      "remaining_action": "Apply J2090 mappings (SHOT_LIST v03), then harvest motion, DATA/mechanism graphics, R26/R46 fallbacks, overlay renders, verify",
       "kind": "assembly",
       "progress": {
         "step": 1,
@@ -177116,7 +177280,7 @@
     {
       "id": "J2090",
       "title": "032: review J2089 source identity corrections and 13 teaching-overlay stills",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "J2089 source audit found wrong-body/wrong-subject PIA IDs in approved SHOT_LIST_v02. Concrete report and source metadata in PR491, commit e7e030eac5: 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/J2089_SOURCE_AUDIT_v01.md. Review actual candidates and 13 WHO/WHEN/FACT stills at /Users/benjaminoats/_desk/cache/J2089/teaching_previews_v01/teaching_previews.jpg. Correct source mappings or provide exact approved alternatives; Chief retains graphic frame approval before animation render and PR merge. No spend, VO/script change or gate waiver requested. Then release parent J2089 with the named corrections and review reference; preserve its 1/4 plan. Remaining harvest, licences, DATA/mechanism graphics and R26/R46 fallbacks are not complete.",
       "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491",
@@ -177124,13 +177288,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T18:38Z",
-      "result": "",
+      "result": "Ruling in jobs/reviews/J2090/REVIEW.md: 15 row-level replacements checked against live NASA records (e.g. R13 Triton->PIA02238 inset only, R50 Hotei->PIA16638 with Selk named only on a CODE map pin, R14 PIA21450, R38 PIA19051); low-res plates follow crop rules; 13 overlay stills approved to render as specified (frame check moves to picture review and Ben's final watch); PR491 is green and OK to merge.",
       "history": [
         {
           "at": "2026-11-04T18:38Z",
@@ -177141,19 +177305,20 @@
           "at": "2026-11-04T19:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-04T19:54Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
+        },
+        {
+          "at": "2026-11-04T20:14Z",
+          "by": "claude",
+          "what": "done: source ruling jobs/reviews/J2090/REVIEW.md"
         }
       ],
       "remaining_action": "Correct mismatched source IDs and review overlay stills so J2089 can resume",
-      "kind": "review",
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "kind": "review"
     },
     {
       "id": "J2091",
@@ -177166,7 +177331,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177178,6 +177343,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 033 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 033 script handoff and records the next owner/action",
@@ -177200,7 +177370,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177212,6 +177382,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 033 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 033 topic handoff and records the next owner/action",
@@ -177234,7 +177409,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177246,6 +177421,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 034 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 034 script handoff and records the next owner/action",
@@ -177268,7 +177448,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177280,6 +177460,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 034 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 034 topic handoff and records the next owner/action",
@@ -177302,7 +177487,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177314,6 +177499,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 035 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 035 script handoff and records the next owner/action",
@@ -177336,7 +177526,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177348,6 +177538,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 035 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 035 topic handoff and records the next owner/action",
@@ -177370,7 +177565,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177382,6 +177577,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 036 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 036 script handoff and records the next owner/action",
@@ -177404,7 +177604,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177416,6 +177616,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 036 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 036 topic handoff and records the next owner/action",
@@ -177438,7 +177643,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177450,6 +177655,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 037 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 037 script handoff and records the next owner/action",
@@ -177472,7 +177682,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177484,6 +177694,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 037 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 037 topic handoff and records the next owner/action",
@@ -177506,7 +177721,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177518,6 +177733,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 038 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 038 script handoff and records the next owner/action",
@@ -177540,7 +177760,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177552,6 +177772,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 038 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 038 topic handoff and records the next owner/action",
@@ -177574,7 +177799,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177586,6 +177811,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 039 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 039 script handoff and records the next owner/action",
@@ -177608,7 +177838,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177620,6 +177850,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 039 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 039 topic handoff and records the next owner/action",
@@ -177642,7 +177877,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177654,6 +177889,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 040 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 040 script handoff and records the next owner/action",
@@ -177676,7 +177916,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177688,6 +177928,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 040 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 040 topic handoff and records the next owner/action",
@@ -177710,7 +177955,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177722,6 +177967,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 041 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 041 script handoff and records the next owner/action",
@@ -177744,7 +177994,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177756,6 +178006,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 041 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 041 topic handoff and records the next owner/action",
@@ -177778,7 +178033,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177790,6 +178045,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 042 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 042 script handoff and records the next owner/action",
@@ -177812,7 +178072,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177824,6 +178084,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 043 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 043 script handoff and records the next owner/action",
@@ -177846,7 +178111,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177858,6 +178123,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 043 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 043 topic handoff and records the next owner/action",
@@ -177880,7 +178150,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177892,6 +178162,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 044 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 044 script handoff and records the next owner/action",
@@ -177914,7 +178189,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177926,6 +178201,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 044 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 044 topic handoff and records the next owner/action",
@@ -177948,7 +178228,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177960,6 +178240,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 045 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 045 script handoff and records the next owner/action",
@@ -177982,7 +178267,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -177994,6 +178279,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 045 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 045 topic handoff and records the next owner/action",
@@ -178016,7 +178306,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178028,6 +178318,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 046 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 046 script handoff and records the next owner/action",
@@ -178050,7 +178345,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178062,6 +178357,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 046 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 046 topic handoff and records the next owner/action",
@@ -178084,7 +178384,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178096,6 +178396,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 047 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 047 script handoff and records the next owner/action",
@@ -178118,7 +178423,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178130,6 +178435,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 047 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 047 topic handoff and records the next owner/action",
@@ -178152,7 +178462,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178164,6 +178474,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 048 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 048 script handoff and records the next owner/action",
@@ -178186,7 +178501,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178198,6 +178513,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 048 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 048 topic handoff and records the next owner/action",
@@ -178220,7 +178540,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178232,6 +178552,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 049 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 049 script handoff and records the next owner/action",
@@ -178254,7 +178579,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178266,6 +178591,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 050 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 050 script handoff and records the next owner/action",
@@ -178288,7 +178618,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178300,6 +178630,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 051 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 051 script handoff and records the next owner/action",
@@ -178322,7 +178657,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178334,6 +178669,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 052 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 052 script handoff and records the next owner/action",
@@ -178356,7 +178696,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178368,6 +178708,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 053 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 053 script handoff and records the next owner/action",
@@ -178390,7 +178735,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178402,6 +178747,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 054 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 054 script handoff and records the next owner/action",
@@ -178424,7 +178774,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178436,6 +178786,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 055 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 055 script handoff and records the next owner/action",
@@ -178458,7 +178813,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178470,6 +178825,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 056 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 056 script handoff and records the next owner/action",
@@ -178492,7 +178852,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178504,6 +178864,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 057 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 057 script handoff and records the next owner/action",
@@ -178526,7 +178891,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178538,6 +178903,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 058 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 058 script handoff and records the next owner/action",
@@ -178560,7 +178930,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178572,6 +178942,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 059 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 059 script handoff and records the next owner/action",
@@ -178594,7 +178969,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178606,6 +178981,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 059 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 059 topic handoff and records the next owner/action",
@@ -178628,7 +179008,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178640,6 +179020,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 059 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 059 sources handoff and records the next owner/action",
@@ -178662,7 +179047,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178674,6 +179059,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 060 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 060 topic handoff and records the next owner/action",
@@ -178696,7 +179086,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178708,6 +179098,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 060 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 060 script handoff and records the next owner/action",
@@ -178730,7 +179125,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178742,6 +179137,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 060 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 060 sources handoff and records the next owner/action",
@@ -178764,7 +179164,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178776,6 +179176,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 061 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 061 topic handoff and records the next owner/action",
@@ -178798,7 +179203,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178810,6 +179215,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 061 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 061 script handoff and records the next owner/action",
@@ -178832,7 +179242,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -178844,6 +179254,11 @@
           "at": "2026-11-04T19:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "cancelled: false orphan, film 061 waits under the WIP limit; created by the relay before PR #492 (detector fix) reached the Mini"
         }
       ],
       "remaining_action": "Chief resolves 061 sources handoff and records the next owner/action",
@@ -178878,10 +179293,50 @@
           "at": "2026-11-04T19:35Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read approved shot list; disk below 20 GB, starting required NAS scratch offload before build."
+        },
+        {
+          "at": "2026-11-04T20:14Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Brief and SOURCES reviewed; clean worktree created; NAS offload ran but no eligible scratch. NASA catalog flags PIA20016 infrared / PIA14909 true-colour Saturn transit mismatch."
+        },
+        {
+          "at": "2026-11-04T20:16Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: 4 NASA candidates hashed with source evidence/contact sheet; all 3 WHO + 6 FACT previews built from locked Scribe cues. Detached card render: tmux J2141-cards, _desk/logs/J2141-cards.log and .done. No KEEP/motion claim."
+        },
+        {
+          "at": "2026-11-04T20:18Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint 6689863443: four NASA candidates; nine WHO/FACT alpha MOVs rendered and technically decoded/hashed. Source-ID/gate conflicts and exact remaining work in BUILD_HANDOFF_J2141.md. Batch exit 0; no live render. Releasing at run clean point, no KEEP/PASS."
+        },
+        {
+          "at": "2026-11-04T20:18Z",
+          "by": "codex",
+          "what": "released: Run clean-point checkpoint: PR #495 worker/J2141-031-picture at 6689863443. Continue this branch; preserve 1/3. Four NASA candidates + nine technically verified alpha cards; wider harvest/mechanisms/full QA unfinished. tmux J2141-cards completed exit 0; logs /Users/benjaminoats/_desk/logs/J2141-cards.log and .done. See BUILD_HANDOFF_J2141.md for asset/gate issues. No KEEP or PASS."
         }
       ],
-      "remaining_action": "Harvest NASA/USGS/NOAA/ESA/USFWS/Commons source plates into HARVEST_POOL_v01.json and build £0 code_graphics from SHOT_LIST_v02.md",
-      "kind": "assembly"
+      "remaining_action": "Continue licensed harvest and mechanism graphics; complete composite QA",
+      "kind": "assembly",
+      "progress": {
+        "step": 1,
+        "of": 3,
+        "at": "2026-11-04T20:18Z",
+        "by": "codex",
+        "note": "Checkpoint 6689863443: four NASA candidates; nine WHO/FACT alpha MOVs rendered and technically decoded/hashed. Source-ID"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2142",
@@ -178894,18 +179349,23 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T19:36Z",
-      "result": "",
+      "result": "Resolved: J2043 rule-E review GO (SHOT_LIST_v02 55d4dad1c2) but status.json was left at shots=review; set 031 shots done, picture J2141 queued.",
       "history": [
         {
           "at": "2026-11-04T19:36Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "done: shots set done per J2043 GO"
         }
       ],
       "remaining_action": "Chief resolves 031 shots handoff and records the next owner/action",
