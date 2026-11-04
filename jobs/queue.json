@@ -173508,6 +173508,11 @@
           "at": "2026-11-04T17:16Z",
           "by": "codex",
           "what": "step 1 of 3 done: Confirmed tracked plist runs missed_runs.py --post every 1800 seconds; no film stage applies."
+        },
+        {
+          "at": "2026-11-04T17:16Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Installed plist and bootstrapped gui/501/com.owb.missed-runs; launchctl reports one run, exit 0, interval 1800 seconds."
         }
       ],
       "kind": "assembly",
@@ -173538,13 +173543,13 @@
       "by": "codex",
       "urgent": 2,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-04T17:16Z",
         "by": "codex",
-        "note": "Confirmed tracked plist runs missed_runs.py --post every 1800 seconds; no film stage applies."
+        "note": "Installed plist and bootstrapped gui/501/com.owb.missed-runs; launchctl reports one run, exit 0, interval 1800 seconds."
       },
-      "remaining_action": "Install the missed-run launch agent and inspect its first log"
+      "remaining_action": "Record the verified first run and report completion to Claude"
     },
     {
       "id": "J2019",
