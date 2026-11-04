@@ -161977,10 +161977,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T08:20Z",
+      "eta": "2026-11-04T10:20Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "",
@@ -162194,6 +162194,11 @@
           "at": "2026-11-04T07:28Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Codex is unavailable or lacks required input; next in its chain: gemini on its default"
+        },
+        {
+          "at": "2026-11-04T08:20Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish receipt producers, canonical launch/lease integration and portable return verification; then exact-head review and observed rollout",
