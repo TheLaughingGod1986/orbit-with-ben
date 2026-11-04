@@ -14,7 +14,7 @@ The opening sentence contains the date, place and cliff-height conversions befor
 
 The opening picture brief and thumbnail plan use PIA00044 to represent the titled feature, while chapter 4 describes that image's five-kilometre scarp separately from twenty-kilometre Verona Rupes. Verify the exact asset/feature mapping and limb claim before any picture approval. Do not use a similar cliff as identity evidence.
 
-DATA windows combine numerous scales, times and mechanisms. Simplify to one idea per graphic and retain real moving imagery between graphics. FACT labels including “Ocean filled half its radius” and “Half the moon unseen” exceed four words. The final picture/music instruction holds for only 2–3 seconds; reconcile it with the current end-screen and full-runtime music requirements. Confirm the 053 Parker handoff before lock.
+DATA windows combine numerous scales, times and mechanisms. Simplify to one idea per graphic and retain real moving imagery between graphics. The FACT label “Ocean filled half its radius” exceeds four words. The final picture/music instruction holds for only 2–3 seconds; reconcile it with the current end-screen and full-runtime music requirements. Confirm the 053 Parker handoff before lock.
 
 These are findings from the local draft and its internal inconsistencies, not a fresh external factual verification or replacement spoken lines. No script or source wording changed in this repair.
 
