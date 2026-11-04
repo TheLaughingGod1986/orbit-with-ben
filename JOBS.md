@@ -121,7 +121,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2010 | mini | open | – | – | chief · Chief: review video-priority PR477 and capacity PR437; verify real production pickup | J1471 / PR477 / PR437 |
 | J2011 | mini | blocked | codex | – | assembly · Repair native Gemini audio delivery using non-production fixtures before VO review | J1810 / PR438 |
 | J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
-| J2014 | mini | open | – | – | for gemini · qa · `gemini-argon` · 026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate |  |
+| J2014 | mini | claimed | gemini | 2026-11-04T14:39Z | for gemini · qa · `gemini-argon` · 026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate |  |
 | J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |
 | J2017 | mini | open | – | – | chief · Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception |  |
 | J2018 | mini | open | – | – | qa · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
