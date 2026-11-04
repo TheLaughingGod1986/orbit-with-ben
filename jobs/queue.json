@@ -171061,9 +171061,14 @@
           "at": "2026-11-04T17:52Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J1808/J1807 Chief rulings, J1966 Gemini findings/hashes, SOURCES.md, and v01 script; recorded input SHA-256 hashes"
+        },
+        {
+          "at": "2026-11-04T17:57Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Directly parsed 3 PDFs via PDFKit (Margot 2021, Leconte 2015, Barnes 2016), 3 PMC XMLs (inc. PMC11937330 fixing Semprich 2025 DOI/crust claim), 11 PubMed XMLs, NASA/PIA/authority/wikitext records"
         }
       ],
-      "remaining_action": "Directly open and parse every primary source (PDFs, PMC/PubMed XMLs, NASA pages, PIA records, authorities, raw wikitext)",
+      "remaining_action": "Update SOURCES.md with Semprich 2025 PMC11937330/Leconte 2015 PDFKit findings and write CLAUDE_QUOTE_CHECK_v01.md",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -171075,11 +171080,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T17:52Z",
+        "at": "2026-11-04T17:57Z",
         "by": "gemini",
-        "note": "Read J1808/J1807 Chief rulings, J1966 Gemini findings/hashes, SOURCES.md, and v01 script; recorded input SHA-256 hashes"
+        "note": "Directly parsed 3 PDFs via PDFKit (Margot 2021, Leconte 2015, Barnes 2016), 3 PMC XMLs (inc. PMC11937330 fixing Semprich"
       },
       "taskKeys": [
         "OWB:061"
