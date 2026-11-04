@@ -41,7 +41,8 @@ def reserve(data, *, token, host_id, worker, hosts, leases, accounts, at,
     for job in rows:
         old = job.get("dispatch_reservation") or {}
         if old.get("token") == token:
-            if (not active(job, at) or old.get("host") != host_id
+            if (job.get("status") != "open" or old.get("phase") != "reserved"
+                    or not active(job, at) or old.get("host") != host_id
                     or old.get("worker") != worker or old.get("head") != installed_head):
                 raise ValueError("reservation replay expired or changed identity/head")
             return copy.deepcopy(old)
@@ -106,3 +107,104 @@ def reserve_with_git(*, evidence, token, host_id, worker):
             return None, str(error), []
 
     return jobs.with_git(apply, "jobs: reserve measured capacity (not a launch)")
+
+
+def consume(data, *, token, host_id, worker, claimant, eta_min=25, **evidence):
+    """Revalidate a reservation and produce a canonical claim, never a launch.
+
+    Mutate only after all queue/evidence checks pass. Laptop claims use macbook
+    as their queue owner while retaining the specialist identity for routing,
+    account and capability validation. HOS film stages need their own board
+    transaction adapter and are deliberately excluded until that exists.
+    """
+    import jobs
+
+    at = evidence["at"]
+    rows = data.get("jobs", [])
+    matches = [j for j in rows if (j.get("dispatch_reservation") or {}).get("token") == token]
+    if len(matches) != 1:
+        raise ValueError("one matching canonical reservation required")
+    original = matches[0]
+    old = original["dispatch_reservation"]
+    if (old.get("host") != host_id or old.get("worker") != worker
+            or old.get("head") != evidence.get("installed_head")
+            or evidence.get("reviewed_head") != evidence.get("installed_head")):
+        raise ValueError("claim identity or exact-head review changed")
+    host = next((h for h in evidence["hosts"] if h.get("host") == host_id), {})
+    expected = "macbook" if host.get("role") == "macbook" else worker
+    if claimant != expected:
+        raise ValueError("queue claimant does not match registered host role")
+    if original.get("status") == "claimed":
+        if old.get("phase") != "claimed" or original.get("by") != claimant:
+            raise ValueError("reservation already consumed by another owner")
+        return copy.deepcopy(original)  # Git retry acknowledgement, never launch permission.
+    if old.get("phase") != "reserved" or not active(original, at):
+        raise ValueError("reservation expired or no longer reserved")
+    if type(eta_min) is not int or not 1 <= eta_min <= 25:
+        raise ValueError("bounded claim estimate required")
+    if original.get("repo") == "hos" and original.get("film"):
+        raise ValueError("HOS film claim needs a supported HOS board transaction")
+    if any(j.get("status") == "claimed" and j.get("by") in {worker, claimant}
+           for j in rows if j is not original):
+        raise ValueError("worker or laptop already holds a canonical claim")
+
+    candidate = copy.deepcopy(data)
+    selected = next(j for j in candidate["jobs"] if j["id"] == original["id"])
+    del selected["dispatch_reservation"]
+    # Recompute deadline order, stage/account occupancy, power/idle/resource,
+    # model/capability and portable-input proof after removing only OUR token.
+    refreshed = reserve(candidate, token=token, host_id=host_id, worker=worker, **evidence)
+    if refreshed["job"] != original["id"] or refreshed["account"] != old.get("account"):
+        raise ValueError("reservation priority or account changed; replan")
+    del selected["dispatch_reservation"]
+    # Use the normal queue claim operation under the specialist identity. This
+    # also checks the installed relay's current capabilities; host proof cannot
+    # silently override a missing local input capability.
+    claimed = jobs.do_next(candidate, worker, workflow.MINI | {"macbook"}, at,
+                           eta_min=eta_min, job_id=original["id"])
+    if not claimed or claimed["id"] != original["id"]:
+        raise ValueError("normal queue claim gates rejected reservation")
+    if claimant != worker:
+        claimed["by"] = claimant
+        if claimed.get("progress", {}).get("default_plan"):
+            claimed["progress"]["by"] = claimant
+        claimed["history"][-1]["by"] = claimant
+    claimed["dispatch_reservation"] = dict(old, phase="claimed", claimant=claimant,
+                                              claimedAt=at.isoformat())
+    claimed.setdefault("history", []).append(dict(at=at.isoformat(), by=claimant,
+        what="capacity claim on " + host_id + " using " + worker + "; not launched"))
+    original.clear()
+    original.update(claimed)
+    return copy.deepcopy(original)
+
+
+def consume_with_git(*, evidence, token, host_id, worker, claimant, eta_min=25):
+    """Queue and OWB board claim through the existing compare-and-push retry.
+
+    No CLI or production caller is enabled. Every retry recollects evidence.
+    A returned claim still needs a bounded supervisor and local input rehash.
+    """
+    import jobs
+
+    def apply(data):
+        before = copy.deepcopy(data)
+        try:
+            observed = evidence()
+            previous = next((j for j in data.get("jobs", [])
+                             if (j.get("dispatch_reservation") or {}).get("token") == token), {})
+            already_claimed = previous.get("status") == "claimed"
+            value = consume(data, token=token, host_id=host_id, worker=worker,
+                            claimant=claimant, eta_min=eta_min, **observed)
+            touched = []
+            if jobs.on_board(value) and not already_claimed:
+                error = jobs.board_claim(value, claimant, observed["at"])
+                if error:
+                    raise ValueError("board stage held: " + error)
+                touched.append(jobs.film_status_path(value))
+            return value, None, touched
+        except (ValueError, OSError) as error:
+            data.clear()
+            data.update(before)
+            return None, str(error), []
+
+    return jobs.with_git(apply, "jobs: consume measured capacity reservation (not a launch)")

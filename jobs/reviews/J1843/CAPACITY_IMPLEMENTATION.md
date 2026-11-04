@@ -211,3 +211,77 @@ laptop worker; test actual Git races and launch failures; then obtain exact-head
 Chief review and observe real host transitions. No default lane, service, spend,
 generation, upload, schedule or visibility change was made. This remainder is
 larger than the capped run and stays on J1843, ready for continuation.
+
+## Resume checkpoint — 4 November, 03:10–03:18 UTC
+
+Resumed the existing draft PR **#437**, branch `codex/J1843-capacity`, in a
+clean worktree `/private/tmp/J1843-resume`; merged current main. The older
+`/private/tmp/j1843-capacity` worktree has unrelated unfinished checkpoint
+files and was left untouched. Existing plan remains **1/3**: the implementation
+step is still incomplete, and this is not a rollout or approval.
+
+Added `consume` / `consume_with_git` to `capacity_reservations.py`. The adapter
+recollects evidence on every canonical Git transaction attempt, binds the
+reservation token to its host, specialist, reviewed head and account, and
+recomputes current priority, board-stage exclusions, host resources, laptop
+power/idle, shared account quota, model readiness, dependencies, external holds
+and capability requirements. It then uses the normal queue claim operation.
+If a newly higher-priority eligible job wins, the old reservation must be
+replanned rather than silently taking a different job.
+
+A portable claim records **macbook** as its canonical owner while retaining
+the actual specialist/account/host in reservation metadata. The original
+`needs` and `for` routing restrictions are preserved. A busy specialist or
+MacBook owner cannot gain another claim. Successful OWB stage claims use
+`jobs.board_claim` and return the board path to the same Git transaction.
+A stage conflict restores the queue candidate; exact claim acknowledgements
+are idempotent and do not restart a board stage. HOS film claims are explicitly
+rejected until there is a supported HOS board transaction adapter. Unmapped
+HOS CPU work remains subject to the same no-spend/no-publish restrictions.
+
+Also fixed reservation token replay: an existing token cannot be acknowledged
+as a reservation after its job has been claimed or its reservation consumed.
+Claim acknowledgement remains separate from supervisor/launch permission.
+**No production caller, additional lane or launcher has been enabled.**
+
+Validation:
+
+- **236 tests PASS** in the full focused capacity/claims/local-Git-race/process/
+  transfer/workflow/handoffs/queue/relay/MacBook suite, followed by one additional
+  real OWB board-write test (**14 claim tests PASS** including that addition).
+  Thus the current focused set contains **237 tests**; the full suite was not
+  rerun merely for the added isolated board test.
+- The new race test runs two processes against two disposable local clones
+  and a real local bare Git remote. Both first attempts read the same head;
+  one push wins and the other transaction retries/recollects evidence. It
+  tests same-job and same-film/stage conflicts with distinct specialist workers
+  and enough shared-account capacity to ensure the stage restriction matters.
+  Only one reservation is committed; neither process claims or launches work.
+  This is actual Git contention on one machine, **not real two-host rollout**.
+- New claim tests cover normal claim/replay, competing ownership, changed
+  priority, hold/dependency/capability/account/model/stage failures, MacBook
+  identity and in-use rejection, real OWB board writes, board conflict rollback
+  and a competing claim between transaction attempts. No paid CLIs or publishing.
+- `core_sync.py check`: PASS (56 shared files); `git diff --check`: PASS.
+
+Fresh observations: the process-visible capacity command validates the sole
+Mini execution lease for J1843, owner Codex, through 03:35:59Z. Its machine and
+account attribution remain legacy/unverified, so no spare shared-account slot
+is inferred. Cached MacBook heartbeat 03:00:43Z says generic `macbook`, idle,
+no queued laptop job, and still lacks registered identity/resource/account/
+media proof. Actual laptop power/idle and Air/Pro identity remain unverified.
+A noninteractive Cursor `agent status` exited 0 reporting login success and
+unavailable user details; it did **not** prove current model quota or clear the
+recorded execution authentication failure. No identity or secret was printed.
+Disk has about 31 GiB free; no repair/offload needed. Audio/moving-video
+capability report is empty. Free-slot outlook remains **unknown**.
+
+Next on **this same job/PR**: implement the trusted host/account evidence path,
+HOS stage transaction adapter where needed, capped supervisor integration and
+failure recovery, and supported laptop outbound/return transport with consuming
+host rehashes. The laptop must recheck guards immediately before launch. Retain
+the serial lock until the full replacement has passed. Then obtain exact-head
+Chief review and observe real host transitions before enabling capacity. This
+remaining integration is larger than the capped run, so release J1843 at this
+clean, tested checkpoint; do not close it or create a duplicate follow-up.
+No spend, media regeneration or publishing state changed.
