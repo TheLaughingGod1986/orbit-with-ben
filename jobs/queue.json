@@ -172696,10 +172696,10 @@
       "stage": "",
       "after": "J1468",
       "eta_min": 25,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-04T11:49Z",
-      "eta": "2026-11-04T12:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T11:29Z",
       "result": "",
@@ -172728,6 +172728,11 @@
           "at": "2026-11-04T11:53Z",
           "by": "codex",
           "what": "step 1 of 4 done: Detached J2016-render; log _desk/logs/J2016-render.log; exit file J2016-render.done. Do not duplicate. Persistent driver/report _desk/handoff/J2016. No results or audiovisual approval claimed."
+        },
+        {
+          "at": "2026-11-04T11:53Z",
+          "by": "codex",
+          "what": "released: 1/4. Detached tmux J2016-render running repair/checks. Read /Users/benjaminoats/_desk/logs/J2016-render.done then J2016-render.log; missing done means running, never duplicate. Driver/report /Users/benjaminoats/_desk/handoff/J2016/. Clean worktree /private/tmp/J2016-wt. Inspect raw gates, preserve hashes then complete handoff to J1471 at2/3; no media approval."
         }
       ],
       "remaining_action": "Inspect detached render completion and technical checks, then deliver correction evidence",
