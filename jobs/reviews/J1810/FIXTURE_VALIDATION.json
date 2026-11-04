@@ -1,0 +1,50 @@
+{
+  "fixture_source": "Existing macOS Glass.aiff; copied and transcoded locally, no recording or generation",
+  "fixture_use": "Capability test only; not a production SFX asset",
+  "mp3_sha256": "1f5fdcaf912740d627595f77b3229129335670570178cdf2549b7bb5322874f3",
+  "source_sha256": "b337d8e01066c30de2f296763609b7e488bb3c6ea817aa875ee999d708433cf9",
+  "decoded_duration_s": 1.6500625,
+  "method": "ffmpeg decode to 16 kHz mono f32; 100 ms RMS and Hann FFT peak. Signal validation only, NOT Codex listening.",
+  "windows": [
+    {
+      "start_s": 0,
+      "rms": 0.0631643533706665,
+      "strongest_frequency_hz": 390.0
+    },
+    {
+      "start_s": 0.2,
+      "rms": 0.042431581765413284,
+      "strongest_frequency_hz": 390.0
+    },
+    {
+      "start_s": 0.4,
+      "rms": 0.013719717971980572,
+      "strongest_frequency_hz": 390.0
+    },
+    {
+      "start_s": 0.6,
+      "rms": 0.0026231403462588787,
+      "strongest_frequency_hz": 390.0
+    },
+    {
+      "start_s": 0.8,
+      "rms": 0.0005458379746414721,
+      "strongest_frequency_hz": 390.0
+    },
+    {
+      "start_s": 1,
+      "rms": 0.00024597442825324833,
+      "strongest_frequency_hz": 390.0
+    },
+    {
+      "start_s": 1.2,
+      "rms": 8.116901153698564e-05,
+      "strongest_frequency_hz": 390.0
+    },
+    {
+      "start_s": 1.4,
+      "rms": 2.2612899556406774e-05,
+      "strongest_frequency_hz": 390.0
+    }
+  ]
+}

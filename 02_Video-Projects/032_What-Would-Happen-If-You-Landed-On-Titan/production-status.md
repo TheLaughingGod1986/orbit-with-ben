@@ -65,3 +65,7 @@ Codex independently verified the actual v02b WAV/MP3 hashes, timing, loudness, h
 ## J1773 sources reconciliation — 3 November 2026
 
 Sources: **PASS retained from Chief J0301**, approved commit `97b7af4ee9`. The governing v01 sources table and script v01 are byte-identical to that approval; v02 only removes the agenda sentence. The older unchecked source blocker above is superseded by this evidence. Claude’s quote recheck is embedded in SOURCES.md; no separate quote-check file is claimed. [Reconciliation](01_Script/J1773_SOURCES_RECONCILIATION.md). J1753 still holds final VO listening review; no picture approval.
+
+## J1810 capability validation — 4 November 2026
+
+Fresh native Gemini audio fixture test failed: the first claimed perception contradicted the fixture, and independent recheck explicitly reported no reliable audio perception. J1753 retains technical PASS at 1/3; no VO was heard or approved. J1810 owns demonstrating a reliable native listening route before any specialist handoff. [Evidence](../../jobs/reviews/J1810/REPORT.md). No Ben production-review action.
