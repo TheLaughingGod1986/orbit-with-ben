@@ -4,9 +4,9 @@
 |-------|-------|
 | Slug | `046_Why-Saturns-Moon-Enceladus-Shoots-Geysers-Into-Space` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-18_J0560.md` (scored 18/30, #1 of 5; backlog id `005`) |
-| Topic lock | **Pending Chief decision** (`J0560` parked for Chief: lock 046 Why Saturn's Moon Enceladus Shoots Geysers Into Space or pick #2 Great Red Spot Shrinking / #3 Ceres Salt Domes / #4 Simulation Physics / #5 Self-Replicating AI Probes; confirm Short-first waiver) |
+| Topic lock | **DEFERRED by J1930, 4 Nov 2026** — J2001 evidence then J2002 capacity/advancement decision; historical request: **Pending Chief decision** (`J0560` parked for Chief: lock 046 Why Saturn's Moon Enceladus Shoots Geysers Into Space or pick #2 Great Red Spot Shrinking / #3 Ceres Salt Domes / #4 Simulation Physics / #5 Self-Replicating AI Probes; confirm Short-first waiver) |
 | Script draft | `01_Script/enceladus_geysers_script_master_v01.md` (v01 revised 18 Oct 2026 in J0568 from v00 in J0560; 1,280 spoken words / 1,297 reviewer words, ~8.6 min; notes in `01_Script/SCRIPT_NOTES_v01.md`) |
-| Script review | **PASS — 95.3 / 100** (1,280 spoken words / 1,297 reviewer words, ~8.6 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0568`) |
+| Script review | **Chief FIX / not locked (J1930)**. Historical automated result only: **PASS — 95.3 / 100** (1,280 spoken words / 1,297 reviewer words, ~8.6 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0568`) |
 | Sources | `01_Script/SOURCES.md` — 9 rows pre-checked with verbatim quotes (`NASA Science Enceladus & Dione`, `NSSDCA Saturnian Satellite Fact Sheet`, `NASA Cassini Global Ocean Release Sep 2015`, `NASA Enceladus Hydrothermal Activity & Ocean Worlds Release Apr 2017`, `Postberg et al. June 14, 2023 Nature 618, 489–493`, `NASA Webb Enceladus 6,000-Mile Plume Release May 2023`, `NASA Cassini Overview & Jupiter Facts`, `LOC Name Authority Records n79083314 / n50036903 / nr96009532 / n87820555 / no2011098659`) |
 | Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
 | Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
@@ -86,3 +86,7 @@ Script score: **95.3/100** · PASS
 ## Chief handoff repair — J1787, 4 November 2026
 
 **FIX / not locked (codex, elected acting Chief).** The historical 95.3 score above is an automated check, not topic/script approval. J0560/J0568 were cancelled as duplicates of decisions about film 061; no 046 lock followed. **J1930** now owns the topic/editorial decision for 046/script, after J1787. Neighbours, Short-first decision, pre-build sign-off, formal Gemini facts, direct quote check and explicit Chief lock remain required before VO. See `jobs/reviews/J1787/CHIEF_HANDOFF_2026-11-04.md` for evidence and specific revision/verification targets. No production or publishing is approved.
+
+## Chief topic/editorial decision — J1930, 4 November 2026
+
+**DEFER topic lock; script FIX / blocked from lock and production.** No Short-first waiver or production approval. HOS November is 2/4 complete against OWB 5/4; preserve priority. J2001 verifies neighbours, audit, overlap and matching Short proof; J2002 owns fresh capacity/advancement and any conditional specialist v02, Gemini facts, direct quote check and explicit lock. Reconsider at four HOS November completions or a fresh specific Chief capacity rationale, with topic prerequisites still required. See `jobs/reviews/J1930/DECISION_2026-11-04.md`. Draft/source text remains unchanged; nothing needed from Ben.
