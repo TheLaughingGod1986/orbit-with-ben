@@ -162204,9 +162204,14 @@
           "at": "2026-11-04T08:20Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Resumed J1843 from PR437 checkpoint c02fe4179a at 1/3; inspecting worktree and remaining receipt producer / launch / portable return integration"
+        },
+        {
+          "at": "2026-11-04T08:34Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Checkpoint f0dd7869b4 pushed to PR437: probe receipt producer + outage chronology, portable return consumption, quarantine resolution, and dispatch_claimed pipeline (292 tests PASS; rollout disabled)"
         }
       ],
-      "remaining_action": "Finish receipt producers, canonical launch/lease integration and portable return verification; then exact-head review and observed rollout",
+      "remaining_action": "Exact-head Chief review of PR437 head f0dd7869b4 and observed real-host transitions before enabling capacity rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162215,11 +162220,11 @@
       "due": "2026-11-03T23:37:09+00:00",
       "due_kind": "user-resource-unblock",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T08:20Z",
+        "at": "2026-11-04T08:34Z",
         "by": "gemini",
-        "note": "Resumed J1843 from PR437 checkpoint c02fe4179a at 1/3; inspecting worktree and remaining receipt producer / launch / por"
+        "note": "Checkpoint f0dd7869b4 pushed to PR437: probe receipt producer + outage chronology, portable return consumption, quaranti"
       },
       "rerouted_from": {
         "needs": "mini",
