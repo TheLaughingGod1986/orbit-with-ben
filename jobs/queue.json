@@ -160621,10 +160621,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-04T00:21Z",
-      "eta": "2026-11-04T02:21Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "",
@@ -160668,6 +160668,11 @@
           "at": "2026-11-04T00:28Z",
           "by": "codex",
           "what": "step 1 of 3 done: Checkpoint committed c3ad1cf55e in draft PR437; 177 tests PASS. Shadow planner/telemetry complete, remaining implementation step unfinished; extra lanes and overflow disabled."
+        },
+        {
+          "at": "2026-11-04T00:29Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint c3ad1cf55e, draft PR437 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437. Resume branch codex/J1843-capacity at /private/tmp/J1843-wt. 177 tests PASS. Plan 1/3 retained: step2 incomplete, atomic cross-host reservation/claim/launch, verified transfer and registered host/account probes still required; then exact-head Chief review and observed rollout. No extra lane enabled. Full remaining implementation exceeds one capped run; continue this same job, no duplicate."
         }
       ],
       "remaining_action": "Continue PR437: integrate atomic cross-host claims, launch and verified transfer; then review and observed rollout",
