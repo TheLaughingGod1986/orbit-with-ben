@@ -4,18 +4,14 @@
   "air": "",
   "stages": {
     "script": {
-      "state": "doing",
-      "ref": "J1785 FIX/not locked; PR440; J1928 owns topic/editorial review before facts and quote checks"
+      "state": "review",
+      "ref": "J1928 editorial FIX/not locked; J1997 owns advancement and conditional rewrite/facts/lock"
+    },
+    "topic": {
+      "state": "blocked",
+      "ref": "J1928 DEFER; J1996 evidence then J1997 capacity/advancement"
     }
   },
-  "claims": [
-    {
-      "stage": "script",
-      "by": "codex",
-      "at": "2026-11-04T09:10Z",
-      "eta": "2026-11-04T11:09Z",
-      "note": "J1928 044 Ganymede: restore topic and editorial decision before facts and script lock"
-    }
-  ],
-  "next": "J1928: Chief topic/editorial decision for unlocked Ganymede draft; neighbours, formal Gemini facts and direct quote check before lock. J1785 restored cancelled handoffs; no production approval."
+  "claims": [],
+  "next": "J1928: unlocked Ganymede candidate, editorial FIX. J1996 verifies neighbours, overlap and matching Short evidence; J1997 owns capacity/advancement and conditional rewrite/facts/lock. No production approval."
 }
