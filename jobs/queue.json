@@ -166767,13 +166767,13 @@
       "stage": "thumbs",
       "after": "J1923",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T03:27Z",
-      "eta": "2026-11-04T05:27Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T01:26Z",
-      "result": "",
+      "result": "FIX B/C v03; preserve A. Exact-file review e69bb4749f; PR439 evidence merged6e062f0a03 separately. J1823 reopened for scoped no-spend abc_v04 and fresh panel/Chief ruling. No live changes; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-04T01:26Z",
@@ -166804,6 +166804,11 @@
           "at": "2026-11-04T03:32Z",
           "by": "codex",
           "what": "step 3 of 3 done: J1823 reopened with bounded v04 scope and stale input hold cleared; exact-file FIX and panel addendum on main e69bb4749f. Original A retained; no media approved."
+        },
+        {
+          "at": "2026-11-04T03:32Z",
+          "by": "codex",
+          "what": "done: FIX B/C v03; preserve A. Exact-file review e69bb4749f; PR439 evidence merged6e062f0a03 separately. J1823 reopened for scoped no-spend abc_v04 and fresh panel/Chief ruling. No live changes; nothing for Ben."
         }
       ],
       "remaining_action": "Review complete; J1823 owns ready v04 correction and fresh review handoff",
@@ -166818,7 +166823,8 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "done_ref": "e69bb4749f"
     },
     {
       "id": "J1925",
