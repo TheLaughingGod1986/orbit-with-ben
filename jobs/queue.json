@@ -160663,9 +160663,14 @@
           "at": "2026-11-04T00:27Z",
           "by": "codex",
           "what": "step 1 of 3 done: Tested checkpoint: shadow planner, host telemetry, read-only capacity command; 147 tests passed. Step 2 remains unfinished; no second lane enabled. Preparing draft PR and clean release."
+        },
+        {
+          "at": "2026-11-04T00:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint committed c3ad1cf55e in draft PR437; 177 tests PASS. Shadow planner/telemetry complete, remaining implementation step unfinished; extra lanes and overflow disabled."
         }
       ],
-      "remaining_action": "Finish atomic cross-host launch/claim and transfer integration, then exact-head review and observed rollout",
+      "remaining_action": "Continue PR437: integrate atomic cross-host claims, launch and verified transfer; then review and observed rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -160676,9 +160681,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T00:27Z",
+        "at": "2026-11-04T00:28Z",
         "by": "codex",
-        "note": "Tested checkpoint: shadow planner, host telemetry, read-only capacity command; 147 tests passed. Step 2 remains unfinish"
+        "note": "Checkpoint committed c3ad1cf55e in draft PR437; 177 tests PASS. Shadow planner/telemetry complete, remaining implementat"
       }
     },
     {
