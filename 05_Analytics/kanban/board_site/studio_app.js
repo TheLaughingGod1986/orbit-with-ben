@@ -702,11 +702,30 @@
       ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:`<p class="activity-progress-missing">${starting?'Preparing to claim the selected job':'Task progress not recorded'}</p>`}
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
   }
+  // Last 24 hours (Ben, 4 Nov 2026): jobs finished, which films moved and by how much. From board.progress24h.
+  function progressCard(b) {
+    const p=b.progress24h;
+    if(!p) return '';
+    const agents=Object.entries(p.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
+    const name=k=>(k||'').replace(':',' ');
+    const moved=(p.moved||[]).map(m=>`<li><span class="p24-film">${esc(name(m.key))}</span> <span class="p24-title">${esc(m.title)}</span><span class="p24-delta${m.milestones<0?' down':''}">${m.from}% → ${m.to}%</span></li>`).join('');
+    const films=(p.films||[]).map(f=>`<li><span class="p24-film">${esc(name(f.film))}</span> <span class="p24-title">${esc(f.title)}</span><span class="p24-count">${f.jobs} job${f.jobs===1?'':'s'}</span><span class="p24-last">${esc(f.last)}</span></li>`).join('');
+    const partial=p.hours && p.hours<23 ? `<p class="muted p24-note">Film progress covers the last ${Math.round(p.hours)} h so far; it fills to 24 h on its own.</p>`:'';
+    return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
+      <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>${p.videoJobs!=null?'video jobs finished':'jobs finished'}</span></div><div><b>${p.milestones||0}</b><span>milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>videos moved forward</span></div></div>
+      ${p.videoJobs!=null?`<p class="muted p24-agents${p.jobsDone&&p.videoJobs/p.jobsDone<0.3?' p24-warn':''}">${p.videoJobs} of ${p.jobsDone||0} jobs were on videos (${p.jobsDone?Math.round(p.videoJobs/p.jobsDone*100):0}%); the rest kept the studio running.</p>`:''}
+      ${agents?`<p class="muted p24-agents">By ${agents}</p>`:''}
+      ${moved?`<h3>Videos that moved</h3><ul class="p24-list">${moved}</ul>`:`<p class="muted p24-note">No video changed milestone ${p.hours?'in this window':'yet (first reading)'}.</p>`}
+      ${partial}
+      ${films?`<details class="p24-more"><summary>Where the work went (${p.jobsDone||0} jobs${p.otherJobs?`, ${p.otherJobs} studio-wide`:''})</summary><ul class="p24-list">${films}</ul></details>`:''}
+    </section>`;
+  }
   function overview(b, now) {
     const s=overviewModel(b,now), candidate=featureVideo(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="overview-stats" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted">Nothing is ready for your review yet.</p>':''}${featuredCard(candidate,now,s.producing.length)}</section>
+      ${progressCard(b)}
       ${activityCard(b,now)}</div>`;
   }
 

@@ -1,6 +1,6 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-04 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-04 12:43 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
@@ -11,8 +11,9 @@ Written by `gate_upcoming.py` at 2026-11-04 06:40 London for Shorts scheduled in
 | 2026-11-12 11:30 | [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/N42gKBbD7tE) `N42gKBbD7tE` | yes | KNOWN |
 | 2026-11-13 11:30 | [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/bSjWiCbB7pY) `bSjWiCbB7pY` | yes | KNOWN |
 | 2026-11-14 11:30 | [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/gmzaCfJF1gA) `gmzaCfJF1gA` | yes | PASS |
-| 2026-11-16 11:30 | [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/HZGTovJu_TQ) `HZGTovJu_TQ` | yes | **FAIL** |
+| 2026-11-16 11:30 | [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/HZGTovJu_TQ) `HZGTovJu_TQ` | yes | PASS |
 | 2026-11-17 11:30 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/kKN8Ale42sE) `kKN8Ale42sE` | yes | PASS |
+| 2026-11-18 11:30 | [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/cwU_0WWeNZ4) `cwU_0WWeNZ4` | yes | PASS |
 
 ## Details
 
@@ -46,15 +47,17 @@ Export not found: `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts
 - first cut at 5.90s > 3.0s (scene-change detect)
 - spoken text contains meta-promise ("stay, and i'll show you")
 
-### HZGTovJu_TQ: FAIL
+### HZGTovJu_TQ: report-only (would fail 60% stayed gate)
 
-```
-/Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/mon16_cant_see_nearest_star_v01.mp4: Operation not permitted
-```
+- first cut at 4.80s > 3.0s (scene-change detect)
 
 ### kKN8Ale42sE: report-only (would fail 60% stayed gate)
 
 - pushed still at frame 0 (mean 0–1.5 s frame diff 0.33 < 1.50) — use moving footage
 - first cut at 4.60s > 3.0s (scene-change detect)
 - spoken text contains meta-promise ("stay, and i'll show you")
+
+### cwU_0WWeNZ4: report-only (would fail 60% stayed gate)
+
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.46 < 1.50) — use moving footage
 

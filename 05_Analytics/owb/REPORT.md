@@ -195,15 +195,16 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 3 d | 1096 | 31.7% | MISS | 66.4% | WATCH |
-| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 4 d | 45 | 21.7% | too few to judge | 66.7% | too few to judge |
-| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 5 d | 520 | 32.7% | MISS | 91.7% | PASS |
-| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 6 d | 457 | 34.2% | MISS | 233.3% | LOOP |
-| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 7 d | 493 | 42.6% | MISS | 75.1% | PASS |
-| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 8 d | 892 | 30.7% | MISS | 75.9% | PASS |
-| [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 10 d | 851 | 32.1% | MISS | 76.1% | PASS |
-| [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 11 d | 82 | 34.3% | too few to judge | 58.3% | too few to judge |
-| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 12 d | 91 | 14.0% | too few to judge | 53.3% | too few to judge |
-| [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | 13 d | 887 | 31.7% | MISS | 62.2% | WATCH |
+| [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 27 h (early) | 474 | 26.6% | MISS | - | no read |
+| [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 2 d | 560 | 30.8% | MISS | 65.2% | WATCH |
+| [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 4 d | 1099 | 31.6% | MISS | 66.4% | WATCH |
+| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 5 d | 45 | 21.7% | too few to judge | 66.7% | too few to judge |
+| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 6 d | 520 | 32.7% | MISS | 91.7% | PASS |
+| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 7 d | 458 | 34.4% | MISS | 231.9% | LOOP |
+| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 8 d | 494 | 42.6% | MISS | 75.0% | PASS |
+| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 9 d | 892 | 30.7% | MISS | 75.9% | PASS |
+| [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 11 d | 851 | 32.1% | MISS | 76.1% | PASS |
+| [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | 12 d | 83 | 35.2% | too few to judge | 57.9% | too few to judge |
+| [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | 13 d | 91 | 14.0% | too few to judge | 53.3% | too few to judge |
 
-Stayed to watch: 0 of 7 judged Shorts at 60%+. Average viewed: 5 of 7 at 70%+.
+Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 5 of 7 at 70%+.

@@ -239,6 +239,31 @@ def apply_metadata(data, entries, agent, at):
     data.clear(); data.update(planned)
 
 
+RECHECK_MAX_H = 24
+
+
+def recheck_backoff(data, parent, by_id, at):
+    """True while the next condition check for `parent` should wait (Ben, 4 Nov 2026: videos weren't moving; 357 of
+    499 jobs since 1 Nov were hourly 'verify condition' re-checks of the same ~10 held jobs, all using the Chief's
+    slot). Each check that finds the hold unchanged doubles the wait: 1, 2, 4, 8, 16, then 24 h, counted from the last
+    check. A predecessor (`after`) finishing after that check is real news, so it is checked at once."""
+    done = [j for j in data["jobs"] if j.get("recheck_of") == parent["id"] and j.get("status") == "done"]
+    stamps = sorted(t for t in (workflow.timestamp(next((h.get("at") for h in reversed(j.get("history") or [])
+                                                          if str(h.get("what", "")).startswith("done")), None)) for j in done) if t)
+    if not stamps:
+        return False
+    last = stamps[-1]
+    after = by_id.get(parent.get("after") or "")
+    if after and after.get("status") == "done":
+        fin = workflow.timestamp(next((h.get("at") for h in reversed(after.get("history") or [])
+                                       if str(h.get("what", "")).startswith("done")), None))
+        if fin and fin > last:
+            return False
+    recent = [t for t in stamps if at - t <= dt.timedelta(hours=48)]
+    wait = dt.timedelta(hours=min(RECHECK_MAX_H, 2 ** max(0, len(recent) - 1)))
+    return at < last + wait
+
+
 def reconcile_holds(data, at):
     by_id = {j["id"]:j for j in data["jobs"]}
     due = workflow.deadlines(data["jobs"])
@@ -254,6 +279,8 @@ def reconcile_holds(data, at):
                 changed.append(pending["id"])
             continue
         if not workflow.hold_due(parent,by_id,at):
+            continue
+        if recheck_backoff(data,parent,by_id,at):
             continue
         condition = (parent.get("hold") or {}).get("condition") or "Required predecessor is complete; verify remaining gates and approvals"
         task = do_add(data,title="Chief: verify condition for " + parent["id"],needs="any",kind="chief",by="relay",at=at,

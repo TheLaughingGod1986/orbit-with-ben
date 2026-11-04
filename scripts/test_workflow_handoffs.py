@@ -70,6 +70,37 @@ class Handoffs(unittest.TestCase):
             p=pathlib.Path(root)/'031_Test';p.mkdir();(p/'status.json').write_text('{')
             self.assertEqual(h.findings(self.data,list(h.records(root)),AT)[0]['kind'],'invalid-record')
 
+
+class RecheckBackoff(unittest.TestCase):
+    """Ben, 4 Nov 2026: hourly re-checks of the same held jobs crowded out video work."""
+    def held(self):
+        return {'id':'J1','title':'held job','status':'blocked','hold':{'type':'input','condition':'x','check_at':(AT-dt.timedelta(minutes=5)).isoformat()}}
+    def check(self,i,hours_ago):
+        t=(AT-dt.timedelta(hours=hours_ago)).strftime('%Y-%m-%dT%H:%MZ')
+        return {'id':'V%d'%i,'status':'done','recheck_of':'J1','history':[{'at':t,'by':'codex','what':'done: still unmet'}]}
+    def test_first_check_is_not_delayed(self):
+        data={'jobs':[self.held()],'next_id':10}
+        self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)
+    def test_waits_double_after_each_unchanged_check(self):
+        # 1 check 30 min ago -> wait 1 h: no new task
+        data={'jobs':[self.held(),self.check(1,0.5)],'next_id':10}
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+        # 3 checks, last 3 h ago -> wait 4 h: no new task
+        data={'jobs':[self.held(),self.check(1,9),self.check(2,6),self.check(3,3)],'next_id':10}
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+        # 3 checks, last 5 h ago -> due
+        data={'jobs':[self.held(),self.check(1,11),self.check(2,8),self.check(3,5)],'next_id':10}
+        self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)
+    def test_wait_caps_at_24h(self):
+        checks=[self.check(i,26+i) for i in range(1,8)]+[self.check(9,25)]
+        data={'jobs':[self.held()]+checks,'next_id':20}
+        self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)
+    def test_finished_predecessor_skips_the_wait(self):
+        parent=self.held();parent['after']='J0'
+        pre={'id':'J0','title':'pre','status':'done','history':[{'at':(AT-dt.timedelta(minutes=10)).strftime('%Y-%m-%dT%H:%MZ'),'by':'codex','what':'done'}]}
+        data={'jobs':[parent,pre,self.check(1,0.5)],'next_id':10}
+        self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)
+
 if __name__=='__main__':unittest.main()
 
 class ChiefCompletion(unittest.TestCase):
