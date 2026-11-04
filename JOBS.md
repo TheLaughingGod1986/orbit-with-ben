@@ -107,6 +107,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1973 | mini | open (after J1898) | – | – | 035 topic · for gemini · review · `gemini-argon` · 035 Triton: verify neighbours and Neptune Short topic-fit evidence | J1898 |
 | J1974 | mini | open (after J1973) | – | – | 035 script · chief · 035 Triton: decide advancement and own specialist rewrite and facts chain | J1898 |
 | J1975 | any | open | – | – | chief · Chief: verify condition for J1878 |  |
+| J1976 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
