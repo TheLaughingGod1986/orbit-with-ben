@@ -174,12 +174,28 @@ class Supervisor(unittest.TestCase):
                 time.sleep(0.02)
             self.assertTrue(pid_file.exists())
             child_pid = int(pid_file.read_text())
+            until = time.monotonic()+5
+            while time.monotonic() < until:
+                if self.registry.observe(utcnow())[0].get("child_pid") == child_pid:
+                    break
+                time.sleep(0.02)
+            self.assertEqual(self.registry.observe(utcnow())[0].get("child_pid"), child_pid)
             supervisor.kill()
             supervisor.wait(timeout=5)
             row = self.registry.observe(utcnow())[0]
             self.assertTrue(row["recovery_required"])
             self.assertFalse(row["process_validated"])
             self.assertEqual(row["job"], "J1843")
+            # A distinct canonical token can seek this local slot. The launch
+            # adapter must reconcile the old orphan before recording its lease.
+            self.claim["dispatch_reservation"]["token"] = "token-B"
+            result = run(**self.kw)
+            self.assertEqual(result["recovery"][0]["phase"], "orphan_recovered")
+            self.assertEqual((result["phase"], result["exit_code"]), ("exited", 0))
+            self.assertEqual(self.registry.observe(utcnow()), [])
+            self.assertEqual(self.claim["status"], "claimed")
+            seals = self.root / "leases" / "mini-launches"
+            self.assertEqual(len(list(seals.glob("*.json"))), 2)
         finally:
             if supervisor.poll() is None:
                 supervisor.kill()

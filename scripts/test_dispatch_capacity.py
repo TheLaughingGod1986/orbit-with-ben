@@ -190,10 +190,33 @@ class Capacity(unittest.TestCase):
         base = dict(job="J1841", worker="codex", host="mini", pid=100, startedAt=STAMP, expiresAt=END)
         self.assertEqual(capacity.live_leases([base], T, "mini", lambda p:False), [])
         self.assertEqual(len(capacity.live_leases([base], T, "mini", lambda p:True)), 1)
-        self.assertEqual(capacity.live_leases([dict(base, expiresAt=STAMP)], T, "mini", lambda p:True), [])
+        expired = dict(base, expiresAt=(T-dt.timedelta(seconds=1)).isoformat(),
+                       startedAt=(T-dt.timedelta(minutes=1)).isoformat())
+        self.assertTrue(capacity.live_leases([expired], T, "mini", lambda p:True)[0]["overdue"])
         remote = dict(base, host="macbook", at=STAMP, process_validated=True)
         self.assertEqual(len(capacity.live_leases([remote], T, "mini", lambda p:False)), 1)
-        self.assertEqual(capacity.live_leases([dict(remote, at="2026-11-01T00:00Z")], T, "mini", lambda p:True), [])
+        stale = capacity.live_leases([dict(remote, at="2026-11-01T00:00Z")], T, "mini", lambda p:True)
+        self.assertTrue(stale[0]["recovery_required"])
+
+    def test_unknown_process_and_orphan_are_not_spare_capacity(self):
+        base = dict(job="J1841", worker="cursor", account="shared", host="mini", pid=100,
+                    startedAt=STAMP, expiresAt=END)
+        def denied(pid):
+            raise PermissionError("process visibility denied")
+        for probe, changes in ((denied, {}), (lambda p:False, {"child_may_exist":True}),
+                                (lambda p:None, {})):
+            leases = capacity.live_leases([dict(base, **changes)], T, "mini", probe)
+            self.assertTrue(leases[0]["recovery_required"])
+            result = self.plan(leases=leases, hosts=[host(configured_limit=2,
+                capacity_review="review", installed_head="abc", reviewed_head="abc")],
+                accounts={"shared":proof(ready=True, limit=2)})
+            self.assertEqual(result["proposals"], [])
+            self.assertIn("recovery", result["host_rejections"]["mini"])
+
+    def test_malformed_lease_never_silently_frees_capacity(self):
+        for row in ({}, dict(host="mini", startedAt=STAMP, expiresAt=END)):
+            with self.assertRaises(ValueError):
+                capacity.live_leases([row], T, "mini", lambda p:True)
 
 
 if __name__ == "__main__":

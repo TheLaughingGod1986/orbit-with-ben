@@ -29,24 +29,34 @@ def fresh(report, at, max_age=300):
 def live_leases(leases, at, local_host, process_alive):
     """Local leases require process proof; remote leases require fresh host proof.
 
-    An expired lease never reserves capacity. A remote PID is not a local PID.
+    A timer never proves exit. Stale remote/unknown process evidence occupies
+    capacity until its own host positively reconciles it. Remote PIDs are not
+    probed locally. Malformed occupancy fails closed rather than disappearing.
     """
     result = []
     for lease in leases:
         start = workflow.timestamp(lease.get("startedAt"))
         end = workflow.timestamp(lease.get("expiresAt"))
-        if not start or not end or not start <= at < end:
-            continue
+        if not start or not end or end <= start or start > at or not lease.get("host"):
+            raise ValueError("malformed process lease cannot establish spare capacity")
+        uncertain = lease.get("recovery_required") is True
         if lease.get("host") == local_host:
             try:
-                if int(lease.get("pid") or 0) <= 0 or not process_alive(int(lease.get("pid") or 0)):
-                    continue
-            except (TypeError, ValueError, OSError):
-                continue
+                pid = int(lease.get("pid") or 0)
+                if pid <= 0:
+                    raise ValueError("missing process identity")
+                alive = process_alive(pid)
+                if alive is False and not lease.get("child_may_exist") and not uncertain:
+                    continue  # Positive local exit proof for an unarmed supervisor.
+                if alive is not True:
+                    uncertain = True
+            except (TypeError, ValueError, OSError, RuntimeError):
+                uncertain = True
         elif not fresh(lease, at) or lease.get("process_validated") is not True:
-            continue
-        if lease.get("job") and lease.get("worker"):
-            result.append(lease)
+            uncertain = True
+        if not lease.get("job") or not lease.get("worker"):
+            raise ValueError("unattributed process lease cannot establish spare capacity")
+        result.append(dict(lease, overdue=at >= end, recovery_required=uncertain))
     return result
 
 
@@ -162,6 +172,9 @@ def propose(data, hosts, leases, accounts, at, chief, choose_worker):
     for host in sorted(hosts, key=lambda h: h.get("role") == "macbook"):
         problem = host_problem(host, at)
         identity = host.get("host", "unknown")
+        if any(x.get("host") == identity and x.get("recovery_required") for x in leases):
+            rejected[identity] = "host execution recovery required"
+            continue
         if problem:
             rejected[identity] = problem
             continue

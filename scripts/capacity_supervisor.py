@@ -79,6 +79,9 @@ def run(*, registry, read_claim, guard, installed_head, reviewed_head, argv,
     if guard(claim) is not True:
         raise ValueError("local execution guards rejected launch")
     preflight(claim, cwd)
+    # Recover only locally proven orphan groups before seeking capacity.
+    # Unknown spawn gaps/probe failures remain occupied and block record().
+    recovery = registry.reconcile(clock())
     # Refuse even same-PID replay: a Git claim acknowledgement is not permission
     # to start another copy. Registry lock arbitrates simultaneous supervisors.
     registry.record(dict(receipt, phase="reserved"), os.getpid(), clock(), cap_seconds,
@@ -87,7 +90,8 @@ def run(*, registry, read_claim, guard, installed_head, reviewed_head, argv,
     started = time.monotonic()
     outcome = dict(job=claim["id"], token=receipt["token"], host=registry.host,
                    worker=receipt["worker"], account=receipt["account"], head=installed_head,
-                   phase="not_started", startedAt=clock().isoformat(), exit_code=None)
+                   phase="not_started", startedAt=clock().isoformat(), exit_code=None,
+                   recovery=recovery)
     try:
         latest = read_claim()
         current = validate_claim(latest, registry, installed_head, reviewed_head, clock())
@@ -110,6 +114,14 @@ def run(*, registry, read_claim, guard, installed_head, reviewed_head, argv,
             registry.arm(receipt["token"], os.getpid())
             child = subprocess.Popen(list(argv), cwd=cwd, stdout=log, stderr=subprocess.STDOUT,
                                      stdin=subprocess.DEVNULL, start_new_session=True)
+            # A very short child may already have exited. The finally block
+            # still reaps its group; only running leaders need a recovery ID.
+            if child.poll() is None:
+                try:
+                    registry.attach(receipt["token"], os.getpid(), child.pid)
+                except (ValueError, ProcessLookupError):
+                    if child.poll() is None:
+                        raise
             outcome["phase"] = "running"
             while child.poll() is None:
                 if time.monotonic() - started >= cap_seconds:

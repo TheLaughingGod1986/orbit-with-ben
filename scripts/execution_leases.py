@@ -13,30 +13,72 @@ import json
 import os
 import pathlib
 import re
+import signal
 import subprocess
 import tempfile
+import time
 
 import workflow_state as workflow
 
 
 def process_identity(pid):
     """Bind PID to OS start time so PID reuse cannot preserve an old lease."""
+    return _process_identity(pid, ["-o", "lstart=", "-o", "comm="])
+
+
+def child_identity(pid):
+    # macOS Python execs its application binary after Popen returns. exec does
+    # not create a new process: its birth time is the stable PID identity. The
+    # canonical approved argv remains the launcher's responsibility.
+    return _process_identity(pid, ["-o", "lstart="])
+
+
+def _process_identity(pid, fields):
     if type(pid) is not int or pid <= 0:
         return None
     try:
-        result = subprocess.run(["ps", "-p", str(pid), "-o", "lstart=", "-o", "comm="],
+        result = subprocess.run(["ps", "-p", str(pid), *fields],
                                 capture_output=True, text=True, timeout=3)
-        return result.stdout.strip() if result.returncode == 0 and result.stdout.strip() else None
-    except (OSError, subprocess.SubprocessError):
-        return None
+        if result.returncode == 0 and result.stdout.strip():
+            return result.stdout.strip()
+        if result.returncode == 1 and not result.stdout.strip() and not result.stderr.strip():
+            return None  # ps positively found no such PID.
+        raise RuntimeError("process identity probe failed")
+    except (OSError, subprocess.SubprocessError) as error:
+        raise RuntimeError("process identity probe unavailable") from error
+
+
+def group_members(pgid):
+    """Observe executing group members; errors are never an empty group.
+
+    Zombies cannot execute work and are excluded. No command arguments or
+    environment values are collected. This probe is local-host only.
+    """
+    if type(pgid) is not int or pgid <= 1:
+        raise ValueError("positive child process group required")
+    result = subprocess.run(["ps", "-axo", "pid=,pgid=,stat="],
+                            capture_output=True, text=True, timeout=3)
+    if result.returncode != 0 or result.stderr.strip():
+        raise RuntimeError("process group observation unavailable")
+    members = []
+    for line in result.stdout.splitlines():
+        parts = line.split()
+        if len(parts) != 3 or not parts[0].isdigit() or not parts[1].isdigit():
+            raise RuntimeError("malformed process group observation")
+        if int(parts[1]) == pgid and not parts[2].startswith("Z"):
+            members.append(int(parts[0]))
+    if not result.stdout.strip():
+        raise RuntimeError("empty process table is not exit evidence")
+    return members
 
 
 class Registry:
-    def __init__(self, root, host, limit, *, probe=process_identity):
+    def __init__(self, root, host, limit, *, probe=process_identity, child_probe=child_identity):
         if not re.fullmatch(r"[A-Za-z0-9_-]{1,80}", host) or type(limit) is not int or not 1 <= limit <= 8:
             raise ValueError("registered host and bounded configured limit required")
         self.root = pathlib.Path(root)
         self.host, self.limit, self.probe = host, limit, probe
+        self.child_probe = child_probe
 
     @contextlib.contextmanager
     def locked(self):
@@ -65,11 +107,8 @@ class Registry:
     def _live(self, rows, at):
         live = []
         for row in rows:
-            if not isinstance(row, dict) or row.get("host") != self.host:
-                raise ValueError("execution registry host mismatch")
-            start, end = workflow.timestamp(row.get("startedAt")), workflow.timestamp(row.get("expiresAt"))
-            if (start and end and start <= at and row.get("process_identity")
-                    and self.probe(row.get("pid")) == row["process_identity"]):
+            end = self._validate_row(row, at)
+            if self.probe(row["pid"]) == row["process_identity"]:
                 # A timer is not process-exit proof. A stuck supervisor keeps its
                 # slot occupied until it is confirmed dead, even after its cap.
                 live.append(dict(row, overdue=at >= end, process_validated=True))
@@ -79,6 +118,17 @@ class Registry:
                 # Never silently turn an orphaned launch into spare capacity.
                 live.append(dict(row, process_validated=False, recovery_required=True))
         return live
+
+    def _validate_row(self, row, at):
+        if not isinstance(row, dict) or row.get("host") != self.host:
+            raise ValueError("execution registry host mismatch")
+        start, end = workflow.timestamp(row.get("startedAt")), workflow.timestamp(row.get("expiresAt"))
+        if (not start or not end or not start <= at or not end > start
+                or type(row.get("pid")) is not int or row["pid"] <= 0
+                or any(not isinstance(row.get(k), str) or not row[k]
+                       for k in ("token", "job", "worker", "account", "process_identity"))):
+            raise ValueError("malformed execution registry is not spare capacity")
+        return end
 
     def observe(self, at):
         with self.locked() as rows:
@@ -96,6 +146,73 @@ class Registry:
                     or self.probe(pid) != row.get("process_identity")):
                 raise ValueError("only the live recorded supervisor may arm a launch")
             row["child_may_exist"] = True
+
+    def attach(self, token, pid, child_pid):
+        """Bind the spawned session leader before allowing orphan recovery.
+
+        A crash between arm/spawn/attach remains quarantined. Never guess a
+        child PID from its command, age, log or another host's process table.
+        """
+        identity = self.child_probe(child_pid)
+        if not identity or os.getpgid(child_pid) != child_pid or child_pid == pid:
+            raise ValueError("validated independent child group required")
+        with self.locked() as rows:
+            row = next((r for r in rows if r.get("token") == token), None)
+            if (not row or row.get("pid") != pid or not row.get("child_may_exist")
+                    or self.probe(pid) != row.get("process_identity") or row.get("child_pid")):
+                raise ValueError("only the armed supervisor may attach one child")
+            row.update(child_pid=child_pid, child_identity=identity)
+
+    def reconcile(self, at, *, members=group_members, kill_group=os.killpg,
+                  timeout=2, monotonic=time.monotonic, pause=time.sleep):
+        """Recover confirmed orphan groups without releasing canonical claims.
+
+        Only a dead/reused supervisor and the exact recorded live child leader
+        authorize a kill. A missing/reused leader with surviving descendants,
+        an unrecorded spawn or failed probe stays quarantined. Release requires
+        a successful empty-group observation AFTER cleanup. No automatic retry
+        or queue completion follows; durable launch seals remain untouched.
+        """
+        if not isinstance(timeout, (int, float)) or not 0 < timeout <= 5:
+            raise ValueError("bounded recovery timeout required")
+        results = []
+        with self.locked() as rows:
+            retained = []
+            for row in rows:
+                self._validate_row(row, at)
+                result = dict(token=row.get("token"), job=row.get("job"), phase="quarantined")
+                try:
+                    if self.probe(row.get("pid")) == row.get("process_identity") and row.get("process_identity"):
+                        retained.append(row)
+                        continue  # Including overdue supervisors: timer is not exit proof.
+                    if not row.get("child_may_exist"):
+                        result["phase"] = "dead_supervisor_recovered"
+                    else:
+                        child_pid = row.get("child_pid")
+                        if not child_pid or not row.get("child_identity"):
+                            raise ValueError("unrecorded child requires explicit investigation")
+                        current = members(child_pid)
+                        if current:
+                            if (child_pid not in current
+                                    or self.child_probe(child_pid) != row["child_identity"]):
+                                raise ValueError("child group identity cannot be established")
+                            # Recheck supervisor just before signalling; a probe
+                            # error or unexpected identity keeps the slot closed.
+                            if self.probe(row.get("pid")) == row.get("process_identity"):
+                                raise ValueError("supervisor became live during recovery")
+                            kill_group(child_pid, signal.SIGKILL)
+                            until = monotonic() + timeout
+                            while members(child_pid):
+                                if monotonic() >= until:
+                                    raise ValueError("child group cleanup not confirmed")
+                                pause(0.02)
+                        result["phase"] = "orphan_recovered"
+                except (OSError, subprocess.SubprocessError, RuntimeError, ValueError):
+                    # Deliberately omit OS error/command details from reports.
+                    retained.append(dict(row, recovery_required=True, process_validated=False))
+                results.append(result)
+            rows[:] = retained
+        return results
 
     def record(self, reservation, pid, at, cap_seconds, *, exclusive=False):
         if (reservation.get("host") != self.host or reservation.get("phase") != "reserved"

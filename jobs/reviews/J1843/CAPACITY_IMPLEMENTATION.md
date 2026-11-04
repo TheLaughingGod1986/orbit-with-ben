@@ -349,3 +349,51 @@ outbound/return receipt consumption, and HOS stage transactions where needed.
 Then exact-head Chief review and observed real host transitions. This remaining
 integration exceeds the bounded run, so release J1843 at a clean checkpoint.
 No extra lane, production launch, portable dispatch, spend or publishing enabled.
+
+## Resume checkpoint — 4 November, 05:24 UTC onward
+
+Continued the existing PR437 branch in `/private/tmp/J1843-run`, merged current
+main, and preserved the original **1/3** plan. Step 2 remains unfinished.
+
+Added conservative local orphan recovery to the internal supervisor adapter.
+The registry durably attaches the child's PID and birth-time identity after
+spawn. A later launch attempt can reconcile a confirmed dead supervisor's
+recorded child group, signal only its matching live leader, and free the local
+slot only after observing no executing group members. The real local regression
+kills a supervisor, verifies quarantine, then launches a distinct canonical
+token through recovery; both durable launch seals survive and the queue claim
+remains unchanged. macOS Python's executable trampoline required child birth
+time rather than command path as the stable identity across exec.
+
+Recovery deliberately leaves unknown arm/spawn/attach gaps, a missing/reused
+leader with surviving descendants, denied probes and unconfirmed cleanup
+quarantined. It does not infer a child from command text or kill a live/overdue
+supervisor. Invalid registry records now fail closed. Process probe failure is
+distinct from confirmed absence. The planner's lease filter no longer discards
+live overdue leases or stale remote evidence; uncertain occupancy blocks new
+proposals on that host. Remote recovery must happen on that remote host.
+
+Validation: **265 tests PASS** across the complete focused suite before the
+last malformed-registry guard, then **18 lease tests and 16 supervisor tests
+PASS** on the final code. Capacity planning/reservation/claim/Git-race tests are
+included in the full run. Core sync (56 files), whitespace and compilation pass.
+All subprocesses/worker CLIs in these tests are local harmless tests/fakes;
+none spend credits, review media or establish real two-host rollout readiness.
+
+Fresh observations: both repos pulled; HOS Codex inbox empty; Mini disk about
+22 GiB free. Process-visible capacity report finds only this J1843 Codex lease,
+ending 05:49:27Z, with legacy machine/account attribution. Cached generic
+MacBook heartbeat 05:18:45Z was already stale (~592 seconds); identity,
+power/idle/resources and account/model/capability readiness remain unverified.
+Cursor's noninteractive status exits 0 and reports login success with user
+details unavailable; model/quota execution was not tested. This does not prove
+spare account capacity or clear an earlier execution failure. Audio/moving-video
+capability remains undemonstrated. Free-slot outlook remains unknown.
+
+Next on this same job/PR: trusted fresh registered-host/account evidence,
+production supervisor/claim integration, supported laptop outbound/return
+receipt consumption and HOS stage transactions where needed, then exact-head
+Chief review and observed host transitions. Unidentifiable orphan gaps still
+require an explicit recovery decision. The remaining integration exceeds the
+capped run; release at this tested checkpoint. No production caller, extra lane,
+portable execution, spend or publishing has been enabled.
