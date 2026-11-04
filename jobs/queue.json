@@ -170394,13 +170394,13 @@
       "stage": "topic",
       "after": "J1803",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T14:59Z",
-      "eta": "2026-11-04T16:59Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T05:11Z",
-      "result": "",
+      "result": "jobs/reviews/J1958/TOPIC_EVIDENCE_2026-11-04.md (commit 360ba5cc2b): verified 9 education/space videos at 1.16M-9.28M views via yt-dlp (including Astrum 4ZnN44BTTjU at 1,765,348 views on Hyperion), discarded unsupported J0773 placeholder rows and vidIQ scores (UNKNOWN), verified 0 exact-title collisions, confirmed Short-first prerequisite UNMET (0 OWB Hyperion Shorts; all 4 Saturn Rings Shorts missed >=200 views and >=40% stayed), and recommended DEFER to elected-Chief job J1960 while J1961/J1962 complete under J1805.",
       "history": [
         {
           "at": "2026-11-04T05:11Z",
@@ -170441,6 +170441,11 @@
           "at": "2026-11-04T15:13Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed 360ba5cc2b (TOPIC_OPPORTUNITY_SCORE.md, repaired PRE_BUILD_VIDIQ_AUDIT.md, refreshed PRODUCTION_CHECKLIST_V2.md, production-status.md, jobs/reviews/J1958/TOPIC_EVIDENCE_2026-11-04.md) and set 060 topic stage to review for J1960"
+        },
+        {
+          "at": "2026-11-04T15:13Z",
+          "by": "gemini",
+          "what": "done: jobs/reviews/J1958/TOPIC_EVIDENCE_2026-11-04.md (commit 360ba5cc2b): verified 9 education/space videos at 1.16M-9.28M views via yt-dlp (including Astrum 4ZnN44BTTjU at 1,765,348 views on Hyperion), discarded unsupported J0773 placeholder rows and vidIQ scores (UNKNOWN), verified 0 exact-title collisions, confirmed Short-first prerequisite UNMET (0 OWB Hyperion Shorts; all 4 Saturn Rings Shorts missed >=200 views and >=40% stayed), and recommended DEFER to elected-Chief job J1960 while J1961/J1962 complete under J1805."
         }
       ],
       "remaining_action": "Complete J1958 and post #99 report",
@@ -170463,7 +170468,8 @@
       },
       "taskKeys": [
         "OWB:060"
-      ]
+      ],
+      "done_ref": "360ba5cc2b"
     },
     {
       "id": "J1959",
