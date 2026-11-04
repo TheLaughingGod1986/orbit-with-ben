@@ -162158,10 +162158,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-04T19:41Z",
-      "eta": "2026-11-04T21:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "Chief FIX at 91576db52d: 94 capacity tests PASS; CI stale STATUS.md and production caller integration incomplete. Same-job engineering ready; no merge or rollout.",
@@ -162480,6 +162480,11 @@
           "at": "2026-11-04T19:52Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR437 head 35d648ce61: failed-launch canonical reconciliation and queue-commit review identity fixed; 321 tests PASS. Production callers/transport and observed acceptance remain; no rollout."
+        },
+        {
+          "at": "2026-11-04T19:52Z",
+          "by": "codex",
+          "what": "released: Tested checkpoint PR437 head 35d648ce61f41869c2d6de80eeacb4e2a66ef200; preserve 2/3. Fixed failure reconciliation and real-Git HEAD drift. Next: disabled production callers in chief_relay/macbook_worker, supported consuming-host input/output receipts and reconciliation, caller success/failure/changing-guard tests, then exact-head review and observed-host acceptance. Remaining integration exceeds a bounded 20-minute segment. Ready engineering remains open, no timed hold; rollout disabled."
         }
       ],
       "remaining_action": "Finish disabled Mini/laptop callers and consuming-host receipt transport, then exact-head review",
