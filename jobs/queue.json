@@ -172149,19 +172149,24 @@
           "at": "2026-11-04T10:46Z",
           "by": "codex",
           "what": "step 2 of 3 done: Parent hold recorded with recheck J2008; original 11:40:45Z check and approval preserved"
+        },
+        {
+          "at": "2026-11-04T10:47Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback PASS: blocked parent 1/3; approval retained; recheck J2008 and original retry preserved"
         }
       ],
-      "remaining_action": "Verify persisted hold and close verification",
+      "remaining_action": "Verification complete; J1878 retains authorization hold",
       "kind": "chief",
       "recheck_of": "J1878",
       "due": "2026-11-03T18:54:58+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T10:46Z",
+        "at": "2026-11-04T10:47Z",
         "by": "codex",
-        "note": "Parent hold recorded with recheck J2008; original 11:40:45Z check and approval preserved"
+        "note": "Readback PASS: blocked parent 1/3; approval retained; recheck J2008 and original retry preserved"
       },
       "taskKeys": [
         "OWB:025",
