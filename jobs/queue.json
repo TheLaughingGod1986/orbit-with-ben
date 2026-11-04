@@ -170785,19 +170785,24 @@
           "at": "2026-11-04T08:13Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting J1988 condition verification for J1878 (OWB:025, HOS:005)"
+        },
+        {
+          "at": "2026-11-04T08:15Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J1878, J1915, J1975 and local ecd8d8ff06 report; 3 asset hashes match; no new direct approval or clearance since 00:49Z rejection"
         }
       ],
-      "remaining_action": "Inspect J1878 approval history, J1915/J1975 decisions, and check for any new direct authorization or clearance",
+      "remaining_action": "Update J1878 hold with --recheck J1988 and next sensible retry time; preserve 1/3 progress and approval history",
       "kind": "chief",
       "recheck_of": "J1878",
       "due": "2026-11-03T18:54:58+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-04T08:13Z",
+        "at": "2026-11-04T08:15Z",
         "by": "gemini",
-        "note": "Starting J1988 condition verification for J1878 (OWB:025, HOS:005)"
+        "note": "Read J1878, J1915, J1975 and local ecd8d8ff06 report; 3 asset hashes match; no new direct approval or clearance since 00"
       },
       "taskKeys": [
         "OWB:025",
