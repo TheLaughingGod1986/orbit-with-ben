@@ -169428,7 +169428,7 @@
     {
       "id": "J1967",
       "title": "061 Venus rotation: direct MUST QUOTE review after Gemini facts",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "OWB:061 direct MUST QUOTE review after J1808 formal Gemini successor. Read jobs/reviews/J1808/CHIEF_SOURCES_RULING_2026-11-04.md, raw Gemini findings/input hashes, current SOURCES.md and exact script candidate. Follow review specialist routing. Deliver 01_Script/CLAUDE_QUOTE_CHECK_v01.md naming actual reviewer/model/date; never impersonate Claude. Open original sources for each MUST QUOTE row/subclaim and key spoken/visual number; verify literal quote existence AND contextual support for the script wording. Prior authoring claims or a Gemini verdict alone do not suffice. Record hashes, per-claim PASS/FLAG/UNVERIFIABLE, source URL and short excerpt/location. Check row-16 synthesis individually and resolve the local-text flags in J1808/J1807, including day definitions, certainty, dates, numerical comparisons, person years and image provenance. No spoken-line rewrite or media approval.\nReturn unresolved corrections to J1964, the existing elected-Chief topic/editorial and final-lock owner, alongside J1963 topic evidence. Revised/new claims require delta facts and direct quote checks on the final version before explicit lock. Keep sources unapproved until resolved; task completion is not source/script approval. No spend, VO, generation, upload, schedule or visibility change. Preserve drafts, focus and all Ben gates.\n",
       "ref": "J1808",
@@ -169448,10 +169448,24 @@
           "at": "2026-11-04T06:07Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T06:11Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4578 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Directly verify exact source quotations and context after J1966; return flags to J1964",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
