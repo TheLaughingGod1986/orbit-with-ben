@@ -172876,17 +172876,22 @@
           "at": "2026-11-04T12:07Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Completed Rule 15 + Rule 12 evaluation for OWB 025-061 and HOS 006-013/099; identified OWB 026 (28c bare question) and OWB 028 (57c > 50c) for Data API retitle, HOS 006/007 skipped for API edit due to saved Title Test & Compare, and HOS 008/010 + OWB drafts for manifest/status updates"
+        },
+        {
+          "at": "2026-11-04T12:10Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Applied Rule 15 rewrites via YouTube Data API on OWB 026 c5AdqQsnnys ('Why Reaching the Nearest Star Takes 75,000 Years', 48c) and OWB 028 F-jImX5h7ws ('What Happens When a Star Enters Our Solar System?', 49c) and verified live readbacks; skipped HOS 006/007 (active Title Test & Compare)"
         }
       ],
-      "remaining_action": "Run Data API retitle dry-run and apply passing Rule 15 rewrites on scheduled private videos without a Title Test & Compare (OWB 026 c5AdqQsnnys, OWB 028 F-jImX5h7ws)",
+      "remaining_action": "Update UPLOADS.json, upload manifests, and draft title files in OWB and HOS, then post report on #478",
       "due": "2026-11-05T00:00:00Z",
       "kind": "listing",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-04T12:07Z",
+        "at": "2026-11-04T12:10Z",
         "by": "gemini",
-        "note": "Completed Rule 15 + Rule 12 evaluation for OWB 025-061 and HOS 006-013/099; identified OWB 026 (28c bare question) and O"
+        "note": "Applied Rule 15 rewrites via YouTube Data API on OWB 026 c5AdqQsnnys ('Why Reaching the Nearest Star Takes 75,000 Years'"
       },
       "taskKeys": [
         "OWB:025",
