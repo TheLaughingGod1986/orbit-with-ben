@@ -158573,10 +158573,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T04:57Z",
+      "eta": "2026-11-04T06:57Z",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
       "result": "",
@@ -158585,6 +158585,11 @@
           "at": "2026-11-03T10:50Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T04:57Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 059 topic handoff and records the next owner/action",
@@ -158594,6 +158599,14 @@
         "stage": "topic",
         "kind": "orphan-review",
         "signature": "923edc28e3f180af6eec"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T04:57Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
