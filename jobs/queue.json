@@ -171071,9 +171071,14 @@
           "at": "2026-11-04T18:05Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Wrote 01_Script/CLAUDE_QUOTE_CHECK_v01.md (mirrored at jobs/reviews/J1967/DIRECT_QUOTE_CHECK_2026-11-04.md), updated SOURCES.md and production-status.md; verified script drafts untouched"
+        },
+        {
+          "at": "2026-11-04T18:06Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Committed CLAUDE_QUOTE_CHECK_v01.md, DIRECT_QUOTE_CHECK_2026-11-04.md, INPUT_SHA256SUMS.txt, updated SOURCES.md and production-status.md; set 061 sources to review and released claim"
         }
       ],
-      "remaining_action": "Commit J1967 direct quote report, release 061 sources claim, mark J1967 done, and report on #99",
+      "remaining_action": "Finish J1967 and post report on PR #99",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -171085,11 +171090,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-04T18:05Z",
+        "at": "2026-11-04T18:06Z",
         "by": "gemini",
-        "note": "Wrote 01_Script/CLAUDE_QUOTE_CHECK_v01.md (mirrored at jobs/reviews/J1967/DIRECT_QUOTE_CHECK_2026-11-04.md), updated SOU"
+        "note": "Committed CLAUDE_QUOTE_CHECK_v01.md, DIRECT_QUOTE_CHECK_2026-11-04.md, INPUT_SHA256SUMS.txt, updated SOURCES.md and prod"
       },
       "taskKeys": [
         "OWB:061"
