@@ -161031,9 +161031,14 @@
           "at": "2026-11-04T01:59Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T01:59Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Continue PR437 canonical cross-host claims and launch integration; then exact-head review and observed rollout",
+      "remaining_action": "Inspect dispatch code and actual host evidence, implement guarded capacity and portable overflow, test and submit for exact-head review",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -161042,11 +161047,10 @@
       "due": "2026-11-03T23:37:09+00:00",
       "due_kind": "user-resource-unblock",
       "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-04T01:09Z",
-        "by": "codex",
-        "note": "Checkpoint 0d6d543bfa adds bounded hash-verified portable bundles and return receipts. 188 tests PASS; step 2 incomplete"
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-04T01:59Z",
+        "by": "codex"
       }
     },
     {
