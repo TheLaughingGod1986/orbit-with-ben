@@ -172383,10 +172383,10 @@
       "stage": "",
       "after": "",
       "eta_min": 25,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-04T11:25Z",
-      "eta": "2026-11-04T11:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T10:51Z",
       "result": "",
@@ -172420,6 +172420,11 @@
           "at": "2026-11-04T11:30Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR477 merged/installed; PR437 FIX reproduced and original J1843 reopened at2/3. J2016 scopes five jitter repairs. Buffer/audio unchanged checks moved to daily/new-evidence; no gates relaxed."
+        },
+        {
+          "at": "2026-11-04T11:31Z",
+          "by": "codex",
+          "what": "released: 2/3 complete. PR477 merged d12b004c67 and installed ee1e8f91f1b02846; parent runner51547 on672fbdd6a32d7c9c hosts this worker and reloads only after exit. Next run verify fresh runner/installed/board match and actual eligible claim; do not repeat reviews. PR437 FIX goes to original J1843 at2/3; J2016 owns jitter repairs; unchanged holds consolidated. Report: _desk/handoff/J2010/REPORT.md."
         }
       ],
       "remaining_action": "After this worker exits, verify relay reload and board version ee1e8f91f1b02846 plus actual eligible next claim",

@@ -119,7 +119,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2004 | mini | open (after J2003) | – | – | 047 script · chief · 047 Great Red Spot: decide capacity and advancement after topic evidence | J1933 |
 | J2007 | mini | blocked | codex | – | 048 script · chief · 048 Ceres: decide capacity and advancement after topic evidence |  |
 | J2009 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-review |  |
-| J2010 | mini | claimed | codex | 2026-11-04T11:50Z | chief · Chief: review video-priority PR477 and capacity PR437; verify real production pickup | J1471 / PR477 / PR437 |
+| J2010 | mini | open | – | – | chief · Chief: review video-priority PR477 and capacity PR437; verify real production pickup | J1471 / PR477 / PR437 |
 | J2011 | mini | blocked | codex | – | assembly · Repair native Gemini audio delivery using non-production fixtures before VO review | J1810 / PR438 |
 | J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 | J2014 | mini | open | – | – | for gemini · qa · `gemini-argon` · 026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate |  |
