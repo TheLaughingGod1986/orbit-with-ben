@@ -82,3 +82,7 @@ Pass threshold: 90
 
 Script score: **95.3/100** · PASS
 ```
+
+## Chief handoff repair — J1790, 4 November 2026
+
+**FIX / not locked.** Historical automated score above is not script approval. J0605/J0613 were cancelled as duplicates; the referenced J0789/J0802 approved only unlocked 061 drafts. J1935 now owns the 049 topic/editorial decision, neighbour and pre-build evidence, and routing of formal Gemini facts then direct quote checks before explicit script lock. See `jobs/reviews/J1790/CHIEF_HANDOFF_2026-11-04.md`. Script remains in review; no VO, generation or publishing approval.
