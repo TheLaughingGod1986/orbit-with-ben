@@ -161337,9 +161337,14 @@
           "at": "2026-11-04T03:15Z",
           "by": "codex",
           "what": "step 1 of 3 done: Added canonical claim adapter, MacBook owner binding, guard rechecks, idempotent claim acknowledgement and reservation replay fix. Focused claim tests and two-clone push-race tests pass; launcher/host transport still incomplete."
+        },
+        {
+          "at": "2026-11-04T03:17Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint c1fb2d0205 pushed to existing draft PR437. Guarded claim/OWB board adapter and real local Git contention tests added. 236 focused tests plus added board test pass; core/compile/whitespace pass. Full implementation remains incomplete; no lanes enabled."
         }
       ],
-      "remaining_action": "Verify reservation consumption and real local Git races; checkpoint PR437 without enabling dispatch",
+      "remaining_action": "Continue trusted host evidence, supervisor and laptop transfer integration on PR437 before review/rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -161350,9 +161355,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T03:15Z",
+        "at": "2026-11-04T03:17Z",
         "by": "codex",
-        "note": "Added canonical claim adapter, MacBook owner binding, guard rechecks, idempotent claim acknowledgement and reservation r"
+        "note": "Checkpoint c1fb2d0205 pushed to existing draft PR437. Guarded claim/OWB board adapter and real local Git contention test"
       },
       "rerouted_from": {
         "needs": "mini",
