@@ -1,5 +1,5 @@
 {
-  "next_id": 2016,
+  "next_id": 2017,
   "jobs": [
     {
       "id": "J0001",
@@ -81770,6 +81770,11 @@
           "at": "2026-11-04T10:56Z",
           "by": "relay",
           "what": "condition verification queued: J2012"
+        },
+        {
+          "at": "2026-11-04T11:29Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T11:30:00Z"
         }
       ],
       "kind": "video",
@@ -81799,13 +81804,15 @@
       "review_verdict": "FIX",
       "remaining_action": "Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
       "hold": {
-        "type": "input",
-        "condition": "J2005 verified: J1100 remains blocked 2/3 with audio_input capability hold. Latest local evidence remains 31 Oct; opening/middle/end audition hashes match 3e26b379b. PR333 OPEN at unchanged 0a7fcb6ad with no reviews/comments. S2 instrumental-bed clearance and actual local listening remain unproven; excluded bed remains excluded. Current session tool inspection shows no demonstrated audio perception. Still require v07 assembly/caption repairs, all gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk 22.008 GiB exceeds h43 restart 10 GiB; remeasure at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.",
-        "check_at": "2026-11-04T11:56:23+00:00",
+        "type": "capability",
+        "condition": "J2010: unchanged audio capability blocker remains. Preserve J2005 evidence, J1100 bed clearance requirement, all v07/caption/gate work, J1032 PASS, accepted pickups and S6 audio, historical6/6, Ben S2/S5/S6 approvals and scheduled-v01 fallbacks. No new listening attempt occurred. Recheck only on demonstrated audio_input or new J2011 evidence; daily fallback check, not hourly unchanged audition retries.",
+        "check_at": "2026-11-05T11:30:00Z",
+        "requires": [
+          "audio_input"
+        ],
         "last_recheck": "J2005",
         "checked_at": "2026-11-04T09:51:39+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2012"
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
@@ -81845,6 +81852,9 @@
           "number": "S6",
           "type": "short"
         }
+      ],
+      "required_capabilities": [
+        "audio_input"
       ]
     },
     {
@@ -133363,7 +133373,7 @@
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "J1468",
+      "after": "J2016",
       "eta_min": 120,
       "status": "blocked",
       "by": "codex",
@@ -134017,9 +134027,14 @@
           "at": "2026-11-04T11:13Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-04T11:45:00Z"
+        },
+        {
+          "at": "2026-11-04T11:29Z",
+          "by": "codex",
+          "what": "J2010 correction scope queued as J2016; completed2/3 preserved; media capability gate retained"
         }
       ],
-      "remaining_action": "Chief scope inherited picture corrections; verified audio/motion worker finishes J1471 before J1356",
+      "remaining_action": "After J2016 technical corrections, verified audio/motion worker reviews full cuts; retain 2/3 and J1356 holds",
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
@@ -134049,8 +134064,8 @@
       "model": "gpt-6.1-sol",
       "hold": {
         "type": "capability",
-        "condition": "Repair evidence ce3c8048e9 and /Users/benjaminoats/_desk/handoff/J1471 complete through2/3: new AR1v04/AR2v11/AR3v08 clear opening failures; original AAC hashes unchanged. Truthful metadata exposes five inherited picture/polish jitter FAILs requiring Chief-scoped correction, not waiver. This session inspected shell/text and still-image tools only; no demonstrated acoustic or moving-video input. Require verified full-cut moving/audio/pace assessment after gate correction; J1356 and all Ben/publishing holds remain.",
-        "check_at": "2026-11-04T11:45:00Z",
+        "condition": "J2010 scoped technical corrections in J2016; then require demonstrated audio_input and moving_video_input for full-cut review. Original five FAILs remain until corrected; no media PASS or Ben-watch release.",
+        "check_at": "2026-11-05T11:30:00Z",
         "requires": [
           "audio_input",
           "moving_video_input"
@@ -162081,19 +162096,19 @@
       "title": "Implement capacity-aware Mini dispatch and portable MacBook overflow",
       "needs": "mini",
       "repo": "owb",
-      "body": "J1914 narrow Chief scope, 4 November 2026:\nBen's current measured-capacity request supersedes J0821's historical requirement to wait one week with two agents. This authorizes implementation and tests in J1843 now, NOT enabling a second lane without fresh per-host capacity/account/capability evidence and exact-head review. J0821 is superseded to avoid duplicate engineering. Shared-account quotas, browser/generation single writers, laptop mains/idle checks and real runtime validation remain mandatory.\n\nHistorical brief retained:\n\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nBen repeated resource-unblocking request: inspect actual per-host leases and freshness, current Mini worker authentication/quota failures and MacBook powered/idle availability. Codex Mini and MacBook share an account quota; moving machines does not reset it. Cursor latest execution reports authentication required, while daily credit says exhausted: inspect exact current cause without printing secrets or starting interactive sign-in. Do not call unavailable workers free. Implement/test capacity and portable overflow safely in this existing focused job, with review and observed rollout; no parallel browser/generation writers or unsupported host paths. Do not interrupt an active media review or label queue assignment as a launch/claim.\n\nBen, 3 Nov: run a waiting task on the next capable available agent, use an available MacBook worker when Mini capacity is genuinely exhausted, and otherwise expose who is busy and a supported next-slot outlook. Current relay holds one serial execution lane, so green agents do not imply spare execution slots. MacBook heartbeat reports generic host macbook; verify actual registered machine rather than assume Air/Pro identity.\n\nImplement and review a capacity-aware dispatch change in a focused PR: actual per-host active execution leases, configured limits plus measured resource/capability guards, concurrent independent work only when safe, and an explicit portable-job contract for MacBook spillover. Preserve single elected-Chief signoff, film/stage claims, shared account limits, generation/browser mutexes, dependency/Ben/money gates and atomic queue claims. Do not blindly run several render/browser jobs or route Mini-only paths/sign-ins to the laptop. Transfer required approved inputs/output receipts only with verified readable hashes and supported access. Respect mains/idle/disk guards; do not interrupt a laptop in use. Worker fallback must use verified model/media capability, not just a green heartbeat. Expose running job, owner, host, current action/progress and recorded task estimate; distinguish that from a reserved/free-slot estimate. If no supported availability estimate exists, explicitly report unknown, never invent a countdown.\n\nSeparate external-condition waits, ready queue/capacity waits and pending review so a check_at timestamp never becomes a deliberate worker start delay. Keep delivered candidate review ready without automatically approving it or redoing acquisition. Use J1834/J1841 as regression evidence, including a busy Chief plus another available specialist. The frontend explanation in PR412 is presentation only and does not implement parallel scheduling.\n\nTests: one eligible free lane dispatches immediately; busy Mini plus powered/idle/capable MacBook stages portable job exactly once; laptop in use/offline/unsupported remains excluded; no two hosts claim same job/stage; model outage walks capability-safe fallback; Chief review/signoff preserved; unavailable media capability remains explicit; dead worker lease recovery; no paid generation/publishing performed by tests. Rollout requires exact-head Chief review and observed real host transitions, not CI alone. No spend, media regeneration, upload, schedule, visibility or policy changes are authorized by this engineering task.\n",
+      "body": "J2010 exact-head review FIX on PR437 1c309dd443: capacity_reservations.consume_with_git calls hos_board_claim inside the OWB Git retry callback without rollback or durable cross-repo reconciliation. Reproduced: first callback claims HOS007 edit; OWB push rejection discards queue attempt; refreshed HOS evidence then rejects retry (no currently eligible capacity proposal), leaving canonical queue OPEN and HOS stage owned by codex. Existing 68 capacity tests pass with process inspection, but omit this cross-repo retry. Fix with retry-safe durable reconciliation/compensation or fail closed on HOS stages until a supported adapter exists; add push-race regression. Preserve implementation 2/3; no rollout. Fresh Mini host registration/probes absent; cached MacBook battery/in-use and stale. Re-review new head and compose PR477 before normal merge; no extra lanes until original observed-host contract passes.\n\nJ1914 narrow Chief scope, 4 November 2026:\nBen's current measured-capacity request supersedes J0821's historical requirement to wait one week with two agents. This authorizes implementation and tests in J1843 now, NOT enabling a second lane without fresh per-host capacity/account/capability evidence and exact-head review. J0821 is superseded to avoid duplicate engineering. Shared-account quotas, browser/generation single writers, laptop mains/idle checks and real runtime validation remain mandatory.\n\nHistorical brief retained:\n\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nBen repeated resource-unblocking request: inspect actual per-host leases and freshness, current Mini worker authentication/quota failures and MacBook powered/idle availability. Codex Mini and MacBook share an account quota; moving machines does not reset it. Cursor latest execution reports authentication required, while daily credit says exhausted: inspect exact current cause without printing secrets or starting interactive sign-in. Do not call unavailable workers free. Implement/test capacity and portable overflow safely in this existing focused job, with review and observed rollout; no parallel browser/generation writers or unsupported host paths. Do not interrupt an active media review or label queue assignment as a launch/claim.\n\nBen, 3 Nov: run a waiting task on the next capable available agent, use an available MacBook worker when Mini capacity is genuinely exhausted, and otherwise expose who is busy and a supported next-slot outlook. Current relay holds one serial execution lane, so green agents do not imply spare execution slots. MacBook heartbeat reports generic host macbook; verify actual registered machine rather than assume Air/Pro identity.\n\nImplement and review a capacity-aware dispatch change in a focused PR: actual per-host active execution leases, configured limits plus measured resource/capability guards, concurrent independent work only when safe, and an explicit portable-job contract for MacBook spillover. Preserve single elected-Chief signoff, film/stage claims, shared account limits, generation/browser mutexes, dependency/Ben/money gates and atomic queue claims. Do not blindly run several render/browser jobs or route Mini-only paths/sign-ins to the laptop. Transfer required approved inputs/output receipts only with verified readable hashes and supported access. Respect mains/idle/disk guards; do not interrupt a laptop in use. Worker fallback must use verified model/media capability, not just a green heartbeat. Expose running job, owner, host, current action/progress and recorded task estimate; distinguish that from a reserved/free-slot estimate. If no supported availability estimate exists, explicitly report unknown, never invent a countdown.\n\nSeparate external-condition waits, ready queue/capacity waits and pending review so a check_at timestamp never becomes a deliberate worker start delay. Keep delivered candidate review ready without automatically approving it or redoing acquisition. Use J1834/J1841 as regression evidence, including a busy Chief plus another available specialist. The frontend explanation in PR412 is presentation only and does not implement parallel scheduling.\n\nTests: one eligible free lane dispatches immediately; busy Mini plus powered/idle/capable MacBook stages portable job exactly once; laptop in use/offline/unsupported remains excluded; no two hosts claim same job/stage; model outage walks capability-safe fallback; Chief review/signoff preserved; unavailable media capability remains explicit; dead worker lease recovery; no paid generation/publishing performed by tests. Rollout requires exact-head Chief review and observed real host transitions, not CI alone. No spend, media regeneration, upload, schedule, visibility or policy changes are authorized by this engineering task.\n",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-04T09:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "parked for Chief: Step 2/3 implementation and 292-test verification complete on PR437 head 1c309dd443 (codex/J1843-capacity, rollout_enabled=False). Needs Step 3 exact-head Chief review and observed real-host transitions before enabling capacity rollout.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162344,9 +162359,14 @@
           "at": "2026-11-04T10:05Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Step 2/3 implementation and 292-test verification complete on PR437 head 1c309dd443 (codex/J1843-capacity, rollout_enabled=False). Needs Step 3 exact-head Chief review and observed real-host transitions before enabling capacity rollout."
+        },
+        {
+          "at": "2026-11-04T11:29Z",
+          "by": "codex",
+          "what": "reopened: J2010 exact-head review FIX on PR437 1c309dd443: capacity_reservations.consume_with_git calls hos_board_claim inside the OWB Git retry callback without rollback or durable cross-repo reconciliation. Reproduced: first callback claims HOS007 edit; OWB push rejection discards queue attempt; refreshed HOS evidence then rejects retry (no currently eligible capacity proposal), leaving canonical queue OPEN and HOS stage owned by codex. Existing 68 capacity tests pass with process inspection, but omit this cross-repo retry. Fix with retry-safe durable reconciliation/compensation or fail closed on HOS stages until a supported adapter exists; add push-race regression. Preserve implementation 2/3; no rollout. Fresh Mini host registration/probes absent; cached MacBook battery/in-use and stale. Re-review new head and compose PR477 before normal merge; no extra lanes until original observed-host contract passes."
         }
       ],
-      "remaining_action": "Exact-head Chief review of PR437 head 1c309dd443 and observed real-host transitions before enabling capacity rollout",
+      "remaining_action": "Fix PR437 HOS claim rollback on OWB push races, add regression, then exact-head review; capacity stays disabled",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162354,13 +162374,6 @@
       "urgent": 2,
       "due": "2026-11-03T23:37:09+00:00",
       "due_kind": "user-resource-unblock",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-04T10:04Z",
-        "by": "gemini",
-        "note": "PR437 synced with main at 1c309dd443; 292 focused tests + core_sync/py_compile/diff PASS; rollout_enabled=False"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -162369,7 +162382,14 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "progress": {
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-04T10:04Z",
+        "by": "gemini",
+        "note": "PR437 synced with main at 1c309dd443; 292 focused tests + core_sync/py_compile/diff PASS; rollout_enabled=False"
+      }
     },
     {
       "id": "J1844",
@@ -165245,6 +165265,11 @@
           "at": "2026-11-04T10:45Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-04T11:40:45Z"
+        },
+        {
+          "at": "2026-11-04T11:29Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T11:30:00Z"
         }
       ],
       "remaining_action": "Resolve trusted authorization for three R2 assets and six scoped Buffer posts, then revalidate live inputs before execution",
@@ -165286,8 +165311,8 @@
       "model": "gpt-6.1-sol",
       "hold": {
         "type": "input",
-        "condition": "J2008 reviewed recorded Ben approval and J1915/J1975/J1988/J1998 against later automatic rejection ecd8d8ff06. Fresh OWB comments through 6628630667 and HOS desk since previous verification show no newer clearance. Trusted authorization accepted by automatic review remains unresolved for three R2 assets and six scoped Buffer creates. Preserve approval history; no writes or bypass from verification.",
-        "check_at": "2026-11-04T11:40:45Z",
+        "condition": "J2010: Ben approval remains recorded and is not missing. Automatic rejection ecd8d8ff06 rejected its transmission through queue/tool output, not the underlying scope. No supported trust-transfer mechanism is exposed in this session. Resume only in the original approval-bearing interactive conversation with its actual user message visible to the execution review, or an explicitly supported platform approval handoff; copying approval into files, another relay, or alternate egress is not clearance. Revalidate three hashes and six posts only after that context accepts authorization. No external writes retried. Next daily check is for changed execution context only; do not repeat unchanged hourly verification.",
+        "check_at": "2026-11-05T11:30:00Z",
         "last_recheck": "J2008",
         "checked_at": "2026-11-04T10:45:14+00:00",
         "checked_by": "codex"
@@ -172497,7 +172522,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -172509,6 +172534,11 @@
           "at": "2026-11-04T10:56Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:29Z",
+          "by": "codex",
+          "what": "cancelled: J2010 consolidated unchanged condition review; parent remains blocked, approvals preserved, next daily check or genuine new evidence."
         }
       ],
       "remaining_action": "Verify readiness: Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
@@ -172624,6 +172654,40 @@
       "recheck_of": "J1754",
       "due": "2026-11-04T12:15:30+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2016",
+      "title": "AR cohort: repair five inherited still-push jitter failures",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief Codex J2010 authorizes bounded no-spend correction of the five truthful picture/polish jitter failures in J1471 evidence ce3c8048e9, persistent /Users/benjaminoats/_desk/handoff/J1471/REPORT.md. AR1 v04: as11 opening at0:01 and pan at0:13; AR2 v11: Blue Marble at0:04; AR3 v08: Blue Marble at0:04 and corona at0:16. Rebuild ONLY affected still transforms/composites smoothly from existing approved source assets, retaining exact duration, captions, overlays, clocks, loop/preroll construction and original AAC packet hashes. New versions only; preserve all prior cuts/manifests. No asset search, generation, gate weakening or synthetic metadata. Inspect source/cut mapping before changing; run authoritative complete-metadata picture/polish, opening, loop, music/SFX and finish checks. Preserve J1849 exact ISS opening/preroll approval and h40/h42 timing. Deliver persistent masters and hashes with explicit technical results, then return to parent J1471 at2/3 for verified full moving/audio/pace review. This correction scope is not media approval. If source/timing preservation cannot be maintained, report the concrete conflict. No publishing, Ben-watch release, or audio API egress. Detach long renders with logs/done files and no duplicates.",
+      "ref": "J2010 / J1471 / ce3c8048e9",
+      "film": "",
+      "stage": "",
+      "after": "J1468",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T11:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T11:29Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair five still-push jitter failures in new versions; preserve AAC and timing; run technical gates",
+      "due": "2026-11-04T10:51:54Z",
+      "kind": "assembly",
+      "taskKeys": [
+        "OWB:030"
+      ],
+      "urgent": 1,
+      "j2010_correction": "J1471"
     }
   ],
   "focus": [],
