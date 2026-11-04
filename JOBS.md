@@ -128,7 +128,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2018 | mini | open | – | – | qa · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2022 | mini | open | – | – | qa · Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini) |  |
+| J2022 | mini | claimed | claude | – | qa · Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini) |  |
 
 Recently finished:
 
