@@ -90429,6 +90429,11 @@
           "at": "2026-11-04T12:56Z",
           "by": "relay",
           "what": "condition verification queued: J2024"
+        },
+        {
+          "at": "2026-11-04T15:41Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "studio",
@@ -90459,7 +90464,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-04T13:56:28+00:00",
         "recheck_task": "J2024"
-      }
+      },
+      "escalated_at": "2026-11-04T15:41Z"
     },
     {
       "id": "J1000",
