@@ -161627,9 +161627,14 @@
           "at": "2026-11-04T04:26Z",
           "by": "codex",
           "what": "step 1 of 3 done: Local capped supervisor added; 64 capacity and 8 lease tests passed. Additional regression suite underway; production callers and extra lanes remain disabled."
+        },
+        {
+          "at": "2026-11-04T04:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Committed 702c10404d to existing draft PR437: capped local supervisor, durable replay seals and orphan quarantine. All focused suites pass (255 current cases); implementation still incomplete, no lanes enabled."
         }
       ],
-      "remaining_action": "Finish trusted host evidence, crash reconciliation and portable integration before review/rollout",
+      "remaining_action": "Complete trusted host evidence, crash reconciliation and portable integration before review/rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -161640,9 +161645,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T04:26Z",
+        "at": "2026-11-04T04:28Z",
         "by": "codex",
-        "note": "Local capped supervisor added; 64 capacity and 8 lease tests passed. Additional regression suite underway; production ca"
+        "note": "Committed 702c10404d to existing draft PR437: capped local supervisor, durable replay seals and orphan quarantine. All f"
       },
       "rerouted_from": {
         "needs": "mini",
