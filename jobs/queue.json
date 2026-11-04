@@ -172840,10 +172840,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T11:54Z",
+      "eta": "2026-11-04T13:54Z",
       "created_by": "claude",
       "created_at": "2026-11-04T11:48Z",
       "result": "",
@@ -172852,11 +172852,24 @@
           "at": "2026-11-04T11:48Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:54Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010)",
       "due": "2026-11-05T00:00:00Z",
-      "kind": "listing"
+      "kind": "listing",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T11:54Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2020",
