@@ -117,7 +117,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2018 | mini | open | – | – | assembly · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2022 | mini | open | – | – | assembly · Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini) |  |
+| J2022 | mini | claimed | codex | 2026-11-04T19:11Z | assembly · Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini) |  |
 | J2023 | mini | open | – | – | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
 | J2024 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 | J2025 | mini | open | – | – | chief · Chief: resolve 059 topic orphan-review |  |

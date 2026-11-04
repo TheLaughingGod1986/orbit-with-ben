@@ -173727,9 +173727,9 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "since": "2026-11-04T17:11Z",
+      "eta": "2026-11-04T19:11Z",
       "created_by": "claude",
       "created_at": "2026-11-04T12:28Z",
       "result": "",
@@ -173758,6 +173758,11 @@
           "at": "2026-11-04T15:58Z",
           "by": "claude",
           "what": "released: dependency met (PR merged); stale hold cleared (True, 'gemini')"
+        },
+        {
+          "at": "2026-11-04T17:11Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
@@ -173781,7 +173786,15 @@
         "status": "open",
         "by": ""
       },
-      "by": ""
+      "by": "codex",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T17:11Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2023",
