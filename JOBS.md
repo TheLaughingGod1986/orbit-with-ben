@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1810 | mini | blocked | codex | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
 | J1817 | mini | open (after J1761) | – | – | 013 edit · chief · OWB 013: establish long edit provenance after cancelled Short claim |  |
-| J1823 | mini | claimed | codex | 2026-11-04T05:35Z | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
+| J1823 | mini | blocked | codex | – | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
 | J1834 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
 | J1843 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
