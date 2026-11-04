@@ -168492,19 +168492,24 @@
           "at": "2026-11-04T04:56Z",
           "by": "codex",
           "what": "step 2 of 3 done: Updated J1823 with recheck J1954, actual missing J1943/J1944 decisions and retained 05:53:30Z verification time."
+        },
+        {
+          "at": "2026-11-04T04:56Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Read-back PASS: parent blocked, last_recheck J1954, check 05:53:30Z; review jobs open; worktree clean."
         }
       ],
-      "remaining_action": "Verify saved parent hold and report completed condition check",
+      "remaining_action": "Verification complete; J1823 awaits J1943 synthesis and J1944 ruling",
       "kind": "chief",
       "recheck_of": "J1823",
       "due": "2026-11-04T05:53:30+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-04T04:56Z",
         "by": "codex",
-        "note": "Updated J1823 with recheck J1954, actual missing J1943/J1944 decisions and retained 05:53:30Z verification time."
+        "note": "Read-back PASS: parent blocked, last_recheck J1954, check 05:53:30Z; review jobs open; worktree clean."
       },
       "taskKeys": [
         "OWB:026"
