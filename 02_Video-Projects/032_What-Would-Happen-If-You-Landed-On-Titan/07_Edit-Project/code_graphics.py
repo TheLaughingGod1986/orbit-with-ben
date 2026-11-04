@@ -63,7 +63,7 @@ def main():
         # Crop to teaching area so text is reviewable on contact sheet.
         tile=Image.new('RGBA',(W,400),(40,58,79,255));tile.alpha_composite(frame(s,1.8),(0,-700));tile=tile.convert('RGB').resize((480,100))
         x=(i%2)*480;y=(i//2)*240;sheet.paste(tile,(x,y+45));sd.text((x+12,y+12),s['id']+' · '+s['type'],fill='white')
-        rec={**s,'preview':str(preview),'preview_sha256':hashlib.sha256(preview.read_bytes()).hexdigest(),'duration':SECONDS,'status':'DRAFT_REQUIRES_CHIEF_FRAME_REVIEW','needs_background':'approved graded moving real plate','alpha':True}
+        rec={**s,'preview':str(preview),'preview_sha256':hashlib.sha256(preview.read_bytes()).hexdigest(),'duration':SECONDS,'status':'RENDERED_UNDER_REVIEW_REF_NOT_COMPOSITED' if a.render and s['id'] in a.approved else 'DRAFT_REQUIRES_CHIEF_FRAME_REVIEW','needs_background':'approved graded moving real plate','alpha':True}
         if a.render and s['id'] in a.approved:
             dest=out/(name+'.mov');cmd=['ffmpeg','-v','error','-y','-f','rawvideo','-pixel_format','rgba','-video_size',f'{W}x{H}','-framerate',str(FPS),'-i','pipe:0','-an','-c:v','qtrle',str(dest)]
             proc=subprocess.Popen(cmd,stdin=subprocess.PIPE)
