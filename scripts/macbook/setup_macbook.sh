@@ -87,8 +87,11 @@ else
 fi
 
 say "4/4 launchd worker"
-CLI_OK=1
-command -v codex >/dev/null || [[ -x "$HOME/.npm-global/bin/codex" ]] || CLI_OK=0
+# The worker wakes whichever of these is installed for each job (Ben, 4 Nov 2026: all four agents on the MacBook).
+MISSING=()
+for cli in codex agy claude agent; do
+  command -v $cli >/dev/null || [[ -x "$HOME/.npm-global/bin/$cli" || -x "$HOME/.local/bin/$cli" ]] || MISSING+=($cli)
+done
 PLIST="$HOME/Library/LaunchAgents/com.owb.macbook-worker.plist"
 sed -e "s#__HOME__#$HOME#g" -e "s#__OWB__#$OWB#g" -e "s#__HOS__#$HOS#g" -e "s#__MODEL__#$MODEL#g" \
   "$OWB/scripts/macbook/com.owb.macbook-worker.plist" > "$PLIST"
@@ -98,7 +101,10 @@ python3 "$OWB/scripts/macbook_worker.py" check || true
 
 print
 say "Done. The worker checks every 15 min and only takes 'macbook' jobs."
-[[ $CLI_OK == 1 ]] || say "One thing for you: install and sign in to the Codex CLI on this Mac (npm i -g @openai/codex, then codex login). Until then the worker releases any job it claims."
+if (( ${#MISSING} )); then
+  say "For you: install and sign in to these agent CLIs on this Mac, the same way as on the Mini: ${MISSING[*]}"
+  say "   (codex = Codex, agy = Gemini/Antigravity, claude = Claude Code, agent = Cursor). The worker uses whichever are there."
+fi
 say "Pause:  touch ~/_desk/state/macbook-worker.pause    Log: ~/Library/Logs/owb-macbook-worker.log"
 }
 
