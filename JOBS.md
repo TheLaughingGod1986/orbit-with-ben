@@ -128,7 +128,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2086 | mini | open | – | – | chief · Chief: resolve 060 script orphan-blocked |  |
 | J2087 | mini | open | – | – | chief · Chief: resolve 061 script orphan-blocked |  |
 | J2088 | mini | open | – | – | chief · Chief: resolve 061 sources orphan-review |  |
-| J2089 | mini | claimed | codex | 2026-11-04T20:32Z | 032 picture · assembly · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
+| J2089 | mini | blocked | codex | – | 032 picture · assembly · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
 | J2090 | cloud | open | – | – | review · 032: review J2089 source identity corrections and 13 teaching-overlay stills | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491 |
 
 Recently finished:
