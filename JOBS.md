@@ -106,6 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1943 | mini | open (after J1942) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
 | J1944 | any | open (after J1943) | – | – | 026 thumbs · chief · Chief: exact-file ruling on OWB 026 abc_v04 after J1823 fresh panel |  |
 | J1946 | mini | open (after J1794) | – | – | 053 script · chief · 053 Parker Solar Probe: topic and editorial decision before script lock | J1794 |
+| J1947 | mini | open (after J1795) | – | – | 054 script · chief · 054 Simulation: topic and editorial decision before script lock |  |
 
 Recently finished:
 
