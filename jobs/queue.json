@@ -174954,9 +174954,14 @@
           "at": "2026-11-04T18:26Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-04T18:28Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Codex 0.160.0 supports prefix_rule and execpolicy check. Prefix matching cannot constrain trailing flags or JSON payloads. J2007 is cancelled by Claude WIP decision, so its push is no longer needed."
         }
       ],
-      "remaining_action": "Inspect Codex command rules and prepare exact service allow-list",
+      "remaining_action": "Build and verify a guarded Git entry point; scope remaining service rules",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -174969,10 +174974,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-04T18:26Z",
-        "by": "codex"
+        "at": "2026-11-04T18:28Z",
+        "by": "codex",
+        "note": "Codex 0.160.0 supports prefix_rule and execpolicy check. Prefix matching cannot constrain trailing flags or JSON payload"
       }
     },
     {
