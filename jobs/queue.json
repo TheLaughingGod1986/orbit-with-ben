@@ -110787,6 +110787,11 @@
           "at": "2026-11-04T20:20Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1201; starting inspection of ai_spend.py, ai_spend_daily.py, claude.ai usage page, and Gemini usage limits"
+        },
+        {
+          "at": "2026-11-04T20:23Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected live signed-in claude.ai/settings/usage on CDP :9222 (session 96% used resets 8:50 PM; This week 27% used resets Wednesday 10:00 AM) and agy -p /usage (Gemini 80% left); identified parse_claude matching summary line above Current session"
         }
       ],
       "kind": "qa",
@@ -110798,11 +110803,11 @@
         "by": ""
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-04T20:20Z",
+        "at": "2026-11-04T20:23Z",
         "by": "gemini",
-        "note": "Claimed J1201; starting inspection of ai_spend.py, ai_spend_daily.py, claude.ai usage page, and Gemini usage limits"
+        "note": "Inspected live signed-in claude.ai/settings/usage on CDP :9222 (session 96% used resets 8:50 PM; This week 27% used rese"
       },
       "log": [
         {
@@ -110812,7 +110817,7 @@
         }
       ],
       "by": "gemini",
-      "remaining_action": "Inspect claude.ai/settings/usage on CDP :9222 and Gemini usage surfaces, then implement readers and tests"
+      "remaining_action": "Fix parse_claude for live claude.ai/settings/usage layout ('This week' heading + summary line above Current session) and add test case"
     },
     {
       "id": "J1202",
