@@ -60,18 +60,16 @@ def read_elevenlabs() -> dict:
 def _page_text(url: str, wait_text: str | None, settle_ms: int = 3000, then=None) -> str:
     """Body text of `url` in the CDP Chrome. `then(page, text)` may click and return new text."""
     from playwright.sync_api import sync_playwright
+    from cdp_tabs import reuse_page, site
     with sync_playwright() as p:
         br = p.chromium.connect_over_cdp(CDP)
-        page = br.contexts[0].new_page()
-        try:
-            page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            if wait_text:
-                page.get_by_text(wait_text).first.wait_for(timeout=45000)
-            page.wait_for_timeout(settle_ms)
-            text = page.inner_text("body")
-            return then(page, text) if then else text
-        finally:
-            page.close()
+        page = reuse_page(br.contexts[0], site(url))
+        page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        if wait_text:
+            page.get_by_text(wait_text).first.wait_for(timeout=45000)
+        page.wait_for_timeout(settle_ms)
+        text = page.inner_text("body")
+        return then(page, text) if then else text
 
 
 FLOW_ACCOUNT = "benoats@googlemail.com"
