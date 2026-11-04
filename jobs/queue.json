@@ -157521,9 +157521,14 @@
           "at": "2026-11-04T01:47Z",
           "by": "codex",
           "what": "step 1 of 3 done: Verified J0560/J0568 were cancelled as duplicates of film 061 tasks; 046 has nine TO VERIFY source rows and an unsigned pre-build audit."
+        },
+        {
+          "at": "2026-11-04T01:50Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR442 merged after both CI checks passed; J1930 restores missing 046/script review, with topic and production gates preserved."
         }
       ],
-      "remaining_action": "Restore a linked Chief review and record the unlocked script state",
+      "remaining_action": "Verify merged handoff and report J1787 completion",
       "kind": "chief",
       "handoff": {
         "film": "046",
@@ -157532,11 +157537,11 @@
         "signature": "e8031b266281f8c7eb2c"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T01:47Z",
+        "at": "2026-11-04T01:50Z",
         "by": "codex",
-        "note": "Verified J0560/J0568 were cancelled as duplicates of film 061 tasks; 046 has nine TO VERIFY source rows and an unsigned "
+        "note": "PR442 merged after both CI checks passed; J1930 restores missing 046/script review, with topic and production gates pres"
       },
       "taskKeys": [
         "OWB:046"
