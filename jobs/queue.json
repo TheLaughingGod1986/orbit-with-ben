@@ -170333,9 +170333,14 @@
           "at": "2026-11-04T14:28Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1957 for OWB:059 direct MUST QUOTE review"
+        },
+        {
+          "at": "2026-11-04T14:29Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J1802 ruling, J1956 Gemini report, SOURCES.md (v01 and updated), and script v01; verified input SHA256 hashes"
         }
       ],
-      "remaining_action": "Read J1802 ruling, J1956 Gemini facts output, SOURCES.md, and script v01",
+      "remaining_action": "Directly fetch and verify primary sources for all 16 MUST QUOTE rows and spoken/visual claims",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -170347,11 +170352,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-04T14:28Z",
+        "at": "2026-11-04T14:29Z",
         "by": "gemini",
-        "note": "Claimed J1957 for OWB:059 direct MUST QUOTE review"
+        "note": "Read J1802 ruling, J1956 Gemini report, SOURCES.md (v01 and updated), and script v01; verified input SHA256 hashes"
       },
       "taskKeys": [
         "OWB:059"
