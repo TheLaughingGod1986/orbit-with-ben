@@ -173367,7 +173367,7 @@
         }
       ],
       "remaining_action": "resume J2018",
-      "kind": "qa",
+      "kind": "assembly",
       "log": [
         {
           "at": "2026-11-04T11:49Z",
@@ -173378,6 +173378,11 @@
           "at": "2026-11-04T11:57Z",
           "by": "claude",
           "what": "released: PR480 merged (ee899fe1c); install com.owb.missed-runs now"
+        },
+        {
+          "at": "2026-11-04T15:56Z",
+          "by": "claude",
+          "what": "kind qa -> assembly: launchd install + script change is code/tools work on the Mini; qa routed it Claude-first and it sat unclaimed 3 h"
         }
       ],
       "hold": {
@@ -173629,7 +173634,7 @@
         }
       ],
       "remaining_action": "install tab janitor",
-      "kind": "qa",
+      "kind": "assembly",
       "hold": {
         "type": "dependency",
         "condition": "PR481 merged to main",
@@ -173640,6 +173645,11 @@
           "at": "2026-11-04T12:31Z",
           "by": "claude",
           "what": "released: PR481 merged (94e26e792); install com.owb.tab-janitor now"
+        },
+        {
+          "at": "2026-11-04T15:56Z",
+          "by": "claude",
+          "what": "kind qa -> assembly: launchd install + script change is code/tools work on the Mini; qa routed it Claude-first and it sat unclaimed 3 h"
         }
       ],
       "urgent": 1,
