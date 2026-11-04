@@ -110782,6 +110782,11 @@
           "at": "2026-11-04T20:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:20Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1201; starting inspection of ai_spend.py, ai_spend_daily.py, claude.ai usage page, and Gemini usage limits"
         }
       ],
       "kind": "qa",
@@ -110793,11 +110798,11 @@
         "by": ""
       },
       "progress": {
-        "step": 4,
+        "step": 0,
         "of": 4,
-        "at": "2026-10-30T07:52Z",
+        "at": "2026-11-04T20:20Z",
         "by": "gemini",
-        "note": "Recorded live Gemini usage reading (45% left, resets Fri 30 Oct 22:00Z); committed e949d7b44 to main; claude.ai/settings"
+        "note": "Claimed J1201; starting inspection of ai_spend.py, ai_spend_daily.py, claude.ai usage page, and Gemini usage limits"
       },
       "log": [
         {
@@ -110806,7 +110811,8 @@
           "what": "released: Ben, 4 Nov 2026: signed in to claude.ai in the Mini CDP Chrome (\"done\"). Resume: add the Claude reader (and Gemini) to ai_spend_daily; never print cookies or tokens."
         }
       ],
-      "by": "gemini"
+      "by": "gemini",
+      "remaining_action": "Inspect claude.ai/settings/usage on CDP :9222 and Gemini usage surfaces, then implement readers and tests"
     },
     {
       "id": "J1202",
