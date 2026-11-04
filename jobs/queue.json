@@ -171991,13 +171991,13 @@
       "stage": "topic",
       "after": "J1934",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T10:19Z",
-      "eta": "2026-11-04T10:49Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T10:11Z",
-      "result": "",
+      "result": "DEFER recommended to J2007 (5814296ba6): 2 strict Ceres/Dawn >=1M neighbours (0w6KRajHMlo 2.96M, nJiw2NxqoBU 1.38M) + 4 broader peers 0.94M-1.92M + 824k/543k Ceres longs; 0 exact-title collisions; Short-first FAIL (0 Ceres Shorts; Apophis/Europa Shorts <40% stayed); HOS Nov 2/4 complete; 01_Script drafts preserved untouched.",
       "history": [
         {
           "at": "2026-11-04T10:11Z",
@@ -172038,6 +172038,11 @@
           "at": "2026-11-04T10:38Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 complete: committed J2006 topic evidence report, TOPIC_OPPORTUNITY_SCORE.md and PRE_BUILD_VIDIQ_AUDIT.md (5814296ba6); recommending DEFER to J2007"
+        },
+        {
+          "at": "2026-11-04T10:39Z",
+          "by": "gemini",
+          "what": "done: DEFER recommended to J2007 (5814296ba6): 2 strict Ceres/Dawn >=1M neighbours (0w6KRajHMlo 2.96M, nJiw2NxqoBU 1.38M) + 4 broader peers 0.94M-1.92M + 824k/543k Ceres longs; 0 exact-title collisions; Short-first FAIL (0 Ceres Shorts; Apophis/Europa Shorts <40% stayed); HOS Nov 2/4 complete; 01_Script drafts preserved untouched."
         }
       ],
       "remaining_action": "Hand off completed J2006 topic evidence and DEFER recommendation to dependent Chief job J2007",
@@ -172060,7 +172065,8 @@
       },
       "taskKeys": [
         "OWB:048"
-      ]
+      ],
+      "done_ref": "5814296ba6"
     },
     {
       "id": "J2007",
