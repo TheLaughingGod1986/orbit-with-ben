@@ -170721,9 +170721,14 @@
           "at": "2026-11-04T16:04Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J1805 ruling, J1961 Gemini facts report, SOURCES.md (and v00/v01 snapshots), and candidate script v01; verified input SHA-256 hashes"
+        },
+        {
+          "at": "2026-11-04T16:08Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Directly extracted all 4 PDFs via PDFKit (Thomas 2007, Thomas 2010, Tarnopolski 2015/2017), 2 PMC XMLs, 7 PubMed XMLs, USGS IAU Gazetteer, LOC JSONs, NASA PIA API, and Wikipedia raw wikitext <ref> tags; identified 3 paraphrased PDF quotes and 4 citation title corrections in SOURCES.md"
         }
       ],
-      "remaining_action": "Independently open and verify live primary sources for all 16 MUST QUOTE rows and subclaims",
+      "remaining_action": "Write 01_Script/CLAUDE_QUOTE_CHECK_v01.md and jobs/reviews/J1962/DIRECT_QUOTE_CHECK_2026-11-04.md with direct PDFKit/XML/wikitext verification",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -170735,11 +170740,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T16:04Z",
+        "at": "2026-11-04T16:08Z",
         "by": "gemini",
-        "note": "Read J1805 ruling, J1961 Gemini facts report, SOURCES.md (and v00/v01 snapshots), and candidate script v01; verified inp"
+        "note": "Directly extracted all 4 PDFs via PDFKit (Thomas 2007, Thomas 2010, Tarnopolski 2015/2017), 2 PMC XMLs, 7 PubMed XMLs, U"
       },
       "taskKeys": [
         "OWB:060"
