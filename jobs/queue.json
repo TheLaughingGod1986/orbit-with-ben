@@ -174194,6 +174194,11 @@
           "at": "2026-11-04T17:14Z",
           "by": "codex",
           "what": "released: Resume only after ~/_desk/logs/J2022-check.done exists; tmux session J2022-check is running the 31-minute capture, do not start another copy. Read J2022-check.log, compare baseline 9223=1 and 9222=3, then report on #478. PR 487 awaits Chief review; code worktree /private/tmp/j2022-codex, commit 3165ac75ec. Keep 5-step plan, 4 done. Worker has not issued final PASS."
+        },
+        {
+          "at": "2026-11-04T20:04Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "kind": "assembly",
@@ -174225,7 +174230,9 @@
         "by": "codex",
         "note": "PR 487 opened (commit 3165ac75ec). Initial janitor log clean, counts unchanged at 1/3. tmux J2022-check captures after 3"
       },
-      "remaining_action": "Read the detached 30-minute janitor capture, report final tab counts, and hand PR 487 to Chief"
+      "remaining_action": "Read the detached 30-minute janitor capture, report final tab counts, and hand PR 487 to Chief",
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J2023",
