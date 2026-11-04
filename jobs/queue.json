@@ -161915,9 +161915,14 @@
           "at": "2026-11-04T05:28Z",
           "by": "codex",
           "what": "step 1 of 3 done: Added identity-bound local orphan recovery and fail-closed lease filtering. Seventeen lease tests pass; full capacity regression checks underway. Implementation remains incomplete and rollout disabled."
+        },
+        {
+          "at": "2026-11-04T05:32Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint b07a54ea62 pushed to existing PR437: identity-bound orphan recovery, uncertain lease retention and malformed-record guards. Focused suite 265 PASS, final affected suites 18+16 PASS; rollout disabled."
         }
       ],
-      "remaining_action": "Finish trusted host evidence and portable integration, then exact-head review and observed rollout",
+      "remaining_action": "Complete trusted host evidence and portable integration before exact-head review and observed rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -161928,9 +161933,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T05:28Z",
+        "at": "2026-11-04T05:32Z",
         "by": "codex",
-        "note": "Added identity-bound local orphan recovery and fail-closed lease filtering. Seventeen lease tests pass; full capacity re"
+        "note": "Checkpoint b07a54ea62 pushed to existing PR437: identity-bound orphan recovery, uncertain lease retention and malformed-"
       },
       "rerouted_from": {
         "needs": "mini",
