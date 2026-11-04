@@ -162475,9 +162475,14 @@
           "at": "2026-11-04T19:48Z",
           "by": "codex",
           "what": "step 2 of 3 done: Implemented failure reconciliation and reviewed-source identity across real queue commits; 98 capacity tests pass. Caller integration remains unfinished; rollout disabled."
+        },
+        {
+          "at": "2026-11-04T19:52Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR437 head 35d648ce61: failed-launch canonical reconciliation and queue-commit review identity fixed; 321 tests PASS. Production callers/transport and observed acceptance remain; no rollout."
         }
       ],
-      "remaining_action": "Finish disabled Mini/laptop production callers and receipt transport; then exact-head review",
+      "remaining_action": "Finish disabled Mini/laptop callers and consuming-host receipt transport, then exact-head review",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162497,9 +162502,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T19:48Z",
+        "at": "2026-11-04T19:52Z",
         "by": "codex",
-        "note": "Implemented failure reconciliation and reviewed-source identity across real queue commits; 98 capacity tests pass. Calle"
+        "note": "PR437 head 35d648ce61: failed-launch canonical reconciliation and queue-commit review identity fixed; 321 tests PASS. Pr"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
