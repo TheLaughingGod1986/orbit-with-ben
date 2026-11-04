@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 059 | topic | gemini | 2026-11-04T12:57Z | 2026-11-04T14:56Z | J1955 059 Olympus Mons: verify topic neighbours and audience evidence |
+| 059 | topic | gemini | 2026-11-04T12:58Z | 2026-11-04T13:58Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
