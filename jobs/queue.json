@@ -157420,13 +157420,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T01:40Z",
-      "eta": "2026-11-04T03:40Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX / not locked. Restored cancelled J0545/J0553 handoff as J1929, OWB:045/script after J1786. Read v01, notes, all 13 TO VERIFY source rows and approval history; J0789/J0802 cover unlocked 061 only. Evidence PR441, 539d1a6f34, jobs/reviews/J1786/CHIEF_HANDOFF_2026-11-04.md. Board points to J1929 and remains review; assertions passed. No production/media approval, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -157457,6 +157457,11 @@
           "at": "2026-11-04T01:44Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence PR441 landed; successor and dependency verified; 045 review state and no approval preserved."
+        },
+        {
+          "at": "2026-11-04T01:44Z",
+          "by": "codex",
+          "what": "done: FIX / not locked. Restored cancelled J0545/J0553 handoff as J1929, OWB:045/script after J1786. Read v01, notes, all 13 TO VERIFY source rows and approval history; J0789/J0802 cover unlocked 061 only. Evidence PR441, 539d1a6f34, jobs/reviews/J1786/CHIEF_HANDOFF_2026-11-04.md. Board points to J1929 and remains review; assertions passed. No production/media approval, spend or publishing changes."
         }
       ],
       "remaining_action": "Handoff repair complete; J1929 owns the remaining topic and script decision",
