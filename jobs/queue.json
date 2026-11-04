@@ -159105,13 +159105,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T06:05Z",
-      "eta": "2026-11-04T08:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Resolved sources orphan-review: FIX/unapproved, ruling and board merged PR464 (d9a2cfab8c). J1966 formal Gemini facts after J1808 -> J1967 direct MUST QUOTE review -> existing J1964 topic/editorial/final-lock owner. Drafts unchanged; no science/media approval, spend or publishing change. CI Rules and Studio core PASS.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -159142,6 +159142,11 @@
           "at": "2026-11-04T06:11Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR464 merged with Rules and Studio core CI PASS; board generated, claims released, 061 sources blocked/unapproved and original drafts unchanged."
+        },
+        {
+          "at": "2026-11-04T06:11Z",
+          "by": "codex",
+          "what": "done: Resolved sources orphan-review: FIX/unapproved, ruling and board merged PR464 (d9a2cfab8c). J1966 formal Gemini facts after J1808 -> J1967 direct MUST QUOTE review -> existing J1964 topic/editorial/final-lock owner. Drafts unchanged; no science/media approval, spend or publishing change. CI Rules and Studio core PASS."
         }
       ],
       "remaining_action": "Handoff repaired; source verification continues in J1966 then J1967, final decision J1964",
@@ -159161,7 +159166,8 @@
       },
       "taskKeys": [
         "OWB:061"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/464"
     },
     {
       "id": "J1809",
