@@ -1,5 +1,5 @@
 {
-  "next_id": 2010,
+  "next_id": 2012,
   "jobs": [
     {
       "id": "J0001",
@@ -133353,7 +133353,7 @@
       "title": "AR cohort: correct remaining opening-gate failures after J1468",
       "needs": "mini",
       "repo": "owb",
-      "body": "J1849 elected-Chief input acceptance (4 Nov): use only the exact J1847 delivery hashes/interval/recipe reviewed in J1848 PR435. Decision committed locally as 8bd5fef5f2, available in J1849 local handoff. Source input only approved; no final-film approval. Preserve required illustration attribution, h40/h42, full-runtime repaired score, all originals and AR2 v10/AR3 v09 exclusions. Continue existing 1/3 plan, perform remaining AR1/AR2/AR3 repairs and gates, then hand to J1356. No generation, credits or publishing. Public push holds remain.\n\nActing-Chief Codex ruling on J1467, 1 Nov 2026: technical sweep accepted only. J1468 PR379 audio repairs AR1 v02 / AR2 v07 / AR3 v06 still FAIL gate_shorts_open: AR1 first cut 6.00s >3s; AR2 opening diff 0.25<1.50; AR3 1.41<1.50. Scoped GBP0 correction authorised: inspect full moving openings against locked lines and h40 timings, use existing approved moving assets to correct only the failing opening/cut in new versioned masters, preserve all originals, locked VO, repaired full-runtime score and accepted remaining picture. Never substitute the separate AR2 v10/AR3 v09 branch. No generation or credits. If suitable approved assets are absent, report exact missing assets for Chief; do not mint or waive gates. Run all affected picture/polish/music/SFX/Shorts-open/loop checks with complete metadata. Review full moving cuts and listen to audio including pace WARN; do not claim listening from ASR or stills. Commit evidence and versioned pre-upload mappings in clean worktree PR; hand results to J1356 for final-watch readiness and protected review. No upload, schedule, privacy, retitle, Buffer or Ben watch release. Link progress OWB:030. This delegates remediation only; all failed-cut and existing Ben/date/credit holds remain.",
+      "body": "NEXT SAFE DISPATCH REQUEST: Ben reports no visible overnight video progress. J1849 accepted the exact ISS input at00:55 and this existing repair has remained open at1/3. Resume this authorized no-spend repair, not another input search or source-decision loop. Preserve completed work/source hashes, failed/accepted cut history and all final audiovisual/Ben/publishing gates. Record actual progress at least every5min; do not claim listening without validated acoustic perception. If audio perception is unavailable, record precisely what repair/gate work is completed and what genuinely remains; never manufacture PASS. This request does not interrupt a live lease or create a second claim.\n\nJ1849 elected-Chief input acceptance (4 Nov): use only the exact J1847 delivery hashes/interval/recipe reviewed in J1848 PR435. Decision committed locally as 8bd5fef5f2, available in J1849 local handoff. Source input only approved; no final-film approval. Preserve required illustration attribution, h40/h42, full-runtime repaired score, all originals and AR2 v10/AR3 v09 exclusions. Continue existing 1/3 plan, perform remaining AR1/AR2/AR3 repairs and gates, then hand to J1356. No generation, credits or publishing. Public push holds remain.\n\nActing-Chief Codex ruling on J1467, 1 Nov 2026: technical sweep accepted only. J1468 PR379 audio repairs AR1 v02 / AR2 v07 / AR3 v06 still FAIL gate_shorts_open: AR1 first cut 6.00s >3s; AR2 opening diff 0.25<1.50; AR3 1.41<1.50. Scoped GBP0 correction authorised: inspect full moving openings against locked lines and h40 timings, use existing approved moving assets to correct only the failing opening/cut in new versioned masters, preserve all originals, locked VO, repaired full-runtime score and accepted remaining picture. Never substitute the separate AR2 v10/AR3 v09 branch. No generation or credits. If suitable approved assets are absent, report exact missing assets for Chief; do not mint or waive gates. Run all affected picture/polish/music/SFX/Shorts-open/loop checks with complete metadata. Review full moving cuts and listen to audio including pace WARN; do not claim listening from ASR or stills. Commit evidence and versioned pre-upload mappings in clean worktree PR; hand results to J1356 for final-watch readiness and protected review. No upload, schedule, privacy, retitle, Buffer or Ben watch release. Link progress OWB:030. This delegates remediation only; all failed-cut and existing Ben/date/credit holds remain.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -133961,9 +133961,14 @@
           "at": "2026-11-04T00:55Z",
           "by": "codex",
           "what": "J1849 preserves prior 1/3 plan and immediately queues the existing assembly job; no new task"
+        },
+        {
+          "at": "2026-11-04T10:51Z",
+          "by": "codex",
+          "what": "Ben reports no visible overnight progress; requested original ready repair at next safe dispatch via existing immediate-claim policy. No claim, progress inflation, gate waiver or new deadline for publication."
         }
       ],
-      "remaining_action": "Apply accepted J1847 ISS input and remaining AR1/AR3 opening repairs; run affected gates and hand off to J1356",
+      "remaining_action": "Resume accepted ISS/AR opening repairs at preserved 1/3; run affected gates and hand off finished-cut review",
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
@@ -133975,7 +133980,13 @@
         "at": "2026-11-01T07:45Z",
         "by": "codex",
         "note": "Inspection evidence d0b04b5e0, PR380. Native Crew-2 window/crop probes below threshold; all J1468 master hashes match. N"
-      }
+      },
+      "overnight_requests": [
+        "Ben-overnight-visible-production-2026-11-04"
+      ],
+      "due": "2026-11-04T10:51:54+00:00",
+      "due_kind": "user-immediate-claim",
+      "urgent": 1
     },
     {
       "id": "J1472",
@@ -172230,6 +172241,70 @@
         "kind": "orphan-review",
         "signature": "fcc0d9d524563cb38b30"
       }
+    },
+    {
+      "id": "J2010",
+      "title": "Chief: review video-priority PR477 and capacity PR437; verify real production pickup",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben reports no visible overnight progress. Observed: PR365 merged01:17 and HOS audit62/0 PASS; ISS source accepted00:55 but J1471 still unclaimed1/3; backlog handoffs and repeated unchanged hold checks took the single lane. Treat finished administrative jobs separately from completed video milestones.\n\nReview PR477 exact b76bf04ba81c8f3402b120975a65bf24d2ed4a53: scheduler order ignores taskKeys and treated ready video-linked cohort repair as unlinked work. Patch gives valid OWB/HOS taskKeys the existing production/focus tie breakers. Actual deadlines/urgency/dependencies/claims/required media capabilities/approval/credit gates unchanged. Three regression cases cover actual shared production vs single-film draft, multi-video focus plus real-deadline precedence, malformed link handling.50 workflow/handoff +17 dispatcher tests, core56 and diff PASS; fresh exact-head full suite result will be attached. Recheck current head/diff and green CI, then normal Chief merge if suitable; safe-boundary Mini reload and observed correct loaded version/actual eligible next claim required. No cloud CLI election impersonation, forcepush or admin protection bypass. Separate review outcomes for each PR.\n\nPR437 exact head1c309dd4431aa51904dc3089a629b12ef6d7b4d7 (verify latest): capacity implementation done2/3 with292 focused tests, rollout_enabled=False and green CI. Original J1843 is parked for exact-head Chief review and observed host transitions. Review the real code and claimed test outputs, compose workflow_state change with PR477 if both merge, retest combined final head and normal CI. If suitable merge to ship code disabled first; enable a measured second lane or portable MacBook route only when fresh per-host idle/power/disk/capability/credential/account and lease evidence satisfies original contract, locks and guards. Never mistake green worker badges for spare safe slots. Keep disabled if evidence fails; record exact failure. Reuse original J1843 for rollout and preserve completed2/3. No second generic capacity job or blanket parallel writers.\n\nJ1471 has a next-safe-boundary immediate request under existing policy. It is the actual source-approved no-spend repair; no new asset search, generation or final-film approval is needed to start original scoped repairs. Preserve1/3. Actual audio listening is currently unverified (J1810/PR438); do not claim it from tool MIME support or fabricate final QA. Finish permitted concrete correction work and hand off exact remaining QA, not just bookkeeping.\n\nAlso address verification churn without bypassing gates: J2008/J1998/J1988/J1975 repeatedly recheck the SAME Buffer automatic-review rejection despite exact Ben approval recorded. No retry of rejected R2/uploads/posts or alternate egress. Preserve user authorization/rejection separately and report that the trust handoff, not a missing user answer, failed. Determine a supported trusted execution/approval context; do not ask for the same approval again as if absent. A queued relay is not clearance. If no permitted route exists, record exact required trusted-context setup for Ben once, keep external writes blocked, and set a sensible future condition check rather than repeated unchanged one-hour same-input verification monopolizing production. The source approval does not authorize other public evidence pushes. Similarly J0936 unchanged audio hold must not trigger repeated identical listening attempts.\n\nFinish with observed queue/worker/version evidence and concrete remaining owner/action. No paid spend, generation, media approval, YouTube/Buffer writes or publication-schedule changes from this review task.",
+      "ref": "J1471 / PR477 / PR437",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T10:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T10:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review exact heads, ship safe scheduling fix and observe J1471 pickup; assess guarded capacity rollout separately",
+      "kind": "chief",
+      "overnight_review_key": "Ben-overnight-visible-production-2026-11-04",
+      "urgent": 2,
+      "due": "2026-11-04T10:51:54+00:00",
+      "due_kind": "user-immediate-claim"
+    },
+    {
+      "id": "J2011",
+      "title": "Repair native Gemini audio delivery using non-production fixtures before VO review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Concrete engineering prerequisite for blocked J1810/J1752/J1753, not another identical perception retry. PR438/9846f20fcfd5edaf6e70c885f18f1179e465cef5 records audio/mpeg read_file MIME acceptance but two failures of actual acoustic perception, including contradicted fixture features and explicit cannot-hear response. Original exact-take briefs stay undispatched. No source VO or media approval is authorized here.\n\nInvestigate a genuinely different supported transport/configuration path within the EXISTING subscribed/local Gemini CLI. Inspect tool schemas, documented supported attachment path and MIME/data-delivery mechanism, local configuration and invocation, without printing/extracting credentials or changing provider/account/billing. Bound engineering to20 active minutes; one new justified fixture pair maximum. Do not rerun unchanged failed prompts, patch closed-source binaries or spoof file types. Use only locally generated NON-PRODUCTION synthetic acoustic fixtures with known measurable truth and randomized/neutral filenames so text metadata/prompt cannot reveal answers. Require actual signal-content recognition (e.g. tone order, silence intervals or known acoustic differences) that distinguishes fixtures; a tool saying loaded/read, ASR-only output or guessed description is not proof of hearing. No new paid API/service/model, source-audio egress, signup/topup, production recording or spend.\n\nIf a supported fix works, record exact tool route/version/config, fixture truth and independent results with sensitive config redacted; review any code/config change normally. Link concrete evidence to existing J1810. Only currently elected Chief may verify/reopen original capability hold preserving actual2/3/VO1/3 and decide any explicit specialist-listening delegation; engineer does not approve takes. If supported tool cannot deliver audio, record precise product limitation and the smallest concrete safe alternative requiring any new permission, not a vague tomorrow retry. J1810 must not require audio_input capability merely to investigate this engineering task: this new repair requires Mini engineering, not already-demonstrated hearing. Keep actual review jobs capability gated. No public private-input data, raw logs or credential dumps.",
+      "ref": "J1810 / PR438",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T10:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T10:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect supported CLI media transport/configuration and prove real acoustic perception on a fixture; no production VO upload",
+      "kind": "assembly",
+      "audio_transport_repair_key": "PR438-native-audio",
+      "urgent": 3,
+      "due": "2026-11-04T10:51:54+00:00",
+      "due_kind": "user-resource-unblock"
     }
   ],
   "focus": [],
