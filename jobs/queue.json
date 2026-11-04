@@ -161997,10 +161997,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T09:57Z",
+      "eta": "2026-11-04T11:57Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "",
@@ -162234,6 +162234,11 @@
           "at": "2026-11-04T08:34Z",
           "by": "gemini",
           "what": "released: Step 2/3 complete at clean checkpoint f0dd7869b4 on draft PR437 (/private/tmp/J1843-gemini, codex/J1843-capacity): added produce_probes with outage chronology/shared-account taint, transaction_evidence (OWB+HOS boards + legacy/process leases), resolve_quarantine audit clearance, stage_outbound/preflight_inbound/stage_return/consume_return portable adapters, and dispatch_claimed pipeline (rollout_enabled=False). 292 tests PASS, core_sync/py_compile/diff PASS. Codex is UP again as elected Chief; handing back for Step 3 exact-head Chief review and observed real-host transitions. No extra lane, spend or publishing enabled."
+        },
+        {
+          "at": "2026-11-04T09:57Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Exact-head Chief review of PR437 head f0dd7869b4 and observed real-host transitions before enabling capacity rollout",
