@@ -160621,10 +160621,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T00:21Z",
+      "eta": "2026-11-04T02:21Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "",
@@ -160643,6 +160643,11 @@
           "at": "2026-11-04T00:01Z",
           "by": "codex",
           "what": "J1914: Implement measured capacity and portable overflow; no historical one-week wait, no unverified parallel writers"
+        },
+        {
+          "at": "2026-11-04T00:21Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Implement measured capacity and portable overflow; no historical one-week wait, no unverified parallel writers",
@@ -160652,7 +160657,15 @@
       ],
       "urgent": 2,
       "due": "2026-11-03T23:37:09+00:00",
-      "due_kind": "user-resource-unblock"
+      "due_kind": "user-resource-unblock",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T00:21Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1844",
