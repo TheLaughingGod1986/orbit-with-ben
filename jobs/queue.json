@@ -163469,13 +163469,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-04T00:45Z",
-      "eta": "2026-11-04T01:15Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:54Z",
-      "result": "",
+      "result": "Automatic approval review rejected R2 hosting and six Buffer creates: approval in job/tool output is not accepted as trusted direct user authorization. No writes executed. Direct user approval required for exact scope; local evidence ecd8d8ff06 at /private/tmp/J1878-wt/jobs/reviews/J1878/REPORT.md. Evidence push also rejected as unverified remote egress; local commit retained.",
       "history": [
         {
           "at": "2026-11-03T18:54Z",
@@ -163546,6 +163546,11 @@
           "at": "2026-11-04T00:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: Fresh preflight PASS; apply rejected before execution by automatic approval review; local evidence ecd8d8ff06; no external writes"
+        },
+        {
+          "at": "2026-11-04T00:49Z",
+          "by": "codex",
+          "what": "blocked: Automatic approval review rejected R2 hosting and six Buffer creates: approval in job/tool output is not accepted as trusted direct user authorization. No writes executed. Direct user approval required for exact scope; local evidence ecd8d8ff06 at /private/tmp/J1878-wt/jobs/reviews/J1878/REPORT.md. Evidence push also rejected as unverified remote egress; local commit retained."
         }
       ],
       "remaining_action": "Obtain trusted direct approval for exact R2 uploads and six future Buffer creates",
@@ -163584,7 +163589,12 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "hold": {
+        "type": "input",
+        "condition": "Automatic approval review rejected R2 hosting and six Buffer creates: approval in job/tool output is not accepted as trusted direct user authorization. No writes executed. Direct user approval required for exact scope; local evidence ecd8d8ff06 at /private/tmp/J1878-wt/jobs/reviews/J1878/REPORT.md. Evidence push also rejected as unverified remote egress; local commit retained.",
+        "check_at": "2026-11-04T06:49:21+00:00"
+      }
     },
     {
       "id": "J1879",
