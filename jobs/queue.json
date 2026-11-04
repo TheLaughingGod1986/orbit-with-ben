@@ -170291,13 +170291,13 @@
       "stage": "sources",
       "after": "J1956",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T14:01Z",
-      "eta": "2026-11-04T16:01Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T05:05Z",
-      "result": "",
+      "result": "Direct MUST QUOTE primary-source verification complete at 2f53653303 (01_Script/CLAUDE_QUOTE_CHECK_v01.md & jobs/reviews/J1957/DIRECT_QUOTE_CHECK_2026-11-04.md; reviewer gemini / Gemini 4 Argon High under review specialist routing): all 16 rows (78 subclaims: 50 PASS, 25 FLAG, 3 UNVERIFIABLE), 4 PDFs via PDFKit, and 22 NASA PIA IDs directly verified; 4 PDF quotes in SOURCES.md corrected to exact PDFKit text; 11 concrete flags handed to J1953 Chief editorial/lock owner; sources remain FIX/unapproved; v00/v01 scripts untouched; £0 spent",
       "history": [
         {
           "at": "2026-11-04T05:05Z",
@@ -170353,6 +170353,11 @@
           "at": "2026-11-04T14:47Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed CLAUDE_QUOTE_CHECK_v01.md, updated SOURCES.md and production-status.md, and jobs/reviews/J1957/ at 2f53653303"
+        },
+        {
+          "at": "2026-11-04T14:47Z",
+          "by": "gemini",
+          "what": "done: Direct MUST QUOTE primary-source verification complete at 2f53653303 (01_Script/CLAUDE_QUOTE_CHECK_v01.md & jobs/reviews/J1957/DIRECT_QUOTE_CHECK_2026-11-04.md; reviewer gemini / Gemini 4 Argon High under review specialist routing): all 16 rows (78 subclaims: 50 PASS, 25 FLAG, 3 UNVERIFIABLE), 4 PDFs via PDFKit, and 22 NASA PIA IDs directly verified; 4 PDF quotes in SOURCES.md corrected to exact PDFKit text; 11 concrete flags handed to J1953 Chief editorial/lock owner; sources remain FIX/unapproved; v00/v01 scripts untouched; £0 spent"
         }
       ],
       "remaining_action": "Close J1957 and hand off to elected-Chief job J1953",
@@ -170375,7 +170380,8 @@
       },
       "taskKeys": [
         "OWB:059"
-      ]
+      ],
+      "done_ref": "2f53653303"
     },
     {
       "id": "J1958",
