@@ -1,5 +1,5 @@
 {
-  "next_id": 2143,
+  "next_id": 2147,
   "jobs": [
     {
       "id": "J0001",
@@ -72871,6 +72871,11 @@
           "at": "2026-11-04T18:42Z",
           "by": "codex",
           "what": "blocked: parked for Chief: Ben desk6631275536 says Chief write and approve HOS009 Short B opening and scope exact take. No approved replacement found in current scripts or later matching desk posts. J1004/merged PR366 retains 2.85s hook block; both minute/second comparison intervals required. Preserve four existing v02 takes and approved 010 A Option A1; do not regenerate unchanged scripts. Live ElevenLabs 101014 characters available (used20100/121114), no spend. Existing Chief task J1894 owns editorial decision; reopen J0862 with exact approved wording/scope. This worker has no Chief authority."
+        },
+        {
+          "at": "2026-11-04T21:22Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "vo",
@@ -72887,7 +72892,8 @@
       "taskKeys": [
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "escalated_at": "2026-11-04T21:22Z"
     },
     {
       "id": "J0863",
@@ -162225,8 +162231,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "codex",
-      "since": "2026-11-04T20:41Z",
-      "eta": "2026-11-04T22:41Z",
+      "since": "2026-11-04T22:14Z",
+      "eta": "2026-11-05T00:14Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "Chief FIX at 91576db52d: 94 capacity tests PASS; CI stale STATUS.md and production caller integration incomplete. Same-job engineering ready; no merge or rollout.",
@@ -162560,9 +162566,29 @@
           "at": "2026-11-04T20:41Z",
           "by": "codex",
           "what": "step 2 of 3 done: Resuming existing 2/3 plan; inspecting prior caller worktree and PR437 before edits; no rollout."
+        },
+        {
+          "at": "2026-11-04T20:43Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR437 f847b1ed90: synchronized main; fixed canonical cleanup for nonzero/timeout/guard-stop outcomes. 99 capacity +19 leases +12 portable tests PASS; core56/status/whitespace PASS. Caller/transport integration and real-host acceptance remain; rollout disabled."
+        },
+        {
+          "at": "2026-11-04T20:43Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint PR437 f847b1ed90, worktree /private/tmp/J1843-callers. Preserved2/3. Fixed unsuccessful outcome canonical cleanup;130 focused tests PASS, core56/status/whitespace PASS. Remaining production callers and supported portable input/output transport exceed this run; resume same J1843 immediately, no date hold or duplicate. Rollout disabled; exact-head review/green CI/observed host acceptance still required."
+        },
+        {
+          "at": "2026-11-04T22:14Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T22:15Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Existing branch clean; prior cleanup fixes retained. Production callers still absent; no rollout enabled."
         }
       ],
-      "remaining_action": "Integrate disabled capacity dispatch into production callers and verify failure cleanup",
+      "remaining_action": "Connect disabled capacity caller hooks and verify guarded launch behavior",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162582,9 +162608,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T20:41Z",
+        "at": "2026-11-04T22:15Z",
         "by": "codex",
-        "note": "Resuming existing 2/3 plan; inspecting prior caller worktree and PR437 before edits; no rollout."
+        "note": "Existing branch clean; prior cleanup fixes retained. Production callers still absent; no rollout enabled."
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
@@ -165549,12 +165575,12 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "since": "2026-11-03T20:32Z",
+      "status": "done",
+      "since": "2026-11-04T20:44Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:54Z",
-      "result": "",
+      "result": "Original 1080p bytes unrecovered; Studio Download candidates verified via tool-provable checks + native multimodal read_file (Mars iyvWYFP_ETA SHA 70c01376... 3,667,108B 25.50s -14.8 LUFS r=0.9933; Titan RLSJm59OSzI SHA 68836fd5... 1,000,998B 21.97s -15.4 LUFS r=0.9925) and proposed for hash-pinned social-source exception in linked Chief job J1889; UPLOADS.json and holds unchanged (447dad87e2)",
       "history": [
         {
           "at": "2026-11-03T18:54Z",
@@ -165610,18 +165636,43 @@
           "at": "2026-11-04T18:05Z",
           "by": "claude",
           "what": "released: capability hold lifted. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Do every tool-provable check (hashes, decode, duration, stills, ASR, timing) and record it; no worker needs to watch or listen; Ben's final watch is the check."
+        },
+        {
+          "at": "2026-11-04T20:44Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:45Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1879; starting bounded search for Mars night (48466c33...) and Titan (afe0e80f...) originals"
+        },
+        {
+          "at": "2026-11-04T20:47Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Steps 1-2 completed in 88c016c70b; capability hold lifted under PR480; running tool-provable checks + native video/audio inspection"
+        },
+        {
+          "at": "2026-11-04T20:54Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Completed tool-provable checks (hashes, decode, ebur128 loudness, PCM correlation r=0.9933/0.9925, faster-whisper 100% word match, dHash) + native multimodal video/audio review at 447dad87e2"
+        },
+        {
+          "at": "2026-11-04T20:54Z",
+          "by": "gemini",
+          "what": "done: Original 1080p bytes unrecovered; Studio Download candidates verified via tool-provable checks + native multimodal read_file (Mars iyvWYFP_ETA SHA 70c01376... 3,667,108B 25.50s -14.8 LUFS r=0.9933; Titan RLSJm59OSzI SHA 68836fd5... 1,000,998B 21.97s -15.4 LUFS r=0.9925) and proposed for hash-pinned social-source exception in linked Chief job J1889; UPLOADS.json and holds unchanged (447dad87e2)"
         }
       ],
-      "remaining_action": "Await capability-qualified J1889 acceptance review; keep Mars missing-original and Titan mismatch holds",
+      "remaining_action": "Hand off verified Studio candidates to linked Chief decision J1889",
       "due": "2026-11-04T07:00:00Z",
       "kind": "assembly",
       "recovery_scope_key": "J1874:sources",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-03T20:38Z",
-        "by": "codex",
-        "note": "Evidence PR427 / 88c016c70b committed; both full decodes exit0. J1889 queued with audio_input,moving_video_input require"
+        "at": "2026-11-04T20:54Z",
+        "by": "gemini",
+        "note": "Completed tool-provable checks (hashes, decode, ebur128 loudness, PCM correlation r=0.9933/0.9925, faster-whisper 100% w"
       },
       "taskKeys": [
         "OWB:025"
@@ -165629,7 +165680,9 @@
       "required_capabilities": [
         "audio_input",
         "moving_video_input"
-      ]
+      ],
+      "by": "gemini",
+      "done_ref": "447dad87e2"
     },
     {
       "id": "J1880",
@@ -165642,12 +165695,12 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "since": "2026-11-03T20:47Z",
+      "status": "done",
+      "since": "2026-11-04T20:56Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:56Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-03T18:56Z",
@@ -165693,17 +165746,92 @@
           "at": "2026-11-04T18:05Z",
           "by": "claude",
           "what": "released: capability hold lifted. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Do every tool-provable check (hashes, decode, duration, stills, ASR, timing) and record it; no worker needs to watch or listen; Ben's final watch is the check."
+        },
+        {
+          "at": "2026-11-04T20:56Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:56Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1880; starting inspection of HOS 008 v03 UAT corrections"
+        },
+        {
+          "at": "2026-11-04T20:58Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified /api/checks (J1868 active, not superseded), created clean worktree /private/tmp/j1880-hos-wt, verified local and NAS master_v03 sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b"
+        },
+        {
+          "at": "2026-11-04T21:05Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified master_v03 sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b and inspected 6 master segments via native video input"
+        },
+        {
+          "at": "2026-11-04T21:14Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Mapped all 6 timestamps to exact cuts/VO/hashes; preparing bounded correction recipes and v13 builder script"
+        },
+        {
+          "at": "2026-11-04T21:23Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1880; starting inspection of HOS 008 edit files and J1868 triage records"
+        },
+        {
+          "at": "2026-11-04T21:34Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1880; starting inspection of J1868 triage and HOS 008 edit assets"
+        },
+        {
+          "at": "2026-11-04T21:40Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 complete: mapped all 6 timestamps to exact master_v03/rough_v12 cut indices, clip hashes, intervals, and spoken VO words; verified live /api/checks"
+        },
+        {
+          "at": "2026-11-04T21:48Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2: inspected moving video and candidate clips for all 6 notes; writing exact edit recipe, source inventory, and missing-asset spec for J1881"
+        },
+        {
+          "at": "2026-11-04T22:01Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1880; starting step 1: inspect checks API, J1868 triage records, and map timestamps to source rows/clips"
+        },
+        {
+          "at": "2026-11-04T22:03Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 complete: verified checks API, inspected all 6 moving video+audio clips via read_file, mapped exact source rows/hashes/display frames/VO words in J1880_SOURCE_INVENTORY_v04.json"
+        },
+        {
+          "at": "2026-11-04T22:05Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: verified all candidate moving clips via read_file and confirmed 0-frame-delta bounded corrections for all 6 timestamps"
+        },
+        {
+          "at": "2026-11-04T22:09Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3 complete: updated J1868_UAT_CORRECTIONS.md, PIPELINE.json, STATUS.md, and production-status.md; check_all.sh ALL CHECKS PASS"
+        },
+        {
+          "at": "2026-11-04T22:11Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Step 4 complete: committed and pushed gemini/j1880-franklin-v03-recipe (bd530249, PR #409) from clean worktree /private/tmp/j1880-hos-wt; check_all.sh ALL CHECKS PASS"
+        },
+        {
+          "at": "2026-11-04T22:11Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
-      "remaining_action": "Inspect native moving alternatives and finalise exact Franklin correction recipe from PR403",
+      "remaining_action": "Complete J1880 and hand off PR #409 + recipe to J1881 elected-Chief scope review",
       "due": "2026-11-04T12:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-03T20:52Z",
-        "by": "codex",
-        "note": "Partial recipe committed HOS 6137ff0d; master hash verified, six notes/source rows/neighbours preserved. Repository chec"
+        "at": "2026-11-04T22:11Z",
+        "by": "gemini",
+        "note": "Step 4 complete: committed and pushed gemini/j1880-franklin-v03-recipe (bd530249, PR #409) from clean worktree /private/"
       },
       "taskKeys": [
         "HOS:008"
@@ -165711,7 +165839,8 @@
       "required_capabilities": [
         "moving_video_input"
       ],
-      "urgent": 3
+      "urgent": 3,
+      "by": "gemini"
     },
     {
       "id": "J1881",
@@ -179376,6 +179505,120 @@
         "kind": "orphan-review",
         "signature": "0469e37e5f0aac9b2946"
       }
+    },
+    {
+      "id": "J2143",
+      "title": "031 thumbs: include the rule-19 real-image concept (reference-channel test)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "LEARNINGS rule 19 (Ben's go 4 Nov 2026, reference channels melodysheep/SEA/Astrum). When 031's thumbnails are built, one of the three concepts is a single striking REAL frame (ESA Swarm field map, ISS aurora, or the real lava-flow photo from the film's harvest pool): graded to the --score target, one focal point, 0-3 words, no composite. The other two follow rule 12, and one of them is rule 14's bright background. Run the normal review gate (HOOK/BAND/GRADE/PHONE) and record it in tests/THUMB_LEDGER.json, tagged rule19. £0.\n",
+      "ref": "",
+      "film": "031",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T22:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T22:08Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "031 thumbs: include the rule-19 real-image concept (reference-channel test)",
+      "kind": "thumb"
+    },
+    {
+      "id": "J2144",
+      "title": "032 thumbs (November tentpole): three full concepts incl. rule-19 real image",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "November tentpole (LEARNINGS rule 22) plus rule 19 (Ben's go 4 Nov 2026). When 032's thumbnails are built: three fully made concepts. One is a single real frame: the Huygens DISR surface image or a Cassini natural-colour Titan from J2090's mappings (PIA14602/PIA14922), graded, 0-3 words. One is rule 14's bright background. One follows rule 12 (consequence/scale, e.g. a lander under the orange sky). Normal review gate, ledger tag rule19/tentpole. The title options now include the rule 18 real-picture variants (metadata_DRAFT_v01.json title_notes). £0.\n",
+      "ref": "",
+      "film": "032",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T22:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T22:08Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "032 thumbs (November tentpole): three full concepts incl. rule-19 real image",
+      "kind": "thumb"
+    },
+    {
+      "id": "J2145",
+      "title": "OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "LEARNINGS rule 20 (rule; Ben's go 4 Nov 2026). On the OWB channel: (1) create two public playlists, 'What Would Happen If…' (scenario longs: 023 Venus? check each title; 027 Earth stopped spinning, 025 Mars robot, 032 Titan when live, etc.) and 'Real Worlds' (real-imagery longs), each with a one-line description; put every public long in exactly one; (2) set each long's end screen to the series playlist plus the next film in that series; (3) add one line to each long's description: 'Next in the series: <title> <link>'. No series suffix in titles (AGENTS Never). List the playlist ids and every video changed in the result. No visibility, title or thumbnail changes. Reuse the open Studio tab (scripts/cdp_tabs.py reuse_page). £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T22:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T22:08Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20)",
+      "kind": "studio"
+    },
+    {
+      "id": "J2146",
+      "title": "Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "LEARNINGS rule 21 (test; Ben's go 4 Nov 2026). Plan the first monthly journey film: one 40-60 min calm long stitched from our finished OWB longs (023-030) into one story, working title 'A Journey to Every World We've Landed On' or similar. Deliver jobs/reviews/<id>/JOURNEY_01_PLAN.md: (1) the running order and which minutes of which locked cut each part reuses; (2) new linking VO lines (script, cold open with its own line-1 claim, chapter cards); (3) the bed plan (one ambient bed, chapter cues); (4) title, three thumbnail concepts, description and chapters; (5) the ElevenLabs credit estimate for the linking VO and bed (stay inside the existing flat fee, no top-up). It's a long built from longs, not a Shorts compilation (rule 9). It takes the next WIP slot when 031 or 032 reaches Ben's watch. Then queue the VO, assembly and review jobs with --film J01.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T22:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T22:08Z",
+          "by": "claude",
+          "what": "added for claude"
+        }
+      ],
+      "remaining_action": "Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21)",
+      "due": "2026-11-15T00:00:00Z",
+      "for": "claude",
+      "kind": "script"
     }
   ],
   "focus": [],
