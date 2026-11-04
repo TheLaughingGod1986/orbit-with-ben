@@ -160658,9 +160658,14 @@
           "at": "2026-11-04T00:22Z",
           "by": "codex",
           "what": "step 1 of 3 done: Inspected serial relay, atomic queue claims, capability gates, MacBook guards and live lease. MacBook generic idle heartbeat lacks registered identity/capacity; Cursor latest J1847 failed. Additional lanes remain disabled."
+        },
+        {
+          "at": "2026-11-04T00:27Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Tested checkpoint: shadow planner, host telemetry, read-only capacity command; 147 tests passed. Step 2 remains unfinished; no second lane enabled. Preparing draft PR and clean release."
         }
       ],
-      "remaining_action": "Implement guarded capacity planner and portable reservations; verify before rollout",
+      "remaining_action": "Finish atomic cross-host launch/claim and transfer integration, then exact-head review and observed rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -160671,9 +160676,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T00:22Z",
+        "at": "2026-11-04T00:27Z",
         "by": "codex",
-        "note": "Inspected serial relay, atomic queue claims, capability gates, MacBook guards and live lease. MacBook generic idle heart"
+        "note": "Tested checkpoint: shadow planner, host telemetry, read-only capacity command; 147 tests passed. Step 2 remains unfinish"
       }
     },
     {
