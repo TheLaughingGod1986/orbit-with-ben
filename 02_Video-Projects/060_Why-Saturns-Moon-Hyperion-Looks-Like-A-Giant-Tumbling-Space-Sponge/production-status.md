@@ -1,8 +1,8 @@
 # Production Status — 060 Why Saturn's Moon Hyperion Looks Like a Giant Tumbling Space Sponge
 
-## Current ruling — 4 November 2026 (J1804)
+## Current ruling — 4 November 2026 (J1803 / J1804 / J1805; J1958 topic evidence)
 
-**FIX / not locked.** J1960 owns the combined topic/editorial decision after J1958 topic evidence; J1805 owns sources repair. No approved air date. The November window and v00 stage text below are historical, not current authorisation. Fresh v01 script check PASS 95.8; episode gate BLOCK (unsigned audit, selects v00). Evidence: `jobs/reviews/J1804/CHIEF_SCRIPT_RULING_2026-11-04.md`. No VO or production approval.
+**FIX / not locked.** J1958 topic evidence complete (`jobs/reviews/J1958/TOPIC_EVIDENCE_2026-11-04.md`, `11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md`, repaired `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`): 9 education/space videos ≥1M views verified via `yt-dlp` (including single-topic Astrum `4ZnN44BTTjU` at `1,765,348` views), 0 exact-title collisions, and **Short-first gate UNMET** (`0` OWB Shorts on Hyperion; all 4 public Saturn Rings Shorts missed `>=200` views and `>=40%` stayed). Recommends **DEFER** to elected-Chief job **J1960** (combined topic/editorial and lock decision after **J1961** formal Gemini `facts` pass and **J1962** direct `MUST QUOTE` verification). No approved air date. The November window and v00 stage text below are historical, not current authorisation. Fresh v01 script check PASS 95.8; episode gate BLOCK (unsigned audit, selects v00). Evidence: `jobs/reviews/J1803/CHIEF_TOPIC_RULING_2026-11-04.md`, `jobs/reviews/J1804/CHIEF_SCRIPT_RULING_2026-11-04.md`, `jobs/reviews/J1805/CHIEF_SOURCES_RULING_2026-11-04.md`, `jobs/reviews/J1958/TOPIC_EVIDENCE_2026-11-04.md`. No VO or production approval.
 
 
 **Current Stage:** Topic & Script Draft (`v00`) — Parked for Chief topic lock & review (`J0773`)
@@ -21,6 +21,7 @@
 |---|---|---|---|---|
 | 2026-10-21 | Topic & Ideas (`J0773`) | `gemini` | Parked for Chief | 5 candidates scored in `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-21_J0773.md`; #1 pick `060` Hyperion (`30/30` studio / `16/30` audit rubric; 7 neighbours ≥ 1M views; direct hand-off from `059`). `PRE_BUILD_VIDIQ_AUDIT.md` drafted unsigned (no topic lock without Chief). |
 | 2026-10-21 | Long Script `v00` & `SOURCES.md` (`J0773`) | `gemini` | Parked for Chief | `01_Script/hyperion_sponge_script_master_v00.md` (`95.8/100 PASS`, `1,400` spoken words / `1,420` reviewer words, `9.5 min`, `5` chapters, `8/8` structure gates, `DATA: 6`, `SCALE: 6`, `WHO: 10`, `WHEN: 6`, `FACT: 4`, `NUMBER OBJECT: 6`). `01_Script/SOURCES.md` populated with 16 primary claim rows + verified verbatim quotes. |
+| 2026-11-04 | Topic Neighbours, Competition & Audience Evidence (`J1958`) | `gemini` | In review (`J1960`) | Restored topic evidence per `J1803` (`jobs/reviews/J1958/TOPIC_EVIDENCE_2026-11-04.md`, `11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md`, repaired `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`, refreshed `11_Upload-Package/PRODUCTION_CHECKLIST_V2.md`). Verified 9 education/space videos at `1.16M–9.28M` views via `yt-dlp` (including Astrum `4ZnN44BTTjU` `1,765,348` views on Hyperion), discarded unsupported `J0773` placeholder titles and vidIQ scores (`UNKNOWN`), verified 0 exact-title collisions, and confirmed Short-first prerequisite UNMET (`0` OWB Hyperion Shorts; all 4 public Saturn Rings Shorts missed `>=200` views and `>=40%` stayed). Recommended `DEFER` to elected-Chief job `J1960`; all `01_Script/*` files preserved untouched. |
 
 ---
 
