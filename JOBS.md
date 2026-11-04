@@ -40,17 +40,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1753 | mini | blocked | codex | – | 032 vo · chief · 032 Voice: Chief final verification of locked take after J1294 | 6536311192 |
 | J1754 | mini | blocked | codex | – | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
 | J1755 | mini | blocked | codex | – | chief · Chief: reconcile stale HOS008 J1213 hold against later master-v03 evidence |  |
-| J1805 | mini | open | – | – | chief · Chief: resolve 060 sources orphan-review |  |
-| J1806 | mini | open | – | – | chief · Chief: resolve 061 topic orphan-review |  |
-| J1807 | mini | open | – | – | chief · Chief: resolve 061 script orphan-review |  |
-| J1808 | mini | open | – | – | chief · Chief: resolve 061 sources orphan-review |  |
 | J1809 | mini | open | – | – | assembly · HOS desk: route elected Chief handoffs and safely refresh legacy watcher | J1754 |
 | J1810 | mini | blocked | codex | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
-| J1817 | mini | open (after J1761) | – | – | 013 edit · chief · OWB 013: establish long edit provenance after cancelled Short claim |  |
-| J1823 | mini | blocked | codex | – | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
 | J1834 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
-| J1843 | mini | claimed | codex | 2026-11-04T07:24Z | for codex · assembly · `gpt-6.1-sol` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
+| J1843 | mini | claimed | codex | 2026-11-04T08:24Z | for codex · assembly · `gpt-6.1-sol` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 | J1878 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
@@ -90,8 +84,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1936 | mini | open (after J1791) | – | – | 050 script · chief · 050 Iapetus: Chief topic and editorial decision before script lock |  |
 | J1937 | mini | open (after J1792) | – | – | 051 script · chief · 051 DART: Chief topic and editorial decision before script lock |  |
 | J1939 | mini | open (after J1793) | – | – | 052 script · chief · 052 Miranda: topic and editorial decision before script lock | J1793 |
-| J1943 | mini | open (after J1942) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
-| J1944 | any | open (after J1943) | – | – | 026 thumbs · chief · Chief: exact-file ruling on OWB 026 abc_v04 after J1823 fresh panel |  |
 | J1946 | mini | open (after J1794) | – | – | 053 script · chief · 053 Parker Solar Probe: topic and editorial decision before script lock | J1794 |
 | J1947 | mini | open (after J1795) | – | – | 054 script · chief · 054 Simulation: topic and editorial decision before script lock |  |
 | J1948 | mini | open (after J1796) | – | – | 055 script · chief · 055 Human Spaceflight: topic and editorial decision before script lock |  |
@@ -104,16 +96,23 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1957 | mini | open (after J1956) | – | – | 059 sources · for gemini · review · `gemini-argon` · 059 Olympus Mons: direct MUST QUOTE review after Gemini facts | J1802 |
 | J1958 | mini | open (after J1803) | – | – | 060 topic · for gemini · review · `gemini-argon` · 060 Hyperion: verify topic neighbours and audience evidence |  |
 | J1960 | any | open (after J1958) | – | – | 060 script · chief · 060 Hyperion: Chief topic and editorial decision after evidence |  |
+| J1961 | gemini | open (after J1805) | – | – | 060 sources · facts · 060 Hyperion: formal Gemini sources and claims verification | J1805 |
+| J1962 | mini | open (after J1961) | – | – | 060 sources · for gemini · review · `gemini-argon` · 060 Hyperion: direct MUST QUOTE review after Gemini facts | J1805 |
+| J1963 | mini | open (after J1806) | – | – | 061 topic · for gemini · review · `gemini-argon` · 061 Venus rotation: verify topic evidence and existing-long overlap |  |
+| J1964 | mini | open (after J1963) | – | – | 061 script · chief · 061 Venus rotation: Chief topic and editorial decision after evidence |  |
+| J1965 | any | open | – | – | chief · Chief: verify condition for J1879 |  |
+| J1966 | gemini | open (after J1808) | – | – | 061 sources · facts · 061 Venus rotation: formal Gemini sources and claims verification | J1808 |
+| J1967 | mini | open (after J1966) | – | – | 061 sources · for gemini · review · `gemini-argon` · 061 Venus rotation: direct MUST QUOTE review after Gemini facts | J1808 |
 
 Recently finished:
 
+- J1968 done: Chief: verify condition for J0936 (Verified condition remains unmet. J1100 blocked 2/3; latest local evidence 31 Oct, three audition hashes match 3e26b379b; no documented S2 bed clearance or local listening. PR333 OPEN unchanged 0a7fcb6ad with no reviews/comments. Disk 28.776 GiB exceeds restart floor. Updated J0936 hold with recheck J1968 and retained 2026-11-04T07:18:55+00:00 retry. J1100 audio_input hold preserved. Existing approvals, deadlines, progress and scheduled fallbacks retained. No spend, render, source-audio egress or publishing changes.)
 - J1959 done: Chief: verify condition for J0936 (Verified J0936 condition remains unmet. J1100 blocked 2/3; local audition hashes match 3e26b379b, latest evidence 31 Oct, no documented S2 bed clearance or local listening. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments. Disk 23.009 GiB exceeds restart floor. Updated parent input hold with recheck J1959 and retained 2026-11-04T06:13:11+00:00 retry. J1100 audio_input capability hold retained. Preserved approvals, progress, deadlines and scheduled fallbacks. No spend, render, source-audio egress or publishing changes.)
 - J1954 done: Chief: verify condition for J1823 (Condition checked: J1940-J1942 done and all three critiques present; J1943 synthesis (DECISION.md) and J1944 exact-file ruling remain outstanding. Five v04 artifact and 17 preservation hashes match. Updated J1823 hold with --recheck J1954 and retained 2026-11-04T05:53:30Z check. A/J0833 retained; no candidate approval or live changes.)
 - J1950 done: Chief: verify condition for J0936 (Verified J0936 condition remains unmet. J1100 blocked 2/3; local audition hashes match 3e26b379b, latest evidence 31 Oct, no documented S2 bed clearance or local listening. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments. Disk 28.86 GiB exceeds restart floor. Updated parent input hold with recheck J1950 and retained 2026-11-04T05:05:21Z retry. Preserved approvals, progress, deadlines and scheduled fallbacks. No spend, render, source-audio egress or publishing changes.)
 - J1945 done: Chief: verify condition for J1823 (Verified J1823 v04 delivery cecd5dc02c: 5 artifact and 17 preservation hashes match. J1940-J1944 still open and panel/decision absent; condition unmet. Parent remains blocked with --recheck J1945, original 2026-11-04T04:40:34Z check retained. A/J0833 preserved; no approval or live changes.)
+- J1944 done: Chief: exact-file ruling on OWB 026 abc_v04 after J1823 fresh panel (Exact-file ruling merged PR460: approve B v04 asset, retain A/J0833, C unselected; J1823 resolved, thumbs done. No live test authority or spend.)
+- J1943 done: Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes (DECISION.md committed (6b2fdb077a): 3/3 keep title How Far Is the Nearest Star? and original A (YOU CAN'T SEE IT, 922855804c...); 3/3 prefer B v04 (900M YEAR WALK, 93f6e2a039..., sat 132.1, near-black 18%) and reject C v04 (4.2 LIGHT YEARS, 40eccaf47c... spoils title question); 2/3 keep description first paragraph and story-beat chapters; J1944 unblocked for Elected Chief exact-file ruling.)
 - J1942 done: Packaging panel (cursor): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes (Single change to raise CTR: drop C v04 (4.2 LIGHT YEARS answers the title question in the thumbnail and kills the click) and remove the pasted foreground Earth cutout from B v04 (900M YEAR WALK) so Proxima Centauri stands alone instead of looking parked right next to Earth. Committed cursor.md (2bdddb7922).)
 - J1941 done: Packaging panel (gemini): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes (done)
 - J1940 done: Packaging panel (codex): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes (Prefer B’s 900M YEAR WALK over C’s 4.2 LIGHT YEARS as challenger to retained A: it adds a concrete curiosity gap to the locked title. Advisory only; no live change.)
-- J1938 done: Chief: verify condition for J0936 (Verified J0936 condition remains unmet. J1100 blocked 2/3; local auditions match 3e26b379b, latest evidence 31 Oct, no documented listening or S2 bed clearance. PR333 OPEN unchanged 0a7fcb6ad with no reviews/comments. Disk 31.43 GiB exceeds restart floor. Updated parent input hold with recheck J1938, retaining 2026-11-04T03:59:01Z retry. Preserved approvals, progress, deadlines and scheduled fallbacks. No spend, render, source-audio egress or publishing changes.)
-- J1931 done: Chief: verify condition for J0936 (Verified J0936 condition: J1100 remains 2/3; S2 bed and three audition hashes match 3e26b379b. No new local listening clearance. PR333 OPEN unchanged at 0a7fcb6ad with no reviews/comments. Disk 28.72 GiB exceeds h43 restart floor. Updated J0936 input hold via --recheck J1931, retained existing 2026-11-04T02:50:58Z retry. Still need bed clearance, local listening, v07 repairs, final gates/durable hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Preserved prior acceptances, completed swaps, progress, deadlines and scheduled fallbacks. No spend, rendering, source-audio egress or publishing changes.)
-- J1926 done: Chief: verify condition for J1823 (Verified delivery hashes and PR439 at 80195a8a72. Condition unmet: J1920-J1924 open; three critiques, DECISION.md and exact-file ruling absent. J1823 hold updated with recheck J1926, next check 2026-11-05T02:00Z; queued reviews may run now. Original A preserved; no spend or live changes.)
