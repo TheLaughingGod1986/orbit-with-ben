@@ -54,6 +54,7 @@ class Summary(unittest.TestCase):
         self.assertEqual([(m["key"], m["from"], m["to"]) for m in s["moved"]], [("OWB:030", 56, 78), ("OWB:032", 11, 33)])
         self.assertEqual({f["film"] for f in s["films"]}, {"OWB:030", "OWB:032"})
         self.assertEqual(s["otherJobs"], 1)
+        self.assertEqual(s["videoJobs"], 2)
         self.assertEqual(s["hours"], 24.5)
 
     def test_jobs_done_window(self):
