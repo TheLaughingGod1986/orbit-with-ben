@@ -172762,6 +172762,11 @@
           "at": "2026-11-04T11:53Z",
           "by": "codex",
           "what": "released: 1/4. Detached tmux J2016-render running repair/checks. Read /Users/benjaminoats/_desk/logs/J2016-render.done then J2016-render.log; missing done means running, never duplicate. Driver/report /Users/benjaminoats/_desk/handoff/J2016/. Clean worktree /private/tmp/J2016-wt. Inspect raw gates, preserve hashes then complete handoff to J1471 at2/3; no media approval."
+        },
+        {
+          "at": "2026-11-04T12:28Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Inspect detached render completion and technical checks, then deliver correction evidence",
@@ -172778,7 +172783,16 @@
         "at": "2026-11-04T11:53Z",
         "by": "codex",
         "note": "Detached J2016-render; log _desk/logs/J2016-render.log; exit file J2016-render.done. Do not duplicate. Persistent driver"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J2017",

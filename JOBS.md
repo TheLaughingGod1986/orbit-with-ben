@@ -123,7 +123,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 | J2014 | mini | open | – | – | for gemini · qa · `gemini-argon` · 026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate |  |
 | J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |
-| J2016 | mini | open (after J1468) | – | – | assembly · AR cohort: repair five inherited still-push jitter failures | J2010 / J1471 / ce3c8048e9 |
+| J2016 | mini | open (after J1468) | – | – | for codex · assembly · `gpt-6.1-sol` · AR cohort: repair five inherited still-push jitter failures | J2010 / J1471 / ce3c8048e9 |
 | J2017 | mini | open | – | – | chief · Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception |  |
 | J2018 | mini | open | – | – | qa · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
