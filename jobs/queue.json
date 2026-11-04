@@ -158104,10 +158104,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T00:31Z",
+      "eta": "2026-11-04T02:31Z",
       "created_by": "codex",
       "created_at": "2026-11-03T10:51Z",
       "result": "",
@@ -158126,6 +158126,11 @@
           "at": "2026-11-04T00:03Z",
           "by": "codex",
           "what": "Ben clarifies who reviews VO and when. Prioritized existing concrete audio-review handoff; no Ben action on J1752/J1753, no approvals/states or completed technical progress changed."
+        },
+        {
+          "at": "2026-11-04T00:31Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief assigns a verified audio-capable reviewer for existing VO jobs; record actual listening and VO-only decision, not Ben UAT",
@@ -158138,7 +158143,15 @@
       "due_kind": "user-resource-unblock",
       "listening_owner_updates": [
         "Ben-VO-listening-agent-not-user-2026-11-04"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T00:31Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1811",
