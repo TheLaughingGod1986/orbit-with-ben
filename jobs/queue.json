@@ -167618,13 +167618,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T03:42Z",
-      "eta": "2026-11-04T05:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T03:40Z",
-      "result": "",
+      "result": "Verified J1823 v04 delivery cecd5dc02c: 5 artifact and 17 preservation hashes match. J1940-J1944 still open and panel/decision absent; condition unmet. Parent remains blocked with --recheck J1945, original 2026-11-04T04:40:34Z check retained. A/J0833 preserved; no approval or live changes.",
       "history": [
         {
           "at": "2026-11-04T03:40Z",
@@ -167655,6 +167655,11 @@
           "at": "2026-11-04T03:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: Read-back confirms blocked parent, last_recheck J1945, original check time, and J1940-J1944 still open. No candidate approval, spend or live changes."
+        },
+        {
+          "at": "2026-11-04T03:43Z",
+          "by": "codex",
+          "what": "done: Verified J1823 v04 delivery cecd5dc02c: 5 artifact and 17 preservation hashes match. J1940-J1944 still open and panel/decision absent; condition unmet. Parent remains blocked with --recheck J1945, original 2026-11-04T04:40:34Z check retained. A/J0833 preserved; no approval or live changes."
         }
       ],
       "remaining_action": "Verification complete: J1823 held for panel and exact-file ruling; report outcome",
