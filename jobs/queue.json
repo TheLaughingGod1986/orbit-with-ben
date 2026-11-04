@@ -174959,9 +174959,14 @@
           "at": "2026-11-04T18:28Z",
           "by": "codex",
           "what": "step 1 of 4 done: Codex 0.160.0 supports prefix_rule and execpolicy check. Prefix matching cannot constrain trailing flags or JSON payloads. J2007 is cancelled by Claude WIP decision, so its push is no longer needed."
+        },
+        {
+          "at": "2026-11-04T18:29Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Installed isolated Python Git gateway and ~/.codex/rules/studio.rules; execpolicy allows gateway and leaves curl unmatched. R2/Buffer mirror code can delete posts/media and supports bucket override, so broad script allow rules would violate brief. J2007 cancelled; no retry."
         }
       ],
-      "remaining_action": "Build and verify a guarded Git entry point; scope remaining service rules",
+      "remaining_action": "Verify installed Git gateway and record safe continuation for service rules",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -174974,11 +174979,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T18:28Z",
+        "at": "2026-11-04T18:29Z",
         "by": "codex",
-        "note": "Codex 0.160.0 supports prefix_rule and execpolicy check. Prefix matching cannot constrain trailing flags or JSON payload"
+        "note": "Installed isolated Python Git gateway and ~/.codex/rules/studio.rules; execpolicy allows gateway and leaves curl unmatch"
       }
     },
     {
