@@ -59,52 +59,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
 | J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
-| J1935 | mini | open (after J1790) | – | – | 049 script · chief · 049 Bennu: Chief topic and editorial decision before script lock |  |
-| J1936 | mini | open (after J1791) | – | – | 050 script · chief · 050 Iapetus: Chief topic and editorial decision before script lock |  |
-| J1937 | mini | open (after J1792) | – | – | 051 script · chief · 051 DART: Chief topic and editorial decision before script lock |  |
-| J1939 | mini | open (after J1793) | – | – | 052 script · chief · 052 Miranda: topic and editorial decision before script lock | J1793 |
-| J1946 | mini | open (after J1794) | – | – | 053 script · chief · 053 Parker Solar Probe: topic and editorial decision before script lock | J1794 |
-| J1947 | mini | open (after J1795) | – | – | 054 script · chief · 054 Simulation: topic and editorial decision before script lock |  |
-| J1948 | mini | open (after J1796) | – | – | 055 script · chief · 055 Human Spaceflight: topic and editorial decision before script lock |  |
-| J1949 | mini | open (after J1797) | – | – | 056 script · chief · 056 Autonomous Probes: topic and editorial decision before script lock |  |
-| J1951 | mini | open (after J1798) | – | – | 057 script · chief · 057 Callisto: topic and editorial decision before script lock |  |
-| J1952 | mini | open (after J1799) | – | – | 058 script · chief · 058 Magnetars and quasars: topic and editorial decision before script lock |  |
-| J1953 | mini | open (after J1800) | – | – | 059 script · chief · 059 Olympus Mons: restore script review and dependent lock checks | J1800 |
-| J1960 | any | open (after J1958) | – | – | 060 script · chief · 060 Hyperion: Chief topic and editorial decision after evidence |  |
-| J1964 | mini | open (after J1963) | – | – | 061 script · chief · 061 Venus rotation: Chief topic and editorial decision after evidence |  |
 | J1965 | any | open | – | – | chief · Chief: verify condition for J1879 |  |
 | J1967 | mini | claimed | gemini | 2026-11-04T19:51Z | 061 sources · for gemini · review · `gemini-argon` · 061 Venus rotation: direct MUST QUOTE review after Gemini facts | J1808 |
-| J1969 | mini | open (after J1896) | – | – | 033 topic · for gemini · review · `gemini-argon` · 033 Uranus: verify neighbours and matching Short evidence for the deferred candidate | J1896 |
-| J1970 | mini | open (after J1969) | – | – | 033 script · chief · 033 Uranus: decide advancement after topic evidence and own any rewrite/facts chain | J1896 |
-| J1971 | mini | open (after J1897) | – | – | 034 topic · for gemini · review · `gemini-argon` · 034 Pluto: verify neighbours and matching Short evidence for deferred candidate | J1897 |
-| J1972 | mini | open (after J1971) | – | – | 034 script · chief · 034 Pluto: decide advancement after evidence and own rewrite and facts chain | J1897 |
-| J1973 | mini | open (after J1898) | – | – | 035 topic · for gemini · review · `gemini-argon` · 035 Triton: verify neighbours and Neptune Short topic-fit evidence | J1898 |
-| J1974 | mini | open (after J1973) | – | – | 035 script · chief · 035 Triton: decide advancement and own specialist rewrite and facts chain | J1898 |
-| J1977 | mini | open (after J1900) | – | – | 036 topic · for gemini · review · `gemini-argon` · 036 Mercury: verify neighbours and polar-ice Short evidence | J1900 |
-| J1978 | mini | open (after J1977) | – | – | 036 script · chief · 036 Mercury: decide advancement and own rewrite and facts chain | J1900 |
-| J1979 | mini | open (after J1901) | – | – | 037 topic · for gemini · review · `gemini-argon` · 037 Milky Way Centre: verify neighbours and matching Short evidence | J1901 |
-| J1980 | mini | open (after J1979) | – | – | 037 script · chief · 037 Milky Way Centre: decide advancement and own rewrite and facts chain | J1901 |
-| J1981 | mini | open (after J1904) | – | – | 038 topic · for gemini · review · `gemini-argon` · 038 Voyager Golden Record: verify neighbours and matching Short evidence | J1904 |
-| J1982 | mini | open (after J1981) | – | – | 038 script · chief · 038 Voyager Golden Record: decide advancement and own rewrite and facts chain | J1904 |
-| J1984 | mini | open (after J1905) | – | – | 039 topic · for gemini · review · `gemini-argon` · 039 Planet Sounds: verify neighbours and matching Short evidence | J1905 |
-| J1985 | mini | open (after J1984) | – | – | 039 script · chief · 039 Planet Sounds: decide advancement and own rewrite and facts chain | J1905 |
-| J1986 | mini | open (after J1906) | – | – | 040 topic · for gemini · review · `gemini-argon` · 040 Wrong Kind of Aliens: verify neighbours, overlap and matching Short evidence | J1906 |
-| J1987 | mini | open (after J1986) | – | – | 040 script · chief · 040 Wrong Kind of Aliens: decide advancement and own rewrite and facts chain | J1906 |
-| J1990 | mini | open (after J1907) | – | – | 041 topic · for gemini · review · `gemini-argon` · 041 Io: verify neighbours, overlap and matching Short evidence | J1907 |
-| J1991 | mini | open (after J1990) | – | – | 041 script · chief · 041 Io: decide advancement and own specialist rewrite and facts chain | J1907 |
-| J1992 | mini | open (after J1909) | – | – | 042 topic · for gemini · review · `gemini-argon` · 042 Red Giant: verify neighbours, overlap and matching Short evidence | J1909 |
-| J1993 | mini | open (after J1992) | – | – | 042 script · chief · 042 Red Giant: decide advancement and own specialist rewrite and facts chain | J1909 |
-| J1994 | mini | open (after J1913) | – | – | 043 topic · for gemini · review · `gemini-argon` · 043 Bootes Void: verify neighbours, overlap and matching Short evidence | J1913 |
-| J1995 | mini | open (after J1994) | – | – | 043 script · chief · 043 Bootes Void: decide advancement and own specialist rewrite and facts chain | J1913 |
-| J1996 | mini | open (after J1928) | – | – | 044 topic · for gemini · review · `gemini-argon` · 044 Ganymede: verify neighbours, overlap and matching Short evidence | J1928 |
-| J1997 | mini | open (after J1996) | – | – | 044 script · chief · 044 Ganymede: decide advancement and own specialist rewrite and facts chain | J1928 |
-| J1999 | mini | open (after J1929) | – | – | 045 topic · for gemini · review · `gemini-argon` · 045 Mars: verify terraforming neighbours, Short proof and overlap | J1929 |
-| J2000 | mini | open (after J1999) | – | – | 045 script · chief · 045 Mars: decide capacity and advancement after topic evidence | J1929 |
-| J2001 | mini | open (after J1930) | – | – | 046 topic · for gemini · review · `gemini-argon` · 046 Enceladus: verify geyser neighbours, matching Short proof and overlap | J1930 |
-| J2002 | mini | open (after J2001) | – | – | 046 script · chief · 046 Enceladus: decide capacity and advancement after topic evidence | J1930 |
-| J2003 | mini | open (after J1933) | – | – | 047 topic · for gemini · review · `gemini-argon` · 047 Great Red Spot: verify neighbours, matching Short proof and overlap | J1933 |
-| J2004 | mini | open (after J2003) | – | – | 047 script · chief · 047 Great Red Spot: decide capacity and advancement after topic evidence | J1933 |
-| J2007 | mini | blocked | codex | – | 048 script · chief · 048 Ceres: decide capacity and advancement after topic evidence |  |
 | J2009 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-review |  |
 | J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 | J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |
