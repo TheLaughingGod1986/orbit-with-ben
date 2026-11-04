@@ -161549,9 +161549,14 @@
           "at": "2026-11-04T20:10Z",
           "by": "codex",
           "what": "step 2 of 3 done: Existing acquisition already delivered in PR410; five delivery hashes match and three previews fully decode. J1846 chose model fallback; J1847/J1848/J1849 already completed. Preserve original three-step plan; initial 0/3 reset was unnecessary."
+        },
+        {
+          "at": "2026-11-04T20:10Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Closeout f5aa54f4e6 records existing delivery, fresh five-file hashes/three decodes, rejected T545 and completed J1846-J1849 fallback. No new source approval or downstream gate change."
         }
       ],
-      "remaining_action": "Record acquisition closeout and hand back to existing repair chain",
+      "remaining_action": "Acquisition complete; existing J1471 correction work remains",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -161562,11 +161567,11 @@
       },
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-04T20:10Z",
         "by": "codex",
-        "note": "Existing acquisition already delivered in PR410; five delivery hashes match and three previews fully decode. J1846 chose"
+        "note": "Closeout f5aa54f4e6 records existing delivery, fresh five-file hashes/three decodes, rejected T545 and completed J1846-J"
       },
       "taskKeys": [
         "OWB:030"
