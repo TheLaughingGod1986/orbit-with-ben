@@ -1,5 +1,5 @@
 {
-  "next_id": 2017,
+  "next_id": 2018,
   "jobs": [
     {
       "id": "J0001",
@@ -172718,6 +172718,34 @@
       ],
       "urgent": 1,
       "j2010_correction": "J1471"
+    },
+    {
+      "id": "J2017",
+      "title": "Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 4 Nov 2026 (\"your final watch counts as the watch-and-listen check for these items. im happy with this\"); AGENTS.md \"Ben's final watch is the watch-and-listen check\" (PR480). Apply it to every job currently held only because no worker can watch moving video or hear audio:\n- J1752 / J1753 (031 / 032 voice final verification): technical evidence already PASS; record that the listening step moves to Ben's final watch and close them, so 031/032 move on.\n- J1810 and J2011 (audio-input capability): stop the capability hunt; close as superseded by Ben's 4 Nov rule (keep the PR438/PR479 evidence).\n- J1880 / J1881 (HOS 008, six fixes from Ben's 3 Nov notes): build the edit recipe from stills, timecodes, cut list and VO transcript; the Chief checks it on that evidence; Ben's final watch on Sun 15 Nov confirms.\n- J1879 / J1889 (recovered Mars-night and Titan social sources): accept on hash, full decode, duration and frame stills matching the approved Studio uploads; Ben has already watched those Shorts.\n- Search the queue for any other job blocked on \"moving-video\", \"audio input\", \"cannot hear\", \"perception\" and release it the same way.\nA failing tool check still fails: this removes only the \"a worker must actually watch/hear it\" hold. Record each change on the studio thread (#478) in one post.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception",
+      "kind": "chief"
     }
   ],
   "focus": [],
