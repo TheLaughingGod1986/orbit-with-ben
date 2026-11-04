@@ -286,6 +286,8 @@ Where a lesson below meets one of them, the rule wins.
 
 ## Packaging (Astrum ref, 11 Oct 2026)
 
+**Reference channels (Ben, 4 Nov 2026: melodysheep, SEA, Astrum).** Goal: Shorts to tens of thousands of views, longs to thousands. From these channels we take: sell the real picture (LEARNINGS 18), one clean real-image thumbnail concept (19), named series with playlists and end screens (20, a rule), a monthly 40-60 min journey film made from our longs (21), and one tentpole film a month (22, November is 032). The score already follows the chapters (*Polish pass* 2); a tentpole's bed also lifts at its reveals. The monthly report scores each test against the goal.
+
 **Long titles (Ben, 4 Nov 2026):** the Chief checks every long's title before upload against LEARNINGS rule 15 (names the subject and a concrete scenario, number or stakes; 50 characters or fewer; never a vague "What happened to X?").
 
 Ben, 11 Oct 2026, sent `@astrumspace`: *"anything we can learn from the thumbnails, packaging of shorts?"* Chief studied their top and bottom longs and Shorts against our last ten longs and decided the following the same night. Ben delegates creative calls to Chief and the AIs. Evidence: `/workspace/astrum-pack` on the box (contact sheets, `longs_meta.tsv`, `shorts_meta.tsv`).

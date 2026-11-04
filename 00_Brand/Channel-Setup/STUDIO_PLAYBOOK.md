@@ -21,6 +21,7 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 | Slot | What | When (UK) |
 |---|---|---|
 | Sunday | One long, 8–9 min, **normal publish (no Premiere)** | 18:00 |
+| Wednesday | A second long when one is finished (Ben, 4 Nov 2026), same rules as Sunday. First: 032 Titan 25 Nov, 031 2 Dec. | 18:00 |
 | Mon · Wed · Fri | Three Shorts, 22–27 s. One teases the new long, two promote films already up. | 11:30 |
 
 - Never more than one Short a day.
