@@ -117,10 +117,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2002 | mini | open (after J2001) | – | – | 046 script · chief · 046 Enceladus: decide capacity and advancement after topic evidence | J1930 |
 | J2003 | mini | open (after J1933) | – | – | 047 topic · for gemini · review · `gemini-argon` · 047 Great Red Spot: verify neighbours, matching Short proof and overlap | J1933 |
 | J2004 | mini | open (after J2003) | – | – | 047 script · chief · 047 Great Red Spot: decide capacity and advancement after topic evidence | J1933 |
-| J2007 | mini | claimed | codex | 2026-11-04T11:21Z | 048 script · chief · 048 Ceres: decide capacity and advancement after topic evidence |  |
+| J2007 | mini | blocked | codex | – | 048 script · chief · 048 Ceres: decide capacity and advancement after topic evidence |  |
 | J2009 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-review |  |
 | J2010 | mini | open | – | – | chief · Chief: review video-priority PR477 and capacity PR437; verify real production pickup | J1471 / PR477 / PR437 |
 | J2011 | mini | open | – | – | assembly · Repair native Gemini audio delivery using non-production fixtures before VO review | J1810 / PR438 |
+| J2012 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 
 Recently finished:
 
