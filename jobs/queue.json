@@ -162581,9 +162581,14 @@
           "at": "2026-11-04T22:14Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T22:15Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Existing branch clean; prior cleanup fixes retained. Production callers still absent; no rollout enabled."
         }
       ],
-      "remaining_action": "Implement production capacity callers and portable receipt transport; then exact-head review",
+      "remaining_action": "Connect disabled capacity caller hooks and verify guarded launch behavior",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162603,9 +162608,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T20:43Z",
+        "at": "2026-11-04T22:15Z",
         "by": "codex",
-        "note": "PR437 f847b1ed90: synchronized main; fixed canonical cleanup for nonzero/timeout/guard-stop outcomes. 99 capacity +19 le"
+        "note": "Existing branch clean; prior cleanup fixes retained. Production callers still absent; no rollout enabled."
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
