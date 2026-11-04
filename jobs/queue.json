@@ -168413,13 +168413,13 @@
       "stage": "script",
       "after": "J1785",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T09:10Z",
-      "eta": "2026-11-04T11:10Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T01:37Z",
-      "result": "",
+      "result": "DEFER topic lock; editorial FIX remains under review, recorded blocked for Chief completion gate. PR474 merged with both checks green. J1996 owns evidence; J1997 owns capacity/advancement and conditional specialist rewrite, Gemini facts and direct-quote lock chain. Grunsfeld role label is four words. Draft/source hashes unchanged. No production approval.",
       "history": [
         {
           "at": "2026-11-04T01:37Z",
@@ -168455,6 +168455,11 @@
           "at": "2026-11-04T09:16Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR474 merged with both checks green. Explicit script blocked/FIX recorded for Chief completion gate; remains under editorial review, not approved."
+        },
+        {
+          "at": "2026-11-04T09:16Z",
+          "by": "codex",
+          "what": "done: DEFER topic lock; editorial FIX remains under review, recorded blocked for Chief completion gate. PR474 merged with both checks green. J1996 owns evidence; J1997 owns capacity/advancement and conditional specialist rewrite, Gemini facts and direct-quote lock chain. Grunsfeld role label is four words. Draft/source hashes unchanged. No production approval."
         }
       ],
       "remaining_action": "Handoff complete; J1996 evidence precedes J1997 advancement decision",
@@ -168468,7 +168473,8 @@
       },
       "taskKeys": [
         "OWB:044"
-      ]
+      ],
+      "done_ref": "PR474; explicit J1928 FIX/blocked ruling; J1996/J1997 successors"
     },
     {
       "id": "J1929",
