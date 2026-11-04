@@ -174653,17 +174653,22 @@
           "at": "2026-11-04T17:48Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR488 head 0a655e1d52 pushed; corrected two legacy routing fixtures; core/rules plus voice and Shorts gate suites pass; GitHub checks not reported yet"
+        },
+        {
+          "at": "2026-11-04T17:49Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Worker implementation and PR complete: 667 script tests OK (8 skipped), 42 additional tests pass, core/rules/diff checks pass. No GitHub checks reported; no merge by worker."
         }
       ],
-      "remaining_action": "Read final full-suite result and hand PR488 to Chief for review and merge",
+      "remaining_action": "Chief reviews PR488 head 0a655e1d52 and merges after required checks",
       "kind": "assembly",
       "urgent": 5,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T17:48Z",
+        "at": "2026-11-04T17:49Z",
         "by": "codex",
-        "note": "PR488 head 0a655e1d52 pushed; corrected two legacy routing fixtures; core/rules plus voice and Shorts gate suites pass; "
+        "note": "Worker implementation and PR complete: 667 script tests OK (8 skipped), 42 additional tests pass, core/rules/diff checks"
       }
     }
   ],
