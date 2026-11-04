@@ -110407,9 +110407,14 @@
           "at": "2026-11-03T11:00Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-05T12:00:00Z"
+        },
+        {
+          "at": "2026-11-04T00:04Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T12:00:00Z"
         }
       ],
-      "remaining_action": "Await eligible S5/S6 footage until final 5 Nov noon check; Uranus correction unsuccessful, preserve fallback",
+      "remaining_action": "Receive J1208 accepted exact S5/S6 illustration inputs, then corrections and original gates; preserve fallback",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "progress": {
@@ -110424,13 +110429,20 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J1756 verified 3 Nov: no new eligible S5 meteor/S6 Titan input in designated NAS evidence (1706 files, newest 29 Oct), matching open PRs or subsequent thread submissions. PR350 rejection and J1278 final 5 Nov 12:00Z checkpoint stand. Require materially different clean sequential footage with source, reuse rights, hash, native dimensions, exact in/out, full-size sequence and aspect-correct crop <=2.35x; no repeat broad search or automatic assembly. S4 no longer awaits J1204: v06 passed there, then Ben requested shake correction; J1242 closed v10 UNSUCCESSFUL for open/loop FAIL and stopped Shot9 iterations. J1212 approval hold is untouched. Rejected v02 and later failed cuts remain unapproved; original fallback and Ben-watch terms preserved. At final S5/S6 check, close unsuccessful source branch if still absent. No publishing authorized.",
-        "check_at": "2026-11-05T12:00:00Z",
-        "last_recheck": "J1756",
-        "checked_at": "2026-11-03T11:00:19+00:00",
-        "checked_by": "codex"
+        "condition": "J1914 reopened J1208 for separately scoped bounded illustration candidates after exhausted real-archive search. Need exact-source Chief acceptance and all original opening/loop/finished-cut gates before assembly or Ben watch; generation is not approval. Original scheduled-copy fallback preserved. Uranus branch J1212 closed unsuccessful after missed window; original reads Public. No repeated MEO search or publication.",
+        "check_at": "2026-11-05T12:00:00Z"
       },
-      "escalated_at": "2026-10-29T15:50Z"
+      "escalated_at": "2026-10-29T15:50Z",
+      "superseded_holds": [
+        {
+          "type": "input",
+          "condition": "J1756 verified 3 Nov: no new eligible S5 meteor/S6 Titan input in designated NAS evidence (1706 files, newest 29 Oct), matching open PRs or subsequent thread submissions. PR350 rejection and J1278 final 5 Nov 12:00Z checkpoint stand. Require materially different clean sequential footage with source, reuse rights, hash, native dimensions, exact in/out, full-size sequence and aspect-correct crop <=2.35x; no repeat broad search or automatic assembly. S4 no longer awaits J1204: v06 passed there, then Ben requested shake correction; J1242 closed v10 UNSUCCESSFUL for open/loop FAIL and stopped Shot9 iterations. J1212 approval hold is untouched. Rejected v02 and later failed cuts remain unapproved; original fallback and Ben-watch terms preserved. At final S5/S6 check, close unsuccessful source branch if still absent. No publishing authorized.",
+          "check_at": "2026-11-05T12:00:00Z",
+          "last_recheck": "J1756",
+          "checked_at": "2026-11-03T11:00:19+00:00",
+          "checked_by": "codex"
+        }
+      ]
     },
     {
       "id": "J1200",
@@ -111157,19 +111169,19 @@
       "title": "J1204 source follow-up: genuine meteor video and clean Titan opening",
       "needs": "mini",
       "repo": "owb",
-      "body": "Acting Chief Codex source-plan ruling: jobs/reviews/J1204/SOURCE_PLAN_RULING_2026-10-29.md (PR #348). Resolve only the missing S5 Shooting Stars and S6 Titan opening inputs for J1199; no-spend sourcing, not assembly or publishing. S4 Uranus proceeds independently in J1204.\n\nS5: inspect actual NASA All Sky Fireball Network / Meteoroid Environment Office video and clearly commercially reusable original observatory clips. Existing Geminid-v05 is a constellation diagram and is rejected, even though its later frames contain drawn streaks. Need recognizable meteor streak motion from frame 0, a suitable <=2.7 s opening window, adequate native detail and <=2.35x measured upscale. A 16:9 centre-band presentation with feathered moving blur fill may be proposed; no JPEG pushes, artificial jitter, logos/panels/diagrams or modified gates.\n\nS6: reject PIA17656 radar reconstruction even with blur fill (exaggerated terrain, swath/missing-data artifacts). Inspect actual ESA/NASA/JPL/University of Arizona Huygens optical descent sequence, or other clean moving Titan footage. Distinguish real sequential observations from animated stills and reconstructed terrain. No requirement to pretend that low-resolution Huygens data can fill 1920h: measure native resolution and proposed centre-band upscale, and reject insufficient detail. The Dragonfly TakingOff artist animation is approved as a source candidate for the mid-film Dragonfly line only, subject to final WARN review and all gates; it does not satisfy the opening by itself.\n\nReturn a bounded source inventory with source page, commercial reuse/credit evidence, exact category/title, downloaded path and SHA-256, native dimensions, in/out, actual crop/upscale and full-size frame sequence. Start immediately; report evidence by 30 Oct 18:00Z. If nothing qualifies, record searches and exact missing input; do not repeatedly return the same rejected sources. Never spend on licences, generation or new VO. No v03 render until Chief accepts a source/edit plan. Overall S5/S6 assembly deadline remains 5 Nov 12:00Z; Ben watch 10:30 London on 7/10 Nov; absent required PASS/OK the existing scheduled copies air. No YouTube, Buffer, UPLOADS, schedule or privacy changes. Never overwrite old cuts/manifests. Return for source decision with a concrete blocker if needed; ordinary assembly worker routing applies.\n",
+      "body": "J1914 elected-Chief separate fallback scope, 4 November 2026. This explicitly replaces ONLY the predecessor no-generation restriction for the following bounded illustration candidates; it does not accept a source or a finished cut. The exhausted real-archive/MEO search is not restarted. Do not revisit rejected MEO crops, PIA17656 reconstruction or unchanged cache.\n\nUse existing job J1208 for two separately identified candidate illustrations for standalone S5/S6, linked to OWB:030 and J1199. Locked openings: S5 \"That shooting star isn't a star.\" S6 \"Standing on Titan feels like being fifteen metres underwater.\" Preserve existing VO, removed meta-promise, all existing cuts/manifests and scheduled-copy fallback. These are explanatory illustrations, never NASA observational footage. Record generated provenance and description disclosure for a later approved package; no fake agency credit. Shorts retain their no-corner-credit rule. No publication or description edit is authorized here.\n\nS5 reference: original source-checked meteor facts in SCRIPTS_v01 / GEMINI_FACTS_S5-S8; bright meteor crossing a realistic night sky above an unobtrusive landscape, already moving at frame 0. No constellations, labels, telescope reticle, apparent star exploding, macro fireball/impact, Orbit or invented named event. S6 reference: source-checked Titan atmosphere and Huygens optical appearance; muted orange haze above low-relief terrain, physically plausible visible atmospheric movement, no claim to reproduce a measured landing location. No radar swath reconstruction, invented mountains, Earth-blue sky, underwater scene, rings filling the sky, or fabricated scientific geometry. Do not equate visual haze with the numerical pressure measurement. Preserve the locked spoken pressure line; if this candidate cannot honestly support it, return precise FIX instead of altering VO.\n\nTool scope: existing Vertex Veo world-footage route, veo-3.1-fast-generate-001, project gen-lang-client-0538779324, location us-central1, silent 1080p 9:16. Not Omni, AI Studio/API-key/prepaid, Flow, new service, or the obsolete orbit_gemini_veo.py API-key wrapper. Use the approved Vertex/ADC pattern from standalone_apophis/_mint_apophis_short_veo_v01.py only as a reference; its lack of live guarded preflight is not permission to copy it unguarded. One 8-second take per subject, at most TWO total, zero retries or automatic alternate-model fallback. HARD ceiling GBP4 total including failed/billable takes, no overage. This is an allowance ceiling, not a verified current price.\n\nBefore any call, worker must verify live monthly-promo entitlement, billing-account/project linkage and served model/region through credential-safe reads, current per-second estimate including currency margin, all pending/unposted spends and the stricter GBP1 safety reserve. Existing scripts/ai_spend_daily.py already reads monthly Available credits; never relabel them Free Trial or use Used/Expired rows. Require live_available - pending - full remaining scope estimate >= GBP1 and total estimate <= GBP4. Historical GBP0.075/s is not sufficient current-price evidence. Use desk lock and reserve full scope in existing ledger before first call, reconcile actual/estimated spend once (no double counting), refresh balance before second call. If a monthly-compatible guard cannot enforce this, stop BEFORE spending, implement a focused backward-compatible tested guard and obtain Chief code review within this existing job; never bypass it. No purchases, top-ups, upgrades or sign-in changes.\n\nActual source delivery must identify native dimensions, exact <=2.7s opening and required loop-preroll interval, hashes, crop <=2.35x, source reference and generated classification, and native moving/phone/preroll review evidence. Plan total source duration for BOTH opening and preroll before minting; if 8s cannot meet the exact edit, return a precise unmet-duration condition without spending. No camera jitter, still pushes, fake repeated frames, reversal or stretching to manufacture motion. Gate thresholds unchanged: gate_shorts_open, picture_qa, polish, loop and later finished music/audio gates. Metrics never equal KEEP. A verified native-video reviewer (Gemini only after actual session demonstration) checks scientific honesty, subject recognition and WARNs; current elected Chief makes the exact-source decision before J1199 assembly. Fresh audio review is required later for finished cuts, not silent source generation. On success deliver private durable package and queue the deduplicated exact-source review immediately; on failure record exact criterion and preserve scheduled-copy fallback. No upload, swap, Buffer, schedule, privacy or Ben-approval changes.\n\nNamed worker route: Codex video worker with Vertex/ADC and guarded preflight, or next available video worker in existing routing chain. Assignment is not pickup; no launch is claimed by J1914. Ready preflight/design starts now; 5 Nov noon remains final source/correction checkpoint, not a start delay.\n\nHistorical source-only brief retained:\nActing Chief Codex source-plan ruling: jobs/reviews/J1204/SOURCE_PLAN_RULING_2026-10-29.md (PR #348). Resolve only the missing S5 Shooting Stars and S6 Titan opening inputs for J1199; no-spend sourcing, not assembly or publishing. S4 Uranus proceeds independently in J1204.\n\nS5: inspect actual NASA All Sky Fireball Network / Meteoroid Environment Office video and clearly commercially reusable original observatory clips. Existing Geminid-v05 is a constellation diagram and is rejected, even though its later frames contain drawn streaks. Need recognizable meteor streak motion from frame 0, a suitable <=2.7 s opening window, adequate native detail and <=2.35x measured upscale. A 16:9 centre-band presentation with feathered moving blur fill may be proposed; no JPEG pushes, artificial jitter, logos/panels/diagrams or modified gates.\n\nS6: reject PIA17656 radar reconstruction even with blur fill (exaggerated terrain, swath/missing-data artifacts). Inspect actual ESA/NASA/JPL/University of Arizona Huygens optical descent sequence, or other clean moving Titan footage. Distinguish real sequential observations from animated stills and reconstructed terrain. No requirement to pretend that low-resolution Huygens data can fill 1920h: measure native resolution and proposed centre-band upscale, and reject insufficient detail. The Dragonfly TakingOff artist animation is approved as a source candidate for the mid-film Dragonfly line only, subject to final WARN review and all gates; it does not satisfy the opening by itself.\n\nReturn a bounded source inventory with source page, commercial reuse/credit evidence, exact category/title, downloaded path and SHA-256, native dimensions, in/out, actual crop/upscale and full-size frame sequence. Start immediately; report evidence by 30 Oct 18:00Z. If nothing qualifies, record searches and exact missing input; do not repeatedly return the same rejected sources. Never spend on licences, generation or new VO. No v03 render until Chief accepts a source/edit plan. Overall S5/S6 assembly deadline remains 5 Nov 12:00Z; Ben watch 10:30 London on 7/10 Nov; absent required PASS/OK the existing scheduled copies air. No YouTube, Buffer, UPLOADS, schedule or privacy changes. Never overwrite old cuts/manifests. Return for source decision with a concrete blocker if needed; ordinary assembly worker routing applies.\n",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
-      "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-29T15:55Z",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
-      "result": "Chief review COMPLETE: PR350 merged, CI PASS. All 18 hashes verified; submitted MEO crops rejected (remaining reticles and inadequate subject presentation). S6 input absent. Bounded research complete; no source/cut PASS. External input hold only: new materially different clean sequential meteor/Titan candidate with full provenance and aspect-correct <=2.35x crop. No repeat broad search, render or publishing; scheduled-copy fallback stands. Ruling jobs/reviews/J1208/MEO_FINAL_RULING_2026-10-29.md.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T14:17Z",
@@ -111275,11 +111287,26 @@
           "at": "2026-10-30T18:39Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-05T12:00:00Z"
+        },
+        {
+          "at": "2026-11-04T00:04Z",
+          "by": "codex",
+          "what": "reopened: J1914 separate bounded Veo illustration scope after exhausted archive search; original no-generation restriction superseded only for exact two-candidate scope. Guarded preflight and all review gates mandatory."
         }
       ],
-      "remaining_action": "Await new eligible S5/S6 footage; final verification 5 Nov 12:00 UTC, otherwise retain scheduled-copy fallback",
+      "remaining_action": "Prepare guarded two-candidate S5/S6 Veo illustration scope, then exact-source review; no automatic assembly",
       "due": "2026-10-30T18:00:00Z",
-      "kind": "assembly",
+      "kind": "video",
+      "superseded_holds": [
+        {
+          "type": "input",
+          "condition": "J1278 verified 30 Oct: no newly supplied eligible S5 meteor or S6 Titan footage. PR350 rejects submitted MEO openings; Titan optical input missing. Require materially different sequential footage with source, commercial rights, hash, native dimensions, exact in/out, full-size sequence and clean aspect-correct crop at <=2.35x. Final check 5 Nov 12:00Z: if still absent close unsuccessful source branch and record existing scheduled-copy fallback. No broad search, automatic assembly, PASS or publishing.",
+          "check_at": "2026-11-05T12:00:00Z",
+          "last_recheck": "J1278",
+          "checked_at": "2026-10-30T18:39:52+00:00",
+          "checked_by": "codex"
+        }
+      ],
       "progress": {
         "step": 0,
         "of": 3,
@@ -111288,14 +111315,9 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       },
-      "hold": {
-        "type": "input",
-        "condition": "J1278 verified 30 Oct: no newly supplied eligible S5 meteor or S6 Titan footage. PR350 rejects submitted MEO openings; Titan optical input missing. Require materially different sequential footage with source, commercial rights, hash, native dimensions, exact in/out, full-size sequence and clean aspect-correct crop at <=2.35x. Final check 5 Nov 12:00Z: if still absent close unsuccessful source branch and record existing scheduled-copy fallback. No broad search, automatic assembly, PASS or publishing.",
-        "check_at": "2026-11-05T12:00:00Z",
-        "last_recheck": "J1278",
-        "checked_at": "2026-10-30T18:39:52+00:00",
-        "checked_by": "codex"
-      }
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1209",
@@ -111524,13 +111546,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T17:52Z",
-      "result": "waiting for Ben: OK of Uranus v06 on the board by Tue 3 Nov 10:30 London",
+      "result": "J1914: missed replacement window and unsuccessful later correction; original ZpEA8stoSPA reads Public. No swap or new approval.",
       "history": [
         {
           "at": "2026-10-29T17:52Z",
@@ -111546,12 +111568,34 @@
           "at": "2026-10-29T21:58Z",
           "by": "codex",
           "what": "remaining action: Await J1225 shake correction and Chief PASS, then Ben watch by 3 Nov 10:30; v01 fallback remains scheduled"
+        },
+        {
+          "at": "2026-11-04T00:04Z",
+          "by": "codex",
+          "what": "no longer waits on Ben"
+        },
+        {
+          "at": "2026-11-04T00:04Z",
+          "by": "codex",
+          "what": "cancelled: J1914: 3 Nov replacement window missed; authenticated read-only check confirms original ZpEA8stoSPA Public. J1242 v10 correction was unsuccessful (opening/loop FAIL). Obsolete v06 watch request dropped, not approved. No video, Buffer or schedule mutation; existing live original retained. Any new correction/publication requires new exact scope."
         }
       ],
-      "remaining_action": "Await J1225 shake correction and Chief PASS, then Ben watch by 3 Nov 10:30; v01 fallback remains scheduled",
+      "remaining_action": "Closed unsuccessful replacement window; original is Public, no current v06 approval request",
       "due": "2026-11-03T10:30:00Z",
       "kind": "studio",
-      "awaits_ben": {
+      "hold": {
+        "type": "ben",
+        "condition": "Ben's board OK of Uranus v06",
+        "check_at": "2026-10-29T23:53:08.186847+00:00"
+      },
+      "superseded_holds": [
+        {
+          "type": "ben",
+          "condition": "Ben's board OK of Uranus v06",
+          "check_at": "2026-10-29T23:53:08.186847+00:00"
+        }
+      ],
+      "awaits_was": {
         "what": "swap the Uranus Short \"Why Does Uranus Have 21-Year Winters?\" (ZpEA8stoSPA, airs Tue 3 Nov 11:30) to re-cut v06: moving ring footage from the first frame, opens on \"Uranus is tipped 97 degrees\", no \"stay and I'll show you\"",
         "file": "OWB UAT/standalone_shorts_uranus_v06/owb_sa_s4_uranus_v06.mp4",
         "version": "v06",
@@ -111560,11 +111604,6 @@
         "ifNot": "v01 airs as scheduled",
         "title": "Why Does Uranus Have 21-Year Winters?",
         "type": "short"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Ben's board OK of Uranus v06",
-        "check_at": "2026-10-29T23:53:08.186847+00:00"
       }
     },
     {
