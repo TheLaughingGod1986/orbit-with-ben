@@ -173773,6 +173773,11 @@
           "at": "2026-11-04T17:12Z",
           "by": "codex",
           "what": "step 1 of 5 done: 9223 has 1 tab; 9222 has 3 tabs. Dry run closes zero, so no sign-in or working tab is selected. Clean code worktree: /private/tmp/j2022-codex."
+        },
+        {
+          "at": "2026-11-04T17:13Z",
+          "by": "codex",
+          "what": "step 3 of 5 done: LaunchAgent installed and bootstrap succeeded. Four shared helpers reuse tabs without closing them; 13 cdp_tabs tests and 7 ai_spend_daily tests passed; changed helpers compile."
         }
       ],
       "kind": "assembly",
@@ -173798,13 +173803,13 @@
       },
       "by": "codex",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-04T17:12Z",
+        "at": "2026-11-04T17:13Z",
         "by": "codex",
-        "note": "9223 has 1 tab; 9222 has 3 tabs. Dry run closes zero, so no sign-in or working tab is selected. Clean code worktree: /pr"
+        "note": "LaunchAgent installed and bootstrap succeeded. Four shared helpers reuse tabs without closing them; 13 cdp_tabs tests an"
       },
-      "remaining_action": "Install the janitor after reviewing its zero-close dry run, then migrate helpers and run tests"
+      "remaining_action": "Open the helper-migration PR and capture the janitor log and tab counts after 30 minutes"
     },
     {
       "id": "J2023",
