@@ -168838,13 +168838,13 @@
       "stage": "script",
       "after": "J1789",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T10:09Z",
-      "eta": "2026-11-04T12:09Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T02:37Z",
-      "result": "",
+      "result": "DEFER topic lock; Ceres retained unlocked, script FIX. PR476 merged with CI PASS; J2006 owns evidence, J2007 dependent Chief advancement and conditional specialist rewrite/facts/lock. No waiver, spend or production approval.",
       "history": [
         {
           "at": "2026-11-04T02:37Z",
@@ -168875,6 +168875,11 @@
           "at": "2026-11-04T10:16Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR476 merged; both CI checks PASS; board check, input hashes, follow-up dependencies and unchanged focus verified"
+        },
+        {
+          "at": "2026-11-04T10:16Z",
+          "by": "codex",
+          "what": "done: DEFER topic lock; Ceres retained unlocked, script FIX. PR476 merged with CI PASS; J2006 owns evidence, J2007 dependent Chief advancement and conditional specialist rewrite/facts/lock. No waiver, spend or production approval."
         }
       ],
       "remaining_action": "Decision verified; close queue record and report owned continuation",
@@ -168888,7 +168893,8 @@
       },
       "taskKeys": [
         "OWB:048"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/476"
     },
     {
       "id": "J1935",
