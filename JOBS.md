@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1956 | gemini | open (after J1802) | – | – | 059 sources · facts · 059 Olympus Mons: formal Gemini sources and claims verification | J1802 |
 | J1957 | mini | open (after J1956) | – | – | 059 sources · for gemini · review · `gemini-argon` · 059 Olympus Mons: direct MUST QUOTE review after Gemini facts | J1802 |
 | J1958 | any | open (after J1803) | – | – | 060 topic · review · 060 Hyperion: verify topic neighbours and audience evidence |  |
+| J1959 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
