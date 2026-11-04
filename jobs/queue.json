@@ -162164,9 +162164,14 @@
           "at": "2026-11-04T06:25Z",
           "by": "codex",
           "what": "step 1 of 3 done: Recovered prior checkpoints; correcting initial plan reset to preserve original 1/3 progress. Resume existing branch b07a54ea62; no rollout."
+        },
+        {
+          "at": "2026-11-04T06:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Added identity-bound private evidence reader and macOS resource probes; 15 new collector tests under verification. Production dispatch remains disabled."
         }
       ],
-      "remaining_action": "Complete trusted host evidence, production integration and portable transfer in existing PR437",
+      "remaining_action": "Verify private local host/account evidence collector; integrate remaining launch and portable paths later",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162177,9 +162182,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T06:25Z",
+        "at": "2026-11-04T06:28Z",
         "by": "codex",
-        "note": "Recovered prior checkpoints; correcting initial plan reset to preserve original 1/3 progress. Resume existing branch b07"
+        "note": "Added identity-bound private evidence reader and macOS resource probes; 15 new collector tests under verification. Produ"
       },
       "rerouted_from": {
         "needs": "mini",
