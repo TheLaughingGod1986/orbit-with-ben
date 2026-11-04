@@ -158739,9 +158739,14 @@
           "at": "2026-11-04T05:09Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T05:09Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed assigned orphan-review repair; no media approval or production work."
         }
       ],
-      "remaining_action": "Chief resolves 060 topic handoff and records the next owner/action",
+      "remaining_action": "Verify Hyperion topic review evidence and restore its missing decision handoff",
       "kind": "chief",
       "handoff": {
         "film": "060",
@@ -158754,9 +158759,11 @@
         "of": 3,
         "at": "2026-11-04T05:09Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed assigned orphan-review repair; no media approval or production work."
+      },
+      "taskKeys": [
+        "OWB:060"
+      ]
     },
     {
       "id": "J1804",
