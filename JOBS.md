@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2040 | mini | open | – | – | assembly · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2041 | any | claimed | claude | 2026-11-04T19:54Z | 031 shots · review · 031 shots: shot list from the locked script and voice (WIP film) |  |
 | J2042 | any | open | – | – | 032 shots · review · 032 shots: shot list from the locked script and voice (WIP film) |  |
+| J2043 | mini | open | – | – | 031 shots · review · 031 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film) |  |
 
 Recently finished:
 

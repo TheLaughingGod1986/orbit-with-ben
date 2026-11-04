@@ -1,5 +1,5 @@
 {
-  "next_id": 2043,
+  "next_id": 2044,
   "jobs": [
     {
       "id": "J0001",
@@ -174994,6 +174994,34 @@
       "remaining_action": "032 shots: shot list from the locked script and voice (WIP film)",
       "kind": "review",
       "urgent": 2
+    },
+    {
+      "id": "J2043",
+      "title": "031 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E reviewer check (AGENTS.md \"Continuous flow\", Ben 4 Nov) of 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/SHOT_LIST_v01.md (Claude, J2041), against the locked VO v02a timings, SOURCES.md and AGENTS \"Teach on screen\". Check: every row's VO span matches stt_raw.json; frame 0 is moving subject footage; every DATA/WHO/WHEN/FACT is a CODE row; every on-screen number exists in SOURCES.md; licences named per source; no still used more than twice. Verdict in one go: GO (fix small items in place, commit SHOT_LIST_v02 if you change anything, then `studio.py set 031 shots done --git` and queue the picture job: harvest + code_graphics builds, --film 031 --stage picture, £0) or NO-GO with an exact fix list. No defer.\n",
+      "ref": "",
+      "film": "031",
+      "stage": "shots",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T17:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T17:56Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "031 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film)",
+      "kind": "review"
     }
   ],
   "focus": [],
