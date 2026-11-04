@@ -167650,19 +167650,24 @@
           "at": "2026-11-04T03:43Z",
           "by": "codex",
           "what": "step 2 of 3 done: J1823 remains blocked; recorded actual missing reviews with --recheck J1945 and preserved 04:40:34Z check. Panel jobs remain immediately available under their routing/dependencies."
+        },
+        {
+          "at": "2026-11-04T03:43Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Read-back confirms blocked parent, last_recheck J1945, original check time, and J1940-J1944 still open. No candidate approval, spend or live changes."
         }
       ],
-      "remaining_action": "Verify parent hold and close condition-verification task",
+      "remaining_action": "Verification complete: J1823 held for panel and exact-file ruling; report outcome",
       "kind": "chief",
       "recheck_of": "J1823",
       "due": "2026-11-04T04:40:34+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-04T03:43Z",
         "by": "codex",
-        "note": "J1823 remains blocked; recorded actual missing reviews with --recheck J1945 and preserved 04:40:34Z check. Panel jobs re"
+        "note": "Read-back confirms blocked parent, last_recheck J1945, original check time, and J1940-J1944 still open. No candidate app"
       },
       "taskKeys": [
         "OWB:026"
