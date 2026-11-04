@@ -681,8 +681,72 @@
       const channel=row.key.startsWith('HOS:')?'History of Science':'Orbit With Ben';
       return row.video?`${row.video.title||row.key} · ${channel} · ${kind(row.video)}`:`${channel} · ${row.key.split(':')[1]} · title not recorded`;
     };
-    return rows.length?{label:rows.slice(0,2).map(label).join(' / ')+(rows.length>2?` · +${rows.length-2} more videos`:''),count:rows.length}
-      :{label:'Studio task · no video linked in the job record',count:0};
+    return rows.length?{label:rows.slice(0,2).map(label).join(' / ')+(rows.length>2?` · +${rows.length-2} more videos`:''),count:rows.length,keys:rows.map(r=>r.key)}
+      :{label:'Studio task · no video linked in the job record',count:0,keys:[]};
+  }
+  function activityCategory(b,j) {
+    const text=String(j.title||'')+' '+String(j.remaining_action||'');
+    if(/\b(?:dispatcher|frontend|schema|kanban|deployment|rollout|capacity|software|implementation|code patch|checker fix|worker repair|workflow (?:handoff )?(?:fixes?|repair|code))\b/i.test(text)) return {id:'engineering',label:'Engineering'};
+    if(/\b(?:analytics|analytical|impressions|CTR|retention|watch time|daily Studio read|collect(?:ed|ing)? metrics|rebuild the tracker|monthly (?:channel )?(?:improvement )?(?:report|review)|weekly .*audit)\b/i.test(text)) return {id:'analytics',label:'Analytics'};
+    if(j.recheck_of || /\b(?:verify (?:the )?condition for|orphan-(?:review|blocked))\b/i.test(text)) return {id:'coordination',label:'Coordination'};
+    if(activityVideoContext(b,j).count) return {id:'production',label:'Video production'};
+    return {id:'operations',label:'Studio operations'};
+  }
+  function taskEstimate(j,now) {
+    if(!j || j.phase==='starting') return null;
+    const p=recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
+    return (!p || p.step<p.of) && Number.isFinite(start) && start<=now && (p && p.step>0 && p.step<p.of || Number.isFinite(+j.estMin) && +j.estMin>0)
+      ? etaOf({...j,progress:p || {step:0,of:0}},now) : null;
+  }
+  function activityEvidenceFresh(j,now) {
+    return [j.claimedAt,j.dispatchStartedAt,(j.progress||{}).at,(j.last||{}).at].some(t=>{
+      const at=Date.parse(t||'');return Number.isFinite(at)&&now>=at&&now-at<=10*MIN;
+    }) || Date.parse(j.dispatchStartedAt||'')<=now && Date.parse(j.dispatchExpiresAt||'')>now;
+  }
+  function nextVideoTask(b,v,now) {
+    if(!v || forBen([v]).length || isLive(v) || (v.youtube||{}).state==='scheduled' || unconfirmedCut(v) || ['approved','done'].includes(v.lane)) return null;
+    const s=overviewModel(b,now), workflow=b.workflow||{}, fresh=t=>Number.isFinite(Date.parse(t||''))&&now>=Date.parse(t)&&now-Date.parse(t)<=10*MIN;
+    const reportFresh=[b.publishedAt,workflow.at,(b.models||{}).checkedAt].some(fresh), dispatchFresh=fresh(workflow.at);
+    const m=unconfirmedCut(v)?relatedStage(v):currentProduction(v)[0], stage=id=>({facts:'sources',thumbnails:'thumbs'}[id]||id);
+    const all=new Map(s.jobs.map(j=>[j.id,j]));
+    for(const j of [...(v.jobs||[]),...((m||{}).jobs||[])]) if(j.id&&!all.has(j.id)) all.set(j.id,j);
+    const own=new Set(((m||{}).jobs||[]).map(j=>j.id));
+    const linked=[...all.values()].filter(j=>activityVideoContext(b,j).keys.includes(v.key)||own.has(j.id));
+    // A Shorts/packaging job is not automatically the next Picture task of a long.
+    const relevant=linked.filter(j=>['open','claimed','blocked'].includes(j.status)||s.running.some(a=>a.id===j.id))
+      .filter(j=>m ? own.has(j.id)||stage(j.stage)===m.id : activityCategory(b,j).id==='production');
+    const running=s.running.find(a=>relevant.some(j=>j.id===a.id)&&activityEvidenceFresh(a,now)), next=dispatchFresh?workflow.next:null;
+    const selected=next&&relevant.find(j=>j.id===next.id);
+    const j=running||selected||relevant.find(j=>j.status==='blocked')||relevant.find(j=>j.status==='open')||relevant[0];
+    if(!j) return {video:v,job:null,status:'Next task not recorded',responsibility:'Chief needs to record the handoff',timing:'Start time unknown',context:'',dispatchNote:''};
+    const state=dispatchFresh?(workflow.states||{})[j.id]||{}:{};
+    const hold=j.hold||{}, parent=j.after&&all.get(j.after), parentState=(parent||{}).status||((((b.owb||{}).jobStates)||{})[j.after]||{}).status;
+    const dependency=j.after&&parentState!=='done';
+    const chief=j.kind==='chief'||hold.type==='chief'||(m||{}).reviewer==='chief';
+    const reviewWait=chief&&(state.state==='review'||['chief','approval'].includes(hold.type));
+    const held=(j.status==='blocked'||state.state==='waiting')&&!reviewWait;
+    const uncertainClaim=j.status==='claimed'&&!running;
+    let status,timing,responsibility;
+    if(running&&reportFresh) {
+      status=running.phase==='starting'?'Worker starting · claim pending':'Working on this video';
+      timing=running.phase==='starting'?'Launch recorded; task start is not confirmed':'Already started';
+      responsibility=AGENTS[running.by]||running.by||'Agent not recorded';
+    } else {
+      status=j.awaits_ben||hold.type==='ben'?'Waiting for your approval':dependency?'Waiting for a prerequisite':held?'Waiting for '+(hold.type==='credits'?'credit':hold.type==='capability'?'a capable reviewer':'input'):uncertainClaim?'Claim recorded · activity unconfirmed':chief?'Chief decision queued':selected?'Selected next · not yet claimed':'Queued for this video';
+      timing=!reportFresh?'Start time unknown · report stale or missing':dependency?(parent?'After '+clip(parent.title||parent.id,90):'Prerequisite status not confirmed'):held?'Start depends on resolving the recorded hold':uncertainClaim?'Task claim exists; live execution is not confirmed':'Start time not confirmed';
+      const selectedWorker=selected&&(next.worker||next.agent), chiefName=fresh((b.models||{}).checkedAt)?((b.models||{}).chief||{}).agent:'';
+      responsibility=uncertainClaim&&j.by?'Recorded owner · '+(AGENTS[j.by]||j.by):chief?'Chief'+(chiefName?' · '+(AGENTS[chiefName]||chiefName):''):selectedWorker?'Selected worker · '+(AGENTS[selectedWorker]||selectedWorker):j.for?'Eligible worker · '+(AGENTS[j.for]||j.for):'Waiting for an eligible agent';
+    }
+    const current=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent))[0], e=reportFresh&&current&&activityEvidenceFresh(current,now)?taskEstimate(current,now):null;
+    const category=current&&activityCategory(b,current), scope=category&&category.id==='production'?(activityVideoContext(b,current).keys.includes(v.key)?' on this video':' on another video'):'';
+    const context=!running&&current&&current.id!==j.id?`Current ${category.label.toLowerCase()} task${scope}${e&&!e.over?' estimates ~'+durationText(e.min)+' remaining':e&&e.over?' has exceeded its estimate':'; remaining time unavailable'}. This does not confirm when this video task starts.`:'';
+    const dispatchNote=next&&next.id!==j.id?'Next recorded dispatch: '+activityCategory(b,next).label+'.':'';
+    return {video:v,job:j,status,responsibility,timing,context,dispatchNote};
+  }
+  function nextVideoWorkCard(b,v,now) {
+    const p=nextVideoTask(b,v,now);
+    if(!p) return '';
+    return `<aside class="video-next-work" aria-label="Next work on ${esc(v.title||'this video')}"><a href="${p.job?jobRoute(p.job.id):detailLink(v)}" aria-label="${esc(p.status)}. ${p.job?'Open job '+esc(p.job.id)+' in Agents':'Open video details'}"><div><span>Next work on this video</span><b>${esc(p.status)}</b><small>${esc(p.responsibility)}${p.job?' · '+esc(p.job.id):''}</small></div><span class="chev" aria-hidden="true">›</span></a><p class="video-next-timing">${esc(p.timing)}</p>${p.context?`<p>${esc(p.context)}</p>`:''}${p.dispatchNote?`<p>${esc(p.dispatchNote)}</p>`:''}</aside>`;
   }
   function activityCard(b,now) {
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
@@ -690,14 +754,14 @@
     const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} on hold</p>`;
     if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is on hold':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
     const videoContext=activityVideoContext(b,j);
-    const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
+    const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), category=activityCategory(b,j);
     // Reuse the existing task estimator only with a valid recorded start and valid inputs.
-    const e=(!p || p.step<p.of) && Number.isFinite(start) && start<=now && (p && p.step>0 && p.step<p.of || Number.isFinite(+j.estMin) && +j.estMin>0)
-      ? etaOf({...j,progress:p || {step:0,of:0}},now) : null;
+    const e=taskEstimate(j,now);
     const eta=starting?'Worker launched; task claim pending':e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
-    return `<section class="overview-activity"><h2>Studio activity</h2><a class="active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents">
+    return `<section class="overview-activity"><h2>Studio activity</h2><a class="active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${category.label}">
+      <span class="activity-category" data-category="${category.id}">${category.label}</span>
       <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is ${starting?'starting':'working'}</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
-      <p class="activity-video"><span>${videoContext.count>1?'Videos':videoContext.count?'Video':'Scope'}</span>${esc(videoContext.label)}</p>
+      ${videoContext.count?`<p class="activity-video"><span>${videoContext.count>1?'Videos':'Video'}</span>${esc(videoContext.label)}</p>`:`<p class="activity-video activity-scope-compact">${esc(videoContext.label)}</p>`}
       <p class="activity-action">${esc(clip(j.remaining_action||j.title||'Current action not recorded',160))}</p>
       ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:`<p class="activity-progress-missing">${starting?'Preparing to claim the selected job':'Task progress not recorded'}</p>`}
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
@@ -723,9 +787,9 @@
     const s=overviewModel(b,now), candidate=featureVideo(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="overview-stats" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
-      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted">Nothing is ready for your review yet.</p>':''}${featuredCard(candidate,now,s.producing.length)}</section>
-      ${progressCard(b)}
-      ${activityCard(b,now)}</div>`;
+      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted">Nothing is ready for your review yet.</p>':''}${featuredCard(candidate,now,s.producing.length)}${nextVideoWorkCard(b,candidate,now)}</section>
+      ${activityCard(b,now)}
+      ${progressCard(b)}</div>`;
   }
 
   // Working / Queued / Backlog (Ben, 28 Oct): active work is one tap away; All keeps everything with On YouTube.
