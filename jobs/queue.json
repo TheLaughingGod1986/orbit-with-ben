@@ -1,5 +1,5 @@
 {
-  "next_id": 2020,
+  "next_id": 2021,
   "jobs": [
     {
       "id": "J0001",
@@ -172803,6 +172803,35 @@
       "remaining_action": "Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010)",
       "due": "2026-11-05T00:00:00Z",
       "kind": "listing"
+    },
+    {
+      "id": "J2020",
+      "title": "Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "LEARNINGS rule 17 test (Ben, 4 Nov 2026). 14 days after film 025's long went public, measure from the daily snapshots and studio_ctr.json: for each of its Shorts, views, subscribers gained, and subscribers per 1,000 views; the long's views coming from Shorts (traffic source: Shorts feed / related video) if the analytics show it; and whether Related was set within 1 h of go-public (check the J0124/J0135/J0861 receipts). Compare with October's OWB baseline of 0.7 subscribers per 1,000 views. Write the result as one line under rule 17 in 05_Analytics/LEARNINGS.md (pass = at least double) and post it on the studio thread. Reads only.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22",
+      "due": "2026-11-22T00:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [],
