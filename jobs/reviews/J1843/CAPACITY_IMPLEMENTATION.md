@@ -569,3 +569,23 @@ Fresh observations at `08:31Z`:
   host transitions`) is handed back to Codex on this same job and PR #437 with
   progress advanced to **2/3**. No rollout, extra lane, spend or publishing was
   enabled.
+
+## Re-verification and Chief review handoff — 4 November, 10:02 UTC (Gemini)
+
+- Merged latest `origin/main` into `codex/J1843-capacity` in `/private/tmp/J1843-gemini`
+  and re-verified all focused suites (**292 tests PASS**: 92 capacity/evidence/claims/Git-race/supervisor,
+  19 execution-lease, 13 portable-transfer, 31 workflow, 16 dispatcher-handoff,
+  30 queue, 74 relay with fake CLIs, and 17 MacBook worker tests), plus
+  `core_sync.py check` PASS (56 shared files), `py_compile` PASS and
+  `git diff --check` PASS.
+- Fresh `10:01Z` observations from `chief_relay.py capacity`: sole process-validated
+  Mini lease is `J1843` (`owner="gemini"`, `lease_expires_at="2026-11-04T10:22:44Z"`);
+  local Mini resource measurements (`arm64`, `27.15 GiB` free disk, load `1.58`,
+  `0.47 GiB` conservative free+speculative RAM, `on_ac=true`); cached MacBook
+  heartbeat (`09:54:37Z`, age ~384s) remains generic `macbook`, `idle`,
+  `macbook_capacity_verified=false`, `availability="unknown"`, `free_slot_at=null`.
+- Parked `J1843` with `jobs.py block J1843 --agent gemini --reason "parked for Chief: ..."`
+  so that `workflow.state(J1843)` transitions to `"review"` and enters `Chief duties`
+  for the elected acting Chief (`Codex`) for Step 3 (`exact-head Chief review and
+  observed real-host transitions`), instead of remaining `open` (`for: gemini`) in
+  the specialist worker queue. Rollout remains disabled (`rollout_enabled=False`).
