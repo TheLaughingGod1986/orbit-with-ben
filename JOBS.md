@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1810 | mini | blocked | codex | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
 | J1834 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
-| J1843 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
+| J1843 | mini | open | – | – | for gemini · assembly · `gemini-agy` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 | J1878 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
