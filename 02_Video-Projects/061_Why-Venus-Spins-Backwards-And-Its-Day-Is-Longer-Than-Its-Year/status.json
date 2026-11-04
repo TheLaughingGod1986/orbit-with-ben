@@ -4,7 +4,7 @@
   "air": "",
   "stages": {
     "topic": {
-      "state": "review",
+      "state": "doing",
       "ref": "jobs/reviews/J1806/CHIEF_TOPIC_RULING_2026-11-04.md"
     },
     "script": {
@@ -16,6 +16,14 @@
       "ref": "jobs/reviews/J1808/CHIEF_SOURCES_RULING_2026-11-04.md"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "topic",
+      "by": "gemini",
+      "at": "2026-11-04T16:21Z",
+      "eta": "2026-11-04T18:20Z",
+      "note": "J1963 061 Venus rotation: verify topic evidence and existing-long overlap"
+    }
+  ],
   "next": "J1966 formal Gemini facts then J1967 direct quotes; J1964 topic/editorial decision after J1963. Sources FIX/unapproved and script unlocked; no VO or air date."
 }
