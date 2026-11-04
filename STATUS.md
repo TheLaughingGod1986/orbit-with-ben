@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 041 | script | codex | 2026-11-04T08:40Z | 2026-11-04T10:39Z | J1907 041 Io: restore topic and editorial decision before facts and script lock |
+| 041 | script | codex | 2026-11-04T08:41Z | 2026-11-04T09:01Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
