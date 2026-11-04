@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1807 | mini | open | – | – | chief · Chief: resolve 061 script orphan-review |  |
 | J1808 | mini | open | – | – | chief · Chief: resolve 061 sources orphan-review |  |
 | J1809 | mini | open | – | – | assembly · HOS desk: route elected Chief handoffs and safely refresh legacy watcher | J1754 |
-| J1810 | mini | claimed | codex | 2026-11-04T02:31Z | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
+| J1810 | mini | blocked | codex | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
 | J1817 | mini | open (after J1761) | – | – | 013 edit · chief · OWB 013: establish long edit provenance after cancelled Short claim |  |
 | J1823 | mini | open (after J1766) | – | – | 026 thumbs · thumb · 026 thumbnails: correct unapproved test variants after J1766 review |  |
