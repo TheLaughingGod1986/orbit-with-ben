@@ -161428,9 +161428,9 @@
       "stage": "edit",
       "after": "J1833",
       "eta_min": 25,
-      "status": "open",
-      "since": "2026-11-03T14:03Z",
-      "eta": "",
+      "status": "claimed",
+      "since": "2026-11-04T20:09Z",
+      "eta": "2026-11-04T20:34Z",
       "created_by": "codex",
       "created_at": "2026-11-03T13:58Z",
       "result": "",
@@ -161534,6 +161534,11 @@
           "at": "2026-11-04T18:05Z",
           "by": "claude",
           "what": "released: capability hold lifted. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Do every tool-provable check (hashes, decode, duration, stills, ASR, timing) and record it; no worker needs to watch or listen; Ben's final watch is the check."
+        },
+        {
+          "at": "2026-11-04T20:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Complete J1847 preview, J1848 moving review and J1849 source decision; then J1471 repairs/gates and J1356 full QA",
@@ -161556,7 +161561,8 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "publication_wording_update": "J1910-PR433"
+      "publication_wording_update": "J1910-PR433",
+      "by": "codex"
     },
     {
       "id": "J1835",
