@@ -177137,7 +177137,7 @@
     {
       "id": "J2090",
       "title": "032: review J2089 source identity corrections and 13 teaching-overlay stills",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "J2089 source audit found wrong-body/wrong-subject PIA IDs in approved SHOT_LIST_v02. Concrete report and source metadata in PR491, commit e7e030eac5: 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/J2089_SOURCE_AUDIT_v01.md. Review actual candidates and 13 WHO/WHEN/FACT stills at /Users/benjaminoats/_desk/cache/J2089/teaching_previews_v01/teaching_previews.jpg. Correct source mappings or provide exact approved alternatives; Chief retains graphic frame approval before animation render and PR merge. No spend, VO/script change or gate waiver requested. Then release parent J2089 with the named corrections and review reference; preserve its 1/4 plan. Remaining harvest, licences, DATA/mechanism graphics and R26/R46 fallbacks are not complete.",
       "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491",
@@ -177162,19 +177162,15 @@
           "at": "2026-11-04T19:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-04T19:54Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
         }
       ],
       "remaining_action": "Correct mismatched source IDs and review overlay stills so J2089 can resume",
-      "kind": "review",
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "kind": "review"
     },
     {
       "id": "J2091",
