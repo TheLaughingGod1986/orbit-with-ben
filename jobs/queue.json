@@ -180484,7 +180484,7 @@
     {
       "id": "J2162",
       "title": "Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "**Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required.** Read the three critiques in `05_Analytics/tests/panels/owb-032-j2144/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.",
       "ref": "",
@@ -180509,19 +180509,15 @@
           "at": "2026-11-04T23:45Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-04T23:53Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
         }
       ],
       "remaining_action": "Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
-      "kind": "review",
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "kind": "review"
     },
     {
       "id": "J2163",
