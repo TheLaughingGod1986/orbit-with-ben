@@ -157981,9 +157981,14 @@
           "at": "2026-11-04T03:04Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T03:04Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed only J1793; plan: inspect evidence, record decision and successor, verify state."
         }
       ],
-      "remaining_action": "Chief resolves 052 script handoff and records the next owner/action",
+      "remaining_action": "Inspect 052 script evidence and restore its missing review handoff",
       "kind": "chief",
       "handoff": {
         "film": "052",
@@ -157996,9 +158001,11 @@
         "of": 3,
         "at": "2026-11-04T03:04Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed only J1793; plan: inspect evidence, record decision and successor, verify state."
+      },
+      "taskKeys": [
+        "OWB:052"
+      ]
     },
     {
       "id": "J1794",
