@@ -157584,10 +157584,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T02:29Z",
+      "eta": "2026-11-04T04:29Z",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
       "result": "",
@@ -157596,6 +157596,11 @@
           "at": "2026-11-03T10:50Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T02:29Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 047 script handoff and records the next owner/action",
@@ -157605,6 +157610,14 @@
         "stage": "script",
         "kind": "orphan-review",
         "signature": "597ceb92bf0ed0e856ce"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T02:29Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
