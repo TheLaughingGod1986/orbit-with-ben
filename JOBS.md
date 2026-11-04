@@ -111,6 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1980 | mini | open (after J1979) | – | – | 037 script · chief · 037 Milky Way Centre: decide advancement and own rewrite and facts chain | J1901 |
 | J1981 | any | open (after J1904) | – | – | 038 topic · review · 038 Voyager Golden Record: verify neighbours and matching Short evidence | J1904 |
 | J1982 | mini | open (after J1981) | – | – | 038 script · chief · 038 Voyager Golden Record: decide advancement and own rewrite and facts chain | J1904 |
+| J1983 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
