@@ -161428,12 +161428,12 @@
       "stage": "edit",
       "after": "J1833",
       "eta_min": 25,
-      "status": "claimed",
+      "status": "done",
       "since": "2026-11-04T20:09Z",
-      "eta": "2026-11-04T20:34Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T13:58Z",
-      "result": "",
+      "result": "Existing acquisition reconciled and closed, PR494 / f5aa54f4e6. Five delivery hashes match; three previews fully decode. T545 remains rejected; J1846-J1849 already completed replacement input chain. J1471 owns remaining repairs/gates, J1356 follows. No new approval, media edit, spend or publishing change.",
       "history": [
         {
           "at": "2026-11-03T13:58Z",
@@ -161554,6 +161554,11 @@
           "at": "2026-11-04T20:10Z",
           "by": "codex",
           "what": "step 3 of 3 done: Closeout f5aa54f4e6 records existing delivery, fresh five-file hashes/three decodes, rejected T545 and completed J1846-J1849 fallback. No new source approval or downstream gate change."
+        },
+        {
+          "at": "2026-11-04T20:11Z",
+          "by": "codex",
+          "what": "done: Existing acquisition reconciled and closed, PR494 / f5aa54f4e6. Five delivery hashes match; three previews fully decode. T545 remains rejected; J1846-J1849 already completed replacement input chain. J1471 owns remaining repairs/gates, J1356 follows. No new approval, media edit, spend or publishing change."
         }
       ],
       "remaining_action": "Acquisition complete; existing J1471 correction work remains",
@@ -161577,7 +161582,8 @@
         "OWB:030"
       ],
       "publication_wording_update": "J1910-PR433",
-      "by": "codex"
+      "by": "codex",
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/494"
     },
     {
       "id": "J1835",
