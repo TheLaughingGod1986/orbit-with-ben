@@ -166181,11 +166181,24 @@
           "at": "2026-11-04T01:25Z",
           "by": "codex",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-04T01:51Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Packaging panel (cursor): OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes",
-      "for": "cursor",
-      "kind": "review"
+      "for": "gemini",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "cursor",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J1923",
