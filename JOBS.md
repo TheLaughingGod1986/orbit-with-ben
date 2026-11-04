@@ -131,6 +131,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2033 | mini | open (after J2026) | – | – | 009 picture · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
 | J2034 | mini | open (after J2033) | – | – | 009 picture · chief · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
 | J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
+| J2036 | mini | open (after J2035) | – | – | 009 edit · qa · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
 
 Recently finished:
 
