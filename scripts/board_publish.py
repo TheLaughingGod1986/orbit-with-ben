@@ -503,6 +503,11 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"models not read: {e}")
     board["workflow"] = dispatch_snapshot(board, at)
+    try:  # Last 24 hours on the home page (Ben, 4 Nov 2026); never blocks the board push
+        import progress24
+        board["progress24h"] = progress24.section(STATE / "progress_history.json", board, at)
+    except Exception as e:  # noqa: BLE001
+        log(f"progress24h not built: {e}")
     tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
