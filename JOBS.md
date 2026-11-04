@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
 | J2146 | cloud | open | – | – | for claude · script · Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21) |  |
 | J2147 | cloud | open | – | – | 032 upload · for claude · listing · 031/032 Shorts slots around the new Wednesday long slot |  |
-| J2148 | mini | open | – | – | 033 topic · for gemini · review · 033 topic + script: rule-E review (WIP film, new reference-channel rules) |  |
+| J2148 | mini | claimed | gemini | 2026-11-05T00:34Z | 033 topic · for gemini · review · 033 topic + script: rule-E review (WIP film, new reference-channel rules) |  |
 | J2149 | mini | open | – | – | 034 topic · for gemini · review · 034 topic + script: rule-E review (WIP film, new reference-channel rules) |  |
 | J2150 | cloud | open | – | – | review · 032 J2089: review 18 DATA stills and resolve remaining harvest conflicts | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491 |
 
