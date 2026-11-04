@@ -1,5 +1,5 @@
 {
-  "next_id": 2017,
+  "next_id": 2022,
   "jobs": [
     {
       "id": "J0001",
@@ -162102,13 +162102,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-04T11:35Z",
-      "eta": "2026-11-04T13:35Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "",
+      "result": "parked for Chief: J2010 review FIX complete on PR437 head 91576db52d (composed with PR477 d12b004c67; HOS film stages fail closed across propose/reserve/consume/consume_with_git, OWB board claims roll back on push races, 3 push-race regression tests added, 313 focused tests + core_sync 56/56 PASS, rollout_enabled=False). Needs exact-head Chief review and observed real-host transitions before enabling capacity rollout.",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162374,9 +162374,19 @@
           "at": "2026-11-04T11:35Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Inspecting J2010 review findings on PR437 (1c309dd443) and preparing HOS cross-repo retry-safe fix"
+        },
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Fixed J2010 HOS stage fail-closed + OWB board rollback on push races on PR437 (91576db52d, composed with PR477); 313 focused tests + core_sync/py_compile/diff PASS; rollout_enabled=False"
+        },
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2010 review FIX complete on PR437 head 91576db52d (composed with PR477 d12b004c67; HOS film stages fail closed across propose/reserve/consume/consume_with_git, OWB board claims roll back on push races, 3 push-race regression tests added, 313 focused tests + core_sync 56/56 PASS, rollout_enabled=False). Needs exact-head Chief review and observed real-host transitions before enabling capacity rollout."
         }
       ],
-      "remaining_action": "Fixing PR437 HOS claim rollback/reconciliation on OWB push races and adding regression test; capacity stays disabled",
+      "remaining_action": "Exact-head Chief review of PR437 (91576db52d, composed with PR477) and observed real-host transitions; rollout stays disabled",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162396,9 +162406,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T11:35Z",
+        "at": "2026-11-04T11:48Z",
         "by": "gemini",
-        "note": "Inspecting J2010 review findings on PR437 (1c309dd443) and preparing HOS cross-repo retry-safe fix"
+        "note": "Fixed J2010 HOS stage fail-closed + OWB board rollback on push races on PR437 (91576db52d, composed with PR477); 313 foc"
       }
     },
     {
@@ -172686,10 +172696,10 @@
       "stage": "",
       "after": "J1468",
       "eta_min": 25,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T11:49Z",
+      "eta": "2026-11-04T12:14Z",
       "created_by": "codex",
       "created_at": "2026-11-04T11:29Z",
       "result": "",
@@ -172698,16 +172708,242 @@
           "at": "2026-11-04T11:29Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T11:50Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Clean worktree created; no demonstrated audio or moving input."
         }
       ],
-      "remaining_action": "Repair five still-push jitter failures in new versions; preserve AAC and timing; run technical gates",
+      "remaining_action": "Inspect and rebuild five still transforms preserving clocks and audio",
       "due": "2026-11-04T10:51:54Z",
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
       ],
       "urgent": 1,
-      "j2010_correction": "J1471"
+      "j2010_correction": "J1471",
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-04T11:50Z",
+        "by": "codex",
+        "note": "Clean worktree created; no demonstrated audio or moving input."
+      }
+    },
+    {
+      "id": "J2017",
+      "title": "Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 4 Nov 2026 (\"your final watch counts as the watch-and-listen check for these items. im happy with this\"); AGENTS.md \"Ben's final watch is the watch-and-listen check\" (PR480). Apply it to every job currently held only because no worker can watch moving video or hear audio:\n- J1752 / J1753 (031 / 032 voice final verification): technical evidence already PASS; record that the listening step moves to Ben's final watch and close them, so 031/032 move on.\n- J1810 and J2011 (audio-input capability): stop the capability hunt; close as superseded by Ben's 4 Nov rule (keep the PR438/PR479 evidence).\n- J1880 / J1881 (HOS 008, six fixes from Ben's 3 Nov notes): build the edit recipe from stills, timecodes, cut list and VO transcript; the Chief checks it on that evidence; Ben's final watch on Sun 15 Nov confirms.\n- J1879 / J1889 (recovered Mars-night and Titan social sources): accept on hash, full decode, duration and frame stills matching the approved Studio uploads; Ben has already watched those Shorts.\n- Search the queue for any other job blocked on \"moving-video\", \"audio input\", \"cannot hear\", \"perception\" and release it the same way.\nA failing tool check still fails: this removes only the \"a worker must actually watch/hear it\" hold. Record each change on the studio thread (#478) in one post.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception",
+      "kind": "chief"
+    },
+    {
+      "id": "J2018",
+      "title": "Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After PR480 merges: install the same-day missed-run alarm on the Mini (Ben, 4 Nov 2026, monthly report rec. 6).\n  launchctl bootout gui/$(id -u)/com.owb.missed-runs 2>/dev/null\n  cp 07_Content-Ops/launchd/com.owb.missed-runs.plist ~/Library/LaunchAgents/\n  launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.missed-runs.plist\nThen confirm `launchctl print gui/$(id -u)/com.owb.missed-runs` shows it loaded, and that ~/Library/Logs/owb-missed-runs.log shows the four checks (tracker, buffer, claude, mini) with times and no Python error. The GitHub token must come from `gh auth token` as for owb_thread.py; never print it. Done when the log shows a clean run.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:48Z",
+      "result": "Waiting for: PR480 merged to main",
+      "history": [
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: PR480 merged to main"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-04T13:00:00Z"
+        }
+      ],
+      "remaining_action": "resume J2018",
+      "kind": "qa",
+      "log": [
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "claimed to record a date/dependency hold"
+        }
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "PR480 merged to main",
+        "check_at": "2026-11-04T13:00:00Z"
+      }
+    },
+    {
+      "id": "J2019",
+      "title": "Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "LEARNINGS rule 15 (Ben, 4 Nov 2026): every long's title names the subject and a concrete scenario, number or stakes, fits in 50 characters, and is never a vague \"What happened to X?\". Check every OWB and HOS long that is not yet public (OWB 025 Js6EQJ8qDi8 8 Nov, 026 c5AdqQsnnys 15 Nov, 027 6bbbvfCx6zY 22 Nov, 028 F-jImX5h7ws 29 Nov, 029 6 Dec, and any later long with a draft title; HOS 006 VbPubYd6Fbs 5 Nov, 007 ETynHpIYLeY 12 Nov, 008-010 drafts). For each: current title, pass/fail against rule 15, and a rewrite for any fail. Title edits on a scheduled private video are reversible and the Chief's call; skip any video with a running title Test & Compare. Keep the thumbnail-text rule 12 (text adds what the title doesn't say). Apply passing rewrites via the Data API, read them back, update UPLOADS.json/upload manifests, and post the list on #478.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010)",
+      "due": "2026-11-05T00:00:00Z",
+      "kind": "listing"
+    },
+    {
+      "id": "J2020",
+      "title": "Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "LEARNINGS rule 17 test (Ben, 4 Nov 2026). 14 days after film 025's long went public, measure from the daily snapshots and studio_ctr.json: for each of its Shorts, views, subscribers gained, and subscribers per 1,000 views; the long's views coming from Shorts (traffic source: Shorts feed / related video) if the analytics show it; and whether Related was set within 1 h of go-public (check the J0124/J0135/J0861 receipts). Compare with October's OWB baseline of 0.7 subscribers per 1,000 views. Write the result as one line under rule 17 in 05_Analytics/LEARNINGS.md (pass = at least double) and post it on the studio thread. Reads only.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:48Z",
+      "result": "Waiting for: Sun 22 Nov 2026 18:00Z reached (14 days after 025 long public)",
+      "history": [
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Sun 22 Nov 2026 18:00Z reached (14 days after 025 long public)"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-22T18:00:00Z"
+        }
+      ],
+      "remaining_action": "resume J2020",
+      "due": "2026-11-22T00:00:00Z",
+      "kind": "review",
+      "log": [
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "claimed to record a date/dependency hold"
+        }
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "Sun 22 Nov 2026 18:00Z reached (14 days after 025 long public)",
+        "check_at": "2026-11-22T18:00:00Z"
+      }
+    },
+    {
+      "id": "J2021",
+      "title": "Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "LEARNINGS rule 17 test (Ben, 4 Nov 2026). 14 days after film 026's long went public, measure from the daily snapshots and studio_ctr.json: for each of its Shorts, views, subscribers gained, and subscribers per 1,000 views; the long's views coming from Shorts (traffic source: Shorts feed / related video) if the analytics show it; and whether Related was set within 1 h of go-public (check the J0124/J0135/J0861 receipts). Compare with October's OWB baseline of 0.7 subscribers per 1,000 views. Write the result as one line under rule 17 in 05_Analytics/LEARNINGS.md (pass = at least double) and post it on the studio thread. Reads only.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:49Z",
+      "result": "Waiting for: Sun 29 Nov 2026 18:00Z reached (14 days after 026 long public)",
+      "history": [
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Sun 29 Nov 2026 18:00Z reached (14 days after 026 long public)"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-29T18:00:00Z"
+        }
+      ],
+      "remaining_action": "resume J2021",
+      "due": "2026-11-29T00:00:00Z",
+      "kind": "review",
+      "log": [
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "claimed to record a date/dependency hold"
+        }
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "Sun 29 Nov 2026 18:00Z reached (14 days after 026 long public)",
+        "check_at": "2026-11-29T18:00:00Z"
+      }
     }
   ],
   "focus": [],

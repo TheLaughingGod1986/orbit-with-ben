@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1810 | mini | blocked | codex | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
 | J1834 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
-| J1843 | mini | claimed | gemini | 2026-11-04T13:35Z | for gemini · assembly · `gemini-agy` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
+| J1843 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 | J1878 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
@@ -124,7 +124,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 | J2014 | mini | open | – | – | for gemini · qa · `gemini-argon` · 026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate |  |
 | J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |
-| J2016 | mini | open (after J1468) | – | – | assembly · AR cohort: repair five inherited still-push jitter failures | J2010 / J1471 / ce3c8048e9 |
+| J2016 | mini | claimed | codex | 2026-11-04T12:14Z | assembly · AR cohort: repair five inherited still-push jitter failures | J2010 / J1471 / ce3c8048e9 |
+| J2017 | mini | open | – | – | chief · Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception |  |
+| J2018 | mini | blocked | claude | – | qa · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
+| J2019 | mini | open | – | – | listing · Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010) |  |
+| J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
+| J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 
 Recently finished:
 
