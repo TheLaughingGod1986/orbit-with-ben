@@ -165169,12 +165169,12 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "since": "2026-11-04T12:20Z",
-      "eta": "2026-11-04T12:50Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:54Z",
-      "result": "",
+      "result": "PASS: all six scoped posts already existed; created 0, skipped 6. OWB IG 6aead94a394911f9f11e940a FB 6aead94b394911f9f11e9456 Threads 6aead94be478396c27445526 scheduled 8 Nov 18:00Z. HOS IG 6aead953e478396c2744590b FB 6aead9542b43f8ba7d726142 TikTok 6aead955d59713e43427ded7 scheduled 8 Nov 11:30Z. Exact approved copy, channel identities, YouTube schedules, three local and hosted SHA256/size matches, Range206/MIME and processing=false verified under real lock. Old Mars receipts absent. No uploads or external state changes; no spend. Evidence 5ad652f849 on codex/J1878-execute, jobs/reviews/J1878/REPORT.md. Scheduled status is not delivery guarantee. Thread read to #6630292973.",
       "history": [
         {
           "at": "2026-11-03T18:54Z",
@@ -165305,6 +165305,11 @@
           "at": "2026-11-04T12:20Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T12:27Z",
+          "by": "codex",
+          "what": "done: PASS: all six scoped posts already existed; created 0, skipped 6. OWB IG 6aead94a394911f9f11e940a FB 6aead94b394911f9f11e9456 Threads 6aead94be478396c27445526 scheduled 8 Nov 18:00Z. HOS IG 6aead953e478396c2744590b FB 6aead9542b43f8ba7d726142 TikTok 6aead955d59713e43427ded7 scheduled 8 Nov 11:30Z. Exact approved copy, channel identities, YouTube schedules, three local and hosted SHA256/size matches, Range206/MIME and processing=false verified under real lock. Old Mars receipts absent. No uploads or external state changes; no spend. Evidence 5ad652f849 on codex/J1878-execute, jobs/reviews/J1878/REPORT.md. Scheduled status is not delivery guarantee. Thread read to #6630292973."
         }
       ],
       "remaining_action": "Resolve trusted authorization for three R2 assets and six scoped Buffer posts, then revalidate live inputs before execution",
@@ -165359,7 +165364,8 @@
         "checked_at": "2026-11-04T10:45:14+00:00",
         "checked_by": "codex"
       },
-      "by": "codex"
+      "by": "codex",
+      "done_ref": "5ad652f849"
     },
     {
       "id": "J1879",
