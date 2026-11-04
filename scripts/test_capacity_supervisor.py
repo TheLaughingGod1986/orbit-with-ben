@@ -233,6 +233,28 @@ class Supervisor(unittest.TestCase):
                 )
             self.assertNotIn("dispatch_reservation", data["jobs"][0])
 
+            # A queue retry may select another job after argv was prepared.
+            # Its reservation must be cancelled before any board claim/spawn.
+            with patch("capacity_reservations.consume_with_git") as consume, \
+                    patch("capacity_supervisor.run") as launch:
+                with self.assertRaisesRegex(ValueError, "command binding"):
+                    dispatch_claimed(
+                        evidence=lambda: evidence, registry=self.registry,
+                        token=fixture.kw["token"], host_id="mini", worker="codex",
+                        claimant="codex", read_claim=lambda: data["jobs"][0],
+                        guard=lambda c: True, installed_head=evidence["installed_head"],
+                        reviewed_head=evidence["reviewed_head"],
+                        argv=[sys.executable, "-c", "print('wrong job')"], cwd=self.root,
+                        log_path=self.root / "mismatch.log", cap_seconds=2,
+                        rollout_enabled=True, rollout_approval_ref="fixture",
+                        expected_job="J9999", clock=lambda: evidence["at"],
+                    )
+                consume.assert_not_called()
+                launch.assert_not_called()
+            self.assertEqual(data["jobs"][0]["status"], "open")
+            self.assertNotIn("dispatch_reservation", data["jobs"][0])
+            self.assertFalse((self.root / "mismatch.log").exists())
+
             # If consume fails (e.g. wrong claimant for role), reservation is rolled back automatically.
             with self.assertRaisesRegex(ValueError, "claim consumption failed"):
                 dispatch_claimed(
@@ -257,6 +279,7 @@ class Supervisor(unittest.TestCase):
                 guard=lambda c: True, installed_head=evidence["installed_head"],
                 reviewed_head=evidence["reviewed_head"],
                 argv=[sys.executable, "-c", "print('dispatched')"], cwd=self.root,
+                expected_job=data["jobs"][0]["id"],
                 log_path=self.root / "dispatch.log", cap_seconds=2,
                 rollout_enabled=True, rollout_approval_ref="J1843-test",
                 clock=lambda: evidence["at"],

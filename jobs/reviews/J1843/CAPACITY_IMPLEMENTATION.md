@@ -727,3 +727,34 @@ remaining integration exceeds this unattended work segment. Both repos pulled;
 HOS inbox checked. No demonstrated audio/moving-video input. Required NAS
 offload found no eligible old scratch; about 11 GiB remains free. No media,
 spend, publishing or host registration was changed.
+
+
+### Codex continuation, 4 November 2026, command/job binding
+
+Resumed the same PR437 branch in its clean existing caller worktree and merged
+current main. While preparing caller integration, identified another launch
+boundary requirement: a command and portable bundle prepared for one job must
+never run against a different job selected after a canonical Git retry.
+`dispatch_claimed(expected_job=...)` now cancels a mismatched reservation before
+consumption, board-stage claim or process launch. A failed cancellation remains
+an explicit canonical reconciliation error; it does not proceed to execution.
+The optional parameter preserves existing adapter consumers; production callers
+must supply it. Regression verifies mismatch rollback with no consume/spawn,
+and the existing real subprocess success case now supplies its matching job.
+
+Validation: all 99 capacity tests PASS with process visibility, STATUS.md --check,
+core sync (56 shared files) and git diff --check PASS. No new caller, host probe,
+transport or rollout is claimed. The prior supervised-outcome cleanup remains.
+
+Preserve J1843 at 2/3, ready engineering rather than an external input wait.
+Remaining work is still disabled production integration in chief_relay.py and
+macbook_worker.py, fresh runtime guards and approved input/output receipt
+transport, caller-level success/failure/changing-laptop-guard tests, then
+exact-head Chief review and observed real-host acceptance. This integration
+exceeds the remaining capped unattended run; release at this tested checkpoint.
+No second lane, media, spending, publishing or policy change was enabled.
+
+Both repositories pulled; thread read through #6643479530. The HOS inbox and
+channel-balance check were skipped per this run's explicit dispatch instruction.
+No audio or moving-video perception is demonstrated. Required NAS offload ran:
+no eligible old scratch, approximately 11.16 GB free; no NAS content deleted.

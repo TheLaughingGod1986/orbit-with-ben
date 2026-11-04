@@ -153,7 +153,7 @@ def dispatch_claimed(*, evidence, registry, token, host_id, worker, claimant,
                      read_claim, guard, installed_head, reviewed_head, argv,
                      cwd, log_path, cap_seconds, eta_min=25,
                      rollout_enabled=False, rollout_approval_ref="",
-                     portable_receipt=None, max_portable_bytes=0,
+                     portable_receipt=None, max_portable_bytes=0, expected_job=None,
                      clock=utcnow):
     """Canonical reserve -> claim -> supervised launch pipeline (rollout disabled by default).
 
@@ -177,6 +177,18 @@ def dispatch_claimed(*, evidence, registry, token, host_id, worker, claimant,
     )
     if error or not reserved:
         raise ValueError("reservation failed: " + str(error or "no proposal"))
+
+    # A caller builds argv and input bundles for one job. Replanning during
+    # a Git retry must never execute that command against a different claim.
+    # Cancel before consumption so no board stage is claimed for the wrong job.
+    if expected_job is not None and reserved.get("job") != expected_job:
+        cancelled, error = reservations.cancel_with_git(
+            token=token, host_id=host_id, worker=worker,
+            reason="selected job differs from caller command binding", clock=clock
+        )
+        if error or not cancelled:
+            raise RuntimeError("mismatched reservation requires canonical reconciliation")
+        raise ValueError("selected job differs from caller command binding")
 
     claimed, error = reservations.consume_with_git(
         evidence=evidence, token=token, host_id=host_id, worker=worker,
