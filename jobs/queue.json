@@ -161312,6 +161312,11 @@
           "at": "2026-11-04T02:07Z",
           "by": "codex",
           "what": "released: Clean checkpoint ecc617f89a pushed to existing draft PR437. Resume codex/J1843-capacity at /private/tmp/J1843-wt. 222 tests PASS. Original plan 1/3: canonical reservation and process receipt primitives added; claim/board transition with laptop identity, capped supervisors, trusted fresh host/account probes, supported verified transfer integration, real cross-host races, exact-head review and observed rollout remain. No extra lane enabled; no duplicate job/PR. Remaining implementation exceeds capped run."
+        },
+        {
+          "at": "2026-11-04T03:09Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Finish reservation-to-claim and supervisor integration, verified laptop transport, exact-head review and observed rollout",
@@ -161328,7 +161333,16 @@
         "at": "2026-11-04T02:06Z",
         "by": "codex",
         "note": "Added canonical Git reservation adapter and process receipts; 222 tests PASS. Same draft PR437 continues; production lau"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J1844",
