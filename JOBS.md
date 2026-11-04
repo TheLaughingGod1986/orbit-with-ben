@@ -128,6 +128,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2022 | mini | open | – | – | qa · Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini) |  |
 | J2023 | mini | open | – | – | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
 | J2024 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
+| J2025 | mini | open | – | – | chief · Chief: resolve 059 topic orphan-review |  |
 
 Recently finished:
 
