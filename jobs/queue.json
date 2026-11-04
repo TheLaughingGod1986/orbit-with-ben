@@ -168456,10 +168456,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T04:55Z",
+      "eta": "2026-11-04T06:55Z",
       "created_by": "relay",
       "created_at": "2026-11-04T04:53Z",
       "result": "",
@@ -168468,13 +168468,26 @@
           "at": "2026-11-04T04:53Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T04:55Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Complete independent v04 panel J1940-J1943 then exact-file Chief ruling J1944; retain A pending decision",
       "kind": "chief",
       "recheck_of": "J1823",
       "due": "2026-11-04T05:53:30+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T04:55Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
