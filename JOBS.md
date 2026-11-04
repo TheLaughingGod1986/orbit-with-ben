@@ -115,6 +115,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1995 | mini | open (after J1994) | – | – | 043 script · chief · 043 Bootes Void: decide advancement and own specialist rewrite and facts chain | J1913 |
 | J1996 | any | open (after J1928) | – | – | 044 topic · review · 044 Ganymede: verify neighbours, overlap and matching Short evidence | J1928 |
 | J1997 | mini | open (after J1996) | – | – | 044 script · chief · 044 Ganymede: decide advancement and own specialist rewrite and facts chain | J1928 |
+| J1998 | any | open | – | – | chief · Chief: verify condition for J1878 |  |
 
 Recently finished:
 

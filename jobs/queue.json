@@ -1,5 +1,5 @@
 {
-  "next_id": 1998,
+  "next_id": 1999,
   "jobs": [
     {
       "id": "J0001",
@@ -165105,6 +165105,11 @@
           "at": "2026-11-04T08:16Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-04T09:11:51Z"
+        },
+        {
+          "at": "2026-11-04T09:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J1998"
         }
       ],
       "remaining_action": "Resolve trusted authorization for three R2 assets and six scoped Buffer posts, then revalidate live inputs before execution",
@@ -165147,10 +165152,11 @@
       "hold": {
         "type": "input",
         "condition": "J1988 reviewed J1915, J1975 and later J1878 rejection ecd8d8ff06: earlier recorded Ben approval (Ben-direct-approval-J1878-six-posts-2026-11-03) and all three asset SHA256 hashes are preserved, but subsequent automatic review rejected relayed approval as insufficient trusted authorization. No newer direct approval or clearance found on OWB thread (#6625967515), HOS desk or local state; exact three R2 assets and six Buffer creates remain unexecuted. Do not retry writes or bypass review from this verification.",
-        "check_at": "2026-11-04T09:11:51Z",
+        "check_at": "2026-11-04T10:16:56+00:00",
         "last_recheck": "J1988",
         "checked_at": "2026-11-04T08:16:28+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J1998"
       }
     },
     {
@@ -171406,6 +171412,37 @@
       ],
       "remaining_action": "Decide Ganymede advancement after evidence and own rewrite, Gemini facts and explicit script-lock chain",
       "kind": "chief"
+    },
+    {
+      "id": "J1998",
+      "title": "Chief: verify condition for J1878",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1878: J1988 reviewed J1915, J1975 and later J1878 rejection ecd8d8ff06: earlier recorded Ben approval (Ben-direct-approval-J1878-six-posts-2026-11-03) and all three asset SHA256 hashes are preserved, but subsequent automatic review rejected relayed approval as insufficient trusted authorization. No newer direct approval or clearance found on OWB thread (#6625967515), HOS desk or local state; exact three R2 assets and six Buffer creates remain unexecuted. Do not retry writes or bypass review from this verification.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1878 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T09:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:16Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Resolve trusted authorization for three R2 assets and six scoped Buffer posts, then revalidate live inputs before execution",
+      "kind": "chief",
+      "recheck_of": "J1878",
+      "due": "2026-11-03T18:54:58+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
