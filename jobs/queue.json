@@ -1,5 +1,5 @@
 {
-  "next_id": 2154,
+  "next_id": 2155,
   "jobs": [
     {
       "id": "J0001",
@@ -179929,6 +179929,35 @@
       "remaining_action": "MacBook setup test: codex",
       "kind": "chart",
       "model": "gpt-6-astra"
+    },
+    {
+      "id": "J2154",
+      "title": "MacBook setup test: claude",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "MacBook setup test (Ben, 4 Nov 2026: 'can you test all set up'). Touch no files and open no PR (skip step 3 of your instructions). Just finish this job with: python3 scripts/jobs.py done <this id> --agent macbook --result 'MacBook test OK: <which agent CLI you are>, <model>' --git. Nothing else.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T22:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T22:49Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "MacBook setup test: claude",
+      "kind": "review",
+      "model": "claude-opus-5-5"
     }
   ],
   "focus": [],
