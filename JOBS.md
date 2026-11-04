@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1960 | any | open (after J1958) | – | – | 060 script · chief · 060 Hyperion: Chief topic and editorial decision after evidence |  |
 | J1964 | mini | open (after J1963) | – | – | 061 script · chief · 061 Venus rotation: Chief topic and editorial decision after evidence |  |
 | J1965 | any | open | – | – | chief · Chief: verify condition for J1879 |  |
-| J1967 | mini | open (after J1966) | – | – | 061 sources · for gemini · review · `gemini-argon` · 061 Venus rotation: direct MUST QUOTE review after Gemini facts | J1808 |
+| J1967 | mini | claimed | gemini | 2026-11-04T19:51Z | 061 sources · for gemini · review · `gemini-argon` · 061 Venus rotation: direct MUST QUOTE review after Gemini facts | J1808 |
 | J1969 | mini | open (after J1896) | – | – | 033 topic · for gemini · review · `gemini-argon` · 033 Uranus: verify neighbours and matching Short evidence for the deferred candidate | J1896 |
 | J1970 | mini | open (after J1969) | – | – | 033 script · chief · 033 Uranus: decide advancement after topic evidence and own any rewrite/facts chain | J1896 |
 | J1971 | mini | open (after J1897) | – | – | 034 topic · for gemini · review · `gemini-argon` · 034 Pluto: verify neighbours and matching Short evidence for deferred candidate | J1897 |
