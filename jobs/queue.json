@@ -161622,9 +161622,14 @@
           "at": "2026-11-04T04:22Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed existing checkpoint and retained 1/3 plan. No extra lane enabled; no audio or moving-video input demonstrated."
+        },
+        {
+          "at": "2026-11-04T04:26Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Local capped supervisor added; 64 capacity and 8 lease tests passed. Additional regression suite underway; production callers and extra lanes remain disabled."
         }
       ],
-      "remaining_action": "Continue PR437 host evidence and dispatch integration; review and rollout remain unfinished",
+      "remaining_action": "Finish trusted host evidence, crash reconciliation and portable integration before review/rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -161635,9 +161640,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T04:22Z",
+        "at": "2026-11-04T04:26Z",
         "by": "codex",
-        "note": "Resumed existing checkpoint and retained 1/3 plan. No extra lane enabled; no audio or moving-video input demonstrated."
+        "note": "Local capped supervisor added; 64 capacity and 8 lease tests passed. Additional regression suite underway; production ca"
       },
       "rerouted_from": {
         "needs": "mini",
