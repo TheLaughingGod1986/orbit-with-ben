@@ -32,6 +32,7 @@ import fcntl
 import json
 import os
 import pathlib
+import platform
 import re
 import shutil
 import subprocess
@@ -191,9 +192,25 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
     return r.returncode == 0
 
 
+def host_observation():
+    """Measured host identity/resources; no implied auth, quota or media capability.
+
+    A generic `host=macbook` is retained for old board readers. The machine name
+    must be matched against an independently approved registration before use.
+    Missing memory/capability evidence deliberately cannot unlock another lane.
+    """
+    return {"machine_name": platform.node(), "architecture": platform.machine(),
+            "on_ac": on_ac_power(), "idle_minutes": idle_minutes(),
+            "free_gb": shutil.disk_usage(str(HOME)).free / 1024**3,
+            "load": os.getloadavg()[0], "cpu_count": os.cpu_count(),
+            "registered_id": None, "memory_available_gb": None,
+            "auth_quota_ready": None, "media_capabilities": []}
+
+
 def heartbeat_doc(state: str, why: list, job: str = "", now: dt.datetime | None = None) -> dict:
     now = now or dt.datetime.now(dt.timezone.utc)
-    return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "state": state, "why": why, "job": job}
+    return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "state": state, "why": why, "job": job,
+            "observation": host_observation()}
 
 
 def push_heartbeat(state: str, why: list, job: str = "") -> None:

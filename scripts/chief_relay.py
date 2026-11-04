@@ -65,6 +65,7 @@ import fcntl
 import json
 import os
 import pathlib
+import platform
 import re
 import shlex
 import shutil
@@ -1533,7 +1534,8 @@ def run_locked(at: dt.datetime) -> int:
                        "pid": os.getpid(), "kind": "chief-review",
                        "progress": {"step": 0, "of": 3, "at": iso(started), "note": "Review started"}})
         execution = {"job":reviews[0]["id"] if review_work else job.get("id") if job else "", "worker":who,
-                     "pid":os.getpid(),"startedAt":iso(started),"expiresAt":iso(started + dt.timedelta(seconds=cap+60)),"version":LOADED_VERSION}
+                     "pid":os.getpid(),"host":"mini","machine_name":platform.node(),
+                     "startedAt":iso(started),"expiresAt":iso(started + dt.timedelta(seconds=cap+60)),"version":LOADED_VERSION}
         write_json(d("execution.json"),execution)
         write_json(d("runner.json"),{"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"]})
         try:
@@ -1639,6 +1641,37 @@ def walk_on(job: dict, who: str, model: str, at: dt.datetime, reason="out of usa
         log(f"chain: {cur['id']} rerouted from {who} to {lane[0]} on {lane[1]}")
 
 
+def capacity_observation(at):
+    """Read-only actual execution outlook. An ETA is never a slot reservation."""
+    queue = read_json(OWB / "jobs" / "queue.json") or {}
+    lease = current_execution(at)
+    active = []
+    if lease:
+        job = next((j for j in queue.get("jobs", []) if j.get("id") == lease.get("job")), {})
+        active.append({"job":lease.get("job"), "owner":lease.get("worker"),
+                       "host":lease.get("host", "mini"), "machine_name":lease.get("machine_name"),
+                       "phase":"running" if job.get("status") == "claimed" else "starting",
+                       "action":job.get("remaining_action"), "progress":job.get("progress"),
+                       "recorded_task_estimate_minutes":job.get("eta_min"),
+                       "recorded_task_eta":job.get("eta"), "lease_expires_at":lease.get("expiresAt")})
+    remote = None
+    try:
+        result = subprocess.run(["git", "-C", str(OWB), "show", "origin/macbook-heartbeat:heartbeat.json"],
+                                capture_output=True, text=True, timeout=10)
+        if result.returncode == 0:
+            remote = json.loads(result.stdout)
+    except (OSError, ValueError, subprocess.SubprocessError):
+        pass
+    stamp = workflow.timestamp((remote or {}).get("at"))
+    age = (at-stamp).total_seconds() if stamp else None
+    return {"mode":"observation-only", "configured_mini_lanes":1, "active":active,
+            "macbook_cached_observation":remote,
+            "macbook_observation_age_seconds":age,
+            "macbook_capacity_verified":False,
+            "free_slot_at":None, "availability":"unknown",
+            "rollout":"disabled: exact-head review, host/account evidence and atomic launch integration required"}
+
+
 def cmd_status(at: dt.datetime) -> int:
     flags = load_out(at)
     rows, who = acting(at)
@@ -1681,6 +1714,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status")
+    sub.add_parser("capacity", help="read-only host leases and capacity evidence; never launches")
     sub.add_parser("run")
     cp = sub.add_parser("capabilities", help="record a fresh, actually demonstrated worker tool capability")
     cp.add_argument("--agent", required=True)
@@ -1707,6 +1741,9 @@ def main(argv=None) -> int:
         return 0
     if a.cmd == "review-progress":
         review_progress(a.agent, a.job, a.step, a.note, at)
+        return 0
+    if a.cmd == "capacity":
+        print(json.dumps(capacity_observation(at), indent=2))
         return 0
     if a.cmd == "status":
         return cmd_status(at)
