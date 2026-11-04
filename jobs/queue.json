@@ -172435,20 +172435,25 @@
           "at": "2026-11-04T11:21Z",
           "by": "codex",
           "what": "step 2 of 3 done: Saved selected ACP initialize evidence and engineering report in clean /private/tmp/j2011-wt. No supported new acoustic transport found; zero fixtures/model calls; original holds untouched."
+        },
+        {
+          "at": "2026-11-04T11:22Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified selected ACP JSON against installed server output; git diff checks clean; report-only commit 8d6efaad03 in /private/tmp/j2011-wt. No hearing demonstrated, source VO untouched."
         }
       ],
-      "remaining_action": "Verify report and evidence, commit a review PR, then park for Chief decision",
+      "remaining_action": "Chief reviews engineering evidence and scopes any separate interactive audio attachment experiment; original capability holds remain",
       "kind": "assembly",
       "audio_transport_repair_key": "PR438-native-audio",
       "urgent": 3,
       "due": "2026-11-04T10:51:54+00:00",
       "due_kind": "user-resource-unblock",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T11:21Z",
+        "at": "2026-11-04T11:22Z",
         "by": "codex",
-        "note": "Saved selected ACP initialize evidence and engineering report in clean /private/tmp/j2011-wt. No supported new acoustic "
+        "note": "Verified selected ACP JSON against installed server output; git diff checks clean; report-only commit 8d6efaad03 in /pri"
       }
     },
     {
