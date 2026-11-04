@@ -4,10 +4,18 @@
   "air": "",
   "stages": {
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "J1785 FIX/not locked; PR440; J1928 owns topic/editorial review before facts and quote checks"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "codex",
+      "at": "2026-11-04T09:10Z",
+      "eta": "2026-11-04T11:09Z",
+      "note": "J1928 044 Ganymede: restore topic and editorial decision before facts and script lock"
+    }
+  ],
   "next": "J1928: Chief topic/editorial decision for unlocked Ganymede draft; neighbours, formal Gemini facts and direct quote check before lock. J1785 restored cancelled handoffs; no production approval."
 }
