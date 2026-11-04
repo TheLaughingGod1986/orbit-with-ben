@@ -161327,9 +161327,14 @@
           "at": "2026-11-04T03:11Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-04T03:12Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resumed existing PR437 and reviewed planner/reservation/lease/transfer checkpoint; implementation remains incomplete."
         }
       ],
-      "remaining_action": "Inspect existing capacity dispatch, implement guarded portable overflow, and verify focused tests",
+      "remaining_action": "Implement and test guarded reservation-to-claim transition on existing PR437; rollout stays disabled",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -161338,10 +161343,11 @@
       "due": "2026-11-03T23:37:09+00:00",
       "due_kind": "user-resource-unblock",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-04T03:11Z",
-        "by": "codex"
+        "at": "2026-11-04T03:12Z",
+        "by": "codex",
+        "note": "Resumed existing PR437 and reviewed planner/reservation/lease/transfer checkpoint; implementation remains incomplete."
       },
       "rerouted_from": {
         "needs": "mini",
