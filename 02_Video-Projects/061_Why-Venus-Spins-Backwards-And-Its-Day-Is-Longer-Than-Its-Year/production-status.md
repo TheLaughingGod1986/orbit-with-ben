@@ -1,5 +1,7 @@
 # Production Status — 061 Why Venus Spins Backwards and Its Day Is Longer Than Its Year
 
+**Sources (J1808, 4 Nov 2026): FIX / unapproved.** J1966 formal Gemini facts → J1967 direct MUST QUOTE review → J1964 final decision; no source or script lock. See `jobs/reviews/J1808/CHIEF_SOURCES_RULING_2026-11-04.md`. Historical verification assertions below remain draft records.
+
 **Current Stage:** Topic and script FIX / not locked (J1806/J1807, 4 Nov 2026). J1963 verifies topic evidence and existing-Venus-long overlap; J1964 owns the combined topic/editorial decision after J1963, with sources handled by J1808. J0789/J0802 accepted unlocked drafts only. Current v01 reviewer 95.8 PASS; episode gate BLOCK on unsigned audit; editorial corrections remain.
 **Working Title:** Why Does Venus Spin Backwards and Have a Day Longer Than Its Year?
 **Alt Titles:**
