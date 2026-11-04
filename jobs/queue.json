@@ -163521,6 +163521,11 @@
           "at": "2026-11-04T00:43Z",
           "by": "codex",
           "what": "step 1 of 3 done: Restored actual preflight 1/3 after approval verification; uploads/posts and final readback unfinished"
+        },
+        {
+          "at": "2026-11-04T00:44Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Revalidate exact approved inputs; upload three assets as needed and create only six missing Buffer posts, then verify receipts",
@@ -163550,7 +163555,16 @@
         "at": "2026-11-04T00:43Z",
         "by": "codex",
         "note": "Restored actual preflight 1/3 after approval verification; uploads/posts and final readback unfinished"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J1879",
