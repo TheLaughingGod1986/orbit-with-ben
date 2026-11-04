@@ -1,5 +1,5 @@
 {
-  "next_id": 1989,
+  "next_id": 2006,
   "jobs": [
     {
       "id": "J0001",
@@ -81745,6 +81745,26 @@
           "at": "2026-11-04T07:32Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-04T08:27:57Z"
+        },
+        {
+          "at": "2026-11-04T08:35Z",
+          "by": "relay",
+          "what": "condition verification queued: J1989"
+        },
+        {
+          "at": "2026-11-04T08:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T09:35:12Z"
+        },
+        {
+          "at": "2026-11-04T09:44Z",
+          "by": "relay",
+          "what": "condition verification queued: J2005"
+        },
+        {
+          "at": "2026-11-04T09:51Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T10:44:40Z"
         }
       ],
       "kind": "video",
@@ -81775,11 +81795,11 @@
       "remaining_action": "Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
       "hold": {
         "type": "input",
-        "condition": "J1983 verified: J1100 remains blocked 2/3. Latest local J1100 evidence remains 31 Oct; opening/middle/end audition hashes match 3e26b379b. PR333 OPEN unchanged at 0a7fcb6ad, no reviews/comments. S2 instrumental-bed clearance and actual local listening remain unproven; excluded bed remains excluded. Session tools have no demonstrated audio input; J1100 retains typed audio_input capability hold. Still require v07 assembly/caption repairs, all gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk 28.034 GiB exceeds h43 restart minimum 10 GiB; verify at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.",
-        "check_at": "2026-11-04T08:27:57Z",
-        "last_recheck": "J1983",
-        "checked_at": "2026-11-04T07:32:39+00:00",
-        "checked_by": "gemini"
+        "condition": "J2005 verified: J1100 remains blocked 2/3 with audio_input capability hold. Latest local evidence remains 31 Oct; opening/middle/end audition hashes match 3e26b379b. PR333 OPEN at unchanged 0a7fcb6ad with no reviews/comments. S2 instrumental-bed clearance and actual local listening remain unproven; excluded bed remains excluded. Current session tool inspection shows no demonstrated audio perception. Still require v07 assembly/caption repairs, all gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk 22.008 GiB exceeds h43 restart 10 GiB; remeasure at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.",
+        "check_at": "2026-11-04T10:44:40Z",
+        "last_recheck": "J2005",
+        "checked_at": "2026-11-04T09:51:39+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
@@ -161979,8 +161999,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "gemini",
-      "since": "2026-11-04T08:20Z",
-      "eta": "2026-11-04T10:20Z",
+      "since": "2026-11-04T09:57Z",
+      "eta": "2026-11-04T11:57Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "",
@@ -162204,9 +162224,29 @@
           "at": "2026-11-04T08:20Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Resumed J1843 from PR437 checkpoint c02fe4179a at 1/3; inspecting worktree and remaining receipt producer / launch / portable return integration"
+        },
+        {
+          "at": "2026-11-04T08:34Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Checkpoint f0dd7869b4 pushed to PR437: probe receipt producer + outage chronology, portable return consumption, quarantine resolution, and dispatch_claimed pipeline (292 tests PASS; rollout disabled)"
+        },
+        {
+          "at": "2026-11-04T08:34Z",
+          "by": "gemini",
+          "what": "released: Step 2/3 complete at clean checkpoint f0dd7869b4 on draft PR437 (/private/tmp/J1843-gemini, codex/J1843-capacity): added produce_probes with outage chronology/shared-account taint, transaction_evidence (OWB+HOS boards + legacy/process leases), resolve_quarantine audit clearance, stage_outbound/preflight_inbound/stage_return/consume_return portable adapters, and dispatch_claimed pipeline (rollout_enabled=False). 292 tests PASS, core_sync/py_compile/diff PASS. Codex is UP again as elected Chief; handing back for Step 3 exact-head Chief review and observed real-host transitions. No extra lane, spend or publishing enabled."
+        },
+        {
+          "at": "2026-11-04T09:57Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T10:00Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verifying PR437 checkpoint against latest main, updating PR437 description/observations, and parking for Chief review"
         }
       ],
-      "remaining_action": "Finish receipt producers, canonical launch/lease integration and portable return verification; then exact-head review and observed rollout",
+      "remaining_action": "Exact-head Chief review of PR437 and observed real-host transitions before enabling capacity rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162215,11 +162255,11 @@
       "due": "2026-11-03T23:37:09+00:00",
       "due_kind": "user-resource-unblock",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T08:20Z",
+        "at": "2026-11-04T10:00Z",
         "by": "gemini",
-        "note": "Resumed J1843 from PR437 checkpoint c02fe4179a at 1/3; inspecting worktree and remaining receipt producer / launch / por"
+        "note": "Verifying PR437 checkpoint against latest main, updating PR437 description/observations, and parking for Chief review"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -165085,6 +165125,16 @@
           "at": "2026-11-04T08:16Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-04T09:11:51Z"
+        },
+        {
+          "at": "2026-11-04T09:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J1998"
+        },
+        {
+          "at": "2026-11-04T09:19Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T10:16:56Z"
         }
       ],
       "remaining_action": "Resolve trusted authorization for three R2 assets and six scoped Buffer posts, then revalidate live inputs before execution",
@@ -165126,11 +165176,11 @@
       "model": "gpt-6.1-sol",
       "hold": {
         "type": "input",
-        "condition": "J1988 reviewed J1915, J1975 and later J1878 rejection ecd8d8ff06: earlier recorded Ben approval (Ben-direct-approval-J1878-six-posts-2026-11-03) and all three asset SHA256 hashes are preserved, but subsequent automatic review rejected relayed approval as insufficient trusted authorization. No newer direct approval or clearance found on OWB thread (#6625967515), HOS desk or local state; exact three R2 assets and six Buffer creates remain unexecuted. Do not retry writes or bypass review from this verification.",
-        "check_at": "2026-11-04T09:11:51Z",
-        "last_recheck": "J1988",
-        "checked_at": "2026-11-04T08:16:28+00:00",
-        "checked_by": "gemini"
+        "condition": "J1998 reviewed original recorded Ben approval, J1915/J1975/J1988 and subsequent rejection ecd8d8ff06. No newer clearance in OWB comments through 6627197263 or HOS desk through 6619903706. Automatic review still rejects relayed approval as insufficient trusted authorization for the three R2 assets and six scoped Buffer creates. Preserve approval history; no writes or bypass from verification.",
+        "check_at": "2026-11-04T10:16:56Z",
+        "last_recheck": "J1998",
+        "checked_at": "2026-11-04T09:19:59+00:00",
+        "checked_by": "codex"
       }
     },
     {
@@ -166899,22 +166949,63 @@
       "stage": "script",
       "after": "J1782",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T08:40Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T22:10Z",
-      "result": "",
+      "result": "DEFER topic lock; script FIX still under review/unlocked, board blocked records explicit Chief ruling. PR471 merged (06906509a9). HOS remains first; no Short-first waiver. J1990 owns no-spend topic evidence, J1991 dependent capacity/advancement and any specialist rewrite-Gemini-facts-direct-quotes-lock chain. Drafts/SOURCES unchanged; no production, spend or publishing.",
       "history": [
         {
           "at": "2026-11-03T22:10Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T08:40Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T08:41Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed editorial decision; no media-input capability asserted."
+        },
+        {
+          "at": "2026-11-04T08:41Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read Io v01 and handoff: missing neighbour/Short proof, blank audit, seven unverified source rows and editorial FIX. HOS first; focus unchanged."
+        },
+        {
+          "at": "2026-11-04T08:45Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR471 ruling merged after CI PASS; J1990 evidence then J1991 Chief decision queued; drafts and source text unchanged."
+        },
+        {
+          "at": "2026-11-04T08:46Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified PR471 merged, CI passed, linked dependencies correct, drafts/SOURCES unchanged, topic blocked and script review; no production approval."
+        },
+        {
+          "at": "2026-11-04T08:46Z",
+          "by": "codex",
+          "what": "done: DEFER topic lock; script FIX still under review/unlocked, board blocked records explicit Chief ruling. PR471 merged (06906509a9). HOS remains first; no Short-first waiver. J1990 owns no-spend topic evidence, J1991 dependent capacity/advancement and any specialist rewrite-Gemini-facts-direct-quotes-lock chain. Drafts/SOURCES unchanged; no production, spend or publishing."
         }
       ],
-      "remaining_action": "Decide topic readiness and editorial fixes before formal facts and script lock",
-      "kind": "chief"
+      "remaining_action": "Decision complete; J1990 evidence precedes J1991 advancement decision",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T08:46Z",
+        "by": "codex",
+        "note": "Verified PR471 merged, CI passed, linked dependencies correct, drafts/SOURCES unchanged, topic blocked and script review"
+      },
+      "taskKeys": [
+        "OWB:041"
+      ],
+      "done_ref": "jobs/reviews/J1907/CHIEF_EDITORIAL_RULING_2026-11-04.md"
     },
     {
       "id": "J1908",
@@ -166998,22 +167089,63 @@
       "stage": "script",
       "after": "J1783",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T08:48Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T22:18Z",
-      "result": "",
+      "result": "DEFER advancement; retain unlocked candidate, script FIX with editorial review pending. Board blocked from lock/production per Chief completion guard. PR472 a0a68b4dd5. HOS November 2/4 vs OWB 5/4; no waiver. J1992 owns neighbours/overlap/Short evidence; dependent J1993 owns capacity and any specialist rewrite, Gemini facts, direct quotes and explicit script lock. No VO, generation or publishing approval.",
       "history": [
         {
           "at": "2026-11-03T22:18Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T08:48Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T08:49Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-04T08:50Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read PR432 handoff and v01; confirmed HOS 2/4 versus OWB 5/4, no focus set, unsigned audit and unresolved facts. Deferring advancement with owned evidence and Chief decision successors."
+        },
+        {
+          "at": "2026-11-04T08:52Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Recorded DEFER/FIX ruling; J1992 owns evidence, J1993 depends on it and owns capacity plus any rewrite/facts/lock chain."
+        },
+        {
+          "at": "2026-11-04T08:53Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified PR472 contains only ruling; v00/v01 and SOURCES unchanged. J1992 after J1909, J1993 after J1992; studio released to review with linked next action."
+        },
+        {
+          "at": "2026-11-04T08:53Z",
+          "by": "codex",
+          "what": "done: DEFER advancement; retain unlocked candidate, script FIX with editorial review pending. Board blocked from lock/production per Chief completion guard. PR472 a0a68b4dd5. HOS November 2/4 vs OWB 5/4; no waiver. J1992 owns neighbours/overlap/Short evidence; dependent J1993 owns capacity and any specialist rewrite, Gemini facts, direct quotes and explicit script lock. No VO, generation or publishing approval."
         }
       ],
-      "remaining_action": "Decide topic readiness and editorial fixes before formal facts and script lock",
-      "kind": "chief"
+      "remaining_action": "Decision complete; J1992 owns evidence and J1993 owns advancement",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T08:53Z",
+        "by": "codex",
+        "note": "Verified PR472 contains only ruling; v00/v01 and SOURCES unchanged. J1992 after J1909, J1993 after J1992; studio release"
+      },
+      "taskKeys": [
+        "OWB:042"
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/472"
     },
     {
       "id": "J1910",
@@ -167243,22 +167375,63 @@
       "stage": "script",
       "after": "J1784",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T08:56Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-03T22:57Z",
-      "result": "",
+      "result": "DEFER topic lock; editorial FIX. PR473 merged. J1994 owns evidence; J1995 owns capacity/advancement and conditional specialist rewrite, Gemini facts and direct-quote lock chain. No production approval.",
       "history": [
         {
           "at": "2026-11-03T22:57Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T08:56Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T08:57Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect evidence; decide and link successors; verify records and report."
+        },
+        {
+          "at": "2026-11-04T08:57Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read actual v01, six self-verified source rows, blank audit and 042/044 handoffs. HOS first; no established qualifying Short proof or neighbours."
+        },
+        {
+          "at": "2026-11-04T09:00Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Ruling merged as PR473; J1994 evidence and J1995 Chief advancement linked. Original drafts/source text preserved."
+        },
+        {
+          "at": "2026-11-04T09:01Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR473 check passed and merged; successors/dependencies verified, drafts/source unchanged, topic advancement blocked and explicit script FIX recorded."
+        },
+        {
+          "at": "2026-11-04T09:01Z",
+          "by": "codex",
+          "what": "done: DEFER topic lock; editorial FIX. PR473 merged. J1994 owns evidence; J1995 owns capacity/advancement and conditional specialist rewrite, Gemini facts and direct-quote lock chain. No production approval."
         }
       ],
-      "remaining_action": "Decide topic readiness and editorial fixes before formal facts and script lock",
-      "kind": "chief"
+      "remaining_action": "Decision complete; J1994 evidence then J1995 advancement own remaining work",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T09:01Z",
+        "by": "codex",
+        "note": "PR473 check passed and merged; successors/dependencies verified, drafts/source unchanged, topic advancement blocked and "
+      },
+      "taskKeys": [
+        "OWB:043"
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/473"
     },
     {
       "id": "J1914",
@@ -168195,28 +168368,69 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T09:04Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T01:33Z",
-      "result": "",
+      "result": "Scoped administrative completion accepted: OWB026 upload review closed under J1914/J1825; J1944 retained. Verified persisted done state and unchanged J0861 Public-condition follow-through. Private evidence retained locally; no new media approval, spend or external video changes.",
       "history": [
         {
           "at": "2026-11-04T01:33Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:04Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T09:04Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-04T09:05Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Prior scoped acceptance and approval chain checked; retained completion evidence verified locally"
+        },
+        {
+          "at": "2026-11-04T09:06Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Upload stage closed under existing scoped acceptance; administrative next action points to J0861"
+        },
+        {
+          "at": "2026-11-04T09:07Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified origin/main stage done, no claim, prior acceptance jobs done and J0861 public hold/check unchanged"
+        },
+        {
+          "at": "2026-11-04T09:08Z",
+          "by": "codex",
+          "what": "done: Scoped administrative completion accepted: OWB026 upload review closed under J1914/J1825; J1944 retained. Verified persisted done state and unchanged J0861 Public-condition follow-through. Private evidence retained locally; no new media approval, spend or external video changes."
         }
       ],
-      "remaining_action": "Chief resolves 026 upload handoff and records the next owner/action",
+      "remaining_action": "Complete: stale upload review closed; J0861 owns conditional follow-through",
       "kind": "chief",
       "handoff": {
         "film": "026",
         "stage": "upload",
         "kind": "orphan-review",
         "signature": "e2824339dcaf11085b2b"
-      }
+      },
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T09:07Z",
+        "by": "codex",
+        "note": "Verified origin/main stage done, no claim, prior acceptance jobs done and J0861 public hold/check unchanged"
+      },
+      "taskKeys": [
+        "OWB:026"
+      ],
+      "done_ref": "e67fd32cd2"
     },
     {
       "id": "J1928",
@@ -168229,22 +168443,68 @@
       "stage": "script",
       "after": "J1785",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T09:10Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T01:37Z",
-      "result": "",
+      "result": "DEFER topic lock; editorial FIX remains under review, recorded blocked for Chief completion gate. PR474 merged with both checks green. J1996 owns evidence; J1997 owns capacity/advancement and conditional specialist rewrite, Gemini facts and direct-quote lock chain. Grunsfeld role label is four words. Draft/source hashes unchanged. No production approval.",
       "history": [
         {
           "at": "2026-11-04T01:37Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:10Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T09:10Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed; reviewing actual draft, topic evidence and channel capacity."
+        },
+        {
+          "at": "2026-11-04T09:11Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read actual v01 and 17 source rows; topic audit blank, Short proof unresolved, HOS priority retained. Opening 180 words. Grunsfeld role is four words, correcting handoff count."
+        },
+        {
+          "at": "2026-11-04T09:13Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Deferred lock against capacity and missing evidence; J1996 owns evidence, J1997 owns advancement and conditional specialist rewrite/facts/lock chain."
+        },
+        {
+          "at": "2026-11-04T09:15Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR474 merged after Rules and Studio core checks passed; unchanged input hashes, dependencies and board state verified."
+        },
+        {
+          "at": "2026-11-04T09:16Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR474 merged with both checks green. Explicit script blocked/FIX recorded for Chief completion gate; remains under editorial review, not approved."
+        },
+        {
+          "at": "2026-11-04T09:16Z",
+          "by": "codex",
+          "what": "done: DEFER topic lock; editorial FIX remains under review, recorded blocked for Chief completion gate. PR474 merged with both checks green. J1996 owns evidence; J1997 owns capacity/advancement and conditional specialist rewrite, Gemini facts and direct-quote lock chain. Grunsfeld role label is four words. Draft/source hashes unchanged. No production approval."
         }
       ],
-      "remaining_action": "Decide topic readiness and editorial fixes before formal facts and script lock",
-      "kind": "chief"
+      "remaining_action": "Handoff complete; J1996 evidence precedes J1997 advancement decision",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T09:16Z",
+        "by": "codex",
+        "note": "PR474 merged with both checks green. Explicit script blocked/FIX recorded for Chief completion gate; remains under edito"
+      },
+      "taskKeys": [
+        "OWB:044"
+      ],
+      "done_ref": "PR474; explicit J1928 FIX/blocked ruling; J1996/J1997 successors"
     },
     {
       "id": "J1929",
@@ -168257,22 +168517,63 @@
       "stage": "script",
       "after": "J1786",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T09:22Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T01:42Z",
-      "result": "",
+      "result": "DEFER topic lock; script FIX under review, unapproved. J1999 topic evidence then J2000 Chief capacity/advancement own continuation. No Short-first waiver, spend or production approval. Input hashes and board/dependencies verified.",
       "history": [
         {
           "at": "2026-11-04T01:42Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:22Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T09:23Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect evidence and capacity; record editorial decision and successors; validate board and handoff."
+        },
+        {
+          "at": "2026-11-04T09:23Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed v01, notes, source targets, blank audit and 044/046 handoffs. HOS 2/4 vs OWB 5/4 November; focus empty. Topic remains unproven and script needs editorial fixes."
+        },
+        {
+          "at": "2026-11-04T09:26Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Decision 284b102d9a records DEFER/FIX. J1999 topic evidence and J2000 dependent Chief advancement queued; conditional specialist chain specified. Inputs unchanged."
+        },
+        {
+          "at": "2026-11-04T09:26Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Validated unchanged inputs and focus, successor dependencies and film links. Board records FIX/blocked with explicit retained-review wording, not film approval; no active stage claim."
+        },
+        {
+          "at": "2026-11-04T09:27Z",
+          "by": "codex",
+          "what": "done: DEFER topic lock; script FIX under review, unapproved. J1999 topic evidence then J2000 Chief capacity/advancement own continuation. No Short-first waiver, spend or production approval. Input hashes and board/dependencies verified."
         }
       ],
-      "remaining_action": "Decide 045 topic priority and route editorial fixes before formal facts and script lock",
-      "kind": "chief"
+      "remaining_action": "J1999 verifies topic evidence; J2000 decides advancement and conditional rewrite-facts-lock",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T09:26Z",
+        "by": "codex",
+        "note": "Validated unchanged inputs and focus, successor dependencies and film links. Board records FIX/blocked with explicit ret"
+      },
+      "taskKeys": [
+        "OWB:045"
+      ],
+      "done_ref": "284b102d9a"
     },
     {
       "id": "J1930",
@@ -168285,22 +168586,63 @@
       "stage": "script",
       "after": "J1787",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T09:29Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T01:47Z",
-      "result": "",
+      "result": "Chief decision complete: DEFER Enceladus topic lock, script FIX / blocked from production. J2001 evidence then J2002 capacity/advancement and conditional specialist rewrite, Gemini facts and direct quote/lock chain. No Short-first waiver, spend or publishing; nothing needed from Ben.",
       "history": [
         {
           "at": "2026-11-04T01:47Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:29Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T09:29Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect draft and gates; record Chief editorial/capacity ruling and successors; verify and report."
+        },
+        {
+          "at": "2026-11-04T09:30Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read v01 and nine unverified source rows; audit unsigned. Balance: HOS November 2/4 complete, OWB 5/4; no focus set in queue. No topic lock or Short-first waiver justified."
+        },
+        {
+          "at": "2026-11-04T09:33Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Decision 84919f0be7 published. Topic and script blocked from lock; J2001 evidence then J2002 capacity/advancement with conditional specialist rewrite/facts/lock. No waiver or production approval."
+        },
+        {
+          "at": "2026-11-04T09:33Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified original script/source/notes hashes, successor film/stage/dependencies, blocked topic/script states, unchanged focus and clean worktree; decision is on origin/main."
+        },
+        {
+          "at": "2026-11-04T09:33Z",
+          "by": "codex",
+          "what": "done: Chief decision complete: DEFER Enceladus topic lock, script FIX / blocked from production. J2001 evidence then J2002 capacity/advancement and conditional specialist rewrite, Gemini facts and direct quote/lock chain. No Short-first waiver, spend or publishing; nothing needed from Ben."
         }
       ],
-      "remaining_action": "Decide 046 topic advancement and route editorial, neighbour and facts work before script lock",
-      "kind": "chief"
+      "remaining_action": "Report completed Chief decision; J2001 and J2002 own remaining Enceladus prerequisites",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T09:33Z",
+        "by": "codex",
+        "note": "Verified original script/source/notes hashes, successor film/stage/dependencies, blocked topic/script states, unchanged "
+      },
+      "taskKeys": [
+        "OWB:046"
+      ],
+      "done_ref": "84919f0be7"
     },
     {
       "id": "J1931",
@@ -168417,22 +168759,63 @@
       "stage": "script",
       "after": "J1788",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T09:35Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T02:31Z",
-      "result": "",
+      "result": "Chief DEFER/FIX recorded and merged (48d28a7eb1), CI passed. 047 remains unlocked with topic/script blocked; J2003 owns evidence then J2004 capacity/advancement and conditional rewrite-facts-lock. No Short-first waiver, spend or production approval. Five input hashes and focus unchanged.",
       "history": [
         {
           "at": "2026-11-04T02:31Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:35Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T09:35Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed J1933 only; plan: inspect evidence, record Chief ruling and owned follow-up, verify state."
+        },
+        {
+          "at": "2026-11-04T09:37Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read actual v01, eight unverified source rows and blank audit. Opening is 185 whitespace words, about 74 seconds at illustrative 150 wpm; HOS November 2/4 versus OWB 5/4. No topic or script lock."
+        },
+        {
+          "at": "2026-11-04T09:38Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: DEFER/FIX recorded; J2003 evidence and J2004 dependent Chief decision queued. Topic and script explicitly blocked from lock/production."
+        },
+        {
+          "at": "2026-11-04T09:41Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR475 merged at 48d28a7eb1 after both CI checks passed; five input hashes and focus unchanged; successor dependencies and blocked stages verified."
+        },
+        {
+          "at": "2026-11-04T09:42Z",
+          "by": "codex",
+          "what": "done: Chief DEFER/FIX recorded and merged (48d28a7eb1), CI passed. 047 remains unlocked with topic/script blocked; J2003 owns evidence then J2004 capacity/advancement and conditional rewrite-facts-lock. No Short-first waiver, spend or production approval. Five input hashes and focus unchanged."
         }
       ],
-      "remaining_action": "Decide 047 advancement and route neighbour, editorial and facts work before script lock",
-      "kind": "chief"
+      "remaining_action": "Decision delivered; J2003 evidence then J2004 advancement remain",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T09:41Z",
+        "by": "codex",
+        "note": "PR475 merged at 48d28a7eb1 after both CI checks passed; five input hashes and focus unchanged; successor dependencies an"
+      },
+      "taskKeys": [
+        "OWB:047"
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/475"
     },
     {
       "id": "J1934",
@@ -170836,6 +171219,714 @@
       "taskKeys": [
         "OWB:025",
         "HOS:005"
+      ]
+    },
+    {
+      "id": "J1989",
+      "title": "Chief: verify condition for J0936",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0936: J1983 verified: J1100 remains blocked 2/3. Latest local J1100 evidence remains 31 Oct; opening/middle/end audition hashes match 3e26b379b. PR333 OPEN unchanged at 0a7fcb6ad, no reviews/comments. S2 instrumental-bed clearance and actual local listening remain unproven; excluded bed remains excluded. Session tools have no demonstrated audio input; J1100 retains typed audio_input capability hold. Still require v07 assembly/caption repairs, all gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk 28.034 GiB exceeds h43 restart minimum 10 GiB; verify at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0936 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T08:36Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T08:35Z",
+      "result": "Verified condition remains unmet. J1100 blocked 2/3; local evidence still 31 Oct and all three audition hashes match 3e26b379b. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments. No S2 bed clearance or local listening proven. Disk 28.254 GiB exceeds restart floor. Updated J0936 hold with recheck J1989, retaining 2026-11-04T09:35:12+00:00 retry. Preserved audio_input hold, approvals, progress, deadlines and scheduled fallbacks. GBP0; no rendering, audio egress or publishing changes.",
+      "history": [
+        {
+          "at": "2026-11-04T08:35Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T08:36Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T08:37Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking parent brief, latest evidence and approval history; no native audio capability demonstrated"
+        },
+        {
+          "at": "2026-11-04T08:37Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Parent and approval history checked: J1032 PASS and J1101-J1103 completion retained; S2/S5/S6 replacement approvals remain outstanding"
+        },
+        {
+          "at": "2026-11-04T08:37Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR333 unchanged OPEN 0a7fcb6ad, no reviews/comments; local evidence still 31 Oct, three audition hashes match 3e26b379b; 28.254 GiB free; no listening clearance"
+        },
+        {
+          "at": "2026-11-04T08:38Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Updated J0936 hold with recheck J1989 and retained 09:35:12Z retry; J1100 capability hold, prior approvals, progress and fallbacks preserved"
+        },
+        {
+          "at": "2026-11-04T08:38Z",
+          "by": "codex",
+          "what": "done: Verified condition remains unmet. J1100 blocked 2/3; local evidence still 31 Oct and all three audition hashes match 3e26b379b. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments. No S2 bed clearance or local listening proven. Disk 28.254 GiB exceeds restart floor. Updated J0936 hold with recheck J1989, retaining 2026-11-04T09:35:12+00:00 retry. Preserved audio_input hold, approvals, progress, deadlines and scheduled fallbacks. GBP0; no rendering, audio egress or publishing changes."
+        }
+      ],
+      "remaining_action": "Verification complete; J0936 awaits cleared bed, listening and replacement repairs",
+      "kind": "chief",
+      "recheck_of": "J0936",
+      "due": "2026-11-04T09:35:12+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T08:38Z",
+        "by": "codex",
+        "note": "Updated J0936 hold with recheck J1989 and retained 09:35:12Z retry; J1100 capability hold, prior approvals, progress and"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
+    },
+    {
+      "id": "J1990",
+      "title": "041 Io: verify neighbours, overlap and matching Short evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read jobs/reviews/J1907/CHIEF_EDITORIAL_RULING_2026-11-04.md. No-spend evidence only for unlocked OWB:041 Io candidate. Preserve drafts v00/v01 and SOURCES. No topic lock, rewriting, generation or publishing.\nVerify at least three relevant education/space neighbours around 1M+ views: exact title, channel, video ID/URL, dated views, topic fit and subject words. Io volcanism/tidal heating is the core; do not substitute generic Jupiter popularity. Complete topic opportunity and unsigned pre-build audit from observed keyword/title/competition evidence; never fabricate scores or sign incomplete sections. Current rules override obsolete template runtime, AI Studio and outro suggestions. Use subject-only listing terms, never channel names.\nResolve matching-topic Short proof: >=200 views and >=40% stayed-to-watch, dated evidence and actual topic fit. Average viewed is not stayed-to-watch. Existing Jupiter atmosphere Shorts are not automatic Io evidence. Stored 4 Nov REPORT has 23KZK7OjsEE (Jupiter Has No Ground) at 8 views/43% stayed and buaOI3QGm7U (Could a Robot Survive Falling Into Jupiter?) at 19 views/0% stayed; these are local report values, not a fresh live API check. Historical J0484 idea scored Short proof 1 and requested a waiver; none granted here. Search current records and read-only analytics; report absent evidence explicitly. Do not create a test Short or invent a waiver.\nAudit overlap with 020 Jupiter descent (atmosphere/no solid ground), 006 Europa ocean/tidal heating, and existing/pipeline Jovian moons including 044 Ganymede and 057 Callisto. Protect Io-specific volcanic mechanism, Morabito discovery and qualified Juno interior evidence. Reconcile incoming 040 handoff (J1987 owns advancement) and outgoing 042 red-giant handoff (J1909); neither unlocked film supplies a promised listing or approval.\nDeliver evidence and bounded recommendation to dependent Chief. Do not displace HOS/focus production or repeat unchanged timed research checks. Missing evidence is a decision input, not permission to lock.\n",
+      "ref": "J1907",
+      "film": "041",
+      "stage": "topic",
+      "after": "J1907",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T08:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T08:43Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T08:47Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4735 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
+        }
+      ],
+      "remaining_action": "Verify Io topic opportunity, neighbours and matching Short-first evidence",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
+    },
+    {
+      "id": "J1991",
+      "title": "041 Io: decide advancement and own specialist rewrite and facts chain",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read jobs/reviews/J1907/CHIEF_EDITORIAL_RULING_2026-11-04.md after the linked topic-evidence task. Elected Chief owns explicit advance/defer/reject and subsequent actions for OWB:041. Recheck chief_relay authority, channel balance and focus. J1907 defers under J0804: HOS November 2/4 complete versus OWB 5/4; no verified neighbour pool, blank audit, Short proof unestablished, script FIX. No waiver, lock or production approval.\nAdvancement conditions: three verified relevant education/space neighbours around 1M+ views; completed opportunity/pre-build evidence; resolved overlap; matching Io Short >=200 views and >=40% stayed OR an explicit separately justified Chief waiver. Capacity: HOS November reaches four completed films OR Chief records a fresh specific balance rationale without displacing focus production. Evidence completion and credit reset alone are not approval. If unmet, retain or reject explicitly against observable conditions; no unchanged timed review loop.\nIf advancing, immediately queue kind=script specialist v02 rewrite (preserve v00/v01). Replace 57-word opening question plus 52-word numeric exposition plus 53-word agenda with short claim-led line, causal answer to title before 0:30 and central question by about 0:50; check spoken word timing. v01 delays tidal mechanism to Chapter 3. Simplify each DATA window to one idea with sourced everyday SCALE, <=4-word labels, 2-4 FACT beats; all four v01 FACT labels have five words. WHEN timeline handles dates/eras, not orbital durations. Replace sourced MWR map/interior cross-section/visualization with verified photographic footage and own per-row animated diagrams; no sourced diagram passes picture QA. Verify actual portrait assets/rights, not LOC authority IDs alone. Apply STUDIO_PLAYBOOK section 7 moving end plate about 15-20s after last line, initial 2-3s carry, music throughout with about 10s fade and picture final 2s fade; no static long hold. Reconcile 040/042 handoffs without treating unlocked listing titles as final.\nAfter rewrite, queue dependent kind=facts Gemini via agy on all seven SOURCES rows and every revised spoken/visual claim. Targets: estimated vs confirmed active volcano count; plume heights and unit pairs (4.5m km/2.6m miles, 260km/150mi, Loki 200km/127mi); apparent Jupiter diameter vs area (ORBIT ACTS says forty times wider); qualified shallow magma-ocean inference vs proving every vent has its own chamber (also fix the 400-chamber visualization); July 22 2026 heat result, publication/event dates and alternative interpretations; orbital/tidal/electrical values, Galileo chronology, portraits and NASA identities/rights; red-giant vs white-dwarf timing and wording. These are verification targets, not externally verified corrections. Gemini does not rewrite spoken lines.\nThen dependent Chief direct MUST QUOTE check from actual primary sources, rerun review:script and gate:episode against the correct revised version, and explicit script lock only after all required checks PASS. Prior 95.6 score and BLOCK report naming v00 are not approval. Return science corrections to script specialist and recheck changes. Keep script in review until lock; no VO/generation/upload before required approvals. Own concrete linked successor actions rather than leave an unowned next step.\n",
+      "ref": "J1907",
+      "film": "041",
+      "stage": "script",
+      "after": "J1990",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T08:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T08:43Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide Io advancement after evidence and own rewrite, Gemini facts and explicit script-lock chain",
+      "kind": "chief"
+    },
+    {
+      "id": "J1992",
+      "title": "042 Red Giant: verify neighbours, overlap and matching Short evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read jobs/reviews/J1909/CHIEF_EDITORIAL_RULING_2026-11-04.md (J1909 delivery PR). No-spend evidence only for unlocked OWB:042 Red Giant. Preserve v00/v01 and SOURCES; no rewriting, lock, generation or publishing.\nVerify three relevant education/space neighbours around 1M+ views: title, channel, ID/URL, dated views, topic fit and subject terms. Red-giant solar evolution is the core; generic solar imagery alone is not enough. Complete topic opportunity and unsigned pre-build audit from actual keyword/title/competition evidence, with no invented scores or signatures. Current rules override stale template advice.\nResolve matching-topic Short proof >=200 views and >=40% stayed-to-watch using dated read-only evidence. Average viewed is not stayed. Stored 4 Nov REPORT: n_4XskX0yZk 887 views/31.7% stayed/62.2% average viewed; touching the Sun is not automatic red-giant topic fit. 2e-giqFmfy8 82 scorecard views/34.3% stayed (83 lifetime), y-SPHQ0-VjQ 109 lifetime. Report absent evidence honestly; do not create a test Short or a waiver.\nCheck overlap with 022 solar brightening, 005 last-star endpoint, incoming 041 Io handoff (J1991) and outgoing 043 Bootes handoff (J1913). Protect post-main-sequence causal story; unlocked handoffs do not approve films or final listings. Deliver evidence and recommendation to dependent Chief. No unchanged timed research loop; do not displace HOS/focus production.\n",
+      "ref": "J1909",
+      "film": "042",
+      "stage": "topic",
+      "after": "J1909",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T08:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T08:51Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T08:54Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4742 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
+        }
+      ],
+      "remaining_action": "Verify Red Giant topic opportunity, neighbours and matching Short-first evidence",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
+    },
+    {
+      "id": "J1993",
+      "title": "042 Red Giant: decide advancement and own specialist rewrite and facts chain",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read J1909 delivery jobs/reviews/J1909/CHIEF_EDITORIAL_RULING_2026-11-04.md and dependent topic evidence. Elected Chief owns explicit advance/defer/reject and downstream actions for OWB:042. Recheck authority, channel balance and focus. J1909 defers under J0804: HOS November 2/4 complete versus OWB 5/4, no verified neighbour pool, blank audit, Short proof unresolved, script FIX. No waiver or production approval.\nRequire three relevant education/space neighbours around 1M+ views, completed opportunity/pre-build evidence, resolved overlap and matching-topic Short >=200 views and >=40% stayed OR a separately justified explicit Chief waiver. Capacity requires HOS November four complete OR a fresh specific balance rationale without displacing priority production. Evidence completion/credit reset is not approval. If unmet, retain or reject against observable conditions; no unchanged timed review loop.\nIf advancing, immediately queue kind=script specialist v02 rewrite, preserving v00/v01. Apply ruling: short claim-led opening, concrete causal answer before 0:30, question by ~0:50 with spoken timing; simplify 58/59/49-word opening paragraphs and DATA windows to one idea; sourced SCALE/per-chapter objects; remove sourced spectrum/transit graphics/sunspot drawing and split-panel risks; verified portraits and own animated real-body diagrams; full moving 15–20s end plate with initial 2–3s carry/music throughout/about 10s music fade/final 2s picture fade. Resolve 022 overlap and conditional 041/043 handoffs.\nAfter rewrite queue dependent kind=facts Gemini via agy on all six SOURCES rows and every spoken/visual claim. Verify contraction/shell burning/helium ignition order, 5 vs 8–10 billion-year milestones and phase durations, radiative-zone vs photosphere transit, density comparisons, engulfment interpretation, July 2026 WD1856 source existence/date/qualifiers (proving and detected methane vs most likely/scenario), size ratios/temperature, Darquier identity vs LOC name, dated Bootes counts, NASA asset IDs and portrait rights. These are verification targets, not externally checked corrections. Gemini must not rewrite spoken lines.\nThen dependent Chief directly checks every MUST QUOTE against primary pages, reruns review:script and gate:episode on correct revised version, and explicitly locks only after all checks pass. Return factual corrections to specialist then recheck changes. Keep script in review until lock. Own linked successors; no VO/generation/upload or visibility change authorized here.\n",
+      "ref": "J1909",
+      "film": "042",
+      "stage": "script",
+      "after": "J1992",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T08:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T08:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide Red Giant advancement after evidence and own rewrite, Gemini facts and explicit script-lock chain",
+      "kind": "chief"
+    },
+    {
+      "id": "J1994",
+      "title": "043 Bootes Void: verify neighbours, overlap and matching Short evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read jobs/reviews/J1913/CHIEF_EDITORIAL_RULING_2026-11-04.md. No-spend evidence only for unlocked OWB:043. Preserve v00/v01 and SOURCES. Verify three relevant education/space neighbours around 1M+ views with dated counts, IDs/URLs, titles, channels, subject terms and topic fit. Current J0514 cites only 475k/567k examples, not a qualifying pool. Complete topic opportunity and unsigned pre-build audit from real keyword/title/competition evidence; no invented scores or signatures; current rules override stale template advice.\nResolve matching Boötes Void/cosmic-void Short >=200 views and >=40% stayed-to-watch with dated read-only evidence. Average viewed is not stayed. No Bootes/void match was found in stored OWB REPORT on 4 Nov; verify actual inventory and report missing proof honestly. No test Short or waiver is authorized.\nCheck overlap with existing cosmology/JWST/dark-energy films and 037 Milky Way Centre; protect the void-formation/underdensity story from becoming a generic cosmic tour. Reconcile incoming 042 (J1993) and outgoing 044 (J1928) handoffs; neither is locked or a committed listing. Deliver recommendation to dependent Chief. No rewriting, facts PASS, production, spending, publishing or unchanged timed research loop; preserve HOS/focus priority.\n",
+      "ref": "J1913",
+      "film": "043",
+      "stage": "topic",
+      "after": "J1913",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T08:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T08:58Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:02Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4749 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
+        }
+      ],
+      "remaining_action": "Verify Bootes topic opportunity, neighbours and matching Short-first evidence",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
+    },
+    {
+      "id": "J1995",
+      "title": "043 Bootes Void: decide advancement and own specialist rewrite and facts chain",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read J1913 ruling and dependent topic evidence. Elected Chief owns explicit advance/defer/reject and downstream actions for OWB:043. Recheck authority, balance and focus. J1913 defers under J0804: HOS November 2/4 complete versus OWB 5/4, missing qualifying neighbours, blank audit, unresolved Short proof, script FIX. No waiver or production approval.\nRequire three relevant education/space neighbours around 1M+ views, opportunity/pre-build evidence, resolved overlap, and matching-topic Short >=200 views and >=40% stayed OR a separately justified explicit Chief waiver. Capacity requires HOS November four complete OR a fresh specific balance rationale without displacing priority production. Credit reset/evidence completion alone is not approval. If conditions fail, retain or reject against observable conditions; no unchanged timed review loop.\nIf advancing, immediately queue kind=script specialist v02 rewrite preserving v00/v01. Apply J1913 editorial FIX: short claim-led opening, concrete answer before 0:30/main question by ~0:50 with spoken timing; actual first paragraphs 60/67/58 whitespace words, not the handoff's 46/56/46. Simplify every DATA window to one idea; shorten three five-word FACT labels; WHEN dates/eras only. Remove sourced visualizations/maps/simulations including WMAP Cold Spot map; own accurate sourced real-body animated diagrams with real moving imagery between; verify portrait assets, not LOC authority IDs. Full moving 15-20s end plate, initial 2-3s carry, music throughout/about 10s fade, final 2s picture fade. Reconcile 042/044 handoffs and preserve Boötes causal focus.\nReset six self-marked VERIFIED source rows to unapproved/pending formal check with provenance preserved; queue dependent kind=facts Gemini via agy on all source rows and every revised spoken/visual claim. Check MCG+01-02-015 vs Boötes density/isolation; dated 60/2,000 counts and merging-void hypothesis; primary sources replacing reliance on 2013 blog; Hubble/Humason attribution; Eridanus/Cold Spot qualifiers; Roman FOV area vs width and infrared scope, survey forecasts and current mission wording; LOC portrait identity/rights; conditional Pisces A/B history versus certain causal crossing; dark energy versus void formation; Ganymede ocean qualification and handoff. These are verification targets, not verified corrections. Gemini never rewrites spoken lines.\nThen dependent Chief directly checks every MUST QUOTE against primary pages, reruns review:script and gate:episode on the correct revised version, and explicitly locks only when all prerequisites pass. Failed claims return to script specialist and are rechecked. Keep script in review until explicit lock and own linked successors. No VO/generation/upload/visibility change authorized here.\n",
+      "ref": "J1913",
+      "film": "043",
+      "stage": "script",
+      "after": "J1994",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T08:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T08:58Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide Bootes advancement after evidence and own rewrite, Gemini facts and explicit script-lock chain",
+      "kind": "chief"
+    },
+    {
+      "id": "J1996",
+      "title": "044 Ganymede: verify neighbours, overlap and matching Short evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read jobs/reviews/J1928/CHIEF_EDITORIAL_RULING_2026-11-04.md. No-spend evidence only for unlocked OWB:044. Preserve v00/v01 and SOURCES. Verify three relevant education/space neighbours around 1M+ views with dated counts, IDs/URLs, titles, channels, subject terms and Ganymede topic fit. J0529 score 19/30 and hypothetical neighbour pool are not proof. Complete topic opportunity and blank pre-build audit from real keyword/title/competition evidence; no invented scores/signatures and no paid calls. Current rules override stale template advice.\nVerify matching-topic Short >=200 views and >=40% stayed-to-watch with dated read-only evidence. Average viewed is not stayed. No Ganymede match was found in stored OWB REPORT on 4 Nov; verify actual inventory, report absent evidence honestly. No waiver or test Short commissioned.\nCheck overlap with 006 Europa, 020 Jupiter, 040 icy-world habitability, 041 Io, 057 Callisto and Mercury comparisons. Preserve a distinct Ganymede size/density causal promise rather than a generic moon catalogue. Reconcile incoming 043 (J1995) and outgoing 045 (J1929) handoffs; neither is a locked listing or schedule. Deliver recommendation to dependent Chief. No rewriting, facts PASS, production, spending or publishing. Preserve HOS/focus priority; no unchanged timed research loop.\n",
+      "ref": "J1928",
+      "film": "044",
+      "stage": "topic",
+      "after": "J1928",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T09:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:12Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:17Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4762 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
+        }
+      ],
+      "remaining_action": "Verify Ganymede topic opportunity, neighbours and matching Short-first evidence",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
+    },
+    {
+      "id": "J1997",
+      "title": "044 Ganymede: decide advancement and own specialist rewrite and facts chain",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read J1928 ruling and dependent topic evidence. Elected Chief owns explicit advance/defer/reject for OWB:044. Recheck authority, channel balance and focus. J1928 defers under J0804: HOS November 2/4 complete versus OWB 5/4; missing qualifying neighbour evidence, blank audit, unresolved Short proof and script FIX. No waiver or production approval.\nRequire three relevant education/space neighbours around 1M+ views, opportunity/pre-build evidence, resolved overlap, and a matching-topic Short >=200 views and >=40% stayed OR a separately reasoned explicit Chief waiver. Capacity requires HOS November four complete OR a fresh specific balance rationale without displacing priority production. Credit reset/evidence completion alone is not approval. If conditions fail, retain or reject against observable conditions; no unchanged timed review loop.\nIf advancing, immediately queue kind=script specialist v02 rewrite preserving v00/v01. Apply J1928 FIX: short claim-led opening with causal answer before 0:30/main question by about 0:50, verified spoken timing (current opening paragraphs 55/67/58 words). Simplify overloaded DATA windows to one idea per graphic, real bodies and moving imagery between graphics; retain >=3 DATA and 2-4 FACT beats. WHEN dates/eras only, synced to narration, not durations on a historical timeline. Grunsfeld label NASA science assistant administrator is FOUR words, not five as J1785/J1928 brief said; verify the actual role, retaining <=4 words. Verify PIA24681 and Hubble/JIRAM identity, replace sourced maps/labelled composites with clean imagery or own accurate sourced graphics; LOC authority records are not portrait assets/licences. Never present a visible magnetic shield or ocean-brine provenance as observed fact. Full moving 15-20s end plate, initial 2-3s carry, music throughout/about 10s fade, final 2s picture fade. Reconcile 043/045 handoffs, preserving the Ganymede causal story.\nReset all 17 self-marked VERIFIED source rows to pending independent verification with provenance preserved. Queue dependent kind=facts Gemini via agy for all rows and every revised spoken/visual claim. Verification targets: proved ocean/proved ocean salts vs evidence/thought/suggests; 60-mile/100-km ocean vs ch5 100-mile graphic; Jupiter arrival vs Ganymede orbit timing; Clarke publication timing and Galileo encounter dates; discovery chronology and heliocentrism inference; mass/density/diameter arithmetic, 2000ft/700m ridge conversion, temperature units, JUICE array dimensions and scales; source identity, people dates/roles and portrait rights; inferred ocean/field geometry vs visible appearance. These are local verification targets, not externally verified corrections. Gemini never rewrites narration.\nThen dependent Chief directly verifies every MUST QUOTE against primary pages, reruns review:script and gate:episode on the correct revised version, and explicitly locks only when prerequisites pass. Failed claims return to specialist and are rechecked. Keep script in review until explicit lock; own linked successors with OWB:044/stages/dependencies. No VO/generation/upload/visibility change authorized here.\n",
+      "ref": "J1928",
+      "film": "044",
+      "stage": "script",
+      "after": "J1996",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T09:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:13Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide Ganymede advancement after evidence and own rewrite, Gemini facts and explicit script-lock chain",
+      "kind": "chief"
+    },
+    {
+      "id": "J1998",
+      "title": "Chief: verify condition for J1878",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1878: J1988 reviewed J1915, J1975 and later J1878 rejection ecd8d8ff06: earlier recorded Ben approval (Ben-direct-approval-J1878-six-posts-2026-11-03) and all three asset SHA256 hashes are preserved, but subsequent automatic review rejected relayed approval as insufficient trusted authorization. No newer direct approval or clearance found on OWB thread (#6625967515), HOS desk or local state; exact three R2 assets and six Buffer creates remain unexecuted. Do not retry writes or bypass review from this verification.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1878 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T09:18Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T09:16Z",
+      "result": "Condition remains unmet. Reviewed recorded Ben approval and J1915/J1975/J1988 against later automatic rejection ecd8d8ff06; fresh OWB thread through 6627197263 and HOS desk through 6619903706 contain no newer clearance. J1878 stays blocked 1/3 with approval history intact, recheck J1998 and original 2026-11-04T10:16:56Z check. No R2, Buffer or YouTube writes, spend or bypass. Next: resolve trusted authorization then revalidate exact live inputs in parent job.",
+      "history": [
+        {
+          "at": "2026-11-04T09:16Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:18Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T09:18Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect approval and rejection history; record condition; verify final queue state"
+        },
+        {
+          "at": "2026-11-04T09:19Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed original approval, subsequent rejection ecd8d8ff06, J1915/J1975/J1988 and fresh OWB/HOS comments; no newer clearance"
+        },
+        {
+          "at": "2026-11-04T09:20Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Parent hold updated with recheck J1998; existing 10:16:56 UTC check preserved; no external writes attempted"
+        },
+        {
+          "at": "2026-11-04T09:20Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Readback PASS: blocked parent 1/3, prior approval intact, recheck J1998, original retry instant preserved (normalized Z)"
+        },
+        {
+          "at": "2026-11-04T09:20Z",
+          "by": "codex",
+          "what": "done: Condition remains unmet. Reviewed recorded Ben approval and J1915/J1975/J1988 against later automatic rejection ecd8d8ff06; fresh OWB thread through 6627197263 and HOS desk through 6619903706 contain no newer clearance. J1878 stays blocked 1/3 with approval history intact, recheck J1998 and original 2026-11-04T10:16:56Z check. No R2, Buffer or YouTube writes, spend or bypass. Next: resolve trusted authorization then revalidate exact live inputs in parent job."
+        }
+      ],
+      "remaining_action": "Verification complete; J1878 retains authorization hold",
+      "kind": "chief",
+      "recheck_of": "J1878",
+      "due": "2026-11-03T18:54:58+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T09:20Z",
+        "by": "codex",
+        "note": "Readback PASS: blocked parent 1/3, prior approval intact, recheck J1998, original retry instant preserved (normalized Z)"
+      },
+      "taskKeys": [
+        "OWB:025",
+        "HOS:005"
+      ]
+    },
+    {
+      "id": "J1999",
+      "title": "045 Mars: verify terraforming neighbours, Short proof and overlap",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1929 retains 045 Mars Terraforming as an unlocked candidate, script FIX. No topic lock, Short-first waiver or production approval.\nNo-spend evidence task: obtain three education/space neighbours around 1M+ views on terraforming Mars, with actual URLs/ids, dated view counts and shared subject words. Complete topic opportunity and pre-build audit from real evidence; label unavailable fields rather than invent scores. Verify a matching channel Short with >=200 views AND >=40% stayed-to-watch (not average viewed). Distinguish Mars/rover survival from terraforming demand; local REPORT search alone establishes neither absence nor success. No new Short or waiver authorised.\nCompare actual 025 Mars survival and 039 planet-sounds scope, plus incoming 044 Ganymede and outgoing 046 Enceladus drafts. Recommend one concrete promise about planetary atmosphere versus local oxygen engineering; assess whether robot-survival wording duplicates 025. Handoffs and weekly promises are provisional, not scheduled commitments. Preserve scripts and sources.\nReturn evidence to dependent elected-Chief advancement decision. No spend, VO, generation, upload or schedule change. Keep focus and higher-priority HOS production unchanged.\n",
+      "ref": "J1929",
+      "film": "045",
+      "stage": "topic",
+      "after": "J1929",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T09:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:24Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:34Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4778 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
+        }
+      ],
+      "remaining_action": "Verify Mars terraforming demand and Short evidence before topic decision",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
+    },
+    {
+      "id": "J2000",
+      "title": "045 Mars: decide capacity and advancement after topic evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow J1929 and its topic-evidence successor. Read jobs/reviews/J1929/DECISION_2026-11-04.md. Elected Chief checks chief_relay status and fresh channel balance/focus, then records advance/defer/reject.\nDeferral condition: HOS November reaches four completed films OR Chief records a fresh specific capacity rationale without displacing priority production; in either case verified neighbours, pre-build opportunity/audit, overlap and Short-first evidence are required before lock (or a separately reasoned explicit Chief exception where allowed). Current 19/30 idea score and 95.3 script score are not approval; J0804 lock deferral persists. Do not park merely for absent Grok/Claude or Ben.\nIf advancing, immediately queue kind=script v02 editorial revision preserving v00/v01. Brief: claim-led concise opening, concrete title answer before 0:30, main question by about 0:50 verified against spoken timing; remove three-part agenda and irrelevant spec catalogue; one idea per DATA graphic, sourced SCALE, dates with spoken lines, durations not calendar timeline; verify NASA IDs and licensed actual portrait files; replace sourced maps/visualizations with allowed imagery or own accurate animated graphics. Reconcile 044/046 handoffs and end plate with current playbook: about 15-20 seconds after last line, initial 2-3-second carry, music throughout and about 10-second fade, final picture fade 2 seconds.\nThen queue dependent formal Gemini facts via agy on revised script and all 13 source rows, every spoken/visual claim, then dependent elected-Chief direct MUST QUOTE verification and explicit script lock. Targets: inferred floods and hypothetical clathrates; 1-bar CO2 warming-model scope; unsupported centuries roadmap; Olympus Mons height/base definition; current ESCAPADE dates and sample-count wording; all units, scales, person dates, radiation exposure comparison, MOXIE purity/production and conceptual storage depiction. These are verification targets, not approved corrections. Gemini must not rewrite narration. Return failed claims to script specialist and recheck changed claims.\nRerun review:script and gate:episode on revised version before explicit lock; remain in review until approved. No paid production, VO, upload or visibility change. Preserve holds, focus and Ben gates. End with an owned concrete continuation.\n",
+      "ref": "J1929",
+      "film": "045",
+      "stage": "script",
+      "after": "J1999",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T09:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:24Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide Mars advancement and commission conditional specialist rewrite, facts and lock",
+      "kind": "chief"
+    },
+    {
+      "id": "J2001",
+      "title": "046 Enceladus: verify geyser neighbours, matching Short proof and overlap",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1930 retains 046 Enceladus as an unlocked candidate, script FIX. No topic lock, Short-first waiver or production approval.\nDo one bounded no-spend topic-evidence pass. Verify three relevant education/space videos around 1M+ views on Enceladus geysers/ocean, with actual IDs/URLs, dated views and shared subject words. Fill topic opportunity and pre-build audit from real keyword/title/competition evidence; mark unavailable fields, never invent scores or pay for access. Refresh obsolete template directions against current rules.\nVerify a matching channel Short with >=200 views AND >=40% stayed-to-watch, not average viewed. General Saturn rings or Europa performance is not Enceladus proof. Local REPORT search alone establishes neither absence nor success. No new Short, repair or waiver authorised.\nCompare public 006 Europa and 021 Saturn, and the actual 040 draft Chapter 2 Enceladus coverage. The J0560 idea score was 18/30 with overlap 1/5 and Short proof 1/5: establish whether geyser mechanics has a distinct promise beyond existing ocean-life coverage. Incoming 045 and outgoing 047 handoffs are draft promises, not scheduling commitments. Preserve scripts and sources.\nRead jobs/reviews/J1930/DECISION_2026-11-04.md. Return a concrete advance/defer/reject recommendation for the dependent elected-Chief decision. Preserve focus and HOS priority. No scientific facts PASS, narration rewrite, spend, VO, generation, upload or scheduling. Evidence failure leads to a specific recommendation, not another unchanged timed retry.\n",
+      "ref": "J1930",
+      "film": "046",
+      "stage": "topic",
+      "after": "J1930",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T09:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:31Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:44Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4788 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
+        }
+      ],
+      "remaining_action": "Verify Enceladus demand, overlap and Short evidence before topic lock",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
+    },
+    {
+      "id": "J2002",
+      "title": "046 Enceladus: decide capacity and advancement after topic evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After J1930 and its topic-evidence successor, read jobs/reviews/J1930/DECISION_2026-11-04.md. Elected Chief rechecks chief_relay status and channel balance/focus, then explicitly advances, retains or rejects the candidate.\nDeferral condition: HOS November reaches four completed films OR Chief records a fresh specific capacity rationale without displacing priority production. In either case require three qualifying neighbours, complete topic opportunity/pre-build audit, overlap decision and matching Short evidence >=200 views and >=40% stayed before lock, unless an allowed exception is explicitly justified. J1930 grants no Short-first waiver; the credit reset and draft handoffs are not approval. No absent-Chief or Ben permission wait.\nIf advancing, immediately queue a separate kind=script v02 revision through the specialist chain, preserving v00/v01. Brief: concise claim-led opening, concrete causal answer to geysers before 0:30, one main question by about 0:50 checked against spoken timing; remove three-question agenda and excessive mass/density/orbit/spectrometer catalogue; one idea per graphic, sourced scales, dates at spoken time, durations distinct from historical dates, compliant own diagrams instead of sourced cutaways, actual licensed portraits and verified NASA IDs. Resolve Webb-2023/Cassini-2017 chronology and separate measurements, inference and proof; no implied detection of life. Reconcile 045/047 handoffs. Use an honest cut/transition to Jupiter instead of a visible Great Red Spot beyond Saturn rings. End per current playbook: moving plate about 15-20 seconds after last line, initial 2-3-second carry, music throughout with about 10-second fade and picture fade final 2 seconds.\nThen queue dependent formal Gemini facts via agy on all nine TO VERIFY source rows and every revised spoken/visual claim; then dependent direct MUST QUOTE checking and explicit Chief script lock. Targets: jet-speed unit conversion; geometric albedo versus reflected fraction; deepest/last flyby wording; hydrothermal inference versus proof; phosphate detections and inferred ocean concentrations versus laboratory temperature/pressure/time; person dates and roles, scales, asset rights, and 045/047 handoffs including Great Red Spot age/depth. These are verification targets, not established corrections. Gemini does not rewrite narration; failed claims return to the script specialist and changed claims are rechecked.\nRequire fresh review:script >=90 and gate:episode PASS on revised draft before explicit lock. Keep every successor linked to OWB:046, its stage and prerequisite. No VO, generation, upload, visibility change or Ben-watch release in this decision job. End with a concrete owned continuation rather than silent advancement.\n",
+      "ref": "J1930",
+      "film": "046",
+      "stage": "script",
+      "after": "J2001",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T09:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:32Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide Enceladus advancement and own conditional specialist rewrite, facts and lock",
+      "kind": "chief"
+    },
+    {
+      "id": "J2003",
+      "title": "047 Great Red Spot: verify neighbours, matching Short proof and overlap",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1933 retains 047 Great Red Spot as an unlocked candidate, script FIX. No Short-first waiver or production approval.\nDo one bounded no-spend topic-evidence pass. Verify three relevant education/space videos around 1M+ views on Great Red Spot shrinkage, with actual IDs/URLs, dated view counts and shared subject words. Fill topic opportunity and pre-build audit using real keyword/title/competition evidence; mark unavailable fields and never invent scores or pay for access. Refresh obsolete template directions against current channel rules.\nVerify a matching channel Short with >=200 views AND >=40% stayed-to-watch (not average viewed). The J0575 pack cites Jupiter falling Short buaOI3QGm7U and Jupiter long -jmMROGoZCM; retrieve actual evidence and assess topic fit to storm shrinkage. General Jupiter performance alone is not automatic proof. No waiver or new Short production is authorised.\nAssess overlap with public 020 Jupiter and existing Jupiter/Great Red Spot material. Incoming 046 and outgoing 048 are unlocked draft handoffs, not schedule commitments. Read jobs/reviews/J1933/DECISION_2026-11-04.md. Preserve all drafts and source text. Return a concrete advance/defer/reject recommendation to the dependent Chief decision, not an unchanged timed retry. Preserve HOS/focus priority. No scientific PASS, narration rewrite, credit spend, VO, generation or publishing.\n",
+      "ref": "J1933",
+      "film": "047",
+      "stage": "topic",
+      "after": "J1933",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T09:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:38Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:55Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4804 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
+        }
+      ],
+      "remaining_action": "Verify Great Red Spot demand, overlap and Short evidence before topic lock",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
+    },
+    {
+      "id": "J2004",
+      "title": "047 Great Red Spot: decide capacity and advancement after topic evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read jobs/reviews/J1933/DECISION_2026-11-04.md and the preceding topic evidence. Elected Chief rechecks chief_relay status, channel balance and focus, then explicitly advances, retains or rejects 047.\nSpecific deferral: reconsider when HOS November reaches four completed films OR Chief records a fresh specific capacity rationale preserving priority production. Verified demand/audit and Short-first evidence remain prerequisites in either case. J1933 grants no waiver; credit reset and draft handoffs never approve a film. Do not wait merely for absent Grok/Claude or Ben.\nIf advancing, immediately queue kind=script v02 through the specialist chain, preserving v00/v01: short claim-led open, concrete causal title answer before 0:30 and one main question by about 0:50 checked against spoken timing; reduce numerical overload and remove three-question agenda. One idea per graphic, sourced scales, spoken-time dates, four-word labels, real moving imagery between graphics. No sourced wind map, labelled comparison plate or eight-panel layout; use actual unlabelled imagery or own accurate animated graphics. Source portrait files/rights and verify NASA IDs. Reconcile 046/048 handoffs. End with moving plate about 15-20 seconds past last line, initial 2-3-second carry, music throughout with about 10-second fade and picture fade final 2 seconds.\nThen queue dependent formal Gemini facts via agy for all eight TO VERIFY rows and every revised spoken/visual claim; then dependent direct MUST QUOTE checking and explicit elected-Chief script lock. Targets: Cassini permanent-spot continuity versus current storm and 300-year title; Voyager dates; date-scoped size/shrinkage and wind rates; radius versus diameter and Earth comparisons; Juno measured ranges versus proved; stabilization prediction versus guaranteed survival; oscillation campaign duration versus recurring period and whether mechanism is known; tentative colour/cloud composition versus certainty; all WHO dates/roles and scales; bright/reflective versus glowing Ceres salts and continuity promises. These are verification targets, not a facts PASS. Gemini must not rewrite spoken lines. Failed claims return to the script specialist and changed claims are rechecked.\nRun fresh review:script >=90 and gate:episode PASS after fixes before explicit lock. Link all successors to OWB:047, stage and dependencies. No automatic advancement on evidence completion; no VO, generation, upload, scheduling, visibility change or Ben-watch release. Close with a concrete owned continuation.\n",
+      "ref": "J1933",
+      "film": "047",
+      "stage": "script",
+      "after": "J2003",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T09:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T09:38Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide Great Red Spot advancement and own conditional rewrite, facts and lock",
+      "kind": "chief"
+    },
+    {
+      "id": "J2005",
+      "title": "Chief: verify condition for J0936",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0936: J1989 verified: J1100 remains blocked 2/3. Latest local evidence still 31 Oct; opening/middle/end audition hashes match 3e26b379b. PR333 OPEN unchanged at 0a7fcb6ad, zero reviews/comments. S2 instrumental-bed clearance and actual local listening remain unproven; excluded bed remains excluded. Session tools provide no demonstrated audio perception; J1100 audio_input capability hold retained. Still require v07 assembly/caption repairs, all gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk 28.254 GiB exceeds restart minimum 10 GiB; remeasure at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained. Evidence worktree was archived with a MOVED_TO_NAS pointer; commit remains readable locally.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0936 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-04T09:48Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T09:44Z",
+      "result": "Verification complete: J0936 remains blocked. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments; latest local evidence 31 Oct and all three audition hashes match 3e26b379b. No S2 instrumental-bed clearance or local listening proven. Recorded parent hold with recheck J2005 and retained 2026-11-04T10:44:40Z retry. J1100 audio_input hold/2-of-3, accepted audio, J1032 PASS, J1101-J1103 completion, historical 6/6, deadlines and scheduled fallbacks preserved. Disk 22.008 GiB; remeasure before restart. GBP0, no rendering, audio egress or publishing changes.",
+      "history": [
+        {
+          "at": "2026-11-04T09:44Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:48Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T09:49Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect approval history, verify current evidence, update parent hold and close verification."
+        },
+        {
+          "at": "2026-11-04T09:50Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original J0936/J1100 briefs, approval history and 3e26b379b evidence; preserved J1032 PASS and completed J1101-J1103."
+        },
+        {
+          "at": "2026-11-04T09:50Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR333 OPEN unchanged 0a7fcb6ad; zero reviews/comments. Local evidence latest 31 Oct; all three audition hashes match. No demonstrated audio input or new bed clearance. Disk 22.008 GiB."
+        },
+        {
+          "at": "2026-11-04T09:52Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Recorded J0936 unmet condition with recheck J2005 and retained 10:44:40Z retry; readback confirms blocked, historical 6/6 and J1100 capability hold 2/3 preserved."
+        },
+        {
+          "at": "2026-11-04T09:52Z",
+          "by": "codex",
+          "what": "done: Verification complete: J0936 remains blocked. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments; latest local evidence 31 Oct and all three audition hashes match 3e26b379b. No S2 instrumental-bed clearance or local listening proven. Recorded parent hold with recheck J2005 and retained 2026-11-04T10:44:40Z retry. J1100 audio_input hold/2-of-3, accepted audio, J1032 PASS, J1101-J1103 completion, historical 6/6, deadlines and scheduled fallbacks preserved. Disk 22.008 GiB; remeasure before restart. GBP0, no rendering, audio egress or publishing changes."
+        }
+      ],
+      "remaining_action": "Close completed readiness verification; parent waits for cleared S2 bed and listening",
+      "kind": "chief",
+      "recheck_of": "J0936",
+      "due": "2026-11-04T10:44:40+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-04T09:52Z",
+        "by": "codex",
+        "note": "Recorded J0936 unmet condition with recheck J2005 and retained 10:44:40Z retry; readback confirms blocked, historical 6/"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
       ]
     }
   ],

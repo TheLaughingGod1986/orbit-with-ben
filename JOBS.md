@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1810 | mini | blocked | codex | – | chief · Chief: establish genuine audio-input capability for held 031/032 VO reviews | J1754 |
 | J1811 | mini | open | – | – | chief · Chief: review board dispatch and stage-explanation PR395/PR396 | J1754 |
 | J1834 | mini | blocked | codex | – | 030 edit · for codex · assembly · `gpt-6.1-sol` · AR2: acquire a real ISS opening candidate for J1471 |  |
-| J1843 | mini | claimed | gemini | 2026-11-04T10:20Z | for gemini · assembly · `gemini-agy` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
+| J1843 | mini | claimed | gemini | 2026-11-04T11:57Z | for gemini · assembly · `gemini-agy` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 | J1878 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · Buffer: restore approved Mars long and HOS tight-band posts | J1874 |
@@ -59,18 +59,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1899 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
-| J1907 | mini | open (after J1782) | – | – | 041 script · chief · 041 Io: restore topic and editorial decision before facts and script lock | J1782 |
-| J1909 | mini | open (after J1783) | – | – | 042 script · chief · 042 Red Giant: restore topic and editorial decision before facts and script lock | J1783 |
-| J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
 | J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
-| J1927 | mini | open | – | – | chief · Chief: resolve 026 upload orphan-review |  |
-| J1928 | mini | open (after J1785) | – | – | 044 script · chief · 044 Ganymede: restore topic and editorial decision before facts and script lock | J1785 |
-| J1929 | mini | open (after J1786) | – | – | 045 script · chief · 045 Mars Terraforming: restore topic and editorial decision before facts and script lock | J1786 |
-| J1930 | mini | open (after J1787) | – | – | 046 script · chief · 046 Enceladus: Chief topic and editorial decision before script lock |  |
 | J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
-| J1933 | mini | open (after J1788) | – | – | 047 script · chief · 047 Great Red Spot: Chief topic and editorial decision before script lock |  |
 | J1934 | mini | open (after J1789) | – | – | 048 script · chief · 048 Ceres: Chief topic and editorial decision before script lock |  |
 | J1935 | mini | open (after J1790) | – | – | 049 script · chief · 049 Bennu: Chief topic and editorial decision before script lock |  |
 | J1936 | mini | open (after J1791) | – | – | 050 script · chief · 050 Iapetus: Chief topic and editorial decision before script lock |  |
@@ -112,9 +104,26 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1985 | mini | open (after J1984) | – | – | 039 script · chief · 039 Planet Sounds: decide advancement and own rewrite and facts chain | J1905 |
 | J1986 | mini | open (after J1906) | – | – | 040 topic · for gemini · review · `gemini-argon` · 040 Wrong Kind of Aliens: verify neighbours, overlap and matching Short evidence | J1906 |
 | J1987 | mini | open (after J1986) | – | – | 040 script · chief · 040 Wrong Kind of Aliens: decide advancement and own rewrite and facts chain | J1906 |
+| J1990 | mini | open (after J1907) | – | – | 041 topic · for gemini · review · `gemini-argon` · 041 Io: verify neighbours, overlap and matching Short evidence | J1907 |
+| J1991 | mini | open (after J1990) | – | – | 041 script · chief · 041 Io: decide advancement and own specialist rewrite and facts chain | J1907 |
+| J1992 | mini | open (after J1909) | – | – | 042 topic · for gemini · review · `gemini-argon` · 042 Red Giant: verify neighbours, overlap and matching Short evidence | J1909 |
+| J1993 | mini | open (after J1992) | – | – | 042 script · chief · 042 Red Giant: decide advancement and own specialist rewrite and facts chain | J1909 |
+| J1994 | mini | open (after J1913) | – | – | 043 topic · for gemini · review · `gemini-argon` · 043 Bootes Void: verify neighbours, overlap and matching Short evidence | J1913 |
+| J1995 | mini | open (after J1994) | – | – | 043 script · chief · 043 Bootes Void: decide advancement and own specialist rewrite and facts chain | J1913 |
+| J1996 | mini | open (after J1928) | – | – | 044 topic · for gemini · review · `gemini-argon` · 044 Ganymede: verify neighbours, overlap and matching Short evidence | J1928 |
+| J1997 | mini | open (after J1996) | – | – | 044 script · chief · 044 Ganymede: decide advancement and own specialist rewrite and facts chain | J1928 |
+| J1999 | mini | open (after J1929) | – | – | 045 topic · for gemini · review · `gemini-argon` · 045 Mars: verify terraforming neighbours, Short proof and overlap | J1929 |
+| J2000 | mini | open (after J1999) | – | – | 045 script · chief · 045 Mars: decide capacity and advancement after topic evidence | J1929 |
+| J2001 | mini | open (after J1930) | – | – | 046 topic · for gemini · review · `gemini-argon` · 046 Enceladus: verify geyser neighbours, matching Short proof and overlap | J1930 |
+| J2002 | mini | open (after J2001) | – | – | 046 script · chief · 046 Enceladus: decide capacity and advancement after topic evidence | J1930 |
+| J2003 | mini | open (after J1933) | – | – | 047 topic · for gemini · review · `gemini-argon` · 047 Great Red Spot: verify neighbours, matching Short proof and overlap | J1933 |
+| J2004 | mini | open (after J2003) | – | – | 047 script · chief · 047 Great Red Spot: decide capacity and advancement after topic evidence | J1933 |
 
 Recently finished:
 
+- J2005 done: Chief: verify condition for J0936 (Verification complete: J0936 remains blocked. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments; latest local evidence 31 Oct and all three audition hashes match 3e26b379b. No S2 instrumental-bed clearance or local listening proven. Recorded parent hold with recheck J2005 and retained 2026-11-04T10:44:40Z retry. J1100 audio_input hold/2-of-3, accepted audio, J1032 PASS, J1101-J1103 completion, historical 6/6, deadlines and scheduled fallbacks preserved. Disk 22.008 GiB; remeasure before restart. GBP0, no rendering, audio egress or publishing changes.)
+- J1998 done: Chief: verify condition for J1878 (Condition remains unmet. Reviewed recorded Ben approval and J1915/J1975/J1988 against later automatic rejection ecd8d8ff06; fresh OWB thread through 6627197263 and HOS desk through 6619903706 contain no newer clearance. J1878 stays blocked 1/3 with approval history intact, recheck J1998 and original 2026-11-04T10:16:56Z check. No R2, Buffer or YouTube writes, spend or bypass. Next: resolve trusted authorization then revalidate exact live inputs in parent job.)
+- J1989 done: Chief: verify condition for J0936 (Verified condition remains unmet. J1100 blocked 2/3; local evidence still 31 Oct and all three audition hashes match 3e26b379b. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments. No S2 bed clearance or local listening proven. Disk 28.254 GiB exceeds restart floor. Updated J0936 hold with recheck J1989, retaining 2026-11-04T09:35:12+00:00 retry. Preserved audio_input hold, approvals, progress, deadlines and scheduled fallbacks. GBP0; no rendering, audio egress or publishing changes.)
 - J1988 done: Chief: verify condition for J1878 (Verified condition remains unmet: J1915 preserved recorded Ben approval (Ben-direct-approval-J1878-six-posts-2026-11-03) and all three asset SHA256 hashes match, but subsequent automatic review ecd8d8ff06 rejected relayed approval as insufficient trusted authorization. No newer direct approval or clearance found on OWB thread (#6625967515), HOS desk or local state. Parent J1878 remains blocked at 1/3; --recheck J1988 recorded; existing 2026-11-04T09:11:51Z retry preserved. No external media, Buffer or YouTube writes, spend or approval bypass.)
 - J1983 done: Chief: verify condition for J0936 (Verified condition remains unmet. J1100 blocked 2/3; latest local evidence 31 Oct, three audition hashes match 3e26b379b; no documented S2 bed clearance or local listening. PR333 OPEN unchanged 0a7fcb6ad with no reviews/comments. Disk 28.034 GiB exceeds restart floor. Updated J0936 hold with recheck J1983 and retained 2026-11-04T08:27:57+00:00 retry. J1100 audio_input hold preserved. Existing approvals, deadlines, progress and scheduled fallbacks retained. No spend, render, source-audio egress or publishing changes.)
 - J1975 done: Chief: verify condition for J1878 (Verified condition remains unmet: J1915 preserved recorded Ben approval but did not clear later automatic rejection ecd8d8ff06. No newer direct approval or clearance found. Parent J1878 remains blocked at 1/3; --recheck J1975 recorded; existing 2026-11-04T07:59:57Z retry preserved. No external media, Buffer or YouTube writes, spend or approval bypass.)
@@ -122,6 +131,3 @@ Recently finished:
 - J1959 done: Chief: verify condition for J0936 (Verified J0936 condition remains unmet. J1100 blocked 2/3; local audition hashes match 3e26b379b, latest evidence 31 Oct, no documented S2 bed clearance or local listening. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments. Disk 23.009 GiB exceeds restart floor. Updated parent input hold with recheck J1959 and retained 2026-11-04T06:13:11+00:00 retry. J1100 audio_input capability hold retained. Preserved approvals, progress, deadlines and scheduled fallbacks. No spend, render, source-audio egress or publishing changes.)
 - J1954 done: Chief: verify condition for J1823 (Condition checked: J1940-J1942 done and all three critiques present; J1943 synthesis (DECISION.md) and J1944 exact-file ruling remain outstanding. Five v04 artifact and 17 preservation hashes match. Updated J1823 hold with --recheck J1954 and retained 2026-11-04T05:53:30Z check. A/J0833 retained; no candidate approval or live changes.)
 - J1950 done: Chief: verify condition for J0936 (Verified J0936 condition remains unmet. J1100 blocked 2/3; local audition hashes match 3e26b379b, latest evidence 31 Oct, no documented S2 bed clearance or local listening. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments. Disk 28.86 GiB exceeds restart floor. Updated parent input hold with recheck J1950 and retained 2026-11-04T05:05:21Z retry. Preserved approvals, progress, deadlines and scheduled fallbacks. No spend, render, source-audio egress or publishing changes.)
-- J1945 done: Chief: verify condition for J1823 (Verified J1823 v04 delivery cecd5dc02c: 5 artifact and 17 preservation hashes match. J1940-J1944 still open and panel/decision absent; condition unmet. Parent remains blocked with --recheck J1945, original 2026-11-04T04:40:34Z check retained. A/J0833 preserved; no approval or live changes.)
-- J1944 done: Chief: exact-file ruling on OWB 026 abc_v04 after J1823 fresh panel (Exact-file ruling merged PR460: approve B v04 asset, retain A/J0833, C unselected; J1823 resolved, thumbs done. No live test authority or spend.)
-- J1943 done: Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes (DECISION.md committed (6b2fdb077a): 3/3 keep title How Far Is the Nearest Star? and original A (YOU CAN'T SEE IT, 922855804c...); 3/3 prefer B v04 (900M YEAR WALK, 93f6e2a039..., sat 132.1, near-black 18%) and reject C v04 (4.2 LIGHT YEARS, 40eccaf47c... spoils title question); 2/3 keep description first paragraph and story-beat chapters; J1944 unblocked for Elected Chief exact-file ruling.)
