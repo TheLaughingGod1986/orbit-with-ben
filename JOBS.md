@@ -110,7 +110,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1982 | mini | open (after J1981) | – | – | 038 script · chief · 038 Voyager Golden Record: decide advancement and own rewrite and facts chain | J1904 |
 | J1984 | mini | open (after J1905) | – | – | 039 topic · for gemini · review · `gemini-argon` · 039 Planet Sounds: verify neighbours and matching Short evidence | J1905 |
 | J1985 | mini | open (after J1984) | – | – | 039 script · chief · 039 Planet Sounds: decide advancement and own rewrite and facts chain | J1905 |
-| J1986 | any | open (after J1906) | – | – | 040 topic · review · 040 Wrong Kind of Aliens: verify neighbours, overlap and matching Short evidence | J1906 |
+| J1986 | mini | open (after J1906) | – | – | 040 topic · for gemini · review · `gemini-argon` · 040 Wrong Kind of Aliens: verify neighbours, overlap and matching Short evidence | J1906 |
 | J1987 | mini | open (after J1986) | – | – | 040 script · chief · 040 Wrong Kind of Aliens: decide advancement and own rewrite and facts chain | J1906 |
 | J1988 | any | open | – | – | chief · Chief: verify condition for J1878 |  |
 
