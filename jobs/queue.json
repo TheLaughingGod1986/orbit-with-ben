@@ -81690,6 +81690,11 @@
           "at": "2026-11-04T01:50Z",
           "by": "relay",
           "what": "condition verification queued: J1931"
+        },
+        {
+          "at": "2026-11-04T02:27Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T02:50:58Z"
         }
       ],
       "kind": "video",
@@ -81717,15 +81722,14 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "Clear S2 bed and local listening, finish v07 repairs, final gates and replacement approvals; disk headroom verified",
+      "remaining_action": "Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
       "hold": {
         "type": "input",
-        "condition": "J1875 verified latest J1876/J1100 remains blocked at 2/3. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three audition hashes match 3e26b379b; latest local evidence remains 31 Oct, listening NOT PERFORMED. PR333 remains OPEN at 0a7fcb6ad with no reviews/comments. Require cleared instrumental S2 bed and actual local listening, v07 assembly/caption repairs, final gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk prerequisite is now satisfied: 35650 MiB free before worktree, above 10 GiB restart minimum; recheck at restart and park below 6 GiB. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection remains recorded; no source-audio API egress.",
-        "check_at": "2026-11-04T02:50:58+00:00",
-        "last_recheck": "J1875",
-        "checked_at": "2026-11-03T19:38:09+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1931"
+        "condition": "J1931 verified: J1100 remains blocked at 2/3; S2 bed clearance and actual local listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and all three audition hashes match 3e26b379b; no newer listening evidence found. PR333 OPEN at 0a7fcb6ad with no reviews/comments. Still require cleared S2 bed, local listening, v07 assembly/caption repairs, all final gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Session has no demonstrated audio input. Disk 28.72 GiB satisfies h43 restart minimum 10 GiB; recheck at restart and park below 6 GiB. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.",
+        "check_at": "2026-11-04T02:50:58Z",
+        "last_recheck": "J1931",
+        "checked_at": "2026-11-04T02:27:34+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
