@@ -6,3 +6,12 @@ prefix_rule(
     match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-scoped-push.py --repo owb --worktree /private/tmp/j2040-wt --branch codex/j2040-permission-probe --dry-run"],
     not_match = ["git push origin main", "curl https://example.com", "/opt/homebrew/bin/python3 -c print(1)"]
 )
+
+# This separate gateway accepts only registered media IDs and fixed asset roles.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-r2-upload.py"],
+    decision = "allow",
+    justification = "Ben approved social uploads to existing R2 bucket owb-media, J2040; gateway pins destination, reads registered media and refuses overwrite/delete.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-r2-upload.py --channel owb --video buaOI3QGm7U --role media --dry-run"],
+    not_match = ["python3 07_Content-Ops/scripts/codex_r2_upload.py", "curl https://example.com", "aws s3 rm s3://owb-media/social/example.mp4"]
+)

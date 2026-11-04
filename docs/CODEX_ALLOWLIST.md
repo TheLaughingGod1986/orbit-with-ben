@@ -35,12 +35,32 @@ Do not allow broad `git push`, `npm run youtube:*`, `node`, `tsx`, `buffer-mirro
 
 Before adding service rules, implement and test validating entry points in the repo's existing publishing path:
 
-1. R2 must pin bucket `owb-media` and the two existing `social/` / `social/hos/` scopes; reject bucket/host overrides, traversal, deletes and unrelated keys. `media-host-r2.ts` currently reads `R2_BUCKET` and exposes delete.
+1. R2's restricted standalone gateway below now implements this slice. The ordinary mirror still uses `media-host-r2.ts`, which reads `R2_BUCKET` and exposes delete; its whole CLI remains outside the allow-list.
 2. Buffer must pin the two configured organisations/channel sets, admit only create/read/update and preserve the existing scheduling/approval gates. `buffer-runner.ts` currently calls `deletePost` (line 139), rollback `deleteMedia` (224) and cleanup deletion (339). A blanket mirror/check rule therefore exceeds fix F.
 3. YouTube must pin the channel, reject delete/auth/sign-in and unscheduled Public transitions, and retain package/gate checks. `youtube:auth` must never be included in a wildcard rule.
 4. Test positive and negative payload/argument cases, install only the reviewed guarded commands, and verify loading in a subsequent ordinary worker run. Keep all other review behaviour unchanged. Test policy decisions rather than deliberately sending data to another host.
 
 No film stage was approved or advanced. No service writes, uploads, publishing, account changes or spending occurred.
+
+## Resume evidence — 4 November, 20:03 UTC
+
+Added [registered-media R2 gateway](../07_Content-Ops/scripts/codex_r2_upload.py), installed as `/Users/benjaminoats/.codex/bin/studio-r2-upload.py`, and its separate prefix rule in [the exact rule copy](codex/studio.rules). Invocation:
+
+```sh
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-r2-upload.py --channel owb --video buaOI3QGm7U --role media --dry-run
+```
+
+Only `--channel owb|hos`, `--video <11-character ID>`, `--role media|thumb|trailer` and optional `--dry-run` are accepted. Without `--dry-run` it uploads the registered asset. The fixed main-checkout `UPLOADS.json` supplies the asset; no caller path, key, URL, bucket, method or body is accepted. HOS accepts registered Shorts media only. The registered file must resolve inside either studio checkout or the archive and match an MP4/JPEG/PNG signature. Credentials come only from the fixed studio `.env`, parsed as literals; inherited R2 settings have no effect. The gateway pins bucket `owb-media`, constructs the correct channel prefix and a random object key, and uses a conditional PUT (`If-None-Match: *`) to refuse replacement. TLS verifies certificates; no redirect, proxy, delete, list or arbitrary request path exists.
+
+- Ten R2 boundary tests pass; the three existing Git tests also pass. The fixed-date, fake-credential SigV4 result independently matches installed `aws4fetch` 1.0.20. Tests cover destination overrides, traversal, renamed text files, channel/role/ID rejection, extra flags, inherited settings, exact PUT and a dry run with zero network calls.
+- Installed R2 dry run succeeded for registered `buaOI3QGm7U` media: 5,766,376 bytes, SHA-256 `eef2359b4aa791177be6a9b4312806de1a23b177fec5430fb7c965c1af87a86e`. No live PUT was attempted. Successful real upload and Buffer adoption of the returned URL remain unverified.
+- `execpolicy check` allows the R2 gateway and leaves the outside-list curl unmatched. The R2 rule was installed during this session; automatic loading requires a later session. No claim of reload is made.
+- This later session's installed Git gateway dry-run succeeded as an ordinary sandbox command, without requesting escalation. `ls-remote` confirmed the scratch branch does not exist, so no branch deletion is needed. Network access in the sandbox means success alone does not identify which policy rule permitted it.
+- The harmless outside-list `curl --head --max-time 10 https://example.com` was explicitly submitted with `sandbox_permissions=require_escalated` and approved, returning HTTP 200. This is an approval-review request, **not a refusal**, and does not prove that a harmless curl could not run in the network-enabled sandbox. No broad curl rule was added.
+- J2007 remains cancelled; no push was retried.
+- Required NAS offload completed with no eligible folders (`moved: []`, `nas: ok`, 11,749 MB free after). Disk remains below 20 GB; do not claim recovery. No copy was left running by this session.
+
+J2040 stays at **3/4**, unfinished. The next run must implement guarded Buffer create/read/update and channel-pinned YouTube entry points, preserving schedule/package checks and blocking deletion, sign-in and unscheduled Public transitions. Do not allow the existing broad mirror/package commands in the meantime. The installed gateways and all future trusted-code changes need Chief's normal code review; this worker has issued no PASS or final approval.
 
 ## Handoff
 

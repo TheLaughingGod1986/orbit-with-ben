@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-04T20:04:00Z",
+  "files": [
+    {
+      "name": "r2_gateway",
+      "source": "07_Content-Ops/scripts/codex_r2_upload.py",
+      "installed": "/Users/benjaminoats/.codex/bin/studio-r2-upload.py",
+      "sha256": "fd28bb4e7527f4fc8a06e5710cf3c4e61ce7204b143682f9d11ae9c685037fd4"
+    },
+    {
+      "name": "rules",
+      "source": "docs/codex/studio.rules",
+      "installed": "/Users/benjaminoats/.codex/rules/studio.rules",
+      "sha256": "7b7480c52eda6db0357b01861d3ccd09ec91d38435170d9779706b5e2a34f96f"
+    }
+  ],
+  "tests": {
+    "r2_boundary": 10,
+    "git_boundary": 3,
+    "sigv4_crosscheck": "matches aws4fetch 1.0.20 with fixed datetime and fake credentials"
+  },
+  "live_r2_upload_tested": false,
+  "rule_reload_proven": false,
+  "remaining": [
+    "Buffer guarded create/read/update",
+    "channel-pinned YouTube gateway",
+    "later-session rule loading proof"
+  ],
+  "j2007": "cancelled; no push"
+}
