@@ -1,5 +1,5 @@
 {
-  "next_id": 2157,
+  "next_id": 2158,
   "jobs": [
     {
       "id": "J0001",
@@ -180085,6 +180085,34 @@
         "kind": "orphan-review",
         "signature": "82cc96854845544a6e31"
       }
+    },
+    {
+      "id": "J2157",
+      "title": "034 Pluto: VO from locked script v02 (J2149 GO)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E GO on J2149 (script v02 + verified SOURCES at c2082a4884; review:script PASS 95.8/100, gate:episode PASS, 1,291 spoken words / ~8.8 min, 6 chapters). Record the long VO from 02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/01_Script/pluto_frozen_heart_script_master_v02.md word for word via 04_Audio/tools/vo_take.py (Ben Orbit Narrator, eleven_v3) under desk-lock elevenlabs. Dry-run first; read live ElevenLabs balance first and spend paid credit down to 0 (never buy or top up). Verify Scribe transcript, loudness (-19 to -28 dB mean, ~-20 LUFS, TP <= -1 dBTP), and chapter tail decays, then queue the 034 shot-list job.",
+      "ref": "c2082a4884",
+      "film": "034",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-04T23:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T23:12Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record 034 Pluto long VO from pluto_frozen_heart_script_master_v02.md",
+      "kind": "vo"
     }
   ],
   "focus": [],
