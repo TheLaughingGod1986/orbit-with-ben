@@ -158349,13 +158349,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T04:10Z",
-      "eta": "2026-11-04T06:10Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX / not locked. Restored cancelled J0727/J0735 handoff as J1951, OWB:057/script after J1798. PR453 merged with both checks PASS; exact input hashes and editorial/source gaps recorded. Script remains review; repair claim cleared. Formal Gemini facts, direct quotes and explicit Chief lock remain required. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -158386,6 +158386,11 @@
           "at": "2026-11-04T04:14Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR453 merged after Rules and Studio core checks PASS; verified linked successor, review state and cleared claim."
+        },
+        {
+          "at": "2026-11-04T04:14Z",
+          "by": "codex",
+          "what": "done: FIX / not locked. Restored cancelled J0727/J0735 handoff as J1951, OWB:057/script after J1798. PR453 merged with both checks PASS; exact input hashes and editorial/source gaps recorded. Script remains review; repair claim cleared. Formal Gemini facts, direct quotes and explicit Chief lock remain required. No spend or publishing changes."
         }
       ],
       "remaining_action": "Repair complete; J1951 owns the unresolved topic and script decision",
@@ -158405,7 +158410,8 @@
       },
       "taskKeys": [
         "OWB:057"
-      ]
+      ],
+      "done_ref": "fcd1371b4d"
     },
     {
       "id": "J1799",
