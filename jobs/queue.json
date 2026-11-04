@@ -172415,9 +172415,14 @@
           "at": "2026-11-04T11:27Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR477 exact head reviewed; 67 workflow/handoff tests and core56 PASS; normal merge d12b004c67 installed. Parent relay reload waits for this job to exit."
+        },
+        {
+          "at": "2026-11-04T11:30Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR477 merged/installed; PR437 FIX reproduced and original J1843 reopened at2/3. J2016 scopes five jitter repairs. Buffer/audio unchanged checks moved to daily/new-evidence; no gates relaxed."
         }
       ],
-      "remaining_action": "Finish independent capacity review and hold decisions; verify safe-boundary reload handoff",
+      "remaining_action": "After this worker exits, verify relay reload and board version ee1e8f91f1b02846 plus actual eligible next claim",
       "kind": "chief",
       "overnight_review_key": "Ben-overnight-visible-production-2026-11-04",
       "urgent": 2,
@@ -172432,11 +172437,11 @@
         "scope": "PR477 dispatcher priority hotfix only; separate PR437 capacity activation remains gated"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T11:27Z",
+        "at": "2026-11-04T11:30Z",
         "by": "codex",
-        "note": "PR477 exact head reviewed; 67 workflow/handoff tests and core56 PASS; normal merge d12b004c67 installed. Parent relay re"
+        "note": "PR477 merged/installed; PR437 FIX reproduced and original J1843 reopened at2/3. J2016 scopes five jitter repairs. Buffer"
       },
       "taskKeys": [
         "OWB:030"
