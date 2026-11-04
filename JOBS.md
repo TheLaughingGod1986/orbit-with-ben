@@ -62,7 +62,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
-| J1927 | mini | claimed | codex | 2026-11-04T11:04Z | chief · Chief: resolve 026 upload orphan-review |  |
 | J1928 | mini | open (after J1785) | – | – | 044 script · chief · 044 Ganymede: restore topic and editorial decision before facts and script lock | J1785 |
 | J1929 | mini | open (after J1786) | – | – | 045 script · chief · 045 Mars Terraforming: restore topic and editorial decision before facts and script lock | J1786 |
 | J1930 | mini | open (after J1787) | – | – | 046 script · chief · 046 Enceladus: Chief topic and editorial decision before script lock |  |
