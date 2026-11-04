@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2037 | mini | open (after J2036) | – | – | 009 edit · chief · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2038 | mini | open | – | – | chief · Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day) |  |
 | J2039 | mini | blocked | codex | – | assembly · Film-first order + require --film/--stage on production jobs (audit fix C) |  |
-| J2040 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
+| J2040 | mini | claimed | codex | 2026-11-04T20:26Z | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2043 | mini | open | – | – | 031 shots · for gemini · review · 031 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film) |  |
 | J2045 | mini | open | – | – | chief · Chief: resolve 033 script orphan-blocked |  |
 | J2046 | mini | open | – | – | chief · Chief: resolve 033 topic orphan-blocked |  |
