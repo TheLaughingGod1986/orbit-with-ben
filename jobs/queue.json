@@ -171875,19 +171875,24 @@
           "at": "2026-11-04T09:50Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR333 OPEN unchanged 0a7fcb6ad; zero reviews/comments. Local evidence latest 31 Oct; all three audition hashes match. No demonstrated audio input or new bed clearance. Disk 22.008 GiB."
+        },
+        {
+          "at": "2026-11-04T09:52Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Recorded J0936 unmet condition with recheck J2005 and retained 10:44:40Z retry; readback confirms blocked, historical 6/6 and J1100 capability hold 2/3 preserved."
         }
       ],
-      "remaining_action": "Record unmet parent condition and close verification",
+      "remaining_action": "Close completed readiness verification; parent waits for cleared S2 bed and listening",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-04T10:44:40+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T09:50Z",
+        "at": "2026-11-04T09:52Z",
         "by": "codex",
-        "note": "PR333 OPEN unchanged 0a7fcb6ad; zero reviews/comments. Local evidence latest 31 Oct; all three audition hashes match. No"
+        "note": "Recorded J0936 unmet condition with recheck J2005 and retained 10:44:40Z retry; readback confirms blocked, historical 6/"
       },
       "taskKeys": [
         "OWB:026",
