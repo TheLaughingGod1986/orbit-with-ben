@@ -171843,13 +171843,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T09:48Z",
-      "eta": "2026-11-04T11:48Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T09:44Z",
-      "result": "",
+      "result": "Verification complete: J0936 remains blocked. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments; latest local evidence 31 Oct and all three audition hashes match 3e26b379b. No S2 instrumental-bed clearance or local listening proven. Recorded parent hold with recheck J2005 and retained 2026-11-04T10:44:40Z retry. J1100 audio_input hold/2-of-3, accepted audio, J1032 PASS, J1101-J1103 completion, historical 6/6, deadlines and scheduled fallbacks preserved. Disk 22.008 GiB; remeasure before restart. GBP0, no rendering, audio egress or publishing changes.",
       "history": [
         {
           "at": "2026-11-04T09:44Z",
@@ -171880,6 +171880,11 @@
           "at": "2026-11-04T09:52Z",
           "by": "codex",
           "what": "step 3 of 3 done: Recorded J0936 unmet condition with recheck J2005 and retained 10:44:40Z retry; readback confirms blocked, historical 6/6 and J1100 capability hold 2/3 preserved."
+        },
+        {
+          "at": "2026-11-04T09:52Z",
+          "by": "codex",
+          "what": "done: Verification complete: J0936 remains blocked. PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments; latest local evidence 31 Oct and all three audition hashes match 3e26b379b. No S2 instrumental-bed clearance or local listening proven. Recorded parent hold with recheck J2005 and retained 2026-11-04T10:44:40Z retry. J1100 audio_input hold/2-of-3, accepted audio, J1032 PASS, J1101-J1103 completion, historical 6/6, deadlines and scheduled fallbacks preserved. Disk 22.008 GiB; remeasure before restart. GBP0, no rendering, audio egress or publishing changes."
         }
       ],
       "remaining_action": "Close completed readiness verification; parent waits for cleared S2 bed and listening",
