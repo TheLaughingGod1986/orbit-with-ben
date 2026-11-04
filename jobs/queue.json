@@ -111337,9 +111337,14 @@
           "at": "2026-11-04T01:00Z",
           "by": "codex",
           "what": "step 2 of 3 done: Read-only console follow-up reached billing/pricing/reports; report covers all five projects but explicitly warns charges can take over 24h. A zero displayed total is not a pending-cost bound. Guard 13 and ledger 14 tests pass again; zero spend."
+        },
+        {
+          "at": "2026-11-04T01:02Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: fab32821a8 on PR436: console proves project/account link; GBP69.48 monthly Available refreshed. Historical price CSV has Veo3.0/count taxonomy, so exact Veo3.1 GBP/second remains unverified; all-project reports warn >24h lag. Tests 13+14 PASS. No take, reservation or spend; source delivery unfinished."
         }
       ],
-      "remaining_action": "Verify exact GBP SKU and bound unposted cross-project charges before any generation",
+      "remaining_action": "Obtain exact Veo3.1 GBP SKU and bounded pending charges, then review live guarded caller before generation",
       "due": "2026-10-30T18:00:00Z",
       "kind": "video",
       "superseded_holds": [
@@ -111355,9 +111360,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T01:00Z",
+        "at": "2026-11-04T01:02Z",
         "by": "codex",
-        "note": "Read-only console follow-up reached billing/pricing/reports; report covers all five projects but explicitly warns charge"
+        "note": "fab32821a8 on PR436: console proves project/account link; GBP69.48 monthly Available refreshed. Historical price CSV has"
       },
       "taskKeys": [
         "OWB:030"
