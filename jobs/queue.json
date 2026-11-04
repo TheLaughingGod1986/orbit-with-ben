@@ -173727,9 +173727,9 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "since": "2026-11-04T17:11Z",
-      "eta": "2026-11-04T19:11Z",
+      "status": "open",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T12:28Z",
       "result": "",
@@ -173783,6 +173783,11 @@
           "at": "2026-11-04T17:14Z",
           "by": "codex",
           "what": "step 4 of 5 done: PR 487 opened (commit 3165ac75ec). Initial janitor log clean, counts unchanged at 1/3. tmux J2022-check captures after 31 minutes; log ~/_desk/logs/J2022-check.log and exit marker ~/_desk/logs/J2022-check.done. NAS scratch offload requested because disk is below 20 GB."
+        },
+        {
+          "at": "2026-11-04T17:14Z",
+          "by": "codex",
+          "what": "released: Resume only after ~/_desk/logs/J2022-check.done exists; tmux session J2022-check is running the 31-minute capture, do not start another copy. Read J2022-check.log, compare baseline 9223=1 and 9222=3, then report on #478. PR 487 awaits Chief review; code worktree /private/tmp/j2022-codex, commit 3165ac75ec. Keep 5-step plan, 4 done. Worker has not issued final PASS."
         }
       ],
       "kind": "assembly",
@@ -173806,7 +173811,7 @@
         "status": "open",
         "by": ""
       },
-      "by": "codex",
+      "by": "",
       "progress": {
         "step": 4,
         "of": 5,
