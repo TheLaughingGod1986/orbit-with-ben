@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 061 | topic | gemini | 2026-11-04T16:21Z | 2026-11-04T18:20Z | J1963 061 Venus rotation: verify topic evidence and existing-long overlap |
+| 061 | topic | gemini | 2026-11-04T16:22Z | 2026-11-04T17:22Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
