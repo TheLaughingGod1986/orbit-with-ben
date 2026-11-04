@@ -41,3 +41,9 @@ Before adding service rules, implement and test validating entry points in the r
 4. Test positive and negative payload/argument cases, install only the reviewed guarded commands, and verify loading in a subsequent ordinary worker run. Keep all other review behaviour unchanged. Test policy decisions rather than deliberately sending data to another host.
 
 No film stage was approved or advanced. No service writes, uploads, publishing, account changes or spending occurred.
+
+## Handoff
+
+Draft PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/490. The installed gateway also completed the real push of `codex/j2040-allowlist` using a normal sandbox call, with no escalation requested for that call. This proves execution succeeded; it does not identify whether the current session loaded the new rule. Service rules and fresh-session negative review verification remain unfinished.
+
+Required disk housekeeping was attempted at 14 GiB free. The sandbox attempt safely skipped due to NAS write permission; the escalated `nas_offload.py --apply` process PID 74781 remained running without a summary at handoff (exec session 74764). Do not start another copy while it exists. No offload completion or space recovery is claimed.
