@@ -1,6 +1,6 @@
 # J1909 — Red Giant topic and editorial decision, 4 November 2026
 
-Decision: **DEFER advancement; retain 042 as an unlocked candidate. Script FIX, in review.** Codex is the elected acting Chief (chief_relay status checked this session). No topic lock, Short-first waiver, script lock, production slot or spend is granted.
+Decision: **DEFER advancement; retain 042 as an unlocked candidate. Script FIX, editorial review pending.** Codex is the elected acting Chief (chief_relay status checked this session). No topic lock, Short-first waiver, script lock, production slot or spend is granted.
 
 ## Evidence and capacity
 
@@ -29,4 +29,4 @@ If advancing, that Chief immediately owns and queues specialist v02 rewrite, dep
 
 ## Validation
 
-Local document/queue review only; no audio or moving-video review claimed. Drafts and source text preserved. Follow-up IDs and delivery PR are recorded in the queue result and studio state; those remain the production state source.
+The queue completion guard requires a terminal Chief stage ruling, so the board records script `blocked` from lock/production, with editorial review still pending under J1993; it is not a PASS. Local document/queue review only; no audio or moving-video review claimed. Drafts and source text preserved. Follow-up IDs and delivery PR are recorded in the queue result and studio state; those remain the production state source.
