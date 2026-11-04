@@ -114,6 +114,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1991 | mini | open (after J1990) | – | – | 041 script · chief · 041 Io: decide advancement and own specialist rewrite and facts chain | J1907 |
 | J1992 | mini | open (after J1909) | – | – | 042 topic · for gemini · review · `gemini-argon` · 042 Red Giant: verify neighbours, overlap and matching Short evidence | J1909 |
 | J1993 | mini | open (after J1992) | – | – | 042 script · chief · 042 Red Giant: decide advancement and own specialist rewrite and facts chain | J1909 |
+| J1994 | any | open (after J1913) | – | – | 043 topic · review · 043 Bootes Void: verify neighbours, overlap and matching Short evidence | J1913 |
 
 Recently finished:
 
