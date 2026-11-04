@@ -172782,9 +172782,14 @@
           "at": "2026-11-04T12:29Z",
           "by": "codex",
           "what": "step 2 of 4 done: Recovered prior 1/4 plan and completed detached run (exit 0); five jitter failures clear, but AR1 opening and AR3 finish gates fail. No duplicate render started."
+        },
+        {
+          "at": "2026-11-04T12:34Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: AR1v06 and AR2v12 clear all requested technical gates; hashes, durations, frame counts, AAC streams, row times and overlay metadata verified. AR3v10/v11 failures preserved; v12 detached J2016-render-v3, log/done under _desk/logs."
         }
       ],
-      "remaining_action": "Inspect completed repair results and resolve opening and finish regressions",
+      "remaining_action": "Verify final AR3 bounded transform and compression correction, then prepare handoff",
       "due": "2026-11-04T10:51:54Z",
       "kind": "assembly",
       "taskKeys": [
@@ -172795,9 +172800,9 @@
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-04T12:29Z",
+        "at": "2026-11-04T12:34Z",
         "by": "codex",
-        "note": "Recovered prior 1/4 plan and completed detached run (exit 0); five jitter failures clear, but AR1 opening and AR3 finish"
+        "note": "AR1v06 and AR2v12 clear all requested technical gates; hashes, durations, frame counts, AAC streams, row times and overl"
       },
       "rerouted_from": {
         "needs": "mini",
