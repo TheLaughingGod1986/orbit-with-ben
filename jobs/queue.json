@@ -166294,10 +166294,10 @@
       "stage": "",
       "after": "J1922",
       "eta_min": 30,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-04T02:09Z",
-      "eta": "2026-11-04T02:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T01:25Z",
       "result": "",
@@ -166326,6 +166326,11 @@
           "at": "2026-11-04T02:14Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Checked panel folder: only cursor.md exists (created 45m ago, <24h); propagated J1924 deadline to open J1920 and J1921 so they run first"
+        },
+        {
+          "at": "2026-11-04T02:14Z",
+          "by": "gemini",
+          "what": "released: Only cursor.md exists after 45 min (<24 h); propagated 2026-11-14T18:00:00Z deadline to open sibling critiques J1920 (codex) and J1921 (gemini) so they run before J1923"
         }
       ],
       "remaining_action": "After open panel critiques J1920 (codex.md) and J1921 (gemini.md) finish, read all three critiques and write DECISION.md",
