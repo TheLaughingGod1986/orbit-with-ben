@@ -62,7 +62,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
-| J1929 | mini | claimed | codex | 2026-11-04T11:22Z | 045 script · chief · 045 Mars Terraforming: restore topic and editorial decision before facts and script lock | J1786 |
 | J1930 | mini | open (after J1787) | – | – | 046 script · chief · 046 Enceladus: Chief topic and editorial decision before script lock |  |
 | J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
 | J1933 | mini | open (after J1788) | – | – | 047 script · chief · 047 Great Red Spot: Chief topic and editorial decision before script lock |  |
