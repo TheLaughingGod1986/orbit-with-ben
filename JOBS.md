@@ -85,6 +85,50 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2040 | mini | open | – | – | assembly · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2043 | mini | open | – | – | 031 shots · for gemini · review · 031 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film) |  |
 | J2044 | mini | open | – | – | 032 shots · for gemini · review · 032 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film) |  |
+| J2045 | mini | open | – | – | chief · Chief: resolve 033 script orphan-blocked |  |
+| J2046 | mini | open | – | – | chief · Chief: resolve 033 topic orphan-blocked |  |
+| J2047 | mini | open | – | – | chief · Chief: resolve 034 script orphan-blocked |  |
+| J2048 | mini | open | – | – | chief · Chief: resolve 034 topic orphan-blocked |  |
+| J2049 | mini | open | – | – | chief · Chief: resolve 035 script orphan-blocked |  |
+| J2050 | mini | open | – | – | chief · Chief: resolve 035 topic orphan-blocked |  |
+| J2051 | mini | open | – | – | chief · Chief: resolve 036 script orphan-blocked |  |
+| J2052 | mini | open | – | – | chief · Chief: resolve 036 topic orphan-blocked |  |
+| J2053 | mini | open | – | – | chief · Chief: resolve 037 script orphan-blocked |  |
+| J2054 | mini | open | – | – | chief · Chief: resolve 037 topic orphan-blocked |  |
+| J2055 | mini | open | – | – | chief · Chief: resolve 038 script orphan-blocked |  |
+| J2056 | mini | open | – | – | chief · Chief: resolve 038 topic orphan-blocked |  |
+| J2057 | mini | open | – | – | chief · Chief: resolve 039 script orphan-blocked |  |
+| J2058 | mini | open | – | – | chief · Chief: resolve 039 topic orphan-blocked |  |
+| J2059 | mini | open | – | – | chief · Chief: resolve 040 script orphan-blocked |  |
+| J2060 | mini | open | – | – | chief · Chief: resolve 040 topic orphan-blocked |  |
+| J2061 | mini | open | – | – | chief · Chief: resolve 041 script orphan-blocked |  |
+| J2062 | mini | open | – | – | chief · Chief: resolve 041 topic orphan-blocked |  |
+| J2063 | mini | open | – | – | chief · Chief: resolve 042 script orphan-blocked |  |
+| J2064 | mini | open | – | – | chief · Chief: resolve 043 script orphan-review |  |
+| J2065 | mini | open | – | – | chief · Chief: resolve 043 topic orphan-blocked |  |
+| J2066 | mini | open | – | – | chief · Chief: resolve 044 script orphan-blocked |  |
+| J2067 | mini | open | – | – | chief · Chief: resolve 044 topic orphan-blocked |  |
+| J2068 | mini | open | – | – | chief · Chief: resolve 045 script orphan-blocked |  |
+| J2069 | mini | open | – | – | chief · Chief: resolve 045 topic orphan-blocked |  |
+| J2070 | mini | open | – | – | chief · Chief: resolve 046 script orphan-blocked |  |
+| J2071 | mini | open | – | – | chief · Chief: resolve 046 topic orphan-blocked |  |
+| J2072 | mini | open | – | – | chief · Chief: resolve 047 script orphan-blocked |  |
+| J2073 | mini | open | – | – | chief · Chief: resolve 047 topic orphan-blocked |  |
+| J2074 | mini | open | – | – | chief · Chief: resolve 048 script orphan-blocked |  |
+| J2075 | mini | open | – | – | chief · Chief: resolve 049 script orphan-review |  |
+| J2076 | mini | open | – | – | chief · Chief: resolve 050 script orphan-review |  |
+| J2077 | mini | open | – | – | chief · Chief: resolve 051 script orphan-review |  |
+| J2078 | mini | open | – | – | chief · Chief: resolve 052 script orphan-review |  |
+| J2079 | mini | open | – | – | chief · Chief: resolve 053 script orphan-review |  |
+| J2080 | mini | open | – | – | chief · Chief: resolve 054 script orphan-review |  |
+| J2081 | mini | open | – | – | chief · Chief: resolve 055 script orphan-review |  |
+| J2082 | mini | open | – | – | chief · Chief: resolve 056 script orphan-review |  |
+| J2083 | mini | open | – | – | chief · Chief: resolve 057 script orphan-review |  |
+| J2084 | mini | open | – | – | chief · Chief: resolve 058 script orphan-review |  |
+| J2085 | mini | open | – | – | chief · Chief: resolve 059 script orphan-review |  |
+| J2086 | mini | open | – | – | chief · Chief: resolve 060 script orphan-blocked |  |
+| J2087 | mini | open | – | – | chief · Chief: resolve 061 script orphan-blocked |  |
+| J2088 | mini | open | – | – | chief · Chief: resolve 061 sources orphan-review |  |
 
 Recently finished:
 
