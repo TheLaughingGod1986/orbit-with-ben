@@ -168338,10 +168338,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T09:04Z",
+      "eta": "2026-11-04T11:04Z",
       "created_by": "relay",
       "created_at": "2026-11-04T01:33Z",
       "result": "",
@@ -168350,6 +168350,11 @@
           "at": "2026-11-04T01:33Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:04Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 026 upload handoff and records the next owner/action",
@@ -168359,6 +168364,14 @@
         "stage": "upload",
         "kind": "orphan-review",
         "signature": "e2824339dcaf11085b2b"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T09:04Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
