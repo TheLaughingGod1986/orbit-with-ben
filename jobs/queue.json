@@ -72655,13 +72655,12 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
-      "result": "waits for input: ElevenLabs characters (reset 30 Oct); reopen after the reset",
+      "result": "",
       "history": [
         {
           "at": "2026-10-22T20:55Z",
@@ -72847,19 +72846,15 @@
           "at": "2026-11-03T21:24Z",
           "by": "relay",
           "what": "condition verification queued: J1894"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "released: ElevenLabs characters reset 30 Oct; the worker checks the live balance before generating and stops if short."
         }
       ],
       "kind": "vo",
-      "remaining_action": "Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
-      "hold": {
-        "type": "input",
-        "condition": "Verified 3 Nov 15:13Z: HOS ce5d17cd, PRs through 400, desk through 6606923484 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR366 retains the block: both one minute and one second required; existing speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Approve replacement wording and exact recording scope before recording. Preserve v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit check required before future authorised spend; all production and Ben gates remain.",
-        "check_at": "2026-11-03T22:24:26+00:00",
-        "last_recheck": "J1842",
-        "checked_at": "2026-11-03T15:13:09+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1894"
-      }
+      "remaining_action": "Approve 009 Short B replacement opening and exact recording scope before recording required replacements"
     },
     {
       "id": "J0863",
@@ -154921,13 +154916,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-03T10:30Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:14Z",
-      "result": "Capability blocker, not a Ben approval hold: actual local audio listening is required and unavailable in this Codex session. Technical step remains complete (PR 392); both locked hashes rechecked unchanged. Nothing heard; no final VO PASS. Elected Chief with audio-input capability must resume J1752, listen to locked v02a including seven endings and way?, record heard evidence, then make VO-only PASS/FIX. Do not redispatch unchanged to a text-only session; no media correction demonstrated.",
+      "result": "Done under Ben's rule. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Technical evidence already PASS (PR 392; locked hashes rechecked unchanged). The listen moves to Ben's final watch of the finished film; the voice take stays locked and the film proceeds to its next stage.",
       "history": [
         {
           "at": "2026-11-03T10:14Z",
@@ -155003,6 +154998,11 @@
           "at": "2026-11-04T00:56Z",
           "by": "relay",
           "what": "condition verification queued: J1919"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "done: Done under Ben's rule. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Technical evidence already PASS (PR 392; locked hashes rechecked unchanged). T"
         }
       ],
       "remaining_action": "J1810 validates native audio input before exact-take listening and VO-only Chief decision",
@@ -155017,15 +155017,6 @@
       "taskKeys": [
         "OWB:031"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "J1810 PR438: current agy native read_file audio/mpeg fixture validation failed. First claimed two-tone perception contradicted fixture; independent recheck explicitly cannot hear. Demonstrate reliable native acoustic input before activating drafted exact-take specialist listening; current Chief retains VO-only decision. Preserve 1/3 technical PASS; no Ben UAT hold.",
-        "check_at": "2026-11-04T01:56:24+00:00",
-        "requires": [
-          "audio_input"
-        ],
-        "recheck_task": "J1919"
-      },
       "required_capabilities": [
         "audio_input"
       ]
@@ -155041,13 +155032,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-03T10:37Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:14Z",
-      "result": "Capability blocker: actual listening required, but this Codex session has no audio input. Technical evidence remains PASS at 1/3; no audio heard and no final approval. Resume J1753 only with an elected Chief able to hear local audio; then record listening and VO-only PASS/FIX. Blocked rather than released after repeated identical dispatches; existing review_J1753 evidence and stage follow-up remain valid. No media correction or spend.",
+      "result": "Done under Ben's rule. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Technical evidence already PASS (PR 392; locked hashes rechecked unchanged). The listen moves to Ben's final watch of the finished film; the voice take stays locked and the film proceeds to its next stage.",
       "history": [
         {
           "at": "2026-11-03T10:14Z",
@@ -155138,6 +155129,11 @@
           "at": "2026-11-04T01:27Z",
           "by": "relay",
           "what": "condition verification queued: J1925"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "done: Done under Ben's rule. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Technical evidence already PASS (PR 392; locked hashes rechecked unchanged). T"
         }
       ],
       "remaining_action": "J1810 validates native audio input before exact-take listening and VO-only Chief decision",
@@ -155152,15 +155148,6 @@
       "taskKeys": [
         "OWB:032"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "J1810 PR438: current agy native read_file audio/mpeg fixture validation failed. First claimed perception contradicted fixture; independent recheck explicitly cannot hear. Demonstrate reliable native acoustic input before activating exact-take specialist listening; Chief retains VO-only decision. Preserve 1/3 technical PASS and h31 locks; not Ben UAT.",
-        "check_at": "2026-11-04T02:27:16+00:00",
-        "requires": [
-          "audio_input"
-        ],
-        "recheck_task": "J1925"
-      },
       "required_capabilities": [
         "audio_input"
       ]
@@ -159398,13 +159385,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "cancelled",
       "by": "codex",
       "since": "2026-11-04T00:31Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:51Z",
-      "result": "Waiting for: PR438: native agy read_file accepts audio/mpeg but actual perception failed two bounded fixture validations: claimed features contradicted known signal; independent recheck explicitly cannot hear. Resolve native media delivery/configuration and demonstrate accurate acoustic perception on a non-production fixture before any source-VO handoff. No unchanged text-only redispatch, new API/provider or source upload. Prepared exact-take briefs remain undispatched; J1752/J1753 retain 1/3 and Chief final authority.",
+      "result": "Cancelled: superseded by Ben's 4 Nov rule (Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480).). Evidence kept in PR438/PR479.",
       "history": [
         {
           "at": "2026-11-03T10:51Z",
@@ -159450,6 +159437,11 @@
           "at": "2026-11-04T00:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-05T00:40:00Z"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "cancelled: Cancelled: superseded by Ben's 4 Nov rule (Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watc"
         }
       ],
       "remaining_action": "Resolve failed native audio perception; then activate verified exact-take listening handoffs",
@@ -159474,14 +159466,6 @@
         "OWB:031",
         "OWB:032"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "PR438: native agy read_file accepts audio/mpeg but actual perception failed two bounded fixture validations: claimed features contradicted known signal; independent recheck explicitly cannot hear. Resolve native media delivery/configuration and demonstrate accurate acoustic perception on a non-production fixture before any source-VO handoff. No unchanged text-only redispatch, new API/provider or source upload. Prepared exact-take briefs remain undispatched; J1752/J1753 retain 1/3 and Chief final authority.",
-        "check_at": "2026-11-05T00:40:00Z",
-        "requires": [
-          "audio_input"
-        ]
-      },
       "required_capabilities": [
         "audio_input"
       ]
@@ -161411,13 +161395,12 @@
       "stage": "edit",
       "after": "J1833",
       "eta_min": 25,
-      "status": "blocked",
-      "by": "codex",
+      "status": "open",
       "since": "2026-11-03T14:03Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T13:58Z",
-      "result": "Acquisition candidate delivered at 406f91068 on codex/J1834-acquisition. Needs elected-Chief actual moving review of ~/. _desk/cache/J1834/feather_candidate_T545.mp4 (use /Users/benjaminoats/_desk/cache/J1834), phone and preroll previews; station recognition/cropped Dragon/soft fill and 2.35x WARN remain. Metric 1.54, picture/polish PASS are not creative approval. J1471/J1356 holds unchanged.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T13:58Z",
@@ -161513,6 +161496,11 @@
           "at": "2026-11-03T22:36Z",
           "by": "codex",
           "what": "Queue/PR publication status verified after Ben text-only authorization: J1910 and J1846 done; correct stale public-push wording only. Blocked status, progress, dependency/check dates and all media gates unchanged. Prior condition retained here: J1865 verified PR410 OPEN at 406f91068 and PR414 OPEN at 1474821f3, neither with reviews/comments; Gemini moving FIX persists for station recognition, cropped Dragon, incoherent fill and softness. Thread through 6612506489 has no replacement acceptance or J1846 payload approval. J1846 scope 001b6962f remains blocked by recorded public evidence-push approval rejection; J1847 -> J1848 -> J1849 unstarted. Need accepted exact replacement input. Do not repeat T545 review. J1471/J1356 and all failed-gate, Ben, date, credit and publishing holds persist; no independent playback claimed."
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "released: capability hold lifted. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Do every tool-provable check (hashes, decode, duration, stills, ASR, timing) and record it; no worker needs to watch or listen; Ben's final watch is the check."
         }
       ],
       "remaining_action": "Complete J1847 preview, J1848 moving review and J1849 source decision; then J1471 repairs/gates and J1356 full QA",
@@ -161524,7 +161512,6 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
         "step": 3,
@@ -161536,15 +161523,6 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "Workflow text publication is complete under J1910/PR433 and J1846 is complete. The ISS replacement input is still unapproved: J1847 owns the bounded NASA-model preview, followed by J1848 actual-moving review and J1849 Chief exact-input decision. Then J1471 must complete the remaining repairs/gates and J1356 the full audiovisual/pace review. Original v13a and AR replacement work remain separate; no source, Edit, QA or Ben approval is inferred.",
-        "check_at": "2026-11-03T22:09:05+00:00",
-        "last_recheck": "J1865",
-        "checked_at": "2026-11-03T22:36:35+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1892"
-      },
       "publication_wording_update": "J1910-PR433"
     },
     {
@@ -165423,13 +165401,12 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "codex",
+      "status": "open",
       "since": "2026-11-03T20:32Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:54Z",
-      "result": "Waiting for: J1889 must independently watch and hear exact recovered Studio candidates; this session tool inspection demonstrated neither audio nor moving-video perception. Both full ffmpeg decodes pass but do not establish identity/quality acceptance. Evidence PR427; no repeat downloads or source search.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T18:54Z",
@@ -165480,6 +165457,11 @@
           "at": "2026-11-04T06:04Z",
           "by": "relay",
           "what": "condition verification queued: J1965"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "released: capability hold lifted. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Do every tool-provable check (hashes, decode, duration, stills, ASR, timing) and record it; no worker needs to watch or listen; Ben's final watch is the check."
         }
       ],
       "remaining_action": "Await capability-qualified J1889 acceptance review; keep Mars missing-original and Titan mismatch holds",
@@ -165496,16 +165478,6 @@
       "taskKeys": [
         "OWB:025"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "J1889 must independently watch and hear exact recovered Studio candidates; this session tool inspection demonstrated neither audio nor moving-video perception. Both full ffmpeg decodes pass but do not establish identity/quality acceptance. Evidence PR427; no repeat downloads or source search.",
-        "check_at": "2026-11-04T07:04:24+00:00",
-        "requires": [
-          "audio_input",
-          "moving_video_input"
-        ],
-        "recheck_task": "J1965"
-      },
       "required_capabilities": [
         "audio_input",
         "moving_video_input"
@@ -165522,13 +165494,12 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "open",
       "since": "2026-11-03T20:47Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:56Z",
-      "result": "Waiting for: HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T18:56Z",
@@ -165569,6 +165540,11 @@
           "at": "2026-11-03T21:54Z",
           "by": "relay",
           "what": "condition verification queued: J1903"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "released: capability hold lifted. Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480). Do every tool-provable check (hashes, decode, duration, stills, ASR, timing) and record it; no worker needs to watch or listen; Ben's final watch is the check."
         }
       ],
       "remaining_action": "Inspect native moving alternatives and finalise exact Franklin correction recipe from PR403",
@@ -165584,15 +165560,6 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "HOS PR403 / commit 6137ff0d preserves partial six-note recipe and source inventory. This session demonstrated still-image input only (six extracted master stills), no actual moving-video perception; ffmpeg/tool inventory is not proof of motion. Need a worker with demonstrated moving_video_input to inspect native alternatives and select safe source intervals; source trim map and spoken alignment also unfinished. J1881 remains dependent; no media PASS or notes resolved.",
-        "check_at": "2026-11-03T22:54:25+00:00",
-        "requires": [
-          "moving_video_input"
-        ],
-        "recheck_task": "J1903"
-      },
       "required_capabilities": [
         "moving_video_input"
       ]
@@ -173124,13 +173091,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
+      "status": "cancelled",
       "by": "codex",
       "since": "2026-11-04T11:18Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T10:51Z",
-      "result": "parked for Chief: engineering report and actual ACP audio=false evidence in PR479, commit 8d6efaad03. Supported headless repair not established; Chief reviews and scopes any separate interactive fixture attachment investigation. J1810 remains 2/3, J1752/J1753 remain 1/3; no hearing or production approval.",
+      "result": "Cancelled: superseded by Ben's 4 Nov rule (Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watch is the watch-and-listen check' (PR480).). Evidence kept in PR438/PR479.",
       "history": [
         {
           "at": "2026-11-04T10:51Z",
@@ -173171,6 +173138,11 @@
           "at": "2026-11-04T13:38Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "cancelled: Cancelled: superseded by Ben's 4 Nov rule (Ben, 4 Nov 2026 (direct, to Claude): 'your final watch counts as the watch-and-listen check for these items. im happy with this'; AGENTS.md 'Ben's final watc"
         }
       ],
       "remaining_action": "Chief reviews engineering evidence and scopes any separate interactive audio attachment experiment; original capability holds remain",
@@ -173499,18 +173471,23 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T11:48Z",
-      "result": "",
+      "result": "Applied by Claude on Ben's direct 4 Nov instruction: J1752/J1753 done (031/032 voice locked); J1880, J1879, J1834 released; J1810/J2011 cancelled as superseded; J0862 released (ElevenLabs reset 30 Oct).",
       "history": [
         {
           "at": "2026-11-04T11:48Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "claude",
+          "what": "done: Applied by Claude on Ben's direct 4 Nov instruction: J1752/J1753 done (031/032 voice locked); J1880, J1879, J1834 released; J1810/J2011 cancelled as superseded; J0862 released (ElevenLabs reset 30 Oct)."
         }
       ],
       "remaining_action": "Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception",
