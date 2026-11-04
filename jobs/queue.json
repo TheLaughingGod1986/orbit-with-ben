@@ -169542,9 +169542,14 @@
           "at": "2026-11-04T06:20Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T06:21Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking original brief, current evidence and approval history; no media review claimed"
         }
       ],
-      "remaining_action": "Verify readiness: Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
+      "remaining_action": "Verify J0936 evidence and approvals, then update its condition hold",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-04T07:18:55+00:00",
@@ -169552,11 +169557,15 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-04T06:20Z",
+        "at": "2026-11-04T06:21Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking original brief, current evidence and approval history; no media review claimed"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     }
   ],
   "focus": [],
