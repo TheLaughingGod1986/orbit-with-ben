@@ -720,11 +720,33 @@
       ${films?`<details class="p24-more"><summary>Where the work went (${p.jobsDone||0} jobs${p.otherJobs?`, ${p.otherJobs} studio-wide`:''})</summary><ul class="p24-list">${films}</ul></details>`:''}
     </section>`;
   }
+  // Machines (Ben, 4 Nov 2026): what the Mini and the MacBook are on now, and jobs each finished in 24 h.
+  function machinesCard(b, now) {
+    const m=b.machines;
+    if(!m||!(m.machines||[]).length) return '';
+    const ago=t=>{const d=Date.parse(t);if(!d)return'';const min=Math.round((now-d)/60000);return min<1?'just now':min<60?`${min} min ago`:`${Math.round(min/60)} h ago`;};
+    const live=r=>{  // the MacBook's own report is fetched every minute, fresher than the 5-min board publish
+      if(r.id!=='macbook'||!macbook||!(Date.parse(macbook.at)>Date.parse(r.seen||0))) return r;
+      const why=Array.isArray(macbook.why)?macbook.why.join('; '):(macbook.why||'');
+      const now2=(r.now||[]).length||!macbook.job?r.now:[{id:macbook.job,title:'',agent:'macbook'}];
+      return {...r,state:macbook.state||r.state,why,seen:macbook.at,agents:macbook.agents||r.agents,now:now2};
+    };
+    const rows=m.machines.map(live).map(r=>{
+      const jobs=(r.now||[]).map(n=>`<li><span class="p24-film">${esc(n.id)}</span> <span class="p24-title">${esc(n.title)}</span><span class="p24-count">${esc(n.agent||'')}</span></li>`).join('');
+      const agents=Object.entries(r.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
+      const idle=!jobs?`<p class="muted p24-note">${r.why?esc(r.why):'No job right now.'}${r.seen?` · seen ${ago(r.seen)}`:''}</p>`:'';
+      const clis=(r.agents||[]).length?`<p class="muted p24-note">Agents here: ${(r.agents||[]).map(esc).join(', ')}</p>`:'';
+      return `<div class="mc-machine"><div class="mc-head"><b>${esc(r.name)}</b><span class="mc-done"><b>${r.done24||0}</b> done in 24 h</span></div>
+        ${jobs?`<ul class="p24-list">${jobs}</ul>`:idle}${agents?`<p class="muted p24-note">By ${agents}</p>`:''}${clis}</div>`;
+    }).join('');
+    return `<section class="overview-p24 overview-machines" aria-label="Machines"><h2>Machines</h2>${rows}</section>`;
+  }
   function overview(b, now) {
     const s=overviewModel(b,now), candidate=featureVideo(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="overview-stats" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted">Nothing is ready for your review yet.</p>':''}${featuredCard(candidate,now,s.producing.length)}</section>
+      ${machinesCard(b,now)}
       ${progressCard(b)}
       ${activityCard(b,now)}</div>`;
   }
