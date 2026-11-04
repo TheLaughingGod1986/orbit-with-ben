@@ -176720,18 +176720,25 @@
           "at": "2026-11-04T18:32Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T18:32Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Plan: source audit; licensed harvest; row graphics; verification. No credit spend."
         }
       ],
-      "remaining_action": "Harvest NASA/ESA/APL/Commons source plates into HARVEST_POOL_v01.json and build £0 code_graphics from SHOT_LIST_v02.md",
+      "remaining_action": "Verify source identities, harvest licensed plates, build row graphics and verify package",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-04T18:32Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: source audit; licensed harvest; row graphics; verification. No credit spend."
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
