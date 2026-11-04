@@ -189,6 +189,12 @@ A Short is scored on 1 and 3 only. Any FAIL goes back to the edit before the cut
 
 **Ben only watches finished videos (Ben, 28 Oct 2026: *"Nothing apart from actually watching and commenting on the finished videos should be reliant on me. Use your own intuition, make your own decisions, and decide what you think is best based on the data for thumbnails."*).** Nothing else waits on Ben: no job is parked "for Ben" and no card asks him for an OK except a finished cut to watch (UAT). Thumbnails, titles, covers, swaps of OK'd cuts and clean-ups are the Chief's call from the data (CTR, Test & Compare, retention). A signed-in browser profile that isn't open (Studio, Flow) is reopened by the worker itself; only a real Google password or 2FA prompt is Ben's, and then the job finishes everything else and says so in one line, never waiting. Items 1 and 2 below (real money, the truly irreversible) still go to him.
 
+**Ben's final watch is the watch-and-listen check (Ben, 4 Nov 2026).** No job is held only because its reviewer can't watch video or hear audio: workers record every tool-provable check, the Chief rules on that, and Ben's final watch of the finished cut is the actual watch/listen. A failing tool check still fails. See AGENTS.md.
+
+**Same-day alarm (Ben, 4 Nov 2026):** `scripts/missed_runs.py --post` (launchd `com.owb.missed-runs`, every 30 min) posts `[alarm <check>]` on the thread when the tracker, Buffer check, Claude or Mini heartbeat misses its window; the acting Chief acts that day.
+
+**Long titles (Ben, 4 Nov 2026):** LEARNINGS rule 15, checked by the Chief before every long upload.
+
 **Standing order: ask Chief first, not Ben** (Ben, 3 Oct 2026, to Claude: *"Instead of asking me, always ask Claude first."* Chief has held that role since 9 Oct). Anything that used to be marked NEEDS BEN goes to Chief on the PR #99 thread first; Claude's review and recommendation come with it. Chief decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
 
 1. **Spending money:** any top-up, new paid service or plan (see Budget).
