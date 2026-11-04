@@ -172683,9 +172683,14 @@
           "at": "2026-11-04T12:42Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Root cause identified: UPLOADS.json file for HZGTovJu_TQ uses ../../../../Volumes/... so str(f).startswith(NAS) was False and HZGTovJu_TQ was neither staged nor recognized as NAS-blocked under launchd TCC"
+        },
+        {
+          "at": "2026-11-04T12:44Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: gate_upcoming.py export_path fix tested (12/12 unit tests PASS), NAS masters staged to ~/_desk/cache/gate-media, UPCOMING_SHORTS_GATE.md regenerated with HZGTovJu_TQ and cwU_0WWeNZ4 PASS"
         }
       ],
-      "remaining_action": "Fix path normalization in gate_upcoming.py, add unit test, and stage NAS master to local cache",
+      "remaining_action": "Commit gate_upcoming.py fix and regenerated UPCOMING_SHORTS_GATE.md, then close J2014",
       "due": "2026-11-12T00:00:00Z",
       "kind": "qa",
       "rerouted_from": {
@@ -172698,11 +172703,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T12:42Z",
+        "at": "2026-11-04T12:44Z",
         "by": "gemini",
-        "note": "Root cause identified: UPLOADS.json file for HZGTovJu_TQ uses ../../../../Volumes/... so str(f).startswith(NAS) was Fals"
+        "note": "gate_upcoming.py export_path fix tested (12/12 unit tests PASS), NAS masters staged to ~/_desk/cache/gate-media, UPCOMIN"
       },
       "taskKeys": [
         "OWB:026"
