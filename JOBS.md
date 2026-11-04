@@ -60,7 +60,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
 | J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
 | J1965 | any | open | – | – | chief · Chief: verify condition for J1879 |  |
-| J1967 | mini | claimed | gemini | 2026-11-04T19:51Z | 061 sources · for gemini · review · `gemini-argon` · 061 Venus rotation: direct MUST QUOTE review after Gemini facts | J1808 |
 | J2009 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-review |  |
 | J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 | J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |

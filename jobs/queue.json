@@ -171029,13 +171029,13 @@
       "stage": "sources",
       "after": "J1966",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T17:51Z",
-      "eta": "2026-11-04T19:51Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T06:07Z",
-      "result": "",
+      "result": "ebffa44d6d: 02_Video-Projects/061_Why-Venus-Spins-Backwards-And-Its-Day-Is-Longer-Than-Its-Year/01_Script/CLAUDE_QUOTE_CHECK_v01.md, jobs/reviews/J1967/DIRECT_QUOTE_CHECK_2026-11-04.md, jobs/reviews/J1967/INPUT_SHA256SUMS.txt, 01_Script/SOURCES.md",
       "history": [
         {
           "at": "2026-11-04T06:07Z",
@@ -171076,6 +171076,11 @@
           "at": "2026-11-04T18:06Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed CLAUDE_QUOTE_CHECK_v01.md, DIRECT_QUOTE_CHECK_2026-11-04.md, INPUT_SHA256SUMS.txt, updated SOURCES.md and production-status.md; set 061 sources to review and released claim"
+        },
+        {
+          "at": "2026-11-04T18:07Z",
+          "by": "gemini",
+          "what": "done: ebffa44d6d: 02_Video-Projects/061_Why-Venus-Spins-Backwards-And-Its-Day-Is-Longer-Than-Its-Year/01_Script/CLAUDE_QUOTE_CHECK_v01.md, jobs/reviews/J1967/DIRECT_QUOTE_CHECK_2026-11-04.md, jobs/reviews/J1967/INPUT_SHA256SUMS.txt, 01_Script/SOURCES.md"
         }
       ],
       "remaining_action": "Finish J1967 and post report on PR #99",
@@ -171098,7 +171103,8 @@
       },
       "taskKeys": [
         "OWB:061"
-      ]
+      ],
+      "done_ref": "ebffa44d6d"
     },
     {
       "id": "J1968",
