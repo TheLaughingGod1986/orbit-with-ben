@@ -172385,9 +172385,14 @@
           "at": "2026-11-04T11:25Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: review exact heads; release approved patch and record independent capacity/hold decisions; verify runtime and handoff."
+        },
+        {
+          "at": "2026-11-04T11:27Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR477 exact head reviewed; 67 workflow/handoff tests and core56 PASS; normal merge d12b004c67 installed. Parent relay reload waits for this job to exit."
         }
       ],
-      "remaining_action": "Review and release PR477, assess PR437 separately, verify worker and holds",
+      "remaining_action": "Finish independent capacity review and hold decisions; verify safe-boundary reload handoff",
       "kind": "chief",
       "overnight_review_key": "Ben-overnight-visible-production-2026-11-04",
       "urgent": 2,
@@ -172402,11 +172407,11 @@
         "scope": "PR477 dispatcher priority hotfix only; separate PR437 capacity activation remains gated"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-04T11:25Z",
+        "at": "2026-11-04T11:27Z",
         "by": "codex",
-        "note": "Plan: review exact heads; release approved patch and record independent capacity/hold decisions; verify runtime and hand"
+        "note": "PR477 exact head reviewed; 67 workflow/handoff tests and core56 PASS; normal merge d12b004c67 installed. Parent relay re"
       },
       "taskKeys": [
         "OWB:030"
