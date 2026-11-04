@@ -175174,13 +175174,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T19:27Z",
-      "eta": "2026-11-04T21:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T17:56Z",
-      "result": "",
+      "result": "Rule-E review GO on 031 shots: verified all 54 rows against stt_raw.json (0.14-568.24 s, 1,322 words, 0 split/uncovered), fixed 14 rows to <=6.0 s/cut, added sourced WHO years/roles, FACT cards, SCALE comparisons and real plates between CODE graphics in SHOT_LIST_v02.md (55d4dad1c2), marked 031 shots done and queued J2141 (031 picture, £0).",
       "history": [
         {
           "at": "2026-11-04T17:56Z",
@@ -175211,6 +175211,11 @@
           "at": "2026-11-04T19:35Z",
           "by": "gemini",
           "what": "step 4 of 4 done: 031 shots set to done; queued J2141 for 031 picture (£0 harvest + code_graphics builds from SHOT_LIST_v02.md)"
+        },
+        {
+          "at": "2026-11-04T19:35Z",
+          "by": "gemini",
+          "what": "done: Rule-E review GO on 031 shots: verified all 54 rows against stt_raw.json (0.14-568.24 s, 1,322 words, 0 split/uncovered), fixed 14 rows to <=6.0 s/cut, added sourced WHO years/roles, FACT cards, SCALE comparisons and real plates between CODE graphics in SHOT_LIST_v02.md (55d4dad1c2), marked 031 shots done and queued J2141 (031 picture, £0)."
         }
       ],
       "remaining_action": "Complete J2043 and report on thread",
