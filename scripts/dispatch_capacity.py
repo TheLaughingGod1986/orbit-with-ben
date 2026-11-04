@@ -14,6 +14,7 @@ import re
 
 import workflow_state as workflow
 import routing
+import portable_transfer
 
 SAFE_KINDS = {"assembly", "chart"}
 DENIED_RESOURCES = {"browser", "generation", "publishing", "nas", "credentials"}
@@ -94,6 +95,13 @@ def portable_problem(job, host, at):
         return "unsupported portable resources"
     if not contract.get("output_receipts_required"):
         return "output hash receipts required"
+    outputs = contract.get("outputs")
+    if not isinstance(outputs, list):
+        return "explicit portable output paths required"
+    try:
+        portable_transfer.manifest([{"path": name, "sha256": "0" * 64} for name in outputs])
+    except (TypeError, ValueError):
+        return "invalid portable output paths"
     inputs = contract.get("inputs")
     if not isinstance(inputs, list):
         return "explicit portable inputs required"

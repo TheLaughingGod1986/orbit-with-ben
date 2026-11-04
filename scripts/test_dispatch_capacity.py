@@ -40,7 +40,7 @@ def job(id="J1834", **kw):
 
 def portable():
     return dict(version=1, approved_by="codex", approval_ref="scope-123", no_spend=True,
-                no_publish=True, resources=["cpu"], inputs=[], output_receipts_required=True)
+                no_publish=True, resources=["cpu"], inputs=[], outputs=[], output_receipts_required=True)
 
 
 def choose(j, eligible):
@@ -156,7 +156,8 @@ class Capacity(unittest.TestCase):
 
     def test_portable_contract_rejects_missing_inputs_and_unsupported_work(self):
         for changes in ({"resources":["nas"]}, {"inputs":None}, {"output_receipts_required":False},
-                        {"approval_ref":""}):
+                        {"approval_ref":""}, {"outputs":None}, {"outputs":["../escape"]},
+                        {"outputs":["same", "same"]}):
             contract = dict(portable(), **changes)
             self.assertTrue(capacity.portable_problem(job(portable=contract), host("macbook"), T))
 

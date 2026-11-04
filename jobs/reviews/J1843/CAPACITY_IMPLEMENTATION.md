@@ -94,3 +94,44 @@ ISS review and candidate assets were untouched.
    rollout. No second lane or portable execution is enabled by this checkpoint.
 
 No spend, regeneration, upload, schedule, visibility or policy change occurred.
+
+## Resume checkpoint — 4 November, 01:05–01:10 UTC
+
+Added `portable_transfer.py`, a local filesystem transport adapter, disconnected
+from worker launch and queue mutation. It copies an explicit SHA-256 manifest
+into a new unique bundle, enforces total byte/file budgets, rejects traversal,
+noncanonical/duplicate/colliding paths, symlinks and nonregular files, and hashes
+the destination again. Failed copies remove only their newly created bundle.
+Existing source files and bundles are never overwritten. No network transport
+or unsupported laptop access is inferred: callers must supply readable local
+roots, then verify on each consuming host.
+
+Input/output receipts bind the complete contract digest, job, reservation token,
+registered host identifier, direction, exact file manifest and byte count. They
+expire after five minutes and require a local rehash on receipt consumption.
+Input paths must match the contract; output paths must be scoped explicitly.
+The shadow planner now rejects portable contracts without valid explicit output
+paths. These receipts are integrity checks, not authenticated host registration,
+KEEP, launch authorization or stage approval.
+
+Validation: **188 tests PASS** (11 transfer, 25 capacity/observation, 31 workflow,
+17 MacBook, 74 relay with fake CLIs, 30 queue), plus `git diff --check`. Transfer
+tests include a local simulated outbound/return trip and changed returned bytes;
+this is not real cross-host acceptance evidence.
+
+Fresh observations: both repos pulled; HOS inbox had no new Codex messages.
+`agent status` exited 0 with `Login successful!` and `Logged in (unable to fetch
+user details)`. This does not prove current model/quota readiness and does not
+clear the recorded execution authentication failure. Cached laptop heartbeat
+was `2026-11-04T00:57:59Z`, generic `macbook`, idle, with no identity/resources/
+account/capability proof. The capacity observation had no validated active lease;
+this does not establish a free slot. Free-slot outlook remains unknown. Required
+NAS offload ran with writable access and found nothing old enough to move;
+about 13.4 GB remains free. No file was deleted on the NAS.
+
+Existing plan remains **1/3**. Step 2 is incomplete: canonical cross-host
+reservations/stage claims, process-validated per-host launches, host/account
+probes and connecting verified bundles/receipts to the laptop worker still need
+implementation. Continue on this same branch/job, preserving all current gates.
+No extra lane, remote transfer, portable execution or rollout has been enabled.
+Finish implementation before exact-head Chief review and observed transitions.
