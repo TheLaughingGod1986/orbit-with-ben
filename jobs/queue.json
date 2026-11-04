@@ -1,5 +1,5 @@
 {
-  "next_id": 2014,
+  "next_id": 2015,
   "jobs": [
     {
       "id": "J0001",
@@ -172402,6 +172402,35 @@
         "kind": "orphan-blocked",
         "signature": "4d7e7f6356e3614a14ef"
       }
+    },
+    {
+      "id": "J2014",
+      "title": "026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "UPCOMING_SHORTS_GATE.md (4 Nov 06:40) shows HZGTovJu_TQ (026 \"If You Can't See the Nearest Star\", airs Mon 16 Nov 11:30 London) as FAIL. The detail is not a content failure, it is a read error:\n\n  /Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/mon16_cant_see_nearest_star_v01.mp4: Operation not permitted\n\nThe Short is already in the YouTube library and scheduled, so it airs either way; this is about the gate being able to read the local master.\n\n1. On the Mini, check whether the file exists and why the launchd gate (06:40 run) can't read it: macOS privacy (Full Disk Access / Network Volumes for the process running gate_upcoming.py), NAS mount permissions, or a file moved by the NAS offload (J1296 precedent).\n2. Fix the cheapest safe way: grant the gate's runner read access, or have gate_upcoming.py read the staged copy on local disk if one exists. Never delete or move anything on the NAS. Never touch the scheduled video on YouTube.\n3. Rerun `python3 00_Brand/Channel-Setup/tools/gate_upcoming.py` and commit the regenerated UPCOMING_SHORTS_GATE.md. Done when HZGTovJu_TQ reads PASS (or KNOWN with a knownNoFile reason in UPLOADS.json if the master really is gone, as for ZpEA8stoSPA).\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T10:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T10:56Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate",
+      "due": "2026-11-12T00:00:00Z",
+      "kind": "qa"
     }
   ],
   "focus": [],
