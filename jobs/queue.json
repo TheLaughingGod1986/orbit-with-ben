@@ -162586,9 +162586,14 @@
           "at": "2026-11-04T22:15Z",
           "by": "codex",
           "what": "step 2 of 3 done: Existing branch clean; prior cleanup fixes retained. Production callers still absent; no rollout enabled."
+        },
+        {
+          "at": "2026-11-04T22:18Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR437 checkpoint d7680cbe32 binds prepared commands to the selected job before consume/spawn; 99 capacity tests, STATUS consistency, core56 and diff checks pass. Caller integration and real-host acceptance remain unfinished; no rollout."
         }
       ],
-      "remaining_action": "Connect disabled capacity caller hooks and verify guarded launch behavior",
+      "remaining_action": "Complete disabled Mini and laptop production callers, transport and caller tests",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162608,9 +162613,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T22:15Z",
+        "at": "2026-11-04T22:18Z",
         "by": "codex",
-        "note": "Existing branch clean; prior cleanup fixes retained. Production callers still absent; no rollout enabled."
+        "note": "PR437 checkpoint d7680cbe32 binds prepared commands to the selected job before consume/spawn; 99 capacity tests, STATUS "
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
