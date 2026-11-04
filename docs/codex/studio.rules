@@ -1,0 +1,8 @@
+# Only the installed, reviewed gateway is allowed. No general git/node/npm/curl rule.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-scoped-push.py"],
+    decision = "allow",
+    justification = "Ben approved non-force branch pushes to the two studio repositories, J2040, 4 Nov 2026; gateway validates arguments.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-scoped-push.py --repo owb --worktree /private/tmp/j2040-wt --branch codex/j2040-permission-probe --dry-run"],
+    not_match = ["git push origin main", "curl https://example.com", "/opt/homebrew/bin/python3 -c print(1)"]
+)
