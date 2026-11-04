@@ -165441,20 +165441,25 @@
           "at": "2026-11-04T00:43Z",
           "by": "codex",
           "what": "step 2 of 3 done: J1878 reopened atomically at actual 1/3; original rejection and approval history retained; normal studio routing and overdue priority preserved"
+        },
+        {
+          "at": "2026-11-04T00:43Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Persisted handoff invariants PASS; decision recorded e861839593 with private readbacks; report posted; no external recovery writes"
         }
       ],
-      "remaining_action": "Verify persisted handoff and report the decision",
+      "remaining_action": "Decision complete; J1878 owns exact approved recovery execution",
       "kind": "chief",
       "direct_approval_key": "Ben-direct-approval-J1878-six-posts-2026-11-03",
       "urgent": 5,
       "due": "2026-11-03T23:52:54+00:00",
       "due_kind": "user-approved-recovery",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-04T00:43Z",
         "by": "codex",
-        "note": "J1878 reopened atomically at actual 1/3; original rejection and approval history retained; normal studio routing and ove"
+        "note": "Persisted handoff invariants PASS; decision recorded e861839593 with private readbacks; report posted; no external recov"
       },
       "taskKeys": [
         "OWB:025",
