@@ -172549,11 +172549,25 @@
           "at": "2026-11-04T10:56Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:24Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate",
       "due": "2026-11-12T00:00:00Z",
-      "kind": "qa"
+      "kind": "qa",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2015",
