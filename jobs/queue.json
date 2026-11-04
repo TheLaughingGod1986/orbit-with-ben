@@ -172358,10 +172358,10 @@
       "stage": "",
       "after": "",
       "eta_min": 25,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T11:25Z",
+      "eta": "2026-11-04T11:50Z",
       "created_by": "codex",
       "created_at": "2026-11-04T10:51Z",
       "result": "",
@@ -172375,6 +172375,11 @@
           "at": "2026-11-04T11:05Z",
           "by": "codex",
           "what": "Recorded direct Ben PR477 production authorization, final exact-head tests/checks/merge preparation, current Chief/thread and runtime verification target. No merge, Chief approval or production deployment claimed."
+        },
+        {
+          "at": "2026-11-04T11:25Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief review and release PR477 alone, verify safe Mini runtime reload; handle PR437 capacity separately",
@@ -172390,6 +172395,14 @@
         "recorded_by": "codex",
         "recorded_at": "2026-11-04T11:05:47+00:00",
         "scope": "PR477 dispatcher priority hotfix only; separate PR437 capacity activation remains gated"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T11:25Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
