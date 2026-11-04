@@ -157346,13 +157346,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T01:35Z",
-      "eta": "2026-11-04T03:35Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX / not locked. Restored cancelled J0529/J0538 handoff as J1928 (OWB:044/script, after J1785). Evidence PR440 merged (67ce408cd1); 044 remains review without claim, board names successor. Topic/neighbour and editorial decision, formal Gemini facts and direct quote check required before explicit lock. CI and linkage/status verification passed. No spend or publishing change.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -157383,6 +157383,11 @@
           "at": "2026-11-04T01:39Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified J1928 open for 044/script after J1785; stage review with no claim; STATUS.md names successor; PR440 merged with CI PASS; clean worktree."
+        },
+        {
+          "at": "2026-11-04T01:39Z",
+          "by": "codex",
+          "what": "done: FIX / not locked. Restored cancelled J0529/J0538 handoff as J1928 (OWB:044/script, after J1785). Evidence PR440 merged (67ce408cd1); 044 remains review without claim, board names successor. Topic/neighbour and editorial decision, formal Gemini facts and direct quote check required before explicit lock. CI and linkage/status verification passed. No spend or publishing change."
         }
       ],
       "remaining_action": "Repair verified; close J1785 and report restored review",
