@@ -165189,13 +165189,13 @@
       "stage": "",
       "after": "",
       "eta_min": 25,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T23:58Z",
-      "eta": "2026-11-04T00:23Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T23:37Z",
-      "result": "",
+      "result": "Scoped blocker-resolution task complete. Private matrix: /Users/benjaminoats/_desk/handoff/J1914/BLOCKER_ACTION_MATRIX.md (33 remaining blocked jobs); 28/28 invariants PASS. Live resource/expiry and Codex recovery evidence retained privately. J1754 runtime target corrected; J0821 superseded by J1843; J1823, J0985, J1825 and J1208 reopened only for their recorded narrow work; J1899 exact-audition scope clarified; J1212 missed-window branch cancelled with original Public and obsolete watch dropped, not approved. J1916 has fresh recovery evidence. Existing jobs own real pickup/review; no generation, spend, YouTube/Buffer writes or media approval. Public evidence restrictions and all remaining gates preserved.",
       "history": [
         {
           "at": "2026-11-03T23:37Z",
@@ -165241,6 +165241,11 @@
           "at": "2026-11-04T00:06Z",
           "by": "codex",
           "what": "step 4 of 4 done: 28/28 queue invariants PASS; 33 remaining blocked jobs covered privately; histories/progress/media holds preserved; no extra claim or spend."
+        },
+        {
+          "at": "2026-11-04T00:07Z",
+          "by": "codex",
+          "what": "done: Scoped blocker-resolution task complete. Private matrix: /Users/benjaminoats/_desk/handoff/J1914/BLOCKER_ACTION_MATRIX.md (33 remaining blocked jobs); 28/28 invariants PASS. Live resource/expiry and Codex recovery evidence retained privately. J1754 runtime target corrected; J0821 superseded by J1843; J1823, J0985, J1825 and J1208 reopened only for their recorded narrow work; J1899 exact-audition scope clarified; J1212 missed-window branch cancelled with original Public and obsolete watch dropped, not approved. J1916 has fresh recovery evidence. Existing jobs own real pickup/review; no generation, spend, YouTube/Buffer writes or media approval. Public evidence restrictions and all remaining gates preserved."
         }
       ],
       "remaining_action": "Complete scoped handoff and report private matrix; existing workers own follow-through",
@@ -165268,7 +165273,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:008"
-      ]
+      ],
+      "done_ref": "a0dab8498e"
     },
     {
       "id": "J1915",
