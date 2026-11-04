@@ -158573,13 +158573,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T04:57Z",
-      "eta": "2026-11-04T06:57Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX/not locked: 059 topic handoff resolved in PR456 (81f1b9dd0039c6cec375397fa96fc4be89a2543a). J1955 now owns verified neighbours, topic Short performance and audit evidence after J1801; returns to existing Chief decision J1953, with J1802 sources separate. Topic remains review. STATUS.md and successor links verified. No spend or publishing; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -158610,6 +158610,11 @@
           "at": "2026-11-04T05:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified PR456 merged, STATUS.md current, topic review with ruling reference, stage claim released, and J1955 dependency/film/stage correct."
+        },
+        {
+          "at": "2026-11-04T05:01Z",
+          "by": "codex",
+          "what": "done: FIX/not locked: 059 topic handoff resolved in PR456 (81f1b9dd0039c6cec375397fa96fc4be89a2543a). J1955 now owns verified neighbours, topic Short performance and audit evidence after J1801; returns to existing Chief decision J1953, with J1802 sources separate. Topic remains review. STATUS.md and successor links verified. No spend or publishing; nothing for Ben."
         }
       ],
       "remaining_action": "Handoff repair complete; J1955 supplies evidence to J1953 before topic lock",
@@ -158629,7 +158634,8 @@
       },
       "taskKeys": [
         "OWB:059"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/456"
     },
     {
       "id": "J1802",
