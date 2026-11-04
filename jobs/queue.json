@@ -170605,9 +170605,14 @@
           "at": "2026-11-04T15:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T15:16Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1961 as gemini/gemini; starting formal sources and claims verification for OWB 060 Hyperion."
         }
       ],
-      "remaining_action": "Verify Hyperion spoken and visual claims through Gemini; report flags to J1960",
+      "remaining_action": "Read J1805 Chief ruling, 060 v01 script, SOURCES.md and notes, and record input SHA-256 hashes",
       "kind": "facts",
       "rerouted_from": {
         "needs": "gemini",
@@ -170620,12 +170625,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-04T15:16Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1961 as gemini/gemini; starting formal sources and claims verification for OWB 060 Hyperion."
+      },
+      "taskKeys": [
+        "OWB:060"
+      ]
     },
     {
       "id": "J1962",
