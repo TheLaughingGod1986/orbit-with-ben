@@ -177406,6 +177406,11 @@
           "at": "2026-11-04T22:16Z",
           "by": "claude",
           "what": "due set to 2026-11-09T18:00Z: target for Ben's watch (032 ~16 Nov, 031 ~18 Nov)"
+        },
+        {
+          "at": "2026-11-04T22:19Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Apply J2090 mappings (SHOT_LIST v03), then harvest motion, DATA/mechanism graphics, R26/R46 fallbacks, overlay renders, verify",
@@ -177420,7 +177425,16 @@
       "taskKeys": [
         "OWB:032"
       ],
-      "due": "2026-11-09T18:00Z"
+      "due": "2026-11-09T18:00Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J2090",
