@@ -60,21 +60,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
 | J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
 | J1965 | any | open | – | – | chief · Chief: verify condition for J1879 |  |
-| J2009 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-review |  |
-| J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 | J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2022 | mini | open | – | – | assembly · Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini) |  |
 | J2023 | mini | open | – | – | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
 | J2024 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
-| J2025 | mini | open | – | – | chief · Chief: resolve 059 topic orphan-review |  |
 | J2027 | mini | open | – | – | chief · Chief: review HOS milestone/row-count PR483 and verify publisher/frontend rollout | PR483 / J2026 |
-| J2028 | mini | open | – | – | chief · Chief: resolve 059 sources orphan-review |  |
 | J2029 | mini | open | – | – | chief · Chief: review Studio activity categories and next-video frontend PR484 | PR484 |
-| J2030 | mini | open | – | – | chief · Chief: resolve 060 topic orphan-review |  |
-| J2031 | mini | open | – | – | chief · Chief: resolve 060 sources orphan-review |  |
-| J2032 | mini | open | – | – | chief · Chief: resolve 061 topic orphan-review |  |
 | J2033 | mini | blocked | codex | – | 009 picture · for codex · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
 | J2034 | mini | open (after J2033) | – | – | 009 picture · chief · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
 | J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
@@ -84,62 +77,18 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2039 | mini | blocked | codex | – | assembly · Film-first order + require --film/--stage on production jobs (audit fix C) |  |
 | J2040 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2043 | mini | open | – | – | 031 shots · for gemini · review · 031 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film) |  |
-| J2045 | mini | open | – | – | chief · Chief: resolve 033 script orphan-blocked |  |
-| J2046 | mini | open | – | – | chief · Chief: resolve 033 topic orphan-blocked |  |
-| J2047 | mini | open | – | – | chief · Chief: resolve 034 script orphan-blocked |  |
-| J2048 | mini | open | – | – | chief · Chief: resolve 034 topic orphan-blocked |  |
-| J2049 | mini | open | – | – | chief · Chief: resolve 035 script orphan-blocked |  |
-| J2050 | mini | open | – | – | chief · Chief: resolve 035 topic orphan-blocked |  |
-| J2051 | mini | open | – | – | chief · Chief: resolve 036 script orphan-blocked |  |
-| J2052 | mini | open | – | – | chief · Chief: resolve 036 topic orphan-blocked |  |
-| J2053 | mini | open | – | – | chief · Chief: resolve 037 script orphan-blocked |  |
-| J2054 | mini | open | – | – | chief · Chief: resolve 037 topic orphan-blocked |  |
-| J2055 | mini | open | – | – | chief · Chief: resolve 038 script orphan-blocked |  |
-| J2056 | mini | open | – | – | chief · Chief: resolve 038 topic orphan-blocked |  |
-| J2057 | mini | open | – | – | chief · Chief: resolve 039 script orphan-blocked |  |
-| J2058 | mini | open | – | – | chief · Chief: resolve 039 topic orphan-blocked |  |
-| J2059 | mini | open | – | – | chief · Chief: resolve 040 script orphan-blocked |  |
-| J2060 | mini | open | – | – | chief · Chief: resolve 040 topic orphan-blocked |  |
-| J2061 | mini | open | – | – | chief · Chief: resolve 041 script orphan-blocked |  |
-| J2062 | mini | open | – | – | chief · Chief: resolve 041 topic orphan-blocked |  |
-| J2063 | mini | open | – | – | chief · Chief: resolve 042 script orphan-blocked |  |
-| J2064 | mini | open | – | – | chief · Chief: resolve 043 script orphan-review |  |
-| J2065 | mini | open | – | – | chief · Chief: resolve 043 topic orphan-blocked |  |
-| J2066 | mini | open | – | – | chief · Chief: resolve 044 script orphan-blocked |  |
-| J2067 | mini | open | – | – | chief · Chief: resolve 044 topic orphan-blocked |  |
-| J2068 | mini | open | – | – | chief · Chief: resolve 045 script orphan-blocked |  |
-| J2069 | mini | open | – | – | chief · Chief: resolve 045 topic orphan-blocked |  |
-| J2070 | mini | open | – | – | chief · Chief: resolve 046 script orphan-blocked |  |
-| J2071 | mini | open | – | – | chief · Chief: resolve 046 topic orphan-blocked |  |
-| J2072 | mini | open | – | – | chief · Chief: resolve 047 script orphan-blocked |  |
-| J2073 | mini | open | – | – | chief · Chief: resolve 047 topic orphan-blocked |  |
-| J2074 | mini | open | – | – | chief · Chief: resolve 048 script orphan-blocked |  |
-| J2075 | mini | open | – | – | chief · Chief: resolve 049 script orphan-review |  |
-| J2076 | mini | open | – | – | chief · Chief: resolve 050 script orphan-review |  |
-| J2077 | mini | open | – | – | chief · Chief: resolve 051 script orphan-review |  |
-| J2078 | mini | open | – | – | chief · Chief: resolve 052 script orphan-review |  |
-| J2079 | mini | open | – | – | chief · Chief: resolve 053 script orphan-review |  |
-| J2080 | mini | open | – | – | chief · Chief: resolve 054 script orphan-review |  |
-| J2081 | mini | open | – | – | chief · Chief: resolve 055 script orphan-review |  |
-| J2082 | mini | open | – | – | chief · Chief: resolve 056 script orphan-review |  |
-| J2083 | mini | open | – | – | chief · Chief: resolve 057 script orphan-review |  |
-| J2084 | mini | open | – | – | chief · Chief: resolve 058 script orphan-review |  |
-| J2085 | mini | open | – | – | chief · Chief: resolve 059 script orphan-review |  |
-| J2086 | mini | open | – | – | chief · Chief: resolve 060 script orphan-blocked |  |
-| J2087 | mini | open | – | – | chief · Chief: resolve 061 script orphan-blocked |  |
-| J2088 | mini | open | – | – | chief · Chief: resolve 061 sources orphan-review |  |
 | J2089 | mini | blocked | codex | – | 032 picture · assembly · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
 | J2090 | cloud | open | – | – | review · 032: review J2089 source identity corrections and 13 teaching-overlay stills | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491 |
 
 Recently finished:
 
-- J2044 done: 032 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film) (Rule-E review GO: fixed R7/R8 VO word split ('towards' 60.00-60.30s -> clause pause 60.92-61.32s so all 1,379 STT words sit cleanly inside a row), added sourced WHO birth-death years/roles (1629-1695, 1905-1973), linked all 7 WHEN dates to progressive timeline, capped every still at <=2 uses, interleaved real plates between CODE graphics, and ensured <=6.0s/cut; committed SHOT_LIST_v02.md (7b45d14ba1), set 032 shots done, and queued J2089 (032 picture: £0 harvest + code_graphics).)
-- J2042 done: 032 shots: shot list from the locked script and voice (WIP film) (SHOT_LIST_v01 written: 52 rows over 582.44 s, timed to locked VO v02b; £0 (2 OMNI Orbit beats flagged with CODE fallbacks); 15 code graphics + harvest list. Stage 032 shots -> review; rule-E review queued as J2044 (Gemini).)
-- J2041 done: 031 shots: shot list from the locked script and voice (WIP film) (SHOT_LIST_v01 written: 54 rows over 568.28 s, timed to locked VO v02a; £0 (2 OMNI Orbit beats flagged with CODE/NASA fallbacks); 16 code graphics + harvest list. Stage 031 shots -> review; rule-E review queued as J2043 (Gemini).)
-- J2026 done: HOS 009: Chief scope remaining 20 picture rows and immediate production handoff (Completed bounded Chief scope: HOS PR407 merged593367b3, ledger PR486 mergedfe178c4c. Live15430 credits, Veo3.1 Quality x1=100,20 rows max3 takes each,cap6000,floor3000. Verified57 local/NAS hashes; historical70/90 and milestones unchanged. J2033 generation now eligible -> J2034 Chief picture review -> J2035 no-spend edit -> J2036 package QA/J1275 chapters -> J2037 Ben watch. No worker pickup yet. No media generated/spend/publishing. Callback trim conflict explicitly assigned J2034.)
-- J2019 done: Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010) (Completed Rule 15 (<=50c, subject + concrete scenario/number/stakes) & Rule 12 audit across OWB 025-061 and HOS 006-013/099; retitled OWB 026 c5AdqQsnnys ('Why Reaching the Nearest Star Takes 75,000 Years', 48c) and OWB 028 F-jImX5h7ws ('What Happens When a Star Enters Our Solar System?', 49c) via Data API with verified readbacks; skipped HOS 006/007 (active Title Test & Compare) and 099 (J0999 lock); updated OWB manifests/UPLOADS.json/status.json/STATUS.md (03777acf6d, 3635d86261) and opened HOS PR #405 (fbb5665b, lint:package PASS); posted #6630573505)
-- J2018 done: Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run (Installed com.owb.missed-runs launch agent; launchctl confirms 1800-second interval, first run exit 0. Log contains tracker, buffer, claude and mini timestamps without Python errors.)
-- J2017 done: Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception (Applied by Claude on Ben's direct 4 Nov instruction: J1752/J1753 done (031/032 voice locked); J1880, J1879, J1834 released; J1810/J2011 cancelled as superseded; J0862 released (ElevenLabs reset 30 Oct).)
-- J2016 done: AR cohort: repair five inherited still-push jitter failures (Technical repair delivered locally aa91ff22bd; persistent /Users/benjaminoats/_desk/handoff/J2016/REPORT.md. AR1v06 AR2v12 AR3v13 clear complete-metadata picture/polish, opening, music/SFX, loop/finish and decode checks. Original AAC, exact timing, sources and h40/h42 overlays verified. AR3 all 354 unaffected decoded frames identical, preserving original loop metrics. Failed candidates retained. Parent J1471 stays 2/3 for Chief evidence/pace review under current Ben-final-watch rule; existing Ben/J1356/publishing holds retained. No media approval, spend, public push or upload.)
-- J2014 done: 026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate (Fixed gate_upcoming.py export_path() to collapse ../../../../Volumes/... NAS paths (so both --stage and launchd TCC detection recognize them), staged HZGTovJu_TQ and upcoming NAS Shorts into ~/_desk/cache/gate-media, and regenerated UPCOMING_SHORTS_GATE.md with HZGTovJu_TQ (and cwU_0WWeNZ4) PASS.)
-- J2012 cancelled: Chief: verify condition for J0936 ()
+- J2088 cancelled: Chief: resolve 061 sources orphan-review ()
+- J2087 cancelled: Chief: resolve 061 script orphan-blocked ()
+- J2086 cancelled: Chief: resolve 060 script orphan-blocked ()
+- J2085 cancelled: Chief: resolve 059 script orphan-review ()
+- J2084 cancelled: Chief: resolve 058 script orphan-review ()
+- J2083 cancelled: Chief: resolve 057 script orphan-review ()
+- J2082 cancelled: Chief: resolve 056 script orphan-review ()
+- J2081 cancelled: Chief: resolve 055 script orphan-review ()
+- J2080 cancelled: Chief: resolve 054 script orphan-review ()
+- J2079 cancelled: Chief: resolve 053 script orphan-review ()
