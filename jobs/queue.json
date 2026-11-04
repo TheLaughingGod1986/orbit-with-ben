@@ -157373,9 +157373,14 @@
           "at": "2026-11-04T01:36Z",
           "by": "codex",
           "what": "step 1 of 3 done: J0529/J0538 cancelled as duplicates of 061 jobs; 044 remains explicitly unlocked, audit unsigned and formal facts/quote checks absent."
+        },
+        {
+          "at": "2026-11-04T01:38Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Evidence PR440 merged after CI PASS; J1928 restores 044/script review after J1785; stage returned to review without claim."
         }
       ],
-      "remaining_action": "Record FIX and restore linked 044 topic/editorial review",
+      "remaining_action": "Verify repaired stage and linked successor, then close and report J1785",
       "kind": "chief",
       "handoff": {
         "film": "044",
@@ -157384,11 +157389,11 @@
         "signature": "8390bd07955cf7e8827d"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T01:36Z",
+        "at": "2026-11-04T01:38Z",
         "by": "codex",
-        "note": "J0529/J0538 cancelled as duplicates of 061 jobs; 044 remains explicitly unlocked, audit unsigned and formal facts/quote "
+        "note": "Evidence PR440 merged after CI PASS; J1928 restores 044/script review after J1785; stage returned to review without clai"
       },
       "taskKeys": [
         "OWB:044"
