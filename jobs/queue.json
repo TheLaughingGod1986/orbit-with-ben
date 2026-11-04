@@ -1,5 +1,5 @@
 {
-  "next_id": 2015,
+  "next_id": 2016,
   "jobs": [
     {
       "id": "J0001",
@@ -155168,6 +155168,11 @@
           "at": "2026-11-04T00:01Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-04T11:00:00Z"
+        },
+        {
+          "at": "2026-11-04T11:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J2015"
         }
       ],
       "remaining_action": "Validate J1809 safe watcher handoff and actual persisted stage ruling; current runtime identity verified",
@@ -155186,7 +155191,8 @@
       "hold": {
         "type": "input",
         "condition": "J1914 directly observed installed AND loaded relay 672fbdd6a32d7c9c with active J1914 runtime, corroborating J1887. Obsolete ac2d15fae277db48 is superseded, not an install target. Still require J1809 safe HOS watcher handoff without historical replay, J1810 genuine listening route or precise limitation, and a real eligible Chief stage ruling persisted after done with successor action. Runtime identity alone is not end-to-end validation. Prior PR397 and J1887 evidence retained.",
-        "check_at": "2026-11-04T11:00:00Z"
+        "check_at": "2026-11-04T12:15:30+00:00",
+        "recheck_task": "J2015"
       },
       "superseded_holds": [
         {
@@ -172511,6 +172517,37 @@
       "remaining_action": "026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate",
       "due": "2026-11-12T00:00:00Z",
       "kind": "qa"
+    },
+    {
+      "id": "J2015",
+      "title": "Chief: verify condition for J1754",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1754: J1914 directly observed installed AND loaded relay 672fbdd6a32d7c9c with active J1914 runtime, corroborating J1887. Obsolete ac2d15fae277db48 is superseded, not an install target. Still require J1809 safe HOS watcher handoff without historical replay, J1810 genuine listening route or precise limitation, and a real eligible Chief stage ruling persisted after done with successor action. Runtime identity alone is not end-to-end validation. Prior PR397 and J1887 evidence retained.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1754 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T11:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T11:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Validate J1809 safe watcher handoff and actual persisted stage ruling; current runtime identity verified",
+      "kind": "chief",
+      "recheck_of": "J1754",
+      "due": "2026-11-04T12:15:30+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],

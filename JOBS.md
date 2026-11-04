@@ -124,6 +124,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2012 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 | J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 | J2014 | mini | open | – | – | qa · 026 gate: HZGTovJu_TQ FAIL is 'Operation not permitted' reading the NAS master; fix access, rerun gate |  |
+| J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |
 
 Recently finished:
 
