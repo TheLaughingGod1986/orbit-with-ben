@@ -165685,12 +165685,12 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "since": "2026-11-04T20:56Z",
-      "eta": "2026-11-04T22:56Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:56Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-03T18:56Z",
@@ -165806,6 +165806,11 @@
           "at": "2026-11-04T22:11Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 complete: committed and pushed gemini/j1880-franklin-v03-recipe (bd530249, PR #409) from clean worktree /private/tmp/j1880-hos-wt; check_all.sh ALL CHECKS PASS"
+        },
+        {
+          "at": "2026-11-04T22:11Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete J1880 and hand off PR #409 + recipe to J1881 elected-Chief scope review",
