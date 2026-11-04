@@ -166711,9 +166711,14 @@
           "at": "2026-11-04T02:26Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T02:26Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Three steps: read approval history; verify current evidence; update parent hold and close verification"
         }
       ],
-      "remaining_action": "Verify readiness: Clear S2 bed and local listening, finish v07 repairs, final gates and replacement approvals; disk headroom verified",
+      "remaining_action": "Verify J0936 evidence and approvals, then record whether its hold can clear",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-04T02:50:58+00:00",
@@ -166723,9 +166728,13 @@
         "of": 3,
         "at": "2026-11-04T02:26Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Three steps: read approval history; verify current evidence; update parent hold and close verification"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:028"
+      ]
     },
     {
       "id": "J1932",
