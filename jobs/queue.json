@@ -1,5 +1,5 @@
 {
-  "next_id": 1957,
+  "next_id": 1958,
   "jobs": [
     {
       "id": "J0001",
@@ -168641,6 +168641,34 @@
       ],
       "remaining_action": "Verify all Olympus Mons spoken and visual claims through Gemini; report flags to J1953",
       "kind": "facts"
+    },
+    {
+      "id": "J1957",
+      "title": "059 Olympus Mons: direct MUST QUOTE review after Gemini facts",
+      "needs": "any",
+      "repo": "owb",
+      "body": "OWB:059 direct MUST QUOTE review after the linked formal Gemini facts job created by J1802. Read jobs/reviews/J1802/CHIEF_SOURCES_RULING_2026-11-04.md, actual Gemini output and input hashes, SOURCES and v01 draft. Follow review specialist routing; deliver 01_Script/CLAUDE_QUOTE_CHECK_v01.md identifying actual reviewer/model/date (never impersonate Claude). Directly open each primary source for key spoken numbers and every MUST QUOTE row/subclaim, test quote existence and whether context supports the exact spoken/visual claim. A Gemini verdict is not sufficient. Return PASS/FLAG/UNVERIFIABLE per claim with URL/excerpt locator and input hashes; row16 synthesis needs individual traceable support. Cover height references/comparisons, pressure units, crust/lithosphere, activity/ice qualifiers, composition provenance, dates and WHO years. Do not rewrite spoken lines or certify media.\nSend remaining corrections to existing elected-Chief job J1953, which owns editorial resolution and explicit source/script lock. Any revised wording or new on-screen claim must receive delta facts and direct-quote checks against the final candidate before lock. Quote review completion alone does not approve 059 or fulfil J1955 topic evidence. No spend, VO, generation, upload, scheduling or visibility change. Keep sources unapproved when any required check remains unresolved. Preserve original drafts and focus/Ben gates.\n",
+      "ref": "J1802",
+      "film": "059",
+      "stage": "sources",
+      "after": "J1956",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T05:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T05:05Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Directly verify source quotations and claim context; return unresolved fixes to J1953",
+      "kind": "review"
     }
   ],
   "focus": [],
