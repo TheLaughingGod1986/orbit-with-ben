@@ -162244,9 +162244,14 @@
           "at": "2026-11-04T10:00Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verifying PR437 checkpoint against latest main, updating PR437 description/observations, and parking for Chief review"
+        },
+        {
+          "at": "2026-11-04T10:04Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: PR437 synced with main at 1c309dd443; 292 focused tests + core_sync/py_compile/diff PASS; rollout_enabled=False"
         }
       ],
-      "remaining_action": "Exact-head Chief review of PR437 and observed real-host transitions before enabling capacity rollout",
+      "remaining_action": "Exact-head Chief review of PR437 head 1c309dd443 and observed real-host transitions before enabling capacity rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162257,9 +162262,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T10:00Z",
+        "at": "2026-11-04T10:04Z",
         "by": "gemini",
-        "note": "Verifying PR437 checkpoint against latest main, updating PR437 description/observations, and parking for Chief review"
+        "note": "PR437 synced with main at 1c309dd443; 292 focused tests + core_sync/py_compile/diff PASS; rollout_enabled=False"
       },
       "rerouted_from": {
         "needs": "mini",
