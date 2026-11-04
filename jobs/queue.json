@@ -170113,13 +170113,13 @@
       "stage": "topic",
       "after": "J1801",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T12:57Z",
-      "eta": "2026-11-04T14:57Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T04:59Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-04T04:59Z",
@@ -170160,6 +170160,11 @@
           "at": "2026-11-04T13:10Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 complete: committed J1955 topic evidence report, TOPIC_OPPORTUNITY_SCORE.md, PRE_BUILD_VIDIQ_AUDIT.md and PRODUCTION_CHECKLIST_V2.md (fc24f4c8ff); recommending DEFER to J1953"
+        },
+        {
+          "at": "2026-11-04T13:10Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Hand off completed J1955 topic evidence and DEFER recommendation to dependent Chief job J1953",
@@ -170182,7 +170187,8 @@
       },
       "taskKeys": [
         "OWB:059"
-      ]
+      ],
+      "done_ref": "fc24f4c8ff"
     },
     {
       "id": "J1956",
