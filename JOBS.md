@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1953 | mini | open (after J1800) | – | – | 059 script · chief · 059 Olympus Mons: restore script review and dependent lock checks | J1800 |
 | J1955 | mini | open (after J1801) | – | – | 059 topic · for gemini · review · `gemini-argon` · 059 Olympus Mons: verify topic neighbours and audience evidence | J1801 |
 | J1956 | gemini | open (after J1802) | – | – | 059 sources · facts · 059 Olympus Mons: formal Gemini sources and claims verification | J1802 |
-| J1957 | any | open (after J1956) | – | – | 059 sources · review · 059 Olympus Mons: direct MUST QUOTE review after Gemini facts | J1802 |
+| J1957 | mini | open (after J1956) | – | – | 059 sources · for gemini · review · `gemini-argon` · 059 Olympus Mons: direct MUST QUOTE review after Gemini facts | J1802 |
 
 Recently finished:
 
