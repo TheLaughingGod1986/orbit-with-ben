@@ -11,7 +11,7 @@ import time
 import unittest
 from unittest.mock import patch
 
-from capacity_supervisor import run, utcnow
+from capacity_supervisor import run, dispatch_claimed, utcnow
 from execution_leases import Registry
 
 
@@ -205,6 +205,65 @@ class Supervisor(unittest.TestCase):
                     os.killpg(child_pid, signal.SIGKILL)
                 except ProcessLookupError:
                     pass
+
+    def test_dispatch_claimed_requires_explicit_rollout_and_rolls_back_failed_claim(self):
+        import test_capacity_reservations as fixtures
+        fixture = fixtures.Reservations()
+        fixture.setUp()
+        data = fixture.data
+        evidence = {k: v for k, v in fixture.kw.items() if k not in {"token", "host_id", "worker"}}
+
+        def transaction(apply, message):
+            return apply(data)[:2]
+
+        with patch("jobs.with_git", side_effect=transaction), \
+                patch("chief_relay.current_execution", return_value=None), \
+                patch("chief_relay.worker_capabilities", return_value={}):
+            # Rollout is disabled by default.
+            with self.assertRaisesRegex(ValueError, "rollout is disabled"):
+                dispatch_claimed(
+                    evidence=lambda: evidence, registry=self.registry,
+                    token=fixture.kw["token"], host_id="mini", worker="codex",
+                    claimant="codex", read_claim=lambda: data["jobs"][0],
+                    guard=lambda c: True, installed_head=evidence["installed_head"],
+                    reviewed_head=evidence["reviewed_head"],
+                    argv=[sys.executable, "-c", "print('ok')"], cwd=self.root,
+                    log_path=self.root / "dispatch.log", cap_seconds=2,
+                    clock=lambda: evidence["at"],
+                )
+            self.assertNotIn("dispatch_reservation", data["jobs"][0])
+
+            # If consume fails (e.g. wrong claimant for role), reservation is rolled back automatically.
+            with self.assertRaisesRegex(ValueError, "claim consumption failed"):
+                dispatch_claimed(
+                    evidence=lambda: evidence, registry=self.registry,
+                    token=fixture.kw["token"], host_id="mini", worker="codex",
+                    claimant="macbook", read_claim=lambda: data["jobs"][0],
+                    guard=lambda c: True, installed_head=evidence["installed_head"],
+                    reviewed_head=evidence["reviewed_head"],
+                    argv=[sys.executable, "-c", "print('ok')"], cwd=self.root,
+                    log_path=self.root / "dispatch.log", cap_seconds=2,
+                    rollout_enabled=True, rollout_approval_ref="J1843-test",
+                    clock=lambda: evidence["at"],
+                )
+            self.assertEqual(data["jobs"][0]["status"], "open")
+            self.assertNotIn("dispatch_reservation", data["jobs"][0])
+
+            # With rollout explicitly enabled in test, reserve -> consume -> supervised execution succeeds without auto-completing job.
+            outcome = dispatch_claimed(
+                evidence=lambda: evidence, registry=self.registry,
+                token=fixture.kw["token"], host_id="mini", worker="codex",
+                claimant="codex", read_claim=lambda: data["jobs"][0],
+                guard=lambda c: True, installed_head=evidence["installed_head"],
+                reviewed_head=evidence["reviewed_head"],
+                argv=[sys.executable, "-c", "print('dispatched')"], cwd=self.root,
+                log_path=self.root / "dispatch.log", cap_seconds=2,
+                rollout_enabled=True, rollout_approval_ref="J1843-test",
+                clock=lambda: evidence["at"],
+            )
+            self.assertEqual((outcome["phase"], outcome["exit_code"]), ("exited", 0))
+            self.assertEqual(data["jobs"][0]["status"], "claimed")
+            self.assertEqual((self.root / "dispatch.log").read_text(), "dispatched\n")
 
 
 if __name__ == "__main__":

@@ -127,6 +127,25 @@ class Claims(unittest.TestCase):
         self.data["jobs"][0].update(repo="hos", film="007", stage="edit")
         with self.assertRaisesRegex(ValueError, "HOS board"):
             self.consume()
+        # With an explicit HOS board transaction callback, consumption succeeds or rolls back on conflict.
+        def transaction(apply, message):
+            return apply(self.data)[:2]
+        with patch("jobs.with_git", side_effect=transaction):
+            value, error = reservations.consume_with_git(
+                evidence=lambda: self.evidence, token=self.kw["token"],
+                host_id="mini", worker="codex", claimant="codex",
+                hos_board_claim=lambda job_doc, by, at: "held by another",
+            )
+            self.assertIsNone(value)
+            self.assertIn("HOS board stage held", error)
+            self.assertEqual(self.data["jobs"][0]["status"], "open")
+            value, error = reservations.consume_with_git(
+                evidence=lambda: self.evidence, token=self.kw["token"],
+                host_id="mini", worker="codex", claimant="codex",
+                hos_board_claim=lambda job_doc, by, at: None,
+            )
+            self.assertIsNone(error)
+            self.assertEqual(value["status"], "claimed")
 
     def test_transaction_board_conflict_preserves_reservation_and_queue(self):
         self.data["jobs"][0].update(film="028", stage="edit")

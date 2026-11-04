@@ -251,3 +251,51 @@ class Registry:
                 raise ValueError("only the recorded supervisor may finish its lease")
             rows.remove(match)
             return True
+
+    def resolve_quarantine(self, token, *, at, approved_by, approval_ref, reason,
+                           members=group_members):
+        """Explicit Chief/operator clearance for a quarantined unknown-orphan slot.
+
+        Requires a dead supervisor, verified empty child group (if child_pid was
+        recorded), and writes an immutable audit receipt without touching the
+        durable launch seal so the old token can still never be replayed.
+        """
+        import hashlib
+        if any(not isinstance(v, str) or not v.strip()
+               for v in (token, approved_by, approval_ref, reason)):
+            raise ValueError("quarantine resolution requires token, approved_by, approval_ref and reason")
+        with self.locked() as rows:
+            match = next((r for r in rows if r.get("token") == token), None)
+            if not match:
+                raise ValueError("no matching execution lease to resolve")
+            self._validate_row(match, at)
+            if self.probe(match["pid"]) == match["process_identity"]:
+                raise ValueError("live supervisor cannot be cleared as a quarantined orphan")
+            if not match.get("child_may_exist") and not match.get("recovery_required"):
+                raise ValueError("unarmed dead supervisor recovers automatically via observe/reconcile")
+            child_pid = match.get("child_pid")
+            if child_pid is not None:
+                if members(child_pid):
+                    raise ValueError("recorded child group still has executing members")
+            audit_dir = self.root / (self.host + "-quarantine-resolutions")
+            audit_dir.mkdir(exist_ok=True)
+            key = hashlib.sha256(token.encode()).hexdigest()
+            audit_path = audit_dir / (key + ".json")
+            receipt = dict(
+                version=1,
+                host=self.host,
+                job=match["job"],
+                token=token,
+                worker=match["worker"],
+                account=match["account"],
+                approved_by=approved_by.strip(),
+                approval_ref=approval_ref.strip(),
+                reason=reason.strip(),
+                at=at.isoformat(),
+            )
+            with audit_path.open("x") as out:
+                json.dump(receipt, out, allow_nan=False)
+                out.flush()
+                os.fsync(out.fileno())
+            rows.remove(match)
+            return receipt

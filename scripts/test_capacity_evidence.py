@@ -240,6 +240,109 @@ class Evidence(unittest.TestCase):
         with self.assertRaises(ValueError):
             evidence.measure(self.root, run=lambda _:"")
 
+    def test_produce_probes_enforces_outage_chronology_and_shared_account_taint(self):
+        self.config["workers"]["cursor"] = dict(account="codex-shared", models=["cursor-auto"])
+        self.write()
+        verified_workers = {
+            "codex": dict(at=T.isoformat(), ready=True, account="codex-shared",
+                          auth_evidence="verified execution J1900", verified_models=["gpt-6.1-sol"]),
+            "cursor": dict(at=T.isoformat(), ready=True, account="codex-shared",
+                           auth_evidence="verified execution J1901", verified_models=["cursor-auto"]),
+        }
+        verified_accounts = {
+            "codex-shared": dict(at=T.isoformat(), ready=True, limit=1,
+                                 quota_evidence="verified subscription quota"),
+        }
+        doc = evidence.produce_probes(
+            self.root, at=T, verified_workers=verified_workers,
+            verified_accounts=verified_accounts,
+            measurement=lambda _: copy.deepcopy(self.measured),
+        )
+        self.assertTrue(doc["workers"]["codex"]["ready"])
+        self.assertTrue(doc["accounts"]["codex-shared"]["ready"])
+        self.assertEqual(len(self.plan()["proposals"]), 1)
+
+        # Outage at T (even with expired retryAt) blocks readiness until a newer execution succeeds.
+        outages = {
+            "codex": dict(at=T.isoformat(), retryAt=(T - dt.timedelta(minutes=5)).isoformat(),
+                          auth_required=True)
+        }
+        evidence.produce_probes(
+            self.root, at=T, verified_workers=verified_workers,
+            verified_accounts=verified_accounts, outages=outages,
+            measurement=lambda _: copy.deepcopy(self.measured),
+        )
+        host_doc, _ = self.collect()
+        self.assertNotIn("codex", host_doc["workers"])
+        self.assertIn("cursor", host_doc["workers"])
+
+        # Shared-account quota failure on cursor taints codex-shared for codex too.
+        outages = {"cursor": dict(at=T.isoformat(), out_of_usage=True)}
+        evidence.produce_probes(
+            self.root, at=T, verified_workers=verified_workers,
+            verified_accounts=verified_accounts, outages=outages,
+            measurement=lambda _: copy.deepcopy(self.measured),
+        )
+        host_doc, accounts_doc = self.collect()
+        self.assertEqual(host_doc["workers"], {})
+        self.assertEqual(accounts_doc, {})
+
+    def test_produce_probes_rejects_login_only_and_secret_strings(self):
+        verified_workers = {
+            "codex": dict(at=T.isoformat(), ready=True, login_only=True, account="codex-shared",
+                          auth_evidence="Login successful!", verified_models=["gpt-6.1-sol"]),
+        }
+        verified_accounts = {
+            "codex-shared": dict(at=T.isoformat(), ready=True, limit=1,
+                                 quota_evidence="verified quota"),
+        }
+        evidence.produce_probes(
+            self.root, at=T, verified_workers=verified_workers,
+            verified_accounts=verified_accounts,
+            measurement=lambda _: copy.deepcopy(self.measured),
+        )
+        self.assertEqual(self.plan()["proposals"], [])
+
+        verified_workers["codex"]["login_only"] = False
+        for secret in ["Bearer abcdef123456", "user@example.com", "sk-1234567890abcdef", "token=xyz"]:
+            verified_workers["codex"]["auth_evidence"] = secret
+            with self.assertRaisesRegex(ValueError, "secret"):
+                evidence.produce_probes(
+                    self.root, at=T, verified_workers=verified_workers,
+                    verified_accounts=verified_accounts,
+                    measurement=lambda _: copy.deepcopy(self.measured),
+                )
+
+    def test_transaction_evidence_combines_boards_and_legacy_lease(self):
+        owb = self.root / "owb"
+        hos = self.root / "hos"
+        (owb / "02_Video-Projects" / "028_Test").mkdir(parents=True)
+        (hos / "02_Video-Projects" / "007_Hos").mkdir(parents=True)
+        (owb / "02_Video-Projects" / "028_Test" / "status.json").write_text(json.dumps(dict(
+            film="028", claims=[dict(stage="edit", by="codex", at=T.isoformat(),
+                                     eta=(T + dt.timedelta(minutes=20)).isoformat(), note="live")],
+            stages={},
+        )))
+        (hos / "02_Video-Projects" / "007_Hos" / "status.json").write_text(json.dumps(dict(
+            film="007", claims=[], stages={"vo": {"state": "doing"}},
+        )))
+        with patch.object(evidence, "installed_head", return_value=HEAD):
+            tx = evidence.transaction_evidence(
+                self.root, lease_root=self.root / "leases", owb_root=owb, hos_root=hos,
+                reviewed_head=HEAD, chief="codex", choose_worker=choose,
+                legacy_lease=dict(job="J1843", worker="codex", host="registered-mini", pid=101,
+                                  startedAt=T.isoformat(), expiresAt=(T + dt.timedelta(minutes=10)).isoformat()),
+                clock=lambda: T, measurement=lambda _: copy.deepcopy(self.measured),
+                process_alive=lambda pid: True,
+            )
+        self.assertEqual(tx["stage_claims"], [("hos", "007", "vo"), ("owb", "028", "edit")])
+        self.assertEqual(len(tx["leases"]), 1)
+        self.assertEqual(tx["leases"][0]["account"], "")
+        # Legacy lease without account attribution prevents spare shared-account proposals.
+        plan = capacity.propose({"jobs": [job("J1900")]}, tx["hosts"], tx["leases"],
+                                tx["accounts"], T, "codex", choose)
+        self.assertEqual(plan["proposals"], [])
+
 
 if __name__ == "__main__":
     unittest.main()

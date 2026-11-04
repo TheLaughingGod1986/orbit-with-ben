@@ -210,6 +210,36 @@ class Leases(unittest.TestCase):
                    "201 201 S\n202 201 Z\n203 999 S\n", "")):
             self.assertEqual(group_members(201), [201])
 
+    def test_resolve_quarantine_requires_dead_supervisor_empty_group_and_writes_audit(self):
+        self.registry.record(self.reservation, 101, T, 120)
+        self.registry.arm("token-A", 101)
+        # Live supervisor cannot be cleared as quarantined.
+        with self.assertRaisesRegex(ValueError, "live supervisor"):
+            self.registry.resolve_quarantine(
+                "token-A", at=T, approved_by="gemini", approval_ref="J1843", reason="checked"
+            )
+        self.processes[101] = None
+        # Attached child group with executing members cannot be cleared.
+        self.processes[201] = "child-start"
+        path = pathlib.Path(self.tmp.name) / "mini.json"
+        rows = json.loads(path.read_text())
+        rows[0]["child_pid"] = 201
+        path.write_text(json.dumps(rows))
+        with self.assertRaisesRegex(ValueError, "executing members"):
+            self.registry.resolve_quarantine(
+                "token-A", at=T, approved_by="gemini", approval_ref="J1843",
+                reason="manual ps check", members=lambda p: [202]
+            )
+        # Once group is verified empty (or unattached gap manually verified), resolution writes audit and frees slot.
+        receipt = self.registry.resolve_quarantine(
+            "token-A", at=T, approved_by="gemini", approval_ref="J1843",
+            reason="manual ps check confirmed no child", members=lambda p: []
+        )
+        self.assertEqual(receipt["token"], "token-A")
+        self.assertEqual(self.registry.observe(T), [])
+        audits = list((pathlib.Path(self.tmp.name) / "mini-quarantine-resolutions").glob("*.json"))
+        self.assertEqual(len(audits), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

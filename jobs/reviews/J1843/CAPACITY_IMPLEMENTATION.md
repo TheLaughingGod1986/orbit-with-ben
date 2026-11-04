@@ -499,3 +499,73 @@ suite uses fake CLIs, and process/Git races use harmless local fixtures; none is
 real host rollout proof. `core_sync.py check` PASS (56 shared files), Python
 compilation PASS and `git diff --check` PASS. Final thread check: read through
 #6624168164. No final implementation PASS, merge or rollout decision was made.
+
+## Resume checkpoint — 4 November, 08:20–08:33 UTC (Gemini)
+
+Resumed the existing draft **PR437**, branch `codex/J1843-capacity`, in clean
+worktree `/private/tmp/J1843-gemini` and merged current `origin/main`. Completed
+the remaining Step 2 engineering adapters while keeping rollout disabled by
+default (`rollout_enabled=False`) pending exact-head Chief review and observed
+real-host transitions:
+
+1. **Trusted local receipt producer & outage chronology (`capacity_evidence.py`):**
+   - Added `produce_probes(...)` to write identity-bound `probes.json` atomically
+     (`0o600` inside the user-owned `0o700` evidence directory) from verified
+     execution receipts and recorded outage chronology.
+   - Enforces strict outage chronology: an active or newer outage timestamp
+     (`obs_at <= outage_at`), an expired retry timer (`retryAt <= at`), or a
+     login-only check (`login_only=True`) never produces a `ready=True` worker or
+     account receipt.
+   - Shared-account quota failures (`out_of_usage=True` or `account_wide=True`)
+     taint the shared account pool across all workers bound to that account alias.
+   - Scrubs and rejects secret-like strings (tokens, bearer strings, API keys,
+     email addresses) before writing receipts.
+   - Added `board_stage_claims(...)` and `transaction_evidence(...)` to assemble
+     fresh timestamps, exact Git head, local host/account evidence, local
+     `Registry.observe(at)` process leases, legacy serial `execution.json` leases
+     (preserving unattributed legacy lease blocking of spare shared-account
+     capacity), remote host/lease records, and both OWB and HOS board stage
+     claims on every canonical Git transaction retry.
+2. **Explicit unknown-orphan quarantine resolution (`execution_leases.py`):**
+   - Added `Registry.resolve_quarantine(...)` requiring explicit `approved_by`,
+     `approval_ref`, and `reason`, verifying that the supervisor PID is dead and
+     any recorded `child_pid` process group has no executing members, and writing
+     an immutable audit receipt under `<host>-quarantine-resolutions/` while
+     preserving the durable launch seal in `<host>-launches/`.
+3. **End-to-end portable outbound/inbound/return adapters (`portable_transfer.py`):**
+   - Added `stage_outbound(...)`, `input_receipts_map(...)`, `preflight_inbound(...)`,
+     `stage_return(...)`, and `consume_return(...)`.
+   - Consuming-host preflight rehashes every approved input file and rejects any
+     unexpected files before execution. Return consumption on Mini verifies the
+     output receipt, rejects unexpected or missing files outside `contract["outputs"]`,
+     and copies verified outputs into an isolated review bundle with
+     `stage_approved=False`, `keep_approved=False`, and `job_completed=False`.
+4. **Canonical reservation rollback, HOS board adapter & launch pipeline (`capacity_reservations.py`, `capacity_supervisor.py`):**
+   - Added `cancel_with_git(...)` and optional `hos_board_claim` transaction
+     callback support in `consume_with_git(...)` (preserving fail-closed rejection
+     of HOS film stages when no HOS board transaction adapter is supplied).
+   - Added `dispatch_claimed(...)` in `capacity_supervisor.py` connecting
+     `reserve_with_git` -> `consume_with_git` (with automatic `cancel_with_git`
+     rollback on claim failure) -> supervised `run(...)` with portable inbound
+     receipt preflight, gated behind `rollout_enabled=False` by default and
+     requiring `installed_head == reviewed_head` plus `rollout_approval_ref`.
+
+Validation on this checkpoint: **292 tests PASS** across the complete focused
+capacity/evidence/claims/Git-race/supervisor (92), execution-lease (19),
+portable-transfer (13), workflow (31), dispatcher-handoff (16), queue (30),
+relay with fake CLIs (74), and MacBook worker (17) suites. `core_sync.py check`
+PASS (56 shared files), `py_compile` PASS and `git diff --check` PASS.
+
+Fresh observations at `08:31Z`:
+- `chief_relay.py capacity` validated the sole Mini execution lease (`J1843`,
+  owner `gemini`, ending `08:45:33Z`). Local Mini resource measurements succeeded
+  (`arm64`, `27.76 GiB` free disk, load `2.04`, `1.38 GiB` free+speculative RAM,
+  on AC power). Cached MacBook heartbeat (`08:22:38Z`, age ~548s) remains generic
+  `macbook`, `idle`, unverified (`macbook_capacity_verified=false`,
+  `availability="unknown"`, `free_slot_at=null`).
+- `chief_relay.py status` shows Codex has recovered from its retry window and is
+  once again the higher-priority elected acting Chief (`Chief: Codex`). Per the
+  acting-Chief handback rule, Step 3 (`exact-head Chief review and observed real
+  host transitions`) is handed back to Codex on this same job and PR #437 with
+  progress advanced to **2/3**. No rollout, extra lane, spend or publishing was
+  enabled.

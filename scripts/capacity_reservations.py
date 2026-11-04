@@ -109,7 +109,24 @@ def reserve_with_git(*, evidence, token, host_id, worker):
     return jobs.with_git(apply, "jobs: reserve measured capacity (not a launch)")
 
 
-def consume(data, *, token, host_id, worker, claimant, eta_min=25, **evidence):
+def cancel_with_git(*, token, host_id, worker, reason, clock=None):
+    """Roll back an unclaimed reservation through the canonical queue transaction."""
+    import jobs
+
+    def apply(data):
+        try:
+            at = clock() if clock else dt.datetime.now(dt.timezone.utc)
+            removed = cancel(data, token=token, host_id=host_id, worker=worker,
+                             at=at, reason=reason)
+            return removed, None, []
+        except (ValueError, OSError) as error:
+            return None, str(error), []
+
+    return jobs.with_git(apply, "jobs: cancel unclaimed capacity reservation")
+
+
+def consume(data, *, token, host_id, worker, claimant, eta_min=25,
+            allow_hos_stage=False, **evidence):
     """Revalidate a reservation and produce a canonical claim, never a launch.
 
     Mutate only after all queue/evidence checks pass. Laptop claims use macbook
@@ -142,7 +159,7 @@ def consume(data, *, token, host_id, worker, claimant, eta_min=25, **evidence):
         raise ValueError("reservation expired or no longer reserved")
     if type(eta_min) is not int or not 1 <= eta_min <= 25:
         raise ValueError("bounded claim estimate required")
-    if original.get("repo") == "hos" and original.get("film"):
+    if original.get("repo") == "hos" and original.get("film") and not allow_hos_stage:
         raise ValueError("HOS film claim needs a supported HOS board transaction")
     if any(j.get("status") == "claimed" and j.get("by") in {worker, claimant}
            for j in rows if j is not original):
@@ -178,8 +195,9 @@ def consume(data, *, token, host_id, worker, claimant, eta_min=25, **evidence):
     return copy.deepcopy(original)
 
 
-def consume_with_git(*, evidence, token, host_id, worker, claimant, eta_min=25):
-    """Queue and OWB board claim through the existing compare-and-push retry.
+def consume_with_git(*, evidence, token, host_id, worker, claimant, eta_min=25,
+                     hos_board_claim=None):
+    """Queue and OWB/HOS board claim through the existing compare-and-push retry.
 
     No CLI or production caller is enabled. Every retry recollects evidence.
     A returned claim still needs a bounded supervisor and local input rehash.
@@ -194,13 +212,18 @@ def consume_with_git(*, evidence, token, host_id, worker, claimant, eta_min=25):
                              if (j.get("dispatch_reservation") or {}).get("token") == token), {})
             already_claimed = previous.get("status") == "claimed"
             value = consume(data, token=token, host_id=host_id, worker=worker,
-                            claimant=claimant, eta_min=eta_min, **observed)
+                            claimant=claimant, eta_min=eta_min,
+                            allow_hos_stage=hos_board_claim is not None, **observed)
             touched = []
             if jobs.on_board(value) and not already_claimed:
                 error = jobs.board_claim(value, claimant, observed["at"])
                 if error:
                     raise ValueError("board stage held: " + error)
                 touched.append(jobs.film_status_path(value))
+            elif value.get("repo") == "hos" and value.get("film") and not already_claimed:
+                error = hos_board_claim(value, claimant, observed["at"])
+                if error:
+                    raise ValueError("HOS board stage held: " + error)
             return value, None, touched
         except (ValueError, OSError) as error:
             data.clear()

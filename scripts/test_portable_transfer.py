@@ -125,6 +125,72 @@ class Transfer(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "hash mismatch"):
             transfer.verify_receipt(receipt, self.contract, returned, **dict(self.args, direction="output"))
 
+    def test_end_to_end_outbound_inbound_return_and_review_staging_without_approval(self):
+        job_doc = dict(
+            id="J1834",
+            kind="assembly",
+            portable=dict(
+                version=1,
+                approved_by="gemini",
+                approval_ref="J1843",
+                no_spend=True,
+                no_publish=True,
+                resources=["cpu"],
+                output_receipts_required=True,
+                inputs=[dict(path="approved.txt", sha256=self.rows[0]["sha256"], approval_ref="J1843")],
+                outputs=["out/report.txt"],
+            ),
+        )
+        outbound, in_receipt = transfer.stage_outbound(
+            job_doc, reservation="unique-123", host="registered-laptop",
+            source_root=self.source, staging_parent=self.root, at=T, max_bytes=100, max_files=2
+        )
+        receipts_map = transfer.input_receipts_map(
+            in_receipt, job_doc["portable"], outbound,
+            job="J1834", reservation="unique-123", host="registered-laptop", at=T, max_bytes=100
+        )
+        self.assertTrue(receipts_map["approved.txt"]["readable"])
+        transfer.preflight_inbound(
+            job_doc, reservation="unique-123", host="registered-laptop",
+            bundle_root=outbound, receipt=in_receipt, at=T, max_bytes=100
+        )
+        # Extra unapproved file in inbound bundle is rejected at preflight.
+        (outbound / "extra.txt").write_bytes(b"extra")
+        with self.assertRaisesRegex(ValueError, "differ"):
+            transfer.preflight_inbound(
+                job_doc, reservation="unique-123", host="registered-laptop",
+                bundle_root=outbound, receipt=in_receipt, at=T, max_bytes=100
+            )
+        (outbound / "extra.txt").unlink()
+
+        # Worker writes scoped output and stages return bundle.
+        (outbound / "out").mkdir()
+        (outbound / "out" / "report.txt").write_bytes(b"result")
+        ret_bundle, out_receipt = transfer.stage_return(
+            job_doc, reservation="unique-123", host="registered-laptop",
+            work_root=outbound, return_parent=self.root, at=T, max_bytes=100, max_files=2
+        )
+        review_dir = self.root / "reviews"
+        review_dir.mkdir()
+        consumed = transfer.consume_return(
+            job_doc, reservation="unique-123", host="registered-laptop",
+            return_bundle=ret_bundle, receipt=out_receipt, review_parent=review_dir,
+            at=T, max_bytes=100, max_files=2
+        )
+        self.assertFalse(consumed["stage_approved"])
+        self.assertFalse(consumed["keep_approved"])
+        self.assertFalse(consumed["job_completed"])
+        self.assertEqual((pathlib.Path(consumed["review_bundle"]) / "out" / "report.txt").read_bytes(), b"result")
+
+        # Unexpected file in return bundle is rejected before review staging.
+        (ret_bundle / "unexpected.txt").write_bytes(b"x")
+        with self.assertRaisesRegex(ValueError, "unexpected"):
+            transfer.consume_return(
+                job_doc, reservation="unique-123", host="registered-laptop",
+                return_bundle=ret_bundle, receipt=out_receipt, review_parent=review_dir,
+                at=T, max_bytes=100, max_files=2
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

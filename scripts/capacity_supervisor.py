@@ -147,3 +147,71 @@ def run(*, registry, read_claim, guard, installed_head, reviewed_head, argv,
         registry.finish(receipt["token"], os.getpid())
     outcome["finishedAt"] = clock().isoformat()
     return outcome
+
+
+def dispatch_claimed(*, evidence, registry, token, host_id, worker, claimant,
+                     read_claim, guard, installed_head, reviewed_head, argv,
+                     cwd, log_path, cap_seconds, eta_min=25,
+                     rollout_enabled=False, rollout_approval_ref="",
+                     portable_receipt=None, max_portable_bytes=0,
+                     hos_board_claim=None, clock=utcnow):
+    """Canonical reserve -> claim -> supervised launch pipeline (rollout disabled by default).
+
+    If consume_with_git fails after a reservation is written, rolls back the
+    unclaimed reservation via cancel_with_git. Never marks a job done or approves
+    any stage; portable jobs verify their inbound receipt on the consuming host
+    before spawning.
+    """
+    import capacity_reservations as reservations
+    import portable_transfer
+
+    if (rollout_enabled is not True
+            or not isinstance(rollout_approval_ref, str)
+            or not rollout_approval_ref.strip()
+            or not installed_head
+            or installed_head != reviewed_head):
+        raise ValueError("capacity dispatch rollout is disabled pending exact-head Chief review")
+
+    reserved, error = reservations.reserve_with_git(
+        evidence=evidence, token=token, host_id=host_id, worker=worker
+    )
+    if error or not reserved:
+        raise ValueError("reservation failed: " + str(error or "no proposal"))
+
+    claimed, error = reservations.consume_with_git(
+        evidence=evidence, token=token, host_id=host_id, worker=worker,
+        claimant=claimant, eta_min=eta_min, hos_board_claim=hos_board_claim
+    )
+    if error or not claimed:
+        reservations.cancel_with_git(
+            token=token, host_id=host_id, worker=worker,
+            reason="consume failed: " + str(error or "rejected"), clock=clock
+        )
+        raise ValueError("claim consumption failed: " + str(error or "rejected"))
+
+    def default_preflight(claim_doc, work_dir):
+        if claim_doc.get("portable"):
+            if claimant == "macbook" or portable_receipt is not None:
+                if not isinstance(portable_receipt, dict):
+                    raise ValueError("portable launch on consuming host requires inbound receipt")
+                portable_transfer.preflight_inbound(
+                    claim_doc, reservation=token, host=host_id,
+                    bundle_root=work_dir, receipt=portable_receipt,
+                    at=clock(), max_bytes=max_portable_bytes
+                )
+            else:
+                capacity.verify_inputs(claim_doc["portable"], work_dir)
+
+    return run(
+        registry=registry,
+        read_claim=read_claim,
+        guard=guard,
+        installed_head=installed_head,
+        reviewed_head=reviewed_head,
+        argv=argv,
+        cwd=cwd,
+        log_path=log_path,
+        cap_seconds=cap_seconds,
+        preflight=default_preflight,
+        clock=clock,
+    )

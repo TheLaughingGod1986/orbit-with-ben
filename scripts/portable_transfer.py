@@ -152,3 +152,139 @@ def verify_receipt(receipt, contract, root, *, job, reservation, host, direction
     if checked["bytes"] != receipt.get("bytes"):
         raise ValueError("receipt byte count mismatch")
     return checked
+
+
+def _bundle_regular_paths(root):
+    base = pathlib.Path(root)
+    if base.is_symlink() or not base.is_dir():
+        raise ValueError("bundle root must be a local directory")
+    paths = []
+    for current, dirs, files in os.walk(base, followlinks=False):
+        current_path = pathlib.Path(current)
+        for d in dirs:
+            if (current_path / d).is_symlink():
+                raise ValueError("symlink directory in portable bundle")
+        for f in files:
+            candidate = current_path / f
+            if candidate.is_symlink() or not candidate.is_file():
+                raise ValueError("nonregular file in portable bundle")
+            paths.append(candidate.relative_to(base).as_posix())
+    return sorted(paths)
+
+
+def stage_outbound(job_doc, *, reservation, host, source_root, staging_parent,
+                   at, max_bytes, max_files):
+    """Stage approved inputs into a unique outbound bundle and emit an input receipt."""
+    import dispatch_capacity as capacity
+    contract = (job_doc or {}).get("portable") or {}
+    probe_host = dict(
+        input_receipts={
+            row.get("path", ""): dict(
+                sha256=row.get("sha256", ""),
+                readable=True,
+                at=at.isoformat(),
+                expiresAt=(at + dt.timedelta(minutes=5)).isoformat(),
+            )
+            for row in (contract.get("inputs") or [])
+            if isinstance(row, dict)
+        }
+    )
+    problem = capacity.portable_problem(job_doc, probe_host, at)
+    if problem:
+        raise ValueError("invalid portable contract: " + problem)
+    bundle = copy_verified(contract["inputs"], source_root, staging_parent,
+                           max_bytes=max_bytes, max_files=max_files)
+    try:
+        receipt = make_receipt(contract, contract["inputs"], bundle,
+                               job=job_doc["id"], reservation=reservation,
+                               host=host, direction="input", at=at, max_bytes=max_bytes)
+        return bundle, receipt
+    except BaseException:
+        shutil.rmtree(bundle)
+        raise
+
+
+def input_receipts_map(receipt, contract, bundle_root, *, job, reservation, host, at, max_bytes):
+    """Verify inbound bundle on the consuming host and produce host['input_receipts']."""
+    checked = verify_receipt(receipt, contract, bundle_root, job=job,
+                             reservation=reservation, host=host, direction="input",
+                             at=at, max_bytes=max_bytes)
+    return {
+        row["path"]: dict(
+            sha256=row["sha256"],
+            readable=True,
+            at=checked["at"],
+            expiresAt=checked["expiresAt"],
+        )
+        for row in checked["files"]
+    }
+
+
+def preflight_inbound(job_doc, *, reservation, host, bundle_root, receipt, at, max_bytes):
+    """Consuming-host preflight immediately before supervised execution."""
+    contract = (job_doc or {}).get("portable") or {}
+    actual = _bundle_regular_paths(bundle_root)
+    expected = sorted(row["path"] for row in manifest(contract.get("inputs") or []))
+    if actual != expected:
+        raise ValueError("inbound bundle files differ from approved input manifest")
+    return verify_receipt(receipt, contract, bundle_root, job=job_doc["id"],
+                          reservation=reservation, host=host, direction="input",
+                          at=at, max_bytes=max_bytes)
+
+
+def stage_return(job_doc, *, reservation, host, work_root, return_parent,
+                 at, max_bytes, max_files):
+    """Hash scoped output paths on the worker host and copy into a clean return bundle."""
+    contract = (job_doc or {}).get("portable") or {}
+    outputs = contract.get("outputs")
+    if not isinstance(outputs, list) or not outputs:
+        raise ValueError("explicit portable output paths required")
+    manifest([{"path": name, "sha256": "0" * 64} for name in outputs])
+    rows = []
+    total = 0
+    for name in sorted(outputs):
+        digest = hashlib.sha256()
+        with open_regular(work_root, name) as source:
+            for chunk in iter(lambda: source.read(1024 * 1024), b""):
+                total += len(chunk)
+                if total > max_bytes:
+                    raise ValueError("return output byte budget exceeded")
+                digest.update(chunk)
+        rows.append({"path": name, "sha256": digest.hexdigest()})
+    bundle = copy_verified(rows, work_root, return_parent,
+                           max_bytes=max_bytes, max_files=max_files)
+    try:
+        receipt = make_receipt(contract, rows, bundle, job=job_doc["id"],
+                               reservation=reservation, host=host, direction="output",
+                               at=at, max_bytes=max_bytes)
+        return bundle, receipt
+    except BaseException:
+        shutil.rmtree(bundle)
+        raise
+
+
+def consume_return(job_doc, *, reservation, host, return_bundle, receipt,
+                   review_parent, at, max_bytes, max_files):
+    """Verify returned outputs on Mini into an isolated review bundle without auto-approval."""
+    contract = (job_doc or {}).get("portable") or {}
+    outputs = contract.get("outputs")
+    if not isinstance(outputs, list) or not outputs:
+        raise ValueError("explicit portable output paths required")
+    actual = _bundle_regular_paths(return_bundle)
+    if actual != sorted(outputs):
+        raise ValueError("return bundle contains unexpected or missing files")
+    checked = verify_receipt(receipt, contract, return_bundle, job=job_doc["id"],
+                             reservation=reservation, host=host, direction="output",
+                             at=at, max_bytes=max_bytes)
+    staged = copy_verified(checked["files"], return_bundle, review_parent,
+                           max_bytes=max_bytes, max_files=max_files)
+    return dict(
+        job=job_doc["id"],
+        reservation=reservation,
+        host=host,
+        review_bundle=str(staged),
+        receipt=checked,
+        stage_approved=False,
+        keep_approved=False,
+        job_completed=False,
+    )

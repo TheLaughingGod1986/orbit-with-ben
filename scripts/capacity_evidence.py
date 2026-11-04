@@ -6,6 +6,7 @@ Nothing here signs in, prompts a model, clears an outage, or authorizes rollout.
 """
 from __future__ import annotations
 
+import copy
 import datetime as dt
 import hashlib
 import json
@@ -17,6 +18,7 @@ import re
 import shutil
 import stat
 import subprocess
+import tempfile
 
 import dispatch_capacity as capacity
 import workflow_state as workflow
@@ -224,3 +226,243 @@ def installed_head(root):
         return "" if dirty.strip() else head
     except (OSError, ValueError, subprocess.SubprocessError):
         return ""
+
+
+def _safe_evidence_text(value):
+    text = str(value or "").strip()
+    if (not text or len(text) > 240 or "@" in text
+            or re.search(r"(?i)(bearer\s+|sk-[A-Za-z0-9_-]{8,}|gh[pousr]_[A-Za-z0-9_]{8,}|token\s*[:=]|secret\s*[:=]|password\s*[:=])", text)):
+        raise ValueError("evidence string missing or contains secret-like material")
+    return text
+
+
+def produce_probes(root, *, at, verified_workers, verified_accounts,
+                   outages=None, capabilities=None, ttl_seconds=120, measurement=measure):
+    """Write identity-bound probes.json from verified execution receipts and outage chronology.
+
+    Never clears an outage when a retry timer expires, and never turns a login-only
+    check into model/quota readiness. Shared-account quota failures taint the whole
+    shared account pool across hosts and workers.
+    """
+    if type(ttl_seconds) is not int or not 30 <= ttl_seconds <= 300:
+        raise ValueError("bounded probe TTL (30–300s) required")
+    if not isinstance(verified_workers, dict) or not isinstance(verified_accounts, dict):
+        raise ValueError("verified worker and account receipt mappings required")
+    outages = outages if isinstance(outages, dict) else {}
+    capabilities = capabilities if isinstance(capabilities, dict) else {}
+    config = private_document(root, "registration.json")
+    measured = measurement(root)
+    registered(config, measured, at)
+    bindings = config.get("workers")
+    limits = config.get("accounts")
+    if not isinstance(bindings, dict) or not isinstance(limits, dict):
+        raise ValueError("explicit worker/shared-account bindings required")
+
+    tainted_accounts = set()
+    for worker, binding in bindings.items():
+        if not isinstance(binding, dict):
+            raise ValueError("unsupported worker binding")
+        account_id = binding.get("account")
+        outage = outages.get(worker) or {}
+        if not isinstance(outage, dict):
+            raise ValueError("malformed outage entry")
+        if outage.get("out_of_usage") is True or outage.get("account_wide") is True:
+            tainted_accounts.add(account_id)
+    for account_id, outage in outages.items():
+        if account_id in limits and isinstance(outage, dict) and outage:
+            tainted_accounts.add(account_id)
+
+    expires_iso = (at + dt.timedelta(seconds=ttl_seconds)).isoformat()
+    workers_doc = {}
+    for worker, binding in bindings.items():
+        if worker not in {"codex", "cursor", "gemini"} or not isinstance(binding, dict):
+            raise ValueError("unsupported worker binding")
+        account_id = binding.get("account")
+        allowed_models = binding.get("models") or []
+        raw = verified_workers.get(worker) or {}
+        outage = outages.get(worker) or {}
+        if not isinstance(raw, dict) or not isinstance(outage, dict):
+            raise ValueError("malformed worker or outage observation")
+        obs_at = workflow.timestamp(raw.get("at"))
+        outage_at = workflow.timestamp(outage.get("at"))
+        has_unreconciled_outage = bool(
+            outage and (
+                outage.get("active") is True
+                or outage.get("out_of_usage") is True
+                or outage.get("auth_required") is True
+                or not outage_at
+                or not obs_at
+                or obs_at <= outage_at
+            )
+        )
+        models = [m for m in (raw.get("verified_models") or []) if isinstance(m, str) and m in allowed_models]
+        ready = bool(
+            not has_unreconciled_outage
+            and account_id not in tainted_accounts
+            and raw.get("ready") is True
+            and raw.get("login_only") is not True
+            and raw.get("account") == account_id
+            and obs_at
+            and 0 <= (at - obs_at).total_seconds() <= 300
+            and models
+            and len(models) == len(raw.get("verified_models") or [])
+        )
+        auth_ev = _safe_evidence_text(raw.get("auth_evidence")) if ready else "unverified or blocked by outage chronology"
+        entry = dict(
+            at=at.isoformat(),
+            expiresAt=expires_iso,
+            account=account_id,
+            ready=ready,
+            auth_evidence=auth_ev if ready else "",
+            verified_models=models if ready else [],
+        )
+        cap = capabilities.get(worker) or {}
+        if (ready and isinstance(cap, dict) and capacity.fresh(cap, at)
+                and cap.get("host") == config["host"] and cap.get("worker") == worker
+                and isinstance(cap.get("available"), list)
+                and set(cap["available"]) <= {"audio_input", "moving_video_input"}):
+            entry["capabilities"] = dict(
+                at=cap["at"],
+                expiresAt=cap["expiresAt"],
+                host=config["host"],
+                worker=worker,
+                available=list(cap["available"]),
+                evidence=_safe_evidence_text(cap.get("evidence")),
+            )
+        workers_doc[worker] = entry
+
+    accounts_doc = {}
+    for account_id, limit in limits.items():
+        raw = verified_accounts.get(account_id) or {}
+        if not isinstance(raw, dict):
+            raise ValueError("malformed account observation")
+        obs_at = workflow.timestamp(raw.get("at"))
+        ready = bool(
+            account_id not in tainted_accounts
+            and raw.get("ready") is True
+            and raw.get("limit") == limit
+            and obs_at
+            and 0 <= (at - obs_at).total_seconds() <= 300
+            and any(w.get("account") == account_id and w.get("ready") is True for w in workers_doc.values())
+        )
+        quota_ev = _safe_evidence_text(raw.get("quota_evidence")) if ready else ""
+        accounts_doc[account_id] = dict(
+            at=at.isoformat(),
+            expiresAt=expires_iso,
+            ready=ready,
+            quota_evidence=quota_ev,
+            limit=limit,
+        )
+
+    doc = dict(
+        version=1,
+        host=config["host"],
+        machine_fingerprint=config["machine_fingerprint"],
+        at=at.isoformat(),
+        expiresAt=expires_iso,
+        workers=workers_doc,
+        accounts=accounts_doc,
+    )
+    directory = os.open(root, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+    try:
+        info = os.fstat(directory)
+        if info.st_uid != os.geteuid() or info.st_mode & 0o077:
+            raise ValueError("evidence directory must be private and owned by this user")
+        fd, temp_path = tempfile.mkstemp(prefix="probes-", dir=root)
+        try:
+            os.fchmod(fd, 0o600)
+            with os.fdopen(fd, "w") as out:
+                json.dump(doc, out, allow_nan=False)
+                out.flush()
+                os.fsync(out.fileno())
+            os.replace(temp_path, pathlib.Path(root) / "probes.json")
+        finally:
+            pathlib.Path(temp_path).unlink(missing_ok=True)
+    finally:
+        os.close(directory)
+    return doc
+
+
+def board_stage_claims(films_root, repo, at):
+    """Collect active (repo, film, stage) board claims; fail closed on corrupt status.json."""
+    import studio
+    films = pathlib.Path(films_root)
+    if not films.is_dir():
+        raise ValueError("films directory missing for " + str(repo))
+    held = set()
+    for path in sorted(films.glob("*/status.json")):
+        doc = json.loads(path.read_text())
+        if not isinstance(doc, dict):
+            raise ValueError("malformed film status.json")
+        film = str(doc.get("film") or path.parent.name.split("_")[0]).strip()
+        for claim in doc.get("claims") or []:
+            if not isinstance(claim, dict) or not claim.get("stage"):
+                raise ValueError("malformed board claim")
+            if not studio.stalled(claim, at):
+                held.add((repo, film, claim["stage"]))
+        for stage, state_doc in (doc.get("stages") or {}).items():
+            if isinstance(state_doc, dict) and state_doc.get("state") == "doing":
+                held.add((repo, film, stage))
+    return sorted(held)
+
+
+def transaction_evidence(root, *, lease_root, owb_root, reviewed_head, chief,
+                         choose_worker, hos_root=None, legacy_lease=None,
+                         remote_hosts=(), remote_leases=(), clock=None,
+                         measurement=measure, process_alive=None):
+    """Build fresh canonical transaction evidence for reserve_with_git / consume_with_git.
+
+    Re-evaluates timestamps, git head, local registration/probes, process leases,
+    legacy serial execution lease and board stage claims on EVERY retry.
+    """
+    import execution_leases
+    at = clock() if clock else dt.datetime.now(dt.timezone.utc)
+    head = installed_head(owb_root)
+    local_host, accounts = collect(root, at=at, installed_head=head, measurement=measurement)
+    registry = execution_leases.Registry(lease_root, local_host["host"], local_host["configured_limit"])
+    local_rows = registry.observe(at)
+    raw_leases = list(local_rows)
+    if legacy_lease is not None:
+        legacy = legacy_lease(at) if callable(legacy_lease) else copy.deepcopy(legacy_lease)
+        if legacy:
+            raw_leases.append(dict(
+                job=legacy.get("job") or "legacy-serial",
+                worker=legacy.get("worker") or "unknown",
+                host=legacy.get("host") or local_host["host"],
+                account=legacy.get("account") or "",
+                pid=legacy.get("pid"),
+                startedAt=legacy.get("startedAt") or at.isoformat(),
+                expiresAt=legacy.get("expiresAt") or (at + dt.timedelta(minutes=25)).isoformat(),
+                process_validated=True,
+            ))
+    for item in remote_leases:
+        if not isinstance(item, dict) or item.get("host") == local_host["host"]:
+            raise ValueError("remote lease must belong to a distinct remote host")
+        raw_leases.append(copy.deepcopy(item))
+
+    if process_alive is None:
+        def process_alive(pid):
+            return execution_leases.process_identity(pid) is not None
+    leases = capacity.live_leases(raw_leases, at, local_host["host"], process_alive)
+
+    hosts = [local_host]
+    for remote in remote_hosts:
+        if (not isinstance(remote, dict) or remote.get("role") != "macbook"
+                or remote.get("host") == local_host["host"]):
+            raise ValueError("invalid remote host evidence")
+        hosts.append(copy.deepcopy(remote))
+
+    claims = set(board_stage_claims(pathlib.Path(owb_root) / "02_Video-Projects", "owb", at))
+    if hos_root is not None:
+        claims.update(board_stage_claims(pathlib.Path(hos_root) / "02_Video-Projects", "hos", at))
+    return dict(
+        hosts=hosts,
+        leases=leases,
+        accounts=accounts,
+        at=at,
+        chief=chief,
+        choose_worker=choose_worker,
+        installed_head=head,
+        reviewed_head=reviewed_head,
+        stage_claims=sorted(claims),
+    )
