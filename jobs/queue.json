@@ -1,5 +1,5 @@
 {
-  "next_id": 1938,
+  "next_id": 1939,
   "jobs": [
     {
       "id": "J0001",
@@ -81695,6 +81695,11 @@
           "at": "2026-11-04T02:27Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-04T02:50:58Z"
+        },
+        {
+          "at": "2026-11-04T02:59Z",
+          "by": "relay",
+          "what": "condition verification queued: J1938"
         }
       ],
       "kind": "video",
@@ -81726,10 +81731,11 @@
       "hold": {
         "type": "input",
         "condition": "J1931 verified: J1100 remains blocked at 2/3; S2 bed clearance and actual local listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and all three audition hashes match 3e26b379b; no newer listening evidence found. PR333 OPEN at 0a7fcb6ad with no reviews/comments. Still require cleared S2 bed, local listening, v07 assembly/caption repairs, all final gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Session has no demonstrated audio input. Disk 28.72 GiB satisfies h43 restart minimum 10 GiB; recheck at restart and park below 6 GiB. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.",
-        "check_at": "2026-11-04T02:50:58Z",
+        "check_at": "2026-11-04T03:59:01+00:00",
         "last_recheck": "J1931",
         "checked_at": "2026-11-04T02:27:34+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1938"
       },
       "preparation_review": {
         "by": "codex",
@@ -167130,6 +167136,37 @@
       ],
       "remaining_action": "Decide 051 topic advancement and route neighbour, editorial and formal facts prerequisites",
       "kind": "chief"
+    },
+    {
+      "id": "J1938",
+      "title": "Chief: verify condition for J0936",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0936: J1931 verified: J1100 remains blocked at 2/3; S2 bed clearance and actual local listening remain unproven. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and all three audition hashes match 3e26b379b; no newer listening evidence found. PR333 OPEN at 0a7fcb6ad with no reviews/comments. Still require cleared S2 bed, local listening, v07 assembly/caption repairs, all final gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Session has no demonstrated audio input. Disk 28.72 GiB satisfies h43 restart minimum 10 GiB; recheck at restart and park below 6 GiB. Preserve excluded bed, accepted pickups, continuous S2 phrase, S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0936 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T02:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T02:59Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
+      "kind": "chief",
+      "recheck_of": "J0936",
+      "due": "2026-11-04T03:59:01+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
