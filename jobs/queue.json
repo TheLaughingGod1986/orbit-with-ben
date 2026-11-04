@@ -166411,13 +166411,13 @@
       "stage": "script",
       "after": "J1777",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T07:04Z",
-      "eta": "2026-11-04T09:04Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T21:47Z",
-      "result": "",
+      "result": "DEFER topic advancement; FIX script. PR468 merged with passing checks. Mercury stays unlocked; no Short-first waiver (851 views, 32.1% stayed). HOS Nov 2/4 vs OWB 5/4; focus unchanged. J1977 owns evidence, then J1978 capacity/advancement and any specialist rewrite -> Gemini facts -> direct quotes/lock chain. No spend, media or publishing changes; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-03T21:47Z",
@@ -166448,6 +166448,11 @@
           "at": "2026-11-04T07:10Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR468 merged after Rules and Studio core checks passed; draft/source preservation and successor dependencies verified; topic/script blocked with J1977/J1978 ownership."
+        },
+        {
+          "at": "2026-11-04T07:12Z",
+          "by": "codex",
+          "what": "done: DEFER topic advancement; FIX script. PR468 merged with passing checks. Mercury stays unlocked; no Short-first waiver (851 views, 32.1% stayed). HOS Nov 2/4 vs OWB 5/4; focus unchanged. J1977 owns evidence, then J1978 capacity/advancement and any specialist rewrite -> Gemini facts -> direct quotes/lock chain. No spend, media or publishing changes; nothing for Ben."
         }
       ],
       "remaining_action": "Close the completed Mercury decision and report the owned next steps",
@@ -166461,7 +166466,8 @@
       },
       "taskKeys": [
         "OWB:036"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/468"
     },
     {
       "id": "J1901",
