@@ -30,7 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1198 | mini | blocked | cursor | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1199 | mini | blocked | cursor | – | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
-| J1201 | mini | open | – | – | for gemini · qa · `gemini-argon` · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
+| J1201 | mini | open | – | – | qa · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
 | J1208 | mini | blocked | codex | – | video · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
@@ -118,10 +118,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2013 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-blocked |  |
 | J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |
 | J2017 | mini | open | – | – | chief · Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception |  |
-| J2018 | mini | open | – | – | for gemini · assembly · `gemini-argon` · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
+| J2018 | mini | open | – | – | assembly · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2022 | mini | open | – | – | for gemini · assembly · `gemini-argon` · Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini) |  |
+| J2022 | mini | open | – | – | assembly · Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini) |  |
 | J2023 | mini | open | – | – | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
 | J2024 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
 | J2025 | mini | open | – | – | chief · Chief: resolve 059 topic orphan-review |  |

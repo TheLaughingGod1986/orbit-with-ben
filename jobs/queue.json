@@ -110744,9 +110744,13 @@
           "at": "2026-10-30T07:52Z",
           "by": "gemini",
           "what": "blocked: waiting for Ben: sign in to claude.ai in the CDP Chrome"
+        },
+        {
+          "at": "2026-11-04T15:58Z",
+          "by": "claude",
+          "what": "released: dependency met (PR merged); stale hold cleared (True, 'gemini')"
         }
       ],
-      "remaining_action": "Sign in to claude.ai in the CDP Chrome (:9222) and run ai_spend_daily.py --pools claude --git",
       "kind": "qa",
       "rerouted_from": {
         "needs": "mini",
@@ -110755,19 +110759,12 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
       "progress": {
         "step": 4,
         "of": 4,
         "at": "2026-10-30T07:52Z",
         "by": "gemini",
         "note": "Recorded live Gemini usage reading (45% left, resets Fri 30 Oct 22:00Z); committed e949d7b44 to main; claude.ai/settings"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "waiting for Ben: sign in to claude.ai in the CDP Chrome",
-        "check_at": "2026-10-30T13:52:05+00:00"
       },
       "log": [
         {
@@ -173364,9 +173361,13 @@
           "at": "2026-11-04T14:25Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-04T15:58Z",
+          "by": "claude",
+          "what": "released: dependency met (PR merged); stale hold cleared (True, 'gemini')"
         }
       ],
-      "remaining_action": "resume J2018",
       "kind": "assembly",
       "log": [
         {
@@ -173385,11 +173386,6 @@
           "what": "kind qa -> assembly: launchd install + script change is code/tools work on the Mini; qa routed it Claude-first and it sat unclaimed 3 h"
         }
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "PR480 merged to main",
-        "check_at": "2026-11-04T13:00:00Z"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -173398,8 +173394,6 @@
         "by": ""
       },
       "by": "",
-      "for": "gemini",
-      "model": "gemini-argon",
       "urgent": 2
     },
     {
@@ -173632,15 +173626,14 @@
           "at": "2026-11-04T14:25Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-04T15:58Z",
+          "by": "claude",
+          "what": "released: dependency met (PR merged); stale hold cleared (True, 'gemini')"
         }
       ],
-      "remaining_action": "install tab janitor",
       "kind": "assembly",
-      "hold": {
-        "type": "dependency",
-        "condition": "PR481 merged to main",
-        "check_at": "2026-11-04T13:30:00Z"
-      },
       "log": [
         {
           "at": "2026-11-04T12:31Z",
@@ -173661,9 +173654,7 @@
         "status": "open",
         "by": ""
       },
-      "by": "",
-      "for": "gemini",
-      "model": "gemini-argon"
+      "by": ""
     },
     {
       "id": "J2023",
