@@ -157378,9 +157378,14 @@
           "at": "2026-11-04T01:38Z",
           "by": "codex",
           "what": "step 2 of 3 done: Evidence PR440 merged after CI PASS; J1928 restores 044/script review after J1785; stage returned to review without claim."
+        },
+        {
+          "at": "2026-11-04T01:39Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified J1928 open for 044/script after J1785; stage review with no claim; STATUS.md names successor; PR440 merged with CI PASS; clean worktree."
         }
       ],
-      "remaining_action": "Verify repaired stage and linked successor, then close and report J1785",
+      "remaining_action": "Repair verified; close J1785 and report restored review",
       "kind": "chief",
       "handoff": {
         "film": "044",
@@ -157389,11 +157394,11 @@
         "signature": "8390bd07955cf7e8827d"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T01:38Z",
+        "at": "2026-11-04T01:39Z",
         "by": "codex",
-        "note": "Evidence PR440 merged after CI PASS; J1928 restores 044/script review after J1785; stage returned to review without clai"
+        "note": "Verified J1928 open for 044/script after J1785; stage review with no claim; STATUS.md names successor; PR440 merged with"
       },
       "taskKeys": [
         "OWB:044"
