@@ -158648,13 +158648,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T05:03Z",
-      "eta": "2026-11-04T07:03Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Workflow repair complete, sources FIX/not approved. PR457 merged (511cc6c28f), ruling jobs/reviews/J1802/CHIEF_SOURCES_RULING_2026-11-04.md. J1956 formal Gemini facts after J1802; J1957 direct quotes after J1956; existing J1953 owns final decision and J1955 topic evidence. Stage review, claim released, inputs unchanged; no media PASS, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -158685,6 +158685,11 @@
           "at": "2026-11-04T05:07Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified merged PR457/511cc6c28f, clean worktree, STATUS.md, unchanged input hashes, review state, released stage claim and dependency links."
+        },
+        {
+          "at": "2026-11-04T05:07Z",
+          "by": "codex",
+          "what": "done: Workflow repair complete, sources FIX/not approved. PR457 merged (511cc6c28f), ruling jobs/reviews/J1802/CHIEF_SOURCES_RULING_2026-11-04.md. J1956 formal Gemini facts after J1802; J1957 direct quotes after J1956; existing J1953 owns final decision and J1955 topic evidence. Stage review, claim released, inputs unchanged; no media PASS, spend or publishing changes."
         }
       ],
       "remaining_action": "Handoff repaired; J1956 facts and J1957 quotes remain before J1953 lock",
