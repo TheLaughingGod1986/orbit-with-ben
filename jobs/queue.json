@@ -179620,13 +179620,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-04T23:31Z",
-      "eta": "2026-11-05T01:31Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T22:08Z",
-      "result": "",
+      "result": "parked for Chief: review three completed thumbnail concepts and approve/merge PR #501; T020 remains proposed and unarmed",
       "history": [
         {
           "at": "2026-11-04T22:08Z",
@@ -179662,6 +179662,11 @@
           "at": "2026-11-04T23:38Z",
           "by": "codex",
           "what": "step 3 of 3 done: Worker delivery complete: three thumbnails, phone sheet, tool scores, provenance, prompts, hashes and proposed T020. Evidence commit 0c9a94b894; no media in git or YouTube changes."
+        },
+        {
+          "at": "2026-11-04T23:38Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review three completed thumbnail concepts and approve/merge PR #501; T020 remains proposed and unarmed"
         }
       ],
       "remaining_action": "Chief reviews the three thumbnail concepts and merges the evidence before any future Studio test",
