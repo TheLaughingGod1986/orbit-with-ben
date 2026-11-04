@@ -175080,13 +175080,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T18:14Z",
-      "eta": "2026-11-04T20:14Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T18:00Z",
-      "result": "",
+      "result": "Rule-E review GO: fixed R7/R8 VO word split ('towards' 60.00-60.30s -> clause pause 60.92-61.32s so all 1,379 STT words sit cleanly inside a row), added sourced WHO birth-death years/roles (1629-1695, 1905-1973), linked all 7 WHEN dates to progressive timeline, capped every still at <=2 uses, interleaved real plates between CODE graphics, and ensured <=6.0s/cut; committed SHOT_LIST_v02.md (7b45d14ba1), set 032 shots done, and queued J2089 (032 picture: £0 harvest + code_graphics).",
       "history": [
         {
           "at": "2026-11-04T18:00Z",
@@ -175122,6 +175122,11 @@
           "at": "2026-11-04T18:23Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Queued J2089 (032 picture £0 harvest + code_graphics) and set 032 shots done"
+        },
+        {
+          "at": "2026-11-04T18:23Z",
+          "by": "gemini",
+          "what": "done: Rule-E review GO: fixed R7/R8 VO word split ('towards' 60.00-60.30s -> clause pause 60.92-61.32s so all 1,379 STT words sit cleanly inside a row), added sourced WHO birth-death years/roles (1629-1695, 1905-1973), linked all 7 WHEN dates to progressive timeline, capped every still at <=2 uses, interleaved real plates between CODE graphics, and ensured <=6.0s/cut; committed SHOT_LIST_v02.md (7b45d14ba1), set 032 shots done, and queued J2089 (032 picture: £0 harvest + code_graphics)."
         }
       ],
       "remaining_action": "Close J2044 and post report on OWB thread",
@@ -175137,7 +175142,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "7b45d14ba1"
     },
     {
       "id": "J2045",
