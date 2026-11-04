@@ -1,5 +1,5 @@
 {
-  "next_id": 2040,
+  "next_id": 2041,
   "jobs": [
     {
       "id": "J0001",
@@ -174892,6 +174892,34 @@
         "by": "codex",
         "note": "Worker implementation and PR complete: 667 script tests OK (8 skipped), 42 additional tests pass, core/rules/diff checks"
       }
+    },
+    {
+      "id": "J2040",
+      "title": "Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 4 Nov 2026: \"yes to E, F, G\" (jobs/reviews/WORKFLOW_AUDIT_2026-11-04.md, fix F). 25 jobs were stopped by Codex's automatic approval review on ordinary work (git push to our repo, R2 uploads, Buffer posts, YouTube API). Ben approved an exact allow-list for unattended Codex runs on the Mini:\n- git push (never --force) to github.com/TheLaughingGod1986/orbit-with-ben and github.com/TheLaughingGod1986/history-of-science\n- uploads to the existing R2 bucket owb-media under the existing social prefixes (the repo's own upload scripts)\n- Buffer post create/read/update for our two profiles via 07_Content-Ops scripts\n- YouTube Data/Analytics API calls for our two channels via the repo's scripts (npm run youtube:* / analytics:*)\nEverything else keeps the approval review: other hosts, deletes, spending, account/sign-in changes, making a video public outside its scheduled publishAt.\n1. On the Mini, check the installed Codex version's supported mechanism for command allow rules (Codex rules/execpolicy files, e.g. ~/.codex/rules/*.rules with prefix_rule(..., decision=\"allow\")). Use that mechanism; do not switch the whole session to approval_policy=never.\n2. Write the narrowest prefix rules matching exactly the commands above. Commit a copy and a plain explanation to docs/CODEX_ALLOWLIST.md (no secrets).\n3. Prove it: a dry-run git push to a scratch branch on orbit-with-ben succeeds without review; a command outside the list (e.g. curl to another host) is still reviewed/refused. Delete the scratch branch after (it is ours and empty).\n4. Then retry J2007's recorded push only if it is still needed.\nNever print tokens or keys.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T17:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T17:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API",
+      "kind": "assembly"
     }
   ],
   "focus": [],
