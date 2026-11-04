@@ -1,5 +1,5 @@
 {
-  "next_id": 2029,
+  "next_id": 2030,
   "jobs": [
     {
       "id": "J0001",
@@ -173744,6 +173744,36 @@
         "kind": "orphan-review",
         "signature": "1d3d03365510a6748a2f"
       }
+    },
+    {
+      "id": "J2029",
+      "title": "Chief: review Studio activity categories and next-video frontend PR484",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben requested clear categories for current work and visibility into when the featured video's next task will start. Implementation PR484: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/484 . Exact reviewed candidate b7299eedb315041923c47aee125f572ffcac0da9; frontend build a92eac12c4af8170.\n\nAdds compact Analytics/Engineering/Video production/Coordination/Studio operations tags; featured-video current-stage successor and actual job link; distinguishes queued/selected/launch pending from fresh actual work. Preserves recorded task progress/ETA, all5tabs and Review actions. Never presents current task ETA as video start/UAT ETA. Missing handoff, stale evidence, approvals/input/dependencies remain explicit. No new frontend requests, scheduler decisions or production-state mutations.\n\nExecuted validation: new pure JS semantics and existing Studio JS regressions/syntax PASS; 75 Python page tests PASS; core56/diff/build PASS. Four browser suites at375/390/430/768/1280 PASS: new dispatch outlook, existing activity, V2 UAT (both intercepted review actions), Overview loading/failure/long titles. Checks include deep links/highlight, refresh, no overflow/errors/writes, nav clearance. Screenshots local /workspace/scratch/video-dispatch-qa and deterministic committed browser test reproduces them. PR CI check SUCCESS at handoff.\n\nVercel preview READY dpl_FTxazdGrtTAR15WbzYseFpWc2LWh: https://studio-kanban-ah8m57eym-bens-projects-11c93b15.vercel.app/ (existing Vercel access required). Authenticated fetch HTTP200 confirmed exact build version and rendered feature markers. Browser QA used identical local build with intercepted fixtures. This is NOT a production deployment.\n\nRecheck actual Chief election, exact head, CI and normal review/merge/release gates. No forcepush/admin bypass or Chief impersonation. Preserve separate PR483 if it merges first; recalculate/test final composed build. Existing Ben production authorization persists but required Chief gate remains. If approved release frontend through established production flow, verify live version and actual behavior before claiming live. No generation/spend, YouTube/Buffer, approval, publishing/date/visibility changes. Do not delay real HOS009 production handoff J2026 for this frontend review. Report any automatic approval rejection rather than retrying unchanged or bypassing it.",
+      "ref": "PR484",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T14:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T14:59Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review PR484 exact head; release frontend after normal checks and verify live category/next-video task display",
+      "kind": "chief",
+      "studio_dispatch_review_key": "PR484:b7299eedb315041923c47aee125f572ffcac0da9",
+      "urgent": 3
     }
   ],
   "focus": [],
