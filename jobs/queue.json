@@ -159478,10 +159478,10 @@
       "stage": "thumbs",
       "after": "J1766",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T03:35Z",
+      "eta": "2026-11-04T05:35Z",
       "created_by": "codex",
       "created_at": "2026-11-03T12:27Z",
       "result": "",
@@ -159605,6 +159605,11 @@
           "at": "2026-11-04T03:31Z",
           "by": "codex",
           "what": "reopened: J1924 verified J1920-J1923 complete and exact v03 hashes; FIX e69bb4749f. Ready abc_v04 correction scope in body and jobs/reviews/J1924.md. Preserve A and original three-step plan. Review-input wait resolved; no media approval."
+        },
+        {
+          "at": "2026-11-04T03:35Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build and gate abc_v04 per J1924 FIX, then fresh panel and exact-file Chief review; preserve A",
@@ -159628,7 +159633,15 @@
             "checked_by": "gemini"
           }
         }
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T03:35Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1824",
