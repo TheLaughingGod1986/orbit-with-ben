@@ -170201,10 +170201,10 @@
       "stage": "sources",
       "after": "J1802",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T13:12Z",
+      "eta": "2026-11-04T15:12Z",
       "created_by": "codex",
       "created_at": "2026-11-04T05:05Z",
       "result": "",
@@ -170213,10 +170213,23 @@
           "at": "2026-11-04T05:05Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T13:12Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify all Olympus Mons spoken and visual claims through Gemini; report flags to J1953",
-      "kind": "facts"
+      "kind": "facts",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T13:12Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1957",
