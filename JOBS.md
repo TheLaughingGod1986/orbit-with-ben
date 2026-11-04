@@ -99,6 +99,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
 | J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
+| J1920 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes |  |
+| J1921 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes |  |
+| J1922 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes |  |
+| J1923 | cloud | open (after J1922) | – | – | review · Packaging panel decision: OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes |  |
 
 Recently finished:
 
