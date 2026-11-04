@@ -163463,13 +163463,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-03T19:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:54Z",
-      "result": "Automatic approval review rejected non-public media R2 uploads and six Buffer creates: requires direct trusted user authorization beyond queue/tool scope. No writes executed. Preflight evidence c8c83a61aa; progress 1/3. No bypass.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T18:54Z",
@@ -163505,30 +163505,28 @@
           "at": "2026-11-03T23:52Z",
           "by": "codex",
           "what": "Direct user reply in the same session to that exact approval question: \"Ok I approve\". This supersedes only the missing direct-user-authorization condition for the three exact J1878 social assets and six scoped future-post creates. It does not authorize any other uploads, new copy, generation, new spend, YouTube changes, broad cleanup, overwrites, deletes or late replay. Actual job remains blocked pending elected-Chief hold verification; no external writes or claim performed by this relay."
+        },
+        {
+          "at": "2026-11-04T00:43Z",
+          "by": "codex",
+          "what": "reopened: J1915 verified exact Ben approval key Ben-direct-approval-J1878-six-posts-2026-11-03 and fresh authenticated read-only preflights: unchanged three hashes/copy/identities/8 Nov dates, no six target counterparts, full 218 OWB and 64 HOS posts, capacity available, old Mars receipts absent. Evidence e861839593 and /Users/benjaminoats/_desk/handoff/J1915/DECISION.md. Only direct-authorization condition released; original rejection retained. Forward exact approval question/reply to automatic review; any new rejection stops. Normal studio routing, no second claim or external writes."
+        },
+        {
+          "at": "2026-11-04T00:43Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Restored actual preflight 1/3 after approval verification; uploads/posts and final readback unfinished"
         }
       ],
-      "remaining_action": "Chief verifies newly received direct user approval and current inputs; resume exact six-post Buffer recovery, skipping duplicates",
+      "remaining_action": "Revalidate exact approved inputs; upload three assets as needed and create only six missing Buffer posts, then verify receipts",
       "due": "2026-11-03T18:54:58Z",
       "kind": "studio",
       "recovery_scope_key": "J1874:ready",
       "urgent": 1,
       "due_kind": "user-immediate-claim",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-03T19:13Z",
-        "by": "codex",
-        "note": "Dry preflight passed; auto-review rejected apply before execution; no hosting/posts changed. Evidence c8c83a61aa on code"
-      },
       "taskKeys": [
         "OWB:025",
         "HOS:005"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "Automatic approval review rejected non-public media R2 uploads and six Buffer creates: requires direct trusted user authorization beyond queue/tool scope. No writes executed. Preflight evidence c8c83a61aa; progress 1/3. No bypass.",
-        "check_at": "2026-11-04T01:13:16+00:00"
-      },
       "direct_user_approvals": [
         {
           "key": "Ben-direct-approval-J1878-six-posts-2026-11-03",
@@ -163539,7 +163537,14 @@
           "reply": "Ok I approve",
           "scope": "Existing J1878 exact three source hashes, existing R2 social host, only six missing Buffer posts; original schedules/copy unchanged; revalidate all inputs and skip duplicates"
         }
-      ]
+      ],
+      "progress": {
+        "step": 1,
+        "of": 3,
+        "at": "2026-11-04T00:43Z",
+        "by": "codex",
+        "note": "Restored actual preflight 1/3 after approval verification; uploads/posts and final readback unfinished"
+      }
     },
     {
       "id": "J1879",
