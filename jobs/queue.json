@@ -1,5 +1,5 @@
 {
-  "next_id": 2156,
+  "next_id": 2157,
   "jobs": [
     {
       "id": "J0001",
@@ -180016,6 +180016,40 @@
       ],
       "remaining_action": "Record 033 Uranus long VO from uranus_21_year_winter_script_master_v02.md",
       "kind": "vo"
+    },
+    {
+      "id": "J2156",
+      "title": "Chief: resolve 033 topic orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"033\", \"stage\": \"topic\", \"kind\": \"orphan-review\", \"signature\": \"82cc96854845544a6e31\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T22:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T22:54Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 033 topic handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "033",
+        "stage": "topic",
+        "kind": "orphan-review",
+        "signature": "82cc96854845544a6e31"
+      }
     }
   ],
   "focus": [],

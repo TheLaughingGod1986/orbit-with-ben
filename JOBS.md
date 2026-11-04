@@ -84,6 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2153 | macbook | open | – | – | chart · `gpt-6-astra` · MacBook setup test: codex |  |
 | J2154 | macbook | open | – | – | review · `claude-opus-5-5` · MacBook setup test: claude |  |
 | J2155 | mini | open | – | – | 033 vo · vo · 033 Uranus: VO from locked script v02 (J2148 GO) | c01c9f9e78 |
+| J2156 | mini | open | – | – | chief · Chief: resolve 033 topic orphan-review |  |
 
 Recently finished:
 
