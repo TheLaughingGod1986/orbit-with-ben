@@ -196,6 +196,13 @@ def recently_released(j, at):
 def order(j, due, focus=(), at=None):
     at = at or dt.datetime.now(dt.timezone.utc)
     film = j.get("film") or (j.get("handoff") or {}).get("film")
+    # Shared/cohort jobs use recorded taskKeys instead of a single film/stage
+    # claim. They still represent production work (e.g. J1471); do not rank
+    # them as unlinked administration behind every single-film draft.
+    keys = j.get("taskKeys")
+    production_keys = {key for key in keys if isinstance(key, str) and re.fullmatch(r"(?:HOS|OWB):\d{3}", key)} if isinstance(keys, list) else set()
+    if isinstance(film, str) and film.strip():
+        production_keys.add(film)
     urgent = j.get("urgent")
     rank = urgent if isinstance(urgent, int) and not isinstance(urgent, bool) else 0
     created = timestamp(j.get("created_at") or j.get("addedAt") or next((h.get("at") for h in j.get("history", []) if h.get("at")), None))
@@ -209,8 +216,8 @@ def order(j, due, focus=(), at=None):
             deadline.timestamp() if deadline else inf,
             0 if urgent else 1, rank if urgent else 0,
             1 if j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I) else 0,
-            0 if film in focus and film else 1,
-            0 if film else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
+            0 if production_keys.intersection(focus) else 1,
+            0 if production_keys else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
             created.timestamp() if created else inf, j["id"])
 
 def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=None):

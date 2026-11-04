@@ -13,6 +13,31 @@ def choose(j,up):
     return 'gemini' if 'gemini' in up else next(iter(up),'')
 
 class Workflow(unittest.TestCase):
+    def test_shared_video_job_retains_production_priority(self):
+        repair = job('J1471', taskKeys=['OWB:030'])
+        repair['created_at'] = '2026-10-25T08:00Z'
+        draft = job('J1785', film='044', kind='chief')
+        data = {'jobs': [draft, repair]}
+        pick = w.select_dispatch(data, NOW, 'codex', {'codex', 'gemini'}, choose)
+        self.assertEqual(pick['job']['id'], 'J1471')
+
+    def test_shared_video_focus_matches_any_recorded_video(self):
+        shared = job('J2', taskKeys=['OWB:029', 'HOS:008'])
+        other = job('J1', film='044')
+        data = {'jobs': [other, shared], 'focus': ['HOS:008']}
+        self.assertEqual(w.select_dispatch(data, NOW, 'codex', {'codex', 'gemini'}, choose)['job']['id'], 'J2')
+        # Actual deadlines and prerequisites still outrank focus.
+        other['due'] = '2026-10-27T11:30Z'
+        self.assertEqual(w.select_dispatch(data, NOW, 'codex', {'codex', 'gemini'}, choose)['job']['id'], 'J1')
+
+    def test_malformed_video_links_do_not_create_production_priority(self):
+        for value in (None, 'OWB:030', [None, '', '   ', 3, 'not-a-video'], {'OWB:030': True}):
+            with self.subTest(value=value):
+                unlinked = job('J1', taskKeys=value)
+                video = job('J2', film='030')
+                data = {'jobs': [unlinked, video]}
+                self.assertEqual(w.select_dispatch(data, NOW, 'codex', {'codex', 'gemini'}, choose)['job']['id'], 'J2')
+
     def test_deadline_inheritance_beats_named_audit_and_chief_review(self):
         correction=job('J1')
         upload=job('J2',after='J1',approved_from={'airs':'2026-10-27T11:30Z'})
