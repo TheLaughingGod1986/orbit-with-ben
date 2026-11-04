@@ -162374,9 +162374,14 @@
           "at": "2026-11-04T11:35Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Inspecting J2010 review findings on PR437 (1c309dd443) and preparing HOS cross-repo retry-safe fix"
+        },
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Fixed J2010 HOS stage fail-closed + OWB board rollback on push races on PR437 (91576db52d, composed with PR477); 313 focused tests + core_sync/py_compile/diff PASS; rollout_enabled=False"
         }
       ],
-      "remaining_action": "Fixing PR437 HOS claim rollback/reconciliation on OWB push races and adding regression test; capacity stays disabled",
+      "remaining_action": "Exact-head Chief review of PR437 (91576db52d, composed with PR477) and observed real-host transitions; rollout stays disabled",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162396,9 +162401,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T11:35Z",
+        "at": "2026-11-04T11:48Z",
         "by": "gemini",
-        "note": "Inspecting J2010 review findings on PR437 (1c309dd443) and preparing HOS cross-repo retry-safe fix"
+        "note": "Fixed J2010 HOS stage fail-closed + OWB board rollback on push races on PR437 (91576db52d, composed with PR477); 313 foc"
       }
     },
     {
