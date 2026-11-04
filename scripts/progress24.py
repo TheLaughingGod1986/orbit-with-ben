@@ -110,6 +110,7 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list) -> dict:
         "milestones": sum(m["milestones"] for m in moved if m["milestones"] > 0),
         "moved": moved[:10], "films": films,
         "otherJobs": len(done) - sum(g["jobs"] for g in by_film.values()),
+        "videoJobs": sum(g["jobs"] for g in by_film.values()),
     }
 
 
