@@ -1,5 +1,5 @@
 {
-  "next_id": 2155,
+  "next_id": 2156,
   "jobs": [
     {
       "id": "J0001",
@@ -179978,6 +179978,34 @@
       "remaining_action": "MacBook setup test: claude",
       "kind": "review",
       "model": "claude-opus-5-5"
+    },
+    {
+      "id": "J2155",
+      "title": "033 Uranus: VO from locked script v02 (J2148 GO)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E GO on J2148 (script v02 + verified SOURCES at c01c9f9e78; review:script PASS 95.2/100, gate:episode PASS, 1,290 spoken words / ~9.0 min, 6 chapters). Record the long VO from 02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/01_Script/uranus_21_year_winter_script_master_v02.md word for word via 04_Audio/tools/vo_take.py (Ben Orbit Narrator, eleven_v3) under desk-lock elevenlabs. Dry-run first; read live ElevenLabs balance first and spend paid credit down to 0 (never buy or top up). Verify Scribe transcript, loudness (-19 to -28 dB mean, ~-20 LUFS, TP <= -1 dBTP), and chapter tail decays, then queue the 033 shot-list job.",
+      "ref": "c01c9f9e78",
+      "film": "033",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-04T22:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T22:53Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record 033 Uranus long VO from uranus_21_year_winter_script_master_v02.md",
+      "kind": "vo"
     }
   ],
   "focus": [],
