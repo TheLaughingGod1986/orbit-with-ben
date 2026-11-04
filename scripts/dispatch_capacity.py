@@ -21,6 +21,8 @@ DENIED_RESOURCES = {"browser", "generation", "publishing", "nas", "credentials"}
 
 
 def fresh(report, at, max_age=300):
+    if not isinstance(report, dict):
+        return False
     stamp = workflow.timestamp(report.get("at"))
     end = workflow.timestamp(report.get("expiresAt"))
     return bool(stamp and end and 0 <= (at-stamp).total_seconds() <= max_age and at < end)
@@ -67,7 +69,9 @@ def host_problem(host, at):
         return "host evidence stale or missing"
     if host.get("guard_reasons") or host.get("state") not in {"idle", "working"}:
         return "host guards: " + "; ".join(host.get("guard_reasons") or [host.get("state", "unknown")])
-    if host.get("role") == "macbook" and (host.get("on_ac") is not True or host.get("idle_minutes", 0) < 10):
+    idle = host.get("idle_minutes")
+    if host.get("role") == "macbook" and (host.get("on_ac") is not True
+            or type(idle) not in (int, float) or not math.isfinite(idle) or idle < 10):
         return "laptop on battery or in use"
     for key in ("free_gb", "min_free_gb", "load", "max_load", "memory_available_gb", "min_memory_gb"):
         value = host.get(key)

@@ -397,3 +397,105 @@ Chief review and observed host transitions. Unidentifiable orphan gaps still
 require an explicit recovery decision. The remaining integration exceeds the
 capped run; release at this tested checkpoint. No production caller, extra lane,
 portable execution, spend or publishing has been enabled.
+
+## Resume checkpoint — 4 November, 06:24 UTC onward
+
+Resumed the same branch and draft **PR437** at b07a54ea62 in clean worktree
+`/private/tmp/J1843-resume`, merging current main. The initial progress command
+mistakenly reset the plan; it was corrected immediately after recovering the
+history. The original plan remains **1/3**, and implementation is unfinished.
+The older dirty `/private/tmp/j1843-capacity` worktree was left untouched.
+
+Added `capacity_evidence.py`, the read-only **local** evidence consumer. It reads
+only explicit `registration.json` and `probes.json` files through directory file
+descriptors. The directory and files must belong to the current OS user, with
+no group/other permissions. Symlink roots/files, nonregular files, oversized
+JSON, nonfinite values and malformed objects are rejected. This is an OS-user
+trust boundary, **not remote authentication or protection against other code
+running as that same user**. No registration or readiness receipt is created
+automatically, no existing outage is cleared, and no sign-in/model call runs.
+
+Registration is approval-reference-bound, expires within 30 days, and matches a
+SHA-256 hardware fingerprint observed on the consuming Mac. The raw hardware
+UUID is never returned. It explicitly binds host role, capacity/resource limits,
+worker models and shared-account aliases/limits. Probe receipts have separate
+freshness checks for host, worker and account, plus explicit auth, verified-model
+and quota evidence. A login-only read cannot supply the model/quota success
+receipt. Media capabilities additionally need their own fresh host/worker-bound
+probe; text execution never becomes listening/motion proof. No laptop identity,
+account, capability or spare slot is inferred from a generic heartbeat.
+
+macOS measurements use local disk, load, mains power, HID idle time and a
+**conservative** free-plus-speculative memory-page count. This excludes inactive,
+compressed and purgeable RAM; it is not the machine's total usable memory.
+Missing idle data now rejects the laptop rather than raising a comparison error;
+malformed freshness receipts also fail closed.
+
+`chief_relay.py capacity` now exposes sanitized local measurements and explicit
+unverified/rejected evidence status. Optional `CAPACITY_EVIDENCE_ROOT` selects
+an existing private evidence directory for this read-only command. Without it,
+registration stays unverified. It never emits receipt contents, auth diagnostics,
+hardware UUID/fingerprint, or private evidence paths. It never claims a slot:
+`dispatch_enabled=false`, availability unknown and no free-slot timestamp remain
+explicit even when evidence is observed. Installed-head lookup rejects dirty
+tracked files and uses the full Git commit, never the truncated runner digest.
+The runner digest now includes all capacity implementation dependencies so edits
+to those modules cause the existing safe-boundary restart check to notice them.
+
+### Local receipt contract (not an enabled configuration)
+
+- `registration.json`: version 1; `at`/`expiresAt` (at most 30 days apart);
+  `approved_by`/`approval_ref`; registered `host` and role `mini` or `macbook`;
+  `machine_fingerprint` (SHA-256 of the locally observed hardware UUID);
+  bounded `configured_limit` (1–8), positive `min_free_gb`, `max_load`,
+  `min_memory_gb`; `workers` mapping each specialist to `account` and approved
+  `models`; `accounts` mapping each shared-pool alias to its bounded limit.
+  Additional lanes retain `capacity_review` and exact `reviewed_head` checks.
+- `probes.json`: host/fingerprint binding, fresh `at`/`expiresAt`; `workers`
+  mapping with its own fresh timestamps, `account`, `ready`, sanitized
+  `auth_evidence` and `verified_models`; `accounts` mapping with separate fresh
+  timestamps, `ready`, sanitized `quota_evidence` and matching `limit`.
+  A producer must base these on actual observations and retain account/model
+  failure chronology; no producer or outage reconciliation is installed here.
+- Optional worker `capabilities`: own fresh timestamps, `host`, `worker`, actual
+  probe `evidence`, and demonstrated `available` identifiers. The only supported
+  media identifiers are `audio_input` and `moving_video_input`.
+- Producers must keep shared Codex Mini/laptop usage under **one** approved
+  alias/limit. Changing host or relabeling a worker receipt cannot create quota.
+  Remote receipt transport/authentication, input receipt consumption and the
+  canonical queue/lease evidence collector remain separate unfinished work.
+- Call `collect` again on each queue transaction attempt and immediately before
+  launch. The caller must also collect current canonical claims, validated
+  process occupancy, board stages, elected Chief and outage evidence. The
+  internal host `state` is for resource-guard compatibility, **not proof that a
+  machine is idle**; only the lease collector can establish occupancy.
+
+Fresh observations in this continuation: both checkouts pulled, HOS Codex inbox
+empty and OWB thread had no unread messages. The sole process-visible Mini lease
+is J1843, Codex, ending 06:50:10Z, with legacy/unverified machine/account
+attribution. The cached generic laptop heartbeat was 06:20:01Z and already stale
+when inspected; it has no registered identity, power/idle/resources, account or
+media proof. Mini measurements succeeded (arm64, approximately 28 GiB disk free,
+load around 1.5–2.3, on mains, long HID idle); conservative free-plus-speculative
+memory was about 0.44–0.47 GiB. These measurements authorize no extra lane.
+Cursor's noninteractive status returned 0 and reported login success with user
+details unavailable; no model/quota execution was tested or outage cleared.
+No audio/moving-video perception was demonstrated. Free-slot outlook is unknown.
+
+Remaining on **this same job/PR**: trusted receipt producers and outage chronology;
+registered laptop evidence and supported authenticated transport; assembling
+legacy plus new process occupancy and both channel board claims inside the
+canonical transactions; production supervisor/claim integration; portable
+outbound/return receipt consumption; explicit unknown-orphan recovery decisions;
+then exact-head Chief review and observed real-host transitions. The serial lock
+and disabled rollout remain. This remainder exceeds a bounded unattended run.
+No production launcher, extra lane, portable execution, spend, media generation,
+YouTube/Buffer write, policy change or approval occurred.
+
+Validation on this checkpoint: **285 tests PASS** on final code: 88 capacity
+(including 19 new evidence-reader/report tests) plus 197 execution-lease,
+portable-transfer, workflow, handoff, queue, relay and MacBook tests. The relay
+suite uses fake CLIs, and process/Git races use harmless local fixtures; none is
+real host rollout proof. `core_sync.py check` PASS (56 shared files), Python
+compilation PASS and `git diff --check` PASS. Final thread check: read through
+#6624168164. No final implementation PASS, merge or rollout decision was made.

@@ -85,7 +85,9 @@ import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and
 
 def code_version():
     root = pathlib.Path(__file__).resolve().parent
-    return hashlib.sha256(b"\0".join((root/name).read_bytes() for name in ("chief_relay.py","workflow_state.py","workflow_handoffs.py","studio.py","jobs.py","routing.py"))).hexdigest()[:16]
+    return hashlib.sha256(b"\0".join((root/name).read_bytes() for name in ("chief_relay.py","workflow_state.py","workflow_handoffs.py","studio.py","jobs.py","routing.py",
+        "capacity_evidence.py","dispatch_capacity.py","capacity_reservations.py",
+        "capacity_supervisor.py","execution_leases.py","portable_transfer.py"))).hexdigest()[:16]
 
 LOADED_VERSION = code_version()
 
@@ -1664,7 +1666,11 @@ def capacity_observation(at):
         pass
     stamp = workflow.timestamp((remote or {}).get("at"))
     age = (at-stamp).total_seconds() if stamp else None
+    import capacity_evidence
+    local = capacity_evidence.observation(OWB, at=at, installed_head=capacity_evidence.installed_head(OWB),
+        evidence_root=os.environ.get("CAPACITY_EVIDENCE_ROOT") or None)
     return {"mode":"observation-only", "configured_mini_lanes":1, "active":active,
+            "local_resource_observation":local,
             "macbook_cached_observation":remote,
             "macbook_observation_age_seconds":age,
             "macbook_capacity_verified":False,
