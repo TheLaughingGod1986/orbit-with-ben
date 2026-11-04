@@ -1,5 +1,5 @@
 {
-  "next_id": 1956,
+  "next_id": 1957,
   "jobs": [
     {
       "id": "J0001",
@@ -168613,6 +168613,34 @@
       ],
       "remaining_action": "Verify three qualifying neighbours and topic performance; return evidence to J1953 for Chief decision",
       "kind": "review"
+    },
+    {
+      "id": "J1956",
+      "title": "059 Olympus Mons: formal Gemini sources and claims verification",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "OWB:059 sources repair from J1802; read jobs/reviews/J1802/CHIEF_SOURCES_RULING_2026-11-04.md and actual v01 master/alias, SOURCES.md, notes, production-status. Run formal Gemini sources-and-claims verification via agy as <driver>/gemini, following existing facts routing. This is a no-spend diagnostic of the current candidate, not topic advancement or script lock. J1953 remains Chief topic/script decision owner; J1955 handles topic evidence. Do not duplicate either.\nRecord exact input hashes and raw Gemini findings with command/model/date, completeness check, and per-claim PASS/FLAG/UNVERIFIABLE with direct source URL and short exact excerpt/location. Audit every subclaim in all 16 rows plus every spoken/visual number, date, WHO year/affiliation, DATA/SCALE/FACT/LABEL; aggregated rows and the row16 synthesis are not standalone exact quotations. Distinguish primary sources from Wikipedia leads and verify against originals. Unreachable pages remain unverifiable; do not invent quotes or rely on existing 'verified' prose.\nPrioritise consistent datum versus base relief and like-for-like Everest height/title; dated MOLA measurement; crust versus lithosphere and hotspot certainty; pressure units and ratios; 5 percent slope/horizon assumptions; caldera/magma-chamber estimates; basalt composition provenance and location; Mars-wide versus Olympus-specific two-million-year activity and last-20-percent claims; residual ice qualifiers; lifespan versus observation date; missing Sjogren/Garvin years and all affiliations. Verify cited NASA identity/caption separately from footage suitability. These are local-text verification targets, not approved corrections.\nFacts worker must not rewrite narration. Preserve v00/v01 and source history; commit Gemini findings, complete claim coverage and necessary source-evidence corrections with provenance. Return flags to J1953 for editorial resolution. Later revised scripts require a delta facts pass and direct MUST QUOTE checking before explicit Chief lock. No VO, paid generation, upload, schedule or visibility change. Preserve focus/Ben/credit gates. Do not leave a generic review orphan: hand off to the dependent quote-review job and J1953 with concrete remaining actions.\n",
+      "ref": "J1802",
+      "film": "059",
+      "stage": "sources",
+      "after": "J1802",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T05:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T05:05Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify all Olympus Mons spoken and visual claims through Gemini; report flags to J1953",
+      "kind": "facts"
     }
   ],
   "focus": [],
