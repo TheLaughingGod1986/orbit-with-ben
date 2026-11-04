@@ -128,7 +128,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2017 | mini | open | – | – | chief · Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception |  |
 | J2018 | mini | claimed | claude | – | qa · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
 | J2019 | mini | open | – | – | listing · Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010) |  |
-| J2020 | cloud | claimed | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
+| J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | claimed | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 
 Recently finished:
