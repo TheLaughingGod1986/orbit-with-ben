@@ -70,7 +70,7 @@ ISS review and candidate assets were untouched.
 
 ## Remaining implementation and acceptance
 
-1. Continue step 2 of the existing three-step plan. Integrate reservations into
+1. Continue step 2 of the existing three-step plan. Finish integrating reservations into
    the canonical Git queue transaction and stage claims; revalidate all guards
    there. A proposal must not be described as a claim or a launch. Competing
    hosts must race against the same canonical state, with idempotent reservation
@@ -138,3 +138,76 @@ probes and connecting verified bundles/receipts to the laptop worker still need
 implementation. Continue on this same branch/job, preserving all current gates.
 No extra lane, remote transfer, portable execution or rollout has been enabled.
 Finish implementation before exact-head Chief review and observed transitions.
+
+## Resume checkpoint — 4 November, 01:58 UTC onward
+
+Continued the **same draft PR #437 and original branch** after merging current
+main. The existing three-step plan remains **1/3**; no implementation or rollout
+completion is claimed.
+
+Added `capacity_reservations.py`: its `reserve_with_git` adapter uses the existing
+canonical `jobs.with_git` compare-and-push retry transaction. Each attempt calls
+the supplied evidence collector again. Reservations are stored on the original
+job, with a two-minute lifetime, identity/head-bound idempotency token and an
+explicit `reserved` phase. They do not claim a job, launch a worker or approve a
+film stage. The planner recomputes host/account/worker/job/stage occupancy inside
+the callback, includes other canonical reservations, and excludes current board
+stage claims supplied by the collector. Exact-head review is mandatory even
+for a single portable overflow lane. Rollback checks the token and owner and
+cannot release an actual claimed job.
+
+`workflow_state.claimable` now excludes a reserved job and other jobs on its
+reserved film/stage, including ordinary `jobs.py next` calls. Expiry removes only
+the capacity restriction; dependency, external, capability and Chief gates still
+apply. **No production reservation caller exists yet.** The guarded transition
+from reservation to an actual claim must still be implemented, including the
+MacBook's `macbook` agent identity while preserving original routing eligibility.
+
+Added `execution_leases.py`, a bounded, locked local process-receipt registry.
+It binds PID to OS start time/command, rejects duplicate launches, validates the
+host, writes atomically, and recovers confirmed dead or reused PIDs. A live
+supervisor beyond its cap remains occupied/overdue: timer expiry alone never
+proves spare capacity. Corrupt state fails closed. This is process evidence,
+not a second production-state tracker. **No supervisor/launcher is connected.**
+The existing relay still uses its original serial execution record and lock.
+
+New tests cover transaction retries against a winning competing claim, exact
+token replay, same-job and same-stage exclusion, board claims, reservation
+expiry/rollback, a busy Chief plus independent specialist, portable reservation,
+unavailable audio capability, local process identity, dead/reused PIDs, duplicate
+supervisors, corrupt state, and a live supervisor beyond its cap. These are
+synthetic transaction/lifecycle tests, **not actual two-host Git races or real
+parallel launch acceptance**.
+
+Validation on this continuation: **222 tests PASS** across capacity/observation/
+reservation (36), local process leases (7), portable transfer (11), workflow (31),
+handoffs (16), queue (30), relay with fake CLIs (74), and laptop worker (17).
+`core_sync.py check` and `git diff --check` PASS. The local real-process test
+initially failed because sandbox process visibility was denied; the complete
+process suite passed with OS process visibility. No media perception inferred.
+
+Fresh host observations:
+
+- Both repos pulled. OWB thread read through #6620439840; HOS inbox had no new
+  Codex messages. Disk had about 30 GiB free; no repair/offload was necessary.
+- Process-visible capacity observation validated relay PID 12891 holding J1843,
+  Codex, 01:58:09–02:24:09 UTC. Legacy lease has no registered machine/account
+  attribution. The sandboxed observation cannot see that process and is not
+  evidence of a free slot.
+- A noninteractive `agent status` exited 0 and reported login success, with user
+  details unavailable. No account details were printed. It did not test model
+  quota or clear the latest execution authentication failure (recorded
+  01:51:24 UTC, retry 02:51:24 UTC). No interactive login was opened.
+- Refreshed `macbook-heartbeat`: 01:59:23 UTC, generic `macbook`, idle, no queued
+  laptop job. It still lacks registered machine identity, power/idle/resource,
+  per-model/account and media-capability evidence. No claim that the actual
+  machine is an Air/Pro or that it is available. Free-slot outlook is unknown.
+
+Remaining before review/rollout: connect a trusted fresh evidence collector;
+consume reservations through canonical job and board claims with safe laptop
+identity; connect capped per-host supervisors without removing the serial lock
+early; integrate supported input/return transport and receipt checks into the
+laptop worker; test actual Git races and launch failures; then obtain exact-head
+Chief review and observe real host transitions. No default lane, service, spend,
+generation, upload, schedule or visibility change was made. This remainder is
+larger than the capped run and stays on J1843, ready for continuation.
