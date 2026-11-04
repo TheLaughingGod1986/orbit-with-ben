@@ -174210,6 +174210,11 @@
           "at": "2026-11-04T16:56Z",
           "by": "codex",
           "what": "step 0 of 3 done: Queued successor under J2026; not claimed or started"
+        },
+        {
+          "at": "2026-11-04T17:04Z",
+          "by": "relay",
+          "what": "rerouted to codex: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Mint the remaining 20 approved HOS009 Quality rows",
@@ -174224,7 +174229,15 @@
         "at": "2026-11-04T16:56Z",
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex"
     },
     {
       "id": "J2034",
