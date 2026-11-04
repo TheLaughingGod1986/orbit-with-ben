@@ -172867,13 +172867,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T11:54Z",
-      "eta": "2026-11-04T13:54Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T11:48Z",
-      "result": "",
+      "result": "Completed Rule 15 (<=50c, subject + concrete scenario/number/stakes) & Rule 12 audit across OWB 025-061 and HOS 006-013/099; retitled OWB 026 c5AdqQsnnys ('Why Reaching the Nearest Star Takes 75,000 Years', 48c) and OWB 028 F-jImX5h7ws ('What Happens When a Star Enters Our Solar System?', 49c) via Data API with verified readbacks; skipped HOS 006/007 (active Title Test & Compare) and 099 (J0999 lock); updated OWB manifests/UPLOADS.json/status.json/STATUS.md (03777acf6d, 3635d86261) and opened HOS PR #405 (fbb5665b, lint:package PASS); posted #6630573505",
       "history": [
         {
           "at": "2026-11-04T11:48Z",
@@ -172914,6 +172914,11 @@
           "at": "2026-11-04T12:26Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed and pushed OWB main (03777acf6d, 3635d86261) and HOS PR #405 (fbb5665b)"
+        },
+        {
+          "at": "2026-11-04T12:27Z",
+          "by": "gemini",
+          "what": "done: Completed Rule 15 (<=50c, subject + concrete scenario/number/stakes) & Rule 12 audit across OWB 025-061 and HOS 006-013/099; retitled OWB 026 c5AdqQsnnys ('Why Reaching the Nearest Star Takes 75,000 Years', 48c) and OWB 028 F-jImX5h7ws ('What Happens When a Star Enters Our Solar System?', 49c) via Data API with verified readbacks; skipped HOS 006/007 (active Title Test & Compare) and 099 (J0999 lock); updated OWB manifests/UPLOADS.json/status.json/STATUS.md (03777acf6d, 3635d86261) and opened HOS PR #405 (fbb5665b, lint:package PASS); posted #6630573505"
         }
       ],
       "remaining_action": "Post Rule 15 audit report on #478 and mark J2019 done",
