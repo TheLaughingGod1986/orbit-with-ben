@@ -1,5 +1,5 @@
 {
-  "next_id": 1924,
+  "next_id": 1925,
   "jobs": [
     {
       "id": "J0001",
@@ -166033,6 +166033,35 @@
       ],
       "remaining_action": "Packaging panel decision: OWB026 J1823 v03 Proxima-only thumbnail correction; unchanged title; evidence commit80195a8a72; review only, no live changes",
       "kind": "review"
+    },
+    {
+      "id": "J1924",
+      "title": "Chief: exact-file decision on OWB026 J1823 v03 after packaging panel",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1823 correction delivered in PR439 commit80195a8a72. After J1920/J1921/J1922 independent critiques and J1923 DECISION.md, elected Chief rechecks authority and views exact B/C v03 and true168x94 sheet in shared 026/08_Thumbnail/abc_v03. Match META hashes. Both depict Proxima, not Alpha Centauri A/B; title remains How Far Is the Nearest Star? Keep original A/J0833 and v01/v02. Assess source identity, hook/title promise, subject/reference, band/readability and grade. Gates alone are not approval. Record exact-file PASS or concrete FIX, reconcile J1823 dependency hold and thumbs stage. Review PR439 evidence for merge separately under normal checks; no image media in git. No spend, live title or Studio/test changes authorized. Any later Test and Compare requires separate scope and live-state inspection; never overwrite running test.",
+      "ref": "",
+      "film": "026",
+      "stage": "thumbs",
+      "after": "J1923",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T01:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T01:26Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review panel decision and exact v03 files; rule without changing live packaging",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "chief"
     }
   ],
   "focus": [],
