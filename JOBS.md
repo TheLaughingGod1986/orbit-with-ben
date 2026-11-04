@@ -107,7 +107,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1976 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1977 | mini | open (after J1900) | – | – | 036 topic · for gemini · review · `gemini-argon` · 036 Mercury: verify neighbours and polar-ice Short evidence | J1900 |
 | J1978 | mini | open (after J1977) | – | – | 036 script · chief · 036 Mercury: decide advancement and own rewrite and facts chain | J1900 |
-| J1979 | any | open (after J1901) | – | – | 037 topic · review · 037 Milky Way Centre: verify neighbours and matching Short evidence | J1901 |
+| J1979 | mini | open (after J1901) | – | – | 037 topic · for gemini · review · `gemini-argon` · 037 Milky Way Centre: verify neighbours and matching Short evidence | J1901 |
 | J1980 | mini | open (after J1979) | – | – | 037 script · chief · 037 Milky Way Centre: decide advancement and own rewrite and facts chain | J1901 |
 
 Recently finished:
