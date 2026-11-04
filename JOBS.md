@@ -128,6 +128,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2029 | mini | open | – | – | chief · Chief: review Studio activity categories and next-video frontend PR484 | PR484 |
 | J2030 | mini | open | – | – | chief · Chief: resolve 060 topic orphan-review |  |
 | J2031 | mini | open | – | – | chief · Chief: resolve 060 sources orphan-review |  |
+| J2032 | mini | open | – | – | chief · Chief: resolve 061 topic orphan-review |  |
 
 Recently finished:
 
