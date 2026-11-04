@@ -1,5 +1,5 @@
 {
-  "next_id": 1945,
+  "next_id": 1946,
   "jobs": [
     {
       "id": "J0001",
@@ -159635,6 +159635,11 @@
           "at": "2026-11-04T03:39Z",
           "by": "codex",
           "what": "blocked: v04 candidates delivered in cecd5dc02c; independent panel J1940/J1941/J1942, decision J1943, exact-file elected-Chief ruling J1944 queued. Parked for review, not approved. No missing media or timed input wait."
+        },
+        {
+          "at": "2026-11-04T03:40Z",
+          "by": "relay",
+          "what": "condition verification queued: J1945"
         }
       ],
       "remaining_action": "Await independent v04 panel J1940-J1943 and exact-file Chief ruling J1944",
@@ -159669,7 +159674,8 @@
       "hold": {
         "type": "dependency",
         "condition": "v04 candidates delivered in cecd5dc02c; independent panel J1940/J1941/J1942, decision J1943, exact-file elected-Chief ruling J1944 queued. Parked for review, not approved. No missing media or timed input wait.",
-        "check_at": "2026-11-04T09:39:57+00:00"
+        "check_at": "2026-11-04T04:40:34+00:00",
+        "recheck_task": "J1945"
       }
     },
     {
@@ -167579,6 +167585,37 @@
       "remaining_action": "Inspect exact v04 files and panel decision, then rule on thumbnail candidates",
       "due": "2026-11-14T18:00:00Z",
       "kind": "chief"
+    },
+    {
+      "id": "J1945",
+      "title": "Chief: verify condition for J1823",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1823: v04 candidates delivered in cecd5dc02c; independent panel J1940/J1941/J1942, decision J1943, exact-file elected-Chief ruling J1944 queued. Parked for review, not approved. No missing media or timed input wait.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1823 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T03:40Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T03:40Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await independent v04 panel J1940-J1943 and exact-file Chief ruling J1944",
+      "kind": "chief",
+      "recheck_of": "J1823",
+      "due": "2026-11-04T04:40:34+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
