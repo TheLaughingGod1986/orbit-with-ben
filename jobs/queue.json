@@ -166741,10 +166741,10 @@
       "stage": "script",
       "after": "J1780",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T07:49Z",
+      "eta": "2026-11-04T09:49Z",
       "created_by": "codex",
       "created_at": "2026-11-03T22:01Z",
       "result": "",
@@ -166753,10 +166753,23 @@
           "at": "2026-11-03T22:01Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T07:49Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Decide topic readiness and editorial fixes before formal facts and script lock",
-      "kind": "chief"
+      "kind": "chief",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T07:49Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1906",
