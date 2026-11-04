@@ -172777,9 +172777,14 @@
           "at": "2026-11-04T12:29Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed bounded no-spend transform repair; no media approval or publishing."
+        },
+        {
+          "at": "2026-11-04T12:29Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Recovered prior 1/4 plan and completed detached run (exit 0); five jitter failures clear, but AR1 opening and AR3 finish gates fail. No duplicate render started."
         }
       ],
-      "remaining_action": "Inspect five jitter failures and preserve source, timing and audio mappings",
+      "remaining_action": "Inspect completed repair results and resolve opening and finish regressions",
       "due": "2026-11-04T10:51:54Z",
       "kind": "assembly",
       "taskKeys": [
@@ -172788,11 +172793,11 @@
       "urgent": 1,
       "j2010_correction": "J1471",
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 2,
+        "of": 4,
         "at": "2026-11-04T12:29Z",
         "by": "codex",
-        "note": "Claimed bounded no-spend transform repair; no media approval or publishing."
+        "note": "Recovered prior 1/4 plan and completed detached run (exit 0); five jitter failures clear, but AR1 opening and AR3 finish"
       },
       "rerouted_from": {
         "needs": "mini",
