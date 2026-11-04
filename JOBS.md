@@ -106,6 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1947 | mini | open (after J1795) | – | – | 054 script · chief · 054 Simulation: topic and editorial decision before script lock |  |
 | J1948 | mini | open (after J1796) | – | – | 055 script · chief · 055 Human Spaceflight: topic and editorial decision before script lock |  |
 | J1949 | mini | open (after J1797) | – | – | 056 script · chief · 056 Autonomous Probes: topic and editorial decision before script lock |  |
+| J1950 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
