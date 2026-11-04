@@ -90409,13 +90409,18 @@
           "at": "2026-11-04T12:51Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-04T12:51Z",
+          "by": "codex",
+          "what": "step 5 of 5 done: Restored original 5/5 plan after initial update incorrectly used default 3-step plan; PR365 confirmed merged. Historical milestones are not approval."
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:099"
       ],
-      "remaining_action": "Check checker merge and compilation package gates before Studio changes",
+      "remaining_action": "Verify missing read-only Studio checklist and preserve prior completed milestones",
       "direct_user_approvals": [
         {
           "key": "Ben-direct-HOS365-a87cd56a-approval",
@@ -90428,10 +90433,11 @@
         }
       ],
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 5,
+        "of": 5,
         "at": "2026-11-04T12:51Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Restored original 5/5 plan after initial update incorrectly used default 3-step plan; PR365 confirmed merged. Historical"
       }
     },
     {
