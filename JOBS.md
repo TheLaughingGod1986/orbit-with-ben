@@ -74,7 +74,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1952 | mini | open (after J1799) | – | – | 058 script · chief · 058 Magnetars and quasars: topic and editorial decision before script lock |  |
 | J1953 | mini | open (after J1800) | – | – | 059 script · chief · 059 Olympus Mons: restore script review and dependent lock checks | J1800 |
 | J1960 | any | open (after J1958) | – | – | 060 script · chief · 060 Hyperion: Chief topic and editorial decision after evidence |  |
-| J1962 | mini | claimed | gemini | 2026-11-04T18:03Z | 060 sources · for gemini · review · `gemini-argon` · 060 Hyperion: direct MUST QUOTE review after Gemini facts | J1805 |
 | J1963 | mini | open (after J1806) | – | – | 061 topic · for gemini · review · `gemini-argon` · 061 Venus rotation: verify topic evidence and existing-long overlap |  |
 | J1964 | mini | open (after J1963) | – | – | 061 script · chief · 061 Venus rotation: Chief topic and editorial decision after evidence |  |
 | J1965 | any | open | – | – | chief · Chief: verify condition for J1879 |  |
