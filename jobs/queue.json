@@ -180575,17 +180575,22 @@
           "at": "2026-11-04T23:57Z",
           "by": "codex",
           "what": "step 1 of 4 done: Read live original six v03 notes; isolated PR409 head; removed unsafe whole-film CFR renderer and drafted conditional six-row manifest."
+        },
+        {
+          "at": "2026-11-04T23:58Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Conditional six-row manifest and read-only planner complete; 9 targeted tests pass. Actual master decode/probe running; no output media or sync claims."
         }
       ],
-      "remaining_action": "Validate master PTS and source hashes; test repaired planner and deliver for J1881",
+      "remaining_action": "Finish actual master/source probe and record verification limits, then submit repair to J1881",
       "due": "2026-11-05T12:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T23:57Z",
+        "at": "2026-11-04T23:58Z",
         "by": "codex",
-        "note": "Read live original six v03 notes; isolated PR409 head; removed unsafe whole-film CFR renderer and drafted conditional si"
+        "note": "Conditional six-row manifest and read-only planner complete; 9 targeted tests pass. Actual master decode/probe running; "
       },
       "taskKeys": [
         "HOS:008"
