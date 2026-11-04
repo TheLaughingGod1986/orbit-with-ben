@@ -173011,9 +173011,14 @@
           "at": "2026-11-04T16:40Z",
           "by": "codex",
           "what": "step 2 of 3 done: Resuming existing 2/3 plan; PR477 already merged, relay now reports installed/loaded ee1e8f91f1b02846. PR437 remains separate and unmerged."
+        },
+        {
+          "at": "2026-11-04T16:43Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Validated relay PID59871, installed/runtime/published-board ee1e8f91f1b02846; J2016 actual runs and 4/4 technical delivery confirmed. PR437 remains unmerged with stale STATUS.md CI failure; J1878 already resolved."
         }
       ],
-      "remaining_action": "Verify loaded relay and board versions plus the production claim after PR477 deployment",
+      "remaining_action": "Deployment verification complete; J1843 owns capacity review and J1471 owns repaired-cut review",
       "kind": "chief",
       "overnight_review_key": "Ben-overnight-visible-production-2026-11-04",
       "urgent": 14,
@@ -173028,11 +173033,11 @@
         "scope": "PR477 dispatcher priority hotfix only; separate PR437 capacity activation remains gated"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T16:40Z",
+        "at": "2026-11-04T16:43Z",
         "by": "codex",
-        "note": "Resuming existing 2/3 plan; PR477 already merged, relay now reports installed/loaded ee1e8f91f1b02846. PR437 remains sep"
+        "note": "Validated relay PID59871, installed/runtime/published-board ee1e8f91f1b02846; J2016 actual runs and 4/4 technical delive"
       },
       "taskKeys": [
         "OWB:030"
