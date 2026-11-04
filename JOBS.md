@@ -113,7 +113,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1995 | mini | open (after J1994) | – | – | 043 script · chief · 043 Bootes Void: decide advancement and own specialist rewrite and facts chain | J1913 |
 | J1996 | mini | open (after J1928) | – | – | 044 topic · for gemini · review · `gemini-argon` · 044 Ganymede: verify neighbours, overlap and matching Short evidence | J1928 |
 | J1997 | mini | open (after J1996) | – | – | 044 script · chief · 044 Ganymede: decide advancement and own specialist rewrite and facts chain | J1928 |
-| J1999 | mini | open (after J1929) | – | – | 045 topic · review · 045 Mars: verify terraforming neighbours, Short proof and overlap | J1929 |
+| J1999 | mini | open (after J1929) | – | – | 045 topic · for gemini · review · `gemini-argon` · 045 Mars: verify terraforming neighbours, Short proof and overlap | J1929 |
 | J2000 | mini | open (after J1999) | – | – | 045 script · chief · 045 Mars: decide capacity and advancement after topic evidence | J1929 |
 | J2001 | any | open (after J1930) | – | – | 046 topic · review · 046 Enceladus: verify geyser neighbours, matching Short proof and overlap | J1930 |
 | J2002 | mini | open (after J2001) | – | – | 046 script · chief · 046 Enceladus: decide capacity and advancement after topic evidence | J1930 |

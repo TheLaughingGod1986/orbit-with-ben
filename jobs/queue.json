@@ -171608,10 +171608,24 @@
           "at": "2026-11-04T09:24Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T09:34Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4778 min (heartbeat 2026-11-01T01:50:45Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify Mars terraforming demand and Short evidence before topic decision",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2000",
