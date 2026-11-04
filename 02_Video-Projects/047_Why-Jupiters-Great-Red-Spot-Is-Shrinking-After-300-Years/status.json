@@ -4,10 +4,18 @@
   "air": "",
   "stages": {
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "01_Script/great_red_spot_shrinking_script_master_v01.md PASS 95.3/100 (6a432ff6b)"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "codex",
+      "at": "2026-11-04T02:30Z",
+      "eta": "2026-11-04T02:55Z",
+      "note": "J1788 orphan review evidence and handoff repair"
+    }
+  ],
   "next": "Chief topic lock + Gemini facts pass"
 }
