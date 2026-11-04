@@ -154,7 +154,7 @@ def dispatch_claimed(*, evidence, registry, token, host_id, worker, claimant,
                      cwd, log_path, cap_seconds, eta_min=25,
                      rollout_enabled=False, rollout_approval_ref="",
                      portable_receipt=None, max_portable_bytes=0,
-                     hos_board_claim=None, clock=utcnow):
+                     clock=utcnow):
     """Canonical reserve -> claim -> supervised launch pipeline (rollout disabled by default).
 
     If consume_with_git fails after a reservation is written, rolls back the
@@ -180,7 +180,7 @@ def dispatch_claimed(*, evidence, registry, token, host_id, worker, claimant,
 
     claimed, error = reservations.consume_with_git(
         evidence=evidence, token=token, host_id=host_id, worker=worker,
-        claimant=claimant, eta_min=eta_min, hos_board_claim=hos_board_claim
+        claimant=claimant, eta_min=eta_min
     )
     if error or not claimed:
         reservations.cancel_with_git(

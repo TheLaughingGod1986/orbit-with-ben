@@ -194,9 +194,10 @@ def propose(data, hosts, leases, accounts, at, chief, choose_worker):
             for job in ordered:
                 stage = (job.get("repo", "owb"), job.get("film"), job.get("stage"))
                 if (job.get("status") != "open" or job["id"] in busy_jobs
+                        or (job.get("repo") == "hos" and job.get("film"))
                         or stage[1] and stage[2] and stage in busy_stages
                         or workflow.is_review(job) or workflow.role_job(job)):
-                    continue  # Chief reviews remain in the canonical elected-Chief lane.
+                    continue  # Chief reviews remain in the canonical elected-Chief lane; HOS film stages fail closed.
                 if workflow.external_hold(job, at) or workflow.dependency_problem(job, by_id):
                     continue
                 laptop = host.get("role") == "macbook"

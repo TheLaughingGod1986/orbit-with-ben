@@ -125,8 +125,7 @@ def cancel_with_git(*, token, host_id, worker, reason, clock=None):
     return jobs.with_git(apply, "jobs: cancel unclaimed capacity reservation")
 
 
-def consume(data, *, token, host_id, worker, claimant, eta_min=25,
-            allow_hos_stage=False, **evidence):
+def consume(data, *, token, host_id, worker, claimant, eta_min=25, **evidence):
     """Revalidate a reservation and produce a canonical claim, never a launch.
 
     Mutate only after all queue/evidence checks pass. Laptop claims use macbook
@@ -159,7 +158,7 @@ def consume(data, *, token, host_id, worker, claimant, eta_min=25,
         raise ValueError("reservation expired or no longer reserved")
     if type(eta_min) is not int or not 1 <= eta_min <= 25:
         raise ValueError("bounded claim estimate required")
-    if original.get("repo") == "hos" and original.get("film") and not allow_hos_stage:
+    if original.get("repo") == "hos" and original.get("film"):
         raise ValueError("HOS film claim needs a supported HOS board transaction")
     if any(j.get("status") == "claimed" and j.get("by") in {worker, claimant}
            for j in rows if j is not original):
@@ -195,16 +194,33 @@ def consume(data, *, token, host_id, worker, claimant, eta_min=25,
     return copy.deepcopy(original)
 
 
-def consume_with_git(*, evidence, token, host_id, worker, claimant, eta_min=25,
-                     hos_board_claim=None):
-    """Queue and OWB/HOS board claim through the existing compare-and-push retry.
+def consume_with_git(*, evidence, token, host_id, worker, claimant, eta_min=25):
+    """Queue and OWB board claim through the existing compare-and-push retry.
 
     No CLI or production caller is enabled. Every retry recollects evidence.
+    HOS film stages fail closed in consume() until a cross-repo board adapter
+    exists. If an OWB push attempt is rejected or fails after writing the local
+    film status.json, rollback restores the pre-attempt file before the next
+    retry recollects board_stage_claims or before returning.
     A returned claim still needs a bounded supervisor and local input rehash.
     """
     import jobs
 
+    board_snapshots = {}
+
+    def rollback_board():
+        for path, (before_bytes, after_bytes) in list(board_snapshots.items()):
+            try:
+                if path.exists() and path.read_bytes() == after_bytes:
+                    if before_bytes is None:
+                        path.unlink(missing_ok=True)
+                    else:
+                        path.write_bytes(before_bytes)
+            finally:
+                board_snapshots.pop(path, None)
+
     def apply(data):
+        rollback_board()
         before = copy.deepcopy(data)
         try:
             observed = evidence()
@@ -212,22 +228,25 @@ def consume_with_git(*, evidence, token, host_id, worker, claimant, eta_min=25,
                              if (j.get("dispatch_reservation") or {}).get("token") == token), {})
             already_claimed = previous.get("status") == "claimed"
             value = consume(data, token=token, host_id=host_id, worker=worker,
-                            claimant=claimant, eta_min=eta_min,
-                            allow_hos_stage=hos_board_claim is not None, **observed)
+                            claimant=claimant, eta_min=eta_min, **observed)
             touched = []
             if jobs.on_board(value) and not already_claimed:
+                path = jobs.film_status_path(value)
+                before_bytes = path.read_bytes() if path and path.exists() else None
                 error = jobs.board_claim(value, claimant, observed["at"])
                 if error:
                     raise ValueError("board stage held: " + error)
-                touched.append(jobs.film_status_path(value))
-            elif value.get("repo") == "hos" and value.get("film") and not already_claimed:
-                error = hos_board_claim(value, claimant, observed["at"])
-                if error:
-                    raise ValueError("HOS board stage held: " + error)
+                if path is not None and path.exists():
+                    board_snapshots[path] = (before_bytes, path.read_bytes())
+                touched.append(path)
             return value, None, touched
         except (ValueError, OSError) as error:
+            rollback_board()
             data.clear()
             data.update(before)
             return None, str(error), []
 
-    return jobs.with_git(apply, "jobs: consume measured capacity reservation (not a launch)")
+    value, error = jobs.with_git(apply, "jobs: consume measured capacity reservation (not a launch)")
+    if error or value is None:
+        rollback_board()
+    return value, error

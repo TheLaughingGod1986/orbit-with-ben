@@ -124,28 +124,116 @@ class Claims(unittest.TestCase):
         self.assertEqual(self.data["jobs"][0]["status"], "open")
 
     def test_hos_stage_needs_explicit_board_adapter(self):
+        # HOS film stages fail closed across propose/reserve/consume/consume_with_git
+        # so an OWB Git push rejection can never leave a cross-repo HOS stage claimed.
+        fresh = {"jobs": [job(repo="hos", film="007", stage="edit")]}
+        with self.assertRaisesRegex(ValueError, "no currently eligible"):
+            reservations.reserve(fresh, **self.kw)
+        self.assertNotIn("dispatch_reservation", fresh["jobs"][0])
+
         self.data["jobs"][0].update(repo="hos", film="007", stage="edit")
+        before = copy.deepcopy(self.data)
         with self.assertRaisesRegex(ValueError, "HOS board"):
             self.consume()
-        # With an explicit HOS board transaction callback, consumption succeeds or rolls back on conflict.
+        self.assertEqual(self.data, before)
+
+        attempts = []
+        def collect():
+            attempts.append(True)
+            return self.evidence
         def transaction(apply, message):
+            losing = copy.deepcopy(self.data)
+            value, error, touched = apply(losing)
+            if error:
+                return None, error
             return apply(self.data)[:2]
         with patch("jobs.with_git", side_effect=transaction):
             value, error = reservations.consume_with_git(
-                evidence=lambda: self.evidence, token=self.kw["token"],
+                evidence=collect, token=self.kw["token"],
                 host_id="mini", worker="codex", claimant="codex",
-                hos_board_claim=lambda job_doc, by, at: "held by another",
             )
-            self.assertIsNone(value)
-            self.assertIn("HOS board stage held", error)
-            self.assertEqual(self.data["jobs"][0]["status"], "open")
-            value, error = reservations.consume_with_git(
-                evidence=lambda: self.evidence, token=self.kw["token"],
-                host_id="mini", worker="codex", claimant="codex",
-                hos_board_claim=lambda job_doc, by, at: None,
-            )
+        self.assertIsNone(value)
+        self.assertIn("HOS board", error)
+        self.assertEqual(len(attempts), 1)
+        self.assertEqual(self.data["jobs"][0]["status"], "open")
+
+    def test_owb_board_claim_push_race_rolls_back_before_retry_and_on_rejection(self):
+        import capacity_evidence
+        import studio
+        with tempfile.TemporaryDirectory() as temp:
+            films_root = pathlib.Path(temp) / "02_Video-Projects"
+            film = films_root / "028_Test"
+            film.mkdir(parents=True)
+            path = film / "status.json"
+            initial = dict(film="028", title="Test", claims=[], stages={"edit": {"state": "todo"}})
+            path.write_text(json.dumps(initial))
+            self.data["jobs"][0].update(film="028", stage="edit")
+
+            # 1) Push rejection followed by eligible retry: attempt 1 writes status.json,
+            # push fails, retry rolls back status.json before refreshing stage_claims
+            # and succeeds cleanly on attempt 2.
+            attempts = []
+            def collect_live():
+                attempts.append(True)
+                claims = capacity_evidence.board_stage_claims(films_root, "owb", T)
+                return dict(self.evidence, stage_claims=claims)
+
+            def push_race_then_succeed(apply, message):
+                losing = copy.deepcopy(self.data)
+                value1, err1, touched1 = apply(losing)
+                self.assertIsNone(err1)
+                self.assertEqual(touched1, [path])
+                # Before retry 2 runs, status.json on disk was written by attempt 1.
+                self.assertEqual(json.loads(path.read_text())["claims"][0]["by"], "codex")
+                # Simulate rejected push without external git checkout: apply() itself
+                # must roll back its uncommitted status.json write before collect_live().
+                value2, err2, touched2 = apply(self.data)
+                return value2, err2
+
+            with patch("jobs.with_git", side_effect=push_race_then_succeed), \
+                    patch("studio.FILMS", films_root), \
+                    patch("studio.film_dir", return_value=film):
+                value, error = reservations.consume_with_git(
+                    evidence=collect_live, token=self.kw["token"],
+                    host_id="mini", worker="codex", claimant="codex"
+                )
             self.assertIsNone(error)
+            self.assertEqual(len(attempts), 2)
             self.assertEqual(value["status"], "claimed")
+            board = json.loads(path.read_text())
+            self.assertEqual(board["claims"][0]["by"], "codex")
+            self.assertEqual(board["stages"]["edit"]["state"], "doing")
+
+            # 2) Push rejection followed by rejected retry (e.g. higher-priority job arrives):
+            # canonical queue stays open AND status.json is rolled back to unclaimed.
+            path.write_text(json.dumps(initial))
+            self.setUp()
+            self.data["jobs"][0].update(film="028", stage="edit")
+            attempts.clear()
+
+            def push_race_then_reject(apply, message):
+                losing = copy.deepcopy(self.data)
+                value1, err1, touched1 = apply(losing)
+                self.assertIsNone(err1)
+                self.assertEqual(json.loads(path.read_text())["claims"][0]["by"], "codex")
+                # Competing push adds an urgent higher-priority job before retry 2.
+                self.data["jobs"].append(job("J9999", urgent=True, due=T.isoformat()))
+                value2, err2, _ = apply(self.data)
+                return value2, err2
+
+            with patch("jobs.with_git", side_effect=push_race_then_reject), \
+                    patch("studio.FILMS", films_root), \
+                    patch("studio.film_dir", return_value=film):
+                value, error = reservations.consume_with_git(
+                    evidence=collect_live, token=self.kw["token"],
+                    host_id="mini", worker="codex", claimant="codex"
+                )
+            self.assertIsNone(value)
+            self.assertIn("priority", error)
+            self.assertEqual(self.data["jobs"][0]["status"], "open")
+            board_after = json.loads(path.read_text())
+            self.assertEqual(board_after["claims"], [])
+            self.assertEqual(board_after["stages"]["edit"]["state"], "todo")
 
     def test_transaction_board_conflict_preserves_reservation_and_queue(self):
         self.data["jobs"][0].update(film="028", stage="edit")

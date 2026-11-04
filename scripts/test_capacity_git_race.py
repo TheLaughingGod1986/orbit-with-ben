@@ -100,6 +100,128 @@ class GitRace(unittest.TestCase):
                 self.assertTrue(all(j["status"] == "open" for j in data["jobs"]))
                 self.assertEqual(reserved[0]["dispatch_reservation"]["phase"], "reserved")
 
+    def test_consume_board_claim_push_race_rolls_back_and_succeeds_on_retry(self):
+        consume_runner = r'''
+import json, pathlib, sys, time
+sys.path.insert(0, sys.argv[1])
+import jobs, studio
+import capacity_evidence
+import capacity_reservations as reservations
+from test_dispatch_capacity import T, host, proof, choose
+root, sync = map(pathlib.Path, sys.argv[2:4])
+jobs.ROOT = studio.ROOT = root
+studio.FILMS = root / "02_Video-Projects"
+jobs.QUEUE = root / "jobs/queue.json"
+jobs.JOBS_MD = root / "JOBS.md"
+jobs.load = lambda: json.loads(jobs.QUEUE.read_text())
+jobs.save = lambda data: jobs.QUEUE.write_text(json.dumps(data, indent=2) + "\n")
+count = 0
+def evidence():
+    global count
+    count += 1
+    claims = capacity_evidence.board_stage_claims(studio.FILMS, "owb", T)
+    if count == 1:
+        (sync / "ready").touch()
+        until = time.monotonic() + 10
+        while not (sync / "competing_pushed").exists():
+            if time.monotonic() > until:
+                raise RuntimeError("consume race barrier timeout")
+            time.sleep(.01)
+    return dict(hosts=[host("mini", worker="codex", role="mini")], leases=[],
+                accounts={"shared": proof(ready=True, limit=1)}, at=T,
+                chief="codex", choose_worker=choose, installed_head="reviewed",
+                reviewed_head="reviewed", stage_claims=claims)
+value, error = reservations.consume_with_git(
+    evidence=evidence, token="reservation-token-consume-race",
+    host_id="mini", worker="codex", claimant="codex"
+)
+print(json.dumps(dict(value=value, error=error, attempts=count)))
+'''
+        with tempfile.TemporaryDirectory() as temp:
+            root = pathlib.Path(temp)
+            remote, seed = root / "remote.git", root / "seed"
+            def git(*args, cwd=None):
+                return subprocess.run(["git", *map(str, args)], cwd=cwd,
+                    capture_output=True, text=True, check=True)
+            git("init", "--bare", remote)
+            git("init", "-b", "main", seed)
+            git("config", "user.email", "test@example.invalid", cwd=seed)
+            git("config", "user.name", "Capacity test", cwd=seed)
+            (seed / "jobs").mkdir()
+            film_dir = seed / "02_Video-Projects/028_Test-Film"
+            film_dir.mkdir(parents=True)
+            (film_dir / "status.json").write_text(json.dumps(dict(
+                film="028", title="Test Film", claims=[],
+                stages={"edit": {"state": "todo"}}
+            ), indent=2) + "\n")
+            (seed / "STATUS.md").write_text("fixture status\n")
+            row = job(film="028", stage="edit")
+            row["dispatch_reservation"] = dict(
+                job=row["id"], worker="codex", host="mini", account="shared",
+                phase="reserved", token="reservation-token-consume-race",
+                head="reviewed", at="2026-11-04T00:00:00+00:00",
+                expiresAt="2026-11-04T00:02:00+00:00",
+                stage_key=["owb", "028", "edit"]
+            )
+            other = job("J9999", status="claimed", by="gemini")
+            (seed / "jobs/queue.json").write_text(json.dumps(dict(jobs=[row, other]), indent=2) + "\n")
+            (seed / "JOBS.md").write_text("fixture queue\n")
+            git("add", ".", cwd=seed)
+            git("commit", "-m", "fixture", cwd=seed)
+            git("remote", "add", "origin", remote, cwd=seed)
+            git("push", "origin", "main", cwd=seed)
+
+            sync = root / "barrier"
+            sync.mkdir()
+            clone_a = root / "cloneA"
+            clone_b = root / "cloneB"
+            for clone in (clone_a, clone_b):
+                git("clone", "--branch", "main", remote, clone)
+                git("config", "user.email", "test@example.invalid", cwd=clone)
+                git("config", "user.name", "Capacity test", cwd=clone)
+
+            proc = subprocess.Popen(
+                [sys.executable, "-c", consume_runner,
+                 str(pathlib.Path(__file__).parent.resolve()), str(clone_a), str(sync)],
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                env=dict(os.environ, GIT_TERMINAL_PROMPT="0")
+            )
+            try:
+                until = os.times().elapsed + 10
+                while not (sync / "ready").exists():
+                    if os.times().elapsed > until:
+                        raise RuntimeError("waiting for cloneA attempt 1 timed out")
+                # Push an unrelated queue update from cloneB so cloneA's first push fails.
+                q_b = json.loads((clone_b / "jobs/queue.json").read_text())
+                q_b["jobs"][1]["remaining_action"] = "Updated from cloneB"
+                (clone_b / "jobs/queue.json").write_text(json.dumps(q_b, indent=2) + "\n")
+                git("add", "jobs/queue.json", cwd=clone_b)
+                git("commit", "-m", "competing unrelated update", cwd=clone_b)
+                git("push", "origin", "main", cwd=clone_b)
+                (sync / "competing_pushed").touch()
+
+                out, err = proc.communicate(timeout=25)
+                self.assertEqual(proc.returncode, 0, err)
+                outcome = json.loads(out)
+            finally:
+                if proc.poll() is None:
+                    proc.kill()
+                    proc.communicate()
+
+            self.assertIsNone(outcome["error"], outcome)
+            self.assertEqual(outcome["attempts"], 2, outcome)
+            self.assertEqual(outcome["value"]["status"], "claimed")
+            remote_q = json.loads(git("show", "main:jobs/queue.json", cwd=remote).stdout)
+            self.assertEqual(remote_q["jobs"][0]["status"], "claimed")
+            self.assertEqual(remote_q["jobs"][0]["by"], "codex")
+            self.assertEqual(remote_q["jobs"][1]["remaining_action"], "Updated from cloneB")
+            remote_board = json.loads(git(
+                "show", "main:02_Video-Projects/028_Test-Film/status.json", cwd=remote
+            ).stdout)
+            self.assertEqual(len(remote_board["claims"]), 1)
+            self.assertEqual(remote_board["claims"][0]["by"], "codex")
+            self.assertEqual(remote_board["stages"]["edit"]["state"], "doing")
+
 
 if __name__ == "__main__":
     unittest.main()

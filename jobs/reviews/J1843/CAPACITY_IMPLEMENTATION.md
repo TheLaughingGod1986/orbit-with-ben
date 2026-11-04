@@ -589,3 +589,49 @@ Fresh observations at `08:31Z`:
   for the elected acting Chief (`Codex`) for Step 3 (`exact-head Chief review and
   observed real-host transitions`), instead of remaining `open` (`for: gemini`) in
   the specialist worker queue. Rollout remains disabled (`rollout_enabled=False`).
+
+## J2010 exact-head review FIX and PR477 composition — 4 November, 11:46 UTC (Gemini)
+
+- Addressed the J2010 review finding on `capacity_reservations.consume_with_git`:
+  - Removed the one-way `hos_board_claim` callback from `consume_with_git` and
+    `dispatch_claimed`, and excluded HOS film-stage jobs (`repo == "hos"` with
+    `film` set) across `dispatch_capacity.propose`, `capacity_reservations.reserve`,
+    `capacity_reservations.consume`, and `capacity_reservations.consume_with_git`
+    until a cross-repo HOS transaction adapter exists. Unmapped HOS CPU work
+    (`film=""`) remains subject to the normal no-spend/no-publish CPU guards.
+  - Added retry-safe board-file rollback (`rollback_board`) inside
+    `capacity_reservations.consume_with_git` for OWB film-stage claims so that if
+    an attempt writes `status.json` via `jobs.board_claim` and the OWB push
+    attempt is rejected or fails, `status.json` is restored to its pre-attempt
+    bytes before the retry recollects `board_stage_claims` (and before returning
+    if the transaction fails).
+  - Added push-race regression tests in `scripts/test_capacity_claims.py`
+    (`test_hos_stage_needs_explicit_board_adapter`,
+    `test_owb_board_claim_push_race_rolls_back_before_retry_and_on_rejection`)
+    and `scripts/test_capacity_git_race.py`
+    (`test_consume_board_claim_push_race_rolls_back_and_succeeds_on_retry`,
+    running two real Git clones against a local bare remote where a competing
+    push forces `consume_with_git` attempt 1 to fail its push, roll back its
+    board claim, pull/rebase, refresh `board_stage_claims` from disk, and
+    succeed cleanly on attempt 2).
+- Composed with merged PR477 (`d12b004c67` / `b76bf04ba8`) on `origin/main`:
+  - Composed runtime digest (`chief_relay.installed_version()`): `cfac198462093c03`
+  - **313 focused tests PASS**: 94 capacity/evidence/claims/Git-race/supervisor
+    (69 in the `test*capacity*.py` subset when excluding `test_capacity_evidence`
+    or 94 across all 6 `test*capacity*.py` files), 19 execution-lease, 13
+    portable-transfer, 34 workflow-state (including PR477's 3 `taskKeys`
+    priority tests), 17 workflow-handoff, 17 dispatcher-handoff, 30 queue,
+    15 MacBook worker, and 74 relay tests (fake worker CLIs).
+  - `core_sync.py check` PASS (56 shared files), `py_compile` PASS, and
+    `git diff --check` PASS.
+- Fresh `11:46Z` observations from `chief_relay.py capacity` and `chief_relay.py status`:
+  - Sole process-validated Mini lease is `J1843` (`owner="gemini"`,
+    `lease_expires_at="2026-11-04T11:58:21Z"`); local Mini measurements (`arm64`,
+    `24.28 GiB` free disk, load `1.83`, `0.59 GiB` conservative free+speculative
+    RAM, `on_ac=true`, `state="unverified"` because private host registration and
+    probe receipts are not configured).
+  - Cached MacBook observation (`11:28:14Z`, age ~1123s, stale) reports
+    `state="waiting"`, `why=["on battery", "in use (0 min idle, needs 10)"]`,
+    `macbook_capacity_verified=false`, `availability="unknown"`, `free_slot_at=null`.
+  - Preserve progress **2/3** (`rollout_enabled=False`) and park `J1843` for
+    exact-head Chief review of the new composed head.
