@@ -167345,13 +167345,13 @@
       "stage": "script",
       "after": "J1784",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T08:56Z",
-      "eta": "2026-11-04T10:56Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-03T22:57Z",
-      "result": "",
+      "result": "DEFER topic lock; editorial FIX. PR473 merged. J1994 owns evidence; J1995 owns capacity/advancement and conditional specialist rewrite, Gemini facts and direct-quote lock chain. No production approval.",
       "history": [
         {
           "at": "2026-11-03T22:57Z",
@@ -167382,6 +167382,11 @@
           "at": "2026-11-04T09:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR473 check passed and merged; successors/dependencies verified, drafts/source unchanged, topic advancement blocked and explicit script FIX recorded."
+        },
+        {
+          "at": "2026-11-04T09:01Z",
+          "by": "codex",
+          "what": "done: DEFER topic lock; editorial FIX. PR473 merged. J1994 owns evidence; J1995 owns capacity/advancement and conditional specialist rewrite, Gemini facts and direct-quote lock chain. No production approval."
         }
       ],
       "remaining_action": "Decision complete; J1994 evidence then J1995 advancement own remaining work",
@@ -167395,7 +167400,8 @@
       },
       "taskKeys": [
         "OWB:043"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/473"
     },
     {
       "id": "J1914",
