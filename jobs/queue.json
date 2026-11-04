@@ -165683,20 +165683,25 @@
           "at": "2026-11-04T01:12Z",
           "by": "codex",
           "what": "step 1 of 3 done: Fresh log at 01:12Z: weekly 5% used, reset 10 Nov 23:17Z; Codex elected. J1849 already completed 00:56Z, so no second claim needed."
+        },
+        {
+          "at": "2026-11-04T01:13Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fixed-time read_flags/state_of checks PASS before, at and after expiry using isolated fixture. Actual Codex flag absent; unrelated flags unchanged; Chief remains Codex."
         }
       ],
-      "remaining_action": "Validate availability expiry handling and completed J1849 handoff",
+      "remaining_action": "Verify remote quota ledger and existing J1849 successor state, then report",
       "kind": "chief",
       "availability_repair_key": "Codex-real-reset-Chief-J1849-2026-11-03",
       "urgent": 5,
       "due": "2026-11-03T23:56:19+00:00",
       "due_kind": "user-blocker-repair",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T01:12Z",
+        "at": "2026-11-04T01:13Z",
         "by": "codex",
-        "note": "Fresh log at 01:12Z: weekly 5% used, reset 10 Nov 23:17Z; Codex elected. J1849 already completed 00:56Z, so no second cl"
+        "note": "Fixed-time read_flags/state_of checks PASS before, at and after expiry using isolated fixture. Actual Codex flag absent;"
       },
       "taskKeys": [
         "OWB:030"
