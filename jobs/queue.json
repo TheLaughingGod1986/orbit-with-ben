@@ -172871,17 +172871,22 @@
           "at": "2026-11-04T12:03Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Collected all non-public OWB (025-061) and HOS (006-013, 099) long titles, upload manifests, UPLOADS.json records, and Studio Test & Compare states"
+        },
+        {
+          "at": "2026-11-04T12:07Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Completed Rule 15 + Rule 12 evaluation for OWB 025-061 and HOS 006-013/099; identified OWB 026 (28c bare question) and OWB 028 (57c > 50c) for Data API retitle, HOS 006/007 skipped for API edit due to saved Title Test & Compare, and HOS 008/010 + OWB drafts for manifest/status updates"
         }
       ],
-      "remaining_action": "Evaluate each non-public OWB and HOS long title against Rule 15 (subject + concrete scenario/number/stakes, <=50 chars, no vague What happened to X?) and Rule 12",
+      "remaining_action": "Run Data API retitle dry-run and apply passing Rule 15 rewrites on scheduled private videos without a Title Test & Compare (OWB 026 c5AdqQsnnys, OWB 028 F-jImX5h7ws)",
       "due": "2026-11-05T00:00:00Z",
       "kind": "listing",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-04T12:03Z",
+        "at": "2026-11-04T12:07Z",
         "by": "gemini",
-        "note": "Collected all non-public OWB (025-061) and HOS (006-013, 099) long titles, upload manifests, UPLOADS.json records, and S"
+        "note": "Completed Rule 15 + Rule 12 evaluation for OWB 025-061 and HOS 006-013/099; identified OWB 026 (28c bare question) and O"
       },
       "taskKeys": [
         "OWB:025",
