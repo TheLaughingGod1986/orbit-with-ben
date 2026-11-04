@@ -110797,6 +110797,11 @@
           "at": "2026-11-04T20:25Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Updated parse_claude for live claude.ai/settings/usage layout (left=73, total=100, 96% session, 27% weekly) and switched _page_text to reuse_page; added live page unit test in test_ai_spend_daily.py"
+        },
+        {
+          "at": "2026-11-04T20:38Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Full unittest suite passed: 661 tests OK (skipped=2)"
         }
       ],
       "kind": "qa",
@@ -110808,11 +110813,11 @@
         "by": ""
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-04T20:25Z",
+        "at": "2026-11-04T20:38Z",
         "by": "gemini",
-        "note": "Updated parse_claude for live claude.ai/settings/usage layout (left=73, total=100, 96% session, 27% weekly) and switched"
+        "note": "Full unittest suite passed: 661 tests OK (skipped=2)"
       },
       "log": [
         {
@@ -110822,7 +110827,7 @@
         }
       ],
       "by": "gemini",
-      "remaining_action": "Run full unittest suite across scripts/"
+      "remaining_action": "Commit parse_claude fix and test, record live Claude and Gemini usage readings in ledger.jsonl"
     },
     {
       "id": "J1202",
