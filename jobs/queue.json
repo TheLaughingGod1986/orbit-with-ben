@@ -157494,13 +157494,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T01:46Z",
-      "eta": "2026-11-04T03:46Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX / not locked. Restored 046 script handoff in merged PR442 (7819a946b7), linked successor J1930 for topic/editorial decision and dependent neighbour/facts/direct quote checks. Board remains review, stage released; CI and state assertions PASS. No production approval, spend or publishing change.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -157531,6 +157531,11 @@
           "at": "2026-11-04T01:50Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified merged status and linked successor; script and sources unchanged, stage released, CI green. Reporting and stopping after this job."
+        },
+        {
+          "at": "2026-11-04T01:50Z",
+          "by": "codex",
+          "what": "done: FIX / not locked. Restored 046 script handoff in merged PR442 (7819a946b7), linked successor J1930 for topic/editorial decision and dependent neighbour/facts/direct quote checks. Board remains review, stage released; CI and state assertions PASS. No production approval, spend or publishing change."
         }
       ],
       "remaining_action": "Handoff repair complete; J1930 owns the remaining topic and editorial review",
