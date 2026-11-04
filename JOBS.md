@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2160 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2161 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2162 | mini | open (after J2161) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
+| J2163 | mini | open | – | – | 008 edit · assembly · HOS008: repair Franklin correction recipe timing, preservation and teaching labels | J1881 / HOS PR409 bd530249 / original six-note review |
 
 Recently finished:
 

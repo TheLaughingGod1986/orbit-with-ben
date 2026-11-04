@@ -1,5 +1,5 @@
 {
-  "next_id": 2163,
+  "next_id": 2164,
   "jobs": [
     {
       "id": "J0001",
@@ -180508,6 +180508,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2163",
+      "title": "HOS008: repair Franklin correction recipe timing, preservation and teaching labels",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J1881 elected-Chief review: FIX, not production approval. Repair the J1880 recipe from HOS PR409 head bd5302494c7337058426b2d8714fa4cf4c90efa9 in a clean worktree. Preserve that evidence and all original media. Read current HOS-008 checks first; original six notes remain change/v03 at 2026-11-03T16:08:33.439Z. No render of a replacement film, generation, spend, upload, watch publication or YouTube changes. GBP0.\n\nRequired bounded code/evidence corrections:\n1. Preserve h22/h35 picture timing and unchanged decoded frames. Current extract_unchanged_range re-encodes every unchanged frame at CRF17 and setpts=N/(24*TB) discards original 0.125 s start and any actual PTS gaps. The 12,923 frames are not proof of constant timing: 12,923/24 = 538.4583 s versus measured video duration 539.5000 s. Build the plan from actual decoded frame PTS/durations, preserve gaps and source start, and restrict any GOP-boundary re-encoding to explicitly recorded bounded windows. No global CFR reconstruction. Verify exact unchanged frame identity and audio packets/timestamps after execution in a future authorized job, never assert identity from range arithmetic.\n2. verify_plan only checks file existence/range arithmetic but returns vo_sync_lag_ms=0.0 and frame_count_delta=0. Replace these with planned/UNMEASURED outcomes; enforce expected hashes for master and all inputs, actual frame availability and timestamps. Master verified by J1881: cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b, 393139693 bytes, video start .125 s, duration 539.500 s, nb_frames12923. Reconcile rough-v12 hash 02db759e... in recipe against h22/h35 d032e5fb... without relabelling unverified copies; h35 mix is -14.129 LUFS/-1.2 dBTP, not inventory -15.32/-1.00. Fail closed on missing/short decode or decoder failure; remove freeze-last-frame/blank-frame fallback. Refuse overwrites and missing explicitly requested retakes. Retain execution refusal until separate Chief production scope.\n3. Note 00:20: keep 427..544 as candidate interval pending PTS reconciliation. Readable white Didot italic over moving plate; soft cream/umber treatment, no outlined UI pill. At most four words per label, one label at a time, match spoken word timing; proposed A KITE / A KEY / A JAR may appear sequentially if timing supports them. Phone still evidence required; no source motion claim from stills.\n4. Note 0:30: proposed 744..839 replacement is conditional on corrected PTS map; preserve clean earlier frames 663..743. Reconcile code patch envelope 663..839 versus declared changed range744..839. Sentence ends at30.70 and next begins31.24 according to proposed map; verify against master-derived words, not stored part offsets.\n5. Note1:49: do NOT silently select native option A; inventory admits table globe spark does not exactly depict the glass-tube/hair line. Preserve mapped candidate160-frame cut2506..2665 and adjacent2666..2717. No new asset search: three candidates already exhausted. Carry a missing exact-match asset to Chief, with Quality-only Flow/Veo3.1 proposed route for fragile spark, named reference/hash, maximum3 takes/300 subscription credits, live balance required before any future spend. No credit authorized by this repair job.\n6. Note2:20: provisional native recipe keep3168..3259, replace3260..3343 with11_jar_crack_t1.mp4 4.000-7.500 s (sha7629a5dfdc5b649535c9816ece5bf0acf250a13133bf294bf43cfb1f21588270), subject to corrected PTS/KEEP/repeat verification. Do not rerender safe first92 frames without justification. Preserve following spark and full audio.\n7. Note3:31: replace4977..5077 only after PTS reconciliation. Remove unsourced new 3,600 MILES claim and avoid multiple simultaneous PHILADELPHIA/PARIS/1752 labels. Redesign one clear animated letter/ocean-crossing idea over moving07_slow_news_t1.mp4 (sha775e6d72eeb9bcec1ba61a72ee2fab14669620a23626bb5c1b0b5c80d7b5d749) in HOS style, no modern bordered UI banner. Any location/date retained needs exact FACT_NOTES source and relevance; no invented geography or locked-VO change. Draw a review still only if needed; no film render authorized.\n8. Note7:58: do NOT silently select native option A; no ship mast in proposed roofs plate. Carry exact-match missing asset135 frames11358..11492 to Chief. Three candidates exhausted; proposed bounded Flow/Veo3.1 retake reference84a92bf6ce1abd1a5780c37ac2e8ae50ea6099f5cff5c7f728a70060b394819c, max3 takes, current rate/live balance to be read in a separately authorized job. No spend or fallback here.\n9. Tests may use small synthetic fixtures for PTS gaps/start offsets, truncated decode, hash mismatch and overwrite refusal, not a replacement movie. Deliver revised six-row manifest, bounded code diff, honest dry-run output and tests. Record unchanged-window/audio verification method and all original gates including picture, polish, episode, lint, music, SFX, VO sync; future media QA must cover each correction and full cut, phone readability, music/SFX and transitions, then elected Chief and Ben watch.\n\nSuccessor review remains J1881, held until this concrete repaired input is delivered. Update existing HOS008 production records, preserve J1297/h22/h35 and J1755 separate publication rejection. Do not mark notes resolved or historic stages newly approved. Capability claims require current actual native audio/video probe, not a model/tool description; this code-only repair needs no perception claim.\n",
+      "ref": "J1881 / HOS PR409 bd530249 / original six-note review",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T23:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T23:49Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair the six-note recipe and its verification; no production render or generation",
+      "due": "2026-11-05T12:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
