@@ -170716,9 +170716,14 @@
           "at": "2026-11-04T16:03Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1962; starting direct MUST QUOTE review for OWB:060 Hyperion"
+        },
+        {
+          "at": "2026-11-04T16:04Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J1805 ruling, J1961 Gemini facts report, SOURCES.md (and v00/v01 snapshots), and candidate script v01; verified input SHA-256 hashes"
         }
       ],
-      "remaining_action": "Read J1805 ruling, J1961 Gemini facts, SOURCES.md, and candidate script",
+      "remaining_action": "Independently open and verify live primary sources for all 16 MUST QUOTE rows and subclaims",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -170730,11 +170735,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-04T16:03Z",
+        "at": "2026-11-04T16:04Z",
         "by": "gemini",
-        "note": "Claimed J1962; starting direct MUST QUOTE review for OWB:060 Hyperion"
+        "note": "Read J1805 ruling, J1961 Gemini facts report, SOURCES.md (and v00/v01 snapshots), and candidate script v01; verified inp"
       },
       "taskKeys": [
         "OWB:060"
