@@ -158881,13 +158881,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T05:46Z",
-      "eta": "2026-11-04T07:46Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Workflow repair complete; sources FIX/not approved. PR461 merged c04840bbcd; ruling jobs/reviews/J1805/CHIEF_SOURCES_RULING_2026-11-04.md. J1961 formal Gemini facts after J1805, J1962 direct quotes after J1961, existing J1960 decision owner with J1958 topic evidence. Both CI checks PASS, STATUS.md OK, input hashes unchanged, sources review and claim released. No production approval, spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -158918,6 +158918,11 @@
           "at": "2026-11-04T05:51Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR461 merged c04840bbcd after Rules and Studio core CI PASS; verified unchanged inputs, stage review, claim release and dependencies."
+        },
+        {
+          "at": "2026-11-04T05:51Z",
+          "by": "codex",
+          "what": "done: Workflow repair complete; sources FIX/not approved. PR461 merged c04840bbcd; ruling jobs/reviews/J1805/CHIEF_SOURCES_RULING_2026-11-04.md. J1961 formal Gemini facts after J1805, J1962 direct quotes after J1961, existing J1960 decision owner with J1958 topic evidence. Both CI checks PASS, STATUS.md OK, input hashes unchanged, sources review and claim released. No production approval, spend or publishing changes."
         }
       ],
       "remaining_action": "Handoff repaired; J1961 facts and J1962 quotes remain before J1960 lock",
