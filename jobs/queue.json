@@ -158039,13 +158039,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T03:45Z",
-      "eta": "2026-11-04T05:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX/not locked. Traced cancelled J0666/J0674 to unrelated unlocked 061 approvals; recorded exact 053 evidence and local-text fixes in PR449 (merged, check PASS). J1946 now owns OWB:053/script topic/editorial decision after this repair, then neighbour evidence, formal Gemini facts and direct quote check before any lock. Stage remains review, claim cleared; no spend/media/YouTube changes.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -158076,6 +158076,11 @@
           "at": "2026-11-04T03:49Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR449 merged after check PASS. Verified clean worktree, script review state, cleared repair claim and successor dependency/board link."
+        },
+        {
+          "at": "2026-11-04T03:49Z",
+          "by": "codex",
+          "what": "done: FIX/not locked. Traced cancelled J0666/J0674 to unrelated unlocked 061 approvals; recorded exact 053 evidence and local-text fixes in PR449 (merged, check PASS). J1946 now owns OWB:053/script topic/editorial decision after this repair, then neighbour evidence, formal Gemini facts and direct quote check before any lock. Stage remains review, claim cleared; no spend/media/YouTube changes."
         }
       ],
       "remaining_action": "Repair complete; J1946 owns the unresolved topic and script decision",
@@ -158095,7 +158100,8 @@
       },
       "taskKeys": [
         "OWB:053"
-      ]
+      ],
+      "done_ref": "85862a9331"
     },
     {
       "id": "J1795",
