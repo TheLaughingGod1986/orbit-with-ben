@@ -81710,6 +81710,11 @@
           "at": "2026-11-04T04:05Z",
           "by": "relay",
           "what": "condition verification queued: J1950"
+        },
+        {
+          "at": "2026-11-04T04:08Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T05:05:21Z"
         }
       ],
       "kind": "video",
@@ -81740,12 +81745,11 @@
       "remaining_action": "Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
       "hold": {
         "type": "input",
-        "condition": "J1938 verified: J1100 remains blocked 2/3. No newer local listening evidence: latest J1100 review files dated 31 Oct; all three audition hashes match 3e26b379b. PR333 remains OPEN at 0a7fcb6ad with no reviews/comments. S2 bed clearance and actual local listening remain unproven; prior excluded bed remains excluded. Session tools provide no demonstrated audio input. Still require v07 assembly/caption repairs, all final gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Live disk 31.43 GiB exceeds h43 restart minimum 10 GiB; recheck at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.",
-        "check_at": "2026-11-04T05:05:21+00:00",
-        "last_recheck": "J1938",
-        "checked_at": "2026-11-04T03:02:21+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1950"
+        "condition": "J1950 verified: J1100 remains blocked 2/3. Latest local review files are 31 Oct; opening/middle/end audition hashes match 3e26b379b. PR333 remains OPEN at 0a7fcb6ad with no reviews/comments. S2 bed clearance and actual local listening remain unproven; excluded bed remains excluded. Session has no demonstrated audio input. Still require v07 assembly/caption repairs, all gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk 28.86 GiB exceeds h43 restart minimum 10 GiB; recheck at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.",
+        "check_at": "2026-11-04T05:05:21Z",
+        "last_recheck": "J1950",
+        "checked_at": "2026-11-04T04:08:21+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
