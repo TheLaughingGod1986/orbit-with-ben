@@ -168328,13 +168328,13 @@
       "stage": "thumbs",
       "after": "J1943",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T05:40Z",
-      "eta": "2026-11-04T07:40Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T03:39Z",
-      "result": "",
+      "result": "Exact-file ruling merged PR460: approve B v04 asset, retain A/J0833, C unselected; J1823 resolved, thumbs done. No live test authority or spend.",
       "history": [
         {
           "at": "2026-11-04T03:39Z",
@@ -168365,6 +168365,11 @@
           "at": "2026-11-04T05:44Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified merged parent done without active hold and thumbnail asset stage done. Exact ruling ae6621414d/PR460; no live changes."
+        },
+        {
+          "at": "2026-11-04T05:44Z",
+          "by": "codex",
+          "what": "done: Exact-file ruling merged PR460: approve B v04 asset, retain A/J0833, C unselected; J1823 resolved, thumbs done. No live test authority or spend."
         }
       ],
       "remaining_action": "Complete: exact-file ruling recorded; later live test requires separate authority",
@@ -168379,7 +168384,8 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "done_ref": "ae6621414d"
     },
     {
       "id": "J1945",
