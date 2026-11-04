@@ -171066,9 +171066,14 @@
           "at": "2026-11-04T17:57Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Directly parsed 3 PDFs via PDFKit (Margot 2021, Leconte 2015, Barnes 2016), 3 PMC XMLs (inc. PMC11937330 fixing Semprich 2025 DOI/crust claim), 11 PubMed XMLs, NASA/PIA/authority/wikitext records"
+        },
+        {
+          "at": "2026-11-04T18:05Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote 01_Script/CLAUDE_QUOTE_CHECK_v01.md (mirrored at jobs/reviews/J1967/DIRECT_QUOTE_CHECK_2026-11-04.md), updated SOURCES.md and production-status.md; verified script drafts untouched"
         }
       ],
-      "remaining_action": "Update SOURCES.md with Semprich 2025 PMC11937330/Leconte 2015 PDFKit findings and write CLAUDE_QUOTE_CHECK_v01.md",
+      "remaining_action": "Commit J1967 direct quote report, release 061 sources claim, mark J1967 done, and report on #99",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -171080,11 +171085,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-04T17:57Z",
+        "at": "2026-11-04T18:05Z",
         "by": "gemini",
-        "note": "Directly parsed 3 PDFs via PDFKit (Margot 2021, Leconte 2015, Barnes 2016), 3 PMC XMLs (inc. PMC11937330 fixing Semprich"
+        "note": "Wrote 01_Script/CLAUDE_QUOTE_CHECK_v01.md (mirrored at jobs/reviews/J1967/DIRECT_QUOTE_CHECK_2026-11-04.md), updated SOU"
       },
       "taskKeys": [
         "OWB:061"
