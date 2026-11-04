@@ -70,7 +70,8 @@ def main() -> int:
 
     with sync_playwright() as p:
         ctx = p.chromium.connect_over_cdp(CDP).contexts[0]
-        page = ctx.new_page()
+        from cdp_tabs import reuse_page
+        page = reuse_page(ctx, "studio.youtube.com")
         for t in thumbs:
             vid, cover = t["id"], ROOT / t["file"]
             row = {"id": vid, "text": t["text"], "cover": str(cover),
@@ -119,7 +120,6 @@ def main() -> int:
                     pass
                 print(json.dumps({k: row.get(k) for k in ("id", "channel", "skipped", "uploaded", "saved", "changed", "error")}), flush=True)
             time.sleep(0.5)
-        page.close()
     report["finished_at"] = datetime.now(timezone.utc).isoformat()
     (OUT_DIR / ("probe.json" if probe else "result.json")).write_text(json.dumps(report, indent=2))
     return 0
