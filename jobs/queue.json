@@ -159203,9 +159203,14 @@
           "at": "2026-11-04T01:27Z",
           "by": "relay",
           "what": "condition verification queued: J1926"
+        },
+        {
+          "at": "2026-11-04T01:33Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T02:00:00Z"
         }
       ],
-      "remaining_action": "Await already-queued independent panel and exact-file Chief decision; no rebuild unless FIX",
+      "remaining_action": "Complete queued panel J1920-J1922, decision J1923 and exact-file ruling J1924; no rebuild unless FIX",
       "due": "2026-11-14T18:00:00Z",
       "kind": "thumb",
       "taskKeys": [
@@ -159235,10 +159240,12 @@
         "note": "Built Proxima-only B/C v03. Colour gates pass186.4/3% and116.3/2%; full-size and168x94 viewed; source and preserved v01/"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "v03 delivered in PR439 commit80195a8a72; independent panel J1920-J1922, decision J1923 and elected-Chief exact-file ruling J1924 required. Files exist in shared abc_v03 with META hashes. Preserve original A; no live packaging authority.",
-        "check_at": "2026-11-04T02:27:16+00:00",
-        "recheck_task": "J1926"
+        "type": "input",
+        "condition": "J1926 verified PR439 open at 80195a8a72; all four v03 artifacts and seven preserved v01/v02 hashes match. J1920-J1922 critiques and J1923 DECISION.md are absent; J1920-J1924 remain open, with no elected-Chief exact-file ruling. Complete queued reviews and J1924 before reopening. Original A and all live packaging preserved.",
+        "check_at": "2026-11-05T02:00:00Z",
+        "last_recheck": "J1926",
+        "checked_at": "2026-11-04T01:33:26+00:00",
+        "checked_by": "codex"
       }
     },
     {
