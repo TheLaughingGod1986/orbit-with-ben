@@ -169552,19 +169552,24 @@
           "at": "2026-11-04T06:21Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read original brief and approval history: J1032 PASS and S1/S3/S4 swaps preserved; S2/S5/S6 require repairs and new approvals"
+        },
+        {
+          "at": "2026-11-04T06:22Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments; latest local evidence 31 Oct, all three audition hashes match 3e26b379b; disk 28.776 GiB"
         }
       ],
-      "remaining_action": "Verify current bed evidence and retain unmet repair conditions",
+      "remaining_action": "Record unmet J0936 conditions and finish verification",
       "kind": "chief",
       "recheck_of": "J0936",
       "due": "2026-11-04T07:18:55+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T06:21Z",
+        "at": "2026-11-04T06:22Z",
         "by": "codex",
-        "note": "Read original brief and approval history: J1032 PASS and S1/S3/S4 swaps preserved; S2/S5/S6 require repairs and new appr"
+        "note": "PR333 OPEN unchanged 0a7fcb6ad, no reviews/comments; latest local evidence 31 Oct, all three audition hashes match 3e26b"
       },
       "taskKeys": [
         "OWB:026",
