@@ -159640,9 +159640,14 @@
           "at": "2026-11-04T03:40Z",
           "by": "relay",
           "what": "condition verification queued: J1945"
+        },
+        {
+          "at": "2026-11-04T03:43Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T04:40:34Z"
         }
       ],
-      "remaining_action": "Await independent v04 panel J1940-J1943 and exact-file Chief ruling J1944",
+      "remaining_action": "Complete independent v04 panel J1940-J1943 then exact-file Chief ruling J1944; retain A pending decision",
       "due": "2026-11-14T18:00:00Z",
       "kind": "thumb",
       "taskKeys": [
@@ -159672,10 +159677,12 @@
         "note": "v04 delivery and handoff complete; candidate approval remains outstanding. Evidence commit cecd5dc02c, existing A and 17"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "v04 candidates delivered in cecd5dc02c; independent panel J1940/J1941/J1942, decision J1943, exact-file elected-Chief ruling J1944 queued. Parked for review, not approved. No missing media or timed input wait.",
-        "check_at": "2026-11-04T04:40:34+00:00",
-        "recheck_task": "J1945"
+        "type": "input",
+        "condition": "J1945 verified v04 delivery cecd5dc02c and all 5 artifact plus 17 preservation hashes. Independent critiques J1940/J1941/J1942, decision J1943 and exact-file elected-Chief ruling J1944 are still open; critique and decision files absent. Required review not satisfied; A/J0833 retained, no v04 approval. Review work remains ready now.",
+        "check_at": "2026-11-04T04:40:34Z",
+        "last_recheck": "J1945",
+        "checked_at": "2026-11-04T03:43:26+00:00",
+        "checked_by": "codex"
       }
     },
     {
