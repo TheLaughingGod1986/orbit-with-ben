@@ -1,5 +1,5 @@
 {
-  "next_id": 2142,
+  "next_id": 2143,
   "jobs": [
     {
       "id": "J0001",
@@ -178843,6 +178843,40 @@
       ],
       "remaining_action": "Harvest NASA/USGS/NOAA/ESA/USFWS/Commons source plates into HARVEST_POOL_v01.json and build £0 code_graphics from SHOT_LIST_v02.md",
       "kind": "assembly"
+    },
+    {
+      "id": "J2142",
+      "title": "Chief: resolve 031 shots orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"031\", \"stage\": \"shots\", \"kind\": \"orphan-review\", \"signature\": \"0469e37e5f0aac9b2946\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T19:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T19:36Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 031 shots handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "031",
+        "stage": "shots",
+        "kind": "orphan-review",
+        "signature": "0469e37e5f0aac9b2946"
+      }
     }
   ],
   "focus": [],

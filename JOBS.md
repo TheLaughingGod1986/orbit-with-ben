@@ -129,6 +129,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2139 | mini | open | – | – | chief · Chief: resolve 061 script orphan-blocked |  |
 | J2140 | mini | open | – | – | chief · Chief: resolve 061 sources orphan-review |  |
 | J2141 | mini | open | – | – | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
+| J2142 | mini | open | – | – | chief · Chief: resolve 031 shots orphan-review |  |
 
 Recently finished:
 
