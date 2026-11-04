@@ -62,8 +62,40 @@ Only `--channel owb|hos`, `--video <11-character ID>`, `--role media|thumb|trail
 
 J2040 stays at **3/4**, unfinished. The next run must implement guarded Buffer create/read/update and channel-pinned YouTube entry points, preserving schedule/package checks and blocking deletion, sign-in and unscheduled Public transitions. Do not allow the existing broad mirror/package commands in the meantime. The installed gateways and all future trusted-code changes need Chief's normal code review; this worker has issued no PASS or final approval.
 
-## Handoff
+## Earlier handoff (superseded by the resume below)
 
 Draft PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/490. The installed gateway also completed the real push of `codex/j2040-allowlist` using a normal sandbox call, with no escalation requested for that call. This proves execution succeeded; it does not identify whether the current session loaded the new rule. Service rules and fresh-session negative review verification remain unfinished.
 
 Required disk housekeeping was attempted at 14 GiB free. The sandbox attempt safely skipped due to NAS write permission; the escalated `nas_offload.py --apply` process PID 74781 remained running without a summary at handoff (exec session 74764). Do not start another copy while it exists. No offload completion or space recovery is claimed.
+
+## Resume — 4 November, 23:45 UTC: guarded service reads
+
+Added [service read gateway](../07_Content-Ops/scripts/codex_service_read.py), installed at `/Users/benjaminoats/.codex/bin/studio-service-read.py`, with its exact narrow prefix in [studio.rules](codex/studio.rules). The service gateway uses only Python's standard library and isolated mode. Examples:
+
+```sh
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel owb --operation channel
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel hos --operation video --video AMSriTQ-lcQ
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel owb --operation analytics --start 2026-10-01 --end 2026-10-02
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel hos --operation buffer-status --video AMSriTQ-lcQ --network instagram
+```
+
+`--dry-run` validates argument shape without reading credentials or making network calls; it does **not** check remote availability or ledger registration. Live Buffer reads derive the post ID from the selected profile's fixed `BUFFER_POSTS.json` and use that profile's key. HOS supports registered Shorts only; Orbit TikTok is excluded. The only GraphQL document is a fixed status query. Caller-supplied post IDs, queries, URLs, tokens and bodies are absent.
+
+YouTube reads refresh the **existing read-only** Analytics sign-in, check `channels?mine=true` against the selected hard-coded channel ID, and check video ownership before returning a video. Analytics has a fixed daily report and explicit pinned channel ID, with validated dates. Missing/expired sign-ins fail; no login, authorization-code flow or credential-file write exists. HTTP destinations and methods are fixed; redirects are not followed, response sizes are capped, and failures print no remote body or credential. Environment destination/token overrides have no effect.
+
+Validation this run:
+
+- 11 service boundary tests plus 10 existing R2 tests and 3 Git tests pass (24 total).
+- Live channel reads succeeded for both OWB and HOS, using their existing read-only sign-ins.
+- Live OWB daily Analytics read for 1–2 October succeeded.
+- Live HOS Buffer status read returned `sent` for registered `AMSriTQ-lcQ` Instagram post `6ade37886887a2efc1169c75`.
+- Installed Git gateway dry-run succeeded without requesting escalation. It creates no branch; the probe branch remains absent.
+- `execpolicy check` allows the service gateway; `curl https://example.com` remains unmatched by `studio.rules`. This is a policy-file check, not proof of live refusal, and no claim is made that this running session reloaded newly installed rules.
+- Installed source/rules match their committed copies; hashes and results are in `jobs/reviews/J2040/service-read-evidence.json`.
+- NAS offload was attempted as required below 20 GB: it declined outside the 01:00–06:00 NAS window, reporting 8,853 MB free. No offload process remains. Unrelated checkout edits were untouched.
+
+### Current handoff
+
+J2040 remains at the existing **3/4**, with PR490 extended on `codex/j2040-allowlist` in `/private/tmp/j2040-wt`. This is a safe checkpoint in the original 120-minute job, not completion or Chief approval. The next implementation must handle **guarded Buffer create/update and YouTube writes** through existing mirror/package gates. It must validate destinations, current ownership, scheduled times and package state, keep ledger/lock handling, reject every deletion, refuse sign-in/account changes, and refuse immediate unscheduled Public transitions. Do not add broad npm/tsx/node/Python/curl rules. Existing mirror and package commands still go through ordinary approval review.
+
+Keep the 4-step plan and completed Git/R2/read slices. Finish write gateways with adversarial payload tests before installation; then check the installed rules in a later worker session and report the exact distinction between policy match, sandbox execution and approval review. J2007 is cancelled; do not retry its old push. No service mutation, media upload, publishing, spend or Chief PASS occurred in this run.

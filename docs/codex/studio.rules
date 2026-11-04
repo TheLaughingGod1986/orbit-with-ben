@@ -15,3 +15,12 @@ prefix_rule(
     match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-r2-upload.py --channel owb --video buaOI3QGm7U --role media --dry-run"],
     not_match = ["python3 07_Content-Ops/scripts/codex_r2_upload.py", "curl https://example.com", "aws s3 rm s3://owb-media/social/example.mp4"]
 )
+
+# Read-only operations; no arbitrary URL, query, method, payload or post ID.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-service-read.py"],
+    decision = "allow",
+    justification = "J2040: existing read-only YouTube sign-ins and registered Buffer status reads for the two studio profiles only.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel owb --operation channel"],
+    not_match = ["curl https://example.com", "npm run youtube:auth", "python3 07_Content-Ops/scripts/codex_service_read.py"]
+)
