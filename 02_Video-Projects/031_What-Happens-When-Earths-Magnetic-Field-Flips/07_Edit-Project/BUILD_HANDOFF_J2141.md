@@ -2,6 +2,31 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (4 Nov, second run)
+
+Continue **this same branch/PR #495**, at **1/3**. Added:
+
+- Six distinct 1920×1080 / 25 fps mechanism renders in `CODE_MECHANISMS_v02.json`: R4 compass inversion; R7 cooling/locking magnetic grains; R8 reversed grains; R20 100%→91% field-strength bars; R21 alpha compass wobble (the authorised £0 fallback); R49 nearest-local-pole compass. All use their own row filenames. R21 requires a graded moving Earth-limb plate underneath. R20 is also alpha and requires a moving plate with subject clearance.
+- `mechanism_graphics.py`, called through `code_graphics.py mechanisms`, implements those three modes only. Strength bars share zero and use sourced endpoints, not invented historical measurements. Compass/grain geometries are explanatory schematics. Full-frame endpoints are checked against locked words. R7 ends at 59.92 s in a word gap; R49 ends at 503.88 s after “nearest”. All labels have four words or fewer.
+- `CODE_MECHANISMS_TECHNICAL_CHECK_v02.json`: all six fully decoded; hashes, frame rates, dimensions, duration and pixel formats match. Static samples at five times checked label bounds, opaque-frame mean luma ≥28 and transparent-overlay start. These checks do **not** establish motion quality or composite acceptance. Static contact sheet inspected: `/Users/benjaminoats/_desk/J2141-mechanisms-v02/CONTACT_v02.jpg`.
+- Brunhes and Gauss original Commons portraits downloaded, with per-file public-domain assertions checked, HTML/API evidence and hashes added to `HARVEST_POOL_v01.json`. Pool now holds six candidates. Brunhes is 804×983; use a portrait inset/cutout within the upscale cap, not a full-width stretch. No portrait cutout/parallax has been produced. Updated contact sheet: `/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg`.
+
+Media stays outside git under `/Users/benjaminoats/_desk/J2141-mechanisms-v02/` and `J2141-portraits/`. The smaller v01 mechanism batch is superseded: R7/R49 endpoints needed correction. Preserve it as evidence, do not assemble from it. `CODE_MECHANISMS_v01.json` records that supersession.
+
+Reproduce into a **fresh** directory (existing renders are refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py mechanisms --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Use `/usr/bin/python3`: it has Pillow 11.3.0; Homebrew/default python lacks Pillow. No packages installed. The original `harvest_picture_v01.py` needs requests in its original environment; the new portrait harvester uses stdlib HTTP plus Pillow.
+
+Both detached mechanism batches completed exit 0; no live render remains. Current logs/completion: `/Users/benjaminoats/_desk/logs/J2141-mechanisms-v02.log` and `.done`. No second worker should restart that completed batch. NAS offload was attempted before building and **deferred to 01:00–06:00 by the existing script**, with ~9.4 GiB free. This small batch added ~7 MB of mechanism media plus ~1.4 MB of portraits, not a large scratch render. Restore headroom before larger work.
+
+Remaining build: wider unsearched archive harvest; the other mechanisms listed below (except compass, grains and strength now implemented); R41 atmosphere fallback; actual composites and full QA. R20's graphic starts on “1830s”, while the older WHO overlay still lasts to 209.08 s; exact compositor transition needs review. The approved row says a five-second strength chart, but the actual remaining spoken span is ~3.8 s. Do not extend the row or clip narration to make five seconds.
+
+Existing Chief decisions needed on R54 asset identities and sourced simulation/map separators below remain unresolved by this worker. No new Chief authority, KEEP, PASS, film-stage completion, paid generation or YouTube change is claimed. Two portrait inputs examined (one candidate each, under five active minutes total); the broader missing inputs were not searched in this continuation.
+
 ## Landed in this worker branch
 
 - `harvest_picture_v01.py`: resumable NASA API download and hash/evidence recorder.

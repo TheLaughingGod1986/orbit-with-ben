@@ -6,7 +6,7 @@ not full-frame black cards. Timing follows the locked v02a Scribe words. No KEEP
 or motion review is implied by successful encoding. Remaining mechanisms are
 listed in BUILD_HANDOFF_J2141.md; unsupported modes fail explicitly.
 """
-import argparse, hashlib, io, json, math, re, subprocess
+import argparse, hashlib, io, json, math, re, subprocess, sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 W,H,FPS=1920,1080,25
@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='mechanisms':
+  from mechanism_graphics import main as mechanisms
+  return mechanisms(sys.argv[2:])
  ap=argparse.ArgumentParser();ap.add_argument('mode',choices=['cards']);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--words',type=Path,default=HERE.parent/'02_Voiceover/stt/magnetic_field_flip_vo_v02a/stt_raw.json');ap.add_argument('--manifest',type=Path,required=True);ap.add_argument('--previews',action='store_true');a=ap.parse_args()
  cards=schedule(json.loads(a.words.read_text())['words']);a.out.mkdir(parents=True,exist_ok=True)
  for c in cards:
