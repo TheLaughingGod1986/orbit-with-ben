@@ -161544,9 +161544,14 @@
           "at": "2026-11-04T20:09Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed acquisition only; no cohort edits. NAS offload found no eligible scratch; 14.25 GB free."
+        },
+        {
+          "at": "2026-11-04T20:10Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Existing acquisition already delivered in PR410; five delivery hashes match and three previews fully decode. J1846 chose model fallback; J1847/J1848/J1849 already completed. Preserve original three-step plan; initial 0/3 reset was unnecessary."
         }
       ],
-      "remaining_action": "Check prior acquisition evidence and remaining bounded search budget",
+      "remaining_action": "Record acquisition closeout and hand back to existing repair chain",
       "kind": "assembly",
       "rerouted_from": {
         "needs": "mini",
@@ -161557,11 +161562,11 @@
       },
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T20:09Z",
+        "at": "2026-11-04T20:10Z",
         "by": "codex",
-        "note": "Claimed acquisition only; no cohort edits. NAS offload found no eligible scratch; 14.25 GB free."
+        "note": "Existing acquisition already delivered in PR410; five delivery hashes match and three previews fully decode. J1846 chose"
       },
       "taskKeys": [
         "OWB:030"
