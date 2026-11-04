@@ -1,5 +1,5 @@
 {
-  "next_id": 1927,
+  "next_id": 1928,
   "jobs": [
     {
       "id": "J0001",
@@ -166236,6 +166236,40 @@
       "taskKeys": [
         "OWB:026"
       ]
+    },
+    {
+      "id": "J1927",
+      "title": "Chief: resolve 026 upload orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"026\", \"stage\": \"upload\", \"kind\": \"orphan-review\", \"signature\": \"e2824339dcaf11085b2b\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T01:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T01:33Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 026 upload handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "026",
+        "stage": "upload",
+        "kind": "orphan-review",
+        "signature": "e2824339dcaf11085b2b"
+      }
     }
   ],
   "focus": [],
