@@ -1,5 +1,5 @@
 {
-  "next_id": 2019,
+  "next_id": 2020,
   "jobs": [
     {
       "id": "J0001",
@@ -172774,6 +172774,35 @@
       ],
       "remaining_action": "Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run",
       "kind": "qa"
+    },
+    {
+      "id": "J2019",
+      "title": "Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "LEARNINGS rule 15 (Ben, 4 Nov 2026): every long's title names the subject and a concrete scenario, number or stakes, fits in 50 characters, and is never a vague \"What happened to X?\". Check every OWB and HOS long that is not yet public (OWB 025 Js6EQJ8qDi8 8 Nov, 026 c5AdqQsnnys 15 Nov, 027 6bbbvfCx6zY 22 Nov, 028 F-jImX5h7ws 29 Nov, 029 6 Dec, and any later long with a draft title; HOS 006 VbPubYd6Fbs 5 Nov, 007 ETynHpIYLeY 12 Nov, 008-010 drafts). For each: current title, pass/fail against rule 15, and a rewrite for any fail. Title edits on a scheduled private video are reversible and the Chief's call; skip any video with a running title Test & Compare. Keep the thumbnail-text rule 12 (text adds what the title doesn't say). Apply passing rewrites via the Data API, read them back, update UPLOADS.json/upload manifests, and post the list on #478.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T11:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T11:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010)",
+      "due": "2026-11-05T00:00:00Z",
+      "kind": "listing"
     }
   ],
   "focus": [],

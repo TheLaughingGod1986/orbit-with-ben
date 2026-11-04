@@ -127,6 +127,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2016 | mini | open (after J1468) | – | – | assembly · AR cohort: repair five inherited still-push jitter failures | J2010 / J1471 / ce3c8048e9 |
 | J2017 | mini | open | – | – | chief · Chief: apply Ben's 4 Nov rule (final watch = watch-and-listen check) to every job held on video/audio perception |  |
 | J2018 | mini | open | – | – | qa · Install launchd com.owb.missed-runs (same-day alarm for missed daily jobs) and verify one clean run |  |
+| J2019 | mini | open | – | – | listing · Rule 15: title check and rewrite on every long not yet public (OWB 025-029, HOS 006-010) |  |
 
 Recently finished:
 
