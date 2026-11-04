@@ -179822,10 +179822,10 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T22:55Z",
+      "eta": "2026-11-05T00:55Z",
       "created_by": "claude",
       "created_at": "2026-11-04T22:26Z",
       "result": "",
@@ -179834,13 +179834,26 @@
           "at": "2026-11-04T22:26Z",
           "by": "claude",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-04T22:55Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "034 topic + script: rule-E review (WIP film, new reference-channel rules)",
       "due": "2026-11-06T18:00:00Z",
       "for": "gemini",
       "kind": "review",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T22:55Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2150",
