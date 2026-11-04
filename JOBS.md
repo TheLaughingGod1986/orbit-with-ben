@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2038 | mini | open | – | – | chief · Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day) |  |
 | J2039 | mini | blocked | codex | – | assembly · Film-first order + require --film/--stage on production jobs (audit fix C) |  |
 | J2040 | mini | open | – | – | assembly · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
-| J2041 | any | open | – | – | 031 shots · review · 031 shots: shot list from the locked script and voice (WIP film) |  |
+| J2041 | any | claimed | claude | 2026-11-04T19:54Z | 031 shots · review · 031 shots: shot list from the locked script and voice (WIP film) |  |
 | J2042 | any | open | – | – | 032 shots · review · 032 shots: shot list from the locked script and voice (WIP film) |  |
 
 Recently finished:
