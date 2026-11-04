@@ -172886,21 +172886,31 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T11:49Z",
-      "result": "",
+      "result": "Waiting for: Sun 29 Nov 2026 18:00Z reached (14 days after 026 long public)",
       "history": [
         {
           "at": "2026-11-04T11:49Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Sun 29 Nov 2026 18:00Z reached (14 days after 026 long public)"
+        },
+        {
+          "at": "2026-11-04T11:49Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-29T18:00:00Z"
         }
       ],
-      "remaining_action": "Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29",
+      "remaining_action": "resume J2021",
       "due": "2026-11-29T00:00:00Z",
       "kind": "review",
       "log": [
@@ -172909,7 +172919,12 @@
           "by": "claude",
           "what": "claimed to record a date/dependency hold"
         }
-      ]
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "Sun 29 Nov 2026 18:00Z reached (14 days after 026 long public)",
+        "check_at": "2026-11-29T18:00:00Z"
+      }
     }
   ],
   "focus": [],
