@@ -174643,17 +174643,22 @@
           "at": "2026-11-04T17:44Z",
           "by": "codex",
           "what": "step 1 of 3 done: Inspected queue, relay and board tracker; implemented film link validation and top-three milestone priority without changing holds or authority"
+        },
+        {
+          "at": "2026-11-04T17:45Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Implemented both changes; 110 targeted tests pass (film links, jobs, workflow, dispatcher); board publisher tests also completed"
         }
       ],
-      "remaining_action": "Finish validation and dispatch regression tests, then open PR for Chief",
+      "remaining_action": "Complete broad verification and open PR; hand merge to Chief",
       "kind": "assembly",
       "urgent": 5,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T17:44Z",
+        "at": "2026-11-04T17:45Z",
         "by": "codex",
-        "note": "Inspected queue, relay and board tracker; implemented film link validation and top-three milestone priority without chan"
+        "note": "Implemented both changes; 110 targeted tests pass (film links, jobs, workflow, dispatcher); board publisher tests also c"
       }
     }
   ],
