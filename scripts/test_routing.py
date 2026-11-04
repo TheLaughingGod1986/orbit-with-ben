@@ -88,7 +88,7 @@ class Routing(unittest.TestCase):
 
     def test_reroute_hands_a_claude_job_to_cursor_and_remembers_where_it_was(self):
         d = {"next_id": 1, "jobs": []}
-        j = jobs.do_add(d, title="028 listing", needs="cloud", body="", by="chief", at=T0, kind="listing")
+        j = jobs.do_add(d, title="028 listing", needs="cloud", body="", by="chief", at=T0, kind="listing", film="028", stage="upload")
         jobs.do_reroute(j, "relay", "cursor", "cursor-claude-opus-5-5", "Claude out of usage", T0)
         self.assertEqual((j["status"], j["for"], j["needs"], j["model"]), ("open", "cursor", "mini", "cursor-claude-opus-5-5"))
         self.assertEqual(j["rerouted_from"]["needs"], "cloud")
@@ -105,7 +105,7 @@ class Routing(unittest.TestCase):
 
     def test_jobs_add_carries_kind_and_model_and_refuses_invented_ones(self):
         d = {"next_id": 1, "jobs": []}
-        j = jobs.do_add(d, title="025 DATA chart", needs="mini", body="", by="chief", at=T0, kind="chart")
+        j = jobs.do_add(d, title="025 DATA chart", needs="mini", body="", by="chief", at=T0, kind="chart", film="025", stage="picture")
         self.assertEqual(j["kind"], "chart")
         with self.assertRaises(ValueError):
             jobs.do_add(d, title="x", needs="mini", body="", by="chief", at=T0, kind="paint")
