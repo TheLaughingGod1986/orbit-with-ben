@@ -40,8 +40,8 @@ All 32 draft long projects in `02_Video-Projects/030_*` through `061_*` were aud
 | Film | Draft Title Before J2019 | Chars | Rule 15 Check | Passing Title / Rewrite (≤ 50 chars) | Chars |
 |---|---|---:|---|---|---:|
 | **030** | *The Asteroid That Will Fly Closer Than Our Satellites* | 53 | **FAIL** (53c > 50c; omits `Apophis`; duplicates 2 public titles) | ***Why Asteroid Apophis Passes Under Our Satellites*** | 48 |
-| **031** | *What Happens When Earth's Magnetic Field Flips?* | 47 | **PASS** | *What Happens When Earth's Magnetic Field Flips?* | 47 |
-| **032** | *What Would Happen If You Landed on Titan?* | 41 | **PASS** | *What Would Happen If You Landed on Titan?* | 41 |
+| **031** | Script: *What Happens When Earth's Magnetic Field Flips?* (47c); `metadata_DRAFT_v01.json` options: 53c / 55c / 53c | 47 / 55 | **Script PASS; `metadata_DRAFT_v01.json` options FAIL** (> 50c) | *What Happens When Earth's Magnetic Field Flips?* (47c) / ***Why Earth's Magnetic North Is Racing to Siberia*** (47c) / ***What Happens When Earth's Magnetic Poles Swap?*** (46c) | 47 |
+| **032** | Script: *What Would Happen If You Landed on Titan?* (41c); `metadata_DRAFT_v01.json` option 1: *Why Does Titan's Orange Sky Press 1.5 Times Harder?* (51c) | 41 / 51 | **Script PASS; option 1 FAIL** (51c > 50c) | *What Would Happen If You Landed on Titan?* (41c) / ***Why Titan's Orange Sky Presses 1.5 Times Harder*** (47c) / *What Would You Feel Under Titan's 1.5-Bar Sky?* (46c) | 41 |
 | **033** | *Why Uranus Has 21-Year Winters After Being Knocked Sideways* | 59 | **FAIL** (59c > 50c) | ***Why Knocked-Sideways Uranus Has 21-Year Winters*** | 47 |
 | **034** | *Why Pluto's Frozen Heart Has Zero Craters* | 41 | **PASS** | *Why Pluto's Frozen Heart Has Zero Craters* | 41 |
 | **035** | *Why Neptune's Largest Moon Orbits Backwards* | 43 | **PASS** | *Why Neptune's Largest Moon Orbits Backwards* | 43 |
