@@ -162169,9 +162169,14 @@
           "at": "2026-11-04T06:28Z",
           "by": "codex",
           "what": "step 1 of 3 done: Added identity-bound private evidence reader and macOS resource probes; 15 new collector tests under verification. Production dispatch remains disabled."
+        },
+        {
+          "at": "2026-11-04T06:33Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint c02fe4179a: private local host/account evidence consumer plus read-only capacity report. 285 tests PASS; core/compile/whitespace PASS. Existing plan remains 1/3; no extra lane enabled."
         }
       ],
-      "remaining_action": "Verify private local host/account evidence collector; integrate remaining launch and portable paths later",
+      "remaining_action": "Finish receipt producers, canonical launch/lease integration and portable return verification; then exact-head review and observed rollout",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162182,9 +162187,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T06:28Z",
+        "at": "2026-11-04T06:33Z",
         "by": "codex",
-        "note": "Added identity-bound private evidence reader and macOS resource probes; 15 new collector tests under verification. Produ"
+        "note": "Checkpoint c02fe4179a: private local host/account evidence consumer plus read-only capacity report. 285 tests PASS; core"
       },
       "rerouted_from": {
         "needs": "mini",
