@@ -1,5 +1,5 @@
 {
-  "next_id": 1961,
+  "next_id": 1962,
   "jobs": [
     {
       "id": "J0001",
@@ -169077,6 +169077,34 @@
       ],
       "remaining_action": "Decide Hyperion topic after J1958 and resolve script FIX with J1805 sources",
       "kind": "chief"
+    },
+    {
+      "id": "J1961",
+      "title": "060 Hyperion: formal Gemini sources and claims verification",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "OWB:060 sources repair from J1805. Read jobs/reviews/J1805/CHIEF_SOURCES_RULING_2026-11-04.md, current v01 master/alias, SOURCES.md and notes. Run formal Gemini sources-and-claims verification through agy as <driver>/gemini using the facts routing. No-spend diagnostic authorised now, not topic advancement or script lock. J1960 owns topic/editorial decisions after J1958 topic evidence; do not duplicate those jobs.\nRecord input hashes, command/model/date, raw Gemini findings and a coverage check. Split all 16 source rows into testable claims; check every spoken and visual number, date, WHO year/role, DATA/SCALE/FACT/LABEL/NUMBER OBJECT against actual accessible primary sources, with PASS/FLAG/UNVERIFIABLE, exact source URL, short excerpt/location and retrieval date. Wikipedia is a lead, not a primary source. Preserve qualifiers; inaccessible evidence is not PASS. Row16 synthesis needs individual traceable support.\nResolve mismatched axes/radii and source epochs; density/porosity and Mimas mass/volume comparisons; Lyapunov time versus a repeating wobble period, approximate spin and claims about Titan causing chaos or never tidally locking; proto-Hyperion breakup and ejecta hypotheses versus proof; all basin dimensions, nomenclature and dates against original studies/IAU records; whole-body albedo versus crater-wall reflectance and spectral similarity versus proven dust provenance; sublimation certainty; electric potential versus charge and the electron-beam interpretation; publication identity/date for PMID39100574 and PMID42390330, and whether either supports a preserved 4.5-billion-year record. Source all WHO years including missing Nordheim years without invention, and roles appropriate to the scene. Verify NASA image identities, acquisition dates versus release dates, and whether named assets are stills or motion; this is provenance checking, never visual KEEP approval. These are local-text verification targets, not approved scientific corrections.\nDo not rewrite narration. Preserve original drafts and source history; commit Gemini findings and any source-evidence corrections with provenance. Return flags to J1960 and the dependent direct-quote reviewer. Revised/new claims require a delta facts pass on the final candidate before explicit Chief lock. No VO, generation, upload, scheduling, visibility change or spend. Preserve focus priority and all Chief/Ben gates.\n",
+      "ref": "J1805",
+      "film": "060",
+      "stage": "sources",
+      "after": "J1805",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T05:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T05:48Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify Hyperion spoken and visual claims through Gemini; report flags to J1960",
+      "kind": "facts"
     }
   ],
   "focus": [],
