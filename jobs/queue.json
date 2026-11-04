@@ -162229,10 +162229,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T22:14Z",
+      "eta": "2026-11-05T00:14Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "Chief FIX at 91576db52d: 94 capacity tests PASS; CI stale STATUS.md and production caller integration incomplete. Same-job engineering ready; no merge or rollout.",
@@ -162576,6 +162576,11 @@
           "at": "2026-11-04T20:43Z",
           "by": "codex",
           "what": "released: Clean checkpoint PR437 f847b1ed90, worktree /private/tmp/J1843-callers. Preserved2/3. Fixed unsuccessful outcome canonical cleanup;130 focused tests PASS, core56/status/whitespace PASS. Remaining production callers and supported portable input/output transport exceed this run; resume same J1843 immediately, no date hold or duplicate. Rollout disabled; exact-head review/green CI/observed host acceptance still required."
+        },
+        {
+          "at": "2026-11-04T22:14Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Implement production capacity callers and portable receipt transport; then exact-head review",
