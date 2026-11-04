@@ -250,3 +250,71 @@ def consume_with_git(*, evidence, token, host_id, worker, claimant, eta_min=25):
     if error or value is None:
         rollback_board()
     return value, error
+
+
+def release_failed_with_git(*, token, host_id, worker, claimant, reason, clear, clock=None):
+    """Release only this failed dispatch after the local supervisor proves it clear.
+
+    `clear` must reread local leases on EVERY Git retry. An uncertain child or
+    quarantine retains the canonical claim. A new owner/token or a completed job
+    is never modified. OWB board changes roll back on rejected push attempts;
+    HOS film stages remain excluded. Failed output is never marked approved.
+    """
+    import jobs
+
+    if not str(reason).strip():
+        raise ValueError("failed dispatch release requires a reason")
+    snapshots = {}
+
+    def rollback():
+        for path, (before, after) in list(snapshots.items()):
+            if path.exists() and path.read_bytes() == after:
+                path.write_bytes(before)
+            snapshots.pop(path, None)
+
+    def apply(data):
+        rollback()
+        before = copy.deepcopy(data)
+        try:
+            matches = [j for j in data.get("jobs", [])
+                       if (j.get("dispatch_reservation") or {}).get("token") == token]
+            if not matches:
+                return False, None, []  # already reconciled, never find by job ID alone
+            if len(matches) != 1:
+                raise ValueError("ambiguous failed dispatch token")
+            job = matches[0]
+            receipt = job["dispatch_reservation"]
+            if (job.get("status") != "claimed" or job.get("by") != claimant
+                    or receipt.get("phase") != "claimed"
+                    or receipt.get("host") != host_id or receipt.get("worker") != worker
+                    or receipt.get("claimant") != claimant):
+                raise ValueError("failed dispatch claim changed; reconciliation required")
+            if job.get("repo") == "hos" and job.get("film"):
+                raise ValueError("HOS film release requires supported board transaction")
+            if clear() is not True:
+                raise ValueError("local execution cleanup unverified; claim retained")
+            touched = []
+            if jobs.on_board(job):
+                path = jobs.film_status_path(job)
+                original = path.read_bytes()
+                jobs.board_release(job, claimant, "todo")
+                snapshots[path] = (original, path.read_bytes())
+                touched.append(path)
+            at = clock() if clock else dt.datetime.now(dt.timezone.utc)
+            jobs.do_release(job, claimant, "failed capacity dispatch: " + reason, at)
+            del job["dispatch_reservation"]
+            return True, None, touched
+        except (ValueError, OSError) as error:
+            rollback()
+            data.clear()
+            data.update(before)
+            return None, str(error), []
+
+    try:
+        value, error = jobs.with_git(apply, "jobs: reconcile failed capacity dispatch")
+    except BaseException:
+        rollback()
+        raise
+    if error or value is None:
+        rollback()
+    return value, error

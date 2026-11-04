@@ -46,6 +46,56 @@ print(json.dumps(dict(value=value, error=error, attempts=count)))
 '''
 
 
+REVIEW_IDENTITY_RUNNER = r'''
+import sys, tempfile, pathlib, subprocess, json
+sys.path.insert(0, sys.argv[1])
+import jobs, studio, capacity_evidence, capacity_reservations as reservations
+from test_dispatch_capacity import T, host, proof, choose, job
+from unittest.mock import patch
+with tempfile.TemporaryDirectory() as tmp:
+    root=pathlib.Path(tmp); repo=root/'repo'; remote=root/'remote.git'
+    def git(*args,cwd=None):
+        return subprocess.run(['git',*map(str,args)],cwd=cwd,capture_output=True,text=True,check=True).stdout.strip()
+    git('init','--bare',remote); git('init','-b','main',repo)
+    git('config','user.name','Local test',cwd=repo);git('config','user.email','test@example.invalid',cwd=repo)
+    (repo/'jobs').mkdir();(repo/'jobs/queue.json').write_text(json.dumps({'jobs':[job()]}));(repo/'JOBS.md').write_text('fixture\n')
+    git('add','.',cwd=repo);git('commit','-m','fixture',cwd=repo);git('remote','add','origin',remote,cwd=repo);git('push','origin','main',cwd=repo)
+    reviewed=capacity_evidence.installed_head(repo)
+    jobs.ROOT=studio.ROOT=repo;jobs.QUEUE=repo/'jobs/queue.json';jobs.JOBS_MD=repo/'JOBS.md'
+    jobs.load=lambda:json.loads(jobs.QUEUE.read_text())
+    jobs.save=lambda data:jobs.QUEUE.write_text(json.dumps(data,indent=2)+'\n')
+    def evidence():
+        return dict(hosts=[host()],leases=[],accounts={'shared':proof(ready=True,limit=1)},at=T,chief='codex',choose_worker=choose,installed_head=capacity_evidence.reviewed_installation(repo,reviewed),reviewed_head=reviewed)
+    with patch('chief_relay.current_execution',return_value=None),patch('chief_relay.worker_capabilities',return_value={}):
+        result,error=reservations.reserve_with_git(evidence=evidence,token='head-drift-probe-0001',host_id='mini',worker='codex')
+        assert result and error is None,(result,error)
+        changed=capacity_evidence.installed_head(repo)!=reviewed
+        claim,error=reservations.consume_with_git(evidence=evidence,token='head-drift-probe-0001',host_id='mini',worker='codex',claimant='codex')
+        assert changed and claim and claim['status']=='claimed' and error is None,(claim,error)
+        # Include the board/queue release transaction in the same real-Git cycle.
+        released,error=reservations.release_failed_with_git(token='head-drift-probe-0001',host_id='mini',worker='codex',claimant='codex',reason='fixture launch rejected',clear=lambda:True,clock=lambda:T)
+        assert released and error is None,(released,error)
+        assert jobs.load()['jobs'][0]['status']=='open'
+        assert capacity_evidence.reviewed_installation(repo,reviewed)==reviewed
+        # Uncommitted tracked state and later source changes both invalidate review.
+        (repo/'JOBS.md').write_text('dirty operational state')
+        try:
+            capacity_evidence.reviewed_installation(repo,reviewed)
+            raise AssertionError('dirty installation accepted')
+        except ValueError:
+            pass
+        git('checkout','--','JOBS.md',cwd=repo)
+        (repo/'scripts').mkdir();(repo/'scripts/runtime.py').write_text('changed code')
+        git('add','.',cwd=repo);git('commit','-m','unreviewed code',cwd=repo)
+        try:
+            capacity_evidence.reviewed_installation(repo,reviewed)
+            raise AssertionError('changed source accepted')
+        except ValueError:
+            pass
+        print(json.dumps({'reserve_claim_release':True,'source_and_dirty_rejected':True}))
+
+'''
+
 class GitRace(unittest.TestCase):
     def test_two_hosts_cannot_reserve_same_job_or_stage(self):
         for same_stage in (False, True):
@@ -221,6 +271,15 @@ print(json.dumps(dict(value=value, error=error, attempts=count)))
             self.assertEqual(len(remote_board["claims"]), 1)
             self.assertEqual(remote_board["claims"][0]["by"], "codex")
             self.assertEqual(remote_board["stages"]["edit"]["state"], "doing")
+
+    def test_review_identity_survives_real_queue_commits_but_rejects_source_change(self):
+        runner = REVIEW_IDENTITY_RUNNER
+        result = subprocess.run([sys.executable, "-c", runner,
+                                 str(pathlib.Path(__file__).parent.resolve())],
+                                capture_output=True, text=True, timeout=30)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout),
+                         {"reserve_claim_release":True,"source_and_dirty_rejected":True})
 
 
 if __name__ == "__main__":

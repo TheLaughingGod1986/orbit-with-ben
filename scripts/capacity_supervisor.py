@@ -202,16 +202,51 @@ def dispatch_claimed(*, evidence, registry, token, host_id, worker, claimant,
             else:
                 capacity.verify_inputs(claim_doc["portable"], work_dir)
 
-    return run(
-        registry=registry,
-        read_claim=read_claim,
-        guard=guard,
-        installed_head=installed_head,
-        reviewed_head=reviewed_head,
-        argv=argv,
-        cwd=cwd,
-        log_path=log_path,
-        cap_seconds=cap_seconds,
-        preflight=default_preflight,
-        clock=clock,
-    )
+    try:
+        return run(
+            registry=registry,
+            read_claim=read_claim,
+            guard=guard,
+            installed_head=installed_head,
+            reviewed_head=reviewed_head,
+            argv=argv,
+            cwd=cwd,
+            log_path=log_path,
+            cap_seconds=cap_seconds,
+            preflight=default_preflight,
+            clock=clock,
+        )
+    except Exception as failure:
+        # run() reaps before freeing its lease. A surviving/quarantined lease
+        # means cleanup was not proven: retain the canonical claim, fail closed.
+        # Do not serialize exception messages: they may contain private paths
+        # or worker command/auth diagnostics.
+        reason = type(failure).__name__
+        def clear():
+            return not any(row.get("token") == token
+                           for row in registry.observe(clock()))
+        try:
+            released, error = reservations.release_failed_with_git(
+                token=token, host_id=host_id, worker=worker, claimant=claimant,
+                reason=reason, clear=clear, clock=clock,
+            )
+        except Exception as cleanup:
+            released, error = None, type(cleanup).__name__
+        if error:
+            # An immutable local receipt makes an interrupted/failed canonical
+            # cleanup discoverable; it never clears a lease or releases a job.
+            pending = registry.root / (registry.host + "-reconciliation")
+            pending.mkdir(parents=True, exist_ok=True)
+            key = hashlib.sha256(token.encode()).hexdigest()
+            record = dict(token=token, host=host_id, worker=worker, claimant=claimant,
+                          job=claimed["id"], at=clock().isoformat(),
+                          phase="canonical_cleanup_required", failure=reason)
+            try:
+                with (pending / (key + ".json")).open("x") as output:
+                    json.dump(record, output)
+                    output.flush()
+                    os.fsync(output.fileno())
+            except FileExistsError:
+                pass
+            raise RuntimeError("failed dispatch requires canonical reconciliation; claim retained") from failure
+        raise

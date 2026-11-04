@@ -291,6 +291,79 @@ class Claims(unittest.TestCase):
         self.assertEqual(len(calls), 2)
         self.assertEqual(self.data["jobs"][0]["by"], "other-host")
 
+    def test_failed_release_checks_exact_claim_and_current_local_cleanup(self):
+        self.consume()
+        original = copy.deepcopy(self.data)
+        def transaction(apply, message):
+            return apply(self.data)[:2]
+        kw = dict(token=self.kw["token"], host_id="mini", worker="codex", claimant="codex",
+                  reason="FileNotFoundError", clock=lambda:T)
+        with patch("jobs.with_git", side_effect=transaction):
+            value, error = reservations.release_failed_with_git(**kw, clear=lambda:False)
+            self.assertIsNone(value)
+            self.assertIn("cleanup unverified", error)
+            self.assertEqual(self.data, original)
+            value, error = reservations.release_failed_with_git(**dict(kw, claimant="gemini"), clear=lambda:True)
+            self.assertIsNone(value)
+            self.assertEqual(self.data, original)
+            value, error = reservations.release_failed_with_git(**kw, clear=lambda:True)
+            self.assertTrue(value)
+            self.assertIsNone(error)
+            self.assertEqual(self.data["jobs"][0]["status"], "open")
+            self.assertNotIn("dispatch_reservation", self.data["jobs"][0])
+            # Replay cannot release some later owner's claim by matching job ID.
+            self.data["jobs"][0].update(status="claimed", by="gemini")
+            value, error = reservations.release_failed_with_git(**kw, clear=lambda:True)
+            self.assertFalse(value)
+            self.assertEqual(self.data["jobs"][0]["by"], "gemini")
+
+    def test_failed_release_rolls_back_board_on_rejected_push_and_rechecks_cleanup(self):
+        import studio
+        with tempfile.TemporaryDirectory() as temp:
+            films = pathlib.Path(temp) / "02_Video-Projects"
+            film = films / "028_Test"
+            film.mkdir(parents=True)
+            path = film / "status.json"
+            path.write_text(json.dumps(dict(film="028", title="Test", claims=[],
+                                           stages={"edit":{"state":"todo"}})))
+            self.data["jobs"][0].update(film="028", stage="edit")
+            self.consume()
+            with patch("studio.FILMS", films):
+                import jobs
+                self.assertIsNone(jobs.board_claim(self.data["jobs"][0], "codex", T))
+                before = path.read_bytes()
+                clear_calls = []
+                def clear():
+                    clear_calls.append(True)
+                    return len(clear_calls) == 1  # uncertainty appears before retry
+                def race(apply, message):
+                    losing = copy.deepcopy(self.data)
+                    value, error, touched = apply(losing)
+                    self.assertIsNone(error)
+                    self.assertEqual(json.loads(path.read_text())["claims"], [])
+                    return apply(self.data)[:2]
+                with patch("jobs.with_git", side_effect=race):
+                    value, error = reservations.release_failed_with_git(
+                        token=self.kw["token"], host_id="mini", worker="codex", claimant="codex",
+                        reason="ValueError", clear=clear, clock=lambda:T)
+                self.assertIsNone(value)
+                self.assertIn("cleanup unverified", error)
+                self.assertEqual(path.read_bytes(), before)
+                self.assertEqual(self.data["jobs"][0]["status"], "claimed")
+                self.assertEqual(len(clear_calls), 2)
+
+                # A later confirmed-clear retry releases the queue and board,
+                # without pretending any failed output is reviewed or done.
+                with patch("jobs.with_git", side_effect=lambda apply, message:apply(self.data)[:2]):
+                    value, error = reservations.release_failed_with_git(
+                        token=self.kw["token"], host_id="mini", worker="codex", claimant="codex",
+                        reason="ValueError", clear=lambda:True, clock=lambda:T)
+                self.assertTrue(value)
+                self.assertIsNone(error)
+                board = json.loads(path.read_text())
+                self.assertEqual(board["claims"], [])
+                self.assertEqual(board["stages"]["edit"]["state"], "todo")
+
 
 if __name__ == "__main__":
     unittest.main()

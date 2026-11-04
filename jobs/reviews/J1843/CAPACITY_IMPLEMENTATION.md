@@ -635,3 +635,62 @@ Fresh observations at `08:31Z`:
     `macbook_capacity_verified=false`, `availability="unknown"`, `free_slot_at=null`.
   - Preserve progress **2/3** (`rollout_enabled=False`) and park `J1843` for
     exact-head Chief review of the new composed head.
+
+## Engineering continuation — 4 November, 19:41 UTC onward (Codex)
+
+Continued only J1843 on existing PR437 in the clean worktree
+`/private/tmp/J1843-callers`, merging current main. Plan remains **2/3**;
+production caller integration and observed rollout are still unfinished. No
+completion PASS, merge, second lane or enablement is claimed.
+
+Two prerequisite defects are fixed in this checkpoint:
+
+- `dispatch_claimed` now reconciles a consumed canonical claim after a
+  supervisor/preflight/launch exception. `release_failed_with_git` requires the
+  exact token/host/specialist/claimant and rereads local cleanup on every Git
+  retry. It reopens the queue and releases the matching OWB board stage to todo
+  only after the token has no occupying local lease. Changed ownership, uncertain
+  cleanup or quarantine preserves the claim. A failed canonical cleanup leaves
+  an immutable `<host>-reconciliation/<sha256(token)>.json` local receipt with
+  `canonical_cleanup_required`; it contains exception types, not private error
+  diagnostics. No output becomes approved or complete. HOS film stages remain
+  excluded. Queue-push races roll back board-file writes before retrying.
+- A real local bare-remote reproduction demonstrated that the reservation's own
+  canonical commit changes literal Git HEAD, making the next claim reject its
+  review identity. `reviewed_installation` keeps the full reviewed SHA as the
+  code identity only for a clean descendant whose changes are confined to
+  `jobs/queue.json`, `JOBS.md`, `STATUS.md`, and per-film `status.json` files.
+  Source, rule, review, configuration and approved-input changes invalidate that
+  identity. `transaction_evidence` now uses this checked identity on each retry.
+  The real-Git reserve -> consume -> failed-attempt release regression succeeds;
+  dirty tracked state and an unreviewed source commit are rejected. This is an
+  engineering proposal for exact-head review, not authority to enable it.
+
+Validation at this checkpoint: 98 focused capacity tests, 19 execution-lease,
+12 portable-transfer and 30 canonical queue tests PASS. Core sync (56 files),
+Python compilation, STATUS.md consistency and whitespace checks PASS. Capacity
+process tests require process visibility; the initial sandboxed run could not
+execute `ps`, and the process-visible rerun passed. Related serial-relay/laptop
+and workflow regression results are recorded with the final report.
+
+At about 19:45Z, the only observed Mini execution was this Codex J1843 run, with
+configured lanes=1. Private host registration/probe receipts are absent. The
+cached generic MacBook heartbeat (19:33Z) was stale and did not establish host
+identity, power/idle, account or capability readiness. Availability/free-slot
+outlook stays unknown. No audio/moving-video perception was demonstrated.
+Both repos pulled; HOS Codex inbox empty. NAS scratch offload found nothing old
+enough to move; disk remains about 11.5 GiB free. No NAS content was deleted.
+
+Continue **this same J1843 / PR437**, without a duplicate job or timed hold:
+implement the disabled production callers in `chief_relay.py` and
+`macbook_worker.py`, with supported consuming-host input/output receipt
+transport, fresh per-host account/capability evidence, failure-receipt
+reconciliation, and preserved serial fallback. Use `reviewed_installation` for
+both transaction and launch identity; do not pass raw post-reservation HEAD as
+though it were the reviewed release. Add actual caller-level success,
+launch-failure and changing-laptop-guard regressions. Then exact-head review,
+green CI and observed real-host acceptance are required before enablement.
+The remaining integration exceeds another bounded 20-minute work segment, so
+release at this tested checkpoint. There is no external date/input hold on
+engineering that can proceed now. No spend, media generation, YouTube/Buffer
+write, publishing or policy change is authorized or performed.

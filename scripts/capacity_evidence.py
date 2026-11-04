@@ -228,6 +228,37 @@ def installed_head(root):
         return ""
 
 
+def reviewed_installation(root, reviewed_head):
+    """Bind execution to reviewed code while allowing canonical queue commits.
+
+    reserve/consume each commits queue/board state, so literal HEAD necessarily
+    changes between them. Return the original FULL reviewed SHA only when it is
+    an ancestor, the tracked checkout is clean, and every changed path is one of
+    the existing canonical operational files. Any source, rule, input, review,
+    unrelated film asset or configuration change invalidates the review.
+    Never accept a digest, branch name, non-descendant or dirty tracked tree.
+    """
+    current = installed_head(root)
+    if (not current or not isinstance(reviewed_head, str)
+            or not re.fullmatch(r"[0-9a-f]{40}", reviewed_head)):
+        raise ValueError("clean installation and full reviewed commit required")
+    if current == reviewed_head:
+        return reviewed_head
+    try:
+        command(["git", "-C", str(root), "merge-base", "--is-ancestor", reviewed_head, current])
+        changed = command(["git", "-C", str(root), "diff", "--name-only", "--no-renames",
+                           reviewed_head, current, "--"]).splitlines()
+    except (OSError, ValueError, subprocess.SubprocessError) as error:
+        raise ValueError("installed revision is not a reviewed descendant") from error
+    allowed = {"jobs/queue.json", "JOBS.md", "STATUS.md"}
+    for name in changed:
+        parts = pathlib.PurePosixPath(name).parts
+        board = len(parts) == 3 and parts[0] == "02_Video-Projects" and parts[2] == "status.json"
+        if name not in allowed and not board:
+            raise ValueError("installed code or approved inputs changed since review")
+    return reviewed_head
+
+
 def _safe_evidence_text(value):
     text = str(value or "").strip()
     if (not text or len(text) > 240 or "@" in text
@@ -417,7 +448,7 @@ def transaction_evidence(root, *, lease_root, owb_root, reviewed_head, chief,
     """
     import execution_leases
     at = clock() if clock else dt.datetime.now(dt.timezone.utc)
-    head = installed_head(owb_root)
+    head = reviewed_installation(owb_root, reviewed_head)
     local_host, accounts = collect(root, at=at, installed_head=head, measurement=measurement)
     registry = execution_leases.Registry(lease_root, local_host["host"], local_host["configured_limit"])
     local_rows = registry.observe(at)

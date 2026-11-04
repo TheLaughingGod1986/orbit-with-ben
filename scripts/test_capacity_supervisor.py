@@ -265,6 +265,56 @@ class Supervisor(unittest.TestCase):
             self.assertEqual(data["jobs"][0]["status"], "claimed")
             self.assertEqual((self.root / "dispatch.log").read_text(), "dispatched\n")
 
+    def test_dispatch_failure_reconciles_claim_or_leaves_durable_pending_record(self):
+        import test_capacity_reservations as fixtures
+        for mode in ("preflight", "launch", "uncertain_cleanup", "push_failure"):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as temp:
+                root = pathlib.Path(temp)
+                registry = Registry(root / "leases", "mini", 1)
+                fixture = fixtures.Reservations()
+                fixture.setUp()
+                data = fixture.data
+                ev = {k:v for k,v in fixture.kw.items() if k not in {"token", "host_id", "worker"}}
+                token = fixture.kw["token"]
+                def transaction(apply, message):
+                    if mode == "push_failure" and "reconcile" in message:
+                        return None, "push rejected"
+                    return apply(data)[:2]
+                def failing_run(**kwargs):
+                    if mode == "uncertain_cleanup":
+                        receipt = data["jobs"][0]["dispatch_reservation"]
+                        registry.record(dict(receipt, phase="reserved"), os.getpid(), ev["at"], 60)
+                    if mode == "preflight":
+                        kwargs["guard"] = lambda c: False
+                        return run(**kwargs)
+                    if mode in {"push_failure", "uncertain_cleanup"}:
+                        raise ValueError("private diagnostic must not be persisted")
+                    return run(**kwargs)
+                with patch("jobs.with_git", side_effect=transaction), \
+                        patch("chief_relay.current_execution", return_value=None), \
+                        patch("chief_relay.worker_capabilities", return_value={}), \
+                        patch("capacity_supervisor.run", side_effect=failing_run):
+                    with self.assertRaises((ValueError, FileNotFoundError, RuntimeError)):
+                        dispatch_claimed(
+                            evidence=lambda:ev, registry=registry, token=token,
+                            host_id="mini", worker="codex", claimant="codex",
+                            read_claim=lambda:data["jobs"][0], guard=lambda c:True,
+                            installed_head=ev["installed_head"], reviewed_head=ev["reviewed_head"],
+                            argv=[str(root / "missing-executable")], cwd=root,
+                            log_path=root / "run.log", cap_seconds=1,
+                            rollout_enabled=True, rollout_approval_ref="fixture",
+                            clock=lambda:ev["at"],
+                        )
+                if mode in {"preflight", "launch"}:
+                    self.assertEqual(data["jobs"][0]["status"], "open")
+                    self.assertNotIn("dispatch_reservation", data["jobs"][0])
+                    self.assertFalse((root / "leases/mini-reconciliation").exists())
+                else:
+                    self.assertEqual(data["jobs"][0]["status"], "claimed")
+                    records = list((root / "leases/mini-reconciliation").glob("*.json"))
+                    self.assertEqual(len(records), 1)
+                    self.assertNotIn("private diagnostic", records[0].read_text())
+
 
 if __name__ == "__main__":
     unittest.main()
