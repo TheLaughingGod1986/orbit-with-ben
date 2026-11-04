@@ -175191,20 +175191,27 @@
           "at": "2026-11-04T19:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T19:28Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2043; starting Rule-E review of 031 SHOT_LIST_v01.md"
         }
       ],
-      "remaining_action": "031 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film)",
+      "remaining_action": "Audit SHOT_LIST_v01.md against stt_raw.json, SOURCES.md, script markers, and Teach on screen rules",
       "kind": "review",
       "for": "gemini",
       "urgent": 1,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-04T19:27Z",
+        "of": 4,
+        "at": "2026-11-04T19:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2043; starting Rule-E review of 031 SHOT_LIST_v01.md"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2044",
