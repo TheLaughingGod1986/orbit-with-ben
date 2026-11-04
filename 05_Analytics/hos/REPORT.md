@@ -120,13 +120,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 2 d | 87 | 29.0% | too few to judge | 67.1% | too few to judge |
-| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 3 d | 85 | 32.1% | too few to judge | 84.0% | too few to judge |
-| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 4 d | 78 | 25.9% | too few to judge | 53.6% | too few to judge |
-| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 6 d | 265 | 21.7% | MISS | 78.7% | PASS |
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 7 d | 91 | 72.6% | too few to judge | 64.6% | too few to judge |
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 8 d | 230 | 29.6% | MISS | 65.7% | WATCH |
-| [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 11 d | 49 | 29.8% | too few to judge | 50.0% | too few to judge |
-| [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | 13 d | 175 | 40.5% | MISS | 86.9% | PASS |
+| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 26 h (early) | 16 | 62.5% | too few to judge | - | no read |
+| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 3 d | 127 | 35.6% | MISS | 115.3% | LOOP |
+| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 4 d | 86 | 32.1% | too few to judge | 84.0% | too few to judge |
+| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 5 d | 78 | 25.9% | too few to judge | 53.6% | too few to judge |
+| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 7 d | 269 | 21.7% | MISS | 78.6% | PASS |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 8 d | 93 | 73.1% | too few to judge | 64.4% | too few to judge |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 9 d | 231 | 29.6% | MISS | 65.7% | WATCH |
+| [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | 12 d | 49 | 29.8% | too few to judge | 50.0% | too few to judge |
 
 Stayed to watch: 0 of 3 judged Shorts at 60%+. Average viewed: 2 of 3 at 70%+.
