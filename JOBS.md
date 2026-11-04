@@ -101,6 +101,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1936 | mini | open (after J1791) | – | – | 050 script · chief · 050 Iapetus: Chief topic and editorial decision before script lock |  |
 | J1937 | mini | open (after J1792) | – | – | 051 script · chief · 051 DART: Chief topic and editorial decision before script lock |  |
 | J1939 | mini | open (after J1793) | – | – | 052 script · chief · 052 Miranda: topic and editorial decision before script lock | J1793 |
+| J1940 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
+| J1941 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
+| J1942 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
+| J1943 | cloud | open (after J1942) | – | – | review · Packaging panel decision: OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes |  |
 
 Recently finished:
 
