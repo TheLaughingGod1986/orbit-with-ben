@@ -1,5 +1,5 @@
 {
-  "next_id": 1966,
+  "next_id": 1967,
   "jobs": [
     {
       "id": "J0001",
@@ -169380,6 +169380,34 @@
       ],
       "due": "2026-11-04T07:00:00+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J1966",
+      "title": "061 Venus rotation: formal Gemini sources and claims verification",
+      "needs": "gemini",
+      "repo": "owb",
+      "body": "OWB:061 sources repair from J1808. Read jobs/reviews/J1808/CHIEF_SOURCES_RULING_2026-11-04.md, v01 master and alias, SOURCES.md and J1807 editorial ruling. Run a formal Gemini sources-and-claims check through agy as <driver>/gemini under facts routing. This is a no-spend diagnostic, not topic advancement or script lock. J1963 owns topic evidence; J1964 owns topic/editorial decision. Do not duplicate those tasks.\nRecord input hashes, command/model/date, raw Gemini output and coverage check. Split all 16 bundled source rows into individually testable spoken and visual claims. Check every number, date, WHO year/role, DATA/SCALE/FACT/LABEL/NUMBER OBJECT against actual primary sources with PASS/FLAG/UNVERIFIABLE, exact URL, short excerpt/location and retrieval date. Wikipedia is a lead, not primary verification. Inaccessible sources are not PASS. Trace each row-16 synthesis claim separately.\nResolve local-text flags without assuming corrections: first observed in 1610; measurement versus publication dates; model/proposal versus proven origin and categorical thermal-tide claims; sidereal versus solar day and sunrise-to-sunset versus sunrise-to-sunrise; historical/modern periods and precision, reference direction, synodic near-resonance versus exact same-face claims; 92-bar surface pressure versus thermal-tide amplitude, atmosphere mass/density ratios and underwater comparisons; Mariner/Venera measurements versus later accepted values; dual-impact model certainty; four-state model scope and any-rocky-planet generalisation; Akatsuki orbital versus operational dates, cloud angular rotation versus surface wind speed; up-to-20-minute versus plus/minus-20-minute variability, observation baselines, core and crust estimates; oxygen paper identity/date/altitudes. Source every WHO year/role, including missing years, without inventing them. Verify actual NASA IDs, subjects, dates and reconstruction/simulation classifications; generic image search is not identity evidence and provenance is not KEEP.\nDo not rewrite spoken lines. Preserve drafts and source history; commit raw findings and traceable source corrections. Return flags to J1964 and the direct-quote successor. Changed/new claims require a delta facts pass on the final candidate before Chief lock. No spend, VO, media generation, upload, scheduling or visibility change. Preserve focus priority and all Chief/Ben gates.\n",
+      "ref": "J1808",
+      "film": "061",
+      "stage": "sources",
+      "after": "J1808",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-04T06:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T06:07Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify every Venus spoken and visual claim against primary sources; return flags to J1964",
+      "kind": "facts"
     }
   ],
   "focus": [],

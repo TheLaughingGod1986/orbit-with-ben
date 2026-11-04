@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1963 | mini | open (after J1806) | – | – | 061 topic · for gemini · review · `gemini-argon` · 061 Venus rotation: verify topic evidence and existing-long overlap |  |
 | J1964 | mini | open (after J1963) | – | – | 061 script · chief · 061 Venus rotation: Chief topic and editorial decision after evidence |  |
 | J1965 | any | open | – | – | chief · Chief: verify condition for J1879 |  |
+| J1966 | gemini | open (after J1808) | – | – | 061 sources · facts · 061 Venus rotation: formal Gemini sources and claims verification | J1808 |
 
 Recently finished:
 
