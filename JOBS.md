@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
 | J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
-| J1924 | mini | open (after J1923) | – | – | 026 thumbs · chief · Chief: exact-file decision on OWB026 J1823 v03 after packaging panel |  |
+| J1924 | mini | claimed | codex | 2026-11-04T05:27Z | 026 thumbs · chief · Chief: exact-file decision on OWB026 J1823 v03 after packaging panel |  |
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
 | J1927 | mini | open | – | – | chief · Chief: resolve 026 upload orphan-review |  |
 | J1928 | mini | open (after J1785) | – | – | 044 script · chief · 044 Ganymede: restore topic and editorial decision before facts and script lock | J1785 |
