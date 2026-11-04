@@ -105,6 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1924 | mini | open (after J1923) | – | – | 026 thumbs · chief · Chief: exact-file decision on OWB026 J1823 v03 after packaging panel |  |
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
 | J1927 | mini | open | – | – | chief · Chief: resolve 026 upload orphan-review |  |
+| J1928 | mini | open (after J1785) | – | – | 044 script · chief · 044 Ganymede: restore topic and editorial decision before facts and script lock | J1785 |
 
 Recently finished:
 
