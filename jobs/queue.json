@@ -170932,10 +170932,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-04T12:46Z",
-      "eta": "2026-11-04T13:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-04T07:00Z",
       "result": "",
@@ -170959,6 +170959,11 @@
           "at": "2026-11-04T12:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: Brief and browser sessions verified; 125-video collection checkpointed in tmux J1976-studio-read. Evidence and collector at ~/_desk/jobs/J1976; no final tracker files changed. Corrected stayed-to-watch parser to use first percentage after How viewers engaged, rather than swiped-away percentage. Clean detached worktree /private/tmp/J1976-records ready for metrics-only commit."
+        },
+        {
+          "at": "2026-11-04T12:49Z",
+          "by": "codex",
+          "what": "released: Detached read-only Studio collection running in tmux J1976-studio-read. Log: /Users/benjaminoats/_desk/jobs/J1976/read.log; completion: /Users/benjaminoats/_desk/jobs/J1976/read.done. Missing .done means running: do not start a second copy. Collector resumes existing evidence. When done, validate both channel JSONs and stayedToWatch parsing, copy to clean worktree /private/tmp/J1976-records, rebuild analytics-report.ts using existing dependencies, commit only metrics/report outputs to main as brief authorizes, publish board, then finish/report counts and CTR hits. No video changes, no spend. Plan stays 1/3."
         }
       ],
       "remaining_action": "Finish detached lifetime Studio collection, validate metrics, rebuild and publish tracker",
