@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1907 | mini | open (after J1782) | – | – | 041 script · chief · 041 Io: restore topic and editorial decision before facts and script lock | J1782 |
 | J1909 | mini | open (after J1783) | – | – | 042 script · chief · 042 Red Giant: restore topic and editorial decision before facts and script lock | J1783 |
 | J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
-| J1917 | mini | open | – | – | chief · Chief: merge Ben-approved HOS checker PR365 and clear J0998/J0999 audit handoff | J0998 |
+| J1917 | mini | claimed | codex | 2026-11-04T01:25Z | chief · Chief: merge Ben-approved HOS checker PR365 and clear J0998/J0999 audit handoff | J0998 |
 | J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 

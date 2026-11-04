@@ -165729,10 +165729,10 @@
       "stage": "",
       "after": "",
       "eta_min": 10,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T01:15Z",
+      "eta": "2026-11-04T01:25Z",
       "created_by": "codex",
       "created_at": "2026-11-03T23:59Z",
       "result": "",
@@ -165751,6 +165751,11 @@
           "at": "2026-11-04T00:01Z",
           "by": "codex",
           "what": "Final local validation fab39c33:28/28 hos-contract PASS, core56 PASS, diff whitespace PASS, TypeScript typecheck PASS after local Prisma client generation. Broader Vitest189 passed/4 failed solely DATABASE_URL absent in retired DB-dependent autopublish tests; no DB accessed/configured. Public PR365 QA comment updated. Required fresh CI still running; Chief must verify completion before merge."
+        },
+        {
+          "at": "2026-11-04T01:15Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify approved head/green gates, merge HOS PR365 normally, run live read-only channel audit and reconcile J0998/J0999",
@@ -165758,7 +165763,15 @@
       "direct_approval_key": "Ben-direct-HOS365-a87cd56a-approval",
       "urgent": 5,
       "due": "2026-11-03T23:59:17+00:00",
-      "due_kind": "user-approved-checker-fix"
+      "due_kind": "user-approved-checker-fix",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T01:15Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1918",
