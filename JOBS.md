@@ -117,6 +117,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1999 | mini | open (after J1929) | – | – | 045 topic · review · 045 Mars: verify terraforming neighbours, Short proof and overlap | J1929 |
 | J2000 | mini | open (after J1999) | – | – | 045 script · chief · 045 Mars: decide capacity and advancement after topic evidence | J1929 |
 | J2001 | any | open (after J1930) | – | – | 046 topic · review · 046 Enceladus: verify geyser neighbours, matching Short proof and overlap | J1930 |
+| J2002 | mini | open (after J2001) | – | – | 046 script · chief · 046 Enceladus: decide capacity and advancement after topic evidence | J1930 |
 
 Recently finished:
 
