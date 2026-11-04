@@ -116,6 +116,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1997 | mini | open (after J1996) | – | – | 044 script · chief · 044 Ganymede: decide advancement and own specialist rewrite and facts chain | J1928 |
 | J1999 | mini | open (after J1929) | – | – | 045 topic · review · 045 Mars: verify terraforming neighbours, Short proof and overlap | J1929 |
 | J2000 | mini | open (after J1999) | – | – | 045 script · chief · 045 Mars: decide capacity and advancement after topic evidence | J1929 |
+| J2001 | any | open (after J1930) | – | – | 046 topic · review · 046 Enceladus: verify geyser neighbours, matching Short proof and overlap | J1930 |
 
 Recently finished:
 
