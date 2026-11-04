@@ -165868,13 +165868,13 @@
       "stage": "edit",
       "after": "J1880",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-04T23:46Z",
-      "eta": "2026-11-05T01:46Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:57Z",
-      "result": "",
+      "result": "Waiting for: J2163 must deliver a corrected PR409 recipe with original PTS/gaps and unchanged-picture preservation, truthful measured/UNMEASURED checks, reconciled input hashes, compliant sourced labels and tests. Current recipe is FIX; no production render or generation authorized. Resume J1881 when J2163 evidence is ready; all six notes unresolved.",
       "history": [
         {
           "at": "2026-11-03T18:57Z",
@@ -165900,9 +165900,19 @@
           "at": "2026-11-04T23:50Z",
           "by": "codex",
           "what": "step 2 of 3 done: Recipe FIX: J2163 queued for timing/preservation, truthful verification and compliant labels. Local master hash and ffprobe verified; no replacement render or credit authorized."
+        },
+        {
+          "at": "2026-11-04T23:51Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J2163 must deliver a corrected PR409 recipe with original PTS/gaps and unchanged-picture preservation, truthful measured/UNMEASURED checks, reconciled input hashes, compliant sourced labels and tests. Current recipe is FIX; no production render or generation authorized. Resume J1881 when J2163 evidence is ready; all six notes unresolved."
+        },
+        {
+          "at": "2026-11-04T23:51Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T12:00:00Z"
         }
       ],
-      "remaining_action": "Await J2163 corrected recipe and evidence before Chief production scope",
+      "remaining_action": "Review J2163 corrected recipe before scoping new-version production and capable QA",
       "due": "2026-11-04T14:00:00Z",
       "kind": "chief",
       "progress": {
@@ -165914,7 +165924,12 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "J2163 must deliver a corrected PR409 recipe with original PTS/gaps and unchanged-picture preservation, truthful measured/UNMEASURED checks, reconciled input hashes, compliant sourced labels and tests. Current recipe is FIX; no production render or generation authorized. Resume J1881 when J2163 evidence is ready; all six notes unresolved.",
+        "check_at": "2026-11-05T12:00:00Z"
+      }
     },
     {
       "id": "J1882",
