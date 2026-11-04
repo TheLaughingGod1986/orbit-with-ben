@@ -77,10 +77,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2089 | mini | blocked | codex | – | 032 picture · assembly · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
 | J2090 | cloud | open | – | – | review · 032: review J2089 source identity corrections and 13 teaching-overlay stills | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491 |
 | J2141 | mini | claimed | codex | 2026-11-04T22:12Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
-| J2142 | mini | open | – | – | chief · Chief: resolve 031 shots orphan-review |  |
 
 Recently finished:
 
+- J2142 done: Chief: resolve 031 shots orphan-review (Resolved: J2043 rule-E review GO (SHOT_LIST_v02 55d4dad1c2) but status.json was left at shots=review; set 031 shots done, picture J2141 queued.)
 - J2140 cancelled: Chief: resolve 061 sources orphan-review ()
 - J2139 cancelled: Chief: resolve 061 script orphan-blocked ()
 - J2138 cancelled: Chief: resolve 061 topic orphan-review ()
@@ -90,4 +90,3 @@ Recently finished:
 - J2134 cancelled: Chief: resolve 059 sources orphan-review ()
 - J2133 cancelled: Chief: resolve 059 topic orphan-review ()
 - J2132 cancelled: Chief: resolve 059 script orphan-review ()
-- J2131 cancelled: Chief: resolve 058 script orphan-review ()

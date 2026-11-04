@@ -179264,18 +179264,23 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T19:36Z",
-      "result": "",
+      "result": "Resolved: J2043 rule-E review GO (SHOT_LIST_v02 55d4dad1c2) but status.json was left at shots=review; set 031 shots done, picture J2141 queued.",
       "history": [
         {
           "at": "2026-11-04T19:36Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "claude",
+          "what": "done: shots set done per J2043 GO"
         }
       ],
       "remaining_action": "Chief resolves 031 shots handoff and records the next owner/action",
