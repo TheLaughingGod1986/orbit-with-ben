@@ -157806,13 +157806,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T02:47Z",
-      "eta": "2026-11-04T04:47Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX / not locked. Restored 050 Iapetus handoff in PR446 (8c8ce28ef9), linked J1936 for topic/editorial decision and dependent neighbour/facts/direct quote checks. Review preserved; stage claim cleared; CI and state assertions PASS. No production approval, spend or publishing change.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -157843,6 +157843,11 @@
           "at": "2026-11-04T02:52Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR446 merged at 8c8ce28ef9; both CI checks and state assertions PASS; script remains review, claim cleared, J1936 linked."
+        },
+        {
+          "at": "2026-11-04T02:52Z",
+          "by": "codex",
+          "what": "done: FIX / not locked. Restored 050 Iapetus handoff in PR446 (8c8ce28ef9), linked J1936 for topic/editorial decision and dependent neighbour/facts/direct quote checks. Review preserved; stage claim cleared; CI and state assertions PASS. No production approval, spend or publishing change."
         }
       ],
       "remaining_action": "Repair verified; J1936 owns the remaining topic and script decision",
