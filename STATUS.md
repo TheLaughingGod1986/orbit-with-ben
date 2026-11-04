@@ -58,6 +58,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 060 | sources | gemini | 2026-11-04T16:03Z | 2026-11-04T18:02Z | J1962 060 Hyperion: direct MUST QUOTE review after Gemini facts |
+| 060 | sources | gemini | 2026-11-04T16:03Z | 2026-11-04T17:03Z | J1962 direct MUST QUOTE review |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
