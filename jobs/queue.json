@@ -124051,7 +124051,7 @@
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "J1355",
+      "after": "J1471",
       "eta_min": 120,
       "status": "blocked",
       "by": "codex",
@@ -124705,9 +124705,14 @@
           "at": "2026-11-04T00:44Z",
           "by": "relay",
           "what": "condition verification queued: J1918"
+        },
+        {
+          "at": "2026-11-04T00:55Z",
+          "by": "codex",
+          "what": "J1849 source input accepted; J1356 remains blocked after J1471 repairs/gates, all review and watch obligations preserved"
         }
       ],
-      "remaining_action": "Complete J1847 preview, J1848 moving review and J1849 source decision; then J1471 repairs/gates and J1356 full QA",
+      "remaining_action": "After J1471 repairs and gates, perform full moving/audio/pace review and prepare final-watch handoff",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -124720,8 +124725,8 @@
         "OWB:030"
       ],
       "hold": {
-        "type": "input",
-        "condition": "Workflow text publication is complete under J1910/PR433 and J1846 is complete. The ISS replacement input is still unapproved: J1847 owns the bounded NASA-model preview, followed by J1848 actual-moving review and J1849 Chief exact-input decision. Then J1471 must complete the remaining repairs/gates and J1356 the full audiovisual/pace review. Original v13a and AR replacement work remain separate; no source, Edit, QA or Ben approval is inferred.",
+        "type": "dependency",
+        "condition": "J1849 accepted only J1847 ISS replacement input on J1848 playback evidence. Await J1471 repaired masters and all affected gates, then full audiovisual/pace review and final-watch readiness. No Ben or publishing approval.",
         "check_at": "2026-11-04T01:44:20+00:00",
         "last_recheck": "J1863",
         "checked_at": "2026-11-03T22:36:35+00:00",
@@ -133204,19 +133209,19 @@
       "title": "AR cohort: correct remaining opening-gate failures after J1468",
       "needs": "mini",
       "repo": "owb",
-      "body": "Acting-Chief Codex ruling on J1467, 1 Nov 2026: technical sweep accepted only. J1468 PR379 audio repairs AR1 v02 / AR2 v07 / AR3 v06 still FAIL gate_shorts_open: AR1 first cut 6.00s >3s; AR2 opening diff 0.25<1.50; AR3 1.41<1.50. Scoped GBP0 correction authorised: inspect full moving openings against locked lines and h40 timings, use existing approved moving assets to correct only the failing opening/cut in new versioned masters, preserve all originals, locked VO, repaired full-runtime score and accepted remaining picture. Never substitute the separate AR2 v10/AR3 v09 branch. No generation or credits. If suitable approved assets are absent, report exact missing assets for Chief; do not mint or waive gates. Run all affected picture/polish/music/SFX/Shorts-open/loop checks with complete metadata. Review full moving cuts and listen to audio including pace WARN; do not claim listening from ASR or stills. Commit evidence and versioned pre-upload mappings in clean worktree PR; hand results to J1356 for final-watch readiness and protected review. No upload, schedule, privacy, retitle, Buffer or Ben watch release. Link progress OWB:030. This delegates remediation only; all failed-cut and existing Ben/date/credit holds remain.",
+      "body": "J1849 elected-Chief input acceptance (4 Nov): use only the exact J1847 delivery hashes/interval/recipe reviewed in J1848 PR435. Decision committed locally as 8bd5fef5f2, available in J1849 local handoff. Source input only approved; no final-film approval. Preserve required illustration attribution, h40/h42, full-runtime repaired score, all originals and AR2 v10/AR3 v09 exclusions. Continue existing 1/3 plan, perform remaining AR1/AR2/AR3 repairs and gates, then hand to J1356. No generation, credits or publishing. Public push holds remain.\n\nActing-Chief Codex ruling on J1467, 1 Nov 2026: technical sweep accepted only. J1468 PR379 audio repairs AR1 v02 / AR2 v07 / AR3 v06 still FAIL gate_shorts_open: AR1 first cut 6.00s >3s; AR2 opening diff 0.25<1.50; AR3 1.41<1.50. Scoped GBP0 correction authorised: inspect full moving openings against locked lines and h40 timings, use existing approved moving assets to correct only the failing opening/cut in new versioned masters, preserve all originals, locked VO, repaired full-runtime score and accepted remaining picture. Never substitute the separate AR2 v10/AR3 v09 branch. No generation or credits. If suitable approved assets are absent, report exact missing assets for Chief; do not mint or waive gates. Run all affected picture/polish/music/SFX/Shorts-open/loop checks with complete metadata. Review full moving cuts and listen to audio including pace WARN; do not claim listening from ASR or stills. Commit evidence and versioned pre-upload mappings in clean worktree PR; hand results to J1356 for final-watch readiness and protected review. No upload, schedule, privacy, retitle, Buffer or Ben watch release. Link progress OWB:030. This delegates remediation only; all failed-cut and existing Ben/date/credit holds remain.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "J1468",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-01T07:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-01T07:24Z",
-      "result": "Missing suitable approved ISS opening candidate: cached Crew-2 351-374s native-motion proxies 0.156-0.321%, exploratory ~2.35x crops max 0.704%, threshold 1.50. PR380 d0b04b5e0 records diagnostics (not final gate), preserved master hashes and exact input request. Need Chief to identify approved alternate interval/approach; no mint or gate waiver. Remaining AR1/AR3 corrections, full gates, full moving/audio review and pace assessment still owed. J1356/all holds remain.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-01T07:24Z",
@@ -133802,30 +133807,31 @@
           "at": "2026-11-03T22:36Z",
           "by": "codex",
           "what": "Queue/PR publication status verified after Ben text-only authorization: J1910 and J1846 done; correct stale public-push wording only. Blocked status, progress, dependency/check dates and all media gates unchanged. Prior condition retained here: J1864 verified J1844 FIX at 1474821f3 and J1846 scope 001b6962f: no approved exact ISS replacement. J1846 remains blocked on recorded approval for its public evidence-branch push; J1847 preview, J1848 actual-moving review and J1849 Chief exact-input acceptance are unstarted. Do not repeat T545. Preserve AR1/AR3 corrections, complete metadata and all gates, J1356 full moving/audio pace review, originals and all Ben/date/credit/publishing holds."
+        },
+        {
+          "at": "2026-11-04T00:55Z",
+          "by": "codex",
+          "what": "reopened: J1849 accepts exact J1847 input reviewed by J1848 (PR435). Local decision 8bd5fef5f2; source-input hold only satisfied. Public decision-artifact push remains blocked; private local handoff follows J1912 precedent. All master repair, gate, audiovisual and publishing obligations remain."
+        },
+        {
+          "at": "2026-11-04T00:55Z",
+          "by": "codex",
+          "what": "J1849 preserves prior 1/3 plan and immediately queues the existing assembly job; no new task"
         }
       ],
-      "remaining_action": "Complete J1847 preview, J1848 moving review and J1849 source decision; then J1471 repairs/gates and J1356 full QA",
+      "remaining_action": "Apply accepted J1847 ISS input and remaining AR1/AR3 opening repairs; run affected gates and hand off to J1356",
       "kind": "assembly",
+      "taskKeys": [
+        "OWB:030"
+      ],
+      "publication_wording_update": "J1910-PR433",
       "progress": {
         "step": 1,
         "of": 3,
         "at": "2026-11-01T07:45Z",
         "by": "codex",
         "note": "Inspection evidence d0b04b5e0, PR380. Native Crew-2 window/crop probes below threshold; all J1468 master hashes match. N"
-      },
-      "taskKeys": [
-        "OWB:030"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Workflow text publication is complete under J1910/PR433 and J1846 is complete. The ISS replacement input is still unapproved: J1847 owns the bounded NASA-model preview, followed by J1848 actual-moving review and J1849 Chief exact-input decision. Then J1471 must complete the remaining repairs/gates and J1356 the full audiovisual/pace review. Original v13a and AR replacement work remain separate; no source, Edit, QA or Ben approval is inferred.",
-        "check_at": "2026-11-03T22:09:05+00:00",
-        "last_recheck": "J1864",
-        "checked_at": "2026-11-03T22:36:35+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1891"
-      },
-      "publication_wording_update": "J1910-PR433"
+      }
     },
     {
       "id": "J1472",
@@ -164473,7 +164479,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -164485,6 +164491,11 @@
           "at": "2026-11-03T21:09Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T00:55Z",
+          "by": "codex",
+          "what": "cancelled: Superseded by J1849 exact-input decision and evidence-backed J1471 reopening; no media or publishing gate waived"
         }
       ],
       "remaining_action": "Verify readiness: Obtain accepted exact ISS replacement through J1846-J1849, then correct AR openings and run full gates",
