@@ -165295,6 +165295,11 @@
           "at": "2026-11-04T11:29Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-05T11:30:00Z"
+        },
+        {
+          "at": "2026-11-04T12:20Z",
+          "by": "codex",
+          "what": "Cleared stale input hold: direct user in current execution conversation instructs exact three hash-checked R2 assets and only six missing 8 Nov Buffer posts, skipping existing. No scope expansion; live validation required."
         }
       ],
       "remaining_action": "Resolve trusted authorization for three R2 assets and six scoped Buffer posts, then revalidate live inputs before execution",
@@ -165334,21 +165339,21 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "hold": {
-        "type": "input",
-        "condition": "J2010: Ben approval remains recorded and is not missing. Automatic rejection ecd8d8ff06 rejected its transmission through queue/tool output, not the underlying scope. No supported trust-transfer mechanism is exposed in this session. Resume only in the original approval-bearing interactive conversation with its actual user message visible to the execution review, or an explicitly supported platform approval handoff; copying approval into files, another relay, or alternate egress is not clearance. Revalidate three hashes and six posts only after that context accepts authorization. No external writes retried. Next daily check is for changed execution context only; do not repeat unchanged hourly verification.",
-        "check_at": "2026-11-05T11:30:00Z",
-        "last_recheck": "J2008",
-        "checked_at": "2026-11-04T10:45:14+00:00",
-        "checked_by": "codex"
-      },
       "log": [
         {
           "at": "2026-11-04T12:10Z",
           "by": "claude",
           "what": "reopened: Ben, direct to Claude in session_01V9Sad7gSLoa4mS5LkpZjkx, 4 Nov 2026 ~12:10 UTC: \"J1878 approved, go ahead with the Buffer posts\". Second direct approval (first: \"Ok I approve\", 3 Nov 23:52, to Codex). Scope unchanged: the three hash-pinned assets to the existing R2 host and the six missing future posts only (Mars long Js6EQJ8qDi8 8 Nov 18:00Z IG/FB/Threads; HOS PFj6172YU4Q 8 Nov 11:30Z IG/FB/TikTok). Deadline 8 Nov 11:30Z. If the worker auto-review again refuses relayed approval, do not retry: post one line on #478 asking Ben to approve in that Mini session itself."
         }
-      ]
+      ],
+      "cleared_hold": {
+        "type": "input",
+        "condition": "J2010: Ben approval remains recorded and is not missing. Automatic rejection ecd8d8ff06 rejected its transmission through queue/tool output, not the underlying scope. No supported trust-transfer mechanism is exposed in this session. Resume only in the original approval-bearing interactive conversation with its actual user message visible to the execution review, or an explicitly supported platform approval handoff; copying approval into files, another relay, or alternate egress is not clearance. Revalidate three hashes and six posts only after that context accepts authorization. No external writes retried. Next daily check is for changed execution context only; do not repeat unchanged hourly verification.",
+        "check_at": "2026-11-05T11:30:00Z",
+        "last_recheck": "J2008",
+        "checked_at": "2026-11-04T10:45:14+00:00",
+        "checked_by": "codex"
+      }
     },
     {
       "id": "J1879",
