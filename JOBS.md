@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1972 | mini | open (after J1971) | – | – | 034 script · chief · 034 Pluto: decide advancement after evidence and own rewrite and facts chain | J1897 |
 | J1973 | mini | open (after J1898) | – | – | 035 topic · for gemini · review · `gemini-argon` · 035 Triton: verify neighbours and Neptune Short topic-fit evidence | J1898 |
 | J1974 | mini | open (after J1973) | – | – | 035 script · chief · 035 Triton: decide advancement and own specialist rewrite and facts chain | J1898 |
-| J1976 | mini | open | – | – | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J1976 | mini | claimed | codex | 2026-11-04T14:41Z | for codex · studio · `gpt-6.1-sol` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1977 | mini | open (after J1900) | – | – | 036 topic · for gemini · review · `gemini-argon` · 036 Mercury: verify neighbours and polar-ice Short evidence | J1900 |
 | J1978 | mini | open (after J1977) | – | – | 036 script · chief · 036 Mercury: decide advancement and own rewrite and facts chain | J1900 |
 | J1979 | mini | open (after J1901) | – | – | 037 topic · for gemini · review · `gemini-argon` · 037 Milky Way Centre: verify neighbours and matching Short evidence | J1901 |
