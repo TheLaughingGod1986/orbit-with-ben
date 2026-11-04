@@ -161332,9 +161332,14 @@
           "at": "2026-11-04T03:12Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed existing PR437 and reviewed planner/reservation/lease/transfer checkpoint; implementation remains incomplete."
+        },
+        {
+          "at": "2026-11-04T03:15Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Added canonical claim adapter, MacBook owner binding, guard rechecks, idempotent claim acknowledgement and reservation replay fix. Focused claim tests and two-clone push-race tests pass; launcher/host transport still incomplete."
         }
       ],
-      "remaining_action": "Implement and test guarded reservation-to-claim transition on existing PR437; rollout stays disabled",
+      "remaining_action": "Verify reservation consumption and real local Git races; checkpoint PR437 without enabling dispatch",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -161345,9 +161350,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-04T03:12Z",
+        "at": "2026-11-04T03:15Z",
         "by": "codex",
-        "note": "Resumed existing PR437 and reviewed planner/reservation/lease/transfer checkpoint; implementation remains incomplete."
+        "note": "Added canonical claim adapter, MacBook owner binding, guard rechecks, idempotent claim acknowledgement and reservation r"
       },
       "rerouted_from": {
         "needs": "mini",
