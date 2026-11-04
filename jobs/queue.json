@@ -162426,6 +162426,11 @@
           "at": "2026-11-04T11:48Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2010 review FIX complete on PR437 head 91576db52d (composed with PR477 d12b004c67; HOS film stages fail closed across propose/reserve/consume/consume_with_git, OWB board claims roll back on push races, 3 push-race regression tests added, 313 focused tests + core_sync 56/56 PASS, rollout_enabled=False). Needs exact-head Chief review and observed real-host transitions before enabling capacity rollout."
+        },
+        {
+          "at": "2026-11-04T14:26Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Exact-head Chief review of PR437 (91576db52d, composed with PR477) and observed real-host transitions; rollout stays disabled",
@@ -162451,7 +162456,8 @@
         "at": "2026-11-04T11:48Z",
         "by": "gemini",
         "note": "Fixed J2010 HOS stage fail-closed + OWB board rollback on push races on PR437 (91576db52d, composed with PR477); 313 foc"
-      }
+      },
+      "escalated_at": "2026-11-04T14:26Z"
     },
     {
       "id": "J1844",
