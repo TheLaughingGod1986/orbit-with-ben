@@ -171117,18 +171117,23 @@
           "at": "2026-11-04T13:56Z",
           "by": "codex",
           "what": "step 0 of 3 done: Read-only collection for all dashboard videos; inspecting collectors and sessions."
+        },
+        {
+          "at": "2026-11-04T13:57Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resumed prior 1/3 checkpoint: detached collector exited 0 at 12:58Z; evidence covers 94 OWB and 31 HOS videos. No duplicate collection started."
         }
       ],
-      "remaining_action": "Read lifetime Studio metrics for both channels",
+      "remaining_action": "Validate collected metrics and rebuild the tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-04T13:56Z",
+        "at": "2026-11-04T13:57Z",
         "by": "codex",
-        "note": "Read-only collection for all dashboard videos; inspecting collectors and sessions."
+        "note": "Resumed prior 1/3 checkpoint: detached collector exited 0 at 12:58Z; evidence covers 94 OWB and 31 HOS videos. No duplic"
       },
       "rerouted_from": {
         "needs": "mini",
