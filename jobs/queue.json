@@ -174616,13 +174616,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-04T17:42Z",
-      "eta": "2026-11-04T19:42Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T17:22Z",
-      "result": "",
+      "result": "parked for Chief: review and merge PR488 head 0a655e1d52. Worker implementation complete; 667 scripts tests OK (8 skipped), 42 other tests pass; core/rules checks pass. GitHub checks not reported yet. No worker merge authority.",
       "history": [
         {
           "at": "2026-11-04T17:22Z",
@@ -174658,6 +174658,11 @@
           "at": "2026-11-04T17:49Z",
           "by": "codex",
           "what": "step 3 of 3 done: Worker implementation and PR complete: 667 script tests OK (8 skipped), 42 additional tests pass, core/rules/diff checks pass. No GitHub checks reported; no merge by worker."
+        },
+        {
+          "at": "2026-11-04T17:49Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review and merge PR488 head 0a655e1d52. Worker implementation complete; 667 scripts tests OK (8 skipped), 42 other tests pass; core/rules checks pass. GitHub checks not reported yet. No worker merge authority."
         }
       ],
       "remaining_action": "Chief reviews PR488 head 0a655e1d52 and merges after required checks",
