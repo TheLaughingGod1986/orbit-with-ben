@@ -60,6 +60,5 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 031 | shots | claude | 2026-11-04T17:54Z | 2026-11-04T19:53Z | J2041 031 shots: shot list from the locked script and voice (WIP film) |
 | 032 | shots | claude | 2026-11-04T17:58Z | 2026-11-04T19:57Z | J2042 032 shots: shot list from the locked script and voice (WIP film) |
-| 061 | sources | gemini | 2026-11-04T17:52Z | 2026-11-04T18:52Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
