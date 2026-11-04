@@ -13,7 +13,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0275 | mini | blocked | gemini | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, aAUgIGEuPwQ) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
-| J0862 | mini | open | – | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
+| J0862 | mini | claimed | codex | 2026-11-04T20:40Z | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
