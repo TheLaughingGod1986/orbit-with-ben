@@ -118,7 +118,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2002 | mini | open (after J2001) | – | – | 046 script · chief · 046 Enceladus: decide capacity and advancement after topic evidence | J1930 |
 | J2003 | any | open (after J1933) | – | – | 047 topic · review · 047 Great Red Spot: verify neighbours, matching Short proof and overlap | J1933 |
 | J2004 | mini | open (after J2003) | – | – | 047 script · chief · 047 Great Red Spot: decide capacity and advancement after topic evidence | J1933 |
-| J2005 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J2005 | any | claimed | codex | 2026-11-04T11:48Z | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
