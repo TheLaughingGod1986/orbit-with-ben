@@ -118,6 +118,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2003 | mini | open (after J1933) | – | – | 047 topic · for gemini · review · `gemini-argon` · 047 Great Red Spot: verify neighbours, matching Short proof and overlap | J1933 |
 | J2004 | mini | open (after J2003) | – | – | 047 script · chief · 047 Great Red Spot: decide capacity and advancement after topic evidence | J1933 |
 | J2007 | mini | open (after J2006) | – | – | 048 script · chief · 048 Ceres: decide capacity and advancement after topic evidence |  |
+| J2008 | any | open | – | – | chief · Chief: verify condition for J1878 |  |
+| J2009 | mini | open | – | – | chief · Chief: resolve 048 topic orphan-review |  |
 
 Recently finished:
 
