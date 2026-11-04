@@ -157611,9 +157611,14 @@
           "at": "2026-11-04T02:31Z",
           "by": "codex",
           "what": "step 1 of 3 done: J0575 and J0583 cancelled as duplicates; 047 remains draft-only with eight TO VERIFY source rows and unsigned audit"
+        },
+        {
+          "at": "2026-11-04T02:32Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: J1933 queued for OWB:047/script after J1788; FIX findings and stage release recorded in repair PR"
         }
       ],
-      "remaining_action": "Record FIX findings and restore the missing 047 review handoff",
+      "remaining_action": "Verify and land 047 handoff repair, then report",
       "kind": "chief",
       "handoff": {
         "film": "047",
@@ -157622,11 +157627,11 @@
         "signature": "597ceb92bf0ed0e856ce"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T02:31Z",
+        "at": "2026-11-04T02:32Z",
         "by": "codex",
-        "note": "J0575 and J0583 cancelled as duplicates; 047 remains draft-only with eight TO VERIFY source rows and unsigned audit"
+        "note": "J1933 queued for OWB:047/script after J1788; FIX findings and stage release recorded in repair PR"
       },
       "taskKeys": [
         "OWB:047"
