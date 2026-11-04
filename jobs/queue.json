@@ -158749,9 +158749,14 @@
           "at": "2026-11-04T05:10Z",
           "by": "codex",
           "what": "step 1 of 3 done: Traced J0773/J0782 cancellation to unlocked 061-only outcomes J0789/J0802; Hyperion audit unsigned, neighbour rows lack IDs/URLs."
+        },
+        {
+          "at": "2026-11-04T05:12Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: FIX ruling and board handoff committed in PR458; J1958 queued after J1803. J1804/J1805 retained as editorial/source repair owners."
         }
       ],
-      "remaining_action": "Record topic FIX and queue the missing evidence handoff",
+      "remaining_action": "Verify and merge the ruling, then close and report J1803",
       "kind": "chief",
       "handoff": {
         "film": "060",
@@ -158760,11 +158765,11 @@
         "signature": "7ad682471de70e3ae6c9"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T05:10Z",
+        "at": "2026-11-04T05:12Z",
         "by": "codex",
-        "note": "Traced J0773/J0782 cancellation to unlocked 061-only outcomes J0789/J0802; Hyperion audit unsigned, neighbour rows lack "
+        "note": "FIX ruling and board handoff committed in PR458; J1958 queued after J1803. J1804/J1805 retained as editorial/source repa"
       },
       "taskKeys": [
         "OWB:060"
