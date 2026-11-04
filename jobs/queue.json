@@ -177446,6 +177446,11 @@
           "at": "2026-11-04T22:33Z",
           "by": "codex",
           "what": "released: Clean checkpoint 35b1b0567c on existing PR491; preserve 1/4. 24 image/source hash pairs, 13 approved alpha MOVs decoded, 18 new DATA stills and J2150 review. More than one run remains for licensed harvest/crops and mechanism builds. Detached tmux J2089-motion continues official candidate downloads; log /Users/benjaminoats/_desk/logs/J2089-motion.log, done /Users/benjaminoats/_desk/logs/J2089-motion.done. Missing done = running, do not duplicate. Worktree /private/tmp/J2089-wt; no KEEP/PASS/spend/publish."
+        },
+        {
+          "at": "2026-11-04T22:52Z",
+          "by": "claude",
+          "what": "J2150 review done: apply jobs/reviews/J2150/REVIEW.md (4 DATA changes, 3 source swaps), then render with review ref J2150"
         }
       ],
       "remaining_action": "Complete licensed motion/crop harvest and remaining graphics; J2150 reviews ready DATA stills/source conflicts",
@@ -179833,18 +179838,23 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T22:30Z",
-      "result": "",
+      "result": "jobs/reviews/J2150/REVIEW.md: 14 DATA stills KEEP, 4 CHANGE (r04 title, r28/r29 'BIGGEST DROPS', r39 oxygen-only); all 18 may render after changes (ref J2150). R25 -> PIA07232 inset; R38 PIA19051 reconstruction dropped -> PIA14584; R50 Sinlap-only crop or map-pin fallback; ESA Huygens reconstruction movie not used.",
       "history": [
         {
           "at": "2026-11-04T22:30Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T22:52Z",
+          "by": "claude",
+          "what": "done: review jobs/reviews/J2150/REVIEW.md"
         }
       ],
       "remaining_action": "Review OWB:032 DATA stills and recommend exact source/crop corrections; protected fallback decisions stay with Chief",

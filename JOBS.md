@@ -80,7 +80,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2147 | cloud | open | – | – | 032 upload · for claude · listing · 031/032 Shorts slots around the new Wednesday long slot |  |
 | J2148 | mini | claimed | gemini | 2026-11-05T00:34Z | 033 topic · for gemini · review · 033 topic + script: rule-E review (WIP film, new reference-channel rules) |  |
 | J2149 | mini | open | – | – | 034 topic · for gemini · review · 034 topic + script: rule-E review (WIP film, new reference-channel rules) |  |
-| J2150 | cloud | open | – | – | review · 032 J2089: review 18 DATA stills and resolve remaining harvest conflicts | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/491 |
 | J2151 | macbook | open | – | – | `gemini-argon` · MacBook setup test: gemini |  |
 | J2152 | macbook | open | – | – | `cursor-grok-4-7` · MacBook setup test: cursor |  |
 | J2153 | macbook | open | – | – | chart · `gpt-6-astra` · MacBook setup test: codex |  |
@@ -88,6 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2150 done: 032 J2089: review 18 DATA stills and resolve remaining harvest conflicts (jobs/reviews/J2150/REVIEW.md: 14 DATA stills KEEP, 4 CHANGE (r04 title, r28/r29 'BIGGEST DROPS', r39 oxygen-only); all 18 may render after changes (ref J2150). R25 -> PIA07232 inset; R38 PIA19051 reconstruction dropped -> PIA14584; R50 Sinlap-only crop or map-pin fallback; ESA Huygens reconstruction movie not used.)
 - J2142 done: Chief: resolve 031 shots orphan-review (Resolved: J2043 rule-E review GO (SHOT_LIST_v02 55d4dad1c2) but status.json was left at shots=review; set 031 shots done, picture J2141 queued.)
 - J2140 cancelled: Chief: resolve 061 sources orphan-review ()
 - J2139 cancelled: Chief: resolve 061 script orphan-blocked ()
@@ -97,4 +97,3 @@ Recently finished:
 - J2135 cancelled: Chief: resolve 060 topic orphan-review ()
 - J2134 cancelled: Chief: resolve 059 sources orphan-review ()
 - J2133 cancelled: Chief: resolve 059 topic orphan-review ()
-- J2132 cancelled: Chief: resolve 059 script orphan-review ()
