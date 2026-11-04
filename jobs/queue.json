@@ -175174,10 +175174,10 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-04T19:27Z",
+      "eta": "2026-11-04T21:27Z",
       "created_by": "claude",
       "created_at": "2026-11-04T17:56Z",
       "result": "",
@@ -175186,12 +175186,25 @@
           "at": "2026-11-04T17:56Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T19:27Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "031 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film)",
       "kind": "review",
       "for": "gemini",
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T19:27Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2044",
