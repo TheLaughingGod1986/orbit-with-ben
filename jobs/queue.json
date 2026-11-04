@@ -172866,17 +172866,22 @@
           "at": "2026-11-04T11:55Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2019; starting Rule 15 title check across non-public OWB and HOS longs"
+        },
+        {
+          "at": "2026-11-04T12:03Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Collected all non-public OWB (025-061) and HOS (006-013, 099) long titles, upload manifests, UPLOADS.json records, and Studio Test & Compare states"
         }
       ],
-      "remaining_action": "Audit all non-public OWB (025-029+) and HOS (006-010+) long titles against Rule 15 and Rule 12",
+      "remaining_action": "Evaluate each non-public OWB and HOS long title against Rule 15 (subject + concrete scenario/number/stakes, <=50 chars, no vague What happened to X?) and Rule 12",
       "due": "2026-11-05T00:00:00Z",
       "kind": "listing",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-04T11:55Z",
+        "at": "2026-11-04T12:03Z",
         "by": "gemini",
-        "note": "Claimed J2019; starting Rule 15 title check across non-public OWB and HOS longs"
+        "note": "Collected all non-public OWB (025-061) and HOS (006-013, 099) long titles, upload manifests, UPLOADS.json records, and S"
       },
       "taskKeys": [
         "OWB:025",
@@ -172884,6 +172889,9 @@
         "OWB:027",
         "OWB:028",
         "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032",
         "HOS:006",
         "HOS:007",
         "HOS:008",
