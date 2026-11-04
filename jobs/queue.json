@@ -1,5 +1,5 @@
 {
-  "next_id": 1918,
+  "next_id": 1919,
   "jobs": [
     {
       "id": "J0001",
@@ -124700,6 +124700,11 @@
           "at": "2026-11-03T22:36Z",
           "by": "codex",
           "what": "Queue/PR publication status verified after Ben text-only authorization: J1910 and J1846 done; correct stale public-push wording only. Blocked status, progress, dependency/check dates and all media gates unchanged. Prior condition retained here: J1863 verified fresh SHA256 matches all three J1468 final exports; no additional finals. PR380 OPEN d0b04b5e0; PR414 OPEN 1474821f3 retains T545 FIX. Saved opening FAILs: AR1 first cut 6.00s, AR2 diff 0.25, AR3 diff 1.41. J1846 local scope 001b6962f remains blocked on recorded public evidence-push approval; J1847-J1849 unstarted. Need approved exact replacement ISS input, J1471 versioned repairs with complete metadata and passing affected gates, then J1356 full moving/audio and pace review. Preserve accepted picture/audio, AR2 v10/AR3 v09 exclusion and all Ben/date/credit/publishing holds."
+        },
+        {
+          "at": "2026-11-04T00:44Z",
+          "by": "relay",
+          "what": "condition verification queued: J1918"
         }
       ],
       "remaining_action": "Complete J1847 preview, J1848 moving review and J1849 source decision; then J1471 repairs/gates and J1356 full QA",
@@ -124717,10 +124722,11 @@
       "hold": {
         "type": "input",
         "condition": "Workflow text publication is complete under J1910/PR433 and J1846 is complete. The ISS replacement input is still unapproved: J1847 owns the bounded NASA-model preview, followed by J1848 actual-moving review and J1849 Chief exact-input decision. Then J1471 must complete the remaining repairs/gates and J1356 the full audiovisual/pace review. Original v13a and AR replacement work remain separate; no source, Edit, QA or Ben approval is inferred.",
-        "check_at": "2026-11-04T00:39:17Z",
+        "check_at": "2026-11-04T01:44:20+00:00",
         "last_recheck": "J1863",
         "checked_at": "2026-11-03T22:36:35+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J1918"
       },
       "publication_wording_update": "J1910-PR433"
     },
@@ -165555,6 +165561,37 @@
       "urgent": 5,
       "due": "2026-11-03T23:59:17+00:00",
       "due_kind": "user-approved-checker-fix"
+    },
+    {
+      "id": "J1918",
+      "title": "Chief: verify condition for J1356",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1356: Workflow text publication is complete under J1910/PR433 and J1846 is complete. The ISS replacement input is still unapproved: J1847 owns the bounded NASA-model preview, followed by J1848 actual-moving review and J1849 Chief exact-input decision. Then J1471 must complete the remaining repairs/gates and J1356 the full audiovisual/pace review. Original v13a and AR replacement work remain separate; no source, Edit, QA or Ben approval is inferred.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1356 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-04T00:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T00:44Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Complete J1847 preview, J1848 moving review and J1849 source decision; then J1471 repairs/gates and J1356 full QA",
+      "kind": "chief",
+      "recheck_of": "J1356",
+      "due": "2026-11-04T01:44:20+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],

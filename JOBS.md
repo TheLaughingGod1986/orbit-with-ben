@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
 | J1916 | mini | open | – | – | chief · Chief: persist verified Codex quota reset and finish interrupted J1849 decision | J1849 |
 | J1917 | mini | open | – | – | chief · Chief: merge Ben-approved HOS checker PR365 and clear J0998/J0999 audit handoff | J0998 |
+| J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 
 Recently finished:
 
