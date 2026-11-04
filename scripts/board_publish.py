@@ -520,7 +520,9 @@ def run_once(a) -> int:
     try:  # Machines: what each one is on and its jobs in 24 h (Ben, 4 Nov 2026); never blocks the board push
         import machines
         queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
-        board["machines"] = machines.section(queue, *heartbeats(), at)
+        import chief_relay as relay
+        ex = relay.current_execution(at)
+        board["machines"] = machines.section(queue, *heartbeats(), at, [ex] if isinstance(ex, dict) else ex)
     except Exception as e:  # noqa: BLE001
         log(f"machines not built: {e}")
     try:  # Last 24 hours on the home page (Ben, 4 Nov 2026); never blocks the board push
