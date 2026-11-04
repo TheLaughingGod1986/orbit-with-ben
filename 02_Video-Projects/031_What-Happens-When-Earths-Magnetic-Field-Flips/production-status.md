@@ -68,3 +68,7 @@ Pass threshold: 90
 Technical verification PASS against the actual Mini output: both full hashes match J1295, 568.280 s, -19.9 LUFS / -3.5 dBTP, all seven tails below -50 dBFS and ending 0/0, null outside h32 fades exactly zero. Evidence: `02_Voiceover/review_J1752/measurements.json` and `REVIEW.md`.
 
 Final approval remains pending: codex could measure the files but had no audio listening input; nothing was heard in this session. Required FIX is completion of the listening review, not a media rebuild. Responsible reviewer: elected Chief with actual Mini audio listening capability, resuming J1752 (1/3 complete). No other stage is approved.
+
+## J1810 capability validation — 4 November 2026
+
+Fresh native Gemini audio fixture test failed: the first claimed perception contradicted the fixture, and independent recheck explicitly reported no reliable audio perception. J1752 retains technical PASS at 1/3; no VO was heard or approved. J1810 owns demonstrating a reliable native listening route before any specialist handoff. [Evidence](../../jobs/reviews/J1810/REPORT.md). No Ben production-review action.
