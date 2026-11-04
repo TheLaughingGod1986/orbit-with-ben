@@ -179240,18 +179240,25 @@
           "at": "2026-11-04T20:12Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T20:12Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read approved shot list; disk below 20 GB, starting required NAS scratch offload before build."
         }
       ],
-      "remaining_action": "Harvest NASA/USGS/NOAA/ESA/USFWS/Commons source plates into HARVEST_POOL_v01.json and build £0 code_graphics from SHOT_LIST_v02.md",
+      "remaining_action": "Harvest licensed plates and build row-specific graphics; verify package",
       "kind": "assembly",
       "progress": {
         "step": 0,
         "of": 3,
         "at": "2026-11-04T20:12Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read approved shot list; disk below 20 GB, starting required NAS scratch offload before build."
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2142",
