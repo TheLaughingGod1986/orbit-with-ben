@@ -171214,18 +171214,23 @@
           "at": "2026-11-04T14:51Z",
           "by": "codex",
           "what": "step 2 of 3 done: Restored existing 2/3 checkpoint from job history; earlier default-plan reset was incorrect. Prior 89-video metrics already published in 15abb5504f. Retrying browser responsiveness before missing-page collection."
+        },
+        {
+          "at": "2026-11-04T14:53Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Reloaded the existing Orbit Studio tab through Page.reload; no new tabs or browser restart. HOS 9460 responsive. Existing retry collector now recovering missing records; preserving same-day successful reads."
         }
       ],
-      "remaining_action": "Recover 36 crashed Studio reads, validate missing metrics and republish tracker",
+      "remaining_action": "Finish recovered Studio reads, validate both metric files and publish tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 2,
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-04T14:51Z",
+        "at": "2026-11-04T14:53Z",
         "by": "codex",
-        "note": "Restored existing 2/3 checkpoint from job history; earlier default-plan reset was incorrect. Prior 89-video metrics alre"
+        "note": "Reloaded the existing Orbit Studio tab through Page.reload; no new tabs or browser restart. HOS 9460 responsive. Existin"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -171235,7 +171240,23 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "taskKeys": [
+        "OWB:024",
+        "OWB:023",
+        "OWB:022",
+        "OWB:021",
+        "OWB:020",
+        "OWB:019",
+        "OWB:013",
+        "OWB:006",
+        "OWB:005",
+        "OWB:004",
+        "HOS:004",
+        "HOS:003",
+        "HOS:002",
+        "HOS:001"
+      ]
     },
     {
       "id": "J1977",
