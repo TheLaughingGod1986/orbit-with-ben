@@ -159030,13 +159030,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T05:58Z",
-      "eta": "2026-11-04T07:58Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Workflow repair complete, not film approval. Script FIX/unlocked; exact v01 reviewer 95.8 PASS but episode BLOCK on unsigned audit. PR463 merged 51341598ec; J1964 (061/script, Chief) after J1963 owns topic/editorial decision; J1808 retains sources. Stage blocked with ruling, no claim/air date; drafts unchanged. No spend or publishing.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -159067,6 +159067,11 @@
           "at": "2026-11-04T06:03Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR463 merged at 51341598ec with both CI checks PASS; blocked script, released claim, unchanged draft hash and dependency verified"
+        },
+        {
+          "at": "2026-11-04T06:04Z",
+          "by": "codex",
+          "what": "done: Workflow repair complete, not film approval. Script FIX/unlocked; exact v01 reviewer 95.8 PASS but episode BLOCK on unsigned audit. PR463 merged 51341598ec; J1964 (061/script, Chief) after J1963 owns topic/editorial decision; J1808 retains sources. Stage blocked with ruling, no claim/air date; drafts unchanged. No spend or publishing."
         }
       ],
       "remaining_action": "Handoff repair verified; J1964 owns the decision after J1963",
@@ -159086,7 +159091,8 @@
       },
       "taskKeys": [
         "OWB:061"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/463"
     },
     {
       "id": "J1808",
