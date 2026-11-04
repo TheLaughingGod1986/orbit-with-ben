@@ -69130,8 +69130,8 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "claude",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-22T21:51Z",
       "eta": "",
       "created_by": "claude",
@@ -69167,6 +69167,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "condition recorded; next verification 2026-11-05T00:05:00Z"
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "cancelled: Superseded by J1843 under J1914 narrow Chief decision: current measured-capacity contract replaces historical one-week/two-agent prerequisite. No second lane enabled; no usable-account or host-capacity assertion."
         }
       ],
       "kind": "studio",
@@ -88362,19 +88367,19 @@
       "title": "Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements",
       "needs": "mini",
       "repo": "owb",
-      "body": "Weekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.\n\nACTING CHIEF RULING 26 Oct 2026:\nActing Chief Codex FIX (26 Oct 2026), review J1001 / PR #294: verified Studio readings retained; unsupported causal, AVD-exit and payoff-threshold claims require correction. J1002 owns audit/OWB LEARNINGS correction and reproducible evidence; J0985 remains blocked after J1002, then elected-Chief re-review. No blanket recut, rename, topic lock or swap authorized. J0956->J0988 and J0974->J0990/J0989 gates, Ben approvals and deadlines remain unchanged. All three proposed media-path fixes are obsolete: existing staged caches resolve and master SHA256 matches. See 05_Analytics/weekly_audit/OWB_2026-10-26_CHIEF_REVIEW.md. Mature data follow-up J1003 has external-data retry 28 Oct 11:35 London (29 Oct 16:00 fallback).",
+      "body": "J1914 narrow Chief scope, 4 November 2026:\nThe original brief requires a written audit and Chief decision; no explicit public publication prerequisite for private administrative acceptance was found in the applicable AGENTS, playbook or original brief. Existing private J1642 decision and verification can be handed off locally. Finish only private administrative closure against that existing decision after checking its local evidence. Do not repeat historical measurements. Public push of the rejected review remains unauthorized and separate; retain all rejection history. Do not paste analytics or rejected content into queue/thread. A minimal status/path reference is sufficient. No media or rule approval.\n\nHistorical brief retained:\nWeekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.\n\nACTING CHIEF RULING 26 Oct 2026:\nActing Chief Codex FIX (26 Oct 2026), review J1001 / PR #294: verified Studio readings retained; unsupported causal, AVD-exit and payoff-threshold claims require correction. J1002 owns audit/OWB LEARNINGS correction and reproducible evidence; J0985 remains blocked after J1002, then elected-Chief re-review. No blanket recut, rename, topic lock or swap authorized. J0956->J0988 and J0974->J0990/J0989 gates, Ben approvals and deadlines remain unchanged. All three proposed media-path fixes are obsolete: existing staged caches resolve and master SHA256 matches. See 05_Analytics/weekly_audit/OWB_2026-10-26_CHIEF_REVIEW.md. Mature data follow-up J1003 has external-data retry 28 Oct 11:35 London (29 Oct 16:00 fallback).",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "J1002",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T17:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T16:25Z",
-      "result": "Acting Chief Codex FIX (26 Oct 2026), review J1001 / PR #294: verified Studio readings retained; unsupported causal, AVD-exit and payoff-threshold claims require correction. J1002 owns audit/OWB LEARNINGS correction and reproducible evidence; J0985 remains blocked after J1002, then elected-Chief re-review. No blanket recut, rename, topic lock or swap authorized. J0956->J0988 and J0974->J0990/J0989 gates, Ben approvals and deadlines remain unchanged. All three proposed media-path fixes are obsolete: existing staged caches resolve and master SHA256 matches. See 05_Analytics/weekly_audit/OWB_2026-10-26_CHIEF_REVIEW.md. Mature data follow-up J1003 has external-data retry 28 Oct 11:35 London (29 Oct 16:00 fallback).",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T16:25Z",
@@ -88795,6 +88800,16 @@
           "at": "2026-11-03T18:19Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-04T00:20:00Z"
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "J1914: Finish private administrative handoff against existing J1642 decision; public evidence push remains restricted"
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "reopened: J1914 permits private-local administrative handoff; prior publication rejection remains fully effective and separate. No analytics payload publication."
         }
       ],
       "kind": "review",
@@ -88808,13 +88823,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-10-26T17:17Z",
-        "by": "gemini",
-        "note": "Committed and pushed 05_Analytics/weekly_audit/OWB_2026-10-26.md and 05_Analytics/LEARNINGS.md; parking J0985 for Chief "
-      },
       "taskKeys": [
         "OWB:021",
         "OWB:022",
@@ -88830,14 +88838,28 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T19:20Z",
-      "remaining_action": "Obtain explicit approval for publication of the completed local audit review",
-      "hold": {
-        "type": "input",
-        "condition": "Explicit approval to publish local J1642 review commit 33af1e441 remains absent. J1861 reviewed original brief, approval history, preserved decision and verification, and subsequent thread comments through 6611895384. Prior automatic approval rejection remains binding; no publication retry without explicit approval. Review remains local at /Users/benjaminoats/_desk/handoff/J1642/. Original gates and approvals unchanged.",
-        "check_at": "2026-11-04T00:20:00Z",
-        "last_recheck": "J1861",
-        "checked_at": "2026-11-03T18:19:08+00:00",
-        "checked_by": "codex"
+      "remaining_action": "Finish private administrative handoff against existing J1642 decision; public evidence push remains restricted",
+      "superseded_holds": [
+        {
+          "at": "2026-11-04T00:01:50+00:00",
+          "by": "codex",
+          "source": "J1914",
+          "hold": {
+            "type": "input",
+            "condition": "Explicit approval to publish local J1642 review commit 33af1e441 remains absent. J1861 reviewed original brief, approval history, preserved decision and verification, and subsequent thread comments through 6611895384. Prior automatic approval rejection remains binding; no publication retry without explicit approval. Review remains local at /Users/benjaminoats/_desk/handoff/J1642/. Original gates and approvals unchanged.",
+            "check_at": "2026-11-04T00:20:00Z",
+            "last_recheck": "J1861",
+            "checked_at": "2026-11-03T18:19:08+00:00",
+            "checked_by": "codex"
+          }
+        }
+      ],
+      "progress": {
+        "step": 5,
+        "of": 5,
+        "at": "2026-10-26T17:17Z",
+        "by": "gemini",
+        "note": "Committed and pushed 05_Analytics/weekly_audit/OWB_2026-10-26.md and 05_Analytics/LEARNINGS.md; parking J0985 for Chief "
       }
     },
     {
@@ -154822,9 +154844,14 @@
           "at": "2026-11-03T10:55Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-04T11:00:00Z"
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T11:00:00Z"
         }
       ],
-      "remaining_action": "Verify refreshed runtime and real stage handoff evidence after J1809/J1810; retain media review holds",
+      "remaining_action": "Validate J1809 safe watcher handoff and actual persisted stage ruling; current runtime identity verified",
       "kind": "chief",
       "progress": {
         "step": 2,
@@ -154839,9 +154866,16 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Installed relay ac2d15fae277db48 is observed loaded after this run exits; J1809 safely refreshes HOS role-aware delivery without historical replay; J1810 establishes a genuine listening capability or precise supported limitation; an actual eligible Chief stage ruling survives job done and has its next action recorded. Evidence PR397. CI and synthetic stage tests alone do not satisfy this hold.",
+        "condition": "J1914 directly observed installed AND loaded relay 672fbdd6a32d7c9c with active J1914 runtime, corroborating J1887. Obsolete ac2d15fae277db48 is superseded, not an install target. Still require J1809 safe HOS watcher handoff without historical replay, J1810 genuine listening route or precise limitation, and a real eligible Chief stage ruling persisted after done with successor action. Runtime identity alone is not end-to-end validation. Prior PR397 and J1887 evidence retained.",
         "check_at": "2026-11-04T11:00:00Z"
-      }
+      },
+      "superseded_holds": [
+        {
+          "type": "input",
+          "condition": "Installed relay ac2d15fae277db48 is observed loaded after this run exits; J1809 safely refreshes HOS role-aware delivery without historical replay; J1810 establishes a genuine listening capability or precise supported limitation; an actual eligible Chief stage ruling survives job done and has its next action recorded. Evidence PR397. CI and synthetic stage tests alone do not satisfy this hold.",
+          "check_at": "2026-11-04T11:00:00Z"
+        }
+      ]
     },
     {
       "id": "J1755",
@@ -158842,19 +158876,19 @@
       "title": "026 thumbnails: correct unapproved test variants after J1766 review",
       "needs": "mini",
       "repo": "owb",
-      "body": "Acting-Chief FIX J1766, evidence jobs/reviews/J1766.md (648ee739b). Preserve existing A authorised by J0833 and all original assets/manifests. Build versioned alternatives from existing plates only, no spend. B currently fails saturation 62.9 below 100; rebuilt hooks must meet current 2-3-word band rule, one yellow hook word, subject and scale-reference rules. Identify Alpha Centauri pair vs Proxima accurately. Run thumb_preview.py --score, make true 168x94 comparison sheet with current A, record source identities and hashes. Park for elected-Chief visual review; no approval from gates alone. No Studio changes, upload, schedule, privacy change or paid generation authorised. Before any later Test and Compare action require separate authority and inspect existing test; never replace a running test. Deadline before long airs 15 November. Resolves missing next action from J1766; does not revisit unrelated upload stage J1767.",
+      "body": "J1914 narrow Chief scope, 4 November 2026:\nReady correction work, not an external-input wait. Build abc_v03 from existing approved plates, preserving original A/J0833 and abc_v01/v02. Correct nearest-star title pairing: do not imply the Alpha Centauri pair is the nearest individual star; accurately distinguish Proxima. Keep locked live title unchanged; propose a truthful hook/pair in local packaging only. Run original numerical/168x94/source-identity/hash checks. Once exact files exist, deduplicate and queue the required independent packaging panel through packaging_panel.py (Codex/Gemini/Cursor) and its decision, then elected-Chief exact-file visual review. No panel job should inspect nonexistent v03 files. Prior 3/3 records v02 delivery only, not correction approval; retain history and original three-step plan. No spending, live title/test or Studio changes.\n\nHistorical brief retained:\nActing-Chief FIX J1766, evidence jobs/reviews/J1766.md (648ee739b). Preserve existing A authorised by J0833 and all original assets/manifests. Build versioned alternatives from existing plates only, no spend. B currently fails saturation 62.9 below 100; rebuilt hooks must meet current 2-3-word band rule, one yellow hook word, subject and scale-reference rules. Identify Alpha Centauri pair vs Proxima accurately. Run thumb_preview.py --score, make true 168x94 comparison sheet with current A, record source identities and hashes. Park for elected-Chief visual review; no approval from gates alone. No Studio changes, upload, schedule, privacy change or paid generation authorised. Before any later Test and Compare action require separate authority and inspect existing test; never replace a running test. Deadline before long airs 15 November. Resolves missing next action from J1766; does not revisit unrelated upload stage J1767.",
       "ref": "",
       "film": "026",
       "stage": "thumbs",
       "after": "J1766",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-03T12:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T12:27Z",
-      "result": "parked for Chief: J1823 explicitly requires elected-Chief visual review of B/C v02 and true168x94 comparison; numerical gates pass but do not approve packaging. Assets in 026/08_Thumbnail/abc_v02; evidence e704c98a0 on codex/J1823-thumbnails. No Studio action authorised.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T12:27Z",
@@ -158915,30 +158949,47 @@
           "at": "2026-11-03T19:48Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-04T01:48:00Z"
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "J1914: Build abc_v03 truthful nearest-star pairing, then independent panel and exact-file Chief visual review"
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "reopened: J1914 scopes existing-plate abc_v03 correction as ready work. Review/panel still required; existing A and live packaging unchanged."
         }
       ],
-      "remaining_action": "Correct B title pairing, obtain packaging panel decision, then review exact final thumbnails; preserve original A",
+      "remaining_action": "Build abc_v03 truthful nearest-star pairing, then independent panel and exact-file Chief visual review",
       "due": "2026-11-14T18:00:00Z",
       "kind": "thumb",
+      "taskKeys": [
+        "OWB:026"
+      ],
+      "escalated_at": "2026-11-03T15:10Z",
+      "superseded_holds": [
+        {
+          "at": "2026-11-04T00:01:50+00:00",
+          "by": "codex",
+          "source": "J1914",
+          "hold": {
+            "type": "input",
+            "condition": "B v02 TWO SUNS (902fe193...) still needs a corrected nearest-star title pairing (abc_v03, preserving abc_v01/v02 and original A J0833); corrected set needs independent packaging panel decision and elected-Chief visual approval of exact files. Evidence d604bef0f (PR #405) and e704c98a0 (PR #404) unchanged.",
+            "check_at": "2026-11-04T01:48:00Z",
+            "last_recheck": "J1877",
+            "checked_at": "2026-11-03T19:48:14+00:00",
+            "checked_by": "gemini"
+          }
+        }
+      ],
       "progress": {
         "step": 3,
         "of": 3,
         "at": "2026-11-03T12:35Z",
         "by": "codex",
         "note": "Build and evidence complete: e704c98a0; original A/B/C hashes preserved, true168x94 comparison saved, both new colour ga"
-      },
-      "taskKeys": [
-        "OWB:026"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "B v02 TWO SUNS (902fe193...) still needs a corrected nearest-star title pairing (abc_v03, preserving abc_v01/v02 and original A J0833); corrected set needs independent packaging panel decision and elected-Chief visual approval of exact files. Evidence d604bef0f (PR #405) and e704c98a0 (PR #404) unchanged.",
-        "check_at": "2026-11-04T01:48:00Z",
-        "last_recheck": "J1877",
-        "checked_at": "2026-11-03T19:48:14+00:00",
-        "checked_by": "gemini"
-      },
-      "escalated_at": "2026-11-03T15:10Z"
+      }
     },
     {
       "id": "J1824",
@@ -159016,19 +159067,19 @@
       "title": "026 upload finish: install approved en-GB captions and verify Studio end screen/cards",
       "needs": "mini",
       "repo": "owb",
-      "body": "J1767 elected-Chief FIX, 3 November 2026. Resolve OWB:026 upload completion evidence before the long airs 15 November 18:00Z. Existing approvals remain J0794, Ben comment 6337324360, J0833 and replacement J1101/PR313. Evidence: jobs/reviews/J1767/.\n\n1. Read current Studio/API state for c5AdqQsnnys. captions.list on 3 November returned only an automatic en ASR track, not the packaged en-GB track. Verify the approved 11_Upload-Package/Captions/nearest_star_long_v06_en-GB.srt against the approved v06 timing. Add that existing approved SRT as en-GB if absent; preserve any existing manual track and never duplicate it. Read back serving status. No spoken-line edits, generation, or video upload.\n2. Read back end screen and cards in Orbit Studio CDP 9223. The upload result still lists them pending and J1767 found no completion record. Record existing targets/timings and evidence. If absent, return the exact proposed target/timing to the elected Chief before setting it; do not invent prior approval.\n3. Confirm existing thumbnail A remains; do not start or replace Test & Compare during 026 Shorts week (J0141/J0861). Read back synthetic disclosure, audience and en-GB metadata. Preserve all titles, descriptions, privacy and schedules. Reconcile existing Buffer registry only as needed; do not post outside normal Buffer timing.\n4. Commit evidence from a clean worktree and submit for elected-Chief review. Upload stage may close only when required finish items are evidenced or explicitly assigned to their existing condition-based job. J0861 remains held until c5AdqQsnnys reads Public, next check 2026-11-15T18:05Z; it owns Related on HZGTovJu_TQ, cwU_0WWeNZ4 and aAUgIGEuPwQ and the long pinned comment. J1823 remains separate thumbnail correction/review. Old A6TW_6CXhcs stays Private unscheduled.\n\nAuthorisation is limited to the existing packaged en-GB caption correction and read-only Studio verification. No new media approval, upload, visibility/schedule change, thumbnail test, credit spend or deletion. If further changes are required, return a specific FIX to elected Chief. Link OWB:026 in progress updates.\n",
+      "body": "J1914 narrow Chief scope, 4 November 2026:\nStep 4 requires clean-worktree evidence and submission for elected-Chief review, not explicitly a public PR as a prerequisite to private review. Existing local commit e611e1cd17 and all 13 private evidence hashes were verified by J1914. Finish remaining step as private local completion review/handoff; no Studio writes, repeated captions/end-screen/card work or raw readback publication. Preserve J1882 authority, J0861 public-event work and J1823 packaging review separately. Public push of rejected completion evidence remains unauthorized and separate with history retained. Private evidence is already at /private/tmp/J1825-finish and /Users/benjaminoats/_desk/evidence/J1825-finish. No new film/media PASS.\n\nHistorical brief retained:\nJ1767 elected-Chief FIX, 3 November 2026. Resolve OWB:026 upload completion evidence before the long airs 15 November 18:00Z. Existing approvals remain J0794, Ben comment 6337324360, J0833 and replacement J1101/PR313. Evidence: jobs/reviews/J1767/.\n\n1. Read current Studio/API state for c5AdqQsnnys. captions.list on 3 November returned only an automatic en ASR track, not the packaged en-GB track. Verify the approved 11_Upload-Package/Captions/nearest_star_long_v06_en-GB.srt against the approved v06 timing. Add that existing approved SRT as en-GB if absent; preserve any existing manual track and never duplicate it. Read back serving status. No spoken-line edits, generation, or video upload.\n2. Read back end screen and cards in Orbit Studio CDP 9223. The upload result still lists them pending and J1767 found no completion record. Record existing targets/timings and evidence. If absent, return the exact proposed target/timing to the elected Chief before setting it; do not invent prior approval.\n3. Confirm existing thumbnail A remains; do not start or replace Test & Compare during 026 Shorts week (J0141/J0861). Read back synthetic disclosure, audience and en-GB metadata. Preserve all titles, descriptions, privacy and schedules. Reconcile existing Buffer registry only as needed; do not post outside normal Buffer timing.\n4. Commit evidence from a clean worktree and submit for elected-Chief review. Upload stage may close only when required finish items are evidenced or explicitly assigned to their existing condition-based job. J0861 remains held until c5AdqQsnnys reads Public, next check 2026-11-15T18:05Z; it owns Related on HZGTovJu_TQ, cwU_0WWeNZ4 and aAUgIGEuPwQ and the long pinned comment. J1823 remains separate thumbnail correction/review. Old A6TW_6CXhcs stays Private unscheduled.\n\nAuthorisation is limited to the existing packaged en-GB caption correction and read-only Studio verification. No new media approval, upload, visibility/schedule change, thumbnail test, credit spend or deletion. If further changes are required, return a specific FIX to elected Chief. Link OWB:026 in progress updates.\n",
       "ref": "",
       "film": "026",
       "stage": "upload",
       "after": "J1767",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-03T20:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T12:44Z",
-      "result": "Studio changes approved by J1882 saved and independently reopened; captions serving and metadata preserved. Evidence committed locally e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected pushing completion summary and PR because private-video-derived metadata destination trust was unverified; explicit publication approval needed. Do not repeat Studio changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T12:44Z",
@@ -159124,13 +159175,35 @@
           "at": "2026-11-03T20:59Z",
           "by": "codex",
           "what": "blocked: Studio changes approved by J1882 saved and independently reopened; captions serving and metadata preserved. Evidence committed locally e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected pushing completion summary and PR because private-video-derived metadata destination trust was unverified; explicit publication approval needed. Do not repeat Studio changes."
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "J1914: Finish private completion review and handoff from existing evidence; do not repeat Studio writes or public push"
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "reopened: J1914 verifies all 13 private evidence hashes and permits private-local completion handoff only, retaining public-push restriction and original 2/3 progress."
         }
       ],
-      "remaining_action": "Publish local completion evidence after approval-review restriction is resolved",
+      "remaining_action": "Finish private completion review and handoff from existing evidence; do not repeat Studio writes or public push",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "taskKeys": [
         "OWB:026"
+      ],
+      "superseded_holds": [
+        {
+          "at": "2026-11-04T00:01:50+00:00",
+          "by": "codex",
+          "source": "J1914",
+          "hold": {
+            "type": "input",
+            "condition": "Studio changes approved by J1882 saved and independently reopened; captions serving and metadata preserved. Evidence committed locally e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected pushing completion summary and PR because private-video-derived metadata destination trust was unverified; explicit publication approval needed. Do not repeat Studio changes.",
+            "check_at": "2026-11-04T02:59:24+00:00"
+          }
+        }
       ],
       "progress": {
         "step": 2,
@@ -159138,11 +159211,6 @@
         "at": "2026-11-03T20:59Z",
         "by": "codex",
         "note": "Studio work verified; local commit e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected public pu"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Studio changes approved by J1882 saved and independently reopened; captions serving and metadata preserved. Evidence committed locally e611e1cd17 in /private/tmp/J1825-finish. Automatic approval review rejected pushing completion summary and PR because private-video-derived metadata destination trust was unverified; explicit publication approval needed. Do not repeat Studio changes.",
-        "check_at": "2026-11-04T02:59:24+00:00"
       }
     },
     {
@@ -160476,7 +160544,7 @@
       "title": "Implement capacity-aware Mini dispatch and portable MacBook overflow",
       "needs": "mini",
       "repo": "owb",
-      "body": "\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nBen repeated resource-unblocking request: inspect actual per-host leases and freshness, current Mini worker authentication/quota failures and MacBook powered/idle availability. Codex Mini and MacBook share an account quota; moving machines does not reset it. Cursor latest execution reports authentication required, while daily credit says exhausted: inspect exact current cause without printing secrets or starting interactive sign-in. Do not call unavailable workers free. Implement/test capacity and portable overflow safely in this existing focused job, with review and observed rollout; no parallel browser/generation writers or unsupported host paths. Do not interrupt an active media review or label queue assignment as a launch/claim.\n\nBen, 3 Nov: run a waiting task on the next capable available agent, use an available MacBook worker when Mini capacity is genuinely exhausted, and otherwise expose who is busy and a supported next-slot outlook. Current relay holds one serial execution lane, so green agents do not imply spare execution slots. MacBook heartbeat reports generic host macbook; verify actual registered machine rather than assume Air/Pro identity.\n\nImplement and review a capacity-aware dispatch change in a focused PR: actual per-host active execution leases, configured limits plus measured resource/capability guards, concurrent independent work only when safe, and an explicit portable-job contract for MacBook spillover. Preserve single elected-Chief signoff, film/stage claims, shared account limits, generation/browser mutexes, dependency/Ben/money gates and atomic queue claims. Do not blindly run several render/browser jobs or route Mini-only paths/sign-ins to the laptop. Transfer required approved inputs/output receipts only with verified readable hashes and supported access. Respect mains/idle/disk guards; do not interrupt a laptop in use. Worker fallback must use verified model/media capability, not just a green heartbeat. Expose running job, owner, host, current action/progress and recorded task estimate; distinguish that from a reserved/free-slot estimate. If no supported availability estimate exists, explicitly report unknown, never invent a countdown.\n\nSeparate external-condition waits, ready queue/capacity waits and pending review so a check_at timestamp never becomes a deliberate worker start delay. Keep delivered candidate review ready without automatically approving it or redoing acquisition. Use J1834/J1841 as regression evidence, including a busy Chief plus another available specialist. The frontend explanation in PR412 is presentation only and does not implement parallel scheduling.\n\nTests: one eligible free lane dispatches immediately; busy Mini plus powered/idle/capable MacBook stages portable job exactly once; laptop in use/offline/unsupported remains excluded; no two hosts claim same job/stage; model outage walks capability-safe fallback; Chief review/signoff preserved; unavailable media capability remains explicit; dead worker lease recovery; no paid generation/publishing performed by tests. Rollout requires exact-head Chief review and observed real host transitions, not CI alone. No spend, media regeneration, upload, schedule, visibility or policy changes are authorized by this engineering task.\n",
+      "body": "J1914 narrow Chief scope, 4 November 2026:\nBen's current measured-capacity request supersedes J0821's historical requirement to wait one week with two agents. This authorizes implementation and tests in J1843 now, NOT enabling a second lane without fresh per-host capacity/account/capability evidence and exact-head review. J0821 is superseded to avoid duplicate engineering. Shared-account quotas, browser/generation single writers, laptop mains/idle checks and real runtime validation remain mandatory.\n\nHistorical brief retained:\n\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nBen repeated resource-unblocking request: inspect actual per-host leases and freshness, current Mini worker authentication/quota failures and MacBook powered/idle availability. Codex Mini and MacBook share an account quota; moving machines does not reset it. Cursor latest execution reports authentication required, while daily credit says exhausted: inspect exact current cause without printing secrets or starting interactive sign-in. Do not call unavailable workers free. Implement/test capacity and portable overflow safely in this existing focused job, with review and observed rollout; no parallel browser/generation writers or unsupported host paths. Do not interrupt an active media review or label queue assignment as a launch/claim.\n\nBen, 3 Nov: run a waiting task on the next capable available agent, use an available MacBook worker when Mini capacity is genuinely exhausted, and otherwise expose who is busy and a supported next-slot outlook. Current relay holds one serial execution lane, so green agents do not imply spare execution slots. MacBook heartbeat reports generic host macbook; verify actual registered machine rather than assume Air/Pro identity.\n\nImplement and review a capacity-aware dispatch change in a focused PR: actual per-host active execution leases, configured limits plus measured resource/capability guards, concurrent independent work only when safe, and an explicit portable-job contract for MacBook spillover. Preserve single elected-Chief signoff, film/stage claims, shared account limits, generation/browser mutexes, dependency/Ben/money gates and atomic queue claims. Do not blindly run several render/browser jobs or route Mini-only paths/sign-ins to the laptop. Transfer required approved inputs/output receipts only with verified readable hashes and supported access. Respect mains/idle/disk guards; do not interrupt a laptop in use. Worker fallback must use verified model/media capability, not just a green heartbeat. Expose running job, owner, host, current action/progress and recorded task estimate; distinguish that from a reserved/free-slot estimate. If no supported availability estimate exists, explicitly report unknown, never invent a countdown.\n\nSeparate external-condition waits, ready queue/capacity waits and pending review so a check_at timestamp never becomes a deliberate worker start delay. Keep delivered candidate review ready without automatically approving it or redoing acquisition. Use J1834/J1841 as regression evidence, including a busy Chief plus another available specialist. The frontend explanation in PR412 is presentation only and does not implement parallel scheduling.\n\nTests: one eligible free lane dispatches immediately; busy Mini plus powered/idle/capable MacBook stages portable job exactly once; laptop in use/offline/unsupported remains excluded; no two hosts claim same job/stage; model outage walks capability-safe fallback; Chief review/signoff preserved; unavailable media capability remains explicit; dead worker lease recovery; no paid generation/publishing performed by tests. Rollout requires exact-head Chief review and observed real host transitions, not CI alone. No spend, media regeneration, upload, schedule, visibility or policy changes are authorized by this engineering task.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -160499,9 +160567,14 @@
           "at": "2026-11-03T23:37Z",
           "by": "codex",
           "what": "Ben asks to resolve production holds using available resources; current evidence and explicit next action attached. Status, owner, progress, gates and original deadlines preserved."
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "J1914: Implement measured capacity and portable overflow; no historical one-week wait, no unverified parallel writers"
         }
       ],
-      "remaining_action": "Implement measured execution capacity, portable MacBook fallback and honest next-slot reporting",
+      "remaining_action": "Implement measured capacity and portable overflow; no historical one-week wait, no unverified parallel writers",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -164438,7 +164511,7 @@
       "title": "Chief: verify condition for J1100",
       "needs": "any",
       "repo": "owb",
-      "body": "Verify the waiting condition for J1100: J1890 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Inspected session tools: no demonstrated audio perception; shell, ASR and still images cannot satisfy listening. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded pending clearance. Disk 31.486 GiB satisfies h43 restart >=10 GiB; recheck at restart, park below 6 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "body": "J1914 narrow Chief scope, 4 November 2026:\nUse the demonstrated existing local Gemini native-input route only after fresh audio-input demonstration in the actual session. Inspect exact existing J1100 auditions and excluded instrumental bed; give an explicit heard music decision. Current capability registry records Gemini moving_video_input only, so do not infer audio readiness from it. Reuse J1810 for capability discovery where required. No new provider/source-audio egress; excluded bed remains excluded until genuine listening clearance. Then normal parent verification with --recheck J1899; preserve pickups, continuous phrase, S6, final AAC/loop/Ben gates. Chief authority still follows actual election; assigning Gemini is not a delegation of Chief authority.\n\nHistorical brief retained:\nVerify the waiting condition for J1100: J1890 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Inspected session tools: no demonstrated audio perception; shell, ASR and still images cannot satisfy listening. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded pending clearance. Disk 31.486 GiB satisfies h43 restart >=10 GiB; recheck at restart, park below 6 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1100 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -164456,9 +164529,14 @@
           "at": "2026-11-03T21:44Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T00:01Z",
+          "by": "codex",
+          "what": "J1914: Verify native audio input and hear exact J1100 auditions; explicit bed decision before v07 repairs"
         }
       ],
-      "remaining_action": "Verify readiness: Obtain local audio-capable listening and cleared instrumental S2 bed before v07 repairs",
+      "remaining_action": "Verify native audio input and hear exact J1100 auditions; explicit bed decision before v07 repairs",
       "kind": "chief",
       "recheck_of": "J1100",
       "required_capabilities": [
