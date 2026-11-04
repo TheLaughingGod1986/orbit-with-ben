@@ -173170,6 +173170,11 @@
           "at": "2026-11-04T11:49Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-04T13:00:00Z"
+        },
+        {
+          "at": "2026-11-04T14:25Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "resume J2018",
@@ -173190,7 +173195,17 @@
         "type": "dependency",
         "condition": "PR480 merged to main",
         "check_at": "2026-11-04T13:00:00Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "by": "",
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2019",
