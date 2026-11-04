@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1928 | mini | open (after J1785) | – | – | 044 script · chief · 044 Ganymede: restore topic and editorial decision before facts and script lock | J1785 |
 | J1929 | mini | open (after J1786) | – | – | 045 script · chief · 045 Mars Terraforming: restore topic and editorial decision before facts and script lock | J1786 |
 | J1930 | mini | open (after J1787) | – | – | 046 script · chief · 046 Enceladus: Chief topic and editorial decision before script lock |  |
-| J1931 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J1931 | any | claimed | codex | 2026-11-04T04:26Z | chief · Chief: verify condition for J0936 |  |
 | J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
 
 Recently finished:
