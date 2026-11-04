@@ -174987,13 +174987,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-04T17:58Z",
       "eta": "2026-11-04T19:58Z",
       "created_by": "claude",
       "created_at": "2026-11-04T17:53Z",
-      "result": "",
+      "result": "SHOT_LIST_v01 written: 52 rows over 582.44 s, timed to locked VO v02b; £0 (2 OMNI Orbit beats flagged with CODE fallbacks); 15 code graphics + harvest list. Stage 032 shots -> review; rule-E review queued as J2044 (Gemini).",
       "history": [
         {
           "at": "2026-11-04T17:53Z",
@@ -175004,6 +175004,11 @@
           "at": "2026-11-04T17:58Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T19:05Z",
+          "by": "claude",
+          "what": "done: SHOT_LIST_v01 written: 52 rows over 582.44 s, timed to locked VO v02b; £0 (2 OMNI Orbit beats flagged with CODE fallbacks); 15 code graphics + harvest list. Stage 032 shots -> review; rule-E review queued as J2044 (Gemini)."
         }
       ],
       "remaining_action": "032 shots: shot list from the locked script and voice (WIP film)",
@@ -175073,7 +175078,8 @@
         }
       ],
       "remaining_action": "032 shots: rule-E review of SHOT_LIST_v01, then queue picture (WIP film)",
-      "kind": "review"
+      "kind": "review",
+      "for": "gemini"
     }
   ],
   "focus": [],
