@@ -158881,10 +158881,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T05:46Z",
+      "eta": "2026-11-04T07:46Z",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
       "result": "",
@@ -158893,6 +158893,11 @@
           "at": "2026-11-03T10:50Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T05:46Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 060 sources handoff and records the next owner/action",
@@ -158902,6 +158907,14 @@
         "stage": "sources",
         "kind": "orphan-review",
         "signature": "ff96f7b3595912aac680"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T05:46Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
