@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1935 | mini | open (after J1790) | – | – | 049 script · chief · 049 Bennu: Chief topic and editorial decision before script lock |  |
 | J1936 | mini | open (after J1791) | – | – | 050 script · chief · 050 Iapetus: Chief topic and editorial decision before script lock |  |
 | J1937 | mini | open (after J1792) | – | – | 051 script · chief · 051 DART: Chief topic and editorial decision before script lock |  |
-| J1938 | any | open | – | – | chief · Chief: verify condition for J0936 |  |
+| J1938 | any | claimed | codex | 2026-11-04T05:00Z | chief · Chief: verify condition for J0936 |  |
 
 Recently finished:
 
