@@ -4,10 +4,18 @@
   "air": "",
   "stages": {
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "01_Script/ganymede_bigger_than_mercury_script_master_v01.md PASS 95.3/100 (5f209befc)"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "codex",
+      "at": "2026-11-04T01:36Z",
+      "eta": "2026-11-04T01:56Z",
+      "note": "J1785 orphan-review evidence reconciliation"
+    }
+  ],
   "next": "Chief topic lock + Gemini facts pass"
 }
