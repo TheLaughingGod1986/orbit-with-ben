@@ -72,17 +72,32 @@ class Registry:
                     and self.probe(row.get("pid")) == row["process_identity"]):
                 # A timer is not process-exit proof. A stuck supervisor keeps its
                 # slot occupied until it is confirmed dead, even after its cap.
-                live.append(dict(row, overdue=at >= end))
+                live.append(dict(row, overdue=at >= end, process_validated=True))
+            elif row.get("child_may_exist") is True:
+                # A dead supervisor is not proof its child session is dead.
+                # Quarantine this slot until explicit process-group cleanup.
+                # Never silently turn an orphaned launch into spare capacity.
+                live.append(dict(row, process_validated=False, recovery_required=True))
         return live
 
     def observe(self, at):
         with self.locked() as rows:
             live = self._live(rows, at)
-            # Only dead records go; queue claims remain untouched in either case.
+            # Only confirmed dead, unarmed records go. Possible orphan sessions
+            # remain quarantined; canonical queue claims are always untouched.
             rows[:] = live
-            return [dict(row, at=at.isoformat(), process_validated=True) for row in live]
+            return [dict(row, at=at.isoformat()) for row in live]
 
-    def record(self, reservation, pid, at, cap_seconds):
+    def arm(self, token, pid):
+        """Persist possible-child state BEFORE spawn; crashes quarantine capacity."""
+        with self.locked() as rows:
+            row = next((r for r in rows if r.get("token") == token), None)
+            if (not row or row.get("pid") != pid
+                    or self.probe(pid) != row.get("process_identity")):
+                raise ValueError("only the live recorded supervisor may arm a launch")
+            row["child_may_exist"] = True
+
+    def record(self, reservation, pid, at, cap_seconds, *, exclusive=False):
         if (reservation.get("host") != self.host or reservation.get("phase") != "reserved"
                 or not reservation.get("token") or not reservation.get("job")
                 or not reservation.get("worker") or not reservation.get("account")
@@ -98,6 +113,8 @@ class Registry:
             live = self._live(rows, at)
             same = next((r for r in live if r.get("token") == reservation["token"]), None)
             if same:
+                if exclusive:
+                    raise ValueError("reservation already has a supervisor")
                 if same.get("pid") != pid or same.get("process_identity") != identity:
                     raise ValueError("reservation already launched by another process")
                 return dict(same)

@@ -63,6 +63,18 @@ class Leases(unittest.TestCase):
         self.assertTrue(self.registry.finish("token-A", 101))
         self.assertFalse(self.registry.finish("token-A", 101))
 
+    def test_dead_armed_supervisor_quarantines_possible_orphan(self):
+        self.registry.record(self.reservation, 101, T, 120)
+        with self.assertRaises(ValueError):
+            self.registry.arm("token-A", 102)
+        self.registry.arm("token-A", 101)
+        self.processes[101] = None
+        row = self.registry.observe(T + dt.timedelta(hours=1))[0]
+        self.assertTrue(row["recovery_required"])
+        self.assertFalse(row["process_validated"])
+        with self.assertRaisesRegex(ValueError, "capacity"):
+            self.registry.record(dict(self.reservation, token="new", job="J1841"), 102, T, 120)
+
     def test_corrupt_state_or_foreign_host_is_not_free_capacity(self):
         path = pathlib.Path(self.tmp.name) / "mini.json"
         path.write_text("broken")

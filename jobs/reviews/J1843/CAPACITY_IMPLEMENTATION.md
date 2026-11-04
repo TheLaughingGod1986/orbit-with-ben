@@ -285,3 +285,67 @@ Chief review and observe real host transitions before enabling capacity. This
 remaining integration is larger than the capped run, so release J1843 at this
 clean, tested checkpoint; do not close it or create a duplicate follow-up.
 No spend, media regeneration or publishing state changed.
+
+
+## Resume checkpoint — 4 November, 04:22 UTC
+
+Recovered committed PR437 head c1fb2d0205 into the clean worktree
+`/private/tmp/J1843-run` on the existing `codex/J1843-capacity` branch. The older
+`/private/tmp/j1843-capacity` worktree contains uncommitted historical files and
+was left untouched. Neither of the earlier documented temporary resume paths
+still existed. The original plan remains **1/3**; implementation is unfinished.
+
+Added `capacity_supervisor.py`, an internal local lifecycle adapter with no CLI,
+production caller or change to the relay's serial lock. It requires a freshly
+read canonical claimed reservation, matching host/account/owner, matching
+reviewed and installed head, and the original unexpired launch window. It only
+accepts explicitly scoped CPU assembly/chart work with no-spend/no-publish
+flags; Chief/review work is excluded. Trusted guard and local input-rehash
+callbacks are mandatory, with guards and ownership checked before launch and
+while the child runs. This is not an operating-system sandbox: the eventual
+caller still must select an approved command and prohibit detached child escapes.
+
+A process-validated exclusive lease precedes spawn. Durable per-token launch
+seals prevent replay after completion or launch failure. Child commands use an
+explicit absolute executable, no shell, closed stdin, an exclusive log and a
+new process session, capped at 1500 seconds. Timeout, guard loss, canonical
+cancellation and exceptions clean up the process group before freeing the
+local lease. Nonzero exits remain explicit receipts; no receipt completes a
+queue job or accepts outputs. A failed attempt requires explicit reconciliation
+and a new canonical reservation rather than deleting its seal to retry blindly.
+
+`Registry.arm` persists possible-child state before spawning. If the supervisor
+dies after that point, the slot remains quarantined with `recovery_required`
+and `process_validated=false`, rather than becoming spare capacity. Automatic
+orphan process-group reconciliation is **still unimplemented** and blocks
+rollout; remote host evidence must also refuse quarantined/unknown capacity.
+A real subprocess test kills a supervisor after its harmless child starts,
+observes quarantine, and explicitly cleans up that test child. Other real
+subprocess tests cover successful/nonzero exit, timeout, descendant cleanup,
+guard loss, cancellation, launch failure and replay. No model or paid tool runs.
+
+Validation: capacity suite (including the supervisor), execution leases,
+portable transfer, workflow state, dispatcher handoffs, queue, relay (fake
+worker CLIs) and MacBook worker suites all PASS. Supervisor has **16 tests**;
+execution leases has **8**. Core sync check: PASS (56 shared files). Python
+compilation and whitespace checks PASS. Initial sandboxed process probes were
+rejected, then the process tests passed with OS process visibility enabled.
+These remain local tests, not actual two-host rollout evidence.
+
+Fresh observation: PR-only `chief_relay.py capacity` validated J1843's sole Mini
+execution lease, Codex, ending 04:47:43Z, with legacy/unverified machine/account
+attribution. Cached laptop heartbeat was 04:17:23Z, generic `macbook`, idle,
+no laptop job waiting, already stale at observation (~494 seconds). It lacks
+registered identity, resources, mains/idle and account/model/capability proof.
+Current relay status still records Cursor's last execution authentication error;
+no model/quota success, cleared sign-in or spare account slot is inferred. Free
+slot availability is **unknown**. About 28 GB disk free; no repair/offload needed.
+Audio/moving-video capabilities remain undemonstrated. Both repositories pulled;
+HOS Codex inbox was empty; thread read to #6622443242.
+
+Next on this same job/PR: trusted registered-host/account observations, capped
+supervisor integration and automatic orphan reconciliation, supported laptop
+outbound/return receipt consumption, and HOS stage transactions where needed.
+Then exact-head Chief review and observed real host transitions. This remaining
+integration exceeds the bounded run, so release J1843 at a clean checkpoint.
+No extra lane, production launch, portable dispatch, spend or publishing enabled.
