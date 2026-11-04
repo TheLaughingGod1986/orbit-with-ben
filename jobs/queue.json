@@ -168473,9 +168473,14 @@
           "at": "2026-11-04T04:55Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T04:55Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Three steps: inspect current evidence; record parent condition; verify and report."
         }
       ],
-      "remaining_action": "Verify readiness: Complete independent v04 panel J1940-J1943 then exact-file Chief ruling J1944; retain A pending decision",
+      "remaining_action": "Verify v04 review evidence, update J1823 condition, then confirm queue read-back",
       "kind": "chief",
       "recheck_of": "J1823",
       "due": "2026-11-04T05:53:30+00:00",
@@ -168485,9 +168490,11 @@
         "of": 3,
         "at": "2026-11-04T04:55Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Three steps: inspect current evidence; record parent condition; verify and report."
+      },
+      "taskKeys": [
+        "OWB:026"
+      ]
     }
   ],
   "focus": [],
