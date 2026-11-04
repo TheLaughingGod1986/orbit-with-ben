@@ -174939,11 +174939,25 @@
           "at": "2026-11-04T17:53Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T18:25Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API",
       "kind": "assembly",
-      "urgent": 6
+      "urgent": 6,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J2041",
