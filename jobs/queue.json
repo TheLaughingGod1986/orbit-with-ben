@@ -162229,10 +162229,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-04T22:14Z",
-      "eta": "2026-11-05T00:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "Chief FIX at 91576db52d: 94 capacity tests PASS; CI stale STATUS.md and production caller integration incomplete. Same-job engineering ready; no merge or rollout.",
@@ -162591,6 +162591,11 @@
           "at": "2026-11-04T22:18Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR437 checkpoint d7680cbe32 binds prepared commands to the selected job before consume/spawn; 99 capacity tests, STATUS consistency, core56 and diff checks pass. Caller integration and real-host acceptance remain unfinished; no rollout."
+        },
+        {
+          "at": "2026-11-04T22:18Z",
+          "by": "codex",
+          "what": "released: Clean tested checkpoint d7680cbe32 pushed to existing PR437, worktree /private/tmp/J1843-callers. Preserve2/3. Added command/job binding and mismatch cancellation before claim/spawn;99 capacity tests pass with process visibility, STATUS/core56/diff pass. Remaining disabled Mini/macbook caller integration, receipt transport and caller tests exceed capped run; resume same job without artificial hold. No rollout or approval claimed."
         }
       ],
       "remaining_action": "Complete disabled Mini and laptop production callers, transport and caller tests",
