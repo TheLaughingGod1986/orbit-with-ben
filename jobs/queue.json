@@ -158754,9 +158754,14 @@
           "at": "2026-11-04T05:12Z",
           "by": "codex",
           "what": "step 2 of 3 done: FIX ruling and board handoff committed in PR458; J1958 queued after J1803. J1804/J1805 retained as editorial/source repair owners."
+        },
+        {
+          "at": "2026-11-04T05:12Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Ruling 8dc4298899 is on main; PR458 merged through queue Git transaction. Board check and diff check pass; J1958 dependency verified. Hosted CI remains pending."
         }
       ],
-      "remaining_action": "Verify and merge the ruling, then close and report J1803",
+      "remaining_action": "Report completed Hyperion topic handoff repair",
       "kind": "chief",
       "handoff": {
         "film": "060",
@@ -158765,11 +158770,11 @@
         "signature": "7ad682471de70e3ae6c9"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-04T05:12Z",
         "by": "codex",
-        "note": "FIX ruling and board handoff committed in PR458; J1958 queued after J1803. J1804/J1805 retained as editorial/source repa"
+        "note": "Ruling 8dc4298899 is on main; PR458 merged through queue Git transaction. Board check and diff check pass; J1958 depende"
       },
       "taskKeys": [
         "OWB:060"
