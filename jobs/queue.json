@@ -172403,10 +172403,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T11:18Z",
+      "eta": "2026-11-04T11:38Z",
       "created_by": "codex",
       "created_at": "2026-11-04T10:51Z",
       "result": "",
@@ -172415,6 +172415,11 @@
           "at": "2026-11-04T10:51Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T11:18Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Inspect supported CLI media transport/configuration and prove real acoustic perception on a fixture; no production VO upload",
@@ -172422,7 +172427,15 @@
       "audio_transport_repair_key": "PR438-native-audio",
       "urgent": 3,
       "due": "2026-11-04T10:51:54+00:00",
-      "due_kind": "user-resource-unblock"
+      "due_kind": "user-resource-unblock",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T11:18Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2012",
