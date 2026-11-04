@@ -57,7 +57,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1894 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
 | J1895 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
 | J1899 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
-| J1901 | mini | claimed | codex | 2026-11-04T09:14Z | 037 script · chief · 037 Milky Way Centre: restore topic and editorial decision before facts and script lock | J1778 |
 | J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
 | J1904 | mini | open (after J1779) | – | – | 038 script · chief · 038 Voyager Golden Record: restore topic and editorial decision before facts and script lock | J1779 |
