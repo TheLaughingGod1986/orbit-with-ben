@@ -82,3 +82,7 @@ Pass threshold: 90
 
 Script score: **95.3/100** · PASS
 ```
+
+## Chief handoff repair — J1787, 4 November 2026
+
+**FIX / not locked (codex, elected acting Chief).** The historical 95.3 score above is an automated check, not topic/script approval. J0560/J0568 were cancelled as duplicates of decisions about film 061; no 046 lock followed. **J1930** now owns the topic/editorial decision for 046/script, after J1787. Neighbours, Short-first decision, pre-build sign-off, formal Gemini facts, direct quote check and explicit Chief lock remain required before VO. See `jobs/reviews/J1787/CHIEF_HANDOFF_2026-11-04.md` for evidence and specific revision/verification targets. No production or publishing is approved.
