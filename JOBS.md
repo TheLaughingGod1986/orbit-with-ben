@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1843 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
-| J1879 | mini | open | – | – | assembly · Buffer: recover approved Mars-night and Titan social sources | J1874 |
+| J1879 | mini | claimed | gemini | 2026-11-04T21:14Z | assembly · Buffer: recover approved Mars-night and Titan social sources | J1874 |
 | J1880 | mini | open | – | – | 008 edit · assembly · HOS 008: prepare six Franklin v03 UAT corrections and exact edit recipe | HOS-008:v03:2026-11-03T16:08:33.439Z / J1868 |
 | J1881 | mini | open (after J1880) | – | – | 008 edit · chief · Chief: review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1888 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
