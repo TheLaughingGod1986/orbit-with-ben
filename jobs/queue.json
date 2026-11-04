@@ -1,5 +1,5 @@
 {
-  "next_id": 2151,
+  "next_id": 2152,
   "jobs": [
     {
       "id": "J0001",
@@ -179844,6 +179844,34 @@
       ],
       "remaining_action": "Review OWB:032 DATA stills and recommend exact source/crop corrections; protected fallback decisions stay with Chief",
       "kind": "review"
+    },
+    {
+      "id": "J2151",
+      "title": "MacBook setup test: gemini",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "MacBook setup test (Ben, 4 Nov 2026: 'can you test all set up'). Touch no files and open no PR (skip step 3 of your instructions). Just finish this job with: python3 scripts/jobs.py done <this id> --agent macbook --result 'MacBook test OK: <which agent CLI you are>, <model if you know it>, $(hostname)' --git. Nothing else.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T22:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T22:46Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "MacBook setup test: gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
