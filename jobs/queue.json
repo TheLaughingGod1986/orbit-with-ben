@@ -171054,9 +171054,14 @@
           "at": "2026-11-04T17:51Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1967 for OWB:061 direct MUST QUOTE review"
+        },
+        {
+          "at": "2026-11-04T17:52Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J1808/J1807 Chief rulings, J1966 Gemini findings/hashes, SOURCES.md, and v01 script; recorded input SHA-256 hashes"
         }
       ],
-      "remaining_action": "Read J1808 ruling, J1966 Gemini findings, 061 script candidate, and SOURCES.md",
+      "remaining_action": "Directly open and parse every primary source (PDFs, PMC/PubMed XMLs, NASA pages, PIA records, authorities, raw wikitext)",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -171068,11 +171073,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-04T17:51Z",
+        "at": "2026-11-04T17:52Z",
         "by": "gemini",
-        "note": "Claimed J1967 for OWB:061 direct MUST QUOTE review"
+        "note": "Read J1808/J1807 Chief rulings, J1966 Gemini findings/hashes, SOURCES.md, and v01 script; recorded input SHA-256 hashes"
       },
       "taskKeys": [
         "OWB:061"
