@@ -110651,13 +110651,12 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "open",
       "since": "2026-10-30T07:32Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T10:08Z",
-      "result": "waiting for Ben: sign in to claude.ai in the CDP Chrome",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T10:08Z",
@@ -110727,7 +110726,14 @@
         "type": "ben",
         "condition": "waiting for Ben: sign in to claude.ai in the CDP Chrome",
         "check_at": "2026-10-30T13:52:05+00:00"
-      }
+      },
+      "log": [
+        {
+          "at": "2026-11-04T12:05Z",
+          "by": "claude",
+          "what": "released: Ben, 4 Nov 2026: signed in to claude.ai in the Mini CDP Chrome (\"done\"). Resume: add the Claude reader (and Gemini) to ai_spend_daily; never print cookies or tokens."
+        }
+      ]
     },
     {
       "id": "J1202",
