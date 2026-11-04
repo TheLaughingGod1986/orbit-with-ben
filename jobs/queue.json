@@ -165150,6 +165150,11 @@
           "at": "2026-11-04T10:40Z",
           "by": "relay",
           "what": "condition verification queued: J2008"
+        },
+        {
+          "at": "2026-11-04T10:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T11:40:45Z"
         }
       ],
       "remaining_action": "Resolve trusted authorization for three R2 assets and six scoped Buffer posts, then revalidate live inputs before execution",
@@ -165191,12 +165196,11 @@
       "model": "gpt-6.1-sol",
       "hold": {
         "type": "input",
-        "condition": "J1998 reviewed original recorded Ben approval, J1915/J1975/J1988 and subsequent rejection ecd8d8ff06. No newer clearance in OWB comments through 6627197263 or HOS desk through 6619903706. Automatic review still rejects relayed approval as insufficient trusted authorization for the three R2 assets and six scoped Buffer creates. Preserve approval history; no writes or bypass from verification.",
-        "check_at": "2026-11-04T11:40:45+00:00",
-        "last_recheck": "J1998",
-        "checked_at": "2026-11-04T09:19:59+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2008"
+        "condition": "J2008 reviewed recorded Ben approval and J1915/J1975/J1988/J1998 against later automatic rejection ecd8d8ff06. Fresh OWB comments through 6628630667 and HOS desk since previous verification show no newer clearance. Trusted authorization accepted by automatic review remains unresolved for three R2 assets and six scoped Buffer creates. Preserve approval history; no writes or bypass from verification.",
+        "check_at": "2026-11-04T11:40:45Z",
+        "last_recheck": "J2008",
+        "checked_at": "2026-11-04T10:45:14+00:00",
+        "checked_by": "codex"
       }
     },
     {
