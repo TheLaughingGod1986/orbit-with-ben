@@ -78,7 +78,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
 | J2146 | cloud | open | – | – | for claude · script · Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21) |  |
 | J2147 | cloud | open | – | – | 032 upload · for claude · listing · 031/032 Shorts slots around the new Wednesday long slot |  |
-| J2151 | macbook | claimed | macbook | 2026-11-05T01:41Z | `gemini-argon` · MacBook setup test: gemini |  |
 | J2152 | macbook | open | – | – | `cursor-grok-4-7` · MacBook setup test: cursor |  |
 | J2153 | macbook | open | – | – | chart · `gpt-6-astra` · MacBook setup test: codex |  |
 | J2154 | macbook | open | – | – | review · `claude-opus-5-5` · MacBook setup test: claude |  |
@@ -93,6 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2151 done: MacBook setup test: gemini (MacBook test OK: agy, Gemini 4 Argon (High), Bens-MacBook-Pro.local)
 - J2150 done: 032 J2089: review 18 DATA stills and resolve remaining harvest conflicts (jobs/reviews/J2150/REVIEW.md: 14 DATA stills KEEP, 4 CHANGE (r04 title, r28/r29 'BIGGEST DROPS', r39 oxygen-only); all 18 may render after changes (ref J2150). R25 -> PIA07232 inset; R38 PIA19051 reconstruction dropped -> PIA14584; R50 Sinlap-only crop or map-pin fallback; ESA Huygens reconstruction movie not used.)
 - J2149 done: 034 topic + script: rule-E review (WIP film, new reference-channel rules) (Rule-E GO (jobs/reviews/J2149/REVIEW.md, commit c2082a4884): 12 Pluto neighbours verified (1.03M-21.20M views, led by NASA 21.20M & Astrum 18.43M D5XPuS-Y0fg), zero OWB/HOS duplicates; script v02 polished (1,291 spoken words, review:script PASS 95.8/100, gate:episode PASS, 15/15 SOURCES rows verified live in CLAUDE_QUOTE_CHECK_v01.md); rules 18/19/20 recorded (Real Worlds series, real-imagery titles, PIA20291/PIA19952 single real frame thumb); 034 topic/script/sources set to done and VO job queued.)
 - J2148 done: 033 topic + script: rule-E review (WIP film, new reference-channel rules) (Rule-E GO (jobs/reviews/J2148/REVIEW.md, commit c01c9f9e78): (1) 10 qualifying 1M+ Uranus neighbours verified via yt-dlp (1.24M-7.63M views), zero OWB/HOS long overlap; (2) OWB Short ZpEA8stoSPA public 3 Nov reached 461 views / 6 likes in day 1, Astrum pZh5BWCNmmE at 1.24M views in 8 days; (3) script v02 polished (1,290 spoken words, review:script PASS 95.2/100, gate:episode PASS, 15/15 SOURCES.md rows verified live against NASA/NSSDCA/LOC); (4) LEARNINGS 20 series = Real Worlds, LEARNINGS 18 real-imagery titles = 'What Voyager 2 Saw in Just 6 Hours at Uranus' (44c) / 'The Only Spacecraft Photos Ever Taken at Uranus' (47c), LEARNINGS 19 real-frame thumb A = JWST NIRCam PIA25770 / Voyager 2 PIA18182 ('21-YEAR WINTER'). Set 033 topic/script/sources done and queued VO job J2155. £0.)
@@ -102,4 +102,3 @@ Recently finished:
 - J2138 cancelled: Chief: resolve 061 topic orphan-review ()
 - J2137 cancelled: Chief: resolve 060 sources orphan-review ()
 - J2136 cancelled: Chief: resolve 060 script orphan-blocked ()
-- J2135 cancelled: Chief: resolve 060 topic orphan-review ()
