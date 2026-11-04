@@ -165756,9 +165756,14 @@
           "at": "2026-11-04T01:15Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T01:16Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Plan: exact-head review/tests; protected merge/readback; authenticated read-only audit; evidence and parent-job reconciliation."
         }
       ],
-      "remaining_action": "Verify approved head/green gates, merge HOS PR365 normally, run live read-only channel audit and reconcile J0998/J0999",
+      "remaining_action": "Review and test PR365, merge approved checker, run channel audit and reconcile handoff",
       "kind": "chief",
       "direct_approval_key": "Ben-direct-HOS365-a87cd56a-approval",
       "urgent": 5,
@@ -165766,12 +165771,14 @@
       "due_kind": "user-approved-checker-fix",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-04T01:15Z",
+        "of": 4,
+        "at": "2026-11-04T01:16Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: exact-head review/tests; protected merge/readback; authenticated read-only audit; evidence and parent-job reconcil"
+      },
+      "taskKeys": [
+        "HOS:099"
+      ]
     },
     {
       "id": "J1918",
