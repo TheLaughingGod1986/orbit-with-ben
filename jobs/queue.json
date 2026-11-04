@@ -111175,13 +111175,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-04T00:57Z",
-      "eta": "2026-11-04T01:17Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
-      "result": "",
+      "result": "Waiting for: J1208 console follow-up fab32821a8 / PR436 proves project-account linkage and GBP69.48 monthly Available. STOP: exact requested Veo3.1 Fast us-central1 1080p silent GBP-per-second SKU is not verified (historical export labels Veo3.0/count), monthly entitlement terms and credential-specific served-model evidence remain incomplete, and all-project reports explicitly permit >24h billing lag; no authoritative pending-cost upper bound/cutoff. Resume only on new matching pricing/service/entitlement and bounded pending-charge evidence, then Chief-reviewed live guarded caller under Vertex desk lock. Elapsed time or zero displayed cost is not approval. At final 5 Nov 12:00Z checkpoint, if unmet close source branch unsuccessful and retain original scheduled copies. No generation, reservation, publishing or Ben-state changes.",
       "history": [
         {
           "at": "2026-10-29T14:17Z",
@@ -111342,9 +111342,19 @@
           "at": "2026-11-04T01:02Z",
           "by": "codex",
           "what": "step 2 of 3 done: fab32821a8 on PR436: console proves project/account link; GBP69.48 monthly Available refreshed. Historical price CSV has Veo3.0/count taxonomy, so exact Veo3.1 GBP/second remains unverified; all-project reports warn >24h lag. Tests 13+14 PASS. No take, reservation or spend; source delivery unfinished."
+        },
+        {
+          "at": "2026-11-04T01:03Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J1208 console follow-up fab32821a8 / PR436 proves project-account linkage and GBP69.48 monthly Available. STOP: exact requested Veo3.1 Fast us-central1 1080p silent GBP-per-second SKU is not verified (historical export labels Veo3.0/count), monthly entitlement terms and credential-specific served-model evidence remain incomplete, and all-project reports explicitly permit >24h billing lag; no authoritative pending-cost upper bound/cutoff. Resume only on new matching pricing/service/entitlement and bounded pending-charge evidence, then Chief-reviewed live guarded caller under Vertex desk lock. Elapsed time or zero displayed cost is not approval. At final 5 Nov 12:00Z checkpoint, if unmet close source branch unsuccessful and retain original scheduled copies. No generation, reservation, publishing or Ben-state changes."
+        },
+        {
+          "at": "2026-11-04T01:03Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T12:00:00Z"
         }
       ],
-      "remaining_action": "Obtain exact Veo3.1 GBP SKU and bounded pending charges, then review live guarded caller before generation",
+      "remaining_action": "Verify exact Veo3.1 GBP pricing and pending-charge bound before guarded two-take generation",
       "due": "2026-10-30T18:00:00Z",
       "kind": "video",
       "superseded_holds": [
@@ -111366,7 +111376,12 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "hold": {
+        "type": "credits",
+        "condition": "J1208 console follow-up fab32821a8 / PR436 proves project-account linkage and GBP69.48 monthly Available. STOP: exact requested Veo3.1 Fast us-central1 1080p silent GBP-per-second SKU is not verified (historical export labels Veo3.0/count), monthly entitlement terms and credential-specific served-model evidence remain incomplete, and all-project reports explicitly permit >24h billing lag; no authoritative pending-cost upper bound/cutoff. Resume only on new matching pricing/service/entitlement and bounded pending-charge evidence, then Chief-reviewed live guarded caller under Vertex desk lock. Elapsed time or zero displayed cost is not approval. At final 5 Nov 12:00Z checkpoint, if unmet close source branch unsuccessful and retain original scheduled copies. No generation, reservation, publishing or Ben-state changes.",
+        "check_at": "2026-11-05T12:00:00Z"
+      }
     },
     {
       "id": "J1209",
