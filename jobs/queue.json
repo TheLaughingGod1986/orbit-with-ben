@@ -158722,13 +158722,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T05:09Z",
-      "eta": "2026-11-04T07:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX/topic not locked. Recorded evidence ruling and board handoff on main (8dc4298899, PR458). J1958 after J1803 owns verified neighbours/audience evidence; J1804 or successor owns topic/editorial ruling; J1805 owns source repair. No production, spend or publication approval. STATUS/diff checks pass; hosted CI pending.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -158759,6 +158759,11 @@
           "at": "2026-11-04T05:12Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling 8dc4298899 is on main; PR458 merged through queue Git transaction. Board check and diff check pass; J1958 dependency verified. Hosted CI remains pending."
+        },
+        {
+          "at": "2026-11-04T05:12Z",
+          "by": "codex",
+          "what": "done: FIX/topic not locked. Recorded evidence ruling and board handoff on main (8dc4298899, PR458). J1958 after J1803 owns verified neighbours/audience evidence; J1804 or successor owns topic/editorial ruling; J1805 owns source repair. No production, spend or publication approval. STATUS/diff checks pass; hosted CI pending."
         }
       ],
       "remaining_action": "Report completed Hyperion topic handoff repair",
@@ -158778,7 +158783,8 @@
       },
       "taskKeys": [
         "OWB:060"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/458"
     },
     {
       "id": "J1804",
