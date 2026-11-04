@@ -4,12 +4,12 @@
 |-------|-------|
 | Slug | `039_Every-Planet-Has-A-Sound` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-17_J0453.md` (scored 23/30, #1 of 5) |
-| Topic lock | **Pending Chief decision via J1905 (J1780 handoff repair, 3 Nov)** (`J0453` parked for Chief: lock 039 or pick #2 Wrong Kind of Aliens / #3 Io Volcanoes / #4 Sun Red Giant; confirm Short-first waiver) |
-| Script draft | `01_Script/planet_sounds_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0461; 1,222 spoken words / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; revised from v00 drafted in J0453) |
-| Script review | **Unlocked; Chief review restored in J1905. Historical automated score only: 95.8 / 100** (1,222 spoken words / 1,299 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0461`) |
+| Topic lock | **DEFER (J1905, 4 Nov): unlocked candidate; no Short-first waiver. J1984 evidence then J1985 capacity/advancement decision.** J1780 restored the handoff from cancelled J0453/J0461; `1OCNzhkiBuc` (*Why Are the Winds on Neptune Faster Than Sound?*) is Neptune wind speed (`494` views, `42.6%` 7d stayed MISS), and `bSjWiCbB7pY`/`iyvWYFP_ETA`/`RLSJm59OSzI` are private with `0` views, not measured Short-first proof. |
+| Script draft | `01_Script/planet_sounds_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0461; 1,251 whitespace spoken words / 1,222 notes / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; v00 retained) |
+| Script review | **FIX (J1905, 4 Nov).** Historical automated score 95.8/100 from J0461 is not editorial, scientific or script-lock approval. See `jobs/reviews/J1905/CHIEF_EDITORIAL_RULING_2026-11-04.md` for required specialist fixes if advanced. |
 | Sources | `01_Script/SOURCES.md` — 7 rows started and pre-checked with verbatim quotes (`NASA Perseverance Rover Components`, `NASA JPL Perseverance Sounds of Mars`, `NASA Perseverance Mars Speed of Sound Release`, `NASA InSight Mars Wind Resource`, `NASA/ESA Cassini-Huygens & Titan Audio`, `University of Iowa Donald Gurnett & Cassini RPWS`, `JPL Saturn-Enceladus Plasma Wave Audio`, `NASA Chandra Perseus Black Hole Sound Waves`, `LOC Name Authority Records n79134100 / n85087745 / n80131454 / n87929862`) |
-| Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
-| Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
+| Gemini facts pass | Not started; J1985 owns the specialist rewrite → formal Gemini facts → direct quotes/lock chain if advanced. All seven rows remain TO VERIFY. |
+| Gate | Production blocked: topic/neighbour and Short-first decision, unsigned prebuild audit, editorial fixes, formal Gemini facts, direct quote check and explicit script lock remain. Outputs below are historical J0461 evidence only. |
 | VO | Pending (wait for topic lock + Gemini `facts` + `CLAUDE_QUOTE_CHECK` + Chief script sign-off) |
 | CG | Pending (NASA/JPL `PIA24487` Perseverance SuperCam, `PIA24647` Ingenuity, `PIA07232` Huygens Titan descent, `PIA17184`/`PIA19061` Enceladus & Saturn, Chandra Perseus cluster ripples + code graphics + Omni Orbit) |
 | Runtime target | 7–9 min (1,222 spoken words / 1,299 reviewer words, ~8.7 min est.) |
@@ -86,3 +86,7 @@ Script score: **95.8/100** · PASS
 ## Handoff repair — 3 November 2026 (J1780)
 
 J0453/J0461 were cancelled as duplicates of J0789/J0802, whose decisions concern only unlocked 061 drafts. No 039 lock is established. J1905 restores topic/editorial review before formal Gemini facts and direct quote checks. See `jobs/reviews/J1780/CHIEF_HANDOFF_2026-11-03.md`. No production approval; v00/v01 and source evidence preserved.
+
+## Chief ruling — 4 November 2026 (J1905)
+
+DEFER topic advancement; FIX script. No Short-first waiver or production approval. J1984 owns neighbours, completed topic audit and matching Short-first evidence (`1OCNzhkiBuc`, *Why Are the Winds on Neptune Faster Than Sound?*, verified live 4 Nov as public with 494 views and 42.6% 7d stayed MISS on Neptune wind speed; `bSjWiCbB7pY`, `iyvWYFP_ETA` and `RLSJm59OSzI` verified live 4 Nov as private with 0 views); J1985 owns capacity/advancement and any specialist rewrite/facts/direct-quotes chain. HOS November is 2/4 complete against OWB 5/4. Reconsider when HOS reaches four completed November films or Chief records a fresh non-displacing capacity rationale, and topic evidence passes. Reconcile incoming 038 (`J1982`) and outgoing 040 (`J1906`) handoffs before script lock; any eventual audio/cut review requires a reviewer with demonstrated `audio_input` capability. Historical notes above are not approval; v00/v01 and SOURCES are unchanged. Full ruling: `jobs/reviews/J1905/CHIEF_EDITORIAL_RULING_2026-11-04.md`. Nothing for Ben.
