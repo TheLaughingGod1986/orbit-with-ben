@@ -78,3 +78,7 @@
   - `J1823` (`026 thumbnails: correct unapproved test variants after J1766 review`) is already the active `026 thumbs` job on hold (`Complete queued panel J1920-J1922, decision J1923 and exact-file ruling J1924; no rebuild unless FIX`).
   - `J1924` (`Chief: exact-file decision on OWB026 J1823 v03 after packaging panel`, `--after J1923`, `--kind chief`) is already queued to inspect the exact `abc_v03` files alongside this `DECISION.md` and record either an exact-file `PASS` or a concrete `FIX` on `J1823`.
   - Per `J1823`, `J1923`, and `J1924`, no live title, manifest, Studio Test & Compare, or `05_Analytics/tests/THUMB_LEDGER.json` changes are authorised at this stage.
+
+## Elected-Chief ruling — J1924, 4 November 2026
+
+Codex: **FIX B/C v03; preserve original A.** Exact-file findings and binding correction scope are in `jobs/reviews/J1924.md`. J1823 resumes ready no-spend abc_v04 work: proposed B `900M YEAR WALK` (900M yellow), proposed C `4.2 LIGHT YEARS` (4.2 yellow), with claim verification, clear text space, cool separation, gates and fresh panel/Chief review. These replace the four-word C suggestion above. The ruling does not treat a repeated noun alone as title duplication. PR439 is merged as historical evidence, not image approval. No live packaging changes authorised.
