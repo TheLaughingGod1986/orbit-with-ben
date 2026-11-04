@@ -172725,13 +172725,13 @@
       "stage": "",
       "after": "J1468",
       "eta_min": 25,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T12:29Z",
-      "eta": "2026-11-04T12:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T11:29Z",
-      "result": "",
+      "result": "Technical repair delivered locally aa91ff22bd; persistent /Users/benjaminoats/_desk/handoff/J2016/REPORT.md. AR1v06 AR2v12 AR3v13 clear complete-metadata picture/polish, opening, music/SFX, loop/finish and decode checks. Original AAC, exact timing, sources and h40/h42 overlays verified. AR3 all 354 unaffected decoded frames identical, preserving original loop metrics. Failed candidates retained. Parent J1471 stays 2/3 for Chief evidence/pace review under current Ben-final-watch rule; existing Ben/J1356/publishing holds retained. No media approval, spend, public push or upload.",
       "history": [
         {
           "at": "2026-11-04T11:29Z",
@@ -172797,6 +172797,11 @@
           "at": "2026-11-04T12:37Z",
           "by": "codex",
           "what": "step 4 of 4 done: Technical delivery aa91ff22bd committed locally in clean worker/J2016; persistent handoff _desk/handoff/J2016. AR1v06/AR2v12/AR3v13 all requested tool gates clear; AAC/timing/source preservation verified. No media approval or public push."
+        },
+        {
+          "at": "2026-11-04T12:37Z",
+          "by": "codex",
+          "what": "done: Technical repair delivered locally aa91ff22bd; persistent /Users/benjaminoats/_desk/handoff/J2016/REPORT.md. AR1v06 AR2v12 AR3v13 clear complete-metadata picture/polish, opening, music/SFX, loop/finish and decode checks. Original AAC, exact timing, sources and h40/h42 overlays verified. AR3 all 354 unaffected decoded frames identical, preserving original loop metrics. Failed candidates retained. Parent J1471 stays 2/3 for Chief evidence/pace review under current Ben-final-watch rule; existing Ben/J1356/publishing holds retained. No media approval, spend, public push or upload."
         }
       ],
       "remaining_action": "Chief reviews repaired AR candidates via parent J1471, retained at 2/3",
@@ -172822,7 +172827,8 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "done_ref": "aa91ff22bd"
     },
     {
       "id": "J2017",
