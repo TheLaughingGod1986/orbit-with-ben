@@ -203,7 +203,7 @@ def dispatch_claimed(*, evidence, registry, token, host_id, worker, claimant,
                 capacity.verify_inputs(claim_doc["portable"], work_dir)
 
     try:
-        return run(
+        outcome = run(
             registry=registry,
             read_claim=read_claim,
             guard=guard,
@@ -216,6 +216,12 @@ def dispatch_claimed(*, evidence, registry, token, host_id, worker, claimant,
             preflight=default_preflight,
             clock=clock,
         )
+        if outcome.get("phase") != "exited" or outcome.get("exit_code") != 0:
+            # A reaped timeout, guard stop or nonzero worker exit is a failed
+            # attempt too. Reconcile its canonical claim exactly as for a
+            # spawn exception; a free local lease alone is not queue cleanup.
+            raise RuntimeError("supervised worker did not complete successfully")
+        return outcome
     except Exception as failure:
         # run() reaps before freeing its lease. A surviving/quarantined lease
         # means cleanup was not proven: retain the canonical claim, fail closed.

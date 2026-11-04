@@ -702,3 +702,28 @@ Final related validation: **321 tests PASS** in total (98 capacity, 19 leases,
 mocked offload test overrides that setting and PASSes. Earlier exploratory
 relay runs were interrupted and are not counted. Both PR checks passed on
 code commit `c5567c84525ede6ed64fe4f869c63c45e3a0bec2`.
+
+
+### Codex continuation, 4 November 2026, unsuccessful worker receipts
+
+Synchronized current main in the existing clean PR437 worktree. Found and fixed
+a remaining canonical-claim cleanup gap: `run` returns an outcome for a nonzero
+exit, timeout or changing host guard, rather than raising. `dispatch_claimed`
+previously returned those unsuccessful receipts while leaving the job claimed
+with no occupying local lease. These three outcomes now enter the existing
+exact-token reconciliation path after process-group cleanup. Failed/uncertain
+canonical cleanup still preserves the claim and durable pending record. A
+successful zero exit still does not auto-complete or approve a job.
+
+Validation: all 99 capacity tests PASS with real process visibility, including
+new regression coverage for each unsuccessful outcome. The initial sandboxed
+run could not execute ps; that failure was environmental and the process-visible
+rerun passed. STATUS.md was regenerated and passes --check (no content delta).
+
+J1843 remains 2/3. This is a prerequisite fix, not the missing production caller
+integration. Continue the exact remaining caller/transport scope recorded above
+on this same PR; do not enable rollout or claim real-host acceptance. The
+remaining integration exceeds this unattended work segment. Both repos pulled;
+HOS inbox checked. No demonstrated audio/moving-video input. Required NAS
+offload found no eligible old scratch; about 11 GiB remains free. No media,
+spend, publishing or host registration was changed.

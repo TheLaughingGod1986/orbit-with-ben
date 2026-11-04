@@ -265,6 +265,35 @@ class Supervisor(unittest.TestCase):
             self.assertEqual(data["jobs"][0]["status"], "claimed")
             self.assertEqual((self.root / "dispatch.log").read_text(), "dispatched\n")
 
+    def test_unsuccessful_receipts_reconcile_canonical_claim(self):
+        import test_capacity_reservations as fixtures
+        for phase, code in (("exited", 7), ("timed_out", -9), ("guard_stopped", -9)):
+            with self.subTest(phase=phase):
+                fixture = fixtures.Reservations()
+                fixture.setUp()
+                data = fixture.data
+                ev = {k:v for k,v in fixture.kw.items()
+                      if k not in {"token", "host_id", "worker"}}
+                def transaction(apply, message):
+                    return apply(data)[:2]
+                with patch("jobs.with_git", side_effect=transaction), \
+                        patch("chief_relay.current_execution", return_value=None), \
+                        patch("chief_relay.worker_capabilities", return_value={}), \
+                        patch("capacity_supervisor.run", return_value=dict(phase=phase, exit_code=code)):
+                    with self.assertRaisesRegex(RuntimeError, "did not complete"):
+                        dispatch_claimed(
+                            evidence=lambda:ev, registry=self.registry,
+                            token=fixture.kw["token"], host_id="mini", worker="codex",
+                            claimant="codex", read_claim=lambda:data["jobs"][0],
+                            guard=lambda c:True, installed_head=ev["installed_head"],
+                            reviewed_head=ev["reviewed_head"], argv=[sys.executable, "-c", "pass"],
+                            cwd=self.root, log_path=self.root / "unused.log", cap_seconds=1,
+                            rollout_enabled=True, rollout_approval_ref="fixture",
+                            clock=lambda:ev["at"],
+                        )
+                self.assertEqual(data["jobs"][0]["status"], "open")
+                self.assertNotIn("dispatch_reservation", data["jobs"][0])
+
     def test_dispatch_failure_reconciles_claim_or_leaves_durable_pending_record(self):
         import test_capacity_reservations as fixtures
         for mode in ("preflight", "launch", "uncertain_cleanup", "push_failure"):
