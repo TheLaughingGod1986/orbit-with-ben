@@ -1,5 +1,5 @@
 {
-  "next_id": 2089,
+  "next_id": 2090,
   "jobs": [
     {
       "id": "J0001",
@@ -176629,6 +176629,34 @@
         "kind": "orphan-review",
         "signature": "10fd89b6ab74162a6870"
       }
+    },
+    {
+      "id": "J2089",
+      "title": "032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E review GO on 032 shots (J2044, SHOT_LIST_v02.md at 7b45d14ba1). Build the £0 picture package for 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/SHOT_LIST_v02.md (timed to locked VO titan_landing_vo_v02b, 582.44 s): (1) harvest the licensed NASA/JPL-Caltech (Cassini ISS/VIMS/RADAR, Voyager), ESA/NASA/JPL/UArizona (Huygens DISR descent movie & mosaics), NASA/JHUAPL (Dragonfly animations), NASA/ESA/CSA/STScI (Uranus hand-off) and Commons (Huygens 1671 PD-Art portrait) plates into HARVEST_POOL_v01.json with provenance, licences, SHA-256 and contact sheet (no frames reused from Short RLSJm59OSzI; no still used >2 times); (2) build all £0 code_graphics.py renders (timeline + WHO cards with sourced years, DATA gauges/charts/scales, FACT cards, and the £0 CODE fallbacks for the 2 flagged OMNI Orbit rows 26 and 46). Spend £0; no paid generation without separate Chief price pass.",
+      "ref": "7b45d14ba1",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-04T18:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T18:23Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Harvest NASA/ESA/APL/Commons source plates into HARVEST_POOL_v01.json and build £0 code_graphics from SHOT_LIST_v02.md",
+      "kind": "assembly"
     }
   ],
   "focus": [],
