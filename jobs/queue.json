@@ -157658,13 +157658,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T02:36Z",
-      "eta": "2026-11-04T04:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "FIX / not locked. Restored 048 script handoff in PR444 (927193766f), linked J1934 for topic/editorial decision and dependent neighbour/facts/direct quote checks. Review preserved; stage claim cleared; CI and state assertions PASS. No production approval, spend or publishing change.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -157695,6 +157695,11 @@
           "at": "2026-11-04T02:39Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR444 merged at 927193766f; both CI checks and state assertions PASS; draft review preserved, claim cleared and J1934 linked."
+        },
+        {
+          "at": "2026-11-04T02:39Z",
+          "by": "codex",
+          "what": "done: FIX / not locked. Restored 048 script handoff in PR444 (927193766f), linked J1934 for topic/editorial decision and dependent neighbour/facts/direct quote checks. Review preserved; stage claim cleared; CI and state assertions PASS. No production approval, spend or publishing change."
         }
       ],
       "remaining_action": "Report completed Ceres handoff repair",
