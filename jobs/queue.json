@@ -165791,17 +165791,22 @@
           "at": "2026-11-04T22:03Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: verified checks API, inspected all 6 moving video+audio clips via read_file, mapped exact source rows/hashes/display frames/VO words in J1880_SOURCE_INVENTORY_v04.json"
+        },
+        {
+          "at": "2026-11-04T22:05Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: verified all candidate moving clips via read_file and confirmed 0-frame-delta bounded corrections for all 6 timestamps"
         }
       ],
-      "remaining_action": "Verify candidate clips, dry-run recipe, and update J1868_UAT_CORRECTIONS.md + production-status.md",
+      "remaining_action": "Finalize _build_rough_v13_recipe.py, J1880_SOURCE_INVENTORY_v04.json, J1868_UAT_CORRECTIONS.md, and production-status.md",
       "due": "2026-11-04T12:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T22:03Z",
+        "at": "2026-11-04T22:05Z",
         "by": "gemini",
-        "note": "Step 1 complete: verified checks API, inspected all 6 moving video+audio clips via read_file, mapped exact source rows/h"
+        "note": "Step 2 complete: verified all candidate moving clips via read_file and confirmed 0-frame-delta bounded corrections for a"
       },
       "taskKeys": [
         "HOS:008"
