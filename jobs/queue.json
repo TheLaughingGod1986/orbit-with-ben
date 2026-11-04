@@ -170586,13 +170586,13 @@
       "stage": "sources",
       "after": "J1805",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-04T15:16Z",
-      "eta": "2026-11-04T17:16Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T05:48Z",
-      "result": "",
+      "result": "Formal Gemini sources & claims verification complete (86c9b9d598): jobs/reviews/J1961/GEMINI_SOURCES_VERIFICATION_2026-11-04.md, INPUT_SHA256SUMS.txt, 01_Script/GEMINI_QUOTE_PASS_v01.md, updated 01_Script/SOURCES.md with preserved SOURCES_v00_J0773.md & SOURCES_v01_J0782.md snapshots; 86 subclaims across 16 rows + 10 PIA assets audited (56 PASS, 29 FLAG, 1 UNVERIFIABLE); flags handed to J1962 direct quote check and J1960 Chief lock owner; v00/v01 scripts untouched.",
       "history": [
         {
           "at": "2026-11-04T05:48Z",
@@ -170648,6 +170648,11 @@
           "at": "2026-11-04T16:00Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 complete: committed and pushed J1961 formal Gemini sources verification at 86c9b9d598"
+        },
+        {
+          "at": "2026-11-04T16:00Z",
+          "by": "gemini",
+          "what": "done: Formal Gemini sources & claims verification complete (86c9b9d598): jobs/reviews/J1961/GEMINI_SOURCES_VERIFICATION_2026-11-04.md, INPUT_SHA256SUMS.txt, 01_Script/GEMINI_QUOTE_PASS_v01.md, updated 01_Script/SOURCES.md with preserved SOURCES_v00_J0773.md & SOURCES_v01_J0782.md snapshots; 86 subclaims across 16 rows + 10 PIA assets audited (56 PASS, 29 FLAG, 1 UNVERIFIABLE); flags handed to J1962 direct quote check and J1960 Chief lock owner; v00/v01 scripts untouched."
         }
       ],
       "remaining_action": "Complete J1961 and hand off to J1962 direct quote review and J1960 Chief decision",
@@ -170670,7 +170675,8 @@
       },
       "taskKeys": [
         "OWB:060"
-      ]
+      ],
+      "done_ref": "86c9b9d598"
     },
     {
       "id": "J1962",
