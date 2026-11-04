@@ -75,6 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2089 | mini | open | – | – | 032 picture · assembly · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
 | J2141 | mini | open | – | – | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
 | J2143 | mini | open | – | – | 031 thumbs · thumb · 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
+| J2144 | mini | open | – | – | 032 thumbs · thumb · 032 thumbs (November tentpole): three full concepts incl. rule-19 real image |  |
 
 Recently finished:
 
