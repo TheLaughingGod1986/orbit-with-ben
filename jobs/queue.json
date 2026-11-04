@@ -175113,9 +175113,14 @@
           "at": "2026-11-04T20:00Z",
           "by": "codex",
           "what": "step 3 of 4 done: 10 R2 boundary tests pass; fresh Git dry-run succeeded without escalation and created no branch. Outside-list HEAD explicitly requested escalation and was approved, not refused. NAS offload finished: no eligible scratch, ~11.7 GB remains."
+        },
+        {
+          "at": "2026-11-04T20:03Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: R2 slice installed and pushed as 5a7dfc68c8 to existing PR490. Ten R2 plus three Git tests pass; SigV4 matches aws4fetch; installed R2 dry run succeeded without upload. Buffer/YouTube and policy-reload proof unfinished. NAS offload ended with no eligible scratch; 11749 MB free."
         }
       ],
-      "remaining_action": "Validate and install registered-media-only R2 gateway; Buffer and YouTube guards remain",
+      "remaining_action": "Finish guarded Buffer and channel-pinned YouTube routes, then verify later-session rules",
       "kind": "assembly",
       "urgent": 6,
       "rerouted_from": {
@@ -175130,9 +175135,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-04T20:00Z",
+        "at": "2026-11-04T20:03Z",
         "by": "codex",
-        "note": "10 R2 boundary tests pass; fresh Git dry-run succeeded without escalation and created no branch. Outside-list HEAD expli"
+        "note": "R2 slice installed and pushed as 5a7dfc68c8 to existing PR490. Ten R2 plus three Git tests pass; SigV4 matches aws4fetch"
       }
     },
     {
