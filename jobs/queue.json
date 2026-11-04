@@ -110792,6 +110792,11 @@
           "at": "2026-11-04T20:23Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected live signed-in claude.ai/settings/usage on CDP :9222 (session 96% used resets 8:50 PM; This week 27% used resets Wednesday 10:00 AM) and agy -p /usage (Gemini 80% left); identified parse_claude matching summary line above Current session"
+        },
+        {
+          "at": "2026-11-04T20:25Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Updated parse_claude for live claude.ai/settings/usage layout (left=73, total=100, 96% session, 27% weekly) and switched _page_text to reuse_page; added live page unit test in test_ai_spend_daily.py"
         }
       ],
       "kind": "qa",
@@ -110803,11 +110808,11 @@
         "by": ""
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T20:23Z",
+        "at": "2026-11-04T20:25Z",
         "by": "gemini",
-        "note": "Inspected live signed-in claude.ai/settings/usage on CDP :9222 (session 96% used resets 8:50 PM; This week 27% used rese"
+        "note": "Updated parse_claude for live claude.ai/settings/usage layout (left=73, total=100, 96% session, 27% weekly) and switched"
       },
       "log": [
         {
@@ -110817,7 +110822,7 @@
         }
       ],
       "by": "gemini",
-      "remaining_action": "Fix parse_claude for live claude.ai/settings/usage layout ('This week' heading + summary line above Current session) and add test case"
+      "remaining_action": "Run full unittest suite across scripts/"
     },
     {
       "id": "J1202",
