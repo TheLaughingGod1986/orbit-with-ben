@@ -35,7 +35,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |
-| J1471 | mini | open (after J1468) | – | – | for codex · assembly · `gpt-6.1-sol` · AR cohort: correct remaining opening-gate failures after J1468 |  |
+| J1471 | mini | claimed | codex | 2026-11-04T12:59Z | for codex · assembly · `gpt-6.1-sol` · AR cohort: correct remaining opening-gate failures after J1468 |  |
 | J1752 | mini | blocked | codex | – | 031 vo · chief · 031 Voice: Chief final verification of locked take after J1295 | 6536440194 |
 | J1753 | mini | blocked | codex | – | 032 vo · chief · 032 Voice: Chief final verification of locked take after J1294 | 6536311192 |
 | J1754 | mini | blocked | codex | – | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
