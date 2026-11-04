@@ -171017,9 +171017,14 @@
           "at": "2026-11-04T17:51Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T17:51Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1967 for OWB:061 direct MUST QUOTE review"
         }
       ],
-      "remaining_action": "Directly verify exact source quotations and context after J1966; return flags to J1964",
+      "remaining_action": "Read J1808 ruling, J1966 Gemini findings, 061 script candidate, and SOURCES.md",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",
@@ -171032,12 +171037,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-04T17:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1967 for OWB:061 direct MUST QUOTE review"
+      },
+      "taskKeys": [
+        "OWB:061"
+      ]
     },
     {
       "id": "J1968",
