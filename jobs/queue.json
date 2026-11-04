@@ -167645,19 +167645,24 @@
           "at": "2026-11-04T03:43Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read J1823 scope/history, cecd5dc02c delivery and J1924 FIX. All 5 v04 artifact and 17 preserved-file hashes match; J1940-J1944 remain open and review files absent."
+        },
+        {
+          "at": "2026-11-04T03:43Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: J1823 remains blocked; recorded actual missing reviews with --recheck J1945 and preserved 04:40:34Z check. Panel jobs remain immediately available under their routing/dependencies."
         }
       ],
-      "remaining_action": "Record unmet review condition on J1823 and verify saved hold",
+      "remaining_action": "Verify parent hold and close condition-verification task",
       "kind": "chief",
       "recheck_of": "J1823",
       "due": "2026-11-04T04:40:34+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-04T03:43Z",
         "by": "codex",
-        "note": "Read J1823 scope/history, cecd5dc02c delivery and J1924 FIX. All 5 v04 artifact and 17 preserved-file hashes match; J194"
+        "note": "J1823 remains blocked; recorded actual missing reviews with --recheck J1945 and preserved 04:40:34Z check. Panel jobs re"
       },
       "taskKeys": [
         "OWB:026"
