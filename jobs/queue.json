@@ -158955,13 +158955,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T05:53Z",
-      "eta": "2026-11-04T07:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T10:50Z",
-      "result": "",
+      "result": "Workflow repair complete, not topic approval. FIX/not locked for OWB:061. PR462 merged (e4c0b58344): provenance/Short-proof gaps and 023 Venus overlap recorded; unapproved November target removed. J1963 after J1806 owns topic evidence; J1807 or successor owns subsequent topic/editorial decision, J1808 sources. Board and dependency assertions PASS, Studio core check PASS. No spend, generation, publishing or Ben action.",
       "history": [
         {
           "at": "2026-11-03T10:50Z",
@@ -158992,6 +158992,11 @@
           "at": "2026-11-04T05:56Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR462 merged after green Studio core check; successor/dependency, J1807/J1808 ownership, review state, empty air date and released claim verified. No topic or media approval."
+        },
+        {
+          "at": "2026-11-04T05:57Z",
+          "by": "codex",
+          "what": "done: Workflow repair complete, not topic approval. FIX/not locked for OWB:061. PR462 merged (e4c0b58344): provenance/Short-proof gaps and 023 Venus overlap recorded; unapproved November target removed. J1963 after J1806 owns topic evidence; J1807 or successor owns subsequent topic/editorial decision, J1808 sources. Board and dependency assertions PASS, Studio core check PASS. No spend, generation, publishing or Ben action."
         }
       ],
       "remaining_action": "Close repaired topic handoff and report J1963 evidence next",
@@ -159011,7 +159016,8 @@
       },
       "taskKeys": [
         "OWB:061"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/462"
     },
     {
       "id": "J1807",
