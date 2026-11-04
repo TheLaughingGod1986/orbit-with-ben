@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
 | J1933 | mini | open (after J1788) | – | – | 047 script · chief · 047 Great Red Spot: Chief topic and editorial decision before script lock |  |
 | J1934 | mini | open (after J1789) | – | – | 048 script · chief · 048 Ceres: Chief topic and editorial decision before script lock |  |
+| J1935 | mini | open (after J1790) | – | – | 049 script · chief · 049 Bennu: Chief topic and editorial decision before script lock |  |
 
 Recently finished:
 
