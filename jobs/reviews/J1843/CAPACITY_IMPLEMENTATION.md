@@ -124,8 +124,11 @@ Fresh observations: both repos pulled; HOS inbox had no new Codex messages.
 user details)`. This does not prove current model/quota readiness and does not
 clear the recorded execution authentication failure. Cached laptop heartbeat
 was `2026-11-04T00:57:59Z`, generic `macbook`, idle, with no identity/resources/
-account/capability proof. The capacity observation had no validated active lease;
-this does not establish a free slot. Free-slot outlook remains unknown. Required
+account/capability proof. The initial sandboxed capacity observation could not
+validate the process. Repeating with process visibility validated the Mini lease
+for J1843, Codex, PID 44640, 01:04:22–01:30:22 UTC. It has legacy host/account
+attribution (host defaults to Mini; machine name absent), so it cannot establish
+shared-account spare capacity. Free-slot outlook remains unknown. Required
 NAS offload ran with writable access and found nothing old enough to move;
 about 13.4 GB remains free. No file was deleted on the NAS.
 
