@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1960 | any | open (after J1958) | – | – | 060 script · chief · 060 Hyperion: Chief topic and editorial decision after evidence |  |
 | J1961 | gemini | open (after J1805) | – | – | 060 sources · facts · 060 Hyperion: formal Gemini sources and claims verification | J1805 |
 | J1962 | mini | open (after J1961) | – | – | 060 sources · for gemini · review · `gemini-argon` · 060 Hyperion: direct MUST QUOTE review after Gemini facts | J1805 |
-| J1963 | any | open (after J1806) | – | – | 061 topic · review · 061 Venus rotation: verify topic evidence and existing-long overlap |  |
+| J1963 | mini | open (after J1806) | – | – | 061 topic · for gemini · review · `gemini-argon` · 061 Venus rotation: verify topic evidence and existing-long overlap |  |
 
 Recently finished:
 
