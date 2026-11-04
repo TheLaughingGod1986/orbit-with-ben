@@ -32,7 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1198 | mini | blocked | cursor | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1199 | mini | blocked | cursor | – | video · OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief |  |
 | J1201 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · ai_spend_daily: add Claude and Gemini usage readers so the hub shows a real bar for every model |  |
-| J1208 | mini | claimed | codex | 2026-11-04T00:28Z | video · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
+| J1208 | mini | open | – | – | video · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1356 | mini | blocked | codex | – | chief · AR cohort: verify finished cuts and prepare final-watch handoff |  |

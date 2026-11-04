@@ -111175,10 +111175,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-04T00:08Z",
-      "eta": "2026-11-04T00:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
       "result": "",
@@ -111312,6 +111312,11 @@
           "at": "2026-11-04T00:18Z",
           "by": "codex",
           "what": "step 2 of 3 done: Reviewed no-network guard with Gemini findings addressed; 13 guard and 14 existing ledger tests pass. Commit 5871d839f1. No spend or generated source; exact 1.15-3.85s opening plus 0-1.15s forward preroll planned."
+        },
+        {
+          "at": "2026-11-04T00:19Z",
+          "by": "codex",
+          "what": "released: Clean continuation checkpoint: PR436 / 5871d839f1 has reviewed no-network promo guard, 13 guard + 14 ledger tests PASS, live GBP69.48 monthly Available read, exact forward 0-1.15s preroll and 1.15-3.85s open plan. No generation/reservation/spend. Continue SAME job: trusted live evidence collector/caller and Chief review; verify project/billing link (ADC403), exact model-region (GET404 inconclusive), GBP SKU and all-project pending/unpriced-cost bounds before either take. Not a film-stage PASS; J1199 scheduled fallback unchanged. No timed hold or delayed start."
         }
       ],
       "remaining_action": "Verify live entitlement, billing linkage, GBP SKU and pending costs; review live caller before two scoped takes",
