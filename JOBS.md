@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2144 | mini | blocked | codex | – | 032 thumbs · thumb · 032 thumbs (November tentpole): three full concepts incl. rule-19 real image |  |
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
 | J2146 | cloud | open | – | – | for claude · script · Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21) |  |
-| J2147 | mini | open | – | – | 032 upload · for gemini · listing · `gemini-argon` · 031/032 Shorts slots around the new Wednesday long slot |  |
+| J2147 | cloud | open | – | – | 032 upload · for claude · listing · 031/032 Shorts slots around the new Wednesday long slot |  |
 | J2152 | macbook | open | – | – | `cursor-grok-4-7` · MacBook setup test: cursor |  |
 | J2153 | macbook | open | – | – | chart · `gpt-6-astra` · MacBook setup test: codex |  |
 | J2154 | macbook | open | – | – | review · `claude-opus-5-5` · MacBook setup test: claude |  |
