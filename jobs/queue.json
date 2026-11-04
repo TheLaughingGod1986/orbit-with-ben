@@ -81760,6 +81760,11 @@
           "at": "2026-11-04T09:44Z",
           "by": "relay",
           "what": "condition verification queued: J2005"
+        },
+        {
+          "at": "2026-11-04T09:51Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T10:44:40Z"
         }
       ],
       "kind": "video",
@@ -81790,12 +81795,11 @@
       "remaining_action": "Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
       "hold": {
         "type": "input",
-        "condition": "J1989 verified: J1100 remains blocked 2/3. Latest local evidence still 31 Oct; opening/middle/end audition hashes match 3e26b379b. PR333 OPEN unchanged at 0a7fcb6ad, zero reviews/comments. S2 instrumental-bed clearance and actual local listening remain unproven; excluded bed remains excluded. Session tools provide no demonstrated audio perception; J1100 audio_input capability hold retained. Still require v07 assembly/caption repairs, all gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk 28.254 GiB exceeds restart minimum 10 GiB; remeasure at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained. Evidence worktree was archived with a MOVED_TO_NAS pointer; commit remains readable locally.",
-        "check_at": "2026-11-04T10:44:40+00:00",
-        "last_recheck": "J1989",
-        "checked_at": "2026-11-04T08:38:22+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2005"
+        "condition": "J2005 verified: J1100 remains blocked 2/3 with audio_input capability hold. Latest local evidence remains 31 Oct; opening/middle/end audition hashes match 3e26b379b. PR333 OPEN at unchanged 0a7fcb6ad with no reviews/comments. S2 instrumental-bed clearance and actual local listening remain unproven; excluded bed remains excluded. Current session tool inspection shows no demonstrated audio perception. Still require v07 assembly/caption repairs, all gates including h43-LOOP, finished AAC listening, durable UAT/NAS hashes, Chief replacement PASS and Ben S2/S5/S6 approvals. Disk 22.008 GiB exceeds h43 restart 10 GiB; remeasure at restart and park below 6 GiB. Preserve accepted pickups, continuous S2 phrase, accepted S6 audio, J1032 PASS, completed J1101-J1103, historical 6/6, deadlines and scheduled-v01 fallbacks. Prior evidence-push rejection retained; no source-audio API egress. Existing retry retained.",
+        "check_at": "2026-11-04T10:44:40Z",
+        "last_recheck": "J2005",
+        "checked_at": "2026-11-04T09:51:39+00:00",
+        "checked_by": "codex"
       },
       "preparation_review": {
         "by": "codex",
