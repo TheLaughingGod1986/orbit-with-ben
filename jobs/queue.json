@@ -171204,18 +171204,22 @@
           "at": "2026-11-04T14:50Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T14:50Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Publish validated partial tracker and recover 36 interrupted Studio reads",
+      "remaining_action": "Inspect read-only Studio collector, refresh both channels and verify tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 2,
       "progress": {
-        "step": 2,
+        "step": 0,
         "of": 3,
-        "at": "2026-11-04T13:59Z",
-        "by": "codex",
-        "note": "Validated 10 OWB + 3 HOS longs and 56 OWB + 20 HOS Shorts; all collected values merge correctly. 36 page reads crashed; "
+        "at": "2026-11-04T14:50Z",
+        "by": "codex"
       },
       "rerouted_from": {
         "needs": "mini",
