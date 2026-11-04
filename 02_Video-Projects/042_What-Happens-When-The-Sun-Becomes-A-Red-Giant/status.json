@@ -4,10 +4,18 @@
   "air": "",
   "stages": {
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "J1783 FIX/not locked; evidence PR432 (37c5123353); successor J1909"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "codex",
+      "at": "2026-11-04T08:48Z",
+      "eta": "2026-11-04T10:47Z",
+      "note": "J1909 042 Red Giant: restore topic and editorial decision before facts and script lock"
+    }
+  ],
   "next": "J1909: Chief topic/editorial decision for unlocked Red Giant draft; neighbour audit, formal Gemini facts and direct quote check before lock. J1783 evidence PR432; no production approval."
 }

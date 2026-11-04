@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1899 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
 | J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
-| J1909 | mini | open (after J1783) | – | – | 042 script · chief · 042 Red Giant: restore topic and editorial decision before facts and script lock | J1783 |
+| J1909 | mini | claimed | codex | 2026-11-04T10:48Z | 042 script · chief · 042 Red Giant: restore topic and editorial decision before facts and script lock | J1783 |
 | J1913 | mini | open (after J1784) | – | – | 043 script · chief · 043 Bootes Void: restore topic and editorial decision before facts and script lock | J1784 |
 | J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
