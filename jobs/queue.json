@@ -171122,18 +171122,23 @@
           "at": "2026-11-04T13:57Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed prior 1/3 checkpoint: detached collector exited 0 at 12:58Z; evidence covers 94 OWB and 31 HOS videos. No duplicate collection started."
+        },
+        {
+          "at": "2026-11-04T13:59Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Validated 10 OWB + 3 HOS longs and 56 OWB + 20 HOS Shorts; all collected values merge correctly. 36 page reads crashed; recovery CDP connect timed out after websocket connection. Tracker rebuilt; final completion remains pending missing reads."
         }
       ],
-      "remaining_action": "Validate collected metrics and rebuild the tracker",
+      "remaining_action": "Publish validated partial tracker and recover 36 interrupted Studio reads",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 2,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-04T13:57Z",
+        "at": "2026-11-04T13:59Z",
         "by": "codex",
-        "note": "Resumed prior 1/3 checkpoint: detached collector exited 0 at 12:58Z; evidence covers 94 OWB and 31 HOS videos. No duplic"
+        "note": "Validated 10 OWB + 3 HOS longs and 56 OWB + 20 HOS Shorts; all collected values merge correctly. 36 page reads crashed; "
       },
       "rerouted_from": {
         "needs": "mini",
