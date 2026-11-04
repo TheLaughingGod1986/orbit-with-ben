@@ -1,5 +1,5 @@
 {
-  "next_id": 2039,
+  "next_id": 2040,
   "jobs": [
     {
       "id": "J0001",
@@ -174568,6 +174568,34 @@
       ],
       "remaining_action": "Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day)",
       "kind": "chief"
+    },
+    {
+      "id": "J2039",
+      "title": "Film-first order + require --film/--stage on production jobs (audit fix C)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "jobs/reviews/WORKFLOW_AUDIT_2026-11-04.md fix C. 461 of 499 jobs since 1 Nov had no film id, and production work for films nearest Ben's watch competes with everything else.\n1. scripts/jobs.py add: a job whose title starts with a 3-digit film number or names OWB/HOS NNN, or whose kind is script/facts/vo/image/chart/thumb/video/assembly/qa for a film, must carry --film and --stage; reject it otherwise (relay-made and backlog jobs exempt). Tests.\n2. workflow_state.order: after recorded deadlines, jobs for the 3 films closest to Ben's watch (most milestones done, not yet at UAT; board.json tracker) rank above all other non-deadline work. Tests.\nOpen a PR, keep CI green, merge.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T17:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T17:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Film-first order + require --film/--stage on production jobs (audit fix C)",
+      "kind": "assembly"
     }
   ],
   "focus": [],
