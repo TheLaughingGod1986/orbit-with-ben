@@ -170620,9 +170620,14 @@
           "at": "2026-11-04T15:25Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 in progress: verified PubMed XMLs (7 PMIDs), PMC11297086 (Cuk 2024), PMC4459206 (Nordheim 2014), Thomas 2007/2010 PDFs, USGS IAU nomenclature, and all 10 NASA PIA captions; now checking WHO records and remaining primary papers."
+        },
+        {
+          "at": "2026-11-04T15:27Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: verified all 16 SOURCES.md rows, 7 PMIDs, Thomas 2007/2010 & Tarnopolski 2015/2017 PDFs, USGS IAU records, 12 WHO entries, and 10 NASA PIA assets against primary sources."
         }
       ],
-      "remaining_action": "Verify all 16 source rows, spoken/visual numbers, WHO years/roles, PMIDs and NASA PIA assets against primary sources",
+      "remaining_action": "Write raw Gemini findings, coverage check, and updated SOURCES.md with preserved historical snapshot",
       "kind": "facts",
       "rerouted_from": {
         "needs": "gemini",
@@ -170634,11 +170639,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-04T15:25Z",
+        "at": "2026-11-04T15:27Z",
         "by": "gemini",
-        "note": "Step 1 in progress: verified PubMed XMLs (7 PMIDs), PMC11297086 (Cuk 2024), PMC4459206 (Nordheim 2014), Thomas 2007/2010"
+        "note": "Step 2 complete: verified all 16 SOURCES.md rows, 7 PMIDs, Thomas 2007/2010 & Tarnopolski 2015/2017 PDFs, USGS IAU recor"
       },
       "taskKeys": [
         "OWB:060"
