@@ -170944,16 +170944,21 @@
           "at": "2026-11-04T17:18Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1966 on OWB:061 sources; starting input audit"
+        },
+        {
+          "at": "2026-11-04T17:20Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J1808/J1807 rulings and 061 v01 files; preserved SOURCES_v00_J0789.md and SOURCES_v01_J0802.md; recorded exact input SHA-256 hashes"
         }
       ],
-      "remaining_action": "Read J1808/J1807 rulings, 061 v01 script, and SOURCES.md; inspect input hashes and recent J1961 reference format",
+      "remaining_action": "Retrieve live primary sources (NASA, PubMed/PMC, LOC, PIA catalog, original papers) to verify every subclaim in Rows 1-16",
       "kind": "facts",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-04T17:18Z",
+        "at": "2026-11-04T17:20Z",
         "by": "gemini",
-        "note": "Claimed J1966 on OWB:061 sources; starting input audit"
+        "note": "Read J1808/J1807 rulings and 061 v01 files; preserved SOURCES_v00_J0789.md and SOURCES_v01_J0802.md; recorded exact inpu"
       },
       "taskKeys": [
         "OWB:061"
