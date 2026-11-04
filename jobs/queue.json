@@ -171137,10 +171137,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T14:50Z",
+      "eta": "2026-11-04T15:35Z",
       "created_by": "refill",
       "created_at": "2026-11-04T07:00Z",
       "result": "",
@@ -171199,6 +171199,11 @@
           "at": "2026-11-04T13:59Z",
           "by": "codex",
           "what": "released: Partial tracker published in main commit 15abb5504f: 10 OWB + 3 HOS longs, 56 OWB + 20 HOS Shorts. CTR >=4%: OWB -jmMROGoZCM 5.0%, HOS wwcjcFfC-5M 28.6%. Plan 2/3 retained. Remaining 28 OWB + 8 HOS videos have Page crashed evidence in ~/_desk/jobs/J1976/<channel>-<id>.json; recovery connect_over_cdp to 9223 timed out at 8 seconds after websocket connection. Recovery collector stopped with Ctrl-C; no process left collecting and no new tabs/Chrome restarts. Retry script at ~/_desk/jobs/J1976/retry/read.py keeps good records and revisits failures. Recover existing browser responsiveness and collect missing reads, then validate and republish before done. All current metrics validated against evidence and merged tracker; unavailable values omitted, no video changes or spend. board_publish.py exited 0."
+        },
+        {
+          "at": "2026-11-04T14:50Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Publish validated partial tracker and recover 36 interrupted Studio reads",
