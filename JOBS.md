@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
 | J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
 | J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
-| J1934 | mini | open (after J1789) | – | – | 048 script · chief · 048 Ceres: Chief topic and editorial decision before script lock |  |
+| J1934 | mini | claimed | codex | 2026-11-04T12:09Z | 048 script · chief · 048 Ceres: Chief topic and editorial decision before script lock |  |
 | J1935 | mini | open (after J1790) | – | – | 049 script · chief · 049 Bennu: Chief topic and editorial decision before script lock |  |
 | J1936 | mini | open (after J1791) | – | – | 050 script · chief · 050 Iapetus: Chief topic and editorial decision before script lock |  |
 | J1937 | mini | open (after J1792) | – | – | 051 script · chief · 051 DART: Chief topic and editorial decision before script lock |  |
