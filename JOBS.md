@@ -129,6 +129,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2031 | mini | open | – | – | chief · Chief: resolve 060 sources orphan-review |  |
 | J2032 | mini | open | – | – | chief · Chief: resolve 061 topic orphan-review |  |
 | J2033 | mini | open (after J2026) | – | – | 009 picture · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
+| J2034 | mini | open (after J2033) | – | – | 009 picture · chief · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
 
 Recently finished:
 
