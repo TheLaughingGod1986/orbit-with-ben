@@ -180530,10 +180530,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T23:54Z",
+      "eta": "2026-11-05T01:54Z",
       "created_by": "codex",
       "created_at": "2026-11-04T23:49Z",
       "result": "",
@@ -180542,11 +180542,24 @@
           "at": "2026-11-04T23:49Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-04T23:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair the six-note recipe and its verification; no production render or generation",
       "due": "2026-11-05T12:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T23:54Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
