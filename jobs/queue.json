@@ -157749,9 +157749,14 @@
           "at": "2026-11-04T02:41Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T02:41Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed assigned workflow repair; no script lock or production approval implied."
         }
       ],
-      "remaining_action": "Chief resolves 049 script handoff and records the next owner/action",
+      "remaining_action": "Inspect Bennu script evidence and restore its missing review handoff",
       "kind": "chief",
       "handoff": {
         "film": "049",
@@ -157764,9 +157769,11 @@
         "of": 3,
         "at": "2026-11-04T02:41Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed assigned workflow repair; no script lock or production approval implied."
+      },
+      "taskKeys": [
+        "OWB:049"
+      ]
     },
     {
       "id": "J1791",
