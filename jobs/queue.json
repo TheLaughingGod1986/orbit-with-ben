@@ -133365,13 +133365,13 @@
       "stage": "",
       "after": "J1468",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-04T10:59Z",
-      "eta": "2026-11-04T12:59Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-01T07:24Z",
-      "result": "",
+      "result": "Waiting for: Repair evidence ce3c8048e9 and /Users/benjaminoats/_desk/handoff/J1471 complete through2/3: new AR1v04/AR2v11/AR3v08 clear opening failures; original AAC hashes unchanged. Truthful metadata exposes five inherited picture/polish jitter FAILs requiring Chief-scoped correction, not waiver. This session inspected shell/text and still-image tools only; no demonstrated acoustic or moving-video input. Require verified full-cut moving/audio/pace assessment after gate correction; J1356 and all Ben/publishing holds remain.",
       "history": [
         {
           "at": "2026-11-01T07:24Z",
@@ -134007,9 +134007,19 @@
           "at": "2026-11-04T11:13Z",
           "by": "codex",
           "what": "step 2 of 3 done: Local ce3c8048e9 + persistent _desk/handoff/J1471. AR1v04/AR2v11/AR3v08 clear opening failures, AAC hashes unchanged. Truthful metadata exposes5 inherited picture/polish jitter FAILs. No full audiovisual review or publication; all holds preserved."
+        },
+        {
+          "at": "2026-11-04T11:13Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Repair evidence ce3c8048e9 and /Users/benjaminoats/_desk/handoff/J1471 complete through2/3: new AR1v04/AR2v11/AR3v08 clear opening failures; original AAC hashes unchanged. Truthful metadata exposes five inherited picture/polish jitter FAILs requiring Chief-scoped correction, not waiver. This session inspected shell/text and still-image tools only; no demonstrated acoustic or moving-video input. Require verified full-cut moving/audio/pace assessment after gate correction; J1356 and all Ben/publishing holds remain."
+        },
+        {
+          "at": "2026-11-04T11:13Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-04T11:45:00Z"
         }
       ],
-      "remaining_action": "Chief to scope inherited picture jitter corrections; capable worker to finish full moving/audio/pace review before J1356",
+      "remaining_action": "Chief scope inherited picture corrections; verified audio/motion worker finishes J1471 before J1356",
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
@@ -134036,7 +134046,20 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "hold": {
+        "type": "capability",
+        "condition": "Repair evidence ce3c8048e9 and /Users/benjaminoats/_desk/handoff/J1471 complete through2/3: new AR1v04/AR2v11/AR3v08 clear opening failures; original AAC hashes unchanged. Truthful metadata exposes five inherited picture/polish jitter FAILs requiring Chief-scoped correction, not waiver. This session inspected shell/text and still-image tools only; no demonstrated acoustic or moving-video input. Require verified full-cut moving/audio/pace assessment after gate correction; J1356 and all Ben/publishing holds remain.",
+        "check_at": "2026-11-04T11:45:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ]
     },
     {
       "id": "J1472",
