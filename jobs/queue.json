@@ -174193,13 +174193,13 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-04T17:05Z",
-      "eta": "2026-11-04T19:05Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "parked for Chief: review HOS PR408 (tested tab-reuse fix) and arrange separately tested tranche2 runner; old runner selects v04 tranche1 and auto-KEEPs. Scope hashes verified; 0/20 generated, zero spend. Offload PID4616 running, monitor tmux J2033-offload-monitor, logs ~/_desk/logs/J2033-offload-check.log and .done; no duplicate offload.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -174235,6 +174235,11 @@
           "at": "2026-11-04T17:10Z",
           "by": "codex",
           "what": "step 1 of 3 done: HOS PR408 ff7f7f80: shared Flow tab reuse, five regressions OK, full check_all ALL CHECKS PASS. 0/20 generated, zero spend. Old runner is tranche1 and self-KEEP; preflight records exact remaining guards. NAS offload PID4616 still running; do not duplicate."
+        },
+        {
+          "at": "2026-11-04T17:10Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review HOS PR408 (tested tab-reuse fix) and arrange separately tested tranche2 runner; old runner selects v04 tranche1 and auto-KEEPs. Scope hashes verified; 0/20 generated, zero spend. Offload PID4616 running, monitor tmux J2033-offload-monitor, logs ~/_desk/logs/J2033-offload-check.log and .done; no duplicate offload."
         }
       ],
       "remaining_action": "Chief review HOS PR408, then provide tested tranche2 runner before generation",

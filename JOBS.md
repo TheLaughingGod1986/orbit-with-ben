@@ -127,7 +127,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2030 | mini | open | – | – | chief · Chief: resolve 060 topic orphan-review |  |
 | J2031 | mini | open | – | – | chief · Chief: resolve 060 sources orphan-review |  |
 | J2032 | mini | open | – | – | chief · Chief: resolve 061 topic orphan-review |  |
-| J2033 | mini | claimed | codex | 2026-11-04T19:05Z | 009 picture · for codex · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
+| J2033 | mini | blocked | codex | – | 009 picture · for codex · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
 | J2034 | mini | open (after J2033) | – | – | 009 picture · chief · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
 | J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · qa · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
