@@ -15,6 +15,10 @@
 | Runtime target | 7–9 min (1,275 spoken words / 1,298 reviewer words, ~8.7 min est.) |
 | Shorts | 3 episode Shorts on lock |
 
+## J1788 current handoff — 4 November 2026
+
+**FIX / not locked.** J0575 and J0583 were cancelled as duplicate refill jobs, not approved. J1933 now owns the missing topic/editorial decision and dependent neighbour, Gemini facts and direct quote checks. The 95.3 score and gate output below are historical automated results, not production approval. See `jobs/reviews/J1788/CHIEF_HANDOFF_2026-11-04.md`. Script and sources remain unchanged.
+
 ## Marker counts (`great_red_spot_shrinking_script_master_v01.md`)
 
 - `DATA:` **7** (all ≥ 3 required; includes 3 before `[SUBSCRIBE BEAT]`, 1 build-up timeline, and 7 `SCALE:` comparisons + 7 `NUMBER OBJECT:` labels)
