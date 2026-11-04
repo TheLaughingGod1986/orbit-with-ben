@@ -1,5 +1,5 @@
 {
-  "next_id": 2042,
+  "next_id": 2043,
   "jobs": [
     {
       "id": "J0001",
@@ -174947,6 +174947,34 @@
         }
       ],
       "remaining_action": "031 shots: shot list from the locked script and voice (WIP film)",
+      "kind": "review"
+    },
+    {
+      "id": "J2042",
+      "title": "032 shots: shot list from the locked script and voice (WIP film)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "WIP-active film (jobs/WIP.json). Voice locked 4 Nov (J1752/J1753 done under Ben's final-watch rule). Next stage: shots.\nFrom 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan (locked script, SOURCES.md, the locked VO take and its word timings), write the shot list in the house format used by the last finished long (see 02_Video-Projects/029_* or 028_* 07_Edit-Project shot list): one row per 4-6 s, each row naming the plate (existing/free-licensed footage first, code graphics for every DATA/WHO/WHEN/FACT item per AGENTS 'Teach on screen'), the on-screen text, and the VO words it covers. Flag rows that would need paid generation with an estimate; spend nothing. Then rule-E reviewer check of the shot list and move the stage: studio.py release 032 shots --state done --git, and queue the picture job (--film 032 --stage picture).\n",
+      "ref": "",
+      "film": "032",
+      "stage": "shots",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T17:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T17:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "032 shots: shot list from the locked script and voice (WIP film)",
       "kind": "review"
     }
   ],
