@@ -131,6 +131,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · qa · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
 | J2037 | mini | open (after J2036) | – | – | 009 edit · chief · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
+| J2038 | mini | open | – | – | chief · Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day) |  |
 
 Recently finished:
 

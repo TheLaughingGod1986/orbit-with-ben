@@ -1,5 +1,5 @@
 {
-  "next_id": 2038,
+  "next_id": 2039,
   "jobs": [
     {
       "id": "J0001",
@@ -174540,6 +174540,34 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       }
+    },
+    {
+      "id": "J2038",
+      "title": "Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "jobs/reviews/WORKFLOW_AUDIT_2026-11-04.md fix A (Ben, 4 Nov: continuous workflow, a video almost daily). The Mini sat idle 930-1,387 min/day 31 Oct-3 Nov with 70 Mini jobs open, because it runs one short job per wake, one agent at a time. J1843 / PR437 (+PR477) builds capacity-aware dispatch and is parked for an exact-head Chief review with rollout_enabled=False.\n1. Do the exact-head review of PR437 and PR477 now (tests: 313 focused + core_sync). Merge if green.\n2. Enable rollout with Codex and Gemini as two concurrent Mini lanes (no shared-file races: the claim/push-race tests cover this). Keep Studio-browser jobs to one lane at a time (one CDP browser).\n3. Let a woken agent take the next claimable job in its lane until its 25-min cap instead of exiting after one.\n4. Watch it for 2 h: board-data still publishing, no double claims, idle minutes falling. Post before/after idle minutes and jobs/hour on #478.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T17:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T17:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day)",
+      "kind": "chief"
     }
   ],
   "focus": [],
