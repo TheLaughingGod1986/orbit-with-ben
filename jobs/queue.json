@@ -1,5 +1,5 @@
 {
-  "next_id": 2022,
+  "next_id": 2023,
   "jobs": [
     {
       "id": "J0001",
@@ -173068,6 +173068,34 @@
         "condition": "Sun 29 Nov 2026 18:00Z reached (14 days after 026 long public)",
         "check_at": "2026-11-29T18:00:00Z"
       }
+    },
+    {
+      "id": "J2022",
+      "title": "Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 4 Nov 2026: Studio jobs open many YouTube Studio tabs and the Mini crashes. After PR481 (scripts/cdp_tabs.py + launchd com.owb.tab-janitor) merges:\n1. On the Mini: `python3 scripts/cdp_tabs.py list --port 9223` and `--port 9222`; record the tab count per browser.\n2. `python3 scripts/cdp_tabs.py tidy --dry-run` and check that it would close only duplicate or old tabs, never a sign-in page or a tab a running job uses.\n3. Install: launchctl bootout gui/$(id -u)/com.owb.tab-janitor 2>/dev/null; cp 07_Content-Ops/launchd/com.owb.tab-janitor.plist ~/Library/LaunchAgents/; launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.tab-janitor.plist\n4. After 30 min, confirm ~/Library/Logs/owb-tab-janitor.log shows clean runs and the tab counts are down. Never quit Chrome or close a signed-in profile.\n5. Update the shared Studio helpers that live under scripts/ and are still used (grep for new_page( / Target.createTarget used against 9223/9222) to call cdp_tabs.reuse_page instead; leave one-off scripts under 02_Video-Projects alone. Run their tests. Open a PR.\nReport the before/after tab counts on #478.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-04T12:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-04T12:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Install com.owb.tab-janitor and move Studio helpers to cdp_tabs.reuse_page (Ben: too many Studio tabs crash the Mini)",
+      "kind": "qa"
     }
   ],
   "focus": [],
