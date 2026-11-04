@@ -167700,10 +167700,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-04T04:34Z",
+      "eta": "2026-11-04T05:04Z",
       "created_by": "codex",
       "created_at": "2026-11-04T03:38Z",
       "result": "",
@@ -167717,12 +167717,25 @@
           "at": "2026-11-04T04:32Z",
           "by": "gemini",
           "what": "deadline: 2026-11-14T18:00:00Z"
+        },
+        {
+          "at": "2026-11-04T04:34Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel (codex): OWB 026 exact abc_v04 distance-hook candidates from J1823; independent visual review only, no live changes",
       "for": "codex",
       "kind": "review",
-      "due": "2026-11-14T18:00:00Z"
+      "due": "2026-11-14T18:00:00Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-04T04:34Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1941",
