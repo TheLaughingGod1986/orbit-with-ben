@@ -113,6 +113,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1986 | mini | open (after J1906) | – | – | 040 topic · for gemini · review · `gemini-argon` · 040 Wrong Kind of Aliens: verify neighbours, overlap and matching Short evidence | J1906 |
 | J1987 | mini | open (after J1986) | – | – | 040 script · chief · 040 Wrong Kind of Aliens: decide advancement and own rewrite and facts chain | J1906 |
 | J1990 | any | open (after J1907) | – | – | 041 topic · review · 041 Io: verify neighbours, overlap and matching Short evidence | J1907 |
+| J1991 | mini | open (after J1990) | – | – | 041 script · chief · 041 Io: decide advancement and own specialist rewrite and facts chain | J1907 |
 
 Recently finished:
 
