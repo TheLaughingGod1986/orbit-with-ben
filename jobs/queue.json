@@ -157675,9 +157675,14 @@
           "at": "2026-11-04T02:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-04T02:36Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed the dispatched orphan-review repair; no production or publishing approval implied."
         }
       ],
-      "remaining_action": "Chief resolves 048 script handoff and records the next owner/action",
+      "remaining_action": "Inspect 048 script evidence and restore the missing review handoff",
       "kind": "chief",
       "handoff": {
         "film": "048",
@@ -157690,9 +157695,11 @@
         "of": 3,
         "at": "2026-11-04T02:36Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed the dispatched orphan-review repair; no production or publishing approval implied."
+      },
+      "taskKeys": [
+        "OWB:048"
+      ]
     },
     {
       "id": "J1790",
