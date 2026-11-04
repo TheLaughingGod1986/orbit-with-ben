@@ -173503,6 +173503,11 @@
           "at": "2026-11-04T17:16Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-04T17:16Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Confirmed tracked plist runs missed_runs.py --post every 1800 seconds; no film stage applies."
         }
       ],
       "kind": "assembly",
@@ -173533,12 +173538,13 @@
       "by": "codex",
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-04T17:16Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "Confirmed tracked plist runs missed_runs.py --post every 1800 seconds; no film stage applies."
       },
-      "remaining_action": "Verify the alarm brief, install launchd, and check the first run"
+      "remaining_action": "Install the missed-run launch agent and inspect its first log"
     },
     {
       "id": "J2019",
