@@ -46,11 +46,14 @@ def video_counts(board: dict) -> dict:
     return out
 
 
-def record(history: list, at: dt.datetime, counts: dict) -> list:
+def record(history: list, at: dt.datetime, counts: dict, basis=None) -> list:
     """Add a sample if the newest is 30+ min old; drop samples older than 48 h."""
     hist = [h for h in history if _t(h.get("at")) and at - _t(h["at"]) <= KEEP]
-    if not hist or at - _t(hist[-1]["at"]) >= SAMPLE_EVERY:
-        hist.append({"at": _iso(at), "counts": {k: c[0] for k, c in counts.items()}})
+    if not hist or hist[-1].get("basis") != basis or at - _t(hist[-1]["at"]) >= SAMPLE_EVERY:
+        sample = {"at": _iso(at), "counts": {k: c[0] for k, c in counts.items()}}
+        if basis is not None:
+            sample["basis"] = basis
+        hist.append(sample)
     return hist
 
 
@@ -119,9 +122,15 @@ def section(history_path: Path, board: dict, at: dt.datetime) -> dict:
     except Exception:
         history = []
     counts = video_counts(board)
-    history = record(history, at, counts)
+    # A publisher/schema correction is not newly finished production. Retain
+    # older samples, but compare only samples with the same counting basis.
+    schemas = sorted({p.get("milestoneSchema") for v in ((board.get("tracker") or {}).get("videos") or [])
+                      if isinstance(p := v.get("production"), dict) and isinstance(p.get("milestoneSchema"), str)})
+    basis = "|".join(schemas) or None
+    history = record(history, at, counts, basis)
     try:
         Path(history_path).write_text(json.dumps(history))
     except Exception:
         pass
-    return summarise(history, at, counts, jobs_done(board, at))
+    comparable = [h for h in history if h.get("basis") == basis]
+    return summarise(comparable, at, counts, jobs_done(board, at))

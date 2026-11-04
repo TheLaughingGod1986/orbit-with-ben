@@ -183,7 +183,7 @@ def dependency_chain(key, rows):
 
 def forecast(video, stages, jobs, samples, now):
     rows = milestone_rows(stages, jobs)
-    result = dict(asOf=now.isoformat(), milestones=rows,
+    result = dict(asOf=now.isoformat(), milestoneSchema='studio-nine-stages-hos-aliases-v2', milestones=rows,
                   completed=sum(r['displayState'] in DONE for r in rows), total=len(rows),
                   activeStages=select_current(rows), partialEstimates=[],
                   eta=dict(state='unavailable', confidence='unavailable', reasons=[], criticalPath=[]))
