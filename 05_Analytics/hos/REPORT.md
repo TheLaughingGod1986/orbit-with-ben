@@ -120,7 +120,7 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 26 h (early) | 16 | 62.5% | too few to judge | - | no read |
+| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 27 h (early) | 16 | 62.5% | too few to judge | - | no read |
 | [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 3 d | 127 | 35.6% | MISS | 115.3% | LOOP |
 | [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 4 d | 86 | 32.1% | too few to judge | 84.0% | too few to judge |
 | [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 5 d | 78 | 25.9% | too few to judge | 53.6% | too few to judge |

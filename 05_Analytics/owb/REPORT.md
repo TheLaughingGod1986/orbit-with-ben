@@ -195,7 +195,7 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 26 h (early) | 474 | 26.6% | MISS | - | no read |
+| [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 27 h (early) | 474 | 26.6% | MISS | - | no read |
 | [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 2 d | 560 | 30.8% | MISS | 65.2% | WATCH |
 | [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 4 d | 1099 | 31.6% | MISS | 66.4% | WATCH |
 | [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 5 d | 45 | 21.7% | too few to judge | 66.7% | too few to judge |
