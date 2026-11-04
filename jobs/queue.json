@@ -173432,6 +173432,11 @@
           "at": "2026-11-04T12:28Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-04T13:30:00Z"
+        },
+        {
+          "at": "2026-11-04T14:25Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "install tab janitor",
@@ -173448,7 +173453,17 @@
           "what": "released: PR481 merged (94e26e792); install com.owb.tab-janitor now"
         }
       ],
-      "urgent": 1
+      "urgent": 1,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "by": "",
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2023",
