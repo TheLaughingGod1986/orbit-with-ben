@@ -108,6 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1974 | mini | open (after J1973) | – | – | 035 script · chief · 035 Triton: decide advancement and own specialist rewrite and facts chain | J1898 |
 | J1976 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J1977 | any | open (after J1900) | – | – | 036 topic · review · 036 Mercury: verify neighbours and polar-ice Short evidence | J1900 |
+| J1978 | mini | open (after J1977) | – | – | 036 script · chief · 036 Mercury: decide advancement and own rewrite and facts chain | J1900 |
 
 Recently finished:
 
