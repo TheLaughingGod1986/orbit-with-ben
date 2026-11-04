@@ -694,3 +694,11 @@ The remaining integration exceeds another bounded 20-minute work segment, so
 release at this tested checkpoint. There is no external date/input hold on
 engineering that can proceed now. No spend, media generation, YouTube/Buffer
 write, publishing or policy change is authorized or performed.
+
+Final related validation: **321 tests PASS** in total (98 capacity, 19 leases,
+12 portable transfer, 30 queue, 74 fake-CLI relay, 17 laptop worker,
+54 workflow and 17 dispatcher handoff). The finalized relay run used
+`CHIEF_OFFLOAD_GB=0` to avoid incidental live scratch scans; its dedicated
+mocked offload test overrides that setting and PASSes. Earlier exploratory
+relay runs were interrupted and are not counted. Both PR checks passed on
+code commit `c5567c84525ede6ed64fe4f869c63c45e3a0bec2`.
