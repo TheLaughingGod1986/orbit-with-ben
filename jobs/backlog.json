@@ -1,5 +1,5 @@
 {
-  "_about": "Standing backlog (Chief, 12 Oct 2026; Ben: the Mini works 24/7). scripts/refill.py adds the next of these to the queue whenever fewer than 3 Mini jobs are ready. Every item is no-spend (no Vertex, Flow, ElevenLabs or any paid call), never deletes anything, never makes a video public, never replaces an armed Test & Compare, and ends parked for Chief (PASS gate) unless it only reads. A key is not re-added while a job from it is open or claimed, nor within every_h of the last one; if nothing at all is ready the oldest key is added anyway (never empty). Lowest tier: jobs.order runs backlog jobs only when no pipeline job is ready. Weekly audits and idea/script drafts for both channels lead (Ben, 12 Oct 14:36). An item with \"paused\" is skipped until the Chief removes it; a key with 2 jobs parked for Chief is skipped until one is ruled (refill.PARK_CAP, 21 Oct).",
+  "_about": "Standing backlog (Chief, 12 Oct 2026; Ben: the Mini works 24/7). scripts/refill.py adds the next of these to the queue whenever fewer than 3 Mini jobs are ready. Every item is no-spend (no Vertex, Flow, ElevenLabs or any paid call), never deletes anything, never makes a video public, never replaces an armed Test & Compare, and ends parked for Chief (PASS gate) unless it only reads. A key is not re-added while a job from it is open or claimed, nor within every_h of the last one; if nothing at all is ready the oldest key is added anyway (never empty). Lowest tier: jobs.order runs backlog jobs only when no pipeline job is ready. Weekly audits and idea/script drafts for both channels lead (Ben, 12 Oct 14:36). An item with \"paused\" is skipped until the Chief removes it; a key with 2 jobs parked for Chief is skipped until one is ruled (refill.PARK_CAP, 21 Oct). 5 Nov 2026: owb-ideas and hos-ideas unpaused (paused 'pipeline full' since 21 Oct, so no new topics for two weeks) and made daily, data-led, two films each (Ben).",
   "items": [
     {
       "key": "monthly-improvement-hos",
@@ -95,11 +95,10 @@
       "needs": "any",
       "kind": "script",
       "eta": 90,
-      "every_h": 48,
-      "title": "OWB ideas + script draft: next film beyond the pipeline",
-      "body": "Brainstorm 5 Orbit With Ben long ideas from the latest weekly audit and VIDEO_BACKLOG.json (search demand, competitor gaps, our best retention topics), score each, then draft the top one's script v00 per the playbook (house opening, FACT beats, SOURCES.md started). Save under 00_Brand/Channel-Setup/ideas/ and the next free 02_Video-Projects slot from the template. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
-      "paused": "pipeline full: OWB scripts drafted to 042, VO held until the 30 Oct ElevenLabs reset (Claude, 21 Oct)",
-      "remaining_action": "Prepare the next Orbit video idea and script draft"
+      "every_h": 24,
+      "title": "OWB: learn from our data, add two new films to the backlog",
+      "body": "Orbit With Ben daily topic job.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/owb/channel_daily.json, 05_Analytics/owb/studio_ctr.json, 05_Analytics/owb/REPORT.md, the newest 05_Analytics/owb/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each.",
+      "remaining_action": "Pick two data-backed Orbit topics and add them to the waiting line"
     },
     {
       "key": "hos-ideas",
@@ -107,11 +106,10 @@
       "needs": "any",
       "kind": "script",
       "eta": 90,
-      "every_h": 48,
-      "title": "HOS ideas + script draft: next film beyond the pipeline",
-      "body": "Brainstorm 5 History of Science long ideas (discovery stories with a person, a date and a twist) from the weekly audit and search demand, score each, then draft the top one's opening and outline with SOURCES. Save in the HOS ideas folder. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
-      "paused": "pipeline full: HOS scripts drafted to 038 (Claude, 21 Oct)",
-      "remaining_action": "Prepare the next HOS video idea and script draft"
+      "every_h": 24,
+      "title": "HOS: learn from our data, add two new films to the backlog",
+      "body": "History of Science daily topic job: discovery stories with a person, a date and a twist.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/hos/channel_daily.json, 05_Analytics/hos/studio_ctr.json, 05_Analytics/hos/REPORT.md, the newest 05_Analytics/hos/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next_hos` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each. HOS films are written in the history-of-science repo; the WIP line and the review job live in orbit-with-ben.",
+      "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line"
     },
     {
       "key": "owb-short-from-locked",
