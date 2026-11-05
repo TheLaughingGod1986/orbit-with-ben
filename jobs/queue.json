@@ -81949,6 +81949,11 @@
           "at": "2026-11-05T23:23Z",
           "by": "gemini",
           "what": "step 0 of 2 done: Claimed J0936; verifying S1/S3/S4 v04 swaps (J1101-J1103) and S2/S5/S6 v07 Ben-OK'd masters (J1100/J2214)"
+        },
+        {
+          "at": "2026-11-05T23:27Z",
+          "by": "gemini",
+          "what": "step 1 of 2 done: Verified all 6 batch-C Shorts across UAT+NAS (S1/S3/S4 v04 swapped in J1101-J1103; S2/S5/S6 v07 KEEP in J2214 & OKd by Ben)"
         }
       ],
       "kind": "video",
@@ -81958,11 +81963,11 @@
         "OWB:028"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 2,
-        "at": "2026-11-05T23:23Z",
+        "at": "2026-11-05T23:27Z",
         "by": "gemini",
-        "note": "Claimed J0936; verifying S1/S3/S4 v04 swaps (J1101-J1103) and S2/S5/S6 v07 Ben-OK'd masters (J1100/J2214)"
+        "note": "Verified all 6 batch-C Shorts across UAT+NAS (S1/S3/S4 v04 swapped in J1101-J1103; S2/S5/S6 v07 KEEP in J2214 & OKd by B"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -82018,7 +82023,7 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Verify all 6 batch-C Shorts (S1/S3/S4 v04 swaps + S2/S5/S6 v07 Ben-OK'd masters) and reconcile J0936/J1100"
+      "remaining_action": "Clear stale awaits_ben on J1100 after Ben's 5 Nov board OK and close J0936"
     },
     {
       "id": "J0937",
