@@ -79,9 +79,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2147 | mini | open | – | – | 032 upload · for gemini · listing · `gemini-argon` · 031/032 Shorts slots around the new Wednesday long slot |  |
 | J2155 | mini | blocked | codex | – | 033 vo · for codex · vo · 033 Uranus: VO from locked script v02 (J2148 GO) | c01c9f9e78 |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
-| J2159 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
-| J2160 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
-| J2161 | mini | open | – | – | for gemini · review · `gemini-argon` · Packaging panel (stand-in for Cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
+| J2159 | mini | open (after J2176) | – | – | for codex · review · Packaging panel (codex): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
+| J2160 | mini | open (after J2176) | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
+| J2161 | mini | open (after J2176) | – | – | for gemini · review · `gemini-argon` · Packaging panel (stand-in for Cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2162 | mini | open (after J2161) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2164 | mini | open | – | – | 033 vo · for gemini · review · `gemini-argon` · 033 Uranus: Chief ruling on J2155 VO transcript and tails |  |
 | J2165 | mini | open (after J2155) | – | – | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance |  |
