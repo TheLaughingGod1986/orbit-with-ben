@@ -166653,13 +166653,13 @@
       "stage": "edit",
       "after": "J2217",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-05T18:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:57Z",
-      "result": "Acting-Chief FIX recorded: 14 planner tests and 6-input dry-run pass; closed-GOP/media claims unsupported. J2217 reopened for five exact fixes. J2241 capability hold; J2242/J2243 dependencies preserved. No production or merge authorized.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T18:57Z",
@@ -166840,18 +166840,16 @@
           "at": "2026-11-05T21:02Z",
           "by": "relay",
           "what": "condition verification queued: J2253"
+        },
+        {
+          "at": "2026-11-05T21:23Z",
+          "by": "chief",
+          "what": "reopened: J2253 verified J2217 five-point FIX on HOS PR #428 b78dbe19 (jobs/reviews/J2253/REVIEW.md)"
         }
       ],
       "remaining_action": "J2217 repairs recipe; then J1881 scopes production; J2241 additionally needs verified moving-video input",
       "due": "2026-11-04T14:00:00Z",
       "kind": "review",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-05T18:52Z",
-        "by": "gemini",
-        "note": "Wrote REVIEW.md (KEEP PR #428 51bf99a6); queued J2241->J2242->J2243; parked for Chief"
-      },
       "taskKeys": [
         "HOS:008"
       ],
@@ -166865,13 +166863,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/428",
-      "hold": {
-        "type": "dependency",
-        "condition": "J2217 must deliver the five-point J1881 FIX on PR428: truthful GOP/capability evidence, P3 retake CLI/tests, explicit clock disposition, concrete caption treatment and real Flow preflight. Review immediately on delivery.",
-        "check_at": "2026-11-05T22:02:13+00:00",
-        "recheck_task": "J2253"
-      }
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/428"
     },
     {
       "id": "J1882",
