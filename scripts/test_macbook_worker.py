@@ -216,7 +216,9 @@ class AllAgents(unittest.TestCase):
             self.assertIn("--model", g)
             self.assertEqual(mw.agent_cmd("cursor", "P", "cursor-grok-4-7")[:3], ["/bin/cursor", "-p", "--force"])
             self.assertIn("-m", mw.agent_cmd("codex", "P", "gpt-6-astra"))
-            self.assertEqual(mw.agent_cmd("claude", "P")[:2], ["/bin/claude", "-p"])
+            c = mw.agent_cmd("claude", "P")
+            self.assertEqual(c[:3], ["/bin/claude", "-p", "P"])  # prompt before the variadic --add-dir lists
+            self.assertNotEqual(c[-1], "P")
             self.assertIsNone(mw.agent_cmd("grok", "P"))
 
     def test_a_failed_cli_is_paused_and_skipped(self):
