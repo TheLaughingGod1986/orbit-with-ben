@@ -211,6 +211,17 @@ class Relay(unittest.TestCase):
         cr.seen("chief", T0 + 15 * MIN)  # Grok actually ran jobs.py: it's back
         self.assertEqual(self.chief(T0 + 16 * MIN), "chief")
 
+    def test_hourly_cloud_claude_gets_a_full_run_to_take_its_inbox(self):
+        # 5 Nov 2026: a 30-min window benched Claude (runs hourly at :50) every hour, up to 12 h.
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "jobs" / "queue.json").write_text('{"jobs": []}')
+        for agent in ("claude", "chief"):
+            cr.write_json(cr.d("inbox.json"), {"agent": agent, "notified_at": cr.iso(T0),
+                                               "waiting": {"J1": {"since": cr.iso(T0)}}})
+            self.assertEqual(cr.chief_delivery_overdue(agent, T0 + 45 * MIN), agent == "chief")
+            self.assertTrue(cr.chief_delivery_overdue(agent, T0 + 76 * MIN))
+
     def test_repeat_stalls_keep_grok_down_longer(self):
         windows = [cr.stall_window("chief", T0 + i * MIN) for i in range(6)]
         self.assertEqual([int(w.total_seconds() // 60) for w in windows], [30, 60, 120, 240, 480, 720])

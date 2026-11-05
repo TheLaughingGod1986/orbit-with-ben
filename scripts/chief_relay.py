@@ -623,7 +623,10 @@ def chief_delivery_overdue(agent: str | None, at: dt.datetime) -> bool:
     if any(j.get("status") == "claimed" and j.get("by") == agent
            and (not j.get("eta") or parse(j["eta"]) > at) for j in data.get("jobs", [])):
         return False
-    limit = dt.timedelta(minutes=int(os.environ.get("CHIEF_DUTY_ACK_MIN", "30")))
+    # Claude's cloud Chief runs hourly at :50, so a 30-min window benched it every hour (5 Nov 2026: down until 22:13Z,
+    # doubling each time): it gets one full run plus margin.
+    limit = dt.timedelta(minutes=int(os.environ.get("CHIEF_DUTY_ACK_MIN", "30")) if agent != "claude"
+                         else int(os.environ.get("CHIEF_DUTY_ACK_MIN_CLAUDE", "75")))
     for item in inbox.get("waiting", {}).values():
         try:
             if at - parse(item["since"]) >= limit:

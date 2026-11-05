@@ -11,6 +11,7 @@ It is an estimate: how long a job takes is each agent's pace over the last 24 h 
 fails the publish.
 """
 import datetime as dt
+import re
 import json
 import pathlib
 
@@ -76,8 +77,14 @@ def agents_up(mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime) ->
             why = f"out of credit until {flag['out_until']}" + (f" ({flag.get('reason')})" if flag.get("reason") else "")
         out[a] = (why or ("" if r and r.get("up") else "not in the Mini's chain"))[:120]
     seen = _t((macbook_hb or {}).get("at"))
-    out["macbook"] = "" if seen and at - seen <= MACBOOK_FRESH else "no MacBook heartbeat in 40 min"
-    out["claude"] = ""
+    why = (macbook_hb or {}).get("why") or []
+    why = "; ".join(why) if isinstance(why, list) else str(why)
+    # A MacBook waiting on its guards (in use, on battery) takes no job now: say so rather than promise a start.
+    out["macbook"] = ("no MacBook heartbeat in 40 min" if not (seen and at - seen <= MACBOOK_FRESH) else
+                      why[:120] if (macbook_hb or {}).get("state") == "waiting" and why else "")
+    # Cloud Claude: down when the relay has it down (e.g. a missed Chief inbox), else up.
+    r = rows.get("claude")
+    out["claude"] = str(r.get("why") or "marked down by the relay")[:120] if r and not r.get("up") else ""
     return out
 
 
@@ -111,7 +118,15 @@ def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.d
         end = max(at + dt.timedelta(minutes=MIN_MIN), min(since + est[a], lease or since + est[a]))
         free[a] = max(free[a], end)
         lanes[a]["now"] = j.get("id") or ""
-    if not up["macbook"] and (macbook_hb or {}).get("job"):
+    # The Mini's own heartbeat names the job it just woke a worker for, before that claim reaches the queue.
+    woke = re.match(r"woke (\w+) for (J\d+)", str((mini_hb or {}).get("note") or ""))
+    hb_at = _t((mini_hb or {}).get("at"))
+    if woke and (mini_hb or {}).get("state") == "running" and hb_at and at - hb_at <= dt.timedelta(minutes=26):
+        a = woke.group(1).lower()
+        if a in lanes and not lanes[a]["now"]:
+            lanes[a]["now"] = woke.group(2)
+            free[a] = max(free[a], hb_at + est[a], at + dt.timedelta(minutes=MIN_MIN))
+    if (macbook_hb or {}).get("job"):
         lanes["macbook"]["now"] = lanes["macbook"]["now"] or str(macbook_hb["job"])
         free["macbook"] = max(free["macbook"], at + dt.timedelta(minutes=MIN_MIN))
     free["claude"] = max(free["claude"], _next_cloud_run(at))

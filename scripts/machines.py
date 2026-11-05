@@ -85,6 +85,12 @@ def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.d
                                why="; ".join(why) if isinstance(why, list) else str(why),
                                seen=str(macbook_hb.get("at") or ""), agents=macbook_hb.get("agents") or [])
         _add(rows["macbook"], str(macbook_hb.get("job") or ""), "macbook", str(macbook_hb.get("at") or ""), queue)
+    # Cloud Claude and the Grok box have no heartbeat here: "seen" is their last entry in the queue's history.
+    for m, agent in (("cloud", "claude"), ("grok", "chief")):
+        if not rows[m]["seen"]:
+            last = max((str(h.get("at") or "") for j in queue.get("jobs") or [] for h in j.get("history") or []
+                        if h.get("by") == agent), default="")
+            rows[m]["seen"] = last
     out = [rows[m] for m, _, _ in MACHINES]
     # The Grok box only shows when it did something: it has no heartbeat of its own here.
     return {"machines": [r for r in out if r["id"] != "grok" or r["now"] or r["done24"]],
