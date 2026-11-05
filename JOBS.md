@@ -60,7 +60,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2023 | mini | open | – | – | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
-| J2024 | any | open | – | – | review · verify condition for J0999 |  |
+| J2024 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0999 |  |
 | J2027 | mini | open | – | – | chief · Chief: review HOS milestone/row-count PR483 and verify publisher/frontend rollout | PR483 / J2026 |
 | J2029 | mini | open | – | – | chief · Chief: review Studio activity categories and next-video frontend PR484 | PR484 |
 | J2033 | mini | blocked | codex | – | 009 picture · for codex · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
