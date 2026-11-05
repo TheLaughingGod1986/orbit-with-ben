@@ -186467,7 +186467,7 @@
     {
       "id": "J2225",
       "title": "Verify condition for J1208",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J1208: J2167 immediate exact-source review required. PR507/bb22c548ea delivers native silent S5/S6 take2, exact opening1.15-3.85s/preroll0-1.15s, hashes, phone copies and source QA PASS with WARNs. This session inspected text/stills only; no actual native-video/phone/preroll perception tool demonstrated. Need a reviewer with demonstrated moving_video_input and exact-source decision before J1199 assembly; no KEEP, no further Flow takes (40 credits total), scheduled-copy fallback preserved.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1208 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -186487,6 +186487,11 @@
           "at": "2026-11-05T15:43Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T15:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: J2167: native-video source review and exact-source acceptance",
@@ -186496,7 +186501,16 @@
         "moving_video_input"
       ],
       "due": "2026-10-30T18:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2226",

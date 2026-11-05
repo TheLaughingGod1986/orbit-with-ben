@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2222 | mini | open (after J2221) | – | – | J01 edit · for gemini · review · `gemini-argon` · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2223 | mini | open | – | – | for gemini · listing · `gemini-argon` · Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each |  |
 | J2224 | mini | open | – | – | for gemini · review · `gemini-argon` · Review J0912: Short A v03 picture_qa key-ribbon FIX decision |  |
-| J2225 | any | open | – | – | review · Verify condition for J1208 |  |
+| J2225 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1208 |  |
 | J2226 | any | open | – | – | review · Verify condition for J2033 |  |
 
 Recently finished:
