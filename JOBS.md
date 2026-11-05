@@ -18,7 +18,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0936 | mini | claimed | gemini | 2026-11-06T09:15Z | for gemini · video · 60% re-cut batch C c59 FIX -> v03 (local only): 026 A6TW_6CXhcs, 027 emwQsPxnRGM, 028 bizlhspnVvY, DETI0HV2jlI, jJ5LkFGyzLI, X768qs8sNQs - level -14 LUFS/TP<=-1.6, _PHONE.mp4, NAS copies + per-Short fixes; park batch by Sun 1 Nov 20:00 London (each by 20:00 the day before air) | 6409202315 |
 | J0958 | mini | open | – | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
 | J0978 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
