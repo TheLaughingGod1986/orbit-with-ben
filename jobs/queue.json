@@ -182431,17 +182431,22 @@
           "at": "2026-11-05T03:56Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed current PR head be2c980ffa and contract; CI green, 12 legacy tests pass. Checking missing body-source and offset evidence, which may bypass reuse identity checks."
+        },
+        {
+          "at": "2026-11-05T03:57Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All 21 existing tests pass; two independent regression assertions fail: missing body file has no failure, and missing video offset disables within-run replay detection. Rules/core checks pass. FIX; no merge."
         }
       ],
-      "remaining_action": "Verify fail-closed body evidence and write exact correction requests",
+      "remaining_action": "Publish FIX evidence, return J2179 for repair, and notify HOS006 handoffs",
       "due": "2026-11-07T18:00:00Z",
       "kind": "chief",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-05T03:56Z",
+        "at": "2026-11-05T03:57Z",
         "by": "codex",
-        "note": "Reviewed current PR head be2c980ffa and contract; CI green, 12 legacy tests pass. Checking missing body-source and offse"
+        "note": "All 21 existing tests pass; two independent regression assertions fail: missing body file has no failure, and missing vi"
       },
       "taskKeys": [
         "HOS:006"
