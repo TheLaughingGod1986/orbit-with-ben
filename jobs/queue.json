@@ -187878,6 +187878,11 @@
           "at": "2026-11-05T18:52Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T18:54Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 121 min (heartbeat 2026-11-05T16:52:20Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify live audio_input + moving_video_input capability, review all 8 defect windows + 27 captions + full master_v04 in motion/audio, and park for Chief",
@@ -187888,7 +187893,16 @@
       ],
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2244",
