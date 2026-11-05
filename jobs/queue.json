@@ -182923,13 +182923,13 @@
       "stage": "",
       "after": "J2181",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T05:43Z",
-      "eta": "2026-11-05T07:43Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T04:13Z",
-      "result": "",
+      "result": "Decision delivered HOS PR417 a587a468: five exact fallback inputs, corrected J2183 script/timing and C S07 sunlight meaning; no generation authority while native1080 unverified and five-shot minimum230 exceeds proposed200. Live Flow15390, Fast10/Quality100 recorded. J2187 Codex no-spend route/recipe preparation, J2188 Gemini review, J2189 elected-Chief executable scope queued. J2182 accepted checker recorded; J2169 remains blocked1/3 with all holds. HOS checks/diff PASS; desk reported; no media/spend/publishing changes.",
       "history": [
         {
           "at": "2026-11-05T04:13Z",
@@ -182965,6 +182965,11 @@
           "at": "2026-11-05T05:53Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR417 a587a468 published; HOS check_all and diff PASS; desk reported. Five canonical inputs recorded, no spend; parent blocked1/3 and all holds preserved."
+        },
+        {
+          "at": "2026-11-05T05:53Z",
+          "by": "codex",
+          "what": "done: Decision delivered HOS PR417 a587a468: five exact fallback inputs, corrected J2183 script/timing and C S07 sunlight meaning; no generation authority while native1080 unverified and five-shot minimum230 exceeds proposed200. Live Flow15390, Fast10/Quality100 recorded. J2187 Codex no-spend route/recipe preparation, J2188 Gemini review, J2189 elected-Chief executable scope queued. J2182 accepted checker recorded; J2169 remains blocked1/3 with all holds. HOS checks/diff PASS; desk reported; no media/spend/publishing changes."
         }
       ],
       "remaining_action": "Decision delivered in HOS PR417; J2187/J2188/J2189 own route preparation, review and executable scope",
@@ -182979,7 +182984,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/417"
     },
     {
       "id": "J2185",
