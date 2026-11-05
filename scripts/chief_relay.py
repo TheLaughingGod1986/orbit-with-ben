@@ -111,17 +111,59 @@ def worker_capabilities():
     return read_json(d("capabilities.json")) or {}
 
 
-def record_capabilities(agent, available, evidence, minutes, at):
-    """Record an observed tool capability, never infer it from agent availability."""
+def record_capabilities(agent, available, evidence, minutes, at, source="self"):
+    """Record an observed tool capability, never infer it from agent availability.
+
+    A worker's own session report can't test media and says "none", so it never narrows a fresh relay probe
+    (scripts/capability_probe.py); it only adds what it shows itself (Claude, 5 Nov 2026)."""
     if agent not in chain() + list(routing.MINI_WORKERS) or not str(evidence).strip() or not 1 <= minutes <= 60:
         raise ValueError("Capability reports need a known agent, actual probe evidence and a 1–60 minute lifetime")
     names = [x.strip() for x in available.split(",") if x.strip()]
     if any(not re.fullmatch(r"[a-z][a-z0-9_]{0,63}", x) for x in names):
         raise ValueError("Use capability identifiers such as audio_input, not prose")
     reports = worker_capabilities()
-    reports[agent] = {"at":iso(at), "expiresAt":iso(at+dt.timedelta(minutes=minutes)),
-                      "available":sorted(set(names)), "evidence":str(evidence).strip()}
+    row = {"at":iso(at), "expiresAt":iso(at+dt.timedelta(minutes=minutes)),
+           "available":sorted(set(names)), "evidence":str(evidence).strip(), "source":source}
+    old = reports.get(agent) or {}
+    if source != "probe" and old.get("source") == "probe" and not workflow.capability_problem(
+            {"required_capabilities": old.get("available") or ["_"]}, agent, at, reports):
+        row = dict(old, available=sorted(set(old.get("available") or []) | set(names)),
+                   evidence=f"{old.get('evidence')} | session: {str(evidence).strip()}"[:2000])
+    reports[agent] = row
     write_json(d("capabilities.json"), reports)
+
+
+def refresh_probes(at):
+    """Re-probe media input while a job needs it: when the last probe is missing or under 10 min from expiry, at most
+    every 15 min per agent, so jobs needing audio go to a worker shown this hour to hear (Claude, 5 Nov 2026)."""
+    if os.environ.get("CHIEF_PROBE", "1") != "1":
+        return
+    jobs = (read_json(OWB / "jobs" / "queue.json") or {}).get("jobs", [])
+    if not any(j.get("required_capabilities") and j.get("status") not in ("done", "cancelled") for j in jobs):
+        return
+    import capability_probe
+    tried = read_json(d("probe_attempts.json")) or {}
+    for agent in capability_probe.RUNNERS:
+        if not state_of(agent, at)[0]:
+            continue
+        rep = worker_capabilities().get(agent) or {}
+        try:
+            left = dt.datetime.fromisoformat(rep["expiresAt"].replace("Z", "+00:00")) - at
+        except (KeyError, ValueError, AttributeError):
+            left = dt.timedelta(0)
+        last = tried.get(agent)
+        if (rep.get("source") == "probe" and left > dt.timedelta(minutes=10)) or (
+                last and at - dt.datetime.fromisoformat(last.replace("Z", "+00:00")) < dt.timedelta(minutes=15)):
+            continue
+        tried[agent] = iso(at)
+        write_json(d("probe_attempts.json"), tried)
+        try:
+            available, evidence = capability_probe.probe(agent)
+        except Exception as e:  # a probe that can't run proves nothing; leave the last report to expire
+            log(f"capability probe of {agent} could not run: {e}")
+            continue
+        record_capabilities(agent, ",".join(available), evidence, 60, now(), source="probe")
+        log(f"capability probe: {agent} has {', '.join(available) or 'no media input'} ({evidence[:300]})")
 
 
 def first_dir(*cands) -> pathlib.Path:
@@ -1395,6 +1437,7 @@ def run_locked(at: dt.datetime) -> int:
         return 0
     if (OWB / "scripts" / "refill.py").exists():
         escalate_stale()
+    refresh_probes(at)
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
     # A worker that says it's out of credit is retried after 1 h, not 3 (Ben, 14 Oct 2026: "no worker has credit. I
     # don't believe this"; a 429, or one model's pool read as the whole agent out for 3 h, left the Mini idle). A real
