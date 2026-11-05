@@ -182421,9 +182421,14 @@
           "at": "2026-11-05T03:54Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:54Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect PR and contract; run independent regressions; record decision and notify mapping handoffs."
         }
       ],
-      "remaining_action": "Review and, if correct, merge the bounded terminal-loop checker correction",
+      "remaining_action": "Review exact checker PR, test fail-closed cases, and record KEEP or FIX",
       "due": "2026-11-07T18:00:00Z",
       "kind": "chief",
       "progress": {
@@ -182431,9 +182436,11 @@
         "of": 3,
         "at": "2026-11-05T03:54Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: inspect PR and contract; run independent regressions; record decision and notify mapping handoffs."
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     },
     {
       "id": "J2181",
