@@ -186444,11 +186444,25 @@
           "at": "2026-11-05T15:25Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T15:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "KEEP or FIX J0912 Short A v03 picture_qa; write jobs/reviews/J2224/REVIEW.md",
       "kind": "review",
-      "review_of": "J0912"
+      "review_of": "J0912",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2225",
