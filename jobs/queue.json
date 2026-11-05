@@ -187492,10 +187492,24 @@
           "at": "2026-11-05T18:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T18:20Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs)",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2237",
