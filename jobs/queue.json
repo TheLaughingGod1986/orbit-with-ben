@@ -183941,9 +183941,14 @@
           "at": "2026-11-05T22:14Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J2169 after J2252 KEEP. Six 720p inserts and 11 NAS plates are the build inputs. No spend, no publish."
+        },
+        {
+          "at": "2026-11-05T22:20Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: VO hashes match the locks. B is t2_mint_fixed_vo_v03b, hook ends 2.24s. Six J2213 inserts plus eleven J2189 plates. Output 720x1280 so 720p inserts stay under 2.35x. No spend."
         }
       ],
-      "remaining_action": "Inventory locked VO, J2213 inserts and J2189 plates, then write the B/C cut recipe",
+      "remaining_action": "Assemble Short B and Short C from verified plates, then run the gates",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -183951,11 +183956,11 @@
       ],
       "escalated_at": "2026-11-05T06:52Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T22:14Z",
+        "at": "2026-11-05T22:20Z",
         "by": "cursor",
-        "note": "Claimed J2169 after J2252 KEEP. Six 720p inserts and 11 NAS plates are the build inputs. No spend, no publish."
+        "note": "VO hashes match the locks. B is t2_mint_fixed_vo_v03b, hook ends 2.24s. Six J2213 inserts plus eleven J2189 plates. Outp"
       }
     },
     {
