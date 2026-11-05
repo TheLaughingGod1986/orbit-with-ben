@@ -183946,9 +183946,14 @@
           "at": "2026-11-05T22:20Z",
           "by": "cursor",
           "what": "step 1 of 4 done: VO hashes match the locks. B is t2_mint_fixed_vo_v03b, hook ends 2.24s. Six J2213 inserts plus eleven J2189 plates. Output 720x1280 so 720p inserts stay under 2.35x. No spend."
+        },
+        {
+          "at": "2026-11-05T22:33Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Loop fail was extra frames from the fps filter. Villa brick courses still fail the seam check; that fail stays on the record."
         }
       ],
-      "remaining_action": "Assemble Short B and Short C from verified plates, then run the gates",
+      "remaining_action": "Re-render B and C on exact frame counts, then re-run the gates",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -183958,9 +183963,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-05T22:20Z",
+        "at": "2026-11-05T22:33Z",
         "by": "cursor",
-        "note": "VO hashes match the locks. B is t2_mint_fixed_vo_v03b, hook ends 2.24s. Six J2213 inserts plus eleven J2189 plates. Outp"
+        "note": "Loop fail was extra frames from the fps filter. Villa brick courses still fail the seam check; that fail stays on the re"
       }
     },
     {
