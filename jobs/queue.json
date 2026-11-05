@@ -124702,13 +124702,13 @@
       "stage": "",
       "after": "J1471",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T15:22Z",
-      "eta": "2026-11-05T17:22Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T13:34Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J1356/REVIEW.md): AR1 v06 (3e6803ba5630351515333dc51a406d2d7921dcba434bd6e65760e979e9694fd0), AR2 v12 (6b0aacb1529618fb1c4835f3dbd96a372303acecdd4943fd0bb3721194ecb4e7), and AR3 v13 (3fce60c525eba31f3f014be9bd1c652ed37ad9fb2729ff38b776fbe826643a25) verified via direct moving-video/audio review and all complete-metadata tool gates (picture_qa, polish_gate, gate_shorts_open, music_gate, sfx_kit level, loop, decode, AAC preservation, h37/h40/h42/J1849 locks). Durable watch copies staged in OWB UAT and 06_Final-Exports, R2 Play links verified (owb-j1356-1-v06, owb-j1356-2-v12, owb-j1356-3-v13), and jobs.py awaits set for all three Shorts (J1356.1-3, due 2026-11-20 18:00 London). Originals and manifests preserved; no upload, schedule, or Buffer action.",
       "history": [
         {
           "at": "2026-10-31T13:34Z",
@@ -125399,16 +125399,41 @@
           "at": "2026-11-05T15:50Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified direct moving-video/audio perception and SHA256 of all 3 iCloud UAT masters + PHONE proxies + R2 watch IDs"
+        },
+        {
+          "at": "2026-11-05T15:59Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch AR1 v06 (\"Will Asteroid 2024 YR4 Hit the Moon in 2032?\") before any upload/schedule (by 2026-11-20 18:00 London)"
+        },
+        {
+          "at": "2026-11-05T15:59Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch AR2 v12 (\"Where Will the International Space Station Crash?\") before any upload/schedule (by 2026-11-20 18:00 London)"
+        },
+        {
+          "at": "2026-11-05T15:59Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch AR3 v13 (\"Where Will the 2027 Total Solar Eclipse Last Over Six Minutes?\") before any upload/schedule (by 2026-11-20 18:00 London)"
+        },
+        {
+          "at": "2026-11-05T15:59Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: J1356 Rule H KEEP: watched/listened to AR1 v06, AR2 v12, AR3 v13; verified durable watch copies, Play links, and awaits_ben J1356.1-3"
+        },
+        {
+          "at": "2026-11-05T15:59Z",
+          "by": "gemini",
+          "what": "done: KEEP (jobs/reviews/J1356/REVIEW.md): AR1 v06 (3e6803ba5630351515333dc51a406d2d7921dcba434bd6e65760e979e9694fd0), AR2 v12 (6b0aacb1529618fb1c4835f3dbd96a372303acecdd4943fd0bb3721194ecb4e7), and AR3 v13 (3fce60c525eba31f3f014be9bd1c652ed37ad9fb2729ff38b776fbe826643a25) verified via direct moving-video/audio review and all complete-metadata tool gates (picture_qa, polish_gate, gate_shorts_open, music_gate, sfx_kit level, loop, decode, AAC preservation, h37/h40/h42/J1849 locks). Durable watch copies staged in OWB UAT and 06_Final-Exports, R2 Play links verified (owb-j1356-1-v06, owb-j1356-2-v12, owb-j1356-3-v13), and jobs.py awaits set for all three Shorts (J1356.1-3, due 2026-11-20 18:00 London). Originals and manifests preserved; no upload, schedule, or Buffer action."
         }
       ],
-      "remaining_action": "Write jobs/reviews/J1356/REVIEW.md, set jobs.py awaits --add for all three AR Shorts, and verify published board cards and Play links",
+      "remaining_action": "Waiting on Ben's final watch of AR1 v06, AR2 v12, and AR3 v13 (J1356.1-3); no upload/schedule until Ben OK and Chief scheduling",
       "kind": "review",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-05T15:50Z",
+        "at": "2026-11-05T15:59Z",
         "by": "gemini",
-        "note": "Verified direct moving-video/audio perception and SHA256 of all 3 iCloud UAT masters + PHONE proxies + R2 watch IDs"
+        "note": "J1356 Rule H KEEP: watched/listened to AR1 v06, AR2 v12, AR3 v13; verified durable watch copies, Play links, and awaits_"
       },
       "taskKeys": [
         "OWB:030"
@@ -125424,7 +125449,40 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 11
+      "urgent": 11,
+      "awaits_ben": [
+        {
+          "what": "Watch AR1 v06 (\"Will Asteroid 2024 YR4 Hit the Moon in 2032?\") before any upload/schedule",
+          "file": "OWB UAT/owb_ar1_2024_yr4_moon_v06/owb_ar1_2024_yr4_moon_v06_PHONE.mp4",
+          "version": "v06",
+          "due": "2026-11-20T18:00Z",
+          "ifNot": "Remains unuploaded on disk until Ben OK and Chief scheduling",
+          "title": "Will Asteroid 2024 YR4 Hit the Moon in 2032?",
+          "number": "AR1",
+          "type": "short"
+        },
+        {
+          "what": "Watch AR2 v12 (\"Where Will the International Space Station Crash?\") before any upload/schedule",
+          "file": "OWB UAT/owb_ar2_iss_2030_deorbit_v12/owb_ar2_iss_2030_deorbit_v12_PHONE.mp4",
+          "version": "v12",
+          "due": "2026-11-20T18:00Z",
+          "ifNot": "Remains unuploaded on disk until Ben OK and Chief scheduling",
+          "title": "Where Will the International Space Station Crash?",
+          "number": "AR2",
+          "type": "short"
+        },
+        {
+          "what": "Watch AR3 v13 (\"Where Will the 2027 Total Solar Eclipse Last Over Six Minutes?\") before any upload/schedule",
+          "file": "OWB UAT/owb_ar3_2027_eclipse_v13/owb_ar3_2027_eclipse_v13_PHONE.mp4",
+          "version": "v13",
+          "due": "2026-11-20T18:00Z",
+          "ifNot": "Remains unuploaded on disk until Ben OK and Chief scheduling",
+          "title": "Where Will the 2027 Total Solar Eclipse Last Over Six Minutes?",
+          "number": "AR3",
+          "type": "short"
+        }
+      ],
+      "done_ref": "jobs/reviews/J1356/REVIEW.md"
     },
     {
       "id": "J1357",
