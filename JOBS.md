@@ -43,7 +43,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
 | J1881 | mini | blocked | codex | – | 008 edit · review · review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
-| J1888 | any | open | – | – | review · verify condition for J0978 |  |
+| J1888 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0978 |  |
 | J1889 | mini | open | – | – | review · J1879: review recovered Mars-night and Titan Studio source candidates | J1879 |
 | J1892 | any | open | – | – | review · verify condition for J1834 |  |
 | J1894 | any | open | – | – | review · verify condition for J0862 |  |
