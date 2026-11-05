@@ -181632,13 +181632,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-05T03:22Z",
-      "eta": "2026-11-05T05:22Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "",
+      "result": "parked for Chief: J2178 must reconcile mandatory matching loop with picture_qa same-stretch FAILs and specify exact repair mappings; HOS PR413 e3410b07, B3/8 C2/9 source cuts FAIL. Inventory complete1/3; no render, spend or publishing. Not a capability or credit wait.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -181669,6 +181669,11 @@
           "at": "2026-11-05T03:29Z",
           "by": "codex",
           "what": "step 1 of 3 done: HOS PR413 e3410b07 preserves hashes, both source-QA FAIL reports, transcripts, decode evidence and durable still sheet. check_all.sh ALL CHECKS PASS. J2178 owns bounded Chief decision; no render/spend/publication."
+        },
+        {
+          "at": "2026-11-05T03:29Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: J2178 must reconcile mandatory matching loop with picture_qa same-stretch FAILs and specify exact repair mappings; HOS PR413 e3410b07, B3/8 C2/9 source cuts FAIL. Inventory complete1/3; no render, spend or publishing. Not a capability or credit wait."
         }
       ],
       "remaining_action": "Await J2178 exact loop/reuse and picture repair decision, then build and verify B/C",
