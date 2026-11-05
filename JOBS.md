@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2167 | mini | open | – | – | review · J1208 exact-source native-video review: S5/S6 Flow take2 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/507 |
 | J2168 | mini | open | – | – | 005 edit · assembly · HOS 005: qualify cuff Short for 10 Nov and distinct reserve for 10 Dec | J2023 |
 | J2169 | mini | open | – | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
-| J2170 | any | claimed | macbook | 2026-11-05T03:16Z | 008 edit · review · HOS 008 Short C: resolve blocked hook on paper for conditional 2 Dec slot | J2023 |
+| J2170 | mini | open | – | – | 008 edit · for gemini · review · `gemini-argon` · HOS 008 Short C: resolve blocked hook on paper for conditional 2 Dec slot | J2023 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | open | – | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2173 | any | open | – | – | 032 edit · review · OWB locked-long Short: assess Titan Test A as reserve for 27 Nov | J2023 |
