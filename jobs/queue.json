@@ -182411,13 +182411,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-05T03:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "parked for Chief: J2178 must reconcile mandatory matching loop with picture_qa same-stretch FAILs and specify exact repair mappings; HOS PR413 e3410b07, B3/8 C2/9 source cuts FAIL. Inventory complete1/3; no render, spend or publishing. Not a capability or credit wait.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -182478,18 +182478,16 @@
           "at": "2026-11-05T06:52Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-05T09:21Z",
+          "by": "chief",
+          "what": "reopened: h47: J2178 FIX merged (PR414). Chain J2179–J2191 complete; J2191 REJECTED Vertex production scope (missing GBP SKU/global bound/atomic caller). Flow native1080 rejected earlier. Exact next step: GBP0 native≥1080 existing-media inventory before any spend/build."
         }
       ],
       "remaining_action": "Blocked1/3: J2190 six-input Vertex guard/preflight, J2191 explicit scope; then sources and final17-row mapping KEEP before build. Flow rejected; no spend approval.",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-05T03:29Z",
-        "by": "codex",
-        "note": "HOS PR413 e3410b07 preserves hashes, both source-QA FAIL reports, transcripts, decode evidence and durable still sheet. "
-      },
       "taskKeys": [
         "HOS:006"
       ],
