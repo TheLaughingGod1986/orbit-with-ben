@@ -184484,10 +184484,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-05T09:50Z",
+      "eta": "2026-11-05T11:50Z",
       "created_by": "codex",
       "created_at": "2026-11-05T09:06Z",
       "result": "",
@@ -184496,10 +184496,23 @@
           "at": "2026-11-05T09:06Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T09:50Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review seven current process stills and release exact render permissions or fixes",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T09:50Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2199",

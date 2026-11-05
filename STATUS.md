@@ -60,5 +60,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 027 | edit | gemini | 2026-11-05T08:22Z | 2026-11-05T09:22Z | J1100 S2 v07 repair |
 | 028 | edit | gemini | 2026-11-05T08:22Z | 2026-11-05T09:22Z | J1100 S5/S6 v07 repair |
+| 032 | picture | claude | 2026-11-05T09:50Z | 2026-11-05T11:49Z | J2198 032 J2089: review corrected fire stills and regenerated process pixels |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
