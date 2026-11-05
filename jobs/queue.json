@@ -185144,10 +185144,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-05T11:28Z",
+      "eta": "2026-11-05T13:28Z",
       "created_by": "codex",
       "created_at": "2026-11-05T10:20Z",
       "result": "",
@@ -185181,6 +185181,11 @@
           "at": "2026-11-05T11:13Z",
           "by": "macbook",
           "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-05T11:28Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Committing macbook/J2211, opening HOS PR, and returning HOS checkout to main",
