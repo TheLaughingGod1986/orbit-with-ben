@@ -182434,17 +182434,22 @@
           "at": "2026-11-05T03:57Z",
           "by": "codex",
           "what": "step 2 of 3 done: All 21 existing tests pass; two independent regression assertions fail: missing body file has no failure, and missing video offset disables within-run replay detection. Rules/core checks pass. FIX; no merge."
+        },
+        {
+          "at": "2026-11-05T03:59Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: FIX evidence committed ed5b8002ae and posted PR512; J2179 reopened, J2182 successor queued, HOS mapping producer/reviewer notified. No merge or J2169 reopening."
         }
       ],
-      "remaining_action": "Publish FIX evidence, return J2179 for repair, and notify HOS006 handoffs",
+      "remaining_action": "Review complete: J2179 repairs checker and J2182 re-reviews it",
       "due": "2026-11-07T18:00:00Z",
       "kind": "chief",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-05T03:57Z",
+        "at": "2026-11-05T03:59Z",
         "by": "codex",
-        "note": "All 21 existing tests pass; two independent regression assertions fail: missing body file has no failure, and missing vi"
+        "note": "FIX evidence committed ed5b8002ae and posted PR512; J2179 reopened, J2182 successor queued, HOS mapping producer/reviewe"
       },
       "taskKeys": [
         "HOS:006"
