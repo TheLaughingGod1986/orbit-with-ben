@@ -127,7 +127,7 @@
     if (v.lane === "done") return v.youtube && v.youtube.state === "scheduled" ? "Scheduled" : "On YouTube";
     const live = (v.jobs || []).find(j => j.status === "claimed");
     if (live) return "Working now";
-    if ((v.jobs || []).some(j => j.status === "blocked")) return "On hold";
+    if ((v.jobs || []).some(j => j.status === "blocked")) return "Waiting";
     return v.lane === "upcoming" ? "Planned" : "In progress";
   }
 
@@ -231,7 +231,7 @@
       <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
   }
   const jobTiles = j => `<div class="tiles three"><div class="tile-stat"><b class="blue">${j.working}</b><span>Jobs running</span></div>
-      <div class="tile-stat"><b>${j.queued}</b><span>Jobs queued</span></div><div class="tile-stat"><b>${j.held}</b><span>Jobs on hold</span></div></div>`;
+      <div class="tile-stat"><b>${j.queued}</b><span>Jobs queued</span></div><div class="tile-stat"><b>${j.held}</b><span>Jobs waiting</span></div></div>`;
   const section = (title, n, body, more) => `<section><h2>${esc(title)}${n != null ? ` <span class="n">${n}</span>` : ""}${more || ""}</h2>${body}</section>`;
   const empty = text => `<p class="empty">${esc(text)}</p>`;
 
@@ -282,7 +282,7 @@
     if (completeStage(m)) return {text:state === 'skip' ? 'Not required · recorded' : 'Completed',tone:'complete',icon:'✓'};
     if (state === 'review') return {text:'Awaiting approval',tone:'held',icon:'!'};
     if (state === 'blocked' && (m.jobs||[]).some(j=>reviewQueueInfo(board||{},j,Date.now(),macbook))) return {text:'Awaiting review',tone:'held',icon:'!'};
-    if (state === 'blocked') return {text:'Blocked',tone:'held',icon:'!'};
+    if (state === 'blocked') return {text:'Waiting',tone:'held',icon:'!'};
     if (['doing','in_progress'].includes(state)) return {text:'In progress',tone:'active',icon:'●'};
     return {text:['todo','pending','queued'].includes(state) ? 'Not started' : 'Unconfirmed',tone:'neutral',icon:'○'};
   }
@@ -353,13 +353,13 @@
     const useJob=best && (best.scope!=='video' || !stageApproval);
     if(useJob) {
       const j=best.job, hold=j.hold||{};
-      return {job:j,scope:best.scope,why:blockerReason(hold.reason||hold.condition||j.result)||'The job is blocked, but its reason has not been recorded.',
+      return {job:j,scope:best.scope,why:blockerReason(hold.reason||hold.condition||j.result)||'The job is waiting, but its reason has not been recorded.',
         action:blockerAction(hold.action||j.remaining_action||'')||(stageApproval?nextAction(m):'No unblock action is recorded. The job owner needs to add the missing next step.'),
         owner:AGENTS[hold.owner||j.by]||hold.owner||j.by||'Not recorded',checkAt:hold.check_at||'',checkedAt:hold.checked_at||'',dependency:j.after||'',others:entries.filter(x=>x.job.id!==j.id)};
     }
     const evidence=String(source.note||source.proof||m.evidence||'');
     const meaningful=evidence.length>10 && /\s/.test(evidence) && !/^[a-f0-9]+$/i.test(evidence);
-    return {scope:'stage',why:stageApproval?`Awaiting ${reviewer||'the recorded reviewer’s'} approval.`:meaningful?blockerReason(evidence):`${m.label} is marked blocked, but no stage-specific reason is recorded.`,
+    return {scope:'stage',why:stageApproval?`Awaiting ${reviewer||'the recorded reviewer’s'} approval.`:meaningful?blockerReason(evidence):`${m.label} is marked waiting, but no stage-specific reason is recorded.`,
       action:stageApproval?nextAction(m):m.nextAction||'No unblock action is recorded. A responsible owner and a specific next step need to be recorded.',
       owner:stageApproval?(reviewer||'Not recorded'):ownerName(m)==='Unassigned'?'Not recorded':ownerName(m),others:entries};
   }
@@ -389,14 +389,14 @@
     const model=blockerModel(v,m), j=model.job, review=reviewQueueInfo(board||{},j,now,macbook);
     const due=Date.parse(model.checkAt||''), checked=Date.parse(model.checkedAt||'');
     const states=((board||{}).owb||{}).jobStates||{}, dependency=states[model.dependency]||{};
-    const dependencyStatus={done:'Completed',blocked:'Blocked',claimed:'In progress',open:'Queued',cancelled:'Cancelled'}[dependency.status]||'Status unreported';
+    const dependencyStatus={done:'Completed',blocked:'Waiting',claimed:'In progress',open:'Queued',cancelled:'Cancelled'}[dependency.status]||'Status unreported';
     const check=Number.isFinite(due)?`${due<now?'Check overdue: ':'Next recorded check: '}${recordedTime(model.checkAt)}`:'No next check recorded';
     return `<div class="blocker-guide" data-blocker-scope="${model.scope}"><p class="blocker-scope">${model.scope==='reference'?'Related recorded hold':model.scope==='video'?'Video-level hold · stage link unconfirmed':'Recorded stage hold'}</p>
-      <h3>${review?(review.task.kind==='review'?'Awaiting specialist review':'Awaiting Chief review'):'Why blocked'}</h3><p class="blocker-reason">${esc(model.why)}</p>
+      <h3>${review?(review.task.kind==='review'?'Awaiting specialist review':'Awaiting Chief review'):'What it is waiting for'}</h3><p class="blocker-reason">${esc(model.why)}</p>
       <h3>How to unblock</h3><p class="blocker-action">${esc(model.action)}</p>
       <dl class="blocker-facts"><div><dt>${j?(review?'Previous worker':'Recorded job owner'):'Reviewer / owner'}</dt><dd>${esc(model.owner)}</dd></div><div><dt>Follow-up</dt><dd>${esc(check)}</dd></div>${Number.isFinite(checked)?`<div><dt>Last checked</dt><dd>${esc(recordedTime(model.checkedAt))}</dd></div>`:''}${model.dependency?`<div><dt>Recorded dependency</dt><dd>${esc(model.dependency)} · ${esc(dependencyStatus)}</dd></div>`:''}</dl>
       ${review?`<div class="review-handoff"><p><b>${esc(review.reviewer)} · ${review.ready?'review queued and eligible now':review.task.status==='claimed'?'review job claimed':'review queue state needs confirmation'}</b></p><a class="blocker-job-link" href="${jobRoute(review.task.id)}">Open review job ${esc(review.task.id)} →</a>${review.busy?`<p>${esc(review.reviewer)} is ${review.busy.status==='claimed'?'working on':'starting'} ${esc(review.busy.id)}: ${esc(clip(review.busy.remaining_action||review.busy.title,140))}</p>`:''}${!review.busy&&review.miniBusy?`<p>Mini execution: ${esc(AGENTS[review.miniBusy.by]||review.miniBusy.by||'Worker')} on ${esc(review.miniBusy.id)} · ${esc(clip(review.miniBusy.remaining_action||review.miniBusy.title,140))}. An extra execution slot is not confirmed by this report.</p>`:''}<details class="technical"><summary>Reviewer availability and MacBook</summary><p>${esc(review.availability)}</p><p>${esc(review.macbookText)}</p><p>Device availability does not establish media-review capability or Chief approval authority.</p></details></div>`:''}
-      ${Number.isFinite(due)?`<p class="blocker-caption">${review?'The follow-up time does not schedule or delay the queued review.':'The check time is a follow-up, not a promise that the video will be unblocked.'}</p>`:''}
+      ${Number.isFinite(due)?`<p class="blocker-caption">${review?'The follow-up time does not schedule or delay the queued review.':'The check time is a follow-up, not a promise that the video will move on by then.'}</p>`:''}
       ${j?`<a class="blocker-job-link" href="${jobRoute(j.id)}">Open blocking job ${esc(j.id)} <span aria-hidden="true">›</span></a><details class="technical" data-disclosure="${esc(v.key)}-${esc(m.id)}-hold"><summary>Full recorded blocker</summary><div class="technical-body">${(j.hold||{}).condition?`<p>${esc(j.hold.condition)}</p>`:''}${j.remaining_action?`<p>Recorded next action: ${esc(j.remaining_action)}</p>`:''}${j.result?`<p>${esc(j.result)}</p>`:''}</div></details>`:''}
       ${model.others.length?`<details class="technical" data-disclosure="${esc(v.key)}-${esc(m.id)}-other-holds"><summary>${model.others.length} other recorded video hold${model.others.length===1?'':'s'}</summary><div class="technical-body">${model.others.map(({job})=>`<article><b>${esc(job.title||job.id)}</b><p>${esc(blockerReason((job.hold||{}).condition||job.result)||'Reason not recorded')}</p><p>Next step: ${esc(job.remaining_action||'Not recorded')}</p><a class="blocker-job-link" href="${jobRoute(job.id)}">Open ${esc(job.id)}</a></article>`).join('')}</div></details>`:''}</div>`;
   }
@@ -548,7 +548,7 @@
     if (isLive(v)) return row(v, "");
     const historyOnly=forBen([v]).length || pendingChanges(v) || ['approved','done','changes'].includes(v.lane) || (v.youtube||{}).state==='scheduled';
     const scoped=unconfirmedCut(v), current=historyOnly?null:scoped?relatedStage(v):currentProduction(v)[0], f=forecastView(v,now);
-    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Blocked / approval pending</span>':''}</span>${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`);
+    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}</span>${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`);
   }
   // One set of selectors feeds Overview and its linked lists. Jobs never stand in for videos.
   function uniqueVideos(vs) {
@@ -640,7 +640,7 @@
     if(forBen([v]).length) return 'Ready for UAT';
     if(v.lane==='changes'||pendingChanges(v)) return 'Awaiting corrections';
     if(unconfirmedCut(v)) return 'Estimate pending';
-    if(blockedVideo(v)) return 'Blocked';
+    if(blockedVideo(v)) return 'Waiting';
     const f=forecastView(v,now);
     return f.credible ? `Approximately ${durationText(f.minutes)}` : 'Estimate pending';
   }
@@ -687,7 +687,7 @@
   function activityCard(b,now) {
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
     // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
-    const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} on hold</p>`;
+    const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} waiting</p>`;
     if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is on hold':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
     const videoContext=activityVideoContext(b,j);
     const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), start=Date.parse(j.claimedAt||'');
@@ -783,7 +783,7 @@
     return `<header class="top"><h1>Videos</h1></header>
       ${routeView()==='producing'?`<p class="list-scope">Producing · ${vs.length} unique videos <a href="#videos">Show all</a></p>`:''}
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
-      <label class="sort-control">Sort videos<select id="video-sort"><option value="uat" ${videoSort==='uat'?'selected':''}>Nearest credible UAT</option><option value="updated" ${videoSort==='updated'?'selected':''}>Recently updated</option><option value="stage" ${videoSort==='stage'?'selected':''}>Production stage</option><option value="blocked" ${videoSort==='blocked'?'selected':''}>Blocked first</option></select></label>
+      <label class="sort-control">Sort videos<select id="video-sort"><option value="uat" ${videoSort==='uat'?'selected':''}>Nearest credible UAT</option><option value="updated" ${videoSort==='updated'?'selected':''}>Recently updated</option><option value="stage" ${videoSort==='stage'?'selected':''}>Production stage</option><option value="blocked" ${videoSort==='blocked'?'selected':''}>Waiting first</option></select></label>
       ${show("working") ? section("An agent is on it now", g.working.length + studio.length, (jobList(g.working) + studio.map(jobCard).join("")) || empty("No agent is working this minute.")) : ""}
       ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
       ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
@@ -791,7 +791,20 @@
   }
 
   // One video, in the hub: where it is, who is on it, what is left, your notes, and its links.
-  const JOB_WORD = { claimed: ["green", "Working"], open: ["", "Queued"], blocked: ["amber", "On hold"], done: ["", "Done"] };
+  // Ben, 5 Nov 2026: "the work block is telling me it's a hard stop ... it should not be blocked, we have all the tools".
+  // A held job is waiting for something specific, so the page says what, never "Blocked".
+  function waitWord(j) {
+    const h=(j&&j.hold)||{}, t=String(h.type||''), r=String((j&&j.result)||'')+' '+String(h.condition||'');
+    if (j && j.awaits_ben) return 'Waiting for Ben';
+    if (t==='public') return 'Starts when the film goes public';
+    if (t==='date') return 'Scheduled';
+    if (t==='test') return 'Waiting for a YouTube test';
+    if (t==='credits') return 'Waiting for credits';
+    if (/parked for Chief|Chief review|for Chief/i.test(r) || (j&&j.kind==='chief')) return 'Waiting for review';
+    if (t==='dependency' || (j&&j.after)) return 'Waiting for an earlier job';
+    return 'Waiting';
+  }
+  const JOB_WORD = { claimed: ["green", "Working"], open: ["", "Queued"], blocked: ["amber", "Waiting"], done: ["", "Done"] };
   function detail(b, key) {
     const v = ((((b.tracker || {}).videos) || []).find(x => x.key === key));
     const back = `<header class="top"><a class="more back" href="#videos">‹ Back to Videos</a></header>`;
@@ -802,7 +815,7 @@
       yt.url ? `<a class="btn" href="${esc(yt.url)}" target="_blank" rel="noopener">Open on YouTube</a>` : "",
     ].filter(Boolean);
     const jobs = [...new Map((v.jobs || []).map(j=>[j.id,j])).values()].sort((a, b) => ["claimed", "open", "blocked", "done"].indexOf(a.status) - ["claimed", "open", "blocked", "done"].indexOf(b.status));
-    const jobRows = jobs.map(j => { const [tone, word] = JOB_WORD[j.status] || ["", j.status];
+    const jobRows = jobs.map(j => { const [tone, w0] = JOB_WORD[j.status] || ["", j.status]; const word = j.status === "blocked" ? waitWord(j) : w0;
       const why = j.status === "blocked" ? (j.hold && j.hold.condition) || j.result : j.remaining_action;
       return `<div class="job"><div class="job-top"><span class="tag ${tone}">${word}</span><b>${esc(clip(j.title || j.id, 90))}</b></div>
         <span class="meta">${esc(j.id)}${j.by ? " · " + esc(AGENTS[j.by] || j.by) : ""}${why ? " · " + esc(clip(why, 160)) : ""}</span>
