@@ -182458,10 +182458,10 @@
       "stage": "",
       "after": "J2161",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T14:22Z",
+      "eta": "2026-11-05T14:52Z",
       "created_by": "codex",
       "created_at": "2026-11-04T23:29Z",
       "result": "",
@@ -182535,6 +182535,11 @@
           "at": "2026-11-05T14:01Z",
           "by": "codex",
           "what": "J2176 v03 manifest and phone-sheet paths supplied; existing dependencies retained"
+        },
+        {
+          "at": "2026-11-05T14:22Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
@@ -182550,7 +182555,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T14:22Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2163",
