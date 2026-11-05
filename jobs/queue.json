@@ -186583,10 +186583,10 @@
       "stage": "edit",
       "after": "J2163",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-05T18:26Z",
+      "eta": "2026-11-05T19:56Z",
       "created_by": "chief",
       "created_at": "2026-11-05T12:54Z",
       "result": "review J1881 FIX (jobs/reviews/J1881/REVIEW.md): repair HOS PR #428 (dfd365c7) cross-GOP frame windows: (1) 0:51 candidate_frames [1124,1227] -> [1129,1231] (single GOP, not 1022..1231); (2) 3:13 candidate_frames [4500,4659] -> [4511,4670] (single GOP covering 4660..4670 paper unroll, + 01_points_desk_t1.png sha cc16a515a43e881c...); (3) all 27 caption_treatment.labels master_frames to exact closed-GOP [kf_in, kf_out-1] ([0,141]..[12297,12461]); (4) add 07_hot_night_t1.mp4 & 01_points_desk_t1.mp4 to required_inputs and assert single-GOP envelopes in test_j2163_recipe.py.",
@@ -186625,13 +186625,26 @@
           "at": "2026-11-05T16:43Z",
           "by": "gemini",
           "what": "reopened: review J1881 FIX (jobs/reviews/J1881/REVIEW.md): repair HOS PR #428 (dfd365c7) cross-GOP frame windows: (1) 0:51 candidate_frames [1124,1227] -> [1129,1231] (single GOP, not 1022..1231); (2) 3:13 candidate_frames [4500,4659] -> [4511,4670] (single GOP covering 4660..4670 paper unroll, + 01_points_desk_t1.png sha cc16a515a43e881c...); (3) all 27 caption_treatment.labels master_frames to exact closed-GOP [kf_in, kf_out-1] ([0,141]..[12297,12461]); (4) add 07_hot_night_t1.mp4 & 01_points_desk_t1.mp4 to required_inputs and assert single-GOP envelopes in test_j2163_recipe.py."
+        },
+        {
+          "at": "2026-11-05T18:26Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix PR #428 GOP windows: 0:51 [1129,1231], 3:13 [4511,4670], 27 caption_treatment GOP ranges & tests (jobs/reviews/J1881/REVIEW.md)",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T18:26Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2218",
