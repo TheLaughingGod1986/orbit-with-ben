@@ -68,7 +68,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2199 | mini | open | – | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
 | J2200 | mini | open | – | – | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
 | J2202 | mini | open | – | – | assembly · URG-HOS-1: monthly Studio Reach window capture + studio_ctr archive |  |
-| J2204 | mini | claimed | macbook | 2026-11-05T21:43Z | assembly · HOS-2026-11-E2: encode long first-30s proof-first + early DATA/SCALE rules |  |
 | J2205 | mini | open | – | – | assembly · URG-OWB-1: gate_upcoming --stage NAS cache for upcoming Shorts |  |
 | J2206 | mini | open | – | – | assembly · URG-OWB-2: monthly Studio Reach window capture (share with J2202) |  |
 | J2207 | mini | open | – | – | assembly · OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts |  |
