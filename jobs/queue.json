@@ -181269,13 +181269,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "codex",
-      "since": "2026-11-05T00:04Z",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T22:53Z",
-      "result": "parked for Chief: J2164 must rule on raw Scribe REVIEW 93.39%, and/an offset, Real Worlds/World, date expansion, chapter-tail measurements and 611.4s runtime. Single take and measurements delivered in PR502 (76284eba93); no retake or final PASS. J2165 shot list depends on explicit acceptance and J2155 completion.",
+      "result": "KEEP (jobs/reviews/J2164/REVIEW.md): accepted uranus_vo_v01.wav (3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460, 611.40s / 10:11.4, -23.3 dB mean, -20.22 LUFS, -3.77 dBTP, 0 retakes / 0 extra spend) from locked script v02 (c01c9f9e78). Verified all 54 Scribe mismatch groups (51 UK/US spelling & numeral representation; #38 and/an offset at ~418.2s, #51 19/19th of April at ~570.7s, and #54 Real Worlds/World at ~601.5s verified by demonstrated native audio_input + phonetics as natural UK connected speech with all 15 SOURCES.md numbers intact) and all 7 section tail decays (-32.01 to -45.00 dBFS + direct audio listening). Closed J2155 done (033 vo -> done), landed J2155 VO evidence on main, and explicitly cleared J2165 shot list to start.",
       "history": [
         {
           "at": "2026-11-04T22:53Z",
@@ -181326,9 +181326,14 @@
           "at": "2026-11-05T02:49Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-05T08:05Z",
+          "by": "gemini",
+          "what": "review J2164 KEEP: uranus_vo_v01 (611.4s) accepted; closed done; J2165 shot list unblocked"
         }
       ],
-      "remaining_action": "Chief must rule on unresolved Scribe wording/date differences and accept VO before shot-list release",
+      "remaining_action": "Done: uranus_vo_v01 (611.4s) accepted under J2164 KEEP ruling (jobs/reviews/J2164/REVIEW.md)",
       "kind": "vo",
       "rerouted_from": {
         "needs": "mini",
@@ -181349,7 +181354,7 @@
         "OWB:033"
       ],
       "urgent": 11,
-      "escalated_at": "2026-11-05T02:49Z"
+      "done_ref": "jobs/reviews/J2164/REVIEW.md"
     },
     {
       "id": "J2156",
@@ -181774,13 +181779,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T07:52Z",
-      "eta": "2026-11-05T09:52Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T00:10Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J2164/REVIEW.md): accepted uranus_vo_v01.wav (3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460, 611.40s / 10:11.4, -23.3 dB mean, -20.22 LUFS, -3.77 dBTP, 0 retakes / 0 extra spend) from locked script v02 (c01c9f9e78). Verified all 54 Scribe mismatch groups (51 UK/US spelling & numeral representation; #38 and/an offset at ~418.2s, #51 19/19th of April at ~570.7s, and #54 Real Worlds/World at ~601.5s verified by demonstrated native audio_input + phonetics as natural UK connected speech with all 15 SOURCES.md numbers intact) and all 7 section tail decays (-32.01 to -45.00 dBFS + direct audio listening). Closed J2155 done (033 vo -> done), landed J2155 VO evidence on main, and explicitly cleared J2165 shot list to start.",
       "history": [
         {
           "at": "2026-11-05T00:10Z",
@@ -181821,9 +181826,19 @@
           "at": "2026-11-05T08:04Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Wrote jobs/reviews/J2164/REVIEW.md and updated 033 production-status.md and J2155_VO_REVIEW_v01.md"
+        },
+        {
+          "at": "2026-11-05T08:05Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Applied Rule H KEEP: closed J2155 done, marked 033 vo done, landed VO evidence, cleared J2165"
+        },
+        {
+          "at": "2026-11-05T08:05Z",
+          "by": "gemini",
+          "what": "done: KEEP (jobs/reviews/J2164/REVIEW.md): accepted uranus_vo_v01.wav (3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460, 611.40s / 10:11.4, -23.3 dB mean, -20.22 LUFS, -3.77 dBTP, 0 retakes / 0 extra spend) from locked script v02 (c01c9f9e78). Verified all 54 Scribe mismatch groups (51 UK/US spelling & numeral representation; #38 and/an offset at ~418.2s, #51 19/19th of April at ~570.7s, and #54 Real Worlds/World at ~601.5s verified by demonstrated native audio_input + phonetics as natural UK connected speech with all 15 SOURCES.md numbers intact) and all 7 section tail decays (-32.01 to -45.00 dBFS + direct audio listening). Closed J2155 done (033 vo -> done), landed J2155 VO evidence on main, and explicitly cleared J2165 shot list to start."
         }
       ],
-      "remaining_action": "Apply Rule H KEEP ruling via jobs.with_git: close J2155 and J2164 done, mark 033 vo done, land VO evidence, and clear J2165",
+      "remaining_action": "Done: J2164 KEEP ruling applied; J2155 closed done, 033 vo done, J2165 shot list cleared",
       "kind": "review",
       "urgent": 2,
       "rerouted_from": {
@@ -181836,15 +181851,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-05T08:04Z",
+        "at": "2026-11-05T08:05Z",
         "by": "gemini",
-        "note": "Wrote jobs/reviews/J2164/REVIEW.md and updated 033 production-status.md and J2155_VO_REVIEW_v01.md"
+        "note": "Applied Rule H KEEP: closed J2155 done, marked 033 vo done, landed VO evidence, cleared J2165"
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2164/REVIEW.md"
     },
     {
       "id": "J2165",
@@ -181852,7 +181868,7 @@
       "needs": "mini",
       "repo": "owb",
       "body": "Conditional successor to J2155. J2164 must explicitly accept VO and clear J2155 before this starts; a completed review alone is not acceptance. Evidence PR502, commit 76284eba93. Use locked script v02 and accepted uranus_vo_v01 take/Scribe timing (611.4s) or the explicitly approved replacement. Write timed per-row shot list, provenance/search needs, DATA/WHO/WHEN/FACT/SCALE, all chapter number objects, no adjacent full-frame code graphics, native motion where required, Orbit Omni-only, film-own awe/explain music prompt with Pace and NOT list, and SFX plan. Preserve locked spoken lines. No generation or credit spend in this job. Chief owns any protected approval.",
-      "ref": "",
+      "ref": "jobs/reviews/J2164/REVIEW.md",
       "film": "033",
       "stage": "shots",
       "after": "J2155",
@@ -181874,9 +181890,14 @@
           "at": "2026-11-05T00:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T08:05Z",
+          "by": "gemini",
+          "what": "review J2164 KEEP: J2155 VO explicitly accepted (uranus_vo_v01, 611.4s); J2165 cleared to start"
         }
       ],
-      "remaining_action": "Write timed shot list and music brief after Chief accepts the J2155 narration",
+      "remaining_action": "Write timed shot list and music brief from locked script v02 and accepted uranus_vo_v01 (611.4s, J2164 KEEP)",
       "kind": "review",
       "rerouted_from": {
         "needs": "any",

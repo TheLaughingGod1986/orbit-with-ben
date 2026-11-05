@@ -12,9 +12,10 @@
 | Gate | `npm run gate:episode` **PASS** (VO / Gemini Veo allowed) |
 | Script review | `npm run review:script` **PASS 95.2 / 100** on locked `uranus_21_year_winter_script_master_v02.md` (1,290 spoken words / 1,347 reviewer words, ~9.0 min, 6 chapters; subscribe beat line 6 at 43%) |
 | Sources | 15 / 15 MUST QUOTE rows **VERIFIED** live in `01_Script/SOURCES.md` + `01_Script/CLAUDE_QUOTE_CHECK_v01.md` |
-| VO | Queued (`kind: vo`, `--film 033 --stage vo`) from locked `uranus_21_year_winter_script_master_v02.md` |
+| VO | **DONE** (`J2155` / `J2164` KEEP, `02_Voiceover/uranus_vo_v01.wav`, SHA-256 `3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460`, `611.40 s` / `10:11.4`, `-23.3 dB` mean, `-20.22 LUFS`, `-3.77 dBTP`; review: `jobs/reviews/J2164/REVIEW.md`) |
+| Shot list | Open (`J2165`, cleared to start after `J2164` explicit VO acceptance) |
 | CG | pending (Vertex Veo / Omni Orbit-only, after VO + shot list) |
-| Runtime target | 8–9 min (~9.0 min) |
+| Runtime target | `10:11.4` (`611.40 s` locked VO from `1,290` spoken words) |
 | Shorts | Standalone Short `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*) public 3 Nov 2026 — **461 views, 6 likes on day 1**; two new Shorts (incl. Test A opening Short) after master |
 
 ## Blockers
@@ -22,7 +23,8 @@
 - [x] Topic lock + neighbour pass (10 education/space videos at 1.24M–7.63M views in `TOPIC_OPPORTUNITY_SCORE.md`) + Pre-build vidIQ signed (`J2148`)
 - [x] Script v02 ≥ 90 (`review:script` PASS 95.2/100 on `uranus_21_year_winter_script_master_v02.md`, 1,290 spoken words)
 - [x] Direct quote check on `01_Script/SOURCES.md` + `CLAUDE_QUOTE_CHECK_v01.md` (15/15 PASS)
-- [ ] VO take (`vo_take.py` from `uranus_21_year_winter_script_master_v02.md`)
+- [x] VO take (`vo_take.py` from `uranus_21_year_winter_script_master_v02.md` — `uranus_vo_v01.wav`, `611.40 s`, accepted in `J2164` / `jobs/reviews/J2164/REVIEW.md`)
+- [ ] Timed shot list + music brief (`J2165`)
 - [ ] Stills locked before Veo/Omni spend
 
 ## `npm run review:script` & `npm run gate:episode` (J2148, 4 Nov 2026)
