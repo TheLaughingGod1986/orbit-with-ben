@@ -101249,6 +101249,16 @@
           "at": "2026-11-05T13:51Z",
           "by": "claude",
           "what": "acting Chief: Ben OK'd S2/S5/S6 v07 on the board; released to do the swaps"
+        },
+        {
+          "at": "2026-11-05T23:27Z",
+          "by": "gemini",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J1100"
+        },
+        {
+          "at": "2026-11-05T23:27Z",
+          "by": "gemini",
+          "what": "approved by Ben: swap S2 emwQsPxnRGM (027 equator) to earth_equator_weight_v07 after Ben watch v07"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101280,17 +101290,6 @@
       "remaining_action": "Waiting on Ben's watch of S2/S5/S6 v07 (Ready for OK, awaits_ben). Swap each only after his OK; no OK by air-morning 10:30 -> v01 stays scheduled.",
       "awaits_ben": [
         {
-          "what": "swap S2 emwQsPxnRGM (027 equator) to earth_equator_weight_v07 after Ben watch",
-          "file": "OWB UAT/earth_equator_weight_v07/earth_equator_weight_v07_PHONE.mp4",
-          "version": "v07",
-          "due": "2026-11-22T20:00Z",
-          "airs": "2026-11-23T11:30Z",
-          "ifNot": "v01 stays scheduled; no swap",
-          "title": "027 equator weight v07",
-          "number": "S2",
-          "type": "short"
-        },
-        {
           "what": "swap S5 jJ5LkFGyzLI (028 Gliese 710 scale) to 028_short_fri04_scale_v07 after Ben watch",
           "file": "OWB UAT/028_short_fri04_scale_v07/028_short_fri04_scale_v07_PHONE.mp4",
           "version": "v07",
@@ -101312,7 +101311,20 @@
           "number": "S6",
           "type": "short"
         }
-      ]
+      ],
+      "approved_from": {
+        "what": "swap S2 emwQsPxnRGM (027 equator) to earth_equator_weight_v07 after Ben watch",
+        "file": "OWB UAT/earth_equator_weight_v07/earth_equator_weight_v07_PHONE.mp4",
+        "version": "v07",
+        "airs": "2026-11-23T11:30Z",
+        "title": "027 equator weight v07",
+        "number": "S2",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J1100",
+        "askId": "J1100.1",
+        "okAt": "2026-11-05T12:52Z"
+      }
     },
     {
       "id": "J1101",
