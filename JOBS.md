@@ -85,6 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2195 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J2197 | mini | open | – | – | chief · Chief: J2038 follow-on: capacity probe producer + ENV flip + 2h watch |  |
 | J2198 | any | open | – | – | 032 picture · review · 032 J2089: review corrected fire stills and regenerated process pixels | 347c55feeb |
+| J2199 | mini | open | – | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
 
 Recently finished:
 
