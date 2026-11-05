@@ -181207,10 +181207,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T10:37Z",
+      "eta": "2026-11-05T12:37Z",
       "created_by": "claude",
       "created_at": "2026-11-04T22:19Z",
       "result": "",
@@ -181274,6 +181274,11 @@
           "at": "2026-11-05T08:33Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T10:37Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "031/032 Shorts slots around the new Wednesday long slot",
@@ -181287,7 +181292,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T10:37Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2148",
