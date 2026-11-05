@@ -1,5 +1,5 @@
 {
-  "next_id": 2200,
+  "next_id": 2201,
   "jobs": [
     {
       "id": "J0001",
@@ -184397,6 +184397,34 @@
       ],
       "remaining_action": "Apply Chief h47 checklist writes on uAomPaOBrM8; evidence; no schedule change",
       "kind": "studio"
+    },
+    {
+      "id": "J2200",
+      "title": "HOS 009: build tested tranche-2 Flow mint runner (no generation)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief h47: build and test a HOS009 tranche-2 Flow mint runner BEFORE any generation. PR408 tab-reuse is merged (e908c3e2). Do NOT run or lightly patch _mint_flow_v04_tranche1.py.\n\nRequirements (from J2033_PREFLIGHT.md / J2026):\n- Consume only approved v05 rows in TRANCHE2_SCOPE_J2026.json (20 rows).\n- Mint parents P02:10_how_high and P03:07_ball_to_moon first; continuation refs from named parent clips.\n- Write GENERATED/PENDING_REVIEW — never auto-KEEP; no perceptual UAT self-PASS.\n- Enforce: writer lock; fresh account/balance; exact Veo Quality x1 price evidence each batch; pending-charge accounting; full remaining-cap reservation; 3000-credit floor; batches <=5 rows / 1500 credits; <=3 takes/row; hard cap 6000; preserve >=3000 after full remaining cap and other reservations.\n- Use shared OWB cdp_tabs.reuse_page (already on main via PR408).\n- Versioned outputs, receipts, spend ledger, per-row technical checks, independent generated vs KEEP, hash-verified NAS copies.\n- Detached runs with log/.done; no duplicate process.\n- Unit/regression tests with zero submissions; check_all PASS; open PR for Chief system review before J2033 resumes generation.\n\nGBP0 / zero Flow credits in this job. No YouTube/Buffer/schedule. When the tested runner PR is ready, park for Chief; J2033 remains blocked until that PASS.\n",
+      "ref": "",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T09:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:21Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Implement+test tranche2 runner PR; zero spend; park for Chief before J2033 generates",
+      "kind": "video"
     }
   ],
   "focus": [],

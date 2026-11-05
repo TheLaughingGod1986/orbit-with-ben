@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2197 | mini | open | – | – | chief · Chief: J2038 follow-on: capacity probe producer + ENV flip + 2h watch |  |
 | J2198 | any | open | – | – | 032 picture · review · 032 J2089: review corrected fire stills and regenerated process pixels | 347c55feeb |
 | J2199 | mini | open | – | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
+| J2200 | mini | open | – | – | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
 
 Recently finished:
 
