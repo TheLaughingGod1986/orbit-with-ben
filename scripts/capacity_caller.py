@@ -227,7 +227,10 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
         # Recollect identity, resources, account/model/capability probes and
         # board/process leases on EVERY canonical Git retry.
         kwargs = {}
-        if serial_only or role == "macbook" or (evidence_root / "peer.json").exists():
+        # A Mini-only rollout has no MacBook peer yet (J2197, 5 Nov 2026: requiring peer.json for every serial tick
+        # would have stopped all serial work). Peer evidence is required once the MacBook is in (its role, or a
+        # peer.json present); the MacBook's ordinary queue claims are already exclusive.
+        if role == "macbook" or (evidence_root / "peer.json").exists():
             peer = evidence_tools.private_document(evidence_root, "peer.json")
             if (not dispatch_capacity.fresh(peer, clock())
                     or peer.get("transport_approval_ref") != config.get("transport_approval_ref")

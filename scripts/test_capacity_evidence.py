@@ -435,5 +435,24 @@ class Evidence(unittest.TestCase):
         self.assertEqual(plan["proposals"], [])
 
 
+class ReviewBinding(unittest.TestCase):
+    """Chief, 5 Nov 2026 (J2197): only capacity/dispatch/relay/queue code is bound to the reviewed commit."""
+
+    def test_unrelated_changes_keep_the_review_but_bound_code_does_not(self):
+        import subprocess, tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = pathlib.Path(tmp)
+            git = lambda *a: subprocess.run(["git", "-C", str(repo), *a], check=True, capture_output=True, text=True).stdout.strip()
+            git("init", "-q"); git("config", "user.email", "t@x"); git("config", "user.name", "t")
+            (repo / "scripts").mkdir(); (repo / "scripts" / "jobs.py").write_text("v1\n"); (repo / "AGENTS.md").write_text("a\n")
+            git("add", "."); git("commit", "-qm", "reviewed"); reviewed = git("rev-parse", "HEAD")
+            (repo / "AGENTS.md").write_text("b\n"); (repo / "scripts" / "queue_eta.py").write_text("x\n")
+            git("add", "."); git("commit", "-qm", "unrelated")
+            self.assertEqual(evidence.reviewed_installation(repo, reviewed), reviewed)
+            (repo / "scripts" / "jobs.py").write_text("v2\n"); git("commit", "-qam", "bound")
+            with self.assertRaises(ValueError):
+                evidence.reviewed_installation(repo, reviewed)
+
+
 if __name__ == "__main__":
     unittest.main()
