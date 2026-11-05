@@ -166663,10 +166663,10 @@
       "stage": "edit",
       "after": "J2217",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T21:32Z",
+      "eta": "2026-11-05T23:32Z",
       "created_by": "codex",
       "created_at": "2026-11-03T18:57Z",
       "result": "",
@@ -166855,6 +166855,11 @@
           "at": "2026-11-05T21:23Z",
           "by": "chief",
           "what": "reopened: J2253 verified J2217 five-point FIX on HOS PR #428 b78dbe19 (jobs/reviews/J2253/REVIEW.md)"
+        },
+        {
+          "at": "2026-11-05T21:32Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "J2217 repairs recipe; then J1881 scopes production; J2241 additionally needs verified moving-video input",
@@ -166873,7 +166878,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/428"
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/428",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T21:32Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1882",
