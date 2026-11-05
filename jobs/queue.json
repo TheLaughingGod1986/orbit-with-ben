@@ -188908,13 +188908,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-05T21:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-05T20:11Z",
-      "result": "parked for Chief: CONDITION SATISFIED (jobs/reviews/J2252/REVIEW.md, commit 87e88ed530) — verified J2213 six-insert Flow Veo 3.1 Quality 720p x1 mint completion on HOS PR #435 (c693b4f4): 600 Flow credits <=1200 cap on Ultra benoats@googlemail.com (UI 15390->14840, 009 reserve intact, GBP0), all 6 local+NAS 720p silent plates hash-matched with 100% unique frames and 0 freezes (short_c_s06_t01 4.35-7.87s recommended for clean post-hand shade window), J2201 cancelled under HOS #180 6655551386, all 11 existing NAS plates + locked VO B (0f109926...) / C (5b5d84e5...) + J1004 (00b1e653) + OWB PR #513 (17b2ac5550) verified. Only elected Chief may release a verified hold: run jobs.py reopen J2169 --agent chief --note 'J2252 verified J2213 six-insert 720p Flow mint on PR #435 c693b4f4 (jobs/reviews/J2252/REVIEW.md)' --git and close J2252.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T20:11Z",
@@ -188965,6 +188965,11 @@
           "at": "2026-11-05T21:54Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: CONDITION SATISFIED (jobs/reviews/J2252/REVIEW.md, commit 87e88ed530) — verified J2213 six-insert Flow Veo 3.1 Quality 720p x1 mint completion on HOS PR #435 (c693b4f4): 600 Flow credits <=1200 cap on Ultra benoats@googlemail.com (UI 15390->14840, 009 reserve intact, GBP0), all 6 local+NAS 720p silent plates hash-matched with 100% unique frames and 0 freezes (short_c_s06_t01 4.35-7.87s recommended for clean post-hand shade window), J2201 cancelled under HOS #180 6655551386, all 11 existing NAS plates + locked VO B (0f109926...) / C (5b5d84e5...) + J1004 (00b1e653) + OWB PR #513 (17b2ac5550) verified. Only elected Chief may release a verified hold: run jobs.py reopen J2169 --agent chief --note 'J2252 verified J2213 six-insert 720p Flow mint on PR #435 c693b4f4 (jobs/reviews/J2252/REVIEW.md)' --git and close J2252."
+        },
+        {
+          "at": "2026-11-05T21:58Z",
+          "by": "chief",
+          "what": "reopened: Chief closing verified condition check after J2169 reopen"
         }
       ],
       "remaining_action": "Elected Chief: release J2169 hold on verified J2213 PR #435 (c693b4f4) and close J2252",
@@ -188972,13 +188977,6 @@
       "recheck_of": "J2169",
       "due": "2026-11-05T21:11:48+00:00",
       "due_kind": "condition-verification",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-05T21:54Z",
-        "by": "gemini",
-        "note": "Step 3/3 complete: J2252 verification finished (87e88ed530); parking for elected Chief to reopen J2169"
-      },
       "rerouted_from": {
         "needs": "any",
         "for": "",
