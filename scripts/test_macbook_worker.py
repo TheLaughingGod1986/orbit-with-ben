@@ -196,6 +196,16 @@ class AllAgents(unittest.TestCase):
             self.assertEqual(mw.agent_cmd("claude", "P")[:2], ["/bin/claude", "-p"])
             self.assertIsNone(mw.agent_cmd("grok", "P"))
 
+    def test_a_failed_cli_is_paused_and_skipped(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "DOWN", pathlib.Path(d) / "down.json"), \
+                mock.patch.object(mw, "STATE", pathlib.Path(d)):
+            until = mw.mark_down("cursor", now=T0)
+            self.assertEqual(mw.usable(["codex", "cursor"], now=T0), ["codex"])
+            self.assertEqual(mw.usable(["codex", "cursor"], now=T0 + dt.timedelta(hours=3)), ["codex", "cursor"])
+            self.assertIn("cursor", mw.down_agents(T0))
+            self.assertTrue(until.startswith("2026-10-28T14:00"))
+
     def test_installed_honours_macbook_agents_and_what_exists(self):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/x" if a in ("codex", "claude") else None):
             self.assertEqual(mw.installed(), ["codex", "claude"])
