@@ -175742,10 +175742,10 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-05T09:21Z",
+      "eta": "2026-11-05T11:21Z",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
       "result": "",
@@ -175804,6 +175804,11 @@
           "at": "2026-11-05T09:21Z",
           "by": "chief",
           "what": "h47: cleared for='codex' for Chief system ruling on tab-reuse/runner"
+        },
+        {
+          "at": "2026-11-05T09:21Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief review HOS PR408, then provide tested tranche2 runner before generation",
@@ -175819,7 +175824,15 @@
         "status": "open",
         "by": ""
       },
-      "escalated_at": "2026-11-04T19:27Z"
+      "escalated_at": "2026-11-04T19:27Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T09:21Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2034",
