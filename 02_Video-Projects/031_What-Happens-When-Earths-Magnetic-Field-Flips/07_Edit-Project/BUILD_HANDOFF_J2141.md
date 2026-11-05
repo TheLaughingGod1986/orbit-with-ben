@@ -1,5 +1,61 @@
 # J2141 resumable picture build — 4 Nov 2026
 
+Worker: cursor (this checkpoint). Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, ninth run)
+
+Preserve **1/3**. New branch `worker/J2141-field-v01` from main. PR #539
+(`worker/J2141-opening-v01`) is still open and is **not** in this branch.
+Poledrift, flip, the 3,000 km depth ruler and the 1905 Pontfarein stamp stay
+on that PR. This branch adds `code_graphics.py field` and four row graphics,
+1920×1080 / 25 fps:
+
+- R11 strata, 99.12–111.40 s (file 12.28 s): younger bands point north, older
+  bands point south, gold line at `780,000 YEARS AGO` (SOURCES rows 4 and 5).
+  The shot-list scale `> 2× modern humans (~300,000 years)` is not drawn.
+  Those words are not in the locked line, so the label would fail WORDS.
+  Needles are a schematic, not a measured rock section.
+- R10 matuyama_map, 94.92–98.88 s (file 3.96 s): labelled blobs `MANCHURIA`
+  and `JAPAN` with sample dots on the spoken names (SOURCES row 4). Not a
+  traced coastline. The WHO card ends as "Japan" starts.
+- R45 extinction_check alpha, 462.40–469.00 s (file 6.60 s): illustrative
+  reversal stripes against three extinction marks and `NO LINK` (SOURCES
+  row 2). Not a dated extinction chart. Lower third stays clear for the
+  existing FACT card. Needs the fossil plate underneath.
+- R46 grid_shield, 472.22–479.98 s (file 7.76 s): one satellite and three
+  pylons under a shield arc. Storm strokes stop left of the arc. Labels
+  `SATELLITES`, `POWER GRIDS` and `SOLAR STORMS` each hold under 4 s. Starts
+  at "hardening" so an SDO plate can lead the row.
+
+`CODE_FIELD_v01.json` records cues, source rows, paths and hashes.
+`CODE_FIELD_TECHNICAL_CHECK_v01.json` records hash matches, error-free full
+decode, 1920×1080, 25 fps, yuv420p or argb, and exact durations. Opaque mean
+luma is about 44–59. The alpha overlay starts transparent. Static stills
+inspected, including `CONTACT_v01.jpg` (the encoder's 75% preview frames;
+the 780,000 label is on the later strata frames). No motion, audio or
+composite review. No KEEP, PASS or stage approval.
+
+Media: `/Users/benjaminoats/_desk/J2141-field-v01/` (about 4.2 MB). Reproduce
+into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py field --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Detached `J2141-field-v01` finished exit 0. Log and completion:
+`/Users/benjaminoats/_desk/logs/J2141-field-v01.log` and `.done`. No second
+copy. £0. No archive search. The `field` dispatch in `code_graphics.py` sits
+on the same line as PR 539's `opening` dispatch; keep both when merging.
+
+Remaining: wider harvest, timeline, dynamo, belts, hubble_saa, sat_safe, saa,
+the rest of the triptych, paleo, multipole geometry, the physical Mars
+comparison, poles_map, aurora, the R41 ISS limb, composites and full QA.
+Once PR 539 lands, DSCOVR `GSFC_20171208_Archive_e000678` is already at two
+uses (rows 1 and 2); poles_map needs a different Earth plate. Source-ID and
+sourced-simulation gate conflicts below still need Chief. No Ben action.
+
+## Earlier checkpoint
+
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
 ## Continuation checkpoint (5 Nov, seventh run)
