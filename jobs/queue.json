@@ -167746,13 +167746,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T09:23Z",
-      "eta": "2026-11-05T11:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T21:54Z",
-      "result": "",
+      "result": "h47: condition NOT satisfied. J1755 still needs Ben OK for R2 watch-object upload (master cf1561c2 -> hos-008-v03-j1755). Irreversible external write; no upload performed. Hold refreshed type=ben check_at 2026-11-06T12:00Z. £0.",
       "history": [
         {
           "at": "2026-11-03T21:54Z",
@@ -167763,6 +167763,11 @@
           "at": "2026-11-05T09:23Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T09:24Z",
+          "by": "chief",
+          "what": "done: h47: condition NOT satisfied. J1755 still needs Ben OK for R2 watch-object upload (master cf1561c2 -> hos-008-v03-j1755). Irreversible external write; no upload performed. Hold refreshed type=ben check_at 2026-11-06T12:00Z. £0."
         }
       ],
       "remaining_action": "Verify readiness: Finish PR401 and restore browser watch delivery after explicit R2 upload scope approval; verify media range read",
