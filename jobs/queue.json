@@ -188526,7 +188526,7 @@
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
-      "result": "Capability hold: no fresh demonstrated moving_video_input; Gemini latest probe failed video. Also dependent on J1881 approval; no generation authorized.",
+      "result": "parked for Chief dependency: gated on J1881 (do NOT merge HOS #411+#428 here). Capability fallback applied 2026-11-05T22:46:41Z probe (audio PASS, moving_video FAIL): retakes authorized on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when capable probe passes, else Ben finished-film watch (h22 pattern). Timed moving_video recheck at 2026-11-06T01:20:00Z cleared.",
       "history": [
         {
           "at": "2026-11-05T18:52Z",
@@ -188537,23 +188537,28 @@
           "at": "2026-11-05T20:49Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-06T01:20:00Z"
+        },
+        {
+          "at": "2026-11-05T22:51Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-12-31T00:00:00Z"
+        },
+        {
+          "at": "2026-11-05T22:51Z",
+          "by": "chief",
+          "what": "capability fallback: cleared required_capabilities/moving_video hold; retakes authorized on hash/frame-count/still-sheet; gated on J1881 only"
         }
       ],
-      "remaining_action": "Verify moving-video capability and J1881 scope approval, then live Flow balance/price before bounded retakes",
+      "remaining_action": "After J1881: Flow retakes with hash/frame-count/still-sheet verify (capability fallback); motion at J2243/Ben watch",
       "kind": "video",
-      "required_capabilities": [
-        "moving_video_input"
-      ],
+      "required_capabilities": [],
       "taskKeys": [
         "HOS:008"
       ],
       "hold": {
-        "type": "capability",
-        "condition": "Fresh successful moving-video perception probe required before assignment: Gemini 19:17:49Z probe failed video and expired20:17:49Z; Codex/Cursor have no demonstrated video input. Recheck immediately on capability event; retain J1881 dependency.",
-        "check_at": "2026-11-06T01:20:00Z",
-        "requires": [
-          "moving_video_input"
-        ]
+        "type": "dependency",
+        "condition": "Waiting for J1881 (HOS #411+#428 remain parked for Chief merge — do NOT merge those PRs under this ruling). Fresh gemini probe 2026-11-05T22:46:41Z: audio_input PASS, moving_video_input FAIL; no agent has fresh moving_video_input. Chief authorizes J2241 retakes on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when a capable probe passes, else at Ben's finished-film watch (h22 pattern).",
+        "check_at": "2026-12-31T00:00:00Z"
       }
     },
     {
