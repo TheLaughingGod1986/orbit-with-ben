@@ -110946,13 +110946,18 @@
           "at": "2026-11-05T21:17Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed; Titan S6 only per PR558"
+        },
+        {
+          "at": "2026-11-05T21:21Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: source hash matches 2218c817; locked VO on NAS; version v11"
         }
       ],
-      "remaining_action": "Read Chief S6 scope and locate the accepted silent clip, locked VO and current Short",
+      "remaining_action": "Build the Titan S6 opening from the accepted silent clip and assemble the unused version",
       "due": "2026-11-10T10:30:00Z",
       "kind": "assembly",
       "taskKeys": [
-        "OWB:028"
+        "OWB:030"
       ],
       "escalated_at": "2026-10-29T15:50Z",
       "superseded_holds": [
@@ -110973,11 +110978,11 @@
         }
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-05T21:17Z",
+        "at": "2026-11-05T21:21Z",
         "by": "cursor",
-        "note": "claimed; Titan S6 only per PR558"
+        "note": "source hash matches 2218c817; locked VO on NAS; version v11"
       }
     },
     {
