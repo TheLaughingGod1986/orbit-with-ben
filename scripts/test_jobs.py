@@ -315,3 +315,29 @@ class HandBack(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class OnlyBensCalls(unittest.TestCase):
+    """Ben, 5 Nov 2026: "Nothing should need me apart from watching the video." J1755 had parked a private watch-copy
+    upload for him."""
+
+    def test_a_needs_ben_block_that_isnt_his_call_goes_to_the_chief(self):
+        d = queue(("mini", "deliver", {}))
+        j = jobs.do_next(d, "codex", {"mini"}, T0)
+        jobs.do_block(j, "codex", "needs Ben OK to upload approved master to existing R2 watch store", T0 + MIN)
+        self.assertTrue(j["result"].startswith("parked for Chief:"))
+        self.assertNotEqual((j.get("hold") or {}).get("type"), "ben")
+
+    def test_his_watch_money_and_logins_still_reach_him(self):
+        for reason in ("needs Ben to watch v04 and give timestamp notes", "needs Ben OK to spend £12 on credits",
+                       "waiting for Ben: Studio sign-in expired"):
+            d = queue(("mini", "x", {}))
+            j = jobs.do_next(d, "codex", {"mini"}, T0)
+            jobs.do_block(j, "codex", reason, T0 + MIN)
+            self.assertFalse(j["result"].startswith("parked for Chief"), reason)
+
+    def test_a_job_for_ben_must_be_one_of_his_calls(self):
+        with self.assertRaises(ValueError):
+            queue(("ben", "Approve the R2 upload of the v03 master", {}))
+        self.assertEqual(queue(("ben", "Watch 032 v04 (final watch)", {}))["jobs"][0]["needs"], "ben")
+        self.assertFalse(jobs.ben_gate("upload to the watch store"))

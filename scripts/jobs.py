@@ -124,6 +124,9 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
     requirements = workflow.capability_names(requires)
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
+    if needs == "ben" and not ben_gate(title + " " + body):
+        raise ValueError("A job for Ben must be his watch of a finished cut, real money or his own login/voice/device "
+                         "(AGENTS.md, 5 Nov 2026); give anything else to an agent or the Chief")
     if kind and kind not in routing.KINDS:
         raise ValueError(f"kind must be one of {', '.join(routing.KINDS)}")
     if model and model not in routing.MODELS:
@@ -187,9 +190,25 @@ def ordered(data: dict, at: dt.datetime | None = None) -> list:
     return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest))
 
 
+# What only Ben does (AGENTS.md "Ben only watches finished videos"; enforced 5 Nov 2026 after J1755 parked a private
+# watch-copy upload for him): watch a finished cut, spend real money, or his own login, voice or device.
+BEN_GATE = re.compile(
+    r"\bwatch(?!\s*(?:store|endpoint|object|copy|url|link|page))|\bUAT\b|final (?:ok|watch|pass)|"
+    r"£\s*(?!0(?:\.0+)?\b)\d|\$\s*[1-9]|top-?up|\bbuy\b|purchase|subscri|new paid|"
+    r"sign[- ]?in|log[- ]?in|password|2fa|two-factor|his (?:own )?(?:voice|account|device)|wake the mac", re.I)
+NOT_BEN = "(not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+
+
+def ben_gate(text: str) -> bool:
+    return bool(BEN_GATE.search(str(text or "")))
+
+
 def set_wait(job, agent, at, hold, action="", recheck=""):
     if not str(agent or "").strip():
         raise ValueError("A non-empty --agent is required")
+    if hold.get("type") == "ben" and not ben_gate(str(hold.get("condition") or "")):
+        raise ValueError("Ben only watches finished cuts, spends real money and does his own logins (AGENTS.md, 5 Nov 2026). "
+                         "Park this for the Chief instead: jobs.py block <id> --reason \"parked for Chief: ...\"")
     requirements = workflow.capability_names(hold.get("requires"))
     if hold.get("type") == "capability" and not requirements:
         raise ValueError("A capability hold needs --requires with the actual missing tool capability")
@@ -537,6 +556,10 @@ def do_done(job: dict, agent: str, result: str, at: dt.datetime, ref: str = "") 
 
 def do_block(job: dict, agent: str, reason: str, at: dt.datetime) -> None:
     _mine(job, agent)
+    asks_ben = bool(re.search(r"(?:needs?|waiting for|await(?:s|ing)?|park(?:ed)? for) Ben\b|\bBen(?:'s)? (?:OK|yes|approval)", reason, re.I))
+    if asks_ben and not job.get("awaits_ben") and job.get("needs") != "ben" and not ben_gate(reason):
+        # Ben, 5 Nov 2026: only his watch, money and his own logins need him; the Chief decides the rest.
+        reason = "parked for Chief: " + reason + " " + NOT_BEN
     job.update(status="blocked", result=reason, eta="")
     if not workflow.is_review(job) and not job.get("hold"):
         is_ben = bool(job.get("awaits_ben") or job.get("needs") == "ben" or re.search(r"(?:needs?|waiting for) Ben\b",reason,re.I))
