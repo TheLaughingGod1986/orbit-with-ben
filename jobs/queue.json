@@ -155607,9 +155607,14 @@
           "at": "2026-11-03T21:54Z",
           "by": "relay",
           "what": "condition verification queued: J1902"
+        },
+        {
+          "at": "2026-11-05T09:24Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-11-06T12:00:00Z"
         }
       ],
-      "remaining_action": "Finish PR401 and restore browser watch delivery after explicit R2 upload scope approval; verify media range read",
+      "remaining_action": "Await Ben OK for R2 watch-object upload hos-008-v03-j1755; then resume J1755 delivery",
       "kind": "chief",
       "urgent": 23,
       "progress": {
@@ -155623,10 +155628,12 @@
         "HOS:008"
       ],
       "hold": {
-        "type": "input",
-        "condition": "2/3 complete: h35 master and restored iCloud UAT verified; PR391 merged, J1213 superseded, J0912 reopened. PR401 records reconciliation. Browser watch endpoint redirects 302 but R2 media returns 403. Automatic approval review rejected replacement watch-object upload because J1755 says no upload. Needs explicit approval for approved master cf1561c2 to existing R2 watch store, new ID hos-008-v03-j1755; no YouTube upload. Elected Chief resumes delivery and range-read verification; preserve copies.",
-        "check_at": "2026-11-03T22:54:25+00:00",
-        "recheck_task": "J1902"
+        "type": "ben",
+        "condition": "h47: needs Ben OK to upload approved master cf1561c2 to existing R2 watch store as hos-008-v03-j1755 (watch endpoint 302/media 403). Not YouTube. No upload until Ben yes. Auto-review previously rejected.",
+        "check_at": "2026-11-06T12:00:00Z",
+        "last_recheck": "J1902",
+        "checked_at": "2026-11-05T09:24:01+00:00",
+        "checked_by": "chief"
       }
     },
     {
