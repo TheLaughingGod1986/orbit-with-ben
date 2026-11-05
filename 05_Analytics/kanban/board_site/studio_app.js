@@ -23,7 +23,16 @@
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
-  const ch = v => v.channel === "HOS" ? "HOS" : "Orbit";
+  // Channels come from board.channels (channels/*/channel.json via board_publish); these two are the fallback for an
+  // older board.json. A third channel shows up here, in the filters and on its tiles with no page change.
+  const DEFAULT_CHANNELS = [{ slug: "owb", label: "OWB", name: "Orbit With Ben", short: "Orbit", home: true },
+                            { slug: "hos", label: "HOS", name: "History of Science", short: "HOS" }];
+  const channelList = () => ((board || {}).channels || []).length ? board.channels : DEFAULT_CHANNELS;
+  const homeChannel = () => channelList().find(c => c.home) || channelList()[0];
+  const chInfo = label => channelList().find(c => c.label === String(label || "").toUpperCase()) || homeChannel();
+  const repoLabel = repo => (channelList().find(c => c.slug === repo) || homeChannel()).label;
+  const chName = label => chInfo(label).name;
+  const ch = v => chInfo(v.channel).short || chInfo(v.channel).label;
   function watchFormat(v) {
     const w=v.watch||{};
     if(['long','short'].includes(w.type)) return w.type;
@@ -47,7 +56,7 @@
   function thumb(v) {
     // YouTube has no thumbnail for a private or scheduled video (404): ask only for public ones.
     const id = isLive(v) && v.youtube.videoId;
-    const fallback = `<span class="tile ${v.channel === "HOS" ? "hos" : "owb"}">${esc(v.number || "")}</span>`;
+    const fallback = `<span class="tile ${esc(chInfo(v.channel).slug)}">${esc(v.number || "")}</span>`;
     return `<div class="thumb">${id ? `<img loading="lazy" alt="" src="https://i.ytimg.com/vi/${esc(id)}/mqdefault.jpg" onerror="this.remove()" onload="if(this.naturalWidth<=120)this.remove()">` : ""}${fallback}</div>`;
   }
 
@@ -630,7 +639,7 @@
     return {vs,ready,producing,jobs:all,week:scheduledThisWeek(vs,now),fresh:operationalFresh,running:activeRunning,queued,held,status,startupUnconfirmed};
   }
   function featureVideo(b, now) {
-    const s=overviewModel(b,now), focus=(((b.owb||{}).focus)||[]).map(x=>String(x).includes(':')?String(x):'OWB:'+x);
+    const s=overviewModel(b,now), focus=(((b.owb||{}).focus)||[]).map(x=>String(x).includes(':')?String(x):homeChannel().label+':'+x);
     const rank=v=>{
       const ready=forBen([v]).length>0, blocked=blockedVideo(v), f=forecastView(v,now), p=progressStats(v), active=currentProduction(v);
       const scoped=unconfirmedCut(v), finalQA=!scoped&&(active.some(m=>m.id==='qa') || p.rows.filter(m=>m.id!=='qa').every(completeStage));
@@ -658,7 +667,7 @@
     const stageLabel=ready?'Ready for your UAT':changes?'Requested corrections':m ? m.label+(stageView(m).text==='Awaiting approval'?' approval':'') : 'Unconfirmed';
     const action=ready?((v.watch||{}).url?'Use Watch & review below to open this cut.':'Review delivery incomplete: no watch link is recorded.') : changes?'Your notes need correction and fresh QA. Open the video for linked work and responsibility.':m ? stageView(m).tone==='held'?blockerModel(v,m).action:nextAction(m) : 'The next production step has not been confirmed.';
     return `<a class="featured-video" href="${detailLink(v)}" aria-label="Open ${esc(v.title||'video')} production details">
-      <div class="featured-heading">${thumb(v)}<div><h3>${esc(v.title||'Untitled video')}</h3><p>${v.channel==='HOS'?'History of Science':'Orbit With Ben'} · ${kind(v)}</p></div><span class="chev" aria-hidden="true">›</span></div>
+      <div class="featured-heading">${thumb(v)}<div><h3>${esc(v.title||'Untitled video')}</h3><p>${esc(chName(v.channel))} · ${kind(v)}</p></div><span class="chev" aria-hidden="true">›</span></div>
       ${ready?'<p class="featured-count">Finished cut awaiting your review</p>':changes?'<p class="featured-count">Changes requested · revision progress not recorded</p>':scoped?'<div class="featured-progress-heading"><span>Cut progress</span><b>Unconfirmed</b></div><p class="featured-count">Related project milestones do not measure this cut’s completion.</p>':`<div class="featured-progress-heading"><span>Milestones completed</span><b>${p.percent}%</b></div>
       <div class="hero-track" role="progressbar" aria-label="Milestones completed, not production time" aria-valuenow="${p.done}" aria-valuemin="0" aria-valuemax="9"><i style="width:${p.percent}%"></i></div>
       <p class="featured-count">${p.done} of 9 milestones complete${p.unknown?` · ${p.unknown} unconfirmed`:''}</p>`}
@@ -676,7 +685,7 @@
     const videos=uniqueVideos(((b.tracker||{}).videos)||[]), keys=new Set();
     const add=job=>{
       for(const key of Array.isArray(job.taskKeys)?job.taskKeys:[]) if(typeof key==='string'&&/^(OWB|HOS):/.test(key)) keys.add(key);
-      if(/^\d+$/.test(String(job.film||''))) keys.add((job.repo==='hos'?'HOS':'OWB')+':'+String(job.film).padStart(3,'0'));
+      if(/^\d+$/.test(String(job.film||''))) keys.add(repoLabel(job.repo)+':'+String(job.film).padStart(3,'0'));
       for(const v of videos) if(v.key&&(v.jobs||[]).some(x=>x.id===job.id)) keys.add(v.key);
     };
     add(j);
@@ -687,7 +696,7 @@
     }
     const rows=[...keys].map(key=>({key,video:videos.find(v=>v.key===key)}));
     const label=row=>{
-      const channel=row.key.startsWith('HOS:')?'History of Science':'Orbit With Ben';
+      const channel=chName(row.key.split(':')[0]);
       return row.video?`${row.video.title||row.key} · ${channel} · ${kind(row.video)}`:`${channel} · ${row.key.split(':')[1]} · title not recorded`;
     };
     return rows.length?{label:rows.slice(0,2).map(label).join(' / ')+(rows.length>2?` · +${rows.length-2} more videos`:''),count:rows.length,keys:rows.map(r=>r.key)}
@@ -877,7 +886,9 @@
     g.working.extra = studio.length;
     const segs = [["all", "All"], ["working", "Working"], ["queued", "Waiting"], ["postlive", "Post-live"], ["backlog", "Backlog"]]
       .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length + (g[id].extra || 0)}</small>`}</button>`).join("");
-    const chips = [["ch", "all", "Both"], ["ch", "OWB", "Orbit"], ["ch", "HOS", "HOS"], ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
+    const chs = channelList();
+    const chips = [["ch", "all", chs.length === 2 ? "Both" : "All"], ...chs.map(c => ["ch", c.label, c.short || c.label]),
+                   ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
     const list = (items, limit) => items.slice(0, limit).map(v => videoProductionRow(v, Date.now())).join("")
       + (items.length > limit ? `<p class="meta">${items.length - limit} more: pick Orbit or HOS, Longs or Shorts to narrow the list.</p>` : "");
@@ -929,7 +940,7 @@
     const notes = (v.notes || []).map(n => `<li class="${n.done ? "done" : ""}">${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("");
     const flags = (v.flags || []).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
     return `${back}<div class="video-heading">${thumb(v)}<div><h1 class="uat-title">${esc(v.title)}</h1>
-      <p class="meta">${v.channel==='HOS'?'History of Science':'Orbit With Ben'} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
+      <p class="meta">${esc(chName(v.channel))} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
       </div></div>
       ${links.length ? `<div class="btns">${links.join("")}</div>` : ""}
       ${productionDetail(v, Date.now())}

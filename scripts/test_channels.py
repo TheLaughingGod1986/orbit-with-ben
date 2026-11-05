@@ -51,6 +51,9 @@ class Loader(unittest.TestCase):
                 finally:
                     channels.key_re.cache_clear()
 
+    def test_each_channel_names_its_waiting_line(self):
+        self.assertEqual((channels.wip_line("owb"), channels.wip_line("hos")), ("next", "next_hos"))
+
     def test_repo_path_prefers_env_then_existing_folder(self):
         with tempfile.TemporaryDirectory() as t, mock.patch.dict("os.environ", {"HOS_REPO": ""}):
             (pathlib.Path(t) / "YouTube" / "history-of-science").mkdir(parents=True)
@@ -61,7 +64,14 @@ class Loader(unittest.TestCase):
 
 class NoNewChannelNames(unittest.TestCase):
     """Engine files already moved to channels.py must not grow new literal channel regexes."""
-    MOVED = ("jobs.py", "kanban_snapshot.py", "progress24.py", "video_progress.py", "workflow_state.py")
+    MOVED = ("jobs.py", "kanban_snapshot.py", "progress24.py", "video_progress.py", "workflow_state.py",
+             "workflow_handoffs.py")
+
+    def test_the_board_page_reads_channels_from_board_json(self):
+        app = (HERE.parent / "05_Analytics" / "kanban" / "board_site" / "studio_app.js").read_text()
+        self.assertIn("board.channels", app)
+        self.assertNotRegex(app, r"'History of Science':'Orbit With Ben'|=== \"HOS\" \? \"hos\" : \"owb\"")
+        self.assertNotIn('["ch", "OWB", "Orbit"]', app)
 
     def test_moved_files_use_the_loader(self):
         for name in self.MOVED:

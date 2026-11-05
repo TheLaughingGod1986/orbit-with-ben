@@ -2,14 +2,41 @@
   "slug": "owb",
   "label": "OWB",
   "name": "Orbit With Ben",
+  "short": "Orbit",
   "home": true,
   "order": 1,
-  "youtube": {"handle": "@OrbitWithBen"},
-  "repo": {"url": "https://github.com/TheLaughingGod1986/orbit-with-ben.git", "env": "OWB_REPO",
-           "checkouts": ["orbit-with-ben"]},
+  "youtube": {
+    "handle": "@OrbitWithBen"
+  },
+  "repo": {
+    "url": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
+    "env": "OWB_REPO",
+    "checkouts": [
+      "orbit-with-ben"
+    ]
+  },
   "title_match": "\\bOWB\\b|orbit with ben",
-  "wip": {"limit": 5, "line": "next"},
-  "stages": ["topic", "script", "sources", "vo", "shots", "picture", "edit", "thumbs", "upload"],
-  "pipeline": {"kind": "film_status", "path": "02_Video-Projects/*/status.json"},
-  "uat_dir": {"env": "OWB_UAT_DIR", "icloud": "OWB UAT"}
+  "wip": {
+    "limit": 5,
+    "line": "next"
+  },
+  "stages": [
+    "topic",
+    "script",
+    "sources",
+    "vo",
+    "shots",
+    "picture",
+    "edit",
+    "thumbs",
+    "upload"
+  ],
+  "pipeline": {
+    "kind": "film_status",
+    "path": "02_Video-Projects/*/status.json"
+  },
+  "uat_dir": {
+    "env": "OWB_UAT_DIR",
+    "icloud": "OWB UAT"
+  }
 }

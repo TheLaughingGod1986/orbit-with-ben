@@ -109,6 +109,11 @@ def film_keys(text: str) -> set[str]:
     return {ch.upper() + ":" + no for ch, no in key_re().findall(str(text or ""))}
 
 
+def wip_line(slug: str) -> str:
+    """The key in jobs/WIP.json that holds this channel's waiting line (rule G)."""
+    return get(slug)["wip"].get("line") or f"next_{slug}"
+
+
 def repo_path(slug: str, home_dir: pathlib.Path | None = None) -> pathlib.Path:
     """The channel's checkout: its env var, else the first ~/YouTube/<name> that exists, else the first name."""
     r = get(slug)["repo"]

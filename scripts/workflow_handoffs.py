@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import workflow_state as workflow
+import channels
 
 
 def records(films):
@@ -21,9 +22,12 @@ WIP = Path(__file__).resolve().parents[1] / 'jobs' / 'WIP.json'
 
 
 def waiting_films(path=WIP):
-    """OWB films parked in the idea list by Ben's WIP limit (G, 4 Nov 2026): not in production, so not orphans."""
+    """Home-channel films parked in its waiting line by Ben's WIP limit (G, 4 Nov 2026): not in production, so not
+    orphans. The line's name comes from the channel file (channels/<slug>/channel.json wip.line)."""
     try:
-        return {f.split(':', 1)[1] for f in json.loads(Path(path).read_text()).get('next', []) if str(f).startswith('OWB:')}
+        home = channels.get(channels.home())
+        line, prefix = home['wip'].get('line', 'next'), home['label'] + ':'
+        return {f.split(':', 1)[1] for f in json.loads(Path(path).read_text()).get(line, []) if str(f).startswith(prefix)}
     except (OSError, ValueError, AttributeError):
         return set()
 
