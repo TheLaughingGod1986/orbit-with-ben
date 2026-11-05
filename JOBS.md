@@ -50,7 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
 | J1919 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1752 |  |
-| J1925 | any | open | – | – | review · verify condition for J1753 |  |
+| J1925 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1753 |  |
 | J1932 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0979 |  |
 | J1965 | any | open | – | – | review · verify condition for J1879 |  |
 | J2015 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1754 |  |
