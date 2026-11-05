@@ -183969,7 +183969,7 @@
     {
       "id": "J2194",
       "title": "HOS 010: decide exact missing-plate production scope for J2172",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J2194), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J2194 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J2194 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J2194.\n5. Finish this job with the verdict in --result.\n\nJ2172 inventory HOS PR424, commit8b58cda3: read jobs/evidence/J2172/READINESS.md and INVENTORY.json. Twelve of fourteen required plate identities missing; only two code graphics found across local/canonical NAS film roots; no open named010 producer found. GBP0 bounded decision only: name exact existing approved assets/producer or queue specific no-spend row-mapping/readiness work then separately priced guarded production scope. Check rule8 subject/surprise and robin/pigeon/gull mapping mismatches. Preserve accepted J1894 A/C v02 hashes and J1004 A1 timing; no locked VO edits. No unchanged broad archive search or generic timed retries. Chief separately authorizes any generation route, exact takes, cap and named producer; no spending from this job. Keep J2172 blocked1/3 until approved sources/mapping available, then reopen explicitly. Conditional4/7Dec11:30, watch-ready1Dec18:00, longPublic prerequisite retained. No awaits absent passing finished cuts. Evidence PR review/merge follows current rules, no media approval or live changes. Link HOS:010.",
       "ref": "J2172",
@@ -183994,11 +183994,25 @@
           "at": "2026-11-05T08:28Z",
           "by": "claude",
           "what": "rule H: Chief review moved to the review lane"
+        },
+        {
+          "at": "2026-11-05T08:33Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Name an approved producer or scope twelve missing moving plates and mapping fixes",
       "due": "2026-11-06T18:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2195",
