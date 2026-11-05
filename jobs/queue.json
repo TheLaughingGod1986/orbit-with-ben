@@ -111731,10 +111731,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-05T20:43Z",
+      "eta": "2026-11-05T21:03Z",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
       "result": "",
@@ -111993,6 +111993,11 @@
           "at": "2026-11-05T20:43Z",
           "by": "codex",
           "what": "reopened: Exact-source ruling recorded in PR558 / 1999db82ca: S6 accepted solely for gated J1199 assembly, S5 FIX f0diff 0.58<1.50 and correction branch unsuccessful. Reopen only for Chief closeout, no generation."
+        },
+        {
+          "at": "2026-11-05T20:43Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief: record exact-source decision on revalidated J2167 KEEP (jobs/reviews/J2167/REVIEW.md b9f3d050c9, 64f <=2.700s opening) and reopen J1199",
@@ -112033,7 +112038,15 @@
       ],
       "model": "flow-veo-3.1",
       "urgent": 1,
-      "escalated_at": "2026-11-05T18:19Z"
+      "escalated_at": "2026-11-05T18:19Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T20:43Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1209",
