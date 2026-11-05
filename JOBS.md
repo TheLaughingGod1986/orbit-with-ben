@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2202 | mini | open | – | – | assembly · URG-HOS-1: monthly Studio Reach window capture + studio_ctr archive |  |
 | J2203 | mini | open | – | – | assembly · HOS-2026-11-E1: write anomaly-first Short open rules into studio Shorts gates |  |
 | J2204 | mini | open | – | – | assembly · HOS-2026-11-E2: encode long first-30s proof-first + early DATA/SCALE rules |  |
+| J2205 | mini | open | – | – | assembly · URG-OWB-1: gate_upcoming --stage NAS cache for upcoming Shorts |  |
 
 Recently finished:
 
