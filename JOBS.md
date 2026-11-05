@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2231 | any | claimed | macbook | 2026-11-05T20:16Z | script · HOS longs after 3 Dec: lock topics for Thu 10 Dec and Thu 17 Dec (Darwin & Wallace is scripted) and queue their scripts |  |
 | J2233 | mini | open | – | – | for codex · review · Review multi-channel plan: code and phases (Codex) |  |
 | J2234 | mini | open | – | – | for gemini · review · `gemini-argon` · Review multi-channel plan: risk and cut-over (Gemini) |  |
-| J2235 | mini | open | – | – | review · Cleanup audit: orbit-with-ben engine and tools (dead code, duplicates, bugs) |  |
+| J2235 | mini | open | – | – | for gemini · review · `gemini-argon` · Cleanup audit: orbit-with-ben engine and tools (dead code, duplicates, bugs) |  |
 | J2236 | mini | open | – | – | review · Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs) |  |
 | J2237 | any | open | – | – | review · Verify condition for J0958 |  |
 | J2238 | mini | open | – | – | chief · Chief: resolve 033 shots orphan-review |  |
