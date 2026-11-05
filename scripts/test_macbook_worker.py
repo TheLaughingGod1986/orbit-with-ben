@@ -231,6 +231,13 @@ class AllAgents(unittest.TestCase):
             self.assertEqual(mw.run(), 0)
             self.assertEqual(one.call_count, 1)
 
+    def test_checkouts_are_the_workers_own_never_bens(self):
+        with mock.patch.dict(os.environ, {"HOS_REPO": str(mw.HOME / "YouTube" / "History Of Science")}):
+            self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), mw.WORKER_DIR / "history-of-science")
+        inside = mw.WORKER_DIR / "history-of-science"
+        with mock.patch.dict(os.environ, {"HOS_REPO": str(inside)}):
+            self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), inside)
+
     def test_installed_honours_macbook_agents_and_what_exists(self):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/x" if a in ("codex", "claude") else None):
             self.assertEqual(mw.installed(), ["codex", "claude"])

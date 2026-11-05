@@ -139,7 +139,13 @@ const pub = v({key: 'pub', lane: 'progress', youtube: {videoId: 'abcdefghijk', p
 const priv = v({key: 'priv', lane: 'progress', youtube: {videoId: 'bcdefghijkl', privacy: 'private', state: 'scheduled'}});
 assert.deepEqual(t.inProgress([pub, priv]).map(x => x.key), ['priv']);
 const gg = t.videoGroups([pub, priv]);
-assert.deepEqual([gg.queued.map(x => x.key), gg.done.map(x => x.key)], [['priv'], ['pub']]);
+assert.deepEqual([gg.queued.map(x => x.key), gg.done.map(x => x.key), gg.postlive.map(x => x.key)], [['priv'], [], ['pub']]);
+// Post-live lane (Ben, 5 Nov 2026): on YouTube (live or scheduled) with work still open; Done once nothing is left.
+const sched = v({key: 'sched', lane: 'done', youtube: {videoId: 'cdefghijklm', privacy: 'private', state: 'scheduled'}, jobs: [{id: 'J8', status: 'blocked'}]});
+const doneLive = v({key: 'quiet', lane: 'done', youtube: {videoId: 'defghijklmn', privacy: 'public', state: 'live'}, jobs: [{id: 'J7', status: 'done'}]});
+const pl = t.videoGroups([sched, doneLive]);
+assert.deepEqual([pl.postlive.map(x => x.key), pl.done.map(x => x.key)], [['sched'], ['quiet']]);
+assert(t.renderTab('videos', {tracker: {videos: [sched]}}, NOW).includes('Post-live: checks and improvements'));
 assert(t.thumb(pub).includes('i.ytimg.com') && !t.thumb(priv).includes('i.ytimg.com'));
 // Credit bars: a plan allowance or the month's refill makes a bar; a % pool keeps its reset date.
 const flow = t.poolMeter('flow', {unit: 'credits', latest: {left: 20870, at: new Date(NOW).toISOString()}}, {tiers: {flow: [{name: 'Google AI Ultra $200 tier', allow: 25000, current: true}]}}, NOW);
@@ -281,7 +287,7 @@ const publishedDetail=t.productionDetail(publicMissing,NOW);
 assert(publishedDetail.includes('Published on YouTube')&&publishedDetail.includes('Recorded production history'));
 assert(!publishedDetail.includes('role="progressbar"')&&!publishedDetail.includes('progress-number'));
 assert(publishedDetail.includes('Unconfirmed'),'unknown history stays unknown, not changed to complete');
-assert(t.videoGroups([publicMissing]).done.some(x=>x.key==='published'));
+assert(t.videoGroups([publicMissing]).postlive.some(x=>x.key==='published'));  // live with a follow-up job: Post-live lane
 assert.equal(t.videoGroups([publicMissing]).working.length,0);
 assert(t.videoProductionRow(v({key:'unfinished'}),NOW).includes('0%'),'active production still uses recorded milestone counts');
 console.log('Published-video regression checks OK');
