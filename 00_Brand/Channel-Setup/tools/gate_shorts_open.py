@@ -38,6 +38,25 @@ Warnings:
   9. first VO word starts after 0.15 s                 (24 Oct 2026 — silencedetect on VO/mix)
  10. gap from last word to end > 1.5 s                 (24 Oct 2026 — post-VO tail hold)
 
+HOS-2026-11-E1 only (Chief h47, 5 Nov 2026) — the six new Test B Shorts on HOS films
+008, 009 and 010. Auto-on when this repo is HOS and the file path contains /008_,
+/009_ or /010_ (or hos_008 / hos_009 / hos_010). `--experiment hos-2026-11-e1` forces
+it; `--experiment off` skips it. Other Shorts are unchanged. These are extra FAILs:
+
+  E1. duration outside 22.0–25.15 s (target 22–25 s)
+  E2. spoken word 4 ends after 2.0 s, or the open is "In <year>,"
+      or a bare biographer name (J1004's "In one minute" / "in one second" scale
+      line is not a year dateline; locked words are not rewritten here)
+  E3. shot 1→2 outside 1.8–2.5 s, shot 2→3 at or after 4.5 s, or any plate held
+      over 3.5 s inside the first 8 s
+  E4. a VO pause over 0.25 s inside 0–5 s
+  E5. payoff_start_s missing or before 70% of the runtime
+  E6. loop tail 1.2 s or longer
+
+J1004 (HOS PR #366) still owns the words: atempo ≤ 1.06 and zero word changes.
+Sentence 1 may keep running to 2.85 s (010 Short A, Option A1). The picture cut
+is still 1.8–2.5 s. A locked line that fails E2 goes back to the script lane.
+
 Orbit detection is a colour/shape heuristic (matte-orange body + black visor holding
 cream eyes). It is calibrated on the 10 Sep frames (Orbit ≥ 0.004 · world ≤ 0.0003) and
 it always writes a contact sheet; a human still eyeballs the 0 s frame before upload.
@@ -140,6 +159,34 @@ META_PROMISES = (
     "did you know",
     "wait for it",
 )
+# HOS-2026-11-E1 (Chief h47, 5 Nov 2026): anomaly-first opens on the six Test B
+# Shorts for films 008–010. Off everywhere else. See the module docstring.
+E1_ID = "hos-2026-11-e1"
+E1_DUR_LO = 22.0
+E1_DUR_HI = 25.0
+E1_DUR_SLACK = 0.15  # encode rounding above the 25 s target
+E1_WORD4_BY = 2.0
+E1_CUT1_LO = 1.8
+E1_CUT1_HI = 2.5
+E1_CUT2_BEFORE = 4.5
+E1_HOLD_MAX = 3.5
+E1_HOLD_WINDOW = 8.0
+E1_PAUSE_MAX = 0.25
+E1_PAUSE_WINDOW = 5.0
+E1_PAYOFF_FRAC = 0.70
+E1_TAIL_MAX = 1.2
+# "In 1752" / "In seventeen fifty-two". Not "In one minute" (J1004 scale line).
+E1_YEAR_OPEN = re.compile(
+    r"^\s*in\s+(?:the\s+year\s+)?(?:\d{3,4}|seventeen|eighteen|nineteen)\b",
+    re.IGNORECASE,
+)
+# A bare personal name as word 1. "Franklin's kite" is a possessive plus the object, so it is allowed.
+E1_BARE_NAME_OPEN = re.compile(
+    r"^\s*(?:benjamin|isaac|marie|edward|charles|albert|louis|jenner|newton|curie|"
+    r"franklin|alvarez|pasteur|darwin|faraday|maxwell|einstein|walter|luis)\b(?!'s\b)",
+    re.IGNORECASE,
+)
+E1_PATH = re.compile(r"(?:^|/)(?:008|009|010)_|hos_00[89]\b|hos_010\b", re.IGNORECASE)
 
 
 # ----------------------------------------------------------------------------- ffmpeg
@@ -325,8 +372,8 @@ def frame0_diff_0_1_5s(path: Path, dur: float | None = None) -> float:
     return round(val, 2)
 
 
-def first_cut_s(path: Path, dur: float | None = None, scan_s: float = SCDET_SCAN_S) -> float | None:
-    """First scene cut in the central picture band via ffmpeg scdet, or None if no cut occurs in the scan window."""
+def scene_cuts(path: Path, dur: float | None = None, scan_s: float = SCDET_SCAN_S) -> list[float]:
+    """Scene cuts in the central picture band via ffmpeg scdet. Times over 0.10 s, rounded to 0.01 s."""
     if dur is None:
         dur = duration_s(path)
     limit = min(dur, scan_s)
@@ -336,8 +383,13 @@ def first_cut_s(path: Path, dur: float | None = None, scan_s: float = SCDET_SCAN
         "-an", "-f", "null", "-",
     ]
     err = run(cmd).stderr.decode(errors="replace")
-    cuts = [float(m.group(1)) for m in re.finditer(r"lavfi\.scd\.time:\s*([0-9.]+)", err) if float(m.group(1)) > 0.10]
-    return round(cuts[0], 2) if cuts else None
+    return [round(float(m.group(1)), 2) for m in re.finditer(r"lavfi\.scd\.time:\s*([0-9.]+)", err) if float(m.group(1)) > 0.10]
+
+
+def first_cut_s(path: Path, dur: float | None = None, scan_s: float = SCDET_SCAN_S) -> float | None:
+    """First scene cut in the central picture band, or None if no cut occurs in the scan window."""
+    cuts = scene_cuts(path, dur, scan_s)
+    return cuts[0] if cuts else None
 
 
 def first_cut_verdict(cut_s: float | None, dur: float) -> list[str]:
@@ -694,6 +746,170 @@ def level_verdict(path: Path) -> tuple[list[str], dict]:
     return fails, info
 
 
+def _norm_open(text: str) -> str:
+    return re.sub(r"\s+", " ", text.lower().replace("\u2019", "'").replace("\u2018", "'").replace("`", "'")).strip()
+
+
+def _word_text(word: dict) -> str:
+    return str(word.get("word") or word.get("text") or "").strip()
+
+
+def _word_time(word: dict, *keys: str) -> float | None:
+    for key in keys:
+        raw = word.get(key)
+        if isinstance(raw, (int, float)):
+            return float(raw)
+    return None
+
+
+def e1_flag(experiment: str | None) -> str:
+    """'on', 'off', 'auto', or 'bad' for an unknown id."""
+    flag = (experiment or "").strip().lower()
+    if flag in {"", "auto"}:
+        return "auto"
+    if flag in {"off", "none", "0"}:
+        return "off"
+    if flag in {E1_ID, "e1", "hos-e1"}:
+        return "on"
+    return "bad"
+
+
+def e1_applies(path: Path, experiment: str | None) -> bool:
+    """True for a forced E1 check, or a HOS 008–010 path when the flag is left on auto."""
+    flag = e1_flag(experiment)
+    if flag == "on":
+        return True
+    if flag != "auto":
+        return False
+    if getattr(channel, "SLUG", "") != "hos":
+        return False
+    return E1_PATH.search(str(path).replace("\\", "/")) is not None
+
+
+def e1_duration_verdict(dur: float) -> list[str]:
+    if dur < E1_DUR_LO or dur > E1_DUR_HI + E1_DUR_SLACK:
+        return [f"experiment E1: duration {dur:.2f}s outside {E1_DUR_LO:.0f}–{E1_DUR_HI:.0f}s"]
+    return []
+
+
+def e1_opening_text(spoken: str | None, meta: dict, words: list[dict]) -> str:
+    toks = [_word_text(w) for w in words if _word_text(w)]
+    if toks:
+        return " ".join(toks[:12])
+    if spoken and spoken.strip():
+        return spoken.strip()
+    raw = meta.get("spoken")
+    return raw.strip() if isinstance(raw, str) else ""
+
+
+def e1_open_verdict(text: str, words: list[dict]) -> list[str]:
+    """Words 1–4 are the physical contradiction by 2.0 s. Year datelines and bare name opens fail."""
+    fails: list[str] = []
+    if not text.strip():
+        fails.append("experiment E1: no spoken words to check the open (pass --spoken or a words file)")
+    else:
+        norm = _norm_open(text)
+        if E1_YEAR_OPEN.match(norm):
+            fails.append(
+                "experiment E1: opening is an 'In <year>,' dateline; words 1–4 must be the physical contradiction"
+            )
+        elif E1_BARE_NAME_OPEN.match(norm):
+            fails.append(
+                "experiment E1: opening leads with a biographer's name; start on the physical contradiction before 0:03"
+            )
+    timed = [w for w in words if _word_text(w) and _word_time(w, "end", "e") is not None]
+    if len(timed) < 4:
+        fails.append(
+            f"experiment E1: need timestamps for spoken words 1–4 (word 4 must end by {E1_WORD4_BY:.1f}s)"
+        )
+    else:
+        end4 = _word_time(timed[3], "end", "e")
+        assert end4 is not None
+        if end4 > E1_WORD4_BY:
+            fails.append(f"experiment E1: word 4 ends at {end4:.2f}s > {E1_WORD4_BY:.1f}s")
+    return fails
+
+
+def e1_cut_verdict(cuts: list[float], dur: float) -> list[str]:
+    """Shot 1→2 in 1.8–2.5 s, shot 2→3 before 4.5 s, no plate held over 3.5 s in the first 8 s."""
+    fails: list[str] = []
+    cut1 = cuts[0] if cuts else None
+    if cut1 is None or cut1 < E1_CUT1_LO or cut1 > E1_CUT1_HI:
+        shown = "none" if cut1 is None else f"{cut1:.2f}s"
+        fails.append(
+            f"experiment E1: shot1→shot2 must land between {E1_CUT1_LO:.1f}s and {E1_CUT1_HI:.1f}s (measured {shown})"
+        )
+    cut2 = next((c for c in cuts[1:] if cut1 is None or c > cut1 + 0.05), None)
+    if cut2 is None or cut2 >= E1_CUT2_BEFORE:
+        shown = "none" if cut2 is None else f"{cut2:.2f}s"
+        fails.append(f"experiment E1: shot2→shot3 must land before {E1_CUT2_BEFORE:.1f}s (measured {shown})")
+    window = min(dur, E1_HOLD_WINDOW)
+    bounds = [0.0] + [c for c in cuts if 0.10 < c < window] + [window]
+    for a, b in zip(bounds, bounds[1:]):
+        held = b - a
+        if held > E1_HOLD_MAX + 0.001:
+            fails.append(
+                f"experiment E1: plate held {held:.2f}s > {E1_HOLD_MAX:.1f}s inside the first {E1_HOLD_WINDOW:.0f}s "
+                f"({a:.2f}–{b:.2f}s)"
+            )
+    return fails
+
+
+def _gaps_from_words(words: list[dict]) -> tuple[list[tuple[float, float]], bool]:
+    timed: list[tuple[float, float]] = []
+    for word in words:
+        start, end = _word_time(word, "start", "s"), _word_time(word, "end", "e")
+        if start is None or end is None:
+            continue
+        timed.append((start, end))
+    if len(timed) < 2:
+        return [], False
+    timed.sort()
+    gaps: list[tuple[float, float]] = []
+    if timed[0][0] > 0.02:
+        gaps.append((0.0, timed[0][0]))
+    for (_s1, e1), (s2, _e2) in zip(timed, timed[1:]):
+        if s2 - e1 > 0.02:
+            gaps.append((e1, s2))
+    return gaps, True
+
+
+def e1_pause_verdict(gaps: list[tuple[float, float]], known: bool) -> list[str]:
+    """No VO pause over 0.25 s inside 0–5 s. The tail after the last word is not a pause."""
+    if not known:
+        return ["experiment E1: VO pause check needs word timestamps or a VO stem (0–5s, no pause over 0.25s)"]
+    fails: list[str] = []
+    for start, end in gaps:
+        if end <= 0 or start >= E1_PAUSE_WINDOW:
+            continue
+        length = end - start
+        if length > E1_PAUSE_MAX + 1e-6:
+            fails.append(
+                f"experiment E1: VO pause {length:.2f}s > {E1_PAUSE_MAX:.2f}s inside 0–{E1_PAUSE_WINDOW:.0f}s "
+                f"({start:.2f}–{end:.2f}s)"
+            )
+    return fails
+
+
+def e1_payoff_verdict(meta: dict, dur: float) -> list[str]:
+    raw = meta.get("payoff_start_s", meta.get("payoff_s"))
+    if not isinstance(raw, (int, float)):
+        return ["experiment E1: payoff_start_s missing from the Short meta (must be ≥70% of runtime)"]
+    start = float(raw)
+    floor = E1_PAYOFF_FRAC * dur
+    if start + 1e-6 < floor:
+        return [f"experiment E1: payoff starts at {start:.2f}s < {E1_PAYOFF_FRAC:.0%} of {dur:.2f}s ({floor:.2f}s)"]
+    return []
+
+
+def e1_tail_verdict(tail_gap: float | None) -> list[str]:
+    if tail_gap is None:
+        return [f"experiment E1: loop tail unknown (need the last-word time); must be < {E1_TAIL_MAX:.1f}s"]
+    if tail_gap >= E1_TAIL_MAX:
+        return [f"experiment E1: loop tail {tail_gap:.2f}s ≥ {E1_TAIL_MAX:.1f}s"]
+    return []
+
+
 def duration_verdict(dur: float, length_test: bool = False) -> tuple[list[str], list[str]]:
     """(fails, warns) for the duration. length_test: the one Chief-OK'd 50–60 s test Short (11 Oct 2026)."""
     fail_at, band = (TEST_DUR_FAIL, TEST_DUR_BAND) if length_test else (DUR_FAIL, DUR_BAND)
@@ -707,7 +923,7 @@ def duration_verdict(dur: float, length_test: bool = False) -> tuple[list[str], 
 def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, self_id: str | None = None,
           last: int = LOOKBACK_LAST, length_test: bool = False, report_only: bool = False,
           meta_path: Path | None = None, script_path: Path | None = None, vo_path: Path | None = None,
-          spoken: str | None = None) -> dict:
+          spoken: str | None = None, experiment: str | None = None) -> dict:
     res: dict = {"file": str(path), "air_date": air.isoformat(), "fails": [], "warns": [], "stayed_fails": []}
     dur = duration_s(path)
     res["duration_s"] = round(dur, 2)
@@ -719,6 +935,12 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
     res["fails"] += fails
     res["warns"] += warns
     meta = load_sidecar_meta(path, meta_path)
+    if e1_flag(experiment) == "bad":
+        res["fails"].append(f"unknown experiment {experiment!r}; use hos-2026-11-e1 or off")
+    apply_e1 = e1_applies(path, experiment)
+    if apply_e1:
+        res["experiment"] = E1_ID
+        res["fails"] += e1_duration_verdict(dur)
 
     if not has_audio(path):
         res["audio"] = {"stream": False}
@@ -762,12 +984,31 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
             "use moving footage"
         )
 
-    cut1 = first_cut_s(path, dur)
+    cuts = scene_cuts(path, dur)
+    cut1 = cuts[0] if cuts else None
     res["first_cut_s"] = cut1
     res["stayed_fails"] += first_cut_verdict(cut1, dur)
 
     text = spoken_text_for(path, meta, script_path, spoken)
     res["stayed_fails"] += meta_promise_verdict(text)
+
+    if apply_e1:
+        words = _words_for(path, meta)
+        res["fails"] += e1_open_verdict(e1_opening_text(spoken, meta, words), words)
+        res["fails"] += e1_cut_verdict(cuts, dur)
+        res["fails"] += e1_payoff_verdict(meta, dur)
+        gaps, known = _gaps_from_words(words)
+        if not known:
+            vo_file = find_vo_stem(path, meta, vo_path)
+            if vo_file is not None:
+                src_dur = duration_s(vo_file)
+                gaps = [
+                    (a, b) for a, b in silence_intervals(vo_file)
+                    if not (b >= src_dur - 0.08 and a > 0.2)
+                ]
+                known = True
+        res["fails"] += e1_pause_verdict(gaps, known)
+        res["fails"] += e1_tail_verdict(res.get("tail_gap_s"))
 
     if report_only:
         res["warns"] += [f"[report-only] {m}" for m in res["stayed_fails"]]
@@ -833,6 +1074,8 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("--meta", type=Path, default=None, help="explicit <stem>_meta.json path")
     c.add_argument("--script", type=Path, default=None, help="explicit script/transcript file for meta-promise lint")
     c.add_argument("--vo", type=Path, default=None, help="explicit VO stem path for onset/tail silencedetect")
+    c.add_argument("--experiment", default=None,
+                   help="hos-2026-11-e1 forces the HOS 008-010 anomaly-first gate; off skips the auto check")
 
     a = sub.add_parser("add", help="register a published/scheduled Short from a local file or frame")
     a.add_argument("--id", required=True)
@@ -867,10 +1110,13 @@ def main(argv: list[str] | None = None) -> int:
     lib = load_lib()
 
     if ns.cmd == "check":
+        if e1_flag(ns.experiment) == "bad":
+            print(f"unknown --experiment {ns.experiment!r}; use hos-2026-11-e1 or off", file=sys.stderr)
+            return 2
         air = date.fromisoformat(ns.air_date)
         results = [
             check(p.resolve(), air, ns.days, lib, ns.sheet_dir, ns.id, ns.last, ns.length_test,
-                  ns.report_only, ns.meta, ns.script, ns.vo)
+                  ns.report_only, ns.meta, ns.script, ns.vo, experiment=ns.experiment)
             for p in ns.files
         ]
         if ns.json:
@@ -888,6 +1134,7 @@ def main(argv: list[str] | None = None) -> int:
                     f"motion={r['motion_0_1s']}  f0diff={r.get('frame0_diff_0_1_5s')}  cut1={cut_s}  "
                     f"vo_onset={vo_on}  tail_gap={tail_s}  vo_src={vo_src}  dhash={r['dhash']}"
                     + (f"  visor={r['orbit']['visor_frac']}" if r.get("orbit") else "")
+                    + (f"  experiment={r['experiment']}" if r.get("experiment") else "")
                 )
                 for x in r["fails"]:
                     print(f"   FAIL  {x}")
