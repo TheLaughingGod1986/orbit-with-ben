@@ -77452,10 +77452,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-05T15:06Z",
+      "eta": "2026-11-05T17:06Z",
       "created_by": "refill",
       "created_at": "2026-10-24T18:18Z",
       "result": "",
@@ -77584,6 +77584,11 @@
           "at": "2026-11-05T09:22Z",
           "by": "chief",
           "what": "remaining action: Assemble Short A with danger title + single PHILADELPHIA·1752 overlay; gates; park for review"
+        },
+        {
+          "at": "2026-11-05T15:06Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
@@ -77594,7 +77599,15 @@
       "escalated_at": "2026-11-05T08:34Z",
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
       "remaining_action": "Assemble Short A with danger title + single PHILADELPHIA·1752 overlay; gates; park for review",
-      "due": "2026-11-18T18:00:00Z"
+      "due": "2026-11-18T18:00:00Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T15:06Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0913",
