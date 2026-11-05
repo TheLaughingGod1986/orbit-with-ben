@@ -101128,6 +101128,11 @@
           "at": "2026-11-05T11:48Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Resolved ffmpeg split=4 tail freeze by building s07.mp4 from s00 frames [29..5, 2x4, 0] and using -qp 16 so f0 outside-bbox diff is <0.7 on all three; rendering v07 masters"
+        },
+        {
+          "at": "2026-11-05T11:58Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Fixed bt709/tv color-space match across s00..s07 so raw[0] vs raw[-1] is 0.17 (S2), 0.25 (S5), 0.26 (S6); rendering base+final MP4s and running loop_h43.py"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101149,14 +101154,14 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T11:48Z",
+        "at": "2026-11-05T11:58Z",
         "by": "gemini",
-        "note": "Resolved ffmpeg split=4 tail freeze by building s07.mp4 from s00 frames [29..5, 2x4, 0] and using -qp 16 so f0 outside-b"
+        "note": "Fixed bt709/tv color-space match across s00..s07 so raw[0] vs raw[-1] is 0.17 (S2), 0.25 (S5), 0.26 (S6); rendering base"
       },
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Render S2, S5, S6 v07 with exact 30-frame reverse tail and -qp 16, run loop_h43.py and all 5 gates, listen to finished AACs, and deliver"
+      "remaining_action": "Render S2, S5, S6 v07 base/final MP4s from bt709 picture_raw.mp4, run loop_h43.py and all 5 gates, listen to finished AACs, and deliver"
     },
     {
       "id": "J1101",
