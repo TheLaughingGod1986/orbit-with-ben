@@ -180201,10 +180201,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-05T07:12Z",
-      "eta": "2026-11-05T09:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -180363,6 +180363,11 @@
           "at": "2026-11-05T07:15Z",
           "by": "codex",
           "what": "step 1 of 3 done: Checkpoint e1ac512457: R30 recap, R40 dipole-strength component and R44 duration alpha overlays rendered; hashes/formats/timings/full decode checked, static sheet viewed. Batch exit0, no active render. Full package unfinished; £0."
+        },
+        {
+          "at": "2026-11-05T07:15Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint PR495 worker/J2141-031-picture e1ac512457; preserve 1/3. Three comparison overlays technically checked, 6.7MB outside git. BUILD_HANDOFF_J2141.md records remaining harvest/mechanisms/timeline/R41/composites/QA and source/gate conflicts. tmux J2141-comparisons-v01 completed exit0; /Users/benjaminoats/_desk/logs/J2141-comparisons-v01.log and .done. No KEEP/PASS, £0."
         }
       ],
       "remaining_action": "Continue archive harvest, remaining mechanisms, timeline and composite QA from PR495",
