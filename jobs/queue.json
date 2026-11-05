@@ -1,5 +1,5 @@
 {
-  "next_id": 2201,
+  "next_id": 2202,
   "jobs": [
     {
       "id": "J0001",
@@ -184451,6 +184451,34 @@
       ],
       "remaining_action": "Implement+test tranche2 runner PR; zero spend; park for Chief before J2033 generates",
       "kind": "video"
+    },
+    {
+      "id": "J2201",
+      "title": "HOS 006: GBP0 native1080 existing-media inventory for Short B/C gaps",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief h47 exact next step for HOS006 Short B/C (J2169) after J2191 closed the submitted Vertex route and Flow native1080 was rejected.\n\nGBP0 inventory only — no generation, credit spend, render, upload or schedule.\n\n1. Re-read J2181/J2183/J2184/J2187–J2191 evidence (HOS PR415–422) and BUILD_RULE_v02.json 17 canonical rows.\n2. Search local HOS006 + NAS KEEP/REUSE plates for any native ≥1080p moving sources that could replace the four resolution-gap rows without enlargement >2.35x and without same-stretch terminal reuse that still fails picture_qa after J2179/PR513 checker.\n3. For each of B S01/S04/S05/loop_tail and C S05/S06/S07/loop_tail (and any still-FAIL rows): record exact file path, sha256, native WxH, usable in/out that is ≥10s from any other used start on the same plate OR a truthful matching loop_tail mapping that passes the current checker.\n4. If a complete 17-row existing-media mapping exists: open a records PR and reopen path for J2169 build. If not: write the exact missing plate list (row id, required subject, min resolution, why current candidates fail) — do NOT invent spend authority.\n\nNo Flow/Vertex submissions. Park with the inventory PR or missing-input list for Chief.\n",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T09:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:22Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inventory native≥1080 plates for B/C FAIL rows; records PR or exact missing list; £0",
+      "kind": "assembly"
     }
   ],
   "focus": [],
