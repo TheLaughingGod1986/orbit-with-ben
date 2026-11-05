@@ -539,6 +539,11 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"models not read: {e}")
     board["workflow"] = dispatch_snapshot(board, at)
+    try:  # The channels plugged in (channels/*/channel.json): names, labels and filters on the board come from here
+        board["channels"] = [{k: c.get(k) for k in ("slug", "label", "name", "short", "home")}
+                             for c in channels.all_channels()]
+    except Exception as e:  # noqa: BLE001
+        log(f"channels not read: {e}")
     try:  # Machines: what each one is on and its jobs in 24 h (Ben, 4 Nov 2026); never blocks the board push
         import machines
         queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
