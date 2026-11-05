@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2172 | mini | open | – | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2173 | mini | open | – | – | 032 edit · for gemini · review · `gemini-argon` · OWB locked-long Short: assess Titan Test A as reserve for 27 Nov | J2023 |
 | J2175 | any | open | – | – | 008 edit · chief · HOS 008 Short C: Chief decision on J2170 paper hook lock & 1-sentence VO pickup scope (conditional 2 Dec slot held) | J2170 |
-| J2176 | mini | claimed | codex | 2026-11-05T02:53Z | 032 thumbs · thumb · 032 J2144 FIX: Titan hero crop and clear lander typography |  |
+| J2176 | mini | open | – | – | 032 thumbs · thumb · 032 J2144 FIX: Titan hero crop and clear lander typography |  |
 
 Recently finished:
 
