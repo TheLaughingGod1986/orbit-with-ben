@@ -496,11 +496,13 @@ def pending_chief_reviews(at: dt.datetime) -> list:
     due = workflow.deadlines(data.get("jobs", []))
     capabilities = worker_capabilities()
     leader = acting(at)[1] if any(j.get("required_capabilities") for j in data.get("jobs", [])) else ""
+    from workflow_board import load_tracker
+    nearest = workflow.near_watch(load_tracker())
     return sorted((j for j in data.get("jobs", [])
                    if not workflow.external_hold(j, at) and not workflow.dependency_problem(j, by_id)
                    and not workflow.capability_problem(j, leader, at, capabilities)
                    and (workflow.state(j, by_id, at) == "review" or (workflow.role_job(j) and workflow.state(j, by_id, at) == "queued"))),
-                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at))
+                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest))
 
 
 def due_chief_reviews(items: list, agent: str, at: dt.datetime) -> list:
@@ -1454,6 +1456,8 @@ def run_locked(at: dt.datetime) -> int:
         if added:
             log(f"refill: added {' '.join(added)} from jobs/backlog.json")
         data = read_json(OWB / "jobs" / "queue.json") or {}
+        from workflow_board import load_tracker
+        data["tracker"] = load_tracker()
         selection = workflow.select_dispatch(data, at, leader, up, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
                                              review_ids={j["id"] for j in chief_reviews}, execution=current_execution(at),
                                              exclude=attempted, capabilities=worker_capabilities())

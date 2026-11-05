@@ -182,7 +182,7 @@ class Progress(unittest.TestCase):
     """Ben, 11 Oct 22:09: % done on the board comes from `jobs.py progress <id> --step k --of n`."""
 
     def test_records_steps_and_logs_them(self):
-        d = queue(("mini", "027 fixes", {}))
+        d = queue(("mini", "edit fixes", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)
         jobs.do_progress(j, "cursor", 3, 8, T0 + 10 * MIN, note="grade done")
         self.assertEqual(j["progress"], {"step": 3, "of": 8, "at": "2026-10-07T12:10Z", "by": "cursor", "note": "grade done"})
@@ -208,7 +208,7 @@ class Progress(unittest.TestCase):
         self.assertEqual(j["progress"], baseline)
 
     def test_kept_across_a_release_and_cleared_on_reopen(self):
-        d = queue(("mini", "027 fixes", {}))
+        d = queue(("mini", "edit fixes", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)
         jobs.do_progress(j, "cursor", 1, 4, T0 + MIN)
         jobs.do_release(j, "cursor", "stopping point", T0 + 2 * MIN)
@@ -221,7 +221,7 @@ class Progress(unittest.TestCase):
         self.assertNotIn("progress", j2)
 
     def test_rejects_bad_steps_and_someone_elses_claim(self):
-        d = queue(("mini", "027 fixes", {}))
+        d = queue(("mini", "edit fixes", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)
         for step, of in ((5, 4), (-1, 4), (0, 0)):
             with self.assertRaises(ValueError):
@@ -235,7 +235,7 @@ class Progress(unittest.TestCase):
             jobs.do_progress(j, "cursor", 4, 4, T0)
 
     def test_cli_progress(self):
-        d = queue(("mini", "027 fixes", {}))
+        d = queue(("mini", "edit fixes", {}))
         jobs.do_next(d, "cursor", {"mini"}, T0)
         saved = []
         with tempfile.TemporaryDirectory() as tmp:

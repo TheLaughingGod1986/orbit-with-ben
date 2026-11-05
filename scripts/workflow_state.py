@@ -193,7 +193,31 @@ def recently_released(j, at):
     return bool(last and str(last[0].get("what", "")).startswith("released") and stamp
                 and at - stamp < dt.timedelta(minutes=30))
 
-def order(j, due, focus=(), at=None):
+def near_watch(tracker):
+    """Three unfinished longs with the most completed production milestones.
+
+    Channel-qualified keys prevent HOS/OWB number collisions. UAT and later
+    lanes already have their handoff and must not absorb production priority.
+    """
+    candidates = {}
+    videos = tracker.get("videos", []) if isinstance(tracker, dict) else []
+    for video in videos if isinstance(videos, list) else []:
+        if not isinstance(video, dict) or video.get("type") != "long" or video.get("lane") not in {"upcoming", "progress", "changes"}:
+            continue
+        key = video.get("key", "")
+        if not isinstance(key, str) or not re.fullmatch(r"(?:OWB|HOS):\d{3}", key):
+            continue
+        production = video.get("production")
+        milestones = production.get("milestones") if isinstance(production, dict) else []
+        if not isinstance(milestones, list):
+            continue
+        completed = sum(m.get("state") == "done" for m in milestones if isinstance(m, dict))
+        if completed:
+            candidates[key] = max(candidates.get(key, 0), completed)
+    return tuple(sorted(candidates, key=lambda key: (-candidates[key], key))[:3])
+
+
+def order(j, due, focus=(), at=None, nearest=()):
     at = at or dt.datetime.now(dt.timezone.utc)
     film = j.get("film") or (j.get("handoff") or {}).get("film")
     # Shared/cohort jobs use recorded taskKeys instead of a single film/stage
@@ -203,6 +227,8 @@ def order(j, due, focus=(), at=None):
     production_keys = {key for key in keys if isinstance(key, str) and re.fullmatch(r"(?:HOS|OWB):\d{3}", key)} if isinstance(keys, list) else set()
     if isinstance(film, str) and film.strip():
         production_keys.add(film)
+        if re.fullmatch(r"\d{3}", film):
+            production_keys.add(("HOS" if j.get("repo") == "hos" else "OWB") + ":" + film)
     urgent = j.get("urgent")
     rank = urgent if isinstance(urgent, int) and not isinstance(urgent, bool) else 0
     created = timestamp(j.get("created_at") or j.get("addedAt") or next((h.get("at") for h in j.get("history", []) if h.get("at")), None))
@@ -214,6 +240,7 @@ def order(j, due, focus=(), at=None):
     deadline = due.get(verification) if verification else due.get(j["id"])
     return (1 if recently_released(j, at) else 0, 1 if background else 0,
             deadline.timestamp() if deadline else inf,
+            0 if production_keys.intersection(nearest) else 1,
             0 if urgent else 1, rank if urgent else 0,
             1 if j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I) else 0,
             0 if production_keys.intersection(focus) else 1,
@@ -337,7 +364,7 @@ def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, ex
                     worker = None
             if not worker or not claimable(j, rows, at, worker, chief, execution=execution, capabilities=capabilities):
                 continue
-        candidates.append((order(j, due, data.get("focus") or (), at), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
+        candidates.append((order(j, due, data.get("focus") or (), at, near_watch(data.get("tracker"))), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
     return min(candidates, key=lambda p: p[0])[1] if candidates else None
 
 def snapshot(data, at, chief, workers, choose_worker, active_review=None, review_ids=None, execution=None, include_chief=False, capabilities=None):
