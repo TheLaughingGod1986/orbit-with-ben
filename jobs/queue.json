@@ -183146,10 +183146,10 @@
       "stage": "",
       "after": "J2187",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T06:05Z",
+      "eta": "2026-11-05T08:05Z",
       "created_by": "codex",
       "created_at": "2026-11-05T05:50Z",
       "result": "",
@@ -183158,12 +183158,25 @@
           "at": "2026-11-05T05:50Z",
           "by": "codex",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-05T06:05Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review five-shot native route evidence, canonical mappings and bounded cost proposal",
       "due": "2026-11-07T18:00:00Z",
       "for": "gemini",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T06:05Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2189",
