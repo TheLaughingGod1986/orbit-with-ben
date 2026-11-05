@@ -176023,13 +176023,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T08:58Z",
-      "eta": "2026-11-05T09:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T17:22Z",
-      "result": "",
+      "result": "PARTIAL PASS / enablement gated: PR437+PR477 already merged. Provisioned owner-private capacity root with registration.json (mac-mini limit=2 Codex+Gemini), dispatch.json (approval J2038, queue_root dedicated checkout), queue-checkout isolated from relay. OWB_CAPACITY_ENABLED left OFF — probes.json producer not yet installed; enabling without fresh probes can starve serial. Studio-browser remains single-lane via DENIED_RESOURCES. Successor J2197 queued for probe producer + ENV flip + supervised second-lane tick + 2h watch. Pre-enable resources ~10GiB free / load~5 / mem~0.6GiB. £0.",
       "history": [
         {
           "at": "2026-11-04T17:22Z",
@@ -176050,6 +176050,11 @@
           "at": "2026-11-05T09:01Z",
           "by": "chief",
           "what": "step 3 of 5 done"
+        },
+        {
+          "at": "2026-11-05T09:01Z",
+          "by": "chief",
+          "what": "done: PARTIAL PASS / enablement gated: PR437+PR477 already merged. Provisioned owner-private capacity root with registration.json (mac-mini limit=2 Codex+Gemini), dispatch.json (approval J2038, queue_root dedicated checkout), queue-checkout isolated from relay. OWB_CAPACITY_ENABLED left OFF — probes.json producer not yet installed; enabling without fresh probes can starve serial. Studio-browser remains single-lane via DENIED_RESOURCES. Successor J2197 queued for probe producer + ENV flip + supervised second-lane tick + 2h watch. Pre-enable resources ~10GiB free / load~5 / mem~0.6GiB. £0."
         }
       ],
       "remaining_action": "probes+ENV flip gated; successor J2197 queued",
@@ -176060,7 +176065,8 @@
         "of": 5,
         "at": "2026-11-05T09:01Z",
         "by": "chief"
-      }
+      },
+      "done_ref": "J2197"
     },
     {
       "id": "J2039",
