@@ -111598,9 +111598,14 @@
           "at": "2026-11-05T00:37Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-05T00:40Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Resumed prior 2/3 milestone; exact 3.85s combined source requirement fits 8s. Flow UI reachable; NAS offload found no eligible old scratch. Initial 0/3 was a session-start reporting error."
         }
       ],
-      "remaining_action": "Check exact opening/preroll durations and Flow generation route",
+      "remaining_action": "Generate bounded S5/S6 candidates in Flow and record provenance",
       "due": "2026-10-30T18:00:00Z",
       "kind": "video",
       "superseded_holds": [
@@ -111614,10 +111619,11 @@
         }
       ],
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-05T00:37Z",
-        "by": "codex"
+        "at": "2026-11-05T00:40Z",
+        "by": "codex",
+        "note": "Resumed prior 2/3 milestone; exact 3.85s combined source requirement fits 8s. Flow UI reachable; NAS offload found no el"
       },
       "taskKeys": [
         "OWB:030"
