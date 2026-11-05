@@ -187230,10 +187230,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-05T18:08Z",
+      "eta": "2026-11-05T20:08Z",
       "created_by": "relay",
       "created_at": "2026-11-05T17:17Z",
       "result": "",
@@ -187252,6 +187252,11 @@
           "at": "2026-11-05T17:30Z",
           "by": "macbook",
           "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-05T19:30:00Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-05T18:08Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: After J2210 (£0 v03 plan repair) and Chief's separate HOS 010 Flow moving-plate mint authorization: assemble and gate Shorts A and C",
