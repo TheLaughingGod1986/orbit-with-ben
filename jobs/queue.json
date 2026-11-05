@@ -1,5 +1,5 @@
 {
-  "next_id": 2210,
+  "next_id": 2211,
   "jobs": [
     {
       "id": "J0001",
@@ -182772,7 +182772,7 @@
       "ref": "J2023",
       "film": "010",
       "stage": "edit",
-      "after": "",
+      "after": "J2210",
       "eta_min": 120,
       "status": "blocked",
       "by": "codex",
@@ -182780,7 +182780,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "parked for Chief: J2194 must name approved sources/producer or scope twelve missing moving plate identities and mapping repairs. Evidence HOS PR424; accepted A/C VO hashes retained; blocked1/3. No generation, spend or delivery promise; no generic timed wait.",
+      "result": "Blocked at 1/3 (J2194 FIX -> J2210): HOS PR #424 (ad3c0f4d) inventory verified (2/14 code graphics on disk, 12/14 moving plates missing); awaits J2210 (£0 SHORTS_PICTURE_PLAN_v03 + Part 05 robin/pigeon/gull row-mapping fix) and Chief's separate HOS 010 moving-plate Flow mint authorization",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -182811,9 +182811,14 @@
           "at": "2026-11-05T07:50Z",
           "by": "codex",
           "what": "blocked: parked for Chief: J2194 must name approved sources/producer or scope twelve missing moving plate identities and mapping repairs. Evidence HOS PR424; accepted A/C VO hashes retained; blocked1/3. No generation, spend or delivery promise; no generic timed wait."
+        },
+        {
+          "at": "2026-11-05T10:11Z",
+          "by": "gemini",
+          "what": "scope reviewed in J2194: queued J2210 (£0 v03 row-mapping repair); kept blocked 1/3 awaiting J2210 and Chief HOS 010 moving-plate mint authorization"
         }
       ],
-      "remaining_action": "Await approved moving media and row mapping from Chief scope job J2194",
+      "remaining_action": "After J2210 (£0 v03 plan repair) and Chief's separate HOS 010 Flow moving-plate mint authorization: assemble and gate Shorts A and C",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -182825,7 +182830,12 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Complete J2210 (£0 SHORTS_PICTURE_PLAN_v03 + Part 05 bird row mapping) and Chief's separate HOS 010 Flow moving-plate mint authorization (13 Shorts-parent moving plates or full 010 board after HOS 009 J2033)",
+        "check_at": "2026-11-06T12:00Z"
+      }
     },
     {
       "id": "J2173",
@@ -184324,13 +184334,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T09:58Z",
-      "eta": "2026-11-05T11:58Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T07:49Z",
-      "result": "",
+      "result": "FIX -> J2210 (jobs/reviews/J2194/REVIEW.md): verified HOS PR #424 (ad3c0f4d) inventory (2 £0 code graphics on disk, 12 moving plates missing); queued J2210 (£0 SHORTS_PICTURE_PLAN_v03 Option A1 S01 cut, Short C robin/pigeon/gull split, banner cleanup, code_graphics_v01 paths); kept J2172 blocked 1/3 awaiting J2210 + Chief HOS 010 moving-plate mint authorization; HOS PR #424 ready for Chief merge",
       "history": [
         {
           "at": "2026-11-05T07:49Z",
@@ -184366,9 +184376,19 @@
           "at": "2026-11-05T10:10Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Drafted jobs/reviews/J2194/REVIEW.md: verified PR 424 inventory, Rule 8 & robin/pigeon/gull mapping fixes, and £0+Chief-mint scope"
+        },
+        {
+          "at": "2026-11-05T10:11Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Committed jobs/reviews/J2194/REVIEW.md, queued J2210 (£0), updated J2172 hold"
+        },
+        {
+          "at": "2026-11-05T10:11Z",
+          "by": "gemini",
+          "what": "done: FIX -> J2210 (jobs/reviews/J2194/REVIEW.md): verified HOS PR #424 (ad3c0f4d) inventory (2 £0 code graphics on disk, 12 moving plates missing); queued J2210 (£0 SHORTS_PICTURE_PLAN_v03 Option A1 S01 cut, Short C robin/pigeon/gull split, banner cleanup, code_graphics_v01 paths); kept J2172 blocked 1/3 awaiting J2210 + Chief HOS 010 moving-plate mint authorization; HOS PR #424 ready for Chief merge"
         }
       ],
-      "remaining_action": "Queue bounded £0 HOS 010 row-mapping repair job, update J2172 hold, and close J2194 with FIX scope decision",
+      "remaining_action": "Complete",
       "due": "2026-11-06T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -184382,15 +184402,16 @@
       "model": "gemini-argon",
       "urgent": 14,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-05T10:10Z",
+        "at": "2026-11-05T10:11Z",
         "by": "gemini",
-        "note": "Drafted jobs/reviews/J2194/REVIEW.md: verified PR 424 inventory, Rule 8 & robin/pigeon/gull mapping fixes, and £0+Chief-"
+        "note": "Committed jobs/reviews/J2194/REVIEW.md, queued J2210 (£0), updated J2172 hold"
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "done_ref": "ad3c0f4d"
     },
     {
       "id": "J2195",
@@ -184909,6 +184930,38 @@
       "kind": "qa",
       "urgent": 2,
       "due": "2026-11-05T10:08Z"
+    },
+    {
+      "id": "J2210",
+      "title": "HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Bounded £0 HOS 010 Shorts & Part 05 row-mapping/readiness repair from J2194 (ref J2172, HOS PR #424 commit 8b58cda3 / ad3c0f4d).\n\nDefect:\n1. Short_A (`hos_010_short_A_v02`, SHA-256 `68d88b5b5883f2376bcec29c26d77efea7634d5c7705693f41202ca587b927fb` MP3 / `2488aa8b49beb3a642597e08f30ca53e723fbee00cd21ad8bdc581a9293ff228` WAV): `10_Shorts/SHORTS_PICTURE_PLAN_v02.json` still uses pre-J1004 raw timestamps (`status: blocked_hook_and_missing_plates`, `vo_duration_s: 23.28`) and cuts `S01` (`P1:01_clay_line`) at `2.40s` mid-sentence before `\"dinosaurs.\"` (`2.48-3.28s` raw), pushing `\"dinosaurs.\"` onto `S02` (`P2:01_walter_hammer`). Also `teach_overlay` (`DATA: THE IRIDIUM SPIKE`, `14.2-18.0s`) overlaps `S07` (`code_graphic_010_p4_01_iridium_spike.mp4`, which already renders `ABOUT 30 TIMES`), violating one-label-at-a-time.\n2. Short_C (`hos_010_short_C_v02`, SHA-256 `20432ecd645b28e9fdc051578a284cb2845bd09f3040170b192089b256055b87` MP3 / `ca814ab01ad72fde015b4e157638b5e346d592e5df54cefe97e38969340fcb0c` WAV):\n   - `P5:09_robin` (`8.0s` Quality) is mapped to 3 separate stretches (`S01` `0.00-1.88s`, `S05` `10.42-13.06s`, and `loop_tail` `22.56-23.56s`), violating `picture_qa.py` reuse/window rules, and its `part-05_plates_v02/v03.json` prompt starts with `\"A pigeon struts, then a robin hops...\"` instead of opening immediately on the frame-0 robin + dinosaur skeleton outline (`LEARNINGS.md` Rule 8).\n   - `S05` (`10.42-13.06s`, `use_s: 2.64s`, spoken: `\"the pigeon on the pavement, the robin\"`) and `S06` (`13.06-15.78s`, `use_s: 2.72s`, spoken: `\"in the garden, the gull at the seaside.\"`) — where `13.06s` is the only word boundary in `10.42-15.78s` keeping both cuts in `hos_build_rule_v02.py`'s `[2.50, 3.80] s` body-cut range — are mapped to `P5:09_robin` and `P5:13_window_song` (an indoor/window branch songbird with no gull or seaside), violating `CHANNEL_AUTHORITY.md` (picture matches words).\n3. Both `Short_A` and `Short_C` in `SHORTS_PICTURE_PLAN_v02.json` retain obsolete `\"promoted_long_title\"` and `\"promoted_long_title_window_s\": [9.0, 14.0]` fields alongside `\"full_film_banner\": false`, and mark the 2 existing approved `£0` code graphics (`P4:01_iridium_spike` at `07_Edit-Project/code_graphics_v01/code_graphic_010_p4_01_iridium_spike.mp4`, SHA-256 `f9b504cf26e927d988a55aea58b4b2173660c2188b0ca94561e2c85479c2fd84`; `P5:11_why_survive` at `07_Edit-Project/code_graphics_v01/code_graphic_010_p5_11_why_survive.mp4`, SHA-256 `0e71b03e41d0b16bb92afeb318798f796c06ae9cb78bdb776eba0e4f99940acd`) as `plate_on_disk: false` because `hos_build_rule_v02.py` (`resolve_plate_path()`) did not check `07_Edit-Project/code_graphics_v01/`.\n\nFix (£0, no media generation or VO spend):\n1. In HOS `02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/SHORTS_PICTURE_PLAN_v03.json`:\n   - Preserve accepted `J1894` `v02` VO hashes and `J1004` (HOS PR #366 `00b1e653`) Option A1 timing for `Short_A` (`vo_duration_s: 22.289`, `total_duration_s: 23.289` with `1.000s` loop tail). Set `Short_A:S01` (`P1:01_clay_line`) to `0.000-2.849s` (`use_s: 2.849s`, full Sentence 1 `\"This thin line of clay marks the end of the dinosaurs.\"`), shift `S02..S08` + `loop_tail` to Option A1 timestamps, change status to `blocked_missing_plates`, and move `teach_overlay` (`DATA: THE IRIDIUM SPIKE`) to `13.6-16.2s` over `S06` (or omit in favour of `S07`'s built-in `ABOUT 30 TIMES`) so two labels never overlap on `S07`.\n   - In `Short_C`, keep `P5:09_robin` strictly on `S01` (`0.00-1.88s`) and `loop_tail` (`22.56-23.56s`); map `S05` (`10.42-13.06s`, `\"the pigeon on the pavement, the robin\"`) to `P5:09a_pigeon_pavement` (pigeon strutting on a stone pavement beside a low garden wall where a robin perches on the fence, `8.0s` Fast/Quality); map `S06` (`13.06-15.78s`, `\"in the garden, the gull at the seaside.\"`) to `P5:13a_gull_seaside` (from a coastal garden fence overlooking the sea, a white-and-grey gull wheeling over sunlit chalk cliffs and waves at the seaside, `8.0s` Fast/Quality).\n   - Remove obsolete `\"promoted_long_title\"` and `\"promoted_long_title_window_s\"` fields (`full_film_banner: false`).\n   - Record `P4:01_iridium_spike` and `P5:11_why_survive` (`07_Edit-Project/code_graphics_v01/*.mp4`) as `plate_on_disk: true` with their verified paths and SHA-256 hashes (updating `hos_build_rule_v02.py` `resolve_plate_path()` if needed).\n2. In `07_Edit-Project/parts/part-05_plates_v04.json` and `02_Shot-List/PICTURE_PLAN_v04.json` (`£0` JSON board update only):\n   - Update `P5:09_robin` prompt so frame 0 opens immediately on the robin hopping on the morning garden fence with the faint feathered-dinosaur skeleton outline fading in/out (no pigeon in `P5:09_robin`).\n   - Define `P5:09a_pigeon_pavement` and `P5:13a_gull_seaside` with exact prompts, models, and credit budgets so Chief's subsequent HOS 010 Flow mint authorization has a 100% aligned board.\n\nVerify:\n- Run `00_Brand/Channel-Setup/tools/check_all.sh 02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs` in a clean HOS branch, open a HOS PR, and link `--films HOS:010`. No Flow/Vertex/EL spend from this job.",
+      "ref": "J2194",
+      "film": "010",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T10:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T10:11Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Write SHORTS_PICTURE_PLAN_v03.json and part-05_plates_v04.json (£0: Option A1 S01 cut, robin/pigeon/gull mapping, banner cleanup, code_graphics_v01 paths) and open HOS PR",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "video",
+      "taskKeys": [
+        "HOS:010"
+      ]
     }
   ],
   "focus": [],
