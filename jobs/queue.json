@@ -180864,10 +180864,24 @@
           "at": "2026-11-05T00:31Z",
           "by": "claude",
           "what": "unpinned from Cursor (out of weekly usage to 6 Nov): another panel agent takes Cursor's seat"
+        },
+        {
+          "at": "2026-11-05T00:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Packaging panel (cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2162",
