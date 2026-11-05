@@ -178,8 +178,44 @@ def film_named(title: str) -> bool:
     return bool(re.match(r"\s*\d{3}\b", title) or re.search(r"\b(?:OWB|HOS)[ :]*\d{3}\b", title, re.I))
 
 
+# The MacBook takes Mini jobs that don't need the Mini (Ben, 5 Nov 2026: "Sounds good. Go ahead"; 48 of 49 open jobs
+# were `needs mini` only because files used to live there). Text or code work only: anything touching the NAS,
+# Studio/YouTube, Flow/Chrome, media, renders, listening or watching stays on the Mini.
+MACBOOK_KINDS = {"review", "script", "facts", "listing"}
+MACBOOK_CLIS = {"codex", "gemini", "claude", "cursor"}
+CODE_WORK = re.compile(r"\b(?:encode|rules?|code|tests?|refactor|PR|lint|docs?)\b", re.I)
+# Anywhere in the job: a hard sign it needs the Mini's own files, accounts or tools.
+MINI_ONLY = re.compile(
+    r"\bNAS\b|/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3|png|jpe?g|webp)\b|youtube studio|\bstudio (?:read|sign|"
+    r"checklist|finish)|\bupload(?:ed|s|ing)? (?:to|the|a)\b|\bflow\b|chrome|\bmint\b|ffmpeg|\brender(?:s|ed|ing)?\b|whisper|"
+    r"\bASR\b|launchd|ollama|redis|tailscale|allow-?list|hos desk|icloud|buffer|playlists?|end screens?|youtube", re.I)
+# In the title: work that looks at or makes media, which lives on the Mini.
+MEDIA_WORK = re.compile(r"picture|stills?\b|plates?\b|thumbnail|\bthumbs?\b|footage|audio|listen|\bwatch|capture|harvest|"
+                        r"assembl|\bcuts?\b|frames?\b|voice-?over", re.I)
+NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
+
+
+def macbook_portable(job: dict, data: dict | None = None) -> bool:
+    """A `needs mini` job the MacBook can do as well: text/code only, no Mini-only resource named in it (or in the job
+    it reviews or re-checks)."""
+    if job.get("needs") != "mini" or job.get("required_capabilities") or job.get("for") not in (None, "", *MACBOOK_CLIS) \
+            or job.get("kind") in NOT_PORTABLE_KINDS:
+        return False
+    title = str(job.get("title") or "")
+    fields = ("title", "body", "result", "remaining_action", "action")
+    parent = find(data, job.get("recheck_of") or job.get("review_of") or "") if data else None
+    text = " ".join(str(x.get(k) or "") for x in (job, parent or {}) for k in fields)
+    if parent and MEDIA_WORK.search(str(parent.get("title") or "")):
+        return False
+    return (job.get("kind") in MACBOOK_KINDS or bool(CODE_WORK.search(title))) \
+        and not MEDIA_WORK.search(title) and not MINI_ONLY.search(text)
+
+
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
     chief = agent if workflow.role_job(job) and chief_relay.is_elected_chief(agent, at) else ""
+    if agent == "macbook" and "macbook" in can and macbook_portable(job, data):
+        # Same checks as any claim, with the job seen as a MacBook job; an addressed job runs that agent's CLI there.
+        job = {k: v for k, v in job.items() if k != "for"} | {"needs": "macbook"}
     return workflow.claimable(job, data["jobs"], at, agent, chief, can, chief_relay.current_execution(at), chief_relay.worker_capabilities())
 
 

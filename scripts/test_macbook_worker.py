@@ -244,5 +244,11 @@ class AllAgents(unittest.TestCase):
             self.assertEqual(mw.installed("claude,gemini"), ["claude"])
 
 
+class AddressedJobs(unittest.TestCase):
+    def test_a_job_for_one_agent_runs_that_agents_cli(self):
+        self.assertEqual(mw.pick_agent({"kind": "script", "for": "gemini"}, ["codex", "gemini", "claude"])[0], "gemini")
+        self.assertEqual(mw.pick_agent({"kind": "script", "for": "cursor"}, ["codex"])[0], "codex")  # not installed: chain
+
+
 if __name__ == "__main__":
     unittest.main()
