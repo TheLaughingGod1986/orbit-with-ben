@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2165 | mini | open (after J2155) | – | – | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance | jobs/reviews/J2164/REVIEW.md |
 | J2166 | mini | open | – | – | 031 thumbs · for gemini · review · `gemini-argon` · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 | J2167 | mini | open | – | – | review · J1208 exact-source native-video review: S5/S6 Flow take2 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/507 |
-| J2169 | mini | open | – | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
+| J2169 | mini | claimed | chief | 2026-11-05T11:22Z | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2175 | mini | open | – | – | 008 edit · for gemini · review · `gemini-argon` · HOS 008 Short C: Chief decision on J2170 paper hook lock & 1-sentence VO pickup scope (conditional 2 Dec slot held) | J2170 |

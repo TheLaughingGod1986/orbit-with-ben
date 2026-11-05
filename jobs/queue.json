@@ -182411,10 +182411,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-05T09:22Z",
+      "eta": "2026-11-05T11:22Z",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
       "result": "",
@@ -182483,6 +182483,11 @@
           "at": "2026-11-05T09:21Z",
           "by": "chief",
           "what": "reopened: h47: J2178 FIX merged (PR414). Chain J2179–J2191 complete; J2191 REJECTED Vertex production scope (missing GBP SKU/global bound/atomic caller). Flow native1080 rejected earlier. Exact next step: GBP0 native≥1080 existing-media inventory before any spend/build."
+        },
+        {
+          "at": "2026-11-05T09:22Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Blocked1/3: J2190 six-input Vertex guard/preflight, J2191 explicit scope; then sources and final17-row mapping KEEP before build. Flow rejected; no spend approval.",
@@ -182491,7 +182496,15 @@
       "taskKeys": [
         "HOS:006"
       ],
-      "escalated_at": "2026-11-05T06:52Z"
+      "escalated_at": "2026-11-05T06:52Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T09:22Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2170",
