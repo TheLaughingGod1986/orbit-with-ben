@@ -182891,7 +182891,7 @@
     {
       "id": "J2162",
       "title": "Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "**Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required.** Read the three critiques in `05_Analytics/tests/panels/owb-032-j2144/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.\n\nJ2144 ruling b92e3a6d34 is FIX. J2176 repairs A/C; all three panel jobs depend on that delivery. Before decision verify J2176 and all three critics are complete (or apply the existing 24h missing-critic provision transparently, never pretend missing evidence passed). Inspect repaired hashes and resolve each FIX. Reconcile draft metadata A/B/C with actual set. Record ruling on held J2144 and release/complete it only when justified. PR500/T020 remain proposed; no publishing is authorised.\n\n\nJ2176 COMPLETE INPUT UPDATE (5 Nov, ea3152c3a8): supersedes earlier partial-input pointers. Read /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/MANIFEST_v03.json and /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/PHONE_PREVIEW_v03.jpg. Exact A is 032_A_real_this_is_titan_v03.jpg (b7495bf68ef3db0bbca5fbc78d27d16e438bebb0a31f6c5103e2ba3869e6c37c); B v02 and C v03 unchanged. Complete worker-delivery inputs, not approved packaging. Preserve independent critiques: do not read builder/Chief critiques or other panel responses. Existing metadata draft remains the title/listing input. J2162 retains synthesis; no new panel.\n",
       "ref": "",
@@ -183006,6 +183006,11 @@
           "at": "2026-11-05T18:19Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T19:25Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
         }
       ],
       "remaining_action": "After open panel critiques J2159 (codex.md) and J2160 (gemini.md) finish, read all three critiques and write DECISION.md",
@@ -183019,16 +183024,7 @@
         "at": "2026-11-05T14:27Z",
         "by": "gemini",
         "note": "Verified J2176 v03 hashes (A b7495bf68e..., B 4e4faf3155..., C a0a67a7e1f..., phone f389cb61c1...); only cursor.md (J216"
-      },
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon"
+      }
     },
     {
       "id": "J2163",
