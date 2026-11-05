@@ -185870,7 +185870,7 @@
       "title": "J01 Journey Film 01: Chief review of plan and linking script (J2146)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Review `jobs/reviews/J2146/JOURNEY_01_PLAN.md` and `02_Video-Projects/J01_Journey-To-Every-World/01_Script/j01_linking_script_v01.md` (commit `1e9ba89b33`, LEARNINGS rule 21). Verify the 7-part outward running order from 023-029 (`55m49s` total; 030 documented as Short-only), the 8 linking VO takes (`392 words`, line-1 physical claim, no agenda line), single subscribe beat in Part 1 (027), ambient bed plan, 3 titles and 3 thumbnail concepts. Takes the next WIP slot when 031 or 032 reaches Ben's watch; rule on `J01` `script` (`studio.py set J01 script done --ref <sha> --git`) to unlock VO.",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J2219), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J2219 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J2219 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J2219.\n5. Finish this job with the verdict in --result.\n\nReview `jobs/reviews/J2146/JOURNEY_01_PLAN.md` and `02_Video-Projects/J01_Journey-To-Every-World/01_Script/j01_linking_script_v01.md` (commit `1e9ba89b33`, LEARNINGS rule 21). Verify the 7-part outward running order from 023-029 (`55m49s` total; 030 documented as Short-only), the 8 linking VO takes (`392 words`, line-1 physical claim, no agenda line), single subscribe beat in Part 1 (027), ambient bed plan, 3 titles and 3 thumbnail concepts. Takes the next WIP slot when 031 or 032 reaches Ben's watch; rule on `J01` `script` (`studio.py set J01 script done --ref <sha> --git`) to unlock VO.",
       "ref": "1e9ba89b33",
       "film": "J01",
       "stage": "script",
@@ -185888,10 +185888,15 @@
           "at": "2026-11-05T13:50Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T13:51Z",
+          "by": "claude",
+          "what": "rule H: Chief review moved to the review lane"
         }
       ],
       "remaining_action": "Chief reviews J2146 plan and J01 linking script and locks J01 script when J01 takes the next WIP slot (after 031 or 032 reaches Ben's watch)",
-      "kind": "chief"
+      "kind": "review"
     },
     {
       "id": "J2220",
