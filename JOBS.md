@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2235 | mini | open | – | – | for gemini · review · `gemini-argon` · Cleanup audit: orbit-with-ben engine and tools (dead code, duplicates, bugs) |  |
 | J2236 | mini | open | – | – | for gemini · review · `gemini-argon` · Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs) |  |
 | J2237 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0958 |  |
-| J2238 | mini | open | – | – | chief · Chief: resolve 033 shots orphan-review |  |
+| J2238 | mini | claimed | chief | 2026-11-05T23:28Z | chief · Chief: resolve 033 shots orphan-review |  |
 | J2241 | mini | blocked | – | – | 008 picture · video · HOS 008 Franklin: mint bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 church/ship rods (<=3 takes/300 cr each, <=900 cr cap, GBP0) | J1881 / HOS PR #428 51bf99a6 |
 | J2242 | mini | open (after J2241) | – | – | 008 edit · assembly · HOS 008 Franklin: closed-GOP packet/boundary splice + 27 film-wide bottom-caption panels -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
 | J2243 | mini | open (after J2242) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect windows + 27 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
