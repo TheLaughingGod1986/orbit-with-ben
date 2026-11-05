@@ -1,5 +1,5 @@
 {
-  "next_id": 2185,
+  "next_id": 2186,
   "jobs": [
     {
       "id": "J0001",
@@ -182739,6 +182739,34 @@
       "remaining_action": "Decide bounded full-resolution replacements for four gaps in PR415; link producer and J2183 review, retain J2169 blocked1/3",
       "due": "2026-11-07T18:00:00Z",
       "kind": "chief"
+    },
+    {
+      "id": "J2185",
+      "title": "Prevent queue Git transactions from publishing unrelated branch commits",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2182 reconciliation of J2179 MacBook incident: jobs.py progress --git via studio.git_transaction rebased unreviewed PR512 implementation onto main and pushed HEAD:main (03e570eec,1708dd233,c983b2cb5). Evidence jobs/reviews/J2179/MACBOOK_REPAIR.md on main and jobs/reviews/J2182/REVIEW.md in PR514. GBP0 code-only fix in clean worktree. Reproduce with local temporary Git repos; prevent queue/studio metadata mutations from replaying or pushing any unrelated branch commits, including feature/detached worktrees and diverged main. Use a dedicated clean main-based transaction or fail closed without changing worker branch; preserve intended queue changes and concurrent updates, no force pushes or destructive resets. Add regression proving unrelated commits never reach remote main; verify ordinary clean-main operation. Review shared-core manifest and synchronize applicable files properly. Submit PR with tests and immediate elected-Chief system-review successor. Do not merge own change, modify production states, spend, delete NAS files or publish. Until fixed, queue --git calls only from main without pending implementation commits; implementation records stay in isolated feature branches.",
+      "ref": "J2182",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T04:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T04:45Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reproduce J2179 branch-to-main incident and submit isolated queue transaction fix",
+      "kind": "assembly"
     }
   ],
   "focus": [],
