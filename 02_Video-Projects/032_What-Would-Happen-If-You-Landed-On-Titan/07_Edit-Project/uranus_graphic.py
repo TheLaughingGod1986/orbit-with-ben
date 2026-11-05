@@ -6,6 +6,7 @@ No invented surface texture, terminator, illumination or collision depiction.
 import argparse
 import hashlib
 import json
+import subprocess
 from functools import lru_cache
 from pathlib import Path
 
@@ -59,8 +60,6 @@ def main():
     args = ap.parse_args()
     if args.render and not (args.approved and args.review_ref):
         ap.error('Render requires named still approval and its actual review reference')
-    if args.render:
-        ap.error('Draft only: implement export after the still decision')
     args.out.mkdir(parents=True, exist_ok=True)
     preview = args.out/'code_graphic_032_r52_uranus_21y_v01.png'
     if preview.exists():
@@ -81,6 +80,34 @@ def main():
                           'Still review, plate compositing, reuse and motion QA pending',
                           'Film background must be graded moving imagery; review navy is illustrative',
                           'Counts as R52 use of PIA18182, not an additional source appearance'])
+    if args.render:
+        # The exact reviewed frame function is exported without layout changes.
+        approved_manifest = json.loads(Path(__file__).with_name('URANUS_MANIFEST_v01.json').read_text())
+        if record['preview_sha256'] != approved_manifest['preview_sha256'] or record['source_sha256'] != approved_manifest['source_sha256']:
+            ap.error('Source or preview differs from the reviewed manifest; re-review required')
+        dest = args.out/'code_graphic_032_r52_uranus_21y_v01.mov'
+        proc = subprocess.Popen(['ffmpeg', '-v', 'error', '-n', '-f', 'rawvideo',
+            '-pixel_format', 'rgba', '-video_size', f'{W}x{H}', '-framerate', '30',
+            '-i', 'pipe:0', '-an', '-c:v', 'qtrle', str(dest)], stdin=subprocess.PIPE)
+        try:
+            for i in range(round(SECONDS*30)):
+                proc.stdin.write(frame(i/30).tobytes())
+            proc.stdin.close()
+            if proc.wait():
+                raise RuntimeError('qtrle export failed')
+        except BaseException:
+            proc.kill()
+            proc.wait()
+            raise
+        record.update(status='RENDERED_UNDER_STILL_APPROVAL', render=str(dest),
+                      render_sha256=sha(dest), review_ref=args.review_ref,
+                      approved_id=args.approved, composite_status='UNVERIFIED')
+        record['limits'] = [
+            'J2251 duration-only scope; no 2D tilt-axis line on PIA18182',
+            'Use PIA18182 once in R52, inside this graphic only',
+            'Show sideways tilt with weic2310a in preceding R52 cuts, INFRARED VIEW tag',
+            'Composite onto a reviewed graded moving real plate; navy preview is illustrative',
+            'Composite contrast, reuse, actual motion review and final film gates remain outstanding']
     (args.out/'URANUS_MANIFEST_v01.json').write_text(json.dumps(record, indent=2)+'\n')
     print(preview)
 
