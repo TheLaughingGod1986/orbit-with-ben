@@ -162598,9 +162598,14 @@
           "at": "2026-11-05T00:16Z",
           "by": "codex",
           "what": "step 2 of 3 done: Mini and laptop now call opt-in bridge; private exact-head config, fresh probes, token/job binding and mounted input/return adapters wired. No rollout enabled."
+        },
+        {
+          "at": "2026-11-05T00:22Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Committed d68ff39e69: isolated production callers, busy-serial hook, mounted return receipt intake and 11 passing caller tests. Exact-head full suite in progress; host acceptance remains unverified."
         }
       ],
-      "remaining_action": "Test production caller bridge and document remaining host acceptance and orchestration gaps",
+      "remaining_action": "Verify committed caller integration and submit exact head for review; rollout stays disabled",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162620,9 +162625,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T00:16Z",
+        "at": "2026-11-05T00:22Z",
         "by": "codex",
-        "note": "Mini and laptop now call opt-in bridge; private exact-head config, fresh probes, token/job binding and mounted input/ret"
+        "note": "Committed d68ff39e69: isolated production callers, busy-serial hook, mounted return receipt intake and 11 passing caller"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
