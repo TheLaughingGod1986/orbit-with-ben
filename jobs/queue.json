@@ -187080,10 +187080,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-05T17:29Z",
+      "eta": "2026-11-05T19:29Z",
       "created_by": "relay",
       "created_at": "2026-11-05T17:17Z",
       "result": "",
@@ -187092,13 +187092,26 @@
           "at": "2026-11-05T17:17Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T17:29Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: After J2210 (£0 v03 plan repair) and Chief's separate HOS 010 Flow moving-plate mint authorization: assemble and gate Shorts A and C",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-05T18:17:59+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T17:29Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
