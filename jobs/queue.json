@@ -187907,7 +187907,7 @@
     {
       "id": "J2244",
       "title": "Verify condition for J2215",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2215: PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2215 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -187927,13 +187927,27 @@
           "at": "2026-11-05T18:54Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T18:54Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 121 min (heartbeat 2026-11-05T16:52:20Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Block J2215 with SMB unmount error (PR #532)",
       "kind": "review",
       "recheck_of": "J2215",
       "due": "2026-11-05T19:54:07+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
