@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1925 | any | open | – | – | review · verify condition for J1753 |  |
 | J1932 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0979 |  |
 | J1965 | any | open | – | – | review · verify condition for J1879 |  |
-| J2015 | any | open | – | – | review · verify condition for J1754 |  |
+| J2015 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1754 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2023 | mini | open | – | – | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
