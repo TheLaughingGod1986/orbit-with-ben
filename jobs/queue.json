@@ -162271,13 +162271,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-05T00:54Z",
-      "eta": "2026-11-05T02:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "Chief FIX: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6646530463; repair Chief/serial starvation and legacy laptop shared-account occupancy; no merge/rollout.",
+      "result": "parked for Chief: PR437 exact-head code review at c9f591c158; observed host acceptance remains a separate release gate",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162703,6 +162703,11 @@
           "at": "2026-11-05T01:02Z",
           "by": "codex",
           "what": "step 2 of 3 done: Both exact-head workflows green: Rules 41945618603, core 41945618575. Capacity regressions 117 PASS; Chief dispatch regressions 2 PASS; no rollout."
+        },
+        {
+          "at": "2026-11-05T01:03Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: PR437 exact-head code review at c9f591c158; observed host acceptance remains a separate release gate"
         }
       ],
       "remaining_action": "Exact-head Chief review of PR437 c9f591c158, followed by separately gated host acceptance",
