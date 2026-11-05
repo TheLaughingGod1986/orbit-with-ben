@@ -99901,10 +99901,10 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T11:18Z",
+      "eta": "2026-11-05T13:18Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
       "result": "parked for Chief: named standalone bed is byte-identical to previously excluded candidate (13adc031...). Dual local ASR does not jointly flag speech: small.en Thank you has no_speech_prob 0.766; direct local listening not performed. Clarify bed exclusion and arrange required local listening. Evidence 3e26b379b at /private/tmp/J1100-bed-evidence includes prior afed1c552. Auto-review rejected push to authorized evidence branch as insufficient user authorization for payload/destination; no push/PR created. Preserve 2/3 OWB:027/028, pickups, S6 audio, h43 LOOP, deadlines/v01 fallback. GBP0; no render/publishing changes; no active detached process.",
@@ -101103,6 +101103,11 @@
           "at": "2026-11-05T09:48Z",
           "by": "claude",
           "what": "released by acting Chief: Gemini's claim can't resume (waiting for verified audio_input) and it held Gemini idle; progress kept (step 2 of 3, v07 builds next)"
+        },
+        {
+          "at": "2026-11-05T11:18Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
