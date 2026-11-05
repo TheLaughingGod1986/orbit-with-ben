@@ -39,6 +39,7 @@ import platform
 import re
 import shutil
 import subprocess
+import time
 import sys
 
 HOME = pathlib.Path.home()
@@ -368,7 +369,15 @@ def pull_main() -> str:
             branch = sh(["git", "-C", str(repo), "branch", "--show-current"]).stdout.strip()
             # A job may leave the worker's own clone on its work branch (J1194, 29 Oct 2026: the MacBook then
             # refused every later job). Its own clone goes back to main by itself when clean; Ben's checkouts never.
-            if branch != "main" and repo.resolve().is_relative_to(WORKER_DIR.resolve()) \
+            own = repo.resolve().is_relative_to(WORKER_DIR.resolve())
+            if branch != "main" and own and sh(["git", "-C", str(repo), "status", "--porcelain"]).stdout.strip():
+                # Left dirty on a job branch (5 Nov 2026: J2165 left macbook/J2165 dirty and every later run errored).
+                # Its own clone only: keep the work in a named stash on that branch, never discard it.
+                stamp = time.strftime("%Y%m%dT%H%MZ", time.gmtime())
+                if sh(["git", "-C", str(repo), "stash", "push", "-u", "-q", "-m",
+                       f"macbook-worker autostash {branch} {stamp}"]).returncode == 0:
+                    log(f"{repo.name}: saved unfinished work on '{branch}' as stash 'macbook-worker autostash {branch} {stamp}'")
+            if branch != "main" and own \
                     and not sh(["git", "-C", str(repo), "status", "--porcelain"]).stdout.strip():
                 if sh(["git", "-C", str(repo), "checkout", "-q", "main"]).returncode == 0:
                     log(f"{repo.name}: back on main from '{branch}'")
