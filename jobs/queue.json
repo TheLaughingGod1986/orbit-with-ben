@@ -180394,7 +180394,7 @@
     {
       "id": "J2147",
       "title": "031/032 Shorts slots around the new Wednesday long slot",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "Ben, 4 Nov 2026: OWB adds a Wednesday 18:00 long slot. 032 airs Wed 25 Nov, 031 Wed 2 Dec. Plan each film's three Shorts into the 11:30 Mon/Wed/Fri slots without clashing with the Shorts already scheduled for 026-029 (one Short a day max, playbook section 1), with one Short going out on its long's go-public day pointing at it (LEARNINGS 17). Write the plan into each film's 10_Shorts README and the film note. Do this once each film's Shorts scripts exist.\n",
       "ref": "",
@@ -180429,20 +180429,17 @@
           "at": "2026-11-05T00:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T02:54Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
         }
       ],
       "remaining_action": "031/032 Shorts slots around the new Wednesday long slot",
       "due": "2026-11-14T00:00:00Z",
-      "for": "gemini",
-      "kind": "listing",
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "claude",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "model": "gemini-argon"
+      "for": "claude",
+      "kind": "listing"
     },
     {
       "id": "J2148",
