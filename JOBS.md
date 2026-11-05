@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1892 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1834 |  |
 | J1895 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1130 |  |
 | J1899 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1100 |  |
-| J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
+| J1902 | any | claimed | chief | 2026-11-05T11:23Z | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
 | J1919 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1752 |  |
 | J1925 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1753 |  |
