@@ -184969,20 +184969,25 @@
           "at": "2026-11-05T10:16Z",
           "by": "codex",
           "what": "step 1 of 3 done: Verified both code-graphic SHA256 hashes on Mini; prerequisite PR424 records inspected; current v03 long boards are local-only inputs."
+        },
+        {
+          "at": "2026-11-05T10:19Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Wrote v03 Shorts and v04 bird boards, verified graphic hashes, patched resolver. Found Option A1 leaves S02 1.900s below body-cut floor; recorded unresolved gate."
         }
       ],
-      "remaining_action": "Write repaired plans and plate resolver, validate and open HOS PR",
+      "remaining_action": "Validate readiness records and open HOS PR with explicit Short A timing blocker",
       "due": "2026-11-07T18:00:00Z",
       "kind": "video",
       "taskKeys": [
         "HOS:010"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-05T10:16Z",
+        "at": "2026-11-05T10:19Z",
         "by": "codex",
-        "note": "Verified both code-graphic SHA256 hashes on Mini; prerequisite PR424 records inspected; current v03 long boards are loca"
+        "note": "Wrote v03 Shorts and v04 bird boards, verified graphic hashes, patched resolver. Found Option A1 leaves S02 1.900s below"
       }
     }
   ],
