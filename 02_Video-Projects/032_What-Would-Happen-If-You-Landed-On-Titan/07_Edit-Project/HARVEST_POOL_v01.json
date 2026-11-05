@@ -1081,13 +1081,25 @@
   "review_handoff": "J2150",
   "jwst_status": {
     "asset_id": "weic2310a",
-    "source_page": "https://esawebb.org/images/weic2310a/",
-    "policy": "https://esawebb.org/copyright/",
-    "licence": "CC BY 4.0; full asset credit required",
+    "row": 52,
+    "local_path": "/Users/benjaminoats/_desk/cache/J2089/jwst_v01/uranus_nircam_unannotated.png",
+    "source_page": "https://science.nasa.gov/asset/webb/uranus-nircam-image/",
+    "download_url": "https://assets.science.nasa.gov/content/dam/science/missions/webb/science/2023/04/STScI-01GWQDPJTF1MY8ZGN4WBMWMACJ.png/jcr:content/renditions/Unannotated.png",
+    "sha256": "e5f7a1a0e10a6e6c769b40ecbb2f4dd78ea2ada65f2e96efd69c113ea29f52a7",
+    "bytes": 2449044,
+    "width": 2000,
+    "height": 2000,
     "credit": "NASA, ESA, CSA, STScI, J. DePasquale (STScI)",
-    "download_status": "NOT_DOWNLOADED",
-    "reason": "Local page/CDN requests returned HTTP403; web tool verified source and CC BY policy. Do not repeat unchanged URL retries. Use a new documented official NASA/STScI source route next.",
-    "row": 52
+    "licence": "CC BY 4.0",
+    "licence_source": "https://esawebb.org/copyright/",
+    "original_source": "https://esawebb.org/images/weic2310a/",
+    "review_status": "CANDIDATE_STILL_REVIEW_REQUIRED",
+    "motion_perception": "NOT_PERFORMED",
+    "source_evidence": "/Users/benjaminoats/_desk/cache/J2089/jwst_v01/nasa_source.html",
+    "download_status": "DOWNLOADED_AND_DECODED",
+    "minimum_fill_1080_upscale": 0.96,
+    "still_inspection": "Codex viewed full preview: Uranus with rings; no source annotations. No composite or moving-picture approval.",
+    "placement": "Square source: preserve complete rings as inset on graded moving picture; do not crop rings to fill 16:9. Final near-black/contrast gate remains required."
   },
   "review_ref": "J2150",
   "motion_candidates": [
@@ -1110,10 +1122,13 @@
       "bytes": 213264954,
       "download_status": "DOWNLOADED_AND_PROBED",
       "source_page": "https://dragonfly.jhuapl.edu/Gallery/",
-      "licence_status": "PENDING_ASSET_SPECIFIC_TERMS",
+      "licence_status": "HOLD: APL policy prohibits redistribution/commercial use without express written permission; no asset-specific grant found",
       "motion_perception": "NOT_PERFORMED",
       "intervals": "UNSELECTED",
-      "review_status": "PENDING_ASSET_RIGHTS_AND_INTERVAL_REVIEW"
+      "review_status": "PENDING_ASSET_RIGHTS_AND_INTERVAL_REVIEW",
+      "rights_source": "https://www.jhuapl.edu/privacy",
+      "asset_credit_evidence": "Gallery playlist mediaid 503 has empty credit, not an affirmative NASA public-domain grant",
+      "next_action": "Chief: supply existing written permission or assign a documented rights-cleared alternative; do not treat NASA funding as permission."
     }
   ]
 }
