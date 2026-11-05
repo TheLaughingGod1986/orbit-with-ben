@@ -186382,7 +186382,7 @@
     {
       "id": "J2223",
       "title": "Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Chief, 5 Nov 2026: OWB 033 airs Wed 9 Dec, 034 Sun 13 Dec 18:00 London. Pick two Short slots for each (AGENTS.md 'Two OWB longs a week'): Mon/Wed/Fri/Sat 11:30 London, never two Shorts a day. Check UPLOADS.json and BUFFER_POSTS.json for taken slots. Record the slots in each film's notes and film_briefs timing; queue each Short's build job if missing. No uploads.",
       "ref": "",
@@ -186402,10 +186402,24 @@
           "at": "2026-11-05T14:08Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T15:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each",
-      "kind": "listing"
+      "kind": "listing",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2224",
