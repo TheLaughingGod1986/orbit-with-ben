@@ -182224,10 +182224,24 @@
           "at": "2026-11-05T03:11Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T03:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Inspect 17 full-size mechanism previews; record KEEP/FIX and bounded frame-0/reuse decisions",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2178",
