@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2168 | mini | open | – | – | 005 edit · assembly · HOS 005: qualify cuff Short for 10 Nov and distinct reserve for 10 Dec | J2023 |
 | J2169 | mini | open | – | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
 | J2170 | any | open | – | – | 008 edit · review · HOS 008 Short C: resolve blocked hook on paper for conditional 2 Dec slot | J2023 |
+| J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 
 Recently finished:
 
