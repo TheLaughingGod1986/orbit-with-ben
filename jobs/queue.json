@@ -174823,20 +174823,32 @@
           "at": "2026-11-05T01:06Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T01:08Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts",
+      "remaining_action": "Inventory Shorts, identify unused candidates and preserve approval dependencies",
       "due": "2026-11-06T00:00:00Z",
       "kind": "chief",
       "urgent": 18,
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-05T01:06Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-11-05T01:08Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:009",
+        "HOS:010",
+        "OWB:030"
+      ]
     },
     {
       "id": "J2024",
