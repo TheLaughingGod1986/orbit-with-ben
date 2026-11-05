@@ -341,3 +341,29 @@ class OnlyBensCalls(unittest.TestCase):
             queue(("ben", "Approve the R2 upload of the v03 master", {}))
         self.assertEqual(queue(("ben", "Watch 032 v04 (final watch)", {}))["jobs"][0]["needs"], "ben")
         self.assertFalse(jobs.ben_gate("upload to the watch store"))
+
+
+class MacBookTakesTextJobs(unittest.TestCase):
+    """Ben, 5 Nov 2026: the MacBook takes Mini jobs that don't need the Mini."""
+
+    def test_text_and_code_jobs_are_portable_media_and_mini_tools_are_not(self):
+        d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "gemini"}),
+                  ("mini", "encode long first-30s rules into the gates", {}),
+                  ("mini", "032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"}),
+                  ("mini", "Review the thumbnail concepts", {"kind": "review"}),
+                  ("mini", "OWB series playlists + end screens", {"kind": "studio"}),
+                  ("mini", "Review the Shorts copy", {"kind": "review"}))
+        d["jobs"][5]["body"] = "files in /Users/benjaminoats/_desk/cache/J1/"
+        self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, True, False, False, False, False])
+
+    def test_the_macbook_claims_a_portable_mini_job_and_the_mini_still_can(self):
+        d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "gemini"}))
+        j = d["jobs"][0]
+        self.assertTrue(jobs.claimable(d, j, {"macbook", "any"}, T0, "macbook"))
+        self.assertEqual(jobs.do_next(d, "macbook", {"macbook", "any"}, T0)["id"], j["id"])
+        self.assertEqual((j["needs"], j["for"]), ("mini", "gemini"))  # the job itself is unchanged
+
+    def test_a_review_of_media_work_stays_on_the_mini(self):
+        d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}), ("mini", "verify condition for J0001", {"kind": "review"}))
+        d["jobs"][1]["recheck_of"] = "J0001"
+        self.assertFalse(jobs.macbook_portable(d["jobs"][1], d))

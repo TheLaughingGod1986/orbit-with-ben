@@ -131,7 +131,10 @@
     return v.lane === "upcoming" ? "Planned" : "In progress";
   }
 
-  const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v));
+  // Only with its video attached (Ben, 5 Nov 2026: three Shorts showed at 12:49:43 and their links came 40 s later, so
+  // Watch & review opened an empty page).
+  const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v)
+    && !!(v.watch || {}).url);
   // /board shows Approve / Changes for a long, or a Short with an ask (tracker_app.js showActions); the same here.
   const canTick = v => v.type === "long" || !!v.ask;
 

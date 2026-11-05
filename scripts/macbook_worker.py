@@ -221,6 +221,8 @@ def pick_agent(job: dict, have: list) -> tuple:
     pin = os.environ.get("MACBOOK_AGENT", "")
     if pin:
         return (pin, routing.model_for(job, pin)) if pin in have else ("", "")
+    if job.get("for") in have:  # a job addressed to one agent (a Mini job the MacBook took over): that agent's CLI
+        return job["for"], routing.model_for(job, job["for"])
     for a, m in routing.job_chain(job):
         if a in have and routing.lane_ok(a, m):
             return a, (m if routing.RUNS_ON.get(m) == a else "")
