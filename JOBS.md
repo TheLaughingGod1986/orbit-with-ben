@@ -53,7 +53,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2015 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1754 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2024 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0999 |  |
 | J2033 | mini | blocked | codex | – | 009 picture · for codex · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
 | J2034 | mini | open (after J2033) | – | – | 009 picture · for gemini · review · `gemini-argon` · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
 | J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
