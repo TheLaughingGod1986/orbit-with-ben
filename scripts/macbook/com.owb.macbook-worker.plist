@@ -17,7 +17,9 @@
   <array>
     <string>/bin/zsh</string>
     <string>-lc</string>
-    <string>python3 "__OWB__/scripts/macbook_worker.py" run</string>
+    <!-- The worker's own clone can go missing (5 Nov 2026: exit 2, "can't open file"), and only the worker makes it:
+         re-clone it first, so the worker can never lock itself out. -->
+    <string>test -f "__OWB__/scripts/macbook_worker.py" || GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 50 https://github.com/TheLaughingGod1986/orbit-with-ben.git "__OWB__"; python3 "__OWB__/scripts/macbook_worker.py" run</string>
   </array>
   <key>EnvironmentVariables</key>
   <dict>
