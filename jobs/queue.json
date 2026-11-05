@@ -162283,13 +162283,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-05T04:53Z",
-      "eta": "2026-11-05T06:53Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "Chief FIX at 7086e10ddb: busy peer still starves ordinary laptop queue. Ready targeted engineering on same PR437; no rollout. https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6650000080",
+      "result": "parked for Chief: exact-head code review ready on PR437 78e177fd565c18902d570157a184a4f05a7e22c9; no capacity enablement",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162790,6 +162790,11 @@
           "at": "2026-11-05T05:08Z",
           "by": "codex",
           "what": "step 2 of 3 done: Final repair and board-claim regression pushed. Exact-head Rules/core green; full CI suite 860 PASS plus required VO/Short gates. Local capacity 132 PASS; existing 2/3 implementation plan retained pending review and observed rollout."
+        },
+        {
+          "at": "2026-11-05T05:08Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: exact-head code review ready on PR437 78e177fd565c18902d570157a184a4f05a7e22c9; no capacity enablement"
         }
       ],
       "remaining_action": "Review PR437 exact head 78e177fd56, then verify observed host rollout gates before enabling capacity",
