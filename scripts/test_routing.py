@@ -120,7 +120,10 @@ class HosPictureOnFlow(unittest.TestCase):
         for kind, flow in (("video", "flow-veo-3.1"), ("image", "flow-nano-banana-2")):
             ch = routing.job_chain({"kind": kind, "repo": "hos"})
             self.assertTrue(ch and all(m == flow for _, m in ch), ch)
-        self.assertEqual(routing.job_chain({"kind": "video"})[0][1], "veo-3.1-fast-generate-001")  # OWB keeps Vertex
+        owb = routing.job_chain({"kind": "video"})
+        self.assertEqual(owb[0][1], "flow-veo-3.1")  # OWB: Flow first (Ben, 5 Nov 2026)
+        self.assertIn("veo-3.1-fast-generate-001", [m for _, m in owb])  # Vertex stays as the fallback
+        self.assertEqual(routing.job_chain({"kind": "image"})[0][1], "flow-nano-banana-2")
 
 
 if __name__ == "__main__":
