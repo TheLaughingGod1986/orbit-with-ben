@@ -188972,10 +188972,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-05T22:16Z",
+      "eta": "2026-11-06T00:16Z",
       "created_by": "relay",
       "created_at": "2026-11-05T20:11Z",
       "result": "",
@@ -189039,6 +189039,11 @@
           "at": "2026-11-05T22:16Z",
           "by": "chief",
           "what": "handed back: clear gemini-only reroute so elected Chief can close completed verification after J2169 reopen"
+        },
+        {
+          "at": "2026-11-05T22:16Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief: release J2169 hold on verified J2213 PR #435 (c693b4f4) and close J2252",
@@ -189048,7 +189053,15 @@
       "due_kind": "condition-verification",
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T22:16Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2253",
