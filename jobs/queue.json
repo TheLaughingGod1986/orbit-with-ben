@@ -1,5 +1,5 @@
 {
-  "next_id": 2209,
+  "next_id": 2210,
   "jobs": [
     {
       "id": "J0001",
@@ -184776,6 +184776,34 @@
         }
       ],
       "remaining_action": "Shared folder test: Mini side (write + verify hashes in ~/_desk/shared)",
+      "kind": "qa"
+    },
+    {
+      "id": "J2209",
+      "title": "Shared folder test: MacBook worker side (read Mini file via the share under launchd)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Shared-folder test, MacBook worker side (after the Mini side). This checks the folder works for the MacBook worker itself, run by launchd and not from Ben's Terminal. macOS can block background jobs from network volumes, so this is the real test. £0. Read/write only in the share's _share_test folder. Never delete anything.\n\n```\nM=$(mount | awk '/smbfs/ && /ben-mac-mini/ {for(i=1;i<=NF;i++) if($i==\"on\"){print $(i+1); exit}}'); echo \"mount: ${M:-NONE}\"; mount | grep -i smbfs\nT=\"$M/_share_test\"; ls -l \"$T\" || echo \"CANNOT LIST (Network Volumes permission for the worker?)\"\nfor f in \"$T\"/from_mini*.bin; do want=$(cat \"$f.sha256\"); s=$(date +%s); got=$(shasum -a 256 \"$f\" | cut -d' ' -f1); e=$(( $(date +%s)-s )); [ \"$want\" = \"$got\" ] && echo \"OK $f read in ${e}s\" || echo \"MISMATCH $f\"; done\nf=\"$T/from_macbook_worker_$(date -u +%Y%m%dT%H%MZ).bin\"; head -c 67108864 /dev/urandom > \"$f\" && shasum -a 256 \"$f\" | cut -d' ' -f1 > \"$f.sha256\" && echo \"wrote $f\"\n```\n\nDone when: the Mini's file hashes OK and the worker can write. If listing fails with \"Operation not permitted\", block with: \"parked for Ben: allow Network Volumes for the MacBook worker (System Settings > Privacy & Security > Files and Folders)\".\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2208",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T09:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:29Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Shared folder test: MacBook worker side (read Mini file via the share under launchd)",
       "kind": "qa"
     }
   ],
