@@ -17,6 +17,58 @@ def queue(*specs):
     return d
 
 
+class HeldButUnresumable(unittest.TestCase):
+    """5 Nov 2026: Gemini held J1100 (waiting for verified audio_input); `next` said nothing queued for ~an hour."""
+
+    def setUp(self):
+        for name, value in (("worker_capabilities", {}), ("current_execution", None)):
+            p = patch(f"chief_relay.{name}", return_value=value)
+            p.start()
+            self.addCleanup(p.stop)
+
+    def held(self, **kw):
+        d = queue(("mini", "audio check", {}), ("mini", "urgent cut", {}))
+        j = jobs.do_next(d, "gemini", {"mini"}, T0)
+        jobs.do_progress(j, "gemini", 2, 5, T0 + MIN, "two rows done")
+        j.update(kw)
+        return d, j
+
+    def test_capability_problem_releases_and_falls_through(self):
+        d, held = self.held(required_capabilities=["audio_input"])
+        got = jobs.do_next(d, "gemini", {"mini"}, T0 + 2 * MIN)
+        self.assertEqual((got["id"], got["by"], got["status"]), ("J0002", "gemini", "claimed"))
+        self.assertEqual((held["status"], held["by"], held["eta"]), ("open", "", ""))
+        self.assertEqual((held["progress"]["step"], held["progress"]["of"]), (2, 5))
+        self.assertIn("released: gemini can't resume it (Waiting for verified capability: audio_input)",
+                      held["history"][-1]["what"])
+
+    def test_external_hold_releases_and_reports_it(self):
+        d, held = self.held(hold={"type": "input", "condition": "waiting for the NASA plate"})
+        released = []
+        got = jobs.do_next(d, "gemini", {"mini"}, T0 + 2 * MIN, released=released)
+        self.assertEqual(got["id"], "J0002")
+        self.assertEqual([r["id"] for r in released], ["J0001"])
+        self.assertEqual(held["status"], "open")
+
+    def test_peek_falls_through_without_changing_the_queue(self):
+        d, held = self.held(required_capabilities=["audio_input"])
+        before = json.dumps(d, sort_keys=True)
+        self.assertEqual(jobs.choose_next(d, "gemini", {"mini"}, T0 + 2 * MIN)["id"], "J0002")
+        self.assertEqual(json.dumps(d, sort_keys=True), before)
+
+    def test_live_execution_lease_is_not_released(self):
+        d, held = self.held(required_capabilities=["audio_input"])
+        lease = {"job": "J0001", "worker": "gemini", "expiresAt": (T0 + 30 * MIN).isoformat()}
+        with patch("chief_relay.current_execution", return_value=lease):
+            self.assertIsNone(jobs.do_next(d, "gemini", {"mini"}, T0 + 2 * MIN))
+        self.assertEqual((held["status"], held["by"]), ("claimed", "gemini"))
+
+    def test_resumable_held_job_is_still_returned(self):
+        d, held = self.held()
+        self.assertIs(jobs.do_next(d, "gemini", {"mini"}, T0 + 2 * MIN), held)
+        self.assertEqual(held["status"], "claimed")
+
+
 class Next(unittest.TestCase):
     def test_claim_starts_with_zero_progress_and_preserves_resume(self):
         d = queue(("mini", "cut", {}))
