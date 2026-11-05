@@ -110643,19 +110643,19 @@
       "title": "OWB Shorts airing 3, 7 and 10 Nov: fix frame 0 and the meta-promise (rule 8) -> next version, park for Chief",
       "needs": "mini",
       "repo": "owb",
-      "body": "Acting Chief (Claude), Ben's go 29 Oct on LEARNINGS rule 8 (every new Short: frame 0 is moving footage of the subject, subject + surprise in sentence 1, no meta-promise). UPCOMING_SHORTS_GATE.md flags all three scheduled Shorts below on exactly these points (report-only today):\n- ZpEA8stoSPA 'Why Does Uranus Have 21-Year Winters?' (airs Tue 3 Nov 11:30 London): pushed still at frame 0; first cut 5.90 s; 'stay, and I'll show you'.\n- T9fVlG3CCzU 'What Are Shooting Stars Really Made Of?' (Sat 7 Nov): pushed still; first cut 4.70 s; meta-promise.\n- RLSJm59OSzI 'What Would Standing on Saturn's Moon Titan Feel Like?' (Tue 10 Nov): pushed still; first cut 4.30 s; meta-promise.\nFor each, from the existing approved masters and their own film's footage only: replace the opening with moving footage of the subject from frame 0 (first cut <= 3.0 s), remove the meta-promise phrase by cutting existing audio on a sentence boundary (no new VO, no wording change), keep 18-27 s, keep captions word-for-word with the final audio. Run gate_shorts_open (the 60% gate, not report-only), picture_qa, polish_gate and music_gate; deliver the next version with sha256 to repo/UAT/NAS (copy only), then park for Chief. The Chief then puts each on Ben's board for an OK by 10:30 on its air day; without his OK the scheduled copy airs as is. No upload, swap or spend here. Order: Uranus first (3 Nov).",
+      "body": "Acting Chief (Claude), Ben's go 29 Oct on LEARNINGS rule 8 (every new Short: frame 0 is moving footage of the subject, subject + surprise in sentence 1, no meta-promise). UPCOMING_SHORTS_GATE.md flags all three scheduled Shorts below on exactly these points (report-only today):\n- ZpEA8stoSPA 'Why Does Uranus Have 21-Year Winters?' (airs Tue 3 Nov 11:30 London): pushed still at frame 0; first cut 5.90 s; 'stay, and I'll show you'.\n- T9fVlG3CCzU 'What Are Shooting Stars Really Made Of?' (Sat 7 Nov): pushed still; first cut 4.70 s; meta-promise.\n- RLSJm59OSzI 'What Would Standing on Saturn's Moon Titan Feel Like?' (Tue 10 Nov): pushed still; first cut 4.30 s; meta-promise.\nFor each, from the existing approved masters and their own film's footage only: replace the opening with moving footage of the subject from frame 0 (first cut <= 3.0 s), remove the meta-promise phrase by cutting existing audio on a sentence boundary (no new VO, no wording change), keep 18-27 s, keep captions word-for-word with the final audio. Run gate_shorts_open (the 60% gate, not report-only), picture_qa, polish_gate and music_gate; deliver the next version with sha256 to repo/UAT/NAS (copy only), then park for Chief. The Chief then puts each on Ben's board for an OK by 10:30 on its air day; without his OK the scheduled copy airs as is. No upload, swap or spend here. Order: Uranus first (3 Nov).\n\nCURRENT CHIEF SCOPE (Codex elected, 5 Nov 2026, PR558): S6/Titan ONLY. Follow jobs/reviews/J1208/CHIEF_SOURCE_DECISION_2026-11-05.md. Accepted S6_flow_t2_silent.mp4 SHA256 2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a; opening frames28..91 at24fps (64 frames/2.666667s), forward preroll0..27; crop720:405:0:875 scaled1080x608 at y656 with feathered moving blur fill. No full-frame opening, new generation, new VO or spend. S5 correction closed unsuccessful (f0diff0.58<1.50); Uranus already aired: neither is part of this assembly. Preserve all original cuts/manifests. Render unused S6 version with locked VO/meta-promise removal, exact captions; enforce open/picture/polish/loop/music/audio/timing gates, durable hash-verified copy and review-lane handoff for final Ben watch by10 Nov10:30 London. Existing scheduled RLSJm59OSzI fallback remains if gates/watch/final authorization absent. No upload/swap/Buffer/schedule/privacy writes. Ben final UAT supplies subjective watch/listen; no tool FAIL waiver. Work ready immediately; deadline is not a start delay.",
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J1208",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "chief",
-      "since": "2026-11-05T09:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "Waiting for: Uranus ZpEA8stoSPA Public since 3 Nov (v01 aired; swap cancelled). Shooting Stars T9fVlG3CCzU (Sat 7 Nov 11:30 London) and Titan RLSJm59OSzI (Tue 10 Nov 11:30): need J2167 KEEP of HOS/OWB PR507 take2 then J1208 exact-source acceptance before 10:30 London on each air day; else scheduled copy airs. No Ben board card until a gate-passing durable cut exists. No upload/swap.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -110926,11 +110926,21 @@
           "at": "2026-11-05T18:24Z",
           "by": "codex",
           "what": "remaining action: Held: J2167 native-video evidence FIX (PR548), then J1208 exact-source acceptance; scheduled-copy fallback unchanged"
+        },
+        {
+          "at": "2026-11-05T20:44Z",
+          "by": "codex",
+          "what": "reopened: PR558 merged, exact-source decision: S6 take2 KEEP only under frame-exact centre-band recipe. S5 FIX f0diff0.58<1.50, correction branch closed unsuccessful; Uranus already aired. No publishing or further generation."
+        },
+        {
+          "at": "2026-11-05T20:44Z",
+          "by": "codex",
+          "what": "Scoped immediate S6-only assembly handoff; source dependency J1208. Historical results retained; no approval or publishing changes."
         }
       ],
-      "remaining_action": "Held: J2167 native-video evidence FIX (PR548), then J1208 exact-source acceptance; scheduled-copy fallback unchanged",
-      "due": "2026-11-02T12:00:00Z",
-      "kind": "video",
+      "remaining_action": "Assemble S6 Titan only from PR558 accepted crop/window; pass finished gates and deliver durable cut for final watch. S5 closed unsuccessful; Uranus excluded.",
+      "due": "2026-11-10T10:30:00Z",
+      "kind": "assembly",
       "taskKeys": [
         "OWB:030"
       ],
@@ -110943,6 +110953,13 @@
           "last_recheck": "J1756",
           "checked_at": "2026-11-03T11:00:19+00:00",
           "checked_by": "codex"
+        },
+        {
+          "type": "input",
+          "condition": "Uranus ZpEA8stoSPA Public since 3 Nov (v01 aired; swap cancelled). Shooting Stars T9fVlG3CCzU (Sat 7 Nov 11:30 London) and Titan RLSJm59OSzI (Tue 10 Nov 11:30): need J2167 KEEP of HOS/OWB PR507 take2 then J1208 exact-source acceptance before 10:30 London on each air day; else scheduled copy airs. No Ben board card until a gate-passing durable cut exists. No upload/swap.",
+          "check_at": "2026-11-07T10:30:00Z",
+          "resolved_by": "J1208",
+          "resolution": "S6 only source accepted in PR558; S5 failed branch closed; Uranus excluded"
         }
       ],
       "progress": {
@@ -110952,11 +110969,6 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Uranus ZpEA8stoSPA Public since 3 Nov (v01 aired; swap cancelled). Shooting Stars T9fVlG3CCzU (Sat 7 Nov 11:30 London) and Titan RLSJm59OSzI (Tue 10 Nov 11:30): need J2167 KEEP of HOS/OWB PR507 take2 then J1208 exact-source acceptance before 10:30 London on each air day; else scheduled copy airs. No Ben board card until a gate-passing durable cut exists. No upload/swap.",
-        "check_at": "2026-11-07T10:30:00Z"
       }
     },
     {
