@@ -183327,10 +183327,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T18:55Z",
+      "eta": "2026-11-05T20:55Z",
       "created_by": "codex",
       "created_at": "2026-11-05T00:49Z",
       "result": "",
@@ -183384,6 +183384,11 @@
           "at": "2026-11-05T18:24Z",
           "by": "codex",
           "what": "remaining action: Revalidate native-video capability evidence and S5/S6 exact-source review per PR548; resolve 65-frame opening duration"
+        },
+        {
+          "at": "2026-11-05T18:55Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Revalidate native-video capability evidence and S5/S6 exact-source review per PR548; resolve 65-frame opening duration",
@@ -183405,7 +183410,15 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "done_ref": "jobs/reviews/J2167/REVIEW.md"
+      "done_ref": "jobs/reviews/J2167/REVIEW.md",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T18:55Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2168",
