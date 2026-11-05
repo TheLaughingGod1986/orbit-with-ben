@@ -185864,10 +185864,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-05T17:15Z",
+      "eta": "2026-11-05T19:15Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T10:11Z",
       "result": "",
@@ -185916,6 +185916,11 @@
           "at": "2026-11-05T17:13Z",
           "by": "gemini",
           "what": "reopened: Condition satisfied (jobs/reviews/J2227/REVIEW.md, 7f50fcec7f): J2211 (done_ref 0a925061) reviewed HOS PR #425 (2e84edb3) and resolved Short_A Option A1 body-cut segmentation via lawful 7-body-shot (S01..S07 + loop_tail = 8 rows) layout in HOS PR #426 (0a925061, all 5 CI checks + 7/7 unit tests PASS, 0 check_short() errors on Short_A & Short_C; on-disk SHA-256 verified for both code graphics and all 4 v02 VO files). Reopened at 2/3 to fast-forward PR #425 / close J2210 done --ref 0a925061; J2172 and separate Chief HOS 010 Flow moving-plate mint authorization remain held (£0 / 0 credits)."
+        },
+        {
+          "at": "2026-11-05T17:15Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fast-forward codex/J2210-readiness (PR #425) to J2211-resolved 0a925061 (PR #426), verify check_all.sh + unit tests, and close J2210 done --ref 0a925061 (J2172 remains held on Chief HOS 010 Flow mint authorization)",
