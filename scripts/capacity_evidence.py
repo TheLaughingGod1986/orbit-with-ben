@@ -28,7 +28,7 @@ MAX_DOCUMENT = 65536
 
 def private_document(root, name):
     """Open through directory FDs; reject symlinks, permissive modes and devices."""
-    if name not in {"registration.json", "probes.json"}:
+    if name not in {"registration.json", "probes.json", "dispatch.json", "peer.json", "return.json"}:
         raise ValueError("unsupported evidence document")
     directory = os.open(root, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
     try:
@@ -478,7 +478,7 @@ def transaction_evidence(root, *, lease_root, owb_root, reviewed_head, chief,
 
     hosts = [local_host]
     for remote in remote_hosts:
-        if (not isinstance(remote, dict) or remote.get("role") != "macbook"
+        if (not isinstance(remote, dict) or remote.get("role") not in {"mini", "macbook"}
                 or remote.get("host") == local_host["host"]):
             raise ValueError("invalid remote host evidence")
         hosts.append(copy.deepcopy(remote))

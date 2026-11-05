@@ -87,7 +87,7 @@ def code_version():
     root = pathlib.Path(__file__).resolve().parent
     return hashlib.sha256(b"\0".join((root/name).read_bytes() for name in ("chief_relay.py","workflow_state.py","workflow_handoffs.py","studio.py","jobs.py","routing.py",
         "capacity_evidence.py","dispatch_capacity.py","capacity_reservations.py",
-        "capacity_supervisor.py","execution_leases.py","portable_transfer.py"))).hexdigest()[:16]
+        "capacity_supervisor.py","capacity_caller.py","execution_leases.py","portable_transfer.py"))).hexdigest()[:16]
 
 LOADED_VERSION = code_version()
 
@@ -865,6 +865,12 @@ def cmd_run(at: dt.datetime) -> int:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError:
+            # The opt-in caller uses a distinct reviewed checkout and its own
+            # lock; legacy execution remains accounted in fresh host evidence.
+            capacity_result = capacity_tick()
+            if capacity_result is not None:
+                log("capacity busy-serial tick: " + capacity_result["state"])
+                return 0
             log("skip: previous run still working")
             push_heartbeat(at, "busy", note="the previous run is still working")
             return 0
@@ -1361,6 +1367,11 @@ def recorded_task_outcome(job, who, started):
     return ""
 
 
+def capacity_tick():
+    import capacity_caller
+    return capacity_caller.production_tick(role="mini", owb_root=OWB, hos_root=HOS)
+
+
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
     fetch_claude_beat(at)
@@ -1374,6 +1385,11 @@ def run_locked(at: dt.datetime) -> int:
         return 0
     if (OWB / "scripts" / "refill.py").exists():
         escalate_stale()
+    # Opt-in bridge runs before legacy dispatch; disabled keeps serial behavior.
+    capacity_result = capacity_tick()
+    if capacity_result is not None:
+        log("capacity tick: " + capacity_result["state"])
+        return 0
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
     # A worker that says it's out of credit is retried after 1 h, not 3 (Ben, 14 Oct 2026: "no worker has credit. I
     # don't believe this"; a 429, or one model's pool read as the whole agent out for 3 h, left the Mini idle). A real

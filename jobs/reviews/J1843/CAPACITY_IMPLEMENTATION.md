@@ -758,3 +758,84 @@ Both repositories pulled; thread read through #6643479530. The HOS inbox and
 channel-balance check were skipped per this run's explicit dispatch instruction.
 No audio or moving-video perception is demonstrated. Required NAS offload ran:
 no eligible old scratch, approximately 11.16 GB free; no NAS content deleted.
+
+## Production caller checkpoint — 5 November 2026
+
+Continued the same J1843 / PR437, retaining **2/3**. Merged current main,
+resolved the laptop heartbeat overlap by retaining both measured observations
+and installed/paused agents, and regenerated STATUS.md. Rollout remains off.
+
+`capacity_caller.py` now connects the Mini relay and registered laptop worker to
+`dispatch_claimed`. The ordinary serial path is unchanged with no opt-in.
+Enabled failures consume their tick instead of falling through to another
+launch. A busy serial Mini relay may attempt independent CPU work through the
+same bridge. Production transactions run in a separately provisioned clean,
+reviewed checkout, with an exclusive caller lock, so they never share the busy
+relay's Git index. The exact-head check allows only existing operational queue
+and board commits after review. The relay's code-version digest includes the
+new bridge. No worker or host registration is created automatically.
+
+An enabled request requires `OWB_CAPACITY_ENABLED=1`, `OWB_CAPACITY_ROOT` pointing
+to an owner-private evidence directory, and its bounded, private `dispatch.json`.
+These settings have **not** been installed or enabled. The document includes:
+
+- `enabled`, `role` (`mini` or `macbook`), `approved_by`, `approval_ref`, full
+  `reviewed_head`, fresh `at` and `expiresAt`;
+- a dedicated `queue_root` checkout (different from the relay/worker checkout),
+  canonical `job`, stable `token`, approved absolute-executable `argv`, unique
+  `log_path` and `cap_seconds` (production max 1200);
+- for laptop input/return: existing readable `source_root`, `staging_parent`,
+  `return_parent`, explicit `max_bytes` and `max_files`, and a
+  `transport_approval_ref` binding the private fresh `peer.json` snapshot;
+- for Mini output receipt intake: `mode: receive`, original `job`/`token`,
+  registered `source_host`, mounted `return_bundle` and existing `review_parent`.
+
+The host's `registration.json` / `probes.json` remain mandatory on every
+transaction retry and guard recheck. Laptop overflow requires a fresh private
+peer snapshot containing an observed Mini host and process leases; a heartbeat
+alone is rejected. It cannot bypass shared-account occupancy, including the
+existing conservative rejection of unaccounted legacy leases. Actual producing
+and transporting these fresh receipts between the registered devices remains
+part of host acceptance; no snapshot is fabricated or inferred here.
+
+Only an approved mounted filesystem path is supported for media handoff. The
+laptop hashes approved inputs into a new bundle, rehashes immediately before
+launch, then stages scoped outputs into another new bundle with an exclusive,
+private receipt beside it. Mini's receive path reads that mounted receipt and
+rehashes/copies outputs into a new review bundle. Changed returned bytes fail.
+No mount, remote shell, network credentials, source overwrite, queue completion
+or stage approval is performed. Returned paths and receipts are retained in
+private immutable `attempts/` journal entries; public relay logs show state only.
+
+The existing supervisor handles failed preflight/spawn, nonzero exit, timeout
+and guard-stop canonical cleanup. Uncertain cleanup remains occupied and leaves
+its existing durable reconciliation record. A return-capture failure after a
+successful CPU command leaves the canonical claim for reconciliation; it must
+not be called a completed job or automatically retried as another successful
+launch. Receipt intake is review evidence only.
+
+### Validation and remaining acceptance
+
+Caller tests exercise actual bounded CPU subprocesses with synthetic approval
+and account/host fixtures and canonical in-memory Git callbacks. They cover
+success without automatic completion, missing executable cleanup, job-command
+mismatch, laptop input/return, Mini receipt intake and corrupted return bytes,
+power/idle changing after claim, missing worker proof, production checkout
+isolation, wrapper failure/no private diagnostic echo and both production hooks.
+They do not constitute real-host acceptance.
+
+Live observation at approximately 00:18 UTC: one Mini lane; J1843 is the sole
+process-visible Mini execution. Local resources measured approximately 17.6 GiB
+free disk, load 1.43 and 0.48 GiB free-plus-speculative memory. Private host
+registration/probe receipts are not configured. Cached laptop heartbeat at
+00:13 UTC reported J2153 working, age about 331 seconds, with no verified host
+capacity. Availability/free-slot time remains unknown. The required scratch
+offload deferred to the existing 01:00–06:00 NAS window. No NAS data was deleted.
+
+Still required before rollout: exact-head elected-Chief code review and green
+CI; provisioned isolated per-host dispatch checkouts and approved private
+request/evidence producers/transport; fresh identity/account/model/capability
+proof on both hosts, including accounted serial leases; observed real-host
+success/failure/guard transitions. This checkpoint does not authorize a second
+lane, merge, media generation, spend or publication. Keep J1843 at 2/3 until the
+remaining acceptance is actually demonstrated.

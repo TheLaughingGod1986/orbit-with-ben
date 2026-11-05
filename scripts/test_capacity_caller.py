@@ -1,0 +1,185 @@
+"""Production caller integration with canonical in-memory transactions and real CPU children."""
+import copy
+import subprocess
+import datetime as dt
+import json
+import pathlib
+import sys
+import tempfile
+import unittest
+from unittest.mock import patch
+
+import capacity_caller as caller
+import chief_relay
+import macbook_worker
+from test_dispatch_capacity import T, host, proof, job, portable, choose
+
+
+class Caller(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = pathlib.Path(self.temp.name)
+        self.config = dict(enabled=True, role="mini", approved_by="claude",
+            approval_ref="fixture-only", reviewed_head="reviewed", job="J1834",
+            token="caller-integration-0001", at=T.isoformat(),
+            expiresAt=(T+dt.timedelta(minutes=5)).isoformat(),
+            argv=[sys.executable, "-c", "print('cpu fixture')"],
+            cap_seconds=2, log_path=str(self.root / "run.log"))
+        self.data = {"jobs": [job()]}
+        self.ev = dict(hosts=[host()], leases=[], accounts={"shared":proof(ready=True, limit=1)},
+                       at=T, chief="claude", choose_worker=choose,
+                       installed_head="reviewed", reviewed_head="reviewed")
+        self.guard = lambda: []
+
+    def call(self, dispatch=None):
+        def document(root, name):
+            if name == "dispatch.json":
+                return copy.deepcopy(self.config)
+            if name == "peer.json":
+                return dict(at=T.isoformat(), expiresAt=(T+dt.timedelta(minutes=5)).isoformat(),
+                    transport_approval_ref="mounted-fixture", hosts=[self.ev["hosts"][0]],
+                    leases=self.ev["leases"])
+            raise ValueError(name)
+        def transaction(apply, message):
+            return apply(self.data)[:2]
+        with patch("capacity_evidence.private_document", side_effect=document), \
+             patch("capacity_evidence.reviewed_installation", return_value="reviewed"), \
+             patch("capacity_evidence.collect", side_effect=lambda *a, **k:(copy.deepcopy(self.ev["hosts"][-1]), self.ev["accounts"])), \
+             patch("capacity_evidence.transaction_evidence", side_effect=lambda *a, **k:copy.deepcopy(self.ev)), \
+             patch("jobs.load", side_effect=lambda:self.data), \
+             patch("jobs.with_git", side_effect=transaction), \
+             patch("chief_relay.current_execution", return_value=None), \
+             patch("chief_relay.worker_capabilities", return_value={}):
+            return caller.attempt(role=self.config["role"], owb_root=self.root,
+                laptop_guard=self.guard, chief="claude", clock=lambda:T,
+                environ={"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)})
+
+    def laptop(self):
+        self.config.update(role="macbook", source_root=str(self.root),
+            staging_parent=str(self.root), return_parent=str(self.root),
+            max_bytes=1000, max_files=2, transport_approval_ref="mounted-fixture",
+            argv=[sys.executable,"-c","from pathlib import Path; Path('result.txt').write_text('fixture')"])
+        contract = portable()
+        contract["outputs"] = ["result.txt"]
+        self.data["jobs"][0]["portable"] = contract
+        self.ev["hosts"] = [host(worker="gemini"), host("macbook")]
+        self.ev["leases"] = [dict(job="busy-mini", worker="gemini", host="mini", account="other")]
+
+    def test_disabled_bridge_never_reads_private_config_or_mutates_queue(self):
+        with patch("capacity_evidence.private_document") as read:
+            self.assertIsNone(caller.attempt(role="mini",owb_root=self.root,environ={}))
+            read.assert_not_called()
+
+    def test_real_cpu_success_claims_but_never_completes(self):
+        result = self.call()
+        self.assertEqual(result["state"], "capacity_exited")
+        self.assertEqual(self.data["jobs"][0]["status"], "claimed")
+        self.assertFalse(result["job_completed"])
+        self.assertEqual((self.root / "run.log").read_text(), "cpu fixture\n")
+
+    def test_launch_failure_releases_canonical_claim_and_reservation(self):
+        self.config["argv"] = [str(self.root / "missing")]
+        self.assertEqual(self.call()["state"], "capacity_rejected")
+        self.assertEqual(self.data["jobs"][0]["status"], "open")
+        self.assertNotIn("dispatch_reservation", self.data["jobs"][0])
+
+    def test_different_selected_job_cannot_run_approved_command(self):
+        self.config["job"] = "J9999"
+        self.data["jobs"].append(job("J9999"))
+        self.assertEqual(self.call()["state"], "capacity_rejected")
+        self.assertFalse((self.root / "run.log").exists())
+        self.assertTrue(all(j["status"] == "open" for j in self.data["jobs"]))
+
+    def test_laptop_receives_approved_bundle_and_returns_hash_receipt(self):
+        self.laptop()
+        result = self.call()
+        self.assertEqual(result["state"], "capacity_exited", result)
+        output = json.loads(pathlib.Path(result["receipt_path"]).read_text())
+        self.assertEqual(output["direction"], "output")
+        self.assertEqual(output["files"][0]["path"], "result.txt")
+        self.assertEqual(self.data["jobs"][0]["by"], "macbook")
+        self.assertFalse(result["stage_approved"])
+
+    def test_mini_consumes_laptop_return_from_mounted_path_without_approval(self):
+        self.laptop()
+        sent = self.call()
+        self.assertEqual(sent["state"], "capacity_exited")
+        # Simulated receiving host sees the mounted return folder, but hashes
+        # its bytes itself. This is a filesystem fixture, not real-host proof.
+        self.config.update(mode="receive", role="mini", source_host="macbook",
+                           return_bundle=sent["return_bundle"], review_parent=str(self.root))
+        received = self.call()
+        self.assertEqual(received["state"], "capacity_returned_for_review", received)
+        self.assertEqual((pathlib.Path(received["review_bundle"]) / "result.txt").read_text(), "fixture")
+        self.assertFalse(received["stage_approved"])
+        pathlib.Path(sent["return_bundle"], "result.txt").write_text("changed")
+        self.assertEqual(self.call()["state"], "capacity_rejected")
+
+    def test_laptop_guard_change_after_claim_releases_without_launch(self):
+        self.laptop()
+        calls = []
+        def guard():
+            calls.append(1)
+            return ["in use"] if len(calls) >= 3 else []
+        self.guard = guard
+        result = self.call()
+        self.assertEqual(result["state"], "capacity_rejected")
+        self.assertEqual(self.data["jobs"][0]["status"], "open")
+        self.assertNotIn("dispatch_reservation", self.data["jobs"][0])
+        self.assertFalse((self.root / "run.log").exists())
+
+    def test_offline_or_unavailable_host_does_not_fall_through_to_serial(self):
+        self.ev["hosts"][0]["workers"] = {}
+        result = self.call()
+        self.assertEqual(result["state"], "capacity_waiting")
+        self.assertEqual(self.data["jobs"][0]["status"], "open")
+
+    def test_production_uses_separate_locked_reviewed_checkout(self):
+        checkout = self.root / "queue"
+        checkout.mkdir()
+        (checkout / ".git").write_text("gitdir: fixture")
+        cfg = dict(self.config, queue_root=str(checkout),
+                   at=dt.datetime.now(dt.timezone.utc).isoformat(),
+                   expiresAt=(dt.datetime.now(dt.timezone.utc)+dt.timedelta(minutes=5)).isoformat())
+        env = {"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)}
+        with patch("capacity_evidence.private_document", return_value=cfg), \
+             patch("capacity_evidence.reviewed_installation", return_value="reviewed") as reviewed, \
+             patch("capacity_caller.subprocess.run", return_value=subprocess.CompletedProcess(
+                 [], 0, '{"state":"capacity_exited"}', '')) as launch:
+            result = caller.production_tick(role="mini", owb_root=self.root, environ=env)
+            self.assertEqual(result["state"], "capacity_exited")
+            self.assertEqual(launch.call_args.kwargs["cwd"], checkout.resolve())
+            self.assertIn(str(checkout.resolve() / "scripts/capacity_caller.py"), launch.call_args.args[0])
+            reviewed.assert_called_once_with(checkout.resolve(), "reviewed")
+            cfg["queue_root"] = str(self.root)
+            self.assertEqual(caller.production_tick(role="mini", owb_root=self.root,
+                              environ=env)["state"], "capacity_rejected")
+            self.assertEqual(launch.call_count, 1)
+
+    def test_production_wrapper_failure_is_not_serial_fallback_or_secret_echo(self):
+        checkout = self.root / "queue"
+        checkout.mkdir()
+        (checkout / ".git").write_text("gitdir: fixture")
+        cfg = dict(self.config, queue_root=str(checkout),
+                   at=dt.datetime.now(dt.timezone.utc).isoformat(),
+                   expiresAt=(dt.datetime.now(dt.timezone.utc)+dt.timedelta(minutes=5)).isoformat())
+        with patch("capacity_evidence.private_document", return_value=cfg), \
+             patch("capacity_evidence.reviewed_installation", return_value="reviewed"), \
+             patch("capacity_caller.subprocess.run", return_value=subprocess.CompletedProcess(
+                 [], 1, "private diagnostic", "private credential")):
+            result = caller.production_tick(role="mini", owb_root=self.root,
+                environ={"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)})
+            self.assertEqual(result["state"], "capacity_rejected")
+            self.assertNotIn("private", json.dumps(result))
+
+    def test_production_entrypoints_supply_real_role_and_guard_adapters(self):
+        with patch("capacity_caller.production_tick", return_value={"state":"fixture"}) as attempt:
+            self.assertEqual(chief_relay.capacity_tick(), {"state":"fixture"})
+            self.assertEqual(attempt.call_args.kwargs["role"], "mini")
+            macbook_worker.capacity_tick()
+            self.assertEqual(attempt.call_args.kwargs["role"], "macbook")
+
+
+if __name__ == "__main__":
+    unittest.main()

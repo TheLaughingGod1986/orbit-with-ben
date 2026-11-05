@@ -344,6 +344,11 @@ def pull_main() -> str:
     return ""
 
 
+def capacity_tick():
+    import capacity_caller
+    return capacity_caller.production_tick(role="macbook", owb_root=OWB, hos_root=HOS)
+
+
 def run() -> int:
     STATE.mkdir(parents=True, exist_ok=True)
     lock = open(STATE / "macbook-worker.lock", "w")
@@ -361,6 +366,11 @@ def run() -> int:
     if why:
         log("not now: " + "; ".join(why))
         push_heartbeat("waiting", why)
+        return 0
+    capacity_result = capacity_tick()
+    if capacity_result is not None:
+        log("capacity tick: " + capacity_result["state"])
+        push_heartbeat(capacity_result["state"], ["capacity attempt; no automatic completion"])
         return 0
     r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook", "--git"], cwd=OWB)
     if r.returncode == 10:
