@@ -182388,9 +182388,14 @@
           "at": "2026-11-05T14:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T14:40Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2160; starting step 1 of 4 (manifest, metadata, and hash verification for OWB 032 J2176 v03 thumbnails)"
         }
       ],
-      "remaining_action": "Independently critique J2176 repaired Titan thumbnails and title pairing",
+      "remaining_action": "Inspect MANIFEST_v03.json, metadata_DRAFT_v01.json, script opening, and verify SHA-256 hashes of J2176 v03 thumbnails",
       "for": "gemini",
       "kind": "review",
       "taskKeys": [
@@ -182399,11 +182404,10 @@
       "due": "2026-11-12T18:00:00Z",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-05T14:40Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2160; starting step 1 of 4 (manifest, metadata, and hash verification for OWB 032 J2176 v03 thumbnails)"
       }
     },
     {
