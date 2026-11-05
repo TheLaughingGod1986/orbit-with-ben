@@ -175,6 +175,15 @@ class AllAgents(unittest.TestCase):
         self.assertEqual(mw.pick_agent(review, ["codex", "gemini"]), ("gemini", "gemini-argon"))
         self.assertEqual(mw.pick_agent({"kind": "thumb"}, ["gemini", "codex"]), ("codex", "gpt-6-astra"))
 
+    def test_credit_flagged_agent_is_skipped(self):
+        import routing
+        old = set(routing.OUT)
+        try:
+            routing.OUT = {"claude"}
+            self.assertEqual(mw.pick_agent({"kind": "review"}, ["claude", "gemini"]), ("gemini", "gemini-argon"))
+        finally:
+            routing.OUT = old
+
     def test_no_cli_installed_means_no_agent(self):
         self.assertEqual(mw.pick_agent({"kind": "review"}, []), ("", ""))
 
