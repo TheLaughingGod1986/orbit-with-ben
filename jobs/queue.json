@@ -155590,13 +155590,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-03T15:44Z",
+      "status": "done",
+      "by": "claude",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:48Z",
-      "result": "2/3 complete: h35 master and restored iCloud UAT verified; PR391 merged, J1213 superseded, J0912 reopened. PR401 records reconciliation. Browser watch endpoint redirects 302 but R2 media returns 403. Automatic approval review rejected replacement watch-object upload because J1755 says no upload. Needs explicit approval for approved master cf1561c2 to existing R2 watch store, new ID hos-008-v03-j1755; no YouTube upload. Elected Chief resumes delivery and range-read verification; preserve copies.",
+      "result": "superseded (acting Chief, 5 Nov): Ben already watched v03 on 3 Nov from the iCloud UAT copy and asked for 6 fixes (J1868 -> J1880/J2163 -> J1881). A browser watch copy of v03 is no longer needed, so no R2 upload and no Ben OK. v04's delivery job carries the watch copy.",
       "history": [
         {
           "at": "2026-11-03T10:48Z",
@@ -155647,6 +155647,11 @@
           "at": "2026-11-05T09:24Z",
           "by": "chief",
           "what": "condition recorded; next verification 2026-11-06T12:00:00Z"
+        },
+        {
+          "at": "2026-11-05T12:08Z",
+          "by": "claude",
+          "what": "done: superseded, v03 already watched by Ben (3 Nov), R2 upload of v03 dropped; Ben hold cleared"
         }
       ],
       "remaining_action": "Await Ben OK for R2 watch-object upload hos-008-v03-j1755; then resume J1755 delivery",
@@ -155661,15 +155666,7 @@
       },
       "taskKeys": [
         "HOS:008"
-      ],
-      "hold": {
-        "type": "ben",
-        "condition": "h47: needs Ben OK to upload approved master cf1561c2 to existing R2 watch store as hos-008-v03-j1755 (watch endpoint 302/media 403). Not YouTube. No upload until Ben yes. Auto-review previously rejected.",
-        "check_at": "2026-11-06T12:00:00Z",
-        "last_recheck": "J1902",
-        "checked_at": "2026-11-05T09:24:01+00:00",
-        "checked_by": "chief"
-      }
+      ]
     },
     {
       "id": "J1756",
