@@ -178875,10 +178875,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-05T17:19Z",
-      "eta": "2026-11-05T19:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "review J2198 KEEP (5 Nov): all 7 process stills keep; render r39/r40 under --review-ref J2198, use the five v02 MOVs; continue the harvest. Other holds unchanged.",
@@ -179122,6 +179122,11 @@
           "at": "2026-11-05T17:21Z",
           "by": "codex",
           "what": "step 1 of 4 done: Checkpoint 7a2fb21509: two J2198-approved fire MOVs rendered; consolidated seven process exports pass hashes, alpha format, 1920x1080, 108 frames, 3.6s and full decode. Original 1/4 preserved; source holds and J2177 remain."
+        },
+        {
+          "at": "2026-11-05T17:22Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint 7a2fb21509, PR538. Original 1/4 retained. J2198-approved r39/r40 fire MOVs now rendered; all seven process exports hashed, full-decoded and verified at 1920x1080 ARGB,108 frames,3.6s. New media /Users/benjaminoats/_desk/cache/J2089/process_fire_renders_v03; consolidated PROCESS_RENDER_MANIFEST_v03.json in PR. Existing five process and 31 earlier renders untouched. No background job. Remaining licensed harvest, real-body graphics and composites exceed run; frame0,PIA07232 reuse,APL rights,J2177 holds remain. Worktree /private/tmp/J2089-fire-wt. GBP0; no publishing or PASS."
         }
       ],
       "remaining_action": "Finish real-body graphics and licensed harvest, resolve source holds, then composite and run gates",

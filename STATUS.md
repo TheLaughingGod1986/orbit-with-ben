@@ -59,7 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 032 | picture | codex | 2026-11-05T17:19Z | 2026-11-05T19:18Z | J2089 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) (took over stalled claim by claude, ETA 2026-11-05T11:49Z) |
 | 033 | shots | macbook | 2026-11-05T13:35Z | 2026-11-05T15:34Z | J2165 033 Uranus: shot list after explicit VO acceptance |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
