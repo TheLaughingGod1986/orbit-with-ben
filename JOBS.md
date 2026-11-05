@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2230 | mini | open | – | – | assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
 | J2231 | any | open | – | – | script · HOS longs after 3 Dec: lock topics for Thu 10 Dec and Thu 17 Dec (Darwin & Wallace is scripted) and queue their scripts |  |
 | J2232 | any | open | – | – | review · Verify condition for J2172 |  |
+| J2233 | mini | open | – | – | for codex · review · Review multi-channel plan: code and phases (Codex) |  |
 
 Recently finished:
 
