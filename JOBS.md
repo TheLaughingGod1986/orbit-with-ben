@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
 | J2146 | mini | open | – | – | for gemini · script · `gemini-argon` · Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21) |  |
 | J2147 | mini | open | – | – | 032 upload · for gemini · listing · `gemini-argon` · 031/032 Shorts slots around the new Wednesday long slot |  |
-| J2154 | macbook | claimed | macbook | 2026-11-05T02:44Z | review · `claude-opus-5-5` · MacBook setup test: claude |  |
+| J2154 | macbook | open | – | – | review · `claude-opus-5-5` · MacBook setup test: claude |  |
 | J2155 | mini | blocked | codex | – | 033 vo · for codex · vo · 033 Uranus: VO from locked script v02 (J2148 GO) | c01c9f9e78 |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
 | J2159 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
