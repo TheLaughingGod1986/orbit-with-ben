@@ -181783,9 +181783,14 @@
           "at": "2026-11-05T02:30Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2173; starting GBP0 assessment of OWB 032 Titan Test A opening as 27 Nov reserve"
+        },
+        {
+          "at": "2026-11-05T02:33Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected J2023 plan, J0979/J1000 constraints, J2089/J2090/J2150 picture state, and 032 status"
         }
       ],
-      "remaining_action": "Inspect J0979, J1000, J2089, and OWB 032 Titan script/VO/edit state",
+      "remaining_action": "Audit locked 032 VO word timings, duplicate Shorts inventory, and Test A / chapter-lift EDL",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -181798,11 +181803,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T02:30Z",
+        "at": "2026-11-05T02:33Z",
         "by": "gemini",
-        "note": "Claimed J2173; starting GBP0 assessment of OWB 032 Titan Test A opening as 27 Nov reserve"
+        "note": "Inspected J2023 plan, J0979/J1000 constraints, J2089/J2090/J2150 picture state, and 032 status"
       },
       "taskKeys": [
         "OWB:032"
