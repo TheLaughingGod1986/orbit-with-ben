@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -491,3 +491,19 @@ assert(!t.unconfirmedCut(exactCut));assert(t.milestoneProgress(exactCut).include
 assert(t.unconfirmedCut({...exactCut,version:'v14'}),'a later cut cannot borrow an earlier version mapping');
 
 assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'watch and card versions must agree');
+
+// Queue forecast (Ben, 5 Nov 2026): each queued job says who it waits for, its place in line and when it starts.
+{
+  const qb = {queueForecast: {jobs: {J7: {agent: 'gemini', pos: 4, startAt: '2026-11-05T11:40:00Z'}},
+    noAgent: {J8: 'waiting for codex: marked down'},
+    agents: [{agent: 'gemini', up: true, now: 'J6', freeAt: '2026-11-05T10:40:00Z', queued: 4, clearAt: '2026-11-05T13:00:00Z', minutesPerJob: 48},
+             {agent: 'cursor', up: false, why: 'out of credit until 2026-11-06'}], note: 'Estimate'}};
+  const line = t.forecastLine(qb, {id: 'J7'});
+  assert(line.startsWith('Next for Gemini · #4 in line · starts about'), line);
+  assert.equal(t.forecastLine(qb, {id: 'J8'}), 'Waiting for codex: marked down');
+  assert.equal(t.forecastLine(qb, {id: 'J9'}), '');
+  const lanes = t.agentLines(qb);
+  assert(lanes.includes('on J6 · free about') && lanes.includes('4 in line') && lanes.includes('Not available · out of credit'), lanes);
+  assert.equal(t.agentLines({}), '');
+}
+console.log('Queue forecast checks OK');

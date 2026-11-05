@@ -35,6 +35,17 @@ class Next(unittest.TestCase):
         jobs.do_next(d, "cursor", {"mini"}, T0 + MIN)
         self.assertEqual(j["progress"]["step"], 0)
 
+    def test_a_claim_it_cannot_resume_is_handed_back_and_it_takes_other_work(self):
+        # 5 Nov 2026: Gemini held J1100 (waiting for verified audio_input) and sat idle for an hour.
+        d = queue(("mini", "listen", {}), ("mini", "write", {}))
+        held = jobs.do_next(d, "gemini", {"mini"}, T0)
+        held["required_capabilities"] = ["audio_input"]
+        with patch.object(jobs.chief_relay, "worker_capabilities", return_value={}):
+            j = jobs.do_next(d, "gemini", {"mini"}, T0 + MIN)
+        self.assertEqual(j["title"], "write")
+        self.assertEqual((held["status"], held["by"]), ("open", ""))
+        self.assertIn("progress kept", held["history"][-1]["what"])
+
     def test_takes_the_oldest_job_it_can_do(self):
         d = queue(("cloud", "review", {}), ("mini", "cut", {}), ("mini", "thumbs", {}))
         j = jobs.do_next(d, "cursor", {"mini", "any"}, T0)
