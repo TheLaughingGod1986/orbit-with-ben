@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2205 | mini | open | – | – | assembly · URG-OWB-1: gate_upcoming --stage NAS cache for upcoming Shorts |  |
 | J2206 | mini | open | – | – | assembly · URG-OWB-2: monthly Studio Reach window capture (share with J2202) |  |
 | J2207 | mini | open | – | – | assembly · OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts |  |
-| J2208 | mini | open | – | – | qa · Shared folder test: Mini side (write + verify hashes in ~/_desk/shared) |  |
+| J2208 | mini | claimed | gemini | 2026-11-05T10:12Z | qa · Shared folder test: Mini side (write + verify hashes in ~/_desk/shared) |  |
 | J2209 | macbook | open (after J2208) | – | – | qa · Shared folder test: MacBook worker side (read Mini file via the share under launchd) |  |
 
 Recently finished:
