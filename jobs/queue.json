@@ -181047,7 +181047,7 @@
     {
       "id": "J2165",
       "title": "033 Uranus: shot list after explicit VO acceptance",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Conditional successor to J2155. J2164 must explicitly accept VO and clear J2155 before this starts; a completed review alone is not acceptance. Evidence PR502, commit 76284eba93. Use locked script v02 and accepted uranus_vo_v01 take/Scribe timing (611.4s) or the explicitly approved replacement. Write timed per-row shot list, provenance/search needs, DATA/WHO/WHEN/FACT/SCALE, all chapter number objects, no adjacent full-frame code graphics, native motion where required, Orbit Omni-only, film-own awe/explain music prompt with Pace and NOT list, and SFX plan. Preserve locked spoken lines. No generation or credit spend in this job. Chief owns any protected approval.",
       "ref": "",
@@ -181067,10 +181067,24 @@
           "at": "2026-11-05T00:10Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T00:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Write timed shot list and music brief after Chief accepts the J2155 narration",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2166",
