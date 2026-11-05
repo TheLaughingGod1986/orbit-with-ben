@@ -1,5 +1,5 @@
 {
-  "next_id": 2219,
+  "next_id": 2223,
   "jobs": [
     {
       "id": "J0001",
@@ -181374,13 +181374,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T13:29Z",
-      "eta": "2026-11-05T15:29Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T22:08Z",
-      "result": "",
+      "result": "Delivered jobs/reviews/J2146/JOURNEY_01_PLAN.md and initialized 02_Video-Projects/J01_Journey-To-Every-World (1e9ba89b33): 7-part outward journey from 027, 023, 025, 028, 026, 024, 029 (~55m49s total; 030 documented as Short-only), 392-word linking script (8 takes, ~1,400-2,800 EL credits inside flat fee), 0-credit NAS stem ambient bed plan, 3 titles, 3 thumbnail concepts, description + chapters. Added OWB:J01 to front of WIP.json next and queued --film J01 jobs J2219, J2220, J2221, J2222.",
       "history": [
         {
           "at": "2026-11-04T22:08Z",
@@ -181466,9 +181466,19 @@
           "at": "2026-11-05T13:50Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Wrote jobs/reviews/J2146/JOURNEY_01_PLAN.md and initialized 02_Video-Projects/J01_Journey-To-Every-World (linking script, SOURCES.md, description, status.json, WIP.json next slot)"
+        },
+        {
+          "at": "2026-11-05T13:50Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Queued --film J01 jobs: J2219 (script review), J2220 (VO), J2221 (assembly) and J2222 (cut review)"
+        },
+        {
+          "at": "2026-11-05T13:50Z",
+          "by": "gemini",
+          "what": "done: Delivered jobs/reviews/J2146/JOURNEY_01_PLAN.md and initialized 02_Video-Projects/J01_Journey-To-Every-World (1e9ba89b33): 7-part outward journey from 027, 023, 025, 028, 026, 024, 029 (~55m49s total; 030 documented as Short-only), 392-word linking script (8 takes, ~1,400-2,800 EL credits inside flat fee), 0-credit NAS stem ambient bed plan, 3 titles, 3 thumbnail concepts, description + chapters. Added OWB:J01 to front of WIP.json next and queued --film J01 jobs J2219, J2220, J2221, J2222."
         }
       ],
-      "remaining_action": "Queue follow-on Chief script review, VO, assembly and cut review jobs with --film J01",
+      "remaining_action": "Complete J2146 and post summary report to #99",
       "due": "2026-11-15T00:00:00Z",
       "for": "gemini",
       "kind": "script",
@@ -181481,11 +181491,11 @@
       },
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
         "at": "2026-11-05T13:50Z",
         "by": "gemini",
-        "note": "Wrote jobs/reviews/J2146/JOURNEY_01_PLAN.md and initialized 02_Video-Projects/J01_Journey-To-Every-World (linking script"
+        "note": "Queued --film J01 jobs: J2219 (script review), J2220 (VO), J2221 (assembly) and J2222 (cut review)"
       },
       "taskKeys": [
         "OWB:023",
@@ -181496,7 +181506,8 @@
         "OWB:028",
         "OWB:029",
         "OWB:030"
-      ]
+      ],
+      "done_ref": "1e9ba89b33"
     },
     {
       "id": "J2147",
@@ -185853,6 +185864,122 @@
       "kind": "review",
       "review_of": "J1100",
       "urgent": 12
+    },
+    {
+      "id": "J2219",
+      "title": "J01 Journey Film 01: Chief review of plan and linking script (J2146)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review `jobs/reviews/J2146/JOURNEY_01_PLAN.md` and `02_Video-Projects/J01_Journey-To-Every-World/01_Script/j01_linking_script_v01.md` (commit `1e9ba89b33`, LEARNINGS rule 21). Verify the 7-part outward running order from 023-029 (`55m49s` total; 030 documented as Short-only), the 8 linking VO takes (`392 words`, line-1 physical claim, no agenda line), single subscribe beat in Part 1 (027), ambient bed plan, 3 titles and 3 thumbnail concepts. Takes the next WIP slot when 031 or 032 reaches Ben's watch; rule on `J01` `script` (`studio.py set J01 script done --ref <sha> --git`) to unlock VO.",
+      "ref": "1e9ba89b33",
+      "film": "J01",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T13:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T13:50Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief reviews J2146 plan and J01 linking script and locks J01 script when J01 takes the next WIP slot (after 031 or 032 reaches Ben's watch)",
+      "kind": "chief"
+    },
+    {
+      "id": "J2220",
+      "title": "J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After Chief script lock on `J2219` and WIP slot entry: record the 8 linking VO takes (`j01_vo_01_intro.mp3` through `j01_vo_08_closing.mp3`, `392 words` / `~2,240 chars`, estimated `~1,400-2,800` ElevenLabs credits inside flat fee) from `02_Video-Projects/J01_Journey-To-Every-World/01_Script/j01_linking_script_v01.md` using `04_Audio/tools/vo_take.py` (voice `kDch6ACCIpqgQ0NsU9kk`, `eleven_v3`). Verify with `faster-whisper` (`130-145 wpm`, `0` repeated/stumbled phrases, `-19 to -28 dB` mean) and write `02_Voiceover/VO_STATUS.md`.",
+      "ref": "1e9ba89b33",
+      "film": "J01",
+      "stage": "vo",
+      "after": "J2219",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T13:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T13:50Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record the 8 linking VO takes for J01 via vo_take.py, verify with faster-whisper, and write VO_STATUS.md",
+      "kind": "vo"
+    },
+    {
+      "id": "J2221",
+      "title": "J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Following `jobs/reviews/J2146/JOURNEY_01_PLAN.md` (commit `1e9ba89b33`): (1) Render the 7 outward distance-scale code graphics (`code_graphic_J01_map_00` to `06`) and 7 chapter cards; (2) Build the Journey Ambient Bed (Option A from owned NAS score stems `023/024/026`, 0 credits) and `scripts/sfx_kit.py make` house SFX stem (`rumble_low`, `whoosh_soft`, `tick_ink`); (3) Stitch the verified NAS master slices of `027`, `023`, `025`, `028`, `026`, `024`, and `029` (trimming standalone agenda lines, duplicate subscribe beats in Parts 2-7, and weekly outro teasers) into `07_Edit-Project/J01_Journey_v01.mp4` (`~55m49s`, CFR 24 fps, `~-14 LUFS`, 18 s end-screen hold); (4) Build the 3 distinct thumbnail concepts (`thumb_A_real_venera_mars.jpg`, `thumb_B_bright_supergiant_scale.jpg`, `thumb_C_outward_worlds_lineup.jpg` + `thumb_preview.py long`); (5) Pass `picture_qa.py`, `music_gate.py`, and `sfx_kit.py level`.",
+      "ref": "1e9ba89b33",
+      "film": "J01",
+      "stage": "edit",
+      "after": "J2220",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T13:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T13:50Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Render J01 distance-map code graphics and chapter cards, stitch 023-029 NAS master slices with linking VO/bed, build 3 thumbnails, and pass QA gates",
+      "kind": "assembly"
+    },
+    {
+      "id": "J2222",
+      "title": "J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Full watch and listen review of `02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/J01_Journey_v01.mp4` and the 3 thumbnails from `J2221` (`jobs/reviews/J2146/JOURNEY_01_PLAN.md`). Verify all 7 part joins, single subscribe beat in Part 1, chapter cards, distance map overlays, audio levels (`sfx_kit.py level`, no music gaps), and 3 thumbnails at 168x94 before queuing Ben's watch (`awaits_ben`).",
+      "ref": "1e9ba89b33",
+      "film": "J01",
+      "stage": "edit",
+      "after": "J2221",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T13:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T13:50Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Watch and listen to J01_Journey_v01.mp4 (~56m) and inspect all 3 thumbnails before Ben's watch",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ]
     }
   ],
   "focus": [],

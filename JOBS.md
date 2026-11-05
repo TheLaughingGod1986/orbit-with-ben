@@ -56,7 +56,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2143 | mini | blocked | codex | – | 031 thumbs · thumb · 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 | J2144 | mini | blocked | codex | – | 032 thumbs · thumb · 032 thumbs (November tentpole): three full concepts incl. rule-19 real image |  |
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
-| J2146 | mini | claimed | gemini | 2026-11-05T15:29Z | for gemini · script · `gemini-argon` · Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21) |  |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
 | J2159 | mini | open (after J2176) | – | – | for codex · review · Packaging panel (codex): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2160 | mini | open (after J2176) | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
@@ -87,6 +86,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2216 | mini | open | – | – | chief · Chief: apply J1889 KEEP social-source exception in UPLOADS.json and publish Mars-night & Titan Buffer posts | jobs/reviews/J1889/REVIEW.md |
 | J2217 | mini | open (after J2163) | – | – | 008 edit · assembly · HOS 008: amend Franklin recipe to eight-item + film-wide captions (Ben 5 Nov) | J1881 / HOS PR411 50620e40 / Ben 6658371896 / advisory 6658387533 |
 | J2218 | mini | open | – | – | review · Review J1100: J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief |  |
+| J2219 | mini | open | – | – | J01 script · chief · J01 Journey Film 01: Chief review of plan and linking script (J2146) | 1e9ba89b33 |
+| J2220 | mini | open (after J2219) | – | – | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
+| J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
+| J2222 | mini | open (after J2221) | – | – | J01 edit · review · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
 
 Recently finished:
 
