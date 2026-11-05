@@ -184932,13 +184932,13 @@
       "stage": "",
       "after": "J2208",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-05T10:26Z",
-      "eta": "2026-11-05T10:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T09:29Z",
-      "result": "",
+      "result": "PASS (PR #522): mount=/Volumes/shared (smbfs @ben-mac-mini/shared); OK /Volumes/shared/_share_test/from_mini_20261105T0953Z.bin read in 23s (sha256=19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4); wrote 64 MB /Volumes/shared/_share_test/from_macbook_worker_20261105T1030Z.bin in 6s (sha256=98c9958da9154eca0119af17c9f4c9ead56fb231e750c383be24561aa9d41fa0).",
       "history": [
         {
           "at": "2026-11-05T09:29Z",
@@ -184964,6 +184964,11 @@
           "at": "2026-11-05T10:31Z",
           "by": "macbook",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-05T10:32Z",
+          "by": "macbook",
+          "what": "done: PASS (PR #522): mount=/Volumes/shared (smbfs @ben-mac-mini/shared); OK /Volumes/shared/_share_test/from_mini_20261105T0953Z.bin read in 23s (sha256=19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4); wrote 64 MB /Volumes/shared/_share_test/from_macbook_worker_20261105T1030Z.bin in 6s (sha256=98c9958da9154eca0119af17c9f4c9ead56fb231e750c383be24561aa9d41fa0)."
         }
       ],
       "remaining_action": "Record test result and finish J2209",
