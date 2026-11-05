@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2176 | mini | blocked | codex | – | 032 thumbs · thumb · 032 J2144 FIX: Titan hero crop and clear lander typography |  |
 | J2177 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
 | J2179 | any | open | – | – | assembly · HOS006 prerequisite: narrowly classify prescribed terminal Shorts loops in picture QA | J2178 |
-| J2181 | mini | open | – | – | assembly · HOS 006: qualify existing-media replacements for B/C repeated and mismatched shots | J2178 |
+| J2181 | mini | claimed | codex | 2026-11-05T06:01Z | assembly · HOS 006: qualify existing-media replacements for B/C repeated and mismatched shots | J2178 |
 | J2182 | any | open (after J2179) | – | – | chief · Re-review J2179 terminal-loop checker after J2180 FIX | J2180 |
 
 Recently finished:
