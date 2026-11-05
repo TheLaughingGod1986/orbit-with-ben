@@ -2,6 +2,35 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (5 Nov, fifth run)
+
+Queue remains **1/3**, same PR #495. Added three 3.6 s transparent WHEN
+renders via `code_graphics.py dates`: R19 (197.00 s, 83 MILLION YEARS,
+SOURCES row 7), R24 (234.58 s, 2013 / 3 SPACECRAFT, row 9), R33
+(341.38 s, 41,000 YEARS AGO / LASCHAMP EVENT, row 14). Starts are checked
+against locked Scribe word starts. No words or VO changed. These are date
+call-outs, not the still-required building timeline. Their animated line is
+an entrance accent, not a quantitative time axis. Captions fade in/out;
+3.6 s duration keeps all holds below four seconds.
+
+`CODE_DATES_v01.json` records source rows, timings and hashes;
+`CODE_DATES_TECHNICAL_CHECK_v01.json` records full error-free decode,
+1920×1080, argb alpha, 25 fps and duration checks. Media and inspected static
+contact sheet: `/Users/benjaminoats/_desk/J2141-dates-v01/`. Preview navy
+is a viewing background only. Place over graded moving plates, clear of the
+subject and existing FACT graphics. Actual playback/composite readability
+and full QA remain unreviewed. No KEEP, Chief PASS or stage approval.
+
+Detached batch `J2141-dates-v01` finished exit 0, no active render. Log:
+`/Users/benjaminoats/_desk/logs/J2141-dates-v01.log`, completion `.done`.
+Existing output refusal is inherited from the evidence encoder. Reproduce
+into a fresh media directory with `code_graphics.py dates --out ... --manifest ...`.
+NAS offload found no eligible old scratch; approximately 15 GB free. Small
+batch only, £0 spent. No archive search conducted; no search budget reset.
+Remaining archive harvest, other mechanisms/timeline, R41 fallback, R44
+duration comparison, composites and full QA remain unfinished. Source-ID
+and sourced-simulation gate conflicts below remain for Chief reconciliation.
+
 ## Continuation checkpoint (5 Nov, fourth run)
 
 Continue this same branch / PR #495 at **1/3**. Added three source-linked,

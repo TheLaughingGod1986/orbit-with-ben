@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='dates':
+  from date_graphics import main as dates
+  return dates(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='scales':
   from scale_graphics import main as scales
   return scales(sys.argv[2:])
