@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2176 | mini | blocked | codex | – | 032 thumbs · thumb · 032 J2144 FIX: Titan hero crop and clear lander typography |  |
 | J2177 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
 | J2182 | any | open (after J2179) | – | – | chief · Re-review J2179 terminal-loop checker after J2180 FIX | J2180 |
-| J2183 | any | open (after J2181) | – | – | review · Review HOS006 J2181 native source mappings and unresolved media gates | https://github.com/TheLaughingGod1986/history-of-science/pull/415 |
+| J2183 | any | claimed | gemini | 2026-11-05T06:16Z | review · Review HOS006 J2181 native source mappings and unresolved media gates | https://github.com/TheLaughingGod1986/history-of-science/pull/415 |
 | J2184 | any | open (after J2181) | – | – | chief · HOS006: decide bounded fallback for four native-resolution source gaps | https://github.com/TheLaughingGod1986/history-of-science/pull/415 |
 
 Recently finished:
