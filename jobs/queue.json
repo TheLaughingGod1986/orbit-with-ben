@@ -185829,10 +185829,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-05T14:49Z",
-      "eta": "2026-11-05T17:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T10:51Z",
       "result": "",
@@ -185861,6 +185861,11 @@
           "at": "2026-11-05T15:01Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Create sent; 100 credits spent; gen started; tmux j2213-mint; log ~/_desk/logs/J2213-mint.log; .done not written yet"
+        },
+        {
+          "at": "2026-11-05T15:01Z",
+          "by": "cursor",
+          "what": "released: Mint is running detached. tmux j2213-mint (chrome stays in tmux j2213-flow). Log ~/_desk/logs/J2213-mint.log. Done file ~/_desk/logs/J2213-mint.done is absent while it runs: do not start a second copy. First Create is Short B S02, 100 Flow credits, Veo 3.1 Quality, price line 100, Ultra benoats@googlemail.com, balance was 15390. No start still attached. Receipt ~/_desk/logs/J2213-receipt.json."
         }
       ],
       "remaining_action": "Detached mint running: Short B S02 generating; five inserts still to mint",
