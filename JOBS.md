@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2201 | mini | open | – | – | 006 edit · assembly · HOS 006: GBP0 native1080 existing-media inventory for Short B/C gaps |  |
 | J2202 | mini | open | – | – | assembly · URG-HOS-1: monthly Studio Reach window capture + studio_ctr archive |  |
 | J2203 | mini | open | – | – | assembly · HOS-2026-11-E1: write anomaly-first Short open rules into studio Shorts gates |  |
+| J2204 | mini | open | – | – | assembly · HOS-2026-11-E2: encode long first-30s proof-first + early DATA/SCALE rules |  |
 
 Recently finished:
 
