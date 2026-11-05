@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2233 | mini | open | – | – | for codex · review · Review multi-channel plan: code and phases (Codex) |  |
 | J2234 | gemini | open | – | – | review · Review multi-channel plan: risk and cut-over (Gemini) |  |
 | J2235 | mini | open | – | – | review · Cleanup audit: orbit-with-ben engine and tools (dead code, duplicates, bugs) |  |
+| J2236 | mini | open | – | – | review · Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs) |  |
 
 Recently finished:
 

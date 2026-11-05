@@ -1,5 +1,5 @@
 {
-  "next_id": 2236,
+  "next_id": 2237,
   "jobs": [
     {
       "id": "J0001",
@@ -187363,6 +187363,34 @@
         }
       ],
       "remaining_action": "Cleanup audit: orbit-with-ben engine and tools (dead code, duplicates, bugs)",
+      "kind": "review"
+    },
+    {
+      "id": "J2236",
+      "title": "Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Code cleanup audit (Ben, 5 Nov 2026: \"full cleanup ... no legacy code still left ... debug, refactor ... optimise\"). Repo: history-of-science. Read only; write jobs/reviews/<this id>/AUDIT.md with, for each finding, the file, the evidence (grep, call sites, last use, test), and a proposed action (archive to _archive/, merge duplicates into one shared helper, delete dead branch, fix bug). Cover: 00_Brand/Channel-Setup/tools, 07_Content-Ops (the hos-contract code and its tests), 04_Audio/tools, scripts/, and the 600+ per-film build scripts under 02_Video-Projects (how much is copy-paste that one shared helper could replace for future films). Rank by value and risk. Never touch shipped films' outputs or anything on the NAS; per-film build scripts of shipped films are provenance: propose archiving only with the receipts that point at them. Finish with jobs.py done <id> --result \"<top 5 findings>\". Claude implements the safe ones as PRs.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T18:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T18:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs)",
       "kind": "review"
     }
   ],
