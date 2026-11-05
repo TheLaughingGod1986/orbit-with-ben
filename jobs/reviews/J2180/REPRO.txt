@@ -1,0 +1,46 @@
+test_missing_body_source_must_fail_identity_verification (__main__.ReviewRegressions.test_missing_body_source_must_fail_identity_verification) ... FAIL
+test_missing_video_offset_must_not_disable_whole_run_checks (__main__.ReviewRegressions.test_missing_video_offset_must_not_disable_whole_run_checks) ... FAIL
+test_alignment_and_bounds (test_terminal_loop.TerminalLoop.test_alignment_and_bounds) ... ok
+test_cli_preflight_is_not_pass_and_invalid_is_fail (test_terminal_loop.TerminalLoop.test_cli_preflight_is_not_pass_and_invalid_is_fail) ... ok
+test_invalid_contracts_fail_closed (test_terminal_loop.TerminalLoop.test_invalid_contracts_fail_closed) ... ok
+test_j2169_complete_cut_lists_preserve_body_failures (test_terminal_loop.TerminalLoop.test_j2169_complete_cut_lists_preserve_body_failures) ... ok
+test_optin_body_alias_still_repeats (test_terminal_loop.TerminalLoop.test_optin_body_alias_still_repeats) ... ok
+test_real_preflight_and_legacy_optout (test_terminal_loop.TerminalLoop.test_real_preflight_and_legacy_optout) ... ok
+test_real_render_correspondence_and_wrong_picture (test_terminal_loop.TerminalLoop.test_real_render_correspondence_and_wrong_picture) ... ok
+test_reviewed_ok_cannot_waive_reuse_or_contract (test_terminal_loop.TerminalLoop.test_reviewed_ok_cannot_waive_reuse_or_contract) ... ok
+test_within_run_replay_and_body_quality_remain (test_terminal_loop.TerminalLoop.test_within_run_replay_and_body_quality_remain) ... ok
+
+======================================================================
+FAIL: test_missing_body_source_must_fail_identity_verification (__main__.ReviewRegressions.test_missing_body_source_must_fail_identity_verification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/J2180-evidence/reproduce.py", line 34, in test_missing_body_source_must_fail_identity_verification
+    self.assertTrue(rows[1]['fail'], 'Absent source must not receive a verified unique identity')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : Absent source must not receive a verified unique identity
+
+======================================================================
+FAIL: test_missing_video_offset_must_not_disable_whole_run_checks (__main__.ReviewRegressions.test_missing_video_offset_must_not_disable_whole_run_checks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/J2180-evidence/reproduce.py", line 43, in test_missing_video_offset_must_not_disable_whole_run_checks
+    self.assertTrue(any(r['fail'] for r in rows),
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    'Explicit video body missing offset must fail, not turn the 24s run into a still')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Explicit video body missing offset must fail, not turn the 24s run into a still
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.461s
+
+FAILED (failures=2)
+MISSING BODY: source_preflight failures= [[], [], []]
+MISSING OFFSET: source_preflight failures= [[], [], []]
+WARN   0:01 row open /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmp4ruuflza/source.mp4: kind of picture: no title in the pool, so nobody can tell what it is
+WARN   0:12 row body other.mp4: kind of picture: no title in the pool, so nobody can tell what it is; reuse: on screen 21.0s in a row (look at it: 15s is a lot for one picture)
+WARN   0:24 row tail /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmp4ruuflza/source.mp4: kind of picture: no title in the pool, so nobody can tell what it is; terminal loop: prescribed return classified; rendered pixel/loop checks; human moving/phone and audio review
+picture QA PREFLIGHT: 0 of 3 cuts fail, 3 to look at -> /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmp4ruuflza/report/PICTURE_QA.md
+FAIL   0:24 row tail /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmp4ruuflza/source.mp4: reuse: same stretch as 0:01 (give it a new stretch, or a new render); terminal loop: missing or unexpected terminal-loop declaration fields
+WARN   0:01 row open /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmp4ruuflza/source.mp4: kind of picture: no title in the pool, so nobody can tell what it is
+WARN   0:12 row body other.mp4: kind of picture: no title in the pool, so nobody can tell what it is; reuse: on screen 21.0s in a row (look at it: 15s is a lot for one picture)
+picture QA FAIL: 1 of 3 cuts fail, 2 to look at -> /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmp4ruuflza/report/PICTURE_QA.md
