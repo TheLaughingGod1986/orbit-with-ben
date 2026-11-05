@@ -1,5 +1,5 @@
 {
-  "next_id": 2175,
+  "next_id": 2176,
   "jobs": [
     {
       "id": "J0001",
@@ -181803,6 +181803,35 @@
       "taskKeys": [
         "HOS:005"
       ]
+    },
+    {
+      "id": "J2175",
+      "title": "HOS 008 Short C: Chief decision on J2170 paper hook lock & 1-sentence VO pickup scope (conditional 2 Dec slot held)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Bounded decision queued by J2170 (gemini, £0 preparation only; no credit spend authorized by J2023):\n\n1. **Slot & Hold Status:** Conditional **Wed 2 Dec 2026 11:30Z** (Ben watch by **29 Nov**) slot is **EXPLICITLY NOT ACHIEVABLE on existing audio alone** (`J1004` + Long Part 05 VO re-verified: `hos_008_short_C_v02.mp3` S1 ends at `4.840s`, pure speech `3.509s > 2.85s` at `1.06x` cap; no lawful word deletion; no Part 05 Long VO lift finishes `<= 2.85s` with subject + surprise claim). `Short_C` hold is retained and the 2 Dec slot is reported empty/held until this decision + pickup complete. `Short_A` (`J0912`, target 24 Nov, watch 20 Nov) remains separate and untouched.\n2. **Deliverables (`gemini/J2170-short-c-paper-hook` @ `e3823f75`):**\n   - `02_Video-Projects/008_Lightning-Franklin/10_Shorts/J2170/SHORT_C_PAPER_PLAN.md`\n   - `02_Video-Projects/008_Lightning-Franklin/10_Shorts/J2170/INPUT_INVENTORY.json` (47/47 local+NAS paths & SHA-256 verified)\n3. **Bounded Decision Requested from Chief / Claude:**\n   - **Script/Facts Lock:** Approve `C-Open-1` (**\"That rooftop lightning rod was Franklin's idea.\"** — 7w, 47 chars, 10 syllables, est. `2.35–2.55s <= 2.85s` at `1.00x`, frame-0 yellow `FRANKLIN'S`) or `C-Open-2` (**\"Benjamin Franklin invented the lightning rod.\"** — 6w, 45 chars, 10 syllables, est. `2.15–2.35s <= 2.85s`), sourced to `FACT_NOTES_v01.md` rows 25, 38, 39, 41, 42, 44.\n   - **Whole-Sentence Body Order (`hos_008_short_C_v02.wav` `0a25b6dab...` slice `w[13..61]`, `5.720–24.400s`, 49w, `18.680s` unchanged):** Choose `Layout C-v03a` (original S2->S5 order, scale payoff `w[52..61]` at `82.3% >= 70%`) or `Layout C-v03b` (whole S5 `w[52..61]` placed at S02 so mechanism answer `w[40..51]` starts at `76.1% >= 70%`). Total: `55–56w`, `~22.35s` (`22–27s` lock PASS).\n   - **Credit Scope & Follow-on Dispatch:** Authorize a 1-sentence ElevenLabs pickup (`~47 chars` via `el_client.py`, `speed=1.04`; live balance `101,014` chars, `TTS_PAUSE` absent) + `vo_check.py` gate, then dispatch `£0` `Short_C_v03` assembly & review using the 8 verified `J1191` KEEP moving Flow Veo plates (`P5:19`, `P5:01`, `P5:07`, `P1:12`, `P5:18`, `P5:06_c1`, `P5:06`, `P5:14`; zero overlap with `J1881`/`J2163` six UAT notes; defective `P5:13` and 42-frame `J1273` `P5:10` excluded). Long `008` must be public before `Short_C` airs.\n",
+      "ref": "J2170",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T02:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T02:15Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review J2170 paper hook plan (e3823f75), lock 1-sentence hook C-Open-1/2 + layout C-v03a/b, and authorize 47-char VO pickup + £0 v03 assembly (or keep 2 Dec slot empty)",
+      "due": "2026-11-29T11:30:00Z",
+      "kind": "chief"
     }
   ],
   "focus": [],
