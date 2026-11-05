@@ -176281,7 +176281,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "Waiting for: HOS PR408 tab-reuse merged e908c3e2. Generation blocked until separately tested tranche-2 runner (J2200) gets Chief system PASS: v05-only rows, parents first, GENERATED/PENDING_REVIEW not auto-KEEP, J2026 locks/price/floor/batch caps. 0/20 generated, zero spend. Do not run tranche1 runner.",
+      "result": "Waiting for: HOS PR408 tab-reuse merged e908c3e2 (5/5 tests OK in jobs/reviews/J2226/REVIEW.md, 58a7edc995). Generation blocked until separately tested tranche-2 runner (J2200, currently open/unclaimed with no PR yet) gets Chief system PASS: v05-only rows, parents first, GENERATED/PENDING_REVIEW not auto-KEEP, J2026 locks/price/floor/batch caps. All 5 v05 board hashes verified, 0/20 generated, zero HOS:009 spend. Do not run tranche1 runner.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -176357,6 +176357,11 @@
           "at": "2026-11-05T15:43Z",
           "by": "relay",
           "what": "condition verification queued: J2226"
+        },
+        {
+          "at": "2026-11-05T17:52Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-06T18:00:00Z"
         }
       ],
       "remaining_action": "Await tested tranche2 runner J2200 Chief PASS; then resume mint under J2026 caps",
@@ -176382,10 +176387,12 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "HOS PR408 tab-reuse merged e908c3e2. Generation blocked until separately tested tranche-2 runner (J2200) gets Chief system PASS: v05-only rows, parents first, GENERATED/PENDING_REVIEW not auto-KEEP, J2026 locks/price/floor/batch caps. 0/20 generated, zero spend. Do not run tranche1 runner.",
-        "check_at": "2026-11-05T16:43:18+00:00",
-        "recheck_task": "J2226"
+        "type": "input",
+        "condition": "HOS PR408 tab-reuse merged e908c3e2 (5/5 tests OK in jobs/reviews/J2226/REVIEW.md, 58a7edc995). Generation blocked until separately tested tranche-2 runner (J2200, currently open/unclaimed with no PR yet) gets Chief system PASS: v05-only rows, parents first, GENERATED/PENDING_REVIEW not auto-KEEP, J2026 locks/price/floor/batch caps. All 5 v05 board hashes verified, 0/20 generated, zero HOS:009 spend. Do not run tranche1 runner.",
+        "check_at": "2026-11-06T18:00:00Z",
+        "last_recheck": "J2226",
+        "checked_at": "2026-11-05T17:52:04+00:00",
+        "checked_by": "gemini"
       }
     },
     {
@@ -186892,13 +186899,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T17:45Z",
-      "eta": "2026-11-05T19:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-05T15:43Z",
-      "result": "",
+      "result": "HOLD / CONDITION UNMET (jobs/reviews/J2226/REVIEW.md, 58a7edc995): verified HOS PR #408 tab-reuse is merged on main (e908c3e2, 5/5 tests in test_flow_page_reuse.py OK), all 5 v05 board SHA-256 hashes in TRANCHE2_SCOPE_J2026.json match on disk, 0/20 tranche-2 rows generated on local disk or NAS, and 0 Flow credits spent on HOS:009 since J2026 (live balance 15,390 minus 600 J2213 HOS:006 spend = 14,790 implied, >=3,000 floor after 6,000 cap). However, J2200 (build tested tranche-2 Flow mint runner) is still open/unclaimed with no PR or Chief system PASS yet. Kept J2033 blocked via --recheck J2226 (next check 2026-11-06T18:00:00Z per original recorded retry date). £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-05T15:43Z",
@@ -186929,9 +186936,19 @@
           "at": "2026-11-05T17:51Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed jobs/reviews/J2226/REVIEW.md; verified PR #408 e908c3e2 5/5 tests, v05 board hashes, 0/20 generated, and J2200 still open"
+        },
+        {
+          "at": "2026-11-05T17:52Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Step 3/3 complete: recorded J2226 condition check on J2033 hold and closed J2226"
+        },
+        {
+          "at": "2026-11-05T17:52Z",
+          "by": "gemini",
+          "what": "done: HOLD / CONDITION UNMET (jobs/reviews/J2226/REVIEW.md, 58a7edc995): verified HOS PR #408 tab-reuse is merged on main (e908c3e2, 5/5 tests in test_flow_page_reuse.py OK), all 5 v05 board SHA-256 hashes in TRANCHE2_SCOPE_J2026.json match on disk, 0/20 tranche-2 rows generated on local disk or NAS, and 0 Flow credits spent on HOS:009 since J2026 (live balance 15,390 minus 600 J2213 HOS:006 spend = 14,790 implied, >=3,000 floor after 6,000 cap). However, J2200 (build tested tranche-2 Flow mint runner) is still open/unclaimed with no PR or Chief system PASS yet. Kept J2033 blocked via --recheck J2226 (next check 2026-11-06T18:00:00Z per original recorded retry date). £0 / 0 credits."
         }
       ],
-      "remaining_action": "Record J2226 condition verification on J2033 via --recheck J2226 and close J2226 done",
+      "remaining_action": "Done: J2226 condition verification complete; J2033 held awaiting J2200 runner + Chief PASS",
       "kind": "review",
       "recheck_of": "J2033",
       "due": "2026-11-05T16:43:18+00:00",
@@ -186946,15 +186963,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-05T17:51Z",
+        "at": "2026-11-05T17:52Z",
         "by": "gemini",
-        "note": "Committed jobs/reviews/J2226/REVIEW.md; verified PR #408 e908c3e2 5/5 tests, v05 board hashes, 0/20 generated, and J2200"
+        "note": "Step 3/3 complete: recorded J2226 condition check on J2033 hold and closed J2226"
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2226/REVIEW.md"
     },
     {
       "id": "J2227",
