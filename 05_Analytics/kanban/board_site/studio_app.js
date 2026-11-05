@@ -215,7 +215,12 @@
   }
 
   function summary(b, now) {
-    const vs = ((b.tracker || {}).videos) || [], m = b.models || {}, jobs = ((b.owb || {}).jobs) || [];
+    const vs = ((b.tracker || {}).videos) || [], m = b.models || {};
+    // Every job once: the general list plus the jobs carried on video cards (5 Nov 2026: the Mini's J2176 lives on the
+    // 032 card, so "Jobs running" said 1 while the Mini and the MacBook both worked).
+    const byId = new Map();
+    for (const j of [...(((b.owb || {}).jobs) || []), ...vs.flatMap(v => v.jobs || [])]) if (j && j.id && !byId.has(j.id)) byId.set(j.id, j);
+    const jobs = [...byId.values()];
     const quietMin = (now - Date.parse(m.checkedAt || "")) / 6e4;
     const health = !m.checkedAt || isNaN(quietMin) ? ["amber", "No news yet"]
       : quietMin > QUIET_MIN ? ["red", `Mac mini quiet ${Math.round(quietMin / 60)} h`]
