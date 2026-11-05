@@ -12,7 +12,9 @@ scripts/macbook/setup_macbook.sh). Each run does at most one job, and only when 
   - at least MACBOOK_MIN_FREE_GB free on the disk (default 15).
 Then it pulls both checkouts, claims the oldest `macbook` job with
   jobs.py next --agent macbook --can macbook --git
-and wakes the agent CLI (MACBOOK_AGENT, default codex) on it under `caffeinate -i`, which keeps the Mac awake for
+and wakes an agent CLI on it under `caffeinate -i`: the first lane in the job's routing chain whose CLI is installed
+here (Codex, Gemini `agy`, Claude Code, Cursor `agent`; Ben, 4 Nov 2026: "get all the agents working on the MacBook
+Pro"; MACBOOK_AGENTS limits the set, MACBOOK_AGENT pins one), which keeps the Mac awake for
 that one run only (nothing global changes; sleep settings are untouched). The run is killed at MACBOOK_CAP_S seconds
 (default 1500); a job still claimed afterwards is released with a note so the next run (or another worker) picks
 it up. After a Codex run it records the Codex usage limits (pool codex: the same account as the Mini) for the board.
@@ -133,17 +135,105 @@ def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None) -> list[str]:
     return why
 
 
-def agent_cmd(agent: str, prompt: str) -> list | None:
+AGENTS = ("codex", "gemini", "claude", "cursor")  # Ben, 4 Nov 2026: "get all the agents working on the MacBook Pro"
+BINS = {"codex": ("CODEX_BIN", "codex"), "gemini": ("AGY_BIN", "agy"), "claude": ("CLAUDE_BIN", "claude"),
+        "cursor": ("CURSOR_AGENT_BIN", "agent")}
+
+
+def find_bin(agent: str):
+    """launchd's PATH misses npm-global and ~/.local: look in the usual install places too (as chief_relay.find_bin)."""
+    env, name = BINS[agent]
+    cands = [os.environ.get(env), shutil.which(name)] + [str(HOME / d / name) for d in (".npm-global/bin", ".local/bin")] \
+        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
+    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+
+
+def installed(names=None) -> list:
+    """The agent CLIs this MacBook runs, in MACBOOK_AGENTS order (default all four), that are actually installed."""
+    want = [a.strip() for a in (names or os.environ.get("MACBOOK_AGENTS", ",".join(AGENTS))).split(",") if a.strip()]
+    return [a for a in want if a in BINS and find_bin(a)]
+
+
+DOWN = STATE / "macbook-agent-down.json"
+
+
+def down_agents(now: dt.datetime | None = None) -> dict:
+    """{agent: until} for agent CLIs whose last run here failed, while the pause lasts (MACBOOK_FAIL_H, default 2 h)."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    try:
+        marks = json.loads(DOWN.read_text())
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for a, until in (marks or {}).items():
+        try:
+            if dt.datetime.fromisoformat(str(until).replace("Z", "+00:00")) > now:
+                out[a] = until
+        except ValueError:
+            pass
+    return out
+
+
+def mark_down(agent: str, now: dt.datetime | None = None) -> str:
+    """A failed run pauses that CLI here, so the job's next run goes to the next lane in its chain instead of
+    failing the same way every 15 minutes."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    until = (now + dt.timedelta(hours=float(os.environ.get("MACBOOK_FAIL_H", "2")))).strftime("%Y-%m-%dT%H:%M:%SZ")
+    marks = down_agents(now)
+    marks[agent] = until
+    try:
+        STATE.mkdir(parents=True, exist_ok=True)
+        DOWN.write_text(json.dumps(marks) + "\n")
+    except OSError:
+        pass
+    return until
+
+
+def usable(have: list, now: dt.datetime | None = None) -> list:
+    down = down_agents(now)
+    return [a for a in have if a not in down]
+
+
+def pick_agent(job: dict, have: list) -> tuple:
+    """(agent, model) for this job on this MacBook: the first lane in the job's routing chain (scripts/routing.py,
+    AGENTS.md "Who does what") whose CLI is installed here and has credit; else the first installed CLI with its
+    default model; ("", "") when nothing is installed. MACBOOK_AGENT pins one agent (the old single-agent setting)."""
+    import routing
+    pin = os.environ.get("MACBOOK_AGENT", "")
+    if pin:
+        return (pin, routing.model_for(job, pin)) if pin in have else ("", "")
+    for a, m in routing.job_chain(job):
+        if a in have and routing.lane_ok(a, m):
+            return a, (m if routing.RUNS_ON.get(m) == a else "")
+    return (have[0], "") if have else ("", "")
+
+
+def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     """The agent CLI's one-shot form, as the Mini runs it (scripts/chief_relay.py cli_spec)."""
+    b = find_bin(agent) if agent in BINS else None
+    if not b:
+        return None
+    dirs = ["--add-dir", str(HOS), "--add-dir", str(HOME / "_desk")]
     if agent == "codex":
-        b = os.environ.get("CODEX_BIN") or shutil.which("codex")
-        return [b, "exec", "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true",
-                "--add-dir", str(HOS), "--add-dir", str(HOME / "_desk"), prompt] if b else None
+        m = ["-m", model] if model.startswith("gpt-") else []
+        return [b, "exec", *m, "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true", *dirs, prompt]
     if agent == "claude":
-        b = os.environ.get("CLAUDE_BIN") or shutil.which("claude")
-        return [b, "-p", "--permission-mode", "acceptEdits", "--add-dir", str(HOS), "--add-dir", str(HOME / "_desk"),
-                prompt] if b else None
+        return [b, "-p", "--permission-mode", "acceptEdits", *dirs, prompt]
+    import routing
+    cm = routing.cli_model(model) if model and routing.RUNS_ON.get(model) == agent else ""
+    if agent == "gemini":  # Antigravity agy: -p must come last, straight before the prompt (chief_relay note, 14 Oct)
+        return [b, "--dangerously-skip-permissions", *dirs, *(["--model", cm] if cm else []), "-p", prompt]
+    if agent == "cursor":
+        return [b, "-p", "--force", *(["--model", cm] if cm else []), prompt]
     return None
+
+
+def job_record(job_id: str) -> dict:
+    try:
+        return next((j for j in json.loads((OWB / "jobs" / "queue.json").read_text()).get("jobs", [])
+                     if j.get("id") == job_id), {})
+    except (OSError, ValueError):
+        return {}
 
 
 def run_capped(cmd: list, cwd, cap_s: int) -> int:
@@ -210,7 +300,8 @@ def host_observation():
 def heartbeat_doc(state: str, why: list, job: str = "", now: dt.datetime | None = None) -> dict:
     now = now or dt.datetime.now(dt.timezone.utc)
     return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "state": state, "why": why, "job": job,
-            "observation": host_observation()}
+            "observation": host_observation(),
+            "agents": installed(), "paused": down_agents(now)}
 
 
 def push_heartbeat(state: str, why: list, job: str = "") -> None:
@@ -282,26 +373,35 @@ def run() -> int:
         push_heartbeat("error", [f"claim failed: {(r.stderr or r.stdout).strip()[-120:]}"])
         return 1
     push_heartbeat("working", [], job)
-    agent = os.environ.get("MACBOOK_AGENT", "codex")
+    have = usable(installed())
+    agent, model = pick_agent(job_record(job), have)
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
     prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
                            cap_min=cap // 60)
-    cmd = agent_cmd(agent, prompt)
+    cmd = agent_cmd(agent, prompt, model) if agent else None
     if not cmd:
         sh([sys.executable, "scripts/jobs.py", "release", job, "--agent", AGENT_ID, "--note",
-            f"MacBook worker: the {agent} CLI isn't installed", "--git"], cwd=OWB)
-        log(f"{agent} CLI not found: released {job}")
+            f"MacBook worker: no agent CLI installed for this job (installed: {', '.join(have) or 'none'})", "--git"],
+           cwd=OWB)
+        log(f"no CLI for {job} (installed: {have}): released")
         return 1
-    log(f"{job}: waking {agent} (cap {cap // 60} min)")
+    log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
     code = run_capped(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd, OWB, cap)
     sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], timeout=180)
+    paused = ""
+    if code not in (0, 124):  # 124 = hit the cap: slow, not broken
+        paused = mark_down(agent)
     if still_mine(job):
-        sh([sys.executable, "scripts/jobs.py", "release", job, "--agent", AGENT_ID, "--note",
-            f"MacBook worker run ended (exit {code}) with the job still open; picked up again next run", "--git"],
-           cwd=OWB)
+        note = f"MacBook worker run on {agent} ended (exit {code}) with the job still open; picked up again next run"
+        if paused:
+            note += f"; {agent} paused on the MacBook until {paused}, so the next run uses the next agent in the chain"
+        sh([sys.executable, "scripts/jobs.py", "release", job, "--agent", AGENT_ID, "--note", note, "--git"], cwd=OWB)
         log(f"{job}: released after exit {code}")
+        push_heartbeat("idle", [f"last run: {job} on {agent} failed (exit {code})"
+                                + (f"; {agent} paused until {paused}" if paused else "")])
     else:
         log(f"{job}: finished (exit {code})")
+        push_heartbeat("idle", [f"last run: {job} on {agent} finished"])
     if agent == "codex":
         record_usage()
     return 0
