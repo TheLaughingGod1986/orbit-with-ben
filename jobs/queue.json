@@ -182605,17 +182605,22 @@
           "at": "2026-11-05T04:43Z",
           "by": "codex",
           "what": "step 1 of 3 done: Inspected 17b2ac555, both P1 repairs, original contract and paired docs; no production approval inferred from accidental main landing."
+        },
+        {
+          "at": "2026-11-05T04:44Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 24 tests plus two original review regressions PASS; rules/core/compile/diff PASS. Exact-head PR513 merged after fresh green CI verification."
         }
       ],
-      "remaining_action": "Finish regression checks and rule on exact PR513 head",
+      "remaining_action": "Record checker acceptance and notify mapping handoffs; retain J2169 hold",
       "due": "2026-11-07T18:00:00Z",
       "kind": "chief",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-05T04:43Z",
+        "at": "2026-11-05T04:44Z",
         "by": "codex",
-        "note": "Inspected 17b2ac555, both P1 repairs, original contract and paired docs; no production approval inferred from accidental"
+        "note": "24 tests plus two original review regressions PASS; rules/core/compile/diff PASS. Exact-head PR513 merged after fresh gr"
       },
       "taskKeys": [
         "HOS:006"
