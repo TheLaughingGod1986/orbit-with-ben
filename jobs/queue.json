@@ -183978,9 +183978,14 @@
           "at": "2026-11-05T18:00Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Confirmed audio_input and moving_video_input capabilities via read_file on hos_008_short_C_v02.mp3 and all 9 Short_C candidate clips; verifying J2170 paper plan and J2217 8-note overlap"
+        },
+        {
+          "at": "2026-11-05T18:08Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified S01-S08 clip windows via read_file (fixed S05 smoke puff, un-swapped S06/S07 wall vs earth, fixed S08 ground spark, locked 936x1664 2.31x 9:16 framing for terminal_loop.py)"
         }
       ],
-      "remaining_action": "Verify J2170 paper hook math, FACT_NOTES rows, J2217 8-note overlap, and direct audio/moving-video clip windows",
+      "remaining_action": "Update HOS J2170/J2175 Short_C v03 paper plan, INPUT_INVENTORY.json, and source-QA preflight in clean HOS worktree",
       "due": "2026-11-29T11:30:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -183994,11 +183999,11 @@
       "model": "gemini-argon",
       "urgent": 8,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-05T18:00Z",
+        "at": "2026-11-05T18:08Z",
         "by": "gemini",
-        "note": "Confirmed audio_input and moving_video_input capabilities via read_file on hos_008_short_C_v02.mp3 and all 9 Short_C can"
+        "note": "Verified S01-S08 clip windows via read_file (fixed S05 smoke puff, un-swapped S06/S07 wall vs earth, fixed S08 ground sp"
       },
       "taskKeys": [
         "HOS:008"
