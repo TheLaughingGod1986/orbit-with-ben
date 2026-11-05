@@ -166674,17 +166674,22 @@
           "at": "2026-11-05T16:32Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J2217 deliverable on HOS PR #428 (dfd365c7) and J1868/J2163 records"
+        },
+        {
+          "at": "2026-11-05T16:41Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Audited PR #428 (dfd365c7): 0:51 [1124,1227] and 3:13 [4500,4659] cross GOP boundaries; 27 caption windows drift by up to 22f"
         }
       ],
-      "remaining_action": "Verify J2217 eight-item manifest, PTS windows, 27-cut caption treatment and unit tests on HOS PR #428",
+      "remaining_action": "Write jobs/reviews/J1881/REVIEW.md with PR #428 (dfd365c7) FIX findings and reopen J2217 via jobs.with_git",
       "due": "2026-11-04T14:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-05T16:32Z",
+        "at": "2026-11-05T16:41Z",
         "by": "gemini",
-        "note": "Read J2217 deliverable on HOS PR #428 (dfd365c7) and J1868/J2163 records"
+        "note": "Audited PR #428 (dfd365c7): 0:51 [1124,1227] and 3:13 [4500,4659] cross GOP boundaries; 27 caption windows drift by up t"
       },
       "taskKeys": [
         "HOS:008"
