@@ -92,6 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2169 | mini | open | – | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
 | J2170 | any | open | – | – | 008 edit · review · HOS 008 Short C: resolve blocked hook on paper for conditional 2 Dec slot | J2023 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
+| J2172 | mini | open | – | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 
 Recently finished:
 
