@@ -73,7 +73,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2177 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2195 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
-| J2197 | mini | open | – | – | chief · Chief: J2038 follow-on: capacity probe producer + ENV flip + 2h watch |  |
 | J2199 | mini | open | – | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
 | J2200 | mini | open | – | – | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
 | J2202 | mini | open | – | – | assembly · URG-HOS-1: monthly Studio Reach window capture + studio_ctr archive |  |
@@ -126,6 +125,6 @@ OK /Users/benjaminoats/_desk/shared/_share_test/from_macbook_20261105T0935Z.bin
 19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4)
 - J2201 cancelled: HOS 006: GBP0 native1080 existing-media inventory for Short B/C gaps ()
 - J2198 done: 032 J2089: review corrected fire stills and regenerated process pixels (KEEP all 7 (jobs/reviews/J2198/REVIEW.md): 5 unchanged code (renderer-only hash change), 2 fire fixes verified. J2089 may render r39/r40 under J2198.)
+- J2197 cancelled: Chief: J2038 follow-on: capacity probe producer + ENV flip + 2h watch ()
 - J2196 done: Review J2176: 032 J2144 FIX: Titan hero crop and clear lander typography (jobs/reviews/J2196/REVIEW.md: A from one real Cassini frame, in order PIA14602 > PIA21890 > PIA14922 (Titan crop), ≤2.35× upscale; fallback smaller hero ≥45% height. B unchanged; C as ruled.)
 - J2194 done: HOS 010: decide exact missing-plate production scope for J2172 (FIX -> J2210 (jobs/reviews/J2194/REVIEW.md): verified HOS PR #424 (ad3c0f4d) inventory (2 £0 code graphics on disk, 12 moving plates missing); queued J2210 (£0 SHORTS_PICTURE_PLAN_v03 Option A1 S01 cut, Short C robin/pigeon/gull split, banner cleanup, code_graphics_v01 paths); kept J2172 blocked 1/3 awaiting J2210 + Chief HOS 010 moving-plate mint authorization; HOS PR #424 ready for Chief merge)
-- J2192 done: 032 J2089: review seven new process overlay stills (done)

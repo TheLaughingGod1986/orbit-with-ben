@@ -184897,7 +184897,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -184929,6 +184929,11 @@
           "at": "2026-11-05T13:39Z",
           "by": "claude",
           "what": "step 2 of 5 done: Review of PR #534 (merge 66f76f5): KEEP; capacity/relay unittests OK. Follow-up: REVIEW_BOUND omits execution_leases.py and serial_admission.py (both unchanged since 8937aa6). Done: queue checkout ff to origin/main; reviewed_head re-pinned to 66f76f5 in registration.json + dispatch.json; dispatch expiresAt renewed to 2026-11-12. STOPPED again before step 3 (relay env unchanged). Dry runs with flag on: (1) serial preflight -> capacity_waiting serial_safe=false, so chief_relay returns 'capacity occupancy unverified' and skips serial: the relay's own execution lease says host 'mini' (chief_relay.py:1624) but registration host is 'mac-mini', so it reads as a foreign unattributed recovery lease; and any claim held outside capacity (now J2165 by macbook, J2146 by gemini) is an unattributed claim -> serial blocked whenever the MacBook holds work. (2) busy tick -> 'approved job-bound command required': dispatch.json needs job/argv/token and dispatch_capacity.fresh() caps its age at 300 s, so a 7-day approval cannot launch a lane and nothing in the repo writes per-job dispatch. Probe LaunchAgent plist written (producer/com.owb.capacity-probes.plist) but not loaded: nothing reads probes while the flag is off. Parked for Chief: fix host id (relay 'mini' vs 'mac-mini'), decide how MacBook/other-agent claims are attributed or excluded from serial_safe, and define who writes the per-job dispatch request (job/argv/token, refreshed <=5 min)."
+        },
+        {
+          "at": "2026-11-05T13:48Z",
+          "by": "claude",
+          "what": "cancelled"
         }
       ],
       "remaining_action": "J2038 follow-on: capacity probe producer + ENV flip + 2h watch Complete Mini capacity relay ENV flip after probe readiness.",
