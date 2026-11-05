@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2249 | mini | open | – | – | 032 thumbs · for codex · thumb · 032 thumb A rebuild: real Huygens surface photo, hook REAL SURFACE (J2162) |  |
 | J2250 | mini | open | – | – | 024 edit · for gemini · review · `gemini-argon` · 024 muons Short v01: review the tool-passed cut |  |
 | J2252 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2169 |  |
+| J2254 | mini | open | – | – | 008 edit · vo · `eleven_v3` · HOS 008 Short C: record authorized C-Open-1 VO pickup (47-char) via vo_take.py | J2175/h94 |
 
 Recently finished:
 

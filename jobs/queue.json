@@ -1,5 +1,5 @@
 {
-  "next_id": 2254,
+  "next_id": 2255,
   "jobs": [
     {
       "id": "J0001",
@@ -188967,6 +188967,35 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "done_ref": "jobs/reviews/J2253/REVIEW.md"
+    },
+    {
+      "id": "J2254",
+      "title": "HOS 008 Short C: record authorized C-Open-1 VO pickup (47-char) via vo_take.py",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief h94 authorization (Grok Bot elected Chief, 5 Nov 2026 ~21:25Z): record ONE ElevenLabs pickup sentence for HOS 008 Short C.\n\nLocked text (C-Open-1, jobs/reviews/J2175/REVIEW.md, HOS PR #429 merged as 56c8affd):\n  That rooftop lightning rod was Franklin's idea.\n(47 chars, 7 words, 10 syllables). 6-word zero-extra-spend trim fallback ONLY if ElevenLabs inserts an unexpected pause after \"rooftop\": That lightning rod was Franklin's idea.\n\nHow:\n1. Read live ElevenLabs balance first. Subscription credit only; floor 0; never top up; £0 cash / Flow / Vertex.\n2. Under desk-lock: `desk-lock elevenlabs -- python3 04_Audio/tools/vo_take.py --text \"That rooftop lightning rod was Franklin's idea.\" --out <HOS 008 10_Shorts/vo_v02 or adjacent pickup dir> --stem hos_008_short_C_s01_v03 --order h94-J2175 --dry-run` then the real take (Ben Orbit Narrator / eleven_v3 / speed 1.04 via vo_take).\n3. vo_check PASS; keep TAKE.json + Scribe timings. Prefer landing beside existing `10_Shorts/vo_v02/` takes for film 008 (working tree hos-008-lightning / HOS repo film path).\n4. Do NOT schedule, upload, or change the conditional Wed 2 Dec 2026 11:30Z slot. Short_C stays held until Short_C_v03 gates + Ben watch + 008 Long is Public.\n5. On PASS, finish this job with the stem path + sha256 in --result so the assembly successor can claim.\n\nRef: J2175 KEEP / Layout C-v03a; merge 56c8affd.\n",
+      "ref": "J2175/h94",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T21:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T21:25Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record C-Open-1 via vo_take.py; vo_check PASS; no upload",
+      "kind": "vo",
+      "model": "eleven_v3"
     }
   ],
   "focus": [],
