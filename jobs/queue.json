@@ -162693,9 +162693,14 @@
           "at": "2026-11-05T00:58Z",
           "by": "codex",
           "what": "step 2 of 3 done: Implemented canonical election-before-gate, serial occupancy preflight with launch lock, and fail-closed unattributed claim accounting; running regressions."
+        },
+        {
+          "at": "2026-11-05T01:02Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Pushed c9f591c158: 117 capacity tests and two Chief dispatch regressions pass; rules/core/STATUS checks pass. Rollout remains disabled."
         }
       ],
-      "remaining_action": "Validate capacity caller fixes and return PR437 for exact-head review",
+      "remaining_action": "Read final-head CI, then hand PR437 back for exact-head review and observed host acceptance",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162715,9 +162720,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T00:58Z",
+        "at": "2026-11-05T01:02Z",
         "by": "codex",
-        "note": "Implemented canonical election-before-gate, serial occupancy preflight with launch lock, and fail-closed unattributed cl"
+        "note": "Pushed c9f591c158: 117 capacity tests and two Chief dispatch regressions pass; rules/core/STATUS checks pass. Rollout re"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
