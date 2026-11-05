@@ -183074,13 +183074,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-05T10:26Z",
-      "eta": "2026-11-05T10:56Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T02:21Z",
-      "result": "review J2196 KEEP: build A from PIA14602, else PIA21890, else PIA14922 Titan crop (jobs/reviews/J2196/REVIEW.md)",
+      "result": "Failed composition constraints under J2196; PR521 / 8e1a673ac4. PIA14602 67.56% near-black crop; PIA21890 clipped moon; PIA14922 under 306px at max upscale versus 324px floor. Review J2212 owns explicit new composition scope; no unchanged-source retry, panel release or gate waiver. B/C unchanged, progress 1/3, no spend or background process.",
       "history": [
         {
           "at": "2026-11-05T02:21Z",
@@ -183166,6 +183166,11 @@
           "at": "2026-11-05T10:30Z",
           "by": "codex",
           "what": "step 1 of 3 done: J2196 sources checked: PIA14602 crop 67.56% near-black; PIA21890 clipped globe; PIA14922 under 306px hero at max upscale vs 324px floor. B/C hashes unchanged. Evidence 8e1a673ac4; no new A delivered."
+        },
+        {
+          "at": "2026-11-05T10:31Z",
+          "by": "codex",
+          "what": "blocked: Failed composition constraints under J2196; PR521 / 8e1a673ac4. PIA14602 67.56% near-black crop; PIA21890 clipped moon; PIA14922 under 306px at max upscale versus 324px floor. Review J2212 owns explicit new composition scope; no unchanged-source retry, panel release or gate waiver. B/C unchanged, progress 1/3, no spend or background process."
         }
       ],
       "remaining_action": "Resolve failed Titan A composition scope before construction and panel review",
@@ -183182,7 +183187,12 @@
         "OWB:032"
       ],
       "escalated_at": "2026-11-05T06:52Z",
-      "urgent": 9
+      "urgent": 9,
+      "hold": {
+        "type": "input",
+        "condition": "Failed composition constraints under J2196; PR521 / 8e1a673ac4. PIA14602 67.56% near-black crop; PIA21890 clipped moon; PIA14922 under 306px at max upscale versus 324px floor. Review J2212 owns explicit new composition scope; no unchanged-source retry, panel release or gate waiver. B/C unchanged, progress 1/3, no spend or background process.",
+        "check_at": "2026-11-05T16:31:26+00:00"
+      }
     },
     {
       "id": "J2177",
