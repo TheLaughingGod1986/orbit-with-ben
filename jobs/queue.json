@@ -1,5 +1,5 @@
 {
-  "next_id": 2241,
+  "next_id": 2244,
   "jobs": [
     {
       "id": "J0001",
@@ -166595,15 +166595,15 @@
       "ref": "J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z",
       "film": "008",
       "stage": "edit",
-      "after": "J2217",
+      "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-05T18:36Z",
-      "eta": "2026-11-05T20:36Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:57Z",
-      "result": "review J1881 FIX (jobs/reviews/J1881/REVIEW.md): J2217 PR #428 (dfd365c7) reopened to fix cross-GOP frame windows on 0:51 ([1124,1227] -> [1129,1231]), 3:13 ([4500,4659] -> [4511,4670] covering 4660..4670), and all 27 caption_treatment.labels GOP ranges ([0,141]..[12297,12461]). GBP0.",
+      "result": "parked for Chief: review J1881 KEEP (jobs/reviews/J1881/REVIEW.md, HOS PR #411 50620e40 + PR #428 51bf99a6, 4/4 CI green, 14/14 unit tests, check_all PASS, 6/6 dry-run inputs verified) — 8-item + 27-caption closed-GOP recipe verified (`0:51` [1129,1231], `3:13` [4511,4670], `2:18` frame 3305 inside replace [3260,3343], 27 closed-GOP caption windows [0,141]..[12297,12461]); chained production jobs queued: J2241 (bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 rods, <=3 takes/300 cr each, <=900 cr cap, GBP0) -> J2242 (closed-GOP packet/boundary splice + 27 unbordered umber caption panels -> master_v04 + gates) -> J2243 (multimodal audio+video QA). Merge HOS PR #411 + #428 and close J1881 done to authorize J2241.",
       "history": [
         {
           "at": "2026-11-03T18:57Z",
@@ -166759,17 +166759,27 @@
           "at": "2026-11-05T18:49Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Verified HOS PR #428 (51bf99a6) 4/4 CI green, 14/14 tests, check_all PASS, and multimodal video/audio probes"
+        },
+        {
+          "at": "2026-11-05T18:52Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Wrote REVIEW.md (KEEP PR #428 51bf99a6); queued J2241->J2242->J2243; parked for Chief"
+        },
+        {
+          "at": "2026-11-05T18:52Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review J1881 KEEP (jobs/reviews/J1881/REVIEW.md, HOS PR #411 50620e40 + PR #428 51bf99a6, 4/4 CI green, 14/14 unit tests, check_all PASS, 6/6 dry-run inputs verified) — 8-item + 27-caption closed-GOP recipe verified (`0:51` [1129,1231], `3:13` [4511,4670], `2:18` frame 3305 inside replace [3260,3343], 27 closed-GOP caption windows [0,141]..[12297,12461]); chained production jobs queued: J2241 (bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 rods, <=3 takes/300 cr each, <=900 cr cap, GBP0) -> J2242 (closed-GOP packet/boundary splice + 27 unbordered umber caption panels -> master_v04 + gates) -> J2243 (multimodal audio+video QA). Merge HOS PR #411 + #428 and close J1881 done to authorize J2241."
         }
       ],
-      "remaining_action": "Write jobs/reviews/J1881/REVIEW.md, queue bounded successor jobs (retakes -> packet/GOP assembly -> multimodal QA), and park J1881 for Chief",
+      "remaining_action": "Chief: merge HOS PR #411 + #428 (51bf99a6) and close J1881 done to authorize J2241 (<=900 Flow cr) -> J2242 -> J2243",
       "due": "2026-11-04T14:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-05T18:49Z",
+        "at": "2026-11-05T18:52Z",
         "by": "gemini",
-        "note": "Verified HOS PR #428 (51bf99a6) 4/4 CI green, 14/14 tests, check_all PASS, and multimodal video/audio probes"
+        "note": "Wrote REVIEW.md (KEEP PR #428 51bf99a6); queued J2241->J2242->J2243; parked for Chief"
       },
       "taskKeys": [
         "HOS:008"
@@ -166783,7 +166793,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/428"
     },
     {
       "id": "J1882",
@@ -187772,6 +187783,106 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2241",
+      "title": "HOS 008 Franklin: mint bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 church/ship rods (<=3 takes/300 cr each, <=900 cr cap, GBP0)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Bounded HOS 008 Flow Veo 3.1 Quality retake job scoped by J1881 (HOS PR #428 commit 51bf99a6). Subscription credit only (GBP0 cash; never top up, buy credits, or enable paid overage; run `ai_spend.py check` before every take and `ai_spend.py spend` after).\n\n## Scope (3 plates, <=3 takes / <=300 subscription credits each, <=900 credits total cap)\n1. **Row 4 (`1:49` / `1:51.33s` end, `P2:02_salon_spark`, master frames `2506..2665`, `160f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part02/refs/v03_flow_stills/02_salon_spark_t1.png` (`sha256: aefd6338aded1037c11306a99fc580d1a62a66d9367409f01e0edd993cc8cc58`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); lecturer rubs solid sealed glass rod with silk and draws a crisp spark to a guest's knuckle while fine hair tips lift gently in place; `0` hair/smoke/cotton extruding from or detaching near the glass tube.\n   - Note on Row 3 (`0:51`, `P1:07_hot_night`, frames `1129..1231`): `07_hot_night_t1.mp4` (`30da07fe...`) is the colonial night street with no glass tube or hair; keep `07_hot_night_t1.mp4` untouched unless Chief explicitly directs a separate Part 1 night-street retake.\n2. **Row 6 (`3:13`, `P3:01_points_desk`, master frames `4511..4670`, `160f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part03/refs/v03_flow_stills/01_points_desk_t1.png` (`sha256: cc16a515a43e881c54a207eb2cb3f700ab9a4166bbb83a366dc09431db403e51`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); Franklin holds a pointed iron needle near the spinning brass electrostatic globe while a single thin linen indicator thread hangs/deflects cleanly; `0` paper strips or receipts unrolling out of the brass globe (clean prefix `4511..4606` = `96f` documented in manifest).\n3. **Row 8 (`7:58` / `7:59`, `P5:13_rods_spread`, master frames `11358..11492`, `135f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part05/refs/v03_flow_stills/13_rods_spread_t1.png` (`sha256: 84a92bf6ce1abd1a5780c37ac2e8ae50ea6099f5cff5c7f728a70060b394819c`).\n   - Requirement: `>=135` decoded frames (`>=5.65s` @ 24fps); straight, rigid, vertical anchored lightning rods on church steeple, brick house roof, and harbor ship mast; `0` kinks, `0` tilting, `0` detaching or falling rods.\n\nVerify all selected takes with native `moving_video_input` (`chief_relay.py capabilities`), `probe_video()`, and SHA-256 hashes before handing off to assembly.",
+      "ref": "J1881 / HOS PR #428 51bf99a6",
+      "film": "008",
+      "stage": "picture",
+      "after": "J1881",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T18:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T18:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check live Flow balance via ai_spend.py, mint <=3 Quality takes each for P2:02_salon_spark, P3:01_points_desk & P5:13_rods_spread, and verify in moving video",
+      "kind": "video",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "taskKeys": [
+        "HOS:008"
+      ]
+    },
+    {
+      "id": "J2242",
+      "title": "HOS 008 Franklin: closed-GOP packet/boundary splice + 27 film-wide bottom-caption panels -> hos_008_master_v04.mp4 & gates (GBP0)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Bounded £0 new-version assembly job for HOS 008 Franklin (`hos_008_master_v04.mp4`), dependent on `J1881` and `J2241` (HOS PR #411 `50620e40` + PR #428 `51bf99a6`).\n\n## Required Implementation & Preservation Contract\n1. **Closed-GOP Packet Copy & Lossless Boundary Splicing:**\n   - Source master: `_precheck/master_v03/hos_008_master_v03.mp4` (`sha256: cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b`, `393,139,693` bytes, `12,923` frames, start `0.125s`, duration `539.500s`, timebase `1/12288`).\n   - Never globally re-encode or apply `setpts=N/24`. Copy unchanged closed-GOP video packets directly; re-encode only the declared closed-GOP patch windows (`[423,544]`, `[744,839]`, `[2506,2665]`, `[3168,3343]`, `[4511,4670]`, `[4977,5077]`, `[11358,11492]`, plus the remaining `side_label` closed GOPs in `caption_treatment.labels` `[0,141]`..`[12297,12461]`) matching exact source frame counts and original integer PTS/durations (including the 23 `1024`-tick steps).\n   - Verify bitwise-identical per-decoded-frame SHA-256 on every unchanged frame and stream-copy original `h35` master audio packets without timestamp shift (verify compressed audio packet hashes, PTS/DTS/durations, `-14.129 LUFS` / `-1.2 dBTP`, and `0.000 ms` VO sync lag).\n2. **Eight Defect Corrections + Film-Wide 27 Bottom-Caption Panels:**\n   - Apply the 8 row fixes in `J2163_CORRECTION_MANIFEST.json` (`eight_rows`) using verified on-disk inputs and `J2241` retakes (`--retake-p2-02`, `--retake-p3-01`, `--retake-p5-13`).\n   - Render the soft unbordered dark-umber background panel (`bordered_ui_chrome: false`, `border: false`, `gold_rule: false`, `pill_chrome: false`, white Didot italic `<=4` words, `0.3–0.5s` fade over moving plate, master-derived word alignment) across all 27 `side_label` closed GOPs (`[0,141]`..`[12297,12461]`).\n   - On `3:31` (`4977..5077`, `04_letter_crosses`), render one animated cream ink letter crossing over moving `07_slow_news_t1.mp4` (upper sky off ship, `0` brown boxes, `0` shoreline flash, `0` unsourced `3,600 MILES`).\n3. **Mandatory Gates (paste all PASS outputs):**\n   - `picture_qa.py`, `polish_gate.py`, `npm run gate:episode`, `npm run lint:package -- --film 008`, `music_gate.py`, `sfx_kit.py level`, `168×94` phone readability contact sheet for all 27 captions + `3:31` crossing, and `check_all.sh`.\n   - Preserve `master_v01`/`v02`/`v03`, `h22`/`h35`, `J1297`, and `J1755` publication rejection. Do not copy to UAT, upload to R2, or touch YouTube/Studio before `J2243` and Chief review.",
+      "ref": "J1881 / J2241 / HOS PR #428 51bf99a6",
+      "film": "008",
+      "stage": "edit",
+      "after": "J2241",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T18:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T18:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Implement closed-GOP packet/boundary splicer + 27 unbordered umber bottom-caption panels, render hos_008_master_v04.mp4, and pass all gates",
+      "kind": "assembly",
+      "taskKeys": [
+        "HOS:008"
+      ]
+    },
+    {
+      "id": "J2243",
+      "title": "HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect windows + 27 captions + full cut, GBP0)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Dependent media-capable QA and Chief review for `hos_008_master_v04.mp4` after `J2242`.\n\n## Mandatory Requirements\n1. **Demonstrated Multimodal Capability:** Verify fresh live `audio_input,moving_video_input` in `chief_relay.py capabilities` before starting. Never claim moving-video or audio PASS from stills, ASR, or ffprobe metrics alone.\n2. **In-Context Moving-Video + Audio Review:** Watch and listen to all 8 corrected intervals (`00:20`, `0:30`, `0:51`, `1:49`, `2:18/2:20`, `3:13`, `3:31`, `7:58/7:59`) with their preceding/following cut transitions, all 27 film-wide bottom-caption cuts (`[0,141]`..`[12297,12461]`), and the full `539.500s` cut.\n3. **Verification Checklist:**\n   - Confirm all `picture_qa`, `polish_gate`, `gate:episode`, `lint:package`, `music_gate`, `sfx_kit level`, `168×94` phone readability, bitwise unchanged-frame SHA-256 identity, audio packet identity, and `0.000 ms` VO sync checks PASS.\n   - Keep all 8 Ben notes tracked (not marked resolved) until elected Chief media decision and Ben's final finished-film watch.\n   - Park for elected Chief (`jobs.py block --reason 'parked for Chief: ...'`) for UAT staging authorization and Ben's final watch.",
+      "ref": "J1881 / J2241 / J2242",
+      "film": "008",
+      "stage": "edit",
+      "after": "J2242",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T18:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T18:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify live audio_input + moving_video_input capability, review all 8 defect windows + 27 captions + full master_v04 in motion/audio, and park for Chief",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [],

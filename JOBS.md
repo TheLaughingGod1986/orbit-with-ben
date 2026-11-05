@@ -34,7 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1754 | mini | blocked | codex | – | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
 | J1809 | mini | open | – | – | assembly · HOS desk: route elected Chief handoffs and safely refresh legacy watcher | J1754 |
-| J1881 | mini | claimed | gemini | 2026-11-05T20:36Z | 008 edit · for gemini · review · `gemini-argon` · review Franklin eight-item correction recipe (+ film-wide captions) and scope production | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
+| J1881 | mini | blocked | gemini | – | 008 edit · for gemini · review · `gemini-argon` · review Franklin eight-item correction recipe (+ film-wide captions) and scope production | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1888 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0978 |  |
 | J1892 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1834 |  |
 | J1895 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1130 |  |
@@ -94,6 +94,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2238 | mini | open | – | – | chief · Chief: resolve 033 shots orphan-review |  |
 | J2239 | mini | open | – | – | 011 script · for gemini · script · `gemini-argon` · HOS 011 Anesthesia (Thu 10 Dec): Shorts scripts v02 + upload package scaffold + queue long VO |  |
 | J2240 | mini | open | – | – | 013 shots · for gemini · script · `gemini-argon` · HOS 013 Darwin & Wallace (Thu 17 Dec): Shorts scripts v02 + upload package + shot list v01 (long script v02 & VO v03a locked) |  |
+| J2241 | mini | open (after J1881) | – | – | 008 picture · video · HOS 008 Franklin: mint bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 church/ship rods (<=3 takes/300 cr each, <=900 cr cap, GBP0) | J1881 / HOS PR #428 51bf99a6 |
+| J2242 | mini | open (after J2241) | – | – | 008 edit · assembly · HOS 008 Franklin: closed-GOP packet/boundary splice + 27 film-wide bottom-caption panels -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
+| J2243 | mini | open (after J2242) | – | – | 008 edit · qa · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect windows + 27 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
 
 Recently finished:
 
