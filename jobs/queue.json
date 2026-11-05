@@ -166323,13 +166323,13 @@
       "stage": "edit",
       "after": "J1880",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-04T23:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:57Z",
-      "result": "Waiting for: J2163 must deliver a corrected PR409 recipe with original PTS/gaps and unchanged-picture preservation, truthful measured/UNMEASURED checks, reconciled input hashes, compliant sourced labels and tests. Current recipe is FIX; no production render or generation authorized. Resume J1881 when J2163 evidence is ready; all six notes unresolved.",
+      "result": "J2163 delivered the corrected recipe (HOS PR411, 50620e40): review it now and scope the production fix of Ben's six v03 notes",
       "history": [
         {
           "at": "2026-11-03T18:57Z",
@@ -166370,6 +166370,11 @@
           "at": "2026-11-05T00:28Z",
           "by": "claude",
           "what": "rule H: Chief review moved to the review lane"
+        },
+        {
+          "at": "2026-11-05T11:53Z",
+          "by": "claude",
+          "what": "acting Chief: wait condition met (J2163 done), released for review"
         }
       ],
       "remaining_action": "Review J2163 corrected recipe before scoping new-version production and capable QA",
@@ -166385,11 +166390,6 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "J2163 must deliver a corrected PR409 recipe with original PTS/gaps and unchanged-picture preservation, truthful measured/UNMEASURED checks, reconciled input hashes, compliant sourced labels and tests. Current recipe is FIX; no production render or generation authorized. Resume J1881 when J2163 evidence is ready; all six notes unresolved.",
-        "check_at": "2026-11-05T12:00:00Z"
-      },
       "urgent": 18
     },
     {
