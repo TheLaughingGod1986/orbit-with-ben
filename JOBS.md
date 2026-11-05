@@ -33,7 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1208 | mini | blocked | codex | – | video · `flow-veo-3.1` · J1204 source follow-up: genuine meteor video and clean Titan opening |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
-| J1356 | mini | open (after J1471) | – | – | review · AR cohort: verify finished cuts and prepare final-watch handoff |  |
+| J1356 | mini | open (after J1471) | – | – | for gemini · review · `gemini-argon` · AR cohort: verify finished cuts and prepare final-watch handoff |  |
 | J1754 | mini | blocked | codex | – | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
 | J1755 | mini | blocked | codex | – | chief · Chief: reconcile stale HOS008 J1213 hold against later master-v03 evidence |  |
 | J1809 | mini | open | – | – | assembly · HOS desk: route elected Chief handoffs and safely refresh legacy watcher | J1754 |

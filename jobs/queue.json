@@ -125151,6 +125151,11 @@
           "at": "2026-11-05T08:28Z",
           "by": "claude",
           "what": "rule H: Chief review moved to the review lane"
+        },
+        {
+          "at": "2026-11-05T08:32Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Stage durable watch copies of J2016 accepted masters (ar1_v06, ar2_v12, ar3_v13), verify Play links, and set jobs.py awaits --add for Ben's final watch",
@@ -125166,7 +125171,16 @@
         "OWB:030"
       ],
       "publication_wording_update": "J1910-PR433",
-      "due": "2026-11-20T18:00:00Z"
+      "due": "2026-11-20T18:00:00Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1357",
