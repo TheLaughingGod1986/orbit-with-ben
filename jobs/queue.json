@@ -1,5 +1,5 @@
 {
-  "next_id": 2218,
+  "next_id": 2219,
   "jobs": [
     {
       "id": "J0001",
@@ -99907,7 +99907,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "parked for Chief: review J2214 KEEP (jobs/reviews/J2214/REVIEW.md) — put S2 (earth_equator_weight_v07, 7d07deafbd4e), S5 (028_short_fri04_scale_v07, d5589ad4fa32), and S6 (028_short_lift_night_sky_35yr_v07, 2f399f3127bf) v07 on the board for Ben's watch and execute YouTube replacement swaps after Ben's OK (scheduled v01 fallback preserved)",
+      "result": "waiting for review J2218 (rule H): review J2214 KEEP (jobs/reviews/J2214/REVIEW.md) — put S2 (earth_equator_weight_v07, 7d07deafbd4e), S5 (028_short_fri04_scale_v07, d5589ad4fa32), and S6 (028_short_lift_night_sky_35yr_v07, 2f399f3127bf) v07 on the board for Ben's watch and execute YouTube replacement swaps after Ben's OK (scheduled ",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -101183,6 +101183,11 @@
           "at": "2026-11-05T12:45Z",
           "by": "chief",
           "what": "condition recorded; next verification 2026-11-22T20:00:00Z"
+        },
+        {
+          "at": "2026-11-05T13:03Z",
+          "by": "claude",
+          "what": "rule H: decision moved from the Chief to review J2218"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -185713,6 +185718,36 @@
       ],
       "remaining_action": "Extend PR411 six-row recipe to eight items + film-wide captions; refuse exec until J1881 re-review; GBP0",
       "kind": "assembly"
+    },
+    {
+      "id": "J2218",
+      "title": "Review J1100: J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J1100), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J1100 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J1100 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J1100.\n5. Finish this job with the verdict in --result.\n\nWhat the worker asked the Chief: parked for Chief: review J2214 KEEP (jobs/reviews/J2214/REVIEW.md) — put S2 (earth_equator_weight_v07, 7d07deafbd4e), S5 (028_short_fri04_scale_v07, d5589ad4fa32), and S6 (028_short_lift_night_sky_35yr_v07, 2f399f3127bf) v07 on the board for Ben's watch and execute YouTube replacement swaps after Ben's OK (scheduled v01 fallback preserved)",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T13:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T13:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review J1100: J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief",
+      "kind": "review",
+      "review_of": "J1100",
+      "urgent": 12
     }
   ],
   "focus": [],
