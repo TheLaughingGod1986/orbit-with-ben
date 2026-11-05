@@ -187286,13 +187286,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-05T18:16Z",
-      "eta": "2026-11-05T20:16Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
-      "result": "",
+      "result": "HOS PR #430 + OWB PR #549. Locked Thu 10 Dec = HOS 011 Anesthesia: The Day Surgery Stopped Hurting (011_Surgery-Before-Anaesthesia; neighbours.py PASS 6 >=1M incl. TED-Ed 19.73M & 2.66M; public_search.py autocomplete PASS; script v02 91.1 PASS, Gemini facts J0198 + Claude quote check J0224 PASS, gate:episode PASS; queued J2239 for Shorts scripts v02 + upload package + long VO). Slotted Thu 17 Dec = HOS 013 Evolution: The Letter That Forced Darwin to Publish (013_Darwin-Wallace-Evolution; active in WIP.json #541; script v02 92.6 PASS + long VO hos_013_vo_v03a 512.48s locked; queued J2240 for Shorts scripts v02 + upload package + shot list v01). Added next_hos = [HOS:011, HOS:012 (24 Dec Mendel), HOS:014 (31 Dec Anning), HOS:015 (7 Jan Hooke), HOS:018 (14 Jan Herschel)] to jobs/WIP.json and recorded air dates in production-status.md + PIPELINE.json/STATUS.md. £0.",
       "history": [
         {
           "at": "2026-11-05T17:12Z",
@@ -187323,6 +187323,11 @@
           "at": "2026-11-05T18:30Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-05T18:33Z",
+          "by": "macbook",
+          "what": "done: HOS PR #430 + OWB PR #549. Locked Thu 10 Dec = HOS 011 Anesthesia: The Day Surgery Stopped Hurting (011_Surgery-Before-Anaesthesia; neighbours.py PASS 6 >=1M incl. TED-Ed 19.73M & 2.66M; public_search.py autocomplete PASS; script v02 91.1 PASS, Gemini facts J0198 + Claude quote check J0224 PASS, gate:episode PASS; queued J2239 for Shorts scripts v02 + upload package + long VO). Slotted Thu 17 Dec = HOS 013 Evolution: The Letter That Forced Darwin to Publish (013_Darwin-Wallace-Evolution; active in WIP.json #541; script v02 92.6 PASS + long VO hos_013_vo_v03a 512.48s locked; queued J2240 for Shorts scripts v02 + upload package + shot list v01). Added next_hos = [HOS:011, HOS:012 (24 Dec Mendel), HOS:014 (31 Dec Anning), HOS:015 (7 Jan Hooke), HOS:018 (14 Jan Herschel)] to jobs/WIP.json and recorded air dates in production-status.md + PIPELINE.json/STATUS.md. £0."
         }
       ],
       "remaining_action": "Queue 011 & 013 script/Shorts/package jobs, update jobs/WIP.json next_hos, open HOS & OWB PRs",
