@@ -1,5 +1,5 @@
 {
-  "next_id": 2178,
+  "next_id": 2179,
   "jobs": [
     {
       "id": "J0001",
@@ -182178,6 +182178,35 @@
       ],
       "remaining_action": "Inspect 17 full-size mechanism previews; record KEEP/FIX and bounded frame-0/reuse decisions",
       "kind": "review"
+    },
+    {
+      "id": "J2178",
+      "title": "HOS 006: resolve J2169 loop/reuse gate conflict and exact picture repairs",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J2169 pre-render blocker; HOS PR413 commit e3410b07, jobs/reviews/J2169/REVIEW.md and machine source QA. GBP0 decision only, no production/publishing approval implied.\n\nBounded decision: resolve five failing source rows and two picture concerns in active HOS006 B/C. The unmodified picture_qa.py FAILs B S04/S05/loop_tail and C S05/loop_tail for same-stretch reuse. All implicated sources are8s; no legal source starts can be10s apart. BUILD_RULE_v02 mandates matching frame0 loop, so blindly rendering the rule cannot pass the current gate. B S02 already shows mint during pre-mint candle narration and S07 town street weakly supports little green plant. Worker has not changed code, waived FAIL, rendered or spent.\n\nChief owns any system/checker decision: either specify truthful, already-approved alternative source+offset mappings including a visually matching loop that passes the unchanged checker, or scope a separate reviewed system-change PR if the checker is wrong for prescribed Shorts looping. Do not hide source identity, omit loop rows, rename/re-encode as new footage, or claim older KEEP is a waiver. Any needed generation must be separately bounded and authorized; J2169 allows none. Preserve canonical B mint take0f109926 and C5b5d84e5, all words and J1004 lawful edits,22-27s/current gates. Standalone S7 remains planned and must not duplicate B; excluded A/retired/superseded cuts stay excluded. Do not change long or live-film approval stages.\n\nDeliver an exact repair decision in the existing records and reopen J2169 for build+verification, or name a specific missing existing input and separately scope its producer. No generic timed retry. Finished-cut review and Ben awaits only after a real passing durable deliverable exists. Read actual evidence before deciding. Target pack15Nov18:00; B18Nov/C21Nov11:30 conditional only, longVbPubYd6Fbs must readPublic before release.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/413",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T03:29Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide an eligible existing-media loop and repair plan for five source-QA failures before J2169 renders",
+      "due": "2026-11-06T18:00:00Z",
+      "kind": "chief"
     }
   ],
   "focus": [],
