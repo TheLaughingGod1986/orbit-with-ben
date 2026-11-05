@@ -181901,10 +181901,10 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-05T02:23Z",
+      "eta": "2026-11-05T02:53Z",
       "created_by": "codex",
       "created_at": "2026-11-05T02:21Z",
       "result": "",
@@ -181913,11 +181913,24 @@
           "at": "2026-11-05T02:21Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T02:23Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair A Titan focus and C dish/text clearance; deliver versioned set for existing panel",
       "due": "2026-11-12T18:00:00Z",
-      "kind": "thumb"
+      "kind": "thumb",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T02:23Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
