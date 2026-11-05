@@ -181664,17 +181664,22 @@
           "at": "2026-11-05T03:27Z",
           "by": "codex",
           "what": "step 1 of 3 done: Inventory complete: B hash0f109926 and C hash5b5d84e5 match locked takes; all12 plates present and hashed. Source-only picture QA FAIL: B3/8, C2/9 cuts; under10s clips cannot provide source starts10s apart. No render or spend."
+        },
+        {
+          "at": "2026-11-05T03:29Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: HOS PR413 e3410b07 preserves hashes, both source-QA FAIL reports, transcripts, decode evidence and durable still sheet. check_all.sh ALL CHECKS PASS. J2178 owns bounded Chief decision; no render/spend/publication."
         }
       ],
-      "remaining_action": "Record failed source QA and queue the exact loop/reuse and picture repair decision before any render",
+      "remaining_action": "Await J2178 exact loop/reuse and picture repair decision, then build and verify B/C",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-05T03:27Z",
+        "at": "2026-11-05T03:29Z",
         "by": "codex",
-        "note": "Inventory complete: B hash0f109926 and C hash5b5d84e5 match locked takes; all12 plates present and hashed. Source-only p"
+        "note": "HOS PR413 e3410b07 preserves hashes, both source-QA FAIL reports, transcripts, decode evidence and durable still sheet. "
       },
       "taskKeys": [
         "HOS:006"
