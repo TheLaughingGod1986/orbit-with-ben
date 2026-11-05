@@ -53,10 +53,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2089 | mini | open | – | – | 032 picture · for codex · assembly · `gpt-6.1-sol` · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
 | J2141 | mini | open | – | – | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
 | J2143 | mini | blocked | codex | – | 031 thumbs · thumb · 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
-| J2144 | mini | blocked | codex | – | 032 thumbs · thumb · 032 thumbs (November tentpole): three full concepts incl. rule-19 real image |  |
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
-| J2162 | cloud | claimed | claude | 2026-11-05T20:20Z | review · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2166 | mini | open | – | – | 031 thumbs · for gemini · review · `gemini-argon` · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 | J2169 | mini | blocked | chief | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
@@ -96,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2246 | mini | open | – | – | 013 vo · vo · HOS 013 Darwin & Wallace: Shorts voiceover (2 v02 Shorts), vo_check, park for Chief |  |
 | J2247 | mini | open | – | – | 032 picture · review · 032 R09 diameter graphic: review still and Mercury source rights | 2c9182cb31 |
 | J2248 | mini | claimed | cursor | 2026-11-05T22:35Z | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
+| J2249 | mini | open | – | – | 032 thumbs · for codex · thumb · 032 thumb A rebuild: real Huygens surface photo, hook REAL SURFACE (J2162) |  |
 
 Recently finished:
 
