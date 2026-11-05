@@ -1,0 +1,219 @@
+{
+  "job": "J1208",
+  "route": "Flow Veo 3.1 Fast via reused CDP 9222 tab",
+  "takes": {
+    "S5": {
+      "prompt": "Create one continuous 8 second vertical 9:16 realistic astronomical explanatory illustration. A single bright shooting star, a meteor, is already visibly travelling across a realistic dusk-to-night sky from the very first frame. A long luminous atmospheric streak travels steadily across the central sky for the opening four seconds above an unobtrusive low dark landscape. Wide sky view; the meteor remains clear within the vertical composition. Locked steady camera. Natural sky luminance and believable bright meteor light; some faint stars. This is an illustrative meteor, no named historical event. No exploding star, impact, macro fireball, constellations, labels, reticles, diagram, UI, captions, watermark, logos, Orbit or characters. No camera shake, zoom, still animation, reverse motion or repeated frames. Silent: no speech, music or sound.",
+      "before_credits": 15430,
+      "model": "Veo 3.1 - Fast",
+      "settings": "Video \u00b7 720p \u00b7 8s\ncrop_9_16\nx1",
+      "status": "CANDIDATE_NOT_REVIEWED",
+      "expected_credits": 10,
+      "project": "https://flow.google.com/project/d7bceb4d-ec9b-4e01-8d9a-33fdd7c34ef9",
+      "at": "2026-11-05T00:41:57Z",
+      "path": "/Users/benjaminoats/_desk/handoff/J1208/flow-20261105/S5_flow_t1_silent.mp4",
+      "sha256": "434a9e1dbbb87298eb87760fe0d9bf55708a92eeea54e449b0fb22b231806389",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64001f",
+            "width": 720,
+            "height": 1280,
+            "coded_width": 720,
+            "coded_height": 1280,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 31,
+            "color_range": "tv",
+            "color_space": "smpte170m",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/12288",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 97280,
+            "duration": "7.916667",
+            "bit_rate": "2164471",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "190",
+            "extradata_size": 48,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/benjaminoats/_desk/handoff/J1208/flow-20261105/S5_flow_t1_silent.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "7.916667",
+          "size": "2145108",
+          "bit_rate": "2167687",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      },
+      "after_credits": 15420,
+      "after_balance_evidence": "Verified at next S6 preflight, before S6 submit",
+      "worker_disposition": "FIX: source QA near-black mean24.91 at2.50s; still sequence head exits by proposed opening end. Not approved."
+    },
+    "S6": {
+      "prompt": "Create one continuous 8 second vertical 9:16 realistic scientific explanatory illustration of the surface atmosphere of Saturn's moon Titan. An eye-level wide view over low-relief gently undulating terrain under a muted orange atmospheric haze, informed by Huygens optical appearance. Physically plausible subtle drifting haze changes visibly throughout the shot, including the first four seconds; soft diffuse amber light, natural terrain texture, level horizon. Locked steady camera. A general illustration, NOT a reconstruction of a measured landing location. The haze illustrates optical appearance only and does not measure pressure. No dramatic mountains, Earth-blue sky, underwater scene, rings in the sky, radar swath, fabricated scientific geometry, labels, diagram, UI, captions, watermark, logos, humans, Orbit or characters. No camera shake, zoom, still animation, reverse motion or repeated frames. Silent: no speech, music or sound.",
+      "before_credits": 15420,
+      "model": "Veo 3.1 - Fast",
+      "settings": "Video \u00b7 720p \u00b7 8s\ncrop_9_16\nx1",
+      "status": "CANDIDATE_NOT_REVIEWED",
+      "expected_credits": 10,
+      "project": "https://flow.google.com/project/d7bceb4d-ec9b-4e01-8d9a-33fdd7c34ef9",
+      "at": "2026-11-05T00:44:16Z",
+      "path": "/Users/benjaminoats/_desk/handoff/J1208/flow-20261105/S6_flow_t1_silent.mp4",
+      "sha256": "624b87eeabcb9657d503c73da43f226b8649f59644f3d3ab78e84ca07a269719",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.64001f",
+            "width": 720,
+            "height": 1280,
+            "coded_width": 720,
+            "coded_height": 1280,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 31,
+            "color_range": "tv",
+            "color_space": "smpte170m",
+            "color_transfer": "iec61966-2-1",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "24/1",
+            "avg_frame_rate": "24/1",
+            "time_base": "1/12288",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 97280,
+            "duration": "7.916667",
+            "bit_rate": "3568531",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "190",
+            "extradata_size": 48,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/benjaminoats/_desk/handoff/J1208/flow-20261105/S6_flow_t1_silent.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "7.916667",
+          "size": "3534566",
+          "bit_rate": "3571771",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      },
+      "after_credits": 15410,
+      "worker_disposition": "FIX: source QA passes with WARNs but still sequence contains large celestial disc in sky; violates no fabricated scientific geometry. Not approved."
+    }
+  },
+  "source_recipe": {
+    "preroll": [
+      0,
+      1.15
+    ],
+    "opening": [
+      1.15,
+      3.85
+    ],
+    "speed": 1,
+    "classification": "generated explanatory illustration",
+    "disclosure_required": true,
+    "approval": "PENDING; no KEEP"
+  }
+}
