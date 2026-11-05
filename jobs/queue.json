@@ -168670,9 +168670,14 @@
           "at": "2026-11-05T05:26Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T05:26Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J1918; starting verification of J1356 waiting condition (J1846-J1849 and J1471)"
         }
       ],
-      "remaining_action": "Verify readiness: Complete J1847 preview, J1848 moving review and J1849 source decision; then J1471 repairs/gates and J1356 full QA",
+      "remaining_action": "Inspect J1356, J1471, and J1846-J1849 status and evidence",
       "kind": "review",
       "recheck_of": "J1356",
       "due": "2026-11-04T01:44:20+00:00",
@@ -168691,9 +168696,11 @@
         "of": 3,
         "at": "2026-11-05T05:26Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1918; starting verification of J1356 waiting condition (J1846-J1849 and J1471)"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J1919",
