@@ -99896,7 +99896,7 @@
       "needs": "mini",
       "repo": "owb",
       "body": "# J0936 batch C: Ben's changes on S2, S5, S6 v04 -> v05\n\nBen's board ticks, 28 Oct 2026 11:31-11:35 (J0936 entries 2, 5, 6):\n- **S2** `earth_equator_weight_v04` (emwQsPxnRGM, 027): \"00:01 vo makes no sense\". The opening VO runs two lines\n  together: \"Why do you weigh less at Earth's equator, you weigh about half a percent less there the ground under\n  you...\". Fix: the question as its own sentence with a natural pause, then \"You weigh about half a percent less\n  there.\" as a separate sentence. Cut only on sentence ends; if the accepted WAVs can't give it cleanly, record only\n  the missing line with `vo_take.py --text` (same voice/settings) after the ElevenLabs reset (30 Oct), inside the plan.\n- **S5** `028_short_fri04_scale_v04` (jJ5LkFGyzLI): \"00:02 bottom text dose not match the VO\". The VO says\n  \"How close will Gliese 710 come to the Sun?\" but the captions read \"HOW CLOSE WILL\" then \"TO THE SUN.\" (they drop\n  \"GLIESE 710 COME\"). Fix: captions word-for-word with the VO for the whole Short; check every caption against the\n  final audio's transcript, not the script.\n- **S6** `028_short_lift_night_sky_35yr_v04` (X768qs8sNQs): \"00:01 vo speed is a bit strange\". The opening question\n  sounds sped up/squeezed. Fix: play the opening at its natural recorded speed (no atempo on the question; keep any\n  slot-fit speed-up <= 1.03x and only in the body), re-time the cuts and the 9-14 s banner around it.\nEverything else in J1032's lock stands (cards, plates, 22-27 s, I -14.0 +/-0.5 LUFS, TP <= -1.6 dBTP, loop < 2.0,\nOCR every third frame, all gates). Listen to the finished AAC yourself at 0-5 s on all three. v01-v04 untouched.\nDeliver master/_PHONE/sheets to repo/UAT/NAS with sha256 and park for Chief replacement review. The Chief then puts\nthe three v05s on the board for Ben. Deadlines: S2 by Sun 22 Nov 20:00, S5 by Thu 3 Dec 20:00, S6 by Sun 6 Dec 20:00\nLondon; aim to park by Wed 4 Nov. No upload, swap or spend beyond the plan. If a fix misses its deadline, the\nscheduled v01 airs as is.\n\n\nacting Chief (Claude) ruling 29 Oct on 12364118e (Gemini AAC review + Codex bed ASR). FIX, not PASS:\n1. All three: rebuild the 1s loop tail from caption-free frames (as 025 v07 did), so no caption or hook text shows over the silent tail. Spoken captions stay word-for-word.\n2. S2 bed: earth-spin_score_take2_straight_v01j.wav is a mixed track with the long's narration in it (26s, not the 452s plan). Do not use it. Use a 027 score file that is instrumental only (prove it: base.en ASR on the bed alone returns no words, and listen to it), else an instrumental bed already in the house music folder. No new music spend.\n3. S2 VO: the 7-source question and the 'at'/'but' splice are not acceptable. After the ElevenLabs reset (30 Oct), record one pickup with vo_take.py --text, same voice and settings: 'Why do you weigh less at Earth's equator? You weigh about half a percent less there.' Use a continuous source phrase for 'because the ground at the equator', or add it to the same pickup if none exists. That is the pickup the job already allows, widened to these lines; nothing else re-recorded.\n4. S5: captions 'GLIESE 710 COME' (no comma) and 'TO THE SUN?'. Same pickup session: 'How close will Gliese 710 come to the Sun?' as one take, replacing the 5-source question. If 'So' still reads as 'Though' to ASR, cut from 'The star will not come...' instead.\n5. S6: audio accepted (natural 'look like when', no atempo). Orion softness and the ALMA low-detail warning are accepted under the existing rulings. Only the loop tail changes.\nThen gates, Gemini direct listening again on all three, deliver v06 with hashes, park for Chief. Deadlines unchanged (S2 22 Nov, S5 3 Dec, S6 6 Dec 20:00 London). No upload, swap or other spend.\n\nActing Chief Codex ruling, 30 Oct 2026: FIX; no PASS.\nReviewed full body/history/result, PR333 0a7fcb6ad v06 measurements and checkpoint, completed Gemini S6 v06 direct AAC/caption review, S2/S5 advisory evidence, and J1253 subscription verification. S6 caption-free silent tail is confirmed, but whole-frame loop 9.26 fails the locked <2.0 threshold; masked 0.95 is not a substitute. Retain only the existing S6 audio/timing/softness exceptions. S2/S5 continuous pickups, S2 instrumental-only bed proof (ASR and listening), caption repairs and final gates are still outstanding. No new listening or media PASS is claimed by this review.\nRequired nas_offload.py --apply found no eligible scratch: 8545 -> 8543 MB free; 8094 MB after review worktree. Earlier recovery jobs including J1268 are completed and do not establish current headroom. Follow-up J1270 is now queued for safe recovery to >=20 GB, target 30 GB, and investigation of renewed growth, due 31 Oct 12:00 London. Original J1100 remains held, now explicitly dependent on J1270 and live >=20 GB verification; scheduled condition check 31 Oct 03:00 UTC.\nAfter recovery, elected Chief verifies live space and reopens repairs only. Preserve worker 2/3 and OWB:027/028 links. Resume the 29 Oct repair ruling. Resolve the loop with a compliant edit before final render; if caption-free tail and frame-0 hook reveal a defect in the metric, supply reproducible decoded-frame evidence and a proposed gate correction for Chief review, rather than silently masking text or waiving failure. Keep accepted S6 audio unchanged. Finish the authorised S2/S5 pickups with a fresh locked balance check, no music generation; recheck all gates and Gemini listening, deliver durable masters/phone copies and hashes, then return for Chief replacement review before Ben watch.\nPreserve all deadlines and scheduled-v01 fallback. No upload, swap, schedule/privacy change, watch card or expansion of spend is authorised by this ruling.",
-      "ref": "",
+      "ref": "jobs/reviews/J2214/REVIEW.md",
       "film": "",
       "stage": "",
       "after": "J1270",
@@ -99907,7 +99907,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "waiting for review J2214 (rule H): S2 (earth_equator_weight_v07, sha256 7d07deafbd4e...), S5 (028_short_fri04_scale_v07, sha256 d5589ad4fa32...), and S6 (028_short_lift_night_sky_35yr_v07, sha256 2f399f3127bf...) v07 delivered to repo/UAT/NAS and _desk/renders/J1100-v07 (branch gemini/J1100-v07-delivery @ 545128a66f); passed h43-LOOP",
+      "result": "parked for Chief: review J2214 KEEP (jobs/reviews/J2214/REVIEW.md) — put S2 (earth_equator_weight_v07, 7d07deafbd4e), S5 (028_short_fri04_scale_v07, d5589ad4fa32), and S6 (028_short_lift_night_sky_35yr_v07, 2f399f3127bf) v07 on the board for Ben's watch and execute YouTube replacement swaps after Ben's OK (scheduled v01 fallback preserved)",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -101153,6 +101153,11 @@
           "at": "2026-11-05T12:33Z",
           "by": "chief",
           "what": "rule H: decision moved from the Chief to review J2214"
+        },
+        {
+          "at": "2026-11-05T12:38Z",
+          "by": "gemini",
+          "what": "review J2214 KEEP: parked for Chief: put S2 (7d07deafbd4e), S5 (d5589ad4fa32), and S6 (2f399f3127bf) v07 on the board for Ben watch and execute YouTube replacement swaps after Ben OK (all gates, h43-LOOP, bed clearance, and direct ear/video auditions PASS; jobs/reviews/J2214/REVIEW.md)"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101181,7 +101186,7 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Waiting for review J2214 (Rule H KEEP/FIX of S2/S5/S6 v07)"
+      "remaining_action": "Parked for Chief: put S2/S5/S6 v07 on the board for Ben watch and execute YouTube replacement swaps after Ben OK"
     },
     {
       "id": "J1101",
@@ -185372,13 +185377,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T12:36Z",
-      "eta": "2026-11-05T14:36Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T12:33Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J2214/REVIEW.md): S2 (7d07deafbd4e), S5 (d5589ad4fa32), and S6 (2f399f3127bf) v07 pass h43-LOOP (0.50/0.59/0.65), all 5 gates, instrumental bed clearance (13adc031 & e47e8554), and direct ear/moving-video auditions; J1100 parked for Chief to place Ben watch cards and swap after Ben OK",
       "history": [
         {
           "at": "2026-11-05T12:33Z",
@@ -185399,23 +185404,34 @@
           "at": "2026-11-05T12:36Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Prepared jobs/reviews/J2214/REVIEW.md with KEEP verdict, heard music clearance, and v07 gate table"
+        },
+        {
+          "at": "2026-11-05T12:38Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Applied Rule H KEEP decision to J1100 and landed jobs/reviews/J2214/REVIEW.md + J1100 v07 evidence"
+        },
+        {
+          "at": "2026-11-05T12:38Z",
+          "by": "gemini",
+          "what": "done: KEEP (jobs/reviews/J2214/REVIEW.md): S2 (7d07deafbd4e), S5 (d5589ad4fa32), and S6 (2f399f3127bf) v07 pass h43-LOOP (0.50/0.59/0.65), all 5 gates, instrumental bed clearance (13adc031 & e47e8554), and direct ear/moving-video auditions; J1100 parked for Chief to place Ben watch cards and swap after Ben OK"
         }
       ],
-      "remaining_action": "Commit jobs/reviews/J2214/REVIEW.md, update J1100 with KEEP decision, and close J2214",
+      "remaining_action": "Done: J2214 KEEP review applied to J1100",
       "kind": "review",
       "review_of": "J1100",
       "urgent": 12,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-05T12:36Z",
+        "at": "2026-11-05T12:38Z",
         "by": "gemini",
-        "note": "Prepared jobs/reviews/J2214/REVIEW.md with KEEP verdict, heard music clearance, and v07 gate table"
+        "note": "Applied Rule H KEEP decision to J1100 and landed jobs/reviews/J2214/REVIEW.md + J1100 v07 evidence"
       },
       "taskKeys": [
         "OWB:027",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2214/REVIEW.md"
     },
     {
       "id": "J2215",
