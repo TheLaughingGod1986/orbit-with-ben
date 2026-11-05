@@ -181570,17 +181570,22 @@
           "at": "2026-11-05T01:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T01:53Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2170; starting HOS 008 Short C paper hook resolution and plate inventory"
         }
       ],
-      "remaining_action": "inventory HOS 008 Short C, J1004 ruling, J1881/J2163 plate status, prepare source-checked opening on paper and queue bounded review/pickup decision",
+      "remaining_action": "Audit HOS 008 Short C files, J1004/J1881/J2163/J0912 history, and FACT_NOTES",
       "due": "2026-11-10T18:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-05T01:18Z",
-        "by": "macbook",
-        "note": "Brief and related jobs read; inspecting HOS 008 files"
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-05T01:53Z",
+        "by": "gemini",
+        "note": "Claimed J2170; starting HOS 008 Short C paper hook resolution and plate inventory"
       },
       "rerouted_from": {
         "needs": "any",
@@ -181590,7 +181595,10 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2171",
