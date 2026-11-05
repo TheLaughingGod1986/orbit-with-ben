@@ -183,12 +183,14 @@ def git(*args):
     return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
 
 
-def git_transaction(write, message):
+def git_transaction(write, message, tries=3):
     """Fail closed outside clean main; push only the verified metadata commit.
 
-    No rebase, autostash, reset or worker-branch switch. A rejected push leaves
-    the local metadata commit intact for explicit reconciliation, never replaying
-    it (or any other unpublished commit) on a subsequent transaction.
+    No rebase, autostash or worker-branch switch. A push that loses a race drops
+    only its own verified metadata commit (`reset --keep` to the base it was made
+    on), fast-forwards to the new main and re-applies the change, up to `tries`
+    times; the last loss leaves the commit for explicit reconciliation. Other
+    unpublished commits are never replayed or dropped.
     """
     common = git("rev-parse", "--git-common-dir")
     if common.returncode:
@@ -204,34 +206,47 @@ def git_transaction(write, message):
         state = git("status", "--porcelain")
         if state.returncode or state.stdout.strip():
             return None, "metadata --git requires a clean working tree and index"
-        if git("fetch", "-q", "origin", "refs/heads/main").returncode:
-            return None, "metadata fetch failed; no changes applied"
-        base = git("rev-parse", "FETCH_HEAD").stdout.strip()
-        head = git("rev-parse", "HEAD").stdout.strip()
-        if git("merge-base", "--is-ancestor", head, base).returncode:
-            return None, "main has unpublished/diverged commits; no changes applied"
-        if git("merge", "-q", "--ff-only", base).returncode:
-            return None, "main fast-forward failed; no changes applied"
-        out, err, paths = write()
-        if err or not paths:
-            return out, err
-        paths = [str(pathlib.Path(p).resolve().relative_to(ROOT.resolve())) for p in paths]
-        if git("add", "--", *paths).returncode:
-            return None, "metadata git add failed; changes preserved"
-        if git("commit", "-q", "-m", message, "--", *paths).returncode:
-            return None, "metadata git commit failed; changes preserved"
-        commit = git("rev-parse", "HEAD").stdout.strip()
-        parents = git("rev-list", "--parents", "-n", "1", commit).stdout.split()
-        changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", commit)
-        if parents != [commit, base] or changed.returncode or not set(changed.stdout.splitlines()) <= set(paths):
-            return None, "metadata commit verification failed; not pushed, changes preserved"
-        if git("push", "-q", "origin", f"{commit}:refs/heads/main").returncode:
-            return None, "metadata push rejected; local commit preserved; reconcile main before retry"
-        return out, None
+        for attempt in range(max(1, tries)):
+            result, retry = _metadata_attempt(write, message)
+            if not retry or attempt == max(1, tries) - 1:
+                return result
+            # Another machine pushed first (5 Nov 2026: the Mini and the MacBook both write the queue). Our own
+            # verified commit, and nothing else, goes; the change is re-applied on the new main. Never replayed.
+            if git("reset", "-q", "--keep", retry).returncode:
+                return None, "metadata push rejected; local commit preserved; reconcile main before retry"
+        return result
+
+
+def _metadata_attempt(write, message):
+    """((out, err), base to return to when the push lost a race, else None)."""
+    if git("fetch", "-q", "origin", "refs/heads/main").returncode:
+        return (None, "metadata fetch failed; no changes applied"), None
+    base = git("rev-parse", "FETCH_HEAD").stdout.strip()
+    head = git("rev-parse", "HEAD").stdout.strip()
+    if git("merge-base", "--is-ancestor", head, base).returncode:
+        return (None, "main has unpublished/diverged commits; no changes applied"), None
+    if git("merge", "-q", "--ff-only", base).returncode:
+        return (None, "main fast-forward failed; no changes applied"), None
+    out, err, paths = write()
+    if err or not paths:
+        return (out, err), None
+    paths = [str(pathlib.Path(p).resolve().relative_to(ROOT.resolve())) for p in paths]
+    if git("add", "--", *paths).returncode:
+        return (None, "metadata git add failed; changes preserved"), None
+    if git("commit", "-q", "-m", message, "--", *paths).returncode:
+        return (None, "metadata git commit failed; changes preserved"), None
+    commit = git("rev-parse", "HEAD").stdout.strip()
+    parents = git("rev-list", "--parents", "-n", "1", commit).stdout.split()
+    changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", commit)
+    if parents != [commit, base] or changed.returncode or not set(changed.stdout.splitlines()) <= set(paths):
+        return (None, "metadata commit verification failed; not pushed, changes preserved"), None
+    if git("push", "-q", "origin", f"{commit}:refs/heads/main").returncode:
+        return (None, "metadata push rejected; local commit preserved; reconcile main before retry"), base
+    return (out, None), None
 
 
 def with_git(path, change, message, films, tries=3):
-    """Commit studio metadata only, from clean main. Races fail closed."""
+    """Commit studio metadata only, from clean main. A lost push race re-applies on the new main."""
     def write():
         data = load(path)
         err = change(data)
@@ -240,7 +255,7 @@ def with_git(path, change, message, films, tries=3):
         save(path, data)
         write_status(films)
         return None, None, [path, status_path(films)]
-    return git_transaction(write, message)[1]
+    return git_transaction(write, message, tries)[1]
 
 
 def main(argv=None):
