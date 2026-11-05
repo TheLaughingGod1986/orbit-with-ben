@@ -162780,9 +162780,14 @@
           "at": "2026-11-05T05:01Z",
           "by": "codex",
           "what": "step 2 of 3 done: Implemented host-local serial preflight plus selected job/model/account admission in canonical Git transaction; busy-peer and shared-account regressions pass. Capacity remains disabled."
+        },
+        {
+          "at": "2026-11-05T05:07Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Implementation repair pushed; 132 capacity tests and targeted worker/workflow/queue checks pass. Exact-head Rules 41971817057 and core 41971817067 are green. Full local repository suite finishing; no capacity enabled."
         }
       ],
-      "remaining_action": "Verify canonical serial admission, synchronize PR437 and return exact head for review",
+      "remaining_action": "Review PR437 exact head 78e177fd56, then verify observed host rollout gates before enabling capacity",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162802,9 +162807,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T05:01Z",
+        "at": "2026-11-05T05:07Z",
         "by": "codex",
-        "note": "Implemented host-local serial preflight plus selected job/model/account admission in canonical Git transaction; busy-pee"
+        "note": "Implementation repair pushed; 132 capacity tests and targeted worker/workflow/queue checks pass. Exact-head Rules 419718"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
