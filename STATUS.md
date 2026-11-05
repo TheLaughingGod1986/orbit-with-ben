@@ -60,7 +60,7 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 032 | picture | claude | 2026-11-05T09:50Z | 2026-11-05T11:49Z | J2198 032 J2089: review corrected fire stills and regenerated process pixels |
-| 032 | thumbs | claude | 2026-11-05T10:51Z | 2026-11-05T12:50Z | J2212 032 J2176: resolve composition conflict after J2196 source failures |
+| 032 | thumbs | codex | 2026-11-05T13:58Z | 2026-11-05T14:27Z | J2176 032 J2144 FIX: Titan hero crop and clear lander typography (took over stalled claim by claude, ETA 2026-11-05T12:50Z) |
 | 033 | shots | macbook | 2026-11-05T13:35Z | 2026-11-05T15:34Z | J2165 033 Uranus: shot list after explicit VO acceptance |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
