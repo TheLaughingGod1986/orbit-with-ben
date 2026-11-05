@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2015 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1754 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2023 | mini | open | – | – | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
+| J2023 | mini | claimed | codex | 2026-11-05T03:06Z | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
 | J2024 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0999 |  |
 | J2027 | mini | open | – | – | chief · Chief: review HOS milestone/row-count PR483 and verify publisher/frontend rollout | PR483 / J2026 |
 | J2029 | mini | open | – | – | chief · Chief: review Studio activity categories and next-video frontend PR484 | PR484 |

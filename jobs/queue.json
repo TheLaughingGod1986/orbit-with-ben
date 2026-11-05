@@ -174806,10 +174806,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-05T01:06Z",
+      "eta": "2026-11-05T03:06Z",
       "created_by": "claude",
       "created_at": "2026-11-04T12:54Z",
       "result": "",
@@ -174818,12 +174818,25 @@
           "at": "2026-11-04T12:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T01:06Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts",
       "due": "2026-11-06T00:00:00Z",
       "kind": "chief",
-      "urgent": 18
+      "urgent": 18,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T01:06Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2024",
