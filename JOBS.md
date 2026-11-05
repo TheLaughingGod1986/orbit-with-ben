@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2175 | any | open | – | – | 008 edit · chief · HOS 008 Short C: Chief decision on J2170 paper hook lock & 1-sentence VO pickup scope (conditional 2 Dec slot held) | J2170 |
 | J2176 | mini | blocked | codex | – | 032 thumbs · thumb · 032 J2144 FIX: Titan hero crop and clear lander typography |  |
 | J2177 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
-| J2180 | any | open (after J2179) | – | – | chief · Review J2179 terminal-loop checker change before HOS006 can use it | J2178 |
+| J2180 | any | claimed | codex | 2026-11-05T05:54Z | chief · Review J2179 terminal-loop checker change before HOS006 can use it | J2178 |
 | J2181 | mini | open | – | – | assembly · HOS 006: qualify existing-media replacements for B/C repeated and mismatched shots | J2178 |
 
 Recently finished:
