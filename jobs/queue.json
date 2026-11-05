@@ -166552,10 +166552,10 @@
       "stage": "edit",
       "after": "J2217",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T16:30Z",
+      "eta": "2026-11-05T18:30Z",
       "created_by": "codex",
       "created_at": "2026-11-03T18:57Z",
       "result": "review J1881 FIX (jobs/reviews/J1881/REVIEW.md): J2163 PR #411 (50620e40) 6-row base PTS/planner KEEP (12923f PTS, 11/11 tests PASS), but Ben 5 Nov review (6658371896) expands scope to 8 items + 27-cut film-wide bottom captions. Waiting on J2217 before re-review and production scope. GBP0.",
@@ -166659,6 +166659,11 @@
           "at": "2026-11-05T15:43Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T16:30Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for J2217 eight-item+caption recipe amend; then re-review in J1881 before any production splice (no six-only)",
