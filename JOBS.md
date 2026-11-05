@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2254 | mini | open | – | – | 008 edit · vo · `eleven_v3` · HOS 008 Short C: record authorized C-Open-1 VO pickup (47-char) via vo_take.py | J2175/h94 |
 | J2255 | mini | open (after J2254) | – | – | 008 edit · assembly · HOS 008 Short C: assemble Short_C_v03 (Layout C-v03a) after C-Open-1 VO — £0, no upload | J2175/h94 |
 | J2256 | mini | open | – | – | 033 picture · for gemini · review · `gemini-argon` · 033 Uranus: stills lock + OMNI R29/R55 price-pass brief from SHOT_LIST_v01 (no mint, £0) | J2238/h94/d67daf94 |
-| J2258 | any | claimed | macbook-2 | 2026-11-05T23:46Z | 006 edit · review · Review HOS 006 Short B v01 and Short C v02 | J2169 |
+| J2258 | any | open | – | – | 006 edit · review · Review HOS 006 Short B v01 and Short C v02 | J2169 |
 | J2260 | mini | open | – | – | 032 picture · review · 032 R19 distance draft: review still and reuse |  |
 
 Recently finished:
