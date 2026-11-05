@@ -188257,19 +188257,26 @@
           "at": "2026-11-05T19:35Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T19:41Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: VO sha256 matches 3b17b23c…779e8a, 20.88s. Existing muons.mp4 is 12s 1920x1080 on NAS graphics_v01. Film bed mp3 is not on disk or in the 25 Oct tar."
         }
       ],
-      "remaining_action": "Build fri06 muons Short; PASS gates; review+Ben watch; schedule Private if slot free",
+      "remaining_action": "Build the 9:16 muons Short from the locked VO and existing muon graphic",
       "due": "2026-11-09T10:30:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-05T19:35Z",
+        "of": 4,
+        "at": "2026-11-05T19:41Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "VO sha256 matches 3b17b23c…779e8a, 20.88s. Existing muons.mp4 is 12s 1920x1080 on NAS graphics_v01. Film bed mp3 is not "
+      },
+      "taskKeys": [
+        "OWB:024"
+      ]
     }
   ],
   "focus": [],
