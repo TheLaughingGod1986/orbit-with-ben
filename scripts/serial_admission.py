@@ -25,7 +25,20 @@ def reserve(data, *, host_id, request, observed):
             raise ValueError("serial admission claim changed")
         del row["dispatch_reservation"]
         row.update(status="open", by="")
-        actual = reserve(candidate, host_id=host_id, request=expected, observed=observed)
+        current = copy.deepcopy(observed)
+        stage = reservations.stage_key(row)
+        if row.get("film") and row.get("stage") and stage in map(tuple, current.get("stage_claims", [])):
+            if not jobs.on_board(row):
+                raise ValueError("serial board ownership needs supported adapter")
+            import studio
+            board = studio.load(jobs.film_status_path(row))
+            claims = [c for c in board.get("claims", []) if c.get("stage") == row["stage"]]
+            if (len(claims) != 1 or claims[0].get("by") != expected["claimant"]
+                    or not claims[0].get("note", "").startswith(row["id"] + " ")
+                    or studio.stalled(claims[0], observed["at"])):
+                raise ValueError("serial board claim changed")
+            current["stage_claims"] = [s for s in current["stage_claims"] if tuple(s) != stage]
+        actual = reserve(candidate, host_id=host_id, request=expected, observed=current)
         if any(actual.get(k) != expected.get(k) for k in ("job", "host", "worker", "model", "account", "claimant")):
             raise ValueError("serial admission selection changed")
         return copy.deepcopy(expected)

@@ -263,6 +263,21 @@ class Caller(unittest.TestCase):
             self.assertNotIn("admission", self.admit())
         self.assertEqual(len(observed), 1)
 
+    def test_launch_revalidation_preserves_own_owb_board_claim_only(self):
+        self.ordinary_fixture()
+        self.data["jobs"][-1].update(film="032", stage="script")
+        admitted = self.admit()
+        self.assertIn("admission", admitted)
+        row = self.data["jobs"][-1]
+        row.update(status="claimed", by="macbook")
+        self.ev["stage_claims"] = [("owb", "032", "script")]
+        board = {"claims": [dict(stage="script", by="macbook", note="J9998 fixture",
+            at=T.isoformat(), eta=(T+dt.timedelta(minutes=10)).isoformat())]}
+        with patch("studio.load", return_value=board), patch("jobs.film_status_path", return_value=self.root):
+            self.assertIn("admission", self.admit({"validate": admitted["admission"]}))
+            board["claims"][0]["by"] = "gemini"
+            self.assertNotIn("admission", self.admit({"validate": admitted["admission"]}))
+
     def test_uncertain_group_exit_retains_canonical_admission(self):
         self.ordinary_fixture()
         admitted = self.admit()
