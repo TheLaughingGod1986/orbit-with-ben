@@ -178166,9 +178166,14 @@
           "at": "2026-11-05T07:00Z",
           "by": "codex",
           "what": "released: Clean checkpoint b3b950a17f pushed to existing PR491; preserve original 1/4. Seven new process stills await J2192, existing 17 mechanism stills/source conflicts remain J2177. 763 planned frames checked; 31 prior render hashes preserved. Real-body graphics, licensed motion, frame0, PIA07232 reuse, APL rights and composites exceed one run. Resume codex/J2089-picture in /private/tmp/J2089-wt, not main. No background process, spend, publishing or PASS."
+        },
+        {
+          "at": "2026-11-05T07:10Z",
+          "by": "gemini",
+          "what": "J2192 review done: jobs/reviews/J2192/REVIEW.md — 5 KEEP approved to render under --review-ref J2192 (r21_cycle_clouds, r21_cycle_lakes, r25_heated_suit, r29_rain_comparison, r45_lift_mechanism); 2 FIX before render (r39_fire_partners detached flame triangle + OXYGEN alignment; r40_fire_missing arrow-on-X collision + DIM arrow); separate all code graphics with real moving plates; frame-0, PIA07232 reuse, APL rights and J2177 holds preserved"
         }
       ],
-      "remaining_action": "Complete licensed harvest and real-body graphics; apply J2177 and J2192 reviews before rendering their named overlays",
+      "remaining_action": "Apply J2192 (render 5 KEEP process overlays under ref J2192; fix r39_fire_partners & r40_fire_missing); complete real-body graphics; await J2177 (17 mechanisms + frame-0/PIA07232) and APL rights",
       "kind": "assembly",
       "progress": {
         "step": 1,
@@ -183542,17 +183547,22 @@
           "at": "2026-11-05T07:08Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Evaluated all 7 full-size PNGs against SOURCES.md and SHOT_LIST_v04: 5 KEEP (r21_cycle_clouds, r21_cycle_lakes, r25_heated_suit, r29_rain_comparison, r45_lift_mechanism), 2 FIX (r39_fire_partners detached flame triangle/header alignment; r40_fire_missing arrow-on-X collision and blue-vs-DIM oxygen arrow)"
+        },
+        {
+          "at": "2026-11-05T07:10Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote jobs/reviews/J2192/REVIEW.md and updated J2089 with 5 KEEP render permissions (ref J2192), 2 FIX specs, and preserved holds"
         }
       ],
-      "remaining_action": "Writing jobs/reviews/J2192/REVIEW.md and updating J2089 with approved KEEP ids and FIX corrections",
+      "remaining_action": "Completing J2192 review and posting summary to OWB thread",
       "due": "2026-11-09T18:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-05T07:08Z",
+        "at": "2026-11-05T07:10Z",
         "by": "gemini",
-        "note": "Evaluated all 7 full-size PNGs against SOURCES.md and SHOT_LIST_v04: 5 KEEP (r21_cycle_clouds, r21_cycle_lakes, r25_heat"
+        "note": "Wrote jobs/reviews/J2192/REVIEW.md and updated J2089 with 5 KEEP render permissions (ref J2192), 2 FIX specs, and preser"
       },
       "taskKeys": [
         "OWB:032"
