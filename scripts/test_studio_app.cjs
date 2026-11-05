@@ -14,7 +14,8 @@ const NOW = Date.parse('2026-10-28T20:00:00Z');
 const v = (o) => Object.assign({key: 'OWB:001', channel: 'OWB', number: '001', title: 'T', type: 'long', lane: 'progress', jobs: [], youtube: null, air: ''}, o);
 
 // Review is Ben's finished videos only.
-const vs = [v({key: 'a', lane: 'ready', readyFor: 'Ben'}), v({key: 'b', lane: 'ready', readyFor: 'Chief'}), v({key: 'c'})];
+const vs = [v({key: 'a', lane: 'ready', readyFor: 'Ben', watch: {url: 'https://x/api/watch?v=a'}}), v({key: 'b', lane: 'ready', readyFor: 'Chief'}), v({key: 'c'}),
+  v({key: 'd', lane: 'ready', readyFor: 'Ben'})];  // d: no video attached yet, so not shown to Ben
 assert.deepEqual(t.forBen(vs).map(x => x.key), ['a']);
 assert.equal(t.stage(vs[1]), 'Waiting on Chief');
 
@@ -218,7 +219,7 @@ const shared={id:'Jshared',status:'claimed',by:'codex',claimedAt:new Date(NOW).t
 const producingA=v({key:'OWB:101',jobs:[shared]}), producingB=v({key:'HOS:101',channel:'HOS',jobs:[shared]});
 const publicFollowup=v({key:'OWB:102',youtube:{videoId:'abcdefghijk',privacy:'public',state:'live'},jobs:[shared]});
 const scheduled=v({key:'OWB:103',lane:'done',youtube:{videoId:'bcdefghijkl',state:'scheduled',publishAt:'2026-10-30T18:00:00Z'}});
-const readyFilm=v({key:'OWB:104',lane:'ready',readyFor:'Ben'});
+const readyFilm=v({key:'OWB:104',lane:'ready',readyFor:'Ben',watch:{url:'https://x/api/watch?v=104'}});
 const db=makeBoard([producingA,producingA,producingB,publicFollowup,scheduled,readyFilm,readyFilm]);
 const om=t.overviewModel(db,NOW);
 assert.equal(om.ready.length,1);assert.equal(om.producing.length,2);assert.equal(om.running.length,1);assert.equal(om.week.length,1);
@@ -366,7 +367,8 @@ assert(!notReadyOverview.includes('Next for your review')&&!notReadyOverview.inc
 const readyOverview=t.overview({tracker:{videos:[v({key:'watch-now',lane:'ready',readyFor:'Ben',watch:{url:'https://example.com/cut.mp4',version:'v02'}})]},owb:{jobs:[]}},NOW);
 assert(readyOverview.includes('Ready for your review')&&readyOverview.includes('href="#uat=watch-now"')&&readyOverview.includes('▶ Watch & review v02'));
 const missingDelivery=t.overview({tracker:{videos:[v({key:'missing-watch',lane:'ready',readyFor:'Ben'})]},owb:{jobs:[]}},NOW);
-assert(missingDelivery.includes('no watch link is recorded')&&!missingDelivery.includes('▶ Watch & review'));
+// 5 Nov 2026: a cut without its video attached isn't offered to Ben at all until the link arrives.
+assert(missingDelivery.includes('Nothing is ready for your review yet.')&&!missingDelivery.includes('▶ Watch & review'));
 console.log('Review readiness wording and Watch CTA checks OK');
 // Activity video context comes from existing associations, never guessed from a job title.
 const contextVideos=[v({key:'HOS:008',channel:'HOS',title:'How Franklin Tamed Lightning',jobs:[{id:'J1757'}]}),v({key:'OWB:030',channel:'OWB',title:'Apophis'})];
