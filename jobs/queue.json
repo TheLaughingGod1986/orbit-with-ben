@@ -110457,13 +110457,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "chief",
       "since": "2026-11-05T09:18Z",
-      "eta": "2026-11-05T11:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "",
+      "result": "Waiting for: Uranus ZpEA8stoSPA Public since 3 Nov (v01 aired; swap cancelled). Shooting Stars T9fVlG3CCzU (Sat 7 Nov 11:30 London) and Titan RLSJm59OSzI (Tue 10 Nov 11:30): need J2167 KEEP of HOS/OWB PR507 take2 then J1208 exact-source acceptance before 10:30 London on each air day; else scheduled copy airs. No Ben board card until a gate-passing durable cut exists. No upload/swap.",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -110719,9 +110719,19 @@
           "at": "2026-11-05T09:18Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T09:18Z",
+          "by": "chief",
+          "what": "blocked: Waiting for: Uranus ZpEA8stoSPA Public since 3 Nov (v01 aired; swap cancelled). Shooting Stars T9fVlG3CCzU (Sat 7 Nov 11:30 London) and Titan RLSJm59OSzI (Tue 10 Nov 11:30): need J2167 KEEP of HOS/OWB PR507 take2 then J1208 exact-source acceptance before 10:30 London on each air day; else scheduled copy airs. No Ben board card until a gate-passing durable cut exists. No upload/swap."
+        },
+        {
+          "at": "2026-11-05T09:18Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-11-07T10:30:00Z"
         }
       ],
-      "remaining_action": "Receive J1208 accepted exact S5/S6 illustration inputs, then corrections and original gates; preserve fallback",
+      "remaining_action": "Await J2167 KEEP + J1208 acceptance for S5/S6; Uranus closed; fallback airs without it",
       "due": "2026-11-02T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -110745,6 +110755,11 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Uranus ZpEA8stoSPA Public since 3 Nov (v01 aired; swap cancelled). Shooting Stars T9fVlG3CCzU (Sat 7 Nov 11:30 London) and Titan RLSJm59OSzI (Tue 10 Nov 11:30): need J2167 KEEP of HOS/OWB PR507 take2 then J1208 exact-source acceptance before 10:30 London on each air day; else scheduled copy airs. No Ben board card until a gate-passing durable cut exists. No upload/swap.",
+        "check_at": "2026-11-07T10:30:00Z"
       }
     },
     {
