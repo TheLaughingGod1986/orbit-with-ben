@@ -181392,17 +181392,22 @@
           "at": "2026-11-05T01:19Z",
           "by": "codex",
           "what": "step 1 of 3 done: Rule 8 requires subject and surprise in sentence 1. Existing cuff opens on generic circulation; cuff first appears at 8.794s. No credit spend authorised."
+        },
+        {
+          "at": "2026-11-05T01:20Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Archived hos-005-blood inputs found. Cuff requires a subject-first opening repair; pulse reserve rejected for pump/stove overlap. No render or spend."
         }
       ],
-      "remaining_action": "Record rule-8 cuff opening failure and identify a bounded repair decision",
+      "remaining_action": "Commit negative qualification evidence and queue the bounded cuff repair decision",
       "due": "2026-11-07T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-05T01:19Z",
+        "at": "2026-11-05T01:20Z",
         "by": "codex",
-        "note": "Rule 8 requires subject and surprise in sentence 1. Existing cuff opens on generic circulation; cuff first appears at 8."
+        "note": "Archived hos-005-blood inputs found. Cuff requires a subject-first opening repair; pulse reserve rejected for pump/stove"
       },
       "taskKeys": [
         "HOS:005"
