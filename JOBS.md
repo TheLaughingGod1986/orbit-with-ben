@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2236 | mini | open | – | – | for gemini · review · `gemini-argon` · Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs) |  |
 | J2237 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0958 |  |
 | J2238 | mini | open | – | – | chief · Chief: resolve 033 shots orphan-review |  |
+| J2239 | any | open | – | – | 011 script · script · HOS 011 Anesthesia (Thu 10 Dec): Shorts scripts v02 + upload package scaffold + queue long VO |  |
 
 Recently finished:
 
