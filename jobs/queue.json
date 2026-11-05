@@ -166775,7 +166775,7 @@
     {
       "id": "J1894",
       "title": "verify condition for J0862",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J0862), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J0862 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J0862 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J0862.\n5. Finish this job with the verdict in --result.\n\n\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nCredit is not the recorded substantive blocker: published ElevenLabs balance at 08:30Z is 101014 characters; structured J0862 hold instead requires approved HOS009 Short B replacement opening and exact recording scope. Make that editorial/recording decision within Chief authority, verify current HOS rules, re-read live credit before a scoped API take, preserve existing accepted 010 A1 and v02 takes. If approved, resume existing original job with evidence rather than defer to an obsolete 30 Oct reset. No unchanged four-script regeneration.\n\nVerify the waiting condition for J0862: Verified 3 Nov 15:13Z: HOS ce5d17cd, PRs through 400, desk through 6606923484 and current queue contain no approved 009 Short B replacement opening or exact recording scope. Accepted J1004 / merged PR366 retains the block: both one minute and one second required; existing speech alone needs 3.001s at atempo 1.06, beyond 2.85s. Approve replacement wording and exact recording scope before recording. Preserve v02 takes and approved 010 Short A Option A1; do not regenerate four unchanged scripts. Fresh live credit check required before future authorised spend; all production and Ben gates remain.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0862 --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -166805,6 +166805,11 @@
           "at": "2026-11-05T00:28Z",
           "by": "claude",
           "what": "rule H: Chief review moved to the review lane"
+        },
+        {
+          "at": "2026-11-05T00:35Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
@@ -166815,7 +166820,16 @@
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
       ],
-      "urgent": 23
+      "urgent": 23,
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1895",
