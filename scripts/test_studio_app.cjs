@@ -509,3 +509,12 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert.equal(t.agentLines({}), '');
 }
 console.log('Queue forecast checks OK');
+
+// Jobs running counts the jobs on video cards too (5 Nov 2026: Mini + MacBook both working showed as 1).
+{
+  const sb = {tracker: {videos: [v({key: 'OWB:032', jobs: [{id: 'J2176', status: 'claimed', by: 'codex'}]})]},
+    owb: {jobs: [{id: 'J2165', status: 'claimed', by: 'macbook'}, {id: 'J2176', status: 'claimed', by: 'codex'}]}, models: {}};
+  assert.equal(t.summary(sb, NOW).jobs.working, 2);
+  assert.equal(t.summary({...sb, owb: {jobs: [{id: 'J2165', status: 'claimed'}]}}, NOW).jobs.working, 2);
+}
+console.log('Jobs running count checks OK');
