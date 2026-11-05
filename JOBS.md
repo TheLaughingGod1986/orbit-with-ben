@@ -55,7 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2024 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0999 |  |
-| J2027 | mini | open | – | – | chief · Chief: review HOS milestone/row-count PR483 and verify publisher/frontend rollout | PR483 / J2026 |
+| J2027 | mini | claimed | chief | 2026-11-05T09:38Z | chief · Chief: review HOS milestone/row-count PR483 and verify publisher/frontend rollout | PR483 / J2026 |
 | J2029 | mini | open | – | – | chief · Chief: review Studio activity categories and next-video frontend PR484 | PR484 |
 | J2033 | mini | blocked | codex | – | 009 picture · for codex · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
 | J2034 | mini | open (after J2033) | – | – | 009 picture · for gemini · review · `gemini-argon` · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |

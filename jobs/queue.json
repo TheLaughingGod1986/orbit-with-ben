@@ -175420,10 +175420,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-05T08:53Z",
+      "eta": "2026-11-05T09:38Z",
       "created_by": "codex",
       "created_at": "2026-11-04T14:21Z",
       "result": "",
@@ -175437,6 +175437,11 @@
           "at": "2026-11-04T15:27Z",
           "by": "codex",
           "what": "Recorded Ben direct production request for combined PR483/PR484 release; authorization provided, Chief review still required"
+        },
+        {
+          "at": "2026-11-05T08:53Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review recorded HOS schema/row counts and no-false-progress guard; release publisher/frontend after normal checks",
@@ -175454,6 +175459,14 @@
           483,
           484
         ]
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T08:53Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
