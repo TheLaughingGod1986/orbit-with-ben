@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2162 | cloud | open (after J2161) | – | – | review · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2164 | mini | open | – | – | 033 vo · for gemini · review · `gemini-argon` · 033 Uranus: Chief ruling on J2155 VO transcript and tails |  |
 | J2165 | mini | open (after J2155) | – | – | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance |  |
-| J2166 | mini | open | – | – | 031 thumbs · review · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
+| J2166 | mini | open | – | – | 031 thumbs · for gemini · review · `gemini-argon` · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 
 Recently finished:
 
