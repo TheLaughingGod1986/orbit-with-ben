@@ -185464,10 +185464,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-05T12:43Z",
+      "eta": "2026-11-05T12:58Z",
       "created_by": "claude",
       "created_at": "2026-11-05T12:36Z",
       "result": "",
@@ -185486,6 +185486,11 @@
           "at": "2026-11-05T12:43Z",
           "by": "macbook",
           "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-05T14:43:03Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-05T12:43Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared",
