@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2250 | mini | open | – | – | 024 edit · for gemini · review · `gemini-argon` · 024 muons Short v01: review the tool-passed cut |  |
 | J2252 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2169 |  |
 | J2254 | mini | open | – | – | 008 edit · vo · `eleven_v3` · HOS 008 Short C: record authorized C-Open-1 VO pickup (47-char) via vo_take.py | J2175/h94 |
+| J2255 | mini | open (after J2254) | – | – | 008 edit · assembly · HOS 008 Short C: assemble Short_C_v03 (Layout C-v03a) after C-Open-1 VO — £0, no upload | J2175/h94 |
 
 Recently finished:
 

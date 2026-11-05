@@ -1,5 +1,5 @@
 {
-  "next_id": 2255,
+  "next_id": 2256,
   "jobs": [
     {
       "id": "J0001",
@@ -188996,6 +188996,34 @@
       "remaining_action": "Record C-Open-1 via vo_take.py; vo_check PASS; no upload",
       "kind": "vo",
       "model": "eleven_v3"
+    },
+    {
+      "id": "J2255",
+      "title": "HOS 008 Short C: assemble Short_C_v03 (Layout C-v03a) after C-Open-1 VO — £0, no upload",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief h94 dispatch (Grok Bot elected Chief): assemble HOS 008 Short_C_v03 at £0 from existing media + the authorized C-Open-1 VO pickup.\n\nLocks (jobs/reviews/J2175/REVIEW.md; HOS PR #429 squash-merged 56c8affd):\n- Sentence 1 = C-Open-1 from the VO predecessor (stem hos_008_short_C_s01_v03); body = contiguous unmodified w[13..61] 5.720–24.400s of hos_008_short_C_v02.wav (Layout C-v03a).\n- 9-cut schedule from 10_Shorts/J2170/source_qa_v03/cuts_v03a.json + pool_v03.json: crop [438,0,405,720] → output 936x1664 (2.3111x), picture_qa source preflight 0 fails.\n- Soft dark/warm bottom caption panel over moving footage (Ben 5 Nov note); overlay DATA: 20+ STRIKES A YEAR on S08 window only.\n- Use the 8 verified J1191 KEEP Flow plates named in the review; no new Flow/Vertex generation; £0.\n\nGates: house Shorts open/length/atempo, picture_qa, polish/sfx as applicable. On PASS, park for Chief review (then Ben watch). Do NOT upload, schedule, or fill the conditional 2 Dec 11:30Z slot — Short_C airs only after 008 Long is Public and Ben OK.\n\nRef: J2175; VO predecessor must be done first.\n",
+      "ref": "J2175/h94",
+      "film": "008",
+      "stage": "edit",
+      "after": "J2254",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T21:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T21:25Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble Short_C_v03 from locked C-v03a + VO; gates; park for Chief; no upload",
+      "kind": "assembly"
     }
   ],
   "focus": [],
