@@ -189438,19 +189438,26 @@
           "at": "2026-11-05T22:55Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T22:57Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. v11 is on iCloud and NAS. Next: hash, current title/description/tags, then dry-run."
         }
       ],
-      "remaining_action": "S6 Titan Short v11 swap: Ben OK'd on the board (5 Nov 22:07), replace RLSJm59OSzI in its Tue 10 Nov 11:30 slot",
+      "remaining_action": "Verify v11 hash and read the live Titan listing",
       "due": "2026-11-10T10:30:00Z",
       "kind": "studio",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-05T22:55Z",
+        "of": 5,
+        "at": "2026-11-05T22:57Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. v11 is on iCloud and NAS. Next: hash, current title/description/tags, then dry-run."
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J2260",
