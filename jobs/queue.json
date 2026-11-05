@@ -185864,13 +185864,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-05T17:15Z",
-      "eta": "2026-11-05T19:15Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T10:11Z",
-      "result": "",
+      "result": "Closed on 0a925061. Fast-forwarded HOS PR #425 (codex/J2210-readiness) from 2e84edb3 to 0a925061, the same commit as open PR #426. Short_A is the 7-body-shot Option A1 plan (S01 0.000-2.849s, vo 22.289s, total 23.289s) and Short_C maps S05 to P5:09a_pigeon_pavement and S06 to P5:13a_gull_seaside. tests.test_hos_code_graphic_resolution 2/2 PASS. No merge, no Flow/Vertex/EL spend. J2172 stays held for Chief's separate HOS 010 moving-plate mint authorization.",
       "history": [
         {
           "at": "2026-11-05T10:11Z",
@@ -185936,6 +185936,11 @@
           "at": "2026-11-05T17:17Z",
           "by": "cursor",
           "what": "step 3 of 3 done: Fast-forwarded codex/J2210-readiness 2e84edb3..0a925061; PR425 head matches PR426; unit tests OK; no merge, no spend"
+        },
+        {
+          "at": "2026-11-05T17:17Z",
+          "by": "cursor",
+          "what": "done: Closed on 0a925061. Fast-forwarded HOS PR #425 (codex/J2210-readiness) from 2e84edb3 to 0a925061, the same commit as open PR #426. Short_A is the 7-body-shot Option A1 plan (S01 0.000-2.849s, vo 22.289s, total 23.289s) and Short_C maps S05 to P5:09a_pigeon_pavement and S06 to P5:13a_gull_seaside. tests.test_hos_code_graphic_resolution 2/2 PASS. No merge, no Flow/Vertex/EL spend. J2172 stays held for Chief's separate HOS 010 moving-plate mint authorization."
         }
       ],
       "remaining_action": "Close J2210 on 0a925061; Chief still merges and authorises the Flow mint",
@@ -185960,7 +185965,8 @@
           "checked_at": "2026-11-05T17:13:12+00:00",
           "checked_by": "gemini"
         }
-      ]
+      ],
+      "done_ref": "0a925061"
     },
     {
       "id": "J2211",
