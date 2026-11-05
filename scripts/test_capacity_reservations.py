@@ -68,6 +68,20 @@ class Reservations(unittest.TestCase):
             self.reserve(at=later, token="second-reservation-0002")
         self.assertEqual(self.data["jobs"][0]["hold"]["condition"], "actual external input")
 
+    def test_expired_launch_window_never_frees_claimed_remote_account(self):
+        self.reserve()
+        held = self.data["jobs"][0]
+        held.update(status="claimed", by="macbook", since=T.isoformat(),
+                    eta=(T + dt.timedelta(minutes=25)).isoformat())
+        held["dispatch_reservation"].update(phase="claimed", host="macbook", claimant="macbook")
+        later = T + dt.timedelta(hours=2)
+        self.assertIsNotNone(reservations.active(held, later))
+        # Even a stale queue ETA is not remote process-exit evidence.
+        self.assertFalse(workflow.claimable(held, [held], later, "gemini", "codex"))
+        self.data["jobs"].append(job("J9999"))
+        with self.assertRaisesRegex(ValueError, "no currently eligible"):
+            self.reserve(token="another-reservation-0002", at=T+dt.timedelta(minutes=3))
+
     def test_busy_chief_reserves_independent_specialist_but_not_review(self):
         self.data["jobs"] += [job("J1841", kind="chief", needs="any")]
         result = self.reserve(worker="gemini", hosts=[host(worker="gemini", configured_limit=2,

@@ -839,3 +839,16 @@ proof on both hosts, including accounted serial leases; observed real-host
 success/failure/guard transitions. This checkpoint does not authorize a second
 lane, merge, media generation, spend or publication. Keep J1843 at 2/3 until the
 remaining acceptance is actually demonstrated.
+
+Final safety follow-through: a claimed capacity reservation now retains
+host/worker/shared-account occupancy after its two-minute launch window expires.
+Ordinary `next` also refuses stale takeover of that remote claim until canonical
+release/reconciliation. A fresh-evidence regression proves that an expired
+launch window cannot free the laptop's shared account for a Mini launch. This
+is conservative occupancy, not evidence that the remote worker is still live.
+
+Focused validation on the final code: **111 capacity tests**, **34 workflow
+state tests**, **30 queue tests**, **24 laptop tests** and **12 portable transfer
+tests** passed. The full Rules suite/CI result must be read at the final head;
+earlier local full-suite runs overlapped source edits and correctly triggered
+the relay's code-version restart guard, so those runs are not acceptance.

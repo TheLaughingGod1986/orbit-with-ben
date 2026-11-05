@@ -229,6 +229,8 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=
     def reserved(row):
         value = row.get("dispatch_reservation") or {}
         start, end = timestamp(value.get("at")), timestamp(value.get("expiresAt"))
+        if row.get("status") == "claimed" and value.get("phase") == "claimed":
+            return True  # remote capacity requires explicit canonical reconciliation
         return bool(start and end and start <= at < end)
     if reserved(j):
         return False

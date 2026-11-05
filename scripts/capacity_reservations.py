@@ -18,6 +18,10 @@ def active(job, at):
     value = job.get("dispatch_reservation") or {}
     start = workflow.timestamp(value.get("at"))
     end = workflow.timestamp(value.get("expiresAt"))
+    if job.get("status") == "claimed" and value.get("phase") == "claimed":
+        # The two-minute deadline bounds starting, never proves that an
+        # already claimed remote process exited or its account is free.
+        return value
     return value if start and end and start <= at < end else None
 
 
