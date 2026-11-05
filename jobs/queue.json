@@ -176057,10 +176057,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-05T08:58Z",
+      "eta": "2026-11-05T09:08Z",
       "created_by": "claude",
       "created_at": "2026-11-04T17:22Z",
       "result": "",
@@ -176114,12 +176114,25 @@
           "at": "2026-11-05T08:58Z",
           "by": "chief",
           "what": "reopened: PR488 squash-merged 96a02fa3d5; closing out"
+        },
+        {
+          "at": "2026-11-05T08:58Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief reviews PR488 head 0a655e1d52 and merges after required checks",
       "kind": "assembly",
       "urgent": 20,
-      "escalated_at": "2026-11-04T19:54Z"
+      "escalated_at": "2026-11-04T19:54Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T08:58Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2040",
