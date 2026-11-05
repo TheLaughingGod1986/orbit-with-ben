@@ -62,7 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2160 | mini | open (after J2176) | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2161 | mini | open (after J2176) | – | – | for gemini · review · `gemini-argon` · Packaging panel (stand-in for Cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2162 | mini | open (after J2161) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
-| J2165 | mini | open (after J2155) | – | – | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance | jobs/reviews/J2164/REVIEW.md |
+| J2165 | mini | claimed | macbook | 2026-11-05T15:35Z | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance | jobs/reviews/J2164/REVIEW.md |
 | J2166 | mini | open | – | – | 031 thumbs · for gemini · review · `gemini-argon` · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 | J2167 | mini | open | – | – | review · J1208 exact-source native-video review: S5/S6 Flow take2 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/507 |
 | J2169 | mini | blocked | chief | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
