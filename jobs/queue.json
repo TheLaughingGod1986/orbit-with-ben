@@ -180999,7 +180999,7 @@
     {
       "id": "J2164",
       "title": "033 Uranus: Chief ruling on J2155 VO transcript and tails",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J2164), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J2164 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J2164 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J2164.\n5. Finish this job with the verdict in --result.\n\nJ2155 single take from locked v02; evidence 76284eba93 branch codex/J2155-uranus-vo. 611.4s, -23.3dB mean, -20.22 LUFS, -3.77dBTP. Raw Scribe REVIEW 93.39%, 54 mismatch groups. Review J2155_VO_REVIEW_v01.md, full Scribe and per-section decay measurements. Unresolved: and/an offset ~418.204s; Real Worlds/World ~601.524s; 19 April versus 19th of April date expansion. Rule on representation differences versus required pickups, tails and runtime. No worker audio perception claimed; Ben final finished-film UAT covers watch/listen. Merge evidence if accepted; explicitly clear linked shot-list follow-up only when VO accepted, otherwise scope bounded repair. Do not implicitly approve VO by completing this review.",
       "ref": "",
@@ -181024,11 +181024,25 @@
           "at": "2026-11-05T00:28Z",
           "by": "claude",
           "what": "rule H: Chief review moved to the review lane"
+        },
+        {
+          "at": "2026-11-05T00:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Rule on Scribe REVIEW and unresolved wording/date differences before accepting VO",
       "kind": "review",
-      "urgent": 2
+      "urgent": 2,
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2165",
