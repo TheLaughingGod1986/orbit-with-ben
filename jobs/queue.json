@@ -162283,13 +162283,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-05T02:55Z",
-      "eta": "2026-11-05T04:55Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "Chief FIX at c9f591c158: repair serial account attribution and laptop safe no-candidate fallback; same PR437, no enablement.",
+      "result": "parked for Chief: PR437 exact head 7086e10ddb1511f9444842db9ebebd686cf4dfdb repairs serial selected-model account attribution and MacBook ordinary-dispatch exclusion. Rules 41959021496 and core 41959021465 green; 121 capacity, 76 relay, 27 laptop tests green. Review this exact head; no rollout. Preserve 2/3 until observed real-host identity/account/model/capability and launch/exit/guard transitions pass. No private registration/probes provisioned, no capacity enabled; free-slot time unknown.",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162750,6 +162750,11 @@
           "at": "2026-11-05T03:03Z",
           "by": "codex",
           "what": "step 2 of 3 done: Repaired both latest integration findings and synchronized current main. PR437 head 7086e10ddb1511f9444842db9ebebd686cf4dfdb: capacity 121, relay 76, laptop 27 tests green. Exact-head Rules 41959021496 green (836 script tests plus 10/7/12/2 required tests); core 41959021465 green. No provisioning or enablement."
+        },
+        {
+          "at": "2026-11-05T03:04Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: PR437 exact head 7086e10ddb1511f9444842db9ebebd686cf4dfdb repairs serial selected-model account attribution and MacBook ordinary-dispatch exclusion. Rules 41959021496 and core 41959021465 green; 121 capacity, 76 relay, 27 laptop tests green. Review this exact head; no rollout. Preserve 2/3 until observed real-host identity/account/model/capability and launch/exit/guard transitions pass. No private registration/probes provisioned, no capacity enabled; free-slot time unknown."
         }
       ],
       "remaining_action": "Chief reviews PR437 exact head 7086e10ddb; observed-host acceptance remains before capacity enablement",
