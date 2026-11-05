@@ -696,7 +696,8 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    desk, or a Claude message on #99 asking the Chief for something with no Chief reply yet).
    If nothing is waiting anywhere, stop without posting.
 4. Do that one task, following that repo's AGENTS.md exactly: claim before work (studio.py claim --git, or the HOS
-   desk's own rule), commit only from a clean worktree, never spend money or credit beyond the written rules, never
+   desk's own rule), commit only from a clean worktree (your own: `git worktree add --detach <dir> origin/main` or
+   `-b <branch>`; never `git worktree add --force <dir> main`, which moves main under the shared checkout), never spend money or credit beyond the written rules, never
    upload, schedule, retitle or change privacy on YouTube unless the job brief or a Chief/Claude message for that task
    says to, never delete a video or anything on the NAS, and never print secrets. Chief owns AGENTS.md and the Never list
    (Ben, 9-10 Oct 2026): a job added by chief, a "[Chief]" OK, or a brief saying "Ben approved (relayed by Chief)" is
