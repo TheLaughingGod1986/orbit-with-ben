@@ -111737,7 +111737,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
-      "result": "parked for Chief: review J2167 KEEP (jobs/reviews/J2167/REVIEW.md, plus J2225 2cbdaa2414 & PR #507 542f8c9d44 verified): both Flow take 2 silent sources PASS native-video, phone-proxy, forward-preroll (0.00-1.15s, f27->f28 MAD 0.2503 / 5.0421), opening-window (1.15-3.85s, 0-1.5s MAD 5.93 / 13.72), scientific-honesty, and full-size picture_qa WARN reviews. Record elected-Chief exact-source acceptance of S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a) at 1.5x upscale to 1080x1920 (crop none, speed 1, with generated-illustration description disclosure; t1 takes excluded) and reopen J1199 for S5/S6 assembly. £0 / 0 credits.",
+      "result": "parked for Chief: review J2167 KEEP (jobs/reviews/J2167/REVIEW.md b9f3d050c9): revalidated native-video capability via independent same-session file-tools-only probe (video PASS in f7f6956d-05de-4265-bffa-5d19d028d8ba step 2, truth=answer right_to_left green>blue>red, watched=true, tools=[read_file]; audio PASS in b4f281cc-61c9-482d-b0ed-c0098d966bd7 step 2, match 0.95; reconciled capability_probe.py drawbox t=fill x=2147483647 solid-black clip bug on 3caaa6a5/697a0336; verified persisted video/mp4 delivery artifacts across 4dc2eb10, bfdaef57, and 0cae588e). Both S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a) KEEP on compliant frame-exact 64-frame opening frames 28..91 (1.166667-3.833333s, 64/24=2.666667s <= 2.700000s; S5_t2_opening_64f.mp4 d9fc8316... & S6_t2_opening_64f.mp4 fd87b01d...) + contiguous 28-frame preroll frames 0..27 (0.000000-1.166667s; f27->f28 MAD 0.2503 / 5.0421), first_cut_s=2.67s <= 3.00s PASS (t1 takes excluded). Note: S6 16:9 centre-band (crop=720:405:0:875 at 1.50x) passes gate_shorts_open f0diff=4.09 (vs 0.15 at crop=none); S5 localized meteor on stationary sky measures f0diff=0.58-0.75. Cleared J1208 capability hold and parked J1208 for elected Chief exact-source decision before J1199 assembly. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-10-29T14:17Z",
@@ -111983,9 +111983,14 @@
           "at": "2026-11-05T18:24Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-05T19:20:00Z"
+        },
+        {
+          "at": "2026-11-05T19:12Z",
+          "by": "gemini",
+          "what": "review J2167 KEEP revalidated (jobs/reviews/J2167/REVIEW.md b9f3d050c9): capability hold satisfied and cleared; parked for Chief: review J2167 KEEP (jobs/reviews/J2167/REVIEW.md b9f3d050c9): revalidated native-video capability via independent same-session file-tools-only probe (video PASS in f7f6956d-05de-4265-bffa-5d19d028d8ba step 2, truth=answer right_to_left green>blue>red, watched=true, tools=[read_file]; audio PASS in b4f281cc-61c9-482d-b0ed-c0098d966bd7 step 2, match 0.95; reconciled capability_probe.py drawbox t=fill x=2147483647 solid-black clip bug on 3caaa6a5/697a0336; verified persisted video/mp4 delivery artifacts across 4dc2eb10, bfdaef57, and 0cae588e). Both S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a) KEEP on compliant frame-exact 64-frame opening frames 28..91 (1.166667-3.833333s, 64/24=2.666667s <= 2.700000s; S5_t2_opening_64f.mp4 d9fc8316... & S6_t2_opening_64f.mp4 fd87b01d...) + contiguous 28-frame preroll frames 0..27 (0.000000-1.166667s; f27->f28 MAD 0.2503 / 5.0421), first_cut_s=2.67s <= 3.00s PASS (t1 takes excluded). Note: S6 16:9 centre-band (crop=720:405:0:875 at 1.50x) passes gate_shorts_open f0diff=4.09 (vs 0.15 at crop=none); S5 localized meteor on stationary sky measures f0diff=0.58-0.75. Cleared J1208 capability hold and parked J1208 for elected Chief exact-source decision before J1199 assembly. £0 / 0 credits."
         }
       ],
-      "remaining_action": "Await J2167 evidenced native-video revalidation, then Chief exact-source decision; J1199 assembly stays held",
+      "remaining_action": "Elected Chief: record exact-source decision on revalidated J2167 KEEP (jobs/reviews/J2167/REVIEW.md b9f3d050c9, 64f <=2.700s opening) and reopen J1199",
       "due": "2026-10-30T18:00:00Z",
       "kind": "video",
       "superseded_holds": [
@@ -112006,6 +112011,16 @@
           "checked_by": "gemini",
           "resolved_by": "J2167",
           "resolved_at": "2026-11-05T17:00Z"
+        },
+        {
+          "type": "capability",
+          "condition": "Chief ruling PR548/e0eee6eb0d: source acceptance withheld, evidence FIX. J2167 reopened for actual native-video capability/tool evidence, exact-hash review and frame-exact <=2.7s opening. Gemini relay probe 18:19:42Z reports video FAIL despite earlier self-reported KEEP. Hashes/source QA verified, metrics not motion approval; J1199 held, scheduled fallback preserved. Next check after current probe expiry.",
+          "check_at": "2026-11-05T19:20:00Z",
+          "requires": [
+            "moving_video_input"
+          ],
+          "resolved_by": "J2167",
+          "resolved_at": "2026-11-05T19:12Z"
         }
       ],
       "progress": {
@@ -112020,18 +112035,7 @@
       ],
       "model": "flow-veo-3.1",
       "urgent": 1,
-      "escalated_at": "2026-11-05T18:19Z",
-      "required_capabilities": [
-        "moving_video_input"
-      ],
-      "hold": {
-        "type": "capability",
-        "condition": "Chief ruling PR548/e0eee6eb0d: source acceptance withheld, evidence FIX. J2167 reopened for actual native-video capability/tool evidence, exact-hash review and frame-exact <=2.7s opening. Gemini relay probe 18:19:42Z reports video FAIL despite earlier self-reported KEEP. Hashes/source QA verified, metrics not motion approval; J1199 held, scheduled fallback preserved. Next check after current probe expiry.",
-        "check_at": "2026-11-05T19:20:00Z",
-        "requires": [
-          "moving_video_input"
-        ]
-      }
+      "escalated_at": "2026-11-05T18:19Z"
     },
     {
       "id": "J1209",
@@ -183327,13 +183331,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T18:55Z",
-      "eta": "2026-11-05T20:55Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T00:49Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J2167/REVIEW.md b9f3d050c9): revalidated native-video capability via independent same-session file-tools-only probe (video PASS in f7f6956d-05de-4265-bffa-5d19d028d8ba step 2, truth=answer right_to_left green>blue>red, watched=true, tools=[read_file]; audio PASS in b4f281cc-61c9-482d-b0ed-c0098d966bd7 step 2, match 0.95; reconciled capability_probe.py drawbox t=fill x=2147483647 solid-black clip bug on 3caaa6a5/697a0336; verified persisted video/mp4 delivery artifacts across 4dc2eb10, bfdaef57, and 0cae588e). Both S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a) KEEP on compliant frame-exact 64-frame opening frames 28..91 (1.166667-3.833333s, 64/24=2.666667s <= 2.700000s; S5_t2_opening_64f.mp4 d9fc8316... & S6_t2_opening_64f.mp4 fd87b01d...) + contiguous 28-frame preroll frames 0..27 (0.000000-1.166667s; f27->f28 MAD 0.2503 / 5.0421), first_cut_s=2.67s <= 3.00s PASS (t1 takes excluded). Note: S6 16:9 centre-band (crop=720:405:0:875 at 1.50x) passes gate_shorts_open f0diff=4.09 (vs 0.15 at crop=none); S5 localized meteor on stationary sky measures f0diff=0.58-0.75. Cleared J1208 capability hold and parked J1208 for elected Chief exact-source decision before J1199 assembly. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-05T00:49Z",
@@ -183409,9 +183413,14 @@
           "at": "2026-11-05T19:11Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 complete: committed jobs/reviews/J2167/REVIEW.md (b9f3d050c9) and prepared J1208 handoff to elected Chief"
+        },
+        {
+          "at": "2026-11-05T19:12Z",
+          "by": "gemini",
+          "what": "done: KEEP (jobs/reviews/J2167/REVIEW.md b9f3d050c9): revalidated native-video capability via independent same-session file-tools-only probe (video PASS in f7f6956d-05de-4265-bffa-5d19d028d8ba step 2, truth=answer right_to_left green>blue>red, watched=true, tools=[read_file]; audio PASS in b4f281cc-61c9-482d-b0ed-c0098d966bd7 step 2, match 0.95; reconciled capability_probe.py drawbox t=fill x=2147483647 solid-black clip bug on 3caaa6a5/697a0336; verified persisted video/mp4 delivery artifacts across 4dc2eb10, bfdaef57, and 0cae588e). Both S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a) KEEP on compliant frame-exact 64-frame opening frames 28..91 (1.166667-3.833333s, 64/24=2.666667s <= 2.700000s; S5_t2_opening_64f.mp4 d9fc8316... & S6_t2_opening_64f.mp4 fd87b01d...) + contiguous 28-frame preroll frames 0..27 (0.000000-1.166667s; f27->f28 MAD 0.2503 / 5.0421), first_cut_s=2.67s <= 3.00s PASS (t1 takes excluded). Note: S6 16:9 centre-band (crop=720:405:0:875 at 1.50x) passes gate_shorts_open f0diff=4.09 (vs 0.15 at crop=none); S5 localized meteor on stationary sky measures f0diff=0.58-0.75. Cleared J1208 capability hold and parked J1208 for elected Chief exact-source decision before J1199 assembly. £0 / 0 credits."
         }
       ],
-      "remaining_action": "Clear J1208 capability hold for elected Chief acceptance and close J2167",
+      "remaining_action": "Done: J2167 KEEP revalidation complete; J1208 parked for elected Chief exact-source decision",
       "due": "2026-11-05T12:00:00Z",
       "kind": "review",
       "required_capabilities": [
