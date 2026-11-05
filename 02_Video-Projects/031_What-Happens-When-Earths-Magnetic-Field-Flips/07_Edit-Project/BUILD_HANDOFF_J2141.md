@@ -1,5 +1,60 @@
 # J2141 resumable picture build — 4 Nov 2026
 
+Worker: cursor (this checkpoint). Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, tenth run)
+
+Preserve **1/3**. New branch `worker/J2141-saa-v01` from main. PR #539
+(`worker/J2141-opening-v01`) and PR #551 (`worker/J2141-field-v01`) are still
+open and are **not** in this branch. Poledrift, flip, layers, the 1905 stamp,
+strata, the sample map, extinction and the shield stay on those PRs.
+
+This branch adds `code_graphics.py saa` and five 1920×1080 / 25 fps renders:
+
+- R25 belts hold, 246.50–251.14 s: the belt rises to the spoken line and the
+  label `600 KILOMETERS` lands on that word (SOURCES row 10). `BEYOND` is the
+  word before it. Limb arc, not a flat-disc planet. The `600` label has about
+  one second.
+- R25 belts sag, 259.90–264.78 s: the same surface zero drops to `200 KILOMETERS`,
+  then `HALF THE HEIGHT` and `SPACE STATION`. The station mark is twice the
+  200 km line. `400 KM` is not labelled: it is not in this spoken line.
+  A real ISS plate belongs in the gap 251.14–259.90 s, so these two renders
+  are not back to back.
+- R27 hubble_saa alpha, 280.42–284.74 s: an orbit dot crosses a dent wedge.
+  Labels `SEVEN TO NINE`, `ORBITS`, `EVERY DAY` (SOURCES row 11). It ends as
+  the existing FACT card starts at 284.76 s. Lower left stays empty. Not a
+  count of measured Hubble orbits.
+- R28 sat_safe alpha, 296.96–299.80 s: panel lights go out under `SHUT DOWN`
+  and `NON-ESSENTIAL` (SOURCES row 11). Needs the ISS plate underneath.
+- R29 saa, 301.20–306.32 s: one region widens, then splits. Labels `SINCE 1970`,
+  `WIDENED`, `TWO LOBES` (SOURCES row 12). Not a coastline. `24,000 nT`,
+  `22,000 nT` and `20 km/yr` stay off screen because this line does not say them.
+
+`CODE_SAA_v01.json` records cues, source rows, paths and hashes.
+`CODE_SAA_TECHNICAL_CHECK_v01.json` records hash matches, error-free full
+decode, 1920×1080, 25 fps, yuv420p or argb, durations within half a frame,
+and five distinct frames each. Opaque mean luma is about 41–53. Alpha
+overlays start transparent. Static stills inspected, including
+`CONTACT_v01.jpg`. No motion, audio or composite review. No KEEP, PASS or
+stage approval.
+
+Media: `/Users/benjaminoats/_desk/J2141-saa-v01/`. Reproduce into a fresh
+directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py saa --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Rendered in this run, exit 0. £0. No archive search. No paid generation.
+
+Remaining: wider licensed harvest, the building timeline, dynamo, paleo,
+multipole geometry, the physical Mars comparison, poles_map, aurora, the R41
+ISS limb, composites and full QA. R21's compass fallback is already in the
+mechanisms batch. Source-ID and sourced-simulation gate conflicts below still
+need Chief. No Ben action.
+
+## Earlier checkpoint
+
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
 ## Continuation checkpoint (5 Nov, seventh run)
