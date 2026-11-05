@@ -357,6 +357,11 @@ def run() -> int:
         return 1
     push_heartbeat("working", [], job)
     have = usable(installed())
+    try:  # the same out-of-credit flags the Mini's relay honours (scripts/credit_flags.json)
+        import routing
+        routing.OUT = set(routing.read_flags(path=str(OWB / "scripts" / "credit_flags.json")))
+    except Exception:  # noqa: BLE001
+        pass
     agent, model = pick_agent(job_record(job), have)
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
     prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
