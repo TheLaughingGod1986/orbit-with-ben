@@ -175,6 +175,15 @@ class AllAgents(unittest.TestCase):
         self.assertEqual(mw.pick_agent(review, ["codex", "gemini"]), ("gemini", "gemini-argon"))
         self.assertEqual(mw.pick_agent({"kind": "thumb"}, ["gemini", "codex"]), ("codex", "gpt-6-astra"))
 
+    def test_credit_flagged_agent_is_skipped(self):
+        import routing
+        old = set(routing.OUT)
+        try:
+            routing.OUT = {"claude"}
+            self.assertEqual(mw.pick_agent({"kind": "review"}, ["claude", "gemini"]), ("gemini", "gemini-argon"))
+        finally:
+            routing.OUT = old
+
     def test_no_cli_installed_means_no_agent(self):
         self.assertEqual(mw.pick_agent({"kind": "review"}, []), ("", ""))
 
@@ -195,6 +204,16 @@ class AllAgents(unittest.TestCase):
             self.assertIn("-m", mw.agent_cmd("codex", "P", "gpt-6-astra"))
             self.assertEqual(mw.agent_cmd("claude", "P")[:2], ["/bin/claude", "-p"])
             self.assertIsNone(mw.agent_cmd("grok", "P"))
+
+    def test_a_failed_cli_is_paused_and_skipped(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "DOWN", pathlib.Path(d) / "down.json"), \
+                mock.patch.object(mw, "STATE", pathlib.Path(d)):
+            until = mw.mark_down("cursor", now=T0)
+            self.assertEqual(mw.usable(["codex", "cursor"], now=T0), ["codex"])
+            self.assertEqual(mw.usable(["codex", "cursor"], now=T0 + dt.timedelta(hours=3)), ["codex", "cursor"])
+            self.assertIn("cursor", mw.down_agents(T0))
+            self.assertTrue(until.startswith("2026-10-28T14:00"))
 
     def test_installed_honours_macbook_agents_and_what_exists(self):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/x" if a in ("codex", "claude") else None):

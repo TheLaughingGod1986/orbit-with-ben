@@ -153,6 +153,46 @@ def installed(names=None) -> list:
     return [a for a in want if a in BINS and find_bin(a)]
 
 
+DOWN = STATE / "macbook-agent-down.json"
+
+
+def down_agents(now: dt.datetime | None = None) -> dict:
+    """{agent: until} for agent CLIs whose last run here failed, while the pause lasts (MACBOOK_FAIL_H, default 2 h)."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    try:
+        marks = json.loads(DOWN.read_text())
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for a, until in (marks or {}).items():
+        try:
+            if dt.datetime.fromisoformat(str(until).replace("Z", "+00:00")) > now:
+                out[a] = until
+        except ValueError:
+            pass
+    return out
+
+
+def mark_down(agent: str, now: dt.datetime | None = None) -> str:
+    """A failed run pauses that CLI here, so the job's next run goes to the next lane in its chain instead of
+    failing the same way every 15 minutes."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    until = (now + dt.timedelta(hours=float(os.environ.get("MACBOOK_FAIL_H", "2")))).strftime("%Y-%m-%dT%H:%M:%SZ")
+    marks = down_agents(now)
+    marks[agent] = until
+    try:
+        STATE.mkdir(parents=True, exist_ok=True)
+        DOWN.write_text(json.dumps(marks) + "\n")
+    except OSError:
+        pass
+    return until
+
+
+def usable(have: list, now: dt.datetime | None = None) -> list:
+    down = down_agents(now)
+    return [a for a in have if a not in down]
+
+
 def pick_agent(job: dict, have: list) -> tuple:
     """(agent, model) for this job on this MacBook: the first lane in the job's routing chain (scripts/routing.py,
     AGENTS.md "Who does what") whose CLI is installed here and has credit; else the first installed CLI with its
@@ -244,7 +284,7 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
 def heartbeat_doc(state: str, why: list, job: str = "", now: dt.datetime | None = None) -> dict:
     now = now or dt.datetime.now(dt.timezone.utc)
     return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "state": state, "why": why, "job": job,
-            "agents": installed()}
+            "agents": installed(), "paused": down_agents(now)}
 
 
 def push_heartbeat(state: str, why: list, job: str = "") -> None:
@@ -305,7 +345,7 @@ def run() -> int:
         log("not now: " + "; ".join(why))
         push_heartbeat("waiting", why)
         return 0
-    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook", "--git"], cwd=OWB)
+    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"], cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
         push_heartbeat("idle", ["no MacBook job waiting"])
@@ -316,7 +356,12 @@ def run() -> int:
         push_heartbeat("error", [f"claim failed: {(r.stderr or r.stdout).strip()[-120:]}"])
         return 1
     push_heartbeat("working", [], job)
-    have = installed()
+    have = usable(installed())
+    try:  # the same out-of-credit flags the Mini's relay honours (scripts/credit_flags.json)
+        import routing
+        routing.OUT = set(routing.read_flags(path=str(OWB / "scripts" / "credit_flags.json")))
+    except Exception:  # noqa: BLE001
+        pass
     agent, model = pick_agent(job_record(job), have)
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
     prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
@@ -331,13 +376,20 @@ def run() -> int:
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
     code = run_capped(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd, OWB, cap)
     sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], timeout=180)
+    paused = ""
+    if code not in (0, 124):  # 124 = hit the cap: slow, not broken
+        paused = mark_down(agent)
     if still_mine(job):
-        sh([sys.executable, "scripts/jobs.py", "release", job, "--agent", AGENT_ID, "--note",
-            f"MacBook worker run ended (exit {code}) with the job still open; picked up again next run", "--git"],
-           cwd=OWB)
+        note = f"MacBook worker run on {agent} ended (exit {code}) with the job still open; picked up again next run"
+        if paused:
+            note += f"; {agent} paused on the MacBook until {paused}, so the next run uses the next agent in the chain"
+        sh([sys.executable, "scripts/jobs.py", "release", job, "--agent", AGENT_ID, "--note", note, "--git"], cwd=OWB)
         log(f"{job}: released after exit {code}")
+        push_heartbeat("idle", [f"last run: {job} on {agent} failed (exit {code})"
+                                + (f"; {agent} paused until {paused}" if paused else "")])
     else:
         log(f"{job}: finished (exit {code})")
+        push_heartbeat("idle", [f"last run: {job} on {agent} finished"])
     if agent == "codex":
         record_usage()
     return 0

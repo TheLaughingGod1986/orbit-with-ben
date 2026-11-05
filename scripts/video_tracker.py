@@ -716,7 +716,7 @@ def approved_state(e: dict, jobs_by_id: dict, now: datetime) -> tuple[str, str, 
             if e.get("result"):
                 line += " " + e["result"]
         else:
-            state, line = "blocked", "Blocked" + (f": {e['result'] or e.get('blockedWhy')}" if e.get("result") or e.get("blockedWhy") else ".")
+            state, line = "blocked", "Waiting" + (f": {e['result'] or e.get('blockedWhy')}" if e.get("result") or e.get("blockedWhy") else ".")
         warn = line
     elif st == "cancelled":
         state, line = "cancelled", "Cancelled after your OK."
