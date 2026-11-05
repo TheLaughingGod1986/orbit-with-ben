@@ -188954,19 +188954,24 @@
           "at": "2026-11-05T21:42Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2252; inspected J2169, J2213, and J1004 queue entries; verifying HOS PR #435 and local/NAS 720p plates"
+        },
+        {
+          "at": "2026-11-05T21:53Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2213 completion, PR #435 (c693b4f4), 600 Flow credit spend, all 6 local+NAS 720p plates, and 11 existing NAS plates"
         }
       ],
-      "remaining_action": "Verify J2213 six-insert Flow mint completion, PR #435 inventory, and J2169 gates",
+      "remaining_action": "Write and commit jobs/reviews/J2252/REVIEW.md from a clean worktree, then park for Chief to release J2169 hold",
       "kind": "review",
       "recheck_of": "J2169",
       "due": "2026-11-05T21:11:48+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-05T21:42Z",
+        "at": "2026-11-05T21:53Z",
         "by": "gemini",
-        "note": "Claimed J2252; inspected J2169, J2213, and J1004 queue entries; verifying HOS PR #435 and local/NAS 720p plates"
+        "note": "Verified J2213 completion, PR #435 (c693b4f4), 600 Flow credit spend, all 6 local+NAS 720p plates, and 11 existing NAS p"
       },
       "rerouted_from": {
         "needs": "any",
