@@ -182288,6 +182288,11 @@
           "at": "2026-11-05T14:01Z",
           "by": "codex",
           "what": "J2176 v03 manifest and phone-sheet paths supplied; existing dependencies retained"
+        },
+        {
+          "at": "2026-11-05T14:27Z",
+          "by": "gemini",
+          "what": "deadline: 2026-11-12T18:00:00Z"
         }
       ],
       "remaining_action": "Independently critique J2176 repaired Titan thumbnails and title pairing",
@@ -182295,7 +182300,8 @@
       "kind": "review",
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "due": "2026-11-12T18:00:00Z"
     },
     {
       "id": "J2160",
@@ -182335,6 +182341,11 @@
           "at": "2026-11-05T14:01Z",
           "by": "codex",
           "what": "J2176 v03 manifest and phone-sheet paths supplied; existing dependencies retained"
+        },
+        {
+          "at": "2026-11-05T14:27Z",
+          "by": "gemini",
+          "what": "deadline: 2026-11-12T18:00:00Z"
         }
       ],
       "remaining_action": "Independently critique J2176 repaired Titan thumbnails and title pairing",
@@ -182342,7 +182353,8 @@
       "kind": "review",
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "due": "2026-11-12T18:00:00Z"
     },
     {
       "id": "J2161",
@@ -182458,10 +182470,10 @@
       "stage": "",
       "after": "J2161",
       "eta_min": 30,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-05T14:22Z",
-      "eta": "2026-11-05T14:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T23:29Z",
       "result": "",
@@ -182545,9 +182557,19 @@
           "at": "2026-11-05T14:22Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2162; starting 4-step packaging panel synthesis for OWB:032 Titan thumbnails"
+        },
+        {
+          "at": "2026-11-05T14:27Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified J2176 v03 hashes (A b7495bf68e..., B 4e4faf3155..., C a0a67a7e1f..., phone f389cb61c1...); only cursor.md (J2161) exists (<24h); propagated 2026-11-12T18:00Z deadline to open J2159/J2160"
+        },
+        {
+          "at": "2026-11-05T14:27Z",
+          "by": "gemini",
+          "what": "released: Verified J2176 v03 hashes; only cursor.md (J2161) exists in 05_Analytics/tests/panels/owb-032-j2144/ (J2176 completed 25 min ago, panel created <24h ago). Propagated J2144 deadline 2026-11-12T18:00:00Z to open sibling critiques J2159 (codex) and J2160 (gemini) so they run before J2162 synthesis."
         }
       ],
-      "remaining_action": "Verify J2176 v03 delivery hashes and read all 3 panel critiques (codex.md, gemini.md, cursor.md)",
+      "remaining_action": "After open panel critiques J2159 (codex.md) and J2160 (gemini.md) finish, read all three critiques and write DECISION.md",
       "kind": "review",
       "taskKeys": [
         "OWB:032"
@@ -182562,11 +182584,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T14:22Z",
+        "at": "2026-11-05T14:27Z",
         "by": "gemini",
-        "note": "Claimed J2162; starting 4-step packaging panel synthesis for OWB:032 Titan thumbnails"
+        "note": "Verified J2176 v03 hashes (A b7495bf68e..., B 4e4faf3155..., C a0a67a7e1f..., phone f389cb61c1...); only cursor.md (J216"
       }
     },
     {
