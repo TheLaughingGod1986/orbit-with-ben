@@ -1,0 +1,122 @@
+=== git diff --check ===
+exit_code=0
+
+=== 00_Brand/Channel-Setup/tools/check_all.sh ===
+
+== durable desk handoffs
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.037s
+
+OK
+
+=== /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmpuv3578mz/inbox/10_031_vo.md
+<!-- hos-desk v1 from=claude to=codex film=031 stage=vo status=task -->
+Check recording
+agent exited 2; message left in /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmpuv3578mz/inbox/10_031_vo.md
+
+=== /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmpuv3578mz/inbox/10_031_vo.md
+<!-- hos-desk v1 from=claude to=codex film=031 stage=vo status=task -->
+Check recording
+agent exited 2; message left in /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/tmpuv3578mz/inbox/10_031_vo.md
+No new messages for Codex.
+-- durable desk handoffs: PASS
+
+== no media
+-- no media: PASS
+
+== status board in sync
+STATUS.md and kanban/index.html match PIPELINE.json
+-- status board in sync: PASS
+
+== ElevenLabs guard tests
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.292s
+
+OK
+-- ElevenLabs guard tests: PASS
+
+== vo_check word tests
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK
+-- vo_check word tests: PASS
+
+== atempo check tests
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.000s
+
+OK
+-- atempo check tests: PASS
+
+== voice speed (atempo <= 1.06)
+KNOWN  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/SHORT_s07_semmelweis_hands_v01.json: atempo (1.07)  [built, never uploaded: rebuild at <=1.06 before any upload]
+KNOWN  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/SHORT_s09_lister_antiseptic_v01.json: atempo (1.1)  [built, never uploaded: rebuild at <=1.06 before any upload]
+KNOWN  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/SHORT_s11_curved_flask_v01.json: atempo (1.12)  [superseded by v07 (-3L6HzJ_d_4, public 27 Oct)]
+KNOWN  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/SHORT_s11_curved_flask_v02.json: atempo (1.12)  [was 1-BZaFIMwYU, now private and unscheduled; v07 aired instead]
+KNOWN  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/_build_short_s07_semmelweis_hands_v01.py: line 146 ATEMPO = 1.07 (1.07)  [built, never uploaded: rebuild at <=1.06 before any upload]
+KNOWN  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/_build_short_s09_lister_antiseptic_v01.py: line 142 ATEMPO = 1.10 (1.1)  [built, never uploaded: rebuild at <=1.06 before any upload]
+KNOWN  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/_build_short_s11_curved_flask_v01.py: line 109 ATEMPO = 1.12 (1.12)  [superseded by v07 (-3L6HzJ_d_4, public 27 Oct)]
+KNOWN  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/_build_short_s11_curved_flask_v02.py: line 109 ATEMPO = 1.12 (1.12)  [was 1-BZaFIMwYU, now private and unscheduled; v07 aired instead]
+KNOWN  02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/_build_backcat_four_elements_v02.py: line 47 OPEN_RATE = 1.40 (1.4)  [SCHEDULED: v03 inherits this 1.40x open and is qW2OsD4mujc, airs Tue 3 Nov 11:30 London]
+KNOWN  02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/_build_backcat_four_elements_v03.py: line 163 "open_atempo" = 1.4 (1.4)  [SCHEDULED: qW2OsD4mujc, airs Tue 3 Nov 11:30 London]
+KNOWN  02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/hos_002_backcat_four_elements_v02_meta.json: open_atempo (1.4)  [SCHEDULED: v03 inherits this 1.40x open and is qW2OsD4mujc, airs Tue 3 Nov 11:30 London]
+KNOWN  02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/10_Shorts/hos_002_backcat_four_elements_v03_meta.json: open_atempo (1.4)  [SCHEDULED: qW2OsD4mujc, airs Tue 3 Nov 11:30 London]
+KNOWN  02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/SHORT_s08_capillaries_v01.json: atempo (1.11)  [built, never uploaded: rebuild at <=1.06 before any upload]
+KNOWN  02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/_build_short_s08_capillaries_v01.py: line 60 ATEMPO = 1.11 (1.11)  [built, never uploaded: rebuild at <=1.06 before any upload]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORT_s04_smallpox_test_v01.json: atempo (1.08)  [was -I_GHK-GcFs, now private and unscheduled; J1219 swapped the 13 Nov slot to v04 (1.05) as cLKDiYP55J8 on 29 Oct]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORT_s04_smallpox_test_v02.json: atempo (1.08)  [superseded local cut, never uploaded]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORT_s05_vacca_jesty_v01.json: atempo (1.07)  [superseded by v02 before upload]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORT_s05_vacca_jesty_v02.json: atempo (1.07)  [was 4WUs0beKn0A, now private and unscheduled; J1222 swapped the 17 Nov slot to v05 (1.03) as xgx2lYHhYZM on 30 Oct]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORT_s05_vacca_jesty_v03.json: atempo (1.07)  [superseded local cut, never uploaded]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/_build_short_s04_smallpox_test_v01.py: line 76 ATEMPO = 1.08 (1.08)  [was -I_GHK-GcFs, now private and unscheduled; J1219 swapped the 13 Nov slot to v04 (1.05) as cLKDiYP55J8 on 29 Oct]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/_build_short_s04_smallpox_test_v02.py: line 73 ATEMPO = 1.08 (1.08)  [superseded local cut, never uploaded]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/_build_short_s05_vacca_jesty_v01.py: line 79 ATEMPO = 1.07 (1.07)  [built v02 (was 4WUs0beKn0A); J1222 swapped the 17 Nov slot to v05 (1.03) as xgx2lYHhYZM on 30 Oct]
+KNOWN  02_Video-Projects/007_The-First-Vaccine/10_Shorts/_build_short_s05_vacca_jesty_v03.py: line 79 ATEMPO = 1.07 (1.07)  [superseded local cut, never uploaded]
+atempo check PASS: no new build above 1.06 (23 known file(s) listed above).
+-- voice speed (atempo <= 1.06): PASS
+
+== contract tests
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v4.1.10 /private/tmp/J2183-hos-wt/07_Content-Ops
+
+ ✓ tests/hos-contract.test.ts (28 tests) 10ms
+
+ Test Files  1 passed (1)
+      Tests  28 passed (28)
+   Start at  04:38:16
+   Duration  539ms (transform 32ms, setup 0ms, import 470ms, tests 10ms, environment 0ms)
+
+-- contract tests: PASS
+
+== package-lint
+SKIP  02_Video-Projects/001_How-Did-We-Discover-Germs/11_Upload-Package/PACKAGE_MANIFEST.json  (long already public; use channel:audit)
+SKIP  02_Video-Projects/001_How-Did-We-Discover-Germs/10_Shorts/SHORTS_RELEASE.json  (all Shorts already aired)
+SKIP  02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/11_Upload-Package/PACKAGE_MANIFEST.json  (long already public; use channel:audit)
+SKIP  02_Video-Projects/004_Whats-Really-Inside-An-Atom/11_Upload-Package/PACKAGE_MANIFEST.json  (long already public; use channel:audit)
+SKIP  02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/SHORTS_RELEASE.json  (all Shorts already aired)
+SKIP  02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/11_Upload-Package/PACKAGE_MANIFEST.json  (long already public; use channel:audit)
+SKIP  02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/SHORTS_RELEASE.json  (all Shorts already aired)
+PASS  02_Video-Projects/006_Trees-Are-Made-Of-Air/11_Upload-Package/PACKAGE_MANIFEST.json
+PASS  02_Video-Projects/007_The-First-Vaccine/11_Upload-Package/PACKAGE_MANIFEST.json
+PASS  02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORTS_RELEASE.json
+   warn  [related] What Was the Edward Jenner Experiment?: Related video not set yet (set it to the 007 long once that long is public)
+   warn  [related] Why Is It Called a Vaccine?: Related video not set yet (set it to the 007 long once that long is public)
+PASS  02_Video-Projects/008_Lightning-Franklin/11_Upload-Package/PACKAGE_MANIFEST.json
+   warn  [captions] no captionsFile (captions from the script)
+PASS  02_Video-Projects/009_The-Falling-Moon-Gravity/11_Upload-Package/PACKAGE_MANIFEST.json
+   warn  [captions] no captionsFile (captions from the script)
+PASS  02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/11_Upload-Package/PACKAGE_MANIFEST.json
+   warn  [title.length] T&C title: "How a 1-Centimetre Line of Clay Solved What Killed the Dinosaurs" is 64 chars (aim ≤ 60)
+   warn  [captions] no captionsFile (captions from the script)
+-- package-lint: PASS
+
+ALL CHECKS PASS
+exit_code=0

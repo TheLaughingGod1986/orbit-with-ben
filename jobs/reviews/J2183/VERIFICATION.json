@@ -1,0 +1,235 @@
+{
+  "job_id": "J2183",
+  "reviewed_job_id": "J2181",
+  "reviewed_pr": "https://github.com/TheLaughingGod1986/history-of-science/pull/415",
+  "reviewed_commits": [
+    "b784a69a651f9b6b1b1060a8e14e1e948ff08f84",
+    "84fd8773c92493dfe476370344cdd1ebdff19b79"
+  ],
+  "reviewer": "gemini",
+  "review_date_utc": "2026-11-05T04:35:00Z",
+  "spend_gbp": 0.0,
+  "disposition": "FIX",
+  "finished_recipe_approved": false,
+  "j2169_state": "blocked at 1/3",
+  "provenance_and_vo_verification": {
+    "unique_nas_sources_checked": 14,
+    "all_14_match_cut_list_sha256": true,
+    "all_14_match_plate_board_keep_or_reuse_sha256": true,
+    "short_b_vo_file": "02_Video-Projects/006_How-Plants-Were-Caught-Making-Oxygen/08_Shorts/02_Short-B/02_Audio/t2_mint_fixed_vo_v03b.mp3",
+    "short_b_vo_sha256": "0f1099262037b62ea2b2a003ce86e196458fa983e9ca97877afb5600e97c7479",
+    "short_b_vo_duration_s": 23.2,
+    "short_b_vo_matches_lock": true,
+    "short_c_vo_file": "02_Video-Projects/006_How-Plants-Were-Caught-Making-Oxygen/08_Shorts/03_Short-C/02_Audio/t3_bubbles_sunlight_vo_v01.mp3",
+    "short_c_vo_sha256": "5b5d84e560d51ed9ad6f9bf5588f458802620f48f008b9409c532f8a1ea4e269",
+    "short_c_vo_duration_s": 24.16,
+    "short_c_vo_matches_lock": true,
+    "all_17_rows_preserve_words_and_timings": true,
+    "all_17_rows_valid_source_intervals": true,
+    "candidate_search_budget_compliant": true,
+    "candidate_search_minutes_used": 13,
+    "candidate_search_minutes_cap": 20
+  },
+  "unmodified_owb_picture_qa_reproduction": {
+    "Short_B": {
+      "passed": false,
+      "fail_count": 2,
+      "warn_count": 1,
+      "fails": [
+        "0:16 (S06): Upscale 2.67x exceeds 2.35x cap (06_collect_blaze_t3.mp4)",
+        "0:23 (loop_tail): Footage returns on the same stretch (0.0-1.0s vs 1.0-3.2s at 0:00) (03_pot_jar_leaf_t1.mp4)"
+      ],
+      "warns": [
+        "0:00 (S01): Upscale 2.35x exceeds 2.0x warning threshold (03_pot_jar_leaf_t1.mp4)"
+      ]
+    },
+    "Short_C": {
+      "passed": false,
+      "fail_count": 4,
+      "warn_count": 0,
+      "fails": [
+        "0:00 (S01): Upscale 2.67x exceeds 2.35x cap (05_bubbles_macro_t1.mp4)",
+        "0:18 (S07): Upscale 2.67x exceeds 2.35x cap (12_shutters_open_t1.mp4)",
+        "0:21 (S08): Upscale 2.67x exceeds 2.35x cap (14_leaf_glow_t1.mp4)",
+        "0:24 (loop_tail): Upscale 2.67x exceeds 2.35x cap (05_bubbles_macro_t1.mp4); Footage returns on the same stretch (0.0-1.0s vs 1.0-3.6s at 0:00)"
+      ],
+      "warns": []
+    }
+  },
+  "mapping_decisions": {
+    "retained_replacements": [
+      {
+        "row": "Short_B S01 + loop_tail",
+        "source": "part01/raw/v01/03_pot_jar_leaf_t1.mp4",
+        "sha256": "b1aaba6dbb36659388751fe942c5a7b367d35a9e181c3599a5cf8f4e7b6c96cb",
+        "status": "KEEP_SOURCE_WITH_MINOR_CROP_REFINEMENT_AND_TERMINAL_LOOP_HOLD",
+        "j2181_crop_xywh": [
+          700,
+          190,
+          460,
+          818
+        ],
+        "recommended_crop_xywh": [
+          712,
+          190,
+          460,
+          818
+        ],
+        "upscale_factor": 2.3478,
+        "note": "Mint sprig in glass bell jar is immediately recognizable at 270x480 phone scale and frees 10_mint_jar_t1.mp4 for unique body use in B S04. Shifting x from 700 to 712 (or 716) clears a ~12-16px left-edge intrusion of the adjacent terracotta willow pot rim during loop_tail 0.00-0.50s. Terminal loop remains blocked on J2179/J2182 checker acceptance and rendered seam review."
+      },
+      {
+        "row": "Short_B S07",
+        "source": "part03/raw/v01/01_soil_to_sky_t1.mp4",
+        "sha256": "d23f24d6dbd1f3283af322a9dd112a2b67357dfda9b9b2f844fcf79e33bd317f",
+        "status": "KEEP",
+        "crop_xywh": [
+          600,
+          0,
+          608,
+          1080
+        ],
+        "upscale_factor": 1.7778,
+        "note": "Clean upward camera tilt along a green plant stem from soil to sky; truthful illustrative closing beat for 'the little green plant had made the air good again' without claiming to be a separate lab experiment."
+      },
+      {
+        "row": "Short_C S05",
+        "source": "part01/raw/v01/03_pot_jar_leaf_t1.mp4",
+        "sha256": "b1aaba6dbb36659388751fe942c5a7b367d35a9e181c3599a5cf8f4e7b6c96cb",
+        "status": "KEEP",
+        "crop_xywh": [
+          1120,
+          0,
+          608,
+          1080
+        ],
+        "upscale_factor": 1.7778,
+        "note": "Cleanly isolates the right-hand water jar with submerged green leaf and silver oxygen bubbles by the sunny window at 1.78x, eliminating body reuse of 05_bubbles_macro_t1.mp4. Optional interval 5.00-7.96s on the same plate also works if rising bubble motion is preferred."
+      },
+      {
+        "row": "Short_C S02, S03, S04, S06",
+        "status": "KEEP",
+        "crop_xywh": [
+          656,
+          0,
+          608,
+          1080
+        ],
+        "upscale_factor": 1.7778,
+        "note": "All four 1080p body rows pass native source checks and visually match their lines."
+      }
+    ],
+    "rejected_or_fix_mappings": [
+      {
+        "row": "Short_B S02",
+        "time_s": [
+          2.24,
+          5.62
+        ],
+        "j2181_source": "part03/raw/v01/15_quill_vegetable_t1.mp4",
+        "j2181_crop_xywh": [
+          0,
+          0,
+          608,
+          1080
+        ],
+        "status": "REJECT_AND_ADD_TO_J2184",
+        "reason": "1) At t=0.00s, the bell jar contains two physical candles (plus a third reflection) and the right-hand stub is already extinguished and smoking before the VO says 'until the flame died'. 2) Because 15_quill_vegetable_t1.mp4 pans right toward Priestley's quill, even at x=0 (left edge of the native 1920x1080 plate) the only lit candle exits the left frame edge before 3.38s (gone by ~2.5-3.37s), leaving only the dead smoking stub and empty desk corner. Since J2181's 20-minute candidate search is closed, add B S02 (3.38s, single burning candle in a sealed Priestley bell jar before flame dies, no mint) to J2184 bounded fallback."
+      },
+      {
+        "row": "Short_B S04",
+        "time_s": [
+          9.4,
+          13.02
+        ],
+        "source": "part03/raw/v01/10_mint_jar_t1.mp4",
+        "j2181_crop_xywh": [
+          656,
+          0,
+          608,
+          1080
+        ],
+        "fixed_crop_xywh": [
+          780,
+          0,
+          608,
+          1080
+        ],
+        "status": "FIX_CROP_COORDINATE",
+        "reason": "Keep unique assignment of 10_mint_jar_t1.mp4 to B S04, but replace default center crop [656, 0, 608, 1080] (which slices vertically through Priestley's nose/eye at x=1264) with [780, 0, 608, 1080] so both the mint bell jar and Priestley's full face/hands sit cleanly inside the 9:16 frame."
+      },
+      {
+        "row": "Short_B S05",
+        "time_s": [
+          13.02,
+          16.3
+        ],
+        "source": "part03/raw/v01/11_candle_tall_t1.mp4",
+        "j2181_crop_xywh": [
+          656,
+          0,
+          608,
+          1080
+        ],
+        "fixed_crop_xywh": [
+          760,
+          0,
+          608,
+          1080
+        ],
+        "alternative_interval_and_crop": {
+          "source_in": 4.0,
+          "source_out": 7.28,
+          "crop_native_xywh": [
+            680,
+            0,
+            608,
+            1080
+          ]
+        },
+        "status": "FIX_CROP_COORDINATE",
+        "reason": "Default center crop [656, 0, 608, 1080] on 0.00-3.28s bisects Priestley's face at the right edge while the candle sits outside the jar. Shifting crop to [760, 0, 608, 1080] (or using 4.00-7.28s at [680, 0, 608, 1080] where Priestley lowers the bell jar over the mint and lit candle) fixes the composition."
+      },
+      {
+        "row": "Short_B S03",
+        "time_s": [
+          5.62,
+          9.4
+        ],
+        "source": "part03/raw/v01/08_candles_out_t1.mp4",
+        "j2181_crop_xywh": [
+          656,
+          0,
+          608,
+          1080
+        ],
+        "fixed_crop_xywh": [
+          760,
+          0,
+          608,
+          1080
+        ],
+        "alternative_keep_source": {
+          "source": "part03/raw/v01/09_injured_air_t1.mp4",
+          "sha256": "590dc5c142882f9d4502bd8cc1a7b6f5b997a54970492bc1f73b0ab688169049",
+          "source_in": 0.0,
+          "source_out": 3.78,
+          "crop_native_xywh": [
+            656,
+            0,
+            608,
+            1080
+          ]
+        },
+        "status": "FIX_CROP_OR_SWAP_TO_09_INJURED_AIR",
+        "reason": "At [656, 0, 608, 1080], 08_candles_out_t1.mp4 bisects Priestley's face at t=0.00s and brings a second wire-held lit candle into top-left at 3.0-3.78s while the lower flame stays lit. Shifting crop to [760, 0, 608, 1080] frames Priestley's face and excludes the top-left second candle, or swapping to KEEP plate 09_injured_air_t1.mp4 (1920x1080, 4.0s, 0.00-3.78s, [656, 0, 608, 1080]) shows a single extinguished smoking candle in the sealed bell jar."
+      }
+    ],
+    "unresolved_720p_and_semantic_blockers_in_j2184": [
+      "Short_B S06 (06_collect_blaze_t3.mp4): 1280x720 native 2.6733x > 2.35x FAIL + shows Ingenhousz gas-collection tube over water/leaves rather than Priestley's bell-jar candle.",
+      "Short_C S01 + loop_tail (05_bubbles_macro_t1.mp4): 1280x720 native 2.6733x > 2.35x FAIL + terminal loop reuse FAIL.",
+      "Short_C S07 (12_shutters_open_t1.mp4): 1280x720 native 2.6733x > 2.35x FAIL + crop [438, 0, 404, 720] shows only hand on shutter and dry potted vine (no water jar/bubbles).",
+      "Short_C S08 (14_leaf_glow_t1.mp4): 1280x720 native 2.6733x > 2.35x FAIL."
+    ]
+  }
+}
