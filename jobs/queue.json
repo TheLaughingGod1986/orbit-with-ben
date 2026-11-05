@@ -184866,10 +184866,22 @@
           "at": "2026-11-05T09:12Z",
           "by": "chief",
           "what": "h47: restore kind chief — capacity/relay ENV is system (Rule H keep), not finished-cut review"
+        },
+        {
+          "at": "2026-11-05T13:20Z",
+          "by": "claude",
+          "what": "step 2 of 5 done: Steps 1-2 PASS: private probe producer at _desk/state/capacity/producer/probe_producer.py (live nonce runs: codex gpt-6.1-sol + gpt-6-astra, gemini agy; TTL 300s); collect() ready_workers=[codex,gemini], no guard reasons. STOPPED before step 3 (flag NOT set, relay untouched): dry-run of the relay's serial preflight with OWB_CAPACITY_ENABLED=1 returns capacity_rejected (FileNotFoundError) because capacity_caller serial_only observe() requires a fresh approved peer.json (MacBook peer, step 6), so chief_relay would return before every serial run = studio starvation. Also: relay checkout main no longer passes reviewed_installation vs 8937aa6 (scripts/chief_relay.py, board_publish.py, AGENTS.md changed since review), and dispatch.json approval expires 2026-11-05T15:00Z, before a 2h watch could finish. Parked for Chief: (a) let serial_only work without peer.json for a Mini-only rollout, or approve peer evidence first; (b) re-review and re-pin reviewed_head; (c) renew the dispatch approval window."
         }
       ],
       "remaining_action": "J2038 follow-on: capacity probe producer + ENV flip + 2h watch Complete Mini capacity relay ENV flip after probe readiness.",
-      "kind": "chief"
+      "kind": "chief",
+      "progress": {
+        "step": 2,
+        "of": 5,
+        "at": "2026-11-05T13:20Z",
+        "by": "claude",
+        "note": "Steps 1-2 PASS: private probe producer at _desk/state/capacity/producer/probe_producer.py (live nonce runs: codex gpt-6."
+      }
     },
     {
       "id": "J2198",
