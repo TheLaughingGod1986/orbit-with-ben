@@ -1,5 +1,5 @@
 {
-  "next_id": 2224,
+  "next_id": 2225,
   "jobs": [
     {
       "id": "J0001",
@@ -77458,7 +77458,7 @@
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:18Z",
-      "result": "parked for Chief: Short A v03 built, not a PASS. picture_qa FAIL: key-ribbon at 0:18 is the same stretch as 0:07 (8s plate cannot start 10s later). Open, polish, music and sfx level PASS. Master sha f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6 on the Mini and NAS. Desk #180 comment 6661680750. No upload.",
+      "result": "waiting for review J2224 (rule H): Short A v03 built, not a PASS. picture_qa FAIL: key-ribbon at 0:18 is the same stretch as 0:07 (8s plate cannot start 10s later). Open, polish, music and sfx level PASS. Master sha f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6 on the Mini and NAS. Desk #180 comment 6661680750. No ",
       "history": [
         {
           "at": "2026-10-24T18:18Z",
@@ -77614,6 +77614,11 @@
           "at": "2026-11-05T15:17Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Short A v03 built, not a PASS. picture_qa FAIL: key-ribbon at 0:18 is the same stretch as 0:07 (8s plate cannot start 10s later). Open, polish, music and sfx level PASS. Master sha f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6 on the Mini and NAS. Desk #180 comment 6661680750. No upload."
+        },
+        {
+          "at": "2026-11-05T15:25Z",
+          "by": "chief",
+          "what": "rule H: decision moved from the Chief to review J2224"
         }
       ],
       "kind": "assembly",
@@ -77623,7 +77628,7 @@
       ],
       "escalated_at": "2026-11-05T08:34Z",
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
-      "remaining_action": "Parked for Chief: picture_qa reuse row on the key ribbon",
+      "remaining_action": "Waiting for review J2224 (Rule H KEEP/FIX of Short A v03 picture_qa key-ribbon)",
       "due": "2026-11-18T18:00:00Z",
       "progress": {
         "step": 4,
@@ -186323,6 +186328,35 @@
       ],
       "remaining_action": "Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each",
       "kind": "listing"
+    },
+    {
+      "id": "J2224",
+      "title": "Review J0912: Short A v03 picture_qa key-ribbon FIX decision",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J0912), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J0912 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J0912 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J0912.\n5. Finish this job with the verdict in --result.\n\nWhat the worker asked the Chief: parked for Chief: Short A v03 built, not a PASS. picture_qa FAIL: key-ribbon at 0:18 is the same stretch as 0:07 (8s plate cannot start 10s later). Open, polish, music and sfx level PASS. Master sha f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6 on the Mini and NAS. Desk #180 comment 6661680750. No upload.\n\nEvidence pointers (cursor park 2026-11-05T15:17Z):\n- Master sha f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6 (23.3s, 952x1692) on Mini+NAS\n- Open / polish / music / sfx PASS; picture_qa FAIL: key-ribbon at 0:18 is the same stretch as 0:07 (8s plate cannot start 10s later)\n- Desk #180 comment 6661680750; branch cursor/j0912-short-a-v03 commit 830f6b35; no upload\n- Worker remaining_action was: Parked for Chief: picture_qa reuse row on the key ribbon\n- Note: review_lane.py dry skipped this as chief_only false positive (result ends with 'No upload.'); Rule H (Ben 5 Nov) still sends finished-work KEEP/FIX to the review lane.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T15:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T15:25Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "KEEP or FIX J0912 Short A v03 picture_qa; write jobs/reviews/J2224/REVIEW.md",
+      "kind": "review",
+      "review_of": "J0912"
     }
   ],
   "focus": [],
