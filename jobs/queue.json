@@ -1,5 +1,5 @@
 {
-  "next_id": 2258,
+  "next_id": 2259,
   "jobs": [
     {
       "id": "J0001",
@@ -189344,6 +189344,35 @@
         "at": "2026-11-05T21:49Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2258",
+      "title": "Review HOS 006 Short B v01 and Short C v02",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Review HOS 006 Short B and Short C. GBP0. No upload, schedule, privacy, retitle or Buffer write. Do not set awaits_ben unless the verdict is KEEP, and then only with working unique Play links. Neither cut is approved. Watched and heard stay false until Ben's watch. Long VbPubYd6Fbs must be public before either Short. Slots 18 Nov and 21 Nov 11:30 are planning targets, not a schedule.\n\nEvidence: HOS branch cursor/J2169-shorts-bc commit 699c359bf44ccda9d996dae4a2d6524be3774a03, file 02_Video-Projects/006_Trees-Are-Made-Of-Air/10_Shorts/j2169_v01/ASSEMBLY.md. The earlier centre-crop fail is in parent commit 8b3796e3.\n\nMasters, not in git. NAS copies match these hashes (10_Shorts/J2169 on the 22 Oct hos-006-trees archive, SHA256SUMS.txt checked):\n\n- B hos006_short_b_v01.mp4 sha256 08e3d6036744da57ae3fce1d12b996f913cd1d180161eba18590cffd23aeee0f duration 24.25s. Desk: /Users/benjaminoats/_desk/renders/J2169/Short_B/\n- C v02 hos006_short_c_v02.mp4 sha256 3f8c1390523cbf05632abefb592b178b2b211c0e74ae31e9c4b7b96423091327 duration 25.166667s. Same desk folder under Short_C/. This is the cut to review.\n- C v01 centre crop sha256 883cee08cb5e197ef6dfe5f44a1f8ae47cfeaa5c576a14f5aad2670fe516fbc2 failed picture_qa and polish on villa brick courses. Kept, not offered.\n\nB is t2_mint_fixed_vo_v03b, sentence 1 \"A sprig of mint repaired the air.\" ending 2.24s. Not the soil take. C is t3_bubbles_sunlight_vo_v01, sentence 1 \"Leaves only make oxygen in the light.\" ending 2.56s. Spoken lines were not rewritten.\n\nTool results, exit 0 on both offered cuts: picture_qa, polish_gate, sfx level, music_gate, gate_shorts_open (B air 2026-11-18, C air 2026-11-21). WARNs for the reviewer to look at: B S07 low detail, C S05 low detail, and the terminal-loop note that samples do not establish seamless motion. C S02 is 01_villa_t1 crop 144,0,608,1080. The contact sheet is jpg-ignored; it is at the desk picture_qa_picture/picture_qa_review.jpg.\n\nLEARNINGS rule 8: frame 0 is moving footage of the subject, sentence 1 names the subject and the surprise, and there is no meta-promise. Both sentences end after 1.5s because the locked takes were not rewritten. No new voice was spent.\n\nWrite jobs/reviews/<this id>/REVIEW.md as KEEP or FIX with an exact list. A FIX names the row. Do not waive a WARN by silence. Standalone S7 was not built and stays planned.\n",
+      "ref": "J2169",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-11-05T22:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T22:48Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Write KEEP or FIX in jobs/reviews for Short B v01 and Short C v02. No upload. Awaits only if KEEP.",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [],
