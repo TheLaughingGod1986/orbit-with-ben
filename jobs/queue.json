@@ -111973,9 +111973,14 @@
           "at": "2026-11-05T18:19Z",
           "by": "refill",
           "what": "escalated to Chief: parked 17 h"
+        },
+        {
+          "at": "2026-11-05T18:24Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T19:20:00Z"
         }
       ],
-      "remaining_action": "Elected Chief: record exact-source acceptance for S5/S6 Flow take 2 (J2167 KEEP) and reopen J1199 for S5/S6 assembly",
+      "remaining_action": "Await J2167 evidenced native-video revalidation, then Chief exact-source decision; J1199 assembly stays held",
       "due": "2026-10-30T18:00:00Z",
       "kind": "video",
       "superseded_holds": [
@@ -112010,7 +112015,18 @@
       ],
       "model": "flow-veo-3.1",
       "urgent": 1,
-      "escalated_at": "2026-11-05T18:19Z"
+      "escalated_at": "2026-11-05T18:19Z",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "Chief ruling PR548/e0eee6eb0d: source acceptance withheld, evidence FIX. J2167 reopened for actual native-video capability/tool evidence, exact-hash review and frame-exact <=2.7s opening. Gemini relay probe 18:19:42Z reports video FAIL despite earlier self-reported KEEP. Hashes/source QA verified, metrics not motion approval; J1199 held, scheduled fallback preserved. Next check after current probe expiry.",
+        "check_at": "2026-11-05T19:20:00Z",
+        "requires": [
+          "moving_video_input"
+        ]
+      }
     },
     {
       "id": "J1209",
