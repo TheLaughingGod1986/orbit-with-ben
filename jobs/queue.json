@@ -185926,20 +185926,25 @@
           "at": "2026-11-05T17:15Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed; reading SHORTS_PICTURE_PLAN_v02, part-05 plates, PICTURE_PLAN and resolve_plate_path"
+        },
+        {
+          "at": "2026-11-05T17:16Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: J2227 KEEP: PR426 0a925061 already has the 7-shot plan; closing out by fast-forwarding PR425, no merge"
         }
       ],
-      "remaining_action": "Read HOS 010 plans, VO timing and code-graphic hashes",
+      "remaining_action": "Fast-forward HOS branch codex/J2210-readiness to 0a925061 and close J2210",
       "due": "2026-11-07T18:00:00Z",
       "kind": "video",
       "taskKeys": [
         "HOS:010"
       ],
       "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-11-05T17:15Z",
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-05T17:16Z",
         "by": "cursor",
-        "note": "claimed; reading SHORTS_PICTURE_PLAN_v02, part-05 plates, PICTURE_PLAN and resolve_plate_path"
+        "note": "J2227 KEEP: PR426 0a925061 already has the 7-shot plan; closing out by fast-forwarding PR425, no merge"
       },
       "superseded_holds": [
         {
