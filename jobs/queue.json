@@ -183941,10 +183941,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T17:53Z",
+      "eta": "2026-11-05T19:53Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T02:15Z",
       "result": "",
@@ -183963,6 +183963,11 @@
           "at": "2026-11-05T08:33Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T17:53Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review J2170 paper hook plan (e3823f75), lock 1-sentence hook C-Open-1/2 + layout C-v03a/b, and authorize 47-char VO pickup + £0 v03 assembly (or keep 2 Dec slot empty)",
@@ -183977,7 +183982,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 8
+      "urgent": 8,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T17:53Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2176",
