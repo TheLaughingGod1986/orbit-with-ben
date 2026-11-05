@@ -1,5 +1,5 @@
 {
-  "next_id": 2211,
+  "next_id": 2212,
   "jobs": [
     {
       "id": "J0001",
@@ -184989,6 +184989,35 @@
         "by": "codex",
         "note": "Wrote v03 Shorts and v04 bird boards, verified graphic hashes, patched resolver. Found Option A1 leaves S02 1.900s below"
       }
+    },
+    {
+      "id": "J2211",
+      "title": "HOS 010 J2210: review PR425 and resolve Option A1 body-cut segmentation",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Review https://github.com/TheLaughingGod1986/history-of-science/pull/425 (2e84edb3), J2210_READINESS.md and SHORTS_PICTURE_PLAN_v03.json. Required repo checks pass, but requested Option A1 hook plus unchanged later endpoints yields S02 1.900s, below 2.500s; inherited final word gap 0.120s also exceeds 0.100s. No eight-shot word-boundary arrangement found satisfying body lengths with hook 2.849s and VO 22.289s. Decide a lawful cut-count/plate segmentation preserving all words and accepted VO hashes; write KEEP/FIX exact list and reopen parent only when resolved. Bird mapping and £0 graphics repaired. No generation or new VO authorized; J2172 and separate HOS 010 mint authorization remain held. PR includes prerequisite PR424; no media KEEP claimed.",
+      "ref": "J2210",
+      "film": "010",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T10:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T10:20Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review PR425 and choose word-preserving Short A segmentation satisfying body-cut lengths before reopening J2210/J2172",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [],
