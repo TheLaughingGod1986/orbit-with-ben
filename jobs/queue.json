@@ -187388,7 +187388,7 @@
     {
       "id": "J2234",
       "title": "Review multi-channel plan: risk and cut-over (Gemini)",
-      "needs": "gemini",
+      "needs": "mini",
       "repo": "owb",
       "body": "Review docs/MULTI_CHANNEL_PLAN.md (PR #543; read it on that branch if not yet on main). Ben, 5 Nov 2026, wants the studio engine decoupled from the channel repos so new channels plug in with their own rules and flow, and a third channel is coming. Write jobs/reviews/<this id>/REVIEW.md: verdict KEEP / FIX / REJECT per phase, what would break on the Mini or MacBook at each phase, the answers to the four open questions, and anything missing. Reads only; no code changes, no repo creation. Finish with jobs.py done <id> --result \"<verdict and top 3 points>\". Focus: risk. What could stop the studio during phase 3 cut-over, and what is the undo at each step?",
       "ref": "",
@@ -187408,10 +187408,24 @@
           "at": "2026-11-05T17:45Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T18:19Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review multi-channel plan: risk and cut-over (Gemini)",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "gemini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2235",
