@@ -1,5 +1,5 @@
 {
-  "next_id": 2251,
+  "next_id": 2252,
   "jobs": [
     {
       "id": "J0001",
@@ -188437,6 +188437,34 @@
         }
       ],
       "remaining_action": "Write KEEP or FIX for the fri06 muons Short v01",
+      "kind": "review"
+    },
+    {
+      "id": "J2251",
+      "title": "032 R52: review real-photo winter-duration still and scope tilt axis",
+      "needs": "any",
+      "repo": "owb",
+      "body": "# J2089 R52 duration graphic: still decision requested\n\nReview uranus_graphic.py, URANUS_MANIFEST_v01.json and the full-size still:\n`/Users/benjaminoats/_desk/cache/J2089/uranus_previews_v02/r52_uranus_review.jpg`.\n\nReal Voyager Uranus PIA18182, NASA/JPL-Caltech; source metadata, licence policy\nand hash remain in HARVEST_POOL_v01.json. SOURCES.md row 18 supports the 21-year\nwinter. No new numbers, tilt angle, collision picture or invented terminator.\nThe existing photograph is cropped around its limb, downscaled to 620 pixels,\nwith a separate duration counter and linear bar. It is not a model of seasonal\nillumination or a claim to locate the winter pole in the photograph.\n\nThis is the duration part of R52 only. The planned tilt-axis explanation remains\noutstanding: return a specific geometry scope or retain this as a duration-only\nvariant, rather than approving a scientifically arbitrary axis. One idea, labels\nunder four words, 0.4-second fades, 3.6-second runtime. Review navy is illustrative;\nfinal placement requires a graded moving plate and frame/contrast/reuse checks.\nUse PIA18182 once within R52, not once as a plate and again as this graphic.\n\nWorker viewed the full-size source and final still. URANUS_CHECKS_v01.json checks\n109 frame layouts, source/preview hashes, safe-area limits, transparent endpoints,\nchanging counter frames, the 21-year endpoint and rejection of unapproved rendering.\nThese are structural measurements, not audiovisual review or approval. No MOV\nrendered; exporter intentionally waits for an actual still decision.\n\nPreserve all 38 existing exports. J2177 retains the mechanism/source review;\nJ2247 retains R09 size/Mercury rights review. Frame0 motion, Huygens reuse and APL\nrights holds remain. Parent J2089 stays at its original 1/4; GBP0 spent.\n",
+      "ref": "14b66b71c0",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T20:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T20:03Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect R52 full-size still and return KEEP/FIX; specify remaining tilt-axis geometry",
       "kind": "review"
     }
   ],
