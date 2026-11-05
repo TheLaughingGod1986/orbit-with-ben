@@ -1,5 +1,5 @@
 {
-  "next_id": 2217,
+  "next_id": 2218,
   "jobs": [
     {
       "id": "J0001",
@@ -185660,6 +185660,34 @@
       "taskKeys": [
         "OWB:025"
       ]
+    },
+    {
+      "id": "J2217",
+      "title": "HOS 008: amend Franklin recipe to eight-item + film-wide captions (Ben 5 Nov)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS 008 Franklin v03 — no-spend recipe amend after Ben’s 5 Nov second review.\n\nPredecessor J2163 delivered HOS PR #411 commit 50620e40 (six-row repaired recipe/planner; all original notes unresolved; no render). Ben then filed a second v03 review on desk PR #180 (comment 6658371896); Claude advisory 6658387533. Chief folded scope into J1881 and this job before any splice.\n\n## Scope (eight defect items + film-wide captions)\nPreserve Ben’s verbatim wording in:\n  02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/J1868_BEN_NOTES_2026-11-05.md\n  and the dated section of J1868_UAT_CORRECTIONS.md\n\nNet list (none resolved):\n1. 00:20 bottom text readability — now **film-wide**: every bottom on-screen text over moving footage gets a background panel (not bordered UI chrome; settles PR #411 remove-bordered-UI point). Wider than the single 00:20 note.\n2. 0:30 flash next scene (original)\n3. **0:51 NEW** hair flying out the tube — **rebuild**, not trim. Check if same source as 1:49. (3 Nov was 1:49 only.)\n4. 1:49 hair/tube (original; still in scope)\n5. 2:18 jar flips upside down ≈ 3 Nov 2:20 (P2:07_foil_jar). Confirm defect is **outside** J1880 kept frames 0–91 (~2:12–2:16 / display 3168–3259). Chief still check: 138 s is OUT of keep, IN replace zone ~136.12–139.58 s.\n6. 2:20 silver foil (original; same jar/foil family)\n7. **3:13 NEW** paper seems to roll out the globe (3 Nov was 3:31 map — new defect row)\n8. 3:31 map/diagram (original)\n9. 7:58/7:59 rods on churches fall (already in scope)\n\nQueue language: eight items = original six + 0:51 hair + 3:13 paper; caption treatment film-wide.\n\n## Required deliverable (code/evidence only)\n- Extend PR #411’s six-row manifest/planner to **eight rows** + film-wide caption treatment.\n- Map 0:51 and 3:13 against master PTS (master sha cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b).\n- Document 2:18 vs kept jar window in the recipe evidence.\n- Keep read-only planner: **refuse execution** until J1881 re-reviews this amend (no splice, no replacement render, no spend, no upload, no YouTube).\n- Do **not** merge PR #411 or #180. Do not mark any note resolved. Preserve h22/h35, J1297, J1755 publication rejection.\n- GBP0. Tests may use small synthetic fixtures only.\n\n## After done\nHand evidence back to open J1881 for re-review of the eight-item recipe before any production assembly is scoped. J1881 must not authorize render from the old six-only list.\n",
+      "ref": "J1881 / HOS PR411 50620e40 / Ben 6658371896 / advisory 6658387533",
+      "film": "008",
+      "stage": "edit",
+      "after": "J2163",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T12:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T12:54Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Extend PR411 six-row recipe to eight items + film-wide captions; refuse exec until J1881 re-review; GBP0",
+      "kind": "assembly"
     }
   ],
   "focus": [],

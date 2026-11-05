@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2213 | mini | open | – | – | 006 picture · video · `flow-veo-3.1` · HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200) | HOS#180:6655551386 |
 | J2215 | macbook | blocked | macbook | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
 | J2216 | mini | open | – | – | chief · Chief: apply J1889 KEEP social-source exception in UPLOADS.json and publish Mars-night & Titan Buffer posts | jobs/reviews/J1889/REVIEW.md |
+| J2217 | mini | open (after J2163) | – | – | 008 edit · assembly · HOS 008: amend Franklin recipe to eight-item + film-wide captions (Ben 5 Nov) | J1881 / HOS PR411 50620e40 / Ben 6658371896 / advisory 6658387533 |
 
 Recently finished:
 
