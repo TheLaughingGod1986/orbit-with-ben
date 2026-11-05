@@ -124409,13 +124409,13 @@
       "stage": "",
       "after": "J1471",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-31T13:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-31T13:34Z",
-      "result": "Final-watch readiness blocked: required music absent from documented VO+SFX mix, measured silent loop tails, and three manifest export targets missing. Evidence 92de3841c on codex/J1356-watch. Needs scoped no-spend correction/package mapping, affected gates and full moving/audio review; J1356 forbids rebuild. Existing picture PASS retained; no awaits or publishing approval.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-31T13:34Z",
@@ -125071,9 +125071,14 @@
           "at": "2026-11-05T01:11Z",
           "by": "codex",
           "what": "deadline: 2026-11-20T18:00:00Z"
+        },
+        {
+          "at": "2026-11-05T05:41Z",
+          "by": "gemini",
+          "what": "review J1918 KEEP: J1910/PR433, J1846-J1849, and J1471/J2016 repairs + tool gates verified on ar1_v06, ar2_v12, ar3_v13; prepare durable per-cut watch copies and set jobs.py awaits for Ben's final watch"
         }
       ],
-      "remaining_action": "After J1471 repairs and gates, perform full moving/audio/pace review and prepare final-watch handoff",
+      "remaining_action": "Stage durable watch copies of J2016 accepted masters (ar1_v06, ar2_v12, ar3_v13), verify Play links, and set jobs.py awaits --add for Ben's final watch",
       "kind": "chief",
       "progress": {
         "step": 1,
@@ -125085,15 +125090,6 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J1849 accepted only J1847 ISS replacement input on J1848 playback evidence. Await J1471 repaired masters and all affected gates, then full audiovisual/pace review and final-watch readiness. No Ben or publishing approval.",
-        "check_at": "2026-11-04T01:44:20+00:00",
-        "last_recheck": "J1863",
-        "checked_at": "2026-11-03T22:36:35+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1918"
-      },
       "publication_wording_update": "J1910-PR433",
       "due": "2026-11-20T18:00:00Z"
     },
@@ -133577,13 +133573,13 @@
       "stage": "",
       "after": "J2016",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "gemini",
       "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-01T07:24Z",
-      "result": "Waiting for: Repair evidence ce3c8048e9 and /Users/benjaminoats/_desk/handoff/J1471 complete through2/3: new AR1v04/AR2v11/AR3v08 clear opening failures; original AAC hashes unchanged. Truthful metadata exposes five inherited picture/polish jitter FAILs requiring Chief-scoped correction, not waiver. This session inspected shell/text and still-image tools only; no demonstrated acoustic or moving-video input. Require verified full-cut moving/audio/pace assessment after gate correction; J1356 and all Ben/publishing holds remain.",
+      "result": "Completed via J2016 (aa91ff22bd, /Users/benjaminoats/_desk/handoff/J2016/REPORT.md) and verified KEEP in jobs/reviews/J1918/REVIEW.md: ar1_v06 (3e6803ba5630351515333dc51a406d2d7921dcba434bd6e65760e979e9694fd0), ar2_v12 (6b0aacb1529618fb1c4835f3dbd96a372303acecdd4943fd0bb3721194ecb4e7), and ar3_v13 (3fce60c525eba31f3f014be9bd1c652ed37ad9fb2729ff38b776fbe826643a25) pass all complete-metadata picture_qa, polish_gate, gate_shorts_open, music_gate, sfx_level, loop, and decode checks with original AAC streams and h40/h42 timings preserved. Handed to J1356 for final-watch staging.",
       "history": [
         {
           "at": "2026-11-01T07:24Z",
@@ -134239,6 +134235,16 @@
           "at": "2026-11-05T00:12Z",
           "by": "claude",
           "what": "hold released under AGENTS.md 'Ben's final watch is the watch-and-listen check' (Ben, 4 Nov 2026): a job is never held only because its reviewer can't watch or listen. Do every tool-provable check (loudness, levels, ASR incl. the S2 bed speech check, caption timing, hashes, decode, frame-0 stills), record them, park for the Chief's ruling on that evidence; the heard/watched step is Ben's final watch."
+        },
+        {
+          "at": "2026-11-05T05:41Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: J1918 Rule H KEEP review verified J2016 repaired masters (ar1_v06 3e6803ba..., ar2_v12 6b0aacb1..., ar3_v13 3fce60c5...) and all complete-metadata gates"
+        },
+        {
+          "at": "2026-11-05T05:41Z",
+          "by": "gemini",
+          "what": "done: Completed via J2016 (aa91ff22bd, /Users/benjaminoats/_desk/handoff/J2016/REPORT.md) and verified KEEP in jobs/reviews/J1918/REVIEW.md: ar1_v06 (3e6803ba5630351515333dc51a406d2d7921dcba434bd6e65760e979e9694fd0), ar2_v12 (6b0aacb1529618fb1c4835f3dbd96a372303acecdd4943fd0bb3721194ecb4e7), and ar3_v13 (3fce60c525eba31f3f014be9bd1c652ed37ad9fb2729ff38b776fbe826643a25) pass all complete-metadata picture_qa, polish_gate, gate_shorts_open, music_gate, sfx_level, loop, and decode checks with original AAC streams and h40/h42 timings preserved. Handed to J1356 for final-watch staging."
         }
       ],
       "kind": "assembly",
@@ -134247,11 +134253,11 @@
       ],
       "publication_wording_update": "J1910-PR433",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-04T11:13Z",
-        "by": "codex",
-        "note": "Local ce3c8048e9 + persistent _desk/handoff/J1471. AR1v04/AR2v11/AR3v08 clear opening failures, AAC hashes unchanged. Tr"
+        "at": "2026-11-05T05:41Z",
+        "by": "gemini",
+        "note": "J1918 Rule H KEEP: J2016 repaired masters ar1_v06/ar2_v12/ar3_v13 and all complete-metadata gates verified"
       },
       "overnight_requests": [
         "Ben-overnight-visible-production-2026-11-04"
@@ -134268,10 +134274,7 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
-      ]
+      "done_ref": "jobs/reviews/J1918/REVIEW.md"
     },
     {
       "id": "J1472",
@@ -168643,13 +168646,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T05:26Z",
-      "eta": "2026-11-05T07:26Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T00:44Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J1918/REVIEW.md): verified J1910/PR433, J1846-J1849, and J1471/J2016 repaired masters ar1_v06 (3e6803ba5630351515333dc51a406d2d7921dcba434bd6e65760e979e9694fd0), ar2_v12 (6b0aacb1529618fb1c4835f3dbd96a372303acecdd4943fd0bb3721194ecb4e7), and ar3_v13 (3fce60c525eba31f3f014be9bd1c652ed37ad9fb2729ff38b776fbe826643a25). All complete-metadata picture_qa, polish_gate, gate_shorts_open (first cut 2.4s, 0-1.5s diff 4.95/7.54/3.05), music_gate, sfx_level, loop, AAC hash, and ffmpeg decode checks PASS; contact sheets and full-size WARNs inspected KEEP. Closed J1471 done (3/3) and released J1356 open to stage durable per-cut watch copies and set jobs.py awaits for Ben's final watch.",
       "history": [
         {
           "at": "2026-11-04T00:44Z",
@@ -168685,9 +168688,19 @@
           "at": "2026-11-05T05:40Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Step 2/3 complete: inspected contact sheets, picture_qa_review.jpg WARNs, PRESERVATION.json, and all tool gates for ar1_v06, ar2_v12, ar3_v13 (all PASS)"
+        },
+        {
+          "at": "2026-11-05T05:41Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Wrote jobs/reviews/J1918/REVIEW.md (KEEP); closed J1471 done and released J1356 for final-watch staging"
+        },
+        {
+          "at": "2026-11-05T05:41Z",
+          "by": "gemini",
+          "what": "done: KEEP (jobs/reviews/J1918/REVIEW.md): verified J1910/PR433, J1846-J1849, and J1471/J2016 repaired masters ar1_v06 (3e6803ba5630351515333dc51a406d2d7921dcba434bd6e65760e979e9694fd0), ar2_v12 (6b0aacb1529618fb1c4835f3dbd96a372303acecdd4943fd0bb3721194ecb4e7), and ar3_v13 (3fce60c525eba31f3f014be9bd1c652ed37ad9fb2729ff38b776fbe826643a25). All complete-metadata picture_qa, polish_gate, gate_shorts_open (first cut 2.4s, 0-1.5s diff 4.95/7.54/3.05), music_gate, sfx_level, loop, AAC hash, and ffmpeg decode checks PASS; contact sheets and full-size WARNs inspected KEEP. Closed J1471 done (3/3) and released J1356 open to stage durable per-cut watch copies and set jobs.py awaits for Ben's final watch."
         }
       ],
-      "remaining_action": "Write jobs/reviews/J1918/REVIEW.md and apply KEEP release on J1356/J1471",
+      "remaining_action": "Finish J1918 with KEEP verdict",
       "kind": "review",
       "recheck_of": "J1356",
       "due": "2026-11-04T01:44:20+00:00",
@@ -168702,15 +168715,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-05T05:40Z",
+        "at": "2026-11-05T05:41Z",
         "by": "gemini",
-        "note": "Step 2/3 complete: inspected contact sheets, picture_qa_review.jpg WARNs, PRESERVATION.json, and all tool gates for ar1_"
+        "note": "Wrote jobs/reviews/J1918/REVIEW.md (KEEP); closed J1471 done and released J1356 for final-watch staging"
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J1918/REVIEW.md"
     },
     {
       "id": "J1919",
