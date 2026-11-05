@@ -72924,7 +72924,7 @@
       ],
       "kind": "vo",
       "remaining_action": "Chief must scope repair of the recorded 009 B v03 hook before VO can complete",
-      "urgent": 15,
+      "urgent": 3,
       "progress": {
         "step": 2,
         "of": 3,
@@ -101091,7 +101091,7 @@
         "OWB:028"
       ],
       "escalated_at": "2026-10-31T23:09Z",
-      "urgent": 13,
+      "urgent": 24,
       "progress": {
         "step": 2,
         "of": 3,
@@ -111756,7 +111756,7 @@
         "OWB:030"
       ],
       "model": "flow-veo-3.1",
-      "urgent": 1,
+      "urgent": 12,
       "hold": {
         "type": "capability",
         "condition": "J2167 immediate exact-source review required. PR507/bb22c548ea delivers native silent S5/S6 take2, exact opening1.15-3.85s/preroll0-1.15s, hashes, phone copies and source QA PASS with WARNs. This session inspected text/stills only; no actual native-video/phone/preroll perception tool demonstrated. Need a reviewer with demonstrated moving_video_input and exact-source decision before J1199 assembly; no KEEP, no further Flow takes (40 credits total), scheduled-copy fallback preserved.",
@@ -125180,7 +125180,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "urgent": 23
     },
     {
       "id": "J1357",
@@ -134353,7 +134354,7 @@
       ],
       "due": "2026-11-04T10:51:54+00:00",
       "due_kind": "user-immediate-claim",
-      "urgent": 14,
+      "urgent": 25,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -155565,7 +155566,7 @@
       ],
       "remaining_action": "Finish PR401 and restore browser watch delivery after explicit R2 upload scope approval; verify media range read",
       "kind": "chief",
-      "urgent": 21,
+      "urgent": 8,
       "progress": {
         "step": 2,
         "of": 3,
@@ -166252,7 +166253,7 @@
         "condition": "J2163 must deliver a corrected PR409 recipe with original PTS/gaps and unchanged-picture preservation, truthful measured/UNMEASURED checks, reconciled input hashes, compliant sourced labels and tests. Current recipe is FIX; no production render or generation authorized. Resume J1881 when J2163 evidence is ready; all six notes unresolved.",
         "check_at": "2026-11-05T12:00:00Z"
       },
-      "urgent": 6
+      "urgent": 2
     },
     {
       "id": "J1882",
@@ -166837,7 +166838,7 @@
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
       ],
-      "urgent": 22
+      "urgent": 9
     },
     {
       "id": "J1890",
@@ -167699,7 +167700,7 @@
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
       ],
-      "urgent": 24
+      "urgent": 10
     },
     {
       "id": "J1904",
@@ -175415,7 +175416,7 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "urgent": 19,
+      "urgent": 6,
       "production_release_requested": {
         "by": "ben",
         "recorded_by": "codex",
@@ -175498,7 +175499,7 @@
       "remaining_action": "Review PR484 exact head; release frontend after normal checks and verify live category/next-video task display",
       "kind": "chief",
       "studio_dispatch_review_key": "PR484:b7299eedb315041923c47aee125f572ffcac0da9",
-      "urgent": 20,
+      "urgent": 7,
       "production_release_requested": {
         "by": "ben",
         "recorded_by": "codex",
@@ -175767,7 +175768,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 4,
+      "urgent": 19,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -175933,7 +175934,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 5,
+      "urgent": 20,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -175976,7 +175977,7 @@
       ],
       "remaining_action": "Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day)",
       "kind": "chief",
-      "urgent": 7
+      "urgent": 11
     },
     {
       "id": "J2039",
@@ -176045,7 +176046,7 @@
       ],
       "remaining_action": "Chief reviews PR488 head 0a655e1d52 and merges after required checks",
       "kind": "assembly",
-      "urgent": 17,
+      "urgent": 5,
       "progress": {
         "step": 3,
         "of": 3,
@@ -176177,7 +176178,7 @@
       ],
       "remaining_action": "Implement guarded Buffer create/update and YouTube writes, then finish policy evidence",
       "kind": "assembly",
-      "urgent": 16,
+      "urgent": 4,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178383,7 +178384,7 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "urgent": 9
+      "urgent": 16
     },
     {
       "id": "J2090",
@@ -180571,7 +180572,7 @@
         "OWB:031"
       ],
       "due": "2026-11-10T18:00Z",
-      "urgent": 10
+      "urgent": 15
     },
     {
       "id": "J2142",
@@ -180690,7 +180691,7 @@
       "taskKeys": [
         "OWB:031"
       ],
-      "urgent": 3
+      "urgent": 1
     },
     {
       "id": "J2144",
@@ -181555,7 +181556,7 @@
       ],
       "remaining_action": "Record 034 Pluto long VO from pluto_frozen_heart_script_master_v02.md",
       "kind": "vo",
-      "urgent": 12
+      "urgent": 14
     },
     {
       "id": "J2158",
@@ -182129,7 +182130,8 @@
       "kind": "review",
       "required_capabilities": [
         "moving_video_input"
-      ]
+      ],
+      "urgent": 13
     },
     {
       "id": "J2168",
@@ -182734,7 +182736,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "urgent": 21
     },
     {
       "id": "J2176",
@@ -182839,7 +182842,8 @@
       "taskKeys": [
         "OWB:032"
       ],
-      "escalated_at": "2026-11-05T06:52Z"
+      "escalated_at": "2026-11-05T06:52Z",
+      "urgent": 17
     },
     {
       "id": "J2177",
@@ -184022,7 +184026,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "urgent": 22
     },
     {
       "id": "J2195",
@@ -184057,7 +184062,7 @@
       "remaining_action": "Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief",
       "kind": "review",
       "review_of": "J0862",
-      "urgent": 15,
+      "urgent": 18,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
