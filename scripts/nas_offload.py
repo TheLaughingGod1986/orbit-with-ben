@@ -154,6 +154,15 @@ def manifest(root: pathlib.Path, skip=(MARKER, "SHA256SUMS.txt")) -> dict[str, t
     return {str(p.relative_to(root)): (p.stat().st_size, sha256(p)) for p in tree_files(root) if p.name not in skip}
 
 
+def nas_manifest(dst: pathlib.Path, src_keys) -> dict[str, tuple[int, str]]:
+    """The NAS writes an AppleDouble `._name` beside each copied file that has extended attributes (Claude, 5 Nov
+    2026: every desk-cache move failed its check on `._crew2_351_374.mp4`). Ignore only those, never other extras."""
+    def apple(k):
+        p = pathlib.PurePath(k)
+        return p.name.startswith("._") and str(p.with_name(p.name[2:])) in src_keys
+    return {k: v for k, v in manifest(dst).items() if not apple(k)}
+
+
 def dest_for(src: pathlib.Path, nas: pathlib.Path, today: str) -> pathlib.Path:
     base = nas / NAS_ARCHIVE / "mini-tmp-scratch" / today
     d, n = base / src.name, 2
@@ -192,7 +201,7 @@ def offload_one(src: pathlib.Path, nas: pathlib.Path, today: str, at: str) -> di
         return {"path": str(src), "ok": False, "why": "no files"}
     dst = dest_for(src, nas, today)
     copy_tree(src, dst)
-    after = manifest(dst)
+    after = nas_manifest(dst, set(before))
     if after != before:
         missing = sorted(set(before) - set(after))[:3]
         diff = sorted(k for k in before if k in after and before[k] != after[k])[:3]
