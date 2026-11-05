@@ -188419,10 +188419,24 @@
           "at": "2026-11-05T19:24Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T20:39Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review R09 size still and resolve Mercury rights before rendering",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2248",
