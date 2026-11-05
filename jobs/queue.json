@@ -183435,16 +183435,22 @@
           "at": "2026-11-05T06:46Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-05T06:47Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR421 is an offline preflight, not a guarded billable caller; exact GBP SKU and global unpriced-charge bound remain absent."
         }
       ],
-      "remaining_action": "Review guarded Vertex caller, pricing and six-input scope before a spend ruling",
+      "remaining_action": "Validate dry-run guard and record a definitive no-spend route decision",
       "due": "2026-11-07T18:00:00Z",
       "kind": "chief",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-05T06:46Z",
-        "by": "codex"
+        "at": "2026-11-05T06:47Z",
+        "by": "codex",
+        "note": "PR421 is an offline preflight, not a guarded billable caller; exact GBP SKU and global unpriced-charge bound remain abse"
       },
       "taskKeys": [
         "HOS:006"
