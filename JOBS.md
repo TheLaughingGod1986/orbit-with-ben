@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2222 | mini | open (after J2221) | – | – | J01 edit · for gemini · review · `gemini-argon` · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2223 | mini | open | – | – | for gemini · listing · `gemini-argon` · Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each |  |
 | J2224 | mini | open | – | – | for gemini · review · `gemini-argon` · Review J0912: Short A v03 picture_qa key-ribbon FIX decision |  |
-| J2226 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
+| J2226 | mini | claimed | gemini | 2026-11-05T19:45Z | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2228 | mini | open | – | – | studio · AR1 v06 (2024 YR4 Moon) Short: Ben OK'd 5 Nov 16:32. Upload private and schedule Fri 27 Nov 11:30 London |  |
 | J2229 | mini | open | – | – | assembly · AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14 |  |
 | J2230 | mini | open | – | – | assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
