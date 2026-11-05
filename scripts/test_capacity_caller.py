@@ -85,6 +85,12 @@ class Caller(unittest.TestCase):
         self.assertTrue(self.call(serial_only=True)["serial_safe"])
         self.assertEqual(self.call()["state"], "capacity_rejected")
 
+    def test_mini_only_serial_needs_no_macbook_peer_file(self):
+        # J2197, 5 Nov 2026: with no peer.json on a Mini-only rollout every serial tick was rejected.
+        self.data["jobs"][0]["kind"] = "chief"
+        self.assertFalse((self.root / "peer.json").exists())
+        self.assertTrue(self.call(serial_only=True)["serial_safe"])
+
     def test_serial_occupied_or_uncertain_observation_never_falls_through(self):
         for lease in (dict(job="busy", worker="gemini", host="mini", account="other"),
                       dict(job="unknown", worker="unknown", host="mini", recovery_required=True)):

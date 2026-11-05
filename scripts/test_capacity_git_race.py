@@ -85,7 +85,7 @@ with tempfile.TemporaryDirectory() as tmp:
         except ValueError:
             pass
         git('checkout','--','JOBS.md',cwd=repo)
-        (repo/'scripts').mkdir();(repo/'scripts/runtime.py').write_text('changed code')
+        (repo/'scripts').mkdir();(repo/'scripts/capacity_caller.py').write_text('changed code')
         git('add','.',cwd=repo);git('commit','-m','unreviewed code',cwd=repo)
         try:
             capacity_evidence.reviewed_installation(repo,reviewed)

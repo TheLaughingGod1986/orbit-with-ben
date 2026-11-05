@@ -229,14 +229,17 @@ def installed_head(root):
         return ""
 
 
+REVIEW_BOUND = re.compile(r"scripts/(?:capacity_[a-z_]+|dispatch_capacity|portable_transfer|chief_relay|workflow_state|"
+                          r"jobs|studio|routing)\.py|scripts/macbook_worker\.py|\.github/.*")
+
+
 def reviewed_installation(root, reviewed_head):
     """Bind execution to reviewed code while allowing canonical queue commits.
 
     reserve/consume each commits queue/board state, so literal HEAD necessarily
     changes between them. Return the original FULL reviewed SHA only when it is
-    an ancestor, the tracked checkout is clean, and every changed path is one of
-    the existing canonical operational files. Any source, rule, input, review,
-    unrelated film asset or configuration change invalidates the review.
+    an ancestor, the tracked checkout is clean, and no changed path is review-bound
+    code (REVIEW_BOUND: the capacity, dispatch, relay, queue and routing code).
     Never accept a digest, branch name, non-descendant or dirty tracked tree.
     """
     current = installed_head(root)
@@ -251,11 +254,11 @@ def reviewed_installation(root, reviewed_head):
                            reviewed_head, current, "--"]).splitlines()
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         raise ValueError("installed revision is not a reviewed descendant") from error
-    allowed = {"jobs/queue.json", "JOBS.md", "STATUS.md"}
+    # Only the code that decides and runs parallel work is bound to the review (Chief, 5 Nov 2026, J2197: binding the
+    # whole repo switched capacity off at every unrelated merge, several a day). A change to any of these needs a new
+    # review and a re-pinned reviewed_head; anything else may move on.
     for name in changed:
-        parts = pathlib.PurePosixPath(name).parts
-        board = len(parts) == 3 and parts[0] == "02_Video-Projects" and parts[2] == "status.json"
-        if name not in allowed and not board:
+        if REVIEW_BOUND.fullmatch(name):
             raise ValueError("installed code or approved inputs changed since review")
     return reviewed_head
 
