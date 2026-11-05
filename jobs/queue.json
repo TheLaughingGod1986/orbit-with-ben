@@ -101259,6 +101259,16 @@
           "at": "2026-11-05T23:27Z",
           "by": "gemini",
           "what": "approved by Ben: swap S2 emwQsPxnRGM (027 equator) to earth_equator_weight_v07 after Ben watch v07"
+        },
+        {
+          "at": "2026-11-05T23:27Z",
+          "by": "gemini",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J1100"
+        },
+        {
+          "at": "2026-11-05T23:27Z",
+          "by": "gemini",
+          "what": "approved by Ben: swap S5 jJ5LkFGyzLI (028 Gliese 710 scale) to 028_short_fri04_scale_v07 after Ben watch v07"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101288,37 +101298,24 @@
         "audio_input"
       ],
       "remaining_action": "Waiting on Ben's watch of S2/S5/S6 v07 (Ready for OK, awaits_ben). Swap each only after his OK; no OK by air-morning 10:30 -> v01 stays scheduled.",
-      "awaits_ben": [
-        {
-          "what": "swap S5 jJ5LkFGyzLI (028 Gliese 710 scale) to 028_short_fri04_scale_v07 after Ben watch",
-          "file": "OWB UAT/028_short_fri04_scale_v07/028_short_fri04_scale_v07_PHONE.mp4",
-          "version": "v07",
-          "due": "2026-12-03T20:00Z",
-          "airs": "2026-12-04T11:30Z",
-          "ifNot": "v01 stays scheduled; no swap",
-          "title": "028 Gliese 710 scale v07",
-          "number": "S5",
-          "type": "short"
-        },
-        {
-          "what": "swap S6 X768qs8sNQs (028 night sky) to 028_short_lift_night_sky_35yr_v07 after Ben watch",
-          "file": "OWB UAT/028_short_lift_night_sky_35yr_v07/028_short_lift_night_sky_35yr_v07_PHONE.mp4",
-          "version": "v07",
-          "due": "2026-12-06T20:00Z",
-          "airs": "2026-12-07T11:30Z",
-          "ifNot": "v01 stays scheduled; no swap",
-          "title": "028 night sky v07",
-          "number": "S6",
-          "type": "short"
-        }
-      ],
-      "approved_from": {
-        "what": "swap S2 emwQsPxnRGM (027 equator) to earth_equator_weight_v07 after Ben watch",
-        "file": "OWB UAT/earth_equator_weight_v07/earth_equator_weight_v07_PHONE.mp4",
+      "awaits_ben": {
+        "what": "swap S6 X768qs8sNQs (028 night sky) to 028_short_lift_night_sky_35yr_v07 after Ben watch",
+        "file": "OWB UAT/028_short_lift_night_sky_35yr_v07/028_short_lift_night_sky_35yr_v07_PHONE.mp4",
         "version": "v07",
-        "airs": "2026-11-23T11:30Z",
-        "title": "027 equator weight v07",
-        "number": "S2",
+        "due": "2026-12-06T20:00Z",
+        "airs": "2026-12-07T11:30Z",
+        "ifNot": "v01 stays scheduled; no swap",
+        "title": "028 night sky v07",
+        "number": "S6",
+        "type": "short"
+      },
+      "approved_from": {
+        "what": "swap S5 jJ5LkFGyzLI (028 Gliese 710 scale) to 028_short_fri04_scale_v07 after Ben watch",
+        "file": "OWB UAT/028_short_fri04_scale_v07/028_short_fri04_scale_v07_PHONE.mp4",
+        "version": "v07",
+        "airs": "2026-12-04T11:30Z",
+        "title": "028 Gliese 710 scale v07",
+        "number": "S5",
         "type": "short",
         "channel": "OWB",
         "job": "J1100",
