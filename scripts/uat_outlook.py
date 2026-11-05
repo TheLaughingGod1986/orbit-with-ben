@@ -18,6 +18,20 @@ PLAN = {
 LABELS = dict(topic='Topic', script='Script', sources='Fact checks', vo='Voice',
               shots='Shot plan', picture='Picture', edit='Edit', thumbs='Packaging', qa='Chief QA')
 DONE = {'done', 'skip', 'passed'}
+STAGE_ALIASES = {'sources': 'facts', 'thumbs': 'thumbnails'}
+
+
+def canonical_stage(key):
+    return next((canonical for canonical, alias in STAGE_ALIASES.items() if key == alias), key)
+
+
+def stage_record(stages, key):
+    """Read equivalent recorded HOS keys without inventing missing stages.
+
+    An explicit canonical record (including unknown/pending) wins over an alias.
+    HOS's upload-package scaffold is not the complete Packaging milestone.
+    """
+    return (stages.get(key) if key in stages else stages.get(STAGE_ALIASES.get(key))) or {}
 
 
 def date(value):
@@ -40,7 +54,7 @@ def learn_documents(snapshots, channel):
             continue
         for film, stages in films.items():
             for stage in PLAN:
-                raw = stages.get(stage) or {}
+                raw = stage_record(stages, stage)
                 state = raw.get('state') or raw.get('status') or 'unknown'
                 key = (film, stage)
                 old = previous.get(key)
@@ -102,8 +116,8 @@ def milestone_rows(stages, jobs):
     for job in jobs:
         seen.setdefault(job.get('id'), job)
     for key, deps in PLAN.items():
-        raw = stages.get(key) or {}
-        related = [j for j in seen.values() if j.get('stage') == key]
+        raw = stage_record(stages, key)
+        related = [j for j in seen.values() if canonical_stage(j.get('stage')) == key]
         live = [j for j in related if j.get('status') in ('claimed', 'blocked', 'open')]
         live.sort(key=lambda j: {'blocked': 0, 'claimed': 1, 'open': 2}[j['status']])
         state = raw.get('state') or raw.get('status') or 'unknown'
@@ -117,8 +131,14 @@ def milestone_rows(stages, jobs):
         texts = [str(evidence)] + [str(j.get('result') or '') for j in related]
         note = ' '.join(texts)
         summary = ''
+        steps = raw.get('steps')
+        if (key == 'picture' and isinstance(steps, list) and len(steps) == 2
+                and all(isinstance(n, int) and not isinstance(n, bool) for n in steps)
+                and 0 <= steps[0] <= steps[1] and steps[1] > 0
+                and re.search(r'\brows\b', str(raw.get('steps_unit') or ''), re.I)):
+            summary = f'{steps[0]}/{steps[1]} picture rows recorded'
         shots = re.search(r'\b(\d+)\s*/\s*(\d+)\s+Flow\b', note, re.I)
-        if shots and key == 'picture' and re.search(r'minted|generated', note, re.I):
+        if not summary and shots and key == 'picture' and re.search(r'minted|generated', note, re.I):
             summary = f'{shots[1]}/{shots[2]} Flow shots generated'
         duration = re.search(r'\b(\d+(?:\.\d+)?)\s*s\b', str(evidence)) if key == 'vo' else None
         if duration:
@@ -135,7 +155,7 @@ def milestone_rows(stages, jobs):
                    summary=summary, reviewer=reviewer,
                    owner=raw.get('owner') or raw.get('by') or next((j.get('by') for j in live if j.get('by')), ''),
                    version=version, jobs=[{k: j.get(k) for k in ('id', 'status', 'by', 'title', 'remaining_action', 'hold', 'result', 'progress', 'claimedAt')} for j in related],
-                   source={k: raw[k] for k in ('note', 'proof', 'ref', 'version', 'score', 'durationSeconds', 'startedAt', 'completedAt', 'since', 'updatedAt', 'approval', 'progress') if k in raw})
+                   source={k: raw[k] for k in ('note', 'proof', 'ref', 'version', 'score', 'durationSeconds', 'startedAt', 'completedAt', 'since', 'updatedAt', 'approval', 'progress', 'steps', 'steps_unit') if k in raw})
         rows.append(row)
     return rows
 
@@ -163,7 +183,7 @@ def dependency_chain(key, rows):
 
 def forecast(video, stages, jobs, samples, now):
     rows = milestone_rows(stages, jobs)
-    result = dict(asOf=now.isoformat(), milestones=rows,
+    result = dict(asOf=now.isoformat(), milestoneSchema='studio-nine-stages-hos-aliases-v2', milestones=rows,
                   completed=sum(r['displayState'] in DONE for r in rows), total=len(rows),
                   activeStages=select_current(rows), partialEstimates=[],
                   eta=dict(state='unavailable', confidence='unavailable', reasons=[], criticalPath=[]))
@@ -189,12 +209,12 @@ def forecast(video, stages, jobs, samples, now):
             reasons.append(f'{name}: queue start not confirmed')
         if j.get('after') and not any(x.get('id') == j['after'] and x.get('status') == 'done' for x in jobs):
             reasons.append(f"{name}: dependency {j['after']} has not completed")
-        if j.get('stage') not in PLAN:
+        if canonical_stage(j.get('stage')) not in PLAN:
             reasons.append(f'{name}: work is not mapped to a production milestone')
     agents = {}
     for j in relevant:
         if j.get('status') == 'claimed' and j.get('by'):
-            agents.setdefault(j['by'], set()).add(j.get('stage'))
+            agents.setdefault(j['by'], set()).add(canonical_stage(j.get('stage')))
     shared_capacity = any(len(stages) > 1 for stages in agents.values())
     if shared_capacity:
         reasons.append('Shared worker capacity: parallel stage timing is not confirmed')
@@ -221,7 +241,7 @@ def forecast(video, stages, jobs, samples, now):
         if row['displayState'] in ('doing', 'in_progress'):
             if not any(j.get('stage') == key and j.get('status') == 'claimed' for j in relevant):
                 reasons.append(f"{row['label']}: no worker currently running this stage")
-            start = date((stages.get(key) or {}).get('since'))
+            start = date(stage_record(stages, key).get('since'))
             # A task's latest claim is not necessarily the start of the stage.
             if not start or start > now:
                 reasons.append(f"{row['label']}: stage start not recorded")

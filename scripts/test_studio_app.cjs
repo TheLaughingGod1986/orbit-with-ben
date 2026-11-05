@@ -458,6 +458,19 @@ assert(!t.productionDetail(scheduledHistory,NOW).includes('progress-number'));
 
 // Cut identity and aggregate history must stay separate, including cached board payloads.
 const mixedCut=v({key:'OWB:030',version:'v13a',watch:{url:'https://example.test/watch',file:'OWB UAT/030_apophis_short_v13a_PHONE.mp4'},production:{milestones:['topic','script','sources','vo','shots','picture','edit','thumbs','qa'].map(id=>({id,state:id==='edit'?'blocked':id==='qa'?'unknown':'done',source:id==='edit'?{note:'AR cohort: separate replacement work'}:{}}))}});
+
+// Stage row counts explain real sub-stage work without becoming video/time progress.
+const hosRows=nine.map(id=>({id,label:id,state:['topic','script','sources','vo'].includes(id)?'done':id==='picture'?'doing':'unknown',
+  summary:id==='picture'?'70/90 picture rows recorded':'',evidence:id==='picture'?'/private/internal-generation-log':''}));
+const hosPicture=v({key:'HOS:009',channel:'HOS',production:{milestones:hosRows,activeStages:['picture'],eta:{state:'unavailable'}}});
+const hosFeatured=t.overview({tracker:{videos:[hosPicture]}},NOW);
+assert(hosFeatured.includes('70/90 picture rows recorded'));
+assert(hosFeatured.includes('4 of 9 milestones complete')&&hosFeatured.includes('44%'));
+assert(!hosFeatured.includes('/private/internal-generation-log'));
+const noRowSummary=t.overview({tracker:{videos:[{...hosPicture,production:{...hosPicture.production,milestones:hosRows.map(m=>({...m,summary:''}))}}]}},NOW);
+assert(!noRowSummary.includes('picture rows recorded'),'missing row counts never get invented');
+const unknownCutRows=t.overview({tracker:{videos:[{...hosPicture,production:{scope:'unconfirmed_cut',projectHistory:hosPicture.production}}]}},NOW);
+assert(!unknownCutRows.includes('70/90 picture rows recorded'),'project row counts do not certify an unconfirmed cut');
 const normalized=t.normalizeCut(mixedCut);
 assert.equal(normalized.type,'short');assert.equal(normalized.key,'OWB:030');assert.equal(mixedCut.type,'long','source records are unchanged');
 const mixedOverview=t.overview({tracker:{videos:[mixedCut]}},NOW);
