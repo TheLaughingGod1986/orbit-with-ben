@@ -183342,10 +183342,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-05T06:36Z",
+      "eta": "2026-11-05T08:36Z",
       "created_by": "codex",
       "created_at": "2026-11-05T06:31Z",
       "result": "",
@@ -183354,12 +183354,25 @@
           "at": "2026-11-05T06:31Z",
           "by": "codex",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-05T06:36Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Prepare guarded six-shot Vertex dry-run and current pricing evidence; no generation",
       "due": "2026-11-07T18:00:00Z",
       "for": "codex",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T06:36Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2191",
