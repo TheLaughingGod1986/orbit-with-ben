@@ -183580,13 +183580,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T08:58Z",
-      "eta": "2026-11-05T09:08Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-05T04:51Z",
-      "result": "",
+      "result": "PASS: PR515 squash-merged 47776f6d30 (exact head 7ea276c67). Metadata git_transaction fail-closed on clean main only; prevents publishing worker-branch commits. CI green. £0. Note: Mini primary checkout has untracked locals so queue --git must use a clean main worktree/clone.",
       "history": [
         {
           "at": "2026-11-05T04:51Z",
@@ -183597,6 +183597,11 @@
           "at": "2026-11-05T08:58Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T08:58Z",
+          "by": "chief",
+          "what": "done: PASS: PR515 squash-merged 47776f6d30 (exact head 7ea276c67). Metadata git_transaction fail-closed on clean main only; prevents publishing worker-branch commits. CI green. £0. Note: Mini primary checkout has untracked locals so queue --git must use a clean main worktree/clone."
         }
       ],
       "remaining_action": "Review PR515 regressions and fail-closed metadata transaction; rule KEEP or FIX and merge only if approved",
@@ -183608,7 +183613,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "47776f6d30"
     },
     {
       "id": "J2187",
