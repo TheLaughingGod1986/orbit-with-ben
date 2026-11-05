@@ -81954,6 +81954,11 @@
           "at": "2026-11-05T23:27Z",
           "by": "gemini",
           "what": "step 1 of 2 done: Verified all 6 batch-C Shorts across UAT+NAS (S1/S3/S4 v04 swapped in J1101-J1103; S2/S5/S6 v07 KEEP in J2214 & OKd by Ben)"
+        },
+        {
+          "at": "2026-11-05T23:28Z",
+          "by": "gemini",
+          "what": "step 2 of 2 done: All 6 batch-C Shorts assembled, reviewed, UAT/NAS synced, and Ben-OKd; J1100 unblocked to run S2/S5/S6 v07 swaps"
         }
       ],
       "kind": "video",
@@ -81963,11 +81968,11 @@
         "OWB:028"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 2,
-        "at": "2026-11-05T23:27Z",
+        "at": "2026-11-05T23:28Z",
         "by": "gemini",
-        "note": "Verified all 6 batch-C Shorts across UAT+NAS (S1/S3/S4 v04 swapped in J1101-J1103; S2/S5/S6 v07 KEEP in J2214 & OKd by B"
+        "note": "All 6 batch-C Shorts assembled, reviewed, UAT/NAS synced, and Ben-OKd; J1100 unblocked to run S2/S5/S6 v07 swaps"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -82023,7 +82028,7 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Clear stale awaits_ben on J1100 after Ben's 5 Nov board OK and close J0936"
+      "remaining_action": "Close J0936 as done; J1100 now claimable for S2/S5/S6 v07 swaps"
     },
     {
       "id": "J0937",
