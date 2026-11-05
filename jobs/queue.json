@@ -180323,9 +180323,14 @@
           "at": "2026-11-05T00:07Z",
           "by": "codex",
           "what": "step 1 of 3 done: One take running under elevenlabs lock; 6 of 7 section WAVs exist. No retakes or additional spend requested."
+        },
+        {
+          "at": "2026-11-05T00:09Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Single take 611.4s; -23.3dB mean, -20.22 LUFS, -3.77dBTP. Raw Scribe 93.39% requires Chief review; no retake."
         }
       ],
-      "remaining_action": "Finish the single take and verify Scribe, loudness, true peak and chapter tails",
+      "remaining_action": "Commit measurements and transcript discrepancies, then park for Chief ruling before shot-list release",
       "kind": "vo",
       "rerouted_from": {
         "needs": "mini",
@@ -180336,11 +180341,11 @@
       },
       "for": "codex",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-05T00:07Z",
+        "at": "2026-11-05T00:09Z",
         "by": "codex",
-        "note": "One take running under elevenlabs lock; 6 of 7 section WAVs exist. No retakes or additional spend requested."
+        "note": "Single take 611.4s; -23.3dB mean, -20.22 LUFS, -3.77dBTP. Raw Scribe 93.39% requires Chief review; no retake."
       },
       "taskKeys": [
         "OWB:033"
