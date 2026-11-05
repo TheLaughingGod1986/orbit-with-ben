@@ -188964,7 +188964,7 @@
     {
       "id": "J2252",
       "title": "Verify condition for J2169",
-      "needs": "mini",
+      "needs": "any",
       "repo": "owb",
       "body": "Verify the waiting condition for J2169: Await J2213 HOS 006 six-insert Flow mint (Veo Quality 720p x1, cap ≤1200, Ultra benoats@googlemail.com). Native≥1080 inventory detour J2201 cancelled under HOS #180 6655551386; 720p Flow plates are the authorised path. Keep other J2169 holds (VO hashes B/C, J1004, long VbPubYd6Fbs, no upload).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2169 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -189034,6 +189034,11 @@
           "at": "2026-11-05T21:58Z",
           "by": "chief",
           "what": "reopened: Chief closing verified condition check after J2169 reopen"
+        },
+        {
+          "at": "2026-11-05T22:16Z",
+          "by": "chief",
+          "what": "handed back: clear gemini-only reroute so elected Chief can close completed verification after J2169 reopen"
         }
       ],
       "remaining_action": "Elected Chief: release J2169 hold on verified J2213 PR #435 (c693b4f4) and close J2252",
@@ -189041,15 +189046,6 @@
       "recheck_of": "J2169",
       "due": "2026-11-05T21:11:48+00:00",
       "due_kind": "condition-verification",
-      "rerouted_from": {
-        "needs": "any",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon",
       "taskKeys": [
         "HOS:006"
       ]
