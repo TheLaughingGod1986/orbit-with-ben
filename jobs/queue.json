@@ -175420,13 +175420,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T08:53Z",
-      "eta": "2026-11-05T09:38Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T14:21Z",
-      "result": "",
+      "result": "PASS+released: PR483 squash-merged 514b85399e (exact head f7dde5891c). Composed with PR484 on main. Production deploy dpl_GzhML8GQBQL1VKRB5ExDYp2HFJG1 READY alias studio-kanban.vercel.app version e998be177dde155b HTTP200. Publisher scripts live via pulled main; board-data publishedAt 2026-11-05T08:55:35Z shows HOS:009 milestoneSchema studio-nine-stages-hos-aliases-v2, sources done via facts alias, picture summary 70/90 rows, progress24 milestones=0 with basis (schema correction not new production). Ben combined-release auth honored. £0.",
       "history": [
         {
           "at": "2026-11-04T14:21Z",
@@ -175442,6 +175442,11 @@
           "at": "2026-11-05T08:53Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T08:57Z",
+          "by": "chief",
+          "what": "done: PASS+released: PR483 squash-merged 514b85399e (exact head f7dde5891c). Composed with PR484 on main. Production deploy dpl_GzhML8GQBQL1VKRB5ExDYp2HFJG1 READY alias studio-kanban.vercel.app version e998be177dde155b HTTP200. Publisher scripts live via pulled main; board-data publishedAt 2026-11-05T08:55:35Z shows HOS:009 milestoneSchema studio-nine-stages-hos-aliases-v2, sources done via facts alias, picture summary 70/90 rows, progress24 milestones=0 with basis (schema correction not new production). Ben combined-release auth honored. £0."
         }
       ],
       "remaining_action": "Review recorded HOS schema/row counts and no-false-progress guard; release publisher/frontend after normal checks",
@@ -175467,7 +175472,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "514b85399e,dpl_GzhML8GQBQL1VKRB5ExDYp2HFJG1"
     },
     {
       "id": "J2028",
