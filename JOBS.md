@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2206 | mini | open | – | – | assembly · URG-OWB-2: monthly Studio Reach window capture (share with J2202) |  |
 | J2207 | mini | open | – | – | assembly · OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts |  |
 | J2210 | mini | blocked | codex | – | 010 picture · video · HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint) | J2194 |
-| J2211 | any | open | – | – | 010 picture · review · HOS 010 J2210: review PR425 and resolve Option A1 body-cut segmentation | J2210 |
+| J2211 | any | claimed | macbook | 2026-11-05T12:48Z | 010 picture · review · HOS 010 J2210: review PR425 and resolve Option A1 body-cut segmentation | J2210 |
 | J2212 | any | open | – | – | 032 thumbs · review · 032 J2176: resolve composition conflict after J2196 source failures | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/521 |
 
 Recently finished:
