@@ -186522,10 +186522,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-05T20:05Z",
+      "eta": "2026-11-05T23:05Z",
       "created_by": "chief",
       "created_at": "2026-11-05T10:51Z",
       "result": "",
@@ -186599,6 +186599,11 @@
           "at": "2026-11-05T17:41Z",
           "by": "cursor",
           "what": "released: DETACHED AND RUNNING. Do not start a second copy. tmux j2213-mint; chrome stays in tmux j2213-flow CDP 9222. Log ~/_desk/logs/J2213-mint.log. Absent ~/_desk/logs/J2213-mint.done means still running. Technical-ok 1280x720 silent NAS-matched plates: B S02 sha 6dcdb7b1f92bb1a57bcfe13f11211f508eb1b3d20c26ca7b70aebef737bf99ad; B S06 harvested from the already-paid card, no second Create, sha 81bece1156b715f3f1189072a600ad19b22cf8f90306f63e16ebcd7aa13d2261; C S01 and C S06 hashes in ~/_desk/logs/J2213-receipt.json. C S07 Create is in flight at price 100, Veo 3.1 Quality, 16:9 720p x1, Ultra benoats@googlemail.com, balance read 15040. Then C S08 only. Recorded spend 500 of 1200. No PASS. No YouTube change."
+        },
+        {
+          "at": "2026-11-05T20:05Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Detached Flow mint is on Short C S07; then C S08. Do not start a second copy.",
