@@ -182393,9 +182393,14 @@
           "at": "2026-11-05T14:40Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2160; starting step 1 of 4 (manifest, metadata, and hash verification for OWB 032 J2176 v03 thumbnails)"
+        },
+        {
+          "at": "2026-11-05T14:41Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified MANIFEST_v03.json, metadata_DRAFT_v01.json, script v02 opening, and SHA-256 hashes (A=b7495bf68e..., B=4e4faf3155..., C=a0a67a7e1f..., PHONE_PREVIEW_v03=f389cb61c1...)"
         }
       ],
-      "remaining_action": "Inspect MANIFEST_v03.json, metadata_DRAFT_v01.json, script opening, and verify SHA-256 hashes of J2176 v03 thumbnails",
+      "remaining_action": "Visually inspect PHONE_PREVIEW_v03.jpg and the three J2176 v03 full-res thumbnails",
       "for": "gemini",
       "kind": "review",
       "taskKeys": [
@@ -182403,11 +182408,11 @@
       ],
       "due": "2026-11-12T18:00:00Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T14:40Z",
+        "at": "2026-11-05T14:41Z",
         "by": "gemini",
-        "note": "Claimed J2160; starting step 1 of 4 (manifest, metadata, and hash verification for OWB 032 J2176 v03 thumbnails)"
+        "note": "Verified MANIFEST_v03.json, metadata_DRAFT_v01.json, script v02 opening, and SHA-256 hashes (A=b7495bf68e..., B=4e4faf31"
       }
     },
     {
