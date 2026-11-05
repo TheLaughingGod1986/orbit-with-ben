@@ -188564,13 +188564,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-05T20:21Z",
-      "eta": "2026-11-05T22:21Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T20:03Z",
-      "result": "",
+      "result": "PR #556 (71c483662, jobs/reviews/J2251/REVIEW.md): KEEP r52_uranus_21y still as built (PIA18182 1420x1420 circular limb crop -> 620x620 px, DARK WINTER / 21 YEARS counter + 0-21 linear bar, SOURCES.md row 18, all 109 sample timestamps inside 5% safe area with transparent endpoints); approved to render under --approved r52_uranus_21y --review-ref J2251 once draft-only --render guard in uranus_graphic.py is replaced with qtrle export. Tilt-axis scope: RETAIN r52_uranus_21y as duration-only CODE graphic (no 2D tilt-axis line on pole-on PIA18182; JWST NIRCam weic2310a vertical rings show the sideways tilt directly in R52 cuts 1-2). Use PIA18182 once in R52 (inside r52_uranus_21y only). Preserve all 38 exports and J2177/J2247/frame0/Huygens/APL holds; parent J2089 stays 1/4, £0.",
       "history": [
         {
           "at": "2026-11-05T20:03Z",
@@ -188591,6 +188591,11 @@
           "at": "2026-11-05T20:33Z",
           "by": "macbook-2",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-05T20:35Z",
+          "by": "macbook-2",
+          "what": "done: PR #556 (71c483662, jobs/reviews/J2251/REVIEW.md): KEEP r52_uranus_21y still as built (PIA18182 1420x1420 circular limb crop -> 620x620 px, DARK WINTER / 21 YEARS counter + 0-21 linear bar, SOURCES.md row 18, all 109 sample timestamps inside 5% safe area with transparent endpoints); approved to render under --approved r52_uranus_21y --review-ref J2251 once draft-only --render guard in uranus_graphic.py is replaced with qtrle export. Tilt-axis scope: RETAIN r52_uranus_21y as duration-only CODE graphic (no 2D tilt-axis line on pole-on PIA18182; JWST NIRCam weic2310a vertical rings show the sideways tilt directly in R52 cuts 1-2). Use PIA18182 once in R52 (inside r52_uranus_21y only). Preserve all 38 exports and J2177/J2247/frame0/Huygens/APL holds; parent J2089 stays 1/4, £0."
         }
       ],
       "remaining_action": "Write jobs/reviews/J2251/REVIEW.md, open PR to main, and close J2251",
@@ -188600,7 +188605,8 @@
         "of": 3,
         "at": "2026-11-05T20:33Z",
         "by": "macbook-2"
-      }
+      },
+      "done_ref": "71c483662"
     },
     {
       "id": "J2252",
