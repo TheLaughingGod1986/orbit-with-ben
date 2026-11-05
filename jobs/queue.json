@@ -181816,9 +181816,14 @@
           "at": "2026-11-05T08:01Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified all 54 Scribe mismatch groups, loudness/TP/runtime, and direct audio listening on 3 flagged phrases + 7 chapter tail endings"
+        },
+        {
+          "at": "2026-11-05T08:04Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote jobs/reviews/J2164/REVIEW.md and updated 033 production-status.md and J2155_VO_REVIEW_v01.md"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2164/REVIEW.md and update 033 VO evidence and production status",
+      "remaining_action": "Apply Rule H KEEP ruling via jobs.with_git: close J2155 and J2164 done, mark 033 vo done, land VO evidence, and clear J2165",
       "kind": "review",
       "urgent": 2,
       "rerouted_from": {
@@ -181831,11 +181836,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-05T08:01Z",
+        "at": "2026-11-05T08:04Z",
         "by": "gemini",
-        "note": "Verified all 54 Scribe mismatch groups, loudness/TP/runtime, and direct audio listening on 3 flagged phrases + 7 chapter"
+        "note": "Wrote jobs/reviews/J2164/REVIEW.md and updated 033 production-status.md and J2155_VO_REVIEW_v01.md"
       },
       "taskKeys": [
         "OWB:033"
