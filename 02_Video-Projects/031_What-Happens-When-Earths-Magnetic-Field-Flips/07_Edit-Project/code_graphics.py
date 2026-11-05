@@ -63,6 +63,9 @@ def main():
  if len(sys.argv)>1 and sys.argv[1]=='mechanisms':
   from mechanism_graphics import main as mechanisms
   return mechanisms(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='dynamo':
+  from dynamo_graphics import main as dynamo
+  return dynamo(sys.argv[2:])
  ap=argparse.ArgumentParser();ap.add_argument('mode',choices=['cards']);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--words',type=Path,default=HERE.parent/'02_Voiceover/stt/magnetic_field_flip_vo_v02a/stt_raw.json');ap.add_argument('--manifest',type=Path,required=True);ap.add_argument('--previews',action='store_true');a=ap.parse_args()
  cards=schedule(json.loads(a.words.read_text())['words']);a.out.mkdir(parents=True,exist_ok=True)
  for c in cards:
