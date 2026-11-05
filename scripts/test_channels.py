@@ -86,6 +86,26 @@ class Films(unittest.TestCase):
         self.assertTrue(owb[0][1].startswith("flow-"))
 
 
+class ThirdChannelOnTheBoard(unittest.TestCase):
+    def test_a_channel_added_by_folder_gets_video_cards(self):
+        import channel_films
+        import video_tracker as vt
+        base = channels._load()
+        sky = dict(json.loads((channels.DIR / "owb" / "channel.json").read_text()), slug="sky", label="SKY",
+                   name="Night Sky", short="Sky", home=False, order=3, title_match=r"\bSKY\b",
+                   pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        row = {"key": "SKY:001", "id": "001", "title": "Orion", "air": "2026-12-01", "stages": {}, "raw": {}}
+        with mock.patch.object(channels, "_load", lambda directory=None: base + (sky,)), \
+                mock.patch.object(channel_films, "films", side_effect=lambda slug, root=None: [row] if slug == "sky" else []):
+            channels.key_re.cache_clear()
+            try:
+                out = vt.build_from_docs({}, {}, {})
+            finally:
+                channels.key_re.cache_clear()
+        cards = [v for v in out.get("videos", []) if v.get("key") == "SKY:001"]
+        self.assertEqual([(c["channel"], c["title"], c["type"]) for c in cards], [("SKY", "Orion", "long")])
+
+
 class NoNewChannelNames(unittest.TestCase):
     """Engine files already moved to channels.py must not grow new literal channel regexes."""
     MOVED = ("jobs.py", "kanban_snapshot.py", "progress24.py", "video_progress.py", "workflow_state.py",

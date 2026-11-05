@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 
 from video_progress import job_targets
 import channels
+import channel_films
 
 ROOT = Path(__file__).resolve().parents[1]
 OVERRIDES = ROOT / "05_Analytics" / "kanban" / "video_overrides.json"
@@ -940,44 +941,47 @@ def build_videos(
 
     videos = []
 
-    # --- Longs: HOS ---
-    for f in hos.get("films") or []:
-        num = str(f.get("id") or "")
-        if not re.fullmatch(r"\d{3}", num):
-            continue
-        key = f"HOS:{num}"
-        title = f.get("title") or ""
-        # HOS UPLOADS.json read-back, attached by kanban_snapshot.attach_hos_uploads (OWB's own UPLOADS has no HOS rows).
-        up = f.get("upload") if isinstance(f.get("upload"), dict) and (f.get("upload") or {}).get("videoId") else None
-        rows = uploads.get(key) or ([{"file": "", **up}] if up else [])
-        hit = long_hit(key, "HOS", title, rows)
-        videos.append(_card(
-            key=key, channel="HOS", number=num, title=title,
-            vtype="long", air=f.get("air") or "", brief=briefs.get(key) or {},
-            release=None, upload_rows=rows,
-            jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
-            watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
-            public_vid=hit, public=public, public_at=public_at, held=held,
-        ))
+    # --- Longs: every channel in channels/*/channel.json (docs/MULTI_CHANNEL_PLAN.md phase 1) ---
+    # OWB and HOS come from the board docs as before; any other channel is read from its own checkout through
+    # channel_films, so a channel added by its folder gets cards with no change here.
+    def long_rows(slug: str):
+        """(num, title, air, release, upload_rows, use_public_title) per long film of one channel."""
+        label = channels.label(slug)
+        if slug == "hos":
+            for f in hos.get("films") or []:
+                num = str(f.get("id") or "")
+                # HOS UPLOADS.json read-back, attached by kanban_snapshot.attach_hos_uploads.
+                up = f.get("upload") if isinstance(f.get("upload"), dict) and (f.get("upload") or {}).get("videoId") else None
+                yield num, f.get("title") or "", f.get("air") or "", None, uploads.get(f"{label}:{num}") or ([{"file": "", **up}] if up else []), False
+        elif slug == channels.home():
+            for f in owb:
+                num = str(f.get("film") or "")
+                yield num, f.get("title") or titles.get(num) or "", f.get("air") or "", f.get("release"), uploads.get(f"{label}:{num}") or [], True
+        else:
+            try:
+                rows = channel_films.films(slug)
+            except Exception:  # noqa: BLE001  (a channel whose checkout isn't here yet shows nothing, never breaks the board)
+                rows = []
+            for f in rows:
+                yield f["id"], f["title"], f["air"], None, uploads.get(f["key"]) or [], True
 
-    # --- Longs: OWB ---
-    for f in owb:
-        num = str(f.get("film") or "")
-        if not re.fullmatch(r"\d{3}", num):
-            continue
-        key = f"OWB:{num}"
-        title = f.get("title") or titles.get(num) or ""
-        hit = long_hit(key, "OWB", title, uploads.get(key) or [])
-        if hit:
-            title = public[hit]["title"]  # what viewers actually see (021 was retitled on YouTube)
-        videos.append(_card(
-            key=key, channel="OWB", number=num, title=title,
-            vtype="long", air=f.get("air") or "", brief=briefs.get(key) or {},
-            release=f.get("release"), upload_rows=uploads.get(key) or [],
-            jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
-            watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
-            public_vid=hit, public=public, public_at=public_at, held=held,
-        ))
+    for slug in channels.slugs():
+        label = channels.label(slug)
+        for num, title, air, release, rows, use_public_title in long_rows(slug):
+            if not re.fullmatch(r"\d{3}", num):
+                continue
+            key = f"{label}:{num}"
+            hit = long_hit(key, label, title, rows)
+            if hit and use_public_title:
+                title = public[hit]["title"]  # what viewers actually see (021 was retitled on YouTube)
+            videos.append(_card(
+                key=key, channel=label, number=num, title=title,
+                vtype="long", air=air, brief=briefs.get(key) or {},
+                release=release, upload_rows=rows,
+                jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
+                watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
+                public_vid=hit, public=public, public_at=public_at, held=held,
+            ))
 
     # --- Shorts from UPLOADS (each Short its own card) ---
     for key, rows in uploads.items():
