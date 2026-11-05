@@ -81944,6 +81944,11 @@
           "at": "2026-11-05T23:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T23:23Z",
+          "by": "gemini",
+          "what": "step 0 of 2 done: Claimed J0936; verifying S1/S3/S4 v04 swaps (J1101-J1103) and S2/S5/S6 v07 Ben-OK'd masters (J1100/J2214)"
         }
       ],
       "kind": "video",
@@ -81953,11 +81958,11 @@
         "OWB:028"
       ],
       "progress": {
-        "step": 6,
-        "of": 6,
-        "at": "2026-10-26T12:53Z",
+        "step": 0,
+        "of": 2,
+        "at": "2026-11-05T23:23Z",
         "by": "gemini",
-        "note": "Six v03s reviewed: FIX all six; dependencies J0992 -> J0993; no approved replacement"
+        "note": "Claimed J0936; verifying S1/S3/S4 v04 swaps (J1101-J1103) and S2/S5/S6 v07 Ben-OK'd masters (J1100/J2214)"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -82012,7 +82017,8 @@
       ],
       "required_capabilities": [
         "audio_input"
-      ]
+      ],
+      "remaining_action": "Verify all 6 batch-C Shorts (S1/S3/S4 v04 swaps + S2/S5/S6 v07 Ben-OK'd masters) and reconcile J0936/J1100"
     },
     {
       "id": "J0937",
