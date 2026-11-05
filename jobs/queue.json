@@ -188314,13 +188314,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-05T19:35Z",
-      "eta": "2026-11-05T22:35Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T19:33Z",
-      "result": "",
+      "result": "parked for review: Short tool gates PASS. J2250 writes jobs/reviews/J2248/REVIEW.md KEEP or FIX. One WARN at 4.3s clock plate. Do not schedule; Mon 9 is iyvWYFP_ETA.",
       "history": [
         {
           "at": "2026-11-05T19:33Z",
@@ -188346,6 +188346,11 @@
           "at": "2026-11-05T19:56Z",
           "by": "cursor",
           "what": "step 4 of 4 done: Queued J2250. Cut stays unscheduled. Mon 9 is iyvWYFP_ETA."
+        },
+        {
+          "at": "2026-11-05T19:56Z",
+          "by": "cursor",
+          "what": "blocked: parked for review: Short tool gates PASS. J2250 writes jobs/reviews/J2248/REVIEW.md KEEP or FIX. One WARN at 4.3s clock plate. Do not schedule; Mon 9 is iyvWYFP_ETA."
         }
       ],
       "remaining_action": "Reviewer writes KEEP or FIX on J2250",
@@ -188360,7 +188365,12 @@
       },
       "taskKeys": [
         "OWB:024"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "parked for review: Short tool gates PASS. J2250 writes jobs/reviews/J2248/REVIEW.md KEEP or FIX. One WARN at 4.3s clock plate. Do not schedule; Mon 9 is iyvWYFP_ETA.",
+        "check_at": "2026-11-06T01:56:25+00:00"
+      }
     },
     {
       "id": "J2249",
