@@ -184816,18 +184816,23 @@
           "at": "2026-11-05T09:52Z",
           "by": "gemini",
           "what": "step 0 of 2 done: Claimed J2208; starting Mini-side shared folder verification and 256 MB write test"
+        },
+        {
+          "at": "2026-11-05T09:53Z",
+          "by": "gemini",
+          "what": "step 1 of 2 done: MacBook file from_macbook_20261105T0935Z.bin verified OK; wrote 256 MB from_mini_20261105T0953Z.bin + sha256 (19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4)"
         }
       ],
-      "remaining_action": "Run shared-folder test script on Mac mini (~/_desk/shared/_share_test)",
+      "remaining_action": "Record full shared-folder test output in J2208 result and mark done",
       "kind": "qa",
       "urgent": 1,
       "due": "2026-11-05T09:48Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 2,
-        "at": "2026-11-05T09:52Z",
+        "at": "2026-11-05T09:53Z",
         "by": "gemini",
-        "note": "Claimed J2208; starting Mini-side shared folder verification and 256 MB write test"
+        "note": "MacBook file from_macbook_20261105T0935Z.bin verified OK; wrote 256 MB from_mini_20261105T0953Z.bin + sha256 (19e3e57387"
       }
     },
     {
