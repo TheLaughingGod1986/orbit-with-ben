@@ -187708,7 +187708,7 @@
     {
       "id": "J2240",
       "title": "HOS 013 Darwin & Wallace (Thu 17 Dec): Shorts scripts v02 + upload package + shot list v01 (long script v02 & VO v03a locked)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Slotted Thu 17 Dec 2026 (J2231; active in jobs/WIP.json #541). Long script v02 (92.6 PASS, J0307), FACT_NOTES_v02 (30 OK, J0304) and long VO hos_013_vo_v03a (512.48 s, -19.5 LUFS, vo_check 0 fails, J1310) are locked in 02_Video-Projects/013_Darwin-Wallace-Evolution/. Write the two search-titled Shorts scripts (10_Shorts/SHORTS_SCRIPTS_v02.md, Test B, autocomplete-checked), build 11_Upload-Package/PACKAGE_MANIFEST.json + PRODUCTION_CHECKLIST_V2.md + Descriptions/darwin_long_description_v01.txt (with Sources from FACT_NOTES_v02.md and chapters timed to hos_013_vo_v03a: 0:00, 1:15, 2:51, 4:36, 6:06, 7:28) so lint:package -- --film 013 PASSes, draft 07_Edit-Project/SHOT_LIST_v01.md timed to hos_013_vo_v03a, and queue 013 Shorts VO (--kind vo).",
       "ref": "",
@@ -187728,11 +187728,25 @@
           "at": "2026-11-05T18:30Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T18:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 103 min (heartbeat 2026-11-05T16:52:20Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Write 013 Shorts scripts v02 + upload package (lint:package PASS) + shot list v01 and queue Shorts VO",
       "due": "2026-11-12T00:00:00Z",
-      "kind": "script"
+      "kind": "script",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
