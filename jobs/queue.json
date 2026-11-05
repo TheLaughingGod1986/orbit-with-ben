@@ -178955,10 +178955,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-05T19:18Z",
-      "eta": "2026-11-05T21:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "review J2198 KEEP (5 Nov): all 7 process stills keep; render r39/r40 under --review-ref J2198, use the five v02 MOVs; continue the harvest. Other holds unchanged.",
@@ -179232,6 +179232,11 @@
           "at": "2026-11-05T19:24Z",
           "by": "codex",
           "what": "step 1 of 4 done: PR538 checkpoint 2c9182cb31 adds R09 real-photo size draft, source records and 109-frame geometry/alpha/hash checks. J2247 queued for still and Mercury rights review. Existing 38 exports preserved; licensed harvest remains incomplete, so stays 1/4."
+        },
+        {
+          "at": "2026-11-05T19:25Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint 2c9182cb31 pushed to existing PR538. Original 1/4 retained. New R09 size draft and two NASA originals with metadata/hashes; full-size still inspected; 109 planned frame bounds/ratio/alpha checks and render guard verified. J2247 owns R09 still and Mercury rights ruling; no MOV rendered. Preserve all 38 earlier exports. J2177, frame0, Huygens reuse and APL Dragonfly rights holds unchanged. Remaining licensed harvest/real-body builds/composites exceed one run. Worktree /private/tmp/J2089-wt branch codex/J2089-size. No background process, spend, publishing or PASS."
         }
       ],
       "remaining_action": "Continue licensed harvest and remaining real-body graphics; render R09 after J2247",
