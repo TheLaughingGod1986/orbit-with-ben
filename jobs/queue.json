@@ -181788,9 +181788,14 @@
           "at": "2026-11-05T02:33Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected J2023 plan, J0979/J1000 constraints, J2089/J2090/J2150 picture state, and 032 status"
+        },
+        {
+          "at": "2026-11-05T02:40Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 032 locked VO s01-s05 (0.060-31.580s, 91w) as the unique eligible Test A opening EDL (32.80s master / 30.00s tightened) and identified exact missing J2089/master inputs"
         }
       ],
-      "remaining_action": "Audit locked 032 VO word timings, duplicate Shorts inventory, and Test A / chapter-lift EDL",
+      "remaining_action": "Write exact 032 Test A EDL and J2173 review reports in jobs/reviews/J2173/ and 032/10_Shorts/",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -181803,11 +181808,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-05T02:33Z",
+        "at": "2026-11-05T02:40Z",
         "by": "gemini",
-        "note": "Inspected J2023 plan, J0979/J1000 constraints, J2089/J2090/J2150 picture state, and 032 status"
+        "note": "Verified 032 locked VO s01-s05 (0.060-31.580s, 91w) as the unique eligible Test A opening EDL (32.80s master / 30.00s ti"
       },
       "taskKeys": [
         "OWB:032"
