@@ -162401,13 +162401,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-05T04:53Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "parked for Chief: exact-head code review ready on PR437 78e177fd565c18902d570157a184a4f05a7e22c9; no capacity enablement",
+      "result": "Claude acting Chief 5 Nov 08:3xZ: PR437 exact head 78e177fd56 merged (squash 08db8f1da1). Checked: merges clean with current main; full scripts suite on main+PR 860 tests OK (1 skipped) + studio_app.cjs OK; disabled path verified (OWB_CAPACITY_ENABLED unset -> serial_preflight yields None, production_tick None, finish(None) no-op), so live behaviour is unchanged until enablement. Enablement is J2038.",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162913,6 +162913,11 @@
           "at": "2026-11-05T05:08Z",
           "by": "codex",
           "what": "blocked: parked for Chief: exact-head code review ready on PR437 78e177fd565c18902d570157a184a4f05a7e22c9; no capacity enablement"
+        },
+        {
+          "at": "2026-11-05T08:33Z",
+          "by": "claude",
+          "what": "done: PR437 merged by acting Chief (capacity code, disabled by default)"
         }
       ],
       "remaining_action": "Review PR437 exact head 78e177fd56, then verify observed host rollout gates before enabling capacity",
@@ -175944,7 +175949,7 @@
       "title": "Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day)",
       "needs": "mini",
       "repo": "owb",
-      "body": "jobs/reviews/WORKFLOW_AUDIT_2026-11-04.md fix A (Ben, 4 Nov: continuous workflow, a video almost daily). The Mini sat idle 930-1,387 min/day 31 Oct-3 Nov with 70 Mini jobs open, because it runs one short job per wake, one agent at a time. J1843 / PR437 (+PR477) builds capacity-aware dispatch and is parked for an exact-head Chief review with rollout_enabled=False.\n1. Do the exact-head review of PR437 and PR477 now (tests: 313 focused + core_sync). Merge if green.\n2. Enable rollout with Codex and Gemini as two concurrent Mini lanes (no shared-file races: the claim/push-race tests cover this). Keep Studio-browser jobs to one lane at a time (one CDP browser).\n3. Let a woken agent take the next claimable job in its lane until its 25-min cap instead of exiting after one.\n4. Watch it for 2 h: board-data still publishing, no double claims, idle minutes falling. Post before/after idle minutes and jobs/hour on #478.\n",
+      "body": "jobs/reviews/WORKFLOW_AUDIT_2026-11-04.md fix A (Ben, 4 Nov: continuous workflow, a video almost daily). The Mini sat idle 930-1,387 min/day 31 Oct-3 Nov with 70 Mini jobs open, because it runs one short job per wake, one agent at a time. J1843 / PR437 (+PR477) builds capacity-aware dispatch and is parked for an exact-head Chief review with rollout_enabled=False.\n1. Do the exact-head review of PR437 and PR477 now (tests: 313 focused + core_sync). Merge if green.\n2. Enable rollout with Codex and Gemini as two concurrent Mini lanes (no shared-file races: the claim/push-race tests cover this). Keep Studio-browser jobs to one lane at a time (one CDP browser).\n3. Let a woken agent take the next claimable job in its lane until its 25-min cap instead of exiting after one.\n4. Watch it for 2 h: board-data still publishing, no double claims, idle minutes falling. Post before/after idle minutes and jobs/hour on #478.\n\n\nUPDATE 5 Nov (Claude acting Chief): PR437 is merged (capacity code on main, disabled). Remaining for enablement, in order: (1) on the Mini, create the owner-private OWB_CAPACITY_ROOT with dispatch.json (role mini, enabled true, approved_by/approval_ref = this job, cap_seconds ≤1200) and a dedicated queue checkout; (2) host registration/probes for the Mini (and the MacBook); (3) set OWB_CAPACITY_ENABLED=1 for the relay; (4) observe one supervised busy-serial tick that launches a second lane and exits cleanly, record evidence; (5) then the MacBook. Stop and record at any failed gate. No spend, publishing or Tailscale changes.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -175962,6 +175967,11 @@
           "at": "2026-11-04T17:22Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T08:33Z",
+          "by": "claude",
+          "what": "PR437 merged; enablement steps written into the job"
         }
       ],
       "remaining_action": "Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day)",
