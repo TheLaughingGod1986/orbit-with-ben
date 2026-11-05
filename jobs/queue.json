@@ -99968,10 +99968,10 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T23:30Z",
+      "eta": "2026-11-06T01:30Z",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
       "result": "Ben OK'd all three v07 Shorts on the board (5 Nov 12:52-12:53 London): S2 earth_equator_weight_v07, S5 028_short_fri04_scale_v07, S6 028_short_lift_night_sky_35yr_v07. Do the replacement swaps now under AGENTS.md (new copy private + scheduled at the same slot, old copy private + unscheduled, read-back JSON in jobs/readbacks/J1100.json), update UPLOADS.json and Buffer posts in the same job.",
@@ -101290,6 +101290,11 @@
           "at": "2026-11-05T23:28Z",
           "by": "gemini",
           "what": "approved by Ben: swap S6 X768qs8sNQs (028 night sky) to 028_short_lift_night_sky_35yr_v07 after Ben watch v07"
+        },
+        {
+          "at": "2026-11-05T23:30Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
