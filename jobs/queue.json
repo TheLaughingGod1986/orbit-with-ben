@@ -181575,17 +181575,22 @@
           "at": "2026-11-05T01:53Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2170; starting HOS 008 Short C paper hook resolution and plate inventory"
+        },
+        {
+          "at": "2026-11-05T01:57Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Audited J1004 Short C timing proof (4.840s raw / 3.509s pure speech at 1.06x > 2.85s), J1881/J2163 six-note corrections, and 008 FACT_NOTES_v01.md"
         }
       ],
-      "remaining_action": "Audit HOS 008 Short C files, J1004/J1881/J2163/J0912 history, and FACT_NOTES",
+      "remaining_action": "Inventory approved existing HOS 008 long plates and audio with SHA-256 hashes against J1881/J2163 and check duplicate public/scheduled Shorts",
       "due": "2026-11-10T18:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T01:53Z",
+        "at": "2026-11-05T01:57Z",
         "by": "gemini",
-        "note": "Claimed J2170; starting HOS 008 Short C paper hook resolution and plate inventory"
+        "note": "Audited J1004 Short C timing proof (4.840s raw / 3.509s pure speech at 1.06x > 2.85s), J1881/J2163 six-note corrections,"
       },
       "rerouted_from": {
         "needs": "any",
