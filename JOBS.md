@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2245 | mini | open (after J2239) | – | – | 011 vo · vo · HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02 |  |
 | J2246 | mini | open | – | – | 013 vo · vo · HOS 013 Darwin & Wallace: Shorts voiceover (2 v02 Shorts), vo_check, park for Chief |  |
 | J2247 | mini | open | – | – | 032 picture · review · 032 R09 diameter graphic: review still and Mercury source rights | 2c9182cb31 |
-| J2248 | mini | open | – | – | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
+| J2248 | mini | claimed | cursor | 2026-11-05T22:35Z | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
 
 Recently finished:
 
