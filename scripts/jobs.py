@@ -412,15 +412,31 @@ def require_chief(job, agent, at):
         raise ValueError("Chief authority changed: only the currently elected Chief may resume or complete this job; release or park it")
 
 
-def choose_next(data, agent, can, at, job_id=""):
+def choose_next(data, agent, can, at, job_id="", released=None):
+    """The job `agent` holds, else the next claimable one.
+
+    A held job this agent can't resume (an external hold, or a required capability it hasn't verified) no longer
+    parks the agent until the claim stalls (5 Nov 2026: Gemini sat on J1100, waiting for verified audio_input, while
+    urgent jobs waited about an hour). When `released` is a list, the held job goes back to open with a history
+    note, its progress kept, and is appended to the list; with `released=None` (peek and read-only callers) nothing
+    is changed. Either way the pick falls through to the normal queue order. A live execution lease on the held job
+    is never interrupted: the agent gets nothing until it ends.
+    """
     if not str(agent or "").strip():
         raise ValueError("A non-empty --agent is required")
     held = next((j for j in data["jobs"] if j.get("by") == agent and j["status"] == "claimed"), None)
     if held:
         require_chief(held, agent, at)
-        if workflow.external_hold(held,at) or workflow.capability_problem(held,agent,at,chief_relay.worker_capabilities()):
+        why = workflow.external_hold(held,at) or workflow.capability_problem(held,agent,at,chief_relay.worker_capabilities())
+        if not why:
+            return held if not job_id or held["id"] == job_id else None
+        execution = chief_relay.current_execution(at)
+        if execution and execution.get("job") == held["id"]:
             return None
-        return held if not job_id or held["id"] == job_id else None
+        if released is not None:
+            held.update(status="open", by="", since="", eta="")
+            log(held, at, agent, f"released: {agent} can't resume it ({why}); recorded progress kept")
+            released.append(held)
     return next((j for j in ordered(data, at) if (not job_id or j["id"] == job_id) and claimable(data,j,can,at,agent)), None)
 
 
@@ -451,8 +467,11 @@ def yield_monthly_for_request(data, request_id, owned, at):
         log(j, at, "relay", f"released: safe-boundary yield from {previous} for explicit user request {request_id}; recorded progress and private report work preserved")
     return [j["id"] for j in rows]
 
-def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None, job_id: str = "") -> dict | None:
-    job = choose_next(data,agent,can,at,job_id)
+def do_next(data: dict, agent: str, can: set[str], at: dt.datetime, eta_min: int | None = None, job_id: str = "",
+            released: list | None = None) -> dict | None:
+    """Claim the next job. A held job the agent can't resume is released first (see choose_next); pass a list as
+    `released` to learn which, e.g. to free its board stage."""
+    job = choose_next(data,agent,can,at,job_id,[] if released is None else released)
     if not job:
         return job
     # A claim always has an explicit baseline. This records no completed work;
@@ -1018,7 +1037,12 @@ def main(argv=None) -> int:
                 if args.peek:
                     job = choose_next(data,args.agent,can,at,args.id)
                     return job, None, touched
-                job = do_next(data, args.agent, can, at, args.eta, args.id)
+                released = []
+                job = do_next(data, args.agent, can, at, args.eta, args.id, released)
+                for r in released:
+                    board_release(r, args.agent, "doing")
+                    if on_board(r):
+                        touched.append(film_status_path(r))
                 if job and on_board(job) and job["history"][-1]["what"].startswith("claimed"):
                     err = board_claim(job, args.agent, at)
                     if err:
