@@ -112,9 +112,9 @@ No Kling, Seedance or ElevenLabs Image & Video.
 - **Frame sizes** (`YOUTUBE_FRAME_SIZES.md`): long 1920×1080 MP4; Short 1080×1920; long thumbnail file 1280×720.
 - **Picture QA (Ben, 8 Oct):** `scripts/picture_qa.py` must PASS before Claude's review. It catches computer models, diagrams and labelled images, soft upscales, reused pictures and polish_gate's checks, each at its film time (m:ss); Claude looks at every WARN full size. Rules: AGENTS.md lesson 7.
 
-### Picture QA terminal-loop contract (J2178 scope, proposed 5 Nov 2026)
+### Picture QA terminal-loop contract (J2178 scope, accepted J2182, 5 Nov 2026)
 
-This implementation proposal requires the separate elected-Chief system review J2180 before production use (J2182 re-review after J2180 FIX). Evidence: HOS PR413 at `e3410b07`, J2169 body repeats and the prescribed one-second return in BUILD_RULE_v02. It does not approve that recipe or reopen its render job.
+Acting-Chief Codex accepted the checker in J2182 after J2180 FIX: PR513 head `17b2ac5550`, merged as `e6d133d44d2f1946367b712607c7fa130b352996` on 5 Nov 2026. This is checker acceptance only; mapping review and every rendered gate remain required. Evidence: HOS PR413 at `e3410b07`, J2169 body repeats and the prescribed one-second return in BUILD_RULE_v02. It does not approve that recipe or reopen its render job.
 
 `picture_qa.py --terminal-loop contract.json` opts into a single prescribed return. Without the option, existing long and Short behavior is unchanged. This is not a general reuse override: in terminal-loop mode `--reviewed-ok` cannot waive reuse or a terminal-contract failure. Legacy review behavior without the option remains unchanged. Every row remains in the report. Body repeats, within-run replay, picture-kind, upscale and pixel checks still apply.
 
