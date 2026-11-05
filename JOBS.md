@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2200 | mini | open | – | – | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
 | J2201 | mini | open | – | – | 006 edit · assembly · HOS 006: GBP0 native1080 existing-media inventory for Short B/C gaps |  |
 | J2202 | mini | open | – | – | assembly · URG-HOS-1: monthly Studio Reach window capture + studio_ctr archive |  |
+| J2203 | mini | open | – | – | assembly · HOS-2026-11-E1: write anomaly-first Short open rules into studio Shorts gates |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 2203,
+  "next_id": 2204,
   "jobs": [
     {
       "id": "J0001",
@@ -184538,6 +184538,34 @@
       ],
       "remaining_action": "Implement monthly Studio Reach capture + 1st-of-month studio_ctr archive; £0",
       "due": "2026-12-01T09:00:00Z",
+      "kind": "assembly"
+    },
+    {
+      "id": "J2203",
+      "title": "HOS-2026-11-E1: write anomaly-first Short open rules into studio Shorts gates",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief h47 APPROVED experiment HOS-2026-11-E1 (no new spend authorization beyond already-approved film work).\n\nOn every new HOS Short for films 008–010 (6 Shorts under Test B):\n1) Open 0.0–2.0s directly on the physical contradiction/question in spoken words 1–4 over immediate subject motion; ban \"In <year>,\" or biographer-name openings before 0:03.\n2) Cut shot1→shot2 between 1.8–2.5s; shot2→shot3 before 4.5s; no still/single plate held >3.5s in first 8s; zero VO pauses >0.25s in 0–5s.\n3) Keep 22–25s duration, >=70% payoff start, <1.2s loop tail.\n\nWrite these into studio Shorts build rules / LEARNINGS so assemblers read them. Coordinate with J1004 / gate_shorts_open. Primary success: mature (>=48h, >=100 Studio views) Stayed-to-Watch mean >=50% with >=2 Shorts hitting >=60%; guardrail APV >=75%. Readout 2026-12-03. Stop if first 3 >=100v Shorts drop APV <65% while stayed <40%.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T09:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:22Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Encode E1 timing rules into Shorts build/LEARNINGS; apply on 008-010 Shorts",
       "kind": "assembly"
     }
   ],
