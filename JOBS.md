@@ -57,7 +57,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
 | J2162 | cloud | open (after J2161) | – | – | review · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
-| J2165 | mini | claimed | macbook | 2026-11-05T19:30Z | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance | jobs/reviews/J2164/REVIEW.md |
 | J2166 | mini | open | – | – | 031 thumbs · for gemini · review · `gemini-argon` · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 | J2169 | mini | blocked | chief | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
