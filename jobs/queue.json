@@ -186515,7 +186515,7 @@
     {
       "id": "J2226",
       "title": "Verify condition for J2033",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2033: HOS PR408 tab-reuse merged e908c3e2. Generation blocked until separately tested tranche-2 runner (J2200) gets Chief system PASS: v05-only rows, parents first, GENERATED/PENDING_REVIEW not auto-KEEP, J2026 locks/price/floor/batch caps. 0/20 generated, zero spend. Do not run tranche1 runner.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2033 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -186535,13 +186535,27 @@
           "at": "2026-11-05T15:43Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T15:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Await tested tranche2 runner J2200 Chief PASS; then resume mint under J2026 caps",
       "kind": "review",
       "recheck_of": "J2033",
       "due": "2026-11-05T16:43:18+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
