@@ -89,10 +89,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2160 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2161 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2162 | cloud | open (after J2161) | – | – | review · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
-| J2163 | mini | claimed | codex | 2026-11-05T01:54Z | 008 edit · assembly · HOS008: repair Franklin correction recipe timing, preservation and teaching labels | J1881 / HOS PR409 bd530249 / original six-note review |
 
 Recently finished:
 
+- J2163 done: HOS008: repair Franklin correction recipe timing, preservation and teaching labels (Code/evidence repair delivered for J1881 in HOS PR411, commit50620e40.11 tests pass; actual master PTS and four source hashes/decode verified. Read-only planner refuses execution; output sync/identity UNMEASURED. All six notes unresolved; separate PTS/GOP implementation, master-word alignment and two exact-match assets need Chief scope. GBP0; no render, publication or YouTube changes.)
 - J2151 done: MacBook setup test: gemini (MacBook test OK: agy, Gemini 4 Argon (High), Bens-MacBook-Pro.local)
 - J2150 done: 032 J2089: review 18 DATA stills and resolve remaining harvest conflicts (jobs/reviews/J2150/REVIEW.md: 14 DATA stills KEEP, 4 CHANGE (r04 title, r28/r29 'BIGGEST DROPS', r39 oxygen-only); all 18 may render after changes (ref J2150). R25 -> PIA07232 inset; R38 PIA19051 reconstruction dropped -> PIA14584; R50 Sinlap-only crop or map-pin fallback; ESA Huygens reconstruction movie not used.)
 - J2149 done: 034 topic + script: rule-E review (WIP film, new reference-channel rules) (Rule-E GO (jobs/reviews/J2149/REVIEW.md, commit c2082a4884): 12 Pluto neighbours verified (1.03M-21.20M views, led by NASA 21.20M & Astrum 18.43M D5XPuS-Y0fg), zero OWB/HOS duplicates; script v02 polished (1,291 spoken words, review:script PASS 95.8/100, gate:episode PASS, 15/15 SOURCES rows verified live in CLAUDE_QUOTE_CHECK_v01.md); rules 18/19/20 recorded (Real Worlds series, real-imagery titles, PIA20291/PIA19952 single real frame thumb); 034 topic/script/sources set to done and VO job queued.)
@@ -102,4 +102,3 @@ Recently finished:
 - J2139 cancelled: Chief: resolve 061 script orphan-blocked ()
 - J2138 cancelled: Chief: resolve 061 topic orphan-review ()
 - J2137 cancelled: Chief: resolve 060 sources orphan-review ()
-- J2136 cancelled: Chief: resolve 060 script orphan-blocked ()

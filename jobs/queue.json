@@ -180548,13 +180548,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T23:54Z",
-      "eta": "2026-11-05T01:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T23:49Z",
-      "result": "",
+      "result": "Code/evidence repair delivered for J1881 in HOS PR411, commit50620e40.11 tests pass; actual master PTS and four source hashes/decode verified. Read-only planner refuses execution; output sync/identity UNMEASURED. All six notes unresolved; separate PTS/GOP implementation, master-word alignment and two exact-match assets need Chief scope. GBP0; no render, publication or YouTube changes.",
       "history": [
         {
           "at": "2026-11-04T23:49Z",
@@ -180590,6 +180590,11 @@
           "at": "2026-11-05T00:01Z",
           "by": "codex",
           "what": "step 4 of 4 done: Delivered commit50620e40 / HOS PR411: actual full PTS evidence, conditional six-row manifest, four input checks, honest dry-run,11 tests and updated production records. No render/spend/YouTube change; six notes unresolved."
+        },
+        {
+          "at": "2026-11-05T00:02Z",
+          "by": "codex",
+          "what": "done: Code/evidence repair delivered for J1881 in HOS PR411, commit50620e40.11 tests pass; actual master PTS and four source hashes/decode verified. Read-only planner refuses execution; output sync/identity UNMEASURED. All six notes unresolved; separate PTS/GOP implementation, master-word alignment and two exact-match assets need Chief scope. GBP0; no render, publication or YouTube changes."
         }
       ],
       "remaining_action": "J1881 reviews repaired Franklin plan in HOS PR411 before separate production scope",
@@ -180604,7 +180609,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/411"
     }
   ],
   "focus": [],
