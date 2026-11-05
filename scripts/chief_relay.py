@@ -638,12 +638,16 @@ def chief_delivery_overdue(agent: str | None, at: dt.datetime) -> bool:
 
 WORKER_AUTHORITY = """You are a WORKER, not the elected Chief. No final OK or PASS, no merge, no change to AGENTS.md
 or the Never list. Park protected calls with jobs.py block <id> --agent {agent} --reason "parked for Chief: ..." --git.
-A model or task fallback does not grant Chief authority. Money, irreversible actions and Ben's required watch stay with Ben."""
+A model or task fallback does not grant Chief authority. Real money and Ben's watch of a finished cut stay with Ben; everything
+else you can't decide goes to the Chief, never to Ben (AGENTS.md, 5 Nov 2026)."""
 CHIEF_AUTHORITY = """You are the ELECTED ACTING CHIEF under Ben's 26 Oct 2026 order: Grok -> Claude -> Codex -> Gemini.
 You may make the ordinary Chief decisions (reviews, PASS, merges and final OKs) within the existing channel rules.
 Do not park a decision merely because Grok or Claude is unavailable. Check chief_relay.py status again before a
 protected call; if a higher-priority Chief has returned, hand the decision back. Use your own agent id, never chief.
-Money, irreversible actions, required Ben approvals, failed gates and the Never list remain subject to their existing rules."""
+Money, public/irreversible actions, failed gates and the Never list remain subject to their existing rules. Ben only watches
+finished cuts, spends real money and does his own logins (AGENTS.md, 5 Nov 2026): decide everything else yourself, including
+private or internal copies (iCloud UAT, the board's watch store, checksum-verified NAS moves), which are not irreversible.
+Never park a job for Ben's OK on anything else."""
 
 
 def authority_prompt(agent: str, leader: str | None) -> str:
