@@ -11,7 +11,7 @@
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
   const QUIET_MIN = 75;  // the relay checks in every 10-20 min; this long without it, the Mac mini is quiet
-  const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook" };
+  const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook", "macbook-2": "MacBook 2" };
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
   let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all";
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
@@ -622,7 +622,7 @@
     });
     const activeRunning=fresh?running:freshRunning, operationalFresh=fresh || freshRunning.length>0;
     const degraded=!fresh || (models.models||[]).some(m=>['red','amber'].includes(m.status));
-    const agents=(models.models||[]).filter(m=>AGENTS[m.id] && m.id!=='macbook');
+    const agents=(models.models||[]).filter(m=>AGENTS[m.id] && !String(m.id).startsWith('macbook'));
     const noCapacity=queued.length>0 && agents.length>0 && agents.every(m=>m.status==='red');
     const startupUnconfirmed=all.some(j=>j.phase==='starting'&&jobState(j)==='stalled');
     const status=!operationalFresh || startupUnconfirmed ? {text:'Attention needed',tone:'red'} : activeRunning.length ? {text:activeRunning.every(j=>j.phase==='starting')?'Starting':degraded?'Running · Limited':'Running',tone:degraded?'amber':'green'}

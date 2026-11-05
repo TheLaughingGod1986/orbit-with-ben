@@ -79,8 +79,9 @@ class Guards(unittest.TestCase):
         self.assertEqual(mw.claimed_job("jobs: nothing waiting for you"), "")
 
     def test_prompt_names_the_job_and_the_local_model_limits(self):
-        p = mw.PROMPT.format(job="J1102", owb="/o", hos="/h", model="qwen3:14b", cap_min=25)
+        p = mw.PROMPT.format(job="J1102", agent="macbook-2", owb="/o", hos="/h", model="qwen3:14b", cap_min=25)
         self.assertIn("jobs.py show J1102", p)
+        self.assertIn("jobs.py done J1102 --agent macbook-2", p)
         self.assertIn("127.0.0.1:11434", p)
         self.assertIn("Never scripts, facts or anything spoken", p)
 
@@ -264,6 +265,52 @@ class AddressedJobs(unittest.TestCase):
     def test_a_job_for_one_agent_runs_that_agents_cli(self):
         self.assertEqual(mw.pick_agent({"kind": "script", "for": "gemini"}, ["codex", "gemini", "claude"])[0], "gemini")
         self.assertEqual(mw.pick_agent({"kind": "script", "for": "cursor"}, ["codex"])[0], "codex")  # not installed: chain
+
+
+
+class TwoSlots(unittest.TestCase):
+    """Ben, 5 Nov 2026: two jobs at once on the MacBook Pro, one on the Mini, one in the cloud."""
+
+    def test_slot_one_starts_slot_two_in_its_own_clones(self):
+        calls = []
+        with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2), \
+                mock.patch.object(mw, "HOME", pathlib.Path(tempfile.mkdtemp())), \
+                mock.patch.dict(os.environ, {"OWB_CAPACITY_ENABLED": ""}):
+            self.assertEqual(mw.start_other_slots(popen=lambda cmd, **kw: calls.append(kw["env"]), system="Darwin"), [2])
+        env = calls[0]
+        self.assertEqual(env["MACBOOK_SLOT"], "2")
+        self.assertTrue(env["OWB_REPO"].endswith("worker/slot2/orbit-with-ben"))
+        self.assertTrue(env["HOS_REPO"].endswith("worker/slot2/history-of-science"))
+
+    def test_no_second_slot_off_the_mac_from_slot_two_or_in_capacity_mode(self):
+        never = lambda *a, **k: self.fail("started a slot")  # noqa: E731
+        with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2):
+            self.assertEqual(mw.start_other_slots(popen=never, system="Linux"), [])
+            with mock.patch.dict(os.environ, {"OWB_CAPACITY_ENABLED": "1"}):
+                self.assertEqual(mw.start_other_slots(popen=never, system="Darwin"), [])
+        with mock.patch.object(mw, "SLOT", 2):
+            self.assertEqual(mw.start_other_slots(popen=never, system="Darwin"), [])
+
+    def test_each_slot_has_its_own_id_lock_heartbeat_and_clone(self):
+        self.assertEqual((mw.slot_name(1, "macbook"), mw.slot_name(2, "macbook")), ("macbook", "macbook-2"))
+        self.assertEqual(mw.slot_name(2, "macbook-heartbeat"), "macbook-heartbeat-2")
+        self.assertEqual(mw.slot_dir(2), mw.WORKER_DIR / "slot2")
+        self.assertEqual(mw.slot_dir(1), mw.WORKER_DIR)
+
+    def test_slot_two_waits_while_the_machine_is_busy(self):
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "STATE", pathlib.Path(t)), \
+                mock.patch.object(mw, "SLOT", 2), mock.patch.object(mw.os, "cpu_count", return_value=10):
+            self.assertEqual(mw.guards(AC, IDLE_20, free_gb=100, now=WED_NIGHT, load=3.0), [])
+            self.assertIn("slot 2 waits", " ".join(mw.guards(AC, IDLE_20, free_gb=100, now=WED_NIGHT, load=7.0)))
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "STATE", pathlib.Path(t)), \
+                mock.patch.object(mw, "SLOT", 1):
+            self.assertEqual(mw.guards(AC, IDLE_20, free_gb=100, now=WED_NIGHT, load=50.0), [])  # slot 1 never
+
+    def test_slot_two_claims_macbook_jobs_like_slot_one(self):
+        j = {"id": "J0001", "title": "t", "needs": "macbook", "status": "open", "history": []}
+        self.assertTrue(jobs.is_macbook("macbook-2") and jobs.is_macbook("macbook"))
+        self.assertFalse(jobs.is_macbook("macbookish") or jobs.is_macbook("codex"))
+        self.assertTrue(jobs.claimable({"jobs": [j]}, j, {"macbook", "any"}, T0, "macbook-2"))
 
 
 if __name__ == "__main__":

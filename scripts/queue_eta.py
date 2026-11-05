@@ -24,8 +24,18 @@ PACE = dt.timedelta(hours=24)
 CLOUD_EVERY = 60          # Claude's cloud run is hourly at :50
 MACBOOK_FRESH = dt.timedelta(minutes=40)
 CAN = {"cursor": {"mini", "any"}, "codex": {"mini", "any"}, "gemini": {"mini", "any", "gemini"},
-       "macbook": {"macbook", "any"}, "claude": {"cloud", "any"}}
-MACHINE = {"cursor": "mini", "codex": "mini", "gemini": "mini", "macbook": "macbook", "claude": "cloud"}
+       "macbook": {"macbook", "any"}, "macbook-2": {"macbook", "any"}, "claude": {"cloud", "any"}}
+MACHINE = {"cursor": "mini", "codex": "mini", "gemini": "mini", "macbook": "macbook", "macbook-2": "macbook",
+           "claude": "cloud"}
+MACBOOK_SLOTS = ("macbook", "macbook-2")  # two jobs at once on the MacBook Pro (Ben, 5 Nov 2026)
+
+
+def macbook_slot(macbook_hb: dict | None, agent: str) -> dict | None:
+    """That slot's own heartbeat: from the merged `slots` list, else the single heartbeat counts as slot 1."""
+    slots = (macbook_hb or {}).get("slots")
+    if slots is None:
+        return macbook_hb if agent == "macbook" else None
+    return next((s for s in slots if isinstance(s, dict) and (s.get("agent") or "macbook") == agent), None)
 MAX_FORECAST = 80
 CHIEF_CHAIN = {"chief", "claude", "codex", "gemini"}  # Ben, 26 Oct 2026: who can be Chief; Cursor is a worker only         # jobs; beyond that the times mean nothing
 
@@ -79,12 +89,15 @@ def agents_up(mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime) ->
         # The heartbeat's chain is the Chief chain (Grok, Claude, Codex, Gemini); a worker missing from it (Cursor) is
         # up unless a down mark or credit flag says otherwise (5 Nov 2026: Cursor showed "not in the Mini's chain").
         out[a] = (why or ("" if r or a not in CHIEF_CHAIN else "not in the Mini's chain"))[:120]
-    seen = _t((macbook_hb or {}).get("at"))
-    why = (macbook_hb or {}).get("why") or []
-    why = "; ".join(why) if isinstance(why, list) else str(why)
-    # A MacBook waiting on its guards (in use, on battery) takes no job now: say so rather than promise a start.
-    out["macbook"] = ("no MacBook heartbeat in 40 min" if not (seen and at - seen <= MACBOOK_FRESH) else
-                      why[:120] if (macbook_hb or {}).get("state") == "waiting" and why else "")
+    for a in MACBOOK_SLOTS:
+        hb = macbook_slot(macbook_hb, a)
+        seen = _t((hb or {}).get("at"))
+        why = (hb or {}).get("why") or []
+        why = "; ".join(why) if isinstance(why, list) else str(why)
+        # A MacBook waiting on its guards (in use, on battery) takes no job now: say so rather than promise a start.
+        out[a] = ((f"no heartbeat from MacBook slot {a[-1]} in 40 min" if a != "macbook" else
+                   "no MacBook heartbeat in 40 min") if not (seen and at - seen <= MACBOOK_FRESH) else
+                  why[:120] if (hb or {}).get("state") == "waiting" and why else "")
     # Cloud Claude: down when the relay has it down (e.g. a missed Chief inbox), else up.
     r = rows.get("claude")
     out["claude"] = str(r.get("why") or "marked down by the relay")[:120] if r and not r.get("up") else ""
@@ -129,9 +142,11 @@ def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.d
         if a in lanes and not lanes[a]["now"]:
             lanes[a]["now"] = woke.group(2)
             free[a] = max(free[a], hb_at + est[a], at + dt.timedelta(minutes=MIN_MIN))
-    if (macbook_hb or {}).get("job"):
-        lanes["macbook"]["now"] = lanes["macbook"]["now"] or str(macbook_hb["job"])
-        free["macbook"] = max(free["macbook"], at + dt.timedelta(minutes=MIN_MIN))
+    for a in MACBOOK_SLOTS:
+        hb = macbook_slot(macbook_hb, a)
+        if (hb or {}).get("job"):
+            lanes[a]["now"] = lanes[a]["now"] or str(hb["job"])
+            free[a] = max(free[a], at + dt.timedelta(minutes=MIN_MIN))
     free["claude"] = max(free["claude"], _next_cloud_run(at))
     for a in lanes:
         lanes[a]["freeAt"] = _iso(free[a])  # when its current job should end (or now)
