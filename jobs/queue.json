@@ -167027,9 +167027,14 @@
           "at": "2026-11-05T07:24Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J0862 history, J1004/PR366, Ben 4 Nov desk ruling 6631275536, J2023/J2171/J2172, and 009/010 Shorts scripts and plans"
+        },
+        {
+          "at": "2026-11-05T07:33Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified SHA-256 and vo_check_py312.sh PASS on all 4 vo_v02 takes; proved 11-spoken-word replacement hook + 4-word 5m scale beat fits <=2.85s hook and 22-27s total duration"
         }
       ],
-      "remaining_action": "Verify tool-provable facts, timings, and hashes for HOS 009/010 Shorts vo_v02 and check 009 Short B replacement opening options",
+      "remaining_action": "Write jobs/reviews/J1894/REVIEW.md with KEEP/FIX verdicts, SHA-256/vo_check evidence, and approved 009 Short B v03 opening and 1-take scope",
       "kind": "review",
       "recheck_of": "J0862",
       "due": "2026-11-03T22:24:26+00:00",
@@ -167048,11 +167053,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-05T07:24Z",
+        "at": "2026-11-05T07:33Z",
         "by": "gemini",
-        "note": "Read J0862 history, J1004/PR366, Ben 4 Nov desk ruling 6631275536, J2023/J2171/J2172, and 009/010 Shorts scripts and pla"
+        "note": "Verified SHA-256 and vo_check_py312.sh PASS on all 4 vo_v02 takes; proved 11-spoken-word replacement hook + 4-word 5m sc"
       },
       "taskKeys": [
         "HOS:009",
