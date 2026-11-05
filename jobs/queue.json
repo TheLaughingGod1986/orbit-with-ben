@@ -162271,10 +162271,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-05T00:54Z",
+      "eta": "2026-11-05T02:54Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
       "result": "Chief FIX: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6646530463; repair Chief/serial starvation and legacy laptop shared-account occupancy; no merge/rollout.",
@@ -162678,6 +162678,11 @@
           "at": "2026-11-05T00:53Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6.1-sol: Codex covering — J1843 exact-head Chief review: FIX. No merge or capacity enablement.\n\nReviewed PR437 head 17df4129184a6082f8c889864148fed5e55182fa, original body/result/history and implementation evidence. The previous missing-callers and red-CI findings are resolved. Rules run 41941094031 and core run 41941093965 are green. Independently ran all 111 test*capacity*.py tests with process visibility: PASS. Two additional bounded, synthetic reproductions reveal release blockers:\n\n1. Chief/serial starvation: chief_relay.run_locked calls capacity_tick before election, duty reconciliation and canonical dispatch, then returns for every non-None result. capacity_caller returns capacity_waiting when no eligible CPU candidate exists. Reproduced with capacity_tick returning capacity_waiting: run_locked returns 0 and acting is never called. Thus enabling capacity can suppress all Chief reviews and ordinary production even with nothing launched. Missing/stale opt-in configuration similarly consumes every tick. Repair by preserving Chief reconciliation/priority and distinguishing no reservation/no launch from occupied or uncertain attempts. Allow safe serial continuation only after authoritative occupancy checks; never blindly fall through on an uncertain launch.\n\n2. Shared-account occupancy gap for legacy laptop work: Mini caller loads peer evidence only for role=macbook. A normal laptop claim has by=macbook and no dispatch_reservation/account, so planner busy_workers excludes macbook but does not occupy its actual Codex pool. Reproduced capacity_reservations.reserve with a nonstalled legacy macbook claim, a ready Mini Codex worker and shared account limit=1: it reserves J1834 on account shared. No positive laptop exit/account proof was supplied. Fix with fresh registered peer process/account evidence for BOTH directions, including ordinary laptop executions, or conservatively reject capacity while any such claim is unattributed. Add transition/race tests: legacy laptop Codex running -> Mini denied; missing/stale peer evidence denied; positively reconciled exit -> eligible; canonical capacity reservations still occupy the same account.\n\nNext: resume SAME J1843 and PR437 as code work, Codex/gpt-6.1-sol (normal specialist fallback applies), preserving worker plan 2/3. Fix both findings, add caller-level regression tests, synchronize main and return exact head with green CI for elected-Chief review. No duplicate task and no artificial date wait: this engineering is ready now. No host provisioning/enablement authorized by this ruling. After code PASS, observed real-host transitions and identity/account/model/capability evidence remain separate release gates. If device access later creates a real external wait, record its concrete condition and future verification date then.\n\nCurrent observation: configured Mini lanes=1, this review is the sole process-visible execution; private registration/probes absent and cached laptop heartbeat stale, capacity unverified. Availability/free-slot time unknown. Both repos pulled; HOS inbox empty. No direct audio/moving-video capability demonstrated. Required NAS offload found no eligible old scratch; roughly 16 GB remains free. No NAS deletions, credit spend, media or publishing changes.\n\nReview: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6646530463"
+        },
+        {
+          "at": "2026-11-05T00:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix Chief/serial dispatch starvation and legacy laptop shared-account occupancy; add regressions and return PR437 for exact-head review",
