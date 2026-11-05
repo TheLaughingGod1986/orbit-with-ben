@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2176 | mini | blocked | codex | – | 032 thumbs · thumb · 032 J2144 FIX: Titan hero crop and clear lander typography |  |
 | J2177 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
 | J2178 | any | claimed | codex | 2026-11-05T05:31Z | chief · HOS 006: resolve J2169 loop/reuse gate conflict and exact picture repairs | https://github.com/TheLaughingGod1986/history-of-science/pull/413 |
+| J2179 | any | open | – | – | assembly · HOS006 prerequisite: narrowly classify prescribed terminal Shorts loops in picture QA | J2178 |
 
 Recently finished:
 

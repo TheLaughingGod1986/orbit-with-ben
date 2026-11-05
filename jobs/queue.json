@@ -1,5 +1,5 @@
 {
-  "next_id": 2179,
+  "next_id": 2180,
   "jobs": [
     {
       "id": "J0001",
@@ -182296,6 +182296,35 @@
       "taskKeys": [
         "HOS:006"
       ]
+    },
+    {
+      "id": "J2179",
+      "title": "HOS006 prerequisite: narrowly classify prescribed terminal Shorts loops in picture QA",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2178 acting-Chief Codex scope, 5 Nov 2026. GBP0 system-change PR only. Resolve the demonstrated conflict between HOS006 BUILD_RULE_v02 one-second terminal return to frame0 and OWB scripts/picture_qa.py SAME_STRETCH=10. Evidence HOS PR413 e3410b07, jobs/reviews/J2169; decision HOS branch codex/J2178-decision jobs/reviews/J2178/REVIEW.md. This is not a waived gate or permission to render J2169.\nImplement in a clean OWB branch a narrow opt-in prescribed-Short terminal-loop contract. Default behavior including all long films stays unchanged. Only one explicitly declared final loop row, <=1.0s, after the recorded last VO word, within a verified 22-27s Short, referencing the actual opening source/sha256, with explicit finite source in/out, duration bounds and matching framing, may be classified as the intentional return rather than accidental repetition. Do not exempt by row name alone or a caller-supplied boolean. All rows remain in the report; explain the accepted loop classification and evidence. Invalid/missing declarations fail closed. Keep source identity and actual source frames honest; no path aliases or re-encodes as new footage. All body same-stretch, within-run replay, sharpness, picture-kind and pixel failures remain in force. No generic reviewed-ok reuse override. Validate source interval and opening/ending frame correspondence; source-only QA must report what remains unverified until rendered loop checks. Do not claim seamless motion from stills. Avoid making final-render verification impossible at source-preflight stage.\nRegression cases: opt-out legacy behavior; valid terminal return; false role/body row; multiple or non-terminal loops; >1s; VO overlap; wrong source/hash/framing; invalid/NaN/out-of-range offsets; short outside22-27s; missing evidence; body repeats still fail. With the J2169 fixture only B loop_tail and C loop_tail become eligible for intentional-loop classification; B S04/S05 and C S05 still FAIL. No unconditional PASS for the existing fixture.\nRead and align existing docs-in-force plus their Cursor rule in the same proposed change if contract documentation needs updating. Author edits to rules are proposals only until elected-Chief review. Check studio-core/CORE_FILES.json; if listed, change only in OWB and use core_sync lock/push with both repo commits as required. No money, generation, NAS changes, production stages or YouTube/Buffer writes. Open PR, run meaningful regression tests, retain exact commit/test output, then mark implementation delivered for the linked elected-Chief system review. Do not merge your own change or reopen J2169. Link progress HOS:006. Target6Nov18:00Z.\n",
+      "ref": "J2178",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T03:35Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Implement and test an opt-in terminal-loop contract without relaxing body reuse checks",
+      "due": "2026-11-06T18:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
