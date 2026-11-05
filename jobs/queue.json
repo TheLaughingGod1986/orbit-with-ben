@@ -7519,10 +7519,14 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "condition recorded; next verification 2026-11-08T18:05:00Z"
+        },
+        {
+          "at": "2026-11-05T00:31Z",
+          "by": "claude",
+          "what": "unpinned from Cursor (out of weekly usage to 6 Nov): any Studio worker takes it"
         }
       ],
       "kind": "studio",
-      "model": "cursor-auto",
       "remaining_action": "Add the Related link to the Mars long video",
       "hold": {
         "type": "public",
@@ -180288,7 +180292,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -180320,6 +180324,11 @@
           "at": "2026-11-05T00:29Z",
           "by": "macbook",
           "what": "released: MacBook worker run ended (exit 1) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-05T00:31Z",
+          "by": "claude",
+          "what": "cancelled: Cursor is out of weekly usage until 6 Nov (MacBook log 23:57Z); its sign-in on the MacBook is fine, the lane is retested after the reset"
         }
       ],
       "remaining_action": "MacBook setup test: cursor",
@@ -180663,7 +180672,7 @@
     },
     {
       "id": "J2161",
-      "title": "Packaging panel (cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
+      "title": "Packaging panel (stand-in for Cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
       "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required** (Ben, 14 Oct 2026: other models critique titles, thumbnails and packaging before the Chief passes them).\n\nYou are one of three independent critics. Don't read the other critics' files in `05_Analytics/tests/panels/owb-032-j2144/`.\n\nLook at:\n- `https://github.com/TheLaughingGod1986/orbit-with-ben/tree/codex/j2144-thumbnails/jobs/reviews/J2144`\n- `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/MANIFEST.json`\n- `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/PHONE_PREVIEW.jpg`\n- `02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/11_Upload-Package/metadata_DRAFT_v01.json`\n\nScore each 1–10 and give **one concrete rewrite** for anything under 8:\n1. **Title:** curiosity gap, clarity, would someone type it (search), under about 60 characters, no clickbait we can't pay off.\n2. **Thumbnail at phone size** (look at it at 168×94): one subject, a clear emotion or danger, 2–3 words at most, strong contrast,\n   readable, and nothing important under the bottom-right duration badge.\n3. **Title + thumbnail together:** do they add to each other, or repeat the same words?\n4. **First 30 seconds / Short hook** (when a script or cut is given): does it answer or sharpen the promise at once?\n5. **Description first line and chapters:** do they work for search without spoiling the payoff?\nThen: **\"Which would you click, and why?\"** (one line) and **\"The single change that would most raise CTR.\"**\nBe blunt and specific; no praise padding. Don't change any files except your own critique.\n\nWrite your critique to `05_Analytics/tests/panels/owb-032-j2144/cursor.md` (start it with the date and your name), commit only that file to main from a clean worktree, and mark this job done with your one-line 'single change'. No spend, no YouTube changes.",
@@ -180684,10 +180693,14 @@
           "at": "2026-11-04T23:29Z",
           "by": "codex",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-05T00:31Z",
+          "by": "claude",
+          "what": "unpinned from Cursor (out of weekly usage to 6 Nov): another panel agent takes Cursor's seat"
         }
       ],
       "remaining_action": "Packaging panel (cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
-      "for": "cursor",
       "kind": "review"
     },
     {

@@ -9,7 +9,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0123 | cloud | blocked | – | – | 025 date gate: mark done on/after Sun 8 Nov 18:00Z once Js6EQJ8qDi8 is public | 6103189873 |
 | J0124 | mini | blocked | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0135 | mini | blocked | – | – | studio · `cursor-auto` · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
+| J0135 | mini | blocked | – | – | studio · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
 | J0275 | mini | blocked | gemini | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, aAUgIGEuPwQ) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
@@ -78,13 +78,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
 | J2146 | cloud | open | – | – | for claude · script · Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21) |  |
 | J2147 | cloud | open | – | – | 032 upload · for claude · listing · 031/032 Shorts slots around the new Wednesday long slot |  |
-| J2152 | macbook | open | – | – | `cursor-grok-4-7` · MacBook setup test: cursor |  |
 | J2154 | macbook | open | – | – | review · `claude-opus-5-5` · MacBook setup test: claude |  |
 | J2155 | mini | blocked | codex | – | 033 vo · for codex · vo · 033 Uranus: VO from locked script v02 (J2148 GO) | c01c9f9e78 |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
 | J2159 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2160 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
-| J2161 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
+| J2161 | mini | open | – | – | review · Packaging panel (stand-in for Cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2162 | cloud | open (after J2161) | – | – | review · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2164 | any | open | – | – | 033 vo · review · 033 Uranus: Chief ruling on J2155 VO transcript and tails |  |
 | J2165 | any | open (after J2155) | – | – | 033 shots · review · 033 Uranus: shot list after explicit VO acceptance |  |
@@ -96,9 +95,9 @@ Recently finished:
 - J2158 cancelled: Chief: resolve 034 topic orphan-review ()
 - J2156 cancelled: Chief: resolve 033 topic orphan-review ()
 - J2153 done: MacBook setup test: codex (MacBook test OK: Codex CLI, exact model not verified, Bens-MacBook-Pro.local)
+- J2152 cancelled: MacBook setup test: cursor ()
 - J2151 done: MacBook setup test: gemini (MacBook test OK: agy, Gemini 4 Argon (High), Bens-MacBook-Pro.local)
 - J2150 done: 032 J2089: review 18 DATA stills and resolve remaining harvest conflicts (jobs/reviews/J2150/REVIEW.md: 14 DATA stills KEEP, 4 CHANGE (r04 title, r28/r29 'BIGGEST DROPS', r39 oxygen-only); all 18 may render after changes (ref J2150). R25 -> PIA07232 inset; R38 PIA19051 reconstruction dropped -> PIA14584; R50 Sinlap-only crop or map-pin fallback; ESA Huygens reconstruction movie not used.)
 - J2149 done: 034 topic + script: rule-E review (WIP film, new reference-channel rules) (Rule-E GO (jobs/reviews/J2149/REVIEW.md, commit c2082a4884): 12 Pluto neighbours verified (1.03M-21.20M views, led by NASA 21.20M & Astrum 18.43M D5XPuS-Y0fg), zero OWB/HOS duplicates; script v02 polished (1,291 spoken words, review:script PASS 95.8/100, gate:episode PASS, 15/15 SOURCES rows verified live in CLAUDE_QUOTE_CHECK_v01.md); rules 18/19/20 recorded (Real Worlds series, real-imagery titles, PIA20291/PIA19952 single real frame thumb); 034 topic/script/sources set to done and VO job queued.)
 - J2148 done: 033 topic + script: rule-E review (WIP film, new reference-channel rules) (Rule-E GO (jobs/reviews/J2148/REVIEW.md, commit c01c9f9e78): (1) 10 qualifying 1M+ Uranus neighbours verified via yt-dlp (1.24M-7.63M views), zero OWB/HOS long overlap; (2) OWB Short ZpEA8stoSPA public 3 Nov reached 461 views / 6 likes in day 1, Astrum pZh5BWCNmmE at 1.24M views in 8 days; (3) script v02 polished (1,290 spoken words, review:script PASS 95.2/100, gate:episode PASS, 15/15 SOURCES.md rows verified live against NASA/NSSDCA/LOC); (4) LEARNINGS 20 series = Real Worlds, LEARNINGS 18 real-imagery titles = 'What Voyager 2 Saw in Just 6 Hours at Uranus' (44c) / 'The Only Spacecraft Photos Ever Taken at Uranus' (47c), LEARNINGS 19 real-frame thumb A = JWST NIRCam PIA25770 / Voyager 2 PIA18182 ('21-YEAR WINTER'). Set 033 topic/script/sources done and queued VO job J2155. £0.)
 - J2142 done: Chief: resolve 031 shots orphan-review (Resolved: J2043 rule-E review GO (SHOT_LIST_v02 55d4dad1c2) but status.json was left at shots=review; set 031 shots done, picture J2141 queued.)
-- J2140 cancelled: Chief: resolve 061 sources orphan-review ()
