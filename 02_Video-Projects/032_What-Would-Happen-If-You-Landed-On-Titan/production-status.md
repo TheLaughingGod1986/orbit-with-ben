@@ -8,7 +8,7 @@
 | VO | locked `titan_landing_vo_v02b` (Chief h31, J1294, 31 Oct 2026). `v02a` is an unlocked failed-spec attempt |
 | CG | pending (Vertex Veo / Omni Orbit-only) |
 | Runtime target | 7–9 min |
-| Shorts | 3 a week (Mon · Wed · Fri; standalone Short `RLSJm59OSzI` already scheduled for 10 Nov 2026) |
+| Shorts | 2 active + 1 reserve (`10_Shorts/SHORTS_PLAN_v01.md`, J2147/J2173, 5 Nov 2026): **Wed 25 Nov 11:30Z** go-public day Short (*Strike a Match on Titan?*, `23.64 s`, or Sat 28 Nov if `AR2` holds 25 Nov) & **Fri 27 Nov 11:30Z** Test A opening (`32.80 s` / `30.00 s`), reserve **Sat 28 Nov / Fri 18 Dec 11:30Z** (*28x Easier to Fly?*, `26.50 s`); standalone Short `RLSJm59OSzI` scheduled Tue 10 Nov 2026 |
 
 ## VO lock (Chief h31, J1294, 31 Oct 2026)
 

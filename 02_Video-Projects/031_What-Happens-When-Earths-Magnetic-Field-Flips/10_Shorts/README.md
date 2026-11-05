@@ -1,9 +1,19 @@
-# Shorts — 3–5 discovery engine
+# Shorts — 031 What Happens When Earth's Magnetic Field Flips?
 
-Each Short:
+- **Parent Long (`031`):** *What Happens When Earth's Magnetic Field Flips?* — airs **Wed 02 Dec 2026 at 18:00Z** (second film in the new Wednesday 18:00 London long slot).
+- **Canonical Shorts Plan (`J2147`, 5 Nov 2026):** See [`SHORTS_PLAN_v01.md`](SHORTS_PLAN_v01.md) for the full sentence-level scripts, word timings from `02_Voiceover/stt/magnetic_field_flip_vo_v02a/stt_raw.json`, 9:16 shot tables, and non-collision matrix against `026–029`.
+- **Standing Cap (`AGENTS.md`, 4 Nov 2026):** Each new OWB long gets **two active Shorts** (one is Test A's opening Short while Test A runs), slotted `Mon · Wed · Fri · Sat 11:30` London, never two Shorts a day. To satisfy both the 4 Nov 2-Short active cap and `J2147`'s 3-Short planning brief, **Shorts 1 and 2 are the two active Shorts**, and **Short 3 is scripted and slotted as the Reserve 3rd Short** (held unless Chief activates it).
 
-- Strongest-fact open (0–1.5s)
-- Curiosity-gap end (not bare “watch the full video”)
-- Related → parent long once public
+## Planned Slots Around the Wed 02 Dec 18:00Z Long (`J2147` / `LEARNINGS 17`)
 
-Schedule after YouTube long is locked; TikTok ≈ YouTube T0 + 1 hour.
+Checked against `05_Analytics/owb/snapshots/2026-11-05.json`:
+- All eight `Mon/Wed/Fri 11:30Z` slots from **Mon 30 Nov through Wed 16 Dec 2026** are already scheduled on YouTube for `028` (`xvarZP2aYyE` Mon 30 Nov, `v6euXX2omz4` **Wed 02 Dec**, `jJ5LkFGyzLI` Fri 04 Dec, `X768qs8sNQs` Mon 07 Dec, `f17XCtUmN-g` Wed 16 Dec) and `029` (`SWDCZfWZVao` Wed 09 Dec, `k2kEaA7ICjc` Fri 11 Dec, `heiGCnGKTkE` Mon 14 Dec).
+- Because workers never alter existing YouTube `publishAt` dates without a Chief publishing order (`AGENTS.md` §6), the plan records:
+  - **Path A (Default · Zero `028`/`029` YouTube `publishAt` changes):** Uses the free `Sat 11:30Z` slots (`Sat 05 Dec` and `Sat 12 Dec 11:30Z`, or `Sat 28 Nov 11:30Z` if unused by `AR3`/`032` Reserve) and the first free `Mon/Wed/Fri` slot (`Fri 18 Dec 11:30Z`).
+  - **Path B (Chief Option · Literal Go-Public Day `Wed 02 Dec 11:30Z` Slot per `J2147` / `LEARNINGS 17`):** Because `028` has five scheduled Shorts (`X768qs8sNQs` and `f17XCtUmN-g` are 4th/5th lifts beyond its 3 core Shorts), Chief may shift `028`'s `v6euXX2omz4` from **Wed 02 Dec 11:30Z** to **Sat 05 Dec 11:30Z** (or shift `028`'s 4th/5th lifts to `Fri 18 Dec / Mon 21 Dec 11:30Z`), freeing **Wed 02 Dec 11:30Z** so `031` Short 1 airs on `031`'s exact go-public day.
+
+| Short & Role | Path A Slot (Zero `028`/`029` Reschedule) | Path B Slot (Chief Swap for `Wed 02 Dec` Go-Public Day) | Title | Spoken Lift (`magnetic_field_flip_vo_v02a`) | Runtime | `LEARNINGS 17` & Non-Collision Note |
+|---|---|---|---|---|---:|---|
+| **Active Short #1 (Test A Opening & Go-Public Question Short)** | **Sat 05 Dec 2026 11:30Z** *(or **Sat 28 Nov 11:30Z** pre-release if unused by `AR3`/`032` Reserve; or **Fri 18 Dec 11:30Z** if strict `Mon/Wed/Fri`)* | **Wed 02 Dec 2026 11:30Z** *(go-public day; `v6euXX2omz4` moves to **Sat 05 Dec 11:30Z**)* | *What Happens When Earth's Magnetic Field Flips?* | `s00–s08` (`0.14–35.32 s`, 96w) | `33.00 s` tightened / `37.14 s` 1:1 | Lifts `031` opening, answers the immediate survival myth (`"No. We will survive."`), and **ends on the three questions `031` answers** (`s06–s08`, `LEARNINGS 17`). Links to `031` within 1 h of `Wed 02 Dec 18:00Z` go-public (or at upload if post-release). |
+| **Active Short #2 (Keeper-Score Question Short)** | **Sat 12 Dec 2026 11:30Z** *(or **Mon 21 Dec 11:30Z** if strict `Mon/Wed/Fri`)* | **Sat 05 Dec 2026 11:30Z** *(or **Mon 07 Dec 11:30Z** if `X768qs8sNQs` shifts to **Fri 18 Dec 11:30Z**)* | *What If the Solar Wind Blew Earth's Atmosphere Into Space?* | `s65, s67, s70, s74` (`398.42–461.62 s`, 64w; `+ s77` question option `25.00 s`, 69w) | `24.48 s` (`25.00 s` alt) | Free slot with zero collision against `026–029`. Studio `Related video` + description link point to `031` long at upload. |
+| **Reserve Short #3 (`J2147` 3rd Short)** | **Fri 18 Dec 2026 11:30Z** *(first free `Mon/Wed/Fri` slot after `028`/`029` finish on Wed 16 Dec)* | **Sat 12 Dec 2026 11:30Z** *(or **Fri 18 Dec 11:30Z**)* | *What Would the Night Sky Look Like During a Magnetic Flip?* | `s78, s79, s83` (`480.80–532.92 s`, 56w) | `23.50 s` | Scripted and slotted for `J2147` without clashing with `026–029`. Held in reserve under the 4 Nov 2-Short cap (`AGENTS.md` line 472). |

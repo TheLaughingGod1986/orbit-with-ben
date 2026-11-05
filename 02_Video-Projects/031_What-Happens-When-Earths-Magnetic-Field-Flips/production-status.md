@@ -8,7 +8,7 @@
 | VO | locked `magnetic_field_flip_vo_v02a` (Chief h32, J1295, 31 Oct 2026). h24's 20 ms / 40 ms fades were too short |
 | CG | pending (Vertex Veo / Omni Orbit-only) |
 | Runtime target | 7–9 min (~8.8 min est.) |
-| Shorts | 3 a week (Mon · Wed · Fri) |
+| Shorts | 2 active + 1 reserve (`10_Shorts/SHORTS_PLAN_v01.md`, J2147, 5 Nov 2026): Path A **Sat 5 Dec 11:30Z** (Test A opening, `33.00 s`) & **Sat 12 Dec 11:30Z** (solar wind vs atmosphere, `24.48 s`), reserve **Fri 18 Dec 11:30Z** (worldwide auroras, `23.50 s`); Path B **Wed 2 Dec 11:30Z** go-public day slot if Chief shifts `028` `v6euXX2omz4` to Sat 5 Dec |
 
 ## VO lock (Chief h32, J1295, 31 Oct 2026)
 
