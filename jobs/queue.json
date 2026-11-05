@@ -188145,13 +188145,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T21:28Z",
-      "eta": "2026-11-05T23:28Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-05T18:19Z",
-      "result": "",
+      "result": "PASS (planning): 033 shots orphan-review cleared. Merged OWB PR #544 d67daf94 (SHOT_LIST_v01 + MUSIC_BRIEF_v01 + SFX_PLAN_v01). studio set shots done. Successor J2256 (stills lock + OMNI R29/R55 price-pass brief, no mint). No media KEEP from filenames; £0 Flow/Vertex/cash. Evidence jobs/reviews/J2238/REVIEW.md.",
       "history": [
         {
           "at": "2026-11-05T18:19Z",
@@ -188162,6 +188162,11 @@
           "at": "2026-11-05T21:28Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T21:28Z",
+          "by": "chief",
+          "what": "done: PASS (planning): 033 shots orphan-review cleared. Merged OWB PR #544 d67daf94 (SHOT_LIST_v01 + MUSIC_BRIEF_v01 + SFX_PLAN_v01). studio set shots done. Successor J2256 (stills lock + OMNI R29/R55 price-pass brief, no mint). No media KEEP from filenames; £0 Flow/Vertex/cash. Evidence jobs/reviews/J2238/REVIEW.md."
         }
       ],
       "remaining_action": "Chief resolves 033 shots handoff and records the next owner/action",
@@ -188179,7 +188184,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "d67daf94/J2256"
     },
     {
       "id": "J2239",
