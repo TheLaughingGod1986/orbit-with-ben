@@ -166744,17 +166744,22 @@
           "at": "2026-11-05T18:37Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J1881; checking J2217 status and PR #428 updates"
+        },
+        {
+          "at": "2026-11-05T18:41Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J2217 c7635bb2 and J2163_MASTER_FRAME_PTS.json; checking GOP boundaries on PR #428"
         }
       ],
-      "remaining_action": "Check J2217 status and PR #428 GOP frame boundary repair, then review and scope bounded retake/assembly/QA jobs",
+      "remaining_action": "Inspect and verify HOS PR #428 (cursor/J2217-eight-item) GOP boundaries, manifest, and tests",
       "due": "2026-11-04T14:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T18:37Z",
+        "at": "2026-11-05T18:41Z",
         "by": "gemini",
-        "note": "Claimed J1881; checking J2217 status and PR #428 updates"
+        "note": "Read J2217 c7635bb2 and J2163_MASTER_FRAME_PTS.json; checking GOP boundaries on PR #428"
       },
       "taskKeys": [
         "HOS:008"
