@@ -181652,9 +181652,14 @@
           "at": "2026-11-05T01:24Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2174; starting step 1 of 4 (read J2168 qualification & Part 05 VO/plates)"
+        },
+        {
+          "at": "2026-11-05T01:27Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J2168 QUALIFICATION.md, INPUT_INVENTORY.json, FACT_NOTES_v01.md, LEARNINGS.md, and Part 05 VO alignment"
         }
       ],
-      "remaining_action": "Read HOS branch codex/J2168-qualification, QUALIFICATION.md, INPUT_INVENTORY.json, Part 05 VO/alignment/plates, and evaluate rule-8 opening + clinical-source repair",
+      "remaining_action": "Evaluate Part 05/04 VO alignment for a compliant cuff-first opening, and supply exact clinical source/quote",
       "due": "2026-11-06T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -181667,11 +181672,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T01:24Z",
+        "at": "2026-11-05T01:27Z",
         "by": "gemini",
-        "note": "Claimed J2174; starting step 1 of 4 (read J2168 qualification & Part 05 VO/plates)"
+        "note": "Read J2168 QUALIFICATION.md, INPUT_INVENTORY.json, FACT_NOTES_v01.md, LEARNINGS.md, and Part 05 VO alignment"
       },
       "taskKeys": [
         "HOS:005"
