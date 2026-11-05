@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2205 | mini | open | – | – | assembly · URG-OWB-1: gate_upcoming --stage NAS cache for upcoming Shorts |  |
 | J2206 | mini | open | – | – | assembly · URG-OWB-2: monthly Studio Reach window capture (share with J2202) |  |
 | J2207 | mini | open | – | – | assembly · OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts |  |
-| J2210 | mini | blocked | codex | – | 010 picture · video · HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint) | J2194 |
+| J2210 | mini | open | – | – | 010 picture · video · HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint) | J2194 |
 | J2213 | mini | open | – | – | 006 picture · video · `flow-veo-3.1` · HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200) | HOS#180:6655551386 |
 | J2215 | macbook | blocked | macbook | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
 | J2216 | mini | open | – | – | chief · Chief: apply J1889 KEEP social-source exception in UPLOADS.json and publish Mars-night & Titan Buffer posts | jobs/reviews/J1889/REVIEW.md |
@@ -86,7 +86,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2223 | mini | open | – | – | for gemini · listing · `gemini-argon` · Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each |  |
 | J2224 | mini | open | – | – | for gemini · review · `gemini-argon` · Review J0912: Short A v03 picture_qa key-ribbon FIX decision |  |
 | J2226 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
-| J2227 | mini | claimed | gemini | 2026-11-05T19:02Z | for gemini · review · `gemini-argon` · Verify condition for J2210 |  |
 | J2228 | mini | open | – | – | studio · AR1 v06 (2024 YR4 Moon) Short: Ben OK'd 5 Nov 16:32. Upload private and schedule Fri 27 Nov 11:30 London |  |
 | J2229 | mini | open | – | – | assembly · AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14 |  |
 | J2230 | mini | open | – | – | assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
@@ -94,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2227 done: Verify condition for J2210 (KEEP / CONDITION SATISFIED (jobs/reviews/J2227/REVIEW.md, 7f50fcec7f): verified J2211 (done_ref 0a925061) and HOS PR #426 (0a9250614ec1a591aa705d5f8e12280c597f507a, all 5 CI checks PASS + 7/7 unit tests PASS + 0 hos_build_rule_v02.check_short() errors on Short_A 8-row Option A1 layout and Short_C 9-row bird-mapping layout). Verified on-disk SHA-256 hashes for both code graphics (f9b504cf... & 0e71b03e...) and all 4 v02 VO files. Reopened J2210 with evidence note to close out step 3/3 on 0a925061; J2172 and separate Chief HOS 010 Flow moving-plate mint authorization remain held (£0 / 0 credits).)
 - J2225 done: Verify condition for J1208 (KEEP (jobs/reviews/J2225/REVIEW.md, 2cbdaa2414): verified J1208 / PR #507 (542f8c9d44) and directly inspected S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a), opening 1.15-3.85s, preroll 0.00-1.15s, phone proxies, and full-size WARNs via demonstrated moving_video_input. Both take2 sources PASS/KEEP (zero frozen frames, seamless f27->f28 loop seam MAD 0.2503 / 5.0421, opening 0-1.5s MAD 6.01 / 14.57, scientific honesty verified; t1 takes excluded). Updated J1208 hold to input via --recheck J2225 for J2167 closeout and elected-Chief exact-source acceptance before J1199 assembly. £0 / 0 credits.)
 - J2218 done: Review J1100: J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief (superseded: Ben watched and OK'd the three v07 cuts himself (5 Nov 12:52))
 - J2214 done: Review J1100: S2/S5/S6 v07 h43-LOOP + Ben pickup delivery (KEEP (jobs/reviews/J2214/REVIEW.md): S2 (7d07deafbd4e), S5 (d5589ad4fa32), and S6 (2f399f3127bf) v07 pass h43-LOOP (0.50/0.59/0.65), all 5 gates, instrumental bed clearance (13adc031 & e47e8554), and direct ear/moving-video auditions; J1100 parked for Chief to place Ben watch cards and swap after Ben OK)
@@ -131,4 +131,3 @@ OK /Users/benjaminoats/_desk/shared/_share_test/from_macbook_20261105T0935Z.bin
 19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4)
 - J2201 cancelled: HOS 006: GBP0 native1080 existing-media inventory for Short B/C gaps ()
 - J2198 done: 032 J2089: review corrected fire stills and regenerated process pixels (KEEP all 7 (jobs/reviews/J2198/REVIEW.md): 5 unchanged code (renderer-only hash change), 2 fire fixes verified. J2089 may render r39/r40 under J2198.)
-- J2197 cancelled: Chief: J2038 follow-on: capacity probe producer + ENV flip + 2h watch ()

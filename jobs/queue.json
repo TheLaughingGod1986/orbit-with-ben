@@ -185864,13 +185864,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-05T10:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T10:11Z",
-      "result": "PR425 ready for J2211 review; final readiness blocked by Short A S02 1.900s below 2.500s floor and inherited final gap 0.120s. All requested no-spend plan repairs committed 2e84edb3; check_all PASS. J2172 remains held; no generation/VO/render spend.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T10:11Z",
@@ -185911,9 +185911,14 @@
           "at": "2026-11-05T16:29Z",
           "by": "relay",
           "what": "condition verification queued: J2227"
+        },
+        {
+          "at": "2026-11-05T17:13Z",
+          "by": "gemini",
+          "what": "reopened: Condition satisfied (jobs/reviews/J2227/REVIEW.md, 7f50fcec7f): J2211 (done_ref 0a925061) reviewed HOS PR #425 (2e84edb3) and resolved Short_A Option A1 body-cut segmentation via lawful 7-body-shot (S01..S07 + loop_tail = 8 rows) layout in HOS PR #426 (0a925061, all 5 CI checks + 7/7 unit tests PASS, 0 check_short() errors on Short_A & Short_C; on-disk SHA-256 verified for both code graphics and all 4 v02 VO files). Reopened at 2/3 to fast-forward PR #425 / close J2210 done --ref 0a925061; J2172 and separate Chief HOS 010 Flow moving-plate mint authorization remain held (£0 / 0 credits)."
         }
       ],
-      "remaining_action": "Resolve S02 1.900s body-cut failure through J2211 review of PR425 before final readiness",
+      "remaining_action": "Fast-forward codex/J2210-readiness (PR #425) to J2211-resolved 0a925061 (PR #426), verify check_all.sh + unit tests, and close J2210 done --ref 0a925061 (J2172 remains held on Chief HOS 010 Flow mint authorization)",
       "due": "2026-11-07T18:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -185926,12 +185931,16 @@
         "by": "codex",
         "note": "PR425 opened at 2e84edb3; required check_all ALL CHECKS PASS; resolver regression PASS. Final readiness not complete: S0"
       },
-      "hold": {
-        "type": "input",
-        "condition": "PR425 ready for J2211 review; final readiness blocked by Short A S02 1.900s below 2.500s floor and inherited final gap 0.120s. All requested no-spend plan repairs committed 2e84edb3; check_all PASS. J2172 remains held; no generation/VO/render spend.",
-        "check_at": "2026-11-05T17:29:02+00:00",
-        "recheck_task": "J2227"
-      }
+      "superseded_holds": [
+        {
+          "type": "input",
+          "condition": "PR425 ready for J2211 review; final readiness blocked by Short A S02 1.900s below 2.500s floor and inherited final gap 0.120s. All requested no-spend plan repairs committed 2e84edb3; check_all PASS. J2172 remains held; no generation/VO/render spend.",
+          "check_at": "2026-11-05T17:29:02+00:00",
+          "last_recheck": "J2227",
+          "checked_at": "2026-11-05T17:13:12+00:00",
+          "checked_by": "gemini"
+        }
+      ]
     },
     {
       "id": "J2211",
@@ -186796,13 +186805,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T17:02Z",
-      "eta": "2026-11-05T19:02Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-05T16:29Z",
-      "result": "",
+      "result": "KEEP / CONDITION SATISFIED (jobs/reviews/J2227/REVIEW.md, 7f50fcec7f): verified J2211 (done_ref 0a925061) and HOS PR #426 (0a9250614ec1a591aa705d5f8e12280c597f507a, all 5 CI checks PASS + 7/7 unit tests PASS + 0 hos_build_rule_v02.check_short() errors on Short_A 8-row Option A1 layout and Short_C 9-row bird-mapping layout). Verified on-disk SHA-256 hashes for both code graphics (f9b504cf... & 0e71b03e...) and all 4 v02 VO files. Reopened J2210 with evidence note to close out step 3/3 on 0a925061; J2172 and separate Chief HOS 010 Flow moving-plate mint authorization remain held (£0 / 0 credits).",
       "history": [
         {
           "at": "2026-11-05T16:29Z",
@@ -186833,9 +186842,19 @@
           "at": "2026-11-05T17:12Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed jobs/reviews/J2227/REVIEW.md (7f50fcec7f); verified HOS PR #426 (0a925061) 7/7 tests + 0 check_short errors + on-disk SHA256 hashes"
+        },
+        {
+          "at": "2026-11-05T17:13Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Step 3/3 complete: reopened J2210 on verified J2211 / HOS PR #426 (0a925061) evidence and closed J2227"
+        },
+        {
+          "at": "2026-11-05T17:13Z",
+          "by": "gemini",
+          "what": "done: KEEP / CONDITION SATISFIED (jobs/reviews/J2227/REVIEW.md, 7f50fcec7f): verified J2211 (done_ref 0a925061) and HOS PR #426 (0a9250614ec1a591aa705d5f8e12280c597f507a, all 5 CI checks PASS + 7/7 unit tests PASS + 0 hos_build_rule_v02.check_short() errors on Short_A 8-row Option A1 layout and Short_C 9-row bird-mapping layout). Verified on-disk SHA-256 hashes for both code graphics (f9b504cf... & 0e71b03e...) and all 4 v02 VO files. Reopened J2210 with evidence note to close out step 3/3 on 0a925061; J2172 and separate Chief HOS 010 Flow moving-plate mint authorization remain held (£0 / 0 credits)."
         }
       ],
-      "remaining_action": "Reopen J2210 with J2227 verification evidence (J2211 / HOS PR #426 0a925061) and close J2227 done",
+      "remaining_action": "Done: J2210 condition verified and reopened; J2227 complete",
       "kind": "review",
       "recheck_of": "J2210",
       "due": "2026-11-05T17:29:02+00:00",
@@ -186850,15 +186869,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-05T17:12Z",
+        "at": "2026-11-05T17:13Z",
         "by": "gemini",
-        "note": "Committed jobs/reviews/J2227/REVIEW.md (7f50fcec7f); verified HOS PR #426 (0a925061) 7/7 tests + 0 check_short errors + "
+        "note": "Step 3/3 complete: reopened J2210 on verified J2211 / HOS PR #426 (0a925061) evidence and closed J2227"
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2227/REVIEW.md"
     },
     {
       "id": "J2228",
