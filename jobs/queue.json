@@ -111743,13 +111743,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T20:43Z",
-      "eta": "2026-11-05T21:03Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
-      "result": "",
+      "result": "Chief split ruling COMPLETE, PR558 / jobs/reviews/J1208/CHIEF_SOURCE_DECISION_2026-11-05.md: S6 take2 exact source 2218c817... KEEP for 64-frame opening and fixed centre-band crop only (independent f0diff4.00/motion10.97 PASS). J1199 reopened for Titan-only assembly, full finished gates, durable delivery and Ben final watch by10 Nov10:30 London. S5 take2 FIX: f0diff0.58<1.50; correction branch closed unsuccessful, scheduled copy fallback. J2167 evidence revalidated; no media-perception claim by Codex, no further generation/spend/publishing or gate waiver.",
       "history": [
         {
           "at": "2026-10-29T14:17Z",
@@ -112020,6 +112020,11 @@
           "at": "2026-11-05T20:44Z",
           "by": "codex",
           "what": "step 1 of 1 done: PR558 merged with CI PASS. J1199 reopened as assembly, depends on J1208; S5 unsuccessful and Uranus excluded, fallback preserved."
+        },
+        {
+          "at": "2026-11-05T20:44Z",
+          "by": "codex",
+          "what": "done: Chief split ruling COMPLETE, PR558 / jobs/reviews/J1208/CHIEF_SOURCE_DECISION_2026-11-05.md: S6 take2 exact source 2218c817... KEEP for 64-frame opening and fixed centre-band crop only (independent f0diff4.00/motion10.97 PASS). J1199 reopened for Titan-only assembly, full finished gates, durable delivery and Ben final watch by10 Nov10:30 London. S5 take2 FIX: f0diff0.58<1.50; correction branch closed unsuccessful, scheduled copy fallback. J2167 evidence revalidated; no media-perception claim by Codex, no further generation/spend/publishing or gate waiver."
         }
       ],
       "remaining_action": "Source decision complete; J1199 owns Titan-only assembly and finished gates",
@@ -112067,7 +112072,8 @@
         "at": "2026-11-05T20:44Z",
         "by": "codex",
         "note": "PR558 merged with CI PASS. J1199 reopened as assembly, depends on J1208; S5 unsuccessful and Uranus excluded, fallback p"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/558"
     },
     {
       "id": "J1209",
