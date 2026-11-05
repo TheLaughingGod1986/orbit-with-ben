@@ -1,5 +1,5 @@
 {
-  "next_id": 2197,
+  "next_id": 2198,
   "jobs": [
     {
       "id": "J0001",
@@ -184222,6 +184222,34 @@
       "remaining_action": "Review J2176: 032 J2144 FIX: Titan hero crop and clear lander typography",
       "kind": "review",
       "review_of": "J2176"
+    },
+    {
+      "id": "J2197",
+      "title": "J2038 follow-on: capacity probe producer + ENV flip + 2h watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Successor to J2038 enablement (Chief h46, 5 Nov ~09:00 London).\n\nALREADY DONE on Mini (do not redo):\n- Owner-private root /Users/benjaminoats/_desk/state/capacity (mode 0700)\n- registration.json (host mac-mini, role mini, configured_limit 2, Codex+Gemini separate accounts, approval_ref J2038, reviewed_head pinned to capacity queue-checkout HEAD, real machine_fingerprint)\n- dispatch.json (enabled true in doc, role mini, approval_ref J2038, queue_root=_desk/state/capacity/queue-checkout, cap_seconds 1200)\n- Dedicated queue checkout at that queue_root (≠ relay OWB path)\n- Studio-browser stays single-lane via DENIED_RESOURCES={browser,...}\n- OWB_CAPACITY_ENABLED deliberately NOT set on com.owb.chief-relay (missing probes would fail-closed and can starve serial)\n\nREMAINING (in order; stop at first failed gate; £0):\n1. Build/run a trusted local probe producer that writes fresh probes.json via capacity_evidence.produce_probes with real non-secret auth_evidence + quota_evidence for codex (gpt-6.1-sol/gpt-6-astra on codex-shared) and gemini (gemini-agy on gemini-pool). TTL 30–300s; refresh before expiry. Never invent login-only as ready; never put tokens/secrets in evidence strings.\n2. Confirm collect() returns ready_workers including both codex and gemini under current Mini resources (free_gb≥8, load≤8, memory_available_gb≥0.4). If resource guards fail, free disk/memory first (no deletes of NAS/KEEP) or tighten work; do not lower guards below safe floors without Chief note.\n3. Set LaunchAgent env OWB_CAPACITY_ENABLED=1 and OWB_CAPACITY_ROOT=/Users/benjaminoats/_desk/state/capacity on com.owb.chief-relay only after step 2 passes; kickstart relay.\n4. Observe one supervised busy-serial tick that launches a second lane (Codex+Gemini) and exits cleanly; record journal under capacity attempts/.\n5. Watch 2 h: board-data still publishing, no double claims, idle minutes falling vs pre-enable baseline. Post before/after on OWB #478.\n6. MacBook host registration/probes only after Mini watch passes.\n\nNo spend, publishing, Tailscale, force-push, or fabricated probe receipts.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T09:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:00Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "J2038 follow-on: capacity probe producer + ENV flip + 2h watch",
+      "kind": "chief"
     }
   ],
   "focus": [],
