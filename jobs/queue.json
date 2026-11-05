@@ -180637,13 +180637,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-05T01:00Z",
-      "eta": "2026-11-05T03:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T22:49Z",
-      "result": "",
+      "result": "MacBook test OK: agy (Gemini), Gemini 4 Argon (High)",
       "history": [
         {
           "at": "2026-11-04T22:49Z",
@@ -180664,6 +180664,11 @@
           "at": "2026-11-05T01:00Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T01:01Z",
+          "by": "macbook",
+          "what": "done: MacBook test OK: agy (Gemini), Gemini 4 Argon (High)"
         }
       ],
       "remaining_action": "MacBook setup test: claude",
