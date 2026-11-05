@@ -86,11 +86,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2222 | mini | open (after J2221) | – | – | J01 edit · for gemini · review · `gemini-argon` · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2223 | mini | open | – | – | for gemini · listing · `gemini-argon` · Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each |  |
 | J2224 | mini | open | – | – | for gemini · review · `gemini-argon` · Review J0912: Short A v03 picture_qa key-ribbon FIX decision |  |
-| J2225 | mini | claimed | gemini | 2026-11-05T18:02Z | for gemini · review · `gemini-argon` · Verify condition for J1208 |  |
 | J2226 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 
 Recently finished:
 
+- J2225 done: Verify condition for J1208 (KEEP (jobs/reviews/J2225/REVIEW.md, 2cbdaa2414): verified J1208 / PR #507 (542f8c9d44) and directly inspected S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a), opening 1.15-3.85s, preroll 0.00-1.15s, phone proxies, and full-size WARNs via demonstrated moving_video_input. Both take2 sources PASS/KEEP (zero frozen frames, seamless f27->f28 loop seam MAD 0.2503 / 5.0421, opening 0-1.5s MAD 6.01 / 14.57, scientific honesty verified; t1 takes excluded). Updated J1208 hold to input via --recheck J2225 for J2167 closeout and elected-Chief exact-source acceptance before J1199 assembly. £0 / 0 credits.)
 - J2218 done: Review J1100: J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief (superseded: Ben watched and OK'd the three v07 cuts himself (5 Nov 12:52))
 - J2214 done: Review J1100: S2/S5/S6 v07 h43-LOOP + Ben pickup delivery (KEEP (jobs/reviews/J2214/REVIEW.md): S2 (7d07deafbd4e), S5 (d5589ad4fa32), and S6 (2f399f3127bf) v07 pass h43-LOOP (0.50/0.59/0.65), all 5 gates, instrumental bed clearance (13adc031 & e47e8554), and direct ear/moving-video auditions; J1100 parked for Chief to place Ben watch cards and swap after Ben OK)
 - J2212 done: 032 J2176: resolve composition conflict after J2196 source failures (FIX: drop J2196's whole-moon requirement; A = PIA21890 frame-filling crop (1.25x), else PIA14602 tight crop <=2.35x; no composite (rule 19, near-black cap stands). J2176 released.)
@@ -128,4 +128,3 @@ OK /Users/benjaminoats/_desk/shared/_share_test/from_macbook_20261105T0935Z.bin
 - J2201 cancelled: HOS 006: GBP0 native1080 existing-media inventory for Short B/C gaps ()
 - J2198 done: 032 J2089: review corrected fire stills and regenerated process pixels (KEEP all 7 (jobs/reviews/J2198/REVIEW.md): 5 unchanged code (renderer-only hash change), 2 fire fixes verified. J2089 may render r39/r40 under J2198.)
 - J2197 cancelled: Chief: J2038 follow-on: capacity probe producer + ENV flip + 2h watch ()
-- J2196 done: Review J2176: 032 J2144 FIX: Titan hero crop and clear lander typography (jobs/reviews/J2196/REVIEW.md: A from one real Cassini frame, in order PIA14602 > PIA21890 > PIA14922 (Titan crop), ≤2.35× upscale; fallback smaller hero ≥45% height. B unchanged; C as ruled.)

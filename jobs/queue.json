@@ -111726,7 +111726,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
-      "result": "Waiting for: J2167 immediate exact-source review required. PR507/bb22c548ea delivers native silent S5/S6 take2, exact opening1.15-3.85s/preroll0-1.15s, hashes, phone copies and source QA PASS with WARNs. This session inspected text/stills only; no actual native-video/phone/preroll perception tool demonstrated. Need a reviewer with demonstrated moving_video_input and exact-source decision before J1199 assembly; no KEEP, no further Flow takes (40 credits total), scheduled-copy fallback preserved.",
+      "result": "Waiting for: Gemini demonstrated moving_video_input KEEP review complete in jobs/reviews/J2225/REVIEW.md (2cbdaa2414; PR #507 / 542f8c9d44 verified; S5_flow_t2_silent.mp4 sha256 904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18 and S6_flow_t2_silent.mp4 sha256 2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a both KEEP for opening 1.15-3.85s and forward preroll 0.00-1.15s at 1.5x upscale; t1 takes excluded). Awaiting J2167 closeout and elected-Chief exact-source acceptance before J1199 assembly; no further Flow takes (40 credits total), scheduled-copy fallback preserved.",
       "history": [
         {
           "at": "2026-10-29T14:17Z",
@@ -111952,9 +111952,14 @@
           "at": "2026-11-05T15:43Z",
           "by": "relay",
           "what": "condition verification queued: J2225"
+        },
+        {
+          "at": "2026-11-05T16:17Z",
+          "by": "gemini",
+          "what": "condition recorded (recheck J2225 KEEP in jobs/reviews/J2225/REVIEW.md); next verification 2026-11-05T22:15:00+00:00"
         }
       ],
-      "remaining_action": "J2167: native-video source review and exact-source acceptance",
+      "remaining_action": "Complete J2167 closeout and elected-Chief exact-source acceptance on Gemini KEEP review (jobs/reviews/J2225/REVIEW.md) before J1199 assembly",
       "due": "2026-10-30T18:00:00Z",
       "kind": "video",
       "superseded_holds": [
@@ -111980,17 +111985,13 @@
       "model": "flow-veo-3.1",
       "urgent": 1,
       "hold": {
-        "type": "capability",
-        "condition": "J2167 immediate exact-source review required. PR507/bb22c548ea delivers native silent S5/S6 take2, exact opening1.15-3.85s/preroll0-1.15s, hashes, phone copies and source QA PASS with WARNs. This session inspected text/stills only; no actual native-video/phone/preroll perception tool demonstrated. Need a reviewer with demonstrated moving_video_input and exact-source decision before J1199 assembly; no KEEP, no further Flow takes (40 credits total), scheduled-copy fallback preserved.",
-        "check_at": "2026-11-05T16:43:18+00:00",
-        "requires": [
-          "moving_video_input"
-        ],
-        "recheck_task": "J2225"
-      },
-      "required_capabilities": [
-        "moving_video_input"
-      ]
+        "type": "input",
+        "condition": "Gemini demonstrated moving_video_input KEEP review complete in jobs/reviews/J2225/REVIEW.md (2cbdaa2414; PR #507 / 542f8c9d44 verified; S5_flow_t2_silent.mp4 sha256 904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18 and S6_flow_t2_silent.mp4 sha256 2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a both KEEP for opening 1.15-3.85s and forward preroll 0.00-1.15s at 1.5x upscale; t1 takes excluded). Awaiting J2167 closeout and elected-Chief exact-source acceptance before J1199 assembly; no further Flow takes (40 credits total), scheduled-copy fallback preserved.",
+        "check_at": "2026-11-05T22:15:00+00:00",
+        "last_recheck": "J2225",
+        "checked_at": "2026-11-05T16:17:39+00:00",
+        "checked_by": "gemini"
+      }
     },
     {
       "id": "J1209",
@@ -186538,13 +186539,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
-      "since": "2026-11-05T16:02Z",
-      "eta": "2026-11-05T18:02Z",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-05T15:43Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J2225/REVIEW.md, 2cbdaa2414): verified J1208 / PR #507 (542f8c9d44) and directly inspected S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a), opening 1.15-3.85s, preroll 0.00-1.15s, phone proxies, and full-size WARNs via demonstrated moving_video_input. Both take2 sources PASS/KEEP (zero frozen frames, seamless f27->f28 loop seam MAD 0.2503 / 5.0421, opening 0-1.5s MAD 6.01 / 14.57, scientific honesty verified; t1 takes excluded). Updated J1208 hold to input via --recheck J2225 for J2167 closeout and elected-Chief exact-source acceptance before J1199 assembly. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-05T15:43Z",
@@ -186580,9 +186581,19 @@
           "at": "2026-11-05T16:16Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Step 3/4 complete: committed and pushed jobs/reviews/J2225/REVIEW.md with native-video KEEP review of S5/S6 take2"
+        },
+        {
+          "at": "2026-11-05T16:17Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Step 4/4 complete: recorded J2225 KEEP review on J1208 hold and closed J2225"
+        },
+        {
+          "at": "2026-11-05T16:17Z",
+          "by": "gemini",
+          "what": "done: KEEP (jobs/reviews/J2225/REVIEW.md, 2cbdaa2414): verified J1208 / PR #507 (542f8c9d44) and directly inspected S5_flow_t2_silent.mp4 (904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a), opening 1.15-3.85s, preroll 0.00-1.15s, phone proxies, and full-size WARNs via demonstrated moving_video_input. Both take2 sources PASS/KEEP (zero frozen frames, seamless f27->f28 loop seam MAD 0.2503 / 5.0421, opening 0-1.5s MAD 6.01 / 14.57, scientific honesty verified; t1 takes excluded). Updated J1208 hold to input via --recheck J2225 for J2167 closeout and elected-Chief exact-source acceptance before J1199 assembly. £0 / 0 credits."
         }
       ],
-      "remaining_action": "Record J2225 condition verification on J1208 via wait --recheck J2225 and close J2225 done",
+      "remaining_action": "Done: J2225 KEEP review and J1208 condition verification complete",
       "kind": "review",
       "recheck_of": "J1208",
       "required_capabilities": [
@@ -186600,15 +186611,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-05T16:16Z",
+        "at": "2026-11-05T16:17Z",
         "by": "gemini",
-        "note": "Step 3/4 complete: committed and pushed jobs/reviews/J2225/REVIEW.md with native-video KEEP review of S5/S6 take2"
+        "note": "Step 4/4 complete: recorded J2225 KEEP review on J1208 hold and closed J2225"
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2225/REVIEW.md"
     },
     {
       "id": "J2226",
