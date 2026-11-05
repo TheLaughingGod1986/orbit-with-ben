@@ -185921,20 +185921,25 @@
           "at": "2026-11-05T17:15Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T17:15Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: claimed; reading SHORTS_PICTURE_PLAN_v02, part-05 plates, PICTURE_PLAN and resolve_plate_path"
         }
       ],
-      "remaining_action": "Fast-forward codex/J2210-readiness (PR #425) to J2211-resolved 0a925061 (PR #426), verify check_all.sh + unit tests, and close J2210 done --ref 0a925061 (J2172 remains held on Chief HOS 010 Flow mint authorization)",
+      "remaining_action": "Read HOS 010 plans, VO timing and code-graphic hashes",
       "due": "2026-11-07T18:00:00Z",
       "kind": "video",
       "taskKeys": [
         "HOS:010"
       ],
       "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-05T10:21Z",
-        "by": "codex",
-        "note": "PR425 opened at 2e84edb3; required check_all ALL CHECKS PASS; resolver regression PASS. Final readiness not complete: S0"
+        "step": 0,
+        "of": 5,
+        "at": "2026-11-05T17:15Z",
+        "by": "cursor",
+        "note": "claimed; reading SHORTS_PICTURE_PLAN_v02, part-05 plates, PICTURE_PLAN and resolve_plate_path"
       },
       "superseded_holds": [
         {
