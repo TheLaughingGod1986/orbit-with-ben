@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2242 | mini | open (after J2241) | – | – | 008 edit · assembly · HOS 008 Franklin: closed-GOP packet/boundary splice + 27 film-wide bottom-caption panels -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
 | J2243 | mini | open (after J2242) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect windows + 27 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
 | J2244 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2215 |  |
+| J2245 | mini | open (after J2239) | – | – | 011 vo · vo · HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02 |  |
 
 Recently finished:
 

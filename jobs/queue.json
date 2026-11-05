@@ -1,5 +1,5 @@
 {
-  "next_id": 2245,
+  "next_id": 2246,
   "jobs": [
     {
       "id": "J0001",
@@ -188036,6 +188036,34 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2245",
+      "title": "HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Record HOS 011 long voiceover (5 parts, ~1,210 spoken words) from locked 02_Video-Projects/011_Surgery-Before-Anaesthesia/01_Script/surgery_script_master_v02.md (91.1/100 PASS; J0198 Gemini facts PASS + J0224 Claude primary-source quote check PASS; J2239 package scaffold & J2204 check PASS). House HOS voice (Ben Orbit Narrator, eleven_v3) on the Mac Mini via el_client.py / vo_take.py. Check and log live ElevenLabs balance first (ai_spend.py record; floor is 0 subscription credit, never buy/top-up/spill into paid billing). Run vo_check.py (word diff, loudness, pace, first minute) on every part, commit take metadata / hashes on HOS (no media in git), update PIPELINE.json / STATUS.md, and park for Chief VO review.",
+      "ref": "",
+      "film": "011",
+      "stage": "vo",
+      "after": "J2239",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-05T19:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T19:13Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02",
+      "kind": "vo"
     }
   ],
   "focus": [],
