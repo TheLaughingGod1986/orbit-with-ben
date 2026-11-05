@@ -1,5 +1,5 @@
 {
-  "next_id": 2246,
+  "next_id": 2247,
   "jobs": [
     {
       "id": "J0001",
@@ -188078,6 +188078,34 @@
         }
       ],
       "remaining_action": "HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02",
+      "kind": "vo"
+    },
+    {
+      "id": "J2246",
+      "title": "HOS 013 Darwin & Wallace: Shorts voiceover (2 v02 Shorts), vo_check, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Record the two search-titled Test B Shorts for HOS 013 (02_Video-Projects/013_Darwin-Wallace-Evolution/10_Shorts/SHORTS_SCRIPTS_v02.md: Short A 'How Did Darwin Discover Evolution?' 60w in 10_Shorts/vo_v02/hos_013_short_A_v02.txt; Short B 'What Is Survival of the Fittest?' 61w in 10_Shorts/vo_v02/hos_013_short_B_v02.txt) using Ben Orbit Narrator (eleven_v3, speed 1.04) through 04_Audio/tools/el_client.py on the Mini. Run vo_check_py312.sh on both takes, savevo_check JSONs + word timings, and park for Chief review. £0 cash (subscription credit only, check live balance first).",
+      "ref": "",
+      "film": "013",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-05T19:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T19:17Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record hos_013_short_A_v02 and hos_013_short_B_v02 via el_client.py on the Mini, run vo_check, and park for Chief",
       "kind": "vo"
     }
   ],
