@@ -186570,9 +186570,14 @@
           "at": "2026-11-05T16:07Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1/4 complete: recorded demonstrated moving_video_input capability and directly inspected S5_flow_t2_silent.mp4, S6_flow_t2_silent.mp4, opening/preroll/phone mp4s and full-size stills"
+        },
+        {
+          "at": "2026-11-05T16:12Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2/4 complete: verified S5/S6 take2 SHA-256 hashes, picture_qa PASS + WARNs, zero frozen frames, seamless f27->f28 preroll->opening loop handoffs (MAD 0.2503 / 5.0421), and Flow ledger (40 credits, 15430->15390)"
         }
       ],
-      "remaining_action": "Verify S5/S6 take2 source QA, WARNs, scientific honesty, and frame-by-frame motion across 0.00-1.15s preroll and 1.15-3.85s opening",
+      "remaining_action": "Write jobs/reviews/J2225/REVIEW.md in clean worktree and update J1208 hold with --recheck J2225",
       "kind": "review",
       "recheck_of": "J1208",
       "required_capabilities": [
@@ -186590,11 +186595,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-05T16:07Z",
+        "at": "2026-11-05T16:12Z",
         "by": "gemini",
-        "note": "Step 1/4 complete: recorded demonstrated moving_video_input capability and directly inspected S5_flow_t2_silent.mp4, S6_"
+        "note": "Step 2/4 complete: verified S5/S6 take2 SHA-256 hashes, picture_qa PASS + WARNs, zero frozen frames, seamless f27->f28 p"
       },
       "taskKeys": [
         "OWB:030"
