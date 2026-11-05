@@ -211,9 +211,14 @@ def macbook_portable(job: dict, data: dict | None = None) -> bool:
         and not MEDIA_WORK.search(title) and not MINI_ONLY.search(text)
 
 
+def is_macbook(agent: str) -> bool:
+    """A MacBook worker slot: `macbook`, or `macbook-2` etc. when it runs jobs in parallel (Ben, 5 Nov 2026)."""
+    return bool(re.fullmatch(r"macbook(?:-\d+)?", str(agent or "")))
+
+
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
     chief = agent if workflow.role_job(job) and chief_relay.is_elected_chief(agent, at) else ""
-    if agent == "macbook" and "macbook" in can and macbook_portable(job, data):
+    if is_macbook(agent) and "macbook" in can and macbook_portable(job, data):
         # Same checks as any claim, with the job seen as a MacBook job; an addressed job runs that agent's CLI there.
         job = {k: v for k, v in job.items() if k != "for"} | {"needs": "macbook"}
     return workflow.claimable(job, data["jobs"], at, agent, chief, can, chief_relay.current_execution(at), chief_relay.worker_capabilities())

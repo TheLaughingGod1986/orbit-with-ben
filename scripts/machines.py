@@ -12,6 +12,7 @@ Which machine a job ran on comes from the agent id that claimed or finished it:
 Reads only; never fails the publish.
 """
 import datetime as dt
+import re
 
 WINDOW = dt.timedelta(hours=24)
 MACHINES = [
@@ -32,7 +33,7 @@ def _t(s):
 
 def machine_of(agent: str) -> str:
     a = str(agent or "").split("/")[0].strip().lower()
-    return OF.get(a, "")
+    return OF.get(re.sub(r"^macbook-\d+$", "macbook", a), "")
 
 
 def finished(job: dict):
@@ -84,7 +85,11 @@ def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.d
         rows["macbook"].update(state=str(macbook_hb.get("state") or ""),
                                why="; ".join(why) if isinstance(why, list) else str(why),
                                seen=str(macbook_hb.get("at") or ""), agents=macbook_hb.get("agents") or [])
-        _add(rows["macbook"], str(macbook_hb.get("job") or ""), "macbook", str(macbook_hb.get("at") or ""), queue)
+        # Each slot's own report (two jobs at once, 5 Nov 2026); a single-slot heartbeat is its own only slot.
+        for hb in macbook_hb.get("slots") or [macbook_hb]:
+            if hb.get("job"):
+                _add(rows["macbook"], str(hb.get("job") or ""), str(hb.get("agent") or "macbook"),
+                     str(hb.get("at") or ""), queue)
     # Cloud Claude and the Grok box have no heartbeat here: "seen" is their last entry in the queue's history.
     for m, agent in (("cloud", "claude"), ("grok", "chief")):
         if not rows[m]["seen"]:

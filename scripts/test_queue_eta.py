@@ -88,6 +88,18 @@ class Forecast(unittest.TestCase):
         self.assertEqual(s["jobs"]["J0001"]["agent"], "codex")  # Gemini is busy, Codex is free
         self.assertNotIn("J0002", s["jobs"])
 
+    def test_two_macbook_slots_take_two_jobs_at_once(self):
+        import board_publish
+        d = queue(("macbook", "a", {}), ("macbook", "b", {}), ("macbook", "c", {}))
+        hb = board_publish.merge_macbook([{"at": "2026-11-05T09:55:00Z", "slot": 1, "agent": "macbook", "state": "idle"},
+                                          {"at": "2026-11-05T09:56:00Z", "slot": 2, "agent": "macbook-2", "state": "idle"}])
+        f = run(d, book=hb)["jobs"]
+        self.assertEqual({f["J0001"]["agent"], f["J0002"]["agent"]}, {"macbook", "macbook-2"})
+        self.assertEqual((f["J0001"]["startAt"], f["J0002"]["startAt"]), ("2026-11-05T10:00Z", "2026-11-05T10:00Z"))
+        lanes = {a["agent"]: a for a in run(d)["agents"]}  # an old single heartbeat: slot 2 not reporting yet
+        self.assertTrue(lanes["macbook"]["up"])
+        self.assertIn("slot 2", lanes["macbook-2"]["why"])
+
     def test_pace_comes_from_jobs_finished_in_the_last_day(self):
         d = {"jobs": [{"status": "done", "history": [{"at": f"2026-11-05T0{i}:00Z", "by": "gemini", "what": "done: ok"}]}
                       for i in range(8)]}

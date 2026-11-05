@@ -428,17 +428,37 @@ def ls_remote(repo: pathlib.Path, *refs: str) -> str:
     return git(repo, "ls-remote", "origin", *refs, timeout=30)
 
 
+MACBOOK_SLOT_REFS = ("macbook-heartbeat", "macbook-heartbeat-2")  # one per MacBook slot (two jobs at once, 5 Nov 2026)
+
+
+def merge_macbook(slots: list) -> dict | None:
+    """One MacBook heartbeat for the readers that know one: slot 1's (or the newest), plus `slots` (every slot's own
+    report, fresh or not) and `jobs` (what each working slot is on)."""
+    have = [s for s in slots if isinstance(s, dict)]
+    if not have:
+        return None
+    first = next((s for s in have if s.get("slot", 1) == 1), None) or max(have, key=lambda s: str(s.get("at") or ""))
+    out = dict(first)
+    out["slots"] = have
+    out["jobs"] = [str(s["job"]) for s in have if s.get("job")]
+    if any(s.get("state") == "working" for s in have):
+        out["state"] = "working"
+        out["job"] = first.get("job") or out["jobs"][0]
+    return out
+
+
 def heartbeats(repo: pathlib.Path | None = None) -> tuple:
-    """(Mini heartbeat, MacBook heartbeat) from their branches, or None each when unreadable (machines card)."""
+    """(Mini heartbeat, MacBook heartbeat) from their branches, or None each when unreadable (machines card). The
+    MacBook one merges every slot's branch (merge_macbook)."""
     repo = repo or OWB
-    out = []
-    for branch in ("mini-heartbeat", "macbook-heartbeat"):
+    out = {}
+    for branch in ("mini-heartbeat", *MACBOOK_SLOT_REFS):
         try:
             git(repo, "fetch", "-q", "origin", f"+refs/heads/{branch}:refs/remotes/origin/{branch}", timeout=30)
-            out.append(json.loads(git(repo, "show", f"origin/{branch}:heartbeat.json", timeout=15)))
+            out[branch] = json.loads(git(repo, "show", f"origin/{branch}:heartbeat.json", timeout=15))
         except Exception:  # noqa: BLE001
-            out.append(None)
-    return tuple(out)
+            out[branch] = None
+    return out["mini-heartbeat"], merge_macbook([out[b] for b in MACBOOK_SLOT_REFS])
 
 
 def quick_key(remote=ls_remote) -> str | None:
@@ -446,7 +466,7 @@ def quick_key(remote=ls_remote) -> str | None:
     orbit-with-ben, main of history-of-science (one ls-remote each, no fetch) and the Mini's acting-Chief file.
     None if a remote can't be read; the caller then does the full rebuild."""
     try:
-        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat", "refs/heads/macbook-heartbeat"),
+        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat", *(f"refs/heads/{b}" for b in MACBOOK_SLOT_REFS)),
                  remote(HOS, "refs/heads/main")]
     except Exception as e:  # noqa: BLE001
         log(f"quick check failed, full rebuild: {e!r}"[:300])

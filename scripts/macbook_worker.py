@@ -44,6 +44,12 @@ import sys
 
 HOME = pathlib.Path.home()
 WORKER_DIR = HOME / "_desk" / "worker"  # the clones setup_macbook.sh made for the worker itself
+# Two jobs at once on the MacBook Pro (Ben, 5 Nov 2026: "could that maybe handle two tasks in parallel ... two on the
+# MacBook Pro and one on the Mac Mini"). launchd starts slot 1; slot 1 starts the other slots (MACBOOK_SLOTS, default
+# 2) as their own processes. Each slot has its own clones, lock, agent id (macbook, macbook-2) and heartbeat branch,
+# so the two never share a checkout or a claim.
+SLOT = max(1, int(os.environ.get("MACBOOK_SLOT", "1") or 1))
+SLOTS = max(1, int(os.environ.get("MACBOOK_SLOTS", "2") or 1))
 URLS = {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
         "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git"}
 
@@ -59,28 +65,38 @@ def own_checkout(env: str, name: str) -> pathlib.Path:
                 return p
         except (OSError, ValueError):
             pass
-    return WORKER_DIR / name
+    return slot_dir(SLOT) / name
+
+
+def slot_dir(n: int) -> pathlib.Path:
+    return WORKER_DIR if n == 1 else WORKER_DIR / f"slot{n}"
+
+
+def slot_name(n: int, base: str) -> str:
+    return base if n == 1 else f"{base}-{n}"
 
 
 OWB = own_checkout("OWB_REPO", "orbit-with-ben")
 HOS = own_checkout("HOS_REPO", "history-of-science")
 STATE = HOME / "_desk" / "state"
-AGENT_ID = "macbook"
+AGENT_ID = slot_name(SLOT, "macbook")
+HEARTBEAT_REF = slot_name(SLOT, "macbook-heartbeat")
 
 PROMPT = """You are the MacBook worker for Ben's YouTube studio, running unattended on Ben's MacBook Pro while he is
-away from it. Your agent id is `macbook` everywhere (jobs.py --agent macbook). Do ONE job, then stop.
+away from it. Your agent id is `{agent}` everywhere (jobs.py --agent {agent}). Do ONE job, then stop.
+Another MacBook slot may be working on a different job at the same time, in its own checkouts: stay in yours.
 
 The job is already claimed for you: {job}
 1. Orbit With Ben ({owb}) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then
      python3 scripts/jobs.py show {job}
    For a HOS job, work in the HOS checkout ({hos}) and follow its AGENTS.md.
 2. Do the job exactly as its brief says. Report progress as you go:
-     python3 scripts/jobs.py progress {job} --agent macbook --step <k> --of <n> --action "<what is left>" --git
+     python3 scripts/jobs.py progress {job} --agent {agent} --step <k> --of <n> --action "<what is left>" --git
 3. Commit your work on a branch named macbook/<job id>, push it (git push -u origin <branch>), and open a PR to main
    with gh; say the PR number in the result. Then switch every checkout you touched back to main
    (git checkout main): a checkout left on a branch stops the MacBook taking any further job, and Ben's own
    History of Science folder must always be left on main.
-4. Finish with  jobs.py done {job} --agent macbook --result "..." --git  (or block / release with a reason).
+4. Finish with  jobs.py done {job} --agent {agent} --result "..." --git  (or block / release with a reason).
 5. Report on the studio thread:  python3 scripts/owb_thread.py post "[MacBook] ..."
 
 This is Ben's own laptop, not the Mini:
@@ -132,7 +148,7 @@ def in_hours(t: dt.datetime) -> bool:
     return lt.hour >= start or lt.hour < end
 
 
-def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None) -> list[str]:
+def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None, load=None) -> list[str]:
     """Reasons not to run now; empty means go."""
     why = []
     now = now or dt.datetime.now(dt.timezone.utc)
@@ -152,6 +168,11 @@ def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None) -> list[str]:
     floor = float(os.environ.get("MACBOOK_MIN_FREE_GB", "15"))
     if free < floor:
         why.append(f"disk low ({free:.0f} GB free, needs {floor:.0f})")
+    if SLOT > 1:
+        # A second job only while the machine has room: the first slot's job always comes first.
+        load, cpus = os.getloadavg()[0] if load is None else load, os.cpu_count() or 8
+        if load > cpus * float(os.environ.get("MACBOOK_SLOT_LOAD", "0.6")):
+            why.append(f"busy (load {load:.1f} on {cpus} cores): slot {SLOT} waits")
     return why
 
 
@@ -327,7 +348,8 @@ def host_observation():
 
 def heartbeat_doc(state: str, why: list, job: str = "", now: dt.datetime | None = None) -> dict:
     now = now or dt.datetime.now(dt.timezone.utc)
-    return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "state": state, "why": why, "job": job,
+    return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "slot": SLOT, "agent": AGENT_ID,
+            "state": state, "why": why, "job": job,
             "observation": host_observation(),
             "agents": installed(), "paused": down_agents(now)}
 
@@ -345,7 +367,7 @@ def push_heartbeat(state: str, why: list, job: str = "") -> None:
                               text=True, timeout=30, check=True).stdout.strip()
         commit = subprocess.run(git + ["commit-tree", tree, "-m", f"macbook heartbeat {state}"], capture_output=True,
                                 text=True, timeout=30, check=True).stdout.strip()
-        subprocess.run(git + ["push", "-q", "-f", "origin", f"{commit}:refs/heads/macbook-heartbeat"],
+        subprocess.run(git + ["push", "-q", "-f", "origin", f"{commit}:refs/heads/{HEARTBEAT_REF}"],
                        capture_output=True, timeout=60)
     except (OSError, subprocess.SubprocessError) as e:
         log(f"heartbeat not pushed: {e}")
@@ -487,7 +509,7 @@ def run_ordinary(admitted=None) -> str:
         if (not checked or checked.get("admission") != admitted["admission"] or guards()):
             raise RuntimeError("serial launch revalidation failed; retain admission")
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
-    prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
+    prompt = PROMPT.format(job=job, agent=AGENT_ID, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
                            cap_min=cap // 60)
     cmd = agent_cmd(agent, prompt, model) if agent else None
     if not cmd:
@@ -520,9 +542,33 @@ def run_ordinary(admitted=None) -> str:
 
 
 
+def start_other_slots(popen=None, system=None) -> list:
+    """Slot 1 starts slots 2..SLOTS, each in its own process group with its own log; a slot still running from an
+    earlier tick holds its lock and the new copy exits at once. Never with capacity mode on (one lane only there)."""
+    if SLOT != 1 or SLOTS < 2 or os.environ.get("OWB_CAPACITY_ENABLED") == "1" \
+            or (system or platform.system()) != "Darwin":  # the MacBook only: never from a test or another host
+        return []
+    popen = popen or subprocess.Popen
+    started = []
+    logs = HOME / "Library" / "Logs"
+    for n in range(2, SLOTS + 1):
+        env = dict(os.environ, MACBOOK_SLOT=str(n), OWB_REPO=str(slot_dir(n) / "orbit-with-ben"),
+                   HOS_REPO=str(slot_dir(n) / "history-of-science"))
+        try:
+            logs.mkdir(parents=True, exist_ok=True)
+            out = open(logs / f"owb-macbook-worker-{n}.log", "a")
+            popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"], env=env, stdout=out,
+                  stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
+            started.append(n)
+        except OSError as e:
+            log(f"slot {n} not started: {e}")
+    return started
+
+
 def run() -> int:
     STATE.mkdir(parents=True, exist_ok=True)
-    lock = open(STATE / "macbook-worker.lock", "w")
+    start_other_slots()
+    lock = open(STATE / f"{slot_name(SLOT, 'macbook-worker')}.lock", "w")
     try:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except OSError:
