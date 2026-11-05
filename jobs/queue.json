@@ -1,5 +1,5 @@
 {
-  "next_id": 2214,
+  "next_id": 2215,
   "jobs": [
     {
       "id": "J0001",
@@ -99907,7 +99907,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "parked for Chief: S2 (earth_equator_weight_v07, sha256 7d07deafbd4e...), S5 (028_short_fri04_scale_v07, sha256 d5589ad4fa32...), and S6 (028_short_lift_night_sky_35yr_v07, sha256 2f399f3127bf...) v07 delivered to repo/UAT/NAS and _desk/renders/J1100-v07 (branch gemini/J1100-v07-delivery @ 545128a66f); passed h43-LOOP + all 5 gates + direct ear AAC/bed audition",
+      "result": "waiting for review J2214 (rule H): S2 (earth_equator_weight_v07, sha256 7d07deafbd4e...), S5 (028_short_fri04_scale_v07, sha256 d5589ad4fa32...), and S6 (028_short_lift_night_sky_35yr_v07, sha256 2f399f3127bf...) v07 delivered to repo/UAT/NAS and _desk/renders/J1100-v07 (branch gemini/J1100-v07-delivery @ 545128a66f); passed h43-LOOP",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -101148,6 +101148,11 @@
           "at": "2026-11-05T12:24Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: S2 (earth_equator_weight_v07, sha256 7d07deafbd4e...), S5 (028_short_fri04_scale_v07, sha256 d5589ad4fa32...), and S6 (028_short_lift_night_sky_35yr_v07, sha256 2f399f3127bf...) v07 delivered to repo/UAT/NAS and _desk/renders/J1100-v07 (branch gemini/J1100-v07-delivery @ 545128a66f); passed h43-LOOP + all 5 gates + direct ear AAC/bed audition"
+        },
+        {
+          "at": "2026-11-05T12:33Z",
+          "by": "chief",
+          "what": "rule H: decision moved from the Chief to review J2214"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101176,7 +101181,7 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Parked for Chief replacement review of S2, S5, S6 v07"
+      "remaining_action": "Waiting for review J2214 (Rule H KEEP/FIX of S2/S5/S6 v07)"
     },
     {
       "id": "J1101",
@@ -167597,13 +167602,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-05T12:28Z",
-      "eta": "2026-11-05T14:28Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T21:44Z",
-      "result": "",
+      "result": "superseded by gemini J1100 v07 delivery (audio_input demonstrated; bed ASR + direct-ear in V07_DELIVERY_REPORT / _desk/renders/J1100-v07; branch gemini/J1100-v07-delivery @ 545128a66f). Pre-v07 audio/bed verify is the wrong vehicle. Replacement review is J2214. Worker gemini: STOP this claim — do not KEEP/FIX under J1899; claim J2214 instead if continuing. Listening notes already recorded on J1899 history remain evidence for J2214.",
       "history": [
         {
           "at": "2026-11-03T21:44Z",
@@ -167639,6 +167644,11 @@
           "at": "2026-11-05T12:31Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Completed direct ear listening of all 3 v07 Shorts (S2, S5, S6), S2 instrumental bed stem (e47e8554), full 60.03s bed (13adc031), and 3e26b379b opening/middle/end auditions (ab74a65a, 639fc7b4, cd44ea11); verified h43-LOOP and all gates PASS"
+        },
+        {
+          "at": "2026-11-05T12:33Z",
+          "by": "chief",
+          "what": "cancelled: superseded by gemini J1100 v07 delivery (audio_input demonstrated; bed ASR + direct-ear in V07_DELIVERY_REPORT / _desk/renders/J1100-v07; branch gemini/J1100-v07-delivery @ 545128a66f). Pre-v07 audio/bed verify is the wrong vehicle. Replacement review is J2214. Worker gemini: STOP this claim — do not KEEP/FIX under J1899; claim J2214 instead if continuing. Listening notes already recorded on J1899 history remain evidence for J2214."
         }
       ],
       "remaining_action": "Write jobs/reviews/J1899/REVIEW.md with KEEP verdict and full audio/video/gate evidence",
@@ -185350,6 +185360,36 @@
       "remaining_action": "Auth Flow as benoats@googlemail.com; gate Ultra reserve; mint 6 Quality 720p inserts ≤1200",
       "kind": "video",
       "model": "flow-veo-3.1"
+    },
+    {
+      "id": "J2214",
+      "title": "Review J1100: S2/S5/S6 v07 h43-LOOP + Ben pickup delivery",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J1100), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J1100 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J1100 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J1100.\n5. Finish this job with the verdict in --result.\n\n## Evidence for this review (v07 delivery, gemini 5 Nov 2026)\n\n- Desk: `/Users/benjaminoats/_desk/renders/J1100-v07/` (`V07_DELIVERY_REPORT.md`, `H43_LOOP_SUMMARY.json`, per-Short folders + PHONE MP4s)\n- Branch: `origin/gemini/J1100-v07-delivery` @ `545128a66f`\n- Worker: gemini demonstrated `audio_input`; bed ASR + direct-ear AAC documented in V07_DELIVERY_REPORT\n\n### Shorts (final MP4 sha256)\n- **S2** `earth_equator_weight_v07` (emwQsPxnRGM, OWB:027): `7d07deafbd4e242384aa35ffc8bf10d670c5e1f961c1f0c2ecc2b2159ea9c649` (prefix `7d07deafbd4e`)\n- **S5** `028_short_fri04_scale_v07` (jJ5LkFGyzLI, OWB:028): `d5589ad4fa328ecf08ef737c272a32a3eef4bb4ddf28b420f8fb25cc1dfa626d` (prefix `d5589ad4fa32`)\n- **S6** `028_short_lift_night_sky_35yr_v07` (X768qs8sNQs, OWB:028): `2f399f3127bf4ba9a96fedabe0927a7aa9362a412c5a5d93d8c10473b6f83db3` (prefix `2f399f3127bf`)\n\n### Gate summary (all three PASS)\nh43-LOOP + gate_shorts_open + picture_qa + polish_gate + sfx_kit level + music_gate + dark run (<3) + OCR 3rd frame; I≈-14.4 LUFS / TP≈-1.7..-2.0 dBTP. S2 bed = house `owb-standalone-shorts_score_bed_v01.mp3` (ASR 0 words; direct ear instrumental). Delivered to repo/UAT/NAS + desk. No YouTube upload/swap/schedule.\n\n### Supersedes\nJ1899 (\"verify condition for J1100\", pre-v07 audio/bed recheck) is superseded by this v07 delivery; do not wait on J1899.\n\nWhat the worker asked the Chief: S2 (earth_equator_weight_v07, sha256 7d07deafbd4e...), S5 (028_short_fri04_scale_v07, sha256 d5589ad4fa32...), and S6 (028_short_lift_night_sky_35yr_v07, sha256 2f399f3127bf...) v07 delivered to repo/UAT/NAS and _desk/renders/J1100-v07 (branch gemini/J1100-v07-delivery @ 545128a66f); passed h43-LOOP + all 5 gates + direct ear AAC/bed audition\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T12:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T12:33Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "KEEP or FIX J1100 S2/S5/S6 v07; write jobs/reviews/<id>/REVIEW.md",
+      "kind": "review",
+      "review_of": "J1100",
+      "urgent": 12
     }
   ],
   "focus": [],
