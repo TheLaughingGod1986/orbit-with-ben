@@ -181659,17 +181659,22 @@
           "at": "2026-11-05T03:25Z",
           "by": "codex",
           "what": "step 0 of 3 done: Locked B/C takes and planned NAS plates found. Source still sheet exposes street plate under plant line and mint already inside planned candle-only shot; checking lawful existing alternatives. Scratch offload found no eligible old scratch."
+        },
+        {
+          "at": "2026-11-05T03:27Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Inventory complete: B hash0f109926 and C hash5b5d84e5 match locked takes; all12 plates present and hashed. Source-only picture QA FAIL: B3/8, C2/9 cuts; under10s clips cannot provide source starts10s apart. No render or spend."
         }
       ],
-      "remaining_action": "Finish exact source inventory and reconcile picture mismatches before rendering",
+      "remaining_action": "Record failed source QA and queue the exact loop/reuse and picture repair decision before any render",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-05T03:25Z",
+        "at": "2026-11-05T03:27Z",
         "by": "codex",
-        "note": "Locked B/C takes and planned NAS plates found. Source still sheet exposes street plate under plant line and mint already"
+        "note": "Inventory complete: B hash0f109926 and C hash5b5d84e5 match locked takes; all12 plates present and hashed. Source-only p"
       },
       "taskKeys": [
         "HOS:006"
