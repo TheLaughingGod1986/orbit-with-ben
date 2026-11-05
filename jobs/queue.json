@@ -183168,18 +183168,23 @@
           "at": "2026-11-05T06:06Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2188; starting independent review of J2187 five-shot route and preparation evidence against J2184 and canonical HOS 006 locks"
+        },
+        {
+          "at": "2026-11-05T06:09Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J2184 REVIEW.md/LOCKED_ROWS.json/LIVE_ROUTE.json, J2187 PR #418 files, J2181 PR #415, J2183 PR #416, and canonical BUILD_RULE_v02.json"
         }
       ],
-      "remaining_action": "Read J2184/J2187/J2183/J2181 records, verify 17-row mappings and 5-shot fallback preparation, write jobs/reviews/J2188/REVIEW.md, and update linked Chief job",
+      "remaining_action": "Verify 17-row PROPOSED_MAPPINGS.json, 5-shot briefs, reference stills, existing crops (including B S03 and C S06 open issues), route checks, and VO/script approvals",
       "due": "2026-11-07T18:00:00Z",
       "for": "gemini",
       "kind": "review",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T06:06Z",
+        "at": "2026-11-05T06:09Z",
         "by": "gemini",
-        "note": "Claimed J2188; starting independent review of J2187 five-shot route and preparation evidence against J2184 and canonical"
+        "note": "Read J2184 REVIEW.md/LOCKED_ROWS.json/LIVE_ROUTE.json, J2187 PR #418 files, J2181 PR #415, J2183 PR #416, and canonical "
       },
       "taskKeys": [
         "HOS:006"
