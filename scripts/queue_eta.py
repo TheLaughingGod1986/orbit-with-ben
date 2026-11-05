@@ -26,7 +26,8 @@ MACBOOK_FRESH = dt.timedelta(minutes=40)
 CAN = {"cursor": {"mini", "any"}, "codex": {"mini", "any"}, "gemini": {"mini", "any", "gemini"},
        "macbook": {"macbook", "any"}, "claude": {"cloud", "any"}}
 MACHINE = {"cursor": "mini", "codex": "mini", "gemini": "mini", "macbook": "macbook", "claude": "cloud"}
-MAX_FORECAST = 80         # jobs; beyond that the times mean nothing
+MAX_FORECAST = 80
+CHIEF_CHAIN = {"chief", "claude", "codex", "gemini"}  # Ben, 26 Oct 2026: who can be Chief; Cursor is a worker only         # jobs; beyond that the times mean nothing
 
 
 def _t(s):
@@ -75,7 +76,9 @@ def agents_up(mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime) ->
         flag = (flags.get(a) or {}) if not (r and r.get("up")) else {}
         if not why and flag.get("out_until") and (_t(flag["out_until"]) or at) > at:
             why = f"out of credit until {flag['out_until']}" + (f" ({flag.get('reason')})" if flag.get("reason") else "")
-        out[a] = (why or ("" if r and r.get("up") else "not in the Mini's chain"))[:120]
+        # The heartbeat's chain is the Chief chain (Grok, Claude, Codex, Gemini); a worker missing from it (Cursor) is
+        # up unless a down mark or credit flag says otherwise (5 Nov 2026: Cursor showed "not in the Mini's chain").
+        out[a] = (why or ("" if r or a not in CHIEF_CHAIN else "not in the Mini's chain"))[:120]
     seen = _t((macbook_hb or {}).get("at"))
     why = (macbook_hb or {}).get("why") or []
     why = "; ".join(why) if isinstance(why, list) else str(why)

@@ -45,9 +45,9 @@ class Forecast(unittest.TestCase):
         d = queue(("mini", "running", {}), ("mini", "next", {}))
         j = d["jobs"][0]
         j.update(status="claimed", by="codex", since="2026-11-05T09:30Z", eta="2026-11-05T11:30Z")
-        lanes = {a["agent"]: a for a in run(d, mini={"chain": [{"agent": "codex", "up": True}]})["agents"]}
+        lanes = {a["agent"]: a for a in run(d, mini={"chain": [{"agent": "codex", "up": True}, {"agent": "cursor", "up": False, "why": "out"}]})["agents"]}
         self.assertEqual((lanes["codex"]["now"], lanes["codex"]["freeAt"]), ("J0001", "2026-11-05T10:15Z"))
-        self.assertEqual(run(d, mini={"chain": [{"agent": "codex", "up": True}]})["jobs"]["J0002"]["startAt"],
+        self.assertEqual(run(d, mini={"chain": [{"agent": "codex", "up": True}, {"agent": "cursor", "up": False, "why": "out"}]})["jobs"]["J0002"]["startAt"],
                          "2026-11-05T10:15Z")
 
     def test_down_agents_say_why_and_jobs_for_them_say_who_they_wait_for(self):
@@ -57,6 +57,15 @@ class Forecast(unittest.TestCase):
         self.assertFalse(lanes["cursor"]["up"])
         self.assertIn("out of usage", lanes["cursor"]["why"])
         self.assertIn("waiting for cursor", s["noAgent"]["J0001"])
+
+    def test_a_worker_outside_the_chief_chain_is_up_unless_flagged(self):
+        d = queue(("mini", "x", {"for_agent": "cursor"}))
+        mini = {"chain": [{"agent": "codex", "up": True}, {"agent": "gemini", "up": True}]}
+        lanes = {a["agent"]: a for a in run(d, mini=mini)["agents"]}
+        self.assertTrue(lanes["cursor"]["up"])
+        with patch.object(q, "_flags", return_value={"cursor": {"out_until": "2026-11-06T00:00:00Z", "reason": "weekly"}}):
+            lanes = {a["agent"]: a for a in q.section(d, mini, BOOK, AT)["agents"]}
+        self.assertFalse(lanes["cursor"]["up"])
 
     def test_macbook_and_cloud_lanes(self):
         d = queue(("macbook", "book job", {}), ("cloud", "cloud job", {}))
