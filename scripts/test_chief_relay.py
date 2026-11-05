@@ -48,30 +48,9 @@ class Relay(unittest.TestCase):
     def chief(self, at=T0):
         return cr.acting(at)[1]
 
-    def test_capacity_waiting_preserves_canonical_worker_and_chief_dispatch(self):
-        from contextlib import contextmanager
-        from unittest.mock import patch
-        @contextmanager
-        def empty(**kwargs):
-            yield {"state":"capacity_waiting", "serial_safe":True}
-        with patch("capacity_caller.serial_preflight", side_effect=empty), \
-             patch.object(cr, "capacity_tick") as launch:
-            cr.cmd_run(T0)
+    def test_a_free_relay_wakes_the_queued_worker(self):
+        cr.cmd_run(T0)
         self.assertTrue(self.ran("cursor"))
-        launch.assert_not_called()  # free relay never chooses a lower CPU job
-
-    def test_uncertain_capacity_still_elects_and_delivers_chief_inbox(self):
-        from contextlib import contextmanager
-        from unittest.mock import patch
-        @contextmanager
-        def unknown(**kwargs):
-            yield {"state":"capacity_rejected", "serial_safe":False}
-        with patch("capacity_caller.serial_preflight", side_effect=unknown), \
-             patch.object(cr, "publish_chief_inbox") as inbox:
-            cr.cmd_run(T0)
-        inbox.assert_called_once()
-        self.assertFalse(self.ran("cursor"))
-        self.assertEqual(self.chief(), "cursor")
 
     def test_grok_is_chief_while_its_heartbeat_is_fresh(self):
         cr.seen("chief", T0 - 30 * MIN)

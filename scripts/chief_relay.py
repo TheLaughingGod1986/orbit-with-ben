@@ -86,8 +86,7 @@ import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and
 def code_version():
     root = pathlib.Path(__file__).resolve().parent
     return hashlib.sha256(b"\0".join((root/name).read_bytes() for name in ("chief_relay.py","workflow_state.py","workflow_handoffs.py","studio.py","jobs.py","routing.py",
-        "capacity_evidence.py","dispatch_capacity.py","capacity_reservations.py",
-        "capacity_supervisor.py","capacity_caller.py","serial_admission.py","execution_leases.py","portable_transfer.py"))).hexdigest()[:16]
+        ))).hexdigest()[:16]
 
 LOADED_VERSION = code_version()
 
@@ -772,9 +771,6 @@ def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
             os.killpg(p.pid, signal.SIGKILL)
             out, _ = p.communicate()
         code = 124
-    if os.environ.get("OWB_CAPACITY_ENABLED") == "1":
-        import serial_admission
-        serial_admission.confirm_group_exit(p.pid)
     out = out or ""
     sys.stdout.write(out[-20000:])
     return code, out[-4000:]
@@ -925,12 +921,6 @@ def cmd_run(at: dt.datetime) -> int:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError:
-            # The opt-in caller uses a distinct reviewed checkout and its own
-            # lock; legacy execution remains accounted in fresh host evidence.
-            capacity_result = capacity_tick()
-            if capacity_result is not None:
-                log("capacity busy-serial tick: " + capacity_result["state"])
-                return 0
             log("skip: previous run still working")
             push_heartbeat(at, "busy", note="the previous run is still working")
             return 0
@@ -1427,11 +1417,6 @@ def recorded_task_outcome(job, who, started):
     return ""
 
 
-def capacity_tick(*, serial_only=False):
-    import capacity_caller
-    return capacity_caller.production_tick(role="mini", owb_root=OWB, hos_root=HOS, serial_only=serial_only)
-
-
 def run_locked(at: dt.datetime) -> int:
     note_grok_posts(at)
     fetch_claude_beat(at)
@@ -1517,136 +1502,105 @@ def run_locked(at: dt.datetime) -> int:
         selection = workflow.select_dispatch(data, at, leader, up, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
                                              review_ids={j["id"] for j in chief_reviews}, execution=current_execution(at),
                                              exclude=attempted, capabilities=worker_capabilities())
-        import capacity_caller
-        with capacity_caller.serial_preflight(owb_root=OWB, hos_root=HOS) as capacity_result:
-            # Election, duties and canonical priority are reconciled before any
-            # capacity gate. A free serial lane never starts a lower CPU candidate
-            # ahead of a Chief review. Extra CPU launches belong to the busy path.
-            if capacity_result is not None:
-                log("capacity serial preflight: " + capacity_result["state"])
-                if (capacity_result.get("state") != "capacity_waiting"
-                        or capacity_result.get("serial_safe") is not True):
-                    push_heartbeat(at, "busy", note="capacity occupancy unverified or occupied")
-                    return 0
-            # An open/released job that already ran must not be rediscovered by the
-            # legacy fallback below. Continue other eligible jobs in this same run.
-            if not selection and attempted and data.get("jobs"):
-                log("chain: no unattempted eligible jobs; held work and retries preserved")
-                push_heartbeat(at, "idle", note="No unattempted eligible jobs; see queue holds and retry records")
+        # An open/released job that already ran must not be rediscovered by the
+        # legacy fallback below. Continue other eligible jobs in this same run.
+        if not selection and attempted and data.get("jobs"):
+            log("chain: no unattempted eligible jobs; held work and retries preserved")
+            push_heartbeat(at, "idle", note="No unattempted eligible jobs; see queue holds and retry records")
+            return 0
+        if not yield_monthly_for_dispatch(selection):
+            return 0
+        review_due = bool(selection and selection["mode"] == "review")
+        if selection:
+            who = selection["worker"]
+            if review_due:
+                chief_reviews = [selection["job"]] + [j for j in chief_reviews if j["id"] != selection["job"]["id"]]
+        addressed = bool(selection and who != leader)
+        chief_name = NAMES.get(who, who) if cloud_chief(who) else ""
+        if cloud_chief(who):
+            # Grok Bot (9 Oct 2026, studio owner), or Claude under Ben's override (14 Oct): the Chief does reviews,
+            # PASS, merges, decisions and the board; the Mini CLIs stay the WORKERS for queued jobs. So wake the first
+            # worker that's up (Cursor, Codex, then Gemini) for one queued job (no thread/desk sweep).
+            who = next((a for a in routing.MINI_WORKERS if a in up), None)
+            if who is None:
+                log(f"{chief_name} is Chief and no worker is up: nothing to run")
+                push_heartbeat(at, "no-worker", note=f"{chief_name} is Chief; no Mini worker has credit")
                 return 0
-            if not yield_monthly_for_dispatch(selection):
-                return 0
-            review_due = bool(selection and selection["mode"] == "review")
-            if selection:
-                who = selection["worker"]
-                if review_due:
-                    chief_reviews = [selection["job"]] + [j for j in chief_reviews if j["id"] != selection["job"]["id"]]
-            addressed = bool(selection and who != leader)
-            chief_name = NAMES.get(who, who) if cloud_chief(who) else ""
-            if cloud_chief(who):
-                # Grok Bot (9 Oct 2026, studio owner), or Claude under Ben's override (14 Oct): the Chief does reviews,
-                # PASS, merges, decisions and the board; the Mini CLIs stay the WORKERS for queued jobs. So wake the first
-                # worker that's up (Cursor, Codex, then Gemini) for one queued job (no thread/desk sweep).
-                who = next((a for a in routing.MINI_WORKERS if a in up), None)
-                if who is None:
-                    log(f"{chief_name} is Chief and no worker is up: nothing to run")
-                    push_heartbeat(at, "no-worker", note=f"{chief_name} is Chief; no Mini worker has credit")
-                    return 0
-                worker_only = True
-            if who != leader:
-                worker_only = True
-            last_wake = last_seen(who)
-            # Overnight (Ben, 7 Oct: carry on overnight) agents are woken for queued jobs only; the 2-hourly sweep for
-            # thread/desk tasks runs in the day, so an empty night costs no credit.
-            slo, shi = (int(x) for x in os.environ.get("CHIEF_SWEEP_HOURS", "8-22").split("-"))
-            sweep = slo <= dt.datetime.now().hour < shi and (
-                not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120"))))
-            if worker_only:
-                sweep = False
-            reviews = chief_reviews if who == leader and not worker_only else []
-            review_work = bool(reviews and review_due)
-            if not queue_has_work(who) and not sweep and not review_work:
-                ago = f"{int((at - last_wake).total_seconds() // 60)} min ago" if last_wake else "never"
-                log(f"nothing queued for {who}; last woken {ago}: not waking it")
-                push_heartbeat(at, "idle", who, "nothing queued")
-                return 0
-            names = [r[0] for r in rows]
-            above = [f"{NAMES.get(a, a)} is {why}" for a, ok, why in rows[:names.index(who)]] if who in names else []
-            why = "The shared queue selected your eligible task" if addressed else ("; ".join(above) or "it is first in line")
-            if addressed and rerouted:
-                why = (f"the job's earlier worker is out of usage, so the relay walked its fallback chain and handed it to "
-                       f"you ({', '.join(rerouted)}; Ben, 11 Oct 2026). Take it with jobs.py next; do it as the primary "
-                       f"would, and stop at the same protected calls")
-            elif worker_only:
-                why = (f"{NAMES.get(leader, leader) or 'No agent'} is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
-                       "job queue. In step 3 skip the channel check and the HOS desk inbox: do only the job "
-                       "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
-                       "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
-            model, job = "", None
-            if selection:
-                who = selection["worker"]
-                job = None if review_work else selection["job"]
-                model = routing.model_for({"kind": "chief"} if review_work else job, who)
-            elif not addressed and who in routing.MINI_WORKERS:
-                who, model, job = route_worker(who, up)
-            if chained and not review_work and (job is None or (last_ran and job.get("id") == last_ran)):
-                log(f"chain: stop after {chained} job(s): " + ("next job is the one just run (released to retry later)"
-                                                             if job else "no next job identified"))
-                return 0
-            priority = ("CHIEF REVIEW PRIORITY: before taking an ordinary job, review " + reviews[0]["id"] + ": "
-                        + str(reviews[0].get("title") or "") + ". Read its body, result and history plus the evidence. "
-                        "Keep the original work held until the decision is recorded. Resolve or delegate the next step; "
-                        f"Report this review's own progress with python3 scripts/chief_relay.py review-progress --agent {who} --job {reviews[0]['id']} --step N --note 'outcome': "
-                        "step 1 after checking inputs/approval, step 2 after reviewing evidence and choosing the ruling, "
-                        "step 3 only after recording the ruling and follow-up. Do not reuse the worker's completed steps. "
-                        "record the ruling and concrete follow-up on the queue job, including a dependency or retry date "
-                        "for a real external wait. Do not just repeat parked-for-Chief or ask an absent Chief. "
-                        f"For an open Chief job, use jobs.py next --id {reviews[0]['id']} --agent {who} --can mini,gemini,any --git to claim that exact job. "
-                        "do not reopen unrelated date, credit or Ben-approval holds. Do this one review, then stop. "
-                        "Other reviews waiting: " + ", ".join(j["id"] for j in reviews[1:])) if review_work else ""
-            if selection and not review_work:
-                priority = (f"DISPATCH PRIORITY: claim only {job['id']} with python3 scripts/jobs.py next --id {job['id']} --agent {who} --can mini,gemini,any --git. "
-                            "This is the shared deadline-first selection. Do not substitute an inbox, audit or ordinary jobs.py next choice. "
-                            "If it is no longer claimable, stop; the relay will replan from the current queue.")
-            prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
-                                   owb=OWB, hos=HOS, authority=authority_prompt(who, leader), priority=priority,
-                                   role="the elected acting Chief" if who == leader else "a specialist worker")
-            log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
-            push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
-            seen(who, at)
-            started = now()
-            if review_work:
-                write_json(d("active.json"), {"job": reviews[0]["id"], "title": reviews[0].get("title", ""),
-                           "agent": who, "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(seconds=cap + 60)),
-                           "pid": os.getpid(), "kind": "chief-review",
-                           "progress": {"step": 0, "of": 3, "at": iso(started), "note": "Review started"}})
-            execution = {"job":reviews[0]["id"] if review_work else job.get("id") if job else "", "worker":who, "model":model,
-                         "pid":os.getpid(),"host":"mini","machine_name":platform.node(),
-                         "startedAt":iso(started),"expiresAt":iso(started + dt.timedelta(seconds=cap+60)),"version":LOADED_VERSION}
-            if os.environ.get("OWB_CAPACITY_ENABLED") == "1":
-                try:
-                    import capacity_evidence
-                    root = pathlib.Path(os.environ["OWB_CAPACITY_ROOT"])
-                    config = capacity_evidence.private_document(root, "dispatch.json")
-                    head = capacity_evidence.reviewed_installation(OWB, config.get("reviewed_head"))
-                    execution.update(capacity_evidence.serial_identity(
-                        root, execution=execution, at=started, installed_head=head))
-                except (KeyError, OSError, ValueError, TypeError, subprocess.SubprocessError):
-                    # Ordinary serial work remains available, but an unattributed
-                    # lease blocks every extra lane until fresh proof exists.
-                    pass
-            admitted = capacity_caller.production_tick(role="mini", owb_root=OWB, hos_root=HOS,
-                serial_only=True, _serial_lock_held=True,
-                admission={"job": execution["job"], "worker": who, "model": model, "review": review_work})
-            if admitted is not None and not admitted.get("admission"):
-                push_heartbeat(at, "busy", note="selected serial account admission unavailable")
-                return 0
-            write_json(d("execution.json"),execution)
-            write_json(d("runner.json"),{"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"]})
+            worker_only = True
+        if who != leader:
+            worker_only = True
+        last_wake = last_seen(who)
+        # Overnight (Ben, 7 Oct: carry on overnight) agents are woken for queued jobs only; the 2-hourly sweep for
+        # thread/desk tasks runs in the day, so an empty night costs no credit.
+        slo, shi = (int(x) for x in os.environ.get("CHIEF_SWEEP_HOURS", "8-22").split("-"))
+        sweep = slo <= dt.datetime.now().hour < shi and (
+            not last_wake or (at - last_wake) >= dt.timedelta(minutes=int(os.environ.get("CHIEF_SWEEP_MIN", "120"))))
+        if worker_only:
+            sweep = False
+        reviews = chief_reviews if who == leader and not worker_only else []
+        review_work = bool(reviews and review_due)
+        if not queue_has_work(who) and not sweep and not review_work:
+            ago = f"{int((at - last_wake).total_seconds() // 60)} min ago" if last_wake else "never"
+            log(f"nothing queued for {who}; last woken {ago}: not waking it")
+            push_heartbeat(at, "idle", who, "nothing queued")
+            return 0
+        names = [r[0] for r in rows]
+        above = [f"{NAMES.get(a, a)} is {why}" for a, ok, why in rows[:names.index(who)]] if who in names else []
+        why = "The shared queue selected your eligible task" if addressed else ("; ".join(above) or "it is first in line")
+        if addressed and rerouted:
+            why = (f"the job's earlier worker is out of usage, so the relay walked its fallback chain and handed it to "
+                   f"you ({', '.join(rerouted)}; Ben, 11 Oct 2026). Take it with jobs.py next; do it as the primary "
+                   f"would, and stop at the same protected calls")
+        elif worker_only:
+            why = (f"{NAMES.get(leader, leader) or 'No agent'} is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
+                   "job queue. In step 3 skip the channel check and the HOS desk inbox: do only the job "
+                   "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
+                   "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
+        model, job = "", None
+        if selection:
+            who = selection["worker"]
+            job = None if review_work else selection["job"]
+            model = routing.model_for({"kind": "chief"} if review_work else job, who)
+        elif not addressed and who in routing.MINI_WORKERS:
+            who, model, job = route_worker(who, up)
+        if chained and not review_work and (job is None or (last_ran and job.get("id") == last_ran)):
+            log(f"chain: stop after {chained} job(s): " + ("next job is the one just run (released to retry later)"
+                                                         if job else "no next job identified"))
+            return 0
+        priority = ("CHIEF REVIEW PRIORITY: before taking an ordinary job, review " + reviews[0]["id"] + ": "
+                    + str(reviews[0].get("title") or "") + ". Read its body, result and history plus the evidence. "
+                    "Keep the original work held until the decision is recorded. Resolve or delegate the next step; "
+                    f"Report this review's own progress with python3 scripts/chief_relay.py review-progress --agent {who} --job {reviews[0]['id']} --step N --note 'outcome': "
+                    "step 1 after checking inputs/approval, step 2 after reviewing evidence and choosing the ruling, "
+                    "step 3 only after recording the ruling and follow-up. Do not reuse the worker's completed steps. "
+                    "record the ruling and concrete follow-up on the queue job, including a dependency or retry date "
+                    "for a real external wait. Do not just repeat parked-for-Chief or ask an absent Chief. "
+                    f"For an open Chief job, use jobs.py next --id {reviews[0]['id']} --agent {who} --can mini,gemini,any --git to claim that exact job. "
+                    "do not reopen unrelated date, credit or Ben-approval holds. Do this one review, then stop. "
+                    "Other reviews waiting: " + ", ".join(j["id"] for j in reviews[1:])) if review_work else ""
+        if selection and not review_work:
+            priority = (f"DISPATCH PRIORITY: claim only {job['id']} with python3 scripts/jobs.py next --id {job['id']} --agent {who} --can mini,gemini,any --git. "
+                        "This is the shared deadline-first selection. Do not substitute an inbox, audit or ordinary jobs.py next choice. "
+                        "If it is no longer claimable, stop; the relay will replan from the current queue.")
+        prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
+                               owb=OWB, hos=HOS, authority=authority_prompt(who, leader), priority=priority,
+                               role="the elected acting Chief" if who == leader else "a specialist worker")
+        log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
+        push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
+        seen(who, at)
+        started = now()
+        if review_work:
+            write_json(d("active.json"), {"job": reviews[0]["id"], "title": reviews[0].get("title", ""),
+                       "agent": who, "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(seconds=cap + 60)),
+                       "pid": os.getpid(), "kind": "chief-review",
+                       "progress": {"step": 0, "of": 3, "at": iso(started), "note": "Review started"}})
+        execution = {"job":reviews[0]["id"] if review_work else job.get("id") if job else "", "worker":who, "model":model,
+                     "pid":os.getpid(),"host":"mini","machine_name":platform.node(),
+                     "startedAt":iso(started),"expiresAt":iso(started + dt.timedelta(seconds=cap+60)),"version":LOADED_VERSION}
+        write_json(d("execution.json"),execution)
+        write_json(d("runner.json"),{"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"]})
         try:
             code, tail = run_cli(who, prompt, cap, model)
-            import serial_admission
-            serial_admission.finish(admitted)
         finally:
             d("execution.json").unlink(missing_ok=True)
             if review_work:
@@ -1763,41 +1717,6 @@ def walk_on(job: dict, who: str, model: str, at: dt.datetime, reason="out of usa
         log(f"chain: {cur['id']} rerouted from {who} to {lane[0]} on {lane[1]}")
 
 
-def capacity_observation(at):
-    """Read-only actual execution outlook. An ETA is never a slot reservation."""
-    queue = read_json(OWB / "jobs" / "queue.json") or {}
-    lease = current_execution(at)
-    active = []
-    if lease:
-        job = next((j for j in queue.get("jobs", []) if j.get("id") == lease.get("job")), {})
-        active.append({"job":lease.get("job"), "owner":lease.get("worker"),
-                       "host":lease.get("host", "mini"), "machine_name":lease.get("machine_name"),
-                       "phase":"running" if job.get("status") == "claimed" else "starting",
-                       "action":job.get("remaining_action"), "progress":job.get("progress"),
-                       "recorded_task_estimate_minutes":job.get("eta_min"),
-                       "recorded_task_eta":job.get("eta"), "lease_expires_at":lease.get("expiresAt")})
-    remote = None
-    try:
-        result = subprocess.run(["git", "-C", str(OWB), "show", "origin/macbook-heartbeat:heartbeat.json"],
-                                capture_output=True, text=True, timeout=10)
-        if result.returncode == 0:
-            remote = json.loads(result.stdout)
-    except (OSError, ValueError, subprocess.SubprocessError):
-        pass
-    stamp = workflow.timestamp((remote or {}).get("at"))
-    age = (at-stamp).total_seconds() if stamp else None
-    import capacity_evidence
-    local = capacity_evidence.observation(OWB, at=at, installed_head=capacity_evidence.installed_head(OWB),
-        evidence_root=os.environ.get("CAPACITY_EVIDENCE_ROOT") or None)
-    return {"mode":"observation-only", "configured_mini_lanes":1, "active":active,
-            "local_resource_observation":local,
-            "macbook_cached_observation":remote,
-            "macbook_observation_age_seconds":age,
-            "macbook_capacity_verified":False,
-            "free_slot_at":None, "availability":"unknown",
-            "rollout":"disabled: exact-head review, host/account evidence and atomic launch integration required"}
-
-
 def cmd_status(at: dt.datetime) -> int:
     flags = load_out(at)
     rows, who = acting(at)
@@ -1840,7 +1759,6 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status")
-    sub.add_parser("capacity", help="read-only host leases and capacity evidence; never launches")
     sub.add_parser("run")
     cp = sub.add_parser("capabilities", help="record a fresh, actually demonstrated worker tool capability")
     cp.add_argument("--agent", required=True)
@@ -1867,9 +1785,6 @@ def main(argv=None) -> int:
         return 0
     if a.cmd == "review-progress":
         review_progress(a.agent, a.job, a.step, a.note, at)
-        return 0
-    if a.cmd == "capacity":
-        print(json.dumps(capacity_observation(at), indent=2))
         return 0
     if a.cmd == "status":
         return cmd_status(at)
