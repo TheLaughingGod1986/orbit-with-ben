@@ -915,3 +915,47 @@ regressions cover no-candidate/empty occupancy, stale requests, uncertain/occupi
 receipts and a competing flock during canonical selection. All test host/account
 proof remains synthetic, not observed production acceptance. Rollout stays off;
 exact-head Chief review, green CI and observed-host gates remain required.
+
+## 5 November: ordinary serial dispatch with an independently busy peer
+
+The 7086e10 review found that an empty-global-occupancy preflight starved ordinary
+MacBook reviews while the Mini continuously worked. This continuation changes
+preflight to require a clear local host and known, fresh peer occupancy. It is
+only permission to select a candidate, never permission to launch one.
+
+Every enabled ordinary serial launch now obtains a canonical `phase: serial`
+admission on its selected job. The dedicated queue checkout recollects host,
+process, account, model and capability evidence on every `jobs.with_git` retry.
+The MacBook uses its actual ordinary queue selector and installed-worker/model
+selector; the Mini binds its actual selected job or elected-Chief review. A
+busy peer on an independent pool is allowed; shared-pool exhaustion, unknown or
+stale peer evidence, uncertain/local occupancy and changed selection reject.
+Fresh approved peer transport is required in both directions.
+
+These admissions use the existing `dispatch_reservation` field. Capacity
+reservations account for them across hosts, including between admission and
+ordinary process publication. Only the admitted claimant can take the selected
+job; other stage reservations remain excluded. MacBook claims name the exact
+admitted job and revalidate the actual claim, worker/model, quota/capability and
+power/idle evidence immediately before launch. If ordinary admission cannot
+proceed, the portable CPU path still gets its independent reservation checks.
+No CPU request needs to exist for an ordinary review to run.
+
+Serial admissions have no timer-based release. A positively returned worker and
+an observed empty child process group allow exact-token cleanup. Launch/probe
+exceptions retain occupancy for explicit recovery. HOS film work remains
+excluded from enabled admission until a supported cross-repository adapter is
+available; disabled legacy dispatch is unchanged.
+
+Regression evidence includes real preflight/admission receipts with a busy Mini
+and an ordinary review, the symmetric Mini case, canonical owner-only claims,
+shared pool at limit, stale/missing peer proof, local/uncertain occupancy,
+competing canonical account occupancy, changed ordinary priority, launch-time
+quota change, uncertain child-group exit and positive-exit cleanup. Fixtures
+replace host measurements/transport and CLI availability, not ordinary queue
+selection. Bounded CPU children are local test fixtures only.
+
+Capacity remains disabled. This is code for exact-head review, not an observed
+host rollout or a second-lane approval. No registration/probe evidence, mounted
+transport, device availability, credit, media review or free-slot estimate is
+invented. The live installation has not been changed.

@@ -32,7 +32,8 @@ def production_tick(*, role, owb_root, hos_root=None, environ=None, serial_only=
     A busy serial relay may call this without touching its Git index. The
     configured checkout is locked for the entire attempt. We never create or
     switch a worktree during dispatch, and never share its index with a worker.
-    Only a fresh, empty occupancy receipt permits ordinary serial dispatch.
+    A fresh local occupancy receipt permits selection; canonical admission
+    then binds the actual serial job/worker/account before launch.
     """
     env = os.environ if environ is None else environ
     if env.get("OWB_CAPACITY_ENABLED") != "1":
@@ -85,9 +86,9 @@ def production_tick(*, role, owb_root, hos_root=None, environ=None, serial_only=
 
 @contextlib.contextmanager
 def serial_preflight(*, owb_root, hos_root=None, environ=None, role="mini"):
-    """Keep launch exclusion until the relay publishes its legacy lease.
+    """Keep local launch exclusion through canonical account admission.
 
-    Releasing the lock immediately after an empty observation would let a busy
+    Releasing the lock immediately after a local observation would let a busy
     tick launch between that observation and the serial execution lease.
     """
     env = os.environ if environ is None else environ

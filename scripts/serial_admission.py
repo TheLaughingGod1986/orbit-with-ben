@@ -15,12 +15,27 @@ import workflow_state as workflow
 
 def reserve(data, *, host_id, request, observed):
     import jobs
+    if request.get("validate") is not None:
+        expected = request["validate"]
+        candidate = copy.deepcopy(data)
+        row = next((j for j in candidate.get("jobs", []) if j["id"] == expected.get("job")), None)
+        if (not row or row.get("dispatch_reservation") != expected
+                or expected.get("host") != host_id
+                or row.get("status") != "claimed" or row.get("by") != expected.get("claimant")):
+            raise ValueError("serial admission claim changed")
+        del row["dispatch_reservation"]
+        row.update(status="open", by="")
+        actual = reserve(candidate, host_id=host_id, request=expected, observed=observed)
+        if any(actual.get(k) != expected.get(k) for k in ("job", "host", "worker", "model", "account", "claimant")):
+            raise ValueError("serial admission selection changed")
+        return copy.deepcopy(expected)
     at = observed['at']
     hosts, leases = observed['hosts'], observed['leases']
     host = next((h for h in hosts if h.get('host') == host_id), {})
     if (capacity.host_problem(host, at) or any(
             not capacity.fresh(h, at) or h.get('registered_id') != h.get('host') for h in hosts)
-            or any(not x.get('account') or x.get('recovery_required') for x in leases)
+            or any(not x.get('account') or x.get('recovery_required')
+                   or x.get('host') not in {h.get('host') for h in hosts} for x in leases)
             or capacity.unattributed_claims(data, hosts, leases, at)):
         raise ValueError('serial occupancy unverified')
     occupied = list(leases)
@@ -57,7 +72,8 @@ def reserve(data, *, host_id, request, observed):
                     or workflow.external_hold(selected, at)
                     or workflow.dependency_problem(selected, by_id)):
                 raise ValueError('Chief review selection changed')
-        elif not jobs.claimable(data, selected, workflow.MINI, at, worker):
+        elif (not jobs.claimable(data, selected, workflow.MINI, at, worker)
+                or (jobs.choose_next(data, worker, workflow.MINI, at) or {}).get("id") != selected["id"]):
             raise ValueError('serial queue selection changed')
     report = (host.get('workers') or {}).get(worker) or {}
     account_id = report.get('account')
@@ -103,3 +119,10 @@ def finish(receipt):
             del row['dispatch_reservation']
         return True, None, []
     return jobs.with_git(apply, 'jobs: reconcile observed serial exit')
+
+
+def confirm_group_exit(pgid):
+    """A returned leader alone is not proof that its worker group is clear."""
+    import execution_leases
+    if execution_leases.group_members(pgid):
+        raise RuntimeError("serial child group still occupied; retain admission")

@@ -260,7 +260,7 @@ def run_capped(cmd: list, cwd, cap_s: int) -> int:
     import signal
     p = subprocess.Popen(cmd, cwd=cwd, start_new_session=True)
     try:
-        return p.wait(timeout=cap_s)
+        code = p.wait(timeout=cap_s)
     except subprocess.TimeoutExpired:
         os.killpg(p.pid, signal.SIGTERM)
         try:
@@ -268,7 +268,11 @@ def run_capped(cmd: list, cwd, cap_s: int) -> int:
         except subprocess.TimeoutExpired:
             os.killpg(p.pid, signal.SIGKILL)
             p.wait()
-        return 124
+        code = 124
+    if os.environ.get("OWB_CAPACITY_ENABLED") == "1":
+        import serial_admission
+        serial_admission.confirm_group_exit(p.pid)
+    return code
 
 
 def claimed_job(out: str) -> str:
@@ -418,8 +422,11 @@ def run_one() -> str:
         admitted = capacity_caller.production_tick(role="macbook", owb_root=OWB,
             hos_root=HOS, serial_only=True, _serial_lock_held=True, admission={})
         if admitted is not None and not admitted.get("admission"):
+            # No ordinary candidate/account admission: a portable CPU proposal
+            # still gets its own authoritative reserve/launch checks.
+            capacity_result = capacity_tick(lock_held=True)
             push_heartbeat("waiting", ["ordinary account admission unavailable"])
-            return "waiting"
+            return "ran" if capacity_result and capacity_result.get("state") == "capacity_exited" else "waiting"
         why = guards()
         if why:
             import serial_admission
@@ -459,6 +466,13 @@ def run_ordinary(admitted=None) -> str:
             or agent != admitted["admission"]["worker"] or model != admitted["admission"]["model"]):
         log("ordinary selected worker changed after admission; retaining occupancy for recovery")
         raise RuntimeError("serial worker selection changed")
+    if admitted:
+        import capacity_caller
+        checked = capacity_caller.production_tick(role="macbook", owb_root=OWB,
+            hos_root=HOS, serial_only=True, _serial_lock_held=True,
+            admission={"validate": admitted["admission"]})
+        if (not checked or checked.get("admission") != admitted["admission"] or guards()):
+            raise RuntimeError("serial launch revalidation failed; retain admission")
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
     prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
                            cap_min=cap // 60)

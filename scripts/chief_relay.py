@@ -715,6 +715,9 @@ def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
             os.killpg(p.pid, signal.SIGKILL)
             out, _ = p.communicate()
         code = 124
+    if os.environ.get("OWB_CAPACITY_ENABLED") == "1":
+        import serial_admission
+        serial_admission.confirm_group_exit(p.pid)
     out = out or ""
     sys.stdout.write(out[-20000:])
     return code, out[-4000:]

@@ -242,6 +242,9 @@ class Caller(unittest.TestCase):
         self.assertIsNotNone(jobs.do_next(self.data, "macbook", {"macbook", "any"}, T, job_id="J9998"))
         self.assertEqual(self.data["jobs"][-1]["by"], "macbook")
         self.assertEqual(self.data["jobs"][-1]["dispatch_reservation"], admitted["admission"])
+        self.assertEqual(self.admit({"validate": admitted["admission"]})["admission"], admitted["admission"])
+        self.ev["accounts"]["shared"]["ready"] = False
+        self.assertNotIn("admission", self.admit({"validate": admitted["admission"]}))
         self.assertIsNone(jobs.do_next(self.data, "gemini", {"mini", "any"}, T, job_id="J9998"))
 
     def test_serial_git_retry_reobserves_competing_account_occupancy(self):
@@ -259,6 +262,23 @@ class Caller(unittest.TestCase):
         with patch("serial_admission.reserve", side_effect=retry):
             self.assertNotIn("admission", self.admit())
         self.assertEqual(len(observed), 1)
+
+    def test_uncertain_group_exit_retains_canonical_admission(self):
+        self.ordinary_fixture()
+        admitted = self.admit()
+        import serial_admission
+        with patch("execution_leases.group_members", return_value=[42]):
+            with self.assertRaises(RuntimeError):
+                serial_admission.confirm_group_exit(42)
+        self.assertEqual(self.data["jobs"][-1]["dispatch_reservation"], admitted["admission"])
+        with patch("execution_leases.group_members", side_effect=RuntimeError("probe unavailable")):
+            with self.assertRaises(RuntimeError):
+                serial_admission.confirm_group_exit(42)
+
+    def test_mini_serial_rejects_changed_ordinary_deadline_selection(self):
+        request = self.ordinary_fixture(role="mini")
+        self.data["jobs"].append(job("J0001", needs="any", urgent=True))
+        self.assertNotIn("admission", self.admit(request))
 
     def test_symmetric_mini_serial_busy_independent_peer(self):
         request = self.ordinary_fixture(role="mini")
