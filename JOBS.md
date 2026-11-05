@@ -91,6 +91,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2234 | gemini | open | – | – | review · Review multi-channel plan: risk and cut-over (Gemini) |  |
 | J2235 | mini | open | – | – | review · Cleanup audit: orbit-with-ben engine and tools (dead code, duplicates, bugs) |  |
 | J2236 | mini | open | – | – | review · Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs) |  |
+| J2237 | any | open | – | – | review · Verify condition for J0958 |  |
+| J2238 | mini | open | – | – | chief · Chief: resolve 033 shots orphan-review |  |
 
 Recently finished:
 
