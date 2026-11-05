@@ -175525,13 +175525,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T08:58Z",
-      "eta": "2026-11-05T09:13Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T14:59Z",
-      "result": "",
+      "result": "PASS+released: PR484 reviewed at b7299eedb3; composed onto main (kept nextVideoWorkCard + machinesCard + activity-before-progress) as 5e583c290c; squash-merged 66e7cbf053. Production dpl_GzhML8GQBQL1VKRB5ExDYp2HFJG1 READY; live version e998be177dde155b has activity-category and Next work on this video. £0.",
       "history": [
         {
           "at": "2026-11-04T14:59Z",
@@ -175547,6 +175547,11 @@
           "at": "2026-11-05T08:58Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T08:58Z",
+          "by": "chief",
+          "what": "done: PASS+released: PR484 reviewed at b7299eedb3; composed onto main (kept nextVideoWorkCard + machinesCard + activity-before-progress) as 5e583c290c; squash-merged 66e7cbf053. Production dpl_GzhML8GQBQL1VKRB5ExDYp2HFJG1 READY; live version e998be177dde155b has activity-category and Next work on this video. £0."
         }
       ],
       "remaining_action": "Review PR484 exact head; release frontend after normal checks and verify live category/next-video task display",
@@ -175569,7 +175574,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "66e7cbf053,dpl_GzhML8GQBQL1VKRB5ExDYp2HFJG1"
     },
     {
       "id": "J2030",
