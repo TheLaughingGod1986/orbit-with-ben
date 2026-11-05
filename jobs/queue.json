@@ -188972,13 +188972,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T22:16Z",
-      "eta": "2026-11-06T00:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-05T20:11Z",
-      "result": "",
+      "result": "CONDITION SATISFIED. J2213 PR #435 c693b4f4 verified (jobs/reviews/J2252/REVIEW.md). J2169 already reopened and claimed by cursor. £0.",
       "history": [
         {
           "at": "2026-11-05T20:11Z",
@@ -189044,6 +189044,11 @@
           "at": "2026-11-05T22:16Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T22:16Z",
+          "by": "chief",
+          "what": "done: CONDITION SATISFIED. J2213 PR #435 c693b4f4 verified (jobs/reviews/J2252/REVIEW.md). J2169 already reopened and claimed by cursor. £0."
         }
       ],
       "remaining_action": "Elected Chief: release J2169 hold on verified J2213 PR #435 (c693b4f4) and close J2252",
