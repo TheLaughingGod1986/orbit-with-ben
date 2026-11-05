@@ -184356,9 +184356,14 @@
           "at": "2026-11-05T09:58Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2194; reading J2172/J2194 queue entries and HOS PR 424 evidence"
+        },
+        {
+          "at": "2026-11-05T10:03Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J2172 HOS PR 424 (READINESS.md, INVENTORY.json, STATE.json), J1894/J1004 VO dispositions, and HOS 010 v02/v03 long and Shorts picture boards"
         }
       ],
-      "remaining_action": "Inspect J2172/J2194 records, HOS PR 424 evidence (READINESS.md, INVENTORY.json) and HOS 010 plate/row mappings",
+      "remaining_action": "Verify Rule 8 subject/surprise, robin/pigeon/gull row mappings, and write bounded £0 scope decision in jobs/reviews/J2194/REVIEW.md",
       "due": "2026-11-06T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -184372,11 +184377,11 @@
       "model": "gemini-argon",
       "urgent": 14,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-05T09:58Z",
+        "at": "2026-11-05T10:03Z",
         "by": "gemini",
-        "note": "Claimed J2194; reading J2172/J2194 queue entries and HOS PR 424 evidence"
+        "note": "Read J2172 HOS PR 424 (READINESS.md, INVENTORY.json, STATE.json), J1894/J1004 VO dispositions, and HOS 010 v02/v03 long "
       },
       "taskKeys": [
         "HOS:010"
