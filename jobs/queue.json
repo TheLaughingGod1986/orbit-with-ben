@@ -181360,13 +181360,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T01:17Z",
-      "eta": "2026-11-05T03:17Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "",
+      "result": "Negative qualification complete: cuff v01 fails required subject-first opening; exact clinical source absent. All21 input paths recovered/hashed, masters match. Pulse reserve rejected for BW_CFAX-mxc pump/stove overlap;10Dec unfilled. Bounded GBP0 decision J2174 queued. Local HOS commit7a695f0e in /private/tmp/J2168-hos-wt branch codex/J2168-qualification; ALL CHECKS PASS. Push blocked by automatic review: remote trust and exact egress authorization unestablished. No media changed, spend, upload, scheduling, Buffer or awaits.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -181402,6 +181402,11 @@
           "at": "2026-11-05T01:22Z",
           "by": "codex",
           "what": "step 3 of 3 done: HOS commit7a695f0e; all21 input hashes recorded; repository checks ALL CHECKS PASS. No media approval. J2174 queued. Auto-review rejected branch push: remote trust/egress authorization unestablished."
+        },
+        {
+          "at": "2026-11-05T01:22Z",
+          "by": "codex",
+          "what": "done: Negative qualification complete: cuff v01 fails required subject-first opening; exact clinical source absent. All21 input paths recovered/hashed, masters match. Pulse reserve rejected for BW_CFAX-mxc pump/stove overlap;10Dec unfilled. Bounded GBP0 decision J2174 queued. Local HOS commit7a695f0e in /private/tmp/J2168-hos-wt branch codex/J2168-qualification; ALL CHECKS PASS. Push blocked by automatic review: remote trust and exact egress authorization unestablished. No media changed, spend, upload, scheduling, Buffer or awaits."
         }
       ],
       "remaining_action": "J2174 must decide cuff opening repair; evidence branch remains local after push rejection",
