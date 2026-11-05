@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2162 | mini | open (after J2161) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2165 | mini | **stalled** | macbook | 2026-11-05T15:35Z | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance | jobs/reviews/J2164/REVIEW.md |
 | J2166 | mini | open | – | – | 031 thumbs · for gemini · review · `gemini-argon` · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
-| J2167 | mini | open | – | – | for gemini · review · `gemini-argon` · J1208 exact-source native-video review: S5/S6 Flow take2 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/507 |
+| J2167 | mini | claimed | gemini | 2026-11-05T18:50Z | for gemini · review · `gemini-argon` · J1208 exact-source native-video review: S5/S6 Flow take2 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/507 |
 | J2169 | mini | blocked | chief | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
