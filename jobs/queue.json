@@ -187665,7 +187665,7 @@
     {
       "id": "J2239",
       "title": "HOS 011 Anesthesia (Thu 10 Dec): Shorts scripts v02 + upload package scaffold + queue long VO",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Topic locked for Thu 10 Dec 2026 (J2231; neighbour gate PASS: 6 education >=1M incl. TED-Ed 19.73M & 2.66M; script v02 91.1 PASS, Gemini facts J0198 + Claude quote check J0224 PASS in 02_Video-Projects/011_Surgery-Before-Anaesthesia/01_Script/). Check surgery_script_master_v02.md against Nov 2026 first-30s proof-first + early DATA/SCALE rules (J2204), write the two search-titled Shorts scripts (10_Shorts/SHORTS_SCRIPTS_v02.md, Test B, autocomplete-checked), build 11_Upload-Package/PACKAGE_MANIFEST.json + PRODUCTION_CHECKLIST_V2.md + Descriptions/surgery_long_description_v01.txt (with Sources from FACT_NOTES_v01.md and provisional Chapters) so lint:package -- --film 011 PASSes, and queue long VO (--kind vo).",
       "ref": "",
@@ -187685,11 +187685,25 @@
           "at": "2026-11-05T18:30Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T18:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 103 min (heartbeat 2026-11-05T16:52:20Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Write 011 Shorts scripts v02 + upload package scaffold (lint:package PASS) and queue 011 long VO",
       "due": "2026-11-12T00:00:00Z",
-      "kind": "script"
+      "kind": "script",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2240",

@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2236 | mini | open | – | – | for gemini · review · `gemini-argon` · Cleanup audit: history-of-science tools and per-film scripts (dead code, duplicates, bugs) |  |
 | J2237 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0958 |  |
 | J2238 | mini | open | – | – | chief · Chief: resolve 033 shots orphan-review |  |
-| J2239 | any | open | – | – | 011 script · script · HOS 011 Anesthesia (Thu 10 Dec): Shorts scripts v02 + upload package scaffold + queue long VO |  |
+| J2239 | mini | open | – | – | 011 script · for gemini · script · `gemini-argon` · HOS 011 Anesthesia (Thu 10 Dec): Shorts scripts v02 + upload package scaffold + queue long VO |  |
 | J2240 | any | open | – | – | 013 shots · script · HOS 013 Darwin & Wallace (Thu 17 Dec): Shorts scripts v02 + upload package + shot list v01 (long script v02 & VO v03a locked) |  |
 
 Recently finished:
