@@ -101269,6 +101269,16 @@
           "at": "2026-11-05T23:27Z",
           "by": "gemini",
           "what": "approved by Ben: swap S5 jJ5LkFGyzLI (028 Gliese 710 scale) to 028_short_fri04_scale_v07 after Ben watch v07"
+        },
+        {
+          "at": "2026-11-05T23:28Z",
+          "by": "gemini",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J1100"
+        },
+        {
+          "at": "2026-11-05T23:28Z",
+          "by": "gemini",
+          "what": "approved by Ben: swap S6 X768qs8sNQs (028 night sky) to 028_short_lift_night_sky_35yr_v07 after Ben watch v07"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101298,7 +101308,19 @@
         "audio_input"
       ],
       "remaining_action": "Waiting on Ben's watch of S2/S5/S6 v07 (Ready for OK, awaits_ben). Swap each only after his OK; no OK by air-morning 10:30 -> v01 stays scheduled.",
-      "awaits_ben": {
+      "approved_from": {
+        "what": "swap S6 X768qs8sNQs (028 night sky) to 028_short_lift_night_sky_35yr_v07 after Ben watch",
+        "file": "OWB UAT/028_short_lift_night_sky_35yr_v07/028_short_lift_night_sky_35yr_v07_PHONE.mp4",
+        "version": "v07",
+        "airs": "2026-12-07T11:30Z",
+        "title": "028 night sky v07",
+        "number": "S6",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J1100",
+        "okAt": "2026-11-05T12:53Z"
+      },
+      "awaits_was": {
         "what": "swap S6 X768qs8sNQs (028 night sky) to 028_short_lift_night_sky_35yr_v07 after Ben watch",
         "file": "OWB UAT/028_short_lift_night_sky_35yr_v07/028_short_lift_night_sky_35yr_v07_PHONE.mp4",
         "version": "v07",
@@ -101308,19 +101330,6 @@
         "title": "028 night sky v07",
         "number": "S6",
         "type": "short"
-      },
-      "approved_from": {
-        "what": "swap S5 jJ5LkFGyzLI (028 Gliese 710 scale) to 028_short_fri04_scale_v07 after Ben watch",
-        "file": "OWB UAT/028_short_fri04_scale_v07/028_short_fri04_scale_v07_PHONE.mp4",
-        "version": "v07",
-        "airs": "2026-12-04T11:30Z",
-        "title": "028 Gliese 710 scale v07",
-        "number": "S5",
-        "type": "short",
-        "channel": "OWB",
-        "job": "J1100",
-        "askId": "J1100.1",
-        "okAt": "2026-11-05T12:52Z"
       }
     },
     {
