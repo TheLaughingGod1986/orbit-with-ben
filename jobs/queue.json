@@ -1,5 +1,5 @@
 {
-  "next_id": 2180,
+  "next_id": 2181,
   "jobs": [
     {
       "id": "J0001",
@@ -182325,6 +182325,35 @@
       "remaining_action": "Implement and test an opt-in terminal-loop contract without relaxing body reuse checks",
       "due": "2026-11-06T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J2180",
+      "title": "Review J2179 terminal-loop checker change before HOS006 can use it",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2178 acting-Chief scope. Review the exact J2179 PR and tests; system change requires elected Chief, recheck chief_relay status. Verify fail-closed opt-in <=1s terminal-loop classification, truthful source/hash/framing/VO and interval evidence, unchanged body reuse/long defaults and all regression cases in J2179. No blanket reviewed-ok waiver. Source preflight must distinguish provisional loop eligibility from rendered loop PASS. Validate docs/core sync where applicable. FIX returns exact corrections to J2179; KEEP may merge only green/required checks. Record merge SHA and notify HOS006 mapping producer and its review. Never reopen J2169 merely because the checker merges: body mappings need separate review and rendered gates remain. No generation, spend, production-stage changes or publishing. Link progress HOS:006. This is the separately reviewed system PR required by J2178.",
+      "ref": "J2178",
+      "film": "",
+      "stage": "",
+      "after": "J2179",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T03:35Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review and, if correct, merge the bounded terminal-loop checker correction",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "chief"
     }
   ],
   "focus": [],
