@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2181 | mini | claimed | codex | 2026-11-05T06:01Z | assembly · HOS 006: qualify existing-media replacements for B/C repeated and mismatched shots | J2178 |
 | J2182 | any | open (after J2179) | – | – | chief · Re-review J2179 terminal-loop checker after J2180 FIX | J2180 |
 | J2183 | any | open (after J2181) | – | – | review · Review HOS006 J2181 native source mappings and unresolved media gates | https://github.com/TheLaughingGod1986/history-of-science/pull/415 |
+| J2184 | any | open (after J2181) | – | – | chief · HOS006: decide bounded fallback for four native-resolution source gaps | https://github.com/TheLaughingGod1986/history-of-science/pull/415 |
 
 Recently finished:
 
