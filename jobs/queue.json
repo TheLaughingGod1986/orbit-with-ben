@@ -1,5 +1,5 @@
 {
-  "next_id": 2247,
+  "next_id": 2248,
   "jobs": [
     {
       "id": "J0001",
@@ -188137,6 +188137,34 @@
       ],
       "remaining_action": "Record hos_013_short_A_v02 and hos_013_short_B_v02 via el_client.py on the Mini, run vo_check, and park for Chief",
       "kind": "vo"
+    },
+    {
+      "id": "J2247",
+      "title": "032 R09 diameter graphic: review still and Mercury source rights",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# J2089 R09 real-photo size comparison: draft for row review\n\nReview `size_graphic.py`, `SIZE_MANIFEST_v01.json`, `SIZE_SOURCES_v01.json`\nand the full-size still at\n`/Users/benjaminoats/_desk/cache/J2089/size_previews_v01/r09_sizes_review.jpg`.\nThe transparent PNG and original NASA assets live alongside the manifest's\nabsolute paths. No media is committed and no animation has been rendered.\n\nThe row uses real Moon, Mercury and Titan photographic globes, a common linear\ndiameter scale, and the existing SOURCES.md row 3 values (3,475 / 4,879 / 5,150 km).\nAll three grow by the same factor; their ratios remain fixed. Each label has\nfour words or fewer. The navy backdrop in the review JPG is illustrative only;\nfinal compositing needs a graded moving plate, off-subject placement, credit\nlabels, appropriate timing and film gates. No new source picture occurrence or\nreuse exception is approved by this draft.\n\nCheck the representative limb crops: Titan's visible haze edge illustrates the\nnominal surface diameter; it is not a measurement of the photograph. Moon and\nMercury source texture/mosaic character and Titan's optical softness are real\nsource properties. Worker has inspected the full-size still, not motion.\n\n**Separate rights decision before render/use:** PIA15162 is credited to\nNASA/JHUAPL/Carnegie Institution of Washington. NASA's informational-use policy\nand source metadata are saved with hashes, but the existing APL hold is not\noverridden or treated as blanket permission. Return the applicable mission\ngrant, or FIX with a specific alternate Mercury source. PIA00405 is NASA/JPL/USGS;\nTitan PIA14602 keeps its existing harvest provenance and credit.\n\nReturn KEEP/FIX for R09 and a separate rights ruling. Render requires\n`--render --approved r09_sizes --review-ref <row-review> --rights-ref <grant>`\nin a fresh version directory. These references must correspond to actual\ndecisions; CLI flags cannot grant approval. SIZE_CHECKS_v01.json verifies all\n109 frame layouts, subpixel-rounding ratio error under one pixel, source/preview\nhashes, zero-alpha endpoints and rejection of an unapproved render attempt.\n\nJ2177 retains its existing 17 mechanism/source decisions. Frame-0 native motion,\nthe Huygens still-reuse conflict, APL Dragonfly rights, other real-body builds,\nregistered pebble ruler, final composites and gates remain incomplete. Preserve\nall 38 earlier exports and original parent progress 1/4. Spend GBP0.\n",
+      "ref": "2c9182cb31",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T19:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T19:24Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review R09 size still and resolve Mercury rights before rendering",
+      "kind": "review"
     }
   ],
   "focus": [],
