@@ -1,5 +1,5 @@
 {
-  "next_id": 2215,
+  "next_id": 2216,
   "jobs": [
     {
       "id": "J0001",
@@ -185411,6 +185411,34 @@
         "OWB:027",
         "OWB:028"
       ]
+    },
+    {
+      "id": "J2215",
+      "title": "Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "After ~/_desk/shared was set to 700 and guest access off (5 Nov). Run: M=$(mount | awk '/smbfs/ && /ben-mac-mini/ {for(i=1;i<=NF;i++) if($i==\"on\"){print $(i+1); exit}}'); echo $M; f=\"$M/.rw_check_$(date +%s)\"; echo ok > \"$f\" && cat \"$f\" && rm \"$f\" && echo PASS. Done when PASS (it removes only its own one-line check file). If it can't read or write, block with the error.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T12:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T12:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared",
+      "kind": "qa"
     }
   ],
   "focus": [],

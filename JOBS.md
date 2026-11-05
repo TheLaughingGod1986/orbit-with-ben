@@ -87,6 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2210 | mini | blocked | codex | – | 010 picture · video · HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint) | J2194 |
 | J2213 | mini | open | – | – | 006 picture · video · `flow-veo-3.1` · HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200) | HOS#180:6655551386 |
 | J2214 | mini | claimed | gemini | 2026-11-05T14:36Z | review · Review J1100: S2/S5/S6 v07 h43-LOOP + Ben pickup delivery |  |
+| J2215 | macbook | open | – | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
 
 Recently finished:
 
