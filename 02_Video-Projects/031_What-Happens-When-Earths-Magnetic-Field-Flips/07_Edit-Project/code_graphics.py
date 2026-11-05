@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='evidence':
+  from evidence_graphics import main as evidence
+  return evidence(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='mechanisms':
   from mechanism_graphics import main as mechanisms
   return mechanisms(sys.argv[2:])

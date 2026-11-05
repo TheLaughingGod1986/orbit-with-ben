@@ -2,6 +2,63 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (5 Nov, third run)
+
+Continue this branch / PR #495 at **1/3**. Added five distinct row-specific
+1920×1080 / 25 fps renders, recorded in `CODE_EVIDENCE_v01.json`:
+
+- R18 barcode schematic, 191.48–195.04 s, from SOURCES row 7. Mirrored stripes
+  spread from a central ridge. Stripe widths are illustrative, not a measured
+  reversal chronology. The preceding real seafloor plate remains required.
+- R19 alpha tally, 199.10–202.38 s, SOURCES row 7. A tally builds to 183 at the
+  spoken number. It is not a graph of event times. The 83-million-year WHEN
+  item remains unfinished. Keep the existing FACT card clear at lower left.
+- R35 alpha tree rings, 362.10–373.06 s, SOURCES row 14. The sourced 6% endpoint
+  uses a zero-to-100 slider; illustrative incoming particles and a growing
+  highlight show radioactive carbon recorded in a generic tree ring. This is
+  not an actual kauri isotope record. Plate changes are still needed underneath
+  this 10.96 s overlay. The existing diary FACT goes at lower left.
+- R42 alpha mass-per-area comparison, 427.04–433.60 s, SOURCES row 16: 1 kg
+  per square centimetre of air versus 10 m of water. These are local columns,
+  not a drawing of a planet; column heights are schematic. The actual mass
+  comparison comes from the locked line/source, not a simulated dataset.
+- R43 gas-collision schematic, 441.28–445.50 s, SOURCES row 16. Incoming
+  particles stop at gas molecules above the ground. Positions and collision
+  depths are illustrative, not an atmospheric transport calculation. The
+  preceding 434.52–441.28 s still needs its own real imagery / approved cut.
+
+Renderer: `evidence_graphics.py`, exposed as `code_graphics.py evidence`.
+All individual captions fade in/out over 0.35 s, have at most four words, and
+hold for under four seconds. Alpha overlays have 0.4 s overall fades. Full
+frame cuts start on locked words and end without splitting a word. Existing
+renders are refused, not overwritten. Reproduce to a **fresh** directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py evidence --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Media: `/Users/benjaminoats/_desk/J2141-evidence-v01/`. Contact sheet:
+`CONTACT_v01.jpg` in that directory (neutral preview backgrounds are not
+actual composites). `CODE_EVIDENCE_TECHNICAL_CHECK_v01.json` records all five
+hash matches, dimensions, 25 fps, duration within half a frame, alpha/pixel
+format and full decode without errors. Five static times per graphic checked;
+opaque samples have mean luma ≥28. The contact sheet was inspected as stills.
+These are technical/static checks only; **no motion, audio or composite review**.
+
+Detached batch `J2141-evidence-v01` completed exit 0; no render is still active.
+Log `/Users/benjaminoats/_desk/logs/J2141-evidence-v01.log`, completion `.done`.
+No new archive input was searched in this run, so no missing-footage search
+budget was consumed. Existing six harvest candidates and all previous media
+were retained. Before work, NAS offload ran and found nothing old enough;
+roughly 13 GB free. This small batch adds about 23 MB, no large scratch render.
+
+Remaining: wider licensed harvest; all other mechanism/timeline renders;
+R41 atmosphere fallback; moving-plate composites, actual motion-capable
+review and full QA. R21 fallback already exists in v02 mechanisms. Reconcile
+R54 identities and sourced-simulation/map conflicts below before admitting
+those candidates. The stage is unfinished and no Ben action is requested by
+this checkpoint.
+
 ## Continuation checkpoint (4 Nov, second run)
 
 Continue **this same branch/PR #495**, at **1/3**. Added:
