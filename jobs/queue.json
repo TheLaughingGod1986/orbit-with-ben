@@ -183173,18 +183173,23 @@
           "at": "2026-11-05T06:09Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J2184 REVIEW.md/LOCKED_ROWS.json/LIVE_ROUTE.json, J2187 PR #418 files, J2181 PR #415, J2183 PR #416, and canonical BUILD_RULE_v02.json"
+        },
+        {
+          "at": "2026-11-05T06:16Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 17-row PROPOSED_MAPPINGS.json against BUILD_RULE_v02.json and LOCKED_ROWS.json, checked VO/source/ref hashes, inspected cropped stills for all 11 populated rows and 3 style refs, verified 3-check Flow route refusal, and resolved B S03 (09_injured_air_t1) and C S06 (part03 mint-jar mismatch) open issues"
         }
       ],
-      "remaining_action": "Verify 17-row PROPOSED_MAPPINGS.json, 5-shot briefs, reference stills, existing crops (including B S03 and C S06 open issues), route checks, and VO/script approvals",
+      "remaining_action": "Create clean HOS worktree for J2188 review files, run check_all.sh, open HOS PR, and update linked Chief job J2189 and parent J2169",
       "due": "2026-11-07T18:00:00Z",
       "for": "gemini",
       "kind": "review",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-05T06:09Z",
+        "at": "2026-11-05T06:16Z",
         "by": "gemini",
-        "note": "Read J2184 REVIEW.md/LOCKED_ROWS.json/LIVE_ROUTE.json, J2187 PR #418 files, J2181 PR #415, J2183 PR #416, and canonical "
+        "note": "Verified 17-row PROPOSED_MAPPINGS.json against BUILD_RULE_v02.json and LOCKED_ROWS.json, checked VO/source/ref hashes, i"
       },
       "taskKeys": [
         "HOS:006"
