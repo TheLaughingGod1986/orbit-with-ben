@@ -2,6 +2,40 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (5 Nov, seventh run)
+
+Preserve **1/3**, same PR #495. Added `code_graphics.py comparisons` and
+three unique source-linked alpha renders, 1920×1080 / 25 fps:
+
+- R30 recap, 307.12–312.88 s: sequential global-field −9%, pole 55 km/yr,
+  Atlantic dent 2 lobes labels (SOURCES rows 1, 8, 12). This is a recap
+  component, not the complete triptych/twist scene. Requires moving ISS plate.
+- R40 dipole-strength component, 409.54–414.46 s: bar falls from normal
+  100% to approximately 10%, sharing zero and scale (SOURCES row 15).
+  This depicts the main dipole only; multipole geometry remains unfinished.
+- R44 duration comparison, 452.70–458.22 s: Mars atmosphere loss over
+  billions of years versus Earth's few-thousand-year field flip (row 17).
+  Qualitative labels avoid inventing an exact value for “billions”. It does
+  not substitute for the remaining physical planet comparison. Final
+  few-thousand-years label has 1.32 s; review actual playback readability.
+
+`CODE_COMPARISONS_v01.json` records source rows, Scribe cue starts, paths and
+hashes. `CODE_COMPARISONS_TECHNICAL_CHECK_v01.json` records all three hash,
+format, alpha, duration and complete error-free decode checks. Media/contact
+sheet: `/Users/benjaminoats/_desk/J2141-comparisons-v01/` (6,739,921 bytes).
+Five static samples per render checked; contact sheet viewed. Navy is preview
+background only; graded moving plates, clearance and actual motion/composite
+review remain required. No KEEP, PASS or stage approval. Reproduce into a new
+directory: `code_graphics.py comparisons --out ... --manifest ...`.
+
+Detached `J2141-comparisons-v01` finished exit 0; no active render. Log and
+completion: `/Users/benjaminoats/_desk/logs/J2141-comparisons-v01.log` and
+`.done`. NAS offload ran first: nothing old enough, about 14 GB free. No archive
+search, paid generation or publishing change; £0 spend. Remaining archive
+harvest, mechanisms, progressive timeline, R41, composites and full QA remain
+unfinished. Existing source-ID and sourced-simulation gate conflicts below
+still require Chief reconciliation. Next run resumes this same branch.
+
 ## Continuation checkpoint (5 Nov, fifth run)
 
 Queue remains **1/3**, same PR #495. Added three 3.6 s transparent WHEN
