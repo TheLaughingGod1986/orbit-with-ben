@@ -187840,13 +187840,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-05T19:04Z",
-      "eta": "2026-11-05T21:04Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-05T18:30Z",
-      "result": "",
+      "result": "HOS PR #432 (b2ed853): HOS 013 Darwin & Wallace (slotted Thu 17 Dec 2026) Shorts scripts v02 (10_Shorts/SHORTS_SCRIPTS_v02.md + vo_v02/*.txt: Short A 'How Did Darwin Discover Evolution?' 60w, Short B 'What Is Survival of the Fittest?' 61w; both YouTube GB autocomplete 'yes', payoffs withheld past 14.5-15.0 s), upload package (11_Upload-Package/PACKAGE_MANIFEST.json + PRODUCTION_CHECKLIST_V2.md + Descriptions/darwin_long_description_v01.txt timed to hos_013_vo_v03a 0:00, 1:15, 2:51, 4:36, 6:06, 7:28 + Tags/darwin_long_tags_v01.txt; lint:package -- --film 013 PASS, gate:episode 9/9 OK PASS), 62-row SHOT_LIST_v01.md timed to hos_013_vo_v03a (512.48 s), and queued 013 Shorts VO as J2246 (--kind vo). check_all.sh 013 ALL CHECKS PASS. £0.",
       "history": [
         {
           "at": "2026-11-05T18:30Z",
@@ -187882,6 +187882,11 @@
           "at": "2026-11-05T19:18Z",
           "by": "macbook",
           "what": "step 4 of 5 done"
+        },
+        {
+          "at": "2026-11-05T19:19Z",
+          "by": "macbook",
+          "what": "done: HOS PR #432 (b2ed853): HOS 013 Darwin & Wallace (slotted Thu 17 Dec 2026) Shorts scripts v02 (10_Shorts/SHORTS_SCRIPTS_v02.md + vo_v02/*.txt: Short A 'How Did Darwin Discover Evolution?' 60w, Short B 'What Is Survival of the Fittest?' 61w; both YouTube GB autocomplete 'yes', payoffs withheld past 14.5-15.0 s), upload package (11_Upload-Package/PACKAGE_MANIFEST.json + PRODUCTION_CHECKLIST_V2.md + Descriptions/darwin_long_description_v01.txt timed to hos_013_vo_v03a 0:00, 1:15, 2:51, 4:36, 6:06, 7:28 + Tags/darwin_long_tags_v01.txt; lint:package -- --film 013 PASS, gate:episode 9/9 OK PASS), 62-row SHOT_LIST_v01.md timed to hos_013_vo_v03a (512.48 s), and queued 013 Shorts VO as J2246 (--kind vo). check_all.sh 013 ALL CHECKS PASS. £0."
         }
       ],
       "remaining_action": "Running check_all.sh 013, committing on branch macbook/J2240, and opening HOS PR",
