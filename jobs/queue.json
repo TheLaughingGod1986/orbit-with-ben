@@ -182043,13 +182043,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-05T03:18Z",
-      "eta": "2026-11-05T03:48Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T02:21Z",
-      "result": "",
+      "result": "parked for Chief: single scoped Huygens surface candidate PIA07232 fails resolution (about 315px usable width, over 4x to 1280 vs 2.35x limit). One-candidate scope exhausted. Evidence 95fbbb3ac6 on codex/j2176-surface; B/C hashes unchanged. Choose new bounded composition/source scope; panels remain dependent on incomplete J2176. No spend or background process.",
       "history": [
         {
           "at": "2026-11-05T02:21Z",
@@ -182100,6 +182100,11 @@
           "at": "2026-11-05T03:21Z",
           "by": "codex",
           "what": "step 1 of 3 done: One surface candidate checked: PIA07232 usable width about 315px requires over 4x upscale; limit 2.35x. A not built. B/C hashes match; evidence 95fbbb3ac6."
+        },
+        {
+          "at": "2026-11-05T03:21Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: single scoped Huygens surface candidate PIA07232 fails resolution (about 315px usable width, over 4x to 1280 vs 2.35x limit). One-candidate scope exhausted. Evidence 95fbbb3ac6 on codex/j2176-surface; B/C hashes unchanged. Choose new bounded composition/source scope; panels remain dependent on incomplete J2176. No spend or background process."
         }
       ],
       "remaining_action": "Chief must scope next A composition after Huygens resolution failure",
