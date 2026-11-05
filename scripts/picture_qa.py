@@ -108,7 +108,9 @@ def reuse_checks(cuts: list, intentional_return: int | None = None, identities=N
         span = cuts[ks[-1]]["timeline_out"] - cuts[ks[0]]["timeline_in"]
         if span > LONG_RUN:
             out[ks[0]][1].append(f"reuse: on screen {span:.1f}s in a row (look at it: {LONG_RUN:.0f}s is a lot for one picture)")
-        footage = all(offset(cuts[k]) is not None for k in ks)
+        # Opt-in metadata errors must not turn a mixed footage run into stills.
+        footage = (any(cuts[k].get("video") is True or offset(cuts[k]) is not None for k in ks)
+                   if identities is not None else all(offset(cuts[k]) is not None for k in ks))
         count[src] += 1
         if not footage:
             if count[src] > MAX_REUSE:
@@ -150,11 +152,14 @@ def source_checks(cuts: list, pool: dict, loop_result=None) -> list:
         identities = {}
         identity_errors = {}
         for k, c in enumerate(cuts):
-            p = Path(c['source']).resolve()
             try:
-                identities[k] = digest(p) if p.is_file() else str(p)
-            except OSError as exc:
-                identities[k] = str(p)
+                p = Path(c['source']).resolve(strict=True)
+                if not p.is_file():
+                    raise OSError("source is not a regular file")
+                identities[k] = digest(p)
+            except (OSError, RuntimeError) as exc:
+                # No pathname is evidence of a verified source identity.
+                identities[k] = ("unverified", k)
                 identity_errors[k] = f'terminal loop: cannot verify reuse identity: {exc}'
     reuse = reuse_checks(cuts, (loop_result or {}).get("eligible_cut"), identities)
     rows = []
@@ -165,6 +170,10 @@ def source_checks(cuts: list, pool: dict, loop_result=None) -> list:
         fail, warn = [], []
         if identities is not None and k in identity_errors:
             fail.append(identity_errors[k])
+        if identities is not None and (c.get("video") is True or offset(c) is not None):
+            off = offset(c)
+            if isinstance(off, bool) or not isinstance(off, (int, float)) or not math.isfinite(off) or off < 0:
+                fail.append("terminal loop: footage requires a finite nonnegative source offset")
         if flag:
             fail.append(f"kind of picture: {flag}")
         if title is None and OWN.search(c["source"]):

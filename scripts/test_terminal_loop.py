@@ -34,7 +34,9 @@ class TerminalLoop(unittest.TestCase):
         def cut(t0,t1,src,row):
             return dict(timeline_in=t0,timeline_out=t1,source=str(src),row=row,
                         framing=copy.deepcopy(framing),upscale=1.,video=True,spoken='')
-        cuts=[cut(0,2,self.src,'open'),cut(2,23,'other.mp4','body'),cut(23,24,self.src,'tail')]
+        body = self.root/'other.mp4'
+        body.write_bytes(b'distinct synthetic body identity')
+        cuts=[cut(0,2,self.src,'open'),cut(2,23,body,'body'),cut(23,24,self.src,'tail')]
         cuts[-1]['role']='prescribed_terminal_loop'
         ev=lambda p:dict(path=str(p),sha256=loop.digest(p))
         d=dict(version=1,format='short',cut=2,duration=24,last_vo_word=22.5,
@@ -116,6 +118,53 @@ class TerminalLoop(unittest.TestCase):
         self.assertTrue(any('same stretch' in e for e in rows[2]['fail']))
         self.assertEqual(r['eligible_cut'],3)
 
+    def test_missing_or_unreadable_body_source_fails_without_review_override(self):
+        for kind in ('absent', 'broken_link', 'directory', 'unreadable'):
+            with self.subTest(kind=kind):
+                c,d=self.setup_recipe()
+                path=self.root/('source_'+kind)
+                if kind == 'broken_link' and not path.is_symlink():
+                    path.symlink_to(self.root/'absent_target')
+                if kind == 'directory': path.mkdir(exist_ok=True)
+                c[1]['source']=str(path if kind != 'unreadable' else self.src)
+                original=loop.digest
+                def guarded(p):
+                    if kind == 'unreadable' and Path(p).resolve() == self.src.resolve():
+                        raise PermissionError('synthetic unreadable source')
+                    return original(p)
+                r=loop.validate(c,d)
+                with patch.object(loop,'digest',side_effect=guarded):
+                    rows=qa.source_checks(c,{},r)
+                qa.apply_reviewed(rows,{c[1]['source']:dict(kinds=['terminal loop'],note='waive')},True)
+                self.assertTrue(any('cannot verify reuse identity' in e for e in rows[1]['fail']))
+
+    def test_invalid_body_offsets_cannot_downgrade_adjacent_footage(self):
+        for bad in ('missing', None, float('nan'), float('inf'), -1, True, 'zero'):
+            with self.subTest(offset=bad):
+                c,d=self.setup_recipe()
+                # All adjacent rows use identical footage. The terminal return
+                # must still fail within-run replay against the opening.
+                c[1]['source']=str(self.src)
+                if bad == 'missing': c[1]['framing'].pop('offset')
+                else: c[1]['framing']['offset']=bad
+                rows=qa.source_checks(c,{},loop.validate(c,d))
+                self.assertTrue(any('finite nonnegative' in e for e in rows[1]['fail']))
+                self.assertTrue(any('replays frames' in e for e in rows[2]['fail']))
+        c,d=self.setup_recipe(); c[1]['source']=str(self.src)
+        rows=qa.source_checks(c,{},loop.validate(c,d))
+        self.assertTrue(any('replays frames' in e for e in rows[1]['fail']))
+        self.assertTrue(any('replays frames' in e for e in rows[2]['fail']))
+
+    def test_optin_legitimate_still_and_optout_missing_sources_unchanged(self):
+        c,d=self.setup_recipe()
+        still=self.root/'still.jpg'; still.write_bytes(b'distinct still bytes')
+        c[1].update(source=str(still),video=False,framing={})
+        rows=qa.source_checks(c,{},loop.validate(c,d))
+        self.assertEqual(rows[1]['fail'],[])
+        c[1]['source']=str(self.root/'not_here.mp4')
+        c[1].update(video=True,framing={})
+        self.assertEqual(qa.source_checks(c,{})[1]['fail'],[])
+
     def test_alignment_and_bounds(self):
         for end in (23.1, float('nan'), -1):
             c,d=self.setup_recipe()
@@ -169,16 +218,22 @@ class TerminalLoop(unittest.TestCase):
             # structural eligibility, without certifying the real production crop.
             completed=copy.deepcopy(c); _,d=self.setup_recipe()
             opening_source=completed[0]['source']
+            sources={opening_source: str(self.src)}
             for row in completed:
-                if row['source']==opening_source: row['source']=str(self.src)
+                original=row['source']
+                if original not in sources:
+                    local=self.root/('fixture_'+str(len(sources))+'.mp4')
+                    local.write_bytes(original.encode())
+                    sources[original]=str(local)
+                row['source']=sources[original]
             for row in (completed[0],completed[-1]):
                 row['framing']=dict(offset=0.,**d['framing'])
             completed[-1]['role']='prescribed_terminal_loop'
             d.update(cut=len(completed)-1,duration=completed[-1]['timeline_out'])
             result=loop.validate(completed,d)
             self.assertEqual(result['eligible_cut'],len(completed)-1,result)
-            self.assertEqual([completed[k]['row'] for k,v in qa.reuse_checks(
-                completed,result['eligible_cut']).items() if v[0]],body)
+            rows=qa.source_checks(completed,{},result)
+            self.assertEqual([r['row'] for r in rows if r['fail']],body)
 
 
 if __name__=='__main__': unittest.main()
