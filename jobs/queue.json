@@ -178269,10 +178269,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-05T09:03Z",
-      "eta": "2026-11-05T11:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "parked for Chief: J2090 reviews PR491 source identity corrections and 13 graphic stills before rendering; multiple approved PIA IDs depict wrong subjects. Partial at 1/4, £0 spent.",
@@ -178481,6 +178481,11 @@
           "at": "2026-11-05T09:07Z",
           "by": "codex",
           "what": "step 1 of 4 done: PR517 347c55feeb: 5 MOVs fully decoded and hashed, 763 frame-layout checks; held for re-review due changed preview hashes. Two fire previews fixed, not rendered. GBP0."
+        },
+        {
+          "at": "2026-11-05T09:07Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint 347c55feeb in PR517; original 1/4 retained. J2198 reviews 7 current stills: two J2192 fire fixes and 5 changed-preview hashes. Five MOVs decoded/hashed, 1920x1080 ARGB/108 frames; HOLD before use. tmux J2089-process-v02 finished exit0; logs /Users/benjaminoats/_desk/logs/J2089-process-v02.log and .done. Worktree /private/tmp/codex-J2089-run-1105 clean; no active background job. Existing 31 renders preserved. Remaining real-body graphics/licensed harvest/composites exceed run; frame0, PIA07232, APL and J2177 holds remain. GBP0; no publish/PASS/merge."
         }
       ],
       "remaining_action": "J2198 reviews corrected fire stills and changed process pixels; finish licensed harvest and real-body/composite work",

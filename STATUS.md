@@ -60,6 +60,5 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 027 | edit | gemini | 2026-11-05T08:22Z | 2026-11-05T09:22Z | J1100 S2 v07 repair |
 | 028 | edit | gemini | 2026-11-05T08:22Z | 2026-11-05T09:22Z | J1100 S5/S6 v07 repair |
-| 032 | picture | codex | 2026-11-05T09:03Z | 2026-11-05T11:02Z | J2089 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
