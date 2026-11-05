@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1889 | mini | open | – | – | review · J1879: review recovered Mars-night and Titan Studio source candidates | J1879 |
 | J1892 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1834 |  |
 | J1894 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0862 |  |
-| J1895 | any | open | – | – | review · verify condition for J1130 |  |
+| J1895 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1130 |  |
 | J1899 | any | open | – | – | review · verify condition for J1100 |  |
 | J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
