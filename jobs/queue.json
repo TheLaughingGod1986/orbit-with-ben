@@ -186583,13 +186583,13 @@
       "stage": "edit",
       "after": "J2163",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-05T18:26Z",
-      "eta": "2026-11-05T19:56Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T12:54Z",
-      "result": "review J1881 FIX (jobs/reviews/J1881/REVIEW.md): repair HOS PR #428 (dfd365c7) cross-GOP frame windows: (1) 0:51 candidate_frames [1124,1227] -> [1129,1231] (single GOP, not 1022..1231); (2) 3:13 candidate_frames [4500,4659] -> [4511,4670] (single GOP covering 4660..4670 paper unroll, + 01_points_desk_t1.png sha cc16a515a43e881c...); (3) all 27 caption_treatment.labels master_frames to exact closed-GOP [kf_in, kf_out-1] ([0,141]..[12297,12461]); (4) add 07_hot_night_t1.mp4 & 01_points_desk_t1.mp4 to required_inputs and assert single-GOP envelopes in test_j2163_recipe.py.",
+      "result": "HOS PR 428 c7635bb2: eight-row read-only recipe. 0:51 frame 1220 on hot-night 1129-1232, not the 1:49 salon. 3:13 frame 4621 on points-desk 4513-4672 (13-frame residual before the map). 2:18 frame 3305 outside keep, inside replace. Film-wide unbordered caption panel. Execute refused until J1881 re-reviews. 14 tests OK. GBP0. No note resolved.",
       "history": [
         {
           "at": "2026-11-05T12:54Z",
@@ -186645,6 +186645,11 @@
           "at": "2026-11-05T18:35Z",
           "by": "cursor",
           "what": "step 4 of 4 done: PR 428 c7635bb2. 0:51 frames 1129-1232. 3:13 frames 4513-4672 with a 13-frame residual. Execute still refused. 14 tests OK."
+        },
+        {
+          "at": "2026-11-05T18:35Z",
+          "by": "cursor",
+          "what": "done: HOS PR 428 c7635bb2: eight-row read-only recipe. 0:51 frame 1220 on hot-night 1129-1232, not the 1:49 salon. 3:13 frame 4621 on points-desk 4513-4672 (13-frame residual before the map). 2:18 frame 3305 outside keep, inside replace. Film-wide unbordered caption panel. Execute refused until J1881 re-reviews. 14 tests OK. GBP0. No note resolved."
         }
       ],
       "remaining_action": "Hand the eight-item recipe to J1881 for re-review",
@@ -186658,7 +186663,8 @@
         "at": "2026-11-05T18:35Z",
         "by": "cursor",
         "note": "PR 428 c7635bb2. 0:51 frames 1129-1232. 3:13 frames 4513-4672 with a 13-frame residual. Execute still refused. 14 tests "
-      }
+      },
+      "done_ref": "c7635bb2"
     },
     {
       "id": "J2218",
