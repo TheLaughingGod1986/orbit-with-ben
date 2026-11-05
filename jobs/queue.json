@@ -182334,13 +182334,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-05T04:12Z",
-      "eta": "2026-11-05T06:12Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T03:35Z",
-      "result": "",
+      "result": "HOS:006 implementation delivered in PR513 (17b2ac555), repairs both J2180 P1s; 24 focused tests PASS plus rules/core/compile/diff checks. J2182 elected-Chief re-review required; J2169 remains blocked. IMPORTANT jobs.py progress --git unintentionally rebased and pushed original PR512 implementation onto main (03e570eec,1708dd233,c983b2cb5); repair code is only on PR513. Incident recorded in MACBOOK_REPAIR.md and PR512 comment 6649525730. CI pending. Both checkouts main; no spend or publishing.",
       "history": [
         {
           "at": "2026-11-05T03:35Z",
@@ -182401,6 +182401,11 @@
           "at": "2026-11-05T04:16Z",
           "by": "macbook",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-05T04:16Z",
+          "by": "macbook",
+          "what": "done: HOS:006 implementation delivered in PR513 (17b2ac555), repairs both J2180 P1s; 24 focused tests PASS plus rules/core/compile/diff checks. J2182 elected-Chief re-review required; J2169 remains blocked. IMPORTANT jobs.py progress --git unintentionally rebased and pushed original PR512 implementation onto main (03e570eec,1708dd233,c983b2cb5); repair code is only on PR513. Incident recorded in MACBOOK_REPAIR.md and PR512 comment 6649525730. CI pending. Both checkouts main; no spend or publishing."
         }
       ],
       "remaining_action": "Implementation delivered; elected-Chief J2182 review and PR512 reconciliation remain",
