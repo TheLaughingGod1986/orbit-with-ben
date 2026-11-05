@@ -189503,13 +189503,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T23:45Z",
-      "eta": "2026-11-06T00:25Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-05T22:48Z",
-      "result": "",
+      "result": "FIX (jobs/reviews/J2258/REVIEW.md, 4e702824eb): verified HOS 699c359b and desk/NAS renders for HOS 006 Short B v01 (08e3d603...) and Short C v02 (3f8c1390...). Explicit KEEP on all 17 source plates and WARNs (B S07 low-detail sky gradient, C S05 low-detail warm room background, C S02 corner crop 144,0,608,1080, and all 6 J2213 Flow inserts). Reopened J2169 for GBP0 rebuild in build_j2169.py: (1) restore spoken captions during 9.0-14.0s title window + keep sentence-1 final word through 2.25s/2.583s + use Didot cream multi-word chunks (B S01,S03-S05; C S01,S04-S05), (2) frame-0 hook caption in Didot 8-10% cap height vertically centred with yellow on hook word only (B S01, C S01), (3) shift B S05 from 79 to 78 frames (16.292s) and S07 to 91 frames so cuts do not straddle 'bright'/'the' + trim C S06 offset to 4.458s, (4) S01/loop_tail offset=0.0s with tail cross-dissolve + pre-normalise 720p Flow plates to 1920x1080 for 1080x1920 master delivery (<=2.35x). awaits_ben not set; watched/heard false; GBP0.",
       "history": [
         {
           "at": "2026-11-05T22:48Z",
@@ -189565,6 +189565,11 @@
           "at": "2026-11-05T23:57Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Reopened J2169 with exact row-named FIX list from jobs/reviews/J2258/REVIEW.md (4e702824eb)"
+        },
+        {
+          "at": "2026-11-05T23:58Z",
+          "by": "gemini",
+          "what": "done: FIX (jobs/reviews/J2258/REVIEW.md, 4e702824eb): verified HOS 699c359b and desk/NAS renders for HOS 006 Short B v01 (08e3d603...) and Short C v02 (3f8c1390...). Explicit KEEP on all 17 source plates and WARNs (B S07 low-detail sky gradient, C S05 low-detail warm room background, C S02 corner crop 144,0,608,1080, and all 6 J2213 Flow inserts). Reopened J2169 for GBP0 rebuild in build_j2169.py: (1) restore spoken captions during 9.0-14.0s title window + keep sentence-1 final word through 2.25s/2.583s + use Didot cream multi-word chunks (B S01,S03-S05; C S01,S04-S05), (2) frame-0 hook caption in Didot 8-10% cap height vertically centred with yellow on hook word only (B S01, C S01), (3) shift B S05 from 79 to 78 frames (16.292s) and S07 to 91 frames so cuts do not straddle 'bright'/'the' + trim C S06 offset to 4.458s, (4) S01/loop_tail offset=0.0s with tail cross-dissolve + pre-normalise 720p Flow plates to 1920x1080 for 1080x1920 master delivery (<=2.35x). awaits_ben not set; watched/heard false; GBP0."
         }
       ],
       "remaining_action": "Review complete; closing J2258 and posting OWB + HOS desk reports",
@@ -189579,7 +189584,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "4e702824eb"
     },
     {
       "id": "J2259",
