@@ -22,6 +22,7 @@ Stages, in order: topic script sources vo shots picture edit thumbs upload.
 States: todo, doing, review, done, skip, blocked.
 """
 import argparse, datetime as dt, json, pathlib, subprocess, sys
+import fcntl
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FILMS = ROOT / "02_Video-Projects"
@@ -182,27 +183,64 @@ def git(*args):
     return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
 
 
+def git_transaction(write, message):
+    """Fail closed outside clean main; push only the verified metadata commit.
+
+    No rebase, autostash, reset or worker-branch switch. A rejected push leaves
+    the local metadata commit intact for explicit reconciliation, never replaying
+    it (or any other unpublished commit) on a subsequent transaction.
+    """
+    common = git("rev-parse", "--git-common-dir")
+    if common.returncode:
+        return None, "not a Git checkout"
+    lock = pathlib.Path(common.stdout.strip())
+    if not lock.is_absolute():
+        lock = ROOT / lock
+    with (lock / "studio-metadata.lock").open("a") as handle:
+        fcntl.flock(handle, fcntl.LOCK_EX)
+        branch = git("symbolic-ref", "--quiet", "--short", "HEAD")
+        if branch.returncode or branch.stdout.strip() != "main":
+            return None, "metadata --git requires clean main; worker branch unchanged"
+        state = git("status", "--porcelain")
+        if state.returncode or state.stdout.strip():
+            return None, "metadata --git requires a clean working tree and index"
+        if git("fetch", "-q", "origin", "refs/heads/main").returncode:
+            return None, "metadata fetch failed; no changes applied"
+        base = git("rev-parse", "FETCH_HEAD").stdout.strip()
+        head = git("rev-parse", "HEAD").stdout.strip()
+        if git("merge-base", "--is-ancestor", head, base).returncode:
+            return None, "main has unpublished/diverged commits; no changes applied"
+        if git("merge", "-q", "--ff-only", base).returncode:
+            return None, "main fast-forward failed; no changes applied"
+        out, err, paths = write()
+        if err or not paths:
+            return out, err
+        paths = [str(pathlib.Path(p).resolve().relative_to(ROOT.resolve())) for p in paths]
+        if git("add", "--", *paths).returncode:
+            return None, "metadata git add failed; changes preserved"
+        if git("commit", "-q", "-m", message, "--", *paths).returncode:
+            return None, "metadata git commit failed; changes preserved"
+        commit = git("rev-parse", "HEAD").stdout.strip()
+        parents = git("rev-list", "--parents", "-n", "1", commit).stdout.split()
+        changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", commit)
+        if parents != [commit, base] or changed.returncode or not set(changed.stdout.splitlines()) <= set(paths):
+            return None, "metadata commit verification failed; not pushed, changes preserved"
+        if git("push", "-q", "origin", f"{commit}:refs/heads/main").returncode:
+            return None, "metadata push rejected; local commit preserved; reconcile main before retry"
+        return out, None
+
+
 def with_git(path, change, message, films, tries=3):
-    """Pull, apply the change, commit only status.json and STATUS.md, and push. If the push races another agent,
-    start again from the new main. Other uncommitted work in the tree is autostashed by the pull and never committed."""
-    for _ in range(tries):
-        if git("pull", "-q", "--rebase", "--autostash", "origin", "main").returncode != 0:
-            return "git pull failed; resolve the working tree first"
+    """Commit studio metadata only, from clean main. Races fail closed."""
+    def write():
         data = load(path)
         err = change(data)
         if err:
-            return err
+            return None, err, []
         save(path, data)
         write_status(films)
-        paths = [str(path), str(status_path(films))]
-        git("add", *paths)
-        if git("commit", "-q", "-m", message, "--", *paths).returncode != 0:
-            return "git commit failed"
-        if git("push", "-q", "origin", "HEAD:main").returncode == 0:
-            return None
-        git("reset", "-q", "HEAD~1")  # drop only our status commit; other work in the tree is untouched
-        git("checkout", "-q", "--", *paths)
-    return "push kept racing; try again"
+        return None, None, [path, status_path(films)]
+    return git_transaction(write, message)[1]
 
 
 def main(argv=None):
