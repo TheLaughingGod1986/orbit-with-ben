@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2232 | any | claimed | macbook | 2026-11-05T20:08Z | review · Verify condition for J2172 |  |
 | J2233 | mini | open | – | – | for codex · review · Review multi-channel plan: code and phases (Codex) |  |
 | J2234 | gemini | open | – | – | review · Review multi-channel plan: risk and cut-over (Gemini) |  |
+| J2235 | mini | open | – | – | review · Cleanup audit: orbit-with-ben engine and tools (dead code, duplicates, bugs) |  |
 
 Recently finished:
 
