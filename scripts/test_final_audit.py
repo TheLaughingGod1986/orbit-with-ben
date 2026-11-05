@@ -49,12 +49,12 @@ class FinalAudit(unittest.TestCase):
         with patch.object(cr,'read_json',return_value={'pid':123,'job':'H','expiresAt':(AT+dt.timedelta(minutes=2)).isoformat()}),patch.object(cr.os,'kill',side_effect=ProcessLookupError):
             self.assertIsNone(cr.current_execution(AT))
 
-    def test_due_hold_creates_one_chief_check_and_keeps_work_blocked(self):
+    def test_due_hold_creates_one_review_check_and_keeps_work_blocked(self):
         j={**row('H'),'status':'blocked','result':'date gate; original approval retained'}
         data={'jobs':[j],'next_id':1};jobs.set_wait(j,'relay',AT,{'type':'test','condition':'Current title test has ended','check_at':(AT-dt.timedelta(hours=1)).isoformat()},'Start the next title test')
         jobs.reconcile_holds(data,AT)
         check=next(x for x in data['jobs'] if x.get('recheck_of'))
-        self.assertEqual(check['due'],(AT+dt.timedelta(hours=1)).isoformat());self.assertEqual(check['kind'],'chief');self.assertEqual(j['status'],'blocked')
+        self.assertEqual(check['due'],(AT+dt.timedelta(hours=1)).isoformat());self.assertEqual(check['kind'],'review');self.assertEqual(j['status'],'blocked')
         self.assertEqual(j['result'],'date gate; original approval retained')
         before=copy.deepcopy(data);jobs.reconcile_holds(data,AT+dt.timedelta(minutes=2));self.assertEqual(data,before)
         self.assertFalse(jobs.claimable(data,j,{'mini'},AT,'codex'))
