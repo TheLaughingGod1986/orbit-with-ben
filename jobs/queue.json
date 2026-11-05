@@ -189392,10 +189392,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-05T23:06Z",
+      "eta": "2026-11-05T23:46Z",
       "created_by": "cursor",
       "created_at": "2026-11-05T22:48Z",
       "result": "",
@@ -189404,11 +189404,24 @@
           "at": "2026-11-05T22:48Z",
           "by": "cursor",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T23:06Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write KEEP or FIX in jobs/reviews for Short B v01 and Short C v02. No upload. Awaits only if KEEP.",
       "due": "2026-11-14T18:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T23:06Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2259",
