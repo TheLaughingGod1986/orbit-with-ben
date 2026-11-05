@@ -1,5 +1,5 @@
 {
-  "next_id": 2194,
+  "next_id": 2195,
   "jobs": [
     {
       "id": "J0001",
@@ -183733,6 +183733,35 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J2194",
+      "title": "HOS 010: decide exact missing-plate production scope for J2172",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J2172 inventory HOS PR424, commit8b58cda3: read jobs/evidence/J2172/READINESS.md and INVENTORY.json. Twelve of fourteen required plate identities missing; only two code graphics found across local/canonical NAS film roots; no open named010 producer found. GBP0 bounded decision only: name exact existing approved assets/producer or queue specific no-spend row-mapping/readiness work then separately priced guarded production scope. Check rule8 subject/surprise and robin/pigeon/gull mapping mismatches. Preserve accepted J1894 A/C v02 hashes and J1004 A1 timing; no locked VO edits. No unchanged broad archive search or generic timed retries. Chief separately authorizes any generation route, exact takes, cap and named producer; no spending from this job. Keep J2172 blocked1/3 until approved sources/mapping available, then reopen explicitly. Conditional4/7Dec11:30, watch-ready1Dec18:00, longPublic prerequisite retained. No awaits absent passing finished cuts. Evidence PR review/merge follows current rules, no media approval or live changes. Link HOS:010.",
+      "ref": "J2172",
+      "film": "010",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T07:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T07:49Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Name an approved producer or scope twelve missing moving plates and mapping fixes",
+      "due": "2026-11-06T18:00:00Z",
+      "kind": "chief"
     }
   ],
   "focus": [],
