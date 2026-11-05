@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2184 | any | claimed | codex | 2026-11-05T07:43Z | chief · HOS006: decide bounded fallback for four native-resolution source gaps | https://github.com/TheLaughingGod1986/history-of-science/pull/415 |
 | J2186 | any | open | – | – | chief · System review J2185 metadata Git safety fix PR515 | J2185 |
 | J2187 | mini | open | – | – | for codex · assembly · HOS006: verify native Flow route and prepare five script-correct fallback shots | J2184 |
+| J2188 | any | open (after J2187) | – | – | for gemini · review · HOS006: independently review script-correct native fallback preparation | J2184 |
 
 Recently finished:
 
