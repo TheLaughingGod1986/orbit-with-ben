@@ -184262,13 +184262,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T21:26Z",
-      "eta": "2026-11-05T23:26Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T02:15Z",
-      "result": "",
+      "result": "KEEP applied (jobs/reviews/J2175/REVIEW.md). Merged HOS PR #429 squash 56c8affd (film records only). Authorized C-Open-1 VO pickup + dispatched £0 Short_C_v03 assembly: J2254 (vo) -> J2255 (assembly, Layout C-v03a). Conditional 2 Dec 11:30Z slot remains HELD until Short_C_v03 gates + Ben watch + 008 Long Public. £0 Flow/Vertex/cash.",
       "history": [
         {
           "at": "2026-11-05T02:15Z",
@@ -184329,6 +184329,11 @@
           "at": "2026-11-05T21:26Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T21:26Z",
+          "by": "chief",
+          "what": "done: KEEP applied (jobs/reviews/J2175/REVIEW.md). Merged HOS PR #429 squash 56c8affd (film records only). Authorized C-Open-1 VO pickup + dispatched £0 Short_C_v03 assembly: J2254 (vo) -> J2255 (assembly, Layout C-v03a). Conditional 2 Dec 11:30Z slot remains HELD until Short_C_v03 gates + Ben watch + 008 Long Public. £0 Flow/Vertex/cash."
         }
       ],
       "remaining_action": "Chief: merge HOS PR #429, authorize 1-sentence 47-char ElevenLabs pickup (C-Open-1) via vo_take.py, and dispatch £0 Short_C_v03 assembly",
@@ -184338,7 +184343,7 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/429",
+      "done_ref": "56c8affd/J2254/J2255",
       "progress": {
         "step": 0,
         "of": 3,
