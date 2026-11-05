@@ -101173,6 +101173,16 @@
           "at": "2026-11-05T12:44Z",
           "by": "chief",
           "what": "waits on Ben: swap S6 X768qs8sNQs (028 night sky) to 028_short_lift_night_sky_35yr_v07 after Ben watch (by 2026-12-06 20:00 London)"
+        },
+        {
+          "at": "2026-11-05T12:45Z",
+          "by": "chief",
+          "what": "remaining action: Waiting on Ben's watch of S2/S5/S6 v07 (Ready for OK, awaits_ben). Swap each only after his OK; no OK by air-morning 10:30 -> v01 stays scheduled."
+        },
+        {
+          "at": "2026-11-05T12:45Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-11-22T20:00:00Z"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101201,7 +101211,7 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Parked for Chief: put S2/S5/S6 v07 on the board for Ben watch and execute YouTube replacement swaps after Ben OK",
+      "remaining_action": "Waiting on Ben's watch of S2/S5/S6 v07 (Ready for OK, awaits_ben). Swap each only after his OK; no OK by air-morning 10:30 -> v01 stays scheduled.",
       "awaits_ben": [
         {
           "what": "swap S2 emwQsPxnRGM (027 equator) to earth_equator_weight_v07 after Ben watch",
@@ -101236,7 +101246,12 @@
           "number": "S6",
           "type": "short"
         }
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Ben watch: Ben OKs or requests changes on the S2/S5/S6 v07 Ready for OK cards (awaits_ben set by Chief h67 after J2214 KEEP)",
+        "check_at": "2026-11-22T20:00:00Z"
+      }
     },
     {
       "id": "J1101",
