@@ -1,0 +1,69 @@
+{
+  "job": "J2089",
+  "status": "MEASUREMENTS_ONLY_NO_APPROVAL",
+  "drafts": [
+    {
+      "id": "r21_cycle_clouds",
+      "checked_frames": 109,
+      "all_frame_bounds_inside_5_percent": true,
+      "entry_exit_alpha_zero": true,
+      "changing_frames": true
+    },
+    {
+      "id": "r21_cycle_lakes",
+      "checked_frames": 109,
+      "all_frame_bounds_inside_5_percent": true,
+      "entry_exit_alpha_zero": true,
+      "changing_frames": true
+    },
+    {
+      "id": "r25_heated_suit",
+      "checked_frames": 109,
+      "all_frame_bounds_inside_5_percent": true,
+      "entry_exit_alpha_zero": true,
+      "changing_frames": true
+    },
+    {
+      "id": "r29_rain_comparison",
+      "checked_frames": 109,
+      "all_frame_bounds_inside_5_percent": true,
+      "entry_exit_alpha_zero": true,
+      "changing_frames": true
+    },
+    {
+      "id": "r39_fire_partners",
+      "checked_frames": 109,
+      "all_frame_bounds_inside_5_percent": true,
+      "entry_exit_alpha_zero": true,
+      "changing_frames": true
+    },
+    {
+      "id": "r40_fire_missing",
+      "checked_frames": 109,
+      "all_frame_bounds_inside_5_percent": true,
+      "entry_exit_alpha_zero": true,
+      "changing_frames": true
+    },
+    {
+      "id": "r45_lift_mechanism",
+      "checked_frames": 109,
+      "all_frame_bounds_inside_5_percent": true,
+      "entry_exit_alpha_zero": true,
+      "changing_frames": true
+    }
+  ],
+  "preview_hashes": "MATCH",
+  "render_guard": "MISSING_APPROVAL_AND_UNKNOWN_ID_REJECTED_EXIT_2",
+  "visual_still_inspection": "Codex inspected all seven full-size stills; not motion or composite review",
+  "rain_scale": {
+    "diameter_ratio": 1.4615384615384615,
+    "fall_speed_ratio": 5.749999999999999,
+    "spatial_speed_scale": "10 pixels per second per m/s, same for both; linear; no wrap within 3.6s"
+  },
+  "not_verified": [
+    "Source/label review decision",
+    "Actual moving-plate contrast and placement",
+    "Native motion perception",
+    "Final picture, music and polish gates"
+  ]
+}
