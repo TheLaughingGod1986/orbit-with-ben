@@ -187737,10 +187737,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-05T19:04Z",
+      "eta": "2026-11-05T21:04Z",
       "created_by": "macbook",
       "created_at": "2026-11-05T18:30Z",
       "result": "",
@@ -187754,6 +187754,11 @@
           "at": "2026-11-05T18:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 103 min (heartbeat 2026-11-05T16:52:20Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T19:04Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write 011 Shorts scripts v02 + upload package scaffold (lint:package PASS) and queue 011 long VO",
@@ -187767,7 +187772,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T19:04Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2240",
