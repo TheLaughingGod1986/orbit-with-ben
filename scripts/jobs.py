@@ -785,31 +785,23 @@ def render(data: dict, at: dt.datetime) -> str:
 
 # ----------------------------------------------------------------------------- git transaction
 def with_git(apply, message: str, tries: int = 3):
-    """Pull, apply, commit only the queue files and any touched film board files, push; retry on a push race."""
-    for _ in range(tries):
-        if studio.git("pull", "-q", "--rebase", "--autostash", "origin", "main").returncode != 0:
-            return None, "git pull failed; resolve the working tree first"
-        data = load()
+    """Use the clean-main metadata transaction; never replay worker commits."""
+    def write():
+        data = load(QUEUE)
         before = json.dumps(data, sort_keys=True)
         out, err, touched = apply(data)
         if err:
-            return None, err
+            return None, err, []
         if json.dumps(data, sort_keys=True) == before and not touched:
-            return out, None  # nothing changed (e.g. `next` with nothing waiting): no commit, no push
-        save(data)
+            return out, None, []
+        save(data, QUEUE)
         JOBS_MD.write_text(render(data, now()))
-        paths = [str(QUEUE), str(JOBS_MD)]
+        paths = [QUEUE, JOBS_MD]
         if touched:
             studio.write_status(studio.FILMS)
-            paths += [str(p) for p in touched] + [str(studio.status_path(studio.FILMS))]
-        studio.git("add", *paths)
-        if studio.git("commit", "-q", "-m", message, "--", *paths).returncode != 0:
-            return None, "git commit failed"
-        if studio.git("push", "-q", "origin", "HEAD:main").returncode == 0:
-            return out, None
-        studio.git("reset", "-q", "HEAD~1")
-        studio.git("checkout", "-q", "--", *paths)
-    return None, "push kept racing; try again"
+            paths += list(touched) + [studio.status_path(studio.FILMS)]
+        return out, None, paths
+    return studio.git_transaction(write, message)
 
 
 def film_status_path(job: dict):
