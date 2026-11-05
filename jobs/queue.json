@@ -183075,13 +183075,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T05:54Z",
-      "eta": "2026-11-05T07:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T05:50Z",
-      "result": "",
+      "result": "Preparation delivered: HOS PR418 commit8518bbad.17 canonical rows/five Quality briefs, fresh15390 balance, source+VO hashes, script approvals. Three bounded checks refuse unverified native1080 Flow route;500-credit scope exceeds unchanged200 cap. Zero spend/media/render/publish; J2169 blocked1/3. J2188 then J2189 next.",
       "history": [
         {
           "at": "2026-11-05T05:50Z",
@@ -183112,6 +183112,11 @@
           "at": "2026-11-05T06:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence commit8518bbad submitted as HOS PR418; complete repo checks pass. No native1080 Flow route established; all five sources unresolved. J2188 independent review next."
+        },
+        {
+          "at": "2026-11-05T06:01Z",
+          "by": "codex",
+          "what": "done: Preparation delivered: HOS PR418 commit8518bbad.17 canonical rows/five Quality briefs, fresh15390 balance, source+VO hashes, script approvals. Three bounded checks refuse unverified native1080 Flow route;500-credit scope exceeds unchanged200 cap. Zero spend/media/render/publish; J2169 blocked1/3. J2188 then J2189 next."
         }
       ],
       "remaining_action": "J2188 independently reviews HOS PR418; J2189 decides viable route and separate priced scope",
@@ -183127,7 +183132,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/418"
     },
     {
       "id": "J2188",
