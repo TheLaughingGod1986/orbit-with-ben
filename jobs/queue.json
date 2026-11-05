@@ -186614,17 +186614,22 @@
           "at": "2026-11-05T20:10Z",
           "by": "cursor",
           "what": "step 4 of 5 done: Six plates 1280x720 silent, local sha matches NAS. UI balance 14840 (was 15390). VO locks unchanged. Inventory written. No PASS."
+        },
+        {
+          "at": "2026-11-05T20:11Z",
+          "by": "cursor",
+          "what": "step 5 of 5 done: Inventory commit c693b4f4 on HOS PR 435. Six plates NAS-matched. Flow UI 14840. No PASS."
         }
       ],
-      "remaining_action": "Land the inventory commit and close J2213",
+      "remaining_action": "Close J2213. Inventory is on HOS PR 435.",
       "kind": "video",
       "model": "flow-veo-3.1",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-05T20:10Z",
+        "at": "2026-11-05T20:11Z",
         "by": "cursor",
-        "note": "Six plates 1280x720 silent, local sha matches NAS. UI balance 14840 (was 15390). VO locks unchanged. Inventory written. "
+        "note": "Inventory commit c693b4f4 on HOS PR 435. Six plates NAS-matched. Flow UI 14840. No PASS."
       },
       "taskKeys": [
         "HOS:006"
