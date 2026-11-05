@@ -1,6 +1,51 @@
 # J2141 resumable picture build — 4 Nov 2026
 
-Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+Worker: cursor (this checkpoint). Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, dynamo run)
+
+Preserve **1/3**. New branch `worker/J2141-dynamo-v01` from main. Open PRs
+#539 (opening), #551 (field) and #555 (SAA) are not in this branch. This
+branch adds `code_graphics.py dynamo` and three full-frame 1920×1080 / 25 fps
+schematics on the harvested Blue Marble disc:
+
+- R16 align, 159.32–168.76 s (file 9.44 s): iron-current loops ease into one
+  dipole before "However". Longer than the shot list's 8 s because 8 s would
+  cut inside "steady south pole". The SVS separator still starts on "However".
+  Loops are a schematic, not a measured core flow (SOURCES row 6).
+- R17 tip, 172.68–188.36 s (file 15.68 s): backwards eddies fight the main
+  flow, the dipole weakens, then turns over. The file includes the pause
+  after "over." and ends as row 18's first word starts. Not a sourced
+  simulation frame.
+- R52 settle, 544.00–547.70 s (file 3.72 s, 93 frames): loops slow and the
+  compass's red north-seeking end locks toward the bottom of the frame,
+  labelled `COMPASS SOUTH`. This is not the generations tally. It ends as
+  row 53 starts.
+
+Labels are four words or fewer and each caption window is under 4 s.
+`CODE_DYNAMO_v01.json` records cues, source rows, paths and hashes.
+`CODE_DYNAMO_TECHNICAL_CHECK_v01.json` records hash matches, error-free full
+decode, 1920×1080, 25 fps and yuv420p. Static samples sit near mean luma 47–50.
+Contact sheet: `/Users/benjaminoats/_desk/J2141-dynamo-v01/CONTACT_v01.jpg`.
+Stills inspected. No motion, audio or composite review. No KEEP, PASS or
+stage approval.
+
+Media: `/Users/benjaminoats/_desk/J2141-dynamo-v01/` (about 8 MB). Reproduce
+into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py dynamo --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Disk about 13 GB free, above the 8 GB daytime NAS exception, so no scratch
+move. £0. No archive search. Still unfinished: paleo, poles_map, aurora, the
+building timeline, flip use 2, layers tight on the core, multipole part 2,
+the full triptych, the wider harvest, composites and QA. R21 compass fallback
+is already in mechanisms v02. R41 stays the NASA atmosphere plate, not a new
+render. Chief still owns the R54 asset-identity and sourced-simulation gate
+conflicts below.
+
+
 
 ## Continuation checkpoint (5 Nov, seventh run)
 
