@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""032 quantitative overlay stills for pre-render review. No animation render authority.
+"""032 quantitative overlays. Individual render approval: J2150 after its corrections.
 
 Each row has its own file and source pointer. Transparent overlays composite over
 approved moving real plates; no illustrative preview background enters the film.
@@ -13,7 +13,7 @@ from code_graphics import W,H,GOLD,WHITE,font
 SPECS=[
  {'id':'r03_pressure','row':3,'kind':'bars','title':'PRESSURE','unit':'BAR','values':[('EARTH',1),('TITAN',1.47)],'max':1.5,'source_rows':[1]},
  {'id':'r25_pressure','row':25,'kind':'bars','title':'PRESSURE','unit':'BAR','values':[('EARTH',1),('TITAN',1.47)],'max':1.5,'source_rows':[1]},
- {'id':'r04_cold','row':4,'kind':'thermometer','title':'ALMOST NO OXYGEN','unit':'°C','value':-179,'source_rows':[1,8,9]},
+ {'id':'r04_cold','row':4,'kind':'thermometer','title':'TITAN SURFACE','footnote':'ALMOST NO OXYGEN','unit':'°C','value':-179,'source_rows':[1,8,9]},
  {'id':'r19_temp_scale','row':19,'kind':'thermometer','title':'TITAN','unit':'°C','value':-179,'source_rows':[8]},
  {'id':'r26_airmix','row':26,'kind':'composition','title':'TITAN AIR','unit':'%','values':[('NITROGEN',95),('METHANE',5)],'source_rows':[9],'fallback':'£0 R26; no Orbit generation'},
  {'id':'r27_airmix','row':27,'kind':'composition','title':'TITAN AIR','unit':'%','values':[('NITROGEN',95),('METHANE',5)],'source_rows':[9]},
@@ -23,7 +23,7 @@ SPECS=[
  {'id':'r29_rain','row':29,'kind':'rain','title':'TITAN RAIN','diameter':9.5,'speed':1.6,'source_rows':[10]},
  {'id':'r33_depth_ligeia','row':33,'kind':'depth','title':'LIGEIA MARE','value':160,'display':'≈ 160 M','source_rows':[12]},
  {'id':'r34_depth_kraken','row':34,'kind':'depth','title':'KRAKEN MARE','value':300,'display':'≥ 300 M','lower_bound':True,'source_rows':[12]},
- {'id':'r39_oxygen','row':39,'kind':'bars','title':'EARTH AIR','unit':'%','values':[('NITROGEN',78),('OXYGEN',21)],'max':100,'source_rows':[9,14]},
+ {'id':'r39_oxygen','row':39,'kind':'bars','title':'OXYGEN','unit':'%','values':[('EARTH',21),('TITAN',0)],'display':['21%','≈ 0%'],'max':25,'source_rows':[9,14]},
  {'id':'r40_airmix','row':40,'kind':'composition','title':'TITAN AIR','unit':'%','values':[('NITROGEN',95),('METHANE',5)],'source_rows':[9,14],'footnote':'ALMOST NO OXYGEN'},
  {'id':'r45_density','row':45,'kind':'bars','title':'AIR DENSITY','unit':'× EARTH','values':[('EARTH',1),('TITAN',4)],'max':4,'source_rows':[15]},
  {'id':'r45_gravity','row':45,'kind':'bars','title':'GRAVITY','unit':'× EARTH','values':[('EARTH',1),('TITAN',1/7)],'max':1,'display':['1','≈ 1/7'],'source_rows':[15]},
@@ -60,12 +60,13 @@ def frame(s,t=1.8):
   d.rectangle((xx+8,top+8,xx+62,top+8+(bottom-top-16)*p),fill=BLUE)
   for v in [0,-50,-100,-150,-179]:
    yy=top+(bottom-top)*(-v/179);d.line((xx+80,yy,xx+110,yy),fill=WHITE,width=3);text(d,(xx+130,yy-24),f'{v} °C',46)
+  if s.get('footnote'):text(d,(x+500,840),s['footnote'],48)
  elif k=='rain':
   rr=s['diameter']*14;cx=x+230;cy=500+(t%1)*s['speed']*10
   d.ellipse((cx-rr,cy-rr,cx+rr,cy+rr),fill=BLUE,outline=WHITE,width=3)
   d.line((cx-rr,cy+rr+35,cx+rr,cy+rr+35),fill=WHITE,width=4)
   text(d,(x+500,440),f"{s['diameter']:g} MM",64,GOLD);text(d,(x+500,550),f"{s['speed']:g} M/S",64)
-  text(d,(x+500,670),'MODEL MAXIMUM',38)
+  text(d,(x+500,670),'BIGGEST DROPS',38)
  elif k=='depth':
   d.line((x,380,x+1100,380),fill=BLUE,width=5);end=400+400*(s['value']/300)*p
   d.line((x+150,400,x+150,end),fill=GOLD,width=10)
@@ -91,7 +92,7 @@ def main():
  for i,s in enumerate(SPECS):
   dest=out/('code_graphic_032_'+s['id']+'_v01.png');im=frame(s);im.save(dest)
   tile=Image.new('RGBA',(W,H),(40,58,79,255));tile.alpha_composite(im);tile=tile.convert('RGB').resize((640,360));x=(i%2)*640;y=(i//2)*360;sheet.paste(tile,(x,y));sd.text((x+8,y+8),s['id'],fill='white')
-  clips.append({**s,'preview':str(dest),'preview_sha256':hashlib.sha256(dest.read_bytes()).hexdigest(),'review_status':'DRAFT_STILL_REVIEW_REQUIRED','rendered':False,'needs_background':'graded moving real plate; not yet selected','contrast_on_actual_composite':'UNVERIFIED','safe_placement_on_actual_subject':'UNVERIFIED'})
+  clips.append({**s,'preview':str(dest),'preview_sha256':hashlib.sha256(dest.read_bytes()).hexdigest(),'review_status':'STILL_APPROVED_J2150_AFTER_CORRECTIONS','rendered':False,'needs_background':'graded moving real plate; not yet selected','contrast_on_actual_composite':'UNVERIFIED','safe_placement_on_actual_subject':'UNVERIFIED'})
  if a.render:
   for s,rec in zip(SPECS,clips):
    if s['id'] not in a.approved:continue
@@ -104,5 +105,5 @@ def main():
    except BaseException:proc.kill();raise
    rec.update(rendered=True,render=str(dest),sha256=hashlib.sha256(dest.read_bytes()).hexdigest(),review_ref=a.review_ref,review_status='RENDERED_NOT_FINAL_COMPOSITE')
  sheet.save(out/'data_previews.jpg',quality=94)
- (out/'DATA_MANIFEST_v01.json').write_text(json.dumps({'job':'J2089','status':'DRAFT_NOT_APPROVED_TO_RENDER','clips':clips},indent=2)+'\n')
+ (out/'DATA_MANIFEST_v01.json').write_text(json.dumps({'job':'J2089','status':'J2150_APPROVED_RENDERS_NOT_COMPOSITE_APPROVAL' if a.render else 'CORRECTED_STILLS_J2150','clips':clips},indent=2)+'\n')
 if __name__=='__main__':main()

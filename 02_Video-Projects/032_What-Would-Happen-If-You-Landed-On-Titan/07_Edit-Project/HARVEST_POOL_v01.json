@@ -1,7 +1,7 @@
 {
   "job": "J2089",
-  "shot_list_sha256": "b9d272a0a7b8e89169c556cde14ef19c54b27f377b986f606d6994811d4edaaf",
-  "status": "J2090_CORRECTED_CANDIDATES_NOT_ASSEMBLY_READY",
+  "shot_list_sha256": "b600d2bc92414d9eb80c92d4554460df9ac68934150cf4426e87a1da0e097d81",
+  "status": "J2150_CORRECTIONS_PARTIAL_NOT_ASSEMBLY_READY",
   "spend_gbp": 0,
   "assets": [
     {
@@ -170,15 +170,14 @@
         "status": "PROPOSED_NOT_ASSEMBLY_APPROVED",
         "notes": "White release surround removed; tiny soft source remains subject to frame review. Second appearance needs a distinct framing."
       },
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "reuse_status": "CONFLICT_3_DRAFT_ROWS_MAX_2_RECONCILE_BEFORE_ASSEMBLY"
     },
     {
       "asset_id": "PIA07233",
       "source_page": "https://science.nasa.gov/photojournal/first-best-guess-view-of-huygens-landing-site/",
-      "referenced_rows": [
-        25
-      ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "referenced_rows": [],
+      "review_status": "EXCLUDED_J2150",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "First Best-Guess View of Huygens Landing Site",
       "description": "First Best-Guess View of Huygens Landing Site",
@@ -484,6 +483,7 @@
       "asset_id": "PIA14584",
       "source_page": "https://science.nasa.gov/photojournal/titans-kraken-mare/",
       "referenced_rows": [
+        38,
         40
       ],
       "review_status": "CANDIDATE_NOT_KEEP",
@@ -612,10 +612,8 @@
     {
       "asset_id": "PIA16638",
       "source_page": "https://science.nasa.gov/photojournal/titan-craters-the-old-and-the-new/",
-      "referenced_rows": [
-        50
-      ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "referenced_rows": [],
+      "review_status": "EXCLUDED_J2150",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Titan Craters, the Old and the New",
       "description": "This set of images from the radar instrument on NASA Cassini spacecraft shows a relatively fresh crater called Sinlap left and an extremely degraded crater called Soi right.",
@@ -785,10 +783,8 @@
     {
       "asset_id": "PIA19051",
       "source_page": "https://science.nasa.gov/photojournal/perspective-on-kraken-mare-shores/",
-      "referenced_rows": [
-        38
-      ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "referenced_rows": [],
+      "review_status": "EXCLUDED_J2150",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Perspective on Kraken Mare Shores",
       "description": "This Cassini Synthetic Aperture Radar (SAR) image is presented as a perspective view and shows a landscape near the eastern shoreline of Kraken Mare, a hydrocarbon sea in Titan's north polar region. This image was processed using a technique for handling noise that results in clearer views that can be easier for researchers to interpret. The technique, called despeckling, also is useful for producing altimetry data and 3-D views called digital elevation maps.  Scientists have used a technique called radargrammetry to determine the altitude of surface features in this view at a resolution of approximately half a mile, or 1 kilometer. The altimetry reveals that the area is smooth overall, with a maximum amplitude of 0.75 mile (1.2 kilometers) in height. The topography also shows that all observed channels flow downhill.  The presence of what scientists call \"knickpoints\" -- locations on a river where a sharp change in slope occurs -- might indicate stratification in the bedrock, erosion mechanisms at work or a particular way the surface responds to runoff events, such as floods following large storms. One such knickpoint is visible just above the lower left corner, where an area of bright slopes is seen.  The image was obtained during a flyby of Titan on April 10, 2007. A more traditional radar image of this area on Titan is seen in PIA19046.  http://photojournal.jpl.nasa.gov/catalog/PIA19051",
@@ -1056,9 +1052,7 @@
       "review_status": "CANDIDATE_NOT_KEEP",
       "licence_status": "PUBLIC_DOMAIN_ART_FILE_PERMISSION_VERIFIED",
       "crop": "UNSELECTED; preserve face and compose with lower-third card",
-      "referenced_rows": [
-        7
-      ],
+      "referenced_rows": [],
       "width": 1682,
       "height": 2204,
       "download_status": "downloaded",
@@ -1094,5 +1088,32 @@
     "download_status": "NOT_DOWNLOADED",
     "reason": "Local page/CDN requests returned HTTP403; web tool verified source and CC BY policy. Do not repeat unchanged URL retries. Use a new documented official NASA/STScI source route next.",
     "row": 52
-  }
+  },
+  "review_ref": "J2150",
+  "motion_candidates": [
+    {
+      "asset_id": "huygens_descent",
+      "local_path": "/Users/benjaminoats/_desk/cache/J2089/additional_v01/huygens_descent.wmv",
+      "sha256": "4b41648af46986687a907e6b960c564cb04740b157f22498bf8fab6532f21b97",
+      "bytes": 155564728,
+      "download_status": "DOWNLOADED_AND_PROBED",
+      "source_page": "https://archives.esac.esa.int/psa/ftp/CASSINI-HUYGENS/DISR/HP-SSA-DISR-2-3-EDR-RDR-V1.3/EXTRAS/MOVIES/TITAN_DESCENT_MOVIE/TITAN_DESCENT_MOVIE.TXT",
+      "licence_status": "PENDING_ASSET_SPECIFIC_TERMS",
+      "motion_perception": "NOT_PERFORMED",
+      "intervals": "UNSELECTED",
+      "review_status": "EXCLUDED_RECONSTRUCTION_J2150"
+    },
+    {
+      "asset_id": "dragonfly_at_titan",
+      "local_path": "/Users/benjaminoats/_desk/cache/J2089/additional_v01/dragonfly_at_titan.mp4",
+      "sha256": "6e4f93937a3e9eabc3316dac31cae5090fe35e83d2f97966cc759d36cbe6dfde",
+      "bytes": 213264954,
+      "download_status": "DOWNLOADED_AND_PROBED",
+      "source_page": "https://dragonfly.jhuapl.edu/Gallery/",
+      "licence_status": "PENDING_ASSET_SPECIFIC_TERMS",
+      "motion_perception": "NOT_PERFORMED",
+      "intervals": "UNSELECTED",
+      "review_status": "PENDING_ASSET_RIGHTS_AND_INTERVAL_REVIEW"
+    }
+  ]
 }
