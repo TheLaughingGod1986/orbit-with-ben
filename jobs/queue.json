@@ -174828,17 +174828,23 @@
           "at": "2026-11-05T01:08Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-05T01:09Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Inventory complete: J1004 excludes retired 006/007 lifts; 006 B/C usable plans, 008 A existing J0912, 008 C and 009 B hook holds; 010 plate dependency; AR events are not in November"
         }
       ],
-      "remaining_action": "Inventory Shorts, identify unused candidates and preserve approval dependencies",
+      "remaining_action": "Queue lawful gap candidates and record conditional dates, exclusions and review deadlines",
       "due": "2026-11-06T00:00:00Z",
       "kind": "chief",
       "urgent": 18,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-05T01:08Z",
-        "by": "codex"
+        "at": "2026-11-05T01:09Z",
+        "by": "codex",
+        "note": "Inventory complete: J1004 excludes retired 006/007 lifts; 006 B/C usable plans, 008 A existing J0912, 008 C and 009 B ho"
       },
       "taskKeys": [
         "HOS:005",
@@ -174847,7 +174853,8 @@
         "HOS:008",
         "HOS:009",
         "HOS:010",
-        "OWB:030"
+        "OWB:030",
+        "OWB:032"
       ]
     },
     {
