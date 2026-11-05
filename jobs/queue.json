@@ -180101,10 +180101,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-05T05:16Z",
-      "eta": "2026-11-05T07:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -180243,6 +180243,11 @@
           "at": "2026-11-05T05:19Z",
           "by": "codex",
           "what": "step 1 of 3 done: Checkpoint 6c14c11c32: three sourced WHEN alpha overlays rendered; hashes, dimensions, alpha, timings and full decode verified. Static sheet inspected. Batch exit0; no active render. Full package unfinished; £0."
+        },
+        {
+          "at": "2026-11-05T05:19Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint PR495 worker/J2141-031-picture 6c14c11c32; preserve 1/3. Three WHEN overlays technically checked. Continue BUILD_HANDOFF_J2141.md; full picture package remains unfinished. J2141-dates-v01 finished exit0; /Users/benjaminoats/_desk/logs/J2141-dates-v01.log and .done. No KEEP/PASS, £0."
         }
       ],
       "remaining_action": "Continue remaining archive harvest, mechanisms, timeline and composite QA from PR495",
