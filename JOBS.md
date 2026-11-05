@@ -86,7 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2207 | mini | open | – | – | assembly · OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts |  |
 | J2210 | mini | blocked | codex | – | 010 picture · video · HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint) | J2194 |
 | J2213 | mini | open | – | – | 006 picture · video · `flow-veo-3.1` · HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200) | HOS#180:6655551386 |
-| J2215 | macbook | claimed | macbook | 2026-11-05T12:57Z | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
+| J2215 | macbook | open | – | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
 
 Recently finished:
 
