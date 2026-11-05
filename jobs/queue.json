@@ -175742,13 +175742,13 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "chief",
       "since": "2026-11-05T09:21Z",
-      "eta": "2026-11-05T11:21Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "Waiting for: HOS PR408 tab-reuse merged e908c3e2. Generation blocked until separately tested tranche-2 runner (J2200) gets Chief system PASS: v05-only rows, parents first, GENERATED/PENDING_REVIEW not auto-KEEP, J2026 locks/price/floor/batch caps. 0/20 generated, zero spend. Do not run tranche1 runner.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -175809,9 +175809,19 @@
           "at": "2026-11-05T09:21Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T09:21Z",
+          "by": "chief",
+          "what": "blocked: Waiting for: HOS PR408 tab-reuse merged e908c3e2. Generation blocked until separately tested tranche-2 runner (J2200) gets Chief system PASS: v05-only rows, parents first, GENERATED/PENDING_REVIEW not auto-KEEP, J2026 locks/price/floor/batch caps. 0/20 generated, zero spend. Do not run tranche1 runner."
+        },
+        {
+          "at": "2026-11-05T09:21Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-11-06T18:00:00Z"
         }
       ],
-      "remaining_action": "Chief review HOS PR408, then provide tested tranche2 runner before generation",
+      "remaining_action": "Await tested tranche2 runner J2200 Chief PASS; then resume mint under J2026 caps",
       "due": "2026-11-15T18:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -175832,6 +175842,11 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "HOS PR408 tab-reuse merged e908c3e2. Generation blocked until separately tested tranche-2 runner (J2200) gets Chief system PASS: v05-only rows, parents first, GENERATED/PENDING_REVIEW not auto-KEEP, J2026 locks/price/floor/batch caps. 0/20 generated, zero spend. Do not run tranche1 runner.",
+        "check_at": "2026-11-06T18:00:00Z"
       }
     },
     {
