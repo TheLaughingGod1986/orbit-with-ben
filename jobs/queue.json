@@ -101118,6 +101118,11 @@
           "at": "2026-11-05T11:25Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Auditioned standalone Shorts bed (opening/middle/end) and S2/S5 v07 VO WAVs by native audio_input; verified 0 words on 22.97s S2 bed stem and music_gate PASS; starting v07 base+final renders"
+        },
+        {
+          "at": "2026-11-05T11:31Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Built S2/S5/S6 v07 stems, mixes, and overlays; finalizing exact 30-frame reverse loop tail so f0-vs-last and c37 loop_measures are <0.5 on all three"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101139,14 +101144,14 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T11:25Z",
+        "at": "2026-11-05T11:31Z",
         "by": "gemini",
-        "note": "Auditioned standalone Shorts bed (opening/middle/end) and S2/S5 v07 VO WAVs by native audio_input; verified 0 words on 2"
+        "note": "Built S2/S5/S6 v07 stems, mixes, and overlays; finalizing exact 30-frame reverse loop tail so f0-vs-last and c37 loop_me"
       },
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Render S2, S5, S6 v07 base and final MP4s, run loop_h43.py and all 5 gates, listen to finished AACs, and deliver"
+      "remaining_action": "Finish S2, S5, S6 v07 base+final renders with exact 30-frame reverse tail, run loop_h43.py and all 5 gates, listen to finished AACs, and deliver"
     },
     {
       "id": "J1101",
