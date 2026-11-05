@@ -188539,7 +188539,7 @@
     {
       "id": "J2250",
       "title": "024 muons Short v01: review the tool-passed cut",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "# Review 024 muons Short v01 (from J2248)\n\nTool gates PASS. This is not a Chief PASS and not a schedule.\n\n## Cut\n- File (gitignored): `02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/06_Final-Exports/fri06_muons_ground_v01.mp4`\n- sha256 `9fc197dcdbcd16d3812a183779b2c8dcba38f67495d5738741b4c6e8f411fd28`\n- 22.2 s, 1080x1920, locked VO `3b17b23c…779e8a` (not reminted)\n- iCloud copy: `OWB UAT/024_fri06_muons_ground_v01/`\n- Reports beside the file: gate, sfx, music, polish, picture_qa\n\n## What passed\n- `gate_shorts_open.py check --air-date 2026-11-21` PASS (motion 46.52, frame-0 diff 11.56, first cut 2.6 s, VO onset 0.08 s, tail gap 1.03 s, no Orbit)\n- `sfx_kit.py level` PASS\n- `music_gate.py` PASS on `light-speed_score_bed_v01_full.mp3` (526 s, the film's own bed, restored from the 5 Nov NAS copy, sha256 `7859c229…`)\n- `polish_gate` PASS and `picture_qa` PASS\n- Mix −14.4 LUFS, true peak −1.9 dBTP. £0. No upload.\n\n## Look at this\n- WARN only: row s02 at 4.3 s, `code_graphic_024_fri06_muons_s02.mp4`, edge density 0.0239 just under the film's 5th percentile. It is the slow-clock plate. Picture QA sheet: `06_Final-Exports/picture_qa_v01/picture_qa_review.jpg`.\n\n## Do not\n- Do not schedule or upload. Mon 9 Nov 2026 11:30 London is occupied by `iyvWYFP_ETA`. The open-gate date Sat 21 Nov is provisional; recheck the slot before any later schedule.\n- Do not set Ben's watch card unless the verdict is KEEP.\n- On KEEP: release J2248 to set `jobs.py awaits` with the UAT Play link, due before the chosen air day 10:30 London, `--if-not \"do not upload or schedule\"`.\n- On FIX: list the exact changes. J2248 stays parked until those are in a new version.\n\nWrite `jobs/reviews/J2248/REVIEW.md` as KEEP or FIX.\n",
       "ref": "",
@@ -188569,6 +188569,11 @@
           "at": "2026-11-05T20:07Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-05T20:39Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Write KEEP or FIX for the fri06 muons Short v01",
@@ -188580,7 +188585,16 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2251",
