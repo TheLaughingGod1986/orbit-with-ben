@@ -184037,12 +184037,26 @@
           "at": "2026-11-05T08:28Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T08:33Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief",
       "kind": "review",
       "review_of": "J0862",
-      "urgent": 15
+      "urgent": 15,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2196",
