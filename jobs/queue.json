@@ -99901,13 +99901,13 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-05T11:18Z",
-      "eta": "2026-11-05T13:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "parked for Chief: named standalone bed is byte-identical to previously excluded candidate (13adc031...). Dual local ASR does not jointly flag speech: small.en Thank you has no_speech_prob 0.766; direct local listening not performed. Clarify bed exclusion and arrange required local listening. Evidence 3e26b379b at /private/tmp/J1100-bed-evidence includes prior afed1c552. Auto-review rejected push to authorized evidence branch as insufficient user authorization for payload/destination; no push/PR created. Preserve 2/3 OWB:027/028, pickups, S6 audio, h43 LOOP, deadlines/v01 fallback. GBP0; no render/publishing changes; no active detached process.",
+      "result": "parked for Chief: S2 (earth_equator_weight_v07, sha256 7d07deafbd4e...), S5 (028_short_fri04_scale_v07, sha256 d5589ad4fa32...), and S6 (028_short_lift_night_sky_35yr_v07, sha256 2f399f3127bf...) v07 delivered to repo/UAT/NAS and _desk/renders/J1100-v07 (branch gemini/J1100-v07-delivery @ 545128a66f); passed h43-LOOP + all 5 gates + direct ear AAC/bed audition",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -101143,6 +101143,11 @@
           "at": "2026-11-05T12:23Z",
           "by": "gemini",
           "what": "step 3 of 3 done: All 3 v07 Shorts passed loop_h43.py (base 0.50/0.59/0.65, masked 0.57/0.62/0.64, tail_hits=0) + all 5 gates + direct ear AAC/bed audition; delivered to repo/UAT/NAS with sha256s (branch gemini/J1100-v07-delivery @ 545128a66f)"
+        },
+        {
+          "at": "2026-11-05T12:24Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: S2 (earth_equator_weight_v07, sha256 7d07deafbd4e...), S5 (028_short_fri04_scale_v07, sha256 d5589ad4fa32...), and S6 (028_short_lift_night_sky_35yr_v07, sha256 2f399f3127bf...) v07 delivered to repo/UAT/NAS and _desk/renders/J1100-v07 (branch gemini/J1100-v07-delivery @ 545128a66f); passed h43-LOOP + all 5 gates + direct ear AAC/bed audition"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
