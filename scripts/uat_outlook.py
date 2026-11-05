@@ -290,9 +290,9 @@ def attach(videos, hos, owb, alljobs, now):
     for status in (root / '02_Video-Projects').glob('*/status.json'):
         for bucket, values in history_samples(root, str(status.relative_to(root)), 'OWB').items():
             samples.setdefault(bucket, []).extend(values)
-    import os
-    candidates = [Path(os.environ.get('HOS_REPO', ''))] if os.environ.get('HOS_REPO') else []
-    candidates += [root.parent / name for name in ('hos', 'history-of-science', 'History Of Science')]
+    import channels
+    candidates = [channels.repo_path('hos')]
+    candidates += [root.parent / name for name in ('hos', *channels.get('hos')['repo'].get('checkouts', []))]
     hos_repo = next((p for p in candidates if (p / '00_Brand/Channel-Setup/PIPELINE.json').exists()), root.parent / 'hos')
     samples.update(history_samples(hos_repo, '00_Brand/Channel-Setup/PIPELINE.json', 'HOS'))
     for video in videos:
