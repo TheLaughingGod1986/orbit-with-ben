@@ -182602,10 +182602,10 @@
       "stage": "",
       "after": "J2181",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-05T04:16Z",
+      "eta": "2026-11-05T06:16Z",
       "created_by": "codex",
       "created_at": "2026-11-05T04:13Z",
       "result": "",
@@ -182619,11 +182619,24 @@
           "at": "2026-11-05T04:14Z",
           "by": "codex",
           "what": "remaining action: Review PR415 crops and exact FAILs; coordinate J2184 missing sources and J2179/J2182 checker before any J2169 release"
+        },
+        {
+          "at": "2026-11-05T04:16Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review PR415 crops and exact FAILs; coordinate J2184 missing sources and J2179/J2182 checker before any J2169 release",
       "due": "2026-11-07T18:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T04:16Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2184",
