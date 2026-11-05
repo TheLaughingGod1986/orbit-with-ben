@@ -182329,10 +182329,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-05T04:12Z",
+      "eta": "2026-11-05T06:12Z",
       "created_by": "codex",
       "created_at": "2026-11-05T03:35Z",
       "result": "",
@@ -182381,6 +182381,11 @@
           "at": "2026-11-05T03:58Z",
           "by": "codex",
           "what": "reopened: J2180 FIX on PR512 be2c980ffa. Repair missing body-file identity fallback and missing video-offset run downgrade; add regressions, keep opt-out legacy behavior. Exact findings and failing reproductions: https://github.com/TheLaughingGod1986/orbit-with-ben/blob/ed5b8002ae/jobs/reviews/J2180/REVIEW.md . Update existing PR512; do not merge or reopen J2169. Deliver corrected head for separate elected-Chief re-review."
+        },
+        {
+          "at": "2026-11-05T04:12Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "J2180 must independently review PR512 before any production use",
@@ -182389,7 +182394,15 @@
       "taskKeys": [
         "HOS:006"
       ],
-      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/512"
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/512",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T04:12Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2180",
