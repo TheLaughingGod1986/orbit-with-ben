@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2248 | mini | blocked | cursor | – | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
 | J2249 | mini | open | – | – | 032 thumbs · for codex · thumb · 032 thumb A rebuild: real Huygens surface photo, hook REAL SURFACE (J2162) |  |
 | J2250 | mini | open | – | – | 024 edit · for gemini · review · `gemini-argon` · 024 muons Short v01: review the tool-passed cut |  |
-| J2252 | any | open | – | – | review · Verify condition for J2169 |  |
+| J2252 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2169 |  |
 
 Recently finished:
 
