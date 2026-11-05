@@ -101133,6 +101133,11 @@
           "at": "2026-11-05T11:58Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Fixed bt709/tv color-space match across s00..s07 so raw[0] vs raw[-1] is 0.17 (S2), 0.25 (S5), 0.26 (S6); rendering base+final MP4s and running loop_h43.py"
+        },
+        {
+          "at": "2026-11-05T12:10Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Auditioned finished S2/S5/S6 v07 AACs (0-5.5s and full runtime) + S2 bed stem by direct ear; running verify_and_deliver_v07.py"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101154,14 +101159,14 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T11:58Z",
+        "at": "2026-11-05T12:10Z",
         "by": "gemini",
-        "note": "Fixed bt709/tv color-space match across s00..s07 so raw[0] vs raw[-1] is 0.17 (S2), 0.25 (S5), 0.26 (S6); rendering base"
+        "note": "Auditioned finished S2/S5/S6 v07 AACs (0-5.5s and full runtime) + S2 bed stem by direct ear; running verify_and_deliver_"
       },
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Render S2, S5, S6 v07 base/final MP4s from bt709 picture_raw.mp4, run loop_h43.py and all 5 gates, listen to finished AACs, and deliver"
+      "remaining_action": "Run verify_and_deliver_v07.py (loop_h43, 5 gates, dark/OCR/ASR, repo/UAT/NAS delivery) and park for Chief"
     },
     {
       "id": "J1101",
