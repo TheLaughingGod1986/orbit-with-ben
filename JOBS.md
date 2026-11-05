@@ -81,9 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2152 | macbook | open | – | – | `cursor-grok-4-7` · MacBook setup test: cursor |  |
 | J2154 | macbook | open | – | – | review · `claude-opus-5-5` · MacBook setup test: claude |  |
 | J2155 | mini | blocked | codex | – | 033 vo · for codex · vo · 033 Uranus: VO from locked script v02 (J2148 GO) | c01c9f9e78 |
-| J2156 | mini | open | – | – | chief · Chief: resolve 033 topic orphan-review |  |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
-| J2158 | mini | open | – | – | chief · Chief: resolve 034 topic orphan-review |  |
 | J2159 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2160 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2161 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
@@ -95,6 +93,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J2163 done: HOS008: repair Franklin correction recipe timing, preservation and teaching labels (Code/evidence repair delivered for J1881 in HOS PR411, commit50620e40.11 tests pass; actual master PTS and four source hashes/decode verified. Read-only planner refuses execution; output sync/identity UNMEASURED. All six notes unresolved; separate PTS/GOP implementation, master-word alignment and two exact-match assets need Chief scope. GBP0; no render, publication or YouTube changes.)
+- J2158 cancelled: Chief: resolve 034 topic orphan-review ()
+- J2156 cancelled: Chief: resolve 033 topic orphan-review ()
 - J2153 done: MacBook setup test: codex (MacBook test OK: Codex CLI, exact model not verified, Bens-MacBook-Pro.local)
 - J2151 done: MacBook setup test: gemini (MacBook test OK: agy, Gemini 4 Argon (High), Bens-MacBook-Pro.local)
 - J2150 done: 032 J2089: review 18 DATA stills and resolve remaining harvest conflicts (jobs/reviews/J2150/REVIEW.md: 14 DATA stills KEEP, 4 CHANGE (r04 title, r28/r29 'BIGGEST DROPS', r39 oxygen-only); all 18 may render after changes (ref J2150). R25 -> PIA07232 inset; R38 PIA19051 reconstruction dropped -> PIA14584; R50 Sinlap-only crop or map-pin fallback; ESA Huygens reconstruction movie not used.)
@@ -102,5 +102,3 @@ Recently finished:
 - J2148 done: 033 topic + script: rule-E review (WIP film, new reference-channel rules) (Rule-E GO (jobs/reviews/J2148/REVIEW.md, commit c01c9f9e78): (1) 10 qualifying 1M+ Uranus neighbours verified via yt-dlp (1.24M-7.63M views), zero OWB/HOS long overlap; (2) OWB Short ZpEA8stoSPA public 3 Nov reached 461 views / 6 likes in day 1, Astrum pZh5BWCNmmE at 1.24M views in 8 days; (3) script v02 polished (1,290 spoken words, review:script PASS 95.2/100, gate:episode PASS, 15/15 SOURCES.md rows verified live against NASA/NSSDCA/LOC); (4) LEARNINGS 20 series = Real Worlds, LEARNINGS 18 real-imagery titles = 'What Voyager 2 Saw in Just 6 Hours at Uranus' (44c) / 'The Only Spacecraft Photos Ever Taken at Uranus' (47c), LEARNINGS 19 real-frame thumb A = JWST NIRCam PIA25770 / Voyager 2 PIA18182 ('21-YEAR WINTER'). Set 033 topic/script/sources done and queued VO job J2155. £0.)
 - J2142 done: Chief: resolve 031 shots orphan-review (Resolved: J2043 rule-E review GO (SHOT_LIST_v02 55d4dad1c2) but status.json was left at shots=review; set 031 shots done, picture J2141 queued.)
 - J2140 cancelled: Chief: resolve 061 sources orphan-review ()
-- J2139 cancelled: Chief: resolve 061 script orphan-blocked ()
-- J2138 cancelled: Chief: resolve 061 topic orphan-review ()
