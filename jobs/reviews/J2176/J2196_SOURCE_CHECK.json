@@ -1,0 +1,64 @@
+{
+  "job": "J2176",
+  "ruling": "J2196",
+  "status": "FAIL_SOURCE_COMPOSITION",
+  "sources": [
+    {
+      "id": "PIA14602",
+      "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/J2196_source_check/PIA14602.jpg",
+      "sha256": "ee4057ff56934eb2bdfb78b2768e699ebe9226125d5623bd4b89df230c4e0e82",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "near_black": 0.8198223114013672,
+      "optimistic_full_moon_crop": [
+        0,
+        235,
+        1024,
+        811
+      ],
+      "crop_grade": "Saturation 2x, brightness 1.25x; no composite, no invented background",
+      "crop_near_black": 0.6755540635850694,
+      "failure": "Near-black cap; adding top text clearance shrinks the moon further. No background replacement authorised."
+    },
+    {
+      "id": "PIA21890",
+      "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/J2196_source_check/PIA21890.jpg",
+      "sha256": "fa57f39f0b92f09730de1f1a9d0876b6c5f481e1bb7de217a3fb336ed57aa44f",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "near_black": 0.32465171813964844,
+      "failure": "Source moon crosses top and bottom source edges; whole hero cannot be recovered by cropping. Do not invent missing pixels."
+    },
+    {
+      "id": "PIA14922",
+      "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/J2196_source_check/PIA14922.jpg",
+      "sha256": "0a157599ec76c317b3132f2fddd9006f3030aefb995ce3a5e389bfa8e18663dd",
+      "dimensions": [
+        1417,
+        1326
+      ],
+      "near_black": 0.7121337433513115,
+      "failure": "Titan about 125 native pixels tall (conservative bound under 130); at 2.35x under 306px, below 324px minimum (45% of 720) in J2196 smaller-hero fallback."
+    }
+  ],
+  "preserved": [
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_B_bright_methane_shore_v02.jpg",
+      "sha256": "4e4faf3155fba42aa7120a1682ba2d1eb46a95a0cc9a48fe5ac37a7bbfab02a0",
+      "unchanged": true
+    },
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_C_scale_ice_is_rock_v03.jpg",
+      "sha256": "a0a67a7e1f192d09aabeaa991c9f3f4ef064a2e81234f3a5b66c75de1be1c7af",
+      "unchanged": true
+    }
+  ],
+  "cost_gbp": 0,
+  "policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+  "credit": "NASA/JPL-Caltech/Space Science Institute",
+  "media_review": "Still images inspected; no audio or moving-video claim"
+}
