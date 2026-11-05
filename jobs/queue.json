@@ -183100,13 +183100,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-05T10:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T02:21Z",
-      "result": "Failed composition constraints under J2196; PR521 / 8e1a673ac4. PIA14602 67.56% near-black crop; PIA21890 clipped moon; PIA14922 under 306px at max upscale versus 324px floor. Review J2212 owns explicit new composition scope; no unchanged-source retry, panel release or gate waiver. B/C unchanged, progress 1/3, no spend or background process.",
+      "result": "review J2212 FIX: A = Titan filling the frame (PIA21890 first, then PIA14602 tight crop), no composite; see jobs/reviews/J2212/REVIEW.md",
       "history": [
         {
           "at": "2026-11-05T02:21Z",
@@ -183197,6 +183197,11 @@
           "at": "2026-11-05T10:31Z",
           "by": "codex",
           "what": "blocked: Failed composition constraints under J2196; PR521 / 8e1a673ac4. PIA14602 67.56% near-black crop; PIA21890 clipped moon; PIA14922 under 306px at max upscale versus 324px floor. Review J2212 owns explicit new composition scope; no unchanged-source retry, panel release or gate waiver. B/C unchanged, progress 1/3, no spend or background process."
+        },
+        {
+          "at": "2026-11-05T10:52Z",
+          "by": "claude",
+          "what": "review J2212: released with amended scope (no whole-moon requirement, no composite); recipe in jobs/reviews/J2212/REVIEW.md"
         }
       ],
       "remaining_action": "Resolve failed Titan A composition scope before construction and panel review",
@@ -183213,12 +183218,7 @@
         "OWB:032"
       ],
       "escalated_at": "2026-11-05T06:52Z",
-      "urgent": 9,
-      "hold": {
-        "type": "input",
-        "condition": "Failed composition constraints under J2196; PR521 / 8e1a673ac4. PIA14602 67.56% near-black crop; PIA21890 clipped moon; PIA14922 under 306px at max upscale versus 324px floor. Review J2212 owns explicit new composition scope; no unchanged-source retry, panel release or gate waiver. B/C unchanged, progress 1/3, no spend or background process.",
-        "check_at": "2026-11-05T16:31:26+00:00"
-      }
+      "urgent": 9
     },
     {
       "id": "J2177",
@@ -185143,13 +185143,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-05T10:51Z",
-      "eta": "2026-11-05T12:51Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T10:31Z",
-      "result": "",
+      "result": "FIX: drop J2196's whole-moon requirement; A = PIA21890 frame-filling crop (1.25x), else PIA14602 tight crop <=2.35x; no composite (rule 19, near-black cap stands). J2176 released.",
       "history": [
         {
           "at": "2026-11-05T10:31Z",
@@ -185160,6 +185160,11 @@
           "at": "2026-11-05T10:51Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T10:52Z",
+          "by": "claude",
+          "what": "done: FIX: drop J2196's whole-moon requirement; A = PIA21890 frame-filling crop (1.25x), else PIA14602 tight crop <=2.35x; no composite (rule 19, near-black cap stands). J2176 released."
         }
       ],
       "remaining_action": "Review PR521 failures and choose a materially different Titan A composition scope",

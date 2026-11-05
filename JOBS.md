@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2175 | mini | open | – | – | 008 edit · for gemini · review · `gemini-argon` · HOS 008 Short C: Chief decision on J2170 paper hook lock & 1-sentence VO pickup scope (conditional 2 Dec slot held) | J2170 |
-| J2176 | mini | blocked | codex | – | 032 thumbs · thumb · 032 J2144 FIX: Titan hero crop and clear lander typography |  |
+| J2176 | mini | open | – | – | 032 thumbs · thumb · 032 J2144 FIX: Titan hero crop and clear lander typography |  |
 | J2177 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2195 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
@@ -89,11 +89,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2207 | mini | open | – | – | assembly · OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts |  |
 | J2210 | mini | blocked | codex | – | 010 picture · video · HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint) | J2194 |
 | J2211 | any | claimed | macbook | 2026-11-05T12:48Z | 010 picture · review · HOS 010 J2210: review PR425 and resolve Option A1 body-cut segmentation | J2210 |
-| J2212 | any | claimed | claude | 2026-11-05T12:51Z | 032 thumbs · review · 032 J2176: resolve composition conflict after J2196 source failures | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/521 |
 | J2213 | mini | open | – | – | 006 picture · video · `flow-veo-3.1` · HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200) | HOS#180:6655551386 |
 
 Recently finished:
 
+- J2212 done: 032 J2176: resolve composition conflict after J2196 source failures (FIX: drop J2196's whole-moon requirement; A = PIA21890 frame-filling crop (1.25x), else PIA14602 tight crop <=2.35x; no composite (rule 19, near-black cap stands). J2176 released.)
 - J2209 done: Shared folder test: MacBook worker side (read Mini file via the share under launchd) (PASS (PR #522): mount=/Volumes/shared (smbfs @ben-mac-mini/shared); OK /Volumes/shared/_share_test/from_mini_20261105T0953Z.bin read in 23s (sha256=19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4); wrote 64 MB /Volumes/shared/_share_test/from_macbook_worker_20261105T1030Z.bin in 6s (sha256=98c9958da9154eca0119af17c9f4c9ead56fb231e750c383be24561aa9d41fa0).)
 - J2208 done: Shared folder test: Mini side (write + verify hashes in ~/_desk/shared) (== folder
 drwxr-xr-x  4 benjaminoats  staff  128 Nov  5 09:35 /Users/benjaminoats/_desk/shared
@@ -131,4 +131,3 @@ OK /Users/benjaminoats/_desk/shared/_share_test/from_macbook_20261105T0935Z.bin
 - J2192 done: 032 J2089: review seven new process overlay stills (done)
 - J2191 done: HOS006: rule on guarded six-shot Vertex caller and explicit spend cap (FIX/REJECT production scope; submitted Vertex route closed, zero takes/GBP0. PR422 records live GBP69.48, 17 canonical rows and 19 tests plus all HOS checks PASS. Missing exact GBP SKU, global charge bound and executable atomic locked caller. Desk reported; no retry/generation jobs; J2169 remains blocked1/3.)
 - J2190 done: HOS006: implement no-spend six-shot Vertex preflight with current credit guard (HOS PR421 (49f1f454): six-input offline Quality preflight, 19 tests PASS, ALL CHECKS PASS. Live monthly GBP69.48. Exact Quality GBP/second SKU and global bound for 13 unpriced Omni entries unresolved; actual guard STOP. GBP0 spend, no generation/media/publishing. Existing successor J2191 owns code/scope ruling; J2169 stays blocked1/3.)
-- J2189 done: HOS006: decide executable credit scope from verified native route evidence (Decision delivered HOS PR420/1ab1092b: current Flow native1080 route rejected; corrected17 canonical rows and six input briefs including C S06. Fresh Vertex GBP69.48 recorded but runner/pricing/pending guard not executable; zero spend authority. J2190 bounded no-spend preflight, J2191 Chief code/scope review queued. J2169 remains blocked1/3; all holds retained. HOS check_all and canonical assertions PASS; desk reported; no media/publishing changes.)
