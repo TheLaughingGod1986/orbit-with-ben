@@ -42,9 +42,27 @@ import subprocess
 import sys
 
 HOME = pathlib.Path.home()
-OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
-HOS = pathlib.Path(os.environ.get("HOS_REPO", HOME / "YouTube" / "History Of Science"))
 WORKER_DIR = HOME / "_desk" / "worker"  # the clones setup_macbook.sh made for the worker itself
+URLS = {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
+        "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git"}
+
+
+def own_checkout(env: str, name: str) -> pathlib.Path:
+    """The worker's own clone, never one of Ben's folders (5 Nov 2026: a HOS job left Ben's own History of Science
+    folder on 'macbook/J2170' and the worker stopped). An env path is used only if it is inside WORKER_DIR."""
+    given = os.environ.get(env)
+    if given:
+        p = pathlib.Path(given)
+        try:
+            if p.resolve().is_relative_to(WORKER_DIR.resolve()):
+                return p
+        except (OSError, ValueError):
+            pass
+    return WORKER_DIR / name
+
+
+OWB = own_checkout("OWB_REPO", "orbit-with-ben")
+HOS = own_checkout("HOS_REPO", "history-of-science")
 STATE = HOME / "_desk" / "state"
 AGENT_ID = "macbook"
 
@@ -328,6 +346,18 @@ def pull_main() -> str:
     """Pull both checkouts; '' when fine, else why not. Runs before the guards so fixes reach a MacBook that keeps
     waiting (it used to pull only after the guards passed, so one stuck guard kept it on old code)."""
     for repo in (OWB, HOS):
+        if not (repo / ".git").exists() and repo.name in URLS:
+            # First run after the switch to the worker's own clones: make it (media stays out: LFS is skipped).
+            repo.parent.mkdir(parents=True, exist_ok=True)
+            env = dict(os.environ, GIT_LFS_SKIP_SMUDGE="1")
+            try:
+                r = subprocess.run(["git", "clone", "-q", "--depth", "50", URLS[repo.name], str(repo)],
+                                   capture_output=True, text=True, timeout=900, env=env)
+            except (OSError, subprocess.SubprocessError) as e:
+                return f"clone of {repo.name} failed: {e}"
+            if r.returncode:
+                return f"clone of {repo.name} failed: {(r.stderr or r.stdout).strip()[-200:]}"
+            log(f"made the worker's own clone {repo}")
         if (repo / ".git").exists():
             branch = sh(["git", "-C", str(repo), "branch", "--show-current"]).stdout.strip()
             # A job may leave the worker's own clone on its work branch (J1194, 29 Oct 2026: the MacBook then

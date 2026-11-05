@@ -752,13 +752,18 @@
   }
 
   // Working / Queued / Backlog (Ben, 28 Oct): active work is one tap away; All keeps everything with On YouTube.
+  // Post-live (Ben, 5 Nov 2026: "a new swim lane as post live checks so I can see what videos are being built to go live
+  // and what is post live improvements"): on YouTube (live, scheduled or uploaded) with work still open on it.
+  const onYouTube = v => !!v.youtube && ["live", "scheduled", "uploaded"].includes(v.youtube.state);
+  const postLive = v => onYouTube(v) && (v.jobs || []).some(LIVE);
   function videoGroups(vs) {
     const active = ["progress", "changes", "ready", "approved"];
     return {
-      working: vs.filter(v => active.includes(v.lane) && !isLive(v) && isWorking(v)),
-      queued: vs.filter(v => active.includes(v.lane) && !isLive(v) && !isWorking(v)),
+      working: vs.filter(v => active.includes(v.lane) && !isLive(v) && !postLive(v) && isWorking(v)),
+      queued: vs.filter(v => active.includes(v.lane) && !isLive(v) && !postLive(v) && !isWorking(v)),
       backlog: vs.filter(v => v.lane === "upcoming" && !isLive(v)),
-      done: vs.filter(v => (v.lane === "done" || isLive(v)) && !v.collapsed && (isLive(v) || !isWorking(v))),
+      postlive: vs.filter(v => postLive(v) && !v.collapsed),
+      done: vs.filter(v => (v.lane === "done" || isLive(v)) && !v.collapsed && !postLive(v)),
     };
   }
 
@@ -770,7 +775,7 @@
     // Ben, 29 Oct: "Home page saying working on 1, the video page says 0": studio jobs count here too.
     const studio = routeView()!=='producing' && filterType === "all" ? studioJobs(b).filter(j => filterCh === "all" || (j.repo || "owb") === filterCh.toLowerCase()) : [];
     g.working.extra = studio.length;
-    const segs = [["all", "All"], ["working", "Working"], ["queued", "Waiting"], ["backlog", "Backlog"]]
+    const segs = [["all", "All"], ["working", "Working"], ["queued", "Waiting"], ["postlive", "Post-live"], ["backlog", "Backlog"]]
       .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length + (g[id].extra || 0)}</small>`}</button>`).join("");
     const chips = [["ch", "all", "Both"], ["ch", "OWB", "Orbit"], ["ch", "HOS", "HOS"], ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
@@ -786,6 +791,7 @@
       <label class="sort-control">Sort videos<select id="video-sort"><option value="uat" ${videoSort==='uat'?'selected':''}>Nearest credible UAT</option><option value="updated" ${videoSort==='updated'?'selected':''}>Recently updated</option><option value="stage" ${videoSort==='stage'?'selected':''}>Production stage</option><option value="blocked" ${videoSort==='blocked'?'selected':''}>Waiting first</option></select></label>
       ${show("working") ? section("An agent is on it now", g.working.length + studio.length, (jobList(g.working) + studio.map(jobCard).join("")) || empty("No agent is working this minute.")) : ""}
       ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
+      ${routeView()!=='producing' && (seg === "all" || seg === "postlive") ? section("Post-live: checks and improvements", g.postlive.length, (g.postlive.length ? '<p class="meta">Already on YouTube or scheduled. These are the jobs after launch: pinned comments, Related links, thumbnail and title tests, fixes.</p>' : '') + (list(g.postlive, seg === "postlive" ? 60 : 10) || empty("No post-live work right now."))) : ""}
       ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
       ${seg === "all" ? section("On YouTube", g.done.length, list(g.done, 10)) : ""}`;
   }

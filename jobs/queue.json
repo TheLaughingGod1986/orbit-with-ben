@@ -1,5 +1,5 @@
 {
-  "next_id": 2177,
+  "next_id": 2187,
   "jobs": [
     {
       "id": "J0001",
@@ -162277,7 +162277,7 @@
       "title": "Implement capacity-aware Mini dispatch and portable MacBook overflow",
       "needs": "mini",
       "repo": "owb",
-      "body": "Codex covering — J1843 exact-head Chief review: FIX. No merge or capacity enablement.\n\nReviewed PR437 c9f591c1584aebb7a9c2d1d1e4f7511588a897ed, original body/result/history and CAPACITY_IMPLEMENTATION.md. Exact-head Rules 41945618603 and core 41945618575 are green. Independently ran all 117 test*capacity*.py tests: PASS. The Mini election-before-gate and conservative legacy laptop occupancy fixes address the previous findings, but production integration remains incomplete:\n\n1. Busy serial execution can never yield a capacity proposal through the implemented producer. chief_relay.run_locked writes execution.json with worker/host/process fields but no account. capacity_evidence.transaction_evidence preserves that as account=\"\". dispatch_capacity.propose rejects all candidates whenever any lease lacks an account. The only Mini extra-capacity entrypoint is now the busy-serial path, so its normal input always triggers that rejection. Fresh registration/probe configuration alone does not populate the serial lease. Reproduction captured the real execution.json writer via test_chief_relay.Relay with run_cli replaced by a fake; emitted fields were expiresAt, host, job, machine_name, pid, startedAt, version, worker. Feeding that missing-account lease to otherwise fresh, reviewed fixtures produced zero independent Mini proposals and zero portable laptop proposals. Add a supported identity-bound account attribution path for actual serial executions (including the selected model/shared pool), with conservative rejection on missing/conflicting proof. Do not invent an account or weaken the unknown-occupancy guard. Test from the real serial writer through transaction evidence and reservation: busy Chief + independent specialist launches; shared pool at limit refuses; positively reconciled exit releases it.\n\n2. macbook_worker.run still returns on every non-None capacity result, including capacity_waiting with no reservation or launch. With opt-in enabled and no eligible portable CPU candidate, it never reaches jobs.py next --can macbook,any, starving ordinary laptop code/review jobs. This is the laptop counterpart of the earlier Mini starvation finding. Reproduced run() with isolated STATE, passing pull/mains/idle guards and a no-candidate capacity_waiting receipt: returned 0 and never called the normal queue path. Preserve ordinary laptop dispatch using an authoritative occupancy-safe no-launch outcome and a launch exclusion lock held through canonical claim/process publication. Reject uncertain/occupied attempts; never blindly fall through. Add caller-level tests for empty/no-candidate, stale request, occupied/uncertain receipt and a competing launch race.\n\nRuling/follow-up: resume SAME J1843 and PR437 as ready code work for Codex/gpt-6.1-sol (normal specialist fallback applies), preserving worker progress 2/3. Repair both integration gaps, add the end-to-end caller regressions above, synchronize current main and return an exact head with green CI for elected-Chief review. No duplicate task, no artificial retry date: engineering can proceed now. No provisioning or enablement authorized. Observed real-host transitions, registered host/account/model/capability proofs and supported transport remain separate release gates after code review; if a later device-access wait is real, record its specific condition and future check then.\n\nLive observation: private capacity registration/probes are absent, configured Mini lanes=1 and capacity/free-slot time unknown. Cached laptop heartbeat reports its HOS checkout on macbook/J2170 rather than main; cached evidence is stale and not proof of current availability. Both repositories pulled successfully; HOS inbox empty. Required NAS offload found no eligible old scratch; disk remains below 20 GB. No audio/moving-video perception demonstrated. No capacity enabled, credits spent or media/publishing changed.\n\nReview evidence: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6648384448\n\nPrevious brief and authorization retained:\n\nCodex covering — J1843 exact-head Chief review: FIX. No merge or capacity enablement.\n\nReviewed PR437 head 17df4129184a6082f8c889864148fed5e55182fa, original body/result/history and implementation evidence. The previous missing-callers and red-CI findings are resolved. Rules run 41941094031 and core run 41941093965 are green. Independently ran all 111 test*capacity*.py tests with process visibility: PASS. Two additional bounded, synthetic reproductions reveal release blockers:\n\n1. Chief/serial starvation: chief_relay.run_locked calls capacity_tick before election, duty reconciliation and canonical dispatch, then returns for every non-None result. capacity_caller returns capacity_waiting when no eligible CPU candidate exists. Reproduced with capacity_tick returning capacity_waiting: run_locked returns 0 and acting is never called. Thus enabling capacity can suppress all Chief reviews and ordinary production even with nothing launched. Missing/stale opt-in configuration similarly consumes every tick. Repair by preserving Chief reconciliation/priority and distinguishing no reservation/no launch from occupied or uncertain attempts. Allow safe serial continuation only after authoritative occupancy checks; never blindly fall through on an uncertain launch.\n\n2. Shared-account occupancy gap for legacy laptop work: Mini caller loads peer evidence only for role=macbook. A normal laptop claim has by=macbook and no dispatch_reservation/account, so planner busy_workers excludes macbook but does not occupy its actual Codex pool. Reproduced capacity_reservations.reserve with a nonstalled legacy macbook claim, a ready Mini Codex worker and shared account limit=1: it reserves J1834 on account shared. No positive laptop exit/account proof was supplied. Fix with fresh registered peer process/account evidence for BOTH directions, including ordinary laptop executions, or conservatively reject capacity while any such claim is unattributed. Add transition/race tests: legacy laptop Codex running -> Mini denied; missing/stale peer evidence denied; positively reconciled exit -> eligible; canonical capacity reservations still occupy the same account.\n\nNext: resume SAME J1843 and PR437 as code work, Codex/gpt-6.1-sol (normal specialist fallback applies), preserving worker plan 2/3. Fix both findings, add caller-level regression tests, synchronize main and return exact head with green CI for elected-Chief review. No duplicate task and no artificial date wait: this engineering is ready now. No host provisioning/enablement authorized by this ruling. After code PASS, observed real-host transitions and identity/account/model/capability evidence remain separate release gates. If device access later creates a real external wait, record its concrete condition and future verification date then.\n\nCurrent observation: configured Mini lanes=1, this review is the sole process-visible execution; private registration/probes absent and cached laptop heartbeat stale, capacity unverified. Availability/free-slot time unknown. Both repos pulled; HOS inbox empty. No direct audio/moving-video capability demonstrated. Required NAS offload found no eligible old scratch; roughly 16 GB remains free. No NAS deletions, credit spend, media or publishing changes.\n\nReview: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6646530463\n\nPrevious brief and authorization retained:\n\nCodex covering — J1843 Chief review: FIX / no merge or rollout.\n\nReviewed PR437 exact head 91576db52da089eb6d8aac6472412cb77fe6dee7, original body/result/history and J2010 evidence. The prior HOS cross-repository retry defect is addressed by rejecting HOS film-stage capacity work; OWB board rollback regression tests now pass. Independently ran all 94 test*capacity*.py tests with process visibility: PASS. PR477 is already merged and included in this head.\n\nRelease blockers: Rules CI run 41823841927 fails studio.py status --check (stale STATUS.md). More substantially, dispatch_claimed is only a library adapter: neither chief_relay.py nor macbook_worker.py calls it. Both adapters and synthetic tests exist, but end-to-end production integration and observed real-host acceptance do not. No implementation/rollout completion PASS.\n\nConcrete follow-up on the SAME J1843 / PR437 (preserve worker plan 2/3): synchronize current main and regenerate STATUS.md; implement disabled-by-default production caller integration for the Mini relay and registered laptop worker, including supported approved-input/output receipt transport, canonical claim cleanup/reconciliation when preflight or launch fails, current per-host account/capability evidence and existing serial fallback. Add caller-level integration tests for success, launch failure and changing laptop guards. Preserve HOS film-stage exclusion pending a separately proven cross-repo adapter; no need to build that adapter in this continuation. Return the new exact head with green CI and tests for elected-Chief review BEFORE any enablement. No second lane, media, spending or publishing is authorized. Ready engineering resumes now, no artificial date hold; no duplicate job.\n\nObserved process-visible capacity at about 19:39Z: sole Mini execution is this Codex J1843 review (starting phase), configured lanes=1; private host registration/probe receipts absent. Cached laptop 19:33Z heartbeat is stale and capacity unverified. Availability/free-slot time unknown. Do not fabricate host receipts or infer shared quota from a heartbeat. Real host acceptance remains a release gate. If actual device access is unavailable once integration is ready, record its specific condition and future verification on J1843; do not park currently doable engineering.\n\nStartup: both repositories up to date; HOS inbox empty. No demonstrated audio/moving-video inputs, recorded honestly. Mini scratch offload ran with NAS access, found no eligible old scratch; disk remains below 20 GB. No NAS content deleted. No rollout or external publishing change.\n\n\nPrevious brief and authorization retained:\n\nJ2010 exact-head review FIX on PR437 1c309dd443: capacity_reservations.consume_with_git calls hos_board_claim inside the OWB Git retry callback without rollback or durable cross-repo reconciliation. Reproduced: first callback claims HOS007 edit; OWB push rejection discards queue attempt; refreshed HOS evidence then rejects retry (no currently eligible capacity proposal), leaving canonical queue OPEN and HOS stage owned by codex. Existing 68 capacity tests pass with process inspection, but omit this cross-repo retry. Fix with retry-safe durable reconciliation/compensation or fail closed on HOS stages until a supported adapter exists; add push-race regression. Preserve implementation 2/3; no rollout. Fresh Mini host registration/probes absent; cached MacBook battery/in-use and stale. Re-review new head and compose PR477 before normal merge; no extra lanes until original observed-host contract passes.\n\nJ1914 narrow Chief scope, 4 November 2026:\nBen's current measured-capacity request supersedes J0821's historical requirement to wait one week with two agents. This authorizes implementation and tests in J1843 now, NOT enabling a second lane without fresh per-host capacity/account/capability evidence and exact-head review. J0821 is superseded to avoid duplicate engineering. Shared-account quotas, browser/generation single writers, laptop mains/idle checks and real runtime validation remain mandatory.\n\nHistorical brief retained:\n\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nBen repeated resource-unblocking request: inspect actual per-host leases and freshness, current Mini worker authentication/quota failures and MacBook powered/idle availability. Codex Mini and MacBook share an account quota; moving machines does not reset it. Cursor latest execution reports authentication required, while daily credit says exhausted: inspect exact current cause without printing secrets or starting interactive sign-in. Do not call unavailable workers free. Implement/test capacity and portable overflow safely in this existing focused job, with review and observed rollout; no parallel browser/generation writers or unsupported host paths. Do not interrupt an active media review or label queue assignment as a launch/claim.\n\nBen, 3 Nov: run a waiting task on the next capable available agent, use an available MacBook worker when Mini capacity is genuinely exhausted, and otherwise expose who is busy and a supported next-slot outlook. Current relay holds one serial execution lane, so green agents do not imply spare execution slots. MacBook heartbeat reports generic host macbook; verify actual registered machine rather than assume Air/Pro identity.\n\nImplement and review a capacity-aware dispatch change in a focused PR: actual per-host active execution leases, configured limits plus measured resource/capability guards, concurrent independent work only when safe, and an explicit portable-job contract for MacBook spillover. Preserve single elected-Chief signoff, film/stage claims, shared account limits, generation/browser mutexes, dependency/Ben/money gates and atomic queue claims. Do not blindly run several render/browser jobs or route Mini-only paths/sign-ins to the laptop. Transfer required approved inputs/output receipts only with verified readable hashes and supported access. Respect mains/idle/disk guards; do not interrupt a laptop in use. Worker fallback must use verified model/media capability, not just a green heartbeat. Expose running job, owner, host, current action/progress and recorded task estimate; distinguish that from a reserved/free-slot estimate. If no supported availability estimate exists, explicitly report unknown, never invent a countdown.\n\nSeparate external-condition waits, ready queue/capacity waits and pending review so a check_at timestamp never becomes a deliberate worker start delay. Keep delivered candidate review ready without automatically approving it or redoing acquisition. Use J1834/J1841 as regression evidence, including a busy Chief plus another available specialist. The frontend explanation in PR412 is presentation only and does not implement parallel scheduling.\n\nTests: one eligible free lane dispatches immediately; busy Mini plus powered/idle/capable MacBook stages portable job exactly once; laptop in use/offline/unsupported remains excluded; no two hosts claim same job/stage; model outage walks capability-safe fallback; Chief review/signoff preserved; unavailable media capability remains explicit; dead worker lease recovery; no paid generation/publishing performed by tests. Rollout requires exact-head Chief review and observed real host transitions, not CI alone. No spend, media regeneration, upload, schedule, visibility or policy changes are authorized by this engineering task.\n",
+      "body": "Codex covering — J1843 exact-head Chief review: FIX. No merge or capacity enablement.\n\nReviewed PR437 head 7086e10ddb1511f9444842db9ebebd686cf4dfdb, original brief/result/history and CAPACITY_IMPLEMENTATION.md. Rules CI 41959021496 and core CI 41959021465 are green. Independently ran all 121 test*capacity*.py tests and 27 MacBook worker tests with process visibility: PASS. The selected-model serial account attribution addresses the previous producer finding. The laptop fix remains incomplete in the busy-peer case.\n\nBlocking finding: capacity_caller._attempt(serial_only=True) sets serial_safe only when there are NO leases across either host and NO active reservations anywhere. macbook_worker.run_one consequently cannot reach ordinary macbook,any work while the Mini has any accounted execution, even on an independent account. If no portable CPU candidate exists, capacity_tick returns capacity_waiting and the laptop returns waiting. With the Mini's continuously busy lane this starves ordinary laptop code/review work. Existing new no-candidate coverage injects serial_safe=True; its integration fixture removes all leases, so it misses the busy-peer case.\n\nIndependent bounded reproduction at this exact head using test_capacity_caller.Caller: call setUp(); laptop() (fresh laptop plus busy Mini Gemini lease on account other, laptop Codex account shared); set the prior CPU request job status=done; append job('J9998',kind='review',needs='any'). call(serial_only=True) returns capacity_waiting, serial_safe=False; call() returns capacity_waiting with no reservation/launch. Feed those actual receipts into run_one with pull/guards/heartbeat isolated: result waiting, run_ordinary call count 0. No real queue or worker was launched by this reproduction.\n\nRuling and concrete follow-up: resume SAME J1843 / PR437 as ready code work for Codex/gpt-6.1-sol (normal specialist fallback applies), preserving worker progress 2/3. Make ordinary laptop dispatch host-local AND selected-worker/shared-account-aware: a positively accounted busy peer on an independent pool must not be a global empty-host barrier. Revalidate the actual ordinary selection and account occupancy under canonical claim/launch exclusion; do not simply ignore remote leases or blindly fall through. Unknown/stale peer occupancy, shared pool exhaustion, uncertain launches and local occupancy must still reject. Add caller regressions using real preflight receipts for busy Mini independent pool plus waiting ordinary review/code and no portable CPU candidate; shared pool at limit; missing/stale peer proof; local occupied; competing cross-host claim/launch; positive exit. Also check the symmetric Mini serial/Chief path for the same global barrier. Synchronize current main and return a new exact head with green CI for Chief review.\n\nNo duplicate task or artificial retry date: this is ready engineering, not an external wait. No provisioning or enablement authorized. Fresh registered host/account/model/capability evidence, supported transport and observed real-host transitions remain separate rollout gates; record a concrete condition and future verification only if actual device access later blocks that acceptance.\n\nStartup: both repositories pulled successfully after requesting filesystem access; HOS inbox empty. Required NAS offload ran with access and found no eligible old scratch; disk remains below 20 GB. No demonstrated direct audio/moving-video perception. No credits spent, NAS content deleted, media changed or publishing performed. Thread read to #6649943240.\n\nReview evidence: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6650000080\n\nPrevious brief and authorization retained:\n\nCodex covering — J1843 exact-head Chief review: FIX. No merge or capacity enablement.\n\nReviewed PR437 c9f591c1584aebb7a9c2d1d1e4f7511588a897ed, original body/result/history and CAPACITY_IMPLEMENTATION.md. Exact-head Rules 41945618603 and core 41945618575 are green. Independently ran all 117 test*capacity*.py tests: PASS. The Mini election-before-gate and conservative legacy laptop occupancy fixes address the previous findings, but production integration remains incomplete:\n\n1. Busy serial execution can never yield a capacity proposal through the implemented producer. chief_relay.run_locked writes execution.json with worker/host/process fields but no account. capacity_evidence.transaction_evidence preserves that as account=\"\". dispatch_capacity.propose rejects all candidates whenever any lease lacks an account. The only Mini extra-capacity entrypoint is now the busy-serial path, so its normal input always triggers that rejection. Fresh registration/probe configuration alone does not populate the serial lease. Reproduction captured the real execution.json writer via test_chief_relay.Relay with run_cli replaced by a fake; emitted fields were expiresAt, host, job, machine_name, pid, startedAt, version, worker. Feeding that missing-account lease to otherwise fresh, reviewed fixtures produced zero independent Mini proposals and zero portable laptop proposals. Add a supported identity-bound account attribution path for actual serial executions (including the selected model/shared pool), with conservative rejection on missing/conflicting proof. Do not invent an account or weaken the unknown-occupancy guard. Test from the real serial writer through transaction evidence and reservation: busy Chief + independent specialist launches; shared pool at limit refuses; positively reconciled exit releases it.\n\n2. macbook_worker.run still returns on every non-None capacity result, including capacity_waiting with no reservation or launch. With opt-in enabled and no eligible portable CPU candidate, it never reaches jobs.py next --can macbook,any, starving ordinary laptop code/review jobs. This is the laptop counterpart of the earlier Mini starvation finding. Reproduced run() with isolated STATE, passing pull/mains/idle guards and a no-candidate capacity_waiting receipt: returned 0 and never called the normal queue path. Preserve ordinary laptop dispatch using an authoritative occupancy-safe no-launch outcome and a launch exclusion lock held through canonical claim/process publication. Reject uncertain/occupied attempts; never blindly fall through. Add caller-level tests for empty/no-candidate, stale request, occupied/uncertain receipt and a competing launch race.\n\nRuling/follow-up: resume SAME J1843 and PR437 as ready code work for Codex/gpt-6.1-sol (normal specialist fallback applies), preserving worker progress 2/3. Repair both integration gaps, add the end-to-end caller regressions above, synchronize current main and return an exact head with green CI for elected-Chief review. No duplicate task, no artificial retry date: engineering can proceed now. No provisioning or enablement authorized. Observed real-host transitions, registered host/account/model/capability proofs and supported transport remain separate release gates after code review; if a later device-access wait is real, record its specific condition and future check then.\n\nLive observation: private capacity registration/probes are absent, configured Mini lanes=1 and capacity/free-slot time unknown. Cached laptop heartbeat reports its HOS checkout on macbook/J2170 rather than main; cached evidence is stale and not proof of current availability. Both repositories pulled successfully; HOS inbox empty. Required NAS offload found no eligible old scratch; disk remains below 20 GB. No audio/moving-video perception demonstrated. No capacity enabled, credits spent or media/publishing changed.\n\nReview evidence: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6648384448\n\nPrevious brief and authorization retained:\n\nCodex covering — J1843 exact-head Chief review: FIX. No merge or capacity enablement.\n\nReviewed PR437 head 17df4129184a6082f8c889864148fed5e55182fa, original body/result/history and implementation evidence. The previous missing-callers and red-CI findings are resolved. Rules run 41941094031 and core run 41941093965 are green. Independently ran all 111 test*capacity*.py tests with process visibility: PASS. Two additional bounded, synthetic reproductions reveal release blockers:\n\n1. Chief/serial starvation: chief_relay.run_locked calls capacity_tick before election, duty reconciliation and canonical dispatch, then returns for every non-None result. capacity_caller returns capacity_waiting when no eligible CPU candidate exists. Reproduced with capacity_tick returning capacity_waiting: run_locked returns 0 and acting is never called. Thus enabling capacity can suppress all Chief reviews and ordinary production even with nothing launched. Missing/stale opt-in configuration similarly consumes every tick. Repair by preserving Chief reconciliation/priority and distinguishing no reservation/no launch from occupied or uncertain attempts. Allow safe serial continuation only after authoritative occupancy checks; never blindly fall through on an uncertain launch.\n\n2. Shared-account occupancy gap for legacy laptop work: Mini caller loads peer evidence only for role=macbook. A normal laptop claim has by=macbook and no dispatch_reservation/account, so planner busy_workers excludes macbook but does not occupy its actual Codex pool. Reproduced capacity_reservations.reserve with a nonstalled legacy macbook claim, a ready Mini Codex worker and shared account limit=1: it reserves J1834 on account shared. No positive laptop exit/account proof was supplied. Fix with fresh registered peer process/account evidence for BOTH directions, including ordinary laptop executions, or conservatively reject capacity while any such claim is unattributed. Add transition/race tests: legacy laptop Codex running -> Mini denied; missing/stale peer evidence denied; positively reconciled exit -> eligible; canonical capacity reservations still occupy the same account.\n\nNext: resume SAME J1843 and PR437 as code work, Codex/gpt-6.1-sol (normal specialist fallback applies), preserving worker plan 2/3. Fix both findings, add caller-level regression tests, synchronize main and return exact head with green CI for elected-Chief review. No duplicate task and no artificial date wait: this engineering is ready now. No host provisioning/enablement authorized by this ruling. After code PASS, observed real-host transitions and identity/account/model/capability evidence remain separate release gates. If device access later creates a real external wait, record its concrete condition and future verification date then.\n\nCurrent observation: configured Mini lanes=1, this review is the sole process-visible execution; private registration/probes absent and cached laptop heartbeat stale, capacity unverified. Availability/free-slot time unknown. Both repos pulled; HOS inbox empty. No direct audio/moving-video capability demonstrated. Required NAS offload found no eligible old scratch; roughly 16 GB remains free. No NAS deletions, credit spend, media or publishing changes.\n\nReview: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6646530463\n\nPrevious brief and authorization retained:\n\nCodex covering — J1843 Chief review: FIX / no merge or rollout.\n\nReviewed PR437 exact head 91576db52da089eb6d8aac6472412cb77fe6dee7, original body/result/history and J2010 evidence. The prior HOS cross-repository retry defect is addressed by rejecting HOS film-stage capacity work; OWB board rollback regression tests now pass. Independently ran all 94 test*capacity*.py tests with process visibility: PASS. PR477 is already merged and included in this head.\n\nRelease blockers: Rules CI run 41823841927 fails studio.py status --check (stale STATUS.md). More substantially, dispatch_claimed is only a library adapter: neither chief_relay.py nor macbook_worker.py calls it. Both adapters and synthetic tests exist, but end-to-end production integration and observed real-host acceptance do not. No implementation/rollout completion PASS.\n\nConcrete follow-up on the SAME J1843 / PR437 (preserve worker plan 2/3): synchronize current main and regenerate STATUS.md; implement disabled-by-default production caller integration for the Mini relay and registered laptop worker, including supported approved-input/output receipt transport, canonical claim cleanup/reconciliation when preflight or launch fails, current per-host account/capability evidence and existing serial fallback. Add caller-level integration tests for success, launch failure and changing laptop guards. Preserve HOS film-stage exclusion pending a separately proven cross-repo adapter; no need to build that adapter in this continuation. Return the new exact head with green CI and tests for elected-Chief review BEFORE any enablement. No second lane, media, spending or publishing is authorized. Ready engineering resumes now, no artificial date hold; no duplicate job.\n\nObserved process-visible capacity at about 19:39Z: sole Mini execution is this Codex J1843 review (starting phase), configured lanes=1; private host registration/probe receipts absent. Cached laptop 19:33Z heartbeat is stale and capacity unverified. Availability/free-slot time unknown. Do not fabricate host receipts or infer shared quota from a heartbeat. Real host acceptance remains a release gate. If actual device access is unavailable once integration is ready, record its specific condition and future verification on J1843; do not park currently doable engineering.\n\nStartup: both repositories up to date; HOS inbox empty. No demonstrated audio/moving-video inputs, recorded honestly. Mini scratch offload ran with NAS access, found no eligible old scratch; disk remains below 20 GB. No NAS content deleted. No rollout or external publishing change.\n\n\nPrevious brief and authorization retained:\n\nJ2010 exact-head review FIX on PR437 1c309dd443: capacity_reservations.consume_with_git calls hos_board_claim inside the OWB Git retry callback without rollback or durable cross-repo reconciliation. Reproduced: first callback claims HOS007 edit; OWB push rejection discards queue attempt; refreshed HOS evidence then rejects retry (no currently eligible capacity proposal), leaving canonical queue OPEN and HOS stage owned by codex. Existing 68 capacity tests pass with process inspection, but omit this cross-repo retry. Fix with retry-safe durable reconciliation/compensation or fail closed on HOS stages until a supported adapter exists; add push-race regression. Preserve implementation 2/3; no rollout. Fresh Mini host registration/probes absent; cached MacBook battery/in-use and stale. Re-review new head and compose PR477 before normal merge; no extra lanes until original observed-host contract passes.\n\nJ1914 narrow Chief scope, 4 November 2026:\nBen's current measured-capacity request supersedes J0821's historical requirement to wait one week with two agents. This authorizes implementation and tests in J1843 now, NOT enabling a second lane without fresh per-host capacity/account/capability evidence and exact-head review. J0821 is superseded to avoid duplicate engineering. Shared-account quotas, browser/generation single writers, laptop mains/idle checks and real runtime validation remain mandatory.\n\nHistorical brief retained:\n\n\nLatest Ben resource-unblocking follow-through (3 Nov):\nBen repeated resource-unblocking request: inspect actual per-host leases and freshness, current Mini worker authentication/quota failures and MacBook powered/idle availability. Codex Mini and MacBook share an account quota; moving machines does not reset it. Cursor latest execution reports authentication required, while daily credit says exhausted: inspect exact current cause without printing secrets or starting interactive sign-in. Do not call unavailable workers free. Implement/test capacity and portable overflow safely in this existing focused job, with review and observed rollout; no parallel browser/generation writers or unsupported host paths. Do not interrupt an active media review or label queue assignment as a launch/claim.\n\nBen, 3 Nov: run a waiting task on the next capable available agent, use an available MacBook worker when Mini capacity is genuinely exhausted, and otherwise expose who is busy and a supported next-slot outlook. Current relay holds one serial execution lane, so green agents do not imply spare execution slots. MacBook heartbeat reports generic host macbook; verify actual registered machine rather than assume Air/Pro identity.\n\nImplement and review a capacity-aware dispatch change in a focused PR: actual per-host active execution leases, configured limits plus measured resource/capability guards, concurrent independent work only when safe, and an explicit portable-job contract for MacBook spillover. Preserve single elected-Chief signoff, film/stage claims, shared account limits, generation/browser mutexes, dependency/Ben/money gates and atomic queue claims. Do not blindly run several render/browser jobs or route Mini-only paths/sign-ins to the laptop. Transfer required approved inputs/output receipts only with verified readable hashes and supported access. Respect mains/idle/disk guards; do not interrupt a laptop in use. Worker fallback must use verified model/media capability, not just a green heartbeat. Expose running job, owner, host, current action/progress and recorded task estimate; distinguish that from a reserved/free-slot estimate. If no supported availability estimate exists, explicitly report unknown, never invent a countdown.\n\nSeparate external-condition waits, ready queue/capacity waits and pending review so a check_at timestamp never becomes a deliberate worker start delay. Keep delivered candidate review ready without automatically approving it or redoing acquisition. Use J1834/J1841 as regression evidence, including a busy Chief plus another available specialist. The frontend explanation in PR412 is presentation only and does not implement parallel scheduling.\n\nTests: one eligible free lane dispatches immediately; busy Mini plus powered/idle/capable MacBook stages portable job exactly once; laptop in use/offline/unsupported remains excluded; no two hosts claim same job/stage; model outage walks capability-safe fallback; Chief review/signoff preserved; unavailable media capability remains explicit; dead worker lease recovery; no paid generation/publishing performed by tests. Rollout requires exact-head Chief review and observed real host transitions, not CI alone. No spend, media regeneration, upload, schedule, visibility or policy changes are authorized by this engineering task.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -162285,11 +162285,11 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "codex",
-      "since": "2026-11-05T02:55Z",
-      "eta": "2026-11-05T04:55Z",
+      "since": "2026-11-05T04:53Z",
+      "eta": "2026-11-05T06:53Z",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "Chief FIX at c9f591c158: repair serial account attribution and laptop safe no-candidate fallback; same PR437, no enablement.",
+      "result": "Chief FIX at 7086e10ddb: busy peer still starves ordinary laptop queue. Ready targeted engineering on same PR437; no rollout. https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6650000080",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162740,9 +162740,44 @@
           "at": "2026-11-05T02:56Z",
           "by": "codex",
           "what": "step 2 of 3 done: Claimed exact dispatched continuation; preserving existing 2/3 plan. No capacity enablement."
+        },
+        {
+          "at": "2026-11-05T02:59Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Implemented selected-model account attribution and locked MacBook ordinary dispatch while preserving current-main job loop; expanded integration regressions in progress. NAS offload found no eligible scratch; 10.3 GB free."
+        },
+        {
+          "at": "2026-11-05T03:03Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Repaired both latest integration findings and synchronized current main. PR437 head 7086e10ddb1511f9444842db9ebebd686cf4dfdb: capacity 121, relay 76, laptop 27 tests green. Exact-head Rules 41959021496 green (836 script tests plus 10/7/12/2 required tests); core 41959021465 green. No provisioning or enablement."
+        },
+        {
+          "at": "2026-11-05T03:04Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: PR437 exact head 7086e10ddb1511f9444842db9ebebd686cf4dfdb repairs serial selected-model account attribution and MacBook ordinary-dispatch exclusion. Rules 41959021496 and core 41959021465 green; 121 capacity, 76 relay, 27 laptop tests green. Review this exact head; no rollout. Preserve 2/3 until observed real-host identity/account/model/capability and launch/exit/guard transitions pass. No private registration/probes provisioned, no capacity enabled; free-slot time unknown."
+        },
+        {
+          "at": "2026-11-05T04:52Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6.1-sol: Codex covering — J1843 exact-head Chief review: FIX. No merge or capacity enablement.\n\nReviewed PR437 head 7086e10ddb1511f9444842db9ebebd686cf4dfdb, original brief/result/history and CAPACITY_IMPLEMENTATION.md. Rules CI 41959021496 and core CI 41959021465 are green. Independently ran all 121 test*capacity*.py tests and 27 MacBook worker tests with process visibility: PASS. The selected-model serial account attribution addresses the previous producer finding. The laptop fix remains incomplete in the busy-peer case.\n\nBlocking finding: capacity_caller._attempt(serial_only=True) sets serial_safe only when there are NO leases across either host and NO active reservations anywhere. macbook_worker.run_one consequently cannot reach ordinary macbook,any work while the Mini has any accounted execution, even on an independent account. If no portable CPU candidate exists, capacity_tick returns capacity_waiting and the laptop returns waiting. With the Mini's continuously busy lane this starves ordinary laptop code/review work. Existing new no-candidate coverage injects serial_safe=True; its integration fixture removes all leases, so it misses the busy-peer case.\n\nIndependent bounded reproduction at this exact head using test_capacity_caller.Caller: call setUp(); laptop() (fresh laptop plus busy Mini Gemini lease on account other, laptop Codex account shared); set the prior CPU request job status=done; append job('J9998',kind='review',needs='any'). call(serial_only=True) returns capacity_waiting, serial_safe=False; call() returns capacity_waiting with no reservation/launch. Feed those actual receipts into run_one with pull/guards/heartbeat isolated: result waiting, run_ordinary call count 0. No real queue or worker was launched by this reproduction.\n\nRuling and concrete follow-up: resume SAME J1843 / PR437 as ready code work for Codex/gpt-6.1-sol (normal specialist fallback applies), preserving worker progress 2/3. Make ordinary laptop dispatch host-local AND selected-worker/shared-account-aware: a positively accounted busy peer on an independent pool must not be a global empty-host barrier. Revalidate the actual ordinary selection and account occupancy under canonical claim/launch exclusion; do not simply ignore remote leases or blindly fall through. Unknown/stale peer occupancy, shared pool exhaustion, uncertain launches and local occupancy must still reject. Add caller regressions using real preflight receipts for busy Mini independent pool plus waiting ordinary review/code and no portable CPU candidate; shared pool at limit; missing/stale peer proof; local occupied; competing cross-host claim/launch; positive exit. Also check the symmetric Mini serial/Chief path for the same global barrier. Synchronize current main and return a new exact head with green CI for Chief review.\n\nNo duplicate task or artificial retry date: this is ready engineering, not an external wait. No provisioning or enablement authorized. Fresh registered host/account/model/capability evidence, supported transport and observed real-host transitions remain separate rollout gates; record a concrete condition and future verification only if actual device access later blocks that acceptance.\n\nStartup: both repositories pulled successfully after requesting filesystem access; HOS inbox empty. Required NAS offload ran with access and found no eligible old scratch; disk remains below 20 GB. No demonstrated direct audio/moving-video perception. No credits spent, NAS content deleted, media changed or publishing performed. Thread read to #6649943240.\n\nReview evidence: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/437#issuecomment-6650000080"
+        },
+        {
+          "at": "2026-11-05T04:52Z",
+          "by": "codex",
+          "what": "Recorded FIX and ready same-job engineering follow-up; worker plan 2/3 preserved; no external wait or duplicate task."
+        },
+        {
+          "at": "2026-11-05T04:53Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T04:54Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Resumed existing 2/3 implementation plan; exact-head review finding accepted. No capacity enablement."
         }
       ],
-      "remaining_action": "Repair serial account attribution and safe MacBook ordinary-dispatch fallback; run integration regressions",
+      "remaining_action": "Repair busy-peer ordinary dispatch exclusion and verify caller regressions on PR437",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162762,9 +162797,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T02:56Z",
+        "at": "2026-11-05T04:54Z",
         "by": "codex",
-        "note": "Claimed exact dispatched continuation; preserving existing 2/3 plan. No capacity enablement."
+        "note": "Resumed existing 2/3 implementation plan; exact-head review finding accepted. No capacity enablement."
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
@@ -177961,16 +177996,46 @@
           "at": "2026-11-05T01:45Z",
           "by": "codex",
           "what": "released: Clean checkpoint e0757a9ffe pushed to PR491; preserve 1/4. 18 J2150-approved DATA MOVs verified; 13 earlier teaching MOVs untouched. Worktree /private/tmp/J2089-resume. Render completed exit0: tmux J2089-data-v02, log /Users/benjaminoats/_desk/logs/J2089-data-render-v02.log, done /Users/benjaminoats/_desk/logs/J2089-data-render-v02.done. Further harvest/mechanism/composite work exceeds one run. Frame0 compliant motion, PIA07232 three-row reuse conflict, APL rights/intervals and final QA unresolved. No spend, publishing or film PASS."
+        },
+        {
+          "at": "2026-11-05T03:05Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:05Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-05T03:06Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Recovered PR491 and original 1/4 checkpoint; preserve 31 rendered overlays and prior source audit. Corrected automatic restart plan to original four milestones."
+        },
+        {
+          "at": "2026-11-05T03:09Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Built 17 row-specific mechanism stills with source pointers and render guard. Verified 17 hashes, safe-area bounds, transparent entry/exit and changing frames; no motion approval or credit spend. Existing 31 rendered overlays preserved."
+        },
+        {
+          "at": "2026-11-05T03:11Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Clean checkpoint 8288cc1370 pushed to PR491. J2177 queued with exact preview paths and source decisions. 17 structural checks and hashes verified; render approval guard verified. No new renders or background processes."
+        },
+        {
+          "at": "2026-11-05T03:11Z",
+          "by": "codex",
+          "what": "released: Partial 1/4, original four-step plan retained. PR491 checkpoint 8288cc1370: 17 mechanism preview stills and guarded renderer; hashes, margins, transparent entry/exit and changing frames verified. J2177 owns per-row still review and frame0/PIA07232 reuse decisions. Preserve 31 earlier rendered overlays. Remaining licensed harvest, real-body graphics and composites exceed one run. Worktree /private/tmp/J2089-resume clean. No background process, spend, publish or PASS."
         }
       ],
-      "remaining_action": "Finish licensed picture harvest, remaining mechanism graphics and composite verification",
+      "remaining_action": "J2177 reviews 17 mechanism stills and source conflicts; remaining harvest and composites continue afterward",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-05T01:45Z",
+        "at": "2026-11-05T03:11Z",
         "by": "codex",
-        "note": "PR491 e0757a9ffe: J2150 corrections applied; all 18 approved DATA overlays rendered and hash/frame/duration/full-decode "
+        "note": "Clean checkpoint 8288cc1370 pushed to PR491. J2177 queued with exact preview paths and source decisions. 17 structural c"
       },
       "taskKeys": [
         "OWB:032"
@@ -180093,16 +180158,36 @@
           "at": "2026-11-05T01:52Z",
           "by": "codex",
           "what": "released: Clean checkpoint: PR495 worker/J2141-031-picture at 2b0b4caf97; preserve 1/3. Five further mechanism renders verified technically, about 23MB outside git. Continue BUILD_HANDOFF_J2141.md. tmux J2141-evidence-v01 completed exit0; log /Users/benjaminoats/_desk/logs/J2141-evidence-v01.log and .done. Wider harvest/mechanisms/R41/composite QA remain; no KEEP/PASS or paid spend."
+        },
+        {
+          "at": "2026-11-05T03:12Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:13Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resuming prior 1/3 checkpoint 2b0b4caf97; existing renders preserved; NAS offload in progress."
+        },
+        {
+          "at": "2026-11-05T03:16Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint 4363d1b929 on PR495: three new source-linked alpha overlays for R36 durations, R44 gravity and R52 generations; hashes, alpha, timing and full decode verified. Batch exit0, no live render; no motion/composite approval. £0."
+        },
+        {
+          "at": "2026-11-05T03:16Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint PR495 worker/J2141-031-picture at 4363d1b929; preserve 1/3. Three scale overlays added and technically verified (6.6MB outside git). Continue BUILD_HANDOFF_J2141.md. tmux J2141-scales-v01 completed exit0; logs /Users/benjaminoats/_desk/logs/J2141-scales-v01.log and .done. Wider harvest/mechanisms/timeline/R41/composite QA remain. Existing source/gate conflicts need Chief; no KEEP/PASS, no spend."
         }
       ],
-      "remaining_action": "Complete wider harvest, remaining mechanisms, R41 fallback and composite QA",
+      "remaining_action": "Complete wider harvest, remaining mechanisms and timeline, R41 fallback and composite QA",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-05T01:52Z",
+        "at": "2026-11-05T03:16Z",
         "by": "codex",
-        "note": "Checkpoint 2b0b4caf97 on PR495: five new source-linked graphics fully decoded, hashed and format/timing checked. Static "
+        "note": "Checkpoint 4363d1b929 on PR495: three new source-linked alpha overlays for R36 durations, R44 gravity and R52 generation"
       },
       "taskKeys": [
         "OWB:031"
@@ -180354,7 +180439,7 @@
     {
       "id": "J2146",
       "title": "Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21)",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "LEARNINGS rule 21 (test; Ben's go 4 Nov 2026). Plan the first monthly journey film: one 40-60 min calm long stitched from our finished OWB longs (023-030) into one story, working title 'A Journey to Every World We've Landed On' or similar. Deliver jobs/reviews/<id>/JOURNEY_01_PLAN.md: (1) the running order and which minutes of which locked cut each part reuses; (2) new linking VO lines (script, cold open with its own line-1 claim, chapter cards); (3) the bed plan (one ambient bed, chapter cues); (4) title, three thumbnail concepts, description and chapters; (5) the ElevenLabs credit estimate for the linking VO and bed (stay inside the existing flat fee, no top-up). It's a long built from longs, not a Shorts compilation (rule 9). It takes the next WIP slot when 031 or 032 reaches Ben's watch. Then queue the VO, assembly and review jobs with --film J01.\n",
       "ref": "",
@@ -180394,17 +180479,30 @@
           "at": "2026-11-05T02:54Z",
           "by": "relay",
           "what": "handed back: Claude is back online"
+        },
+        {
+          "at": "2026-11-05T03:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21)",
       "due": "2026-11-15T00:00:00Z",
-      "for": "claude",
-      "kind": "script"
+      "for": "gemini",
+      "kind": "script",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "claude",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J2147",
       "title": "031/032 Shorts slots around the new Wednesday long slot",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "Ben, 4 Nov 2026: OWB adds a Wednesday 18:00 long slot. 032 airs Wed 25 Nov, 031 Wed 2 Dec. Plan each film's three Shorts into the 11:30 Mon/Wed/Fri slots without clashing with the Shorts already scheduled for 026-029 (one Short a day max, playbook section 1), with one Short going out on its long's go-public day pointing at it (LEARNINGS 17). Write the plan into each film's 10_Shorts README and the film note. Do this once each film's Shorts scripts exist.\n",
       "ref": "",
@@ -180444,12 +180542,25 @@
           "at": "2026-11-05T02:54Z",
           "by": "relay",
           "what": "handed back: Claude is back online"
+        },
+        {
+          "at": "2026-11-05T03:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "031/032 Shorts slots around the new Wednesday long slot",
       "due": "2026-11-14T00:00:00Z",
-      "for": "claude",
-      "kind": "listing"
+      "for": "gemini",
+      "kind": "listing",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "claude",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J2148",
@@ -181189,7 +181300,7 @@
     {
       "id": "J2162",
       "title": "Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required.** Read the three critiques in `05_Analytics/tests/panels/owb-032-j2144/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.\n\nJ2144 ruling b92e3a6d34 is FIX. J2176 repairs A/C; all three panel jobs depend on that delivery. Before decision verify J2176 and all three critics are complete (or apply the existing 24h missing-critic provision transparently, never pretend missing evidence passed). Inspect repaired hashes and resolve each FIX. Reconcile draft metadata A/B/C with actual set. Record ruling on held J2144 and release/complete it only when justified. PR500/T020 remain proposed; no publishing is authorised.\n",
       "ref": "",
@@ -181234,13 +181345,27 @@
           "at": "2026-11-05T02:54Z",
           "by": "relay",
           "what": "handed back: Claude is back online"
+        },
+        {
+          "at": "2026-11-05T03:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required",
       "kind": "review",
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2163",
@@ -181567,23 +181692,73 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "codex",
+      "since": "2026-11-05T03:22Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "",
+      "result": "parked for Chief: J2178 must reconcile mandatory matching loop with picture_qa same-stretch FAILs and specify exact repair mappings; HOS PR413 e3410b07, B3/8 C2/9 source cuts FAIL. Inventory complete1/3; no render, spend or publishing. Not a capability or credit wait.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T03:22Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:23Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed only J2169; no audio or moving-video perception claimed; checking current rules and exact input identities."
+        },
+        {
+          "at": "2026-11-05T03:25Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Locked B/C takes and planned NAS plates found. Source still sheet exposes street plate under plant line and mint already inside planned candle-only shot; checking lawful existing alternatives. Scratch offload found no eligible old scratch."
+        },
+        {
+          "at": "2026-11-05T03:27Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Inventory complete: B hash0f109926 and C hash5b5d84e5 match locked takes; all12 plates present and hashed. Source-only picture QA FAIL: B3/8, C2/9 cuts; under10s clips cannot provide source starts10s apart. No render or spend."
+        },
+        {
+          "at": "2026-11-05T03:29Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: HOS PR413 e3410b07 preserves hashes, both source-QA FAIL reports, transcripts, decode evidence and durable still sheet. check_all.sh ALL CHECKS PASS. J2178 owns bounded Chief decision; no render/spend/publication."
+        },
+        {
+          "at": "2026-11-05T03:29Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: J2178 must reconcile mandatory matching loop with picture_qa same-stretch FAILs and specify exact repair mappings; HOS PR413 e3410b07, B3/8 C2/9 source cuts FAIL. Inventory complete1/3; no render, spend or publishing. Not a capability or credit wait."
+        },
+        {
+          "at": "2026-11-05T03:37Z",
+          "by": "codex",
+          "what": "remaining action: Blocked on J2180 reviewed loop checker and J2181 exact source mappings plus mapping review; then build and verify B/C"
+        },
+        {
+          "at": "2026-11-05T04:14Z",
+          "by": "codex",
+          "what": "remaining action: Blocked1/3: J2183 reviews PR415 mappings, J2184 scopes four resolution gaps, J2179/J2182 clear loop checker; then build and rendered gates"
         }
       ],
-      "remaining_action": "HOS 006: build active Short B and C for 18 and 21 Nov from existing media",
+      "remaining_action": "Blocked1/3: J2183 reviews PR415 mappings, J2184 scopes four resolution gaps, J2179/J2182 clear loop checker; then build and rendered gates",
       "due": "2026-11-14T18:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 1,
+        "of": 3,
+        "at": "2026-11-05T03:29Z",
+        "by": "codex",
+        "note": "HOS PR413 e3410b07 preserves hashes, both source-QA FAIL reports, transcripts, decode evidence and durable still sheet. "
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     },
     {
       "id": "J2170",
@@ -181978,13 +182153,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "codex",
+      "since": "2026-11-05T03:18Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T02:21Z",
-      "result": "",
+      "result": "parked for Chief: single scoped Huygens surface candidate PIA07232 fails resolution (about 315px usable width, over 4x to 1280 vs 2.35x limit). One-candidate scope exhausted. Evidence 95fbbb3ac6 on codex/j2176-surface; B/C hashes unchanged. Choose new bounded composition/source scope; panels remain dependent on incomplete J2176. No spend or background process.",
       "history": [
         {
           "at": "2026-11-05T02:21Z",
@@ -182020,21 +182195,668 @@
           "at": "2026-11-05T02:29Z",
           "by": "codex",
           "what": "released: Partial delivery PR509 / 703fae5964. C repaired; B unchanged; A rejected 39.1% near-black. Three-source globe pass exhausted. Next continuation uses one official Huygens DISR surface candidate, max 10 active minutes, £0, per updated brief; no gate waiver. Panels still depend on complete delivery. No background process."
+        },
+        {
+          "at": "2026-11-05T03:18Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:18Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resumed existing 3-step plan; C and B preserved. Beginning bounded surface-source investigation."
+        },
+        {
+          "at": "2026-11-05T03:21Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: One surface candidate checked: PIA07232 usable width about 315px requires over 4x upscale; limit 2.35x. A not built. B/C hashes match; evidence 95fbbb3ac6."
+        },
+        {
+          "at": "2026-11-05T03:21Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: single scoped Huygens surface candidate PIA07232 fails resolution (about 315px usable width, over 4x to 1280 vs 2.35x limit). One-candidate scope exhausted. Evidence 95fbbb3ac6 on codex/j2176-surface; B/C hashes unchanged. Choose new bounded composition/source scope; panels remain dependent on incomplete J2176. No spend or background process."
         }
       ],
-      "remaining_action": "Evaluate one official Huygens surface candidate within 10 minutes; finish A and complete panel manifest",
+      "remaining_action": "Chief must scope next A composition after Huygens resolution failure",
       "due": "2026-11-12T18:00:00Z",
       "kind": "thumb",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-05T02:29Z",
+        "at": "2026-11-05T03:21Z",
         "by": "codex",
-        "note": "PR509: C repaired and phone/grade checked, B byte-identical. A failed near-black at 39.1%; three-source pass exhausted. "
+        "note": "One surface candidate checked: PIA07232 usable width about 315px requires over 4x upscale; limit 2.35x. A not built. B/C"
       },
       "taskKeys": [
         "OWB:032"
       ]
+    },
+    {
+      "id": "J2177",
+      "title": "032 J2089: review 17 mechanism stills and resolve two source conflicts",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Parent J2089, existing PR491 branch codex/J2089-picture at 8288cc1370. Read 07_Edit-Project/J2089_CHECKPOINT_v04.md and MECHANISM_MANIFEST_v01.json in 032_What-Would-Happen-If-You-Landed-On-Titan. Inspect all 17 stills individually at /Users/benjaminoats/_desk/cache/J2089/mechanism_previews_v01/. Check sources, verbatim labels, one idea, spectrum absorption, approximate five-part area comparison, symbolic 8-rotor layout and combustion arrows. Exact KEEP/FIX per id, with rendering permission for named KEEP ids only; no composite or motion approval from stills. Resolve J2150 conflicts: reconstructed descent excluded, leaving frame0 motion unresolved; R25 PIA07232 creates third use with R18/R20. Record a compliant bounded alternative or route a separately scoped Chief fallback; no money or gate waiver. Preserve existing 31 approved overlay renders. Write jobs/reviews/<this id>/REVIEW.md and update J2089. Parent remains 1/4 because licensed harvest incomplete. No film PASS or publishing.",
+      "ref": "8288cc1370",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T03:11Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T03:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        }
+      ],
+      "remaining_action": "Inspect 17 full-size mechanism previews; record KEEP/FIX and bounded frame-0/reuse decisions",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
+    },
+    {
+      "id": "J2178",
+      "title": "HOS 006: resolve J2169 loop/reuse gate conflict and exact picture repairs",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J2169 pre-render blocker; HOS PR413 commit e3410b07, jobs/reviews/J2169/REVIEW.md and machine source QA. GBP0 decision only, no production/publishing approval implied.\n\nBounded decision: resolve five failing source rows and two picture concerns in active HOS006 B/C. The unmodified picture_qa.py FAILs B S04/S05/loop_tail and C S05/loop_tail for same-stretch reuse. All implicated sources are8s; no legal source starts can be10s apart. BUILD_RULE_v02 mandates matching frame0 loop, so blindly rendering the rule cannot pass the current gate. B S02 already shows mint during pre-mint candle narration and S07 town street weakly supports little green plant. Worker has not changed code, waived FAIL, rendered or spent.\n\nChief owns any system/checker decision: either specify truthful, already-approved alternative source+offset mappings including a visually matching loop that passes the unchanged checker, or scope a separate reviewed system-change PR if the checker is wrong for prescribed Shorts looping. Do not hide source identity, omit loop rows, rename/re-encode as new footage, or claim older KEEP is a waiver. Any needed generation must be separately bounded and authorized; J2169 allows none. Preserve canonical B mint take0f109926 and C5b5d84e5, all words and J1004 lawful edits,22-27s/current gates. Standalone S7 remains planned and must not duplicate B; excluded A/retired/superseded cuts stay excluded. Do not change long or live-film approval stages.\n\nDeliver an exact repair decision in the existing records and reopen J2169 for build+verification, or name a specific missing existing input and separately scope its producer. No generic timed retry. Finished-cut review and Ben awaits only after a real passing durable deliverable exists. Read actual evidence before deciding. Target pack15Nov18:00; B18Nov/C21Nov11:30 conditional only, longVbPubYd6Fbs must readPublic before release.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/413",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-05T03:31Z",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:29Z",
+      "result": "Acting-Chief FIX decision delivered and merged HOS PR414 dbbb5da9. Reproduced five source reuse FAILs; scoped J2179 checker correction, J2180 elected-Chief review, J2181 bounded existing-media mappings and immediate mapping review. J2169 remains blocked1/3 on these concrete inputs, no generic retry. No render/spend/publishing or long-stage changes; all local repo checks and CI pass. HOS desk notified.",
+      "history": [
+        {
+          "at": "2026-11-05T03:29Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T03:31Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:31Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed bounded no-spend Chief decision; plan: inspect evidence, specify repair and checker scope, record and hand off."
+        },
+        {
+          "at": "2026-11-05T03:33Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reproduced all five reuse failures with unchanged checker; inspected source stills and KEEP plate records. Loop conflict is structural; B candle/plant mappings require repair, not a waiver."
+        },
+        {
+          "at": "2026-11-05T03:37Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Scoped J2179 checker PR, J2180 elected-Chief system review and J2181 bounded source-mapping producer. J2169 remains blocked1/3 on concrete inputs; no failed gate waived."
+        },
+        {
+          "at": "2026-11-05T03:40Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: HOS PR414 dbbb5da9 merged after all CI green; check_all PASS. Exact missing inputs and producers recorded; J2169 remains1/3 blocked pending reviewed repairs. HOS desk report posted."
+        },
+        {
+          "at": "2026-11-05T03:40Z",
+          "by": "codex",
+          "what": "done: Acting-Chief FIX decision delivered and merged HOS PR414 dbbb5da9. Reproduced five source reuse FAILs; scoped J2179 checker correction, J2180 elected-Chief review, J2181 bounded existing-media mappings and immediate mapping review. J2169 remains blocked1/3 on these concrete inputs, no generic retry. No render/spend/publishing or long-stage changes; all local repo checks and CI pass. HOS desk notified."
+        }
+      ],
+      "remaining_action": "Decision delivered; J2179/J2180 and J2181 own the prerequisite repairs",
+      "due": "2026-11-06T18:00:00Z",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-05T03:40Z",
+        "by": "codex",
+        "note": "HOS PR414 dbbb5da9 merged after all CI green; check_all PASS. Exact missing inputs and producers recorded; J2169 remains"
+      },
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/414"
+    },
+    {
+      "id": "J2179",
+      "title": "HOS006 prerequisite: narrowly classify prescribed terminal Shorts loops in picture QA",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2178 acting-Chief Codex scope, 5 Nov 2026. GBP0 system-change PR only. Resolve the demonstrated conflict between HOS006 BUILD_RULE_v02 one-second terminal return to frame0 and OWB scripts/picture_qa.py SAME_STRETCH=10. Evidence HOS PR413 e3410b07, jobs/reviews/J2169; decision HOS branch codex/J2178-decision jobs/reviews/J2178/REVIEW.md. This is not a waived gate or permission to render J2169.\nImplement in a clean OWB branch a narrow opt-in prescribed-Short terminal-loop contract. Default behavior including all long films stays unchanged. Only one explicitly declared final loop row, <=1.0s, after the recorded last VO word, within a verified 22-27s Short, referencing the actual opening source/sha256, with explicit finite source in/out, duration bounds and matching framing, may be classified as the intentional return rather than accidental repetition. Do not exempt by row name alone or a caller-supplied boolean. All rows remain in the report; explain the accepted loop classification and evidence. Invalid/missing declarations fail closed. Keep source identity and actual source frames honest; no path aliases or re-encodes as new footage. All body same-stretch, within-run replay, sharpness, picture-kind and pixel failures remain in force. No generic reviewed-ok reuse override. Validate source interval and opening/ending frame correspondence; source-only QA must report what remains unverified until rendered loop checks. Do not claim seamless motion from stills. Avoid making final-render verification impossible at source-preflight stage.\nRegression cases: opt-out legacy behavior; valid terminal return; false role/body row; multiple or non-terminal loops; >1s; VO overlap; wrong source/hash/framing; invalid/NaN/out-of-range offsets; short outside22-27s; missing evidence; body repeats still fail. With the J2169 fixture only B loop_tail and C loop_tail become eligible for intentional-loop classification; B S04/S05 and C S05 still FAIL. No unconditional PASS for the existing fixture.\nRead and align existing docs-in-force plus their Cursor rule in the same proposed change if contract documentation needs updating. Author edits to rules are proposals only until elected-Chief review. Check studio-core/CORE_FILES.json; if listed, change only in OWB and use core_sync lock/push with both repo commits as required. No money, generation, NAS changes, production stages or YouTube/Buffer writes. Open PR, run meaningful regression tests, retain exact commit/test output, then mark implementation delivered for the linked elected-Chief system review. Do not merge your own change or reopen J2169. Link progress HOS:006. Target6Nov18:00Z.\n",
+      "ref": "J2178",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "macbook",
+      "since": "2026-11-05T04:12Z",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:35Z",
+      "result": "HOS:006 implementation delivered in PR513 (17b2ac555), repairs both J2180 P1s; 24 focused tests PASS plus rules/core/compile/diff checks. J2182 elected-Chief re-review required; J2169 remains blocked. IMPORTANT jobs.py progress --git unintentionally rebased and pushed original PR512 implementation onto main (03e570eec,1708dd233,c983b2cb5); repair code is only on PR513. Incident recorded in MACBOOK_REPAIR.md and PR512 comment 6649525730. CI pending. Both checkouts main; no spend or publishing.",
+      "history": [
+        {
+          "at": "2026-11-05T03:35Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T03:42Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:42Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Claimed; plan: inspect contract, implement, regressions, PR handoff."
+        },
+        {
+          "at": "2026-11-05T03:45Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Inspected J2178 decision, J2169 fixtures and docs; picture_qa is not studio-core. Implemented source preflight and rendered sample checks; legacy 12 tests pass."
+        },
+        {
+          "at": "2026-11-05T03:48Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Implementation and proposed playbook/Cursor contract complete. Negative cases, real ffmpeg correspondence, alias reuse and J2169 body failures covered."
+        },
+        {
+          "at": "2026-11-05T03:49Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: 12 legacy plus 9 terminal-loop tests PASS; exact logs retained. py_compile and diff check pass. Original J2169 fixtures remain invalid without missing contract evidence; body FAILs retained."
+        },
+        {
+          "at": "2026-11-05T03:50Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Delivered PR512 at 203763e323135a1a4eec6a4372678dd705085b4c; 21 tests pass, logs and review limits committed. No merge; J2169 unchanged."
+        },
+        {
+          "at": "2026-11-05T03:50Z",
+          "by": "codex",
+          "what": "done: Implementation delivered for J2180 independent system review: PR512, commit 203763e323135a1a4eec6a4372678dd705085b4c. 12 legacy + 9 terminal-loop tests pass; exact logs and limitations in jobs/reviews/J2179. Proposed docs/rules await J2180; no self-merge or J2169 reopening. CI pending at handoff."
+        },
+        {
+          "at": "2026-11-05T03:58Z",
+          "by": "codex",
+          "what": "reopened: J2180 FIX on PR512 be2c980ffa. Repair missing body-file identity fallback and missing video-offset run downgrade; add regressions, keep opt-out legacy behavior. Exact findings and failing reproductions: https://github.com/TheLaughingGod1986/orbit-with-ben/blob/ed5b8002ae/jobs/reviews/J2180/REVIEW.md . Update existing PR512; do not merge or reopen J2169. Deliver corrected head for separate elected-Chief re-review."
+        },
+        {
+          "at": "2026-11-05T04:12Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T04:13Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-05T04:16Z",
+          "by": "macbook",
+          "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-05T04:16Z",
+          "by": "macbook",
+          "what": "done: HOS:006 implementation delivered in PR513 (17b2ac555), repairs both J2180 P1s; 24 focused tests PASS plus rules/core/compile/diff checks. J2182 elected-Chief re-review required; J2169 remains blocked. IMPORTANT jobs.py progress --git unintentionally rebased and pushed original PR512 implementation onto main (03e570eec,1708dd233,c983b2cb5); repair code is only on PR513. Incident recorded in MACBOOK_REPAIR.md and PR512 comment 6649525730. CI pending. Both checkouts main; no spend or publishing."
+        }
+      ],
+      "remaining_action": "Implementation delivered; elected-Chief J2182 review and PR512 reconciliation remain",
+      "due": "2026-11-06T18:00:00Z",
+      "kind": "assembly",
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/512",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-05T04:16Z",
+        "by": "macbook"
+      }
+    },
+    {
+      "id": "J2180",
+      "title": "Review J2179 terminal-loop checker change before HOS006 can use it",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2178 acting-Chief scope. Review the exact J2179 PR and tests; system change requires elected Chief, recheck chief_relay status. Verify fail-closed opt-in <=1s terminal-loop classification, truthful source/hash/framing/VO and interval evidence, unchanged body reuse/long defaults and all regression cases in J2179. No blanket reviewed-ok waiver. Source preflight must distinguish provisional loop eligibility from rendered loop PASS. Validate docs/core sync where applicable. FIX returns exact corrections to J2179; KEEP may merge only green/required checks. Record merge SHA and notify HOS006 mapping producer and its review. Never reopen J2169 merely because the checker merges: body mappings need separate review and rendered gates remain. No generation, spend, production-stage changes or publishing. Link progress HOS:006. This is the separately reviewed system PR required by J2178.",
+      "ref": "J2178",
+      "film": "",
+      "stage": "",
+      "after": "J2179",
+      "eta_min": 120,
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-05T03:54Z",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:35Z",
+      "result": "FIX on PR512 head be2c980ffa. Existing 21 tests PASS; two independent fail-closed regressions fail (missing body source and missing video offset). Review evidence ed5b8002ae, PR comment 6649285684. J2179 reopened for corrections; J2182 system re-review queued; HOS006 J2181 and mapping reviewer notified. PR unmerged, J2169 remains blocked; no spend/publishing/production approval.",
+      "history": [
+        {
+          "at": "2026-11-05T03:35Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T03:54Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:54Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect PR and contract; run independent regressions; record decision and notify mapping handoffs."
+        },
+        {
+          "at": "2026-11-05T03:56Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reviewed current PR head be2c980ffa and contract; CI green, 12 legacy tests pass. Checking missing body-source and offset evidence, which may bypass reuse identity checks."
+        },
+        {
+          "at": "2026-11-05T03:57Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: All 21 existing tests pass; two independent regression assertions fail: missing body file has no failure, and missing video offset disables within-run replay detection. Rules/core checks pass. FIX; no merge."
+        },
+        {
+          "at": "2026-11-05T03:59Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: FIX evidence committed ed5b8002ae and posted PR512; J2179 reopened, J2182 successor queued, HOS mapping producer/reviewer notified. No merge or J2169 reopening."
+        },
+        {
+          "at": "2026-11-05T03:59Z",
+          "by": "codex",
+          "what": "done: FIX on PR512 head be2c980ffa. Existing 21 tests PASS; two independent fail-closed regressions fail (missing body source and missing video offset). Review evidence ed5b8002ae, PR comment 6649285684. J2179 reopened for corrections; J2182 system re-review queued; HOS006 J2181 and mapping reviewer notified. PR unmerged, J2169 remains blocked; no spend/publishing/production approval."
+        }
+      ],
+      "remaining_action": "Review complete: J2179 repairs checker and J2182 re-reviews it",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-05T03:59Z",
+        "by": "codex",
+        "note": "FIX evidence committed ed5b8002ae and posted PR512; J2179 reopened, J2182 successor queued, HOS mapping producer/reviewe"
+      },
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/512#issuecomment-6649285684"
+    },
+    {
+      "id": "J2181",
+      "title": "HOS 006: qualify existing-media replacements for B/C repeated and mismatched shots",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J2178 acting-Chief Codex scope, 5 Nov 2026. GBP0 existing-media repair recipe only for HOS006 Short_B/C, not a cut build, generation or publishing task. Read HOS PR413 e3410b07 and J2178 decision in HOS codex/J2178-decision jobs/reviews/J2178/REVIEW.md. Use canonical B0f109926 and C5b5d84e5 takes, existing row timings, all words and lawful J1004 edits. Retain originals; no long/live stage change. Claim job, link HOS:006.\nProduce exact, hash-backed row/source/in-out/crop mappings for missing eligible inputs:\n1 B S02 2.24-5.62 (3.38s): Priestley candle before adding mint, no mint visible; investigate the already-KEEP part03/raw/v01/07_priestley_t1.mp4 (board sha b8a981ea74471bd28997f13bce0899c832bb67f36fa78048f2c615a129256ad6). This removes misuse of11_candle_tall from S02, allowing it to remain uniquely at S05 13.02-16.30 (3.28s). Verify actual frames, not the filename/prompt. Do not use08_candles_out again because S03 owns it.\n2 B S04 9.40-13.02 (3.62s): mint placed in the jar/waiting, source distinct from S01 mint opening; alternatively a distinct truthful mint opening plus loop pair can free10_mint_jar for S04. No repeat of an8s source in body even with nonoverlapping offsets. Existing12_mouse_mint is only a candidate if an honest plant crop excludes the mouse and unrelated experiment; do not insert an animal claim or fake addition.\n3 B S07 19.46-23.20 (3.74s): literal little green plant rather than town street; investigate existing KEEP part04/raw/v01/15_leaf_turns_sun_t1.mp4 (sha c69d74e82e593507617d728567009110ea7cfff7d9e5a465f3854f03586ac7ae), verifying duration and crop. Do not reuse B S01/S04/S05 or represent a different experiment as Priestley proof.\n4 C S05 12.00-14.96 (2.96s): green leaves releasing silver bubbles, unique body source; investigate existing KEEP part04/raw/v01/10_only_green_t2.mp4 (sha cfd7a02a6d3f203e9528feef1bcfe1fc9f0e7a5a482a83f791de77daec55334d), crop only if leaf and bubbles read without other misleading jars. Opening05_bubbles_macro and its <=1s terminal return remain tied to the separate checker correction/review; do not omit them or claim they pass the old checker.\nThese are investigation candidates, not approval or evidence of current disk availability. Read part03/04_plates_v01.json KEEP records and exact files in approved NAS root from J2169. Up to20 active minutes total for this NEW alternative-source pass, at most3 candidates examined in depth per missing input; previous J2169 inspection of the rejected baseline is not repeated. Keep a cumulative candidate/budget log. Need source bounds sufficient for each full row plus any required preroll, real motion, house style, <=2.35x and rule8. No source rename/re-encode workaround, still push, freeze, slowing to pad, new text/VO or fabricated proof.\nDeliver BUILD_RULE repair mappings and complete source cuts/pools including loop rows, hashes, stills and machine checks. If no eligible existing source fits, specify exact row, missing action/duration/format and candidates rejected; queue one bounded Chief generation/fallback decision with proposed shot and cap for later authorization, NEVER spend under this job. Do not redo the same search. Preserve A/retired/superseded exclusions and standalone S7 planned-only collision hold. No upload/YouTube/Buffer writes. No Ben awaits without a finished passing cut.\nOn delivery queue immediate kind:review successor for the mappings; it checks this producer plus the linked system-review outcome before reopening J2169. No generic retry date, no capability-only hold: actual watch/listen is Ben final UAT under4Nov order; report static/machine limits honestly. Parent J2169 stays1/3 until real build/verification. Target mappings7Nov18:00Z; final pack15Nov18:00Z; conditional B18Nov/C21Nov11:30 only after longVbPubYd6Fbs Public and all approvals.\n",
+      "ref": "J2178",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-05T04:01Z",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:36Z",
+      "result": "Bounded source producer delivered HOS PR415 head84fd8773: exact native crop/in-out/hash proposals for requested repairs,17-row lists incl loops,14 KEEP hash matches,2 locked VO matches,all used intervals decode. SourceQA still FAIL B2/8 C4/9 due inherited720p enlargement and terminal reuse. J2183 reviews mappings; J2184 scopes four resolution gaps; J2179/J2182 checker still required. J2169 blocked1/3 retained. No spend/render/generation/publishing or production approval.",
+      "history": [
+        {
+          "at": "2026-11-05T03:36Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T04:01Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T04:01Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-05T04:03Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read J2178/PR413 recipe and KEEP boards; four named NAS candidates exist with matching hashes and 8s bounds. Priestley candidate has no candle; mouse candidate carries unrelated animal experiment. Static qualification in progress."
+        },
+        {
+          "at": "2026-11-05T04:07Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Seven alternatives inspected, within three per missing input. Named 720p candidates fail full-height portrait upscale at2.667x. Higher-resolution pot/jar plate offers distinct mint opening and leaf/bubbles crop; quill clip actually contains pre-mint burning candles. No KEEP or motion/listen claim."
+        },
+        {
+          "at": "2026-11-05T04:11Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Exact native crop/in/out/hash proposals cover four requested repairs; 17 rows decoded with zero identical adjacent frames and valid bounds. Unmodified source QA still FAILs B2/8,C4/9: terminal reuse plus five row occurrences from four inherited720p sources at2.67x. No build/KEEP; parent remains1/3."
+        },
+        {
+          "at": "2026-11-05T04:15Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: HOS PR415 head84fd8773 delivers hash-backed mappings, complete17-row source lists and honest B2/8 C4/9 FAILs. Repository checks PASS. J2183 mapping review and J2184 bounded fallback queued; J2179/J2182 still required. GBP0, no cut/generation/publishing."
+        },
+        {
+          "at": "2026-11-05T04:15Z",
+          "by": "codex",
+          "what": "done: Bounded source producer delivered HOS PR415 head84fd8773: exact native crop/in-out/hash proposals for requested repairs,17-row lists incl loops,14 KEEP hash matches,2 locked VO matches,all used intervals decode. SourceQA still FAIL B2/8 C4/9 due inherited720p enlargement and terminal reuse. J2183 reviews mappings; J2184 scopes four resolution gaps; J2179/J2182 checker still required. J2169 blocked1/3 retained. No spend/render/generation/publishing or production approval."
+        }
+      ],
+      "remaining_action": "Producer delivered: J2183 reviews PR415; J2184 scopes remaining source gaps; J2169 stays blocked1/3",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "assembly",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-05T04:15Z",
+        "by": "codex",
+        "note": "HOS PR415 head84fd8773 delivers hash-backed mappings, complete17-row source lists and honest B2/8 C4/9 FAILs. Repository"
+      },
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/415"
+    },
+    {
+      "id": "J2182",
+      "title": "Re-review J2179 terminal-loop checker after J2180 FIX",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2180 FIX evidence: https://github.com/TheLaughingGod1986/orbit-with-ben/blob/ed5b8002ae/jobs/reviews/J2180/REVIEW.md and REPRO.txt/reproduce.py. After J2179 repairs existing PR512, elected Chief must recheck chief_relay status, inspect exact current head, rerun existing tests plus both review regressions and missing/null/nonfinite mixed-video offset cases. Require readable actual body sources and non-waivable identity failures; no missing footage offset may downgrade a video run to still handling. Preserve all original J2178/J2179 scope and default legacy behavior. Verify <=1s evidence-backed terminal-only exemption, all body reuse and rendered gates, docs/rules/core status. KEEP may merge only green required checks and record exact merge SHA; FIX returns exact corrections. Notify HOS006 J2181 mapping producer and subsequent mapping reviewer. Never reopen J2169 on checker acceptance alone: body mapping review and all rendered gates remain. No generation, spend, production-stage changes or publishing. Link progress HOS:006.",
+      "ref": "J2180",
+      "film": "",
+      "stage": "",
+      "after": "J2179",
+      "eta_min": 120,
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-05T04:42Z",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T03:58Z",
+      "result": "KEEP checker only. Exact PR513 head17b2ac5550 reviewed; 24 existing tests plus2 original regressions PASS, rules/core/compile/diff and CI green. Merge e6d133d44d2f1946367b712607c7fa130b352996; review/docs PR514 merge df94f88a008043a802b414cb4ca2308febad6fa4. PR512 superseded and closed. J2181/J2183 notified on HOS desk; J2169 stays blocked1/3 on mapping/source repairs and rendered gates. J2185 queued for unintended branch publication via queue helper. No spend, production-stage or publishing changes.",
+      "history": [
+        {
+          "at": "2026-11-05T03:58Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T04:42Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T04:42Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed exact dispatch; inspecting PR513 repair and unintended PR512 main landing. NAS offload found no eligible scratch."
+        },
+        {
+          "at": "2026-11-05T04:43Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Inspected 17b2ac555, both P1 repairs, original contract and paired docs; no production approval inferred from accidental main landing."
+        },
+        {
+          "at": "2026-11-05T04:44Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 24 tests plus two original review regressions PASS; rules/core/compile/diff PASS. Exact-head PR513 merged after fresh green CI verification."
+        },
+        {
+          "at": "2026-11-05T04:47Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR513 merged e6d133d44d; review/docs PR514 merged df94f88a00 after green CI. PR512 closed. HOS and studio handoffs posted; J2185 queue-helper repair queued; J2169 unchanged blocked1/3."
+        },
+        {
+          "at": "2026-11-05T04:47Z",
+          "by": "codex",
+          "what": "done: KEEP checker only. Exact PR513 head17b2ac5550 reviewed; 24 existing tests plus2 original regressions PASS, rules/core/compile/diff and CI green. Merge e6d133d44d2f1946367b712607c7fa130b352996; review/docs PR514 merge df94f88a008043a802b414cb4ca2308febad6fa4. PR512 superseded and closed. J2181/J2183 notified on HOS desk; J2169 stays blocked1/3 on mapping/source repairs and rendered gates. J2185 queued for unintended branch publication via queue helper. No spend, production-stage or publishing changes."
+        }
+      ],
+      "remaining_action": "Review complete; J2183/J2184 source fixes and rendered gates remain before J2169 can resume",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "chief",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-05T04:47Z",
+        "by": "codex",
+        "note": "PR513 merged e6d133d44d; review/docs PR514 merged df94f88a00 after green CI. PR512 closed. HOS and studio handoffs poste"
+      },
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/514"
+    },
+    {
+      "id": "J2183",
+      "title": "Review HOS006 J2181 native source mappings and unresolved media gates",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Immediate independent mapping review of J2181 HOS PR415 at b784a69a: jobs/reviews/J2181/REVIEW.md, BUILD_RULE_J2181_REPAIR_PROPOSAL.json, complete17-row cuts/pools including terminal returns, provenance, candidate budget, machine checks and source-QA FAILs. GBP0 review only, no render/generation/publishing. Read original J2178 scope and J2169 records. Inspect native crops/stills, phone recognition, B S02 multiple-candle/edge continuity, B mint opening near2.35x and B S07 literal plant as illustration; all14 hashes match KEEP and both actual VO locks match. Verify source intervals, preroll and preserved words/timing/J1004 edits. No media KEEP from metrics alone.\nWrite jobs/reviews/<this-id>/REVIEW.md KEEP or FIX with exact corrections. Existing sourceQA is FAIL B2/8,C4/9, because inherited720p inputs at2.67x and both terminal returns. Retain useful exact mappings if sound; do not approve a finished recipe while those issues remain. Read J2180 FIX on PR512 be2c980ffa (missing body source/offset identity failures); J2179 corrections and J2182 system re-review must genuinely pass and merge before use. A done J2180 is not checker acceptance. Check the linked bounded source fallback decision for B S06 and C S01+loop/S07/S08; it owns any separately authorised producer. No new unbounded source search. Do not reopen J2169 while checker, any source or mapping conditions remain; it stays1/3 until real build and all rendered gates. Never add awaits without a finished durable passing cut; actual watch/listen is Ben UAT per4Nov, not a capability-only hold. Preserve A/retired exclusions, S7 planned-only collision, long/live stages and conditional dates. Link HOS:006. Due7Nov18:00Z; starts immediately after producer delivery.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/415",
+      "film": "",
+      "stage": "",
+      "after": "J2181",
+      "eta_min": 120,
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-05T04:16Z",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T04:13Z",
+      "result": "FIX review delivered in jobs/reviews/J2183/REVIEW.md (HOS PR #416 at 45cd5daf, OWB branch gemini/J2183-review at 8574c5ba82, /Users/benjaminoats/_desk/handoff/J2183/): verified all 14 NAS KEEP/REUSE hashes, both VO locks, 17-row timings/intervals, and 13/20 min search cap; retained B S01/loop_tail source (03_pot_jar_leaf_t1 with x=712 refinement), B S07 (01_soil_to_sky_t1), C S05 (03_pot_jar_leaf_t1 [1120,0,608,1080]), and 1080p C S02/S03/S04/S06; rejected B S02 (15_quill_vegetable_t1: two candles with one already dead/smoking at 0.00s and only lit candle exiting left edge before 3.38s) and added B S02 to J2184 (now 5 bounded inputs incl. 720p B S06, C S01+loop_tail, C S07, C S08); specified crop fixes for B S04 ([780,0,608,1080]), B S05 ([760,0,608,1080] or 4.00-7.28s at [680,0,608,1080]), and B S03 ([760,0,608,1080] or 09_injured_air_t1); refused finished recipe approval while B 2/8 and C 4/9 source-QA FAILs, J2179/J2182 checker acceptance, and J2184 fallbacks remain unresolved; kept J2169 blocked at 1/3.",
+      "history": [
+        {
+          "at": "2026-11-05T04:13Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T04:14Z",
+          "by": "codex",
+          "what": "remaining action: Review PR415 crops and exact FAILs; coordinate J2184 missing sources and J2179/J2182 checker before any J2169 release"
+        },
+        {
+          "at": "2026-11-05T04:16Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T04:17Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2183; starting independent mapping review of HOS 006 J2181 PR #415 at b784a69a"
+        },
+        {
+          "at": "2026-11-05T04:22Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected J2181 PR #415 (b784a69a/84fd8773), J2178/J2169/J2180 records, and all native crop stills/sheets"
+        },
+        {
+          "at": "2026-11-05T04:29Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified all 14 KEEP source hashes, 2 VO lock hashes, 17 row intervals/preroll, and inspected native crop sheets across all 17 rows"
+        },
+        {
+          "at": "2026-11-05T04:39Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote jobs/reviews/J2183/{REVIEW.md,VERIFICATION.json,STILLS.json,REPO_CHECKS.txt}, passed HOS check_all.sh (exit 0), pushed HOS PR #416 (45cd5daf) and OWB branch gemini/J2183-review (8574c5ba82), and saved still sheets to /Users/benjaminoats/_desk/handoff/J2183/"
+        },
+        {
+          "at": "2026-11-05T04:39Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: All 4 review steps complete; marking J2183 done and keeping J2169 blocked at 1/3"
+        },
+        {
+          "at": "2026-11-05T04:39Z",
+          "by": "gemini",
+          "what": "done: FIX review delivered in jobs/reviews/J2183/REVIEW.md (HOS PR #416 at 45cd5daf, OWB branch gemini/J2183-review at 8574c5ba82, /Users/benjaminoats/_desk/handoff/J2183/): verified all 14 NAS KEEP/REUSE hashes, both VO locks, 17-row timings/intervals, and 13/20 min search cap; retained B S01/loop_tail source (03_pot_jar_leaf_t1 with x=712 refinement), B S07 (01_soil_to_sky_t1), C S05 (03_pot_jar_leaf_t1 [1120,0,608,1080]), and 1080p C S02/S03/S04/S06; rejected B S02 (15_quill_vegetable_t1: two candles with one already dead/smoking at 0.00s and only lit candle exiting left edge before 3.38s) and added B S02 to J2184 (now 5 bounded inputs incl. 720p B S06, C S01+loop_tail, C S07, C S08); specified crop fixes for B S04 ([780,0,608,1080]), B S05 ([760,0,608,1080] or 4.00-7.28s at [680,0,608,1080]), and B S03 ([760,0,608,1080] or 09_injured_air_t1); refused finished recipe approval while B 2/8 and C 4/9 source-QA FAILs, J2179/J2182 checker acceptance, and J2184 fallbacks remain unresolved; kept J2169 blocked at 1/3."
+        }
+      ],
+      "remaining_action": "Complete: J2183 FIX review delivered",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "review",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-05T04:39Z",
+        "by": "gemini",
+        "note": "All 4 review steps complete; marking J2183 done and keeping J2169 blocked at 1/3"
+      },
+      "taskKeys": [
+        "HOS:006"
+      ],
+      "done_ref": "45cd5daf62be1871e82eceac341e00444ba2ecb9"
+    },
+    {
+      "id": "J2184",
+      "title": "HOS006: decide bounded fallback for four native-resolution source gaps",
+      "needs": "any",
+      "repo": "hos",
+      "body": "One bounded elected-Chief source fallback DECISION arising from J2181 HOS PR415 b784a69a, not a generation task. Recheck chief_relay status; read jobs/reviews/J2181/REVIEW.md and exact source/machine evidence. Original requested repairs have proposals, but complete native portrait mapping exposes four inherited missing eligible source inputs: B S06 16.30-19.46 (3.16s) Priestley-context bright candle in repaired air; C S01 0-2.56 plus1s preceding terminal preroll, green leaf underwater releasing silver bubbles at frame0; C S07 18.48-21.28 (2.80s), jar returned to sun/bubbles resume; C S08 21.28-24.16 (2.88s), sunlight powering green leaf. Current06_collect_blaze_t3,05_bubbles_macro_t1,12_shutters_open_t1,14_leaf_glow_t1 are1280x720: full1920-height portrait minimum2.6667x exceeds2.35x. B S06 also depicts a different gas-collection experiment; do not imply it is Priestley proof. Never relabel/re-encode/upscale sources to hide identity or scale.\nDecide exact legal replacement/framing, without waiving FAILs. Genuinely higher-resolution approved originals may qualify; any new search needs a recorded new source/approach and bounded cumulative scope, not a reset of J2181 closed20min pass (<=13min charged,<=3 candidates/input). If none, propose separately authorising HOS Flow/Veo for these four exact clips, native1920x1080 or1080x1920, <=2.35x finalcrop, real motion at1x, full row bounds and opening preroll, no still push/freeze/slowing/newVO/text. Proposal ceiling four clips, max2 takes/clip and200 existing Flow credits TOTAL, Quality for candle/flame, Fast only where house rules allow. This ceiling is a PROPOSAL for this later decision, not spend authority: read live route prices and balance, adjust takes downward to cap, require existing script/VO approval and current no-overage/ledger guards. Never buy credits or charge card. A Vertex fallback requires separately priced scope and currentGBP5 floor; no implicit Vertex allowance.\nRecord concrete shot/reference/route/cap/acceptance, create immediate named producer and reviewer, and update J2169 remaining action with linked dependencies while retaining1/3 and all holds. Publishing, money and failed gates unchanged. Coordinate independent mapping review (J2181 successor) and J2179/J2182 system chain; no build reopening until every condition satisfied. Keep B0f109926/C5b5d84e5 takes, words, timings, J1004 lawful edits, source provenance, exclusions/S7 planned-only collision, long/live states. No generation or media/NAS/YouTube/Buffer writes in this decision. Link HOS:006. Due7Nov18:00Z, pack target15Nov18:00Z and conditional B18Nov/C21Nov11:30 after longPublic/all approvals.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/415",
+      "film": "",
+      "stage": "",
+      "after": "J2181",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T04:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T04:13Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T04:14Z",
+          "by": "codex",
+          "what": "remaining action: Decide bounded full-resolution replacements for four gaps in PR415; link producer and J2183 review, retain J2169 blocked1/3"
+        }
+      ],
+      "remaining_action": "Decide bounded full-resolution replacements for four gaps in PR415; link producer and J2183 review, retain J2169 blocked1/3",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "chief"
+    },
+    {
+      "id": "J2185",
+      "title": "Prevent queue Git transactions from publishing unrelated branch commits",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2182 reconciliation of J2179 MacBook incident: jobs.py progress --git via studio.git_transaction rebased unreviewed PR512 implementation onto main and pushed HEAD:main (03e570eec,1708dd233,c983b2cb5). Evidence jobs/reviews/J2179/MACBOOK_REPAIR.md on main and jobs/reviews/J2182/REVIEW.md in PR514. GBP0 code-only fix in clean worktree. Reproduce with local temporary Git repos; prevent queue/studio metadata mutations from replaying or pushing any unrelated branch commits, including feature/detached worktrees and diverged main. Use a dedicated clean main-based transaction or fail closed without changing worker branch; preserve intended queue changes and concurrent updates, no force pushes or destructive resets. Add regression proving unrelated commits never reach remote main; verify ordinary clean-main operation. Review shared-core manifest and synchronize applicable files properly. Submit PR with tests and immediate elected-Chief system-review successor. Do not merge own change, modify production states, spend, delete NAS files or publish. Until fixed, queue --git calls only from main without pending implementation commits; implementation records stay in isolated feature branches.",
+      "ref": "J2182",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "macbook",
+      "since": "2026-11-05T04:47Z",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T04:45Z",
+      "result": "PR515 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/515 commit 7ea276c67. Fail-closed clean-main queue/studio metadata transaction; branch/detached/worktree/diverged guards and exact-SHA verified metadata push. 51 tests PASS, compile/core(56)/diff checks PASS. Elected-Chief system review J2186 queued immediately. Both checkouts on main, no merge, spend or production changes.",
+      "history": [
+        {
+          "at": "2026-11-05T04:45Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-05T04:47Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T04:48Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-05T04:51Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-05T04:51Z",
+          "by": "macbook",
+          "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-05T04:51Z",
+          "by": "macbook",
+          "what": "done: PR515 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/515 commit 7ea276c67. Fail-closed clean-main queue/studio metadata transaction; branch/detached/worktree/diverged guards and exact-SHA verified metadata push. 51 tests PASS, compile/core(56)/diff checks PASS. Elected-Chief system review J2186 queued immediately. Both checkouts on main, no merge, spend or production changes."
+        }
+      ],
+      "remaining_action": "Implementation submitted in PR515; elected-Chief review J2186 is ready",
+      "kind": "assembly",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-05T04:51Z",
+        "by": "macbook"
+      }
+    },
+    {
+      "id": "J2186",
+      "title": "System review J2185 metadata Git safety fix PR515",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Immediate elected-Chief system review for J2185: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/515 (commit 7ea276c67). Review scripts/studio.py git_transaction and both with_git callers, local bare-remote safety regressions, race preservation, clean-main compatibility and shared-core scope. Evidence jobs/reviews/J2185/IMPLEMENTATION.md. 51 tests pass plus py_compile/core check/diff check. No production states changed, no spend. Fail-closed design intentionally requires explicit reconciliation after rejected push; never automatically replay unpublished commits. Until merged retain J2185 brief restriction: queue --git only on clean main without implementation commits. Elected Chief owns this system/code review and any merge; macbook has not merged.",
+      "ref": "J2185",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-05T04:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T04:51Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review PR515 regressions and fail-closed metadata transaction; rule KEEP or FIX and merge only if approved",
+      "kind": "chief"
     }
   ],
   "focus": [],
