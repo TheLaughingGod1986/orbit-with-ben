@@ -184912,10 +184912,10 @@
       "stage": "",
       "after": "J2208",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-05T10:26Z",
+      "eta": "2026-11-05T10:46Z",
       "created_by": "claude",
       "created_at": "2026-11-05T09:29Z",
       "result": "",
@@ -184929,12 +184929,25 @@
           "at": "2026-11-05T09:48Z",
           "by": "claude",
           "what": "due now: Ben is waiting on the shared-folder test (5 Nov)"
+        },
+        {
+          "at": "2026-11-05T10:26Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Shared folder test: MacBook worker side (read Mini file via the share under launchd)",
       "kind": "qa",
       "urgent": 2,
-      "due": "2026-11-05T10:08Z"
+      "due": "2026-11-05T10:08Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T10:26Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2210",
