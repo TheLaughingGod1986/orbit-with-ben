@@ -185138,10 +185138,10 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-05T10:51Z",
+      "eta": "2026-11-05T12:51Z",
       "created_by": "codex",
       "created_at": "2026-11-05T10:31Z",
       "result": "",
@@ -185150,11 +185150,24 @@
           "at": "2026-11-05T10:31Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T10:51Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review PR521 failures and choose a materially different Titan A composition scope",
       "due": "2026-11-12T18:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T10:51Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
