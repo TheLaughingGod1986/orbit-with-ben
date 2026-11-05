@@ -372,7 +372,7 @@ def run() -> int:
         log("capacity tick: " + capacity_result["state"])
         push_heartbeat(capacity_result["state"], ["capacity attempt; no automatic completion"])
         return 0
-    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook", "--git"], cwd=OWB)
+    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"], cwd=OWB)
     if r.returncode == 10:
         log("no macbook job waiting")
         push_heartbeat("idle", ["no MacBook job waiting"])
@@ -384,6 +384,11 @@ def run() -> int:
         return 1
     push_heartbeat("working", [], job)
     have = usable(installed())
+    try:  # the same out-of-credit flags the Mini's relay honours (scripts/credit_flags.json)
+        import routing
+        routing.OUT = set(routing.read_flags(path=str(OWB / "scripts" / "credit_flags.json")))
+    except Exception:  # noqa: BLE001
+        pass
     agent, model = pick_agent(job_record(job), have)
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
     prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),

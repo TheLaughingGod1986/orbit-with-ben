@@ -20,6 +20,34 @@ class Reservations(unittest.TestCase):
     def reserve(self, **kw):
         return reservations.reserve(self.data, **dict(self.kw, **kw))
 
+    def test_legacy_laptop_requires_accounted_process_until_canonical_release(self):
+        laptop = job("J9999", status="claimed", by="macbook", since=T.isoformat(),
+                     eta=(T + dt.timedelta(minutes=25)).isoformat())
+        self.data["jobs"].append(laptop)
+        for peers in ([], [host("macbook", at=(T-dt.timedelta(minutes=10)).isoformat())]):
+            with self.assertRaisesRegex(ValueError, "no currently eligible"):
+                self.reserve(hosts=[host(), *peers])
+        lease = dict(job="J9999", host="macbook", worker="codex", account="shared")
+        with self.assertRaisesRegex(ValueError, "no currently eligible"):
+            self.reserve(hosts=[host(), host("macbook")], leases=[lease])
+        # The host's positive exit must also reconcile the canonical old claim.
+        laptop.update(status="open")
+        result = self.reserve(hosts=[host(), host("macbook")], leases=[])
+        self.assertEqual(result["account"], "shared")
+
+    def test_git_retry_rechecks_new_legacy_laptop_claim(self):
+        ev = {k:v for k,v in self.kw.items() if k not in {"token", "host_id", "worker"}}
+        def transaction(apply, message):
+            self.assertIsNone(apply(copy.deepcopy(self.data))[1])
+            self.data["jobs"].append(job("J9999", status="claimed", by="macbook"))
+            return apply(self.data)[:2]
+        with patch("jobs.with_git", side_effect=transaction):
+            value, error = reservations.reserve_with_git(evidence=lambda:ev,
+                token=self.kw["token"], host_id="mini", worker="codex")
+        self.assertIsNone(value)
+        self.assertIn("no currently eligible", error)
+        self.assertNotIn("dispatch_reservation", self.data["jobs"][0])
+
     def test_free_lane_reserves_immediately_without_claim_or_launch(self):
         result = self.reserve()
         self.assertEqual(result["phase"], "reserved")

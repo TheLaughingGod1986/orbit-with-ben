@@ -852,3 +852,35 @@ state tests**, **30 queue tests**, **24 laptop tests** and **12 portable transfe
 tests** passed. The full Rules suite/CI result must be read at the final head;
 earlier local full-suite runs overlapped source edits and correctly triggered
 the relay's code-version restart guard, so those runs are not acceptance.
+
+
+## Review-blocker repair (5 November, J1843)
+
+The free serial relay now performs election, duty reconciliation and canonical
+selection before its capacity preflight. It never launches a lower-priority CPU
+candidate there: extra CPU attempts belong to the busy-serial path. A fresh
+empty occupancy observation permits canonical serial work (including Chief
+reviews); an occupied, missing or uncertain observation does not. An expired
+CPU request cannot suppress serial work when the installation and independent
+host/process observations still prove clear. Invalid/missing registration or
+configuration still fails closed after election/inbox delivery.
+
+The caller lock remains held from serial preflight through publication of the
+legacy execution lease, closing the empty-observation/launch race. It is released
+before worker execution, so a later busy tick can assess independent capacity.
+No wrapper timeout, rejection or successful worker result grants serial fallback.
+
+Capacity planning now rejects every unattributed canonical claim, including
+legacy `by=macbook` claims even after their ETA becomes stale. A fresh registered
+peer lease with an account must account for that claim, or canonical release
+must reconcile it after positive exit evidence. Canonical capacity reservations
+continue to occupy their recorded account. Mini reads approved peer transport
+when provisioned; missing peer evidence cannot make a laptop claim disappear.
+The existing Git push-race test now supplies explicit occupancy for its second
+concurrent claim instead of relying on an owner name as evidence.
+
+New regressions cover empty Chief/serial dispatch, election/inbox delivery under
+uncertain occupancy, stale CPU requests, the serial launch-lock window, legacy
+laptop occupancy/missing and stale peer observations, canonical exit/release,
+and a new laptop claim arriving on a Git retry. All host/account evidence in
+these tests is synthetic. No observed-host acceptance or enablement is claimed.

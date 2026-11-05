@@ -283,11 +283,12 @@ def reconcile_holds(data, at):
         if recheck_backoff(data,parent,by_id,at):
             continue
         condition = (parent.get("hold") or {}).get("condition") or "Required predecessor is complete; verify remaining gates and approvals"
-        task = do_add(data,title="Chief: verify condition for " + parent["id"],needs="any",kind="chief",by="relay",at=at,
+        # Rule H (Ben, 5 Nov 2026): a condition check is a review-lane call, not a Chief call.
+        task = do_add(data,title="Verify condition for " + parent["id"],needs="any",kind="review",by="relay",at=at,
             body="Verify the waiting condition for " + parent["id"] + ": " + condition +
             ". Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. "
             "If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. "
-            "Otherwise keep it blocked and run jobs.py wait " + parent["id"] + " --agent <your elected id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. "
+            "Otherwise keep it blocked and run jobs.py wait " + parent["id"] + " --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. "
             "Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. "
             "If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.")
         task["recheck_of"] = parent["id"]
@@ -1060,7 +1061,7 @@ def main(argv=None) -> int:
                 do_reopen(job, args.agent or "claude", args.note, at)
             elif args.cmd == "wait":
                 if args.recheck and (find(data,args.recheck) or {}).get("recheck_of") != job["id"]:
-                    raise ValueError("--recheck must identify this job's Chief verification task")
+                    raise ValueError("--recheck must identify this job's verification task")
                 set_wait(job, args.agent, at, {"type":args.hold_type,"condition":args.condition,"check_at":args.check_at,"requires":args.requires}, args.action, args.recheck)
             elif args.cmd == "awaits" and args.clear and not args.dropped and job.get("awaits_ben") and (
                     args.ok or job["status"] in ("open", "claimed", "blocked")):

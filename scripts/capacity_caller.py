@@ -7,6 +7,7 @@ filesystem handoff is the sole supported transport; missing access fails closed.
 """
 from __future__ import annotations
 
+import contextlib
 import datetime as dt
 import fcntl
 import subprocess
@@ -25,13 +26,13 @@ import routing
 import workflow_state
 
 
-def production_tick(*, role, owb_root, hos_root=None, environ=None):
+def production_tick(*, role, owb_root, hos_root=None, environ=None, serial_only=False, _serial_lock_held=False):
     """Run capacity transactions in their own reviewed, preprovisioned checkout.
 
     A busy serial relay may call this without touching its Git index. The
     configured checkout is locked for the entire attempt. We never create or
     switch a worktree during dispatch, and never share its index with a worker.
-    No enabled/failed attempt falls through to ordinary serial dispatch.
+    Only a fresh, empty occupancy receipt permits ordinary serial dispatch.
     """
     env = os.environ if environ is None else environ
     if env.get("OWB_CAPACITY_ENABLED") != "1":
@@ -44,19 +45,24 @@ def production_tick(*, role, owb_root, hos_root=None, environ=None):
             raise ValueError("dedicated queue checkout required")
         if (config.get("role") != role or config.get("enabled") is not True
                 or not config.get("approved_by") or not config.get("approval_ref")
-                or not dispatch_capacity.fresh(config, dt.datetime.now(dt.timezone.utc))):
+                or (not serial_only and not dispatch_capacity.fresh(config, dt.datetime.now(dt.timezone.utc)))):
             raise ValueError("fresh rollout approval required")
         # Reuse the bounded supervisor's policy: no indefinite worker run.
         cap = config.get("cap_seconds", 1200)
         if type(cap) is not int or not 1 <= cap <= 1200:
             raise ValueError("production attempt requires a 1–1200 second cap")
-        with (root / "caller.lock").open("a") as lock:
+        lock_context = (contextlib.nullcontext() if serial_only and _serial_lock_held
+                        else (root / "caller.lock").open("a"))
+        with lock_context as lock:
             try:
-                fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                if lock is not None:
+                    fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
             except BlockingIOError:
                 return {"state": "capacity_busy"}
             evidence_tools.reviewed_installation(checkout, config.get("reviewed_head"))
             argv = [sys.executable, str(checkout / "scripts/capacity_caller.py"), role]
+            if serial_only:
+                argv.append("--serial-only")
             if hos_root is not None:
                 argv.append(str(hos_root))
             # Wrapper timeout exceeds the CPU cap to permit canonical Git
@@ -75,8 +81,38 @@ def production_tick(*, role, owb_root, hos_root=None, environ=None):
                 "availability": "unknown", "free_slot_at": None}
 
 
+@contextlib.contextmanager
+def serial_preflight(*, owb_root, hos_root=None, environ=None):
+    """Keep launch exclusion until the relay publishes its legacy lease.
+
+    Releasing the lock immediately after an empty observation would let a busy
+    tick launch between that observation and the serial execution lease.
+    """
+    env = os.environ if environ is None else environ
+    if env.get("OWB_CAPACITY_ENABLED") != "1":
+        yield None
+        return
+    lock = None
+    try:
+        root = pathlib.Path(env["OWB_CAPACITY_ROOT"])
+        # Validate ownership/mode before opening any evidence-directory file.
+        evidence_tools.private_document(root, "dispatch.json")
+        lock = (root / "caller.lock").open("a")
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except (KeyError, OSError, ValueError):
+        if lock is not None:
+            lock.close()
+        yield {"state": "capacity_rejected", "serial_safe": False}
+        return
+    try:
+        yield production_tick(role="mini", owb_root=owb_root, hos_root=hos_root,
+                              environ=env, serial_only=True, _serial_lock_held=True)
+    finally:
+        lock.close()
+
+
 def attempt(*, role, owb_root, hos_root=None, legacy_lease=None, chief=None,
-            laptop_guard=None, environ=None, clock=None):
+            laptop_guard=None, environ=None, clock=None, serial_only=False):
     """Return None only when disabled/no candidate; otherwise consume this tick.
 
     A failed enabled attempt never falls through to a second serial launch.
@@ -91,7 +127,7 @@ def attempt(*, role, owb_root, hos_root=None, legacy_lease=None, chief=None,
         result = _attempt(role=role, owb_root=pathlib.Path(owb_root), hos_root=hos_root,
                         legacy_lease=legacy_lease, chief=chief, laptop_guard=laptop_guard,
                         evidence_root=pathlib.Path(env["OWB_CAPACITY_ROOT"]),
-                        clock=clock or (lambda: dt.datetime.now(dt.timezone.utc)))
+                        clock=clock or (lambda: dt.datetime.now(dt.timezone.utc)), serial_only=serial_only)
         # The relay log intentionally omits paths; retain the complete handoff
         # in the same owner-private directory so the next run can find returns.
         _journal(pathlib.Path(env["OWB_CAPACITY_ROOT"]), result)
@@ -123,16 +159,16 @@ def _journal(root, result):
 
 
 def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
-             evidence_root, clock):
+             evidence_root, clock, serial_only=False):
     import jobs
     config = evidence_tools.private_document(evidence_root, "dispatch.json")
     if (config.get("enabled") is not True or config.get("role") != role
             or not config.get("approved_by") or not config.get("approval_ref")
-            or not dispatch_capacity.fresh(config, clock())):
+            or (not serial_only and not dispatch_capacity.fresh(config, clock()))):
         raise ValueError("fresh explicit rollout approval required")
     reviewed = config.get("reviewed_head")
     head = evidence_tools.reviewed_installation(owb_root, reviewed)
-    if config.get("mode") == "receive":
+    if config.get("mode") == "receive" and not serial_only:
         if role != "mini":
             raise ValueError("only Mini receives returned work for review")
         job = jobs.find(jobs.load(), config["job"])
@@ -153,12 +189,12 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
         return dict(state="capacity_returned_for_review", **received)
     job_id = config.get("job")
     argv = config.get("argv")
-    if not job_id or not isinstance(argv, list) or not argv:
+    if not serial_only and (not job_id or not isinstance(argv, list) or not argv):
         raise ValueError("approved job-bound command required")
     # A private request is scoped to one job and one attempt. A replay retains
     # the token and is stopped by canonical ownership/immutable launch seals.
     token = config.get("token")
-    if not isinstance(token, str) or not token.strip():
+    if not serial_only and (not isinstance(token, str) or not token.strip()):
         raise ValueError("stable request token required")
     initial_host, _ = evidence_tools.collect(evidence_root, at=clock(), installed_head=head)
     if initial_host.get("role") != role:
@@ -170,10 +206,10 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
     bundle = None
     budget = config.get("max_bytes", 0)
     files = config.get("max_files", 0)
-    job = jobs.find(jobs.load(), job_id)
-    if not job:
+    job = jobs.find(jobs.load(), job_id) if not serial_only else None
+    if not serial_only and not job:
         raise ValueError("approved request job missing")
-    if role == "macbook":
+    if role == "macbook" and not serial_only:
         # Source/staging/return roots must already be mounted and readable on
         # this host. We never create a mount or guess a Mini/NAS path.
         if laptop_guard is None or laptop_guard():
@@ -188,7 +224,7 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
         # Recollect identity, resources, account/model/capability probes and
         # board/process leases on EVERY canonical Git retry.
         kwargs = {}
-        if role == "macbook":
+        if role == "macbook" or (evidence_root / "peer.json").exists():
             peer = evidence_tools.private_document(evidence_root, "peer.json")
             if (not dispatch_capacity.fresh(peer, clock())
                     or peer.get("transport_approval_ref") != config.get("transport_approval_ref")
@@ -196,8 +232,9 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
                 raise ValueError("fresh approved peer evidence transport required")
             kwargs = dict(remote_hosts=peer.get("hosts", []),
                           remote_leases=peer.get("leases", []))
-            if len(kwargs["remote_hosts"]) != 1 or kwargs["remote_hosts"][0].get("role") != "mini":
-                raise ValueError("observed Mini occupancy required for laptop overflow")
+            peer_role = "mini" if role == "macbook" else "macbook"
+            if len(kwargs["remote_hosts"]) != 1 or kwargs["remote_hosts"][0].get("role") != peer_role:
+                raise ValueError("observed peer occupancy required")
         observed = evidence_tools.transaction_evidence(
             evidence_root, lease_root=registry.root, owb_root=owb_root,
             hos_root=hos_root, reviewed_head=reviewed,
@@ -212,7 +249,17 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
         return observed
 
     observed = observe()
-    plan = dispatch_capacity.propose(jobs.load(), **{k: observed[k] for k in
+    data = jobs.load()
+    if serial_only:
+        import capacity_reservations
+        clear = (not observed["leases"]
+                 and not any(capacity_reservations.active(j, observed["at"])
+                             for j in data.get("jobs", []))
+                 and not dispatch_capacity.unattributed_claims(
+                     data, observed["hosts"], observed["leases"], observed["at"]))
+        return {"state": "capacity_waiting", "serial_safe": clear,
+                "availability": "unknown", "free_slot_at": None}
+    plan = dispatch_capacity.propose(data, **{k: observed[k] for k in
         ("hosts", "leases", "accounts", "at", "chief", "choose_worker")})
     pick = next((p for p in plan["proposals"] if p["host"] == host_id), None)
     if pick is None:
@@ -276,6 +323,9 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
 
 if __name__ == "__main__":
     import chief_relay
+    serial_only = "--serial-only" in sys.argv
+    if serial_only:
+        sys.argv.remove("--serial-only")
     if len(sys.argv) not in (2, 3) or sys.argv[1] not in {"mini", "macbook"}:
         raise SystemExit(2)
     role = sys.argv[1]
@@ -286,5 +336,6 @@ if __name__ == "__main__":
     result = attempt(role=role, owb_root=pathlib.Path(__file__).resolve().parents[1],
         hos_root=sys.argv[2] if len(sys.argv) == 3 else None,
         legacy_lease=chief_relay.current_execution if role == "mini" else None,
-        chief=lambda: chief_relay.acting(chief_relay.now())[1], laptop_guard=laptop_guard)
+        chief=lambda: chief_relay.acting(chief_relay.now())[1], laptop_guard=laptop_guard,
+        serial_only=serial_only)
     print(json.dumps(result))

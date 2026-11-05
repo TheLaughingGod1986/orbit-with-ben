@@ -32,7 +32,7 @@ class Caller(unittest.TestCase):
                        installed_head="reviewed", reviewed_head="reviewed")
         self.guard = lambda: []
 
-    def call(self, dispatch=None):
+    def call(self, dispatch=None, serial_only=False):
         def document(root, name):
             if name == "dispatch.json":
                 return copy.deepcopy(self.config)
@@ -53,7 +53,8 @@ class Caller(unittest.TestCase):
              patch("chief_relay.worker_capabilities", return_value={}):
             return caller.attempt(role=self.config["role"], owb_root=self.root,
                 laptop_guard=self.guard, chief="claude", clock=lambda:T,
-                environ={"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)})
+                environ={"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)},
+                serial_only=serial_only)
 
     def laptop(self):
         self.config.update(role="macbook", source_root=str(self.root),
@@ -65,6 +66,44 @@ class Caller(unittest.TestCase):
         self.data["jobs"][0]["portable"] = contract
         self.ev["hosts"] = [host(worker="gemini"), host("macbook")]
         self.ev["leases"] = [dict(job="busy-mini", worker="gemini", host="mini", account="other")]
+
+    def test_serial_empty_observation_permits_canonical_dispatch_without_cpu_launch(self):
+        self.data["jobs"][0]["kind"] = "chief"
+        result = self.call(serial_only=True)
+        self.assertTrue(result["serial_safe"])
+        self.assertFalse((self.root / "run.log").exists())
+        self.assertNotIn("dispatch_reservation", self.data["jobs"][0])
+
+    def test_stale_cpu_request_does_not_starve_fresh_empty_serial_dispatch(self):
+        self.config["at"] = (T-dt.timedelta(hours=1)).isoformat()
+        self.config["expiresAt"] = (T-dt.timedelta(minutes=55)).isoformat()
+        self.config.pop("job")
+        self.config.pop("argv")
+        self.config.pop("token")
+        self.assertTrue(self.call(serial_only=True)["serial_safe"])
+        self.assertEqual(self.call()["state"], "capacity_rejected")
+
+    def test_serial_occupied_or_uncertain_observation_never_falls_through(self):
+        for lease in (dict(job="busy", worker="gemini", host="mini", account="other"),
+                      dict(job="unknown", worker="unknown", host="mini", recovery_required=True)):
+            self.ev["leases"] = [lease]
+            self.assertFalse(self.call(serial_only=True)["serial_safe"])
+        self.ev["leases"] = []
+        self.data["jobs"].append(job("J9999", status="claimed", by="macbook"))
+        self.assertFalse(self.call(serial_only=True)["serial_safe"])
+
+    def test_serial_launch_lock_remains_held_until_lease_publication(self):
+        import fcntl
+        cfg = dict(self.config)
+        with patch("capacity_evidence.private_document", return_value=cfg), \
+             patch("capacity_caller.production_tick", return_value={"state":"capacity_waiting", "serial_safe":True}):
+            with caller.serial_preflight(owb_root=self.root,
+                    environ={"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)}):
+                with (self.root / "caller.lock").open("a") as competing:
+                    with self.assertRaises(BlockingIOError):
+                        fcntl.flock(competing, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            with (self.root / "caller.lock").open("a") as competing:
+                fcntl.flock(competing, fcntl.LOCK_EX | fcntl.LOCK_NB)
 
     def test_disabled_bridge_never_reads_private_config_or_mutates_queue(self):
         with patch("capacity_evidence.private_document") as read:

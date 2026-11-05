@@ -114,7 +114,7 @@ CHAINS = {
     "image":    ("Stills, plates and thumbnail art", [("cursor", "gemini-2.5-flash-image"),
                                                       ("codex", "gemini-2.5-flash-image"),
                                                       ("gemini", "gemini-2.5-flash-image")],
-                 "OWB: master frame or NASA plate first, else a Vertex still; HOS: Flow Nano Banana 2, then Vertex. "
+                 "Master frame or NASA plate first, else Flow Nano Banana 2 (OWB too, Ben 5 Nov 2026), then Vertex. "
                  "Text always from the builders, never the image model"),
     "chart":    ("Charts, graphs, overlays, people cards, date call-outs, thumbnail builders",
                  [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI],
@@ -126,8 +126,8 @@ CHAINS = {
                  "decides; checks: 1280x720, under 2 MB, readable at 168 px, nothing under the duration badge"),
     "video":    ("Video generation", [("cursor", "veo-3.1-fast-generate-001"), ("codex", "veo-3.1-fast-generate-001"),
                                       ("gemini", "veo-3.1-fast-generate-001")],
-                 "OWB: Vertex Veo (Quality only for a hero), Omni gemini-omni-flash-preview at global for Orbit only; "
-                 "HOS: Flow Veo 3.1, fallback Vertex Veo"),
+                 "Flow Veo 3.1 first for both channels (Ben, 5 Nov 2026: Flow has lots of credit), then Vertex Veo (Quality "
+                 "only for a hero); Omni gemini-omni-flash-preview at global for Orbit only when a job names it"),
     "assembly": ("Picture assembly, ffmpeg, code and tools", [CURSOR_GROK, CURSOR_AUTO, SOL, GEMINI],
                  "on the Mini; long renders in detached tmux"),
     "qa":       ("Frame review and QA", _CLAUDE_CHAIN,
@@ -213,6 +213,11 @@ def job_chain(job: dict) -> list:
             # HOS picture is minted in Flow on the Ultra credits; Vertex is a separate, priced route (Claude as acting
             # Chief, 14 Oct 2026: J0140 was walked to "Gemini on veo-3.1-fast-generate-001", which reads as Vertex).
             ch = [(a, HOS_FLOW.get(m, m)) for a, m in ch]
+        elif kind in ("video", "image"):
+            # OWB too goes to Flow first (Ben, 5 Nov 2026: "For the image generation block we have Gemini flow lots of
+            # credit"): the AI Ultra credits are already paid for, Vertex bills GBP. Vertex stays behind it as the
+            # fallback, still inside the written spend rules.
+            ch = [(a, HOS_FLOW.get(m, m)) for a, m in ch] + ch
         return ch
     m = job.get("model") or ""
     for k, (_, ch, _) in CHAINS.items():

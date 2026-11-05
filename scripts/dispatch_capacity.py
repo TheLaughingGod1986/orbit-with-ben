@@ -153,6 +153,35 @@ def verify_inputs(contract, root):
             raise ValueError("input hash mismatch: " + str(relative))
 
 
+def unattributed_claims(data, hosts, leases, at):
+    """A queue owner is not process/account proof, including legacy laptops.
+
+    Keep even stalled claims occupied until canonical release or fresh,
+    identity-bound process evidence accounts for them. A timer proves no exit.
+    Canonical reservations carry their own durable account occupancy.
+    """
+    unknown = []
+    for row in data.get("jobs", []):
+        if row.get("status") != "claimed":
+            continue
+        reservation = row.get("dispatch_reservation") or {}
+        if (reservation.get("phase") == "claimed" and reservation.get("account")
+                and reservation.get("host")):
+            continue
+        matched = False
+        for lease in leases:
+            if lease.get("job") != row["id"] or not lease.get("account"):
+                continue
+            peer = next((h for h in hosts if h.get("host") == lease.get("host")), {})
+            if (fresh(peer, at) and peer.get("registered_id") == peer.get("host")
+                    and (row.get("by") != "macbook" or peer.get("role") == "macbook")):
+                matched = True
+                break
+        if not matched:
+            unknown.append(row["id"])
+    return unknown
+
+
 def propose(data, hosts, leases, accounts, at, chief, choose_worker):
     """Deadline-first shadow batch, using the existing workflow gates.
 
@@ -161,6 +190,11 @@ def propose(data, hosts, leases, accounts, at, chief, choose_worker):
     tentative pick occupies job, stage, worker, account and host in this batch.
     This is a proposal, never a queue claim or promise of a free slot.
     """
+    if unattributed_claims(data, hosts, leases, at):
+        return {"mode": "shadow", "proposals": [],
+                "host_rejections": {h.get("host", "unknown"): "canonical claim occupancy unattributed"
+                                    for h in hosts},
+                "free_slot_at": None, "availability": "unknown"}
     rows = data.get("jobs", [])
     by_id = {j["id"]: j for j in rows}
     due = workflow.deadlines(rows)

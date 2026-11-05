@@ -177,7 +177,9 @@ def evidence():
             if time.monotonic() > until:
                 raise RuntimeError("consume race barrier timeout")
             time.sleep(.01)
-    return dict(hosts=[host("mini", worker="codex", role="mini")], leases=[],
+    return dict(hosts=[host("mini", worker="codex", role="mini"),
+                            host("peer", role="mini", workers={})],
+                leases=[dict(job="J9999", worker="gemini", host="peer", account="other")],
                 accounts={"shared": proof(ready=True, limit=1)}, at=T,
                 chief="codex", choose_worker=choose, installed_head="reviewed",
                 reviewed_head="reviewed", stage_claims=claims)
