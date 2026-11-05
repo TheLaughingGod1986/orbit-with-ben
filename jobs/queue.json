@@ -187203,10 +187203,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-05T18:16Z",
+      "eta": "2026-11-05T20:16Z",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
       "result": "",
@@ -187220,11 +187220,24 @@
           "at": "2026-11-05T17:37Z",
           "by": "claude",
           "what": "brief: fill next_hos (per-channel WIP, PR #541)"
+        },
+        {
+          "at": "2026-11-05T18:16Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS longs after 3 Dec: lock topics for Thu 10 Dec and Thu 17 Dec (Darwin & Wallace is scripted) and queue their scripts",
       "kind": "script",
-      "urgent": 14
+      "urgent": 14,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T18:16Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2232",

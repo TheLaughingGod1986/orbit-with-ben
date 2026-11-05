@@ -86,7 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2228 | mini | open | – | – | studio · AR1 v06 (2024 YR4 Moon) Short: Ben OK'd 5 Nov 16:32. Upload private and schedule Fri 27 Nov 11:30 London |  |
 | J2229 | mini | open | – | – | assembly · AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14 |  |
 | J2230 | mini | open | – | – | assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
-| J2231 | any | open | – | – | script · HOS longs after 3 Dec: lock topics for Thu 10 Dec and Thu 17 Dec (Darwin & Wallace is scripted) and queue their scripts |  |
+| J2231 | any | claimed | macbook | 2026-11-05T20:16Z | script · HOS longs after 3 Dec: lock topics for Thu 10 Dec and Thu 17 Dec (Darwin & Wallace is scripted) and queue their scripts |  |
 | J2233 | mini | open | – | – | for codex · review · Review multi-channel plan: code and phases (Codex) |  |
 | J2234 | gemini | open | – | – | review · Review multi-channel plan: risk and cut-over (Gemini) |  |
 | J2235 | mini | open | – | – | review · Cleanup audit: orbit-with-ben engine and tools (dead code, duplicates, bugs) |  |
