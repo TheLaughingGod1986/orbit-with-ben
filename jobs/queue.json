@@ -184942,10 +184942,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-05T10:15Z",
+      "eta": "2026-11-05T12:15Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T10:11Z",
       "result": "",
@@ -184954,6 +184954,11 @@
           "at": "2026-11-05T10:11Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T10:15Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write SHORTS_PICTURE_PLAN_v03.json and part-05_plates_v04.json (£0: Option A1 S01 cut, robin/pigeon/gull mapping, banner cleanup, code_graphics_v01 paths) and open HOS PR",
@@ -184961,7 +184966,15 @@
       "kind": "video",
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T10:15Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
