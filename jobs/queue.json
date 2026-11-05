@@ -183413,13 +183413,13 @@
       "stage": "",
       "after": "J2190",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T06:46Z",
-      "eta": "2026-11-05T08:46Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T06:32Z",
-      "result": "",
+      "result": "FIX/REJECT production scope; submitted Vertex route closed, zero takes/GBP0. PR422 records live GBP69.48, 17 canonical rows and 19 tests plus all HOS checks PASS. Missing exact GBP SKU, global charge bound and executable atomic locked caller. Desk reported; no retry/generation jobs; J2169 remains blocked1/3.",
       "history": [
         {
           "at": "2026-11-05T06:32Z",
@@ -183450,6 +183450,11 @@
           "at": "2026-11-05T06:50Z",
           "by": "codex",
           "what": "step 3 of 3 done: HOS PR422 and desk report delivered; 19 preflight tests and all HOS checks PASS. Zero takes/GBP0; J2169 blocked1/3 retained."
+        },
+        {
+          "at": "2026-11-05T06:50Z",
+          "by": "codex",
+          "what": "done: FIX/REJECT production scope; submitted Vertex route closed, zero takes/GBP0. PR422 records live GBP69.48, 17 canonical rows and 19 tests plus all HOS checks PASS. Missing exact GBP SKU, global charge bound and executable atomic locked caller. Desk reported; no retry/generation jobs; J2169 remains blocked1/3."
         }
       ],
       "remaining_action": "Decision delivered: submitted Vertex route closed; new evidence required for any reopening",
@@ -183464,7 +183469,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/422"
     }
   ],
   "focus": [],
