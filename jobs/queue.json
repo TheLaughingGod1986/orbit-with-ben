@@ -176057,13 +176057,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-04T17:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T17:22Z",
-      "result": "parked for Chief: review and merge PR488 head 0a655e1d52. Worker implementation complete; 667 scripts tests OK (8 skipped), 42 other tests pass; core/rules checks pass. GitHub checks not reported yet. No worker merge authority.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T17:22Z",
@@ -176109,18 +176109,16 @@
           "at": "2026-11-04T19:54Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-05T08:58Z",
+          "by": "chief",
+          "what": "reopened: PR488 squash-merged 96a02fa3d5; closing out"
         }
       ],
       "remaining_action": "Chief reviews PR488 head 0a655e1d52 and merges after required checks",
       "kind": "assembly",
       "urgent": 20,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-04T17:49Z",
-        "by": "codex",
-        "note": "Worker implementation and PR complete: 667 script tests OK (8 skipped), 42 additional tests pass, core/rules/diff checks"
-      },
       "escalated_at": "2026-11-04T19:54Z"
     },
     {
