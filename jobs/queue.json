@@ -182607,13 +182607,13 @@
       "stage": "",
       "after": "J2181",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T04:16Z",
-      "eta": "2026-11-05T06:16Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T04:13Z",
-      "result": "",
+      "result": "FIX review delivered in jobs/reviews/J2183/REVIEW.md (HOS PR #416 at 45cd5daf, OWB branch gemini/J2183-review at 8574c5ba82, /Users/benjaminoats/_desk/handoff/J2183/): verified all 14 NAS KEEP/REUSE hashes, both VO locks, 17-row timings/intervals, and 13/20 min search cap; retained B S01/loop_tail source (03_pot_jar_leaf_t1 with x=712 refinement), B S07 (01_soil_to_sky_t1), C S05 (03_pot_jar_leaf_t1 [1120,0,608,1080]), and 1080p C S02/S03/S04/S06; rejected B S02 (15_quill_vegetable_t1: two candles with one already dead/smoking at 0.00s and only lit candle exiting left edge before 3.38s) and added B S02 to J2184 (now 5 bounded inputs incl. 720p B S06, C S01+loop_tail, C S07, C S08); specified crop fixes for B S04 ([780,0,608,1080]), B S05 ([760,0,608,1080] or 4.00-7.28s at [680,0,608,1080]), and B S03 ([760,0,608,1080] or 09_injured_air_t1); refused finished recipe approval while B 2/8 and C 4/9 source-QA FAILs, J2179/J2182 checker acceptance, and J2184 fallbacks remain unresolved; kept J2169 blocked at 1/3.",
       "history": [
         {
           "at": "2026-11-05T04:13Z",
@@ -182654,6 +182654,11 @@
           "at": "2026-11-05T04:39Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 review steps complete; marking J2183 done and keeping J2169 blocked at 1/3"
+        },
+        {
+          "at": "2026-11-05T04:39Z",
+          "by": "gemini",
+          "what": "done: FIX review delivered in jobs/reviews/J2183/REVIEW.md (HOS PR #416 at 45cd5daf, OWB branch gemini/J2183-review at 8574c5ba82, /Users/benjaminoats/_desk/handoff/J2183/): verified all 14 NAS KEEP/REUSE hashes, both VO locks, 17-row timings/intervals, and 13/20 min search cap; retained B S01/loop_tail source (03_pot_jar_leaf_t1 with x=712 refinement), B S07 (01_soil_to_sky_t1), C S05 (03_pot_jar_leaf_t1 [1120,0,608,1080]), and 1080p C S02/S03/S04/S06; rejected B S02 (15_quill_vegetable_t1: two candles with one already dead/smoking at 0.00s and only lit candle exiting left edge before 3.38s) and added B S02 to J2184 (now 5 bounded inputs incl. 720p B S06, C S01+loop_tail, C S07, C S08); specified crop fixes for B S04 ([780,0,608,1080]), B S05 ([760,0,608,1080] or 4.00-7.28s at [680,0,608,1080]), and B S03 ([760,0,608,1080] or 09_injured_air_t1); refused finished recipe approval while B 2/8 and C 4/9 source-QA FAILs, J2179/J2182 checker acceptance, and J2184 fallbacks remain unresolved; kept J2169 blocked at 1/3."
         }
       ],
       "remaining_action": "Complete: J2183 FIX review delivered",
@@ -182668,7 +182673,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "45cd5daf62be1871e82eceac341e00444ba2ecb9"
     },
     {
       "id": "J2184",
