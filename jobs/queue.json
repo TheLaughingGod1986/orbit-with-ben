@@ -80662,9 +80662,9 @@
       "stage": "",
       "after": "J1032",
       "eta_min": 600,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-26T11:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-25T06:33Z",
@@ -81809,6 +81809,11 @@
           "at": "2026-11-04T11:29Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-05T11:30:00Z"
+        },
+        {
+          "at": "2026-11-05T00:12Z",
+          "by": "claude",
+          "what": "hold released under AGENTS.md 'Ben's final watch is the watch-and-listen check' (Ben, 4 Nov 2026): a job is never held only because its reviewer can't watch or listen. Do every tool-provable check (loudness, levels, ASR incl. the S2 bed speech check, caption timing, hashes, decode, frame-0 stills), record them, park for the Chief's ruling on that evidence; the heard/watched step is Ben's final watch."
         }
       ],
       "kind": "video",
@@ -81836,18 +81841,6 @@
       "review_ref": "dc4b9da01",
       "review_by": "codex",
       "review_verdict": "FIX",
-      "remaining_action": "Clear S2 instrumental bed and local listening, then finish v07 repairs, gates and replacement approvals",
-      "hold": {
-        "type": "capability",
-        "condition": "J2010: unchanged audio capability blocker remains. Preserve J2005 evidence, J1100 bed clearance requirement, all v07/caption/gate work, J1032 PASS, accepted pickups and S6 audio, historical6/6, Ben S2/S5/S6 approvals and scheduled-v01 fallbacks. No new listening attempt occurred. Recheck only on demonstrated audio_input or new J2011 evidence; daily fallback check, not hourly unchanged audition retries.",
-        "check_at": "2026-11-05T11:30:00Z",
-        "requires": [
-          "audio_input"
-        ],
-        "last_recheck": "J2005",
-        "checked_at": "2026-11-04T09:51:39+00:00",
-        "checked_by": "codex"
-      },
       "preparation_review": {
         "by": "codex",
         "verdict": "PASS",
@@ -99814,9 +99807,9 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-31T20:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
@@ -100971,9 +100964,13 @@
           "at": "2026-11-03T21:44Z",
           "by": "relay",
           "what": "condition verification queued: J1899"
+        },
+        {
+          "at": "2026-11-05T00:12Z",
+          "by": "claude",
+          "what": "hold released under AGENTS.md 'Ben's final watch is the watch-and-listen check' (Ben, 4 Nov 2026): a job is never held only because its reviewer can't watch or listen. Do every tool-provable check (loudness, levels, ASR incl. the S2 bed speech check, caption timing, hashes, decode, frame-0 stills), record them, park for the Chief's ruling on that evidence; the heard/watched step is Ben's final watch."
         }
       ],
-      "remaining_action": "Obtain local audio-capable listening and cleared instrumental S2 bed before v07 repairs",
       "due": "2026-11-01T20:00:00Z",
       "kind": "video",
       "rerouted_from": {
@@ -100996,18 +100993,6 @@
         "at": "2026-10-31T20:58Z",
         "by": "codex",
         "note": "Dual local ASR complete: small.en words no_speech_prob 0.766, so revised joint speech flag not met. Named bed hashes ide"
-      },
-      "hold": {
-        "type": "capability",
-        "condition": "J1890 verified: S2 instrumental-bed clearance and actual local opening/middle/end listening remain unproven. Inspected session tools: no demonstrated audio perception; shell, ASR and still images cannot satisfy listening. Bed 13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1 and three audition hashes match 3e26b379b; latest local evidence remains 31 Oct. Excluded bed remains excluded pending clearance. Disk 31.486 GiB satisfies h43 restart >=10 GiB; recheck at restart, park below 6 GiB. Preserve 2/3, OWB:027/028, accepted pickups, continuous S2 phrase, S6 audio, h43-LOOP, deadlines and scheduled-v01 fallback. No source-audio API egress or publishing.",
-        "check_at": "2026-11-03T22:44:53+00:00",
-        "requires": [
-          "audio_input"
-        ],
-        "last_recheck": "J1890",
-        "checked_at": "2026-11-03T20:45:54+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1899"
       },
       "required_capabilities": [
         "audio_input"
@@ -133492,9 +133477,9 @@
       "stage": "",
       "after": "J2016",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-04T10:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-01T07:24Z",
@@ -134149,9 +134134,13 @@
           "at": "2026-11-04T11:29Z",
           "by": "codex",
           "what": "J2010 correction scope queued as J2016; completed2/3 preserved; media capability gate retained"
+        },
+        {
+          "at": "2026-11-05T00:12Z",
+          "by": "claude",
+          "what": "hold released under AGENTS.md 'Ben's final watch is the watch-and-listen check' (Ben, 4 Nov 2026): a job is never held only because its reviewer can't watch or listen. Do every tool-provable check (loudness, levels, ASR incl. the S2 bed speech check, caption timing, hashes, decode, frame-0 stills), record them, park for the Chief's ruling on that evidence; the heard/watched step is Ben's final watch."
         }
       ],
-      "remaining_action": "After J2016 technical corrections, verified audio/motion worker reviews full cuts; retain 2/3 and J1356 holds",
       "kind": "assembly",
       "taskKeys": [
         "OWB:030"
@@ -134179,15 +134168,6 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "hold": {
-        "type": "capability",
-        "condition": "J2010 scoped technical corrections in J2016; then require demonstrated audio_input and moving_video_input for full-cut review. Original five FAILs remain until corrected; no media PASS or Ben-watch release.",
-        "check_at": "2026-11-05T11:30:00Z",
-        "requires": [
-          "audio_input",
-          "moving_video_input"
-        ]
-      },
       "required_capabilities": [
         "audio_input",
         "moving_video_input"
