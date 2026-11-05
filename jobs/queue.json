@@ -1,5 +1,5 @@
 {
-  "next_id": 2202,
+  "next_id": 2203,
   "jobs": [
     {
       "id": "J0001",
@@ -184509,6 +184509,35 @@
         }
       ],
       "remaining_action": "Inventory native≥1080 plates for B/C FAIL rows; records PR or exact missing list; £0",
+      "kind": "assembly"
+    },
+    {
+      "id": "J2202",
+      "title": "URG-HOS-1: monthly Studio Reach window capture + studio_ctr archive",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief h47 APPROVED URG-HOS-1 (no spend).\n\n1) On each 1st-of-month morning Studio read, archive an immutable copy of studio_ctr.json as 05_Analytics/hos/studio_ctr_YYYY-MM-01.json.\n2) Extend the Studio Reach reader to scrape the closed calendar month date range (YYYY-MM-01..end) for Longs impressions + impressionsCtr and Shorts stayedToWatch into 05_Analytics/hos/studio_reach_monthly_YYYY-MM.json.\n3) Catch-up: capture 2026-10-01..10-31 Studio window now (and November-to-date if cheap) while implementing.\n4) Records-only PRs; no YouTube writes. Due before 2026-12-01T09:00Z.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T09:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:22Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Implement monthly Studio Reach capture + 1st-of-month studio_ctr archive; £0",
+      "due": "2026-12-01T09:00:00Z",
       "kind": "assembly"
     }
   ],
