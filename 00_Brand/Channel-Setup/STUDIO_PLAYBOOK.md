@@ -112,6 +112,33 @@ No Kling, Seedance or ElevenLabs Image & Video.
 - **Frame sizes** (`YOUTUBE_FRAME_SIZES.md`): long 1920×1080 MP4; Short 1080×1920; long thumbnail file 1280×720.
 - **Picture QA (Ben, 8 Oct):** `scripts/picture_qa.py` must PASS before Claude's review. It catches computer models, diagrams and labelled images, soft upscales, reused pictures and polish_gate's checks, each at its film time (m:ss); Claude looks at every WARN full size. Rules: AGENTS.md lesson 7.
 
+### Picture QA terminal-loop contract (J2178 scope, proposed 5 Nov 2026)
+
+This implementation proposal requires the separate elected-Chief system review J2180 before production use. Evidence: HOS PR413 at `e3410b07`, J2169 body repeats and the prescribed one-second return in BUILD_RULE_v02. It does not approve that recipe or reopen its render job.
+
+`picture_qa.py --terminal-loop contract.json` opts into a single prescribed return. Without the option, existing long and Short behavior is unchanged. This is not a general reuse override: in terminal-loop mode `--reviewed-ok` cannot waive reuse or a terminal-contract failure. Legacy review behavior without the option remains unchanged. Every row remains in the report. Body repeats, within-run replay, picture-kind, upscale and pixel checks still apply.
+
+The contract is an object with exactly these fields (all paths refer to actual readable files; each evidence object is `{ "path": "/absolute/path", "sha256": "<actual hash>" }`):
+
+```json
+{
+  "version": 1, "format": "short", "cut": 7, "duration": 24.2,
+  "last_vo_word": 23.2,
+  "prescription": {"path": "/path/to/approved_build_rule.md", "sha256": "..."},
+  "words": {"path": "/path/to/aligned_words.json", "sha256": "..."},
+  "vo": {"path": "/path/to/locked_vo.mp3", "sha256": "..."},
+  "source": {"path": "/path/to/actual_opening.mp4", "sha256": "..."},
+  "source_in": 0.0, "source_out": 1.0,
+  "framing": {"crop": [656, 0, 608, 1080], "output": [1080, 1920]}
+}
+```
+
+The example is a schema illustration, not an approved HOS006 crop. `cut` is the zero-based final index; only that row has `role: "prescribed_terminal_loop"`. Renaming a row does not qualify it. Multiple/nonterminal roles, unexpected/missing declaration fields, nonfinite numbers and missing/hash-mismatched evidence fail closed. The complete contiguous timeline must start at zero and last 22–27 seconds. The return is positive, at most one second, and starts at or after the recorded final VO word; it contains no spoken line. The word file is `{ "vo_sha256": "...", "words": [{ "end": 23.2 }] }`, with all aligned word ends in order; its final end must equal `last_vo_word`. The source hashes and interval are checked against actual bytes and ffprobe duration, with source endpoint frames decoded. The prescription is a retained reviewed build instruction, not an agent's boolean claim of approval; the reviewer still checks its authority and the alignment's accuracy.
+
+Opening and tail must reference the same actual video source and have identical explicit `framing`, containing only `offset`, `crop: [x,y,width,height]`, and `output: [width,height]`. Both offsets equal `source_in`; `source_out - source_in` equals the tail duration. Crop bounds must fit the actual source and output is 9:16. Other transforms/speed changes need a separately reviewed contract; do not disguise footage with path aliases, copies or re-encodes. In opt-in checks, path aliases and byte-identical copies share a reuse identity.
+
+Source-only checks report **PREFLIGHT** (exit 2) if otherwise clean, preserving any body FAIL and explicitly listing pending rendered/pixel and perceptual checks. They never claim rendered-loop PASS. With the final video, the checker verifies dimensions/duration and compares actual opening/tail samples to the cropped source at the start and last source-frame time of the return (96×170 luma, mean absolute error at most 8). The same source interval is intentionally replayed; this does **not** assert the final frame equals frame zero or that motion is seamless. All rendered pixel checks still run; moving/phone and audio review remains required under the studio's current review/UAT rules. A sampled match, metadata or generated output is not KEEP. Rendered overlays that prevent this conservative correspondence check need a separately reviewed approach, not a waiver.
+
 ### Missing footage fallback (Ben, 3 Nov 2026)
 
 <!-- SYNC: AGENTS.md#Missing footage fallback -->
