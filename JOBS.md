@@ -80,7 +80,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2194 | mini | open | – | – | 010 picture · for gemini · review · `gemini-argon` · HOS 010: decide exact missing-plate production scope for J2172 | J2172 |
 | J2195 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J2197 | mini | open | – | – | chief · Chief: J2038 follow-on: capacity probe producer + ENV flip + 2h watch |  |
-| J2198 | any | claimed | claude | 2026-11-05T11:50Z | 032 picture · review · 032 J2089: review corrected fire stills and regenerated process pixels | 347c55feeb |
 | J2199 | mini | open | – | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
 | J2200 | mini | open | – | – | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
 | J2201 | mini | open | – | – | 006 edit · assembly · HOS 006: GBP0 native1080 existing-media inventory for Short B/C gaps |  |
@@ -95,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2198 done: 032 J2089: review corrected fire stills and regenerated process pixels (KEEP all 7 (jobs/reviews/J2198/REVIEW.md): 5 unchanged code (renderer-only hash change), 2 fire fixes verified. J2089 may render r39/r40 under J2198.)
 - J2196 done: Review J2176: 032 J2144 FIX: Titan hero crop and clear lander typography (jobs/reviews/J2196/REVIEW.md: A from one real Cassini frame, in order PIA14602 > PIA21890 > PIA14922 (Titan crop), ≤2.35× upscale; fallback smaller hero ≥45% height. B unchanged; C as ruled.)
 - J2192 done: 032 J2089: review seven new process overlay stills (done)
 - J2191 done: HOS006: rule on guarded six-shot Vertex caller and explicit spend cap (FIX/REJECT production scope; submitted Vertex route closed, zero takes/GBP0. PR422 records live GBP69.48, 17 canonical rows and 19 tests plus all HOS checks PASS. Missing exact GBP SKU, global charge bound and executable atomic locked caller. Desk reported; no retry/generation jobs; J2169 remains blocked1/3.)
@@ -104,4 +104,3 @@ Recently finished:
 - J2187 done: HOS006: verify native Flow route and prepare five script-correct fallback shots (Preparation delivered: HOS PR418 commit8518bbad.17 canonical rows/five Quality briefs, fresh15390 balance, source+VO hashes, script approvals. Three bounded checks refuse unverified native1080 Flow route;500-credit scope exceeds unchanged200 cap. Zero spend/media/render/publish; J2169 blocked1/3. J2188 then J2189 next.)
 - J2186 done: System review J2185 metadata Git safety fix PR515 (PASS: PR515 squash-merged 47776f6d30 (exact head 7ea276c67). Metadata git_transaction fail-closed on clean main only; prevents publishing worker-branch commits. CI green. £0. Note: Mini primary checkout has untracked locals so queue --git must use a clean main worktree/clone.)
 - J2185 done: Prevent queue Git transactions from publishing unrelated branch commits (PR515 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/515 commit 7ea276c67. Fail-closed clean-main queue/studio metadata transaction; branch/detached/worktree/diverged guards and exact-SHA verified metadata push. 51 tests PASS, compile/core(56)/diff checks PASS. Elected-Chief system review J2186 queued immediately. Both checkouts on main, no merge, spend or production changes.)
-- J2184 done: HOS006: decide bounded fallback for four native-resolution source gaps (Decision delivered HOS PR417 a587a468: five exact fallback inputs, corrected J2183 script/timing and C S07 sunlight meaning; no generation authority while native1080 unverified and five-shot minimum230 exceeds proposed200. Live Flow15390, Fast10/Quality100 recorded. J2187 Codex no-spend route/recipe preparation, J2188 Gemini review, J2189 elected-Chief executable scope queued. J2182 accepted checker recorded; J2169 remains blocked1/3 with all holds. HOS checks/diff PASS; desk reported; no media/spend/publishing changes.)

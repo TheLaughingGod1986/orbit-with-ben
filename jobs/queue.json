@@ -178643,6 +178643,11 @@
           "at": "2026-11-05T09:07Z",
           "by": "codex",
           "what": "released: Clean checkpoint 347c55feeb in PR517; original 1/4 retained. J2198 reviews 7 current stills: two J2192 fire fixes and 5 changed-preview hashes. Five MOVs decoded/hashed, 1920x1080 ARGB/108 frames; HOLD before use. tmux J2089-process-v02 finished exit0; logs /Users/benjaminoats/_desk/logs/J2089-process-v02.log and .done. Worktree /private/tmp/codex-J2089-run-1105 clean; no active background job. Existing 31 renders preserved. Remaining real-body graphics/licensed harvest/composites exceed run; frame0, PIA07232, APL and J2177 holds remain. GBP0; no publish/PASS/merge."
+        },
+        {
+          "at": "2026-11-05T09:52Z",
+          "by": "claude",
+          "what": "review J2198 KEEP: all 7 process stills keep (5 code-identical to J2192, 2 fire fixes applied); render r39/r40 under --review-ref J2198; use the five v02 MOVs. Other holds unchanged."
         }
       ],
       "remaining_action": "J2198 reviews corrected fire stills and changed process pixels; finish licensed harvest and real-body/composite work",
@@ -184484,13 +184489,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-05T09:50Z",
-      "eta": "2026-11-05T11:50Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T09:06Z",
-      "result": "",
+      "result": "KEEP all 7 (jobs/reviews/J2198/REVIEW.md): 5 unchanged code (renderer-only hash change), 2 fire fixes verified. J2089 may render r39/r40 under J2198.",
       "history": [
         {
           "at": "2026-11-05T09:06Z",
@@ -184501,6 +184506,11 @@
           "at": "2026-11-05T09:50Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T09:52Z",
+          "by": "claude",
+          "what": "done: KEEP all 7 (jobs/reviews/J2198/REVIEW.md): 5 unchanged code (renderer-only hash change), 2 fire fixes verified. J2089 may render r39/r40 under J2198."
         }
       ],
       "remaining_action": "Review seven current process stills and release exact render permissions or fixes",
