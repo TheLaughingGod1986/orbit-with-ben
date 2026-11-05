@@ -111401,13 +111401,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-05T00:37Z",
-      "eta": "2026-11-05T00:57Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-29T14:17Z",
-      "result": "Waiting for: J1208 console follow-up fab32821a8 / PR436 proves project-account linkage and GBP69.48 monthly Available. STOP: exact requested Veo3.1 Fast us-central1 1080p silent GBP-per-second SKU is not verified (historical export labels Veo3.0/count), monthly entitlement terms and credential-specific served-model evidence remain incomplete, and all-project reports explicitly permit >24h billing lag; no authoritative pending-cost upper bound/cutoff. Resume only on new matching pricing/service/entitlement and bounded pending-charge evidence, then Chief-reviewed live guarded caller under Vertex desk lock. Elapsed time or zero displayed cost is not approval. At final 5 Nov 12:00Z checkpoint, if unmet close source branch unsuccessful and retain original scheduled copies. No generation, reservation, publishing or Ben-state changes.",
+      "result": "Waiting for: J2167 immediate exact-source review required. PR507/bb22c548ea delivers native silent S5/S6 take2, exact opening1.15-3.85s/preroll0-1.15s, hashes, phone copies and source QA PASS with WARNs. This session inspected text/stills only; no actual native-video/phone/preroll perception tool demonstrated. Need a reviewer with demonstrated moving_video_input and exact-source decision before J1199 assembly; no KEEP, no further Flow takes (40 credits total), scheduled-copy fallback preserved.",
       "history": [
         {
           "at": "2026-10-29T14:17Z",
@@ -111618,9 +111618,19 @@
           "at": "2026-11-05T00:49Z",
           "by": "codex",
           "what": "step 2 of 3 done: Generation/provenance complete in PR507 bb22c548ea. Both take2 source QA PASS with WARNs; native video/phone/preroll review remains incomplete. Four takes40 Flow credits, final15390; no Vertex, publishing or media approval."
+        },
+        {
+          "at": "2026-11-05T00:49Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J2167 immediate exact-source review required. PR507/bb22c548ea delivers native silent S5/S6 take2, exact opening1.15-3.85s/preroll0-1.15s, hashes, phone copies and source QA PASS with WARNs. This session inspected text/stills only; no actual native-video/phone/preroll perception tool demonstrated. Need a reviewer with demonstrated moving_video_input and exact-source decision before J1199 assembly; no KEEP, no further Flow takes (40 credits total), scheduled-copy fallback preserved."
+        },
+        {
+          "at": "2026-11-05T00:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-05T12:00:00Z"
         }
       ],
-      "remaining_action": "Native-video source review and exact-source acceptance before J1199 assembly",
+      "remaining_action": "J2167: native-video source review and exact-source acceptance",
       "due": "2026-10-30T18:00:00Z",
       "kind": "video",
       "superseded_holds": [
@@ -111644,7 +111654,18 @@
         "OWB:030"
       ],
       "model": "flow-veo-3.1",
-      "urgent": 1
+      "urgent": 1,
+      "hold": {
+        "type": "capability",
+        "condition": "J2167 immediate exact-source review required. PR507/bb22c548ea delivers native silent S5/S6 take2, exact opening1.15-3.85s/preroll0-1.15s, hashes, phone copies and source QA PASS with WARNs. This session inspected text/stills only; no actual native-video/phone/preroll perception tool demonstrated. Need a reviewer with demonstrated moving_video_input and exact-source decision before J1199 assembly; no KEEP, no further Flow takes (40 credits total), scheduled-copy fallback preserved.",
+        "check_at": "2026-11-05T12:00:00Z",
+        "requires": [
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "moving_video_input"
+      ]
     },
     {
       "id": "J1209",
