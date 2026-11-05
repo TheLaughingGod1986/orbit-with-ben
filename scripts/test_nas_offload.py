@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Tests for scripts/nas_offload.py on throwaway folders: old render scratch reaches the NAS with every sha256
-checked before the Mini copy goes, nothing on the NAS is ever overwritten or deleted, and nothing moves when the
-share is missing (Ben, 28 Oct 2026: "The external storage we can use our NAS for now")."""
+checked before the Mini copy goes, nothing on the NAS is ever deleted or a verified copy written into, and nothing
+moves when the share is missing (Ben, 28 Oct 2026: "The external storage we can use our NAS for now"). Copies wait
+for the NAS's 01:00-06:00 window and a failed copy is retried in place, not copied again (Ben, 4 Nov 2026)."""
+import datetime
+import fcntl
 import os
 import pathlib
 import sys
@@ -38,9 +41,13 @@ class Offload(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
-    def run_offload(self, apply=True, **kw):
+    def run_offload(self, apply=True, hour=2, **kw):
+        clock = lambda: datetime.datetime(2026, 11, 5, hour, 30)  # noqa: E731 (default: inside the NAS window)
         return no.offload(apply, root=self.scratch, nas=self.nas, check_mount=False, free=lambda: self.free_mb,
-                          min_mb=1, **kw)
+                          min_mb=1, clock=clock, lock=pathlib.Path(self.tmp.name) / "offload.lock", **kw)
+
+    def day_dir(self):
+        return self.nas / no.NAS_ARCHIVE / "mini-tmp-scratch" / datetime.datetime.now(datetime.timezone.utc).date().isoformat()
 
     def test_old_scratch_moves_with_checked_manifest_and_marker(self):
         old = self.scratch / "owb_029_r21_v03b"
@@ -156,6 +163,53 @@ class Offload(unittest.TestCase):
         moved.mkdir()
         (moved / no.MARKER).write_text("x")
         self.assertEqual(no.candidates(self.scratch, 48, 0, time.time()), [])
+
+    def test_daytime_waits_for_the_nas_window_without_touching_the_nas(self):
+        old = self.scratch / "old"
+        make(old, {"a.mov": MB}, age_h=100)
+        self.free_mb = 15 * 1024  # under the 20 GB target, over the 8 GB day floor
+        (self.nas / no.NAS_ARCHIVE).rmdir()  # any NAS check would now report it missing
+        rep = self.run_offload(hour=14)
+        self.assertIn("window", rep["wait"])
+        self.assertEqual((rep["moved"], rep["kept"], rep["nas"]), ([], [], "ok"))
+        self.assertTrue((old / "a.mov").exists())
+        self.assertIn("01:00-06:00", no.summary(rep))
+        self.assertEqual(len(self.run_offload(apply=False, hour=14)["would"]), 1)  # a dry run still lists
+
+    def test_daytime_runs_when_the_mini_is_nearly_full(self):
+        make(self.scratch / "old", {"a.mov": MB}, age_h=100)
+        self.free_mb = 5 * 1024
+        self.assertEqual(len(self.run_offload(hour=14)["moved"]), 1)
+
+    def test_a_second_offload_waits_for_the_first(self):
+        make(self.scratch / "old", {"a.mov": MB}, age_h=100)
+        with open(pathlib.Path(self.tmp.name) / "offload.lock", "a") as fh:
+            fcntl.flock(fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            rep = self.run_offload()
+        self.assertIn("already running", rep["wait"])
+        self.assertTrue((self.scratch / "old" / "a.mov").exists())
+
+    def test_a_retry_updates_its_own_failed_copy_instead_of_a_new_one(self):
+        old = self.scratch / "J1468-wt"
+        make(old, {"a.mov": 2 * MB, "sub/b.wav": MB}, age_h=100)
+        failed = self.day_dir() / "J1468-wt"  # an earlier attempt that died part way: no SHA256SUMS.txt
+        make(failed, {"a.mov": 1000, ".b.wav.lcUxeW1q9y": 0})
+        rep = self.run_offload()
+        self.assertEqual(rep["moved"][0]["nas"], str(failed), rep)
+        self.assertEqual((failed / "a.mov").stat().st_size, 2 * MB)
+        self.assertEqual(sorted(x.name for x in self.day_dir().iterdir()), ["J1468-wt"])
+        self.assertEqual(sorted(x.name for x in old.iterdir()), [no.MARKER])
+
+    def test_a_verified_copy_is_never_written_into(self):
+        make(self.scratch / "old", {"a.mov": MB}, age_h=100)
+        done = self.day_dir() / "old"
+        make(done, {"a.mov": 10})
+        (done / no.SUMS).write_text("x  a.mov\n")
+        rep = self.run_offload()
+        self.assertTrue(rep["moved"][0]["nas"].endswith("old__2"), rep)
+        self.assertEqual((done / "a.mov").stat().st_size, 10)
+        with self.assertRaises(RuntimeError):
+            no.copy_tree(self.scratch / "old", done)
 
     def test_scheduled_short_keep_paths_includes_explicit_and_uploads(self):
         keep = no.scheduled_short_keep_paths()
