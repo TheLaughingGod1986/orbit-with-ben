@@ -183945,13 +183945,13 @@
       "stage": "edit",
       "after": "J2213",
       "eta_min": 120,
-      "status": "done",
-      "by": "cursor",
-      "since": "2026-11-05T22:13Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "HOS 006 Short B v01 and Short C v02 built at GBP0 from existing media. B sha256 08e3d6036744da57ae3fce1d12b996f913cd1d180161eba18590cffd23aeee0f (24.25s). C v02 sha256 3f8c1390523cbf05632abefb592b178b2b211c0e74ae31e9c4b7b96423091327 (25.17s), villa crop 144,0,608,1080. Centre-crop C v01 883cee08 kept after the brick-course fail. picture_qa, polish, sfx, music and gate_shorts_open exited 0 on both offered cuts. WARNs: B S07 and C S05 low detail, terminal-loop samples. Evidence HOS 699c359b. NAS SHA256SUMS checked. Review J2258. Not approved, not uploaded, not watched or heard.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -184092,6 +184092,11 @@
           "at": "2026-11-05T22:48Z",
           "by": "cursor",
           "what": "done: HOS 006 Short B v01 and Short C v02 built at GBP0 from existing media. B sha256 08e3d6036744da57ae3fce1d12b996f913cd1d180161eba18590cffd23aeee0f (24.25s). C v02 sha256 3f8c1390523cbf05632abefb592b178b2b211c0e74ae31e9c4b7b96423091327 (25.17s), villa crop 144,0,608,1080. Centre-crop C v01 883cee08 kept after the brick-course fail. picture_qa, polish, sfx, music and gate_shorts_open exited 0 on both offered cuts. WARNs: B S07 and C S05 low detail, terminal-loop samples. Evidence HOS 699c359b. NAS SHA256SUMS checked. Review J2258. Not approved, not uploaded, not watched or heard."
+        },
+        {
+          "at": "2026-11-05T23:57Z",
+          "by": "gemini",
+          "what": "reopened: J2258 FIX review (jobs/reviews/J2258/REVIEW.md, 4e702824eb): all 17 source plates + WARNs (B S07, C S05, C S02) KEEP; rebuild Short_B v02 & Short_C v03 in build_j2169.py at GBP0 to fix (1) missing 9-14s captions + dropped end-of-hook words + Didot multi-word chunks (B S01,S03-S05; C S01,S04-S05), (2) frame-0 hook yellow-on-hook-word Didot 8-10% cap height centred (B S01, C S01), (3) B S05/S06 word-onset cut alignment + C S06 4.458s offset, (4) loop_tail offset=0.0s wrap + 1080x1920 pre-normalised Flow plates"
         }
       ],
       "remaining_action": "Hand the cuts to review J2258",
@@ -184101,13 +184106,6 @@
         "HOS:006"
       ],
       "escalated_at": "2026-11-05T06:52Z",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-05T22:48Z",
-        "by": "cursor",
-        "note": "B v01 and C v02 pass picture, polish, SFX, music and the shorts gate. C v01 centre crop kept. NAS hashes match. Review i"
-      },
       "done_ref": "699c359bf44ccda9d996dae4a2d6524be3774a03"
     },
     {
