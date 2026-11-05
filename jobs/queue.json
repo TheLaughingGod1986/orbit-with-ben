@@ -110961,6 +110961,11 @@
           "at": "2026-11-05T21:30Z",
           "by": "cursor",
           "what": "done: S6 Titan v11 assembled only. SHA256 8eead2f62fd3eda48674ed4c5ae667927d98ea69a03f3dc5ccd874c960121b31. gate/polish/music/picture/loop/sfx PASS (warns: 18.0s, tail 1.87s, visor 0.0021, illustration, upscale 2.20x). Opening frames 28-91, preroll 0-27, crop 720:405:0:875, band y656. Locked VO, Stay-line already out. v01 and v02 untouched. No upload. Copies: iCloud and NAS OWB UAT/standalone_shorts_s6_v11. Review J2257 decides Ben's watch by 10 Nov 10:30 London. Scheduled RLSJm59OSzI remains the fallback. £0."
+        },
+        {
+          "at": "2026-11-05T21:48Z",
+          "by": "macbook-2",
+          "what": "waits on Ben: Watch S6 Titan v11 (\"What Would Standing on Saturn's Moon Titan Feel Like?\", RLSJm59OSzI, airs Tue 10 Nov 11:30) before any swap (by 2026-11-10 10:30 London)"
         }
       ],
       "remaining_action": "Review lane decides if Titan v11 is ready for Ben's watch",
@@ -110993,6 +110998,17 @@
         "at": "2026-11-05T21:30Z",
         "by": "cursor",
         "note": "gates PASS sha 8eead2f6; UAT+NAS copied; review J2257"
+      },
+      "awaits_ben": {
+        "what": "Watch S6 Titan v11 (\"What Would Standing on Saturn's Moon Titan Feel Like?\", RLSJm59OSzI, airs Tue 10 Nov 11:30) before any swap",
+        "file": "OWB UAT/standalone_shorts_s6_v11/owb_sa_s6_titan_v11.mp4",
+        "version": "v11",
+        "due": "2026-11-10T10:30Z",
+        "airs": "2026-11-10T11:30Z",
+        "ifNot": "Scheduled RLSJm59OSzI (v01) stays as the fallback and airs as scheduled; no swap",
+        "title": "What Would Standing on Saturn's Moon Titan Feel Like?",
+        "number": "S6",
+        "type": "short"
       }
     },
     {
