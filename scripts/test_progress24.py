@@ -54,6 +54,7 @@ class Summary(unittest.TestCase):
         self.assertEqual([(m["key"], m["from"], m["to"]) for m in s["moved"]], [("OWB:030", 56, 78), ("OWB:032", 11, 33)])
         self.assertEqual({f["film"] for f in s["films"]}, {"OWB:030", "OWB:032"})
         self.assertEqual(s["otherJobs"], 1)
+        self.assertEqual(s["videoJobs"], 2)
         self.assertEqual(s["hours"], 24.5)
 
     def test_jobs_done_window(self):
@@ -67,6 +68,29 @@ class Summary(unittest.TestCase):
             s = p.section(f, board([("OWB:030", "T", ms(2))]), NOW)
             self.assertEqual(s["jobsDone"], 0)
             self.assertEqual(json.loads(f.read_text())[0]["counts"], {"OWB:030": 2})
+
+    def test_schema_correction_is_not_new_production_and_preserves_history(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / 'h.json'
+            old = {'at': '2026-11-03T13:00Z', 'counts': {'HOS:009': 3}}
+            f.write_text(json.dumps([old]))
+            b = board([('HOS:009', 'Moon', ms(4))], done=[{'id': 'Jreal', 'at': '2026-11-04T12:00Z'}])
+            b['tracker']['videos'][0]['production']['milestoneSchema'] = 'studio-nine-stages-hos-aliases-v2'
+            s = p.section(f, b, NOW)
+            self.assertEqual((s['milestones'], s['moved'], s['hours'], s['jobsDone']), (0, [], 0, 1))
+            self.assertEqual(json.loads(f.read_text())[0], old, 'old history is retained unmodified')
+            # An actual later completion on the same basis still counts.
+            b['tracker']['videos'][0]['production']['milestones'] = ms(5)
+            s = p.section(f, b, NOW + dt.timedelta(minutes=31))
+            self.assertEqual(s['milestones'], 1)
+            self.assertEqual((s['moved'][0]['from'], s['moved'][0]['to']), (44, 56))
+
+    def test_legacy_producer_does_not_compare_against_new_schema_on_rollback(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / 'h.json'
+            f.write_text(json.dumps([{'at': '2026-11-03T13:00Z', 'counts': {'HOS:009': 4}, 'basis': 'v2'}]))
+            s = p.section(f, board([('HOS:009', 'Moon', ms(3))]), NOW)
+            self.assertEqual((s['milestones'], s['moved'], s['hours']), (0, [], 0))
 
 
 if __name__ == "__main__":

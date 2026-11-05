@@ -101,9 +101,9 @@ class Guards(unittest.TestCase):
         self.assertIn("on battery", doc["why"])
 
     def test_it_pulls_before_the_guards(self):
-        # A stuck guard must not keep the MacBook on old code: pull_main runs first in run().
+        # A stuck guard must not keep the MacBook on old code: pull_main runs first in each job's run_one().
         src = pathlib.Path(mw.__file__).read_text()
-        body = src[src.index("def run() -> int:"):]
+        body = src[src.index("def run_one() -> str:"):]
         self.assertLess(body.index("pull_main()"), body.index("guards()"))
 
 
@@ -161,6 +161,87 @@ class Cap(unittest.TestCase):
             self.assertLess(time.time() - start, 10)
             time.sleep(3.5)
             self.assertFalse(marker.exists(), "a background child outlived the cap")
+
+
+class AllAgents(unittest.TestCase):
+    """Ben, 4 Nov 2026: "get all the agents working on the MacBook Pro, the Gemini agents, the Cursor agents, the
+    Claude agents, and the Codex agents"."""
+    def setUp(self):
+        os.environ.pop("MACBOOK_AGENT", None)
+
+    def test_the_job_chain_picks_the_first_installed_agent(self):
+        review = {"kind": "review"}       # Claude -> Cursor-on-Claude -> Gemini Argon -> Codex
+        self.assertEqual(mw.pick_agent(review, ["codex", "gemini", "claude", "cursor"])[0], "claude")
+        self.assertEqual(mw.pick_agent(review, ["codex", "gemini"]), ("gemini", "gemini-argon"))
+        self.assertEqual(mw.pick_agent({"kind": "thumb"}, ["gemini", "codex"]), ("codex", "gpt-6-astra"))
+
+    def test_credit_flagged_agent_is_skipped(self):
+        import routing
+        old = set(routing.OUT)
+        try:
+            routing.OUT = {"claude"}
+            self.assertEqual(mw.pick_agent({"kind": "review"}, ["claude", "gemini"]), ("gemini", "gemini-argon"))
+        finally:
+            routing.OUT = old
+
+    def test_no_cli_installed_means_no_agent(self):
+        self.assertEqual(mw.pick_agent({"kind": "review"}, []), ("", ""))
+
+    def test_a_kind_with_no_installed_lane_falls_back_to_any_installed_cli(self):
+        self.assertEqual(mw.pick_agent({"kind": "vo"}, ["claude"]), ("claude", ""))
+
+    def test_pin_keeps_the_old_single_agent_setting(self):
+        with mock.patch.dict(os.environ, {"MACBOOK_AGENT": "codex"}):
+            self.assertEqual(mw.pick_agent({"kind": "review"}, ["codex", "claude"])[0], "codex")
+            self.assertEqual(mw.pick_agent({"kind": "review"}, ["claude"]), ("", ""))
+
+    def test_each_cli_gets_its_one_shot_form(self):
+        with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+            g = mw.agent_cmd("gemini", "P", "gemini-argon")
+            self.assertEqual(g[-2:], ["-p", "P"])
+            self.assertIn("--model", g)
+            self.assertEqual(mw.agent_cmd("cursor", "P", "cursor-grok-4-7")[:3], ["/bin/cursor", "-p", "--force"])
+            self.assertIn("-m", mw.agent_cmd("codex", "P", "gpt-6-astra"))
+            self.assertEqual(mw.agent_cmd("claude", "P")[:2], ["/bin/claude", "-p"])
+            self.assertIsNone(mw.agent_cmd("grok", "P"))
+
+    def test_a_failed_cli_is_paused_and_skipped(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "DOWN", pathlib.Path(d) / "down.json"), \
+                mock.patch.object(mw, "STATE", pathlib.Path(d)):
+            until = mw.mark_down("cursor", now=T0)
+            self.assertEqual(mw.usable(["codex", "cursor"], now=T0), ["codex"])
+            self.assertEqual(mw.usable(["codex", "cursor"], now=T0 + dt.timedelta(hours=3)), ["codex", "cursor"])
+            self.assertIn("cursor", mw.down_agents(T0))
+            self.assertTrue(until.startswith("2026-10-28T14:00"))
+
+    def test_run_keeps_taking_jobs_until_idle(self):
+        import tempfile
+        seq = iter(["ran", "ran", "idle"])
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
+                mock.patch.object(mw, "run_one", side_effect=lambda: next(seq)) as one:
+            self.assertEqual(mw.run(), 0)
+            self.assertEqual(one.call_count, 3)
+
+    def test_run_stops_at_its_loop_budget(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
+                mock.patch.dict(os.environ, {"MACBOOK_LOOP_MIN": "0"}), \
+                mock.patch.object(mw, "run_one", return_value="ran") as one:
+            self.assertEqual(mw.run(), 0)
+            self.assertEqual(one.call_count, 1)
+
+    def test_checkouts_are_the_workers_own_never_bens(self):
+        with mock.patch.dict(os.environ, {"HOS_REPO": str(mw.HOME / "YouTube" / "History Of Science")}):
+            self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), mw.WORKER_DIR / "history-of-science")
+        inside = mw.WORKER_DIR / "history-of-science"
+        with mock.patch.dict(os.environ, {"HOS_REPO": str(inside)}):
+            self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), inside)
+
+    def test_installed_honours_macbook_agents_and_what_exists(self):
+        with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/x" if a in ("codex", "claude") else None):
+            self.assertEqual(mw.installed(), ["codex", "claude"])
+            self.assertEqual(mw.installed("claude,gemini"), ["claude"])
 
 
 if __name__ == "__main__":

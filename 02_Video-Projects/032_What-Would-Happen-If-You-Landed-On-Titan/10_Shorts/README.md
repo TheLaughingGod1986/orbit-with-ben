@@ -1,9 +1,9 @@
-# Shorts — 3–5 discovery engine
+# Shorts — 032 What Would Happen If You Landed on Titan?
 
-Each Short:
-
-- Strongest-fact open (0–1.5s)
-- Curiosity-gap end (not bare “watch the full video”)
-- Related → parent long once public
-
-Schedule after YouTube long is locked; TikTok ≈ YouTube T0 + 1 hour.
+- **Standing cap (`AGENTS.md`, 4 Nov 2026 & `J2173`, 5 Nov 2026):** Each new OWB long gets **two** Shorts (one is Test A's opening Short while Test A runs), slotted Mon/Wed/Fri/Sat 11:30 London, never two Shorts a day. No extra Test A or third new Short for `032`.
+- **Existing standalone test Short (`J0216` cohort):** `RLSJm59OSzI` (*"What Would Standing on Saturn's Moon Titan Feel Like?"*, `owb_sa_s6_titan_v02.mp4`, `18.0 s`, scheduled Tue 10 Nov 2026 11:30Z; unlinked during the standalone test through 20 Nov 2026; uses `PIA14925`, `PIA06230`, `PIA09739`, `PIA21625`, all excluded from `032`).
+- **Test A Opening Reserve Assessment (`J2173`, 5 Nov 2026):** See [`J2173_TITAN_TEST_A_ASSESSMENT_2026-11-05.md`](J2173_TITAN_TEST_A_ASSESSMENT_2026-11-05.md) and [`jobs/reviews/J2173/REVIEW.md`](../../../jobs/reviews/J2173/REVIEW.md).
+  - **Spoken Span:** `s01`–`s05` (`0.060–31.580 s` of locked `titan_landing_vo_v02b.wav`, 91 words): *"If you stepped out of a lander onto Saturn's largest moon, Titan, would you survive? ... What would kill you is the cold and the fact that there is almost no oxygen to breathe."*
+  - **Runtime:** `32.800 s` (1:1 master timing: `31.520 s` VO + `1.280 s` loop tail) or `30.000 s` (breath-tightened `<0.25 s` seam timing: `28.560 s` VO + `1.440 s` loop tail).
+  - **Target Slot:** Conditional reserve for **Fri 27 Nov 2026 11:30Z** (replacing `AR1`'s provisional slot only after gates + Ben watch; never a second Short that day), after the planned **Wed 25 Nov 2026 18:00Z** `032` long is public; final-watch pack target **Fri 20 Nov 2026 18:00Z**.
+  - **Blocking Inputs (`J0979` held after `J2089`):** Requires `J2089` picture completion (Row 1 Frame-0 compliant real moving subject after `J2150` exclusion of reconstructed `huygens_descent.wmv`, Row 2 `survive_check` graphic, Row 3 Cassini orbit clip), `032` score bed (`05_Music/`), and approved `032` long master with final listing title.

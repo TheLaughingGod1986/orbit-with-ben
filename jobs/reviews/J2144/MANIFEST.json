@@ -1,0 +1,90 @@
+{
+  "job": "J2144",
+  "film": "OWB:032",
+  "status": "worker_delivery_pending_independent_review",
+  "tags": [
+    "rule19",
+    "tentpole",
+    "rule14",
+    "rule12"
+  ],
+  "cost_gbp": 0,
+  "generation": "Built-in image_gen on ChatGPT plan; no API key, no paid API/Vertex/ElevenLabs calls",
+  "title_pairing": "What Would Happen If You Landed on Titan?",
+  "assets": [
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/032_A_real_orange_world_v01.jpg",
+      "sha256": "2244c539d7624100f42a533bad5e71dea8b2fe8cfb57385f5796df614a9d3b04",
+      "bytes": 277844,
+      "size": [
+        1280,
+        720
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/032_A_real_orange_world_v01.jpg",
+        "saturation": 140.5,
+        "near_black": 0.271,
+        "fails": []
+      }
+    },
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/032_B_bright_methane_shore_v02.jpg",
+      "sha256": "4e4faf3155fba42aa7120a1682ba2d1eb46a95a0cc9a48fe5ac37a7bbfab02a0",
+      "bytes": 432510,
+      "size": [
+        1280,
+        720
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/032_B_bright_methane_shore_v02.jpg",
+        "saturation": 164.3,
+        "near_black": 0.037,
+        "fails": []
+      }
+    },
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/032_C_scale_ice_is_rock_v02.jpg",
+      "sha256": "755b4e9ab69b67641e1392224cebdedb088354da28bdecd8676e8d9ce49915b7",
+      "bytes": 573217,
+      "size": [
+        1280,
+        720
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/032_C_scale_ice_is_rock_v02.jpg",
+        "saturation": 209.0,
+        "near_black": 0.033,
+        "fails": []
+      }
+    }
+  ],
+  "phone_preview": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/PHONE_PREVIEW.jpg",
+  "sources": {
+    "A": {
+      "id": "PIA14922",
+      "title": "Colorful Colossuses and Changing Hues",
+      "page": "https://www.jpl.nasa.gov/images/pia14922-colorful-colossuses-and-changing-hues/",
+      "download": "https://images-assets.nasa.gov/image/PIA14922/PIA14922~orig.jpg",
+      "source_sha256": "4513d54db42a8442deb0821bc309522b449e40534a5d5b235c8b2794a7269ff9",
+      "credit": "NASA/JPL-Caltech/Space Science Institute",
+      "policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+      "rights_check": "JPL policy permits use subject to credit and exceptions; asset caption has no separate copyright/restriction notice. No logo/person/endorsement. Preserve credit in eventual package.",
+      "recipe": "Single published Cassini natural-colour image (NASA describes native six-filter mosaic), crop (200,560,840,920), resize 2x to 1280x720, saturation 1.65, brightness 1.2, contrast 1.05; code text only. No added bodies, compositing or generative fill. Saturn is cropped intentionally as background scale context; Titan is whole.",
+      "caveat": "Published mission colour mosaic, not a single raw detector exposure; explicitly allowed PIA14922 in brief. Not a Huygens surface photo."
+    },
+    "B": {
+      "type": "AI illustration",
+      "plate": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/B_plate.png",
+      "meaning": "Hypothetical sealed astronaut beside methane lake; no human landing claim. Not a real photo.",
+      "sha256": "127d76e5544a29e47143cc0e33e23de66e9a87ae13a280b4e489c31320f724a6"
+    },
+    "C": {
+      "type": "AI illustration",
+      "plate": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/C_plate.png",
+      "meaning": "Generic hypothetical robotic lander and rounded ice cobble; not exact Huygens or Dragonfly hardware, not a real mission frame.",
+      "sha256": "1b28eaa6c88ccdcdb32f1f95df19d6830871c839e27aa069250b2d9b7387e634"
+    }
+  },
+  "typography": "Code-drawn Arial Black, 112 px font, capital height about 82 px (11.4% of 720), yellow hook and white rest, 5px dark outline; all final text outside subject.",
+  "review": "Phone stills inspected by codex; automated score checks pass; no Chief approval or Test & Compare start."
+}

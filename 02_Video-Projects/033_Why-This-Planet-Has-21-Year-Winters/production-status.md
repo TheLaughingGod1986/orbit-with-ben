@@ -1,46 +1,53 @@
-# Production status — 033 Why Uranus Has 21-Year Winters After Being Knocked Sideways
+# Production status — 033 Why Knocked-Sideways Uranus Has 21-Year Winters
 
-**Current ruling, 4 November 2026 (J1896, codex acting Chief): topic DEFER / script FIX; unlocked candidate only.** The historic score below is not a script or facts approval. See `jobs/reviews/J1896/CHIEF_EDITORIAL_RULING_2026-11-04.md`. J1969 owns topic/neighbour/Short evidence, then J1970 owns capacity and advancement plus any specialist rewrite → formal Gemini facts → direct quote-check/lock chain. HOS production has priority. No VO, production spend or air date is authorised. The Short's historic scheduled state below has not been reverified; J1969 must establish the actual public cut and performance. Current board state is in `status.json`.
+**Current ruling, 4 November 2026 (J2148, Rule-E review by `gemini`): GO — topic and script (`uranus_21_year_winter_script_master_v02.md`) LOCKED; VO job queued.** Supersedes the earlier Chief topic jobs (`J1896`, `J1969`, `J1970`) under `AGENTS.md` Rule E (WIP raised to 8, Ben 4 Nov 2026). Full review: `jobs/reviews/J2148/REVIEW.md`.
 
 | Field | Value |
 |-------|-------|
 | Slug | `033_Why-This-Planet-Has-21-Year-Winters` |
-| Working title | `Why Uranus Has 21-Year Winters After Being Knocked Sideways` |
-| Gate | topic deferred / script FIX under J1896; J1969 → J1970 owns reconsideration |
-| Script review | Historical automated 95.2 / 100 only (`uranus_21_year_winter_script_master_v01.md`, 1,338 spoken words / 1,365 reviewer words, 6 chapters, J0363); current Chief editorial FIX |
-| VO | pending (blocked until Chief topic lock, Gemini `facts` pass, `CLAUDE_QUOTE_CHECK` and script lock) |
-| CG | pending (Vertex Veo / Omni Orbit-only) |
-| Runtime target | 7–9 min |
-| Shorts | 3 a week (Mon · Wed · Fri; standalone Short `ZpEA8stoSPA` *This Planet Has 21-Year Winters* already built and scheduled) |
+| Working title (Rule 15, 47 chars) | `Why Knocked-Sideways Uranus Has 21-Year Winters` |
+| Rule-18 real-imagery variants | `What Voyager 2 Saw in Just 6 Hours at Uranus` (44 chars) · `The Only Spacecraft Photos Ever Taken at Uranus` (47 chars) |
+| Series (Rule 20) | `Real Worlds` |
+| Rule-19 real-frame thumb (Concept A) | NASA/ESA/CSA JWST NIRCam real frame `PIA25770` (`STScI-01GWQ3`, 2023 sideways Uranus + vertical rings) or NASA/JPL Voyager 2 real frame `PIA18182` (24 Jan 1986), graded, hook `21-YEAR WINTER` |
+| Gate | `npm run gate:episode` **PASS** (VO / Gemini Veo allowed) |
+| Script review | `npm run review:script` **PASS 95.2 / 100** on locked `uranus_21_year_winter_script_master_v02.md` (1,290 spoken words / 1,347 reviewer words, ~9.0 min, 6 chapters; subscribe beat line 6 at 43%) |
+| Sources | 15 / 15 MUST QUOTE rows **VERIFIED** live in `01_Script/SOURCES.md` + `01_Script/CLAUDE_QUOTE_CHECK_v01.md` |
+| VO | **DONE** (`J2155` / `J2164` KEEP, `02_Voiceover/uranus_vo_v01.wav`, SHA-256 `3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460`, `611.40 s` / `10:11.4`, `-23.3 dB` mean, `-20.22 LUFS`, `-3.77 dBTP`; review: `jobs/reviews/J2164/REVIEW.md`) |
+| Shot list | Open (`J2165`, cleared to start after `J2164` explicit VO acceptance) |
+| CG | pending (Vertex Veo / Omni Orbit-only, after VO + shot list) |
+| Runtime target | `10:11.4` (`611.40 s` locked VO from `1,290` spoken words) |
+| Shorts | Standalone Short `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*) public 3 Nov 2026 — **461 views, 6 likes on day 1**; two new Shorts (incl. Test A opening Short) after master |
 
 ## Blockers
 
-- [ ] Chief topic lock + neighbour pass (≥3 education/space videos ≈1M+ views) + Pre-build vidIQ signed
-- [x] Script v01 ≥ 90 (`review:script` PASS 95.2/100 on `uranus_21_year_winter_script_master_v01.md`)
-- [ ] Gemini `facts` quote check on `01_Script/SOURCES.md` + `CLAUDE_QUOTE_CHECK_v01.md`
+- [x] Topic lock + neighbour pass (10 education/space videos at 1.24M–7.63M views in `TOPIC_OPPORTUNITY_SCORE.md`) + Pre-build vidIQ signed (`J2148`)
+- [x] Script v02 ≥ 90 (`review:script` PASS 95.2/100 on `uranus_21_year_winter_script_master_v02.md`, 1,290 spoken words)
+- [x] Direct quote check on `01_Script/SOURCES.md` + `CLAUDE_QUOTE_CHECK_v01.md` (15/15 PASS)
+- [x] VO take (`vo_take.py` from `uranus_21_year_winter_script_master_v02.md` — `uranus_vo_v01.wav`, `611.40 s`, accepted in `J2164` / `jobs/reviews/J2164/REVIEW.md`)
+- [ ] Timed shot list + music brief (`J2165`)
 - [ ] Stills locked before Veo/Omni spend
 
-## `npm run review:script` (J0363, 16 Oct 2026)
+## `npm run review:script` & `npm run gate:episode` (J2148, 4 Nov 2026)
 
 ```
-# uranus_21_year_winter_script_master_v01.md
+# uranus_21_year_winter_script_master_v02.md
 
 **Decision:** PASS · **Score:** 95.2 / 100
 
 | Dimension | Score |
 |---|---:|
 | hook | 10 |
-| curiosity | 9.5 |
+| curiosity | 9.1 |
 | storytelling | 9.5 |
 | scientificAccuracy | 10 |
 | emotion | 9.6 |
-| escalation | 9.4 |
+| escalation | 9.8 |
 | retentionPotential | 9 |
 | searchPotential | 9.1 |
 | visualOpportunities | 9.5 |
 | narrationFlow | 9.6 |
 
-Words: 1365 · Est. min: 9.1 · Chapters: 6
+Words: 1347 · Est. min: 9 · Chapters: 6
 
 ## Findings
 
@@ -48,4 +55,23 @@ Words: 1365 · Est. min: 9.1 · Chapters: 6
 - **[info] overall:** PASS 95.2/100 — proceed to VO after production checklist.
 
 Pass threshold: 90
+
+# Episode gate — 033_Why-This-Planet-Has-21-Year-Winters
+
+**Decision:** PASS — VO / Gemini Veo allowed
+
+| Check | Status | Detail |
+|---|---|---|
+| project_dir | OK | Project: /tmp/J2148-wt/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters |
+| prebuild_vidiq | OK | Pre-build vidIQ audit present and looks signed off. |
+| script_file | OK | Script: 01_Script/uranus_21_year_winter_script_master_v02.md |
+| script_review | OK | Script reviewer PASS 95.2/90 (need ≥90). |
+| orbit_acts | OK | [ORBIT ACTS] count 2 (need ≥1). |
+| subscribe_beat | OK | Subscribe beat at 43% (17 words): "If you've enjoyed the ride so far, subscribing is the best way to help Orbit keep going." |
+| visual_must | OK | [VISUAL MUST] count 7 (need ≥4). |
+| teach | OK | [TEACH] count 7 (need ≥4). |
+| chapters | OK | [CHAPTER CARD] count 6 (aim 4–6 film acts). |
+| production_checklist | OK | Checklist present: 11_Upload-Package/PRODUCTION_CHECKLIST_V2.md |
+
+Script score: **95.2/100** · PASS
 ```

@@ -17,10 +17,24 @@ def records(films):
             yield path.parent.name.split('_')[0], {'record_error': str(error)}
 
 
-def findings(data, film_records, at, exclude=()):
+WIP = Path(__file__).resolve().parents[1] / 'jobs' / 'WIP.json'
+
+
+def waiting_films(path=WIP):
+    """OWB films parked in the idea list by Ben's WIP limit (G, 4 Nov 2026): not in production, so not orphans."""
+    try:
+        return {f.split(':', 1)[1] for f in json.loads(Path(path).read_text()).get('next', []) if str(f).startswith('OWB:')}
+    except (OSError, ValueError, AttributeError):
+        return set()
+
+
+def findings(data, film_records, at, exclude=(), waiting=None):
     rows = [j for j in data.get('jobs', []) if j.get('id') not in exclude]
+    waiting = waiting_films() if waiting is None else set(waiting)
     out = []
     for film, record in film_records:
+        if film in waiting:
+            continue
         stages = record.get('stages', {})
         # Completed/published films may have legitimate follow-up work. Do not restart production.
         upload = stages.get('upload') or {}

@@ -139,7 +139,13 @@ const pub = v({key: 'pub', lane: 'progress', youtube: {videoId: 'abcdefghijk', p
 const priv = v({key: 'priv', lane: 'progress', youtube: {videoId: 'bcdefghijkl', privacy: 'private', state: 'scheduled'}});
 assert.deepEqual(t.inProgress([pub, priv]).map(x => x.key), ['priv']);
 const gg = t.videoGroups([pub, priv]);
-assert.deepEqual([gg.queued.map(x => x.key), gg.done.map(x => x.key)], [['priv'], ['pub']]);
+assert.deepEqual([gg.queued.map(x => x.key), gg.done.map(x => x.key), gg.postlive.map(x => x.key)], [['priv'], [], ['pub']]);
+// Post-live lane (Ben, 5 Nov 2026): on YouTube (live or scheduled) with work still open; Done once nothing is left.
+const sched = v({key: 'sched', lane: 'done', youtube: {videoId: 'cdefghijklm', privacy: 'private', state: 'scheduled'}, jobs: [{id: 'J8', status: 'blocked'}]});
+const doneLive = v({key: 'quiet', lane: 'done', youtube: {videoId: 'defghijklmn', privacy: 'public', state: 'live'}, jobs: [{id: 'J7', status: 'done'}]});
+const pl = t.videoGroups([sched, doneLive]);
+assert.deepEqual([pl.postlive.map(x => x.key), pl.done.map(x => x.key)], [['sched'], ['quiet']]);
+assert(t.renderTab('videos', {tracker: {videos: [sched]}}, NOW).includes('Post-live: checks and improvements'));
 assert(t.thumb(pub).includes('i.ytimg.com') && !t.thumb(priv).includes('i.ytimg.com'));
 // Credit bars: a plan allowance or the month's refill makes a bar; a % pool keeps its reset date.
 const flow = t.poolMeter('flow', {unit: 'credits', latest: {left: 20870, at: new Date(NOW).toISOString()}}, {tiers: {flow: [{name: 'Google AI Ultra $200 tier', allow: 25000, current: true}]}}, NOW);
@@ -259,7 +265,7 @@ const activityBoard={tracker:{videos:[]},models:freshModels,owb:{jobs:[runningTa
 const activeHtml=t.activityCard(activityBoard,NOW);
 assert(activeHtml.includes('Codex is working')&&activeHtml.includes('Jactual')&&activeHtml.includes('Finish the recorded edit'));
 assert(activeHtml.includes('2 of 5 steps · 40%')&&activeHtml.includes('Task ETA: ~15m remaining (estimate)'));
-assert(activeHtml.includes('#agents&job=Jactual')&&activeHtml.includes('1 queued · 1 on hold'));
+assert(activeHtml.includes('#agents&job=Jactual')&&activeHtml.includes('1 queued · 1 waiting'));
 const multipleHtml=t.activityCard({...activityBoard,owb:{jobs:[runningTask,{...runningTask,id:'Jsecond'}]}},NOW);
 assert(multipleHtml.includes('+1 other active job'));
 const missingHtml=t.activityCard({...activityBoard,owb:{jobs:[{...runningTask,progress:null,claimedAt:''}]}},NOW);
@@ -281,7 +287,7 @@ const publishedDetail=t.productionDetail(publicMissing,NOW);
 assert(publishedDetail.includes('Published on YouTube')&&publishedDetail.includes('Recorded production history'));
 assert(!publishedDetail.includes('role="progressbar"')&&!publishedDetail.includes('progress-number'));
 assert(publishedDetail.includes('Unconfirmed'),'unknown history stays unknown, not changed to complete');
-assert(t.videoGroups([publicMissing]).done.some(x=>x.key==='published'));
+assert(t.videoGroups([publicMissing]).postlive.some(x=>x.key==='published'));  // live with a follow-up job: Post-live lane
 assert.equal(t.videoGroups([publicMissing]).working.length,0);
 assert(t.videoProductionRow(v({key:'unfinished'}),NOW).includes('0%'),'active production still uses recorded milestone counts');
 console.log('Published-video regression checks OK');
@@ -298,7 +304,7 @@ assert.equal(guidance.job.id,'J1471');assert.equal(guidance.scope,'reference');a
 assert(guidance.why.includes('International Space Station'));assert(guidance.action.includes('Identify approved'));
 t.setBoard({owb:{jobStates:{J1468:{status:'done'}}}});
 const guideHtml=t.blockerGuide(blockedFilm,blockedEdit,NOW);
-assert(guideHtml.includes('Why blocked')&&guideHtml.includes('How to unblock')&&guideHtml.includes('#agents&job=J1471'));
+assert(guideHtml.includes('What it is waiting for')&&guideHtml.includes('What moves it on')&&guideHtml.includes('#agents&job=J1471'));
 assert(guideHtml.includes('J1468 · Completed')&&guideHtml.includes('Next recorded check'));
 assert(guideHtml.includes('not a promise')&&guideHtml.includes('1 other recorded video hold'));
 assert(guideHtml.includes(inputJob.hold.condition),'original condition is available unmodified');
@@ -325,8 +331,8 @@ assert.equal(t.overviewModel(dispatchBoard,NOW).queued.length,1);
 assert.equal(t.overviewModel(dispatchBoard,NOW).held.length,2);
 assert(t.activityCard(dispatchBoard,NOW).includes('Ready work waiting for dispatch'));
 dispatchBoard.workflow.states.ready.state='waiting';
-assert(t.activityCard(dispatchBoard,NOW).includes('No job running · work is on hold'));
-assert(t.activityCard(dispatchBoard,NOW).includes('0 queued · 3 on hold'));
+assert(t.activityCard(dispatchBoard,NOW).includes('No job running · work is waiting'));
+assert(t.activityCard(dispatchBoard,NOW).includes('0 queued · 3 waiting'));
 console.log('Dispatch visibility checks OK');
 
 dispatchBoard.owb.jobs.push({id:'chiefReview',status:'blocked',by:'cursor',title:'Review the output'});
@@ -348,7 +354,7 @@ const scheduledQA=t.stageExplanation({...qaVideo,youtube:{state:'scheduled',publ
 assert(scheduledQA.why.includes('already scheduled')&&scheduledQA.why.includes('22 Nov'));
 assert(scheduledQA.action.includes('not a reason to restart production'));
 const waitingQA=t.stageExplanation({...qaVideo,production:{milestones:[{id:'edit',label:'Edit',state:'blocked'},unknownQA]}},unknownQA);
-assert(waitingQA.why.includes('Edit (Blocked)'));
+assert(waitingQA.why.includes('Edit (Waiting)'));
 const linkedQA=t.stageExplanation({...qaVideo,jobs:[{id:'Jreview',stage:'qa',status:'claimed',by:'codex',remaining_action:'Review the final cut'}]},unknownQA);
 assert.equal(linkedQA.job.id,'Jreview');assert.equal(linkedQA.owner,'Codex');assert(linkedQA.why.includes('claimed'));
 assert(t.stageExplanationHtml({...qaVideo,jobs:[{id:'Jreview',stage:'qa',status:'open',title:'<unsafe>'}]},unknownQA).includes('&lt;unsafe&gt;'));
@@ -452,6 +458,19 @@ assert(!t.productionDetail(scheduledHistory,NOW).includes('progress-number'));
 
 // Cut identity and aggregate history must stay separate, including cached board payloads.
 const mixedCut=v({key:'OWB:030',version:'v13a',watch:{url:'https://example.test/watch',file:'OWB UAT/030_apophis_short_v13a_PHONE.mp4'},production:{milestones:['topic','script','sources','vo','shots','picture','edit','thumbs','qa'].map(id=>({id,state:id==='edit'?'blocked':id==='qa'?'unknown':'done',source:id==='edit'?{note:'AR cohort: separate replacement work'}:{}}))}});
+
+// Stage row counts explain real sub-stage work without becoming video/time progress.
+const hosRows=nine.map(id=>({id,label:id,state:['topic','script','sources','vo'].includes(id)?'done':id==='picture'?'doing':'unknown',
+  summary:id==='picture'?'70/90 picture rows recorded':'',evidence:id==='picture'?'/private/internal-generation-log':''}));
+const hosPicture=v({key:'HOS:009',channel:'HOS',production:{milestones:hosRows,activeStages:['picture'],eta:{state:'unavailable'}}});
+const hosFeatured=t.overview({tracker:{videos:[hosPicture]}},NOW);
+assert(hosFeatured.includes('70/90 picture rows recorded'));
+assert(hosFeatured.includes('4 of 9 milestones complete')&&hosFeatured.includes('44%'));
+assert(!hosFeatured.includes('/private/internal-generation-log'));
+const noRowSummary=t.overview({tracker:{videos:[{...hosPicture,production:{...hosPicture.production,milestones:hosRows.map(m=>({...m,summary:''}))}}]}},NOW);
+assert(!noRowSummary.includes('picture rows recorded'),'missing row counts never get invented');
+const unknownCutRows=t.overview({tracker:{videos:[{...hosPicture,production:{scope:'unconfirmed_cut',projectHistory:hosPicture.production}}]}},NOW);
+assert(!unknownCutRows.includes('70/90 picture rows recorded'),'project row counts do not certify an unconfirmed cut');
 const normalized=t.normalizeCut(mixedCut);
 assert.equal(normalized.type,'short');assert.equal(normalized.key,'OWB:030');assert.equal(mixedCut.type,'long','source records are unchanged');
 const mixedOverview=t.overview({tracker:{videos:[mixedCut]}},NOW);

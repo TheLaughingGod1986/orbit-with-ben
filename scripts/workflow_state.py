@@ -223,6 +223,25 @@ def order(j, due, focus=(), at=None):
 def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=None):
     if not str(agent or "").strip():
         return False
+    # Capacity reservations precede launch. Ordinary `next` cannot consume one:
+    # the future launcher must verify its token/host/inputs inside the same queue
+    # transaction before handing it to the existing claim and stage machinery.
+    def reserved(row):
+        value = row.get("dispatch_reservation") or {}
+        start, end = timestamp(value.get("at")), timestamp(value.get("expiresAt"))
+        if value.get("phase") == "serial":
+            return True  # occupied until explicit observed-exit reconciliation
+        if row.get("status") == "claimed" and value.get("phase") == "claimed":
+            return True  # remote capacity requires explicit canonical reconciliation
+        return bool(start and end and start <= at < end)
+    if reserved(j) and not ((j.get("dispatch_reservation") or {}).get("phase") == "serial"
+            and j["dispatch_reservation"].get("claimant") == agent):
+        return False
+    stage = (j.get("repo", "owb"), j.get("film"), j.get("stage"))
+    if stage[1] and stage[2] and any(
+            r.get("id") != j.get("id") and reserved(r)
+            and (r.get("repo", "owb"), r.get("film"), r.get("stage")) == stage for r in rows):
+        return False
     by_id = {r["id"]: r for r in rows}
     if external_hold(j, at) or dependency_problem(j, by_id) or capability_problem(j, agent, at, capabilities):
         return False

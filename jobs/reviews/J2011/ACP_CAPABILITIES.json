@@ -1,0 +1,36 @@
+{
+  "command": [
+    "agy",
+    "acp",
+    "--disable-telemetry"
+  ],
+  "cwd": "/private/tmp",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": 1,
+      "clientCapabilities": {},
+      "clientInfo": {
+        "name": "J2011-transport-probe",
+        "version": "1"
+      }
+    }
+  },
+  "response": {
+    "protocolVersion": 1,
+    "agentInfo": {
+      "name": "Antigravity ACP Server",
+      "version": "1.5.0"
+    },
+    "promptCapabilities": {
+      "image": true,
+      "audio": false,
+      "embeddedContext": true
+    }
+  },
+  "exit_code": 0,
+  "model_turn_requested": false,
+  "media_sent": false
+}
