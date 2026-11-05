@@ -162775,9 +162775,14 @@
           "at": "2026-11-05T04:54Z",
           "by": "codex",
           "what": "step 2 of 3 done: Resumed existing 2/3 implementation plan; exact-head review finding accepted. No capacity enablement."
+        },
+        {
+          "at": "2026-11-05T05:01Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Implemented host-local serial preflight plus selected job/model/account admission in canonical Git transaction; busy-peer and shared-account regressions pass. Capacity remains disabled."
         }
       ],
-      "remaining_action": "Repair busy-peer ordinary dispatch exclusion and verify caller regressions on PR437",
+      "remaining_action": "Verify canonical serial admission, synchronize PR437 and return exact head for review",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162797,9 +162802,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T04:54Z",
+        "at": "2026-11-05T05:01Z",
         "by": "codex",
-        "note": "Resumed existing 2/3 implementation plan; exact-head review finding accepted. No capacity enablement."
+        "note": "Implemented host-local serial preflight plus selected job/model/account admission in canonical Git transaction; busy-pee"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
