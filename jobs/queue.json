@@ -159741,13 +159741,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T08:52Z",
-      "eta": "2026-11-05T09:07Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:55Z",
-      "result": "",
+      "result": "PASS closeout: PR395 MERGED 2026-11-03T11:53Z head 40383e36 -> a53e8e5a; PR396 MERGED same time head 543e9bc0 -> eb71e72d. Board dispatch/stage-explanation already on main; no new merge. CI was green at merge. £0.",
       "history": [
         {
           "at": "2026-11-03T10:55Z",
@@ -159758,6 +159758,11 @@
           "at": "2026-11-05T08:52Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T08:52Z",
+          "by": "chief",
+          "what": "done: PASS closeout: PR395 MERGED 2026-11-03T11:53Z head 40383e36 -> a53e8e5a; PR396 MERGED same time head 543e9bc0 -> eb71e72d. Board dispatch/stage-explanation already on main; no new merge. CI was green at merge. £0."
         }
       ],
       "remaining_action": "Review new board PRs and verify published queue/stage explanations against source state",
@@ -159769,7 +159774,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "a53e8e5a,eb71e72d"
     },
     {
       "id": "J1812",
