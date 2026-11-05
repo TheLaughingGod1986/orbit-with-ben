@@ -188829,7 +188829,7 @@
     {
       "id": "J2253",
       "title": "Verify condition for J1881",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J1881: J2217 must deliver the five-point J1881 FIX on PR428: truthful GOP/capability evidence, P3 retake CLI/tests, explicit clock disposition, concrete caption treatment and real Flow preflight. Review immediately on delivery.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1881 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -188849,13 +188849,27 @@
           "at": "2026-11-05T21:02Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T21:02Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: J2217 repairs recipe; then J1881 scopes production; J2241 additionally needs verified moving-video input",
       "kind": "review",
       "recheck_of": "J1881",
       "due": "2026-11-04T14:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
