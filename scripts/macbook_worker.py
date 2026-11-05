@@ -35,6 +35,7 @@ import fcntl
 import json
 import os
 import pathlib
+import platform
 import re
 import shutil
 import subprocess
@@ -259,7 +260,7 @@ def run_capped(cmd: list, cwd, cap_s: int) -> int:
     import signal
     p = subprocess.Popen(cmd, cwd=cwd, start_new_session=True)
     try:
-        return p.wait(timeout=cap_s)
+        code = p.wait(timeout=cap_s)
     except subprocess.TimeoutExpired:
         os.killpg(p.pid, signal.SIGTERM)
         try:
@@ -267,7 +268,11 @@ def run_capped(cmd: list, cwd, cap_s: int) -> int:
         except subprocess.TimeoutExpired:
             os.killpg(p.pid, signal.SIGKILL)
             p.wait()
-        return 124
+        code = 124
+    if os.environ.get("OWB_CAPACITY_ENABLED") == "1":
+        import serial_admission
+        serial_admission.confirm_group_exit(p.pid)
+    return code
 
 
 def claimed_job(out: str) -> str:
@@ -300,9 +305,25 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
     return r.returncode == 0
 
 
+def host_observation():
+    """Measured host identity/resources; no implied auth, quota or media capability.
+
+    A generic `host=macbook` is retained for old board readers. The machine name
+    must be matched against an independently approved registration before use.
+    Missing memory/capability evidence deliberately cannot unlock another lane.
+    """
+    return {"machine_name": platform.node(), "architecture": platform.machine(),
+            "on_ac": on_ac_power(), "idle_minutes": idle_minutes(),
+            "free_gb": shutil.disk_usage(str(HOME)).free / 1024**3,
+            "load": os.getloadavg()[0], "cpu_count": os.cpu_count(),
+            "registered_id": None, "memory_available_gb": None,
+            "auth_quota_ready": None, "media_capabilities": []}
+
+
 def heartbeat_doc(state: str, why: list, job: str = "", now: dt.datetime | None = None) -> dict:
     now = now or dt.datetime.now(dt.timezone.utc)
     return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "state": state, "why": why, "job": job,
+            "observation": host_observation(),
             "agents": installed(), "paused": down_agents(now)}
 
 
@@ -358,6 +379,12 @@ def pull_main() -> str:
     return ""
 
 
+def capacity_tick(*, lock_held=False):
+    import capacity_caller
+    return capacity_caller.production_tick(role="macbook", owb_root=OWB, hos_root=HOS,
+                                          _serial_lock_held=lock_held)
+
+
 def run_one() -> str:
     """One job: 'ran' after a job (finished or released), else 'idle', 'waiting' or 'error'."""
     problem = pull_main()
@@ -370,7 +397,54 @@ def run_one() -> str:
         log("not now: " + "; ".join(why))
         push_heartbeat("waiting", why)
         return "waiting"
-    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"], cwd=OWB)  # any: rule H reviews
+    import capacity_caller
+    # Observe under the SAME lock used by capacity launches. Keep exclusion
+    # through canonical claim and the entire ordinary child lifetime, so no
+    # gap in legacy process publication can admit a competing launch.
+    with capacity_caller.serial_preflight(role="macbook", owb_root=OWB, hos_root=HOS) as result:
+        if result is not None and (result.get("state") != "capacity_waiting"
+                                   or result.get("serial_safe") is not True):
+            # Only a positively observed occupied state may try extra capacity;
+            # malformed/stale/uncertain evidence never permits serial fallback.
+            if result.get("state") == "capacity_waiting":
+                capacity_result = capacity_tick(lock_held=True)
+                if capacity_result is not None:
+                    log("capacity tick: " + capacity_result["state"])
+                    push_heartbeat(capacity_result["state"], ["capacity attempt; no automatic completion"])
+                    return "ran" if capacity_result["state"] == "capacity_exited" else "waiting"
+            push_heartbeat("waiting", ["capacity occupancy unverified or occupied"])
+            return "waiting"
+        # Recheck laptop guards after the potentially slow evidence subprocess.
+        why = guards()
+        if why:
+            push_heartbeat("waiting", why)
+            return "waiting"
+        admitted = capacity_caller.production_tick(role="macbook", owb_root=OWB,
+            hos_root=HOS, serial_only=True, _serial_lock_held=True, admission={})
+        if admitted is not None and not admitted.get("admission"):
+            # No ordinary candidate/account admission: a portable CPU proposal
+            # still gets its own authoritative reserve/launch checks.
+            capacity_result = capacity_tick(lock_held=True)
+            push_heartbeat("waiting", ["ordinary account admission unavailable"])
+            return "ran" if capacity_result and capacity_result.get("state") == "capacity_exited" else "waiting"
+        why = guards()
+        if why:
+            import serial_admission
+            serial_admission.finish(admitted)  # positively never launched
+            push_heartbeat("waiting", why)
+            return "waiting"
+        outcome = run_ordinary(admitted) if admitted is not None else run_ordinary()
+        import serial_admission
+        serial_admission.finish(admitted)
+        return outcome
+
+
+def run_ordinary(admitted=None) -> str:
+    """Called only with launch exclusion held when capacity is enabled."""
+    args = [sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"]
+    if admitted:
+        args.extend(["--id", admitted["admission"]["job"]])
+    r = sh(args, cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
         push_heartbeat("idle", ["no MacBook job waiting"])
@@ -388,6 +462,17 @@ def run_one() -> str:
     except Exception:  # noqa: BLE001
         pass
     agent, model = pick_agent(job_record(job), have)
+    if admitted and (job != admitted["admission"]["job"]
+            or agent != admitted["admission"]["worker"] or model != admitted["admission"]["model"]):
+        log("ordinary selected worker changed after admission; retaining occupancy for recovery")
+        raise RuntimeError("serial worker selection changed")
+    if admitted:
+        import capacity_caller
+        checked = capacity_caller.production_tick(role="macbook", owb_root=OWB,
+            hos_root=HOS, serial_only=True, _serial_lock_held=True,
+            admission={"validate": admitted["admission"]})
+        if (not checked or checked.get("admission") != admitted["admission"] or guards()):
+            raise RuntimeError("serial launch revalidation failed; retain admission")
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
     prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
                            cap_min=cap // 60)
