@@ -189443,17 +189443,22 @@
           "at": "2026-11-05T22:57Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed. v11 is on iCloud and NAS. Next: hash, current title/description/tags, then dry-run."
+        },
+        {
+          "at": "2026-11-05T22:59Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: v11 hash matches. Live listing is private for 2026-11-10T11:30:00Z. Title and tags copied from YouTube; description is the live one, not the old package file."
         }
       ],
-      "remaining_action": "Verify v11 hash and read the live Titan listing",
+      "remaining_action": "Dry-run the private v11 upload, then upload if the gate passes",
       "due": "2026-11-10T10:30:00Z",
       "kind": "studio",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-05T22:57Z",
+        "at": "2026-11-05T22:59Z",
         "by": "cursor",
-        "note": "Claimed. v11 is on iCloud and NAS. Next: hash, current title/description/tags, then dry-run."
+        "note": "v11 hash matches. Live listing is private for 2026-11-10T11:30:00Z. Title and tags copied from YouTube; description is t"
       },
       "taskKeys": [
         "OWB:032"
