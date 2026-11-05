@@ -182578,13 +182578,13 @@
       "stage": "",
       "after": "J2179",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T04:42Z",
-      "eta": "2026-11-05T06:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T03:58Z",
-      "result": "",
+      "result": "KEEP checker only. Exact PR513 head17b2ac5550 reviewed; 24 existing tests plus2 original regressions PASS, rules/core/compile/diff and CI green. Merge e6d133d44d2f1946367b712607c7fa130b352996; review/docs PR514 merge df94f88a008043a802b414cb4ca2308febad6fa4. PR512 superseded and closed. J2181/J2183 notified on HOS desk; J2169 stays blocked1/3 on mapping/source repairs and rendered gates. J2185 queued for unintended branch publication via queue helper. No spend, production-stage or publishing changes.",
       "history": [
         {
           "at": "2026-11-05T03:58Z",
@@ -182615,6 +182615,11 @@
           "at": "2026-11-05T04:47Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR513 merged e6d133d44d; review/docs PR514 merged df94f88a00 after green CI. PR512 closed. HOS and studio handoffs posted; J2185 queue-helper repair queued; J2169 unchanged blocked1/3."
+        },
+        {
+          "at": "2026-11-05T04:47Z",
+          "by": "codex",
+          "what": "done: KEEP checker only. Exact PR513 head17b2ac5550 reviewed; 24 existing tests plus2 original regressions PASS, rules/core/compile/diff and CI green. Merge e6d133d44d2f1946367b712607c7fa130b352996; review/docs PR514 merge df94f88a008043a802b414cb4ca2308febad6fa4. PR512 superseded and closed. J2181/J2183 notified on HOS desk; J2169 stays blocked1/3 on mapping/source repairs and rendered gates. J2185 queued for unintended branch publication via queue helper. No spend, production-stage or publishing changes."
         }
       ],
       "remaining_action": "Review complete; J2183/J2184 source fixes and rendered gates remain before J2169 can resume",
@@ -182629,7 +182634,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/514"
     },
     {
       "id": "J2183",
