@@ -1,5 +1,5 @@
 {
-  "next_id": 2192,
+  "next_id": 2193,
   "jobs": [
     {
       "id": "J0001",
@@ -183488,6 +183488,35 @@
         "HOS:006"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/422"
+    },
+    {
+      "id": "J2192",
+      "title": "032 J2089: review seven new process overlay stills",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# J2089 process overlays: seven draft stills for individual review\n\nPR491, process_graphics.py / PROCESS_MANIFEST_v01.json. Codex worker, 5 Nov 2026.\nReview the seven full-size transparent PNGs individually at\n`/Users/benjaminoats/_desk/cache/J2089/process_previews_v01/`.\nContact sheet: `process_previews.jpg` in that directory. Media is outside git.\n\nReturn KEEP/FIX per id, exact changes and permission to render only named KEEP\nids under your review reference. This is distinct from J2177's 17 mechanisms;\nJ2177 retains their review and frame-0/PIA07232 source decisions.\n\n- r21_cycle_clouds: symbolic Earth water / Titan methane-ethane cycle, SOURCES row 8. Symbols do not assert equal rainfall rates. Check that the comparison supports the locked line.\n- r21_cycle_lakes: rain to channels to lakes, row 8. Not a geographic map; marker follows the channel. Insert real imagery between the two cycle overlays.\n- r25_heated_suit: heat against deep freeze, rows 1/8/9. Only HEATED SUIT is labelled: own oxygen is spoken later, so is not introduced here.\n- r29_rain_comparison: row 10, 6.5/9.5 mm and 9.2/1.6 m/s. Common linear diameter and motion scales, no wrap in the window. BIGGEST DROPS follows J2150. Snowflake analogy remains the spoken comparison.\n- r39_fire_partners: fuel and oxygen converge on fire, rows 9/14; qualitative chemistry, no invented fraction.\n- r40_fire_missing: fuel with almost no oxygen gives no fire, rows 9/14. No numeric zero. Insert real picture between the two chemistry overlays.\n- r45_lift_mechanism: air/lift and gravity/weight, row 15. Symbolic airfoil, not a force simulation or quantitative lift prediction.\n\nPROCESS_VERIFICATION_v01.json records all 763 planned frame bounds, alpha entry/\nexit, changing frames, preview hashes and render guard rejection. Worker viewed\nall seven full-size stills; this is not motion perception or composite approval.\nAll previews require a graded moving plate, subject-safe placement, final timing,\ncontrast and current picture/polish gates. No animation rendered or film PASS.\n\nWrite the decision in jobs/reviews/<review id>/REVIEW.md and update J2089 with\napproved ids and corrections. Do not release the frame-0, APL rights or still\nreuse holds merely because these overlays are acceptable. Spend GBP0.\n",
+      "ref": "b3b950a17f",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T06:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T06:59Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review seven process stills individually; return exact KEEP/FIX and named render permission",
+      "due": "2026-11-09T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [],
