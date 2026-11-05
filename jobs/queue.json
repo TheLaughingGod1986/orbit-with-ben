@@ -185829,10 +185829,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-05T14:49Z",
+      "eta": "2026-11-05T17:49Z",
       "created_by": "chief",
       "created_at": "2026-11-05T10:51Z",
       "result": "",
@@ -185841,11 +185841,24 @@
           "at": "2026-11-05T10:51Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T14:49Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Auth Flow as benoats@googlemail.com; gate Ultra reserve; mint 6 Quality 720p inserts ≤1200",
       "kind": "video",
-      "model": "flow-veo-3.1"
+      "model": "flow-veo-3.1",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T14:49Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2214",
