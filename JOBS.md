@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2209 | macbook | claimed | macbook | 2026-11-05T10:46Z | qa · Shared folder test: MacBook worker side (read Mini file via the share under launchd) |  |
 | J2210 | mini | blocked | codex | – | 010 picture · video · HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint) | J2194 |
 | J2211 | any | open | – | – | 010 picture · review · HOS 010 J2210: review PR425 and resolve Option A1 body-cut segmentation | J2210 |
+| J2212 | any | open | – | – | 032 thumbs · review · 032 J2176: resolve composition conflict after J2196 source failures | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/521 |
 
 Recently finished:
 
