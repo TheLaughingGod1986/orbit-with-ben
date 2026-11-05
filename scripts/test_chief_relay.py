@@ -359,6 +359,23 @@ class Relay(unittest.TestCase):
         finally:
             cr.OWB, cr.queue_has_work = old_owb, old_q
 
+    def test_a_model_at_capacity_flags_only_that_model(self):
+        old_owb, old_q = cr.OWB, cr.queue_has_work
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True)
+        (cr.OWB / "jobs" / "queue.json").write_text(
+            '{"jobs": [{"id": "J0072", "for": "codex", "model": "gpt-6.1-sol", "status": "open", "needs": "any"}]}')
+        self.fake("codex", 'echo "ERROR: Selected model is at capacity. Please try a different model."; exit 1')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            self.assertTrue(cr.d("down_models", "gpt-6.1-sol.json").exists())  # the named model: flagged
+            self.assertTrue(cr.state_of("codex", cr.now() + 16 * MIN)[0])  # its default too: a 15-min pause, not 1 h
+            self.assertNotIn("run failed", self.posts.read_text() if self.posts.exists() else "")
+        finally:
+            cr.OWB, cr.queue_has_work = old_owb, old_q
+
     def test_a_failed_addressed_run_is_not_retried_every_tick(self):
         old_owb, old_q = cr.OWB, cr.queue_has_work
         cr.OWB = self.tmp / "owb"
@@ -627,6 +644,13 @@ class Relay(unittest.TestCase):
         self.assertTrue(cr.UNKNOWN_MODEL_RE.search("Error: Unknown model 'grok-4.7'. Run agent --list-models"))
         self.assertTrue(cr.UNKNOWN_MODEL_RE.search("The model gemini-argon does not exist or you lack access"))
         self.assertFalse(cr.UNKNOWN_MODEL_RE.search("Traceback: KeyError 'model'"))
+
+    def test_provider_capacity_is_a_model_blip_not_a_worker_outage(self):
+        # Codex, 5 Nov 2026 09:10Z: one "model is at capacity" reply marked Codex down for an hour.
+        self.assertTrue(cr.CAPACITY_RE.search("ERROR: Selected model is at capacity. Please try a different model."))
+        self.assertTrue(cr.CAPACITY_RE.search('{"type": "overloaded_error", "message": "Overloaded"}'))
+        self.assertFalse(cr.CAPACITY_RE.search("Disk at capacity: 97% used"))
+        self.assertFalse(cr.CAPACITY_RE.search("Traceback: ValueError: capacity must be positive"))
 
     def test_cursor_gets_the_claude_model_flag_only_for_claude_work(self):
         _, args = cr.cli_spec("cursor", "cursor-claude-opus-5-5")

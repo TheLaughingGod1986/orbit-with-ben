@@ -158,6 +158,11 @@ MODEL_LIMIT_RE = re.compile(r"usage limit for \w|switch to a different model", r
 # A CLI that doesn't know the model it was given (a renamed or mistyped id): flag that model, keep the worker up.
 UNKNOWN_MODEL_RE = re.compile(r"(?:unknown|invalid|unsupported|unrecognized|unrecognised) model|model\b[^\n]{0,60}"
                               r"(?:not found|not available|does not exist|isn't available|is not supported)", re.I)
+# The provider is briefly out of capacity for one model (Codex 5 Nov 2026 09:10Z: "ERROR: Selected model is at capacity.
+# Please try a different model." benched Codex for an hour). Not an outage of the worker: flag that model for a few
+# minutes, keep the worker up, and walk the job on.
+CAPACITY_RE = re.compile(r"(?:model|server|service)[^\n]{0,40}\b(?:at|over) capacity|overloaded_error|"
+                         r"(?:server|model) (?:is )?overloaded", re.I)
 
 
 def now() -> dt.datetime:
@@ -1633,6 +1638,21 @@ def run_locked(at: dt.datetime) -> int:
             routing.OUT.add(bad_model)
             notify(f"Chief relay: {NAMES.get(who, who)} doesn't know model `{routing.cli_model(bad_model)}`; flagged "
                    f"for 24 h and the job walks on. Fix the id in scripts/routing.py (`agent --list-models` / codex / agy).")
+            if job:
+                walk_on(job, who, bad_model, now())
+            at = now()
+            continue
+        if code not in (0, 124) and CAPACITY_RE.search(tail[-1500:]):
+            mins = float(os.environ.get("CHIEF_CAPACITY_MIN", "15"))
+            until = now() + dt.timedelta(minutes=mins)
+            if bad_model:
+                mark_model_down(bad_model, f"{NAMES.get(who, who)} on {routing.cli_model(bad_model)}: provider at capacity",
+                                until, now())
+                routing.OUT.add(bad_model)
+                log(f"{who} on {bad_model}: provider at capacity; model flagged {mins:g} min, {who} stays up")
+            else:  # its default model (Codex's is Sol too): a short pause, not the hour a real failure gets
+                mark_down(who, "provider at capacity for its default model", until, now())
+                log(f"{who}: provider at capacity on its default model; down {mins:g} min")
             if job:
                 walk_on(job, who, bad_model, now())
             at = now()
