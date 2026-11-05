@@ -181446,9 +181446,14 @@
           "at": "2026-11-05T13:29Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T13:29Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2146; starting inspection of LEARNINGS rule 21 and finished OWB longs 023-030"
         }
       ],
-      "remaining_action": "Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21)",
+      "remaining_action": "Inspect LEARNINGS rule 21 and locked cuts/scripts for OWB 023-030",
       "due": "2026-11-15T00:00:00Z",
       "for": "gemini",
       "kind": "script",
@@ -181462,12 +181467,21 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-05T13:29Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2146; starting inspection of LEARNINGS rule 21 and finished OWB longs 023-030"
+      },
+      "taskKeys": [
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030"
+      ]
     },
     {
       "id": "J2147",
