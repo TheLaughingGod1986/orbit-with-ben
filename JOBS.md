@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2194 | mini | open | – | – | 010 picture · for gemini · review · `gemini-argon` · HOS 010: decide exact missing-plate production scope for J2172 | J2172 |
 | J2195 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
-| J2197 | mini | open | – | – | chief · J2038 follow-on: capacity probe producer + ENV flip + 2h watch |  |
+| J2197 | mini | open | – | – | review · J2038 follow-on: capacity probe producer + ENV flip + 2h watch |  |
 | J2198 | any | open | – | – | 032 picture · review · 032 J2089: review corrected fire stills and regenerated process pixels | 347c55feeb |
 
 Recently finished:
