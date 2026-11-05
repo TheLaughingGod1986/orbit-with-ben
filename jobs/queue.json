@@ -166590,6 +166590,11 @@
           "at": "2026-11-05T13:51Z",
           "by": "claude",
           "what": "Ben's 5 Nov 12:47 notes on v03 added to the brief (5 notes; overlaps the 3 Nov six)"
+        },
+        {
+          "at": "2026-11-05T15:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Wait for J2217 eight-item+caption recipe amend; then re-review in J1881 before any production splice (no six-only)",
@@ -166605,7 +166610,16 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "urgent": 15
+      "urgent": 15,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J1882",
