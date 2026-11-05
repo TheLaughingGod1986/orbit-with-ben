@@ -183948,13 +183948,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-05T17:53Z",
-      "eta": "2026-11-05T19:53Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T02:15Z",
-      "result": "",
+      "result": "parked for Chief: review J2175 KEEP (jobs/reviews/J2175/REVIEW.md, HOS PR #429 4eef1358) — C-Open-1 (\"That rooftop lightning rod was Franklin's idea.\", 47 chars, 7w, 10 syllables; 6w fallback \"That lightning rod was Franklin's idea.\") + Layout C-v03a (contiguous w[13..61] 5.720-24.400s of hos_008_short_C_v02.wav) + read_file 9-cut 936x1664 2.31x schedule locked (0 picture_qa fails, J2217 8-note disjoint, soft bottom-caption panel locked). Merge HOS PR #429, authorize 1-sentence 47-char ElevenLabs pickup via vo_take.py, and dispatch £0 Short_C_v03 assembly (conditional 2 Dec 11:30Z slot remains held; 008 Long must be public first).",
       "history": [
         {
           "at": "2026-11-05T02:15Z",
@@ -183990,9 +183990,19 @@
           "at": "2026-11-05T18:08Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified S01-S08 clip windows via read_file (fixed S05 smoke puff, un-swapped S06/S07 wall vs earth, fixed S08 ground spark, locked 936x1664 2.31x 9:16 framing for terminal_loop.py)"
+        },
+        {
+          "at": "2026-11-05T18:16Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Recorded jobs/reviews/J2175/REVIEW.md and HOS PR #429 (4eef1358, 4/4 CI green, picture_qa 0 fails); parked 47-char VO pickup spend + PR merge for Chief"
+        },
+        {
+          "at": "2026-11-05T18:16Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review J2175 KEEP (jobs/reviews/J2175/REVIEW.md, HOS PR #429 4eef1358) — C-Open-1 (\"That rooftop lightning rod was Franklin's idea.\", 47 chars, 7w, 10 syllables; 6w fallback \"That lightning rod was Franklin's idea.\") + Layout C-v03a (contiguous w[13..61] 5.720-24.400s of hos_008_short_C_v02.wav) + read_file 9-cut 936x1664 2.31x schedule locked (0 picture_qa fails, J2217 8-note disjoint, soft bottom-caption panel locked). Merge HOS PR #429, authorize 1-sentence 47-char ElevenLabs pickup via vo_take.py, and dispatch £0 Short_C_v03 assembly (conditional 2 Dec 11:30Z slot remains held; 008 Long must be public first)."
         }
       ],
-      "remaining_action": "Update HOS J2170/J2175 Short_C v03 paper plan, INPUT_INVENTORY.json, and source-QA preflight in clean HOS worktree",
+      "remaining_action": "Chief: merge HOS PR #429, authorize 1-sentence 47-char ElevenLabs pickup (C-Open-1) via vo_take.py, and dispatch £0 Short_C_v03 assembly",
       "due": "2026-11-29T11:30:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -184006,15 +184016,16 @@
       "model": "gemini-argon",
       "urgent": 8,
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-05T18:08Z",
+        "at": "2026-11-05T18:16Z",
         "by": "gemini",
-        "note": "Verified S01-S08 clip windows via read_file (fixed S05 smoke puff, un-swapped S06/S07 wall vs earth, fixed S08 ground sp"
+        "note": "Recorded jobs/reviews/J2175/REVIEW.md and HOS PR #429 (4eef1358, 4/4 CI green, picture_qa 0 fails); parked 47-char VO pi"
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/429"
     },
     {
       "id": "J2176",
