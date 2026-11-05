@@ -51,7 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1899 | any | open | – | – | review · verify condition for J1100 |  |
 | J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
-| J1918 | any | open | – | – | review · verify condition for J1356 |  |
+| J1918 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1356 |  |
 | J1919 | any | open | – | – | review · verify condition for J1752 |  |
 | J1925 | any | open | – | – | review · verify condition for J1753 |  |
 | J1932 | any | open | – | – | review · verify condition for J0979 |  |
