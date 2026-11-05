@@ -180580,17 +180580,22 @@
           "at": "2026-11-04T23:58Z",
           "by": "codex",
           "what": "step 2 of 4 done: Conditional six-row manifest and read-only planner complete; 9 targeted tests pass. Actual master decode/probe running; no output media or sync claims."
+        },
+        {
+          "at": "2026-11-05T00:00Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Master hash and full decoded PTS verified; 12923 frames span539.5s with24 nonstandard PTS steps. Four native sources hash/decode checked; evidence and preservation contract recorded, no output identity claims."
         }
       ],
-      "remaining_action": "Finish actual master/source probe and record verification limits, then submit repair to J1881",
+      "remaining_action": "Run final validation, publish repair branch and hand it to J1881",
       "due": "2026-11-05T12:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-04T23:58Z",
+        "at": "2026-11-05T00:00Z",
         "by": "codex",
-        "note": "Conditional six-row manifest and read-only planner complete; 9 targeted tests pass. Actual master decode/probe running; "
+        "note": "Master hash and full decoded PTS verified; 12923 frames span539.5s with24 nonstandard PTS steps. Four native sources has"
       },
       "taskKeys": [
         "HOS:008"
