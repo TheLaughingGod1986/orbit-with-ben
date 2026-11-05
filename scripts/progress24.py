@@ -13,12 +13,14 @@ board.json gets `progress24h`; studio_app.js draws it on Overview. Reads only; n
 import datetime as dt, json, re
 from pathlib import Path
 
+import channels
+
 DONE_STATES = ("done", "skip", "passed")
 TOTAL = 9
 SAMPLE_EVERY = dt.timedelta(minutes=30)
 KEEP = dt.timedelta(hours=48)
 WINDOW = dt.timedelta(hours=24)
-FILM = re.compile(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", re.I)
+FILM = channels.key_re()
 
 
 def _t(s):
@@ -65,7 +67,7 @@ def baseline(history: list, at: dt.datetime):
 
 def film_of(j: dict) -> str:
     f = str(j.get("film") or "")
-    if re.fullmatch(r"(HOS|OWB):\d{3}", f):
+    if channels.strict_key_re().fullmatch(f):
         return f
     m = FILM.search(j.get("title") or "")
     if m:

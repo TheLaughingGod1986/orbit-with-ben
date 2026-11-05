@@ -18,6 +18,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from video_progress import job_targets
+import channels
 
 ROOT = Path(__file__).resolve().parents[1]
 OVERRIDES = ROOT / "05_Analytics" / "kanban" / "video_overrides.json"
@@ -540,7 +541,7 @@ def ask_entries(alljobs: list[dict]) -> list[dict]:
             e["id"] = j["id"] + (f".{n}" if len(items) > 1 else "")
             e["job"] = j["id"]
             e["jobStatus"] = j.get("status") or ""
-            e["channel"] = (e["channel"] or ("HOS" if j.get("repo") == "hos" else "OWB")).upper()
+            e["channel"] = (e["channel"] or channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home())).upper()
             e["number"] = e["number"] or str(j.get("film") or "")
             e["type"] = e["type"] if e["type"] in ("long", "short") else ("long" if e["card"] and ":S:" not in e["card"] else "short")
             e["version"] = e["version"] or version_of(Path(e["file"]).name.replace("_v", " v").replace("_", " "))
@@ -658,7 +659,7 @@ def approved_entries(alljobs: list[dict]) -> list[dict]:
         e["askJob"] = e.pop("job") or j["id"]
         e["id"] = e["job"] = j["id"]
         e["jobStatus"] = j.get("status") or ""
-        e["channel"] = (e["channel"] or ("HOS" if j.get("repo") == "hos" else "OWB")).upper()
+        e["channel"] = (e["channel"] or channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home())).upper()
         e["number"] = e["number"] or str(j.get("film") or "")
         e["type"] = e["type"] if e["type"] in ("long", "short") else ("long" if e["card"] and ":S:" not in e["card"] else "short")
         e["version"] = e["version"] or version_of(Path(e["file"]).name.replace("_v", " v").replace("_", " "))

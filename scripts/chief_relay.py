@@ -81,6 +81,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import workflow_state as workflow
 import workflow_handoffs as handoffs
 import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and model)
+import channels  # noqa: E402  (channels/*/channel.json: checkouts, labels)
 
 
 def code_version():
@@ -165,13 +166,8 @@ def refresh_probes(at):
         log(f"capability probe: {agent} has {', '.join(available) or 'no media input'} ({evidence[:300]})")
 
 
-def first_dir(*cands) -> pathlib.Path:
-    return next((c for c in cands if c.is_dir()), cands[0])
-
-
 # On Ben's Mini the HOS checkout is "History Of Science" (Cursor, 7 Oct); keep the git-style name as a fallback.
-HOS = pathlib.Path(os.environ.get("HOS_REPO") or first_dir(HOME / "YouTube" / "History Of Science",
-                                                            HOME / "YouTube" / "history-of-science"))
+HOS = channels.repo_path("hos", HOME)
 # Ben, 21 Oct 2026: "build in a method where we identify dynamically if the acting chief is out and delegate a chief
 # until the main one or next in command is back". Claude is a standing link (up while its hourly heartbeat is fresh),
 # not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Cursor stays a worker.

@@ -36,9 +36,12 @@ import shutil
 import subprocess
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import channels  # noqa: E402
+
 HOME = pathlib.Path.home()
 OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
-HOS = pathlib.Path(os.environ.get("HOS_REPO", HOME / "YouTube" / "History Of Science"))
+HOS = channels.repo_path("hos", HOME)
 TMP_ROOTS = ("/tmp/", "/private/tmp/")
 
 
