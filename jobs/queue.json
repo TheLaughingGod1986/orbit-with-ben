@@ -182346,19 +182346,26 @@
           "at": "2026-11-05T03:42Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T03:42Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Claimed; plan: inspect contract, implement, regressions, PR handoff."
         }
       ],
-      "remaining_action": "Implement and test an opt-in terminal-loop contract without relaxing body reuse checks",
+      "remaining_action": "Inspect loop evidence and implement a narrowly validated terminal-loop contract",
       "due": "2026-11-06T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-05T03:42Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed; plan: inspect contract, implement, regressions, PR handoff."
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     },
     {
       "id": "J2180",
