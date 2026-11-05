@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2179 | any | open | – | – | assembly · HOS006 prerequisite: narrowly classify prescribed terminal Shorts loops in picture QA | J2178 |
 | J2180 | any | claimed | codex | 2026-11-05T05:54Z | chief · Review J2179 terminal-loop checker change before HOS006 can use it | J2178 |
 | J2181 | mini | open | – | – | assembly · HOS 006: qualify existing-media replacements for B/C repeated and mismatched shots | J2178 |
+| J2182 | any | open (after J2179) | – | – | chief · Re-review J2179 terminal-loop checker after J2180 FIX | J2180 |
 
 Recently finished:
 
