@@ -884,3 +884,34 @@ uncertain occupancy, stale CPU requests, the serial launch-lock window, legacy
 laptop occupancy/missing and stale peer observations, canonical exit/release,
 and a new laptop claim arriving on a Git retry. All host/account evidence in
 these tests is synthetic. No observed-host acceptance or enablement is claimed.
+
+## Serial producer and laptop caller repair (5 November, latest FIX)
+
+Serial execution.json now records the model actually selected by the canonical
+relay. When capacity is enabled, the real writer binds host/account attribution
+to fresh identity-bound registration and selected-model/account probe receipts.
+The transaction reader verifies that binding against fresh local evidence on
+every attempt. Missing, conflicting or expired proof leaves the account unknown
+and preserves the global unknown-occupancy rejection. A worker binding covers
+one explicit shared pool and exactly its listed models; separate model pools
+must be represented by the current selected-model binding, never inferred from
+the worker name. No private registrations or probes have been created here.
+
+The MacBook now uses the same serial preflight lock as the Mini, with the laptop
+role and peer evidence. Fresh empty occupancy reaches ordinary macbook,any
+selection even if the CPU request is stale or has no candidate. Exclusion stays
+held through canonical claim and the complete ordinary child lifetime; this is
+conservative where the legacy laptop lacks an authoritative process lease.
+Occupied observations can attempt portable capacity while holding that lock;
+unknown/rejected observations never reach ordinary dispatch. Laptop guards are
+rechecked after observation. Current main's back-to-back job loop and the
+existing measured heartbeat observations are preserved.
+
+New regressions drive the actual relay execution writer through fresh evidence,
+reservation, canonical consume and a real supervised synthetic CPU child; a
+shared pool at its limit refuses, conflicting model/host/account proof remains
+unknown, and positively observed serial exit restores eligibility. Laptop caller
+regressions cover no-candidate/empty occupancy, stale requests, uncertain/occupied
+receipts and a competing flock during canonical selection. All test host/account
+proof remains synthetic, not observed production acceptance. Rollout stays off;
+exact-head Chief review, green CI and observed-host gates remain required.

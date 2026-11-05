@@ -51,7 +51,7 @@ def production_tick(*, role, owb_root, hos_root=None, environ=None, serial_only=
         cap = config.get("cap_seconds", 1200)
         if type(cap) is not int or not 1 <= cap <= 1200:
             raise ValueError("production attempt requires a 1–1200 second cap")
-        lock_context = (contextlib.nullcontext() if serial_only and _serial_lock_held
+        lock_context = (contextlib.nullcontext() if _serial_lock_held
                         else (root / "caller.lock").open("a"))
         with lock_context as lock:
             try:
@@ -82,7 +82,7 @@ def production_tick(*, role, owb_root, hos_root=None, environ=None, serial_only=
 
 
 @contextlib.contextmanager
-def serial_preflight(*, owb_root, hos_root=None, environ=None):
+def serial_preflight(*, owb_root, hos_root=None, environ=None, role="mini"):
     """Keep launch exclusion until the relay publishes its legacy lease.
 
     Releasing the lock immediately after an empty observation would let a busy
@@ -105,7 +105,7 @@ def serial_preflight(*, owb_root, hos_root=None, environ=None):
         yield {"state": "capacity_rejected", "serial_safe": False}
         return
     try:
-        yield production_tick(role="mini", owb_root=owb_root, hos_root=hos_root,
+        yield production_tick(role=role, owb_root=owb_root, hos_root=hos_root,
                               environ=env, serial_only=True, _serial_lock_held=True)
     finally:
         lock.close()

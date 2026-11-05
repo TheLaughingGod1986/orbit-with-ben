@@ -3,7 +3,8 @@
 (Ben, 28 Oct 2026: "yes" to a MacBook worker lane over Tailscale with power and idle guards).
 
 launchd runs this every 15 minutes (scripts/macbook/com.owb.macbook-worker.plist, installed by
-scripts/macbook/setup_macbook.sh). Each run does at most one job, and only when ALL of these hold:
+scripts/macbook/setup_macbook.sh). Each run keeps taking jobs back to back for up to MACBOOK_LOOP_MIN (13) minutes
+(Ben, 5 Nov 2026), and takes each one only when ALL of these hold:
   - it is inside its hours: round the clock by default (Ben, 28 Oct 2026: "let's use the MacBook Pro 24 seven");
     MACBOOK_HOURS=night limits it to weeknights 21:00-09:00 and all weekend, London (the run must also end by 09:00);
   - no pause file (~/_desk/state/macbook-worker.pause), and no other run of this script in progress;
@@ -344,44 +345,61 @@ def pull_main() -> str:
     return ""
 
 
-def capacity_tick():
+def capacity_tick(*, lock_held=False):
     import capacity_caller
-    return capacity_caller.production_tick(role="macbook", owb_root=OWB, hos_root=HOS)
+    return capacity_caller.production_tick(role="macbook", owb_root=OWB, hos_root=HOS,
+                                          _serial_lock_held=lock_held)
 
 
-def run() -> int:
-    STATE.mkdir(parents=True, exist_ok=True)
-    lock = open(STATE / "macbook-worker.lock", "w")
-    try:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except OSError:
-        log("another run is still going")
-        return 0
+def run_one() -> str:
+    """One job: 'ran' after a job (finished or released), else 'idle', 'waiting' or 'error'."""
     problem = pull_main()
     if problem:
         log(problem)
         push_heartbeat("error", [problem])
-        return 1
+        return "error"
     why = guards()
     if why:
         log("not now: " + "; ".join(why))
         push_heartbeat("waiting", why)
-        return 0
-    capacity_result = capacity_tick()
-    if capacity_result is not None:
-        log("capacity tick: " + capacity_result["state"])
-        push_heartbeat(capacity_result["state"], ["capacity attempt; no automatic completion"])
-        return 0
-    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"], cwd=OWB)
+        return "waiting"
+    import capacity_caller
+    # Observe under the SAME lock used by capacity launches. Keep exclusion
+    # through canonical claim and the entire ordinary child lifetime, so no
+    # gap in legacy process publication can admit a competing launch.
+    with capacity_caller.serial_preflight(role="macbook", owb_root=OWB, hos_root=HOS) as result:
+        if result is not None and (result.get("state") != "capacity_waiting"
+                                   or result.get("serial_safe") is not True):
+            # Only a positively observed occupied state may try extra capacity;
+            # malformed/stale/uncertain evidence never permits serial fallback.
+            if result.get("state") == "capacity_waiting":
+                capacity_result = capacity_tick(lock_held=True)
+                if capacity_result is not None:
+                    log("capacity tick: " + capacity_result["state"])
+                    push_heartbeat(capacity_result["state"], ["capacity attempt; no automatic completion"])
+                    return "ran" if capacity_result["state"] == "capacity_exited" else "waiting"
+            push_heartbeat("waiting", ["capacity occupancy unverified or occupied"])
+            return "waiting"
+        # Recheck laptop guards after the potentially slow evidence subprocess.
+        why = guards()
+        if why:
+            push_heartbeat("waiting", why)
+            return "waiting"
+        return run_ordinary()
+
+
+def run_ordinary() -> str:
+    """Called only with launch exclusion held when capacity is enabled."""
+    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"], cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
         push_heartbeat("idle", ["no MacBook job waiting"])
-        return 0
+        return "idle"
     job = claimed_job(r.stdout)
     if r.returncode or not job:
         log(f"claim failed: {(r.stderr or r.stdout).strip()[-300:]}")
         push_heartbeat("error", [f"claim failed: {(r.stderr or r.stdout).strip()[-120:]}"])
-        return 1
+        return "error"
     push_heartbeat("working", [], job)
     have = usable(installed())
     try:  # the same out-of-credit flags the Mini's relay honours (scripts/credit_flags.json)
@@ -399,7 +417,7 @@ def run() -> int:
             f"MacBook worker: no agent CLI installed for this job (installed: {', '.join(have) or 'none'})", "--git"],
            cwd=OWB)
         log(f"no CLI for {job} (installed: {have}): released")
-        return 1
+        return "error"
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
     code = run_capped(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd, OWB, cap)
     sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], timeout=180)
@@ -419,7 +437,33 @@ def run() -> int:
         push_heartbeat("idle", [f"last run: {job} on {agent} finished"])
     if agent == "codex":
         record_usage()
-    return 0
+    return "ran"
+
+
+
+
+def run() -> int:
+    STATE.mkdir(parents=True, exist_ok=True)
+    lock = open(STATE / "macbook-worker.lock", "w")
+    try:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        log("another run is still going")
+        return 0
+    # Keep taking jobs back to back (Ben, 5 Nov 2026: "why are agents taking so long between jobs"): launchd starts a
+    # run every 15 min, and the run keeps going while there is work and the guards hold, up to MACBOOK_LOOP_MIN.
+    # The lock stops a second run, so a long job simply carries the lane into the next tick.
+    started = dt.datetime.now(dt.timezone.utc)
+    budget = dt.timedelta(minutes=float(os.environ.get("MACBOOK_LOOP_MIN", "13")))
+    jobs_run = 0
+    while True:
+        status = run_one()
+        if status != "ran":
+            return 1 if status == "error" and not jobs_run else 0
+        jobs_run += 1
+        if dt.datetime.now(dt.timezone.utc) - started >= budget:
+            log(f"loop budget used after {jobs_run} job(s); the next tick carries on")
+            return 0
 
 
 def main(argv=None) -> int:

@@ -105,6 +105,56 @@ class Caller(unittest.TestCase):
             with (self.root / "caller.lock").open("a") as competing:
                 fcntl.flock(competing, fcntl.LOCK_EX | fcntl.LOCK_NB)
 
+    def run_laptop(self, receipt, ordinary=None):
+        from contextlib import contextmanager
+        @contextmanager
+        def observed(**kwargs):
+            self.assertEqual(kwargs["role"], "macbook")
+            yield receipt
+        with patch.object(macbook_worker, "pull_main", return_value=""), \
+             patch.object(macbook_worker, "guards", return_value=[]), \
+             patch.object(macbook_worker, "push_heartbeat"), \
+             patch.object(macbook_worker, "capacity_tick", return_value={"state":"capacity_waiting"}) as tick, \
+             patch("capacity_caller.serial_preflight", side_effect=observed), \
+             patch.object(macbook_worker, "sh", return_value=subprocess.CompletedProcess([],10,"","")) as claim:
+            self.assertEqual(macbook_worker.run_one(), "idle" if receipt and receipt.get("serial_safe") else "waiting")
+            return claim.call_count, tick.call_count
+
+    def test_laptop_empty_no_candidate_continues_canonical_queue(self):
+        self.assertEqual(self.run_laptop({"state":"capacity_waiting", "serial_safe":True}), (1,0))
+
+    def test_laptop_uncertain_and_occupied_receipts_never_claim_ordinary(self):
+        for receipt in ({"state":"capacity_rejected"}, {"state":"capacity_busy"},
+                        {"state":"capacity_waiting", "serial_safe":False}):
+            claims, _ = self.run_laptop(receipt)
+            self.assertEqual(claims, 0)
+
+    def test_laptop_stale_request_uses_fresh_occupancy_and_holds_exclusion_through_claim(self):
+        import fcntl
+        self.config["role"] = "macbook"
+        self.config["at"] = (T-dt.timedelta(hours=1)).isoformat()
+        self.config["expiresAt"] = (T-dt.timedelta(minutes=55)).isoformat()
+        self.ev["hosts"] = [host(), host("macbook")]
+        self.ev["leases"] = []
+        self.config["transport_approval_ref"] = "mounted-fixture"
+        self.assertTrue(self.call(serial_only=True)["serial_safe"])
+        def competing_claim(*args, **kwargs):
+            with (self.root / "caller.lock").open("a") as competing:
+                with self.assertRaises(BlockingIOError):
+                    fcntl.flock(competing, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            return subprocess.CompletedProcess([],10,"","")
+        env = {"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)}
+        with patch.dict(__import__("os").environ, env), \
+             patch("capacity_evidence.private_document", return_value=self.config), \
+             patch("capacity_caller.production_tick", return_value={"state":"capacity_waiting", "serial_safe":True}), \
+             patch.object(macbook_worker, "pull_main", return_value=""), \
+             patch.object(macbook_worker, "guards", return_value=[]), \
+             patch.object(macbook_worker, "push_heartbeat"), \
+             patch.object(macbook_worker, "sh", side_effect=competing_claim):
+            self.assertEqual(macbook_worker.run_one(), "idle")
+        with (self.root / "caller.lock").open("a") as competing:
+            fcntl.flock(competing, fcntl.LOCK_EX | fcntl.LOCK_NB)
+
     def test_disabled_bridge_never_reads_private_config_or_mutates_queue(self):
         with patch("capacity_evidence.private_document") as read:
             self.assertIsNone(caller.attempt(role="mini",owb_root=self.root,environ={}))

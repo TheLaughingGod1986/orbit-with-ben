@@ -132,7 +132,8 @@ def collect(root, *, at, installed_head, measurement=measure):
                                         "on_ac", "idle_minutes", "architecture")}
     host.update({k: config.get(k) for k in ("host", "role", "configured_limit", "min_free_gb",
         "max_load", "min_memory_gb", "capacity_review", "reviewed_head")})
-    host.update(registered_id=config["host"], installed_head=installed_head, state="idle",
+    host.update(registered_id=config["host"], machine_fingerprint=config["machine_fingerprint"],
+                installed_head=installed_head, state="idle",
                 at=at.isoformat(), expiresAt=(at+dt.timedelta(seconds=60)).isoformat(),
                 guard_reasons=[], workers={}, input_receipts={})
     accounts = {}
@@ -437,6 +438,39 @@ def board_stage_claims(films_root, repo, at):
     return sorted(held)
 
 
+def serial_identity(root, *, execution, at, installed_head):
+    """Attribute only an actually selected model to a fresh registered pool.
+
+    A worker binding covers exactly its listed models and one shared pool. A
+    worker using separate model pools needs a binding/probe for the selected
+    model; no account is inferred from its CLI name or a green heartbeat.
+    """
+    host, accounts = collect(root, at=at, installed_head=installed_head)
+    worker, model = execution.get("worker"), execution.get("model")
+    report = host["workers"].get(worker, {})
+    account = report.get("account")
+    if (not model or model not in report.get("verified_models", [])
+            or account not in accounts or accounts[account].get("ready") is not True):
+        raise ValueError("selected serial model/account proof unavailable")
+    return dict(host=host["host"], account=account,
+                account_identity=dict(host=host["host"], worker=worker, model=model,
+                    account=account, machine_fingerprint=host["machine_fingerprint"]))
+
+
+def serial_account_matches(legacy, local_host):
+    identity = legacy.get("account_identity")
+    if not isinstance(identity, dict):
+        return False
+    report = local_host["workers"].get(legacy.get("worker"), {})
+    return (identity == dict(host=local_host["host"], worker=legacy.get("worker"),
+                model=legacy.get("model"), account=report.get("account"),
+                machine_fingerprint=local_host["machine_fingerprint"])
+            and legacy.get("host") == local_host["host"]
+            and legacy.get("account") == report.get("account")
+            and bool(legacy.get("account"))
+            and legacy.get("model") in report.get("verified_models", []))
+
+
 def transaction_evidence(root, *, lease_root, owb_root, reviewed_head, chief,
                          choose_worker, hos_root=None, legacy_lease=None,
                          remote_hosts=(), remote_leases=(), clock=None,
@@ -460,7 +494,7 @@ def transaction_evidence(root, *, lease_root, owb_root, reviewed_head, chief,
                 job=legacy.get("job") or "legacy-serial",
                 worker=legacy.get("worker") or "unknown",
                 host=legacy.get("host") or local_host["host"],
-                account=legacy.get("account") or "",
+                account=(legacy.get("account") or "") if serial_account_matches(legacy, local_host) else "",
                 pid=legacy.get("pid"),
                 startedAt=legacy.get("startedAt") or at.isoformat(),
                 expiresAt=legacy.get("expiresAt") or (at + dt.timedelta(minutes=25)).isoformat(),

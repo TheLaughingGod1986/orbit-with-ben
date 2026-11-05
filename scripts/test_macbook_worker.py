@@ -101,9 +101,9 @@ class Guards(unittest.TestCase):
         self.assertIn("on battery", doc["why"])
 
     def test_it_pulls_before_the_guards(self):
-        # A stuck guard must not keep the MacBook on old code: pull_main runs first in run().
+        # A stuck guard must not keep the MacBook on old code: pull_main runs first in each job's run_one().
         src = pathlib.Path(mw.__file__).read_text()
-        body = src[src.index("def run() -> int:"):]
+        body = src[src.index("def run_one() -> str:"):]
         self.assertLess(body.index("pull_main()"), body.index("guards()"))
 
 
@@ -214,6 +214,22 @@ class AllAgents(unittest.TestCase):
             self.assertEqual(mw.usable(["codex", "cursor"], now=T0 + dt.timedelta(hours=3)), ["codex", "cursor"])
             self.assertIn("cursor", mw.down_agents(T0))
             self.assertTrue(until.startswith("2026-10-28T14:00"))
+
+    def test_run_keeps_taking_jobs_until_idle(self):
+        import tempfile
+        seq = iter(["ran", "ran", "idle"])
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
+                mock.patch.object(mw, "run_one", side_effect=lambda: next(seq)) as one:
+            self.assertEqual(mw.run(), 0)
+            self.assertEqual(one.call_count, 3)
+
+    def test_run_stops_at_its_loop_budget(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
+                mock.patch.dict(os.environ, {"MACBOOK_LOOP_MIN": "0"}), \
+                mock.patch.object(mw, "run_one", return_value="ran") as one:
+            self.assertEqual(mw.run(), 0)
+            self.assertEqual(one.call_count, 1)
 
     def test_installed_honours_macbook_agents_and_what_exists(self):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/x" if a in ("codex", "claude") else None):

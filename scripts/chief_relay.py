@@ -1557,9 +1557,21 @@ def run_locked(at: dt.datetime) -> int:
                            "agent": who, "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(seconds=cap + 60)),
                            "pid": os.getpid(), "kind": "chief-review",
                            "progress": {"step": 0, "of": 3, "at": iso(started), "note": "Review started"}})
-            execution = {"job":reviews[0]["id"] if review_work else job.get("id") if job else "", "worker":who,
+            execution = {"job":reviews[0]["id"] if review_work else job.get("id") if job else "", "worker":who, "model":model,
                          "pid":os.getpid(),"host":"mini","machine_name":platform.node(),
                          "startedAt":iso(started),"expiresAt":iso(started + dt.timedelta(seconds=cap+60)),"version":LOADED_VERSION}
+            if os.environ.get("OWB_CAPACITY_ENABLED") == "1":
+                try:
+                    import capacity_evidence
+                    root = pathlib.Path(os.environ["OWB_CAPACITY_ROOT"])
+                    config = capacity_evidence.private_document(root, "dispatch.json")
+                    head = capacity_evidence.reviewed_installation(OWB, config.get("reviewed_head"))
+                    execution.update(capacity_evidence.serial_identity(
+                        root, execution=execution, at=started, installed_head=head))
+                except (KeyError, OSError, ValueError, TypeError, subprocess.SubprocessError):
+                    # Ordinary serial work remains available, but an unattributed
+                    # lease blocks every extra lane until fresh proof exists.
+                    pass
             write_json(d("execution.json"),execution)
             write_json(d("runner.json"),{"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"]})
         try:

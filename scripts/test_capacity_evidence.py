@@ -313,6 +313,94 @@ class Evidence(unittest.TestCase):
                     measurement=lambda _: copy.deepcopy(self.measured),
                 )
 
+    def serial_written_by_relay(self):
+        from contextlib import contextmanager
+        import chief_relay as cr
+        from test_chief_relay import Relay
+        harness = Relay()
+        harness.setUp()
+        self.addCleanup(harness.tearDown)
+        emitted = []
+        @contextmanager
+        def empty(**kwargs):
+            yield None
+        def run_cli(*args):
+            emitted.append(cr.read_json(cr.d("execution.json")))
+            return 0, "fixture completed"
+        selected = dict(mode="worker", worker="codex", job=job("J1841"))
+        original_collect = evidence.collect
+        with patch.dict(os.environ, {"OWB_CAPACITY_ENABLED":"1",
+                    "OWB_CAPACITY_ROOT":str(self.root), "CHIEF_CHAIN_MAX":"1"}), \
+             patch("capacity_caller.serial_preflight", side_effect=empty), \
+             patch.object(cr.workflow, "select_dispatch", return_value=selected), \
+             patch.object(cr, "queue_has_work", return_value=True), \
+             patch.object(cr, "run_cli", side_effect=run_cli), \
+             patch.object(cr, "now", return_value=T), \
+             patch.object(cr, "offload_scratch"), \
+             patch.object(cr, "fetch_claude_beat"), \
+             patch.object(evidence, "reviewed_installation", return_value=HEAD), \
+             patch.object(evidence, "collect", side_effect=lambda *a, **kw:original_collect(
+                 self.root, at=T, installed_head=HEAD, measurement=lambda _:self.measured)):
+            cr.cmd_run(T)
+        self.assertEqual(len(emitted), 1)
+        return emitted[0]
+
+    def test_real_serial_writer_through_transaction_and_reservation(self):
+        import capacity_reservations
+        # A Chief's Codex execution and an independent Gemini specialist.
+        self.config.update(configured_limit=2, capacity_review="fixture", reviewed_head=HEAD)
+        self.config["workers"]["gemini"] = dict(account="gemini-pool", models=["gemini-agy"])
+        self.config["accounts"]["gemini-pool"] = 1
+        self.probes["workers"]["gemini"] = proof(ready=True, account="gemini-pool",)
+        self.probes["workers"]["gemini"]["verified_models"] = ["gemini-agy"]
+        self.probes["accounts"]["gemini-pool"] = proof(ready=True, limit=1)
+        self.write()
+        (self.root / "dispatch.json").write_text('{}')
+        (self.root / "dispatch.json").chmod(0o600)
+        serial = self.serial_written_by_relay()
+        self.assertEqual(serial["account"], "codex-shared")
+        self.assertEqual(serial["model"], "gpt-6.1-sol")
+        (self.root / "02_Video-Projects").mkdir()
+        def observe(alive=True, lease=serial):
+            with patch.object(evidence, "reviewed_installation", return_value=HEAD):
+                return evidence.transaction_evidence(self.root, lease_root=self.root / "leases",
+                    owb_root=self.root, reviewed_head=HEAD, chief="codex", choose_worker=choose,
+                    legacy_lease=lease, clock=lambda:T, measurement=lambda _:self.measured,
+                    process_alive=lambda pid:alive)
+        tx = observe()
+        data = {"jobs":[job()]}
+        reservation = capacity_reservations.reserve(data, **tx, token="serial-integration-token",
+            host_id="registered-mini", worker="gemini")
+        self.assertEqual(reservation["worker"], "gemini")
+        import capacity_supervisor
+        import execution_leases
+        import sys
+        capacity_reservations.consume(data, token="serial-integration-token",
+            host_id="registered-mini", worker="gemini", claimant="gemini", **tx)
+        result = capacity_supervisor.run(
+            registry=execution_leases.Registry(self.root / "leases", "registered-mini", 2),
+            read_claim=lambda:data["jobs"][0], guard=lambda claim:True,
+            installed_head=HEAD, reviewed_head=HEAD,
+            argv=[sys.executable, "-c", "print('independent specialist')"],
+            cwd=self.root, log_path=self.root / "specialist.log", cap_seconds=2,
+            preflight=lambda claim, cwd:None, clock=lambda:T)
+        self.assertEqual((self.root / "specialist.log").read_text(), "independent specialist\n")
+        self.assertEqual(data["jobs"][0]["status"], "claimed")
+        # The same account cannot become spare by using the other host.
+        self.config["workers"]["gemini"]["account"] = "codex-shared"
+        self.probes["workers"]["gemini"]["account"] = "codex-shared"
+        self.write()
+        tx = observe()
+        self.assertEqual(capacity.propose({"jobs":[job()]}, **{k:tx[k] for k in
+            ("hosts", "leases", "accounts", "at", "chief", "choose_worker")})["proposals"], [])
+        tx = observe(alive=False)
+        self.assertTrue(capacity.propose({"jobs":[job()]}, **{k:tx[k] for k in
+            ("hosts", "leases", "accounts", "at", "chief", "choose_worker")})["proposals"])
+        for change in (dict(account="wrong"), dict(model="unverified"),
+                       dict(account_identity={}), dict(host="other")):
+            bad = observe(lease=dict(serial, **change))
+            self.assertEqual(bad["leases"][0]["account"], "")
+
     def test_transaction_evidence_combines_boards_and_legacy_lease(self):
         owb = self.root / "owb"
         hos = self.root / "hos"
