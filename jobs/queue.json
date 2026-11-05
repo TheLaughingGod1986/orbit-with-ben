@@ -1,5 +1,5 @@
 {
-  "next_id": 2208,
+  "next_id": 2209,
   "jobs": [
     {
       "id": "J0001",
@@ -184749,6 +184749,34 @@
       ],
       "remaining_action": "Write E1 rules into OWB Shorts gates; inventory 026-029/030+ needing re-cut",
       "kind": "assembly"
+    },
+    {
+      "id": "J2208",
+      "title": "Shared folder test: Mini side (write + verify hashes in ~/_desk/shared)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Shared-folder test, Mini side (Ben, 5 Nov 2026: \"Can you do a full test to see if it's set up correctly?\"). £0, read/write only inside ~/_desk/shared/_share_test. Never delete anything. Never touch the NAS or Tailscale settings.\n\nRun on the Mac mini and paste the full output into --result:\n\n```\nT=~/_desk/shared/_share_test; mkdir -p \"$T\"\necho \"== folder\"; ls -ld ~/_desk/shared \"$T\"; df -h ~/_desk/shared | tail -1\necho \"== served by File Sharing\"; sharing -l 2>/dev/null | grep -A3 -i shared || echo \"sharing -l gave nothing (may need Ben's sudo; not a failure by itself)\"\necho \"== MacBook's file\"; for f in \"$T\"/from_macbook*.bin; do [ -e \"$f\" ] || { echo \"none yet\"; break; }; want=$(cat \"$f.sha256\"); got=$(shasum -a 256 \"$f\" | cut -d' ' -f1); [ \"$want\" = \"$got\" ] && echo \"OK $f\" || echo \"MISMATCH $f\"; ls -l \"$f\"; done\necho \"== Mini writes\"; f=\"$T/from_mini_$(date -u +%Y%m%dT%H%MZ).bin\"; head -c 268435456 /dev/urandom > \"$f\"; shasum -a 256 \"$f\" | cut -d' ' -f1 > \"$f.sha256\"; ls -l \"$f\"; cat \"$f.sha256\"\n```\n\nDone when: the MacBook's file (if present) reads OK and the Mini's 256 MB file and its .sha256 are written. If the MacBook file isn't there yet, still finish: the MacBook job after this one checks the other direction.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T09:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Shared folder test: Mini side (write + verify hashes in ~/_desk/shared)",
+      "kind": "qa"
     }
   ],
   "focus": [],
