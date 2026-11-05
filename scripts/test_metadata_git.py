@@ -135,7 +135,8 @@ class MetadataGit(unittest.TestCase):
                 self.assertEqual(self.remote_head(), self.base)
                 self.assertEqual(self.git(self.work, 'status', '--porcelain'), before)
 
-    def test_push_race_preserves_both_updates_and_refuses_retry(self):
+    def test_push_race_reapplies_on_new_main_keeping_both_updates(self):
+        # 5 Nov 2026: a lost race used to leave main diverged and refuse every later write until reconciled by hand.
         original = studio.git
         raced = False
         def race(*args):
@@ -145,15 +146,26 @@ class MetadataGit(unittest.TestCase):
                 self.advance_remote()
             return original(*args)
         with patch.object(studio, 'git', side_effect=race):
-            self.assertIn('push rejected', self.run_metadata('jobs'))
-        remote = self.remote_head()
-        local = self.git(self.work, 'rev-parse', 'HEAD')
-        self.assertNotEqual(remote, local)
-        self.assertEqual(json.loads(self.queue.read_text())['next_id'], 2)
-        self.assertIn('unpublished/diverged', self.run_metadata('jobs'))
-        self.assertEqual(self.remote_head(), remote)
-        self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), local)
+            self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), self.remote_head())
+        data = json.loads(self.queue.read_text())
+        self.assertEqual((data['next_id'], data['concurrent_marker']), (2, 'other agent'))
+        self.assertEqual(self.git(self.work, 'rev-list', '--count', 'HEAD'),
+                         str(int(self.git(self.work, 'rev-list', '--count', self.base)) + 2))  # theirs + ours, once
 
+    def test_push_that_keeps_losing_fails_closed_and_preserves_the_commit(self):
+        original = studio.git
+        def reject(*args):
+            if args[0] == 'push':
+                return subprocess.CompletedProcess(args, 1, '', 'rejected')
+            return original(*args)
+        with patch.object(studio, 'git', side_effect=reject):
+            self.assertIn('push rejected', self.run_metadata('jobs'))
+        self.assertEqual(self.remote_head(), self.base)
+        local = self.git(self.work, 'rev-parse', 'HEAD')
+        self.assertNotEqual(local, self.base)
+        self.assertIn('unpublished/diverged', self.run_metadata('jobs'))
+        self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), local)
 
 if __name__ == '__main__':
     unittest.main()

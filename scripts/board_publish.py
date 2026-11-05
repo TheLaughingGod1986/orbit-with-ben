@@ -526,6 +526,12 @@ def run_once(a) -> int:
         board["machines"] = machines.section(queue, *heartbeats(), at, [ex] if isinstance(ex, dict) else ex)
     except Exception as e:  # noqa: BLE001
         log(f"machines not built: {e}")
+    try:  # Queue forecast: who each job waits for, its place in line, when it starts (Ben, 5 Nov 2026)
+        import queue_eta
+        queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
+        board["queueForecast"] = queue_eta.section(queue, *heartbeats(), at)
+    except Exception as e:  # noqa: BLE001
+        log(f"queue forecast not built: {e}")
     try:  # Last 24 hours on the home page (Ben, 4 Nov 2026); never blocks the board push
         import progress24
         board["progress24h"] = progress24.section(STATE / "progress_history.json", board, at)

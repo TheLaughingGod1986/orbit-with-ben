@@ -734,7 +734,8 @@
       responsibility=AGENTS[running.by]||running.by||'Agent not recorded';
     } else {
       status=j.awaits_ben||hold.type==='ben'?'Waiting for your approval':dependency?'Waiting for a prerequisite':held?'Waiting for '+(hold.type==='credits'?'credit':hold.type==='capability'?'a capable reviewer':'input'):uncertainClaim?'Claim recorded · activity unconfirmed':chief?'Chief decision queued':selected?'Selected next · not yet claimed':'Queued for this video';
-      timing=!reportFresh?'Start time unknown · report stale or missing':dependency?(parent?'After '+clip(parent.title||parent.id,90):'Prerequisite status not confirmed'):held?'Start depends on resolving the recorded hold':uncertainClaim?'Task claim exists; live execution is not confirmed':'Start time not confirmed';
+      const fc=j.status==='open'&&!dependency&&!held?forecastLine(b,j):'';
+      timing=fc?fc:!reportFresh?'Start time unknown · report stale or missing':dependency?(parent?'After '+clip(parent.title||parent.id,90):'Prerequisite status not confirmed'):held?'Start depends on resolving the recorded hold':uncertainClaim?'Task claim exists; live execution is not confirmed':'Start time not confirmed';
       const selectedWorker=selected&&(next.worker||next.agent), chiefName=fresh((b.models||{}).checkedAt)?((b.models||{}).chief||{}).agent:'';
       responsibility=uncertainClaim&&j.by?'Recorded owner · '+(AGENTS[j.by]||j.by):chief?'Chief'+(chiefName?' · '+(AGENTS[chiefName]||chiefName):''):selectedWorker?'Selected worker · '+(AGENTS[selectedWorker]||selectedWorker):j.for?'Eligible worker · '+(AGENTS[j.for]||j.for):'Waiting for an eligible agent';
     }
@@ -788,6 +789,30 @@
     </section>`;
   }
   // Machines (Ben, 4 Nov 2026): what the Mini and the MacBook are on now, and jobs each finished in 24 h.
+  // Queue forecast (Ben, 5 Nov 2026: "waiting for this particular agent to be free, number 4 in the queue ... a time").
+  function qWhen(t) {
+    const d=Date.parse(t); if(!d) return '';
+    const day=x=>new Date(x).toLocaleDateString('en-GB',{timeZone:'Europe/London',weekday:'short'});
+    const hm=new Date(d).toLocaleTimeString('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit'});
+    return (day(d)===day(Date.now())?'':day(d)+' ')+hm;
+  }
+  function forecastLine(b, j) {
+    const q=(b&&b.queueForecast)||{}, f=j&&(q.jobs||{})[j.id];
+    if(f) return `Next for ${AGENTS[f.agent]||f.agent} · #${f.pos} in line · starts about ${qWhen(f.startAt)}`;
+    const why=j&&(q.noAgent||{})[j.id];
+    return why?why.charAt(0).toUpperCase()+why.slice(1):'';
+  }
+  function agentLines(b) {
+    const q=(b&&b.queueForecast)||{};
+    const rows=(q.agents||[]).map(a=>{
+      const name=AGENTS[a.agent]||a.agent;
+      if(!a.up) return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title muted">Not available · ${esc(a.why||'down')}</span></li>`;
+      const on=a.now?`on ${esc(a.now)} · free about ${esc(qWhen(a.freeAt))}`:'free now';
+      const line=a.queued?` · ${a.queued} in line, clear about ${esc(qWhen(a.clearAt))}`:'';
+      return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title">${on}${line}</span><span class="p24-count">~${a.minutesPerJob} min/job</span></li>`;
+    }).join('');
+    return rows?`<div class="mc-machine"><div class="mc-head"><b>Agents and their lines</b></div><ul class="p24-list">${rows}</ul><p class="muted p24-note">${esc(q.note||'')}</p></div>`:'';
+  }
   function machinesCard(b, now) {
     const m=b.machines;
     if(!m||!(m.machines||[]).length) return '';
@@ -806,7 +831,7 @@
       return `<div class="mc-machine"><div class="mc-head"><b>${esc(r.name)}</b><span class="mc-done"><b>${r.done24||0}</b> done in 24 h</span></div>
         ${jobs?`<ul class="p24-list">${jobs}</ul>`:idle}${agents?`<p class="muted p24-note">By ${agents}</p>`:''}${clis}</div>`;
     }).join('');
-    return `<section class="overview-p24 overview-machines" aria-label="Machines"><h2>Machines</h2>${rows}</section>`;
+    return `<section class="overview-p24 overview-machines" aria-label="Machines"><h2>Machines</h2>${rows}${agentLines(b)}</section>`;
   }
   function overview(b, now) {
     const s=overviewModel(b,now), candidate=featureVideo(b,now);
@@ -889,7 +914,7 @@
     ].filter(Boolean);
     const jobs = [...new Map((v.jobs || []).map(j=>[j.id,j])).values()].sort((a, b) => ["claimed", "open", "blocked", "done"].indexOf(a.status) - ["claimed", "open", "blocked", "done"].indexOf(b.status));
     const jobRows = jobs.map(j => { const [tone, w0] = JOB_WORD[j.status] || ["", j.status]; const word = j.status === "blocked" ? waitWord(j) : w0;
-      const why = j.status === "blocked" ? (j.hold && j.hold.condition) || j.result : j.remaining_action;
+      const why = j.status === "blocked" ? (j.hold && j.hold.condition) || j.result : j.status === "open" && forecastLine(b, j) || j.remaining_action;
       return `<div class="job"><div class="job-top"><span class="tag ${tone}">${word}</span><b>${esc(clip(j.title || j.id, 90))}</b></div>
         <span class="meta">${esc(j.id)}${j.by ? " · " + esc(AGENTS[j.by] || j.by) : ""}${why ? " · " + esc(clip(why, 160)) : ""}</span>
         ${j.status === "claimed" ? (j.progress && j.progress.of > 0 ? bar(j.progress, etaText(etaOf(j, Date.now()))) : `<span class="meta">${esc(etaText(etaOf(j, Date.now())))}</span>`) : ""}</div>`; }).join("");

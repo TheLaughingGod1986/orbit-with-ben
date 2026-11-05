@@ -418,9 +418,15 @@ def choose_next(data, agent, can, at, job_id=""):
     held = next((j for j in data["jobs"] if j.get("by") == agent and j["status"] == "claimed"), None)
     if held:
         require_chief(held, agent, at)
-        if workflow.external_hold(held,at) or workflow.capability_problem(held,agent,at,chief_relay.worker_capabilities()):
+        stuck = workflow.external_hold(held,at) or workflow.capability_problem(held,agent,at,chief_relay.worker_capabilities())
+        if not stuck:
+            return held if not job_id or held["id"] == job_id else None
+        # A claim this agent can't resume used to leave it idle until the claim ran out (5 Nov 2026: Gemini held J1100,
+        # waiting for verified audio_input, and sat idle for an hour). Hand it back, progress kept, and take other work.
+        if workflow.role_job(held):
             return None
-        return held if not job_id or held["id"] == job_id else None
+        held.update(status="open", by="", since="", eta="")
+        log(held, at, agent, f"released: {agent} can't resume it ({str(stuck)[:120]}); progress kept")
     return next((j for j in ordered(data, at) if (not job_id or j["id"] == job_id) and claimable(data,j,can,at,agent)), None)
 
 
@@ -801,7 +807,7 @@ def with_git(apply, message: str, tries: int = 3):
             studio.write_status(studio.FILMS)
             paths += list(touched) + [studio.status_path(studio.FILMS)]
         return out, None, paths
-    return studio.git_transaction(write, message)
+    return studio.git_transaction(write, message, tries)
 
 
 def film_status_path(job: dict):
