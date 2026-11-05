@@ -167795,10 +167795,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-05T09:24Z",
+      "eta": "2026-11-05T11:24Z",
       "created_by": "relay",
       "created_at": "2026-11-03T21:54Z",
       "result": "",
@@ -167817,6 +167817,11 @@
           "at": "2026-11-05T09:24Z",
           "by": "chief",
           "what": "remaining action: Close verify: J1880 already done"
+        },
+        {
+          "at": "2026-11-05T09:24Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Close verify: J1880 already done",
@@ -167828,7 +167833,15 @@
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
       ],
-      "urgent": 25
+      "urgent": 25,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T09:24Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1904",
