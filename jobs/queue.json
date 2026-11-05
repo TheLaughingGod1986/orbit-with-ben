@@ -176057,13 +176057,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T08:58Z",
-      "eta": "2026-11-05T09:08Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T17:22Z",
-      "result": "",
+      "result": "PASS: PR488 squash-merged 96a02fa3d5 (exact head 0a655e1d52). Film-first near-UAT priority + --film/--stage required on production adds. CI green. £0.",
       "history": [
         {
           "at": "2026-11-04T17:22Z",
@@ -176119,6 +176119,11 @@
           "at": "2026-11-05T08:58Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T08:58Z",
+          "by": "chief",
+          "what": "done: PASS: PR488 squash-merged 96a02fa3d5 (exact head 0a655e1d52). Film-first near-UAT priority + --film/--stage required on production adds. CI green. £0."
         }
       ],
       "remaining_action": "Chief reviews PR488 head 0a655e1d52 and merges after required checks",
@@ -176132,7 +176137,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "96a02fa3d5"
     },
     {
       "id": "J2040",
