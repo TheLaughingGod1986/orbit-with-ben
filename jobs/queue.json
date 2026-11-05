@@ -185149,13 +185149,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-05T11:28Z",
-      "eta": "2026-11-05T13:28Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T10:20Z",
-      "result": "",
+      "result": "Reviewed HOS PR #425 (2e84edb3) and resolved 010 Short_A Option A1 body-cut segmentation in HOS PR #426 (0a925061, all 5 CI checks + 7/7 unit tests PASS). Proved 0 8-body-shot word-boundary layouts exist under hook 2.849s / VO 22.289s (S07 >= 20.249s leaves <= 2.040s < 2.500s for S08). Applied lawful 7-body-shot (S01..S07 + loop_tail = 8 rows) segmentation in SHORTS_PICTURE_PLAN_v03.json (S01=2.849s, S02..S07 in 2.900-3.720s, P1:08_hand_on_rock dropped, interior gaps 0.000s <= 0.100s, S07 to loop_tail 0.120s <= 0.200s per check_short + optional -0.020s [22.700,22.720]s tail trim & -0.140s [6.800,6.940]s S3 pause trim documented; 17 rows total, 14 reused plates, 2 verified code graphics, 12 missing unique moving plates), updated hos_build_rule_v02.py + unit tests (0 check_short errors on Short_A & Short_C), and wrote full KEEP/FIX table in J2211_REVIEW.md (PR #425 comment 6657047306). Ready for elected Chief (claude) to merge HOS PR #426 and reopen/complete J2210; J2172 and HOS 010 Flow mint authorization remain held (£0 spend, no media KEEP claimed).",
       "history": [
         {
           "at": "2026-11-05T10:20Z",
@@ -185201,6 +185201,11 @@
           "at": "2026-11-05T11:36Z",
           "by": "macbook",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-05T11:40Z",
+          "by": "macbook",
+          "what": "done: Reviewed HOS PR #425 (2e84edb3) and resolved 010 Short_A Option A1 body-cut segmentation in HOS PR #426 (0a925061, all 5 CI checks + 7/7 unit tests PASS). Proved 0 8-body-shot word-boundary layouts exist under hook 2.849s / VO 22.289s (S07 >= 20.249s leaves <= 2.040s < 2.500s for S08). Applied lawful 7-body-shot (S01..S07 + loop_tail = 8 rows) segmentation in SHORTS_PICTURE_PLAN_v03.json (S01=2.849s, S02..S07 in 2.900-3.720s, P1:08_hand_on_rock dropped, interior gaps 0.000s <= 0.100s, S07 to loop_tail 0.120s <= 0.200s per check_short + optional -0.020s [22.700,22.720]s tail trim & -0.140s [6.800,6.940]s S3 pause trim documented; 17 rows total, 14 reused plates, 2 verified code graphics, 12 missing unique moving plates), updated hos_build_rule_v02.py + unit tests (0 check_short errors on Short_A & Short_C), and wrote full KEEP/FIX table in J2211_REVIEW.md (PR #425 comment 6657047306). Ready for elected Chief (claude) to merge HOS PR #426 and reopen/complete J2210; J2172 and HOS 010 Flow mint authorization remain held (£0 spend, no media KEEP claimed)."
         }
       ],
       "remaining_action": "Running check_all.sh for HOS 010 and verifying 7-body-shot SHORTS_PICTURE_PLAN_v03.json",
@@ -185214,7 +185219,8 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "done_ref": "0a925061"
     },
     {
       "id": "J2212",
