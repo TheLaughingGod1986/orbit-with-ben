@@ -152,7 +152,7 @@ def frame(spec,t):
     return im
 
 
-def main(argv=None):
+def main(argv=None, specs=None, render_frame=None):
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--out',type=Path,required=True)
     ap.add_argument('--manifest',type=Path,required=True)
@@ -162,7 +162,8 @@ def main(argv=None):
     words=[w for w in json.loads(words_path.read_text())['words'] if w.get('type')=='word']
     args.out.mkdir(parents=True,exist_ok=True)
     records=[]
-    for spec0 in SPECS:
+    render_frame = render_frame or frame
+    for spec0 in (SPECS if specs is None else specs):
         spec=dict(spec0)
         spec['id']=f"code_graphic_031_r{spec['row']:02d}_{spec['mode']}_v01"
         if not any(abs(w['start']-spec['start_s'])<.001 for w in words):
@@ -172,7 +173,7 @@ def main(argv=None):
             raise ValueError(f'Cut splits a word: {spec}')
         spec['locked_start_words']=' '.join(w['text'] for w in words if spec['start_s']<=w['start']<spec['start_s']+1)
         preview=args.out/(spec['id']+'.png')
-        if not preview.exists():frame(spec,spec['duration_s']*.75).save(preview)
+        if not preview.exists():render_frame(spec,spec['duration_s']*.75).save(preview)
         if not args.previews:
             dest=args.out/(spec['id']+('.mov' if spec['alpha'] else '.mp4'))
             if dest.exists():raise FileExistsError(dest)
@@ -180,7 +181,7 @@ def main(argv=None):
             codec=['-c:v','qtrle','-pix_fmt','argb'] if spec['alpha'] else ['-vf','noise=alls=2:allf=t','-c:v','libx264','-preset','fast','-crf','18','-pix_fmt','yuv420p']
             proc=subprocess.Popen(['ffmpeg','-v','error','-n','-f','rawvideo','-pix_fmt','rgba','-s',f'{W}x{H}','-r',str(FPS),'-i','pipe:0','-an',*codec,str(tmp)],stdin=subprocess.PIPE)
             try:
-                for i in range(round(spec['duration_s']*FPS)):proc.stdin.write(frame(spec,i/FPS).tobytes())
+                for i in range(round(spec['duration_s']*FPS)):proc.stdin.write(render_frame(spec,i/FPS).tobytes())
                 proc.stdin.close()
                 if proc.wait():raise RuntimeError(tmp)
             except BaseException:

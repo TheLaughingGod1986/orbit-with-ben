@@ -2,6 +2,56 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (5 Nov, fourth run)
+
+Continue this same branch / PR #495 at **1/3**. Added three source-linked,
+row-specific transparent 1920×1080 / 25 fps overlays in `CODE_SCALES_v01.json`:
+
+- R36 qualitative duration brackets, 373.84–378.72 s, SOURCES row 14.
+  “COLLAPSE / A FEW HUNDRED YEARS” changes to “WEAK PHASE / LESS THAN 1,000 YEARS”.
+  Equal bracket lengths intentionally encode no exact value for “a few”.
+  The final number has only 1.3 s in the locked line; readability at speed
+  requires actual composite review, never extend the row or narration.
+- R44 gravity bars, 449.92–452.20 s, SOURCES row 17. Shared zero and scale:
+  Mars 0.38 relative to Earth 1.00. Alpha overlay requires real moving Mars
+  imagery underneath; no flat-disc planet. This completes only the gravity
+  comparison, not the remaining billions-versus-thousands duration comparison.
+- R52 generations tally, 534.48–537.92 s, SOURCES row 18. Exactly 400 cells;
+  first 40 blue, remaining 360 gold. 40–400 human generations corresponds to
+  1,000–10,000 years at the source record's 25 years per generation. This is
+  arithmetic, not a demographic dataset. Aurora plate / later dynamo still needed.
+
+`scale_graphics.py`, exposed through `code_graphics.py scales`, reuses the
+existing evidence encoder with optional explicit specs/frame callbacks. Existing
+`evidence` mode keeps its original defaults. All three have 0.4 s alpha fades,
+labels of at most four words and no still hold exceeding four seconds.
+Existing output files are refused. Reproduce in a **fresh** media directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py scales --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Media: `/Users/benjaminoats/_desk/J2141-scales-v01/` (6,581,767 bytes total).
+`CODE_SCALES_TECHNICAL_CHECK_v01.json` records all three hashes, 1920×1080,
+25 fps, argb alpha, duration within half a frame and full error-free decode.
+Five static alpha samples recorded per render; individual 75% preview stills
+inspected. `CONTACT_v01.jpg` uses a neutral navy background, not a finished
+plate composite. No audio, motion, composite, subject clearance, playback
+legibility or Chief approval claimed. No media in git.
+
+Detached batch `J2141-scales-v01` completed exit 0; no render remains active.
+Log `/Users/benjaminoats/_desk/logs/J2141-scales-v01.log`; completion `.done`.
+NAS offload ran with filesystem access before building, found no eligible old
+scratch; about 10.4 GB free. This small batch adds about 6.6 MB only. No archive
+inputs searched; prior missing-footage budgets were not reset. Both checkouts
+synced; HOS inbox and channel balance skipped as instructed. Existing renders,
+locked words and sources preserved. Spend £0.
+
+Remaining: wider harvest, all other mechanism/timeline renders, R41 fallback,
+remaining R44 duration comparison, plate composites and full QA. Asset-ID and
+sourced-simulation/map gate conflicts below still need Chief reconciliation;
+this worker makes no protected decision. Resume at 1/3, no stage approval.
+
 ## Continuation checkpoint (5 Nov, third run)
 
 Continue this branch / PR #495 at **1/3**. Added five distinct row-specific
