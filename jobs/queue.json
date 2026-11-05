@@ -1,5 +1,5 @@
 {
-  "next_id": 2207,
+  "next_id": 2208,
   "jobs": [
     {
       "id": "J0001",
@@ -184669,6 +184669,34 @@
       ],
       "remaining_action": "Implement OWB monthly Studio Reach + studio_ctr archive; share with J2202; £0",
       "due": "2026-12-01T09:00:00Z",
+      "kind": "assembly"
+    },
+    {
+      "id": "J2207",
+      "title": "OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief h47 APPROVED OWB-2026-11-E1 (GBP0 re-cuts from existing media only unless a separate spend job is later approved).\n\nApply J0916 STAYED60 specs + sub-4.8s Cut-2 timing to eligible un-swapped 026–029 Shorts and 030+:\nCut1 <=2.8s, Cut2 <=4.8s, moving frame0, surprise <=1.5s, zero meta-promise/spoken CTA, loop <1.2s.\nEliminate 3.5–5.5s post-sentence-1 pause/hold. Encode into OWB Shorts rules/LEARNINGS and queue concrete per-Short re-cut jobs only after inventory of which scheduled IDs still need swaps. Readout 2026-12-03. No upload in the rules job.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T09:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:23Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Write E1 rules into OWB Shorts gates; inventory 026-029/030+ needing re-cut",
       "kind": "assembly"
     }
   ],
