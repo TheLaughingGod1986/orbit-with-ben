@@ -189089,10 +189089,24 @@
           "at": "2026-11-05T21:27Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T21:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 97 min (heartbeat 2026-11-05T19:50:29Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify stills pool; draft stills lock; park OMNI R29/R55 price brief for Chief; no mint",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2257",
