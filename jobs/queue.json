@@ -184351,9 +184351,14 @@
           "at": "2026-11-05T09:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T09:58Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2194; reading J2172/J2194 queue entries and HOS PR 424 evidence"
         }
       ],
-      "remaining_action": "Name an approved producer or scope twelve missing moving plates and mapping fixes",
+      "remaining_action": "Inspect J2172/J2194 records, HOS PR 424 evidence (READINESS.md, INVENTORY.json) and HOS 010 plate/row mappings",
       "due": "2026-11-06T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -184371,9 +184376,11 @@
         "of": 3,
         "at": "2026-11-05T09:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2194; reading J2172/J2194 queue entries and HOS PR 424 evidence"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J2195",
