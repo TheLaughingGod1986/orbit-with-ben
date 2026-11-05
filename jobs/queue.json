@@ -184097,16 +184097,28 @@
           "at": "2026-11-05T23:57Z",
           "by": "gemini",
           "what": "reopened: J2258 FIX review (jobs/reviews/J2258/REVIEW.md, 4e702824eb): all 17 source plates + WARNs (B S07, C S05, C S02) KEEP; rebuild Short_B v02 & Short_C v03 in build_j2169.py at GBP0 to fix (1) missing 9-14s captions + dropped end-of-hook words + Didot multi-word chunks (B S01,S03-S05; C S01,S04-S05), (2) frame-0 hook yellow-on-hook-word Didot 8-10% cap height centred (B S01, C S01), (3) B S05/S06 word-onset cut alignment + C S06 4.458s offset, (4) loop_tail offset=0.0s wrap + 1080x1920 pre-normalised Flow plates"
+        },
+        {
+          "at": "2026-11-05T23:57Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Reopened by J2258 FIX review (4e702824eb); all 17 source plates and WARNs KEEP"
         }
       ],
-      "remaining_action": "Hand the cuts to review J2258",
+      "remaining_action": "Rebuild Short_B v02 and Short_C v03 in build_j2169.py per jobs/reviews/J2258/REVIEW.md (captions 9-14s, hook yellow word, B S05/S06 cuts, 1080x1920 loop)",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "HOS:006"
       ],
       "escalated_at": "2026-11-05T06:52Z",
-      "done_ref": "699c359bf44ccda9d996dae4a2d6524be3774a03"
+      "done_ref": "699c359bf44ccda9d996dae4a2d6524be3774a03",
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-05T23:57Z",
+        "by": "gemini",
+        "note": "Reopened by J2258 FIX review (4e702824eb); all 17 source plates and WARNs KEEP"
+      }
     },
     {
       "id": "J2170",
