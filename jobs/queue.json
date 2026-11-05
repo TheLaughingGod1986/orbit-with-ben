@@ -184361,9 +184361,14 @@
           "at": "2026-11-05T10:03Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J2172 HOS PR 424 (READINESS.md, INVENTORY.json, STATE.json), J1894/J1004 VO dispositions, and HOS 010 v02/v03 long and Shorts picture boards"
+        },
+        {
+          "at": "2026-11-05T10:10Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Drafted jobs/reviews/J2194/REVIEW.md: verified PR 424 inventory, Rule 8 & robin/pigeon/gull mapping fixes, and £0+Chief-mint scope"
         }
       ],
-      "remaining_action": "Verify Rule 8 subject/surprise, robin/pigeon/gull row mappings, and write bounded £0 scope decision in jobs/reviews/J2194/REVIEW.md",
+      "remaining_action": "Queue bounded £0 HOS 010 row-mapping repair job, update J2172 hold, and close J2194 with FIX scope decision",
       "due": "2026-11-06T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -184377,11 +184382,11 @@
       "model": "gemini-argon",
       "urgent": 14,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-05T10:03Z",
+        "at": "2026-11-05T10:10Z",
         "by": "gemini",
-        "note": "Read J2172 HOS PR 424 (READINESS.md, INVENTORY.json, STATE.json), J1894/J1004 VO dispositions, and HOS 010 v02/v03 long "
+        "note": "Drafted jobs/reviews/J2194/REVIEW.md: verified PR 424 inventory, Rule 8 & robin/pigeon/gull mapping fixes, and £0+Chief-"
       },
       "taskKeys": [
         "HOS:010"
