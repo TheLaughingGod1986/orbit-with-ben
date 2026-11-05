@@ -162216,13 +162216,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-05T00:13Z",
-      "eta": "2026-11-05T02:13Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T14:27Z",
-      "result": "Chief FIX at 91576db52d: 94 capacity tests PASS; CI stale STATUS.md and production caller integration incomplete. Same-job engineering ready; no merge or rollout.",
+      "result": "parked for Chief: review PR437 exact head 17df4129184a6082f8c889864148fed5e55182fa before any enablement. Rules CI 41941094031 and core CI 41941093965 are green. Plan retained 2/3. Opt-in isolated Mini/laptop callers, busy-serial path, mounted input/output receipt handoff and remote claimed-account expiry fix implemented. Rollout disabled. Fresh private host registration/account/model/capability probes, accounted serial leases, approved peer transport/provisioned isolated host checkouts and observed real-host transitions remain release gates; current host evidence is absent/unverified, availability unknown. No spend/media/publishing changes.",
       "history": [
         {
           "at": "2026-11-03T14:27Z",
@@ -162613,6 +162613,11 @@
           "at": "2026-11-05T00:26Z",
           "by": "codex",
           "what": "step 2 of 3 done: Final head 17df4129184a6082f8c889864148fed5e55182fa: Rules CI green (817 script tests plus required suites), core CI green; 111 focused capacity tests pass. Production callers and mounted receipt handoff implemented; actual registered-host acceptance remains outstanding."
+        },
+        {
+          "at": "2026-11-05T00:26Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review PR437 exact head 17df4129184a6082f8c889864148fed5e55182fa before any enablement. Rules CI 41941094031 and core CI 41941093965 are green. Plan retained 2/3. Opt-in isolated Mini/laptop callers, busy-serial path, mounted input/output receipt handoff and remote claimed-account expiry fix implemented. Rollout disabled. Fresh private host registration/account/model/capability probes, accounted serial leases, approved peer transport/provisioned isolated host checkouts and observed real-host transitions remain release gates; current host evidence is absent/unverified, availability unknown. No spend/media/publishing changes."
         }
       ],
       "remaining_action": "Chief reviews PR437 exact head before any host provisioning or capacity enablement",
