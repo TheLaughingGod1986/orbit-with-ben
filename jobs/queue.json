@@ -181793,9 +181793,14 @@
           "at": "2026-11-05T02:40Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified 032 locked VO s01-s05 (0.060-31.580s, 91w) as the unique eligible Test A opening EDL (32.80s master / 30.00s tightened) and identified exact missing J2089/master inputs"
+        },
+        {
+          "at": "2026-11-05T02:45Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed J2173 Titan Test A assessment and exact 0.06-31.58s EDL (683e49e96a)"
         }
       ],
-      "remaining_action": "Write exact 032 Test A EDL and J2173 review reports in jobs/reviews/J2173/ and 032/10_Shorts/",
+      "remaining_action": "Update J0979 with exact J2089 dependency (no generic retry, preserving progress) and finish J2173",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -181808,11 +181813,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-05T02:40Z",
+        "at": "2026-11-05T02:45Z",
         "by": "gemini",
-        "note": "Verified 032 locked VO s01-s05 (0.060-31.580s, 91w) as the unique eligible Test A opening EDL (32.80s master / 30.00s ti"
+        "note": "Committed J2173 Titan Test A assessment and exact 0.06-31.58s EDL (683e49e96a)"
       },
       "taskKeys": [
         "OWB:032"
