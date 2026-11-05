@@ -183062,6 +183062,11 @@
           "at": "2026-11-05T00:49Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T15:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review exact meteor/Titan source windows, phone and preroll; decide KEEP or FIX",
@@ -183070,7 +183075,16 @@
       "required_capabilities": [
         "moving_video_input"
       ],
-      "urgent": 2
+      "urgent": 2,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2168",
