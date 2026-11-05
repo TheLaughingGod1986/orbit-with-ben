@@ -406,9 +406,34 @@ def pull_main() -> str:
             if branch != "main":
                 return f"{repo} is on '{branch or 'detached'}', not main (re-run setup_macbook.sh)"
             r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
+            if r.returncode and own and rescue_diverged(repo):
+                r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
             if r.returncode:
                 return f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}"
     return ""
+
+
+def rescue_diverged(repo: pathlib.Path) -> bool:
+    """The worker's own clone has main commits GitHub doesn't (5 Nov 2026 21:36: 'pull failed ... git merge --no-ff',
+    and slot 1 stopped). Keep them on a pushed branch macbook-worker/rescue-<time>, then put main back on origin/main.
+    Its own clone only (the caller checks); nothing is discarded. True when main was moved."""
+    git = ["git", "-C", str(repo)]
+    if sh(git + ["fetch", "-q", "origin", "main"], timeout=180).returncode:
+        return False
+    ahead = sh(git + ["rev-list", "--count", "origin/main..main"]).stdout.strip()
+    if not ahead or ahead == "0":
+        return False
+    stamp = time.strftime("%Y%m%dT%H%MZ", time.gmtime())
+    if sh(git + ["status", "--porcelain"]).stdout.strip():
+        sh(git + ["stash", "push", "-u", "-q", "-m", f"macbook-worker autostash main {stamp}"])
+    branch = f"macbook-worker/rescue-{stamp}"
+    if sh(git + ["branch", branch, "main"]).returncode:
+        return False
+    sh(git + ["push", "-q", "origin", branch], timeout=120)
+    if sh(git + ["reset", "-q", "--hard", "origin/main"]).returncode:
+        return False
+    log(f"{repo.name}: main had {ahead} commit(s) GitHub doesn't; kept on {branch} (pushed), main reset to origin/main")
+    return True
 
 
 def run_one() -> str:

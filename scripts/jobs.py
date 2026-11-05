@@ -797,6 +797,11 @@ def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
         return None
     path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
     d = studio.load(path)
+    if (d.get("stages", {}).get(job["stage"]) or {}).get("state") in ("done", "skip"):
+        # Follow-up work on a finished stage (a Short or a review on a live film) never reopens it: claiming it set
+        # the stage to doing and a block set it to blocked, so 024's done edit flipped back on every such job
+        # (5 Nov 2026, J2248/J2250; stage_sync kept moving it back).
+        return None
     mins = max(1, int((studio.parse(job["eta"]) - at).total_seconds() // 60))
     err = studio.do_claim(d, job["stage"], agent, mins, f"{job['id']} {job['title']}", at)
     if err:

@@ -189,6 +189,25 @@ class BoardLink(unittest.TestCase):
                 studio.FILMS = old
 
 
+    def test_follow_up_work_never_reopens_a_finished_stage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            films = pathlib.Path(tmp)
+            (films / "024_Light").mkdir()
+            (films / "024_Light" / "status.json").write_text(json.dumps(
+                {"film": "024", "stages": {"edit": {"state": "done", "ref": "upload done"}}, "claims": []}))
+            old = studio.FILMS
+            studio.FILMS = films
+            try:
+                d = queue(("mini", "024 muons Short v01: review the cut", {"film": "024", "stage": "edit"}))
+                j = jobs.do_next(d, "macbook-2", {"mini"}, T0)
+                self.assertIsNone(jobs.board_claim(j, "macbook-2", T0))
+                jobs.board_release(j, "macbook-2", "blocked")
+                st = json.loads((films / "024_Light" / "status.json").read_text())
+                self.assertEqual((st["stages"]["edit"]["state"], st["claims"]), ("done", []))
+            finally:
+                studio.FILMS = old
+
+
 class Progress(unittest.TestCase):
     """Ben, 11 Oct 22:09: % done on the board comes from `jobs.py progress <id> --step k --of n`."""
 

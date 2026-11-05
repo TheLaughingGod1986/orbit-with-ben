@@ -268,6 +268,28 @@ class AddressedJobs(unittest.TestCase):
 
 
 
+class Diverged(unittest.TestCase):
+    def test_a_diverged_own_main_is_kept_on_a_branch_and_reset(self):
+        with tempfile.TemporaryDirectory() as t:
+            t = pathlib.Path(t)
+            g = lambda *a, cwd: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True).stdout  # noqa: E731
+            g("init", "-q", "--bare", "-b", "main", str(t / "origin.git"), cwd=t)
+            g("clone", "-q", str(t / "origin.git"), str(t / "a"), cwd=t)
+            for c in ("a",):
+                g("config", "user.email", "x@y", cwd=t / c); g("config", "user.name", "x", cwd=t / c)
+            (t / "a" / "f").write_text("1"); g("add", "f", cwd=t / "a"); g("commit", "-qm", "one", cwd=t / "a")
+            g("push", "-q", "origin", "main", cwd=t / "a")
+            g("clone", "-q", str(t / "origin.git"), str(t / "b"), cwd=t)
+            g("config", "user.email", "x@y", cwd=t / "b"); g("config", "user.name", "x", cwd=t / "b")
+            (t / "a" / "f").write_text("2"); g("commit", "-qam", "upstream", cwd=t / "a"); g("push", "-q", "origin", "main", cwd=t / "a")
+            (t / "b" / "g").write_text("mine"); g("add", "g", cwd=t / "b"); g("commit", "-qm", "local only", cwd=t / "b")
+            self.assertTrue(mw.rescue_diverged(t / "b"))
+            self.assertEqual(g("rev-parse", "main", cwd=t / "b"), g("rev-parse", "origin/main", cwd=t / "b"))
+            kept = g("branch", "-r", cwd=t / "b") + g("branch", cwd=t / "b")
+            self.assertIn("macbook-worker/rescue-", kept)
+            self.assertFalse(mw.rescue_diverged(t / "b"))  # nothing left to rescue
+
+
 class TwoSlots(unittest.TestCase):
     """Ben, 5 Nov 2026: two jobs at once on the MacBook Pro, one on the Mini, one in the cloud."""
 
