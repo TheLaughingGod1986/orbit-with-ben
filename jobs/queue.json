@@ -162698,9 +162698,14 @@
           "at": "2026-11-05T01:02Z",
           "by": "codex",
           "what": "step 2 of 3 done: Pushed c9f591c158: 117 capacity tests and two Chief dispatch regressions pass; rules/core/STATUS checks pass. Rollout remains disabled."
+        },
+        {
+          "at": "2026-11-05T01:02Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Both exact-head workflows green: Rules 41945618603, core 41945618575. Capacity regressions 117 PASS; Chief dispatch regressions 2 PASS; no rollout."
         }
       ],
-      "remaining_action": "Read final-head CI, then hand PR437 back for exact-head review and observed host acceptance",
+      "remaining_action": "Exact-head Chief review of PR437 c9f591c158, followed by separately gated host acceptance",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162722,7 +162727,7 @@
         "of": 3,
         "at": "2026-11-05T01:02Z",
         "by": "codex",
-        "note": "Pushed c9f591c158: 117 capacity tests and two Chief dispatch regressions pass; rules/core/STATUS checks pass. Rollout re"
+        "note": "Both exact-head workflows green: Rules 41945618603, core 41945618575. Capacity regressions 117 PASS; Chief dispatch regr"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
