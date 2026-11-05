@@ -162688,9 +162688,14 @@
           "at": "2026-11-05T00:55Z",
           "by": "codex",
           "what": "step 2 of 3 done: Resumed existing 2/3 plan; both repos current and HOS inbox empty."
+        },
+        {
+          "at": "2026-11-05T00:58Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Implemented canonical election-before-gate, serial occupancy preflight with launch lock, and fail-closed unattributed claim accounting; running regressions."
         }
       ],
-      "remaining_action": "Repair and test both PR437 capacity-dispatch blockers",
+      "remaining_action": "Validate capacity caller fixes and return PR437 for exact-head review",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162710,9 +162715,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T00:55Z",
+        "at": "2026-11-05T00:58Z",
         "by": "codex",
-        "note": "Resumed existing 2/3 plan; both repos current and HOS inbox empty."
+        "note": "Implemented canonical election-before-gate, serial occupancy preflight with launch lock, and fail-closed unattributed cl"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
