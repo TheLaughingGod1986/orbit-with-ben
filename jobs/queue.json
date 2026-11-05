@@ -1,5 +1,5 @@
 {
-  "next_id": 2198,
+  "next_id": 2199,
   "jobs": [
     {
       "id": "J0001",
@@ -184269,6 +184269,34 @@
       ],
       "remaining_action": "J2038 follow-on: capacity probe producer + ENV flip + 2h watch",
       "kind": "chief"
+    },
+    {
+      "id": "J2198",
+      "title": "032 J2089: review corrected fire stills and regenerated process pixels",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Parent J2089, commit 347c55feeb, successor to merged PR491. Review all seven current process stills in /Users/benjaminoats/_desk/cache/J2089/process_previews_v02/ against J2192, SOURCES.md and shot list. Two fire items apply exact J2192 fixes; confirm full-size stills before rendering. Five other items were rendered under J2192 but regenerated PNG hashes differ from reviewed v01 despite unchanged drawing code; both Python environments reproduce the new hash. Determine whether current stills are acceptable; do not assume old permission approves changed pixels. Five held MOVs in process_renders_v02 have verified hashes, 108 ARGB frames each and full decode. PROCESS_RENDER_VERIFICATION_v02.json names old/new hashes. No motion perception or composite approval claimed. Preserve frame0/PIA07232/APL/J2177 holds. Write jobs/reviews/<id>/REVIEW.md and update parent with render permissions or exact fixes. GBP0; no publishing.\n",
+      "ref": "347c55feeb",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T09:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:06Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review seven current process stills and release exact render permissions or fixes",
+      "kind": "review"
     }
   ],
   "focus": [],
