@@ -181801,9 +181801,14 @@
           "at": "2026-11-05T07:52Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T07:52Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2164; replacing default plan with 4-step Rule H VO review"
         }
       ],
-      "remaining_action": "Rule on Scribe REVIEW and unresolved wording/date differences before accepting VO",
+      "remaining_action": "Inspect J2155 VO evidence, Scribe transcript, and section tail decays on PR #502",
       "kind": "review",
       "urgent": 2,
       "rerouted_from": {
@@ -181817,12 +181822,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-05T07:52Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2164; replacing default plan with 4-step Rule H VO review"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2165",
