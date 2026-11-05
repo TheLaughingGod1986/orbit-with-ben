@@ -229,10 +229,13 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=
     def reserved(row):
         value = row.get("dispatch_reservation") or {}
         start, end = timestamp(value.get("at")), timestamp(value.get("expiresAt"))
+        if value.get("phase") == "serial":
+            return True  # occupied until explicit observed-exit reconciliation
         if row.get("status") == "claimed" and value.get("phase") == "claimed":
             return True  # remote capacity requires explicit canonical reconciliation
         return bool(start and end and start <= at < end)
-    if reserved(j):
+    if reserved(j) and not ((j.get("dispatch_reservation") or {}).get("phase") == "serial"
+            and j["dispatch_reservation"].get("claimant") == agent):
         return False
     stage = (j.get("repo", "owb"), j.get("film"), j.get("stage"))
     if stage[1] and stage[2] and any(

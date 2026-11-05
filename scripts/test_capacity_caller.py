@@ -27,18 +27,20 @@ class Caller(unittest.TestCase):
             argv=[sys.executable, "-c", "print('cpu fixture')"],
             cap_seconds=2, log_path=str(self.root / "run.log"))
         self.data = {"jobs": [job()]}
+        self.config["transport_approval_ref"] = "mounted-fixture"
         self.ev = dict(hosts=[host()], leases=[], accounts={"shared":proof(ready=True, limit=1)},
                        at=T, chief="claude", choose_worker=choose,
                        installed_head="reviewed", reviewed_head="reviewed")
         self.guard = lambda: []
 
-    def call(self, dispatch=None, serial_only=False):
+    def call(self, dispatch=None, serial_only=False, admission=None):
         def document(root, name):
             if name == "dispatch.json":
                 return copy.deepcopy(self.config)
             if name == "peer.json":
                 return dict(at=T.isoformat(), expiresAt=(T+dt.timedelta(minutes=5)).isoformat(),
-                    transport_approval_ref="mounted-fixture", hosts=[self.ev["hosts"][0]],
+                    transport_approval_ref="mounted-fixture", hosts=[next((h for h in self.ev["hosts"] if h["role"] != self.config["role"]),
+                        host("macbook" if self.config["role"] == "mini" else "mini"))],
                     leases=self.ev["leases"])
             raise ValueError(name)
         def transaction(apply, message):
@@ -54,7 +56,7 @@ class Caller(unittest.TestCase):
             return caller.attempt(role=self.config["role"], owb_root=self.root,
                 laptop_guard=self.guard, chief="claude", clock=lambda:T,
                 environ={"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)},
-                serial_only=serial_only)
+                serial_only=serial_only, admission=admission)
 
     def laptop(self):
         self.config.update(role="macbook", source_root=str(self.root),
@@ -146,7 +148,9 @@ class Caller(unittest.TestCase):
         env = {"OWB_CAPACITY_ENABLED":"1", "OWB_CAPACITY_ROOT":str(self.root)}
         with patch.dict(__import__("os").environ, env), \
              patch("capacity_evidence.private_document", return_value=self.config), \
-             patch("capacity_caller.production_tick", return_value={"state":"capacity_waiting", "serial_safe":True}), \
+             patch("capacity_caller.production_tick", return_value={"state":"capacity_waiting", "serial_safe":True,
+                 "admission": {"job": "J1834", "worker": "codex", "model": "gpt-6.1-sol"}}), \
+             patch("serial_admission.finish"), \
              patch.object(macbook_worker, "pull_main", return_value=""), \
              patch.object(macbook_worker, "guards", return_value=[]), \
              patch.object(macbook_worker, "push_heartbeat"), \
@@ -154,6 +158,112 @@ class Caller(unittest.TestCase):
             self.assertEqual(macbook_worker.run_one(), "idle")
         with (self.root / "caller.lock").open("a") as competing:
             fcntl.flock(competing, fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+    def ordinary_fixture(self, role="macbook"):
+        self.laptop()
+        self.data["jobs"][0]["status"] = "done"
+        self.data["jobs"].append(job("J9998", kind="review", needs="any"))
+        self.ev["hosts"][-1]["workers"]["codex"]["verified_models"].append("gpt-6-astra")
+        if role == "mini":
+            self.config["role"] = "mini"
+            self.ev["hosts"] = [host("macbook", worker="gemini"), host()]
+            self.ev["leases"][0]["host"] = "macbook"
+            self.ev["hosts"][-1]["workers"]["codex"]["verified_models"].append("gpt-6-astra")
+        return dict(job="J9998", worker="codex", model="gpt-6-astra")
+
+    def admit(self, request=None):
+        with patch.object(macbook_worker, "installed", return_value=["codex"]), \
+             patch.object(macbook_worker, "usable", return_value=["codex"]):
+            return self.call(serial_only=True, admission=request or {})
+
+    def test_busy_independent_peer_real_receipt_reaches_ordinary_laptop(self):
+        self.ordinary_fixture()
+        receipt = self.call(serial_only=True)
+        self.assertTrue(receipt["serial_safe"], receipt)
+        admitted = self.admit()
+        self.assertEqual(admitted["admission"]["job"], "J9998", admitted)
+        from contextlib import contextmanager
+        @contextmanager
+        def preflight(**kw):
+            yield receipt
+        with patch("capacity_caller.serial_preflight", side_effect=preflight), \
+             patch("capacity_caller.production_tick", return_value=admitted), \
+             patch.object(macbook_worker, "pull_main", return_value=""), \
+             patch.object(macbook_worker, "guards", return_value=[]), \
+             patch.object(macbook_worker, "run_ordinary", return_value="ran") as ordinary, \
+             patch("serial_admission.finish") as finish:
+            self.assertEqual(macbook_worker.run_one(), "ran")
+            ordinary.assert_called_once_with(admitted)
+            finish.assert_called_once_with(admitted)
+
+    def test_serial_selected_shared_pool_at_limit_rejected(self):
+        self.ordinary_fixture()
+        self.ev["leases"][0]["account"] = "shared"
+        self.assertNotIn("admission", self.admit())
+        self.assertNotIn("dispatch_reservation", self.data["jobs"][-1])
+
+    def test_serial_local_or_uncertain_occupancy_rejected(self):
+        for variant in ({"host": "macbook"}, {"recovery_required": True}, {"account": ""}):
+            self.ordinary_fixture()
+            self.ev["leases"][0].update(variant)
+            self.assertNotIn("admission", self.admit())
+
+    def test_serial_stale_or_missing_peer_proof_rejected(self):
+        self.ordinary_fixture()
+        self.ev["hosts"][0]["at"] = (T-dt.timedelta(hours=1)).isoformat()
+        self.assertFalse(self.call(serial_only=True)["serial_safe"])
+        self.assertNotIn("admission", self.admit())
+        self.config["transport_approval_ref"] = "unapproved"
+        self.assertEqual(self.call(serial_only=True)["state"], "capacity_rejected")
+
+    def test_serial_cross_host_competing_admission_and_positive_exit(self):
+        self.ordinary_fixture()
+        admitted = self.admit()
+        self.assertIn("admission", admitted)
+        # A second host's fresh snapshot sees the canonical reservation, even
+        # before any process lease or ordinary claim has been published.
+        self.config["role"] = "mini"
+        self.ev["hosts"] = [host("macbook"), host()]
+        self.ev["leases"] = []
+        request = dict(job="J9998", worker="codex", model="gpt-6-astra")
+        self.ev["hosts"][-1]["workers"]["codex"]["verified_models"].append("gpt-6-astra")
+        self.assertNotIn("admission", self.admit(request))
+        import serial_admission
+        def transaction(apply, message):
+            return apply(self.data)[:2]
+        with patch("jobs.with_git", side_effect=transaction):
+            serial_admission.finish(admitted)
+        self.assertIn("admission", self.admit(request))
+
+    def test_serial_admission_is_consumed_only_by_its_canonical_owner(self):
+        self.ordinary_fixture()
+        admitted = self.admit()
+        import jobs
+        self.assertIsNotNone(jobs.do_next(self.data, "macbook", {"macbook", "any"}, T, job_id="J9998"))
+        self.assertEqual(self.data["jobs"][-1]["by"], "macbook")
+        self.assertEqual(self.data["jobs"][-1]["dispatch_reservation"], admitted["admission"])
+        self.assertIsNone(jobs.do_next(self.data, "gemini", {"mini", "any"}, T, job_id="J9998"))
+
+    def test_serial_git_retry_reobserves_competing_account_occupancy(self):
+        self.ordinary_fixture()
+        observed = []
+        import serial_admission
+        real = serial_admission.reserve
+        def retry(data, **kw):
+            observed.append(1)
+            # Competing reservation committed before this retry is visible to
+            # the actual admission function, and cannot be ignored as remote.
+            data["jobs"][0]["dispatch_reservation"] = dict(phase="serial", host="mini",
+                account="shared", worker="gemini", claimant="gemini", token="other-token")
+            return real(data, **kw)
+        with patch("serial_admission.reserve", side_effect=retry):
+            self.assertNotIn("admission", self.admit())
+        self.assertEqual(len(observed), 1)
+
+    def test_symmetric_mini_serial_busy_independent_peer(self):
+        request = self.ordinary_fixture(role="mini")
+        self.assertTrue(self.call(serial_only=True)["serial_safe"])
+        self.assertIn("admission", self.admit(request))
 
     def test_disabled_bridge_never_reads_private_config_or_mutates_queue(self):
         with patch("capacity_evidence.private_document") as read:

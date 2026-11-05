@@ -18,6 +18,8 @@ def active(job, at):
     value = job.get("dispatch_reservation") or {}
     start = workflow.timestamp(value.get("at"))
     end = workflow.timestamp(value.get("expiresAt"))
+    if value.get("phase") == "serial":
+        return value  # explicit observed-exit reconciliation, never timer expiry
     if job.get("status") == "claimed" and value.get("phase") == "claimed":
         # The two-minute deadline bounds starting, never proves that an
         # already claimed remote process exited or its account is free.

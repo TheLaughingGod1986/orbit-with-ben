@@ -385,12 +385,29 @@ def run_one() -> str:
         if why:
             push_heartbeat("waiting", why)
             return "waiting"
-        return run_ordinary()
+        admitted = capacity_caller.production_tick(role="macbook", owb_root=OWB,
+            hos_root=HOS, serial_only=True, _serial_lock_held=True, admission={})
+        if admitted is not None and not admitted.get("admission"):
+            push_heartbeat("waiting", ["ordinary account admission unavailable"])
+            return "waiting"
+        why = guards()
+        if why:
+            import serial_admission
+            serial_admission.finish(admitted)  # positively never launched
+            push_heartbeat("waiting", why)
+            return "waiting"
+        outcome = run_ordinary(admitted) if admitted is not None else run_ordinary()
+        import serial_admission
+        serial_admission.finish(admitted)
+        return outcome
 
 
-def run_ordinary() -> str:
+def run_ordinary(admitted=None) -> str:
     """Called only with launch exclusion held when capacity is enabled."""
-    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"], cwd=OWB)  # any: rule H reviews
+    args = [sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"]
+    if admitted:
+        args.extend(["--id", admitted["admission"]["job"]])
+    r = sh(args, cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
         push_heartbeat("idle", ["no MacBook job waiting"])
@@ -408,6 +425,10 @@ def run_ordinary() -> str:
     except Exception:  # noqa: BLE001
         pass
     agent, model = pick_agent(job_record(job), have)
+    if admitted and (job != admitted["admission"]["job"]
+            or agent != admitted["admission"]["worker"] or model != admitted["admission"]["model"]):
+        log("ordinary selected worker changed after admission; retaining occupancy for recovery")
+        raise RuntimeError("serial worker selection changed")
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
     prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
                            cap_min=cap // 60)

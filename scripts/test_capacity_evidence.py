@@ -332,6 +332,9 @@ class Evidence(unittest.TestCase):
         with patch.dict(os.environ, {"OWB_CAPACITY_ENABLED":"1",
                     "OWB_CAPACITY_ROOT":str(self.root), "CHIEF_CHAIN_MAX":"1"}), \
              patch("capacity_caller.serial_preflight", side_effect=empty), \
+             patch("capacity_caller.production_tick", return_value={"state":"capacity_waiting",
+                 "admission": {"job": "J1841"}}), \
+             patch("serial_admission.finish"), \
              patch.object(cr.workflow, "select_dispatch", return_value=selected), \
              patch.object(cr, "queue_has_work", return_value=True), \
              patch.object(cr, "run_cli", side_effect=run_cli), \

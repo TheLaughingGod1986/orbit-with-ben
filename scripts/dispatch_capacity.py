@@ -165,7 +165,7 @@ def unattributed_claims(data, hosts, leases, at):
         if row.get("status") != "claimed":
             continue
         reservation = row.get("dispatch_reservation") or {}
-        if (reservation.get("phase") == "claimed" and reservation.get("account")
+        if (reservation.get("phase") in {"claimed", "serial"} and reservation.get("account")
                 and reservation.get("host")):
             continue
         matched = False

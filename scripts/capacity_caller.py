@@ -26,7 +26,7 @@ import routing
 import workflow_state
 
 
-def production_tick(*, role, owb_root, hos_root=None, environ=None, serial_only=False, _serial_lock_held=False):
+def production_tick(*, role, owb_root, hos_root=None, environ=None, serial_only=False, _serial_lock_held=False, admission=None):
     """Run capacity transactions in their own reviewed, preprovisioned checkout.
 
     A busy serial relay may call this without touching its Git index. The
@@ -63,6 +63,8 @@ def production_tick(*, role, owb_root, hos_root=None, environ=None, serial_only=
             argv = [sys.executable, str(checkout / "scripts/capacity_caller.py"), role]
             if serial_only:
                 argv.append("--serial-only")
+            if admission is not None:
+                argv.extend(["--admit", json.dumps(admission)])
             if hos_root is not None:
                 argv.append(str(hos_root))
             # Wrapper timeout exceeds the CPU cap to permit canonical Git
@@ -112,7 +114,7 @@ def serial_preflight(*, owb_root, hos_root=None, environ=None, role="mini"):
 
 
 def attempt(*, role, owb_root, hos_root=None, legacy_lease=None, chief=None,
-            laptop_guard=None, environ=None, clock=None, serial_only=False):
+            laptop_guard=None, environ=None, clock=None, serial_only=False, admission=None):
     """Return None only when disabled/no candidate; otherwise consume this tick.
 
     A failed enabled attempt never falls through to a second serial launch.
@@ -127,7 +129,7 @@ def attempt(*, role, owb_root, hos_root=None, legacy_lease=None, chief=None,
         result = _attempt(role=role, owb_root=pathlib.Path(owb_root), hos_root=hos_root,
                         legacy_lease=legacy_lease, chief=chief, laptop_guard=laptop_guard,
                         evidence_root=pathlib.Path(env["OWB_CAPACITY_ROOT"]),
-                        clock=clock or (lambda: dt.datetime.now(dt.timezone.utc)), serial_only=serial_only)
+                        clock=clock or (lambda: dt.datetime.now(dt.timezone.utc)), serial_only=serial_only, admission=admission)
         # The relay log intentionally omits paths; retain the complete handoff
         # in the same owner-private directory so the next run can find returns.
         _journal(pathlib.Path(env["OWB_CAPACITY_ROOT"]), result)
@@ -159,7 +161,7 @@ def _journal(root, result):
 
 
 def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
-             evidence_root, clock, serial_only=False):
+             evidence_root, clock, serial_only=False, admission=None):
     import jobs
     config = evidence_tools.private_document(evidence_root, "dispatch.json")
     if (config.get("enabled") is not True or config.get("role") != role
@@ -224,7 +226,7 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
         # Recollect identity, resources, account/model/capability probes and
         # board/process leases on EVERY canonical Git retry.
         kwargs = {}
-        if role == "macbook" or (evidence_root / "peer.json").exists():
+        if serial_only or role == "macbook" or (evidence_root / "peer.json").exists():
             peer = evidence_tools.private_document(evidence_root, "peer.json")
             if (not dispatch_capacity.fresh(peer, clock())
                     or peer.get("transport_approval_ref") != config.get("transport_approval_ref")
@@ -252,11 +254,31 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
     data = jobs.load()
     if serial_only:
         import capacity_reservations
-        clear = (not observed["leases"]
-                 and not any(capacity_reservations.active(j, observed["at"])
-                             for j in data.get("jobs", []))
+        # A known busy peer is not local occupancy. This is only a gate to
+        # candidate selection: every enabled serial launch still needs a fresh
+        # canonical admission for its actual job/model/account below.
+        local = next(h for h in observed["hosts"] if h["host"] == host_id)
+        clear = (not dispatch_capacity.host_problem(local, observed["at"])
+                 and not any(x.get("host") == host_id or not x.get("account")
+                             or x.get("recovery_required") for x in observed["leases"])
+                 and all(dispatch_capacity.fresh(h, observed["at"])
+                         and h.get("registered_id") == h.get("host") for h in observed["hosts"])
+                 and not any((a := capacity_reservations.active(j, observed["at"]))
+                             and a.get("host") == host_id for j in data.get("jobs", []))
                  and not dispatch_capacity.unattributed_claims(
                      data, observed["hosts"], observed["leases"], observed["at"]))
+        if admission is not None:
+            import serial_admission
+            def apply(current):
+                try:
+                    return serial_admission.reserve(current, host_id=host_id,
+                        request=admission, observed=observe()), None, []
+                except (ValueError, OSError) as error:
+                    return None, str(error), []
+            value, error = jobs.with_git(apply, "jobs: admit accounted serial execution")
+            if error or value is None:
+                return {"state": "capacity_rejected", "serial_safe": False}
+            return {"state": "capacity_waiting", "serial_safe": True, "admission": value}
         return {"state": "capacity_waiting", "serial_safe": clear,
                 "availability": "unknown", "free_slot_at": None}
     plan = dispatch_capacity.propose(data, **{k: observed[k] for k in
@@ -323,6 +345,11 @@ def _attempt(*, role, owb_root, hos_root, legacy_lease, chief, laptop_guard,
 
 if __name__ == "__main__":
     import chief_relay
+    admission = None
+    if "--admit" in sys.argv:
+        i = sys.argv.index("--admit")
+        admission = json.loads(sys.argv[i + 1])
+        del sys.argv[i:i + 2]
     serial_only = "--serial-only" in sys.argv
     if serial_only:
         sys.argv.remove("--serial-only")
@@ -337,5 +364,5 @@ if __name__ == "__main__":
         hos_root=sys.argv[2] if len(sys.argv) == 3 else None,
         legacy_lease=chief_relay.current_execution if role == "mini" else None,
         chief=lambda: chief_relay.acting(chief_relay.now())[1], laptop_guard=laptop_guard,
-        serial_only=serial_only)
+        serial_only=serial_only, admission=admission)
     print(json.dumps(result))

@@ -87,7 +87,7 @@ def code_version():
     root = pathlib.Path(__file__).resolve().parent
     return hashlib.sha256(b"\0".join((root/name).read_bytes() for name in ("chief_relay.py","workflow_state.py","workflow_handoffs.py","studio.py","jobs.py","routing.py",
         "capacity_evidence.py","dispatch_capacity.py","capacity_reservations.py",
-        "capacity_supervisor.py","capacity_caller.py","execution_leases.py","portable_transfer.py"))).hexdigest()[:16]
+        "capacity_supervisor.py","capacity_caller.py","serial_admission.py","execution_leases.py","portable_transfer.py"))).hexdigest()[:16]
 
 LOADED_VERSION = code_version()
 
@@ -1572,10 +1572,18 @@ def run_locked(at: dt.datetime) -> int:
                     # Ordinary serial work remains available, but an unattributed
                     # lease blocks every extra lane until fresh proof exists.
                     pass
+            admitted = capacity_caller.production_tick(role="mini", owb_root=OWB, hos_root=HOS,
+                serial_only=True, _serial_lock_held=True,
+                admission={"job": execution["job"], "worker": who, "model": model, "review": review_work})
+            if admitted is not None and not admitted.get("admission"):
+                push_heartbeat(at, "busy", note="selected serial account admission unavailable")
+                return 0
             write_json(d("execution.json"),execution)
             write_json(d("runner.json"),{"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"]})
         try:
             code, tail = run_cli(who, prompt, cap, model)
+            import serial_admission
+            serial_admission.finish(admitted)
         finally:
             d("execution.json").unlink(missing_ok=True)
             if review_work:
