@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2143 | mini | blocked | codex | – | 031 thumbs · thumb · 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 | J2144 | mini | blocked | codex | – | 032 thumbs · thumb · 032 thumbs (November tentpole): three full concepts incl. rule-19 real image |  |
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
-| J2146 | cloud | open | – | – | for claude · script · Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21) |  |
+| J2146 | mini | open | – | – | for gemini · script · `gemini-argon` · Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21) |  |
 | J2147 | cloud | open | – | – | 032 upload · for claude · listing · 031/032 Shorts slots around the new Wednesday long slot |  |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
 | J2159 | mini | open (after J2176) | – | – | for codex · review · Packaging panel (codex): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
