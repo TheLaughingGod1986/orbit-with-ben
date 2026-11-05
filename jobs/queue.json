@@ -188336,17 +188336,22 @@
           "at": "2026-11-05T19:41Z",
           "by": "cursor",
           "what": "step 0 of 4 done: VO sha256 matches 3b17b23c…779e8a, 20.88s. Existing muons.mp4 is 12s 1920x1080 on NAS graphics_v01. Film bed mp3 is not on disk or in the 25 Oct tar."
+        },
+        {
+          "at": "2026-11-05T19:55Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: v01 22.2s sha256 9fc197dc…fd28. gate, sfx, music, polish and picture_qa PASS. One WARN: clock plate at 4.3s edge density. Mon 9 still taken by iyvWYFP_ETA."
         }
       ],
-      "remaining_action": "Build the 9:16 muons Short from the locked VO and existing muon graphic",
+      "remaining_action": "Hand the tool-passed muons Short to the review lane",
       "due": "2026-11-09T10:30:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-05T19:41Z",
+        "at": "2026-11-05T19:55Z",
         "by": "cursor",
-        "note": "VO sha256 matches 3b17b23c…779e8a, 20.88s. Existing muons.mp4 is 12s 1920x1080 on NAS graphics_v01. Film bed mp3 is not "
+        "note": "v01 22.2s sha256 9fc197dc…fd28. gate, sfx, music, polish and picture_qa PASS. One WARN: clock plate at 4.3s edge density"
       },
       "taskKeys": [
         "OWB:024"
