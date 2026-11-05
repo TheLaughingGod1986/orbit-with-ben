@@ -13,9 +13,9 @@
 | Script review | `npm run review:script` **PASS 95.2 / 100** on locked `uranus_21_year_winter_script_master_v02.md` (1,290 spoken words / 1,347 reviewer words, ~9.0 min, 6 chapters; subscribe beat line 6 at 43%) |
 | Sources | 15 / 15 MUST QUOTE rows **VERIFIED** live in `01_Script/SOURCES.md` + `01_Script/CLAUDE_QUOTE_CHECK_v01.md` |
 | VO | **DONE** (`J2155` / `J2164` KEEP, `02_Voiceover/uranus_vo_v01.wav`, SHA-256 `3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460`, `611.40 s` / `10:11.4`, `-23.3 dB` mean, `-20.22 LUFS`, `-3.77 dBTP`; review: `jobs/reviews/J2164/REVIEW.md`) |
-| Shot list | Open (`J2165`, cleared to start after `J2164` explicit VO acceptance) |
-| CG | pending (Vertex Veo / Omni Orbit-only, after VO + shot list) |
-| Runtime target | `10:11.4` (`611.40 s` locked VO from `1,290` spoken words) |
+| Shot list | **DONE (v01 drafted, `J2165`)** (`07_Edit-Project/SHOT_LIST_v01.md` — 67 Scribe-timed rows `0.00–629.40 s`, `4.53 s/cut` mean, 0 split words, 0 adjacent `CODE` rows, `≤ 2` still appearances across 43 verified NASA/JWST/ESA/Wikimedia assets; `05_Music/MUSIC_BRIEF_v01.md` & `06_Sound-Effects/SFX_PLAN_v01.md`; ready for Claude review / Chief price pass) |
+| CG | pending (Vertex Veo / Omni Orbit-only, after VO + shot list; 2 `[ORBIT ACTS]` rows `R29` & `R55` flagged `OMNI (flag)` with £0 `CODE`/`NASA` fallbacks) |
+| Runtime target | `10:29.4` (`611.40 s` locked VO + `18.00 s` moving end-screen hold `611.40–629.40 s`) |
 | Shorts | Standalone Short `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*) public 3 Nov 2026 — **461 views, 6 likes on day 1**; two new Shorts (incl. Test A opening Short) after master |
 
 ## Blockers
@@ -24,8 +24,8 @@
 - [x] Script v02 ≥ 90 (`review:script` PASS 95.2/100 on `uranus_21_year_winter_script_master_v02.md`, 1,290 spoken words)
 - [x] Direct quote check on `01_Script/SOURCES.md` + `CLAUDE_QUOTE_CHECK_v01.md` (15/15 PASS)
 - [x] VO take (`vo_take.py` from `uranus_21_year_winter_script_master_v02.md` — `uranus_vo_v01.wav`, `611.40 s`, accepted in `J2164` / `jobs/reviews/J2164/REVIEW.md`)
-- [ ] Timed shot list + music brief (`J2165`)
-- [ ] Stills locked before Veo/Omni spend
+- [x] Timed shot list + music brief + SFX plan (`J2165`: `07_Edit-Project/SHOT_LIST_v01.md`, `05_Music/MUSIC_BRIEF_v01.md`, `06_Sound-Effects/SFX_PLAN_v01.md`)
+- [ ] Stills locked & Claude shot-list review / Chief price pass before Veo/Omni spend
 
 ## `npm run review:script` & `npm run gate:episode` (J2148, 4 Nov 2026)
 
