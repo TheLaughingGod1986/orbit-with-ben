@@ -1,5 +1,5 @@
 {
-  "next_id": 2195,
+  "next_id": 2197,
   "jobs": [
     {
       "id": "J0001",
@@ -72664,7 +72664,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
-      "result": "parked for Chief: HOS PR423 records exactly one J1894-authorized B v03 take. Hook ends3.68s; even scoped0.15s trim plus atempo1.06 gives3.33s >2.85. vo_check words/levels PASS with homophone warning; repo check_all ALL CHECKS PASS. Exact approved text316 chars (review says311); 316 conservatively logged. No second take authorized. Chief scope next repair; retain three accepted v02 takes and all originals.",
+      "result": "waiting for review J2195 (rule H): HOS PR423 records exactly one J1894-authorized B v03 take. Hook ends3.68s; even scoped0.15s trim plus atempo1.06 gives3.33s >2.85. vo_check words/levels PASS with homophone warning; repo check_all ALL CHECKS PASS. Exact approved text316 chars (review says311); 316 conservatively logged. No second ta",
       "history": [
         {
           "at": "2026-10-22T20:55Z",
@@ -72915,6 +72915,11 @@
           "at": "2026-11-05T07:44Z",
           "by": "codex",
           "what": "blocked: parked for Chief: HOS PR423 records exactly one J1894-authorized B v03 take. Hook ends3.68s; even scoped0.15s trim plus atempo1.06 gives3.33s >2.85. vo_check words/levels PASS with homophone warning; repo check_all ALL CHECKS PASS. Exact approved text316 chars (review says311); 316 conservatively logged. No second take authorized. Chief scope next repair; retain three accepted v02 takes and all originals."
+        },
+        {
+          "at": "2026-11-05T08:28Z",
+          "by": "claude",
+          "what": "rule H: decision moved from the Chief to review J2195"
         }
       ],
       "kind": "vo",
@@ -124463,7 +124468,7 @@
       "title": "AR cohort: verify finished cuts and prepare final-watch handoff",
       "needs": "mini",
       "repo": "owb",
-      "body": "J1355 elected-Chief handoff, 31 October 2026. Claim only when dispatched; link progress OWB:030. Read J1355_INTEGRATION.md and J1321_CLOSEOUT.json in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10. Accepted cohort is AR1 v01 (49b3e4f0f7276885f942d3451978eba33c9a2fec68216fcafdd79466f877cd07), AR2 v06 (6d517aad6c61a0f12d67b4f2f7990f94ea165e17e01055b56873e89415bf8e67), AR3 v05 (3a2fc5b53e2cfafe4d55422f4f8ae7894ffdb81a727bf47f605e01070a58f13d). Never substitute the separate PR363/365/369 AR2 v10 + AR3 v09 branch. J1308/J1321 production and picture corrections are complete; picture acceptance is not publishing approval.\n\nPerform the next finished-watch/gate handoff, not a rebuild: verify these exact masters and existing script/facts/VO locks and test-specific timing authorisations; watch/listen to the full moving cuts and check all applicable gates and packaging, retaining accepted WARN decisions. Do not claim a new audio audition from frame sheets. Establish any remaining gate work explicitly; failed gates cannot be waived. Preserve originals and manifests. No mint, spend, media rewrite, upload, schedule, retitle, privacy change or Buffer post authorised. Existing date/credit/watch holds remain; do not invent a watch deadline or treat picture PASS as Ben approval.\n\nIf ready for Ben, prepare durable watch copies under distinct per-cut paths/IDs, verify their hashes and complete playback mapping, then use jobs.py awaits --agent <own id> with --add for all three Shorts and a clear watch-by time selected under existing scheduling rules. Verify the published board cards and Play links before reporting the handoff. A final-watch preparation completion must leave the required watch signal; it is not permission to publish. If another worker has since created the same handoff, reconcile it instead of creating duplicate tasks/cards. Chief authority must be rechecked before protected decisions; use own agent id. GBP0. Clean worktree and PR for records, no media in git. Stop after this one task.\n",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J1356), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J1356 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J1356 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J1356.\n5. Finish this job with the verdict in --result.\n\nJ1355 elected-Chief handoff, 31 October 2026. Claim only when dispatched; link progress OWB:030. Read J1355_INTEGRATION.md and J1321_CLOSEOUT.json in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10. Accepted cohort is AR1 v01 (49b3e4f0f7276885f942d3451978eba33c9a2fec68216fcafdd79466f877cd07), AR2 v06 (6d517aad6c61a0f12d67b4f2f7990f94ea165e17e01055b56873e89415bf8e67), AR3 v05 (3a2fc5b53e2cfafe4d55422f4f8ae7894ffdb81a727bf47f605e01070a58f13d). Never substitute the separate PR363/365/369 AR2 v10 + AR3 v09 branch. J1308/J1321 production and picture corrections are complete; picture acceptance is not publishing approval.\n\nPerform the next finished-watch/gate handoff, not a rebuild: verify these exact masters and existing script/facts/VO locks and test-specific timing authorisations; watch/listen to the full moving cuts and check all applicable gates and packaging, retaining accepted WARN decisions. Do not claim a new audio audition from frame sheets. Establish any remaining gate work explicitly; failed gates cannot be waived. Preserve originals and manifests. No mint, spend, media rewrite, upload, schedule, retitle, privacy change or Buffer post authorised. Existing date/credit/watch holds remain; do not invent a watch deadline or treat picture PASS as Ben approval.\n\nIf ready for Ben, prepare durable watch copies under distinct per-cut paths/IDs, verify their hashes and complete playback mapping, then use jobs.py awaits --agent <own id> with --add for all three Shorts and a clear watch-by time selected under existing scheduling rules. Verify the published board cards and Play links before reporting the handoff. A final-watch preparation completion must leave the required watch signal; it is not permission to publish. If another worker has since created the same handoff, reconcile it instead of creating duplicate tasks/cards. Chief authority must be rechecked before protected decisions; use own agent id. GBP0. Clean worktree and PR for records, no media in git. Stop after this one task.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -125136,10 +125141,15 @@
           "at": "2026-11-05T05:41Z",
           "by": "gemini",
           "what": "review J1918 KEEP: J1910/PR433, J1846-J1849, and J1471/J2016 repairs + tool gates verified on ar1_v06, ar2_v12, ar3_v13; prepare durable per-cut watch copies and set jobs.py awaits for Ben's final watch"
+        },
+        {
+          "at": "2026-11-05T08:28Z",
+          "by": "claude",
+          "what": "rule H: Chief review moved to the review lane"
         }
       ],
       "remaining_action": "Stage durable watch copies of J2016 accepted masters (ar1_v06, ar2_v12, ar3_v13), verify Play links, and set jobs.py awaits --add for Ben's final watch",
-      "kind": "chief",
+      "kind": "review",
       "progress": {
         "step": 1,
         "of": 3,
@@ -182572,7 +182582,7 @@
       "title": "HOS 008 Short C: Chief decision on J2170 paper hook lock & 1-sentence VO pickup scope (conditional 2 Dec slot held)",
       "needs": "any",
       "repo": "hos",
-      "body": "Bounded decision queued by J2170 (gemini, £0 preparation only; no credit spend authorized by J2023):\n\n1. **Slot & Hold Status:** Conditional **Wed 2 Dec 2026 11:30Z** (Ben watch by **29 Nov**) slot is **EXPLICITLY NOT ACHIEVABLE on existing audio alone** (`J1004` + Long Part 05 VO re-verified: `hos_008_short_C_v02.mp3` S1 ends at `4.840s`, pure speech `3.509s > 2.85s` at `1.06x` cap; no lawful word deletion; no Part 05 Long VO lift finishes `<= 2.85s` with subject + surprise claim). `Short_C` hold is retained and the 2 Dec slot is reported empty/held until this decision + pickup complete. `Short_A` (`J0912`, target 24 Nov, watch 20 Nov) remains separate and untouched.\n2. **Deliverables (`gemini/J2170-short-c-paper-hook` @ `e3823f75`):**\n   - `02_Video-Projects/008_Lightning-Franklin/10_Shorts/J2170/SHORT_C_PAPER_PLAN.md`\n   - `02_Video-Projects/008_Lightning-Franklin/10_Shorts/J2170/INPUT_INVENTORY.json` (47/47 local+NAS paths & SHA-256 verified)\n3. **Bounded Decision Requested from Chief / Claude:**\n   - **Script/Facts Lock:** Approve `C-Open-1` (**\"That rooftop lightning rod was Franklin's idea.\"** — 7w, 47 chars, 10 syllables, est. `2.35–2.55s <= 2.85s` at `1.00x`, frame-0 yellow `FRANKLIN'S`) or `C-Open-2` (**\"Benjamin Franklin invented the lightning rod.\"** — 6w, 45 chars, 10 syllables, est. `2.15–2.35s <= 2.85s`), sourced to `FACT_NOTES_v01.md` rows 25, 38, 39, 41, 42, 44.\n   - **Whole-Sentence Body Order (`hos_008_short_C_v02.wav` `0a25b6dab...` slice `w[13..61]`, `5.720–24.400s`, 49w, `18.680s` unchanged):** Choose `Layout C-v03a` (original S2->S5 order, scale payoff `w[52..61]` at `82.3% >= 70%`) or `Layout C-v03b` (whole S5 `w[52..61]` placed at S02 so mechanism answer `w[40..51]` starts at `76.1% >= 70%`). Total: `55–56w`, `~22.35s` (`22–27s` lock PASS).\n   - **Credit Scope & Follow-on Dispatch:** Authorize a 1-sentence ElevenLabs pickup (`~47 chars` via `el_client.py`, `speed=1.04`; live balance `101,014` chars, `TTS_PAUSE` absent) + `vo_check.py` gate, then dispatch `£0` `Short_C_v03` assembly & review using the 8 verified `J1191` KEEP moving Flow Veo plates (`P5:19`, `P5:01`, `P5:07`, `P1:12`, `P5:18`, `P5:06_c1`, `P5:06`, `P5:14`; zero overlap with `J1881`/`J2163` six UAT notes; defective `P5:13` and 42-frame `J1273` `P5:10` excluded). Long `008` must be public before `Short_C` airs.\n",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J2175), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J2175 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J2175 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J2175.\n5. Finish this job with the verdict in --result.\n\nBounded decision queued by J2170 (gemini, £0 preparation only; no credit spend authorized by J2023):\n\n1. **Slot & Hold Status:** Conditional **Wed 2 Dec 2026 11:30Z** (Ben watch by **29 Nov**) slot is **EXPLICITLY NOT ACHIEVABLE on existing audio alone** (`J1004` + Long Part 05 VO re-verified: `hos_008_short_C_v02.mp3` S1 ends at `4.840s`, pure speech `3.509s > 2.85s` at `1.06x` cap; no lawful word deletion; no Part 05 Long VO lift finishes `<= 2.85s` with subject + surprise claim). `Short_C` hold is retained and the 2 Dec slot is reported empty/held until this decision + pickup complete. `Short_A` (`J0912`, target 24 Nov, watch 20 Nov) remains separate and untouched.\n2. **Deliverables (`gemini/J2170-short-c-paper-hook` @ `e3823f75`):**\n   - `02_Video-Projects/008_Lightning-Franklin/10_Shorts/J2170/SHORT_C_PAPER_PLAN.md`\n   - `02_Video-Projects/008_Lightning-Franklin/10_Shorts/J2170/INPUT_INVENTORY.json` (47/47 local+NAS paths & SHA-256 verified)\n3. **Bounded Decision Requested from Chief / Claude:**\n   - **Script/Facts Lock:** Approve `C-Open-1` (**\"That rooftop lightning rod was Franklin's idea.\"** — 7w, 47 chars, 10 syllables, est. `2.35–2.55s <= 2.85s` at `1.00x`, frame-0 yellow `FRANKLIN'S`) or `C-Open-2` (**\"Benjamin Franklin invented the lightning rod.\"** — 6w, 45 chars, 10 syllables, est. `2.15–2.35s <= 2.85s`), sourced to `FACT_NOTES_v01.md` rows 25, 38, 39, 41, 42, 44.\n   - **Whole-Sentence Body Order (`hos_008_short_C_v02.wav` `0a25b6dab...` slice `w[13..61]`, `5.720–24.400s`, 49w, `18.680s` unchanged):** Choose `Layout C-v03a` (original S2->S5 order, scale payoff `w[52..61]` at `82.3% >= 70%`) or `Layout C-v03b` (whole S5 `w[52..61]` placed at S02 so mechanism answer `w[40..51]` starts at `76.1% >= 70%`). Total: `55–56w`, `~22.35s` (`22–27s` lock PASS).\n   - **Credit Scope & Follow-on Dispatch:** Authorize a 1-sentence ElevenLabs pickup (`~47 chars` via `el_client.py`, `speed=1.04`; live balance `101,014` chars, `TTS_PAUSE` absent) + `vo_check.py` gate, then dispatch `£0` `Short_C_v03` assembly & review using the 8 verified `J1191` KEEP moving Flow Veo plates (`P5:19`, `P5:01`, `P5:07`, `P1:12`, `P5:18`, `P5:06_c1`, `P5:06`, `P5:14`; zero overlap with `J1881`/`J2163` six UAT notes; defective `P5:13` and 42-frame `J1273` `P5:10` excluded). Long `008` must be public before `Short_C` airs.\n",
       "ref": "J2170",
       "film": "008",
       "stage": "edit",
@@ -182590,11 +182600,16 @@
           "at": "2026-11-05T02:15Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T08:28Z",
+          "by": "claude",
+          "what": "rule H: Chief review moved to the review lane"
         }
       ],
       "remaining_action": "Review J2170 paper hook plan (e3823f75), lock 1-sentence hook C-Open-1/2 + layout C-v03a/b, and authorize 47-char VO pickup + £0 v03 assembly (or keep 2 Dec slot empty)",
       "due": "2026-11-29T11:30:00Z",
-      "kind": "chief"
+      "kind": "review"
     },
     {
       "id": "J2176",
@@ -182613,7 +182628,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T02:21Z",
-      "result": "parked for Chief: single scoped Huygens surface candidate PIA07232 fails resolution (about 315px usable width, over 4x to 1280 vs 2.35x limit). One-candidate scope exhausted. Evidence 95fbbb3ac6 on codex/j2176-surface; B/C hashes unchanged. Choose new bounded composition/source scope; panels remain dependent on incomplete J2176. No spend or background process.",
+      "result": "waiting for review J2196 (rule H): single scoped Huygens surface candidate PIA07232 fails resolution (about 315px usable width, over 4x to 1280 vs 2.35x limit). One-candidate scope exhausted. Evidence 95fbbb3ac6 on codex/j2176-surface; B/C hashes unchanged. Choose new bounded composition/source scope; panels remain dependent on incom",
       "history": [
         {
           "at": "2026-11-05T02:21Z",
@@ -182674,6 +182689,11 @@
           "at": "2026-11-05T06:52Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-05T08:28Z",
+          "by": "claude",
+          "what": "rule H: decision moved from the Chief to review J2196"
         }
       ],
       "remaining_action": "Chief must scope next A composition after Huygens resolution failure",
@@ -183831,7 +183851,7 @@
       "title": "HOS 010: decide exact missing-plate production scope for J2172",
       "needs": "any",
       "repo": "hos",
-      "body": "J2172 inventory HOS PR424, commit8b58cda3: read jobs/evidence/J2172/READINESS.md and INVENTORY.json. Twelve of fourteen required plate identities missing; only two code graphics found across local/canonical NAS film roots; no open named010 producer found. GBP0 bounded decision only: name exact existing approved assets/producer or queue specific no-spend row-mapping/readiness work then separately priced guarded production scope. Check rule8 subject/surprise and robin/pigeon/gull mapping mismatches. Preserve accepted J1894 A/C v02 hashes and J1004 A1 timing; no locked VO edits. No unchanged broad archive search or generic timed retries. Chief separately authorizes any generation route, exact takes, cap and named producer; no spending from this job. Keep J2172 blocked1/3 until approved sources/mapping available, then reopen explicitly. Conditional4/7Dec11:30, watch-ready1Dec18:00, longPublic prerequisite retained. No awaits absent passing finished cuts. Evidence PR review/merge follows current rules, no media approval or live changes. Link HOS:010.",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J2194), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J2194 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J2194 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J2194.\n5. Finish this job with the verdict in --result.\n\nJ2172 inventory HOS PR424, commit8b58cda3: read jobs/evidence/J2172/READINESS.md and INVENTORY.json. Twelve of fourteen required plate identities missing; only two code graphics found across local/canonical NAS film roots; no open named010 producer found. GBP0 bounded decision only: name exact existing approved assets/producer or queue specific no-spend row-mapping/readiness work then separately priced guarded production scope. Check rule8 subject/surprise and robin/pigeon/gull mapping mismatches. Preserve accepted J1894 A/C v02 hashes and J1004 A1 timing; no locked VO edits. No unchanged broad archive search or generic timed retries. Chief separately authorizes any generation route, exact takes, cap and named producer; no spending from this job. Keep J2172 blocked1/3 until approved sources/mapping available, then reopen explicitly. Conditional4/7Dec11:30, watch-ready1Dec18:00, longPublic prerequisite retained. No awaits absent passing finished cuts. Evidence PR review/merge follows current rules, no media approval or live changes. Link HOS:010.",
       "ref": "J2172",
       "film": "010",
       "stage": "picture",
@@ -183849,11 +183869,75 @@
           "at": "2026-11-05T07:49Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T08:28Z",
+          "by": "claude",
+          "what": "rule H: Chief review moved to the review lane"
         }
       ],
       "remaining_action": "Name an approved producer or scope twelve missing moving plates and mapping fixes",
       "due": "2026-11-06T18:00:00Z",
-      "kind": "chief"
+      "kind": "review"
+    },
+    {
+      "id": "J2195",
+      "title": "Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J0862), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J0862 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J0862 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J0862.\n5. Finish this job with the verdict in --result.\n\nWhat the worker asked the Chief: parked for Chief: HOS PR423 records exactly one J1894-authorized B v03 take. Hook ends3.68s; even scoped0.15s trim plus atempo1.06 gives3.33s >2.85. vo_check words/levels PASS with homophone warning; repo check_all ALL CHECKS PASS. Exact approved text316 chars (review says311); 316 conservatively logged. No second take authorized. Chief scope next repair; retain three accepted v02 takes and all originals.",
+      "ref": "",
+      "film": "009",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T08:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T08:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief",
+      "kind": "review",
+      "review_of": "J0862",
+      "urgent": 15
+    },
+    {
+      "id": "J2196",
+      "title": "Review J2176: 032 J2144 FIX: Titan hero crop and clear lander typography",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J2176), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J2176 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J2176 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J2176.\n5. Finish this job with the verdict in --result.\n\nWhat the worker asked the Chief: parked for Chief: single scoped Huygens surface candidate PIA07232 fails resolution (about 315px usable width, over 4x to 1280 vs 2.35x limit). One-candidate scope exhausted. Evidence 95fbbb3ac6 on codex/j2176-surface; B/C hashes unchanged. Choose new bounded composition/source scope; panels remain dependent on incomplete J2176. No spend or background process.",
+      "ref": "",
+      "film": "032",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T08:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T08:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review J2176: 032 J2144 FIX: Titan hero crop and clear lander typography",
+      "kind": "review",
+      "review_of": "J2176"
     }
   ],
   "focus": [],
