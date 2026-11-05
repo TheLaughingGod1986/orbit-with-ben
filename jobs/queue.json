@@ -1,5 +1,5 @@
 {
-  "next_id": 2216,
+  "next_id": 2217,
   "jobs": [
     {
       "id": "J0001",
@@ -166132,7 +166132,7 @@
       "needs": "mini",
       "repo": "owb",
       "body": "Follow-up to J1870 and elected-Chief recovery scope J1874. Restore source provenance for OWB iyvWYFP_ETA (Mars night, 9Nov11:30Z) and RLSJm59OSzI (Titan, 10Nov11:30Z). Existing files/gates/dates stay unchanged; this job grants NO social posts, hosting, YouTube upload, render, paid generation, schedule change or automatic source approval.\n\nSearch only recorded original/package/iCloud/NAS handoff locations and original receipts, bounded to20 active minutes and3 candidates per item across retries. Never delete or overwrite anything. Expected originals: Mars night SHA48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1; Titan SHAafe0e80f044aca2887b9a9ef1d2aaf9fee9098285315fdc5d667eaca0019ca6c. Current Titan v01 is DIFFERENT (3f2f51d4f8ffd1adfc0e9c0e91c25839198860e49c3085367ea876f341d606a2); never use it or weaken a gate. Mars original is explicitly known overwritten.\n\nIf original is recovered, record source path, SHA/bytes/readability and original approval linkage for Chief, preserving existing registry until accepted. If not, read-only Studio Download of the channel's CURRENT uploaded cut is authorized as a new candidate only: correct signed-in OWB identity, at most one copy per item, at most150MB each, preserve all originals, no public hosting. A downloaded/transcoded hash is NOT an original-hash match and NOT an approval. Independently review candidate audiovisual identity/quality and document encoding differences before proposing a specific social-source exception to elected Chief. Queue one linked Chief decision task for any exception and leave source holds explicit. Do not continually repeat the same search or mark this source ready from filename/plan alone. Preserve J1008 and all existing exclusions, credits and dates. No new sign-in secrets in output.\n",
-      "ref": "J1874",
+      "ref": "jobs/reviews/J1889/REVIEW.md",
       "film": "",
       "stage": "",
       "after": "",
@@ -166223,9 +166223,14 @@
           "at": "2026-11-04T20:54Z",
           "by": "gemini",
           "what": "done: Original 1080p bytes unrecovered; Studio Download candidates verified via tool-provable checks + native multimodal read_file (Mars iyvWYFP_ETA SHA 70c01376... 3,667,108B 25.50s -14.8 LUFS r=0.9933; Titan RLSJm59OSzI SHA 68836fd5... 1,000,998B 21.97s -15.4 LUFS r=0.9925) and proposed for hash-pinned social-source exception in linked Chief job J1889; UPLOADS.json and holds unchanged (447dad87e2)"
+        },
+        {
+          "at": "2026-11-05T12:53Z",
+          "by": "gemini",
+          "what": "review J1889 KEEP: accepted Studio Download social-source candidates for iyvWYFP_ETA (70c01376...) and RLSJm59OSzI (68836fd5...); UPLOADS.json exception and R2/Buffer publish scoped in J2216 (jobs/reviews/J1889/REVIEW.md)"
         }
       ],
-      "remaining_action": "Hand off verified Studio candidates to linked Chief decision J1889",
+      "remaining_action": "Done: Studio Download candidates accepted under J1889 KEEP (jobs/reviews/J1889/REVIEW.md); UPLOADS.json exception and R2/Buffer publish scoped in J2216",
       "due": "2026-11-04T07:00:00Z",
       "kind": "assembly",
       "recovery_scope_key": "J1874:sources",
@@ -167033,13 +167038,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
-      "since": "2026-11-05T12:42Z",
-      "eta": "2026-11-05T14:42Z",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T20:37Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J1889/REVIEW.md): accepted both Studio Download social-source candidates via demonstrated native audio_input + moving_video_input and tool-provable checks — Mars iyvWYFP_ETA (Could a Robot Survive a Night on Mars_.mp4, 3,667,108B, SHA 70c0137661530df7397bdcfb883e5524f884f202d471d8cd73c5b613b80ddb7e, 25.50s 720x1280, -14.8 LUFS, r=0.9933, 56/56 ASR words) and Titan RLSJm59OSzI (What Would Standing on Saturn's Moon Titan Feel Like_.mp4, 1,000,998B, SHA 68836fd5f65bfb768bab429fd2c46047136a7478d5aba87abdc7e36f5f96b575, 21.97s 720x1280, -15.4 LUFS, r=0.9925, 47/47 ASR words); updated J1879, resolved J1965, and queued Chief publish/registry-exception job J2216",
       "history": [
         {
           "at": "2026-11-03T20:37Z",
@@ -167080,9 +167085,19 @@
           "at": "2026-11-05T12:51Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Step 3/4: Prepared KEEP review report for Mars iyvWYFP_ETA (70c01376...) and Titan RLSJm59OSzI (68836fd5...) Studio Download candidates and scoped Chief publish/registry-exception handoff"
+        },
+        {
+          "at": "2026-11-05T12:53Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Landed jobs/reviews/J1889/REVIEW.md, updated parent J1879, closed superseded J1965, and queued Chief publish/registry-exception job J2216"
+        },
+        {
+          "at": "2026-11-05T12:53Z",
+          "by": "gemini",
+          "what": "done: KEEP (jobs/reviews/J1889/REVIEW.md): accepted both Studio Download social-source candidates via demonstrated native audio_input + moving_video_input and tool-provable checks — Mars iyvWYFP_ETA (Could a Robot Survive a Night on Mars_.mp4, 3,667,108B, SHA 70c0137661530df7397bdcfb883e5524f884f202d471d8cd73c5b613b80ddb7e, 25.50s 720x1280, -14.8 LUFS, r=0.9933, 56/56 ASR words) and Titan RLSJm59OSzI (What Would Standing on Saturn's Moon Titan Feel Like_.mp4, 1,000,998B, SHA 68836fd5f65bfb768bab429fd2c46047136a7478d5aba87abdc7e36f5f96b575, 21.97s 720x1280, -15.4 LUFS, r=0.9925, 47/47 ASR words); updated J1879, resolved J1965, and queued Chief publish/registry-exception job J2216"
         }
       ],
-      "remaining_action": "Commit jobs/reviews/J1889/REVIEW.md and apply Rule H KEEP disposition to J1889, J1879, and J1965 via jobs.with_git",
+      "remaining_action": "Done: J1889 KEEP review applied; Chief publish/registry-exception job J2216 queued",
       "due": "2026-11-04T07:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -167094,15 +167109,16 @@
       ],
       "urgent": 17,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-05T12:51Z",
+        "at": "2026-11-05T12:53Z",
         "by": "gemini",
-        "note": "Step 3/4: Prepared KEEP review report for Mars iyvWYFP_ETA (70c01376...) and Titan RLSJm59OSzI (68836fd5...) Studio Down"
+        "note": "Applied Rule H KEEP: landed jobs/reviews/J1889/REVIEW.md, updated J1879, closed J1965, and queued Chief publish job J2216"
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J1889/REVIEW.md"
     },
     {
       "id": "J1890",
@@ -172179,13 +172195,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "gemini",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T06:04Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J1889/REVIEW.md): waiting condition for J1879 is satisfied — J1879 completed (447dad87e2) and J1889 independently watched, heard, and accepted both Studio Download candidates via demonstrated audio_input and moving_video_input",
       "history": [
         {
           "at": "2026-11-04T06:04Z",
@@ -172196,9 +172212,14 @@
           "at": "2026-11-05T00:28Z",
           "by": "claude",
           "what": "rule H: Chief review moved to the review lane"
+        },
+        {
+          "at": "2026-11-05T12:53Z",
+          "by": "gemini",
+          "what": "done: condition satisfied by J1879 completion (447dad87e2) and J1889 KEEP review (jobs/reviews/J1889/REVIEW.md)"
         }
       ],
-      "remaining_action": "Verify readiness: Await capability-qualified J1889 acceptance review; keep Mars missing-original and Titan mismatch holds",
+      "remaining_action": "Done: condition satisfied by J1879 (447dad87e2) and J1889 KEEP review (jobs/reviews/J1889/REVIEW.md)",
       "kind": "review",
       "recheck_of": "J1879",
       "required_capabilities": [
@@ -172206,7 +172227,8 @@
         "moving_video_input"
       ],
       "due": "2026-11-04T07:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "done_ref": "jobs/reviews/J1889/REVIEW.md"
     },
     {
       "id": "J1966",
@@ -185606,6 +185628,38 @@
         "condition": "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run.",
         "check_at": "2026-11-05T18:49:33+00:00"
       }
+    },
+    {
+      "id": "J2216",
+      "title": "Chief: apply J1889 KEEP social-source exception in UPLOADS.json and publish Mars-night & Titan Buffer posts",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J1879 (447dad87e2) and Rule H review J1889 KEEP (jobs/reviews/J1889/REVIEW.md).\n\nBoth Studio Download social-source candidates have been independently verified by tool-provable checks (hashes, full ffmpeg decode, stream creation_time prior to 17 Oct J0432, ebur128 loudness, lag-aligned PCM correlation, 100% faster-whisper word match, open-library dHash) and native multimodal moving-video + audio review:\n1. Mars night `iyvWYFP_ETA` (scheduled `2026-11-09T11:30:00Z`, OWB:025, promotes `Js6EQJ8qDi8`):\n   - File: `/Users/benjaminoats/_desk/J1879/current-upload-candidates/Could a Robot Survive a Night on Mars_.mp4`\n   - Size / SHA-256: `3,667,108` bytes, `70c0137661530df7397bdcfb883e5524f884f202d471d8cd73c5b613b80ddb7e`\n   - Original YouTube upload SHA-256 (`youtubeUploadSha256`): `48466c33946ed4367d0569a299062e5953ec9e05c7f745d1b4b7a4c9f24162e1`\n2. Titan standalone Short `RLSJm59OSzI` (scheduled `2026-11-10T11:30:00Z`, standalone test Short):\n   - File: `/Users/benjaminoats/_desk/J1879/current-upload-candidates/What Would Standing on Saturn's Moon Titan Feel Like_.mp4`\n   - Size / SHA-256: `1,000,998` bytes, `68836fd5f65bfb768bab429fd2c46047136a7478d5aba87abdc7e36f5f96b575`\n   - Original YouTube upload SHA-256 (`youtubeUploadSha256`): `afe0e80f044aca2887b9a9ef1d2aaf9fee9098285315fdc5d667eaca0019ca6c` (local v01 `3f2f51d4...` remains excluded per J1008)\n\nScope for elected Chief (or Chief-authorized publish run):\n1. Update `00_Brand/Channel-Setup/social/UPLOADS.json` for `iyvWYFP_ETA` (clear `knownNoFile`, set `file`, `sha256: 70c01376...`, `youtubeUploadSha256: 48466c33...`, `source: studio_download_2026-11-03`, `sourceNote`) and `RLSJm59OSzI` (set `file`, `sha256: 68836fd5...`, `youtubeUploadSha256: afe0e80f...`, `source: studio_download_2026-11-03`, `sourceNote`), preserving existing social copy and metadata.\n2. Re-verify SHA-256 on disk, re-read live Buffer queue and YouTube schedule (`2026-11-09T11:30:00Z` and `2026-11-10T11:30:00Z`), host the two verified files on the existing R2 social bucket, and create only the missing OWB Instagram, Facebook, and Threads Buffer posts at their exact YouTube go-public times (`buffer-mirror.ts mirror --video iyvWYFP_ETA ...` and `buffer-mirror.ts mirror --video RLSJm59OSzI ...`).\n3. Verify live Buffer post IDs/dueAt/media status, commit `UPLOADS.json`, `BUFFER_POSTS.json`, and `buffer-plans/*.json`, and close stale superseded PR #427 (`codex/J1879-source-recovery`).\nNo YouTube upload/swap/schedule change, no new render, £0 spend.",
+      "ref": "jobs/reviews/J1889/REVIEW.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-05T12:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T12:53Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply J1889 KEEP social-source exceptions in UPLOADS.json and mirror iyvWYFP_ETA (9 Nov 11:30Z) & RLSJm59OSzI (10 Nov 11:30Z) to R2/Buffer",
+      "due": "2026-11-09T07:00:00Z",
+      "kind": "chief",
+      "taskKeys": [
+        "OWB:025"
+      ]
     }
   ],
   "focus": [],
