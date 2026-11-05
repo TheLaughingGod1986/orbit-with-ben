@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 032 | picture | codex | 2026-11-05T19:18Z | 2026-11-05T21:17Z | J2089 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
+| 032 | picture | codex | 2026-11-05T19:19Z | 2026-11-05T19:39Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
