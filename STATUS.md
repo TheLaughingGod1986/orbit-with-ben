@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | shots | macbook | 2026-11-05T13:35Z | 2026-11-05T15:34Z | J2165 033 Uranus: shot list after explicit VO acceptance |
+| 033 | shots | macbook | 2026-11-05T17:30Z | 2026-11-05T19:29Z | J2165 033 Uranus: shot list after explicit VO acceptance |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
