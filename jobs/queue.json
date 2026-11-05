@@ -167795,13 +167795,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T09:24Z",
-      "eta": "2026-11-05T11:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T21:54Z",
-      "result": "",
+      "result": "h47: condition satisfied/superseded. J1880 already done (gemini 2026-11-04; HOS PR409 bd530249). Cleared stale moving_video_input requirement on this verify task (needed for recipe work, not closeout). No reopen of J1880. J1881 remains the live Franklin recipe review path after J2163. £0.",
       "history": [
         {
           "at": "2026-11-03T21:54Z",
@@ -167822,6 +167822,11 @@
           "at": "2026-11-05T09:24Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T09:24Z",
+          "by": "chief",
+          "what": "done: h47: condition satisfied/superseded. J1880 already done (gemini 2026-11-04; HOS PR409 bd530249). Cleared stale moving_video_input requirement on this verify task (needed for recipe work, not closeout). No reopen of J1880. J1881 remains the live Franklin recipe review path after J2163. £0."
         }
       ],
       "remaining_action": "Close verify: J1880 already done",
