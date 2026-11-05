@@ -92,6 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2256 | mini | open | – | – | 033 picture · for gemini · review · `gemini-argon` · 033 Uranus: stills lock + OMNI R29/R55 price-pass brief from SHOT_LIST_v01 (no mint, £0) | J2238/h94/d67daf94 |
 | J2258 | any | open | – | – | 006 edit · review · Review HOS 006 Short B v01 and Short C v02 | J2169 |
 | J2259 | mini | open | – | – | studio · S6 Titan Short v11 swap: Ben OK'd on the board (5 Nov 22:07), replace RLSJm59OSzI in its Tue 10 Nov 11:30 slot |  |
+| J2260 | mini | open | – | – | 032 picture · review · 032 R19 distance draft: review still and reuse |  |
 
 Recently finished:
 
