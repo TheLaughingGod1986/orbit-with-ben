@@ -183968,9 +183968,14 @@
           "at": "2026-11-05T17:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T17:54Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2175; starting Rule H review of J2170 paper hook lock & 1-sentence VO pickup scope for HOS 008 Short C"
         }
       ],
-      "remaining_action": "Review J2170 paper hook plan (e3823f75), lock 1-sentence hook C-Open-1/2 + layout C-v03a/b, and authorize 47-char VO pickup + £0 v03 assembly (or keep 2 Dec slot empty)",
+      "remaining_action": "Inspect J2170 paper hook plan, INPUT_INVENTORY.json, and HOS 008 FACT_NOTES/contract rules",
       "due": "2026-11-29T11:30:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -183985,12 +183990,14 @@
       "urgent": 8,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-05T17:53Z",
+        "of": 4,
+        "at": "2026-11-05T17:54Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2175; starting Rule H review of J2170 paper hook lock & 1-sentence VO pickup scope for HOS 008 Short C"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2176",
