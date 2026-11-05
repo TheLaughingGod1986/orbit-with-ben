@@ -174818,13 +174818,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T01:06Z",
-      "eta": "2026-11-05T03:06Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T12:54Z",
-      "result": "",
+      "result": "Planning complete 3/3. PR508 merged 4e6927130d after CI PASS. J2168-J2173 queued with film/stage links and due dates; existing J0912 due18Nov, J1356 due20Nov. Conditional HOS10Nov and18Nov-10Dec coverage; OWB25/27/28Nov replication targets with Titan reserve. Retired/duplicate cuts excluded, 008C pickup and 10Dec reserve explicitly not ready; AR events do not qualify for November rule16. Film notes updated, snapshot collisions checked; full reports OWB6646878986 and HOS6646880115. No media/spend/publishing or approval changes.",
       "history": [
         {
           "at": "2026-11-04T12:54Z",
@@ -174855,6 +174855,11 @@
           "at": "2026-11-05T01:16Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR508 merged after CI PASS; six jobs, film notes and no-collision snapshot dates verified; full plan on OWB6646878986 and HOS6646880115; no media or publishing approval"
+        },
+        {
+          "at": "2026-11-05T01:16Z",
+          "by": "codex",
+          "what": "done: Planning complete 3/3. PR508 merged 4e6927130d after CI PASS. J2168-J2173 queued with film/stage links and due dates; existing J0912 due18Nov, J1356 due20Nov. Conditional HOS10Nov and18Nov-10Dec coverage; OWB25/27/28Nov replication targets with Titan reserve. Retired/duplicate cuts excluded, 008C pickup and 10Dec reserve explicitly not ready; AR events do not qualify for November rule16. Film notes updated, snapshot collisions checked; full reports OWB6646878986 and HOS6646880115. No media/spend/publishing or approval changes."
         }
       ],
       "remaining_action": "Planning complete; scoped production and review jobs own conditional Shorts delivery",
@@ -174877,7 +174882,8 @@
         "HOS:010",
         "OWB:030",
         "OWB:032"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/508"
     },
     {
       "id": "J2024",
