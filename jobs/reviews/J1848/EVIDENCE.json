@@ -1,0 +1,299 @@
+{
+  "job": "J1848",
+  "ref": "J1846",
+  "predecessor": "J1847",
+  "successor_chief_decision": "J1849",
+  "film": "OWB:030",
+  "cohort_cut": "AR2",
+  "reviewed_at": "2026-11-03T23:31:00Z",
+  "reviewer": "gemini",
+  "model": "gemini-4-argon",
+  "role": "specialist_worker_advisory",
+  "multimodal_video_input_supported": true,
+  "multimodal_tool_used": "default_api:read_file (native video/mp4 stream + image/png and image/jpeg full-size inspection)",
+  "capability_recorded_via": "python3 scripts/chief_relay.py capabilities --agent gemini --available moving_video_input",
+  "silent_source_visual_review_only": true,
+  "audio_auditioned": false,
+  "finished_mix_listening_claimed": false,
+  "predecessor_commit": "eba37bfe7e74926ea540e87b85abd9df40e6aa48",
+  "predecessor_worktree": "/private/tmp/J1847-wt",
+  "predecessor_public_push_hold_preserved": true,
+  "scope_commit": "001b6962fbaba027490cf3ed29c2d68bcc64915d",
+  "scope_pr": 433,
+  "sources_verified": {
+    "iss_model": {
+      "title": "International Space Station (ISS) (D) (IGOAL)",
+      "credit": "NASA/JSC/Integrated Graphics, Operations, and Analysis Laboratory",
+      "page_url": "https://science.nasa.gov/3d-resources/international-space-station-iss-d-igoal/",
+      "download_url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/international-space-station-(iss)-(d)-(igoal)/International%20Space%20Station%20(ISS)%20(D)%20(IGOAL).glb",
+      "terms_urls": [
+        "https://science.nasa.gov/3d-resources/",
+        "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      ],
+      "cache_path": "/Users/benjaminoats/_desk/cache/J1847/sources/iss.glb",
+      "bytes": 64846620,
+      "sha256": "3b03742fb55f2a495c4a72aaa2cb175aaeff5ee38f4f42b95f92083e30a464ef",
+      "gltf_generator": "Khronos glTF Blender I/O v5.0.21",
+      "materials_count": 44,
+      "embedded_textures_count": 114,
+      "external_texture_uris": 0,
+      "materials_unmodified": true,
+      "geometry_unmodified": true,
+      "third_party_rights_hits": []
+    },
+    "earth_backdrop": {
+      "source_id": "GSFC_20171208_Archive_e002130",
+      "title": "Blue Marble satellite-data composite (not a single photograph)",
+      "credit": "NASA/Goddard Space Flight Center/Reto Stöckli, based on NASA/NOAA data",
+      "original_url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002130/GSFC_20171208_Archive_e002130~orig.jpg",
+      "cache_path": "/Users/benjaminoats/_desk/cache/J1847/sources/earth.jpg",
+      "resolution": "3718x3718",
+      "bytes": 2930544,
+      "sha256": "3ca40e6058ded3f7b8d777c1fcb3b167f9e1f9af9d1d3f15388e92c2c3d66fb3",
+      "remote_and_local_identical": true
+    }
+  },
+  "recipe_verified": {
+    "renderer": "Three.js 0.187.0 (MIT) + Draco wasm decoder (Apache-2.0) + Playwright Core 1.64.1 (Apache-2.0) + Google Chrome 156.0.8078.76 WebGL 2.0 (OpenGL ES 3.0 Chromium) + ffmpeg 9.0.1",
+    "master_probed": {
+      "path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar2_iss_2030_deorbit_v07.mp4",
+      "resolution": "1080x1920",
+      "fps": "30/1",
+      "nb_frames": 582
+    },
+    "candidate": 2,
+    "normalization_scale": 0.09234243691262665,
+    "camera": {
+      "fov_deg": 35,
+      "aspect": "1080/1920",
+      "near": 0.01,
+      "far": 1000,
+      "radius": 35,
+      "angle_rad_formula": "0.9 + 0.055 * (frame / 30)",
+      "position_formula": "[sin(angle)*35, 14 - 0.35*(frame/30), cos(angle)*35]",
+      "up": "normalize(0.25, 1, 0)",
+      "target": [0, 0, 0]
+    },
+    "lighting": {
+      "directional_key": {
+        "color": "0xfff5e7",
+        "intensity": 4.0,
+        "position": [-10, 15, 20]
+      },
+      "hemisphere_fill": {
+        "sky_color": "0xc3ddff",
+        "ground_color": "0x385f88",
+        "intensity": 2.0
+      },
+      "tone_mapping": "ACESFilmicToneMapping",
+      "tone_mapping_exposure": 1.25,
+      "output_color_space": "SRGBColorSpace"
+    },
+    "earth_plane": {
+      "geometry": "PlaneGeometry(110, 110)",
+      "material": "MeshBasicMaterial({map: earth, color: 0xb4c8df})",
+      "position": [-28, -16, -35],
+      "rotation_rad": [-0.34, 0.67, 0]
+    },
+    "scale_and_fill": {
+      "model_native_render_scale": 1.0,
+      "earth_max_local_upscale": 1.1975458639976422,
+      "upscale_ceiling": 2.35,
+      "earth_empty_grid_samples": 0
+    },
+    "intervals": {
+      "fps": "30/1",
+      "continuous_frames": [0, 102],
+      "continuous_seconds": "17/5 (3.400000 s)",
+      "preroll_frames": [0, 30],
+      "preroll_seconds": "1 (1.000000 s)",
+      "opening_frames": [30, 102],
+      "opening_seconds": "12/5 (2.400000 s)",
+      "frame_rounding_discrepancy_seconds": 0
+    }
+  },
+  "actually_viewed_videos": [
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1847/delivery/continuous_native_1080x1920.mp4",
+      "sha256": "64bf39169da7c47da79805d7c40fa5a39bf49fae6f99df3bdc4249a6cf1d1afa",
+      "bytes": 6052831,
+      "resolution": "1080x1920",
+      "fps": "30/1",
+      "frames": 102,
+      "duration_s": 3.4,
+      "viewed_in_full_via": "default_api:read_file (video/mp4)"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1847/delivery/opening_1080x1920.mp4",
+      "sha256": "44382ebfc58b63ea502669cf8925f91f0099f3e4e52071324957e6e7ef5241be",
+      "bytes": 4160180,
+      "resolution": "1080x1920",
+      "fps": "30/1",
+      "frames": 72,
+      "source_frames": [30, 102],
+      "duration_s": 2.4,
+      "viewed_in_full_via": "default_api:read_file (video/mp4)"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1847/delivery/preroll_1080x1920.mp4",
+      "sha256": "a426e77d106fe838ff4127646c6deca6b85da946b2aa63ff6d60b6ef7a6a2e84",
+      "bytes": 1890901,
+      "resolution": "1080x1920",
+      "fps": "30/1",
+      "frames": 30,
+      "source_frames": [0, 30],
+      "duration_s": 1.0,
+      "viewed_in_full_via": "default_api:read_file (video/mp4)"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1847/delivery/phone_continuous_270x480.mp4",
+      "sha256": "0e9611306ba774423b19d50554c8560f634fadf1d1782240c7bfbdafb2af7b5b",
+      "bytes": 705774,
+      "resolution": "270x480",
+      "fps": "30/1",
+      "frames": 102,
+      "duration_s": 3.4,
+      "viewed_in_full_via": "default_api:read_file (video/mp4)"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/cache/J1847/delivery/phone_opening_270x480.mp4",
+      "sha256": "ea011edae05d3948666260e42cadd2e8f195f35dc1e2db363ddaab1794d69db6",
+      "bytes": 501515,
+      "resolution": "270x480",
+      "fps": "30/1",
+      "frames": 72,
+      "duration_s": 2.4,
+      "viewed_in_full_via": "default_api:read_file (video/mp4)"
+    }
+  ],
+  "actually_viewed_stills": [
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/detail_crop_1x.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/phone_frame0.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/picture_qa/picture_qa_review.jpg",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_000.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_029.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_030.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_031.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_038.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_045.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_052.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_060.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_068.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_075.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_082.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_090.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_098.png",
+    "/Users/benjaminoats/_desk/cache/J1847/delivery/samples/native_frame_101.png"
+  ],
+  "unmodified_gates": {
+    "frame0_diff_0_1_5s": {
+      "score": 7.57,
+      "threshold": 1.5,
+      "verdict": "PASS",
+      "gate_shorts_open_sha256": "b92394d07116e18f402c65fdcf524c0a50a9489eedb8898a243e85654e36642e"
+    },
+    "picture_qa": {
+      "exit_code": 0,
+      "verdict": "PASS",
+      "fails": 0,
+      "warns": 1,
+      "warn_detail": "WARN 0:01 row code_graphic_AR2_J1847_opening code_graphic_AR2_J1847_IGOAL_candidate2: kind of picture: 'Our own sourced-model render: NASA/JSC/IGOAL ISS with NASA/Goddard/Reto Stockli Blue Marble composite' (render), look at it full size",
+      "specialist_full_size_assessment": "PASS — Mandatory human full-size check for kind=render satisfied by inspecting picture_qa_review.jpg, native_frame_030..101.png, detail_crop_1x.png, and native 1080x1920 moving playback. Crisp 1.0x native WebGL geometry with realistic orbital lighting over 1.198x Blue Marble backdrop."
+    },
+    "polish_gate": {
+      "exit_code": 0,
+      "verdict": "PASS",
+      "fails": 0,
+      "warns": 0,
+      "metrics": {
+        "std": 53.29,
+        "mean": 94.89,
+        "p95": 185.0,
+        "edge": 0.3996,
+        "hf": 19.29,
+        "lf": 42.29,
+        "std8": 45.61,
+        "edge8": 0.6268,
+        "seams": []
+      }
+    }
+  },
+  "timestamped_findings": {
+    "frame0_iss_recognition": {
+      "verdict": "PASS",
+      "timestamps": "opening 0.000s (continuous 1.000s / frame 30) through 2.400s (continuous 3.400s / frame 101)",
+      "notes": "Immediate, unmistakable recognition of the full International Space Station from an elevated three-quarter vantage point (x=52..990, y=740..1128 at 1080x1920): central cylindrical pressurized modules, full integrated truss backbone, white thermal radiators, and all 8 copper-brown solar array wings clearly separated."
+    },
+    "faithful_intact_geometry": {
+      "verdict": "PASS",
+      "timestamps": "continuous 0.000s-3.400s (frames 0..101)",
+      "notes": "All 44 materials and 114 embedded textures of the official NASA/JSC/IGOAL GLB render intact with zero clipped solar array tips (~52 px left margin, ~90 px right margin at frame 30), zero severed spacecraft, and zero invented/flat-icon geometry."
+    },
+    "phone_preview_clarity_270x480": {
+      "verdict": "PASS",
+      "timestamps": "phone_opening 0.000s-2.400s, phone_continuous 0.000s-3.400s",
+      "notes": "At 270x480, the station spans y=185..282 over the darker blue Indian Ocean band between cloud decks. In moving playback, 3D orbital parallax between the rotating foreground station and drifting cloud/ocean backdrop cleanly separates habitable modules, truss, radiators, and all 8 solar array wings from the Earth background."
+    },
+    "native_motion_and_parallax": {
+      "verdict": "PASS",
+      "timestamps": "continuous 0.000s-3.400s, opening 0.000s-2.400s",
+      "notes": "Genuine 30/1 fps 3D perspective camera orbit (angle 0.900 -> 1.085 rad, y 14.000 -> 12.822 at radius 35) with clear depth parallax between foreground solar wings/modules, far truss, and Earth backdrop; frame0_diff_0_1_5s = 7.57% (>= 1.50%)."
+    },
+    "coherent_earth_fill": {
+      "verdict": "PASS",
+      "timestamps": "continuous 0.000s-3.400s (all 102 frames)",
+      "notes": "100% portrait coverage (0 unfilled grid samples across all 102 frames) using a single continuous 3D backdrop plane with NASA Blue Marble composite GSFC_20171208_Archive_e002130; zero reflected smudge bands, zero duplicate silhouettes, zero black bars or seams."
+    },
+    "crop_scale_and_sharpness": {
+      "verdict": "PASS",
+      "timestamps": "opening 0.000s-2.400s (including 0:01 / t=1.2s picture_qa sample)",
+      "notes": "Native 1.0x 1080x1920 WebGL station render; Earth backdrop max local enlargement 1.1975x (<= 2.35x cap). Full-size detail_crop_1x.png (640x500 at 1x) and picture_qa_review.jpg confirm crisp truss lattice, solar array cells, and module docking rings with zero upscale blur."
+    },
+    "lighting_and_highlights": {
+      "verdict": "PASS",
+      "timestamps": "continuous 0.000s-3.400s",
+      "notes": "ACES Filmic tone mapping (exposure 1.25) with key sun (0xfff5e7, 4.0) and orbital hemisphere fill (0xc3ddff/0x385f88, 2.0) keeps white radiators and metallic trusses well-modeled without temporal shimmer or specular blow-out."
+    },
+    "no_freeze_jitter_or_transition": {
+      "verdict": "PASS",
+      "timestamps": "continuous 0.000s-3.400s (frames 0..101)",
+      "notes": "Monotonic per-frame parametric motion at 30/1 fps; zero repeated/dropped frames, zero phase-correlation jitter (polish_gate PASS), and zero mid-clip cuts."
+    },
+    "seamless_preroll_to_opening": {
+      "verdict": "PASS",
+      "timestamps": "continuous t=0.967s (frame 29) -> t=1.000s (frame 30, opening frame 0) -> t=1.033s (frame 31)",
+      "notes": "Preroll [0,30) and opening [30,102) are sliced from a single continuous 102-frame 3D camera trajectory; frame 29 -> 30 -> 31 transition is completely seamless in both continuous_native_1080x1920.mp4 and phone_continuous_270x480.mp4."
+    }
+  },
+  "recommendation_to_chief_J1849": {
+    "verdict": "PASS / APPROVE_EXACT_INPUT",
+    "recommended_continuous_source": {
+      "path": "/Users/benjaminoats/_desk/cache/J1847/delivery/continuous_native_1080x1920.mp4",
+      "sha256": "64bf39169da7c47da79805d7c40fa5a39bf49fae6f99df3bdc4249a6cf1d1afa",
+      "bytes": 6052831,
+      "fps": "30/1",
+      "preroll_frames": [0, 30],
+      "preroll_interval_s": [0.0, 1.0],
+      "opening_frames": [30, 102],
+      "opening_interval_s": [1.0, 3.4]
+    },
+    "recommended_opening_slice": {
+      "path": "/Users/benjaminoats/_desk/cache/J1847/delivery/opening_1080x1920.mp4",
+      "sha256": "44382ebfc58b63ea502669cf8925f91f0099f3e4e52071324957e6e7ef5241be",
+      "bytes": 4160180
+    },
+    "recommended_preroll_slice": {
+      "path": "/Users/benjaminoats/_desk/cache/J1847/delivery/preroll_1080x1920.mp4",
+      "sha256": "a426e77d106fe838ff4127646c6deca6b85da946b2aa63ff6d60b6ef7a6a2e84",
+      "bytes": 1890901
+    },
+    "required_packaging_attribution": "ISS model: NASA/JSC/Integrated Graphics, Operations, and Analysis Laboratory. Earth composite: NASA/Goddard Space Flight Center/Reto Stöckli, based on NASA/NOAA data. Animated illustration.",
+    "preserved_holds": [
+      "J1849 elected-Chief formal source-acceptance decision required before J1471 unblocks",
+      "J1471 sole master correction worker",
+      "J1356 full moving/audio/pace and final-watch readiness review",
+      "Public push hold on /private/tmp/J1847-wt (eba37bfe7e) preserved",
+      "All h40 VO locks, AR2 v10 / AR3 v09 exclusions, and Ben/date/credit/publishing holds remain in force"
+    ]
+  }
+}
