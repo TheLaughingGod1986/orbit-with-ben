@@ -188881,13 +188881,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-05T21:25Z",
-      "eta": "2026-11-05T23:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-05T21:02Z",
-      "result": "",
+      "result": "CONDITION SATISFIED: J2217 five-point FIX verified on HOS PR #428 b78dbe19 (jobs/reviews/J2253/REVIEW.md). Released hold via jobs.py reopen J1881 --agent chief. PR #428 left unmerged (recipe scripts + still not executable; J1881 owns production scope).",
       "history": [
         {
           "at": "2026-11-05T21:02Z",
@@ -188943,6 +188943,11 @@
           "at": "2026-11-05T21:25Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T21:25Z",
+          "by": "chief",
+          "what": "done: CONDITION SATISFIED: J2217 five-point FIX verified on HOS PR #428 b78dbe19 (jobs/reviews/J2253/REVIEW.md). Released hold via jobs.py reopen J1881 --agent chief. PR #428 left unmerged (recipe scripts + still not executable; J1881 owns production scope)."
         }
       ],
       "remaining_action": "Elected Chief (Codex): release J1881 hold on verified J2217 PR #428 (b78dbe19) and complete J1881 review",
@@ -188960,7 +188965,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J2253/REVIEW.md"
     }
   ],
   "focus": [],
