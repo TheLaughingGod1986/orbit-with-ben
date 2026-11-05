@@ -186959,10 +186959,10 @@
       "stage": "edit",
       "after": "J2163",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-05T20:50Z",
+      "eta": "2026-11-05T22:20Z",
       "created_by": "chief",
       "created_at": "2026-11-05T12:54Z",
       "result": "",
@@ -187031,6 +187031,11 @@
           "at": "2026-11-05T20:49Z",
           "by": "codex",
           "what": "reopened: J1881 acting-Chief FIX: repair evidence levels, missing P3 CLI, explicit clock disposition, caption treatment and spend preflight; no render/spend."
+        },
+        {
+          "at": "2026-11-05T20:50Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair J1881 five-point recipe/evidence FIX on PR428; no-spend read-only planner and caption timing table",
@@ -187038,7 +187043,15 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "done_ref": "c7635bb2"
+      "done_ref": "c7635bb2",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T20:50Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2218",
