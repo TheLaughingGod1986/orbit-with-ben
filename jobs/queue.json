@@ -72659,9 +72659,9 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "since": "2026-11-05T07:39Z",
+      "eta": "2026-11-05T09:39Z",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
       "result": "Reopened by J1894 (jobs/reviews/J1894/REVIEW.md) under Ben's 4 Nov decision (#6631275536) and Rule H: KEEP existing v02 takes for 009 Short A, 010 Short A (J1004 Option A1), and 010 Short C (do not regenerate); preserve 009 Short B v02 on disk; record 1 scoped take hos_009_short_B_v03 (311 chars) with approved replacement opening 'In one minute the Moon drops an apple's one-second fall. About five metres each.' + unchanged 43-word body after fresh live credit read, run vo_check_py312.sh, and record shorts_vo.",
@@ -72885,6 +72885,11 @@
           "at": "2026-11-05T07:37Z",
           "by": "gemini",
           "what": "review J1894 FIX: KEEP 009 Short A, 010 Short A (J1004 Option A1), and 010 Short C v02 takes (do not regenerate); approved 009 Short B v03 replacement opening ('In one minute the Moon drops an apple's one-second fall. About five metres each.' + unchanged 43-word body, 57 words / 311 chars, S1 <= 2.85s at atempo <= 1.06x, total 22-27s) and 1-take vo_take.py scope in jobs/reviews/J1894/REVIEW.md"
+        },
+        {
+          "at": "2026-11-05T07:39Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "vo",
@@ -72897,7 +72902,7 @@
         "by": "codex",
         "note": "Verified four existing v02 take records; J1004/PR366 retains 009 B hook block; live ElevenLabs 101014 available; Ben des"
       },
-      "by": "",
+      "by": "codex",
       "taskKeys": [
         "HOS:009",
         "HOS:010"
