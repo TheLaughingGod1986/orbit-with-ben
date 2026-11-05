@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2169 | mini | blocked | chief | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
-| J2175 | mini | open | – | – | 008 edit · for gemini · review · `gemini-argon` · HOS 008 Short C: Chief decision on J2170 paper hook lock & 1-sentence VO pickup scope (conditional 2 Dec slot held) | J2170 |
+| J2175 | any | open | – | – | 008 edit · review · HOS 008 Short C: Chief decision on J2170 paper hook lock & 1-sentence VO pickup scope (conditional 2 Dec slot held) | J2170 |
 | J2177 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2195 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
