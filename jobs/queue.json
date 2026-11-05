@@ -180308,9 +180308,14 @@
           "at": "2026-11-05T00:04Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T00:04Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Record 033 Uranus long VO from uranus_21_year_winter_script_master_v02.md",
+      "remaining_action": "Check locked script, voice route and live credit before recording",
       "kind": "vo",
       "rerouted_from": {
         "needs": "mini",
@@ -180324,10 +180329,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-05T00:04Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2156",
