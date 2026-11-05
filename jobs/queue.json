@@ -183824,13 +183824,13 @@
       "stage": "edit",
       "after": "J2213",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-05T22:13Z",
-      "eta": "2026-11-06T00:13Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "",
+      "result": "HOS 006 Short B v01 and Short C v02 built at GBP0 from existing media. B sha256 08e3d6036744da57ae3fce1d12b996f913cd1d180161eba18590cffd23aeee0f (24.25s). C v02 sha256 3f8c1390523cbf05632abefb592b178b2b211c0e74ae31e9c4b7b96423091327 (25.17s), villa crop 144,0,608,1080. Centre-crop C v01 883cee08 kept after the brick-course fail. picture_qa, polish, sfx, music and gate_shorts_open exited 0 on both offered cuts. WARNs: B S07 and C S05 low detail, terminal-loop samples. Evidence HOS 699c359b. NAS SHA256SUMS checked. Review J2258. Not approved, not uploaded, not watched or heard.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -183966,6 +183966,11 @@
           "at": "2026-11-05T22:48Z",
           "by": "cursor",
           "what": "step 4 of 4 done: B v01 and C v02 pass picture, polish, SFX, music and the shorts gate. C v01 centre crop kept. NAS hashes match. Review is J2258. No spend, no publish."
+        },
+        {
+          "at": "2026-11-05T22:48Z",
+          "by": "cursor",
+          "what": "done: HOS 006 Short B v01 and Short C v02 built at GBP0 from existing media. B sha256 08e3d6036744da57ae3fce1d12b996f913cd1d180161eba18590cffd23aeee0f (24.25s). C v02 sha256 3f8c1390523cbf05632abefb592b178b2b211c0e74ae31e9c4b7b96423091327 (25.17s), villa crop 144,0,608,1080. Centre-crop C v01 883cee08 kept after the brick-course fail. picture_qa, polish, sfx, music and gate_shorts_open exited 0 on both offered cuts. WARNs: B S07 and C S05 low detail, terminal-loop samples. Evidence HOS 699c359b. NAS SHA256SUMS checked. Review J2258. Not approved, not uploaded, not watched or heard."
         }
       ],
       "remaining_action": "Hand the cuts to review J2258",
@@ -183981,7 +183986,8 @@
         "at": "2026-11-05T22:48Z",
         "by": "cursor",
         "note": "B v01 and C v02 pass picture, polish, SFX, music and the shorts gate. C v01 centre crop kept. NAS hashes match. Review i"
-      }
+      },
+      "done_ref": "699c359bf44ccda9d996dae4a2d6524be3774a03"
     },
     {
       "id": "J2170",
