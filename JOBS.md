@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2215 | macbook | blocked | macbook | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
 | J2216 | mini | open | – | – | chief · Chief: apply J1889 KEEP social-source exception in UPLOADS.json and publish Mars-night & Titan Buffer posts | jobs/reviews/J1889/REVIEW.md |
 | J2217 | mini | open (after J2163) | – | – | 008 edit · assembly · HOS 008: amend Franklin recipe to eight-item + film-wide captions (Ben 5 Nov) | J1881 / HOS PR411 50620e40 / Ben 6658371896 / advisory 6658387533 |
-| J2219 | mini | open | – | – | J01 script · review · J01 Journey Film 01: Chief review of plan and linking script (J2146) | 1e9ba89b33 |
+| J2219 | mini | open | – | – | J01 script · for gemini · review · `gemini-argon` · J01 Journey Film 01: Chief review of plan and linking script (J2146) | 1e9ba89b33 |
 | J2220 | mini | open (after J2219) | – | – | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
 | J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2222 | mini | open (after J2221) | – | – | J01 edit · review · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |

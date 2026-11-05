@@ -186258,10 +186258,24 @@
           "at": "2026-11-05T13:51Z",
           "by": "claude",
           "what": "rule H: Chief review moved to the review lane"
+        },
+        {
+          "at": "2026-11-05T15:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Chief reviews J2146 plan and J01 linking script and locks J01 script when J01 takes the next WIP slot (after 031 or 032 reaches Ben's watch)",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2220",
