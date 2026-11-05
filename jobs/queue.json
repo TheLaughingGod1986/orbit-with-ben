@@ -1,5 +1,5 @@
 {
-  "next_id": 2248,
+  "next_id": 2249,
   "jobs": [
     {
       "id": "J0001",
@@ -188186,6 +188186,35 @@
       ],
       "remaining_action": "Review R09 size still and resolve Mercury rights before rendering",
       "kind": "review"
+    },
+    {
+      "id": "J2248",
+      "title": "024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# 024 Light Speed Short fri06_muons_ground — build, review gates, then schedule\n\n**Ben approved (5 Nov 2026):** queue the muons Short for **Mon 9 Nov 2026 11:30 Europe/London**, subject to passing review. £0. No paid mint. No public upload in this job until gates + Ben final-watch clear.\n\n## Asset\n- Folder: `02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/`\n- Title (locked, on-screen + listing): **Muons Shouldn't Reach the Ground. They Do.**\n- Parent long (Related + description): `rVqgtkBV3jc` — *What Happens If You Travel Near Light Speed?* (already public)\n- VO: locked PASS v01 (`VO_STATUS.md`; iCloud `OWB UAT/024_LightSpeed_Fri06_VO/fri06_muons_ground_vo_v01.mp3` sha256 `3b17b23c…779e8a`; repo path gitignored). Do not remint VO.\n- Picture: reuse existing 024 muons / cosmic-ray graphics only (e.g. `_desk/handoff/owb024-graphics-v01/muons.png` + 024 code-graphics pool). No new Veo/Omni/Flow mint. House SFX kit only. No new music bed spend.\n- Scripts: `10_Shorts/LIGHT_SPEED_SHORTS_SCRIPTS_v01.md` §3.\n\n## Do\n1. **Build** a house 9:16 Short cut (22–27 s) from the locked VO + existing 024 graphics: frame-0 moving subject (cosmic-ray shower), no Orbit at open/thumb/last card; hook caption THEY **LIVE**; exact title on screen 9–14 s; captions throughout; last ~4 s loop to open; teach/label as scripted; custom cover per THUMBNAIL_AND_TITLE_RULES §4.\n2. **Tool gates (must PASS; never waive):** `gate_shorts_open.py check <mp4> --air-date <chosen-day>`, picture_qa, polish_gate, music_gate/sfx level, ebur128 loudness, captions↔VO. Record hashes + contact sheet. Watching/listening is Ben's final watch (4 Nov order) — do every tool-provable check.\n3. **Review lane first (Rule H):** when the cut is ready, queue/hand a `kind: review` successor (or block `parked for review: Short PASS`) — reviewer writes `jobs/reviews/<id>/REVIEW.md` KEEP/FIX. Not an automatic Chief PASS.\n4. **Ben final-watch gate:** on KEEP, set `jobs.py awaits` with Play link to the UAT/PHONE cut, due before the air day 10:30 London, `--if-not \"do not upload or schedule\"`. Never bypass Ben's watch for this new Short.\n5. **Schedule only after KEEP + Ben OK (or explicit Chief publish OK under standing rules):** upload **Private** with publishAt, set cover in Studio (CDP 9223), Related → `rVqgtkBV3jc`, description link to the long, zero `/go/`, no new pin, register `UPLOADS.json` + Buffer mirror, `gate_shorts_open.py add`. Recheck the slot immediately before scheduling.\n\n## Target slot (conditional)\n- **Requested:** Mon 9 Nov 2026 11:30 Europe/London (`2026-11-09T11:30:00Z`).\n- **Slot check at queue time (5 Nov):** **OCCUPIED** by scheduled Short `iyvWYFP_ETA` (*Could a Robot Survive a Night on Mars?*, 025 mon09_night_cold). One Short per day — **do not double-book Mon 9**.\n- At schedule time recheck `gate_shorts_open.py list` + `social/UPLOADS.json` + `BUFFER_POSTS.json`. If Mon 9 is still taken, use the next free **Mon/Wed/Fri/Sat 11:30 London** (as of 5 Nov: Sat 21 / Wed 25 / Sat 28 Nov look free; avoid Fri 27 Nov while J2228 AR1 holds it). Do **not** grab Fri 6 Nov (Ben left that gap). Never two Shorts a day.\n\n## Never\n- Spend / paid mint / public-before-slot.\n- Touch or retarget old Mars Shorts `TtgHNLXfDSs` or `k9pXeeJvLpc`.\n- Swap/replace any existing scheduled id; upload only a **new** Private id for this Short.\n- Bypass review, Ben final-watch, or a failing gate.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T19:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T19:33Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build fri06 muons Short; PASS gates; review+Ben watch; schedule Private if slot free",
+      "due": "2026-11-09T10:30:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [],
