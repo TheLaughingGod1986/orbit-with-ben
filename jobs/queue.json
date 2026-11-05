@@ -87417,9 +87417,9 @@
       "repo": "owb",
       "body": "Pick the locked or live OWB long with the fewest Shorts built (STATUS.md, 10_Shorts/). Lift one self-contained 22-27 s stretch of its own VO and picture, reframe 9:16 the house way, house SFX kit only. Every Short rule applies (frame-0 named thing, hook caption, exact long title at 9-14 s, captions, loop, custom cover). Teach on screen: a number object or timeline call-out in frame. gate_shorts_open.py check must PASS. Spend nothing. Post the cut, contact sheet and gate output on #99, then block 'parked for Chief: Short PASS'. Never upload.",
       "ref": "",
-      "film": "",
-      "stage": "",
-      "after": "J1000",
+      "film": "032",
+      "stage": "edit",
+      "after": "J2089",
       "eta_min": 120,
       "status": "blocked",
       "by": "codex",
@@ -87427,7 +87427,7 @@
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T12:14Z",
-      "result": "CHANGES REQUIRED (codex acting Chief, 2cbadfe1a): v01 first VO line is a statement, not title question; not Test A. Opening subject too small. Held pending J1000 existing-VO EDL feasibility, then Chief plan decision and separately assigned assembly. No spend/upload approval; Dec 18 provisional. Review 4/4 is not film approval.",
+      "result": "J2173 (683e49e96a) assessed 032 Titan Test A opening (s01-s05, 0.060-31.580s VO, 91 words; 32.80s master / 30.00s tightened EDL in jobs/reviews/J2173/REVIEW.md) as eligible reserve for Fri 27 Nov 11:30Z (watch pack due 20 Nov 18:00Z, after 25 Nov long; replaces AR1 only if approved, never a second Short that day, no extra Test A or 3rd Short for 032). Blocked on J2089 032 picture completion (Row 1 frame-0 compliant real moving subject after J2150 Huygens reconstruction exclusion, Row 2 survive_check graphic, Row 3 Cassini orbit clip) plus 032 05_Music score bed and approved long master. 029 v01 remains permanently shelved under J1042.",
       "history": [
         {
           "at": "2026-10-26T12:14Z",
@@ -87688,12 +87688,17 @@
           "at": "2026-11-04T02:07Z",
           "by": "relay",
           "what": "condition verification queued: J1932"
+        },
+        {
+          "at": "2026-11-05T02:46Z",
+          "by": "gemini",
+          "what": "dependency updated by J2173 (683e49e96a): after J2089 (032 picture + approved master/bed required for 032 Titan Test A 0.060-31.580s EDL; no generic timed retry; progress 4/4 preserved)"
         }
       ],
       "kind": "assembly",
       "backlog": "owb-short-from-locked",
       "taskKeys": [
-        "OWB:029"
+        "OWB:032"
       ],
       "escalated_at": "2026-10-26T18:37Z",
       "progress": {
@@ -87703,15 +87708,10 @@
         "by": "codex",
         "note": "J1000 queued: no-spend existing-VO question EDL or cancellation recommendation; review complete"
       },
-      "remaining_action": "Wait for approved locked 031+ voice and picture, then verify an unused Keeper-compliant opening",
+      "remaining_action": "After J2089 032 picture + score bed + approved 032 long master, assemble 032 Titan Test A (0.060-31.580s EDL in J2173) as 27 Nov reserve",
       "hold": {
-        "type": "input",
-        "condition": "J1884 verified 031 magnetic_field_flip_vo_v02a and 032 titan_landing_vo_v02b stem lock records remain, but final VO listening approval is blocked on J1752/J1753. Both status records show picture not started and production-status says CG pending; 04_Generated-Clips has only .gitkeep and 07_Edit-Project contains setup files only. 033-061 have no recorded VO/picture locks. Await a 031+ long with approved locked VO AND picture, then verify unused Keeper-compliant subject-naming question opening, exact source-time EDL, duplicates and all original gates/holds. 029 reserve v01 remains shelved under J1042; no spend or upload approval.",
-        "check_at": "2026-11-04T03:07:49+00:00",
-        "last_recheck": "J1884",
-        "checked_at": "2026-11-03T20:02:27+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J1932"
+        "type": "dependency",
+        "condition": "J2173 (683e49e96a) assessed 032 Titan Test A opening (s01-s05, 0.060-31.580s VO, 91 words; 32.80s master / 30.00s tightened EDL in jobs/reviews/J2173/REVIEW.md) as eligible reserve for Fri 27 Nov 11:30Z (watch pack due 20 Nov 18:00Z, after 25 Nov long; replaces AR1 only if approved, never a second Short that day, no extra Test A or 3rd Short for 032). Blocked on J2089 032 picture completion (Row 1 frame-0 compliant real moving subject after J2150 Huygens reconstruction exclusion, Row 2 survive_check graphic, Row 3 Cassini orbit clip) plus 032 05_Music score bed and approved long master. 029 v01 remains permanently shelved under J1042."
       }
     },
     {
@@ -181756,13 +181756,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T02:30Z",
-      "eta": "2026-11-05T04:30Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "",
+      "result": "ELIGIBLE ON TEXT/TIMING, HELD ON J2089 PICTURE & APPROVED MASTER (683e49e96a): 032 locked VO s01-s05 (0.060-31.580s, 91w) is the unique eligible Test A sentence-end cut (32.80s 1:1 master / 30.00s breath-tightened EDL in jobs/reviews/J2173/REVIEW.md; payoff start 80.0%/77.6% >= 70%; zero asset/idea overlap with standalone RLSJm59OSzI). J0979 not reopened while J2089 (1/4) lacks Row 1 frame-0 real moving subject (after J2150 excluded reconstructed Huygens descent movie), R2 survive_check, R3 orbit clip, 032 score bed and approved long master; J0979 updated to after=J2089 with non-polling dependency hold preserving 4/4 progress.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -181798,9 +181798,19 @@
           "at": "2026-11-05T02:45Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Committed J2173 Titan Test A assessment and exact 0.06-31.58s EDL (683e49e96a)"
+        },
+        {
+          "at": "2026-11-05T02:46Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Updated J0979 dependency to after J2089 without generic retry; J2173 review and EDL committed at 683e49e96a"
+        },
+        {
+          "at": "2026-11-05T02:46Z",
+          "by": "gemini",
+          "what": "done: ELIGIBLE ON TEXT/TIMING, HELD ON J2089 PICTURE & APPROVED MASTER (683e49e96a): 032 locked VO s01-s05 (0.060-31.580s, 91w) is the unique eligible Test A sentence-end cut (32.80s 1:1 master / 30.00s breath-tightened EDL in jobs/reviews/J2173/REVIEW.md; payoff start 80.0%/77.6% >= 70%; zero asset/idea overlap with standalone RLSJm59OSzI). J0979 not reopened while J2089 (1/4) lacks Row 1 frame-0 real moving subject (after J2150 excluded reconstructed Huygens descent movie), R2 survive_check, R3 orbit clip, 032 score bed and approved long master; J0979 updated to after=J2089 with non-polling dependency hold preserving 4/4 progress."
         }
       ],
-      "remaining_action": "Update J0979 with exact J2089 dependency (no generic retry, preserving progress) and finish J2173",
+      "remaining_action": "Complete J2173 with exact 032 Test A EDL and J0979 dependency link",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -181813,15 +181823,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-05T02:45Z",
+        "at": "2026-11-05T02:46Z",
         "by": "gemini",
-        "note": "Committed J2173 Titan Test A assessment and exact 0.06-31.58s EDL (683e49e96a)"
+        "note": "Updated J0979 dependency to after J2089 without generic retry; J2173 review and EDL committed at 683e49e96a"
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "683e49e96a"
     },
     {
       "id": "J2174",
