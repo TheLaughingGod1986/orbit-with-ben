@@ -203,6 +203,13 @@ def git_transaction(write, message, tries=3):
         branch = git("symbolic-ref", "--quiet", "--short", "HEAD")
         if branch.returncode or branch.stdout.strip() != "main":
             return None, "metadata --git requires clean main; worker branch unchanged"
+        # A second worktree forced onto main (`git worktree add --force <dir> main`, Codex J2210, 5 Nov 2026) moves
+        # main under the shared checkout, whose stale index then reads as a staged reverse of every newer commit
+        # (PR #520) and blocks every later metadata write. Refuse in both until the extra worktree is removed.
+        branches = [l[7:] for l in git("worktree", "list", "--porcelain").stdout.splitlines() if l.startswith("branch ")]
+        if branches.count("refs/heads/main") > 1:
+            return None, ("metadata --git refused: main is checked out in more than one worktree; remove the extra one "
+                          "(git worktree list) and use `git worktree add --detach <dir> origin/main` instead")
         state = git("status", "--porcelain")
         if state.returncode or state.stdout.strip():
             return None, "metadata --git requires a clean working tree and index"
