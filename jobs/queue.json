@@ -186242,10 +186242,10 @@
       "stage": "edit",
       "after": "J2163",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-05T16:20Z",
+      "eta": "2026-11-05T17:50Z",
       "created_by": "chief",
       "created_at": "2026-11-05T12:54Z",
       "result": "",
@@ -186254,10 +186254,23 @@
           "at": "2026-11-05T12:54Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T16:20Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Extend PR411 six-row recipe to eight items + film-wide captions; refuse exec until J1881 re-review; GBP0",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T16:20Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2218",

@@ -57,7 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2145 | mini | open | – | – | studio · OWB series playlists + end screens + next-in-series line (LEARNINGS rule 20) |  |
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
 | J2162 | mini | open (after J2161) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
-| J2165 | mini | claimed | macbook | 2026-11-05T15:35Z | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance | jobs/reviews/J2164/REVIEW.md |
+| J2165 | mini | **stalled** | macbook | 2026-11-05T15:35Z | 033 shots · for gemini · review · `gemini-argon` · 033 Uranus: shot list after explicit VO acceptance | jobs/reviews/J2164/REVIEW.md |
 | J2166 | mini | open | – | – | 031 thumbs · for gemini · review · `gemini-argon` · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 | J2167 | mini | open | – | – | for gemini · review · `gemini-argon` · J1208 exact-source native-video review: S5/S6 Flow take2 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/507 |
 | J2169 | mini | blocked | chief | – | 006 edit · assembly · HOS 006: build active Short B and C for 18 and 21 Nov from existing media | J2023 |
@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2213 | mini | open | – | – | 006 picture · video · `flow-veo-3.1` · HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200) | HOS#180:6655551386 |
 | J2215 | macbook | blocked | macbook | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
 | J2216 | mini | open | – | – | chief · Chief: apply J1889 KEEP social-source exception in UPLOADS.json and publish Mars-night & Titan Buffer posts | jobs/reviews/J1889/REVIEW.md |
-| J2217 | mini | open (after J2163) | – | – | 008 edit · assembly · HOS 008: amend Franklin recipe to eight-item + film-wide captions (Ben 5 Nov) | J1881 / HOS PR411 50620e40 / Ben 6658371896 / advisory 6658387533 |
+| J2217 | mini | claimed | cursor | 2026-11-05T17:50Z | 008 edit · assembly · HOS 008: amend Franklin recipe to eight-item + film-wide captions (Ben 5 Nov) | J1881 / HOS PR411 50620e40 / Ben 6658371896 / advisory 6658387533 |
 | J2219 | mini | open | – | – | J01 script · for gemini · review · `gemini-argon` · J01 Journey Film 01: Chief review of plan and linking script (J2146) | 1e9ba89b33 |
 | J2220 | mini | open (after J2219) | – | – | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
 | J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
