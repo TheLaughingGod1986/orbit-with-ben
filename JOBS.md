@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2210 | mini | blocked | codex | – | 010 picture · video · HOS 010: repair SHORTS_PICTURE_PLAN_v03 and Part 05 bird row mapping (£0 readiness before mint) | J2194 |
 | J2211 | any | claimed | macbook | 2026-11-05T12:48Z | 010 picture · review · HOS 010 J2210: review PR425 and resolve Option A1 body-cut segmentation | J2210 |
 | J2212 | any | claimed | claude | 2026-11-05T12:51Z | 032 thumbs · review · 032 J2176: resolve composition conflict after J2196 source failures | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/521 |
+| J2213 | mini | open | – | – | 006 picture · video · `flow-veo-3.1` · HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200) | HOS#180:6655551386 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 2213,
+  "next_id": 2214,
   "jobs": [
     {
       "id": "J0001",
@@ -185168,6 +185168,35 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2213",
+      "title": "HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief decision HOS #180 comment 6655551386 (5 Nov 2026): house standard locked — reopen HOS 006 Shorts insert mint on Flow Veo 3.1 Quality 720p. Queue authorisation only in this job's creation; this worker executes the mint.\n\nACCOUNT (hard): Authenticate Google Flow on the Mini as benoats@googlemail.com (Ultra subscription). Never use benoats86@gmail.com (daily 50-credit account). Re-read live Ultra credit balance in the signed-in Ultra UI immediately before any Create. If the session is the wrong account, stop and re-auth; do not Create.\n\nHOUSE STANDARD (locked):\n- Flow first (Ultra subscription credits). GBP0 / no Vertex for this mint.\n- Veo 3.1 Quality only; never Omni; never x2.\n- Frames 16:9, 720p, silent, x1.\n- Cap ≤1,200 Flow credits for six inputs (≤2 takes/input).\n- Preserve J2026/J2033 009 reserve: ≥3,000 Flow credits AFTER 009 remaining Quality work. Do NOT start 006 mint if live Ultra credits cannot cover (009 remaining Quality obligation under J2026/J2033 caps) + 1,200 + 3,000 floor. Compute 009 remaining from live TRANCHE2_SCOPE / J2033 board (0/20 generated as of h47 hold; treat remaining authorised Quality rows at live Quality price).\n- 010 mint is NOT authorised by this job; only the same resolution standard applies later after J2210 + 009.\n\nBRIEFS (locked J2187 / J2189 / J2190 six inputs):\n- Paths: HOS `jobs/reviews/J2189/SIX_INPUT_BRIEFS.json` and `jobs/reviews/J2190/SIX_INPUT_BRIEFS.json` (branches/PRs codex/J2189, codex/J2190; also J2187 native-route evidence).\n- Six inputs: B S02 / B S06; C S01+terminal preroll / C S06 / C S07 / C S08.\n- C S06 = shade/bubbles stop; C S07 = sunlight/bubbles resume. No dry-mint nightfall.\n- C open + terminal preroll must be contiguous same source/hash/crop.\n\nPRESERVE:\n- VO hashes B `0f1099262037b62ea2b2a003ce86e196458fa983e9ca97877afb5600e97c7479` and C `5b5d84e560d51ed9ad6f9bf5588f458802620f48f008b9409c532f8a1ea4e269`\n- J1004 lawful edits; long `VbPubYd6Fbs`\n- No YouTube/Buffer/schedule/privacy/upload changes; no self-PASS.\n\nWORKER: Picture on Mini Flow. Kind video → Cursor primary with Codex/Gemini fallback per scripts/routing.py (Cursor currently credit-flagged; chain walks). Confirm Veo Quality Frames 16:9 720p x1 price immediately before each batch. Fresh account/balance/price check each batch; stop on account drift, Omni/x2 default, unknown charge, or reserve breach. Version outputs, receipts, spend ledger, per-input technical checks, hash-verified durable copies. Detached runs with log/.done; no duplicate process.\n\nDONE when: six usable insert plates minted under the caps (or exact stop with live balance + unmet reserve math), inventory/receipts linked for J2169 Short B/C build. Native≥1080 inventory detour J2201 is cancelled; do not revive it.\n",
+      "ref": "HOS#180:6655551386",
+      "film": "006",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T10:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T10:51Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Auth Flow as benoats@googlemail.com; gate Ultra reserve; mint 6 Quality 720p inserts ≤1200",
+      "kind": "video",
+      "model": "flow-veo-3.1"
     }
   ],
   "focus": [],
