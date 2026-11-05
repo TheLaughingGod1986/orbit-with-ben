@@ -182402,13 +182402,13 @@
       "stage": "",
       "after": "J2179",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T03:54Z",
-      "eta": "2026-11-05T05:54Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T03:35Z",
-      "result": "",
+      "result": "FIX on PR512 head be2c980ffa. Existing 21 tests PASS; two independent fail-closed regressions fail (missing body source and missing video offset). Review evidence ed5b8002ae, PR comment 6649285684. J2179 reopened for corrections; J2182 system re-review queued; HOS006 J2181 and mapping reviewer notified. PR unmerged, J2169 remains blocked; no spend/publishing/production approval.",
       "history": [
         {
           "at": "2026-11-05T03:35Z",
@@ -182439,6 +182439,11 @@
           "at": "2026-11-05T03:59Z",
           "by": "codex",
           "what": "step 3 of 3 done: FIX evidence committed ed5b8002ae and posted PR512; J2179 reopened, J2182 successor queued, HOS mapping producer/reviewer notified. No merge or J2169 reopening."
+        },
+        {
+          "at": "2026-11-05T03:59Z",
+          "by": "codex",
+          "what": "done: FIX on PR512 head be2c980ffa. Existing 21 tests PASS; two independent fail-closed regressions fail (missing body source and missing video offset). Review evidence ed5b8002ae, PR comment 6649285684. J2179 reopened for corrections; J2182 system re-review queued; HOS006 J2181 and mapping reviewer notified. PR unmerged, J2169 remains blocked; no spend/publishing/production approval."
         }
       ],
       "remaining_action": "Review complete: J2179 repairs checker and J2182 re-reviews it",
@@ -182453,7 +182458,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/512#issuecomment-6649285684"
     },
     {
       "id": "J2181",
