@@ -54,6 +54,24 @@ For the HOS longs: search share and impressions at 28 days.
 - First: about 10 Dec (007's Shorts at 28 days).
 - Final: early January (010).
 
+## HOS-2026-11-E1. Anomaly-first opens on 008–010 (Chief h47, 5 Nov 2026)
+
+Test B still titles these Shorts as the question people type. This experiment changes the open and the cut, not the title test. It covers the six new Shorts on HOS 008, 009 and 010 (two each). Nothing earlier is recut. No new spend.
+
+**Build rules** (HOS `.cursor/rules/hos-build-shorts.mdc` → *Anomaly-first open*; `gate_shorts_open.py` enforces them on those films):
+
+1. 0.0–2.0 s is the physical contradiction or question, in spoken words 1–4, over the subject already moving. No "In \<year\>," opening. No bare biographer-name opening before 0:03.
+2. Shot 1 cuts to shot 2 between 1.8 and 2.5 s. Shot 2 cuts to shot 3 before 4.5 s. No plate held over 3.5 s in the first 8 s. No VO pause over 0.25 s in 0–5 s.
+3. Duration 22–25 s. Payoff starts at or after 70% of the runtime. Loop tail under 1.2 s.
+
+**J1004** (HOS PR #366) still locks the spoken words: atempo at most 1.06, zero words changed. 010 Short A's sentence 1 may finish at 2.85 s while the picture cuts at 1.8–2.5 s. 009 Short B keeps both "one minute" and "one second". "In one minute" is that scale line, not a year dateline. A locked line that fails the open goes back to the script lane. Assembly does not rewrite it.
+
+**Pass,** on mature Shorts only (≥48 h and ≥100 Studio views): stayed-to-watch mean ≥50%, at least two of the six at ≥60%, and average percentage viewed ≥75% on the cohort.
+
+**Stop** if the first three mature Shorts are under 65% average viewed and under 40% stayed.
+
+**Readout:** 3 Dec 2026, on the studio thread, from `05_Analytics/hos/REPORT.md`. Learnings row 23.
+
 ## Where the numbers come from
 
 The channel tracker's daily snapshot (`05_Analytics/owb|hos/snapshots/`, traffic sources per video). Claude posts each readout as a table on #99 and puts the headline on the board.
