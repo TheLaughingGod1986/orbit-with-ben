@@ -183490,13 +183490,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T13:58Z",
-      "eta": "2026-11-05T14:28Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T02:21Z",
-      "result": "review J2212 FIX: A = Titan filling the frame (PIA21890 first, then PIA14602 tight crop), no composite; see jobs/reviews/J2212/REVIEW.md",
+      "result": "Worker delivery complete: PR536 / ea3152c3a8. J2144_v02/MANIFEST_v03.json and PHONE_PREVIEW_v03.jpg name A v03 (b7495bf6), unchanged B v02 and C v03. Grade tool clears all; phone sheet inspected. Existing J2159-J2161 pointers updated; J2162 synthesis next. No final PASS, publishing, spend or background process.",
       "history": [
         {
           "at": "2026-11-05T02:21Z",
@@ -183612,6 +183612,11 @@
           "at": "2026-11-05T14:02Z",
           "by": "codex",
           "what": "step 3 of 3 done: Complete set verified: A v03 grade and phone check; B/C hashes unchanged. Versioned manifest and phone sheet saved; PR536 ea3152c3a8; existing panel pointers updated."
+        },
+        {
+          "at": "2026-11-05T14:02Z",
+          "by": "codex",
+          "what": "done: Worker delivery complete: PR536 / ea3152c3a8. J2144_v02/MANIFEST_v03.json and PHONE_PREVIEW_v03.jpg name A v03 (b7495bf6), unchanged B v02 and C v03. Grade tool clears all; phone sheet inspected. Existing J2159-J2161 pointers updated; J2162 synthesis next. No final PASS, publishing, spend or background process."
         }
       ],
       "remaining_action": "Independent panel J2159-J2161 then J2162 synthesis; Chief reviews PR536",
@@ -183628,7 +183633,8 @@
         "OWB:032"
       ],
       "escalated_at": "2026-11-05T06:52Z",
-      "urgent": 6
+      "urgent": 6,
+      "done_ref": "ea3152c3a8"
     },
     {
       "id": "J2177",
