@@ -185534,13 +185534,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-05T12:43Z",
-      "eta": "2026-11-05T12:58Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T12:36Z",
-      "result": "",
+      "result": "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run.",
       "history": [
         {
           "at": "2026-11-05T12:36Z",
@@ -185576,6 +185576,11 @@
           "at": "2026-11-05T12:49Z",
           "by": "macbook",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-05T12:49Z",
+          "by": "macbook",
+          "what": "blocked: PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run."
         }
       ],
       "remaining_action": "Block J2215 with SMB unmount error (PR #532)",
@@ -185585,6 +185590,11 @@
         "of": 3,
         "at": "2026-11-05T12:49Z",
         "by": "macbook"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run.",
+        "check_at": "2026-11-05T18:49:33+00:00"
       }
     }
   ],
