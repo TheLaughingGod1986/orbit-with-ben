@@ -186846,10 +186846,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-05T19:34Z",
+      "eta": "2026-11-05T21:34Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
       "result": "",
@@ -186868,6 +186868,11 @@
           "at": "2026-11-05T15:43Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T19:34Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief reviews J2146 plan and J01 linking script and locks J01 script when J01 takes the next WIP slot (after 031 or 032 reaches Ben's watch)",
@@ -186880,7 +186885,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T19:34Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2220",
