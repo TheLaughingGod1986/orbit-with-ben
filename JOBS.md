@@ -42,32 +42,32 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1843 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Implement capacity-aware Mini dispatch and portable MacBook overflow |  |
 | J1866 | mini | open | – | – | chief · Chief: review HOS 2026-10 monthly improvement report (J1858) and decide next-month experiments |  |
 | J1873 | mini | open | – | – | chief · Chief: review OWB 2026-10 monthly improvement report (J1859) and decide next-month experiments |  |
-| J1881 | mini | blocked | codex | – | 008 edit · chief · Chief: review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
-| J1888 | any | open | – | – | chief · Chief: verify condition for J0978 |  |
-| J1889 | mini | open | – | – | chief · J1879: review recovered Mars-night and Titan Studio source candidates | J1879 |
-| J1892 | any | open | – | – | chief · Chief: verify condition for J1834 |  |
-| J1894 | any | open | – | – | chief · Chief: verify condition for J0862 |  |
-| J1895 | any | open | – | – | chief · Chief: verify condition for J1130 |  |
-| J1899 | any | open | – | – | chief · Chief: verify condition for J1100 |  |
+| J1881 | mini | blocked | codex | – | 008 edit · review · review Franklin six-note correction recipe and scope production handoffs | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
+| J1888 | any | open | – | – | review · verify condition for J0978 |  |
+| J1889 | mini | open | – | – | review · J1879: review recovered Mars-night and Titan Studio source candidates | J1879 |
+| J1892 | any | open | – | – | review · verify condition for J1834 |  |
+| J1894 | any | open | – | – | review · verify condition for J0862 |  |
+| J1895 | any | open | – | – | review · verify condition for J1130 |  |
+| J1899 | any | open | – | – | review · verify condition for J1100 |  |
 | J1902 | any | open | – | – | chief · Chief: verify condition for J1755 |  |
 | J1903 | any | open | – | – | chief · Chief: verify condition for J1880 |  |
-| J1918 | any | open | – | – | chief · Chief: verify condition for J1356 |  |
-| J1919 | any | open | – | – | chief · Chief: verify condition for J1752 |  |
-| J1925 | any | open | – | – | chief · Chief: verify condition for J1753 |  |
-| J1932 | any | open | – | – | chief · Chief: verify condition for J0979 |  |
-| J1965 | any | open | – | – | chief · Chief: verify condition for J1879 |  |
-| J2015 | any | open | – | – | chief · Chief: verify condition for J1754 |  |
+| J1918 | any | open | – | – | review · verify condition for J1356 |  |
+| J1919 | any | open | – | – | review · verify condition for J1752 |  |
+| J1925 | any | open | – | – | review · verify condition for J1753 |  |
+| J1932 | any | open | – | – | review · verify condition for J0979 |  |
+| J1965 | any | open | – | – | review · verify condition for J1879 |  |
+| J2015 | any | open | – | – | review · verify condition for J1754 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2023 | mini | open | – | – | chief · Chief: fill Short gaps (HOS none after 17 Nov and 9-12 Nov; OWB 24-29 Nov) from finished or nearly finished Shorts |  |
-| J2024 | any | open | – | – | chief · Chief: verify condition for J0999 |  |
+| J2024 | any | open | – | – | review · verify condition for J0999 |  |
 | J2027 | mini | open | – | – | chief · Chief: review HOS milestone/row-count PR483 and verify publisher/frontend rollout | PR483 / J2026 |
 | J2029 | mini | open | – | – | chief · Chief: review Studio activity categories and next-video frontend PR484 | PR484 |
 | J2033 | mini | blocked | codex | – | 009 picture · for codex · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
-| J2034 | mini | open (after J2033) | – | – | 009 picture · chief · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
+| J2034 | mini | open (after J2033) | – | – | 009 picture · review · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
 | J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · for gemini · qa · `gemini-argon` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
-| J2037 | mini | open (after J2036) | – | – | 009 edit · chief · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
+| J2037 | mini | open (after J2036) | – | – | 009 edit · review · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2038 | mini | open | – | – | chief · Chief: review PR437/PR477 and turn on parallel Mini dispatch (audit fix A: Mini idle most of the day) |  |
 | J2039 | mini | blocked | codex | – | assembly · Film-first order + require --film/--stage on production jobs (audit fix C) |  |
 | J2040 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
@@ -88,8 +88,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2160 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2161 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
 | J2162 | cloud | open (after J2161) | – | – | review · Packaging panel decision: OWB:032 J2144 three Titan thumbnails; worker delivery, Chief decision required |  |
-| J2164 | any | open | – | – | 033 vo · chief · 033 Uranus: Chief ruling on J2155 VO transcript and tails |  |
+| J2164 | any | open | – | – | 033 vo · review · 033 Uranus: Chief ruling on J2155 VO transcript and tails |  |
 | J2165 | any | open (after J2155) | – | – | 033 shots · review · 033 Uranus: shot list after explicit VO acceptance |  |
+| J2166 | mini | open | – | – | 031 thumbs · review · Review J2143: 031 thumbs: include the rule-19 real-image concept (reference-channel test) |  |
 
 Recently finished:
 
