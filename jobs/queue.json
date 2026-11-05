@@ -1,5 +1,5 @@
 {
-  "next_id": 2206,
+  "next_id": 2207,
   "jobs": [
     {
       "id": "J0001",
@@ -184640,6 +184640,35 @@
         }
       ],
       "remaining_action": "Interactive Mini: gate_upcoming --stage; refresh UPCOMING_SHORTS_GATE.md; £0",
+      "kind": "assembly"
+    },
+    {
+      "id": "J2206",
+      "title": "URG-OWB-2: monthly Studio Reach window capture (share with J2202)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief h47 APPROVED URG-OWB-2 (shared design with URG-HOS-1 / J2202). No spend.\n\n1) Archive 1st-of-month 05_Analytics/owb/studio_ctr_YYYY-MM-01.json.\n2) Capture closed-month Studio Reach (Long impressions/impressionsCtr, Short stayedToWatch) into 05_Analytics/owb/studio_reach_monthly_YYYY-MM.json.\n3) Catch-up 2026-10 window now. Prefer sharing implementation with HOS J2202. Due before 2026-12-01T09:00Z.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-05T09:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T09:23Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Implement OWB monthly Studio Reach + studio_ctr archive; share with J2202; £0",
+      "due": "2026-12-01T09:00:00Z",
       "kind": "assembly"
     }
   ],
