@@ -189421,10 +189421,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-05T22:55Z",
+      "eta": "2026-11-06T00:55Z",
       "created_by": "claude",
       "created_at": "2026-11-05T22:51Z",
       "result": "",
@@ -189433,11 +189433,24 @@
           "at": "2026-11-05T22:51Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T22:55Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "S6 Titan Short v11 swap: Ben OK'd on the board (5 Nov 22:07), replace RLSJm59OSzI in its Tue 10 Nov 11:30 slot",
       "due": "2026-11-10T10:30:00Z",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T22:55Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2260",
