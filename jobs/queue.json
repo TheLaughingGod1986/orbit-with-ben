@@ -99901,13 +99901,13 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-05T11:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "waiting for review J2218 (rule H): review J2214 KEEP (jobs/reviews/J2214/REVIEW.md) — put S2 (earth_equator_weight_v07, 7d07deafbd4e), S5 (028_short_fri04_scale_v07, d5589ad4fa32), and S6 (028_short_lift_night_sky_35yr_v07, 2f399f3127bf) v07 on the board for Ben's watch and execute YouTube replacement swaps after Ben's OK (scheduled ",
+      "result": "Ben OK'd all three v07 Shorts on the board (5 Nov 12:52-12:53 London): S2 earth_equator_weight_v07, S5 028_short_fri04_scale_v07, S6 028_short_lift_night_sky_35yr_v07. Do the replacement swaps now under AGENTS.md (new copy private + scheduled at the same slot, old copy private + unscheduled, read-back JSON in jobs/readbacks/J1100.json), update UPLOADS.json and Buffer posts in the same job.",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -101188,6 +101188,11 @@
           "at": "2026-11-05T13:03Z",
           "by": "claude",
           "what": "rule H: decision moved from the Chief to review J2218"
+        },
+        {
+          "at": "2026-11-05T13:51Z",
+          "by": "claude",
+          "what": "acting Chief: Ben OK'd S2/S5/S6 v07 on the board; released to do the swaps"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101251,12 +101256,7 @@
           "number": "S6",
           "type": "short"
         }
-      ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben watch: Ben OKs or requests changes on the S2/S5/S6 v07 Ready for OK cards (awaits_ben set by Chief h67 after J2214 KEEP)",
-        "check_at": "2026-11-22T20:00:00Z"
-      }
+      ]
     },
     {
       "id": "J1101",
@@ -166419,7 +166419,7 @@
       "title": "review Franklin eight-item correction recipe (+ film-wide captions) and scope production",
       "needs": "mini",
       "repo": "hos",
-      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J1881), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J1881 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J1881 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J1881.\n5. Finish this job with the verdict in --result.\n\nDependent review for J1868 Franklin v03 six-note correction intake. After the correction-preparation predecessor delivers, elected Chief checks chief_relay.py status and reviews its exact six-row source/VO mapping and proposed edit recipe against Ben's original 2026-11-03T16:08:33.439Z review and h22/h35 locks. Read current review first; do not duplicate superseded work.\n\nDecide the concrete bounded correction scope. No generation, replacement render, upload or watch-object publication is authorized by this planning job itself. If feasible, queue a separately scoped no-spend new-version assembly job with exact assets/intervals, preservation requirements and all original gates, then a dependent media-capable QA/Chief review. If assets are missing, explicitly scope the permitted HOS Flow/Veo route, bounded takes and credit cap under live-balance/no-overage rules in a separate job; never waive a gate, use a still workaround or rewrite locked VO. Verify reviewer media-input capability before assignment; no moving/audio PASS from stills or measurements alone. Review all six corrections in context and the full cut, with phone readability, VO sync, music/SFX and unchanged-window checks. Chief media decision then Ben's finished-film watch remain required.\n\nDo not finish this review with only prose about later work: record actionable assembly/QA successor IDs and owners/dependencies, or a concrete input hold. Marking this intake handled means tracked, not corrected/approved. Preserve the original review, notes and timestamps, J1297 and v03 hash cf1561c2...3099b, historical h22/h35 evidence and all older cuts. J1755 owns the separate browser-delivery hold: its automatic approval rejection remains intact, no R2 publication under this task. No YouTube or schedule change. Do not infer unknown milestones complete from the master. GBP0.\n",
+      "body": "Rule H review (Ben, 5 Nov 2026). Decide in one go, as the review lane, not the Chief:\n1. Read the original job (J1881), its brief, result, history and evidence (repo files, PRs, review notes).\n2. Check the deliverable against its brief and AGENTS.md: the film's script/VO locks, SOURCES.md for every number,\n   Teach-on-screen/Polish/Packaging rules, thumbnail gate (HOOK/BAND/GRADE/PHONE), picture_qa / polish_gate /\n   music_gate results where they apply. Do every check a tool can prove; the watched/heard step is Ben's final watch.\n3. Write jobs/reviews/<this job id>/REVIEW.md: KEEP or FIX, with the evidence and, for FIX, an exact fix list.\n4. Apply it with jobs.with_git (one commit): KEEP -> release J1881 (clear its hold, status open, history note\n   'review <this id> KEEP: <next step>') or close it done if the deliverable is final; FIX -> reopen J1881 with the\n   fix list. A records/data PR (only 02_Video-Projects/, jobs/, 05_Analytics data files) with green checks may be\n   merged; never merge a PR touching scripts/, .github/, AGENTS.md or the board site, never spend, publish or change\n   a schedule: those go back to the Chief as a short 'parked for Chief: <exact decision>' on J1881.\n5. Finish this job with the verdict in --result.\n\nDependent review for J1868 Franklin v03 six-note correction intake. After the correction-preparation predecessor delivers, elected Chief checks chief_relay.py status and reviews its exact six-row source/VO mapping and proposed edit recipe against Ben's original 2026-11-03T16:08:33.439Z review and h22/h35 locks. Read current review first; do not duplicate superseded work.\n\nDecide the concrete bounded correction scope. No generation, replacement render, upload or watch-object publication is authorized by this planning job itself. If feasible, queue a separately scoped no-spend new-version assembly job with exact assets/intervals, preservation requirements and all original gates, then a dependent media-capable QA/Chief review. If assets are missing, explicitly scope the permitted HOS Flow/Veo route, bounded takes and credit cap under live-balance/no-overage rules in a separate job; never waive a gate, use a still workaround or rewrite locked VO. Verify reviewer media-input capability before assignment; no moving/audio PASS from stills or measurements alone. Review all six corrections in context and the full cut, with phone readability, VO sync, music/SFX and unchanged-window checks. Chief media decision then Ben's finished-film watch remain required.\n\nDo not finish this review with only prose about later work: record actionable assembly/QA successor IDs and owners/dependencies, or a concrete input hold. Marking this intake handled means tracked, not corrected/approved. Preserve the original review, notes and timestamps, J1297 and v03 hash cf1561c2...3099b, historical h22/h35 evidence and all older cuts. J1755 owns the separate browser-delivery hold: its automatic approval rejection remains intact, no R2 publication under this task. No YouTube or schedule change. Do not infer unknown milestones complete from the master. GBP0.\n\n\nBen's second watch of v03 (board, 5 Nov 12:47 London), add to the six 3 Nov notes:\n1. 0:51 hair still flies out of the tube: rebuild this shot\n2. bottom text needs a background colour; hard to read over moving video (whole film)\n3. 2:18 the jar flips upside down like magic\n4. 3:13 paper seems to roll out of the globe\n5. 7:59 the rods on the churches seem to fall",
       "ref": "J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z",
       "film": "008",
       "stage": "edit",
@@ -166522,6 +166522,11 @@
           "at": "2026-11-05T13:14Z",
           "by": "gemini",
           "what": "released: review J1881 FIX: PR #411 base PTS/planner verified; waiting on J2217 for 8-item + 27-cut film-wide caption amend (jobs/reviews/J1881/REVIEW.md)"
+        },
+        {
+          "at": "2026-11-05T13:51Z",
+          "by": "claude",
+          "what": "Ben's 5 Nov 12:47 notes on v03 added to the brief (5 notes; overlaps the 3 Nov six)"
         }
       ],
       "remaining_action": "Wait for J2217 eight-item+caption recipe amend; then re-review in J1881 before any production splice (no six-only)",
@@ -185846,18 +185851,23 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "done",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T13:03Z",
-      "result": "",
+      "result": "superseded: Ben watched and OK'd the three v07 cuts himself (5 Nov 12:52)",
       "history": [
         {
           "at": "2026-11-05T13:03Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T13:51Z",
+          "by": "claude",
+          "what": "done: superseded by Ben's OK"
         }
       ],
       "remaining_action": "Review J1100: J0936 batch C: Ben's changes on S2 (opening VO), S5 (captions vs VO), S6 (opening VO speed) -> v05, gates, park for Chief",
