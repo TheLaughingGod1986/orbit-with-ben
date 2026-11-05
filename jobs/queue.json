@@ -182530,17 +182530,22 @@
           "at": "2026-11-05T04:11Z",
           "by": "codex",
           "what": "step 2 of 3 done: Exact native crop/in/out/hash proposals cover four requested repairs; 17 rows decoded with zero identical adjacent frames and valid bounds. Unmodified source QA still FAILs B2/8,C4/9: terminal reuse plus five row occurrences from four inherited720p sources at2.67x. No build/KEEP; parent remains1/3."
+        },
+        {
+          "at": "2026-11-05T04:15Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: HOS PR415 head84fd8773 delivers hash-backed mappings, complete17-row source lists and honest B2/8 C4/9 FAILs. Repository checks PASS. J2183 mapping review and J2184 bounded fallback queued; J2179/J2182 still required. GBP0, no cut/generation/publishing."
         }
       ],
-      "remaining_action": "Commit source recipe evidence and queue mapping review plus bounded fallback decision",
+      "remaining_action": "Producer delivered: J2183 reviews PR415; J2184 scopes remaining source gaps; J2169 stays blocked1/3",
       "due": "2026-11-07T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-05T04:11Z",
+        "at": "2026-11-05T04:15Z",
         "by": "codex",
-        "note": "Exact native crop/in/out/hash proposals cover four requested repairs; 17 rows decoded with zero identical adjacent frame"
+        "note": "HOS PR415 head84fd8773 delivers hash-backed mappings, complete17-row source lists and honest B2/8 C4/9 FAILs. Repository"
       },
       "taskKeys": [
         "HOS:006"
