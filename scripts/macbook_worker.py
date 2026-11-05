@@ -240,7 +240,9 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
         m = ["-m", model] if model.startswith("gpt-") else []
         return [b, "exec", *m, "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true", *dirs, prompt]
     if agent == "claude":
-        return [b, "-p", "--permission-mode", "acceptEdits", *dirs, prompt]
+        # The prompt goes straight after -p: --add-dir takes a list, so a prompt after it was read as one more folder
+        # ("Input must be provided ... when using --print", 5 Nov 2026: every MacBook job given to Claude failed).
+        return [b, "-p", prompt, "--permission-mode", "acceptEdits", *dirs]
     import routing
     cm = routing.cli_model(model) if model and routing.RUNS_ON.get(model) == agent else ""
     if agent == "gemini":  # Antigravity agy: -p must come last, straight before the prompt (chief_relay note, 14 Oct)
