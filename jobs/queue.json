@@ -99968,13 +99968,13 @@
       "stage": "",
       "after": "J1270",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-05T23:30Z",
-      "eta": "2026-11-06T01:30Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-28T15:03Z",
-      "result": "Ben OK'd all three v07 Shorts on the board (5 Nov 12:52-12:53 London): S2 earth_equator_weight_v07, S5 028_short_fri04_scale_v07, S6 028_short_lift_night_sky_35yr_v07. Do the replacement swaps now under AGENTS.md (new copy private + scheduled at the same slot, old copy private + unscheduled, read-back JSON in jobs/readbacks/J1100.json), update UPLOADS.json and Buffer posts in the same job.",
+      "result": "Delivered Ben-approved v07 replacement swaps for S2 (emwQsPxnRGM -> Dm4xsF1Ateg at 2026-11-23T11:30:00Z), S5 (jJ5LkFGyzLI -> BTuL_QBbEgY at 2026-12-04T11:30:00Z), and S6 (X768qs8sNQs -> lsOCcIYCud0 at 2026-12-07T11:30:00Z); old copies private+unscheduled; verify-swap ok:true in jobs/readbacks/J1100.json; updated UPLOADS.json, buffer-plans, and shorts_open_library in PR #565.",
       "history": [
         {
           "at": "2026-10-28T15:03Z",
@@ -101315,6 +101315,11 @@
           "at": "2026-11-05T23:43Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Updated UPLOADS.json, buffer-plans/{Dm4xsF1Ateg,BTuL_QBbEgY,lsOCcIYCud0}.json, shorts_open_library, and readbacks in PR #565 (30b2cff762)."
+        },
+        {
+          "at": "2026-11-05T23:43Z",
+          "by": "gemini",
+          "what": "done: Delivered Ben-approved v07 replacement swaps for S2 (emwQsPxnRGM -> Dm4xsF1Ateg at 2026-11-23T11:30:00Z), S5 (jJ5LkFGyzLI -> BTuL_QBbEgY at 2026-12-04T11:30:00Z), and S6 (X768qs8sNQs -> lsOCcIYCud0 at 2026-12-07T11:30:00Z); old copies private+unscheduled; verify-swap ok:true in jobs/readbacks/J1100.json; updated UPLOADS.json, buffer-plans, and shorts_open_library in PR #565."
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101366,7 +101371,8 @@
         "title": "028 night sky v07",
         "number": "S6",
         "type": "short"
-      }
+      },
+      "done_ref": "PR #565 (30b2cff762)"
     },
     {
       "id": "J1101",
