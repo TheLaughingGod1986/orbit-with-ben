@@ -1,5 +1,5 @@
 {
-  "next_id": 2167,
+  "next_id": 2168,
   "jobs": [
     {
       "id": "J0001",
@@ -181171,6 +181171,38 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2167",
+      "title": "J1208 exact-source native-video review: S5/S6 Flow take2",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J1208 exact-source review, linked OWB:030 and J1199. Private durable package /Users/benjaminoats/_desk/handoff/J1208/flow-20261105; text evidence commit bb22c548ea on codex/J1208-flow-20261105, jobs/reviews/J1208/FLOW_DELIVERY_2026-11-05.md. Review native files S5_flow_t2_silent.mp4 (sha256 904868b092ed9b6e93e785805a1179eba7cf9f358f672403fcf5f3826d2e0e18) and S6_flow_t2_silent.mp4 (sha256 2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a). 720x1280, 7.916667s, silent; crop none, upscale1.5x to1080x1920; exact source opening1.15–3.85s and forward preroll0–1.15s. Both prospective source windows picture_qa PASS with illustration/low-detail WARNs; no override. First takes are FIX and must not substitute. Review scientific honesty, subject recognition, native subject motion from opening frame0, full-size WARNs, phone and forward-preroll continuity using actual demonstrated native-video perception. Do not infer capability from a player, ffmpeg, ASR, CLI/model name or still sheets. Codex session has no native-video capability and claims no motion/phone/preroll review. Write KEEP/FIX with exact intervals and evidence, return required exact-source decision to current elected Chief before J1199 assembly, and release/reopen original J1208 capability hold when its condition is satisfied. Review text-only evidence PR too; its merge does not approve media. No generation or publishing authorization in this review. No further Flow takes: scope exhausted (2 per subject,40 credits total, final15390). No VO, old cut/manifest, Buffer, schedule/privacy, upload or Ben-watch change. Preserve scheduled-copy fallback and all finished-cut gates. Reviewer must use Mini/private package; no missing Mini media on MacBook. Need source review now, deadline5Nov12Z, not a delayed start.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/507",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-05T00:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T00:49Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review exact meteor/Titan source windows, phone and preroll; decide KEEP or FIX",
+      "due": "2026-11-05T12:00:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "moving_video_input"
+      ]
     }
   ],
   "focus": [],
