@@ -1,5 +1,28 @@
 # J2141 resumable picture build — 4 Nov 2026
 
+Worker: cursor (this checkpoint). Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, eighth run)
+
+Preserve **1/3**. New branch `worker/J2141-opening-v01` (PR #495 is already merged). Added `code_graphics.py opening` and four row graphics, 1920×1080 / 25 fps:
+
+- R1 poledrift, 4.52–8.34 s (file 3.84 s after frame rounding): real DSCOVR Earth disc, schematic arc from the Canadian side of this Americas plate off the top limb toward Siberia. Labels `1831 → TODAY`, `UP TO 55 KM/YR`, `> MARATHON / YR` (SOURCES row 1). Not a plotted World Magnetic Model track.
+- R2 flip, 12.54–17.08 s (file 4.56 s): same Earth disc, bar magnet turns N to the south, blue air shell stays the same size. `POLES SWAP` holds under 4 s. This is the £0 picture for the question, not an atmosphere-loss shot.
+- R13 layers alpha, 125.9–131.76 s (file 5.84 s): depth counter to `3,000 KM` / `BENEATH YOUR FEET` / `LIQUID OUTER CORE` (SOURCES row 6). Needs a graded moving plate. Not a measured core cross-section.
+- R5 when1905 alpha, 36.14–39.36 s (file 3.20 s): `1905` / `PONTFAREIN, FRANCE`. A place stamp only, not the building timeline.
+
+`CODE_OPENING_v01.json` and `CODE_OPENING_TECHNICAL_CHECK_v01.json` record cues, hashes, 1920×1080, 25 fps, pixel format, duration and error-free decode. Opaque preview mean luma is about 53. Alpha previews are transparent, so their luma is not a composite result. Media and contact sheet: `/Users/benjaminoats/_desk/J2141-opening-v01/`. Static stills inspected. No motion, audio or composite review. No KEEP, PASS or stage approval.
+
+Earth plate `GSFC_20171208_Archive_e000678` (DSCOVR EPIC, 6 July 2015) is copied into `harvest_v01/` from the 029 harvest of the same NASA id and added to `HARVEST_POOL_v01.json`. Rows 1 and 2 share it, which is the two-use cap. Reproduce into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py opening --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+No detached render left running. This batch is about 9 MB. £0. R21 compass fallback already exists. R41 is still the NASA ISS sunrise-limb plate, not built here. Wider archive harvest, the remaining mechanisms (timeline, strata, dynamo, belts, hubble_saa, sat_safe, saa, triptych, paleo, multipole, mars_vs_earth, extinction_check, grid_shield, poles_map, aurora, matuyama map) and full QA remain. Source-ID and sourced-simulation gate conflicts below still need Chief reconciliation.
+
+## Earlier checkpoint
+
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
 ## Continuation checkpoint (5 Nov, seventh run)
