@@ -166552,13 +166552,13 @@
       "stage": "edit",
       "after": "J2217",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-05T16:30Z",
-      "eta": "2026-11-05T18:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:57Z",
-      "result": "review J1881 FIX (jobs/reviews/J1881/REVIEW.md): J2163 PR #411 (50620e40) 6-row base PTS/planner KEEP (12923f PTS, 11/11 tests PASS), but Ben 5 Nov review (6658371896) expands scope to 8 items + 27-cut film-wide bottom captions. Waiting on J2217 before re-review and production scope. GBP0.",
+      "result": "review J1881 FIX (jobs/reviews/J1881/REVIEW.md): J2217 PR #428 (dfd365c7) reopened to fix cross-GOP frame windows on 0:51 ([1124,1227] -> [1129,1231]), 3:13 ([4500,4659] -> [4511,4670] covering 4660..4670), and all 27 caption_treatment.labels GOP ranges ([0,141]..[12297,12461]). GBP0.",
       "history": [
         {
           "at": "2026-11-03T18:57Z",
@@ -166679,17 +166679,27 @@
           "at": "2026-11-05T16:41Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Audited PR #428 (dfd365c7): 0:51 [1124,1227] and 3:13 [4500,4659] cross GOP boundaries; 27 caption windows drift by up to 22f"
+        },
+        {
+          "at": "2026-11-05T16:43Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote jobs/reviews/J1881/REVIEW.md: PR #428 (dfd365c7) FIX on 0:51/3:13/27-caption GOP windows; reopened J2217"
+        },
+        {
+          "at": "2026-11-05T16:43Z",
+          "by": "gemini",
+          "what": "released: review J1881 FIX: reopened J2217 for PR #428 GOP frame-boundary repair (0:51 [1129,1231], 3:13 [4511,4670], 27 caption GOP ranges); waiting on J2217"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J1881/REVIEW.md with PR #428 (dfd365c7) FIX findings and reopen J2217 via jobs.with_git",
+      "remaining_action": "Re-review J2217 eight-item recipe after PR #428 GOP frame boundary repair, then scope bounded retake/assembly/QA jobs",
       "due": "2026-11-04T14:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-05T16:41Z",
+        "at": "2026-11-05T16:43Z",
         "by": "gemini",
-        "note": "Audited PR #428 (dfd365c7): 0:51 [1124,1227] and 3:13 [4500,4659] cross GOP boundaries; 27 caption windows drift by up t"
+        "note": "Wrote jobs/reviews/J1881/REVIEW.md: PR #428 (dfd365c7) FIX on 0:51/3:13/27-caption GOP windows; reopened J2217"
       },
       "taskKeys": [
         "HOS:008"
@@ -186268,13 +186278,13 @@
       "stage": "edit",
       "after": "J2163",
       "eta_min": 90,
-      "status": "done",
-      "by": "cursor",
-      "since": "2026-11-05T16:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T12:54Z",
-      "result": "Eight-item read-only recipe is HOS PR 428 (dfd365c7) on cursor/J2217-eight-item, stacked on PR 411. 0:51 is master frame 1220 on hot_night, not the 1:49 salon source. 3:13 is frame 4621 on points_desk. 2:18 frame 3305 is outside keep 3168-3259 and inside replace 3260-3343. Film-wide unbordered caption panel, not a splice list. 14 tests OK. Execution refused until J1881 re-reviews. No note resolved. GBP0. No render, upload, or YouTube change.",
+      "result": "review J1881 FIX (jobs/reviews/J1881/REVIEW.md): repair HOS PR #428 (dfd365c7) cross-GOP frame windows: (1) 0:51 candidate_frames [1124,1227] -> [1129,1231] (single GOP, not 1022..1231); (2) 3:13 candidate_frames [4500,4659] -> [4511,4670] (single GOP covering 4660..4670 paper unroll, + 01_points_desk_t1.png sha cc16a515a43e881c...); (3) all 27 caption_treatment.labels master_frames to exact closed-GOP [kf_in, kf_out-1] ([0,141]..[12297,12461]); (4) add 07_hot_night_t1.mp4 & 01_points_desk_t1.mp4 to required_inputs and assert single-GOP envelopes in test_j2163_recipe.py.",
       "history": [
         {
           "at": "2026-11-05T12:54Z",
@@ -186305,17 +186315,15 @@
           "at": "2026-11-05T16:28Z",
           "by": "cursor",
           "what": "done: Eight-item read-only recipe is HOS PR 428 (dfd365c7) on cursor/J2217-eight-item, stacked on PR 411. 0:51 is master frame 1220 on hot_night, not the 1:49 salon source. 3:13 is frame 4621 on points_desk. 2:18 frame 3305 is outside keep 3168-3259 and inside replace 3260-3343. Film-wide unbordered caption panel, not a splice list. 14 tests OK. Execution refused until J1881 re-reviews. No note resolved. GBP0. No render, upload, or YouTube change."
+        },
+        {
+          "at": "2026-11-05T16:43Z",
+          "by": "gemini",
+          "what": "reopened: review J1881 FIX (jobs/reviews/J1881/REVIEW.md): repair HOS PR #428 (dfd365c7) cross-GOP frame windows: (1) 0:51 candidate_frames [1124,1227] -> [1129,1231] (single GOP, not 1022..1231); (2) 3:13 candidate_frames [4500,4659] -> [4511,4670] (single GOP covering 4660..4670 paper unroll, + 01_points_desk_t1.png sha cc16a515a43e881c...); (3) all 27 caption_treatment.labels master_frames to exact closed-GOP [kf_in, kf_out-1] ([0,141]..[12297,12461]); (4) add 07_hot_night_t1.mp4 & 01_points_desk_t1.mp4 to required_inputs and assert single-GOP envelopes in test_j2163_recipe.py."
         }
       ],
-      "remaining_action": "J1881 re-reviews the eight-item recipe before any splice",
+      "remaining_action": "Fix PR #428 GOP windows: 0:51 [1129,1231], 3:13 [4511,4670], 27 caption_treatment GOP ranges & tests (jobs/reviews/J1881/REVIEW.md)",
       "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-05T16:28Z",
-        "by": "cursor",
-        "note": "PR 428 commit dfd365c7; 14 tests OK; execution still refused"
-      },
       "taskKeys": [
         "HOS:008"
       ]
