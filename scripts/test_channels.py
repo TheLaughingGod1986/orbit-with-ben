@@ -62,10 +62,34 @@ class Loader(unittest.TestCase):
             self.assertEqual(str(channels.repo_path("hos")), "/x/hos")
 
 
+class Films(unittest.TestCase):
+    def test_both_pipeline_kinds_give_the_same_rows(self):
+        import channel_films
+        with tempfile.TemporaryDirectory() as t:
+            root = pathlib.Path(t)
+            (root / "02_Video-Projects" / "033_X").mkdir(parents=True)
+            (root / "02_Video-Projects" / "033_X" / "status.json").write_text(json.dumps(
+                {"film": "033", "title": "X", "air": "2026-12-09T18:00", "stages": {"edit": {"state": "done"}}}))
+            (root / "00_Brand" / "Channel-Setup").mkdir(parents=True)
+            (root / "00_Brand" / "Channel-Setup" / "PIPELINE.json").write_text(json.dumps(
+                {"films": [{"id": "011", "title": "Y", "air": "2026-12-10", "stages": {"edit": {"status": "doing"}}}]}))
+            owb, hos = channel_films.films("owb", root), channel_films.films("hos", root)
+        self.assertEqual((owb[0]["key"], owb[0]["air"], owb[0]["stages"]), ("OWB:033", "2026-12-09", {"edit": "done"}))
+        self.assertEqual((hos[0]["key"], hos[0]["stages"]), ("HOS:011", {"edit": "doing"}))
+
+    def test_picture_route_comes_from_the_channel(self):
+        import routing
+        hos = routing.job_chain({"kind": "video", "repo": "hos"})
+        owb = routing.job_chain({"kind": "video", "repo": "owb"})
+        self.assertTrue(all(not m.startswith("veo-") for _, m in hos))           # flow_only: no priced Vertex
+        self.assertTrue(any(m.startswith("veo-") for _, m in owb))               # flow_first: Vertex behind Flow
+        self.assertTrue(owb[0][1].startswith("flow-"))
+
+
 class NoNewChannelNames(unittest.TestCase):
     """Engine files already moved to channels.py must not grow new literal channel regexes."""
     MOVED = ("jobs.py", "kanban_snapshot.py", "progress24.py", "video_progress.py", "workflow_state.py",
-             "workflow_handoffs.py")
+             "workflow_handoffs.py", "channel_balance.py", "channel_films.py")
 
     def test_the_board_page_reads_channels_from_board_json(self):
         app = (HERE.parent / "05_Analytics" / "kanban" / "board_site" / "studio_app.js").read_text()
