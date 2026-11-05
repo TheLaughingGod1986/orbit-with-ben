@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2223 | mini | open | – | – | for gemini · listing · `gemini-argon` · Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each |  |
 | J2224 | mini | open | – | – | for gemini · review · `gemini-argon` · Review J0912: Short A v03 picture_qa key-ribbon FIX decision |  |
 | J2226 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
-| J2227 | any | open | – | – | review · Verify condition for J2210 |  |
+| J2227 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2210 |  |
 
 Recently finished:
 
