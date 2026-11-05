@@ -80,6 +80,40 @@ class Offload(unittest.TestCase):
         self.assertFalse(ok)
         self.assertIn("not mounted", why)
 
+    def test_nas_appledouble_files_do_not_fail_the_check(self):
+        # 5 Nov 2026: the Synology share adds ._name beside files with extended attributes.
+        old = self.scratch / "old"
+        make(old, {"a.mov": MB, "sub/b.wav": MB}, age_h=100)
+        real = no.copy_tree
+
+        def with_appledouble(src, dst):
+            real(src, dst)
+            (dst / "._a.mov").write_bytes(b"\0" * 4096)
+            (dst / "._sub").write_bytes(b"\0" * 4096)  # a folder's AppleDouble too
+        no.copy_tree = with_appledouble
+        try:
+            rep = self.run_offload()
+        finally:
+            no.copy_tree = real
+        self.assertEqual(len(rep["moved"]), 1, rep)
+        self.assertNotIn("._a.mov", (pathlib.Path(rep["moved"][0]["nas"]) / "SHA256SUMS.txt").read_text())
+
+    def test_an_unexplained_extra_file_still_fails(self):
+        old = self.scratch / "old"
+        make(old, {"a.mov": MB}, age_h=100)
+        real = no.copy_tree
+
+        def extra(src, dst):
+            real(src, dst)
+            (dst / "._b.mov").write_bytes(b"x")  # no b.mov in the source: not AppleDouble of ours
+        no.copy_tree = extra
+        try:
+            rep = self.run_offload()
+        finally:
+            no.copy_tree = real
+        self.assertEqual(rep["moved"], [])
+        self.assertTrue((old / "a.mov").exists())
+
     def test_bad_copy_keeps_the_mini_copy(self):
         old = self.scratch / "old"
         make(old, {"a.mov": MB}, age_h=100)
