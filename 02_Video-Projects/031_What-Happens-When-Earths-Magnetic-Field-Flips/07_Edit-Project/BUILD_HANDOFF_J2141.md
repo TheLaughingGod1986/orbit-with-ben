@@ -1,6 +1,28 @@
 # J2141 resumable picture build — 4 Nov 2026
 
-Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+Worker: codex, then cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, cursor sky batch)
+
+Preserve **1/3**. This branch is `worker/J2141-sky-v01`, from current `origin/main`. It does not contain the still-open partials on PRs #539 (opening), #551 (field), #555 (SAA) and #562 (dynamo). Those already render poledrift, flip, layers, the 1905 stamp, strata, the Matuyama map, extinction check, grid shield, belts, Hubble SAA, satellite safe-mode, the anomaly chart and the dynamo align/tip/settle. This batch adds the five named graphics none of those branches include:
+
+- R32 `paleo`, 326.34–336.10 s (9.76 s), full frame. Two bars on one zero: today's field at the 100,000-year high, and the million-year average at half height, which is the sourced "twice". No `8×10²²` figure. Not a sediment-core plot.
+- R40 `temp_poles`, 415.04–417.92 s (2.88 s), alpha. Six temporary poles pop inside a ring after the existing dipole-strength overlay. Label `TEMPORARY POLES`.
+- R47 `tangle`, 488.14–492.86 s (4.72 s), full frame. Starts on "tangling", after room for the NASA SVS plate at the head of the row. Label `SEVERAL POLES`. Schematic lines, not a Glatzmaier frame.
+- R48 `poles_map`, 493.66–499.30 s (5.64 s), alpha. Pin is for southern Africa on `harvest_v01/GSFC_20171208_Archive_e001788.jpg` pasted at (510, 90) at 900 px. Tahiti is named (`NORTH POLE` / `TAHITI` / `PACIFIC`) and not pinned: that Blue Marble face does not show the Pacific. The pin pulses so it does not sit still for 4 s.
+- R51 `aurora`, 522.62–532.98 s (10.36 s), full frame. The same Blue Marble, circular-masked onto navy and dimmed, with moving green and crimson arcs. City cards `LONDON`, `CAIRO`, `MUMBAI`, `SYDNEY` each fade within 3.2 s of the locked word. They are names, not map coordinates. Small `NASA` credit, bottom left. The 0.06 s past "nights" sits in the pause before the next sentence (534.48 s).
+
+`CODE_SKY_v01.json` and `CODE_SKY_TECHNICAL_CHECK_v01.json` record hashes, 1920×1080, 25 fps, alpha or yuv420p, and error-free full decodes. Opaque mid-frames sit above the near-black floor (paleo ~35, tangle ~30, aurora ~43). Alpha frames are transparent on purpose. Media and contact sheet: `/Users/benjaminoats/_desk/J2141-sky-v01/` (about 8.7 MB). Stills of the previews were inspected. No motion, composite or playback review. No KEEP or PASS.
+
+Detached `J2141-sky-v01` finished exit 0. Log and completion: `/Users/benjaminoats/_desk/logs/J2141-sky-v01.log` and `.done`. Reproduce into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py sky --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+The harvest photograph is gitignored and already lives in the film's `07_Edit-Project/harvest_v01/`. Spend £0. No new archive search, so no missing-footage budget was used.
+
+Still unfinished: the wider NASA/NOAA/USGS/ESA/Commons harvest, a single building timeline (only separate WHEN stamps exist), the R30 "CASE CLOSED?" card, the R33 near-zero dip, a physical Mars/Earth body comparison, the R41 NASA limb fallback plate, plate composites and picture/polish QA. Open PRs #539, #551, #555 and #562 still need a merge that keeps every `code_graphics.py` mode. Source-ID and sourced-simulation gate conflicts below remain for Chief. No Ben action.
 
 ## Continuation checkpoint (5 Nov, seventh run)
 
