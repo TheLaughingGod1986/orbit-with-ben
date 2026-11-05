@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | open | – | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2173 | mini | open | – | – | 032 edit · for gemini · review · `gemini-argon` · OWB locked-long Short: assess Titan Test A as reserve for 27 Nov | J2023 |
-| J2174 | any | open | – | – | 005 edit · review · HOS 005 cuff: bounded rule-8 opening and clinical-source repair decision | J2168 |
+| J2174 | mini | open | – | – | 005 edit · for gemini · review · `gemini-argon` · HOS 005 cuff: bounded rule-8 opening and clinical-source repair decision | J2168 |
 
 Recently finished:
 
