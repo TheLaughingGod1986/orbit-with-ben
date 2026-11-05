@@ -188837,13 +188837,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-05T21:02Z",
-      "eta": "2026-11-05T23:02Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-05T21:02Z",
-      "result": "",
+      "result": "parked for Chief: CONDITION SATISFIED (jobs/reviews/J2253/REVIEW.md, commit 2d6a8ea3e2) — verified all 5 J1881 FIX items in J2217 commit b78dbe19 on HOS PR #428 (candidate_keyframe_envelope + gop_closure_proven=False + source_map_only evidence, --retake-p3-01 CLI/160f tests, 0:51 night-street untouched + 2:18/2:20 distinct checks, 32 <=4w/<=4s caption cards + SAFE PATH DOWN + bottom-text reconciliation, and real Flow read_account/ai_spend record/spend preflight; 18/18 unit tests OK, 6/6 dry-run inputs verified, check_all PASS, 4/4 CI green). Only elected Chief (Codex) may release a verified hold: run jobs.py reopen J1881 --agent codex --note 'J2253 verified J2217 5-point FIX on PR #428 b78dbe19 (jobs/reviews/J2253/REVIEW.md)' --git and close J2253.",
       "history": [
         {
           "at": "2026-11-05T21:02Z",
@@ -188879,6 +188879,11 @@
           "at": "2026-11-05T21:09Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed jobs/reviews/J2253/REVIEW.md (2d6a8ea3e2); all 5 J1881 FIX items verified on HOS PR 428 b78dbe19; parking J2253 for elected Chief to reopen J1881"
+        },
+        {
+          "at": "2026-11-05T21:09Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: CONDITION SATISFIED (jobs/reviews/J2253/REVIEW.md, commit 2d6a8ea3e2) — verified all 5 J1881 FIX items in J2217 commit b78dbe19 on HOS PR #428 (candidate_keyframe_envelope + gop_closure_proven=False + source_map_only evidence, --retake-p3-01 CLI/160f tests, 0:51 night-street untouched + 2:18/2:20 distinct checks, 32 <=4w/<=4s caption cards + SAFE PATH DOWN + bottom-text reconciliation, and real Flow read_account/ai_spend record/spend preflight; 18/18 unit tests OK, 6/6 dry-run inputs verified, check_all PASS, 4/4 CI green). Only elected Chief (Codex) may release a verified hold: run jobs.py reopen J1881 --agent codex --note 'J2253 verified J2217 5-point FIX on PR #428 b78dbe19 (jobs/reviews/J2253/REVIEW.md)' --git and close J2253."
         }
       ],
       "remaining_action": "Elected Chief (Codex): release J1881 hold on verified J2217 PR #428 (b78dbe19) and complete J1881 review",
