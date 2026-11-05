@@ -189535,17 +189535,22 @@
           "at": "2026-11-05T23:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2258; starting review inspection"
+        },
+        {
+          "at": "2026-11-05T23:47Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J2169 ASSEMBLY.md, RECIPE.md, build_j2169.py, cuts.json, contract.json, and terminal_loop.py"
         }
       ],
-      "remaining_action": "Inspect J2169 evidence, contact sheets, and cuts for HOS 006 Short B v01 and Short C v02",
+      "remaining_action": "Verify NAS and desk SHA-256 hashes, tool gate outputs, contact sheets, and per-row frames for HOS 006 Short B v01 and Short C v02",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-05T23:45Z",
+        "at": "2026-11-05T23:47Z",
         "by": "gemini",
-        "note": "Claimed J2258; starting review inspection"
+        "note": "Read J2169 ASSEMBLY.md, RECIPE.md, build_j2169.py, cuts.json, contract.json, and terminal_loop.py"
       },
       "taskKeys": [
         "HOS:006"
