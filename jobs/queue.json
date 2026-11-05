@@ -182493,13 +182493,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T04:01Z",
-      "eta": "2026-11-05T06:01Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T03:36Z",
-      "result": "",
+      "result": "Bounded source producer delivered HOS PR415 head84fd8773: exact native crop/in-out/hash proposals for requested repairs,17-row lists incl loops,14 KEEP hash matches,2 locked VO matches,all used intervals decode. SourceQA still FAIL B2/8 C4/9 due inherited720p enlargement and terminal reuse. J2183 reviews mappings; J2184 scopes four resolution gaps; J2179/J2182 checker still required. J2169 blocked1/3 retained. No spend/render/generation/publishing or production approval.",
       "history": [
         {
           "at": "2026-11-05T03:36Z",
@@ -182535,6 +182535,11 @@
           "at": "2026-11-05T04:15Z",
           "by": "codex",
           "what": "step 3 of 3 done: HOS PR415 head84fd8773 delivers hash-backed mappings, complete17-row source lists and honest B2/8 C4/9 FAILs. Repository checks PASS. J2183 mapping review and J2184 bounded fallback queued; J2179/J2182 still required. GBP0, no cut/generation/publishing."
+        },
+        {
+          "at": "2026-11-05T04:15Z",
+          "by": "codex",
+          "what": "done: Bounded source producer delivered HOS PR415 head84fd8773: exact native crop/in-out/hash proposals for requested repairs,17-row lists incl loops,14 KEEP hash matches,2 locked VO matches,all used intervals decode. SourceQA still FAIL B2/8 C4/9 due inherited720p enlargement and terminal reuse. J2183 reviews mappings; J2184 scopes four resolution gaps; J2179/J2182 checker still required. J2169 blocked1/3 retained. No spend/render/generation/publishing or production approval."
         }
       ],
       "remaining_action": "Producer delivered: J2183 reviews PR415; J2184 scopes remaining source gaps; J2169 stays blocked1/3",
@@ -182549,7 +182554,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/415"
     },
     {
       "id": "J2182",
