@@ -27,8 +27,9 @@ import workflow_state as workflow  # noqa: E402
 
 CHIEF_ONLY = re.compile(
     r"relay|dispatch|rollout|frontend|publisher|tab-reuse|runner|film-first|require --film|workflow handoff|"
-    r"\bspend\b|£|credit|price|top-?up|"
-    r"publish|upload|visibility|schedul|end screen|altered-content|studio finish|pinned comment|"
+    # Money means a real amount or a buy: "£0", "no spend" and "£0 harvest" are everyday film work, not money calls.
+    r"£\s*(?!0(?:\.0+)?\b)\d|spend (?:up to|£\s*[1-9])|top-?up|\bbuy\b|price pass|"
+    r"\bpublish|upload|visibility|reschedul|schedule change|end screen|altered-content|studio finish|pinned comment|"
     r"AGENTS\.md|never list|rulebook|"
     r"Short gaps|monthly improvement report", re.I)
 CODE_PR = re.compile(r"\bPR\s?#?\d+", re.I)

@@ -49,6 +49,12 @@ class ReviewLane(unittest.TestCase):
         self.assertEqual(rl.apply(data, AT), [])
         self.assertEqual(len(data["jobs"]), 6)
 
+    def test_zero_cost_film_work_is_not_a_money_call(self):
+        j = job("J9", status="blocked", kind="assembly", film="032", stage="picture",
+                result="parked for Chief: £0 harvest done, no spend; review the stills (scheduled v01 airs otherwise)")
+        data = {"jobs": [j], "next_id": 10}
+        self.assertEqual(len(rl.apply(data, AT)), 1)
+
     def test_no_second_review_when_a_ruling_job_already_names_it(self):
         data = {"jobs": [job("J5", status="blocked", kind="vo", film="033", result="parked for Chief: rule on take"),
                          job("J6", kind="review", title="033: ruling on J5 VO transcript")], "next_id": 10}
