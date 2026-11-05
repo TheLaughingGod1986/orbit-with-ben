@@ -162608,9 +162608,14 @@
           "at": "2026-11-05T00:22Z",
           "by": "codex",
           "what": "step 2 of 3 done: Committed d68ff39e69: isolated production callers, busy-serial hook, mounted return receipt intake and 11 passing caller tests. Exact-head full suite in progress; host acceptance remains unverified."
+        },
+        {
+          "at": "2026-11-05T00:26Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Final head 17df4129184a6082f8c889864148fed5e55182fa: Rules CI green (817 script tests plus required suites), core CI green; 111 focused capacity tests pass. Production callers and mounted receipt handoff implemented; actual registered-host acceptance remains outstanding."
         }
       ],
-      "remaining_action": "Verify committed caller integration and submit exact head for review; rollout stays disabled",
+      "remaining_action": "Chief reviews PR437 exact head before any host provisioning or capacity enablement",
       "kind": "assembly",
       "resource_unblock_notes": [
         "Ben-2026-11-03-resource-unblock"
@@ -162630,9 +162635,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T00:22Z",
+        "at": "2026-11-05T00:26Z",
         "by": "codex",
-        "note": "Committed d68ff39e69: isolated production callers, busy-serial hook, mounted return receipt intake and 11 passing caller"
+        "note": "Final head 17df4129184a6082f8c889864148fed5e55182fa: Rules CI green (817 script tests plus required suites), core CI gre"
       },
       "escalated_at": "2026-11-04T14:26Z"
     },
