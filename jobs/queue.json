@@ -182329,13 +182329,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-05T03:42Z",
-      "eta": "2026-11-05T05:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T03:35Z",
-      "result": "",
+      "result": "Implementation delivered for J2180 independent system review: PR512, commit 203763e323135a1a4eec6a4372678dd705085b4c. 12 legacy + 9 terminal-loop tests pass; exact logs and limitations in jobs/reviews/J2179. Proposed docs/rules await J2180; no self-merge or J2169 reopening. CI pending at handoff.",
       "history": [
         {
           "at": "2026-11-05T03:35Z",
@@ -182371,6 +182371,11 @@
           "at": "2026-11-05T03:50Z",
           "by": "codex",
           "what": "step 4 of 4 done: Delivered PR512 at 203763e323135a1a4eec6a4372678dd705085b4c; 21 tests pass, logs and review limits committed. No merge; J2169 unchanged."
+        },
+        {
+          "at": "2026-11-05T03:50Z",
+          "by": "codex",
+          "what": "done: Implementation delivered for J2180 independent system review: PR512, commit 203763e323135a1a4eec6a4372678dd705085b4c. 12 legacy + 9 terminal-loop tests pass; exact logs and limitations in jobs/reviews/J2179. Proposed docs/rules await J2180; no self-merge or J2169 reopening. CI pending at handoff."
         }
       ],
       "remaining_action": "J2180 must independently review PR512 before any production use",
@@ -182385,7 +182390,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/512"
     },
     {
       "id": "J2180",
