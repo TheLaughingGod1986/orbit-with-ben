@@ -65,6 +65,11 @@ class Machines(unittest.TestCase):
         s = {r["id"]: r for r in m.section({"jobs": []}, hb, None, AT)["machines"]}
         self.assertEqual(s["mini"]["now"], [])
 
+    def test_cloud_and_grok_last_seen_come_from_the_queue_history(self):
+        q = {"jobs": [done("J1", "claude", "2026-11-04T22:30Z"), done("J2", "chief", "2026-11-04T21:00Z")]}
+        s = {r["id"]: r for r in m.section(q, None, None, AT)["machines"]}
+        self.assertEqual((s["cloud"]["seen"], s["grok"]["seen"]), ("2026-11-04T22:30Z", "2026-11-04T21:00Z"))
+
     def test_unknown_agents_are_ignored(self):
         q = {"jobs": [{"id": "J1", "status": "claimed", "by": "someone", "title": "x"}]}
         self.assertTrue(all(not r["now"] for r in m.section(q, None, None, AT)["machines"]))

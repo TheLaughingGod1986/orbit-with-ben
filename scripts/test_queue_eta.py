@@ -65,6 +65,20 @@ class Forecast(unittest.TestCase):
         self.assertEqual((f["J0002"]["agent"], f["J0002"]["startAt"]), ("claude", "2026-11-05T10:50Z"))
         self.assertNotIn("J0001", run(d, book={"at": "2026-11-05T08:00:00Z"})["jobs"])  # stale MacBook
 
+    def test_what_the_mini_session_found_on_5_nov(self):
+        d = queue(("mini", "a", {}), ("macbook", "b", {}), ("cloud", "c", {}))
+        mini = {"at": "2026-11-05T09:55:00Z", "state": "running", "note": "woke Gemini for J2147 (cap 25 min)",
+                "chain": MINI["chain"] + [{"agent": "claude", "up": False, "why": "marked down: Chief inbox not progressed"}]}
+        book = {"at": "2026-11-05T09:58:00Z", "state": "waiting", "why": ["in use (3 min idle, needs 10)"]}
+        s = run(d, mini=mini, book=book)
+        lanes = {a["agent"]: a for a in s["agents"]}
+        self.assertEqual(lanes["gemini"]["now"], "J2147")  # running, not "free now"
+        self.assertFalse(lanes["macbook"]["up"])
+        self.assertIn("in use", lanes["macbook"]["why"])
+        self.assertFalse(lanes["claude"]["up"])
+        self.assertEqual(s["jobs"]["J0001"]["agent"], "codex")  # Gemini is busy, Codex is free
+        self.assertNotIn("J0002", s["jobs"])
+
     def test_pace_comes_from_jobs_finished_in_the_last_day(self):
         d = {"jobs": [{"status": "done", "history": [{"at": f"2026-11-05T0{i}:00Z", "by": "gemini", "what": "done: ok"}]}
                       for i in range(8)]}
