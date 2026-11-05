@@ -1,5 +1,5 @@
 {
-  "next_id": 2228,
+  "next_id": 2230,
   "jobs": [
     {
       "id": "J0001",
@@ -125425,6 +125425,11 @@
           "at": "2026-11-05T15:59Z",
           "by": "gemini",
           "what": "done: KEEP (jobs/reviews/J1356/REVIEW.md): AR1 v06 (3e6803ba5630351515333dc51a406d2d7921dcba434bd6e65760e979e9694fd0), AR2 v12 (6b0aacb1529618fb1c4835f3dbd96a372303acecdd4943fd0bb3721194ecb4e7), and AR3 v13 (3fce60c525eba31f3f014be9bd1c652ed37ad9fb2729ff38b776fbe826643a25) verified via direct moving-video/audio review and all complete-metadata tool gates (picture_qa, polish_gate, gate_shorts_open, music_gate, sfx_kit level, loop, decode, AAC preservation, h37/h40/h42/J1849 locks). Durable watch copies staged in OWB UAT and 06_Final-Exports, R2 Play links verified (owb-j1356-1-v06, owb-j1356-2-v12, owb-j1356-3-v13), and jobs.py awaits set for all three Shorts (J1356.1-3, due 2026-11-20 18:00 London). Originals and manifests preserved; no upload, schedule, or Buffer action."
+        },
+        {
+          "at": "2026-11-05T16:53Z",
+          "by": "claude",
+          "what": "Ben's ticks: AR1 OK -> J2228; AR2/AR3 changes -> J2229"
         }
       ],
       "remaining_action": "Waiting on Ben's final watch of AR1 v06, AR2 v12, and AR3 v13 (J1356.1-3); no upload/schedule until Ben OK and Chief scheduling",
@@ -186800,6 +186805,62 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2228",
+      "title": "AR1 v06 (2024 YR4 Moon) Short: Ben OK'd 5 Nov 16:32. Upload private and schedule Fri 27 Nov 11:30 London",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben OK'd AR1 v06 on the board (5 Nov 16:32 London; J1356 KEEP hash 3e6803ba...). Upload it private and schedule it for its conditional slot Fri 27 Nov 11:30 London (OWB:030 note), unless that slot is now taken (check UPLOADS.json/BUFFER_POSTS.json; then the next free Mon/Wed/Fri/Sat 11:30, never two Shorts a day). Title, description and tags from its package; record in UPLOADS.json, add Buffer posts. No public change before the slot.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T16:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T16:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "AR1 v06 (2024 YR4 Moon) Short: Ben OK'd 5 Nov 16:32. Upload private and schedule Fri 27 Nov 11:30 London",
+      "kind": "studio"
+    },
+    {
+      "id": "J2229",
+      "title": "AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben's notes on the board (5 Nov 16:34-16:35 London):\nAR2 v12 (Where Will the ISS Crash?): 0:12 half the screen cut off at the top; 0:18 ends strangely on 'because..'.\nAR3 v13 (2027 eclipse): 0:09 screen cut off at the top showing a black section; 0:18 ends on 'as ....' - he asks if it's on purpose.\nFix: (1) reframe those shots so nothing is cut and no black band shows (picture_qa/polish_gate near-black); (2) end each Short on a complete sentence. The mid-sentence loop ending reads as broken to Ben, so drop it for these two. Keep the audio locks except the final line. Rebuild, run all gates, then put AR2 v13 and AR3 v14 back on the board for Ben's watch with jobs.py awaits. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-05T16:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-05T16:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14",
+      "kind": "assembly"
     }
   ],
   "focus": [],

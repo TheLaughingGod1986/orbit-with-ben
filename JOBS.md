@@ -88,6 +88,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2224 | mini | open | – | – | for gemini · review · `gemini-argon` · Review J0912: Short A v03 picture_qa key-ribbon FIX decision |  |
 | J2226 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2227 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2210 |  |
+| J2228 | mini | open | – | – | studio · AR1 v06 (2024 YR4 Moon) Short: Ben OK'd 5 Nov 16:32. Upload private and schedule Fri 27 Nov 11:30 London |  |
+| J2229 | mini | open | – | – | assembly · AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14 |  |
 
 Recently finished:
 
