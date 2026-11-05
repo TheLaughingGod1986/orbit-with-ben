@@ -101123,6 +101123,11 @@
           "at": "2026-11-05T11:31Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Built S2/S5/S6 v07 stems, mixes, and overlays; finalizing exact 30-frame reverse loop tail so f0-vs-last and c37 loop_measures are <0.5 on all three"
+        },
+        {
+          "at": "2026-11-05T11:48Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Resolved ffmpeg split=4 tail freeze by building s07.mp4 from s00 frames [29..5, 2x4, 0] and using -qp 16 so f0 outside-bbox diff is <0.7 on all three; rendering v07 masters"
         }
       ],
       "due": "2026-11-01T20:00:00Z",
@@ -101144,14 +101149,14 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-05T11:31Z",
+        "at": "2026-11-05T11:48Z",
         "by": "gemini",
-        "note": "Built S2/S5/S6 v07 stems, mixes, and overlays; finalizing exact 30-frame reverse loop tail so f0-vs-last and c37 loop_me"
+        "note": "Resolved ffmpeg split=4 tail freeze by building s07.mp4 from s00 frames [29..5, 2x4, 0] and using -qp 16 so f0 outside-b"
       },
       "required_capabilities": [
         "audio_input"
       ],
-      "remaining_action": "Finish S2, S5, S6 v07 base+final renders with exact 30-frame reverse tail, run loop_h43.py and all 5 gates, listen to finished AACs, and deliver"
+      "remaining_action": "Render S2, S5, S6 v07 with exact 30-frame reverse tail and -qp 16, run loop_h43.py and all 5 gates, listen to finished AACs, and deliver"
     },
     {
       "id": "J1101",
