@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2177 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
 | J2184 | any | open (after J2181) | – | – | chief · HOS006: decide bounded fallback for four native-resolution source gaps | https://github.com/TheLaughingGod1986/history-of-science/pull/415 |
 | J2185 | any | claimed | macbook | 2026-11-05T06:47Z | assembly · Prevent queue Git transactions from publishing unrelated branch commits | J2182 |
+| J2186 | any | open | – | – | chief · System review J2185 metadata Git safety fix PR515 | J2185 |
 
 Recently finished:
 
