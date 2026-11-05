@@ -58,6 +58,7 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import chief_relay  # noqa: E402
 import routing  # noqa: E402
+import channels  # noqa: E402
 import workflow_state as workflow
 import workflow_handoffs as handoffs
 import studio  # noqa: E402
@@ -175,7 +176,7 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
 
 def film_named(title: str) -> bool:
     """A title that starts with a film number or names one with its channel (OWB 027, HOS 006)."""
-    return bool(re.match(r"\s*\d{3}\b", title) or re.search(r"\b(?:OWB|HOS)[ :]*\d{3}\b", title, re.I))
+    return bool(re.match(r"\s*\d{3}\b", title) or channels.key_re().search(title))
 
 
 # The MacBook takes Mini jobs that don't need the Mini (Ben, 5 Nov 2026: "Sounds good. Go ahead"; 48 of 49 open jobs
@@ -637,7 +638,7 @@ def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note
         raise ValueError("--action needs a plain remaining action of 1-180 characters")
     if films is not None:
         keys = list(dict.fromkeys(x.strip().upper() for x in films.split(",") if x.strip()))
-        if not keys or any(not re.fullmatch(r"(?:HOS|OWB):\d{3}", x) for x in keys):
+        if not keys or any(not channels.strict_key_re().fullmatch(x) for x in keys):
             raise ValueError("--films needs channel-qualified video ids, e.g. HOS:006 or OWB:028,OWB:029")
         job["taskKeys"] = keys
     if action is not None:
@@ -756,7 +757,8 @@ def do_approved(job: dict, src: dict, agent: str, at: dt.datetime, *, entry: int
             rec[k] = parse_not_before(v) if k == "airs" else v
     if not rec.get("what") and not rec.get("title"):
         raise ValueError(f"nothing to say what Ben approved: {src['id']} has no awaits entry; give --what (and --version, --airs)")
-    rec["channel"] = (rec.get("channel") or ("HOS" if (src.get("repo") or job.get("repo")) == "hos" else "OWB")).upper()
+    repo = src.get("repo") or job.get("repo")
+    rec["channel"] = (rec.get("channel") or channels.label(repo if repo in channels.slugs() else channels.home())).upper()
     rec.setdefault("number", str(src.get("film") or job.get("film") or ""))
     rec["job"] = src["id"]
     if len(items) > 1 and entry:
@@ -787,7 +789,7 @@ def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 # ----------------------------------------------------------------------------- board link (film/stage claims)
 def on_board(job: dict) -> bool:
     """Only OWB jobs have a film folder on this repo's studio board; HOS films live in the HOS checkout."""
-    return bool(job.get("film")) and job.get("repo", "owb") != "hos"
+    return bool(job.get("film")) and job.get("repo", channels.home()) == channels.home()
 
 
 def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
@@ -936,7 +938,7 @@ def main(argv=None) -> int:
     a.add_argument("--film", default="")
     a.add_argument("--stage", default="")
     a.add_argument("--after", default="")
-    a.add_argument("--repo", default="owb", choices=["owb", "hos"])
+    a.add_argument("--repo", default=channels.home(), choices=channels.slugs())
     a.add_argument("--eta", type=int, default=DEFAULT_ETA, help="minutes a claim lasts before it counts as stalled")
     a.add_argument("--by", required=True)
     a.add_argument("--for", dest="for_agent", default="", help="only this agent may claim it, e.g. codex; the relay wakes it")

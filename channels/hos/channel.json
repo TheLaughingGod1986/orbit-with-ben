@@ -1,0 +1,15 @@
+{
+  "slug": "hos",
+  "label": "HOS",
+  "name": "History of Science",
+  "home": false,
+  "order": 2,
+  "youtube": {"handle": "@HistoryOfScienceYT", "id": "UCXp7HkBIl1LgaznXuZHJyRg"},
+  "repo": {"url": "https://github.com/TheLaughingGod1986/history-of-science.git", "env": "HOS_REPO",
+           "checkouts": ["History Of Science", "history-of-science"]},
+  "title_match": "\\bHOS\\b|history of science",
+  "wip": {"limit": 4, "line": "next_hos"},
+  "stages": "from pipeline",
+  "pipeline": {"kind": "pipeline_json", "path": "00_Brand/Channel-Setup/PIPELINE.json"},
+  "uat_dir": {"env": "HOS_UAT_DIR", "icloud": "HOS UAT"}
+}

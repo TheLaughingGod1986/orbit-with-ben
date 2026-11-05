@@ -274,20 +274,19 @@ class TwoSlots(unittest.TestCase):
     def test_slot_one_starts_slot_two_in_its_own_clones(self):
         calls = []
         with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2), \
-                mock.patch.object(mw, "HOME", pathlib.Path(tempfile.mkdtemp())), \
-                mock.patch.dict(os.environ, {"OWB_CAPACITY_ENABLED": ""}):
+                mock.patch.object(mw, "HOME", pathlib.Path(tempfile.mkdtemp())):
             self.assertEqual(mw.start_other_slots(popen=lambda cmd, **kw: calls.append(kw["env"]), system="Darwin"), [2])
         env = calls[0]
         self.assertEqual(env["MACBOOK_SLOT"], "2")
         self.assertTrue(env["OWB_REPO"].endswith("worker/slot2/orbit-with-ben"))
         self.assertTrue(env["HOS_REPO"].endswith("worker/slot2/history-of-science"))
 
-    def test_no_second_slot_off_the_mac_from_slot_two_or_in_capacity_mode(self):
+    def test_no_second_slot_off_the_mac_or_from_slot_two(self):
         never = lambda *a, **k: self.fail("started a slot")  # noqa: E731
         with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2):
             self.assertEqual(mw.start_other_slots(popen=never, system="Linux"), [])
-            with mock.patch.dict(os.environ, {"OWB_CAPACITY_ENABLED": "1"}):
-                self.assertEqual(mw.start_other_slots(popen=never, system="Darwin"), [])
+        with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 1):
+            self.assertEqual(mw.start_other_slots(popen=never, system="Darwin"), [])
         with mock.patch.object(mw, "SLOT", 2):
             self.assertEqual(mw.start_other_slots(popen=never, system="Darwin"), [])
 

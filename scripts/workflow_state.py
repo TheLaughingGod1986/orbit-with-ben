@@ -4,6 +4,8 @@ import datetime as dt
 import re
 from zoneinfo import ZoneInfo
 
+import channels
+
 LIVE = {"open", "claimed", "blocked"}
 MINI = {"mini", "gemini", "any"}
 STALL_GRACE = dt.timedelta(minutes=45)
@@ -205,7 +207,7 @@ def near_watch(tracker):
         if not isinstance(video, dict) or video.get("type") != "long" or video.get("lane") not in {"upcoming", "progress", "changes"}:
             continue
         key = video.get("key", "")
-        if not isinstance(key, str) or not re.fullmatch(r"(?:OWB|HOS):\d{3}", key):
+        if not isinstance(key, str) or not channels.strict_key_re().fullmatch(key):
             continue
         production = video.get("production")
         milestones = production.get("milestones") if isinstance(production, dict) else []
@@ -224,11 +226,11 @@ def order(j, due, focus=(), at=None, nearest=()):
     # claim. They still represent production work (e.g. J1471); do not rank
     # them as unlinked administration behind every single-film draft.
     keys = j.get("taskKeys")
-    production_keys = {key for key in keys if isinstance(key, str) and re.fullmatch(r"(?:HOS|OWB):\d{3}", key)} if isinstance(keys, list) else set()
+    production_keys = {key for key in keys if isinstance(key, str) and channels.strict_key_re().fullmatch(key)} if isinstance(keys, list) else set()
     if isinstance(film, str) and film.strip():
         production_keys.add(film)
         if re.fullmatch(r"\d{3}", film):
-            production_keys.add(("HOS" if j.get("repo") == "hos" else "OWB") + ":" + film)
+            production_keys.add(channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home()) + ":" + film)
     urgent = j.get("urgent")
     rank = urgent if isinstance(urgent, int) and not isinstance(urgent, bool) else 0
     created = timestamp(j.get("created_at") or j.get("addedAt") or next((h.get("at") for h in j.get("history", []) if h.get("at")), None))

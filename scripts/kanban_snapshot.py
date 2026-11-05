@@ -29,6 +29,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -112,18 +115,18 @@ def completed_jobs(alljobs: list[dict], at=None) -> list[dict]:
         keys = set(j["taskKeys"] or [])
         if not keys:
             keys.update(m[0].upper() + ":" + m[1] for m in
-                        re.findall(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", j["title"], re.I))
+                        channels.key_re().findall(j["title"]))
             film = str(j["film"])
-            if re.fullmatch(r"(HOS|OWB):\d{3}", film):
+            if channels.strict_key_re().fullmatch(film):
                 keys.add(film)
             elif not keys:
                 no = film if re.fullmatch(r"\d{3}", film) else (re.match(r"^\s*(\d{3})\b", j["title"]) or [""])[0].strip()
                 if no:
-                    ch = "HOS" if j["repo"] == "hos" or re.search(r"\bHOS\b|history of science", j["title"], re.I) else "OWB"
+                    ch = channels.label_of_job(j)
                     keys.add(ch + ":" + no)
             keys.update(m[0].upper() + ":" + m[1] for m in
-                        re.findall(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", j["result"], re.I))
-        targets = {(key, j["stage"]) for key in keys if re.fullmatch(r"(HOS|OWB):\d{3}", key)}
+                        channels.key_re().findall(j["result"]))
+        targets = {(key, j["stage"]) for key in keys if channels.strict_key_re().fullmatch(key)}
         if i < 60 or _t(j["at"]) >= at - timedelta(days=1) or targets - seen:
             kept.append(j)
         seen.update(targets)
@@ -398,7 +401,7 @@ def load_briefs() -> dict:
     if not BRIEFS.exists():
         return {}
     films = json.loads(BRIEFS.read_text()).get("films", {})
-    bad = [k for k in films if not re.fullmatch(r"(HOS|OWB):\d{3}", k)]
+    bad = [k for k in films if not channels.strict_key_re().fullmatch(k)]
     urls = [u for u in [json.loads(BRIEFS.read_text()).get("uatFolderUrl", "")] + [b.get("uatUrl", "") for b in films.values()] if u]
     if any(not u.startswith("https://www.icloud.com/") for u in urls):
         raise SystemExit("film_briefs.json: UAT links must be https://www.icloud.com/ share links")
