@@ -1,0 +1,25 @@
+{
+  "codex": {
+    "at": "2026-11-05T18:21:05Z",
+    "expiresAt": "2026-11-05T18:51:05Z",
+    "available": [],
+    "evidence": "Session tools inspected: text shell output and static image viewing available; no demonstrated native moving-video or audio perception. No audio_input or moving_video_input claimed.",
+    "source": "self"
+  },
+  "gemini": {
+    "at": "2026-11-05T18:19:42Z",
+    "expiresAt": "2026-11-05T19:19:42Z",
+    "available": [
+      "audio_input"
+    ],
+    "evidence": "relay probe of gemini, fresh clips, file tools only: audio PASS (said 'The hollow kettle folded nineteen kettles beside the amber lighthouse.'; heard 'The hollow kettle folded nineteen kettles beside the amber lighthouse.'; match 1.00); video FAIL (truth left_to_right green>red>blue; answer none )",
+    "source": "probe"
+  },
+  "cursor": {
+    "at": "2026-11-05T17:31:53Z",
+    "expiresAt": "2026-11-05T18:01:53Z",
+    "available": [],
+    "evidence": "session start: text and code tools only; no player window, no audio probe; ffmpeg/ASR/model name not treated as perception",
+    "source": "self"
+  }
+}
