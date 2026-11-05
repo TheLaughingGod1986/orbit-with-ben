@@ -180419,7 +180419,7 @@
     {
       "id": "J2146",
       "title": "Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21)",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "LEARNINGS rule 21 (test; Ben's go 4 Nov 2026). Plan the first monthly journey film: one 40-60 min calm long stitched from our finished OWB longs (023-030) into one story, working title 'A Journey to Every World We've Landed On' or similar. Deliver jobs/reviews/<id>/JOURNEY_01_PLAN.md: (1) the running order and which minutes of which locked cut each part reuses; (2) new linking VO lines (script, cold open with its own line-1 claim, chapter cards); (3) the bed plan (one ambient bed, chapter cues); (4) title, three thumbnail concepts, description and chapters; (5) the ElevenLabs credit estimate for the linking VO and bed (stay inside the existing flat fee, no top-up). It's a long built from longs, not a Shorts compilation (rule 9). It takes the next WIP slot when 031 or 032 reaches Ben's watch. Then queue the VO, assembly and review jobs with --film J01.\n",
       "ref": "",
@@ -180459,12 +180459,25 @@
           "at": "2026-11-05T02:54Z",
           "by": "relay",
           "what": "handed back: Claude is back online"
+        },
+        {
+          "at": "2026-11-05T03:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Journey film 01: plan and linking script from 023-030 (LEARNINGS rule 21)",
       "due": "2026-11-15T00:00:00Z",
-      "for": "claude",
-      "kind": "script"
+      "for": "gemini",
+      "kind": "script",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "claude",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J2147",
