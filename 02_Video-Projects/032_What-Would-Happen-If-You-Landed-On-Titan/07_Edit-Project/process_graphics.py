@@ -106,17 +106,27 @@ def frame(s, t=1.8):
         text(d,(1030,950),lines[3],38)
     elif k in ('partners','missing'):
         text(d,(170,260),lines[0],70,GOLD)
-        text(d,(760,260),lines[1],52,BLUE if k=='partners' else DIM)
-        arrow(d,(320,380),(320+480*p,380+270*p),BLUE)
-        arrow(d,(1030,380),(1030-160*p,380+270*p),BLUE)
+        text(d,(860 if k=='partners' else 760,260),lines[1],52,BLUE if k=='partners' else DIM)
+        # J2192: arrows stop above the central symbol, never on its strokes.
+        arrow(d,(320,380),(320+500*p,380+215*p),BLUE)
+        right_x=960 if k=='partners' else 1030
+        arrow(d,(right_x,380),(right_x+(940-right_x)*p,380+215*p),
+              BLUE if k=='partners' else DIM)
         text(d,(840,740),lines[2],80,GOLD)
         if k=='partners':
-            x,y=1120,650
-            d.polygon([(x-50,y),(x-25,y-80-15*math.sin(t*4)),(x+50,y)],fill=GOLD)
+            # Symmetric outer/inner flame at the convergence, directly above FIRE.
+            x,y=880,660
+            sway=10*math.sin(t*4)
+            d.polygon([(x,y-50-sway),(x-22,y-18),(x-38,y-30),
+                       (x-48,y+12),(x-35,y+37),(x,y+48),
+                       (x+35,y+37),(x+48,y+12),(x+38,y-30),
+                       (x+22,y-18)],fill=GOLD)
+            d.polygon([(x,y-10),(x-18,y+20),(x-12,y+35),
+                       (x,y+40),(x+12,y+35),(x+18,y+20)],fill=WHITE)
         else:
             # Almost none, never a quantitative zero measurement.
-            d.line((830,620,930,700),fill=DIM,width=7)
-            d.line((930,620,830,700),fill=DIM,width=7)
+            d.line((830,625,930,705),fill=DIM,width=7)
+            d.line((930,625,830,705),fill=DIM,width=7)
     elif k=='lift':
         # Airfoil is an engineering symbol, never a flat planetary disc.
         cy=540-12*math.sin(t*2)

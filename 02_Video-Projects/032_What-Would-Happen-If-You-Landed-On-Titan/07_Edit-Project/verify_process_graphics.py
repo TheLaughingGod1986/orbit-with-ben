@@ -5,7 +5,7 @@ from PIL import ImageChops
 here=Path(__file__).resolve().parent
 sys.path.insert(0,str(here))
 import process_graphics as g
-out=Path('/Users/benjaminoats/_desk/cache/J2089/process_previews_v01')
+out=Path('/Users/benjaminoats/_desk/cache/J2089/process_previews_v02')
 subprocess.run([sys.executable,str(here/'process_graphics.py'),'--out',str(out)],check=True)
 records=[]
 for spec in g.SPECS:
@@ -27,6 +27,6 @@ for extra in [[],['--approved','invalid','--review-ref','TEST']]:
  assert r.returncode==2
 assert not (out/'guard_probe').exists()
 result=dict(job='J2089',status='MEASUREMENTS_ONLY_NO_APPROVAL',drafts=records,preview_hashes='MATCH',render_guard='MISSING_APPROVAL_AND_UNKNOWN_ID_REJECTED_EXIT_2',visual_still_inspection='Codex inspected all seven full-size stills; not motion or composite review',rain_scale=dict(diameter_ratio=9.5/6.5,fall_speed_ratio=9.2/1.6,spatial_speed_scale='10 pixels per second per m/s, same for both; linear; no wrap within 3.6s'),not_verified=['Source/label review decision','Actual moving-plate contrast and placement','Native motion perception','Final picture, music and polish gates'])
-(here/'PROCESS_VERIFICATION_v01.json').write_text(json.dumps(result,indent=2)+'\n')
-for name in ['PROCESS_MANIFEST_v01.json','PROCESS_CHECKS_v01.json']:(here/name).write_bytes((out/name).read_bytes())
+(here/'PROCESS_VERIFICATION_v02.json').write_text(json.dumps(result,indent=2)+'\n')
+for name in ['PROCESS_MANIFEST_v01.json','PROCESS_CHECKS_v01.json']:(here/name.replace('_v01','_v02')).write_bytes((out/name).read_bytes())
 print('7 preview hashes match; 763 sampled frames within safe area; entry/exit transparency and changing frames checked; both render guards exit 2; no media rendered.')
