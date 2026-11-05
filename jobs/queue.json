@@ -186933,10 +186933,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-05T21:11Z",
+      "eta": "2026-11-05T21:41Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T12:53Z",
       "result": "",
@@ -186945,6 +186945,11 @@
           "at": "2026-11-05T12:53Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T21:11Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Apply J1889 KEEP social-source exceptions in UPLOADS.json and mirror iyvWYFP_ETA (9 Nov 11:30Z) & RLSJm59OSzI (10 Nov 11:30Z) to R2/Buffer",
@@ -186952,7 +186957,15 @@
       "kind": "chief",
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-05T21:11Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2217",
