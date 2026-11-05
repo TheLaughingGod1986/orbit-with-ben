@@ -154,15 +154,15 @@ def manifest(root: pathlib.Path, skip=(MARKER, "SHA256SUMS.txt")) -> dict[str, t
     return {str(p.relative_to(root)): (p.stat().st_size, sha256(p)) for p in tree_files(root) if p.name not in skip}
 
 
-def nas_manifest(dst: pathlib.Path, src_keys) -> dict[str, tuple[int, str]]:
+def nas_manifest(dst: pathlib.Path, src: pathlib.Path) -> dict[str, tuple[int, str]]:
     """The NAS writes an AppleDouble `._name` beside each copied file that has extended attributes (Claude, 5 Nov
     2026: every desk-cache move failed its check on `._crew2_351_374.mp4`). Ignore only those, never other extras."""
     def apple(k):
         p = pathlib.PurePath(k)
         if not p.name.startswith("._"):
             return False
-        twin = str(p.with_name(p.name[2:]))
-        return twin in src_keys or any(k.startswith(twin + "/") for k in src_keys)  # a file's or a folder's
+        twin = src / p.with_name(p.name[2:])
+        return twin.exists() or twin.is_symlink()  # a file's or a folder's (even an empty one, or symlinks only)
     return {k: v for k, v in manifest(dst).items() if not apple(k)}
 
 
@@ -204,7 +204,7 @@ def offload_one(src: pathlib.Path, nas: pathlib.Path, today: str, at: str) -> di
         return {"path": str(src), "ok": False, "why": "no files"}
     dst = dest_for(src, nas, today)
     copy_tree(src, dst)
-    after = nas_manifest(dst, set(before))
+    after = nas_manifest(dst, src)
     if after != before:
         missing = sorted(set(before) - set(after))[:3]
         diff = sorted(k for k in before if k in after and before[k] != after[k])[:3]

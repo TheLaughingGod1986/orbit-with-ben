@@ -84,12 +84,17 @@ class Offload(unittest.TestCase):
         # 5 Nov 2026: the Synology share adds ._name beside files with extended attributes.
         old = self.scratch / "old"
         make(old, {"a.mov": MB, "sub/b.wav": MB}, age_h=100)
+        (old / "empty").mkdir()
+        then = time.time() - 100 * 3600
+        for p in (old / "empty", old):
+            os.utime(p, (then, then))
         real = no.copy_tree
 
         def with_appledouble(src, dst):
             real(src, dst)
             (dst / "._a.mov").write_bytes(b"\0" * 4096)
             (dst / "._sub").write_bytes(b"\0" * 4096)  # a folder's AppleDouble too
+            (dst / "._empty").write_bytes(b"\0" * 4096)  # and an empty folder's (npm-cache/_cacache/tmp, J1847)
         no.copy_tree = with_appledouble
         try:
             rep = self.run_offload()
