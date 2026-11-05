@@ -166637,7 +166637,7 @@
       "ref": "J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z",
       "film": "008",
       "stage": "edit",
-      "after": "",
+      "after": "J2217",
       "eta_min": 120,
       "status": "blocked",
       "by": "gemini",
@@ -166645,7 +166645,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T18:57Z",
-      "result": "parked for Chief: review J1881 KEEP (jobs/reviews/J1881/REVIEW.md, HOS PR #411 50620e40 + PR #428 51bf99a6, 4/4 CI green, 14/14 unit tests, check_all PASS, 6/6 dry-run inputs verified) — 8-item + 27-caption closed-GOP recipe verified (`0:51` [1129,1231], `3:13` [4511,4670], `2:18` frame 3305 inside replace [3260,3343], 27 closed-GOP caption windows [0,141]..[12297,12461]); chained production jobs queued: J2241 (bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 rods, <=3 takes/300 cr each, <=900 cr cap, GBP0) -> J2242 (closed-GOP packet/boundary splice + 27 unbordered umber caption panels -> master_v04 + gates) -> J2243 (multimodal audio+video QA). Merge HOS PR #411 + #428 and close J1881 done to authorize J2241.",
+      "result": "Acting-Chief FIX recorded: 14 planner tests and 6-input dry-run pass; closed-GOP/media claims unsupported. J2217 reopened for five exact fixes. J2241 capability hold; J2242/J2243 dependencies preserved. No production or merge authorized.",
       "history": [
         {
           "at": "2026-11-03T18:57Z",
@@ -166811,9 +166811,19 @@
           "at": "2026-11-05T18:52Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review J1881 KEEP (jobs/reviews/J1881/REVIEW.md, HOS PR #411 50620e40 + PR #428 51bf99a6, 4/4 CI green, 14/14 unit tests, check_all PASS, 6/6 dry-run inputs verified) — 8-item + 27-caption closed-GOP recipe verified (`0:51` [1129,1231], `3:13` [4511,4670], `2:18` frame 3305 inside replace [3260,3343], 27 closed-GOP caption windows [0,141]..[12297,12461]); chained production jobs queued: J2241 (bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 rods, <=3 takes/300 cr each, <=900 cr cap, GBP0) -> J2242 (closed-GOP packet/boundary splice + 27 unbordered umber caption panels -> master_v04 + gates) -> J2243 (multimodal audio+video QA). Merge HOS PR #411 + #428 and close J1881 done to authorize J2241."
+        },
+        {
+          "at": "2026-11-05T20:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-06T01:20:00Z"
+        },
+        {
+          "at": "2026-11-05T20:49Z",
+          "by": "codex",
+          "what": "Elected-Chief ruling FIX; review pass complete, original production scope remains held. See jobs/reviews/J1881/REVIEW.md latest ruling. Worker 4/4 steps preserved, not reused."
         }
       ],
-      "remaining_action": "Chief: merge HOS PR #411 + #428 (51bf99a6) and close J1881 done to authorize J2241 (<=900 Flow cr) -> J2242 -> J2243",
+      "remaining_action": "J2217 repairs recipe; then J1881 scopes production; J2241 additionally needs verified moving-video input",
       "due": "2026-11-04T14:00:00Z",
       "kind": "review",
       "progress": {
@@ -166836,7 +166846,12 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/428"
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/428",
+      "hold": {
+        "type": "dependency",
+        "condition": "J2217 must deliver the five-point J1881 FIX on PR428: truthful GOP/capability evidence, P3 retake CLI/tests, explicit clock disposition, concrete caption treatment and real Flow preflight. Review immediately on delivery.",
+        "check_at": "2026-11-06T01:20:00Z"
+      }
     },
     {
       "id": "J1882",
@@ -186938,19 +186953,19 @@
       "title": "HOS 008: amend Franklin recipe to eight-item + film-wide captions (Ben 5 Nov)",
       "needs": "mini",
       "repo": "hos",
-      "body": "HOS 008 Franklin v03 — no-spend recipe amend after Ben’s 5 Nov second review.\n\nPredecessor J2163 delivered HOS PR #411 commit 50620e40 (six-row repaired recipe/planner; all original notes unresolved; no render). Ben then filed a second v03 review on desk PR #180 (comment 6658371896); Claude advisory 6658387533. Chief folded scope into J1881 and this job before any splice.\n\n## Scope (eight defect items + film-wide captions)\nPreserve Ben’s verbatim wording in:\n  02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/J1868_BEN_NOTES_2026-11-05.md\n  and the dated section of J1868_UAT_CORRECTIONS.md\n\nNet list (none resolved):\n1. 00:20 bottom text readability — now **film-wide**: every bottom on-screen text over moving footage gets a background panel (not bordered UI chrome; settles PR #411 remove-bordered-UI point). Wider than the single 00:20 note.\n2. 0:30 flash next scene (original)\n3. **0:51 NEW** hair flying out the tube — **rebuild**, not trim. Check if same source as 1:49. (3 Nov was 1:49 only.)\n4. 1:49 hair/tube (original; still in scope)\n5. 2:18 jar flips upside down ≈ 3 Nov 2:20 (P2:07_foil_jar). Confirm defect is **outside** J1880 kept frames 0–91 (~2:12–2:16 / display 3168–3259). Chief still check: 138 s is OUT of keep, IN replace zone ~136.12–139.58 s.\n6. 2:20 silver foil (original; same jar/foil family)\n7. **3:13 NEW** paper seems to roll out the globe (3 Nov was 3:31 map — new defect row)\n8. 3:31 map/diagram (original)\n9. 7:58/7:59 rods on churches fall (already in scope)\n\nQueue language: eight items = original six + 0:51 hair + 3:13 paper; caption treatment film-wide.\n\n## Required deliverable (code/evidence only)\n- Extend PR #411’s six-row manifest/planner to **eight rows** + film-wide caption treatment.\n- Map 0:51 and 3:13 against master PTS (master sha cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b).\n- Document 2:18 vs kept jar window in the recipe evidence.\n- Keep read-only planner: **refuse execution** until J1881 re-reviews this amend (no splice, no replacement render, no spend, no upload, no YouTube).\n- Do **not** merge PR #411 or #180. Do not mark any note resolved. Preserve h22/h35, J1297, J1755 publication rejection.\n- GBP0. Tests may use small synthetic fixtures only.\n\n## After done\nHand evidence back to open J1881 for re-review of the eight-item recipe before any production assembly is scoped. J1881 must not authorize render from the old six-only list.\n",
+      "body": "HOS 008 Franklin v03 — no-spend recipe amend after Ben’s 5 Nov second review.\n\nPredecessor J2163 delivered HOS PR #411 commit 50620e40 (six-row repaired recipe/planner; all original notes unresolved; no render). Ben then filed a second v03 review on desk PR #180 (comment 6658371896); Claude advisory 6658387533. Chief folded scope into J1881 and this job before any splice.\n\n## Scope (eight defect items + film-wide captions)\nPreserve Ben’s verbatim wording in:\n  02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/J1868_BEN_NOTES_2026-11-05.md\n  and the dated section of J1868_UAT_CORRECTIONS.md\n\nNet list (none resolved):\n1. 00:20 bottom text readability — now **film-wide**: every bottom on-screen text over moving footage gets a background panel (not bordered UI chrome; settles PR #411 remove-bordered-UI point). Wider than the single 00:20 note.\n2. 0:30 flash next scene (original)\n3. **0:51 NEW** hair flying out the tube — **rebuild**, not trim. Check if same source as 1:49. (3 Nov was 1:49 only.)\n4. 1:49 hair/tube (original; still in scope)\n5. 2:18 jar flips upside down ≈ 3 Nov 2:20 (P2:07_foil_jar). Confirm defect is **outside** J1880 kept frames 0–91 (~2:12–2:16 / display 3168–3259). Chief still check: 138 s is OUT of keep, IN replace zone ~136.12–139.58 s.\n6. 2:20 silver foil (original; same jar/foil family)\n7. **3:13 NEW** paper seems to roll out the globe (3 Nov was 3:31 map — new defect row)\n8. 3:31 map/diagram (original)\n9. 7:58/7:59 rods on churches fall (already in scope)\n\nQueue language: eight items = original six + 0:51 hair + 3:13 paper; caption treatment film-wide.\n\n## Required deliverable (code/evidence only)\n- Extend PR #411’s six-row manifest/planner to **eight rows** + film-wide caption treatment.\n- Map 0:51 and 3:13 against master PTS (master sha cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b).\n- Document 2:18 vs kept jar window in the recipe evidence.\n- Keep read-only planner: **refuse execution** until J1881 re-reviews this amend (no splice, no replacement render, no spend, no upload, no YouTube).\n- Do **not** merge PR #411 or #180. Do not mark any note resolved. Preserve h22/h35, J1297, J1755 publication rejection.\n- GBP0. Tests may use small synthetic fixtures only.\n\n## After done\nHand evidence back to open J1881 for re-review of the eight-item recipe before any production assembly is scoped. J1881 must not authorize render from the old six-only list.\n\n\n## J1881 elected-Chief FIX (5 Nov, codex)\n**Exact corrections required in J2217 (no-spend planning/code only):**\n\n1. Correct the evidence level. Keyframe flags and aligned envelopes do not prove closed GOPs; the planner itself says dependency validation is outstanding. Rename these candidate keyframe/GOP envelopes unless dependency inspection actually proves closure. Keep original PTS/durations and unchanged-frame/audio preservation requirements. Production J2242 must prove dependencies and preservation before accepting its output.\n2. Add the missing `--retake-p3-01` and SHA256 argument/validation path to the read-only planner, with 160-frame minimum and missing/hash/short-input tests. The production brief currently names an option the reviewed code does not accept. Keep execution refused; implementing the splicer remains J2242, not this repair.\n3. Reconcile 0:51 disposition explicitly: the manifest currently retains a distinct rebuild while the review/production brief says leave the night street untouched and rebuild salon. Preserve Ben's exact wording, distinguish source-map evidence from native perception, and state the proposed salon retarget as an inference pending capable in-context confirmation. Never silently mark this note resolved. Also keep 2:18 jar flip and 2:20 foil/next-spark boundary distinct checks; 140s lies beyond replacement ending 139.625s.\n4. Turn the 27-caption inventory into a concrete planned treatment table (still no render): <=4-word sequential labels where current entries exceed four words, actual master-derived timing for each, <=4s static hold, one label at a time, unbordered umber background over moving plate. Preserve locked spoken words; no new dates/numbers/claims without existing FACT_NOTES/SOURCES support. Reconcile all bottom text, not merely assume side_label inventory proves film-wide coverage.\n5. Correct spend preflight: `ai_spend.py check` is nonexistent (CLI accepts record/spend/report/doc). Specify actual live Flow account balance and displayed Quality price read through the existing approved Flow route; log via record/spend, subtract unposted spends, enforce <=3 takes and <=300 subscription credits per plate / <=900 total, GBP0, no top-ups/overage. No spend authorization in this FIX ruling.\n\n\nDeliver on existing HOS PR428, preserving PR411 and original evidence. No generation or replacement render. Return revised recipe to J1881 immediately.\n",
       "ref": "J1881 / HOS PR411 50620e40 / Ben 6658371896 / advisory 6658387533",
       "film": "008",
       "stage": "edit",
       "after": "J2163",
       "eta_min": 90,
-      "status": "done",
-      "by": "cursor",
-      "since": "2026-11-05T18:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T12:54Z",
-      "result": "HOS PR 428 c7635bb2: eight-row read-only recipe. 0:51 frame 1220 on hot-night 1129-1232, not the 1:49 salon. 3:13 frame 4621 on points-desk 4513-4672 (13-frame residual before the map). 2:18 frame 3305 outside keep, inside replace. Film-wide unbordered caption panel. Execute refused until J1881 re-reviews. 14 tests OK. GBP0. No note resolved.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T12:54Z",
@@ -187011,20 +187026,18 @@
           "at": "2026-11-05T18:35Z",
           "by": "cursor",
           "what": "done: HOS PR 428 c7635bb2: eight-row read-only recipe. 0:51 frame 1220 on hot-night 1129-1232, not the 1:49 salon. 3:13 frame 4621 on points-desk 4513-4672 (13-frame residual before the map). 2:18 frame 3305 outside keep, inside replace. Film-wide unbordered caption panel. Execute refused until J1881 re-reviews. 14 tests OK. GBP0. No note resolved."
+        },
+        {
+          "at": "2026-11-05T20:49Z",
+          "by": "codex",
+          "what": "reopened: J1881 acting-Chief FIX: repair evidence levels, missing P3 CLI, explicit clock disposition, caption treatment and spend preflight; no render/spend."
         }
       ],
-      "remaining_action": "Hand the eight-item recipe to J1881 for re-review",
+      "remaining_action": "Repair J1881 five-point recipe/evidence FIX on PR428; no-spend read-only planner and caption timing table",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-05T18:35Z",
-        "by": "cursor",
-        "note": "PR 428 c7635bb2. 0:51 frames 1129-1232. 3:13 frames 4513-4672 with a 13-frame residual. Execute still refused. 14 tests "
-      },
       "done_ref": "c7635bb2"
     },
     {
@@ -188224,41 +188237,54 @@
       "title": "HOS 008 Franklin: mint bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 church/ship rods (<=3 takes/300 cr each, <=900 cr cap, GBP0)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Bounded HOS 008 Flow Veo 3.1 Quality retake job scoped by J1881 (HOS PR #428 commit 51bf99a6). Subscription credit only (GBP0 cash; never top up, buy credits, or enable paid overage; run `ai_spend.py check` before every take and `ai_spend.py spend` after).\n\n## Scope (3 plates, <=3 takes / <=300 subscription credits each, <=900 credits total cap)\n1. **Row 4 (`1:49` / `1:51.33s` end, `P2:02_salon_spark`, master frames `2506..2665`, `160f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part02/refs/v03_flow_stills/02_salon_spark_t1.png` (`sha256: aefd6338aded1037c11306a99fc580d1a62a66d9367409f01e0edd993cc8cc58`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); lecturer rubs solid sealed glass rod with silk and draws a crisp spark to a guest's knuckle while fine hair tips lift gently in place; `0` hair/smoke/cotton extruding from or detaching near the glass tube.\n   - Note on Row 3 (`0:51`, `P1:07_hot_night`, frames `1129..1231`): `07_hot_night_t1.mp4` (`30da07fe...`) is the colonial night street with no glass tube or hair; keep `07_hot_night_t1.mp4` untouched unless Chief explicitly directs a separate Part 1 night-street retake.\n2. **Row 6 (`3:13`, `P3:01_points_desk`, master frames `4511..4670`, `160f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part03/refs/v03_flow_stills/01_points_desk_t1.png` (`sha256: cc16a515a43e881c54a207eb2cb3f700ab9a4166bbb83a366dc09431db403e51`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); Franklin holds a pointed iron needle near the spinning brass electrostatic globe while a single thin linen indicator thread hangs/deflects cleanly; `0` paper strips or receipts unrolling out of the brass globe (clean prefix `4511..4606` = `96f` documented in manifest).\n3. **Row 8 (`7:58` / `7:59`, `P5:13_rods_spread`, master frames `11358..11492`, `135f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part05/refs/v03_flow_stills/13_rods_spread_t1.png` (`sha256: 84a92bf6ce1abd1a5780c37ac2e8ae50ea6099f5cff5c7f728a70060b394819c`).\n   - Requirement: `>=135` decoded frames (`>=5.65s` @ 24fps); straight, rigid, vertical anchored lightning rods on church steeple, brick house roof, and harbor ship mast; `0` kinks, `0` tilting, `0` detaching or falling rods.\n\nVerify all selected takes with native `moving_video_input` (`chief_relay.py capabilities`), `probe_video()`, and SHA-256 hashes before handing off to assembly.",
+      "body": "Bounded HOS 008 Flow Veo 3.1 Quality retake job scoped by J1881 (HOS PR #428 commit 51bf99a6). Subscription credit only (GBP0 cash; never top up, buy credits, or enable paid overage; read the live Flow balance and displayed Quality price through the existing approved Flow route before every take; log via `ai_spend.py record` and `ai_spend.py spend` (there is no check subcommand)).\n\n## Scope (3 plates, <=3 takes / <=300 subscription credits each, <=900 credits total cap)\n1. **Row 4 (`1:49` / `1:51.33s` end, `P2:02_salon_spark`, master frames `2506..2665`, `160f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part02/refs/v03_flow_stills/02_salon_spark_t1.png` (`sha256: aefd6338aded1037c11306a99fc580d1a62a66d9367409f01e0edd993cc8cc58`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); lecturer rubs solid sealed glass rod with silk and draws a crisp spark to a guest's knuckle while fine hair tips lift gently in place; `0` hair/smoke/cotton extruding from or detaching near the glass tube.\n   - Note on Row 3 (`0:51`, `P1:07_hot_night`, frames `1129..1231`): `07_hot_night_t1.mp4` (`30da07fe...`) is the colonial night street with no glass tube or hair; keep `07_hot_night_t1.mp4` untouched unless Chief explicitly directs a separate Part 1 night-street retake.\n2. **Row 6 (`3:13`, `P3:01_points_desk`, master frames `4511..4670`, `160f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part03/refs/v03_flow_stills/01_points_desk_t1.png` (`sha256: cc16a515a43e881c54a207eb2cb3f700ab9a4166bbb83a366dc09431db403e51`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); Franklin holds a pointed iron needle near the spinning brass electrostatic globe while a single thin linen indicator thread hangs/deflects cleanly; `0` paper strips or receipts unrolling out of the brass globe (clean prefix `4511..4606` = `96f` documented in manifest).\n3. **Row 8 (`7:58` / `7:59`, `P5:13_rods_spread`, master frames `11358..11492`, `135f` required):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part05/refs/v03_flow_stills/13_rods_spread_t1.png` (`sha256: 84a92bf6ce1abd1a5780c37ac2e8ae50ea6099f5cff5c7f728a70060b394819c`).\n   - Requirement: `>=135` decoded frames (`>=5.65s` @ 24fps); straight, rigid, vertical anchored lightning rods on church steeple, brick house roof, and harbor ship mast; `0` kinks, `0` tilting, `0` detaching or falling rods.\n\nVerify all selected takes with native `moving_video_input` (`chief_relay.py capabilities`), `probe_video()`, and SHA-256 hashes before handing off to assembly.\nJ1881 acting-Chief FIX: proposed scope only, no generation authorization yet. Capability hold and predecessor must both clear.\n",
       "ref": "J1881 / HOS PR #428 51bf99a6",
       "film": "008",
       "stage": "picture",
       "after": "J1881",
       "eta_min": 120,
-      "status": "open",
+      "status": "blocked",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
-      "result": "",
+      "result": "Capability hold: no fresh demonstrated moving_video_input; Gemini latest probe failed video. Also dependent on J1881 approval; no generation authorized.",
       "history": [
         {
           "at": "2026-11-05T18:52Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T20:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-06T01:20:00Z"
         }
       ],
-      "remaining_action": "Check live Flow balance via ai_spend.py, mint <=3 Quality takes each for P2:02_salon_spark, P3:01_points_desk & P5:13_rods_spread, and verify in moving video",
+      "remaining_action": "Verify moving-video capability and J1881 scope approval, then live Flow balance/price before bounded retakes",
       "kind": "video",
       "required_capabilities": [
         "moving_video_input"
       ],
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "Fresh successful moving-video perception probe required before assignment: Gemini 19:17:49Z probe failed video and expired20:17:49Z; Codex/Cursor have no demonstrated video input. Recheck immediately on capability event; retain J1881 dependency.",
+        "check_at": "2026-11-06T01:20:00Z",
+        "requires": [
+          "moving_video_input"
+        ]
+      }
     },
     {
       "id": "J2242",
       "title": "HOS 008 Franklin: closed-GOP packet/boundary splice + 27 film-wide bottom-caption panels -> hos_008_master_v04.mp4 & gates (GBP0)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Bounded £0 new-version assembly job for HOS 008 Franklin (`hos_008_master_v04.mp4`), dependent on `J1881` and `J2241` (HOS PR #411 `50620e40` + PR #428 `51bf99a6`).\n\n## Required Implementation & Preservation Contract\n1. **Closed-GOP Packet Copy & Lossless Boundary Splicing:**\n   - Source master: `_precheck/master_v03/hos_008_master_v03.mp4` (`sha256: cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b`, `393,139,693` bytes, `12,923` frames, start `0.125s`, duration `539.500s`, timebase `1/12288`).\n   - Never globally re-encode or apply `setpts=N/24`. Copy unchanged closed-GOP video packets directly; re-encode only the declared closed-GOP patch windows (`[423,544]`, `[744,839]`, `[2506,2665]`, `[3168,3343]`, `[4511,4670]`, `[4977,5077]`, `[11358,11492]`, plus the remaining `side_label` closed GOPs in `caption_treatment.labels` `[0,141]`..`[12297,12461]`) matching exact source frame counts and original integer PTS/durations (including the 23 `1024`-tick steps).\n   - Verify bitwise-identical per-decoded-frame SHA-256 on every unchanged frame and stream-copy original `h35` master audio packets without timestamp shift (verify compressed audio packet hashes, PTS/DTS/durations, `-14.129 LUFS` / `-1.2 dBTP`, and `0.000 ms` VO sync lag).\n2. **Eight Defect Corrections + Film-Wide 27 Bottom-Caption Panels:**\n   - Apply the 8 row fixes in `J2163_CORRECTION_MANIFEST.json` (`eight_rows`) using verified on-disk inputs and `J2241` retakes (`--retake-p2-02`, `--retake-p3-01`, `--retake-p5-13`).\n   - Render the soft unbordered dark-umber background panel (`bordered_ui_chrome: false`, `border: false`, `gold_rule: false`, `pill_chrome: false`, white Didot italic `<=4` words, `0.3–0.5s` fade over moving plate, master-derived word alignment) across all 27 `side_label` closed GOPs (`[0,141]`..`[12297,12461]`).\n   - On `3:31` (`4977..5077`, `04_letter_crosses`), render one animated cream ink letter crossing over moving `07_slow_news_t1.mp4` (upper sky off ship, `0` brown boxes, `0` shoreline flash, `0` unsourced `3,600 MILES`).\n3. **Mandatory Gates (paste all PASS outputs):**\n   - `picture_qa.py`, `polish_gate.py`, `npm run gate:episode`, `npm run lint:package -- --film 008`, `music_gate.py`, `sfx_kit.py level`, `168×94` phone readability contact sheet for all 27 captions + `3:31` crossing, and `check_all.sh`.\n   - Preserve `master_v01`/`v02`/`v03`, `h22`/`h35`, `J1297`, and `J1755` publication rejection. Do not copy to UAT, upload to R2, or touch YouTube/Studio before `J2243` and Chief review.",
+      "body": "Bounded £0 new-version assembly job for HOS 008 Franklin (`hos_008_master_v04.mp4`), dependent on `J1881` and `J2241` (HOS PR #411 `50620e40` + PR #428 `51bf99a6`).\n\n## Required Implementation & Preservation Contract\n1. **Closed-GOP Packet Copy & Lossless Boundary Splicing:**\n   - Source master: `_precheck/master_v03/hos_008_master_v03.mp4` (`sha256: cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b`, `393,139,693` bytes, `12,923` frames, start `0.125s`, duration `539.500s`, timebase `1/12288`).\n   - Never globally re-encode or apply `setpts=N/24`. Copy unchanged closed-GOP video packets directly; re-encode only the declared closed-GOP patch windows (`[423,544]`, `[744,839]`, `[2506,2665]`, `[3168,3343]`, `[4511,4670]`, `[4977,5077]`, `[11358,11492]`, plus the remaining `side_label` closed GOPs in `caption_treatment.labels` `[0,141]`..`[12297,12461]`) matching exact source frame counts and original integer PTS/durations (including the 23 `1024`-tick steps).\n   - Verify bitwise-identical per-decoded-frame SHA-256 on every unchanged frame and stream-copy original `h35` master audio packets without timestamp shift (verify compressed audio packet hashes, PTS/DTS/durations, `-14.129 LUFS` / `-1.2 dBTP`, and `0.000 ms` VO sync lag).\n2. **Eight Defect Corrections + Film-Wide 27 Bottom-Caption Panels:**\n   - Apply the 8 row fixes in `J2163_CORRECTION_MANIFEST.json` (`eight_rows`) using verified on-disk inputs and `J2241` retakes (`--retake-p2-02`, `--retake-p3-01`, `--retake-p5-13`).\n   - Render the soft unbordered dark-umber background panel (`bordered_ui_chrome: false`, `border: false`, `gold_rule: false`, `pill_chrome: false`, white Didot italic `<=4` words, `0.3–0.5s` fade over moving plate, master-derived word alignment) across all 27 `side_label` closed GOPs (`[0,141]`..`[12297,12461]`).\n   - On `3:31` (`4977..5077`, `04_letter_crosses`), render one animated cream ink letter crossing over moving `07_slow_news_t1.mp4` (upper sky off ship, `0` brown boxes, `0` shoreline flash, `0` unsourced `3,600 MILES`).\n3. **Mandatory Gates (paste all PASS outputs):**\n   - `picture_qa.py`, `polish_gate.py`, `npm run gate:episode`, `npm run lint:package -- --film 008`, `music_gate.py`, `sfx_kit.py level`, `168×94` phone readability contact sheet for all 27 captions + `3:31` crossing, and `check_all.sh`.\n   - Preserve `master_v01`/`v02`/`v03`, `h22`/`h35`, `J1297`, and `J1755` publication rejection. Do not copy to UAT, upload to R2, or touch YouTube/Studio before `J2243` and Chief review.\nJ1881 acting-Chief FIX: keyframe envelopes are candidates, not proven closed GOPs. Validate actual packet dependencies before execution. Implement all three retake inputs; use the corrected J2217 treatment table, not whole-cut caption duration. Confirm both 2:18 and 2:20/adjacent spark. All output measurements remain UNMEASURED until actually run. No render authority until J1881 completes.\n",
       "ref": "J1881 / J2241 / HOS PR #428 51bf99a6",
       "film": "008",
       "stage": "edit",
@@ -188276,6 +188302,11 @@
           "at": "2026-11-05T18:52Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-05T20:49Z",
+          "by": "codex",
+          "what": "J1881 FIX clarifications recorded; dependency J2241 retained"
         }
       ],
       "remaining_action": "Implement closed-GOP packet/boundary splicer + 27 unbordered umber bottom-caption panels, render hos_008_master_v04.mp4, and pass all gates",
@@ -188289,7 +188320,7 @@
       "title": "HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect windows + 27 captions + full cut, GBP0)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Dependent media-capable QA and Chief review for `hos_008_master_v04.mp4` after `J2242`.\n\n## Mandatory Requirements\n1. **Demonstrated Multimodal Capability:** Verify fresh live `audio_input,moving_video_input` in `chief_relay.py capabilities` before starting. Never claim moving-video or audio PASS from stills, ASR, or ffprobe metrics alone.\n2. **In-Context Moving-Video + Audio Review:** Watch and listen to all 8 corrected intervals (`00:20`, `0:30`, `0:51`, `1:49`, `2:18/2:20`, `3:13`, `3:31`, `7:58/7:59`) with their preceding/following cut transitions, all 27 film-wide bottom-caption cuts (`[0,141]`..`[12297,12461]`), and the full `539.500s` cut.\n3. **Verification Checklist:**\n   - Confirm all `picture_qa`, `polish_gate`, `gate:episode`, `lint:package`, `music_gate`, `sfx_kit level`, `168×94` phone readability, bitwise unchanged-frame SHA-256 identity, audio packet identity, and `0.000 ms` VO sync checks PASS.\n   - Keep all 8 Ben notes tracked (not marked resolved) until elected Chief media decision and Ben's final finished-film watch.\n   - Park for elected Chief (`jobs.py block --reason 'parked for Chief: ...'`) for UAT staging authorization and Ben's final watch.",
+      "body": "Dependent media-capable QA and Chief review for `hos_008_master_v04.mp4` after `J2242`.\n\n## Mandatory Requirements\n1. **Demonstrated Multimodal Capability:** Verify fresh live `audio_input,moving_video_input` in `chief_relay.py capabilities` before starting. Never claim moving-video or audio PASS from stills, ASR, or ffprobe metrics alone.\n2. **In-Context Moving-Video + Audio Review:** Watch and listen to all 8 corrected intervals (`00:20`, `0:30`, `0:51`, `1:49`, `2:18/2:20`, `3:13`, `3:31`, `7:58/7:59`) with their preceding/following cut transitions, all 27 film-wide bottom-caption cuts (`[0,141]`..`[12297,12461]`), and the full `539.500s` cut.\n3. **Verification Checklist:**\n   - Confirm all `picture_qa`, `polish_gate`, `gate:episode`, `lint:package`, `music_gate`, `sfx_kit level`, `168×94` phone readability, bitwise unchanged-frame SHA-256 identity, audio packet identity, and `0.000 ms` VO sync checks PASS.\n   - Keep all 8 Ben notes tracked (not marked resolved) until elected Chief media decision and Ben's final finished-film watch.\n   - Park for elected Chief (`jobs.py block --reason 'parked for Chief: ...'`) for UAT staging authorization and Ben's final watch.\nJ1881 current capability finding: prior Gemini moving-video self-report is not sufficient; later relay probe failed video and expired. Require fresh successful audio+video probe before assignment. Do not drop 0:51 or 2:20 adjacent-spark checks.\n",
       "ref": "J1881 / J2241 / J2242",
       "film": "008",
       "stage": "edit",
@@ -188312,6 +188343,11 @@
           "at": "2026-11-05T18:54Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 121 min (heartbeat 2026-11-05T16:52:20Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-05T20:49Z",
+          "by": "codex",
+          "what": "J1881 requires fresh successful audio/video probes; original dependency retained"
         }
       ],
       "remaining_action": "Verify live audio_input + moving_video_input capability, review all 8 defect windows + 27 captions + full master_v04 in motion/audio, and park for Chief",
