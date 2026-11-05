@@ -345,7 +345,7 @@ def run() -> int:
         log("not now: " + "; ".join(why))
         push_heartbeat("waiting", why)
         return 0
-    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook", "--git"], cwd=OWB)
+    r = sh([sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"], cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
         push_heartbeat("idle", ["no MacBook job waiting"])
