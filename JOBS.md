@@ -89,6 +89,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2227 | mini | claimed | gemini | 2026-11-05T19:02Z | for gemini · review · `gemini-argon` · Verify condition for J2210 |  |
 | J2228 | mini | open | – | – | studio · AR1 v06 (2024 YR4 Moon) Short: Ben OK'd 5 Nov 16:32. Upload private and schedule Fri 27 Nov 11:30 London |  |
 | J2229 | mini | open | – | – | assembly · AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14 |  |
+| J2230 | mini | open | – | – | assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
+| J2231 | any | open | – | – | script · HOS longs after 3 Dec: lock topics for Thu 10 Dec and Thu 17 Dec (Darwin & Wallace is scripted) and queue their scripts |  |
 
 Recently finished:
 
