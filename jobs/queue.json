@@ -167017,9 +167017,14 @@
           "at": "2026-11-05T07:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-05T07:17Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J1894 and read J1894/J0862 job briefs"
         }
       ],
-      "remaining_action": "Verify readiness: Approve 009 Short B replacement opening and exact recording scope before recording required replacements",
+      "remaining_action": "Inspect J0862 history, HOS 009/010 Shorts scripts/takes, PRs, and desk for approved 009 Short B replacement opening and recording scope",
       "kind": "review",
       "recheck_of": "J0862",
       "due": "2026-11-03T22:24:26+00:00",
@@ -167039,12 +167044,15 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-05T07:16Z",
+        "of": 4,
+        "at": "2026-11-05T07:17Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J1894 and read J1894/J0862 job briefs"
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J1895",
