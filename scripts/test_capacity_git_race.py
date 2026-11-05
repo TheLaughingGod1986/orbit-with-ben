@@ -23,8 +23,8 @@ name = identity.name
 jobs.ROOT = studio.ROOT = root
 jobs.QUEUE = root / "jobs/queue.json"
 jobs.JOBS_MD = root / "JOBS.md"
-jobs.load = lambda: json.loads(jobs.QUEUE.read_text())
-jobs.save = lambda data: jobs.QUEUE.write_text(json.dumps(data, indent=2) + "\n")
+jobs.load = lambda path=None: json.loads((path or jobs.QUEUE).read_text())
+jobs.save = lambda data, path=None: (path or jobs.QUEUE).write_text(json.dumps(data, indent=2) + "\n")
 count = 0
 def evidence():
     global count
@@ -62,8 +62,8 @@ with tempfile.TemporaryDirectory() as tmp:
     git('add','.',cwd=repo);git('commit','-m','fixture',cwd=repo);git('remote','add','origin',remote,cwd=repo);git('push','origin','main',cwd=repo)
     reviewed=capacity_evidence.installed_head(repo)
     jobs.ROOT=studio.ROOT=repo;jobs.QUEUE=repo/'jobs/queue.json';jobs.JOBS_MD=repo/'JOBS.md'
-    jobs.load=lambda:json.loads(jobs.QUEUE.read_text())
-    jobs.save=lambda data:jobs.QUEUE.write_text(json.dumps(data,indent=2)+'\n')
+    jobs.load=lambda path=None:json.loads((path or jobs.QUEUE).read_text())
+    jobs.save=lambda data,path=None:(path or jobs.QUEUE).write_text(json.dumps(data,indent=2)+"\n")
     def evidence():
         return dict(hosts=[host()],leases=[],accounts={'shared':proof(ready=True,limit=1)},at=T,chief='codex',choose_worker=choose,installed_head=capacity_evidence.reviewed_installation(repo,reviewed),reviewed_head=reviewed)
     with patch('chief_relay.current_execution',return_value=None),patch('chief_relay.worker_capabilities',return_value={}):
@@ -163,8 +163,8 @@ jobs.ROOT = studio.ROOT = root
 studio.FILMS = root / "02_Video-Projects"
 jobs.QUEUE = root / "jobs/queue.json"
 jobs.JOBS_MD = root / "JOBS.md"
-jobs.load = lambda: json.loads(jobs.QUEUE.read_text())
-jobs.save = lambda data: jobs.QUEUE.write_text(json.dumps(data, indent=2) + "\n")
+jobs.load = lambda path=None: json.loads((path or jobs.QUEUE).read_text())
+jobs.save = lambda data, path=None: (path or jobs.QUEUE).write_text(json.dumps(data, indent=2) + "\n")
 count = 0
 def evidence():
     global count

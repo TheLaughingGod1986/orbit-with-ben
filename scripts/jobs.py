@@ -801,7 +801,7 @@ def with_git(apply, message: str, tries: int = 3):
             studio.write_status(studio.FILMS)
             paths += list(touched) + [studio.status_path(studio.FILMS)]
         return out, None, paths
-    return studio.git_transaction(write, message)
+    return studio.git_transaction(write, message, tries)
 
 
 def film_status_path(job: dict):
