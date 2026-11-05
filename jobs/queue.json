@@ -72659,12 +72659,12 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "since": "2026-11-05T07:39Z",
-      "eta": "2026-11-05T09:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
-      "result": "Reopened by J1894 (jobs/reviews/J1894/REVIEW.md) under Ben's 4 Nov decision (#6631275536) and Rule H: KEEP existing v02 takes for 009 Short A, 010 Short A (J1004 Option A1), and 010 Short C (do not regenerate); preserve 009 Short B v02 on disk; record 1 scoped take hos_009_short_B_v03 (311 chars) with approved replacement opening 'In one minute the Moon drops an apple's one-second fall. About five metres each.' + unchanged 43-word body after fresh live credit read, run vo_check_py312.sh, and record shorts_vo.",
+      "result": "parked for Chief: HOS PR423 records exactly one J1894-authorized B v03 take. Hook ends3.68s; even scoped0.15s trim plus atempo1.06 gives3.33s >2.85. vo_check words/levels PASS with homophone warning; repo check_all ALL CHECKS PASS. Exact approved text316 chars (review says311); 316 conservatively logged. No second take authorized. Chief scope next repair; retain three accepted v02 takes and all originals.",
       "history": [
         {
           "at": "2026-10-22T20:55Z",
@@ -72910,6 +72910,11 @@
           "at": "2026-11-05T07:43Z",
           "by": "codex",
           "what": "step 2 of 3 done: HOS PR423 commits74a01241/8d51256c submitted. All repository checks pass; new take word/level gate PASS but hook3.68s FAIL. Single-take authorization exhausted; three accepted v02 takes retained. No final approval."
+        },
+        {
+          "at": "2026-11-05T07:44Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: HOS PR423 records exactly one J1894-authorized B v03 take. Hook ends3.68s; even scoped0.15s trim plus atempo1.06 gives3.33s >2.85. vo_check words/levels PASS with homophone warning; repo check_all ALL CHECKS PASS. Exact approved text316 chars (review says311); 316 conservatively logged. No second take authorized. Chief scope next repair; retain three accepted v02 takes and all originals."
         }
       ],
       "kind": "vo",
