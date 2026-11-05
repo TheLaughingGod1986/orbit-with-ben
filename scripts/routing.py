@@ -199,8 +199,19 @@ def fallbacks(kind: str) -> list:
 lanes = chain  # older name
 
 
+# Flow names for the Vertex picture models (used by every channel whose picture_route starts with Flow).
 HOS_FLOW = {"veo-3.1-fast-generate-001": "flow-veo-3.1", "veo-3.1-generate-001": "flow-veo-3.1",
             "gemini-2.5-flash-image": "flow-nano-banana-2"}
+
+
+def _picture_route(job: dict) -> str:
+    """The job's channel's picture_route (channels/<slug>/channel.json): flow_only or flow_first (the default)."""
+    try:
+        import channels
+        repo = job.get("repo") if job.get("repo") in channels.slugs() else channels.home()
+        return channels.get(repo).get("picture_route") or "flow_first"
+    except Exception:  # noqa: BLE001  (a missing channel file never stops routing)
+        return "flow_only" if job.get("repo") == "hos" else "flow_first"
 
 
 def job_chain(job: dict) -> list:
@@ -209,11 +220,12 @@ def job_chain(job: dict) -> list:
     kind = job.get("kind")
     if kind in CHAINS:
         ch = chain(kind)
-        if job.get("repo") == "hos" and kind in ("video", "image"):
-            # HOS picture is minted in Flow on the Ultra credits; Vertex is a separate, priced route (Claude as acting
-            # Chief, 14 Oct 2026: J0140 was walked to "Gemini on veo-3.1-fast-generate-001", which reads as Vertex).
+        route = _picture_route(job) if kind in ("video", "image") else ""
+        if route == "flow_only":
+            # e.g. HOS: picture is minted in Flow on the Ultra credits; Vertex is a separate, priced route (Claude as
+            # acting Chief, 14 Oct 2026: J0140 was walked to "Gemini on veo-3.1-fast-generate-001", which reads as Vertex).
             ch = [(a, HOS_FLOW.get(m, m)) for a, m in ch]
-        elif kind in ("video", "image"):
+        elif route:
             # OWB too goes to Flow first (Ben, 5 Nov 2026: "For the image generation block we have Gemini flow lots of
             # credit"): the AI Ultra credits are already paid for, Vertex bills GBP. Vertex stays behind it as the
             # fallback, still inside the written spend rules.

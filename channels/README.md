@@ -13,6 +13,8 @@ One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phas
 - `title_match`: a regex that marks a job's title as this channel when `repo` is missing.
 - `wip`: its share of the WIP places.
 - `stages`: the production stages, in order.
+- `picture_route`: where video and image jobs are minted. `flow_only` uses Flow on the AI Ultra credits, with no priced
+  Vertex fallback (HOS). `flow_first` uses Flow, then Vertex inside the spend rules (OWB).
 - `pipeline`: where its film state lives.
 - `home`: true for the channel whose repo holds the engine today. In phase 3 that moves to its own repo.
 
