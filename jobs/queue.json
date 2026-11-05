@@ -182619,9 +182619,14 @@
           "at": "2026-11-05T09:22Z",
           "by": "chief",
           "what": "condition recorded; next verification 2026-11-06T18:00:00Z"
+        },
+        {
+          "at": "2026-11-05T10:52Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T18:00:00Z"
         }
       ],
-      "remaining_action": "Await J2201 native1080 inventory KEEP or exact missing-plate list; then decide build vs Ben spend",
+      "remaining_action": "Await J2213 Flow mint plates; then build Short B/C under existing media rules",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -182637,9 +182642,9 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "hold": {
-        "type": "input",
-        "condition": "J2191 closed Vertex route; Flow native1080 rejected. J2169 stays blocked 1/3 until J2201 delivers either a complete native≥1080 existing-media 17-row mapping that passes current picture_qa, or an exact missing-plate list. No generation/spend. Not a generic retry.",
-        "check_at": "2026-11-06T18:00:00Z"
+        "type": "dependency",
+        "condition": "Await J2213 HOS 006 six-insert Flow mint (Veo Quality 720p x1, cap ≤1200, Ultra benoats@googlemail.com). Native≥1080 inventory detour J2201 cancelled under HOS #180 6655551386; 720p Flow plates are the authorised path. Keep other J2169 holds (VO hashes B/C, J1004, long VbPubYd6Fbs, no upload).",
+        "check_at": "2026-11-07T18:00:00Z"
       }
     },
     {
