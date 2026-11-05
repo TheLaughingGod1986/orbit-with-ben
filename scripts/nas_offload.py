@@ -159,7 +159,10 @@ def nas_manifest(dst: pathlib.Path, src_keys) -> dict[str, tuple[int, str]]:
     2026: every desk-cache move failed its check on `._crew2_351_374.mp4`). Ignore only those, never other extras."""
     def apple(k):
         p = pathlib.PurePath(k)
-        return p.name.startswith("._") and str(p.with_name(p.name[2:])) in src_keys
+        if not p.name.startswith("._"):
+            return False
+        twin = str(p.with_name(p.name[2:]))
+        return twin in src_keys or any(k.startswith(twin + "/") for k in src_keys)  # a file's or a folder's
     return {k: v for k, v in manifest(dst).items() if not apple(k)}
 
 
