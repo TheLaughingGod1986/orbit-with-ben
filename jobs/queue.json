@@ -1,5 +1,5 @@
 {
-  "next_id": 2311,
+  "next_id": 2312,
   "jobs": [
     {
       "id": "J0001",
@@ -195494,6 +195494,36 @@
       ],
       "remaining_action": "Prepare and verify local replacement for k2kEaA7ICjc, then send for review",
       "due": "2026-12-10T20:00:00Z",
+      "kind": "assembly",
+      "plain": "Tighten the opening cuts and loop using existing footage and voice."
+    },
+    {
+      "id": "J2311",
+      "title": "OWB 029: E1 local re-cut for heiGCnGKTkE; preserve scheduled copy",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2207 / Chief h47 approved OWB-2026-11-E1, £0 local re-cut only. Target original ID heiGCnGKTkE, OWB:029, scheduled 2026-12-14 11:30 London. Package: 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/11_Upload-Package. Source file: 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v04.mp4; preserved SHA256 31f362f4437b4ca56ec16b8abef1dce4c65fb5a5c6c7b5b4e2ba39229a33efd5.\n\nFirst recheck latest UPLOADS, API readback and queue: if superseded or already being repaired, record successor/job and stop without a duplicate render. J0935's earlier NO RECUT for the two 026 originals is superseded for local preparation by h47 E1; this does not authorize changing their scheduled copies.\n\nConcrete repair: v04 cuts 2.99 / 5.76 s fail E1. Tail 23.93 - 21.64 = 2.29 s. Tighten both cuts, remove end card, trim/reorder existing recorded setup without changing facts; retain the 22 s floor.\n\nAcceptance: .cursor/rules/orbit-build-shorts.mdc -> OWB-2026-11-E1. Cut1 <=2.8s, Cut2 <=4.8s from zero, moving frame0, onset <=0.15s, surprise <=1.5s, sentence-1 breath <0.25s, no 3.5-5.5s post-sentence-1 hold, no meta/spoken CTA (explicit Test A waiver retained), matched loop tail <1.2s, later holds <=4s. Measure every field; no claim to hear/watch without demonstrated capability. Existing recorded words/media only, no spend/generation. Preserve title, original uploaded file/hash/manifest and slot; new version beside original. All Shorts, picture, polish, music, SFX/levels and caption checks must pass; retain teaching overlay and matched-long links. Never waive a failed gate or pad to length. If recorded words cannot meet a requirement, report exact conflict for reviewer, do not invent speech.\n\nDeliver metadata, cut list, explicit E1 measurements, gate logs, frame sheets, PHONE and checksum-verified UAT/NAS copies. Queue review promptly; approved local candidate goes to Ben's finished-cut watch. No upload, Studio, visibility, schedule, retitle or Buffer change in this job. A separately authorized swap must reconcile Buffer/UPLOADS atomically. Readout 3 Dec: these December cuts are follow-up only. Never re-upload an idea after Public.\n",
+      "ref": "J2207 / h47",
+      "film": "029",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T22:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T22:20Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Prepare and verify local replacement for heiGCnGKTkE, then send for review",
+      "due": "2026-12-13T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice."
     }
