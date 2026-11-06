@@ -189556,10 +189556,10 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T09:31Z",
+      "eta": "2026-11-06T11:31Z",
       "created_by": "claude",
       "created_at": "2026-11-05T19:51Z",
       "result": "",
@@ -189568,11 +189568,24 @@
           "at": "2026-11-05T19:51Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-06T09:31Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "032 thumb A rebuild: real Huygens surface photo, hook REAL SURFACE (J2162)",
       "for": "codex",
-      "kind": "thumb"
+      "kind": "thumb",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T09:31Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2250",
