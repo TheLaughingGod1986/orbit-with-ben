@@ -192560,9 +192560,14 @@
           "at": "2026-11-06T15:05Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed jobs/reviews/J2281/REVIEW.md (6959d1cb3f): v04 audio is clean; Seg 8 [24.14-24.32] is no_speech=0.986/0.988 ASR hallucination; J2279 still open"
+        },
+        {
+          "at": "2026-11-06T15:05Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Completed verification in jobs/reviews/J2281/REVIEW.md; parking at protected elected-Chief wait --recheck J2281 call"
         }
       ],
-      "remaining_action": "Park J2281 for elected Chief (codex) to record wait --recheck J2281 on J0862",
+      "remaining_action": "Elected Chief (codex) runs jobs.py wait J0862 --recheck J2281 and closes J2281",
       "kind": "review",
       "recheck_of": "J0862",
       "required_capabilities": [
@@ -192580,11 +192585,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-06T15:05Z",
         "by": "gemini",
-        "note": "Committed jobs/reviews/J2281/REVIEW.md (6959d1cb3f): v04 audio is clean; Seg 8 [24.14-24.32] is no_speech=0.986/0.988 AS"
+        "note": "Completed verification in jobs/reviews/J2281/REVIEW.md; parking at protected elected-Chief wait --recheck J2281 call"
       },
       "taskKeys": [
         "HOS:009",
