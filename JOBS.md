@@ -22,7 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
 | J0978 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 | J0979 | mini | blocked | codex | – | 032 edit · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0985 | mini | open (after J1002) | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J0985 | mini | claimed | gemini | 2026-11-06T11:25Z | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1198 | mini | blocked | cursor | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
