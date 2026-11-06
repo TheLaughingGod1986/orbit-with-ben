@@ -191370,6 +191370,11 @@
           "at": "2026-11-06T08:33Z",
           "by": "codex",
           "what": "J2267: motion review requires demonstrated moving_video_input; no perceptual claims from stills/probes"
+        },
+        {
+          "at": "2026-11-06T11:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 711 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review exact generated plate hashes before releasing Shorts assembly",
@@ -191377,7 +191382,16 @@
       "plain": "Check all twelve Dinosaur Shorts scenes before editing the finished videos.",
       "required_capabilities": [
         "moving_video_input"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2272",
