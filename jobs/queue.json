@@ -190377,9 +190377,14 @@
           "at": "2026-11-06T12:40Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T12:40Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed exact dispatch J2254; one locked pickup sentence, no publication changes."
         }
       ],
-      "remaining_action": "Record C-Open-1 via vo_take.py; vo_check PASS; no upload",
+      "remaining_action": "Check storage, voice authorization and live subscription balance",
       "kind": "vo",
       "model": "eleven_v3",
       "progress": {
@@ -190387,9 +190392,11 @@
         "of": 3,
         "at": "2026-11-06T12:40Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed exact dispatch J2254; one locked pickup sentence, no publication changes."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2255",
