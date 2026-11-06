@@ -192847,9 +192847,14 @@
           "at": "2026-11-06T21:32Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed PR445 checkpoint; existing 42 zero-submit regressions pass. Added durable shared-account reservation and pending-charge component; integration remains unfinished."
+        },
+        {
+          "at": "2026-11-06T21:35Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint 25635b4d adds durable shared-account reservation/pending/reconciliation component; 51 zero-submit tests and check_all pass. Work remains incomplete: live adapter, all-writer adoption, ai_spend integration and parent inventory; production interlock retained."
         }
       ],
-      "remaining_action": "Test shared Flow accounting and preserve the production interlock",
+      "remaining_action": "Integrate the live per-Create UI guard and shared accounting across Flow writers",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
@@ -192857,9 +192862,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-06T21:32Z",
+        "at": "2026-11-06T21:35Z",
         "by": "codex",
-        "note": "Resumed PR445 checkpoint; existing 42 zero-submit regressions pass. Added durable shared-account reservation and pending"
+        "note": "Checkpoint 25635b4d adds durable shared-account reservation/pending/reconciliation component; 51 zero-submit tests and c"
       },
       "taskKeys": [
         "HOS:009"
