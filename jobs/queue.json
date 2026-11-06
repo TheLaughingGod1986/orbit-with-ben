@@ -190659,13 +190659,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-06T07:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T07:31Z",
-      "result": "parked for Chief: HOLD / CONDITION UNMET verified in jobs/reviews/J2266/REVIEW.md (c30dd4b9af). J2210 (0a925061, HOS PRs #424/#425/#426) is 5/5 CI-green OPEN awaiting Chief merge, and HOS 010 Flow moving-plate mint (12 unique Shorts-parent plates) is still unauthorized/unminted (0/12 on disk/NAS, 0 Flow spend). Recording wait --recheck J2266 on J2172 and closing J2266 requires elected Chief (jobs.py set_wait guard).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-06T07:31Z",
@@ -190711,6 +190711,11 @@
           "at": "2026-11-06T07:42Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOLD / CONDITION UNMET verified in jobs/reviews/J2266/REVIEW.md (c30dd4b9af). J2210 (0a925061, HOS PRs #424/#425/#426) is 5/5 CI-green OPEN awaiting Chief merge, and HOS 010 Flow moving-plate mint (12 unique Shorts-parent plates) is still unauthorized/unminted (0/12 on disk/NAS, 0 Flow spend). Recording wait --recheck J2266 on J2172 and closing J2266 requires elected Chief (jobs.py set_wait guard)."
+        },
+        {
+          "at": "2026-11-06T08:18Z",
+          "by": "codex",
+          "what": "reopened: Elected-Chief review: take the parked verification decision; J2172 remains blocked throughout."
         }
       ],
       "remaining_action": "Done: J2266 condition verification complete; J2172 held awaiting Chief HOS PR #425/#426 merge + HOS 010 Flow moving-plate mint",
@@ -190727,13 +190732,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-06T07:39Z",
-        "by": "gemini",
-        "note": "Step 3/3 complete: committed jobs/reviews/J2266/REVIEW.md (c30dd4b9af), recording J2172 hold and closing J2266"
-      },
       "taskKeys": [
         "HOS:010"
       ]

@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2256 | mini | open | – | – | 033 picture · for gemini · review · `gemini-argon` · 033 Uranus: stills lock + OMNI R29/R55 price-pass brief from SHOT_LIST_v01 (no mint, £0) | J2238/h94/d67daf94 |
 | J2260 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 R19 distance draft: review still and reuse |  |
 | J2262 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 R08 orbital-period draft: review still and source reuse allocation | c95c73b4f9 |
-| J2266 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
+| J2266 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 
 Recently finished:
 
