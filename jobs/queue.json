@@ -191056,9 +191056,14 @@
           "at": "2026-11-06T08:53Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T08:53Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. Locating master and package."
         }
       ],
-      "remaining_action": "Upload B v02 NEW Private publishAt Wed 18 Nov 11:30; Related=VbPubYd6Fbs; UPLOADS+Buffer+gate",
+      "remaining_action": "Verify the Short B master, hash and a free 11:30 slot",
       "due": "2026-11-17T20:00:00Z",
       "kind": "studio",
       "plain": "Upload the Ben-OK’d HOS 006 Short B v02 Private for Wed 18 Nov 11:30, linked to the live long.",
@@ -191079,12 +191084,14 @@
       "urgent": 11,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-06T08:53Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Locating master and package."
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     },
     {
       "id": "J2273",
