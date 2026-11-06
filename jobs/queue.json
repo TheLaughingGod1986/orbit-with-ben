@@ -1,5 +1,5 @@
 {
-  "next_id": 2272,
+  "next_id": 2273,
   "jobs": [
     {
       "id": "J0001",
@@ -190445,6 +190445,11 @@
           "at": "2026-11-06T06:24Z",
           "by": "gemini",
           "what": "done: KEEP (jobs/reviews/J2263/REVIEW.md, 70a6ea8f8b): HOS 006 Short B v02 (f4b046d41d0d6fcfbd14258abe472d57db5c9d53c1ed535141aa3281e1f3915b, 24.250s, 1080x1920) and Short C v03 (e1e3ff0ce3b5622b4a43d010a0df827bcd34e25ccd76a87338b286b0632c40c5, 25.167s, 1080x1920) on cursor/J2169-bc-v02 (b8230f85) pass all J2258 FIX items and HOS gates (picture_qa, polish_gate, sfx_kit level, music_gate, gate_shorts_open, check_all.sh). Ruled KEEP on 9-14s captions, centred Didot hooks, B source_in=1.375s, un-dissolved loop returns, and all WARNs (B S07, C S05, C S03, terminal_loop). Staged in HOS UAT with verified unique R2 Play links (hos-j2263-1-v02, hos-j2263-2-v03) and awaits_ben J2263.1-2 (due 15 Nov 18:00). Neither cut approved; watched/heard false until Ben's watch; long VbPubYd6Fbs must be public first; GBP0, no upload/schedule/Buffer."
+        },
+        {
+          "at": "2026-11-06T08:43Z",
+          "by": "chief",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J2272"
         }
       ],
       "remaining_action": "Waiting on Ben's final watch of HOS 006 Short B v02 and Short C v03 (J2263.1-2); long VbPubYd6Fbs must be public before either Short",
@@ -190470,30 +190475,17 @@
       "taskKeys": [
         "HOS:006"
       ],
-      "awaits_ben": [
-        {
-          "what": "Watch HOS 006 Short B v02 (\"How Do Plants Clean the Air?\", planning slot Wed 18 Nov 11:30; long VbPubYd6Fbs must be public first)",
-          "file": "HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/hos006_short_b_v02_PHONE.mp4",
-          "version": "v02",
-          "due": "2026-11-15T18:00Z",
-          "airs": "2026-11-18T11:30Z",
-          "ifNot": "Remains unuploaded on disk until Ben OK, long VbPubYd6Fbs is public, and Chief schedules",
-          "title": "How Do Plants Clean the Air?",
-          "number": "006B",
-          "type": "short"
-        },
-        {
-          "what": "Watch HOS 006 Short C v03 (\"How Do Plants Make Oxygen?\", planning slot Sat 21 Nov 11:30; long VbPubYd6Fbs must be public first)",
-          "file": "HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/hos006_short_c_v03_PHONE.mp4",
-          "version": "v03",
-          "due": "2026-11-15T18:00Z",
-          "airs": "2026-11-21T11:30Z",
-          "ifNot": "Remains unuploaded on disk until Ben OK, long VbPubYd6Fbs is public, and Chief schedules",
-          "title": "How Do Plants Make Oxygen?",
-          "number": "006C",
-          "type": "short"
-        }
-      ],
+      "awaits_ben": {
+        "what": "Watch HOS 006 Short C v03 (\"How Do Plants Make Oxygen?\", planning slot Sat 21 Nov 11:30; long VbPubYd6Fbs must be public first)",
+        "file": "HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/hos006_short_c_v03_PHONE.mp4",
+        "version": "v03",
+        "due": "2026-11-15T18:00Z",
+        "airs": "2026-11-21T11:30Z",
+        "ifNot": "Remains unuploaded on disk until Ben OK, long VbPubYd6Fbs is public, and Chief schedules",
+        "title": "How Do Plants Make Oxygen?",
+        "number": "006C",
+        "type": "short"
+      },
       "done_ref": "jobs/reviews/J2263/REVIEW.md"
     },
     {
@@ -191005,6 +190997,55 @@
       "required_capabilities": [
         "moving_video_input"
       ]
+    },
+    {
+      "id": "J2272",
+      "title": "Upload HOS 006 Short B v02 (How Do Plants Clean the Air?) Private, Wed 18 Nov 11:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# Upload HOS 006 Short B v02 (\"How Do Plants Clean the Air?\") Private, planning slot Wed 18 Nov 11:30\n\nBen OK'd J2263.1 v02 on the Studio Kanban at Fri 6 Nov 08:20 London (HOS #180 6680489081: \"watched it, looks good\"). Chief (Grok) queued this delivery job.\n\nMaster `_desk/renders/J2169/Short_B_v02/hos006_short_b_v02.mp4` (also NAS `10_Shorts/J2169` on the 22 Oct hos-006-trees archive; UAT `HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/hos006_short_b_v02_PHONE.mp4`), sha256 `f4b046d41d0d6fcfbd14258abe472d57db5c9d53c1ed535141aa3281e1f3915b` (re-verified by Chief 6 Nov 08:23), 24.250s, 1080x1920. Evidence: J2263 KEEP (jobs/reviews/J2263/REVIEW.md, 70a6ea8f8b), HOS branch `cursor/J2169-bc-v02` commit `b8230f85`.\n\nLong `VbPubYd6Fbs` (*The Willow Tree That Was Made of Air*) is already public (yt-dlp 6 Nov: public, upload_date 20261105) — the publish gate is clear.\n\nUpload as NEW Private with publishAt Wed 18 Nov 11:30 London (`2026-11-18T11:30:00Z`). Title/description/tags from the Short B package / ASSEMBLY.md; Related video = long `VbPubYd6Fbs`; en-GB captions; record in HOS UPLOADS.json + Buffer posts; run gate. No public change before the slot. If that slot is taken on HOS, use the next free Mon/Wed/Fri/Sat 11:30 (never two HOS Shorts a day).\n",
+      "ref": "6680489081",
+      "film": "006",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-06T08:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T08:43Z",
+          "by": "chief",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-06T08:43Z",
+          "by": "chief",
+          "what": "approved by Ben: Watch HOS 006 Short B v02 (\"How Do Plants Clean the Air?\", planning slot Wed 18 Nov 11:30; long VbPubYd6Fbs must be public first) v02 (asked in J2263)"
+        }
+      ],
+      "remaining_action": "Upload B v02 NEW Private publishAt Wed 18 Nov 11:30; Related=VbPubYd6Fbs; UPLOADS+Buffer+gate",
+      "due": "2026-11-17T20:00:00Z",
+      "kind": "studio",
+      "plain": "Upload the Ben-OK’d HOS 006 Short B v02 Private for Wed 18 Nov 11:30, linked to the live long.",
+      "approved_from": {
+        "what": "Watch HOS 006 Short B v02 (\"How Do Plants Clean the Air?\", planning slot Wed 18 Nov 11:30; long VbPubYd6Fbs must be public first)",
+        "file": "HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/hos006_short_b_v02_PHONE.mp4",
+        "version": "v02",
+        "airs": "2026-11-18T11:30Z",
+        "title": "How Do Plants Clean the Air?",
+        "number": "006B",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J2263",
+        "askId": "J2263.1",
+        "okAt": "2026-11-06T08:43Z",
+        "okRef": "6680489081"
+      }
     }
   ],
   "focus": [],
