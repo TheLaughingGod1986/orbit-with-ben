@@ -195452,13 +195452,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-06T22:32Z",
-      "eta": "2026-11-07T00:32Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T22:20Z",
-      "result": "",
+      "result": "Recorded-word conflict for reviewer J2312: preserved title question absent in available VO; E1 retains Keeper requirement. PR591/a6b61c018f documents exact timestamps. No candidate rendered; original scheduled copy preserved. Reopen only with compliant recorded-word recipe, otherwise retain original and close experiment.",
       "history": [
         {
           "at": "2026-11-06T22:20Z",
@@ -195479,6 +195479,11 @@
           "at": "2026-11-06T22:34Z",
           "by": "codex",
           "what": "step 1 of 3 done: Verified current API Private/16 Nov slot, registry and original SHA256; no live successor. Recorded-word conflict documented in a6b61c018f; no render or gate PASS claimed."
+        },
+        {
+          "at": "2026-11-06T22:35Z",
+          "by": "codex",
+          "what": "blocked: Recorded-word conflict for reviewer J2312: preserved title question absent in available VO; E1 retains Keeper requirement. PR591/a6b61c018f documents exact timestamps. No candidate rendered; original scheduled copy preserved. Reopen only with compliant recorded-word recipe, otherwise retain original and close experiment."
         }
       ],
       "remaining_action": "Resolve recorded-question conflict before making an E1 candidate",
@@ -195494,7 +195499,12 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Recorded-word conflict for reviewer J2312: preserved title question absent in available VO; E1 retains Keeper requirement. PR591/a6b61c018f documents exact timestamps. No candidate rendered; original scheduled copy preserved. Reopen only with compliant recorded-word recipe, otherwise retain original and close experiment.",
+        "check_at": "2026-11-07T04:35:55+00:00"
+      }
     },
     {
       "id": "J2308",
