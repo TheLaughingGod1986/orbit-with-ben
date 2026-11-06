@@ -1,0 +1,392 @@
+{
+  "job": "J2141",
+  "spend_gbp": 0,
+  "original_checks": [
+    {
+      "asset_id": "eol-europeaurora_iss_20120405",
+      "sha256": "c84e52141d0a110d22d778f1aa5758287f4c3facd4b82748cf8391d2f21b7eb3",
+      "full_decode": true
+    },
+    {
+      "asset_id": "eol-aurora_iss_20110911",
+      "sha256": "9e1b9d13bdbebb72369bc009b9f238cc8e86ee6b294ac1183b5fe5d78e809b07",
+      "full_decode": true
+    },
+    {
+      "asset_id": "eol-auroraus_iss_20120413",
+      "sha256": "bca189dbf30c6827aaf5805e07a6ee4fe9b2f4eafc5e5ca60ef3fa97ea03b690",
+      "full_decode": true
+    }
+  ],
+  "rendered_plates": [
+    {
+      "row": 4,
+      "path": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r04_aurora_v01.mp4",
+      "sha256": "f8c05e4ebf052920aa47892b350e83f000e87e1be19d35dc03621bed19fb709c",
+      "film_start_s": 31.86,
+      "source_interval_s": [
+        8,
+        11.44
+      ],
+      "duration_s": 3.44,
+      "crop_xywh": [
+        0,
+        64,
+        1024,
+        576
+      ],
+      "scale": 1.875,
+      "fps": 25,
+      "native_fps": 12,
+      "full_decode": true,
+      "audio": false,
+      "credit": "NASA",
+      "no_loop": true,
+      "status": "technical_candidate_pending_composite_QA"
+    },
+    {
+      "row": 36,
+      "path": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r36_aurora_v01.mp4",
+      "sha256": "93f7904583865853840987c7b2ffef1c116bfb83ae422020765708d3c9fbd99e",
+      "film_start_s": 373.84,
+      "source_interval_s": [
+        18,
+        22.88
+      ],
+      "duration_s": 4.88,
+      "crop_xywh": [
+        0,
+        192,
+        1024,
+        576
+      ],
+      "scale": 1.875,
+      "fps": 25,
+      "native_fps": 12,
+      "full_decode": true,
+      "audio": false,
+      "credit": "NASA",
+      "no_loop": true,
+      "status": "technical_candidate_pending_composite_QA"
+    },
+    {
+      "row": 50,
+      "path": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r50_aurora_v01.mp4",
+      "sha256": "f26268aec8cfbc9e8e1b2ff543734e1b3ccbc999e5c3929707d9b00eb378478d",
+      "film_start_s": 517.86,
+      "source_interval_s": [
+        4,
+        8
+      ],
+      "duration_s": 4.0,
+      "crop_xywh": [
+        0,
+        192,
+        1024,
+        576
+      ],
+      "scale": 1.875,
+      "fps": 25,
+      "native_fps": 12,
+      "full_decode": true,
+      "audio": false,
+      "credit": "NASA",
+      "no_loop": true,
+      "status": "technical_candidate_pending_composite_QA"
+    }
+  ],
+  "motion_perception": false,
+  "audio_perception": false,
+  "status": "technical_checks_only_not_film_PASS",
+  "aurora_composite_v02": {
+    "row": 36,
+    "path": "/Users/benjaminoats/_desk/J2141-aurora-v01/composite_031_r36_durations_v02.mp4",
+    "sha256": "1fb2725f143c3ba51da48b06cfc1dae9dec1c0b11030dc17b241132500dac28b",
+    "duration_s": 4.88,
+    "film_start_s": 373.84,
+    "plate_path": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r36_aurora_v01.mp4",
+    "overlay_path": "/Users/benjaminoats/_desk/J2141-scales-v01/code_graphic_031_r36_durations_v01.mov",
+    "overlay_sha256": "04411af4e33c5d3352a25782b486594eda286df739a4193bb1d39ca2c757760c",
+    "filter_complex": "[0:v][1:v]overlay=-950:-300:shortest=1[out]",
+    "status": "candidate_static_checks_only",
+    "supersedes": "composite_031_r36_durations_v01.mp4: labels crossed aurora and light clouds",
+    "static_review": "v02 moves labels into upper-left dark sky, clear of bright aurora; v01 remains rejected",
+    "full_decode": true,
+    "contact_sheet": "/Users/benjaminoats/_desk/J2141-aurora-v01/COMPOSITE_CONTACT_v02.jpg",
+    "contact_sheet_sha256": "d37caebef4980baa7aacb676bdb703ec524f31d8ad7edae39f15bf24412df848"
+  },
+  "polish_reports": [
+    {
+      "path": "/Users/benjaminoats/_desk/J2141-aurora-v01/polish_r04.json",
+      "sha256": "a8ccd479aac00d072867e6f06743c9d4bf6c8c551b9f03e3ab536117bb8d38a1",
+      "result": {
+        "rule": {
+          "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+          "split_panel": "full-height/width seam or gutter",
+          "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+          "near_black": "mean < 28.0 or p95 < 50.0",
+          "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+          "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+        },
+        "low_detail_floor": {
+          "std": 13.44,
+          "edge": 0.0259,
+          "calibration": {
+            "video": "025_MarsRobot_full_rough_v02d.mp4",
+            "factor": 1.2,
+            "frames": [
+              {
+                "source": "PIA22223.jpg",
+                "t": 201.0,
+                "std": 12.1,
+                "edge": 0.0223
+              },
+              {
+                "source": "PIA22223.jpg",
+                "t": 216.3,
+                "std": 11.2,
+                "edge": 0.0216
+              },
+              {
+                "source": "PIA22929.jpg",
+                "t": 297.4,
+                "std": 26.54,
+                "edge": 0.5735
+              }
+            ]
+          }
+        },
+        "video": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r04_aurora_v01.mp4",
+        "edge_floor": 0.0184,
+        "verdict": "PASS",
+        "failed": [],
+        "warn": [],
+        "reviewed_ok": [],
+        "rows": [
+          {
+            "cut": 0,
+            "row": 4,
+            "source": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r04_aurora_v01.mp4",
+            "t": 1.72,
+            "std": 28.39,
+            "mean": 58.19,
+            "p95": 97.0,
+            "edge": 0.0184,
+            "hf": 4.48,
+            "lf": 26.54,
+            "std8": 27.31,
+            "edge8": 0.1206,
+            "seams": [],
+            "video": true,
+            "fail": [],
+            "warn": []
+          }
+        ]
+      }
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/J2141-aurora-v01/polish_r36.json",
+      "sha256": "28d3092e4fd37476d741a49e799c41c110c80018d206d57b2df69feef621a139",
+      "result": {
+        "rule": {
+          "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+          "split_panel": "full-height/width seam or gutter",
+          "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+          "near_black": "mean < 28.0 or p95 < 50.0",
+          "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+          "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+        },
+        "low_detail_floor": {
+          "std": 13.44,
+          "edge": 0.0259,
+          "calibration": {
+            "video": "025_MarsRobot_full_rough_v02d.mp4",
+            "factor": 1.2,
+            "frames": [
+              {
+                "source": "PIA22223.jpg",
+                "t": 201.0,
+                "std": 12.1,
+                "edge": 0.0223
+              },
+              {
+                "source": "PIA22223.jpg",
+                "t": 216.3,
+                "std": 11.2,
+                "edge": 0.0216
+              },
+              {
+                "source": "PIA22929.jpg",
+                "t": 297.4,
+                "std": 26.54,
+                "edge": 0.5735
+              }
+            ]
+          }
+        },
+        "video": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r36_aurora_v01.mp4",
+        "edge_floor": 0.0237,
+        "verdict": "PASS",
+        "failed": [],
+        "warn": [],
+        "reviewed_ok": [],
+        "rows": [
+          {
+            "cut": 0,
+            "row": 36,
+            "source": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r36_aurora_v01.mp4",
+            "t": 2.44,
+            "std": 81.65,
+            "mean": 111.88,
+            "p95": 212.0,
+            "edge": 0.0237,
+            "hf": 4.4,
+            "lf": 80.61,
+            "std8": 81.29,
+            "edge8": 0.1218,
+            "seams": [],
+            "video": true,
+            "fail": [],
+            "warn": []
+          }
+        ]
+      }
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/J2141-aurora-v01/polish_r50.json",
+      "sha256": "42c7c7561f11fcca7bd47bd3a5d214bcfc3cea66891461186bd955b95c131dc0",
+      "result": {
+        "rule": {
+          "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+          "split_panel": "full-height/width seam or gutter",
+          "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+          "near_black": "mean < 28.0 or p95 < 50.0",
+          "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+          "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+        },
+        "low_detail_floor": {
+          "std": 13.44,
+          "edge": 0.0259,
+          "calibration": {
+            "video": "025_MarsRobot_full_rough_v02d.mp4",
+            "factor": 1.2,
+            "frames": [
+              {
+                "source": "PIA22223.jpg",
+                "t": 201.0,
+                "std": 12.1,
+                "edge": 0.0223
+              },
+              {
+                "source": "PIA22223.jpg",
+                "t": 216.3,
+                "std": 11.2,
+                "edge": 0.0216
+              },
+              {
+                "source": "PIA22929.jpg",
+                "t": 297.4,
+                "std": 26.54,
+                "edge": 0.5735
+              }
+            ]
+          }
+        },
+        "video": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r50_aurora_v01.mp4",
+        "edge_floor": 0.0259,
+        "verdict": "PASS",
+        "failed": [],
+        "warn": [],
+        "reviewed_ok": [],
+        "rows": [
+          {
+            "cut": 0,
+            "row": 50,
+            "source": "/Users/benjaminoats/_desk/J2141-aurora-v01/plate_031_r50_aurora_v01.mp4",
+            "t": 2.0,
+            "std": 65.53,
+            "mean": 90.23,
+            "p95": 179.0,
+            "edge": 0.0259,
+            "hf": 4.63,
+            "lf": 64.14,
+            "std8": 64.89,
+            "edge8": 0.1683,
+            "seams": [],
+            "video": true,
+            "fail": [],
+            "warn": []
+          }
+        ]
+      }
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/J2141-aurora-v01/polish_composite_r36_v02.json",
+      "sha256": "b559ca4dfe87361fbf79cc3dc40159152cc25dedda1bffd91fe7410a120a8bb9",
+      "result": {
+        "rule": {
+          "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+          "split_panel": "full-height/width seam or gutter",
+          "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+          "near_black": "mean < 28.0 or p95 < 50.0",
+          "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+          "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+        },
+        "low_detail_floor": {
+          "std": 13.44,
+          "edge": 0.0259,
+          "calibration": {
+            "video": "025_MarsRobot_full_rough_v02d.mp4",
+            "factor": 1.2,
+            "frames": [
+              {
+                "source": "PIA22223.jpg",
+                "t": 201.0,
+                "std": 12.1,
+                "edge": 0.0223
+              },
+              {
+                "source": "PIA22223.jpg",
+                "t": 216.3,
+                "std": 11.2,
+                "edge": 0.0216
+              },
+              {
+                "source": "PIA22929.jpg",
+                "t": 297.4,
+                "std": 26.54,
+                "edge": 0.5735
+              }
+            ]
+          }
+        },
+        "video": "/Users/benjaminoats/_desk/J2141-aurora-v01/composite_031_r36_durations_v02.mp4",
+        "edge_floor": 0.0264,
+        "verdict": "PASS",
+        "failed": [],
+        "warn": [],
+        "reviewed_ok": [],
+        "rows": [
+          {
+            "cut": 0,
+            "row": 36,
+            "source": "/Users/benjaminoats/_desk/J2141-aurora-v01/composite_031_r36_durations_v02.mp4",
+            "t": 2.44,
+            "std": 81.47,
+            "mean": 112.17,
+            "p95": 212.0,
+            "edge": 0.0264,
+            "hf": 4.77,
+            "lf": 80.36,
+            "std8": 81.06,
+            "edge8": 0.1292,
+            "seams": [],
+            "video": true,
+            "fail": [],
+            "warn": []
+          }
+        ]
+      }
+    }
+  ]
+}

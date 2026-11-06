@@ -2,6 +2,72 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Aurora footage checkpoint (6 Nov, Codex)
+
+Preserve queue **1/3** and PR **#575**, branch
+`worker/J2141-integrated-v01`. This checkpoint starts from `8b4f8386d0`.
+The complete package remains unfinished. Spend **£0**; no public changes.
+
+Three NASA CEO originals downloaded and fully decoded; two selected as
+static candidates. Pool now contains **14 assets**, including the unassigned
+third clip. Source excerpts, catalog, FAQ terms, hashes and contact sheet:
+`/Users/benjaminoats/_desk/J2141-aurora-v01/`. FAQ explicitly allows reuse
+and requests credit to **Earth Science and Remote Sensing Unit, NASA Johnson
+Space Center** and a link to `https://eol.jsc.nasa.gov/` in delivery credits.
+Per-item catalog identifies the crew origin and contains no third-party notice.
+No source audio is used. Media stays outside git.
+
+- R4c: **Aurora Borealis over Europe**, 5 April 2012, Expedition 30.
+  Source 8.00–11.44 s; film candidate 31.86–35.30 s (after existing compass).
+  This is Europe, never relabelled South Atlantic. Crop 1024×576 at (0,64).
+  The remaining 0.02 s to row end is an assembly boundary, not a VO edit.
+- R36: **Aurora Australis south of Australia**, 11 September 2011,
+  Expedition 28; catalog pass rounds east of New Zealand. Source 18–22.88 s;
+  film 373.84–378.72 s. Crop 1024×576 at (0,192). Row's existing 4.88 s
+  duration overlay is composited as `composite_031_r36_durations_v02.mp4`.
+  Its alpha layer moves **−950 px x / −300 px y**, into dark sky above and
+  left of the aurora. **Reject v01 composite:** labels crossed the aurora
+  and pale clouds, despite its polish metric PASS. v02 stills inspected.
+  Original alpha/source words and timing are unchanged; SOURCES row 14.
+- R50b: same southern sequence, **different interval 4–8 s**, film
+  517.86–521.86 s. A 10 s source gap separates this from R36, satisfying
+  the repeat-stretch rule. Two source stretches only; neither loops.
+- **Northern United States**, 13 April 2012: downloaded/decoded but
+  **unassigned**. Sampled frames are dark, with prominent station hardware.
+  Do not count it as a usable aurora separator without further evidence.
+
+All three row plates: 1920×1080, 25 fps, yuv420p, H.264 CRF18; source
+1024×768 / 12 fps, crop then **1.875×** scale. This is native time-lapse
+with frames duplicated for 25 fps, no optical flow, loop or invented frames.
+Fine grain and small lower-left NASA credit added. Encoded stills inspected.
+All originals, plates and v02 composite fully decode. **Polish PASS** on
+midpoint samples for each of the three plates and v02 composite, no warnings.
+These are component checks, not a whole-film picture/polish PASS or a claim
+to hearing audio/watching motion. Ben's final watch remains under the existing
+4 Nov rule; no capability-only hold is needed.
+
+`HARVEST_AURORA_TECHNICAL_CHECK_v01.json` carries the media hashes, crop and
+source intervals, reports (with report hashes), source alpha hash and exact
+v02 composite filter. `harvest_aurora.py` indexes verified local originals and
+builds the three plates with `--render`; existing media is refused. Run with
+`/usr/bin/python3` (Pillow); use default `python3` for polish (NumPy).
+This ffmpeg lacks drawtext, so the script uses a Pillow alpha NASA label.
+The v02 composite recipe in the manifest uses ffmpeg overlay on the preserved
+plate plus the preserved alpha MOV; never overwrite either earlier version.
+
+Detached render completed **exit 0**, no live render/download remains.
+Log/completion: `/Users/benjaminoats/_desk/logs/J2141-aurora-v01.log` and
+`.done`. The corrected run's session was `J2141-aurora-v02` (already exited).
+No master/UAT copy is claimed; these are persistent `_desk` components.
+Disk has about 21 GB free; no NAS move was needed.
+
+**Next:** continue the unfilled real-picture harvest (lava/basalt, cores,
+wildlife, SDO/Hubble, remaining Earth clips). R2 needs its own northern
+limb candidate; do not reuse the R4 interval. Preserve the exhausted horse
+search budget and Titan/sourced-map conflicts. Then assemble overlays with
+plates, check all row coverage/reuse and run full picture/polish QA. The
+film stage remains in progress, no KEEP or final approval; nothing needs Ben.
+
 ## R41 limb checkpoint (6 Nov, Cursor)
 
 Resume queue **1/3**. This branch continues PR575 at 59b9952551.
