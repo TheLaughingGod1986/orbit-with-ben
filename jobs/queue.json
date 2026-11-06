@@ -1,5 +1,5 @@
 {
-  "next_id": 2314,
+  "next_id": 2315,
   "jobs": [
     {
       "id": "J0001",
@@ -195748,6 +195748,36 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2314",
+      "title": "026 E1: resolve recorded-opening incompatibility for J2308",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2308 source-verification is complete, production blocked by recorded-word incompatibility. Review private-local evidence at /private/tmp/j2308-codex/jobs/reviews/J2308/REVIEW.md (commit 88bfa27f29). Report requires a source interval meeting retained Keeper first-line question plus surprise <=1.5s, or an explicit no-go for this cut. Do not waive gates, invent speech, spend, repeat v04, or touch scheduled copies. Automatic approval review rejected remote publication of this report due to private scheduling/status metadata and unverified destination trust; review locally, do not push its evidence. Original J2308 retains 1/3 progress. Return decision to J2308; no Ben approval needed for the internal editorial decision.",
+      "ref": "J2308",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T22:40Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T22:40Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Find a compliant recorded opening or rule this Short out of the timing experiment",
+      "due": "2026-11-17T20:00:00Z",
+      "kind": "review",
+      "plain": "Decide whether the existing voice recordings can meet both opening rules."
     }
   ],
   "focus": [
