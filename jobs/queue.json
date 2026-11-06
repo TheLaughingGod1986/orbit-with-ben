@@ -177362,9 +177362,14 @@
           "at": "2026-11-06T12:26Z",
           "by": "codex",
           "what": "step 3 of 4 done: Added draft Buffer schedule gateway in isolated worktree; 37 gateway tests pass. It uses live YouTube time, checks registered post ownership/status, takes desk lock and rejects arbitrary content/times/deletion. No service writes."
+        },
+        {
+          "at": "2026-11-06T12:29Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Checkpoint 3e8e724ad3 pushed to existing PR490. Installed schedule-only Buffer update gateway and exact rule; 40 tests PASS. Live plan verifies 3 OWB posts match 8 Nov 18:00Z, zero mutations. Git dry-run succeeds; scratch ref absent. Outside-list HEAD explicitly reviewed/approved, no broad rule. J2007 cancelled."
         }
       ],
-      "remaining_action": "Verify restricted Buffer schedule reconciliation; remaining creation and YouTube writes stay reviewed",
+      "remaining_action": "Finish guarded Buffer creation and YouTube package writes; prove new-rule loading",
       "kind": "assembly",
       "urgent": 8,
       "rerouted_from": {
@@ -177379,9 +177384,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-06T12:26Z",
+        "at": "2026-11-06T12:29Z",
         "by": "codex",
-        "note": "Added draft Buffer schedule gateway in isolated worktree; 37 gateway tests pass. It uses live YouTube time, checks regis"
+        "note": "Checkpoint 3e8e724ad3 pushed to existing PR490. Installed schedule-only Buffer update gateway and exact rule; 40 tests P"
       }
     },
     {
