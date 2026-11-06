@@ -1,5 +1,5 @@
 {
-  "next_id": 2289,
+  "next_id": 2290,
   "jobs": [
     {
       "id": "J0001",
@@ -190799,6 +190799,11 @@
           "at": "2026-11-06T15:59Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Short C v03 gates passed (shorts open, picture QA, music, SFX, atempo). Master hos_008_short_C_v03.mp4 sha256 9f25a16de5fc7d454be7adbc0e301614c7b060cd28b10cd076bcd2b4a6642161, 22.708s, -14.1 LUFS. Evidence 9631a14b on cursor/J2255-short-c. No upload. 2 Dec slot stays empty until Chief review, Ben's watch, and the 008 long is public."
+        },
+        {
+          "at": "2026-11-06T16:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J2289"
         }
       ],
       "remaining_action": "Park the finished Short C cut for Chief review",
@@ -190812,7 +190817,13 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-06T17:01:03+00:00",
+        "recheck_task": "J2289"
+      }
     },
     {
       "id": "J2256",
@@ -193151,6 +193162,37 @@
       },
       "for": "cursor",
       "model": "cursor-claude-opus-5-5"
+    },
+    {
+      "id": "J2289",
+      "title": "Verify condition for J2255",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2255: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2255 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-06T16:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T16:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Park the finished Short C cut for Chief review",
+      "kind": "review",
+      "recheck_of": "J2255",
+      "due": "2026-11-06T17:01:03+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
