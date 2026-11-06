@@ -192956,13 +192956,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-06T16:17Z",
-      "eta": "2026-11-06T18:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T14:01Z",
-      "result": "",
+      "result": "Acting-Chief Codex ruling: HOLD / CONDITION UNMET. Accepted verification evidence and checked current prerequisite histories plus origin/main SCOPED_NOT_AUTHORIZED scope. J2172 stays blocked1/3 afterJ2271; recorded wait --recheck J2284, next check 2026-11-06T20:25:00Z. Next executable work is existing J2275 Codex repair, then renewed J2200 system review, J2268 adapter, J2269 guards after J2033 DONE, J2270 production and J2271 independent acceptance. Preserve A/C VO hashes, J1004 OptionA1, all media/rule8 gates and Ben final watch. No spend, generation or publishing; no absent-Chief hold.",
       "history": [
         {
           "at": "2026-11-06T14:01Z",
@@ -193023,6 +193023,11 @@
           "at": "2026-11-06T16:17Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T16:17Z",
+          "by": "codex",
+          "what": "done: Acting-Chief Codex ruling: HOLD / CONDITION UNMET. Accepted verification evidence and checked current prerequisite histories plus origin/main SCOPED_NOT_AUTHORIZED scope. J2172 stays blocked1/3 afterJ2271; recorded wait --recheck J2284, next check 2026-11-06T20:25:00Z. Next executable work is existing J2275 Codex repair, then renewed J2200 system review, J2268 adapter, J2269 guards after J2033 DONE, J2270 production and J2271 independent acceptance. Preserve A/C VO hashes, J1004 OptionA1, all media/rule8 gates and Ben final watch. No spend, generation or publishing; no absent-Chief hold."
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J2284 on J2172 and closes J2284",
@@ -193049,7 +193054,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J2284/REVIEW.md"
     },
     {
       "id": "J2285",
