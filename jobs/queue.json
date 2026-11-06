@@ -187834,18 +187834,26 @@
           "at": "2026-11-06T22:13Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T22:13Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Plan: inspect 14-day inputs; stage NAS files; verify cache and gate report."
         }
       ],
-      "remaining_action": "Interactive Mini: gate_upcoming --stage; refresh UPCOMING_SHORTS_GATE.md; £0",
+      "remaining_action": "Cache upcoming Shorts from the NAS and rerun their gate checks",
       "kind": "assembly",
       "progress": {
         "step": 0,
         "of": 3,
         "at": "2026-11-06T22:13Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: inspect 14-day inputs; stage NAS files; verify cache and gate report."
+      },
+      "taskKeys": [
+        "OWB:025",
+        "OWB:026"
+      ]
     },
     {
       "id": "J2206",
