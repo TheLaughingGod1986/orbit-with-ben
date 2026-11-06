@@ -195545,13 +195545,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-06T22:37Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T22:20Z",
-      "result": "Review J2314: recorded question exceeds surprise timing; statement opener fails retained Keeper rule. Evidence /Users/benjaminoats/_desk/jobs/J2308/REVIEW.md. No compliant render yet; 1/3 complete. Remote evidence publication rejected by automatic approval review; keep evidence local.",
+      "result": "NO-GO / NO E1 RECUT (local review /Users/benjaminoats/_desk/jobs/J2314/REVIEW.md; not pushed per brief): inspected private-local J2308 report (/private/tmp/j2308-codex/jobs/reviews/J2308/REVIEW.md @ 88bfa27f29/58d0616ca3) and audited all 90 sentences in 026/02_Voiceover/words.json plus all 026 Short VO files. (1) Preserved title question (\"If Voyager Needs 75,000 Years, How Far Is the Nearest Star?\") is absent across the entire 026 VO corpus; (2) recorded wed18 question (\"Could a robot like it reach the nearest star?\", 4.420-6.960s = 2.540s raw / 2.396s at 1.06x ceiling) is anaphoric, differs from the title question, and exceeds E1 <=1.50s surprise timing before \"17\" (>3.12s); (3) long VO questions (5.620-7.440s = 1.717s @1.06x; 263.860-265.480s = 1.528s @1.06x; 312.280-314.400s = 2.000s @1.06x; 421.904-423.104s unrelated Starshot) all fail Keeper title-question match and/or <=1.50s surprise; (4) v04 statement splice (\"Voyager 1 moves 17 kilometers every second\", f7ccc2f5232a...) fails retained Keeper line-1 question rule, exceeds E1 Cut 2 <=4.80s (2.63s + 3.157s = 5.787s), and carries the J0935 cadence weld/clipped \"75,000\". Returned explicit no-go to J2308 (closed at retained 1/3 source-verification progress); scheduled v01 cwU_0WWeNZ4 (be7c6121...) and slot preserved untouched. GBP0.",
       "history": [
         {
           "at": "2026-11-06T22:20Z",
@@ -195582,9 +195582,14 @@
           "at": "2026-11-06T22:40Z",
           "by": "codex",
           "what": "blocked: Review J2314: recorded question exceeds surprise timing; statement opener fails retained Keeper rule. Evidence /Users/benjaminoats/_desk/jobs/J2308/REVIEW.md. No compliant render yet; 1/3 complete. Remote evidence publication rejected by automatic approval review; keep evidence local."
+        },
+        {
+          "at": "2026-11-06T22:51Z",
+          "by": "gemini",
+          "what": "review J2314 explicit no-go: no recorded source interval meets retained Keeper line-1 question + <=1.50s surprise; closed at 1/3 progress, scheduled v01 cwU_0WWeNZ4 preserved"
         }
       ],
-      "remaining_action": "Resolve opening-rule conflict through J2314 before rendering",
+      "remaining_action": "Closed (J2314 E1 no-go): retain scheduled v01 cwU_0WWeNZ4 untouched; 1/3 source-verification progress retained",
       "due": "2026-11-17T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
@@ -195597,12 +195602,7 @@
       },
       "taskKeys": [
         "OWB:026"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Review J2314: recorded question exceeds surprise timing; statement opener fails retained Keeper rule. Evidence /Users/benjaminoats/_desk/jobs/J2308/REVIEW.md. No compliant render yet; 1/3 complete. Remote evidence publication rejected by automatic approval review; keep evidence local.",
-        "check_at": "2026-11-07T04:40:51+00:00"
-      }
+      ]
     },
     {
       "id": "J2309",
@@ -195793,13 +195793,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T22:42Z",
-      "eta": "2026-11-07T00:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T22:40Z",
-      "result": "",
+      "result": "NO-GO / NO E1 RECUT (local review /Users/benjaminoats/_desk/jobs/J2314/REVIEW.md; not pushed per brief): inspected private-local J2308 report (/private/tmp/j2308-codex/jobs/reviews/J2308/REVIEW.md @ 88bfa27f29/58d0616ca3) and audited all 90 sentences in 026/02_Voiceover/words.json plus all 026 Short VO files. (1) Preserved title question (\"If Voyager Needs 75,000 Years, How Far Is the Nearest Star?\") is absent across the entire 026 VO corpus; (2) recorded wed18 question (\"Could a robot like it reach the nearest star?\", 4.420-6.960s = 2.540s raw / 2.396s at 1.06x ceiling) is anaphoric, differs from the title question, and exceeds E1 <=1.50s surprise timing before \"17\" (>3.12s); (3) long VO questions (5.620-7.440s = 1.717s @1.06x; 263.860-265.480s = 1.528s @1.06x; 312.280-314.400s = 2.000s @1.06x; 421.904-423.104s unrelated Starshot) all fail Keeper title-question match and/or <=1.50s surprise; (4) v04 statement splice (\"Voyager 1 moves 17 kilometers every second\", f7ccc2f5232a...) fails retained Keeper line-1 question rule, exceeds E1 Cut 2 <=4.80s (2.63s + 3.157s = 5.787s), and carries the J0935 cadence weld/clipped \"75,000\". Returned explicit no-go to J2308 (closed at retained 1/3 source-verification progress); scheduled v01 cwU_0WWeNZ4 (be7c6121...) and slot preserved untouched. GBP0.",
       "history": [
         {
           "at": "2026-11-06T22:40Z",
@@ -195835,9 +195835,14 @@
           "at": "2026-11-06T22:51Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified E1 no-go decision ready to apply to J2308 (retaining 1/3 progress and scheduled v01 cwU_0WWeNZ4)"
+        },
+        {
+          "at": "2026-11-06T22:51Z",
+          "by": "gemini",
+          "what": "done: NO-GO / NO E1 RECUT (local review /Users/benjaminoats/_desk/jobs/J2314/REVIEW.md; not pushed per brief): inspected private-local J2308 report (/private/tmp/j2308-codex/jobs/reviews/J2308/REVIEW.md @ 88bfa27f29/58d0616ca3) and audited all 90 sentences in 026/02_Voiceover/words.json plus all 026 Short VO files. (1) Preserved title question (\"If Voyager Needs 75,000 Years, How Far Is the Nearest Star?\") is absent across the entire 026 VO corpus; (2) recorded wed18 question (\"Could a robot like it reach the nearest star?\", 4.420-6.960s = 2.540s raw / 2.396s at 1.06x ceiling) is anaphoric, differs from the title question, and exceeds E1 <=1.50s surprise timing before \"17\" (>3.12s); (3) long VO questions (5.620-7.440s = 1.717s @1.06x; 263.860-265.480s = 1.528s @1.06x; 312.280-314.400s = 2.000s @1.06x; 421.904-423.104s unrelated Starshot) all fail Keeper title-question match and/or <=1.50s surprise; (4) v04 statement splice (\"Voyager 1 moves 17 kilometers every second\", f7ccc2f5232a...) fails retained Keeper line-1 question rule, exceeds E1 Cut 2 <=4.80s (2.63s + 3.157s = 5.787s), and carries the J0935 cadence weld/clipped \"75,000\". Returned explicit no-go to J2308 (closed at retained 1/3 source-verification progress); scheduled v01 cwU_0WWeNZ4 (be7c6121...) and slot preserved untouched. GBP0."
         }
       ],
-      "remaining_action": "Close J2314 and return E1 no-go decision to J2308",
+      "remaining_action": "Closed: explicit E1 no-go returned to J2308; scheduled v01 cwU_0WWeNZ4 preserved",
       "due": "2026-11-17T20:00:00Z",
       "kind": "review",
       "plain": "Decide whether the existing voice recordings can meet both opening rules.",
