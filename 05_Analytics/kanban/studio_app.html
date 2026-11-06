@@ -254,6 +254,21 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .p24-more { margin-top:10px; }
 .overview-p24 .p24-warn { color:var(--amber); }
 .overview-p24 .p24-films { margin:0; }
+.overview-p24 .p24-film-card { position:relative; }
+.overview-p24 .p24-film-card.is-working { padding-left:28px; }
+.overview-p24 .p24-working-dot {
+  position:absolute; top:14px; left:12px; width:8px; height:8px; border-radius:50%;
+  background:var(--green); box-shadow:0 0 0 0 color-mix(in srgb, var(--green) 45%, transparent);
+  pointer-events:none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .overview-p24 .p24-working-dot { animation:p24-working-pulse 1.8s ease-out infinite; }
+}
+@keyframes p24-working-pulse {
+  0% { box-shadow:0 0 0 0 color-mix(in srgb, var(--green) 50%, transparent); }
+  70% { box-shadow:0 0 0 7px color-mix(in srgb, var(--green) 0%, transparent); }
+  100% { box-shadow:0 0 0 0 transparent; }
+}
 .overview-p24 .p24-film-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:2px; }
 .overview-p24 .p24-film-title { margin:6px 0 0; font-size:13px; line-height:1.45; color:var(--muted); }
 .overview-p24 .p24-glance { margin-bottom:0; }

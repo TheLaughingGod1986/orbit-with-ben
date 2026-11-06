@@ -888,19 +888,42 @@
     const wait=items.find(j=>j.waitKind==='after')||items.find(j=>j.waitKind||j.status==='blocked'||(j.after&&j.status!=='done'));
     return (wait&&wait.why)||'';
   }
-  function p24FilmCard(f) {
+  // True only when a job for this film is claimed / in progress (Ben, 6 Nov ~22:58).
+  // Open, waiting, and "will run after …" do not count.
+  function p24FilmHasActiveWork(f, b) {
+    const items=f.items||[];
+    if(items.some(j=>j&&j.kind!=='stage'&&p24JobMark(j).cls==='is-progress')) return true;
+    if(!b) return false;
+    const filmKey=String(f.film||'');
+    if(!filmKey) return false;
+    const focus=new Set([filmKey]);
+    for(const v of ((b.tracker||{}).videos)||[]){
+      if(!(v.key===filmKey||p24InFocus(v.key, focus))) continue;
+      if((v.jobs||[]).some(j=>j&&j.status==='claimed')) return true;
+    }
+    for(const j of (((b.owb)||{}).jobs)||[]){
+      if(!j||j.status!=='claimed') continue;
+      const keys=(activityVideoContext(b,j).keys)||[];
+      if(keys.some(k=>k===filmKey||p24InFocus(k, focus))) return true;
+    }
+    return false;
+  }
+  function p24FilmCard(f, b) {
     const name=(f.film||'').replace(':',' ');
     const closed=f.closed||(f.milestones!=null&&f.milestones>0);
     const status=f.status||(f.from!=null?p24MovedStatus(f):(closed?'':'worked on, no stage closed'));
     const reason=f.pctReason||(f.doneCount!=null?`${f.doneCount} of ${f.total||9} stages`:'');
     const counts=p24FilmCounts(f);
     const blockedWhy=counts.blocked>0?p24BlockedWhy(f):'';
+    const active=p24FilmHasActiveWork(f, b);
     const jobs=(f.items||[]).map(p24JobLine).join('')
       ||(f.last?`<li class="p24-job is-open" data-job-state="open" aria-label="Open: ${esc(f.last)}"><span class="p24-check" aria-hidden="true"></span><span class="p24-job-main"><span class="p24-title wrap">${esc(f.last)}</span></span></li>`:'');
     const earlier=f.earlierDone>0?`<p class="muted p24-earlier">${f.earlierDone} earlier job${f.earlierDone===1?'':'s'} already done</p>`:'';
     const n=(f.items||[]).length||(f.last?1:0);
     const checklist=jobs?`<details class="p24-check-fold"><summary>Jobs checklist (${n})</summary><ul class="p24-job-list" role="list">${jobs}</ul>${earlier}</details>`:'';
-    return `<article class="ov-card p24-film-card">
+    const dot=active?`<span class="p24-working-dot" role="img" aria-label="A job is in progress on this film"></span>`:'';
+    return `<article class="ov-card p24-film-card${active?' is-working':''}">
+      ${dot}
       <div class="p24-film-head"><b class="p24-film">${esc(name)}</b><span class="p24-delta${f.milestones<0?' down':''}${closed?'':' flat'}">${esc(status)}</span></div>
       <p class="p24-film-title">${esc(f.title||'')}</p>
       ${reason?`<p class="muted p24-reason">${esc(reason)}</p>`:''}
@@ -953,7 +976,7 @@
     const p=b.progress24h; if(!p) return '';
     const focus=p24FocusSet(b);
     const films=p24FocusFilms(b);
-    const filmCards=films.map(p24FilmCard).join('');
+    const filmCards=films.map(f=>p24FilmCard(f, b)).join('');
     const filmsH=focus.size?'Working on now':'Videos that had work';
     if(!filmCards) return {h:filmsH, html:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`};
     return {h:filmsH, html:`<div class="ov-stack p24-films">${filmCards}</div>`};
