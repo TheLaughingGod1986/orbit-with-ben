@@ -2,6 +2,70 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Hubble footage checkpoint (6 Nov, Codex)
+
+Preserve queue **1/3**, PR **#575**, `worker/J2141-integrated-v01`.
+Starts at `d957ee63c2`; spend **£0**, no publishing changes or stage approval.
+Added one NASA original; pool now **17 assets**. No media in git.
+
+NASA SVS **13160**, *NASA Resource Reel – Hubble 25th Anniversary – Highlights
+from STS-125 Hubble Servicing Mission 4*. The official catalog identifies
+approach and departure footage. Credit **NASA's Goddard Space Flight Center**
+(the corner label reads NASA). Original WEBM, source page and NASA media terms
+are preserved and SHA-256 recorded under
+`/Users/benjaminoats/_desk/J2141-hubble-v01/`. Factual educational use with
+acknowledgment and no implied endorsement; source audio entirely excluded.
+These are NASA servicing-mission images, not the separately found animated
+Hubble deployment or the IMAX feature. Terms are per this asset/interval;
+recheck separately credited material before using another part of the reel.
+
+Two adjacent R27a candidate cuts, before `hubble_saa` begins at **280.42 s**:
+
+- Approach **112.00–116.00 s** → film **272.94–276.94 s**:
+  `plate_031_r27_approach_v01.mp4`, 4.00 s.
+- Release **661.00–664.48 s** → film **276.94–280.42 s**:
+  `plate_031_r27_release_v03.mp4`, 3.48 s.
+
+They form one film window with two distinct source stretches (no reused frames).
+Preserve this assignment in the film-wide reuse accounting; neither is a
+blanket approval to repeat the reel elsewhere. The 4:3 archive picture is
+retained with feathered blurred fill, a light grade, fine grain and NASA
+credit. Foreground scale is 1.50× / 1.55×; blurred fill 2.00× / 2.07×.
+No looping, slowdown, interpolation or generated picture. Native source is
+published around 59.94 fps and is converted to 25 fps by frame selection.
+Archive softness and the full-frame look still require capable review.
+
+The original fully decodes; both current plates fully decode, match hashes,
+1920×1080, 25 fps, yuv420p, exact intended durations and no audio streams.
+`HARVEST_HUBBLE_TECHNICAL_CHECK_v01.json` includes commands, hashes, formats,
+source crop, source intervals, film positions, and component gate outputs.
+`harvest_hubble.py` reproduces current versions into a fresh media directory,
+refusing existing media. Final still sheet **CONTACT_v03.jpg** inspected.
+This is still/technical evidence only: no motion, playback or audio review.
+
+Both current component polish checks report **0 failed, 0 warnings**.
+Earlier candidates and failures remain as evidence:
+- Release v01 at 646 s contains an internal cabin cut; superseded, do not assemble.
+- Release v02 chooses the right telescope interval but FAILs the split-panel
+  check due to a residual embedded pillarbox edge. v03 crops that source border
+  (928×696 at 176,12), retaining the telescope. No checker change or waiver.
+The original v01 contact sheet and v02 gate FAIL remain in the media folder.
+Component checks are not KEEP, a film PASS or approval.
+
+Detached **J2141-hubble-v01 finished exit 0**. Log and completion:
+`/Users/benjaminoats/_desk/logs/J2141-hubble-v01.log` and `.done`.
+The two short corrective encodes finished in-session, with no active render.
+One archive candidate examined in about 12 active minutes; search stopped
+with candidates. No exhausted horse or other missing-input budget reset.
+NAS offload was attempted first and deferred to 01:00–06:00 by the existing
+rule, about 14 GB free. No NAS files removed or overwritten.
+
+**Next:** continue wider real-picture harvest (lava/basalt, cores, wildlife,
+Earth); compose remaining row graphics; reconcile existing source/gate conflicts;
+perform full picture/polish QA and actual motion-capable review. The Hubble
+row after 280.42 s still needs its graphic/FACT moving-plate composite.
+Chief retains protected decisions; nothing new needs Ben at this checkpoint.
+
 ## Solar footage checkpoint (6 Nov, Codex)
 
 Preserve queue **1/3** and PR **#575**, `worker/J2141-integrated-v01`.
