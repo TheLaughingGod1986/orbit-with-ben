@@ -190335,9 +190335,14 @@
           "at": "2026-11-06T09:54Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Inspected r19_distance_review.jpg, code_graphic_032_r19_distance_v01.png (0e0a54c0502f...), distance_graphic.py, and 109-sample checks; verified PIA14602 2-use lock (R09+R35) and tested full-size R19 source replacements PIA14909 (273b19ebae1b...) and PIA21610 (ec18f2b771e5...)."
+        },
+        {
+          "at": "2026-11-06T09:58Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed jobs/reviews/J2260/REVIEW.md (4261d05bb6): R19 linear 2-bar AU distance treatment approved over 3-body line; PIA14602 locked to R09+R35 (<=2 uses) with pre-verified R19 swap to PIA14909 (273b19ebae1b...) or PIA21610 (ec18f2b771e5...) approved to render under --review-ref J2260."
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2260/REVIEW.md in a clean worktree and commit",
+      "remaining_action": "Record review on parent J2089 and close J2260",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -190349,11 +190354,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-06T09:54Z",
+        "at": "2026-11-06T09:58Z",
         "by": "gemini",
-        "note": "Inspected r19_distance_review.jpg, code_graphic_032_r19_distance_v01.png (0e0a54c0502f...), distance_graphic.py, and 109"
+        "note": "Committed jobs/reviews/J2260/REVIEW.md (4261d05bb6): R19 linear 2-bar AU distance treatment approved over 3-body line; P"
       },
       "taskKeys": [
         "OWB:032"
