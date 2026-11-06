@@ -1,0 +1,138 @@
+{
+  "job": "J2311",
+  "label": "EXCEPTION",
+  "e1_label": "EXCEPTION. Local candidate only. Cuts, tail and the end card are repaired, and the setup words 'So imagine' are trimmed. The 0.22 s gap inside sentence 1 is still in the recording. This is not a full E1 PASS and not a swap.",
+  "slug": "mon14_half_moon_daylight",
+  "stem": "029_short_mon14_half_moon_daylight_v05",
+  "day": "Mon 14 Dec",
+  "air_date": "2026-12-14",
+  "title": "How Bright Will Betelgeuse Get When It Explodes?",
+  "youtube_id_preserved": "heiGCnGKTkE",
+  "source_v04_sha256": "31f362f4437b4ca56ec16b8abef1dce4c65fb5a5c6c7b5b4e2ba39229a33efd5",
+  "long": {
+    "id": "vP1BbqZ_dnM",
+    "title": "Is Betelgeuse About to Explode?"
+  },
+  "spoken": "the night Betelgeuse explodes. The first sign would not be light at all. It would be a flood of ghostly particles called neutrinos streaming out of the collapsing core. Then the light arrives. Within days, Betelgeuse would blaze as bright as the moon at half phase. You could see it in broad daylight.",
+  "trimmed_words": [
+    "So",
+    "imagine"
+  ],
+  "last_word_end_s": 20.88,
+  "duration_s": 22.04,
+  "tail_s": 1.16,
+  "cut1_s": 2.3,
+  "cut2_s": 4.63,
+  "onset_s": 0.06,
+  "surprise_word": "explodes",
+  "surprise_s": 1.48,
+  "sentence1_breath_s": 0.2,
+  "sentence1_internal_gap_s": 0.22,
+  "sentence1_internal_gap_words": "night -> Betelgeuse",
+  "loop_crossfade_s": 0.3,
+  "loop_diff_mean_abs": 2.776,
+  "frame0_near_black_frac": 0.0356,
+  "frame0_mean_luma": 86.09,
+  "end_card": null,
+  "teach": {
+    "text": "HALF MOON BRIGHT",
+    "s": 18.14,
+    "e": 21.14,
+    "bbox": [
+      197,
+      719,
+      883,
+      777
+    ]
+  },
+  "hook": {
+    "text": "BRIGHT AS A / HALF MOON",
+    "font_px": 124,
+    "bboxes": [
+      [
+        81,
+        259,
+        998,
+        366
+      ],
+      [
+        116,
+        438,
+        963,
+        545
+      ]
+    ]
+  },
+  "title_banner": {
+    "font_px": 58,
+    "rows": [
+      {
+        "text": "Is Betelgeuse",
+        "bbox": [
+          316,
+          841,
+          763,
+          907
+        ]
+      },
+      {
+        "text": "About to",
+        "bbox": [
+          398,
+          931,
+          681,
+          986
+        ]
+      },
+      {
+        "text": "Explode?",
+        "bbox": [
+          389,
+          1020,
+          691,
+          1086
+        ]
+      }
+    ],
+    "joined": "Is Betelgeuse About to Explode?"
+  },
+  "sha256": "f16e0e3c1c0bacdcbac6cc90739ece96fa56fd2cee03e9006feab842bea89852",
+  "phone_sha256": "0a245750d2fd9cdd35bc2536f28cc5ec106c6fb27e8b1b17e0e219a02bfff865",
+  "phone_bytes": 3701192,
+  "words_count": 53,
+  "max_hold_s": 3.8,
+  "max_hold_row": "s05_orion_flare",
+  "audio": {
+    "vo_lufs": -15.7,
+    "bed_lufs": -33.8,
+    "sfx_lufs": -37.7,
+    "mix_lufs": -14.1,
+    "aac_lufs": -14.1,
+    "aac_tp_dbtp": -2.2
+  },
+  "spend": "\u00a30",
+  "heard": false,
+  "watched_motion": false,
+  "gates": {
+    "gate_shorts_open": "PASS",
+    "gate_fails": [],
+    "gate_warns": [],
+    "motion_0_1s": 32.38,
+    "frame0_diff_0_1_5s": 8.74,
+    "visor_frac": 0.0,
+    "first_cut_s": 2.3,
+    "cut2_frame_diff_4.50_to_4.75": 94.43,
+    "level": {
+      "lufs": -14.1,
+      "true_peak_dbtp": -2.2
+    },
+    "sfx_kit_level": "PASS",
+    "music_gate": "PASS",
+    "polish_gate": "PASS",
+    "polish_warn": "s03_chajnantor low detail, edge density 0.0114 < film p5 0.0152",
+    "picture_qa": "PASS",
+    "picture_qa_warn": "0:06 s03_chajnantor low detail",
+    "cover_score": "PASS",
+    "tail_ocr": "no end-card line on the sampled tail; opening frame reads the hook"
+  }
+}
