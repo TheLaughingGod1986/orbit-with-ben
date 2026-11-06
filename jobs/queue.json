@@ -193454,10 +193454,10 @@
       "stage": "upload",
       "after": "J2298",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-06T20:23Z",
+      "eta": "2026-11-06T22:23Z",
       "created_by": "codex",
       "created_at": "2026-11-06T15:18Z",
       "result": "",
@@ -193511,6 +193511,11 @@
           "at": "2026-11-06T20:23Z",
           "by": "chief",
           "what": "reopened: Accepted J2298 evidence (a3a22dda85): persisted cards + valid expanded Level readback; Level None allowance applied; timezone equivalence stands. Closing J2285 FIX follow-up."
+        },
+        {
+          "at": "2026-11-06T20:23Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Complete J2298 corrected card and expanded Level readback, then elected Chief accepts evidence",
@@ -193518,7 +193523,15 @@
       "plain": "Finish and verify the compilation’s remaining YouTube Studio settings",
       "taskKeys": [
         "HOS:099"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T20:23Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2286",
