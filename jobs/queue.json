@@ -179767,9 +179767,14 @@
           "at": "2026-11-06T11:43Z",
           "by": "codex",
           "what": "released: Clean local checkpoint 176a3ef889 on worker/J2089-mechanism-fix in /private/tmp/J2089-mechanism-fix-wt; original 1/4 retained. Corrected J2177 r10_spectrum/r32_scalemap; full-size stills inspected, 218 safe-area samples plus preview hashes/alpha/notch timing/render guard verified. J2277 owns required still review before those exports. Preserve 58 earlier exports. Other licensed harvest, R18/R23 and composites remain doable; frame0/APL holds preserved. No background process or MOV; GBP0, no publishing/PASS/merge. NAS offload found no eligible scratch at 5536MB free. Inherited push rejection respected: local checkpoint, no bypass."
+        },
+        {
+          "at": "2026-11-06T11:50Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: J2277 (8c5f8c18a3): r10_spectrum (57576de51068...) and r32_scalemap (9fabc50ef3a8...) KEEP; approved to render under --approved r10_spectrum r32_scalemap --review-ref J2277; 58 exports, holds, and 1/4 retained"
         }
       ],
-      "remaining_action": "J2277 reviews corrected spectrum and lake-area stills; then export and finish harvest/composites",
+      "remaining_action": "Export approved r10_spectrum and r32_scalemap under --review-ref J2277, apply reviewed source allocations, and finish licensed harvest, R18/R23, and graded composites",
       "kind": "assembly",
       "taskKeys": [
         "OWB:032"
@@ -179788,9 +179793,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-06T11:42Z",
-        "by": "codex",
-        "note": "Local 176a3ef889: corrected J2177 R10/R32 previews; 218 safe-area samples, hashes, alpha, notch timing and render guard "
+        "at": "2026-11-06T11:50Z",
+        "by": "gemini",
+        "note": "J2277 (8c5f8c18a3): r10_spectrum (57576de51068...) and r32_scalemap (9fabc50ef3a8...) KEEP; approved to render under --a"
       }
     },
     {
