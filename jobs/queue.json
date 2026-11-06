@@ -193667,13 +193667,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T19:19Z",
-      "eta": "2026-11-06T21:19Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-06T15:43Z",
-      "result": "",
+      "result": "KEEP (0 sentence pickups, 0 re-recordings, £0 spend): direct audio_input audition via multimodal read_file (audio/wav & audio/mpeg) on both hos_013_short_A_v02 (9f80fa1c, 26.64s) and hos_013_short_B_v02 (6745bd81, 26.00s) confirmed clean British narration throughout, including 'Alfred Russel Wallace' at 11.42s in Short B (homophone Russel/Russell, 0 defects) and clean final consonants ('I think.' at 26.20s in A; 'in a lock.' at 25.95s in B). Assembly note for Short A: fade/trim VO after 26.24s to remove the 20ms buffer-end tick at 26.62-26.64s and hold video export to 26.50-26.80s (inside 22-27s). Review at jobs/reviews/J2246/REVIEW.md and jobs/reviews/J2288/REVIEW.md (c2eb9b4c13). Elected Chief holds formal VO lock on J2246 / HOS PR #444.",
       "history": [
         {
           "at": "2026-11-06T15:43Z",
@@ -193719,6 +193719,11 @@
           "at": "2026-11-06T19:27Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 done: Committed jobs/reviews/J2246/REVIEW.md and jobs/reviews/J2288/REVIEW.md (c2eb9b4c13): KEEP (0 pickups, £0 spend)"
+        },
+        {
+          "at": "2026-11-06T19:27Z",
+          "by": "gemini",
+          "what": "done: KEEP (0 sentence pickups, 0 re-recordings, £0 spend): direct audio_input audition via multimodal read_file (audio/wav & audio/mpeg) on both hos_013_short_A_v02 (9f80fa1c, 26.64s) and hos_013_short_B_v02 (6745bd81, 26.00s) confirmed clean British narration throughout, including 'Alfred Russel Wallace' at 11.42s in Short B (homophone Russel/Russell, 0 defects) and clean final consonants ('I think.' at 26.20s in A; 'in a lock.' at 25.95s in B). Assembly note for Short A: fade/trim VO after 26.24s to remove the 20ms buffer-end tick at 26.62-26.64s and hold video export to 26.50-26.80s (inside 22-27s). Review at jobs/reviews/J2246/REVIEW.md and jobs/reviews/J2288/REVIEW.md (c2eb9b4c13). Elected Chief holds formal VO lock on J2246 / HOS PR #444."
         }
       ],
       "remaining_action": "Closing J2288 and posting review report on OWB thread and HOS desk",
@@ -193746,7 +193751,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "c2eb9b4c13"
     },
     {
       "id": "J2289",
