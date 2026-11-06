@@ -72659,12 +72659,12 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "since": "2026-11-05T07:39Z",
+      "status": "open",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
-      "result": "waiting for review J2195 (rule H): HOS PR423 records exactly one J1894-authorized B v03 take. Hook ends3.68s; even scoped0.15s trim plus atempo1.06 gives3.33s >2.85. vo_check words/levels PASS with homophone warning; repo check_all ALL CHECKS PASS. Exact approved text316 chars (review says311); 316 conservatively logged. No second ta",
+      "result": "Reopened by J2195 (jobs/reviews/J2195/REVIEW.md) under Rule H: KEEP 009 Short A (hos_009_short_A_v02, 2.800s hook), 010 Short A (hos_010_short_A_v02 with J1004 Option A1, 2.849s hook), and 010 Short C (hos_010_short_C_v02, 1.780s hook) without regeneration; preserve hos_009_short_B_v02 and v03 on disk; record 1 scoped 2-sentence opening pickup hos_009_short_B_open_v04 (82 chars: \"In one minute, the Moon falls five metres. An apple falls that far in one second.\") via 04_Audio/tools/vo_take.py after fresh live credit read, concatenate with 0.400s clean silence onto clean 43-word body hos_009_short_B_v03.wav[6.020:23.680] (17.660s) to produce hos_009_short_B_v04.{wav,mp3} (59w, ~22.80s VO / ~23.80s w/ 1.00s tail, S01 ~2.26s <= 2.850s), run vo_check_py312.sh + check_all.sh, and update HOS PR #423.",
       "history": [
         {
           "at": "2026-10-22T20:55Z",
@@ -72920,10 +72920,15 @@
           "at": "2026-11-05T08:28Z",
           "by": "claude",
           "what": "rule H: decision moved from the Chief to review J2195"
+        },
+        {
+          "at": "2026-11-06T11:34Z",
+          "by": "gemini",
+          "what": "review J2195 FIX: KEEP 009 Short A, 010 Short A (J1004 Option A1), and 010 Short C v02 takes (do not regenerate); preserve 009 Short B v02 and v03 on disk; record 1 scoped 2-sentence opening pickup hos_009_short_B_open_v04 (82 chars: \"In one minute, the Moon falls five metres. An apple falls that far in one second.\") and concatenate with 0.400s silence onto verified clean 43-word body hos_009_short_B_v03.wav[6.020:23.680] to build hos_009_short_B_v04.{wav,mp3} (S01 <= 2.850s, total 22-27s, 0 homophones); see jobs/reviews/J2195/REVIEW.md"
         }
       ],
       "kind": "vo",
-      "remaining_action": "Chief must scope repair of the recorded 009 B v03 hook before VO can complete",
+      "remaining_action": "Record 1 scoped 82-char opening pickup hos_009_short_B_open_v04 via 04_Audio/tools/vo_take.py, concatenate with 0.400s silence + hos_009_short_B_v03.wav[6.020:23.680] into hos_009_short_B_v04.{wav,mp3}, run vo_check_py312.sh + check_all.sh, and update HOS PR #423",
       "urgent": 7,
       "progress": {
         "step": 2,
@@ -72932,7 +72937,7 @@
         "by": "codex",
         "note": "HOS PR423 commits74a01241/8d51256c submitted. All repository checks pass; new take word/level gate PASS but hook3.68s FA"
       },
-      "by": "codex",
+      "by": "",
       "taskKeys": [
         "HOS:009",
         "HOS:010"
@@ -186567,13 +186572,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
-      "since": "2026-11-06T10:59Z",
-      "eta": "2026-11-06T12:59Z",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T08:28Z",
-      "result": "",
+      "result": "FIX (jobs/reviews/J2195/REVIEW.md): auditioned hos_009_short_B_v03.mp3 via audio_input and verified all 009/010 Shorts VO takes on disk. KEEP 009 Short A (2.800s hook, 25.32s), 010 Short A (J1004 Option A1, 2.849s hook, 23.289s), and 010 Short C (1.780s hook, 23.56s) untouched. On 009 Short B v03 (HOS PR #423), S01 (\"In one minute the Moon drops an apple's one-second fall.\") spans 0.120-3.680s (3.217s > 2.850s even after -0.270s true silence trim + 1.06x atempo), triggers \"and apples\" homophone, and has comma prosody into \"About five metres each.\" (5.500s), while the 43-word body v03.wav[6.020:23.680] (17.660s) is clean (0 mismatches). Reopened J0862 in one commit with exact 1-take 82-char 2-sentence opening pickup scope (hos_009_short_B_open_v04: \"In one minute, the Moon falls five metres. An apple falls that far in one second.\") + 0.400s silence + v03.wav[6.020:23.680] body -> hos_009_short_B_v04 (59w, ~22.80s VO / ~23.80s total, S01 ~2.26s <= 2.850s at 1.00x).",
       "history": [
         {
           "at": "2026-11-05T08:28Z",
@@ -186619,9 +186624,19 @@
           "at": "2026-11-06T11:30Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Auditioned hos_009_short_B_v03.mp3 via audio_input; verified SHA-256s, Scribe timestamps, and 82-char v04 2-sentence opening pickup + v03[6.020:23.680] body plan"
+        },
+        {
+          "at": "2026-11-06T11:34Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Applied Rule H FIX: wrote jobs/reviews/J2195/REVIEW.md and reopened J0862 with 82-char v04 opening pickup + v03 body splice scope"
+        },
+        {
+          "at": "2026-11-06T11:34Z",
+          "by": "gemini",
+          "what": "done: FIX (jobs/reviews/J2195/REVIEW.md): auditioned hos_009_short_B_v03.mp3 via audio_input and verified all 009/010 Shorts VO takes on disk. KEEP 009 Short A (2.800s hook, 25.32s), 010 Short A (J1004 Option A1, 2.849s hook, 23.289s), and 010 Short C (1.780s hook, 23.56s) untouched. On 009 Short B v03 (HOS PR #423), S01 (\"In one minute the Moon drops an apple's one-second fall.\") spans 0.120-3.680s (3.217s > 2.850s even after -0.270s true silence trim + 1.06x atempo), triggers \"and apples\" homophone, and has comma prosody into \"About five metres each.\" (5.500s), while the 43-word body v03.wav[6.020:23.680] (17.660s) is clean (0 mismatches). Reopened J0862 in one commit with exact 1-take 82-char 2-sentence opening pickup scope (hos_009_short_B_open_v04: \"In one minute, the Moon falls five metres. An apple falls that far in one second.\") + 0.400s silence + v03.wav[6.020:23.680] body -> hos_009_short_B_v04 (59w, ~22.80s VO / ~23.80s total, S01 ~2.26s <= 2.850s at 1.00x)."
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2195/REVIEW.md, reopen J0862 with the v04 82-char opening pickup scope, and finish J2195",
+      "remaining_action": "Done: J2195 FIX review applied; J0862 reopened with 82-char v04 opening pickup + v03 body splice scope",
       "kind": "review",
       "review_of": "J0862",
       "urgent": 4,
@@ -186635,16 +186650,17 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-06T11:30Z",
+        "at": "2026-11-06T11:34Z",
         "by": "gemini",
-        "note": "Auditioned hos_009_short_B_v03.mp3 via audio_input; verified SHA-256s, Scribe timestamps, and 82-char v04 2-sentence ope"
+        "note": "Applied Rule H FIX: wrote jobs/reviews/J2195/REVIEW.md and reopened J0862 with 82-char v04 opening pickup + v03 body spl"
       },
       "taskKeys": [
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2195/REVIEW.md"
     },
     {
       "id": "J2196",
