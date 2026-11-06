@@ -981,14 +981,13 @@
     const body=p24TotalsBody(b); if(!body) return '';
     return `<section class="overview-p24 overview-p24-stats" aria-label="Progress totals"><h2>Studio totals</h2>${body}</section>`;
   }
-  // Composed for tests; Overview home restacks the pieces itself (Ben, 6 Nov ~22:14).
+  // Composed for tests; Overview home restacks the pieces itself (Ben, 6 Nov ~22:25).
   function progressCard(b) {
     const p=b.progress24h; if(!p) return '';
     const films=p24FocusFilms(b);
     const work=workingOnNowBody(b);
     return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
       ${p24Glance(p, films)}
-      ${p24NextLive(p)}
       ${work?`<h3 class="p24-films-h">${work.h}</h3>${work.html}`:''}
       ${p24TotalsBody(b)}
     </section>`;
@@ -1029,7 +1028,7 @@
     const why=j&&(q.noAgent||{})[j.id];
     return why?why.charAt(0).toUpperCase()+why.slice(1):'';
   }
-  // Compact agent rows (still used by tests / detail views). Overview uses agentsCards instead.
+  // Compact agent rows (still used by tests / detail views). Overview home no longer lists Agents (Agents tab).
   function agentLines(b) {
     const q=(b&&b.queueForecast)||{};
     // Busy, queued, or unavailable only — hide idle agents with nothing waiting.
@@ -1089,7 +1088,7 @@
     }).join('');
     return `<section class="overview-machines" aria-label="Machines"><h2>Machines</h2><div class="mc-row">${chips}</div></section>`;
   }
-  // Agents as their own compact traffic-light cards — never merged into Machines.
+  // Kept for tests / reuse; Overview home no longer renders Agents (Agents tab owns that).
   function agentsCards(b) {
     const q=(b&&b.queueForecast)||{};
     const modelStatus=Object.fromEntries((((b.models)||{}).models||[]).map(x=>[x.id,x]));
@@ -1111,18 +1110,16 @@
     const p=b.progress24h; if(!p) return '';
     return `<section class="overview-p24 overview-last24" aria-label="Last 24 hours"><h2>Last 24 hours</h2>${p24Glance(p, p24FocusFilms(b))}</section>`;
   }
-  // Phone restack (Ben, 6 Nov ~22:14): Activity → Machines → Agents → Last 24h → Next live → Working on now → Feature → Totals.
+  // Home slim (Ben, 6 Nov ~22:25): Activity → Machines → Last 24h → Working on now → Totals.
+  // Agents, Next to go live, and Ready for review / Next in production stay off home (other tabs).
   function overview(b, now) {
-    const s=overviewModel(b,now), candidate=featureVideo(b,now);
+    const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="overview-stats" aria-label="Studio video counts"><a class="ov-card" href="#review"><b>${s.ready.length}</b><span>To review</span></a><a class="ov-card" href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a class="ov-card" href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       ${activityCard(b,now)}
       ${machinesCard(b,now)}
-      ${agentsCards(b)}
       ${last24Section(b)}
-      ${p24NextLive(b.progress24h)}
       ${workingOnNow(b)}
-      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted overview-empty">Nothing is ready for your review yet.</p>':''}<div class="ov-stack">${featuredCard(candidate,now,s.producing.length)}${nextVideoWorkCard(b,candidate,now)}</div></section>
       ${p24Totals(b)}</div>`;
   }
 
