@@ -64,6 +64,20 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 
 ### Short (22–27 s, about 55–65 words)
 
+#### OWB-2026-11-E1 — approved timing experiment (6 Nov 2026, J2207 / Chief h47)
+
+Applies to eligible **unswapped scheduled-private 026–029 Shorts and new 030+ cuts**. This is an approved experiment, not a demonstrated retention improvement. Readout: **3 Dec 2026**; December 9–14 cuts contribute only to a later follow-up, never to that readout before airing.
+
+- Cut 1 at **≤2.8 s**, Cut 2 at **≤4.8 s**, measured from output time zero (Cut 2 is the second picture transition, not a 4.8 s shot allowance). Later plates stay **≤4.0 s**.
+- Frame 0: moving, full-bleed payoff subject, ≥60% subject and ≤30% black/empty sky; no Orbit. A slow still push fails. First word **≤0.15 s**; spoken surprise **≤1.5 s**; no internal sentence-1 pause >0.15 s.
+- Bridge sentence 1 straight into the next concrete mechanism/number on moving picture: VO breath **<0.25 s**. Eliminate the **3.5–5.5 s post-sentence-1 pause/hold**; no static crop-zoom in 4–8 s.
+- **Zero meta-promise, spoken CTA or end card**. Last spoken word to loop point **<1.2 s**; matched opening framing, music through the seam, crossfade ≤0.3 s. A visual loop-difference score is not loop-tail seconds.
+- Keep Keeper length/question rules, payoff ≥70%, the one teaching overlay, Related/description link, SFX and all existing ship gates. Existing Test A exemptions and explicit per-cut waivers remain in force: record conflicts for review rather than silently changing the test arm or calling an exception a full E1 PASS.
+- **£0 existing media and recorded words only**: no TTS or image/video generation. Preserve uploaded bytes, hashes and manifests; write a new version beside them. No re-upload of a public idea. Inventory replacement IDs and existing jobs before queuing work; never duplicate a delivered swap.
+- Record frame-0 source, onset, surprise time, **both** cut timestamps, sentence-1 breath, last-word and loop-point timestamps, computed tail, max hold, payoff time, meta/CTA presence, source hashes and gate reports. Existing automatic gate PASS does not prove these tighter E1 limits; check them explicitly.
+- Re-cut jobs deliver local/UAT/NAS evidence for review and Ben's final watch. Upload/schedule/privacy changes need their own authorized job; that job updates Buffer and UPLOADS together. Existing scheduled copies and slots stay in place meanwhile.
+
+
 - **One question (Keeper score, Ben, 26 Oct 2026; Mon 19–Sat 24 Oct data).** The title and line 1 ask one question, and the Short answers it. Copy the winners: *Could a Robot Survive Touching the Sun?* (883 views) and *Why Does a Day on Mercury Last Two of Its Years?* (849). No statement or teaser titles (*Saturn's Rings Are on a Clock*, 12 views); off-week Saturn Shorts are cut. 22 s or longer (exempt: the compilation; the J0216 test Shorts until 20 Nov; Test A opening Shorts, also exempt from the one-question line 1, until Test A's final readout in `05_Analytics/tests/SHORTS_TESTS.md`). Targets stay 60%+ stayed-to-watch and 70%+ average viewed. Hold the Sun Shorts until the `h8HGfyShEHI` thumbnail test ends on 1 Nov. Details: `.cursor/rules/orbit-build-shorts.mdc` → *Keeper score*.
 - **Two lines, then one hard fact.** Line 1 asks the title's question (the familiar thing in danger), said in the first second. Line 2 bridges into a concrete number or mechanism (`02_Video-Projects/_template_NNN_Episode-Slug/10_Shorts/README.md`).
 - **Planet/star named in spoken sentence 1 (`0–2.5 s`) on moving video (Chief, J0900/J0907, 24 Oct 2026):** spoken sentence 1 (`0–2.5 s`) must name the planet, moon or star directly over moving picture — never start a lifted Short mid-paragraph on pronoun/anaphoric phrasing ("The rings look like…", "The mass is…") or over a pushed still (`82Ao0v5XiQI` 13.8% stayed vs `buaOI3QGm7U` 80.0% stayed).
