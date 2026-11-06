@@ -179199,13 +179199,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-06T05:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
-      "result": "parked for Chief: J2264 must review local f01ef6a65d R35 ocean still and PIA14602 source allocation before render. Original 1/4 retained; 39 exports preserved. Existing J2177/J2247/J2260/J2262 and frame0/Huygens/APL holds remain. Worktree /private/tmp/J2089-ocean-wt clean; inherited public-push rejection respected. GBP0, no MOV or final approval.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T18:23Z",
@@ -179596,17 +179596,15 @@
           "at": "2026-11-06T05:30Z",
           "by": "codex",
           "what": "blocked: parked for Chief: J2264 must review local f01ef6a65d R35 ocean still and PIA14602 source allocation before render. Original 1/4 retained; 39 exports preserved. Existing J2177/J2247/J2260/J2262 and frame0/Huygens/APL holds remain. Worktree /private/tmp/J2089-ocean-wt clean; inherited public-push rejection respected. GBP0, no MOV or final approval."
+        },
+        {
+          "at": "2026-11-06T05:54Z",
+          "by": "gemini",
+          "what": "reopened: released by review J2264 (8696af1d91): r35_ocean KEEP as built (--review-ref J2264); PIA14602 allocated <=2 uses (R09 + R35; R03 uses PIA21902 use 1/2; no PIA14602 in R19); 39 exports and J2177/J2247/J2260/J2262/source holds preserved"
         }
       ],
       "remaining_action": "Obtain Chief ocean-still review, then finish licensed harvest and graphics",
       "kind": "assembly",
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-06T05:29Z",
-        "by": "codex",
-        "note": "Local f01ef6a65d: R35 ocean draft inspected; 109 layouts, hashes, exact preview, alpha, label lengths, no upscale and re"
-      },
       "taskKeys": [
         "OWB:032"
       ],
