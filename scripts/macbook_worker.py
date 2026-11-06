@@ -2,8 +2,9 @@
 """MacBook worker lane: the MacBook Pro takes queued `needs macbook` jobs when Ben isn't using it
 (Ben, 28 Oct 2026: "yes" to a MacBook worker lane over Tailscale with power and idle guards).
 
-launchd runs this every 15 minutes (scripts/macbook/com.owb.macbook-worker.plist, installed by
-scripts/macbook/setup_macbook.sh). Each run keeps taking jobs back to back for up to MACBOOK_LOOP_MIN (13) minutes
+launchd runs this every 3 minutes (scripts/macbook/com.owb.macbook-worker.plist, installed by
+scripts/macbook/setup_macbook.sh; 180 s from 6 Nov 2026 so a free MacBook notices waiting work quickly).
+Each run keeps taking jobs back to back for up to MACBOOK_LOOP_MIN (13) minutes
 (Ben, 5 Nov 2026), and takes each one only when ALL of these hold:
   - it is inside its hours: round the clock by default (Ben, 28 Oct 2026: "let's use the MacBook Pro 24 seven");
     MACBOOK_HOURS=night limits it to weeknights 21:00-09:00 and all weekend, London (the run must also end by 09:00);
