@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='twist':
+  from twist_graphics import main as twist
+  return twist(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='bodies':
   from body_graphics import main as bodies
   return bodies(sys.argv[2:])

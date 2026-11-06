@@ -1,6 +1,43 @@
 # J2141 resumable picture build — 4 Nov 2026
 
-Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Twist-card checkpoint (6 Nov, Cursor)
+
+Resume queue **1/3**. This branch continues PR575 at 98a638df88.
+Added `code_graphics.py twist`: one alpha R30 card, 313.82–317.78 s,
+1920×1080 / 25 fps, 99 frames. It follows the existing recap
+(`code_graphic_031_r30_recap_v01`, ending 312.88 s) and does not replace it.
+Labels match the locked line: `CASE CLOSED?` until the word "Are" (315.52 s),
+then `ARE WE OVERDUE?`. Each line is under four seconds and under four words.
+No locked words changed. No new measured claim.
+
+The shot list's 0.3 s hard cut to black is an assembly cut after this card.
+It is not baked here: a black frame would be a slab. Both overlays need the
+graded moving ISS night-limb plate underneath, with that plate already
+separating R29 from R30. Static samples of the encoded file were inspected
+on a navy preview ground. That ground is not the plate.
+
+Media and contact sheet: `/Users/benjaminoats/_desk/J2141-twist-v01/`
+(1,529,406 bytes). `CODE_TWIST_v01.json` and
+`CODE_TWIST_TECHNICAL_CHECK_v01.json` record the hash, argb, 25 fps,
+3.96 s, 99-frame full decode and five distinct sample frames. Frame 0 is
+transparent (fade in). No audio or moving-picture perception is claimed.
+No KEEP, PASS or stage approval.
+
+Reproduce into a fresh directory; existing output is refused:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py twist --out <fresh-dir> --manifest <new-json>
+```
+
+All 14 earlier CLI modes stay in place. £0. No archive search, so the R41
+and horse search budgets are unchanged. NAS offload still had nothing old
+enough; about 3.8 GB free, so this batch stayed a small overlay.
+
+Remaining: wider real-picture harvest, the R41 ISS sunrise-limb fallback,
+moving plates around the R44 duration overlay, composites, source/gate
+reconciliation and full QA. No public state change and no Ben action.
 
 ## Body comparison checkpoint (6 Nov, Codex)
 
