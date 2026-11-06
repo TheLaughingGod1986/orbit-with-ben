@@ -186665,16 +186665,21 @@
           "at": "2026-11-06T08:43Z",
           "by": "cursor",
           "what": "step 1 of 5 done: Scope is 20 v05 rows; board hashes match. Parents are P02:10_how_high and P03:07_ball_to_moon. Worktree /private/tmp/J2200-wt at d88c9235."
+        },
+        {
+          "at": "2026-11-06T08:48Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Runner and tests are written in the detached worktree. Tests are running. No Flow submit."
         }
       ],
-      "remaining_action": "Write the tranche-2 Flow runner and unit tests that submit nothing",
+      "remaining_action": "Run the tranche-2 unit tests, then check_all, then open the PR",
       "kind": "video",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-06T08:43Z",
+        "at": "2026-11-06T08:48Z",
         "by": "cursor",
-        "note": "Scope is 20 v05 rows; board hashes match. Parents are P02:10_how_high and P03:07_ball_to_moon. Worktree /private/tmp/J22"
+        "note": "Runner and tests are written in the detached worktree. Tests are running. No Flow submit."
       },
       "taskKeys": [
         "HOS:009"
