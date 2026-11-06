@@ -188420,13 +188420,13 @@
       "stage": "vo",
       "after": "J2219",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-06T13:07Z",
-      "eta": "2026-11-06T15:07Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
-      "result": "",
+      "result": "Waiting for: OWB:J01 is in jobs/WIP.json active. Checked 2026-11-06T13:09Z: it is first in next, not active. Active OWB is 030, 031, 032, 033 and 034 (cap 5). 031 and 032 are still in picture, not at Ben's watch. Linking VO stays unrecorded and ElevenLabs is not spent until that active entry.",
       "history": [
         {
           "at": "2026-11-05T13:50Z",
@@ -188442,6 +188442,16 @@
           "at": "2026-11-06T13:10Z",
           "by": "cursor",
           "what": "step 1 of 3 done: J2219 locked. J01 still in WIP next, not active. No takes and no ElevenLabs spend."
+        },
+        {
+          "at": "2026-11-06T13:10Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: OWB:J01 is in jobs/WIP.json active. Checked 2026-11-06T13:09Z: it is first in next, not active. Active OWB is 030, 031, 032, 033 and 034 (cap 5). 031 and 032 are still in picture, not at Ben's watch. Linking VO stays unrecorded and ElevenLabs is not spent until that active entry."
+        },
+        {
+          "at": "2026-11-06T13:10Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-06T19:30:00Z"
         }
       ],
       "remaining_action": "Record the 8 J01 linking VO takes after J01 enters the active WIP list",
@@ -188452,6 +188462,11 @@
         "at": "2026-11-06T13:10Z",
         "by": "cursor",
         "note": "J2219 locked. J01 still in WIP next, not active. No takes and no ElevenLabs spend."
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "OWB:J01 is in jobs/WIP.json active. Checked 2026-11-06T13:09Z: it is first in next, not active. Active OWB is 030, 031, 032, 033 and 034 (cap 5). 031 and 032 are still in picture, not at Ben's watch. Linking VO stays unrecorded and ElevenLabs is not spent until that active entry.",
+        "check_at": "2026-11-06T19:30:00Z"
       }
     },
     {

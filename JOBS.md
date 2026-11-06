@@ -57,7 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2205 | mini | open | – | – | assembly · URG-OWB-1: gate_upcoming --stage NAS cache for upcoming Shorts |  |
 | J2207 | mini | open | – | – | assembly · OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts |  |
 | J2215 | macbook | blocked | macbook | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
-| J2220 | mini | claimed | cursor | 2026-11-06T15:07Z | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
+| J2220 | mini | blocked | cursor | – | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
 | J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2222 | mini | open (after J2221) | – | – | J01 edit · for gemini · review · `gemini-argon` · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2223 | mini | open | – | – | for gemini · listing · `gemini-argon` · Shorts slots for the Wed 9 Dec and Sun 13 Dec longs (Uranus, Pluto): two Shorts each |  |
