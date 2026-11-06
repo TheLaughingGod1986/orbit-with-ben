@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2270 | mini | blocked | codex | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · qa · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2275 | mini | open | – | – | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
-| J2276 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
+| J2276 | mini | claimed | gemini | 2026-11-06T12:42Z | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 
 Recently finished:
 
