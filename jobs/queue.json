@@ -184443,6 +184443,11 @@
           "at": "2026-11-06T00:35Z",
           "by": "relay",
           "what": "condition verification queued: J2261"
+        },
+        {
+          "at": "2026-11-06T01:04Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-11-06T07:05:00Z"
         }
       ],
       "remaining_action": "Await Chief merge of HOS PR #425/#426 (0a925061) and separate HOS 010 Flow moving-plate mint (12 plates); then assemble Shorts A and C",
@@ -184461,11 +184466,10 @@
       "hold": {
         "type": "input",
         "condition": "J2210 (£0 SHORTS_PICTURE_PLAN_v03 + Part 05 bird row mapping) is done on 0a925061 (HOS PRs #424 ad3c0f4d, #425 0a925061, #426 0a925061 all CI-green, awaiting Chief merge). Assembly remains blocked until Chief merges HOS PR #425/#426 and separately authorizes and completes the HOS 010 Flow moving-plate mint (12 missing unique Shorts-parent moving plates in SHORTS_PICTURE_PLAN_v03.json or full 010 board after HOS 009 J2033; currently 0/12 minted, 0 Flow credits spent on HOS:010).",
-        "check_at": "2026-11-06T01:35:54+00:00",
-        "last_recheck": "J2232",
-        "checked_at": "2026-11-05T18:15:25+00:00",
-        "checked_by": "macbook",
-        "recheck_task": "J2261"
+        "check_at": "2026-11-06T07:05:00Z",
+        "last_recheck": "J2261",
+        "checked_at": "2026-11-06T01:04:49+00:00",
+        "checked_by": "macbook-2"
       }
     },
     {
@@ -189892,19 +189896,28 @@
           "at": "2026-11-06T01:00Z",
           "by": "macbook-2",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-06T01:04Z",
+          "by": "macbook-2",
+          "what": "step 3 of 3 done: Step 3/3 complete: recorded J2261 condition check on J2172 hold and opened OWB PR #570 (8101aef01)"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2261/REVIEW.md, record wait on J2172 (--recheck J2261), open OWB PR, and close J2261",
+      "remaining_action": "Done: J2261 condition verification complete; J2172 held awaiting Chief HOS PR #425/#426 merge + HOS 010 Flow moving-plate mint",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-06T01:35:54+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-06T01:00Z",
-        "by": "macbook-2"
-      }
+        "at": "2026-11-06T01:04Z",
+        "by": "macbook-2",
+        "note": "Step 3/3 complete: recorded J2261 condition check on J2172 hold and opened OWB PR #570 (8101aef01)"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J2262",
