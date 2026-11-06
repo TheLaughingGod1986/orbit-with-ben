@@ -190169,9 +190169,14 @@
           "at": "2026-11-06T05:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T05:33Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J2265 condition verification for J2248 (OWB 024 fri06 muons Short)"
         }
       ],
-      "remaining_action": "Verify readiness: Reviewer writes KEEP or FIX on J2250",
+      "remaining_action": "Inspect J2248, J2250, and jobs/reviews/J2248/REVIEW.md to verify waiting condition",
       "kind": "review",
       "recheck_of": "J2248",
       "due": "2026-11-06T06:31:40+00:00",
@@ -190190,9 +190195,11 @@
         "of": 3,
         "at": "2026-11-06T05:33Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J2265 condition verification for J2248 (OWB 024 fri06 muons Short)"
+      },
+      "taskKeys": [
+        "OWB:024"
+      ]
     }
   ],
   "focus": [],
