@@ -84241,13 +84241,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-06T06:26Z",
-      "eta": "2026-11-06T07:11Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-25T20:24Z",
-      "result": "",
+      "result": "Needs Ben own login: HOS Studio CDP 9460 pin save returns CHALLENGE_PROMPT_TYPE_AUTHENTICATE; fresh reload still offers Pin. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg must not be recreated. Reauthenticate then pin/read back. HOS evidence 8485623e, branch codex/J0958-pin-auth. No spend or other video changes.",
       "history": [
         {
           "at": "2026-10-25T20:24Z",
@@ -84348,6 +84348,11 @@
           "at": "2026-11-06T06:32Z",
           "by": "codex",
           "what": "step 2 of 3 done: Pin save HTTP 200 contains CHALLENGE_PROMPT_TYPE_AUTHENTICATE with no actionResult. Fresh reload has no badge and still offers Pin. Evidence HOS 8485623e. No duplicate comment, test, schedule or privacy changes."
+        },
+        {
+          "at": "2026-11-06T06:32Z",
+          "by": "codex",
+          "what": "blocked: Needs Ben own login: HOS Studio CDP 9460 pin save returns CHALLENGE_PROMPT_TYPE_AUTHENTICATE; fresh reload still offers Pin. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg must not be recreated. Reauthenticate then pin/read back. HOS evidence 8485623e, branch codex/J0958-pin-auth. No spend or other video changes."
         }
       ],
       "kind": "studio",
@@ -84361,6 +84366,11 @@
         "at": "2026-11-06T06:32Z",
         "by": "codex",
         "note": "Pin save HTTP 200 contains CHALLENGE_PROMPT_TYPE_AUTHENTICATE with no actionResult. Fresh reload has no badge and still "
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "Needs Ben own login: HOS Studio CDP 9460 pin save returns CHALLENGE_PROMPT_TYPE_AUTHENTICATE; fresh reload still offers Pin. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg must not be recreated. Reauthenticate then pin/read back. HOS evidence 8485623e, branch codex/J0958-pin-auth. No spend or other video changes.",
+        "check_at": "2026-11-06T12:32:33+00:00"
       }
     },
     {
