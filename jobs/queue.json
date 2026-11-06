@@ -186541,9 +186541,14 @@
           "at": "2026-11-06T00:01Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T00:01Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Claimed J2206. NAS offload waits for 01:00 window; 15.5 GB free, above the 8 GB day exception."
         }
       ],
-      "remaining_action": "Implement OWB monthly Studio Reach + studio_ctr archive; share with J2202; £0",
+      "remaining_action": "Read the shared Studio Reach reader and OWB inputs",
       "due": "2026-12-01T09:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -186551,9 +186556,11 @@
         "of": 3,
         "at": "2026-11-06T00:01Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2206. NAS offload waits for 01:00 window; 15.5 GB free, above the 8 GB day exception."
+      },
+      "taskKeys": [
+        "OWB:024"
+      ]
     },
     {
       "id": "J2207",
