@@ -190103,13 +190103,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T05:43Z",
-      "eta": "2026-11-06T07:43Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T05:29Z",
-      "result": "",
+      "result": "KEEP (8696af1d91, jobs/reviews/J2264/REVIEW.md): r35_ocean still (code_graphic_032_r35_ocean_v01.png, sha256 20d31824409e) KEEP as built at f01ef6a65d (PIA14602 510x510 -> 480x480 px 0.9412x, ICY GROUND / 55-80 KM BELOW bracket across crust only, open-bottom LIQUID WATER / LIKELY SALTS + AMMONIA, SCHEMATIC · NOT TO SCALE, all 109 sample timestamps inside 5% safe area [120,265,1618,926] with transparent endpoints); approved to render under --approved r35_ocean --review-ref J2264 once draft --render guard in ocean_graphic.py is replaced with qtrle export. PIA14602 allocated to <=2 appearances across 032: Use 1 in R09 (r09_sizes, pending J2247) and Use 2 in R35 (r35_ocean); R03 limb-haze push uses PIA21902 (use 1/2, with R11 use 2/2), and R19 (J2260) excludes PIA14602. Reopened J2089; 39 exports, 1/4 milestone, and J2177/J2247/J2260/J2262/frame0/Huygens/APL holds preserved. £0.",
       "history": [
         {
           "at": "2026-11-06T05:29Z",
@@ -190155,6 +190155,11 @@
           "at": "2026-11-06T05:55Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 complete: reopened parent J2089 with J2264 KEEP ruling and PIA14602 <=2-appearance allocation; closing J2264"
+        },
+        {
+          "at": "2026-11-06T05:55Z",
+          "by": "gemini",
+          "what": "done: KEEP (8696af1d91, jobs/reviews/J2264/REVIEW.md): r35_ocean still (code_graphic_032_r35_ocean_v01.png, sha256 20d31824409e) KEEP as built at f01ef6a65d (PIA14602 510x510 -> 480x480 px 0.9412x, ICY GROUND / 55-80 KM BELOW bracket across crust only, open-bottom LIQUID WATER / LIKELY SALTS + AMMONIA, SCHEMATIC · NOT TO SCALE, all 109 sample timestamps inside 5% safe area [120,265,1618,926] with transparent endpoints); approved to render under --approved r35_ocean --review-ref J2264 once draft --render guard in ocean_graphic.py is replaced with qtrle export. PIA14602 allocated to <=2 appearances across 032: Use 1 in R09 (r09_sizes, pending J2247) and Use 2 in R35 (r35_ocean); R03 limb-haze push uses PIA21902 (use 1/2, with R11 use 2/2), and R19 (J2260) excludes PIA14602. Reopened J2089; 39 exports, 1/4 milestone, and J2177/J2247/J2260/J2262/frame0/Huygens/APL holds preserved. £0."
         }
       ],
       "remaining_action": "Done: J2264 review committed (8696af1d91) and parent J2089 reopened",
@@ -190179,7 +190184,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "8696af1d91"
     },
     {
       "id": "J2265",
