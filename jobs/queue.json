@@ -186551,17 +186551,22 @@
           "at": "2026-11-06T00:03Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Shared reader is origin/cursor/J2202-studio-reach scripts/studio_reach.py (PR 557, unmerged). 1 Nov archive rev 251eaa53ba readAt 2026-11-01T07:27:54Z. 9223 was down; stale Chrome lock pid 48867 is dead."
+        },
+        {
+          "at": "2026-11-06T00:05Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: CDP 9223 is the Orbit channel dashboard. 1 Nov studio_ctr archive seeded, 90 videos, readAt 2026-11-01T07:27:54Z."
         }
       ],
-      "remaining_action": "Open Orbit Studio on CDP 9223 and seed the 1 Nov studio_ctr archive",
+      "remaining_action": "Scrape Orbit Studio Reach for 1-31 Oct 2026",
       "due": "2026-12-01T09:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-06T00:03Z",
+        "at": "2026-11-06T00:05Z",
         "by": "cursor",
-        "note": "Shared reader is origin/cursor/J2202-studio-reach scripts/studio_reach.py (PR 557, unmerged). 1 Nov archive rev 251eaa53"
+        "note": "CDP 9223 is the Orbit channel dashboard. 1 Nov studio_ctr archive seeded, 90 videos, readAt 2026-11-01T07:27:54Z."
       },
       "taskKeys": [
         "OWB:024"
