@@ -193863,6 +193863,11 @@
           "at": "2026-11-06T18:40Z",
           "by": "codex",
           "what": "reopened: Elected-Chief review accepts condition UNMET; claim only this verification to record ruling and follow-up. Parent J2033 stays blocked."
+        },
+        {
+          "at": "2026-11-06T18:40Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Elected Codex takes this protected condition ruling from Gemini; only J2292."
         }
       ],
       "remaining_action": "Elected Chief (codex) runs jobs.py wait J2033 --recheck J2292 and closes J2292",
@@ -193877,8 +193882,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
       ]
