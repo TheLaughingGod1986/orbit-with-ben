@@ -786,26 +786,75 @@
       ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:`<p class="activity-progress-missing">${starting?'Preparing to claim the selected job':'Task progress not recorded'}</p>`}
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
   }
-  // Last 24 hours (Ben, 4 Nov 2026): jobs finished, which films moved and by how much. From board.progress24h.
+  // Last 24 hours (Ben, 4 Nov 2026; film cards 6 Nov 2026): headline counts, then one quiet card per film with the jobs that touched it.
+  function p24JobLive(status) {
+    if(!status||status==='done') return '';
+    if(status==='blocked') return 'waiting';
+    if(status==='claimed') return 'in progress';
+    return status;
+  }
+  function p24JobLine(j) {
+    const stage=j.stage?`<span class="p24-job-stage">${esc(j.stage)}</span>`:'';
+    const prog=j.progress&&j.progress.of?`<span class="p24-job-prog">${j.progress.step||0} of ${j.progress.of}</span>`:'';
+    const liveLabel=p24JobLive(j.status);
+    const live=liveLabel?`<span class="p24-job-live">${esc(liveLabel)}</span>`:'';
+    return `<li class="p24-job"><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(j.title||'')}</span>${stage}${prog}${live}</li>`;
+  }
+  function p24MovedStatus(m) {
+    if(m.milestones<0) return `↺ reopened · ${m.from}% → ${m.to}%`;
+    return `${m.from}% → ${m.to}%`;
+  }
+  // Live boards may still have the older films[] shape (count + last, no items/status). Always merge moved[].
+  function p24MergeFilms(films, moved) {
+    const by=new Map();
+    for(const f of films||[]){
+      const key=f.film||f.key; if(!key) continue;
+      by.set(key,{...f,film:key});
+    }
+    for(const m of moved||[]){
+      if(!m.key) continue;
+      const status=p24MovedStatus(m), closed=m.milestones>0;
+      const cur=by.get(m.key);
+      if(cur){
+        by.set(m.key,{...cur,from:m.from,to:m.to,milestones:m.milestones,closed,status,title:cur.title||m.title});
+      }else{
+        by.set(m.key,{film:m.key,title:m.title,from:m.from,to:m.to,milestones:m.milestones,closed,status,items:[],jobs:0,last:''});
+      }
+    }
+    return [...by.values()];
+  }
+  function p24FilmCard(f) {
+    const name=(f.film||'').replace(':',' ');
+    const closed=f.closed||(f.milestones!=null&&f.milestones>0);
+    const status=f.status||(f.from!=null?p24MovedStatus(f):(closed?'':'worked on, no stage closed'));
+    const jobs=(f.items||[]).map(p24JobLine).join('')
+      ||(f.last?`<li class="p24-job"><span class="p24-title wrap">${esc(f.last)}</span></li>`:'');
+    return `<article class="ov-card p24-film-card">
+      <div class="p24-film-head"><b class="p24-film">${esc(name)}</b><span class="p24-delta${f.milestones<0?' down':''}${closed?'':' flat'}">${esc(status)}</span></div>
+      <p class="p24-film-title">${esc(f.title||'')}</p>
+      ${jobs?`<ul class="p24-job-list">${jobs}</ul>`:''}
+    </article>`;
+  }
   function progressCard(b) {
     const p=b.progress24h;
     if(!p) return '';
     const agents=Object.entries(p.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
-    const name=k=>(k||'').replace(':',' ');
-    const moved=(p.moved||[]).map(m=>`<li><span class="p24-film">${esc(name(m.key))}</span> <span class="p24-title">${esc(m.title)}</span><span class="p24-delta${m.milestones<0?' down':''}">${m.milestones<0?'↺ reopened · ':''}${m.from}% → ${m.to}%</span></li>`).join('');
+    const films=p24MergeFilms(p.films,p.moved);
+    const filmCards=films.map(p24FilmCard).join('');
+    const studio=(p.studio||[]).map(p24JobLine).join('');
+    const studioN=p.otherJobs!=null?p.otherJobs:(p.studio||[]).length;
     // A drop means a stage reopened for more work (e.g. a Short fixed after its long was done), not lost work.
     const reopened=(p.moved||[]).some(m=>m.milestones<0)?'<p class="muted p24-note">↺ reopened: a finished stage has new work on it again (a fix or a Short being redone), so it counts as in progress until that work is done. Nothing was lost.</p>':'';
-    const films=(p.films||[]).map(f=>`<li><span class="p24-film">${esc(name(f.film))}</span> <span class="p24-title">${esc(f.title)}</span><span class="p24-count">${f.jobs} job${f.jobs===1?'':'s'}</span><span class="p24-last">${esc(f.last)}</span></li>`).join('');
     const partial=p.hours && p.hours<23 ? `<p class="muted p24-note">Film progress covers the last ${Math.round(p.hours)} h so far; it fills to 24 h on its own.</p>`:'';
     return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
-      <div class="ov-card">
+      <div class="ov-card p24-head">
       <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>${p.videoJobs!=null?'video jobs finished':'jobs finished'}</span></div><div><b>${p.milestones||0}</b><span>milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>videos moved forward</span></div></div>
       ${p.videoJobs!=null?`<p class="muted p24-agents${p.jobsDone&&p.videoJobs/p.jobsDone<0.3?' p24-warn':''}">${p.videoJobs} of ${p.jobsDone||0} jobs were on videos (${p.jobsDone?Math.round(p.videoJobs/p.jobsDone*100):0}%); the rest kept the studio running.</p>`:''}
       ${agents?`<p class="muted p24-agents">By ${agents}</p>`:''}
-      ${moved?`<h3>Videos that moved</h3><ul class="p24-list">${moved}</ul>${reopened}`:`<p class="muted p24-note">No video changed milestone ${p.hours?'in this window':'yet (first reading)'}.</p>`}
-      ${partial}
-      ${films?`<details class="p24-more"><summary>Where the work went (${p.jobsDone||0} jobs${p.otherJobs?`, ${p.otherJobs} studio-wide`:''})</summary><ul class="p24-list">${films}</ul></details>`:''}
+      ${partial}${reopened}
       </div>
+      ${filmCards?`<h3 class="p24-films-h">Videos that had work</h3><div class="ov-stack p24-films">${filmCards}</div>`:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`}
+      ${studio||studioN?`<details class="p24-more p24-studio"><summary>Studio-wide (${studioN||(p.studio||[]).length} job${(studioN||(p.studio||[]).length)===1?'':'s'})</summary><ul class="p24-job-list">${studio||`<li class="muted">No job titles recorded.</li>`}</ul></details>`:''}
     </section>`;
   }
   // Machines (Ben, 4 Nov 2026): what the Mini and the MacBook are on now, and jobs each finished in 24 h.
