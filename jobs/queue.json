@@ -1,5 +1,5 @@
 {
-  "next_id": 2264,
+  "next_id": 2265,
   "jobs": [
     {
       "id": "J0001",
@@ -190055,6 +190055,36 @@
       },
       "for": "cursor",
       "model": "cursor-claude-opus-5-5"
+    },
+    {
+      "id": "J2264",
+      "title": "032 R35 ocean-section still and source-allocation review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# R35 ocean cross-section: individual still review needed\n\nJ2089, GBP0. Draft only; no MOV, KEEP, final OK or film stage approval.\n\nPreview: `/Users/benjaminoats/_desk/cache/J2089/ocean_previews_v01/r35_ocean_review.jpg`\nAlpha: same directory, `code_graphic_032_r35_ocean_v01.png`.\nCode and reproducible evidence: `ocean_graphic.py`, `verify_ocean_graphic.py`,\n`OCEAN_MANIFEST_v01.json`, `OCEAN_CHECKS_v01.json` beside this note.\n\nJudge this still against locked R35 and SOURCES.md row 13. It uses an existing\nreal Titan photograph (PIA14602, unchanged pixels with limb mask, downscaled\n510 to 480 px) beside our qualitative magnified cross-section. The bracket\nmeans 55–80 km BELOW the surface, never the thickness of the ocean. No ocean\nfloor/core or quantitative thickness is drawn. Salts and ammonia are labelled\nLIKELY. The schematic disclosure says NOT TO SCALE. The ocean fill and bracket\nbuild over 1.5 s, with 0.4 s entry/exit; total planned duration 3.6 s.\n\nWorker viewed the full-size review still. Technical checks reproduce its exact\npixels and source/preview hashes, check 109 planned layouts inside safe bounds,\nno source upscale, labels of at most four words, zero endpoint alpha, changing\nframes and render rejection. These are measurements, not motion perception.\n\nChief decisions needed: does the local cross-section teach the locked line\naccurately and read clearly; may the named draft proceed to render; where is\nPIA14602 allocated in the final <=2-appearance source manifest? Do not silently\nadd a third still appearance. No new download/search/generation or factual\nclaim was introduced. Existing J2177/J2247/J2260/J2262 and frame0/Huygens/APL\nholds remain. Preserve all 39 earlier exports. Review only, no merge or public\nrelease requested here.\n",
+      "ref": "f01ef6a65d",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T05:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T05:29Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect the ocean cross-section still and decide source allocation and render permission",
+      "due": "2026-11-09T18:00:00Z",
+      "kind": "review",
+      "plain": "Review the Titan underground ocean graphic before it is animated."
     }
   ],
   "focus": [],

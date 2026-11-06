@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2260 | mini | open | – | – | 032 picture · for cursor · review · `cursor-claude-opus-5-5` · 032 R19 distance draft: review still and reuse |  |
 | J2262 | mini | open | – | – | 032 picture · for cursor · review · `cursor-claude-opus-5-5` · 032 R08 orbital-period draft: review still and source reuse allocation | c95c73b4f9 |
 | J2263 | mini | open | – | – | 006 edit · for cursor · review · `cursor-claude-opus-5-5` · Review HOS 006 Short B v02 and Short C v03 | J2169 |
+| J2264 | mini | open | – | – | 032 picture · review · 032 R35 ocean-section still and source-allocation review | f01ef6a65d |
 
 Recently finished:
 
