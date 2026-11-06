@@ -267,6 +267,10 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-p24 .p24-glance-list, .overview-p24 .p24-next-list { list-style:none; margin:6px 0 0; padding:0; }
 .overview-p24 .p24-glance-list li, .overview-p24 .p24-next-list li { display:flex; flex-wrap:wrap; gap:4px 8px; align-items:baseline; padding:6px 0 0; font-size:13px; line-height:1.4; }
 .overview-p24 .p24-blocked, .overview-p24 .p24-next { margin-top:10px; }
+.overview-next-live .p24-next { margin-top:0; }
+.overview-p24 .p24-glance-fold { margin-top:10px; }
+.overview-p24 .p24-glance-fold>summary { cursor:pointer; font-size:13px; min-height:40px; display:flex; align-items:center; color:var(--muted); list-style:none; }
+.overview-p24 .p24-glance-fold>summary::-webkit-details-marker { display:none; }
 .overview-p24 .p24-next-when { color:var(--muted); font-size:12px; white-space:nowrap; }
 .overview-p24 .p24-reason { margin:4px 0 0; font-size:12px; line-height:1.4; }
 .overview-p24 .p24-film-counts { display:flex; flex-wrap:wrap; gap:6px 14px; margin:8px 0 0; font-size:12px; color:var(--muted); }
@@ -296,6 +300,24 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-p24 .p24-job.is-waiting .p24-job-live { color:var(--amber); }
 .overview-p24 .p24-studio { color:var(--muted); }
 .overview-p24 .p24-studio .p24-job-list { margin-top:4px; }
+/* Compact machine / agent traffic-light chips (Ben, 6 Nov ~22:14 phone restack). */
+.overview-machines .mc-row, .overview-agents .mc-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin:0; }
+.overview-agents .mc-row-wrap { grid-template-columns:repeat(auto-fit,minmax(4.6rem,1fr)); }
+.overview-home .mc-chip { display:flex; flex-direction:column; align-items:flex-start; gap:2px; padding:10px 8px; min-height:72px; text-decoration:none; color:inherit; position:relative; overflow:hidden; min-width:0; }
+.overview-home .mc-chip .mc-light { width:8px; height:8px; border-radius:50%; background:var(--muted); flex:0 0 auto; margin-bottom:4px; }
+.overview-home .mc-chip.light-green .mc-light { background:var(--green); box-shadow:0 0 0 3px color-mix(in srgb, var(--green) 25%, transparent); }
+.overview-home .mc-chip.light-amber .mc-light { background:var(--amber); box-shadow:0 0 0 3px color-mix(in srgb, var(--amber) 25%, transparent); }
+.overview-home .mc-chip.light-red .mc-light { background:var(--red); box-shadow:0 0 0 3px color-mix(in srgb, var(--red) 22%, transparent); }
+.overview-home .mc-chip .mc-short { font-size:13px; font-weight:700; line-height:1.2; letter-spacing:-.01em; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.overview-home .mc-chip .mc-chip-state { font-size:11px; line-height:1.3; color:var(--ink); font-weight:600; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.overview-home .mc-chip .mc-chip-done { font-size:10px; line-height:1.3; color:var(--muted); }
+.overview-home .mc-chip.light-green { border-color:color-mix(in srgb, var(--green) 35%, var(--line)); }
+.overview-home .mc-chip.light-amber { border-color:color-mix(in srgb, var(--amber) 35%, var(--line)); }
+.overview-home .mc-chip.light-red { border-color:color-mix(in srgb, var(--red) 28%, var(--line)); }
+.overview-agents .mc-agent-list { margin:0; }
+.overview-agents .mc-agent-list li { padding:10px 0; }
+.overview-agents .mc-agent-list li:first-child { padding-top:0; }
+.overview-agents .p24-note { margin-top:10px; }
 .overview-machines .mc-head, .overview-agents .mc-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; margin-bottom:8px; font-size:15px; }
 .overview-machines .mc-done { color:var(--muted); font-size:12px; white-space:nowrap; }
 .overview-machines .mc-done b { color:var(--ink); font-size:15px; font-weight:700; }
@@ -304,10 +326,6 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-machines .mc-job .p24-title { flex:1 1 8rem; color:var(--ink); }
 .overview-machines .mc-agent { color:var(--muted); font-size:12px; white-space:nowrap; }
 .overview-machines .mc-idle { margin:0; font-size:13px; line-height:1.45; color:var(--muted); }
-.overview-agents .mc-agent-list { margin:0; }
-.overview-agents .mc-agent-list li { padding:10px 0; }
-.overview-agents .mc-agent-list li:first-child { padding-top:0; }
-.overview-agents .p24-note { margin-top:10px; }
 .p24-more summary { cursor:pointer; font-size:13px; min-height:44px; display:flex; align-items:center; }
 .overview-empty { font-size:14px; line-height:1.5; color:var(--muted); margin:0; padding:0; background:transparent; border-radius:0; }
 .overview-empty-link { display:flex; justify-content:space-between; align-items:center; min-height:44px; font-size:14px; color:var(--blue); padding:8px 0; }

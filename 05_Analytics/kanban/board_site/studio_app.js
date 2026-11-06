@@ -909,7 +909,11 @@
       ${checklist}
     </article>`;
   }
-  function p24Glance(p, films) {
+  function p24FocusFilms(b) {
+    const p=b&&b.progress24h; if(!p) return [];
+    return p24MergeFilms(p.films,p.moved).filter(f=>p24InFocus(f.film, p24FocusSet(b)));
+  }
+  function p24GlanceCounts(p, films) {
     const g=p.glance||{};
     const list=films||p.films||[];
     // Prefer counts from the cards on screen so focus filtering never leaves glance inflated.
@@ -919,46 +923,74 @@
     const focusKeys=new Set(list.map(f=>f.film).filter(Boolean));
     const blockedJobs=(g.blockedJobs||[]).filter(j=>!focusKeys.size||focusKeys.has(j.film)||p24InFocus(j.film, focusKeys));
     const blocked=blockedFromFilms||blockedJobs.length;
-    const next=(g.nextLive||[]).slice(0,4);
-    // Task names stay visible (Ben, 6 Nov evening); no disclosure for the can't-run list.
+    return {doneToday, left, blocked, blockedJobs};
+  }
+  // Last 24h headlines only; long can't-run blurbs sit in an accordion (Ben, 6 Nov ~22:14).
+  function p24Glance(p, films) {
+    const {doneToday, left, blocked, blockedJobs}=p24GlanceCounts(p, films);
     const blockedList=blockedJobs.length
-      ?`<div class="p24-blocked"><h3 class="p24-films-h">Can't run yet</h3><ul class="p24-glance-list">${blockedJobs.map(j=>{
+      ?`<details class="p24-glance-fold"><summary>Can't run yet (${blockedJobs.length})</summary><ul class="p24-glance-list">${blockedJobs.map(j=>{
           const line=j.why||j.title||'';
           return `<li><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(line)}</span></li>`;
-        }).join('')}</ul></div>`
+        }).join('')}</ul></details>`
       :'';
-    const nextList=next.length?`<div class="p24-next"><h3 class="p24-films-h">Next to go live</h3><ol class="p24-next-list">${next.map(v=>{
-      const when=v.atLondon||v.at||'';
-      return `<li><span class="p24-next-when">${esc(when)}</span><span class="p24-title wrap">${esc(v.title||'')}</span></li>`;
-    }).join('')}</ol></div>`:'';
     return `<div class="ov-card p24-glance" aria-label="Studio glance">
       <div class="p24-glance-stats"><div><b>${doneToday}</b><span>done today</span></div><div><b>${left}</b><span>left to go live</span></div><div><b>${blocked}</b><span>can't run yet</span></div></div>
-      ${blockedList}${nextList}
+      ${blockedList}
     </div>`;
   }
-  function progressCard(b) {
-    const p=b.progress24h;
-    if(!p) return '';
+  // Next publishes live apart from the last-24h headlines (Ben, 6 Nov ~22:14).
+  function p24NextLive(p) {
+    const next=((p&&p.glance)||{}).nextLive||[];
+    const rows=next.slice(0,4);
+    if(!rows.length) return '';
+    return `<section class="overview-next-live" aria-label="Next to go live"><h2>Next to go live</h2><div class="ov-card p24-next"><ol class="p24-next-list">${rows.map(v=>{
+      const when=v.atLondon||v.at||'';
+      return `<li><span class="p24-next-when">${esc(when)}</span><span class="p24-title wrap">${esc(v.title||'')}</span></li>`;
+    }).join('')}</ol></div></section>`;
+  }
+  function workingOnNowBody(b) {
+    const p=b.progress24h; if(!p) return '';
     const focus=p24FocusSet(b);
-    const agents=Object.entries(p.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
-    const films=p24MergeFilms(p.films,p.moved).filter(f=>p24InFocus(f.film, focus));
+    const films=p24FocusFilms(b);
     const filmCards=films.map(p24FilmCard).join('');
+    const filmsH=focus.size?'Working on now':'Videos that had work';
+    if(!filmCards) return {h:filmsH, html:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`};
+    return {h:filmsH, html:`<div class="ov-stack p24-films">${filmCards}</div>`};
+  }
+  function workingOnNow(b) {
+    const body=workingOnNowBody(b); if(!body) return '';
+    return `<section class="overview-p24 overview-working" aria-label="${body.h}"><h2>${body.h}</h2>${body.html}</section>`;
+  }
+  function p24TotalsBody(b) {
+    const p=b.progress24h; if(!p) return '';
+    const agents=Object.entries(p.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
     const studio=(p.studio||[]).map(p24JobLine).join('');
     const studioN=p.otherJobs!=null?p.otherJobs:(p.studio||[]).length;
-    // A drop means a stage reopened for more work (e.g. a Short fixed after its long was done), not lost work.
     const reopened=(p.moved||[]).some(m=>m.milestones<0)?'<p class="muted p24-note">↺ reopened: a finished stage has new work on it again (a fix or a Short being redone), so it counts as in progress until that work is done. Nothing was lost.</p>':'';
     const partial=p.hours && p.hours<23 ? `<p class="muted p24-note">Film progress covers the last ${Math.round(p.hours)} h so far; it fills to 24 h on its own.</p>`:'';
-    const filmsH=focus.size?'Working on now':'Videos that had work';
-    return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
-      ${p24Glance(p, films)}
-      <div class="ov-card p24-head">
+    return `<div class="ov-card p24-head">
       <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>${p.videoJobs!=null?'video jobs finished':'jobs finished'}</span></div><div><b>${p.milestones||0}</b><span>milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>videos moved forward</span></div></div>
       ${p.videoJobs!=null?`<p class="muted p24-agents${p.jobsDone&&p.videoJobs/p.jobsDone<0.3?' p24-warn':''}">${p.videoJobs} of ${p.jobsDone||0} jobs were on videos (${p.jobsDone?Math.round(p.videoJobs/p.jobsDone*100):0}%); the rest kept the studio running.</p>`:''}
       ${agents?`<p class="muted p24-agents">By ${agents}</p>`:''}
       ${partial}${reopened}
       </div>
-      ${filmCards?`<h3 class="p24-films-h">${filmsH}</h3><div class="ov-stack p24-films">${filmCards}</div>`:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`}
-      ${studio||studioN?`<details class="p24-more p24-studio"><summary>Studio-wide (${studioN||(p.studio||[]).length} job${(studioN||(p.studio||[]).length)===1?'':'s'})</summary><ul class="p24-job-list" role="list">${studio||`<li class="muted">No job titles recorded.</li>`}</ul></details>`:''}
+      ${studio||studioN?`<details class="p24-more p24-studio"><summary>Studio-wide (${studioN||(p.studio||[]).length} job${(studioN||(p.studio||[]).length)===1?'':'s'})</summary><ul class="p24-job-list" role="list">${studio||`<li class="muted">No job titles recorded.</li>`}</ul></details>`:''}`;
+  }
+  function p24Totals(b) {
+    const body=p24TotalsBody(b); if(!body) return '';
+    return `<section class="overview-p24 overview-p24-stats" aria-label="Progress totals"><h2>Studio totals</h2>${body}</section>`;
+  }
+  // Composed for tests; Overview home restacks the pieces itself (Ben, 6 Nov ~22:14).
+  function progressCard(b) {
+    const p=b.progress24h; if(!p) return '';
+    const films=p24FocusFilms(b);
+    const work=workingOnNowBody(b);
+    return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
+      ${p24Glance(p, films)}
+      ${p24NextLive(p)}
+      ${work?`<h3 class="p24-films-h">${work.h}</h3>${work.html}`:''}
+      ${p24TotalsBody(b)}
     </section>`;
   }
   // Machines (Ben, 4 Nov 2026): what the Mini and the MacBook are on now, and jobs each finished in 24 h.
@@ -997,6 +1029,7 @@
     const why=j&&(q.noAgent||{})[j.id];
     return why?why.charAt(0).toUpperCase()+why.slice(1):'';
   }
+  // Compact agent rows (still used by tests / detail views). Overview uses agentsCards instead.
   function agentLines(b) {
     const q=(b&&b.queueForecast)||{};
     // Busy, queued, or unavailable only — hide idle agents with nothing waiting.
@@ -1007,36 +1040,90 @@
       const line=a.queued?` · ${a.queued} in line, clear about ${esc(qWhen(a.clearAt))}`:'';
       return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title wrap">${on}${line}</span></li>`;
     }).join('');
-    // Own section/card — never merged into the Machines list (Ben, 6 Nov 2026).
     return rows?`<section class="overview-agents" aria-label="Agents and their lines"><h2>Agents and their lines</h2><div class="ov-card mc-agents"><ul class="p24-list mc-agent-list">${rows}</ul>${q.note?`<p class="muted p24-note">${esc(q.note)}</p>`:''}</div></section>`:'';
   }
+  // Traffic light: green = working, amber = waiting/available, red = idle / down / blocked (Ben, 6 Nov ~22:14).
+  function machineTraffic(r) {
+    const n=(r.now||[]).length;
+    const st=String(r.state||'').toLowerCase();
+    if(n>0||st==='running'||st==='working') return {light:'green', word:'Working', count:n||1};
+    if(st==='error'||st==='down') return {light:'red', word:'Down', count:0};
+    if(st==='busy'||st==='waiting') return {light:'amber', word:'Waiting', count:0};
+    // Up with nothing on it → idle (red). Available-with-queue is rare on machines; keep amber for explicit waiting.
+    return {light:'red', word:'Idle', count:0};
+  }
+  function agentTraffic(a, modelStatus) {
+    const ms=(modelStatus&&modelStatus[a.agent])||{};
+    if(!a.up||ms.status==='red') return {light:'red', word:'Down'};
+    if(a.now) return {light:'green', word:'Working'};
+    if((a.queued||0)>0) return {light:'amber', word:'Waiting'};
+    return {light:'red', word:'Idle'};
+  }
+  const MACHINE_ORDER=[
+    {id:'mini', short:'Mini', name:'Mac mini'},
+    {id:'macbook', short:'MacBook', name:'MacBook Pro'},
+    {id:'cloud', short:'Claude', name:'Claude (cloud)'},
+    {id:'grok', short:'Grok', name:'Grok box'},
+  ];
+  function liveMachineRow(r, now) {
+    if(r.id!=='macbook'||!macbook||!(Date.parse(macbook.at)>Date.parse(r.seen||0))) return r;
+    const why=Array.isArray(macbook.why)?macbook.why.join('; '):(macbook.why||'');
+    const now2=(r.now||[]).length||!macbook.job?r.now:[{id:macbook.job,title:'',agent:'macbook'}];
+    return {...r,state:macbook.state||r.state,why,seen:macbook.at,agents:macbook.agents||r.agents,now:now2};
+  }
+  // Four compact traffic-light cards in one row — no long job titles (Ben, 6 Nov ~22:14).
   function machinesCard(b, now) {
     const m=b.machines;
-    if(!m||!(m.machines||[]).length) return agentLines(b);
-    const ago=t=>{const d=Date.parse(t);if(!d)return'';const min=Math.round((now-d)/60000);return min<1?'just now':min<60?`${min} min ago`:`${Math.round(min/60)} h ago`;};
-    const seenBit=t=>{const d=Date.parse(t);if(!d)return'';const min=(now-d)/60000;return min>=SEEN_STALE_MIN?` · seen ${ago(t)}`:'';};
-    const live=r=>{  // the MacBook's own report is fetched every minute, fresher than the 5-min board publish
-      if(r.id!=='macbook'||!macbook||!(Date.parse(macbook.at)>Date.parse(r.seen||0))) return r;
-      const why=Array.isArray(macbook.why)?macbook.why.join('; '):(macbook.why||'');
-      const now2=(r.now||[]).length||!macbook.job?r.now:[{id:macbook.job,title:'',agent:'macbook'}];
-      return {...r,state:macbook.state||r.state,why,seen:macbook.at,agents:macbook.agents||r.agents,now:now2};
-    };
-    // One simple card per machine: name, 24h count, current job or short idle line.
-    const rows=m.machines.map(live).map(r=>{
-      const jobs=(r.now||[]).map(n=>`<p class="mc-job"><b>${esc(n.id)}</b> <span class="p24-title wrap">${esc(n.title)}</span>${n.agent?`<span class="mc-agent">${esc(n.agent)}</span>`:''}</p>`).join('');
-      const idle=!jobs?`<p class="mc-idle">${r.why?esc(r.why):'No job right now.'}${seenBit(r.seen)}</p>`:'';
-      return `<article class="ov-card mc-machine"><div class="mc-head"><b>${esc(r.name)}</b><span class="mc-done"><b>${r.done24||0}</b> done in 24 h</span></div>${jobs||idle}</article>`;
+    const byId=Object.fromEntries(((m&&m.machines)||[]).map(r=>[r.id, liveMachineRow(r, now)]));
+    const chips=MACHINE_ORDER.map(meta=>{
+      const r=byId[meta.id]||{id:meta.id, name:meta.name, now:[], done24:0, state:''};
+      const t=machineTraffic(r);
+      const working=t.count>0?`${t.count} on`:`${t.word}`;
+      const done=`${r.done24||0}`;
+      return `<a class="ov-card mc-chip light-${t.light}" href="#agents" aria-label="${esc(meta.name)}: ${t.word}">
+        <i class="mc-light" aria-hidden="true"></i>
+        <b class="mc-short">${esc(meta.short)}</b>
+        <span class="mc-chip-state">${esc(working)}</span>
+        <span class="mc-chip-done">${esc(done)} done</span>
+      </a>`;
     }).join('');
-    return `<section class="overview-machines" aria-label="Machines"><h2>Machines</h2><div class="ov-stack">${rows}</div></section>${agentLines(b)}`;
+    return `<section class="overview-machines" aria-label="Machines"><h2>Machines</h2><div class="mc-row">${chips}</div></section>`;
   }
+  // Agents as their own compact traffic-light cards — never merged into Machines.
+  function agentsCards(b) {
+    const q=(b&&b.queueForecast)||{};
+    const modelStatus=Object.fromEntries((((b.models)||{}).models||[]).map(x=>[x.id,x]));
+    const rows=q.agents||[];
+    if(!rows.length) return '';
+    const chips=rows.map(a=>{
+      const name=AGENTS[a.agent]||a.agent;
+      const t=agentTraffic(a, modelStatus);
+      const detail=a.now?esc(a.now):(a.queued?`${a.queued} waiting`:t.word);
+      return `<div class="ov-card mc-chip ag-chip light-${t.light}" aria-label="${esc(name)}: ${t.word}">
+        <i class="mc-light" aria-hidden="true"></i>
+        <b class="mc-short">${esc(name)}</b>
+        <span class="mc-chip-state">${detail}</span>
+      </div>`;
+    }).join('');
+    return `<section class="overview-agents" aria-label="Agents"><h2>Agents</h2><div class="mc-row mc-row-wrap">${chips}</div></section>`;
+  }
+  function last24Section(b) {
+    const p=b.progress24h; if(!p) return '';
+    return `<section class="overview-p24 overview-last24" aria-label="Last 24 hours"><h2>Last 24 hours</h2>${p24Glance(p, p24FocusFilms(b))}</section>`;
+  }
+  // Phone restack (Ben, 6 Nov ~22:14): Activity → Machines → Agents → Last 24h → Next live → Working on now → Feature → Totals.
   function overview(b, now) {
     const s=overviewModel(b,now), candidate=featureVideo(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="overview-stats" aria-label="Studio video counts"><a class="ov-card" href="#review"><b>${s.ready.length}</b><span>To review</span></a><a class="ov-card" href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a class="ov-card" href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
-      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted overview-empty">Nothing is ready for your review yet.</p>':''}<div class="ov-stack">${featuredCard(candidate,now,s.producing.length)}${nextVideoWorkCard(b,candidate,now)}</div></section>
-      ${machinesCard(b,now)}
       ${activityCard(b,now)}
-      ${progressCard(b)}</div>`;
+      ${machinesCard(b,now)}
+      ${agentsCards(b)}
+      ${last24Section(b)}
+      ${p24NextLive(b.progress24h)}
+      ${workingOnNow(b)}
+      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted overview-empty">Nothing is ready for your review yet.</p>':''}<div class="ov-stack">${featuredCard(candidate,now,s.producing.length)}${nextVideoWorkCard(b,candidate,now)}</div></section>
+      ${p24Totals(b)}</div>`;
   }
 
   // Working / Queued / Backlog (Ben, 28 Oct): active work is one tap away; All keeps everything with On YouTube.
