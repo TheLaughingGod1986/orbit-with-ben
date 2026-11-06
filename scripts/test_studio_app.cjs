@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -170,7 +170,9 @@ assert(!t.productionDetail(tracked, NOW).includes('<unsafe>'));
 assert(t.uatOutlook(v({}), NOW).detail.includes('not been published'));
 const blockedProduction = v({production: {milestones: [], eta: {state: 'unavailable', reasons: ['Flow <manual>', 'credit reset']}}});
 assert(t.productionDetail(blockedProduction, NOW).includes('Flow &lt;manual&gt;') && t.productionDetail(blockedProduction, NOW).includes('credit reset'));
-assert(t.overview({tracker: {videos: [tracked]}}, NOW).includes('milestones complete'));
+const trackedBoard={tracker: {videos: [tracked]}};
+assert(t.featuredCard(t.featureVideo(trackedBoard, NOW), NOW, 1).includes('milestones complete'));
+assert(!t.overview(trackedBoard, NOW).includes('milestones complete'),'Overview home no longer embeds milestone feature copy');
 assert(!t.renderTab('review', {tracker: {videos: [tracked, blockedProduction]}}, NOW).includes('15–25 min'));
 
 assert(t.uatOutlook(tracked, NOW + 80 * 6e4).detail.includes('fresh production'));
@@ -249,8 +251,9 @@ assert(t.renderTab('videos',db,NOW).includes('Producing · 2 unique videos'));
 context.location.hash='#schedule&view=week';
 assert(t.renderTab('schedule',db,NOW).includes('This week · scheduled <span class="n">1</span>'));
 context.location.hash='';
-assert.equal((t.overview(db,NOW).match(/class="featured-video"/g)||[]).length,1);
+assert.equal((t.overview(db,NOW).match(/class="featured-video"/g)||[]).length,0,'Overview home no longer carries the feature card');
 assert(!t.overview(db,NOW).includes('How this estimate works'));
+assert(!t.overview(db,NOW).includes('overview-feature')&&!t.overview(db,NOW).includes('Next in production')&&!t.overview(db,NOW).includes('Ready for your review'));
 console.log('Studio V3 selector and Overview checks OK');
 
 const identicalSlot=[slot('OWB:s1','2026-11-04T18:00:00Z'),slot('OWB:s2','2026-11-04T18:00:00Z')];
@@ -383,15 +386,21 @@ const linkedQA=t.stageExplanation({...qaVideo,jobs:[{id:'Jreview',stage:'qa',sta
 assert.equal(linkedQA.job.id,'Jreview');assert.equal(linkedQA.owner,'Codex');assert(linkedQA.why.includes('claimed'));
 assert(t.stageExplanationHtml({...qaVideo,jobs:[{id:'Jreview',stage:'qa',status:'open',title:'<unsafe>'}]},unknownQA).includes('&lt;unsafe&gt;'));
 console.log('Stage explanation checks OK');
-// Overview never describes blocked production as waiting for Ben to watch.
+// Overview home no longer shows Ready for review / Next in production (Review tab owns that).
 const notReadyOverview=t.overview({tracker:{videos:[v({key:'blocked-example',lane:'progress'})]},owb:{jobs:[]}},NOW);
-assert(notReadyOverview.includes('Next in production')&&notReadyOverview.includes('Nothing is ready for your review yet.'));
+assert(!notReadyOverview.includes('Next in production')&&!notReadyOverview.includes('Ready for your review')&&!notReadyOverview.includes('overview-feature'));
 assert(!notReadyOverview.includes('Next for your review')&&!notReadyOverview.includes('▶ Watch & review'));
-const readyOverview=t.overview({tracker:{videos:[v({key:'watch-now',lane:'ready',readyFor:'Ben',watch:{url:'https://example.com/cut.mp4',version:'v02'}})]},owb:{jobs:[]}},NOW);
-assert(readyOverview.includes('Ready for your review')&&readyOverview.includes('href="#uat=watch-now"')&&readyOverview.includes('▶ Watch & review v02'));
+const readyBoard={tracker:{videos:[v({key:'watch-now',lane:'ready',readyFor:'Ben',watch:{url:'https://example.com/cut.mp4',version:'v02'}})]},owb:{jobs:[]}};
+const readyOverview=t.overview(readyBoard,NOW);
+assert(!readyOverview.includes('Ready for your review')&&!readyOverview.includes('▶ Watch & review v02')&&!readyOverview.includes('overview-feature'));
+assert.equal(t.overviewModel(readyBoard,NOW).ready.length,1,'ready cuts still count in To review');
+const readyReview=t.renderTab('review',readyBoard,NOW);
+assert(readyReview.includes('href="#uat=watch-now"')&&(readyReview.includes('▶ Watch & review v02')||readyReview.includes('Watch &amp; review v02')),
+  'Watch CTA lives on the Review tab');
+const featuredReady=t.featuredCard(t.featureVideo(readyBoard,NOW),NOW,0);
+assert(featuredReady.includes('Ready for your review')||featuredReady.includes('Watch'),'featuredCard helper still renders ready cuts for Review');
 const missingDelivery=t.overview({tracker:{videos:[v({key:'missing-watch',lane:'ready',readyFor:'Ben'})]},owb:{jobs:[]}},NOW);
-// 5 Nov 2026: a cut without its video attached isn't offered to Ben at all until the link arrives.
-assert(missingDelivery.includes('Nothing is ready for your review yet.')&&!missingDelivery.includes('▶ Watch & review'));
+assert(!missingDelivery.includes('▶ Watch & review')&&!missingDelivery.includes('overview-feature'));
 console.log('Review readiness wording and Watch CTA checks OK');
 // Activity video context comes from existing associations, never guessed from a job title.
 const contextVideos=[v({key:'HOS:008',channel:'HOS',title:'How Franklin Tamed Lightning',jobs:[{id:'J1757'}]}),v({key:'OWB:030',channel:'OWB',title:'Apophis'})];
@@ -488,19 +497,23 @@ const mixedCut=v({key:'OWB:030',version:'v13a',watch:{url:'https://example.test/
 const hosRows=nine.map(id=>({id,label:id,state:['topic','script','sources','vo'].includes(id)?'done':id==='picture'?'doing':'unknown',
   summary:id==='picture'?'70/90 picture rows recorded':'',evidence:id==='picture'?'/private/internal-generation-log':''}));
 const hosPicture=v({key:'HOS:009',channel:'HOS',production:{milestones:hosRows,activeStages:['picture'],eta:{state:'unavailable'}}});
-const hosFeatured=t.overview({tracker:{videos:[hosPicture]}},NOW);
+const hosBoard={tracker:{videos:[hosPicture]}};
+const hosFeatured=t.featuredCard(t.featureVideo(hosBoard,NOW),NOW,1);
 assert(hosFeatured.includes('70/90 picture rows recorded'));
 assert(hosFeatured.includes('4 of 9 milestones complete')&&hosFeatured.includes('44%'));
 assert(!hosFeatured.includes('/private/internal-generation-log'));
-const noRowSummary=t.overview({tracker:{videos:[{...hosPicture,production:{...hosPicture.production,milestones:hosRows.map(m=>({...m,summary:''}))}}]}},NOW);
+assert(!t.overview(hosBoard,NOW).includes('70/90 picture rows recorded'),'Overview home no longer embeds the feature card');
+const noRowSummary=t.featuredCard(t.featureVideo({tracker:{videos:[{...hosPicture,production:{...hosPicture.production,milestones:hosRows.map(m=>({...m,summary:''}))}}]}},NOW),NOW,1);
 assert(!noRowSummary.includes('picture rows recorded'),'missing row counts never get invented');
-const unknownCutRows=t.overview({tracker:{videos:[{...hosPicture,production:{scope:'unconfirmed_cut',projectHistory:hosPicture.production}}]}},NOW);
+const unknownCutRows=t.featuredCard(t.featureVideo({tracker:{videos:[{...hosPicture,production:{scope:'unconfirmed_cut',projectHistory:hosPicture.production}}]}},NOW),NOW,1);
 assert(!unknownCutRows.includes('70/90 picture rows recorded'),'project row counts do not certify an unconfirmed cut');
 const normalized=t.normalizeCut(mixedCut);
 assert.equal(normalized.type,'short');assert.equal(normalized.key,'OWB:030');assert.equal(mixedCut.type,'long','source records are unchanged');
-const mixedOverview=t.overview({tracker:{videos:[mixedCut]}},NOW);
-assert(mixedOverview.includes('Short')&&mixedOverview.includes('Cut progress')&&mixedOverview.includes('Unconfirmed'));
-assert(!mixedOverview.includes('78%')&&!mixedOverview.includes('0%'));
+const mixedBoard={tracker:{videos:[mixedCut]}};
+const mixedFeatured=t.featuredCard(t.featureVideo(mixedBoard,NOW),NOW,1);
+assert(mixedFeatured.includes('Short')&&mixedFeatured.includes('Cut progress')&&mixedFeatured.includes('Unconfirmed'));
+assert(!mixedFeatured.includes('78%')&&!mixedFeatured.includes('0%'));
+assert(!t.overview(mixedBoard,NOW).includes('Cut progress'),'Overview home no longer embeds cut progress feature copy');
 assert(!t.videoProductionRow(mixedCut,NOW).includes('78%'));
 const mixedDetail=t.productionDetail(mixedCut,NOW);
 assert(mixedDetail.includes('Progress for this cut unconfirmed')&&mixedDetail.includes('Related project history · 7 of 9'));
@@ -565,14 +578,16 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert(!card.includes('overview-agents'), 'Machines section does not swallow Agents');
   assert((card.match(/aria-label="Machines"/g)||[]).length===1, 'Machines is its own section');
   const agents = t.agentsCards(qb);
-  assert(agents.includes('overview-agents') && agents.includes('aria-label="Agents"'), 'Agents stays a separate section');
+  assert(agents.includes('overview-agents') && agents.includes('aria-label="Agents"'), 'agentsCards helper still builds a separate Agents section');
   assert(agents.includes('mc-chip') && agents.includes('light-green') && agents.includes('J2276'), 'agent chips use traffic lights');
   assert(agents.includes('light-red') || agents.includes('Idle') || agents.includes('Down'), 'idle/down agents get a red light');
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
   assert(ov.includes('overview-stats') && ov.includes('ov-card'), 'Overview stacks simple cards');
   assert(ov.indexOf('overview-activity') < ov.indexOf('overview-machines'), 'Studio Activity sits above Machines');
-  assert(ov.indexOf('overview-machines') < ov.indexOf('overview-agents'), 'Machines sit above Agents');
-  assert(ov.includes('overview-agents') && ov.includes('mc-chip'), 'Overview keeps separate Agents traffic-light cards');
+  assert(!ov.includes('overview-agents') && !ov.includes('Agents</h2>'), 'Overview home does not repeat the Agents tab');
+  assert(!ov.includes('overview-next-live') && !ov.includes('Next to go live'), 'Overview home does not list Next to go live');
+  assert(!ov.includes('overview-feature') && !ov.includes('Next in production') && !ov.includes('Ready for your review'),
+    'Overview home drops Ready for review / Next in production');
 }
 console.log('Queue forecast checks OK');
 
@@ -642,10 +657,11 @@ console.log('Queue forecast checks OK');
   assert(card.includes("Can't run yet") && card.includes('J2142') && card.includes('Will run automatically after J2141'),
     'glance can\'t-run list uses will-run-after wording, not a mysterious wall');
   assert(card.includes('p24-glance-fold'), 'cannot-run blurbs sit behind a glance accordion');
-  assert(card.includes('Next to go live') && card.includes('Could a Robot Survive on Mars?') && card.includes('Why Vaccines Are Named After a Cow'),
-    'next four going-live videos are listed from existing publish times');
-  assert(card.indexOf('p24-glance') < card.indexOf('overview-next-live') || card.indexOf('p24-glance') < card.indexOf('Next to go live'),
-    'next-to-go-live is apart from the last-24h headline card');
+  assert(!card.includes('Next to go live') && !card.includes('overview-next-live'),
+    'progressCard no longer mixes Next to go live into Last 24 hours');
+  const nextLive = t.p24NextLive(p24);
+  assert(nextLive.includes('Next to go live') && nextLive.includes('Could a Robot Survive on Mars?') && nextLive.includes('Why Vaccines Are Named After a Cow'),
+    'p24NextLive helper still lists the next four from publish times');
   // Compact film card + checklist behind disclosure.
   assert(card.includes('6 of 9 stages · picture still open') && card.includes('Done today') && card.includes('Left') && card.includes("Can't run"),
     'film cards show % reason and headline counts without opening anything');
@@ -696,13 +712,20 @@ console.log('Queue forecast checks OK');
   const ov = t.overview({tracker: {videos: []}, progress24h: p24, machines: {machines: []}}, Date.parse('2026-11-06T19:41:00Z'));
   assert(ov.includes('p24-film-card') && ov.includes('Last 24 hours'), 'Overview includes the film job cards');
   assert(ov.includes('p24-check') && ov.includes('data-job-state="progress"'), 'Overview checklist marks survive the full overview render');
-  assert(ov.includes('p24-glance') && ov.includes('Next to go live'), 'Overview glance strip survives the full overview render');
-  assert(ov.includes('overview-activity') && ov.indexOf('overview-activity') < ov.indexOf('overview-last24'),
-    'Studio Activity stays top-and-center above Last 24 hours');
+  assert(ov.includes('p24-glance') && !ov.includes('Next to go live') && !ov.includes('overview-next-live'),
+    'Overview glance strip stays; Next to go live stays off home');
+  assert(ov.includes('overview-activity') && ov.indexOf('overview-activity') < ov.indexOf('overview-machines'),
+    'Studio Activity sits above Machines');
+  assert(ov.indexOf('overview-machines') < ov.indexOf('overview-last24'),
+    'Machines sit above Last 24 hours');
+  assert(ov.indexOf('overview-last24') < ov.indexOf('overview-working'),
+    'Last 24 hours sits above Working on now');
   assert(ov.includes('overview-working') && ov.includes('overview-p24-stats'),
     'Working on now and studio totals are separate sections');
   assert(ov.indexOf('overview-working') < ov.indexOf('overview-p24-stats'),
     'film percentages sit above the 46/milestones totals line');
+  assert(!ov.includes('overview-agents') && !ov.includes('overview-feature'),
+    'Overview home omits Agents cards and the Ready-for-review feature block');
   assert(ov.includes('p24-glance-fold') && !/<details[^>]*p24-check-fold[^>]*\sopen/i.test(ov),
     'can\'t-run details fold closed; film checklists stay closed by default');
 
@@ -742,7 +765,7 @@ console.log('Queue forecast checks OK');
   assert(/<b>3<\/b><span>left to go live<\/span>/.test(focused), 'glance left matches the focus films on screen');
   assert(/<b>1<\/b><span>can't run yet<\/span>/.test(focused), 'glance blocked matches the focus films on screen');
   assert(focused.includes('J2142') && !focused.includes('J024x'), 'glance can\'t-run list is scoped to focus films');
-  assert(focused.includes('Could a Robot Survive on Mars?'), 'next-four going live stays (scheduled publishes, not focus)');
+  assert(!focused.includes('Could a Robot Survive on Mars?'), 'next-to-go-live titles are not mixed into Last 24 hours / Working on now');
 }
 console.log('Last-24-hours film cards OK');
 

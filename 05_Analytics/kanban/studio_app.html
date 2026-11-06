@@ -190,7 +190,7 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 
 /* Studio V3 Overview — simple card stack (Ben, 6 Nov 2026).
    One subject per card; only the facts that matter; wrap useful text. Scoped to .overview-home. */
-.overview-home { --overview-gap:12px; display:flex; flex-direction:column; gap:var(--overview-gap); }
+.overview-home { --overview-gap:16px; display:flex; flex-direction:column; gap:var(--overview-gap); }
 .overview-home .ov-card {
   display:block; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px;
 }
@@ -207,7 +207,7 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-stats b { font-size:28px; line-height:1.05; font-weight:700; letter-spacing:-.02em; }
 .overview-stats span { color:var(--muted); font-size:11px; line-height:1.3; }
 .overview-home section { margin:0; }
-.overview-home h2 { font-size:12px; font-weight:600; line-height:1.3; margin:0 0 8px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+.overview-home h2 { font-size:12px; font-weight:600; line-height:1.3; margin:0 0 10px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
 .featured-video { /* uses .ov-card look via shared panel styles; keep class for tests */ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
 .overview-home .featured-video { display:block; }
 .featured-heading { display:flex; align-items:center; gap:12px; }
@@ -254,9 +254,9 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .p24-more { margin-top:10px; }
 .overview-p24 .p24-warn { color:var(--amber); }
 .overview-p24 .p24-films { margin:0; }
-.overview-p24 .p24-film-head { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
-.overview-p24 .p24-film-title { margin:4px 0 0; font-size:13px; line-height:1.4; color:var(--muted); }
-.overview-p24 .p24-glance { margin-bottom:10px; }
+.overview-p24 .p24-film-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:2px; }
+.overview-p24 .p24-film-title { margin:6px 0 0; font-size:13px; line-height:1.45; color:var(--muted); }
+.overview-p24 .p24-glance { margin-bottom:0; }
 .overview-p24 .p24-glance-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
 .overview-p24 .p24-glance-stats>div { display:flex; flex-direction:column; align-items:center; gap:2px; padding:4px 0; }
 .overview-p24 .p24-glance-stats b { font-size:22px; line-height:1.05; font-weight:700; letter-spacing:-.02em; }
@@ -268,11 +268,13 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-p24 .p24-glance-list li, .overview-p24 .p24-next-list li { display:flex; flex-wrap:wrap; gap:4px 8px; align-items:baseline; padding:6px 0 0; font-size:13px; line-height:1.4; }
 .overview-p24 .p24-blocked, .overview-p24 .p24-next { margin-top:10px; }
 .overview-next-live .p24-next { margin-top:0; }
-.overview-p24 .p24-glance-fold { margin-top:10px; }
+.overview-p24 .p24-glance-fold { margin-top:12px; padding-top:10px; border-top:1px solid var(--line); }
 .overview-p24 .p24-glance-fold>summary { cursor:pointer; font-size:13px; min-height:40px; display:flex; align-items:center; color:var(--muted); list-style:none; }
 .overview-p24 .p24-glance-fold>summary::-webkit-details-marker { display:none; }
+.overview-p24 .p24-glance-stats + .p24-glance-fold { margin-top:12px; }
+.overview-working .p24-films { gap:12px; }
 .overview-p24 .p24-next-when { color:var(--muted); font-size:12px; white-space:nowrap; }
-.overview-p24 .p24-reason { margin:4px 0 0; font-size:12px; line-height:1.4; }
+.overview-p24 .p24-reason { margin:6px 0 0; font-size:12px; line-height:1.4; }
 .overview-p24 .p24-film-counts { display:flex; flex-wrap:wrap; gap:6px 14px; margin:8px 0 0; font-size:12px; color:var(--muted); }
 .overview-p24 .p24-film-counts b { color:var(--ink); font-weight:650; }
 .overview-p24 .p24-blocked-why { margin:4px 0 0; font-size:12px; line-height:1.4; color:var(--amber, #c98a1a); }
