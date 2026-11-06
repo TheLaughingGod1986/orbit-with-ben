@@ -184038,13 +184038,13 @@
       "stage": "edit",
       "after": "J2213",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-06T00:51Z",
-      "eta": "2026-11-06T02:51Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "",
+      "result": "HOS 006 Short B v02 and Short C v03 rebuilt at GBP0 from existing media. B sha256 f4b046d41d0d6fcfbd14258abe472d57db5c9d53c1ed535141aa3281e1f3915b (24.250s, 1080x1920). C sha256 e1e3ff0ce3b5622b4a43d010a0df827bcd34e25ccd76a87338b286b0632c40c5 (25.167s). B opens at source 1.375s because source 0 failed the open gate. No dissolve. picture_qa, polish, sfx, music, shorts gate and decode exited 0. WARNs left for review: B S07, C S05, new C S03 low detail, terminal-loop samples. Evidence HOS b8230f85 on cursor/J2169-bc-v02. NAS SHA256SUMS_v02 checked. Review J2263. Not approved, not uploaded, not watched or heard.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -184225,6 +184225,11 @@
           "at": "2026-11-06T05:22Z",
           "by": "cursor",
           "what": "step 5 of 5 done: Evidence is HOS b8230f85. NAS hashes match. Review is J2263. No spend and no publish."
+        },
+        {
+          "at": "2026-11-06T05:22Z",
+          "by": "cursor",
+          "what": "done: HOS 006 Short B v02 and Short C v03 rebuilt at GBP0 from existing media. B sha256 f4b046d41d0d6fcfbd14258abe472d57db5c9d53c1ed535141aa3281e1f3915b (24.250s, 1080x1920). C sha256 e1e3ff0ce3b5622b4a43d010a0df827bcd34e25ccd76a87338b286b0632c40c5 (25.167s). B opens at source 1.375s because source 0 failed the open gate. No dissolve. picture_qa, polish, sfx, music, shorts gate and decode exited 0. WARNs left for review: B S07, C S05, new C S03 low detail, terminal-loop samples. Evidence HOS b8230f85 on cursor/J2169-bc-v02. NAS SHA256SUMS_v02 checked. Review J2263. Not approved, not uploaded, not watched or heard."
         }
       ],
       "remaining_action": "Hand the rebuilt Shorts to review",
@@ -184234,7 +184239,7 @@
         "HOS:006"
       ],
       "escalated_at": "2026-11-05T06:52Z",
-      "done_ref": "699c359bf44ccda9d996dae4a2d6524be3774a03",
+      "done_ref": "b8230f85",
       "progress": {
         "step": 5,
         "of": 5,
