@@ -37,3 +37,22 @@
 1. **PASS `J2256`** (`STILLS_LOCK_v01.md`, `STILLS_POOL_STATUS_v01.json`, `OMNI_PRICE_PASS_BRIEF_v01.md`).
 2. **Dispatch £0 Harvest + Code Graphics** for the 38 missing pool IDs (+ `PIA00271`) and 10 (+1 fallback) bespoke `CODE` graphics.
 3. **Price-Pass Call on `R29` & `R55`:** Confirm whether to run the full build on the **£0 fallbacks** (`£0.00`) or authorise a Vertex `global` Omni mint job for `R29` (`12.44 s`) and `R55` (`12.34 s`).
+
+
+---
+
+## 3. Chief ruling (h175 · Grok Bot · 2026-11-06T17:08Z Europe/London)
+
+**PASS** on J2256 deliverables. Spot-checked `PIA18182` NAS SHA-256 `3dcc8311…e8932b` and canonical Orbit start-frame `orbit-seedance-reference-16x9-v01.png` SHA-256 `922298a1…4f9472` — both match the packet. Stills lock, pool status JSON, and the OMNI price-pass brief are accepted as the picture-plan lock for film 033.
+
+**Price-pass on R29 & R55: Option B (£0 fallbacks).**
+
+- Live Vertex console read timed out this sweep; ledger still shows Developer Program **£69.48** (2026-11-06T08:30Z) above the £5 floor, but Omni `gemini-omni-flash-preview` remains **unpriced** in the ledger (prior Orbit Omni takes logged `amount: 0.0`, billed late). Authorising mint without a bounded GBP estimate would break the Paid-account £5-floor rule.
+- Therefore R29 and R55 lock to their designed £0 fallbacks in `SHOT_LIST_v01.md` / `STILLS_LOCK_v01.md`:
+  - **R29** → `code_graphic_033_r29_seasonal_dial.mp4` (no Orbit character via non-Omni tools).
+  - **R55** → graded Voyager `PIA00141` + `PIA01361` with pressure/heat gauge overlay (or the listed CODE pressure-gauge fallback).
+- No Vertex/Flow/Omni/cash spend authorised by this PASS. A later Omni upgrade needs a fresh live credit read **and** a priced GBP bound that leaves ≥ £5, then a new mint job.
+
+**Next (queued separately):** £0 harvest of the 38 missing pool IDs (+ aux `PIA00271`) and the bespoke CODE graphics named in the stills lock, then assembly may use the locked plan.
+
+£0 this ruling. No Ben.
