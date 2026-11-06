@@ -183883,9 +183883,14 @@
           "at": "2026-11-06T06:50Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2166 for Rule H review of J2143 (OWB:031 thumbnails)"
+        },
+        {
+          "at": "2026-11-06T06:54Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 complete: read J2143 brief/history, PR #501, 031 locked script v03, metadata_DRAFT_v01.json, and inspected A/B/C JPEGs and phone_ABC.jpg"
         }
       ],
-      "remaining_action": "Inspect J2143 brief, history, PR #501, and 031 thumbnail deliverables",
+      "remaining_action": "Run thumb_preview.py --score, SHA-256, source upscale, and rule checks on 031 A/B/C thumbnails",
       "kind": "review",
       "review_of": "J2143",
       "rerouted_from": {
@@ -183898,11 +183903,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-06T06:50Z",
+        "at": "2026-11-06T06:54Z",
         "by": "gemini",
-        "note": "Claimed J2166 for Rule H review of J2143 (OWB:031 thumbnails)"
+        "note": "Step 1/4 complete: read J2143 brief/history, PR #501, 031 locked script v03, metadata_DRAFT_v01.json, and inspected A/B/"
       },
       "taskKeys": [
         "OWB:031"
