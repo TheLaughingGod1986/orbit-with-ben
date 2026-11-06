@@ -194526,6 +194526,11 @@
           "at": "2026-11-06T18:46Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: CONDITION UNMET on J2200. Verified HOS PR #439 (1772cd52e63e4060e36d3e2f0dfb321c16d37f12) and HOS draft PR #445 (47adfead2fa047a294675f63d92e7f2a9c1a9ab4, jobs/reviews/J2275/CHECKPOINT.md): J2275 remains open at step 1/3 with findings 1/4/5 and cmd_submit hard-stop tested (33 zero-submit tests + check_all PASS), while findings 2 (live per-Create UI evidence under writer lock with fake-browser drift tests), 3 (canonical cross-channel writer lock and durable shared reservation/pending/spend ledger), and 6 (detached command argument propagation and atomic runner ownership) remain unfinished, and renewed elected-Chief system review of J2200 has not occurred. Recording wait --recheck J2293 on J2200 requires elected-Chief authority (codex)."
+        },
+        {
+          "at": "2026-11-06T22:25Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Elected Chief records J2200 wait --recheck J2293 and closes J2293",
@@ -194551,7 +194556,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "escalated_at": "2026-11-06T22:25Z"
     },
     {
       "id": "J2294",
