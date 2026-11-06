@@ -1,0 +1,57 @@
+{
+  "job": "J2310",
+  "label": "EXCEPTION",
+  "youtube_id": "k2kEaA7ICjc",
+  "privacy": "private",
+  "publishAt": "2026-12-11T11:30:00Z",
+  "api_duration": "PT34S",
+  "source_sha256": "ff4194857a027cfc5f93551ef398125276e6bcfb9cd3ce2fd18d8ee1134e2405",
+  "candidate_sha256": "d1c208d76aa4a675e6c07d091a6dba9fe29646cdf85b808b7814c659f1570f01",
+  "phone_sha256": "e6613b6eeb23cf35663836ab5848566e4b4c1c059bacd1a5065f4bd8cdd3b930",
+  "duration_s": 32.667,
+  "measurements": {
+    "label": "EXCEPTION",
+    "cut1_s": 2.23,
+    "cut2_s": 4.72,
+    "onset_s": 0.08,
+    "surprise_explode_s": 6.7,
+    "sentence1_breath_s": 0.2,
+    "sentence1_internal_pause_s": 0.2,
+    "sentence1_internal_pause_words": "winter -> at",
+    "post_sentence1_hold": "no 3.5-5.5s hold; s02 is 2.49s and the breath is 0.20s",
+    "tail_s": 1.087,
+    "loop_crossfade_s": 0.3,
+    "max_later_hold_s": 3.84,
+    "max_later_hold_row": "s03_paranal",
+    "end_card": false,
+    "spoken_meta_waiver": "J0991 Test A: In this film, I will show you",
+    "payoff_garden_s": 28.82,
+    "payoff_threshold_s": 22.87
+  },
+  "gates": {
+    "gate_shorts_open": "PASS",
+    "gate_shorts_open_warns": [
+      "duration 32.7s outside 22\u201327s band"
+    ],
+    "gate_shorts_open_fails": [],
+    "motion_0_1s": 13.2,
+    "frame0_diff_0_1_5s": 5.94,
+    "first_cut_s": 2.23,
+    "vo_onset_s": 0.08,
+    "tail_gap_s": 1.09,
+    "sfx_kit_level": "PASS",
+    "music_gate": "PASS",
+    "polish_gate": "PASS",
+    "picture_qa": "PASS",
+    "cover_score": "PASS",
+    "tail_ocr": "VISIBLE IN DAYLIGHT on frame 0 and at 31.85/32.20/32.50; no end-card line"
+  },
+  "conflicts_for_reviewer": [
+    "Spoken surprise 'explode?' starts at 6.70s, after the 1.5s limit. The Test A opening was kept. No words were reordered or deleted.",
+    "Inside sentence 1, 'winter' to 'at' has a 0.200s gap, over the 0.15s limit. Those are locked recorded words.",
+    "The line 'In this film, I will show you' stays under the J0991 Test A waiver.",
+    "Duration 32.67s is outside 22\u201327s. Test A keeps the long opening. Speech still runs 0.08\u201331.58s. Only the end-card hold was removed."
+  ],
+  "not_a_swap": "UPLOADS, the v04 file, the title, the slot and YouTube were not changed.",
+  "readout": "11 Dec is after the 3 Dec readout. This cut is follow-up only."
+}
