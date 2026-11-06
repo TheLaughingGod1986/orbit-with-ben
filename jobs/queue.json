@@ -189130,7 +189130,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T19:33Z",
-      "result": "parked for review: Short tool gates PASS. J2250 writes jobs/reviews/J2248/REVIEW.md KEEP or FIX. One WARN at 4.3s clock plate. Do not schedule; Mon 9 is iyvWYFP_ETA.",
+      "result": "Waiting for: parked for review (verified in jobs/reviews/J2265/REVIEW.md, 3a9436cb27): Short tool gates PASS on v01 (9fc197dc), but J2250 is still open on main (jobs/reviews/J2248/REVIEW.md missing on main; unmerged origin/macbook/J2250 draft 64062a0d93 is FIX, confirmed visually on Mini: 7/7 back-to-back code graphics with s02 4.3s clock WARN, statement title/line 1, spoken end title mismatch, meters caption). Do not schedule; Mon 9 Nov 11:30 is iyvWYFP_ETA.",
       "history": [
         {
           "at": "2026-11-05T19:33Z",
@@ -189166,9 +189166,14 @@
           "at": "2026-11-06T05:31Z",
           "by": "relay",
           "what": "condition verification queued: J2265"
+        },
+        {
+          "at": "2026-11-06T05:42Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-06T11:45:00Z"
         }
       ],
-      "remaining_action": "Reviewer writes KEEP or FIX on J2250",
+      "remaining_action": "Complete J2250 review in jobs/reviews/J2248/REVIEW.md and rebuild v02 to pass KEEP before Ben watch / scheduling",
       "due": "2026-11-09T10:30:00Z",
       "kind": "assembly",
       "progress": {
@@ -189183,9 +189188,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "parked for review: Short tool gates PASS. J2250 writes jobs/reviews/J2248/REVIEW.md KEEP or FIX. One WARN at 4.3s clock plate. Do not schedule; Mon 9 is iyvWYFP_ETA.",
-        "check_at": "2026-11-06T06:31:40+00:00",
-        "recheck_task": "J2265"
+        "condition": "parked for review (verified in jobs/reviews/J2265/REVIEW.md, 3a9436cb27): Short tool gates PASS on v01 (9fc197dc), but J2250 is still open on main (jobs/reviews/J2248/REVIEW.md missing on main; unmerged origin/macbook/J2250 draft 64062a0d93 is FIX, confirmed visually on Mini: 7/7 back-to-back code graphics with s02 4.3s clock WARN, statement title/line 1, spoken end title mismatch, meters caption). Do not schedule; Mon 9 Nov 11:30 is iyvWYFP_ETA.",
+        "check_at": "2026-11-06T11:45:00Z",
+        "last_recheck": "J2265",
+        "checked_at": "2026-11-06T05:42:04+00:00",
+        "checked_by": "gemini"
       }
     },
     {
@@ -190147,13 +190154,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T05:33Z",
-      "eta": "2026-11-06T07:33Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T05:31Z",
-      "result": "",
+      "result": "HOLD / CONDITION UNMET (jobs/reviews/J2265/REVIEW.md, 3a9436cb27): verified v01 MP4 (9fc197dc) and all 7 code-graphic SHA-256 digests on disk, plus automated tool gates (open gate, picture_qa, polish_gate, music_gate, sfx_level all PASS with 1 WARN at s02_muons 4.3s low edge density 0.0239 < 0.0249). However, J2250 (Review J2248: 024 muons Short v01) is still open in QUEUE.json with no jobs/reviews/J2248/REVIEW.md on main, and both the unmerged origin/macbook/J2250 draft (64062a0d93) and direct visual inspection on the Mini confirm v01 is a FIX (7/7 back-to-back code graphics with no real moving imagery, statement title/opening line, spoken end title mismatch, US spelling meters). Kept J2248 blocked via --recheck J2265 (next check 2026-11-06T11:45:00Z). £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-06T05:31Z",
@@ -190184,9 +190191,19 @@
           "at": "2026-11-06T05:42Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed jobs/reviews/J2265/REVIEW.md (3a9436cb27); verified J2250 still open, v01 hashes/gates and 7/7 code-graphic FIX"
+        },
+        {
+          "at": "2026-11-06T05:42Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Step 3/3 complete: recorded J2265 condition check on J2248 hold and closed J2265"
+        },
+        {
+          "at": "2026-11-06T05:42Z",
+          "by": "gemini",
+          "what": "done: HOLD / CONDITION UNMET (jobs/reviews/J2265/REVIEW.md, 3a9436cb27): verified v01 MP4 (9fc197dc) and all 7 code-graphic SHA-256 digests on disk, plus automated tool gates (open gate, picture_qa, polish_gate, music_gate, sfx_level all PASS with 1 WARN at s02_muons 4.3s low edge density 0.0239 < 0.0249). However, J2250 (Review J2248: 024 muons Short v01) is still open in QUEUE.json with no jobs/reviews/J2248/REVIEW.md on main, and both the unmerged origin/macbook/J2250 draft (64062a0d93) and direct visual inspection on the Mini confirm v01 is a FIX (7/7 back-to-back code graphics with no real moving imagery, statement title/opening line, spoken end title mismatch, US spelling meters). Kept J2248 blocked via --recheck J2265 (next check 2026-11-06T11:45:00Z). £0 / 0 credits."
         }
       ],
-      "remaining_action": "Record J2265 condition verification on J2248 via --recheck J2265 and close J2265 done",
+      "remaining_action": "Done: J2265 condition verification complete; J2248 held awaiting J2250 review + v02 KEEP",
       "kind": "review",
       "recheck_of": "J2248",
       "due": "2026-11-06T06:31:40+00:00",
@@ -190201,15 +190218,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-06T05:42Z",
         "by": "gemini",
-        "note": "Committed jobs/reviews/J2265/REVIEW.md (3a9436cb27); verified J2250 still open, v01 hashes/gates and 7/7 code-graphic FI"
+        "note": "Step 3/3 complete: recorded J2265 condition check on J2248 hold and closed J2265"
       },
       "taskKeys": [
         "OWB:024"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2265/REVIEW.md"
     }
   ],
   "focus": [],
