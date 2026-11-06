@@ -193617,10 +193617,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-06T18:06Z",
+      "eta": "2026-11-06T20:06Z",
       "created_by": "relay",
       "created_at": "2026-11-06T17:27Z",
       "result": "",
@@ -193629,6 +193629,11 @@
           "at": "2026-11-06T17:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T18:06Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 033 picture handoff and records the next owner/action",
@@ -193638,6 +193643,14 @@
         "stage": "picture",
         "kind": "orphan-review",
         "signature": "394380b045202b7d4a08"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T18:06Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     }
   ],
