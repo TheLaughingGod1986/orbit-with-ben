@@ -192835,9 +192835,14 @@
           "at": "2026-11-06T17:53Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Auditioned hos_009_short_B_v04.{mp3,wav}, v03.mp3, and open_v04.mp3 directly via audio_input; confirmed no spoken repeat exists at 19.74s-24.32s, and identified both why faster-whisper hallucinated a zero-duration duplicate segment at 24.14-24.32s and why slicing v03 at 6.020s clipped the 5.940-6.020s onset of 'Isaac'"
+        },
+        {
+          "at": "2026-11-06T18:01Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Diagnosed both the faster-whisper Seg 8 [24.14-24.32] post-word breath hallucination (no_speech_prob=0.986/0.988) + norm() cardinal-number timestamp shift (24.14s -> 19.74s) and the 6.020s splice clip on 'Isaac' (true onset 5.940s in v03.wav); verified open_v04[0.10:0.90]+[0.96:6.64] + v03[5.68:23.68] (afade in 5.68s/20ms, out 23.48s/60ms) preserves exact +0.800s word offsets and 24.480s duration, restores full 'Isaac' onset, and passes unmodified vo_check_py312.sh on both WAV and MP3 with 0 fails and 0 warnings"
         }
       ],
-      "remaining_action": "Diagnosing the Whisper trailing-segment hallucination and the 6.020s splice clip on 'Isaac' in hos_009_short_B_v04",
+      "remaining_action": "Applying bounded zero-spend splice/tail-fade repair to hos_009_short_B_v04.{wav,mp3} and updating HOS PR #423",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -192853,11 +192858,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-06T17:53Z",
+        "at": "2026-11-06T18:01Z",
         "by": "gemini",
-        "note": "Auditioned hos_009_short_B_v04.{mp3,wav}, v03.mp3, and open_v04.mp3 directly via audio_input; confirmed no spoken repeat"
+        "note": "Diagnosed both the faster-whisper Seg 8 [24.14-24.32] post-word breath hallucination (no_speech_prob=0.986/0.988) + norm"
       },
       "taskKeys": [
         "HOS:009"
