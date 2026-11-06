@@ -195783,10 +195783,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-06T22:42Z",
+      "eta": "2026-11-07T00:42Z",
       "created_by": "codex",
       "created_at": "2026-11-06T22:40Z",
       "result": "",
@@ -195800,6 +195800,11 @@
           "at": "2026-11-06T22:41Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1367 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-06T22:42Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Find a compliant recorded opening or rule this Short out of the timing experiment",
@@ -195814,7 +195819,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T22:42Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
