@@ -179626,9 +179626,14 @@
           "at": "2026-11-06T05:54Z",
           "by": "gemini",
           "what": "reopened: released by review J2264 (8696af1d91): r35_ocean KEEP as built (--review-ref J2264); PIA14602 allocated <=2 uses (R09 + R35; R03 uses PIA21902 use 1/2; no PIA14602 in R19); 39 exports and J2177/J2247/J2260/J2262/source holds preserved"
+        },
+        {
+          "at": "2026-11-06T07:30Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: J2177 (e54320112b): 15/17 mechanism stills KEEP (--review-ref J2177), 2 FIX (r10_spectrum, r32_scalemap); R25 PIA07232 -> PIA17163+PIA21450; R16/R51 -> PIA07870/PIA07871; 1/4 retained"
         }
       ],
-      "remaining_action": "Obtain Chief ocean-still review, then finish licensed harvest and graphics",
+      "remaining_action": "Render 15 J2177-approved mechanism MOVs + r35_ocean (J2264); fix r10_spectrum & r32_scalemap; apply R25 PIA17163+PIA21450 & R16/R51 PIA07870/PIA07871; finish harvest",
       "kind": "assembly",
       "taskKeys": [
         "OWB:032"
@@ -179643,7 +179648,14 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "urgent": 4
+      "urgent": 4,
+      "progress": {
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-06T07:30Z",
+        "by": "gemini",
+        "note": "J2177 (e54320112b): 15/17 mechanism stills KEEP (--review-ref J2177), 2 FIX (r10_spectrum, r32_scalemap); R25 PIA07232 -"
+      }
     },
     {
       "id": "J2090",
