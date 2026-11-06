@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
 | J2306 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
 | J2309 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy | J2207 / h47 |
-| J2311 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for heiGCnGKTkE; preserve scheduled copy | J2207 / h47 |
+| J2311 | mini | claimed | cursor | 2026-11-07T01:19Z | 029 edit · assembly · OWB 029: E1 local re-cut for heiGCnGKTkE; preserve scheduled copy | J2207 / h47 |
 | J2313 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2315 | mini | open | – | – | 029 edit · for cursor · review · `cursor-claude-opus-5-5` · Review OWB 029 Fri 11 Dec E1 tail candidate v05 | J2310 |
 
