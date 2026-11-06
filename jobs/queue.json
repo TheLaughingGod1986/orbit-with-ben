@@ -1,5 +1,5 @@
 {
-  "next_id": 2262,
+  "next_id": 2263,
   "jobs": [
     {
       "id": "J0001",
@@ -189837,6 +189837,35 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2262",
+      "title": "032 R08 orbital-period draft: review still and source reuse allocation",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2089 handoff: inspect local commit c95c73b4f9 on worker/J2089-orbit in /private/tmp/J2089-ruler-wt. Review request: 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/J2089_ORBIT_PERIOD_REVIEW_REQUEST_v01.md. Full-size preview /Users/benjaminoats/_desk/cache/J2089/orbit_period_previews_v01/r08_orbit_period_review.jpg. Decide r08_orbit_period KEEP/FIX: intact PIA14922 plus separate elapsed-time dial, SOURCES row2 about16 days. Check clock meets R08 intent and allocate source at most twice (R06 plus R08). 109 structural/hash/alpha/guard checks verified, no MOV. Preserve J2177/J2247/J2260 and source holds. Local branch inherits earlier automatic-review push rejection; do not bypass. Record decision and update parent J2089. GBP0.",
+      "ref": "c95c73b4f9",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T00:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T00:41Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the Titan orbital-period still and approve it or give exact corrections",
+      "kind": "review",
+      "plain": "Check the picture explaining how long Titan takes to circle Saturn."
     }
   ],
   "focus": [],
