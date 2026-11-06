@@ -191800,13 +191800,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T11:45Z",
-      "eta": "2026-11-06T12:00Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T11:42Z",
-      "result": "",
+      "result": "8c5f8c18a3 (jobs/reviews/J2277/REVIEW.md): inspected local commit 176a3ef889 on worker/J2089-mechanism-fix and full-size v02 PNGs — 2/2 KEEP: r10_spectrum (57576de51068f012d3790464010d661c38127d59bdbf343bc511fa162ec302e0; upright prism, left-face entry, right-face exit, gold-outlined notch + pointer + METHANE reveal at p>=0.75) and r32_scalemap (9fabc50ef3a8dfcfd01e53edb6182816c83da4208540c8ec667ce424a9947124; WHITE outlined '≈ 400,000 KM²', 5-part area retained). 218 safe-area samples, transparent entry/exit, changing frames, notch timing, render guard, and 15 byte-identical other previews verified. Approved to export under --approved r10_spectrum r32_scalemap --review-ref J2277; 58 earlier exports, all source/frame0/APL/composite holds, and J2089 1/4 preserved. GBP0.",
       "history": [
         {
           "at": "2026-11-06T11:42Z",
@@ -191852,6 +191852,11 @@
           "at": "2026-11-06T11:50Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Updated parent J2089 at 1/4 with J2277 export authorization (8c5f8c18a3)"
+        },
+        {
+          "at": "2026-11-06T11:51Z",
+          "by": "gemini",
+          "what": "done: 8c5f8c18a3 (jobs/reviews/J2277/REVIEW.md): inspected local commit 176a3ef889 on worker/J2089-mechanism-fix and full-size v02 PNGs — 2/2 KEEP: r10_spectrum (57576de51068f012d3790464010d661c38127d59bdbf343bc511fa162ec302e0; upright prism, left-face entry, right-face exit, gold-outlined notch + pointer + METHANE reveal at p>=0.75) and r32_scalemap (9fabc50ef3a8dfcfd01e53edb6182816c83da4208540c8ec667ce424a9947124; WHITE outlined '≈ 400,000 KM²', 5-part area retained). 218 safe-area samples, transparent entry/exit, changing frames, notch timing, render guard, and 15 byte-identical other previews verified. Approved to export under --approved r10_spectrum r32_scalemap --review-ref J2277; 58 earlier exports, all source/frame0/APL/composite holds, and J2089 1/4 preserved. GBP0."
         }
       ],
       "remaining_action": "Complete J2277 and post summary on OWB thread",
@@ -191876,7 +191881,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "8c5f8c18a3"
     }
   ],
   "focus": [],
