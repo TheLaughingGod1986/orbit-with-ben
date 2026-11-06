@@ -190609,9 +190609,14 @@
           "at": "2026-11-06T20:35Z",
           "by": "codex",
           "what": "blocked: parked for review: J2302 reviews v03 be63a3d85cadfb4d0fd0387f62dd36dcf9200e5b51942fd91873f1cc677c902c in OWB UAT/024_fri06_muons_ground_v03. All five tool checks pass; one relative detail WARN at16s. Local repair commit c34a0429d6 on codex/J2248-v03; automatic approval review rejected external code/evidence push, parked for Chief authorization. No Ben watch/upload/schedule yet; Mon9 occupied."
+        },
+        {
+          "at": "2026-11-06T21:18Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T09:00:00Z"
         }
       ],
-      "remaining_action": "J2302 reviews v03; Chief resolves code-push authorization; no upload or scheduling",
+      "remaining_action": "J2302 reviews verified private v03 evidence now; then repairs or Ben final watch. External code push not required; no scheduling clearance.",
       "due": "2026-11-09T10:30:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -190623,6 +190628,11 @@
         "at": "2026-11-06T20:35Z",
         "by": "codex",
         "note": "Build, all five tool checks, hash-verified UAT staging and Rule-H handoff complete. J2302 queued. Local commits d04ce8dc"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief ruling 6 Nov: HOLD pending J2302 KEEP/FIX on v03 be63a3d8; all 22 private UAT hashes verified. J2302 uses local c34a0429d6/UAT evidence now; rejected external code push is not a review prerequisite and must not be retried. On FIX return exact repairs; on KEEP set awaits for required Ben final watch. No upload/schedule; Mon9 occupied, Nov21 provisional. Act on completed review immediately; morning check is status only.",
+        "check_at": "2026-11-07T09:00:00Z"
       }
     },
     {
