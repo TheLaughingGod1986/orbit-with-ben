@@ -189271,13 +189271,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-06T20:51Z",
-      "eta": "2026-11-06T22:51Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
-      "result": "",
+      "result": "Waiting for: Actual listening needed on corrected HOS eradication VO at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). vo_check FAIL reproduced on hash-verified raw Part05 and corrected final-master stem; old master-input timing repaired. This session exposes command text and still images only, with no demonstrated audio_input. Evidence HOS ce08d292 jobs/J2230/CURRENT_HANDOFF.md; corrected WAV at /Users/benjaminoats/_desk/renders/J2230/eradication_corrected_inputs_v02/eradication_vo_from_master_v02.wav. Do not regenerate, rewrite text or waive gate. Final assembly/opening fixes remain after listener/Chief resolution.",
       "history": [
         {
           "at": "2026-11-05T17:12Z",
@@ -189408,9 +189408,19 @@
           "at": "2026-11-06T21:00Z",
           "by": "codex",
           "what": "step 3 of 4 done: Corrected obsolete Part05 master offset (409.59 -> 401.958333s), made new hash-verified 22.46s eradication inputs and preserved gone. Variolation raw VO check PASS; eradication still FAILs had/have on both raw and final stem. No final cuts or awaits; preparing typed audio capability hold."
+        },
+        {
+          "at": "2026-11-06T21:01Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Actual listening needed on corrected HOS eradication VO at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). vo_check FAIL reproduced on hash-verified raw Part05 and corrected final-master stem; old master-input timing repaired. This session exposes command text and still images only, with no demonstrated audio_input. Evidence HOS ce08d292 jobs/J2230/CURRENT_HANDOFF.md; corrected WAV at /Users/benjaminoats/_desk/renders/J2230/eradication_corrected_inputs_v02/eradication_vo_from_master_v02.wav. Do not regenerate, rewrite text or waive gate. Final assembly/opening fixes remain after listener/Chief resolution."
+        },
+        {
+          "at": "2026-11-06T21:01Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-06T22:00:00Z"
         }
       ],
-      "remaining_action": "Get actual listening on the corrected Vaccine VO failure; resolve openings before final edits.",
+      "remaining_action": "A capable listener must resolve the Vaccine VO failure before final assembly; Chief decides any source repair.",
       "kind": "assembly",
       "urgent": 10,
       "progress": {
@@ -189424,6 +189434,17 @@
         "HOS:005",
         "HOS:006",
         "HOS:007"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "Actual listening needed on corrected HOS eradication VO at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). vo_check FAIL reproduced on hash-verified raw Part05 and corrected final-master stem; old master-input timing repaired. This session exposes command text and still images only, with no demonstrated audio_input. Evidence HOS ce08d292 jobs/J2230/CURRENT_HANDOFF.md; corrected WAV at /Users/benjaminoats/_desk/renders/J2230/eradication_corrected_inputs_v02/eradication_vo_from_master_v02.wav. Do not regenerate, rewrite text or waive gate. Final assembly/opening fixes remain after listener/Chief resolution.",
+        "check_at": "2026-11-06T22:00:00Z",
+        "requires": [
+          "audio_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input"
       ]
     },
     {
