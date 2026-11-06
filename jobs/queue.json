@@ -190563,10 +190563,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-06T07:33Z",
+      "eta": "2026-11-06T09:33Z",
       "created_by": "relay",
       "created_at": "2026-11-06T07:31Z",
       "result": "",
@@ -190585,6 +190585,11 @@
           "at": "2026-11-06T07:32Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Cursor run failed (exit 1); next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-06T07:33Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await Chief merge of HOS PR #425/#426 (0a925061) and separate HOS 010 Flow moving-plate mint (12 plates); then assemble Shorts A and C",
@@ -190600,7 +190605,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T07:33Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
