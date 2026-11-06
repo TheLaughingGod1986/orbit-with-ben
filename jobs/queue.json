@@ -187325,19 +187325,24 @@
           "at": "2026-11-06T21:20Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Cards, Level and timezone stay closed from J2298. Next is lint, then a read-only Studio check on CDP 9460."
+        },
+        {
+          "at": "2026-11-06T21:21Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Current lint:package --film 099 printed No packages found and exited 0. Historical manifest at c26a79bd still hashes to ce57c596, the package J2298 already accepted. No Studio write yet."
         }
       ],
-      "remaining_action": "Read the residual Studio checklist for places, paid promotion and caption certification",
+      "remaining_action": "Read places, paid promotion and caption certification in Studio",
       "kind": "studio",
       "taskKeys": [
         "HOS:099"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-06T21:20Z",
+        "at": "2026-11-06T21:21Z",
         "by": "cursor",
-        "note": "Cards, Level and timezone stay closed from J2298. Next is lint, then a read-only Studio check on CDP 9460."
+        "note": "Current lint:package --film 099 printed No packages found and exited 0. Historical manifest at c26a79bd still hashes to "
       }
     },
     {
