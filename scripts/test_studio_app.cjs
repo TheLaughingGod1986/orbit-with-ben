@@ -566,6 +566,7 @@ console.log('Queue forecast checks OK');
         items: [
           {id: 'J2110', title: 'Titan Short v11 cover', status: 'done', stage: 'thumbs'},
           {id: 'J2141', title: '032 picture harvest', status: 'claimed', stage: 'picture', progress: {step: 1, of: 3}},
+          {id: 'J2142', title: '032 pebble ruler review', status: 'blocked', stage: 'picture'},
         ]},
       // 033 had jobs but no stage closed — not in moved[].
       {film: 'OWB:033', title: 'Why Knocked-Sideways Uranus Has 21-Year Winters', jobs: 1, closed: false,
@@ -586,6 +587,18 @@ console.log('Queue forecast checks OK');
   assert(card.includes('J2200') && card.includes('worked on, no stage closed'), 'no-stage-closed films say so clearly');
   assert(card.includes('Studio-wide') && card.includes('J2290') && card.includes('Daily analytics capture'), 'studio-wide jobs fold at the bottom');
   assert(!card.includes('Where the work went'), 'old count+last summary is gone');
+  // Checklist marks (Ben, 6 Nov 2026): display-only done / in progress / waiting. Not tappable.
+  assert(card.includes('p24-check') && card.includes('is-done') && card.includes('is-progress') && card.includes('is-waiting'),
+    'jobs render as a checklist with done, in-progress and waiting marks');
+  assert(/J2110[\s\S]*?is-done|is-done[\s\S]*?J2110/.test(card) || card.includes('data-job-state="done"'), 'finished jobs are checked');
+  assert(card.includes('data-job-state="done"') && card.includes('data-job-state="progress"') && card.includes('data-job-state="waiting"'),
+    'checklist states are marked for done, in progress and waiting');
+  assert(card.includes('J2142') && card.includes('waiting') && !card.includes('>blocked<'), 'blocked jobs stay unchecked with a waiting note');
+  assert(!/<input\b[^>]*type=["']?checkbox/i.test(card) && !/onclick=|role=["']checkbox["']/i.test(card),
+    'checklist is display-only — no interactive checkbox or click handler');
+  assert(card.includes('p24-job-stage') && card.includes('thumbs') && card.includes('picture'), 'stage labels stay on the right');
+  assert(/p24-studio[\s\S]*p24-check[\s\S]*J2290/.test(card) || (card.includes('Studio-wide') && card.includes('is-done') && card.includes('J2290')),
+    'studio-wide jobs use the same checklist treatment');
   // Older snapshots with only moved[] still render cards.
   const legacy = t.progressCard({progress24h: {hours: 24, jobsDone: 3, videoJobs: 2, milestones: 1, moved: p24.moved.slice(0, 1), films: []}});
   assert(legacy.includes('p24-film-card') && legacy.includes('OWB 031') && legacy.includes('56% → 67%'), 'legacy moved-only snapshots still show a film card');
@@ -607,8 +620,11 @@ console.log('Queue forecast checks OK');
   assert(!liveLegacy.includes('worked on, no stage closed'), 'films that closed a stage do not say no stage closed');
   assert(liveLegacy.includes('Titan Short v11 cover') && liveLegacy.includes('Chief: resolve 033 picture orphan-review'),
     'until items[] exist, the last job title remains the fallback line');
+  assert(liveLegacy.includes('p24-check') && liveLegacy.includes('is-open'),
+    'legacy last-title fallback still shows as an open checklist row');
   const ov = t.overview({tracker: {videos: []}, progress24h: p24, machines: {machines: []}}, Date.parse('2026-11-06T19:41:00Z'));
   assert(ov.includes('p24-film-card') && ov.includes('Last 24 hours'), 'Overview includes the film job cards');
+  assert(ov.includes('p24-check') && ov.includes('data-job-state="progress"'), 'Overview checklist marks survive the full overview render');
 }
 console.log('Last-24-hours film cards OK');
 
