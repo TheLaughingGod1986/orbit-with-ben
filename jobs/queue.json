@@ -189911,10 +189911,10 @@
       "stage": "vo",
       "after": "J2239",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-06T15:21Z",
+      "eta": "2026-11-06T17:21Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-05T19:13Z",
       "result": "",
@@ -189923,10 +189923,23 @@
           "at": "2026-11-05T19:13Z",
           "by": "macbook-2",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T15:21Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02",
-      "kind": "vo"
+      "kind": "vo",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T15:21Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2246",
