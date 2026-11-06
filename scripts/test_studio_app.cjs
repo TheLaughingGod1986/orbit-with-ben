@@ -555,7 +555,8 @@ console.log('Queue forecast checks OK');
     byAgent: {gemini: 22, codex: 10},
     glance: {
       doneToday: 9, left: 4, blocked: 1,
-      blockedJobs: [{id: 'J2142', film: 'OWB:032', title: '032 pebble ruler review', status: 'blocked'}],
+      blockedJobs: [{id: 'J2142', film: 'OWB:032', title: '032 pebble ruler review', status: 'blocked',
+        waitKind: 'after', why: 'Will run automatically after J2141 (032 picture harvest)'}],
       nextLive: [
         {key: 'OWB:025', title: 'Could a Robot Survive on Mars?', at: '2026-11-08T18:00:00.000Z', atLondon: 'Sun 8 Nov 2026 18:00 GMT', type: 'long'},
         {key: 'OWB:025:S:iyvWYFP_ETA', title: 'Could a Robot Survive a Night on Mars?', at: '2026-11-09T11:30:00.000Z', atLondon: 'Mon 9 Nov 2026 11:30 GMT', type: 'short'},
@@ -577,9 +578,11 @@ console.log('Queue forecast checks OK');
         from: 56, to: 67, milestones: 1, status: '56% → 67%', pct: 67, stage: 'picture', stageLabel: 'picture',
         doneCount: 6, total: 9, pctReason: '6 of 9 stages · picture still open',
         doneToday: 1, left: 3, blocked: 1, earlierDone: 12,
+        blockedWhy: 'Will run automatically after J2141 (032 picture harvest)',
         items: [
           {id: 'J2141', title: '032 picture harvest', status: 'claimed', stage: 'picture', progress: {step: 1, of: 3}},
-          {id: 'J2142', title: '032 pebble ruler review', status: 'blocked', stage: 'picture'},
+          {id: 'J2142', title: '032 pebble ruler review', status: 'blocked', stage: 'picture', waitKind: 'after',
+            after: 'J2141', why: 'Will run automatically after J2141 (032 picture harvest)'},
           {kind: 'stage', stage: 'qa', status: 'todo', title: 'Chief QA — not started', state: 'unknown'},
           {id: 'J2110', title: 'Titan Short v11 cover', status: 'done', when: 'today', stage: 'thumbs'},
           {id: 'J2109', title: '032 spectrum stills review', status: 'done', when: 'yesterday', stage: 'picture'},
@@ -608,16 +611,16 @@ console.log('Queue forecast checks OK');
   // Glance strip: done today / left / can't run / next four.
   assert(card.includes('p24-glance') && card.includes('done today') && card.includes('left to go live') && card.includes("can't run yet"),
     'glance strip shows done today, left, and cannot-run counts');
-  assert(card.includes("Can't run yet") && card.includes('J2142') && card.includes('032 pebble ruler review'),
-    'blocked tasks are named on the glance strip without opening a disclosure');
+  assert(card.includes("Can't run yet") && card.includes('J2142') && card.includes('Will run automatically after J2141'),
+    'glance can\'t-run list uses will-run-after wording, not a mysterious wall');
   assert(!card.includes('p24-glance-fold'), 'cannot-run task names are not hidden behind a glance disclosure');
   assert(card.includes('Next to go live') && card.includes('Could a Robot Survive on Mars?') && card.includes('Why Vaccines Are Named After a Cow'),
     'next four going-live videos are listed from existing publish times');
   // Compact film card + checklist behind disclosure.
   assert(card.includes('6 of 9 stages · picture still open') && card.includes('Done today') && card.includes('Left') && card.includes("Can't run"),
     'film cards show % reason and headline counts without opening anything');
-  assert(card.includes('J2142 · 032 pebble ruler review — waiting') && card.includes('p24-blocked-why'),
-    "can't-run count also names the waiting job on the film card");
+  assert(card.includes('Will run automatically after J2141 (032 picture harvest)') && card.includes('p24-blocked-why'),
+    "can't-run line explains the workflow wait on the film card");
   assert(card.includes('p24-check-fold') && card.includes('Jobs checklist'), 'full checklist sits behind a disclosure');
   assert(card.includes('p24-check') && card.includes('is-done') && card.includes('is-progress') && card.includes('is-waiting'),
     'jobs render as a checklist with done, in-progress and waiting marks');
@@ -628,7 +631,10 @@ console.log('Queue forecast checks OK');
   assert(card.includes('12 earlier jobs already done'), 'older finished jobs fold into a muted earlier note');
   assert(card.includes('data-job-state="done"') && card.includes('data-job-state="progress"') && card.includes('data-job-state="waiting"'),
     'checklist states are marked for done, in progress and waiting');
-  assert(card.includes('J2142') && card.includes('waiting') && !card.includes('>blocked<'), 'blocked jobs stay unchecked with a waiting note');
+  assert(card.includes('J2142') && card.includes('after earlier work') && !card.includes('>blocked<'),
+    'after-wait jobs stay unchecked with a workflow note, not raw blocked');
+  assert(card.includes('p24-job-why') && card.includes('Will run automatically after J2141'),
+    'checklist rows carry the will-run-after explanation');
   assert(!/<input\b[^>]*type=["']?checkbox/i.test(card) && !/onclick=|role=["']checkbox["']/i.test(card),
     'checklist is display-only — no interactive checkbox or click handler');
   assert(card.includes('p24-job-stage') && card.includes('thumbs') && card.includes('picture'), 'stage labels stay on the right');

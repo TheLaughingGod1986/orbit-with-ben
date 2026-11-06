@@ -789,31 +789,35 @@
   // Last 24 hours (Ben, 4 Nov 2026; film cards 6 Nov 2026): headline counts, then one quiet card per film.
   // Checklist (Ben, 6 Nov 2026): remaining-to-go-live + today green / yesterday gray; display-only. Review owns real ticks.
   // Glance strip (Ben, 6 Nov evening): done today, left, can't run, next four going live — checklist behind a disclosure.
-  function p24JobLive(status) {
+  function p24JobLive(j) {
+    const status=j&&j.status, wait=j&&j.waitKind;
+    if(wait==='after') return 'after earlier work';
+    if(wait==='blocker'||status==='blocked') return 'needs something';
     if(!status||status==='done'||status==='todo') return '';
-    if(status==='blocked') return 'waiting';
     if(status==='claimed') return 'in progress';
     return status;
   }
   function p24JobMark(j) {
-    const status=j&&j.status, when=j&&j.when;
+    const status=j&&j.status, when=j&&j.when, wait=j&&j.waitKind;
     if(status==='done'&&when==='yesterday') return {cls:'is-done-yesterday', label:'Done yesterday'};
     if(!status||status==='done') return {cls:'is-done', label:'Done today'};
-    if(status==='claimed') return {cls:'is-progress', label:'In progress'};
-    if(status==='blocked') return {cls:'is-waiting', label:'Waiting'};
+    if(status==='claimed'&&wait!=='after') return {cls:'is-progress', label:'In progress'};
+    if(wait==='after') return {cls:'is-waiting', label:'Waiting on earlier work'};
+    if(wait==='blocker'||status==='blocked') return {cls:'is-waiting', label:'Needs something first'};
     return {cls:'is-open', label:'Open'};
   }
   function p24JobLine(j) {
     const mark=p24JobMark(j);
     const stage=j.stage&&j.kind!=='stage'?`<span class="p24-job-stage">${esc(j.stage)}</span>`:'';
     const prog=j.progress&&j.progress.of?`<span class="p24-job-prog">${j.progress.step||0} of ${j.progress.of}</span>`:'';
-    const liveLabel=p24JobLive(j.status);
+    const liveLabel=p24JobLive(j);
     const live=liveLabel?`<span class="p24-job-live">${esc(liveLabel)}</span>`:'';
+    const why=j.why?`<span class="p24-job-why wrap">${esc(j.why)}</span>`:'';
     const id=j.id?`<b>${esc(j.id)}</b> `:'';
-    const aria=`${mark.label}: ${[j.id,j.title].filter(Boolean).join(' ')}`.trim();
-    return `<li class="p24-job ${mark.cls}${j.kind==='stage'?' is-stage':''}" data-job-state="${esc(mark.cls.replace(/^is-/,''))}" aria-label="${esc(aria)}">
+    const aria=`${mark.label}: ${[j.id,j.title,j.why].filter(Boolean).join(' ')}`.trim();
+    return `<li class="p24-job ${mark.cls}${j.kind==='stage'?' is-stage':''}${j.waitKind?' is-'+esc(j.waitKind):''}" data-job-state="${esc(mark.cls.replace(/^is-/,''))}" aria-label="${esc(aria)}">
       <span class="p24-check" aria-hidden="true"></span>
-      <span class="p24-job-main">${id}<span class="p24-title wrap">${esc(j.title||'')}</span></span>${stage}${prog}${live}
+      <span class="p24-job-main">${id}<span class="p24-title wrap">${esc(j.title||'')}</span>${why}</span>${stage}${prog}${live}
     </li>`;
   }
   function p24MovedStatus(m) {
@@ -864,16 +868,14 @@
     const items=f.items||[];
     const doneToday=f.doneToday!=null?f.doneToday:items.filter(j=>j.status==='done'&&j.when==='today').length;
     const left=f.left!=null?f.left:items.filter(j=>j.status!=='done').length;
-    const blocked=f.blocked!=null?f.blocked:items.filter(j=>j.status==='blocked').length;
+    const blocked=f.blocked!=null?f.blocked:items.filter(j=>j.waitKind||j.status==='blocked'||(j.after&&j.status!=='done')).length;
     return {doneToday, left, blocked};
   }
   function p24BlockedWhy(f) {
     if(f.blockedWhy) return f.blockedWhy;
-    const wait=(f.items||[]).find(j=>j.status==='blocked'||(j.after&&j.status!=='done'));
-    if(!wait) return '';
-    const id=wait.id||'', title=String(wait.title||'').trim();
-    if(id&&title) return `${id} · ${title} — waiting`;
-    return id?`${id} — waiting`:(title?`${title} — waiting`:'');
+    const items=f.items||[];
+    const wait=items.find(j=>j.waitKind==='after')||items.find(j=>j.waitKind||j.status==='blocked'||(j.after&&j.status!=='done'));
+    return (wait&&wait.why)||'';
   }
   function p24FilmCard(f) {
     const name=(f.film||'').replace(':',' ');
@@ -909,7 +911,10 @@
     const next=(g.nextLive||[]).slice(0,4);
     // Task names stay visible (Ben, 6 Nov evening); no disclosure for the can't-run list.
     const blockedList=blockedJobs.length
-      ?`<div class="p24-blocked"><h3 class="p24-films-h">Can't run yet</h3><ul class="p24-glance-list">${blockedJobs.map(j=>`<li><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(j.title||'')}</span></li>`).join('')}</ul></div>`
+      ?`<div class="p24-blocked"><h3 class="p24-films-h">Can't run yet</h3><ul class="p24-glance-list">${blockedJobs.map(j=>{
+          const line=j.why||j.title||'';
+          return `<li><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(line)}</span></li>`;
+        }).join('')}</ul></div>`
       :'';
     const nextList=next.length?`<div class="p24-next"><h3 class="p24-films-h">Next to go live</h3><ol class="p24-next-list">${next.map(v=>{
       const when=v.atLondon||v.at||'';
