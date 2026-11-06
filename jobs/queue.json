@@ -196097,9 +196097,14 @@
           "at": "2026-11-06T23:51Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified all 6 tool gates, decode, E1 metrics, and SHA-256 hashes; committed jobs/reviews/J2310/REVIEW.md (49aa2301f4)"
+        },
+        {
+          "at": "2026-11-06T23:51Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Review complete at jobs/reviews/J2310/REVIEW.md (49aa2301f4); closing J2315"
         }
       ],
-      "remaining_action": "Finalise J2315 progress and close with KEEP (EXCEPTION) verdict",
+      "remaining_action": "Close J2315 with KEEP (EXCEPTION) verdict",
       "kind": "review",
       "plain": "Review the local Betelgeuse Short recut before anyone swaps it.",
       "rerouted_from": {
@@ -196112,11 +196117,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-06T23:51Z",
         "by": "gemini",
-        "note": "Verified all 6 tool gates, decode, E1 metrics, and SHA-256 hashes; committed jobs/reviews/J2310/REVIEW.md (49aa2301f4)"
+        "note": "Review complete at jobs/reviews/J2310/REVIEW.md (49aa2301f4); closing J2315"
       },
       "taskKeys": [
         "OWB:029"
