@@ -192956,10 +192956,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T16:17Z",
+      "eta": "2026-11-06T18:17Z",
       "created_by": "relay",
       "created_at": "2026-11-06T14:01Z",
       "result": "",
@@ -193018,6 +193018,11 @@
           "at": "2026-11-06T16:17Z",
           "by": "codex",
           "what": "rerouted to codex: Elected-Chief Codex completing requested protected condition ruling after Gemini evidence handoff."
+        },
+        {
+          "at": "2026-11-06T16:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J2284 on J2172 and closes J2284",
@@ -193036,7 +193041,15 @@
       "model": "gemini-argon",
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T16:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2285",
