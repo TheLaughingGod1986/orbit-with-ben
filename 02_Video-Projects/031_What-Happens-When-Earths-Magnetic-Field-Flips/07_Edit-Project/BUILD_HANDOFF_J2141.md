@@ -1,5 +1,27 @@
 # J2141 resumable picture build — 4 Nov 2026
 
+Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (6 Nov, core batch)
+
+Preserve **1/3**. This branch adds three full-frame £0 renders only. It does
+not merge open PRs #539, #551, #555, #562 or #564, and it does not drop their
+modes. Reproduce into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py core --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+- R12 `flip_tight`, 112.98–121.98 s: second, tighter dipole turn on the harvested Blue Marble (`GSFC_20171208_Archive_e000678`). The air ring stays. A dive toward a golden core starts on "secret". This is not the R2 wide flip.
+- R14 `layers_core`, 132.70–138.70 s: churning outer core, labels OUTER CORE then LIQUID IRON. Ends before the FACT card at 139.18 s. No temperature figure.
+- R33 `paleo_dip`, 345.00–349.16 s: qualitative bar for "nearly to zero" then "snapped back". It starts after the existing 3.6 s Laschamp date card. It is not the sourced 6% rings chart.
+
+Media: `/Users/benjaminoats/_desk/J2141-core-v01/`. Technical checks in `CODE_CORE_TECHNICAL_CHECK_v01.json`. Navy preview is not a finished plate. No motion, audio or composite review. £0.
+
+Still open: wider harvest, the building timeline, Mars/Earth bodies under the existing R44 overlays, the R41 ISS limb fallback, composites, QA, and a Chief merge of the open graphic PRs that keeps every mode. Titan identity and sourced-simulation gates stay with Chief. No Ben action.
+
+## Continuation checkpoint (5 Nov, seventh run)
+
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
 ## Continuation checkpoint (5 Nov, seventh run)
