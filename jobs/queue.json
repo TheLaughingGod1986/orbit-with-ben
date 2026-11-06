@@ -1,5 +1,5 @@
 {
-  "next_id": 2277,
+  "next_id": 2278,
   "jobs": [
     {
       "id": "J0001",
@@ -191759,6 +191759,36 @@
         "HOS:009"
       ],
       "done_ref": "17fdb5031e"
+    },
+    {
+      "id": "J2277",
+      "title": "032: verify corrected J2177 spectrum and area stills",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2089 handoff only. Inspect local commit 176a3ef889 on worker/J2089-mechanism-fix in /private/tmp/J2089-mechanism-fix-wt (inherited public-push rejection respected, local integration). Read J2177 REVIEW.md on main and 07_Edit-Project/J2089_CHECKPOINT_v16.md, MECHANISM_FIX_MANIFEST_v02.json and MECHANISM_FIX_VERIFICATION_v02.json in film 032. Individually view full-size corrected PNGs under /Users/benjaminoats/_desk/cache/J2089/mechanism_previews_v02/code_graphic_032_{r10_spectrum,r32_scalemap}_v01.png. R10 upright prism, incoming ray meets left face, rays leave right, gold outlined notch and linked METHANE label reveal only after rays arrive. R32 approximate value and white outlined type, five-part area retained. 218 safe-area samples, exact preview/hash/entry/exit/generator checks; other 15 previews byte-identical. No MOV or film approval; 58 earlier exports preserved. Write KEEP/FIX with exact hashes; if KEEP reopen J2089 for these exports under this review reference. Preserve all source/frame0/APL/composite holds and original 1/4 milestone. GBP0.",
+      "ref": "176a3ef889",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T11:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T11:42Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review two corrected Titan graphic stills and reopen their parent for export if KEEP",
+      "due": "2026-11-09T18:00:00Z",
+      "kind": "review",
+      "plain": "Check the corrected methane spectrum and lake-area graphics before they are animated."
     }
   ],
   "focus": [],
