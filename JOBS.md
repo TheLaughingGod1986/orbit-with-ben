@@ -86,7 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2281 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
 | J2285 | mini | blocked | cursor | – | 099 upload · studio · HOS 099: validate package and finish cards, Level and timezone readback |  |
 | J2287 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2245 |  |
-| J2288 | mini | open | – | – | 013 vo · for gemini · review · `gemini-argon` · HOS 013 Darwin & Wallace: review Shorts VO A and B | https://github.com/TheLaughingGod1986/history-of-science/pull/444 |
+| J2288 | mini | claimed | gemini | 2026-11-06T21:19Z | 013 vo · for gemini · review · `gemini-argon` · HOS 013 Darwin & Wallace: review Shorts VO A and B | https://github.com/TheLaughingGod1986/history-of-science/pull/444 |
 | J2289 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2255 |  |
 | J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
