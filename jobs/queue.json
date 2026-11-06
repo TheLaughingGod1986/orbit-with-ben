@@ -187956,10 +187956,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T22:18Z",
+      "eta": "2026-11-07T00:18Z",
       "created_by": "chief",
       "created_at": "2026-11-05T09:23Z",
       "result": "",
@@ -187968,10 +187968,23 @@
           "at": "2026-11-05T09:23Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T22:18Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write E1 rules into OWB Shorts gates; inventory 026-029/030+ needing re-cut",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T22:18Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2208",
