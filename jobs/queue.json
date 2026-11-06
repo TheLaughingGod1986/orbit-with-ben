@@ -195791,13 +195791,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-06T22:59Z",
-      "eta": "2026-11-07T00:59Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T22:35Z",
-      "result": "",
+      "result": "KEEP SCHEDULED ORIGINAL v01 / EXPLICIT E1 NO-GO (PR #593, commit 6546da2, jobs/reviews/J2312/REVIEW.md & jobs/reviews/J2307/REVIEW.md; preflight PR #591 / a6b61c018f KEEP): audited all 90 sentences in 026/02_Voiceover/words.json plus all 026 Short VO files (mon16, wed18, fri20, pickup_nextweek_v01). (1) Preserved title question ('If You Can't See the Nearest Star, How Far Away Is It?') and script question ('Why Can't You See the Nearest Star?') are absent across the 026 VO corpus; (2) HZGTovJu_TQ is a standalone Short (026 Test A is aAUgIGEuPwQ), so E1 retains Keeper line-1 question rules; (3) all recorded questions in mon16 (22.440-24.440s forbidden CTA = 1.852s @1.08x) and 026 long (S02 1.685s @1.08x anaphoric; S23 2.926s @1.08x; S50 1.500s @1.08x; S56/S60/S71/S80/S88) fail title-question match and/or <=1.50s surprise before 'can't see'; (4) earlier J0935 v03 (cddcfb96...) used a declarative opener, OPEN_TEMPO=1.42 (>1.08x cap), and Cut 2 = 5.905s (>4.80s E1 limit). Closed parent J2307 (retaining 1/3 preflight progress) and retained scheduled v01 HZGTovJu_TQ (24a5552b...) for 16 Nov 2026 11:30Z untouched. GBP0.",
       "history": [
         {
           "at": "2026-11-06T22:35Z",
@@ -195828,6 +195828,11 @@
           "at": "2026-11-06T23:09Z",
           "by": "macbook",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-06T23:10Z",
+          "by": "macbook",
+          "what": "done: KEEP SCHEDULED ORIGINAL v01 / EXPLICIT E1 NO-GO (PR #593, commit 6546da2, jobs/reviews/J2312/REVIEW.md & jobs/reviews/J2307/REVIEW.md; preflight PR #591 / a6b61c018f KEEP): audited all 90 sentences in 026/02_Voiceover/words.json plus all 026 Short VO files (mon16, wed18, fri20, pickup_nextweek_v01). (1) Preserved title question ('If You Can't See the Nearest Star, How Far Away Is It?') and script question ('Why Can't You See the Nearest Star?') are absent across the 026 VO corpus; (2) HZGTovJu_TQ is a standalone Short (026 Test A is aAUgIGEuPwQ), so E1 retains Keeper line-1 question rules; (3) all recorded questions in mon16 (22.440-24.440s forbidden CTA = 1.852s @1.08x) and 026 long (S02 1.685s @1.08x anaphoric; S23 2.926s @1.08x; S50 1.500s @1.08x; S56/S60/S71/S80/S88) fail title-question match and/or <=1.50s surprise before 'can't see'; (4) earlier J0935 v03 (cddcfb96...) used a declarative opener, OPEN_TEMPO=1.42 (>1.08x cap), and Cut 2 = 5.905s (>4.80s E1 limit). Closed parent J2307 (retaining 1/3 preflight progress) and retained scheduled v01 HZGTovJu_TQ (24a5552b...) for 16 Nov 2026 11:30Z untouched. GBP0."
         }
       ],
       "remaining_action": "Close parent J2307 as explicit E1 no-go (retaining scheduled v01 HZGTovJu_TQ) and mark J2312 done",
@@ -195847,7 +195852,8 @@
         "of": 3,
         "at": "2026-11-06T23:09Z",
         "by": "macbook"
-      }
+      },
+      "done_ref": "6546da2"
     },
     {
       "id": "J2313",
