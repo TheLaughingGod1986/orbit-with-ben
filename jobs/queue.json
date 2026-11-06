@@ -182689,16 +182689,21 @@
           "at": "2026-11-06T22:55Z",
           "by": "codex",
           "what": "step 1 of 3 done: Latest checkpoint is PR575 at 7d089900d8; R41 source already harvested. Preserve prior work and search budgets; scratch offload defers to window."
+        },
+        {
+          "at": "2026-11-06T22:56Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: R41 source/evidence hashes verified. First encode 108 instead of 110 frames; preserved v01, corrected PTS and explicit 110-frame output in detached v02."
         }
       ],
-      "remaining_action": "Render and verify the already harvested R41 atmospheric-limb fallback",
+      "remaining_action": "Verify corrected R41 limb plate and preserve the build checkpoint",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-06T22:55Z",
+        "at": "2026-11-06T22:56Z",
         "by": "codex",
-        "note": "Latest checkpoint is PR575 at 7d089900d8; R41 source already harvested. Preserve prior work and search budgets; scratch "
+        "note": "R41 source/evidence hashes verified. First encode 108 instead of 110 frames; preserved v01, corrected PTS and explicit 1"
       },
       "taskKeys": [
         "OWB:031"
