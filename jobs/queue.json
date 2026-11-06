@@ -187849,16 +187849,21 @@
           "at": "2026-11-06T22:14Z",
           "by": "codex",
           "what": "step 2 of 3 done: Staging completed: two NAS exports plus NAS metadata dependencies for Titan and nearest-star Friday Short. Two absent Mars exports have existing J1320 known-no-file rulings."
+        },
+        {
+          "at": "2026-11-06T22:15Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified four export hashes and every staged NAS dependency. Gate rerun: 9 PASS, 2 KNOWN, 0 NOT CHECKED, 0 hard FAIL; record 4efe0ad07f."
         }
       ],
-      "remaining_action": "Verify the refreshed gate report and publish records",
+      "remaining_action": "Cache staging and verification complete",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-06T22:14Z",
+        "at": "2026-11-06T22:15Z",
         "by": "codex",
-        "note": "Staging completed: two NAS exports plus NAS metadata dependencies for Titan and nearest-star Friday Short. Two absent Ma"
+        "note": "Verified four export hashes and every staged NAS dependency. Gate rerun: 9 PASS, 2 KNOWN, 0 NOT CHECKED, 0 hard FAIL; re"
       },
       "taskKeys": [
         "OWB:025",
