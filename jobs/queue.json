@@ -196072,6 +196072,11 @@
           "at": "2026-11-06T23:18Z",
           "by": "relay",
           "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 1402 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
+        },
+        {
+          "at": "2026-11-06T23:34Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor run failed (exit 1); next in its chain: gemini"
         }
       ],
       "remaining_action": "Review the local Fri 11 Dec candidate and say KEEP or FIX",
@@ -196084,8 +196089,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "cursor",
-      "model": "cursor-claude-opus-5-5"
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2316",
