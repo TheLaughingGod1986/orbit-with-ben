@@ -140,6 +140,10 @@ class Summary(unittest.TestCase):
         self.assertEqual(p.film_of({"title": "Chief: resolve 033 picture orphan-review"}, titles), "OWB:033")
         self.assertEqual(p.film_of({"title": "Titan Short v11 cover"}, titles), "OWB:032")
         self.assertEqual(p.film_of({"title": "Daily analytics capture"}, titles), "")
+        # Bare numbers only count when that film is known — PR #180 must not invent a film card.
+        self.assertEqual(p.film_of({"title": "HOS #180 comment"}, titles), "")
+        self.assertEqual(p.film_of({"title": "Follow up on PR 180 review notes"}, titles), "")
+        self.assertEqual(p.film_of({"title": "Chief: resolve 033 picture orphan-review"}, {}), "")
 
 
 if __name__ == "__main__":

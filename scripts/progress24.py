@@ -111,6 +111,19 @@ def _words(text: str) -> set:
     return {w for w in re.findall(r"[a-z0-9]{3,}", (text or "").lower()) if w not in _STOP}
 
 
+def _bare_film_key(num: str, j: dict, titles: dict | None) -> str:
+    """Map a bare episode number to a known film key only — never invent OWB:180 from a PR number."""
+    if not titles or not num:
+        return ""
+    preferred = ("HOS:" if j.get("repo") == "hos" else "OWB:") + num
+    alt = ("OWB:" if preferred.startswith("HOS:") else "HOS:") + num
+    if preferred in titles:
+        return preferred
+    if alt in titles:
+        return alt
+    return ""
+
+
 def film_of(j: dict, titles: dict | None = None) -> str:
     """Attribute a job to a film from its film field, or from the title when film is empty."""
     f = str(j.get("film") or "")
@@ -120,14 +133,18 @@ def film_of(j: dict, titles: dict | None = None) -> str:
     m = FILM.search(title)
     if m:
         return m.group(1).upper() + ":" + m.group(2)
-    # Leading episode number ("032 Titan Short v11").
+    # Leading episode number ("032 Titan Short v11") — only if that film is known.
     m = re.match(r"^\s*(\d{3})\b", title)
     if m:
-        return ("HOS:" if j.get("repo") == "hos" else "OWB:") + m.group(1)
-    # Mid-title episode number ("Chief: resolve 033 picture orphan-review").
+        key = _bare_film_key(m.group(1), j, titles)
+        if key:
+            return key
+    # Mid-title episode number ("Chief: resolve 033 picture orphan-review") — known films only.
     nums = BARE_NO.findall(title)
     if len(nums) == 1:
-        return ("HOS:" if j.get("repo") == "hos" else "OWB:") + nums[0]
+        key = _bare_film_key(nums[0], j, titles)
+        if key:
+            return key
     # Title names the film without a number ("Titan Short v11" → OWB:032).
     if titles:
         tw = _words(title)

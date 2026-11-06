@@ -787,16 +787,46 @@
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
   }
   // Last 24 hours (Ben, 4 Nov 2026; film cards 6 Nov 2026): headline counts, then one quiet card per film with the jobs that touched it.
+  function p24JobLive(status) {
+    if(!status||status==='done') return '';
+    if(status==='blocked') return 'waiting';
+    if(status==='claimed') return 'in progress';
+    return status;
+  }
   function p24JobLine(j) {
     const stage=j.stage?`<span class="p24-job-stage">${esc(j.stage)}</span>`:'';
     const prog=j.progress&&j.progress.of?`<span class="p24-job-prog">${j.progress.step||0} of ${j.progress.of}</span>`:'';
-    const live=j.status&&j.status!=='done'?`<span class="p24-job-live">${esc(j.status==='blocked'?'waiting':j.status)}</span>`:'';
+    const liveLabel=p24JobLive(j.status);
+    const live=liveLabel?`<span class="p24-job-live">${esc(liveLabel)}</span>`:'';
     return `<li class="p24-job"><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(j.title||'')}</span>${stage}${prog}${live}</li>`;
+  }
+  function p24MovedStatus(m) {
+    if(m.milestones<0) return `↺ reopened · ${m.from}% → ${m.to}%`;
+    return `${m.from}% → ${m.to}%`;
+  }
+  // Live boards may still have the older films[] shape (count + last, no items/status). Always merge moved[].
+  function p24MergeFilms(films, moved) {
+    const by=new Map();
+    for(const f of films||[]){
+      const key=f.film||f.key; if(!key) continue;
+      by.set(key,{...f,film:key});
+    }
+    for(const m of moved||[]){
+      if(!m.key) continue;
+      const status=p24MovedStatus(m), closed=m.milestones>0;
+      const cur=by.get(m.key);
+      if(cur){
+        by.set(m.key,{...cur,from:m.from,to:m.to,milestones:m.milestones,closed,status,title:cur.title||m.title});
+      }else{
+        by.set(m.key,{film:m.key,title:m.title,from:m.from,to:m.to,milestones:m.milestones,closed,status,items:[],jobs:0,last:''});
+      }
+    }
+    return [...by.values()];
   }
   function p24FilmCard(f) {
     const name=(f.film||'').replace(':',' ');
     const closed=f.closed||(f.milestones!=null&&f.milestones>0);
-    const status=f.status||(closed&&f.from!=null?`${f.from}% → ${f.to}%`:'worked on, no stage closed');
+    const status=f.status||(f.from!=null?p24MovedStatus(f):(closed?'':'worked on, no stage closed'));
     const jobs=(f.items||[]).map(p24JobLine).join('')
       ||(f.last?`<li class="p24-job"><span class="p24-title wrap">${esc(f.last)}</span></li>`:'');
     return `<article class="ov-card p24-film-card">
@@ -809,11 +839,7 @@
     const p=b.progress24h;
     if(!p) return '';
     const agents=Object.entries(p.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
-    // Prefer the enriched films list (jobs + moved + open). Fall back to moved-only for older snapshots.
-    const films=[...(p.films||[])];
-    if(!films.length&&(p.moved||[]).length){
-      for(const m of p.moved) films.push({film:m.key,title:m.title,from:m.from,to:m.to,milestones:m.milestones,closed:m.milestones>0,status:`${m.from}% → ${m.to}%`,items:[]});
-    }
+    const films=p24MergeFilms(p.films,p.moved);
     const filmCards=films.map(p24FilmCard).join('');
     const studio=(p.studio||[]).map(p24JobLine).join('');
     const studioN=p.otherJobs!=null?p.otherJobs:(p.studio||[]).length;
