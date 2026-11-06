@@ -839,6 +839,27 @@
     }
     return [...by.values()];
   }
+  // Overview film cards follow studio focus (queue → board.owb.focus). Empty focus = no filter.
+  function p24FocusSet(b) {
+    const raw=((b&&b.owb)||{}).focus||[];
+    const home=(typeof homeChannel==='function'&&homeChannel().label)||'OWB';
+    const set=new Set();
+    for(const x of raw){
+      const s=String(x||'').trim(); if(!s) continue;
+      set.add(s);
+      if(/^\d{3}$/.test(s)) set.add(home+':'+s);
+      const m=/^([A-Za-z]+):(\d{3})$/.exec(s);
+      if(m){ set.add(m[1].toUpperCase()+':'+m[2]); set.add(m[2]); }
+    }
+    return set;
+  }
+  function p24InFocus(film, focus) {
+    if(!focus||!focus.size) return true;
+    const key=String(film||'');
+    if(focus.has(key)) return true;
+    const m=/^([A-Z]+):(\d{3})$/.exec(key);
+    return !!(m&&(focus.has(m[2])||focus.has(m[1]+':'+m[2])));
+  }
   function p24FilmCounts(f) {
     const items=f.items||[];
     const doneToday=f.doneToday!=null?f.doneToday:items.filter(j=>j.status==='done'&&j.when==='today').length;
@@ -846,12 +867,21 @@
     const blocked=f.blocked!=null?f.blocked:items.filter(j=>j.status==='blocked').length;
     return {doneToday, left, blocked};
   }
+  function p24BlockedWhy(f) {
+    if(f.blockedWhy) return f.blockedWhy;
+    const wait=(f.items||[]).find(j=>j.status==='blocked'||(j.after&&j.status!=='done'));
+    if(!wait) return '';
+    const id=wait.id||'', title=String(wait.title||'').trim();
+    if(id&&title) return `${id} · ${title} — waiting`;
+    return id?`${id} — waiting`:(title?`${title} — waiting`:'');
+  }
   function p24FilmCard(f) {
     const name=(f.film||'').replace(':',' ');
     const closed=f.closed||(f.milestones!=null&&f.milestones>0);
     const status=f.status||(f.from!=null?p24MovedStatus(f):(closed?'':'worked on, no stage closed'));
     const reason=f.pctReason||(f.doneCount!=null?`${f.doneCount} of ${f.total||9} stages`:'');
     const counts=p24FilmCounts(f);
+    const blockedWhy=counts.blocked>0?p24BlockedWhy(f):'';
     const jobs=(f.items||[]).map(p24JobLine).join('')
       ||(f.last?`<li class="p24-job is-open" data-job-state="open" aria-label="Open: ${esc(f.last)}"><span class="p24-check" aria-hidden="true"></span><span class="p24-job-main"><span class="p24-title wrap">${esc(f.last)}</span></span></li>`:'');
     const earlier=f.earlierDone>0?`<p class="muted p24-earlier">${f.earlierDone} earlier job${f.earlierDone===1?'':'s'} already done</p>`:'';
@@ -862,15 +892,20 @@
       <p class="p24-film-title">${esc(f.title||'')}</p>
       ${reason?`<p class="muted p24-reason">${esc(reason)}</p>`:''}
       <p class="p24-film-counts"><span>Done today <b>${counts.doneToday}</b></span><span>Left <b>${counts.left}</b></span><span>Can't run <b>${counts.blocked}</b></span></p>
+      ${blockedWhy?`<p class="muted p24-blocked-why">${esc(blockedWhy)}</p>`:''}
       ${checklist}
     </article>`;
   }
-  function p24Glance(p) {
+  function p24Glance(p, films) {
     const g=p.glance||{};
-    const doneToday=g.doneToday!=null?g.doneToday:(p.films||[]).reduce((n,f)=>n+(f.doneToday||0),0);
-    const left=g.left!=null?g.left:(p.films||[]).reduce((n,f)=>n+(f.left||0),0);
-    const blocked=g.blocked!=null?g.blocked:(p.films||[]).reduce((n,f)=>n+(f.blocked||0),0);
-    const blockedJobs=g.blockedJobs||[];
+    const list=films||p.films||[];
+    // Prefer counts from the cards on screen so focus filtering never leaves glance inflated.
+    const doneToday=list.reduce((n,f)=>n+(p24FilmCounts(f).doneToday||0),0);
+    const left=list.reduce((n,f)=>n+(p24FilmCounts(f).left||0),0);
+    const blockedFromFilms=list.reduce((n,f)=>n+(p24FilmCounts(f).blocked||0),0);
+    const focusKeys=new Set(list.map(f=>f.film).filter(Boolean));
+    const blockedJobs=(g.blockedJobs||[]).filter(j=>!focusKeys.size||focusKeys.has(j.film)||p24InFocus(j.film, focusKeys));
+    const blocked=blockedFromFilms||blockedJobs.length;
     const next=(g.nextLive||[]).slice(0,4);
     // Task names stay visible (Ben, 6 Nov evening); no disclosure for the can't-run list.
     const blockedList=blockedJobs.length
@@ -888,23 +923,25 @@
   function progressCard(b) {
     const p=b.progress24h;
     if(!p) return '';
+    const focus=p24FocusSet(b);
     const agents=Object.entries(p.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
-    const films=p24MergeFilms(p.films,p.moved);
+    const films=p24MergeFilms(p.films,p.moved).filter(f=>p24InFocus(f.film, focus));
     const filmCards=films.map(p24FilmCard).join('');
     const studio=(p.studio||[]).map(p24JobLine).join('');
     const studioN=p.otherJobs!=null?p.otherJobs:(p.studio||[]).length;
     // A drop means a stage reopened for more work (e.g. a Short fixed after its long was done), not lost work.
     const reopened=(p.moved||[]).some(m=>m.milestones<0)?'<p class="muted p24-note">↺ reopened: a finished stage has new work on it again (a fix or a Short being redone), so it counts as in progress until that work is done. Nothing was lost.</p>':'';
     const partial=p.hours && p.hours<23 ? `<p class="muted p24-note">Film progress covers the last ${Math.round(p.hours)} h so far; it fills to 24 h on its own.</p>`:'';
+    const filmsH=focus.size?'Working on now':'Videos that had work';
     return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
-      ${p24Glance(p)}
+      ${p24Glance(p, films)}
       <div class="ov-card p24-head">
       <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>${p.videoJobs!=null?'video jobs finished':'jobs finished'}</span></div><div><b>${p.milestones||0}</b><span>milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>videos moved forward</span></div></div>
       ${p.videoJobs!=null?`<p class="muted p24-agents${p.jobsDone&&p.videoJobs/p.jobsDone<0.3?' p24-warn':''}">${p.videoJobs} of ${p.jobsDone||0} jobs were on videos (${p.jobsDone?Math.round(p.videoJobs/p.jobsDone*100):0}%); the rest kept the studio running.</p>`:''}
       ${agents?`<p class="muted p24-agents">By ${agents}</p>`:''}
       ${partial}${reopened}
       </div>
-      ${filmCards?`<h3 class="p24-films-h">Videos that had work</h3><div class="ov-stack p24-films">${filmCards}</div>`:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`}
+      ${filmCards?`<h3 class="p24-films-h">${filmsH}</h3><div class="ov-stack p24-films">${filmCards}</div>`:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`}
       ${studio||studioN?`<details class="p24-more p24-studio"><summary>Studio-wide (${studioN||(p.studio||[]).length} job${(studioN||(p.studio||[]).length)===1?'':'s'})</summary><ul class="p24-job-list" role="list">${studio||`<li class="muted">No job titles recorded.</li>`}</ul></details>`:''}
     </section>`;
   }

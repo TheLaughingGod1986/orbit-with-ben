@@ -340,10 +340,68 @@ def _job_waiting(j: dict, done_ids: set) -> bool:
     return bool(after and after not in done_ids)
 
 
+def normalize_focus(focus) -> set[str]:
+    """Queue/board focus entries → match set (bare 032 and OWB:032 / HOS:032). No titles invented."""
+    out: set[str] = set()
+    for raw in focus or []:
+        s = str(raw or "").strip()
+        if not s:
+            continue
+        out.add(s)
+        if re.fullmatch(r"\d{3}", s):
+            for lab in channels.labels():
+                out.add(f"{lab}:{s}")
+            continue
+        m = re.fullmatch(r"([A-Za-z]+):(\d{3})", s)
+        if m:
+            lab, num = m.group(1).upper(), m.group(2)
+            out.add(f"{lab}:{num}")
+            out.add(num)
+    return out
+
+
+def in_focus(film_key: str, focus: set[str]) -> bool:
+    """True when this Overview film card belongs to the current studio focus.
+    Exact long keys only (OWB:032) — Shorts keys like OWB:032:S:… are not separate focus cards.
+    Empty focus means no filter (legacy: show every earned card)."""
+    if not focus:
+        return True
+    key = str(film_key or "")
+    if key in focus:
+        return True
+    m = re.fullmatch(r"([A-Z]+):(\d{3})", key)
+    return bool(m and (m.group(2) in focus or f"{m.group(1)}:{m.group(2)}" in focus))
+
+
+def _blocked_why(blocked_items: list) -> str | None:
+    """Short human line from the first waiting job — id + title, never invented."""
+    if not blocked_items:
+        return None
+    it = blocked_items[0]
+    jid = str(it.get("id") or "").strip()
+    title = str(it.get("title") or "").strip()
+    if len(title) > 72:
+        title = title[:69].rstrip() + "…"
+    if jid and title:
+        return f"{jid} · {title} — waiting"
+    if title:
+        return f"{title} — waiting"
+    if jid:
+        return f"{jid} — waiting"
+    return None
+
+
+def board_focus(board: dict) -> list:
+    """Focus keys from published board.owb.focus (kanban_snapshot ← queue.json)."""
+    owb = board.get("owb") or {}
+    raw = owb.get("focus")
+    return list(raw) if isinstance(raw, list) else []
+
+
 def summarise(history: list, at: dt.datetime, counts: dict, done: list,
               open_jobs: list | None = None, stages: dict | None = None,
               all_done: list | None = None, milestones: dict | None = None,
-              next_live: list | None = None) -> dict:
+              next_live: list | None = None, focus: list | None = None) -> dict:
     base = baseline(history, at)
     then = (base or {}).get("counts") or {}
     span_h = round((at - _t(base["at"])).total_seconds() / 3600, 1) if base else 0
@@ -367,6 +425,7 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
         return by_film.setdefault(key, {"film": key, "title": title or titles.get(key, key), "jobs": 0, "last": "",
                                         "recent": [], "remaining": [], "earlier": 0})
 
+    focus_set = normalize_focus(focus)
     by_agent, by_film, studio_items = {}, {}, []
     # 24 h finished jobs drive the headline counts and which films earn a card.
     for j in done:
@@ -386,6 +445,11 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
                 g["earlier"] += 1
         else:
             studio_items.append(item)
+    # Focus films always get a card on Overview, even with no 24 h activity (Ben, 6 Nov evening).
+    if focus_set:
+        for key, (_n, title) in counts.items():
+            if in_focus(key, focus_set) and re.fullmatch(r"[A-Z]+:\d{3}", key):
+                _bucket(key, title)
 
     # Remaining open / claimed / blocked jobs (including Shorts attributed to the long).
     seen_ids = {it.get("id") for g in by_film.values() for it in g["recent"]} | {it.get("id") for it in studio_items}
@@ -424,9 +488,13 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
             # No usable timestamp, or older than yesterday → fold into the muted earlier note.
             g["earlier"] += 1
         seen_ids.add(j["id"])
+    # 24 h video-job head count stays global; Overview cards + glance follow focus when set.
+    video_jobs_all = sum(g["jobs"] for g in by_film.values())
     films = []
     glance_blocked = []
     for f, g in by_film.items():
+        if not in_focus(f, focus_set):
+            continue
         now_done, title = counts.get(f, [None, g["title"]])
         pct = round(now_done / TOTAL * 100) if now_done is not None else None
         mv = moved_by.get(f)
@@ -448,6 +516,7 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
                 "status": it.get("status") or "blocked",
             })
         reason = _pct_reason(now_done, stage_id, leftovers)
+        why = _blocked_why(blocked_items)
         card = {
             "film": f,
             "title": title or g["title"],
@@ -461,6 +530,8 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
             "blocked": len(blocked_items),
             "earlierDone": g["earlier"],
         }
+        if why:
+            card["blockedWhy"] = why
         if reason:
             card["pctReason"] = reason
         if now_done is not None:
@@ -477,34 +548,44 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
             card["milestones"] = mv["milestones"]
         films.append(card)
 
-    # Moved films first (by milestones), then films with the most finished jobs, then key.
-    films.sort(key=lambda g: (
-        0 if g.get("closed") else 1,
-        -(g.get("milestones") or 0),
-        -g["jobs"],
-        -len(g.get("items") or []),
-        g["film"],
-    ))
+    # Focus order when set; else moved films first, then most finished jobs.
+    if focus_set:
+        focus_rank = {k: i for i, k in enumerate(
+            [x for x in (focus or []) if re.fullmatch(r"[A-Za-z]+:\d{3}", str(x or ""))]
+            or sorted(k for k in focus_set if re.fullmatch(r"[A-Z]+:\d{3}", k))
+        )}
+        films.sort(key=lambda g: (focus_rank.get(g["film"], 99), g["film"]))
+    else:
+        films.sort(key=lambda g: (
+            0 if g.get("closed") else 1,
+            -(g.get("milestones") or 0),
+            -g["jobs"],
+            -len(g.get("items") or []),
+            g["film"],
+        ))
 
-    done_today_total = sum(1 for j in all_done if done_when(j, at) == "today")
-    left_total = sum(f.get("left") or 0 for f in films)
+    # Glance matches the cards on screen (focus-scoped when focus is set).
     glance = {
-        "doneToday": done_today_total,
-        "left": left_total,
+        "doneToday": sum(f.get("doneToday") or 0 for f in films),
+        "left": sum(f.get("left") or 0 for f in films),
         "blocked": len(glance_blocked),
         "blockedJobs": glance_blocked[:12],
         "nextLive": list(next_live or [])[:4],
     }
-    return {
+    out = {
         "hours": span_h, "since": base["at"] if base else "",
         "jobsDone": len(done), "byAgent": dict(sorted(by_agent.items(), key=lambda kv: -kv[1])),
         "milestones": sum(m["milestones"] for m in moved if m["milestones"] > 0),
         "moved": moved[:10], "films": films,
         "studio": studio_items,
         "otherJobs": len(studio_items),
-        "videoJobs": sum(g["jobs"] for g in films),
+        "videoJobs": video_jobs_all,
         "glance": glance,
     }
+    if focus_set:
+        # Only the long keys that earned an Overview card (not every channel expansion of a bare 032).
+        out["focus"] = [f["film"] for f in films if re.fullmatch(r"[A-Z]+:\d{3}", f["film"])]
+    return out
 
 
 def section(history_path: Path, board: dict, at: dt.datetime) -> dict:
@@ -528,5 +609,5 @@ def section(history_path: Path, board: dict, at: dt.datetime) -> dict:
         comparable, at, counts, jobs_done(board, at),
         open_jobs=jobs_open(board), stages=video_stages(board),
         all_done=jobs_done_all(board), milestones=video_milestones(board),
-        next_live=next_going_live(board, at),
+        next_live=next_going_live(board, at), focus=board_focus(board),
     )

@@ -210,11 +210,13 @@ class Summary(unittest.TestCase):
         self.assertNotIn("id", qa)
         self.assertEqual(qa["title"], "Chief QA — not started")
         g = s["glance"]
-        self.assertEqual(g["doneToday"], 2)  # J2110 + Jhouse on London today
+        self.assertEqual(g["doneToday"], 1)  # film cards only — studio Jhouse is not on a film card
         self.assertEqual(g["left"], 4)
         self.assertEqual(g["blocked"], 2)
         self.assertEqual({j["id"] for j in g["blockedJobs"]}, {"J2142", "J2143"})
         self.assertEqual([v["key"] for v in g["nextLive"]], ["OWB:025", "HOS:007"])
+        self.assertIn("waiting", film["blockedWhy"])
+        self.assertTrue(film["blockedWhy"].startswith("J2142") or film["blockedWhy"].startswith("J2143"))
 
     def test_next_going_live_from_scheduled_publish(self):
         b = {
@@ -259,6 +261,71 @@ class Summary(unittest.TestCase):
         left = p.leftover_stages(ms, remaining)
         self.assertEqual([x["stage"] for x in left], ["edit", "qa"])
         self.assertTrue(all("id" not in x and x["kind"] == "stage" for x in left))
+
+    def test_overview_films_follow_studio_focus_and_glance_matches(self):
+        # Live shape: focus carries bare + OWB keys; leftover stages on many other films must not appear.
+        hist = [{"at": "2026-11-03T12:30Z", "counts": {
+            "OWB:031": 5, "OWB:032": 5, "OWB:033": 4, "OWB:024": 8, "HOS:006": 7,
+        }}]
+        counts = {
+            "OWB:031": [6, "What Happens When Earths Magnetic Field Flips"],
+            "OWB:032": [6, "What Would Happen If You Landed On Titan"],
+            "OWB:033": [5, "Why Knocked-Sideways Uranus Has 21-Year Winters"],
+            "OWB:024": [8, "Old Venus film"],
+            "HOS:006": [7, "Old HOS film"],
+            "OWB:ASK:J1356.2": [0, "Housekeeping"],
+        }
+        done = [
+            {"id": "J032", "by": "codex", "film": "OWB:032", "title": "Titan Short v11 cover", "at": "2026-11-04T10:00Z"},
+            {"id": "J024", "by": "gemini", "film": "OWB:024", "title": "024 housekeeping", "at": "2026-11-04T09:00Z"},
+        ]
+        open_jobs = [
+            {"id": "J2141", "status": "claimed", "film": "OWB:032", "stage": "picture", "title": "032 picture harvest"},
+            {"id": "J2142", "status": "blocked", "film": "OWB:032", "stage": "edit",
+             "title": "032 Shorts edit held", "after": "J2141"},
+            {"id": "J024x", "status": "open", "film": "OWB:024", "stage": "qa", "title": "024 leftover qa"},
+            {"id": "J006x", "status": "blocked", "film": "HOS:006", "stage": "picture", "title": "006 blocked plate"},
+        ]
+        milestones = {
+            "OWB:032": [{"id": "picture", "state": "doing"}, {"id": "edit", "state": "todo"}, {"id": "qa", "state": "todo"}],
+            "OWB:024": [{"id": "qa", "state": "todo"}],
+            "HOS:006": [{"id": "picture", "state": "todo"}, {"id": "edit", "state": "todo"}],
+            "OWB:ASK:J1356.2": [{"id": "topic", "state": "todo"}],
+        }
+        focus = ["032", "OWB:032", "031", "OWB:031", "033", "OWB:033"]
+        s = p.summarise(
+            hist, NOW, counts, done,
+            open_jobs=open_jobs, stages={"OWB:032": "picture", "OWB:031": "edit", "OWB:033": "picture"},
+            all_done=done, milestones=milestones, next_live=[], focus=focus,
+        )
+        keys = [f["film"] for f in s["films"]]
+        self.assertEqual(keys, ["OWB:032", "OWB:031", "OWB:033"])
+        self.assertNotIn("OWB:024", keys)
+        self.assertNotIn("HOS:006", keys)
+        self.assertNotIn("OWB:ASK:J1356.2", keys)
+        by = {f["film"]: f for f in s["films"]}
+        self.assertEqual(by["OWB:032"]["blocked"], 1)
+        self.assertIn("J2142", by["OWB:032"]["blockedWhy"])
+        self.assertIn("waiting", by["OWB:032"]["blockedWhy"])
+        g = s["glance"]
+        self.assertEqual(g["doneToday"], by["OWB:032"]["doneToday"] + by["OWB:031"]["doneToday"] + by["OWB:033"]["doneToday"])
+        self.assertEqual(g["left"], by["OWB:032"]["left"] + by["OWB:031"]["left"] + by["OWB:033"]["left"])
+        self.assertEqual(g["blocked"], by["OWB:032"]["blocked"] + by["OWB:031"]["blocked"] + by["OWB:033"]["blocked"])
+        self.assertEqual(g["blocked"], 1)
+        self.assertEqual([j["id"] for j in g["blockedJobs"]], ["J2142"])
+        self.assertEqual(s["focus"], ["OWB:032", "OWB:031", "OWB:033"])  # focus-list order
+        # Head videoJobs still counts every film with 24 h finished work (024 + 032).
+        self.assertEqual(s["videoJobs"], 2)
+
+    def test_normalize_focus_accepts_bare_and_prefixed(self):
+        got = p.normalize_focus(["032", "OWB:031", "033"])
+        self.assertIn("OWB:032", got)
+        self.assertIn("032", got)
+        self.assertIn("OWB:031", got)
+        self.assertIn("031", got)
+        self.assertTrue(p.in_focus("OWB:032", got))
+        self.assertFalse(p.in_focus("OWB:024", got))
+        self.assertFalse(p.in_focus("OWB:032:S:abc", got))
 
 
 if __name__ == "__main__":
