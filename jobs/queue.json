@@ -190126,6 +190126,11 @@
           "at": "2026-11-06T06:22Z",
           "by": "gemini",
           "what": "waits on Ben: Watch HOS 006 Short B v02 (\"How Do Plants Clean the Air?\", planning slot Wed 18 Nov 11:30; long VbPubYd6Fbs must be public first) (by 2026-11-15 18:00 London)"
+        },
+        {
+          "at": "2026-11-06T06:23Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch HOS 006 Short C v03 (\"How Do Plants Make Oxygen?\", planning slot Sat 21 Nov 11:30; long VbPubYd6Fbs must be public first) (by 2026-11-15 18:00 London)"
         }
       ],
       "remaining_action": "Set awaits_ben for Short B v02 and Short C v03 and mark J2263 done",
@@ -190151,17 +190156,30 @@
       "taskKeys": [
         "HOS:006"
       ],
-      "awaits_ben": {
-        "what": "Watch HOS 006 Short B v02 (\"How Do Plants Clean the Air?\", planning slot Wed 18 Nov 11:30; long VbPubYd6Fbs must be public first)",
-        "file": "HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/hos006_short_b_v02_PHONE.mp4",
-        "version": "v02",
-        "due": "2026-11-15T18:00Z",
-        "airs": "2026-11-18T11:30Z",
-        "ifNot": "Remains unuploaded on disk until Ben OK, long VbPubYd6Fbs is public, and Chief schedules",
-        "title": "How Do Plants Clean the Air?",
-        "number": "006B",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "Watch HOS 006 Short B v02 (\"How Do Plants Clean the Air?\", planning slot Wed 18 Nov 11:30; long VbPubYd6Fbs must be public first)",
+          "file": "HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/hos006_short_b_v02_PHONE.mp4",
+          "version": "v02",
+          "due": "2026-11-15T18:00Z",
+          "airs": "2026-11-18T11:30Z",
+          "ifNot": "Remains unuploaded on disk until Ben OK, long VbPubYd6Fbs is public, and Chief schedules",
+          "title": "How Do Plants Clean the Air?",
+          "number": "006B",
+          "type": "short"
+        },
+        {
+          "what": "Watch HOS 006 Short C v03 (\"How Do Plants Make Oxygen?\", planning slot Sat 21 Nov 11:30; long VbPubYd6Fbs must be public first)",
+          "file": "HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/hos006_short_c_v03_PHONE.mp4",
+          "version": "v03",
+          "due": "2026-11-15T18:00Z",
+          "airs": "2026-11-21T11:30Z",
+          "ifNot": "Remains unuploaded on disk until Ben OK, long VbPubYd6Fbs is public, and Chief schedules",
+          "title": "How Do Plants Make Oxygen?",
+          "number": "006C",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J2264",
