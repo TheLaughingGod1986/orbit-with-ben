@@ -179285,10 +179285,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T11:39Z",
+      "eta": "2026-11-06T13:39Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -179747,6 +179747,11 @@
           "at": "2026-11-06T10:28Z",
           "by": "codex",
           "what": "released: Clean local checkpoint d9093c4ea5 on worker/J2089-ocean in /private/tmp/J2089-ocean-wt; original 1/4 retained. J2262 R08 and J2260 R19 rendered into ~/_desk/cache/J2089/{orbit_period,distance}_renders_v01. Reviewed preview/source hashes, 216 decoded frames and 218 layout samples verified. Preserve 56 previous exports, total 58. No background process. Next fix r10_spectrum/r32_scalemap, apply reviewed allocations, finish licensed harvest/R18/R23/composites; frame0/APL holds remain. Remaining scope exceeds one run. Inherited public-push rejection respected: local checkpoint only. GBP0; no publishing/PASS/merge."
+        },
+        {
+          "at": "2026-11-06T11:39Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix r10/r32, apply reviewed source allocations, finish licensed harvest and composites",
