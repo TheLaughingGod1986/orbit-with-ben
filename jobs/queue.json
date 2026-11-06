@@ -190387,7 +190387,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T19:33Z",
-      "result": "",
+      "result": "Chief reopened after J2301 verified J2283 FIX (19cfce9eb0). Build v03 at £0; do not schedule. Mon 9 is iyvWYFP_ETA.",
       "history": [
         {
           "at": "2026-11-05T19:33Z",
@@ -190490,7 +190490,7 @@
           "what": "reopened: J2301 verified J2283 FIX (jobs/reviews/J2283/REVIEW.md, 19cfce9eb0): rebuild fri06_muons_ground_v03.mp4 at £0 with top_black limb feather, station-free Earth_Views/NHQ windows replacing 46.0s Soyuz WARN and 3.0-15.2s jump cuts, s02_graphic <=4.0s, rerun all 5 tool gates, stage v03 to OWB UAT, and queue Rule-H v03 review before any Ben watch or scheduling (Mon 9 Nov 11:30 is iyvWYFP_ETA)"
         }
       ],
-      "remaining_action": "Wait for the v02 review. Do not schedule.",
+      "remaining_action": "Build fri06_muons_ground_v03.mp4 at £0: top_black limb feather; station-free Earth_Views/NHQ windows replacing 46.0s Soyuz WARN and 3.0-15.2s jump cuts; s02_graphic <=4.0s; rerun all 5 tool gates; stage UAT; queue Rule-H v03 review. No Ben watch/upload/schedule yet. Mon 9 Nov 11:30 is iyvWYFP_ETA.",
       "due": "2026-11-09T10:30:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -194566,13 +194566,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "chief",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T20:11Z",
-      "result": "",
+      "result": "Chief ACCEPT of J2301 condition verification. J2283 FIX (19cfce9eb0) verified; reopened J2248 for £0 v03 corrective assembly (top_black limb feather, station-free Earth windows, s02_graphic <=4.0s, re-gate, UAT, Rule-H v03 review). No Ben watch, upload or schedule. Mon 9 Nov 11:30 remains iyvWYFP_ETA.",
       "history": [
         {
           "at": "2026-11-06T20:11Z",
@@ -194623,9 +194623,14 @@
           "at": "2026-11-06T20:23Z",
           "by": "chief",
           "what": "reopened: Accepted condition verification; reopened J2248 for £0 v03 per J2283 FIX. Closing J2301."
+        },
+        {
+          "at": "2026-11-06T20:24Z",
+          "by": "chief",
+          "what": "done: Chief ACCEPT of J2301 condition verification. J2283 FIX (19cfce9eb0) verified; reopened J2248 for £0 v03 corrective assembly (top_black limb feather, station-free Earth windows, s02_graphic <=4.0s, re-gate, UAT, Rule-H v03 review). No Ben watch, upload or schedule. Mon 9 Nov 11:30 remains iyvWYFP_ETA."
         }
       ],
-      "remaining_action": "Elected Chief (chief): reopen J2248 for £0 v03 corrective assembly per jobs/reviews/J2283/REVIEW.md (19cfce9eb0) and close J2301",
+      "remaining_action": "Closed: Chief accepted verification and reopened J2248 for v03",
       "kind": "review",
       "recheck_of": "J2248",
       "due": "2026-11-06T21:11:40+00:00",
@@ -194637,11 +194642,11 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
       "model": "gemini-argon",
       "taskKeys": [
         "OWB:024"
-      ]
+      ],
+      "done_ref": "766fcbd8d3"
     }
   ],
   "focus": [
