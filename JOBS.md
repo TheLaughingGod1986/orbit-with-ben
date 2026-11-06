@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2293 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
 | J2295 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2157 |  |
+| J2296 | mini | open | – | – | 032 picture · review · 032 R18 pebble ruler: review registered still and source allocation |  |
 
 Recently finished:
 
