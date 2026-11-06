@@ -1,5 +1,5 @@
 {
-  "next_id": 2275,
+  "next_id": 2276,
   "jobs": [
     {
       "id": "J0001",
@@ -191510,6 +191510,37 @@
         "OWB:032"
       ],
       "done_ref": "cd564d7795"
+    },
+    {
+      "id": "J2275",
+      "title": "HOS 009: fix PR439 tranche-2 runner safety and launch defects",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief codex reviewed J2200: FIX, no merge or generation. Repair HOS PR439 head 1772cd52. Six required fixes: (1) can_take currently accepts live=8900,spent=0,pending=0,other=0, falsely leaving3000; full6000 reservation leaves2900. Correct pending/unposted charge and next-take arithmetic with boundary tests. (2) Read selected model/output, exact price, balance/account/entitlement under lock immediately before each actual Create; environment strings are not UI evidence. Test real adapter with fake browser and zero submits on drift. (3) Canonical cross-channel writer lock and durable shared pending/reservation/spend ledger; current paths are worktree-local. Test concurrency/crash recovery. (4) Mandatory verified NAS archive before spend; immutable collision-safe outputs and receipts. copy2 currently overwrites existing different archive; use idempotent same-hash handling, reject mismatch, persist evidence. (5) Failed technical outputs currently count done and become parent references; validate required video/duration/dimensions/decode, select verified parent take/hash, gate advancement, never self-KEEP. (6) detached command omits required media/reservation arguments; propagate validated inputs/archive/state/log/done and atomically prevent duplicates despite stale done files. Verify parent start still inventory or guarded zero-price path. Independent review:23 tests OK and check_all ALL CHECKS PASS; temporary zero-submit probes reproduce arithmetic/archive/technical defects. Detailed local report /private/tmp/codex-j2200-record/jobs/reviews/J2200/REVIEW.md. Zero Flow credits, no browser submit, no media/publishing changes. Preserve exact20 v05 scope and accepted trims. Update existing PR or linked repair PR from own worktree; run zero-submit regressions and check_all. When repaired request elected-Chief re-review of J2200; worker completion does not authorize J2033. Ready now, no artificial date delay.",
+      "ref": "J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T10:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T10:39Z",
+          "by": "codex",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Repair and test the Flow runner before another Chief code review",
+      "for": "codex",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Fix the video generator safeguards and test them without spending credits."
     }
   ],
   "focus": [],
