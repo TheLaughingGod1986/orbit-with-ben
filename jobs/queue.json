@@ -191146,9 +191146,14 @@
           "at": "2026-11-06T09:17Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T09:17Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. NAS offload dry run would free ~0 MB (494 MB folder, 6.7 GB free stays). Starting file and slot checks."
         }
       ],
-      "remaining_action": "Upload C v03 NEW Private publishAt Sat 21 Nov 11:30; Related=VbPubYd6Fbs; UPLOADS+Buffer+gate",
+      "remaining_action": "Locate the Short C master, package, and a free 11:30 slot",
       "due": "2026-11-20T20:00:00Z",
       "kind": "studio",
       "plain": "Upload the Ben-OK’d HOS 006 Short C v03 Private for Sat 21 Nov 11:30, linked to the live long.",
@@ -191169,12 +191174,14 @@
       "urgent": 12,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-06T09:17Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. NAS offload dry run would free ~0 MB (494 MB folder, 6.7 GB free stays). Starting file and slot checks."
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     }
   ],
   "focus": [],
