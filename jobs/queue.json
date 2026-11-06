@@ -72659,12 +72659,12 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "since": "2026-11-06T12:08Z",
-      "eta": "2026-11-06T14:08Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
-      "result": "Reopened by J2195 (jobs/reviews/J2195/REVIEW.md) under Rule H: KEEP 009 Short A (hos_009_short_A_v02, 2.800s hook), 010 Short A (hos_010_short_A_v02 with J1004 Option A1, 2.849s hook), and 010 Short C (hos_010_short_C_v02, 1.780s hook) without regeneration; preserve hos_009_short_B_v02 and v03 on disk; record 1 scoped 2-sentence opening pickup hos_009_short_B_open_v04 (82 chars: \"In one minute, the Moon falls five metres. An apple falls that far in one second.\") via 04_Audio/tools/vo_take.py after fresh live credit read, concatenate with 0.400s clean silence onto clean 43-word body hos_009_short_B_v03.wav[6.020:23.680] (17.660s) to produce hos_009_short_B_v04.{wav,mp3} (59w, ~22.80s VO / ~23.80s w/ 1.00s tail, S01 ~2.26s <= 2.850s), run vo_check_py312.sh + check_all.sh, and update HOS PR #423.",
+      "result": "Waiting for: J2279 must directly audition v04 and reused v03 body and resolve word-gate repeated phrase near19.74s. Session inspected actual tools: no demonstrated audio_input; MP3 and WAV vo_check both FAIL. PR423 cb18632d preserves evidence. No generation or gate override authorized.",
       "history": [
         {
           "at": "2026-10-22T20:55Z",
@@ -72950,10 +72950,20 @@
           "at": "2026-11-06T12:14Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR423 updated cb18632d; both repo checks PASS. New composite hook2.82s and25.48s total; MP3/WAV word gates FAIL repeated phrase near19.74s. Three retained takes PASS. J2279 queued with audio_input requirement; no final approval."
+        },
+        {
+          "at": "2026-11-06T12:14Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J2279 must directly audition v04 and reused v03 body and resolve word-gate repeated phrase near19.74s. Session inspected actual tools: no demonstrated audio_input; MP3 and WAV vo_check both FAIL. PR423 cb18632d preserves evidence. No generation or gate override authorized."
+        },
+        {
+          "at": "2026-11-06T12:14Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-06T13:15:00Z"
         }
       ],
       "kind": "vo",
-      "remaining_action": "Resolve v04 failed word check through audio-capable review J2279",
+      "remaining_action": "Audio-capable reviewer J2279 resolves failed word check before approval",
       "urgent": 7,
       "progress": {
         "step": 2,
@@ -72966,6 +72976,17 @@
       "taskKeys": [
         "HOS:009",
         "HOS:010"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "J2279 must directly audition v04 and reused v03 body and resolve word-gate repeated phrase near19.74s. Session inspected actual tools: no demonstrated audio_input; MP3 and WAV vo_check both FAIL. PR423 cb18632d preserves evidence. No generation or gate override authorized.",
+        "check_at": "2026-11-06T13:15:00Z",
+        "requires": [
+          "audio_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input"
       ]
     },
     {
