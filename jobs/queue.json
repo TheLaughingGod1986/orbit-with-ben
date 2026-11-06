@@ -184655,9 +184655,14 @@
           "at": "2026-11-06T07:31Z",
           "by": "relay",
           "what": "condition verification queued: J2266"
+        },
+        {
+          "at": "2026-11-06T08:21Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-06T13:38:00Z"
         }
       ],
-      "remaining_action": "Await Chief merge of HOS PR #425/#426 (0a925061) and separate HOS 010 Flow moving-plate mint (12 plates); then assemble Shorts A and C",
+      "remaining_action": "J2267 must integrate plans and establish the twelve-shot producer; assembly then waits for approved media",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -184671,13 +184676,12 @@
         "HOS:010"
       ],
       "hold": {
-        "type": "input",
-        "condition": "J2210 (£0 SHORTS_PICTURE_PLAN_v03 + Part 05 bird row mapping) is done on 0a925061 (HOS PRs #424 ad3c0f4d, #425 0a925061, #426 0a925061 all CI-green, awaiting Chief merge). Assembly remains blocked until Chief merges HOS PR #425/#426 and separately authorizes and completes the HOS 010 Flow moving-plate mint (12 missing unique Shorts-parent moving plates in SHORTS_PICTURE_PLAN_v03.json or full 010 board after HOS 009 J2033; currently 0/12 minted, 0 Flow credits spent on HOS:010).",
-        "check_at": "2026-11-06T08:31:57+00:00",
-        "last_recheck": "J2261",
-        "checked_at": "2026-11-06T01:04:49+00:00",
-        "checked_by": "macbook-2",
-        "recheck_task": "J2266"
+        "type": "dependency",
+        "condition": "J2266 acting-Chief HOLD: PR425/426 remain OPEN at 0a925061, v04 generation_authorized=false, no delivered approved twelve-plate set. J2267 owns immediate tested integration, budget reconciliation and named producer/review handoff. HOS010 mint remains after HOS009 J2033 (itself awaiting J2200); no generation authorized by this verification. Original assembly gates, VO hashes, Option A1 and progress 1/3 retained.",
+        "check_at": "2026-11-06T13:38:00Z",
+        "last_recheck": "J2266",
+        "checked_at": "2026-11-06T08:21:01+00:00",
+        "checked_by": "codex"
       }
     },
     {
