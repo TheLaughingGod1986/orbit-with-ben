@@ -185091,9 +185091,14 @@
           "at": "2026-11-06T07:12Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1/4 done: read J2089_CHECKPOINT_v04.md, MECHANISM_MANIFEST_v01.json, SHOT_LIST_v04.md, SOURCES.md, and J2090/J2150 reviews"
+        },
+        {
+          "at": "2026-11-06T07:15Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2/4 done: inspected all 17 full-size mechanism preview PNGs and contact sheet; 15 KEEP (named for render), 2 FIX (r10_spectrum dark unoutlined absorption bar/prism, r32_scalemap dark-on-dark bloated stroke)"
         }
       ],
-      "remaining_action": "Inspect all 17 mechanism preview PNGs individually at /Users/benjaminoats/_desk/cache/J2089/mechanism_previews_v01/",
+      "remaining_action": "Resolve the two J2150 source conflicts (frame-0 motion after reconstructed descent exclusion; R25 PIA07232 third-use conflict with R18/R20)",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -185105,11 +185110,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-06T07:12Z",
+        "at": "2026-11-06T07:15Z",
         "by": "gemini",
-        "note": "Step 1/4 done: read J2089_CHECKPOINT_v04.md, MECHANISM_MANIFEST_v01.json, SHOT_LIST_v04.md, SOURCES.md, and J2090/J2150 "
+        "note": "Step 2/4 done: inspected all 17 full-size mechanism preview PNGs and contact sheet; 15 KEEP (named for render), 2 FIX (r"
       },
       "taskKeys": [
         "OWB:032"
