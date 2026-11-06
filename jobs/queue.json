@@ -185098,9 +185098,14 @@
           "at": "2026-11-06T14:01Z",
           "by": "relay",
           "what": "condition verification queued: J2284"
+        },
+        {
+          "at": "2026-11-06T16:16Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-06T20:25:00Z"
         }
       ],
-      "remaining_action": "Await J2268 tested runner, J2269 credit approval, J2270 twelve plates and J2271 independent review; then assemble A/C under Option A1",
+      "remaining_action": "Await runner repair and tested adapter, bounded authorization after HOS009 production, twelve plates and independent J2271 acceptance before assembling A/C",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -185115,12 +185120,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2267 readiness integration HOS PR438; J2172 remains1/3. Required chain J2200 -> J2268 -> J2269 (also J2033 DONE) -> J2270 -> J2271 independent plate acceptance. Preserve A/C VO hashes, J1004 OptionA1, rule8/media gates and Ben final watch.",
-        "check_at": "2026-11-06T15:01:22+00:00",
-        "last_recheck": "J2266",
-        "checked_at": "2026-11-06T08:33:27+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2284"
+        "condition": "Acting-Chief Codex J2284 ruling: CONDITION UNMET. Readiness PR438 is merged, but J2275 repair is open, J2200 requires renewed system PASS, J2033 remains blocked, J2268 adapter and J2269 live-guard authorization incomplete, J2270 unauthorized, J2271 independent plate acceptance incomplete. Reviewed jobs/reviews/J2284/REVIEW.md and current queue histories; origin/main twelve-plate scope still SCOPED_NOT_AUTHORIZED. Retain J2172 at1/3 afterJ2271, accepted A/C VO hashes, J1004 OptionA1, rule8/media gates and Ben final watch. Concrete next action remains J2275 Codex runner repair, followed by existing production/review chain; no new generation approval.",
+        "check_at": "2026-11-06T20:25:00Z",
+        "last_recheck": "J2284",
+        "checked_at": "2026-11-06T16:16:59+00:00",
+        "checked_by": "codex"
       }
     },
     {
