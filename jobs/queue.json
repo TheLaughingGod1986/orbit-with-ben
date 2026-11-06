@@ -187817,13 +187817,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-06T22:13Z",
-      "eta": "2026-11-07T00:13Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T09:23Z",
-      "result": "",
+      "result": "NAS gate cache staged and hash verified for ffYKoNVPoqg, HZGTovJu_TQ, cwU_0WWeNZ4, aAUgIGEuPwQ. Refreshed gate: 9 PASS, 2 pre-existing KNOWN, no NOT CHECKED or hard FAIL. Records PR #587 (4efe0ad07f). No spend or YouTube writes.",
       "history": [
         {
           "at": "2026-11-05T09:23Z",
@@ -187854,6 +187854,11 @@
           "at": "2026-11-06T22:15Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified four export hashes and every staged NAS dependency. Gate rerun: 9 PASS, 2 KNOWN, 0 NOT CHECKED, 0 hard FAIL; record 4efe0ad07f."
+        },
+        {
+          "at": "2026-11-06T22:16Z",
+          "by": "codex",
+          "what": "done: NAS gate cache staged and hash verified for ffYKoNVPoqg, HZGTovJu_TQ, cwU_0WWeNZ4, aAUgIGEuPwQ. Refreshed gate: 9 PASS, 2 pre-existing KNOWN, no NOT CHECKED or hard FAIL. Records PR #587 (4efe0ad07f). No spend or YouTube writes."
         }
       ],
       "remaining_action": "Cache staging and verification complete",
@@ -187868,7 +187873,8 @@
       "taskKeys": [
         "OWB:025",
         "OWB:026"
-      ]
+      ],
+      "done_ref": "4efe0ad07f"
     },
     {
       "id": "J2206",
