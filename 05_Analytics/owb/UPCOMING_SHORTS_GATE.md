@@ -1,12 +1,12 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-05 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-06 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
 | 2026-11-07 11:30 | [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) `T9fVlG3CCzU` | yes | PASS |
-| 2026-11-09 11:30 | [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) `iyvWYFP_ETA` | yes | KNOWN |
-| 2026-11-10 11:30 | [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/RLSJm59OSzI) `RLSJm59OSzI` | yes | PASS |
+| 2026-11-09 11:30 | [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) `iyvWYFP_ETA` | yes | PASS |
+| 2026-11-10 11:30 | [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) `ffYKoNVPoqg` | yes | NOT CHECKED |
 | 2026-11-11 11:30 | [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) `B1z2dv7m7Vk` | yes | PASS |
 | 2026-11-12 11:30 | [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/N42gKBbD7tE) `N42gKBbD7tE` | yes | KNOWN |
 | 2026-11-13 11:30 | [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/bSjWiCbB7pY) `bSjWiCbB7pY` | yes | KNOWN |
@@ -23,15 +23,14 @@ Written by `gate_upcoming.py` at 2026-11-05 06:40 London for Shorts scheduled in
 - first cut at 4.70s > 3.0s (scene-change detect)
 - spoken text contains meta-promise ("stay, and i'll show you")
 
-### iyvWYFP_ETA: KNOWN, no local export
+### iyvWYFP_ETA: report-only (would fail 60% stayed gate)
 
-Export not found: `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v01.mp4`. Already ruled on: the local master was overwritten by J0432's seam fix; the YouTube copy airs as is (J1181, J1320)
+- pushed still at frame 0 (mean 0–1.5 s frame diff 0.14 < 1.50) — use moving footage
+- first cut at 4.10s > 3.0s (scene-change detect)
 
-### RLSJm59OSzI: report-only (would fail 60% stayed gate)
+### ffYKoNVPoqg: NOT CHECKED (NAS not readable from this job)
 
-- pushed still at frame 0 (mean 0–1.5 s frame diff 0.13 < 1.50) — use moving footage
-- first cut at 4.30s > 3.0s (scene-change detect)
-- spoken text contains meta-promise ("stay, and i'll show you")
+macOS privacy blocks this job from: `/Volumes/data/mac-mini-archive/scratch/J1199/s6_v02/vo_v02.wav` and 3 more. From an agent session run `gate_upcoming.py --stage` (same arguments), then re-run. No Short was judged.
 
 ### N42gKBbD7tE: KNOWN, no local export
 
