@@ -194336,13 +194336,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-06T19:41Z",
-      "eta": "2026-11-06T21:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T18:38Z",
-      "result": "",
+      "result": "FIX documented and merged in PR580. Picture blocked pending J2299 source/plan/media correction after J2290, then J2300 moving-video-capable QA. PR578 reports 17 wrong-subject exclusions, 32 caption/title differences, JPEG opener and zero KEEP; no media PASS inferred. Stage claim released. No spend or publishing change; Ben has no action.",
       "history": [
         {
           "at": "2026-11-06T18:38Z",
@@ -194373,6 +194373,11 @@
           "at": "2026-11-06T19:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR580 review record merged after passing check. Picture blocked/FIX, stage claim released; J2299 after J2290 and J2300 after J2299 verified, with moving_video_input required for QA."
+        },
+        {
+          "at": "2026-11-06T19:46Z",
+          "by": "codex",
+          "what": "done: FIX documented and merged in PR580. Picture blocked pending J2299 source/plan/media correction after J2290, then J2300 moving-video-capable QA. PR578 reports 17 wrong-subject exclusions, 32 caption/title differences, JPEG opener and zero KEEP; no media PASS inferred. Stage claim released. No spend or publishing change; Ben has no action."
         }
       ],
       "remaining_action": "Complete the recorded FIX handoff and report the outcome",
@@ -194392,7 +194397,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2297/REVIEW.md"
     },
     {
       "id": "J2298",
