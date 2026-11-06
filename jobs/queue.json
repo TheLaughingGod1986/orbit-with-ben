@@ -1,5 +1,5 @@
 {
-  "next_id": 2291,
+  "next_id": 2292,
   "jobs": [
     {
       "id": "J0001",
@@ -193514,6 +193514,40 @@
       ],
       "remaining_action": "£0 harvest 38 missing pool IDs (+PIA00271) and build STILLS_LOCK CODE graphics incl. R29 dial; no Omni/Veo/Flow",
       "kind": "assembly"
+    },
+    {
+      "id": "J2291",
+      "title": "Chief: resolve 033 picture orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"033\", \"stage\": \"picture\", \"kind\": \"orphan-review\", \"signature\": \"394380b045202b7d4a08\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-06T17:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T17:27Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 033 picture handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "033",
+        "stage": "picture",
+        "kind": "orphan-review",
+        "signature": "394380b045202b7d4a08"
+      }
     }
   ],
   "focus": [],

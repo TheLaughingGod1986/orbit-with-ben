@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2288 | mini | open | – | – | 013 vo · for cursor · review · `cursor-claude-opus-5-5` · HOS 013 Darwin & Wallace: review Shorts VO A and B | https://github.com/TheLaughingGod1986/history-of-science/pull/444 |
 | J2289 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Verify condition for J2255 |  |
 | J2290 | any | open (after J2256) | – | – | OWB:033 picture · assembly · 033 Uranus: £0 harvest 38 missing stills + CODE graphics from STILLS_LOCK_v01 | J2256/h175 |
+| J2291 | mini | open | – | – | chief · Chief: resolve 033 picture orphan-review |  |
 
 Recently finished:
 
