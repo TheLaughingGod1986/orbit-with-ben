@@ -195635,7 +195635,7 @@
     {
       "id": "J2312",
       "title": "OWB 026 E1 recorded-word conflict: decide J2307 recipe or retain original",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Review J2307 evidence PR #591 (a6b61c018f), jobs/reviews/J2307/PREFLIGHT.md. Original HZGTovJu_TQ remains Private for 16 Nov 11:30Z; original hash verified. Literal preserved title question is absent from recorded Short VO; earlier J0935 v03 used a non-question opener and 1.42x speed to place surprise at 1.445s; final ruling was NO RECUT. E1 retains Keeper question rules and only existing explicit waivers. Determine a concrete compliant existing-recording recipe and reopen J2307, or retain the scheduled original and close this local experiment. Do not extend the Test A waiver to this standalone Short silently. No spend, publishing or failed-gate waiver. Write KEEP/FIX and update parent. Text feasibility review; no capability-only hold.",
       "ref": "J2307 / PR591",
@@ -195655,11 +195655,25 @@
           "at": "2026-11-06T22:35Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T22:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1363 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review the recorded-question conflict and give a compliant recipe or end this local experiment",
       "kind": "review",
-      "plain": "Check whether the nearest-star Short can meet the new opening rules using its existing recording."
+      "plain": "Check whether the nearest-star Short can meet the new opening rules using its existing recording.",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2313",
