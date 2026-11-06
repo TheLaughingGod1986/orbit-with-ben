@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2280 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
 | J2281 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
 | J2283 | mini | open | – | – | 024 edit · for gemini · review · `gemini-argon` · 024 muons Short v02: review the tool-passed cut |  |
-| J2284 | mini | claimed | gemini | 2026-11-06T16:16Z | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
+| J2284 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 
 Recently finished:
 
