@@ -194566,13 +194566,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-06T20:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T20:11Z",
-      "result": "parked for Chief: REVIEW CONDITION (J2283) COMPLETED WITH FIX (jobs/reviews/J2301/REVIEW.md, commit 766fcbd8d3): J2283 finished on main at 2026-11-06T14:50Z (19cfce9eb0) and wrote jobs/reviews/J2283/REVIEW.md (now synced to jobs/reviews/J2248/REVIEW.md) ruling Verdict FIX on fri06_muons_ground_v02.mp4 (768cf1a4, 22.2s, 5 automated tool gates PASS with 1 WARN at 0:17 s05_earth Earth_Views offset 46.0s edge density 0.0219 < p5 0.0291: docked Soyuz hardware + blurred upper ghost blob, double-horizon black-band sandwich across limb rows 3.0-15.2s from symmetric feather, same-shot jump cuts at 7.2s/11.2s + 13.8s source transition, and s02_graphic 4.2s > 4.0s). No v03 cut exists yet on disk or OWB UAT, and J2248 IS the assembly job. Under Rule H (FIX -> reopen parent with fix list) and jobs.py do_reopen/set_wait guards (only elected Chief may release/record a verified hold), elected Chief (chief) please run: python3 scripts/jobs.py reopen J2248 --agent chief --note 'J2301 verified J2283 FIX (jobs/reviews/J2283/REVIEW.md, 19cfce9eb0): rebuild fri06_muons_ground_v03.mp4 at £0 with top_black limb feather, station-free Earth_Views/NHQ windows replacing 46.0s Soyuz WARN and 3.0-15.2s jump cuts, s02_graphic <=4.0s, rerun all 5 tool gates, stage v03 to OWB UAT, and queue Rule-H v03 review before any Ben watch or scheduling (Mon 9 Nov 11:30 is iyvWYFP_ETA)' --git and close J2301.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-06T20:11Z",
@@ -194618,6 +194618,11 @@
           "at": "2026-11-06T20:21Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: REVIEW CONDITION (J2283) COMPLETED WITH FIX (jobs/reviews/J2301/REVIEW.md, commit 766fcbd8d3): J2283 finished on main at 2026-11-06T14:50Z (19cfce9eb0) and wrote jobs/reviews/J2283/REVIEW.md (now synced to jobs/reviews/J2248/REVIEW.md) ruling Verdict FIX on fri06_muons_ground_v02.mp4 (768cf1a4, 22.2s, 5 automated tool gates PASS with 1 WARN at 0:17 s05_earth Earth_Views offset 46.0s edge density 0.0219 < p5 0.0291: docked Soyuz hardware + blurred upper ghost blob, double-horizon black-band sandwich across limb rows 3.0-15.2s from symmetric feather, same-shot jump cuts at 7.2s/11.2s + 13.8s source transition, and s02_graphic 4.2s > 4.0s). No v03 cut exists yet on disk or OWB UAT, and J2248 IS the assembly job. Under Rule H (FIX -> reopen parent with fix list) and jobs.py do_reopen/set_wait guards (only elected Chief may release/record a verified hold), elected Chief (chief) please run: python3 scripts/jobs.py reopen J2248 --agent chief --note 'J2301 verified J2283 FIX (jobs/reviews/J2283/REVIEW.md, 19cfce9eb0): rebuild fri06_muons_ground_v03.mp4 at £0 with top_black limb feather, station-free Earth_Views/NHQ windows replacing 46.0s Soyuz WARN and 3.0-15.2s jump cuts, s02_graphic <=4.0s, rerun all 5 tool gates, stage v03 to OWB UAT, and queue Rule-H v03 review before any Ben watch or scheduling (Mon 9 Nov 11:30 is iyvWYFP_ETA)' --git and close J2301."
+        },
+        {
+          "at": "2026-11-06T20:23Z",
+          "by": "chief",
+          "what": "reopened: Accepted condition verification; reopened J2248 for £0 v03 per J2283 FIX. Closing J2301."
         }
       ],
       "remaining_action": "Elected Chief (chief): reopen J2248 for £0 v03 corrective assembly per jobs/reviews/J2283/REVIEW.md (19cfce9eb0) and close J2301",
@@ -194634,13 +194639,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-06T20:21Z",
-        "by": "gemini",
-        "note": "Step 3/3 complete: committed jobs/reviews/J2301/REVIEW.md (766fcbd8d3); parking J2301 for elected Chief to reopen J2248"
-      },
       "taskKeys": [
         "OWB:024"
       ]
