@@ -194253,13 +194253,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T19:30Z",
-      "eta": "2026-11-06T21:30Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T18:27Z",
-      "result": "",
+      "result": "KEEP (21c644e022, jobs/reviews/J2296/REVIEW.md): inspected local commit 1638fd13c1 on worker/J2089-r18-ruler and full-size r18_ruler_review.jpg / code_graphic_032_r18_ruler_v01.png (preview_sha256 3c5a2f296be594fd161062a548e9e970962c8b5dbae630d542da0cc7a09c0517) / PIA07232.jpg (4221ee7a4588a6ea169a0b438b5526e26c68827cb717a31ef1f81284b39cd3e8) — KEEP: bracket registered to left elongated foreground cobble at source endpoints (148,423)-(269,423) matching ESA caption & SOURCES row 8 ('about 15 centimetres (left)'), placed 44px above cobble (y=605.46) clear of hero object, clean <=1.44x (1.4308x) portrait inset (449x900 from 314x629 crop), house labels ('ABOUT 15 CENTIMETRES', 'PEBBLES', 'ESA/NASA/JPL/University of Arizona'), 109 safe-area samples [220,90,1570,990], transparent entry/exit, and export guard verified. Confirmed PIA07232 capped at R18+R20 only (no R25). Approved to export under --approved r18_ruler --review-ref J2296; 60 earlier exports, rights/frame0/APL/Huygens/composite holds, and J2089 1/4 preserved. GBP0.",
       "history": [
         {
           "at": "2026-11-06T18:27Z",
@@ -194295,6 +194295,11 @@
           "at": "2026-11-06T19:39Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed jobs/reviews/J2296/REVIEW.md at 21c644e022 and updated parent J2089 at 1/4"
+        },
+        {
+          "at": "2026-11-06T19:39Z",
+          "by": "gemini",
+          "what": "done: KEEP (21c644e022, jobs/reviews/J2296/REVIEW.md): inspected local commit 1638fd13c1 on worker/J2089-r18-ruler and full-size r18_ruler_review.jpg / code_graphic_032_r18_ruler_v01.png (preview_sha256 3c5a2f296be594fd161062a548e9e970962c8b5dbae630d542da0cc7a09c0517) / PIA07232.jpg (4221ee7a4588a6ea169a0b438b5526e26c68827cb717a31ef1f81284b39cd3e8) — KEEP: bracket registered to left elongated foreground cobble at source endpoints (148,423)-(269,423) matching ESA caption & SOURCES row 8 ('about 15 centimetres (left)'), placed 44px above cobble (y=605.46) clear of hero object, clean <=1.44x (1.4308x) portrait inset (449x900 from 314x629 crop), house labels ('ABOUT 15 CENTIMETRES', 'PEBBLES', 'ESA/NASA/JPL/University of Arizona'), 109 safe-area samples [220,90,1570,990], transparent entry/exit, and export guard verified. Confirmed PIA07232 capped at R18+R20 only (no R25). Approved to export under --approved r18_ruler --review-ref J2296; 60 earlier exports, rights/frame0/APL/Huygens/composite holds, and J2089 1/4 preserved. GBP0."
         }
       ],
       "remaining_action": "Close J2296 and post summary on OWB thread",
@@ -194317,7 +194322,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "21c644e022"
     },
     {
       "id": "J2297",
