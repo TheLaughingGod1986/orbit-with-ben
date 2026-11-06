@@ -72659,9 +72659,9 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "since": "2026-11-06T12:08Z",
+      "eta": "2026-11-06T14:08Z",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
       "result": "Reopened by J2195 (jobs/reviews/J2195/REVIEW.md) under Rule H: KEEP 009 Short A (hos_009_short_A_v02, 2.800s hook), 010 Short A (hos_010_short_A_v02 with J1004 Option A1, 2.849s hook), and 010 Short C (hos_010_short_C_v02, 1.780s hook) without regeneration; preserve hos_009_short_B_v02 and v03 on disk; record 1 scoped 2-sentence opening pickup hos_009_short_B_open_v04 (82 chars: \"In one minute, the Moon falls five metres. An apple falls that far in one second.\") via 04_Audio/tools/vo_take.py after fresh live credit read, concatenate with 0.400s clean silence onto clean 43-word body hos_009_short_B_v03.wav[6.020:23.680] (17.660s) to produce hos_009_short_B_v04.{wav,mp3} (59w, ~22.80s VO / ~23.80s w/ 1.00s tail, S01 ~2.26s <= 2.850s), run vo_check_py312.sh + check_all.sh, and update HOS PR #423.",
@@ -72925,6 +72925,11 @@
           "at": "2026-11-06T11:34Z",
           "by": "gemini",
           "what": "review J2195 FIX: KEEP 009 Short A, 010 Short A (J1004 Option A1), and 010 Short C v02 takes (do not regenerate); preserve 009 Short B v02 and v03 on disk; record 1 scoped 2-sentence opening pickup hos_009_short_B_open_v04 (82 chars: \"In one minute, the Moon falls five metres. An apple falls that far in one second.\") and concatenate with 0.400s silence onto verified clean 43-word body hos_009_short_B_v03.wav[6.020:23.680] to build hos_009_short_B_v04.{wav,mp3} (S01 <= 2.850s, total 22-27s, 0 homophones); see jobs/reviews/J2195/REVIEW.md"
+        },
+        {
+          "at": "2026-11-06T12:08Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "vo",
@@ -72937,7 +72942,7 @@
         "by": "codex",
         "note": "HOS PR423 commits74a01241/8d51256c submitted. All repository checks pass; new take word/level gate PASS but hook3.68s FA"
       },
-      "by": "",
+      "by": "codex",
       "taskKeys": [
         "HOS:009",
         "HOS:010"
