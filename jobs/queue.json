@@ -181624,10 +181624,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-06T05:56Z",
-      "eta": "2026-11-06T07:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -181956,6 +181956,11 @@
           "at": "2026-11-06T06:02Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR571 (560266e1b0): five progressive historical timeline alpha overlays rendered; all hashes, formats, timings, alpha bounds and full decode PASS. Media 6.5MB outside git, render exit0. Full package remains unfinished; no KEEP/PASS; £0. NAS offload still copying scratch, no second copy started."
+        },
+        {
+          "at": "2026-11-06T06:03Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint PR571 worker/J2141-timeline-v01; preserve 1/3. Five historical timeline overlays rendered and technically checked (£0, 6.5MB outside git). BUILD_HANDOFF_J2141.md lists remaining harvest, Mars bodies, R41, composites, QA and existing PR integration. tmux J2141-timeline-v01 finished exit0; logs /Users/benjaminoats/_desk/logs/J2141-timeline-v01.log and .done. NAS scratch move still detached in tmux J2141-scratch-offload; /Users/benjaminoats/_desk/logs/J2141-scratch-offload.log and .done; absent .done means running, do not duplicate. No KEEP or stage PASS."
         }
       ],
       "remaining_action": "Finish archive harvest, Mars/Earth graphics, R41 fallback and picture composites",
