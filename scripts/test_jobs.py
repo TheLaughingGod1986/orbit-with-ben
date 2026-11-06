@@ -208,6 +208,26 @@ class BoardLink(unittest.TestCase):
                 studio.FILMS = old
 
 
+class PlainSummary(unittest.TestCase):
+    """Ben, 6 Nov 2026: a brief plain-English line on each job card."""
+
+    def test_own_line_wins_then_title_rules_then_kind(self):
+        self.assertEqual(jobs.plain_summary({"title": "x", "plain": "Counting views"}), "Counting views")
+        self.assertIn("YouTube numbers", jobs.plain_summary({"title": "URG-OWB-2: monthly Studio Reach window capture",
+                                                              "kind": "assembly"}))
+        self.assertEqual(jobs.plain_summary({"title": "Backlog OWB: next Short cut from a locked long (existing VO + picture only)"}),
+                         "Making or fixing a Short")
+        self.assertIn("end screen", jobs.plain_summary({"title": "027 Shorts: set Related video to the long"}))
+        self.assertEqual(jobs.plain_summary({"title": "verify condition for J0978", "kind": "review"}),
+                         "Checking whether a waiting job can start yet")
+        self.assertTrue(jobs.plain_summary({"title": "Review J2143: 031 thumbs", "kind": "review"}).startswith("Checking someone"))
+        self.assertEqual(jobs.plain_summary({"title": "zzz", "kind": "vo"}), "Recording or checking the voice-over")
+        self.assertEqual(jobs.plain_summary({"title": "zzz"}), "A studio task")
+
+    def test_add_takes_a_plain_line(self):
+        self.assertIn("--plain", jobs.__dict__["main"].__code__.co_consts.__repr__() + open(jobs.__file__).read())
+
+
 class Progress(unittest.TestCase):
     """Ben, 11 Oct 22:09: % done on the board comes from `jobs.py progress <id> --step k --of n`."""
 
