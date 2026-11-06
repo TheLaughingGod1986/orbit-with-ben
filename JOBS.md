@@ -92,6 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
 | J2296 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 R18 pebble ruler: review registered still and source allocation |  |
 | J2297 | mini | open | – | – | chief · Chief: resolve 033 picture orphan-review |  |
+| J2298 | mini | open | – | – | 099 upload · studio · HOS 099: save cards with correct menu and verify expanded Level |  |
 
 Recently finished:
 

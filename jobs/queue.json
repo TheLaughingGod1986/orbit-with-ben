@@ -1,5 +1,5 @@
 {
-  "next_id": 2298,
+  "next_id": 2299,
   "jobs": [
     {
       "id": "J0001",
@@ -194266,6 +194266,35 @@
         "kind": "orphan-review",
         "signature": "823b665cb8813edd6c16"
       }
+    },
+    {
+      "id": "J2298",
+      "title": "HOS 099: save cards with correct menu and verify expanded Level",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief Codex ruling on J2285 (6 Nov 2026): FIX; finish only the missing HOS 099 Studio settings for uAomPaOBrM8 under h47. J2285 and J2199 remain held until elected Chief accepts persisted evidence. Ready now, no Ben/date/credit wait. Specialist studio worker, own identity, existing HOS Studio tab (last 9460), confirm channel UCXp7HkBIl1LgaznXuZHJyRg and writer lock. Use cdp_tabs.reuse_page; no new/closed tabs.\n\nNew evidence justifies ONE further bounded 15-minute diagnosis, not repeating prior selectors:\n1. Preflight: actual lint:package PASS from canonical c26a79bd package, manifest ce57c596df487dda08e12106bb2890ee7c3b74b0458b9dbc8838c95ed5df91da; record exact coverage (no captionsFile, master hash not recomputed). Fresh channel audit and read-only videos.list before/after. Do not rewrite uploaded manifest or restore old listing over current listing.\n2. Cards: evidence cards_dialog_AL_-qlWko_g.png shows the SECOND menu DID open: visible Video / Playlist / Channel / Link. The script wrongly sought first-card icon aria-label. First use icon if empty; subsequent card uses visible menu-item Video scoped to the open Cards menu. Assert Choose specific video dialog then Search your videos. Add _C92tIJCk8A at 17:57:00 and AL_-qlWko_g at 24:14:00 (minutes:seconds:frames). Match exact IDs and titles. Save in Cards dialog, reopen and prove BOTH persisted. Existing matching cards: verify, never duplicate. Save a correct first card separately if second fails, recording partial outcome.\n3. Level: prior level_reload.png shows Show more COLLAPSED; empty trigger is not evidence of None or persistence failure. Reload, expand Show more, scroll actual Level into view, read current value. If not Year 10 / Key stage 4, use a trusted Playwright mouse/locator click on the visible option (prior code used DOM el.click), blur and inspect actual enabled header Save; at most one corrected attempt. Capture non-secret save-response status and re-expanded post-reload value. Never force-enable disabled controls or toggle unrelated metadata. HOS playbook says closest England ages-14-16 option IF ONE SAVES; if corrected attempt cannot save, deliver actual expanded readback for Chief to apply that allowance, no blind retry. Exam/course remains blank for compilation.\n4. Timezone decision: for this exact video and 10 Dec slot, Chief accepts documented Europe/London browser + London dialog display + stored 2026-12-10T18:00:00Z as equivalent scheduled-instant evidence. Explicit London was NOT persisted; this is a narrow documented exception to cosmetic timezone persistence, not a general rule change. No more timezone save attempts and never toggle schedule/date/time/privacy. Verify same instant after card/Level saves. Premiere must be checked via actual checkbox state (prior guard premiere_on matched mere word Premiere and is invalid); Audience Not Made for Kids after every save.\n\nPreserve title/description, privacy, publishAt, end screen 48:58-49:18, playlist, Type Concept overview, England, places off, chapters/concepts on, comments On/Anyone/Basic/Top/likes, paid No, captions never aired US TV, AI Yes, Education. No upload, schedule, retitle, privacy change, tests, pin, Buffer, generation or spend. Pin/tests remain under existing public holds. Deliver screenshot+DOM+hash record with corrected findings in a clean-worktree narrow PR; no full-film/media PASS. Return for elected-Chief review. If bounded approach fails, name exact control and error; do not enqueue repeated unchanged attempts.\n",
+      "ref": "",
+      "film": "099",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T19:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T19:15Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Save two cards and read the education level after expanding settings",
+      "kind": "studio",
+      "plain": "Save the compilation’s two video links and verify its education setting"
     }
   ],
   "focus": [],
