@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2306 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
 | J2307 | mini | blocked | codex | – | 026 edit · assembly · OWB 026: E1 local re-cut for HZGTovJu_TQ; preserve scheduled copy | J2207 / h47 |
 | J2309 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy | J2207 / h47 |
-| J2310 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for k2kEaA7ICjc; preserve scheduled copy | J2207 / h47 |
+| J2310 | mini | claimed | cursor | 2026-11-07T01:06Z | 029 edit · assembly · OWB 029: E1 local re-cut for k2kEaA7ICjc; preserve scheduled copy | J2207 / h47 |
 | J2311 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for heiGCnGKTkE; preserve scheduled copy | J2207 / h47 |
 | J2312 | mini | claimed | macbook | 2026-11-07T00:59Z | 026 edit · for gemini · review · `gemini-argon` · OWB 026 E1 recorded-word conflict: decide J2307 recipe or retain original | J2307 / PR591 |
 | J2313 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
