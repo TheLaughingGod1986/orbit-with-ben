@@ -24,3 +24,12 @@ prefix_rule(
     match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel owb --operation channel"],
     not_match = ["curl https://example.com", "npm run youtube:auth", "python3 07_Content-Ops/scripts/codex_service_read.py"]
 )
+
+# Schedule-only reconciliation: registered existing posts, live YouTube time.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-buffer-reschedule.py"],
+    decision = "allow",
+    justification = "J2040: reconcile registered scheduled Buffer posts only to their owned video's existing future YouTube publishAt; no create/delete/content/URL/caller time.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-buffer-reschedule.py --channel owb --video Js6EQJ8qDi8"],
+    not_match = ["python3 07_Content-Ops/scripts/codex_buffer_reschedule.py", "curl https://example.com", "npm run buffer:check"]
+)
