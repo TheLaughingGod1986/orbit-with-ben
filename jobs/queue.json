@@ -183275,17 +183275,22 @@
           "at": "2026-11-06T10:52Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed dispatched VO job; no audio-input perception demonstrated in this session."
+        },
+        {
+          "at": "2026-11-06T10:53Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Dry-run confirms 1291 words / 8001 chars; live balance 97205. Detached single take under ElevenLabs lock: tmux J2157-vo, _desk/logs/J2157-vo.log and .done."
         }
       ],
-      "remaining_action": "Check locked script, voice settings and balance before recording Pluto narration",
+      "remaining_action": "Record Pluto narration once, then verify transcript and audio measurements",
       "kind": "vo",
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-06T10:52Z",
+        "at": "2026-11-06T10:53Z",
         "by": "codex",
-        "note": "Claimed dispatched VO job; no audio-input perception demonstrated in this session."
+        "note": "Dry-run confirms 1291 words / 8001 chars; live balance 97205. Detached single take under ElevenLabs lock: tmux J2157-vo,"
       },
       "taskKeys": [
         "OWB:034"
