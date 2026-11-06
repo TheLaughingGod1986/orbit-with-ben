@@ -192640,19 +192640,24 @@
           "at": "2026-11-06T19:05Z",
           "by": "codex",
           "what": "step 0 of 3 done: Resumed existing checkpoint 47adfead; confirmed production remains blocked and read the six review findings. NAS offload safely waits for 01:00–06:00 window at 19,053 MB free."
+        },
+        {
+          "at": "2026-11-06T19:08Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Finding 6 repaired: validated argument propagation, canonical runner ownership, PID-before-execution start gate, immutable per-run log/done, stale-done and crash guards. 41 zero-submit tests pass; complete repository checks running."
         }
       ],
-      "remaining_action": "Repair detached argument propagation and atomic runner ownership; live UI and shared accounting remain",
+      "remaining_action": "Finish per-Create live UI guard and cross-channel spend reconciliation; keep production disabled",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the video generator safeguards and test them without spending credits.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-06T19:05Z",
+        "at": "2026-11-06T19:08Z",
         "by": "codex",
-        "note": "Resumed existing checkpoint 47adfead; confirmed production remains blocked and read the six review findings. NAS offload"
+        "note": "Finding 6 repaired: validated argument propagation, canonical runner ownership, PID-before-execution start gate, immutab"
       },
       "taskKeys": [
         "HOS:009"
