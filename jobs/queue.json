@@ -186604,9 +186604,14 @@
           "at": "2026-11-06T11:16Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Proved v03 S01 fails <=2.85s (3.217s min at 1.06x after true silence trim + 'and apples' homophone + comma prosody); verified 2-sentence v04 opening ('In one minute, the Moon falls five metres. An apple falls that far in one second.', 82 chars) + v03[6.020:23.680] body = 59w / 22.80s VO / 23.80s total / S01 2.26s <= 2.85s"
+        },
+        {
+          "at": "2026-11-06T11:19Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Prepared jobs/reviews/J2195/REVIEW.md with KEEP on 009 Short A / 010 Short A (Option A1) / 010 Short C and FIX 82-char v04 opening pickup scope on 009 Short B"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2195/REVIEW.md with Rule H FIX disposition and 82-char v04 opening pickup scope",
+      "remaining_action": "Apply Rule H FIX in one commit: write jobs/reviews/J2195/REVIEW.md, reopen J0862 with 82-char v04 opening pickup scope + v03[6.020:23.680] body concatenation, and finish J2195",
       "kind": "review",
       "review_of": "J0862",
       "urgent": 4,
@@ -186620,11 +186625,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-06T11:16Z",
+        "at": "2026-11-06T11:19Z",
         "by": "gemini",
-        "note": "Proved v03 S01 fails <=2.85s (3.217s min at 1.06x after true silence trim + 'and apples' homophone + comma prosody); ver"
+        "note": "Prepared jobs/reviews/J2195/REVIEW.md with KEEP on 009 Short A / 010 Short A (Option A1) / 010 Short C and FIX 82-char v"
       },
       "taskKeys": [
         "HOS:009",
