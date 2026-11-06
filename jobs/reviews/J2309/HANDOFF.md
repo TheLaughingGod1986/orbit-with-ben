@@ -15,3 +15,10 @@ Remaining steps:
 2. Verify render, PHONE, encoded E1 fields, frame sheets and every gate. Builder runs Shorts, SFX, music, OCR, polish, picture and cover checks. An exit code alone is insufficient; inspect logs and all verdicts. Never call failed or unresolved criteria PASS. No audio/video perception demonstrated.
 3. Preserve v04 and manifests. After checks succeed, checksum-verify persistent UAT/NAS copies and record paths; nothing delivered as approved yet. The new media is in the film folder, not only tmp.
 4. Queue concrete review promptly; only approved candidate proceeds to Ben's final watch. This job authorizes no upload, schedule, privacy, retitle or Buffer change. December cut is follow-up only for the 3 December readout.
+
+
+## Completed render update
+
+.done is present, exit 1. Encoded duration 22.27s, last mapped word21.47s, AAC -14.1 LUFS / -2.0 dBTP. First automatic cut2.53s. Picture, polish, music, SFX, OCR, cover and caption safety checks PASS. Shorts gate FAIL: opening matches original scheduled SWDCZfWZVao (2 bits). Do not waive this failure. Next worker should use the gate's supported replacement/exclusion mechanism if authorized and preserve gate-library predecessor evidence; otherwise reviewer must resolve it explicitly. Additional E1/first-line conflicts remain. No final PASS.
+
+Generated text/JSON reports moved intact into the matching film-relative paths in this isolated worktree so shared main remains clean for queue transactions. Media/PHONE/frame images remain beside original v04 in the shared film folder. No original file moved or modified. No UAT/NAS delivery claimed. Stage 2 includes rendering and gate execution, but acceptance verification is incomplete.
