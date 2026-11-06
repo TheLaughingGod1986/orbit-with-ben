@@ -196007,7 +196007,7 @@
     {
       "id": "J2315",
       "title": "Review OWB 029 Fri 11 Dec E1 tail candidate v05",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Review the J2310 local candidate for k2kEaA7ICjc. Read jobs/reviews/J2310/HANDOFF.md and 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v05_e1.json.\n\nDecide KEEP or FIX. This candidate is labelled EXCEPTION. It tightens the loop tail to 1.09 s and removes the end card. It does not change spoken lines. Recorded-word conflicts are listed in the handoff: surprise at 6.70 s, a 0.20 s pause inside sentence 1, the J0991 spoken-meta waiver, and the Test A length.\n\nDo not upload, swap, retitle, or change privacy, schedule, Buffer or UPLOADS. Do not treat a tool PASS as a full E1 PASS. A KEEP still needs a separate authorised swap before YouTube changes, and Ben's watch of the finished cut comes after that KEEP. 11 Dec is follow-up only for the 3 Dec readout.\n\nWrite jobs/reviews/J2310/REVIEW.md.\n",
       "ref": "J2310",
@@ -196027,11 +196027,25 @@
           "at": "2026-11-06T23:17Z",
           "by": "cursor",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T23:18Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 1402 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Review the local Fri 11 Dec candidate and say KEEP or FIX",
       "kind": "review",
-      "plain": "Review the local Betelgeuse Short recut before anyone swaps it."
+      "plain": "Review the local Betelgeuse Short recut before anyone swaps it.",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     }
   ],
   "focus": [
