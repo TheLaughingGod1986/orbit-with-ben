@@ -190011,20 +190011,25 @@
           "at": "2026-11-06T13:18Z",
           "by": "cursor",
           "what": "step 0 of 5 done: claimed; NAS offload had nothing old enough; 4.2 GB free"
+        },
+        {
+          "at": "2026-11-06T13:19Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: v01 FIX accepted; v02 must use existing 024 motion, one code graphic, METRES, no VO remint"
         }
       ],
-      "remaining_action": "Inspect locked VO, script and existing 024 muon graphics before any cut",
+      "remaining_action": "Find real moving 024 plates that match the muon lines, then cut v02",
       "due": "2026-11-09T10:30:00Z",
       "kind": "assembly",
       "taskKeys": [
         "OWB:024"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-06T13:18Z",
+        "at": "2026-11-06T13:19Z",
         "by": "cursor",
-        "note": "claimed; NAS offload had nothing old enough; 4.2 GB free"
+        "note": "v01 FIX accepted; v02 must use existing 024 motion, one code graphic, METRES, no VO remint"
       }
     },
     {
