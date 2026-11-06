@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2244 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2215 |  |
 | J2245 | mini | open (after J2239) | – | – | 011 vo · vo · HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02 |  |
 | J2246 | mini | open | – | – | 013 vo · vo · HOS 013 Darwin & Wallace: Shorts voiceover (2 v02 Shorts), vo_check, park for Chief |  |
-| J2248 | mini | blocked | cursor | – | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
+| J2248 | mini | open | – | – | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
 | J2255 | mini | open (after J2254) | – | – | 008 edit · assembly · HOS 008 Short C: assemble Short_C_v03 (Layout C-v03a) after C-Open-1 VO — £0, no upload | J2175/h94 |
 | J2256 | mini | open | – | – | 033 picture · for gemini · review · `gemini-argon` · 033 Uranus: stills lock + OMNI R29/R55 price-pass brief from SHOT_LIST_v01 (no mint, £0) | J2238/h94/d67daf94 |
 | J2268 | mini | open (after J2200) | – | – | 010 picture · assembly · HOS 010: build tested twelve-plate Flow adapter without generation | J2267 |
