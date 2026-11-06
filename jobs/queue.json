@@ -182129,16 +182129,21 @@
           "at": "2026-11-06T10:30Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed recorded 1/3 plan; inspecting existing PR batches to consolidate without duplicate rendering."
+        },
+        {
+          "at": "2026-11-06T10:33Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR575 40cbc13347 integrates eight existing batches, preserves all 13 CLI modes, and verifies 73 media hashes. Nine harvest candidates retained. No render or spend; full production package unfinished."
         }
       ],
-      "remaining_action": "Integrate existing graphics batches, then finish real-picture harvest and composite QA",
+      "remaining_action": "Finish missing real pictures, body comparison and limb fallback, then composite and run QA",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-06T10:30Z",
+        "at": "2026-11-06T10:33Z",
         "by": "codex",
-        "note": "Resumed recorded 1/3 plan; inspecting existing PR batches to consolidate without duplicate rendering."
+        "note": "PR575 40cbc13347 integrates eight existing batches, preserves all 13 CLI modes, and verifies 73 media hashes. Nine harve"
       },
       "taskKeys": [
         "OWB:031"
