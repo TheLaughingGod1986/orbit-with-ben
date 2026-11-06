@@ -183354,13 +183354,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-06T12:15Z",
-      "eta": "2026-11-06T14:15Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T23:12Z",
-      "result": "",
+      "result": "Verification FIX: targeted Scribe repeats looked/looks back and Real Worlds/Real World; exact-script pickups or conclusive verification plus chapter-tail checks required. Existing take preserved; do not regenerate full VO. Evidence local commit bf751c1e3f at /private/tmp/codex-J2157; automatic review rejected evidence-branch push (internal transcript/spend payload destination not established trusted); explicit approval required for that push. No shot-list release.",
       "history": [
         {
           "at": "2026-11-04T23:12Z",
@@ -183416,6 +183416,11 @@
           "at": "2026-11-06T12:20Z",
           "by": "codex",
           "what": "step 2 of 3 done: Local evidence bf751c1e3f in /private/tmp/codex-J2157: levels PASS; targeted Scribe repeats looked/looks and Worlds/World discrepancies. FIX, no shot-list release. Evidence branch push rejected by automatic review; no bypass attempted."
+        },
+        {
+          "at": "2026-11-06T12:20Z",
+          "by": "codex",
+          "what": "blocked: Verification FIX: targeted Scribe repeats looked/looks back and Real Worlds/Real World; exact-script pickups or conclusive verification plus chapter-tail checks required. Existing take preserved; do not regenerate full VO. Evidence local commit bf751c1e3f at /private/tmp/codex-J2157; automatic review rejected evidence-branch push (internal transcript/spend payload destination not established trusted); explicit approval required for that push. No shot-list release."
         }
       ],
       "remaining_action": "Correct exact-script wording and verify chapter tails before VO approval",
@@ -183430,7 +183435,12 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Verification FIX: targeted Scribe repeats looked/looks back and Real Worlds/Real World; exact-script pickups or conclusive verification plus chapter-tail checks required. Existing take preserved; do not regenerate full VO. Evidence local commit bf751c1e3f at /private/tmp/codex-J2157; automatic review rejected evidence-branch push (internal transcript/spend payload destination not established trusted); explicit approval required for that push. No shot-list release.",
+        "check_at": "2026-11-06T18:20:28+00:00"
+      }
     },
     {
       "id": "J2158",
