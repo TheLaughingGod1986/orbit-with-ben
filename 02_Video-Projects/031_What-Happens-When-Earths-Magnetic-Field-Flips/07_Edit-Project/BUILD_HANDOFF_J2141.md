@@ -2,6 +2,32 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Integration checkpoint (6 Nov, Codex)
+
+Resume at **1/3**. This branch consolidates the code and records from PRs
+539, 551, 555, 562, 564, 569, 571 and 572. `INTEGRATION_SOURCES_v01.json`
+records immutable source commits. All unique renderer modules/manifests are
+retained; the shared `code_graphics.py` exposes all 13 batch commands.
+The Commons harvest pool is retained, including its rights restrictions and
+three-candidate horse-search limit. Original imported checkpoints follow below.
+This is code/records integration, not acceptance of those batches or a film PASS.
+
+`INTEGRATION_TECHNICAL_CHECK_v01.json`: all 13 CLI help paths exit 0;
+all 73 manifest media entries exist and match their recorded SHA-256 values,
+including superseded versions retained for evidence. No media copied or
+re-rendered. £0 spent. No active render started. Previous technical reports
+remain original evidence, not newly executed decode or visual checks.
+
+Next: finish missing real-picture harvest, Mars/Earth body comparison and
+R41 limb fallback; compose with moving plates and perform full picture QA.
+Review overlapping cards/timelines and source-ID/simulation conflicts before
+assembly acceptance. The source PRs remain open; merge or supersede them only
+after this integration is reviewed. Do not rebuild their batches by mistake.
+No Ben action, publishing change, KEEP or film-stage approval.
+
+Disk policy checked: NAS offload deferred by its own 01:00–06:00 window,
+with more than 8 GB free. This checkpoint adds text/code only.
+
 ## Continuation checkpoint (5 Nov, seventh run)
 
 Preserve **1/3**, same PR #495. Added `code_graphics.py comparisons` and
@@ -235,3 +261,342 @@ python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_E
 Disk: NAS offload ran with elevated filesystem access before building; **nothing in /private/tmp was old enough**. Free space remained ~12.6 GB, so this run used a small media batch (~18 MB of cards), not a large scratch render. Restore headroom before larger work; never delete/overwrite NAS assets.
 
 Next worker continues J2141 from this branch/PR. Chief decides the asset/gate conflicts; no Ben action requested by this partial handoff.
+
+
+# Consolidated continuation checkpoints
+
+Imported without granting KEEP or film-stage approval. Original PRs remain open.
+
+## Imported checkpoint: PR #539, d3377ec121c5
+
+Worker: cursor (this checkpoint). Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, eighth run)
+
+Preserve **1/3**. New branch `worker/J2141-opening-v01` (PR #495 is already merged). Added `code_graphics.py opening` and four row graphics, 1920×1080 / 25 fps:
+
+- R1 poledrift, 4.52–8.34 s (file 3.84 s after frame rounding): real DSCOVR Earth disc, schematic arc from the Canadian side of this Americas plate off the top limb toward Siberia. Labels `1831 → TODAY`, `UP TO 55 KM/YR`, `> MARATHON / YR` (SOURCES row 1). Not a plotted World Magnetic Model track.
+- R2 flip, 12.54–17.08 s (file 4.56 s): same Earth disc, bar magnet turns N to the south, blue air shell stays the same size. `POLES SWAP` holds under 4 s. This is the £0 picture for the question, not an atmosphere-loss shot.
+- R13 layers alpha, 125.9–131.76 s (file 5.84 s): depth counter to `3,000 KM` / `BENEATH YOUR FEET` / `LIQUID OUTER CORE` (SOURCES row 6). Needs a graded moving plate. Not a measured core cross-section.
+- R5 when1905 alpha, 36.14–39.36 s (file 3.20 s): `1905` / `PONTFAREIN, FRANCE`. A place stamp only, not the building timeline.
+
+`CODE_OPENING_v01.json` and `CODE_OPENING_TECHNICAL_CHECK_v01.json` record cues, hashes, 1920×1080, 25 fps, pixel format, duration and error-free decode. Opaque preview mean luma is about 53. Alpha previews are transparent, so their luma is not a composite result. Media and contact sheet: `/Users/benjaminoats/_desk/J2141-opening-v01/`. Static stills inspected. No motion, audio or composite review. No KEEP, PASS or stage approval.
+
+Earth plate `GSFC_20171208_Archive_e000678` (DSCOVR EPIC, 6 July 2015) is copied into `harvest_v01/` from the 029 harvest of the same NASA id and added to `HARVEST_POOL_v01.json`. Rows 1 and 2 share it, which is the two-use cap. Reproduce into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py opening --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+No detached render left running. This batch is about 9 MB. £0. R21 compass fallback already exists. R41 is still the NASA ISS sunrise-limb plate, not built here. Wider archive harvest, the remaining mechanisms (timeline, strata, dynamo, belts, hubble_saa, sat_safe, saa, triptych, paleo, multipole, mars_vs_earth, extinction_check, grid_shield, poles_map, aurora, matuyama map) and full QA remain. Source-ID and sourced-simulation gate conflicts below still need Chief reconciliation.
+
+## Earlier checkpoint
+
+## Imported checkpoint: PR #551, 5a2a23be2829
+
+Worker: cursor (this checkpoint). Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, ninth run)
+
+Preserve **1/3**. New branch `worker/J2141-field-v01` from main. PR #539
+(`worker/J2141-opening-v01`) is still open and is **not** in this branch.
+Poledrift, flip, the 3,000 km depth ruler and the 1905 Pontfarein stamp stay
+on that PR. This branch adds `code_graphics.py field` and four row graphics,
+1920×1080 / 25 fps:
+
+- R11 strata, 99.12–111.40 s (file 12.28 s): younger bands point north, older
+  bands point south, gold line at `780,000 YEARS AGO` (SOURCES rows 4 and 5).
+  The shot-list scale `> 2× modern humans (~300,000 years)` is not drawn.
+  Those words are not in the locked line, so the label would fail WORDS.
+  Needles are a schematic, not a measured rock section.
+- R10 matuyama_map, 94.92–98.88 s (file 3.96 s): labelled blobs `MANCHURIA`
+  and `JAPAN` with sample dots on the spoken names (SOURCES row 4). Not a
+  traced coastline. The WHO card ends as "Japan" starts.
+- R45 extinction_check alpha, 462.40–469.00 s (file 6.60 s): illustrative
+  reversal stripes against three extinction marks and `NO LINK` (SOURCES
+  row 2). Not a dated extinction chart. Lower third stays clear for the
+  existing FACT card. Needs the fossil plate underneath.
+- R46 grid_shield, 472.22–479.98 s (file 7.76 s): one satellite and three
+  pylons under a shield arc. Storm strokes stop left of the arc. Labels
+  `SATELLITES`, `POWER GRIDS` and `SOLAR STORMS` each hold under 4 s. Starts
+  at "hardening" so an SDO plate can lead the row.
+
+`CODE_FIELD_v01.json` records cues, source rows, paths and hashes.
+`CODE_FIELD_TECHNICAL_CHECK_v01.json` records hash matches, error-free full
+decode, 1920×1080, 25 fps, yuv420p or argb, and exact durations. Opaque mean
+luma is about 44–59. The alpha overlay starts transparent. Static stills
+inspected, including `CONTACT_v01.jpg` (the encoder's 75% preview frames;
+the 780,000 label is on the later strata frames). No motion, audio or
+composite review. No KEEP, PASS or stage approval.
+
+Media: `/Users/benjaminoats/_desk/J2141-field-v01/` (about 4.2 MB). Reproduce
+into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py field --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Detached `J2141-field-v01` finished exit 0. Log and completion:
+`/Users/benjaminoats/_desk/logs/J2141-field-v01.log` and `.done`. No second
+copy. £0. No archive search. The `field` dispatch in `code_graphics.py` sits
+on the same line as PR 539's `opening` dispatch; keep both when merging.
+
+Remaining: wider harvest, timeline, dynamo, belts, hubble_saa, sat_safe, saa,
+the rest of the triptych, paleo, multipole geometry, the physical Mars
+comparison, poles_map, aurora, the R41 ISS limb, composites and full QA.
+Once PR 539 lands, DSCOVR `GSFC_20171208_Archive_e000678` is already at two
+uses (rows 1 and 2); poles_map needs a different Earth plate. Source-ID and
+sourced-simulation gate conflicts below still need Chief. No Ben action.
+
+## Earlier checkpoint
+
+## Imported checkpoint: PR #555, e7e3774e6343
+
+Worker: cursor (this checkpoint). Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, tenth run)
+
+Preserve **1/3**. New branch `worker/J2141-saa-v01` from main. PR #539
+(`worker/J2141-opening-v01`) and PR #551 (`worker/J2141-field-v01`) are still
+open and are **not** in this branch. Poledrift, flip, layers, the 1905 stamp,
+strata, the sample map, extinction and the shield stay on those PRs.
+
+This branch adds `code_graphics.py saa` and five 1920×1080 / 25 fps renders:
+
+- R25 belts hold, 246.50–251.14 s: the belt rises to the spoken line and the
+  label `600 KILOMETERS` lands on that word (SOURCES row 10). `BEYOND` is the
+  word before it. Limb arc, not a flat-disc planet. The `600` label has about
+  one second.
+- R25 belts sag, 259.90–264.78 s: the same surface zero drops to `200 KILOMETERS`,
+  then `HALF THE HEIGHT` and `SPACE STATION`. The station mark is twice the
+  200 km line. `400 KM` is not labelled: it is not in this spoken line.
+  A real ISS plate belongs in the gap 251.14–259.90 s, so these two renders
+  are not back to back.
+- R27 hubble_saa alpha, 280.42–284.74 s: an orbit dot crosses a dent wedge.
+  Labels `SEVEN TO NINE`, `ORBITS`, `EVERY DAY` (SOURCES row 11). It ends as
+  the existing FACT card starts at 284.76 s. Lower left stays empty. Not a
+  count of measured Hubble orbits.
+- R28 sat_safe alpha, 296.96–299.80 s: panel lights go out under `SHUT DOWN`
+  and `NON-ESSENTIAL` (SOURCES row 11). Needs the ISS plate underneath.
+- R29 saa, 301.20–306.32 s: one region widens, then splits. Labels `SINCE 1970`,
+  `WIDENED`, `TWO LOBES` (SOURCES row 12). Not a coastline. `24,000 nT`,
+  `22,000 nT` and `20 km/yr` stay off screen because this line does not say them.
+
+`CODE_SAA_v01.json` records cues, source rows, paths and hashes.
+`CODE_SAA_TECHNICAL_CHECK_v01.json` records hash matches, error-free full
+decode, 1920×1080, 25 fps, yuv420p or argb, durations within half a frame,
+and five distinct frames each. Opaque mean luma is about 41–53. Alpha
+overlays start transparent. Static stills inspected, including
+`CONTACT_v01.jpg`. No motion, audio or composite review. No KEEP, PASS or
+stage approval.
+
+Media: `/Users/benjaminoats/_desk/J2141-saa-v01/`. Reproduce into a fresh
+directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py saa --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Rendered in this run, exit 0. £0. No archive search. No paid generation.
+
+Remaining: wider licensed harvest, the building timeline, dynamo, paleo,
+multipole geometry, the physical Mars comparison, poles_map, aurora, the R41
+ISS limb, composites and full QA. R21's compass fallback is already in the
+mechanisms batch. Source-ID and sourced-simulation gate conflicts below still
+need Chief. No Ben action.
+
+## Earlier checkpoint
+
+## Imported checkpoint: PR #562, a81037731246
+
+Worker: cursor (this checkpoint). Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, dynamo run)
+
+Preserve **1/3**. New branch `worker/J2141-dynamo-v01` from main. Open PRs
+#539 (opening), #551 (field) and #555 (SAA) are not in this branch. This
+branch adds `code_graphics.py dynamo` and three full-frame 1920×1080 / 25 fps
+schematics on the harvested Blue Marble disc:
+
+- R16 align, 159.32–168.76 s (file 9.44 s): iron-current loops ease into one
+  dipole before "However". Longer than the shot list's 8 s because 8 s would
+  cut inside "steady south pole". The SVS separator still starts on "However".
+  Loops are a schematic, not a measured core flow (SOURCES row 6).
+- R17 tip, 172.68–188.36 s (file 15.68 s): backwards eddies fight the main
+  flow, the dipole weakens, then turns over. The file includes the pause
+  after "over." and ends as row 18's first word starts. Not a sourced
+  simulation frame.
+- R52 settle, 544.00–547.70 s (file 3.72 s, 93 frames): loops slow and the
+  compass's red north-seeking end locks toward the bottom of the frame,
+  labelled `COMPASS SOUTH`. This is not the generations tally. It ends as
+  row 53 starts.
+
+Labels are four words or fewer and each caption window is under 4 s.
+`CODE_DYNAMO_v01.json` records cues, source rows, paths and hashes.
+`CODE_DYNAMO_TECHNICAL_CHECK_v01.json` records hash matches, error-free full
+decode, 1920×1080, 25 fps and yuv420p. Static samples sit near mean luma 47–50.
+Contact sheet: `/Users/benjaminoats/_desk/J2141-dynamo-v01/CONTACT_v01.jpg`.
+Stills inspected. No motion, audio or composite review. No KEEP, PASS or
+stage approval.
+
+Media: `/Users/benjaminoats/_desk/J2141-dynamo-v01/` (about 8 MB). Reproduce
+into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py dynamo --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+Disk about 13 GB free, above the 8 GB daytime NAS exception, so no scratch
+move. £0. No archive search. Still unfinished: paleo, poles_map, aurora, the
+building timeline, flip use 2, layers tight on the core, multipole part 2,
+the full triptych, the wider harvest, composites and QA. R21 compass fallback
+is already in mechanisms v02. R41 stays the NASA atmosphere plate, not a new
+render. Chief still owns the R54 asset-identity and sourced-simulation gate
+conflicts below.
+
+
+## Imported checkpoint: PR #564, 8150ceb5f217
+
+Worker: codex, then cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (5 Nov, cursor sky batch)
+
+Preserve **1/3**. This branch is `worker/J2141-sky-v01`, from current `origin/main`. It does not contain the still-open partials on PRs #539 (opening), #551 (field), #555 (SAA) and #562 (dynamo). Those already render poledrift, flip, layers, the 1905 stamp, strata, the Matuyama map, extinction check, grid shield, belts, Hubble SAA, satellite safe-mode, the anomaly chart and the dynamo align/tip/settle. This batch adds the five named graphics none of those branches include:
+
+- R32 `paleo`, 326.34–336.10 s (9.76 s), full frame. Two bars on one zero: today's field at the 100,000-year high, and the million-year average at half height, which is the sourced "twice". No `8×10²²` figure. Not a sediment-core plot.
+- R40 `temp_poles`, 415.04–417.92 s (2.88 s), alpha. Six temporary poles pop inside a ring after the existing dipole-strength overlay. Label `TEMPORARY POLES`.
+- R47 `tangle`, 488.14–492.86 s (4.72 s), full frame. Starts on "tangling", after room for the NASA SVS plate at the head of the row. Label `SEVERAL POLES`. Schematic lines, not a Glatzmaier frame.
+- R48 `poles_map`, 493.66–499.30 s (5.64 s), alpha. Pin is for southern Africa on `harvest_v01/GSFC_20171208_Archive_e001788.jpg` pasted at (510, 90) at 900 px. Tahiti is named (`NORTH POLE` / `TAHITI` / `PACIFIC`) and not pinned: that Blue Marble face does not show the Pacific. The pin pulses so it does not sit still for 4 s.
+- R51 `aurora`, 522.62–532.98 s (10.36 s), full frame. The same Blue Marble, circular-masked onto navy and dimmed, with moving green and crimson arcs. City cards `LONDON`, `CAIRO`, `MUMBAI`, `SYDNEY` each fade within 3.2 s of the locked word. They are names, not map coordinates. Small `NASA` credit, bottom left. The 0.06 s past "nights" sits in the pause before the next sentence (534.48 s).
+
+`CODE_SKY_v01.json` and `CODE_SKY_TECHNICAL_CHECK_v01.json` record hashes, 1920×1080, 25 fps, alpha or yuv420p, and error-free full decodes. Opaque mid-frames sit above the near-black floor (paleo ~35, tangle ~30, aurora ~43). Alpha frames are transparent on purpose. Media and contact sheet: `/Users/benjaminoats/_desk/J2141-sky-v01/` (about 8.7 MB). Stills of the previews were inspected. No motion, composite or playback review. No KEEP or PASS.
+
+Detached `J2141-sky-v01` finished exit 0. Log and completion: `/Users/benjaminoats/_desk/logs/J2141-sky-v01.log` and `.done`. Reproduce into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py sky --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+The harvest photograph is gitignored and already lives in the film's `07_Edit-Project/harvest_v01/`. Spend £0. No new archive search, so no missing-footage budget was used.
+
+Still unfinished: the wider NASA/NOAA/USGS/ESA/Commons harvest, a single building timeline (only separate WHEN stamps exist), the R30 "CASE CLOSED?" card, the R33 near-zero dip, a physical Mars/Earth body comparison, the R41 NASA limb fallback plate, plate composites and picture/polish QA. Open PRs #539, #551, #555 and #562 still need a merge that keeps every `code_graphics.py` mode. Source-ID and sourced-simulation gate conflicts below remain for Chief. No Ben action.
+## Imported checkpoint: PR #569, 332e9697e8a0
+
+Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
+
+## Continuation checkpoint (6 Nov, core batch)
+
+Preserve **1/3**. This branch adds three full-frame £0 renders only. It does
+not merge open PRs #539, #551, #555, #562 or #564, and it does not drop their
+modes. Reproduce into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py core --out <fresh-media-dir> --manifest <new-manifest.json>
+```
+
+- R12 `flip_tight`, 112.98–121.98 s: second, tighter dipole turn on the harvested Blue Marble (`GSFC_20171208_Archive_e000678`). The air ring stays. A dive toward a golden core starts on "secret". This is not the R2 wide flip.
+- R14 `layers_core`, 132.70–138.70 s: churning outer core, labels OUTER CORE then LIQUID IRON. Ends before the FACT card at 139.18 s. No temperature figure.
+- R33 `paleo_dip`, 345.00–349.16 s: qualitative bar for "nearly to zero" then "snapped back". It starts after the existing 3.6 s Laschamp date card. It is not the sourced 6% rings chart.
+
+Media: `/Users/benjaminoats/_desk/J2141-core-v01/`. Technical checks in `CODE_CORE_TECHNICAL_CHECK_v01.json`. Navy preview is not a finished plate. No motion, audio or composite review. £0.
+
+Still open: wider harvest, the building timeline, Mars/Earth bodies under the existing R44 overlays, the R41 ISS limb fallback, composites, QA, and a Chief merge of the open graphic PRs that keeps every mode. Titan identity and sourced-simulation gates stay with Chief. No Ben action.
+
+## Continuation checkpoint (5 Nov, seventh run)
+
+## Imported checkpoint: PR #571, 8ae3c85e0923
+
+## Continuation checkpoint (6 Nov, Codex timeline batch)
+
+Preserve queue **1/3**. Added `code_graphics.py timeline` with five unique
+3.6 s alpha overlays at locked date cues: R5 1905 (36.14), R10 1929
+(89.94), R20 1830s (209.10), R24 2013 (234.58), R29 1970 (301.44).
+Dates accumulate in narrative order and retain chronological screen order.
+Spacing is categorical and labelled “NOT TO SCALE”; no invented historical
+measurements. Source links remain SOURCES rows 3, 4, 8, 9, 12.
+
+These are the **historical-date** timeline components. Geological ages and
+physical durations remain separate; this does not certify every WHEN in the
+film. Replace standalone WHEN stamps in these windows rather than stacking
+them: in particular the earlier R24 date overlay and PR539 R5 place stamp.
+R5 still needs its Pontfarein place caption. The upper timeline leaves the
+lower WHO/FACT region clear, but all subject clearance needs composite review.
+
+`CODE_TIMELINE_v01.json` records sources, state, timings, paths and hashes.
+`CODE_TIMELINE_TECHNICAL_CHECK_v01.json`: PASS for all five hashes,
+1920×1080 / 25 fps / argb, 3.6 s, exact locked date starts, alpha bounds and
+complete error-free decode. Static encoded-frame sample inspected. No actual
+motion/audio review, composite acceptance, KEEP or film-stage approval.
+
+Media: `/Users/benjaminoats/_desk/J2141-timeline-v01/` (6,482,299 bytes),
+including `CONTACT_v01.jpg` and `encoded_final_timeline.png`.
+Detached tmux `J2141-timeline-v01` finished exit 0; log and completion:
+`/Users/benjaminoats/_desk/logs/J2141-timeline-v01.log` and `.done`.
+Reproduce into a fresh directory with `code_graphics.py timeline --out …
+--manifest …`; existing media is refused. £0 spent; no archive search,
+search-budget reset, narration change or publishing change.
+
+NAS offload was required at ~10 GB free and began copying old scratch
+`/private/tmp/j1843-capacity`. The original in-process copier was stopped
+before restarting under detached tmux `J2141-scratch-offload`; the partial NAS
+copy is retained and the existing script resumes it under its lock/checksum
+rules. Log: `/Users/benjaminoats/_desk/logs/J2141-scratch-offload.log`;
+completion: same prefix `.done`. Missing completion means still running:
+never start another copy. No successful offload or regained headroom claimed.
+
+Earlier open PRs #539/#551/#555/#562/#564/#569 remain separate and must be
+integrated without losing their CLI modes. Remaining work: licensed archive
+harvest, Mars/Earth bodies, R41 ISS atmosphere fallback, complete row
+composites and QA. Source-ID and sourced-simulation/map gate conflicts below
+remain unresolved; no gate has been waived by this build checkpoint.
+
+## Imported checkpoint: PR #572, cb3ecfa51c83
+
+## Continuation checkpoint (6 Nov, Commons real-picture harvest)
+
+Preserve **1/3**. Branch `worker/J2141-commons-v01` adds two candidates to
+`HARVEST_POOL_v01.json` (eight total). This is a partial harvest, not KEEP.
+
+- R34a: Pseudopanax's Tāne Mahuta photograph, 3264×4896. Commons records
+  the photographer's public-domain release. This is the living-tree
+  establishing shot, never the ancient tree sampled for Laschamp evidence.
+- R37b: Fjturban's `Cuevamanos.jpg`, 4161×2774, CC BY-SA 3.0. Credit author,
+  file URL and licence, indicate crop/grade, and carry share-alike obligations
+  for adaptations into delivery. It illustrates cave art; do not imply that
+  these particular stencils date to the Laschamp event.
+
+Original images, original Commons API, file-page rights evidence, licence
+terms and a contact sheet live at `/Users/benjaminoats/_desk/J2141-commons-v01/`.
+The pool records SHA-256 for originals and evidence, plus original Commons
+SHA-1. `HARVEST_COMMONS_TECHNICAL_CHECK_v01.json` records successful hash,
+metadata, native-size and planned-reuse checks for these two files only.
+The contact sheet and larger source stills were viewed. Crop/blur recipes
+are recorded but unrendered; subject clearance, grading, motion and finished
+composite QA remain open. Both are planned once, maximum twice.
+
+`harvest_commons_nature.py` reproduces this two-file harvest with author and
+licence guards; it verifies recorded media on repeat and preserves existing
+files. Run with `/usr/bin/python3 .../harvest_commons_nature.py --out <dir>
+--manifest <pool.json>`. Media is outside git; no paid generation or credit.
+
+R37a horse investigation reached its **three-candidate limit**: Lascaux2.jpg
+is 598×450 (3.21× full-width upscale); Lascaux, horse.JPG is explicitly a
+museum replica; Chauvethorses.jpg is 400×300 (4.8×). None is admitted.
+Detailed URLs/outcomes live in the pool's `search_checkpoints_v01`. Chief
+must scope a genuinely new source/approach or accurate alternative; a new
+worker must not reset this search. R34b swamp-kauri slab remains missing:
+the one examined Commons furniture image is not a recovered research slab.
+No image was downloaded for these rejected candidates.
+
+Prior outputs on PRs #539, #551, #555, #562, #564, #569 and #571 remain
+separate and must be integrated by Chief while preserving every renderer
+mode. They already cover the later opening/field/SAA/dynamo/sky/core/timeline
+batches absent from main's older handoff; do not build those again.
+
+Remaining J2141 action: wider real-picture harvest (including R41 ISS limb),
+Mars/Earth body comparison, R30 remaining twist component, source-ID and
+sourced-simulation conflicts, all composites and full picture/polish QA.
+No Chief PASS or film-stage approval. Spend £0. No live render or download.
+Both repos pulled successfully. NAS offload deferred to 01:00–06:00 at about
+8.3 GB free; the earlier detached offload `.done` is present with exit 0, so
+no second copy was started. No NAS assets deleted. Nothing needs Ben.

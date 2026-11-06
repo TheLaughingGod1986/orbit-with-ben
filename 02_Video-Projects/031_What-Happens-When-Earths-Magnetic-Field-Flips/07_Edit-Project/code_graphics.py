@@ -48,6 +48,27 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='opening':
+  from opening_graphics import main as opening
+  return opening(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='field':
+  from field_graphics import main as field
+  return field(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='saa':
+  from saa_graphics import main as saa
+  return saa(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='dynamo':
+  from dynamo_graphics import main as dynamo
+  return dynamo(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='sky':
+  from sky_graphics import main as sky
+  return sky(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='core':
+  from core_graphics import main as core
+  return core(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='timeline':
+  from timeline_graphics import main as timeline
+  return timeline(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='comparisons':
   from comparison_graphics import main as comparisons
   return comparisons(sys.argv[2:])

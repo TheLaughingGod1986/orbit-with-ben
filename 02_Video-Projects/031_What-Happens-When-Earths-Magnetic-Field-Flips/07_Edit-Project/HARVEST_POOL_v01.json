@@ -169,8 +169,180 @@
       "review_status": "pending_Chief_identity_crop_and_composite_review",
       "download_status": "downloaded",
       "review_note": "Use as sourced portrait inset/cutout, not full-frame stretched portrait; no cutout produced yet."
+    },
+    {
+      "asset_id": "commons_tane_mahuta",
+      "title": "Tane Mahuta from viewing platform further away - portrait.jpg",
+      "rows": [
+        34
+      ],
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ATane%20Mahuta%20from%20viewing%20platform%20further%20away%20-%20portrait.jpg",
+      "source_api": "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata%7Csha1&titles=File%3ATane+Mahuta+from+viewing+platform+further+away+-+portrait.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Tane_Mahuta_from_viewing_platform_further_away_-_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "local_path": "/Users/benjaminoats/_desk/J2141-commons-v01/tane_mahuta.jpg",
+      "sha256": "e7e7d5c92b36919d5acdac038079e522172532b85f274485d39bcf1a9fce8ce0",
+      "source_sha1": "8d3a407c121a4be3115e1db8057b762b6193c268",
+      "bytes": 7173812,
+      "width": 3264,
+      "height": 4896,
+      "credit": "Pseudopanax / Wikimedia Commons",
+      "licence": "Public domain",
+      "licence_url": null,
+      "attribution_required": false,
+      "licence_status": "Commons_per_file_assertion_verified",
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-commons-v01/tane_mahuta_api.json",
+      "source_evidence_sha256": "63f234069675133de368e81e4510811ca0659dd6f900495e3686f427963955e9",
+      "licence_evidence_path": "/Users/benjaminoats/_desk/J2141-commons-v01/tane_mahuta_rights.html",
+      "licence_evidence_sha256": "dbb195433cf2fbd7b6554bdce7b8b4230a4007cb886c66a41a31a2f7e8bb7c97",
+      "licence_terms_path": null,
+      "licence_terms_sha256": null,
+      "rights_obligations": "Author releases photograph into public domain; courtesy credit retained.",
+      "planned_appearances": 1,
+      "max_appearances": 2,
+      "max_upscale": 2.35,
+      "full_width_scale": 0.5882,
+      "full_height_scale": 0.2206,
+      "download_status": "downloaded",
+      "review_status": "pending_Chief_crop_and_composite_review",
+      "review_note": "Living kauri establishing picture only; not the ancient Laschamp specimen.",
+      "generation_authorized": false,
+      "crop_recipe_candidate": {
+        "foreground": "Fit complete portrait at height 1080 (scale 0.2206), centred; real photo fills 720x1080. Feathered blurred photo fills 1920x1080 behind it. Gentle tilt/reframe must keep trunk visible.",
+        "background": "Crop 3264x1836 from original then downsample to 1920x1080 (0.5882); blur/grade in edit.",
+        "status": "recipe only; no composite produced or reviewed"
+      }
+    },
+    {
+      "asset_id": "commons_hand_stencils",
+      "title": "Cuevamanos.jpg",
+      "rows": [
+        37
+      ],
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ACuevamanos.jpg",
+      "source_api": "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Csize%7Cextmetadata%7Csha1&titles=File%3ACuevamanos.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Cuevamanos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "local_path": "/Users/benjaminoats/_desk/J2141-commons-v01/hand_stencils.jpg",
+      "sha256": "0906747d53014d534c3042e2d64b0b35c9580a7ad68ac2605b39952dea6fcf63",
+      "source_sha1": "30d6c0b8a952acab8b27473668c837d3e42614fa",
+      "bytes": 12637571,
+      "width": 4161,
+      "height": 2774,
+      "credit": "Fjturban / Wikimedia Commons",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attribution_required": true,
+      "licence_status": "Commons_per_file_assertion_verified",
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-commons-v01/hand_stencils_api.json",
+      "source_evidence_sha256": "ca7ed4eda3134d7dd5914348e5ebcf2b60e732ce5d66125cd9027da44f99dc3f",
+      "licence_evidence_path": "/Users/benjaminoats/_desk/J2141-commons-v01/hand_stencils_rights.html",
+      "licence_evidence_sha256": "67fed589fecf535c73a01ab138f85c18da4c9201a6cea3ec050bff1b8bb37d80",
+      "licence_terms_path": "/Users/benjaminoats/_desk/J2141-commons-v01/hand_stencils_licence.html",
+      "licence_terms_sha256": "9a17cd36de36b242cbe4234773116f2036f86a8ce4459af8b37fd120482ca931",
+      "rights_obligations": "Credit author and source; link CC BY-SA 3.0; indicate crops/grade; license adaptations under same/compatible terms; carry these into delivery credits.",
+      "planned_appearances": 1,
+      "max_appearances": 2,
+      "max_upscale": 2.35,
+      "full_width_scale": 0.4614,
+      "full_height_scale": 0.3893,
+      "download_status": "downloaded",
+      "review_status": "pending_Chief_crop_and_composite_review",
+      "review_note": "Cueva de las Manos hand stencils; illustrative cave-art example, not proof of Laschamp age.",
+      "generation_authorized": false,
+      "crop_recipe_candidate": {
+        "crop_xywh": [
+          0,
+          217,
+          4160,
+          2340
+        ],
+        "output_wh": [
+          1920,
+          1080
+        ],
+        "scale": 0.46153846153846156,
+        "motion": "Small pan within 2774-pixel native height; preserve recognisable hands.",
+        "status": "recipe only; no composite produced or reviewed"
+      }
+    },
+    {
+      "asset_id": "GSFC_20171208_Archive_e000678",
+      "title": "NASA Captures 'EPIC' Earth Image",
+      "description": "DSCOVR EPIC full-disc Earth, 6 July 2015, North and Central America. Used as the real Earth disc in the poledrift and flip code graphics. Copied from the 029 harvest of the same NASA id.",
+      "source_page": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000678",
+      "source_api": "https://images-api.nasa.gov/search?nasa_id=GSFC_20171208_Archive_e000678",
+      "source_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000678/GSFC_20171208_Archive_e000678~orig.jpg",
+      "credit": "NASA",
+      "local_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_v01/GSFC_20171208_Archive_e000678.jpg",
+      "sha256": "cd6a5198c2a10dcca8e704a67e1f8dae065631d644637ac605567eacf954a102",
+      "bytes": 610458,
+      "width": 2048,
+      "height": 2048,
+      "rows": [
+        1,
+        2
+      ],
+      "planned_appearances": 2,
+      "max_appearances": 2,
+      "download_status": "copied_from_029_harvest_same_nasa_id",
+      "review_status": "pending_chief_review",
+      "review_note": "Real Earth disc inside poledrift and flip. Canada-to-Siberia arc is a schematic on this Americas view; Siberia is labelled past the limb because it is not in frame. Not a moving DSCOVR sequence.",
+      "licence_status": "US_federal_NASA_material_subject_to_NASA_media_conditions",
+      "licence_policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licence_evidence_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_v01/NASA_MEDIA_POLICY.html",
+      "source_evidence_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_v01/GSFC_20171208_Archive_e000678_api.json",
+      "source_evidence_sha256": "58596d9f54b62f65b2c722f648be7581e4d25e56e38367c3a1c693421700c4df",
+      "generation_authorized": false
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
-  "contact_sheet_sha256": "e31a0a4ca57ba3e5a897817417b99a4a90b31a6ed44f7e746ececb2168aba987"
+  "contact_sheet_sha256": "e31a0a4ca57ba3e5a897817417b99a4a90b31a6ed44f7e746ececb2168aba987",
+  "nature_contact_sheet": "/Users/benjaminoats/_desk/J2141-commons-v01/CONTACT_v01.jpg",
+  "nature_contact_sheet_sha256": "a83de1b67e309c528c77aabcfdcea1c5d9cee970ec3b94cdc4968629dbb690be",
+  "search_checkpoints_v01": [
+    {
+      "input": "R34a living kauri",
+      "date": "2026-11-06",
+      "candidates_examined": 1,
+      "outcome": "Downloaded and statically inspected T\u0101ne Mahuta; candidate only. No ancient-tree age claim."
+    },
+    {
+      "input": "R37b hand stencils",
+      "date": "2026-11-06",
+      "candidates_examined": 1,
+      "outcome": "Downloaded and statically inspected Cuevamanos.jpg; credit and share-alike obligations recorded. Do not imply contemporaneity with Laschamp."
+    },
+    {
+      "input": "R37a Chauvet/Lascaux horse",
+      "date": "2026-11-06",
+      "candidates_examined": 3,
+      "budget_status": "three-candidate limit reached; do not restart unchanged search",
+      "candidates": [
+        {
+          "source": "https://commons.wikimedia.org/wiki/File:Lascaux2.jpg",
+          "result": "598x450 native per API; full-width scale 3.21 exceeds 2.35; reject full-frame use. No original image download."
+        },
+        {
+          "source": "https://commons.wikimedia.org/wiki/File:Lascaux,_horse.JPG",
+          "result": "File history identifies Brno Anthropos museum replica; not an original cave plate. No image download; no silent reconstruction substitution."
+        },
+        {
+          "source": "https://commons.wikimedia.org/wiki/File:Chauvethorses.jpg",
+          "result": "400x300 native per file page; full-width scale 4.8 exceeds 2.35. No image download."
+        }
+      ],
+      "next_action": "Chief chooses new bounded source/approach or separately scoped accurate alternative under Missing footage fallback. Worker does not waive original-picture or upscale gates."
+    },
+    {
+      "input": "R34b swamp-kauri cross-section slab",
+      "date": "2026-11-06",
+      "candidates_examined": 1,
+      "candidates": [
+        {
+          "source": "https://commons.wikimedia.org/wiki/File:Furniture_-_bench_and_table_-_made_from_swamp_kauri_wood_-_2004.jpg",
+          "result": "Museum furniture, not recovered slab showing research rings; unsuitable identity. Not downloaded."
+        }
+      ],
+      "budget_status": "One candidate examined; no suitable candidate found; unspent budget remains, do not recheck unchanged furniture photo."
+    }
+  ]
 }
