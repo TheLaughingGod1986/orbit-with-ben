@@ -192635,9 +192635,14 @@
           "at": "2026-11-06T19:04Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-06T19:05Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Resumed existing checkpoint 47adfead; confirmed production remains blocked and read the six review findings. NAS offload safely waits for 01:00–06:00 window at 19,053 MB free."
         }
       ],
-      "remaining_action": "Inspect and repair tranche-2 runner safety defects, then verify zero-submit regressions",
+      "remaining_action": "Repair detached argument propagation and atomic runner ownership; live UI and shared accounting remain",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
@@ -192645,8 +192650,9 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-06T19:04Z",
-        "by": "codex"
+        "at": "2026-11-06T19:05Z",
+        "by": "codex",
+        "note": "Resumed existing checkpoint 47adfead; confirmed production remains blocked and read the six review findings. NAS offload"
       },
       "taskKeys": [
         "HOS:009"
