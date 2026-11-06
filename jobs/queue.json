@@ -194417,13 +194417,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-06T20:22Z",
-      "eta": "2026-11-06T22:22Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T19:15Z",
-      "result": "",
+      "result": "Chief ACCEPT (Grok). Cards PASS: Germs _C92tIJCk8A at 17:57:00 and Periodic Table AL_-qlWko_g at 24:14:00 reopened after edit_video 200; shot hashes match PR447. Level left None under playbook allowance (Studio requires Made for Kids; Audience stays Not Made for Kids). Timezone narrow exception unchanged. Evidence PR447 + jobs/reviews/J2298/CHIEF_RULING.md. Not a film/media PASS; no publish change.",
       "history": [
         {
           "at": "2026-11-06T19:15Z",
@@ -194474,6 +194474,11 @@
           "at": "2026-11-06T20:22Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T20:23Z",
+          "by": "chief",
+          "what": "done: Chief ACCEPT (Grok). Cards PASS: Germs _C92tIJCk8A at 17:57:00 and Periodic Table AL_-qlWko_g at 24:14:00 reopened after edit_video 200; shot hashes match PR447. Level left None under playbook allowance (Studio requires Made for Kids; Audience stays Not Made for Kids). Timezone narrow exception unchanged. Evidence PR447 + jobs/reviews/J2298/CHIEF_RULING.md. Not a film/media PASS; no publish change."
         }
       ],
       "remaining_action": "Elected Chief reviews the card evidence",
@@ -194489,7 +194494,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "a3a22dda85"
     },
     {
       "id": "J2299",
