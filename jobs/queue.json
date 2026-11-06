@@ -190026,20 +190026,25 @@
           "at": "2026-11-06T13:53Z",
           "by": "cursor",
           "what": "step 2 of 5 done: Letterbox v02 failed polish on six rows. Rebuild uses station-free Earth at 36, 14, 26, 46 and 60 s, one 600 METRES graphic, no VO remint."
+        },
+        {
+          "at": "2026-11-06T14:00Z",
+          "by": "cursor",
+          "what": "step 4 of 5 done: v02 gates PASS. sha256 768cf1a4f0ae603724eef13c690e0c9495c233b4ecc5f3af0f3d27b5c39a5f08. One low-detail WARN at 16.7s. UAT copy matches. Not scheduled."
         }
       ],
-      "remaining_action": "Rebuild the v02 Short with a feathered Earth band and rerun the gates",
+      "remaining_action": "Wait for the v02 review. Do not schedule.",
       "due": "2026-11-09T10:30:00Z",
       "kind": "assembly",
       "taskKeys": [
         "OWB:024"
       ],
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-06T13:53Z",
+        "at": "2026-11-06T14:00Z",
         "by": "cursor",
-        "note": "Letterbox v02 failed polish on six rows. Rebuild uses station-free Earth at 36, 14, 26, 46 and 60 s, one 600 METRES grap"
+        "note": "v02 gates PASS. sha256 768cf1a4f0ae603724eef13c690e0c9495c233b4ecc5f3af0f3d27b5c39a5f08. One low-detail WARN at 16.7s. U"
       }
     },
     {
