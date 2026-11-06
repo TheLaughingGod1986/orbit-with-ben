@@ -185081,9 +185081,14 @@
           "at": "2026-11-06T07:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T07:08Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2177; starting step 1 of 4 (reading J2089 checkpoint v04, manifest, and J2150 context)"
         }
       ],
-      "remaining_action": "Inspect 17 full-size mechanism previews; record KEEP/FIX and bounded frame-0/reuse decisions",
+      "remaining_action": "Read J2089 checkpoint v04, MECHANISM_MANIFEST_v01.json, script/shot list/sources, and J2150 review",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -185096,12 +185101,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-06T07:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2177; starting step 1 of 4 (reading J2089 checkpoint v04, manifest, and J2150 context)"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J2178",
