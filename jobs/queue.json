@@ -183253,10 +183253,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T10:51Z",
+      "eta": "2026-11-06T12:51Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T23:12Z",
       "result": "",
@@ -183265,11 +183265,24 @@
           "at": "2026-11-04T23:12Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T10:51Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record 034 Pluto long VO from pluto_frozen_heart_script_master_v02.md",
       "kind": "vo",
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T10:51Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2158",
