@@ -2,6 +2,55 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (6 Nov, Commons real-picture harvest)
+
+Preserve **1/3**. Branch `worker/J2141-commons-v01` adds two candidates to
+`HARVEST_POOL_v01.json` (eight total). This is a partial harvest, not KEEP.
+
+- R34a: Pseudopanax's Tāne Mahuta photograph, 3264×4896. Commons records
+  the photographer's public-domain release. This is the living-tree
+  establishing shot, never the ancient tree sampled for Laschamp evidence.
+- R37b: Fjturban's `Cuevamanos.jpg`, 4161×2774, CC BY-SA 3.0. Credit author,
+  file URL and licence, indicate crop/grade, and carry share-alike obligations
+  for adaptations into delivery. It illustrates cave art; do not imply that
+  these particular stencils date to the Laschamp event.
+
+Original images, original Commons API, file-page rights evidence, licence
+terms and a contact sheet live at `/Users/benjaminoats/_desk/J2141-commons-v01/`.
+The pool records SHA-256 for originals and evidence, plus original Commons
+SHA-1. `HARVEST_COMMONS_TECHNICAL_CHECK_v01.json` records successful hash,
+metadata, native-size and planned-reuse checks for these two files only.
+The contact sheet and larger source stills were viewed. Crop/blur recipes
+are recorded but unrendered; subject clearance, grading, motion and finished
+composite QA remain open. Both are planned once, maximum twice.
+
+`harvest_commons_nature.py` reproduces this two-file harvest with author and
+licence guards; it verifies recorded media on repeat and preserves existing
+files. Run with `/usr/bin/python3 .../harvest_commons_nature.py --out <dir>
+--manifest <pool.json>`. Media is outside git; no paid generation or credit.
+
+R37a horse investigation reached its **three-candidate limit**: Lascaux2.jpg
+is 598×450 (3.21× full-width upscale); Lascaux, horse.JPG is explicitly a
+museum replica; Chauvethorses.jpg is 400×300 (4.8×). None is admitted.
+Detailed URLs/outcomes live in the pool's `search_checkpoints_v01`. Chief
+must scope a genuinely new source/approach or accurate alternative; a new
+worker must not reset this search. R34b swamp-kauri slab remains missing:
+the one examined Commons furniture image is not a recovered research slab.
+No image was downloaded for these rejected candidates.
+
+Prior outputs on PRs #539, #551, #555, #562, #564, #569 and #571 remain
+separate and must be integrated by Chief while preserving every renderer
+mode. They already cover the later opening/field/SAA/dynamo/sky/core/timeline
+batches absent from main's older handoff; do not build those again.
+
+Remaining J2141 action: wider real-picture harvest (including R41 ISS limb),
+Mars/Earth body comparison, R30 remaining twist component, source-ID and
+sourced-simulation conflicts, all composites and full picture/polish QA.
+No Chief PASS or film-stage approval. Spend £0. No live render or download.
+Both repos pulled successfully. NAS offload deferred to 01:00–06:00 at about
+8.3 GB free; the earlier detached offload `.done` is present with exit 0, so
+no second copy was started. No NAS assets deleted. Nothing needs Ben.
+
 ## Continuation checkpoint (5 Nov, seventh run)
 
 Preserve **1/3**, same PR #495. Added `code_graphics.py comparisons` and
