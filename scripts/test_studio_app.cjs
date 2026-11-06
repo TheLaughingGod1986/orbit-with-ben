@@ -658,7 +658,8 @@ console.log('Queue forecast checks OK');
   assert(nextLive.includes('Next to go live') && nextLive.includes('Could a Robot Survive on Mars?') && nextLive.includes('Why Vaccines Are Named After a Cow'),
     'p24NextLive helper still lists the next four from publish times');
   // Compact film row; full checklist expands from the row (Ben, 6 Nov ~23:07).
-  assert(card.includes('6 of 9 stages') && card.includes('Done 1') && card.includes('Left 3') && card.includes('Can&#39;t run 1'),
+  // After-waits are not Ben-facing, so Can't run counts 0 even when Left still lists them.
+  assert(card.includes('6 of 9 stages') && card.includes('Done 1') && card.includes('Left 3') && card.includes('Can&#39;t run 0'),
     'film cards show one-line stage / done / left / can\'t-run without opening anything');
   assert(card.includes('p24-film-bar') && card.includes('p24-film-meta') && card.includes('p24-film-summary'),
     'compact resting row keeps id, title, percent, progress bar, and meta');
@@ -666,9 +667,9 @@ console.log('Queue forecast checks OK');
     'full checklist sits behind a row expand control');
   assert(!/<details[^>]*p24-check-fold[^>]*\sopen/i.test(card), 'film checklists stay closed by default');
   assert(card.includes('Will run automatically after J2141 (032 picture harvest)') && card.includes('p24-job-why'),
-    "can't-run / will-run-after explanation stays on the expanded checklist row");
-  assert(card.includes('p24-check') && card.includes('is-done') && card.includes('is-progress') && card.includes('is-waiting'),
-    'jobs render as a checklist with done, in-progress and waiting marks');
+    "will-run-after explanation stays on the expanded checklist row");
+  assert(card.includes('p24-job-spinner') && card.includes('is-done') && card.includes('is-progress') && card.includes('is-waiting'),
+    'jobs render as a checklist with done, in-progress spinner and waiting marks');
   assert(card.includes('is-done-yesterday') && card.includes('data-job-state="done-yesterday"'),
     "yesterday's finished jobs use a gray tick, not today's green");
   assert(card.includes('Chief QA — not started') && card.includes('is-stage'),
@@ -711,10 +712,9 @@ console.log('Queue forecast checks OK');
   assert(ov.includes('p24-check') && ov.includes('data-job-state="progress"'), 'Overview checklist marks survive the full overview render');
   assert(ov.includes('p24-glance') && !ov.includes('Next to go live') && !ov.includes('overview-next-live'),
     'Overview glance strip stays; Next to go live stays off home');
-  assert(ov.includes('overview-attention') && ov.includes('Needs attention') && ov.includes('J2142') && ov.includes('Will run automatically after J2141'),
-    'Needs attention banner expands to will-run-after / can\'t-run detail');
-  assert(ov.indexOf('overview-attention') < ov.indexOf('overview-machines'),
-    'Needs attention sits above Machines');
+  // After-only boards must not raise Needs attention (Ben, 6 Nov ~23:20).
+  assert(!ov.includes('overview-attention') && !ov.includes('Needs attention'),
+    'pipeline after-waits alone do not open Needs attention');
   assert(ov.indexOf('overview-machines') < ov.indexOf('overview-activity'),
     'Machines sit above Active jobs');
   assert(ov.indexOf('overview-activity') < ov.indexOf('overview-working'),
@@ -727,10 +727,10 @@ console.log('Queue forecast checks OK');
     'Last 24 hours sits above Studio totals');
   assert(!ov.includes('overview-agents') && !ov.includes('overview-feature'),
     'Overview home omits Agents cards and the Ready-for-review feature block');
-  assert(!/<details[^>]*p24-check-fold[^>]*\sopen/i.test(ov) && !/<details[^>]*overview-attention[^>]*\sopen/i.test(ov),
-    'Needs attention and film checklists stay closed by default');
+  assert(!/<details[^>]*p24-check-fold[^>]*\sopen/i.test(ov),
+    'film checklists stay closed by default');
 
-  // Focus filter (Ben, 6 Nov evening): Overview film cards = studio focus only; glance matches those cards.
+  // Focus filter (Ben, 6 Nov evening): Overview film cards = studio focus (+ active work); glance matches those cards.
   const focusedBoard = {
     owb: {focus: ['032', 'OWB:032', '031', 'OWB:031', '033', 'OWB:033']},
     progress24h: {
@@ -750,7 +750,7 @@ console.log('Queue forecast checks OK');
           items: [{kind: 'stage', stage: 'topic', status: 'todo', title: 'topic — not started'}]},
       ],
       glance: {doneToday: 208, left: 208, blocked: 53, blockedJobs: [
-        {id: 'J2142', film: 'OWB:032', title: '032 pebble ruler review', status: 'blocked',
+        {id: 'J2142', film: 'OWB:032', title: '032 pebble ruler review', status: 'blocked', waitKind: 'after',
           why: 'Will run automatically after J2141 (032 picture harvest)'},
         {id: 'J024x', film: 'OWB:024', title: '024 leftover', status: 'blocked'},
       ], nextLive: p24.glance.nextLive},
@@ -760,17 +760,17 @@ console.log('Queue forecast checks OK');
   assert(focused.includes('Working on now'), 'focus mode labels the film stack as working on now');
   assert(focused.includes('OWB 031') && focused.includes('OWB 032') && focused.includes('OWB 033'), 'focus films stay on Overview');
   assert(!focused.includes('OWB 024') && !focused.includes('HOS 006') && !focused.includes('OWB ASK'),
-    'non-focus films and housekeeping keys are not shown as Overview cards');
+    'non-focus films without claimed work and housekeeping keys are not shown as Overview cards');
   assert(!focused.includes('Old Venus film') && !focused.includes('Housekeeping'),
     'non-focus titles do not appear on Overview film cards');
-  // Glance totals come from the three focus cards (1+1+1 done today, 0+3+0 left, 0+1+0 blocked) — not the inflated payload.
+  // Glance totals come from the three focus cards (1+1+1 done today, 0+3+0 left); after-waits are not Ben can't-run.
   assert(/<b>3<\/b><span>Done today<\/span>/.test(focused), 'glance done-today matches the focus films on screen');
   assert(/<b>3<\/b><span>Left to go live<\/span>/.test(focused), 'glance left matches the focus films on screen');
-  assert(/<b>1<\/b><span>Can't run yet<\/span>/.test(focused), 'glance blocked matches the focus films on screen');
+  assert(/<b>0<\/b><span>Can't run yet<\/span>/.test(focused), 'glance can\'t-run ignores pipeline after-waits');
   assert(!focused.includes('Could a Robot Survive on Mars?'), 'next-to-go-live titles are not mixed into Last 24 hours / Working on now');
   const focusedOv = t.overview({tracker: {videos: []}, machines: {machines: []}, ...focusedBoard}, Date.parse('2026-11-06T19:41:00Z'));
-  assert(focusedOv.includes('Needs attention') && focusedOv.includes('J2142') && !focusedOv.includes('J024x'),
-    'Needs attention can\'t-run list is scoped to focus films');
+  assert(!focusedOv.includes('Needs attention') && !focusedOv.includes('overview-attention'),
+    'after-wait glance jobs do not raise Needs attention');
 
   // Working-on-now active-work marker (Ben, 6 Nov ~22:58 / ~23:07): green pulse only when a film has a claimed job.
   const activeCard = t.p24FilmCard({
@@ -783,6 +783,8 @@ console.log('Queue forecast checks OK');
     'working marker has an accessible name');
   assert(activeCard.includes('p24-check-fold') && activeCard.includes('p24-film-summary') && activeCard.includes('Jobs checklist'),
     'working film row expands to the jobs checklist');
+  assert(activeCard.includes('p24-job-spinner') && activeCard.includes('data-job-state="progress"'),
+    'expanded in-progress checklist row shows a spinner mark');
   assert(t.p24FilmHasActiveWork({film: 'OWB:032', items: [{id: 'J2141', status: 'claimed'}]}),
     'helper treats claimed checklist jobs as active work');
   const waitingCard = t.p24FilmCard({
@@ -794,6 +796,7 @@ console.log('Queue forecast checks OK');
     'will-run-after / waiting films do not get the working marker');
   assert(waitingCard.includes('p24-check-fold') && waitingCard.includes('Will run automatically after J2141'),
     'waiting films still expand to show will-run-after on the checklist');
+  assert(waitingCard.includes('Can&#39;t run 0'), 'after-waits do not inflate the film Can\'t run count');
   const openCard = t.p24FilmCard({
     film: 'OWB:031', title: 'Magnetic Field',
     items: [{id: 'J1914', title: 'queued picture job', status: 'open', stage: 'picture'}],
@@ -825,6 +828,137 @@ console.log('Queue forecast checks OK');
     'working-dot pulses only when motion is preferred');
   assert(/prefers-reduced-motion:\s*reduce[\s\S]*p24-working-dot[\s\S]*animation:\s*none/.test(css),
     'prefers-reduced-motion keeps a static green working-dot');
+  assert(css.includes('overview-spin') && /prefers-reduced-motion:\s*no-preference[\s\S]*aj-icon::before[\s\S]*overview-spin/.test(css),
+    'Active jobs circle spins when motion is preferred');
+  assert(/prefers-reduced-motion:\s*no-preference[\s\S]*p24-job-spinner[\s\S]*overview-spin/.test(css),
+    'expanded in-progress checklist spinner animates when motion is preferred');
+  assert(/prefers-reduced-motion:\s*reduce[\s\S]*aj-icon::before[\s\S]*animation:\s*none/.test(css)
+    && /prefers-reduced-motion:\s*reduce[\s\S]*p24-job-spinner[\s\S]*animation:\s*none/.test(css),
+    'prefers-reduced-motion keeps Active jobs and checklist spinners static');
+
+  // Tonight's Needs attention shape (Ben, 6 Nov ~23:20): after + parked-for-Chief + Chief: leftover → hide banner.
+  const tonightBoard = {
+    owb: {focus: ['032', '031', '033']},
+    progress24h: {
+      hours: 24, jobsDone: 10, videoJobs: 8, milestones: 1,
+      glance: {doneToday: 2, left: 5, blocked: 4, blockedJobs: [
+        {id: 'J0979', film: 'OWB:032', status: 'blocked', waitKind: 'after',
+          why: 'Will run automatically after J2089 (032 picture harvest)'},
+        {id: 'J2299', film: 'OWB:033', status: 'blocked', waitKind: 'blocker',
+          title: '033 picture: correct source identities',
+          why: 'Needs: parked for Chief: approve a specific R01 fallback or genuinely new bounded source approach'},
+        {id: 'J2300', film: 'OWB:033', status: 'open', waitKind: 'after',
+          why: 'Will run automatically after J2299 (033 picture: correct source identities)'},
+        {id: 'J1754', film: 'OWB:031', status: 'blocked', waitKind: 'blocker', kind: 'chief',
+          title: 'Chief: review workflow handoff',
+          why: 'Needs: J1914 directly observed installed AND loaded relay'},
+      ]},
+      films: [
+        {film: 'OWB:032', title: 'Titan', doneToday: 1, left: 1, blocked: 1, items: [
+          {id: 'J0979', title: '032 Shorts B+C', status: 'blocked', waitKind: 'after',
+            why: 'Will run automatically after J2089 (032 picture harvest)'},
+        ]},
+        {film: 'OWB:031', title: 'Magnetic Field', doneToday: 0, left: 1, blocked: 1, items: [
+          {id: 'J1754', title: 'Chief: review workflow handoff', status: 'blocked', waitKind: 'blocker', kind: 'chief',
+            why: 'Needs: J1914 directly observed installed AND loaded relay'},
+        ]},
+        {film: 'OWB:033', title: 'Uranus', doneToday: 1, left: 2, blocked: 2, items: [
+          {id: 'J2299', title: '033 picture: correct source identities', status: 'blocked', waitKind: 'blocker',
+            why: 'Needs: parked for Chief: approve a specific R01 fallback'},
+          {id: 'J2300', title: '033 follow-on', status: 'open', waitKind: 'after',
+            why: 'Will run automatically after J2299'},
+        ]},
+      ],
+      moved: [],
+    },
+  };
+  const tonightOv = t.overview({tracker: {videos: []}, machines: {machines: []}, ...tonightBoard}, Date.parse('2026-11-06T23:20:00Z'));
+  assert(!tonightOv.includes('overview-attention') && !tonightOv.includes('Needs attention'),
+    'tonight\'s after/Chief leftovers do not raise Needs attention');
+  assert(/<b>0<\/b><span>Can't run yet<\/span>/.test(tonightOv), 'glance Can\'t run is 0 for tonight\'s non-Ben waits');
+  assert(tonightOv.includes('Will run automatically after J2089') && tonightOv.includes('Will run automatically after J2299'),
+    'sequential waits remain visible in the expanded film checklist');
+  assert(tonightOv.includes('Can&#39;t run 0'), 'film rows do not count after/Chief waits as Can\'t run');
+  // A real Ben UAT wait still raises Needs attention.
+  const benWaitBoard = {
+    owb: {focus: ['032']},
+    progress24h: {
+      hours: 24, jobsDone: 1, videoJobs: 1, milestones: 0,
+      glance: {doneToday: 0, left: 1, blocked: 1, blockedJobs: [
+        {id: 'J0999', film: 'OWB:032', status: 'blocked', waitKind: 'blocker', awaits_ben: true,
+          title: '032 Final OK watch', why: 'Needs Ben: watch the finished cut in UAT and Approve or Request changes'},
+      ]},
+      films: [{film: 'OWB:032', title: 'Titan', doneToday: 0, left: 1, blocked: 1, items: [
+        {id: 'J0999', title: '032 Final OK watch', status: 'blocked', waitKind: 'blocker', awaits_ben: true,
+          why: 'Needs Ben: watch the finished cut in UAT and Approve or Request changes'},
+      ]}],
+      moved: [],
+    },
+  };
+  const benOv = t.overview({tracker: {videos: []}, machines: {machines: []}, ...benWaitBoard}, Date.parse('2026-11-06T23:20:00Z'));
+  assert(benOv.includes('overview-attention') && benOv.includes('Needs attention') && benOv.includes('J0999'),
+    'a Ben UAT wait still appears in Needs attention');
+  assert(benOv.includes('Needs Ben: watch the finished cut') && benOv.indexOf('overview-attention') < benOv.indexOf('overview-machines'),
+    'Ben-facing banner sits above Machines and names the watch reason');
+  assert(/<b>1<\/b><span>Can't run yet<\/span>/.test(benOv) && benOv.includes('Can&#39;t run 1'),
+    'Ben UAT wait counts in glance and the film Can\'t run line');
+
+  // Active non-focus film appears with pulse; Active jobs names the video (Ben, 6 Nov ~23:21).
+  const betelgeuse = v({
+    key: 'OWB:029:S:heiGCnGKTkE', channel: 'OWB', number: '029', type: 'short',
+    title: 'How Bright Will Betelgeuse Get When It Explode?',
+    jobs: [{id: 'J2311', status: 'claimed', by: 'cursor', title: '029 Short Betelgeuse cut'}],
+  });
+  const activeOutsideFocus = {
+    models: {checkedAt: new Date(Date.parse('2026-11-06T23:21:00Z')).toISOString()},
+    tracker: {videos: [
+      betelgeuse,
+      v({key: 'OWB:032', title: 'What Would Happen If You Landed On Titan'}),
+      v({key: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips'}),
+      v({key: 'OWB:033', title: 'Why Knocked-Sideways Uranus Has 21-Year Winters'}),
+    ]},
+    owb: {
+      focus: ['032', '031', '033'],
+      jobs: [{id: 'J2311', status: 'claimed', by: 'cursor', film: '029', repo: 'owb',
+        title: '029 Short Betelgeuse cut', claimedAt: new Date(Date.parse('2026-11-06T23:21:00Z')-5*6e4).toISOString(),
+        progress: {step: 0, of: 5}, taskKeys: ['OWB:029:S:heiGCnGKTkE']}],
+    },
+    progress24h: {
+      hours: 24, jobsDone: 4, videoJobs: 3, milestones: 1,
+      glance: {doneToday: 3, left: 4, blocked: 0, blockedJobs: []},
+      films: [
+        {film: 'OWB:032', title: 'What Would Happen If You Landed On Titan', doneToday: 1, left: 1, blocked: 0,
+          from: 56, to: 67, items: [{id: 'J0979', title: '032 wait', status: 'blocked', waitKind: 'after',
+            why: 'Will run automatically after J2089'}]},
+        {film: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips', doneToday: 1, left: 1, blocked: 0, items: []},
+        {film: 'OWB:033', title: 'Why Knocked-Sideways Uranus Has 21-Year Winters', doneToday: 1, left: 2, blocked: 0, items: []},
+      ],
+      moved: [{key: 'OWB:032', title: 'What Would Happen If You Landed On Titan', from: 56, to: 67, milestones: 1}],
+    },
+    machines: {machines: []},
+  };
+  const nowActive = Date.parse('2026-11-06T23:21:00Z');
+  const activeOv = t.overview(activeOutsideFocus, nowActive);
+  assert(activeOv.includes('OWB 032') && activeOv.includes('OWB 031') && activeOv.includes('OWB 033'),
+    'focus films without claimed work still appear');
+  assert(activeOv.includes('OWB 029') && activeOv.includes('How Bright Will Betelgeuse Get When It Explode?'),
+    'claimed work on a non-focus film adds that film to Working on now');
+  assert(!activeOv.includes('Old Venus film'), 'films with only recent work stay off Working on now');
+  const workingHtml = t.workingOnNow(activeOutsideFocus);
+  assert(workingHtml.includes('is-working') && workingHtml.includes('p24-working-dot') && workingHtml.includes('OWB 029'),
+    'non-focus film with claimed work gets the green pulsing marker');
+  assert(!t.p24FilmCard(activeOutsideFocus.progress24h.films[0], activeOutsideFocus).includes('is-working'),
+    '032 without claimed work has no working marker');
+  assert(!t.p24FilmCard(activeOutsideFocus.progress24h.films[1], activeOutsideFocus).includes('is-working'),
+    '031 without claimed work has no working marker');
+  assert(!t.p24FilmCard(activeOutsideFocus.progress24h.films[2], activeOutsideFocus).includes('is-working'),
+    '033 without claimed work has no working marker');
+  const aj = t.activityCard(activeOutsideFocus, nowActive);
+  assert(aj.includes('aj-icon') && aj.includes('Cursor is working') && aj.includes('J2311'),
+    'Active jobs still shows the running agent and job id');
+  assert(aj.includes('How Bright Will Betelgeuse Get When It Explode?') && aj.includes('OWB 029'),
+    'Active job card names the video id and title, not a generic Video production label');
+  assert(!/J2311 · Video production/.test(aj), 'Active job subline is not the generic category when a video is linked');
 }
 console.log('Last-24-hours film cards OK');
 
