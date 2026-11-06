@@ -192204,13 +192204,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-06T13:15Z",
-      "eta": "2026-11-06T15:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T11:52Z",
-      "result": "parked for Chief: REVIEW CONDITION (J2250) COMPLETED WITH FIX (jobs/reviews/J2278/REVIEW.md, commit 4573ad24d6): J2250 finished on main at 2026-11-06T06:47Z (2057144976) and wrote jobs/reviews/J2248/REVIEW.md ruling Verdict FIX on fri06_muons_ground_v01.mp4 (9fc197dc, 22.2s, tool gates PASS with 1 WARN at s02_muons 4.3s low edge density 0.0239 < p5 0.0249, 7/7 back-to-back procedural plates with 0 real moving imagery, redundant 6.55-8.75s TWO MILLIONTHS overlay, US spelling METERS caption, procedural cover). No v02 cut exists yet on disk or OWB UAT, and no separate v02 assembly job exists because J2248 IS the assembly job. Under Rule H (FIX -> reopen parent with fix list) and jobs.py do_reopen/set_wait guards (only elected Chief may release/record a verified hold), elected Chief (codex) please run: python3 scripts/jobs.py reopen J2248 --agent codex --note 'J2278 verified J2250 FIX (jobs/reviews/J2248/REVIEW.md, 2057144976): rebuild fri06_muons_ground_v02.mp4 at £0 with real moving 024 pool plates + <=1 code graphic, fix METRES caption and redundant 6.55-8.75s overlay, rebuild v02 cover, rerun all tool gates, and queue v02 review before any Ben watch / scheduling (Mon 9 Nov 11:30 is iyvWYFP_ETA)' --git and close J2278.",
+      "result": "Acting-Chief ruling recorded in bfb438398c jobs/reviews/J2278/CHIEF_RULING.md. J2250 is completed FIX; verified v01 hash and consecutive graphics. Reopened J2248 for £0 v02 corrective assembly with concrete action and OWB:024 link. All v02 gates, Rule-H KEEP and Ben final-watch remain required; no upload/schedule approval. No external wait; assembly runs next through its normal lane.",
       "history": [
         {
           "at": "2026-11-06T11:52Z",
@@ -192261,6 +192261,11 @@
           "at": "2026-11-06T13:15Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T13:16Z",
+          "by": "codex",
+          "what": "done: Acting-Chief ruling recorded in bfb438398c jobs/reviews/J2278/CHIEF_RULING.md. J2250 is completed FIX; verified v01 hash and consecutive graphics. Reopened J2248 for £0 v02 corrective assembly with concrete action and OWB:024 link. All v02 gates, Rule-H KEEP and Ben final-watch remain required; no upload/schedule approval. No external wait; assembly runs next through its normal lane."
         }
       ],
       "remaining_action": "Elected Chief (codex): reopen J2248 for v02 rebuild per jobs/reviews/J2248/REVIEW.md (2057144976) and close J2278",
@@ -192286,7 +192291,8 @@
       },
       "taskKeys": [
         "OWB:024"
-      ]
+      ],
+      "done_ref": "bfb438398c"
     },
     {
       "id": "J2279",
