@@ -1,5 +1,5 @@
 {
-  "next_id": 2263,
+  "next_id": 2264,
   "jobs": [
     {
       "id": "J0001",
@@ -189963,6 +189963,36 @@
       "remaining_action": "Review the Titan orbital-period still and approve it or give exact corrections",
       "kind": "review",
       "plain": "Check the picture explaining how long Titan takes to circle Saturn."
+    },
+    {
+      "id": "J2263",
+      "title": "Review HOS 006 Short B v02 and Short C v03",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Review HOS 006 Short B v02 and Short C v03. GBP0. No upload, schedule, privacy, retitle or Buffer write. Do not set awaits_ben unless the verdict is KEEP, and then only with working unique Play links. Neither cut is approved. Watched and heard stay false until Ben's watch. Long VbPubYd6Fbs must be public before either Short. Slots 18 Nov and 21 Nov 11:30 are planning targets, not a schedule.\n\nEvidence: HOS branch cursor/J2169-bc-v02 commit b8230f85b76075489bf47f64cb9db17bea032cf9, file 02_Video-Projects/006_Trees-Are-Made-Of-Air/10_Shorts/j2169_v02/ASSEMBLY.md. This answers the J2258 FIX. The earlier cuts stay in j2169_v01 (699c359b) and were not overwritten.\n\nMasters, not in git. NAS copies match these hashes (10_Shorts/J2169 on the 22 Oct hos-006-trees archive, SHA256SUMS_v02.txt checked on 6 Nov 2026):\n\n- B v02 hos006_short_b_v02.mp4 sha256 f4b046d41d0d6fcfbd14258abe472d57db5c9d53c1ed535141aa3281e1f3915b duration 24.250s, 1080x1920, 582 frames. Desk: /Users/benjaminoats/_desk/renders/J2169/Short_B_v02/\n- C v03 hos006_short_c_v03.mp4 sha256 e1e3ff0ce3b5622b4a43d010a0df827bcd34e25ccd76a87338b286b0632c40c5 duration 25.167s, 1080x1920, 604 frames. Desk: /Users/benjaminoats/_desk/renders/J2169/Short_C_v03/\n\nB is t2_mint_fixed_vo_v03b, sha256 0f1099262037b62ea2b2a003ce86e196458fa983e9ca97877afb5600e97c7479, sentence 1 \"A sprig of mint repaired the air.\" ending 2.24s. Not the soil take. C is t3_bubbles_sunlight_vo_v01, sha256 5b5d84e560d51ed9ad6f9bf5588f458802620f48f008b9409c532f8a1ea4e269, sentence 1 \"Leaves only make oxygen in the light.\" ending 2.56s. Spoken lines were not rewritten.\n\nTool results, exit 0 on both offered cuts: picture_qa, polish_gate, sfx level, music_gate, gate_shorts_open (B air 2026-11-18, C air 2026-11-21), ffmpeg decode. Nobody watched the moving picture or heard the sound.\n\nDecide these points. Do not treat a tool PASS as KEEP:\n\n- Captions through 9-14s and the frame-0 hooks (stills at 0s, 2.10/2.40s and 11.2s). Hook is centred Didot, cream on the setup words, yellow on THE AIR and THE LIGHT.\n- Short B opens at source time 1.375s, not 0. Source time 0 failed the open gate (frame diff 1.05, motion 5.1). The master then passed (frame diff 2.15, motion 10.36). There is no dissolve on the return, because a dissolve would change the frame the loop checker samples. Short C starts at source time 0 and also has no dissolve.\n- WARNs: B S07 low detail (J2258 KEEP), C S05 low detail (J2258 KEEP), C S03 low detail on the plunge leaf (new in polish_gate), terminal-loop samples do not establish seamless motion.\n\nStandalone S7 was not built. Short A and s04-s08 were not built.\n",
+      "ref": "J2169",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-11-06T05:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T05:22Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the rebuilt Short B and Short C",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "plain": "Read the rebuilt willow-tree Shorts and say if Ben can watch them."
     }
   ],
   "focus": [],
