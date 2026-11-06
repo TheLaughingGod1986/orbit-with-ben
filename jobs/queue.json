@@ -195733,18 +195733,23 @@
           "at": "2026-11-06T23:06Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed. NAS offload waits for 01:00 window; 8516 MB free. UPLOADS still names v04 hash ff4194857a."
+        },
+        {
+          "at": "2026-11-06T23:10Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: API readback: k2kEaA7ICjc private, publishAt 2026-12-11T11:30:00Z, PT34S, title unchanged. SHA256 ff4194857a matches. No successor in UPLOADS or the queue."
         }
       ],
-      "remaining_action": "Recheck the scheduled Betelgeuse Short, then tighten only the loop tail",
+      "remaining_action": "Tighten the Fri 11 Dec loop tail on a new local copy",
       "due": "2026-12-10T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-06T23:06Z",
+        "at": "2026-11-06T23:10Z",
         "by": "cursor",
-        "note": "Claimed. NAS offload waits for 01:00 window; 8516 MB free. UPLOADS still names v04 hash ff4194857a."
+        "note": "API readback: k2kEaA7ICjc private, publishAt 2026-12-11T11:30:00Z, PT34S, title unchanged. SHA256 ff4194857a matches. No"
       },
       "taskKeys": [
         "OWB:029"
