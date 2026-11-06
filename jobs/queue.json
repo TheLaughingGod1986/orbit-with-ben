@@ -192069,6 +192069,11 @@
           "at": "2026-11-06T12:13Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T12:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 741 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Listen to the new Moon take and diagnose its failed word check",
@@ -192076,7 +192081,16 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "plain": "Listen to the repaired Moon voiceover and resolve the reported repeated phrase"
+      "plain": "Listen to the repaired Moon voiceover and resolve the reported repeated phrase",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
