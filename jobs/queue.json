@@ -190780,13 +190780,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-06T08:23Z",
-      "eta": "2026-11-06T10:23Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:20Z",
-      "result": "",
+      "result": "HOS PR438 merged d88c9235 (PR424/425/426 included once); exact/integrated tests7/7 and check_all PASS. Budgets reconciled and twelve-parent scope committed. J2268-J2271 runner/auth/producer/review queued; OWB PR573 merged cc901975, J2172 blocked1/3 afterJ2271 and J2270 explicitly held. Zero spend/generation. HOS desk6680778558. Existing offload PID18159 monitored in tmux J2267-offload-monitor; not yet verified complete.",
       "history": [
         {
           "at": "2026-11-06T08:20Z",
@@ -190827,6 +190827,11 @@
           "at": "2026-11-06T08:36Z",
           "by": "codex",
           "what": "step 5 of 5 done: HOS PR438 d88c9235 and OWB PR573 cc901975 merged. Main verified: J2270 blocked afterJ2269; J2172 blocked1/3 afterJ2271; independent motion capability required. Zero spend/generation."
+        },
+        {
+          "at": "2026-11-06T08:38Z",
+          "by": "codex",
+          "what": "done: HOS PR438 merged d88c9235 (PR424/425/426 included once); exact/integrated tests7/7 and check_all PASS. Budgets reconciled and twelve-parent scope committed. J2268-J2271 runner/auth/producer/review queued; OWB PR573 merged cc901975, J2172 blocked1/3 afterJ2271 and J2270 explicitly held. Zero spend/generation. HOS desk6680778558. Existing offload PID18159 monitored in tmux J2267-offload-monitor; not yet verified complete."
         }
       ],
       "remaining_action": "Completed readiness integration and guarded production handoff; report to HOS desk",
@@ -190842,7 +190847,8 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/438"
     },
     {
       "id": "J2268",
