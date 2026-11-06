@@ -191425,9 +191425,14 @@
           "at": "2026-11-06T10:12Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2274; starting step 1 of 3 (inspect PR #574, J2162, rules, and v04 media)"
+        },
+        {
+          "at": "2026-11-06T10:15Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified PR #574, MANIFEST_v04.json, SHA-256 hashes (ba7662b1..., 1cb84dd4..., e5be019e..., B 4e4faf31..., C a0a67a7e...), thumb_preview score (sat 200.8, near_black 1.6%), and visually inspected 032_A_real_surface_v04.jpg and PHONE_PREVIEW_v04.jpg"
         }
       ],
-      "remaining_action": "Read PR #574 delivery, J2162 ruling, and LEARNINGS rule 19; inspect 032_A_real_surface_v04.jpg and PHONE_PREVIEW_v04.jpg",
+      "remaining_action": "Resolve intrinsic DISR softness and 4.21x crop enlargement against thumbnail rules; write jobs/reviews/J2274/REVIEW.md",
       "kind": "review",
       "plain": "Check whether the rebuilt Titan thumbnail is clear and suitable for use.",
       "rerouted_from": {
@@ -191440,11 +191445,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-06T10:12Z",
+        "at": "2026-11-06T10:15Z",
         "by": "gemini",
-        "note": "Claimed J2274; starting step 1 of 3 (inspect PR #574, J2162, rules, and v04 media)"
+        "note": "Verified PR #574, MANIFEST_v04.json, SHA-256 hashes (ba7662b1..., 1cb84dd4..., e5be019e..., B 4e4faf31..., C a0a67a7e..."
       },
       "taskKeys": [
         "OWB:032"
