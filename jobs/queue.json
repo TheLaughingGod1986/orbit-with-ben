@@ -196090,7 +196090,7 @@
     {
       "id": "J2316",
       "title": "Review OWB 029 Mon 14 Dec E1 local candidate v05",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Review the J2311 local candidate for heiGCnGKTkE. Read jobs/reviews/J2311/HANDOFF.md and 02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v05_e1.json.\n\nDecide KEEP or FIX. This candidate is labelled EXCEPTION. It moves the picture cuts to 2.30 s and 4.63 s, removes the end card, and leaves a 1.16 s loop tail on a 22.04 s file. It trims the recorded words \"So imagine\" and leaves the rest. Recorded-word conflicts are listed in the handoff: a 0.22 s pause inside sentence 1, and line 1 is not the title question.\n\nDo not upload, swap, retitle, or change privacy, schedule, Buffer or UPLOADS. Do not treat a tool PASS as a full E1 PASS. A KEEP still needs a separate authorised swap before YouTube changes, and Ben's watch of the finished cut comes after that KEEP. 14 Dec is follow-up only for the 3 Dec readout.\n\nWrite jobs/reviews/J2311/REVIEW.md.\n",
       "ref": "J2311",
@@ -196110,11 +196110,25 @@
           "at": "2026-11-06T23:32Z",
           "by": "cursor",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T23:33Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 1417 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Decide KEEP or FIX on the local Monday Short candidate",
       "kind": "review",
-      "plain": "Review the local replacement cut for the 14 December Betelgeuse Short"
+      "plain": "Review the local replacement cut for the 14 December Betelgeuse Short",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     }
   ],
   "focus": [
