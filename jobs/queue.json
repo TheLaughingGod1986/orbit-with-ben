@@ -190762,10 +190762,10 @@
       "stage": "edit",
       "after": "J2254",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-06T15:45Z",
+      "eta": "2026-11-06T17:15Z",
       "created_by": "chief",
       "created_at": "2026-11-05T21:25Z",
       "result": "",
@@ -190774,10 +190774,23 @@
           "at": "2026-11-05T21:25Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T15:45Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Assemble Short_C_v03 from locked C-v03a + VO; gates; park for Chief; no upload",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T15:45Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2256",
