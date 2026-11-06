@@ -1,5 +1,5 @@
 {
-  "next_id": 2303,
+  "next_id": 2304,
   "jobs": [
     {
       "id": "J0001",
@@ -187340,6 +187340,11 @@
           "at": "2026-11-06T21:27Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 099 uAomPaOBrM8 residual checklist already set after reload. Places off, chapters and concepts on, moderation Basic, caption never aired on US television, paid promotion No. No Save. API private, not made for kids, publishAt 2026-12-10T18:00:00Z. Cards, Level and timezone not touched. Evidence /Users/benjaminoats/_desk/jobs/J2199/evidence-residual. Records PR https://github.com/TheLaughingGod1986/history-of-science/pull/449. Not a film PASS."
+        },
+        {
+          "at": "2026-11-06T21:27Z",
+          "by": "relay",
+          "what": "condition verification queued: J2303"
         }
       ],
       "remaining_action": "Park the residual Studio readback for the Chief",
@@ -187353,6 +187358,12 @@
         "at": "2026-11-06T21:27Z",
         "by": "cursor",
         "note": "No Studio save. Places off, moderation Basic, caption never aired, paid promotion No. Private, publishAt 2026-12-10T18:0"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-06T22:27:36+00:00",
+        "recheck_task": "J2303"
       }
     },
     {
@@ -194906,6 +194917,37 @@
         "moving_video_input"
       ],
       "plain": "Review the repaired muons Short before its final watch"
+    },
+    {
+      "id": "J2303",
+      "title": "Verify condition for J2199",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2199: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2199 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-06T21:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T21:27Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Park the residual Studio readback for the Chief",
+      "kind": "review",
+      "recheck_of": "J2199",
+      "due": "2026-11-06T22:27:36+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
