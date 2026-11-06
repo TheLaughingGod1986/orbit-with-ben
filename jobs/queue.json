@@ -177347,9 +177347,14 @@
           "at": "2026-11-06T12:21Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T12:22Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Implement guarded Buffer create/update and YouTube writes, then finish policy evidence",
+      "remaining_action": "Check existing command gateway and supported allow rules before changing configuration",
       "kind": "assembly",
       "urgent": 8,
       "rerouted_from": {
@@ -177362,11 +177367,10 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-04T23:44Z",
-        "by": "codex",
-        "note": "Committed and pushed f11e9587e2 to PR490. Installed service read gateway matches source; 24 tests and both channel reads"
+        "at": "2026-11-06T12:22Z",
+        "by": "codex"
       }
     },
     {
