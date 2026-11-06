@@ -84343,19 +84343,24 @@
           "at": "2026-11-06T06:26Z",
           "by": "codex",
           "what": "step 2 of 3 done: Resumed prior 2/3 plan. Comment already exists; no duplicate creation or test/end-screen changes."
+        },
+        {
+          "at": "2026-11-06T06:32Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Pin save HTTP 200 contains CHALLENGE_PROMPT_TYPE_AUTHENTICATE with no actionResult. Fresh reload has no badge and still offers Pin. Evidence HOS 8485623e. No duplicate comment, test, schedule or privacy changes."
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:006"
       ],
-      "remaining_action": "Pin existing Trees comment and verify the pinned badge after reload",
+      "remaining_action": "Reauthenticate HOS Studio, then pin existing comment and verify after reload",
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-06T06:26Z",
+        "at": "2026-11-06T06:32Z",
         "by": "codex",
-        "note": "Resumed prior 2/3 plan. Comment already exists; no duplicate creation or test/end-screen changes."
+        "note": "Pin save HTTP 200 contains CHALLENGE_PROMPT_TYPE_AUTHENTICATE with no actionResult. Fresh reload has no badge and still "
       }
     },
     {
