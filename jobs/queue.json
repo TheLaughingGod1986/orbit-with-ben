@@ -191901,10 +191901,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-06T11:53Z",
+      "eta": "2026-11-06T13:53Z",
       "created_by": "relay",
       "created_at": "2026-11-06T11:52Z",
       "result": "",
@@ -191918,6 +191918,11 @@
           "at": "2026-11-06T11:52Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 720 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-06T11:53Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Complete J2250 review in jobs/reviews/J2248/REVIEW.md and rebuild v02 to pass KEEP before Ben watch / scheduling",
@@ -191933,7 +191938,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T11:53Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
