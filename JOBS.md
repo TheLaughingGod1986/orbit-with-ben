@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2302 | mini | open | – | – | 024 edit · review · 024 muons v03: review verified UAT repair and detail warning |  |
 | J2303 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2199 |  |
 | J2305 | any | open | – | – | review · Verify condition for J2230 |  |
+| J2306 | any | open | – | – | review · Verify condition for J2299 |  |
 
 Recently finished:
 
