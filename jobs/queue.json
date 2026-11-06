@@ -186546,17 +186546,22 @@
           "at": "2026-11-06T00:01Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Claimed J2206. NAS offload waits for 01:00 window; 15.5 GB free, above the 8 GB day exception."
+        },
+        {
+          "at": "2026-11-06T00:03Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Shared reader is origin/cursor/J2202-studio-reach scripts/studio_reach.py (PR 557, unmerged). 1 Nov archive rev 251eaa53ba readAt 2026-11-01T07:27:54Z. 9223 was down; stale Chrome lock pid 48867 is dead."
         }
       ],
-      "remaining_action": "Read the shared Studio Reach reader and OWB inputs",
+      "remaining_action": "Open Orbit Studio on CDP 9223 and seed the 1 Nov studio_ctr archive",
       "due": "2026-12-01T09:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-06T00:01Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-06T00:03Z",
         "by": "cursor",
-        "note": "Claimed J2206. NAS offload waits for 01:00 window; 15.5 GB free, above the 8 GB day exception."
+        "note": "Shared reader is origin/cursor/J2202-studio-reach scripts/studio_reach.py (PR 557, unmerged). 1 Nov archive rev 251eaa53"
       },
       "taskKeys": [
         "OWB:024"
