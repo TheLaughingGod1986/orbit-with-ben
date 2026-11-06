@@ -195139,13 +195139,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T22:02Z",
-      "eta": "2026-11-07T00:02Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T21:50Z",
-      "result": "",
+      "result": "KEEP (54e81efe99, jobs/reviews/J2304/REVIEW.md): inspected local commit 510197ffe4 on worker/J2089-r18-ruler and full-size r23_landing_record_review.jpg / code_graphic_032_r23_landing_record_v01.png (preview_sha256 8a2de4177dff150ecb24e70d2e64422241f729fde5537ca5deedb540a51a9d2c) / PIA14909.jpg (b72f5371622b0197f91a70a62b729e1e854dd91c511639f8055cf3d93f70ce74) — KEEP for (1) the still (native 1.0x 408x408 circular PIA14909 crop at (1290,350), <=4-word labels MOST DISTANT LANDING / HUYGENS / FROM EARTH / TITAN / NOT TO SCALE plus NASA/JPL-Caltech/Space Science Institute credit clear of globe, animated gold connector x=200->1180, 109 safe-area samples (159,154,1698,975), transparent entry/exit, and export guard verified), (2) the qualitative landing-record alternative replacing unsupported quantitative landings_chart (SOURCES row 7 has no Moon/Venus/Mars landing distances and row 8's 9.5 AU is heliocentric, not Earth-to-Titan landing distance), and (3) PIA14909 allocation capped at R19 (use 1/2) + R23 (use 2/2) only (0 uses elsewhere). In R23, r23_landing_record supersedes both landings_chart and duplicate r23_fact card (keep code_graphic_032_r23_fact_v01.mov untouched on disk in J2089_EXPORT_HASHES_v20.json, do not composite twice; separate R22 surface_72m and R23 graphic with real moving plate PIA08733 use 2/2). Approved to export under --approved r23_landing_record --review-ref J2304; 61 earlier exports, rights/frame0/APL/Huygens/composite holds, and J2089 1/4 preserved. GBP0.",
       "history": [
         {
           "at": "2026-11-06T21:50Z",
@@ -195181,6 +195181,11 @@
           "at": "2026-11-06T22:10Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified preview_sha256 8a2de4177dff150e... and source_sha256 b72f5371622b0197... in jobs/reviews/J2304/REVIEW.md; parent J2089 remains open at 1/4"
+        },
+        {
+          "at": "2026-11-06T22:10Z",
+          "by": "gemini",
+          "what": "done: KEEP (54e81efe99, jobs/reviews/J2304/REVIEW.md): inspected local commit 510197ffe4 on worker/J2089-r18-ruler and full-size r23_landing_record_review.jpg / code_graphic_032_r23_landing_record_v01.png (preview_sha256 8a2de4177dff150ecb24e70d2e64422241f729fde5537ca5deedb540a51a9d2c) / PIA14909.jpg (b72f5371622b0197f91a70a62b729e1e854dd91c511639f8055cf3d93f70ce74) — KEEP for (1) the still (native 1.0x 408x408 circular PIA14909 crop at (1290,350), <=4-word labels MOST DISTANT LANDING / HUYGENS / FROM EARTH / TITAN / NOT TO SCALE plus NASA/JPL-Caltech/Space Science Institute credit clear of globe, animated gold connector x=200->1180, 109 safe-area samples (159,154,1698,975), transparent entry/exit, and export guard verified), (2) the qualitative landing-record alternative replacing unsupported quantitative landings_chart (SOURCES row 7 has no Moon/Venus/Mars landing distances and row 8's 9.5 AU is heliocentric, not Earth-to-Titan landing distance), and (3) PIA14909 allocation capped at R19 (use 1/2) + R23 (use 2/2) only (0 uses elsewhere). In R23, r23_landing_record supersedes both landings_chart and duplicate r23_fact card (keep code_graphic_032_r23_fact_v01.mov untouched on disk in J2089_EXPORT_HASHES_v20.json, do not composite twice; separate R22 surface_72m and R23 graphic with real moving plate PIA08733 use 2/2). Approved to export under --approved r23_landing_record --review-ref J2304; 61 earlier exports, rights/frame0/APL/Huygens/composite holds, and J2089 1/4 preserved. GBP0."
         }
       ],
       "remaining_action": "Close J2304 and post summary on OWB thread",
@@ -195203,7 +195208,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "54e81efe99"
     },
     {
       "id": "J2305",
