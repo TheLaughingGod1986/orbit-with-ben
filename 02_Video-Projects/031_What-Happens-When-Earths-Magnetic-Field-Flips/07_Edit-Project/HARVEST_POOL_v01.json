@@ -469,6 +469,66 @@
       "native_time_lapse": true,
       "attached_cover_excluded": true,
       "review_note": "Not selected: sampled northern-US clip is very dark with prominent station hardware."
+    },
+    {
+      "asset_id": "svs-3693-sdo-launching-filament",
+      "rows": [
+        14
+      ],
+      "title": "SDO/AIA Zoom-In on Launching Filament (Bands 304, 171, 211)",
+      "source_page": "https://svs.gsfc.nasa.gov/3693/",
+      "source_url": "https://svs.gsfc.nasa.gov/vis/a000000/a003600/a003693/SDOAIAZoomIn_1080.mp4",
+      "local_path": "/Users/benjaminoats/_desk/J2141-solar-v01/sdo_prominence.mp4",
+      "sha256": "14664f53537ff294939585c1eaf83fa5b3c004237d0be8df8b8fcff14fd9976c",
+      "bytes": 2283507,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "duration_s": 10.5,
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-solar-v01/svs3693.html",
+      "source_evidence_sha256": "6f8991b089c2e7485778fc2ce8318aacb7be34a6ab8fbfe6d4a3ee369a5b017e",
+      "licence": "NASA factual educational use under NASA media guidelines",
+      "licence_status": "item_credit_and_raw_observation_origin_checked",
+      "licence_policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licence_evidence_path": "/Users/benjaminoats/_desk/J2141-solar-v01/NASA_MEDIA_TERMS.html",
+      "licence_evidence_sha256": "6eb26b435cce72d7fb784f6306fdeeaead79f45aa7d3c956e022fac9294e79de",
+      "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+      "rights_obligations": "Acknowledge source; no implied endorsement; no source audio; NASA identifiers are not granted for promotional use.",
+      "review_status": "static_candidate_not_KEEP",
+      "planned_appearances": 1,
+      "max_appearances": 5,
+      "generation_authorized": false,
+      "review_note": "Observed EUV false-colour solar imagery, with an editorial zoom. Not a simulation or visible-light photograph. Illustrates the Sun; the prominence/corona is not a surface-temperature measurement. Crop removes baked timestamp; no exact event-date claim is made."
+    },
+    {
+      "asset_id": "svs-12706-sdo-x8-flare-171-304",
+      "rows": [
+        46
+      ],
+      "title": "September 10, 2017 X8.2 flare, SDO 171/304 angstrom blend",
+      "source_page": "https://svs.gsfc.nasa.gov/12706/",
+      "source_url": "https://svs.gsfc.nasa.gov/vis/a010000/a012700/a012706/12706_SDO_X8_Flare_171-304_H264_Good_1080.m4v",
+      "local_path": "/Users/benjaminoats/_desk/J2141-solar-v01/sdo_flare.m4v",
+      "sha256": "065e6619cd91d0f5ab98d38cc992d359103ad9e44d8116a5026959e3b30805ae",
+      "bytes": 52420006,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30000/1001",
+      "duration_s": 41.474767,
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-solar-v01/svs12706.html",
+      "source_evidence_sha256": "5239fc5cc35ba73caa6f583d676663a271dc406d80f00cd36f96f69ad4efb020",
+      "licence": "NASA factual educational use under NASA media guidelines",
+      "licence_status": "item_credit_and_raw_observation_origin_checked",
+      "licence_policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licence_evidence_path": "/Users/benjaminoats/_desk/J2141-solar-v01/NASA_MEDIA_TERMS.html",
+      "licence_evidence_sha256": "6eb26b435cce72d7fb784f6306fdeeaead79f45aa7d3c956e022fac9294e79de",
+      "credit": "NASA/GSFC/SDO",
+      "rights_obligations": "Acknowledge source; no implied endorsement; no source audio; NASA identifiers are not granted for promotional use.",
+      "review_status": "static_candidate_not_KEEP",
+      "planned_appearances": 1,
+      "max_appearances": 5,
+      "generation_authorized": false,
+      "review_note": "Observed extreme-ultraviolet image blend, false colour. This is the separately credited raw X8.2 event clip, not the produced September montage with Killer Tracks music. No source audio used. Ends at the existing hardening graphic cue (472.22 s)."
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
@@ -547,6 +607,14 @@
       "active_minutes": 8,
       "outcome": "Two distinct crew sequences selected as candidates; northern-US clip unassigned for dark/obstructed picture. No horse/R41 search repeated.",
       "budget_status": "Search stopped with candidates; no further unchanged search needed."
+    },
+    {
+      "input": "R14b prominence and R46a solar flare",
+      "date": "2026-11-06",
+      "candidates_examined": 2,
+      "active_minutes": 10,
+      "outcome": "Two official observed SDO clips selected as static candidates; excluded music-bearing produced montage. No exhausted archive search repeated.",
+      "budget_status": "Stopped with candidates; no unchanged search needed."
     }
   ],
   "body_source_search_v01": {
@@ -654,5 +722,110 @@
     "full_decode": true,
     "contact_sheet": "/Users/benjaminoats/_desk/J2141-aurora-v01/COMPOSITE_CONTACT_v02.jpg",
     "contact_sheet_sha256": "d37caebef4980baa7aacb676bdb703ec524f31d8ad7edae39f15bf24412df848"
+  },
+  "solar_plates_v01": [
+    {
+      "row": 14,
+      "path": "/Users/benjaminoats/_desk/J2141-solar-v01/plate_031_r14_solar_v01.mp4",
+      "sha256": "245a86a03eabd2a215668d9daeac65a2c0e6159ccb4a6fa95596fccf08fa156b",
+      "bytes": 6837648,
+      "film_start_s": 138.7,
+      "intended_duration_s": 2.42,
+      "encoded_duration_s": 2.44,
+      "source_interval_s": [
+        6.0,
+        8.42
+      ],
+      "source_sha256": "14664f53537ff294939585c1eaf83fa5b3c004237d0be8df8b8fcff14fd9976c",
+      "crop_xywh": [
+        320,
+        0,
+        1600,
+        900
+      ],
+      "scale": 1.2,
+      "fps": 25,
+      "full_decode": true,
+      "no_loop": true,
+      "no_speed_change": true,
+      "audio": false,
+      "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+      "note": "Observed EUV false-colour solar imagery, with an editorial zoom. Not a simulation or visible-light photograph. Illustrates the Sun; the prominence/corona is not a surface-temperature measurement. Crop removes baked timestamp; no exact event-date claim is made.",
+      "status": "technical_candidate_pending_assembly_QA_and_review"
+    },
+    {
+      "row": 46,
+      "path": "/Users/benjaminoats/_desk/J2141-solar-v01/plate_031_r46_solar_v01.mp4",
+      "sha256": "a195281f6b9682734bc1e2ebda04c141ac5e273c0d56bc1732609a15e7303739",
+      "bytes": 6822876,
+      "film_start_s": 469.88,
+      "intended_duration_s": 2.34,
+      "encoded_duration_s": 2.36,
+      "source_interval_s": [
+        9.0,
+        11.34
+      ],
+      "source_sha256": "065e6619cd91d0f5ab98d38cc992d359103ad9e44d8116a5026959e3b30805ae",
+      "crop_xywh": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "scale": 1.0,
+      "fps": 25,
+      "full_decode": true,
+      "no_loop": true,
+      "no_speed_change": true,
+      "audio": false,
+      "credit": "NASA/GSFC/SDO",
+      "note": "Observed extreme-ultraviolet image blend, false colour. This is the separately credited raw X8.2 event clip, not the produced September montage with Killer Tracks music. No source audio used. Ends at the existing hardening graphic cue (472.22 s).",
+      "status": "technical_candidate_pending_assembly_QA_and_review"
+    }
+  ],
+  "solar_contact_sheet": "/Users/benjaminoats/_desk/J2141-solar-v01/CONTACT_v01.jpg",
+  "solar_contact_sheet_sha256": "e8dd13ea4d0ab2ebb68595d76df46237c1e370b0a68dbbeafa628f6a7971b651",
+  "solar_composite_v01": {
+    "row": 14,
+    "path": "/Users/benjaminoats/_desk/J2141-solar-v01/composite_031_r14_fact_v01.mp4",
+    "sha256": "d13ee8b30ea968e88d1cd8f35a9809db6bf1d0b87ff1391fdf6b057ca60c9773",
+    "plate_path": "/Users/benjaminoats/_desk/J2141-solar-v01/plate_031_r14_solar_v01.mp4",
+    "overlay_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_cards_v01/code_graphic_031_r14_fact_v01.mov",
+    "overlay_sha256": "ba34abb0dc842bffe7e9ec29ead999fcab6cfa565984547759fe58fe3fd02783",
+    "film_start_s": 138.7,
+    "overlay_start_s": 139.18,
+    "source_rows": [
+      6
+    ],
+    "filter_complex": "[1:v]setpts=PTS-STARTPTS+0.48/TB[label];[0:v][label]overlay=0:-720:eof_action=pass:repeatlast=0[out]",
+    "command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "/Users/benjaminoats/_desk/J2141-solar-v01/plate_031_r14_solar_v01.mp4",
+      "-i",
+      "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_cards_v01/code_graphic_031_r14_fact_v01.mov",
+      "-filter_complex",
+      "[1:v]setpts=PTS-STARTPTS+0.48/TB[label];[0:v][label]overlay=0:-720:eof_action=pass:repeatlast=0[out]",
+      "-map",
+      "[out]",
+      "-an",
+      "-t",
+      "2.44",
+      "-c:v",
+      "libx264",
+      "-crf",
+      "18",
+      "-preset",
+      "fast",
+      "-pix_fmt",
+      "yuv420p",
+      "/Users/benjaminoats/_desk/J2141-solar-v01/composite_031_r14_fact_v01.mp4"
+    ],
+    "full_decode": true,
+    "status": "static_candidate_pending_assembly_QA_not_KEEP",
+    "note": "Label shifted into upper-left sky, above the observed prominence. Existing 1.92 s card unchanged; final-watch readability remains required."
   }
 }

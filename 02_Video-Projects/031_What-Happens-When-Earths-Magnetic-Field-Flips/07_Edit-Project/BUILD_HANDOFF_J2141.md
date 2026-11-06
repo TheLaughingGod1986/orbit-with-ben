@@ -2,6 +2,78 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Solar footage checkpoint (6 Nov, Codex)
+
+Preserve queue **1/3** and PR **#575**, `worker/J2141-integrated-v01`.
+This checkpoint starts from `fc61709050`. Spend **£0**, no publishing change.
+
+Added two NASA SDO observed-image originals, bringing the pool to **16 assets**.
+Originals, saved source pages/terms, sample sheets, row plates and composite:
+`/Users/benjaminoats/_desk/J2141-solar-v01/` (about 70 MB). No media in git.
+
+- R14b: NASA SVS **3693**, AIA launching filament, bands 304/171/211.
+  Source 6.00–8.42 s, intended film 138.70–141.12 s, following the existing
+  R14 core graphic ending 138.70. Crop `[320,0,1600,900]`, scale **1.2×**;
+  removes baked source timestamp. This is false-colour EUV observational
+  imagery with NASA's editorial zoom, not a computer simulation. Credit:
+  **NASA/Goddard Space Flight Center Scientific Visualization Studio**.
+  The prominence/corona is not a photospheric-temperature measurement; it
+  illustrates the Sun in the approved comparison, not a thermometer.
+- R46a: NASA SVS **12706**, separately credited raw **10 September 2017
+  X8.2 flare**, 171/304-angstrom blend. Source 9.00–11.34 s, intended film
+  469.88–472.22 s; next is existing `grid_shield` on “hardening”. Full frame,
+  **1×**, credit **NASA/GSFC/SDO**. This is the raw event file, not the
+  produced September sequence with Killer Tracks music. No source audio.
+
+NASA media terms and individual credits saved and hashed. Factual educational
+use with acknowledgment and no implied endorsement; no third-party visual
+restriction found on these items. Do not use NASA identifiers as promotion.
+The native observed time-lapses convert 30/29.97 fps to 25 fps by frame
+selection, with no looping, slowdown, optical flow or generated picture.
+Both plates have a light grade, fine grain and lower-left NASA/SDO credit.
+
+R14 FACT composite uses the **unchanged** existing alpha card (SOURCES row 6),
+starting at film **139.18 s**, with `overlay=0:-720` into upper-left sky,
+clear of the prominence in sampled stills. Its original 1.92 s duration
+remains; playback readability still needs the established review/final watch.
+`COMPOSITE_RECIPE.json` and the tracked technical manifest contain the exact
+command, input hashes and filter. No VO or sourced number changed.
+
+Both originals, both plates and the composite fully decode. Hashes, dimensions,
+25 fps, yuv420p, duration and absent audio checked. At 25 fps, intended durations
+2.42/2.34 s encode 2.44/2.36 s; final assembler cuts on locked boundaries,
+without shifting narration or the next graphic. Sampled source and output
+sheets viewed as **stills only**, no motion/audio perception claimed.
+
+Component polish outputs (all **0 failed, 0 warnings**):
+```
+polish gate PASS: 0 of 1 rows failed, 0 to look at -> polish_r14.json
+polish gate PASS: 0 of 1 rows failed, 0 to look at -> polish_r46.json
+polish gate PASS: 0 of 1 rows failed, 0 to look at -> polish_composite_r14_v02.json
+```
+Initial composite check misclassified moving video as a still because its
+cut entry omitted `framing.offset`; the initial FAIL is preserved. Corrected
+record names the actual original and offset 6.0. Same video passes; no checker
+change, disabled check or waiver. Existing `owb-cg` venv supplied NumPy after
+the worktree's default Python lacked it. No dependencies installed.
+
+`HARVEST_SOLAR_TECHNICAL_CHECK_v01.json` embeds gate results, hashes, exact
+recipes and static limits. `harvest_solar.py` reproduces indexing/plates from
+preserved originals/evidence, refusing existing media. Component PASSes are
+not a full-film PASS, KEEP, stage approval or final OK.
+
+Detached batch **J2141-solar-v01 finished exit 0**, no active render/download.
+Log and completion: `/Users/benjaminoats/_desk/logs/J2141-solar-v01.log` and
+`.done`. The short FACT composite rendered in-session and completed exit 0.
+Two solar candidates examined in about ten active minutes; search stopped
+with candidates. No exhausted horse or other search budget reset. About
+17 GiB free at start; daytime bulk NAS moves deferred by the existing rule.
+
+**Next:** remaining real footage (lava/basalt, cores, wildlife, Hubble and
+Earth), row composites, coverage/reuse accounting, source/gate-conflict
+resolution and full QA. Earlier checkpoints and assets remain intact.
+Nothing needs Ben at this build checkpoint. No KEEP or film-stage approval.
+
 ## Aurora footage checkpoint (6 Nov, Codex)
 
 Preserve queue **1/3** and PR **#575**, branch
