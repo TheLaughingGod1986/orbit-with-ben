@@ -195131,10 +195131,24 @@
           "at": "2026-11-06T21:50Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T22:01Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor run failed (exit 1); next in its chain: gemini"
         }
       ],
       "remaining_action": "Review the R23 landing-record draft and decide the sourced shot-list alternative",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2305",
