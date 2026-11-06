@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2244 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2215 |  |
 | J2245 | mini | blocked | cursor | – | 011 vo · vo · HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02 |  |
 | J2246 | mini | blocked | cursor | – | 013 vo · vo · HOS 013 Darwin & Wallace: Shorts voiceover (2 v02 Shorts), vo_check, park for Chief |  |
-| J2248 | mini | claimed | codex | 2026-11-06T23:25Z | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
+| J2248 | mini | blocked | codex | – | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
 | J2255 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 Short C: assemble Short_C_v03 (Layout C-v03a) after C-Open-1 VO — £0, no upload | J2175/h94 |
 | J2268 | mini | open (after J2200) | – | – | 010 picture · assembly · HOS 010: build tested twelve-plate Flow adapter without generation | J2267 |
 | J2269 | mini | open (after J2268) | – | – | 010 picture · chief · HOS 010: review twelve-plate runner and verify live spend guards | J2267 |

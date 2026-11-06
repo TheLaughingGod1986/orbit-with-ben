@@ -190381,13 +190381,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-06T20:25Z",
-      "eta": "2026-11-06T23:25Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T19:33Z",
-      "result": "Chief reopened after J2301 verified J2283 FIX (19cfce9eb0). Build v03 at £0; do not schedule. Mon 9 is iyvWYFP_ETA.",
+      "result": "parked for review: J2302 reviews v03 be63a3d85cadfb4d0fd0387f62dd36dcf9200e5b51942fd91873f1cc677c902c in OWB UAT/024_fri06_muons_ground_v03. All five tool checks pass; one relative detail WARN at16s. Local repair commit c34a0429d6 on codex/J2248-v03; automatic approval review rejected external code/evidence push, parked for Chief authorization. No Ben watch/upload/schedule yet; Mon9 occupied.",
       "history": [
         {
           "at": "2026-11-05T19:33Z",
@@ -190513,6 +190513,11 @@
           "at": "2026-11-06T20:35Z",
           "by": "codex",
           "what": "step 5 of 5 done: Build, all five tool checks, hash-verified UAT staging and Rule-H handoff complete. J2302 queued. Local commits d04ce8dccb/c34a0429d6 retained; push rejected. One detail warning requires reviewer judgment."
+        },
+        {
+          "at": "2026-11-06T20:35Z",
+          "by": "codex",
+          "what": "blocked: parked for review: J2302 reviews v03 be63a3d85cadfb4d0fd0387f62dd36dcf9200e5b51942fd91873f1cc677c902c in OWB UAT/024_fri06_muons_ground_v03. All five tool checks pass; one relative detail WARN at16s. Local repair commit c34a0429d6 on codex/J2248-v03; automatic approval review rejected external code/evidence push, parked for Chief authorization. No Ben watch/upload/schedule yet; Mon9 occupied."
         }
       ],
       "remaining_action": "J2302 reviews v03; Chief resolves code-push authorization; no upload or scheduling",
