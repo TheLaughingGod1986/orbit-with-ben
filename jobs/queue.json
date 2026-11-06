@@ -195727,20 +195727,27 @@
           "at": "2026-11-06T23:06Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T23:06Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. NAS offload waits for 01:00 window; 8516 MB free. UPLOADS still names v04 hash ff4194857a."
         }
       ],
-      "remaining_action": "Prepare and verify local replacement for k2kEaA7ICjc, then send for review",
+      "remaining_action": "Recheck the scheduled Betelgeuse Short, then tighten only the loop tail",
       "due": "2026-12-10T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-06T23:06Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. NAS offload waits for 01:00 window; 8516 MB free. UPLOADS still names v04 hash ff4194857a."
+      },
+      "taskKeys": [
+        "OWB:029"
+      ]
     },
     {
       "id": "J2311",
