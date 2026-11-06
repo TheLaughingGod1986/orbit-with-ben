@@ -190381,13 +190381,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-06T13:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T19:33Z",
-      "result": "parked for review: v02 tool gates PASS. Review writes KEEP or FIX. One low-detail WARN at 16.7s on the Earth plate. Do not schedule. Mon 9 is iyvWYFP_ETA.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T19:33Z",
@@ -190483,6 +190483,11 @@
           "at": "2026-11-06T20:11Z",
           "by": "relay",
           "what": "condition verification queued: J2301"
+        },
+        {
+          "at": "2026-11-06T20:23Z",
+          "by": "chief",
+          "what": "reopened: J2301 verified J2283 FIX (jobs/reviews/J2283/REVIEW.md, 19cfce9eb0): rebuild fri06_muons_ground_v03.mp4 at £0 with top_black limb feather, station-free Earth_Views/NHQ windows replacing 46.0s Soyuz WARN and 3.0-15.2s jump cuts, s02_graphic <=4.0s, rerun all 5 tool gates, stage v03 to OWB UAT, and queue Rule-H v03 review before any Ben watch or scheduling (Mon 9 Nov 11:30 is iyvWYFP_ETA)"
         }
       ],
       "remaining_action": "Wait for the v02 review. Do not schedule.",
@@ -190490,20 +190495,7 @@
       "kind": "assembly",
       "taskKeys": [
         "OWB:024"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-06T14:00Z",
-        "by": "cursor",
-        "note": "v02 gates PASS. sha256 768cf1a4f0ae603724eef13c690e0c9495c233b4ecc5f3af0f3d27b5c39a5f08. One low-detail WARN at 16.7s. U"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "parked for review: v02 tool gates PASS. Review writes KEEP or FIX. One low-detail WARN at 16.7s on the Earth plate. Do not schedule. Mon 9 is iyvWYFP_ETA.",
-        "check_at": "2026-11-06T21:11:40+00:00",
-        "recheck_task": "J2301"
-      }
+      ]
     },
     {
       "id": "J2249",
