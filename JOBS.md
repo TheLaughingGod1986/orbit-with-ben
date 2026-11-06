@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2287 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2245 |  |
 | J2288 | mini | open | – | – | 013 vo · for gemini · review · `gemini-argon` · HOS 013 Darwin & Wallace: review Shorts VO A and B | https://github.com/TheLaughingGod1986/history-of-science/pull/444 |
 | J2289 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2255 |  |
-| J2293 | mini | claimed | gemini | 2026-11-06T20:43Z | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
+| J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
 | J2295 | mini | claimed | macbook | 2026-11-06T20:45Z | for gemini · review · `gemini-argon` · Verify condition for J2157 |  |
 | J2296 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 R18 pebble ruler: review registered still and source allocation |  |
