@@ -64,12 +64,12 @@ CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minu
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
 FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
-OWB_SPARSE = ["/scripts/", "/channels/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
+OWB_SPARSE = ["/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",  # actual schedules, excluding dry runs
               "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
               "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
-HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json",
+HOS_SPARSE = ["/studio/", "/00_Brand/Channel-Setup/PIPELINE.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # each HOS long's YouTube read-back (Private + publishAt)
 SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude", "gemini": "Gemini"}

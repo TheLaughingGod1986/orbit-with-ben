@@ -15,6 +15,11 @@ import channels  # noqa: E402
 HERE = pathlib.Path(__file__).resolve().parent
 
 
+def _file(slug):
+    """A channel's settings file as the loader found it."""
+    return pathlib.Path(channels.get(slug)["_source"])
+
+
 class Loader(unittest.TestCase):
     def test_the_two_channels_in_order(self):
         self.assertEqual(channels.slugs(), ["owb", "hos"])
@@ -37,7 +42,7 @@ class Loader(unittest.TestCase):
         with tempfile.TemporaryDirectory() as t:
             for slug in ("owb", "hos", "sky"):
                 (pathlib.Path(t) / slug).mkdir()
-                c = json.loads((channels.DIR / ("owb" if slug == "sky" else slug) / "channel.json").read_text())
+                c = json.loads(_file("owb" if slug == "sky" else slug).read_text())
                 if slug == "sky":
                     c.update(slug="sky", label="SKY", name="Night Sky", home=False, order=3, title_match=r"\bSKY\b")
                 (pathlib.Path(t) / slug / "channel.json").write_text(json.dumps(c))
@@ -60,6 +65,36 @@ class Loader(unittest.TestCase):
             self.assertEqual(channels.repo_path("hos", pathlib.Path(t)).name, "history-of-science")
         with mock.patch.dict("os.environ", {"HOS_REPO": "/x/hos"}):
             self.assertEqual(str(channels.repo_path("hos")), "/x/hos")
+
+
+class OwnRepos(unittest.TestCase):
+    """Phase 2: each channel's settings live in its own repo at studio/channel.json."""
+
+    def test_home_channel_reads_its_own_studio_folder(self):
+        self.assertEqual(_file("owb"), channels.ROOT / "studio" / "channel.json")
+
+    def test_a_channels_checkout_wins_over_the_cached_copy(self):
+        with tempfile.TemporaryDirectory() as t:
+            repo = pathlib.Path(t) / "hos-checkout"
+            (repo / "studio").mkdir(parents=True)
+            c = json.loads((channels.DIR / "hos" / "channel.json").read_text())
+            (repo / "studio" / "channel.json").write_text(json.dumps(dict(c, name="History of Science (own repo)")))
+            channels._load.cache_clear()
+            with mock.patch.dict("os.environ", {"HOS_REPO": str(repo)}):
+                try:
+                    self.assertEqual(channels.name("hos"), "History of Science (own repo)")
+                    self.assertEqual(_file("hos"), repo / "studio" / "channel.json")
+                finally:
+                    channels._load.cache_clear()
+        self.assertEqual(channels.name("hos"), "History of Science")  # cached copy again without the checkout
+
+    def test_the_cached_copy_matches_the_channel_repo_when_it_is_here(self):
+        entry = next(e for e in json.loads((channels.DIR / "channels.json").read_text())["channels"] if e["slug"] == "hos")
+        co = channels._checkout(entry)
+        if not co:
+            self.skipTest("history-of-science is not checked out on this machine")
+        self.assertEqual((co / "studio" / "channel.json").read_text(), (channels.DIR / "hos" / "channel.json").read_text(),
+                         "run: python3 scripts/channels.py sync")
 
 
 class Films(unittest.TestCase):
@@ -91,7 +126,7 @@ class ThirdChannelOnTheBoard(unittest.TestCase):
         import channel_films
         import video_tracker as vt
         base = channels._load()
-        sky = dict(json.loads((channels.DIR / "owb" / "channel.json").read_text()), slug="sky", label="SKY",
+        sky = dict(json.loads(_file("owb").read_text()), slug="sky", label="SKY",
                    name="Night Sky", short="Sky", home=False, order=3, title_match=r"\bSKY\b",
                    pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
         row = {"key": "SKY:001", "id": "001", "title": "Orion", "air": "2026-12-01", "stages": {}, "raw": {}}
