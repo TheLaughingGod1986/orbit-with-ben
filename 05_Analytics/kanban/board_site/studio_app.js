@@ -787,18 +787,31 @@
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
   }
   // Last 24 hours (Ben, 4 Nov 2026; film cards 6 Nov 2026): headline counts, then one quiet card per film with the jobs that touched it.
+  // Checklist marks (Ben, 6 Nov 2026): display-only — done / in progress / open. Review owns real ticks.
   function p24JobLive(status) {
     if(!status||status==='done') return '';
     if(status==='blocked') return 'waiting';
     if(status==='claimed') return 'in progress';
     return status;
   }
+  function p24JobMark(status) {
+    if(!status||status==='done') return {cls:'is-done', label:'Done'};
+    if(status==='claimed') return {cls:'is-progress', label:'In progress'};
+    if(status==='blocked') return {cls:'is-waiting', label:'Waiting'};
+    return {cls:'is-open', label:'Open'};
+  }
   function p24JobLine(j) {
+    const mark=p24JobMark(j.status);
     const stage=j.stage?`<span class="p24-job-stage">${esc(j.stage)}</span>`:'';
     const prog=j.progress&&j.progress.of?`<span class="p24-job-prog">${j.progress.step||0} of ${j.progress.of}</span>`:'';
     const liveLabel=p24JobLive(j.status);
     const live=liveLabel?`<span class="p24-job-live">${esc(liveLabel)}</span>`:'';
-    return `<li class="p24-job"><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(j.title||'')}</span>${stage}${prog}${live}</li>`;
+    const id=j.id?`<b>${esc(j.id)}</b> `:'';
+    const aria=`${mark.label}: ${[j.id,j.title].filter(Boolean).join(' ')}`.trim();
+    return `<li class="p24-job ${mark.cls}" data-job-state="${esc(mark.cls.slice(3))}" aria-label="${esc(aria)}">
+      <span class="p24-check" aria-hidden="true"></span>
+      <span class="p24-job-main">${id}<span class="p24-title wrap">${esc(j.title||'')}</span></span>${stage}${prog}${live}
+    </li>`;
   }
   function p24MovedStatus(m) {
     if(m.milestones<0) return `↺ reopened · ${m.from}% → ${m.to}%`;
@@ -828,11 +841,11 @@
     const closed=f.closed||(f.milestones!=null&&f.milestones>0);
     const status=f.status||(f.from!=null?p24MovedStatus(f):(closed?'':'worked on, no stage closed'));
     const jobs=(f.items||[]).map(p24JobLine).join('')
-      ||(f.last?`<li class="p24-job"><span class="p24-title wrap">${esc(f.last)}</span></li>`:'');
+      ||(f.last?`<li class="p24-job is-open" data-job-state="open" aria-label="Open: ${esc(f.last)}"><span class="p24-check" aria-hidden="true"></span><span class="p24-job-main"><span class="p24-title wrap">${esc(f.last)}</span></span></li>`:'');
     return `<article class="ov-card p24-film-card">
       <div class="p24-film-head"><b class="p24-film">${esc(name)}</b><span class="p24-delta${f.milestones<0?' down':''}${closed?'':' flat'}">${esc(status)}</span></div>
       <p class="p24-film-title">${esc(f.title||'')}</p>
-      ${jobs?`<ul class="p24-job-list">${jobs}</ul>`:''}
+      ${jobs?`<ul class="p24-job-list" role="list">${jobs}</ul>`:''}
     </article>`;
   }
   function progressCard(b) {
@@ -854,7 +867,7 @@
       ${partial}${reopened}
       </div>
       ${filmCards?`<h3 class="p24-films-h">Videos that had work</h3><div class="ov-stack p24-films">${filmCards}</div>`:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`}
-      ${studio||studioN?`<details class="p24-more p24-studio"><summary>Studio-wide (${studioN||(p.studio||[]).length} job${(studioN||(p.studio||[]).length)===1?'':'s'})</summary><ul class="p24-job-list">${studio||`<li class="muted">No job titles recorded.</li>`}</ul></details>`:''}
+      ${studio||studioN?`<details class="p24-more p24-studio"><summary>Studio-wide (${studioN||(p.studio||[]).length} job${(studioN||(p.studio||[]).length)===1?'':'s'})</summary><ul class="p24-job-list" role="list">${studio||`<li class="muted">No job titles recorded.</li>`}</ul></details>`:''}
     </section>`;
   }
   // Machines (Ben, 4 Nov 2026): what the Mini and the MacBook are on now, and jobs each finished in 24 h.

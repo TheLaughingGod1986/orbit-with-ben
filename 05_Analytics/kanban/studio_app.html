@@ -255,11 +255,21 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-p24 .p24-film-head { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
 .overview-p24 .p24-film-title { margin:4px 0 0; font-size:13px; line-height:1.4; color:var(--muted); }
 .overview-p24 .p24-job-list { list-style:none; margin:10px 0 0; padding:0; }
-.overview-p24 .p24-job { display:flex; flex-wrap:wrap; gap:2px 8px; align-items:baseline; margin:0; padding:8px 0 0; font-size:13px; line-height:1.45; }
+.overview-p24 .p24-job { display:flex; flex-wrap:wrap; gap:2px 8px; align-items:flex-start; margin:0; padding:8px 0 0; font-size:13px; line-height:1.45; }
 .overview-p24 .p24-job:first-child { padding-top:0; }
 .overview-p24 .p24-job b { font-weight:650; }
-.overview-p24 .p24-job .p24-title { flex:1 1 10rem; color:var(--ink); }
-.overview-p24 .p24-job-stage, .overview-p24 .p24-job-prog, .overview-p24 .p24-job-live { color:var(--muted); font-size:12px; white-space:nowrap; }
+.overview-p24 .p24-check { flex:0 0 16px; width:16px; height:16px; margin-top:3px; border:1.5px solid var(--muted); border-radius:4px; background:transparent; position:relative; pointer-events:none; }
+.overview-p24 .p24-job.is-done .p24-check { border-color:var(--green); background:var(--green); }
+.overview-p24 .p24-job.is-done .p24-check::after { content:""; position:absolute; left:4.5px; top:1px; width:4px; height:8px; border:solid #05230f; border-width:0 2px 2px 0; transform:rotate(45deg); }
+.overview-p24 .p24-job.is-progress .p24-check { border-color:var(--blue); background:rgba(67,139,255,.16); }
+.overview-p24 .p24-job.is-progress .p24-check::after { content:""; position:absolute; left:3px; right:3px; top:6px; height:2px; border-radius:1px; background:var(--blue); }
+.overview-p24 .p24-job.is-waiting .p24-check { border-color:var(--amber); }
+.overview-p24 .p24-job-main { flex:1 1 10rem; min-width:0; display:flex; flex-wrap:wrap; gap:2px 8px; align-items:baseline; }
+.overview-p24 .p24-job .p24-title { flex:1 1 8rem; color:var(--ink); }
+.overview-p24 .p24-job.is-done .p24-title { color:var(--muted); }
+.overview-p24 .p24-job-stage, .overview-p24 .p24-job-prog, .overview-p24 .p24-job-live { color:var(--muted); font-size:12px; white-space:nowrap; margin-top:2px; }
+.overview-p24 .p24-job.is-progress .p24-job-live { color:var(--blue); }
+.overview-p24 .p24-job.is-waiting .p24-job-live { color:var(--amber); }
 .overview-p24 .p24-studio { color:var(--muted); }
 .overview-p24 .p24-studio .p24-job-list { margin-top:4px; }
 .overview-machines .mc-head, .overview-agents .mc-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; margin-bottom:8px; font-size:15px; }
