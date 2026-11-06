@@ -176822,9 +176822,14 @@
           "at": "2026-11-06T18:11Z",
           "by": "relay",
           "what": "condition verification queued: J2292"
+        },
+        {
+          "at": "2026-11-06T18:41Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T00:20:00Z"
         }
       ],
-      "remaining_action": "Await J2275 runner repair and J2200 system PASS before generating the 20 rows",
+      "remaining_action": "Finish J2275 safeguards on PR445, then obtain J2200 system PASS before generating 20 rows",
       "due": "2026-11-15T18:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -176848,12 +176853,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J2200 reviewed FIX by elected-Chief codex on 6 Nov, HOS PR439 head 1772cd52 (jobs/reviews/J2276/REVIEW.md, 17fdb5031e). Await J2275 (currently open/unclaimed for codex) no-generation repair of the 6 runner safety/launch defects and renewed J2200 elected-Chief system PASS before minting any of the 20 v05 rows. Existing J2026 scope/caps (5/5 v05 board hashes verified) and PR408 tab-reuse approval (e908c3e2, 5/5 tests OK) retained. 0/20 generated, zero HOS:009 spend (Flow 14,840). Never run tranche1 runner.",
-        "check_at": "2026-11-06T19:11:44+00:00",
-        "last_recheck": "J2276",
-        "checked_at": "2026-11-06T10:48:45.690140+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2292"
+        "condition": "J2292 elected-Chief codex ruling: CONDITION UNMET. Independently verified HOS draft PR445 remains at 47adfead and PR439 at 1772cd52; checkpoint and cmd_submit explicitly confirm production disabled. J2275 stays open for codex now: repair live per-Create UI evidence (finding 2), shared cross-channel accounting/lock (3), and atomic detached launch/arguments (6), then zero-submit integration tests and renewed J2200 elected-Chief system PASS. Resume PR445 branch codex/J2275-runner-safety in a fresh isolated worktree: old /private/tmp/codex-j2275 no longer exists. J2026 scope/caps and PR408 approval retained; no generation authorized. Historical 14840 balance is not a fresh spend authorization. Never run tranche1 runner.",
+        "check_at": "2026-11-07T00:20:00Z",
+        "last_recheck": "J2292",
+        "checked_at": "2026-11-06T18:41:05+00:00",
+        "checked_by": "codex"
       }
     },
     {
