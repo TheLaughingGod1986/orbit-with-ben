@@ -1,5 +1,5 @@
 {
-  "next_id": 2305,
+  "next_id": 2306,
   "jobs": [
     {
       "id": "J0001",
@@ -189575,6 +189575,11 @@
           "at": "2026-11-06T21:01Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-06T22:00:00Z"
+        },
+        {
+          "at": "2026-11-06T22:00Z",
+          "by": "relay",
+          "what": "condition verification queued: J2305"
         }
       ],
       "remaining_action": "A capable listener must resolve the Vaccine VO failure before final assembly; Chief decides any source repair.",
@@ -189595,10 +189600,11 @@
       "hold": {
         "type": "capability",
         "condition": "Actual listening needed on corrected HOS eradication VO at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). vo_check FAIL reproduced on hash-verified raw Part05 and corrected final-master stem; old master-input timing repaired. This session exposes command text and still images only, with no demonstrated audio_input. Evidence HOS ce08d292 jobs/J2230/CURRENT_HANDOFF.md; corrected WAV at /Users/benjaminoats/_desk/renders/J2230/eradication_corrected_inputs_v02/eradication_vo_from_master_v02.wav. Do not regenerate, rewrite text or waive gate. Final assembly/opening fixes remain after listener/Chief resolution.",
-        "check_at": "2026-11-06T22:00:00Z",
+        "check_at": "2026-11-06T23:00:28+00:00",
         "requires": [
           "audio_input"
-        ]
+        ],
+        "recheck_task": "J2305"
       },
       "required_capabilities": [
         "audio_input"
@@ -195129,6 +195135,40 @@
       ],
       "remaining_action": "Review the R23 landing-record draft and decide the sourced shot-list alternative",
       "kind": "review"
+    },
+    {
+      "id": "J2305",
+      "title": "Verify condition for J2230",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2230: Actual listening needed on corrected HOS eradication VO at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). vo_check FAIL reproduced on hash-verified raw Part05 and corrected final-master stem; old master-input timing repaired. This session exposes command text and still images only, with no demonstrated audio_input. Evidence HOS ce08d292 jobs/J2230/CURRENT_HANDOFF.md; corrected WAV at /Users/benjaminoats/_desk/renders/J2230/eradication_corrected_inputs_v02/eradication_vo_from_master_v02.wav. Do not regenerate, rewrite text or waive gate. Final assembly/opening fixes remain after listener/Chief resolution.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2230 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-06T22:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T22:00Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: A capable listener must resolve the Vaccine VO failure before final assembly; Chief decides any source repair.",
+      "kind": "review",
+      "recheck_of": "J2230",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "due": "2026-11-06T23:00:28+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
