@@ -191124,10 +191124,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-06T09:17Z",
+      "eta": "2026-11-06T11:17Z",
       "created_by": "chief",
       "created_at": "2026-11-06T08:44Z",
       "result": "",
@@ -191141,6 +191141,11 @@
           "at": "2026-11-06T08:44Z",
           "by": "chief",
           "what": "approved by Ben: Watch HOS 006 Short C v03 (\"How Do Plants Make Oxygen?\", planning slot Sat 21 Nov 11:30; long VbPubYd6Fbs must be public first) v03 (asked in J2263)"
+        },
+        {
+          "at": "2026-11-06T09:17Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload C v03 NEW Private publishAt Sat 21 Nov 11:30; Related=VbPubYd6Fbs; UPLOADS+Buffer+gate",
@@ -191161,7 +191166,15 @@
         "okRef": "6680498407",
         "askId": "J2263.2"
       },
-      "urgent": 12
+      "urgent": 12,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T09:17Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
