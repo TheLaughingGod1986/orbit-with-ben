@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2270 | mini | blocked | codex | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · qa · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2272 | mini | open | – | – | 006 upload · studio · Upload HOS 006 Short B v02 (How Do Plants Clean the Air?) Private, Wed 18 Nov 11:30 | 6680489081 |
+| J2273 | mini | open | – | – | 006 upload · studio · Upload HOS 006 Short C v03 (How Do Plants Make Oxygen?) Private, Sat 21 Nov 11:30 | 6680498407 |
 
 Recently finished:
 
