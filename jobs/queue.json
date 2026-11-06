@@ -194106,9 +194106,14 @@
           "at": "2026-11-06T18:52Z",
           "by": "macbook",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-06T18:53Z",
+          "by": "macbook",
+          "what": "step 3 of 3 done: Step 3/3 complete: opened OWB PR #579 (7d9c1e2); recording wait on J2157 (--recheck J2295)"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2295/REVIEW.md on branch macbook/J2295, open PR, record wait on J2157 (--recheck J2295), and close J2295",
+      "remaining_action": "Done: J2295 condition verification complete; J2157 held awaiting Mini push of bf751c1e3f + Ch 5/Ch 6 pickups and tail checks",
       "kind": "review",
       "recheck_of": "J2157",
       "due": "2026-11-06T19:21:53+00:00",
@@ -194123,10 +194128,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-06T18:52Z",
-        "by": "macbook"
+        "at": "2026-11-06T18:53Z",
+        "by": "macbook",
+        "note": "Step 3/3 complete: opened OWB PR #579 (7d9c1e2); recording wait on J2157 (--recheck J2295)"
       },
       "taskKeys": [
         "OWB:034"
