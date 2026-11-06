@@ -190101,9 +190101,14 @@
           "at": "2026-11-06T06:07Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T06:07Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Review the rebuilt Short B and Short C",
+      "remaining_action": "Verify capabilities, check render scratch, and read J2169 v02 assembly + J2258 context",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Read the rebuilt willow-tree Shorts and say if Ben can watch them.",
@@ -190118,12 +190123,13 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-06T06:07Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     },
     {
       "id": "J2264",
