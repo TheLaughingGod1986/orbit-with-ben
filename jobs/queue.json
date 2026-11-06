@@ -191832,9 +191832,14 @@
           "at": "2026-11-06T11:46Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J2177 REVIEW.md, J2089_CHECKPOINT_v16.md, MECHANISM_FIX_MANIFEST_v02.json, and MECHANISM_FIX_VERIFICATION_v02.json at 176a3ef889"
+        },
+        {
+          "at": "2026-11-06T11:47Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified full-size v02 PNGs for r10_spectrum (57576de51068...) and r32_scalemap (9fabc50ef3a8...), 218 safe-area samples, notch timing, render guard, 15 byte-identical previews, and 58 preserved exports"
         }
       ],
-      "remaining_action": "Inspect full-size R10 spectrum and R32 scalemap v02 PNGs and verify hashes, safe-area bounds, notch timing, and unchanged 15 previews",
+      "remaining_action": "Write jobs/reviews/J2277/REVIEW.md with KEEP verdict and exact SHA-256 hashes, then commit from clean worktree",
       "due": "2026-11-09T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected methane spectrum and lake-area graphics before they are animated.",
@@ -191848,11 +191853,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-06T11:46Z",
+        "at": "2026-11-06T11:47Z",
         "by": "gemini",
-        "note": "Read J2177 REVIEW.md, J2089_CHECKPOINT_v16.md, MECHANISM_FIX_MANIFEST_v02.json, and MECHANISM_FIX_VERIFICATION_v02.json "
+        "note": "Verified full-size v02 PNGs for r10_spectrum (57576de51068...) and r32_scalemap (9fabc50ef3a8...), 218 safe-area samples"
       },
       "taskKeys": [
         "OWB:032"
