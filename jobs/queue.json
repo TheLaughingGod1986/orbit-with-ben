@@ -191034,10 +191034,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-06T08:53Z",
+      "eta": "2026-11-06T10:53Z",
       "created_by": "chief",
       "created_at": "2026-11-06T08:43Z",
       "result": "",
@@ -191051,6 +191051,11 @@
           "at": "2026-11-06T08:43Z",
           "by": "chief",
           "what": "approved by Ben: Watch HOS 006 Short B v02 (\"How Do Plants Clean the Air?\", planning slot Wed 18 Nov 11:30; long VbPubYd6Fbs must be public first) v02 (asked in J2263)"
+        },
+        {
+          "at": "2026-11-06T08:53Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload B v02 NEW Private publishAt Wed 18 Nov 11:30; Related=VbPubYd6Fbs; UPLOADS+Buffer+gate",
@@ -191071,7 +191076,15 @@
         "okAt": "2026-11-06T08:20Z",
         "okRef": "6680489081"
       },
-      "urgent": 11
+      "urgent": 11,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T08:53Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2273",
