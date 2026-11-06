@@ -186771,9 +186771,14 @@
           "at": "2026-11-06T08:50Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 009 tranche-2 runner PR https://github.com/TheLaughingGod1986/history-of-science/pull/439 is ready for system review. 23 unit tests and check_all passed. Zero Flow credits. Do not resume J2033 until this PASS."
+        },
+        {
+          "at": "2026-11-06T10:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-06T18:00:00Z"
         }
       ],
-      "remaining_action": "Parked for Chief review of the tranche-2 runner",
+      "remaining_action": "FIX: J2275 repairs runner safeguards; then Chief re-reviews before generation",
       "kind": "video",
       "progress": {
         "step": 5,
@@ -186784,7 +186789,12 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Acting-Chief codex ruling 6 Nov: FIX on HOS PR439 head1772cd52. 23 tests and check_all pass but live guards fail review: under-reserved floor, env-based model/x1 evidence, worktree-local locking/accounting, optional overwriting archive, failed technical rows advanced, broken detached arguments. J2275 is immediately ready for Codex code repair with zero submissions; require its fixes/tests and renewed elected-Chief system review before J2200 PASS. No generation authorized by this review.",
+        "check_at": "2026-11-06T18:00:00Z"
+      }
     },
     {
       "id": "J2201",
