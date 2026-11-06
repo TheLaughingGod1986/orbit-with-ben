@@ -774,28 +774,25 @@
     return {compact:true, text:`${ctx.count} videos linked`};
   }
   function activityJobCard(b,j,now) {
-    const videoContext=activityVideoContext(b,j), videoLine=activityVideoLine(videoContext);
     const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), category=activityCategory(b,j);
     const e=taskEstimate(j,now);
-    const eta=starting?'Worker launched; task claim pending':e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
-    const action=clip(j.remaining_action||j.title||'Current action not recorded',160);
+    const eta=starting?'Claim pending':e? (e.over?'Over ETA':`~${durationText(e.min)} ETA`) : '';
+    const agent=AGENTS[j.by]||j.by||'Unassigned';
+    const steps=p?`${p.step} / ${p.of} steps (${pct(p)}%)`:(starting?'Starting…':'Progress n/a');
+    // Compact Active jobs row (Ben, 6 Nov ~23:05) — agent, id · kind, steps/ETA, thin bar.
     return `<a class="ov-card active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${category.label}">
-      <span class="activity-category" data-category="${category.id}">${category.label}</span>
-      <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is ${starting?'starting':'working'}</b><span class="activity-job-id">${esc(j.id)}</span></div><span class="chev" aria-hidden="true">›</span>
-      ${videoLine.compact?`<p class="activity-video activity-scope-compact">${esc(videoLine.text)}</p>`:`<p class="activity-video"><span>Video</span>${esc(videoLine.text)}</p>`}
-      ${j.plain?`<p class="activity-plain">${esc(j.plain)}</p>`:''}
-      <p class="activity-action">${esc(action)}</p>
-      ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:`<p class="activity-progress-missing">${starting?'Preparing to claim the selected job':'Task progress not recorded'}</p>`}
-      <p class="activity-eta">${esc(eta)}</p>
+      <span class="aj-icon" aria-hidden="true"></span>
+      <div class="aj-main"><b>${esc(agent)} is ${starting?'starting':'working'}</b><span class="aj-sub">${esc(j.id)} · ${esc(category.label)}</span></div>
+      <div class="aj-right"><span class="aj-steps">${esc(steps)}</span>${eta?`<span class="aj-eta">${esc(eta)}</span>`:''}</div>
+      ${p?`<div class="aj-bar" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div>`:''}
     </a>`;
   }
   function activityCard(b,now) {
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
-    // Retain the publisher's active-job order after urgency; shared jobs are already deduplicated.
-    const footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} waiting</p>`;
-    if(!jobs.length) return `<section class="overview-activity"><h2>Studio activity</h2><a class="ov-card" href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is waiting':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
-    // One card + progress bar per running agent/job (Ben, 6 Nov evening) — not a single bar with "+N other".
-    return `<section class="overview-activity"><h2>Studio activity</h2><div class="ov-stack activity-stack">${jobs.map(j=>activityJobCard(b,j,now)).join('')}</div>${footer}</section>`;
+    const head=`<div class="ov-section-head"><h2>Active jobs${jobs.length?` (${jobs.length})`:''}</h2>${jobs.length?`<span class="ov-live"><i aria-hidden="true"></i>Running now</span>`:''}</div>`;
+    if(!jobs.length) return `<section class="overview-activity" aria-label="Active jobs">${head}<a class="ov-card aj-empty" href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is waiting':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span></a></section>`;
+    // One compact card per running agent/job — never a single featured job + "+N others".
+    return `<section class="overview-activity" aria-label="Active jobs">${head}<div class="ov-stack activity-stack">${jobs.map(j=>activityJobCard(b,j,now)).join('')}</div></section>`;
   }
   // Last 24 hours (Ben, 4 Nov 2026; film cards 6 Nov 2026): headline counts, then one quiet card per film.
   // Checklist (Ben, 6 Nov 2026): remaining-to-go-live + today green / yesterday gray; display-only. Review owns real ticks.
@@ -908,29 +905,48 @@
     }
     return false;
   }
+  function p24FilmPct(f) {
+    const from=f.from!=null?+f.from:null, to=f.to!=null?+f.to:(f.pct!=null?+f.pct:null);
+    const grew=from!=null&&to!=null&&to>from;
+    const down=from!=null&&to!=null&&to<from;
+    let label='';
+    if(from!=null&&to!=null&&from!==to) label=`${from}% → ${to}%`;
+    else if(to!=null) label=`${to}%`;
+    else if(f.status&&/\d+%/.test(f.status)&&!/worked on, no stage closed/i.test(f.status)) label=String(f.status).replace(/^↺ reopened · /,'');
+    const bar=to!=null?Math.max(0,Math.min(100,to)):(from!=null?Math.max(0,Math.min(100,from)):0);
+    return {from, to, grew, down, label, bar};
+  }
   function p24FilmCard(f, b) {
     const name=(f.film||'').replace(':',' ');
     const closed=f.closed||(f.milestones!=null&&f.milestones>0);
-    const status=f.status||(f.from!=null?p24MovedStatus(f):(closed?'':'worked on, no stage closed'));
-    const reason=f.pctReason||(f.doneCount!=null?`${f.doneCount} of ${f.total||9} stages`:'');
     const counts=p24FilmCounts(f);
-    const blockedWhy=counts.blocked>0?p24BlockedWhy(f):'';
     const active=p24FilmHasActiveWork(f, b);
+    const pctInfo=p24FilmPct(f);
+    const stages=((f.pctReason||'').split('·')[0]||'').trim()
+      ||(f.doneCount!=null?`${f.doneCount} of ${f.total||9} stages`:'');
+    const meta=[stages, `Done ${counts.doneToday}`, `Left ${counts.left}`, `Can't run ${counts.blocked}`].filter(Boolean).join(' · ');
+    const deltaCls=pctInfo.down?' down':(pctInfo.grew?'':' flat');
+    const delta=pctInfo.label||(closed?'':'—');
     const jobs=(f.items||[]).map(p24JobLine).join('')
       ||(f.last?`<li class="p24-job is-open" data-job-state="open" aria-label="Open: ${esc(f.last)}"><span class="p24-check" aria-hidden="true"></span><span class="p24-job-main"><span class="p24-title wrap">${esc(f.last)}</span></span></li>`:'');
     const earlier=f.earlierDone>0?`<p class="muted p24-earlier">${f.earlierDone} earlier job${f.earlierDone===1?'':'s'} already done</p>`:'';
     const n=(f.items||[]).length||(f.last?1:0);
-    const checklist=jobs?`<details class="p24-check-fold"><summary>Jobs checklist (${n})</summary><ul class="p24-job-list" role="list">${jobs}</ul>${earlier}</details>`:'';
+    const cls=`ov-card p24-film-card${active?' is-working':''}${pctInfo.grew?' is-grew':''}${!pctInfo.grew?' is-flat':''}`;
     const dot=active?`<span class="p24-working-dot" role="img" aria-label="A job is in progress on this film"></span>`:'';
-    return `<article class="ov-card p24-film-card${active?' is-working':''}">
-      ${dot}
-      <div class="p24-film-head"><b class="p24-film">${esc(name)}</b><span class="p24-delta${f.milestones<0?' down':''}${closed?'':' flat'}">${esc(status)}</span></div>
-      <p class="p24-film-title">${esc(f.title||'')}</p>
-      ${reason?`<p class="muted p24-reason">${esc(reason)}</p>`:''}
-      <p class="p24-film-counts"><span>Done today <b>${counts.doneToday}</b></span><span>Left <b>${counts.left}</b></span><span>Can't run <b>${counts.blocked}</b></span></p>
-      ${blockedWhy?`<p class="muted p24-blocked-why">${esc(blockedWhy)}</p>`:''}
-      ${checklist}
-    </article>`;
+    // Compact resting row (id, title, %, bar, one-line meta). Tap/expand opens the jobs checklist (Ben, 6 Nov ~23:07).
+    const compact=`${dot}
+      <div class="p24-film-top">
+        <div class="p24-film-left"><b class="p24-film">${esc(name)}</b><p class="p24-film-title">${esc(f.title||'')}</p></div>
+        <div class="p24-film-right"><span class="p24-delta${deltaCls}">${esc(delta)}</span>
+          <div class="p24-film-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pctInfo.bar}" aria-label="Film stage progress ${pctInfo.bar}%"><i style="width:${pctInfo.bar}%"></i></div>
+        </div>
+      </div>
+      <p class="p24-film-meta">${esc(meta)}</p>`;
+    if(!jobs) return `<article class="${cls}">${compact}</article>`;
+    return `<details class="${cls} p24-check-fold" aria-label="Jobs checklist (${n})">
+      <summary class="p24-film-summary">${compact}<span class="p24-film-expand" aria-hidden="true">›</span></summary>
+      <ul class="p24-job-list" role="list">${jobs}</ul>${earlier}
+    </details>`;
   }
   function p24FocusFilms(b) {
     const p=b&&b.progress24h; if(!p) return [];
@@ -948,21 +964,28 @@
     const blocked=blockedFromFilms||blockedJobs.length;
     return {doneToday, left, blocked, blockedJobs};
   }
-  // Last 24h headlines only; long can't-run blurbs sit in an accordion (Ben, 6 Nov ~22:14).
+  // Last 24h headlines only — can't-run detail lives in Needs attention (Ben, 6 Nov ~23:05).
   function p24Glance(p, films) {
-    const {doneToday, left, blocked, blockedJobs}=p24GlanceCounts(p, films);
-    const blockedList=blockedJobs.length
-      ?`<details class="p24-glance-fold"><summary>Can't run yet (${blockedJobs.length})</summary><ul class="p24-glance-list">${blockedJobs.map(j=>{
-          const line=j.why||j.title||'';
-          return `<li><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(line)}</span></li>`;
-        }).join('')}</ul></details>`
-      :'';
+    const {doneToday, left, blocked}=p24GlanceCounts(p, films);
     return `<div class="ov-card p24-glance" aria-label="Studio glance">
-      <div class="p24-glance-stats"><div><b>${doneToday}</b><span>done today</span></div><div><b>${left}</b><span>left to go live</span></div><div><b>${blocked}</b><span>can't run yet</span></div></div>
-      ${blockedList}
+      <div class="p24-glance-stats"><div><b>${doneToday}</b><span>Done today</span></div><div><b>${left}</b><span>Left to go live</span></div><div><b>${blocked}</b><span>Can't run yet</span></div></div>
     </div>`;
   }
-  // Next publishes live apart from the last-24h headlines (Ben, 6 Nov ~22:14).
+  function needsAttentionBanner(b) {
+    const p=b&&b.progress24h; if(!p) return '';
+    const films=p24FocusFilms(b);
+    const {blocked, blockedJobs}=p24GlanceCounts(p, films);
+    if(!blocked) return '';
+    const list=blockedJobs.map(j=>{
+      const line=j.why||j.title||'';
+      return `<li><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(line)}</span></li>`;
+    }).join('');
+    return `<details class="overview-attention" aria-label="Needs attention">
+      <summary><span class="att-icon" aria-hidden="true"></span><span class="att-copy"><b>Needs attention</b><span>${blocked} job${blocked===1?'':'s'} can't run yet</span></span><span class="att-chev" aria-hidden="true">›</span></summary>
+      <ul class="p24-glance-list att-list">${list||`<li class="muted">No job details recorded.</li>`}</ul>
+    </details>`;
+  }
+  // Next publishes helper kept for tests / Schedule; not shown on Overview home.
   function p24NextLive(p) {
     const next=((p&&p.glance)||{}).nextLive||[];
     const rows=next.slice(0,4);
@@ -977,34 +1000,30 @@
     const focus=p24FocusSet(b);
     const films=p24FocusFilms(b);
     const filmCards=films.map(f=>p24FilmCard(f, b)).join('');
-    const filmsH=focus.size?'Working on now':'Videos that had work';
-    if(!filmCards) return {h:filmsH, html:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`};
-    return {h:filmsH, html:`<div class="ov-stack p24-films">${filmCards}</div>`};
+    const base=focus.size?'Working on now':'Videos that had work';
+    const filmsH=films.length?`${base} (${films.length})`:base;
+    if(!filmCards) return {h:filmsH, n:0, html:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`};
+    return {h:filmsH, n:films.length, html:`<div class="ov-stack p24-films">${filmCards}</div>`};
   }
   function workingOnNow(b) {
     const body=workingOnNowBody(b); if(!body) return '';
-    return `<section class="overview-p24 overview-working" aria-label="${body.h}"><h2>${body.h}</h2>${body.html}</section>`;
+    return `<section class="overview-p24 overview-working" aria-label="Working on now"><div class="ov-section-head"><h2>${body.h}</h2></div>${body.html}</section>`;
   }
   function p24TotalsBody(b) {
     const p=b.progress24h; if(!p) return '';
-    const agents=Object.entries(p.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
     const studio=(p.studio||[]).map(p24JobLine).join('');
     const studioN=p.otherJobs!=null?p.otherJobs:(p.studio||[]).length;
-    const reopened=(p.moved||[]).some(m=>m.milestones<0)?'<p class="muted p24-note">↺ reopened: a finished stage has new work on it again (a fix or a Short being redone), so it counts as in progress until that work is done. Nothing was lost.</p>':'';
-    const partial=p.hours && p.hours<23 ? `<p class="muted p24-note">Film progress covers the last ${Math.round(p.hours)} h so far; it fills to 24 h on its own.</p>`:'';
     return `<div class="ov-card p24-head">
-      <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>${p.videoJobs!=null?'video jobs finished':'jobs finished'}</span></div><div><b>${p.milestones||0}</b><span>milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>videos moved forward</span></div></div>
+      <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>Video jobs finished</span></div><div><b>${p.milestones||0}</b><span>Milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>Videos moved forward</span></div></div>
       ${p.videoJobs!=null?`<p class="muted p24-agents${p.jobsDone&&p.videoJobs/p.jobsDone<0.3?' p24-warn':''}">${p.videoJobs} of ${p.jobsDone||0} jobs were on videos (${p.jobsDone?Math.round(p.videoJobs/p.jobsDone*100):0}%); the rest kept the studio running.</p>`:''}
-      ${agents?`<p class="muted p24-agents">By ${agents}</p>`:''}
-      ${partial}${reopened}
       </div>
       ${studio||studioN?`<details class="p24-more p24-studio"><summary>Studio-wide (${studioN||(p.studio||[]).length} job${(studioN||(p.studio||[]).length)===1?'':'s'})</summary><ul class="p24-job-list" role="list">${studio||`<li class="muted">No job titles recorded.</li>`}</ul></details>`:''}`;
   }
   function p24Totals(b) {
     const body=p24TotalsBody(b); if(!body) return '';
-    return `<section class="overview-p24 overview-p24-stats" aria-label="Progress totals"><h2>Studio totals</h2>${body}</section>`;
+    return `<section class="overview-p24 overview-p24-stats" aria-label="Studio totals"><div class="ov-section-head"><h2>Studio totals</h2></div>${body}</section>`;
   }
-  // Composed for tests; Overview home restacks the pieces itself (Ben, 6 Nov ~22:25).
+  // Composed for tests; Overview home restacks the pieces itself (Ben, 6 Nov ~23:05).
   function progressCard(b) {
     const p=b.progress24h; if(!p) return '';
     const films=p24FocusFilms(b);
@@ -1093,7 +1112,7 @@
     const now2=(r.now||[]).length||!macbook.job?r.now:[{id:macbook.job,title:'',agent:'macbook'}];
     return {...r,state:macbook.state||r.state,why,seen:macbook.at,agents:macbook.agents||r.agents,now:now2};
   }
-  // Four compact traffic-light cards in one row — no long job titles (Ben, 6 Nov ~22:14).
+  // Four compact traffic-light chips: "1 on · 41 done" / "Idle · 0 done" (Ben, 6 Nov ~23:05).
   function machinesCard(b, now) {
     const m=b.machines;
     const byId=Object.fromEntries(((m&&m.machines)||[]).map(r=>[r.id, liveMachineRow(r, now)]));
@@ -1101,15 +1120,14 @@
       const r=byId[meta.id]||{id:meta.id, name:meta.name, now:[], done24:0, state:''};
       const t=machineTraffic(r);
       const working=t.count>0?`${t.count} on`:`${t.word}`;
-      const done=`${r.done24||0}`;
+      const caption=`${working} · ${r.done24||0} done`;
       return `<a class="ov-card mc-chip light-${t.light}" href="#agents" aria-label="${esc(meta.name)}: ${t.word}">
         <i class="mc-light" aria-hidden="true"></i>
         <b class="mc-short">${esc(meta.short)}</b>
-        <span class="mc-chip-state">${esc(working)}</span>
-        <span class="mc-chip-done">${esc(done)} done</span>
+        <span class="mc-chip-state">${esc(caption)}</span>
       </a>`;
     }).join('');
-    return `<section class="overview-machines" aria-label="Machines"><h2>Machines</h2><div class="mc-row">${chips}</div></section>`;
+    return `<section class="overview-machines" aria-label="Machines"><div class="ov-section-head"><h2>Machines</h2><span class="ov-count">${MACHINE_ORDER.length} total</span></div><div class="mc-row">${chips}</div></section>`;
   }
   // Kept for tests / reuse; Overview home no longer renders Agents (Agents tab owns that).
   function agentsCards(b) {
@@ -1131,18 +1149,19 @@
   }
   function last24Section(b) {
     const p=b.progress24h; if(!p) return '';
-    return `<section class="overview-p24 overview-last24" aria-label="Last 24 hours"><h2>Last 24 hours</h2>${p24Glance(p, p24FocusFilms(b))}</section>`;
+    return `<section class="overview-p24 overview-last24" aria-label="Last 24 hours"><div class="ov-section-head"><h2>Last 24 hours</h2></div>${p24Glance(p, p24FocusFilms(b))}</section>`;
   }
-  // Home slim (Ben, 6 Nov ~22:25): Activity → Machines → Last 24h → Working on now → Totals.
-  // Agents, Next to go live, and Ready for review / Next in production stay off home (other tabs).
+  // Cleaner dashboard (Ben, 6 Nov ~23:05): Header → stats → Needs attention → Machines →
+  // Active jobs → Working on now → Last 24h → Totals. No Agents / Next live / feature card.
   function overview(b, now) {
     const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
-      <div class="overview-stats" aria-label="Studio video counts"><a class="ov-card" href="#review"><b>${s.ready.length}</b><span>To review</span></a><a class="ov-card" href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a class="ov-card" href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
-      ${activityCard(b,now)}
+      <div class="overview-stats" aria-label="Studio video counts"><a class="ov-stat" href="#review"><b>${s.ready.length}</b><span>To review</span></a><a class="ov-stat" href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a class="ov-stat" href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
+      ${needsAttentionBanner(b)}
       ${machinesCard(b,now)}
-      ${last24Section(b)}
+      ${activityCard(b,now)}
       ${workingOnNow(b)}
+      ${last24Section(b)}
       ${p24Totals(b)}</div>`;
   }
 
