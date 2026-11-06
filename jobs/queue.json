@@ -190779,18 +190779,24 @@
           "at": "2026-11-06T15:45Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T15:46Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Assemble Short_C_v03 from locked C-v03a + VO; gates; park for Chief; no upload",
+      "remaining_action": "Read the locked Short C schedule and the recorded opening line",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-06T15:45Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 5,
+        "at": "2026-11-06T15:46Z",
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2256",
