@@ -179224,10 +179224,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-06T08:05Z",
-      "eta": "2026-11-06T10:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -179651,6 +179651,11 @@
           "at": "2026-11-06T08:08Z",
           "by": "codex",
           "what": "step 1 of 4 done: Local 21cdd87bb5: 17 reviewed exports rendered; preview/source/render hashes and 1836 exact decoded frames verified. Preserve 39 earlier exports. Licensed harvest incomplete; original 1/4 retained."
+        },
+        {
+          "at": "2026-11-06T08:08Z",
+          "by": "codex",
+          "what": "released: Clean local checkpoint 21cdd87bb5 on worker/J2089-ocean in /private/tmp/J2089-ocean-wt; original 1/4 retained. Rendered 15 J2177 mechanisms, J2247 size and J2264 ocean; 17 reviewed preview hashes and 1836 decoded frames exactly verified. Manifests/checks in checkpoint v14; media in ~/_desk/cache/J2089/{mechanism,size,ocean}_renders_v01. Detached J2089-reviewed-exports completed exit0, logs/done ~/_desk/logs/J2089-reviewed-exports.{log,done}; no background process. Preserve 39 prior exports. Next fix r10/r32, apply J2177 source allocations, finish licensed harvest/real-body graphics/composites; J2260/J2262/frame0/APL holds remain. Inherited public-push rejection respected, local integration for Chief. GBP0; no publishing/PASS/merge."
         }
       ],
       "remaining_action": "Fix two mechanism stills, apply reviewed source allocations and finish licensed harvest/composites",
