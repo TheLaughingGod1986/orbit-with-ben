@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-06T15:13:36.177957+00:00",
+  "agent": "codex",
+  "tests": {
+    "service_gateway_tests": 51,
+    "git_gateway_tests": 3,
+    "result": "PASS"
+  },
+  "installed": [
+    {
+      "source": "07_Content-Ops/scripts/codex_youtube_defaults.py",
+      "installed": "/Users/benjaminoats/.codex/bin/studio-youtube-defaults.py",
+      "sha256": "5e5d238b0a2cfdeed434a28715064352fcc298a74ca98da14b1b3bd8aaf95e46",
+      "matches": true
+    },
+    {
+      "source": "docs/codex/studio.rules",
+      "installed": "/Users/benjaminoats/.codex/rules/studio.rules",
+      "sha256": "e3b8c84f190b89dc68318c65d86e1fae5cfdc57c599690695cff78f2b94581fa",
+      "matches": true
+    }
+  ],
+  "live_plan": {
+    "channel": "owb",
+    "video": "Js6EQJ8qDi8",
+    "apply": false,
+    "change": true,
+    "privacyStatus": "private",
+    "publishAt": "2026-11-08T18:00:00Z",
+    "selfDeclaredMadeForKids": false,
+    "containsSyntheticMedia": true
+  },
+  "policy": {
+    "youtube_defaults": "allow",
+    "outside_curl": "unmatched",
+    "outside_live_probe": "require_escalated explicitly requested; approved HTTP 200; no prefix added",
+    "startup_reload": "not independently proven; no new worker started"
+  },
+  "git_probe": {
+    "dry_run_exit": 0,
+    "scratch_branch": "codex/j2040-permission-probe",
+    "remote_ref_exists": false,
+    "deletion": "not needed; dry-run created no branch"
+  },
+  "J2007": "cancelled; not retried",
+  "disk_free_mb": 25562,
+  "service_writes": false,
+  "remaining": "Buffer creation and package/write integration; fresh-session rule attribution"
+}

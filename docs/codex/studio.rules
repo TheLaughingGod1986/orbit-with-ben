@@ -33,3 +33,12 @@ prefix_rule(
     match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-buffer-reschedule.py --channel owb --video Js6EQJ8qDi8"],
     not_match = ["python3 07_Content-Ops/scripts/codex_buffer_reschedule.py", "curl https://example.com", "npm run buffer:check"]
 )
+
+# Fixed house flags only; live registered private schedule is preserved.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-youtube-defaults.py"],
+    decision = "allow",
+    justification = "J2040: restore house audience/disclosure flags only on registered processed private schedules; no title, upload, delete, schedule change or public transition.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-youtube-defaults.py --channel owb --video Js6EQJ8qDi8"],
+    not_match = ["npm run youtube:auth", "npm run youtube:package", "curl https://example.com"]
+)
