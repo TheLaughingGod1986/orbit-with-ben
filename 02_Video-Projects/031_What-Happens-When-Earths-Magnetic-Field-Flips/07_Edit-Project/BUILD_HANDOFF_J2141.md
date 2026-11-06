@@ -32,6 +32,14 @@ Reproduce into a fresh directory with `code_graphics.py timeline --out …
 --manifest …`; existing media is refused. £0 spent; no archive search,
 search-budget reset, narration change or publishing change.
 
+NAS offload was required at ~10 GB free and began copying old scratch
+`/private/tmp/j1843-capacity`. The original in-process copier was stopped
+before restarting under detached tmux `J2141-scratch-offload`; the partial NAS
+copy is retained and the existing script resumes it under its lock/checksum
+rules. Log: `/Users/benjaminoats/_desk/logs/J2141-scratch-offload.log`;
+completion: same prefix `.done`. Missing completion means still running:
+never start another copy. No successful offload or regained headroom claimed.
+
 Earlier open PRs #539/#551/#555/#562/#564/#569 remain separate and must be
 integrated without losing their CLI modes. Remaining work: licensed archive
 harvest, Mars/Earth bodies, R41 ISS atmosphere fallback, complete row
