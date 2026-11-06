@@ -190387,17 +190387,22 @@
           "at": "2026-11-06T12:42Z",
           "by": "codex",
           "what": "step 1 of 3 done: Storage offload finished: no eligible 48-hour scratch. Live balance 93426; exact 47-character dry-run PASS. Native HOS el_guard provides the one-recorder lock."
+        },
+        {
+          "at": "2026-11-06T12:42Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: One take completed: vo_check PASS, Scribe exact 7/7 words, -20.4 LUFS, 2.88 seconds including padding; checking spoken end before handoff."
         }
       ],
-      "remaining_action": "Record the single approved pickup and verify Scribe words, loudness and duration",
+      "remaining_action": "Save verified pickup evidence and hand off to the assembly successor",
       "kind": "vo",
       "model": "eleven_v3",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-06T12:42Z",
         "by": "codex",
-        "note": "Storage offload finished: no eligible 48-hour scratch. Live balance 93426; exact 47-character dry-run PASS. Native HOS e"
+        "note": "One take completed: vo_check PASS, Scribe exact 7/7 words, -20.4 LUFS, 2.88 seconds including padding; checking spoken e"
       },
       "taskKeys": [
         "HOS:008"
