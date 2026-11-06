@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2310 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for k2kEaA7ICjc; preserve scheduled copy | J2207 / h47 |
 | J2311 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for heiGCnGKTkE; preserve scheduled copy | J2207 / h47 |
 | J2312 | any | open | – | – | 026 edit · review · OWB 026 E1 recorded-word conflict: decide J2307 recipe or retain original | J2307 / PR591 |
+| J2313 | any | open | – | – | review · Verify condition for J2040 |  |
 
 Recently finished:
 
