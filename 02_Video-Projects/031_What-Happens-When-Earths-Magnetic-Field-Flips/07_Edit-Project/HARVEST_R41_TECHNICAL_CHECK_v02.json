@@ -1,0 +1,194 @@
+{
+  "job": "J2141",
+  "row": 41,
+  "spend_gbp": 0,
+  "asset_id": "eol-sunsetchina-iss-20120413",
+  "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/plate_031_r41_atmosphere_v02.mp4",
+  "sha256": "ac0136c5bc050f09956daaa408afb74c19344d62b0f35cfed9e0c996b610199b",
+  "bytes": 14847397,
+  "film_start_s": 418.86,
+  "film_end_s": 423.24,
+  "encoded_duration_s": 4.4,
+  "assembly_tail_trim_s": 0.02,
+  "source_interval_s": [
+    3.6,
+    8.0
+  ],
+  "crop_xywh": [
+    0,
+    96,
+    1024,
+    576
+  ],
+  "scale": 1.875,
+  "fps": 25,
+  "native_fps": 12,
+  "native_time_lapse": true,
+  "no_loop": true,
+  "no_interpolation": true,
+  "audio": false,
+  "credit": "NASA",
+  "identity": "Sunset over China, not sunrise",
+  "input_checks": [
+    {
+      "path": "/Users/benjaminoats/_desk/J2141-r41-v01/sunsetchina_iss_20120413HD_web.mp4",
+      "sha256": "b547de4b48837857ccba301c6d2654c28ab34e0afc8aef6b3724a8d763d2d48a"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/J2141-r41-v01/CrewEarthObservationsVideos.html",
+      "sha256": "2b2e629cb127db18663d1da0b69c80e6b549f2dcd0263bf8ad02e3f84887840b"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/J2141-r41-v01/sunsetchina_catalog_excerpt.txt",
+      "sha256": "3af76b6c143aaf6ac02481c8b668924957641554215b3c30398fa44fdd558212"
+    },
+    {
+      "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_v01/NASA_MEDIA_POLICY.html",
+      "sha256": "3969bc2ca91e9603967c36201c7803ae1401b2a1519d400a2aaea97032231ff7"
+    }
+  ],
+  "full_decode": true,
+  "format_checks": true,
+  "command": [
+    "ffmpeg",
+    "-v",
+    "error",
+    "-n",
+    "-ss",
+    "3.6",
+    "-i",
+    "/Users/benjaminoats/_desk/J2141-r41-v01/sunsetchina_iss_20120413HD_web.mp4",
+    "-loop",
+    "1",
+    "-i",
+    "/Users/benjaminoats/_desk/J2141-r41-plate-v02/NASA_credit.png",
+    "-frames:v",
+    "110",
+    "-filter_complex",
+    "[0:v:0]setpts=PTS-STARTPTS,crop=1024:576:0:96,scale=1920:1080:flags=lanczos,eq=brightness=0.015:saturation=1.06,noise=alls=4:allf=t,fps=25[plate];[plate][1:v:0]overlay=0:0:shortest=1[out]",
+    "-map",
+    "[out]",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-crf",
+    "18",
+    "-preset",
+    "fast",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "/Users/benjaminoats/_desk/J2141-r41-plate-v02/plate_031_r41_atmosphere_v02.mp4"
+  ],
+  "samples": [
+    {
+      "time_s": 0,
+      "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/encoded_0.png",
+      "sha256": "8efd0414b1a8b691e53f8f94cc52120ab30690e357d46d44f59cb1f446e8e490"
+    },
+    {
+      "time_s": 0.8,
+      "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/encoded_1.png",
+      "sha256": "8402f78a868fbbc8e9683cd950c35515cb43fb6b5de5a99cb78de7c9127c7d1a"
+    },
+    {
+      "time_s": 1.6,
+      "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/encoded_2.png",
+      "sha256": "ebca50b007111deb6fe34554ad10f4060f5fe67992ce0bb961108a32a08b44e4"
+    },
+    {
+      "time_s": 2.4,
+      "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/encoded_3.png",
+      "sha256": "9e0e4d14db0ea0657aefbabb0924bb7abc683d02f03702d9d4bfc92f4fcb3fdd"
+    },
+    {
+      "time_s": 3.2,
+      "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/encoded_4.png",
+      "sha256": "9825d01c6bd679985d3e7ee6861e3d4b6af82da428d6d3c33f88af0848c85840"
+    },
+    {
+      "time_s": 4.36,
+      "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/encoded_5.png",
+      "sha256": "02c3b8fe3bde3b27d9e7f5ba8e9ba503e7df50eda359f45dc64f8fa4e16c54eb"
+    }
+  ],
+  "contact_sheet": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/CONTACT_v01.jpg",
+  "contact_sha256": "ff285c25c843bcaab1f445deded2757b7222fdc72d73ac99d402fd508cfb28a5",
+  "status": "technical_candidate_not_KEEP",
+  "motion_perception": false,
+  "audio_perception": false,
+  "component_polish": {
+    "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/polish_gate.json",
+    "sha256": "ca99e23766f06ba8e3ef70ca6bd1a17dd8dd99dc2716fba302d1fc419f4def90",
+    "result": {
+      "rule": {
+        "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+        "split_panel": "full-height/width seam or gutter",
+        "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+        "near_black": "mean < 28.0 or p95 < 50.0",
+        "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+        "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+      },
+      "low_detail_floor": {
+        "std": 13.44,
+        "edge": 0.0259,
+        "calibration": {
+          "video": "025_MarsRobot_full_rough_v02d.mp4",
+          "factor": 1.2,
+          "frames": [
+            {
+              "source": "PIA22223.jpg",
+              "t": 201.0,
+              "std": 12.1,
+              "edge": 0.0223
+            },
+            {
+              "source": "PIA22223.jpg",
+              "t": 216.3,
+              "std": 11.2,
+              "edge": 0.0216
+            },
+            {
+              "source": "PIA22929.jpg",
+              "t": 297.4,
+              "std": 26.54,
+              "edge": 0.5735
+            }
+          ]
+        }
+      },
+      "video": "/Users/benjaminoats/_desk/J2141-r41-plate-v02/plate_031_r41_atmosphere_v02.mp4",
+      "edge_floor": 0.0048,
+      "verdict": "PASS",
+      "failed": [],
+      "warn": [],
+      "reviewed_ok": [],
+      "rows": [
+        {
+          "cut": 0,
+          "row": 41,
+          "source": "eol-sunsetchina-iss-20120413",
+          "t": 2.2,
+          "std": 52.04,
+          "mean": 48.04,
+          "p95": 168.0,
+          "edge": 0.0048,
+          "hf": 2.81,
+          "lf": 51.34,
+          "std8": 51.78,
+          "edge8": 0.0996,
+          "seams": [],
+          "video": true,
+          "fail": [],
+          "warn": []
+        }
+      ]
+    }
+  },
+  "static_contact_sheet_inspected": true,
+  "superseded_output": {
+    "path": "/Users/benjaminoats/_desk/J2141-r41-plate-v01/plate_031_r41_atmosphere_v01.mp4",
+    "reason": "108 frames / 4.32 s; too short, never assemble"
+  }
+}

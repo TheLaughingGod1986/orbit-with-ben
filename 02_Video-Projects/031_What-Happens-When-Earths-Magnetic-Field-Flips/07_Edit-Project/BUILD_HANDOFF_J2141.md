@@ -2,6 +2,46 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## R41 finished plate checkpoint (7 Nov UTC, Codex)
+
+Preserve queue **1/3**, PR **#575**. Starts from `7d089900d8`. Spend **£0**.
+Built the already harvested NASA *Sunset over China* interval 3.60–8.00 s
+into `plate_031_r41_atmosphere_v02.mp4` under
+`/Users/benjaminoats/_desk/J2141-r41-plate-v02/`. No new archive search.
+
+R41 film window is 418.86–423.24 s (4.38 s); encode is exactly 110 frames /
+4.40 s at 25 fps. Trim 0.02 s from its tail at final timeline assembly;
+never retime or trim the VO. Crop 1024×576 at (0,96), scale 1.875×, light
+grade, fine grain and NASA corner credit. Native 12 fps time-lapse converted
+to 25 fps by duplication: no loop, interpolation, slowdown or generated image.
+Source is sunset, never relabel sunrise. NASA source audio excluded.
+
+Source, catalog, excerpt and terms hashes verified. Entire output decodes;
+1920×1080, yuv420p, 25 fps, no audio, exactly 110 frames. Six encoded stills
+and CONTACT_v01.jpg inspected: blue atmospheric band and sun remain visible;
+no source title/end-card in sampled frames. Component check output:
+
+```text
+polish gate PASS: 0 of 1 rows failed, 0 to look at
+```
+
+`HARVEST_R41_TECHNICAL_CHECK_v02.json` records hashes, command, metadata,
+samples and component polish report/hash. `build_r41_limb.py` reproduces into
+a fresh directory and refuses existing outputs. Preserve v01 (108 frames /
+4.32 s) as failed evidence: do not assemble. Corrected v02 resets source PTS
+and requests 110 frames explicitly. No checker changed or gate waived.
+
+Detached `J2141-r41-plate-v02` completed **exit 0**; no active render. Log and
+completion: `/Users/benjaminoats/_desk/logs/J2141-r41-plate-v02.log` and `.done`.
+Media is persistent under `_desk`; no media committed. Required NAS offload
+deferred to its 01:00–06:00 window with about 9.5 GB free; no NAS deletion.
+
+This is component technical/still evidence only, no motion/audio perception,
+KEEP, whole-film QA or picture-stage approval. Continue wider real-picture
+harvest, remaining composites, coverage/reuse checks and full picture/polish
+QA. Preserve exhausted search budgets and existing source/gate conflicts.
+Nothing needs Ben at this checkpoint; no public or paid action.
+
 ## Hubble footage checkpoint (6 Nov, Codex)
 
 Preserve queue **1/3**, PR **#575**, `worker/J2141-integrated-v01`.
