@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24MergeFilms, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -556,18 +556,23 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
     {agent: 'macbook', up: true, now: '', queued: 0},
   ], note: 'Estimate'}};
   const card = t.machinesCard(qb, now);
-  assert(card.includes('Mac mini') && card.includes('45') && card.includes('J2276'), card);
-  assert(card.includes('ov-card mc-machine'), 'each machine is a simple card');
-  assert(card.includes('no MacBook job waiting'), card);
+  assert(card.includes('Mini') && card.includes('45') && card.includes('mc-row'), card);
+  assert(card.includes('mc-chip') && card.includes('light-green'), 'working machine gets a green traffic light');
+  assert(card.includes('MacBook') && card.includes('Claude') && card.includes('Grok'), 'four machine chips stay in one row');
+  assert(!card.includes('Verify condition for J2033'), 'long machine job titles are not dumped on Overview chips');
   assert(!card.includes('By gemini') && !card.includes('By macbook') && !/By claude/.test(card), 'per-machine By splits are gone');
   assert(!card.includes('Agents here'), 'Agents here CLI list is gone');
-  assert(!card.includes('seen 4 min ago'), 'fresh last-seen is hidden');
-  assert(card.includes('seen 12 h ago'), 'stale last-seen (~30+ min) remains');
-  assert(card.includes('overview-agents') && card.includes('Agents and their lines'), 'Agents stays a separate section');
-  assert((card.match(/aria-label="Machines"/g)||[]).length===1 && (card.match(/aria-label="Agents and their lines"/g)||[]).length===1,
-    'Machines and Agents are not merged into one list');
+  assert(!card.includes('overview-agents'), 'Machines section does not swallow Agents');
+  assert((card.match(/aria-label="Machines"/g)||[]).length===1, 'Machines is its own section');
+  const agents = t.agentsCards(qb);
+  assert(agents.includes('overview-agents') && agents.includes('aria-label="Agents"'), 'Agents stays a separate section');
+  assert(agents.includes('mc-chip') && agents.includes('light-green') && agents.includes('J2276'), 'agent chips use traffic lights');
+  assert(agents.includes('light-red') || agents.includes('Idle') || agents.includes('Down'), 'idle/down agents get a red light');
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
   assert(ov.includes('overview-stats') && ov.includes('ov-card'), 'Overview stacks simple cards');
+  assert(ov.indexOf('overview-activity') < ov.indexOf('overview-machines'), 'Studio Activity sits above Machines');
+  assert(ov.indexOf('overview-machines') < ov.indexOf('overview-agents'), 'Machines sit above Agents');
+  assert(ov.includes('overview-agents') && ov.includes('mc-chip'), 'Overview keeps separate Agents traffic-light cards');
 }
 console.log('Queue forecast checks OK');
 
@@ -636,9 +641,11 @@ console.log('Queue forecast checks OK');
     'glance strip shows done today, left, and cannot-run counts');
   assert(card.includes("Can't run yet") && card.includes('J2142') && card.includes('Will run automatically after J2141'),
     'glance can\'t-run list uses will-run-after wording, not a mysterious wall');
-  assert(!card.includes('p24-glance-fold'), 'cannot-run task names are not hidden behind a glance disclosure');
+  assert(card.includes('p24-glance-fold'), 'cannot-run blurbs sit behind a glance accordion');
   assert(card.includes('Next to go live') && card.includes('Could a Robot Survive on Mars?') && card.includes('Why Vaccines Are Named After a Cow'),
     'next four going-live videos are listed from existing publish times');
+  assert(card.indexOf('p24-glance') < card.indexOf('overview-next-live') || card.indexOf('p24-glance') < card.indexOf('Next to go live'),
+    'next-to-go-live is apart from the last-24h headline card');
   // Compact film card + checklist behind disclosure.
   assert(card.includes('6 of 9 stages · picture still open') && card.includes('Done today') && card.includes('Left') && card.includes("Can't run"),
     'film cards show % reason and headline counts without opening anything');
@@ -690,6 +697,14 @@ console.log('Queue forecast checks OK');
   assert(ov.includes('p24-film-card') && ov.includes('Last 24 hours'), 'Overview includes the film job cards');
   assert(ov.includes('p24-check') && ov.includes('data-job-state="progress"'), 'Overview checklist marks survive the full overview render');
   assert(ov.includes('p24-glance') && ov.includes('Next to go live'), 'Overview glance strip survives the full overview render');
+  assert(ov.includes('overview-activity') && ov.indexOf('overview-activity') < ov.indexOf('overview-last24'),
+    'Studio Activity stays top-and-center above Last 24 hours');
+  assert(ov.includes('overview-working') && ov.includes('overview-p24-stats'),
+    'Working on now and studio totals are separate sections');
+  assert(ov.indexOf('overview-working') < ov.indexOf('overview-p24-stats'),
+    'film percentages sit above the 46/milestones totals line');
+  assert(ov.includes('p24-glance-fold') && !/<details[^>]*p24-check-fold[^>]*\sopen/i.test(ov),
+    'can\'t-run details fold closed; film checklists stay closed by default');
 
   // Focus filter (Ben, 6 Nov evening): Overview film cards = studio focus only; glance matches those cards.
   const focused = t.progressCard({
