@@ -191822,9 +191822,14 @@
           "at": "2026-11-06T11:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T11:45Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2277; starting review of 032 R10 spectrum and R32 scalemap corrected stills"
         }
       ],
-      "remaining_action": "Review two corrected Titan graphic stills and reopen their parent for export if KEEP",
+      "remaining_action": "Inspect commit 176a3ef889, read J2177 review and J2089 v16 manifest/verification, and view R10/R32 corrected still previews",
       "due": "2026-11-09T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected methane spectrum and lake-area graphics before they are animated.",
@@ -191839,12 +191844,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-06T11:45Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2277; starting review of 032 R10 spectrum and R32 scalemap corrected stills"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     }
   ],
   "focus": [],
