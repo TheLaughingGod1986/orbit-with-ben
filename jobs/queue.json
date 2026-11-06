@@ -191061,9 +191061,14 @@
           "at": "2026-11-06T08:53Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed. Locating master and package."
+        },
+        {
+          "at": "2026-11-06T08:56Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Master hash matches f4b046d4… duration 24.250s 1080x1920. No 2026-11-18 row in HOS UPLOADS.json."
         }
       ],
-      "remaining_action": "Verify the Short B master, hash and a free 11:30 slot",
+      "remaining_action": "Build the Short B package and confirm the 18 Nov slot is free",
       "due": "2026-11-17T20:00:00Z",
       "kind": "studio",
       "plain": "Upload the Ben-OK’d HOS 006 Short B v02 Private for Wed 18 Nov 11:30, linked to the live long.",
@@ -191083,11 +191088,11 @@
       },
       "urgent": 11,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-06T08:53Z",
+        "at": "2026-11-06T08:56Z",
         "by": "cursor",
-        "note": "Claimed. Locating master and package."
+        "note": "Master hash matches f4b046d4… duration 24.250s 1080x1920. No 2026-11-18 row in HOS UPLOADS.json."
       },
       "taskKeys": [
         "HOS:006"
