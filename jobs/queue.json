@@ -196144,10 +196144,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-06T23:53Z",
+      "eta": "2026-11-07T01:53Z",
       "created_by": "cursor",
       "created_at": "2026-11-06T23:32Z",
       "result": "",
@@ -196166,6 +196166,11 @@
           "at": "2026-11-06T23:52Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Cursor is unavailable or lacks required input; next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-06T23:53Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Decide KEEP or FIX on the local Monday Short candidate",
@@ -196179,7 +196184,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T23:53Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
