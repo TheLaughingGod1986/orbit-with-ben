@@ -179199,13 +179199,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-06T05:25Z",
-      "eta": "2026-11-06T07:25Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
-      "result": "review J2251 KEEP (5 Nov, PR #556 71c483662): r52_uranus_21y still KEEP as built; retain as duration-only CODE graphic (weic2310a vertical rings show sideways tilt in R52 cuts 1-2; no 2D tilt-axis line on PIA18182); use PIA18182 once in R52; render under --approved r52_uranus_21y --review-ref J2251 after replacing draft --render guard with qtrle export. Preserve 38 exports and J2177/J2247/frame0/Huygens/APL holds.",
+      "result": "parked for Chief: J2264 must review local f01ef6a65d R35 ocean still and PIA14602 source allocation before render. Original 1/4 retained; 39 exports preserved. Existing J2177/J2247/J2260/J2262 and frame0/Huygens/APL holds remain. Worktree /private/tmp/J2089-ocean-wt clean; inherited public-push rejection respected. GBP0, no MOV or final approval.",
       "history": [
         {
           "at": "2026-11-04T18:23Z",
@@ -179591,6 +179591,11 @@
           "at": "2026-11-06T05:29Z",
           "by": "codex",
           "what": "step 1 of 4 done: Local f01ef6a65d: R35 ocean draft inspected; 109 layouts, hashes, exact preview, alpha, label lengths, no upscale and render guard verified. No MOV; 39 exports and existing holds preserved."
+        },
+        {
+          "at": "2026-11-06T05:30Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: J2264 must review local f01ef6a65d R35 ocean still and PIA14602 source allocation before render. Original 1/4 retained; 39 exports preserved. Existing J2177/J2247/J2260/J2262 and frame0/Huygens/APL holds remain. Worktree /private/tmp/J2089-ocean-wt clean; inherited public-push rejection respected. GBP0, no MOV or final approval."
         }
       ],
       "remaining_action": "Obtain Chief ocean-still review, then finish licensed harvest and graphics",
