@@ -183667,9 +183667,14 @@
           "at": "2026-11-06T18:21Z",
           "by": "relay",
           "what": "condition verification queued: J2295"
+        },
+        {
+          "at": "2026-11-06T18:55Z",
+          "by": "macbook",
+          "what": "condition recorded; next verification 2026-11-07T00:53:00Z"
         }
       ],
-      "remaining_action": "Correct exact-script wording and verify chapter tails before VO approval",
+      "remaining_action": "On Mac mini: push /private/tmp/codex-J2157 (bf751c1e3f) and complete Ch 5/Ch 6 pickups (looked back, Real Worlds) + chapter-tail checks on pluto_frozen_heart_vo_v01.mp3",
       "kind": "vo",
       "urgent": 1,
       "progress": {
@@ -183684,9 +183689,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Verification FIX: targeted Scribe repeats looked/looks back and Real Worlds/Real World; exact-script pickups or conclusive verification plus chapter-tail checks required. Existing take preserved; do not regenerate full VO. Evidence local commit bf751c1e3f at /private/tmp/codex-J2157; automatic review rejected evidence-branch push (internal transcript/spend payload destination not established trusted); explicit approval required for that push. No shot-list release.",
-        "check_at": "2026-11-06T19:21:53+00:00",
-        "recheck_task": "J2295"
+        "condition": "Verification FIX on Mac mini (/Users/benjaminoats/_desk/logs/J2157-vo.log, pluto_frozen_heart_vo_v01.mp3): local commit bf751c1e3f in /private/tmp/codex-J2157 and /private/tmp/J2157-codex-wt (jobs/reviews/J2157/REVIEW.md, pluto_frozen_heart_vo_v01_TAKE.json, 3801-credit ElevenLabs spend ledger rows) is still unpushed to origin, and targeted Scribe discrepancies in Ch 5 line 94 (\"looked back\" vs \"looks back\") and Ch 6 line 110 (\"Real Worlds\" vs \"Real World\") plus chapter-tail decay checks require exact-script pickups or conclusive verification on the Mac mini while preserving existing v01 take. No shot-list release.",
+        "check_at": "2026-11-07T00:53:00Z",
+        "last_recheck": "J2295",
+        "checked_at": "2026-11-06T18:55:07+00:00",
+        "checked_by": "macbook"
       }
     },
     {
