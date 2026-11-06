@@ -193696,7 +193696,7 @@
     {
       "id": "J2292",
       "title": "Verify condition for J2033",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2033: J2200 reviewed FIX by elected-Chief codex on 6 Nov, HOS PR439 head 1772cd52 (jobs/reviews/J2276/REVIEW.md, 17fdb5031e). Await J2275 (currently open/unclaimed for codex) no-generation repair of the 6 runner safety/launch defects and renewed J2200 elected-Chief system PASS before minting any of the 20 v05 rows. Existing J2026 scope/caps (5/5 v05 board hashes verified) and PR408 tab-reuse approval (e908c3e2, 5/5 tests OK) retained. 0/20 generated, zero HOS:009 spend (Flow 14,840). Never run tranche1 runner.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2033 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -193716,13 +193716,27 @@
           "at": "2026-11-06T18:11Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T18:11Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1099 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Await J2275 runner repair and J2200 system PASS before generating the 20 rows",
       "kind": "review",
       "recheck_of": "J2033",
       "due": "2026-11-06T19:11:44+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2293",
