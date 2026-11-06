@@ -192605,13 +192605,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T14:34Z",
-      "eta": "2026-11-06T16:34Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-06T14:00Z",
-      "result": "",
+      "result": "FIX (jobs/reviews/J2283/REVIEW.md, 19cfce9eb0): directly inspected 024 muons Short fri06_muons_ground_v02.mp4 (768cf1a4, 22.2s), picture_qa_v02/picture_qa_review.jpg, contact sheet, cover, and all 5 tool-gate reports on the Mini. v02 fixed the v01 7/7 procedural wall, TWO MILLIONTHS card, METRES caption, and cover, and all 5 automated tool gates print PASS. However, visual QA rules FIX for v03 (£0, no upload): (1) 0:17 WARN row s05_earth (15.2-18.2s, Earth_Views offset 46.0s, edge density 0.0219 < p5 0.0291) fails visual QA: docked Soyuz spacecraft/solar array hardware occupies the right third (despite brief/docstring saying station hardware is not used), its 2.67x sigma-18 background blur creates a floating grey/white ghost blob in the top black sky, and the lower cloud fill is washed out under the 16.90s end card; (2) portrait_vf() symmetric feather on limb shots (s02_graphic 3.0-7.2s, s03_earth 7.2-11.2s, s04_earth 11.2-15.2s, s05_earth 15.2-18.2s) pushes a bright blurred second Earth horizon up to y=507..680 above [fg]'s black sky (y=680..816) and sharp horizon (y=816), creating a double-horizon black-band sandwich; (3) s02_graphic (21.6s), s03_earth (14.0s), and s04_earth (26.0s) jump-cut within the same locked-off limb shot, s04_earth crosses an internal source transition at ~13.8s (offset 28.6s), and s02_graphic runs 4.2s (>4.0s). Inherited locked-VO/title scope explicitly assessed and accepted per J2278 except shortening s02_graphic to <=4.0s. Exact £0 v03 repair list (top_black limb feather + station-free Earth_Views/NHQ windows) in jobs/reviews/J2283/REVIEW.md. J2248 stays held for Chief reopen; no Ben watch card, no upload/schedule (Mon 9 Nov 11:30 is iyvWYFP_ETA).",
       "history": [
         {
           "at": "2026-11-06T14:00Z",
@@ -192657,6 +192657,11 @@
           "at": "2026-11-06T14:50Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed jobs/reviews/J2283/REVIEW.md (19cfce9eb0) ruling FIX on fri06_muons_ground_v02.mp4 with exact v03 £0 repair list"
+        },
+        {
+          "at": "2026-11-06T14:50Z",
+          "by": "gemini",
+          "what": "done: FIX (jobs/reviews/J2283/REVIEW.md, 19cfce9eb0): directly inspected 024 muons Short fri06_muons_ground_v02.mp4 (768cf1a4, 22.2s), picture_qa_v02/picture_qa_review.jpg, contact sheet, cover, and all 5 tool-gate reports on the Mini. v02 fixed the v01 7/7 procedural wall, TWO MILLIONTHS card, METRES caption, and cover, and all 5 automated tool gates print PASS. However, visual QA rules FIX for v03 (£0, no upload): (1) 0:17 WARN row s05_earth (15.2-18.2s, Earth_Views offset 46.0s, edge density 0.0219 < p5 0.0291) fails visual QA: docked Soyuz spacecraft/solar array hardware occupies the right third (despite brief/docstring saying station hardware is not used), its 2.67x sigma-18 background blur creates a floating grey/white ghost blob in the top black sky, and the lower cloud fill is washed out under the 16.90s end card; (2) portrait_vf() symmetric feather on limb shots (s02_graphic 3.0-7.2s, s03_earth 7.2-11.2s, s04_earth 11.2-15.2s, s05_earth 15.2-18.2s) pushes a bright blurred second Earth horizon up to y=507..680 above [fg]'s black sky (y=680..816) and sharp horizon (y=816), creating a double-horizon black-band sandwich; (3) s02_graphic (21.6s), s03_earth (14.0s), and s04_earth (26.0s) jump-cut within the same locked-off limb shot, s04_earth crosses an internal source transition at ~13.8s (offset 28.6s), and s02_graphic runs 4.2s (>4.0s). Inherited locked-VO/title scope explicitly assessed and accepted per J2278 except shortening s02_graphic to <=4.0s. Exact £0 v03 repair list (top_black limb feather + station-free Earth_Views/NHQ windows) in jobs/reviews/J2283/REVIEW.md. J2248 stays held for Chief reopen; no Ben watch card, no upload/schedule (Mon 9 Nov 11:30 is iyvWYFP_ETA)."
         }
       ],
       "remaining_action": "Close J2283 with FIX verdict (19cfce9eb0) and post OWB thread report",
@@ -192680,7 +192685,8 @@
       },
       "taskKeys": [
         "OWB:024"
-      ]
+      ],
+      "done_ref": "19cfce9eb0"
     },
     {
       "id": "J2284",
