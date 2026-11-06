@@ -85,6 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2260 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 R19 distance draft: review still and reuse |  |
 | J2262 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 R08 orbital-period draft: review still and source reuse allocation | c95c73b4f9 |
 | J2266 | mini | claimed | codex | 2026-11-06T10:19Z | for codex · review · `gpt-6-astra` · Verify condition for J2172 |  |
+| J2267 | mini | open | – | – | 010 picture · chief · HOS 010: integrate readiness PRs and establish bounded twelve-plate producer | J2266 |
 
 Recently finished:
 

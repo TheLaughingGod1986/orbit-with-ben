@@ -1,5 +1,5 @@
 {
-  "next_id": 2267,
+  "next_id": 2268,
   "jobs": [
     {
       "id": "J0001",
@@ -190753,6 +190753,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2267",
+      "title": "HOS 010: integrate readiness PRs and establish bounded twelve-plate producer",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J2266 acting-Chief ruling, 6 Nov: J2172 remains held. Immediate bounded successor, not another condition poll. GBP0 review/preflight only; no generation in this job.\n1. Review exact HOS PR425/426 shared head 0a9250614ec1a591aa705d5f8e12280c597f507a and prerequisite inventory PR424 ad3c0f4d. Inspect code delta, run resolver/Short-plan tests and check_all in clean HOS worktree; preserve current PIPELINE unrelated state when integrating. Merge one canonical tested branch if PASS; account for duplicate PR and included inventory without double-applying changes. Do not merge/close desk #180.\n2. Reconcile J2211_REVIEW.md budget claims with actual PICTURE_PLAN_v04: review says 109 rows/93 Flow/21796 expected while file says 75 rows/49 Quality/11 Fast/12911 expected and per-part row totals differ. Recompute from exact part boards, distinguish Shorts-only duration-zero rows, and record hashes. No estimate is current credit authority.\n3. Define only the 12 missing unique Shorts-parent moving plates from SHORTS_PICTURE_PLAN_v03, exact prompts/references, quality mode, capped takes/batches, costs, acceptance criteria and generated-vs-KEEP separation. Check existing HOS script/VO acceptance and current rules. Preserve HOS009 J2033 before HOS010 mint; J2033 depends on tested runner J2200. Do not reopen either unrelated hold.\n4. Inspect live Flow account/balance/price and outstanding reservations if proposing spend authority, using existing locks and ledger. Chief may authorize a separate bounded producer only after guards pass; no new service/real money. Queue named kind=video producer with J2033 dependency and required runner dependency; queue independent review before assembly. If preflight cannot justify authorization, record exact failed guard and its concrete remediation job, not absent-Chief/Ben permission.\n5. Update J2172 with producer/review dependency and accurate remaining action. Keep its 1/3, accepted A/C VO hashes, J1004 Option A1, all rule-8/media gates and Ben final watch. No YouTube/Buffer/upload/schedule changes. Report to HOS desk as own agent.\n",
+      "ref": "J2266",
+      "film": "010",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T08:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T08:20Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review readiness code and reconcile plate budgets; establish the capped producer and review dependencies",
+      "due": "2026-11-07T18:00:00Z",
+      "kind": "chief",
+      "plain": "Check the dinosaur Shorts plans and arrange production of their twelve missing moving shots."
     }
   ],
   "focus": [],
