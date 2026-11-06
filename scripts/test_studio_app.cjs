@@ -903,16 +903,22 @@ console.log('Queue forecast checks OK');
   assert(/<b>1<\/b><span>Can't run yet<\/span>/.test(benOv) && benOv.includes('Can&#39;t run 1'),
     'Ben UAT wait counts in glance and the film Can\'t run line');
 
-  // Active non-focus film appears with pulse; Active jobs names the video (Ben, 6 Nov ~23:21).
-  const betelgeuse = v({
+  // Active non-focus film appears with pulse; Active jobs names the video (Ben, 6 Nov ~23:21 / ~23:33).
+  const betelgeuseShort = v({
     key: 'OWB:029:S:heiGCnGKTkE', channel: 'OWB', number: '029', type: 'short',
-    title: 'How Bright Will Betelgeuse Get When It Explode?',
-    jobs: [{id: 'J2311', status: 'claimed', by: 'cursor', title: '029 Short Betelgeuse cut'}],
+    title: 'How Bright Will Betelgeuse Get When It Explodes?',
+    jobs: [{id: 'J2311', status: 'claimed', by: 'cursor', title: '029 Short Betelgeuse cut', progress: {step: 1, of: 5}}],
+  });
+  const betelgeuseLong = v({
+    key: 'OWB:029', channel: 'OWB', number: '029', type: 'long',
+    title: 'Is Betelgeuse About to Explode?',
+    jobs: [], // progress24h items empty — checklist must hydrate from the claimed Short job
   });
   const activeOutsideFocus = {
     models: {checkedAt: new Date(Date.parse('2026-11-06T23:21:00Z')).toISOString()},
     tracker: {videos: [
-      betelgeuse,
+      betelgeuseLong,
+      betelgeuseShort,
       v({key: 'OWB:032', title: 'What Would Happen If You Landed On Titan'}),
       v({key: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips'}),
       v({key: 'OWB:033', title: 'Why Knocked-Sideways Uranus Has 21-Year Winters'}),
@@ -921,7 +927,7 @@ console.log('Queue forecast checks OK');
       focus: ['032', '031', '033'],
       jobs: [{id: 'J2311', status: 'claimed', by: 'cursor', film: '029', repo: 'owb',
         title: '029 Short Betelgeuse cut', claimedAt: new Date(Date.parse('2026-11-06T23:21:00Z')-5*6e4).toISOString(),
-        progress: {step: 0, of: 5}, taskKeys: ['OWB:029:S:heiGCnGKTkE']}],
+        progress: {step: 1, of: 5}, taskKeys: ['OWB:029:S:heiGCnGKTkE']}],
     },
     progress24h: {
       hours: 24, jobsDone: 4, videoJobs: 3, milestones: 1,
@@ -932,8 +938,14 @@ console.log('Queue forecast checks OK');
             why: 'Will run automatically after J2089'}]},
         {film: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips', doneToday: 1, left: 1, blocked: 0, items: []},
         {film: 'OWB:033', title: 'Why Knocked-Sideways Uranus Has 21-Year Winters', doneToday: 1, left: 2, blocked: 0, items: []},
+        // Parent long with empty items — the bug: pulsed as a bare article with Left 0.
+        {film: 'OWB:029', title: 'Is Betelgeuse About to Explode?', doneToday: 0, left: 0, blocked: 0,
+          from: 89, to: 78, items: []},
       ],
-      moved: [{key: 'OWB:032', title: 'What Would Happen If You Landed On Titan', from: 56, to: 67, milestones: 1}],
+      moved: [
+        {key: 'OWB:032', title: 'What Would Happen If You Landed On Titan', from: 56, to: 67, milestones: 1},
+        {key: 'OWB:029', title: 'Is Betelgeuse About to Explode?', from: 89, to: 78, milestones: -1},
+      ],
     },
     machines: {machines: []},
   };
@@ -941,9 +953,11 @@ console.log('Queue forecast checks OK');
   const activeOv = t.overview(activeOutsideFocus, nowActive);
   assert(activeOv.includes('OWB 032') && activeOv.includes('OWB 031') && activeOv.includes('OWB 033'),
     'focus films without claimed work still appear');
-  assert(activeOv.includes('OWB 029') && activeOv.includes('How Bright Will Betelgeuse Get When It Explode?'),
+  assert(activeOv.includes('Is Betelgeuse About to Explode?') && activeOv.includes('How Bright Will Betelgeuse Get When It Explodes?'),
     'claimed work on a non-focus film adds that film to Working on now');
   assert(!activeOv.includes('Old Venus film'), 'films with only recent work stay off Working on now');
+  assert(activeOv.includes('OWB 029 Short') && !activeOv.includes('heiGCnGKTkE'),
+    'Short heading uses a readable label, not the raw YouTube id');
   const workingHtml = t.workingOnNow(activeOutsideFocus);
   assert(workingHtml.includes('is-working') && workingHtml.includes('p24-working-dot') && workingHtml.includes('OWB 029'),
     'non-focus film with claimed work gets the green pulsing marker');
@@ -953,10 +967,27 @@ console.log('Queue forecast checks OK');
     '031 without claimed work has no working marker');
   assert(!t.p24FilmCard(activeOutsideFocus.progress24h.films[2], activeOutsideFocus).includes('is-working'),
     '033 without claimed work has no working marker');
+  // Parent long with empty progress24h items must still expand (Ben, 6 Nov ~23:33).
+  const long029 = t.p24FilmCard(activeOutsideFocus.progress24h.films[3], activeOutsideFocus);
+  assert(long029.includes('is-working') && long029.includes('p24-working-dot'),
+    'parent long with empty items still pulses from the claimed Short job');
+  assert(long029.includes('p24-check-fold') && long029.includes('p24-film-expand') && !/^[\s\S]*<article class="[^"]*is-working/.test(long029),
+    'pulsing parent long is a closed details checklist, not a bare article');
+  assert(long029.includes('J2311') && long029.includes('p24-job-spinner') && long029.includes('data-job-state="progress"'),
+    'hydrated long checklist shows the in-progress job with a spinner');
+  assert(long029.includes('Left 1') && !long029.includes('Left 0'),
+    'hydrated long meta Left counts the claimed job, not the empty progress24h left:0');
+  const short029 = t.p24FilmCard({film: 'OWB:029:S:heiGCnGKTkE', title: 'How Bright Will Betelgeuse Get When It Explodes?', items: []}, activeOutsideFocus);
+  assert(short029.includes('p24-check-fold') && short029.includes('is-working') && short029.includes('J2311') && short029.includes('p24-job-spinner'),
+    'Short row also expands with the in-progress job spinner');
+  assert(short029.includes('OWB 029 Short') && short029.includes('Left 1'),
+    'Short row uses a readable id and Left reflects the claimed job');
+  assert((workingHtml.match(/p24-check-fold/g)||[]).length >= 3,
+    '032 checklist plus both pulsing Betelgeuse rows use expand checklists');
   const aj = t.activityCard(activeOutsideFocus, nowActive);
   assert(aj.includes('aj-icon') && aj.includes('Cursor is working') && aj.includes('J2311'),
     'Active jobs still shows the running agent and job id');
-  assert(aj.includes('How Bright Will Betelgeuse Get When It Explode?') && aj.includes('OWB 029'),
+  assert(aj.includes('How Bright Will Betelgeuse Get When It Explodes?') && aj.includes('OWB 029'),
     'Active job card names the video id and title, not a generic Video production label');
   assert(!/J2311 · Video production/.test(aj), 'Active job subline is not the generic category when a video is linked');
 }
