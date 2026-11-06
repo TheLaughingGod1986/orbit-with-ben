@@ -192765,10 +192765,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T21:28Z",
+      "eta": "2026-11-06T23:28Z",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -192832,6 +192832,11 @@
           "at": "2026-11-06T19:09Z",
           "by": "codex",
           "what": "released: Bounded continuation checkpoint 46d65010 pushed to HOS PR445 (codex/J2275-runner-safety). Finding 6 repaired, including real launch/fake submit, competing launchers and killed-owner recovery tests. 42 tests OK; check_all ALL CHECKS PASS. Continue findings 2/3 (per-Create live UI guard, shared cross-channel reservations/pending/spend reconciliation) and inventory checks from jobs/reviews/J2275/CHECKPOINT.md; worktree /private/tmp/codex-j2275 clean. cmd_submit remains interlocked even armed; J2200 FIX and J2033 held. No spend/submission. Do not mark complete or seek production review yet."
+        },
+        {
+          "at": "2026-11-06T21:28Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Implement live per-Create UI guard and shared cross-channel spend accounting; verify inventory and request J2200 re-review",
