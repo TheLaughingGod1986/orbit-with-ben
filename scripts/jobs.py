@@ -212,6 +212,60 @@ def macbook_portable(job: dict, data: dict | None = None) -> bool:
         and not MEDIA_WORK.search(title) and not MINI_ONLY.search(text)
 
 
+# One plain-English line per job for the board (Ben, 6 Nov 2026: "In simple English I would like a brief description on
+# these cards of what the job is doing"). A job's own `plain` wins; otherwise the first rule matching its title, body
+# and action, then its kind. Agents give `jobs.py add --plain "..."` when the title is studio shorthand.
+PLAIN_RULES = [
+    (r"\bdate gate\b", "Waiting for a set date, then marking a step done"),
+    (r"\bverify condition for\b", "Checking whether a waiting job can start yet"),
+    (r"\b(?:multi-channel plan|cleanup audit|dead code|refactor)\b", "Improving how the studio itself works"),
+    (r"\bTest (?:&|and) Compare\b|title-only test|\bTest [AB] start\b",
+     "Running a YouTube test of two thumbnails or titles to see which gets more clicks"),
+    (r"\b(?:Related(?: video)?|end screens?|pinned comment|Studio finish|playlists?)\b",
+     "Finishing touches in YouTube Studio (end screen, pinned comment, linked videos)"),
+    (r"\b(?:reach|impressions?|CTR|analytics|retention|watch[- ]time|(?:weekly|monthly) \w+ audit|our YouTube numbers|"
+     r"Studio read|studio_ctr|subscribers?|subs per|measure)\b",
+     "Collecting YouTube numbers (views, clicks, how long people watch) to see what works"),
+    (r"\bShorts?\b[^.;]*\b(?:cut|build|assembl\w*|fix\w*|frame 0|opening|v\d+|slots?)\b|\bShort cut\b",
+     "Making or fixing a Short"),
+    (r"\b(?:swap|re-?upload|upload|schedul\w*|go public|privacy)\b", "Uploading or scheduling a video on YouTube"),
+    (r"\b(?:assembl\w*|master gates|finished pack|splice)\b", "Putting the video together"),
+    (r"\b(?:thumb\w*|cover)\b", "Making or checking the thumbnail pictures"),
+    (r"\b(?:mint\w*|shot list|plates?|picture|footage|Flow|Veo|images?|stills?|graphics?)\b", "Making the pictures and video shots"),
+    (r"\b(?:topic|ideas?|neighbou?rs?)\b", "Choosing and checking a new video topic"),
+    (r"\b(?:facts?|fact-check|sources?)\b", "Checking the facts are right"),
+    (r"\b(?:voice[- ]?over|VO|narration)\b", "Recording or checking the voice-over"),
+    (r"\b(?:script)\b", "Writing or fixing the script"),
+    (r"\bShorts?\b", "Making or fixing a Short"),
+    (r"\b(?:cut|edit|render|master|captions?)\b", "Putting the video together"),
+    (r"\b(?:title|description|tags|listing|metadata|chapters)\b", "Writing the title, description and tags"),
+    (r"\b(?:Chief|handoffs?|desk|relay|dispatcher|workers?|allow-list|board page|code|checklist|shared folder|\w+\.py)\b",
+     "Keeping the studio's job system running smoothly"),
+]
+PLAIN_KINDS = {"script": "Writing or fixing the script", "facts": "Checking the facts are right",
+               "review": "Checking work before it moves on", "vo": "Recording or checking the voice-over",
+               "image": "Making pictures", "video": "Making video shots", "thumb": "Making the thumbnail pictures",
+               "chart": "Making a chart or diagram", "assembly": "Putting the video together",
+               "qa": "Checking the finished video for faults", "listing": "Writing the title, description and tags",
+               "studio": "A YouTube Studio task (upload, schedule or settings)", "chief": "A decision for the Chief"}
+
+
+def plain_summary(job: dict) -> str:
+    """One short plain-English line saying what the job is doing, for the board's cards."""
+    if str(job.get("plain") or "").strip():
+        return str(job["plain"]).strip()
+    title = str(job.get("title") or "")
+    rest = " ".join(str(job.get(k) or "") for k in ("remaining_action", "action"))
+    review = job.get("kind") == "review" or re.match(r"\s*Review\b", title, re.I)
+    for text in (title, rest):  # the title says what the job is; its notes only when the title says nothing we know
+        for pattern, line in PLAIN_RULES:
+            if re.search(pattern, text, re.I):
+                if review and not line.startswith("Checking whether"):
+                    return "Checking someone else's work: " + line[0].lower() + line[1:]
+                return line
+    return PLAIN_KINDS.get(job.get("kind") or "", "A studio task")
+
+
 def is_macbook(agent: str) -> bool:
     """A MacBook worker slot: `macbook`, or `macbook-2` etc. when it runs jobs in parallel (Ben, 5 Nov 2026)."""
     return bool(re.fullmatch(r"macbook(?:-\d+)?", str(agent or "")))
@@ -950,6 +1004,7 @@ def main(argv=None) -> int:
     a.add_argument("--kind", default="", choices=[""] + list(routing.KINDS), help="job type; routes it (AGENTS.md 'Who does what')")
     a.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="override the kind's model")
     a.add_argument("--action", default="", help="plain-English action still unfinished")
+    a.add_argument("--plain", default="", help="one plain-English line for the board: what this job does, no shorthand")
     a.add_argument("--due", default="", help="deadline, ISO or YYYY-MM-DD HH:MM London; does not defer start")
     a.add_argument("--not-before", default="", help="deprecated: use a structured wait condition and check-at")
     a.add_argument("--reset", default="", help="deprecated compatibility argument")
@@ -1076,6 +1131,8 @@ def main(argv=None) -> int:
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
                              for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset, due=args.due, action=args.action, requires=args.requires)
+                if args.plain.strip():
+                    job["plain"] = args.plain.strip()
                 if args.approved_from:
                     src = find(data, args.approved_from)
                     if not src:

@@ -116,7 +116,7 @@
   function jobCard(j) {
     const left = etaText(etaOf(j, Date.now())), p = j.progress && j.progress.of ? j.progress : null;
     return `<a class="row" href="#agents"><div class="thumb job">${esc(j.id)}</div><div class="body"><b>${esc(clip(j.remaining_action || j.title, 90))}</b>
-      <span class="meta">Studio job · not one video</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(j.id)}</span>
+      <span class="meta">${esc(j.plain || "Studio job · not one video")}</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(j.id)}</span>
       ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}</div><span class="chev">›</span></a>`;
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
@@ -705,7 +705,7 @@
   function activityCategory(b,j) {
     const text=String(j.title||'')+' '+String(j.remaining_action||'');
     if(/\b(?:dispatcher|frontend|schema|kanban|deployment|rollout|capacity|software|implementation|code patch|checker fix|worker repair|workflow (?:handoff )?(?:fixes?|repair|code))\b/i.test(text)) return {id:'engineering',label:'Engineering'};
-    if(/\b(?:analytics|analytical|impressions|CTR|retention|watch time|daily Studio read|collect(?:ed|ing)? metrics|rebuild the tracker|monthly (?:channel )?(?:improvement )?(?:report|review)|weekly .*audit)\b/i.test(text)) return {id:'analytics',label:'Analytics'};
+    if(/\b(?:analytics|analytical|impressions|reach|CTR|retention|watch time|daily Studio read|collect(?:ed|ing)? metrics|rebuild the tracker|monthly (?:channel )?(?:improvement )?(?:report|review)|weekly .*audit)\b/i.test(text)) return {id:'analytics',label:'Analytics'};
     if(j.recheck_of || /\b(?:verify (?:the )?condition for|orphan-(?:review|blocked))\b/i.test(text)) return {id:'coordination',label:'Coordination'};
     if(activityVideoContext(b,j).count) return {id:'production',label:'Video production'};
     return {id:'operations',label:'Studio operations'};
@@ -781,6 +781,7 @@
       <span class="activity-category" data-category="${category.id}">${category.label}</span>
       <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is ${starting?'starting':'working'}</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
       ${videoContext.count?`<p class="activity-video"><span>${videoContext.count>1?'Videos':'Video'}</span>${esc(videoContext.label)}</p>`:`<p class="activity-video activity-scope-compact">${esc(videoContext.label)}</p>`}
+      ${j.plain?`<p class="activity-plain">${esc(j.plain)}</p>`:''}
       <p class="activity-action">${esc(clip(j.remaining_action||j.title||'Current action not recorded',160))}</p>
       ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:`<p class="activity-progress-missing">${starting?'Preparing to claim the selected job':'Task progress not recorded'}</p>`}
       <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
