@@ -187059,7 +187059,7 @@
       "ref": "",
       "film": "099",
       "stage": "upload",
-      "after": "",
+      "after": "J2285",
       "eta_min": 120,
       "status": "blocked",
       "by": "cursor",
@@ -187067,7 +187067,7 @@
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T09:19Z",
-      "result": "parked for Chief: HOS 099 uAomPaOBrM8 checklist readback. Saved and reloaded: Concept overview, England, places off, chapters and concepts on, moderation Basic, caption never aired on US TV, paid promotion No, Visibility Scheduled, title and description unchanged, Premiere off, 10 Dec 2026 18:00. Not saved: Level still None after Key stage 4 and Year 10; timezone still (GMT+0000) Local Time because London leaves Done disabled; cards not written (intended 17:57 _C92tIJCk8A and 24:14 AL_-qlWko_g). Evidence /Users/benjaminoats/_desk/jobs/J2199 and PR https://github.com/TheLaughingGod1986/history-of-science/pull/442. Not a PASS.",
+      "result": "Chief ruling by codex: FIX, not checklist PASS. PR442 accepted as partial-completion records only; 41/41 evidence hashes match. Cards never created (video ID typed into timecode), Level None and timezone Local Time unresolved. No packages found is not demonstrated lint PASS; fresh channel audit required. Follow-up J2285 is ready now for actual package validation and bounded Studio repair/readback. Original remains blocked until J2285 evidence is accepted; no schedule/privacy/title/spend/test permission added. Ruling https://github.com/TheLaughingGod1986/history-of-science/pull/442#issuecomment-6688296016",
       "history": [
         {
           "at": "2026-11-05T09:19Z",
@@ -187103,9 +187103,14 @@
           "at": "2026-11-06T13:06Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: HOS 099 uAomPaOBrM8 checklist readback. Saved and reloaded: Concept overview, England, places off, chapters and concepts on, moderation Basic, caption never aired on US TV, paid promotion No, Visibility Scheduled, title and description unchanged, Premiere off, 10 Dec 2026 18:00. Not saved: Level still None after Key stage 4 and Year 10; timezone still (GMT+0000) Local Time because London leaves Done disabled; cards not written (intended 17:57 _C92tIJCk8A and 24:14 AL_-qlWko_g). Evidence /Users/benjaminoats/_desk/jobs/J2199 and PR https://github.com/TheLaughingGod1986/history-of-science/pull/442. Not a PASS."
+        },
+        {
+          "at": "2026-11-06T15:19Z",
+          "by": "codex",
+          "what": "Chief ruling by codex: FIX, not checklist PASS. PR442 accepted as partial-completion records only; 41/41 evidence hashes match. Cards never created (video ID typed into timecode), Level None and timezone Local Time unresolved. No packages found is not demonstrated lint PASS; fresh channel audit required. Follow-up J2285 is ready now for actual package validation and bounded Studio repair/readback. Original remains blocked until J2285 evidence is accepted; no schedule/privacy/title/spend/test permission added. Ruling https://github.com/TheLaughingGod1986/history-of-science/pull/442#issuecomment-6688296016"
         }
       ],
-      "remaining_action": "Parked for Chief with the readback",
+      "remaining_action": "Complete J2285 package validation and Studio corrections, then review persisted readback before clearing this hold",
       "kind": "studio",
       "progress": {
         "step": 5,
@@ -187116,7 +187121,12 @@
       },
       "taskKeys": [
         "HOS:099"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J2285 must complete actual package validation, missing Studio corrections and fresh audit; elected Chief accepts readback before J2199 reopens.",
+        "check_at": "2026-11-07T15:30:00Z"
+      }
     },
     {
       "id": "J2200",
