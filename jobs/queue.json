@@ -1,5 +1,5 @@
 {
-  "next_id": 2279,
+  "next_id": 2280,
   "jobs": [
     {
       "id": "J0001",
@@ -192019,6 +192019,38 @@
       "taskKeys": [
         "OWB:024"
       ]
+    },
+    {
+      "id": "J2279",
+      "title": "J0862 v04: audition repeated-phrase word-gate failure and scope repair",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-up to J0862/J2195, HOS PR423. New hos_009_short_B_v04.mp3 and wav in main HOS checkout 009/10_Shorts/vo_v02: hook2.820s after measured silence-only trims; total25.480s with tail; eight cuts. vo_check_py312 fails on both encodings: inserted repeated phrase pull for apples and moons near19.74s in reused v03 body. Directly audition composite and original body[6.020:23.680], inspect committed J0862_v04 gate outputs. Diagnose real repeat vs ASR error; return exact bounded fix or justified correction of an erroneous gate with tests. Do not override FAIL, change locked words, generate another take, or approve from text/measurements. Three retained v02 takes stay KEEP. PR423 contains full evidence; worker has no demonstrated audio input.",
+      "ref": "",
+      "film": "009",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T12:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T12:13Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Listen to the new Moon take and diagnose its failed word check",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "plain": "Listen to the repaired Moon voiceover and resolve the reported repeated phrase"
     }
   ],
   "focus": [],
