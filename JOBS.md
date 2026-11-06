@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2270 | mini | blocked | codex | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2275 | mini | open | – | – | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
-| J2279 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · J0862 v04: audition repeated-phrase word-gate failure and scope repair |  |
+| J2279 | mini | claimed | gemini | 2026-11-06T19:48Z | 009 vo · for gemini · review · `gemini-argon` · J0862 v04: audition repeated-phrase word-gate failure and scope repair |  |
 | J2280 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
 | J2281 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
 | J2285 | mini | blocked | cursor | – | 099 upload · studio · HOS 099: validate package and finish cards, Level and timezone readback |  |
