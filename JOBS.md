@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2288 | mini | open | – | – | 013 vo · for gemini · review · `gemini-argon` · HOS 013 Darwin & Wallace: review Shorts VO A and B | https://github.com/TheLaughingGod1986/history-of-science/pull/444 |
 | J2289 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2255 |  |
 | J2290 | any | claimed | macbook | 2026-11-06T20:16Z | 033 picture · assembly · 033 Uranus: £0 harvest 38 missing stills + CODE graphics from STILLS_LOCK_v01 | J2256/h175 |
-| J2292 | mini | claimed | gemini | 2026-11-06T20:13Z | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
+| J2292 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2293 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
 
