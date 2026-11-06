@@ -190142,9 +190142,14 @@
           "at": "2026-11-06T05:46Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected commit f01ef6a65d, full-size r35_ocean_review.jpg and code_graphic_032_r35_ocean_v01.png, ocean_graphic.py, verify_ocean_graphic.py, and OCEAN_MANIFEST_v01.json"
+        },
+        {
+          "at": "2026-11-06T05:48Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified verify_ocean_graphic.py (109 frames inside 5% safe area, exact preview hash 20d31824409e, source PIA14602 hash 3e893445ca67, upscale 0.941x <= 1.0x), locked R35 VO (373.10-385.06s) & SOURCES.md row 13, and audited PIA14602 across R03, R09, R19, R35"
         }
       ],
-      "remaining_action": "Check R35 against locked script/SHOT_LIST and SOURCES.md row 13, and audit PIA14602 appearances across 032",
+      "remaining_action": "Evaluate R35 ocean still visual/scientific design and resolve PIA14602 <=2-appearance allocation across R03/R09/R19/R35",
       "due": "2026-11-09T18:00:00Z",
       "kind": "review",
       "plain": "Review the Titan underground ocean graphic before it is animated.",
@@ -190158,11 +190163,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-06T05:46Z",
+        "at": "2026-11-06T05:48Z",
         "by": "gemini",
-        "note": "Inspected commit f01ef6a65d, full-size r35_ocean_review.jpg and code_graphic_032_r35_ocean_v01.png, ocean_graphic.py, ve"
+        "note": "Verified verify_ocean_graphic.py (109 frames inside 5% safe area, exact preview hash 20d31824409e, source PIA14602 hash "
       },
       "taskKeys": [
         "OWB:032"
