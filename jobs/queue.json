@@ -1,5 +1,5 @@
 {
-  "next_id": 2302,
+  "next_id": 2303,
   "jobs": [
     {
       "id": "J0001",
@@ -194674,6 +194674,40 @@
         "OWB:024"
       ],
       "done_ref": "766fcbd8d3"
+    },
+    {
+      "id": "J2302",
+      "title": "024 muons v03: review verified UAT repair and detail warning",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review the J2248 muons Short v03 corrective build. Write jobs/reviews/J2248/REVIEW_v03.md with KEEP or FIX; ordinary review only, no final publish OK.\n\nRead jobs/reviews/J2283/REVIEW.md and J2278/CHIEF_RULING.md. Inspect the v03 master, contact sheet, cover/phone preview, full-size flagged frame and all tool reports in the film Short 06_Final-Exports folder and OWB UAT/024_fri06_muons_ground_v03. Verify hashes against v03 metadata and BUILD_v03.md. Direct motion/audio review requires demonstrated capabilities; never infer listening or motion from metrics/stills.\n\nRepairs: 3.8s graphic, top-black limb feather, distinct NHQ angles; 71s window proposed in prior review actually contained station hardware and was replaced by cropped Earth Views 50s limb. Title moved onto Earth image to eliminate a tool-detected horizontal black gutter between text rows. Assess source continuity, no double horizon or hardware, reading/caption timing and inherited locked VO/title exceptions explicitly. One relative low-detail WARN on NHQ B must be inspected, not silently accepted. Sources are existing local files, zero spend. No new generation.\n\nOn FIX return exact repairs to J2248. On KEEP hand off for required Ben final watch via awaits; no upload/schedule before authorization. Mon 9 Nov remains occupied by iyvWYFP_ETA. Preserve v01/v02.\n\nEvidence code/text is local only: branch codex/J2248-v03 commit c34a0429d6, worktree /private/tmp/codex-J2248-v03. Automatic approval review rejected external code/evidence push; do not bypass it. Read reports from that worktree or private UAT. Keep code handoff parked for Chief until authorized. Original shared checkout has unrelated focus edits; they were not changed.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T20:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T20:35Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect v03 motion, sound, source repairs and warning; write KEEP or FIX",
+      "due": "2026-11-09T10:30:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Review the repaired muons Short before its final watch"
     }
   ],
   "focus": [
