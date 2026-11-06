@@ -13,8 +13,9 @@
 | Script review | `npm run review:script` **PASS 95.2 / 100** on locked `uranus_21_year_winter_script_master_v02.md` (1,290 spoken words / 1,347 reviewer words, ~9.0 min, 6 chapters; subscribe beat line 6 at 43%) |
 | Sources | 15 / 15 MUST QUOTE rows **VERIFIED** live in `01_Script/SOURCES.md` + `01_Script/CLAUDE_QUOTE_CHECK_v01.md` |
 | VO | **DONE** (`J2155` / `J2164` KEEP, `02_Voiceover/uranus_vo_v01.wav`, SHA-256 `3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460`, `611.40 s` / `10:11.4`, `-23.3 dB` mean, `-20.22 LUFS`, `-3.77 dBTP`; review: `jobs/reviews/J2164/REVIEW.md`) |
-| Shot list | **DONE (v01 drafted, `J2165`)** (`07_Edit-Project/SHOT_LIST_v01.md` — 67 Scribe-timed rows `0.00–629.40 s`, `4.53 s/cut` mean, 0 split words, 0 adjacent `CODE` rows, `≤ 2` still appearances across 43 verified NASA/JWST/ESA/Wikimedia assets; `05_Music/MUSIC_BRIEF_v01.md` & `06_Sound-Effects/SFX_PLAN_v01.md`; ready for Claude review / Chief price pass) |
-| CG | pending (Vertex Veo / Omni Orbit-only, after VO + shot list; 2 `[ORBIT ACTS]` rows `R29` & `R55` flagged `OMNI (flag)` with £0 `CODE`/`NASA` fallbacks) |
+| Shot list | **PASS (Chief `h94`, `J2238` / `d67daf94`)** (`07_Edit-Project/SHOT_LIST_v01.md` — 67 Scribe-timed rows `0.00–629.40 s`, `4.53 s/cut` mean, 0 split words, 0 adjacent `CODE` rows, `≤ 2` still appearances across 43 NASA/JWST/ESA/Wikimedia assets; `05_Music/MUSIC_BRIEF_v01.md` & `06_Sound-Effects/SFX_PLAN_v01.md`) |
+| Picture / Stills lock | **STILLS LOCK + OMNI R29/R55 PRICE-PASS BRIEF DRAFTED (`J2256` — parked for Chief)** (`07_Edit-Project/STILLS_LOCK_v01.md`, `07_Edit-Project/STILLS_POOL_STATUS_v01.json`, `07_Edit-Project/OMNI_PRICE_PASS_BRIEF_v01.md`, `jobs/reviews/J2256/REVIEW.md`: 5/43 pool assets + 2 aux verified on disk/NAS with SHA-256; 38 missing IDs + `PIA00271` listed for £0 harvest; every still locked to `≤ 2` appearances; Frame 0 locked to `PIA01283` + `PIA01280`; £0 spend) |
+| CG | pending Chief price pass (`07_Edit-Project/OMNI_PRICE_PASS_BRIEF_v01.md`: 2 `[ORBIT ACTS]` rows `R29` & `R55` flagged `OMNI (flag)` with complete £0 `CODE`/`NASA` fallbacks; no Veo/Omni minted) |
 | Runtime target | `10:29.4` (`611.40 s` locked VO + `18.00 s` moving end-screen hold `611.40–629.40 s`) |
 | Shorts | Standalone Short `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*) public 3 Nov 2026 — **461 views, 6 likes on day 1**; two new Shorts (incl. Test A opening Short) after master |
 
@@ -24,8 +25,9 @@
 - [x] Script v02 ≥ 90 (`review:script` PASS 95.2/100 on `uranus_21_year_winter_script_master_v02.md`, 1,290 spoken words)
 - [x] Direct quote check on `01_Script/SOURCES.md` + `CLAUDE_QUOTE_CHECK_v01.md` (15/15 PASS)
 - [x] VO take (`vo_take.py` from `uranus_21_year_winter_script_master_v02.md` — `uranus_vo_v01.wav`, `611.40 s`, accepted in `J2164` / `jobs/reviews/J2164/REVIEW.md`)
-- [x] Timed shot list + music brief + SFX plan (`J2165`: `07_Edit-Project/SHOT_LIST_v01.md`, `05_Music/MUSIC_BRIEF_v01.md`, `06_Sound-Effects/SFX_PLAN_v01.md`)
-- [ ] Stills locked & Claude shot-list review / Chief price pass before Veo/Omni spend
+- [x] Timed shot list + music brief + SFX plan (`J2165` / Chief `h94` PASS in `J2238`: `07_Edit-Project/SHOT_LIST_v01.md`, `05_Music/MUSIC_BRIEF_v01.md`, `06_Sound-Effects/SFX_PLAN_v01.md`)
+- [x] Stills-lock & picture-plan note + OMNI `R29`/`R55` price-pass brief (`J2256`: `07_Edit-Project/STILLS_LOCK_v01.md`, `07_Edit-Project/STILLS_POOL_STATUS_v01.json`, `07_Edit-Project/OMNI_PRICE_PASS_BRIEF_v01.md`, `jobs/reviews/J2256/REVIEW.md` — 5/43 pool assets + 2 aux verified with SHA-256, 38 missing IDs listed for £0 harvest, all stills locked `≤ 2` appearances, £0 spend)
+- [ ] Chief price-pass decision on `R29`/`R55` (and £0 harvest of 38 missing IDs + 10 bespoke `CODE` renders)
 
 ## `npm run review:script` & `npm run gate:episode` (J2148, 4 Nov 2026)
 
