@@ -177357,9 +177357,14 @@
           "at": "2026-11-06T12:23Z",
           "by": "codex",
           "what": "step 3 of 4 done: Recovered existing PR490 at f11e9587e2; prior 3/4 retained. Initial step 0 was reporting reset only. J2007 cancelled; no retry."
+        },
+        {
+          "at": "2026-11-06T12:26Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Added draft Buffer schedule gateway in isolated worktree; 37 gateway tests pass. It uses live YouTube time, checks registered post ownership/status, takes desk lock and rejects arbitrary content/times/deletion. No service writes."
         }
       ],
-      "remaining_action": "Implement guarded service writes and verify approval boundaries",
+      "remaining_action": "Verify restricted Buffer schedule reconciliation; remaining creation and YouTube writes stay reviewed",
       "kind": "assembly",
       "urgent": 8,
       "rerouted_from": {
@@ -177374,9 +177379,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-06T12:23Z",
+        "at": "2026-11-06T12:26Z",
         "by": "codex",
-        "note": "Recovered existing PR490 at f11e9587e2; prior 3/4 retained. Initial step 0 was reporting reset only. J2007 cancelled; no"
+        "note": "Added draft Buffer schedule gateway in isolated worktree; 37 gateway tests pass. It uses live YouTube time, checks regis"
       }
     },
     {
