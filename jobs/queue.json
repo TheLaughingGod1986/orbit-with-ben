@@ -192555,9 +192555,14 @@
           "at": "2026-11-06T15:01Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Auditioned hos_009_short_B_v04.{mp3,wav}, open_v04.mp3, and v03.mp3 via audio_input; confirmed 0 spoken repeats (Seg 8 [24.14-24.32] is a faster-whisper trailing hallucination)"
+        },
+        {
+          "at": "2026-11-06T15:05Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed jobs/reviews/J2281/REVIEW.md (6959d1cb3f): v04 audio is clean; Seg 8 [24.14-24.32] is no_speech=0.986/0.988 ASR hallucination; J2279 still open"
         }
       ],
-      "remaining_action": "Verify SHA-256 hashes and write J2281 verification report in jobs/reviews/J2281/REVIEW.md",
+      "remaining_action": "Park J2281 for elected Chief (codex) to record wait --recheck J2281 on J0862",
       "kind": "review",
       "recheck_of": "J0862",
       "required_capabilities": [
@@ -192575,11 +192580,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-06T15:01Z",
+        "at": "2026-11-06T15:05Z",
         "by": "gemini",
-        "note": "Auditioned hos_009_short_B_v04.{mp3,wav}, open_v04.mp3, and v03.mp3 via audio_input; confirmed 0 spoken repeats (Seg 8 ["
+        "note": "Committed jobs/reviews/J2281/REVIEW.md (6959d1cb3f): v04 audio is clean; Seg 8 [24.14-24.32] is no_speech=0.986/0.988 AS"
       },
       "taskKeys": [
         "HOS:009",
