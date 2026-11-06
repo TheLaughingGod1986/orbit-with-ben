@@ -253,7 +253,17 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 }
 .overview-activity a.active-job-card .aj-icon::before {
   content:""; position:absolute; left:50%; top:50%; width:10px; height:10px; margin:-5px 0 0 -5px;
-  border-radius:50%; border:2px solid var(--green); border-top-color:transparent; opacity:.9;
+  border-radius:50%; border:2px solid color-mix(in srgb, var(--green) 35%, transparent);
+  border-top-color:var(--green); opacity:.95;
+}
+@keyframes overview-spin { to { transform:rotate(360deg); } }
+@media (prefers-reduced-motion: no-preference) {
+  .overview-activity a.active-job-card .aj-icon::before { animation:overview-spin .75s linear infinite; }
+  .overview-p24 .p24-job-spinner { animation:overview-spin .75s linear infinite; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .overview-activity a.active-job-card .aj-icon::before,
+  .overview-p24 .p24-job-spinner { animation:none; }
 }
 .overview-activity a.active-job-card .aj-main { grid-area:main; min-width:0; }
 .overview-activity a.active-job-card .aj-main b { display:block; font-size:14px; font-weight:650; line-height:1.3; }
@@ -349,6 +359,11 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-p24 .p24-job:first-child { padding-top:8px; }
 .overview-p24 .p24-job b { font-weight:650; }
 .overview-p24 .p24-check { flex:0 0 16px; width:16px; height:16px; margin-top:3px; border:1.5px solid var(--muted); border-radius:4px; background:transparent; position:relative; pointer-events:none; }
+.overview-p24 .p24-job-spinner {
+  flex:0 0 16px; width:16px; height:16px; margin-top:3px; box-sizing:border-box;
+  border:2px solid color-mix(in srgb, var(--blue, #438bff) 30%, transparent);
+  border-top-color:var(--blue, #438bff); border-radius:50%; background:transparent; pointer-events:none;
+}
 .overview-p24 .p24-job.is-done .p24-check { border-color:var(--green); background:var(--green); }
 .overview-p24 .p24-job.is-done .p24-check::after { content:""; position:absolute; left:4.5px; top:1px; width:4px; height:8px; border:solid #05230f; border-width:0 2px 2px 0; transform:rotate(45deg); }
 .overview-p24 .p24-job.is-done-yesterday .p24-check { border-color:#6b7a8a; background:#6b7a8a; }
