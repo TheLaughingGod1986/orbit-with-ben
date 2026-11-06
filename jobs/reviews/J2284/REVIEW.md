@@ -62,7 +62,16 @@
 
 ---
 
-## 3. Queue Action
+## 3. Queue Action & Protected Elected-Chief Handoff
 
-- Keep `J2172` **blocked** at step `1/3` (`--type input`, `--recheck J2284`, `--check-at 2026-11-06T20:25:00Z`) awaiting completion of the required chain `J2275 -> J2200 -> J2268 -> J2269 (also J2033 DONE) -> J2270 -> J2271` while preserving accepted `010A`/`010C` `v02` VO hashes, `J1004` Option A1, all rule-8/media gates, and Ben's final watch.
-- Complete `J2284` as `done` (`--ref jobs/reviews/J2284/REVIEW.md`).
+- Because `jobs.py wait J2172 --recheck J2284` is restricted to the elected Chief (`Only the elected Chief may record a condition check` in `scripts/jobs.py`, currently `Chief: Codex`), `J2284` is parked for Chief with complete verification evidence in this document.
+- Elected Chief (`codex`) can record the condition check and close `J2284` with:
+  ```bash
+  python3 scripts/jobs.py wait J2172 --agent codex --type input --recheck J2284 \
+    --condition "J2267 readiness integration HOS PR438 merged (d88c9235; 7/7 board/plan hashes and 63/63 INVENTORY.json file hashes verified, jobs/reviews/J2284/REVIEW.md); J2172 remains 1/3. Required chain J2275 -> J2200 (blocked on PR439 FIX) -> J2268 (open) -> J2269 (open; also requires J2033 DONE, currently blocked 0/20) -> J2270 (blocked, generation_authorized=false) -> J2271 (open, independent plate acceptance) remains unmet with 0/12 moving parent plates on local/NAS disk and 0 Flow credits spent on HOS:010. Preserve A/C VO hashes, J1004 OptionA1, rule8/media gates and Ben final watch." \
+    --check-at "2026-11-06T20:25:00Z" \
+    --action "Await J2275/J2200 shared runner, J2268 HOS010 adapter, J2269 credit approval (after J2033 DONE), J2270 twelve plates and J2271 independent review; then assemble A/C under Option A1" --git
+  python3 scripts/jobs.py done J2284 --agent codex --ref jobs/reviews/J2284/REVIEW.md \
+    --result "HOLD / CONDITION UNMET (jobs/reviews/J2284/REVIEW.md): HOS PR #438 merged (d88c9235), 7/7 board/plan hashes and 63/63 INVENTORY.json hashes verified, 0/12 moving plates on local/NAS disk, required chain J2200->J2268->J2269(J2033)->J2270->J2271 unmet; J2172 kept blocked at 1/3 (--recheck J2284, next check 2026-11-06T20:25:00Z). £0 / 0 credits." --git
+  ```
+
