@@ -190074,13 +190074,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T06:07Z",
-      "eta": "2026-11-06T08:07Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-06T05:22Z",
-      "result": "",
+      "result": "KEEP (jobs/reviews/J2263/REVIEW.md, 70a6ea8f8b): HOS 006 Short B v02 (f4b046d41d0d6fcfbd14258abe472d57db5c9d53c1ed535141aa3281e1f3915b, 24.250s, 1080x1920) and Short C v03 (e1e3ff0ce3b5622b4a43d010a0df827bcd34e25ccd76a87338b286b0632c40c5, 25.167s, 1080x1920) on cursor/J2169-bc-v02 (b8230f85) pass all J2258 FIX items and HOS gates (picture_qa, polish_gate, sfx_kit level, music_gate, gate_shorts_open, check_all.sh). Ruled KEEP on 9-14s captions, centred Didot hooks, B source_in=1.375s, un-dissolved loop returns, and all WARNs (B S07, C S05, C S03, terminal_loop). Staged in HOS UAT with verified unique R2 Play links (hos-j2263-1-v02, hos-j2263-2-v03) and awaits_ben J2263.1-2 (due 15 Nov 18:00). Neither cut approved; watched/heard false until Ben's watch; long VbPubYd6Fbs must be public first; GBP0, no upload/schedule/Buffer.",
       "history": [
         {
           "at": "2026-11-06T05:22Z",
@@ -190136,6 +190136,11 @@
           "at": "2026-11-06T06:23Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Set awaits_ben J2263.1 (Short B v02, hos-j2263-1-v02) and J2263.2 (Short C v03, hos-j2263-2-v03) with verified unique R2 Play links"
+        },
+        {
+          "at": "2026-11-06T06:24Z",
+          "by": "gemini",
+          "what": "done: KEEP (jobs/reviews/J2263/REVIEW.md, 70a6ea8f8b): HOS 006 Short B v02 (f4b046d41d0d6fcfbd14258abe472d57db5c9d53c1ed535141aa3281e1f3915b, 24.250s, 1080x1920) and Short C v03 (e1e3ff0ce3b5622b4a43d010a0df827bcd34e25ccd76a87338b286b0632c40c5, 25.167s, 1080x1920) on cursor/J2169-bc-v02 (b8230f85) pass all J2258 FIX items and HOS gates (picture_qa, polish_gate, sfx_kit level, music_gate, gate_shorts_open, check_all.sh). Ruled KEEP on 9-14s captions, centred Didot hooks, B source_in=1.375s, un-dissolved loop returns, and all WARNs (B S07, C S05, C S03, terminal_loop). Staged in HOS UAT with verified unique R2 Play links (hos-j2263-1-v02, hos-j2263-2-v03) and awaits_ben J2263.1-2 (due 15 Nov 18:00). Neither cut approved; watched/heard false until Ben's watch; long VbPubYd6Fbs must be public first; GBP0, no upload/schedule/Buffer."
         }
       ],
       "remaining_action": "Waiting on Ben's final watch of HOS 006 Short B v02 and Short C v03 (J2263.1-2); long VbPubYd6Fbs must be public before either Short",
@@ -190184,7 +190189,8 @@
           "number": "006C",
           "type": "short"
         }
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2263/REVIEW.md"
     },
     {
       "id": "J2264",
