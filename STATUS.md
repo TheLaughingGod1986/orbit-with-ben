@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 029 | edit | gemini | 2026-11-06T23:53Z | 2026-11-07T01:52Z | J2316 Review OWB 029 Mon 14 Dec E1 local candidate v05 |
+| 029 | edit | gemini | 2026-11-06T23:55Z | 2026-11-07T00:55Z | J2316 Review OWB 029 Mon 14 Dec E1 local candidate v05 |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
