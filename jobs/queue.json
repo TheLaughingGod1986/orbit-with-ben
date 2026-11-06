@@ -192842,18 +192842,24 @@
           "at": "2026-11-06T21:29Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-06T21:32Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resumed PR445 checkpoint; existing 42 zero-submit regressions pass. Added durable shared-account reservation and pending-charge component; integration remains unfinished."
         }
       ],
-      "remaining_action": "Repair and test the tranche-2 runner safety defects",
+      "remaining_action": "Test shared Flow accounting and preserve the production interlock",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the video generator safeguards and test them without spending credits.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-06T21:29Z",
-        "by": "codex"
+        "at": "2026-11-06T21:32Z",
+        "by": "codex",
+        "note": "Resumed PR445 checkpoint; existing 42 zero-submit regressions pass. Added durable shared-account reservation and pending"
       },
       "taskKeys": [
         "HOS:009"
