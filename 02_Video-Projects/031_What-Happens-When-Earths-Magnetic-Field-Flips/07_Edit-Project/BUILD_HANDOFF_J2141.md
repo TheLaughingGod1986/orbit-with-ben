@@ -2,6 +2,54 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Body comparison checkpoint (6 Nov, Codex)
+
+Resume queue **1/3**. This branch continues PR575 integration at 40cbc13347.
+Added `code_graphics.py bodies`: one full-frame R44 gravity component,
+449.92–452.20 s, 1920×1080 / 25 fps, 57 frames. It reuses the existing
+sourced common-zero bars (Earth 1.00, Mars 0.38; SOURCES row17) and adds real
+NASA planet icons. Equal display diameters identify bars; this is not a
+planet-size scale. Replace the older R44 alpha gravity component, never
+insert this as another consecutive diagram. No locked words or cues changed.
+
+The previous DSCOVR photo was already at two uses, so it is **not** reused.
+Harvested NASA Apollo `as17-148-22727` instead (one candidate, about three
+active minutes), verified original/API/policy hashes and inspected the
+original still. Pool now has ten candidates. NASA image, API and source
+preview live in `/Users/benjaminoats/_desk/J2141-bodies-v01/`; crop coordinates
+and provenance are in the pool. Mars uses existing PIA00407: row38 and the
+continuous row44 appearance remain its two-use limit. Track that at assembly.
+
+Rendered media and encoded contact sheet:
+`/Users/benjaminoats/_desk/J2141-bodies-render-v01/`.
+`CODE_BODIES_TECHNICAL_CHECK_v01.json` records PASS for input/evidence hashes,
+output hash, dimensions, fps, pixel format, 2.28 s duration, complete decode,
+locked start cue, and five distinct encoded frames above the near-black floor.
+The encoded contact sheet was inspected as stills. This does not establish
+actual motion/audio perception, whole-film QA, KEEP or film-stage approval.
+The gravity figure has a short reading window inherited from the locked cue.
+
+Detached `J2141-bodies-v01` finished exit0; no live render. Log and completion:
+`/Users/benjaminoats/_desk/logs/J2141-bodies-v01.log` and `.done`.
+Reproduce with `code_graphics.py bodies --out <fresh-dir> --manifest <new-json>`
+using `/usr/bin/python3`; existing media is refused. All 13 older CLI modes
+are preserved. Added bytes are small (render 179,943 bytes); no paid spend.
+
+NAS headroom: about 5 GB free. Required offload ran detached as
+`J2141-scratch-emergency`, finished exit0 and found no eligible old scratch.
+Log/completion use that name under `/Users/benjaminoats/_desk/logs/`.
+No NAS file deleted; the older offload was already finished before this run.
+The empty untracked shared-checkout blocker `reopen` was preserved at
+`/Users/benjaminoats/_desk/rescue/J2141-20261106/reopen`.
+
+Remaining: wider real-picture harvest, R41 ISS limb, moving plates around
+the R44 duration overlay, R30 twist component, composites, source/gate
+reconciliation and full QA. The R41 archive catalog was briefly located at
+https://eol.jsc.nasa.gov/Videos/CrewEarthObservationsVideos/ (about two active
+minutes); no clip candidate was downloaded/examined in depth or admitted.
+Preserve prior missing-input budgets and the horse three-candidate limit.
+No public state change, Ben action, KEEP or stage approval. £0.
+
 ## Integration checkpoint (6 Nov, Codex)
 
 Resume at **1/3**. This branch consolidates the code and records from PRs
