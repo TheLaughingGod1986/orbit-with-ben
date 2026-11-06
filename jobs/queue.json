@@ -1,5 +1,5 @@
 {
-  "next_id": 2286,
+  "next_id": 2287,
   "jobs": [
     {
       "id": "J0001",
@@ -192922,6 +192922,35 @@
       "remaining_action": "Validate the actual package, fix video-card selection and verify the remaining Studio settings",
       "kind": "studio",
       "plain": "Finish and verify the compilation’s remaining YouTube Studio settings"
+    },
+    {
+      "id": "J2286",
+      "title": "HOS 011 Anesthesia: review long VO hos_011_vo_v01 (two pauses)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Review HOS 011 long VO hos_011_vo_v01. This is a decision on a finished take. Do not record another take unless you rule a one-sentence pickup.\n\nEvidence: HOS PR https://github.com/TheLaughingGod1986/history-of-science/pull/443 commit 84eb2df7. Audio (gitignored) is on the Mini at /Users/benjaminoats/_desk/worktrees/J2245-011-vo/02_Video-Projects/011_Surgery-Before-Anaesthesia/02_Voiceover/hos_011_vo_v01.wav and the same hash at /Users/benjaminoats/_desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/. wav sha256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2. 532.72 s. Ben Orbit Narrator, eleven_v3, speed 1.04. Script surgery_script_master_v02.md. 6941 spoken characters. ElevenLabs 93404 to 90350 left (counter delta 3054). Nothing bought.\n\nvo_check (faster-whisper small.en, Python 3.12):\n- open 86.80 s PASS, 165 wpm, question at 36.3 s, promise at 48.1 s\n- A Gas That Made People Laugh 88.16 s PASS, pace warn 136 wpm\n- This Is No Humbug 95.52 s PASS, pace warn 141 wpm\n- The Fight Over Who Was First 93.68 s PASS, sounds-alike warns (ether/aether, Letheon/Lethion, anaesthesia/anesthesia)\n- Across the Ocean 165.76 s FAIL: silence 1.52 s at 0:27.87 and 1.55 s at 0:33.47. In the full file those are 6:34.83 and 6:40.43. They are inside the chapter, not the 0.7 s chapter gaps. The full-file check tags them \"(part join?)\" only because it was run without --part.\n- Full file PASS, mean -23.1 dB, peak -3.6 dB, -19.6 LUFS, 139 wpm, 0 word fails, 14 warns. Scribe 96.93%: the 20 mismatch runs are numerals or UK/US spelling only. No dropped clause in the Scribe diff.\n\nSounds-alike warns a listen would settle: Humphry/Humphrey, Wells's, Ether Dome, Letheon, patient/patience, gentlemen/gentleman, an anaesthetist/and anesthetist, asleep/to sleep, turned/turn. This worker did not play the audio.\n\nWrite jobs/reviews/J2245/REVIEW.md as KEEP or FIX with an exact list. A FIX names the sentence, if any, to pick up. Do not re-record the five chapters. Do not call this a VO lock unless you are the elected Chief and the review says so.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/443",
+      "film": "011",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-11-06T15:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T15:34Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the voice check and say keep, or name the exact sentence to pick up.",
+      "kind": "review",
+      "plain": "Decide whether the new anesthesia narration is good enough to keep, including two short pauses in the last chapter."
     }
   ],
   "focus": [],
