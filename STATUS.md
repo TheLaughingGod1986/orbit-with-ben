@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 032 | thumbs | gemini | 2026-11-06T10:12Z | 2026-11-06T12:11Z | J2274 032 independently review real Huygens surface thumbnail A v04 |
+| 032 | thumbs | gemini | 2026-11-06T10:14Z | 2026-11-06T10:44Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
