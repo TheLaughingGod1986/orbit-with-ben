@@ -767,24 +767,35 @@
     if(!p) return '';
     return `<aside class="video-next-work" aria-label="Next work on ${esc(v.title||'this video')}"><a href="${p.job?jobRoute(p.job.id):detailLink(v)}" aria-label="${esc(p.status)}. ${p.job?'Open job '+esc(p.job.id)+' in Agents':'Open video details'}"><div><span>Next work on this video</span><b>${esc(p.status)}</b><small>${esc(p.responsibility)}${p.job?' · '+esc(p.job.id):''}</small></div><span class="chev" aria-hidden="true">›</span></a><p class="video-next-timing">${esc(p.timing)}</p>${p.context?`<p>${esc(p.context)}</p>`:''}${p.dispatchNote?`<p>${esc(p.dispatchNote)}</p>`:''}</aside>`;
   }
-  function activityCard(b,now) {
-    const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
-    // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
-    const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} waiting</p>`;
-    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a class="ov-card" href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is waiting':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
-    const videoContext=activityVideoContext(b,j);
+  function activityVideoLine(ctx) {
+    // One film: show its title. Many films: keep it compact — the job title/action is the headline (Ben, 6 Nov).
+    if(!ctx||!ctx.count) return {compact:true, text:(ctx&&ctx.label)||'Studio task · no video linked in the job record'};
+    if(ctx.count===1) return {compact:false, text:ctx.label};
+    return {compact:true, text:`${ctx.count} videos linked`};
+  }
+  function activityJobCard(b,j,now) {
+    const videoContext=activityVideoContext(b,j), videoLine=activityVideoLine(videoContext);
     const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), category=activityCategory(b,j);
-    // Reuse the existing task estimator only with a valid recorded start and valid inputs.
     const e=taskEstimate(j,now);
     const eta=starting?'Worker launched; task claim pending':e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
-    return `<section class="overview-activity"><h2>Studio activity</h2><a class="ov-card active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${category.label}">
+    const action=clip(j.remaining_action||j.title||'Current action not recorded',160);
+    return `<a class="ov-card active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${category.label}">
       <span class="activity-category" data-category="${category.id}">${category.label}</span>
-      <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is ${starting?'starting':'working'}</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
-      ${videoContext.count?`<p class="activity-video"><span>${videoContext.count>1?'Videos':'Video'}</span>${esc(videoContext.label)}</p>`:`<p class="activity-video activity-scope-compact">${esc(videoContext.label)}</p>`}
+      <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is ${starting?'starting':'working'}</b><span class="activity-job-id">${esc(j.id)}</span></div><span class="chev" aria-hidden="true">›</span>
+      ${videoLine.compact?`<p class="activity-video activity-scope-compact">${esc(videoLine.text)}</p>`:`<p class="activity-video"><span>Video</span>${esc(videoLine.text)}</p>`}
       ${j.plain?`<p class="activity-plain">${esc(j.plain)}</p>`:''}
-      <p class="activity-action">${esc(clip(j.remaining_action||j.title||'Current action not recorded',160))}</p>
+      <p class="activity-action">${esc(action)}</p>
       ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:`<p class="activity-progress-missing">${starting?'Preparing to claim the selected job':'Task progress not recorded'}</p>`}
-      <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
+      <p class="activity-eta">${esc(eta)}</p>
+    </a>`;
+  }
+  function activityCard(b,now) {
+    const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
+    // Retain the publisher's active-job order after urgency; shared jobs are already deduplicated.
+    const footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} waiting</p>`;
+    if(!jobs.length) return `<section class="overview-activity"><h2>Studio activity</h2><a class="ov-card" href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is waiting':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
+    // One card + progress bar per running agent/job (Ben, 6 Nov evening) — not a single bar with "+N other".
+    return `<section class="overview-activity"><h2>Studio activity</h2><div class="ov-stack activity-stack">${jobs.map(j=>activityJobCard(b,j,now)).join('')}</div>${footer}</section>`;
   }
   // Last 24 hours (Ben, 4 Nov 2026; film cards 6 Nov 2026): headline counts, then one quiet card per film.
   // Checklist (Ben, 6 Nov 2026): remaining-to-go-live + today green / yesterday gray; display-only. Review owns real ticks.

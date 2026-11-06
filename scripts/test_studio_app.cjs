@@ -267,8 +267,31 @@ const activeHtml=t.activityCard(activityBoard,NOW);
 assert(activeHtml.includes('Codex is working')&&activeHtml.includes('Jactual')&&activeHtml.includes('Finish the recorded edit'));
 assert(activeHtml.includes('2 of 5 steps · 40%')&&activeHtml.includes('Task ETA: ~15m remaining (estimate)'));
 assert(activeHtml.includes('#agents&job=Jactual')&&activeHtml.includes('1 queued · 1 waiting'));
-const multipleHtml=t.activityCard({...activityBoard,owb:{jobs:[runningTask,{...runningTask,id:'Jsecond'}]}},NOW);
-assert(multipleHtml.includes('+1 other active job'));
+assert.equal((activeHtml.match(/hero-track/g)||[]).length,1,'one claimed job still shows one progress bar');
+assert.equal((activeHtml.match(/is working/g)||[]).length,1);
+// Two agents running → two cards / two bars (Ben, 6 Nov evening) — not "+N other active job".
+const geminiTask={id:'Jgemini',status:'claimed',by:'gemini',title:'Check the sources',remaining_action:'Verify every MUST QUOTE row',
+  claimedAt:new Date(NOW-8*6e4).toISOString(),progress:{step:1,of:3}};
+const twoAgentsHtml=t.activityCard({...activityBoard,owb:{jobs:[runningTask,geminiTask,{id:'q',status:'open'},{id:'h',status:'blocked'}]}},NOW);
+assert(twoAgentsHtml.includes('Codex is working')&&twoAgentsHtml.includes('Gemini is working'));
+assert(twoAgentsHtml.includes('Jactual')&&twoAgentsHtml.includes('Jgemini'));
+assert(twoAgentsHtml.includes('Finish the recorded edit')&&twoAgentsHtml.includes('Verify every MUST QUOTE row'));
+assert.equal((twoAgentsHtml.match(/hero-track/g)||[]).length,2,'each running agent gets its own progress bar');
+assert.equal((twoAgentsHtml.match(/is working/g)||[]).length,2);
+assert.equal((twoAgentsHtml.match(/activity-footer/g)||[]).length,1,'queued/waiting footer stays once below the stack');
+assert(!twoAgentsHtml.includes('other active job'),'no collapsed "+N other" summary when multiple agents run');
+const sameAgentTwo=t.activityCard({...activityBoard,owb:{jobs:[runningTask,{...runningTask,id:'Jsecond',remaining_action:'Second cut'}]}},NOW);
+assert.equal((sameAgentTwo.match(/hero-track/g)||[]).length,2);
+assert(!sameAgentTwo.includes('+1 other active job'));
+// Multi-film studio jobs: headline is the job action, not a wall of "title not recorded".
+const multiFilmHtml=t.activityCard({
+  tracker:{videos:[v({key:'OWB:001',title:''}),v({key:'OWB:002',title:''}),v({key:'OWB:003',title:'Titan'})]},
+  models:freshModels,
+  owb:{jobs:[{...runningTask,taskKeys:['OWB:001','OWB:002','OWB:003']},{id:'q',status:'open'}]},
+},NOW);
+assert(multiFilmHtml.includes('Finish the recorded edit'));
+assert(multiFilmHtml.includes('3 videos linked'));
+assert(!multiFilmHtml.includes('title not recorded'),'multi-film jobs do not dump per-key title-not-recorded lines');
 const missingHtml=t.activityCard({...activityBoard,owb:{jobs:[{...runningTask,progress:null,claimedAt:''}]}},NOW);
 assert(!missingHtml.includes('role="progressbar"')&&missingHtml.includes('Task progress not recorded')&&missingHtml.includes('Task ETA unavailable'));
 const idleHtml=t.activityCard(makeBoard([]),NOW);
