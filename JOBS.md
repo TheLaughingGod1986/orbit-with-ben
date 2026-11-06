@@ -86,7 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2279 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · J0862 v04: audition repeated-phrase word-gate failure and scope repair |  |
 | J2280 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
 | J2281 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
-| J2284 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
+| J2284 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2285 | mini | open | – | – | 099 upload · studio · HOS 099: validate package and finish cards, Level and timezone readback |  |
 | J2286 | mini | open | – | – | 011 vo · for cursor · review · `cursor-claude-opus-5-5` · HOS 011 Anesthesia: review long VO hos_011_vo_v01 (two pauses) | https://github.com/TheLaughingGod1986/history-of-science/pull/443 |
 | J2287 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Verify condition for J2245 |  |
