@@ -918,15 +918,71 @@
     return !!(j.waitKind || j.status==='blocked' || (j.after&&j.status!=='done')
       || j.awaits_ben || j.needs==='ben' || ((j.hold||{}).type&&String(j.hold.type).toLowerCase()==='ben'));
   }
-  function p24FilmCounts(f) {
-    const items=f.items||[];
-    const doneToday=f.doneToday!=null?f.doneToday:items.filter(j=>j.status==='done'&&j.when==='today').length;
-    const left=f.left!=null?f.left:items.filter(j=>j.status!=='done').length;
-    // Recompute from items when present — server `blocked` still includes after/Chief waits.
-    const blocked=items.length
-      ? items.filter(j=>p24IsCantRunItem(j)&&p24NeedsBenAttention(j)).length
-      : 0;
+  function p24FilmCounts(f, items) {
+    const list=items!==undefined?items:(f.items||[]);
+    const useItems=items!==undefined||!!(f.items&&f.items.length);
+    const doneToday=useItems
+      ? list.filter(j=>j&&j.status==='done'&&j.when==='today').length
+      : (f.doneToday!=null?f.doneToday:0);
+    const left=useItems
+      ? list.filter(j=>j&&j.status!=='done').length
+      : (f.left!=null?f.left:0);
+    // Ben-facing can't-run only — server `blocked` still includes after/Chief waits.
+    const blocked=list.filter(j=>p24IsCantRunItem(j)&&p24NeedsBenAttention(j)).length;
     return {doneToday, left, blocked};
+  }
+  function p24FilmLabel(film) {
+    const key=String(film||'');
+    const short=/^([A-Z]+):(\d{3}):S:/i.exec(key);
+    if(short) return `${short[1].toUpperCase()} ${short[2]} Short`;
+    const long=/^([A-Z]+):(\d{3})$/i.exec(key);
+    if(long) return `${long[1].toUpperCase()} ${long[2]}`;
+    return key.replace(/:/g,' ');
+  }
+  function p24FilmMatchesJob(filmKey, b, j) {
+    if(!j||!filmKey) return false;
+    const keys=(activityVideoContext(b,j).keys)||[];
+    if(keys.includes(filmKey)) return true;
+    const focus=new Set([filmKey]);
+    if(keys.some(k=>k===filmKey||p24InFocus(k, focus))) return true;
+    if(/^\d+$/.test(String(j.film||''))){
+      const home=(typeof repoLabel==='function'?repoLabel(j.repo):'OWB')+':'+String(j.film).padStart(3,'0');
+      if(home===filmKey||String(filmKey).startsWith(home+':')||String(filmKey)===home) return true;
+    }
+    return false;
+  }
+  function p24JobFromTracker(j) {
+    if(!j) return null;
+    return {
+      id:j.id, title:j.title||j.remaining_action||'', status:j.status||'open',
+      stage:j.stage||'', progress:j.progress||null, when:j.when,
+      why:j.why, waitKind:j.waitKind, after:j.after, awaits_ben:j.awaits_ben,
+      needs:j.needs, hold:j.hold, kind:j.kind,
+    };
+  }
+  // When progress24h items are empty on a pulsing film, fill from tracker + claimed owb jobs (Ben, 6 Nov ~23:33).
+  function p24HydrateFilmItems(f, b) {
+    const filmKey=String((f&&f.film)||'');
+    const byId=new Map();
+    const add=j=>{
+      if(!j) return;
+      const id=j.id?String(j.id):`__anon_${byId.size}`;
+      const cur=byId.get(id);
+      if(!cur) byId.set(id, j);
+      else if(j.status==='claimed'&&cur.status!=='claimed') byId.set(id, {...cur, ...j, status:'claimed'});
+    };
+    for(const j of (f&&f.items)||[]) add(j);
+    if(!b||!filmKey) return [...byId.values()];
+    for(const v of uniqueVideos((((b.tracker)||{}).videos)||[])){
+      if(v.key!==filmKey) continue;
+      for(const j of v.jobs||[]) add(p24JobFromTracker(j));
+    }
+    for(const j of (((b.owb)||{}).jobs)||[]){
+      if(!j||j.status!=='claimed') continue;
+      if(!p24FilmMatchesJob(filmKey, b, j)) continue;
+      add({id:j.id, title:j.title||j.remaining_action||'', status:'claimed', stage:j.stage||'', progress:j.progress||null});
+    }
+    return [...byId.values()];
   }
   function p24BlockedWhy(f) {
     if(f.blockedWhy) return f.blockedWhy;
@@ -966,20 +1022,21 @@
     return {from, to, grew, down, label, bar};
   }
   function p24FilmCard(f, b) {
-    const name=(f.film||'').replace(':',' ');
+    const items=p24HydrateFilmItems(f, b);
+    const name=p24FilmLabel(f.film);
     const closed=f.closed||(f.milestones!=null&&f.milestones>0);
-    const counts=p24FilmCounts(f);
-    const active=p24FilmHasActiveWork(f, b);
+    const active=p24FilmHasActiveWork({...f, items}, b);
+    const counts=p24FilmCounts(f, items);
     const pctInfo=p24FilmPct(f);
     const stages=((f.pctReason||'').split('·')[0]||'').trim()
       ||(f.doneCount!=null?`${f.doneCount} of ${f.total||9} stages`:'');
     const meta=[stages, `Done ${counts.doneToday}`, `Left ${counts.left}`, `Can't run ${counts.blocked}`].filter(Boolean).join(' · ');
     const deltaCls=pctInfo.down?' down':(pctInfo.grew?'':' flat');
     const delta=pctInfo.label||(closed?'':'—');
-    const jobs=(f.items||[]).map(p24JobLine).join('')
+    const jobs=items.map(p24JobLine).join('')
       ||(f.last?`<li class="p24-job is-open" data-job-state="open" aria-label="Open: ${esc(f.last)}"><span class="p24-check" aria-hidden="true"></span><span class="p24-job-main"><span class="p24-title wrap">${esc(f.last)}</span></span></li>`:'');
     const earlier=f.earlierDone>0?`<p class="muted p24-earlier">${f.earlierDone} earlier job${f.earlierDone===1?'':'s'} already done</p>`:'';
-    const n=(f.items||[]).length||(f.last?1:0);
+    const n=items.length||(f.last?1:0)||(active&&jobs?1:0);
     const cls=`ov-card p24-film-card${active?' is-working':''}${pctInfo.grew?' is-grew':''}${!pctInfo.grew?' is-flat':''}`;
     const dot=active?`<span class="p24-working-dot" role="img" aria-label="A job is in progress on this film"></span>`:'';
     // Compact resting row (id, title, %, bar, one-line meta). Tap/expand opens the jobs checklist (Ben, 6 Nov ~23:07).
@@ -991,10 +1048,12 @@
         </div>
       </div>
       <p class="p24-film-meta">${esc(meta)}</p>`;
-    if(!jobs) return `<article class="${cls}">${compact}</article>`;
-    return `<details class="${cls} p24-check-fold" aria-label="Jobs checklist (${n})">
+    // Pulsing rows must always expand — never a bare article while work is in progress (Ben, 6 Nov ~23:33).
+    if(!jobs && !active) return `<article class="${cls}">${compact}</article>`;
+    const list=jobs||`<li class="p24-job is-progress" data-job-state="progress" aria-label="In progress"><span class="p24-job-spinner" role="img" aria-label="In progress"></span><span class="p24-job-main"><span class="p24-title wrap">Job in progress</span></span></li>`;
+    return `<details class="${cls} p24-check-fold" aria-label="Jobs checklist (${n||1})">
       <summary class="p24-film-summary">${compact}<span class="p24-film-expand" aria-hidden="true">›</span></summary>
-      <ul class="p24-job-list" role="list">${jobs}</ul>${earlier}
+      <ul class="p24-job-list" role="list">${list}</ul>${earlier}
     </details>`;
   }
   function p24FocusFilms(b) {
@@ -1038,8 +1097,7 @@
     const videos=uniqueVideos((((b.tracker)||{}).videos)||[]);
     for(const key of p24ActiveFilmKeys(b)){
       if(seen.has(key)) continue;
-      // Prefer the exact video key (Short when that is the job target); skip parent long if child already listed.
-      if([...seen].some(s=>s!==key&&String(s).startsWith(key+':'))) continue;
+      // Keep both the long and the Short when both are active — do not drop one (Ben, 6 Nov ~23:33).
       if(by.has(key)){ out.push(by.get(key)); seen.add(key); continue; }
       const video=videos.find(v=>v.key===key);
       if(!video) continue;
