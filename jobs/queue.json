@@ -160268,13 +160268,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-06T21:36Z",
-      "eta": "2026-11-06T23:36Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:51Z",
-      "result": "",
+      "result": "parked for Chief: review and merge history-of-science PR 450, then at an idle boundary run hos_desk.py refresh --apply. Watcher PID 8834 was left running because the installed file does not contain j1809-role-routing. No watermark reset and no historical recovery.",
       "history": [
         {
           "at": "2026-11-03T10:51Z",
@@ -160305,6 +160305,11 @@
           "at": "2026-11-06T21:47Z",
           "by": "cursor",
           "what": "step 5 of 5 done: Reported on OWB #478 comment 6696594103 and HOS desk comment 6696595370. Parked for Chief review of PR 450."
+        },
+        {
+          "at": "2026-11-06T21:47Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: review and merge history-of-science PR 450, then at an idle boundary run hos_desk.py refresh --apply. Watcher PID 8834 was left running because the installed file does not contain j1809-role-routing. No watermark reset and no historical recovery."
         }
       ],
       "remaining_action": "Chief reviews and merges HOS PR 450, then refreshes the desk watcher",
