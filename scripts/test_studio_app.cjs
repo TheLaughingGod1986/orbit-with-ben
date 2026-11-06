@@ -616,6 +616,8 @@ console.log('Queue forecast checks OK');
   // Compact film card + checklist behind disclosure.
   assert(card.includes('6 of 9 stages · picture still open') && card.includes('Done today') && card.includes('Left') && card.includes("Can't run"),
     'film cards show % reason and headline counts without opening anything');
+  assert(card.includes('J2142 · 032 pebble ruler review — waiting') && card.includes('p24-blocked-why'),
+    "can't-run count also names the waiting job on the film card");
   assert(card.includes('p24-check-fold') && card.includes('Jobs checklist'), 'full checklist sits behind a disclosure');
   assert(card.includes('p24-check') && card.includes('is-done') && card.includes('is-progress') && card.includes('is-waiting'),
     'jobs render as a checklist with done, in-progress and waiting marks');
@@ -659,6 +661,44 @@ console.log('Queue forecast checks OK');
   assert(ov.includes('p24-film-card') && ov.includes('Last 24 hours'), 'Overview includes the film job cards');
   assert(ov.includes('p24-check') && ov.includes('data-job-state="progress"'), 'Overview checklist marks survive the full overview render');
   assert(ov.includes('p24-glance') && ov.includes('Next to go live'), 'Overview glance strip survives the full overview render');
+
+  // Focus filter (Ben, 6 Nov evening): Overview film cards = studio focus only; glance matches those cards.
+  const focused = t.progressCard({
+    owb: {focus: ['032', 'OWB:032', '031', 'OWB:031', '033', 'OWB:033']},
+    progress24h: {
+      ...p24,
+      moved: [
+        ...p24.moved,
+        {key: 'OWB:024', title: 'Old Venus film', from: 80, to: 89, milestones: 1},
+        {key: 'HOS:006', title: 'Old HOS film', from: 70, to: 78, milestones: 1},
+      ],
+      films: [
+        ...p24.films,
+        {film: 'OWB:024', title: 'Old Venus film', jobs: 2, closed: true, from: 80, to: 89, milestones: 1,
+          status: '80% → 89%', doneToday: 2, left: 9, blocked: 4, items: []},
+        {film: 'HOS:006', title: 'Old HOS film', jobs: 1, closed: true, from: 70, to: 78, milestones: 1,
+          status: '70% → 78%', doneToday: 1, left: 8, blocked: 3, items: []},
+        {film: 'OWB:ASK:J1356.2', title: 'Housekeeping', jobs: 0, doneToday: 0, left: 9, blocked: 0,
+          items: [{kind: 'stage', stage: 'topic', status: 'todo', title: 'topic — not started'}]},
+      ],
+      glance: {doneToday: 208, left: 208, blocked: 53, blockedJobs: [
+        {id: 'J2142', film: 'OWB:032', title: '032 pebble ruler review', status: 'blocked'},
+        {id: 'J024x', film: 'OWB:024', title: '024 leftover', status: 'blocked'},
+      ], nextLive: p24.glance.nextLive},
+    },
+  });
+  assert(focused.includes('Working on now'), 'focus mode labels the film stack as working on now');
+  assert(focused.includes('OWB 031') && focused.includes('OWB 032') && focused.includes('OWB 033'), 'focus films stay on Overview');
+  assert(!focused.includes('OWB 024') && !focused.includes('HOS 006') && !focused.includes('OWB ASK'),
+    'non-focus films and housekeeping keys are not shown as Overview cards');
+  assert(!focused.includes('Old Venus film') && !focused.includes('Housekeeping'),
+    'non-focus titles do not appear on Overview film cards');
+  // Glance totals come from the three focus cards (1+1+1 done today, 0+3+0 left, 0+1+0 blocked) — not the inflated payload.
+  assert(/<b>3<\/b><span>done today<\/span>/.test(focused), 'glance done-today matches the focus films on screen');
+  assert(/<b>3<\/b><span>left to go live<\/span>/.test(focused), 'glance left matches the focus films on screen');
+  assert(/<b>1<\/b><span>can't run yet<\/span>/.test(focused), 'glance blocked matches the focus films on screen');
+  assert(focused.includes('J2142') && !focused.includes('J024x'), 'glance can\'t-run list is scoped to focus films');
+  assert(focused.includes('Could a Robot Survive on Mars?'), 'next-four going live stays (scheduled publishes, not focus)');
 }
 console.log('Last-24-hours film cards OK');
 
