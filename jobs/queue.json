@@ -195346,7 +195346,7 @@
     {
       "id": "J2305",
       "title": "Verify condition for J2230",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2230: Actual listening needed on corrected HOS eradication VO at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). vo_check FAIL reproduced on hash-verified raw Part05 and corrected final-master stem; old master-input timing repaired. This session exposes command text and still images only, with no demonstrated audio_input. Evidence HOS ce08d292 jobs/J2230/CURRENT_HANDOFF.md; corrected WAV at /Users/benjaminoats/_desk/renders/J2230/eradication_corrected_inputs_v02/eradication_vo_from_master_v02.wav. Do not regenerate, rewrite text or waive gate. Final assembly/opening fixes remain after listener/Chief resolution.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2230 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -195366,6 +195366,11 @@
           "at": "2026-11-06T22:00Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T22:31Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1358 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: A capable listener must resolve the Vaccine VO failure before final assembly; Chief decides any source repair.",
@@ -195375,7 +195380,16 @@
         "audio_input"
       ],
       "due": "2026-11-06T23:00:28+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2306",

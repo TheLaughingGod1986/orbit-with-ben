@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2300 | mini | open (after J2299) | – | – | 033 picture · qa · 033 picture: review corrected source map, native opener and graphics | J2297 |
 | J2302 | mini | open | – | – | 024 edit · review · 024 muons v03: review verified UAT repair and detail warning |  |
 | J2303 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2199 |  |
-| J2305 | any | open | – | – | review · Verify condition for J2230 |  |
+| J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
 | J2306 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
 | J2307 | mini | open | – | – | 026 edit · assembly · OWB 026: E1 local re-cut for HZGTovJu_TQ; preserve scheduled copy | J2207 / h47 |
 | J2308 | mini | open | – | – | 026 edit · assembly · OWB 026: E1 local re-cut for cwU_0WWeNZ4; preserve scheduled copy | J2207 / h47 |
