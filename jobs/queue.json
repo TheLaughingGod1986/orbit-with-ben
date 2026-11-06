@@ -196217,9 +196217,14 @@
           "at": "2026-11-06T23:55Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Claimed 029 edit on studio board; read J2311 handoff, v05_e1.json, and J2207 brief for heiGCnGKTkE"
+        },
+        {
+          "at": "2026-11-06T23:58Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified SHA256 across Local/NAS/iCloud UAT, ffprobe/ffmpeg decode (661f, 22.04s, rc=0), all 6 QA gates PASS, and 029 VO corpus for the 4 recorded-word conflicts"
         }
       ],
-      "remaining_action": "Run independent technical/gate verification and visual inspection of v05 contact sheets and frames",
+      "remaining_action": "Write jobs/reviews/J2311/REVIEW.md with KEEP (EXCEPTION) decision and full E1/gate verification",
       "kind": "review",
       "plain": "Review the local replacement cut for the 14 December Betelgeuse Short",
       "rerouted_from": {
@@ -196232,11 +196237,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-06T23:55Z",
+        "at": "2026-11-06T23:58Z",
         "by": "gemini",
-        "note": "Claimed 029 edit on studio board; read J2311 handoff, v05_e1.json, and J2207 brief for heiGCnGKTkE"
+        "note": "Verified SHA256 across Local/NAS/iCloud UAT, ffprobe/ffmpeg decode (661f, 22.04s, rc=0), all 6 QA gates PASS, and 029 VO"
       },
       "taskKeys": [
         "OWB:029"
