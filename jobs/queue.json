@@ -182053,13 +182053,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-04T23:31Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T22:08Z",
-      "result": "waiting for review J2166 (rule H): review three completed thumbnail concepts and approve/merge PR #501; T020 remains proposed and unarmed",
+      "result": "review J2166 KEEP (765d77f8f5, jobs/reviews/J2166/REVIEW.md): A/B/C PASS HOOK/BAND/GRADE/PHONE and deterministic build_j2143.py rebuild; builder/evidence and proposed unarmed T021 ledger entry landed on main",
       "history": [
         {
           "at": "2026-11-04T22:08Z",
@@ -182105,9 +182105,19 @@
           "at": "2026-11-05T00:28Z",
           "by": "claude",
           "what": "rule H: decision moved from the Chief to review J2166"
+        },
+        {
+          "at": "2026-11-06T07:05Z",
+          "by": "gemini",
+          "what": "review J2166 KEEP: deliverable final; 08_Thumbnail evidence and proposed unarmed T021 landed on main (765d77f8f5)"
+        },
+        {
+          "at": "2026-11-06T07:05Z",
+          "by": "gemini",
+          "what": "done: review J2166 KEEP (765d77f8f5, jobs/reviews/J2166/REVIEW.md): A/B/C PASS HOOK/BAND/GRADE/PHONE and deterministic build_j2143.py rebuild; builder/evidence and proposed unarmed T021 ledger entry landed on main"
         }
       ],
-      "remaining_action": "Chief reviews the three thumbnail concepts and merges the evidence before any future Studio test",
+      "remaining_action": "Done: 031 A/B/C thumbnails verified KEEP (765d77f8f5); T021 proposed for future upload/Studio job",
       "kind": "thumb",
       "due": "2026-11-13T18:00Z",
       "progress": {
@@ -182120,7 +182130,8 @@
       "taskKeys": [
         "OWB:031"
       ],
-      "urgent": 9
+      "urgent": 9,
+      "done_ref": "765d77f8f5"
     },
     {
       "id": "J2144",
@@ -183856,13 +183867,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T06:49Z",
-      "eta": "2026-11-06T08:49Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T00:28Z",
-      "result": "",
+      "result": "KEEP (765d77f8f5, jobs/reviews/J2166/REVIEW.md): all three 031 thumbnail concepts in /Users/benjaminoats/_desk/j2143/final/ — A 031_A_compass_v03.jpg (COMPASS REVERSED, rule12, sat=194.5, nb=9.0%, sha256 e1d396ebed9d5c2371a6dea4852dd2846e1541ac4cc6f360cb4d761afd2d6df0), B 031_B_real_v04.jpg (textless ISS062-E-98264 aurora photograph, rule19, sat=133.3, nb=24.1%, sha256 742c404da7ad74d3bad2bc4c91f8d5b860fd4e12bef3e37a6f1fbcbb657fa874), and C 031_C_bright_v03.jpg (GLOBAL AURORAS, rule12+rule14 bright background, sat=171.0, nb=3.6%, sha256 a4ee140a242a5a1c2a3eb1e2b8a4b4700685fccc94ca3055aca1dc2621c35ff0) — PASS HOOK/BAND/GRADE/PHONE, deterministic build_j2143.py rebuild, and NASA/ISS provenance. Landed 08_Thumbnail builder/evidence, updated metadata_DRAFT_v01.json, and recorded proposed unarmed ledger entry T021 (reconciled from PR #501 T020 after 032 J2144 took T020) on main; closed J2143 done. £0 / 0 credits; no YouTube changes.",
       "history": [
         {
           "at": "2026-11-05T00:28Z",
@@ -183903,9 +183914,14 @@
           "at": "2026-11-06T07:05Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 complete: closing J2143 and J2166 done with KEEP ruling (765d77f8f5)"
+        },
+        {
+          "at": "2026-11-06T07:05Z",
+          "by": "gemini",
+          "what": "done: KEEP (765d77f8f5, jobs/reviews/J2166/REVIEW.md): all three 031 thumbnail concepts in /Users/benjaminoats/_desk/j2143/final/ — A 031_A_compass_v03.jpg (COMPASS REVERSED, rule12, sat=194.5, nb=9.0%, sha256 e1d396ebed9d5c2371a6dea4852dd2846e1541ac4cc6f360cb4d761afd2d6df0), B 031_B_real_v04.jpg (textless ISS062-E-98264 aurora photograph, rule19, sat=133.3, nb=24.1%, sha256 742c404da7ad74d3bad2bc4c91f8d5b860fd4e12bef3e37a6f1fbcbb657fa874), and C 031_C_bright_v03.jpg (GLOBAL AURORAS, rule12+rule14 bright background, sat=171.0, nb=3.6%, sha256 a4ee140a242a5a1c2a3eb1e2b8a4b4700685fccc94ca3055aca1dc2621c35ff0) — PASS HOOK/BAND/GRADE/PHONE, deterministic build_j2143.py rebuild, and NASA/ISS provenance. Landed 08_Thumbnail builder/evidence, updated metadata_DRAFT_v01.json, and recorded proposed unarmed ledger entry T021 (reconciled from PR #501 T020 after 032 J2144 took T020) on main; closed J2143 done. £0 / 0 credits; no YouTube changes."
         }
       ],
-      "remaining_action": "Finish J2166 and close J2143 with KEEP ruling",
+      "remaining_action": "Done: J2166 KEEP review committed (765d77f8f5) and J2143 closed done",
       "kind": "review",
       "review_of": "J2143",
       "rerouted_from": {
@@ -183926,7 +183942,8 @@
       },
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "done_ref": "765d77f8f5"
     },
     {
       "id": "J2167",
