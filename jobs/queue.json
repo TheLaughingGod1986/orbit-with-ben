@@ -195808,18 +195808,23 @@
           "at": "2026-11-06T23:25Z",
           "by": "cursor",
           "what": "step 1 of 5 done: UPLOADS still names v04 sha 31f362f4. Today snapshot heiGCnGKTkE is private for 2026-12-14 11:30Z. No other repair job. Original kept."
+        },
+        {
+          "at": "2026-11-06T23:33Z",
+          "by": "cursor",
+          "what": "step 4 of 5 done: v05 is 22.04s, tail 1.16s, cuts 2.30 and 4.63. Checksums match on iCloud and the NAS. Scheduled file untouched."
         }
       ],
-      "remaining_action": "Cut a local v05 that tightens the first two pictures and drops the end card",
+      "remaining_action": "Hand the local candidate to review",
       "due": "2026-12-13T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-06T23:25Z",
+        "at": "2026-11-06T23:33Z",
         "by": "cursor",
-        "note": "UPLOADS still names v04 sha 31f362f4. Today snapshot heiGCnGKTkE is private for 2026-12-14 11:30Z. No other repair job. "
+        "note": "v05 is 22.04s, tail 1.16s, cuts 2.30 and 4.63. Checksums match on iCloud and the NAS. Scheduled file untouched."
       },
       "taskKeys": [
         "OWB:029"
