@@ -194101,9 +194101,14 @@
           "at": "2026-11-06T18:46Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-06T18:52Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done"
         }
       ],
-      "remaining_action": "Inspect J2157 queue entry, review notes, and 034 VO evidence",
+      "remaining_action": "Write jobs/reviews/J2295/REVIEW.md on branch macbook/J2295, open PR, record wait on J2157 (--recheck J2295), and close J2295",
       "kind": "review",
       "recheck_of": "J2157",
       "due": "2026-11-06T19:21:53+00:00",
@@ -194118,11 +194123,14 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-06T18:46Z",
+        "at": "2026-11-06T18:52Z",
         "by": "macbook"
-      }
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J2296",
