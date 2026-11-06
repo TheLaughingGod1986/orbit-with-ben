@@ -548,11 +548,21 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
 }
 console.log('Queue forecast checks OK');
 
-// Last 24 hours: one quiet card per film with the jobs that touched it (Ben, 6 Nov 2026).
+// Last 24 hours: quiet film cards with remaining-to-go-live checklist behind a disclosure (Ben, 6 Nov 2026).
 {
   const p24 = {
     hours: 24, jobsDone: 57, videoJobs: 30, otherJobs: 27, milestones: 3,
     byAgent: {gemini: 22, codex: 10},
+    glance: {
+      doneToday: 9, left: 4, blocked: 1,
+      blockedJobs: [{id: 'J2142', film: 'OWB:032', title: '032 pebble ruler review', status: 'blocked'}],
+      nextLive: [
+        {key: 'OWB:025', title: 'Could a Robot Survive on Mars?', at: '2026-11-08T18:00:00.000Z', atLondon: 'Sun 8 Nov 2026 18:00 GMT', type: 'long'},
+        {key: 'OWB:025:S:iyvWYFP_ETA', title: 'Could a Robot Survive a Night on Mars?', at: '2026-11-09T11:30:00.000Z', atLondon: 'Mon 9 Nov 2026 11:30 GMT', type: 'short'},
+        {key: 'OWB:025:S:TtgHNLXfDSs', title: 'Why Did a 90-Day Mars Rover Last 14 Years?', at: '2026-11-11T11:30:00.000Z', atLondon: 'Wed 11 Nov 2026 11:30 GMT', type: 'short'},
+        {key: 'HOS:007', title: 'Why Vaccines Are Named After a Cow', at: '2026-11-12T18:00:00Z', atLondon: 'Thu 12 Nov 2026 18:00 GMT', type: 'long'},
+      ],
+    },
     moved: [
       {key: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips', from: 56, to: 67, milestones: 1},
       {key: 'OWB:032', title: 'What Would Happen If You Landed On Titan', from: 56, to: 67, milestones: 1},
@@ -560,22 +570,30 @@ console.log('Queue forecast checks OK');
     films: [
       {film: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips', jobs: 2, closed: true,
         from: 56, to: 67, milestones: 1, status: '56% → 67%', pct: 67, stage: 'edit', stageLabel: 'edit',
-        items: [{id: 'J2100', title: '031 edit polish', status: 'done', stage: 'edit'}]},
+        doneCount: 6, total: 9, pctReason: '6 of 9 stages · edit still open',
+        doneToday: 1, left: 0, blocked: 0, earlierDone: 4,
+        items: [{id: 'J2100', title: '031 edit polish', status: 'done', when: 'today', stage: 'edit'}]},
       {film: 'OWB:032', title: 'What Would Happen If You Landed On Titan', jobs: 4, closed: true,
         from: 56, to: 67, milestones: 1, status: '56% → 67%', pct: 67, stage: 'picture', stageLabel: 'picture',
+        doneCount: 6, total: 9, pctReason: '6 of 9 stages · picture still open',
+        doneToday: 1, left: 3, blocked: 1, earlierDone: 12,
         items: [
-          {id: 'J2110', title: 'Titan Short v11 cover', status: 'done', stage: 'thumbs'},
           {id: 'J2141', title: '032 picture harvest', status: 'claimed', stage: 'picture', progress: {step: 1, of: 3}},
           {id: 'J2142', title: '032 pebble ruler review', status: 'blocked', stage: 'picture'},
+          {kind: 'stage', stage: 'qa', status: 'todo', title: 'Chief QA — not started', state: 'unknown'},
+          {id: 'J2110', title: 'Titan Short v11 cover', status: 'done', when: 'today', stage: 'thumbs'},
+          {id: 'J2109', title: '032 spectrum stills review', status: 'done', when: 'yesterday', stage: 'picture'},
         ]},
       // 033 had jobs but no stage closed — not in moved[].
       {film: 'OWB:033', title: 'Why Knocked-Sideways Uranus Has 21-Year Winters', jobs: 1, closed: false,
         status: 'worked on, no stage closed — still in picture (56%)', pct: 56, stage: 'picture', stageLabel: 'picture',
-        items: [{id: 'J2200', title: 'Chief: resolve 033 picture orphan-review', status: 'done', stage: 'picture'}]},
+        doneCount: 5, total: 9, pctReason: '5 of 9 stages · picture still open',
+        doneToday: 1, left: 0, blocked: 0, earlierDone: 2,
+        items: [{id: 'J2200', title: 'Chief: resolve 033 picture orphan-review', status: 'done', when: 'today', stage: 'picture'}]},
     ],
     studio: [
-      {id: 'J2290', title: 'Daily analytics capture', status: 'done', by: 'gemini'},
-      {id: 'J2291', title: 'House rules condition check', status: 'done', by: 'codex'},
+      {id: 'J2290', title: 'Daily analytics capture', status: 'done', when: 'today', by: 'gemini'},
+      {id: 'J2291', title: 'House rules condition check', status: 'done', when: 'today', by: 'codex'},
     ],
   };
   const card = t.progressCard({progress24h: p24});
@@ -587,10 +605,25 @@ console.log('Queue forecast checks OK');
   assert(card.includes('J2200') && card.includes('worked on, no stage closed'), 'no-stage-closed films say so clearly');
   assert(card.includes('Studio-wide') && card.includes('J2290') && card.includes('Daily analytics capture'), 'studio-wide jobs fold at the bottom');
   assert(!card.includes('Where the work went'), 'old count+last summary is gone');
-  // Checklist marks (Ben, 6 Nov 2026): display-only done / in progress / waiting. Not tappable.
+  // Glance strip: done today / left / can't run / next four.
+  assert(card.includes('p24-glance') && card.includes('done today') && card.includes('left to go live') && card.includes("can't run yet"),
+    'glance strip shows done today, left, and cannot-run counts');
+  assert(card.includes("Can't run yet") && card.includes('J2142') && card.includes('032 pebble ruler review'),
+    'blocked tasks are named on the glance strip without opening a disclosure');
+  assert(!card.includes('p24-glance-fold'), 'cannot-run task names are not hidden behind a glance disclosure');
+  assert(card.includes('Next to go live') && card.includes('Could a Robot Survive on Mars?') && card.includes('Why Vaccines Are Named After a Cow'),
+    'next four going-live videos are listed from existing publish times');
+  // Compact film card + checklist behind disclosure.
+  assert(card.includes('6 of 9 stages · picture still open') && card.includes('Done today') && card.includes('Left') && card.includes("Can't run"),
+    'film cards show % reason and headline counts without opening anything');
+  assert(card.includes('p24-check-fold') && card.includes('Jobs checklist'), 'full checklist sits behind a disclosure');
   assert(card.includes('p24-check') && card.includes('is-done') && card.includes('is-progress') && card.includes('is-waiting'),
     'jobs render as a checklist with done, in-progress and waiting marks');
-  assert(/J2110[\s\S]*?is-done|is-done[\s\S]*?J2110/.test(card) || card.includes('data-job-state="done"'), 'finished jobs are checked');
+  assert(card.includes('is-done-yesterday') && card.includes('data-job-state="done-yesterday"'),
+    "yesterday's finished jobs use a gray tick, not today's green");
+  assert(card.includes('Chief QA — not started') && card.includes('is-stage'),
+    'leftover stages without a job show as unchecked rows with no invented job id');
+  assert(card.includes('12 earlier jobs already done'), 'older finished jobs fold into a muted earlier note');
   assert(card.includes('data-job-state="done"') && card.includes('data-job-state="progress"') && card.includes('data-job-state="waiting"'),
     'checklist states are marked for done, in progress and waiting');
   assert(card.includes('J2142') && card.includes('waiting') && !card.includes('>blocked<'), 'blocked jobs stay unchecked with a waiting note');
@@ -625,6 +658,7 @@ console.log('Queue forecast checks OK');
   const ov = t.overview({tracker: {videos: []}, progress24h: p24, machines: {machines: []}}, Date.parse('2026-11-06T19:41:00Z'));
   assert(ov.includes('p24-film-card') && ov.includes('Last 24 hours'), 'Overview includes the film job cards');
   assert(ov.includes('p24-check') && ov.includes('data-job-state="progress"'), 'Overview checklist marks survive the full overview render');
+  assert(ov.includes('p24-glance') && ov.includes('Next to go live'), 'Overview glance strip survives the full overview render');
 }
 console.log('Last-24-hours film cards OK');
 

@@ -145,6 +145,121 @@ class Summary(unittest.TestCase):
         self.assertEqual(p.film_of({"title": "Follow up on PR 180 review notes"}, titles), "")
         self.assertEqual(p.film_of({"title": "Chief: resolve 033 picture orphan-review"}, {}), "")
 
+    def test_remaining_today_yesterday_leftover_and_glance(self):
+        # London calendar: NOW is Wed 4 Nov 2026 13:00 UTC = 13:00 GMT.
+        hist = [{"at": "2026-11-03T12:30Z", "counts": {"OWB:032": 5}}]
+        counts = {"OWB:032": [6, "What Would Happen If You Landed On Titan"]}
+        done_24h = [
+            {"id": "J2110", "by": "codex", "film": "OWB:032", "title": "Titan Short v11 cover",
+             "stage": "thumbs", "at": "2026-11-04T10:00Z"},
+        ]
+        all_done = done_24h + [
+            {"id": "J2109", "by": "codex", "film": "OWB:032", "title": "032 spectrum stills review",
+             "stage": "picture", "at": "2026-11-03T18:00Z"},
+            {"id": "J2001", "by": "gemini", "film": "OWB:032", "title": "032 older picture pass",
+             "stage": "picture", "at": "2026-11-01T12:00Z"},
+            {"id": "Jhouse", "by": "gemini", "title": "Daily analytics capture", "at": "2026-11-04T08:00Z"},
+        ]
+        open_jobs = [
+            {"id": "J2141", "status": "claimed", "by": "cursor", "film": "OWB:032", "stage": "picture",
+             "title": "032 picture harvest", "progress": {"step": 1, "of": 3}},
+            {"id": "J2142", "status": "blocked", "by": "codex", "film": "OWB:032", "stage": "edit",
+             "title": "032 Shorts edit held", "after": "J2141"},
+            {"id": "J2143", "status": "open", "by": "cursor", "film": "OWB:032", "stage": "edit",
+             "title": "032 edit waits on picture", "after": "J2141"},
+        ]
+        milestones = {
+            "OWB:032": [
+                {"id": "topic", "state": "done"}, {"id": "script", "state": "done"},
+                {"id": "sources", "state": "done"}, {"id": "vo", "state": "done"},
+                {"id": "shots", "state": "done"}, {"id": "picture", "state": "doing"},
+                {"id": "edit", "state": "todo"}, {"id": "thumbs", "state": "done"},
+                {"id": "qa", "state": "todo"},
+            ],
+        }
+        next_live = [
+            {"key": "OWB:025", "title": "Could a Robot Survive on Mars?", "at": "2026-11-08T18:00:00.000Z",
+             "atLondon": "Sun 8 Nov 2026 18:00 GMT", "type": "long"},
+            {"key": "HOS:007", "title": "Why Vaccines Are Named After a Cow", "at": "2026-11-12T18:00:00Z",
+             "atLondon": "Thu 12 Nov 2026 18:00 GMT", "type": "long"},
+        ]
+        s = p.summarise(
+            hist, NOW, counts, done_24h,
+            open_jobs=open_jobs, stages={"OWB:032": "picture"},
+            all_done=all_done, milestones=milestones, next_live=next_live,
+        )
+        film = s["films"][0]
+        self.assertEqual(film["film"], "OWB:032")
+        self.assertEqual(film["doneToday"], 1)
+        # Remaining jobs + leftover qa (edit is covered by open jobs) → left=4.
+        self.assertEqual(film["left"], 4)
+        self.assertEqual(film["blocked"], 2)  # J2142 blocked + J2143 waiting on J2141
+        self.assertEqual(film["earlierDone"], 1)  # J2001 older than yesterday
+        self.assertIn("6 of 9 stages", film["pctReason"])
+        self.assertIn("picture still open", film["pctReason"])
+        ids = [it.get("id") or it.get("stage") for it in film["items"]]
+        self.assertEqual(ids[:3], ["J2141", "J2142", "J2143"])
+        self.assertIn("qa", ids)
+        self.assertNotIn("edit", ids)  # covered by remaining jobs — no invented stage row
+        today = next(it for it in film["items"] if it.get("id") == "J2110")
+        yday = next(it for it in film["items"] if it.get("id") == "J2109")
+        self.assertEqual(today["when"], "today")
+        self.assertEqual(yday["when"], "yesterday")
+        qa = next(it for it in film["items"] if it.get("kind") == "stage")
+        self.assertEqual(qa["stage"], "qa")
+        self.assertNotIn("id", qa)
+        self.assertEqual(qa["title"], "Chief QA — not started")
+        g = s["glance"]
+        self.assertEqual(g["doneToday"], 2)  # J2110 + Jhouse on London today
+        self.assertEqual(g["left"], 4)
+        self.assertEqual(g["blocked"], 2)
+        self.assertEqual({j["id"] for j in g["blockedJobs"]}, {"J2142", "J2143"})
+        self.assertEqual([v["key"] for v in g["nextLive"]], ["OWB:025", "HOS:007"])
+
+    def test_next_going_live_from_scheduled_publish(self):
+        b = {
+            "tracker": {"videos": [
+                {"key": "OWB:024", "title": "Past", "type": "long",
+                 "youtube": {"state": "live", "privacy": "public", "publishAt": "2026-11-01T18:00:00Z"}},
+                {"key": "OWB:025", "title": "Could a Robot Survive on Mars?", "type": "long",
+                 "youtube": {"state": "scheduled", "publishAt": "2026-11-08T18:00:00.000Z",
+                             "publishAtLondon": "Sun 8 Nov 2026 18:00 GMT"}},
+                {"key": "OWB:025:S:a", "title": "Mars Night Short", "type": "short",
+                 "youtube": {"state": "scheduled", "publishAt": "2026-11-09T11:30:00.000Z",
+                             "publishAtLondon": "Mon 9 Nov 2026 11:30 GMT"}},
+                {"key": "OWB:025:S:b", "title": "Rover Short", "type": "short",
+                 "youtube": {"state": "scheduled", "publishAt": "2026-11-11T11:30:00.000Z"}},
+                {"key": "HOS:007", "title": "Why Vaccines Are Named After a Cow", "type": "long",
+                 "youtube": {"state": "scheduled", "publishAt": "2026-11-12T18:00:00Z",
+                             "publishAtLondon": "Thu 12 Nov 2026 18:00 GMT"}},
+                {"key": "OWB:026", "title": "Later", "type": "long",
+                 "youtube": {"state": "scheduled", "publishAt": "2026-11-15T18:00:00Z"}},
+                {"key": "OWB:099", "title": "No date", "type": "long",
+                 "youtube": {"state": "scheduled"}},
+            ]},
+            "owb": {"done": [], "jobs": []},
+        }
+        rows = p.next_going_live(b, NOW, n=4)
+        self.assertEqual([r["key"] for r in rows],
+                         ["OWB:025", "OWB:025:S:a", "OWB:025:S:b", "HOS:007"])
+        self.assertEqual(rows[0]["title"], "Could a Robot Survive on Mars?")
+        self.assertEqual(rows[0]["atLondon"], "Sun 8 Nov 2026 18:00 GMT")
+        # Never invent a fifth from nowhere — Later is 5th and stays out.
+        self.assertNotIn("OWB:026", {r["key"] for r in rows})
+        self.assertNotIn("OWB:099", {r["key"] for r in rows})
+
+    def test_leftover_stages_skip_complete_and_covered(self):
+        ms = [
+            {"id": "picture", "state": "doing"},
+            {"id": "edit", "state": "todo"},
+            {"id": "qa", "state": "todo"},
+            {"id": "thumbs", "state": "done"},
+        ]
+        remaining = [{"id": "J1", "stage": "picture", "status": "claimed", "title": "pic"}]
+        left = p.leftover_stages(ms, remaining)
+        self.assertEqual([x["stage"] for x in left], ["edit", "qa"])
+        self.assertTrue(all("id" not in x and x["kind"] == "stage" for x in left))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)
