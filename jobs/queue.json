@@ -191827,9 +191827,14 @@
           "at": "2026-11-06T11:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2277; starting review of 032 R10 spectrum and R32 scalemap corrected stills"
+        },
+        {
+          "at": "2026-11-06T11:46Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J2177 REVIEW.md, J2089_CHECKPOINT_v16.md, MECHANISM_FIX_MANIFEST_v02.json, and MECHANISM_FIX_VERIFICATION_v02.json at 176a3ef889"
         }
       ],
-      "remaining_action": "Inspect commit 176a3ef889, read J2177 review and J2089 v16 manifest/verification, and view R10/R32 corrected still previews",
+      "remaining_action": "Inspect full-size R10 spectrum and R32 scalemap v02 PNGs and verify hashes, safe-area bounds, notch timing, and unchanged 15 previews",
       "due": "2026-11-09T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected methane spectrum and lake-area graphics before they are animated.",
@@ -191843,11 +191848,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-06T11:45Z",
+        "at": "2026-11-06T11:46Z",
         "by": "gemini",
-        "note": "Claimed J2277; starting review of 032 R10 spectrum and R32 scalemap corrected stills"
+        "note": "Read J2177 REVIEW.md, J2089_CHECKPOINT_v16.md, MECHANISM_FIX_MANIFEST_v02.json, and MECHANISM_FIX_VERIFICATION_v02.json "
       },
       "taskKeys": [
         "OWB:032"
