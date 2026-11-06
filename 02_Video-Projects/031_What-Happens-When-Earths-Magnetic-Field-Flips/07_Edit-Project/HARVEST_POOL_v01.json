@@ -327,6 +327,44 @@
         3870
       ],
       "generation_authorized": false
+    },
+    {
+      "asset_id": "eol-sunsetchina-iss-20120413",
+      "title": "Sunset over China",
+      "description": "Expedition 30 time-lapse, 13 April 2012, 11:52:36 to 11:58:15 GMT, southeastern China to the Sea of Okhotsk. Catalog: the sun setting over Earth's limb. Compiled from frames ISS030-E-235718 to ISS030-E-235829. This is a sunset, not a sunrise.",
+      "source_page": "https://eol.jsc.nasa.gov/Videos/CrewEarthObservationsVideos/#sunsetchina_iss_20120413",
+      "source_url": "https://eol.jsc.nasa.gov/Videos/CrewEarthObservationsVideos/videos/sunsetchina_iss_20120413/sunsetchina_iss_20120413HD_web.mp4",
+      "credit": "NASA / ISS Crew Earth Observations / Image Science and Analysis Laboratory, Johnson Space Center",
+      "local_path": "/Users/benjaminoats/_desk/J2141-r41-v01/sunsetchina_iss_20120413HD_web.mp4",
+      "sha256": "b547de4b48837857ccba301c6d2654c28ab34e0afc8aef6b3724a8d763d2d48a",
+      "bytes": 1838824,
+      "width": 1024,
+      "height": 768,
+      "fps": 12,
+      "duration_s": 13.833333,
+      "rows": [
+        41
+      ],
+      "planned_appearances": 1,
+      "max_appearances": 2,
+      "proposed_interval_s": [
+        3.6,
+        8.0
+      ],
+      "interval_note": "4.40 s window inside the limb picture. Opening title is still on screen at 2.8 s. Picture is up by 3.2 s. NASA end card is on screen by 11.2 s. Do not use the title or the end card.",
+      "upscale_to_1920": 1.875,
+      "download_status": "downloaded",
+      "review_status": "pending_chief_review",
+      "review_note": "Candidate for the R41 atmospheric-dome fallback. Stills at 3.6, 4, 7 and 8 s show the sun on Earth's limb and a blue atmospheric band, with Earth filling the lower frame. The catalog names this a sunset, so it is not relabelled sunrise. Solar-array solstice clip was examined and not admitted: the arrays cover the limb. No motion playback review.",
+      "licence_status": "US_federal_NASA_material_subject_to_NASA_media_conditions",
+      "licence_policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licence_evidence_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_v01/NASA_MEDIA_POLICY.html",
+      "licence_evidence_sha256": "3969bc2ca91e9603967c36201c7803ae1401b2a1519d400a2aaea97032231ff7",
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-r41-v01/CrewEarthObservationsVideos.html",
+      "source_evidence_sha256": "2b2e629cb127db18663d1da0b69c80e6b549f2dcd0263bf8ad02e3f84887840b",
+      "catalog_excerpt_path": "/Users/benjaminoats/_desk/J2141-r41-v01/sunsetchina_catalog_excerpt.txt",
+      "catalog_excerpt_sha256": "3af76b6c143aaf6ac02481c8b668924957641554215b3c30398fa44fdd558212",
+      "generation_authorized": false
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
@@ -378,6 +416,25 @@
         }
       ],
       "budget_status": "One candidate examined; no suitable candidate found; unspent budget remains, do not recheck unchanged furniture photo."
+    },
+    {
+      "input": "R41 ISS sunrise limb, thick blue atmospheric dome",
+      "date": "2026-11-06",
+      "active_minutes": 12,
+      "candidates_examined": 2,
+      "budget_status": "stopped when a limb plate was found; third candidate not opened",
+      "candidates": [
+        {
+          "source": "https://eol.jsc.nasa.gov/Videos/CrewEarthObservationsVideos/#solstice_iss_20120606",
+          "file": "/Users/benjaminoats/_desk/J2141-r41-v01/solstice_iss_20120606HD_web.mp4",
+          "sha256": "4250fd7799f318cbb7604ac5c8ccd1859a8edc1e709ab004e9e50de394148f94",
+          "result": "Examined stills at 2, 12, 24, 36, 48 and 58 s. Sunrise and sunset are in the sequence, but ISS solar arrays cover the limb. The blue line is a thin edge behind the arrays. Not admitted for R41."
+        },
+        {
+          "source": "https://eol.jsc.nasa.gov/Videos/CrewEarthObservationsVideos/#sunsetchina_iss_20120413",
+          "result": "Admitted as a candidate. Sun on the limb and a blue atmospheric band are the picture from 3.6 to 8.0 s. Catalog identity is sunset, recorded as such."
+        }
+      ]
     }
   ],
   "body_source_search_v01": {
@@ -387,5 +444,7 @@
     "outcome": "New Apollo Earth candidate downloaded and inspected; no repeat of horse or R41 search."
   },
   "body_comparison_contact_sheet": "/Users/benjaminoats/_desk/J2141-bodies-render-v01/CONTACT_v01.jpg",
-  "body_comparison_contact_sheet_sha256": "5f61477cbeb98b47660894305994057dd118f70000fb1d35c41f72851b85a05e"
+  "body_comparison_contact_sheet_sha256": "5f61477cbeb98b47660894305994057dd118f70000fb1d35c41f72851b85a05e",
+  "r41_contact_sheet": "/Users/benjaminoats/_desk/J2141-r41-v01/CONTACT_v01.jpg",
+  "r41_contact_sheet_sha256": "02e88cf49f8cdbf413956afaeb13a1211a28164259ff1a62f4b5e8321d08f033"
 }

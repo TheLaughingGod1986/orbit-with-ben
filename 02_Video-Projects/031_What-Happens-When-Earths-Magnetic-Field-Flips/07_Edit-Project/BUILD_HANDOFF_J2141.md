@@ -2,6 +2,34 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## R41 limb checkpoint (6 Nov, Cursor)
+
+Resume queue **1/3**. This branch continues PR575 at 59b9952551.
+Harvested one NASA ISS limb plate for row 41. Spend £0. Two candidates
+examined; the search stopped there.
+
+- Admitted candidate: Gateway to Astronaut Photography, *Sunset over China*,
+  Expedition 30, 13 April 2012, frames ISS030-E-235718 to ISS030-E-235829.
+  File `sunsetchina_iss_20120413HD_web.mp4`, 1024×768, 12 fps, 13.83 s,
+  sha256 `b547de4b…d2d48a`. Full-frame scale to 1920 is 1.875, under 2.35.
+  Proposed use **3.60–8.00 s** (4.40 s). Stills at 3.6, 4, 7 and 8 s show
+  the sun on Earth's limb and a blue atmospheric band, Earth in the lower
+  frame. Mean luma on those stills is about 39–42. The opening title is
+  still up at 2.8 s. The NASA end card is up by 11.2 s. Cut both out.
+- Identity: the catalog calls this a **sunset**. It is not relabelled
+  sunrise. It is the atmospheric-dome picture for the air row.
+- Not admitted: *Sunrise and Sunset around Summer Solstice*
+  (`solstice_iss_20120606HD_web.mp4`). Stills at 12, 24, 36 and 48 s show
+  the limb, but the solar arrays cover it. The blue line is only an edge
+  behind the arrays.
+
+Media and contact sheet: `/Users/benjaminoats/_desk/J2141-r41-v01/`.
+`HARVEST_POOL_v01.json` now has 11 candidates. No motion playback review.
+No KEEP, PASS or stage approval. These are stills of single frames.
+
+Remaining: the wider NOAA, USGS, ESA and Commons harvest, plate composites,
+and full picture QA. No public state change and no Ben action.
+
 ## Twist-card checkpoint (6 Nov, Cursor)
 
 Resume queue **1/3**. This branch continues PR575 at 98a638df88.
