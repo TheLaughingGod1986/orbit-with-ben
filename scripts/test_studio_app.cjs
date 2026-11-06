@@ -267,10 +267,11 @@ assert.equal(t.producingVideos([v({key:'backlog',lane:'upcoming',production:near
 const runningTask={id:'Jactual',status:'claimed',by:'codex',title:'Assemble the film',remaining_action:'Finish the recorded edit',claimedAt:new Date(NOW-10*6e4).toISOString(),progress:{step:2,of:5}};
 const activityBoard={tracker:{videos:[]},models:freshModels,owb:{jobs:[runningTask,{id:'q',status:'open'},{id:'h',status:'blocked'}]}};
 const activeHtml=t.activityCard(activityBoard,NOW);
-assert(activeHtml.includes('Codex is working')&&activeHtml.includes('Jactual')&&activeHtml.includes('Finish the recorded edit'));
-assert(activeHtml.includes('2 of 5 steps · 40%')&&activeHtml.includes('Task ETA: ~15m remaining (estimate)'));
-assert(activeHtml.includes('#agents&job=Jactual')&&activeHtml.includes('1 queued · 1 waiting'));
-assert.equal((activeHtml.match(/hero-track/g)||[]).length,1,'one claimed job still shows one progress bar');
+assert(activeHtml.includes('Active jobs')&&activeHtml.includes('Running now'));
+assert(activeHtml.includes('Codex is working')&&activeHtml.includes('Jactual'));
+assert(activeHtml.includes('2 / 5 steps (40%)')&&activeHtml.includes('~15m ETA'));
+assert(activeHtml.includes('#agents&job=Jactual')&&activeHtml.includes('aj-bar'));
+assert.equal((activeHtml.match(/aj-bar/g)||[]).length,1,'one claimed job still shows one progress bar');
 assert.equal((activeHtml.match(/is working/g)||[]).length,1);
 // Two agents running → two cards / two bars (Ben, 6 Nov evening) — not "+N other active job".
 const geminiTask={id:'Jgemini',status:'claimed',by:'gemini',title:'Check the sources',remaining_action:'Verify every MUST QUOTE row',
@@ -278,29 +279,20 @@ const geminiTask={id:'Jgemini',status:'claimed',by:'gemini',title:'Check the sou
 const twoAgentsHtml=t.activityCard({...activityBoard,owb:{jobs:[runningTask,geminiTask,{id:'q',status:'open'},{id:'h',status:'blocked'}]}},NOW);
 assert(twoAgentsHtml.includes('Codex is working')&&twoAgentsHtml.includes('Gemini is working'));
 assert(twoAgentsHtml.includes('Jactual')&&twoAgentsHtml.includes('Jgemini'));
-assert(twoAgentsHtml.includes('Finish the recorded edit')&&twoAgentsHtml.includes('Verify every MUST QUOTE row'));
-assert.equal((twoAgentsHtml.match(/hero-track/g)||[]).length,2,'each running agent gets its own progress bar');
+assert(twoAgentsHtml.includes('Active jobs (2)')&&twoAgentsHtml.includes('Running now'));
+assert.equal((twoAgentsHtml.match(/aj-bar/g)||[]).length,2,'each running agent gets its own progress bar');
 assert.equal((twoAgentsHtml.match(/is working/g)||[]).length,2);
-assert.equal((twoAgentsHtml.match(/activity-footer/g)||[]).length,1,'queued/waiting footer stays once below the stack');
+assert(!twoAgentsHtml.includes('activity-footer')&&!twoAgentsHtml.includes('queued ·'),'compact Active jobs drops the queued/waiting footer');
 assert(!twoAgentsHtml.includes('other active job'),'no collapsed "+N other" summary when multiple agents run');
 const sameAgentTwo=t.activityCard({...activityBoard,owb:{jobs:[runningTask,{...runningTask,id:'Jsecond',remaining_action:'Second cut'}]}},NOW);
-assert.equal((sameAgentTwo.match(/hero-track/g)||[]).length,2);
+assert.equal((sameAgentTwo.match(/aj-bar/g)||[]).length,2);
 assert(!sameAgentTwo.includes('+1 other active job'));
-// Multi-film studio jobs: headline is the job action, not a wall of "title not recorded".
-const multiFilmHtml=t.activityCard({
-  tracker:{videos:[v({key:'OWB:001',title:''}),v({key:'OWB:002',title:''}),v({key:'OWB:003',title:'Titan'})]},
-  models:freshModels,
-  owb:{jobs:[{...runningTask,taskKeys:['OWB:001','OWB:002','OWB:003']},{id:'q',status:'open'}]},
-},NOW);
-assert(multiFilmHtml.includes('Finish the recorded edit'));
-assert(multiFilmHtml.includes('3 videos linked'));
-assert(!multiFilmHtml.includes('title not recorded'),'multi-film jobs do not dump per-key title-not-recorded lines');
 const missingHtml=t.activityCard({...activityBoard,owb:{jobs:[{...runningTask,progress:null,claimedAt:''}]}},NOW);
-assert(!missingHtml.includes('role="progressbar"')&&missingHtml.includes('Task progress not recorded')&&missingHtml.includes('Task ETA unavailable'));
+assert(!missingHtml.includes('aj-bar')&&missingHtml.includes('Progress n/a'));
 const idleHtml=t.activityCard(makeBoard([]),NOW);
-assert(idleHtml.includes('Studio waiting for next job')&&!idleHtml.includes('role="progressbar"'));
+assert(idleHtml.includes('Studio waiting for next job')&&idleHtml.includes('Active jobs')&&!idleHtml.includes('Running now'));
 for(const progress of [{step:-1,of:5},{step:6,of:5},{step:2,of:0},{step:1.5,of:5}, {step:'<img>',of:5}]) assert.equal(t.recordedTaskProgress({progress}),null);
-assert(!t.activityCard({...activityBoard,owb:{jobs:[{...runningTask,progress:{step:5,of:5},estMin:100}]}},NOW).includes('Task ETA: ~'));
+assert(!t.activityCard({...activityBoard,owb:{jobs:[{...runningTask,progress:{step:5,of:5},estMin:100}]}},NOW).includes('~15m ETA'));
 console.log('Studio active-job card checks OK');
 
 // Published status overrides stale production lanes and follow-up jobs, without fabricating 100% history.
@@ -359,14 +351,14 @@ assert.equal(t.overviewModel(dispatchBoard,NOW).held.length,2);
 assert(t.activityCard(dispatchBoard,NOW).includes('Ready work waiting for dispatch'));
 dispatchBoard.workflow.states.ready.state='waiting';
 assert(t.activityCard(dispatchBoard,NOW).includes('No job running · work is waiting'));
-assert(t.activityCard(dispatchBoard,NOW).includes('0 queued · 3 waiting'));
+assert(!t.activityCard(dispatchBoard,NOW).includes('0 queued · 3 waiting'),'queued/waiting footer is gone from Active jobs');
 console.log('Dispatch visibility checks OK');
 
 dispatchBoard.owb.jobs.push({id:'chiefReview',status:'blocked',by:'cursor',title:'Review the output'});
 dispatchBoard.workflow.states.chiefReview={state:'running'};
 dispatchBoard.workflow.active=[{id:'chiefReview',worker:'codex',progress:{step:1,of:3}}];
 assert(t.activityCard(dispatchBoard,NOW).includes('Codex is working'));
-assert(t.activityCard(dispatchBoard,NOW).includes('1 of 3 steps'));
+assert(t.activityCard(dispatchBoard,NOW).includes('1 / 3 steps'));
 assert.equal(t.overviewModel(dispatchBoard,NOW).running.length,1);
 // Missing milestone data must explain the gap without inventing approval or linking unrelated jobs.
 const unknownQA={id:'qa',label:'Chief QA',state:'unknown',dependsOn:['edit','thumbs']};
@@ -415,7 +407,9 @@ assert(t.activityVideoContext(contextBoard,{id:'x',title:'HOS 008 mentioned in p
 console.log('Activity video context checks OK');
 
 const escapedContext=t.activityCard({...activityBoard,tracker:{videos:[v({key:'HOS:008',channel:'HOS',title:'<svg onload=alert(1)>',jobs:[{id:'Jactual'}]})]}},NOW);
-assert(escapedContext.includes('&lt;svg onload=alert(1)&gt;')&&!escapedContext.includes('<svg onload'));
+assert(!escapedContext.includes('<svg onload'), 'compact Active jobs does not dump a raw video title XSS payload');
+assert(t.activityVideoContext({tracker:{videos:[v({key:'HOS:008',channel:'HOS',title:'<svg onload=alert(1)>',jobs:[{id:'Jactual'}]})]}},{id:'Jactual'}).label.includes('<svg onload'),
+  'activityVideoContext still exposes the raw title for callers that escape it');
 
 // A follow-up checkpoint is distinct from the ready review's start and from real device capacity.
 const reviewParent={id:'J1834',status:'blocked',by:'codex',hold:{condition:'Parked for Chief approval of delivered candidate',check_at:new Date(NOW+60*6e4).toISOString()}};
@@ -450,8 +444,8 @@ assert(t.activityVideoContext(contextBoard,{id:'J1844',kind:'review',ref:'J1834'
 // Live execution lease reports startup without fabricating a claim, progress or task ETA.
 const startupBoard={models:{checkedAt:new Date(NOW).toISOString(),models:[]},tracker:{videos:[]},owb:{jobs:[{id:'Jlaunch',status:'open',title:'Prepare the selected review',progress:{step:3,of:3}}]},workflow:{at:new Date(NOW).toISOString(),states:{Jlaunch:{state:'starting'}},active:[{id:'Jlaunch',worker:'gemini',mode:'starting',phase:'starting',startedAt:new Date(NOW-6e4).toISOString(),expiresAt:new Date(NOW+10*6e4).toISOString()}]}};
 const startupHtml=t.activityCard(startupBoard,NOW), startupModel=t.overviewModel(startupBoard,NOW);
-assert(startupHtml.includes('Gemini is starting')&&startupHtml.includes('Worker launched; task claim pending'));
-assert(!startupHtml.includes('role="progressbar"')&&!startupHtml.includes('Task ETA: ~'));
+assert(startupHtml.includes('Gemini is starting')&&startupHtml.includes('Claim pending')&&startupHtml.includes('Starting…'));
+assert(!startupHtml.includes('aj-bar')&&!startupHtml.includes('~15m ETA'));
 assert.equal(startupModel.queued.length,0);assert.equal(startupModel.running.length,1);assert.equal(startupModel.status.text,'Starting');
 const expiredStartup=t.overviewModel(startupBoard,NOW+11*6e4);assert.equal(expiredStartup.running.length,0);assert.equal(expiredStartup.status.text,'Attention needed');
 const onlyHeartbeat={...startupBoard,workflow:{},owb:{jobs:[{id:'Jlaunch',status:'open'}]},models:{checkedAt:new Date(NOW).toISOString(),runner:{state:'working',job:'Jlaunch'}}};
@@ -582,8 +576,10 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert(agents.includes('mc-chip') && agents.includes('light-green') && agents.includes('J2276'), 'agent chips use traffic lights');
   assert(agents.includes('light-red') || agents.includes('Idle') || agents.includes('Down'), 'idle/down agents get a red light');
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
-  assert(ov.includes('overview-stats') && ov.includes('ov-card'), 'Overview stacks simple cards');
-  assert(ov.indexOf('overview-activity') < ov.indexOf('overview-machines'), 'Studio Activity sits above Machines');
+  assert(ov.includes('overview-stats') && ov.includes('ov-stat'), 'Overview stacks simple stats');
+  assert(ov.includes('4 total') && ov.includes('1 on · 45 done'), 'Machines header shows total and chip captions');
+  assert(ov.indexOf('overview-machines') < ov.indexOf('overview-activity'), 'Machines sit above Active jobs');
+  assert(ov.includes('Active jobs'), 'Active jobs section uses the cleaner label');
   assert(!ov.includes('overview-agents') && !ov.includes('Agents</h2>'), 'Overview home does not repeat the Agents tab');
   assert(!ov.includes('overview-next-live') && !ov.includes('Next to go live'), 'Overview home does not list Next to go live');
   assert(!ov.includes('overview-feature') && !ov.includes('Next in production') && !ov.includes('Ready for your review'),
@@ -643,31 +639,34 @@ console.log('Queue forecast checks OK');
     ],
   };
   const card = t.progressCard({progress24h: p24});
-  assert(card.includes('video jobs finished') && card.includes('30 of 57 jobs were on videos'), 'headline stats stay');
+  assert(card.includes('Video jobs finished') && card.includes('30 of 57 jobs were on videos'), 'headline stats stay');
   assert(card.includes('Videos that had work') && card.includes('p24-film-card'), 'films render as cards');
   assert(card.includes('OWB 031') && card.includes('56% → 67%'), 'moved films show the % change');
   assert(card.includes('J2141') && card.includes('1 of 3') && card.includes('in progress'), 'in-progress jobs stay visible');
   assert(!card.includes('>claimed<') && !card.includes('claimed</span>'), 'raw claimed status is not shown');
-  assert(card.includes('J2200') && card.includes('worked on, no stage closed'), 'no-stage-closed films say so clearly');
+  assert(card.includes('J2200') && card.includes('OWB 033') && card.includes('56%'), 'no-stage-closed films still show their pct and id');
   assert(card.includes('Studio-wide') && card.includes('J2290') && card.includes('Daily analytics capture'), 'studio-wide jobs fold at the bottom');
   assert(!card.includes('Where the work went'), 'old count+last summary is gone');
-  // Glance strip: done today / left / can't run / next four.
-  assert(card.includes('p24-glance') && card.includes('done today') && card.includes('left to go live') && card.includes("can't run yet"),
+  // Glance strip: numbers only — can't-run detail moved to Needs attention on Overview.
+  assert(card.includes('p24-glance') && card.includes('Done today') && card.includes('Left to go live') && card.includes("Can't run yet"),
     'glance strip shows done today, left, and cannot-run counts');
-  assert(card.includes("Can't run yet") && card.includes('J2142') && card.includes('Will run automatically after J2141'),
-    'glance can\'t-run list uses will-run-after wording, not a mysterious wall');
-  assert(card.includes('p24-glance-fold'), 'cannot-run blurbs sit behind a glance accordion');
+  assert(!card.includes('p24-glance-fold') && !card.includes('overview-attention'),
+    'progressCard glance stays numbers-only; Needs attention lives on Overview');
   assert(!card.includes('Next to go live') && !card.includes('overview-next-live'),
     'progressCard no longer mixes Next to go live into Last 24 hours');
   const nextLive = t.p24NextLive(p24);
   assert(nextLive.includes('Next to go live') && nextLive.includes('Could a Robot Survive on Mars?') && nextLive.includes('Why Vaccines Are Named After a Cow'),
     'p24NextLive helper still lists the next four from publish times');
-  // Compact film card + checklist behind disclosure.
-  assert(card.includes('6 of 9 stages · picture still open') && card.includes('Done today') && card.includes('Left') && card.includes("Can't run"),
-    'film cards show % reason and headline counts without opening anything');
-  assert(card.includes('Will run automatically after J2141 (032 picture harvest)') && card.includes('p24-blocked-why'),
-    "can't-run line explains the workflow wait on the film card");
-  assert(card.includes('p24-check-fold') && card.includes('Jobs checklist'), 'full checklist sits behind a disclosure');
+  // Compact film row; full checklist expands from the row (Ben, 6 Nov ~23:07).
+  assert(card.includes('6 of 9 stages') && card.includes('Done 1') && card.includes('Left 3') && card.includes('Can&#39;t run 1'),
+    'film cards show one-line stage / done / left / can\'t-run without opening anything');
+  assert(card.includes('p24-film-bar') && card.includes('p24-film-meta') && card.includes('p24-film-summary'),
+    'compact resting row keeps id, title, percent, progress bar, and meta');
+  assert(card.includes('p24-check-fold') && card.includes('Jobs checklist') && card.includes('p24-film-expand'),
+    'full checklist sits behind a row expand control');
+  assert(!/<details[^>]*p24-check-fold[^>]*\sopen/i.test(card), 'film checklists stay closed by default');
+  assert(card.includes('Will run automatically after J2141 (032 picture harvest)') && card.includes('p24-job-why'),
+    "can't-run / will-run-after explanation stays on the expanded checklist row");
   assert(card.includes('p24-check') && card.includes('is-done') && card.includes('is-progress') && card.includes('is-waiting'),
     'jobs render as a checklist with done, in-progress and waiting marks');
   assert(card.includes('is-done-yesterday') && card.includes('data-job-state="done-yesterday"'),
@@ -679,8 +678,6 @@ console.log('Queue forecast checks OK');
     'checklist states are marked for done, in progress and waiting');
   assert(card.includes('J2142') && card.includes('after earlier work') && !card.includes('>blocked<'),
     'after-wait jobs stay unchecked with a workflow note, not raw blocked');
-  assert(card.includes('p24-job-why') && card.includes('Will run automatically after J2141'),
-    'checklist rows carry the will-run-after explanation');
   assert(!/<input\b[^>]*type=["']?checkbox/i.test(card) && !/onclick=|role=["']checkbox["']/i.test(card),
     'checklist is display-only — no interactive checkbox or click handler');
   assert(card.includes('p24-job-stage') && card.includes('thumbs') && card.includes('picture'), 'stage labels stay on the right');
@@ -714,23 +711,27 @@ console.log('Queue forecast checks OK');
   assert(ov.includes('p24-check') && ov.includes('data-job-state="progress"'), 'Overview checklist marks survive the full overview render');
   assert(ov.includes('p24-glance') && !ov.includes('Next to go live') && !ov.includes('overview-next-live'),
     'Overview glance strip stays; Next to go live stays off home');
-  assert(ov.includes('overview-activity') && ov.indexOf('overview-activity') < ov.indexOf('overview-machines'),
-    'Studio Activity sits above Machines');
-  assert(ov.indexOf('overview-machines') < ov.indexOf('overview-last24'),
-    'Machines sit above Last 24 hours');
-  assert(ov.indexOf('overview-last24') < ov.indexOf('overview-working'),
-    'Last 24 hours sits above Working on now');
+  assert(ov.includes('overview-attention') && ov.includes('Needs attention') && ov.includes('J2142') && ov.includes('Will run automatically after J2141'),
+    'Needs attention banner expands to will-run-after / can\'t-run detail');
+  assert(ov.indexOf('overview-attention') < ov.indexOf('overview-machines'),
+    'Needs attention sits above Machines');
+  assert(ov.indexOf('overview-machines') < ov.indexOf('overview-activity'),
+    'Machines sit above Active jobs');
+  assert(ov.indexOf('overview-activity') < ov.indexOf('overview-working'),
+    'Active jobs sit above Working on now');
+  assert(ov.indexOf('overview-working') < ov.indexOf('overview-last24'),
+    'Working on now sits above Last 24 hours');
   assert(ov.includes('overview-working') && ov.includes('overview-p24-stats'),
     'Working on now and studio totals are separate sections');
-  assert(ov.indexOf('overview-working') < ov.indexOf('overview-p24-stats'),
-    'film percentages sit above the 46/milestones totals line');
+  assert(ov.indexOf('overview-last24') < ov.indexOf('overview-p24-stats'),
+    'Last 24 hours sits above Studio totals');
   assert(!ov.includes('overview-agents') && !ov.includes('overview-feature'),
     'Overview home omits Agents cards and the Ready-for-review feature block');
-  assert(ov.includes('p24-glance-fold') && !/<details[^>]*p24-check-fold[^>]*\sopen/i.test(ov),
-    'can\'t-run details fold closed; film checklists stay closed by default');
+  assert(!/<details[^>]*p24-check-fold[^>]*\sopen/i.test(ov) && !/<details[^>]*overview-attention[^>]*\sopen/i.test(ov),
+    'Needs attention and film checklists stay closed by default');
 
   // Focus filter (Ben, 6 Nov evening): Overview film cards = studio focus only; glance matches those cards.
-  const focused = t.progressCard({
+  const focusedBoard = {
     owb: {focus: ['032', 'OWB:032', '031', 'OWB:031', '033', 'OWB:033']},
     progress24h: {
       ...p24,
@@ -749,11 +750,13 @@ console.log('Queue forecast checks OK');
           items: [{kind: 'stage', stage: 'topic', status: 'todo', title: 'topic — not started'}]},
       ],
       glance: {doneToday: 208, left: 208, blocked: 53, blockedJobs: [
-        {id: 'J2142', film: 'OWB:032', title: '032 pebble ruler review', status: 'blocked'},
+        {id: 'J2142', film: 'OWB:032', title: '032 pebble ruler review', status: 'blocked',
+          why: 'Will run automatically after J2141 (032 picture harvest)'},
         {id: 'J024x', film: 'OWB:024', title: '024 leftover', status: 'blocked'},
       ], nextLive: p24.glance.nextLive},
     },
-  });
+  };
+  const focused = t.progressCard(focusedBoard);
   assert(focused.includes('Working on now'), 'focus mode labels the film stack as working on now');
   assert(focused.includes('OWB 031') && focused.includes('OWB 032') && focused.includes('OWB 033'), 'focus films stay on Overview');
   assert(!focused.includes('OWB 024') && !focused.includes('HOS 006') && !focused.includes('OWB ASK'),
@@ -761,21 +764,25 @@ console.log('Queue forecast checks OK');
   assert(!focused.includes('Old Venus film') && !focused.includes('Housekeeping'),
     'non-focus titles do not appear on Overview film cards');
   // Glance totals come from the three focus cards (1+1+1 done today, 0+3+0 left, 0+1+0 blocked) — not the inflated payload.
-  assert(/<b>3<\/b><span>done today<\/span>/.test(focused), 'glance done-today matches the focus films on screen');
-  assert(/<b>3<\/b><span>left to go live<\/span>/.test(focused), 'glance left matches the focus films on screen');
-  assert(/<b>1<\/b><span>can't run yet<\/span>/.test(focused), 'glance blocked matches the focus films on screen');
-  assert(focused.includes('J2142') && !focused.includes('J024x'), 'glance can\'t-run list is scoped to focus films');
+  assert(/<b>3<\/b><span>Done today<\/span>/.test(focused), 'glance done-today matches the focus films on screen');
+  assert(/<b>3<\/b><span>Left to go live<\/span>/.test(focused), 'glance left matches the focus films on screen');
+  assert(/<b>1<\/b><span>Can't run yet<\/span>/.test(focused), 'glance blocked matches the focus films on screen');
   assert(!focused.includes('Could a Robot Survive on Mars?'), 'next-to-go-live titles are not mixed into Last 24 hours / Working on now');
+  const focusedOv = t.overview({tracker: {videos: []}, machines: {machines: []}, ...focusedBoard}, Date.parse('2026-11-06T19:41:00Z'));
+  assert(focusedOv.includes('Needs attention') && focusedOv.includes('J2142') && !focusedOv.includes('J024x'),
+    'Needs attention can\'t-run list is scoped to focus films');
 
-  // Working-on-now active-work marker (Ben, 6 Nov ~22:58): green pulse only when a film has a claimed job.
+  // Working-on-now active-work marker (Ben, 6 Nov ~22:58 / ~23:07): green pulse only when a film has a claimed job.
   const activeCard = t.p24FilmCard({
-    film: 'OWB:032', title: 'What Would Happen If You Landed On Titan', status: '56% → 67%',
+    film: 'OWB:032', title: 'What Would Happen If You Landed On Titan', status: '56% → 67%', from: 56, to: 67,
     items: [{id: 'J2141', title: '032 picture harvest', status: 'claimed', stage: 'picture'}],
   });
   assert(activeCard.includes('p24-working-dot') && activeCard.includes('is-working'),
     'claimed/in-progress film card shows the top-left working marker');
   assert(activeCard.includes('aria-label="A job is in progress on this film"'),
     'working marker has an accessible name');
+  assert(activeCard.includes('p24-check-fold') && activeCard.includes('p24-film-summary') && activeCard.includes('Jobs checklist'),
+    'working film row expands to the jobs checklist');
   assert(t.p24FilmHasActiveWork({film: 'OWB:032', items: [{id: 'J2141', status: 'claimed'}]}),
     'helper treats claimed checklist jobs as active work');
   const waitingCard = t.p24FilmCard({
@@ -785,6 +792,8 @@ console.log('Queue forecast checks OK');
   });
   assert(!waitingCard.includes('p24-working-dot') && !waitingCard.includes('is-working'),
     'will-run-after / waiting films do not get the working marker');
+  assert(waitingCard.includes('p24-check-fold') && waitingCard.includes('Will run automatically after J2141'),
+    'waiting films still expand to show will-run-after on the checklist');
   const openCard = t.p24FilmCard({
     film: 'OWB:031', title: 'Magnetic Field',
     items: [{id: 'J1914', title: 'queued picture job', status: 'open', stage: 'picture'}],
@@ -796,6 +805,9 @@ console.log('Queue forecast checks OK');
     items: [{id: 'J2200', title: 'done job', status: 'done', when: 'today'}],
   });
   assert(!doneCard.includes('p24-working-dot'), 'done-only films do not get the working marker');
+  const emptyCard = t.p24FilmCard({film: 'OWB:034', title: 'Empty', items: []});
+  assert(!emptyCard.includes('p24-check-fold') && emptyCard.includes('<article'),
+    'films with no jobs stay a compact article with no expand control');
   // Live claimed job on the board still lights the card even if progress24 items lag.
   const liveBoard = {
     tracker: {videos: [v({key: 'OWB:032', title: 'Titan', jobs: [{id: 'Jlive', status: 'claimed', by: 'codex'}]})]},
@@ -807,6 +819,12 @@ console.log('Queue forecast checks OK');
     'film card shows the marker from a live claimed board job');
   assert(card.includes('is-working') && card.includes('p24-working-dot') && card.includes('J2141'),
     'progressCard film with claimed J2141 carries the working marker');
+  // CSS keeps the pulse for motion, static green for prefers-reduced-motion.
+  const css = fs.readFileSync(path.join(__dirname, '../05_Analytics/kanban/studio_app.html'), 'utf8');
+  assert(css.includes('p24-working-pulse') && css.includes('prefers-reduced-motion: no-preference'),
+    'working-dot pulses only when motion is preferred');
+  assert(/prefers-reduced-motion:\s*reduce[\s\S]*p24-working-dot[\s\S]*animation:\s*none/.test(css),
+    'prefers-reduced-motion keeps a static green working-dot');
 }
 console.log('Last-24-hours film cards OK');
 
