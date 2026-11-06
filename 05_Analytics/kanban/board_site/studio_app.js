@@ -771,13 +771,13 @@
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
     // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
     const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} waiting</p>`;
-    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is waiting':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
+    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a class="ov-card" href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is waiting':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
     const videoContext=activityVideoContext(b,j);
     const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), category=activityCategory(b,j);
     // Reuse the existing task estimator only with a valid recorded start and valid inputs.
     const e=taskEstimate(j,now);
     const eta=starting?'Worker launched; task claim pending':e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
-    return `<section class="overview-activity"><h2>Studio activity</h2><a class="active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${category.label}">
+    return `<section class="overview-activity"><h2>Studio activity</h2><a class="ov-card active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${category.label}">
       <span class="activity-category" data-category="${category.id}">${category.label}</span>
       <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is ${starting?'starting':'working'}</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
       ${videoContext.count?`<p class="activity-video"><span>${videoContext.count>1?'Videos':'Video'}</span>${esc(videoContext.label)}</p>`:`<p class="activity-video activity-scope-compact">${esc(videoContext.label)}</p>`}
@@ -798,21 +798,45 @@
     const films=(p.films||[]).map(f=>`<li><span class="p24-film">${esc(name(f.film))}</span> <span class="p24-title">${esc(f.title)}</span><span class="p24-count">${f.jobs} job${f.jobs===1?'':'s'}</span><span class="p24-last">${esc(f.last)}</span></li>`).join('');
     const partial=p.hours && p.hours<23 ? `<p class="muted p24-note">Film progress covers the last ${Math.round(p.hours)} h so far; it fills to 24 h on its own.</p>`:'';
     return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
+      <div class="ov-card">
       <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>${p.videoJobs!=null?'video jobs finished':'jobs finished'}</span></div><div><b>${p.milestones||0}</b><span>milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>videos moved forward</span></div></div>
       ${p.videoJobs!=null?`<p class="muted p24-agents${p.jobsDone&&p.videoJobs/p.jobsDone<0.3?' p24-warn':''}">${p.videoJobs} of ${p.jobsDone||0} jobs were on videos (${p.jobsDone?Math.round(p.videoJobs/p.jobsDone*100):0}%); the rest kept the studio running.</p>`:''}
       ${agents?`<p class="muted p24-agents">By ${agents}</p>`:''}
       ${moved?`<h3>Videos that moved</h3><ul class="p24-list">${moved}</ul>${reopened}`:`<p class="muted p24-note">No video changed milestone ${p.hours?'in this window':'yet (first reading)'}.</p>`}
       ${partial}
       ${films?`<details class="p24-more"><summary>Where the work went (${p.jobsDone||0} jobs${p.otherJobs?`, ${p.otherJobs} studio-wide`:''})</summary><ul class="p24-list">${films}</ul></details>`:''}
+      </div>
     </section>`;
   }
   // Machines (Ben, 4 Nov 2026): what the Mini and the MacBook are on now, and jobs each finished in 24 h.
   // Queue forecast (Ben, 5 Nov 2026: "waiting for this particular agent to be free, number 4 in the queue ... a time").
+  // Overview tidy (Ben, 6 Nov 2026): drop per-machine By splits / Agents here / min-per-job / idle empty agent rows;
+  // show last-seen only when stale (~30+ min); wrap queue clear times; plain-English unavailable reasons.
+  const SEEN_STALE_MIN = 30;
   function qWhen(t) {
     const d=Date.parse(t); if(!d) return '';
-    const day=x=>new Date(x).toLocaleDateString('en-GB',{timeZone:'Europe/London',weekday:'short'});
+    const day=x=>new Date(x).toLocaleDateString('en-GB',{timeZone:'Europe/London',weekday:'long'});
     const hm=new Date(d).toLocaleTimeString('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit'});
     return (day(d)===day(Date.now())?'':day(d)+' ')+hm;
+  }
+  function plainWhy(why) {
+    const s=String(why||'').trim();
+    if(!s) return 'down';
+    let m=s.match(/no Claude run for (\d+)\s*min/i);
+    if(m){
+      const min=+m[1];
+      if(min<60) return `last run about ${min} min ago`;
+      const h=Math.round(min/60);
+      return `last run about ${h} hour${h===1?'':'s'} ago`;
+    }
+    m=s.match(/no heartbeat from MacBook slot (\d+) in (\d+)\s*min/i);
+    if(m) return `MacBook ${m[1]} hasn't checked in for about ${m[2]} min`;
+    m=s.match(/no MacBook heartbeat in (\d+)\s*min/i);
+    if(m) return `MacBook hasn't checked in for about ${m[1]} min`;
+    m=s.match(/no heartbeat yet/i);
+    if(m) return 'no check-in yet';
+    // Strip heartbeat internals; keep the human meaning.
+    return s.replace(/\s*\([^)]*heartbeat[^)]*\)/gi,'').replace(/\bheartbeat\b/gi,'check-in').replace(/\s{2,}/g,' ').trim()||'down';
   }
   function forecastLine(b, j) {
     const q=(b&&b.queueForecast)||{}, f=j&&(q.jobs||{})[j.id];
@@ -822,40 +846,41 @@
   }
   function agentLines(b) {
     const q=(b&&b.queueForecast)||{};
-    const rows=(q.agents||[]).map(a=>{
+    // Busy, queued, or unavailable only — hide idle agents with nothing waiting.
+    const rows=(q.agents||[]).filter(a=>!a.up||a.now||a.queued).map(a=>{
       const name=AGENTS[a.agent]||a.agent;
-      if(!a.up) return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title muted">Not available · ${esc(a.why||'down')}</span></li>`;
+      if(!a.up) return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title wrap muted">Not available · ${esc(plainWhy(a.why))}</span></li>`;
       const on=a.now?`on ${esc(a.now)} · free about ${esc(qWhen(a.freeAt))}`:'free now';
       const line=a.queued?` · ${a.queued} in line, clear about ${esc(qWhen(a.clearAt))}`:'';
-      return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title">${on}${line}</span><span class="p24-count">~${a.minutesPerJob} min/job</span></li>`;
+      return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title wrap">${on}${line}</span></li>`;
     }).join('');
-    return rows?`<div class="mc-machine"><div class="mc-head"><b>Agents and their lines</b></div><ul class="p24-list">${rows}</ul><p class="muted p24-note">${esc(q.note||'')}</p></div>`:'';
+    // Own section/card — never merged into the Machines list (Ben, 6 Nov 2026).
+    return rows?`<section class="overview-agents" aria-label="Agents and their lines"><h2>Agents and their lines</h2><div class="ov-card mc-agents"><ul class="p24-list mc-agent-list">${rows}</ul>${q.note?`<p class="muted p24-note">${esc(q.note)}</p>`:''}</div></section>`:'';
   }
   function machinesCard(b, now) {
     const m=b.machines;
-    if(!m||!(m.machines||[]).length) return '';
+    if(!m||!(m.machines||[]).length) return agentLines(b);
     const ago=t=>{const d=Date.parse(t);if(!d)return'';const min=Math.round((now-d)/60000);return min<1?'just now':min<60?`${min} min ago`:`${Math.round(min/60)} h ago`;};
+    const seenBit=t=>{const d=Date.parse(t);if(!d)return'';const min=(now-d)/60000;return min>=SEEN_STALE_MIN?` · seen ${ago(t)}`:'';};
     const live=r=>{  // the MacBook's own report is fetched every minute, fresher than the 5-min board publish
       if(r.id!=='macbook'||!macbook||!(Date.parse(macbook.at)>Date.parse(r.seen||0))) return r;
       const why=Array.isArray(macbook.why)?macbook.why.join('; '):(macbook.why||'');
       const now2=(r.now||[]).length||!macbook.job?r.now:[{id:macbook.job,title:'',agent:'macbook'}];
       return {...r,state:macbook.state||r.state,why,seen:macbook.at,agents:macbook.agents||r.agents,now:now2};
     };
+    // One simple card per machine: name, 24h count, current job or short idle line.
     const rows=m.machines.map(live).map(r=>{
-      const jobs=(r.now||[]).map(n=>`<li><span class="p24-film">${esc(n.id)}</span> <span class="p24-title">${esc(n.title)}</span><span class="p24-count">${esc(n.agent||'')}</span></li>`).join('');
-      const agents=Object.entries(r.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
-      const idle=!jobs?`<p class="muted p24-note">${r.why?esc(r.why):'No job right now.'}${r.seen?` · seen ${ago(r.seen)}`:''}</p>`:'';
-      const clis=(r.agents||[]).length?`<p class="muted p24-note">Agents here: ${(r.agents||[]).map(esc).join(', ')}</p>`:'';
-      return `<div class="mc-machine"><div class="mc-head"><b>${esc(r.name)}</b><span class="mc-done"><b>${r.done24||0}</b> done in 24 h</span></div>
-        ${jobs?`<ul class="p24-list">${jobs}</ul>`:idle}${agents?`<p class="muted p24-note">By ${agents}</p>`:''}${clis}</div>`;
+      const jobs=(r.now||[]).map(n=>`<p class="mc-job"><b>${esc(n.id)}</b> <span class="p24-title wrap">${esc(n.title)}</span>${n.agent?`<span class="mc-agent">${esc(n.agent)}</span>`:''}</p>`).join('');
+      const idle=!jobs?`<p class="mc-idle">${r.why?esc(r.why):'No job right now.'}${seenBit(r.seen)}</p>`:'';
+      return `<article class="ov-card mc-machine"><div class="mc-head"><b>${esc(r.name)}</b><span class="mc-done"><b>${r.done24||0}</b> done in 24 h</span></div>${jobs||idle}</article>`;
     }).join('');
-    return `<section class="overview-p24 overview-machines" aria-label="Machines"><h2>Machines</h2>${rows}${agentLines(b)}</section>`;
+    return `<section class="overview-machines" aria-label="Machines"><h2>Machines</h2><div class="ov-stack">${rows}</div></section>${agentLines(b)}`;
   }
   function overview(b, now) {
     const s=overviewModel(b,now), candidate=featureVideo(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
-      <div class="overview-stats" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
-      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted">Nothing is ready for your review yet.</p>':''}${featuredCard(candidate,now,s.producing.length)}${nextVideoWorkCard(b,candidate,now)}</section>
+      <div class="overview-stats" aria-label="Studio video counts"><a class="ov-card" href="#review"><b>${s.ready.length}</b><span>To review</span></a><a class="ov-card" href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a class="ov-card" href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
+      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted overview-empty">Nothing is ready for your review yet.</p>':''}<div class="ov-stack">${featuredCard(candidate,now,s.producing.length)}${nextVideoWorkCard(b,candidate,now)}</div></section>
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
       ${progressCard(b)}</div>`;

@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, machinesCard, plainWhy, qWhen, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -495,18 +495,56 @@ assert(t.unconfirmedCut({...exactCut,version:'v14'}),'a later cut cannot borrow 
 assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'watch and card versions must agree');
 
 // Queue forecast (Ben, 5 Nov 2026): each queued job says who it waits for, its place in line and when it starts.
+// Overview tidy (Ben, 6 Nov 2026): hide idle empty agent rows, drop min/job, plain unavailable, wrap clear times.
 {
   const qb = {queueForecast: {jobs: {J7: {agent: 'gemini', pos: 4, startAt: '2026-11-05T11:40:00Z'}},
     noAgent: {J8: 'waiting for codex: marked down'},
     agents: [{agent: 'gemini', up: true, now: 'J6', freeAt: '2026-11-05T10:40:00Z', queued: 4, clearAt: '2026-11-05T13:00:00Z', minutesPerJob: 48},
-             {agent: 'cursor', up: false, why: 'out of credit until 2026-11-06'}], note: 'Estimate'}};
+             {agent: 'cursor', up: false, why: 'out of credit until 2026-11-06'},
+             {agent: 'macbook', up: true, now: '', queued: 0, freeAt: '2026-11-05T10:00:00Z', clearAt: '2026-11-05T10:00:00Z', minutesPerJob: 150},
+             {agent: 'claude', up: false, why: 'no Claude run for 647 min (heartbeat stale)'}], note: 'Estimate'}};
   const line = t.forecastLine(qb, {id: 'J7'});
   assert(line.startsWith('Next for Gemini · #4 in line · starts about'), line);
   assert.equal(t.forecastLine(qb, {id: 'J8'}), 'Waiting for codex: marked down');
   assert.equal(t.forecastLine(qb, {id: 'J9'}), '');
   const lanes = t.agentLines(qb);
-  assert(lanes.includes('on J6 · free about') && lanes.includes('4 in line') && lanes.includes('Not available · out of credit'), lanes);
+  assert(lanes.includes('on J6 · free about') && lanes.includes('4 in line') && lanes.includes('clear about'), lanes);
+  assert(lanes.includes('Not available · out of credit'), lanes);
+  assert(lanes.includes('Not available · last run about 11 hours ago'), lanes);
+  assert(!/<span class="p24-film">MacBook(?: 2)?<\/span>/.test(lanes), 'idle MacBook with nothing waiting is hidden');
+  assert(!lanes.includes('min/job'), 'per-row minutes-per-job is gone');
+  assert(lanes.includes('p24-title wrap'), 'queue lines use the wrapping title class');
   assert.equal(t.agentLines({}), '');
+  assert.equal(t.agentLines({queueForecast: {agents: [{agent: 'macbook', up: true, now: '', queued: 0}]}}), '',
+    'Agents block hides when every row is idle and empty');
+  assert.equal(t.plainWhy('no Claude run for 647 min (heartbeat…)'), 'last run about 11 hours ago');
+  assert.equal(t.plainWhy('no MacBook heartbeat in 40 min'), "MacBook hasn't checked in for about 40 min");
+}
+{
+  const now = Date.parse('2026-11-06T10:51:00Z');
+  const qb = {machines: {machines: [
+    {id: 'mini', name: 'Mac mini', done24: 45, now: [{id: 'J2276', title: 'Verify condition for J2033', agent: 'gemini'}],
+      byAgent: {gemini: 28, cursor: 10, codex: 7}, seen: '2026-11-06T10:50:00Z'},
+    {id: 'macbook', name: 'MacBook Pro', done24: 12, now: [], why: 'no MacBook job waiting',
+      byAgent: {macbook: 7, 'macbook-2': 5}, agents: ['codex', 'gemini', 'claude', 'cursor'], seen: '2026-11-06T10:47:00Z'},
+    {id: 'cloud', name: 'Claude (cloud)', done24: 5, now: [], byAgent: {claude: 5}, seen: '2026-11-05T22:51:00Z'},
+  ]}, queueForecast: {agents: [
+    {agent: 'gemini', up: true, now: 'J2276', freeAt: '2026-11-06T11:30:00Z', queued: 2, clearAt: '2026-11-06T14:00:00Z'},
+    {agent: 'macbook', up: true, now: '', queued: 0},
+  ], note: 'Estimate'}};
+  const card = t.machinesCard(qb, now);
+  assert(card.includes('Mac mini') && card.includes('45') && card.includes('J2276'), card);
+  assert(card.includes('ov-card mc-machine'), 'each machine is a simple card');
+  assert(card.includes('no MacBook job waiting'), card);
+  assert(!card.includes('By gemini') && !card.includes('By macbook') && !/By claude/.test(card), 'per-machine By splits are gone');
+  assert(!card.includes('Agents here'), 'Agents here CLI list is gone');
+  assert(!card.includes('seen 4 min ago'), 'fresh last-seen is hidden');
+  assert(card.includes('seen 12 h ago'), 'stale last-seen (~30+ min) remains');
+  assert(card.includes('overview-agents') && card.includes('Agents and their lines'), 'Agents stays a separate section');
+  assert((card.match(/aria-label="Machines"/g)||[]).length===1 && (card.match(/aria-label="Agents and their lines"/g)||[]).length===1,
+    'Machines and Agents are not merged into one list');
+  const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
+  assert(ov.includes('overview-stats') && ov.includes('ov-card'), 'Overview stacks simple cards');
 }
 console.log('Queue forecast checks OK');
 
