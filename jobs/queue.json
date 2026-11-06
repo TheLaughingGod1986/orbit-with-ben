@@ -188437,17 +188437,21 @@
           "at": "2026-11-06T13:07Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T13:10Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: J2219 locked. J01 still in WIP next, not active. No takes and no ElevenLabs spend."
         }
       ],
-      "remaining_action": "Record the 8 linking VO takes for J01 via vo_take.py, verify with faster-whisper, and write VO_STATUS.md",
+      "remaining_action": "Record the 8 J01 linking VO takes after J01 enters the active WIP list",
       "kind": "vo",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-06T13:07Z",
+        "at": "2026-11-06T13:10Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "J2219 locked. J01 still in WIP next, not active. No takes and no ElevenLabs spend."
       }
     },
     {
