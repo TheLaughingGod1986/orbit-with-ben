@@ -179469,10 +179469,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-06T21:45Z",
-      "eta": "2026-11-06T23:45Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -180076,6 +180076,11 @@
           "at": "2026-11-06T21:51Z",
           "by": "codex",
           "what": "step 1 of 4 done: Local checkpoint 510197ffe4: sourced R23 alternative drafted and measured; J2304 queued for individual still, shot-list and allocation review. 61 earlier exports unchanged. Original 1/4 retained."
+        },
+        {
+          "at": "2026-11-06T21:51Z",
+          "by": "codex",
+          "what": "released: Clean local checkpoint 510197ffe4 in /private/tmp/codex-J2089 on worker/J2089-r18-ruler. Original 1/4 preserved. R23 qualitative record draft/source evidence and 109 layout/hash/export-guard checks; 61 prior MOV hashes unchanged. J2304 owns individual still, shot-list alternative and PIA14909 allocation review. No MOV/background process. Remaining licensed harvest/composites exceed run; retain frame0/Huygens/APL/source holds. GBP0, no publishing/PASS/merge. Prior automatic-review public-push rejection respected; local only."
         }
       ],
       "remaining_action": "After J2304 review, finish Titan licensed harvest and graded composites",
