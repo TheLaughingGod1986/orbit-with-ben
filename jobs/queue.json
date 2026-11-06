@@ -190121,9 +190121,14 @@
           "at": "2026-11-06T15:44Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: VO review of hos_013_short_A_v02 and hos_013_short_B_v02 is J2288. Both vo_check PASS. HOS PR 444 commit e1800ec6. Not a lock."
+        },
+        {
+          "at": "2026-11-06T16:37Z",
+          "by": "codex",
+          "what": "remaining action: FIX: listening evidence missing; J2288 must review both takes with verified audio input before VO lock."
         }
       ],
-      "remaining_action": "Parked for the Shorts voice review",
+      "remaining_action": "FIX: listening evidence missing; J2288 must review both takes with verified audio input before VO lock.",
       "kind": "vo",
       "progress": {
         "step": 4,
@@ -193263,9 +193268,14 @@
           "at": "2026-11-06T15:45Z",
           "by": "relay",
           "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 950 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
+        },
+        {
+          "at": "2026-11-06T16:37Z",
+          "by": "codex",
+          "what": "remaining action: Listen to both verified Shorts takes; check B at 11.42s and record KEEP or sentence-specific FIX for Chief VO lock."
         }
       ],
-      "remaining_action": "Read the voice checks and say keep, or name the exact sentence to pick up.",
+      "remaining_action": "Listen to both verified Shorts takes; check B at 11.42s and record KEEP or sentence-specific FIX for Chief VO lock.",
       "kind": "review",
       "plain": "Decide whether the two Darwin and Wallace Short voice takes are good enough to keep.",
       "review_of": "J2246",
@@ -193277,7 +193287,10 @@
         "by": ""
       },
       "for": "cursor",
-      "model": "cursor-claude-opus-5-5"
+      "model": "cursor-claude-opus-5-5",
+      "required_capabilities": [
+        "audio_input"
+      ]
     },
     {
       "id": "J2289",
