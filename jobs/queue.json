@@ -1,5 +1,5 @@
 {
-  "next_id": 2308,
+  "next_id": 2309,
   "jobs": [
     {
       "id": "J0001",
@@ -195404,6 +195404,36 @@
       ],
       "remaining_action": "Prepare and verify local replacement for HZGTovJu_TQ, then send for review",
       "due": "2026-11-15T20:00:00Z",
+      "kind": "assembly",
+      "plain": "Tighten the opening cuts and loop using existing footage and voice."
+    },
+    {
+      "id": "J2308",
+      "title": "OWB 026: E1 local re-cut for cwU_0WWeNZ4; preserve scheduled copy",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2207 / Chief h47 approved OWB-2026-11-E1, £0 local re-cut only. Target original ID cwU_0WWeNZ4, OWB:026, scheduled 2026-11-18 11:30 London. Package: 02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/11_Upload-Package. Source file: ../../../../Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/wed18_robot_reach_nearest_star_v01.mp4; preserved SHA256 be7c61215ea99c7e0731ff9e481a33d274eaf6fb52613d881ce612a6af129123.\n\nFirst recheck latest UPLOADS, API readback and queue: if superseded or already being repaired, record successor/job and stop without a duplicate render. J0935's earlier NO RECUT for the two 026 originals is superseded for local preparation by h47 E1; this does not authorize changing their scheduled copies.\n\nConcrete repair: Replace the pushed-still opener with existing approved moving footage, remove the agenda/meta setup, and tighten the bridge and loop.\n\nAcceptance: .cursor/rules/orbit-build-shorts.mdc -> OWB-2026-11-E1. Cut1 <=2.8s, Cut2 <=4.8s from zero, moving frame0, onset <=0.15s, surprise <=1.5s, sentence-1 breath <0.25s, no 3.5-5.5s post-sentence-1 hold, no meta/spoken CTA (explicit Test A waiver retained), matched loop tail <1.2s, later holds <=4s. Measure every field; no claim to hear/watch without demonstrated capability. Existing recorded words/media only, no spend/generation. Preserve title, original uploaded file/hash/manifest and slot; new version beside original. All Shorts, picture, polish, music, SFX/levels and caption checks must pass; retain teaching overlay and matched-long links. Never waive a failed gate or pad to length. If recorded words cannot meet a requirement, report exact conflict for reviewer, do not invent speech.\n\nDeliver metadata, cut list, explicit E1 measurements, gate logs, frame sheets, PHONE and checksum-verified UAT/NAS copies. Queue review promptly; approved local candidate goes to Ben's finished-cut watch. No upload, Studio, visibility, schedule, retitle or Buffer change in this job. A separately authorized swap must reconcile Buffer/UPLOADS atomically. Readout 3 Dec: these December cuts are follow-up only. Never re-upload an idea after Public.\n",
+      "ref": "J2207 / h47",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T22:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T22:20Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Prepare and verify local replacement for cwU_0WWeNZ4, then send for review",
+      "due": "2026-11-17T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice."
     }
