@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2298 | mini | blocked | cursor | – | 099 upload · studio · HOS 099: save cards with correct menu and verify expanded Level |  |
 | J2299 | mini | open (after J2290) | – | – | 033 picture · assembly · 033 picture: correct source identities and deliver reviewable opener and graphics | J2297; PR578 adab48f716e066f57e2e1c9f56c3de789dda854e |
 | J2300 | mini | open (after J2299) | – | – | 033 picture · qa · 033 picture: review corrected source map, native opener and graphics | J2297 |
-| J2301 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2248 |  |
+| J2301 | mini | claimed | gemini | 2026-11-06T22:14Z | for gemini · review · `gemini-argon` · Verify condition for J2248 |  |
 
 Recently finished:
 
