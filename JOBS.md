@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2242 | mini | open (after J2241) | – | – | 008 edit · assembly · HOS 008 Franklin: packet/boundary splice + 32 caption cards (+ SAFE PATH DOWN) -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
 | J2243 | mini | open (after J2242) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
 | J2244 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2215 |  |
-| J2245 | mini | claimed | cursor | 2026-11-06T17:21Z | 011 vo · vo · HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02 |  |
+| J2245 | mini | blocked | cursor | – | 011 vo · vo · HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02 |  |
 | J2246 | mini | open | – | – | 013 vo · vo · HOS 013 Darwin & Wallace: Shorts voiceover (2 v02 Shorts), vo_check, park for Chief |  |
 | J2248 | mini | blocked | cursor | – | 024 edit · assembly · 024 muons Short fri06: build from locked VO+graphics, review+Ben watch, then Private schedule (target Mon 9 Nov 11:30 if free) |  |
 | J2255 | mini | open (after J2254) | – | – | 008 edit · assembly · HOS 008 Short C: assemble Short_C_v03 (Layout C-v03a) after C-Open-1 VO — £0, no upload | J2175/h94 |

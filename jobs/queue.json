@@ -189911,13 +189911,13 @@
       "stage": "vo",
       "after": "J2239",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-06T15:21Z",
-      "eta": "2026-11-06T17:21Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-05T19:13Z",
-      "result": "",
+      "result": "parked for Chief: VO review of hos_011_vo_v01 is J2286. Do not re-record the five chapters. Full vo_check PASS. Across the Ocean FAIL pauses 1.52s at 0:27.87 and 1.55s at 0:33.47 (full file 6:34.83 and 6:40.43, inside the chapter, not the gaps). HOS PR 443 commit 84eb2df7. wav sha256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2. Not a lock.",
       "history": [
         {
           "at": "2026-11-05T19:13Z",
@@ -189948,6 +189948,11 @@
           "at": "2026-11-06T15:34Z",
           "by": "cursor",
           "what": "step 4 of 4 done: hos_011_vo_v01 532.72s. Full vo_check PASS. Across the Ocean fails pauses 1.52s and 1.55s. PR 443, commit 84eb2df7. Audio hash d873f1d0 matches the durable copy."
+        },
+        {
+          "at": "2026-11-06T15:34Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: VO review of hos_011_vo_v01 is J2286. Do not re-record the five chapters. Full vo_check PASS. Across the Ocean FAIL pauses 1.52s at 0:27.87 and 1.55s at 0:33.47 (full file 6:34.83 and 6:40.43, inside the chapter, not the gaps). HOS PR 443 commit 84eb2df7. wav sha256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2. Not a lock."
         }
       ],
       "remaining_action": "Park the take for a voice review. Do not record it again.",
