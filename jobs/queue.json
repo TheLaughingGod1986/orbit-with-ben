@@ -196087,9 +196087,14 @@
           "at": "2026-11-06T23:36Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2315; reading J2310 handoff and v05_e1 manifest"
+        },
+        {
+          "at": "2026-11-06T23:40Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J2310 handoff, v05_e1.json, v05_meta.json, v05_cuts.json, gate logs, and contact sheets"
         }
       ],
-      "remaining_action": "Inspect J2310 handoff, v05_e1 manifest, and E1/Test-A evidence for k2kEaA7ICjc",
+      "remaining_action": "Verify v04/v05 SHA-256 hashes, UAT/NAS copies, ffmpeg decode, audio bed/VO levels, loop frames, and E1/Test-A conflict rules",
       "kind": "review",
       "plain": "Review the local Betelgeuse Short recut before anyone swaps it.",
       "rerouted_from": {
@@ -196102,11 +196107,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-06T23:36Z",
+        "at": "2026-11-06T23:40Z",
         "by": "gemini",
-        "note": "Claimed J2315; reading J2310 handoff and v05_e1 manifest"
+        "note": "Read J2310 handoff, v05_e1.json, v05_meta.json, v05_cuts.json, gate logs, and contact sheets"
       },
       "taskKeys": [
         "OWB:029"
