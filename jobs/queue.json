@@ -193096,12 +193096,26 @@
           "at": "2026-11-06T15:44Z",
           "by": "cursor",
           "what": "review_of J2246 so rule H does not open a second review"
+        },
+        {
+          "at": "2026-11-06T15:45Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 950 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Read the voice checks and say keep, or name the exact sentence to pick up.",
       "kind": "review",
       "plain": "Decide whether the two Darwin and Wallace Short voice takes are good enough to keep.",
-      "review_of": "J2246"
+      "review_of": "J2246",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     }
   ],
   "focus": [],
