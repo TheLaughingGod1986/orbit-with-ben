@@ -186599,9 +186599,14 @@
           "at": "2026-11-06T11:02Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected J0862 history, J1894 review, HOS PR #423, and heard hos_009_short_B_v03.mp3 via audio_input"
+        },
+        {
+          "at": "2026-11-06T11:16Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Proved v03 S01 fails <=2.85s (3.217s min at 1.06x after true silence trim + 'and apples' homophone + comma prosody); verified 2-sentence v04 opening ('In one minute, the Moon falls five metres. An apple falls that far in one second.', 82 chars) + v03[6.020:23.680] body = 59w / 22.80s VO / 23.80s total / S01 2.26s <= 2.85s"
         }
       ],
-      "remaining_action": "Verify hos_009_short_B_v03 audio timing, silence intervals, and v02+v03 surgical/pickup feasibility against HOS Shorts rules",
+      "remaining_action": "Write jobs/reviews/J2195/REVIEW.md with Rule H FIX disposition and 82-char v04 opening pickup scope",
       "kind": "review",
       "review_of": "J0862",
       "urgent": 4,
@@ -186615,11 +186620,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-06T11:02Z",
+        "at": "2026-11-06T11:16Z",
         "by": "gemini",
-        "note": "Inspected J0862 history, J1894 review, HOS PR #423, and heard hos_009_short_B_v03.mp3 via audio_input"
+        "note": "Proved v03 S01 fails <=2.85s (3.217s min at 1.06x after true silence trim + 'and apples' homophone + comma prosody); ver"
       },
       "taskKeys": [
         "HOS:009",
