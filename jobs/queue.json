@@ -190973,9 +190973,14 @@
           "at": "2026-11-06T16:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T16:39Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2256 (033 Uranus stills lock + OMNI R29/R55 price-pass brief)"
         }
       ],
-      "remaining_action": "Verify stills pool; draft stills lock; park OMNI R29/R55 price brief for Chief; no mint",
+      "remaining_action": "Verify 43-asset still/native-motion pool locally or on NAS with SHA notes",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -190988,12 +190993,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-06T16:38Z",
+        "of": 4,
+        "at": "2026-11-06T16:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2256 (033 Uranus stills lock + OMNI R29/R55 price-pass brief)"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2257",
