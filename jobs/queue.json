@@ -195798,20 +195798,27 @@
           "at": "2026-11-06T23:19Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T23:19Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed. Rechecking UPLOADS, API and queue before any cut."
         }
       ],
-      "remaining_action": "Prepare and verify local replacement for heiGCnGKTkE, then send for review",
+      "remaining_action": "Recheck whether heiGCnGKTkE is already being repaired",
       "due": "2026-12-13T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-06T23:19Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Rechecking UPLOADS, API and queue before any cut."
+      },
+      "taskKeys": [
+        "OWB:029"
+      ]
     },
     {
       "id": "J2312",
