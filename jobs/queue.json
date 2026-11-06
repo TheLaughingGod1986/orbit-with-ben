@@ -1,5 +1,5 @@
 {
-  "next_id": 2300,
+  "next_id": 2301,
   "jobs": [
     {
       "id": "J0001",
@@ -194441,6 +194441,38 @@
       "remaining_action": "Correct the source-to-shot map and deliver verified picture files for review",
       "kind": "assembly",
       "plain": "Fix mismatched Uranus pictures and provide the opening footage and graphics for review."
+    },
+    {
+      "id": "J2300",
+      "title": "033 picture: review corrected source map, native opener and graphics",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2297 FIX follow-through after J2299. Require complete corrected row/source map, provenance/rights, Mini-readable checksum-verified media, and applicable picture_qa/polish reports. Inspect every picture and flagged frame full size against its locked VO line; directly view the native R01 opener and every code graphic with demonstrated moving_video_input. Check all J2299 fixes including source identities, real-body assets, row timing/naming, smooth motion, labels, reuse, upscale and code adjacency. Do not infer KEEP from job completion, manifests or stills. Record file hashes and exact PASS/FIX findings under jobs/reviews; queue any remaining corrections immediately. Chief retains protected final decisions and Ben watch/publishing gates. No spend, upload or visibility change. If medium input is unavailable, use a typed capability hold; never assert motion review from ffmpeg or text.",
+      "ref": "J2297",
+      "film": "033",
+      "stage": "picture",
+      "after": "J2299",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T19:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T19:43Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the corrected picture assets against the accepted narration and gates",
+      "kind": "qa",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "plain": "Watch the corrected Uranus opening and graphics and verify that each picture matches the narration."
     }
   ],
   "focus": [],
