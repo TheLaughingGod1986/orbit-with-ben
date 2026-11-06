@@ -193302,13 +193302,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T17:31Z",
-      "eta": "2026-11-06T19:31Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-06T15:34Z",
-      "result": "",
+      "result": "KEEP (0 sentence pickups, 0 re-recordings, £0 spend): direct audio_input audition of all 5 chapters (ch00..ch04) in hos_011_vo_v01 (d873f1d0) confirmed all 12 sounds-alike warnings and all 1,230 words are clean British speech; the two ch04 pauses (1.52s at 0:27.87, 1.55s at 0:33.47) are pure -83/-90 dBFS silences, and excising 0.900s from each (frames 1353600:1396800 & 1622400:1665600) + chapter-end qsin fades passes vo_check_py312.sh with 0 fails (jobs/reviews/J2245/REVIEW.md, 4f3f28a91f). Elected Chief holds formal VO lock on J2245 / HOS PR #443.",
       "history": [
         {
           "at": "2026-11-06T15:34Z",
@@ -193349,6 +193349,11 @@
           "at": "2026-11-06T17:44Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed jobs/reviews/J2245/REVIEW.md (4f3f28a91f): KEEP (0 pickups, £0 ch04 pause-trim verified PASS)"
+        },
+        {
+          "at": "2026-11-06T17:44Z",
+          "by": "gemini",
+          "what": "done: KEEP (0 sentence pickups, 0 re-recordings, £0 spend): direct audio_input audition of all 5 chapters (ch00..ch04) in hos_011_vo_v01 (d873f1d0) confirmed all 12 sounds-alike warnings and all 1,230 words are clean British speech; the two ch04 pauses (1.52s at 0:27.87, 1.55s at 0:33.47) are pure -83/-90 dBFS silences, and excising 0.900s from each (frames 1353600:1396800 & 1622400:1665600) + chapter-end qsin fades passes vo_check_py312.sh with 0 fails (jobs/reviews/J2245/REVIEW.md, 4f3f28a91f). Elected Chief holds formal VO lock on J2245 / HOS PR #443."
         }
       ],
       "remaining_action": "Close J2286 and post review summary on OWB thread and HOS desk",
@@ -193373,7 +193378,8 @@
       },
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "done_ref": "4f3f28a91f"
     },
     {
       "id": "J2287",
