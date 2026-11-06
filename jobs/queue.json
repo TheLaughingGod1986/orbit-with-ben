@@ -179199,10 +179199,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T05:25Z",
+      "eta": "2026-11-06T07:25Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "review J2251 KEEP (5 Nov, PR #556 71c483662): r52_uranus_21y still KEEP as built; retain as duration-only CODE graphic (weic2310a vertical rings show sideways tilt in R52 cuts 1-2; no 2D tilt-axis line on PIA18182); use PIA18182 once in R52; render under --approved r52_uranus_21y --review-ref J2251 after replacing draft --render guard with qtrle export. Preserve 38 exports and J2177/J2247/frame0/Huygens/APL holds.",
@@ -179576,6 +179576,11 @@
           "at": "2026-11-06T00:42Z",
           "by": "codex",
           "what": "released: Clean local checkpoint c95c73b4f9, worker/J2089-orbit in /private/tmp/J2089-ruler-wt; original 1/4 retained. R08 period-clock draft and 109 layout/hash/alpha/guard checks; J2262 reviews still and reuse allocation. Preserve 39 exports and J2177/J2247/J2260/frame0/Huygens/APL holds. No MOV or background process. Remaining harvest/graphics/composites exceed one run. Branch inherits prior automatic-review public-push rejection; kept local, no bypass. GBP0; no publish/PASS/merge."
+        },
+        {
+          "at": "2026-11-06T05:25Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish licensed harvest and remaining graphics after the queued still reviews",
