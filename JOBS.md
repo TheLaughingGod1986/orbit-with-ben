@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2300 | mini | open (after J2299) | – | – | 033 picture · qa · 033 picture: review corrected source map, native opener and graphics | J2297 |
 | J2302 | mini | open | – | – | 024 edit · review · 024 muons v03: review verified UAT repair and detail warning |  |
 | J2303 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Verify condition for J2199 |  |
+| J2304 | mini | open | – | – | 032 picture · review · 032 R23: review qualitative landing record and second PIA14909 allocation | 510197ffe4 |
 
 Recently finished:
 

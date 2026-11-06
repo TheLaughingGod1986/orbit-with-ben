@@ -1,5 +1,5 @@
 {
-  "next_id": 2304,
+  "next_id": 2305,
   "jobs": [
     {
       "id": "J0001",
@@ -195057,6 +195057,34 @@
       },
       "for": "cursor",
       "model": "cursor-claude-opus-5-5"
+    },
+    {
+      "id": "J2304",
+      "title": "032 R23: review qualitative landing record and second PIA14909 allocation",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# R23 landing-record alternative — individual still and allocation review\n\n6 November 2026 · Codex worker · GBP0 · draft only.\n\nReview `landing_record_graphic.py`, `LANDING_RECORD_MANIFEST_v01.json`,\n`LANDING_RECORD_CHECKS_v01.json` and `LANDING_RECORD_SOURCE_v01.json` in local\nworktree `/private/tmp/codex-J2089` (worker/J2089-r18-ruler). These continue the\nexisting J2089 checkpoint; origin/main does not yet contain the latest local work.\nAn earlier automatic-review public-push rejection remains respected; no push.\n\nFull-size stills (media outside git):\n`/Users/benjaminoats/_desk/cache/J2089/landing_record_previews_v02/code_graphic_032_r23_landing_record_v01.png`\nand `r23_landing_record_review.jpg` in that directory. Navy is preview only.\nWorker viewed the full-size review JPG. No moving-image/audio perception claimed.\n\nThe planned R23 quantitative Moon/Venus/Mars/Titan landing-distance chart lacks\nsourced numerical distances in SOURCES row 7. In particular, row 8's 9.5 AU is\ndistance from the Sun; labelling it as landing distance from Earth would mislead.\nThe locked R23 VO says only that Huygens remains humanity's most distant landing.\nNASA's Huygens page confirms this record under Firsts; saved response and exact\nquote are hashed in LANDING_RECORD_SOURCE_v01.json.\n\nProposed alternative: a qualitative growing connector FROM EARTH to real Cassini\nTitan, explicitly NOT TO SCALE, headed MOST DISTANT LANDING. No distance,\nplanetary size ratio, route or surface location is inferred. PIA14909 native\n408x408 crop is identical to the reviewed R19 crop, with no enlargement. Proposed\nallocation is R19 + R23 (two appearances); confirm it against the current shot\nlist and all allocations before accepting. Do not change the harvest allocation\nor shot list merely because this draft exists.\n\nReturn KEEP/FIX for the still, the qualitative alternative and image allocation.\nIf accepted, name exact preview hash and review id for a later export, and record\nthe shot-list amendment. Existing R23 FACT card already says MOST DISTANT LANDING:\nthe assembler must choose/sequence these without duplicate back-to-back graphics;\nreal moving imagery still separates full-frame code graphics. No MOV is exported\nand --render is deliberately rejected until this individual review exists.\n\nMeasurements: 109 planned layouts within the 5% safe area, clear alpha at entry\nand exit, changing connector, exact preview pixels and hashes, four words or fewer\nper label, missing-review export rejection. All 61 earlier MOV hashes match v20.\nThese do not establish final motion, composited contrast, source rights or gates.\nFinal background must be a reviewed graded moving plate with text off the subject.\n\nRetain all existing frame-0, Huygens seam/crop, APL written-permission and final\ncomposite holds. Parent remains 1/4. This request is not film PASS or assembly\nrelease; no spend, publishing, locked VO change or Chief decision by worker.\n",
+      "ref": "510197ffe4",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T21:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T21:50Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the R23 landing-record draft and decide the sourced shot-list alternative",
+      "kind": "review"
     }
   ],
   "focus": [
