@@ -190978,9 +190978,14 @@
           "at": "2026-11-06T16:39Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2256 (033 Uranus stills lock + OMNI R29/R55 price-pass brief)"
+        },
+        {
+          "at": "2026-11-06T16:47Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified 43-asset pool locally and on NAS with SHA-256 notes: 5 pool assets (#10 weic2310a, #12 PIA18182, #13 PIA00346, #14 PIA00143, #15 PIA01391) + 2 aux (#PIA00405, canonical Orbit Seedance ref) present; 38 pool assets missing and listed for £0 harvest"
         }
       ],
-      "remaining_action": "Verify 43-asset still/native-motion pool locally or on NAS with SHA notes",
+      "remaining_action": "Draft stills-lock / picture-plan note (STILLS_LOCK_v01.md + STILLS_POOL_STATUS_v01.json)",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -190992,11 +190997,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-06T16:39Z",
+        "at": "2026-11-06T16:47Z",
         "by": "gemini",
-        "note": "Claimed J2256 (033 Uranus stills lock + OMNI R29/R55 price-pass brief)"
+        "note": "Verified 43-asset pool locally and on NAS with SHA-256 notes: 5 pool assets (#10 weic2310a, #12 PIA18182, #13 PIA00346, "
       },
       "taskKeys": [
         "OWB:033"
