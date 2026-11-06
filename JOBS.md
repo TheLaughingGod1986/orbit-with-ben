@@ -55,7 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2195 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J2199 | mini | open | – | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
-| J2200 | mini | open | – | – | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
+| J2200 | mini | claimed | cursor | 2026-11-06T10:39Z | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
 | J2205 | mini | open | – | – | assembly · URG-OWB-1: gate_upcoming --stage NAS cache for upcoming Shorts |  |
 | J2207 | mini | open | – | – | assembly · OWB-2026-11-E1: encode STAYED60 + sub-4.8s Cut-2 rules; inventory unswapped Shorts |  |
 | J2215 | macbook | blocked | macbook | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
