@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2279 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · J0862 v04: audition repeated-phrase word-gate failure and scope repair |  |
 | J2280 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Verify condition for J2220 |  |
 | J2281 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
+| J2283 | mini | open | – | – | 024 edit · review · 024 muons Short v02: review the tool-passed cut |  |
 
 Recently finished:
 

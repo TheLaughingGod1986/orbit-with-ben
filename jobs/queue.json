@@ -1,5 +1,5 @@
 {
-  "next_id": 2283,
+  "next_id": 2284,
   "jobs": [
     {
       "id": "J0001",
@@ -192492,6 +192492,35 @@
           "at": "2026-11-06T14:00Z",
           "by": "cursor",
           "what": "cancelled: Queued with --after J2248, which would wait until the assembly job is done. Re-queue with no predecessor so the review can run while J2248 is parked."
+        }
+      ],
+      "remaining_action": "Review the v02 muons Short and write KEEP or FIX",
+      "kind": "review",
+      "plain": "Review the rebuilt muons Short and say whether it is ready for Ben to watch"
+    },
+    {
+      "id": "J2283",
+      "title": "024 muons Short v02: review the tool-passed cut",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# Review 024 muons Short v02 (from J2248)\n\nTool gates PASS. This is not a Chief PASS and not a schedule. J2278 reopened J2248 for this corrective picture only.\n\n## Cut\n- File (gitignored): `02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/06_Final-Exports/fri06_muons_ground_v02.mp4`\n- sha256 `768cf1a4f0ae603724eef13c690e0c9495c233b4ecc5f3af0f3d27b5c39a5f08`\n- 22.2 s, 1080x1920, locked VO `3b17b23c8c476efa240375375ffe738fd8dacd254f622f2cef97152089779e8a` (not reminted)\n- v01 left in place, sha256 `9fc197dcdbcd16d3812a183779b2c8dcba38f67495d5738741b4c6e8f411fd28`\n- iCloud copy: `OWB UAT/024_fri06_muons_ground_v02/fri06_muons_ground_v02.mp4` (same sha256)\n- Reports and `cuts_v02.json` are on main in `8fa84cb3ff`\n\n## What passed\n- `gate_shorts_open.py check --air-date 2026-11-21` PASS (motion 17.25, frame-0 diff 3.94, first cut 3.0 s, VO onset 0.08 s, tail gap 1.03 s, no Orbit)\n- `sfx_kit.py level` PASS (VO -19.3 LUFS, SFX -42.3 LUFS)\n- `music_gate.py` PASS on `light-speed_score_bed_v01_full.mp3` (missing comparison files are WARNs, the gate PASSes)\n- `polish_gate.py` PASS, 0 fails\n- `picture_qa.py` PASS, 0 fails\n- Mix -14.4 LUFS, true peak -1.9 dBTP\n- £0. No new VO, music, Veo, Omni or Flow.\n\n## One WARN to look at\n- 0:17 row s05_earth, Earth Views offset 46 s: low detail, edge density 0.0219 < film p5 0.0291. Real moving Earth, not a code graphic. Judge whether a viewer would trust that frame.\n\n## Picture\n- Five stretches of NASA \"Earth Views from the International Space Station\" (public domain, 1280x720), offsets 36, 14, 26, 46 and 60 s. Station and Canadarm are not used. The limb horizon after 49.2 s is not used (it is a full-width seam).\n- Sharp picture is a 0.84x 16:9 band with a sigma-18 feathered fill. A full-bleed 9:16 crop of 720p is 2.67x and was not used. The hard letterbox on the earlier v02 failed polish; this feather passes.\n- One code graphic, 3.0–7.2 s: muon streaks over Earth at 21.6 s. Real Earth before and after it. No TWO MILLIONTHS card. No \"600 METRES\" label, because those words are spoken at 9.26–10.92 s, under the 9–14 s title. The caption says METRES.\n- Hook THEY / LIVE. Title \"Muons Shouldn't Reach the Ground. They Do.\" at 9–14 s. End card is the live long title \"What Happens If You Travel Near Light Speed?\" plus rVqgtkBV3jc.\n- Cover rebuilt from the new opening frame (SLOW / CLOCKS).\n\n## Inherited scope the reviewer must judge (J2278)\nLocked statement title and locked VO stay. Do not treat these as a silent rewrite:\n- Line 1 does not ask one question. \"Muons\" is first spoken at 4.82 s.\n- 0.68 s pause at 4.14–4.82 s was not trimmed.\n- Payoff \"clocks run slow\" overlaps the 9–14 s title.\n- Spoken end line says \"The Speed Of Light\"; the end card shows the live title and rVqgtkBV3jc.\n- Last plate is the same Earth film at 60 s, not a pixel copy of frame 0.\n- The streak graphic runs 4.2 s.\n\n## Write\n`jobs/reviews/J2248/REVIEW.md` is the v01 FIX. Write this v02 verdict at `jobs/reviews/<this job id>/REVIEW.md` as KEEP or FIX with an exact repair list. On KEEP, the assembly job sets Ben's watch. Do not upload or schedule. Mon 9 Nov 2026 is still iyvWYFP_ETA. Do not claim to have heard the mix or watched the motion unless this session can actually do that; the tool results above are the evidence.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-11-06T14:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T14:00Z",
+          "by": "cursor",
+          "what": "added"
         }
       ],
       "remaining_action": "Review the v02 muons Short and write KEEP or FIX",
