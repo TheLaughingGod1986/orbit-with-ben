@@ -1,5 +1,5 @@
 {
-  "next_id": 2274,
+  "next_id": 2275,
   "jobs": [
     {
       "id": "J0001",
@@ -191278,6 +191278,35 @@
       "taskKeys": [
         "HOS:006"
       ]
+    },
+    {
+      "id": "J2274",
+      "title": "032 independently review real Huygens surface thumbnail A v04",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Independently review J2249 thumbnail A v04 under J2162 and LEARNINGS rule 19. Delivery PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/574 (466352adfe). Read jobs/reviews/J2249/DELIVERY.md and MANIFEST_v04.json on that branch. Media in /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/: 032_A_real_surface_v04.jpg, PHONE_PREVIEW_v04.jpg and MANIFEST_v04.json. Inspect actual image at full size and phone size, verify hash and source PIA07232, hook/band/grade/phone checks. Gate passes saturation 200.8 and near-black 1.6%. Explicitly resolve intrinsic DISR softness and 4.21x crop enlargement against applicable thumbnail rules; no implied waiver or film QA PASS. B/C must remain unchanged and B stays lead under J2162. Write KEEP or exact FIX; only mark thumbs approved after a valid review. No generation, spend, upload, scheduling or public changes. Builder Codex must not be its own independent reviewer.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/574",
+      "film": "032",
+      "stage": "thumbs",
+      "after": "J2249",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T09:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T09:37Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the real Titan surface thumbnail at full and phone size",
+      "kind": "review",
+      "plain": "Check whether the rebuilt Titan thumbnail is clear and suitable for use."
     }
   ],
   "focus": [],
