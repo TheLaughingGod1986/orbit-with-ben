@@ -192523,13 +192523,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-06T14:53Z",
-      "eta": "2026-11-06T16:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T13:17Z",
-      "result": "",
+      "result": "parked for Chief: condition for J0862 verified UNMET in jobs/reviews/J2281/REVIEW.md (6959d1cb3f): direct audio_input audition confirmed hos_009_short_B_v04.{mp3,wav}, open_v04.mp3, and v03.mp3 have 0 spoken repeats (hook 2.660s/2.820s <= 2.850s, total 24.480s) and all SHA-256s match, and diagnosed the vo_check_py312 FAIL as a faster-whisper small.en trailing-silence prompt-repeat hallucination in Seg 8 [24.14->24.32] (no_speech_prob=0.986 WAV / 0.988 MP3, avg_logprob=-0.987/-0.966, 3 zero-duration words, mean prob 0.029) mis-indexed to 0:19.74 by 9 dropped cardinal numbers in norm(); however, repair job J2279 (open for gemini) has not yet run on HOS PR #423 (cb18632d). Only elected Chief (codex) may run jobs.py wait J0862 --recheck J2281 (next check 2026-11-06T21:05:00Z) and close J2281.",
       "history": [
         {
           "at": "2026-11-06T13:17Z",
@@ -192565,6 +192565,11 @@
           "at": "2026-11-06T15:05Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Completed verification in jobs/reviews/J2281/REVIEW.md; parking at protected elected-Chief wait --recheck J2281 call"
+        },
+        {
+          "at": "2026-11-06T15:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: condition for J0862 verified UNMET in jobs/reviews/J2281/REVIEW.md (6959d1cb3f): direct audio_input audition confirmed hos_009_short_B_v04.{mp3,wav}, open_v04.mp3, and v03.mp3 have 0 spoken repeats (hook 2.660s/2.820s <= 2.850s, total 24.480s) and all SHA-256s match, and diagnosed the vo_check_py312 FAIL as a faster-whisper small.en trailing-silence prompt-repeat hallucination in Seg 8 [24.14->24.32] (no_speech_prob=0.986 WAV / 0.988 MP3, avg_logprob=-0.987/-0.966, 3 zero-duration words, mean prob 0.029) mis-indexed to 0:19.74 by 9 dropped cardinal numbers in norm(); however, repair job J2279 (open for gemini) has not yet run on HOS PR #423 (cb18632d). Only elected Chief (codex) may run jobs.py wait J0862 --recheck J2281 (next check 2026-11-06T21:05:00Z) and close J2281."
         }
       ],
       "remaining_action": "Elected Chief (codex) runs jobs.py wait J0862 --recheck J2281 and closes J2281",

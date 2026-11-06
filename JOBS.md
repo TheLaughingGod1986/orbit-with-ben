@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2275 | mini | open | – | – | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
 | J2279 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · J0862 v04: audition repeated-phrase word-gate failure and scope repair |  |
 | J2280 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
-| J2281 | mini | claimed | gemini | 2026-11-06T16:53Z | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
+| J2281 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
 | J2284 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 
 Recently finished:
