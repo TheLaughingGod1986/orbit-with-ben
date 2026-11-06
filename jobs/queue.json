@@ -195306,7 +195306,7 @@
     {
       "id": "J2306",
       "title": "Verify condition for J2299",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2299: parked for Chief: approve a specific R01 fallback or genuinely new bounded source approach, and resolve R54/R55 graphic separation, using PR584 / 06ae7792d7. Three new candidates exhausted; do not repeat their search. Existing PIA opener files are stills. No paid generation authorised. Then finish source rights/crops, PDF rasters, 14 corrected renders and final gates under same 0/5 plan; J2300 moving-video QA remains dependent.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2299 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -195326,13 +195326,27 @@
           "at": "2026-11-06T22:16Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T22:17Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1344 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Chief opener/shot decision, then corrected graphic renders and complete picture QA pack",
       "kind": "review",
       "recheck_of": "J2299",
       "due": "2026-11-06T23:16:56+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
