@@ -193454,13 +193454,13 @@
       "stage": "upload",
       "after": "J2298",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-06T20:23Z",
-      "eta": "2026-11-06T22:23Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T15:18Z",
-      "result": "",
+      "result": "Chief ACCEPT of J2298 evidence closes this FIX follow-up. Cards persisted; Level None allowed; timezone exception unchanged. See jobs/reviews/J2298/CHIEF_RULING.md (a3a22dda85). J2199 reopened separately for any residual checklist outside cards/Level/timezone.",
       "history": [
         {
           "at": "2026-11-06T15:18Z",
@@ -193516,6 +193516,11 @@
           "at": "2026-11-06T20:23Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T20:23Z",
+          "by": "chief",
+          "what": "done: Chief ACCEPT of J2298 evidence closes this FIX follow-up. Cards persisted; Level None allowed; timezone exception unchanged. See jobs/reviews/J2298/CHIEF_RULING.md (a3a22dda85). J2199 reopened separately for any residual checklist outside cards/Level/timezone."
         }
       ],
       "remaining_action": "Complete J2298 corrected card and expanded Level readback, then elected Chief accepts evidence",
@@ -193531,7 +193536,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "a3a22dda85"
     },
     {
       "id": "J2286",
