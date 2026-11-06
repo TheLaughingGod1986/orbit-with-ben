@@ -185086,9 +185086,14 @@
           "at": "2026-11-06T07:08Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2177; starting step 1 of 4 (reading J2089 checkpoint v04, manifest, and J2150 context)"
+        },
+        {
+          "at": "2026-11-06T07:12Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 done: read J2089_CHECKPOINT_v04.md, MECHANISM_MANIFEST_v01.json, SHOT_LIST_v04.md, SOURCES.md, and J2090/J2150 reviews"
         }
       ],
-      "remaining_action": "Read J2089 checkpoint v04, MECHANISM_MANIFEST_v01.json, script/shot list/sources, and J2150 review",
+      "remaining_action": "Inspect all 17 mechanism preview PNGs individually at /Users/benjaminoats/_desk/cache/J2089/mechanism_previews_v01/",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -185100,11 +185105,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-06T07:08Z",
+        "at": "2026-11-06T07:12Z",
         "by": "gemini",
-        "note": "Claimed J2177; starting step 1 of 4 (reading J2089 checkpoint v04, manifest, and J2150 context)"
+        "note": "Step 1/4 done: read J2089_CHECKPOINT_v04.md, MECHANISM_MANIFEST_v01.json, SHOT_LIST_v04.md, SOURCES.md, and J2090/J2150 "
       },
       "taskKeys": [
         "OWB:032"
