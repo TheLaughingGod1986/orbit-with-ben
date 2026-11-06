@@ -187263,10 +187263,10 @@
       "stage": "upload",
       "after": "J2285",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-06T21:20Z",
+      "eta": "2026-11-06T23:20Z",
       "created_by": "chief",
       "created_at": "2026-11-05T09:19Z",
       "result": "",
@@ -187315,13 +187315,26 @@
           "at": "2026-11-06T20:23Z",
           "by": "chief",
           "what": "reopened: J2285/J2298 accepted (a3a22dda85). Cards + Level + timezone closed. Reopened so any residual checklist (places/paid/caption certification) can be verified or this job closed; not a film PASS."
+        },
+        {
+          "at": "2026-11-06T21:20Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Complete J2285 package validation and Studio corrections, then review persisted readback before clearing this hold",
       "kind": "studio",
       "taskKeys": [
         "HOS:099"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T21:20Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2200",
