@@ -196082,9 +196082,14 @@
           "at": "2026-11-06T23:35Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T23:36Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2315; reading J2310 handoff and v05_e1 manifest"
         }
       ],
-      "remaining_action": "Review the local Fri 11 Dec candidate and say KEEP or FIX",
+      "remaining_action": "Inspect J2310 handoff, v05_e1 manifest, and E1/Test-A evidence for k2kEaA7ICjc",
       "kind": "review",
       "plain": "Review the local Betelgeuse Short recut before anyone swaps it.",
       "rerouted_from": {
@@ -196099,11 +196104,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-06T23:35Z",
+        "at": "2026-11-06T23:36Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2315; reading J2310 handoff and v05_e1 manifest"
+      },
+      "taskKeys": [
+        "OWB:029"
+      ]
     },
     {
       "id": "J2316",
