@@ -192446,10 +192446,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-06T16:56Z",
-      "eta": "2026-11-06T18:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -192478,6 +192478,11 @@
           "at": "2026-11-06T17:02Z",
           "by": "codex",
           "what": "step 1 of 3 done: Tested partial repair committed as HOS 47adfead in draft PR445 (base PR439 branch): 33 zero-submit tests and check_all PASS. Findings 1/4/5 addressed in checkpoint; 2/3 and most of 6 remain. Production explicitly disabled. Handover jobs/reviews/J2275/CHECKPOINT.md."
+        },
+        {
+          "at": "2026-11-06T17:02Z",
+          "by": "codex",
+          "what": "released: Clean tested checkpoint: HOS draft PR445 https://github.com/TheLaughingGod1986/history-of-science/pull/445, commit 47adfead, isolated worktree /private/tmp/codex-j2275. Resume this branch, not original PR439. 33 runner tests and check_all PASS. Complete findings 2,3,6 (live per-Create UI evidence; shared cross-channel reservation/spend ledger; atomic detached launch arguments), then elected-Chief J2200 re-review. Detailed handover jobs/reviews/J2275/CHECKPOINT.md. Production hard-stop remains; J2033 held. Full remaining integration exceeds a bounded single run; no spend/submits/media/public changes."
         }
       ],
       "remaining_action": "Complete per-Create UI guards, shared accounting and atomic detached launch in draft HOS PR445, then seek J2200 re-review",
