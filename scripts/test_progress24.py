@@ -56,6 +56,12 @@ class Summary(unittest.TestCase):
         self.assertEqual(s["otherJobs"], 1)
         self.assertEqual(s["videoJobs"], 2)
         self.assertEqual(s["hours"], 24.5)
+        # Per-film job lists (Ben, 6 Nov 2026).
+        by = {f["film"]: f for f in s["films"]}
+        self.assertEqual([j["id"] for j in by["OWB:030"]["items"]], ["J1"])
+        self.assertEqual(by["OWB:030"]["status"], "56% → 78%")
+        self.assertTrue(by["OWB:030"]["closed"])
+        self.assertEqual([j["id"] for j in s["studio"]], ["J3"])
 
     def test_jobs_done_window(self):
         b = board([], done=[{"id": "J1", "at": "2026-11-04T10:00Z"}, {"id": "J2", "at": "2026-11-03T10:00Z"},
@@ -91,6 +97,49 @@ class Summary(unittest.TestCase):
             f.write_text(json.dumps([{'at': '2026-11-03T13:00Z', 'counts': {'HOS:009': 4}, 'basis': 'v2'}]))
             s = p.section(f, board([('HOS:009', 'Moon', ms(3))]), NOW)
             self.assertEqual((s['milestones'], s['moved'], s['hours']), (0, [], 0))
+
+    def test_title_attribution_open_jobs_and_moved_without_films(self):
+        # 031/032 closed a stage; 033 had jobs but stayed at 4/9 (picture still open).
+        hist = [{"at": "2026-11-03T12:30Z", "counts": {"OWB:031": 5, "OWB:032": 5, "OWB:033": 4}}]
+        counts = {
+            "OWB:031": [6, "What Happens When Earths Magnetic Field Flips"],
+            "OWB:032": [6, "What Would Happen If You Landed On Titan"],
+            "OWB:033": [4, "Why Knocked-Sideways Uranus Has 21-Year Winters"],
+        }
+        done = [
+            {"id": "J033", "by": "chief", "title": "Chief: resolve 033 picture orphan-review", "at": "2026-11-04T10:00Z"},
+            {"id": "J032", "by": "codex", "title": "Titan Short v11 cover", "at": "2026-11-04T09:00Z"},
+            {"id": "Jhouse", "by": "gemini", "title": "Daily analytics capture", "at": "2026-11-04T08:00Z"},
+        ]
+        open_jobs = [
+            {"id": "J2141", "status": "claimed", "by": "cursor", "film": "OWB:032", "stage": "picture",
+             "title": "032 picture harvest", "progress": {"step": 1, "of": 3}},
+        ]
+        stages = {"OWB:031": "edit", "OWB:032": "picture", "OWB:033": "picture"}
+        s = p.summarise(hist, NOW, counts, done, open_jobs=open_jobs, stages=stages)
+        by = {f["film"]: f for f in s["films"]}
+        # 031 moved a stage but had no attributed jobs — still gets a card.
+        self.assertIn("OWB:031", by)
+        self.assertEqual(by["OWB:031"]["status"], "56% → 67%")
+        self.assertEqual(by["OWB:031"]["items"], [])
+        # Bare 033 in the title + Titan title match.
+        self.assertEqual([j["id"] for j in by["OWB:033"]["items"]], ["J033"])
+        self.assertIn("no stage closed", by["OWB:033"]["status"])
+        self.assertIn("picture", by["OWB:033"]["status"])
+        self.assertEqual({j["id"] for j in by["OWB:032"]["items"]}, {"J032", "J2141"})
+        live = next(j for j in by["OWB:032"]["items"] if j["id"] == "J2141")
+        self.assertEqual(live["status"], "claimed")
+        self.assertEqual(live["progress"], {"step": 1, "of": 3})
+        self.assertEqual([j["id"] for j in s["studio"]], ["Jhouse"])
+        self.assertEqual(s["videoJobs"], 2)  # finished jobs on 032 + 033
+        self.assertEqual(s["otherJobs"], 1)
+
+    def test_film_of_mid_title_number_and_title_match(self):
+        titles = {"OWB:032": "What Would Happen If You Landed On Titan",
+                  "OWB:033": "Why Knocked-Sideways Uranus Has 21-Year Winters"}
+        self.assertEqual(p.film_of({"title": "Chief: resolve 033 picture orphan-review"}, titles), "OWB:033")
+        self.assertEqual(p.film_of({"title": "Titan Short v11 cover"}, titles), "OWB:032")
+        self.assertEqual(p.film_of({"title": "Daily analytics capture"}, titles), "")
 
 
 if __name__ == "__main__":

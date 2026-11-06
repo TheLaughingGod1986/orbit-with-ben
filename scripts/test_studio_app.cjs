@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, machinesCard, plainWhy, qWhen, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -547,6 +547,51 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert(ov.includes('overview-stats') && ov.includes('ov-card'), 'Overview stacks simple cards');
 }
 console.log('Queue forecast checks OK');
+
+// Last 24 hours: one quiet card per film with the jobs that touched it (Ben, 6 Nov 2026).
+{
+  const p24 = {
+    hours: 24, jobsDone: 57, videoJobs: 30, otherJobs: 27, milestones: 3,
+    byAgent: {gemini: 22, codex: 10},
+    moved: [
+      {key: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips', from: 56, to: 67, milestones: 1},
+      {key: 'OWB:032', title: 'What Would Happen If You Landed On Titan', from: 56, to: 67, milestones: 1},
+      {key: 'OWB:033', title: 'Why Knocked-Sideways Uranus Has 21-Year Winters', from: 44, to: 56, milestones: 1},
+    ],
+    films: [
+      {film: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips', jobs: 2, closed: true,
+        from: 56, to: 67, milestones: 1, status: '56% → 67%', pct: 67, stage: 'edit', stageLabel: 'edit',
+        items: [{id: 'J2100', title: '031 edit polish', status: 'done', stage: 'edit'}]},
+      {film: 'OWB:032', title: 'What Would Happen If You Landed On Titan', jobs: 4, closed: true,
+        from: 56, to: 67, milestones: 1, status: '56% → 67%', pct: 67, stage: 'picture', stageLabel: 'picture',
+        items: [
+          {id: 'J2110', title: 'Titan Short v11 cover', status: 'done', stage: 'thumbs'},
+          {id: 'J2141', title: '032 picture harvest', status: 'claimed', stage: 'picture', progress: {step: 1, of: 3}},
+        ]},
+      {film: 'OWB:033', title: 'Why Knocked-Sideways Uranus Has 21-Year Winters', jobs: 1, closed: false,
+        status: 'worked on, no stage closed — still in picture (56%)', pct: 56, stage: 'picture', stageLabel: 'picture',
+        items: [{id: 'J2200', title: 'Chief: resolve 033 picture orphan-review', status: 'done', stage: 'picture'}]},
+    ],
+    studio: [
+      {id: 'J2290', title: 'Daily analytics capture', status: 'done', by: 'gemini'},
+      {id: 'J2291', title: 'House rules condition check', status: 'done', by: 'codex'},
+    ],
+  };
+  const card = t.progressCard({progress24h: p24});
+  assert(card.includes('video jobs finished') && card.includes('30 of 57 jobs were on videos'), 'headline stats stay');
+  assert(card.includes('Videos that had work') && card.includes('p24-film-card'), 'films render as cards');
+  assert(card.includes('OWB 031') && card.includes('56% → 67%'), 'moved films show the % change');
+  assert(card.includes('J2141') && card.includes('1 of 3') && card.includes('claimed'), 'in-progress jobs stay visible');
+  assert(card.includes('J2200') && card.includes('worked on, no stage closed'), 'no-stage-closed films say so clearly');
+  assert(card.includes('Studio-wide') && card.includes('J2290') && card.includes('Daily analytics capture'), 'studio-wide jobs fold at the bottom');
+  assert(!card.includes('Where the work went'), 'old count+last summary is gone');
+  // Older snapshots with only moved[] still render cards.
+  const legacy = t.progressCard({progress24h: {hours: 24, jobsDone: 3, videoJobs: 2, milestones: 1, moved: p24.moved.slice(0, 1), films: []}});
+  assert(legacy.includes('p24-film-card') && legacy.includes('OWB 031') && legacy.includes('56% → 67%'), 'legacy moved-only snapshots still show a film card');
+  const ov = t.overview({tracker: {videos: []}, progress24h: p24, machines: {machines: []}}, Date.parse('2026-11-06T19:41:00Z'));
+  assert(ov.includes('p24-film-card') && ov.includes('Last 24 hours'), 'Overview includes the film job cards');
+}
+console.log('Last-24-hours film cards OK');
 
 // Jobs running counts the jobs on video cards too (5 Nov 2026: Mini + MacBook both working showed as 1).
 {
