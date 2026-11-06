@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | picture | gemini | 2026-11-06T16:38Z | 2026-11-06T18:07Z | J2256 033 Uranus: stills lock + OMNI R29/R55 price-pass brief from SHOT_LIST_v01 (no mint, £0) |
+| 033 | picture | gemini | 2026-11-06T16:39Z | 2026-11-06T17:39Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
