@@ -190659,10 +190659,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T08:19Z",
+      "eta": "2026-11-06T10:19Z",
       "created_by": "relay",
       "created_at": "2026-11-06T07:31Z",
       "result": "",
@@ -190721,6 +190721,11 @@
           "at": "2026-11-06T08:19Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief taking the requested J2266 decision from the completed Gemini verification."
+        },
+        {
+          "at": "2026-11-06T08:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Done: J2266 condition verification complete; J2172 held awaiting Chief HOS PR #425/#426 merge + HOS 010 Flow moving-plate mint",
@@ -190739,7 +190744,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T08:19Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [],
