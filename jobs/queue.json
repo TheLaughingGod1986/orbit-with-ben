@@ -179367,10 +179367,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-06T14:03Z",
-      "eta": "2026-11-06T16:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -179874,6 +179874,11 @@
           "at": "2026-11-06T14:07Z",
           "by": "codex",
           "what": "step 1 of 4 done: Two J2277 fixes exported; 216 exact decoded frames and reviewed hashes verified. All 60 MOV hashes match manifests. SHOT_LIST_v05 applies reviewed allocations with all 52 row timings/cuts unchanged. Licensed harvest remains incomplete, so preserve 1/4."
+        },
+        {
+          "at": "2026-11-06T14:07Z",
+          "by": "codex",
+          "what": "released: Clean local checkpoint 8ff3ddc7d6 on worker/J2089-mechanism-exports in /private/tmp/J2089-mechanism-exports-wt; original 1/4 retained. Two J2277 fixes exported into ~/_desk/cache/J2089/mechanism_renders_v02_fixes; reviewed hashes and 216 exact decoded frames verified. All 60 MOV hashes match manifests. SHOT_LIST_v05 applies reviewed allocations; all 52 timing/cut signatures unchanged. Next licensed harvest, R18/R23, frame0/APL decisions and composites exceed one run. Detached J2089-mechanism-fixes finished exit0; ~/_desk/logs/J2089-mechanism-fixes.log and .done; no background process. Inherited automatic-review public-push rejection respected; local integration only. GBP0; no publishing or film PASS."
         }
       ],
       "remaining_action": "Finish licensed harvest, R18/R23 graphics, frame-0/APL decisions and graded composites",
