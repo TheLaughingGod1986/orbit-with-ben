@@ -192803,13 +192803,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T17:48Z",
-      "eta": "2026-11-06T19:48Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T12:13Z",
-      "result": "",
+      "result": "KEEP / REPAIRED (HOS PR #423 fc1a23f3, OWB cda522c1ad): direct audio_input audition confirmed 0 spoken repeats in hos_009_short_B_v04 (faster-whisper Seg 8 [24.14->24.32] was a no_speech_prob=0.986/0.988 trailing-breath hallucination shifted to 0:19.74 by 9 cardinal numbers in norm()) and caught an 80ms clip on 'Isaac' at 6.020s (true onset 5.940s in v03.wav). Repaired composite (open_v04[0.10:0.90]+[0.96:6.64] + v03[5.68:23.68] with afade out 23.48..23.54s) keeps identical +0.800s word offsets, hook 2.820s <= 2.850s, 24.480s VO / 25.480s total, and 8 cuts, restores full 'Isaac' onset, and passes unmodified vo_check_py312.sh on both WAV (a6666fd27c9a90e781369ea07e4888d87a2d5edb1624a0090ae98fa39504686b) and MP3 (0c9c4c6ffdb1337dc11acaf57af909f8d8be91d77210bca2e13af80715b87498) with 0 fails/warns. Retained v02 takes (009 A, 010 A, 010 C) stay KEEP. Ready for elected Chief to release J0862/J2281 hold and merge HOS PR #423.",
       "history": [
         {
           "at": "2026-11-06T12:13Z",
@@ -192850,6 +192850,11 @@
           "at": "2026-11-06T18:10Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed jobs/reviews/J2279/REVIEW.md (cda522c1ad) and pushed HOS PR #423 fc1a23f3; both WAV and MP3 pass vo_check_py312.sh"
+        },
+        {
+          "at": "2026-11-06T18:10Z",
+          "by": "gemini",
+          "what": "done: KEEP / REPAIRED (HOS PR #423 fc1a23f3, OWB cda522c1ad): direct audio_input audition confirmed 0 spoken repeats in hos_009_short_B_v04 (faster-whisper Seg 8 [24.14->24.32] was a no_speech_prob=0.986/0.988 trailing-breath hallucination shifted to 0:19.74 by 9 cardinal numbers in norm()) and caught an 80ms clip on 'Isaac' at 6.020s (true onset 5.940s in v03.wav). Repaired composite (open_v04[0.10:0.90]+[0.96:6.64] + v03[5.68:23.68] with afade out 23.48..23.54s) keeps identical +0.800s word offsets, hook 2.820s <= 2.850s, 24.480s VO / 25.480s total, and 8 cuts, restores full 'Isaac' onset, and passes unmodified vo_check_py312.sh on both WAV (a6666fd27c9a90e781369ea07e4888d87a2d5edb1624a0090ae98fa39504686b) and MP3 (0c9c4c6ffdb1337dc11acaf57af909f8d8be91d77210bca2e13af80715b87498) with 0 fails/warns. Retained v02 takes (009 A, 010 A, 010 C) stay KEEP. Ready for elected Chief to release J0862/J2281 hold and merge HOS PR #423."
         }
       ],
       "remaining_action": "Completed J2279 splice repair and verification; Chief releases J0862 hold and merges HOS PR #423",
@@ -192876,7 +192881,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "fc1a23f3"
     },
     {
       "id": "J2280",
