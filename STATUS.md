@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 026 | edit | codex | 2026-11-06T22:37Z | 2026-11-07T00:36Z | J2308 OWB 026: E1 local re-cut for cwU_0WWeNZ4; preserve scheduled copy |
+| 026 | edit | codex | 2026-11-06T22:38Z | 2026-11-06T22:58Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
