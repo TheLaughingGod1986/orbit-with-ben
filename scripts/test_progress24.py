@@ -198,7 +198,7 @@ class Summary(unittest.TestCase):
         self.assertIn("6 of 9 stages", film["pctReason"])
         self.assertIn("picture still open", film["pctReason"])
         ids = [it.get("id") or it.get("stage") for it in film["items"]]
-        self.assertEqual(ids[:3], ["J2141", "J2142", "J2143"])
+        self.assertEqual(ids[:3], ["J2141", "J2142", "J2143"])  # harvest before the jobs that wait on it
         self.assertIn("qa", ids)
         self.assertNotIn("edit", ids)  # covered by remaining jobs — no invented stage row
         today = next(it for it in film["items"] if it.get("id") == "J2110")
@@ -215,8 +215,10 @@ class Summary(unittest.TestCase):
         self.assertEqual(g["blocked"], 2)
         self.assertEqual({j["id"] for j in g["blockedJobs"]}, {"J2142", "J2143"})
         self.assertEqual([v["key"] for v in g["nextLive"]], ["OWB:025", "HOS:007"])
-        self.assertIn("waiting", film["blockedWhy"])
-        self.assertTrue(film["blockedWhy"].startswith("J2142") or film["blockedWhy"].startswith("J2143"))
+        self.assertIn("Will run automatically after J2141", film["blockedWhy"])
+        waiter = next(it for it in film["items"] if it["id"] == "J2142")
+        self.assertEqual(waiter["waitKind"], "after")
+        self.assertIn("Will run automatically after J2141", waiter["why"])
 
     def test_next_going_live_from_scheduled_publish(self):
         b = {
@@ -305,14 +307,14 @@ class Summary(unittest.TestCase):
         self.assertNotIn("OWB:ASK:J1356.2", keys)
         by = {f["film"]: f for f in s["films"]}
         self.assertEqual(by["OWB:032"]["blocked"], 1)
-        self.assertIn("J2142", by["OWB:032"]["blockedWhy"])
-        self.assertIn("waiting", by["OWB:032"]["blockedWhy"])
+        self.assertIn("Will run automatically after J2141", by["OWB:032"]["blockedWhy"])
         g = s["glance"]
         self.assertEqual(g["doneToday"], by["OWB:032"]["doneToday"] + by["OWB:031"]["doneToday"] + by["OWB:033"]["doneToday"])
         self.assertEqual(g["left"], by["OWB:032"]["left"] + by["OWB:031"]["left"] + by["OWB:033"]["left"])
         self.assertEqual(g["blocked"], by["OWB:032"]["blocked"] + by["OWB:031"]["blocked"] + by["OWB:033"]["blocked"])
         self.assertEqual(g["blocked"], 1)
         self.assertEqual([j["id"] for j in g["blockedJobs"]], ["J2142"])
+        self.assertIn("Will run automatically after J2141", g["blockedJobs"][0]["why"])
         self.assertEqual(s["focus"], ["OWB:032", "OWB:031", "OWB:033"])  # focus-list order
         # Head videoJobs still counts every film with 24 h finished work (024 + 032).
         self.assertEqual(s["videoJobs"], 2)
@@ -326,6 +328,55 @@ class Summary(unittest.TestCase):
         self.assertTrue(p.in_focus("OWB:032", got))
         self.assertFalse(p.in_focus("OWB:024", got))
         self.assertFalse(p.in_focus("OWB:032:S:abc", got))
+
+    def test_after_chain_and_real_blocker_copy(self):
+        hist = [{"at": "2026-11-03T12:30Z", "counts": {"OWB:032": 5}}]
+        counts = {"OWB:032": [6, "What Would Happen If You Landed On Titan"]}
+        open_jobs = [
+            {"id": "J2141", "status": "claimed", "film": "OWB:032", "stage": "picture",
+             "title": "032 picture harvest"},
+            {"id": "J2142", "status": "open", "film": "OWB:032", "stage": "edit",
+             "title": "032 Shorts edit", "after": "J2141"},
+            {"id": "J2143", "status": "open", "film": "OWB:032", "stage": "thumbs",
+             "title": "032 package", "after": "J2142"},
+            {"id": "J2199", "status": "blocked", "film": "OWB:032", "stage": "upload",
+             "title": "032 date gate", "after": "",
+             "hold": {"type": "public", "condition": "Mars long Js6EQJ8qDi8 must read back Public",
+                      "check_at": "2026-11-08T18:05:00Z"}},
+        ]
+        s = p.summarise(hist, NOW, counts, [], open_jobs=open_jobs, all_done=[],
+                        stages={"OWB:032": "picture"}, focus=["OWB:032"])
+        film = s["films"][0]
+        ids = [it["id"] for it in film["items"] if it.get("id")]
+        self.assertEqual(ids[:4], ["J2141", "J2142", "J2143", "J2199"])
+        pack = next(it for it in film["items"] if it["id"] == "J2143")
+        self.assertEqual(pack["waitKind"], "after")
+        self.assertIn("Will run automatically after J2141", pack["why"])
+        self.assertIn("J2142", pack["why"])
+        self.assertEqual([p["id"] for p in pack["afterChain"]], ["J2141", "J2142"])
+        gate = next(it for it in film["items"] if it["id"] == "J2199")
+        self.assertEqual(gate["waitKind"], "blocker")
+        self.assertIn("Needs a public video", gate["why"])
+        self.assertIn("Js6EQJ8qDi8", gate["why"])
+        self.assertNotIn("Will run automatically", gate["why"])
+        # Card line prefers the workflow wait (progress), not the date gate wall.
+        self.assertIn("Will run automatically after", film["blockedWhy"])
+        glance_ids = [j["id"] for j in s["glance"]["blockedJobs"]]
+        self.assertIn("J2142", glance_ids)
+        self.assertIn("J2199", glance_ids)
+        gate_g = next(j for j in s["glance"]["blockedJobs"] if j["id"] == "J2199")
+        self.assertEqual(gate_g["waitKind"], "blocker")
+        self.assertIn("Needs a public video", gate_g["why"])
+
+    def test_blocker_why_helpers_do_not_dump_dicts(self):
+        self.assertEqual(
+            p.blocker_why({"id": "J1", "hold": {"type": "ben", "condition": "Studio sign-in challenge on HOS"}}),
+            "Needs Ben: Studio sign-in challenge on HOS",
+        )
+        self.assertEqual(
+            p.after_why([{"id": "J2141", "title": "032 picture harvest"}]),
+            "Will run automatically after J2141 (032 picture harvest)",
+        )
 
 
 if __name__ == "__main__":

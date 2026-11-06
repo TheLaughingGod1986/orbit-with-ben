@@ -229,6 +229,22 @@ def done_when(j: dict, at: dt.datetime):
     return None
 
 
+def _hold_of(j: dict) -> dict:
+    """Existing hold / blocked_reason dict on a job — never invent one."""
+    for key in ("hold", "blocked_reason", "blockedReason"):
+        h = j.get(key)
+        if isinstance(h, dict) and (h.get("type") or h.get("condition")):
+            return h
+    return {}
+
+
+def _short(text: str, n: int = 72) -> str:
+    s = " ".join(str(text or "").split())
+    if len(s) <= n:
+        return s
+    return s[: max(0, n - 1)].rstrip(" ,;:.") + "…"
+
+
 def _job_item(j: dict, status: str, when: str | None = None) -> dict:
     item = {
         "id": j.get("id") or "",
@@ -241,6 +257,11 @@ def _job_item(j: dict, status: str, when: str | None = None) -> dict:
         item["when"] = when
     if j.get("after"):
         item["after"] = str(j["after"])
+    hold = _hold_of(j)
+    if hold.get("type"):
+        item["holdType"] = str(hold["type"])
+    if hold.get("condition"):
+        item["holdCondition"] = _short(hold["condition"], 160)
     prog = j.get("progress") or {}
     if isinstance(prog, dict) and prog.get("of"):
         try:
@@ -332,12 +353,193 @@ def next_going_live(board: dict, at: dt.datetime, n: int = 4) -> list:
     return rows[:n]
 
 
-def _job_waiting(j: dict, done_ids: set) -> bool:
-    """Blocked, or open/claimed but still waiting on another unfinished job."""
-    if j.get("status") == "blocked":
+def _job_index(*groups) -> dict:
+    """id → job from whatever board lists we have (open + done). Later rows win."""
+    by = {}
+    for group in groups:
+        for j in group or []:
+            jid = j.get("id")
+            if jid:
+                by[str(jid)] = j
+    return by
+
+
+def _is_finished(j: dict | None, done_ids: set) -> bool:
+    if not j:
+        return False
+    jid = j.get("id")
+    if jid and jid in done_ids:
         return True
-    after = j.get("after")
-    return bool(after and after not in done_ids)
+    return j.get("status") in ("done", "cancelled")
+
+
+def _job_waiting(j: dict, done_ids: set, by_id: dict | None = None) -> bool:
+    """True when this job cannot run yet: unfinished after, or a real blocked hold."""
+    return classify_cant_run(j, done_ids, by_id or {})[0] is not None
+
+
+def unfinished_predecessors(j: dict, by_id: dict, done_ids: set) -> list:
+    """Walk `after` toward the root; return unfinished predecessors earliest-first.
+    Uses only edges already on the jobs — never invents a link."""
+    chain, seen = [], set()
+    cur = j
+    while cur:
+        aid = str(cur.get("after") or "").strip()
+        if not aid or aid in seen:
+            break
+        seen.add(aid)
+        pred = by_id.get(aid)
+        if pred is None:
+            if aid not in done_ids:
+                chain.append({"id": aid, "title": ""})
+            break
+        if not _is_finished(pred, done_ids):
+            chain.append({"id": aid, "title": _short(pred.get("title") or "", 48)})
+        cur = pred
+    chain.reverse()
+    return chain
+
+
+def _name_pred(p: dict) -> str:
+    jid = p.get("id") or ""
+    title = (p.get("title") or "").strip()
+    if jid and title:
+        return f"{jid} ({title})"
+    return jid or title or "an earlier job"
+
+
+def after_why(preds: list) -> str:
+    """Ben: say the task will run automatically after the earlier unfinished jobs."""
+    if not preds:
+        return "Will run automatically after earlier work finishes"
+    names = [_name_pred(p) for p in preds]
+    if len(names) == 1:
+        return f"Will run automatically after {names[0]}"
+    if len(names) == 2:
+        return f"Will run automatically after {names[0]}, then {names[1]}"
+    head, last = ", ".join(names[:-1]), names[-1]
+    return f"Will run automatically after {head}, then {last}"
+
+
+def blocker_why(j: dict) -> str:
+    """Plain needed-reason from existing hold type/condition — never dump the dict."""
+    hold = _hold_of(j)
+    cond = _short(hold.get("condition") or "", 110)
+    typ = str(hold.get("type") or "").lower()
+    if typ == "ben":
+        return f"Needs Ben: {cond}" if cond else "Needs Ben"
+    if typ == "public":
+        return f"Needs a public video: {cond}" if cond else "Needs a public video"
+    if typ == "date":
+        return f"Waiting on a date: {cond}" if cond else "Waiting on a date"
+    if typ == "credits":
+        return f"Needs credits: {cond}" if cond else "Needs credits"
+    if typ == "capability":
+        reqs = hold.get("requires")
+        if isinstance(reqs, list) and reqs and all(isinstance(x, str) and x for x in reqs):
+            return f"Needs capability: {', '.join(reqs[:4])}"
+        return f"Needs a capability check: {cond}" if cond else "Needs a capability check"
+    if typ == "test":
+        return f"Waiting on a running test: {cond}" if cond else "Waiting on a running test"
+    if typ == "input":
+        return f"Needs: {cond}" if cond else "Needs an input before it can run"
+    if typ == "dependency":
+        return f"Needs: {cond}" if cond else "Needs earlier work to finish"
+    # Blocked with a result/note but no typed hold — use the existing text only.
+    for key in ("result", "remaining_action"):
+        raw = j.get(key)
+        if isinstance(raw, str) and raw.strip():
+            return _short(raw.strip().removeprefix("blocked: ").removeprefix("parked for Chief: "), 120)
+    title = _short(j.get("title") or "", 72)
+    jid = j.get("id") or ""
+    if jid and title:
+        return f"{jid} · {title} — can't run yet"
+    return title or (f"{jid} — can't run yet" if jid else "Can't run yet")
+
+
+def classify_cant_run(j: dict, done_ids: set, by_id: dict) -> tuple[str | None, str | None, list]:
+    """('after'|'blocker'|None, why, unfinished predecessor list)."""
+    preds = unfinished_predecessors(j, by_id, done_ids)
+    hold = _hold_of(j)
+    typ = str(hold.get("type") or "").lower()
+    # Unfinished after (or dependency hold still pointing at unfinished work) = workflow wait.
+    if preds:
+        return "after", after_why(preds), preds
+    after = str(j.get("after") or "").strip()
+    if after and after not in done_ids and not _is_finished(by_id.get(after), done_ids):
+        preds = [{"id": after, "title": _short((by_id.get(after) or {}).get("title") or "", 48)}]
+        return "after", after_why(preds), preds
+    if j.get("status") == "blocked" or (typ and typ != "dependency"):
+        return "blocker", blocker_why(j), []
+    if typ == "dependency":
+        # Predecessor already finished — condition may still ask for a verify step.
+        return "blocker", blocker_why(j), []
+    return None, None, []
+
+
+def annotate_cant_run(item: dict, src: dict, done_ids: set, by_id: dict) -> dict:
+    """Attach waitKind / why / afterChain from real job fields onto a checklist item."""
+    kind, why, preds = classify_cant_run(src, done_ids, by_id)
+    if not kind:
+        return item
+    item = dict(item)
+    item["waitKind"] = kind
+    item["why"] = why
+    if preds:
+        item["afterChain"] = preds
+    return item
+
+
+def order_by_after(items: list) -> list:
+    """Hierarchy order: prerequisites above jobs that wait on them (A, then B, then C)."""
+    nodes = [it for it in items if it.get("id")]
+    stages = [it for it in items if not it.get("id")]
+    ids = {it["id"] for it in nodes}
+    after_of = {it["id"]: (it.get("after") if it.get("after") in ids else None) for it in nodes}
+    children = {i: [] for i in ids}
+    roots = []
+    for i, a in after_of.items():
+        if a:
+            children[a].append(i)
+        else:
+            roots.append(i)
+
+    def sort_key(i):
+        it = next(x for x in nodes if x["id"] == i)
+        stage = it.get("stage") or ""
+        try:
+            sr = STAGE_ORDER.index(stage)
+        except ValueError:
+            sr = 99
+        return (sr, i)
+
+    for k in children:
+        children[k].sort(key=sort_key)
+    roots.sort(key=sort_key)
+    out, seen = [], set()
+
+    def visit(i):
+        if i in seen:
+            return
+        seen.add(i)
+        out.append(next(x for x in nodes if x["id"] == i))
+        for c in children.get(i) or []:
+            visit(c)
+
+    for r in roots:
+        visit(r)
+    # Cycles / orphans not reached from a root — keep stable id order at the end.
+    for it in sorted(nodes, key=lambda x: x["id"]):
+        if it["id"] not in seen:
+            out.append(it)
+    # Leftover stage rows keep STAGE_ORDER after the job chain.
+    def stage_key(it):
+        try:
+            return STAGE_ORDER.index(it.get("stage") or "")
+        except ValueError:
+            return 99
+    out.extend(sorted(stages, key=stage_key))
+    return out
 
 
 def normalize_focus(focus) -> set[str]:
@@ -374,21 +576,13 @@ def in_focus(film_key: str, focus: set[str]) -> bool:
 
 
 def _blocked_why(blocked_items: list) -> str | None:
-    """Short human line from the first waiting job — id + title, never invented."""
+    """One clear workflow / needed line for the film card (prefer after-wait copy)."""
     if not blocked_items:
         return None
-    it = blocked_items[0]
-    jid = str(it.get("id") or "").strip()
-    title = str(it.get("title") or "").strip()
-    if len(title) > 72:
-        title = title[:69].rstrip() + "…"
-    if jid and title:
-        return f"{jid} · {title} — waiting"
-    if title:
-        return f"{title} — waiting"
-    if jid:
-        return f"{jid} — waiting"
-    return None
+    # Prefer "will run after …" so the card reads as progress, not a wall.
+    ordered = sorted(blocked_items, key=lambda it: 0 if it.get("waitKind") == "after" else 1)
+    why = (ordered[0].get("why") or "").strip()
+    return why or None
 
 
 def board_focus(board: dict) -> list:
@@ -420,6 +614,8 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
     done_ids = {j.get("id") for j in all_done if j.get("id")} | {
         j.get("id") for j in ((open_jobs or [])) if j.get("status") == "done" and j.get("id")
     }
+    by_id = _job_index(all_done, done, open_jobs)
+    open_by_id = {str(j["id"]): j for j in (open_jobs or []) if j.get("id")}
 
     def _bucket(key, title=""):
         return by_film.setdefault(key, {"film": key, "title": title or titles.get(key, key), "jobs": 0, "last": "",
@@ -457,7 +653,7 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
         if j.get("id") in seen_ids:
             continue
         f = film_of(j, titles)
-        item = _job_item(j, j.get("status") or "open")
+        item = annotate_cant_run(_job_item(j, j.get("status") or "open"), j, done_ids, by_id)
         if f:
             g = _bucket(f, titles.get(f, f))
             if not g["last"]:
@@ -500,21 +696,27 @@ def summarise(history: list, at: dt.datetime, counts: dict, done: list,
         mv = moved_by.get(f)
         stage_id = stages.get(f)
         leftovers = leftover_stages(milestones.get(f) or [], g["remaining"])
-        # Checklist order: remaining jobs, leftover stages, today done, yesterday done.
+        # Hierarchy: prerequisites above waiters; then leftover stages; then today/yesterday ticks.
         today_items = [it for it in g["recent"] if it.get("when") == "today"]
         yday_items = [it for it in g["recent"] if it.get("when") == "yesterday"]
-        items = list(g["remaining"]) + leftovers + today_items + yday_items
+        remaining_ordered = order_by_after(list(g["remaining"]) + leftovers)
+        items = remaining_ordered + today_items + yday_items
         done_today = len(today_items)
         left = len(g["remaining"]) + len(leftovers)
-        blocked_items = [it for it in g["remaining"] if it.get("status") == "blocked"
-                         or _job_waiting(it, done_ids)]
+        blocked_items = [it for it in remaining_ordered if it.get("waitKind") or _job_waiting(
+            open_by_id.get(it.get("id") or "", it), done_ids, by_id)]
         for it in blocked_items:
-            glance_blocked.append({
+            row = {
                 "id": it.get("id") or "",
                 "film": f,
                 "title": it.get("title") or "",
                 "status": it.get("status") or "blocked",
-            })
+            }
+            if it.get("waitKind"):
+                row["waitKind"] = it["waitKind"]
+            if it.get("why"):
+                row["why"] = it["why"]
+            glance_blocked.append(row)
         reason = _pct_reason(now_done, stage_id, leftovers)
         why = _blocked_why(blocked_items)
         card = {
