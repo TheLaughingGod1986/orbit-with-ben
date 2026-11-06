@@ -194081,13 +194081,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-06T18:45Z",
-      "eta": "2026-11-06T20:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T18:21Z",
-      "result": "",
+      "result": "HOLD / CONDITION UNMET (OWB PR #579, jobs/reviews/J2295/REVIEW.md, 7d9c1e2): verified local Mini evidence commit bf751c1e3f (/private/tmp/codex-J2157 and /private/tmp/J2157-codex-wt on the Mac mini, including jobs/reviews/J2157/REVIEW.md, pluto_frozen_heart_vo_v01_TAKE.json, and the 3,801-credit ElevenLabs spend ledger rows between 97,205 at 08:30:08Z and 93,404 at 15:23:11Z) has not yet been pushed to origin or opened as a PR. Targeted exact-script wording pickups/verification for Ch 5 line 94 ('looked back' vs Scribe 'looks back') and Ch 6 line 110 ('Real Worlds' vs Scribe 'Real World') plus chapter-tail decay checks on pluto_frozen_heart_vo_v01.mp3 (614.68 s, -23.0 dB mean, -19.9 LUFS, -3.7 dBTP, preserved on the Mac mini) have not yet been executed on the Mac mini, and no 034 shot-list job is queued. Kept J2157 blocked at 2/3 via --recheck J2295 (next check 2026-11-07T00:53:00Z). £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-06T18:21Z",
@@ -194118,6 +194118,11 @@
           "at": "2026-11-06T18:53Z",
           "by": "macbook",
           "what": "step 3 of 3 done: Step 3/3 complete: opened OWB PR #579 (7d9c1e2); recording wait on J2157 (--recheck J2295)"
+        },
+        {
+          "at": "2026-11-06T18:55Z",
+          "by": "macbook",
+          "what": "done: HOLD / CONDITION UNMET (OWB PR #579, jobs/reviews/J2295/REVIEW.md, 7d9c1e2): verified local Mini evidence commit bf751c1e3f (/private/tmp/codex-J2157 and /private/tmp/J2157-codex-wt on the Mac mini, including jobs/reviews/J2157/REVIEW.md, pluto_frozen_heart_vo_v01_TAKE.json, and the 3,801-credit ElevenLabs spend ledger rows between 97,205 at 08:30:08Z and 93,404 at 15:23:11Z) has not yet been pushed to origin or opened as a PR. Targeted exact-script wording pickups/verification for Ch 5 line 94 ('looked back' vs Scribe 'looks back') and Ch 6 line 110 ('Real Worlds' vs Scribe 'Real World') plus chapter-tail decay checks on pluto_frozen_heart_vo_v01.mp3 (614.68 s, -23.0 dB mean, -19.9 LUFS, -3.7 dBTP, preserved on the Mac mini) have not yet been executed on the Mac mini, and no 034 shot-list job is queued. Kept J2157 blocked at 2/3 via --recheck J2295 (next check 2026-11-07T00:53:00Z). £0 / 0 credits."
         }
       ],
       "remaining_action": "Done: J2295 condition verification complete; J2157 held awaiting Mini push of bf751c1e3f + Ch 5/Ch 6 pickups and tail checks",
@@ -194143,7 +194148,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "7d9c1e2"
     },
     {
       "id": "J2296",
