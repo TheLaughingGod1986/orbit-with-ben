@@ -1,5 +1,7 @@
 # Channels
 
+**Phase 2 (6 Nov 2026):** each channel's settings now live in its own repo at `studio/channel.json`. Orbit With Ben's own file is `studio/channel.json` at this repo's root. `channels.json` here lists the plugged-in channels and where to find their checkouts. `channels/<slug>/channel.json` is the cached copy, used when a channel's repo isn't checked out on the machine; refresh it with `python3 scripts/channels.py sync`. The rest of this file describes the fields.
+
 One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phase 1). The engine reads these through
 `scripts/channels.py` and never names a channel itself.
 
