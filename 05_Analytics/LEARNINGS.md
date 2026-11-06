@@ -13,7 +13,7 @@ The weekly audits (`owb-weekly-audit`, `hos-weekly-audit` in `jobs/backlog.json`
 
 ## OWB-2026-11-E1 — approved timing experiment (6 Nov 2026, J2207 / Chief h47)
 
-Applies to eligible **unswapped scheduled-private 026–029 Shorts and new 030+ cuts**. This is an approved experiment, not a demonstrated retention improvement. Readout: **3 Dec 2026**; December 9–14 cuts contribute only to a later follow-up, never to that readout before airing.
+Applies to eligible **unswapped scheduled-private 026–029 Shorts and new 030+ cuts**. This is an approved experiment, not a demonstrated retention improvement. Within this scope, the E1 cut, tail and CTA limits supersede the older timing/outro wording below; outside it the existing rules remain. Readout: **3 Dec 2026**; December 9–14 cuts contribute only to a later follow-up, never to that readout before airing.
 
 - Cut 1 at **≤2.8 s**, Cut 2 at **≤4.8 s**, measured from output time zero (Cut 2 is the second picture transition, not a 4.8 s shot allowance). Later plates stay **≤4.0 s**.
 - Frame 0: moving, full-bleed payoff subject, ≥60% subject and ≤30% black/empty sky; no Orbit. A slow still push fails. First word **≤0.15 s**; spoken surprise **≤1.5 s**; no internal sentence-1 pause >0.15 s.
