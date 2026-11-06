@@ -88,6 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2268 | mini | open (after J2200) | – | – | 010 picture · assembly · HOS 010: build tested twelve-plate Flow adapter without generation | J2267 |
 | J2269 | mini | open (after J2268) | – | – | 010 picture · chief · HOS 010: review twelve-plate runner and verify live spend guards | J2267 |
 | J2270 | mini | open (after J2033) | – | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
+| J2271 | mini | open (after J2270) | – | – | 010 picture · qa · HOS 010: independently review twelve generated Shorts plates | J2267 |
 
 Recently finished:
 
