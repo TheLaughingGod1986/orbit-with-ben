@@ -1,5 +1,5 @@
 {
-  "next_id": 2285,
+  "next_id": 2286,
   "jobs": [
     {
       "id": "J0001",
@@ -192848,6 +192848,35 @@
       "taskKeys": [
         "HOS:010"
       ]
+    },
+    {
+      "id": "J2285",
+      "title": "HOS 099: validate package and finish cards, Level and timezone readback",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief Codex ruling, 6 Nov 2026, review of J2199: FIX, not checklist PASS. Original J2199 stays blocked until this follow-up completes and Chief accepts the new evidence. This is executable scope under the existing h47 approval, not a request for absent Chief/Ben permission.\n\nVideo uAomPaOBrM8, HOS channel UCXp7HkBIl1LgaznXuZHJyRg. Source evidence /Users/benjaminoats/_desk/jobs/J2199 (41 hashes verified), records PR442 head 291960a2bc99ff1f2d06a32ea86d0a76405da48e. Reuse HOS Studio tab, last confirmed CDP 9460; verify current channel and take writer lock.\n\n1. Preflight before ANY Studio write: locate the actual compilation package (including canonical local/NAS reference records) and obtain lint:package output proving the intended package was evaluated. The previous exit 0 with No packages found is NOT a demonstrated PASS. Do not overwrite an uploaded manifest or fabricate approval/neighbours/media hashes. If canonical package is absent, deliver a separate validation input derived from existing approved upload records and explicitly report coverage gaps; do not proceed to Studio writes until the required lint actually passes. Capture current read-only channel:audit now and after the session; expected 0 errors. No credentials in evidence.\n2. Cards: add exactly 2 relevant VIDEO cards: 00:17:57 How Did We Discover Germs? (_C92tIJCk8A); 00:24:14 How Did We Discover the Periodic Table? (AL_-qlWko_g), verifying target IDs/titles and matching chapter moments. Screenshot evidence shows the previous script typed the video ID into the timeline timecode input, without opening a video picker. Click the Video + control first; assert the search-dialog identity before typing, select the exact target, then set time. Save and reopen/reload to prove both entries persisted. Never repeat blind global-input selectors.\n3. Education: preserve Concept overview and England. Inspect the actual Level control and save-response/error state before another attempt; select closest offered ages-14–16 value (Key stage 4 or Year 10) and prove persistence after reload. Keep this unresolved if it still does not save; never report transient control text as saved. Exam/course may remain blank for this mixed-subject compilation: do not invent a single GCSE course.\n4. Timezone: inspect London selection versus local browser timezone and read the exact stored publishAt with read-only API evidence. Try only a save that leaves the instant 2026-12-10T18:00:00Z and displayed 10 Dec 18:00 UK unchanged. Do not toggle date/time/visibility merely to enable Done. If London is only display-equivalent and does not persist, document that distinction and return it for Chief decision; do not silently waive the explicit-London requirement.\n\nBound active Studio diagnosis to 20 minutes total; finish available safe items, then return precise selector/save evidence for any remaining issue, not repeated blind retries. One setting per save with Audience/Visibility recheck. Preserve all previously saved settings: places off, chapters/concepts on, Basic comments On/Anyone/Top/likes, captions never aired US TV, paid No, Education, AI Yes, not Made for Kids. Preserve title, description, privacy, publishAt, end screen 48:58–49:18, playlist, Premiere off. No upload, schedule, retitle, privacy change, test start/reset, pin, Buffer, generation or spend. Pin and Test & Compare remain pending until public.\n\nDeliver screenshot+DOM readback+SHA, actual lint coverage and channel audit, narrow records PR from clean worktree; park for elected Chief with exact remaining issues. Completion of this worker task alone does not approve the film or clear J2199. Link progress to HOS:099; preserve original J2199 worker 5/5 history without treating it as approval. Ready to start now; no artificial date/credit/Ben hold.\n",
+      "ref": "",
+      "film": "099",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T15:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T15:18Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Validate the actual package, fix video-card selection and verify the remaining Studio settings",
+      "kind": "studio",
+      "plain": "Finish and verify the compilation’s remaining YouTube Studio settings"
     }
   ],
   "focus": [],
