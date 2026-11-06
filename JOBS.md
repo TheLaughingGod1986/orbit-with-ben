@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2262 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 R08 orbital-period draft: review still and source reuse allocation | c95c73b4f9 |
 | J2267 | mini | claimed | codex | 2026-11-06T10:23Z | 010 picture · chief · HOS 010: integrate readiness PRs and establish bounded twelve-plate producer | J2266 |
 | J2268 | mini | open (after J2200) | – | – | 010 picture · assembly · HOS 010: build tested twelve-plate Flow adapter without generation | J2267 |
+| J2269 | mini | open (after J2268) | – | – | 010 picture · chief · HOS 010: review twelve-plate runner and verify live spend guards | J2267 |
 
 Recently finished:
 
