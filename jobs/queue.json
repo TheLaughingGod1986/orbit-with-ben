@@ -195803,18 +195803,23 @@
           "at": "2026-11-06T23:19Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed. Rechecking UPLOADS, API and queue before any cut."
+        },
+        {
+          "at": "2026-11-06T23:25Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: UPLOADS still names v04 sha 31f362f4. Today snapshot heiGCnGKTkE is private for 2026-12-14 11:30Z. No other repair job. Original kept."
         }
       ],
-      "remaining_action": "Recheck whether heiGCnGKTkE is already being repaired",
+      "remaining_action": "Cut a local v05 that tightens the first two pictures and drops the end card",
       "due": "2026-12-13T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-06T23:19Z",
+        "at": "2026-11-06T23:25Z",
         "by": "cursor",
-        "note": "Claimed. Rechecking UPLOADS, API and queue before any cut."
+        "note": "UPLOADS still names v04 sha 31f362f4. Today snapshot heiGCnGKTkE is private for 2026-12-14 11:30Z. No other repair job. "
       },
       "taskKeys": [
         "OWB:029"
