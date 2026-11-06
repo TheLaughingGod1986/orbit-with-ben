@@ -190303,13 +190303,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T09:39Z",
-      "eta": "2026-11-06T11:39Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T22:53Z",
-      "result": "",
+      "result": "4261d05bb6 (jobs/reviews/J2260/REVIEW.md): R19 linear 2-bar AU distance comparison (EARTH 1 AU vs TITAN 9.5 AU, 9.5x EARTH'S DISTANCE) APPROVED over 3-body scale line; PIA14602 retained at <=2 uses (R09 r09_sizes + R35 r35_ocean; R03 uses PIA21902 use 1/2) and excluded from R19; pre-verified R19 source swap to PIA14909 (CROP 295,294,703,702, preview 273b19ebae1b...) or PIA21610 (CROP 160,161,960,961, preview ec18f2b771e5...) approved to render under --approved r19_distance --review-ref J2260. 39+ exports and J2177/J2247/J2262/J2264/frame0/Huygens/APL holds preserved; GBP0.",
       "history": [
         {
           "at": "2026-11-05T22:53Z",
@@ -190350,6 +190350,11 @@
           "at": "2026-11-06T09:58Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified jobs/reviews/J2260/REVIEW.md (4261d05bb6) and updated parent J2089."
+        },
+        {
+          "at": "2026-11-06T09:58Z",
+          "by": "gemini",
+          "what": "done: 4261d05bb6 (jobs/reviews/J2260/REVIEW.md): R19 linear 2-bar AU distance comparison (EARTH 1 AU vs TITAN 9.5 AU, 9.5x EARTH'S DISTANCE) APPROVED over 3-body scale line; PIA14602 retained at <=2 uses (R09 r09_sizes + R35 r35_ocean; R03 uses PIA21902 use 1/2) and excluded from R19; pre-verified R19 source swap to PIA14909 (CROP 295,294,703,702, preview 273b19ebae1b...) or PIA21610 (CROP 160,161,960,961, preview ec18f2b771e5...) approved to render under --approved r19_distance --review-ref J2260. 39+ exports and J2177/J2247/J2262/J2264/frame0/Huygens/APL holds preserved; GBP0."
         }
       ],
       "remaining_action": "Complete J2260",
@@ -190372,7 +190377,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "4261d05bb6"
     },
     {
       "id": "J2261",
