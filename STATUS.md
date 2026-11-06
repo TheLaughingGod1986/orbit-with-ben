@@ -59,6 +59,7 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
+| 031 | picture | codex | 2026-11-06T18:29Z | 2026-11-06T20:28Z | J2141 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
 | 033 | picture | macbook | 2026-11-06T18:16Z | 2026-11-06T20:15Z | J2290 033 Uranus: £0 harvest 38 missing stills + CODE graphics from STILLS_LOCK_v01 |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
