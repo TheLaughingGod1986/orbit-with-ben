@@ -191151,9 +191151,14 @@
           "at": "2026-11-06T09:17Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed. NAS offload dry run would free ~0 MB (494 MB folder, 6.7 GB free stays). Starting file and slot checks."
+        },
+        {
+          "at": "2026-11-06T09:20Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Master hash matches e1e3ff0c… 25.167s 1080x1920. No 21 Nov row in social/hos/UPLOADS.json."
         }
       ],
-      "remaining_action": "Locate the Short C master, package, and a free 11:30 slot",
+      "remaining_action": "Confirm the 21 Nov slot is free and the long is public",
       "due": "2026-11-20T20:00:00Z",
       "kind": "studio",
       "plain": "Upload the Ben-OK’d HOS 006 Short C v03 Private for Sat 21 Nov 11:30, linked to the live long.",
@@ -191173,11 +191178,11 @@
       },
       "urgent": 12,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-06T09:17Z",
+        "at": "2026-11-06T09:20Z",
         "by": "cursor",
-        "note": "Claimed. NAS offload dry run would free ~0 MB (494 MB folder, 6.7 GB free stays). Starting file and slot checks."
+        "note": "Master hash matches e1e3ff0c… 25.167s 1080x1920. No 21 Nov row in social/hos/UPLOADS.json."
       },
       "taskKeys": [
         "HOS:006"
