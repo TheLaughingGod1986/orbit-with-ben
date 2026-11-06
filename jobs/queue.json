@@ -177352,9 +177352,14 @@
           "at": "2026-11-06T12:22Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-06T12:23Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Recovered existing PR490 at f11e9587e2; prior 3/4 retained. Initial step 0 was reporting reset only. J2007 cancelled; no retry."
         }
       ],
-      "remaining_action": "Check existing command gateway and supported allow rules before changing configuration",
+      "remaining_action": "Implement guarded service writes and verify approval boundaries",
       "kind": "assembly",
       "urgent": 8,
       "rerouted_from": {
@@ -177367,10 +177372,11 @@
       "for": "codex",
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-06T12:22Z",
-        "by": "codex"
+        "at": "2026-11-06T12:23Z",
+        "by": "codex",
+        "note": "Recovered existing PR490 at f11e9587e2; prior 3/4 retained. Initial step 0 was reporting reset only. J2007 cancelled; no"
       }
     },
     {
