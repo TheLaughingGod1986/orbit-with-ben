@@ -1,5 +1,5 @@
 {
-  "next_id": 2299,
+  "next_id": 2300,
   "jobs": [
     {
       "id": "J0001",
@@ -194412,6 +194412,35 @@
       "remaining_action": "Save two cards and read the education level after expanding settings",
       "kind": "studio",
       "plain": "Save the compilation’s two video links and verify its education setting"
+    },
+    {
+      "id": "J2299",
+      "title": "033 picture: correct source identities and deliver reviewable opener and graphics",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2297 Chief FIX of J2290 PR #578 (adab48f716e066f57e2e1c9f56c3de789dda854e). Film OWB:033, picture. Dependency J2290 is delivery only, not approval. Preserve accepted script/VO, WIP/focus priority, all Ben gates and Option B £0/no Omni.\n\nCorrect picture plan and deliver reviewable media, using PR578 as evidence/draft only:\n1. Audit all 43 pool IDs plus auxiliaries against actual official source records and usage terms. Reconcile all 32 identity_mismatches_vs_lock_caption and especially the 17 do_not_treat_as_lock_subject entries in STILLS_POOL_STATUS_v02.json; a title wording difference is not automatically a wrong body, but every row needs supported identity. PIA00271 is recorded as simulated Venus, not Earth; PIA00141 is Miranda, not a Uranus limb; PIA01361 is a moons montage, not polar haze. Correct affected row mappings in a new shot/stills-plan version and reconcile summary counters. Preserve history, locked spoken lines and timing. No unsuitable source diagram, labels or multi-panel image as a finished shot.\n2. Resolve R01 0.00–6.22 s native-motion requirement. Harvested PIA01283 is a 737x256 JPEG, not demonstrated moving footage. PIA01280 is not proof of motion either. Do not animate a still and call it native motion; retain svs20390 exclusion. Follow AGENTS missing-footage fallback: reuse existing evidence; at most 20 minutes/3 new deep candidates for this input, record cumulative attempts, then specific Chief fallback if no suitable real clip. No generation authorised.\n3. Obtain the existing MacBook assets through the shared folder or reproduce the £0 public harvest as necessary. Deliver Mini-readable paths and checksum verification for all source files and 14 draft graphic files; no media in git and no NAS deletion. Correct provenance, credits and licences, not just filenames.\n4. Reconcile all graphic row/duration/name assignments to the accepted VO, including R26 alias and R46/R52 ambiguity. Verify real-body identity, exact sourced quantities, house type, <=4-word labels, animated cards <=4 s, picture changes every 4–6 s, max upscale, grain/credits, and no adjacent code graphics. R55 currently substitutes PIA01488; document and justify that revised row. 12 fps drafts are not a smooth-motion approval. Fix and version renders as needed; long runs detached with log/done paths.\n5. Deliver cuts/pool manifests, frame sheet and applicable picture_qa/polish reports. No KEEP or media PASS from checksums, source titles or job completion. Explicitly hand off to the dependent moving-video-capable QA job. If unable to complete a required input, record a precise typed hold and remaining work.\nNo paid generation, upload, scheduling or visibility change. No new music/VO spend. No rewrite of the spoken script. Review and Chief release remain required before assembly.\n",
+      "ref": "J2297; PR578 adab48f716e066f57e2e1c9f56c3de789dda854e",
+      "film": "033",
+      "stage": "picture",
+      "after": "J2290",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-06T19:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T19:43Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct the source-to-shot map and deliver verified picture files for review",
+      "kind": "assembly",
+      "plain": "Fix mismatched Uranus pictures and provide the opening footage and graphics for review."
     }
   ],
   "focus": [],
