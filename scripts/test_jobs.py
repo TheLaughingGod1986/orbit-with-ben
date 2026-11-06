@@ -383,7 +383,8 @@ class OnlyBensCalls(unittest.TestCase):
 
 
 class MacBookTakesTextJobs(unittest.TestCase):
-    """Ben, 5 Nov 2026: the MacBook takes Mini jobs that don't need the Mini."""
+    """Ben, 5 Nov 2026: the MacBook takes Mini jobs that don't need the Mini.
+    6 Nov 2026: prohibition clauses and ordinary English must not look Mini-only."""
 
     def test_text_and_code_jobs_are_portable_media_and_mini_tools_are_not(self):
         d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "gemini"}),
@@ -406,3 +407,53 @@ class MacBookTakesTextJobs(unittest.TestCase):
         d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}), ("mini", "verify condition for J0001", {"kind": "review"}))
         d["jobs"][1]["recheck_of"] = "J0001"
         self.assertFalse(jobs.macbook_portable(d["jobs"][1], d))
+
+    def test_false_mini_only_hits_do_not_block_portable_text(self):
+        # Observed 6 Nov 2026: English "flow", "cut-over", do-not-touch Buffer/NAS, and BUFFER_POSTS.json
+        # wrongly made every open review look Mini-only.
+        cases = [
+            ("Review multi-channel plan: code and phases", "kind", "review",
+             "channels plug in with their own rules and flow, and a third channel is coming."),
+            ("Review multi-channel plan: risk and cut-over", "kind", "review",
+             "What could stop the studio during phase 3 cut-over, and what is the undo?"),
+            ("Cleanup audit: engine and tools", "kind", "review",
+             "Never touch shipped films' outputs or anything on the NAS; propose archiving only with receipts."),
+            ("Review Short candidate KEEP or FIX", "kind", "review",
+             "Do not upload, swap, retitle, or change privacy, schedule, Buffer or UPLOADS. "
+             "A KEEP still needs a separate authorised swap before YouTube changes."),
+            ("Shorts slots for the Dec longs", "kind", "listing",
+             "Check UPLOADS.json and BUFFER_POSTS.json for taken slots. No uploads."),
+        ]
+        for title, _, kind, body in cases:
+            d = queue(("mini", title, {"kind": kind, "for_agent": "gemini"}))
+            d["jobs"][0]["body"] = body
+            self.assertTrue(jobs.macbook_portable(d["jobs"][0], d), title)
+            self.assertFalse(jobs.mini_only_hit(title + " " + body), title)
+
+    def test_true_mini_only_jobs_stay_on_the_mini(self):
+        cases = [
+            ("Verify condition: NAS mount", "kind", "review",
+             "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no files)."),
+            ("Watch and listen review of the master", "kind", "review",
+             "Full watch and listen review of J01_Journey_v01.mp4 before Ben's card."),
+            ("Assemble Short cut with ffmpeg", "kind", "review",
+             "Run ffmpeg to render the 9:16 cut from the locked stems."),
+            ("Check Flow Veo credit then mint", "kind", "review",
+             "Read the Flow credit, then mint the next Veo take on Chrome."),
+            ("Review Codex allow-list on the Mini", "kind", "review",
+             "Confirm the unattended Codex allow-list still matches docs/CODEX_ALLOWLIST.md."),
+            ("Studio finish for 032", "kind", "review",
+             "Open YouTube Studio and set the end screen plus Related video on the long."),
+        ]
+        for title, _, kind, body in cases:
+            d = queue(("mini", title, {"kind": kind, "for_agent": "gemini"}))
+            d["jobs"][0]["body"] = body
+            self.assertFalse(jobs.macbook_portable(d["jobs"][0], d), title)
+            self.assertTrue(jobs.mini_only_hit(title + " " + body), title)
+
+    def test_addressed_codex_jobs_stay_off_the_macbook(self):
+        d = queue(("mini", "Review multi-channel plan: code and phases (Codex)",
+                   {"kind": "review", "for_agent": "codex"}))
+        d["jobs"][0]["body"] = "Read the plan and write REVIEW.md. Text only; no Flow or Chrome."
+        self.assertFalse(jobs.macbook_portable(d["jobs"][0], d))
+        self.assertFalse(jobs.claimable(d, d["jobs"][0], {"macbook", "any"}, T0, "macbook"))

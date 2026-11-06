@@ -182,18 +182,44 @@ def film_named(title: str) -> bool:
 # The MacBook takes Mini jobs that don't need the Mini (Ben, 5 Nov 2026: "Sounds good. Go ahead"; 48 of 49 open jobs
 # were `needs mini` only because files used to live there). Text or code work only: anything touching the NAS,
 # Studio/YouTube, Flow/Chrome, media, renders, listening or watching stays on the Mini.
+# Codex stays off the MacBook when addressed (`for=codex`): one shared Codex account with the Mini (Ben, 6 Nov 2026).
 MACBOOK_KINDS = {"review", "script", "facts", "listing"}
-MACBOOK_CLIS = {"codex", "gemini", "claude", "cursor"}
+MACBOOK_CLIS = {"gemini", "claude", "cursor"}
 CODE_WORK = re.compile(r"\b(?:encode|rules?|code|tests?|refactor|PR|lint|docs?)\b", re.I)
-# Anywhere in the job: a hard sign it needs the Mini's own files, accounts or tools.
+# Hard Mini signs: local paths, media files, Studio/browser/tooling. Always block, even inside "do not …" notes.
+MINI_HARD = re.compile(
+    r"/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3|png|jpe?g|webp)\b|youtube studio|\bstudio (?:read|sign|"
+    r"checklist|finish)\b|\bupload(?:ed|s|ing)? (?:to|the|a)\b|(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|"
+    r"\bchrome\b|\bmint\b|\bffmpeg\b|\brender(?:s|ed|ing)?\b|\bwhisper\b|\bASR\b|\blaunchd\b|\bollama\b|\bredis\b|"
+    r"\btailscale\b|\ballow-?list\b|\bhos desk\b|\bicloud\b", re.I)
+# Soft Mini signs: service names that often appear in "do not change Buffer / never touch the NAS" instructions.
+# Matched only after prohibition clauses are stripped (6 Nov 2026: those false positives parked the MacBook).
+# Bare "YouTube" stays out: briefs often say "before YouTube changes" while the work is a git text review;
+# real YouTube mutations still hit MINI_HARD (`youtube studio`, upload-to) or kind=studio / Buffer / playlists.
+MINI_SOFT = re.compile(r"\bNAS\b|\bbuffer\b|\bplaylists?\b|\bend screens?\b", re.I)
+# "Do not change Buffer", "Never touch … NAS", "No YouTube/Buffer changes" — not a Mini requirement.
+MINI_PROHIBITION = re.compile(
+    r"(?is)\b(?:do\s+not|don't|never)\b[^.!\n]{0,240}"
+    r"|\bno\s+(?:youtube|buffer|nas|uploads?|privacy|schedule|playlists?|end\s+screens?)\b[^.!\n]{0,80}")
+# Kept for tests and callers that still import the old name; prefer mini_only_hit().
 MINI_ONLY = re.compile(
     r"\bNAS\b|/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3|png|jpe?g|webp)\b|youtube studio|\bstudio (?:read|sign|"
-    r"checklist|finish)|\bupload(?:ed|s|ing)? (?:to|the|a)\b|\bflow\b|chrome|\bmint\b|ffmpeg|\brender(?:s|ed|ing)?\b|whisper|"
-    r"\bASR\b|launchd|ollama|redis|tailscale|allow-?list|hos desk|icloud|buffer|playlists?|end screens?|youtube", re.I)
+    r"checklist|finish)\b|\bupload(?:ed|s|ing)? (?:to|the|a)\b|(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|"
+    r"\bchrome\b|\bmint\b|\bffmpeg\b|\brender(?:s|ed|ing)?\b|\bwhisper\b|\bASR\b|\blaunchd\b|\bollama\b|\bredis\b|"
+    r"\btailscale\b|\ballow-?list\b|\bhos desk\b|\bicloud\b|\bbuffer\b|\bplaylists?\b|\bend screens?\b", re.I)
 # In the title: work that looks at or makes media, which lives on the Mini.
+# `cuts?` must not match hyphenated English like "cut-over" (6 Nov 2026).
 MEDIA_WORK = re.compile(r"picture|stills?\b|plates?\b|thumbnail|\bthumbs?\b|footage|audio|listen|\bwatch|capture|harvest|"
-                        r"assembl|\bcuts?\b|frames?\b|voice-?over", re.I)
+                        r"assembl|(?<![\w-])cuts?(?![\w-])|frames?\b|voice-?over", re.I)
 NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
+
+
+def mini_only_hit(text: str) -> bool:
+    """True when the job text names a Mini-only path, tool or live service the MacBook must not take."""
+    raw = str(text or "")
+    if MINI_HARD.search(raw):
+        return True
+    return bool(MINI_SOFT.search(MINI_PROHIBITION.sub(" ", raw)))
 
 
 def macbook_portable(job: dict, data: dict | None = None) -> bool:
@@ -209,7 +235,7 @@ def macbook_portable(job: dict, data: dict | None = None) -> bool:
     if parent and MEDIA_WORK.search(str(parent.get("title") or "")):
         return False
     return (job.get("kind") in MACBOOK_KINDS or bool(CODE_WORK.search(title))) \
-        and not MEDIA_WORK.search(title) and not MINI_ONLY.search(text)
+        and not MEDIA_WORK.search(title) and not mini_only_hit(text)
 
 
 # One plain-English line per job for the board (Ben, 6 Nov 2026: "In simple English I would like a brief description on

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-  MacBook worker (scripts/macbook_worker.py), every 15 minutes. It does nothing unless the MacBook is on mains power,
-  idle for 10 minutes and has 15 GB free, and it only takes `needs macbook` jobs (Ben, 28 Oct 2026).
+  MacBook worker (scripts/macbook_worker.py), every 3 minutes. It does nothing unless the MacBook is on mains power,
+  idle for 10 minutes and has 15 GB free, and it only takes `needs macbook` jobs (plus portable Mini text/code via
+  jobs.macbook_portable; Ben, 28 Oct 2026, look interval 180 s on 6 Nov 2026). Overlapping runs are locked out.
   Installed by scripts/macbook/setup_macbook.sh, which fills in __HOME__.
   Check now:          python3 ~/YouTube/orbit-with-ben/scripts/macbook_worker.py check
   Pause for a while:  touch ~/_desk/state/macbook-worker.pause   (rm it to resume)
@@ -34,7 +35,7 @@
     <string>__MODEL__</string>
   </dict>
   <key>StartInterval</key>
-  <integer>900</integer>
+  <integer>180</integer>
   <key>RunAtLoad</key>
   <false/>
   <key>StandardOutPath</key>
