@@ -190555,7 +190555,7 @@
     {
       "id": "J2266",
       "title": "Verify condition for J2172",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2172: J2210 (£0 SHORTS_PICTURE_PLAN_v03 + Part 05 bird row mapping) is done on 0a925061 (HOS PRs #424 ad3c0f4d, #425 0a925061, #426 0a925061 all CI-green, awaiting Chief merge). Assembly remains blocked until Chief merges HOS PR #425/#426 and separately authorizes and completes the HOS 010 Flow moving-plate mint (12 missing unique Shorts-parent moving plates in SHORTS_PICTURE_PLAN_v03.json or full 010 board after HOS 009 J2033; currently 0/12 minted, 0 Flow credits spent on HOS:010).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2172 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -190575,13 +190575,27 @@
           "at": "2026-11-06T07:31Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T07:32Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 457 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Verify readiness: Await Chief merge of HOS PR #425/#426 (0a925061) and separate HOS 010 Flow moving-plate mint (12 plates); then assemble Shorts A and C",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-06T08:31:57+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     }
   ],
   "focus": [],
