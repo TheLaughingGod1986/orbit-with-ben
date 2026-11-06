@@ -190360,10 +190360,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T12:40Z",
+      "eta": "2026-11-06T13:25Z",
       "created_by": "chief",
       "created_at": "2026-11-05T21:25Z",
       "result": "",
@@ -190372,11 +190372,24 @@
           "at": "2026-11-05T21:25Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T12:40Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record C-Open-1 via vo_take.py; vo_check PASS; no upload",
       "kind": "vo",
-      "model": "eleven_v3"
+      "model": "eleven_v3",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-06T12:40Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2255",
