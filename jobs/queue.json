@@ -1,5 +1,5 @@
 {
-  "next_id": 2280,
+  "next_id": 2281,
   "jobs": [
     {
       "id": "J0001",
@@ -188458,6 +188458,11 @@
           "at": "2026-11-06T13:10Z",
           "by": "cursor",
           "what": "condition recorded; next verification 2026-11-06T19:30:00Z"
+        },
+        {
+          "at": "2026-11-06T13:12Z",
+          "by": "relay",
+          "what": "condition verification queued: J2280"
         }
       ],
       "remaining_action": "Record the 8 J01 linking VO takes after J01 enters the active WIP list",
@@ -188472,7 +188477,8 @@
       "hold": {
         "type": "dependency",
         "condition": "OWB:J01 is in jobs/WIP.json active. Checked 2026-11-06T13:09Z: it is first in next, not active. Active OWB is 030, 031, 032, 033 and 034 (cap 5). 031 and 032 are still in picture, not at Ben's watch. Linking VO stays unrecorded and ElevenLabs is not spent until that active entry.",
-        "check_at": "2026-11-06T19:30:00Z"
+        "check_at": "2026-11-06T14:12:32+00:00",
+        "recheck_task": "J2280"
       }
     },
     {
@@ -192316,6 +192322,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2280",
+      "title": "Verify condition for J2220",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2220: OWB:J01 is in jobs/WIP.json active. Checked 2026-11-06T13:09Z: it is first in next, not active. Active OWB is 030, 031, 032, 033 and 034 (cap 5). 031 and 032 are still in picture, not at Ben's watch. Linking VO stays unrecorded and ElevenLabs is not spent until that active entry.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2220 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-06T13:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T13:12Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Record the 8 J01 linking VO takes after J01 enters the active WIP list",
+      "kind": "review",
+      "recheck_of": "J2220",
+      "due": "2026-11-06T14:12:32+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [],
