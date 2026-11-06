@@ -1,0 +1,77 @@
+{
+  "job": "J2249",
+  "film": "OWB:032",
+  "status": "WORKER_DELIVERY_PENDING_INDEPENDENT_REVIEW",
+  "cost_gbp": 0,
+  "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_A_real_surface_v04.jpg",
+  "sha256": "ba7662b11da2756759d2977af55ff793d9e128bb2fa8dd7141b571b95d27f489",
+  "size": [
+    1280,
+    720
+  ],
+  "score": {
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_A_real_surface_v04.jpg",
+    "saturation": 200.8,
+    "near_black": 0.016,
+    "fails": []
+  },
+  "source": {
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/PIA07232_surface_source.jpg",
+    "sha256": "e5be019e4175c1d81d61651ff77e83f070df6fc12cf09df52a11c9fe82282ee6",
+    "id": "PIA07232",
+    "page": "https://science.nasa.gov/photojournal/first-color-view-of-titans-surface/",
+    "credit": "NASA/JPL/ESA/University of Arizona",
+    "policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+    "rights_note": "Official NASA caption identifies DISR surface image and joint agency/university credit. Educational editorial use with credit; no endorsement. Carry credit into upload description.",
+    "native_file_size": [
+      546,
+      693
+    ]
+  },
+  "recipe": {
+    "crop_xyxy": [
+      120,
+      330,
+      424,
+      501
+    ],
+    "resize": "Lanczos to 1280x720, no synthetic pixels or composite",
+    "source_crop_width": 304,
+    "linear_upscale": 4.2105263157894735,
+    "contrast": 1.35,
+    "saturation": 1.25,
+    "brightness": 1.08,
+    "unsharp_mask": {
+      "radius": 1,
+      "percent": 70,
+      "threshold": 3
+    }
+  },
+  "typography": {
+    "font": "Arial Black",
+    "size_px": 112,
+    "visible_cap_height_px": 82,
+    "visible_top_px": 42,
+    "left_px": 60,
+    "hook": "REAL SURFACE",
+    "yellow_word": "REAL",
+    "outline_px": 5
+  },
+  "retained_variants": [
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_B_bright_methane_shore_v02.jpg",
+      "sha256": "4e4faf3155fba42aa7120a1682ba2d1eb46a95a0cc9a48fe5ac37a7bbfab02a0"
+    },
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_C_scale_ice_is_rock_v03.jpg",
+      "sha256": "a0a67a7e1f192d09aabeaa991c9f3f4ef064a2e81234f3a5b66c75de1be1c7af"
+    }
+  ],
+  "review_limitations": [
+    "Native DISR frame is low resolution; 304px crop enlarged 4.21x. Do not claim film picture-QA upscale compliance; reviewer must resolve suitability before approval.",
+    "Landscape crop emphasizes the pebbles and excludes the original horizon."
+  ],
+  "phone_preview": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/PHONE_PREVIEW_v04.jpg",
+  "boundary": "Normal independent review still required. B/C unchanged; no upload or scheduling.",
+  "phone_preview_sha256": "1cb84dd4403e8274cb95232072f7f0892821da49c76075322cf4ea64bbd23bc2"
+}
