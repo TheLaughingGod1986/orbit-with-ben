@@ -190382,17 +190382,22 @@
           "at": "2026-11-06T12:40Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed exact dispatch J2254; one locked pickup sentence, no publication changes."
+        },
+        {
+          "at": "2026-11-06T12:42Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Storage offload finished: no eligible 48-hour scratch. Live balance 93426; exact 47-character dry-run PASS. Native HOS el_guard provides the one-recorder lock."
         }
       ],
-      "remaining_action": "Check storage, voice authorization and live subscription balance",
+      "remaining_action": "Record the single approved pickup and verify Scribe words, loudness and duration",
       "kind": "vo",
       "model": "eleven_v3",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-06T12:40Z",
+        "at": "2026-11-06T12:42Z",
         "by": "codex",
-        "note": "Claimed exact dispatch J2254; one locked pickup sentence, no publication changes."
+        "note": "Storage offload finished: no eligible 48-hour scratch. Live balance 93426; exact 47-character dry-run PASS. Native HOS e"
       },
       "taskKeys": [
         "HOS:008"
