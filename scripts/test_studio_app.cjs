@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -766,6 +766,47 @@ console.log('Queue forecast checks OK');
   assert(/<b>1<\/b><span>can't run yet<\/span>/.test(focused), 'glance blocked matches the focus films on screen');
   assert(focused.includes('J2142') && !focused.includes('J024x'), 'glance can\'t-run list is scoped to focus films');
   assert(!focused.includes('Could a Robot Survive on Mars?'), 'next-to-go-live titles are not mixed into Last 24 hours / Working on now');
+
+  // Working-on-now active-work marker (Ben, 6 Nov ~22:58): green pulse only when a film has a claimed job.
+  const activeCard = t.p24FilmCard({
+    film: 'OWB:032', title: 'What Would Happen If You Landed On Titan', status: '56% → 67%',
+    items: [{id: 'J2141', title: '032 picture harvest', status: 'claimed', stage: 'picture'}],
+  });
+  assert(activeCard.includes('p24-working-dot') && activeCard.includes('is-working'),
+    'claimed/in-progress film card shows the top-left working marker');
+  assert(activeCard.includes('aria-label="A job is in progress on this film"'),
+    'working marker has an accessible name');
+  assert(t.p24FilmHasActiveWork({film: 'OWB:032', items: [{id: 'J2141', status: 'claimed'}]}),
+    'helper treats claimed checklist jobs as active work');
+  const waitingCard = t.p24FilmCard({
+    film: 'OWB:032', title: 'Titan', status: '56% → 67%',
+    items: [{id: 'J2142', title: '032 pebble ruler review', status: 'blocked', waitKind: 'after',
+      why: 'Will run automatically after J2141 (032 picture harvest)'}],
+  });
+  assert(!waitingCard.includes('p24-working-dot') && !waitingCard.includes('is-working'),
+    'will-run-after / waiting films do not get the working marker');
+  const openCard = t.p24FilmCard({
+    film: 'OWB:031', title: 'Magnetic Field',
+    items: [{id: 'J1914', title: 'queued picture job', status: 'open', stage: 'picture'}],
+  });
+  assert(!openCard.includes('p24-working-dot') && !openCard.includes('is-working'),
+    'open/queued jobs alone do not get the working marker');
+  const doneCard = t.p24FilmCard({
+    film: 'OWB:033', title: 'Uranus',
+    items: [{id: 'J2200', title: 'done job', status: 'done', when: 'today'}],
+  });
+  assert(!doneCard.includes('p24-working-dot'), 'done-only films do not get the working marker');
+  // Live claimed job on the board still lights the card even if progress24 items lag.
+  const liveBoard = {
+    tracker: {videos: [v({key: 'OWB:032', title: 'Titan', jobs: [{id: 'Jlive', status: 'claimed', by: 'codex'}]})]},
+    owb: {jobs: [{id: 'Jlive', status: 'claimed', by: 'codex', film: '032', repo: 'owb', title: '032 live claim'}]},
+  };
+  assert(t.p24FilmHasActiveWork({film: 'OWB:032', items: []}, liveBoard),
+    'live claimed board job for the film counts as active work');
+  assert(t.p24FilmCard({film: 'OWB:032', title: 'Titan', items: []}, liveBoard).includes('p24-working-dot'),
+    'film card shows the marker from a live claimed board job');
+  assert(card.includes('is-working') && card.includes('p24-working-dot') && card.includes('J2141'),
+    'progressCard film with claimed J2141 carries the working marker');
 }
 console.log('Last-24-hours film cards OK');
 
