@@ -192545,9 +192545,14 @@
           "at": "2026-11-06T14:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T14:53Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2281; starting inspection of J0862 waiting condition and J2279 status"
         }
       ],
-      "remaining_action": "Verify readiness: Audio-capable reviewer J2279 resolves failed word check before approval",
+      "remaining_action": "Inspect J0862, J2279, and HOS PR423 v04 VO evidence and test audio capability",
       "kind": "review",
       "recheck_of": "J0862",
       "required_capabilities": [
@@ -192569,9 +192574,12 @@
         "of": 3,
         "at": "2026-11-06T14:53Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2281; starting inspection of J0862 waiting condition and J2279 status"
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J2282",
