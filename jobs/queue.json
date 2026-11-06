@@ -1,5 +1,5 @@
 {
-  "next_id": 2288,
+  "next_id": 2289,
   "jobs": [
     {
       "id": "J0001",
@@ -193057,6 +193057,35 @@
       },
       "for": "cursor",
       "model": "cursor-claude-opus-5-5"
+    },
+    {
+      "id": "J2288",
+      "title": "HOS 013 Darwin & Wallace: review Shorts VO A and B",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Review the two HOS 013 Test B Short voice takes. This is a decision on finished takes. Do not record another take unless you rule a one-sentence pickup.\n\nEvidence: HOS PR https://github.com/TheLaughingGod1986/history-of-science/pull/444 commit e1800ec6 (stacked on the scripts in #432). Audio is gitignored. On the Mini:\n- /Users/benjaminoats/_desk/worktrees/J2246-013-shorts-vo/02_Video-Projects/013_Darwin-Wallace-Evolution/10_Shorts/vo_v02/\n- same hashes at /Users/benjaminoats/_desk/media/HOS/013_Darwin-Wallace-Evolution/10_Shorts/vo_v02/\n\nVoice: Ben Orbit Narrator, eleven_v3, speed 1.04. Orders on the takes: J2240, J2246. Spoken text is the v02 txt files (Short A 356 characters, Short B 339). ElevenLabs 90171 to 89847 left (counter delta 324). Nothing bought. The long hos_013_vo_v03a stays locked. Do not re-record it.\n\nvo_check (faster-whisper small.en, Python 3.12), both PASS, 0 word fails:\n- Short A hos_013_short_A_v02, How Did Darwin Discover Evolution?, 26.64 s, mean -23.7 dB, peak -3.9 dB, -20.3 LUFS, 140 wpm pace warn. WAV sha256 9f80fa1c22951b5f7d25b2365fa5d62a58e848898262e6d5365bb2e68047bef8. Scribe 95.08%: the only mismatch is eighteen thirty-five heard as 1835.\n- Short B hos_013_short_B_v02, What Is Survival of the Fittest?, 26.00 s, mean -24.0 dB, peak -4.0 dB, -20.6 LUFS, 143 wpm pace warn. WAV sha256 6745bd813bd390bdf5091460bd9b5425eca568e4dbb3cf37f2c0a53f70ad47c0. Scribe 95.16%: the only mismatch is eighteen sixty-four heard as 1864. One sounds-alike warn at 0:11.42: script Russel, heard Russell (Alfred Russel Wallace). This worker did not play the audio.\n\nWord timings: stt/<stem>/words.json and words.srt in the PR. Checks: 10_Shorts/vo_v02/vo_check/.\n\nLength: voice alone is inside 22-27 s. A later 1.0 s picture tail on Short A would be 27.64 s and would fail the Short gate. No time-stretch was applied.\n\nWrite jobs/reviews/J2246/REVIEW.md as KEEP or FIX with an exact list. A FIX names the sentence, if any, to pick up. Do not call this a VO lock unless you are the elected Chief and the review says so.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/444",
+      "film": "013",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-11-06T15:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-06T15:43Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the voice checks and say keep, or name the exact sentence to pick up.",
+      "kind": "review",
+      "plain": "Decide whether the two Darwin and Wallace Short voice takes are good enough to keep."
     }
   ],
   "focus": [],
