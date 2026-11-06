@@ -195662,20 +195662,26 @@
           "at": "2026-11-06T22:59Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T22:59Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Prepare and verify local replacement for SWDCZfWZVao, then send for review",
+      "remaining_action": "Check scheduled source and existing repair work before choosing the local edit",
       "due": "2026-12-08T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-06T22:59Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:029"
+      ]
     },
     {
       "id": "J2310",
