@@ -185071,13 +185071,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T07:08Z",
-      "eta": "2026-11-06T09:08Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T03:11Z",
-      "result": "",
+      "result": "jobs/reviews/J2177/REVIEW.md (e54320112b): inspected all 17 mechanism stills at 8288cc1370 — 15 KEEP (approved to render under --review-ref J2177: r02_survive_check, r05_rain_preview, r13_photolysis, r14_methane, r16_descent_147m, r22_surface_72m, r27_no_oxygen, r30_dunes_label, r37_spark_question, r38_reserves, r41_no_flame, r42_flipfire_earth, r43_flipfire_titan, r48_eight_rotors, r50_selk_soup), 2 FIX (r10_spectrum dark unoutlined absorption bar/prism, r32_scalemap dark-on-dark bloated stroke -> WHITE '≈ 400,000 KM²'); R25 PIA07232 3rd-use resolved (keep PIA07232 to R18/R20 only; R25 uses PIA17163 use 1/2 + PIA21450 use 2/2 between heated_suit and r25_pressure); R16/R51 use real DISR mosaics PIA07870/PIA07871 (or 1-use Cassini pool plates); R1 Frame-0 probes KSC 320x212 FAIL, bounds GSFC HD check or routes Chief fallback; 31+ approved renders and J2089 1/4 preserved, £0.",
       "history": [
         {
           "at": "2026-11-05T03:11Z",
@@ -185118,6 +185118,11 @@
           "at": "2026-11-06T07:30Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 done: committed jobs/reviews/J2177/REVIEW.md (e54320112b) and updated parent J2089 at 1/4"
+        },
+        {
+          "at": "2026-11-06T07:30Z",
+          "by": "gemini",
+          "what": "done: jobs/reviews/J2177/REVIEW.md (e54320112b): inspected all 17 mechanism stills at 8288cc1370 — 15 KEEP (approved to render under --review-ref J2177: r02_survive_check, r05_rain_preview, r13_photolysis, r14_methane, r16_descent_147m, r22_surface_72m, r27_no_oxygen, r30_dunes_label, r37_spark_question, r38_reserves, r41_no_flame, r42_flipfire_earth, r43_flipfire_titan, r48_eight_rotors, r50_selk_soup), 2 FIX (r10_spectrum dark unoutlined absorption bar/prism, r32_scalemap dark-on-dark bloated stroke -> WHITE '≈ 400,000 KM²'); R25 PIA07232 3rd-use resolved (keep PIA07232 to R18/R20 only; R25 uses PIA17163 use 1/2 + PIA21450 use 2/2 between heated_suit and r25_pressure); R16/R51 use real DISR mosaics PIA07870/PIA07871 (or 1-use Cassini pool plates); R1 Frame-0 probes KSC 320x212 FAIL, bounds GSFC HD check or routes Chief fallback; 31+ approved renders and J2089 1/4 preserved, £0."
         }
       ],
       "remaining_action": "Complete J2177 and post summary on OWB thread",
@@ -185140,7 +185145,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "e54320112b"
     },
     {
       "id": "J2178",

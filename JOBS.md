@@ -52,7 +52,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2157 | mini | open | – | – | 034 vo · vo · 034 Pluto: VO from locked script v02 (J2149 GO) | c2082a4884 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
-| J2177 | mini | claimed | gemini | 2026-11-06T09:08Z | 032 picture · for gemini · review · `gemini-argon` · 032 J2089: review 17 mechanism stills and resolve two source conflicts | 8288cc1370 |
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2195 | mini | open | – | – | 009 vo · for gemini · review · `gemini-argon` · Review J0862: HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J2199 | mini | open | – | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
