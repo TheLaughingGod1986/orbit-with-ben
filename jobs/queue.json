@@ -181802,10 +181802,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-06T12:01Z",
+      "eta": "2026-11-06T14:01Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -182184,6 +182184,11 @@
           "at": "2026-11-06T10:33Z",
           "by": "codex",
           "what": "released: Clean checkpoint PR575 worker/J2141-integrated-v01 at 40cbc13347. Eight source branches consolidated, all 13 CLI modes reachable, 73 media hash entries verified; pool nine candidates. Preserve 1/3. Resume BUILD_HANDOFF_J2141.md in integration branch; remaining harvest, Mars/Earth bodies, R41 limb, composite QA. No active render, no spend, no KEEP or stage approval. Source PRs remain open pending integration review."
+        },
+        {
+          "at": "2026-11-06T12:01Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish missing real pictures, body comparison and limb fallback, then composite and run QA",
