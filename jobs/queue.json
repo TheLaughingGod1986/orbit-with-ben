@@ -190064,6 +190064,11 @@
           "at": "2026-11-06T15:35Z",
           "by": "relay",
           "what": "condition verification queued: J2287"
+        },
+        {
+          "at": "2026-11-06T18:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Park the take for a voice review. Do not record it again.",
@@ -190083,7 +190088,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-06T16:35:51+00:00",
         "recheck_task": "J2287"
-      }
+      },
+      "escalated_at": "2026-11-06T18:21Z"
     },
     {
       "id": "J2246",
@@ -190148,6 +190154,11 @@
           "at": "2026-11-06T18:11Z",
           "by": "relay",
           "what": "condition verification queued: J2294"
+        },
+        {
+          "at": "2026-11-06T18:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Await verified listening evidence from J2288 before Chief VO lock; preserve both takes.",
@@ -190173,7 +190184,8 @@
           "audio_input"
         ],
         "recheck_task": "J2294"
-      }
+      },
+      "escalated_at": "2026-11-06T18:21Z"
     },
     {
       "id": "J2247",
@@ -190937,6 +190949,11 @@
           "at": "2026-11-06T16:01Z",
           "by": "relay",
           "what": "condition verification queued: J2289"
+        },
+        {
+          "at": "2026-11-06T18:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Park the finished Short C cut for Chief review",
@@ -190956,7 +190973,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-06T17:01:03+00:00",
         "recheck_task": "J2289"
-      }
+      },
+      "escalated_at": "2026-11-06T18:21Z"
     },
     {
       "id": "J2256",
@@ -193010,6 +193028,11 @@
           "at": "2026-11-06T15:05Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition for J0862 verified UNMET in jobs/reviews/J2281/REVIEW.md (6959d1cb3f): direct audio_input audition confirmed hos_009_short_B_v04.{mp3,wav}, open_v04.mp3, and v03.mp3 have 0 spoken repeats (hook 2.660s/2.820s <= 2.850s, total 24.480s) and all SHA-256s match, and diagnosed the vo_check_py312 FAIL as a faster-whisper small.en trailing-silence prompt-repeat hallucination in Seg 8 [24.14->24.32] (no_speech_prob=0.986 WAV / 0.988 MP3, avg_logprob=-0.987/-0.966, 3 zero-duration words, mean prob 0.029) mis-indexed to 0:19.74 by 9 dropped cardinal numbers in norm(); however, repair job J2279 (open for gemini) has not yet run on HOS PR #423 (cb18632d). Only elected Chief (codex) may run jobs.py wait J0862 --recheck J2281 (next check 2026-11-06T21:05:00Z) and close J2281."
+        },
+        {
+          "at": "2026-11-06T18:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Elected Chief (codex) runs jobs.py wait J0862 --recheck J2281 and closes J2281",
@@ -193039,7 +193062,8 @@
       "taskKeys": [
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "escalated_at": "2026-11-06T18:21Z"
     },
     {
       "id": "J2282",
