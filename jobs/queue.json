@@ -189556,13 +189556,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-06T09:31Z",
-      "eta": "2026-11-06T11:31Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T19:51Z",
-      "result": "",
+      "result": "Delivered A real-surface v04, MANIFEST_v04.json and phone preview in 032/09_Thumbnails/J2144_v02. Colour gate passes (200.8 saturation, 1.6% near-black), B/C unchanged. PR 574 / 466352adfe. Independent review required; native source softness and 4.21x enlargement disclosed. No approval, publishing or spend.",
       "history": [
         {
           "at": "2026-11-05T19:51Z",
@@ -189593,6 +189593,11 @@
           "at": "2026-11-06T09:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: A v04, manifest and phone preview delivered; B/C hashes verified unchanged; evidence commit 466352adfe in PR 574. Normal review required, source softness recorded."
+        },
+        {
+          "at": "2026-11-06T09:37Z",
+          "by": "codex",
+          "what": "done: Delivered A real-surface v04, MANIFEST_v04.json and phone preview in 032/09_Thumbnails/J2144_v02. Colour gate passes (200.8 saturation, 1.6% near-black), B/C unchanged. PR 574 / 466352adfe. Independent review required; native source softness and 4.21x enlargement disclosed. No approval, publishing or spend."
         }
       ],
       "remaining_action": "Independent thumbnail review remains before approval",
@@ -189607,7 +189612,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/574"
     },
     {
       "id": "J2250",
