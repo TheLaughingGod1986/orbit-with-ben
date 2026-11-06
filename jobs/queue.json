@@ -189840,10 +189840,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-06T00:57Z",
+      "eta": "2026-11-06T02:57Z",
       "created_by": "relay",
       "created_at": "2026-11-06T00:35Z",
       "result": "",
@@ -189862,6 +189862,11 @@
           "at": "2026-11-06T00:40Z",
           "by": "macbook",
           "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-06T02:40:47Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-06T00:57Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await Chief merge of HOS PR #425/#426 (0a925061) and separate HOS 010 Flow moving-plate mint (12 plates); then assemble Shorts A and C",
