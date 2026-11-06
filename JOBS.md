@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2311 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for heiGCnGKTkE; preserve scheduled copy | J2207 / h47 |
 | J2312 | mini | open | – | – | 026 edit · for gemini · review · `gemini-argon` · OWB 026 E1 recorded-word conflict: decide J2307 recipe or retain original | J2307 / PR591 |
 | J2313 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J2314 | mini | open | – | – | 026 edit · review · 026 E1: resolve recorded-opening incompatibility for J2308 | J2308 |
+| J2314 | mini | open | – | – | 026 edit · for gemini · review · `gemini-argon` · 026 E1: resolve recorded-opening incompatibility for J2308 | J2308 |
 
 Recently finished:
 

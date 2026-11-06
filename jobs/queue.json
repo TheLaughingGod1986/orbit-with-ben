@@ -195795,12 +195795,26 @@
           "at": "2026-11-06T22:40Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T22:41Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1367 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Find a compliant recorded opening or rule this Short out of the timing experiment",
       "due": "2026-11-17T20:00:00Z",
       "kind": "review",
-      "plain": "Decide whether the existing voice recordings can meet both opening rules."
+      "plain": "Decide whether the existing voice recordings can meet both opening rules.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
