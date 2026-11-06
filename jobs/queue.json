@@ -194011,10 +194011,24 @@
           "at": "2026-11-06T18:27Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-06T18:27Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1115 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Check the pebble ruler points to the sourced left pebble and reads clearly",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [],
