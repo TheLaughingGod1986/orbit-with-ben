@@ -189928,18 +189928,25 @@
           "at": "2026-11-06T15:21Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-06T15:21Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J2245. Next: confirm the v02 script path and live credit before any take."
         }
       ],
-      "remaining_action": "HOS 011 Anesthesia (Thu 10 Dec): long voiceover (5 parts) from locked script v02",
+      "remaining_action": "Check the locked script, the ElevenLabs balance, and how the five parts are split",
       "kind": "vo",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-06T15:21Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2245. Next: confirm the v02 script path and live credit before any take."
+      },
+      "taskKeys": [
+        "HOS:011"
+      ]
     },
     {
       "id": "J2246",
