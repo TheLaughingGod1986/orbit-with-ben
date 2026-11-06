@@ -2,6 +2,42 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (6 Nov, Codex timeline batch)
+
+Preserve queue **1/3**. Added `code_graphics.py timeline` with five unique
+3.6 s alpha overlays at locked date cues: R5 1905 (36.14), R10 1929
+(89.94), R20 1830s (209.10), R24 2013 (234.58), R29 1970 (301.44).
+Dates accumulate in narrative order and retain chronological screen order.
+Spacing is categorical and labelled “NOT TO SCALE”; no invented historical
+measurements. Source links remain SOURCES rows 3, 4, 8, 9, 12.
+
+These are the **historical-date** timeline components. Geological ages and
+physical durations remain separate; this does not certify every WHEN in the
+film. Replace standalone WHEN stamps in these windows rather than stacking
+them: in particular the earlier R24 date overlay and PR539 R5 place stamp.
+R5 still needs its Pontfarein place caption. The upper timeline leaves the
+lower WHO/FACT region clear, but all subject clearance needs composite review.
+
+`CODE_TIMELINE_v01.json` records sources, state, timings, paths and hashes.
+`CODE_TIMELINE_TECHNICAL_CHECK_v01.json`: PASS for all five hashes,
+1920×1080 / 25 fps / argb, 3.6 s, exact locked date starts, alpha bounds and
+complete error-free decode. Static encoded-frame sample inspected. No actual
+motion/audio review, composite acceptance, KEEP or film-stage approval.
+
+Media: `/Users/benjaminoats/_desk/J2141-timeline-v01/` (6,482,299 bytes),
+including `CONTACT_v01.jpg` and `encoded_final_timeline.png`.
+Detached tmux `J2141-timeline-v01` finished exit 0; log and completion:
+`/Users/benjaminoats/_desk/logs/J2141-timeline-v01.log` and `.done`.
+Reproduce into a fresh directory with `code_graphics.py timeline --out …
+--manifest …`; existing media is refused. £0 spent; no archive search,
+search-budget reset, narration change or publishing change.
+
+Earlier open PRs #539/#551/#555/#562/#564/#569 remain separate and must be
+integrated without losing their CLI modes. Remaining work: licensed archive
+harvest, Mars/Earth bodies, R41 ISS atmosphere fallback, complete row
+composites and QA. Source-ID and sourced-simulation/map gate conflicts below
+remain unresolved; no gate has been waived by this build checkpoint.
+
 ## Continuation checkpoint (5 Nov, seventh run)
 
 Preserve **1/3**, same PR #495. Added `code_graphics.py comparisons` and
