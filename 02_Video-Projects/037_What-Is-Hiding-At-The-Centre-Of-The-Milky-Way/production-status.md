@@ -92,3 +92,13 @@ Script score: **95.4/100** · PASS
 ## Chief ruling — 4 November 2026 (J1901)
 
 DEFER topic advancement; FIX script. No waiver or production approval. J1979 owns neighbours, completed topic audit and matching Short-first evidence; J1980 owns capacity/advancement and any specialist rewrite/facts/direct-quotes chain. HOS November is 2/4 complete against OWB 5/4. Reconsider when HOS reaches four completed November films or Chief records a fresh non-displacing capacity rationale, and topic evidence passes. Resolve the unapproved 038 destination/title with J1904 before script lock. Historical notes below/above are not approval; v00/v01 and SOURCES are unchanged. Full ruling: `jobs/reviews/J1901/CHIEF_EDITORIAL_RULING_2026-11-04.md`. Nothing for Ben.
+
+
+## Topic go/no-go package prepared — 7 November 2026 (J2327)
+
+- **Scope:** Plans and pre-build evidence only (`£0` / `0` credits; `037` remains in `next` #3 behind the 5-film `active` cap `030`–`034`; `v00`/`v01` and `SOURCES.md` untouched).
+- **Files prepared in `11_Upload-Package/`:**
+  - `TOPIC_OPPORTUNITY_SCORE.md` (**92 / 100 — CONDITIONAL GO**)
+  - `PRE_BUILD_VIDIQ_AUDIT.md` (filled with `2026-11-07` signed-out YouTube GB data; Section 7 left **UNSIGNED** until `037` enters `active` and passes `v02` rewrite + `facts` pass per `J1901`)
+  - `TOPIC_GO_NO_GO_SHEET.md` (one-page decision summary + entry checklist)
+- **Key evidence (`2026-11-07 01:44 UTC`):** `11` verified education/space neighbours `≥1M` views (`1.04M–8.26M`, including Veritasium EHT `Q1bSDnuIPbo` **8.26M**, ESO VLT Sgr A\* `DRCD-zx5QFA` **6.71M** & `Da_Wc_G9ms4` **6.21M**, and Astrum's 29 Sep 2026 `B3c6IFY94Cw` **1.04M** + 21 Oct 2026 `T9HLYPn59S4` **554K in 17 days**); `0` OWB Shorts on Sgr A\* / star S2 (Rule E comparable-video waiver or 1 Sgr A\* Short test on entry); 0-collision `≤50`-char titles locked (`What Is Hiding at the Centre of the Milky Way?`, 46 chars [Rule 15] / `How We Photographed the Milky Way's Black Hole`, 46 chars [Rule 18]); real EHT Sgr A\* `eso2208-eht-mwa` thumbnail concept (no Orbit, Rule 19). Consolidated report: `jobs/reviews/J2327/REVIEW.md`.

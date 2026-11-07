@@ -102,3 +102,13 @@ J1977 owns verified neighbours, topic opportunity/pre-build audit and matching S
 If advanced, J1978 must queue specialist v02 rewrite, formal Gemini facts via agy on all ten source rows/revised claims, and dependent Chief direct quotes and explicit script lock with current gates. Preserve v00/v01. No VO before the whole chain passes.
 
 Full editorial FIX and release conditions: `jobs/reviews/J1900/CHIEF_EDITORIAL_RULING_2026-11-04.md`. Nothing required from Ben; no spend or publishing changes.
+
+
+## Topic go/no-go package prepared — 7 November 2026 (J2327)
+
+- **Scope:** Plans and pre-build evidence only (`£0` / `0` credits; `036` remains in `next` #2 behind the 5-film `active` cap `030`–`034`; `v00`/`v01` and `SOURCES.md` untouched).
+- **Files prepared in `11_Upload-Package/`:**
+  - `TOPIC_OPPORTUNITY_SCORE.md` (**91 / 100 — CONDITIONAL GO**)
+  - `PRE_BUILD_VIDIQ_AUDIT.md` (filled with `2026-11-07` signed-out YouTube GB data; Section 7 left **UNSIGNED** until `036` enters `active` and passes `v02` rewrite + `facts` pass per `J1900`)
+  - `TOPIC_GO_NO_GO_SHEET.md` (one-page decision summary + entry checklist)
+- **Key evidence (`2026-11-07 01:44 UTC`):** `7` verified education/space neighbours `≥1M` views (`1.16M–4.07M`, led by Astrum's *What They Didn't Teach You at School about Planet Mercury* `B588JHKSlEE` at **4,071,155 views** and Astrum's 2 Sep 2026 *Why Is the Closest Planet to the Sun So Cold?* `YQ7DWNhjOpk` at **2,703,364 views**); Mercury day-length Short `vlkj8RQKmH8` at **851 views / 32.1% stayed-to-watch (<40%) / 76.1% avg viewed** (`0` polar-ice OWB Shorts, so entry uses Rule E comparable-video waiver via `YQ7DWNhjOpk` `2.70M` or 1 polar-ice Short test); 0-collision `≤50`-char titles locked (`Why Mercury's Shadowed Craters Are Full of Ice`, 46 chars [Rule 15] / `What MESSENGER Saw Inside Mercury's Polar Craters`, 49 chars [Rule 18], replacing 59-char `v01` H1 and 1-collision `Why Is There Ice on Mercury?`); real NASA MESSENGER `PIA19411` + `PIA16523` thumbnail concept (no Orbit, Rule 19). Consolidated report: `jobs/reviews/J2327/REVIEW.md`.

@@ -85,3 +85,13 @@ Pass threshold: 90
 
 Script score: **95.8/100** · PASS
 ```
+
+
+## Topic go/no-go package prepared — 7 November 2026 (J2327)
+
+- **Scope:** Plans and pre-build evidence only (`£0` / `0` credits; `035` remains in `next` #1 behind the 5-film `active` cap `030`–`034`; `v00`/`v01` and `SOURCES.md` untouched).
+- **Files prepared in `11_Upload-Package/`:**
+  - `TOPIC_OPPORTUNITY_SCORE.md` (**92 / 100 — CONDITIONAL GO**)
+  - `PRE_BUILD_VIDIQ_AUDIT.md` (filled with `2026-11-07` signed-out YouTube GB data; Section 7 left **UNSIGNED** until `035` enters `active` and passes `v02` rewrite + `facts` pass per `J1898`)
+  - `TOPIC_GO_NO_GO_SHEET.md` (one-page decision summary + entry checklist)
+- **Key evidence (`2026-11-07 01:44 UTC`):** `8` verified education/space neighbours `≥1M` views (`1.46M–4.33M`, including Kurzgesagt's single-topic Triton video `cR9uphgMZ8U` at **4,325,429 views**, Astrum's `wHNC-RhmHZY` at **3,468,032 views**, and Astrum's single-topic Triton long `qGy4uyHVUYA` at **1,460,717 views**, plus Astrum's 7 Oct 2026 Triton long `MGQcrX7DMYw` at **873,703 views**); planet-level Neptune Short `1OCNzhkiBuc` at **494 views / 42.6% stayed-to-watch / 75.0% avg viewed** (`oyRcrFTYyDY` superseded/private at 0 views; `0` Triton-only OWB Shorts); 0-collision `≤50`-char titles locked (`Why Triton Orbits Neptune Backwards`, 35 chars [Rule 15] / `What Voyager 2 Saw on Neptune's Moon Triton`, 43 chars [Rule 18]); real Voyager 2 `PIA00317` thumbnail concept (no Orbit, Rule 19). Consolidated report: `jobs/reviews/J2327/REVIEW.md`.
