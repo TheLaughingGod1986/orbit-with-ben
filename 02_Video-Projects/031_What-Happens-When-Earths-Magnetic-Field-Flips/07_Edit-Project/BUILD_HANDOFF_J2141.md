@@ -1,3 +1,39 @@
+## MacBook slot 2 continuation — 7 Nov, R14 timestamp-free crop
+
+Worker `macbook-2`; same branch `macbook/J2141`, PR #633. Progress stays
+**1/3**; remaining harvest/composites/full QA exceed one 25-minute run. £0.
+
+Added `cut_r14_sdo.py` and `HARVEST_R14_SDO_CROP_TECHNICAL_CHECK_v03.json`.
+The existing verified NASA SVS4323 AIA304 original was hash-checked, then
+source 2.00–4.40 s cropped at x=520, y=350, 960×540 and scaled exactly 2×.
+This removes the burned-in timestamp while retaining solar surface and the
+right limb. Modest gamma 1.15 / saturation 1.05 grade; silent 1920×1080,
+25 fps, 60 frames. Intended placement 138.70–141.10 s starts on locked “about”
+and leaves 0.02 s inside R14; compositor owns the final row join. This is
+false-colour extreme-UV time-lapse observation, not visible-light colour.
+
+Media `/Users/ben/_desk/J2141-r14-sdo-crop-v03/`. Hash, format, duration,
+video-only stream and complete error-free decode verified. Five distinct
+decoded samples and contact sheet inspected statically. Measured luma and
+near-black fractions are recorded; they do not establish a film polish PASS.
+The default R14 FACT card crosses solar surface: editor must resolve label
+placement/subject clearance, add NASA/SDO corner credit and check the actual
+composite before admission. No KEEP, stage PASS, playback/audio review or
+UAT readiness claimed. Pool assignment remains zero; original preserved.
+
+Trial v01 exceeded the row by 0.02 s; v02's last sample requested the exact
+EOF. Both trial directories remain untouched as evidence, not assembly inputs.
+v03 shortens the cut to 2.40 s and samples the last frame at 2.36 s. Script
+refuses source hash mismatch, existing output directory or report overwrite.
+Reproduce with `/usr/bin/python3 cut_r14_sdo.py --source <verified original>
+--out <fresh directory> --report <new report>` from this edit folder.
+
+No new archive search, search-budget reset, generation, NAS write/deletion,
+sign-in or publishing change. No processes left running. Next bounded action:
+resolve the R14 FACT placement and review the credited composite; wider
+harvest, progressive timeline, source/gate conflicts and full film gates remain.
+Release J2141 for continuation on the same PR; do not mark done.
+
 ## MacBook slot 2 continuation — 7 Nov, R14 SDO moving candidate
 
 Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress remains
