@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2333 | mini | open (after J2332) | – | – | 033 picture · qa · 033: watch R01 and R55 fallback motion against J2306 scope | J2306; PR610 |
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |
 | J2339 | mini | open | – | – | 008 edit · qa · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
-| J2342 | mini | open | – | – | 034 vo · for gemini · qa · `gemini-argon` · 034 Pluto: listen to the existing Worlds repair before more synthesis | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/615 |
+| J2342 | mini | claimed | gemini | 2026-11-07T06:19Z | 034 vo · for gemini · qa · `gemini-argon` · 034 Pluto: listen to the existing Worlds repair before more synthesis | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/615 |
 
 Recently finished:
 
