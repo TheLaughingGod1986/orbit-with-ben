@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2220 | mini | blocked | cursor | – | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
 | J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2222 | mini | open (after J2221) | – | – | J01 edit · for gemini · review · `gemini-argon` · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
-| J2229 | mini | open | – | – | assembly · AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14 |  |
+| J2229 | mini | claimed | cursor | 2026-11-07T06:57Z | assembly · AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14 |  |
 | J2230 | mini | blocked | codex | – | assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
 | J2233 | mini | open | – | – | for codex · review · Review multi-channel plan: code and phases (Codex) |  |
 | J2241 | mini | blocked | – | – | 008 picture · video · HOS 008 Franklin: mint bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 church/ship rods (<=3 takes/300 cr each, <=900 cr cap, GBP0) | J1881 / HOS PR #428 51bf99a6 |
