@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2089 | mini | open | – | – | 032 picture · for codex · assembly · `gpt-6.1-sol` · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
-| J2141 | mini | claimed | macbook | 2026-11-07T15:30Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
+| J2141 | mini | claimed | macbook | 2026-11-07T15:42Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
@@ -104,7 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2362 | any | open (after J2361) | – | – | 034 shots · chief · 034 Pluto: Chief re-review corrected J2361 shot plan and decide production release | jobs/reviews/J2359/REVIEW.md |
 | J2363 | mini | open | – | – | 032 picture · qa · 032 R16: review Cassini counter composite draft in motion | b3c2915961 |
 | J2365 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Verify condition for J2299 |  |
-| J2366 | any | open | – | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J2366 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
