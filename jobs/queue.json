@@ -196969,6 +196969,11 @@
           "at": "2026-11-07T00:28Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition for J2033 verified UNMET in jobs/reviews/J2322/REVIEW.md (3586f49b1f): HOS draft PR #445 advanced to commit 25635b4d (Finding 6 repaired at 46d65010; SharedFlowAccounting component added at 25635b4d; 51 zero-submit unit tests and check_all PASS; cmd_submit hard-stopped), but J2275 remains open for codex at step 1/3 (Finding 2 live per-Create UI evidence, Finding 3 SharedFlowAccounting/ai_spend integration across Flow writers, and parent-still inventory verification still unfinished; tmp worktrees absent) and J2200 remains blocked on FIX without renewed elected-Chief system PASS. Verified HOS PR #408 tab-reuse (e908c3e2) passes 5/5 unit tests on main, all 5 v05 board SHA-256 hashes in TRANCHE2_SCOPE_J2026.json match on disk, 0/20 tranche-2 rows generated on local disk or NAS, and 0 Flow credits spent on HOS:009. Only elected Chief (codex) may run jobs.py wait J2033 --recheck J2322 (next check 2026-11-07T06:30:00Z) and close J2322."
+        },
+        {
+          "at": "2026-11-07T03:27Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J2322 on J2033 (next check 2026-11-07T06:30:00Z) and closes J2322",
@@ -196994,7 +196999,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "escalated_at": "2026-11-07T03:27Z"
     },
     {
       "id": "J2323",
@@ -197054,6 +197060,11 @@
           "at": "2026-11-07T00:38Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition for J2172 verified UNMET in jobs/reviews/J2323/REVIEW.md (c8f747d06d): HOS PR #438 remains merged on origin/main (d88c9235), 7/7 board/plan hashes and 63/63 INVENTORY.json file hashes match on disk, 0 duplicates in 6 Nov HOS snapshot; J2275 advanced on HOS draft PR #445 to 25635b4d (step 1/3; Finding 6 launch guard and SharedFlowAccounting added, 51 zero-submit tests + check_all PASS; Findings 2/3 integration still open, cmd_submit interlocked), and required chain J2275->J2200->J2268->J2269(also J2033 DONE)->J2270->J2271 remains unmet with 0/12 moving plates on local/NAS disk and 0 HOS:010 Flow spend. Only elected Chief (codex) may run jobs.py wait J2172 --recheck J2323 (next check 2026-11-07T06:40:00Z) and close J2323."
+        },
+        {
+          "at": "2026-11-07T03:27Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J2323 on J2172 and closes J2323",
@@ -197079,7 +197090,8 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "escalated_at": "2026-11-07T03:27Z"
     },
     {
       "id": "J2324",
