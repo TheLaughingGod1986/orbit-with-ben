@@ -1,5 +1,5 @@
 {
-  "next_id": 2339,
+  "next_id": 2340,
   "jobs": [
     {
       "id": "J0001",
@@ -198034,6 +198034,40 @@
       "remaining_action": "Rule on the J2337 Pluto takes and whether J2157 can close",
       "kind": "chief",
       "plain": "Decide whether the Pluto voice repair is good enough to move on to the shot list."
+    },
+    {
+      "id": "J2339",
+      "title": "HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief codex review of J0912, 7 Nov 2026: the s06 reuse repair and recorded five gate passes are accepted as technical evidence, not full Short PASS. Review only HOS008 Short A v04, sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d (23.300s, 952x1692). Mini: /Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/10_Shorts/hos_008_short_A_v04.mp4. Matching NAS: /Volumes/data/mac-mini-archive/YouTube/History Of Science/02_Video-Projects/008_Lightning-Franklin/10_Shorts/hos_008_short_A_v04.mp4. Evidence HOS commit fd440eb428e37ad3a7c808ce04151ed6d932eefe, 10_Shorts/qa_short_A_v04 and J0912/RESULT_v04.md; desk 6700907911; prior ruling OWB jobs/reviews/J2224/REVIEW.md.\n\nClaim only with demonstrated audio_input and moving_video_input; record the actual tools/probe. A model name, ASR, ffmpeg metrics or sampled stills do not count. Watch/listen to the complete exact master, including wrap to frame zero. Check speech for repeats/stumbles/clipped words, music and SFX fit/continuity, cadence, native motion and artifacts, readable captions and animated single PHILADELPHIA 1752 date card, s06 storm-shed continuity, and loop. Inspect all eight cuts; 2.35x sharpness warnings and low-detail loop at 22.74s were acceptable in Codex full-resolution midpoint still inspection, but that did not establish motion quality. Music gate unreadable comparison-file warnings do not establish perceptual distinctness; review the own-film score provenance and audible fit. No generation, spend, upload, schedule, new VO or changes to locked speech/title/recipe. Preserve v03/v04.\n\nDeliver a hash-specific QA note with concrete timecodes and PASS/FIX recommendation, on HOS desk and in a clean-worktree records PR. Ordinary worker does not issue final approval: hand recommendation to elected Chief to resolve parent J0912, then stage the verified private watch copy/Ready for OK only if full review passes. Do not ask Ben to do missing agent QA. If capability remains unavailable, typed capability hold with actual probe evidence and future check; never claim to perceive media from text or stills. Parent J0912 stays held. This job is the single immediate follow-up to the review; no unrelated holds are reopened.\n",
+      "ref": "",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T03:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T03:43Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the exact Franklin Short with demonstrated audio and moving-video input; report to elected Chief",
+      "due": "2026-11-18T18:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Check the Franklin Short sound and movement before final approval."
     }
   ],
   "focus": [
