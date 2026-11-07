@@ -196185,13 +196185,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-06T23:53Z",
-      "eta": "2026-11-07T01:53Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-06T23:32Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-06T23:32Z",
@@ -196237,6 +196237,11 @@
           "at": "2026-11-07T00:02Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 review steps complete; closing J2316 with ref 61e7a07a3b"
+        },
+        {
+          "at": "2026-11-07T00:02Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Close J2316 and post report on thread",
@@ -196260,7 +196265,8 @@
       },
       "taskKeys": [
         "OWB:029"
-      ]
+      ],
+      "done_ref": "61e7a07a3b"
     }
   ],
   "focus": [
