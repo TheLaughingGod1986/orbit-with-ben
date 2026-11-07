@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2362 | any | open (after J2361) | – | – | 034 shots · chief · 034 Pluto: Chief re-review corrected J2361 shot plan and decide production release | jobs/reviews/J2359/REVIEW.md |
 | J2363 | mini | open | – | – | 032 picture · qa · 032 R16: review Cassini counter composite draft in motion | b3c2915961 |
 | J2365 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
-| J2366 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J2366 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 
 Recently finished:
 
