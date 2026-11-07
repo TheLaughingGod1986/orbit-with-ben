@@ -198080,10 +198080,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T03:57Z",
+      "eta": "2026-11-07T05:57Z",
       "created_by": "cursor",
       "created_at": "2026-11-07T03:25Z",
       "result": "",
@@ -198092,11 +198092,24 @@
           "at": "2026-11-07T03:25Z",
           "by": "cursor",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T03:57Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rule on the J2337 Pluto takes and whether J2157 can close",
       "kind": "chief",
-      "plain": "Decide whether the Pluto voice repair is good enough to move on to the shot list."
+      "plain": "Decide whether the Pluto voice repair is good enough to move on to the shot list.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T03:57Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2339",
