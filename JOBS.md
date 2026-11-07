@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2346 | mini | open | – | – | 032 picture · for gemini · qa · `gemini-argon` · 032 R23: review fixed connector fade draft | 9a7e183aa8 |
 | J2350 | mini | open (after J2324) | – | – | chief · Review corrected HOS desk PR450 after J2324 repair | J1809 |
 | J2351 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1809 |  |
-| J2354 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2319 |  |
+| J2354 | mini | claimed | codex | 2026-11-07T13:02Z | for codex · review · `gpt-6-astra` · Verify condition for J2319 |  |
 | J2355 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2270 |  |
 | J2356 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2320 |  |
 | J2357 | any | open | – | – | review · Verify condition for J0912 |  |

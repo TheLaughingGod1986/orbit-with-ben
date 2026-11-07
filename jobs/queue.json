@@ -200046,10 +200046,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T11:02Z",
+      "eta": "2026-11-07T13:02Z",
       "created_by": "relay",
       "created_at": "2026-11-07T08:27Z",
       "result": "",
@@ -200108,6 +200108,11 @@
           "at": "2026-11-07T11:02Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: User explicitly assigned this completed worker verification to elected Codex for Chief ruling; clear previous Gemini worker routing for this review only."
+        },
+        {
+          "at": "2026-11-07T11:02Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex): run jobs.py wait J2319 --recheck J2354 --check-at 2026-11-08T08:30:00Z and close J2354",
@@ -200126,7 +200131,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T11:02Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2355",
