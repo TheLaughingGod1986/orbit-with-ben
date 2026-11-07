@@ -189930,16 +189930,21 @@
           "at": "2026-11-07T04:50Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Ben OK J1356.1 at 2026-11-05T16:32Z. Hash matches 3e6803ba. Fri 27 Nov 11:30 is free in UPLOADS.json and BUFFER_POSTS.json."
+        },
+        {
+          "at": "2026-11-07T04:51Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Shorts gate PASS (duration warn 19.4s on the approved replication cut). Dry-run schedules private at 2026-11-27T11:30:00Z. Starting the live upload."
         }
       ],
-      "remaining_action": "Run the Shorts gate and a dry-run of the private scheduled upload",
+      "remaining_action": "Upload the approved Short as private and schedule Friday 27 Nov 11:30 London",
       "kind": "studio",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-07T04:50Z",
+        "at": "2026-11-07T04:51Z",
         "by": "cursor",
-        "note": "Ben OK J1356.1 at 2026-11-05T16:32Z. Hash matches 3e6803ba. Fri 27 Nov 11:30 is free in UPLOADS.json and BUFFER_POSTS.js"
+        "note": "Shorts gate PASS (duration warn 19.4s on the approved replication cut). Dry-run schedules private at 2026-11-27T11:30:00"
       },
       "taskKeys": [
         "OWB:030"
