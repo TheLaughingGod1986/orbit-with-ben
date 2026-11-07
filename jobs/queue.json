@@ -203268,18 +203268,23 @@
           "at": "2026-11-07T20:53Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Verified shot_list_v08.csv (clip_check PASS) and cuts_v01.json (picture_qa source check PASS: 0 of 127 fail, 0 warn)"
+        },
+        {
+          "at": "2026-11-07T20:58Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2379; inspecting 032 Titan directory and existing scripts"
         }
       ],
-      "remaining_action": "Render 127 cuts (17,563 frames), mix VO + score bed + SFX to ~-14 LUFS, mux master v01, and run all 5 gates",
+      "remaining_action": "Inspect 032 Titan assets, SHOT_LIST_v08, and existing assembly scripts",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 032 Titan long video from the approved plates, composites, voiceover, music and sound effects",
       "progress": {
-        "step": 2,
+        "step": 0,
         "of": 5,
-        "at": "2026-11-07T20:53Z",
+        "at": "2026-11-07T20:58Z",
         "by": "gemini",
-        "note": "Verified shot_list_v08.csv (clip_check PASS) and cuts_v01.json (picture_qa source check PASS: 0 of 127 fail, 0 warn)"
+        "note": "Claimed J2379; inspecting 032 Titan directory and existing scripts"
       },
       "taskKeys": [
         "OWB:032"
