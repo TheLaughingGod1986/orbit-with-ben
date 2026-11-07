@@ -195827,10 +195827,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T02:22Z",
+      "eta": "2026-11-07T04:22Z",
       "created_by": "relay",
       "created_at": "2026-11-06T22:16Z",
       "result": "",
@@ -195884,6 +195884,11 @@
           "at": "2026-11-07T02:21Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: User-directed elected-Chief review; Gemini verification already complete. Reassign only this decision."
+        },
+        {
+          "at": "2026-11-07T02:22Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief: rule on R01 opener fallback + R54/R55 separation, or record wait J2299 --recheck J2306 (2026-11-07T06:45:00Z) and close J2306 (jobs/reviews/J2306/REVIEW.md)",
@@ -195902,7 +195907,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T02:22Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2307",
