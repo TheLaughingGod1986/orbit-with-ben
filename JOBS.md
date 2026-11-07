@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2358 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2363 | mini | open | – | – | 032 picture · qa · 032 R16: review Cassini counter composite draft in motion | b3c2915961 |
 | J2366 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J2367 | mini | open | – | – | 034 shots · for gemini · review · `gemini-argon` · 034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362 | jobs/reviews/J2362/REVIEW.md |
+| J2367 | mini | claimed | gemini | 2026-11-07T16:25Z | 034 shots · for gemini · review · `gemini-argon` · 034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362 | jobs/reviews/J2362/REVIEW.md |
 | J2368 | any | open (after J2367) | – | – | 034 shots · chief · 034 Pluto: Chief re-review J2367 corrected shot plan and decide production release | jobs/reviews/J2362/REVIEW.md |
 
 Recently finished:
