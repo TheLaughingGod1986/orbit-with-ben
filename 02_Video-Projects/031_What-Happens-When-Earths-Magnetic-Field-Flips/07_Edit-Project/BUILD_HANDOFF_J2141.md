@@ -231,6 +231,56 @@ full QA. Prior source-ID and sourced-simulation/map conflicts below still need
 Chief reconciliation. No NAS writes/deletions, paid generation or publishing.
 No background process remains from this run. HOS checkout untouched.
 
+## Continuation checkpoint (7 Nov, MacBook R41 harvest)
+
+Worker `macbook`, same branch `macbook/J2141` / PR #633. Queue remains
+**1/3**, partial. The existing branch already contains R46 protection and the
+R52 generation component; preserve those instead of rebuilding from main.
+
+Added two NASA JSC ISS sunrise photographs to `HARVEST_POOL_v01.json`:
+`iss059e027932` and `iss069e025345`. NASA API IDs, canonical original URLs,
+source pages and current NASA media conditions were checked. Originals,
+HTML/API evidence, SHA-256 hashes, dimensions, 16:9 crop recipes and contact
+sheet are retained under `/Users/ben/_desk/J2141-atmosphere-v01/`. Credit NASA;
+editorial use subject to NASA conditions, no endorsement. No third-party
+copyright credit was found on these asset records/pages. The second API's
+`date_created` disagrees with the caption; both are preserved, not used as a
+new factual date.
+
+**Neither is admitted to R41.** They are stills, not moving footage. Ungraded
+crop mean luma is 4.12 and 14.59 respectively; 95.95% and 84.50% of pixels
+are below Y=20. Actual originals and contact sheet inspected. The narrow blue
+limb is visible, but broad darkness and lack of native motion do not establish
+finished picture quality. R41 is 418.86–423.24 s (4.38 s): a single still held
+through that span would exceed the four-second hold rule. No grade, film
+render, polish gate or Chief approval is claimed. Zero assigned uses each;
+maximum two uses retained. These are honest rejected/unadmitted candidates,
+not a completed fallback.
+
+`harvest_atmosphere.py` reproduces this bounded two-candidate harvest with
+stdlib HTTP and Pillow. It appends to an existing pool, refuses duplicate IDs
+and existing crop/contact-sheet outputs, and preserves downloaded evidence.
+Run with `/usr/bin/python3`, `--out <fresh-dir>` and `--manifest <pool-copy>`
+whose two candidate IDs are not already present. No packages installed.
+`HARVEST_ATMOSPHERE_TECHNICAL_CHECK_v01.json` records hash read-back, original
+and preview dimensions and image verification. Python AST and `git diff
+--check` pass. These technical checks imply no media approval.
+
+R41 investigation: two candidates examined in depth, under the 20-minute
+active-search cap; at most one further candidate in this same investigation,
+not a reset. API video searches returned no relevant item in the inspected
+results (ISS sunrise query empty; sunrise/Earth-timelapse first five results
+were launchpad/mission material). **Next action, J2141 owner/editor:** inspect
+one genuinely new bright moving ISS atmospheric-limb source within the
+remaining budget, then stop the archive search. If unsuitable, Chief scopes
+a reviewed two-plate still treatment or another accurate fallback under the
+standing rule. Do not repeatedly inspect these unchanged dark originals.
+Existing R54 identities and sourced-simulation/map gate conflicts still need
+Chief reconciliation. Wider harvest, remaining mechanisms, progressive
+timeline, composites and full gates remain unfinished. Full scope exceeds a
+single 25-minute worker run; release at this clean checkpoint. Spend £0; no
+NAS writes/deletions, publishing change or background process started.
+
 ## Continuation checkpoint (5 Nov, seventh run)
 
 Preserve **1/3**, same PR #495. Added `code_graphics.py comparisons` and
