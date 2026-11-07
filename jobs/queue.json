@@ -200103,6 +200103,11 @@
           "at": "2026-11-07T11:01Z",
           "by": "codex",
           "what": "reopened: Elected-Chief review of worker condition check; original J2319 remains held. Claim this verification only to record current ruling and follow-up."
+        },
+        {
+          "at": "2026-11-07T11:02Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: User explicitly assigned this completed worker verification to elected Codex for Chief ruling; clear previous Gemini worker routing for this review only."
         }
       ],
       "remaining_action": "Elected Chief (codex): run jobs.py wait J2319 --recheck J2354 --check-at 2026-11-08T08:30:00Z and close J2354",
@@ -200117,8 +200122,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "OWB:034"
       ]
