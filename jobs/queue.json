@@ -184272,9 +184272,14 @@
           "at": "2026-11-07T07:20Z",
           "by": "codex",
           "what": "reopened: J2348 FIX (584458d867, PR620): correct PR619 evidence hashes, attribute chapter listening to exact assets/tool records, reconcile tail measurements and remove unsupported moving_video capability assertion. Master hashes and five PCM splice checks PASS. Preserve all audio/script; no synthesis, recut, re-encode or ASR rerun. Return corrected evidence for full VO ruling."
+        },
+        {
+          "at": "2026-11-07T07:21Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: J2348 reopened verification: master identity and PCM splices pass; final evidence consistency step remains incomplete. Read jobs/reviews/J2348/REVIEW.md before work."
         }
       ],
-      "remaining_action": "Awaiting elected-Chief final full-VO PASS on PR #619 to close J2157 and release 034 shot list",
+      "remaining_action": "Correct PR619 evidence records under J2348; preserve v03 audio and spend nothing",
       "kind": "vo",
       "urgent": 1,
       "taskKeys": [
@@ -184282,7 +184287,14 @@
       ],
       "required_capabilities": [
         "audio_input"
-      ]
+      ],
+      "progress": {
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-07T07:21Z",
+        "by": "codex",
+        "note": "J2348 reopened verification: master identity and PCM splices pass; final evidence consistency step remains incomplete. R"
+      }
     },
     {
       "id": "J2158",
