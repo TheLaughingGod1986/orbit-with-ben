@@ -1763,13 +1763,17 @@
     const planned=rows.filter(r=>!r.scheduled && londonDay(r.at)>=bounds.start && londonDay(r.at)<bounds.end);
     const next=rows.filter(r=>londonDay(r.at)>=bounds.end && londonDay(r.at)<bounds.nextEnd);
     const later=rows.filter(r=>londonDay(r.at)>=bounds.nextEnd);
-    // Confirmed YouTube schedules only for the Scheduled chip — planned dates stay labelled in the list.
+    // Three matching summary chips (Videos/Review/Agents language). Not filters — week lists stay stacked below.
+    // "Scheduled" = confirmed YouTube publishAt only; planned dates stay labelled in the list.
     const confirmed = rows.filter(r => r.scheduled).length;
     const chips = `<div class="seg" aria-label="Schedule counts"><div><b>${actualWeek.length}</b><span>This week</span></div><div><b>${next.length}</b><span>Next week</span></div><div><b>${confirmed}</b><span>Scheduled</span></div></div>`;
+    // Always show This week then Next week (and Later). view=week is a deep-link only — never hides a week list.
     return `<header class="top"><h1>Schedule</h1></header><p class="meta">Calendar weeks · Monday–Sunday · London time</p>
       ${chips}
       ${section("This week · scheduled",actualWeek.length,byDay(actualWeek)||empty("Nothing scheduled this week."))}
-      ${routeView()==='week'?'<a class="more" href="#schedule">Full schedule</a>':`${planned.length?section("This week · planned",planned.length,byDay(planned)):''}${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}${section("Later",later.length,byDay(later.slice(0,12))||empty("Nothing yet."))}`}`;
+      ${planned.length?section("This week · planned",planned.length,byDay(planned)):''}
+      ${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}
+      ${section("Later",later.length,byDay(later.slice(0,12))||empty("Nothing yet."))}`;
   }
 
   function renderTab(tab, b, now) {

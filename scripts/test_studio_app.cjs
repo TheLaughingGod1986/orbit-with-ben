@@ -288,7 +288,12 @@ context.location.hash='#schedule&view=week';
 {
   const sch = t.renderTab('schedule',db,NOW);
   assert(sch.includes('This week · scheduled <span class="n">1</span>'));
-  assert(sch.includes('class="seg"') && sch.includes('<span>This week</span>') && sch.includes('<span>Next week</span>') && sch.includes('<span>Scheduled</span>'), 'Schedule shows three matching week chips');
+  assert(sch.includes('class="seg"') && sch.includes('aria-label="Schedule counts"'), 'Schedule uses shared matching chip row');
+  assert(sch.includes('<span>This week</span>') && sch.includes('<span>Next week</span>') && sch.includes('<span>Scheduled</span>'), 'Schedule shows three matching week chips');
+  // Chips are summary-only (divs), not lane filters — both week lists stay visible even on view=week.
+  assert(!/aria-label="Schedule counts"[\s\S]*?<button/.test(sch), 'Schedule chips are not filter buttons');
+  assert(sch.includes('Next week <span class="n">') || sch.includes('>Next week<'), 'Next week list stays visible under the chips');
+  assert(/Schedule counts[\s\S]*This week · scheduled[\s\S]*Next week/.test(sch), 'This week then Next week stay stacked under the chips');
 }
 context.location.hash='';
 assert.equal((t.overview(db,NOW).match(/class="featured-video"/g)||[]).length,0,'Overview home no longer carries the feature card');
