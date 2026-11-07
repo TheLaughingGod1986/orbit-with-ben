@@ -184187,9 +184187,14 @@
           "at": "2026-11-07T04:15Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-07T12:00:00Z"
+        },
+        {
+          "at": "2026-11-07T04:35Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T12:00:00Z"
         }
       ],
-      "remaining_action": "Await audio-capable diagnosis J2342, then Chief ruling and verified repaired-master checks",
+      "remaining_action": "Await J2344 pickup and audio review, then reconcile repaired VO against v03",
       "kind": "vo",
       "urgent": 1,
       "progress": {
@@ -184203,12 +184208,9 @@
         "OWB:034"
       ],
       "hold": {
-        "type": "capability",
-        "condition": "J2341 FIX: v04 Scribe does not verify Worlds. J2342 owns bounded listening diagnosis of the hash-verified existing request using demonstrated audio input; this session inspected tools and has no audio-perception route. Actual listening evidence, elected-Chief adjudication and all repaired-master checks are required before VO approval or shot-list release.",
-        "check_at": "2026-11-07T12:00:00Z",
-        "requires": [
-          "audio_input"
-        ]
+        "type": "dependency",
+        "condition": "J2343 FIX retained; J2344 owns one 252-character v05 pickup against amended script v03, then demonstrated audio-input review and elected-Chief ruling. Complete verified crop/master, transcript, levels and tails only after that ruling. Existing v01-v04 and Chapter 5 crop preserved. No VO approval or shot-list release.",
+        "check_at": "2026-11-07T12:00:00Z"
       },
       "required_capabilities": [
         "audio_input"
