@@ -2,6 +2,42 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook protection batch)
+
+Continue J2141 at **1/3**, branch `macbook/J2141`, PR #633. This run adds
+`code_graphics.py protection` / `protection_graphics.py` and two unique alpha
+renders (1920×1080, argb qtrle, 25 fps):
+
+- R28 `sat_safe`, 295.34–299.78 s: conceptual satellite icon dims its outer
+  panels while its central light stays on, illustrating non-essential shutdown.
+  This is a symbolic icon, not a hardware/power-system design or SAA orbit model.
+  SOURCES row 11; starts on locked Scribe “satellite”.
+- R46 `grid_shield`, 472.22–475.50 s: shield outlines build around satellite
+  and power-grid icons on the locked “hardening satellites and power grids” line.
+  Qualitative illustration only; no protection efficacy, engineering design,
+  hazard boundary or numerical measurement is asserted. Source is the locked
+  VO/SHOT_LIST row 46; no new fact or spoken line added.
+
+`CODE_PROTECTION_v01.json` records timings, hashes and paths;
+`CODE_PROTECTION_TECHNICAL_CHECK_v01.json` records hash/dimensions/alpha/fps/
+duration and error-free full decode. Five static samples per render were
+inspected on `/Users/ben/_desk/J2141-protection-v01/CONTACT_v01.jpg`. Captions
+fade in/out, remain under four seconds, and use at most four words per label.
+Media is outside git in `/Users/ben/_desk/J2141-protection-v01/`.
+Neutral navy is preview background only. These require graded moving plates,
+subject clearance, composite legibility and reviewer acceptance. No KEEP/PASS.
+
+Reproduce into a fresh directory:
+`/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py protection --out <fresh-dir> --manifest <new-json>`.
+Existing renders are refused. Both ffmpeg processes exited 0; no background
+process was started. £0 spent. No archive search performed or budget reset.
+No YouTube or NAS write. Full harvest and graphics exceed the 25-minute run
+scope, so release at this reproducible checkpoint rather than mark done.
+Remaining work is unchanged apart from these two components: wider licensed
+harvest/contact sheet, physical mechanisms and timeline, R41 fallback,
+composites and full gates. Earlier source-ID and sourced-map/simulation issues
+remain for Chief reconciliation. Prior checkpoints below are historical.
+
 ## Continuation checkpoint (7 Nov, MacBook)
 
 Worker `macbook`, branch `macbook/J2141`. Spend £0. Partial work only;
