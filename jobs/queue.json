@@ -201399,7 +201399,7 @@
     {
       "id": "J2357",
       "title": "Verify condition for J0912",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J0912: Acting-Chief technical repair accepted: v04 76d801a3 matches Mini/NAS; five gate logs PASS; all eight midpoint stills reviewed. Full Short PASS awaits J2339 hash-specific perceptual QA with demonstrated audio_input and moving_video_input. Codex tools inspected: text/shell/stills only; Gemini relay probe has audio but failed moving-video, Cursor records neither. No generation/upload/schedule; preserve worker 4/4 and h47 locks. Recheck capability availability and J2339 evidence, not unchanged media.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0912 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -201419,6 +201419,11 @@
           "at": "2026-11-07T10:20Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T18:51Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 2578 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Complete J2339 audio/motion QA, then elected Chief decides Short PASS and private watch handoff",
@@ -201429,7 +201434,16 @@
         "moving_video_input"
       ],
       "due": "2026-11-07T11:20:09+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2358",
