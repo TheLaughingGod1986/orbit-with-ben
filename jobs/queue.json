@@ -203008,13 +203008,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T20:15Z",
-      "eta": "2026-11-07T22:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T19:15Z",
-      "result": "",
+      "result": "CONDITION UNMET (HOLD): Verified HOS PR #459 (GBP0 SHA-256 inventory & SHORTS_PICTURE_PLAN_v03.json, reconciled 4 code-graphic SHA-256 strings in READINESS_REPORT.md at 02d51354, check_all + CI PASS) and squash-merged onto HOS main (68df899f). Confirmed J2033 remains blocked on J2275 (PR #445 950babff, step 1/3) + J2200 with 0/20 Tranche 2 rows minted (Short A S03 P03:07_ball_to_moon absent), J2034 (complete 009 picture acceptance & Short B S06 P04:04_dots_square moving-plate composite review) remains open, and J2035 (009 05_Music/ score bed) remains open. Recorded jobs.py wait J2171 --type input --recheck J2377 --check-at 2026-11-08T18:00:00Z; see jobs/reviews/J2377/REVIEW.md.",
       "history": [
         {
           "at": "2026-11-07T19:15Z",
@@ -203055,6 +203055,11 @@
           "at": "2026-11-07T20:25Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 complete: committed jobs/reviews/J2377/REVIEW.md, updated J2171 wait condition with --recheck J2377 (next check 2026-11-08T18:00:00Z), and merged HOS PR #459 (68df899f)"
+        },
+        {
+          "at": "2026-11-07T20:25Z",
+          "by": "gemini",
+          "what": "done: CONDITION UNMET (HOLD): Verified HOS PR #459 (GBP0 SHA-256 inventory & SHORTS_PICTURE_PLAN_v03.json, reconciled 4 code-graphic SHA-256 strings in READINESS_REPORT.md at 02d51354, check_all + CI PASS) and squash-merged onto HOS main (68df899f). Confirmed J2033 remains blocked on J2275 (PR #445 950babff, step 1/3) + J2200 with 0/20 Tranche 2 rows minted (Short A S03 P03:07_ball_to_moon absent), J2034 (complete 009 picture acceptance & Short B S06 P04:04_dots_square moving-plate composite review) remains open, and J2035 (009 05_Music/ score bed) remains open. Recorded jobs.py wait J2171 --type input --recheck J2377 --check-at 2026-11-08T18:00:00Z; see jobs/reviews/J2377/REVIEW.md."
         }
       ],
       "remaining_action": "Close J2377 done",
