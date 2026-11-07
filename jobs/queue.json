@@ -203549,17 +203549,22 @@
           "at": "2026-11-07T23:37Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Reproduced all MacBook SVS/ISS moving plates and composites into nas_plates_v01; clip_check PASS on 54-row shot_list_v02.csv"
+        },
+        {
+          "at": "2026-11-07T23:47Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Rendered R48 poles_map mp4; audited all 122 row renders against polish_gate (mid-frame luma/std/edge/seams and still jitter) and mapped 54-row cut plan"
         }
       ],
-      "remaining_action": "Mapping all 54 rows to verified 1080p25 plates/composites, building part cards and SFX stem, and assembling long master v01",
+      "remaining_action": "Writing _assemble_031_full_master_v01.py, rendering 570.78 s picture master, mixing VO+SFX+score bed to -14 LUFS, and running all 5 gates",
       "kind": "assembly",
       "plain": "Assemble the 9.5-minute Magnetic Field Flip video (031) from all 54 picture rows, voiceover, music, and sound effects",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-07T23:37Z",
+        "at": "2026-11-07T23:47Z",
         "by": "gemini",
-        "note": "Reproduced all MacBook SVS/ISS moving plates and composites into nas_plates_v01; clip_check PASS on 54-row shot_list_v02"
+        "note": "Rendered R48 poles_map mp4; audited all 122 row renders against polish_gate (mid-frame luma/std/edge/seams and still jit"
       },
       "taskKeys": [
         "OWB:031"
