@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2332 | mini | open | – | – | 033 picture · video · 033: generate bounded R01 and R55 world-shot fallback | J2306; PR610; 6103783d76 |
 | J2333 | mini | open (after J2332) | – | – | 033 picture · qa · 033: watch R01 and R55 fallback motion against J2306 scope | J2306; PR610 |
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |
+| J2335 | mini | open | – | – | 034 vo · vo · 034 Pluto: bounded Ch5 and Ch6 exact-script pickups and corrected VO evidence | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/604 |
 
 Recently finished:
 

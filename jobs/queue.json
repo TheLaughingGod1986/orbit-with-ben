@@ -1,5 +1,5 @@
 {
-  "next_id": 2335,
+  "next_id": 2336,
   "jobs": [
     {
       "id": "J0001",
@@ -197648,6 +197648,35 @@
       "remaining_action": "Rule on reviewed replacement assets and release only eligible correction work",
       "kind": "chief",
       "plain": "Decide whether the reviewed Uranus footage is ready for the picture corrections to continue."
+    },
+    {
+      "id": "J2335",
+      "title": "034 Pluto: bounded Ch5 and Ch6 exact-script pickups and corrected VO evidence",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Elected-Chief ruling by codex, J2325, 7 Nov 2026: J2157 remains FIX/unapproved. This job is authorised now; it does not depend on J2157 completing. Primary worker Cursor (kind vo), standard VO fallback chain.\n\nPreserve the original Pluto v01 WAV/MP3, all original parts and manifests. Original WAV sha256 86483fb4919c3fd097a84d3c0d43f52a89521f87b2ff6f1976dea1506d2c8618; MP3 b7fdd348819c9e2dd98a01fc8ca272f1a135c6ff033302ad98022d8eb7bcaf85. Media is in the shared OWB checkout, 02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover. Locked source: 01_Script/pluto_frozen_heart_script_master_v02.md at c2082a4884 (J2149 GO). Do not rewrite spoken text.\n\nAuthorised repair: at most ONE exact-script sentence take for the last sentence of Ch5 line94 (What if New Horizons looked back ... captured twin?), and ONE for the full closing sentence Ch6 line110 (Next in our Real Worlds series ... Celsius). Extract verbatim from locked source, not from this brief. Preserve ch00-ch04 and unaffected Ch5/Ch6 speech. Write new v02 parts and master; never overwrite v01. No full chapter or full narration regeneration. API vo_take.py, Ben Orbit Narrator eleven_v3, house settings, dry run first, live ElevenLabs paid-subscription balance under desk-lock elevenlabs. Upper bound 1200 subscription credits across these two pickups; estimate must fit both cap and live balance, no top-ups/overage/new paid service. Log actual charge and live readings without duplicate ledger entries. This authority is for the future worker; J2325 itself spent zero.\n\nScribe must verify looked back and Real Worlds, with all raw discrepancies retained. Measure full decode, mean -19 to -28 dB, approximately -20 LUFS, true peak <= -1 dBTP, all chapter-tail windows and splice positions against word timestamps. Preserve natural end decay; padding cannot repair a clipped phoneme. If a bounded take still fails, stop with evidence for Chief; no further takes under this scope. Ben final UAT supplies listening per STUDIO_PLAYBOOK section 10/Review (4 Nov); do not claim listening from ASR, tool name or model identity. No hold solely for absent audio perception, no failed-tool-check waiver.\n\nCorrect evidence PR604 before requesting merge: its final-150ms envelope numbers disagree with original PCM (Ch5 last three nonoverlapping 50ms windows are -22.73,-28.07,-32.01 dBFS; Ch6 -42.53,-42.64,-48.23). Claims of conclusive listening and clean tails are not accepted by J2325; retain as superseded reviewer claims with correction. Preserve original J2157 evidence and reconcile ledgers once. Remote bf751c1e3f already exists, so no further request to approve that old push. Do not republish transcript/spend payload to a new destination merely to evade the prior approval rejection. Keep corrections on the existing evidence route subject to automatic review.\n\nReturn a records PR, v02 hashes, timestamp/cut map and technical evidence. Queue one elected-Chief final VO ruling linked to this job and J2157 immediately on completion; only that ruling may complete J2157 and release the shot list. This repair is not a film PASS or permission to upload/schedule. No work on unrelated holds.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/604",
+      "film": "034",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T02:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T02:33Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record two exact-script sentence pickups, preserve the original take, and verify the repaired narration",
+      "kind": "vo",
+      "plain": "Repair two uncertain phrases in the Pluto narration and verify the new version."
     }
   ],
   "focus": [
