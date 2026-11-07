@@ -200477,13 +200477,13 @@
       "stage": "shots",
       "after": "J2353",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T11:20Z",
-      "eta": "2026-11-07T13:20Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T10:45Z",
-      "result": "",
+      "result": "Chief FIX completed; PR630 merged (a234a75b39), PR626 unmerged. 034 shots blocked for source/reuse/card/music corrections. J2361 repairs, J2362 decides release; no spend or production approval.",
       "history": [
         {
           "at": "2026-11-07T10:45Z",
@@ -200514,6 +200514,11 @@
           "at": "2026-11-07T11:26Z",
           "by": "codex",
           "what": "step 3 of 3 done: FIX ruling and evidence published via PR630 with passing check; 034 shots explicitly blocked. PR626 unmerged, no spend, concrete repair and Chief re-review queued."
+        },
+        {
+          "at": "2026-11-07T11:26Z",
+          "by": "codex",
+          "what": "done: Chief FIX completed; PR630 merged (a234a75b39), PR626 unmerged. 034 shots blocked for source/reuse/card/music corrections. J2361 repairs, J2362 decides release; no spend or production approval."
         }
       ],
       "remaining_action": "Review finished: J2361 repairs the plan; J2362 owns approval and production release",
@@ -200528,7 +200533,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "a234a75b39c7c83ca945040e9638d09ce0209d0a"
     },
     {
       "id": "J2360",

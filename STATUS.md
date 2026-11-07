@@ -61,6 +61,5 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
 | 034 | edit | codex | 2026-11-07T08:51Z | 2026-11-07T10:50Z | J2320 034 Pluto Short 2 (Keeper question): build 22-27s Charon/water-ice cut + gates (slot Wed 23 Dec 11:30 London; no upload) |
-| 034 | shots | codex | 2026-11-07T11:20Z | 2026-11-07T13:19Z | J2359 034 Pluto: Chief review of J2353 shot list (SHOT_LIST_v01.md + clip_check PASS on PR #626), OMNI R28/R52 price pass vs £0 fallback, and release 034 picture harvest + code graphics |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
