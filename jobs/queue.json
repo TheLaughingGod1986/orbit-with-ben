@@ -197116,13 +197116,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-07T01:16Z",
-      "eta": "2026-11-07T03:16Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-07T01:16Z",
-      "result": "",
+      "result": "HOS PR #453 (0b0649f) + OWB PR #606 (79a6d53b6, jobs/reviews/J2328/REVIEW.md). Prepared one-page topic go/no-go sheets (TOPIC_GO_NO_GO.md), pre-build audits (PRE_BUILD_VIDIQ_AUDIT.md), and refreshed 2026-11-07 neighbours.py / public_search.py evidence for HOS 012 Genetics: The Monk Who Counted 28,000 Pea Plants (Thu 24 Dec, next_hos #2; neighbours PASS 8 >=1M incl. TED-Ed 5.05M; autocomplete PASS; no Short-first waiver needed under HOS rules; existing v01 script 93.5 PASS, 33 SOURCES_v01 rows ready for facts pass on entry) and HOS 014 Extinction: The 12-Year-Old Who Dug Up a Sea Dragon (Thu 31 Dec, next_hos #3; neighbours PASS 3-4 >=1M incl. NHM 5.23M, TED-Ed 1.78M, Extra History 1.17M; autocomplete PASS; no Short-first waiver needed under HOS rules; existing v01 script 93.8 PASS, 28 SOURCES_v01 rows ready for facts pass on entry). Neither film entered into active; jobs/WIP.json and focus untouched; HOS check_all.sh ALL CHECKS PASS. £0.",
       "history": [
         {
           "at": "2026-11-07T01:16Z",
@@ -197153,6 +197153,11 @@
           "at": "2026-11-07T01:27Z",
           "by": "macbook-2",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-07T01:28Z",
+          "by": "macbook-2",
+          "what": "done: HOS PR #453 (0b0649f) + OWB PR #606 (79a6d53b6, jobs/reviews/J2328/REVIEW.md). Prepared one-page topic go/no-go sheets (TOPIC_GO_NO_GO.md), pre-build audits (PRE_BUILD_VIDIQ_AUDIT.md), and refreshed 2026-11-07 neighbours.py / public_search.py evidence for HOS 012 Genetics: The Monk Who Counted 28,000 Pea Plants (Thu 24 Dec, next_hos #2; neighbours PASS 8 >=1M incl. TED-Ed 5.05M; autocomplete PASS; no Short-first waiver needed under HOS rules; existing v01 script 93.5 PASS, 33 SOURCES_v01 rows ready for facts pass on entry) and HOS 014 Extinction: The 12-Year-Old Who Dug Up a Sea Dragon (Thu 31 Dec, next_hos #3; neighbours PASS 3-4 >=1M incl. NHM 5.23M, TED-Ed 1.78M, Extra History 1.17M; autocomplete PASS; no Short-first waiver needed under HOS rules; existing v01 script 93.8 PASS, 28 SOURCES_v01 rows ready for facts pass on entry). Neither film entered into active; jobs/WIP.json and focus untouched; HOS check_all.sh ALL CHECKS PASS. £0."
         }
       ],
       "remaining_action": "Committing HOS 012 and 014 go/no-go packages on macbook/J2328, opening HOS PR, and returning checkout to main",
