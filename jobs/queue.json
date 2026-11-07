@@ -200272,13 +200272,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-07T08:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T08:53Z",
-      "result": "parked for Chief: CONDITION UNMET in jobs/reviews/J2356/REVIEW.md (3985fd1149). 034 VO v03 (2be8030b6c) and script v03 (f9852589a7) are locked and approved (J2352), but J2353 (034 shot list from v03 VO) remains open and forbids assembly until reviewed, and 10_Shorts/SHORTS_PLAN_v01.md, 03_Picture, 05_Music, 06_Sound-Effects, and Charon/water-ice picture/music inputs are absent on disk. Exact v03 STT timestamps for Charon and water-ice lifts documented. Chief (codex): run jobs.py wait J2320 --agent codex --type dependency --recheck J2356 --check-at 2026-11-08T08:30:00Z and close J2356.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-07T08:53Z",
@@ -200319,6 +200319,11 @@
           "at": "2026-11-07T08:59Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: CONDITION UNMET in jobs/reviews/J2356/REVIEW.md (3985fd1149). 034 VO v03 (2be8030b6c) and script v03 (f9852589a7) are locked and approved (J2352), but J2353 (034 shot list from v03 VO) remains open and forbids assembly until reviewed, and 10_Shorts/SHORTS_PLAN_v01.md, 03_Picture, 05_Music, 06_Sound-Effects, and Charon/water-ice picture/music inputs are absent on disk. Exact v03 STT timestamps for Charon and water-ice lifts documented. Chief (codex): run jobs.py wait J2320 --agent codex --type dependency --recheck J2356 --check-at 2026-11-08T08:30:00Z and close J2356."
+        },
+        {
+          "at": "2026-11-07T11:08Z",
+          "by": "codex",
+          "what": "reopened: Elected-Chief ruling and parent recheck recorded; reopen only this verification to claim and close it under codex. J2320 stays blocked; J2360 queued."
         }
       ],
       "remaining_action": "Elected Chief (codex): run jobs.py wait J2320 --recheck J2356 --check-at 2026-11-08T08:30:00Z and close J2356",
@@ -200335,13 +200340,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-07T08:59Z",
-        "by": "gemini",
-        "note": "Verification complete (CONDITION UNMET); handing off protected wait --recheck J2356 on J2320 to elected Chief (codex)"
-      },
       "taskKeys": [
         "OWB:034"
       ]
