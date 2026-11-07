@@ -201724,17 +201724,22 @@
           "at": "2026-11-07T14:54Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2367 and 034 shots; starting 5-step repair plan on PR #626"
+        },
+        {
+          "at": "2026-11-07T14:57Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Reviewed J2362 REVIEW.md and CHECKS.json; inspected worktree /private/tmp/j2367-pluto-shot-list and caught double-shift regex bug in motion_notes/markers range end timestamps"
         }
       ],
-      "remaining_action": "Inspect J2362 review and checkout branch j2353-pluto-shot-list in a clean worktree",
+      "remaining_action": "Verify R05/R50 ogv motion and native-motion separators across CODE->CODE gaps, plus R30/R57 Orbit-row retype",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-07T14:54Z",
+        "at": "2026-11-07T14:57Z",
         "by": "gemini",
-        "note": "Claimed J2367 and 034 shots; starting 5-step repair plan on PR #626"
+        "note": "Reviewed J2362 REVIEW.md and CHECKS.json; inspected worktree /private/tmp/j2367-pluto-shot-list and caught double-shift "
       },
       "rerouted_from": {
         "needs": "mini",
