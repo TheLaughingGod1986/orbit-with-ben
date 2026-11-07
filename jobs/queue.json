@@ -198189,13 +198189,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-07T04:03Z",
-      "eta": "2026-11-07T06:03Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T04:00Z",
-      "result": "",
+      "result": "FIX: Whisper and v04 Scribe both heard World singular. 577 chars ledgered once. No crop, no master, no second take. Evidence jobs/reviews/J2340/EVIDENCE.md. J2157 unfinished.",
       "history": [
         {
           "at": "2026-11-07T04:00Z",
@@ -198221,6 +198221,11 @@
           "at": "2026-11-07T04:10Z",
           "by": "cursor",
           "what": "step 3 of 4 done: v04 Scribe heard World at 13.60-13.94 s. 577 characters ledgered once. No crop and no master. Evidence commit 4a17a58744."
+        },
+        {
+          "at": "2026-11-07T04:11Z",
+          "by": "cursor",
+          "what": "done: FIX: Whisper and v04 Scribe both heard World singular. 577 chars ledgered once. No crop, no master, no second take. Evidence jobs/reviews/J2340/EVIDENCE.md. J2157 unfinished."
         }
       ],
       "remaining_action": "Queue the elected Chief ruling and close this repair",
@@ -198235,7 +198240,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "4a17a58744"
     },
     {
       "id": "J2341",
