@@ -201116,13 +201116,13 @@
       "stage": "script",
       "after": "J2360",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-07T13:15Z",
-      "eta": "2026-11-07T15:15Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T12:00Z",
-      "result": "",
+      "result": "PASS h281: Short2=2A Water-Ice Mountains; Short1=1A continuous S01-S03; opener=M1-A PIA11709 (M1-B backup). Merged PR #632 5442fff3@13:16:38Z. J2319/J2320 stay blocked until J2361→J2362. Ruling jobs/reviews/J2364/CHIEF_RULING.md. £0.",
       "history": [
         {
           "at": "2026-11-07T12:00Z",
@@ -201138,6 +201138,11 @@
           "at": "2026-11-07T13:16Z",
           "by": "chief",
           "what": "step 1 of 4 done: Evidence loaded from PR632 head 5442fff3; CI green; MERGEABLE"
+        },
+        {
+          "at": "2026-11-07T13:16Z",
+          "by": "chief",
+          "what": "done: PASS h281: Short2=2A Water-Ice Mountains; Short1=1A continuous S01-S03; opener=M1-A PIA11709 (M1-B backup). Merged PR #632 5442fff3@13:16:38Z. J2319/J2320 stay blocked until J2361→J2362. Ruling jobs/reviews/J2364/CHIEF_RULING.md. £0."
         }
       ],
       "remaining_action": "Write CHIEF_RULING selecting 2A/1A/M1-A then merge PR632",
@@ -201149,7 +201154,8 @@
         "at": "2026-11-07T13:16Z",
         "by": "chief",
         "note": "Evidence loaded from PR632 head 5442fff3; CI green; MERGEABLE"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/632"
     }
   ],
   "focus": [
