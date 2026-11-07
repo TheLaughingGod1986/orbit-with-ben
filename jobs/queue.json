@@ -197745,10 +197745,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-07T02:59Z",
+      "eta": "2026-11-07T04:59Z",
       "created_by": "codex",
       "created_at": "2026-11-07T02:33Z",
       "result": "",
@@ -197757,11 +197757,24 @@
           "at": "2026-11-07T02:33Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T02:59Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record two exact-script sentence pickups, preserve the original take, and verify the repaired narration",
       "kind": "vo",
-      "plain": "Repair two uncertain phrases in the Pluto narration and verify the new version."
+      "plain": "Repair two uncertain phrases in the Pluto narration and verify the new version.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T02:59Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
