@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2325 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2157 |  |
 | J2327 | any | claimed | macbook-2 | 2026-11-07T03:36Z | review · Topic go/no-go prep for the next four Orbit films after the current five (do not start them) |  |
 | J2330 | any | open | – | – | review · Verify condition for J2309 |  |
-| J2331 | mini | open | – | – | 032 picture · for gemini · review · `gemini-argon` · 032 R18: review composite candidate layout and source placement |  |
+| J2331 | mini | claimed | gemini | 2026-11-07T03:54Z | 032 picture · for gemini · review · `gemini-argon` · 032 R18: review composite candidate layout and source placement |  |
 
 Recently finished:
 
