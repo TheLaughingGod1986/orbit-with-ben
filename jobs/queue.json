@@ -197487,9 +197487,14 @@
           "at": "2026-11-07T08:25Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T08:25Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Claimed. Checking VO, shot list, plates, graphic and music before any cut."
         }
       ],
-      "remaining_action": "Assemble 034 Pluto Short 1 (Test A opening lift 0.00-35s after 034 VO and long picture) and run all Shorts gates",
+      "remaining_action": "Check whether the Pluto Short can be cut from footage already on disk",
       "due": "2026-12-21T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the first Pluto Short (Test A opening lift from the long film's cold open) and run the Shorts quality checks",
@@ -197498,9 +197503,11 @@
         "of": 3,
         "at": "2026-11-07T08:25Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Checking VO, shot list, plates, graphic and music before any cut."
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J2320",
