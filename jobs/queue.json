@@ -203378,9 +203378,14 @@
           "at": "2026-11-07T21:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T22:05Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2380; starting condition verification for OWB 033 J2299"
         }
       ],
-      "remaining_action": "Verify readiness: Await video-capable J2333 QA and J2334 hash acceptance; then resume source and graphics corrections at 0/5",
+      "remaining_action": "Read J2299, J2332, J2333, J2334, J2365 and check whether J2299 waiting conditions are satisfied",
       "kind": "review",
       "recheck_of": "J2299",
       "due": "2026-11-07T21:27:30+00:00",
@@ -203397,11 +203402,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-07T21:40Z",
+        "at": "2026-11-07T22:05Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2380; starting condition verification for OWB 033 J2299"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     }
   ],
   "focus": [
