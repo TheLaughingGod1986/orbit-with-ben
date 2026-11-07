@@ -182585,13 +182585,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T22:12Z",
-      "eta": "2026-11-08T00:12Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
-      "result": "",
+      "result": "3/3 complete (ae085e857c on main & studio-live NAS, £0): 42 pool assets in HARVEST_POOL_v01.json + 133 verified 1080p25 plates, code_graphics & full-row composites across all 54 rows of SHOT_LIST_v02.md (min_luma>=28, max_upscale<=1.875x, stills <=2 uses, acting-Chief gate resolutions PASS)",
       "history": [
         {
           "at": "2026-11-04T19:35Z",
@@ -184057,6 +184057,11 @@
           "at": "2026-11-07T22:55Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Merged 169 J2141 picture manifests/scripts to main (ae085e857c) and synced 193 files to studio-live NAS"
+        },
+        {
+          "at": "2026-11-07T22:55Z",
+          "by": "gemini",
+          "what": "done: 3/3 complete (ae085e857c on main & studio-live NAS, £0): 42 pool assets in HARVEST_POOL_v01.json + 133 verified 1080p25 plates, code_graphics & full-row composites across all 54 rows of SHOT_LIST_v02.md (min_luma>=28, max_upscale<=1.875x, stills <=2 uses, acting-Chief gate resolutions PASS)"
         }
       ],
       "remaining_action": "Complete J2141 and queue 031 edit",
@@ -184081,7 +184086,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "done_ref": "ae085e857c"
     },
     {
       "id": "J2142",
