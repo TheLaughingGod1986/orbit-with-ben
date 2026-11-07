@@ -201674,17 +201674,22 @@
           "at": "2026-11-07T14:28Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 complete: inspected J2362 REVIEW.md/CHECKS.json and checked out clean worktree /tmp/j2367-pluto-shot-list on branch j2353-pluto-shot-list"
+        },
+        {
+          "at": "2026-11-07T14:40Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Audit of all existing and replacement native video assets completed: nh_extreme_closeup.ogv confirmed mosaic pan with embedded yellow text/scale bar (banned); verified clean real LORRI flyby sequence 51718116305.webm (1920x1080), Pluto-Charon LORRI orbit sequence 51712771431.webm, Arrokoth LORRI sequence 52829322492.webm, and KSC Atlas V launch/SRB clips with exact ffprobe dimensions and SHA-256 hashes."
         }
       ],
-      "remaining_action": "Repair chapter-card hold (item 1), real moving separators (item 2), Orbit-row retype (item 3) and claims (item 4) on j2353-pluto-shot-list",
+      "remaining_action": "Generate derived offset STT words file, lifted-navy luma check, and update shot_list_v01.csv + SOURCE_EVIDENCE_v01.json",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-07T14:28Z",
+        "at": "2026-11-07T14:40Z",
         "by": "gemini",
-        "note": "Step 1 complete: inspected J2362 REVIEW.md/CHECKS.json and checked out clean worktree /tmp/j2367-pluto-shot-list on bran"
+        "note": "Audit of all existing and replacement native video assets completed: nh_extreme_closeup.ogv confirmed mosaic pan with em"
       },
       "rerouted_from": {
         "needs": "mini",
