@@ -197767,17 +197767,22 @@
           "at": "2026-11-07T02:59Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed J2335. NAS offload had nothing old enough to move (8506 MB free). No audio perception in this session."
+        },
+        {
+          "at": "2026-11-07T03:02Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Dry run: Ch5 last sentence 77 chars, Ch6 closing sentence 252 chars, 329 total, under the 1200 cap. v01 hashes match. Locked lines match c2082a4884. No credits spent."
         }
       ],
-      "remaining_action": "Read the locked Pluto lines and the existing v01 voice before any take",
+      "remaining_action": "Read the live ElevenLabs balance, then take the two locked sentences",
       "kind": "vo",
       "plain": "Repair two uncertain phrases in the Pluto narration and verify the new version.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-07T02:59Z",
+        "at": "2026-11-07T03:02Z",
         "by": "cursor",
-        "note": "Claimed J2335. NAS offload had nothing old enough to move (8506 MB free). No audio perception in this session."
+        "note": "Dry run: Ch5 last sentence 77 chars, Ch6 closing sentence 252 chars, 329 total, under the 1200 cap. v01 hashes match. Lo"
       },
       "taskKeys": [
         "OWB:034"
