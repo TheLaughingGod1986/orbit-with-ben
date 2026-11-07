@@ -203416,9 +203416,9 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-07T21:40Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T20:27Z",
@@ -203463,6 +203463,11 @@
           "at": "2026-11-07T22:09Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: CONDITION UNMET in jobs/reviews/J2380/REVIEW.md (2e781c8d44). J2332 bounded Flow Veo fallback is done and freshly re-hashed on NAS (r01_flow_t1_silent.mp4 65776fa656, r55a_flow_t1_silent.mp4 51b26b122e, r55b_flow_t1_silent.mp4 1e71287f9a; 30 Flow credits 14890->14860, £0 spend, no new spend), and 43/43 pool files + locked VO (3d73576e0c) remain verified on Mini and studio-live, but J2333 (moving_video_input QA) and J2334 (elected-Chief asset acceptance) remain open with no demonstrated moving_video_input worker in capabilities.json (Gemini 22:03Z probe passed audio_input 0.86, failed video). Under J2306 (PR610 / daa2f24bd92e), J2349 and J2365, J2334 must accept exact hashes before J2299 reopens. Elected Chief (codex/chief): run jobs.py wait J2299 --agent <chief|codex> --type dependency --recheck J2380 --check-at 2026-11-08T04:15:00Z and close J2380."
+        },
+        {
+          "at": "2026-11-07T23:04Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon: Elected-Chief review of completed verification; retain worker 3/3 evidence, report independent Chief milestones through review-progress. J2299 remains held."
         }
       ],
       "remaining_action": "Elected Chief (codex/chief): record wait --recheck J2380 on J2299 and close J2380",
