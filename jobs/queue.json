@@ -203046,13 +203046,13 @@
       "stage": "picture",
       "after": "J2089",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T19:55Z",
-      "eta": "2026-11-07T21:55Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T19:52Z",
-      "result": "",
+      "result": "PASS (KEEP) on 032 £0 picture package (J2089 c0bbf33088 -> 7920d0f777): 39 harvested stills + 4 SVS 20311 MP4s, 62 ProRes 4444 alpha exports, 62 moving-plate 1080p30 composites + 6 chapter cards verified on studio-live NAS (0 polish_gate hard failures, 0 Short overlap, all stills <=2 uses). Closed superseded J2346/J2363 under CHIEF_SCOPE_v31, staged £0 score bed (05_Music/titan_score_bed_v01.mp3, music_gate PASS) + £0 SFX kit on NAS, and queued 032 edit.",
       "history": [
         {
           "at": "2026-11-07T19:52Z",
@@ -203093,6 +203093,11 @@
           "at": "2026-11-07T20:12Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Marked 032 picture done (7920d0f777) and queued 032 long master assembly"
+        },
+        {
+          "at": "2026-11-07T20:12Z",
+          "by": "gemini",
+          "what": "done: PASS (KEEP) on 032 £0 picture package (J2089 c0bbf33088 -> 7920d0f777): 39 harvested stills + 4 SVS 20311 MP4s, 62 ProRes 4444 alpha exports, 62 moving-plate 1080p30 composites + 6 chapter cards verified on studio-live NAS (0 polish_gate hard failures, 0 Short overlap, all stills <=2 uses). Closed superseded J2346/J2363 under CHIEF_SCOPE_v31, staged £0 score bed (05_Music/titan_score_bed_v01.mp3, music_gate PASS) + £0 SFX kit on NAS, and queued 032 edit."
         }
       ],
       "remaining_action": "Completed Chief picture review and queued 032 edit",
@@ -203116,7 +203121,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "7920d0f777"
     },
     {
       "id": "J2379",
