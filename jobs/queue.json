@@ -197950,7 +197950,7 @@
     {
       "id": "J2330",
       "title": "Verify condition for J2309",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2309: J2321 capability-qualified repair review must perceive existing v05 audio/motion and resolve recorded E1 failures. Current session tested available tools and viewed a static frame only; no audio or moving-video perception demonstrated. Local evidence7d221d0dbb; no approval. No duplicate render.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2309 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -197970,6 +197970,11 @@
           "at": "2026-11-07T01:48Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T06:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1846 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Await capable J2321 review, then repair and verify v05 failures",
@@ -197980,7 +197985,16 @@
         "moving_video_input"
       ],
       "due": "2026-11-07T02:48:13+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2331",
