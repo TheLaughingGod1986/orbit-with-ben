@@ -1,3 +1,51 @@
+## MacBook continuation — 7 Nov, scales reproduction + core and twist graphics recovery
+
+Worker `macbook`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
+£0 spent. Full multi-agency moving harvest, remaining plate composites and
+film-wide gates exceed this run's 25-minute limit; release for continuation.
+
+1. **Local MacBook reproduction of `scales` (`CODE_SCALES_MACBOOK_v01.json`):**
+   - Reproduced `code_graphics.py scales` into `/Users/ben/_desk/J2141-scales-macbook-v01/`:
+     `code_graphic_031_r36_durations_v01.mov` (4.88 s, argb),
+     `code_graphic_031_r44_gravity_v01.mov` (2.28 s, argb), and
+     `code_graphic_031_r52_generations_v01.mov` (3.44 s, argb).
+   - Verified in `CODE_SCALES_MACBOOK_TECHNICAL_CHECK_v01.json` and inspected
+     `/Users/ben/_desk/J2141-scales-macbook-v01/CONTACT_TECHNICAL_v01.jpg`.
+2. **Integrated `core` and `twist` graphics from open PR #569 / PR #575:**
+   - Added `core_graphics.py` (`code_graphics.py core`, with verified SHA-256
+     resolution for `GSFC_20171208_Archive_e000678.jpg` across NAS and MacBook
+     harvest folders) and `twist_graphics.py` (`code_graphics.py twist`),
+     preserving all existing CLI modes and original Mini manifests
+     (`CODE_CORE_v01.json`, `CODE_CORE_TECHNICAL_CHECK_v01.json`,
+     `CODE_TWIST_v01.json`, `CODE_TWIST_TECHNICAL_CHECK_v01.json`).
+   - Rendered and verified on MacBook:
+     - `/Users/ben/_desk/J2141-core-macbook-v01/`:
+       `code_graphic_031_r12_flip_tight_v01.mp4` (R12, 112.98 s, 9.00 s, yuv420p),
+       `code_graphic_031_r14_layers_core_v01.mp4` (R14, 132.70 s, 6.00 s, yuv420p),
+       `code_graphic_031_r33_paleo_dip_v01.mp4` (R33, 345.00 s, 4.16 s, yuv420p).
+       Recorded in `CODE_CORE_MACBOOK_v01.json` and
+       `CODE_CORE_MACBOOK_TECHNICAL_CHECK_v01.json`.
+     - `/Users/ben/_desk/J2141-twist-macbook-v01/`:
+       `code_graphic_031_r30_twist_v01.mov` (R30, 313.82 s, 3.96 s, argb).
+       Recorded in `CODE_TWIST_MACBOOK_v01.json` and
+       `CODE_TWIST_MACBOOK_TECHNICAL_CHECK_v01.json`.
+   - `verify_scales_core_twist_macbook.py` checked locked Scribe word hash,
+     output SHA-256, 1920×1080 / 25 fps / pixel format, duration within half a
+     frame, full error-free ffmpeg decode, and five static frame samples per
+     render. Static contact sheets inspected.
+3. **Updated `MEDIA_AVAILABILITY_MACBOOK_2026-11-07.json`:**
+   - All 42 active renders in the original audit (excluding the 6 superseded
+     `CODE_MECHANISMS_v01.json` items) plus `timeline`, `core`, `twist` and
+     `grains v04` now have verified local or NAS paths on the MacBook.
+
+No audio/moving playback perception, KEEP, stage PASS or UAT readiness is
+claimed. Reproduction commands require fresh output directories. Next bounded
+action: recover/verify remaining harvested plates and row composites (including
+PR #575 plate scripts where sources are reachable), then run full composite and
+picture QA once Chief resolves the open source-ID/licence/sourced-map items.
+No archive search budget consumed, £0 spent, no NAS writes/deletions, no
+processes left running.
+
 ## MacBook slot 2 continuation — 7 Nov, Commons harvest recovery
 
 Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
