@@ -1,5 +1,5 @@
 {
-  "next_id": 2376,
+  "next_id": 2377,
   "jobs": [
     {
       "id": "J0001",
@@ -182509,8 +182509,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-07T16:47Z",
-      "eta": "2026-11-07T18:47Z",
+      "since": "2026-11-07T17:32Z",
+      "eta": "2026-11-07T19:32Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183839,14 +183839,34 @@
           "at": "2026-11-07T16:47Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T16:59Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-07T17:00Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-07T17:32Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T17:33Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Recover and verify remaining J2141 picture batches/plates on MacBook; wider harvest, composites and full QA remain",
+      "remaining_action": "Recover remaining PR 575 plate harvest scripts onto macbook/J2141",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-07T16:36Z",
+        "at": "2026-11-07T17:33Z",
         "by": "macbook"
       },
       "taskKeys": [
@@ -198383,13 +198403,13 @@
       "stage": "edit",
       "after": "J2157",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-07T08:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T00:07Z",
-      "result": "Waiting for: 034 Short 1 picture inputs are not on disk. Checked 2026-11-07T08:26Z: 10_Shorts/SHORTS_PLAN_v01.md absent; 03_Picture, 05_Music, 06_Sound-Effects and 09_Rough-Cut absent; 04_Generated-Clips has no media; no mp4 in the film folder. J2353 shot list is open and its brief forbids assembly until that shot list is reviewed. VO v03 is present and matches sha256 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685. The brief's quoted cold open is not the v03 transcript (words.srt starts Across Pluto's horizon). Resume only when a reviewed shot list, cold-open plates, the zero-craters graphic and the house music bed are on disk, and cut only from pluto_frozen_heart_vo_v03.wav.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-07T00:07Z",
@@ -198430,30 +198450,20 @@
           "at": "2026-11-07T11:03Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-08T08:30:00Z"
+        },
+        {
+          "at": "2026-11-07T16:50Z",
+          "by": "gemini",
+          "what": "reopened: J2372 PASS (7268178178): 034 harvest_v01, graphics_v03, pluto_score_bed_v01.mp3 and kit_v01 verified on studio-live NAS; build Test A Option 1A per J2364 PASS"
         }
       ],
       "remaining_action": "Review Pluto shot list in J2359, deliver opening assets and reconcile the Test A cut plan before assembly",
       "due": "2026-12-21T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the first Pluto Short (Test A opening lift from the long film's cold open) and run the Shorts quality checks",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-07T08:26Z",
-        "by": "cursor",
-        "note": "No plates, plan, music, SFX or long master. J2353 still open. VO v03 hash matches. No cut started."
-      },
       "taskKeys": [
         "OWB:034"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J2354 Chief ruling: CONDITION UNMET. J2353 delivered draft PR626 (50fa44c23e), still OPEN; J2359 owns review and production release. Shared 034 has no Short plan, production plates, rendered zero-craters graphic, music bed, SFX or long master. v03 WAV hash matches 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685. Reconcile obsolete J2319 opening prose and actual v03 Test A sentence-end timing (third sentence ends 38.820s, central question 65.160s) before assembly. Resume only with reviewed plan and verified on-disk assets/master. J2359 proceeds now and queues permitted production; no new spend or upload authorized. Evidence d3003ef644 jobs/reviews/J2354/CHIEF_RULING.md.",
-        "check_at": "2026-11-08T08:30:00Z",
-        "last_recheck": "J2354",
-        "checked_at": "2026-11-07T11:03:26+00:00",
-        "checked_by": "codex"
-      }
+      ]
     },
     {
       "id": "J2320",
@@ -198466,13 +198476,13 @@
       "stage": "edit",
       "after": "J2157",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-07T08:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T00:07Z",
-      "result": "Waiting for: J2353 shot list must be reviewed before assembly (its explicit restriction). Referenced 034/10_Shorts/SHORTS_PLAN_v01.md, 03_Picture, 05_Music and 06_Sound-Effects are absent on disk at 2026-11-07T08:55Z; no reusable Charon motion or house music delivered. Brief quoted Charon lift is not verbatim approved v03 STT: actual text includes In mutual tidal locking ... Charon neither rises nor sets at 236.10-244.70s. Resume from approved v03 only once reviewed Short wording/lift and actual picture/music inputs exist; preserve 22-27s, question-first and all gates. No upload or new paid generation authorised.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-07T00:07Z",
@@ -198513,30 +198523,20 @@
           "at": "2026-11-07T11:08Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-08T08:30:00Z"
+        },
+        {
+          "at": "2026-11-07T16:50Z",
+          "by": "gemini",
+          "what": "reopened: J2372 PASS (7268178178): 034 harvest_v01, graphics_v03 (incl. code_graphic_034_short2_open.mp4), pluto_score_bed_v01.mp3 and kit_v01 verified on studio-live NAS; build Selection 2A per J2364 PASS"
         }
       ],
       "remaining_action": "Await J2360 exact-lift plan approval, J2359 shot-list release and delivered picture/music before building Short 2",
       "due": "2026-12-23T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Pluto Short (22-27s question Short on Charon's locked sky or Pluto's water-ice mountains) and run the Shorts quality checks",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-07T08:53Z",
-        "by": "codex",
-        "note": "Preflight complete: referenced Shorts plan, 03_Picture, 05_Music and 06_Sound-Effects absent; J2353 open and explicitly "
-      },
       "taskKeys": [
         "OWB:034"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J2356 acting-Chief ruling: CONDITION UNMET. Current v03 WAV/script/STT hashes match accepted J2352 evidence. J2353 is now done with PR626, but shot-list approval J2359 remains open. SHORTS_PLAN_v01.md, 03_Picture, 05_Music and 06_Sound-Effects remain absent in the shared film checkout. J2360 is queued NOW to repair the exact Short 2 question/title/lift and prove 55-65 words and 22-27s including tail, or report infeasibility. Candidate Charon 27.10s before tail and water-ice 51 words/28.58s are not approved. Dependencies: elected-Chief J2359 shot-list/picture release; J2360 plan plus its Chief acceptance; actual reviewed picture/music/SFX delivery. No assembly until all met. Existing v03 approval, no-spend/no-upload restriction and all gates retained. Next verification 8 Nov 08:30Z; this is not a delayed start for ready planning.",
-        "check_at": "2026-11-08T08:30:00Z",
-        "last_recheck": "J2356",
-        "checked_at": "2026-11-07T11:08:01+00:00",
-        "checked_by": "codex"
-      }
+      ]
     },
     {
       "id": "J2321",
@@ -202360,13 +202360,13 @@
       "stage": "picture",
       "after": "J2371",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T16:30Z",
-      "eta": "2026-11-07T18:00Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-07T15:32Z",
-      "result": "",
+      "result": "PASS: 034 Pluto on-disk picture + graphics package verified on studio-live NAS (67/67 harvest_v01 plates SHA-256 matched, 9 native clips decoded, 0 banned IDs, <=2 uses, 7/7 CODE->CODE gaps separated by native motion, 0 Orbit/Omni, 19/19 graphics_v03 + Short 2 opener + £0 pluto_score_bed_v01.mp3 + kit_v01); PR #643 and PR #644 merged; 034 picture marked done; 034 long assembly queued; J2319 and J2320 reopened.",
       "history": [
         {
           "at": "2026-11-07T15:32Z",
@@ -202397,9 +202397,24 @@
           "at": "2026-11-07T16:39Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Step 2/4: Rendered, decoded and visually inspected all 19/19 J2371 graphics (8 CODE MP4s, 5 ARGB overlays, 6 2.50s chapter cards) + £0 SFX kit onto studio-live NAS; all labels/timings/alpha/luma verified"
+        },
+        {
+          "at": "2026-11-07T16:50Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Pushed J2372 REVIEW.md and NAS verification manifests to main (7268178178); PR #643 and PR #644 merged"
+        },
+        {
+          "at": "2026-11-07T16:50Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Marked 034 picture done, queued 034 long assembly, and reopened J2319 and J2320"
+        },
+        {
+          "at": "2026-11-07T16:50Z",
+          "by": "gemini",
+          "what": "done: PASS: 034 Pluto on-disk picture + graphics package verified on studio-live NAS (67/67 harvest_v01 plates SHA-256 matched, 9 native clips decoded, 0 banned IDs, <=2 uses, 7/7 CODE->CODE gaps separated by native motion, 0 Orbit/Omni, 19/19 graphics_v03 + Short 2 opener + £0 pluto_score_bed_v01.mp3 + kit_v01); PR #643 and PR #644 merged; 034 picture marked done; 034 long assembly queued; J2319 and J2320 reopened."
         }
       ],
-      "remaining_action": "Merge PRs #643 and #644, mark 034 picture done, and release 034 assembly + Shorts J2319-J2320",
+      "remaining_action": "Complete J2372 and report on OWB thread",
       "kind": "chief",
       "plain": "Check the harvested plates and rendered graphics against the locked shot list before any assembly",
       "rerouted_from": {
@@ -202412,15 +202427,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-07T16:39Z",
+        "at": "2026-11-07T16:50Z",
         "by": "gemini",
-        "note": "Step 2/4: Rendered, decoded and visually inspected all 19/19 J2371 graphics (8 CODE MP4s, 5 ARGB overlays, 6 2.50s chapt"
+        "note": "Marked 034 picture done, queued 034 long assembly, and reopened J2319 and J2320"
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "7268178178"
     },
     {
       "id": "J2373",
@@ -202540,6 +202556,91 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J2376",
+      "title": "034 Pluto: assemble 74-row long master v01 from locked SHOT_LIST_v01 + £0 score bed/SFX + gates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble the 74-row 034 Pluto long master v01 (646.94 s, 1920x1080 30 fps CFR) from /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/:\n- Locked shot list: 07_Edit-Project/SHOT_LIST_v01.csv + SHOT_LIST_v01.json (J2368 PASS, PR #626)\n- Harvested plates + native clips (67/67): 07_Edit-Project/harvest_v01/matched/ (J2370 + J2372 PASS)\n- Full-frame CODE graphics (8), QTRLE/ARGB overlays (5), and chapter cards (6): 07_Edit-Project/graphics_v03/ (J2371 + J2372 PASS)\n- Locked VO master: 04_Voiceover/vo_master/pluto_vo_master_v01.mp3 + pluto_vo_words_v01.json (628.82 s)\n- £0 score bed: 05_Music/pluto_score_bed_v01.mp3 (646.94 s, 66.7 BPM, music_gate PASS)\n- £0 house SFX kit: 06_Sound-Effects/kit_v01/ (rumble_low, whoosh_soft, tick_ui)\n\nRun and pass all gates before Chief perceptual review:\n1. python3 00_Brand/Channel-Setup/tools/clip_check.py\n2. python3 scripts/picture_qa.py\n3. python3 scripts/music_gate.py\n4. python3 scripts/sfx_kit.py level\n5.Integrated loudness ~-14 LUFS, true peak <= -1.0 dBTP, 30 fps CFR, 0 black frames. Spend £0.",
+      "ref": "jobs/reviews/J2372/REVIEW.md",
+      "film": "034",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-07T16:54Z",
+      "eta": "2026-11-07T18:54Z",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T16:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T16:50Z",
+          "by": "gemini",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-07T16:54Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T16:54Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed J2376. Disk 5.6 GB free; nas_offload moving one 48h scratch folder. Paths in the brief differ from the live folder names."
+        },
+        {
+          "at": "2026-11-07T17:00Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: clip_check PASS on 74 rows. VO is 02_Voiceover/pluto_frozen_heart_vo_v03 plus the offset word file, not 04_Voiceover. Graphics on disk match the shot list names."
+        },
+        {
+          "at": "2026-11-07T17:04Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: tmux j2376-assemble rendering. About 50 of 131 cuts done. Log ~/_desk/logs/j2376-assemble.log"
+        },
+        {
+          "at": "2026-11-07T17:11Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Picture and mix are done. Master is about -14.5 LUFS and -1.0 dBTP before the gate pass. tmux j2376-assemble is in the gates."
+        },
+        {
+          "at": "2026-11-07T17:16Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: First picture gate failed 99 jitter rows. Stills are being re-rendered static, and dark clips are lifted. tmux j2376-assemble."
+        },
+        {
+          "at": "2026-11-07T17:21Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Static re-render reached mix. 131 cuts logged. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. No .done file yet."
+        },
+        {
+          "at": "2026-11-07T17:24Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Master muxed at 226 MB. picture_qa is running on the static re-render. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log."
+        },
+        {
+          "at": "2026-11-07T17:32Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Static pass cut picture fails from 111 to 15. Jitter and black frames are gone. A fix pass is re-rendering those cuts in tmux j2376-assemble."
+        }
+      ],
+      "remaining_action": "Re-render the 15 picture-gate failures, then mix quieter and run the gates again",
+      "due": "2026-12-13T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Assemble the full 034 Pluto long video from the approved plates, graphics, voiceover, music and sound effects",
+      "progress": {
+        "step": 3,
+        "of": 5,
+        "at": "2026-11-07T17:32Z",
+        "by": "cursor",
+        "note": "Static pass cut picture fails from 111 to 15. Jitter and black frames are gone. A fix pass is re-rendering those cuts in"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     }
   ],
   "focus": [
