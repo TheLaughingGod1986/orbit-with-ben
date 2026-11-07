@@ -202575,18 +202575,23 @@
           "at": "2026-11-07T16:54Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed J2376. Disk 5.6 GB free; nas_offload moving one 48h scratch folder. Paths in the brief differ from the live folder names."
+        },
+        {
+          "at": "2026-11-07T17:00Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: clip_check PASS on 74 rows. VO is 02_Voiceover/pluto_frozen_heart_vo_v03 plus the offset word file, not 04_Voiceover. Graphics on disk match the shot list names."
         }
       ],
-      "remaining_action": "Inventory 034 shot list, harvest, graphics, voice and score on studio-live",
+      "remaining_action": "Write the 034 master assembler and check every row resolves to a real plate or graphic",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 034 Pluto long video from the approved plates, graphics, voiceover, music and sound effects",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-07T16:54Z",
+        "at": "2026-11-07T17:00Z",
         "by": "cursor",
-        "note": "Claimed J2376. Disk 5.6 GB free; nas_offload moving one 48h scratch folder. Paths in the brief differ from the live fold"
+        "note": "clip_check PASS on 74 rows. VO is 02_Voiceover/pluto_frozen_heart_vo_v03 plus the offset word file, not 04_Voiceover. Gr"
       },
       "taskKeys": [
         "OWB:034"
