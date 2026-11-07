@@ -190022,13 +190022,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-06T23:53Z",
-      "eta": "2026-11-07T01:53Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:45Z",
-      "result": "",
+      "result": "FIX (OWB PR #599, jobs/reviews/J2234/REVIEW.md, e814f9e8b): Phase 1 KEEP (with minor scope addition for WIP.json and 07_Content-Ops TS registries); Phases 2, 3, and 4 FIX. Top 3 points: (1) Phase 3 private studio repo + cross-repo git transactions: making studio private breaks unauthenticated browser raw.githubusercontent.com board/tracker reads on Ben's phone and burns the 2,000 free private GitHub Actions min/month on jobs.py pushes, while jobs.py + studio.py must decouple single-commit queue.json + status.json writes before Phase 3; (2) Phase 3 cut-over & split-brain prevention: shims in orbit-with-ben/scripts/ must os.chdir(STUDIO_REPO)+os.execv (with orbit-with-ben/jobs/queue.json removed/read-only), board_publish.py should dual-push board-data for 7 days, and all 7 Mini launchd plists + MacBook multi-slot checkouts + BOARD_GH_TOKEN + Codex allow-list follow the 7-step runbook with <60s 1-command Undos; (3) Phase 4 core_sync.py misconception: studio-core/CORE_FILES.json locks 55 shared channel production/audio/publishing files (07_Content-Ops, 04_Audio/tools, gate_shorts_open.py), not engine scripts, so core_sync.py cannot be retired unless those 55 tools also move to studio.",
       "history": [
         {
           "at": "2026-11-05T17:45Z",
@@ -190054,6 +190054,11 @@
           "at": "2026-11-07T00:00Z",
           "by": "macbook-2",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-07T00:04Z",
+          "by": "macbook-2",
+          "what": "done: FIX (OWB PR #599, jobs/reviews/J2234/REVIEW.md, e814f9e8b): Phase 1 KEEP (with minor scope addition for WIP.json and 07_Content-Ops TS registries); Phases 2, 3, and 4 FIX. Top 3 points: (1) Phase 3 private studio repo + cross-repo git transactions: making studio private breaks unauthenticated browser raw.githubusercontent.com board/tracker reads on Ben's phone and burns the 2,000 free private GitHub Actions min/month on jobs.py pushes, while jobs.py + studio.py must decouple single-commit queue.json + status.json writes before Phase 3; (2) Phase 3 cut-over & split-brain prevention: shims in orbit-with-ben/scripts/ must os.chdir(STUDIO_REPO)+os.execv (with orbit-with-ben/jobs/queue.json removed/read-only), board_publish.py should dual-push board-data for 7 days, and all 7 Mini launchd plists + MacBook multi-slot checkouts + BOARD_GH_TOKEN + Codex allow-list follow the 7-step runbook with <60s 1-command Undos; (3) Phase 4 core_sync.py misconception: studio-core/CORE_FILES.json locks 55 shared channel production/audio/publishing files (07_Content-Ops, 04_Audio/tools, gate_shorts_open.py), not engine scripts, so core_sync.py cannot be retired unless those 55 tools also move to studio."
         }
       ],
       "remaining_action": "Write jobs/reviews/J2234/REVIEW.md, open PR on macbook/J2234, return to main, and close J2234",
@@ -190072,7 +190077,8 @@
         "of": 3,
         "at": "2026-11-07T00:00Z",
         "by": "macbook-2"
-      }
+      },
+      "done_ref": "e814f9e8b"
     },
     {
       "id": "J2235",
