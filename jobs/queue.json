@@ -1,5 +1,5 @@
 {
-  "next_id": 2344,
+  "next_id": 2345,
   "jobs": [
     {
       "id": "J0001",
@@ -198474,6 +198474,35 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J2344",
+      "title": "034 Pluto: one v05 pickup with separated Real Worlds boundary",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2343 elected-Chief scope: read jobs/reviews/J2343/REVIEW.md in full.\nParent J2157 remains unfinished. Use new script master v03, not v02 line 110.\nMake exactly one Chapter 6 sentence pickup from PICKUP_TEXT.txt (under 500 text\ncharacters), with new v05_request stem through vo_take.py, dry-run, desk-lock,\nlive balance and ledger safeguards. No other take, changed words, settings or\nphonetic spelling. All earlier media and Chapter 5 crop stay untouched.\nRun Scribe/decode/levels and report word discrepancies without aggregate-score\nwaivers. Do not crop or splice a master. Queue an immediate dependent qa job\nrequiring audio_input to listen to the exact hashed new request, at most twice,\nand report plural/indeterminate and full-sentence integrity. That review queues\none elected-Chief ruling before J2157 crop/master work resumes. If generation\nfails, no second request: report FIX and queue the Chief ruling directly.\nKeep British pronunciation; the long-ee vowel in geysers is not itself an error.\nNo VO PASS, shot-list release or Ben intermediate approval. Deliver hashes,\ntranscript, levels and exact spend as a PR; the audio-review handoff is part of\nyour completion, so the next action is ready immediately.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/616",
+      "film": "034",
+      "stage": "vo",
+      "after": "J2343",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T04:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T04:35Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Generate one capped final-sentence pickup, then queue demonstrated audio-input review",
+      "kind": "vo",
+      "plain": "Record the revised Pluto closing sentence once and arrange a listening check."
     }
   ],
   "focus": [
