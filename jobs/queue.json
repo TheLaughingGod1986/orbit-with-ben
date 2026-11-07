@@ -184099,9 +184099,14 @@
           "at": "2026-11-07T02:34Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-07T07:05:00Z"
+        },
+        {
+          "at": "2026-11-07T03:12Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T07:05:00Z"
         }
       ],
-      "remaining_action": "Await J2335 sentence repairs and corrected evidence, then Chief VO ruling before releasing the shot list",
+      "remaining_action": "Await the bounded pickup repair and final voice ruling before the shot list",
       "kind": "vo",
       "urgent": 1,
       "progress": {
@@ -184116,11 +184121,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2325 Chief ruling FIX: original hashes verified and bf751c1e3f exists remotely, but VO remains unapproved. Await J2335 bounded Ch5/Ch6 exact-script sentence pickups, corrected PR604 evidence, then its linked elected-Chief final VO ruling. PR604 tail-envelope numbers contradict original PCM; claimed direct listening is not accepted as conclusive. Preserve v01; no shot-list release. J2335 is eligible immediately; this timestamp is only a dependency verification checkpoint.",
-        "check_at": "2026-11-07T07:05:00Z",
-        "last_recheck": "J2325",
-        "checked_at": "2026-11-07T02:34:10+00:00",
-        "checked_by": "codex"
+        "condition": "J2336 FIX: pickup tail failure independently reproduced; v01 hashes intact. Await J2337 bounded recovery/context-backed pickups and linked final elected-Chief ruling. No VO approval or shot-list release. J2337 is eligible now; checkpoint is not a delayed start.",
+        "check_at": "2026-11-07T07:05:00Z"
       }
     },
     {
