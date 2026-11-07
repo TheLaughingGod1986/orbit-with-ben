@@ -198254,10 +198254,10 @@
       "stage": "vo",
       "after": "J2340",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T04:13Z",
+      "eta": "2026-11-07T04:58Z",
       "created_by": "cursor",
       "created_at": "2026-11-07T04:10Z",
       "result": "",
@@ -198266,11 +198266,24 @@
           "at": "2026-11-07T04:10Z",
           "by": "cursor",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T04:13Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rule on J2340 FIX. Leave J2157 unfinished and do not release the shot list.",
       "kind": "chief",
-      "plain": "Decide what happens after Pluto's narration still does not say Worlds."
+      "plain": "Decide what happens after Pluto's narration still does not say Worlds.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T04:13Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
