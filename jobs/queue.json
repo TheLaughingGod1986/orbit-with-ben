@@ -77509,13 +77509,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-07T02:13Z",
-      "eta": "2026-11-07T04:13Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:18Z",
-      "result": "Reopened by J2224 (jobs/reviews/J2224/REVIEW.md) under Rule H FIX: build hos_008_short_A_v04.mp4 (£0, existing approved HOS 008 KEEP plates only) by replacing row s06 (15.76-19.52s, currently duplicate 13_key_ribbon_t1.mp4 offset 4.10s that fails picture_qa.py) with approved Part 4 storm-shed key/ribbon plate 04_Generated-Clips/part04/raw/v01/09_charge_string_c1_t1.mp4 (sha256 611e2633, in_s 0.60s; or 09_charge_string_t1.mp4 sha256 e2045b36, in_s 0.60s), keeping all other 7 rows, timings, locked VO 40ed4c4e, NEVER HIT IT hook, PHILADELPHIA · 1752 overlay (2.7-6.2s), 9-14s title, bed, SFX, and -14.0±0.5 LUFS mix unchanged; run all 5 gates (gate_shorts_open, polish_gate, picture_qa, music_gate, sfx_kit level -> all PASS), stage v04 on Mini+NAS, post on HOS Desk #180, and block 'parked for Chief: Short PASS' (no upload).",
+      "result": "parked for Chief: Short PASS. HOS 008 Short A v04 sha 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d, 23.300s, five gates PASS. Desk #180 6700907911. Branch cursor/j0912-short-a-v04 fd440eb4. No upload.",
       "history": [
         {
           "at": "2026-10-24T18:18Z",
@@ -77701,6 +77701,11 @@
           "at": "2026-11-07T02:18Z",
           "by": "cursor",
           "what": "step 4 of 4 done: v04 sha 76d801a3. All five gates PASS. Desk 6700907911. Branch cursor/j0912-short-a-v04 commit fd440eb4. No upload."
+        },
+        {
+          "at": "2026-11-07T02:18Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Short PASS. HOS 008 Short A v04 sha 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d, 23.300s, five gates PASS. Desk #180 6700907911. Branch cursor/j0912-short-a-v04 fd440eb4. No upload."
         }
       ],
       "kind": "assembly",

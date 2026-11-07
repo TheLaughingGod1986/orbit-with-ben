@@ -18,7 +18,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0862 | mini | blocked | codex | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
-| J0912 | mini | claimed | cursor | 2026-11-07T04:13Z | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0958 | mini | blocked | codex | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
