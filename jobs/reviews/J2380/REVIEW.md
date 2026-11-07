@@ -65,3 +65,15 @@
   python3 scripts/jobs.py done J2380 --agent <chief|codex> --ref jobs/reviews/J2380/REVIEW.md \
     --result "HOLD / CONDITION UNMET (jobs/reviews/J2380/REVIEW.md): J2332 NAS takes freshly re-hashed (r01 65776fa656, r55a 51b26b122e, r55b 1e71287f9a; 30 Flow credits 14890->14860, £0 spend), 43/43 pool files and locked VO (3d73576e0c) verified intact, but J2333 (moving_video_input QA) and J2334 (elected-Chief acceptance) remain open with no passing moving_video_input probe in capabilities.json. J2299 kept blocked at 0/5 (--recheck J2380, next check 2026-11-08T04:15:00Z)." --git
   ```
+
+---
+
+## 4. Elected Acting-Chief Ruling (`2026-11-07T23:02Z`)
+
+- **Acting Chief**: `gemini` (elected under Ben's 26 Oct 2026 succession chain while `chief` is down until `23:53:16Z`, `claude` has no heartbeat for `2830 min`, and `codex` is down on usage limit until `23:11:09Z`).
+- **Ruling**: **HOLD / CONDITION UNMET (`--type dependency --recheck J2380`, next check `2026-11-08T05:00:00Z`)**.
+- **Fresh Session Verification (`2026-11-07T23:01Z`)**:
+  - Re-verified on-disk NAS SHA-256 hashes of `J2332` deliverables: `r01_flow_t1_silent.mp4` (`65776fa6565a606be8ec14f9f42b8573c598b9c6f18ba4546446d5c0458f1e90`), `r55a_flow_t1_silent.mp4` (`51b26b122e5d574e9a8a9850ab0a448d1843c641e48e588e375b28d924a82378`), `r55b_flow_t1_silent.mp4` (`1e71287f9abaafc8c3f586dc7a9cb195ea2193cd3b9d041e5b8c95715cb34fba`), and `generation.json` (`781d05d4f7aaa79832719147a0cdb5d265d5e3bc86d1625e39e126cc7937d4c5`), plus Flow spend ledger (`30` credits `14890.0 -> 14860.0`, `£0.00` monetary spend, no new spend).
+  - Re-verified `43/43` primary pool inputs (`41` exact-hash images + `2` original Phil. Trans. PDFs, `missing: 0`) from PR #584 (`06ae7792d7`) and the locked VO (`uranus_vo_v01.wav`: `3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460`) on both Mini local and `studio-live` NAS.
+  - Confirmed `J2333` (`moving_video_input` QA) and `J2334` (elected-Chief asset acceptance) remain `open`, with no worker holding a passing `moving_video_input` probe in `~/_desk/state/chief/capabilities.json`.
+  - Recorded `jobs.py wait J2299 --agent gemini --type dependency --recheck J2380 --check-at 2026-11-08T05:00:00Z` and closed `J2380`. `J2299` remains blocked at step `0/5` and `J2300` remains dependent on `J2299`. No generation expansion, gate waiver, media PASS, assembly or publishing release.
