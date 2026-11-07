@@ -1,5 +1,5 @@
 {
-  "next_id": 2319,
+  "next_id": 2320,
   "jobs": [
     {
       "id": "J0001",
@@ -196383,6 +196383,36 @@
       "due": "2026-12-19T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Uranus Short (22-27s question Short from the locked VO and graphics) and run the Shorts quality checks"
+    },
+    {
+      "id": "J2319",
+      "title": "034 Pluto Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Mon 21 Dec 11:30 London; no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# 034 Pluto Short 1 (Test A Opening Short) — Build & Gate Brief\n\n- **Parent film:** `034_Why-Plutos-Frozen-Heart-Has-Zero-Craters` (*Why Pluto's Frozen Heart Has Zero Craters*, airs **Sun 13 Dec 2026 18:00 London**)\n- **Spec doc:** `02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/10_Shorts/SHORTS_PLAN_v01.md` (§3 `034_short01_testA_opening`)\n- **Format:** Test A Opening Short (`SHORTS_TESTS.md` + `LEARNINGS.md` #17: first 30–38 s of the long master reframed to 9:16, ending on the central question the long answers)\n- **Spend:** **£0** (reuses locked `034` VO from `J2157`, `034` house music bed, house SFX kit, and `034` cold-open plates/code graphics; zero new paid generation)\n- **Upload rule:** **No upload in this build job.** Build, run all tool gates, and hand to `kind: review` (then `jobs.py awaits` for Ben's phone watch).\n\n## Target Air Slot\n- **Path A (Default · zero reschedule of existing `UPLOADS.json` IDs):** **Mon 21 Dec 2026 11:30 Europe/London (`2026-12-21T11:30:00Z`)**\n- **Path B (Chief Swap Option · earlier slot if Chief shifts `028` 5th lift `f17XCtUmN-g` or `031` uses Path B):** **Sat 19 Dec 2026 11:30 London** (or **Wed 16 Dec 2026 11:30 London**)\n\n## Locked Spec\n- **On-screen (`9.0–13.5 s`) & listing title:** **What Did New Horizons Discover Inside Pluto's Frozen Heart?** (alt: *Why Does Pluto's Frozen Heart Have Zero Impact Craters?*)\n- **Frame-0 hook caption (`0.00–2.00 s`):** `ZERO **CRATERS**` (yellow word `CRATERS`, distinct from standalone Short `gmzaCfJF1gA`'s `NO **CRATERS**`)\n- **Frame-0 picture (`0.00 s`):** Native moving New Horizons LORRI/MVIC low-angle aerial sweep across Sputnik Planitia's polygonal nitrogen-ice cells (`PIA19857` / `PIA20016` / `PIA19952` northern cellular plain crop — distinct from standalone Short `gmzaCfJF1gA`'s full-disc `PIA19708` frame 0). No Orbit at frame 0, cover, or end frame.\n- **Spoken VO lift (`034` VO master from `J2157`, Cold Open sentences 1–3 + central question per `LEARNINGS.md` #17):**\n  - *\"On 14 July 2015, when NASA's New Horizons spacecraft flew within twelve thousand five hundred kilometers of Pluto, what did its cameras reveal inside the dwarf planet's bright heart-shaped basin? Across the vast nitrogen-ice plains of Sputnik Planitia, scientists counted zero detectable impact craters. In a rugged Kuiper Belt battered by four billion years of comet impacts, that smooth basin cannot be more than ten million years old… What is erasing the craters inside Pluto's frozen heart?\"* (`~83 spoken words`, pause-trimmed to **`33.5–36.5 s`** inside the `30–38 s` Test A window, cut cleanly on sentence end).\n- **Single Teach overlay (`15.0–18.8 s`, inside 16:9 centre band, `11–12%` height, clear of `0–2 s` and `9–14 s` title):** `DATA: ZERO IMPACT CRATERS (≤ 10 MILLION YRS OLD)`.\n- **`OWB-2026-11-E1` Pacing Locks:** `Cut 1 <= 2.8 s`, `Cut 2 <= 4.8 s`, moving frame 0, visual surprise `<= 1.5 s`, zero spoken CTA / meta-promise, loop tail `< 1.2 s`.\n\n## Required Tool Gates (Must PASS + Paste Output)\n1. `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <short1.mp4> --air-date 2026-12-21`\n2. `python3 scripts/picture_qa.py <short1.mp4> --cuts <cuts.json> --pool <pool.json> --out-dir <qa_dir>`\n3. `python3 scripts/polish_gate.py <short1.mp4>`\n4. `python3 scripts/sfx_kit.py level --vo <vo_stem> --sfx <sfx_stem> --bed <bed_stem> --minutes 0.6`\n5. `python3 00_Brand/Channel-Setup/tools/thumb_preview.py short <cover.jpg> --out <preview.jpg>`\n",
+      "ref": "J2223",
+      "film": "034",
+      "stage": "edit",
+      "after": "J2157",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-07T00:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T00:07Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble 034 Pluto Short 1 (Test A opening lift 0.00-35s after 034 VO and long picture) and run all Shorts gates",
+      "due": "2026-12-21T10:30:00Z",
+      "kind": "assembly",
+      "plain": "Build the first Pluto Short (Test A opening lift from the long film's cold open) and run the Shorts quality checks"
     }
   ],
   "focus": [
