@@ -202635,6 +202635,11 @@
           "at": "2026-11-07T17:34Z",
           "by": "cursor",
           "what": "released: Detached fix pass is running. Do not start a second assemble. tmux session j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. Done file ~/_desk/logs/j2376-assemble.done. Missing done file means it is still mixing and gating. Present: read the exit code and the log. Static pass: picture fails 111 to 15, jitter gone, black frames gone, loudness -14.5 LUFS / -1.0 dBTP. This pass relights the flat plates, crops the seam and letterbox, grains two graphics, and ducks the bed. £0."
+        },
+        {
+          "at": "2026-11-07T17:35Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Let the detached mix and picture, music and sound gates finish",
@@ -202650,7 +202655,16 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [
