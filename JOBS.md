@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2330 | any | open | – | – | review · Verify condition for J2309 |  |
 | J2333 | mini | open (after J2332) | – | – | 033 picture · for gemini · qa · `gemini-argon` · 033: watch R01 and R55 fallback motion against J2306 scope | J2306; PR610 |
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |
-| J2339 | mini | open | – | – | 008 edit · qa · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
+| J2339 | mini | open | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2346 | mini | open | – | – | 032 picture · qa · 032 R23: review fixed connector fade draft | 9a7e183aa8 |
 | J2348 | any | open | – | – | 034 vo · chief · 034 Pluto: elected Chief rules on J2157 v03 master reconciliation and full VO PASS | 0a378694ae |
 
