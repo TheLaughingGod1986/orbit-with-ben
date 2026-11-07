@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2317 | mini | open (after J2300) | – | – | 033 edit · assembly · 033 Uranus Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Fri 18 Dec 11:30 London; no upload) | J2223 |
 | J2318 | mini | open (after J2300) | – | – | 033 edit · assembly · 033 Uranus Short 2 (Keeper question): build 22-27s Ch 5/6 cut + gates (slot Sat 19 Dec 11:30 London; no upload) | J2223 |
 | J2319 | mini | open (after J2157) | – | – | 034 edit · assembly · 034 Pluto Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Mon 21 Dec 11:30 London; no upload) | J2223 |
+| J2320 | mini | open (after J2157) | – | – | 034 edit · assembly · 034 Pluto Short 2 (Keeper question): build 22-27s Charon/water-ice cut + gates (slot Wed 23 Dec 11:30 London; no upload) | J2223 |
 
 Recently finished:
 
