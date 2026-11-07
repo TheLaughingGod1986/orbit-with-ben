@@ -1,3 +1,44 @@
+## MacBook continuation — 7 Nov, R25 altitude comparison
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py belts` / `belt_graphics.py` and two distinct transparent
+1920×1080 / 25 fps renders in `CODE_BELTS_v01.json`:
+
+- R25 normal reference, 248.72–251.12 s: shared-zero altitude ruler with
+  approximate 600 km radiation reference. Number appears on spoken 600 cue
+  at 250.12 s; its one-second window needs composite readability review.
+- R25 dip/comparison, 259.18–264.74 s: reference drops from 600 to 200 km;
+  200 label begins at 261.019 s. ISS reference at approximately 400 km
+  appears on “half” at 262.72 s. Equal altitude increments use equal ruler
+  distances; 200 is exactly half 400. The animation is explanatory, not a
+  measured radiation profile, time series, global geometry or core model.
+
+Both use locked SOURCES row 10 without rewriting scientific claims or VO.
+The complete radiation-belt/core-patch scene and real intervening footage
+remain unfinished. Each overlay needs a graded moving real plate and subject
+clearance; no drawn flat-disc Earth or sourced simulation was admitted.
+Labels contain at most four words and animate in/out; no caption lasts four
+seconds. Two overlays have separate filenames; existing files are refused.
+
+Media/contact sheet: `/Users/ben/_desk/J2141-belts-macbook-v01/`.
+`CODE_BELTS_TECHNICAL_CHECK_v01.json` records both matching SHA-256 hashes,
+1920×1080, 25 fps, argb alpha, expected 60/139 frames and durations, and full
+error-free ffmpeg decode. Three static samples per render/contact sheet
+inspected; preview navy is not the composite. No KEEP, PASS, watch/listen,
+finished scene or film-stage completion claimed.
+
+Reproduce: `/usr/bin/python3 .../code_graphics.py belts --out <fresh-dir>
+--manifest <new-json>`. Validation script retained at
+`/Users/ben/_desk/J2141-check-belts.py`. Both foreground processes finished;
+no render remains running. £0 spend; no archive investigation, budget reset,
+NAS write/deletion, HOS change, publishing, social or sign-in action.
+
+The full harvest, remaining physical mechanisms/progressive timeline,
+R41 fallback and composites/full gates exceed one 25-minute run. Release
+J2141 at this checkpoint, preserving all earlier work and existing asset-ID /
+sourced-map-simulation conflicts for Chief reconciliation.
+
 ## MacBook continuation — 7 Nov, comparison/evidence recovery
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue remains
