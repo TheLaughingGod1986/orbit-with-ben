@@ -189414,9 +189414,14 @@
           "at": "2026-11-07T01:34Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Audited hos_008_short_A_v03.mp4 (f88315e0) & Desk #180 6661680750: open/polish/music/sfx PASS, picture_qa FAIL on s06 (15.76-19.52s) reuse of 8s 13_key_ribbon_t1.mp4. Verified approved HOS 008 KEEP storm-key plates 09_charge_string_c1_t1.mp4 (611e2633) and 09_charge_string_t1.mp4 (e2045b36) on Mini+NAS pass polish_gate & picture_qa with 0 fails."
+        },
+        {
+          "at": "2026-11-07T01:46Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Verified hos_008_short_A_v03.mp4 (f88315e0) 1 Hz frames/gates and approved HOS 008 KEEP replacement plates 09_charge_string_c1_t1.mp4 (611e2633) and 09_charge_string_t1.mp4 (e2045b36); prepared jobs/reviews/J2224/REVIEW.md"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2224/REVIEW.md with FIX decision and exact S06 plate replacement recipe, then reopen J0912 via jobs.with_git",
+      "remaining_action": "Apply Rule H FIX via jobs.with_git: commit jobs/reviews/J2224/REVIEW.md, reopen J0912 with S06 replacement recipe, and close J2224",
       "kind": "review",
       "review_of": "J0912",
       "rerouted_from": {
@@ -189429,11 +189434,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-07T01:34Z",
+        "at": "2026-11-07T01:46Z",
         "by": "gemini",
-        "note": "Audited hos_008_short_A_v03.mp4 (f88315e0) & Desk #180 6661680750: open/polish/music/sfx PASS, picture_qa FAIL on s06 (1"
+        "note": "Verified hos_008_short_A_v03.mp4 (f88315e0) 1 Hz frames/gates and approved HOS 008 KEEP replacement plates 09_charge_str"
       },
       "taskKeys": [
         "HOS:008"
