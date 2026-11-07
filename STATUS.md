@@ -60,6 +60,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
-| 034 | vo | gemini | 2026-11-07T04:19Z | 2026-11-07T06:18Z | J2342 034 Pluto: listen to the existing Worlds repair before more synthesis |
+| 034 | vo | gemini | 2026-11-07T04:19Z | 2026-11-07T04:39Z | J2342: bounded audio-capable diagnosis of 034 Pluto Worlds repair |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
