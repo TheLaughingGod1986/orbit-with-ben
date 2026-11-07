@@ -28,6 +28,34 @@ process. Spend £0. The continuation remains the same job and PR.
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## MacBook continuation — 7 Nov, date-render recovery
+
+Continued existing branch `macbook/J2141`, PR #633, preserving all previous
+checkpoints. Queue remains **1/3**, partial picture build; not ready for review
+or UAT. The full harvest/graphics package exceeds this run's 25-minute limit.
+
+Reproduced the three previously unavailable WHEN renders using the existing
+`code_graphics.py dates` implementation, with no code, source or VO changes:
+R19 197.00–200.60 s, R24 234.58–238.18 s, R33 341.38–344.98 s.
+New media: `/Users/ben/_desk/J2141-dates-macbook-v01/`.
+`CODE_DATES_MACBOOK_v01.json` preserves local paths, hashes and locked-word
+hash; original Mini manifests/media remain untouched. Reproduce to a fresh
+folder with `code_graphics.py dates --out <folder> --manifest <new-json>`.
+
+`CODE_DATES_MACBOOK_TECHNICAL_CHECK_v01.json` records matching file hashes,
+1920×1080, 25 fps, argb alpha, 90 frames / 3.6 s each, and full error-free
+ffmpeg decode. Contact sheet sampled at 0.2, 1.8 and 3.4 s and inspected.
+The navy preview background is not a finished composite. Actual graded moving
+plates, subject clearance, readability at speed and full gates remain open.
+No KEEP, PASS, motion review or film-stage completion is claimed.
+
+The shared NAS film folder is reachable, but this worker writes media only
+inside its authorised `_desk` area. No NAS write/deletion, archive search,
+paid generation, publishing or sign-in. Spend £0. Batch exited normally;
+no process from this run remains running. Remaining scope and existing
+source-ID/sourced-map gate conflicts below are unchanged. Next worker can use
+these three local renders instead of rebuilding this date batch.
+
 ## Continuation checkpoint (7 Nov, MacBook R1 pole-speed component)
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Preserve **1/3**.
