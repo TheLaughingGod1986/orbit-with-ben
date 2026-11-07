@@ -1,5 +1,5 @@
 {
-  "next_id": 2321,
+  "next_id": 2322,
   "jobs": [
     {
       "id": "J0001",
@@ -196530,6 +196530,40 @@
       "due": "2026-12-23T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Pluto Short (22-27s question Short on Charon's locked sky or Pluto's water-ice mountains) and run the Shorts quality checks"
+    },
+    {
+      "id": "J2321",
+      "title": "OWB 029: resolve J2309 v05 E1 failures using actual media",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Repair review for J2309, not film approval. Evidence LOCAL ONLY: /private/tmp/J2309-resume/jobs/reviews/J2309/RESUME_REVIEW.md, commit7d221d0dbb on local codex/J2309-local-recut. Evidence-branch push rejected by automatic approval review; do not retry or export payload without authorization. Read local report and HANDOFF. Do not duplicate render. Review existing v05 with demonstrated audio_input and moving_video_input; resolve subject coverage, native motion, Keeper first question, word count and remaining E1 fields before another render. Recorded words/media only; no padding, spend or generation. Preserve original v04, title, slot and manifests. Return concrete repair plan or exact input conflict to J2309. No upload, schedule, privacy, retitle, Buffer or UAT/final-watch release.",
+      "ref": "J2309",
+      "film": "029",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T00:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T00:20Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review existing v05 and specify a compliant recorded-media repair",
+      "due": "2026-12-08T20:00:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Check the Betelgeuse Short and resolve its opening, wording and length conflicts."
     }
   ],
   "focus": [
