@@ -184177,9 +184177,14 @@
           "at": "2026-11-07T03:12Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-07T07:05:00Z"
+        },
+        {
+          "at": "2026-11-07T04:00Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T12:00:00Z"
         }
       ],
-      "remaining_action": "Await the bounded pickup repair and final voice ruling before the shot list",
+      "remaining_action": "Resolve Chapter 6 through J2340 and obtain final voice ruling",
       "kind": "vo",
       "urgent": 1,
       "progress": {
@@ -184194,8 +184199,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2336 FIX: pickup tail failure independently reproduced; v01 hashes intact. Await J2337 bounded recovery/context-backed pickups and linked final elected-Chief ruling. No VO approval or shot-list release. J2337 is eligible now; checkpoint is not a delayed start.",
-        "check_at": "2026-11-07T07:05:00Z"
+        "condition": "J2338 FIX: Worlds remains unverified. J2340 is eligible immediately for independent ASR then one bounded lead-in/context repair if needed; final elected-Chief ruling and all master checks required before VO approval or shot list.",
+        "check_at": "2026-11-07T12:00:00Z"
       }
     },
     {
