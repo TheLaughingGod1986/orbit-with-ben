@@ -1,3 +1,48 @@
+## MacBook continuation — 7 Nov, R16 / R17 / R52 dynamo plates
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py dynamo` / `dynamo_graphics.py` and three full-frame
+1920×1080 / 25 fps plates in `CODE_DYNAMO_v01.json`:
+
+- R16 align, 159.32–168.76 s (236 frames, 9.44 s), on "Most of the time".
+  Schematic current loops scramble, then line up. Labels follow the locked
+  words: IRON CURRENTS, LINED UP, NORTH POLE, SOUTH POLE. It ends in the gap
+  before "However", so the NASA SVS fluid clip still owns that line. An 8 s
+  cut would have split "south pole". SOURCES row 6. Not a geodynamo model
+  and not a replacement for the SVS clip.
+- R17 tip, 172.68–187.00 s (358 frames, 14.32 s), on "Swirling eddies",
+  through the end of "over." Red eddies grow against the aligned flow, the
+  dipole weakens and wobbles, then the N mark turns to the bottom. Labels
+  are consecutive locked words: SWIRLING EDDIES, MAIN FLOW, BACKWARDS
+  EDDIES, FIELD WEAKENS, WOBBLES, ALL THE WAY OVER. The long row is one
+  plate because the shot list gives the whole row to this graphic; the
+  picture keeps moving (beads, eddies, then the turn).
+- R52 settle, 544.00–546.40 s (60 frames, 2.40 s), on "settled", through
+  "south." Loops settle in the reversed stack and a compass needle locks
+  toward S. Labels SETTLED and COMPASS SOUTH. This starts after the existing
+  generations overlay (534.68–537.92 s). SOURCES row 18. No new number.
+
+Navy grid mean luma on the encoded samples is about 39–40. Grain is the
+encoder's `noise=alls=2`. No new archive search, no paid generation, £0.
+Static contact sheet inspected. No motion, composite, KEEP, PASS or stage
+approval.
+
+Media: `/Users/ben/_desk/J2141-dynamo-v01/` (three mp4s, previews,
+`CONTACT_v01.jpg`). `CODE_DYNAMO_TECHNICAL_CHECK_v01.json` records SHA-256
+matches, 1920×1080, 25 fps, yuv420p, 236/358/60 frames and full error-free
+decodes. Reproduce into a fresh directory (existing files are refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py dynamo --out <fresh-dir> --manifest <new-json>
+```
+
+No render remains running. Still unfinished: the wider licensed harvest,
+the matuyama map, the SAA strength graphic, the poles map, the aurora,
+the progressive timeline, the R41 atmosphere fallback, composites and the
+picture gates. Existing asset-ID and sourced-simulation conflicts stay
+with Chief.
+
 ## MacBook continuation — 7 Nov, R27 Hubble SAA tally
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays

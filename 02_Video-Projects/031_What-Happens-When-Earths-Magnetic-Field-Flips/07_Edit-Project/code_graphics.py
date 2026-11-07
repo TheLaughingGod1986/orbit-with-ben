@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='dynamo':
+  from dynamo_graphics import main as dynamo
+  return dynamo(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='hubble_saa':
   from hubble_saa_graphics import main as hubble_saa
   return hubble_saa(sys.argv[2:])
