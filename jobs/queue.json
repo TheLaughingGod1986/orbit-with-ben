@@ -199873,9 +199873,14 @@
           "at": "2026-11-07T09:02Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J2353; starting shot-list build for OWB 034 Pluto from v03 VO and word timestamps"
+        },
+        {
+          "at": "2026-11-07T09:05Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Inspected J2352 VO PASS, script v03, SOURCES.md, J2157_VO_REVIEW_v03.md, and 033 exemplar shot list"
         }
       ],
-      "remaining_action": "Inspect J2352 review, 034 script v03, v03 word timestamps, SOURCES.md, and exemplar OWB shot lists",
+      "remaining_action": "Parse v03 stt_raw.json word timestamps and align all sentences and chapter boundaries of pluto_frozen_heart_vo_v03 (616.160s)",
       "kind": "review",
       "plain": "Plan each Pluto scene, educational overlay, music cue and sound effect to match the approved narration.",
       "rerouted_from": {
@@ -199888,11 +199893,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-07T09:02Z",
+        "at": "2026-11-07T09:05Z",
         "by": "gemini",
-        "note": "Claimed J2353; starting shot-list build for OWB 034 Pluto from v03 VO and word timestamps"
+        "note": "Inspected J2352 VO PASS, script v03, SOURCES.md, J2157_VO_REVIEW_v03.md, and 033 exemplar shot list"
       },
       "taskKeys": [
         "OWB:034"
