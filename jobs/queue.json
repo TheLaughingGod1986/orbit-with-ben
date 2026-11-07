@@ -199824,7 +199824,7 @@
     {
       "id": "J2354",
       "title": "Verify condition for J2319",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2319: 034 Short 1 picture inputs are not on disk. Checked 2026-11-07T08:26Z: 10_Shorts/SHORTS_PLAN_v01.md absent; 03_Picture, 05_Music, 06_Sound-Effects and 09_Rough-Cut absent; 04_Generated-Clips has no media; no mp4 in the film folder. J2353 shot list is open and its brief forbids assembly until that shot list is reviewed. VO v03 is present and matches sha256 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685. The brief's quoted cold open is not the v03 transcript (words.srt starts Across Pluto's horizon). Resume only when a reviewed shot list, cold-open plates, the zero-craters graphic and the house music bed are on disk, and cut only from pluto_frozen_heart_vo_v03.wav.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2319 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -199844,13 +199844,27 @@
           "at": "2026-11-07T08:27Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T08:27Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 1952 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Verify readiness: Wait for the reviewed Pluto shot list, cold-open plates, graphic and music, then cut Short 1 from the locked v03 voice-over",
       "kind": "review",
       "recheck_of": "J2319",
       "due": "2026-11-07T09:27:29+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     }
   ],
   "focus": [

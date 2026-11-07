@@ -99,7 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2350 | mini | open (after J2324) | – | – | chief · Review corrected HOS desk PR450 after J2324 repair | J1809 |
 | J2351 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1809 |  |
 | J2353 | mini | open (after J2352) | – | – | 034 shots · for cursor · review · `cursor-claude-opus-5-5` · 034 Pluto: shot list from approved v03 VO | jobs/reviews/J2352/REVIEW.md |
-| J2354 | any | open | – | – | review · Verify condition for J2319 |  |
+| J2354 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Verify condition for J2319 |  |
 
 Recently finished:
 
