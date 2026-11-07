@@ -201799,10 +201799,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-07T15:00Z",
-      "eta": "2026-11-07T17:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-07T14:52Z",
       "result": "",
@@ -201816,6 +201816,11 @@
           "at": "2026-11-07T15:00Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T15:00Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-07T17:00:37Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Draft this week's dated-event Short script and slot for the Chief",
