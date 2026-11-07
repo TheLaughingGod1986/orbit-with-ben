@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2324 | mini | open | – | – | assembly · `gpt-6.1-sol` · Repair HOS desk PR450 restart, replay and handback defects | J1809 |
 | J2325 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2157 |  |
+| J2326 | any | open | – | – | review · Plan Dec Orbit long dates for 033 Uranus, 034 Pluto and 030 (cadence map only) |  |
 
 Recently finished:
 
