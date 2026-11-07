@@ -197564,9 +197564,14 @@
           "at": "2026-11-07T08:27Z",
           "by": "relay",
           "what": "condition verification queued: J2354"
+        },
+        {
+          "at": "2026-11-07T11:03Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-08T08:30:00Z"
         }
       ],
-      "remaining_action": "Wait for the reviewed Pluto shot list, cold-open plates, graphic and music, then cut Short 1 from the locked v03 voice-over",
+      "remaining_action": "Review Pluto shot list in J2359, deliver opening assets and reconcile the Test A cut plan before assembly",
       "due": "2026-12-21T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the first Pluto Short (Test A opening lift from the long film's cold open) and run the Shorts quality checks",
@@ -197582,9 +197587,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "034 Short 1 picture inputs are not on disk. Checked 2026-11-07T08:26Z: 10_Shorts/SHORTS_PLAN_v01.md absent; 03_Picture, 05_Music, 06_Sound-Effects and 09_Rough-Cut absent; 04_Generated-Clips has no media; no mp4 in the film folder. J2353 shot list is open and its brief forbids assembly until that shot list is reviewed. VO v03 is present and matches sha256 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685. The brief's quoted cold open is not the v03 transcript (words.srt starts Across Pluto's horizon). Resume only when a reviewed shot list, cold-open plates, the zero-craters graphic and the house music bed are on disk, and cut only from pluto_frozen_heart_vo_v03.wav.",
-        "check_at": "2026-11-07T09:27:29+00:00",
-        "recheck_task": "J2354"
+        "condition": "J2354 Chief ruling: CONDITION UNMET. J2353 delivered draft PR626 (50fa44c23e), still OPEN; J2359 owns review and production release. Shared 034 has no Short plan, production plates, rendered zero-craters graphic, music bed, SFX or long master. v03 WAV hash matches 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685. Reconcile obsolete J2319 opening prose and actual v03 Test A sentence-end timing (third sentence ends 38.820s, central question 65.160s) before assembly. Resume only with reviewed plan and verified on-disk assets/master. J2359 proceeds now and queues permitted production; no new spend or upload authorized. Evidence d3003ef644 jobs/reviews/J2354/CHIEF_RULING.md.",
+        "check_at": "2026-11-08T08:30:00Z",
+        "last_recheck": "J2354",
+        "checked_at": "2026-11-07T11:03:26+00:00",
+        "checked_by": "codex"
       }
     },
     {
