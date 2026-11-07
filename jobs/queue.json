@@ -1,5 +1,5 @@
 {
-  "next_id": 2350,
+  "next_id": 2351,
   "jobs": [
     {
       "id": "J0001",
@@ -199411,6 +199411,34 @@
       "taskKeys": [
         "OWB:033"
       ]
+    },
+    {
+      "id": "J2350",
+      "title": "Review corrected HOS desk PR450 after J2324 repair",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J2324 repaired PR450 at head 476f35d1b71baca02d188bdd97fba4ea7bb95253. Review source and jobs/reviews/J2324/REPAIR.md independently against J1809 FIX. Twenty isolated tests, Python compile and diff check pass. Decide merge only after code/system review and current elected-Chief check. J1809 remains blocked; if repair accepted, reopen original J1809 for classified inventory recovery and separately authorised idle-boundary refresh/control delivery+trusted ack with actual PID and loaded hash evidence. No historical replay or reset, no Cursor Chief authority, no media/publishing/spend approval. Do not merge or close desk PR180. No Ben action required.",
+      "ref": "J1809",
+      "film": "",
+      "stage": "",
+      "after": "J2324",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T07:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T07:34Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review PR450 corrected head and decide merge plus controlled watcher refresh",
+      "kind": "chief"
     }
   ],
   "focus": [
