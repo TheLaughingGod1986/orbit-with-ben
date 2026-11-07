@@ -84350,13 +84350,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-06T06:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-25T20:24Z",
-      "result": "Needs Ben own login: HOS Studio CDP 9460 pin save returns CHALLENGE_PROMPT_TYPE_AUTHENTICATE; fresh reload still offers Pin. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg must not be recreated. Reauthenticate then pin/read back. HOS evidence 8485623e, branch codex/J0958-pin-auth. No spend or other video changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T20:24Z",
@@ -84462,6 +84462,11 @@
           "at": "2026-11-06T06:32Z",
           "by": "codex",
           "what": "blocked: Needs Ben own login: HOS Studio CDP 9460 pin save returns CHALLENGE_PROMPT_TYPE_AUTHENTICATE; fresh reload still offers Pin. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg must not be recreated. Reauthenticate then pin/read back. HOS evidence 8485623e, branch codex/J0958-pin-auth. No spend or other video changes."
+        },
+        {
+          "at": "2026-11-07T08:06Z",
+          "by": "cursor",
+          "what": "rerouted to cursor on cursor-auto: Pin retry after Ben reauth: still CHALLENGE_PROMPT_TYPE_AUTHENTICATE; claiming to re-block with fresh evidence"
         }
       ],
       "kind": "studio",
@@ -84480,7 +84485,16 @@
         "type": "ben",
         "condition": "Needs Ben own login: HOS Studio CDP 9460 pin save returns CHALLENGE_PROMPT_TYPE_AUTHENTICATE; fresh reload still offers Pin. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg must not be recreated. Reauthenticate then pin/read back. HOS evidence 8485623e, branch codex/J0958-pin-auth. No spend or other video changes.",
         "check_at": "2026-11-06T12:32:33+00:00"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "blocked",
+        "by": "codex"
+      },
+      "for": "cursor",
+      "model": "cursor-auto"
     },
     {
       "id": "J0959",
