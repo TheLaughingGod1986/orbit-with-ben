@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2339 | mini | open | – | – | 008 edit · qa · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2345 | mini | claimed | gemini | 2026-11-07T07:48Z | 034 vo · for gemini · qa · `gemini-argon` · 034 Pluto: listen to the v05 Real Worlds pickup | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/617 |
 | J2346 | mini | open | – | – | 032 picture · qa · 032 R23: review fixed connector fade draft | 9a7e183aa8 |
+| J2347 | any | open (after J2345) | – | – | 034 vo · chief · 034 Pluto: elected Chief rules on J2345 listening review of v05 Real Worlds pickup | 11ccf897f3 |
 
 Recently finished:
 

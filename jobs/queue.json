@@ -1,5 +1,5 @@
 {
-  "next_id": 2347,
+  "next_id": 2348,
   "jobs": [
     {
       "id": "J0001",
@@ -198863,6 +198863,35 @@
         "moving_video_input"
       ],
       "plain": "Check the revised Titan landing graphic animation before it is used."
+    },
+    {
+      "id": "J2347",
+      "title": "034 Pluto: elected Chief rules on J2345 listening review of v05 Real Worlds pickup",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2345 completed the bounded zero-spend listening review of J2344's single v05 pickup (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/617) using demonstrated audio_input (Antigravity default_api:read_file returning native multimodal audio/mpeg and audio/wav attachments; recorded via chief_relay.py capabilities).\n\nHashes verified before and after listening and preserved untouched:\n- Target v05 WAV pluto_ch06_real_worlds_v05_request.wav: 10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23 (19.120 s)\n- Target v05 MP3 pluto_ch06_real_worlds_v05_request.mp3: a42c50355893f0b24a3e4d9280dfa329a79501f4dde7a39eddf690ddf7bfad88 (19.120 s)\n- Retained Chapter 5 crop pluto_ch05_looked_back_v03.wav: 4625cf1166cb13a4f09fe8163e82e8bd760eafee50f7212cac5c8e54982416de\n- Prior v04/v03 pickups and v01 master WAV/MP3: untouched\n\nListening findings (strictly 2 listens: Listen 1 on v05 MP3, Listen 2 on v05 WAV; spoken span 0.08-19.00 s):\n1. Worlds plural vs singular: CLEARLY PLURAL. Opening clause 'Next in our series Real Worlds,' spans 0.08-2.26 s (series 0.72-1.20 s, Real 1.38-1.60 s, Worlds, 1.68-2.26 s), followed by a 0.46 s comma pause (2.26-2.72 s) before 'we' (2.72-2.82 s). Placing 'series' before 'Real Worlds,' eliminated the /-ldz#s-/ sibilant collision; the final /-ldz/ plural cluster of 'Worlds' releases cleanly into the 460 ms pause.\n2. Full-sentence integrity: PASS / INTACT (42 of 42 script v03 words present in exact order at 0.08-19.00 s; nothing missing, repeated, stumbled, or added).\n3. Clarity of geysers: CLEAR AND NATURAL at 12.46-13.10 s (/ˈɡaɪzəz/, crisp initial /ɡ/, clear diphthong, voiced medial and final /z/ sibilants before 'on' at 13.20-13.28 s).\n\nEvidence: jobs/reviews/J2345/REVIEW.md (commit 11ccf897f3) and jobs/reviews/J2344/EVIDENCE.md (PR #617). No VO PASS, crop, splice, or spend was performed by J2345. Elected Chief to rule on PR #617 and J2345 evidence and release J2157 for final crop/master reconciliation, transcript, levels and chapter-tail verification. Nothing is on Ben.",
+      "ref": "11ccf897f3",
+      "film": "034",
+      "stage": "vo",
+      "after": "J2345",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T05:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T05:54Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule on J2344 (PR #617) and J2345 listening evidence (11ccf897f3) before J2157 crop/master reconciliation resumes",
+      "kind": "chief",
+      "plain": "Review the Pluto closing sentence listening check and decide whether the final voiceover assembly can proceed."
     }
   ],
   "focus": [
