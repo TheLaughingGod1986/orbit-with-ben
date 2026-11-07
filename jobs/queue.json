@@ -1,5 +1,5 @@
 {
-  "next_id": 2331,
+  "next_id": 2332,
   "jobs": [
     {
       "id": "J0001",
@@ -197329,6 +197329,36 @@
       ],
       "due": "2026-11-07T02:48:13+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2331",
+      "title": "032 R18: review composite candidate layout and source placement",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Parent J2089, original 1/4. Review local checkpoint 948a33770a in /private/tmp/codex-J2089. Read 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/J2089_R18_COMPOSITE_REVIEW_REQUEST_v01.md. Candidate media /Users/benjaminoats/_desk/cache/J2089/r18_composite_preview_v01. Inspect four full-size stills; KEEP/FIX this layout only, not film-stage PASS or source clearance. 108 frames decoded, polish 0 failures/warnings; 62 previous export hashes unchanged. No audio by design; still pan is not native motion. Rights/frame0/Huygens/APL and final gates preserved. Local integration only under inherited push restriction.",
+      "ref": "",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T01:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T01:52Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review Titan pebble composite stills and return KEEP or exact fixes",
+      "due": "2026-11-09T18:00:00Z",
+      "kind": "review",
+      "plain": "Review the pebble measurement preview before it enters the Titan edit."
     }
   ],
   "focus": [
