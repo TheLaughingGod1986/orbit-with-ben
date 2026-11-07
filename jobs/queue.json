@@ -199868,9 +199868,14 @@
           "at": "2026-11-07T09:01Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T09:02Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J2353; starting shot-list build for OWB 034 Pluto from v03 VO and word timestamps"
         }
       ],
-      "remaining_action": "Plan and review Pluto pictures against the approved narration",
+      "remaining_action": "Inspect J2352 review, 034 script v03, v03 word timestamps, SOURCES.md, and exemplar OWB shot lists",
       "kind": "review",
       "plain": "Plan each Pluto scene, educational overlay, music cue and sound effect to match the approved narration.",
       "rerouted_from": {
@@ -199884,12 +199889,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-07T09:01Z",
+        "of": 6,
+        "at": "2026-11-07T09:02Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2353; starting shot-list build for OWB 034 Pluto from v03 VO and word timestamps"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J2354",
