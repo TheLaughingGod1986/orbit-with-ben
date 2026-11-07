@@ -47,7 +47,7 @@ Standing rules (not dated): `AGENTS.md` → **Film folders on the NAS**, **How f
 
 ## Videos / calendar flags (dated)
 
-- Dashboard Videos chips are the live **3×3 nine lanes** (Backlog → … → Post-live), including **QA**, **Live**, and **Post-live**. Computed chips — Chief does not drag by date (`AGENTS.md` → **Videos tab**). Standing UI (In progress Working now / Waiting, smart `#videos` landing, Overview **See on Videos ›**): `AGENTS.md` → **Videos tab → Dashboard behaviours**.
+- Dashboard Videos chips are the live **3×3 nine lanes** (Backlog → … → Post-live), including **QA**, **Live**, and **Post-live**. Computed chips — Chief does not drag by date (`AGENTS.md` → **Videos tab**). Standing UI (claimed-over-QA, In progress Working now / Waiting, smart `#videos` landing, Overview **See on Videos ›**): `AGENTS.md` → **Videos tab → Dashboard behaviours**.
 - A Titan Short titled **"What Would Standing on Saturn's Moon Titan Feel Like?"** (**v11**) sits on **Tuesday 10 Nov 18:00** and was **not** uploaded; it is **not** a locked Orbit Short slot (those are Mon/Wed/Fri/Sat **11:30**). Flagged to Ben once; **do not move the date without him**.
 
 ---

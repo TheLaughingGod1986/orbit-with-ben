@@ -526,7 +526,7 @@ Never two Shorts on the same day.
 
 ### Ben vs agents
 
-**Ben only does UAT** (Pass → Passed; notes / Request changes → In progress). Every other Videos lane is agent-run. Chip movement, In progress Working now / Waiting, smart `#videos` landing, and Overview **See on Videos ›**: **Videos tab**.
+**Ben only does UAT** (Pass → Passed; notes / Request changes → In progress). Every other Videos lane is agent-run. Chip movement, claimed-over-QA, In progress Working now / Waiting, smart `#videos` landing, and Overview **See on Videos ›**: **Videos tab**.
 
 ## Stop and ask Ben
 
@@ -600,13 +600,15 @@ This is measurement only. It changes no spend rule.
 3. When the cut is ready for Ben, `jobs.py awaits` + a Playable file put it in **UAT**. Only Ben acts there.
 4. After Ben Passes, agents package and upload on the **Mini**, then set a real YouTube `publishAt` in a locked slot → **Scheduled** → **Live**, with leftover follow-ups → **Post-live**.
 
-**Dashboard behaviours (live on studio-kanban; `board_site/studio_app.js`, 7 Nov 2026).** These are standing UI rules, not lane membership changes.
+**Dashboard behaviours (live on studio-kanban; `board_site/studio_app.js`, 7 Nov 2026).** Standing UI rules for how Videos classifies and lists cuts.
 
-1. **In progress list split.** The **In progress** chip still holds every cut with a **LIVE** job (`open` / `claimed` / `blocked`) or pending UAT notes / Request changes. The *list* is partitioned only: **Working now** = a **claimed** job on the cut (`isWorking` / `activeJob`) — shown first, same green pulse (and optional 24h progress delta) as Overview → Working on now; **Waiting** = open / blocked / queued live work with **no** claim (next step recorded, no agent claimed yet). Sort (e.g. Nearest credible UAT) applies **within** each group. Claimed studio jobs that are not already on a video card sit with **Working now**. Chip counts and lane membership are unchanged.
+1. **In progress list split.** The **In progress** chip still holds every cut with a **LIVE** job (`open` / `claimed` / `blocked`) or pending UAT notes / Request changes. The *list* is partitioned only: **Working now** = a **claimed** job on the cut (`isWorking` / `activeJob`) — shown first, same green pulse (and optional 24h progress delta) as Overview → Working on now; **Waiting** = open / blocked / queued live work with **no** claim (next step recorded, no agent claimed yet). Sort (e.g. Nearest credible UAT) applies **within** each group. Claimed studio jobs that are not already on a video card sit with **Working now**. This split does not itself change chip counts.
 
 2. **Smart Videos landing.** Opening bare `#videos` (no `lane=`) lands on **UAT** if any cut `needsBenWatch`, otherwise **In progress**. Left alone: an explicit `#videos&lane=…`, a video detail `#v=…`, a Review route `#uat=…`, the producing view, or a lane chip already tapped this visit — so Ben's watch is not hidden when something needs him.
 
 3. **Overview → Videos jump.** Working-on-now film cards stay expandable. A separate **See on Videos ›** control goes to `#videos&lane=progress&focus=<parent film key>` (e.g. `OWB:034`). Shorts use the **parent film key only** (strip any YouTube id). The matching Videos row is scrolled and highlighted (`.is-focus`). The jump must not steal expand/collapse (separate control + `stopPropagation`).
+
+4. **Claimed work wins over QA.** `videoLane` classifies a cut as **In progress** when `isWorking` (a claimed job on the cut) *before* the QA check. A sibling open/blocked review, QA, or Chief job must not park that cut in QA. A claimed review itself is also In progress → Working now (green pulse), because an agent is on it. Unclaimed QA stays QA: open or blocked review/QA/Chief with no claim still goes to the QA lane, not Working now. This is why Videos → In progress → Working now can stay empty even when Overview shows focus films: Overview lists the current production set and pulses only claimed films; In progress Working now shows only claimed cuts.
 
 **Do not invent** a “Chief picks some cards into To do by date, then picks some into In progress” workflow — that is the misconception Ben asked about while looking at the 3×3 chips. Chief's job on Videos is to read the computed state, keep agents clearing agent lanes, and never park non-watch work on Ben.
 **Locked publish slots (cadence; unchanged):** weekly targets **2 Orbit longs + 4 Orbit Shorts**, **1 HOS long + 4 HOS Shorts**. Fill calendar gaps only with ready approved cuts, not placeholders. Never two Shorts on the same day.
