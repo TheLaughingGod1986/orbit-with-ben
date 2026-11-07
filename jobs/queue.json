@@ -202154,17 +202154,22 @@
           "at": "2026-11-07T15:41Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Plan: 1 inventory named assets, 2 download to studio-live, 3 write HARVEST_POOL with hashes and contact sheet, 4 check banned IDs and use counts."
+        },
+        {
+          "at": "2026-11-07T15:44Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Inventory: 67 evidence assets, 58 stills and 9 native clips. Banned list does not overlap. Use counts are at most 2. Frame 0 stays PIA20291. Media goes to studio-live because the Mini has 6.6 GB free."
         }
       ],
-      "remaining_action": "Read the locked 034 shot list and source evidence, then harvest only the named NASA plates",
+      "remaining_action": "Download the 67 named 034 plates onto studio-live and check each SHA-256",
       "kind": "assembly",
       "plain": "Download and provenance every £0 NASA/Commons still and native-motion clip named in the locked 034 shot list",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-07T15:41Z",
+        "at": "2026-11-07T15:44Z",
         "by": "cursor",
-        "note": "Claimed. Plan: 1 inventory named assets, 2 download to studio-live, 3 write HARVEST_POOL with hashes and contact sheet, "
+        "note": "Inventory: 67 evidence assets, 58 stills and 9 native clips. Banned list does not overlap. Use counts are at most 2. Fra"
       },
       "taskKeys": [
         "OWB:034"
