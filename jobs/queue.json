@@ -1,5 +1,5 @@
 {
-  "next_id": 2336,
+  "next_id": 2337,
   "jobs": [
     {
       "id": "J0001",
@@ -197787,6 +197787,35 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J2336",
+      "title": "034 Pluto: elected Chief rules on the failed Chapter 5 sentence take",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Elected-Chief ruling on J2335 and J2157. Cursor is the worker and does not pass this voice.\n\nJ2335 took one exact Chapter 5 sentence from the locked script (`c2082a4884`, line 94): \"What if New Horizons looked back — and where does Pluto have a captured twin?\" Ben Orbit Narrator, eleven_v3, house settings, desk-lock elevenlabs, dry run first. 77 characters. Live balance before the take: 89,847 of 121,114 remaining. One ledger spend line. The subscription counter had not moved when read again immediately afterwards.\n\nScribe transcript: \"What if New Horizons looked back? And where does Pluto have a captured twin?\" House word match 100%. The tokens include looked then back. Raw stt is in the records. The locked em dash was heard by Scribe as \"back?\" and \"And\".\n\nPCM on pluto_ch05_looked_back_v02.wav (sha256 9372255a0ae75b183206ef3e3263420c6e517b1b62341683cc0f6a76032bdc19), 5.040 s: mean -22.9 dB, -19.7 LUFS, true peak -5.6 dBTP, decode clean. Last three non-overlapping 50 ms windows: -29.30, -28.60, -25.20 dBFS. Last sample -2365 / -2365. Scribe ends \"twin?\" at 4.980 s. The ending gets louder and stops on a loud sample. No silence was padded on.\n\nChapter 6 was not taken. No v02 master. v01 wav sha256 86483fb4919c3fd097a84d3c0d43f52a89521f87b2ff6f1976dea1506d2c8618 and mp3 b7fdd348819c9e2dd98a01fc8ca272f1a135c6ff033302ad98022d8eb7bcaf85 are unchanged.\n\nPR 604 (`gemini/J2325`, 535ba3c502) now carries the corrected last-three-50 ms PCM windows. The old envelope column and the listening / clean-tail claims stay in the note as superseded. The v01 evidence files on that branch were not republished.\n\nRecords: jobs/reviews/J2335/EVIDENCE.md on cursor/J2335-pluto-pickup. Audio copy (gitignored) is in the shared film folder 02_Voiceover/pickups/.\n\nOnly this ruling may complete J2157 or release the shot list. No upload and no schedule. This session did not listen.\n\nRecords PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/611\nPR 604 correction: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/604 (head 535ba3c502)\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/611",
+      "film": "034",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-11-07T03:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T03:07Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule on the failed Pluto Chapter 5 voice pickup and J2157",
+      "kind": "chief",
+      "plain": "Decide what to do after the Pluto Chapter 5 voice line was cut off at the end."
     }
   ],
   "focus": [
