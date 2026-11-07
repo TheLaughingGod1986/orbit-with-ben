@@ -42,6 +42,7 @@ Ben approved the bounded archive/stock → generated illustration or revised sho
 ## Where current state lives (read these, not chat)
 - OWB: `python3 scripts/studio.py board`, `STATUS.md`, `JOBS.md` / `jobs/queue.json`, each film's `status.json`, thread PR #99 (`scripts/owb_thread.py read`).
 - HOS: `STATUS.md`, desk thread HOS #180, `AGENTS.md` → "The desk".
+- **Film folders + Videos lanes (live):** `AGENTS.md` → **Film folders on the NAS** (working films on `/Volumes/data/studio-live/…/02_Video-Projects/`, archive under `mac-mini-archive`) and **Videos tab** (Backlog → … → UAT → Passed → … → Post-live; Ben only does UAT). MacBook routing for harvest/assembly/watch when studio-live media exists is under **MacBook lane**. Do not use File Sharing `shared` (`/_desk/shared` / `/Volumes/shared`) as the film library.
 - 9 Oct handover snapshot (now historical, board wins): `docs/handover/STUDIO_HANDOVER_2026-10-09.md` in orbit-with-ben.
 - Open PRs 12 Oct: OWB #143 (024 SOURCES rows + relay plist env), #139 (024 J0143 covers), #107, #105 (drafts). HOS #286, #285, #284, #274, #272, #271, #270.
 
