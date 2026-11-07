@@ -200087,9 +200087,14 @@
           "at": "2026-11-07T08:54Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T08:55Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2356; starting verification of J2320 waiting condition for OWB 034 Short 2"
         }
       ],
-      "remaining_action": "Verify readiness: Await reviewed shot list, valid v03 Short lift and delivered Charon picture/music before build",
+      "remaining_action": "Inspect J2320, J2353, and 034 on-disk inputs to verify waiting condition",
       "kind": "review",
       "recheck_of": "J2320",
       "due": "2026-11-07T09:53:21+00:00",
@@ -200106,11 +200111,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-07T08:54Z",
+        "at": "2026-11-07T08:55Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2356; starting verification of J2320 waiting condition for OWB 034 Short 2"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     }
   ],
   "focus": [
