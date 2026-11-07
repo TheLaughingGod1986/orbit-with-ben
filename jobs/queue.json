@@ -199898,9 +199898,14 @@
           "at": "2026-11-07T09:38Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Caught and filtered out non-Pluto/annotated PIA IDs (PIA19958/PIA20728/PIA20006/PIA20010/PIA20545/PIA19695); querying clean New Horizons Pluto/Charon/Arrokoth pool"
+        },
+        {
+          "at": "2026-11-07T09:45Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Built 66-row shot_list_v01.csv from v03 Scribe word timestamps; clip_check.py PASS with 0 errors and 0 warnings across all 1,225 Scribe words"
         }
       ],
-      "remaining_action": "Verify clean unannotated New Horizons Pluto/Charon/Arrokoth asset pool and build SHOT_LIST_v01.md + shot_list_v01.csv",
+      "remaining_action": "Generate full SHOT_LIST_v01.md with provenance, Teach-on-Screen matrix, music brief, and SFX plan",
       "kind": "review",
       "plain": "Plan each Pluto scene, educational overlay, music cue and sound effect to match the approved narration.",
       "rerouted_from": {
@@ -199913,11 +199918,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-07T09:38Z",
+        "at": "2026-11-07T09:45Z",
         "by": "gemini",
-        "note": "Caught and filtered out non-Pluto/annotated PIA IDs (PIA19958/PIA20728/PIA20006/PIA20010/PIA20545/PIA19695); querying cl"
+        "note": "Built 66-row shot_list_v01.csv from v03 Scribe word timestamps; clip_check.py PASS with 0 errors and 0 warnings across a"
       },
       "taskKeys": [
         "OWB:034"
