@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2379 | mini | open | – | – | 032 edit · assembly · 032 Titan: assemble 52-row long master v01 (582.44 s) from SHOT_LIST_v08 + £0 score bed/SFX + gates | jobs/reviews/J2378/REVIEW.md |
+| J2380 | any | open | – | – | review · Verify condition for J2299 |  |
 
 Recently finished:
 

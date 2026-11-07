@@ -1,5 +1,5 @@
 {
-  "next_id": 2380,
+  "next_id": 2381,
   "jobs": [
     {
       "id": "J0001",
@@ -197212,6 +197212,11 @@
           "at": "2026-11-07T14:23Z",
           "by": "chief",
           "what": "condition recorded; next verification 2026-11-07T20:15:00Z"
+        },
+        {
+          "at": "2026-11-07T20:27Z",
+          "by": "relay",
+          "what": "condition verification queued: J2380"
         }
       ],
       "remaining_action": "Await video-capable J2333 QA and J2334 hash acceptance; then resume source and graphics corrections at 0/5",
@@ -197230,10 +197235,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2365 condition check (jobs/reviews/J2365/REVIEW.md): J2332 delivery freshly re-verified on NAS (r01_flow_t1_silent.mp4 65776fa656, r55a_flow_t1_silent.mp4 51b26b122e, r55b_flow_t1_silent.mp4 1e71287f9a; 30 Flow credits 14890->14860, £0 spend, no new spend), and 43/43 pool files + locked VO (3d73576e0c) verified intact on Mini and studio-live, but J2333 (moving_video_input QA) and J2334 (elected-Chief asset acceptance) remain open with no demonstrated moving_video_input worker in capabilities.json (Gemini 13:39Z probe passed audio_input 0.86, failed video). Keep J2299 at 0/5 until J2333/J2334 complete (R01 0-4.35s, R55 moving cloud plate after R54 chart, source corrections, 14 graphics, gates, locked VO and J2300 dependency preserved; no assembly release).",
-        "check_at": "2026-11-07T20:15:00Z",
+        "check_at": "2026-11-07T21:27:30+00:00",
         "last_recheck": "J2365",
         "checked_at": "2026-11-07T14:23:02+00:00",
-        "checked_by": "chief"
+        "checked_by": "chief",
+        "recheck_task": "J2380"
       },
       "escalated_at": "2026-11-07T00:04Z"
     },
@@ -203205,6 +203211,37 @@
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 032 Titan long video from the approved plates, composites, voiceover, music and sound effects"
+    },
+    {
+      "id": "J2380",
+      "title": "Verify condition for J2299",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2299: J2365 condition check (jobs/reviews/J2365/REVIEW.md): J2332 delivery freshly re-verified on NAS (r01_flow_t1_silent.mp4 65776fa656, r55a_flow_t1_silent.mp4 51b26b122e, r55b_flow_t1_silent.mp4 1e71287f9a; 30 Flow credits 14890->14860, £0 spend, no new spend), and 43/43 pool files + locked VO (3d73576e0c) verified intact on Mini and studio-live, but J2333 (moving_video_input QA) and J2334 (elected-Chief asset acceptance) remain open with no demonstrated moving_video_input worker in capabilities.json (Gemini 13:39Z probe passed audio_input 0.86, failed video). Keep J2299 at 0/5 until J2333/J2334 complete (R01 0-4.35s, R55 moving cloud plate after R54 chart, source corrections, 14 graphics, gates, locked VO and J2300 dependency preserved; no assembly release).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2299 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-07T20:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T20:27Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await video-capable J2333 QA and J2334 hash acceptance; then resume source and graphics corrections at 0/5",
+      "kind": "review",
+      "recheck_of": "J2299",
+      "due": "2026-11-07T21:27:30+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
