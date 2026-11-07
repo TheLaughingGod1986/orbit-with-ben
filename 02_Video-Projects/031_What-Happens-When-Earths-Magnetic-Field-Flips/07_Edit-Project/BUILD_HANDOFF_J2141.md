@@ -1,3 +1,44 @@
+## MacBook continuation — 7 Nov, comparison/evidence recovery
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue remains
+**1/3**: partial build, full verification not started. Reproduced eight existing
+Mini-only components with unchanged source code and locked-word inputs:
+
+- `CODE_COMPARISONS_MACBOOK_v01.json`: R30 recap (307.12–312.88 s),
+  R40 dipole-strength component (409.54–414.46 s), R44 qualitative duration
+  comparison (452.70–458.22 s). Media:
+  `/Users/ben/_desk/J2141-comparisons-macbook-v01/`.
+- `CODE_EVIDENCE_MACBOOK_v01.json`: R18 barcode (191.48–195.04 s),
+  R19 flip tally (199.10–202.38 s), R35 illustrative rings (362.10–373.06 s),
+  R42 mass column (427.04–433.60 s), R43 particle-stop schematic
+  (441.28–445.50 s). Media:
+  `/Users/ben/_desk/J2141-evidence-macbook-v01/`.
+
+Matching `*_MACBOOK_TECHNICAL_CHECK_v01.json` reports record all eight
+SHA-256 matches, 1920×1080, 25 fps, expected frame counts/durations (within
+half a frame), argb alpha or yuv420p as applicable, and full error-free ffmpeg
+decode. Three static samples per render and both contact sheets inspected.
+Fade samples are deliberately dim; they establish neither readability at speed
+nor subject clearance. Navy behind alpha is preview only. These reproduce the
+existing schematics, not new measured data; originals are untouched.
+
+Reproduce with `/usr/bin/python3 .../code_graphics.py comparisons` or
+`evidence`, each with `--out <fresh-directory> --manifest <new-json>`.
+Validation script: `/Users/ben/_desk/J2141-check-recovery.py`.
+The earlier availability audit is a dated snapshot, superseded for these eight
+files by these manifests; do not rebuild them again just because the original
+Mini paths are unavailable. Neither batch is a finished scene: moving graded
+plates, separators, actual playback/composition, R35 picture-change pacing and
+R44's short final-label readability still need assembly/review. No KEEP, PASS,
+watch/listen or film-stage completion is claimed.
+
+Both batches exited normally; no run process remains. £0 spent. No archive
+investigation or search-budget reset, NAS writes, HOS changes, publishing,
+social changes or sign-in. The full licensed harvest, remaining physical
+mechanisms/progressive timeline, R41 fallback and composites/full gates exceed
+one 25-minute run. Release this same job at the checkpoint; retain the existing
+source-ID and sourced-map/simulation conflicts for Chief reconciliation.
+
 ## Continuation checkpoint (7 Nov, MacBook media availability audit)
 
 Worker `macbook`; existing branch `macbook/J2141`, PR #633. Queue stays
