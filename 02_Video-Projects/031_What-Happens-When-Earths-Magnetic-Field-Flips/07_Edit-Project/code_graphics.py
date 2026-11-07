@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='extinction_check':
+  from extinction_graphics import main as extinction_check
+  return extinction_check(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='strata':
   from strata_graphics import main as strata
   return strata(sys.argv[2:])

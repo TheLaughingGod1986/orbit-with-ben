@@ -2,6 +2,43 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook R45 qualitative comparison)
+
+Worker `macbook`, same branch `macbook/J2141`, PR #633. Preserve **1/3**.
+Added `code_graphics.py extinction_check` / `extinction_graphics.py`: R45
+upper-right transparent relationship overlay, nominal 465.56–468.98 s,
+86 frames at 25 fps (3.44 s; half-frame rounding ends at 469.00 s, in the
+pause before the next word at 469.88 s). Labels: MAGNETIC REVERSALS /
+NO LINK / MASS EXTINCTIONS. This is a qualitative relationship component,
+not a measured reversal barcode or an extinction-event chronology. No
+invented event dates, counts, positions or statistical coefficient. The
+shot list's full event comparison is still unfinished.
+
+Source: existing SOURCES row 2; BGS reversals education page read live on
+7 Nov at https://geomag.bgs.ac.uk/education/reversals.html, section Is there
+any danger to life. Its reversal/extinction-pattern statement supports this
+component; no sourced chart copied and no spoken words changed.
+
+Media and six inspected static samples: `/Users/ben/_desk/J2141-extinction-v01/`.
+`CODE_EXTINCTION_v01.json` records source, locked-words hash, cue, media
+hash and reproduction data; `CODE_EXTINCTION_TECHNICAL_CHECK_v01.json`
+records matching SHA-256, 1920×1080, argb alpha, 25 fps, 86 frames and
+error-free full decode. First frame is transparent. Static contact sheet
+inspected: all labels fit. Navy is preview only. Composite over graded
+moving real picture with subject clearance and the existing lower-left
+FACT card; actual motion/readability/composite review remains required.
+No KEEP, Chief PASS or film-stage approval.
+
+Reproduce to a fresh media directory: `/usr/bin/python3 .../code_graphics.py
+extinction_check --out <fresh-dir> --manifest <new-json>`. Existing outputs
+are refused. No media in git, NAS changes, archive search, generation,
+publishing or social changes; spend £0. Render and checks finished, no
+process left running. Remaining wider harvest, physical mechanisms,
+progressive timeline, fallbacks/composites and full QA exceed this bounded
+run. Mini PR #575 has additional work absent from this branch; do not repeat
+its closed searches or assume its Mini-local media is available here.
+Release this job for continuation at 1/3, same PR #633.
+
 ## Continuation checkpoint (7 Nov, MacBook polarity stack)
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Remains **1/3**;
