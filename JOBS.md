@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2333 | mini | open (after J2332) | – | – | 033 picture · qa · 033: watch R01 and R55 fallback motion against J2306 scope | J2306; PR610 |
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |
 | J2337 | mini | claimed | cursor | 2026-11-07T05:15Z | 034 vo · vo · 034 Pluto: bounded context-backed Chapter 5 and 6 pickups after J2336 FIX | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/611 |
+| J2338 | any | open | – | – | 034 vo · chief · 034 Pluto: elected Chief rules on the J2337 context takes and J2157 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/613 |
 
 Recently finished:
 

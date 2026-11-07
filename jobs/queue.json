@@ -1,5 +1,5 @@
 {
-  "next_id": 2338,
+  "next_id": 2339,
   "jobs": [
     {
       "id": "J0001",
@@ -197933,6 +197933,35 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J2338",
+      "title": "034 Pluto: elected Chief rules on the J2337 context takes and J2157",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Elected-Chief ruling on the J2337 repair and on J2157. Cursor is the worker and does not pass this voice.\n\nEvidence: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/613 (`fdb139fe09`, `jobs/reviews/J2337/EVIDENCE.md`).\n\nThe original J2335 API MP3 (history `DndWsQKDtVqeMQ8IY0rq`, sha256 `da8f4aa97d66f0231beddc60f1775218edaec851a7d3ec103b90fc6530c2ca88`) decodes to the same 5.040 s PCM as the failed v02 WAV. No recovery without a new take.\n\nTwo context takes, 257 + 432 characters, one ledger line each. No retry. v01 hashes unchanged. Failed v02 WAV `9372255a…` unchanged. No v03 master.\n\nChapter 5: Scribe has `looked` then `back?`. Crop at 6.200 s sits on a flat −90 dBFS floor (sha256 `4625cf1166cb13a4f09fe8163e82e8bd760eafee50f7212cac5c8e54982416de`). Mean −22.9 dB, −19.6 LUFS, true peak −4.0 dBTP. Not spliced.\n\nChapter 6: Scribe has `world` (1.040–1.240 s, logprob −0.0098), not `Worlds`. The pause before the context sentence is long enough, and that does not repair the word. No Chapter 6 crop.\n\nJ2157 stays unfinished unless this ruling finds every remaining check passed. This worker does not find that. No upload, no schedule, no listening claim. Ben's finished-cut watch is the listening check.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/613",
+      "film": "034",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-11-07T03:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T03:25Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule on the J2337 Pluto takes and whether J2157 can close",
+      "kind": "chief",
+      "plain": "Decide whether the Pluto voice repair is good enough to move on to the shot list."
     }
   ],
   "focus": [
