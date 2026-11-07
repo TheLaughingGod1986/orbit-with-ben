@@ -198211,17 +198211,22 @@
           "at": "2026-11-07T04:03Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J2340. NAS offload had nothing old enough; 7.3 GB free. Starting independent ASR on the existing v03 request."
+        },
+        {
+          "at": "2026-11-07T04:07Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Whisper medium.en heard World singular on the full v03 request and on the 0.32-2.30s phrase. Plural not verified. One v04 context take is authorised, 577 characters, cap 900. Live balance 89490 remaining; about 231 of the last ledger spend is still unposted."
         }
       ],
-      "remaining_action": "Transcribe the existing Chapter 6 take with local Whisper before any new voice spend",
+      "remaining_action": "Make one Chapter 6 context take, then check the plural and the crop gaps",
       "kind": "vo",
       "plain": "Resolve the last uncertain word in the Pluto narration and verify the repaired voice.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-07T04:03Z",
+        "at": "2026-11-07T04:07Z",
         "by": "cursor",
-        "note": "Claimed J2340. NAS offload had nothing old enough; 7.3 GB free. Starting independent ASR on the existing v03 request."
+        "note": "Whisper medium.en heard World singular on the full v03 request and on the 0.32-2.30s phrase. Plural not verified. One v0"
       },
       "taskKeys": [
         "OWB:034"
