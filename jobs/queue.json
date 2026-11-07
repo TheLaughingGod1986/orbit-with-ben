@@ -195957,9 +195957,14 @@
           "at": "2026-11-07T07:05Z",
           "by": "relay",
           "what": "condition verification queued: J2349"
+        },
+        {
+          "at": "2026-11-07T07:52Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T13:15:00Z"
         }
       ],
-      "remaining_action": "Await reviewed replacement assets via J2332/J2333/J2334, then finish source corrections and graphics at 0/5",
+      "remaining_action": "Await video-capable J2333 QA and J2334 hash acceptance; then resume source and graphics corrections at 0/5",
       "kind": "assembly",
       "plain": "Fix mismatched Uranus pictures and provide the opening footage and graphics for review.",
       "progress": {
@@ -195974,12 +195979,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2306 Chief ruling recorded in merged PR610 / daa2f24bd92e: R01 revised to disclosed Flow world illustration (accepted 0-4.35s, not 6.22s); R55 moving cloud plate after R54 chart. Generation authorised ONLY in J2332, three takes/300 existing Flow credits maximum, no monetary spend. Await J2332 delivery -> J2333 demonstrated moving-video QA -> J2334 elected-Chief asset acceptance. J2334 must accept exact hashes before this parent reopens. Existing 0/5 plan, all source/graphics corrections and gates retained; J2300 remains dependent on J2299. This is a concrete asset dependency, no longer an undecided Chief fallback. No assembly release.",
-        "check_at": "2026-11-07T08:05:04+00:00",
-        "last_recheck": "J2306",
-        "checked_at": "2026-11-07T02:27:32+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2349"
+        "condition": "J2349 acting-Chief ruling: CONDITION UNMET. J2332 delivery is complete; ledger confirms three takes and 30 existing Flow credits (14890 to 14860), no new spend authorised. Gemini REVIEW.md records the three canonical hashes; this session read that evidence, not a fresh media or motion review. J2333 remains open for Gemini QA with required moving_video_input, but current registry has no demonstrated video-capable worker (Gemini video probe failed; Codex none). Relay must establish a passing video probe before J2333 watches the exact R01/R55 files; J2334 then records elected-Chief hash-specific acceptance. Keep J2299 at 0/5 until J2334 accepts. R01 accepted timing remains 0-4.35s, R55 moving cloud plate after R54 chart. All source corrections, 14 graphics, gates, locked VO and J2300 dependency preserved. No assembly release. Recheck capability/QA/acceptance at 13:15Z; begin QA immediately if capability becomes available sooner.",
+        "check_at": "2026-11-07T13:15:00Z",
+        "last_recheck": "J2349",
+        "checked_at": "2026-11-07T07:52:36+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-07T00:04Z"
     },
