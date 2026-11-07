@@ -97,7 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2319 | mini | open (after J2157) | – | – | 034 edit · assembly · 034 Pluto Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Mon 21 Dec 11:30 London; no upload) | J2223 |
 | J2320 | mini | open (after J2157) | – | – | 034 edit · assembly · 034 Pluto Short 2 (Keeper question): build 22-27s Charon/water-ice cut + gates (slot Wed 23 Dec 11:30 London; no upload) | J2223 |
 | J2321 | mini | open | – | – | 029 edit · review · OWB 029: resolve J2309 v05 E1 failures using actual media | J2309 |
-| J2322 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
+| J2322 | mini | claimed | gemini | 2026-11-07T02:23Z | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 
 Recently finished:
