@@ -197831,17 +197831,22 @@
           "at": "2026-11-07T03:10Z",
           "by": "codex",
           "what": "step 0 of 3 done: Codex elected Chief confirmed; no audio perception claimed. Review is of objective failure evidence, not listening."
+        },
+        {
+          "at": "2026-11-07T03:10Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Independently matched pickup SHA256 and PCM: -29.3023,-28.5975,-25.1976 dBFS; final stereo sample -2365. PR604 correction reviewed; no listening claim."
         }
       ],
-      "remaining_action": "Verify the failed pickup evidence, rule on the voice hold, and record a bounded next action",
+      "remaining_action": "Record FIX ruling and queue a bounded context-backed pickup repair",
       "kind": "chief",
       "plain": "Decide what to do after the Pluto Chapter 5 voice line was cut off at the end.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-07T03:10Z",
         "by": "codex",
-        "note": "Codex elected Chief confirmed; no audio perception claimed. Review is of objective failure evidence, not listening."
+        "note": "Independently matched pickup SHA256 and PCM: -29.3023,-28.5975,-25.1976 dBFS; final stereo sample -2365. PR604 correctio"
       },
       "taskKeys": [
         "OWB:034"
