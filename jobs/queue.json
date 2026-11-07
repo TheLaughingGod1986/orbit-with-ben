@@ -200729,9 +200729,14 @@
           "at": "2026-11-07T11:49Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2361; reading J2359 REVIEW.md, CHECKS.json and PR #626 branch"
+        },
+        {
+          "at": "2026-11-07T11:51Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Read J2359 REVIEW.md, CHECKS.json, NASA_EVIDENCE.json and PR #626 files; auditing sources and replacements"
         }
       ],
-      "remaining_action": "Audit J2359 review and PR #626 shot-list files for Pluto",
+      "remaining_action": "Audit all 034 source plates, replace DEMs/annotated PIA20589, and deduplicate reuse",
       "kind": "review",
       "plain": "Fix unsuitable source images, repeated plates and ending timings in the Pluto picture plan.",
       "rerouted_from": {
@@ -200744,11 +200749,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-07T11:49Z",
+        "at": "2026-11-07T11:51Z",
         "by": "gemini",
-        "note": "Claimed J2361; reading J2359 REVIEW.md, CHECKS.json and PR #626 branch"
+        "note": "Read J2359 REVIEW.md, CHECKS.json, NASA_EVIDENCE.json and PR #626 files; auditing sources and replacements"
       },
       "taskKeys": [
         "OWB:034"
