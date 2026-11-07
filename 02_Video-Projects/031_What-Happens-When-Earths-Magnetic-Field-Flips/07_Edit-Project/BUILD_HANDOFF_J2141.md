@@ -1,3 +1,26 @@
+## MacBook continuation — 7 Nov, PR #575 plate harvest recovery + 17 plate/composite renders verified
+
+Worker `macbook`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
+£0 spent. Full multi-agency moving harvest (NASA SVS magnetosphere/geodynamo/solar-wind clips, DSCOVR EPIC, NOAA seafloor/wildlife, Lascaux/swamp-kauri), Chief source/gate resolutions, and 54-row rough-cut assembly exceed this run's 25-minute limit; release for continuation.
+
+1. **Recovered all 24 remaining PR #575 plate harvest scripts, search logs and technical check manifests onto `macbook/J2141`:**
+   - Scripts: `build_r41_limb.py`, `composite_hubble.py`, `harvest_aurora.py`, `harvest_hubble.py`, `harvest_marine_fossil.py`, `harvest_sediment_core.py`, `harvest_solar.py`, `harvest_usgs_crust.py`, `harvest_usgs_lava.py`.
+   - Technical check & search JSONs: `CODE_TIMELINE_TECHNICAL_CHECK_v01.json`, `COMPOSITE_HUBBLE_TECHNICAL_CHECK_v01.json`, `HARVEST_AURORA_TECHNICAL_CHECK_v01.json`, `HARVEST_HUBBLE_TECHNICAL_CHECK_v01.json`, `HARVEST_R06_EDGE_SEARCH_v01.json`, `HARVEST_R07_CRUST_TECHNICAL_CHECK_v01.json`, `HARVEST_R08_TECHNICAL_CHECK_v01.json`, `HARVEST_R09_COLUMNAR_SEARCH_v01.json`, `HARVEST_R33_CORE_SEARCH_v01.json`, `HARVEST_R33_CORE_TECHNICAL_CHECK_v01.json`, `HARVEST_R41_TECHNICAL_CHECK_v02.json`, `HARVEST_R45_FOSSIL_SEARCH_v01.json`, `HARVEST_R45_FOSSIL_TECHNICAL_CHECK_v01.json`, `HARVEST_SOLAR_TECHNICAL_CHECK_v01.json`, `HARVEST_USGS_LAVA_TECHNICAL_CHECK_v01.json`.
+   - Consolidated `HARVEST_POOL_v01.json` (34 total assets, preserving all search checkpoints and top-level plate/composite manifests).
+2. **Downloaded and SHA-256 verified all 12 PR #575 source assets in `/Users/ben/_desk/J2141-plates-source-macbook-v01/`:**
+   - 12/12 exact SHA-256 matches against `HARVEST_POOL_v01.json`: `commons_usgs_fissure20_overflight`, `commons_usgs_kilauea_skylight`, `usgs_vesicular_basalt_side`, `noaa_oer_sediment_core_layers`, `nps_fobu_baculites_ammonite`, `iss042e267617`, `iss030e078095_aurora_timelapse`, `iss052e007857_aurora_timelapse`, `svs_12312_solar_prominence`, `svs_10929_x17_solar_flare`, `sts109_fr20_hubble_approach`, `sts109_fr35_hubble_release`.
+3. **Reproduced and verified all 17 harvested plates and row composites on MacBook (`verify_plates_macbook.py`, `HARVEST_PLATES_MACBOOK_v01.json`, `HARVEST_PLATES_MACBOOK_TECHNICAL_CHECK_v01.json`):**
+   - Output folder: `/Users/ben/_desk/J2141-plates-macbook-v01/` (contact sheet `CONTACT_PLATES_MACBOOK_v01.jpg`, SHA-256 `31d917a9974bdcfbc363ac58adf70f76629ccfa4468d236d7849658daa2e6165`).
+   - Verified 17/17 renders (1920×1080, 25 fps, no audio stream, exact duration, full error-free `ffmpeg -v error -xerror` decode, ITU-R BT.709 `mean_luma >= 28.0` and `p95_luma >= 50.0` across 5 sample frames per file, and `distinct_sample_frames = 5`):
+     - `plate_031_r06_lava_v01.mp4` (R6, 6.68 s), `plate_031_r07_crust_v01.mp4` (R7, 5.24 s), `plate_031_r08_specimen_v04.mp4` (R8, 6.96 s), `plate_031_r33_core_v01.mp4` (R33, 4.44 s), `plate_031_r45_fossil_v01.mp4` (R45, 6.60 s), `plate_031_r41_atmosphere_v02.mp4` (R41, 4.40 s),
+     - `plate_031_r04_aurora_v01.mp4` (R4, 3.44 s), `plate_031_r36_aurora_v01.mp4` (R36, 4.88 s), `plate_031_r50_aurora_v01.mp4` (R50, 4.00 s), `composite_031_r36_durations_v02.mp4` (R36, 4.88 s),
+     - `plate_031_r14_solar_v01.mp4` (R14, 2.44 s), `plate_031_r46_solar_v01.mp4` (R46, 2.36 s), `composite_031_r14_fact_v01.mp4` (R14, 2.44 s),
+     - `plate_031_r27_approach_v01.mp4` (R27, 4.00 s), `plate_031_r27_release_v03.mp4` (R27, 3.48 s), `composite_031_r27_orbits_v02.mp4` (R27, 4.32 s), `composite_031_r27_pause_v02.mp4` (R27, 4.28 s).
+4. **Updated `MEDIA_AVAILABILITY_MACBOOK_2026-11-07.json`:**
+   - 73 active renders across all `code_graphics` and PR #575 harvested plate/composite batches are now verified and reachable on MacBook / NAS.
+
+No audio/moving playback perception, KEEP, stage PASS or UAT readiness is claimed.
+
 ## MacBook continuation — 7 Nov, opening, field, sky and bodies graphics recovery + Apollo 17 Earth source
 
 Worker `macbook`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
