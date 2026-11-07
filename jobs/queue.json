@@ -182585,10 +182585,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-07T19:56Z",
-      "eta": "2026-11-07T21:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183982,6 +183982,11 @@
           "at": "2026-11-07T19:56Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T19:56Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-07T21:56:40Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Harvest NASA SVS magnetosphere/geodynamo/solar-wind & NOAA/USGS moving/still plates + build/verify 031 row plates",
