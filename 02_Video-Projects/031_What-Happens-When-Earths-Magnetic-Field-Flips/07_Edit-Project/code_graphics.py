@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='timeline':
+  from timeline_graphics import main as timeline
+  return timeline(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='grains-revised':
   from grain_revision_graphics import main as grains_revised
   return grains_revised(sys.argv[2:])

@@ -1,3 +1,42 @@
+## MacBook slot 2 continuation — 7 Nov, progressive timeline recovery
+
+Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
+£0 spent. Full harvest, remaining graphics/composites and film gates exceed
+this run's 25-minute limit; release for continuation, not completion.
+
+Integrated the unchanged `timeline_graphics.py` renderer from existing open
+PR #571, head `8ae3c85e09237709f87eedd74f0d2971968263df`, into this handoff
+branch. Added `code_graphics.py timeline` without removing existing modes.
+PR #571 remains open and untouched; no merge to main or approval is implied.
+Its original Mini media paths were not available here, so reproduced all five
+3.6-second alpha candidates locally rather than claiming those originals checked.
+
+`CODE_TIMELINE_MACBOOK_v01.json` records R5, R10, R20, R24 and R29, their
+locked v02a starts (36.14, 89.94, 209.10, 234.58 and 301.44 s), source rows,
+file paths and SHA-256. Dates accumulate in narrative order and occupy
+chronological positions, explicitly NOT TO SCALE. These historical dates do
+not replace separate geological-age graphics or add unsaid words to the VO.
+
+Media: `/Users/ben/_desk/J2141-timeline-macbook-v01/` (outside git).
+`verify_timeline_macbook.py` regenerated the technical report and contact sheet:
+all five hashes, 1920×1080 / 25 fps / argb, 3.6 s durations, exact locked date
+cues, full error-free decode, transparent initial frames and five static alpha
+bounds/sample checks passed. The static contact sheet was viewed. Preview
+navy is a viewing background only, not a finished plate. No playback/audio
+perception, KEEP, stage PASS, UAT readiness or full film QA is claimed.
+
+Compositor must replace overlapping standalone WHEN stamps in these windows,
+use graded moving real plates, and check subject clearance and legibility.
+Existing WHO/FACT cards stay separate. Historical timeline recovery does not
+resolve sourced-map/simulation gate conflicts or the wider harvest. Next
+bounded step: integrate/verify the other open J2141 harvest batches (including
+PR #572) without duplicating searches, then assign admissible moving plates
+and review row composites. Consult cumulative candidate/search logs first.
+
+No new archive search or budget reset, generation, NAS write/deletion, sign-in,
+YouTube or social change. All render/decode processes finished. Existing media
+and earlier branch work preserved; only this checkout was changed.
+
 ## MacBook slot 2 continuation — 7 Nov, R14 timestamp-free crop
 
 Worker `macbook-2`; same branch `macbook/J2141`, PR #633. Progress stays
