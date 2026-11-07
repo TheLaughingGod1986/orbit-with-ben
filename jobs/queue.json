@@ -202646,13 +202646,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-07T18:01Z",
-      "eta": "2026-11-07T20:01Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T16:50Z",
-      "result": "",
+      "result": "Assembled 034 Pluto 74-row long master v01 (646.94 s, 1920x1080 30 fps CFR, 244.9 MB, sha256 10ff89794493...) on studio-live NAS (09_Final-Export/034_pluto_frozen_heart_master_v01.mp4). All 5 gates PASS: clip_check PASS (74 rows), picture_qa PASS (0/131 fails), music_gate PASS (66.7 BPM), sfx_level PASS (VO -19.9 LUFS, SFX -46.6 LUFS), delivery -14.5 LUFS / -1.0 dBTP / 0 black frames. Spend £0. PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/646",
       "history": [
         {
           "at": "2026-11-07T16:50Z",
@@ -202738,6 +202738,11 @@
           "at": "2026-11-07T18:12Z",
           "by": "macbook",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-07T18:25Z",
+          "by": "macbook",
+          "what": "done: Assembled 034 Pluto 74-row long master v01 (646.94 s, 1920x1080 30 fps CFR, 244.9 MB, sha256 10ff89794493...) on studio-live NAS (09_Final-Export/034_pluto_frozen_heart_master_v01.mp4). All 5 gates PASS: clip_check PASS (74 rows), picture_qa PASS (0/131 fails), music_gate PASS (66.7 BPM), sfx_level PASS (VO -19.9 LUFS, SFX -46.6 LUFS), delivery -14.5 LUFS / -1.0 dBTP / 0 black frames. Spend £0. PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/646"
         }
       ],
       "remaining_action": "Remuxing 034 long master v01 and running all 5 gates (clip_check, picture_qa, music_gate, sfx_level, loudness/CFR/blackdetect)",
