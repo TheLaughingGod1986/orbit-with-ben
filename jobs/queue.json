@@ -200490,10 +200490,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-07T11:12Z",
+      "eta": "2026-11-07T13:12Z",
       "created_by": "codex",
       "created_at": "2026-11-07T11:07Z",
       "result": "",
@@ -200507,6 +200507,11 @@
           "at": "2026-11-07T11:09Z",
           "by": "relay",
           "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 2114 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
+        },
+        {
+          "at": "2026-11-07T11:12Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify exact recorded sentences and deliver the second Pluto Short plan for Chief approval",
@@ -200520,7 +200525,15 @@
         "by": ""
       },
       "for": "cursor",
-      "model": "cursor-claude-opus-5-5"
+      "model": "cursor-claude-opus-5-5",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T11:12Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
