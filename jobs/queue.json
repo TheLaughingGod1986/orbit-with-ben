@@ -201448,7 +201448,7 @@
     {
       "id": "J2358",
       "title": "Verify condition for J2339",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2339: Audio/speech/cadence/SFX/score-provenance QA (audio_input PASS 0.94 in capability_probe.py) and 23-frame 1-Hz sequence/caption/s06 continuity audit on hos_008_short_A_v04.mp4 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d) completed with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 comment 6703687627. Continuous 30fps moving_video_input remains unavailable in this session: capability_probe.py gemini --record failed video (truth left_to_right yellow>blue>red; answer left_to_right green>red>blue) and default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22) rather than 30fps continuous motion. Parent J0912 stays held.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2339 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -201468,6 +201468,11 @@
           "at": "2026-11-07T10:20Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T18:51Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 2578 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Complete continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3) with demonstrated moving_video_input and hand off to elected Chief",
@@ -201477,7 +201482,16 @@
         "moving_video_input"
       ],
       "due": "2026-11-07T11:20:09+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2359",
