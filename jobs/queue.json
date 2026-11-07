@@ -202362,9 +202362,14 @@
           "at": "2026-11-07T16:30Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T16:31Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2372; checking J2370 and J2371 completion and reading J2368 review + 034 shot list"
         }
       ],
-      "remaining_action": "PASS or FIX the J2370/J2371 picture package against SHOT_LIST_v01; release assembly only on PASS",
+      "remaining_action": "Verify J2370 harvest + J2371 graphics/chapter cards on disk against PR #626 plan and J2368 review",
       "kind": "chief",
       "plain": "Check the harvested plates and rendered graphics against the locked shot list before any assembly",
       "rerouted_from": {
@@ -202378,12 +202383,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-07T16:30Z",
+        "of": 4,
+        "at": "2026-11-07T16:31Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2372; checking J2370 and J2371 completion and reading J2368 review + 034 shot list"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J2373",
