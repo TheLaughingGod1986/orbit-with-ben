@@ -160437,18 +160437,22 @@
           "at": "2026-11-07T15:30Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T15:30Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J1809 after J2350 PASS. PR450 is merged. No recover yet. Disk 6.2 GB; NAS offload already running."
         }
       ],
-      "remaining_action": "J2324 repairs restart safety, historical replay and handback; elected Chief reviews corrected PR450 before refresh",
+      "remaining_action": "Classify historical desk IDs, then refresh the watcher only if it is idle",
       "kind": "assembly",
       "escalated_at": "2026-11-07T00:04Z",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-07T15:30Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J1809 after J2350 PASS. PR450 is merged. No recover yet. Disk 6.2 GB; NAS offload already running."
       }
     },
     {
