@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2373 | any | blocked | macbook-2 | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J2381 | mini | open (after J2141) | – | – | 031 edit · assembly · 031 Magnetic Field Flip: assemble 54-row long master v01 (568.28 s) from SHOT_LIST_v02 + £0 score bed/SFX + gates | ae085e857c |
+| J2381 | mini | claimed | gemini | 2026-11-08T01:08Z | 031 edit · assembly · 031 Magnetic Field Flip: assemble 54-row long master v01 (568.28 s) from SHOT_LIST_v02 + £0 score bed/SFX + gates | ae085e857c |
 
 Recently finished:
 

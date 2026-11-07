@@ -203517,10 +203517,10 @@
       "stage": "edit",
       "after": "J2141",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-07T23:08Z",
+      "eta": "2026-11-08T01:08Z",
       "created_by": "gemini",
       "created_at": "2026-11-07T22:55Z",
       "result": "",
@@ -203529,11 +203529,24 @@
           "at": "2026-11-07T22:55Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T23:08Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Assemble 54-row long master v01 and run clip_check, picture_qa, music_gate, and sfx_kit level",
       "kind": "assembly",
-      "plain": "Assemble the 9.5-minute Magnetic Field Flip video (031) from all 54 picture rows, voiceover, music, and sound effects"
+      "plain": "Assemble the 9.5-minute Magnetic Field Flip video (031) from all 54 picture rows, voiceover, music, and sound effects",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T23:08Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
