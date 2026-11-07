@@ -2,6 +2,36 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook R1 pole-speed component)
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Preserve **1/3**.
+Added `code_graphics.py pole_speed` / `pole_speed_graphics.py`: unique R1
+alpha overlay 4.52–8.32 s, 95 frames, 1920×1080 / 25 fps. Starts on the
+locked “north” cue; speed label enters at “racing” (6.00 s). Uses SOURCES
+row 1 and NOAA's wandering-poles page, read live 7 Nov. “UP TO 55 KM/YR”
+is the approved source-record figure, not a new claim about today's speed.
+No invented route, geographic coordinates or historical measurements.
+The line is an entrance accent, not a distance axis. This is only the label
+component: full poledrift globe/path, timeline and SCALE comparison remain
+unfinished. No locked narration changed.
+
+Media: `/Users/ben/_desk/J2141-pole-speed-v01/`. Manifest:
+`CODE_POLE_SPEED_v01.json`; technical report:
+`CODE_POLE_SPEED_TECHNICAL_CHECK_v01.json`. Matching SHA-256, dimensions,
+argb alpha, 25 fps, 95 frames, 3.8-second duration, transparent first frame
+and full error-free decode verified. Six static samples/contact sheet viewed.
+Text fits the frame. Navy is preview only; graded moving real imagery,
+subject clearance, actual playback/composite review and full QA remain
+required. No KEEP, PASS or film-stage approval. Existing outputs refused.
+Reproduce into a fresh directory using `/usr/bin/python3 .../code_graphics.py
+pole_speed --out <dir> --manifest <json>`.
+
+No archive candidates examined; existing search budgets, R41 limits and
+source/gate conflicts below remain unchanged. No NAS, HOS, publishing or
+social changes. Spend £0; no process remains running. Full harvest and
+remaining mechanisms/timeline/composites/gates exceed one 25-minute run;
+release J2141 at this clean checkpoint for continuation on the same PR.
+
 ## Continuation checkpoint (7 Nov, MacBook R32 ratio)
 
 Worker `macbook`, same branch `macbook/J2141`, PR #633. Preserve **1/3**.

@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=="pole_speed":
+  from pole_speed_graphics import main as pole_speed
+  return pole_speed(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=="paleo_ratio":
   from paleo_comparison_graphics import main as paleo_ratio
   return paleo_ratio(sys.argv[2:])
