@@ -14,6 +14,8 @@
   const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook", "macbook-2": "MacBook 2" };
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
   let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all";
+  // Videos lane: smart default once per visit unless Ben taps a chip or the hash names a lane (Ben, 7 Nov 2026).
+  let videosLaneChosen = false, videosLandingApplied = false;
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
   const MACBOOK = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/macbook-heartbeat/heartbeat.json";
   let macbook = null;  // the MacBook worker's own report (scripts/macbook_worker.py push_heartbeat), every 15 min
@@ -119,7 +121,9 @@
   }
   function jobCard(j) {
     const left = etaText(etaOf(j, Date.now())), p = j.progress && j.progress.of ? j.progress : null;
-    return `<a class="row" href="#agents"><div class="thumb job">${esc(j.id)}</div><div class="body"><b>${esc(clip(j.remaining_action || j.title, 90))}</b>
+    const working = j && j.status === "claimed";
+    const dot = working ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress"></span>` : "";
+    return `<a class="row${working ? " is-working" : ""}" href="#agents">${dot}<div class="thumb job">${esc(j.id)}</div><div class="body"><b>${esc(clip(j.remaining_action || j.title, 90))}</b>
       <span class="meta">${esc(j.plain || "Studio job · not one video")}</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(j.id)}</span>
       ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}</div><span class="chev">›</span></a>`;
   }
@@ -172,7 +176,8 @@
   const VIDEO_LANE_COPY = {
     backlog: { title: "Backlog", blurb: "Planned, not started yet." },
     todo: { title: "To do", blurb: "In the work mix · waiting for its next step. Agents own this — nothing for Ben." },
-    progress: { title: "In progress", blurb: "An agent is on it. UAT notes and fixes land here — not a Ben blocker." },
+    // Working-now vs waiting: claimed jobs surface first; open/blocked/queued stay in this lane (Ben, 7 Nov 2026).
+    progress: { title: "In progress", blurb: "Working now first (green pulse = a claimed job). Waiting and queued cuts stay below. UAT notes land here too — not a Ben blocker." },
     qa: { title: "QA", blurb: "Specialist review · not for Ben." },
     uat: { title: "UAT", blurb: "Ready for your watch. Pass → Passed (ready to schedule). Notes → In progress for the agents." },
     passed: { title: "Passed", blurb: "You passed it · ready to schedule. Agents finish the listing package and upload handoff." },
@@ -180,6 +185,73 @@
     live: { title: "Live", blurb: "Public." },
     postlive: { title: "Post-live", blurb: "Public · improvements still open (pins, Related, thumb tests). Agents own these." },
   };
+  // Same signal Overview uses for the green pulse: a claimed job on this cut (not open/blocked/waiting).
+  const videoHasActiveWork = v => isWorking(v);
+  function partitionProgressVideos(items) {
+    const working = [], waiting = [];
+    for (const v of items || []) {
+      if (videoHasActiveWork(v)) working.push(v);
+      else waiting.push(v);
+    }
+    return { working, waiting };
+  }
+  // Parent film key for progress24h lookup (Shorts share the long's film progress; never invent a %).
+  function videoFilmKey(v) {
+    const key = String((v && v.key) || "");
+    const m = /^([A-Z]+:\d{3})/.exec(key);
+    return m ? m[1] : key;
+  }
+  function videoProgressDelta(v, b) {
+    const p = b && b.progress24h;
+    if (!p) return null;
+    const filmKey = videoFilmKey(v);
+    if (!filmKey) return null;
+    const films = p24MergeFilms(p.films || [], p.moved || []);
+    const f = films.find(x => x.film === filmKey || x.film === v.key
+      || p24InFocus(v.key, new Set([x.film])) || p24InFocus(filmKey, new Set([x.film])));
+    return f ? p24FilmPct(f) : null;
+  }
+  // Hash params after the tab id: #videos&lane=progress&focus=OWB:034
+  function videosHashParams() {
+    const raw = (location.hash || "").replace(/^#/, "");
+    if (!raw || raw === "videos") return new URLSearchParams();
+    if (raw.startsWith("videos")) return new URLSearchParams(raw.slice("videos".length).replace(/^\?/, "").replace(/^&/, ""));
+    return new URLSearchParams();
+  }
+  function videosLaneFromHash() {
+    const lane = String(videosHashParams().get("lane") || "").toLowerCase();
+    return VIDEO_LANE_ORDER.includes(lane) ? lane : "";
+  }
+  function videosFocusFromHash() {
+    return String(videosHashParams().get("focus") || videosHashParams().get("film") || "").trim();
+  }
+  function videosJumpHref(filmKey) {
+    const key = String(filmKey || "").trim();
+    if (!key) return "#videos&lane=progress";
+    return `#videos&lane=progress&focus=${encodeURIComponent(key)}`;
+  }
+  function defaultVideosLane(b) {
+    const vs = uniqueVideos((((b || {}).tracker || {}).videos) || []);
+    if (vs.some(needsBenWatch)) return "uat";
+    return "progress";
+  }
+  // Apply once when Ben opens Videos with no lane in the hash and has not picked a chip this visit.
+  function ensureVideosLanding(b) {
+    if (current() !== "videos" || videoKey()) return;
+    if (routeView() === "producing") return;
+    const hashLane = videosLaneFromHash();
+    if (hashLane) {
+      seg = hashLane;
+      videosLaneChosen = true;
+      return;
+    }
+    if (videosLaneChosen || videosLandingApplied) return;
+    const tab = (location.hash || "").replace(/^#/, "").split("&")[0];
+    // Bare #videos, empty hash while on Videos, or #videos&… without lane.
+    if (tab && tab !== "videos") return;
+    seg = defaultVideosLane(b);
+    videosLandingApplied = true;
+  }
   function videoLane(v) {
     if (v.collapsed && isLive(v)) return null;
     if (isLive(v) && (v.jobs || []).some(LIVE)) return "postlive";
@@ -320,8 +392,16 @@
     };
   }
 
-  function row(v, extra, href) {
-    return `<a class="row" href="${href || detailLink(v)}">${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
+  function row(v, extra, href, opts) {
+    const working = !!(opts && opts.working);
+    const focusKey = videosFocusFromHash();
+    const filmKey = videoFilmKey(v);
+    const focused = !!(focusKey && (v.key === focusKey || filmKey === focusKey
+      || String(v.key || "").startsWith(focusKey + ":") || p24InFocus(v.key, new Set([focusKey]))));
+    const dot = working
+      ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress on this cut"></span>`
+      : "";
+    return `<a class="row${working ? " is-working" : ""}${focused ? " is-focus" : ""}" href="${href || detailLink(v)}" data-video-key="${esc(v.key)}" data-film-key="${esc(filmKey)}">${dot}${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
       <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
   }
   const jobTiles = j => `<div class="seg" aria-label="Job counts"><div><b>${j.working}</b><span>Running</span></div><div><b>${j.queued}</b><span>Queued</span></div><div><b>${j.held}</b><span>Waiting</span></div></div>`;
@@ -637,11 +717,17 @@
       return Number(bf.credible)-Number(af.credible) || (af.credible && bf.credible ? af.minutes-bf.minutes : 0);
     });
   }
-  function videoProductionRow(v, now) {
+  function videoProductionRow(v, now, b) {
     if (isLive(v)) return row(v, "");
     const historyOnly=forBen([v]).length || pendingChanges(v) || ['approved','done','changes'].includes(v.lane) || (v.youtube||{}).state==='scheduled';
     const scoped=unconfirmedCut(v), current=historyOnly?null:scoped?relatedStage(v):currentProduction(v)[0], f=forecastView(v,now);
-    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}</span>${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`);
+    const working = videoHasActiveWork(v);
+    // Film-level live delta from Overview's progress24h when this cut's parent film moved; never invent cut %s.
+    const pct = working ? videoProgressDelta(v, b || board) : null;
+    const delta = pct && pct.label && pct.from != null && pct.to != null && pct.from !== pct.to
+      ? `<span class="video-live-delta p24-delta${pct.down ? " down" : (pct.grew ? "" : " flat")}">${esc(pct.label)}</span>`
+      : "";
+    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}${working?' · <span class="working-word">Working now</span>':''}</span>${delta}${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`, null, { working });
   }
   // One set of selectors feeds Overview and its linked lists. Jobs never stand in for videos.
   function uniqueVideos(vs) {
@@ -1199,6 +1285,10 @@
     const n=items.length||(f.last?1:0)||(active&&jobs?1:0);
     const cls=`ov-card p24-film-card${active?' is-working':''}${pctInfo.grew?' is-grew':''}${!pctInfo.grew?' is-flat':''}`;
     const dot=active?`<span class="p24-working-dot" role="img" aria-label="A job is in progress on this film"></span>`:'';
+    // Explicit Videos jump — separate from expand/collapse (Ben, 7 Nov 2026).
+    // Parent film key only (OWB:029), never a Short's YouTube id suffix.
+    const jumpFilm = videoFilmKey({ key: f.film }) || f.film;
+    const jump=`<a class="p24-videos-jump" href="${esc(videosJumpHref(jumpFilm))}" data-videos-jump="${esc(jumpFilm)}">See on Videos <span aria-hidden="true">›</span></a>`;
     // Compact resting row (id, title, %, bar, one-line meta). Tap/expand opens the jobs checklist (Ben, 6 Nov ~23:07).
     const compact=`${dot}
       <div class="p24-film-top">
@@ -1207,7 +1297,8 @@
           <div class="p24-film-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pctInfo.bar}" aria-label="Film stage progress ${pctInfo.bar}%"><i style="width:${pctInfo.bar}%"></i></div>
         </div>
       </div>
-      <p class="p24-film-meta">${esc(meta)}</p>`;
+      <p class="p24-film-meta">${esc(meta)}</p>
+      ${jump}`;
     // Pulsing rows must always expand — never a bare article while work is in progress (Ben, 6 Nov ~23:33).
     if(!jobs && !active) return `<article class="${cls}">${compact}</article>`;
     const list=jobs||`<li class="p24-job is-progress" data-job-state="progress" aria-label="In progress"><span class="p24-job-spinner" role="img" aria-label="In progress"></span><span class="p24-job-main"><span class="p24-title wrap">Job in progress</span></span></li>`;
@@ -1527,11 +1618,28 @@
     const chips = [["ch", "all", chs.length === 2 ? "Both" : "All"], ...chs.map(c => ["ch", c.label, c.short || c.label]),
                    ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
-    const list = (items, limit) => items.slice(0, limit).map(v => videoProductionRow(v, Date.now())).join("")
+    const list = (items, limit) => items.slice(0, limit).map(v => videoProductionRow(v, Date.now(), b)).join("")
       + (items.length > limit ? `<p class="meta">${items.length - limit} more: pick Orbit or HOS, Longs or Shorts to narrow the list.</p>` : "");
     // A batch job on several videos: the first card carries the job, the others say whose job they share.
-    const jobList = items => jobGroups(items).map(([first, ...rest]) => videoProductionRow(first, Date.now())
-      + rest.map(v => videoProductionRow(v, Date.now())).join('')).join('');
+    const jobList = items => jobGroups(items).map(([first, ...rest]) => videoProductionRow(first, Date.now(), b)
+      + rest.map(v => videoProductionRow(v, Date.now(), b)).join('')).join('');
+    // In progress: claimed/working-now first, then waiting — never bury live work under UAT sort (Ben, 7 Nov 2026).
+    const progressBody = (items) => {
+      const { working, waiting } = partitionProgressVideos(items);
+      const workingN = working.length + studio.length;
+      const parts = [];
+      if (workingN) {
+        parts.push(`<h3 class="lane-sub">Working now <span class="n">${workingN}</span></h3>`);
+        parts.push(jobList(working));
+        parts.push(studio.map(jobCard).join(""));
+      }
+      if (waiting.length) {
+        parts.push(`<h3 class="lane-sub">Waiting <span class="n">${waiting.length}</span></h3>`);
+        parts.push(`<p class="meta lane-sub-blurb">Queued, blocked, or waiting for a step — still In progress, not live work.</p>`);
+        parts.push(jobList(waiting));
+      }
+      return parts.join("") || empty("Nothing in progress.");
+    };
     const show = id => routeView()==='producing' || seg === "all" || seg === id;
     const limitFor = id => (seg === id ? 60 : (id === "todo" || id === "progress" || id === "qa" || id === "uat" || id === "passed" ? 30 : 10));
     const laneSection = (id) => {
@@ -1543,7 +1651,7 @@
       const count = items.length + (items.extra || 0);
       const blurb = items.length || (id === "progress" && studio.length) ? `<p class="meta">${esc(copy.blurb)}</p>` : "";
       let body = "";
-      if (id === "progress") body = (jobList(items) + studio.map(jobCard).join("")) || empty("No agent is working this minute.");
+      if (id === "progress") body = progressBody(items);
       else if (id === "uat") body = (items.map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}<a class="btn watch" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch || {}).version || v.version || "")}</a></div>`).join("")) || empty("Nothing waiting for your watch.");
       else body = list(items, limitFor(id)) || empty(id === "backlog" ? "Backlog is empty." : "Nothing here.");
       // Collapsible lane sections (open when selected or when viewing all).
@@ -1796,6 +1904,7 @@
     const focused = document.activeElement;
     const focusStage = focused && focused.tagName === 'SUMMARY' && focused.parentElement.dataset.stage;
     const focusId = focused && focused.id;
+    if (board) ensureVideosLanding(board);
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
@@ -1850,6 +1959,7 @@
       const saved=expandedStages.get(key); if(el.open) saved.add(el.dataset.stage); else saved.delete(el.dataset.stage);
     }));
     document.querySelectorAll("[data-seg]").forEach(btn => btn.onclick = () => {
+      videosLaneChosen = true;
       seg = seg === btn.dataset.seg ? "all" : btn.dataset.seg;
       render();
     });
@@ -1858,6 +1968,23 @@
       else filterType = filterType === btn.dataset.v ? "all" : btn.dataset.v;
       render();
     });
+    // Jump links sit inside <summary>; stopPropagation so expand/collapse stays on the chevron/row tap.
+    document.querySelectorAll("a.p24-videos-jump").forEach(a => {
+      a.addEventListener("click", e => { e.stopPropagation(); });
+    });
+    const focusFilm = videosFocusFromHash();
+    if (tab === "videos" && focusFilm && !vk) {
+      const target = [...document.querySelectorAll("a.row[data-film-key], a.row[data-video-key]")].find(el => {
+        const film = el.getAttribute("data-film-key") || "";
+        const video = el.getAttribute("data-video-key") || "";
+        return film === focusFilm || video === focusFilm || video.startsWith(focusFilm + ":")
+          || p24InFocus(video, new Set([focusFilm])) || p24InFocus(film, new Set([focusFilm]));
+      });
+      if (target) requestAnimationFrame(() => {
+        target.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+        target.classList.add("is-focus");
+      });
+    }
   }
 
   async function poll() {
@@ -1897,7 +2024,9 @@
     else window.scrollTo(0,0);
   }
   window.addEventListener("hashchange", () => {
-    if(location.hash==="#videos&view=producing") {filterCh="all";filterType="all";seg="all";}
+    if(location.hash==="#videos&view=producing") {filterCh="all";filterType="all";seg="all";videosLaneChosen=true;}
+    // Explicit lane in the hash counts as a chosen deep link for this visit.
+    if (videosLaneFromHash()) videosLaneChosen = true;
     render(); scrollAppTop();
   });
   render();

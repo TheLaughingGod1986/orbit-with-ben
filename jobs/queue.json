@@ -160370,13 +160370,13 @@
       "stage": "",
       "after": "J2324",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-06T21:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:51Z",
-      "result": "Chief FIX by codex: HOS PR450 head 5f3feb7753 fails safe idle refresh, historical literal replay fence and visible role handback. 12 tests pass; three isolated probes reproduce defects. Evidence OWB PR603 and HOS PR450 comment 6699972191. Held on repair J2324; no merge/restart. Corrected head requires elected-Chief review, then controlled PID/version delivery+ack validation.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-03T10:51Z",
@@ -160427,24 +160427,16 @@
           "at": "2026-11-07T07:36Z",
           "by": "relay",
           "what": "condition verification queued: J2351"
+        },
+        {
+          "at": "2026-11-07T13:18Z",
+          "by": "chief",
+          "what": "reopened: J2350 PASS merged HOS PR450 476f35d1. Resume only: (1) classify candidate historical IDs vs later outcomes/queue/stages before any --recover-id; (2) separately authorised idle-boundary refresh --apply with PID+LOADED_SHA256 evidence in ~/.hos_desk/refresh-result.json + controlled live delivery/trusted ack. No bulk replay, no watermark reset, no Cursor Chief, no media/publish/spend. Desk PR180 stays open."
         }
       ],
       "remaining_action": "J2324 repairs restart safety, historical replay and handback; elected Chief reviews corrected PR450 before refresh",
       "kind": "assembly",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-06T21:47Z",
-        "by": "cursor",
-        "note": "Reported on OWB #478 comment 6696594103 and HOS desk comment 6696595370. Parked for Chief review of PR 450."
-      },
-      "escalated_at": "2026-11-07T00:04Z",
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-07T08:36:19+00:00",
-        "recheck_task": "J2351"
-      }
+      "escalated_at": "2026-11-07T00:04Z"
     },
     {
       "id": "J1810",
@@ -182434,8 +182426,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-07T13:12Z",
-      "eta": "2026-11-07T15:12Z",
+      "since": "2026-11-07T13:24Z",
+      "eta": "2026-11-07T15:24Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183389,16 +183381,31 @@
           "at": "2026-11-07T13:15Z",
           "by": "macbook",
           "what": "step 0 of 3 done: brief read; cards, mechanisms, evidence, scales, dates and comparisons already landed"
+        },
+        {
+          "at": "2026-11-07T13:20Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done: R2 and R12 flip plates rendered; PR 633. Build still partial."
+        },
+        {
+          "at": "2026-11-07T13:20Z",
+          "by": "macbook",
+          "what": "released: Partial. PR 633: R2 (12.54-17.10s) and R12 (112.98-116.30s) flip plates on the harvested Blue Marble, air ring held, £0. Media /Users/ben/_desk/J2141-flip-v01/. Encoding check passed. Still open: wider harvest, dynamo, Hubble/SAA, multipole, poles map, aurora, progressive timeline, R41 fallback, composites. No KEEP."
+        },
+        {
+          "at": "2026-11-07T13:24Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
-      "remaining_action": "Build the missing opening code graphics: poledrift, flip and layers.",
+      "remaining_action": "Harvest the remaining licensed plates and render dynamo, SAA, multipole, poles map and aurora.",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-07T13:15Z",
+        "at": "2026-11-07T13:20Z",
         "by": "macbook",
-        "note": "brief read; cards, mechanisms, evidence, scales, dates and comparisons already landed"
+        "note": "R2 and R12 flip plates rendered; PR 633. Build still partial."
       },
       "taskKeys": [
         "OWB:031"
@@ -200079,22 +200086,45 @@
       "stage": "",
       "after": "J2324",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-11-07T13:17Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T07:34Z",
-      "result": "",
+      "result": "PASS h281: merged HOS PR450 head 476f35d1 (squash). Independent review vs J1809 FIX — 20/20 unittest, compile OK; refresh discovers PID+locks+LOADED_SHA256 confirm; historical fence+recover-id only; handback/pending until trusted ack; Cursor never Chief. J1809 reopened for classified inventory + separately authorised idle refresh with PID/hash evidence only. Desk PR180 untouched. Ruling jobs/reviews/J2350/CHIEF_RULING.md. £0.",
       "history": [
         {
           "at": "2026-11-07T07:34Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T13:17Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T13:17Z",
+          "by": "chief",
+          "what": "step 1 of 3 done: Independent review: 20/20 unittest PASS; FIX 1-3 addressed; Cursor excluded; MERGEABLE+green"
+        },
+        {
+          "at": "2026-11-07T13:17Z",
+          "by": "chief",
+          "what": "done: PASS h281: merged HOS PR450 head 476f35d1 (squash). Independent review vs J1809 FIX — 20/20 unittest, compile OK; refresh discovers PID+locks+LOADED_SHA256 confirm; historical fence+recover-id only; handback/pending until trusted ack; Cursor never Chief. J1809 reopened for classified inventory + separately authorised idle refresh with PID/hash evidence only. Desk PR180 untouched. Ruling jobs/reviews/J2350/CHIEF_RULING.md. £0."
         }
       ],
-      "remaining_action": "Review PR450 corrected head and decide merge plus controlled watcher refresh",
-      "kind": "chief"
+      "remaining_action": "Write PASS ruling and merge HOS PR450",
+      "kind": "chief",
+      "progress": {
+        "step": 1,
+        "of": 3,
+        "at": "2026-11-07T13:17Z",
+        "by": "chief",
+        "note": "Independent review: 20/20 unittest PASS; FIX 1-3 addressed; Cursor excluded; MERGEABLE+green"
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/450"
     },
     {
       "id": "J2351",
@@ -201019,6 +201049,11 @@
           "at": "2026-11-07T13:13Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Resumed J2361 at step 3/5; checking prior session manifest and writing repaired PR #626 deliverables"
+        },
+        {
+          "at": "2026-11-07T13:20Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Heartbeat: visually inspected all candidate plates via read_file; rejected split-panel/annotated/blurry plates (PIA20464, PIA20361, PIA20151, PIA19690, PIA19705, PIA19702, PIA19699, PIA19945) and fetching clean high-res closest-approach replacements"
         }
       ],
       "remaining_action": "Generate repaired shot_list_v01.csv, SHOT_LIST_v01.md, SOURCE_EVIDENCE_v01.json, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, production-status.md and J2361 review packet",
@@ -201036,9 +201071,9 @@
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-07T13:13Z",
+        "at": "2026-11-07T13:20Z",
         "by": "gemini",
-        "note": "Resumed J2361 at step 3/5; checking prior session manifest and writing repaired PR #626 deliverables"
+        "note": "Heartbeat: visually inspected all candidate plates via read_file; rejected split-panel/annotated/blurry plates (PIA20464"
       },
       "taskKeys": [
         "OWB:034"
@@ -201116,23 +201151,46 @@
       "stage": "script",
       "after": "J2360",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-11-07T13:15Z",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T12:00Z",
-      "result": "",
+      "result": "PASS h281: Short2=2A Water-Ice Mountains; Short1=1A continuous S01-S03; opener=M1-A PIA11709 (M1-B backup). Merged PR #632 5442fff3@13:16:38Z. J2319/J2320 stay blocked until J2361→J2362. Ruling jobs/reviews/J2364/CHIEF_RULING.md. £0.",
       "history": [
         {
           "at": "2026-11-07T12:00Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T13:15Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T13:16Z",
+          "by": "chief",
+          "what": "step 1 of 4 done: Evidence loaded from PR632 head 5442fff3; CI green; MERGEABLE"
+        },
+        {
+          "at": "2026-11-07T13:16Z",
+          "by": "chief",
+          "what": "done: PASS h281: Short2=2A Water-Ice Mountains; Short1=1A continuous S01-S03; opener=M1-A PIA11709 (M1-B backup). Merged PR #632 5442fff3@13:16:38Z. J2319/J2320 stay blocked until J2361→J2362. Ruling jobs/reviews/J2364/CHIEF_RULING.md. £0."
         }
       ],
-      "remaining_action": "Review PR #632 (10_Shorts/SHORTS_PLAN_v01.md), select Short 2 lift (2A vs 2B vs 2C) and £0 opener route (M1-A vs M1-B), and merge PR #632 while keeping J2319/J2320 held",
+      "remaining_action": "Write CHIEF_RULING selecting 2A/1A/M1-A then merge PR632",
       "kind": "chief",
-      "plain": "Review and merge the 034 Pluto Shorts plan (PR #632) and select the approved Short 2 and Short 1 v03 lifts and £0 opener route."
+      "plain": "Review and merge the 034 Pluto Shorts plan (PR #632) and select the approved Short 2 and Short 1 v03 lifts and £0 opener route.",
+      "progress": {
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-07T13:16Z",
+        "by": "chief",
+        "note": "Evidence loaded from PR632 head 5442fff3; CI green; MERGEABLE"
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/632"
     }
   ],
   "focus": [
