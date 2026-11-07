@@ -99,11 +99,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |
 | J2339 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2346 | mini | open | – | – | 032 picture · for gemini · qa · `gemini-argon` · 032 R23: review fixed connector fade draft | 9a7e183aa8 |
-| J2348 | any | claimed | codex | 2026-11-07T09:17Z | 034 vo · chief · 034 Pluto: elected Chief rules on J2157 v03 master reconciliation and full VO PASS | 0a378694ae |
 | J2349 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
 
 Recently finished:
 
+- J2348 done: 034 Pluto: elected Chief rules on J2157 v03 master reconciliation and full VO PASS (FIX ruling merged in PR620; master and five splice checks pass, but PR619 evidence conflicts. J2157 reopened for zero-spend records correction. No full VO PASS or shot-list release.)
 - J2347 done: 034 Pluto: elected Chief rules on J2345 listening review of v05 Real Worlds pickup (KEEP v05 pickup based on J2345 native-audio review; eight hashes verified. PR617 and PR618 merged. J2157 reopened at prior 2/3 for v03 master reconciliation, full transcript, levels, splices and tails. Full VO remains unapproved; no shot-list release, synthesis or public change.)
 - J2345 done: 034 Pluto: listen to the v05 Real Worlds pickup (done)
 - J2344 done: 034 Pluto: one v05 pickup with separated Real Worlds boundary (One v05 pickup, 252 characters, WAV 10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23. Scribe 42/42 is not a VO PASS. Listen is J2345. PR 617.)
@@ -113,4 +113,3 @@ Recently finished:
 - J2340 done: 034 Pluto: verify Worlds independently, then one bounded context repair if needed (FIX: Whisper and v04 Scribe both heard World singular. 577 chars ledgered once. No crop, no master, no second take. Evidence jobs/reviews/J2340/EVIDENCE.md. J2157 unfinished.)
 - J2338 done: 034 Pluto: elected Chief rules on the J2337 context takes and J2157 (FIX ruling complete: Ch5 crop hash and PCM tail verified; Ch6 Worlds unresolved. PR613 evidence and PR614 ruling merged, CI passed. J2340 owns bounded independent-ASR/repair follow-up; J2157 remains blocked, no VO approval or shot-list release. No spend/publishing.)
 - J2337 done: 034 Pluto: bounded context-backed Chapter 5 and 6 pickups after J2336 FIX (FIX evidence: original API MP3 matches the failed v02 WAV. Chapter 5 crop at 6.200s is usable (looked then back; flat -90 dBFS tail) and was not spliced. Chapter 6 Scribe says world, not Worlds, so no crop and no v03 master. 257+432 credits, one ledger line each. v01 hashes unchanged. Records PR 613 fdb139fe09. Elected Chief ruling is J2338. J2157 stays unfinished. No listening claim.)
-- J2336 done: 034 Pluto: elected Chief rules on the failed Chapter 5 sentence take (FIX ruling complete: rejected clipped Ch5 v02 pickup after independent hash/PCM verification. PR612 / 352b168bac records decision. J2337 immediately eligible bounded recovery/context-backed repair; J2335 superseded; J2157 and VO stage remain blocked pending repair and final ruling. No shot-list release, spend or publishing. Nothing on Ben.)

@@ -199205,13 +199205,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T07:17Z",
-      "eta": "2026-11-07T09:17Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T06:23Z",
-      "result": "",
+      "result": "FIX ruling merged in PR620; master and five splice checks pass, but PR619 evidence conflicts. J2157 reopened for zero-spend records correction. No full VO PASS or shot-list release.",
       "history": [
         {
           "at": "2026-11-07T06:23Z",
@@ -199242,6 +199242,11 @@
           "at": "2026-11-07T07:21Z",
           "by": "codex",
           "what": "step 3 of 3 done: FIX ruling PR620 green and merged; J2157 reopened at 2/3 with zero-spend correction scope. PR619 remains unmerged."
+        },
+        {
+          "at": "2026-11-07T07:21Z",
+          "by": "codex",
+          "what": "done: FIX ruling merged in PR620; master and five splice checks pass, but PR619 evidence conflicts. J2157 reopened for zero-spend records correction. No full VO PASS or shot-list release."
         }
       ],
       "remaining_action": "Review complete; J2157 owns the evidence corrections before VO approval",
@@ -199255,7 +199260,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "584458d867"
     },
     {
       "id": "J2349",
