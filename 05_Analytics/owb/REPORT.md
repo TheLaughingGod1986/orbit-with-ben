@@ -187,14 +187,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 3 d | 474 | 26.6% | MISS | - | no read |
-| [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 4 d | 560 | 30.8% | MISS | 65.2% | WATCH |
-| [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 6 d | 1099 | 31.6% | MISS | 66.4% | WATCH |
-| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 7 d | 45 | 21.7% | too few to judge | 66.7% | too few to judge |
-| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 8 d | 520 | 32.7% | MISS | 91.7% | PASS |
-| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 9 d | 458 | 34.4% | MISS | 231.9% | LOOP |
-| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 10 d | 494 | 42.6% | MISS | 75.0% | PASS |
-| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 11 d | 892 | 30.7% | MISS | 75.9% | PASS |
-| [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | 13 d | 851 | 32.1% | MISS | 76.1% | PASS |
+| [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 4 d | 488 | 26.9% | MISS | 304.5% | LOOP |
+| [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 5 d | 568 | 31.2% | MISS | 65.0% | WATCH |
+| [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 7 d | 1090 | 31.6% | MISS | 63.2% | WATCH |
+| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 8 d | 45 | 21.7% | too few to judge | 65.2% | too few to judge |
+| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 9 d | 519 | 32.8% | MISS | 88.9% | PASS |
+| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 10 d | 460 | 34.5% | MISS | 226.3% | LOOP |
+| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 11 d | 494 | 42.6% | MISS | 71.4% | PASS |
+| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 12 d | 892 | 30.7% | MISS | 72.7% | PASS |
 
-Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 5 of 7 at 70%+.
+Stayed to watch: 0 of 7 judged Shorts at 60%+. Average viewed: 5 of 7 at 70%+.
