@@ -2,6 +2,46 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook polarity stack)
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Remains **1/3**;
+this is a partial picture build, not KEEP, PASS or completion.
+
+Added `code_graphics.py strata` / `strata_graphics.py`: R11 qualitative
+polarity-group component, 99.12–105.32 s, 1920×1080, 25 fps, argb qtrle.
+Younger-rock north arrow and older-rock south arrow animate separately at
+locked Scribe cues. Caption words follow the spoken line. Equal layer sizes
+encode neither elapsed time nor measured rock thickness; arrow directions
+are conceptual relative polarity, not reconstructed local field geometry.
+SOURCES row 4 is the evidence. Read the original Matuyama 1929 three-page
+paper live at https://www.jstage.jst.go.jp/article/pjab1912/5/5/5_5_203/_pdf/-char/en
+on 7 Nov: its two near-antipodal groups and relative-age discussion support
+this schematic. No source chart is copied and no new spoken claim is added.
+
+`CODE_STRATA_v01.json` records the locked-words hash, source, timing and media
+hash. `CODE_STRATA_TECHNICAL_CHECK_v01.json` records hash, dimensions, alpha,
+25 fps, 6.20 s duration and error-free full decode. Six static samples inspected
+on `/Users/ben/_desk/J2141-strata-v02/CONTACT_v02.jpg`. Navy is preview only.
+The overlay needs graded moving volcanic picture and composite review.
+**Readability limitation:** SOUTH starts at 104.82 s, leaving only 0.5 s before
+the component ends; review in the actual composite. Do not alter locked VO.
+This component does not complete R11's later date or SCALE sequence.
+
+Media stays outside git at `/Users/ben/_desk/J2141-strata-v02/`.
+The initial local `J2141-strata-v01/` remains preserved but is superseded;
+its older-rock caption was corrected to the exact spoken keyword in v02.
+Reproduce into a fresh directory with `/usr/bin/python3 .../code_graphics.py
+strata --out <fresh-dir> --manifest <new-json>`. The shared encoder refuses
+existing destination media. No NAS files changed; no archive asset search,
+paid generation, YouTube or social change. Spend £0. No process left running.
+
+NAS working film is reachable, but manifests still name earlier Mini-local
+media; no claim is made that all those files are present on this MacBook.
+Remaining wider harvest, other physical mechanisms, progressive timeline,
+R41 fallback, composites and full QA exceed this run. Preserve the existing
+source-ID/sourced-simulation conflicts for reviewer reconciliation. Release
+at this checkpoint for continuation of this same job and PR.
+
 ## Continuation checkpoint (7 Nov, MacBook historical dates)
 
 Worker `macbook`, same branch `macbook/J2141` and PR #633. Queue remains
