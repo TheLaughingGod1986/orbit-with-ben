@@ -203283,18 +203283,23 @@
           "at": "2026-11-07T21:04Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Rendered all 127/127 cuts (17,563 frames), mixed VO+SFX+score to -14.5 LUFS (-1.0 dBTP), muxed 032_what_would_happen_if_you_landed_on_titan_master_v01.mp4; running 5 gates"
+        },
+        {
+          "at": "2026-11-07T21:16Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: clip_check, music_gate, sfx_kit level, and delivery (-14.5 LUFS, -1.0 dBTP, 0 black frames) all PASS; fixed 3 still inset contrasts; updating R46 SVS20311_DF_End_Pan_1080 offset to 9.0s (non-overlapping after R37 0.0-8.8s)"
         }
       ],
-      "remaining_action": "Run and verify 5 gates (clip_check, picture_qa, music_gate, sfx_kit level, delivery)",
+      "remaining_action": "Re-render R46 SVS20311_DF_End_Pan_1080 at offset 9.0s and verify 0 picture_qa failures",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 032 Titan long video from the approved plates, composites, voiceover, music and sound effects",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-07T21:04Z",
+        "at": "2026-11-07T21:16Z",
         "by": "gemini",
-        "note": "Rendered all 127/127 cuts (17,563 frames), mixed VO+SFX+score to -14.5 LUFS (-1.0 dBTP), muxed 032_what_would_happen_if_"
+        "note": "clip_check, music_gate, sfx_kit level, and delivery (-14.5 LUFS, -1.0 dBTP, 0 black frames) all PASS; fixed 3 still inse"
       },
       "taskKeys": [
         "OWB:032"
