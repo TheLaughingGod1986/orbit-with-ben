@@ -185,6 +185,55 @@ class ApprovedDeliver(unittest.TestCase):
         self.assertEqual(actions, [{"op": "skip", "key": "OWB:OK:J9",
                                     "reason": "Already on YouTube as OWB:032"}])
 
+    def test_second_short_of_same_film_still_gets_upload(self):
+        """Film 032 already has one scheduled Short; a different Passed Short of 032 must still upload.
+
+        Must not collapse Shorts to film number when shortId is empty on the OK card
+        (Orbit: two Shorts per new long). The new Short takes the next free cadence day.
+        """
+        existing = {
+            "key": "OWB:032:S:firstshort1", "channel": "OWB", "number": "032", "type": "short",
+            "shortId": "firstshort1", "lane": "done",
+            "youtube": {"videoId": "firstshort1", "state": "scheduled",
+                        "publishAt": "2026-11-09T11:30:00Z", "privacy": "private"},  # Mon
+        }
+        second = {
+            "key": "OWB:OK:Jshort2", "lane": "approved", "channel": "OWB", "number": "032",
+            "type": "short", "shortId": "", "title": "032 Short B", "youtube": None,
+            "listing": ready_listing(), "approved": {"version": "v01"},
+        }
+        # Would fail on the old same_cut_identity (film number alone → skip as Already on YouTube).
+        self.assertFalse(ad.same_cut_identity(second, existing))
+        empty = Path(tempfile.mkdtemp())
+        with mock.patch.object(ad.lp, "for_video", return_value=second["listing"]):
+            actions = ad.plan_actions([existing, second], [], now=NOW, root=empty)
+        self.assertEqual(len(actions), 1)
+        self.assertEqual(actions[0]["op"], "create")
+        self.assertEqual(actions[0]["key"], "OWB:OK:Jshort2")
+        when = dt.datetime.fromisoformat(actions[0]["airs"].replace("Z", "+00:00")).astimezone(ad.LONDON)
+        self.assertNotEqual(when.date().isoformat(), "2026-11-09")
+        self.assertEqual((when.hour, when.minute), (11, 30))
+
+    def test_duplicate_short_same_identity_still_skipped(self):
+        """Same Short (shared shortId / :S: key) already scheduled → no second upload."""
+        existing = {
+            "key": "OWB:032:S:sameshort01", "channel": "OWB", "number": "032", "type": "short",
+            "shortId": "sameshort01", "lane": "done",
+            "youtube": {"videoId": "sameshort01", "state": "scheduled",
+                        "publishAt": "2026-11-09T11:30:00Z", "privacy": "private"},
+        }
+        dup = {
+            "key": "OWB:OK:Jdup", "lane": "approved", "channel": "OWB", "number": "032",
+            "type": "short", "shortId": "sameshort01", "title": "dup", "youtube": None,
+            "listing": ready_listing(), "approved": {},
+        }
+        self.assertTrue(ad.same_cut_identity(dup, existing))
+        empty = Path(tempfile.mkdtemp())
+        with mock.patch.object(ad.lp, "for_video", return_value=dup["listing"]):
+            actions = ad.plan_actions([existing, dup], [], now=NOW, root=empty)
+        self.assertEqual(actions[0]["op"], "skip")
+        self.assertIn("Already on YouTube", actions[0]["reason"])
+
     def test_already_public_sibling_skips_second_upload(self):
         ok = {
             "key": "OWB:OK:J9", "lane": "approved", "channel": "OWB", "number": "031", "type": "long",

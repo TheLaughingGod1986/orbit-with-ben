@@ -78,19 +78,46 @@ def london_day(at: str) -> str:
     return when.date().isoformat()
 
 
+def short_identity(v: dict) -> str:
+    """Real Short identity when known: shortId, YouTube id, or the `:S:<id>` key suffix.
+
+    Empty means this card is not yet tied to a specific uploaded Short (an approved/OK or
+    planned Short). Two Shorts of the same film with empty identity are different cuts —
+    never collapse them to the film number alone (Orbit ships 2+ Shorts per long).
+    """
+    sid = str(v.get("shortId") or "").strip()
+    if sid:
+        return sid
+    yt = str(((v.get("youtube") or {}).get("videoId") or "")).strip()
+    if yt:
+        return yt
+    key = str(v.get("key") or "")
+    m = re.search(r":S:([A-Za-z0-9_-]+)$", key)
+    return m.group(1) if m else ""
+
+
 def same_cut_identity(a: dict, b: dict) -> bool:
-    """Same channel + number + long/short (and Short id when both have one)."""
+    """True only for the same cut: one long per film, or the same Short identity.
+
+    Shorts of the same film are different cuts unless they share a real Short identity
+    (same shortId / YouTube id / `:S:` key) or the exact same card key.
+    """
     if str(a.get("channel") or "").upper() != str(b.get("channel") or "").upper():
         return False
     if (a.get("type") == "short") != (b.get("type") == "short"):
         return False
     na, nb = str(a.get("number") or ""), str(b.get("number") or "")
-    if na and nb and na != nb:
-        return False
     if a.get("type") == "short":
-        sa, sb = str(a.get("shortId") or ""), str(b.get("shortId") or "")
+        ka, kb = str(a.get("key") or ""), str(b.get("key") or "")
+        if ka and kb and ka == kb:
+            return True
+        sa, sb = short_identity(a), short_identity(b)
         if sa and sb:
             return sa == sb
+        # No shared Short identity → different Shorts (even with the same film number).
+        return False
+    if na and nb and na != nb:
+        return False
     return bool(na and nb and na == nb)
 
 
