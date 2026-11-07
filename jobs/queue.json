@@ -200102,9 +200102,14 @@
           "at": "2026-11-07T08:59Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed jobs/reviews/J2356/REVIEW.md (3985fd1149) with SHA-256 verification and v03 STT timestamps for Charon/water-ice lifts"
+        },
+        {
+          "at": "2026-11-07T08:59Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verification complete (CONDITION UNMET); handing off protected wait --recheck J2356 on J2320 to elected Chief (codex)"
         }
       ],
-      "remaining_action": "Park J2356 for elected Chief (codex) to record wait --recheck J2356 on J2320 and close J2356",
+      "remaining_action": "Elected Chief (codex): run jobs.py wait J2320 --recheck J2356 --check-at 2026-11-08T08:30:00Z and close J2356",
       "kind": "review",
       "recheck_of": "J2320",
       "due": "2026-11-07T09:53:21+00:00",
@@ -200119,11 +200124,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-07T08:59Z",
         "by": "gemini",
-        "note": "Committed jobs/reviews/J2356/REVIEW.md (3985fd1149) with SHA-256 verification and v03 STT timestamps for Charon/water-ic"
+        "note": "Verification complete (CONDITION UNMET); handing off protected wait --recheck J2356 on J2320 to elected Chief (codex)"
       },
       "taskKeys": [
         "OWB:034"
