@@ -198117,17 +198117,22 @@
           "at": "2026-11-07T04:00Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR613 merged as evidence only; review PR614; J2340 queued immediately; J2157 dependency hold updated, no VO PASS."
+        },
+        {
+          "at": "2026-11-07T04:01Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Ruling PR614 and evidence PR613 merged; CI passed; J2157 blocked and J2340 open. No spend or publishing in this review."
         }
       ],
-      "remaining_action": "Land the ruling and verify the parent hold and repair handoff",
+      "remaining_action": "Ruling complete; J2340 owns the remaining voice repair",
       "kind": "chief",
       "plain": "Decide whether the Pluto voice repair is good enough to move on to the shot list.",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-07T04:00Z",
+        "at": "2026-11-07T04:01Z",
         "by": "codex",
-        "note": "PR613 merged as evidence only; review PR614; J2340 queued immediately; J2157 dependency hold updated, no VO PASS."
+        "note": "Ruling PR614 and evidence PR613 merged; CI passed; J2157 blocked and J2340 open. No spend or publishing in this review."
       },
       "taskKeys": [
         "OWB:034"
