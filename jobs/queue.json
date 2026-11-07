@@ -197816,13 +197816,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T03:09Z",
-      "eta": "2026-11-07T05:09Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-07T03:07Z",
-      "result": "",
+      "result": "FIX ruling complete: rejected clipped Ch5 v02 pickup after independent hash/PCM verification. PR612 / 352b168bac records decision. J2337 immediately eligible bounded recovery/context-backed repair; J2335 superseded; J2157 and VO stage remain blocked pending repair and final ruling. No shot-list release, spend or publishing. Nothing on Ben.",
       "history": [
         {
           "at": "2026-11-07T03:07Z",
@@ -197853,6 +197853,11 @@
           "at": "2026-11-07T03:13Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified J2337 open with no dependency delay, J2157 held, J2335 superseded, stage blocked. PR612 / 352b168bac; diff check clean. No spend or listening claim."
+        },
+        {
+          "at": "2026-11-07T03:13Z",
+          "by": "codex",
+          "what": "done: FIX ruling complete: rejected clipped Ch5 v02 pickup after independent hash/PCM verification. PR612 / 352b168bac records decision. J2337 immediately eligible bounded recovery/context-backed repair; J2335 superseded; J2157 and VO stage remain blocked pending repair and final ruling. No shot-list release, spend or publishing. Nothing on Ben."
         }
       ],
       "remaining_action": "Ruling complete; bounded repair queued for the VO worker",
@@ -197867,7 +197872,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "352b168bac"
     },
     {
       "id": "J2337",
