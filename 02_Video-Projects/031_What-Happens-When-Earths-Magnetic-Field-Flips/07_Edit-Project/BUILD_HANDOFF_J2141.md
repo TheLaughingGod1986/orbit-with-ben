@@ -1,3 +1,36 @@
+## MacBook continuation — 7 Nov, R27 Hubble SAA tally
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py hubble_saa` / `hubble_saa_graphics.py` and one transparent
+1920×1080 / 25 fps overlay in `CODE_HUBBLE_SAA_v01.json`:
+
+- R27, 280.42–285.06 s (116 frames, 4.64 s), on the locked words "seven to
+  nine orbits". A schematic oval draws in, its lower arc turns gold, and a
+  tally builds to 7 then 9. Labels are "7 TO 9", then "7 TO 9 ORBITS",
+  "IN A ROW" and "EVERY DAY", each four words or fewer, timed to those words.
+  It ends as "stops" begins, so the existing FACT card is not covered.
+  SOURCES row 11 (HST Cycle 26 primer: seven to nine orbits in a row). This
+  is not a geographic South Atlantic Anomaly map and not Hubble's real orbit.
+
+No new archive search, no paid generation, £0. Place it over the moving
+Hubble plate, clear of the telescope. Static samples on the contact sheet
+were inspected. No motion, composite, KEEP, PASS or stage approval.
+
+Media: `/Users/ben/_desk/J2141-hubble-saa-v01/` (`code_graphic_031_r27_hubble_saa_v01.mov`,
+preview png, `CONTACT_v01.jpg`). `CODE_HUBBLE_SAA_TECHNICAL_CHECK_v01.json`
+records the SHA-256 match, argb, 1920×1080, 25 fps, 116 frames and a full
+error-free decode. Reproduce into a fresh directory (existing files are refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py hubble_saa --out <fresh-dir> --manifest <new-json>
+```
+
+No render remains running. Still unfinished: the wider licensed harvest,
+dynamo, matuyama map, the SAA strength graphic, poles map, aurora, the
+progressive timeline, the R41 atmosphere fallback, composites and the picture
+gates. Existing asset-ID and sourced-simulation conflicts stay with Chief.
+
 ## MacBook continuation — 7 Nov, R2 and R12 flip plates
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
