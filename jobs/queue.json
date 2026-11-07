@@ -198101,6 +198101,11 @@
           "at": "2026-11-07T02:25Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T06:25Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1829 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Watch the generated replacement intervals and report hash-specific findings",
@@ -198108,7 +198113,16 @@
       "required_capabilities": [
         "moving_video_input"
       ],
-      "plain": "Watch the replacement Uranus opening and cloud footage for scientific and visual errors."
+      "plain": "Watch the replacement Uranus opening and cloud footage for scientific and visual errors.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2334",
