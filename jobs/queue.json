@@ -201431,9 +201431,14 @@
           "at": "2026-11-07T14:16Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Step 2/3 complete: Committed jobs/reviews/J2365/REVIEW.md (ea8213d71d) with fresh SHA-256 verification of J2332 NAS takes, 43/43 pool files, locked VO, capability registry, and open J2333/J2334"
+        },
+        {
+          "at": "2026-11-07T14:16Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Step 3/3 complete: Verification complete (CONDITION UNMET: J2332 done, J2333/J2334 still open, no passing moving_video_input probe); parking J2365 for Chief"
         }
       ],
-      "remaining_action": "Complete verification and park J2365 for elected Chief to record wait --recheck J2365 on J2299",
+      "remaining_action": "Elected Chief (chief): record wait --recheck J2365 on J2299 and close J2365",
       "kind": "review",
       "recheck_of": "J2299",
       "due": "2026-11-07T14:36:11+00:00",
@@ -201448,11 +201453,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-07T14:16Z",
         "by": "gemini",
-        "note": "Step 2/3 complete: Committed jobs/reviews/J2365/REVIEW.md (ea8213d71d) with fresh SHA-256 verification of J2332 NAS take"
+        "note": "Step 3/3 complete: Verification complete (CONDITION UNMET: J2332 done, J2333/J2334 still open, no passing moving_video_i"
       },
       "taskKeys": [
         "OWB:033"
