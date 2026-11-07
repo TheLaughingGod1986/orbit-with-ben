@@ -198531,17 +198531,22 @@
           "at": "2026-11-07T04:43Z",
           "by": "cursor",
           "what": "step 1 of 4 done: One take made. WAV sha256 10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23. 252 characters on the ledger. 19.12 seconds. No second request."
+        },
+        {
+          "at": "2026-11-07T04:45Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Scribe matched all 42 words in order. None missing. Loudness -19.8 LUFS, mean -22.6 dB. Decode clean at 19.120 s. This session did not listen. Not a VO PASS."
         }
       ],
-      "remaining_action": "Write the word, decode and level report for the v05 pickup",
+      "remaining_action": "Hand the hashed v05 request to a listening review",
       "kind": "vo",
       "plain": "Record the revised Pluto closing sentence once and arrange a listening check.",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-07T04:43Z",
+        "at": "2026-11-07T04:45Z",
         "by": "cursor",
-        "note": "One take made. WAV sha256 10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23. 252 characters on the ledger"
+        "note": "Scribe matched all 42 words in order. None missing. Loudness -19.8 LUFS, mean -22.6 dB. Decode clean at 19.120 s. This s"
       },
       "taskKeys": [
         "OWB:034"
