@@ -182426,8 +182426,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-07T13:42Z",
-      "eta": "2026-11-07T15:42Z",
+      "since": "2026-11-07T13:52Z",
+      "eta": "2026-11-07T15:52Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183436,16 +183436,36 @@
           "at": "2026-11-07T13:43Z",
           "by": "macbook",
           "what": "step 0 of 3 done: brief read; harvest and several graphics already on main"
+        },
+        {
+          "at": "2026-11-07T13:51Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done: PR 633 updated with R10 and R48 plates"
+        },
+        {
+          "at": "2026-11-07T13:51Z",
+          "by": "macbook",
+          "what": "released: Clean checkpoint on PR 633 (6c725b69): R10 Matuyama sample map and R48 Africa/Tahiti pole pins, £0, technical checks only. Still unfinished: wider harvest, SAA strength graphic, aurora, progressive timeline, R41 atmosphere fallback, composites and picture gates. Resume macbook/J2141."
+        },
+        {
+          "at": "2026-11-07T13:52Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T13:55Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done: Resumed on macbook/J2141; next is the SAA strength graphic"
         }
       ],
-      "remaining_action": "Read shot list and finish the next £0 graphic batch",
+      "remaining_action": "Render the R29 SAA strength plate on the locked 1970 line",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-07T13:43Z",
+        "at": "2026-11-07T13:55Z",
         "by": "macbook",
-        "note": "brief read; harvest and several graphics already on main"
+        "note": "Resumed on macbook/J2141; next is the SAA strength graphic"
       },
       "taskKeys": [
         "OWB:031"
@@ -201031,7 +201051,7 @@
       "status": "claimed",
       "by": "gemini",
       "since": "2026-11-07T11:49Z",
-      "eta": "2026-11-07T13:49Z",
+      "eta": "2026-11-07T15:47Z",
       "created_by": "codex",
       "created_at": "2026-11-07T11:23Z",
       "result": "",
@@ -201105,6 +201125,26 @@
           "at": "2026-11-07T13:41Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Resumed J2361 at step 3/5; inspecting existing worktree and candidate plates to finish PR #626 deliverables"
+        },
+        {
+          "at": "2026-11-07T13:47Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Heartbeat: auditing PIA19951 (sphere-rendered flyover frame) replacement and finalizing 74-row shot list"
+        },
+        {
+          "at": "2026-11-07T13:47Z",
+          "by": "gemini",
+          "what": "renewed to 2026-11-07T15:47Z"
+        },
+        {
+          "at": "2026-11-07T13:52Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Heartbeat: replaced PIA19951 (sphere-rendered flyover frame), PIA19947 (crop of PIA19948), and PIA00302 (Clementine farside projection) with visually verified clean camera plates (PIA19944, Sputnik Planum floating hills unannotated, as11-44-6667)"
+        },
+        {
+          "at": "2026-11-07T13:57Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Heartbeat: shot_list_v01.csv (74 rows, 6 explicit CARD rows) passed clip_check.py with 0 errors and 0 warnings; generating SOURCE_EVIDENCE_v01.json and markdown plans"
         }
       ],
       "remaining_action": "Generate repaired shot_list_v01.csv, SHOT_LIST_v01.md, SOURCE_EVIDENCE_v01.json, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, production-status.md and J2361 review packet",
@@ -201122,9 +201162,9 @@
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-07T13:41Z",
+        "at": "2026-11-07T13:57Z",
         "by": "gemini",
-        "note": "Resumed J2361 at step 3/5; inspecting existing worktree and candidate plates to finish PR #626 deliverables"
+        "note": "Heartbeat: shot_list_v01.csv (74 rows, 6 explicit CARD rows) passed clip_check.py with 0 errors and 0 warnings; generati"
       },
       "taskKeys": [
         "OWB:034"
