@@ -92,7 +92,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2321 | mini | open | – | – | 029 edit · for gemini · review · `gemini-argon` · OWB 029: resolve J2309 v05 E1 failures using actual media | J2309 |
 | J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
-| J2324 | mini | claimed | codex | 2026-11-07T09:30Z | assembly · `gpt-6.1-sol` · Repair HOS desk PR450 restart, replay and handback defects | J1809 |
 | J2330 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2309 |  |
 | J2333 | mini | open (after J2332) | – | – | 033 picture · for gemini · qa · `gemini-argon` · 033: watch R01 and R55 fallback motion against J2306 scope | J2306; PR610 |
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |

@@ -197610,13 +197610,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T07:30Z",
-      "eta": "2026-11-07T09:30Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T00:57Z",
-      "result": "",
+      "result": "Repaired PR450 restart, snapshot replay and role handback defects; HOS head 476f35d1. 20 mocked command/regression tests, compile and diff check PASS. Evidence jobs/reviews/J2324/REPAIR.md; desk 6703977003. J2350 owns corrected-head Chief review; J1809 remains held. No live restart, merge, replay or spend. J2324-disk yielded to existing NAS offload lock.",
       "history": [
         {
           "at": "2026-11-07T00:57Z",
@@ -197647,6 +197647,11 @@
           "at": "2026-11-07T07:35Z",
           "by": "codex",
           "what": "step 3 of 3 done: Pushed HOS 476f35d1; PR450 body updated; HOS desk report 6703977003; elected-Chief review J2350 queued. 20 tests PASS; no live restart/replay. Scratch offload found existing active offload and exited safely."
+        },
+        {
+          "at": "2026-11-07T07:35Z",
+          "by": "codex",
+          "what": "done: Repaired PR450 restart, snapshot replay and role handback defects; HOS head 476f35d1. 20 mocked command/regression tests, compile and diff check PASS. Evidence jobs/reviews/J2324/REPAIR.md; desk 6703977003. J2350 owns corrected-head Chief review; J1809 remains held. No live restart, merge, replay or spend. J2324-disk yielded to existing NAS offload lock."
         }
       ],
       "remaining_action": "Repair delivered; J2350 reviews corrected PR450 before merge or refresh",
@@ -197659,7 +197664,8 @@
         "at": "2026-11-07T07:35Z",
         "by": "codex",
         "note": "Pushed HOS 476f35d1; PR450 body updated; HOS desk report 6703977003; elected-Chief review J2350 queued. 20 tests PASS; n"
-      }
+      },
+      "done_ref": "476f35d1b71baca02d188bdd97fba4ea7bb95253"
     },
     {
       "id": "J2325",
