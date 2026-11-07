@@ -197181,13 +197181,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-07T01:19Z",
-      "eta": "2026-11-07T03:19Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-07T01:16Z",
-      "result": "",
+      "result": "PR #607 (9b84fa81, jobs/reviews/J2329/REVIEW.md): Delivered read-only week-by-week calendar-gap readback (7 Nov 2026 - 10 Jan 2027) for OWB (2 longs Sun/Wed 18:00, 4 Shorts Mon/Wed/Fri/Sat 11:30) and HOS (1 long Thu 18:00, 4 Shorts Sat/Fri/Sun/Tue 11:30). Listed all empty slots and off-pattern scheduled Shorts (OWB: ffYKoNVPoqg Tue 10 Nov, N42gKBbD7tE Thu 12 Nov, kKN8Ale42sE Tue 17 Nov; HOS: xzKoHg0E0_U Mon 16 Nov, ChbsigHD5_o Wed 18 Nov from J2272; all left untouched). Flagged J2248 (024 muons) off occupied Mon 9 Nov (iyvWYFP_ETA) and proposed Sat 21 Nov 11:30 London (fallback Wed 25 Nov / Sat 5 or 12 Dec). Flagged J2147 032 Short 1 at Wed 25 Nov 11:30 (6.5h before 18:00 long; use Fri 27 / Sat 28 Nov) and 031 Path B at Wed 2 Dec 11:30 (use Path A Sat 5 & Sat 12 Dec), plus J2147's 3-Short plan against the 2-Short cap (drop Reserve #3 on 032 and 031). Preserved J2230 (HOS 18 Nov-6 Dec gap, 10 of 11 pattern slots still empty after J2272/J2273) and documented post-6 Dec HOS gaps (Thu 10 Dec uAomPaOBrM8 vs 011 Anesthesia collision, 4 empty Thu longs 17 Dec-7 Jan, and all 20 HOS Short slots 8 Dec-10 Jan empty with a 2-slot/week structural gap under Test B's 2-Shorts/long cap). £0 spend, zero YouTube/UPLOADS mutations.",
       "history": [
         {
           "at": "2026-11-07T01:16Z",
@@ -197208,6 +197208,11 @@
           "at": "2026-11-07T01:26Z",
           "by": "macbook",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-07T01:32Z",
+          "by": "macbook",
+          "what": "done: PR #607 (9b84fa81, jobs/reviews/J2329/REVIEW.md): Delivered read-only week-by-week calendar-gap readback (7 Nov 2026 - 10 Jan 2027) for OWB (2 longs Sun/Wed 18:00, 4 Shorts Mon/Wed/Fri/Sat 11:30) and HOS (1 long Thu 18:00, 4 Shorts Sat/Fri/Sun/Tue 11:30). Listed all empty slots and off-pattern scheduled Shorts (OWB: ffYKoNVPoqg Tue 10 Nov, N42gKBbD7tE Thu 12 Nov, kKN8Ale42sE Tue 17 Nov; HOS: xzKoHg0E0_U Mon 16 Nov, ChbsigHD5_o Wed 18 Nov from J2272; all left untouched). Flagged J2248 (024 muons) off occupied Mon 9 Nov (iyvWYFP_ETA) and proposed Sat 21 Nov 11:30 London (fallback Wed 25 Nov / Sat 5 or 12 Dec). Flagged J2147 032 Short 1 at Wed 25 Nov 11:30 (6.5h before 18:00 long; use Fri 27 / Sat 28 Nov) and 031 Path B at Wed 2 Dec 11:30 (use Path A Sat 5 & Sat 12 Dec), plus J2147's 3-Short plan against the 2-Short cap (drop Reserve #3 on 032 and 031). Preserved J2230 (HOS 18 Nov-6 Dec gap, 10 of 11 pattern slots still empty after J2272/J2273) and documented post-6 Dec HOS gaps (Thu 10 Dec uAomPaOBrM8 vs 011 Anesthesia collision, 4 empty Thu longs 17 Dec-7 Jan, and all 20 HOS Short slots 8 Dec-10 Jan empty with a 2-slot/week structural gap under Test B's 2-Shorts/long cap). £0 spend, zero YouTube/UPLOADS mutations."
         }
       ],
       "remaining_action": "Compile week-by-week calendar-gap readback for OWB and HOS (7 Nov 2026 - 10 Jan 2027) in jobs/reviews/J2329/REVIEW.md",
