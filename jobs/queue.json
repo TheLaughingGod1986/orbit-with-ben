@@ -197277,6 +197277,11 @@
           "at": "2026-11-07T00:20Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T06:25Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1829 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review existing v05 and specify a compliant recorded-media repair",
@@ -197286,7 +197291,16 @@
         "audio_input",
         "moving_video_input"
       ],
-      "plain": "Check the Betelgeuse Short and resolve its opening, wording and length conflicts."
+      "plain": "Check the Betelgeuse Short and resolve its opening, wording and length conflicts.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2322",
