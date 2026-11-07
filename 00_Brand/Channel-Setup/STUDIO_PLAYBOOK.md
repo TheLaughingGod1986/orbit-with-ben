@@ -38,7 +38,7 @@ Channel: **Orbit With Ben** · `@OrbitWithBen` · `UC_esArsDKd3GJvOkeO0DUog`. Pi
 | Slot | What | When (UK) |
 |---|---|---|
 | Thursday | **1** long a week | 18:00 |
-| Four weekdays (never two the same day) | **4** Shorts a week | channel Shorts slots |
+| Sat · Fri · Sun · Tue | **4** Shorts a week | 11:30 |
 
 - Never two Shorts a day.
 - No placeholders just to hit the number — only ready approved cuts.
@@ -388,7 +388,7 @@ Tools:
    - pattern: `scripts/apply_yellow_white_v04_thumbs.py`;
    - Chrome launcher: `audits/start_studio_chrome_cdp.sh`;
    - image-only inputs; never Replace, never `thumbnails.set`.
-7. **Buffer mirror** (§12): `youtube:package` schedules the Instagram, Facebook and Threads posts itself. Check the `buffer` block in the result. Same step, same sign-off: the upload OK (standing, §13) covers the Buffer posts.
+7. **Buffer mirror** (§12): `youtube:package` schedules the Instagram, Facebook and Threads posts itself. Check the `buffer` block in the result. Same step, same sign-off: the upload OK (standing, §14) covers the Buffer posts.
 
 ## 10. Measure
 
@@ -488,7 +488,64 @@ It never uploads the file for a video it refuses. If one channel fails, the othe
    Wake the Mac for it: `sudo pmset repeat wakeorpoweron MTWRFSU 07:00:00` (check with `pmset -g sched`). The Mac must stay logged in to Ben's account; asleep is fine. Log: `tail -n 20 ~/Library/Logs/orbit-buffer-check.log`.
 5. Optional: the Buffer MCP (`.cursor/mcp.json`, OAuth) for looking at the queue from Cursor, and for the fallback.
 
-## 13. Sign-offs
+## 13. Film folders on the NAS (studio-live + archive)
+
+Locked dual-machine media paths for Mini + MacBook. Generated from `AGENTS.md` by `scripts/sync_rules.py`; edit `AGENTS.md`, not this block.
+
+<!-- SYNC: AGENTS.md#Film folders on the NAS (studio-live + archive) -->
+**Locked dual-machine media workflow (Ben, 7 Nov 2026).** Both the Mac mini (`ben-mac-mini`) and the MacBook Pro (`bens-macbook-pro`) already mount the same Synology NFS export `192.168.1.119:/volume1/data` at `/Volumes/data` (Tailscale account `benoats@`; phone host `iphone-14-pro-max` is not a film worker). The machines are **workers against NAS files**; they are **not yet diskless**. Route all media work from the paths below. Do **not** invent a third share (no Tailscale file share, no SMB film share, no new mount point).
+
+| Role | Where |
+|---|---|
+| **Working films** (harvest / assembly / watch source of truth) | `/Volumes/data/studio-live/…/02_Video-Projects/` |
+| **Shipped / archived films** | `/Volumes/data/mac-mini-archive/` |
+| **Mini local originals** (still in use while jobs write) | `/Users/benjaminoats/YouTube/…` (OWB and HOS checkouts) |
+| **Not the film library** | Mini File Sharing folder `shared` → `/Users/benjaminoats/_desk/shared` on the Mini, `/Volumes/shared` on the MacBook when mounted (empty; occasional file drop only) |
+
+### Working films — `studio-live` (live)
+
+Working film folders live on the NAS both machines share, mirroring the Mini YouTube layout:
+
+| Channel | Path |
+|---|---|
+| Orbit (OWB) | `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` |
+| History of Science (HOS) | `/Volumes/data/studio-live/History Of Science/02_Video-Projects/` |
+
+Both machines read and write those same remote folders. **Known on studio-live as of ~11:14 London 7 Nov 2026:** **OWB 030–034** (Apophis, Magnetic Field, Titan, Uranus, Pluto) and **HOS 008, 009, 010, 013** (Lightning, Gravity, Dinosaurs, Evolution).
+
+**Expand studio-live policy (Ben thumbs-up ~12:40 London 7 Nov 2026; optimal workflow ask ~12:41):** keep copying leftover **working / upcoming** film folders that still live only on the Mini onto studio-live. Skip films that are **already fully shipped** under `mac-mini-archive` unless they still have active or upcoming work. If unsure whether a folder is working or shipped, **copy it**. Do **not** recopy shipped archive films as working films. A copy of leftover working folders may be in progress; do **not** invent which extra folders have landed — record the actual list in a follow-up once known. Mini local copies stay until jobs finish writing those folders.
+
+**Who may run media jobs:**
+- **MacBook** may take portable text/review jobs always, and harvest / assembly / watch-listen when that film's studio-live folder is reachable on this machine (or when the job already names another path that exists here). If the files are **not** on studio-live, leave the media job for the Mini (`jobs.macbook_portable`).
+- **Mini-only (Studio login lives on the Mini; the MacBook does not need a YouTube Studio sign-in):** YouTube Studio upload / `youtube:package`, Buffer, playlists, end screens, Flow/Chrome generation, and the HOS desk.
+- Big renders over the network can be slower than Mini local disk; that is an **accepted tradeoff** for one shared working copy.
+
+**Mini locals:** originals under `/Users/benjaminoats/YouTube/…` stay put while any job may still be writing that folder. Do **not** delete or move Mini locals during active writes. After ship, a Mini local may be removed only when no job is still writing that folder — do **not** delete Mini locals "now" as part of the studio-live rollout.
+
+**New working film:** create the project folder on **studio-live first** so both machines can use it; keep git status/template under the repo checkout as usual. **After ship:** use the existing archive process into `mac-mini-archive` (below).
+
+**Copy technique when adding folders to studio-live** (Mini → NAS working store):
+- `nice -n 15 rsync -a --partial --update …` (no `--delete`)
+- Never kill studio processes to free the disk for a copy
+- Never overwrite **newer** NAS files with **older** Mini copies (the MacBook may already have written to studio-live)
+- Do not invent a different rsync flag set or a destructive sync
+
+### Archive — `mac-mini-archive`
+
+Shipped and archived films already live under `/Volumes/data/mac-mini-archive/` (including `YouTube/` and `youtube-staging/` for finished videos waiting to go out). That share often holds the **only** copy: the 3 Oct and 5 Oct moves deleted the Mini copies after checking them. **Do not recopy those archive films into studio-live** unless they still have active or upcoming work.
+- **Never delete anything on the NAS.** "Looks like a partial duplicate" is not proof. On 5 Oct the HOS 003 folder held 1,090 files that existed nowhere else.
+- **Bulk moves to the NAS run 01:00-06:00 only (Ben, 5 Nov 2026: get it "nice, clean" so the NAS "spins down when it needs to").** The NAS hard drives sleep outside that window, and daytime moves (scratch offloads, disk clear-outs) kept them awake from 22 Oct to 4 Nov. `scripts/nas_offload.py --apply` waits for the window by itself. Any other move or clear-out of more than a handful of files waits for it too. The only daytime exceptions are a master's safety copy (the master rule under Render scratch) and a Mini under 8 GB free.
+- **Moving files to the archive (ship / offload):**
+  1. rsync, then SHA-256 manifests on both sides;
+  2. delete the Mini copy only on a full match **and** only when no job is still writing that folder;
+  3. leave a `MOVED_TO_NAS.txt` in the Mini folder.
+- **Restoring:** git-tracked files are never overwritten from the NAS; the git copy wins.
+- **YouTube staging folder (Ben, 15 Oct 2026).** `/Volumes/data/mac-mini-archive/youtube-staging/<film-id>/` holds finished, scheduled-or-ready videos waiting to go out, so the Mini disk stays free. Use it when the Mini is under 20 GB free or holds more than ~3 films ready to go out. Its `README_YOUTUBE_STAGING.txt` says what it is. Rules: (1) copy with rsync, check the sha256 manifest, and leave `MOVED_TO_NAS.txt` in the Mini folder; (2) the upload always reads the file back from the NAS path and the manifest records that path; (3) a staged file is deleted only when the video is **live on YouTube** (read back by the Studio check, status Public) **and** no Test & Compare, re-upload or Shorts cut still needs it, and then only that film's folder inside `youtube-staging/`. This is the one exception to "never delete anything on the NAS"; nothing outside `youtube-staging/` is ever deleted. (4) A film's final cut stays in the film's NAS archive folder too if it is the only copy of the master. (5) If the share is hung or unmounted, stage nothing and keep the Mini copy; never write into an unmounted `/Volumes/data` path (it lands on the Mini disk).
+- **The 06:40 job can't read the NAS (26 Oct 2026).** macOS privacy blocks launchd jobs from `/Volumes` ("Operation not permitted"). After you move or upload a scheduled Short whose export or VO stem is on the NAS, run `python3 00_Brand/Channel-Setup/tools/gate_upcoming.py --snapshot <today's owb snapshot> --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root ~/YouTube/orbit-with-ben --out /dev/null --stage` from your session. It copies those files to `~/_desk/cache/gate-media/` (a cache, safe to clear), and the 06:40 check reads the copy. Without it the Short reads NOT CHECKED, not FAIL.
+- Any job that moves files claims first (`studio.py claim … --git`) and runs in detached tmux. On STOP, its last act is to post the STOP line or set its stage to `blocked`.
+<!-- /SYNC -->
+
+## 14. Sign-offs
 
 Every sign-off goes to Chief on the thread first (Claude until 9 Oct 2026). This copy is generated from `AGENTS.md` by `scripts/sync_rules.py`; edit `AGENTS.md`, not this block.
 
@@ -504,7 +561,7 @@ Every sign-off goes to Chief on the thread first (Claude until 9 Oct 2026). This
 - **F. Codex unattended permissions (exact allow-list).** Unattended Codex runs on the Mini may, without the automatic approval reviewer: push to `TheLaughingGod1986/orbit-with-ben` and `TheLaughingGod1986/history-of-science` (never force-push); upload to the existing R2 bucket `owb-media` under the existing social prefixes; create, read and update Buffer posts for our two profiles through `07_Content-Ops` scripts; call the YouTube Data/Analytics APIs for our two channels through the repo's scripts. Everything else (any other host, deleting, spending, account or sign-in changes, making a video public outside its scheduled publishAt) still needs approval. The allow-list lives in the Mini's Codex rules file (job J2040 sets it up and records the exact rules in `docs/CODEX_ALLOWLIST.md`).
 - **G. At most 9 films in production: 5 OWB, 4 HOS (Ben, 4 Nov 2026: raised from 6 for two OWB longs a week; HOS raised to 4 on 5 Nov when it was running out).** `jobs/WIP.json` names the active films (topic to Ben's watch) and each channel's waiting order (`next` for OWB, `next_hos` for HOS). When an active film reaches Ben's watch, it leaves `active` and the first film in **its own channel's** line enters through one rule-E topic review; only then is its work queued. A channel's line is never left empty: when it drops below two films, the next topic job for that channel is queued (5 Nov 2026: `next` held only OWB films, so every HOS place that freed up went to OWB and HOS ran out after 3 Dec). Shorts, Studio finishing on uploaded films and the weekly audits don't count. Production jobs for active films outrank all other non-deadline work.
 - **H. Reviews of finished work go to the review lane, not the Chief (Ben, 5 Nov 2026: "Yes ok"; with "if the chiefs the bottle neck").** A decision on finished work (thumbnail concepts, voice takes, shot lists, picture stills, packaging, a film's records/data PR, a held job's condition check, a pack ready for Ben's watch) is a `kind: review` job. Any agent that is up takes it (Claude first, then Cursor-on-Claude, Gemini, Codex), on the Mini, on the MacBook (which takes `any` jobs) or in Claude's hourly run, so several run at once. The reviewer writes `jobs/reviews/<id>/REVIEW.md` (KEEP or FIX with an exact list), then releases or reopens the original job. `scripts/review_lane.py --apply --git` moves anything still parked for the Chief that isn't the Chief's (Claude runs it hourly). **The Chief keeps:** code and system changes (scripts/, the relay, dispatch, the board site, PRs without a film), money, publishing (upload, visibility, schedule, Studio finish on a live video), monthly rule recommendations and AGENTS.md. One elected Chief at a time stays, so two never rule differently on the same system change.
-- **Weekly publish cadence (Ben, 4 Nov 2026; locked 7 Nov 2026).** **Orbit:** 2 longs a week (Sunday and Wednesday 18:00 London, normal publish, no Premiere; first Wednesday films remain 032 Titan on 25 Nov 2026 and 031 Magnetic Field on 2 Dec 2026) and 4 Shorts a week (Monday, Wednesday, Friday and Saturday 11:30 London, two per new long; films whose Shorts already exist keep them). Never two Shorts on the same day. Fill calendar gaps only with ready approved cuts, not placeholders. Do not treat 10 Orbit Shorts a week as the target. Each new OWB long gets **two** Shorts (one is Test A's opening Short while that test runs). Target: 14 days from a film entering `active` to Ben's watch. **History of Science (Ben, 7 Nov 2026):** 1 long a week at Thursday 18:00 London and 4 Shorts a week; never two Shorts a day; no placeholders just to hit the number.
+- **Weekly publish cadence (Ben, 4 Nov 2026; locked 7 Nov 2026).** **Orbit:** 2 longs a week (Sunday and Wednesday 18:00 London, normal publish, no Premiere; first Wednesday films remain 032 Titan on 25 Nov 2026 and 031 Magnetic Field on 2 Dec 2026) and 4 Shorts a week (Monday, Wednesday, Friday and Saturday 11:30 London, two per new long; films whose Shorts already exist keep them, including older films that still carry three). Never two Shorts on the same day. Fill calendar gaps only with ready approved cuts, not placeholders. Do not treat 10 Orbit Shorts a week as the target. Each new OWB long gets **two** Shorts (one is Test A's opening Short while that test runs). Target: 14 days from a film entering `active` to Ben's watch. **History of Science (Ben, 7 Nov 2026):** 1 long a week at Thursday 18:00 London and 4 Shorts a week (Saturday, Friday, Sunday and Tuesday 11:30 London); never two Shorts a day; no placeholders just to hit the number. Lane chips do not move from these dates alone — see **Videos tab**.
 
 **Standing order: ask Chief first, not Ben** (Ben, 3 Oct 2026, to Claude: *"Instead of asking me, always ask Claude first."* Chief has held that role since 9 Oct). Anything that used to be marked NEEDS BEN goes to Chief on the PR #99 thread first; Claude's review and recommendation come with it. Chief decides it, records the decision on the thread, and tells Ben what was decided so he can overrule it. That covers topic, scripts, voice, shot lists, pictures, titles, descriptions, tags, thumbnails, Shorts, the final OK before scheduling, renames, back-catalogue titles and covers, and edits to posts already in Buffer. Ben is asked only for:
 
@@ -541,21 +598,35 @@ This is measurement only. It changes no spend rule.
 - **Ben's watch.** When the focus film is finished and has passed agent QA, it goes to Videos → **UAT** (set `jobs.py awaits`). Ben is told with one push notification and the board's top line. Then the next film becomes the focus.
 - **Watch window.** Ben's watch happens before upload, because a fix after upload means a fresh upload (no file swaps, no deletes). Each finished film's note gives a watch-by date. If Ben hasn't flagged anything by then, Chief's final OK and the upload go ahead, so no film stalls waiting on him. Ben signs off on the board: **Approve** (film → **Passed**, ready to schedule) or **Request changes** (with a note; film → **In progress** for the agents) on the cut's card in **UAT**, which is there only if the job set `jobs.py awaits` (see the job queue rules). That writes `checks/<OWB-022>` in the board's store, and Claude acts on it at the next hourly run.
 
-**Videos tab (live, Ben 7 Nov 2026).** The Studio board at https://studio-kanban.vercel.app → **Videos** is the film swim lane. One card per long/Short. Lanes left → right:
+**Videos tab (live, Ben 7 Nov 2026; workflow locked for Chiefs 7 Nov ~12:46 London).** The Studio board at https://studio-kanban.vercel.app → **Videos** is the film swim lane. One card per long/Short. The nine chips (3×3) are **computed** from each cut's real tracker / job / YouTube state (`scripts/video_tracker.py` → `board.json` tracker; UI remap in `board_site/studio_app.js` `videoLane`). They are **not** Chief dragging cards by hand. Filters: Both / Orbit / HOS / Longs / Shorts. Keep all nine lanes.
 
 **Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live.**
 
-| Lane | Who runs it | Meaning |
+| Lane | Who runs it | What the chip means (computed) |
 |---|---|---|
-| Backlog | Agents | Planned, not started. Includes board-only **planned Short** placeholders (HOS 4 per upcoming long, Orbit 2 — including undated Orbit backlog longs). No invented YouTube ids or air dates. Parents that already have uploaded/live Shorts do not get extra placeholders. |
-| To do | Agents | In the work mix, waiting for its next step. |
-| In progress | Agents | An agent is on it. Ben's UAT notes/fixes return here — not a Ben blocker. |
-| QA | Agents | Specialist / Chief review of finished work. Not for Ben. |
-| UAT | **Ben only** | Finished cut ready for his watch (`jobs.py awaits` + Play link). Pass → **Passed**. Notes/fixes → **In progress**. |
-| Passed | Agents | Ben passed it; ready to schedule. Agents finish the listing package (title, thumb, description, tags) and the Mini upload/social handoff (`approved_deliver.py`). |
-| Scheduled | Agents | On YouTube with a real `publishAt`, waiting to go public. |
-| Live | — | Public. |
-| Post-live | Agents | Public with open follow-ups (pins, Related, thumb tests). |
+| Backlog | Agents | Planned, not started yet. Includes board-only **planned Short** placeholders (HOS 4 per upcoming long, Orbit 2 — including undated Orbit backlog longs). No invented YouTube ids or air dates. Parents that already have uploaded/live Shorts do not get extra placeholders. |
+| To do | Agents | The cut is in the work mix and waiting for its next production step, but the card has **no live job** attached yet (`open` / `claimed` / `blocked`). Agents queue or claim that step; Chief does **not** pick cards into To do by date. |
+| In progress | Agents | A live job is on the card (`open`, `claimed`, or `blocked`), or an agent has claimed the work, **or** the cut came back from UAT with Ben's notes / Request changes. Not a Ben blocker. |
+| QA | Agents | Visible internal specialist / Chief review (tracker `ready` with `readyFor` ≠ Ben, or a live `review` / `qa` / `chief` job). **Not** Ben's watch. |
+| UAT | **Ben only** | Needs Ben's watch (`jobs.py awaits` + Play link; tracker ready-for-Ben). Ben's only Videos action (locked 7 Nov 2026): **Pass → Passed** (ready to schedule); **notes / Request changes → In progress** for the agents. |
+| Passed | Agents | Tracker approved (Ben passed, or equivalent approved state). Stays **Passed even while an upload / social job runs**. Agents finish the listing package (title, thumb, description, tags) and the Mini upload/social handoff (`approved_deliver.py`), then schedule into a locked slot. |
+| Scheduled | Agents | YouTube state is **scheduled** **and** there is a real `publishAt` (never invent a slot). Waiting to go public. |
+| Live | — | Public, with **no** leftover live / launch jobs on the card. |
+| Post-live | Agents | Public **and** still has open after-launch work (Related links, pins, thumb tests, etc.). |
+
+**How work actually moves (not a manual swim-lane board):**
+1. Agents (and the job queue / WIP rules) decide what to produce next. A nearby go-live date is why they **queue** the next production job and why a **Passed** cut is **scheduled** into a locked calendar slot — dates do **not** themselves flip a chip into To do or In progress.
+2. When a production job is added and becomes live on the card, the chip moves To do → In progress (or straight into In progress / QA when that job is a review).
+3. When the cut is ready for Ben, `jobs.py awaits` + a Playable file put it in **UAT**. Only Ben acts there.
+4. After Ben Passes, agents package and upload on the **Mini**, then set a real YouTube `publishAt` in a locked slot → **Scheduled** → **Live**, with leftover follow-ups → **Post-live**.
+
+**Do not invent** a “Chief picks some cards into To do by date, then picks some into In progress” workflow — that is the misconception Ben asked about while looking at the 3×3 chips. Chief's job on Videos is to read the computed state, keep agents clearing agent lanes, and never park non-watch work on Ben.
+
+**Locked publish slots (cadence; unchanged):** weekly targets **2 Orbit longs + 4 Orbit Shorts**, **1 HOS long + 4 HOS Shorts**. Fill calendar gaps only with ready approved cuts, not placeholders. Never two Shorts on the same day.
+- **Orbit longs:** Sunday and Wednesday **18:00 London**, normal publish, **no Premiere**.
+- **Orbit Shorts:** Monday, Wednesday, Friday and Saturday **11:30 London** (each **new** long gets **two** Shorts; older films whose Shorts already exist keep them — including films that still carry three).
+- **HOS long:** Thursday **18:00 London**.
+- **HOS Shorts:** Saturday, Friday, Sunday and Tuesday **11:30 London**.
 
 Every lane except UAT is agent-run. Do not park non-watch work on Ben. Claude owns the board page publish (`05_Analytics/kanban/`, site `studio-kanban`); other agents change what it reads (`PIPELINE.json`, `status.json`, the job queue, tracker), not the page. Overnight (22:00–07:00 London) the board still refreshes; Ben gets no phone notifications until a morning summary. Film briefs still answer *what's the holdup* in `05_Analytics/kanban/film_briefs.json`.
 
