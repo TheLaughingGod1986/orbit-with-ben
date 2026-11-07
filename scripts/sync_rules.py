@@ -57,6 +57,12 @@ STALE = [
      "Ben's watch lane is Videos → UAT (Ben, 7 Nov 2026)"),
     (r"Media on the Mini or the NAS reaches it only through the shared folder",
      "Working films live on studio-live; File Sharing shared is not the film library (7 Nov 2026)"),
+    (r"The shared folder `~/_desk/shared` \(Mini\) = `/Volumes/shared` \(MacBook\) passes files between them",
+     "File Sharing shared is empty / not the film library; use studio-live (7 Nov 2026)"),
+    (r"## NAS archive \(5 Oct 2026\)",
+     "Heading is Film folders on the NAS (studio-live + archive) (7 Nov 2026)"),
+    (r"invent a Tailscale or SMB share|new Tailscale file share|/Volumes/shared` as the film",
+     "Do not invent a third share; studio-live + mac-mini-archive only (7 Nov 2026)"),
 ]
 BLOCK = re.compile(r"(<!-- SYNC: AGENTS\.md#(?P<head>[^>]+?) -->\n)(?P<body>.*?)(<!-- /SYNC -->)", re.S)
 
