@@ -1,5 +1,5 @@
 {
-  "next_id": 2362,
+  "next_id": 2363,
   "jobs": [
     {
       "id": "J0001",
@@ -200627,6 +200627,35 @@
       "remaining_action": "Correct the Pluto picture plan and evidence before production approval",
       "kind": "review",
       "plain": "Fix unsuitable source images, repeated plates and ending timings in the Pluto picture plan."
+    },
+    {
+      "id": "J2362",
+      "title": "034 Pluto: Chief re-review corrected J2361 shot plan and decide production release",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Follow J2359 FIX and J2361 repair. Check exact PR626 head and every blocker in jobs/reviews/J2359/REVIEW.md: reconstruction/annotated source replacement, native-motion separators, canonical reuse including graphics, explicit card timings, music fade, source and marker counts, complete overlay render plan. Preserve accepted v03 VO and J2360 separate Short plan. Decide corrected zero-cost R28/R52 fallback and any required explicit Orbit-beat exception; no OMNI or other spend without separately scoped guards. Only if all checks pass merge corrected PR626, mark 034 shots done and queue named harvest and chart workers with exact deliverables and downstream perceptual review. If still FIX, record remaining defects and concrete repair; never mark shots done or release assembly on an unapproved plan. No Ben approval required for this ordinary Chief decision; no upload or public changes. Recheck chief_relay status before protected action.",
+      "ref": "jobs/reviews/J2359/REVIEW.md",
+      "film": "034",
+      "stage": "shots",
+      "after": "J2361",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T11:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T11:24Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the corrected Pluto shot plan and release only approved picture work",
+      "kind": "chief",
+      "plain": "Check the repaired Pluto plan before allowing picture and graphics production."
     }
   ],
   "focus": [
