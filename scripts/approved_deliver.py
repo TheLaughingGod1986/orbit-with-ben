@@ -58,6 +58,64 @@ def is_scheduled(v: dict) -> bool:
     return (not is_public(v)) and yt.get("state") == "scheduled" and bool(yt.get("publishAt") or yt.get("publishAtLondon"))
 
 
+def is_uploaded(v: dict) -> bool:
+    """Already has a YouTube id in uploaded/scheduled/live state — never invent a second upload."""
+    yt = v.get("youtube") or {}
+    vid = yt.get("videoId") or ""
+    if not vid:
+        return False
+    return yt.get("state") in ("scheduled", "live", "uploaded") or is_public(v) or is_scheduled(v)
+
+
+def london_day(at: str) -> str:
+    """YYYY-MM-DD in London from an ISO publishAt, or '' if unparseable. Never invents a day."""
+    if not at:
+        return ""
+    try:
+        when = dt.datetime.fromisoformat(str(at).replace("Z", "+00:00")).astimezone(LONDON)
+    except ValueError:
+        return ""
+    return when.date().isoformat()
+
+
+def same_cut_identity(a: dict, b: dict) -> bool:
+    """Same channel + number + long/short (and Short id when both have one)."""
+    if str(a.get("channel") or "").upper() != str(b.get("channel") or "").upper():
+        return False
+    if (a.get("type") == "short") != (b.get("type") == "short"):
+        return False
+    na, nb = str(a.get("number") or ""), str(b.get("number") or "")
+    if na and nb and na != nb:
+        return False
+    if a.get("type") == "short":
+        sa, sb = str(a.get("shortId") or ""), str(b.get("shortId") or "")
+        if sa and sb:
+            return sa == sb
+    return bool(na and nb and na == nb)
+
+
+def already_delivered(video: dict, videos: list[dict]) -> str:
+    """Why this Passed cut must not get another upload, or '' if clear."""
+    yt = video.get("youtube") or {}
+    vid = yt.get("videoId") or ""
+    if vid in BANNED_REUSE_IDS:
+        return f"Banned reuse id {vid}"
+    if is_public(video) or is_scheduled(video) or is_uploaded(video):
+        return "Already on YouTube"
+    for other in videos:
+        if other is video or other.get("key") == video.get("key"):
+            continue
+        if not same_cut_identity(video, other):
+            continue
+        oyt = other.get("youtube") or {}
+        oid = oyt.get("videoId") or ""
+        if oid in BANNED_REUSE_IDS:
+            return f"Banned reuse id {oid}"
+        if is_public(other) or is_scheduled(other) or is_uploaded(other):
+            return f"Already on YouTube as {other.get('key')}"
+    return ""
+
+
 def is_swap(job: dict | None, video: dict | None = None) -> bool:
     bits = []
     if job:
@@ -82,35 +140,102 @@ def parent_long_public(video: dict, videos: list[dict]) -> bool:
     return True
 
 
-def taken_short_days(videos: list[dict], channel: str, from_day: dt.date) -> set[str]:
-    """London YYYY-MM-DD that already have a Short scheduled or public for this channel."""
+def _uploads_publish_days(path: Path, *, channel: str, want_short: bool, from_day: dt.date) -> set[str]:
+    """London days booked in one UPLOADS.json for this channel and long/short kind."""
+    out: set[str] = set()
+    try:
+        vids = json.loads(path.read_text()).get("videos", {})
+    except (OSError, ValueError, AttributeError):
+        return out
+    for meta in vids.values():
+        if not isinstance(meta, dict) or meta.get("retired"):
+            continue
+        kind = meta.get("kind") or "long"
+        is_short = kind == "short"
+        if is_short != want_short:
+            continue
+        # OWB UPLOADS rows are OWB; HOS UPLOADS may set channel or live under HOS checkout.
+        row_ch = str(meta.get("channel") or channel).upper()
+        if row_ch != channel:
+            continue
+        day = london_day(meta.get("publishAt") or "")
+        if day and day >= from_day.isoformat():
+            out.add(day)
+    return out
+
+
+def taken_cadence_days(videos: list[dict], channel: str, vtype: str, from_day: dt.date,
+                       *, root: Path | None = None) -> set[str]:
+    """London YYYY-MM-DD that already have a Short (or long) scheduled or public on this channel.
+
+    Reads tracker cards plus OWB/HOS UPLOADS.json so empty stubs cannot hide a booked Monday 11:30
+    or Sunday 18:00. Fill gaps only; never invent ids.
+    """
+    ch = (channel or "OWB").upper()
+    want_short = vtype == "short"
     out: set[str] = set()
     for v in videos:
-        if str(v.get("channel") or "").upper() != channel or v.get("type") != "short":
+        if str(v.get("channel") or "").upper() != ch:
+            continue
+        if (v.get("type") == "short") != want_short:
             continue
         yt = v.get("youtube") or {}
-        at = yt.get("publishAt") or ""
-        if not at:
-            continue
+        day = london_day(yt.get("publishAt") or "")
+        if not day and is_public(v) and v.get("air"):
+            day = str(v.get("air"))[:10]
+        if day and day >= from_day.isoformat():
+            out.add(day)
+    root = root or ROOT
+    owb_uploads = root / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
+    if ch == "OWB" and owb_uploads.is_file():
+        out |= _uploads_publish_days(owb_uploads, channel="OWB", want_short=want_short, from_day=from_day)
+    if ch == "HOS":
         try:
-            when = dt.datetime.fromisoformat(at.replace("Z", "+00:00")).astimezone(LONDON)
-        except ValueError:
-            continue
-        if when.date() >= from_day:
-            out.add(when.date().isoformat())
+            import channels
+            hos_root = channels.repo_path("hos")
+            hos_uploads = hos_root / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
+            if hos_uploads.is_file():
+                out |= _uploads_publish_days(hos_uploads, channel="HOS", want_short=want_short, from_day=from_day)
+        except Exception:  # noqa: BLE001
+            pass
     return out
+
+
+# Back-compat name used by older tests/callers.
+def taken_short_days(videos: list[dict], channel: str, from_day: dt.date, *, root: Path | None = None) -> set[str]:
+    return taken_cadence_days(videos, channel, "short", from_day, root=root)
 
 
 def next_cadence_slot(channel: str, vtype: str, *, now: dt.datetime, taken_days: set[str] | None = None,
                      airs: str = "") -> str:
-    """Next London cadence ISO (…Z) for a ready cut. Uses a known airs when present; never invents past dates."""
-    if airs:
-        return airs if airs.endswith("Z") or "+" in airs else airs
+    """Next London cadence ISO (…Z) for a ready cut. Skips any London day already taken for this kind.
+
+    A known `airs` is used only when that London day is free; otherwise the next free cadence slot wins.
+    Never invents past dates or YouTube ids.
+    """
     ch = (channel or "OWB").upper()
     kind = "short" if vtype == "short" else "long"
     slots = CADENCE.get(ch, CADENCE["OWB"]).get(kind) or CADENCE["OWB"]["long"]
     local = now.astimezone(LONDON)
-    taken = taken_days or set()
+    taken = set(taken_days or set())
+    if airs:
+        raw = airs if airs.endswith("Z") or "+" in airs else airs
+        day = london_day(raw if "T" in raw else raw)
+        if not day:
+            try:
+                day = london_day(raw.replace(" ", "T") if "T" not in raw else raw)
+            except Exception:  # noqa: BLE001
+                day = ""
+        # approved_from airs is usually already …Z
+        if day and day not in taken:
+            try:
+                when = dt.datetime.fromisoformat(raw.replace("Z", "+00:00"))
+                if when.tzinfo is None:
+                    when = when.replace(tzinfo=dt.timezone.utc)
+                if when > now:
+                    return when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
+            except ValueError:
+                pass
     for day_offset in range(0, 60):
         day = (local + dt.timedelta(days=day_offset)).date()
         wd = day.weekday()
@@ -120,7 +245,7 @@ def next_cadence_slot(channel: str, vtype: str, *, now: dt.datetime, taken_days:
             when = dt.datetime(day.year, day.month, day.day, hour, minute, tzinfo=LONDON)
             if when <= local:
                 continue
-            if kind == "short" and day.isoformat() in taken:
+            if day.isoformat() in taken:
                 continue
             return when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     return ""
@@ -177,7 +302,16 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
     now = now or now_utc()
     root = root or ROOT
     actions = []
-    by_id = {j["id"]: j for j in alljobs}
+    from_day = now.astimezone(LONDON).date()
+    # Per channel+kind: days already booked (tracker + UPLOADS), grown as this plan assigns slots.
+    taken_by: dict[tuple[str, str], set[str]] = {}
+
+    def taken_for(channel: str, vtype: str) -> set[str]:
+        key = (channel, vtype)
+        if key not in taken_by:
+            taken_by[key] = taken_cadence_days(videos, channel, vtype, from_day, root=root)
+        return taken_by[key]
+
     for v in passed_candidates(videos):
         listing = lp.for_video(v, root)
         dest = listing.get("destination") or "youtube"
@@ -194,14 +328,10 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
         if any(is_swap(j, v) for j in jobs) or is_swap(None, v):
             actions.append({"op": "skip", "key": v.get("key"), "reason": "Swap stays on its own path"})
             continue
-        # Already on YouTube with an id — don't create a second upload, and never retarget banned ids.
-        yt = v.get("youtube") or {}
-        vid = yt.get("videoId") or ""
-        if vid in BANNED_REUSE_IDS:
-            actions.append({"op": "skip", "key": v.get("key"), "reason": f"Banned reuse id {vid}"})
-            continue
-        if yt.get("videoId") and yt.get("state") in ("scheduled", "live", "uploaded"):
-            actions.append({"op": "skip", "key": v.get("key"), "reason": "Already on YouTube"})
+        # Already on YouTube (this card or a sibling film/Short card) — no second upload; never retarget banned ids.
+        why = already_delivered(v, videos)
+        if why:
+            actions.append({"op": "skip", "key": v.get("key"), "reason": why})
             continue
         live = [j for j in jobs if j.get("status") in ("open", "claimed", "blocked")]
         if live:
@@ -217,8 +347,16 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
         channel = str(v.get("channel") or "OWB").upper()
         vtype = "short" if v.get("type") == "short" else "long"
         airs = ((v.get("approved") or {}).get("airs") or "")
-        taken = taken_short_days(videos, channel, now.astimezone(LONDON).date()) if vtype == "short" else set()
+        taken = taken_for(channel, vtype)
         slot = next_cadence_slot(channel, vtype, now=now, taken_days=taken, airs=airs)
+        if dest != "social" and not slot:
+            actions.append({"op": "wait", "key": v.get("key"),
+                            "reason": "No free cadence slot in the next 60 days"})
+            continue
+        if slot:
+            day = london_day(slot)
+            if day:
+                taken.add(day)
         title_bit = (v.get("title") or listing.get("title") or v.get("key") or "")[:80]
         num = v.get("number") or ""
         ver = (v.get("approved") or {}).get("version") or v.get("version") or ""
@@ -304,25 +442,106 @@ def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetim
     return touched
 
 
+def load_owb_films(root: Path) -> list[dict]:
+    """Every OWB status.json, with PACKAGE_UPLOAD_RESULT release when present (same as kanban_snapshot)."""
+    films = []
+    for path in sorted((root / "02_Video-Projects").glob("*/status.json")):
+        try:
+            film = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        if not isinstance(film, dict):
+            continue
+        try:
+            from kanban_snapshot import release_record
+            rec = release_record(str(film.get("film") or ""), root)
+            if rec:
+                film["release"] = rec
+        except Exception:  # noqa: BLE001 — release is best-effort; UPLOADS still attaches
+            pass
+        films.append(film)
+    return films
+
+
+def load_hos_pipeline(root: Path | None = None) -> dict:
+    """HOS PIPELINE.json + long upload read-back from HOS UPLOADS (board_publish / kanban_snapshot path)."""
+    hos: dict = {"films": []}
+    try:
+        import channels
+        hos_root = channels.repo_path("hos")
+    except Exception:  # noqa: BLE001
+        return hos
+    pipe = hos_root / "00_Brand" / "Channel-Setup" / "PIPELINE.json"
+    if not pipe.is_file():
+        return hos
+    try:
+        hos = json.loads(pipe.read_text())
+    except (OSError, ValueError):
+        return {"films": []}
+    if not isinstance(hos.get("films"), list):
+        return {"films": []}
+    try:
+        from kanban_snapshot import attach_hos_uploads
+        attach_hos_uploads(hos_root, hos)
+    except Exception:  # noqa: BLE001
+        pass
+    return hos
+
+
+def load_briefs(root: Path) -> dict:
+    path = root / "05_Analytics" / "kanban" / "film_briefs.json"
+    if not path.is_file():
+        return {}
+    try:
+        doc = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return {}
+    if isinstance(doc, dict) and isinstance(doc.get("films"), dict):
+        return doc["films"]
+    return doc if isinstance(doc, dict) else {}
+
+
+def load_delivery_videos(root: Path, alljobs: list[dict], *, now: dt.datetime) -> list[dict]:
+    """Rebuild tracker videos the way the live board does — real PIPELINE, status.json, UPLOADS, briefs.
+
+    Passing uploads={} (the old path) stripped youtube metadata so a Passed card that was already
+    scheduled/public looked like it still needed an upload. Always load uploads_index (and HOS
+    attachments); never invent YouTube ids.
+    """
+    uploads = vt.uploads_index(root)
+    hos = load_hos_pipeline(root)
+    owb = load_owb_films(root)
+    briefs = load_briefs(root)
+    live = [j for j in alljobs if j.get("status") in vt.LIVE_STATUSES]
+    doc = vt.build_videos(
+        hos=hos,
+        owb=owb,
+        briefs=briefs,
+        jobs=live,
+        checks={},
+        uploads=uploads,
+        now=now,
+        approved=vt.approved_entries(alljobs),
+        alljobs=alljobs,
+    )
+    return doc.get("videos") or []
+
+
 def run(*, apply: bool = False, git: bool = False, agent: str = "relay",
-        root: Path | None = None, at: dt.datetime | None = None) -> dict:
+        root: Path | None = None, at: dt.datetime | None = None,
+        videos: list[dict] | None = None) -> dict:
     root = root or ROOT
     at = at or now_utc()
     qpath = root / "jobs" / "queue.json"
     data = json.loads(qpath.read_text()) if qpath.is_file() else {"next_id": 1, "jobs": []}
-    # Prefer a published tracker if present; else rebuild lightly from queue approvals only.
-    videos = []
-    try:
-        docs = {}
-        # Minimal rebuild: approved cards from the queue.
-        videos = vt.build_videos(
-            hos={"films": []}, owb=[], briefs={}, jobs=[j for j in data["jobs"] if j.get("status") in vt.LIVE_STATUSES],
-            checks={}, uploads={}, now=at, approved=vt.approved_entries(data["jobs"]), alljobs=data["jobs"],
-        ).get("videos") or []
-    except Exception:
-        videos = []
+    if videos is None:
+        try:
+            videos = load_delivery_videos(root, data["jobs"], now=at)
+        except Exception:  # noqa: BLE001 — never block the publisher; plan with whatever we have
+            videos = []
     actions = plan_actions(videos, data["jobs"], now=at, root=root)
-    result = {"at": at.isoformat().replace("+00:00", "Z"), "apply": apply, "actions": actions, "touched": []}
+    result = {"at": at.isoformat().replace("+00:00", "Z"), "apply": apply, "actions": actions, "touched": [],
+              "videos": len(videos)}
     if not apply:
         return result
 

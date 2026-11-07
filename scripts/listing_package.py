@@ -54,11 +54,10 @@ def find_manifest(root: Path, *, number: str = "", vtype: str = "", package_dir:
         return None
     film = folders[0]
     if vtype == "short":
+        # A Short must use its own package. Never fall back to the parent long's PACKAGE_MANIFEST —
+        # with 0 or 2+ Short packages that would falsely mark the Short listing-complete.
         shorts = sorted(film.glob("10_Shorts/*/11_Upload-Package/PACKAGE_MANIFEST.json"))
-        if len(shorts) == 1:
-            return shorts[0]
-        long_m = film / "11_Upload-Package" / "PACKAGE_MANIFEST.json"
-        return long_m if long_m.is_file() else None
+        return shorts[0] if len(shorts) == 1 else None
     hit = film / "11_Upload-Package" / "PACKAGE_MANIFEST.json"
     return hit if hit.is_file() else None
 
