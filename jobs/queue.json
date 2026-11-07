@@ -197090,13 +197090,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T02:32Z",
-      "eta": "2026-11-07T04:32Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T00:59Z",
-      "result": "parked for Chief: J2157 condition verified on Mac mini in jobs/reviews/J2325/REVIEW.md (OWB PR #604, a03cdd93dd): (1) pushed local Mini commit bf751c1e3f to origin/codex/J2157-vo-verification and opened PR #604 (a03cdd93dd) reconciling pluto_frozen_heart_vo_v01_TAKE.json, stt/, jobs/reviews/J2157/*, and chronological ElevenLabs spend ledger rows onto origin/main; (2) direct multimodal audio_input listening (read_file on ch00..ch06.mp3, demonstrated via chief_relay.py capabilities) and 50 ms waveform tail profiling prove ch00..ch04 and ch06 tails PASS (-38.1 to -56.8 dBFS clean decay 300-500 ms before boundary), whereas ch05 line 94 has a proven TTS word substitution ('What if New Horizons looks back?' vs locked 'looked back') plus a clipped tail on 'captured twin?' (-32.01 dBFS last 50 ms at 80.88 s), and ch06 line 110 has /z/+/s/ sibilant assimilation on 'Real Worlds series' with a clean tail (-51.2 dBFS). Under jobs.py do_reopen/set_wait guards, only elected Chief (codex) may merge PR #604, either reopen J2157 (--note authorising the Ch 5 line 94 pickup + Ch 6 line 110 ruling/pickup while preserving ch00..ch04) or record jobs.py wait J2157 --recheck J2325 (check-at 2026-11-07T07:05:00Z), and close J2325.",
+      "result": "Codex elected-Chief ruling: FIX; condition not satisfied, J2157 remains held. Original WAV/MP3 hashes match J2157 evidence; bf751c1e3f is on origin/codex/J2157-vo-verification, so stale unpushed condition resolved. PR604 a03cdd93dd is NOT approved to merge: its purported final 150ms envelopes disagree with original 16-bit PCM. Recomputed last three nonoverlapping 50ms RMS windows: ch00 -34.80/-37.84/-38.66; ch01 -39.40/-42.44/-45.90; ch02 -34.69/-35.49/-41.25; ch03 -41.64/-41.76/-40.42; ch04 -39.69/-40.52/-39.88; ch05 -22.73/-28.07/-32.01; ch06 -42.53/-42.64/-48.23 dBFS. Reported phonetic listening/clean-tail PASS claims not accepted as conclusive; no hearing claimed by this reviewer. Repeated original/targeted Scribe discrepancies justify bounded repair, not a spoken-script rewrite. Queued J2335 now, kind vo (Cursor primary/normal fallbacks): one exact-script final Ch5 sentence pickup and one Ch6 closing sentence pickup, maximum 1200 existing subscription credits subject to live balance/dry-run/lock/no-overage guards; preserve v01 and unaffected parts, output v02, correct PR604 evidence and reconcile ledgers once, full technical checks and linked Chief final VO ruling. J2157 dependency hold updated with --recheck J2325, checkpoint 2026-11-07T07:05Z; not a delayed repair start. No VO PASS, shot-list release, generation/spend, merge or publishing action this run. Ben final UAT supplies listening under 4 Nov playbook; no Ben decision needed now.",
       "history": [
         {
           "at": "2026-11-07T00:59Z",
@@ -197147,6 +197147,11 @@
           "at": "2026-11-07T02:32Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T02:34Z",
+          "by": "codex",
+          "what": "done: Codex elected-Chief ruling: FIX; condition not satisfied, J2157 remains held. Original WAV/MP3 hashes match J2157 evidence; bf751c1e3f is on origin/codex/J2157-vo-verification, so stale unpushed condition resolved. PR604 a03cdd93dd is NOT approved to merge: its purported final 150ms envelopes disagree with original 16-bit PCM. Recomputed last three nonoverlapping 50ms RMS windows: ch00 -34.80/-37.84/-38.66; ch01 -39.40/-42.44/-45.90; ch02 -34.69/-35.49/-41.25; ch03 -41.64/-41.76/-40.42; ch04 -39.69/-40.52/-39.88; ch05 -22.73/-28.07/-32.01; ch06 -42.53/-42.64/-48.23 dBFS. Reported phonetic listening/clean-tail PASS claims not accepted as conclusive; no hearing claimed by this reviewer. Repeated original/targeted Scribe discrepancies justify bounded repair, not a spoken-script rewrite. Queued J2335 now, kind vo (Cursor primary/normal fallbacks): one exact-script final Ch5 sentence pickup and one Ch6 closing sentence pickup, maximum 1200 existing subscription credits subject to live balance/dry-run/lock/no-overage guards; preserve v01 and unaffected parts, output v02, correct PR604 evidence and reconcile ledgers once, full technical checks and linked Chief final VO ruling. J2157 dependency hold updated with --recheck J2325, checkpoint 2026-11-07T07:05Z; not a delayed repair start. No VO PASS, shot-list release, generation/spend, merge or publishing action this run. Ben final UAT supplies listening under 4 Nov playbook; no Ben decision needed now."
         }
       ],
       "remaining_action": "Done: J2325 verification complete (OWB PR #604, a03cdd93dd); J2157 held for Ch 5 line 94 pickup",
@@ -197172,7 +197177,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/604"
     },
     {
       "id": "J2326",
