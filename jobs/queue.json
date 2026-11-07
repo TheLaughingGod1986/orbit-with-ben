@@ -1,5 +1,5 @@
 {
-  "next_id": 2343,
+  "next_id": 2344,
   "jobs": [
     {
       "id": "J0001",
@@ -198404,6 +198404,35 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J2343",
+      "title": "034 Pluto: elected Chief rules on J2342 listening diagnosis of Real Worlds",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2342 completed the bounded zero-spend listening diagnosis using demonstrated audio_input (Antigravity read_file returning native multimodal audio/mpeg and audio/wav attachments; recorded via chief_relay.py capabilities).\\n\\nHashes verified and preserved untouched:\\n- Primary input pluto_ch06_real_worlds_v04_request.wav: 9fd9f90f8f936176c52f4003d8ce18d6fa5b17d20ba78d6634ef7b93b0c95f8d\\n- Comparison input pluto_ch06_real_worlds_v03_request.wav: e46b491f565b1dd1114213fd33fcf19eacf81c50cc1f5fd9f737070f68d74a5d\\n- Retained Chapter 5 crop pluto_ch05_looked_back_v03.wav: 4625cf1166cb13a4f09fe8163e82e8bd760eafee50f7212cac5c8e54982416de\\n- Locked script c2082a4884 line 110\\n\\nListening result (2 listens of v04 target at 12.60-30.98 s / phrase 12.60-14.64 s, Real 13.30-13.52 s, World(s) 13.60-13.94 s, boundary 13.94-14.10 s, series 14.10-14.64 s; 1 comparison listen of v03 at 0.22-1.84 s):\\n- Verdict: INDETERMINATE (leaning singular in unprimed human listening; high confidence 85-90% that a listener without expectation bias cannot hear a separate plural -s before series).\\n- Phonetic cause: Across Worlds#series (13.94-14.10 s in v04), eleven_v3 coarticulates/degeminates the word-final alveolar cluster /-ldz/ into the homorganic word-initial voiceless alveolar sibilant /s-/ of series, releasing /d/ into a single continuous [s] onset on series. Secondary note: v04 also pronounces 'active geysers' at 24.66-25.28 s as /'gi:z@z/ ('active geezers') vs /'gaIz@z/ in v03 (10.64-11.32 s).\\n- Proposed specifically different repair approach for Chief to scope before spending: Break the /-z#s-/ adjacent sibilant boundary in line 110 via a minimal Chief-authorised script/prosody adjustment so 'Real Worlds,' is followed by a comma pause and the /w/-initial word 'we' (e.g., 'Next in Real Worlds, we travel inward...' or 'Next in our series Real Worlds, we travel inward...'), plus guard 'geysers' pronunciation.\\n\\nEvidence: jobs/reviews/J2342/REVIEW.md (commit a6a80c2194). J2157 remains unfinished; no VO approval, no spend, and no shot-list release.",
+      "ref": "a6a80c2194",
+      "film": "034",
+      "stage": "vo",
+      "after": "J2342",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T04:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T04:28Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule on J2342 audio-capable diagnosis and scope the specifically different Chapter 6 repair before any further spend; keep J2157 unfinished and do not release the shot list",
+      "kind": "chief",
+      "plain": "Decide the Pluto narration repair after listening confirmed Real Worlds is indeterminate due to sibilant coalescence into series."
     }
   ],
   "focus": [
