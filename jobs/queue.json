@@ -180539,9 +180539,14 @@
           "at": "2026-11-07T19:39Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Step 3/4 done: rendered and verified all 62 moving-plate 1080p30 composites + 6 chapter cards on studio-live NAS (0 hard polish_gate failures)"
+        },
+        {
+          "at": "2026-11-07T19:44Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Resumed from 853a4fc128 + uncommitted step 3/4 composite outputs in /private/tmp/J2089-rights"
         }
       ],
-      "remaining_action": "Run step 4/4 verification (reconcile_export_inventory_032.py, verify_short_sources_032.py, picture_qa.py source checks) and sync to studio-live & git",
+      "remaining_action": "Run step 4/4 verification (reconcile_export_inventory_032.py, verify_short_sources_032.py, contact sheet & QA checks), commit to worker/J2089-rights, and sync to studio-live",
       "kind": "assembly",
       "taskKeys": [
         "OWB:032"
@@ -180560,9 +180565,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-07T19:39Z",
+        "at": "2026-11-07T19:44Z",
         "by": "gemini",
-        "note": "Step 3/4 done: rendered and verified all 62 moving-plate 1080p30 composites + 6 chapter cards on studio-live NAS (0 hard"
+        "note": "Resumed from 853a4fc128 + uncommitted step 3/4 composite outputs in /private/tmp/J2089-rights"
       }
     },
     {
