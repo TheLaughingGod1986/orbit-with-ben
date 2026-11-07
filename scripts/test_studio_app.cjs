@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, setBoard: b => { board = b; }, setSeg: s => { seg = s; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -152,6 +152,57 @@ assert(!waitingRow.includes('p24-working-dot') && !waitingRow.includes('is-worki
   'waiting cut does not impersonate live work');
 assert(progressHtml.includes('Queued, blocked, or waiting for a step'), 'waiting group is labeled so it cannot look like live work');
 t.setSeg('all');
+
+// Smarter Videos landing + Overview → Videos jump (Ben, 7 Nov 2026 follow-up).
+assert.equal(t.videosJumpHref('OWB:034'), '#videos&lane=progress&focus=OWB%3A034');
+assert.equal(t.videosJumpHref(''), '#videos&lane=progress');
+const jumpCard = t.p24FilmCard({
+  film: 'OWB:034', title: 'Pluto', from: 33, to: 44,
+  items: [{id: 'Jlive', status: 'claimed', title: '034 harvest'}],
+});
+assert(jumpCard.includes('p24-videos-jump') && jumpCard.includes('See on Videos'),
+  'Working on now cards expose an explicit Videos jump');
+assert(jumpCard.includes('href="#videos&amp;lane=progress&amp;focus=OWB%3A034"')
+  || jumpCard.includes('href="#videos&lane=progress&focus=OWB%3A034"'),
+  'Videos jump uses lane=progress and the live film key');
+assert(jumpCard.includes('p24-check-fold') && jumpCard.includes('p24-film-summary'),
+  'Videos jump does not replace the expandable checklist');
+const shortJump = t.p24FilmCard({
+  film: 'OWB:029:S:heiGCnGKTkE', title: 'How Bright Will Betelgeuse Get When It Explodes?',
+  items: [{id: 'J2311', status: 'claimed'}],
+});
+assert(shortJump.includes('focus=OWB%3A029') && !shortJump.includes('heiGCnGKTkE'),
+  'Short jump uses the parent film key, not the YouTube id');
+assert.equal(t.defaultVideosLane({tracker: {videos: [uatCut]}}), 'uat', 'Videos lands on UAT when Ben has a watch');
+assert.equal(t.defaultVideosLane({tracker: {videos: [waitingCut, workingCut]}}), 'progress',
+  'Videos lands on In progress when UAT is empty');
+t.resetVideosLanding();
+context.location.hash = '#videos';
+t.ensureVideosLanding({tracker: {videos: [uatCut, waitingCut]}});
+assert.equal(t.getSeg(), 'uat', 'opening Videos with no lane lands on UAT when needed');
+t.ensureVideosLanding({tracker: {videos: [waitingCut]}});
+assert.equal(t.getSeg(), 'uat', 'smart landing does not flip again after the first apply');
+t.resetVideosLanding();
+context.location.hash = '#videos';
+t.ensureVideosLanding({tracker: {videos: [waitingCut, workingCut]}});
+assert.equal(t.getSeg(), 'progress', 'opening Videos with empty UAT lands on In progress');
+t.setSeg('backlog');
+context.location.hash = '#videos';
+t.ensureVideosLanding({tracker: {videos: [uatCut]}});
+assert.equal(t.getSeg(), 'backlog', 'a chip Ben already tapped is not overridden');
+t.resetVideosLanding();
+context.location.hash = '#videos&lane=progress&focus=OWB:034';
+assert.equal(t.videosLaneFromHash(), 'progress');
+assert.equal(t.videosFocusFromHash(), 'OWB:034');
+t.ensureVideosLanding({tracker: {videos: [uatCut]}});
+assert.equal(t.getSeg(), 'progress', 'explicit lane deep link wins over UAT default');
+const focusedRow = t.videoProductionRow(workingCut, NOW, progressBoard);
+context.location.hash = '#videos&lane=progress&focus=OWB:034';
+const focusedRow2 = t.videoProductionRow(workingCut, NOW, progressBoard);
+assert(focusedRow2.includes('is-focus') && focusedRow2.includes('data-film-key="OWB:034"'),
+  'Videos row matching Overview focus is marked for scroll/highlight');
+context.location.hash = '';
+t.resetVideosLanding();
 
 // Schedule: a warning only when readiness can't be verified.
 assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'}}), NOW + 864e5, NOW), '');
