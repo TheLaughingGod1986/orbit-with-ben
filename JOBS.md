@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2357 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2358 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2360 | mini | claimed | macbook | 2026-11-07T13:16Z | 034 script · for cursor · review · `cursor-claude-opus-5-5` · 034 Short 2: repair exact v03 lift and deliver reviewable no-spend plan | J2356 |
-| J2361 | mini | open (after J2359) | – | – | 034 shots · for gemini · review · `gemini-argon` · 034 Pluto: repair shot-list source, reuse and finishing defects from J2359 | jobs/reviews/J2359/REVIEW.md |
+| J2361 | mini | claimed | gemini | 2026-11-07T13:49Z | 034 shots · for gemini · review · `gemini-argon` · 034 Pluto: repair shot-list source, reuse and finishing defects from J2359 | jobs/reviews/J2359/REVIEW.md |
 | J2362 | any | open (after J2361) | – | – | 034 shots · chief · 034 Pluto: Chief re-review corrected J2361 shot plan and decide production release | jobs/reviews/J2359/REVIEW.md |
 | J2363 | mini | open | – | – | 032 picture · qa · 032 R16: review Cassini counter composite draft in motion | b3c2915961 |
 
