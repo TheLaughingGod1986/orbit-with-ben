@@ -199250,9 +199250,14 @@
           "at": "2026-11-07T07:08Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2349; starting verification of J2299 waiting condition (J2332 -> J2333 -> J2334 chain)"
+        },
+        {
+          "at": "2026-11-07T07:12Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1/3 complete: Verified J2332 done (3 Flow Veo takes on NAS, 30 credits, 14890->14860, £0); J2333 (moving_video_input QA) and J2334 (Chief acceptance) remain open; 43/43 pool files and locked VO verified on disk"
         }
       ],
-      "remaining_action": "Read J2299, J2306, J2332, J2333, and J2334 state and evidence",
+      "remaining_action": "Write and commit jobs/reviews/J2349/REVIEW.md from a clean worktree",
       "kind": "review",
       "recheck_of": "J2299",
       "due": "2026-11-07T08:05:04+00:00",
@@ -199267,11 +199272,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-07T07:08Z",
+        "at": "2026-11-07T07:12Z",
         "by": "gemini",
-        "note": "Claimed J2349; starting verification of J2299 waiting condition (J2332 -> J2333 -> J2334 chain)"
+        "note": "Step 1/3 complete: Verified J2332 done (3 Flow Veo takes on NAS, 30 credits, 14890->14860, £0); J2333 (moving_video_inpu"
       },
       "taskKeys": [
         "OWB:033"
