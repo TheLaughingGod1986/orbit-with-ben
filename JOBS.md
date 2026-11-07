@@ -98,6 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2321 | mini | open | – | – | 029 edit · review · OWB 029: resolve J2309 v05 E1 failures using actual media | J2309 |
 | J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
+| J2324 | mini | open | – | – | assembly · `gpt-6.1-sol` · Repair HOS desk PR450 restart, replay and handback defects | J1809 |
 
 Recently finished:
 
