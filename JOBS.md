@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2089 | mini | open | – | – | 032 picture · for codex · assembly · `gpt-6.1-sol` · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
-| J2141 | mini | claimed | macbook | 2026-11-07T16:50Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
+| J2141 | mini | claimed | macbook | 2026-11-07T17:00Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2366 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2367 | mini | claimed | gemini | 2026-11-07T16:25Z | 034 shots · for gemini · review · `gemini-argon` · 034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362 | jobs/reviews/J2362/REVIEW.md |
 | J2368 | any | open (after J2367) | – | – | 034 shots · chief · 034 Pluto: Chief re-review J2367 corrected shot plan and decide production release | jobs/reviews/J2362/REVIEW.md |
+| J2369 | mini | open | – | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 
 Recently finished:
 
