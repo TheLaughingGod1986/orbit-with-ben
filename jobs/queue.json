@@ -200608,13 +200608,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-07T11:16Z",
-      "eta": "2026-11-07T13:16Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T11:07Z",
-      "result": "",
+      "result": "Delivered 034 10_Shorts/SHORTS_PLAN_v01.md, 10_Shorts/README.md, and jobs/reviews/J2360/REVIEW.md on PR #632 (5442fff3). Reconciled with J2352 VO v03 (2be8030b6c) and J2359 Chief shot-list FIX. Established verbatim v03 word timestamps and OWB-2026-11-E1 shot plans (Cut 1 = 2.50s <= 2.8s, Cut 2 = 4.60s <= 4.8s, max hold <= 3.90s <= 4.0s, loop tail < 1.2s, zero end card/CTA): Selection 2A (Water-Ice Mountains S46+S47+S48+S50, 58w, 26.300s / 25.820s E1), Selection 2B (Charon Double-World S17+S18+S22+S24, 55w, 26.740s / 26.320s E1), and separately scoped Selection 2C-i/ii (Charon Tidal-Lock alternatives, 58w/26.800s and 60w/26.060s). Excluded DEM computer reconstructions banned in J2359 (PIA21863, PIA21864, R38), documented missing native-moving opener and £0 routes (M1-A PIA11709 real-image approach sequence vs M1-B code_graphic_034_short2_open.mp4 fast-move composite), and queued J2364 for Chief plan decision while coordinating with J2361->J2362 and keeping J2319/J2320 held. £0 spent.",
       "history": [
         {
           "at": "2026-11-07T11:07Z",
@@ -200675,6 +200675,11 @@
           "at": "2026-11-07T12:01Z",
           "by": "macbook",
           "what": "step 4 of 4 done: Queued J2364 (elected-Chief Shorts plan decision on PR #632); closing J2360"
+        },
+        {
+          "at": "2026-11-07T12:01Z",
+          "by": "macbook",
+          "what": "done: Delivered 034 10_Shorts/SHORTS_PLAN_v01.md, 10_Shorts/README.md, and jobs/reviews/J2360/REVIEW.md on PR #632 (5442fff3). Reconciled with J2352 VO v03 (2be8030b6c) and J2359 Chief shot-list FIX. Established verbatim v03 word timestamps and OWB-2026-11-E1 shot plans (Cut 1 = 2.50s <= 2.8s, Cut 2 = 4.60s <= 4.8s, max hold <= 3.90s <= 4.0s, loop tail < 1.2s, zero end card/CTA): Selection 2A (Water-Ice Mountains S46+S47+S48+S50, 58w, 26.300s / 25.820s E1), Selection 2B (Charon Double-World S17+S18+S22+S24, 55w, 26.740s / 26.320s E1), and separately scoped Selection 2C-i/ii (Charon Tidal-Lock alternatives, 58w/26.800s and 60w/26.060s). Excluded DEM computer reconstructions banned in J2359 (PIA21863, PIA21864, R38), documented missing native-moving opener and £0 routes (M1-A PIA11709 real-image approach sequence vs M1-B code_graphic_034_short2_open.mp4 fast-move composite), and queued J2364 for Chief plan decision while coordinating with J2361->J2362 and keeping J2319/J2320 held. £0 spent."
         }
       ],
       "remaining_action": "Complete",
@@ -200698,7 +200703,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/632"
     },
     {
       "id": "J2361",
