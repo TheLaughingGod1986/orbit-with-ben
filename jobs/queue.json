@@ -179481,10 +179481,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-07T00:06Z",
-      "eta": "2026-11-07T02:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -180133,6 +180133,11 @@
           "at": "2026-11-07T00:09Z",
           "by": "codex",
           "what": "step 1 of 4 done: Local d135834c03: 30 image/source records verified, 62 export hashes preserved, 7 stale allocations reconciled; infrared labels corrected, 52 timing signatures unchanged. Harvest incomplete."
+        },
+        {
+          "at": "2026-11-07T00:09Z",
+          "by": "codex",
+          "what": "released: Clean local checkpoint d135834c03 in /private/tmp/codex-J2089, worker/J2089-r18-ruler. Original 1/4 retained. 30 cached source images and evidence hashes verified, 62 exports unchanged; current contact sheet built/inspected. Seven stale allocations reconciled. SHOT_LIST_v07 corrects PIA14584/PIA21434 to near-infrared, preserves all 52 timing/cut signatures. Remaining licensed harvest, frame0/Huygens/APL and composites/final gates exceed bounded run. No background process, GBP0, no publishing/film PASS. Inherited public-push restriction retained; local integration only."
         }
       ],
       "remaining_action": "Finish licensed Titan harvest, composites and final gates",
