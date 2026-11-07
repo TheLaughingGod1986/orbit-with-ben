@@ -60,6 +60,5 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
-| 034 | vo | codex | 2026-11-07T05:57Z | 2026-11-07T06:41Z | J2347 034 Pluto: elected Chief rules on J2345 listening review of v05 Real Worlds pickup |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
