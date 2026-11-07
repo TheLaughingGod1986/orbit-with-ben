@@ -197886,13 +197886,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-07T03:15Z",
-      "eta": "2026-11-07T05:15Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T03:11Z",
-      "result": "",
+      "result": "FIX evidence: original API MP3 matches the failed v02 WAV. Chapter 5 crop at 6.200s is usable (looked then back; flat -90 dBFS tail) and was not spliced. Chapter 6 Scribe says world, not Worlds, so no crop and no v03 master. 257+432 credits, one ledger line each. v01 hashes unchanged. Records PR 613 fdb139fe09. Elected Chief ruling is J2338. J2157 stays unfinished. No listening claim.",
       "history": [
         {
           "at": "2026-11-07T03:11Z",
@@ -197923,6 +197923,11 @@
           "at": "2026-11-07T03:25Z",
           "by": "cursor",
           "what": "step 5 of 5 done: PR 613. Chief ruling is J2338. No v03 master. Chapter 6 transcribed as world."
+        },
+        {
+          "at": "2026-11-07T03:25Z",
+          "by": "cursor",
+          "what": "done: FIX evidence: original API MP3 matches the failed v02 WAV. Chapter 5 crop at 6.200s is usable (looked then back; flat -90 dBFS tail) and was not spliced. Chapter 6 Scribe says world, not Worlds, so no crop and no v03 master. 257+432 credits, one ledger line each. v01 hashes unchanged. Records PR 613 fdb139fe09. Elected Chief ruling is J2338. J2157 stays unfinished. No listening claim."
         }
       ],
       "remaining_action": "Hand the Pluto repair to the elected Chief",
