@@ -1,3 +1,40 @@
+## MacBook continuation — 7 Nov, six reachable v02 mechanism renders
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**. Rebuilt the existing six v02 mechanism designs because the availability
+audit recorded their Mini scratch paths as unavailable on this machine.
+No redesign, source/VO change, KEEP, PASS or stage approval. Spend £0.
+
+Media: `/Users/ben/_desk/J2141-mechanisms-macbook-v02/`.
+`CODE_MECHANISMS_MACBOOK_v02.json` records paths, hashes, source rows and cues.
+Rows: R4 compass flip, R7 cooling grains, R8 reversed grains, R20 100%→91%
+strength bars, R21 alpha compass wobble (£0 fallback), R49 local-pole compass.
+Prior Mini manifests/media remain untouched. No files written to the NAS.
+
+`CODE_MECHANISMS_MACBOOK_TECHNICAL_CHECK_v02.json` verifies all six hashes,
+1920×1080, 25 fps, expected alpha/pixel format, duration within half a frame,
+video-only streams and complete error-free ffmpeg decode. Three actual decoded
+static samples differ for each render. `verify_mechanisms_macbook.py` reproduces
+these checks, refusing to overwrite its report/contact sheet. Contact sheet
+`CONTACT_TECHNICAL_v02.jpg` was viewed; navy behind alpha is preview only.
+This does not establish actual playback, composite, audio or film acceptance.
+
+Static review retains concerns in the inherited design: R7 locks grains to
+screen-north, while its approved row calls for south-pointing alignment; R8
+needs the requested side-by-side desk compass/rock comparison, which these
+grains alone do not supply. R7/R8 captions remain static for more than four
+seconds and must be animated/reworked before acceptance. R20/R21 require
+moving graded plates and subject clearance. These are reproducible candidate
+components, not finished approved rows. Do not assemble them on technical
+checks alone. No protected decision made by this worker.
+
+Reproduce into a fresh output directory with `code_graphics.py mechanisms
+--out <fresh-dir> --manifest <new-manifest>`. All six renders and verification
+finished; no process left running. Remaining harvest/graphics/composites/gates
+exceed this 25-minute run; release J2141 at this checkpoint. The ESA/DTU
+rights/gate conflicts below remain, and no search budget was reset or consumed.
+The full package remains unfinished. Next worker resumes this same branch/PR.
+
 ## MacBook continuation — 7 Nov, three ESA/DTU candidates
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
