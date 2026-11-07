@@ -196949,9 +196949,14 @@
           "at": "2026-11-07T01:04Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Pushed bf751c1e3f (codex/J2157-vo-verification) to origin; completed direct audio_input and waveform tail verification on ch00..ch06"
+        },
+        {
+          "at": "2026-11-07T01:08Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Opened OWB PR #604 (a03cdd93dd) with J2157 evidence/ledgers and J2325 audio/tail verification; updating J2157 wait (--recheck J2325)"
         }
       ],
-      "remaining_action": "Write J2325 multimodal audio and waveform verification review and update J2157 hold",
+      "remaining_action": "Done: J2325 verification complete (OWB PR #604, a03cdd93dd); J2157 held for Ch 5 line 94 pickup",
       "kind": "review",
       "recheck_of": "J2157",
       "due": "2026-11-07T01:59:03+00:00",
@@ -196966,11 +196971,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-07T01:04Z",
+        "at": "2026-11-07T01:08Z",
         "by": "gemini",
-        "note": "Pushed bf751c1e3f (codex/J2157-vo-verification) to origin; completed direct audio_input and waveform tail verification o"
+        "note": "Opened OWB PR #604 (a03cdd93dd) with J2157 evidence/ledgers and J2325 audio/tail verification; updating J2157 wait (--re"
       },
       "taskKeys": [
         "OWB:034"
