@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1004,6 +1004,75 @@ console.log('Queue forecast checks OK');
   assert(!/J2311 · Video production/.test(aj), 'Active job subline is not the generic category when a video is linked');
 }
 console.log('Last-24-hours film cards OK');
+
+// Working on now checklist = run / hierarchy order, not raw job-id order (Ben, 7 Nov ~00:26).
+{
+  // Titan: J0979 waits on J2089 — prerequisite stays above even when listed first by id.
+  const titan = t.p24SortFilmItems([
+    {id: 'J0979', title: '032 Shorts B+C', status: 'blocked', waitKind: 'after',
+      after: 'J2089', why: 'Will run automatically after J2089 (032 picture harvest)'},
+    {id: 'J2089', title: '032 picture harvest', status: 'claimed', progress: {step: 1, of: 5}},
+  ]);
+  assert.deepEqual(titan.map(j => j.id), ['J2089', 'J0979'],
+    'Titan: J2089 (prerequisite) appears above J0979 (waits after it)');
+  const titanCard = t.p24FilmCard({
+    film: 'OWB:032', title: 'What Would Happen If You Landed On Titan',
+    items: [
+      {id: 'J0979', title: '032 Shorts B+C', status: 'blocked', waitKind: 'after',
+        after: 'J2089', why: 'Will run automatically after J2089 (032 picture harvest)'},
+      {id: 'J2089', title: '032 picture harvest', status: 'claimed', progress: {step: 1, of: 5}},
+    ],
+  });
+  assert(titanCard.indexOf('J2089') < titanCard.indexOf('J0979'),
+    'expanded Titan checklist HTML keeps J2089 above J0979');
+
+  // HOS 009: newer "Verify condition for JX" ids sit below their targets by number — must render above.
+  const hosItems = [
+    {id: 'J1275', title: 'HOS 009/010: merge PR #389', status: 'blocked', waitKind: 'blocker',
+      progress: {step: 2, of: 4}},
+    {id: 'J2033', title: 'HOS 009: Mint the remaining 20 approved HOS009 Quality rows',
+      status: 'blocked', waitKind: 'blocker', stage: 'picture', progress: {step: 0, of: 3}},
+    {id: 'J2034', title: 'HOS 009: review Quality mint', status: 'open', progress: {step: 0, of: 3}},
+    {id: 'J2200', title: 'HOS 009: build tested tranche-2 Flow mint runner',
+      status: 'blocked', waitKind: 'blocker', stage: 'picture', progress: {step: 5, of: 5}},
+    {id: 'J2281', title: 'Verify condition for J0862', status: 'blocked', waitKind: 'blocker',
+      recheck_of: 'J0862', progress: {step: 3, of: 3}},
+    {id: 'J2293', title: 'Verify condition for J2200', status: 'blocked', waitKind: 'blocker',
+      recheck_of: 'J2200', progress: {step: 3, of: 3}},
+    {id: 'J2322', title: 'Verify condition for J2033', status: 'claimed',
+      recheck_of: 'J2033', progress: {step: 0, of: 3}},
+  ];
+  const hos = t.p24SortFilmItems(hosItems);
+  const hosIds = hos.map(j => j.id);
+  assert(hosIds.indexOf('J2322') < hosIds.indexOf('J2033'),
+    'HOS 009: Verify condition for J2033 appears above J2033');
+  assert(hosIds.indexOf('J2293') < hosIds.indexOf('J2200'),
+    'HOS 009: Verify condition for J2200 appears above J2200');
+  assert(hosIds.indexOf('J2322') < hosIds.indexOf('J1275'),
+    'in-progress verify is preferred among ready roots over older blocked jobs');
+  // Title-only signal (no recheck_of) still orders correctly.
+  const byTitle = t.p24SortFilmItems([
+    {id: 'J2033', title: 'Mint rows', status: 'blocked', waitKind: 'blocker'},
+    {id: 'J2322', title: 'Verify condition for J2033', status: 'claimed'},
+  ]);
+  assert.deepEqual(byTitle.map(j => j.id), ['J2322', 'J2033'],
+    'title "Verify condition for JX" alone places the verifier above JX');
+  const hosCard = t.p24FilmCard({film: 'HOS:009', title: 'HOS 009', items: hosItems.slice().reverse()});
+  assert(hosCard.indexOf('J2322') < hosCard.indexOf('J2033')
+    && hosCard.indexOf('J2293') < hosCard.indexOf('J2200'),
+    'expanded HOS 009 checklist HTML is hierarchy order, not reverse id order');
+  // afterChain from progress24 also orders multi-step waits.
+  const chain = t.p24SortFilmItems([
+    {id: 'J2143', title: '032 package', status: 'open', waitKind: 'after',
+      after: 'J2142', afterChain: [{id: 'J2141'}, {id: 'J2142'}],
+      why: 'Will run automatically after J2141 and J2142'},
+    {id: 'J2142', title: '032 Shorts edit', status: 'open', after: 'J2141'},
+    {id: 'J2141', title: '032 picture harvest', status: 'claimed'},
+  ]);
+  assert.deepEqual(chain.map(j => j.id), ['J2141', 'J2142', 'J2143'],
+    'afterChain / after pipeline keeps A → B → C top to bottom');
+}
+console.log('Working checklist hierarchy order OK');
 
 // Jobs running counts the jobs on video cards too (5 Nov 2026: Mini + MacBook both working showed as 1).
 {
