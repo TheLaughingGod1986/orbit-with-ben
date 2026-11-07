@@ -197086,9 +197086,9 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-07T01:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T00:59Z",
@@ -197133,6 +197133,11 @@
           "at": "2026-11-07T01:10Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2157 condition verified on Mac mini in jobs/reviews/J2325/REVIEW.md (OWB PR #604, a03cdd93dd): (1) pushed local Mini commit bf751c1e3f to origin/codex/J2157-vo-verification and opened PR #604 (a03cdd93dd) reconciling pluto_frozen_heart_vo_v01_TAKE.json, stt/, jobs/reviews/J2157/*, and chronological ElevenLabs spend ledger rows onto origin/main; (2) direct multimodal audio_input listening (read_file on ch00..ch06.mp3, demonstrated via chief_relay.py capabilities) and 50 ms waveform tail profiling prove ch00..ch04 and ch06 tails PASS (-38.1 to -56.8 dBFS clean decay 300-500 ms before boundary), whereas ch05 line 94 has a proven TTS word substitution ('What if New Horizons looks back?' vs locked 'looked back') plus a clipped tail on 'captured twin?' (-32.01 dBFS last 50 ms at 80.88 s), and ch06 line 110 has /z/+/s/ sibilant assimilation on 'Real Worlds series' with a clean tail (-51.2 dBFS). Under jobs.py do_reopen/set_wait guards, only elected Chief (codex) may merge PR #604, either reopen J2157 (--note authorising the Ch 5 line 94 pickup + Ch 6 line 110 ruling/pickup while preserving ch00..ch04) or record jobs.py wait J2157 --recheck J2325 (check-at 2026-11-07T07:05:00Z), and close J2325."
+        },
+        {
+          "at": "2026-11-07T02:32Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Elected-Chief review requested; worker evidence requires ruling. Parent J2157 remains held."
         }
       ],
       "remaining_action": "Done: J2325 verification complete (OWB PR #604, a03cdd93dd); J2157 held for Ch 5 line 94 pickup",
@@ -197147,8 +197152,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "progress": {
         "step": 3,
         "of": 3,
