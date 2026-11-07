@@ -201160,9 +201160,14 @@
           "at": "2026-11-07T14:00Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Generated repaired shot_list_v01.csv (74 rows, 6 explicit CARD rows, clip_check PASS), SHOT_LIST_v01.md, SOURCE_EVIDENCE_v01.json (64 clean assets, <=2 raw/separated appearances), MUSIC_BRIEF_v01.md (2.5s hold + 10.0s fade + verified NOT list), SFX_PLAN_v01.md, production-status.md and J2361 REVIEW.md"
+        },
+        {
+          "at": "2026-11-07T14:01Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Pushed repaired 74-row shot list, SOURCE_EVIDENCE_v01.json, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, production-status.md and J2361 REVIEW.md to PR #626 (commit d89fa79b30)"
         }
       ],
-      "remaining_action": "Commit and push repaired PR #626 deliverables, queue dependent Chief re-review job, and mark J2361 done",
+      "remaining_action": "Completed J2361 shot-list repair on PR #626 (d89fa79b30); ready for J2362 Chief re-review",
       "kind": "review",
       "plain": "Fix unsuitable source images, repeated plates and ending timings in the Pluto picture plan.",
       "rerouted_from": {
@@ -201175,11 +201180,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-07T14:00Z",
+        "at": "2026-11-07T14:01Z",
         "by": "gemini",
-        "note": "Generated repaired shot_list_v01.csv (74 rows, 6 explicit CARD rows, clip_check PASS), SHOT_LIST_v01.md, SOURCE_EVIDENCE"
+        "note": "Pushed repaired 74-row shot list, SOURCE_EVIDENCE_v01.json, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, production-status.md an"
       },
       "taskKeys": [
         "OWB:034"
