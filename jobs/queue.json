@@ -197647,9 +197647,14 @@
           "at": "2026-11-07T08:53Z",
           "by": "relay",
           "what": "condition verification queued: J2356"
+        },
+        {
+          "at": "2026-11-07T11:08Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-08T08:30:00Z"
         }
       ],
-      "remaining_action": "Await reviewed shot list, valid v03 Short lift and delivered Charon picture/music before build",
+      "remaining_action": "Await J2360 exact-lift plan approval, J2359 shot-list release and delivered picture/music before building Short 2",
       "due": "2026-12-23T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Pluto Short (22-27s question Short on Charon's locked sky or Pluto's water-ice mountains) and run the Shorts quality checks",
@@ -197665,9 +197670,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2353 shot list must be reviewed before assembly (its explicit restriction). Referenced 034/10_Shorts/SHORTS_PLAN_v01.md, 03_Picture, 05_Music and 06_Sound-Effects are absent on disk at 2026-11-07T08:55Z; no reusable Charon motion or house music delivered. Brief quoted Charon lift is not verbatim approved v03 STT: actual text includes In mutual tidal locking ... Charon neither rises nor sets at 236.10-244.70s. Resume from approved v03 only once reviewed Short wording/lift and actual picture/music inputs exist; preserve 22-27s, question-first and all gates. No upload or new paid generation authorised.",
-        "check_at": "2026-11-07T09:53:21+00:00",
-        "recheck_task": "J2356"
+        "condition": "J2356 acting-Chief ruling: CONDITION UNMET. Current v03 WAV/script/STT hashes match accepted J2352 evidence. J2353 is now done with PR626, but shot-list approval J2359 remains open. SHORTS_PLAN_v01.md, 03_Picture, 05_Music and 06_Sound-Effects remain absent in the shared film checkout. J2360 is queued NOW to repair the exact Short 2 question/title/lift and prove 55-65 words and 22-27s including tail, or report infeasibility. Candidate Charon 27.10s before tail and water-ice 51 words/28.58s are not approved. Dependencies: elected-Chief J2359 shot-list/picture release; J2360 plan plus its Chief acceptance; actual reviewed picture/music/SFX delivery. No assembly until all met. Existing v03 approval, no-spend/no-upload restriction and all gates retained. Next verification 8 Nov 08:30Z; this is not a delayed start for ready planning.",
+        "check_at": "2026-11-08T08:30:00Z",
+        "last_recheck": "J2356",
+        "checked_at": "2026-11-07T11:08:01+00:00",
+        "checked_by": "codex"
       }
     },
     {
