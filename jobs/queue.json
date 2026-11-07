@@ -197637,18 +197637,23 @@
           "at": "2026-11-07T07:31Z",
           "by": "codex",
           "what": "step 1 of 3 done: Inspected exact PR450 head; implemented snapshot fencing, pending role redelivery and locked OS restart inspection in isolated HOS worktree. Scratch offload running as J2324-disk."
+        },
+        {
+          "at": "2026-11-07T07:33Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 20 targeted tests pass, including mocked OS restart boundary, all-recipient historical fence, one-ID recovery, restart/redelivery, first-recipient handback and trusted ack. No live restart/replay."
         }
       ],
-      "remaining_action": "Add command-level regression coverage and verify repaired desk routing",
+      "remaining_action": "Publish PR450 repair and return corrected head for Chief review",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix unsafe desk restarts and missing or repeated message delivery.",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-07T07:31Z",
+        "at": "2026-11-07T07:33Z",
         "by": "codex",
-        "note": "Inspected exact PR450 head; implemented snapshot fencing, pending role redelivery and locked OS restart inspection in is"
+        "note": "20 targeted tests pass, including mocked OS restart boundary, all-recipient historical fence, one-ID recovery, restart/r"
       }
     },
     {
