@@ -60,6 +60,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
-| 034 | vo | cursor | 2026-11-07T03:15Z | 2026-11-07T05:14Z | J2337 034 Pluto: bounded context-backed Chapter 5 and 6 pickups after J2336 FIX |
+| 034 | vo | cursor | 2026-11-07T03:18Z | 2026-11-07T03:38Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
