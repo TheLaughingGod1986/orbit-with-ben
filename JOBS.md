@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2351 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1809 |  |
 | J2353 | mini | open (after J2352) | – | – | 034 shots · for gemini · review · `gemini-argon` · 034 Pluto: shot list from approved v03 VO | jobs/reviews/J2352/REVIEW.md |
 | J2354 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2319 |  |
-| J2355 | any | open | – | – | review · Verify condition for J2270 |  |
+| J2355 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2270 |  |
 
 Recently finished:
 
