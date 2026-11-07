@@ -184182,9 +184182,14 @@
           "at": "2026-11-07T04:00Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-07T12:00:00Z"
+        },
+        {
+          "at": "2026-11-07T04:15Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T12:00:00Z"
         }
       ],
-      "remaining_action": "Resolve Chapter 6 through J2340 and obtain final voice ruling",
+      "remaining_action": "Await audio-capable diagnosis J2342, then Chief ruling and verified repaired-master checks",
       "kind": "vo",
       "urgent": 1,
       "progress": {
@@ -184198,10 +184203,16 @@
         "OWB:034"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "J2338 FIX: Worlds remains unverified. J2340 is eligible immediately for independent ASR then one bounded lead-in/context repair if needed; final elected-Chief ruling and all master checks required before VO approval or shot list.",
-        "check_at": "2026-11-07T12:00:00Z"
-      }
+        "type": "capability",
+        "condition": "J2341 FIX: v04 Scribe does not verify Worlds. J2342 owns bounded listening diagnosis of the hash-verified existing request using demonstrated audio input; this session inspected tools and has no audio-perception route. Actual listening evidence, elected-Chief adjudication and all repaired-master checks are required before VO approval or shot-list release.",
+        "check_at": "2026-11-07T12:00:00Z",
+        "requires": [
+          "audio_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input"
+      ]
     },
     {
       "id": "J2158",
