@@ -201428,13 +201428,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-07T14:25Z",
-      "eta": "2026-11-07T16:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T13:36Z",
-      "result": "",
+      "result": "HOLD / CONDITION UNMET (jobs/reviews/J2365/REVIEW.md): J2332 NAS takes freshly re-hashed (r01 65776fa656, r55a 51b26b122e, r55b 1e71287f9a; 30 Flow credits 14890->14860, £0 spend), 43/43 pool files and locked VO (3d73576e0c) verified intact, but J2333 (moving_video_input QA) and J2334 (elected-Chief acceptance) remain open with no passing moving_video_input probe in capabilities.json. J2299 kept blocked at 0/5 (--recheck J2365, next check 2026-11-07T20:15:00Z).",
       "history": [
         {
           "at": "2026-11-07T13:36Z",
@@ -201495,6 +201495,11 @@
           "at": "2026-11-07T14:25Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T14:25Z",
+          "by": "chief",
+          "what": "done: HOLD / CONDITION UNMET (jobs/reviews/J2365/REVIEW.md): J2332 NAS takes freshly re-hashed (r01 65776fa656, r55a 51b26b122e, r55b 1e71287f9a; 30 Flow credits 14890->14860, £0 spend), 43/43 pool files and locked VO (3d73576e0c) verified intact, but J2333 (moving_video_input QA) and J2334 (elected-Chief acceptance) remain open with no passing moving_video_input probe in capabilities.json. J2299 kept blocked at 0/5 (--recheck J2365, next check 2026-11-07T20:15:00Z)."
         }
       ],
       "remaining_action": "Elected Chief (chief): record wait --recheck J2365 on J2299 and close J2365",
@@ -201521,7 +201526,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J2365/REVIEW.md"
     },
     {
       "id": "J2366",
