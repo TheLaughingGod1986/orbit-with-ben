@@ -105,6 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2369 | mini | claimed | macbook | 2026-11-07T17:17Z | for cursor · script · `cursor-claude-opus-5-5` · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J2370 | any | open (after J2368) | – | – | 034 picture · assembly · 034 Pluto picture: £0 harvest of locked SHOT_LIST_v01 NASA/native-motion plates |  |
 | J2371 | any | open (after J2368) | – | – | 034 picture · chart · 034 Pluto graphics: £0 code_graphics + chapter cards from locked SHOT_LIST_v01 |  |
+| J2372 | any | open (after J2371) | – | – | 034 picture · chief · 034 Pluto: Chief/perceptual review of J2370 harvest + J2371 graphics before assembly |  |
 
 Recently finished:
 
