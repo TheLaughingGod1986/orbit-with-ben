@@ -200629,7 +200629,7 @@
     {
       "id": "J2361",
       "title": "034 Pluto: repair shot-list source, reuse and finishing defects from J2359",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "J2359 elected-Chief FIX on PR #626 at 50fa44c23e. Repair the existing shot-list PR, preserving locked v03 script/VO and accepted pickups. Read jobs/reviews/J2359/REVIEW.md and CHECKS.json (review record being landed separately). No spend, generation, assembly, upload or approval in this repair.\n1. Replace DEM reconstructions PIA21863 (R06/R43), PIA21864 (R28 fallback), and R38 DEM flyover. NASA captions explicitly describe digital elevation models and exaggerated relief. Audit every source, not only these examples. PIA20589 R64 has an embedded arrow and extreme noise: reject it. Record exact canonical source/rights URLs, hashes and full-size visual evidence; no blanket clean-plate claims.\n2. Rebuild actual per-cut reuse accounting, including graphics backgrounds and underlying duplicate image identities. PIA19948 R16/R58/R68 and PIA21590 R59/R63/R67 have 3 separated uses; PIA19936 R44/R54/R56 also. PIA20291 and PIA19708 are visually the same July 13 exposure and need canonical deduplication. Preserve <=2 still appearances and <=2.35x upscale; distinguish real native motion from animated stills/DEM, and satisfy real-moving separators between graphics.\n3. Add explicit chapter-card onset/end timings relative to word ends: CSV has zero CARD rows, so clip_check PASS does not verify the cards. Resolve row-boundary vs claimed 0.60s breath ambiguity (first five start 0.43-0.45s after preceding words). Keep 0.5-0.8s breath, 0.4s xfade and no clipped line; do not change VO.\n4. Repair music ending: 2-3s post-word hold, ~10s fade with nonzero bed through the full moving end hold, final picture fade 2s; current 631.16-634.16 three-second fade is not compliant. Verify NOT list against actual earlier music briefs, not invented film identities. Retain API-only own-bed/no spend.\n5. Reconcile actual 13 CODE rows, 15 WHEN markers, 3 WHO, 4 FACT and all DATA/SCALE with sources; table has 66 asset entries, not 46. Identify every overlay render by row, keep <=4 words per label, animate all, and use a measured lifted navy (plain #050814 is not a compliant proof). Retain no adjacent CODE and real bodies. Use frame-0 evidence from standalone Short meta/assembly (PIA19952); proposed PIA20291 is distinct from that ID but still needs rendered crop/hash checks.\n6. R28/R52: plan corrected zero-cost archive/overlay fallbacks only; no OMNI price/spend approval, no new generation. Final Chief re-review decides release and any explicit character-beat exception. Do not mislabel a reconstruction as real footage. Bound any missing-footage search to the standing 20 active minutes/3 deep candidates and carry its log; escalate a concrete fallback, not another blind retry.\nDeliver corrected CSV/MD/music/SFX/review evidence on PR626 and run clip_check with accepted v03 words again. Do not touch the separate J2360 Short 2 plan. The dependent Chief re-review owns merge, shot-stage PASS and creation of approved harvest/graphics jobs; existing J2319/J2320 media holds remain. All picture, polish, music, SFX and final perceptual gates remain required. No request to Ben needed.\n",
       "ref": "jobs/reviews/J2359/REVIEW.md",
@@ -200649,11 +200649,25 @@
           "at": "2026-11-07T11:23Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T11:28Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 2136 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Correct the Pluto picture plan and evidence before production approval",
       "kind": "review",
-      "plain": "Fix unsuitable source images, repeated plates and ending timings in the Pluto picture plan."
+      "plain": "Fix unsuitable source images, repeated plates and ending timings in the Pluto picture plan.",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     },
     {
       "id": "J2362",
