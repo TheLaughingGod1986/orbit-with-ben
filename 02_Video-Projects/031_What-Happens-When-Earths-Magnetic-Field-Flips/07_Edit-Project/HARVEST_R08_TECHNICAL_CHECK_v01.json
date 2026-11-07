@@ -1,0 +1,314 @@
+{
+  "job": "J2141",
+  "status": "technical checks only, not film PASS",
+  "source": {
+    "asset_id": "usgs_vesicular_basalt_side",
+    "title": "Vesicular Basalt \u2013 Side View",
+    "description": "Isolated USGS mineral specimen of vesicular basalt. High-definition image showing porous side texture and dark volcanic color.",
+    "source_page": "https://www.usgs.gov/media/images/vesicular-basalt-side-view",
+    "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/basalt_vesicular_side_0.jpg",
+    "credit": "USGS",
+    "local_path": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/basalt_vesicular_side_0.jpg",
+    "sha256": "c96ec530253fa2c6a4398f7ce0f812688c14eb925d13823329fcce583435d9b6",
+    "bytes": 2217866,
+    "width": 5472,
+    "height": 3648,
+    "rows": [
+      8
+    ],
+    "planned_appearances": 1,
+    "max_appearances": 2,
+    "download_status": "downloaded",
+    "review_status": "static_candidate_not_KEEP",
+    "licence": "Public Domain",
+    "licence_status": "explicit per-file Sources/Usage on official USGS page; web text evidence",
+    "licence_evidence_path": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/rights_evidence.json",
+    "licence_evidence_sha256": "c1bf55b660fd8b51fa84e43483107f6ac199abdd58c5e1a68c216e7a2a12a9d0",
+    "generation_authorized": false,
+    "review_note": "Illustrative basalt specimen, not Brunhes actual sample, not laboratory footage. Wide specimen v01 and v02 failed polish; retain failures. v03 has poor credit contrast, use v04. v04 is a detail crop of real specimen, no bench in view; actual motion and editorial fit require review."
+  },
+  "plate": {
+    "path": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/plate_031_r08_specimen_v04.mp4",
+    "sha256": "415e620c3c188750d77934719e66a769b7393e3698e2788338781191a7812323",
+    "bytes": 5140646,
+    "source_asset_id": "usgs_vesicular_basalt_side",
+    "source_sha256": "c96ec530253fa2c6a4398f7ce0f812688c14eb925d13823329fcce583435d9b6",
+    "film_start_s": 66.34,
+    "film_row_end_s": 73.28,
+    "encoded_end_s": 73.3,
+    "duration_s": 6.96,
+    "frame_rounding_s": 0.02,
+    "frames": 174,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "max_upscale": 1.3705583756345177,
+    "crop_recipe": "1400x788, y=1420, x=1800+n+100 at n>=72; scale 1920x1080; reframe at 69.22 s, after lab sentence pause",
+    "command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-n",
+      "-loop",
+      "1",
+      "-i",
+      "/Users/benjaminoats/_desk/J2141-hand-sample-v01/basalt_vesicular_side_0.jpg",
+      "-loop",
+      "1",
+      "-i",
+      "/Users/benjaminoats/_desk/J2141-hand-sample-v01/credit_v04.png",
+      "-filter_complex",
+      "[0:v]crop=1400:788:x='1800+n+if(gte(n,72),100,0)':y=1420,scale=1920:1080:flags=lanczos,setsar=1,fps=25,eq=saturation=1.06:brightness=-0.01[p];[p][1:v]overlay=0:0:shortest=1[out]",
+      "-map",
+      "[out]",
+      "-an",
+      "-frames:v",
+      "174",
+      "-c:v",
+      "libx264",
+      "-crf",
+      "18",
+      "-preset",
+      "fast",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "/Users/benjaminoats/_desk/J2141-hand-sample-v01/plate_031_r08_specimen_v04.mp4"
+    ],
+    "credit": "USGS white with dark stroke",
+    "motion": "linear pan and one reframe; source is still photograph",
+    "polish_report": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/polish_v04.json",
+    "polish_sha256": "726c6cf5ffd09feb23f8ce24946940f59e41c67e9eb156d7f53d9cb2496f5dde",
+    "status": "technical_candidate_pending_motion_editorial_review",
+    "warning": "one low-detail relative-percentile warning; no failed checks. Exact specimen/bench shot remains an editorial review question."
+  },
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "mime_codec_string": "avc1.640028",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuvj420p",
+        "level": 40,
+        "color_range": "pc",
+        "color_space": "bt470bg",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "25/1",
+        "avg_frame_rate": "25/1",
+        "time_base": "1/12800",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 89088,
+        "duration": "6.960000",
+        "bit_rate": "5903281",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "174",
+        "extradata_size": 51,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "encoder": "Lavc63.1.101 libx264"
+        },
+        "side_data_list": [
+          {
+            "side_data_type": "ICC Profile"
+          }
+        ]
+      }
+    ],
+    "format": {
+      "filename": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/plate_031_r08_specimen_v04.mp4",
+      "nb_streams": 1,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "6.960000",
+      "size": "5140646",
+      "bit_rate": "5908788",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf63.1.101"
+      }
+    }
+  },
+  "full_decode": true,
+  "polish": {
+    "rule": {
+      "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+      "split_panel": "full-height/width seam or gutter",
+      "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+      "near_black": "mean < 28.0 or p95 < 50.0",
+      "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+      "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+    },
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    },
+    "video": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/plate_031_r08_specimen_v04.mp4",
+    "edge_floor": 0.1544,
+    "verdict": "PASS",
+    "failed": [],
+    "warn": [
+      {
+        "row": 8,
+        "cut": 0,
+        "t": 1.44,
+        "source": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/basalt_vesicular_side_0.jpg",
+        "why": [
+          "low detail: edge density 0.1535 < film p5 0.1544"
+        ]
+      }
+    ],
+    "reviewed_ok": [],
+    "rows": [
+      {
+        "cut": 0,
+        "row": 8,
+        "source": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/basalt_vesicular_side_0.jpg",
+        "t": 1.44,
+        "std": 28.11,
+        "mean": 54.82,
+        "p95": 103.0,
+        "edge": 0.1535,
+        "hf": 8.87,
+        "lf": 21.32,
+        "std8": 23.59,
+        "edge8": 0.47,
+        "seams": [],
+        "video": false,
+        "jitter": {
+          "trend_x": -1.285,
+          "trend_y": -0.0,
+          "max_off_trend_px": 0.031,
+          "reversals": 0,
+          "frames": 49,
+          "fail": false
+        },
+        "fail": [],
+        "warn": [
+          "low detail: edge density 0.1535 < film p5 0.1544"
+        ]
+      },
+      {
+        "cut": 1,
+        "row": 8,
+        "source": "/Users/benjaminoats/_desk/J2141-hand-sample-v01/basalt_vesicular_side_0.jpg",
+        "t": 4.92,
+        "std": 28.57,
+        "mean": 55.44,
+        "p95": 105.0,
+        "edge": 0.172,
+        "hf": 9.38,
+        "lf": 21.39,
+        "std8": 23.78,
+        "edge8": 0.4796,
+        "seams": [],
+        "video": false,
+        "jitter": {
+          "trend_x": -1.29,
+          "trend_y": -0.0,
+          "max_off_trend_px": 0.039,
+          "reversals": 0,
+          "frames": 79,
+          "fail": false
+        },
+        "fail": [],
+        "warn": []
+      }
+    ]
+  },
+  "stills_viewed": [
+    "inspection.jpg",
+    "crop_preview.jpg",
+    "frame_v03.png"
+  ],
+  "motion_review": false,
+  "audio_review": false,
+  "spend_gbp": 0,
+  "superseded": [
+    {
+      "version": 1,
+      "status": "FAIL: vertical gutter",
+      "report_sha256": "6e5f8e13b201abec2c49da137852a2e19273fa0848231d3ef4a8ab8df088aad4"
+    },
+    {
+      "version": 2,
+      "status": "FAIL: horizontal gutter and jitter",
+      "report_sha256": "bdead842a07e41422468804fa853b575def82ca3b1fced3d6f7c8851621431a3"
+    },
+    {
+      "version": 3,
+      "status": "polish PASS with warning; credit too low contrast, superseded"
+    }
+  ]
+}

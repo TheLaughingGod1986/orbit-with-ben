@@ -1,0 +1,45 @@
+{
+  "job": "J2141",
+  "spend_gbp": 0,
+  "asset_id": "nps_katm_pachydiscus_ammonite",
+  "original_sha256": "c506b78501e0c1cb3c551253d17fc6e94d48aa73653511e15b8374f95f92a6bf",
+  "plate": {
+    "file": "plate_031_r45_fossil_v01.mp4",
+    "path": "/Users/benjaminoats/_desk/J2141-fossil-v01/plate_031_r45_fossil_v01.mp4",
+    "sha256": "8d977fc6c248d84370365b072d94957a2307b8577e780f248e367b76e2b494eb",
+    "bytes": 4419636,
+    "film_start_s": 462.4,
+    "film_end_s": 469.0,
+    "row_end_s": 468.98,
+    "frames": 165,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "crop_xyxy": [
+      40,
+      300,
+      3240,
+      2100
+    ],
+    "push": "linear 1.00 to 1.06, centre",
+    "max_scale_vs_crop_width": 0.636,
+    "credit": "Frank Ruggles / NPS",
+    "licence": "PD-USGov-NPS",
+    "no_loop": true,
+    "no_interpolation": true,
+    "hands_to": "existing alpha extinction_check, which still starts at 462.40 s; compositor places this plate under it",
+    "status": "technical_candidate_pending_motion_review"
+  },
+  "contact_sheet_sha256": "2e194e95c773031e080d652e2cf8fcf5e87d545169b0e15d471f7267786e041f",
+  "rejected_contact_sheet_sha256": "46f30028889cfa2f590e6cc776ac12e8e0945b56cb98410acc36de7fef6f1d60",
+  "component_polish": {
+    "verdict": "PASS",
+    "failed": 0,
+    "warnings": 0
+  },
+  "motion_perception": false,
+  "audio_perception": false,
+  "status": "technical_checks_only_not_film_PASS"
+}

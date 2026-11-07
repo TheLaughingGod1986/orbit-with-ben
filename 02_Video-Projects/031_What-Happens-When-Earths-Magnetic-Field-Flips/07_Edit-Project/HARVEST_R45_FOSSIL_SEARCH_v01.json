@@ -1,0 +1,40 @@
+{
+  "input": "R45 USGS/Smithsonian marine fossil plate",
+  "date": "2026-11-07",
+  "candidates_examined": 3,
+  "active_minutes": 16,
+  "budget_status": "three-candidate limit reached; do not restart these three files",
+  "outcome": "One licensed plate: NPS Pachydiscus kamishakensis, PD-USGov-NPS, Frank Ruggles, Katmai. It is one ammonite, not a fossil core. Two Yellowstone NPS photographs of Smithsonian USNM trilobites were not used: each frame is mostly a ruler and colour card, and the Blountia fossil does not read. si.edu blocked a direct Smithsonian download. Wildlife cuts are a different input.",
+  "contact_sheet": "/Users/benjaminoats/_desk/J2141-fossil-v01/CONTACT_rejected_v01.jpg",
+  "contact_sheet_sha256": "46f30028889cfa2f590e6cc776ac12e8e0945b56cb98410acc36de7fef6f1d60",
+  "admitted": "nps_katm_pachydiscus_ammonite",
+  "candidates": [
+    {
+      "file": "ammonite.jpg",
+      "sha256": "c506b78501e0c1cb3c551253d17fc6e94d48aa73653511e15b8374f95f92a6bf",
+      "source": "https://commons.wikimedia.org/wiki/File:File-Photograph_of_the_ammonite_Pachydiscus-kamishakensis_from_the_Kaguyak_Formation._This-specimen_is_approximately_24_cm_wide_(0197c09f-9653-4f8c-83b2-69f55bb2c1de).jpg",
+      "licence": "PD-USGov-NPS",
+      "width": 4256,
+      "height": 2832,
+      "result": "Used. Real marine ammonite. Label, ruler and colour chart cropped off."
+    },
+    {
+      "file": "ehmania.jpg",
+      "sha256": "cd6cdcbc8101dd0c2963f4ba662bc9e68fca002662c622901833a7f1e826ea53",
+      "source": "https://commons.wikimedia.org/wiki/File:USNM_90667_Ehmania_walcotti_trilobite_(30513613841).jpg",
+      "licence": "PD-USGov-NPS",
+      "width": 4065,
+      "height": 2340,
+      "result": "Smithsonian USNM 90667, Yellowstone NPS photo. Partial trilobite beside a ruler and checker. Not used."
+    },
+    {
+      "file": "blountia.jpg",
+      "sha256": "c39188e6cb977d280b29f02b983d80df684750527b83d92af64b9a47ee3f60eb",
+      "source": "https://commons.wikimedia.org/wiki/File:USNM_96488_Blountia_polita_trilobite_(30513613421).jpg",
+      "licence": "PD-USGov-NPS",
+      "width": 3688,
+      "height": 2811,
+      "result": "Smithsonian USNM 96488. The fossil is a small bump and does not read. Not used."
+    }
+  ]
+}
