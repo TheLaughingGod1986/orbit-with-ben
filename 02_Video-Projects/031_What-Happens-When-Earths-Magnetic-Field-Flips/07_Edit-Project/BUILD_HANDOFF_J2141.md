@@ -1,3 +1,67 @@
+## MacBook continuation — 7 Nov, opening, field, sky and bodies graphics recovery + Apollo 17 Earth source
+
+Worker `macbook`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
+£0 spent. Full multi-agency moving harvest, remaining plate composites and
+film-wide gates exceed this run's 25-minute limit; release for continuation.
+
+1. **Recovered NASA Apollo 17 whole-Earth source (`as17-148-22727`) for R44:**
+   - Downloaded the exact previously selected original (`as17-148-22727~orig.jpg`,
+     4579×4579, SHA-256 `cb4c3d2da98ee72130ebfd2ea472fc84ede6726002c2a8c9cabd86e4deea9f0f`)
+     and NASA Images API metadata (`as17-148-22727_api.json`, SHA-256
+     `7001750c0109607364f50fa0dfcf3c3a3d67e52d9ee9f9116d195a5db224d65f`) into
+     `/Users/ben/_desk/J2141-bodies-source-macbook-v01/`, matching PR #575
+     byte-for-byte. Added `as17-148-22727` (with `macbook_recovery`) and
+     `body_source_search_v01` to `HARVEST_POOL_v01.json` without resetting any
+     search budget.
+2. **Integrated `opening`, `field`, `sky` and `bodies` graphics from open PR #539, #551, #564 and #575:**
+   - Added `opening_graphics.py` (`code_graphics.py opening`),
+     `field_graphics.py` (`code_graphics.py field`),
+     `sky_graphics.py` (`code_graphics.py sky`), and
+     `body_graphics.py` (`code_graphics.py bodies`), with SHA-256 verified
+     source path resolution across Mini, NAS and MacBook folders. Preserved the
+     original Mini manifests and technical checks (`CODE_OPENING_v01.json`,
+     `CODE_FIELD_v01.json`, `CODE_SKY_v01.json`, `CODE_BODIES_v01.json`,
+     `INTEGRATION_SOURCES_v01.json`, `INTEGRATION_TECHNICAL_CHECK_v01.json`).
+   - Rendered and verified all 14 graphics on MacBook:
+     - `/Users/ben/_desk/J2141-opening-macbook-v01/` (`CODE_OPENING_MACBOOK_v01.json`,
+       `CODE_OPENING_MACBOOK_TECHNICAL_CHECK_v01.json`):
+       `code_graphic_031_r01_poledrift_v01.mp4` (R1, 4.52 s, 3.82 s, yuv420p),
+       `code_graphic_031_r02_flip_v01.mp4` (R2, 12.54 s, 4.54 s, yuv420p),
+       `code_graphic_031_r13_layers_v01.mov` (R13, 125.90 s, 5.86 s, argb),
+       `code_graphic_031_r05_when1905_v01.mov` (R5, 36.14 s, 3.22 s, argb).
+     - `/Users/ben/_desk/J2141-field-macbook-v01/` (`CODE_FIELD_MACBOOK_v01.json`,
+       `CODE_FIELD_MACBOOK_TECHNICAL_CHECK_v01.json`):
+       `code_graphic_031_r11_strata_v01.mp4` (R11, 99.12 s, 12.28 s, yuv420p),
+       `code_graphic_031_r10_matuyama_map_v01.mp4` (R10, 94.92 s, 3.96 s, yuv420p),
+       `code_graphic_031_r45_extinction_check_v01.mov` (R45, 462.40 s, 6.60 s, argb),
+       `code_graphic_031_r46_grid_shield_v01.mp4` (R46, 472.22 s, 7.76 s, yuv420p).
+     - `/Users/ben/_desk/J2141-sky-macbook-v01/` (`CODE_SKY_MACBOOK_v01.json`,
+       `CODE_SKY_MACBOOK_TECHNICAL_CHECK_v01.json`):
+       `code_graphic_031_r32_paleo_v01.mp4` (R32, 326.34 s, 9.76 s, yuv420p),
+       `code_graphic_031_r40_temp_poles_v01.mov` (R40, 415.04 s, 2.88 s, argb),
+       `code_graphic_031_r47_tangle_v01.mp4` (R47, 488.14 s, 4.72 s, yuv420p),
+       `code_graphic_031_r48_poles_map_v01.mov` (R48, 493.66 s, 5.64 s, argb),
+       `code_graphic_031_r51_aurora_v01.mp4` (R51, 522.62 s, 10.36 s, yuv420p).
+     - `/Users/ben/_desk/J2141-bodies-macbook-v01/` (`CODE_BODIES_MACBOOK_v01.json`,
+       `CODE_BODIES_MACBOOK_TECHNICAL_CHECK_v01.json`):
+       `code_graphic_031_r44_gravity_bodies_v01.mp4` (R44, 449.92 s, 2.28 s, yuv420p).
+   - `verify_opening_field_sky_bodies_macbook.py` verified locked Scribe word
+     hashes, output SHA-256, 1920×1080 / 25 fps / pixel format, duration within
+     half a frame, full error-free ffmpeg decode, and five static frame samples
+     per render. Static contact sheets inspected.
+3. **Updated `MEDIA_AVAILABILITY_MACBOOK_2026-11-07.json`:**
+   - 56 active renders across all code_graphics batches are now verified and
+     reachable on MacBook / NAS.
+
+No audio/moving playback perception, KEEP, stage PASS or UAT readiness is
+claimed. Next bounded action: integrate/recover remaining harvested plate
+scripts and row composites from PR #575 (`harvest_aurora.py`, `harvest_solar.py`,
+`harvest_hubble.py`, `composite_hubble.py`, `build_r41_limb.py`,
+`harvest_usgs_lava.py`, `harvest_usgs_crust.py`, `harvest_sediment_core.py`,
+`harvest_marine_fossil.py`), then run full composite and picture QA once Chief
+resolves the open source-ID/licence/sourced-map items. No archive search budget
+consumed, £0 spent, no NAS writes/deletions, no processes left running.
+
 ## MacBook continuation — 7 Nov, scales reproduction + core and twist graphics recovery
 
 Worker `macbook`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
