@@ -199869,9 +199869,14 @@
           "at": "2026-11-07T08:30Z",
           "by": "gemini",
           "what": "step 0 of 2 done"
+        },
+        {
+          "at": "2026-11-07T08:34Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified 034 on disk: SHORTS_PLAN_v01.md, 03_Picture, 05_Music, 06_Sound-Effects, 09_Rough-Cut absent; 04_Generated-Clips empty; J2353 open; VO v03 matches 2be8030b6c"
         }
       ],
-      "remaining_action": "Inspect J2319, J2353, and 034_Pluto-Frozen-Heart on disk to verify Short 1 inputs",
+      "remaining_action": "Write and commit jobs/reviews/J2354/REVIEW.md from a clean worktree",
       "kind": "review",
       "recheck_of": "J2319",
       "due": "2026-11-07T09:27:29+00:00",
@@ -199886,10 +199891,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
-        "of": 2,
-        "at": "2026-11-07T08:30Z",
-        "by": "gemini"
+        "step": 1,
+        "of": 3,
+        "at": "2026-11-07T08:34Z",
+        "by": "gemini",
+        "note": "Verified 034 on disk: SHORTS_PLAN_v01.md, 03_Picture, 05_Music, 06_Sound-Effects, 09_Rough-Cut absent; 04_Generated-Clip"
       },
       "taskKeys": [
         "OWB:034"
