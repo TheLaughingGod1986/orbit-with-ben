@@ -184181,10 +184181,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-07T07:56Z",
+      "eta": "2026-11-07T09:56Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T23:12Z",
       "result": "",
@@ -184328,6 +184328,11 @@
           "at": "2026-11-07T07:21Z",
           "by": "codex",
           "what": "step 2 of 3 done: J2348 reopened verification: master identity and PCM splices pass; final evidence consistency step remains incomplete. Read jobs/reviews/J2348/REVIEW.md before work."
+        },
+        {
+          "at": "2026-11-07T07:56Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Correct PR619 evidence records under J2348; preserve v03 audio and spend nothing",

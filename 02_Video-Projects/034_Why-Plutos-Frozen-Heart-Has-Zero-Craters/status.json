@@ -16,10 +16,18 @@
       "ref": "c2082a4884"
     },
     "vo": {
-      "state": "blocked",
+      "state": "doing",
       "ref": "584458d867"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "vo",
+      "by": "gemini",
+      "at": "2026-11-07T07:56Z",
+      "eta": "2026-11-07T09:55Z",
+      "note": "J2157 034 Pluto: VO from locked script v02 (J2149 GO)"
+    }
+  ],
   "next": "J2348 FIX: v03 master identity and splice checks pass; J2157 must reconcile PR619 evidence hashes, listening attribution and tail measurements. No new audio spend; full VO PASS and shot list remain pending."
 }
