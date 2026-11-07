@@ -1,5 +1,5 @@
 {
-  "next_id": 2376,
+  "next_id": 2377,
   "jobs": [
     {
       "id": "J0001",
@@ -202545,6 +202545,36 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J2376",
+      "title": "034 Pluto: assemble 74-row long master v01 from locked SHOT_LIST_v01 + £0 score bed/SFX + gates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble the 74-row 034 Pluto long master v01 (646.94 s, 1920x1080 30 fps CFR) from /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/:\n- Locked shot list: 07_Edit-Project/SHOT_LIST_v01.csv + SHOT_LIST_v01.json (J2368 PASS, PR #626)\n- Harvested plates + native clips (67/67): 07_Edit-Project/harvest_v01/matched/ (J2370 + J2372 PASS)\n- Full-frame CODE graphics (8), QTRLE/ARGB overlays (5), and chapter cards (6): 07_Edit-Project/graphics_v03/ (J2371 + J2372 PASS)\n- Locked VO master: 04_Voiceover/vo_master/pluto_vo_master_v01.mp3 + pluto_vo_words_v01.json (628.82 s)\n- £0 score bed: 05_Music/pluto_score_bed_v01.mp3 (646.94 s, 66.7 BPM, music_gate PASS)\n- £0 house SFX kit: 06_Sound-Effects/kit_v01/ (rumble_low, whoosh_soft, tick_ui)\n\nRun and pass all gates before Chief perceptual review:\n1. python3 00_Brand/Channel-Setup/tools/clip_check.py\n2. python3 scripts/picture_qa.py\n3. python3 scripts/music_gate.py\n4. python3 scripts/sfx_kit.py level\n5.Integrated loudness ~-14 LUFS, true peak <= -1.0 dBTP, 30 fps CFR, 0 black frames. Spend £0.",
+      "ref": "jobs/reviews/J2372/REVIEW.md",
+      "film": "034",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T16:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T16:50Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble 74-row 034 Pluto long cut v01 from studio-live harvest_v01 + graphics_v03 + pluto_score_bed_v01.mp3 + kit_v01 and run all gates",
+      "due": "2026-12-13T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Assemble the full 034 Pluto long video from the approved plates, graphics, voiceover, music and sound effects"
     }
   ],
   "focus": [
