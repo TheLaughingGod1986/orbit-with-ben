@@ -198429,13 +198429,13 @@
       "stage": "vo",
       "after": "J2342",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T04:32Z",
-      "eta": "2026-11-07T05:17Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T04:28Z",
-      "result": "",
+      "result": "FIX retained; merged PR616 exact v03 series reorder and one 500-character-cap pickup scope. J2344 owns generation and audio-input review handoff; J2157 unfinished, no VO PASS or shot-list release. Corrected American-only geyser gate. Zero spend and no media changes.",
       "history": [
         {
           "at": "2026-11-07T04:28Z",
@@ -198466,6 +198466,11 @@
           "at": "2026-11-07T04:36Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR616 merged as 415bf8dcb4; CI, explicit-v03 episode gate and script review PASS. J2344 queued; J2157 dependency hold updated; VO remains blocked."
+        },
+        {
+          "at": "2026-11-07T04:36Z",
+          "by": "codex",
+          "what": "done: FIX retained; merged PR616 exact v03 series reorder and one 500-character-cap pickup scope. J2344 owns generation and audio-input review handoff; J2157 unfinished, no VO PASS or shot-list release. Corrected American-only geyser gate. Zero spend and no media changes."
         }
       ],
       "remaining_action": "Ruling complete; J2344 owns the capped pickup and listening-review handoff",
@@ -198480,7 +198485,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "415bf8dcb4"
     },
     {
       "id": "J2344",
