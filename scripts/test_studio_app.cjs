@@ -49,6 +49,9 @@ for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) {
 }
 const review = t.renderTab('review', board, NOW);
 assert(review.includes('#uat=OWB%3A019') && review.includes('Watch &amp; review v06') || review.includes('Watch & review v06'), 'a review card opens the UAT screen');
+assert(review.includes('class="seg two"') && review.includes('<span>Needs your review</span>') && review.includes('<span>Reviewed</span>'), 'Review shows two matching count chips');
+assert(/seg two[\s\S]*Needs your review[\s\S]*Reviewed[\s\S]*<section>[\s\S]*Needs your review[\s\S]*reviewed-fold[\s\S]*open/.test(review), 'Review chips sit above both list sections; reviewed history stays accessible');
+assert(!review.includes('data-seg='), 'Review chips are not lane filters');
 assert(t.renderTab('agents', board, NOW).includes('Working on J1: Credit readings'));
 assert(t.renderTab('overview', null, NOW).includes('Loading'));
 // Ben's tick from the hub is the same document /board sends (tracker_app.js approve / openChangesModal).
@@ -103,6 +106,10 @@ assert.equal(t.videoLane(v({key: 'pass-up', lane: 'approved', jobs: [{status: 'c
 const videosHtml = t.renderTab('videos', {tracker: {videos: [passedCut, uatCut, notesCut]}}, NOW);
 assert(videosHtml.includes('Only UAT needs you') && videosHtml.includes('Passed') && videosHtml.includes('ready to schedule'), 'Videos copy names the UAT → Passed loop');
 assert(videosHtml.includes('Needs your review') && videosHtml.includes('Watch &amp; review') || videosHtml.includes('Watch & review'), 'UAT lane cards feel like they need Ben');
+// Nine lane chips in locked 3×3 order (count above label); no wrapping "All" tile.
+const laneChipOrder = [...videosHtml.matchAll(/data-seg="([^"]+)"/g)].map(m => m[1]);
+assert.deepEqual(laneChipOrder, ['backlog', 'todo', 'progress', 'qa', 'uat', 'passed', 'scheduled', 'live', 'postlive'], 'Videos lane chips stay in locked 3×3 order');
+assert(videosHtml.includes('<b>') && videosHtml.includes('<span>Backlog</span>'), 'lane chips keep big counts above labels');
 assert(!/To do[\s\S]*Needs your review/.test(videosHtml) || videosHtml.includes('UAT'), 'Ben review CTA sits in UAT');
 
 // Schedule: a warning only when readiness can't be verified.
@@ -160,7 +167,7 @@ assert.equal((vt.match(/class="doing"/g) || []).length, 0, 'task percentages are
 assert(vt.includes('027') && vt.includes('028') && vt.includes('milestones complete'));
 // Videos counts a running studio job too, so it matches Overview's Agents working now.
 const vsj = t.renderTab('videos', {tracker: {videos: []}, owb: {jobs: [{id: 'J1199', status: 'claimed', by: 'cursor', title: 'Shorts fix'}]}}, NOW);
-assert(vsj.includes('Studio job · not one video') && vsj.includes('In progress <small>1</small>'), 'Videos shows and counts the studio job under In progress');
+assert(vsj.includes('Studio job · not one video') && vsj.includes('data-seg="progress"') && vsj.includes('<b>1</b><span>In progress</span>'), 'Videos shows and counts the studio job under In progress');
 // A public video is published, whatever follow-up jobs it has; private ones never ask YouTube for a thumbnail.
 const pub = v({key: 'pub', lane: 'progress', youtube: {videoId: 'abcdefghijk', privacy: 'public', state: 'live'}, jobs: [{id: 'J9', status: 'open'}]});
 const priv = v({key: 'priv', lane: 'progress', youtube: {videoId: 'bcdefghijkl', privacy: 'private', state: 'scheduled', publishAt: '2026-11-12T18:00:00Z'}});
@@ -185,6 +192,8 @@ assert.equal(cx.fig, '40%'); assert(cx.note.includes('resets Wed 04 Nov 06:36Z')
 assert.equal(t.poolMeter('claude', undefined, {}, NOW), null, 'no reading, no bar');
 const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'weekly resets Oct 29'}}}}}, NOW);
 assert((ag.match(/<span>Grok<\/span><b class="red">0%/) || []).length === 1, 'Grok shows the shared Cursor weekly pool');
+assert(ag.includes('class="seg"') && ag.includes('<span>Running</span>') && ag.includes('<span>Queued</span>') && ag.includes('<span>Waiting</span>'), 'Agents shows three matching job-count chips');
+assert(ag.includes('class="credits"') && ag.includes('class="credit"'), 'Agents keeps the credits grid');
 
 
 // Milestones and ETA share the same producer evidence on Overview and video detail.
@@ -276,7 +285,16 @@ assert.equal(t.weekDates(Date.parse('2026-07-05T23:30:00Z')).start,'2026-07-06',
 context.location.hash='#videos&view=producing';
 assert(t.renderTab('videos',db,NOW).includes('Producing · 2 unique videos'));
 context.location.hash='#schedule&view=week';
-assert(t.renderTab('schedule',db,NOW).includes('This week · scheduled <span class="n">1</span>'));
+{
+  const sch = t.renderTab('schedule',db,NOW);
+  assert(sch.includes('This week · scheduled <span class="n">1</span>'));
+  assert(sch.includes('class="seg"') && sch.includes('aria-label="Schedule counts"'), 'Schedule uses shared matching chip row');
+  assert(sch.includes('<span>This week</span>') && sch.includes('<span>Next week</span>') && sch.includes('<span>Scheduled</span>'), 'Schedule shows three matching week chips');
+  // Chips are summary-only (divs), not lane filters — both week lists stay visible even on view=week.
+  assert(!/aria-label="Schedule counts"[\s\S]*?<button/.test(sch), 'Schedule chips are not filter buttons');
+  assert(sch.includes('Next week <span class="n">') || sch.includes('>Next week<'), 'Next week list stays visible under the chips');
+  assert(/Schedule counts[\s\S]*This week · scheduled[\s\S]*Next week/.test(sch), 'This week then Next week stay stacked under the chips');
+}
 context.location.hash='';
 assert.equal((t.overview(db,NOW).match(/class="featured-video"/g)||[]).length,0,'Overview home no longer carries the feature card');
 assert(!t.overview(db,NOW).includes('How this estimate works'));
@@ -604,7 +622,7 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert(agents.includes('mc-chip') && agents.includes('light-green') && agents.includes('J2276'), 'agent chips use traffic lights');
   assert(agents.includes('light-red') || agents.includes('Idle') || agents.includes('Down'), 'idle/down agents get a red light');
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
-  assert(ov.includes('overview-stats') && ov.includes('ov-stat'), 'Overview stacks simple stats');
+  assert(ov.includes('class="seg"') && ov.includes('To review') && ov.includes('Producing') && ov.includes('This week'), 'Overview uses matching KPI chips');
   assert(ov.includes('4 total') && ov.includes('1 on · 45 done'), 'Machines header shows total and chip captions');
   assert(ov.indexOf('overview-machines') < ov.indexOf('overview-activity'), 'Machines sit above Active jobs');
   assert(ov.includes('Active jobs'), 'Active jobs section uses the cleaner label');
