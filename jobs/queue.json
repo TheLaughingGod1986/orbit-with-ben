@@ -1,5 +1,5 @@
 {
-  "next_id": 2352,
+  "next_id": 2353,
   "jobs": [
     {
       "id": "J0001",
@@ -199581,6 +199581,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2352",
+      "title": "034 Pluto: elected Chief rules on reconciled J2157 v03 evidence (PR #619) and full VO PASS",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2157 completed the zero-spend evidence-record reconciliation ordered by J2348 (584458d867, PR #620) on PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/619 (commit 66dbaeec6a).\\n\\nAll four J2348 items are resolved without modifying any audio, script, or ASR files:\\n1. Both REVIEW.md copies (jobs/reviews/J2157_v03/REVIEW.md and 02_Voiceover/J2157_VO_REVIEW_v03.md) now record the exact PR blob SHA-256 hashes for pluto_frozen_heart_vo_v03_TAKE.json (370b876904c53040f4b40a5c34aa838caef005d2c97b24edeb0c1c268ae5deb6), stt_raw.json (af85f3b6fbcb4c0f549f19f0c526fed18f9454bdb9cfa27958ff5a2770d75df7), and words.srt (cd4168acc18022c764a13c501c576ad3d84a72f3b1e0944a23ee68a6d79d51b3), plus all ch00-ch06 WAV/MP3 hashes, matching measurements.json and J2157_VO_CHECKS_v03.json 100%.\\n2. Listening attribution is reconciled against actual tool records across both sessions: Session 1 (0a378694ae) listened to the final full master pluto_frozen_heart_vo_v03.mp3 (86cfc44247d0c8e7aee535c2fe50edb5038351041008e3f304e82fd84f124456, 616.160 s) after the final encode and to pre-rebuild chapter MP3s (35b2a06b.../63e93f60...); Session 2 (73416a7b-5c9c-4a1e-851f-4e1c0d471fce) also directly invoked default_api:read_file (audio/mpeg part_0) on the final on-disk parts/pluto_frozen_heart_vo_v03/ch05.mp3 (93ba82f6f44130b242a608e98f0e77b94cc4e3ffe830dbc66bbadc62a4d21471) and ch06.mp3 (f4d7d6fae49c46eb00ab47df6c655d3ea9bb8245a85202e2e561472303763594), confirming seamless splices at 528.060 s and 597.040 s and clean chapter endings on the final hashed files.\\n3. The chapter-tail table in both REVIEW.md copies is reconciled against the hashed WAVs and measurements.json using signed 16-bit little-endian stereo PCM RMS over all interleaved L+R samples (reference 32768.0), including ch00 10 ms = -31.77 dBFS and ch06 last three 50 ms windows = -43.26, -43.32, -36.27 dBFS and 250/100/50/10 ms = -40.50 / -38.50 / -36.27 / -33.41 dBFS.\\n4. The unsupported moving_video_input capability assertion is removed; only demonstrated audio_input is registered and cited.\\n\\nElected Chief to review PR #619 (66dbaeec6a), merge, issue final full-VO PASS on J2157, and release the 034 shot-list job. Zero credits spent; nothing on Ben.",
+      "ref": "66dbaeec6a",
+      "film": "034",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T08:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T08:05Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "034 Pluto: elected Chief rules on reconciled J2157 v03 evidence (PR #619) and full VO PASS",
+      "kind": "chief",
+      "plain": "Chief review of the reconciled Pluto voice-over evidence to approve the VO and start the shot list"
     }
   ],
   "focus": [
