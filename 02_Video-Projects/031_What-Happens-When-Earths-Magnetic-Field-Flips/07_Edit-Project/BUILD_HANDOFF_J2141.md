@@ -2,6 +2,44 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook historical dates)
+
+Worker `macbook`, same branch `macbook/J2141` and PR #633. Queue remains
+**1/3**, partial build only. Added `code_graphics.py history` with three
+unique transparent 1920×1080 / 25 fps qtrle WHEN components:
+
+- R5: 1905 / CENTRAL FRANCE, 36.14–39.74 s (SOURCES row 3).
+- R10: 1929, 89.94–93.18 s (SOURCES row 4), ending before its WHO card.
+- R11: 780,000 YEARS AGO, 109.06–112.66 s (SOURCES row 4). This alpha
+  overlay crosses into R12; retain a moving plate and carry it across that
+  edit, or resolve its exit in composite review without changing locked VO.
+
+These reuse the existing date-card animation, with a shorter envelope for
+R10. They are date call-outs, not the remaining progressive timeline. No
+invented time axis or chronology. The Eos discovery article and NASA Flip
+Flop article were read live on 7 Nov; Eos references Brunhes 1905/1906 and
+Matuyama 1929, NASA gives about 780,000 years. The Matuyama DOI resolver
+was unavailable via web; the existing SOURCES row 4 remains the paper pointer.
+No locked script, VO, source or prior media changed.
+
+`CODE_HISTORY_v01.json` records cues, source rows/URLs, locked-words hash,
+paths and hashes. `CODE_HISTORY_TECHNICAL_CHECK_v01.json` records matching
+hashes, dimensions, argb alpha, 25 fps, durations and error-free full decode
+for all three. Five static samples per render and the contact sheet were
+inspected; navy is preview-only. Caption bounds are checked by the existing
+renderer. Refusal to overwrite was checked on the completed batch. Requires
+graded moving plates, clearance, composite readability and reviewer acceptance;
+no actual playback/audio review, KEEP, PASS or stage completion claimed.
+
+Media/contact sheet: `/Users/ben/_desk/J2141-history-v01/`. Reproduce into a
+fresh directory with `code_graphics.py history --out <fresh-dir> --manifest
+<new-json>` using `/usr/bin/python3`. No media in git. All render/check
+processes exited; none detached. £0 spent, no archive search or budget reset,
+no NAS write, no YouTube change. Full package exceeds a 25-minute run;
+release at this checkpoint. Wider harvest, remaining physical mechanisms,
+progressive timeline, R41 fallback, composites and full QA remain. Existing
+source-ID and sourced-simulation conflicts still need Chief reconciliation.
+
 ## Continuation checkpoint (7 Nov, MacBook protection batch)
 
 Continue J2141 at **1/3**, branch `macbook/J2141`, PR #633. This run adds

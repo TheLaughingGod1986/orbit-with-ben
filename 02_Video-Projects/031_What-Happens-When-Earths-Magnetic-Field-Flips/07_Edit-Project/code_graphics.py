@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='history':
+  from history_graphics import main as history
+  return history(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='protection':
   from protection_graphics import main as protection
   return protection(sys.argv[2:])
