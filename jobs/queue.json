@@ -198961,6 +198961,11 @@
           "at": "2026-11-07T05:28Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T06:25Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1829 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review R23 connector animation and rule on the draft",
@@ -198968,7 +198973,16 @@
       "required_capabilities": [
         "moving_video_input"
       ],
-      "plain": "Check the revised Titan landing graphic animation before it is used."
+      "plain": "Check the revised Titan landing graphic animation before it is used.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2347",
