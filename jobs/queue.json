@@ -197610,10 +197610,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T07:30Z",
+      "eta": "2026-11-07T09:30Z",
       "created_by": "codex",
       "created_at": "2026-11-07T00:57Z",
       "result": "",
@@ -197622,12 +197622,25 @@
           "at": "2026-11-07T00:57Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T07:30Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair three reproduced routing defects and return the corrected code for Chief review",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
-      "plain": "Fix unsafe desk restarts and missing or repeated message delivery."
+      "plain": "Fix unsafe desk restarts and missing or repeated message delivery.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T07:30Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2325",
