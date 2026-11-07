@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='generations':
+  from generation_graphics import main as generations
+  return generations(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='extinction_check':
   from extinction_graphics import main as extinction_check
   return extinction_check(sys.argv[2:])

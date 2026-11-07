@@ -2,6 +2,37 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook R52 generation scale)
+
+Worker `macbook`, same branch `macbook/J2141`, PR #633. Preserve **1/3**.
+Added `code_graphics.py generations` / `generation_graphics.py`: R52
+transparent scale component, 534.68–537.92 s, 81 frames at 25 fps,
+1920×1080 argb qtrle. Bars share zero and scale: 40 and 400 generations
+at 25 years each, existing SOURCES row 18 arithmetic (1,000–10,000 years).
+No new claim, measured chronology or source chart. Lower bar begins building
+at the locked “four hundred” cue (535.52 s); component exits before “the
+northern lights” at 537.94 s. No locked words or VO changed.
+
+Media: `/Users/ben/_desk/J2141-generations-v01/`. Manifest:
+`CODE_GENERATIONS_v01.json`; checks: `CODE_GENERATIONS_TECHNICAL_CHECK_v01.json`.
+SHA-256, dimensions, alpha, frame rate, 81-frame duration and complete decode
+all passed. Six static samples and contact sheet inspected; text fits inside
+the frame. These are technical/static checks only. Navy is preview background;
+assemble over graded moving real imagery with subject clearance. Actual
+playback legibility, composite and full gates remain unreviewed; no KEEP,
+PASS or film-stage approval. Existing output media is refused, not overwritten.
+Reproduce with `/usr/bin/python3 .../code_graphics.py generations --out
+<fresh-dir> --manifest <new-json>`.
+
+Existing PR #633 and branch contained earlier MacBook checkpoints absent
+from main; preserved them and merged pulled main into that branch. PR #495
+is already merged; do not resume it. No NAS changes, archive search, paid
+generation, publishing or social changes. Spend £0. No render remains running.
+Remaining full harvest, physical mechanisms, progressive timeline, R41
+fallback, composites and QA exceed this bounded run. Release for continuation
+of J2141 at this clean checkpoint. Existing search budgets and asset/gate
+conflicts below remain in force; no search budget reset.
+
 ## Continuation checkpoint (7 Nov, MacBook R45 qualitative comparison)
 
 Worker `macbook`, same branch `macbook/J2141`, PR #633. Preserve **1/3**.
