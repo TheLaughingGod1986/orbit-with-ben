@@ -199195,10 +199195,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T07:17Z",
+      "eta": "2026-11-07T09:17Z",
       "created_by": "gemini",
       "created_at": "2026-11-07T06:23Z",
       "result": "",
@@ -199207,10 +199207,23 @@
           "at": "2026-11-07T06:23Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T07:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "034 Pluto: elected Chief rules on J2157 v03 master reconciliation and full VO PASS",
-      "kind": "chief"
+      "kind": "chief",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T07:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2349",
