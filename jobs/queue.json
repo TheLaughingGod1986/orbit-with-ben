@@ -200724,9 +200724,14 @@
           "at": "2026-11-07T11:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T11:49Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2361; reading J2359 REVIEW.md, CHECKS.json and PR #626 branch"
         }
       ],
-      "remaining_action": "Correct the Pluto picture plan and evidence before production approval",
+      "remaining_action": "Audit J2359 review and PR #626 shot-list files for Pluto",
       "kind": "review",
       "plain": "Fix unsuitable source images, repeated plates and ending timings in the Pluto picture plan.",
       "rerouted_from": {
@@ -200740,12 +200745,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-07T11:49Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2361; reading J2359 REVIEW.md, CHECKS.json and PR #626 branch"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J2362",
