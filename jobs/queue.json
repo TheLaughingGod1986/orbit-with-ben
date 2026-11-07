@@ -193876,9 +193876,14 @@
           "at": "2026-11-07T05:43Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-07T05:45Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Restored PR445 df064017; added replay-safe ai_spend export with collision, crash and lock tests. 76 zero-submit regressions pass. Production remains disabled; full checks next."
         }
       ],
-      "remaining_action": "Repair and verify the tranche-2 runner safety defects",
+      "remaining_action": "Finish cross-channel writer adoption, spend-export wiring and live input validation",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
@@ -193886,8 +193891,9 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-07T05:43Z",
-        "by": "codex"
+        "at": "2026-11-07T05:45Z",
+        "by": "codex",
+        "note": "Restored PR445 df064017; added replay-safe ai_spend export with collision, crash and lock tests. 76 zero-submit regressi"
       },
       "taskKeys": [
         "HOS:009"
