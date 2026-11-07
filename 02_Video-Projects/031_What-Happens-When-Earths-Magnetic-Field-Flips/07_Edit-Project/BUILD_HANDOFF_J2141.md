@@ -2,6 +2,39 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## R6 tight-edge search (7 Nov UTC, Cursor)
+
+Preserve **1/3**, PR **#575**, starting at `95f4f3e1f6`. Spend **£0**.
+The wide plate `plate_031_r06_lava_v01.mp4` is unchanged. This pass looked
+for the shot list's second R6 beat: a tight glowing edge of lava on the
+ground. Three candidates were examined. None is that beat. No new plate.
+
+- The existing fissure-20 overflight stays a wide aerial through the end
+  card. Stills at 12 s, 18 s and 24 s were looked at again. Source
+  6.00–12.68 s is not reused for the tight beat.
+- North-side spatter, Commons `PD-USGov-USGS`, 34.6 s:
+  `/Users/benjaminoats/_desk/J2141-lava-edge-v01/fissure20_north_spatter.webm`
+  (`3bffd0b475d2d5bd28773038087f62c199ee5d0717bed2e929efd0d4160e210a`).
+  A night fountain after the USGS title card. The lower half is black.
+  It does not show lava advancing over clay.
+- Afternoon fountaining, Commons `PD-USGov-USGS`, 27.3 s:
+  `/Users/benjaminoats/_desk/J2141-lava-edge-v01/fissure20_afternoon_fountain.webm`
+  (`c3bef5d9ca531a7056c166d39dd1e43b4dc639988ece055333d0d57f6bc7116e`).
+  A daylight fountain behind a spatter mound. Title and end cards sit
+  outside the picture. The end card calls the dark mound spatter fragments.
+  It is not a tight edge baking clay.
+
+A fourth Commons file, the 3:45 AM fissure-20 spatter, is described as
+fountaining and was not downloaded. It is the same night-fountain class.
+`HARVEST_R06_EDGE_SEARCH_v01.json` and the pool checkpoint
+`R6 tight glowing lava edge on the ground` record the hashes and the
+licence pages. Stills were inspected as stills. No motion or audio review.
+
+**Do not restart this fissure-20 search.** Chief needs a new source, or an
+accurate alternative, before another tight-edge pass. Next harvest that is
+still open: basalt, cores and wildlife, then the remaining composites and
+full picture/polish QA. Nothing needs Ben.
+
 ## R6 USGS lava checkpoint (7 Nov UTC, Cursor)
 
 Preserve **1/3**, PR **#575**, starting at `d58877f18c`. Spend **£0**.

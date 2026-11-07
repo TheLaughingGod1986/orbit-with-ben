@@ -699,6 +699,45 @@
       "active_minutes": 12,
       "outcome": "Downloaded and statically inspected one PD-USGS fissure-20 overflight. Two other Commons USGS fissure-20 titles were identified and not downloaded. Search stopped with a candidate.",
       "budget_status": "Stopped when a suitable wide-flow candidate was found."
+    },
+    {
+      "input": "R6 tight glowing lava edge on the ground",
+      "date": "2026-11-07",
+      "candidates_examined": 3,
+      "active_minutes": 14,
+      "budget_status": "three-candidate limit reached on this fissure-20 set; do not restart the same search",
+      "outcome": "No examined clip is a tight glowing edge of lava advancing over clay or ground. The existing overflight remains the wide R6 plate only. A fountain must not be relabelled as that edge. Chief needs a new source or an accurate alternative before another search.",
+      "candidates": [
+        {
+          "asset_id": "commons_usgs_fissure20_overflight",
+          "source": "https://commons.wikimedia.org/wiki/File:Helicopter_overflight_of_a_fast-moving_lava_flow_emerging_from_fissure_20_on_....webm",
+          "result": "Already harvested. Stills at 12 s, 18 s and 24 s are the same wide helicopter view. End card is near 26.5 s. No tight ground edge. Source 6.00-12.68 s stays the wide plate and must not be reused for this beat."
+        },
+        {
+          "asset_id": "commons_usgs_fissure20_north_spatter",
+          "source": "https://commons.wikimedia.org/wiki/File:Spattering_and_lava_flow_along_north_side_of_fissure_20_on_May_19,_2018,_arou....webm",
+          "local_path": "/Users/benjaminoats/_desk/J2141-lava-edge-v01/fissure20_north_spatter.webm",
+          "sha256": "3bffd0b475d2d5bd28773038087f62c199ee5d0717bed2e929efd0d4160e210a",
+          "licence": "PD-USGov-USGS",
+          "wikitext_sha256": "505cfaf33d09302adcacdd400aeaa9c4296a05fe2cb5c3f45f089e3e5d553ccb",
+          "result": "34.6 s, 1920x1080. USGS title card, then a night spatter fountain. The lower half of the frame is black. It is not lava advancing over clay. Rejected for the tight-edge beat. Source audio excluded. Not a plate."
+        },
+        {
+          "asset_id": "commons_usgs_fissure20_afternoon_fountain",
+          "source": "https://commons.wikimedia.org/wiki/File:Fountaining_from_Fissure_20_on_May_19,_2018,_around_3-47_PM,_HST._Photos_and....webm",
+          "local_path": "/Users/benjaminoats/_desk/J2141-lava-edge-v01/fissure20_afternoon_fountain.webm",
+          "sha256": "c3bef5d9ca531a7056c166d39dd1e43b4dc639988ece055333d0d57f6bc7116e",
+          "licence": "PD-USGov-USGS",
+          "wikitext_sha256": "f6b3924d26197c80b991d1603d728d84a9206e49b8498f6a9f5a0fa30e4848a1",
+          "result": "27.3 s, 1920x1080. Daylight fountain behind a spatter mound, with cooled lava and grass in front. Title card at the open and an end card by 22 s. The end card itself says the dark mound is spatter fragments. Not a tight glowing edge baking clay. Rejected for this beat. Not a plate."
+        }
+      ],
+      "identified_not_examined": [
+        {
+          "source": "https://commons.wikimedia.org/wiki/File:Spattering_and_lava_flow_at_fissure_20_in_K%C4%ABlauea_Volcano%27s_Lower_East_Rift_Z....webm",
+          "result": "Commons describes lava fountaining at about 3:45 AM HST on 19 May 2018. 29.6 MB, public domain, USGS. Not downloaded. Same night-fountain class, not a new approach."
+        }
+      ]
     }
   ],
   "body_source_search_v01": {
