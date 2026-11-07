@@ -189404,9 +189404,14 @@
           "at": "2026-11-07T01:13Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started Rule H review of J0912 (HOS 008 Short A v03); set 4-step plan"
+        },
+        {
+          "at": "2026-11-07T01:16Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J0912 history, commit 830f6b35, and Short A v03 QA outputs; confirmed picture_qa FAIL at 0:18 s06 from reusing 8s 13_key_ribbon_t1.mp4 at offsets 0.6s and 4.1s (3.5s apart < 10s rule)"
         }
       ],
-      "remaining_action": "Inspect J0912 history, branch cursor/j0912-short-a-v03, and HOS 008 Short A v03 gate evidence",
+      "remaining_action": "Verify Short A v03 against J0912 brief, HOS rules, and available HOS 008 KEEP plates for S06 fix",
       "kind": "review",
       "review_of": "J0912",
       "rerouted_from": {
@@ -189419,11 +189424,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-07T01:13Z",
+        "at": "2026-11-07T01:16Z",
         "by": "gemini",
-        "note": "Started Rule H review of J0912 (HOS 008 Short A v03); set 4-step plan"
+        "note": "Read J0912 history, commit 830f6b35, and Short A v03 QA outputs; confirmed picture_qa FAIL at 0:18 s06 from reusing 8s 1"
       },
       "taskKeys": [
         "HOS:008"
