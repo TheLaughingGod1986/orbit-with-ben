@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |
 | J2339 | mini | open | – | – | 008 edit · qa · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2346 | mini | open | – | – | 032 picture · qa · 032 R23: review fixed connector fade draft | 9a7e183aa8 |
-| J2347 | any | open (after J2345) | – | – | 034 vo · chief · 034 Pluto: elected Chief rules on J2345 listening review of v05 Real Worlds pickup | 11ccf897f3 |
+| J2347 | any | claimed | codex | 2026-11-07T06:42Z | 034 vo · chief · 034 Pluto: elected Chief rules on J2345 listening review of v05 Real Worlds pickup | 11ccf897f3 |
 
 Recently finished:
 
