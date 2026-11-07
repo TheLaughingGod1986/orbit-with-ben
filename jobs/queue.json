@@ -198335,13 +198335,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T04:19Z",
-      "eta": "2026-11-07T06:19Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T04:15Z",
-      "result": "",
+      "result": "FIX / INDETERMINATE: Demonstrated audio_input via read_file on hash-verified v04 WAV (9fd9f90f8f...) at 12.60-14.64 s (Real 13.30-13.52 s, World(s) 13.60-13.94 s, series 14.10-14.64 s) and compared once against v03 WAV (e46b491f56...) at 0.22-1.84 s. Plural -s is not distinctly audible before series due to /-ldz#s-/ sibilant coalescence (85-90% confidence); v04 also pronounces geysers at 24.66-25.28 s as /'gi:z@z/ ('geezers'). Proposed specifically different repair approach (break /-z#s-/ boundary in line 110) in jobs/reviews/J2342/REVIEW.md (a6a80c2194). Queued elected-Chief ruling J2343; J2157 stays unfinished; zero spend; no shot-list release.",
       "history": [
         {
           "at": "2026-11-07T04:15Z",
@@ -198382,6 +198382,11 @@
           "at": "2026-11-07T04:29Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Queued dependent elected-Chief ruling J2343 linked to J2157 and J2342"
+        },
+        {
+          "at": "2026-11-07T04:29Z",
+          "by": "gemini",
+          "what": "done: FIX / INDETERMINATE: Demonstrated audio_input via read_file on hash-verified v04 WAV (9fd9f90f8f...) at 12.60-14.64 s (Real 13.30-13.52 s, World(s) 13.60-13.94 s, series 14.10-14.64 s) and compared once against v03 WAV (e46b491f56...) at 0.22-1.84 s. Plural -s is not distinctly audible before series due to /-ldz#s-/ sibilant coalescence (85-90% confidence); v04 also pronounces geysers at 24.66-25.28 s as /'gi:z@z/ ('geezers'). Proposed specifically different repair approach (break /-z#s-/ boundary in line 110) in jobs/reviews/J2342/REVIEW.md (a6a80c2194). Queued elected-Chief ruling J2343; J2157 stays unfinished; zero spend; no shot-list release."
         }
       ],
       "remaining_action": "Close J2342 diagnostic review",
@@ -198408,7 +198413,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "a6a80c2194"
     },
     {
       "id": "J2343",
