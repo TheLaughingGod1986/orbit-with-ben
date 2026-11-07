@@ -6,7 +6,7 @@
 | Gate | not run (topic not locked; parked for Chief in J0294) |
 | Script review | PASS 92.4 / 100 (`titan_landing_script_master_v00.md`, 6 chapters, J0294) |
 | VO | locked `titan_landing_vo_v02b` (Chief h31, J1294, 31 Oct 2026). `v02a` is an unlocked failed-spec attempt |
-| CG | pending (Vertex Veo / Omni Orbit-only) |
+| Picture | PASS (`J2378` / `J2089` £0 picture package on `studio-live` NAS: 39 harvested stills + 4 NASA SVS 20311 1080p MP4s, 62 ProRes 4444 alpha `.mov` exports, 62 moving-plate 1080p30 composite `.mp4` clips + 6 chapter cards, `0` `polish_gate` failures, `0` Short overlap) |
 | Runtime target | 7–9 min |
 | Shorts | 2 active + 1 reserve (`10_Shorts/SHORTS_PLAN_v01.md`, J2147/J2173, 5 Nov 2026): **Wed 25 Nov 11:30Z** go-public day Short (*Strike a Match on Titan?*, `23.64 s`, or Sat 28 Nov if `AR2` holds 25 Nov) & **Fri 27 Nov 11:30Z** Test A opening (`32.80 s` / `30.00 s`), reserve **Sat 28 Nov / Fri 18 Dec 11:30Z** (*28x Easier to Fly?*, `26.50 s`); standalone Short `RLSJm59OSzI` scheduled Tue 10 Nov 2026 |
 
@@ -69,3 +69,11 @@ Sources: **PASS retained from Chief J0301**, approved commit `97b7af4ee9`. The g
 ## J1810 capability validation — 4 November 2026
 
 Fresh native Gemini audio fixture test failed: the first claimed perception contradicted the fixture, and independent recheck explicitly reported no reliable audio perception. J1753 retains technical PASS at 1/3; no VO was heard or approved. J1810 owns demonstrating a reliable native listening route before any specialist handoff. [Evidence](../../jobs/reviews/J1810/REPORT.md). No Ben production-review action.
+
+## J2378 Chief picture review (`J2089` £0 picture package) — 7 November 2026
+
+Picture: **PASS (`KEEP`)** by elected acting Chief (`gemini`, `J2378` reviewing `J2089` commit `c0bbf33088` and `studio-live` NAS `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/`):
+- **Harvest (`03_Reference-Material/harvest_J2089_v01/`):** `39` NASA/ESA/STScI/Commons source stills (`36` active in `SHOT_LIST_v08.md`, all `<= 2` appearances) + `4` NASA SVS `20311` Dragonfly 1080p MP4 clips (`<= 3` stretches separated by `> 10 s`); `inventory_harvest_032.py` `0` errors; `verify_short_sources_032.py` `0` overlap with Short `RLSJm59OSzI`/`ffYKoNVPoqg`.
+- **Overlay Exports (`04_Generated-Clips/graphics_exports_v01/`):** `62/62` ProRes 4444 alpha `.mov` exports (`CURRENT_EXPORT_INVENTORY_v31.json`) SHA-256 verified on NAS.
+- **Moving-Plate Composites & Chapter Cards (`07_Edit-Project/composites_v01/`):** `62/62` `1920x1080` `30 fps` moving-plate composites (`3.60 s` / `108` frames each) + `6/6` chapter cards (`2.50 s` / `75` frames each) SHA-256 verified on NAS; `COMPOSITES_POLISH_VERIFICATION_v01.json` `0` hard failures; `composites_contact_sheet_v01.jpg` passes Teach on Screen (`DATA`, `WHO`, `WHEN`, `FACT`, `STYLE`, `MOTION`) and per-chapter `NUMBER`+`WORDS` gates.
+- **Audio Staged for Edit (`05_Music/` & `06_Sound-Effects/kit_v01/`):** £0 chapter-shaped score bed `titan_score_bed_v01.mp3` (`585.44 s`, `70.6 BPM`, `music_gate.py` PASS, SHA-256 `02c7d95865f8b39de4f9d3dfda8aa85084ecea04fc56dbd6776268279dab8f9e`) and £0 house SFX kit (`rumble_low`, `whoosh_soft`, `tick_ui`) staged on `studio-live` NAS. [Review](../../jobs/reviews/J2378/REVIEW.md).
