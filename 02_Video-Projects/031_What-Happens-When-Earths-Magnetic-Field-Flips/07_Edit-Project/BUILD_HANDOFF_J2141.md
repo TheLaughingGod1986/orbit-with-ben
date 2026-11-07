@@ -1,3 +1,46 @@
+## MacBook continuation — 7 Nov, three agency still candidates
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**. Three public-domain stills were examined in depth and downloaded
+from Commons after the agency hosts blocked this machine (USGS empty 202,
+NOAA 405, USFWS 403). None is admitted. No KEEP, PASS or stage approval.
+Spend £0. Assigned uses stay at 0. The pool now has 15 assets.
+
+- **commons_usgs_kilauea_978** (row 6 candidate): USGS HVO, 12 Nov 2014,
+  Puʻu ʻŌʻō. 5184×3456. SHA-256
+  `4dd7826b8997c76e7471e8d4547cb437d79b5d826c4ea717efa20f265e006fb7`.
+  Grey mean luma 93.3, p95 246. Visual check: cooled black lava around a
+  damaged house and a standing garage, with a burned-in label
+  "Transfer station". No glowing flow and no clay being baked. Not a
+  row 6 match.
+- **commons_noaa_humpback_anim1107** (row 49 candidate): NOAA Photo
+  Library anim1107, credit Dr Brandon Southall, NMFS/OPR. 1154×602.
+  SHA-256
+  `e5f22473175e6357f8576a4f875b0f77630f97b26226b66d7a62209c0f569c56`.
+  Grey mean luma 144.2. Visual check: one raised flipper among sea ice.
+  Spyhopping, not an underwater swim, and not a sea turtle. Scale to
+  1920 wide is 1.664×. The frame is short of 16:9.
+- **commons_usfws_tundra_swans** (row 49 candidate): Erin Clark, USFWS,
+  Red Rock Lakes. 3776×2520. SHA-256
+  `9b5d23bf699215533eafc28ab6c150c7805a0323281d5d51f84621607ee89296`.
+  Grey mean luma 141.4, p95 227. Visual check: white swans in flight in
+  a loose V against blue sky. A still, not flight footage.
+
+Commons file pages assert public domain. Bytes came from Commons, not
+from the agency hosts. Media and contact sheet:
+`/Users/ben/_desk/J2141-harvest-v04/`. Reproduce only into an empty
+directory, and only against a pool that does not already contain these
+three ids:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_agency_stills_v04.py --media-root <empty-dir>
+```
+
+No paid generation, no YouTube change, no NAS delete. Still unfinished:
+ESA/DTU Swarm and SAA, NOAA seafloor and sediment stills, the moving
+NASA/SVS clips, Commons kauri and cave art (open on PR #572), the
+progressive timeline on PR #571, composites and the picture gates.
+
 ## MacBook continuation — 7 Nov, three NASA still candidates
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
