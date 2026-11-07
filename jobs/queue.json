@@ -189399,9 +189399,14 @@
           "at": "2026-11-07T01:12Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T01:13Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started Rule H review of J0912 (HOS 008 Short A v03); set 4-step plan"
         }
       ],
-      "remaining_action": "KEEP or FIX J0912 Short A v03 picture_qa; write jobs/reviews/J2224/REVIEW.md",
+      "remaining_action": "Inspect J0912 history, branch cursor/j0912-short-a-v03, and HOS 008 Short A v03 gate evidence",
       "kind": "review",
       "review_of": "J0912",
       "rerouted_from": {
@@ -189415,12 +189420,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-07T01:12Z",
+        "of": 4,
+        "at": "2026-11-07T01:13Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started Rule H review of J0912 (HOS 008 Short A v03); set 4-step plan"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2225",
