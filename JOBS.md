@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2357 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2358 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2359 | any | open (after J2353) | – | – | 034 shots · for codex · chief · 034 Pluto: Chief review of J2353 shot list (SHOT_LIST_v01.md + clip_check PASS on PR #626), OMNI R28/R52 price pass vs £0 fallback, and release 034 picture harvest + code graphics | jobs/reviews/J2353/REVIEW.md |
-| J2360 | mini | open | – | – | 034 script · review · 034 Short 2: repair exact v03 lift and deliver reviewable no-spend plan | J2356 |
+| J2360 | mini | open | – | – | 034 script · for cursor · review · `cursor-claude-opus-5-5` · 034 Short 2: repair exact v03 lift and deliver reviewable no-spend plan | J2356 |
 
 Recently finished:
 
