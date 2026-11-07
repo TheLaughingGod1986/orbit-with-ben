@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=="paleo_ratio":
+  from paleo_comparison_graphics import main as paleo_ratio
+  return paleo_ratio(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='recent_dates':
   from recent_date_graphics import main as recent_dates
   return recent_dates(sys.argv[2:])

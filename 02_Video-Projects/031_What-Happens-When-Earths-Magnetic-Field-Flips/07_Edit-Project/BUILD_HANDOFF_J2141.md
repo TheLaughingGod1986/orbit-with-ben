@@ -2,6 +2,35 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook R32 ratio)
+
+Worker `macbook`, same branch `macbook/J2141`, PR #633. Preserve **1/3**.
+Added `code_graphics.py paleo_ratio` / `paleo_comparison_graphics.py`: R32
+alpha comparison component 329.54–336.10 s, 164 frames, 1920×1080 / 25 fps.
+Existing SOURCES row 13 supplies today's field at twice its million-year
+average. Bars share zero/scale (today 1, average 0.5); no historical curve,
+invented samples or absolute dipole strength is drawn. WHEN label 100,000
+YEARS starts at locked cue 332.10 s, and the comparison starts on “twice”
+at 334.02 s. No VO changes. Progressive timeline and full R32 paleo scene
+remain unfinished. Every caption animates and stays under four seconds;
+the top bar enters at 332.10 s and leaves with the row.
+
+Final media: `/Users/ben/_desk/J2141-paleo-ratio-v03/`. Prior local v01/v02
+iterations are retained but superseded (caption overlap/identification fixes).
+`CODE_PALEO_RATIO_v01.json` names only final media; technical check JSON
+records matching SHA-256, dimensions, argb alpha, frame rate, frame count,
+duration and full error-free decode. Six static samples/contact sheet viewed.
+Navy is preview only. Graded moving real plate, subject clearance, actual
+playback and composite/full QA remain required. No KEEP/PASS/stage approval.
+Reproduce into a fresh directory: `/usr/bin/python3 .../code_graphics.py
+paleo_ratio --out <dir> --manifest <json>`.
+
+No archive investigation or search-budget reset; R41's existing remaining
+candidate budget and source/gate conflicts below are preserved. No spend,
+publishing, social, NAS or HOS changes. No process remains running. The full
+harvest, remaining mechanisms/timeline, composites and gates exceed the
+25-minute worker scope; release at this clean checkpoint for continuation.
+
 ## Continuation checkpoint (7 Nov, MacBook R20/R29 dates)
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Preserve **1/3**.
