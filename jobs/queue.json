@@ -196626,13 +196626,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-07T00:23Z",
-      "eta": "2026-11-07T02:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T00:21Z",
-      "result": "",
+      "result": "parked for Chief: condition for J2033 verified UNMET in jobs/reviews/J2322/REVIEW.md (3586f49b1f): HOS draft PR #445 advanced to commit 25635b4d (Finding 6 repaired at 46d65010; SharedFlowAccounting component added at 25635b4d; 51 zero-submit unit tests and check_all PASS; cmd_submit hard-stopped), but J2275 remains open for codex at step 1/3 (Finding 2 live per-Create UI evidence, Finding 3 SharedFlowAccounting/ai_spend integration across Flow writers, and parent-still inventory verification still unfinished; tmp worktrees absent) and J2200 remains blocked on FIX without renewed elected-Chief system PASS. Verified HOS PR #408 tab-reuse (e908c3e2) passes 5/5 unit tests on main, all 5 v05 board SHA-256 hashes in TRANCHE2_SCOPE_J2026.json match on disk, 0/20 tranche-2 rows generated on local disk or NAS, and 0 Flow credits spent on HOS:009. Only elected Chief (codex) may run jobs.py wait J2033 --recheck J2322 (next check 2026-11-07T06:30:00Z) and close J2322.",
       "history": [
         {
           "at": "2026-11-07T00:21Z",
@@ -196668,6 +196668,11 @@
           "at": "2026-11-07T00:28Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 complete: completed J2322 verification in jobs/reviews/J2322/REVIEW.md (3586f49b1f); parking at protected elected-Chief wait --recheck J2322 call"
+        },
+        {
+          "at": "2026-11-07T00:28Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: condition for J2033 verified UNMET in jobs/reviews/J2322/REVIEW.md (3586f49b1f): HOS draft PR #445 advanced to commit 25635b4d (Finding 6 repaired at 46d65010; SharedFlowAccounting component added at 25635b4d; 51 zero-submit unit tests and check_all PASS; cmd_submit hard-stopped), but J2275 remains open for codex at step 1/3 (Finding 2 live per-Create UI evidence, Finding 3 SharedFlowAccounting/ai_spend integration across Flow writers, and parent-still inventory verification still unfinished; tmp worktrees absent) and J2200 remains blocked on FIX without renewed elected-Chief system PASS. Verified HOS PR #408 tab-reuse (e908c3e2) passes 5/5 unit tests on main, all 5 v05 board SHA-256 hashes in TRANCHE2_SCOPE_J2026.json match on disk, 0/20 tranche-2 rows generated on local disk or NAS, and 0 Flow credits spent on HOS:009. Only elected Chief (codex) may run jobs.py wait J2033 --recheck J2322 (next check 2026-11-07T06:30:00Z) and close J2322."
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J2322 on J2033 (next check 2026-11-07T06:30:00Z) and closes J2322",
