@@ -200324,6 +200324,11 @@
           "at": "2026-11-07T11:08Z",
           "by": "codex",
           "what": "reopened: Elected-Chief ruling and parent recheck recorded; reopen only this verification to claim and close it under codex. J2320 stays blocked; J2360 queued."
+        },
+        {
+          "at": "2026-11-07T11:08Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Elected Chief completed this review; transfer verification closure from prior gemini worker to codex. Parent remains held."
         }
       ],
       "remaining_action": "Elected Chief (codex): run jobs.py wait J2320 --recheck J2356 --check-at 2026-11-08T08:30:00Z and close J2356",
@@ -200338,8 +200343,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "OWB:034"
       ]

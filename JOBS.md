@@ -99,7 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2350 | mini | open (after J2324) | – | – | chief · Review corrected HOS desk PR450 after J2324 repair | J1809 |
 | J2351 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1809 |  |
 | J2355 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2270 |  |
-| J2356 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2320 |  |
+| J2356 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2320 |  |
 | J2357 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2358 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2359 | any | open (after J2353) | – | – | 034 shots · for codex · chief · 034 Pluto: Chief review of J2353 shot list (SHOT_LIST_v01.md + clip_check PASS on PR #626), OMNI R28/R52 price pass vs £0 fallback, and release 034 picture harvest + code graphics | jobs/reviews/J2353/REVIEW.md |
