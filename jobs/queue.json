@@ -203001,10 +203001,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-07T20:15Z",
+      "eta": "2026-11-07T22:15Z",
       "created_by": "relay",
       "created_at": "2026-11-07T19:15Z",
       "result": "",
@@ -203023,6 +203023,11 @@
           "at": "2026-11-07T20:14Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Cursor run failed (exit 1); next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-07T20:15Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
@@ -203038,7 +203043,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T20:15Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2378",
