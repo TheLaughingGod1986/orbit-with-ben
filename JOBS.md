@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2141, J2089, J2034, J2037, J0862, J2040, J1881, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2141, J2089, J2034, J2037, J2040, J1881, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -15,7 +15,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0275 | mini | blocked | gemini | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, aAUgIGEuPwQ) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
-| J0862 | mini | blocked | codex | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
@@ -71,7 +70,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2275 | mini | open | – | – | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
 | J2280 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
-| J2281 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
 | J2287 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2245 |  |
 | J2289 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2255 |  |
 | J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |

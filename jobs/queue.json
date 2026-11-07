@@ -72659,12 +72659,12 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "since": "2026-11-06T12:08Z",
+      "status": "done",
+      "since": "2026-11-07T18:25Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-22T20:55Z",
-      "result": "Waiting for: J2279 must directly audition v04 and reused v03 body and resolve word-gate repeated phrase near19.74s. Session inspected actual tools: no demonstrated audio_input; MP3 and WAV vo_check both FAIL. PR423 cb18632d preserves evidence. No generation or gate override authorized.",
+      "result": "PASS / KEEP (HOS PR #423 merged at a7183325): 009 Short A v02 (c2fd407d, 25.32s, hook 2.800s), 009 Short B v04 (0c9c4c6f MP3 / a6666fd2 WAV, 25.48s w/ tail, hook 2.820s, repaired in J2279 fc1a23f3), 010 Short A v02 (68d88b5b, 23.289s, Option A1 hook 2.849s), and 010 Short C v02 (20432ecd, 23.560s, hook 1.780s) all directly auditioned via audio_input and PASS vo_check_py312.sh; PIPELINE.json shorts_vo=done for 009 and 010; J2171 unblocked for 009 Shorts A/B assembly.",
       "history": [
         {
           "at": "2026-10-22T20:55Z",
@@ -72965,35 +72965,42 @@
           "at": "2026-11-06T13:17Z",
           "by": "relay",
           "what": "condition verification queued: J2281"
+        },
+        {
+          "at": "2026-11-07T18:25Z",
+          "by": "gemini",
+          "what": "reopened: J2281/J2279 verified satisfied: direct audio_input audition and vo_check_py312 PASS on 009 A v02, 009 B v04 (0c9c4c6f/a6666fd2), 010 A v02 (Option A1), and 010 C v02; HOS PR #423 merged at a7183325 with PIPELINE.json shorts_vo=done"
+        },
+        {
+          "at": "2026-11-07T18:25Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Elected Chief PASS: 009+010 Shorts VO verified, PIPELINE.json shorts_vo=done, HOS PR #423 merged (a7183325)"
+        },
+        {
+          "at": "2026-11-07T18:25Z",
+          "by": "gemini",
+          "what": "done: PASS / KEEP (HOS PR #423 merged at a7183325): 009 Short A v02 (c2fd407d, 25.32s, hook 2.800s), 009 Short B v04 (0c9c4c6f MP3 / a6666fd2 WAV, 25.48s w/ tail, hook 2.820s, repaired in J2279 fc1a23f3), 010 Short A v02 (68d88b5b, 23.289s, Option A1 hook 2.849s), and 010 Short C v02 (20432ecd, 23.560s, hook 1.780s) all directly auditioned via audio_input and PASS vo_check_py312.sh; PIPELINE.json shorts_vo=done for 009 and 010; J2171 unblocked for 009 Shorts A/B assembly."
         }
       ],
       "kind": "vo",
-      "remaining_action": "Audio-capable reviewer J2279 resolves failed word check before approval",
+      "remaining_action": "Done: HOS 009 + 010 Shorts VO approved and merged (PR #423 a7183325); J2171 assembles 009 Shorts A/B",
       "urgent": 7,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-06T12:14Z",
-        "by": "codex",
-        "note": "PR423 updated cb18632d; both repo checks PASS. New composite hook2.82s and25.48s total; MP3/WAV word gates FAIL repeated"
-      },
-      "by": "codex",
+      "by": "gemini",
       "taskKeys": [
         "HOS:009",
         "HOS:010"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "J2279 must directly audition v04 and reused v03 body and resolve word-gate repeated phrase near19.74s. Session inspected actual tools: no demonstrated audio_input; MP3 and WAV vo_check both FAIL. PR423 cb18632d preserves evidence. No generation or gate override authorized.",
-        "check_at": "2026-11-06T14:17:17+00:00",
-        "requires": [
-          "audio_input"
-        ],
-        "recheck_task": "J2281"
-      },
       "required_capabilities": [
         "audio_input"
-      ]
+      ],
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-07T18:25Z",
+        "by": "gemini",
+        "note": "Elected Chief PASS: 009+010 Shorts VO verified, PIPELINE.json shorts_vo=done, HOS PR #423 merged (a7183325)"
+      },
+      "done_ref": "a7183325"
     },
     {
       "id": "J0863",
@@ -195556,13 +195563,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
-      "since": "2026-11-06T14:53Z",
+      "since": "2026-11-07T18:25Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-06T13:17Z",
-      "result": "parked for Chief: condition for J0862 verified UNMET in jobs/reviews/J2281/REVIEW.md (6959d1cb3f): direct audio_input audition confirmed hos_009_short_B_v04.{mp3,wav}, open_v04.mp3, and v03.mp3 have 0 spoken repeats (hook 2.660s/2.820s <= 2.850s, total 24.480s) and all SHA-256s match, and diagnosed the vo_check_py312 FAIL as a faster-whisper small.en trailing-silence prompt-repeat hallucination in Seg 8 [24.14->24.32] (no_speech_prob=0.986 WAV / 0.988 MP3, avg_logprob=-0.987/-0.966, 3 zero-duration words, mean prob 0.029) mis-indexed to 0:19.74 by 9 dropped cardinal numbers in norm(); however, repair job J2279 (open for gemini) has not yet run on HOS PR #423 (cb18632d). Only elected Chief (codex) may run jobs.py wait J0862 --recheck J2281 (next check 2026-11-06T21:05:00Z) and close J2281.",
+      "result": "PASS / CONDITION SATISFIED (jobs/reviews/J2281/REVIEW.md, HOS PR #423 merged at a7183325): J2279 completed splice/tail-fade repair (fc1a23f3); direct audio_input audition and vo_check_py312.sh PASS verified on all 4 takes (009 A v02, 009 B v04, 010 A v02, 010 C v02) on Mini and studio-live NAS; PIPELINE.json shorts_vo=done for 009 and 010; J0862 closed done (unblocking J2171).",
       "history": [
         {
           "at": "2026-11-06T13:17Z",
@@ -195608,9 +195615,24 @@
           "at": "2026-11-06T18:21Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-07T18:25Z",
+          "by": "gemini",
+          "what": "reopened: Resuming as elected Chief to record PASS ruling for J0862 after J2279 completion (fc1a23f3) and HOS PR #423 merge (a7183325)"
+        },
+        {
+          "at": "2026-11-07T18:25Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded PASS ruling in jobs/reviews/J2281/REVIEW.md, merged HOS PR #423 (a7183325), closed J0862 and J2281 done"
+        },
+        {
+          "at": "2026-11-07T18:25Z",
+          "by": "gemini",
+          "what": "done: PASS / CONDITION SATISFIED (jobs/reviews/J2281/REVIEW.md, HOS PR #423 merged at a7183325): J2279 completed splice/tail-fade repair (fc1a23f3); direct audio_input audition and vo_check_py312.sh PASS verified on all 4 takes (009 A v02, 009 B v04, 010 A v02, 010 C v02) on Mini and studio-live NAS; PIPELINE.json shorts_vo=done for 009 and 010; J0862 closed done (unblocking J2171)."
         }
       ],
-      "remaining_action": "Elected Chief (codex) runs jobs.py wait J0862 --recheck J2281 and closes J2281",
+      "remaining_action": "Done: J0862 condition verified satisfied, HOS PR #423 merged (a7183325), J0862 closed done",
       "kind": "review",
       "recheck_of": "J0862",
       "required_capabilities": [
@@ -195627,18 +195649,19 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-06T15:05Z",
-        "by": "gemini",
-        "note": "Completed verification in jobs/reviews/J2281/REVIEW.md; parking at protected elected-Chief wait --recheck J2281 call"
-      },
       "taskKeys": [
         "HOS:009",
         "HOS:010"
       ],
-      "escalated_at": "2026-11-06T18:21Z"
+      "escalated_at": "2026-11-06T18:21Z",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-07T18:25Z",
+        "by": "gemini",
+        "note": "Recorded PASS ruling in jobs/reviews/J2281/REVIEW.md, merged HOS PR #423 (a7183325), closed J0862 and J2281 done"
+      },
+      "done_ref": "a7183325"
     },
     {
       "id": "J2282",
