@@ -202149,19 +202149,26 @@
           "at": "2026-11-07T15:41Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T15:41Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Plan: 1 inventory named assets, 2 download to studio-live, 3 write HARVEST_POOL with hashes and contact sheet, 4 check banned IDs and use counts."
         }
       ],
-      "remaining_action": "Harvest all SHOT_LIST_v01 stills and native-motion clips into HARVEST_POOL with hashes and contact sheet; £0 only",
+      "remaining_action": "Read the locked 034 shot list and source evidence, then harvest only the named NASA plates",
       "kind": "assembly",
       "plain": "Download and provenance every £0 NASA/Commons still and native-motion clip named in the locked 034 shot list",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-07T15:41Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Plan: 1 inventory named assets, 2 download to studio-live, 3 write HARVEST_POOL with hashes and contact sheet, "
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J2371",
