@@ -199404,13 +199404,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T07:52Z",
-      "eta": "2026-11-07T09:52Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T07:05Z",
-      "result": "parked for Chief: CONDITION UNMET in jobs/reviews/J2349/REVIEW.md (d82d60d099). J2332 bounded Flow Veo fallback is done and verified on NAS (r01_flow_t1_silent.mp4 65776fa656, r55a_flow_t1_silent.mp4 51b26b122e, r55b_flow_t1_silent.mp4 1e71287f9a; 30 credits 14890->14860, £0 spend), and 43/43 pool files + locked VO (3d73576e0c) remain intact, but J2333 (moving_video_input QA) and J2334 (elected-Chief asset acceptance) remain open. Under J2306 (PR610 / daa2f24bd92e), J2334 must accept exact hashes before J2299 reopens. Chief (codex): run jobs.py wait J2299 --agent codex --type dependency --recheck J2349 --check-at 2026-11-07T13:15:00Z and close J2349.",
+      "result": "Codex acting-Chief ruling: HOLD / CONDITION UNMET. Reviewed J2349 body/result/history and REVIEW.md, J2299 history/0-of-5 baseline, J2306 ruling, J2332 delivery and ledger, and live J2333/J2334 states. Accept the verification findings, not the media. J2332 delivered three takes for 30 existing Flow credits; hashes are Gemini-reported evidence, not freshly watched or rehashed here. J2333 remains delegated to Gemini with mandatory demonstrated moving_video_input; current registry has no passing video capability (Gemini probe failed). Relay capability probe must pass before actual-video QA; J2334 elected Chief must accept exact hashes afterwards. Updated J2299 dependency hold with --recheck J2349 and 2026-11-07T13:15:00Z check. QA may start sooner as soon as capability exists. Parent remains blocked at 0/5; J2300 remains dependent. No generation expansion, gate waiver, media PASS, assembly or publishing release. Nothing needs Ben. Independent Chief review progress recorded separately from Gemini worker steps.",
       "history": [
         {
           "at": "2026-11-07T07:05Z",
@@ -199461,6 +199461,11 @@
           "at": "2026-11-07T07:52Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T07:52Z",
+          "by": "codex",
+          "what": "done: Codex acting-Chief ruling: HOLD / CONDITION UNMET. Reviewed J2349 body/result/history and REVIEW.md, J2299 history/0-of-5 baseline, J2306 ruling, J2332 delivery and ledger, and live J2333/J2334 states. Accept the verification findings, not the media. J2332 delivered three takes for 30 existing Flow credits; hashes are Gemini-reported evidence, not freshly watched or rehashed here. J2333 remains delegated to Gemini with mandatory demonstrated moving_video_input; current registry has no passing video capability (Gemini probe failed). Relay capability probe must pass before actual-video QA; J2334 elected Chief must accept exact hashes afterwards. Updated J2299 dependency hold with --recheck J2349 and 2026-11-07T13:15:00Z check. QA may start sooner as soon as capability exists. Parent remains blocked at 0/5; J2300 remains dependent. No generation expansion, gate waiver, media PASS, assembly or publishing release. Nothing needs Ben. Independent Chief review progress recorded separately from Gemini worker steps."
         }
       ],
       "remaining_action": "Elected Chief (codex): record wait --recheck J2349 on J2299 and close J2349",
@@ -199486,7 +199491,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2349/REVIEW.md"
     },
     {
       "id": "J2350",
