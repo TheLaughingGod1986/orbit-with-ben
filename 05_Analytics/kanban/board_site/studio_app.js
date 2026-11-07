@@ -103,7 +103,11 @@
   }
   function jobGroups(vs) {
     const groups = new Map();
-    for (const v of vs) { const id = activeJob(v).id || v.key; groups.set(id, (groups.get(id) || []).concat([v])); }
+    for (const v of vs) {
+      const j = activeJob(v);
+      const id = (j && j.id) || v.key;
+      groups.set(id, (groups.get(id) || []).concat([v]));
+    }
     return [...groups.values()];
   }
   const alsoOn = rest => !rest.length ? "" : `<span class="meta">Same job also covers ${rest.length} more: ${esc(rest.map(v =>
@@ -126,14 +130,86 @@
     const local=sent[v.checkId], c=local && local.key===v.key ? local : v.type==='long' ? v.check : null;
     return !!c && c.verdict==='change' && c.handled!==true && !!c.version && c.version===v.version;
   }
+  // Passed / Scheduled status in plain words (Ben, 7 Nov 2026). Never invent a publishAt or YouTube id.
+  function listingLine(v) {
+    const L = v.listing || {}, yt = v.youtube || {};
+    if (L.status) return L.status;
+    if (yt.state === "scheduled" && (yt.publishAtLondon || yt.publishAt)) {
+      const raw = String(yt.publishAtLondon || yt.publishAt).replace(/\s*(GMT|BST|UTC)\s*$/i, "").trim();
+      return /London/i.test(raw) ? `Scheduled for ${raw}` : `Scheduled for ${raw} London`;
+    }
+    if (Array.isArray(L.missing) && L.missing.length) return "Needs " + L.missing.join(", ");
+    if (L.complete) return L.destination === "social" ? "Ready to post" : "Ready to upload";
+    return "";
+  }
+  // Scheduled on YouTube with a real publishAt only — never invent a slot (Ben, 7 Nov 2026).
+  const isScheduledNotPublic = v => {
+    const yt = v.youtube || {};
+    return !isLive(v) && yt.state === "scheduled" && !!(yt.publishAt || yt.publishAtLondon);
+  };
+  // Specialist / Chief review — agent-owned QA, never a Ben blocker (Ben, 7 Nov 2026).
+  function isQa(v) {
+    if (v.lane === "ready" && v.readyFor && v.readyFor !== "Ben") return true;
+    return (v.jobs || []).some(j => {
+      if (!LIVE(j)) return false;
+      const kind = String(j.kind || "").toLowerCase();
+      if (kind === "review" || kind === "qa" || kind === "chief") return true;
+      return !kind && /\b(review|KEEP|shot list|Chief QA|frame review)\b/i.test(j.title || "");
+    });
+  }
+  // Waiting on Ben's watch only (same gate as Review / forBen, without the uniqueVideos pass).
+  function needsBenWatch(v) {
+    return !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v)
+      && !!(v.watch || {}).url;
+  }
+  // Nine exclusive Videos swim lanes. Later stages win. Only UAT is Ben's; everything else is agent-run
+  // (Ben, 7 Nov 2026). UAT OK → Passed; UAT notes/fixes → In progress (pendingChanges / changes).
+  const VIDEO_LANE_ORDER = ["backlog", "todo", "progress", "qa", "uat", "passed", "scheduled", "live", "postlive"];
+  const VIDEO_LANE_CHIPS = [
+    ["backlog", "Backlog"], ["todo", "To do"], ["progress", "In progress"], ["qa", "QA"], ["uat", "UAT"],
+    ["passed", "Passed"], ["scheduled", "Scheduled"], ["live", "Live"], ["postlive", "Post-live"],
+  ];
+  const VIDEO_LANE_COPY = {
+    backlog: { title: "Backlog", blurb: "Planned, not started yet." },
+    todo: { title: "To do", blurb: "In the work mix · waiting for its next step. Agents own this — nothing for Ben." },
+    progress: { title: "In progress", blurb: "An agent is on it. UAT notes and fixes land here — not a Ben blocker." },
+    qa: { title: "QA", blurb: "Specialist review · not for Ben." },
+    uat: { title: "UAT", blurb: "Ready for your watch. Pass → Passed (ready to schedule). Notes → In progress for the agents." },
+    passed: { title: "Passed", blurb: "You passed it · ready to schedule. Agents finish the listing package and upload handoff." },
+    scheduled: { title: "Scheduled", blurb: "On YouTube · waiting to go public. Agents own the schedule — nothing for Ben." },
+    live: { title: "Live", blurb: "Public." },
+    postlive: { title: "Post-live", blurb: "Public · improvements still open (pins, Related, thumb tests). Agents own these." },
+  };
+  function videoLane(v) {
+    if (v.collapsed && isLive(v)) return null;
+    if (isLive(v) && (v.jobs || []).some(LIVE)) return "postlive";
+    if (isLive(v)) return "live";
+    if (isScheduledNotPublic(v)) return "scheduled";
+    // Passed stays Passed even while an upload/social job runs — it is ready to schedule, not a Ben hold.
+    if (v.lane === "approved") return "passed";
+    if (needsBenWatch(v)) return "uat";
+    // Ben's Request changes / notes return the film to In progress before QA.
+    if (pendingChanges(v) || v.lane === "changes") return "progress";
+    if (isQa(v)) return "qa";
+    if (isWorking(v) || (v.jobs || []).some(LIVE)) return "progress";
+    if (v.lane === "upcoming") return "backlog";
+    if (["progress", "ready", "changes", "approved"].includes(v.lane)) return "todo";
+    if (v.lane === "done") return "todo";
+    return "todo";
+  }
   function stage(v) {
-    if (isLive(v)) return "Published";
-    if (pendingChanges(v)) return "Fixing your changes";
-    if ((v.youtube || {}).state === "scheduled") return "Scheduled";
+    const lane = videoLane(v);
+    if (lane === "live" || isLive(v)) return "Published";
+    if (lane === "postlive") return "Post-live improvements";
+    if (lane === "scheduled") return listingLine(v) || "Scheduled";
+    if (lane === "passed") return listingLine(v) || "Ready to schedule";
+    if (lane === "uat") return "Ready for you";
+    if (lane === "qa") return "In review";
+    if (pendingChanges(v) || v.lane === "changes") return "Fixing your changes";
+    if ((v.youtube || {}).state === "scheduled") return listingLine(v) || "Scheduled";
     if (v.lane === "ready") return v.readyFor === "Ben" ? "Ready for you" : `Waiting on ${v.readyFor || "a check"}`;
-    if (v.lane === "changes") return "Fixing your changes";
-    if (v.lane === "approved") return "Approved, on its way";
-    if (v.lane === "done") return v.youtube && v.youtube.state === "scheduled" ? "Scheduled" : "On YouTube";
+    if (v.lane === "approved") return listingLine(v) || "Ready to schedule";
+    if (v.lane === "done") return v.youtube && v.youtube.state === "scheduled" ? (listingLine(v) || "Scheduled") : "On YouTube";
     const live = (v.jobs || []).find(j => j.status === "claimed");
     if (live) return "Working now";
     if ((v.jobs || []).some(j => j.status === "blocked")) return "Waiting";
@@ -203,7 +279,8 @@
   // Public on YouTube is published, whatever follow-up jobs it still carries (29 Oct audit: Venus, the Earth and
   // Apophis Shorts sat in "in production" because of a title test or a Related-video step).
   const isLive = v => !!v.youtube && (v.youtube.privacy === "public" || v.youtube.state === "live");
-  const inProgress = vs => vs.filter(v => ["progress", "changes", "ready", "approved"].includes(v.lane) && !isLive(v) && !forBen([v]).length);
+  // Overview "in production": agent lanes only — never UAT / Passed / Scheduled / Live / Post-live (Ben, 7 Nov 2026).
+  const inProgress = vs => vs.filter(v => ["todo", "progress", "qa"].includes(videoLane(v)));
 
   // Publications from now on: YouTube's own schedule first, else the planned air date; one row per YouTube video.
   function schedule(vs, now) {
@@ -580,9 +657,8 @@
     return [...selected.values()];
   }
   function producingVideos(vs) {
-    return uniqueVideos(vs).filter(v=>!isLive(v) && (v.youtube||{}).state!=='scheduled' && v.lane!=='done'
-      && !forBen([v]).length
-      && ['progress','changes','ready','approved'].includes(v.lane));
+    // Agent production only: To do / In progress / QA / Passed. UAT is Ben's; Backlog and YouTube lanes stay out.
+    return uniqueVideos(vs).filter(v => ["todo", "progress", "qa", "passed"].includes(videoLane(v)));
   }
   function londonDay(at) {
     const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(at).map(x=>[x.type,x.value]));
@@ -648,7 +724,7 @@
       return [ready?0:1,blocked?1:0,f.credible?0:1,f.credible?f.minutes:Infinity,finalQA?0:1,unresolved,
         focus.includes(v.key)?0:1,Number.isFinite(priority)?priority:Infinity,-videoUpdated(v),v.key];
     };
-    const candidates=uniqueVideos([...s.ready,...s.producing.filter(v=>v.lane!=='approved')]);
+    const candidates=uniqueVideos([...s.ready,...s.producing.filter(v=>videoLane(v)!=='passed')]);
     return candidates.sort((a,b)=>{
       const ar=rank(a),br=rank(b);for(let i=0;i<ar.length;i++){if(ar[i]<br[i])return -1;if(ar[i]>br[i])return 1;}return 0;
     })[0]||null;
@@ -1424,20 +1500,14 @@
       ${p24Totals(b)}</div>`;
   }
 
-  // Working / Queued / Backlog (Ben, 28 Oct): active work is one tap away; All keeps everything with On YouTube.
-  // Post-live (Ben, 5 Nov 2026: "a new swim lane as post live checks so I can see what videos are being built to go live
-  // and what is post live improvements"): on YouTube (live, scheduled or uploaded) with work still open on it.
-  const onYouTube = v => !!v.youtube && ["live", "scheduled", "uploaded"].includes(v.youtube.state);
-  const postLive = v => onYouTube(v) && (v.jobs || []).some(LIVE);
+  // Nine exclusive Videos swim lanes (Ben, 7 Nov 2026). Only UAT needs Ben; UAT OK → Passed, notes → In progress.
   function videoGroups(vs) {
-    const active = ["progress", "changes", "ready", "approved"];
-    return {
-      working: vs.filter(v => active.includes(v.lane) && !isLive(v) && !postLive(v) && isWorking(v)),
-      queued: vs.filter(v => active.includes(v.lane) && !isLive(v) && !postLive(v) && !isWorking(v)),
-      backlog: vs.filter(v => v.lane === "upcoming" && !isLive(v)),
-      postlive: vs.filter(v => postLive(v) && !v.collapsed),
-      done: vs.filter(v => (v.lane === "done" || isLive(v)) && !v.collapsed && !postLive(v)),
-    };
+    const g = Object.fromEntries(VIDEO_LANE_ORDER.map(id => [id, []]));
+    for (const v of vs) {
+      const lane = videoLane(v);
+      if (lane && g[lane]) g[lane].push(v);
+    }
+    return g;
   }
 
   function videos(b) {
@@ -1445,11 +1515,14 @@
       (filterCh === "all" || v.channel === filterCh) && (filterType === "all" || v.type === filterType));
     const g = videoGroups(vs);
     for (const key of Object.keys(g)) g[key] = sortVideos(g[key], videoSort, Date.now());
-    // Ben, 29 Oct: "Home page saying working on 1, the video page says 0": studio jobs count here too.
+    // Studio-only jobs (no video card) still count under In progress, matching Overview.
     const studio = routeView()!=='producing' && filterType === "all" ? studioJobs(b).filter(j => filterCh === "all" || (j.repo || "owb") === filterCh.toLowerCase()) : [];
-    g.working.extra = studio.length;
-    const segs = [["all", "All"], ["working", "Working"], ["queued", "Waiting"], ["postlive", "Post-live"], ["backlog", "Backlog"]]
-      .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length + (g[id].extra || 0)}</small>`}</button>`).join("");
+    g.progress.extra = studio.length;
+    const segs = [["all", "All"], ...VIDEO_LANE_CHIPS]
+      .map(([id, label]) => {
+        const n = id === "all" ? 0 : (g[id].length + (g[id].extra || 0));
+        return `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${n}</small>`}</button>`;
+      }).join("");
     const chs = channelList();
     const chips = [["ch", "all", chs.length === 2 ? "Both" : "All"], ...chs.map(c => ["ch", c.label, c.short || c.label]),
                    ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
@@ -1460,15 +1533,27 @@
     const jobList = items => jobGroups(items).map(([first, ...rest]) => videoProductionRow(first, Date.now())
       + rest.map(v => videoProductionRow(v, Date.now())).join('')).join('');
     const show = id => routeView()==='producing' || seg === "all" || seg === id;
+    const limitFor = id => (seg === id ? 60 : (id === "todo" || id === "progress" || id === "qa" || id === "uat" || id === "passed" ? 30 : 10));
+    const laneSection = (id) => {
+      if (!show(id)) return "";
+      // Producing view hides YouTube / backlog noise.
+      if (routeView() === "producing" && ["backlog", "scheduled", "live", "postlive", "uat"].includes(id)) return "";
+      const copy = VIDEO_LANE_COPY[id] || { title: id, blurb: "" };
+      const items = g[id] || [];
+      const count = items.length + (items.extra || 0);
+      const blurb = items.length || (id === "progress" && studio.length) ? `<p class="meta">${esc(copy.blurb)}</p>` : "";
+      let body = "";
+      if (id === "progress") body = (jobList(items) + studio.map(jobCard).join("")) || empty("No agent is working this minute.");
+      else if (id === "uat") body = (items.map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}<a class="btn watch" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch || {}).version || v.version || "")}</a></div>`).join("")) || empty("Nothing waiting for your watch.");
+      else body = list(items, limitFor(id)) || empty(id === "backlog" ? "Backlog is empty." : "Nothing here.");
+      return section(`${copy.title}`, count, blurb + body);
+    };
     return `<header class="top"><h1>Videos</h1></header>
+      <p class="meta">Only UAT needs you. Pass a cut → Passed (ready to schedule). Leave notes → In progress for the agents.</p>
       ${routeView()==='producing'?`<p class="list-scope">Producing · ${vs.length} unique videos <a href="#videos">Show all</a></p>`:''}
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
       <label class="sort-control">Sort videos<select id="video-sort"><option value="uat" ${videoSort==='uat'?'selected':''}>Nearest credible UAT</option><option value="updated" ${videoSort==='updated'?'selected':''}>Recently updated</option><option value="stage" ${videoSort==='stage'?'selected':''}>Production stage</option><option value="blocked" ${videoSort==='blocked'?'selected':''}>Waiting first</option></select></label>
-      ${show("working") ? section("An agent is on it now", g.working.length + studio.length, (jobList(g.working) + studio.map(jobCard).join("")) || empty("No agent is working this minute.")) : ""}
-      ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
-      ${routeView()!=='producing' && (seg === "all" || seg === "postlive") ? section("Post-live: checks and improvements", g.postlive.length, (g.postlive.length ? '<p class="meta">Already on YouTube or scheduled. These are the jobs after launch: pinned comments, Related links, thumbnail and title tests, fixes.</p>' : '') + (list(g.postlive, seg === "postlive" ? 60 : 10) || empty("No post-live work right now."))) : ""}
-      ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
-      ${seg === "all" ? section("On YouTube", g.done.length, list(g.done, 10)) : ""}`;
+      ${VIDEO_LANE_ORDER.map(laneSection).join("")}`;
   }
 
   // One video, in the hub: where it is, who is on it, what is left, your notes, and its links.
@@ -1538,10 +1623,10 @@
         ${inPage ? '<div class="btns one"><button type="button" class="btn" data-stamp>+ Note at the current time</button></div>' : ""}
         <div class="btns"><button type="button" class="btn ok" data-ok="${esc(v.key)}">✓ Approve</button>
         <button type="button" class="btn chg" data-chg="${esc(v.key)}">Request changes</button></div>
-        <p class="meta">Approve sends your OK; Request changes sends the notes above. The agents make the next version and it comes back here.</p>`
+        <p class="meta">Approve moves it to Passed (ready to schedule). Request changes sends your notes to In progress — agents pick them up; it does not stay in UAT.</p>`
       : `<p class="line">This Short is reviewed with its long film: your OK or changes there cover it.</p>`;
     return `<header class="top"><a class="more back" href="#review">‹ Review</a></header>
-      <h1 class="uat-title">${esc(v.title)}</h1><p class="meta">${ch(v)} · ${kind(v)} · ${esc(w.version || v.version || "")}${v.airText ? " · airs " + esc(v.airText) : ""}</p>
+      <h1 class="uat-title">${esc(v.title)}</h1><p class="meta">${ch(v)} · ${kind(v)} · ${esc(w.version || v.version || "")}${v.airText ? " · airs " + esc(v.airText) : ""} · your watch</p>
       <div class="player">${player}</div>${actions}`;
   }
 

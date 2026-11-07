@@ -83,8 +83,9 @@ button.btn { border: 0; color: var(--ink); font: inherit; font-weight: 600; widt
 #toast { position: fixed; left: 50%; bottom: calc(92px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 30; padding: 10px 18px; border-radius: 12px; font-weight: 600; background: #1f7a3a; color: #fff; opacity: 0; transition: opacity .25s; pointer-events: none; max-width: 90vw; text-align: center; }
 #toast.on { opacity: 1; } #toast.bad { background: #b3261e; }
 .doing { color: var(--blue); font-size: 0.85rem; font-weight: 500; }
-.seg { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 3px; margin-bottom: 10px; }
-.seg button { border: 0; background: none; color: var(--muted); border-radius: 9px; padding: 9px 4px; font: inherit; font-size: 0.9rem; font-weight: 600; }
+/* Videos swim lanes wrap on phone (Ben, 7 Nov 2026: nine agent lanes + All + UAT). */
+.seg { display: flex; flex-wrap: wrap; gap: 3px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 3px; margin-bottom: 10px; }
+.seg button { border: 0; background: none; color: var(--muted); border-radius: 9px; padding: 9px 6px; font: inherit; font-size: 0.85rem; font-weight: 600; flex: 1 1 4.6rem; min-width: 4.6rem; }
 .seg button.on { background: var(--panel2); color: var(--ink); }
 .seg small { color: var(--muted); font-weight: 500; }
 h3.day { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin: 14px 2px 8px; }

@@ -594,6 +594,7 @@ def run_once(a) -> int:
 
 
 BOARD_CHECK_EVERY_S = 5 * 60
+APPROVED_DELIVER_EVERY_S = 5 * 60
 
 
 def kick_board_check(at: dt.datetime | None = None) -> bool:
@@ -613,6 +614,31 @@ def kick_board_check(at: dt.datetime | None = None) -> bool:
         return True
     except OSError as e:
         log(f"board check not started: {e}")
+        return False
+
+
+def kick_approved_deliver(at: dt.datetime | None = None) -> bool:
+    """Enqueue/unblock Studio upload (or Buffer social) for Passed films whose listing package is complete.
+
+    Ben, 7 Nov 2026: after UAT OK the cut sits in Passed; once title/thumbnail/description/tags are set, create or
+    unblock the upload job (Private + publishAt). Rate-limited like board_check. Never uploads from this process —
+    only queue mutations via approved_deliver.py --apply --git. Idempotent; skips swaps and banned reuse ids.
+    """
+    at = at or now()
+    script = WT / "owb" / "scripts" / "approved_deliver.py"
+    stamp = STATE / "approved_deliver.json"
+    try:
+        if stamp.exists() and at.timestamp() - stamp.stat().st_mtime < APPROVED_DELIVER_EVERY_S:
+            return False
+        if not script.exists():
+            return False
+        stamp.write_text(json.dumps({"kickedAt": iso(at)}, indent=1))
+        subprocess.Popen([sys.executable, str(script), "--apply", "--git", "--agent", "relay"],
+                         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                         start_new_session=True, cwd=str(WT / "owb"))
+        return True
+    except OSError as e:
+        log(f"approved_deliver not started: {e}")
         return False
 
 
@@ -642,6 +668,7 @@ def main(argv: list[str] | None = None) -> int:
                 break
     if not a.dry_run:
         kick_board_check()
+        kick_approved_deliver()
     return 0
 
 

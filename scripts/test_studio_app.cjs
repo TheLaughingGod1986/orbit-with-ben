@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, setBoard: b => { board = b; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -17,7 +17,8 @@ const v = (o) => Object.assign({key: 'OWB:001', channel: 'OWB', number: '001', t
 const vs = [v({key: 'a', lane: 'ready', readyFor: 'Ben', watch: {url: 'https://x/api/watch?v=a'}}), v({key: 'b', lane: 'ready', readyFor: 'Chief'}), v({key: 'c'}),
   v({key: 'd', lane: 'ready', readyFor: 'Ben'})];  // d: no video attached yet, so not shown to Ben
 assert.deepEqual(t.forBen(vs).map(x => x.key), ['a']);
-assert.equal(t.stage(vs[1]), 'Waiting on Chief');
+assert.equal(t.videoLane(vs[1]), 'qa', 'Chief-ready is agent QA, not a Ben blocker');
+assert.equal(t.stage(vs[1]), 'In review');
 
 // Progress comes from a job working now, never a parked or estimated one.
 assert.equal(t.progressOf(v({jobs: [{status: 'blocked', progress: {step: 3, of: 3}}]})), null);
@@ -74,10 +75,35 @@ assert.deepEqual([...t.agentLight('claude', 0, 'green', false)], ['amber', 'Idle
 assert.deepEqual([...t.agentLight('chief', 0, 'green', true)], ['green', 'Coordinating']);
 assert.deepEqual([...t.agentLight('cursor', 1, 'red', false)], ['red', 'Out']);
 
-// Videos: Working / Queued / Backlog.
+// Videos: nine exclusive lanes (Ben, 7 Nov 2026). Later stages win; only UAT needs Ben.
 const g = t.videoGroups([v({key: 'w', jobs: [{status: 'claimed', by: 'codex', title: 'cut', progress: {step: 3, of: 5}}]}), v({key: 'q'}), v({key: 'b', lane: 'upcoming'})]);
-assert.deepEqual([g.working[0].key, g.queued[0].key, g.backlog[0].key], ['w', 'q', 'b']);
-assert(t.doing(g.working[0]).includes('Codex · cut') && t.doing(g.working[0]).includes('<b>60%</b> · 3 of 5'), 'the working card says who, what, and the reported step as a percentage');
+assert.deepEqual([g.progress[0].key, g.todo[0].key, g.backlog[0].key], ['w', 'q', 'b']);
+assert(t.doing(g.progress[0]).includes('Codex · cut') && t.doing(g.progress[0]).includes('<b>60%</b> · 3 of 5'), 'the working card says who, what, and the reported step as a percentage');
+// UAT OK → Passed (ready to schedule); UAT notes → In progress (not UAT, not Passed).
+const passedCut = v({key: 'ok', lane: 'approved', listing: {complete: true, missing: [], status: 'Ready to upload'}});
+const uatCut = v({key: 'watch', lane: 'ready', readyFor: 'Ben', watch: {url: 'https://x/api/watch?v=watch', version: 'v02'}});
+const notesCut = v({key: 'fix', lane: 'changes', version: 'v02', checkId: 'fix', check: {verdict: 'change', version: 'v02', handled: false}});
+assert.equal(t.videoLane(passedCut), 'passed');
+assert.equal(t.stage(passedCut), 'Ready to upload');
+assert.equal(t.listingLine(passedCut) || t.stage(passedCut), 'Ready to upload');
+assert.equal(t.videoLane(uatCut), 'uat');
+assert.equal(t.stage(uatCut), 'Ready for you');
+assert.equal(t.videoLane(notesCut), 'progress');
+assert.equal(t.stage(notesCut), 'Fixing your changes');
+assert.deepEqual(t.videoGroups([passedCut, uatCut, notesCut]).uat.map(x => x.key), ['watch']);
+assert.deepEqual(t.videoGroups([passedCut, uatCut, notesCut]).passed.map(x => x.key), ['ok']);
+assert.deepEqual(t.videoGroups([passedCut, uatCut, notesCut]).progress.map(x => x.key), ['fix']);
+// Scheduled needs a real publishAt; approved without one stays Passed (never invent a date).
+assert.equal(t.videoLane(v({key: 'sched-no-at', lane: 'approved', youtube: {state: 'scheduled'}})), 'passed');
+assert.equal(t.videoLane(v({key: 'sched-at', lane: 'approved', youtube: {state: 'scheduled', publishAt: '2026-11-12T18:00:00Z'}})), 'scheduled');
+assert.equal(t.stage(v({key: 'sched-at', lane: 'approved', youtube: {state: 'scheduled', publishAtLondon: 'Wed 12 Nov 18:00'}})), 'Scheduled for Wed 12 Nov 18:00 London');
+// QA is agent-owned; Passed with a live upload job stays Passed (ready to schedule).
+assert.equal(t.videoLane(v({key: 'chief-qa', lane: 'ready', readyFor: 'Chief'})), 'qa');
+assert.equal(t.videoLane(v({key: 'pass-up', lane: 'approved', jobs: [{status: 'claimed', by: 'cursor', title: 'Upload 032', kind: 'studio'}]})), 'passed');
+const videosHtml = t.renderTab('videos', {tracker: {videos: [passedCut, uatCut, notesCut]}}, NOW);
+assert(videosHtml.includes('Only UAT needs you') && videosHtml.includes('Passed') && videosHtml.includes('ready to schedule'), 'Videos copy names the UAT → Passed loop');
+assert(videosHtml.includes('Needs your review') && videosHtml.includes('Watch &amp; review') || videosHtml.includes('Watch & review'), 'UAT lane cards feel like they need Ben');
+assert(!/To do[\s\S]*Needs your review/.test(videosHtml) || videosHtml.includes('UAT'), 'Ben review CTA sits in UAT');
 
 // Schedule: a warning only when readiness can't be verified.
 assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'}}), NOW + 864e5, NOW), '');
@@ -134,19 +160,20 @@ assert.equal((vt.match(/class="doing"/g) || []).length, 0, 'task percentages are
 assert(vt.includes('027') && vt.includes('028') && vt.includes('milestones complete'));
 // Videos counts a running studio job too, so it matches Overview's Agents working now.
 const vsj = t.renderTab('videos', {tracker: {videos: []}, owb: {jobs: [{id: 'J1199', status: 'claimed', by: 'cursor', title: 'Shorts fix'}]}}, NOW);
-assert(vsj.includes('Studio job · not one video') && vsj.includes('Working <small>1</small>'), 'Videos shows and counts the studio job');
+assert(vsj.includes('Studio job · not one video') && vsj.includes('In progress <small>1</small>'), 'Videos shows and counts the studio job under In progress');
 // A public video is published, whatever follow-up jobs it has; private ones never ask YouTube for a thumbnail.
 const pub = v({key: 'pub', lane: 'progress', youtube: {videoId: 'abcdefghijk', privacy: 'public', state: 'live'}, jobs: [{id: 'J9', status: 'open'}]});
-const priv = v({key: 'priv', lane: 'progress', youtube: {videoId: 'bcdefghijkl', privacy: 'private', state: 'scheduled'}});
-assert.deepEqual(t.inProgress([pub, priv]).map(x => x.key), ['priv']);
+const priv = v({key: 'priv', lane: 'progress', youtube: {videoId: 'bcdefghijkl', privacy: 'private', state: 'scheduled', publishAt: '2026-11-12T18:00:00Z'}});
+assert.deepEqual(t.inProgress([pub, priv]).map(x => x.key), [], 'Live and Scheduled are not overview in-progress');
 const gg = t.videoGroups([pub, priv]);
-assert.deepEqual([gg.queued.map(x => x.key), gg.done.map(x => x.key), gg.postlive.map(x => x.key)], [['priv'], [], ['pub']]);
-// Post-live lane (Ben, 5 Nov 2026): on YouTube (live or scheduled) with work still open; Done once nothing is left.
-const sched = v({key: 'sched', lane: 'done', youtube: {videoId: 'cdefghijklm', privacy: 'private', state: 'scheduled'}, jobs: [{id: 'J8', status: 'blocked'}]});
+assert.deepEqual([gg.scheduled.map(x => x.key), gg.live.map(x => x.key), gg.postlive.map(x => x.key)], [['priv'], [], ['pub']]);
+// Post-live = public with open work; Live = public with nothing left; Scheduled needs publishAt (not Post-live).
+const sched = v({key: 'sched', lane: 'done', youtube: {videoId: 'cdefghijklm', privacy: 'private', state: 'scheduled', publishAt: '2026-11-12T11:30:00Z'}, jobs: [{id: 'J8', status: 'blocked'}]});
 const doneLive = v({key: 'quiet', lane: 'done', youtube: {videoId: 'defghijklmn', privacy: 'public', state: 'live'}, jobs: [{id: 'J7', status: 'done'}]});
 const pl = t.videoGroups([sched, doneLive]);
-assert.deepEqual([pl.postlive.map(x => x.key), pl.done.map(x => x.key)], [['sched'], ['quiet']]);
-assert(t.renderTab('videos', {tracker: {videos: [sched]}}, NOW).includes('Post-live: checks and improvements'));
+assert.deepEqual([pl.scheduled.map(x => x.key), pl.live.map(x => x.key), pl.postlive.map(x => x.key)], [['sched'], ['quiet'], []]);
+assert(t.renderTab('videos', {tracker: {videos: [sched, doneLive]}}, NOW).includes('On YouTube · waiting to go public'));
+assert(t.renderTab('videos', {tracker: {videos: [pub]}}, NOW).includes('Public · improvements still open'));
 assert(t.thumb(pub).includes('i.ytimg.com') && !t.thumb(priv).includes('i.ytimg.com'));
 // Credit bars: a plan allowance or the month's refill makes a bar; a % pool keeps its reset date.
 const flow = t.poolMeter('flow', {unit: 'credits', latest: {left: 20870, at: new Date(NOW).toISOString()}}, {tiers: {flow: [{name: 'Google AI Ultra $200 tier', allow: 25000, current: true}]}}, NOW);
@@ -307,7 +334,8 @@ assert(publishedDetail.includes('Published on YouTube')&&publishedDetail.include
 assert(!publishedDetail.includes('role="progressbar"')&&!publishedDetail.includes('progress-number'));
 assert(publishedDetail.includes('Unconfirmed'),'unknown history stays unknown, not changed to complete');
 assert(t.videoGroups([publicMissing]).postlive.some(x=>x.key==='published'));  // live with a follow-up job: Post-live lane
-assert.equal(t.videoGroups([publicMissing]).working.length,0);
+assert.equal(t.videoGroups([publicMissing]).progress.length,0);
+assert.equal(t.videoGroups([publicMissing]).uat.length,0);
 assert(t.videoProductionRow(v({key:'unfinished'}),NOW).includes('0%'),'active production still uses recorded milestone counts');
 console.log('Published-video regression checks OK');
 
