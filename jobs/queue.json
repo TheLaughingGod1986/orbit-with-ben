@@ -183859,15 +183859,21 @@
           "at": "2026-11-07T17:33Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-07T17:39Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done: Integrating PR 575 plate harvest scripts and verifying assets on MacBook"
         }
       ],
-      "remaining_action": "Recover remaining PR 575 plate harvest scripts onto macbook/J2141",
+      "remaining_action": "Recover and verify PR 575 plate harvest scripts (USGS, NOAA, NPS, NASA SVS/ISS/Hubble) onto macbook/J2141",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-07T17:33Z",
-        "by": "macbook"
+        "at": "2026-11-07T17:39Z",
+        "by": "macbook",
+        "note": "Integrating PR 575 plate harvest scripts and verifying assets on MacBook"
       },
       "taskKeys": [
         "OWB:031"
@@ -202568,10 +202574,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-07T16:54Z",
-      "eta": "2026-11-07T18:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T16:50Z",
       "result": "",
@@ -202625,22 +202631,51 @@
           "at": "2026-11-07T17:32Z",
           "by": "cursor",
           "what": "step 3 of 5 done: Static pass cut picture fails from 111 to 15. Jitter and black frames are gone. A fix pass is re-rendering those cuts in tmux j2376-assemble."
+        },
+        {
+          "at": "2026-11-07T17:34Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Fix cuts are rendered. Concat is running, then a quieter bed and the gates. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. Done file ~/_desk/logs/j2376-assemble.done is not written yet."
+        },
+        {
+          "at": "2026-11-07T17:34Z",
+          "by": "cursor",
+          "what": "released: Detached fix pass is running. Do not start a second assemble. tmux session j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. Done file ~/_desk/logs/j2376-assemble.done. Missing done file means it is still mixing and gating. Present: read the exit code and the log. Static pass: picture fails 111 to 15, jitter gone, black frames gone, loudness -14.5 LUFS / -1.0 dBTP. This pass relights the flat plates, crops the seam and letterbox, grains two graphics, and ducks the bed. £0."
+        },
+        {
+          "at": "2026-11-07T17:35Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-07T17:35Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex is unavailable or lacks required input; next in its chain: gemini on its default"
         }
       ],
-      "remaining_action": "Re-render the 15 picture-gate failures, then mix quieter and run the gates again",
+      "remaining_action": "Let the detached mix and picture, music and sound gates finish",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 034 Pluto long video from the approved plates, graphics, voiceover, music and sound effects",
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-07T17:32Z",
+        "at": "2026-11-07T17:34Z",
         "by": "cursor",
-        "note": "Static pass cut picture fails from 111 to 15. Jitter and black frames are gone. A fix pass is re-rendering those cuts in"
+        "note": "Fix cuts are rendered. Concat is running, then a quieter bed and the gates. tmux j2376-assemble. Log ~/_desk/logs/j2376-"
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     }
   ],
   "focus": [
