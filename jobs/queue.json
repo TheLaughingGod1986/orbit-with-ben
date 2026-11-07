@@ -202159,17 +202159,22 @@
           "at": "2026-11-07T15:44Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Inventory: 67 evidence assets, 58 stills and 9 native clips. Banned list does not overlap. Use counts are at most 2. Frame 0 stays PIA20291. Media goes to studio-live because the Mini has 6.6 GB free."
+        },
+        {
+          "at": "2026-11-07T15:46Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: 52 of 67 plates hash-matched on studio-live, including every NASA still and the four KSC launch clips. The other 15 are Commons files that returned HTTP 429. Retrying those one at a time."
         }
       ],
-      "remaining_action": "Download the 67 named 034 plates onto studio-live and check each SHA-256",
+      "remaining_action": "Finish the 15 Wikimedia plates Wikimedia rate-limited, then write the harvest pool",
       "kind": "assembly",
       "plain": "Download and provenance every £0 NASA/Commons still and native-motion clip named in the locked 034 shot list",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-07T15:44Z",
+        "at": "2026-11-07T15:46Z",
         "by": "cursor",
-        "note": "Inventory: 67 evidence assets, 58 stills and 9 native clips. Banned list does not overlap. Use counts are at most 2. Fra"
+        "note": "52 of 67 plates hash-matched on studio-live, including every NASA still and the four KSC launch clips. The other 15 are "
       },
       "taskKeys": [
         "OWB:034"
