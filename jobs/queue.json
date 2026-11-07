@@ -182434,8 +182434,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-07T12:43Z",
-      "eta": "2026-11-07T14:43Z",
+      "since": "2026-11-07T12:46Z",
+      "eta": "2026-11-07T14:46Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183279,14 +183279,29 @@
           "at": "2026-11-07T12:45Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-07T12:46Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-07T12:46Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-07T12:46Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
-      "remaining_action": "Build missing sourced WHEN components; preserve PR 633 and existing R41 investigation budget",
+      "remaining_action": "PR 633 updated with verified R20/R29 WHEN renders; remaining harvest, mechanisms, timeline, R41, composites and full QA need continuation",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-07T12:45Z",
+        "at": "2026-11-07T12:46Z",
         "by": "macbook"
       },
       "taskKeys": [
@@ -200893,9 +200908,14 @@
           "at": "2026-11-07T12:24Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Heartbeat: building repaired 034 Pluto shot list and verification script with 100% visually verified full-size NASA/Wikimedia plates, 0 DEMs/annotations, <=2 reuse per asset including CODE backgrounds/cutouts, and 6 explicit CARD rows"
+        },
+        {
+          "at": "2026-11-07T12:45Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Resumed J2361 at step 2/5; checking prior session artifacts and writing repaired PR #626 deliverables"
         }
       ],
-      "remaining_action": "Generate repaired shot_list_v01.csv, SHOT_LIST_v01.md, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, production-status.md and J2361 review evidence in /private/tmp/j2361-pluto-wt",
+      "remaining_action": "Building and verifying repaired 034 Pluto shot list CSV/MD, music brief, SFX plan, and review evidence on PR #626",
       "kind": "review",
       "plain": "Fix unsuitable source images, repeated plates and ending timings in the Pluto picture plan.",
       "rerouted_from": {
@@ -200910,9 +200930,9 @@
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-11-07T12:24Z",
+        "at": "2026-11-07T12:45Z",
         "by": "gemini",
-        "note": "Heartbeat: building repaired 034 Pluto shot list and verification script with 100% visually verified full-size NASA/Wiki"
+        "note": "Resumed J2361 at step 2/5; checking prior session artifacts and writing repaired PR #626 deliverables"
       },
       "taskKeys": [
         "OWB:034"
