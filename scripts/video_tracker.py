@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Per-video Studio tracker (Ben, 24 Oct 2026): five lanes, one card per long/Short.
+"""Per-video Studio tracker (Ben, 24 Oct 2026): one card per long/Short.
 
-Lanes (left → right):
-  upcoming → progress → changes → ready → approved → done
-  ("approved" = "Approved, on its way", Ben 25 Oct 14:13: what he OK'd, still in the pipeline until YouTube has it)
+Internal lane ids (payload): upcoming → progress → changes → ready → approved → done.
+The Videos tab UI remaps these to nine swim lanes (Ben, 7 Nov 2026):
+  Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live
+  (`board_site/studio_app.js` `videoLane`). Ben only acts in UAT; Approve → Passed (ready to
+  schedule); notes/fixes → In progress. "approved" here is Passed on the board.
 
 Derived from jobs/queue.json, UPLOADS.json / PACKAGE_UPLOAD_RESULT, film_briefs, HOS PIPELINE,
 OWB status.json, and Ben's board checks (`[Ben] OK/changes` via /api/checks). Optional overrides
@@ -13,7 +15,7 @@ Planned Shorts (Ben, 7 Nov 2026; undated Orbit, 7 Nov 2026): upcoming longs with
 Shorts yet get board-only Short cards on Videos → Backlog (HOS 4, Orbit 2 per cadence). An air
 date is copied when the parent has one; undated Orbit backlog longs still get the pair with no
 invented date. Keys use `:S:planned-N` — never a YouTube id — and never start production, WIP,
-uploads or jobs.
+uploads or jobs. Parents that already have uploaded/live Shorts do not get extra placeholders.
 """
 from __future__ import annotations
 

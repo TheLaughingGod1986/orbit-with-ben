@@ -1,11 +1,12 @@
 # Studio Kanban
 
-**Studio videos (Ben, 26 Oct 2026):** https://studio-kanban.vercel.app uses the per-video column design:
-Upcoming, In progress, Changes requested, Ready for OK, Approved on its way, and Done on YouTube.
-Channel and Longs/Shorts filters sit above the models and live work panel. One card represents each video,
-with play links and the existing approval controls. Restored at Ben's request from the screenshots of this layout.
-The page lives in `board_site/tracker_app.js` and `video_tracker.html`; live data still comes from `board.json`.
-The earlier swim-lane board remains at `/classic`.
+**Videos tab (live, Ben 7 Nov 2026):** https://studio-kanban.vercel.app → **Videos** shows nine exclusive swim lanes:
+
+**Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live.**
+
+Ben only acts in **UAT** (Approve → **Passed**, ready to schedule; Request changes / notes → **In progress** for the agents). Every other lane is agent-run. Planned Shorts on **Backlog** are board-only placeholders (HOS 4 / Orbit 2 per upcoming long, including undated Orbit backlog longs) with no invented YouTube ids or air dates; parents that already have uploaded/live Shorts do not get extras. Full routing rules: `AGENTS.md` → **Videos tab** and **Film folders on the NAS**.
+
+Channel and Longs/Shorts filters sit above the models and live work panel. One card represents each video, with play links and the existing approval controls. Live data comes from `board.json` (`tracker` section from `scripts/video_tracker.py`; the UI remaps tracker lanes to the nine Videos lanes in `board_site/studio_app.js`).
 
 Approve / Request changes still post `[Ben] OK/changes …` via `/api/checks` (OWB desk issue **#264**, HOS **#180**).
 
@@ -24,14 +25,15 @@ concrete `--note` after each step.
 Live data: `scripts/kanban_snapshot.py --db-out` → `scripts/board_publish.py` → `board-data` branch (`board.json` now
 includes a `tracker` section). Page deploys are separate (Chief after review).
 
-## Ready for OK = jobs waiting on Ben (25 Oct 2026)
+## UAT = jobs waiting on Ben (25 Oct 2026; lane name live 7 Nov 2026)
 
-A card is in **Ready for OK** for every job that sets `awaits_ben` (`python3 scripts/jobs.py awaits <id> --what ... --file
+A card sits in Videos → **UAT** for every job that sets `awaits_ben` (`python3 scripts/jobs.py awaits <id> --what ... --file
 "<OWB UAT/...mp4>" --version vNN --due "YYYY-MM-DD HH:MM" [--card HOS:007] [--add] --agent chief --git`). Shorts that aren't
 uploaded get their own card; `--card` moves an existing long's card. Each card has a signed Play link and its deadline.
-Approve posts `[Ben] OK <id> vNN (...)` plus "Release held job <id>" on #264 / HOS #180. `scripts/board_check.py` runs
-every 5 min, started by board_publish.py. It writes `~/_desk/state/board/board_check.json` (`ok`, `problems`, `cards`)
-and `~/_desk/state/board/BOARD_CHECK_FLAG` (`OK <time>` / `FAIL <time>: ...`). A repeat failure posts one
+**Approve** moves the film to **Passed** and posts `[Ben] OK <id> vNN (...)` plus "Release held job <id>" on #264 / HOS #180.
+**Request changes** / notes send it back to **In progress**. `scripts/board_check.py` runs every 5 min, started by
+board_publish.py. It writes `~/_desk/state/board/board_check.json` (`ok`, `problems`, `cards`) and
+`~/_desk/state/board/BOARD_CHECK_FLAG` (`OK <time>` / `FAIL <time>: ...`). A repeat failure posts one
 `[Chief] board-check` note on #264.
 
 ## Deploying the page (studio-kanban has no Git link)
