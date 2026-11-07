@@ -1,5 +1,5 @@
 {
-  "next_id": 2345,
+  "next_id": 2346,
   "jobs": [
     {
       "id": "J0001",
@@ -198546,6 +198546,38 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J2345",
+      "title": "034 Pluto: listen to the v05 Real Worlds pickup",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Listen to the one new Pluto Chapter 6 request from J2344. Read jobs/reviews/J2344/EVIDENCE.md and PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/617. This job requires demonstrated audio_input. ffmpeg, Scribe, ASR or a model name is not that. If this session cannot hear the file, park a typed capability hold. Do not use a generic timed retry. Do not send it to Ben.\n\nListen to this exact file at most twice. No other take, and no unchanged ASR loop.\n\n- WAV SHA-256 10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23\n- MP3 SHA-256 a42c50355893f0b24a3e4d9280dfa329a79501f4dde7a39eddf690ddf7bfad88\n- Duration 19.120 seconds\n- Mini path (audio is gitignored, so a fresh worktree will not have it): /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover/pickups/pluto_ch06_real_worlds_v05_request.wav\n- Same folder, the mp3 companion. Confirm the hash before listening.\n\nThe spoken sentence is: Next in our series Real Worlds, we travel inward to Neptune's largest moon, Triton — a captured Kuiper Belt cousin of Pluto that orbits backwards and erupts active geysers on a frozen nitrogen crust at minus two hundred and thirty-five degrees Celsius.\n\nReport, with intervals and the tool that actually heard the file:\n1. Whether Worlds is clearly plural, clearly singular, or indeterminate.\n2. Full-sentence integrity: every word present, in order, nothing extra that changes the line.\n3. Clarity of geysers. A British long-ee vowel is not itself an error (J2343). Do not regenerate to Americanise it.\n\nScribe already spelled Worlds and geysers and matched 42 of 42 words. That is not a listen and not a VO PASS. Do not give a VO PASS, do not crop or splice, do not spend, and do not start another take.\n\nOn completion, queue one elected-Chief ruling before J2157 crop or master work resumes. J2157 stays unfinished. Nothing is on Ben.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/617",
+      "film": "034",
+      "stage": "vo",
+      "after": "J2344",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "cursor",
+      "created_at": "2026-11-07T04:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T04:45Z",
+          "by": "cursor",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Listen to the hashed v05 request at most twice, then queue the Chief ruling",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "plain": "Listen to the new Pluto closing sentence and say whether Worlds is clearly plural."
     }
   ],
   "focus": [

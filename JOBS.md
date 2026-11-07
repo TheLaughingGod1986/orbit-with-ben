@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |
 | J2339 | mini | open | – | – | 008 edit · qa · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2344 | mini | claimed | cursor | 2026-11-07T06:37Z | 034 vo · vo · 034 Pluto: one v05 pickup with separated Real Worlds boundary | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/616 |
+| J2345 | mini | open (after J2344) | – | – | 034 vo · qa · 034 Pluto: listen to the v05 Real Worlds pickup | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/617 |
 
 Recently finished:
 
