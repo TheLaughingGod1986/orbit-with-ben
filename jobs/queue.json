@@ -199883,9 +199883,14 @@
           "at": "2026-11-07T09:08Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Aligned all 49 spoken sentences and 7 chapters (ch00-ch06) of pluto_frozen_heart_vo_v03 (616.160s) from reconciled stt_raw.json"
+        },
+        {
+          "at": "2026-11-07T09:15Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Verified 40+ NASA PIA/KSC/NHQ and Wikimedia Commons PD/CC assets (PIA20291, PIA20202, PIA21863, PIA19952, PIA19857, PIA19841, PIA20336, PIA20726, PIA19948, PIA19968, PIA19931, PIA19956, PIA20007, PIA19966, PIA21590, PIA20477, PIA20545, PIA20728, File:Photo of Venetia Burney aged 11 c. 1929.jpg, File:Clyde W. Tombaugh.jpeg, File:Charon Discovery.jpg, File:UltimaThule CA06 color 20190516.png, etc.) with <=2 appearances per still"
         }
       ],
-      "remaining_action": "Verify NASA, Lowell/USNO, and Wikimedia asset IDs, native resolutions, and licences for all 034 Pluto shot-list rows",
+      "remaining_action": "Build 65-row SHOT_LIST_v01.md and shot_list_v01.csv in clean worktree and run clip_check.py against v03 Scribe word timestamps",
       "kind": "review",
       "plain": "Plan each Pluto scene, educational overlay, music cue and sound effect to match the approved narration.",
       "rerouted_from": {
@@ -199898,11 +199903,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-07T09:08Z",
+        "at": "2026-11-07T09:15Z",
         "by": "gemini",
-        "note": "Aligned all 49 spoken sentences and 7 chapters (ch00-ch06) of pluto_frozen_heart_vo_v03 (616.160s) from reconciled stt_r"
+        "note": "Verified 40+ NASA PIA/KSC/NHQ and Wikimedia Commons PD/CC assets (PIA20291, PIA20202, PIA21863, PIA19952, PIA19857, PIA1"
       },
       "taskKeys": [
         "OWB:034"
