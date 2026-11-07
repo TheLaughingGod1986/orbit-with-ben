@@ -160447,17 +160447,22 @@
           "at": "2026-11-07T15:32Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Watcher still PID 8834 on the old file. Inventory file is gone. 88 pending IDs in state; classifying them before any recover-id."
+        },
+        {
+          "at": "2026-11-07T15:33Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Classified 88 pending IDs: 0 recover-id. November upload notes already have J2272 and J2273 done; J0958 and J2199 stay in the queue. No historical replay."
         }
       ],
-      "remaining_action": "Classify historical desk IDs, then refresh the watcher only if it is idle",
+      "remaining_action": "Refresh the idle desk watcher onto the merged code",
       "kind": "assembly",
       "escalated_at": "2026-11-07T00:04Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-07T15:32Z",
+        "at": "2026-11-07T15:33Z",
         "by": "cursor",
-        "note": "Watcher still PID 8834 on the old file. Inventory file is gone. 88 pending IDs in state; classifying them before any rec"
+        "note": "Classified 88 pending IDs: 0 recover-id. November upload notes already have J2272 and J2273 done; J0958 and J2199 stay i"
       }
     },
     {
