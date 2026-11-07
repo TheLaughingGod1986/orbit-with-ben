@@ -184242,9 +184242,14 @@
           "at": "2026-11-07T06:00Z",
           "by": "codex",
           "what": "reopened: J2347 ruling 6c79d48b83 accepts v05 from J2345 native-audio review; PR617 merged, eight asset hashes verified. Resume zero-synthesis new-version master reconciliation against locked v03 with retained Ch5 crop. Restore prior 2/3 progress; full transcript, levels, boundaries and chapter tails still required. No VO PASS or shot-list release."
+        },
+        {
+          "at": "2026-11-07T06:00Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Restored existing 2/3 after reopen; J2347 accepts v05. No new master checks completed."
         }
       ],
-      "remaining_action": "Await J2344 pickup and audio review, then reconcile repaired VO against v03",
+      "remaining_action": "Reconcile new-version master to v03 with accepted Ch5/v05; verify transcript, levels, splices and chapter tails; no synthesis",
       "kind": "vo",
       "urgent": 1,
       "taskKeys": [
@@ -184252,7 +184257,14 @@
       ],
       "required_capabilities": [
         "audio_input"
-      ]
+      ],
+      "progress": {
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-07T06:00Z",
+        "by": "codex",
+        "note": "Restored existing 2/3 after reopen; J2347 accepts v05. No new master checks completed."
+      }
     },
     {
       "id": "J2158",
