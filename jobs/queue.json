@@ -194187,18 +194187,24 @@
           "at": "2026-11-07T11:11Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-07T11:14Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resumed checkpoint; added durable shared-state and still-inventory code with zero-submit regressions. Production remains disabled; implementation not complete."
         }
       ],
-      "remaining_action": "Inspect and repair the tranche runner safety defects, then run zero-submit tests",
+      "remaining_action": "Integrate live pre-Create verification and shared accounting, then run final review checks",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the video generator safeguards and test them without spending credits.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-07T11:11Z",
-        "by": "codex"
+        "at": "2026-11-07T11:14Z",
+        "by": "codex",
+        "note": "Resumed checkpoint; added durable shared-state and still-inventory code with zero-submit regressions. Production remains"
       },
       "taskKeys": [
         "HOS:009"
