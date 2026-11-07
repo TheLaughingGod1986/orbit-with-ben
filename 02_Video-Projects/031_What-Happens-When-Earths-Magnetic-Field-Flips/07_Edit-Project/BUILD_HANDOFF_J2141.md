@@ -1,3 +1,25 @@
+## MacBook slot 2 checkpoint — 7 Nov 2026
+
+Worker `macbook-2`; PR #633; progress remains 1/3. Released under the
+explicit 25-minute worker limit: the remaining multi-agency moving harvest,
+graphics repairs/builds, composites and full QA cannot finish in one run.
+No new media, archive investigation, generation or spend in this checkpoint.
+
+Verified directory access to the shared working film:
+`/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/`.
+Its `07_Edit-Project` contains the earlier manifests, `harvest_v01` and
+`code_cards_v01`; directory presence does not establish hash validity or KEEP.
+The six earlier MacBook mechanism files and contact sheet are also present at
+`/Users/ben/_desk/J2141-mechanisms-macbook-v02/`; not re-decoded this run.
+
+Continue from this PR's existing checkpoint, not the Mini-only absolute media
+paths in older sections. Preserve existing outputs. The branch already contains R7/R8 v04 corrections from slot 1 (see below);
+do not repeat the superseded v02 repair task. Next bounded production step:
+select one remaining unimplemented graphic from the shot list, verify its
+source/cue, and build/check its row-specific candidate in a fresh directory. Wider harvest and composite gates remain open;
+consult the earlier candidate/search records rather than resetting budgets.
+No film approval, UAT readiness or completion is claimed.
+
 ## MacBook continuation — 7 Nov, R7/R8 corrected grain candidates v04
 
 Worker `macbook`, same branch `macbook/J2141` and PR #633. Queue remains
