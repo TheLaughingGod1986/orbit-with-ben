@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2372 | any | open (after J2371) | – | – | 034 picture · chief · 034 Pluto: Chief/perceptual review of J2370 harvest + J2371 graphics before assembly |  |
 | J2373 | any | claimed | macbook-2 | 2026-11-07T18:07Z | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
+| J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
