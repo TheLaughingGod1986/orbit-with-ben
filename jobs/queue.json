@@ -186745,17 +186745,22 @@
           "at": "2026-11-07T19:11Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Step 3/4: Committed e47a9a31 on gemini/J2171-009-shorts-ab-inventory (check_all.sh ALL CHECKS PASS + 7/7 unit tests), copied to studio-live NAS, and opened HOS PR"
+        },
+        {
+          "at": "2026-11-07T19:14Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Step 4/4 complete: GBP0 SHA-256 inventory, SHORTS_PICTURE_PLAN_v03.json, and READINESS_REPORT.md committed on HOS PR #459 (e47a9a31) and mirrored to NAS; check_all.sh ALL CHECKS PASS; parking J2171 on J2033/J2034/J2035 dependency hold per brief"
         }
       ],
-      "remaining_action": "Attach J2034/J2035 dependency hold on J2171 and report on OWB thread and HOS desk",
+      "remaining_action": "Assemble 9:16 HOS 009 Shorts A and B masters and run gate_shorts_open.py once J2033/J2034/J2035 finish",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-07T19:11Z",
+        "at": "2026-11-07T19:14Z",
         "by": "gemini",
-        "note": "Step 3/4: Committed e47a9a31 on gemini/J2171-009-shorts-ab-inventory (check_all.sh ALL CHECKS PASS + 7/7 unit tests), co"
+        "note": "Step 4/4 complete: GBP0 SHA-256 inventory, SHORTS_PICTURE_PLAN_v03.json, and READINESS_REPORT.md committed on HOS PR #45"
       },
       "taskKeys": [
         "HOS:009"
