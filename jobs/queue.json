@@ -197470,13 +197470,13 @@
       "stage": "edit",
       "after": "J2157",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-07T08:25Z",
-      "eta": "2026-11-07T10:25Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T00:07Z",
-      "result": "",
+      "result": "Waiting for: 034 Short 1 picture inputs are not on disk. Checked 2026-11-07T08:26Z: 10_Shorts/SHORTS_PLAN_v01.md absent; 03_Picture, 05_Music, 06_Sound-Effects and 09_Rough-Cut absent; 04_Generated-Clips has no media; no mp4 in the film folder. J2353 shot list is open and its brief forbids assembly until that shot list is reviewed. VO v03 is present and matches sha256 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685. The brief's quoted cold open is not the v03 transcript (words.srt starts Across Pluto's horizon). Resume only when a reviewed shot list, cold-open plates, the zero-craters graphic and the house music bed are on disk, and cut only from pluto_frozen_heart_vo_v03.wav.",
       "history": [
         {
           "at": "2026-11-07T00:07Z",
@@ -197497,6 +197497,16 @@
           "at": "2026-11-07T08:26Z",
           "by": "cursor",
           "what": "step 1 of 3 done: No plates, plan, music, SFX or long master. J2353 still open. VO v03 hash matches. No cut started."
+        },
+        {
+          "at": "2026-11-07T08:26Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: 034 Short 1 picture inputs are not on disk. Checked 2026-11-07T08:26Z: 10_Shorts/SHORTS_PLAN_v01.md absent; 03_Picture, 05_Music, 06_Sound-Effects and 09_Rough-Cut absent; 04_Generated-Clips has no media; no mp4 in the film folder. J2353 shot list is open and its brief forbids assembly until that shot list is reviewed. VO v03 is present and matches sha256 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685. The brief's quoted cold open is not the v03 transcript (words.srt starts Across Pluto's horizon). Resume only when a reviewed shot list, cold-open plates, the zero-craters graphic and the house music bed are on disk, and cut only from pluto_frozen_heart_vo_v03.wav."
+        },
+        {
+          "at": "2026-11-07T08:26Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-08T08:30:00Z"
         }
       ],
       "remaining_action": "Wait for the reviewed Pluto shot list, cold-open plates, graphic and music, then cut Short 1 from the locked v03 voice-over",
@@ -197512,7 +197522,12 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "034 Short 1 picture inputs are not on disk. Checked 2026-11-07T08:26Z: 10_Shorts/SHORTS_PLAN_v01.md absent; 03_Picture, 05_Music, 06_Sound-Effects and 09_Rough-Cut absent; 04_Generated-Clips has no media; no mp4 in the film folder. J2353 shot list is open and its brief forbids assembly until that shot list is reviewed. VO v03 is present and matches sha256 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685. The brief's quoted cold open is not the v03 transcript (words.srt starts Across Pluto's horizon). Resume only when a reviewed shot list, cold-open plates, the zero-craters graphic and the house music bed are on disk, and cut only from pluto_frozen_heart_vo_v03.wav.",
+        "check_at": "2026-11-08T08:30:00Z"
+      }
     },
     {
       "id": "J2320",
