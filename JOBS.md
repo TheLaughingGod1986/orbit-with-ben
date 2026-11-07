@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2306 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
 | J2309 | mini | open | – | – | 029 edit · assembly · OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy | J2207 / h47 |
 | J2313 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J2317 | mini | open (after J2300) | – | – | 033 edit · assembly · 033 Uranus Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Fri 18 Dec 11:30 London; no upload) | J2223 |
 
 Recently finished:
 
