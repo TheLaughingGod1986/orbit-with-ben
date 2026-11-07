@@ -183824,15 +183824,20 @@
           "at": "2026-11-07T16:30Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T16:36Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Continue remaining code graphics; harvest, composites and full QA remain",
+      "remaining_action": "Recover and verify remaining J2141 picture batches/plates on MacBook; wider harvest, composites and full QA remain",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-07T16:04Z",
-        "by": "macbook-2"
+        "at": "2026-11-07T16:36Z",
+        "by": "macbook"
       },
       "taskKeys": [
         "OWB:031"
@@ -202372,9 +202377,14 @@
           "at": "2026-11-07T16:31Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2372; checking J2370 and J2371 completion and reading J2368 review + 034 shot list"
+        },
+        {
+          "at": "2026-11-07T16:35Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4: Verified all 67/67 harvested assets on studio-live NAS (SHA-256 match, 9 native video clips ffmpeg-decoded, 0 banned IDs, <=2 uses, native-motion separators in all 7 CODE->CODE gaps)"
         }
       ],
-      "remaining_action": "Verify J2370 harvest + J2371 graphics/chapter cards on disk against PR #626 plan and J2368 review",
+      "remaining_action": "Render/stage J2371 19 graphics onto studio-live NAS and verify frames, labels, timings, alpha and luma",
       "kind": "chief",
       "plain": "Check the harvested plates and rendered graphics against the locked shot list before any assembly",
       "rerouted_from": {
@@ -202387,11 +202397,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-07T16:31Z",
+        "at": "2026-11-07T16:35Z",
         "by": "gemini",
-        "note": "Claimed J2372; checking J2370 and J2371 completion and reading J2368 review + 034 shot list"
+        "note": "Step 1/4: Verified all 67/67 harvested assets on studio-live NAS (SHA-256 match, 9 native video clips ffmpeg-decoded, 0 "
       },
       "taskKeys": [
         "OWB:034"
@@ -202408,13 +202418,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-07T16:07Z",
-      "eta": "2026-11-07T18:07Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-07T16:04Z",
-      "result": "",
+      "result": "parked for Chief: review HOS_2026-11-07.md weekly audit (HOS PR #458, OWB PR #645), 8 new HOS Shorts lab rows, rows 23-25 learnings, and bounded £0 local Shorts actions for 006-010",
       "history": [
         {
           "at": "2026-11-07T16:04Z",
@@ -202440,6 +202450,11 @@
           "at": "2026-11-07T16:24Z",
           "by": "macbook-2",
           "what": "step 3 of 5 done"
+        },
+        {
+          "at": "2026-11-07T16:31Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: review HOS_2026-11-07.md weekly audit (HOS PR #458, OWB PR #645), 8 new HOS Shorts lab rows, rows 23-25 learnings, and bounded £0 local Shorts actions for 006-010"
         }
       ],
       "remaining_action": "Writing HOS_2026-11-07.md, HOS_2026-11-07_EVIDENCE.md, evidence_2026-11-07_yta_reconciled.json, and updating OWB 05_Analytics/LEARNINGS.md",
