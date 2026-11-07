@@ -180507,9 +180507,14 @@
           "at": "2026-11-07T18:06Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Harvested and inspected NASA SVS 20311 Dragonfly assets + PIA01050/PIA22766/SSC20210116_GR8438 on studio-live; locking HARVEST_POOL_v01.json and SHOT_LIST_v08.md"
+        },
+        {
+          "at": "2026-11-07T18:12Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2/4 done (853a4fc128 in /private/tmp/J2089-rights): harvested NASA SVS 20311 Dragonfly clips/stills + PIA20021 right-panel crop + PIA01050/PIA22766/SSC20210116_GR8438 on studio-live; locked HARVEST_POOL_v01.json + SHOT_LIST_v08.md + HARVEST_INVENTORY_v23.json (39 images, 62 exports, 0 errors, all stills <=2 uses)"
         }
       ],
-      "remaining_action": "Lock £0 harvest pool (step 2/4), build moving-plate composites (step 3/4), and run final QA (step 4/4) under CHIEF_SCOPE_v31.md",
+      "remaining_action": "Build 1080p30 moving-plate composites for Rows 1-52 on NAS (step 3/4) and run final QA (step 4/4) from locked HARVEST_POOL_v01.json + SHOT_LIST_v08.md",
       "kind": "assembly",
       "taskKeys": [
         "OWB:032"
@@ -180526,11 +180531,11 @@
       "model": "gemini-agy",
       "urgent": 3,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-07T18:06Z",
+        "at": "2026-11-07T18:12Z",
         "by": "gemini",
-        "note": "Harvested and inspected NASA SVS 20311 Dragonfly assets + PIA01050/PIA22766/SSC20210116_GR8438 on studio-live; locking H"
+        "note": "Step 2/4 done (853a4fc128 in /private/tmp/J2089-rights): harvested NASA SVS 20311 Dragonfly clips/stills + PIA20021 righ"
       }
     },
     {
