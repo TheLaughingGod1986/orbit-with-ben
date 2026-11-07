@@ -160370,10 +160370,10 @@
       "stage": "",
       "after": "J2324",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-07T15:30Z",
+      "eta": "2026-11-07T17:30Z",
       "created_by": "codex",
       "created_at": "2026-11-03T10:51Z",
       "result": "",
@@ -160432,11 +160432,24 @@
           "at": "2026-11-07T13:18Z",
           "by": "chief",
           "what": "reopened: J2350 PASS merged HOS PR450 476f35d1. Resume only: (1) classify candidate historical IDs vs later outcomes/queue/stages before any --recover-id; (2) separately authorised idle-boundary refresh --apply with PID+LOADED_SHA256 evidence in ~/.hos_desk/refresh-result.json + controlled live delivery/trusted ack. No bulk replay, no watermark reset, no Cursor Chief, no media/publish/spend. Desk PR180 stays open."
+        },
+        {
+          "at": "2026-11-07T15:30Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "J2324 repairs restart safety, historical replay and handback; elected Chief reviews corrected PR450 before refresh",
       "kind": "assembly",
-      "escalated_at": "2026-11-07T00:04Z"
+      "escalated_at": "2026-11-07T00:04Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T15:30Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1810",
